@@ -35,7 +35,7 @@ fs.mkdirSync(fotos, { recursive: true });
 const datei = pathToFileURL(path.join(wurzel, 'Lernstudio.html')).href;
 
 const browser = await playwright.chromium.launch({ executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? undefined : undefined });
-const context = await browser.newContext({ viewport: { width: Number(process.env.BREITE ?? 1440), height: 900 }, deviceScaleFactor: 1 });
+const context = await browser.newContext({ viewport: { width: Number(process.env.BREITE ?? 1440), height: Number(process.env.HOEHE ?? 900) }, deviceScaleFactor: 1 });
 const page = await context.newPage();
 const meldungen = [];
 page.on('console', (m) => {

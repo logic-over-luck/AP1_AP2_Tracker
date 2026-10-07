@@ -1,6 +1,7 @@
 // Dialoge und Meldungen.
 
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { createPortal } from 'preact/compat';
 import { Icon, SymbolKnopf, Knopf } from './bausteine.jsx';
 
 export function Dialog({ offen, titel, icon, onSchliessen, children, aktionen, breit }) {
@@ -35,7 +36,9 @@ export function Dialog({ offen, titel, icon, onSchliessen, children, aktionen, b
     };
   }, [offen]);
   if (!offen) return null;
-  return (
+  // Direkt in <body> hängen: Ein Vorfahr mit backdrop-filter (z. B. die Kopfzeile) würde
+  // „position: fixed" sonst auf sich selbst beziehen, und der Dialog ragte aus dem Fenster.
+  return createPortal(
     <div class="dialog-huelle" onMouseDown={(e) => e.target === e.currentTarget && onSchliessen?.()}>
       <div class={`dialog ${breit ? 'dialog--breit' : ''}`} role="dialog" aria-modal="true" aria-label={titel} ref={ref}>
         <div class="dialog__kopf">
@@ -46,7 +49,8 @@ export function Dialog({ offen, titel, icon, onSchliessen, children, aktionen, b
         <div class="dialog__inhalt">{children}</div>
         {aktionen && <div class="dialog__aktionen">{aktionen}</div>}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
