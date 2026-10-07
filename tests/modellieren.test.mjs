@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { ladeDaten } from '../tools/daten.mjs';
 import { pruefeDiagramm, lueckenIn } from '../src/bereiche/trainer/modellieren/geometrie.js';
-import { AUFGABEN, NOTATION } from '../src/bereiche/trainer/modellieren/aufgaben/index.js';
+import { AUFGABEN, NOTATION, NOTATION_AP1 } from '../src/bereiche/trainer/modellieren/aufgaben/index.js';
 import { TRAINER } from '../src/bereiche/trainer/verzeichnis.js';
 
 const daten = await ladeDaten('.');
@@ -17,8 +17,7 @@ test('jeder Modus hat Aufgaben', () => {
 for (const [modus, liste] of Object.entries(AUFGABEN)) {
   test(`Aufgaben „${modus}" sind vollständig und stimmig`, () => {
     const ids = new Set();
-    const n = NOTATION[modus];
-    for (const b of n?.bilder ?? (n?.diagramm ? [n] : [])) assert.deepEqual(pruefeDiagramm(b.diagramm), [], `${modus} Notation`);
+    for (const n of [NOTATION[modus], NOTATION_AP1[modus]]) for (const b of n?.bilder ?? (n?.diagramm ? [n] : [])) assert.deepEqual(pruefeDiagramm(b.diagramm), [], `${modus} Notation`);
     for (const a of liste) {
       const wo = `${modus}/${a.id}`;
       assert.ok(a.id && !ids.has(a.id), `${wo}: id fehlt oder doppelt`);

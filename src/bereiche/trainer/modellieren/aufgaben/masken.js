@@ -704,7 +704,7 @@ export const aufgaben = [
     },
     pruefliste: [
       'Zusammengehöriges **gruppiert**: „Lieferung" (Lieferant, Lieferschein-Nr., Lieferdatum) und „Artikel" (Artikelnr., Bezeichnung, Menge)',
-      'Jedes Feld hat eine Beschriftung, alle Beschriftungen stehen **einheitlich** auf derselben Seite (vorher mal links, mal rechts, beim Lieferanten gar keine passende)',
+      'Jedes Feld hat eine Beschriftung, alle Beschriftungen stehen **einheitlich** auf derselben Seite (vorher mal links, mal rechts, mal darüber)',
       'Felder **bündig** untereinander statt verstreut',
       '**Lieferant** als Auswahlliste, **Lieferdatum** als Datumsauswahl',
       'Hinweis zur Menge **gut lesbar** (dunkle Schrift) statt hellgrau',

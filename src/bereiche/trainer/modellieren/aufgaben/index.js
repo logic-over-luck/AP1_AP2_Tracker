@@ -17,3 +17,7 @@ const MODULE = { anwendungsfall, klasse, aktivitaet, sequenz, zustand, er, relat
 export const AUFGABEN = Object.fromEntries(Object.entries(MODULE).map(([k, m]) => [k, m.aufgaben ?? []]));
 export const NOTATION = Object.fromEntries(Object.entries(MODULE).map(([k, m]) => [k, m.notation ?? null]));
 export const SPICKZETTEL = Object.fromEntries(Object.entries(MODULE).map(([k, m]) => [k, m.spickzettel ?? null]));
+
+// Optional je Modus eine eigene, schlankere Fassung für AP1 (ohne AP2-Stoff)
+export const NOTATION_AP1 = Object.fromEntries(Object.entries(MODULE).map(([k, m]) => [k, m.notationAP1 ?? null]));
+export const SPICKZETTEL_AP1 = Object.fromEntries(Object.entries(MODULE).map(([k, m]) => [k, m.spickzettelAP1 ?? null]));

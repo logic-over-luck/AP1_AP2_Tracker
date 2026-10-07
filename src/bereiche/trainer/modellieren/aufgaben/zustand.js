@@ -103,10 +103,10 @@ export const aufgaben = [
       { id: '4', label: 'Übergang, wenn sich der Kunde nicht meldet', optionen: ['[7 Tage]', 'after(7 Tage)', 'do / 7 Tage warten', 'Kunde bestätigt'], erwartet: 'after(7 Tage)' },
     ],
     loesung: [
-      '[1] Ein Zustand beschreibt eine **Lage** des Objekts. „Supporter" ist eine Person, „Ticketsystem" das System – beides keine Zustände eines Tickets.',
+      '[1] Ein Zustand beschreibt eine **Lage** des Objekts. „Supporter" ist eine Person, „Ticketsystem" das System – beides keine Zustände eines Tickets. „Gelöst" ist zwar ein Zustand, steht aber schon rechts; nach der Übernahme ist das Ticket laut Text in Bearbeitung.',
       '[2] Der Rücksprung schaltet, wenn das Ereignis „Kunde antwortet" eintritt. Ein Rücksprung ist ein normaler Übergang zurück in einen früheren Zustand.',
       '[3] Hinter dem Schrägstrich steht die **Aktion**, die beim Wechsel ausgeführt wird: Der Kunde wird informiert.',
-      '[4] Eine abgelaufene Zeit schreibst du als Zeitereignis **after(…)**. Eine Bedingung in eckigen Klammern ist kein Auslöser.',
+      '[4] Dass 7 Tage im Zustand vergangen sind, ist selbst das Ereignis, das den Übergang auslöst – du schreibst es als Zeitereignis **after(7 Tage)**. [7 Tage] wäre eine Bedingung: Sie löst nichts aus, sondern wird nur geprüft, wenn ein Auslöser eintritt. „do" gibt es nur im Zustand, nicht am Übergang.',
     ],
   },
   {
@@ -197,7 +197,7 @@ export const aufgaben = [
     raum: ['AP2'],
     sp: 'AP2-2-1-5',
     titel: 'Benutzerkonto mit Sperre',
-    text: 'Ein Konto ist **Abgemeldet**. Bei korrektem Passwort wird es **Angemeldet**, und der Fehlerzähler wird zurückgesetzt; beim Betreten wird die Startseite angezeigt. Bei falschem Passwort wird der Zähler erhöht. Beim **dritten** Fehlversuch in Folge wird das Konto **Gesperrt** und der Admin informiert. Nach 30 Minuten wird die Sperre aufgehoben und der Zähler zurückgesetzt. Abmelden führt zurück zu Abgemeldet. `fehler` ist der Zählerstand **vor** dem aktuellen Versuch. Prüfe die Stellen 1–4.',
+    text: 'Ein Konto ist **Abgemeldet**. Bei korrektem Passwort wird es **Angemeldet**, und der Fehlerzähler wird zurückgesetzt; beim Betreten wird die Startseite angezeigt. Bei falschem Passwort wird der Zähler erhöht. Beim **dritten** Fehlversuch in Folge wird das Konto **Gesperrt** und der Admin informiert. Nach 30 Minuten wird die Sperre aufgehoben, der Zähler zurückgesetzt, und das Konto ist wieder abgemeldet. Abmelden führt zurück zu Abgemeldet. `fehler` ist der Zählerstand **vor** dem aktuellen Versuch. Prüfe die Stellen 1–4.',
     diagramm: {
       breite: 720,
       hoehe: 350,
@@ -220,13 +220,13 @@ export const aufgaben = [
     felder: [
       { id: '1', label: 'Bedingung [fehler > 2] zum Sperren', optionen: ['korrekt', 'Überschneidung mit [fehler < 2]', 'Lücke bei fehler = 2 – richtig: [fehler >= 2]', 'Bedingung muss vor dem Auslöser stehen'], erwartet: 'Lücke bei fehler = 2 – richtig: [fehler >= 2]' },
       { id: '2', label: '„exit / Startseite anzeigen" in „Angemeldet"', optionen: ['korrekt', 'muss entry sein', 'muss do sein', 'gehört an den Übergang „Abmelden"'], erwartet: 'muss entry sein' },
-      { id: '3', label: 'Übergang „after(30 min) / fehler = 0"', optionen: ['korrekt', 'muss when(30 min) heißen', 'braucht die Bedingung [30 min]', 'muss zum Endzustand führen'], erwartet: 'korrekt' },
+      { id: '3', label: 'Übergang „after(30 min) / fehler = 0"', optionen: ['korrekt', 'muss zu „Angemeldet" führen', 'braucht die Bedingung [30 min]', 'muss zum Endzustand führen'], erwartet: 'korrekt' },
       { id: '4', label: 'Übergang „Abmelden" zum Endzustand', optionen: ['korrekt', 'muss zurück zu „Abgemeldet" führen', 'braucht die Bedingung [fehler = 0]', 'muss after(…) heißen'], erwartet: 'muss zurück zu „Abgemeldet" führen' },
     ],
     loesung: [
       '[1] Der dritte Fehlversuch kommt bei fehler = 2 an. [fehler < 2] und [fehler > 2] lassen genau diesen Fall offen – das Konto würde nie gesperrt. Richtig ist [fehler >= 2].',
       '[2] Die Startseite erscheint **beim Betreten** von Angemeldet → entry. exit liefe erst beim Abmelden.',
-      '[3] Richtig: Nach Ablauf der Zeit schaltet das Zeitereignis after(30 min); die Aktion setzt den Zähler zurück, wie gefordert.',
+      '[3] Richtig: Nach Ablauf der Zeit schaltet das Zeitereignis after(30 min); die Aktion setzt den Zähler zurück, und das Konto ist laut Text wieder abgemeldet. Eine Bedingung [30 min] würde nichts auslösen.',
       '[4] Abmelden beendet nicht den Lebenszyklus des Kontos, sondern führt laut Text zurück in einen früheren Zustand – ein Rücksprung nach Abgemeldet.',
     ],
     muster: {
@@ -282,7 +282,7 @@ export const aufgaben = [
       { id: '4', label: 'Übergang „Akku geladen" nach „Verfügbar"', optionen: ['korrekt', 'muss after(…) heißen', 'braucht die Bedingung [akku < 15 %]', 'muss zum Endzustand führen'], erwartet: 'korrekt' },
     ],
     loesung: [
-      '[1] Eine Bedingung in eckigen Klammern ist kein Auslöser – sie wird nur geprüft, wenn etwas passiert. Für „nach Ablauf von 15 Minuten" brauchst du das Zeitereignis **after(15 min)**.',
+      '[1] Eine Bedingung in eckigen Klammern ist kein Auslöser – sie wird nur geprüft, wenn ein Auslöser eintritt. Hier ist das Verstreichen der 15 Minuten selbst das Ereignis, das den Übergang auslöst. Das schreibst du als Zeitereignis **after(15 min)**.',
       '[2] Bei genau 15 % wären [akku >= 15 %] **und** [akku <= 15 %] wahr – der Übergang wäre nicht eindeutig. „Unter 15 %" heißt [akku < 15 %].',
       '[3] Die Fahrzeit wird **während** der ganzen Fahrt gezählt → do. entry liefe nur einmal beim Betreten.',
       '[4] Richtig: Das Ereignis „Akku geladen" führt zurück in den früheren Zustand Verfügbar – ein Rücksprung.',

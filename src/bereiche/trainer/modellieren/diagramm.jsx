@@ -290,7 +290,7 @@ function Knoten({ k, m, luecken, marken }) {
       inhalt = (
         <>
           <rect class="dg-form" x={x} y={y} width={w} height={h} />
-          {k.stereotyp && <Text x={cx} y={y + 11} text={`«${k.stereotyp}»`} klasse="dg-klein" />}
+          {k.stereotyp && <Text x={cx} y={y + 11} text={`«${k.stereotyp}»`} luecken={luecken} klasse="dg-klein" />}
           <Text x={cx} y={yName} text={k.name} luecken={luecken} klasse={`dg-fett ${k.abstrakt ? 'dg-kursiv' : ''}`} />
           <path class="dg-linie" d={`M${x},${y + km.kopf}H${x + w}M${x},${y + km.kopf + km.attr}H${x + w}`} />
           {(k.attribute ?? []).map((z, i) => zeile(z, i, y + km.kopf + 2))}

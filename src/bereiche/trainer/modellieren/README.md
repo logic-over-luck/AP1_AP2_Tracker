@@ -8,6 +8,8 @@ export const notation = { text, diagramm, punkte: [...] } // oder { text, bilder
 export const aufgaben = [ ... ];
 ```
 
+Optional: `notationAP1` / `spickzettelAP1` – eigene Fassung für AP1, wenn die normale Notation AP2-Stoff zeigt.
+
 Vorbild: `aufgaben/anwendungsfall.js`. Ansehen mit
 `npm run build && node tools/modell-galerie.mjs <modus> ap2 <ordner>` (je Aufgabe ein Bild, mit Lösung).
 Prüfen mit `node --test tests/modellieren.test.mjs`.

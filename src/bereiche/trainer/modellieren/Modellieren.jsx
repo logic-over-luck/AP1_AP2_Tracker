@@ -10,7 +10,7 @@ import { TrainerSeite, Uebung, Tabelle } from '../rahmen/Uebung.jsx';
 import { Icon, Knopf, Rich, Reiter, Haken, Marke, Aufklapp, Leer } from '../../../ui/bausteine.jsx';
 import { erfasse, useLernstand } from '../../../lernstand/store.js';
 import { Diagramm } from './diagramm.jsx';
-import { AUFGABEN, NOTATION, SPICKZETTEL } from './aufgaben/index.js';
+import { AUFGABEN, NOTATION, SPICKZETTEL, NOTATION_AP1, SPICKZETTEL_AP1 } from './aufgaben/index.js';
 
 export function ModellierenTrainer({ raum, trainer, modi, params }) {
   return (
@@ -26,7 +26,7 @@ function Modus({ raum, modus, params }) {
   const alle = useMemo(() => fuerRaum(AUFGABEN[modus.id], raum), [modus.id, raum]);
   const ueben = useMemo(() => alle.filter((a) => a.art !== 'zeichnen'), [alle]);
   const zeichnen = useMemo(() => alle.filter((a) => a.art === 'zeichnen'), [alle]);
-  const notation = NOTATION[modus.id];
+  const notation = (raum === 'AP1' && NOTATION_AP1[modus.id]) || NOTATION[modus.id];
   const eintraege = [
     ueben.length && { id: 'ueben', text: 'Üben', icon: 'target', zahl: ueben.length },
     zeichnen.length && { id: 'zeichnen', text: zeichnen.every((a) => a.muster) ? 'Zeichnen' : zeichnen.some((a) => a.muster) ? 'Zeichnen & Schreiben' : 'Ausarbeiten', icon: 'pencil', zahl: zeichnen.length },
@@ -40,7 +40,7 @@ function Modus({ raum, modus, params }) {
   return (
     <div class="modell">
       {eintraege.length > 1 && <Reiter eintraege={eintraege} aktiv={reiter} onWahl={setReiter} label="Art der Übung" />}
-      {reiter === 'ueben' && <Ueben key={modus.id} aufgaben={ueben} modus={modus} />}
+      {reiter === 'ueben' && <Ueben key={modus.id} aufgaben={ueben} modus={modus} spickzettel={(raum === 'AP1' && SPICKZETTEL_AP1[modus.id]) || SPICKZETTEL[modus.id]} />}
       {reiter === 'zeichnen' && <Zeichnen aufgaben={zeichnen} modus={modus} />}
       {reiter === 'notation' && <Notation n={notation} />}
     </div>
@@ -60,7 +60,7 @@ function alsUebung(a) {
 
 const ART_NAME = { ergaenzen: 'Ergänzen', fehler: 'Fehler finden', fragen: 'Verstehen', zuordnen: 'Zuordnen' };
 
-function Ueben({ aufgaben, modus }) {
+function Ueben({ aufgaben, modus, spickzettel }) {
   const erzeuge = useCallback(
     (rng) => {
       // nicht zweimal hintereinander dieselbe Aufgabe
@@ -72,7 +72,7 @@ function Ueben({ aufgaben, modus }) {
     },
     [aufgaben, modus.id],
   );
-  return <Uebung erzeuge={erzeuge} trainerId="modellieren" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} ansicht={DiagrammAnsicht} loesungName="Erklärung" />;
+  return <Uebung erzeuge={erzeuge} trainerId="modellieren" modusId={modus.id} spIds={modus.sp} spickzettel={spickzettel} ansicht={DiagrammAnsicht} loesungName="Erklärung" />;
 }
 
 export function lueckenFuer(aufgabe, eingaben, ergebnis, loesung) {

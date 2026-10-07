@@ -153,7 +153,7 @@ export const aufgaben = [
     loesung: [
       '[1] Jeder Pfeil aus einer Entscheidung braucht eine Bedingung. Die beiden Bedingungen müssen sich ergänzen: [telefonisch lösbar] und [nicht telefonisch lösbar] decken jeden Fall genau einmal ab.',
       '[2] Die untere Raute hat zwei Pfeile hinein und einen hinaus. Sie führt die beiden **alternativen** Wege wieder zusammen – das ist eine Zusammenführung.',
-      '[3] Aktionen benennst du mit Gegenstand + Verb. „Ticketsystem" ist ein Gegenstand ohne Tätigkeit, also keine Aktion.',
+      '[3] Laut Text wird zum Schluss in beiden Fällen das Ticket geschlossen. „Störung aufnehmen" und „Techniker beauftragen" stehen schon weiter oben im Ablauf. „Ticketsystem" ist ein Gegenstand ohne Tätigkeit, also keine Aktion – Aktionen benennst du mit Gegenstand + Verb.',
     ],
   },
   {
@@ -328,7 +328,7 @@ export const aufgaben = [
       },
     ],
     loesung: [
-      '(a) Bedingungen müssen **lückenlos** und **überschneidungsfrei** sein. Bei > und < fehlt genau 18; bei >= und <= trifft 18 beide Zweige. Nur >= 18 / < 18 passt.',
+      '(a) Bedingungen müssen **lückenlos** und **überschneidungsfrei** sein. Bei > und < fehlt genau 18; bei >= und <= trifft 18 beide Zweige; [volljährig] und [alter < 21] treffen bei 18 bis 20 Jahren beide zu. Nur >= 18 / < 18 passt.',
       '(b) Führt ein Pfeil zurück vor eine frühere Aktion, wird dieser Teil erneut durchlaufen – eine Schleife.',
       '(c) Ein Balken mit mehreren Ausgängen ist eine Teilung: Alle Zweige starten gleichzeitig. Bei einer Raute würde nur **ein** Zweig genommen.',
       '(d) Nach einer Entscheidung kommt nur **ein** Zweig an. Ein Synchronisationsbalken würde auf alle warten und nie weiterlaufen – deshalb die Zusammenführungsraute.',
@@ -447,15 +447,15 @@ export const aufgaben = [
     },
     felder: [
       { id: '1', label: 'Raute nach „Rechnung erstellen" und „Ware kommissionieren"', optionen: ['korrekt', 'muss ein Synchronisationsbalken sein', 'muss ein Endknoten sein', 'braucht Bedingungen an den eingehenden Pfeilen'], erwartet: 'muss ein Synchronisationsbalken sein' },
-      { id: '2', label: 'Endknoten nach „Info-Mail senden"', optionen: ['korrekt', 'muss ein Ablaufende sein', 'muss in die Raute 1 führen', 'muss ein Startknoten sein'], erwartet: 'muss ein Ablaufende sein' },
+      { id: '2', label: 'Endknoten nach „Info-Mail senden"', optionen: ['korrekt', 'muss ein Ablaufende sein', 'muss in die Raute bei Stelle 1 führen', 'muss ein Startknoten sein'], erwartet: 'muss ein Ablaufende sein' },
       { id: '3', label: 'Bedingung [bestellwert > 100 €]', optionen: ['korrekt', 'Überschneidung mit der linken Bedingung', 'Lücke bei genau 100 € – richtig: [bestellwert >= 100 €]', 'Bedingungen gehören in die Raute'], erwartet: 'Lücke bei genau 100 € – richtig: [bestellwert >= 100 €]' },
-      { id: '4', label: 'Raute vor „Paket versenden"', optionen: ['korrekt', 'muss ein Synchronisationsbalken sein', 'muss eine Entscheidung mit Bedingungen sein', 'überflüssig: beide Pfeile direkt in „Paket versenden" führen'], erwartet: 'korrekt' },
+      { id: '4', label: 'Raute vor „Paket versenden"', optionen: ['korrekt', 'muss ein Synchronisationsbalken sein', 'muss eine Entscheidung mit Bedingungen sein', 'muss ein Teilungsbalken sein'], erwartet: 'korrekt' },
     ],
     loesung: [
       '[1] Rechnung und Ware laufen **parallel**. Weiter geht es erst, wenn **beide** fertig sind – das leistet nur ein Synchronisationsbalken. Eine Raute wartet nicht, der Ablauf liefe doppelt weiter.',
-      '[2] Ein Endknoten beendet die **ganze** Aktivität. Ist die Mail schnell verschickt, würden Rechnung und Kommissionierung abgebrochen. Das Ablaufende beendet nur den Mail-Zweig.',
+      '[2] Ein Endknoten beendet die **ganze** Aktivität. Ist die Mail schnell verschickt, würden Rechnung und Kommissionierung abgebrochen. Das Ablaufende beendet nur den Mail-Zweig. In die Zusammenführung bei Stelle 1 darf der Mail-Zweig auch nicht: Dann hinge der weitere Ablauf von der Mail ab – laut Text soll sie ihn nicht beeinflussen.',
       '[3] Mit < 100 und > 100 passt bei genau 100 € keine Bedingung. Laut Text gilt „ab 100 €" versandkostenfrei – also [bestellwert >= 100 €].',
-      '[4] Richtig: Nach der Entscheidung kommt nur **ein** Weg an, die Zusammenführung führt ihn weiter. Zwei Pfeile direkt in eine Aktion würden in UML auf **beide** warten.',
+      '[4] Richtig: Nach der Entscheidung kommt nur **ein** Weg an, die Zusammenführung führt ihn weiter. Ein Synchronisationsbalken würde auf **beide** Wege warten – es kommt aber nur einer, der Ablauf bliebe stehen. Eine Entscheidung oder Teilung passt nicht, weil hier zwei Pfeile hinein- und nur einer hinausgehen.',
     ],
     muster: {
       breite: 620,
@@ -628,7 +628,7 @@ export const aufgaben = [
     ],
     loesung: [
       '(a) Das Ablaufende beendet nur den Fluss, der dort ankommt. Andere Zweige laufen weiter.',
-      '(b) Der Endknoten beendet die **gesamte** Aktivität – alle noch laufenden Zweige werden abgebrochen. Darum gehört er hier nur ans Ende des Hauptwegs, wenn das Vorschaubild unwichtig ist.',
+      '(b) Der Endknoten beendet die **gesamte** Aktivität – alle noch laufenden Zweige werden abgebrochen. Ist das Vorschaubild dann noch nicht fertig, fehlt es – so ein Diagramm nimmt das in Kauf. Soll es sicher fertig werden, brauchst du eine Synchronisation (siehe c).',
       '(c) Nur der Synchronisationsbalken wartet auf **alle** Zweige. Eine Raute würde nicht warten, sondern „Video veröffentlichen" zweimal anstoßen; eine Entscheidung würde nur einen Zweig ausführen.',
       '(d) Gefüllter Kreis = Startknoten, Kreis mit Punkt = Endknoten, Kreis mit Kreuz = Ablaufende.',
     ],
@@ -813,7 +813,7 @@ export const aufgaben = [
       '„Ware versenden" und „Rechnung erstellen" → **Synchronisation** → „Bestellung abschließen" → **Endknoten**',
       'Alle Kanten als Pfeile, Aktionen als Gegenstand + Verb',
     ],
-    hinweise: 'Ein Endknoten im Bewertungszweig wäre falsch: Sobald die Planung fertig ist, würde er die **ganze** Aktivität beenden – auch Versand und Rechnung. Zwei Endknoten für „abgelehnt" und „abgeschlossen" sind erlaubt; ebenso richtig ist, beide Wege über eine Zusammenführung zu **einem** Endknoten zu führen.',
+    hinweise: 'Ein Endknoten im Bewertungszweig wäre falsch: Sobald die Planung fertig ist, würde er die **ganze** Aktivität beenden – auch Versand und Rechnung. Läuft die Planung noch, wenn der Endknoten nach „Bestellung abschließen" erreicht wird, wird sie abgebrochen – das nimmt der Text mit „soll den Rest nicht aufhalten" in Kauf. Zwei Endknoten für „abgelehnt" und „abgeschlossen" sind erlaubt; ebenso richtig ist, beide Wege über eine Zusammenführung zu **einem** Endknoten zu führen.',
   },
 ];
 
