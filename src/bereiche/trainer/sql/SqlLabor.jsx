@@ -177,6 +177,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
   const [pruefung, setPruefung] = useState(null); // { ok, grund, hinweis }
   const [loesung, setLoesung] = useState(false);
   const [erwartet, setErwartet] = useState(false);
+  const [nachschlagen, setNachschlagen] = useState(false);
   const gezaehlt = useRef({ erst: false, ok: false });
   const editor = useRef(null);
 
@@ -259,7 +260,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
   const ok = pruefung?.ok;
   return (
     <div class="sql__einspaltig">
-      <Ausgangssituation schema={basis.schema} einfuegen={einfuegen} />
+      <DatenbankModell schema={basis.schema} einfuegen={einfuegen} />
       <section class={`flaeche flaeche--gross aufgabe ${ok ? 'aufgabe--fertig' : ''}`}>
         <div class="zeile">
           <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">Aufgabe {nr}</div>
@@ -294,7 +295,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             onKeyDown={taste}
           />
         </label>
-        <Bausteine einfuegen={einfuegen} />
         <div class="aufgabe__knoepfe">
           {!rechte && (
             <Knopf variante="zweit" icon="play" onClick={ausfuehrenJetzt}>
@@ -318,7 +318,13 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
           <Knopf variante="geist" icon={loesung ? 'eye-off' : 'eye'} onClick={zeigeLoesung} aria-expanded={loesung}>
             {loesung ? 'Lösungshinweis ausblenden' : 'Lösungshinweis'}
           </Knopf>
+          <Knopf variante="geist" icon="book-open" onClick={() => setNachschlagen(!nachschlagen)} aria-expanded={nachschlagen}>
+            {nachschlagen ? 'Nachschlagewerk ausblenden' : 'Nachschlagewerk'}
+          </Knopf>
         </div>
+        <Aufklapp offen={nachschlagen}>
+          <Nachschlagewerk />
+        </Aufklapp>
 
         {pruefung && (
           <div class={`sql-urteil ${pruefung.ok ? 'sql-urteil--gut' : 'sql-urteil--falsch'} erscheinen`} role="status">
@@ -371,6 +377,7 @@ function FreiesLabor({ engine }) {
   const [text, setText] = useState(() => entwurf('frei') || 'SELECT * FROM artikel;');
   const [lauf, setLauf] = useState(null);
   const [verlauf, setVerlauf] = useState([]);
+  const [nachschlagen, setNachschlagen] = useState(false);
   const editor = useRef(null);
   const einfuegen = useEinfuegen(editor, text, setText, schema);
 
@@ -401,7 +408,7 @@ function FreiesLabor({ engine }) {
   return (
     <div class="sql">
       <div class="sql__einspaltig">
-        <Ausgangssituation schema={schema} einfuegen={einfuegen} />
+        <DatenbankModell schema={schema} einfuegen={einfuegen} />
         <section class="flaeche flaeche--gross aufgabe">
           <div class="ueberschrift-klein ueberschrift-klein--akzent">Freies Labor</div>
           <p class="aufgabe__text text-2">
@@ -433,7 +440,6 @@ function FreiesLabor({ engine }) {
               }}
             />
           </label>
-          <Bausteine einfuegen={einfuegen} />
           <div class="aufgabe__knoepfe">
             <Knopf variante="primaer" icon="play" onClick={ausfuehrenJetzt}>
               Ausführen <Kbd>Strg+Enter</Kbd>
@@ -441,7 +447,13 @@ function FreiesLabor({ engine }) {
             <Knopf variante="geist" icon="rotate-ccw" onClick={zuruecksetzen}>
               Datenbank zurücksetzen
             </Knopf>
+            <Knopf variante="geist" icon="book-open" onClick={() => setNachschlagen(!nachschlagen)} aria-expanded={nachschlagen}>
+              {nachschlagen ? 'Nachschlagewerk ausblenden' : 'Nachschlagewerk'}
+            </Knopf>
           </div>
+          <Aufklapp offen={nachschlagen}>
+            <Nachschlagewerk />
+          </Aufklapp>
           {lauf && <LaufAnzeige lauf={lauf} modus="frei" />}
           {verlauf.length > 1 && (
             <div class="sql-block">
@@ -461,17 +473,7 @@ function FreiesLabor({ engine }) {
   );
 }
 
-// ---------- Bausteine zum Antippen ----------
-
-// Reihen mit Titel; je Baustein [Anzeige, eingefügter Text, Cursor zurück]
-const BAUSTEINE = {
-  alle: [
-    ['Befehle', [['SELECT'], ['*'], ['FROM'], ['WHERE'], ['JOIN'], ['LEFT JOIN'], ['ON'], ['GROUP BY'], ['HAVING'], ['ORDER BY'], ['DESC'], ['DISTINCT'], ['AS'], ['UNION'], [','], [';']]],
-    ['Bedingungen', [['='], ['<>'], ['>'], ['<'], ['>='], ['<='], ['AND'], ['OR'], ['NOT'], ["LIKE '%'", "LIKE '%'", 2], ['IS NULL'], ['IN ( )', 'IN ()', 1], ['BETWEEN … AND', 'BETWEEN'], ['( SELECT … )', '(SELECT )', 1]]],
-    ['Ändern', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['CREATE TABLE'], ['ALTER TABLE'], ['DROP TABLE']]],
-    ['Funktionen', [['COUNT(*)'], ['COUNT( )', 'COUNT()', 1], ['SUM( )', 'SUM()', 1], ['AVG( )', 'AVG()', 1], ['MIN( )', 'MIN()', 1], ['MAX( )', 'MAX()', 1], ['ROUND( , 2)', 'ROUND(, 2)', 4], ['YEAR( )', 'YEAR()', 1]]],
-  ],
-};
+// ---------- Einfügen per Klick ----------
 
 // Fügt an der Cursorposition ein – mit passenden Leerzeichen und Kommas (siehe einfuegen.js)
 function useEinfuegen(editor, text, setText, schema) {
@@ -490,26 +492,6 @@ function useEinfuegen(editor, text, setText, schema) {
       t.dataset.pos = r.pos;
     });
   };
-}
-
-// Befehle zum Antippen – Tabellen und Spalten tippt man im Datenbankmodell an
-function Bausteine({ einfuegen }) {
-  return (
-    <div class="sql-bausteine" aria-label="Befehle zum Antippen">
-      {BAUSTEINE.alle.map(([titel, reihe]) => (
-        <div key={titel} class="sql-bausteine__zeile">
-          <span class="sql-bausteine__titel">{titel}</span>
-          <div class="sql-bausteine__reihe">
-            {reihe.map(([zeige, wort = zeige, zurueck = 0]) => (
-              <button key={zeige} type="button" class="sql-baustein sql-baustein--kw" onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(wort, zurueck)}>
-                {zeige}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
 }
 
 // ---------- Grundlagen: kleines Lexikon ----------
@@ -535,21 +517,37 @@ function Grundlagen() {
           ))}
         </div>
       </section>
-      <div class="sql-grund__raster">
-        {GRUNDLAGEN.map((g) => (
-          <section key={g.id} class="flaeche sql-lexikon">
-            <h2 class="sql-lexikon__titel">{g.titel}</h2>
-            <dl class="sql-lexikon__liste">
-              {g.begriffe.map(([begriff, erklaerung]) => (
-                <div key={begriff} class="sql-lexikon__eintrag">
-                  <dt class="mono">{begriff}</dt>
-                  <dd>{erklaerung}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        ))}
-      </div>
+      <Lexikon />
+    </div>
+  );
+}
+
+function Lexikon() {
+  return (
+    <div class="sql-grund__raster">
+      {GRUNDLAGEN.map((g) => (
+        <section key={g.id} class="flaeche sql-lexikon">
+          <h2 class="sql-lexikon__titel">{g.titel}</h2>
+          <dl class="sql-lexikon__liste">
+            {g.begriffe.map(([begriff, erklaerung]) => (
+              <div key={begriff} class="sql-lexikon__eintrag">
+                <dt class="mono">{begriff}</dt>
+                <dd>{erklaerung}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+// Wie der Belegsatz in der Prüfung: alle Befehle zum Nachschlagen, direkt unter der Aufgabe
+function Nachschlagewerk() {
+  return (
+    <div class="sql-block sql-nachschlagen">
+      <div class="ueberschrift-klein">Nachschlagewerk SQL · Reihenfolge: {KLAUSELN.join(' → ')}</div>
+      <Lexikon />
     </div>
   );
 }
@@ -633,17 +631,12 @@ export function ErgebnisTabelle({ ergebnis }) {
   );
 }
 
-// Wie in der Prüfung: kurze Ausgangssituation und ein Auszug aus dem Datenbankmodell in
+// Wie in der Prüfung: Auszug aus dem Datenbankmodell in
 // Relationen-Schreibweise – Primärschlüssel unterstrichen, Fremdschlüssel mit ↑.
-function Ausgangssituation({ schema, einfuegen }) {
+function DatenbankModell({ schema, einfuegen }) {
   return (
     <section class="flaeche sql-situation">
-      <div class="ueberschrift-klein ueberschrift-klein--akzent">Ausgangssituation</div>
-      <p class="sql-situation__text">
-        Die Systemhaus Rheinblick GmbH in Mainz vertreibt IT-Hardware und Software an Geschäftskunden. Kunden, Artikel, Bestellungen und Mitarbeiter werden in einer
-        relationalen Datenbank verwaltet.
-      </p>
-      <div class="ueberschrift-klein">Auszug aus dem Datenbankmodell</div>
+      <div class="ueberschrift-klein ueberschrift-klein--akzent">Auszug aus dem Datenbankmodell</div>
       <ul class="sql-modell">
         {schema.map((t) => (
           <li key={t.name}>

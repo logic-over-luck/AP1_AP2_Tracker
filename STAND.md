@@ -127,13 +127,11 @@ nächsten offenen Punkt weiter.
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
-- **SQL-Labor (prüfungsnah):** Oben die Ausgangssituation und ein „Auszug aus dem Datenbankmodell“ in
-  Relationen-Schreibweise (Primärschlüssel unterstrichen, Fremdschlüssel mit ↑). Die Aufgaben sind wie in der
-  Prüfung formuliert („Erstellen Sie eine SQL-Anweisung, die …“) und haben Punkte (geschätzt nach Umfang, nicht
-  aus echten Prüfungen). Tabellen- und Spaltennamen im Modell sind anklickbar und werden ins
-  Lösungsfeld eingetragen; darunter liegen Befehls-Bausteine zum Antippen (Leerzeichen und Kommas setzt die App).
-  Welche Tabellen und Spalten man braucht, sucht man selbst aus. Hilfen: Soll-Ergebnis und Lösungshinweis. Erster Reiter
-  „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang.
+- **SQL-Labor (prüfungsnah):** Oben ein „Auszug aus dem Datenbankmodell“ in Relationen-Schreibweise
+  (Primärschlüssel unterstrichen, Fremdschlüssel mit ↑); Tabellen- und Spaltennamen sind anklickbar und werden ins
+  Lösungsfeld eingetragen. Aufgaben im Prüfungsstil („Erstellen Sie eine SQL-Anweisung, die …“) mit Punkten
+  (geschätzt nach Umfang, nicht aus echten Prüfungen). Unter „Prüfen“: Soll-Ergebnis, Lösungshinweis und ein
+  Nachschlagewerk wie der Belegsatz (alle Befehle mit Kurzerklärung). Erster Reiter „Grundlagen“ = dasselbe Lexikon.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine
