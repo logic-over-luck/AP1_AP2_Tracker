@@ -515,3 +515,342 @@
   background: var(--flaeche-1);
   font-size: var(--t-s);
 }
+
+/* ---------- Pseudocode ---------- */
+.codeblock {
+  margin: 0;
+  padding: var(--s-3) 0;
+  border-radius: var(--r-2);
+  background: #0a0e11;
+  border: 1px solid var(--linie);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+  counter-reset: zeile;
+}
+.codezeile {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  padding: 0 var(--s-4) 0 0;
+  border-left: 3px solid transparent;
+  transition: background var(--dauer) var(--kurve), border-color var(--dauer) var(--kurve);
+  white-space: pre;
+}
+button.codezeile:hover {
+  background: var(--flaeche-2);
+}
+.codezeile__nr {
+  flex: none;
+  width: 40px;
+  padding-right: var(--s-3);
+  text-align: right;
+  color: var(--text-4);
+  user-select: none;
+}
+.codezeile__text {
+  color: var(--text);
+}
+.codezeile--markiert {
+  background: rgba(var(--akzent-rgb), 0.06);
+}
+.codezeile--markiert .codezeile__nr {
+  color: var(--akzent);
+}
+.codezeile--aktiv {
+  background: rgba(var(--akzent-rgb), 0.16);
+  border-left-color: var(--akzent);
+}
+.codezeile--aktiv .codezeile__nr {
+  color: var(--akzent);
+  font-weight: 700;
+}
+.codezeile--gewaehlt {
+  background: rgba(240, 168, 90, 0.14);
+  border-left-color: var(--warn);
+}
+.codezeile--fehler {
+  background: rgba(240, 112, 112, 0.14);
+  border-left-color: var(--fehler);
+}
+.hl-kw {
+  color: #c792ea;
+  font-weight: 600;
+}
+.hl-typ {
+  color: #82aaff;
+  font-weight: 600;
+}
+.hl-str {
+  color: #a5d68a;
+}
+.hl-num {
+  color: #f0a85a;
+}
+.hl-lit {
+  color: #f78c6c;
+}
+.hl-kom {
+  color: var(--text-4);
+  font-style: italic;
+}
+
+.grundlagen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.grundlagen__kopf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  align-items: flex-start;
+}
+.grundlagen__kopf h2 {
+  font-size: var(--t-xl);
+}
+.grundlagen__raster {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+}
+.gkarte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.gkarte__titel {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-l);
+}
+.gkarte__nr {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-1);
+  border: 1px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+  color: var(--akzent);
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  flex: none;
+}
+.gkarte__text {
+  color: var(--text-2);
+  font-size: var(--t-m);
+}
+.gkarte__liste {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.gkarte__hinweis {
+  display: flex;
+  gap: var(--s-2);
+  align-items: flex-start;
+  margin-top: auto;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--linie);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.gkarte__hinweis svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--info);
+}
+.gkarte__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+
+.vis__leiste {
+  display: flex;
+  gap: var(--s-3);
+  align-items: center;
+  margin-bottom: var(--s-4);
+}
+.vis__auswahl {
+  max-width: 340px;
+}
+.vis__raster {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: var(--s-4);
+  align-items: start;
+}
+.vis__code {
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.vis__editor {
+  min-height: 360px;
+  font-size: 13px;
+  line-height: 1.7;
+  background: #0a0e11;
+  tab-size: 2;
+}
+.vis__steuerung {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+.vis__abspielen {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--akzent);
+  color: var(--akzent-text);
+  margin: 0 var(--s-1);
+  transition: transform var(--dauer) var(--kurve);
+}
+.vis__abspielen:active {
+  transform: scale(0.92);
+}
+.vis__abspielen:disabled {
+  opacity: 0.4;
+}
+.vis__zaehler {
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  color: var(--text-3);
+  margin-left: var(--s-2);
+}
+.vis__tempo {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.vis__tempo input {
+  accent-color: var(--akzent);
+  width: 100px;
+}
+.vis__ereignis-text {
+  font-weight: 600;
+  margin-top: var(--s-1);
+}
+.vis__vars {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--s-2);
+  font-size: var(--t-m);
+}
+.vis__vars td {
+  padding: 5px var(--s-2);
+  border-bottom: 1px solid var(--linie);
+  word-break: break-all;
+}
+.vis__vars td:first-child {
+  color: var(--text-3);
+  width: 40%;
+}
+.vis__var--neu td {
+  background: rgba(var(--akzent-rgb), 0.12);
+  color: var(--akzent-stark) !important;
+}
+.vis__ausgabe {
+  margin: var(--s-2) 0 0;
+  padding: var(--s-2) var(--s-3);
+  min-height: 40px;
+  border-radius: var(--r-1);
+  background: #0a0e11;
+  font-size: var(--t-m);
+  color: var(--gut);
+  white-space: pre-wrap;
+}
+.vis__fehler {
+  display: flex;
+  gap: var(--s-2);
+  color: var(--fehler);
+  border-color: rgba(240, 112, 112, 0.4);
+  font-size: var(--t-m);
+}
+.vis__leer {
+  font-size: var(--t-s);
+  margin-top: var(--s-2);
+}
+.vis__tipp {
+  margin-top: var(--s-3);
+  font-size: var(--t-s);
+}
+
+.tt td {
+  padding: var(--s-1);
+}
+.tt__feld {
+  height: 32px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.puzzle__liste {
+  list-style: none;
+  margin: 0;
+  padding: var(--s-2);
+  border-radius: var(--r-2);
+  background: #0a0e11;
+  border: 1px solid var(--linie);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.puzzle--richtig .puzzle__liste {
+  border-color: var(--akzent-linie);
+}
+.puzzle--falsch .puzzle__liste {
+  border-color: rgba(240, 112, 112, 0.5);
+}
+.puzzle__zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 2px var(--s-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-1);
+  border: 1px solid var(--linie);
+  cursor: grab;
+  transition: background var(--dauer) var(--kurve), transform var(--dauer) var(--kurve);
+}
+.puzzle__zeile:hover {
+  background: var(--flaeche-2);
+}
+.puzzle__zeile--zieht {
+  opacity: 0.5;
+}
+.puzzle__griff {
+  color: var(--text-4);
+}
+.puzzle__code {
+  flex: 1;
+  white-space: pre;
+  font-size: 13px;
+  overflow-x: auto;
+}
+.puzzle__knoepfe {
+  display: flex;
+}
+.puzzle__meldung,
+.puzzle__tipp {
+  margin-top: var(--s-2);
+  font-size: var(--t-s);
+}
+
+@media (max-width: 1000px) {
+  .grundlagen__raster,
+  .vis__raster {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

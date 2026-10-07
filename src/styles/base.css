@@ -163,3 +163,14 @@ pre {
 .stapel--8 {
   gap: var(--s-8);
 }
+
+/* Keine Ligaturen in Code: >= soll aussehen wie >=, damit man es so abtippt */
+code,
+kbd,
+pre,
+.mono,
+.feld--mono,
+textarea.feld {
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}
