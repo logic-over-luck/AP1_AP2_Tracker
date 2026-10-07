@@ -86,8 +86,10 @@ export function BlockKarte({ block, zustand: z, stand, offen, onUmschalten, ausw
               {z.erledigt}/{z.gesamt}
             </span>
           </span>
-          {uebungen.length > 0 && (
+          {uebungen.length > 0 ? (
             <SymbolKnopf icon="target" label="Üben" onClick={() => geheZu(raum, 'trainer', uebungen[0].trainer.id, { modus: uebungen[0].modus.id })} />
+          ) : (
+            <span class="symbolknopf-platz" aria-hidden="true" />
           )}
           <SymbolKnopf icon="copy" label="Lernprompt kopieren" onClick={() => promptKopieren(lernpromptBlock(block, inhalt))} />
           <Knopf

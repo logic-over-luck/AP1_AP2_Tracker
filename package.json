@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node tools/build.mjs",
     "watch": "node tools/build.mjs --watch",
-    "test": "node --test tests/",
+    "test": "node --test tests/*.test.mjs",
     "inhalte": "node tools/inhalte-pruefen.mjs",
     "browser": "node tools/browser-check.mjs"
   },

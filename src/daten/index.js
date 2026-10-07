@@ -24,7 +24,10 @@ export function baueIndex(daten) {
       ordner.set(o.id, ord);
       for (const b of o.bloecke) {
         const spListe = b.sp.map((id) => sp.get(id)).filter(Boolean);
-        const prio = spListe.reduce((m, s) => (PRIO_RANG[s.prio] > PRIO_RANG[m] ? s.prio : m), 'normal');
+        // Block-Priorität = Durchschnitt der Stichpunkte. Das Maximum wäre zu grob: Fast jeder
+        // Block hat irgendeinen gut belegten Stichpunkt.
+        const schnitt = spListe.reduce((a, s) => a + PRIO_RANG[s.prio], 0) / Math.max(1, spListe.length);
+        const prio = schnitt >= 2.5 ? 'hoch' : schnitt >= 1.5 ? 'mittel' : 'normal';
         const block = {
           ...b,
           raum: r.id,
