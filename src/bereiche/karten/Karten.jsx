@@ -37,8 +37,8 @@ export function stapelFuer(quelle, raum, stand) {
     case 'faellig':
       return { titel: 'Fällige Karten', ids: nachFaelligkeit(raumKarten.filter(faellig)) };
     case 'neu': {
-      // Neue Karten aus Blöcken mit hoher Priorität zuerst, sonst in Lernplan-Reihenfolge
-      const bloecke = [...inhalt.raeume.get(raum).bloeckeListe].sort((a, b) => PRIO_RANG[b.prio] - PRIO_RANG[a.prio]);
+      // Neue Karten aus den wichtigsten Blöcken zuerst (häufig und punktstark geprüft), sonst in Lernplan-Reihenfolge
+      const bloecke = [...inhalt.raeume.get(raum).bloeckeListe].sort((a, b) => PRIO_RANG[b.prio] - PRIO_RANG[a.prio] || b.gewicht - a.gewicht);
       const ids = bloecke.flatMap((b) => (inhalt.kartenJeBlock.get(b.id) ?? []).filter(neu));
       return { titel: 'Neue Karten', ids: ids.slice(0, NEUE_JE_SITZUNG) };
     }
@@ -165,7 +165,7 @@ function Uebersicht({ raum }) {
                       <li key={b.id}>
                         <button class="karten-block" onClick={() => start(`block:${b.id}`)} disabled={!bids.length}>
                           <span class="wachsen">{b.titel}</span>
-                          <PrioMarke prio={inhalt.bloecke.get(b.id).prio} />
+                          <PrioMarke {...inhalt.bloecke.get(b.id)} />
                           <span class="gedaempft tabellenziffern karten-block__zahl">
                             {bz.sicher}/{bz.gesamt}
                           </span>

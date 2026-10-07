@@ -59,14 +59,14 @@ export function Lernen({ raum, params }) {
   const zaehler = {
     alle: r.bloeckeListe.length,
     offen: r.bloeckeListe.filter((b) => !zustaende.get(b.id).fertig).length,
-    hoch: r.bloeckeListe.filter((b) => b.prio === 'hoch').length,
+    hoch: r.bloeckeListe.filter((b) => b.prio === 'top' || b.prio === 'hoch').length,
     faellig: r.bloeckeListe.filter((b) => zustaende.get(b.id).faellig).length,
   };
 
   const passtFilter = (b) => {
     const z = zustaende.get(b.id);
     if (filter === 'offen') return !z.fertig;
-    if (filter === 'hoch') return b.prio === 'hoch';
+    if (filter === 'hoch') return b.prio === 'top' || b.prio === 'hoch';
     if (filter === 'faellig') return z.faellig;
     return true;
   };
@@ -123,7 +123,7 @@ export function Lernen({ raum, params }) {
           eintraege={[
             { id: 'alle', text: 'Alle', zahl: zaehler.alle },
             { id: 'offen', text: 'Noch offen', zahl: zaehler.offen },
-            { id: 'hoch', text: 'Hohe Priorität', zahl: zaehler.hoch },
+            { id: 'hoch', text: 'Häufig geprüft', zahl: zaehler.hoch },
             { id: 'faellig', text: 'Fällig', zahl: zaehler.faellig, icon: zaehler.faellig ? 'refresh-cw' : undefined },
           ]}
         />

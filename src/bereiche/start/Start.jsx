@@ -156,7 +156,7 @@ function Fokus({ raum, fokus, gemerkt, sus }) {
             <Marke ton={h.art === 'wiederholung' ? 'warn' : 'akzent'} icon={h.art === 'wiederholung' ? 'refresh-cw' : h.art === 'weiter' ? 'step-forward' : 'rocket'}>
               {h.etikett}
             </Marke>
-            <PrioMarke prio={h.block.prio} />
+            <PrioMarke prio={h.block.prio} pruefungen={h.block.pruefungen} punkte={h.block.punkte} />
           </div>
           <h2 class="fokus-karte__titel">{h.block.titel}</h2>
           <p class="fokus-karte__satz">{h.block.satz ?? inhalt.ordner.get(h.block.ordner).titel}</p>

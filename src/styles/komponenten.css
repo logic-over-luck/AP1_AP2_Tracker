@@ -264,7 +264,7 @@
   opacity: 0.5;
 }
 
-/* ---------- Marken (Priorität, Status) ---------- */
+/* ---------- Marken (Wichtigkeit, Status) ---------- */
 .marke {
   display: inline-flex;
   align-items: center;
@@ -280,6 +280,11 @@
   white-space: nowrap;
   border: 1px solid currentColor;
   flex: none;
+}
+.marke--top {
+  color: #ff8a6b;
+  background: rgba(255, 138, 107, 0.12);
+  border-color: rgba(255, 138, 107, 0.45);
 }
 .marke--hoch {
   color: var(--prio-hoch);

@@ -1,30 +1,52 @@
 // Liest die Inhaltsdatei und die eigenen Inhalte und baut daraus das Datenpaket der App.
 // Nur, was die App anzeigt oder für die Logik braucht, kommt hinein. Belege, Katalogstellen
-// und Vermerke bleiben draußen; aus den Belegen wird hier nur die Priorität berechnet.
+// und Vermerke bleiben draußen; aus den Belegen wird hier nur die Wichtigkeit berechnet.
 
 import fs from 'node:fs';
 import path from 'node:path';
 
 const RAUM_NAMEN = { AP1: 'AP1', AP2: 'AP2', WISO: 'WiSo' };
 
-// Gewicht eines Belegs für die Feinsortierung innerhalb einer Prioritätsstufe.
-function belegGewicht(b) {
-  const aktuell = b.katalog === 'aktuell';
-  if (b.quelle === 'original') return aktuell ? 3 : 2;
-  return aktuell ? 1 : 0.5;
+// ---------- Wichtigkeit ----------
+// Wie wichtig ein Stichpunkt für die Prüfung ist, ergibt sich aus den ausgewerteten Prüfungen:
+// – Häufigkeit: in wie vielen Prüfungen kam er vor (jede Prüfung zählt nur einmal)
+// – Aktualität und Sicherheit: Originalprüfung nach aktuellem Katalog zählt voll, ältere Kataloge
+//   und bloße Themen-Stichworte (Podcast-Themenliste, Gedächtnisprotokolle) zählen weniger
+// – Punkte: Aufgaben mit vielen Punkten heben den Stichpunkt an (aus dem Rahmen und inhalte/gewichtung.json)
+// Gezeigt wird nur das Ergebnis (Stufe, Anzahl Prüfungen), nie die Quellen selbst.
+
+export const BELEG_GEWICHT = {
+  original: { aktuell: 1, alt: 0.6 },
+  podcast_stichwort: { aktuell: 0.5, alt: 0.3 },
+  forum: { aktuell: 0.5, alt: 0.3 },
+};
+
+export function belegGewicht(b) {
+  const g = BELEG_GEWICHT[b.quelle] ?? BELEG_GEWICHT.forum;
+  return b.katalog === 'aktuell' ? g.aktuell : g.alt;
 }
 
-// Prioritätsstufe aus der Belegstärke. Ohne Beleg heißt „normal wichtig", nicht unwichtig.
-export function prioritaetAusBelegstaerke(staerke) {
-  switch (staerke) {
-    case 'original_aktuell':
-      return 'hoch';
-    case 'original_alt':
-    case 'stichwort_aktuell':
-      return 'mittel';
-    default:
-      return 'normal';
-  }
+export function punkteBonus(punkte) {
+  if (!punkte) return 0;
+  return punkte >= 15 ? 1 : punkte >= 10 ? 0.5 : 0;
+}
+
+// Stufe aus dem Wert. Ohne Prüfungsbeleg heißt „selten geprüft" – das Thema steht trotzdem im Katalog.
+export const STUFEN_SP = [
+  ['top', 2.5],
+  ['hoch', 1.5],
+  ['mittel', 0.5],
+  ['normal', -Infinity],
+];
+export const stufeFuer = (wert, grenzen = STUFEN_SP) => grenzen.find(([, g]) => wert >= g)[0];
+
+export function wichtigkeit(s, punkteZusatz) {
+  const jePruefung = new Map();
+  for (const b of s.belege ?? []) jePruefung.set(b.pruefung_id, Math.max(jePruefung.get(b.pruefung_id) ?? 0, belegGewicht(b)));
+  const ausRahmen = [...String(s.rahmen ?? '').matchAll(/(\d+) Punkte/g)].map((m) => Number(m[1]));
+  const punkte = Math.max(0, punkteZusatz ?? 0, ...ausRahmen);
+  const wert = [...jePruefung.values()].reduce((a, b) => a + b, 0) + punkteBonus(punkte);
+  return { wert: Math.round(wert * 100) / 100, pruefungen: [...jePruefung.entries()].sort(), punkte: punkte || null, stufe: stufeFuer(wert) };
 }
 
 function liesJsonOrdner(ordner) {
@@ -49,13 +71,10 @@ export function ladeDaten(wurzel) {
     for (const k of daten.karten ?? []) karten.push({ id: k.id, sp: k.sp, k: k.k ?? null, v: k.vorne, h: k.hinten });
   }
 
+  const gewichtung = fs.existsSync(path.join(wurzel, 'inhalte', 'gewichtung.json')) ? JSON.parse(fs.readFileSync(path.join(wurzel, 'inhalte', 'gewichtung.json'), 'utf8')) : {};
   const sp = {};
   for (const s of inhalt.stichpunkte) {
-    const gewicht = new Map();
-    for (const b of s.belege ?? []) {
-      const g = belegGewicht(b);
-      gewicht.set(b.pruefung_id, Math.max(gewicht.get(b.pruefung_id) ?? 0, g));
-    }
+    const w = wichtigkeit(s, gewichtung.punkte?.[s.id]);
     sp[s.id] = {
       id: s.id,
       raum: s.teil,
@@ -67,8 +86,10 @@ export function ladeDaten(wurzel) {
       rahmen: s.rahmen,
       unklar: s.rahmen_unklar ? s.rahmen_unklar_details : null,
       koennen: s.koennen.map((k) => [k.id, k.text]),
-      prio: prioritaetAusBelegstaerke(s.belegstaerke),
-      gewicht: [...gewicht.values()].reduce((a, b) => a + b, 0),
+      prio: w.stufe,
+      gewicht: w.wert,
+      pruef: w.pruefungen,
+      punkte: w.punkte,
       gegen: s.gegenstuecke ?? [],
       kurz: kurz[s.id] ?? null,
     };

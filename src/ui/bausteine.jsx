@@ -79,15 +79,22 @@ export function Haken({ an, teil, onWechsel, label, gross, disabled, class: klas
   );
 }
 
-const PRIO_TEXT = { hoch: 'Hoch', mittel: 'Mittel', normal: 'Normal' };
-const PRIO_TIP = {
-  hoch: 'Kam in Prüfungen nach aktuellem Katalog vor',
-  mittel: 'Kam in älteren Prüfungen vor oder wird als Thema genannt',
-  normal: 'Steht im Katalog – normal wichtig',
-};
-export function PrioMarke({ prio }) {
+const PRIO_TEXT = { top: 'Top-Thema', hoch: 'Häufig', mittel: 'Gelegentlich', normal: 'Selten' };
+const PRIO_ICON = { top: 'flame' };
+
+// Wichtigkeit eines Themas: wie oft es in den ausgewerteten Prüfungen vorkam (und mit wie vielen Punkten)
+export function wichtigkeitText({ prio, pruefungen, punkte }) {
+  if (!pruefungen) return 'Bisher in keiner ausgewerteten Prüfung dran – steht aber im Prüfungskatalog';
+  const teile = [`Kam in ${pruefungen} ${pruefungen === 1 ? 'ausgewerteten Prüfung' : 'ausgewerteten Prüfungen'} vor`];
+  if (punkte) teile.push(`bis zu ${punkte} Punkte in einer Aufgabe`);
+  if (prio === 'top') teile.push('eines der wichtigsten Themen');
+  return teile.join(' · ');
+}
+
+export function PrioMarke({ prio, pruefungen, punkte }) {
   return (
-    <span class={`marke marke--${prio}`} data-tip={PRIO_TIP[prio]}>
+    <span class={`marke marke--${prio}`} data-tip={wichtigkeitText({ prio, pruefungen, punkte })}>
+      {PRIO_ICON[prio] && <Icon name={PRIO_ICON[prio]} groesse={11} strich={2.2} />}
       {PRIO_TEXT[prio]}
     </span>
   );

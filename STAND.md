@@ -14,7 +14,7 @@ nächsten offenen Punkt weiter.
 | **Grundgerüst** | Leiste links mit Lernraum-Umschalter (AP1, AP2, WiSo), Kopfzeile, Bereiche, Tastatursteuerung, Meldungen, Dialoge |
 | **Lernstand** | Ereignisprotokoll im Browser (localStorage), daraus berechnet: Fortschritt, Wiederholungen, Kartenstand, Serie, Rang, Aktivität, Empfehlung. Sicherung als Datei mit Versionsnummer |
 | **Start** | Kennzahlen, „Heute im Fokus" mit nachvollziehbarer Regel, Fokus-Timer, Aktivitätsübersicht, Rang und Serie, Tage bis zur Prüfung, Tempo bis zur Prüfung |
-| **Lernen** | Ordner → Blöcke → Stichpunkte aus der Inhaltsdatei; Häkchen, Priorität, Wiederholungs-Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Filter, Suche |
+| **Lernen** | Ordner → Blöcke → Stichpunkte aus der Inhaltsdatei; Häkchen, Wichtigkeit, Wiederholungs-Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Filter, Suche |
 | **Lernkarten** | Abstandswiederholung mit drei Bewertungen, Merken, Startpunkte: fällig, Stichpunkt, Block, Ordner, Zufallsmix, Gemerkte |
 | **Trainer** | Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan, Code (Pseudocode), SQL-Labor (nur AP2), Modellieren (Diagramme) |
 | **Nachschlagen** | Glossar, Hilfe |
@@ -96,9 +96,15 @@ nächsten offenen Punkt weiter.
 ## 3. Entscheidungen
 
 - **Eine HTML-Datei** statt mehrerer Dateien: robust beim Kopieren, garantiert ohne Nachladen.
-- **Priorität eines Blocks = Durchschnitt** seiner Stichpunkte (hoch 3, mittel 2, normal 1; ab 2,5 hoch, ab 1,5 mittel).
-  Das Maximum hätte fast jeden Block „hoch" gemacht. Stichpunkt-Priorität: original_aktuell → hoch;
-  original_alt, stichwort_aktuell → mittel; stichwort_alt, kein_beleg → normal.
+- **Wichtigkeit statt Belegstärke** (auf Wunsch geändert): Ein Block ist so wichtig, wie oft er in den ausgewerteten
+  Prüfungen dran war. Jede Prüfung zählt einmal mit ihrem stärksten Beleg: Originalprüfung nach aktuellem Katalog 1,
+  nach altem Katalog 0,6, nur Themen-Stichwort (Podcast-Themenliste, Gedächtnisprotokoll) 0,5 bzw. 0,3. Dazu Punkte:
+  eine Aufgabe ab 10 Punkten +0,5, ab 15 Punkten +1 (aus dem Rahmen; weitere Punktangaben in `inhalte/gewichtung.json`).
+  Die Stufe ist relativ zum wichtigsten Block des Raums: Top-Thema ab 80 %, Häufig ab 50 %, Gelegentlich ab 20 %,
+  sonst Selten. Relativ deshalb, weil WiSo nur drei ausgewertete Prüfungen hat. Die Marke zeigt beim Darüberfahren,
+  in wie vielen Prüfungen das Thema vorkam und wie viele Punkte es höchstens brachte – nie die Quellen selbst.
+  Offen: Eine Punkte-Auswertung je Thema (z. B. aus dem IT-Berufe-Podcast) würde die Gewichtung weiter schärfen;
+  die Seite war von hier aus nicht erreichbar.
 - **Wiederholungs-Phasen** nach 1, 7 und 30 Tagen, gesperrt bis zum Fälligkeitstag. Wird ein Block wieder geöffnet,
   ruhen die Phasen; erledigte bleiben erhalten.
 - **Lernkarten-Abstände** 0/1/3/7/16/35/75 Tage; „sicher" ab Stufe 3. „Nicht gewusst" kommt in derselben Runde noch einmal. „Gewusst" bei einer neuen Karte springt gleich auf 3 Tage, „Unsicher" auf 1 Tag – so unterscheiden sich die Knöpfe auch beim ersten Mal.

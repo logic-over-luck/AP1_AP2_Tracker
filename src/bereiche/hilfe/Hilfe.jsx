@@ -48,17 +48,25 @@ export function Hilfe() {
           <p>„Lernprompt kopieren" legt einen fertigen Auftrag mit dem vollen Wortlaut in die Zwischenablage – zum Einfügen in einen KI-Chat.</p>
         </Abschnitt>
 
-        <Abschnitt icon="trending-up" titel="Priorität">
-          <p>Die Priorität kommt daraus, wie gut ein Thema in ausgewerteten IHK-Prüfungen belegt ist:</p>
+        <Abschnitt icon="trending-up" titel="Wichtigkeit">
+          <p>
+            Die Marke an jedem Block zeigt, wie wichtig das Thema für die Prüfung ist. Berechnet wird das aus den ausgewerteten IHK-Prüfungen: in wie vielen
+            Prüfungen das Thema vorkam, wie aktuell (aktueller Katalog zählt voll, ältere Prüfungen und bloße Themen-Stichworte weniger) und – wo bekannt –
+            wie viele Punkte die Aufgabe brachte. Fahr mit der Maus über die Marke, dann siehst du die Zahlen.
+          </p>
           <ul>
             <li>
-              <span class="marke marke--hoch">Hoch</span> kam in Prüfungen nach dem aktuellen Katalog vor.
+              <span class="marke marke--top">Top-Thema</span> kam in vielen Prüfungen vor oder brachte viele Punkte – zuerst lernen.
             </li>
             <li>
-              <span class="marke marke--mittel">Mittel</span> kam in älteren Prüfungen vor oder wird für eine aktuelle Prüfung als Thema genannt.
+              <span class="marke marke--hoch">Häufig</span> kam mehrfach vor.
             </li>
             <li>
-              <span class="marke marke--normal">Normal</span> steht im Katalog, ohne Beleg in den ausgewerteten Prüfungen. Das heißt: normal wichtig, nicht unwichtig.
+              <span class="marke marke--mittel">Gelegentlich</span> kam ein- bis zweimal vor oder nur in älteren Prüfungen.
+            </li>
+            <li>
+              <span class="marke marke--normal">Selten</span> war in den ausgewerteten Prüfungen bisher kaum oder nicht dran. Es steht aber im
+              Prüfungskatalog und kann jederzeit kommen.
             </li>
           </ul>
         </Abschnitt>
@@ -76,7 +84,7 @@ export function Hilfe() {
           <ol>
             <li>fällige Wiederholungen (am längsten überfällig zuerst)</li>
             <li>angefangene Blöcke (die fast fertigen zuerst)</li>
-            <li>offene Blöcke mit hoher Priorität, dann mittlere, dann normale</li>
+            <li>offene Blöcke nach Wichtigkeit: Top-Themen zuerst, dann häufig, gelegentlich, selten geprüft</li>
             <li>wenn alles erledigt ist: fällige Lernkarten</li>
           </ol>
           <p>„Hier lohnt sich Wiederholen" zeigt Blöcke, deren Karten du zuletzt nicht wusstest oder deren Trainer-Aufgaben danebengingen.</p>

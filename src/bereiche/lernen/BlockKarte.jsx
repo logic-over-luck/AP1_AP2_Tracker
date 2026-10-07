@@ -65,7 +65,7 @@ export function BlockKarte({ block, zustand: z, stand, offen, onUmschalten, ausw
                 <Treffer text={block.titel} suche={suche} />
               </button>
             </h3>
-            <PrioMarke prio={block.prio} />
+            <PrioMarke prio={block.prio} pruefungen={block.pruefungen} punkte={block.punkte} />
             {z.faellig && (
               <Marke ton="warn" icon="refresh-cw">
                 Wiederholung fällig

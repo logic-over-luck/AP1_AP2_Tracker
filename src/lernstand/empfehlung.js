@@ -2,7 +2,7 @@
 //
 // 1. Fällige Wiederholungen – am längsten überfällig zuerst.
 // 2. Angefangene Blöcke – die weiter fortgeschrittenen zuerst, damit etwas fertig wird.
-// 3. Offene Blöcke – höchste Priorität zuerst, dann nach Prüfungsgewicht, dann Reihenfolge.
+// 3. Offene Blöcke – wichtigste zuerst (Stufe, dann Wert aus Häufigkeit und Punkten), dann Reihenfolge.
 // 4. Alles abgehakt – fällige Lernkarten.
 // Jede Empfehlung trägt einen Grund, der in der Oberfläche steht.
 
@@ -50,11 +50,13 @@ export function heuteImFokus(stand, index, raumId) {
       zustand: x.z,
       etikett: 'Neues Thema',
       grund:
-        x.block.prio === 'hoch'
-          ? 'Hohe Priorität: Dieses Thema kommt in Prüfungen nach aktuellem Katalog vor.'
-          : x.block.prio === 'mittel'
-            ? 'Mittlere Priorität und noch nicht begonnen.'
-            : 'Noch nicht begonnen – als Nächstes in deinem Lernplan.',
+        x.block.prio === 'top'
+          ? `Top-Thema: kam in ${x.block.pruefungen} ausgewerteten Prüfungen vor${x.block.punkte ? `, bis zu ${x.block.punkte} Punkte in einer Aufgabe` : ''}.`
+          : x.block.prio === 'hoch'
+            ? `Häufig geprüft: kam in ${x.block.pruefungen} ausgewerteten Prüfungen vor.`
+            : x.block.prio === 'mittel'
+              ? 'Gelegentlich geprüft und noch nicht begonnen.'
+              : 'Noch nicht begonnen – als Nächstes in deinem Lernplan.',
     });
   }
   const karten = kartenZustand(stand, index.kartenJeRaum.get(raumId) ?? []);

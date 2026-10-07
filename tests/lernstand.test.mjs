@@ -3,8 +3,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ladeDaten } from '../tools/daten.mjs';
-import { baueIndex } from '../src/daten/index.js';
+import { ladeDaten, wichtigkeit } from '../tools/daten.mjs';
+import { baueIndex, PRIO_RANG } from '../src/daten/index.js';
 import { ableiten, blockZustand, kartenZustand, serieBerechnen } from '../src/lernstand/ableiten.js';
 import { tagPlus, tageZwischen, tagVon, datumAusTag } from '../src/lernstand/zeit.js';
 import { naechsteStufe, rangFuer, RAENGE, KARTEN_ABSTAND } from '../src/lernstand/regeln.js';
@@ -146,7 +146,9 @@ test('Heute im Fokus: fällige Wiederholung vor angefangenem Block vor offenem T
   assert.equal(f.weitere[0].block.id, angefangen.id);
   f = heuteImFokus(ableiten([], index, heute), index, 'AP1');
   assert.equal(f.haupt.art, 'neu');
-  assert.equal(f.haupt.block.prio, 'hoch');
+  // Ohne Lernstand: das wichtigste offene Thema des Raums (höchste Stufe, dann höchster Wert)
+  const wichtigste = [...index.raeume.get('AP1').bloeckeListe].sort((a, b) => PRIO_RANG[b.prio] - PRIO_RANG[a.prio] || b.gewicht - a.gewicht)[0];
+  assert.equal(f.haupt.block.id, wichtigste.id);
 });
 
 test('Tempo bis zur Prüfung', () => {
@@ -201,4 +203,26 @@ test('Trainer-Zuordnung: jeder Stichpunkt außer „Wissen" wird geübt; SQL nur
     modiIn(TRAINER.find((t) => t.id === 'kaufmaennisch'), 'WISO').map((m) => m.id),
     ['sv', 'gewinn', 'kennzahlen'],
   );
+});
+
+test('Wichtigkeit: Häufigkeit, Aktualität und Punkte', () => {
+  const b = (pruefung_id, quelle, katalog) => ({ pruefung_id, quelle, katalog });
+  // dieselbe Prüfung zählt nur einmal, mit dem stärksten Beleg
+  let w = wichtigkeit({ rahmen: '', belege: [b('A', 'podcast_stichwort', 'aktuell'), b('A', 'original', 'aktuell')] });
+  assert.equal(w.wert, 1);
+  assert.equal(w.pruefungen.length, 1);
+  // drei aktuelle Originalprüfungen → Top-Thema
+  w = wichtigkeit({ rahmen: '', belege: ['A', 'B', 'C'].map((p) => b(p, 'original', 'aktuell')) });
+  assert.equal(w.stufe, 'top');
+  // ältere Prüfungen zählen weniger
+  w = wichtigkeit({ rahmen: '', belege: ['A', 'B'].map((p) => b(p, 'original', 'alt')) });
+  assert.equal(w.wert, 1.2);
+  assert.equal(w.stufe, 'mittel');
+  // viele Punkte heben an (Rahmen oder Zusatzdatei)
+  w = wichtigkeit({ rahmen: 'brachte 18 Punkte', belege: [b('A', 'original', 'aktuell')] });
+  assert.equal(w.punkte, 18);
+  assert.equal(w.stufe, 'hoch');
+  assert.equal(wichtigkeit({ rahmen: '', belege: [] }, 12).wert, 0.5);
+  // ohne Beleg: selten geprüft
+  assert.equal(wichtigkeit({ rahmen: '', belege: [] }).stufe, 'normal');
 });

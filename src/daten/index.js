@@ -2,8 +2,17 @@
 // damit die Tests sie mit Node laden können.
 
 export const RAEUME = ['AP1', 'AP2', 'WISO'];
-export const PRIO_RANG = { hoch: 3, mittel: 2, normal: 1 };
-export const PRIO_NAME = { hoch: 'Hoch', mittel: 'Mittel', normal: 'Normal' };
+// Wichtigkeit (siehe tools/daten.mjs): wie oft und wie aktuell ein Thema geprüft wurde, dazu Punkte.
+export const PRIO_RANG = { top: 4, hoch: 3, mittel: 2, normal: 1 };
+export const PRIO_NAME = { top: 'Top-Thema', hoch: 'Häufig geprüft', mittel: 'Gelegentlich geprüft', normal: 'Selten geprüft' };
+// Blockstufe relativ zum wichtigsten Block des Raums: WiSo hat weniger ausgewertete Prüfungen als
+// AP1/AP2, ein Thema, das in allen dran war, ist dort trotzdem ein Top-Thema.
+const BLOCK_ANTEIL = [
+  ['top', 0.8],
+  ['hoch', 0.5],
+  ['mittel', 0.2],
+  ['normal', -Infinity],
+];
 
 export function baueIndex(daten) {
   const raeume = new Map();
@@ -24,16 +33,21 @@ export function baueIndex(daten) {
       ordner.set(o.id, ord);
       for (const b of o.bloecke) {
         const spListe = b.sp.map((id) => sp.get(id)).filter(Boolean);
-        // Block-Priorität = Durchschnitt der Stichpunkte. Das Maximum wäre zu grob: Fast jeder
-        // Block hat irgendeinen gut belegten Stichpunkt.
-        const schnitt = spListe.reduce((a, s) => a + PRIO_RANG[s.prio], 0) / Math.max(1, spListe.length);
-        const prio = schnitt >= 2.5 ? 'hoch' : schnitt >= 1.5 ? 'mittel' : 'normal';
+                // Wie oft war der Block als Ganzes dran? Jede Prüfung zählt einmal (stärkster Beleg), dazu Punkte.
+        const jePruefung = new Map();
+        for (const s of spListe) for (const [p, g] of s.pruef ?? []) jePruefung.set(p, Math.max(jePruefung.get(p) ?? 0, g));
+        const punkte = Math.max(0, ...spListe.map((s) => s.punkte ?? 0)) || null;
+        const wert = [...jePruefung.values()].reduce((a, g) => a + g, 0) + (punkte >= 15 ? 1 : punkte >= 10 ? 0.5 : 0);
+        const pruefungen = jePruefung.size;
         const block = {
           ...b,
           raum: r.id,
           ordner: o.id,
-          prio,
-          gewicht: spListe.reduce((a, s) => a + s.gewicht, 0),
+          prio: 'normal', // wird unten relativ zum Raum gesetzt
+          pruefungen,
+          punkte,
+          // feiner Gleichstandsbrecher: Anteil gut belegter Stichpunkte im Block
+          gewicht: wert + spListe.reduce((a, s) => a + s.gewicht, 0) / Math.max(1, spListe.length) / 100,
           arten: [...new Set(spListe.map((s) => s.art))],
         };
         bloecke.set(b.id, block);
@@ -41,6 +55,11 @@ export function baueIndex(daten) {
         ord.spIds.push(...b.sp);
         raum.spAnzahl += b.sp.length;
       }
+    }
+    const hoechster = Math.max(0, ...raum.bloeckeListe.map((b) => b.gewicht));
+    for (const b of raum.bloeckeListe) {
+      const anteil = hoechster ? b.gewicht / hoechster : 0;
+      b.prio = b.gewicht > 0 ? BLOCK_ANTEIL.find(([, g]) => anteil >= g)[0] : 'normal';
     }
   }
 
