@@ -121,7 +121,7 @@ export default {
           text: 'Nennen Sie zwei Gründe, die trotz der höheren monatlichen Kosten für das Leasing sprechen können.',
           antwort: { art: 'text', zeilen: 3 },
           loesung: [
-            '- Keine hohe Einmalzahlung, Liquidität bleibt erhalten (Geld steht für andere Umzugskosten zur Verfügung)\n- Feste, gut planbare monatliche Raten\n- Nach Ablauf der Laufzeit einfacher Austausch gegen aktuelle Geräte\n- Leasingraten sind als Betriebsausgabe sofort absetzbar, keine Abschreibung nötig\n- Entsorgung bzw. Rücknahme der Altgeräte übernimmt der Leasinggeber\n- Andere sinnvolle Antworten sind richtig.',
+            '- Keine hohe Einmalzahlung, Liquidität bleibt erhalten (Geld steht für andere Umzugskosten zur Verfügung)\n- Feste, gut planbare monatliche Raten\n- Nach Ablauf der Laufzeit einfacher Austausch gegen aktuelle Geräte\n- Leasingraten sind laufender Aufwand (Betriebsausgabe); die Geräte erscheinen nicht in der eigenen Bilanz\n- Rücknahme der Geräte am Laufzeitende durch den Leasinggeber, keine eigene Entsorgung\n- Service ist in der Rate enthalten\n- Andere sinnvolle Antworten sind richtig.',
           ],
           bewertung: ['je Grund 1 P (max. 2)', 'andere sinnvolle Antworten sind richtig'],
         },
@@ -259,7 +259,7 @@ export default {
             zeilen: [
               ['Eine neue IP-Konfiguration vom DHCP-Server anfordern', null],
               ['Die Erreichbarkeit des Standardgateways prüfen', null],
-              ['Prüfen, ob der Name nas01.kanzlei.local in eine IP-Adresse aufgelöst wird', null],
+              ['Prüfen, ob der Name nas01.kanzlei.internal in eine IP-Adresse aufgelöst wird', null],
               ['Den Weg der Pakete zu einem Server im Internet verfolgen', null],
             ],
           },
@@ -270,7 +270,7 @@ export default {
                 zeilen: [
                   ['neue IP-Konfiguration anfordern', '`ipconfig /renew` (vorher ggf. `ipconfig /release`)'],
                   ['Gateway prüfen', '`ping 192.168.40.1`'],
-                  ['Namensauflösung prüfen', '`nslookup nas01.kanzlei.local` (auch `ping nas01.kanzlei.local` mit Blick auf die aufgelöste Adresse)'],
+                  ['Namensauflösung prüfen', '`nslookup nas01.kanzlei.internal` (auch `ping nas01.kanzlei.internal` mit Blick auf die aufgelöste Adresse)'],
                   ['Weg verfolgen', '`tracert www.beispiel.de` (bzw. `pathping`)'],
                 ],
               },
@@ -331,7 +331,7 @@ export default {
           nr: 'db',
           punkte: 2,
           sp: ['AP1-4-2-1', 'AP1-1-5-3'],
-          text: 'Nach der Einrichtung prüfen Sie einen Arbeitsplatz anhand eines Testprotokolls. Das NAS enthält zwei Festplatten mit je 8 TB im RAID 1.\n\nBegründen Sie die Abweichung bei Testfall T2.',
+          text: 'Nach der Einrichtung prüfen Sie einen Arbeitsplatz anhand eines Testprotokolls. Laut Datenblatt stellt das neue NAS für die Mandantendaten eine Freigabe mit einer nutzbaren Kapazität von 8 TB bereit.\n\nBegründen Sie die Abweichung bei Testfall T2.',
           vorgaben: [
             {
               tabelle: {
@@ -347,7 +347,7 @@ export default {
           ],
           antwort: { art: 'text', zeilen: 4 },
           loesung: [
-            'Es liegt kein Fehler vor. Der Hersteller gibt die Kapazität mit Dezimalpräfix an (1 TB = 10¹² Byte). Das Betriebssystem rechnet mit Binärpräfixen (1 TiB = 2⁴⁰ Byte), zeigt aber „TB“ an. 8 TB entsprechen etwa 7,28 TiB; Windows kürzt die Anzeige auf 7,27. Im RAID 1 wird gespiegelt, deshalb ist nur die Kapazität einer Festplatte (8 TB) nutzbar. Das erwartete Ergebnis im Protokoll sollte korrigiert werden.',
+            'Es liegt kein Fehler vor. Der Hersteller gibt die Kapazität mit Dezimalpräfix an (1 TB = 10¹² Byte). Das Betriebssystem rechnet mit Binärpräfixen (1 TiB = 2⁴⁰ Byte), zeigt aber „TB“ an. 8 TB entsprechen etwa 7,28 TiB; Windows kürzt die Anzeige auf 7,27. Das erwartete Ergebnis im Protokoll sollte korrigiert werden.',
           ],
           bewertung: ['1 P: Hersteller dezimal (10¹²), Betriebssystem binär (2⁴⁰)', '1 P: Folgerung – kein Defekt, Werte entsprechen sich'],
         },
