@@ -10,7 +10,7 @@ import { einstellung, setzeEinstellung, useEinstellung } from '../../../lernstan
 import { ladeEngine } from './laden.js';
 import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
-import { GRUNDLAGEN, KLAUSELN, BEFEHLSGRUPPEN } from './grundlagen.js';
+import { GRUNDLAGEN, KLAUSELN } from './grundlagen.js';
 import { setzeEin } from './einfuegen.js';
 
 const SPICKZETTEL = {
@@ -72,7 +72,6 @@ function Labor({ modus, startAufgabe }) {
         <Icon name="database" groesse={18} /> Datenbank wird gestartet …
       </div>
     );
-  if (modus.id === 'grundlagen') return <Grundlagen />;
   if (modus.id === 'frei') return <FreiesLabor engine={engine} />;
   return <AufgabenLabor engine={engine} modus={modus} startAufgabe={startAufgabe} />;
 }
@@ -487,36 +486,6 @@ function useEinfuegen(editor, text, setText, schema) {
       t.dataset.pos = r.pos;
     });
   };
-}
-
-// ---------- Grundlagen: kleines Lexikon ----------
-
-function Grundlagen() {
-  return (
-    <div class="sql-grund">
-      <section class="flaeche sql-grund__kopf">
-        <div class="ueberschrift-klein ueberschrift-klein--akzent">Reihenfolge in einer Abfrage</div>
-        <div class="sql-grund__klauseln">
-          {KLAUSELN.map((k, i) => (
-            <span key={k} class="sql-grund__klausel">
-              <span class="sql-grund__klausel-nr">{i + 1}</span>
-              <span class="mono">{k}</span>
-            </span>
-          ))}
-        </div>
-        <div class="sql-grund__gruppen">
-          {BEFEHLSGRUPPEN.map((g) => (
-            <span key={g.kurz} class="sql-grund__gruppe">
-              <strong class="mono">{g.kurz}</strong> {g.name}: <span class="mono gedaempft">{g.befehle}</span>
-            </span>
-          ))}
-        </div>
-      </section>
-      <section class="flaeche sql-lexikon">
-        <Lexikon />
-      </section>
-    </div>
-  );
 }
 
 // Wie der Belegsatz „SQL-Syntax (Auszug)": Syntax | Beschreibung, nach Bereichen gegliedert

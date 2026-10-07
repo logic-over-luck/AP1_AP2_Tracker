@@ -81,7 +81,8 @@ nächsten offenen Punkt weiter.
 - Pseudocode-Trainer: eigener Interpreter (`src/bereiche/trainer/code/pseudo.js`), Grundlagen, Visualizer, Schreibtischtest, Puzzle, Fehlersuche, Suchen & Sortieren
 - SQL-Labor (nur AP2): sql.js läuft aus dem eingebetteten WebAssembly (`sql/laden.js`, kein fetch), 32 Abfragen,
   7 Änderungs-, 5 Struktur- und 6 Rechte-Aufgaben, freies Labor mit Beispielen; Prüfung über das Ergebnis,
-  erwartetes Ergebnis und Musterlösung abrufbar, Schema-Ansicht mit PK/FK (klickbar), Fehlermeldungen auf Deutsch.
+  Musterlösung und Nachschlagewerk unter jeder Aufgabe aufklappbar (kein eigener Grundlagen-Reiter mehr),
+  Schema-Ansicht mit PK/FK (klickbar), Fehlermeldungen auf Deutsch.
   Gelöste Aufgaben stehen im Lernstand (Ereignis `aufgabe` mit Feld `a` = Aufgaben-ID), Entwürfe nur in der Ansicht
 - Modellieren: eigener SVG-Diagramm-Baukasten (`modellieren/diagramm.jsx`) für UML (Anwendungsfall, Klasse, Aktivität,
   Sequenz, Zustand), ER- und Tabellenmodell, EPK/BPMN und Masken. 108 Aufgaben in 11 Bereichen: Lücken ergänzen und

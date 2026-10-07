@@ -6,14 +6,6 @@
 // Reihenfolge der Klauseln in einer Abfrage
 export const KLAUSELN = ['SELECT', 'FROM', 'JOIN … ON', 'WHERE', 'GROUP BY', 'HAVING', 'ORDER BY'];
 
-// Befehlsgruppen
-export const BEFEHLSGRUPPEN = [
-  { kurz: 'DQL', name: 'Abfragen', befehle: 'SELECT' },
-  { kurz: 'DML', name: 'Daten ändern', befehle: 'INSERT, UPDATE, DELETE' },
-  { kurz: 'DDL', name: 'Struktur', befehle: 'CREATE, ALTER, DROP' },
-  { kurz: 'DCL', name: 'Rechte', befehle: 'GRANT, REVOKE' },
-];
-
 // [Syntax, Beschreibung, nichtAusfuehrbar?]
 export const GRUNDLAGEN = [
   {
