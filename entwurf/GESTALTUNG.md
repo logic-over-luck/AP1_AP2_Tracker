@@ -9,15 +9,16 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 ## Gemeinsam in allen drei Richtungen
 
 - Leiste links 112 px, Inhaltsspalte überall 66rem breit (`scrollbar-gutter: stable`, damit nichts springt)
-- Lernseite zweigeteilt: links die Liste (Ordner aufklappbar, Stichpunkte nicht), rechts ein Detailfeld mit
-  fester Breite von 22rem. Der Abstand dazwischen entspricht der fünften Abstandsstufe. Ein Klick auf einen
-  Stichpunkt tauscht nur den Inhalt rechts aus (kurzes Überblenden), links bewegt sich nichts. Das Feld läuft
-  beim Scrollen mit und scrollt bei langem Inhalt in sich selbst. Unter 960 px Breite wird es zu einem Blatt,
-  das von unten hereinfährt.
-- Detailfeld: Ordner · Block, Titel, Art und Zahl der Können-Aussagen, Häkchen „Erledigt“, Rahmen, Können,
-  Knöpfe. Schrift dort eine Stufe kleiner als in der Liste (nur der Titel ist größer)
-- Nummern und Häkchen hängen in einer eigenen Spalte links („Einzug“); Ordnertitel, Blocktitel und
-  Stichpunkttitel beginnen an derselben Kante
+- Lernseite: oben die acht Oberordner als Auswahl (4 × 2, mit Fortschrittsbalken), darunter nur der
+  gewählte Ordner. Ein Wechsel blendet kurz über.
+- Je Themenblock eine Karte. Kopf: Status, Titel, „x von y“, Lernkarten (noch ohne Funktion), Pfeil zum
+  Zuklappen. Inhalt links die Stichpunkte mit Häkchen und Info-Symbol, rechts ein Feld von 20rem mit der
+  Kurzinfo zum gewählten Stichpunkt und darunter der Wiederholung (1x / 2x / 3x) für den ganzen Block.
+  Unter 960 px rückt das rechte Feld unter die Liste.
+- Kurzinfo: Titel, Art, Rahmen in einem Satz, 2–4 Können-Stichworte, Knöpfe. Schrift eine Stufe kleiner.
+  Die Texte kommen aus `Kurzfassung_AP1_AP2_tracker.json`. Fehlt sie, kürzt `bauen.py` als Platzhalter
+  und die Seite zeigt den Hinweis „Automatisch gekürzt“.
+- Häkchen stehen in einer eigenen Spalte; alle Stichpunkttitel einer Karte beginnen an derselben Kante
 - Zwei Knopfarten: Primär (gefüllt, Akzent) und Sekundär (Rand)
 - Eine Kartenart, eine Eckenrundung, eine Schrift, vier Schriftgrößen
 - Eine Übergangsdauer je Richtung für alles (Aufklappen, Häkchen, Balken, Hover); längere Effekte sind Vielfache davon
@@ -34,7 +35,7 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 | Eckenrundung | 4 px |
 | Übergänge | 220 ms, weich auslaufend (`cubic-bezier(.2,.7,.2,1)`) |
 | Spiel | Häkchen zeichnet sich, Zahl zählt; kein Rang im Kopf; Rangaufstieg: Ring zeichnet sich ruhig |
-| Detailfeld | ohne Fläche, nur durch eine Haarlinie links abgesetzt; Inhalt blendet mit 4 px Hub über |
+| Karten | nur Haarlinie, keine Fläche; Status als Ring; Kurzinfo blendet mit 4 px Hub über |
 
 ## B · Konsole (mittel)
 
@@ -47,7 +48,7 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 | Eckenrundung | 0 px |
 | Übergänge | 120 ms, linear; Balken und Häkchen in Stufen (`steps`) |
 | Spiel | gestrichelte Linien, Segmentbalken, Cursor am Titel, `rang=hello_world` im Kopf; Rangaufstieg als Terminalausgabe |
-| Detailfeld | gestrichelte Linie links; gewählter Stichpunkt mit Akzentstrich und `>`; Inhalt blendet ohne Bewegung über |
+| Karten | Fläche mit Linie, Stand als `[2/4]`, Status als Füllbalken in Stufen; gewählter Ordner und Stichpunkt mit Akzentstrich; Kurzinfo blendet ohne Bewegung über |
 
 ## C · Level (deutlich)
 
@@ -60,7 +61,7 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 | Eckenrundung | 12 px |
 | Übergänge | 300 ms; Flächen weich, Abzeichen und Häkchen federnd (`cubic-bezier(.34,1.56,.64,1)`) |
 | Spiel | Ordner als Karten, „+1“ beim Abhaken, Glanz über dem Balken, Sechseck-Abzeichen, Rang-Chip im Kopf; Rangaufstieg mit Funken |
-| Detailfeld | eigene Karte; Inhalt gleitet 12 px von rechts herein |
+| Karten | Fläche ohne Linie, rechtes Feld als eingelassene Fläche; Status-Ring mit Schein und Plopp; Kurzinfo gleitet 12 px von rechts herein |
 
 ## Spätere Akzentfarben (im Prüfungsmenü als Punkte zu sehen)
 

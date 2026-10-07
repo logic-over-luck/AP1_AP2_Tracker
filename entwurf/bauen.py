@@ -4,24 +4,54 @@
 Aufruf:  python3 entwurf/bauen.py
 Ergebnis: entwurf/ap1-entwurf.html (ohne Server im Browser zu öffnen)
 
+Liegt im Hauptverzeichnis die Datei Kurzfassung_AP1_AP2_tracker.json, nimmt die
+Seite deren Kurzformen. Sonst kürzt das Skript als Platzhalter selbst (erster Satz
+des Rahmens, die ersten drei Können-Aussagen) und die Seite kennzeichnet das.
+
 Mit --nur-inhalt PFAD wird zusätzlich eine Fassung ohne <html>/<head>/<body>
 geschrieben (zum Veröffentlichen als Artifact).
 """
 import json
+import re
 import pathlib
 import sys
 
 HIER = pathlib.Path(__file__).resolve().parent
 QUELLE = HIER.parent / "Inhaltsdatei_AP1_AP2_tracker.json"
+KURZ = HIER.parent / "Kurzfassung_AP1_AP2_tracker.json"
 VORLAGE = HIER / "vorlage.html"
 ZIEL = HIER / "ap1-entwurf.html"
 TRENNER = "<!--KOERPER-->"
+
+
+ANFANG = re.compile(r"^Du (kannst|kennst|weißt|verstehst|unterscheidest) ")
+
+
+def platzhalter(s):
+    """Grobe Kürzung, bis die echte Kurzfassung da ist."""
+    satz = re.split(r"(?<=[.!?])\s+(?=[A-ZÄÖÜ])", s["rahmen"].strip())[0]
+    koennen = []
+    for k in s["koennen"][:3]:
+        t = ANFANG.sub("", k["text"]).rstrip(".")
+        koennen.append(t[:1].upper() + t[1:])
+    return {"rahmen": satz, "koennen": koennen, "auto": True}
+
+
+def kurzfassungen():
+    if not KURZ.exists():
+        return {}
+    k = json.loads(KURZ.read_text("utf-8"))["stichpunkte"]
+    return {
+        i: {"rahmen": v["rahmen_kurz"], "koennen": [x["text"] for x in v["koennen_kurz"]], "auto": False}
+        for i, v in k.items()
+    }
 
 
 def ap1_daten():
     """Nur der Teil AP1 und nur die Felder, die die Seite anzeigt."""
     d = json.loads(QUELLE.read_text("utf-8"))
     sp = {s["id"]: s for s in d["stichpunkte"]}
+    kurz = kurzfassungen()
     teil = next(t for t in d["struktur"] if t["teil"] == "AP1")
     return {
         "teil": "AP1",
@@ -39,8 +69,7 @@ def ap1_daten():
                                 "id": i,
                                 "titel": sp[i]["stichpunkt"],
                                 "art": sp[i]["art"],
-                                "rahmen": sp[i]["rahmen"],
-                                "koennen": [k["text"] for k in sp[i]["koennen"]],
+                                "kurz": kurz.get(i) or platzhalter(sp[i]),
                             }
                             for i in b["stichpunkte"]
                         ],
