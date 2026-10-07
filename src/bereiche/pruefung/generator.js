@@ -80,7 +80,9 @@ export function stelleZusammen(teilId, saetze, { satzId = null, startwert, index
 
   const pool = eigene.flatMap((satz) => satz.aufgaben.map((aufgabe) => ({ satz, aufgabe, w: gewichtVon(spVonAufgabe(aufgabe), index) })));
   const gewaehlt = [];
-  const frei = (x) => !gewaehlt.some((g) => g.satz.id === x.satz.id || g.aufgabe.id === x.aufgabe.id);
+  // jede Aufgabe aus einem anderen Satz – solange der Vorrat genug Sätze hat
+  const genugSaetze = eigene.length >= teil.aufgaben;
+  const frei = (x) => !gewaehlt.some((g) => g.aufgabe.id === x.aufgabe.id || (genugSaetze && g.satz.id === x.satz.id));
   // erst die Pflicht-Bausteine des Bauplans, dann gewichtet auffüllen
   for (const arten of teil.pflicht ?? []) {
     const kandidaten = pool.filter((x) => frei(x) && arten.includes(x.aufgabe.art));
