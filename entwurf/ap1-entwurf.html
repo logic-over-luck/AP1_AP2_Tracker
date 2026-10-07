@@ -118,7 +118,7 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 
 /* ---------- Inhaltsspalte ---------- */
 .haupt { min-width: 0; padding: var(--s6) var(--s4) 160px; }
-.spalte { width: min(100%, 44rem); margin-inline: auto; }
+.spalte { width: min(100%, 66rem); margin-inline: auto; }
 .seitenkopf { display: grid; gap: var(--s2); padding-bottom: var(--s5); }
 .eyebrow, .label { font-size: var(--fs-1); color: var(--gedaempft); }
 .titel { font-size: var(--fs-4); line-height: 1.2; font-weight: var(--w-kopf); text-wrap: balance; }
@@ -187,7 +187,13 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 .pfeil { display: grid; place-items: center; width: 24px; height: calc(var(--fs-2) * var(--lh)); color: var(--blass); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
 .pfeil::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); }
 [aria-expanded="true"] > .pfeil { transform: rotate(180deg); color: var(--akzent); }
-.sp-knopf:hover .pfeil, .ordner-knopf:hover .pfeil { color: var(--text); }
+.ordner-knopf:hover .pfeil { color: var(--text); }
+.zeiger { display: grid; place-items: center; width: 24px; height: calc(var(--fs-2) * var(--lh)); color: var(--blass); opacity: 0; transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.zeiger::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateX(-2px) rotate(-45deg); }
+.sp-knopf:hover .zeiger, .sp-knopf:focus-visible .zeiger { opacity: 1; }
+.sp[data-gewaehlt] .sp-zeile { background: var(--akzent-hauch); }
+.sp[data-gewaehlt] .sp-titel { color: var(--text); }
+.sp[data-gewaehlt] .zeiger { opacity: 1; color: var(--akzent); transform: translateX(2px); }
 
 /* Aufklappen: schiebt den Rest weich nach unten */
 .klapp { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur) var(--ease); }
@@ -195,10 +201,23 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 .klapp-innen { min-height: 0; overflow: hidden; opacity: 0; transition: opacity var(--dur) var(--ease); }
 .klapp[data-offen="true"] > .klapp-innen { opacity: 1; }
 
-.sp-detail { display: grid; gap: var(--s3); padding: var(--s1) var(--s1) var(--s4) var(--kante); }
+/* Liste links, Detailfeld rechts. Das Feld läuft beim Scrollen mit und hat eine feste Breite. */
+.lern-raster { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; column-gap: var(--s5); align-items: start; }
+.detail {
+  position: sticky; top: var(--s4); max-height: calc(100vh - var(--s4) - 88px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 0 var(--s1) var(--s3) var(--s4); border-left: 1px solid var(--linie);
+  font-size: var(--fs-1);
+}
+.detail .detail-zu { display: none; }
+.detail-innen { display: grid; gap: var(--s3); transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.detail-innen.wechsel { opacity: 0; transform: translateY(4px); }
+.detail-kopf { display: grid; gap: var(--s1); }
+.detail-titel { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; text-wrap: balance; overflow-wrap: anywhere; }
+.detail-meta { color: var(--gedaempft); }
+.haken.mit-text { width: auto; justify-self: start; gap: var(--s1); height: 32px; font-size: var(--fs-1); color: var(--gedaempft); transition: color var(--dur) var(--ease); }
+.haken.mit-text[aria-checked="true"] { color: var(--text); }
 .feld { display: grid; gap: var(--s1); }
-.rahmen { max-width: 62ch; }
-.koennen { list-style: none; padding: 0; display: grid; gap: var(--s1); max-width: 62ch; }
+.koennen { list-style: none; padding: 0; display: grid; gap: var(--s1); }
 .koennen li { position: relative; padding-left: 1.25em; }
 .koennen li::before { content: "–"; position: absolute; left: 0; color: var(--blass); }
 .aktionen { display: flex; flex-wrap: wrap; gap: var(--s2); }
@@ -221,7 +240,7 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 .ist-hover, .ist-aktiv { pointer-events: none; }
 
 /* Karte: die eine Art Karte */
-.karte { display: grid; gap: var(--s2); padding: var(--s3); background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); }
+.karte { display: grid; gap: var(--s2); max-width: 32rem; padding: var(--s3); background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); }
 .karte-titel { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; text-wrap: balance; }
 .karte-meta { font-size: var(--fs-1); color: var(--gedaempft); }
 
@@ -343,7 +362,10 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 [data-stil="konsole"] .knopf.primaer:active, [data-stil="konsole"] .knopf.ist-aktiv { transform: translate(1px, 1px); }
 [data-stil="konsole"] .rang-chip { color: var(--gedaempft); }
 [data-stil="konsole"] .rang-chip b { color: var(--akzent); font-weight: 400; }
-[data-stil="konsole"] .sp-zeile:hover { box-shadow: inset 2px 0 0 var(--akzent); }
+[data-stil="konsole"] .sp-zeile:hover, [data-stil="konsole"] .sp[data-gewaehlt] .sp-zeile { box-shadow: inset 2px 0 0 var(--akzent); }
+[data-stil="konsole"] .zeiger::before { content: ">"; width: auto; height: auto; border: 0; transform: none; }
+[data-stil="konsole"] .detail { border-left-style: dashed; }
+[data-stil="konsole"] .detail-innen.wechsel { transform: none; }
 [data-stil="konsole"] .abz-ring { display: none; }
 [data-stil="konsole"] .abz-form { border: 1px solid var(--linie); }
 [data-stil="konsole"] .abz-erreicht .abz-form { border-color: var(--gedaempft); }
@@ -375,6 +397,8 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 [data-stil="level"] .knopf.primaer:hover, [data-stil="level"] .knopf.primaer.ist-hover { box-shadow: 0 0 24px -4px var(--glut); transform: translateY(-1px); }
 [data-stil="level"] .knopf:active, [data-stil="level"] .knopf.ist-aktiv { transform: scale(.96); }
 [data-stil="level"] .karte { border-color: transparent; }
+[data-stil="level"] .detail { border: 0; padding: var(--s3); background: var(--flaeche); border-radius: var(--radius); }
+[data-stil="level"] .detail-innen.wechsel { transform: translateX(12px); }
 [data-stil="level"] .rang-chip { padding: 4px var(--s2) 4px 4px; border-radius: 999px; background: var(--flaeche); color: var(--text); font-weight: 600; }
 [data-stil="level"] .rang-chip .mini-hex { display: grid; place-items: center; width: 22px; height: 22px; background: var(--akzent); color: var(--akzent-tinte); font-size: 11px; clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%); }
 [data-stil="level"] .abz-ring { display: none; }
@@ -409,6 +433,18 @@ svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-wi
 .entwurf button:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
 
 /* ---------- Schmale Fenster: Leiste wandert nach oben ---------- */
+@media (max-width: 960px) {
+  .lern-raster { grid-template-columns: minmax(0, 1fr); }
+  .detail, [data-stil="level"] .detail {
+    position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 45; max-height: 72vh;
+    padding: var(--s3) 16px 96px; background: var(--flaeche); border: 0; border-top: 1px solid var(--linie);
+    border-radius: var(--radius) var(--radius) 0 0; box-shadow: 0 -16px 40px rgba(0,0,0,.45);
+    transform: translateY(100%); visibility: hidden;
+    transition: transform var(--dur) var(--ease), visibility 0s linear var(--dur);
+  }
+  .detail[data-offen="true"] { transform: none; visibility: visible; transition-delay: 0s; }
+  .detail .detail-zu { display: flex; width: max-content; margin: 0 0 var(--s2) auto; min-height: 32px; padding: 0 var(--s2); }
+}
 @media (max-width: 760px) {
   :root { --leiste-b: 0px; }
   .app { grid-template-columns: minmax(0, 1fr); }
@@ -508,11 +544,12 @@ const STILE = { notizbuch: "Notizbuch", konsole: "Konsole", level: "Level" };
 const RAENGE = ["Hello World", "Syntax-Sicher", "Bugjäger", "Refactorer", "Architekt", "Prüfungsreif"];
 
 const alleSp = D.ordner.flatMap((o) => o.bloecke.flatMap((b) => b.stichpunkte));
-const ordnerVon = {};
-D.ordner.forEach((o) => o.bloecke.forEach((b) => b.stichpunkte.forEach((s) => (ordnerVon[s.id] = o))));
+const ordnerVon = {}, spVon = {};
+D.ordner.forEach((o) => o.bloecke.forEach((b) => b.stichpunkte.forEach((s) => { ordnerVon[s.id] = o; spVon[s.id] = s; })));
 
 // Nur im geöffneten Fenster, gespeichert wird nichts.
-const Z = { erledigt: new Set(), ordnerOffen: new Set([D.ordner[0].id]), spOffen: new Set() };
+const netzwerk = D.ordner.find((o) => o.titel === "Netzwerk") || D.ordner[0];
+const Z = { erledigt: new Set(), ordnerOffen: new Set([D.ordner[0].id, "bs-" + netzwerk.id]), auswahl: alleSp[0].id };
 const demo = { stand: 37, rang: 2, punkte: 42 };
 
 let stil = "notizbuch", ansicht = "lernen";
@@ -568,42 +605,64 @@ function rangChip() {
   return "";
 }
 
-function renderSp(s, praefix = "") {
-  const id = praefix + s.id, an = Z.erledigt.has(s.id), offen = Z.spOffen.has(id);
-  return `<li class="sp" data-sp="${s.id}"${an ? " data-erledigt" : ""}>
+// Zeile links: Häkchen und Titel. Ein Klick auf den Titel zeigt die Details rechts.
+function renderSp(s, gewaehlt) {
+  const an = Z.erledigt.has(s.id);
+  return `<li class="sp" data-sp="${s.id}"${an ? " data-erledigt" : ""}${gewaehlt ? " data-gewaehlt" : ""}>
     <div class="sp-zeile">
       <button class="haken" type="button" role="checkbox" aria-checked="${an}" data-haken="${s.id}" aria-label="Erledigt: ${esc(s.titel)}"><span class="haken-box">${ICO.haken}</span></button>
-      <button class="sp-knopf" type="button" data-klapp="s:${id}" aria-expanded="${offen}" aria-controls="k-${id}">
-        <span class="sp-titel">${esc(s.titel)}</span>${s.art !== "Wissen" ? `<span class="art">${esc(s.art)}</span>` : "<span></span>"}<span class="pfeil" aria-hidden="true"></span>
+      <button class="sp-knopf" type="button" data-waehle="${s.id}" aria-current="${gewaehlt}">
+        <span class="sp-titel">${esc(s.titel)}</span>${s.art !== "Wissen" ? `<span class="art">${esc(s.art)}</span>` : "<span></span>"}<span class="zeiger" aria-hidden="true"></span>
       </button>
     </div>
-    <div class="klapp" id="k-${id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen"><div class="sp-detail">
-      <div class="feld"><p class="label">Rahmen</p><p class="rahmen">${esc(s.rahmen)}</p></div>
-      <div class="feld"><p class="label">Können</p><ul class="koennen">${s.koennen.map((k) => `<li>${esc(k)}</li>`).join("")}</ul></div>
-      <div class="aktionen">
-        <button class="knopf primaer" type="button" data-spaeter="Der Übungstrainer kommt später.">Üben</button>
-        <button class="knopf sekundaer" type="button" data-spaeter="Lernprompt kopieren kommt später.">Lernprompt kopieren</button>
-      </div>
-    </div></div></div>
   </li>`;
 }
 
-function renderOrdner(o, i) {
+// Detailfeld rechts
+function renderDetail(s) {
+  const an = Z.erledigt.has(s.id), o = ordnerVon[s.id];
+  const block = o.bloecke.find((b) => b.stichpunkte.includes(s));
+  return `<div class="detail-kopf">
+      <p class="eyebrow">${esc(o.titel)} · ${esc(block.titel)}</p>
+      <h2 class="detail-titel">${esc(s.titel)}</h2>
+      <p class="detail-meta">${esc(s.art)} · ${s.koennen.length} Können-Aussagen</p>
+    </div>
+    <button class="haken mit-text" type="button" role="checkbox" aria-checked="${an}" data-haken="${s.id}"><span class="haken-box">${ICO.haken}</span><span>Erledigt</span></button>
+    <div class="feld"><p class="label">Rahmen</p><p class="rahmen">${esc(s.rahmen)}</p></div>
+    <div class="feld"><p class="label">Können</p><ul class="koennen">${s.koennen.map((k) => `<li>${esc(k)}</li>`).join("")}</ul></div>
+    <div class="aktionen">
+      <button class="knopf primaer" type="button" data-spaeter="Der Übungstrainer kommt später.">Üben</button>
+      <button class="knopf sekundaer" type="button" data-spaeter="Lernprompt kopieren kommt später.">Lernprompt kopieren</button>
+    </div>`;
+}
+
+function renderOrdner(o, i, praefix = "", auswahl = Z.auswahl) {
   const ids = o.bloecke.flatMap((b) => b.stichpunkte.map((s) => s.id));
   const f = ids.filter((id) => Z.erledigt.has(id)).length;
-  const offen = Z.ordnerOffen.has(o.id);
+  const offen = Z.ordnerOffen.has(praefix + o.id);
   return `<section class="ordner" data-ordner="${o.id}"${f === ids.length ? " data-fertig" : ""}>
-    <h2 class="ordner-kopf"><button class="ordner-knopf" type="button" data-klapp="o:${o.id}" aria-expanded="${offen}" aria-controls="k-${o.id}">
+    <h2 class="ordner-kopf"><button class="ordner-knopf" type="button" data-klapp="o:${praefix}${o.id}" aria-expanded="${offen}" aria-controls="k-${praefix}${o.id}">
       <span class="ordner-nr" aria-hidden="true"><span class="nr-zahl">${nr(i + 1)}</span>${ICO.hakenGross}</span>
       <span class="ordner-titel">${esc(o.titel)}</span>
       <span class="ordner-stand"><span class="zahl" data-wert="${f}">${f}</span> von ${ids.length}</span>
       <span class="balken mini" style="--p:${f / ids.length}"><i></i></span>
       <span class="pfeil" aria-hidden="true"></span>
     </button></h2>
-    <div class="klapp" id="k-${o.id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen">
-      ${o.bloecke.map((b) => `<div class="block"><h3 class="label block-titel">${esc(b.titel)}</h3><ul class="sp-liste">${b.stichpunkte.map((s) => renderSp(s)).join("")}</ul></div>`).join("")}
+    <div class="klapp" id="k-${praefix}${o.id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen">
+      ${o.bloecke.map((b) => `<div class="block"><h3 class="label block-titel">${esc(b.titel)}</h3><ul class="sp-liste">${b.stichpunkte.map((s) => renderSp(s, s.id === auswahl)).join("")}</ul></div>`).join("")}
     </div></div>
   </section>`;
+}
+
+// Liste links, Detailfeld rechts. Jedes Raster merkt sich seine eigene Auswahl.
+function renderRaster(ordnerHtml, auswahl) {
+  return `<div class="lern-raster" data-auswahl="${auswahl}">
+    <div class="ordner-liste">${ordnerHtml}</div>
+    <aside class="detail" data-offen="false" aria-label="Details zum Stichpunkt">
+      <button class="detail-zu knopf sekundaer" type="button" data-detail-zu>Schließen</button>
+      <div class="detail-innen" aria-live="polite">${renderDetail(spVon[auswahl])}</div>
+    </aside>
+  </div>`;
 }
 
 function renderLernen() {
@@ -616,20 +675,36 @@ function renderLernen() {
       <div class="stand"><span><span class="zahl" id="gesamt-zahl" data-wert="${n}">${n}</span> von ${g} erledigt</span>${rangChip()}</div>
       <span class="balken" id="gesamt-balken" style="--p:${n / g}"><i></i></span>
     </header>
-    <div class="ordner-liste">${D.ordner.map(renderOrdner).join("")}</div>`;
+    ${renderRaster(D.ordner.map((o, i) => renderOrdner(o, i)).join(""), Z.auswahl)}`;
+}
+
+function waehle(btn) {
+  const raster = btn.closest(".lern-raster"), id = btn.dataset.waehle;
+  const detail = $(".detail", raster), innen = $(".detail-innen", raster);
+  detail.dataset.offen = "true";
+  if (raster.dataset.auswahl === id) return;
+  raster.dataset.auswahl = id;
+  if (raster.closest("#ansicht-lernen")) Z.auswahl = id;
+  $$(".sp", raster).forEach((li) => li.toggleAttribute("data-gewaehlt", li.dataset.sp === id));
+  $$(".sp-knopf", raster).forEach((b) => b.setAttribute("aria-current", b.dataset.waehle === id));
+  const tauschen = () => { innen.innerHTML = renderDetail(spVon[id]); detail.scrollTop = 0; innen.classList.remove("wechsel"); };
+  clearTimeout(innen._t);
+  if (!dauer()) return tauschen();
+  innen.classList.add("wechsel");
+  innen._t = setTimeout(tauschen, dauer());
 }
 
 function aktualisiereStand() {
   zaehle($("#gesamt-zahl"), Z.erledigt.size);
   setzeAnteil($("#gesamt-balken"), Z.erledigt.size / alleSp.length);
   D.ordner.forEach((o) => {
-    const sec = $(`[data-ordner="${o.id}"]`);
-    if (!sec) return;
     const ids = o.bloecke.flatMap((b) => b.stichpunkte.map((s) => s.id));
     const f = ids.filter((id) => Z.erledigt.has(id)).length;
-    zaehle($(".ordner-stand .zahl", sec), f);
-    setzeAnteil($(".balken", sec), f / ids.length);
-    sec.toggleAttribute("data-fertig", f === ids.length);
+    $$(`[data-ordner="${o.id}"]`).forEach((sec) => {
+      zaehle($(".ordner-stand .zahl", sec), f);
+      setzeAnteil($(".balken", sec), f / ids.length);
+      sec.toggleAttribute("data-fertig", f === ids.length);
+    });
   });
 }
 
@@ -663,9 +738,8 @@ function klapp(btn) {
   const k = document.getElementById(btn.getAttribute("aria-controls"));
   k.dataset.offen = offen;
   k.inert = !offen;
-  const [typ, id] = btn.dataset.klapp.split(/:(.*)/);
-  const menge = typ === "o" ? Z.ordnerOffen : Z.spOffen;
-  offen ? menge.add(id) : menge.delete(id);
+  const id = btn.dataset.klapp.slice(2);
+  offen ? Z.ordnerOffen.add(id) : Z.ordnerOffen.delete(id);
 }
 
 /* ---------- Bausteine ---------- */
@@ -780,8 +854,8 @@ function renderBausteine() {
         <div class="aktionen"><button class="knopf primaer" type="button" data-spaeter="Weiterlernen springt später zum Stichpunkt.">Weiterlernen</button></div>
       </article>`)}
 
-    ${abschnitt("Aufklappbarer Bereich", "Ein echter Stichpunkt mit langem Titel. Beim Aufklappen rutscht alles darunter weich nach unten.",
-      `<ul class="sp-liste">${renderSp(bsp, "bs-")}</ul>`)}
+    ${abschnitt("Liste und Details", "Links die Stichpunkte, rechts das Detailfeld. Ein Klick auf einen Titel tauscht den Inhalt rechts aus, links bewegt sich nichts. Der Ordner selbst klappt weich auf und zu.",
+      renderRaster(renderOrdner(netzwerk, D.ordner.indexOf(netzwerk), "bs-", bsp.id), bsp.id))}
 
     ${abschnitt("Leer und gesperrt", "Auch Zustände ohne Inhalt sind gestaltet.",
       `<div class="zwei">
@@ -883,6 +957,8 @@ document.addEventListener("click", (e) => {
 
   if (t.matches("[data-haken]")) return schalteHaken(t.dataset.haken, t);
   if (t.matches("[data-klapp]")) return klapp(t);
+  if (t.matches("[data-waehle]")) return waehle(t);
+  if (t.matches("[data-detail-zu]")) { t.closest(".detail").dataset.offen = "false"; return; }
   if (t.matches("[data-demo-haken]")) { const an = t.getAttribute("aria-checked") !== "true"; t.setAttribute("aria-checked", an); t.classList.toggle("frisch", an); if (an && stil === "level") plusEins(t); return; }
   if (t.matches("[data-spaeter]")) return hinweis(t.dataset.spaeter);
   if (t.matches(".entwurf [data-stil]")) return setzeStil(t.dataset.stil);

@@ -8,7 +8,14 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 
 ## Gemeinsam in allen drei Richtungen
 
-- Leiste links 112 px, Inhaltsspalte überall 44rem breit (`scrollbar-gutter: stable`, damit nichts springt)
+- Leiste links 112 px, Inhaltsspalte überall 66rem breit (`scrollbar-gutter: stable`, damit nichts springt)
+- Lernseite zweigeteilt: links die Liste (Ordner aufklappbar, Stichpunkte nicht), rechts ein Detailfeld mit
+  fester Breite von 22rem. Der Abstand dazwischen entspricht der fünften Abstandsstufe. Ein Klick auf einen
+  Stichpunkt tauscht nur den Inhalt rechts aus (kurzes Überblenden), links bewegt sich nichts. Das Feld läuft
+  beim Scrollen mit und scrollt bei langem Inhalt in sich selbst. Unter 960 px Breite wird es zu einem Blatt,
+  das von unten hereinfährt.
+- Detailfeld: Ordner · Block, Titel, Art und Zahl der Können-Aussagen, Häkchen „Erledigt“, Rahmen, Können,
+  Knöpfe. Schrift dort eine Stufe kleiner als in der Liste (nur der Titel ist größer)
 - Nummern und Häkchen hängen in einer eigenen Spalte links („Einzug“); Ordnertitel, Blocktitel und
   Stichpunkttitel beginnen an derselben Kante
 - Zwei Knopfarten: Primär (gefüllt, Akzent) und Sekundär (Rand)
@@ -27,6 +34,7 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 | Eckenrundung | 4 px |
 | Übergänge | 220 ms, weich auslaufend (`cubic-bezier(.2,.7,.2,1)`) |
 | Spiel | Häkchen zeichnet sich, Zahl zählt; kein Rang im Kopf; Rangaufstieg: Ring zeichnet sich ruhig |
+| Detailfeld | ohne Fläche, nur durch eine Haarlinie links abgesetzt; Inhalt blendet mit 4 px Hub über |
 
 ## B · Konsole (mittel)
 
@@ -39,6 +47,7 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 | Eckenrundung | 0 px |
 | Übergänge | 120 ms, linear; Balken und Häkchen in Stufen (`steps`) |
 | Spiel | gestrichelte Linien, Segmentbalken, Cursor am Titel, `rang=hello_world` im Kopf; Rangaufstieg als Terminalausgabe |
+| Detailfeld | gestrichelte Linie links; gewählter Stichpunkt mit Akzentstrich und `>`; Inhalt blendet ohne Bewegung über |
 
 ## C · Level (deutlich)
 
@@ -51,6 +60,7 @@ zwischen Lernseite und Bausteinen und zwischen den drei Stilrichtungen um.
 | Eckenrundung | 12 px |
 | Übergänge | 300 ms; Flächen weich, Abzeichen und Häkchen federnd (`cubic-bezier(.34,1.56,.64,1)`) |
 | Spiel | Ordner als Karten, „+1“ beim Abhaken, Glanz über dem Balken, Sechseck-Abzeichen, Rang-Chip im Kopf; Rangaufstieg mit Funken |
+| Detailfeld | eigene Karte; Inhalt gleitet 12 px von rechts herein |
 
 ## Spätere Akzentfarben (im Prüfungsmenü als Punkte zu sehen)
 
