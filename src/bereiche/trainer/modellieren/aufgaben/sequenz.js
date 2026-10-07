@@ -246,7 +246,7 @@ export const aufgaben = [
         { von: 'tv', nach: 't', typ: 'erzeugen', y: 130, text: '{1}' },
         { von: 'tv', nach: 't', typ: 'nachricht', y: 175, text: 'setzePrioritaet(stufe)' },
         { von: 't', nach: 'tv', typ: 'antwort', y: 200 },
-        { von: 'tv', nach: 'm', typ: 'linie', y: 240, text: 'sendeBestaetigung(email)', marke: 2 },
+        { von: 'tv', nach: 'm', typ: 'linie', y: 240, text: 'sendeBestaetigung(email)', marke: 2, textPos: 0.75 },
         { von: 'tv', nach: 'p', typ: 'antwort', y: 280, text: '{3}' },
       ],
     },
