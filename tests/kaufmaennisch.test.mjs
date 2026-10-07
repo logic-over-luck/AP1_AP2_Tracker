@@ -26,7 +26,7 @@ test('Tilgung: Summe der Tilgungen = Darlehen, Zinsen sinken', () => {
     const a = k.tilgung(zufall(s));
     const d = Number(a.text.match(/über \*\*([\d.]+),00 €\*\*/)[1].replace(/\./g, ''));
     const jahre = Number(a.text.match(/in \*\*(\d) Jahren/)[1]);
-    const t = a.felder.find((f) => f.id === 'til').erwartet;
+    const t = a.felder.find((f) => f.id === 'til2').erwartet;
     assert.equal(t * jahre, d);
   }
 });
@@ -47,7 +47,25 @@ test('Gewinnverteilung und Kennzahlen', () => {
   for (let s = 1; s < 200; s++) {
     const a = k.gewinn(zufall(s));
     assert.ok(a.felder[1].erwartet > 0);
+    const gewinn = a.felder.filter((f) => f.id.startsWith('g')).reduce((x, f) => x + f.erwartet, 0);
+    assert.equal(runde(gewinn, 2), Number(a.text.match(/Gewinn von \*\*([\d.]+),00 €/)[1].replace(/\./g, '')));
     const b = k.kennzahlen(zufall(s));
     assert.ok(Number.isFinite(b.felder[0].erwartet));
   }
+});
+
+test('Rechenblätter: jedes Feld im Blatt gibt es, jedes Blatt-Feld steht im Blatt', () => {
+  for (const [name, erz] of Object.entries(k.ERZEUGER))
+    for (let s = 1; s < 150; s++) {
+      const a = erz(zufall(s));
+      if (!a.rechenblatt) {
+        assert.ok(!a.felder.some((f) => f.imBlatt), `${name} #${s}: imBlatt ohne Rechenblatt`);
+        continue;
+      }
+      const imBlatt = a.rechenblatt.zeilen.flatMap((z) => (Array.isArray(z) ? z : z.zellen)).filter((c) => c && c.feld).map((c) => c.feld);
+      for (const id of imBlatt) assert.ok(a.felder.some((f) => f.id === id && f.imBlatt), `${name} #${s}: Feld ${id} fehlt`);
+      for (const f of a.felder.filter((f) => f.imBlatt)) assert.ok(imBlatt.includes(f.id), `${name} #${s}: ${f.id} nicht im Blatt`);
+      const breite = (z) => (Array.isArray(z) ? z : z.zellen).reduce((n, c) => n + ((c && c.span) || 1), 0);
+      for (const z of a.rechenblatt.zeilen) assert.equal(breite(z), a.rechenblatt.kopf.length, `${name} #${s}: Zeilenbreite`);
+    }
 });

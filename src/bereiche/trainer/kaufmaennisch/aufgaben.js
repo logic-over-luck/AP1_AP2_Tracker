@@ -10,6 +10,9 @@ const ct = (x) => runde(x, 2);
 const z = zahlText;
 const EUR = { stellen: 2, einheit: '€', toleranz: 0.011 };
 const PROZ = { stellen: 2, einheit: '%', toleranz: 0.011 };
+// Feld, das in einer Zelle des Rechenblatts steht (nicht darunter)
+const B = { imBlatt: true };
+const f = (id) => ({ feld: id });
 
 const ARTIKEL = [
   ['Notebook 15"', 649, 1199],
@@ -96,20 +99,34 @@ export function rechnung(r) {
     titel: 'Rechnung berechnen',
     sp: 'AP1-3-1-4',
     text: `Berechne die Rechnung. Der Lieferant gewährt **${rabattP} % Rabatt**, die Umsatzsteuer beträgt **19 %**, bei Zahlung innerhalb von 10 Tagen dürfen **${skontoP} % Skonto** abgezogen werden. Runde jeden Betrag auf Cent.`,
-    tabelle,
+    rechenblatt: {
+      kopf: tabelle.kopf,
+      zeilen: [
+        ...tabelle.zeilen,
+        [{ text: '= Warenwert', span: 3 }, f('ww')],
+        [{ text: `− ${rabattP} % Rabatt`, span: 3 }, f('rab')],
+        [{ text: '= Nettobetrag', span: 3 }, f('net')],
+        [{ text: '+ 19 % Umsatzsteuer', span: 3 }, f('ust')],
+        [{ text: '= Rechnungsbetrag (brutto)', span: 3 }, f('br')],
+        [{ text: `− ${skontoP} % Skonto`, span: 3 }, f('sk')],
+        [{ text: '= Zahlbetrag', span: 3 }, f('zb')],
+      ],
+      rechtsbuendig: [1, 2, 3],
+    },
     felder: [
-      { id: 'ww', label: 'Warenwert (Summe)', erwartet: warenwert, ...EUR },
-      { id: 'rab', label: `Rabatt (${rabattP} %)`, erwartet: rabatt, ...EUR },
-      { id: 'net', label: 'Nettobetrag', erwartet: netto, ...EUR },
-      { id: 'ust', label: 'Umsatzsteuer (19 %)', erwartet: ust, ...EUR },
-      { id: 'br', label: 'Rechnungsbetrag', erwartet: brutto, ...EUR },
-      { id: 'zb', label: `Zahlbetrag mit ${skontoP} % Skonto`, erwartet: zahl, ...EUR },
+      { id: 'ww', label: 'Warenwert (Summe)', erwartet: warenwert, ...EUR, ...B },
+      { id: 'rab', label: `Rabatt (${rabattP} %)`, erwartet: rabatt, ...EUR, ...B },
+      { id: 'net', label: 'Nettobetrag', erwartet: netto, ...EUR, ...B },
+      { id: 'ust', label: 'Umsatzsteuer (19 %)', erwartet: ust, ...EUR, ...B },
+      { id: 'br', label: 'Rechnungsbetrag', erwartet: brutto, ...EUR, ...B },
+      { id: 'sk', label: `Skonto (${skontoP} %)`, erwartet: skonto, ...EUR, ...B },
+      { id: 'zb', label: `Zahlbetrag mit ${skontoP} % Skonto`, erwartet: zahl, ...EUR, ...B },
     ],
     loesung: [
       `Warenwert: ${pos.map((p) => euro(p.summe)).join(' + ')} = **${euro(warenwert)}**`,
       `Rabatt: ${euro(warenwert)} · ${rabattP} % = **${euro(rabatt)}** → Nettobetrag **${euro(netto)}**`,
       `Umsatzsteuer: ${euro(netto)} · 19 % = **${euro(ust)}** → Rechnungsbetrag **${euro(brutto)}**`,
-      `Skonto: ${euro(brutto)} · ${skontoP} % = ${euro(skonto)} → Zahlbetrag **${euro(zahl)}**`,
+      `Skonto: ${euro(brutto)} · ${skontoP} % = **${euro(skonto)}** → Zahlbetrag **${euro(zahl)}**`,
       'Reihenfolge: erst Rabatt abziehen, dann Umsatzsteuer aufschlagen; Skonto erst bei der Zahlung.',
     ],
   };
@@ -151,10 +168,22 @@ export function nutzungsdauer(r) {
     titel: 'Kosten je Monat',
     sp: 'AP1-3-1-2',
     text: `Ein **${geraet}** kostet **${euro(preis)}** und wird über **${jahre} Jahre** genutzt. Jeden Monat fallen an: Wartung **${euro(wartung)}**${lizenz ? `, Lizenzen **${euro(lizenz)}**` : ''}, Strom **${euro(strom)}**. Der Kaufpreis wird gleichmäßig auf die Nutzungsdauer verteilt. Runde auf Cent.`,
+    rechenblatt: {
+      kopf: ['', 'Betrag'],
+      zeilen: [
+        [`Kaufpreis ÷ ${monate} Monate`, f('anteil')],
+        ['+ Wartung', euro(wartung)],
+        ...(lizenz ? [['+ Lizenzen', euro(lizenz)]] : []),
+        ['+ Strom', euro(strom)],
+        ['= Kosten je Monat', f('monat')],
+        [`= Kosten über ${jahre} Jahre (Kaufpreis + ${monate} · laufende Kosten)`, f('gesamt')],
+      ],
+      rechtsbuendig: [1],
+    },
     felder: [
-      { id: 'anteil', label: 'Anteil Kaufpreis je Monat', erwartet: preis / monate, ...EUR },
-      { id: 'monat', label: 'Gesamtkosten je Monat', erwartet: preis / monate + laufend, ...EUR },
-      { id: 'gesamt', label: `Kosten über ${jahre} Jahre`, erwartet: gesamt, ...EUR, toleranz: 0.5 },
+      { id: 'anteil', label: 'Anteil Kaufpreis je Monat', erwartet: preis / monate, ...EUR, ...B },
+      { id: 'monat', label: 'Gesamtkosten je Monat', erwartet: preis / monate + laufend, ...EUR, ...B },
+      { id: 'gesamt', label: `Kosten über ${jahre} Jahre`, erwartet: gesamt, ...EUR, toleranz: 0.5, ...B },
     ],
     loesung: [
       `Nutzungsdauer: ${jahre} · 12 = ${monates(monate)}`,
@@ -183,10 +212,22 @@ export function kalkulation(r) {
       titel: 'Machbarkeit mit Budget',
       sp: 'AP1-3-1-3',
       text: `Für die Einrichtung eines Schulungsraums sind **${stunden} Arbeitsstunden** zu je **${satz} €** und Material für **${euro(material)}** geplant. Das Budget beträgt **${euro(budget)}**. Ist das Vorhaben im Budget machbar?`,
+      rechenblatt: {
+        kopf: ['', 'Betrag'],
+        zeilen: [
+          [`Arbeit: ${stunden} h · ${satz} €`, f('a')],
+          ['+ Material', euro(material)],
+          ['= Geplante Kosten', f('k')],
+          ['Budget', euro(budget)],
+          [`= ${im ? 'Puffer (Budget − Kosten)' : 'Fehlbetrag (Kosten − Budget)'}`, f('d')],
+        ],
+        rechtsbuendig: [1],
+      },
       felder: [
-        { id: 'k', label: 'Geplante Kosten', erwartet: kosten, ...EUR },
+        { id: 'a', label: 'Arbeitskosten', erwartet: stunden * satz, ...EUR, ...B },
+        { id: 'k', label: 'Geplante Kosten', erwartet: kosten, ...EUR, ...B },
+        { id: 'd', label: im ? 'Verbleibender Puffer' : 'Fehlbetrag', erwartet: Math.abs(budget - kosten), ...EUR, ...B },
         { id: 'm', label: 'Im Budget?', typ: 'auswahl', erwartet: im ? 'ja' : 'nein', optionen: ['ja', 'nein'] },
-        { id: 'd', label: im ? 'Verbleibender Puffer' : 'Fehlbetrag', erwartet: Math.abs(budget - kosten), ...EUR },
       ],
       loesung: [`Arbeit: ${stunden} h · ${satz} € = ${euro(stunden * satz)}`, `Kosten: ${euro(stunden * satz)} + ${euro(material)} = **${euro(kosten)}**`, im ? `${euro(kosten)} ≤ ${euro(budget)} → **machbar**, Puffer ${euro(budget - kosten)}` : `${euro(kosten)} > ${euro(budget)} → **nicht machbar**, es fehlen ${euro(kosten - budget)}`],
     };
@@ -199,11 +240,26 @@ export function kalkulation(r) {
     titel: 'Vor- und Nachkalkulation',
     sp: 'AP1-3-1-3',
     text: `**Vorkalkulation:** ${stunden} Stunden à ${satz} € und Material für ${euro(material)}.\n**Nachkalkulation:** tatsächlich ${istStunden} Stunden und Material für ${euro(istMaterial)}.\nBerechne beide Summen und die Abweichung (Ist − Soll) in Euro und in Prozent der geplanten Kosten. Runde auf zwei Nachkommastellen.`,
+    rechenblatt: {
+      kopf: ['', 'Vorkalkulation (Soll)', 'Nachkalkulation (Ist)'],
+      zeilen: [
+        ['Arbeitsstunden', `${stunden} h`, `${istStunden} h`],
+        ['· Stundensatz', `${satz} €`, `${satz} €`],
+        ['= Arbeitskosten', f('as'), f('ai')],
+        ['+ Material', euro(material), euro(istMaterial)],
+        ['= Gesamtkosten', f('soll'), f('ist')],
+        [{ text: 'Abweichung Ist − Soll in €', span: 2 }, f('abw')],
+        [{ text: 'Abweichung in % vom Soll', span: 2 }, f('proz')],
+      ],
+      rechtsbuendig: [1, 2],
+    },
     felder: [
-      { id: 'soll', label: 'Vorkalkulation (Soll)', erwartet: kosten, ...EUR },
-      { id: 'ist', label: 'Nachkalkulation (Ist)', erwartet: ist, ...EUR },
-      { id: 'abw', label: 'Abweichung (Ist − Soll)', erwartet: abw, ...EUR },
-      { id: 'proz', label: 'Abweichung in Prozent', erwartet: (abw / kosten) * 100, ...PROZ },
+      { id: 'as', label: 'Arbeitskosten Soll', erwartet: stunden * satz, ...EUR, ...B },
+      { id: 'ai', label: 'Arbeitskosten Ist', erwartet: istStunden * satz, ...EUR, ...B },
+      { id: 'soll', label: 'Vorkalkulation (Soll)', erwartet: kosten, ...EUR, ...B },
+      { id: 'ist', label: 'Nachkalkulation (Ist)', erwartet: ist, ...EUR, ...B },
+      { id: 'abw', label: 'Abweichung (Ist − Soll)', erwartet: abw, ...EUR, ...B },
+      { id: 'proz', label: 'Abweichung in Prozent', erwartet: (abw / kosten) * 100, ...PROZ, ...B },
     ],
     loesung: [
       `Soll: ${stunden} · ${satz} € + ${euro(material)} = **${euro(kosten)}**`,
@@ -275,10 +331,22 @@ export function kostenvergleich(r) {
     titel: 'Kauf, Leasing, Finanzierung',
     sp: 'AP1-3-2-1',
     text: `Für ein Gerät liegen drei Angebote über **${monate} Monate** vor:\n- **Kauf:** ${euro(kauf)} sofort${restwert ? `; Wiederverkauf nach ${monate} Monaten für ${euro(restwert)}` : ''}\n- **Leasing:** ${euro(leasing)} je Monat${sonder ? `, einmalige Sonderzahlung ${euro(sonder)}` : ''}; danach Rückgabe\n- **Finanzierung:** Kaufpreis per Kredit, Zinsen insgesamt laut Bank ${euro(finanzZins)}${restwert ? '; Wiederverkauf wie beim Kauf' : ''}\nBerechne die Gesamtkosten und wähle das günstigste Angebot.`,
+    rechenblatt: {
+      kopf: ['', 'Kauf', 'Leasing', 'Finanzierung'],
+      zeilen: [
+        ['Kaufpreis bzw. Leasingraten', euro(kauf), f('lr'), euro(kauf)],
+        ...(sonder ? [['+ Sonderzahlung', '–', euro(sonder), '–']] : []),
+        ['+ Zinsen', '–', '–', euro(finanzZins)],
+        ...(restwert ? [['− Erlös Wiederverkauf', euro(restwert), '–', euro(restwert)]] : []),
+        ['= Gesamtkosten', f('k'), f('l'), f('f')],
+      ],
+      rechtsbuendig: [1, 2, 3],
+    },
     felder: [
-      { id: 'k', label: 'Kosten Kauf', erwartet: kKauf, ...EUR },
-      { id: 'l', label: 'Kosten Leasing', erwartet: kLeasing, ...EUR },
-      { id: 'f', label: 'Kosten Finanzierung', erwartet: kFinanz, ...EUR },
+      { id: 'lr', label: `Leasingraten ${monate} Monate`, erwartet: ct(leasing * monate), ...EUR, ...B },
+      { id: 'k', label: 'Kosten Kauf', erwartet: kKauf, ...EUR, ...B },
+      { id: 'l', label: 'Kosten Leasing', erwartet: kLeasing, ...EUR, ...B },
+      { id: 'f', label: 'Kosten Finanzierung', erwartet: kFinanz, ...EUR, ...B },
       { id: 'w', label: 'Günstigstes Angebot', typ: 'auswahl', erwartet: guenstig, optionen: ['Kauf', 'Leasing', 'Finanzierung'] },
     ],
     loesung: [
@@ -306,27 +374,30 @@ export function tilgung(r) {
     zeilen.push({ j, rest, zinsen, tilgung: t, zahlung: ct(zinsen + t), ende: rest - t });
     rest -= t;
   }
-  const frage = r.ganz(2, jahre);
-  const z2 = zeilen[frage - 1];
+  // Jahr 1 ist vorgegeben, den Rest füllt man aus – wie im Unterricht
+  const felder = zeilen.slice(1).flatMap((x) => [
+    { id: `rest${x.j}`, label: `Restschuld Anfang Jahr ${x.j}`, erwartet: x.rest, ...EUR, ...B },
+    { id: `zins${x.j}`, label: `Zinsen Jahr ${x.j}`, erwartet: x.zinsen, ...EUR, ...B },
+    { id: `til${x.j}`, label: `Tilgung Jahr ${x.j}`, erwartet: x.tilgung, ...EUR, ...B },
+    { id: `zahl${x.j}`, label: `Zahlung Jahr ${x.j}`, erwartet: x.zahlung, ...EUR, ...B },
+  ]);
+  felder.push({ id: 'summe', label: 'Summe aller Zinsen (Finanzierungskosten)', erwartet: summeZins, ...EUR, toleranz: 0.03, ...B });
   return {
     titel: 'Tilgungsplan',
     sp: 'AP1-3-2-1',
-    text: `Ein Darlehen über **${euro(darlehen)}** wird in **${jahre} Jahren** mit **gleichbleibender Tilgung** zurückgezahlt. Der Zinssatz beträgt **${z(zins)} %** pro Jahr auf die Restschuld am Jahresanfang. Ergänze die Zeile für **Jahr ${frage}** und die Summe der Zinsen.`,
-    tabelle: {
+    text: `Ein Darlehen über **${euro(darlehen)}** wird in **${jahre} Jahren** mit **gleichbleibender Tilgung** zurückgezahlt. Der Zinssatz beträgt **${z(zins)} %** pro Jahr auf die Restschuld am Jahresanfang. Vervollständige den Tilgungsplan – Jahr 1 ist vorgegeben.`,
+    rechenblatt: {
       kopf: ['Jahr', 'Restschuld Anfang', 'Zinsen', 'Tilgung', 'Zahlung'],
-      zeilen: zeilen.map((x) => (x.j === frage ? [x.j, '?', '?', '?', '?'] : [x.j, euro(x.rest), x.j < frage ? euro(x.zinsen) : '…', euro(x.tilgung), x.j < frage ? euro(x.zahlung) : '…'])),
+      zeilen: [
+        ...zeilen.map((x) => (x.j === 1 ? [x.j, euro(x.rest), euro(x.zinsen), euro(x.tilgung), euro(x.zahlung)] : [x.j, f(`rest${x.j}`), f(`zins${x.j}`), f(`til${x.j}`), f(`zahl${x.j}`)])),
+        { zellen: ['Summe', '', f('summe'), euro(darlehen), ''], summe: true },
+      ],
       rechtsbuendig: [1, 2, 3, 4],
     },
-    felder: [
-      { id: 'rest', label: `Restschuld Anfang Jahr ${frage}`, erwartet: z2.rest, ...EUR },
-      { id: 'zins', label: `Zinsen Jahr ${frage}`, erwartet: z2.zinsen, ...EUR },
-      { id: 'til', label: 'Tilgung', erwartet: z2.tilgung, ...EUR },
-      { id: 'zahl', label: `Zahlung Jahr ${frage}`, erwartet: z2.zahlung, ...EUR },
-      { id: 'summe', label: 'Summe aller Zinsen (Finanzierungskosten)', erwartet: summeZins, ...EUR, toleranz: 0.03 },
-    ],
+    felder,
     loesung: [
       `Tilgung je Jahr: ${euro(darlehen)} ÷ ${jahre} = **${euro(t)}** (gleichbleibend)`,
-      ...zeilen.map((x) => `Jahr ${x.j}: Restschuld ${euro(x.rest)}, Zinsen ${z(zins)} % = ${euro(x.zinsen)}, Zahlung ${euro(x.zahlung)}`),
+      ...zeilen.map((x) => `Jahr ${x.j}: Restschuld ${euro(x.rest)}, Zinsen ${z(zins)} % = ${euro(x.zinsen)}, Zahlung ${euro(x.zinsen)} + ${euro(t)} = ${euro(x.zahlung)}`),
       `Summe der Zinsen: **${euro(summeZins)}** – das sind die Finanzierungskosten.`,
     ],
   };
@@ -357,18 +428,38 @@ export function angebot(r) {
   return {
     titel: 'Angebotsvergleich',
     sp: 'AP1-3-2-2',
-    text: `Für **${menge} Monitore** liegen drei Angebote vor (Preise netto). Berechne den Bezugspreis je Angebot: Listenpreis − Rabatt − Skonto + Versand. Welches ist das günstigste?`,
+    text: `Für **${menge} Monitore** liegen drei Angebote vor (Preise netto). Berechne im Schema den Bezugspreis je Angebot. Welches ist das günstigste?`,
     tabelle: {
       kopf: ['Angebot', 'Preis je Stück', 'Rabatt', 'Skonto', 'Versand'],
       zeilen: angebote.map((a) => [a.n, euro(a.preis), `${a.rabatt} %`, `${a.skonto} %`, a.versand ? euro(a.versand) : 'frei']),
       rechtsbuendig: [1, 2, 3, 4],
     },
+    rechenblatt: {
+      kopf: ['', ...angebote.map((a) => `Angebot ${a.n}`)],
+      zeilen: [
+        [`Listenpreis (${menge} Stück)`, ...angebote.map((a) => f(`l${a.n}`))],
+        ['− Rabatt', ...angebote.map((a) => f(`r${a.n}`))],
+        ['= Zieleinkaufspreis', ...angebote.map((a) => f(`z${a.n}`))],
+        ['− Skonto', ...angebote.map((a) => f(`s${a.n}`))],
+        ['= Bareinkaufspreis', ...angebote.map((a) => f(`e${a.n}`))],
+        ['+ Bezugskosten (Versand)', ...angebote.map((a) => euro(a.versand))],
+        ['= Bezugspreis', ...angebote.map((a) => f(`b${a.n}`))],
+      ],
+      rechtsbuendig: [1, 2, 3],
+    },
     felder: [
-      ...angebote.map((a) => ({ id: `b${a.n}`, label: `Bezugspreis ${a.n}`, erwartet: a.bezug, ...EUR, toleranz: 0.02 })),
+      ...angebote.flatMap((a) => [
+        { id: `l${a.n}`, label: `Listenpreis ${a.n}`, erwartet: a.listen, ...EUR, ...B },
+        { id: `r${a.n}`, label: `Rabatt ${a.n}`, erwartet: ct(a.listen - a.nachRabatt), ...EUR, ...B },
+        { id: `z${a.n}`, label: `Zieleinkaufspreis ${a.n}`, erwartet: a.nachRabatt, ...EUR, ...B },
+        { id: `s${a.n}`, label: `Skonto ${a.n}`, erwartet: ct(a.nachRabatt - a.nachSkonto), ...EUR, ...B },
+        { id: `e${a.n}`, label: `Bareinkaufspreis ${a.n}`, erwartet: a.nachSkonto, ...EUR, ...B },
+        { id: `b${a.n}`, label: `Bezugspreis ${a.n}`, erwartet: a.bezug, ...EUR, toleranz: 0.02, ...B },
+      ]),
       { id: 'w', label: 'Günstigstes Angebot', typ: 'auswahl', erwartet: best, optionen: namen },
     ],
     loesung: [
-      ...angebote.map((a) => `${a.n}: ${menge} · ${euro(a.preis)} = ${euro(a.listen)} → −${a.rabatt} % = ${euro(a.nachRabatt)} → −${a.skonto} % = ${euro(a.nachSkonto)} → +${euro(a.versand)} = **${euro(a.bezug)}**`),
+      ...angebote.map((a) => `${a.n}: Listenpreis ${menge} · ${euro(a.preis)} = ${euro(a.listen)} − ${a.rabatt} % Rabatt (${euro(ct(a.listen - a.nachRabatt))}) = Zieleinkaufspreis ${euro(a.nachRabatt)} − ${a.skonto} % Skonto (${euro(ct(a.nachRabatt - a.nachSkonto))}) = Bareinkaufspreis ${euro(a.nachSkonto)} + ${euro(a.versand)} Versand = **Bezugspreis ${euro(a.bezug)}**`),
       `Günstigstes Angebot: **${best}**`,
     ],
   };
@@ -412,12 +503,19 @@ export function nutzwert(r) {
       titel: 'Nutzwertanalyse (gewichtet)',
       sp: 'AP1-3-2-3',
       text: `Berechne die Nutzwerte: Punkte (1–10, 10 = am besten) mal Gewichtung, je Gerät aufsummiert.${ausschluss !== null ? `\n**Zusatzbedingung:** ${geraete[ausschluss]} ist nicht lieferbar und scheidet aus.` : ''} Welches Gerät wird gewählt?`,
-      tabelle: {
-        kopf: ['Kriterium', 'Gewichtung', ...geraete],
-        zeilen: kriterien.map(([k], i) => [k, `${gew[i]} %`, ...punkte[i].map(String)]),
-        rechtsbuendig: [1, 2, 3, 4],
+      rechenblatt: {
+        kopf: ['Kriterium', 'Gewichtung', ...geraete.flatMap((g) => [`${g}: Punkte`, 'gewichtet'])],
+        zeilen: [
+          ...kriterien.map(([k], i) => [k, `${gew[i]} %`, ...geraete.flatMap((_, g) => [String(punkte[i][g]), f(`p${i}_${g}`)])]),
+          { zellen: ['= Nutzwert', '100 %', ...geraete.flatMap((_, g) => ['', f(`n${g}`)])], summe: true },
+        ],
+        rechtsbuendig: [1, 2, 3, 4, 5, 6, 7],
       },
-      felder: [...geraete.map((g, i) => ({ id: `n${i}`, label: `Nutzwert ${g}`, erwartet: summen2[i], stellen: 2 })), { id: 'w', label: 'Gewählt wird', typ: 'auswahl', erwartet: sieger, optionen: geraete }],
+      felder: [
+        ...kriterien.flatMap((_, i) => geraete.map((g, j) => ({ id: `p${i}_${j}`, label: `${g} ${kriterien[i][0]} gewichtet`, erwartet: (gew[i] / 100) * punkte[i][j], stellen: 2, toleranz: 0.011, ...B }))),
+        ...geraete.map((g, i) => ({ id: `n${i}`, label: `Nutzwert ${g}`, erwartet: summen2[i], stellen: 2, ...B })),
+        { id: 'w', label: 'Gewählt wird', typ: 'auswahl', erwartet: sieger, optionen: geraete },
+      ],
       loesung: [
         ...geraete.map((g, i) => `${g}: ${kriterien.map((_, k) => `${z(gew[k] / 100)} · ${punkte[k][i]}`).join(' + ')} = **${z(runde(summen2[i], 2), 2)}**`),
         `Höchster Nutzwert: ${best}`,
@@ -449,13 +547,17 @@ export function nutzwert(r) {
     titel: 'Nutzwertanalyse mit Rangpunkten',
     sp: 'AP1-3-2-3',
     text: `Vergib je Kriterium Rangpunkte: **3** für den besten, **1** für den schlechtesten Wert (bei Preis, Gewicht und Lautstärke ist der niedrigste Wert der beste). Summiere die Punkte je Gerät.`,
-    tabelle: {
-      kopf: ['Kriterium', ...geraete],
-      zeilen: kriterien.map(([k], i) => [k, ...werte[i].map((v) => `${z(v)}${einheit[k]}`)]),
-      rechtsbuendig: [1, 2, 3],
+    rechenblatt: {
+      kopf: ['Kriterium', ...geraete.flatMap((g) => [g, 'Punkte'])],
+      zeilen: [
+        ...kriterien.map(([k], i) => [k, ...werte[i].flatMap((v, g) => [`${z(v)}${einheit[k]}`, f(`r${i}_${g}`)])]),
+        { zellen: ['= Summe', ...geraete.flatMap((_, g) => ['', f(`s${g}`)])], summe: true },
+      ],
+      rechtsbuendig: [1, 2, 3, 4, 5, 6],
     },
     felder: [
-      ...geraete.map((g, i) => ({ id: `s${i}`, label: `Punkte ${g}`, erwartet: summen[i] })),
+      ...kriterien.flatMap((_, i) => geraete.map((g, j) => ({ id: `r${i}_${j}`, label: `${g} ${kriterien[i][0]} Rangpunkte`, erwartet: punkte[i][j], ...B }))),
+      ...geraete.map((g, i) => ({ id: `s${i}`, label: `Punkte ${g}`, erwartet: summen[i], ...B })),
       { id: 'w', label: 'Meiste Punkte', typ: 'auswahl', erwartet: best, optionen: geraete },
     ],
     loesung: [...kriterien.map(([k, ri], i) => `${k} (${ri === 'hoch' ? 'hoch ist gut' : 'niedrig ist gut'}): ${geraete.map((g, j) => `${g} ${punkte[i][j]}`).join(', ')}`), `Summen: ${geraete.map((g, i) => `${g} ${summen[i]}`).join(', ')}`, `Meiste Punkte: **${best}**`],
@@ -526,12 +628,31 @@ export function sv(r) {
     titel: 'Sozialversicherung – Arbeitnehmeranteile',
     sp: 'WISO-1-6-3',
     text: `Eine Arbeitnehmerin, **${alter} Jahre**, ${kinderlos ? '**kinderlos**' : 'mit einem Kind'}, verdient **${euro(brutto)}** brutto. Berechne ihre Anteile zu den vier Versicherungen.\n${kopf}`,
+    rechenblatt: {
+      kopf: ['Versicherung', 'Bemessungsgrundlage', 'AN-Satz', 'AN-Anteil'],
+      zeilen: [
+        ['Krankenversicherung', f('kvb'), f('kvs'), f('kv')],
+        ['Pflegeversicherung', f('pvb'), f('pvs'), f('pv')],
+        ['Rentenversicherung', f('rvb'), f('rvs'), f('rv')],
+        ['Arbeitslosenversicherung', f('avb'), f('avs'), f('av')],
+        [{ text: '= Summe Arbeitnehmeranteile', span: 3 }, f('sum')],
+      ],
+      rechtsbuendig: [1, 2, 3],
+    },
     felder: [
-      { id: 'kv', label: 'Krankenversicherung', erwartet: kv, ...EUR, toleranz: 0.005 },
-      { id: 'pv', label: 'Pflegeversicherung', erwartet: pv, ...EUR, toleranz: 0.005 },
-      { id: 'rv', label: 'Rentenversicherung', erwartet: rv, ...EUR, toleranz: 0.005 },
-      { id: 'av', label: 'Arbeitslosenversicherung', erwartet: av, ...EUR, toleranz: 0.005 },
-      { id: 'sum', label: 'Summe', erwartet: ct(kv + pv + rv + av), ...EUR, toleranz: 0.02 },
+      { id: 'kvb', label: 'Bemessungsgrundlage KV', erwartet: kvBasis, ...EUR, ...B },
+      { id: 'kvs', label: 'AN-Satz KV', erwartet: 7.3 + zusatz / 2, ...PROZ, ...B },
+      { id: 'kv', label: 'Krankenversicherung', erwartet: kv, ...EUR, toleranz: 0.005, ...B },
+      { id: 'pvb', label: 'Bemessungsgrundlage PV', erwartet: kvBasis, ...EUR, ...B },
+      { id: 'pvs', label: 'AN-Satz PV', erwartet: 1.8 + (pvZuschlag ? 0.6 : 0), ...PROZ, ...B },
+      { id: 'pv', label: 'Pflegeversicherung', erwartet: pv, ...EUR, toleranz: 0.005, ...B },
+      { id: 'rvb', label: 'Bemessungsgrundlage RV', erwartet: rvBasis, ...EUR, ...B },
+      { id: 'rvs', label: 'AN-Satz RV', erwartet: 9.3, ...PROZ, ...B },
+      { id: 'rv', label: 'Rentenversicherung', erwartet: rv, ...EUR, toleranz: 0.005, ...B },
+      { id: 'avb', label: 'Bemessungsgrundlage AV', erwartet: rvBasis, ...EUR, ...B },
+      { id: 'avs', label: 'AN-Satz AV', erwartet: 1.3, ...PROZ, ...B },
+      { id: 'av', label: 'Arbeitslosenversicherung', erwartet: av, ...EUR, toleranz: 0.005, ...B },
+      { id: 'sum', label: 'Summe', erwartet: ct(kv + pv + rv + av), ...EUR, toleranz: 0.02, ...B },
     ],
     loesung: [
       `KV: ${euro(kvBasis)} · ${z(7.3 + zusatz / 2)} % = ${euro(kv)}`,
@@ -558,17 +679,27 @@ export function gewinn(r) {
   anteile.push(rest);
   const namen = ['Frau Albers', 'Herr Becker', 'Frau Celik', 'Herr Dahl'].slice(0, n);
   const gewinnSumme = r.stufe(30000, 480000, 1000);
-  const wer = r.ganz(0, n - 1);
-  const anteil = gewinnSumme * (anteile[wer] / stamm);
   return {
     titel: 'Gewinnverteilung in der GmbH',
     sp: 'WISO-2-2-3',
-    text: `Die GmbH hat ein Stammkapital von **${euro(stamm)}** und einen Gewinn von **${euro(gewinnSumme)}**, der vollständig ausgeschüttet wird. Der Gesellschaftsvertrag regelt die Verteilung nicht.\n${namen.map((nm, i) => `- ${nm}: Geschäftsanteil ${euro(anteile[i])}`).join('\n')}\nWie viel erhält **${namen[wer]}**?`,
-    felder: [
-      { id: 'p', label: `Anteil am Stammkapital`, erwartet: (anteile[wer] / stamm) * 100, ...PROZ },
-      { id: 'g', label: `Gewinnanteil ${namen[wer]}`, erwartet: anteil, ...EUR },
+    text: `Die GmbH hat ein Stammkapital von **${euro(stamm)}** und einen Gewinn von **${euro(gewinnSumme)}**, der vollständig ausgeschüttet wird. Der Gesellschaftsvertrag regelt die Verteilung nicht. Verteile den Gewinn auf die Gesellschafter.`,
+    rechenblatt: {
+      kopf: ['Gesellschafter', 'Geschäftsanteil', 'Anteil am Stammkapital', 'Gewinnanteil'],
+      zeilen: [
+        ...namen.map((nm, i) => [nm, euro(anteile[i]), f(`p${i}`), f(`g${i}`)]),
+        ['= Summe', euro(stamm), '100,00 %', euro(gewinnSumme)],
+      ],
+      rechtsbuendig: [1, 2, 3],
+    },
+    felder: namen.flatMap((nm, i) => [
+      { id: `p${i}`, label: `Anteil ${nm}`, erwartet: (anteile[i] / stamm) * 100, ...PROZ, ...B },
+      { id: `g${i}`, label: `Gewinnanteil ${nm}`, erwartet: gewinnSumme * (anteile[i] / stamm), ...EUR, ...B },
+    ]),
+    loesung: [
+      `Ohne Regelung im Vertrag: Verteilung nach dem Verhältnis der Geschäftsanteile.`,
+      ...namen.map((nm, i) => `${nm}: ${euro(anteile[i])} ÷ ${euro(stamm)} = ${z(runde((anteile[i] / stamm) * 100, 2), 2)} % → ${euro(gewinnSumme)} · ${z(runde((anteile[i] / stamm) * 100, 2), 2)} % = **${euro(ct(gewinnSumme * (anteile[i] / stamm)))}**`),
+      'Probe: Die Anteile aller Gesellschafter ergeben zusammen den Gewinn.',
     ],
-    loesung: [`Ohne Regelung im Vertrag: Verteilung nach dem Verhältnis der Geschäftsanteile.`, `Anteil: ${euro(anteile[wer])} ÷ ${euro(stamm)} = ${z(runde((anteile[wer] / stamm) * 100, 2), 2)} %`, `Gewinnanteil: ${euro(gewinnSumme)} · ${z(runde((anteile[wer] / stamm) * 100, 2), 2)} % = **${euro(ct(anteil))}**`, 'Probe: Die Anteile aller Gesellschafter ergeben zusammen den Gewinn.'],
   };
 }
 

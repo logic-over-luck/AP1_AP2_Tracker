@@ -148,7 +148,28 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
   };
 
   const fertig = ergebnis && aufgabe.felder.every((f) => ergebnis[f.id]?.ok);
-  const imBildFalsch = ergebnis ? aufgabe.felder.filter((f) => f.imBild && !ergebnis[f.id]?.ok).length : 0;
+  const imBildFalsch = ergebnis ? aufgabe.felder.filter((f) => (f.imBild || f.imBlatt) && !ergebnis[f.id]?.ok).length : 0;
+
+  // Beim Rechenblatt ist die Tabelle selbst der Rechenweg – Notizen dann darunter
+  const notizFeld = (
+    <label class="notiz">
+      <span class="notiz__kopf">
+        <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· wird nicht geprüft</span>
+      </span>
+      <textarea
+        class="feld feld--mono notiz__feld"
+        rows={2}
+        value={notiz}
+        spellcheck={false}
+        placeholder="Hier kannst du rechnen oder deine Notizen zur Aufgabe schreiben …"
+        onInput={(e) => {
+          setNotiz(e.currentTarget.value);
+          e.currentTarget.style.height = 'auto';
+          e.currentTarget.style.height = `${e.currentTarget.scrollHeight + 2}px`;
+        }}
+      />
+    </label>
+  );
 
   return (
     <div class="uebung">
@@ -193,25 +214,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             loesung={loesung || fertig}
           />
         )}
-        {notizen && (
-          <label class="notiz">
-            <span class="notiz__kopf">
-              <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· wird nicht geprüft</span>
-            </span>
-            <textarea
-              class="feld feld--mono notiz__feld"
-              rows={2}
-              value={notiz}
-              spellcheck={false}
-              placeholder="Hier kannst du rechnen oder deine Notizen zur Aufgabe schreiben …"
-              onInput={(e) => {
-                setNotiz(e.currentTarget.value);
-                e.currentTarget.style.height = 'auto';
-                e.currentTarget.style.height = `${e.currentTarget.scrollHeight + 2}px`;
-              }}
-            />
-          </label>
-        )}
+        {notizen && !aufgabe.rechenblatt && notizFeld}
         <form
           class="aufgabe__felder"
           onSubmit={(e) => {
@@ -220,8 +223,19 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             else pruefe();
           }}
         >
+          {aufgabe.rechenblatt && (
+            <Rechenblatt
+              blatt={aufgabe.rechenblatt}
+              felder={aufgabe.felder}
+              eingaben={eingaben}
+              setze={(id, wert) => setEingaben((e) => ({ ...e, [id]: wert }))}
+              ergebnis={ergebnis}
+              loesung={loesung}
+              erstesFeld={erstesFeld}
+            />
+          )}
           {aufgabe.felder.map((f, i) => {
-            if (f.imBild) return null;
+            if (f.imBild || f.imBlatt) return null;
             const r = ergebnis?.[f.id];
             return (
               <label key={f.id} class={`afeld ${f.breit ? 'afeld--breit' : ''}`}>
@@ -283,9 +297,10 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             )}
           </div>
         </form>
+        {notizen && aufgabe.rechenblatt && notizFeld}
         {imBildFalsch > 0 && !fertig && (
           <div class="aufgabe__hinweis">
-            <Icon name="circle-x" groesse={16} /> {imBildFalsch} {imBildFalsch === 1 ? 'Wert' : 'Werte'} im Diagramm {imBildFalsch === 1 ? 'stimmt' : 'stimmen'} noch nicht (rot markiert).
+            <Icon name="circle-x" groesse={16} /> {imBildFalsch} {imBildFalsch === 1 ? 'Wert' : 'Werte'} {aufgabe.rechenblatt ? 'in der Tabelle' : 'im Diagramm'} {imBildFalsch === 1 ? 'stimmt' : 'stimmen'} noch nicht (rot markiert).
           </div>
         )}
         {fertig && (
@@ -316,6 +331,84 @@ export function sollText(f) {
   if (f.typ === 'basis') return f.erwartet.toString(f.basis).toUpperCase();
   if (f.typ === 'zahl' || !f.typ) return zahlText(runde(f.erwartet, f.stellen ?? 0), f.stellen ?? 0) + (f.einheit ? ` ${f.einheit}` : '');
   return String(f.erwartet);
+}
+
+// Rechenblatt: eine Tabelle wie im Unterricht (Kalkulationsschema), die Eingaben stehen direkt in den Zellen.
+// blatt: { kopf?, zeilen: [[zelle …] | { zellen, summe? }], rechtsbuendig? }
+// zelle: Text | { feld: id } | { text, span }   – Zeilen, die mit „=“ beginnen, bekommen einen Summenstrich.
+function Rechenblatt({ blatt, felder, eingaben, setze, ergebnis, loesung, erstesFeld }) {
+  const { kopf, zeilen, rechtsbuendig = [] } = blatt;
+  let erstes = true;
+  const zelle = (c, j) => {
+    if (c && typeof c === 'object' && c.feld) {
+      const f = felder.find((x) => x.id === c.feld);
+      const r = ergebnis?.[f.id];
+      const zeigeSoll = loesung && !r?.ok;
+      const ref = erstes ? erstesFeld : null;
+      erstes = false;
+      return (
+        <td key={j} class="rb__zelle">
+          <span class="rb__feld">
+            <input
+              ref={ref}
+              class={`rb__eingabe ${r ? (r.ok ? 'rb__eingabe--richtig' : 'rb__eingabe--falsch') : ''}`}
+              value={zeigeSoll ? sollText({ ...f, einheit: undefined }) : (eingaben[f.id] ?? '')}
+              readOnly={zeigeSoll}
+              inputMode={f.typ === 'auswahl' || f.typ === 'text' ? 'text' : 'decimal'}
+              autoComplete="off"
+              spellcheck={false}
+              placeholder="?"
+              aria-label={f.label}
+              title={r && !r.ok && r.grund ? r.grund : undefined}
+              onInput={(e) => setze(f.id, e.currentTarget.value)}
+            />
+            {f.einheit && <span class="rb__einheit">{f.einheit}</span>}
+          </span>
+        </td>
+      );
+    }
+    if (c && typeof c === 'object') {
+      return (
+        <td key={j} colSpan={c.span ?? 1} class={rechtsbuendig.includes(j) ? 'rechts' : ''}>
+          <Rich text={String(c.text ?? '')} />
+        </td>
+      );
+    }
+    return (
+      <td key={j} class={rechtsbuendig.includes(j) ? 'rechts' : ''}>
+        <Rich text={String(c ?? '')} />
+      </td>
+    );
+  };
+  return (
+    <div class="atabelle-huelle rb">
+      <table class="atabelle rb__tabelle">
+        {kopf && (
+          <thead>
+            <tr>
+              {kopf.map((k, i) => (
+                <th key={i} class={rechtsbuendig.includes(i) ? 'rechts' : ''}>
+                  {k}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        )}
+        <tbody>
+          {zeilen.map((z, i) => {
+            const zellen = Array.isArray(z) ? z : z.zellen;
+            const erste = typeof zellen[0] === 'object' ? zellen[0]?.text : zellen[0];
+            const summe = z.summe ?? String(erste ?? '').trim().startsWith('=');
+            return (
+              <tr key={i} class={summe ? 'rb__summe' : ''}>
+                {zellen.map(zelle)}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export function Tabelle({ kopf, zeilen, rechtsbuendig = [], fuss }) {

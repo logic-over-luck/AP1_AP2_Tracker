@@ -295,6 +295,61 @@
   font-weight: 650;
   background: var(--flaeche-2);
 }
+.rb {
+  grid-column: 1 / -1;
+}
+.rb__tabelle td.rb__zelle {
+  padding: 0;
+  min-width: 120px;
+}
+.rb__tabelle td:first-child {
+  white-space: nowrap;
+}
+.rb__summe td {
+  border-top: 2px solid var(--linie-3);
+  font-weight: 600;
+}
+.rb__feld {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: var(--s-3);
+}
+.rb__eingabe {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 38px;
+  border: 0;
+  background: transparent;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: var(--t-m);
+  color: var(--text);
+  padding: 0 var(--s-2) 0 var(--s-3);
+}
+.rb__eingabe::placeholder {
+  color: var(--text-3);
+}
+.rb__eingabe:focus {
+  outline: none;
+  background: var(--akzent-weich);
+}
+.rb__eingabe--richtig {
+  background: rgba(90, 209, 167, 0.12);
+  color: var(--gut);
+}
+.rb__eingabe--falsch {
+  background: rgba(240, 112, 112, 0.14);
+  color: var(--fehler);
+}
+.rb__eingabe[readonly] {
+  color: var(--warn);
+}
+.rb__einheit {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
 .aufgabe__hinweis {
   display: flex;
   align-items: center;

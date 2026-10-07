@@ -2077,7 +2077,9 @@ body {
   .feld,
   input.feld,
   select.feld,
-  textarea.feld {
+  textarea.feld,
+  .rb__eingabe,
+  .nk__eingabe {
     font-size: 16px;
   }
   /* Diagramme lesbar lassen: lieber seitlich wischen als winzig */
@@ -2089,6 +2091,14 @@ body {
   }
 }
 @media (max-width: 560px) {
+  .rb__tabelle td.rb__zelle {
+    min-width: 96px;
+  }
+  .rb__tabelle th,
+  .rb__tabelle td {
+    padding-left: var(--s-2);
+    padding-right: var(--s-2);
+  }
   .kopf__text,
   .knopf .kbd,
   .kopf .kbd,

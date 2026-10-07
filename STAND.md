@@ -127,6 +127,10 @@ nächsten offenen Punkt weiter.
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
+- **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
+  Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
+  Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine
+  Ein-Zahl-Aufgaben (Kennzahlen, Soll-Ist, Pay-per-Use …) behalten einzelne Felder.
 - **Eigener Rechenweg:** Rechen-Trainer (Zahlen, Subnetze, Kaufmännisch, Netzplan, Pseudocode außer Puzzle) haben ein Feld „Rechenweg & Notizen“. Es wird nicht geprüft und nicht
   gespeichert, bei „Neue Aufgabe“ ist es wieder leer.
 - **Netzplan-Pfeile:** gerade und rechtwinklig wie in den Prüfungsheften (waagerecht raus, in der Lücke senkrecht,
