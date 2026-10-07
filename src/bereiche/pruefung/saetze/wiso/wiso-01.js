@@ -54,10 +54,10 @@ export default {
       art: 'einfach',
       text: 'Gutenbit möchte das Ausbildungsverhältnis mit einem Auszubildenden im dritten Monat der Probezeit beenden. Welche Aussage zur Kündigung trifft zu?',
       optionen: [
-        'Gutenbit kann nur mit einer Frist von vier Wochen kündigen.',
-        'Eine Kündigung ist in der Probezeit nur aus wichtigem Grund möglich und muss begründet werden.',
+        'Gutenbit kann nur mit einer Frist von vier Wochen kündigen; die Kündigung muss schriftlich erfolgen.',
+        'Eine Kündigung ist in der Probezeit nur aus wichtigem Grund möglich; die Gründe müssen im Kündigungsschreiben angegeben werden.',
         'Eine Kündigung per E-Mail oder mündlich reicht aus, da in der Probezeit keine Formvorschriften gelten.',
-        'Die Kündigung ist nur wirksam, wenn die IHK vorher zugestimmt hat.',
+        'Die Kündigung ist nur wirksam, wenn die IHK als zuständige Stelle vorher schriftlich zugestimmt hat.',
         'Gutenbit kann jederzeit ohne Einhaltung einer Kündigungsfrist kündigen; die Kündigung muss schriftlich erfolgen, Gründe müssen nicht angegeben werden.',
       ],
       richtig: [4],
@@ -81,7 +81,7 @@ export default {
       richtig: [0, 2],
       erklaerung:
         'Nach § 14 BBiG muss der Ausbildende Ausbildungsmittel (z. B. Werkzeuge, Fachliteratur) kostenlos stellen und darf nur Aufgaben übertragen, die dem Ausbildungszweck dienen und den körperlichen Kräften angemessen sind. ' +
-        'Der Ausbildungsnachweis ist am Arbeitsplatz während der Ausbildungszeit zu führen. Für Berufsschule und Prüfungen muss immer freigestellt werden (§ 15 BBiG). Bei unverschuldeter Krankheit wird die Vergütung bis zu sechs Wochen weitergezahlt (§ 19 BBiG).',
+        'Den Auszubildenden ist Gelegenheit zu geben, den Ausbildungsnachweis am Arbeitsplatz während der Ausbildungszeit zu führen (§ 14 Abs. 2 BBiG). Für Berufsschule und Prüfungen muss immer freigestellt werden (§ 15 BBiG). Bei unverschuldeter Krankheit wird die Vergütung bis zu sechs Wochen weitergezahlt (Entgeltfortzahlungsgesetz, das auch für Auszubildende gilt).',
     },
     {
       id: 'wiso-01-04',
@@ -120,7 +120,7 @@ export default {
       text:
         'Gutenbit kündigt dem 46-jährigen Systembetreuer Herrn Weber ordentlich. Herr Weber ist seit dem 1. April 2017 bei Gutenbit beschäftigt. Die Kündigung geht ihm am 14. Oktober 2026 zu. Weder Arbeitsvertrag noch Tarifvertrag enthalten abweichende Fristen. Auszug aus § 622 BGB:\n' +
         '- (1) Das Arbeitsverhältnis eines Arbeitnehmers kann mit einer Frist von vier Wochen zum Fünfzehnten oder zum Ende eines Kalendermonats gekündigt werden.\n' +
-        '- (2) Für eine Kündigung durch den Arbeitgeber beträgt die Kündigungsfrist, wenn das Arbeitsverhältnis in dem Betrieb oder Unternehmen zwei Jahre bestanden hat, einen Monat, fünf Jahre bestanden hat, zwei Monate, acht Jahre bestanden hat, drei Monate, zehn Jahre bestanden hat, vier Monate, jeweils zum Ende eines Kalendermonats.\n' +
+        '- (2) Für eine Kündigung durch den Arbeitgeber beträgt die Kündigungsfrist, wenn das Arbeitsverhältnis in dem Betrieb oder Unternehmen zwei Jahre bestanden hat, einen Monat, fünf Jahre bestanden hat, zwei Monate, acht Jahre bestanden hat, drei Monate, zehn Jahre bestanden hat, vier Monate […], jeweils zum Ende eines Kalendermonats.\n' +
         'An welchem Tag endet das Arbeitsverhältnis?',
       optionen: ['15. November 2026', '31. Dezember 2026', '14. Januar 2027', '31. Januar 2027', '28. Februar 2027'],
       richtig: [3],
@@ -162,7 +162,7 @@ export default {
       richtig: [2, 5],
       erklaerung:
         'Nach dem BEEG können beide Elternteile Elternzeit nehmen, auch gleichzeitig; Teilzeitarbeit bis 32 Wochenstunden im Monatsdurchschnitt ist erlaubt. ' +
-        'Die Elternzeit ist ein Rechtsanspruch von bis zu drei Jahren je Elternteil und Kind und muss schriftlich spätestens sieben Wochen vorher verlangt werden (für die Zeit bis zum 3. Geburtstag). ' +
+        'Die Elternzeit ist ein Rechtsanspruch von bis zu drei Jahren je Elternteil und Kind und muss spätestens sieben Wochen vor Beginn in Textform (z. B. per E-Mail, seit Mai 2025) verlangt werden (für die Zeit bis zum 3. Geburtstag). Der Arbeitgeber kann sie nicht ablehnen. ' +
         'Gehalt zahlt der Arbeitgeber nicht; stattdessen gibt es staatliches Elterngeld.',
     },
     {
@@ -217,7 +217,7 @@ export default {
       ],
       richtig: [3],
       erklaerung:
-        'Eine JAV wird in Betrieben mit Betriebsrat gewählt, in denen in der Regel mindestens fünf Arbeitnehmer unter 18 oder Auszubildende unter 25 Jahren beschäftigt sind (§ 60 BetrVG). Wählbar sind Beschäftigte unter 25 Jahren, die Amtszeit beträgt zwei Jahre (§ 64 BetrVG). ' +
+        'Eine JAV wird in Betrieben mit Betriebsrat gewählt, in denen in der Regel mindestens fünf Arbeitnehmer unter 18 oder Auszubildende unter 25 Jahren beschäftigt sind (§ 60 BetrVG). Wählbar sind alle Beschäftigten unter 25 Jahren (§ 61 Abs. 2 BetrVG), die regelmäßige Amtszeit beträgt zwei Jahre (§ 64 Abs. 2 BetrVG). ' +
         'Die JAV handelt über den Betriebsrat; Betriebsvereinbarungen schließt nur der Betriebsrat.',
     },
     {
@@ -236,7 +236,7 @@ export default {
       richtig: [1],
       erklaerung:
         'Bei beiderseitiger Tarifbindung gelten die Tarifnormen unmittelbar und zwingend; Abweichungen sind nur zugunsten des Arbeitnehmers zulässig (Günstigkeitsprinzip, § 4 Abs. 3 TVG). Weniger Urlaub wäre eine Verschlechterung und daher unwirksam. ' +
-        'Tarifvertragsparteien sind Gewerkschaft und Arbeitgeberverband (oder einzelner Arbeitgeber), nicht der Betriebsrat. Während der Laufzeit gilt die Friedenspflicht. Die Allgemeinverbindlicherklärung erfolgt durch das Bundesarbeitsministerium.',
+        'Tarifvertragsparteien sind Gewerkschaft und Arbeitgeberverband (oder einzelner Arbeitgeber), nicht der Betriebsrat. Während der Laufzeit gilt die Friedenspflicht. Die Allgemeinverbindlicherklärung erfolgt durch das Bundesarbeitsministerium (oder eine von ihm beauftragte Landesbehörde), nicht durch die IHK.',
     },
     {
       id: 'wiso-01-13',
@@ -472,11 +472,11 @@ export default {
       situation: 's3',
       text: 'Welche Meldepflicht hat Gutenbit nach dem Unfall von Tobias Lang?',
       optionen: [
-        'Gutenbit muss den Unfall nicht melden, weil Wegeunfälle nicht anzeigepflichtig sind.',
-        'Gutenbit muss den Unfall nur melden, wenn er tödlich ausgeht.',
+        'Gutenbit muss den Unfall nicht melden, weil Wegeunfälle außerhalb des Betriebsgeländes nicht anzeigepflichtig sind.',
+        'Gutenbit muss den Unfall nur melden, wenn er tödlich ausgeht oder Tobias Lang länger als sechs Wochen arbeitsunfähig ist.',
         'Tobias Lang muss den Unfall selbst beim Gewerbeaufsichtsamt anzeigen; Gutenbit hat keine Pflichten.',
-        'Gutenbit muss den Unfall innerhalb eines Monats der Polizei melden.',
-        'Gutenbit muss den Unfall innerhalb von drei Tagen, nachdem es davon erfahren hat, der Berufsgenossenschaft mit einer Unfallanzeige melden, weil Tobias Lang mehr als drei Tage arbeitsunfähig ist.',
+        'Gutenbit muss den Unfall innerhalb eines Monats der Polizei melden, weil er sich im öffentlichen Straßenverkehr ereignet hat.',
+        'Gutenbit muss den Unfall binnen drei Tagen nach Kenntnis der Berufsgenossenschaft anzeigen, weil Tobias Lang mehr als drei Tage arbeitsunfähig ist.',
       ],
       richtig: [4],
       erklaerung:
