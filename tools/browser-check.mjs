@@ -37,6 +37,8 @@ const datei = pathToFileURL(path.join(wurzel, 'Lernstudio.html')).href;
 const browser = await playwright.chromium.launch({ executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? undefined : undefined });
 const context = await browser.newContext({ viewport: { width: Number(process.env.BREITE ?? 1440), height: Number(process.env.HOEHE ?? 900) }, deviceScaleFactor: 1 });
 const page = await context.newPage();
+// Intro nur zeigen, wenn ausdrücklich gewünscht (INTRO=1) – sonst verdeckt es die Fotos
+if (process.env.INTRO !== '1') await page.addInitScript(() => sessionStorage.setItem('lernstudio.intro', '1'));
 const meldungen = [];
 page.on('console', (m) => {
   if (m.type() === 'error' || m.type() === 'warning') meldungen.push(`[${m.type()}] ${m.text()}`);

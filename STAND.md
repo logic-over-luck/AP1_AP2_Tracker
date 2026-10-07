@@ -70,8 +70,10 @@ nächsten offenen Punkt weiter.
   unabhängig durchgesehen (Berichte in `inhalte/pruefberichte/`); Glossar mit 1.098 Begriffen zusammengeführt und geprüft
 - Grundgerüst: Leiste mit Raumwahl AP1/AP2/WiSo, eigene Akzentfarbe je Raum, Kopfzeile, Befehlspalette (Strg+K)
 - Lernstand: Ereignisprotokoll, Wiederholungs-Phasen (1/7/30 Tage), Kartenplanung, Serie, XP, Ränge, Sicherung mit Format-Version
-- Lernplan-Seite mit kompakter Übersicht oben (auf Wunsch zusammengelegt): Zahlenleiste (Lernplan, Karten, Serie, Prüfung),
-  nächster Schritt mit Regel, aufklappbar Tempo bis zur Prüfung, Stärken/Schwächen, Fokus-Timer, Aktivität
+- Lernplan-Seite mit Cockpit oben (auf Wunsch zusammengelegt): vier Kacheln (Fortschritt mit Prüfung und Tempo,
+  Lernkarten, Serie mit Wochenleiste, Fokus-Timer), darunter „Dein nächster Schritt" über die volle Breite, dann der Lernplan
+- Intro beim Öffnen (einmal je Sitzung, überspringbar, aus bei „Bewegung reduzieren"): Terminal tippt „hello world",
+  Logo erscheint, danach treten die Cockpit-Kacheln nacheinander auf
 - Lernplan: Ordner, Block-Karten, Stichpunkte abhaken, Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Notizen, Gegenstücke, Filter, Suche
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)

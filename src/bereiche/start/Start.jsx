@@ -16,6 +16,7 @@ import { Icon, Knopf, Balken, Zahl, PrioMarke, Marke, Ring } from '../../ui/baus
 import { Dialog } from '../../ui/dialog.jsx';
 import { FokusTimer } from './FokusTimer.jsx';
 import { Woche } from './Aktivitaet.jsx';
+import { INTRO_BEIM_START, INTRO_DAUER, frischGeoeffnet } from '../intro/Intro.jsx';
 
 function gruss() {
   const h = new Date().getHours();
@@ -30,6 +31,12 @@ export function Uebersicht({ raum }) {
   const stand = useLernstand();
   const r = inhalt.raeume.get(raum);
   const [terminOffen, setTerminOffen] = useState(false);
+  // Beim ersten Anzeigen nach dem Öffnen treten die Kacheln nacheinander auf (nach dem Intro)
+  const [auftritt] = useState(() => {
+    const frisch = frischGeoeffnet.wert;
+    frischGeoeffnet.wert = false;
+    return frisch;
+  });
 
   const spIds = r.bloeckeListe.flatMap((b) => b.sp);
   const spErledigt = spIds.filter((id) => stand.spErledigt.has(id)).length;
@@ -42,7 +49,7 @@ export function Uebersicht({ raum }) {
   const gemerkt = [...stand.gemerkt].filter((id) => inhalt.karten.has(id) && inhalt.raumVon(id) === raum).length;
 
   return (
-    <section class="cockpit" aria-label="Übersicht">
+    <section class={`cockpit ${auftritt ? 'cockpit--auftritt' : ''}`} aria-label="Übersicht" style={{ '--start': `${auftritt && INTRO_BEIM_START ? INTRO_DAUER - 400 : 0}ms` }}>
       <header class="cockpit__kopf">
         <h1 class="cockpit__gruss">{gruss()}</h1>
         <span class="ueberschrift-klein">
@@ -50,8 +57,8 @@ export function Uebersicht({ raum }) {
         </span>
       </header>
       <div class="cockpit__raster">
-        <Fokus raum={raum} fokus={fokus} sus={sus} />
         <Fortschritt
+          i={0}
           erledigt={spErledigt}
           gesamt={spIds.length}
           bloeckeFertig={bloeckeFertig}
@@ -60,16 +67,17 @@ export function Uebersicht({ raum }) {
           t={t}
           onTermin={() => setTerminOffen(true)}
         />
-        <KartenKachel raum={raum} karten={karten} gemerkt={gemerkt} />
-        <SerieKachel stand={stand} />
-        <FokusTimer raum={raum} kompakt />
+        <KartenKachel i={1} raum={raum} karten={karten} gemerkt={gemerkt} />
+        <SerieKachel i={2} stand={stand} />
+        <FokusTimer i={3} raum={raum} kompakt />
+        <Fokus i={4} raum={raum} fokus={fokus} sus={sus} />
       </div>
       <TerminDialog offen={terminOffen} raum={raum} termin={termin} heute={stand.heute} onSchliessen={() => setTerminOffen(false)} />
     </section>
   );
 }
 
-function Fokus({ raum, fokus, sus }) {
+function Fokus({ i, raum, fokus, sus }) {
   const h = fokus.haupt;
   const zuBlock = (block) => geheZu(raum, 'lernen', null, { block: block.id });
   const karten = (quelle) => geheZu(raum, 'karten', 'sitzung', { quelle });
@@ -79,7 +87,7 @@ function Fokus({ raum, fokus, sus }) {
     ...sus.staerken.slice(0, 1).map((w) => ({ block: w.block, icon: 'circle-check', ton: 'text-gut', vor: 'Sitzt gut' })),
   ].slice(0, 4);
   return (
-    <section class="flaeche flaeche--akzent kachel kachel--fokus" aria-label="Dein nächster Schritt">
+    <section class="flaeche flaeche--akzent kachel kachel--fokus" aria-label="Dein nächster Schritt" style={{ '--i': i }}>
       <div class="fokus-haupt">
       <div class="kachel__kopf kachel__kopf--akzent">
         <Icon name="sparkles" groesse={14} /> Dein nächster Schritt
@@ -128,11 +136,11 @@ function Fokus({ raum, fokus, sus }) {
 }
 
 // Lernplan, Prüfungstermin und Tempo in einer Kachel – sie hängen zusammen
-function Fortschritt({ erledigt, gesamt, bloeckeFertig, bloecke, termin, t, onTermin }) {
+function Fortschritt({ i, erledigt, gesamt, bloeckeFertig, bloecke, termin, t, onTermin }) {
   const anteil = gesamt ? erledigt / gesamt : 0;
   const imPlan = t.offen === 0 || (t.tage > 0 && t.dieseWoche >= t.jeWoche);
   return (
-    <section class="flaeche kachel" aria-label="Fortschritt und Prüfung">
+    <section class="flaeche kachel" aria-label="Fortschritt und Prüfung" style={{ '--i': i }}>
       <div class="kachel__kopf">
         <Icon name="trending-up" groesse={14} /> Fortschritt
       </div>
@@ -174,10 +182,10 @@ function Fortschritt({ erledigt, gesamt, bloeckeFertig, bloecke, termin, t, onTe
   );
 }
 
-function KartenKachel({ raum, karten, gemerkt }) {
+function KartenKachel({ i, raum, karten, gemerkt }) {
   const sicher = karten.gesamt ? karten.sicher / karten.gesamt : 0;
   return (
-    <a class="flaeche flaeche--klickbar kachel" href={link(raum, 'karten')} aria-label="Lernkarten">
+    <a class="flaeche flaeche--klickbar kachel" href={link(raum, 'karten')} aria-label="Lernkarten" style={{ '--i': i }}>
       <div class="kachel__kopf">
         <Icon name="layers" groesse={14} /> Lernkarten
       </div>
@@ -205,9 +213,9 @@ function KartenKachel({ raum, karten, gemerkt }) {
 }
 
 // Serie, Rang und Aktivität: alles, was „dranbleiben" zeigt
-function SerieKachel({ stand }) {
+function SerieKachel({ i, stand }) {
   return (
-    <button class="flaeche flaeche--klickbar kachel" onClick={() => window.dispatchEvent(new CustomEvent('raenge-zeigen'))} aria-label="Serie, Rang und Aktivität">
+    <button class="flaeche flaeche--klickbar kachel" onClick={() => window.dispatchEvent(new CustomEvent('raenge-zeigen'))} aria-label="Serie, Rang und Aktivität" style={{ '--i': i }}>
       <div class="kachel__kopf">
         <Icon name="flame" groesse={14} class={stand.serie.heuteAktiv ? 'flamme-an' : ''} /> Serie
         <span class="kachel__rang">{stand.rang.name}</span>

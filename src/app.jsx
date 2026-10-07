@@ -17,6 +17,7 @@ import { TrainerBereich } from './bereiche/trainer/index.jsx';
 import { SicherungsKnopf } from './bereiche/sicherung/Sicherung.jsx';
 import { Feier } from './bereiche/feier/Feier.jsx';
 import { Befehlspalette } from './bereiche/palette/Befehlspalette.jsx';
+import { Intro } from './bereiche/intro/Intro.jsx';
 import { TimerPille } from './bereiche/start/FokusTimer.jsx';
 
 const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
@@ -97,6 +98,7 @@ export function App() {
       <Meldungen />
       <BestaetigungsDialog />
       <Feier />
+      <Intro />
       <Befehlspalette raum={raum} />
     </div>
   );

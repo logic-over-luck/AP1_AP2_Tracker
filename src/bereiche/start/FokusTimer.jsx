@@ -82,9 +82,9 @@ export function useTimer() {
   };
 }
 
-export function FokusTimer({ raum, kompakt }) {
+export function FokusTimer({ raum, kompakt, i }) {
   const t = useTimer();
-  if (kompakt) return <FokusKompakt t={t} raum={raum} />;
+  if (kompakt) return <FokusKompakt t={t} raum={raum} i={i} />;
   const umfang = 2 * Math.PI * 52;
   return (
     <section class="flaeche flaeche--innen fokus" aria-label="Fokus-Timer">
@@ -128,10 +128,10 @@ export function FokusTimer({ raum, kompakt }) {
 }
 
 // Kompakte Kachel fürs Cockpit: Zeit, Start/Pause, Dauer
-function FokusKompakt({ t, raum }) {
+function FokusKompakt({ t, raum, i }) {
   const startklar = t.timer.start === null;
   return (
-    <section class={`flaeche kachel fokus-kompakt ${t.laeuft ? 'fokus-kompakt--laeuft' : ''}`} aria-label="Fokus-Timer">
+    <section class={`flaeche kachel fokus-kompakt ${t.laeuft ? 'fokus-kompakt--laeuft' : ''}`} aria-label="Fokus-Timer" style={{ '--i': i }}>
       <div class="kachel__kopf">
         <Icon name="timer" groesse={14} /> Fokus-Timer
         <span class="kachel__rang">{t.laeuft ? 'läuft' : t.pausiert ? 'pausiert' : 'bereit'}</span>

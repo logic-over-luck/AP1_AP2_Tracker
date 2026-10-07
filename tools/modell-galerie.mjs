@@ -23,6 +23,7 @@ if (!modus) {
 fs.mkdirSync(ziel, { recursive: true });
 const browser = await playwright.chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+await page.addInitScript(() => sessionStorage.setItem('lernstudio.intro', '1'));
 const fehler = [];
 page.on('console', (m) => m.type() === 'error' && fehler.push(m.text()));
 page.on('pageerror', (e) => fehler.push(e.message));
