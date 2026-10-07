@@ -151,7 +151,9 @@ function Kante({ kante, knoten, luecken, marken }) {
   const textPos = punktAuf(pts, kante.textPos ?? 0.5);
   const seiteT = kante.textSeite ?? 1;
   const tx = textPos.waagerecht ? textPos.p[0] : textPos.p[0] + 7 * seiteT;
-  const ty = textPos.waagerecht ? textPos.p[1] - 8 * seiteT : textPos.p[1];
+  // mehrzeilige Beschriftung ganz über (bzw. unter) die Linie schieben
+  const zeilenN = kante.text ? umbrechen(kante.text).length : 1;
+  const ty = textPos.waagerecht ? textPos.p[1] - (8 + ((zeilenN - 1) * ZEILE) / 2) * seiteT : textPos.p[1];
   const ende = (p, q, text, s = 1) => {
     if (!text) return null;
     const w = Math.atan2(q[1] - p[1], q[0] - p[0]);
