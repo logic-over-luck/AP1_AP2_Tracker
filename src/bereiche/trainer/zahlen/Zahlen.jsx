@@ -1,6 +1,6 @@
 import { useCallback } from 'preact/hooks';
 import { TrainerSeite, Uebung } from '../rahmen/Uebung.jsx';
-import { ERZEUGER } from './aufgaben.js';
+import { ERZEUGER, artenFuer } from './aufgaben.js';
 
 const SPICKZETTEL = {
   zahlensysteme:
@@ -27,5 +27,5 @@ export function ZahlenTrainer({ raum, trainer, modi, params }) {
 
 function ZahlenUebung({ raum, modus }) {
   const erzeuge = useCallback((rng) => ERZEUGER[modus.id](rng, raum), [modus.id, raum]);
-  return <Uebung erzeuge={erzeuge} trainerId="zahlen" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} />;
+  return <Uebung erzeuge={erzeuge} trainerId="zahlen" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} arten={artenFuer(modus.id, raum)} />;
 }

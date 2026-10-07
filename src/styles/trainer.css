@@ -61,6 +61,58 @@
   flex-direction: column;
   gap: var(--s-4);
 }
+.arten {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.arten__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+  margin-right: var(--s-1);
+}
+.art {
+  height: 28px;
+  padding: 0 var(--s-3);
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+  color: var(--text-2);
+  font-size: var(--t-s);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--dauer) var(--kurve), border-color var(--dauer) var(--kurve), color var(--dauer) var(--kurve);
+}
+.art:hover {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.art[aria-pressed='true'] {
+  background: var(--akzent-weich);
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.notiz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.notiz__kopf {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.notiz__feld {
+  width: 100%;
+  height: auto;
+  min-height: 56px;
+  resize: vertical;
+  line-height: 1.5;
+  padding: var(--s-2) var(--s-3);
+}
 .uebung__kopf {
   display: flex;
   align-items: flex-start;

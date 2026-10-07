@@ -26,6 +26,11 @@ export function zufall(startwert = Math.floor(Math.random() * 2 ** 31)) {
       return x;
     },
     ja: (wahrscheinlichkeit = 0.5) => naechste() < wahrscheinlichkeit,
+    // Aufgabenart wählen – nur unter den Arten, die man sich ausgesucht hat (r.arten), sonst unter allen
+    art: (liste) => {
+      const frei = r.arten?.size ? liste.filter((a) => r.arten.has(a)) : liste;
+      return r.wahl(frei.length ? frei : liste);
+    },
   };
   return r;
 }

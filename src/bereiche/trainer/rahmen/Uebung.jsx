@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { inhalt } from '../../../daten/inhalt.js';
 import { erfasse } from '../../../lernstand/store.js';
+import { useEinstellung } from '../../../lernstand/einstellungen.js';
 import { geheZu, link } from '../../../router.js';
 import { Icon, Knopf, Rich, Kbd, Aufklapp, Marke } from '../../../ui/bausteine.jsx';
 import { pruefeFeld, zahlText, runde } from './pruefen.js';
@@ -84,9 +85,18 @@ export function Spickzettel({ titel = 'Formeln und Regeln', text, offenStart = f
 
 // Eine Übung aus einem Aufgabenerzeuger.
 // erzeuge(rng) → { titel?, text, tabelle?, felder: [...], loesung: [...], sp? }
-export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, ansicht: Ansicht, loesungName = 'Rechenweg' }) {
+// arten: optionale Liste { name, ids } – damit lässt sich auswählen, welche Aufgabenarten kommen.
+export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, ansicht: Ansicht, loesungName = 'Rechenweg', arten }) {
   const [startwert, setStartwert] = useState(() => Math.floor(Math.random() * 2 ** 31));
-  const aufgabe = useMemo(() => erzeuge(zufall(startwert)), [startwert, erzeuge]);
+  const [gewaehlt, setGewaehlt] = useEinstellung(`arten.${trainerId}.${modusId}`, []);
+  const auswahl = arten ? gewaehlt.filter((n) => arten.some((a) => a.name === n)) : [];
+  const auswahlSchluessel = auswahl.join('|');
+  const aufgabe = useMemo(() => {
+    const r = zufall(startwert);
+    r.arten = new Set(arten?.filter((a) => auswahl.includes(a.name)).flatMap((a) => a.ids));
+    return erzeuge(r);
+  }, [startwert, erzeuge, auswahlSchluessel]);
+  const [notiz, setNotiz] = useState('');
   const [eingaben, setEingaben] = useState({});
   const [ergebnis, setErgebnis] = useState(null);
   const [loesung, setLoesung] = useState(false);
@@ -96,6 +106,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
 
   const neu = () => {
     setStartwert(Math.floor(Math.random() * 2 ** 31));
+    setNotiz('');
     setEingaben({});
     setErgebnis(null);
     setLoesung(false);
@@ -104,7 +115,9 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
   };
   useEffect(() => {
     neu();
-  }, [modusId]);
+  }, [modusId, auswahlSchluessel]);
+
+  const umschalten = (name) => setGewaehlt(auswahl.includes(name) ? auswahl.filter((n) => n !== name) : [...auswahl, name]);
 
   const zaehle = (ok) => {
     if (gezaehlt) return;
@@ -151,6 +164,19 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
         </div>
         <Spickzettel text={spickzettel} />
       </div>
+      {arten?.length > 1 && (
+        <div class="arten" role="group" aria-label="Welche Aufgaben möchtest du üben?">
+          <span class="arten__titel">Üben:</span>
+          <button type="button" class="art" aria-pressed={auswahl.length === 0} onClick={() => setGewaehlt([])}>
+            Alle gemischt
+          </button>
+          {arten.map((a) => (
+            <button key={a.name} type="button" class="art" aria-pressed={auswahl.includes(a.name)} onClick={() => umschalten(a.name)}>
+              {a.name}
+            </button>
+          ))}
+        </div>
+      )}
       <section class={`flaeche flaeche--gross aufgabe ${fertig ? 'aufgabe--fertig' : ''}`} key={startwert}>
         {aufgabe.titel && <div class="ueberschrift-klein ueberschrift-klein--akzent">{aufgabe.titel}</div>}
         <div class="aufgabe__text">
@@ -166,6 +192,23 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             loesung={loesung || fertig}
           />
         )}
+        <label class="notiz">
+          <span class="notiz__kopf">
+            <Icon name="pencil" groesse={13} /> Dein Rechenweg <span class="gedaempft">· nur für dich, wird nicht geprüft</span>
+          </span>
+          <textarea
+            class="feld feld--mono notiz__feld"
+            rows={2}
+            value={notiz}
+            spellcheck={false}
+            placeholder="Hier kannst du rechnen, z. B. 200 : 16 = 12 Rest 8 …"
+            onInput={(e) => {
+              setNotiz(e.currentTarget.value);
+              e.currentTarget.style.height = 'auto';
+              e.currentTarget.style.height = `${e.currentTarget.scrollHeight + 2}px`;
+            }}
+          />
+        </label>
         <form
           class="aufgabe__felder"
           onSubmit={(e) => {

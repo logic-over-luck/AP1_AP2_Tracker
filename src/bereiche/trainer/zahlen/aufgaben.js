@@ -41,7 +41,7 @@ function stellenwertweg(text, basis) {
 }
 
 export function zahlensysteme(r) {
-  const art = r.wahl(['d2b', 'b2d', 'd2h', 'h2d', 'b2h', 'h2b', 'd2b', 'b2d', 'potenz', 'oktal']);
+  const art = r.art(['d2b', 'b2d', 'd2h', 'h2d', 'b2h', 'h2b', 'd2b', 'b2d', 'potenz', 'oktal']);
   if (art === 'potenz') {
     const n = r.wahl([2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 8, 16]);
     const frage = r.ja();
@@ -139,7 +139,7 @@ export function zahlensysteme(r) {
 // ---------- Präfixe ----------
 
 export function praefixe(r) {
-  const art = r.wahl(['dez2bin', 'dez2bin', 'bin2dez', 'bit2byte', 'byte2bit', 'kib']);
+  const art = r.art(['dez2bin', 'dez2bin', 'bin2dez', 'bit2byte', 'byte2bit', 'kib']);
   if (art === 'dez2bin') {
     const stufe = r.wahl([2, 3, 3, 4]);
     const wert = stufe === 4 ? r.wahl([1, 2, 4, 8, 12, 16]) : r.wahl([250, 256, 500, 512, 960, 1000, 2000, 4000]);
@@ -206,7 +206,7 @@ export function praefixe(r) {
 export function datenmenge(r, raum = 'AP1') {
   const sp = raum === 'AP2' ? SP.mengeAP2 : SP.menge;
   const arten = raum === 'AP2' ? ['bild', 'sammlung', 'sammlung', 'messwerte'] : ['bild', 'bild', 'farben', 'messwerte', 'mehrbedarf', 'sammlung'];
-  const art = r.wahl(arten);
+  const art = r.art(arten);
   if (art === 'farben') {
     const bit = r.wahl([1, 4, 8, 16, 24]);
     return {
@@ -302,7 +302,7 @@ export function datenmenge(r, raum = 'AP1') {
 
 export function uebertragung(r, raum = 'AP1') {
   const sp = raum === 'AP2' ? SP.mengeAP2 : SP.menge;
-  const art = r.wahl(['dauer', 'dauer', 'dauerMinuten', 'rate']);
+  const art = r.art(['dauer', 'dauer', 'dauerMinuten', 'rate']);
   const stufe = r.wahl([2, 3, 3]);
   const menge = stufe === 2 ? r.wahl([300, 500, 700, 800]) : r.wahl([1, 2, 4, 5, 8, 10, 25]);
   const rate = r.wahl([16, 50, 100, 250, 500, 1000]);
@@ -358,7 +358,7 @@ export function uebertragung(r, raum = 'AP1') {
 // ---------- Leistung, Energie, Kosten ----------
 
 export function energie(r) {
-  const art = r.wahl(['pui', 'pui', 'netzteil', 'kosten', 'kosten', 'wirkungsgrad', 'jahr']);
+  const art = r.art(['pui', 'pui', 'netzteil', 'kosten', 'kosten', 'wirkungsgrad', 'jahr']);
   if (art === 'pui') {
     const u = r.wahl([5, 12, 24, 230]);
     const i = u === 230 ? r.wahl([0.2, 0.5, 1.5, 2, 4.5]) : r.wahl([0.5, 1.5, 2, 3, 4.5, 8]);
@@ -469,7 +469,7 @@ export function rechte(r) {
   const ziffern = [r.wahl([7, 7, 6, 5]), r.wahl([7, 5, 5, 4, 6, 0]), r.wahl([5, 4, 4, 0, 1])];
   const oktal = ziffern.join('');
   const sym = symbolisch(oktal);
-  const art = r.wahl(['zuSym', 'zuOktal', 'wer']);
+  const art = r.art(['zuSym', 'zuOktal', 'wer']);
   const erklaerung = ['r = 4 (lesen), w = 2 (schreiben), x = 1 (ausführen) – je Gruppe addieren.', 'Reihenfolge: Besitzer, Gruppe, andere.'];
   if (art === 'zuOktal') {
     return {
@@ -527,7 +527,7 @@ export function paritaet(r) {
   const einsen = bits.reduce((a, b) => a + b, 0);
   const gerade = r.ja();
   const pbit = gerade ? einsen % 2 : 1 - (einsen % 2);
-  if (r.ja(0.6)) {
+  if (r.art(['bilden', 'bilden', 'bilden', 'erkennen', 'erkennen']) === 'bilden') {
     return {
       titel: 'Paritätsbit bilden',
       sp: SP.paritaet,
@@ -551,3 +551,52 @@ export function paritaet(r) {
 }
 
 export const ERZEUGER = { zahlensysteme, praefixe, datenmenge, uebertragung, energie, rechte, paritaet };
+
+// Aufgabenarten zum Auswählen (Knöpfe über der Aufgabe). ids = Werte, die r.art() oben ziehen darf.
+export function artenFuer(modus, raum = 'AP1') {
+  const liste = {
+    zahlensysteme: [
+      { name: 'Dez → Bin', ids: ['d2b'] },
+      { name: 'Bin → Dez', ids: ['b2d'] },
+      { name: 'Dez → Hex', ids: ['d2h'] },
+      { name: 'Hex → Dez', ids: ['h2d'] },
+      { name: 'Bin → Hex', ids: ['b2h'] },
+      { name: 'Hex → Bin', ids: ['h2b'] },
+      { name: 'Oktal', ids: ['oktal'] },
+      { name: 'Zweierpotenzen', ids: ['potenz'] },
+    ],
+    praefixe: [
+      { name: 'kB → KiB', ids: ['dez2bin'] },
+      { name: 'KiB → kB', ids: ['bin2dez', 'kib'] },
+      { name: 'Bit ↔ Byte', ids: ['bit2byte', 'byte2bit'] },
+    ],
+    datenmenge: [
+      { name: 'Bild', ids: ['bild'] },
+      { name: 'Farbtiefe', ids: ['farben'], nur: 'AP1' },
+      { name: 'Messwerte', ids: ['messwerte'] },
+      { name: 'Mehrbedarf in %', ids: ['mehrbedarf'], nur: 'AP1' },
+      { name: 'Bildersammlung', ids: ['sammlung'] },
+    ],
+    uebertragung: [
+      { name: 'Übertragungsdauer', ids: ['dauer', 'dauerMinuten'] },
+      { name: 'Benötigte Rate', ids: ['rate'] },
+    ],
+    energie: [
+      { name: 'P = U · I', ids: ['pui'] },
+      { name: 'Netzteil', ids: ['netzteil'] },
+      { name: 'Energie & Kosten', ids: ['kosten'] },
+      { name: 'Wirkungsgrad', ids: ['wirkungsgrad'] },
+      { name: 'Stromkosten im Jahr', ids: ['jahr'] },
+    ],
+    rechte: [
+      { name: 'oktal → symbolisch', ids: ['zuSym'] },
+      { name: 'symbolisch → oktal', ids: ['zuOktal'] },
+      { name: 'Rechte deuten', ids: ['wer'] },
+    ],
+    paritaet: [
+      { name: 'Paritätsbit bilden', ids: ['bilden'] },
+      { name: 'Fehler erkennen', ids: ['erkennen'] },
+    ],
+  }[modus];
+  return liste?.filter((a) => !a.nur || a.nur === raum) ?? null;
+}

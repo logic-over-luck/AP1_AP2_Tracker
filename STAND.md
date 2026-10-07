@@ -125,6 +125,10 @@ nächsten offenen Punkt weiter.
   Lesart stimmt; genauere Ergebnisse als verlangt sind richtig; Eurobeträge haben 1 Cent Toleranz (Zwischenrundung).
 - **Netzplan-Knoten:** FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ, Start bei 0. Bei mehreren kritischen
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
+- **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
+  die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
+- **Eigener Rechenweg:** Jede Trainer-Aufgabe hat ein Notizfeld zum Rechnen. Es wird nicht geprüft und nicht
+  gespeichert, bei „Neue Aufgabe“ ist es wieder leer.
 - **Netzplan-Pfeile:** gerade und rechtwinklig wie in den Prüfungsheften (waagerecht raus, in der Lücke senkrecht,
   waagerecht rein). Spalten werden so sortiert, dass sich wenige Pfeile kreuzen; Pfeile über mehrere Spalten laufen
   durch eine freie Bahn statt hinter Knoten.
