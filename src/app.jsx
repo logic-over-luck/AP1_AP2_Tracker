@@ -17,7 +17,7 @@ import { TrainerBereich } from './bereiche/trainer/index.jsx';
 import { SicherungsKnopf } from './bereiche/sicherung/Sicherung.jsx';
 import { Feier } from './bereiche/feier/Feier.jsx';
 import { Befehlspalette } from './bereiche/palette/Befehlspalette.jsx';
-import { Intro } from './bereiche/intro/Intro.jsx';
+import { Intro, spieleIntro } from './bereiche/intro/Intro.jsx';
 import { TimerPille } from './bereiche/start/FokusTimer.jsx';
 
 const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
@@ -131,7 +131,7 @@ function Leiste({ raum, route, stand }) {
 
   return (
     <aside class="leiste" aria-label="Navigation">
-      <a class="marke-logo" href={link(raum)}>
+      <a class="marke-logo" href={link(raum)} onClick={spieleIntro} title="Intro abspielen">
         <span class="marke-logo__bild">
           <Icon name="layers" groesse={20} strich={2} />
         </span>

@@ -5,7 +5,7 @@
 // – Serie mit Rang und Aktivität der letzten Wochen
 // – Fokus-Timer
 
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import { inhalt } from '../../daten/inhalt.js';
 import { useLernstand, erfasse } from '../../lernstand/store.js';
 import { kartenZustand } from '../../lernstand/ableiten.js';
@@ -16,7 +16,7 @@ import { Icon, Knopf, Balken, Zahl, PrioMarke, Marke, Ring } from '../../ui/baus
 import { Dialog } from '../../ui/dialog.jsx';
 import { FokusTimer } from './FokusTimer.jsx';
 import { Woche } from './Aktivitaet.jsx';
-import { INTRO_BEIM_START, INTRO_DAUER, frischGeoeffnet } from '../intro/Intro.jsx';
+import { introLaeuft, aufIntroStart, aufIntroEnde, frischGeoeffnet } from '../intro/Intro.jsx';
 
 function gruss() {
   const h = new Date().getHours();
@@ -31,12 +31,19 @@ export function Uebersicht({ raum }) {
   const stand = useLernstand();
   const r = inhalt.raeume.get(raum);
   const [terminOffen, setTerminOffen] = useState(false);
-  // Beim ersten Anzeigen nach dem Öffnen treten die Kacheln nacheinander auf (nach dem Intro)
-  const [auftritt] = useState(() => {
+  // Auftritt der Kacheln: Läuft gerade das Intro, warten sie unsichtbar und treten auf, sobald es
+  // vorbei ist (auch nach Überspringen oder Abspielen per Logo). Sonst nur beim ersten Anzeigen im Tab.
+  const [auftritt, setAuftritt] = useState(() => {
     const frisch = frischGeoeffnet.wert;
     frischGeoeffnet.wert = false;
-    return frisch;
+    return introLaeuft() ? 'wartet' : frisch ? 1 : 0;
   });
+  useEffect(() => {
+    let runde = typeof auftritt === 'number' ? auftritt : 0;
+    const weg1 = aufIntroStart(() => setAuftritt('wartet'));
+    const weg2 = aufIntroEnde(() => setAuftritt(++runde || 1));
+    return () => (weg1(), weg2());
+  }, []);
 
   const spIds = r.bloeckeListe.flatMap((b) => b.sp);
   const spErledigt = spIds.filter((id) => stand.spErledigt.has(id)).length;
@@ -49,14 +56,14 @@ export function Uebersicht({ raum }) {
   const gemerkt = [...stand.gemerkt].filter((id) => inhalt.karten.has(id) && inhalt.raumVon(id) === raum).length;
 
   return (
-    <section class={`cockpit ${auftritt ? 'cockpit--auftritt' : ''}`} aria-label="Übersicht" style={{ '--start': `${auftritt && INTRO_BEIM_START ? INTRO_DAUER - 400 : 0}ms` }}>
+    <section class={`cockpit ${auftritt === 'wartet' ? 'cockpit--wartet' : auftritt ? 'cockpit--auftritt' : ''}`} aria-label="Übersicht">
       <header class="cockpit__kopf">
         <h1 class="cockpit__gruss">{gruss()}</h1>
         <span class="ueberschrift-klein">
           {r.name} · {datumLang(stand.heute)}
         </span>
       </header>
-      <div class="cockpit__raster">
+      <div class="cockpit__raster" key={auftritt}>
         <Fortschritt
           i={0}
           erledigt={spErledigt}

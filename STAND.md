@@ -72,8 +72,8 @@ nächsten offenen Punkt weiter.
 - Lernstand: Ereignisprotokoll, Wiederholungs-Phasen (1/7/30 Tage), Kartenplanung, Serie, XP, Ränge, Sicherung mit Format-Version
 - Lernplan-Seite mit Cockpit oben (auf Wunsch zusammengelegt): vier Kacheln (Fortschritt mit Prüfung und Tempo,
   Lernkarten, Serie mit Wochenleiste, Fokus-Timer), darunter „Dein nächster Schritt" über die volle Breite, dann der Lernplan
-- Intro beim Öffnen (einmal je Sitzung, überspringbar, aus bei „Bewegung reduzieren"): Terminal tippt „hello world",
-  Logo erscheint, danach treten die Cockpit-Kacheln nacheinander auf
+- Intro beim Öffnen (einmal je Tab, jederzeit per Klick aufs Logo, überspringbar, von selbst nicht bei „Bewegung reduzieren"): Terminal tippt „hello world",
+  Logo erscheint; die Cockpit-Kacheln warten und treten erst nach dem Intro nacheinander auf (auch nach Überspringen sofort)
 - Lernplan: Ordner, Block-Karten, Stichpunkte abhaken, Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Notizen, Gegenstücke, Filter, Suche
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)

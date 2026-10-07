@@ -2028,10 +2028,13 @@ mark.treffer {
   }
 }
 
-/* Gestaffelter Auftritt der Cockpit-Kacheln */
+/* Gestaffelter Auftritt der Cockpit-Kacheln (nach dem Intro bzw. beim ersten Öffnen) */
+.cockpit--wartet .kachel {
+  opacity: 0;
+}
 .cockpit--auftritt .kachel {
   animation: auftritt 0.55s var(--kurve) both;
-  animation-delay: calc(var(--start, 0ms) + var(--i, 0) * 70ms + 80ms);
+  animation-delay: calc(var(--i, 0) * 70ms + 60ms);
 }
 @keyframes auftritt {
   from {
