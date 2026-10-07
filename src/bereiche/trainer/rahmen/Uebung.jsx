@@ -86,7 +86,8 @@ export function Spickzettel({ titel = 'Formeln und Regeln', text, offenStart = f
 // Eine Übung aus einem Aufgabenerzeuger.
 // erzeuge(rng) → { titel?, text, tabelle?, felder: [...], loesung: [...], sp? }
 // arten: optionale Liste { name, ids } – damit lässt sich auswählen, welche Aufgabenarten kommen.
-export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, ansicht: Ansicht, loesungName = 'Rechenweg', arten }) {
+// notizen: Feld „Rechenweg & Notizen“ zeigen (nur wo man wirklich rechnet).
+export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, ansicht: Ansicht, loesungName = 'Rechenweg', arten, notizen = true }) {
   const [startwert, setStartwert] = useState(() => Math.floor(Math.random() * 2 ** 31));
   const [gewaehlt, setGewaehlt] = useEinstellung(`arten.${trainerId}.${modusId}`, []);
   const auswahl = arten ? gewaehlt.filter((n) => arten.some((a) => a.name === n)) : [];
@@ -192,23 +193,25 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             loesung={loesung || fertig}
           />
         )}
-        <label class="notiz">
-          <span class="notiz__kopf">
-            <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· wird nicht geprüft</span>
-          </span>
-          <textarea
-            class="feld feld--mono notiz__feld"
-            rows={2}
-            value={notiz}
-            spellcheck={false}
-            placeholder="Hier kannst du rechnen oder deine Notizen zur Aufgabe schreiben …"
-            onInput={(e) => {
-              setNotiz(e.currentTarget.value);
-              e.currentTarget.style.height = 'auto';
-              e.currentTarget.style.height = `${e.currentTarget.scrollHeight + 2}px`;
-            }}
-          />
-        </label>
+        {notizen && (
+          <label class="notiz">
+            <span class="notiz__kopf">
+              <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· wird nicht geprüft</span>
+            </span>
+            <textarea
+              class="feld feld--mono notiz__feld"
+              rows={2}
+              value={notiz}
+              spellcheck={false}
+              placeholder="Hier kannst du rechnen oder deine Notizen zur Aufgabe schreiben …"
+              onInput={(e) => {
+                setNotiz(e.currentTarget.value);
+                e.currentTarget.style.height = 'auto';
+                e.currentTarget.style.height = `${e.currentTarget.scrollHeight + 2}px`;
+              }}
+            />
+          </label>
+        )}
         <form
           class="aufgabe__felder"
           onSubmit={(e) => {

@@ -72,7 +72,7 @@ function Ueben({ aufgaben, modus, spickzettel }) {
     },
     [aufgaben, modus.id],
   );
-  return <Uebung erzeuge={erzeuge} trainerId="modellieren" modusId={modus.id} spIds={modus.sp} spickzettel={spickzettel} ansicht={DiagrammAnsicht} loesungName="Erklärung" />;
+  return <Uebung erzeuge={erzeuge} trainerId="modellieren" modusId={modus.id} spIds={modus.sp} spickzettel={spickzettel} ansicht={DiagrammAnsicht} loesungName="Erklärung" notizen={false} />;
 }
 
 export function lueckenFuer(aufgabe, eingaben, ergebnis, loesung) {

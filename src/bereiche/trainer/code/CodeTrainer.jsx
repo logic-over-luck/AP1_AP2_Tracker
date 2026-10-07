@@ -30,7 +30,7 @@ export function CodeTrainer({ raum, trainer, modi, params }) {
 function CUebung({ raum, modus }) {
   const erzeuge = useCallback((rng) => ERZEUGER[modus.id](rng, raum), [modus.id, raum]);
   const ansicht = { schreibtisch: SchreibtischBild, puzzle: PuzzleBild, fehler: FehlerBild }[modus.id];
-  return <Uebung erzeuge={erzeuge} trainerId="code" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} ansicht={ansicht} />;
+  return <Uebung erzeuge={erzeuge} trainerId="code" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} ansicht={ansicht} notizen={modus.id !== 'puzzle'} />;
 }
 
 // ---------- Code-Anzeige mit Zeilennummern und Hervorhebung ----------
