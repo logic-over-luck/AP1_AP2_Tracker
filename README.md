@@ -4,6 +4,10 @@ Lern-App für die IHK-Abschlussprüfung **Fachinformatiker/in Anwendungsentwickl
 
 ## So startest du die App
 
+**Online:** https://logic-over-luck.github.io/AP1_AP2_Tracker/ (GitHub Pages, aktualisiert sich bei jedem Push von selbst)
+
+**Offline als Datei:**
+
 1. Oben in der Dateiliste auf **`Lernstudio.html`** klicken.
 2. Rechts über dem Dateiinhalt auf das Symbol **„Download raw file"** (Pfeil nach unten) klicken.
 3. Die Datei in einen festen Ordner legen, z. B. `Dokumente/Lernstudio/`.
