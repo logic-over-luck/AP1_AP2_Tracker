@@ -1056,6 +1056,8 @@ button.codezeile:hover {
   display: block;
 }
 .sql-editor__feld {
+  font-variant-ligatures: none;
+  font-feature-settings: 'calt' 0, 'liga' 0;
   width: 100%;
   min-height: 120px;
   padding: var(--s-3) var(--s-4);
@@ -1097,6 +1099,7 @@ button.codezeile:hover {
   font-size: var(--t-s);
 }
 .sql-code {
+  font-feature-settings: 'calt' 0, 'liga' 0;
   padding: var(--s-3) var(--s-4);
   white-space: pre-wrap;
 }
@@ -1301,6 +1304,299 @@ button.codezeile:hover {
   .sql-liste__gruppe {
     display: none;
   }
+}
+
+/* SQL: Aufgabenleiste */
+.sql-leiste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+}
+.sql-leiste__gruppen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sql-leiste__gruppe {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 30px;
+  padding: 0 var(--s-3);
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-2);
+  font-size: var(--t-s);
+  font-weight: 550;
+  color: var(--text-2);
+}
+.sql-leiste__gruppe:hover {
+  color: var(--text);
+  border-color: var(--linie-3);
+}
+.sql-leiste__gruppe[aria-selected='true'] {
+  background: var(--akzent-weich);
+  border-color: var(--akzent-linie);
+  color: var(--text);
+}
+.sql-leiste__fortschritt {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sql-leiste__zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sql-leiste__nummern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+.sql-leiste__nr,
+.sql-leiste__pfeil {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--linie-2);
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  color: var(--text-2);
+  transition: background var(--dauer) var(--kurve), border-color var(--dauer) var(--kurve);
+}
+.sql-leiste__nr:hover,
+.sql-leiste__pfeil:hover:not(:disabled) {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.sql-leiste__pfeil {
+  border-color: transparent;
+}
+.sql-leiste__pfeil:disabled {
+  opacity: 0.3;
+}
+.sql-leiste__nr--geloest {
+  background: var(--akzent);
+  border-color: var(--akzent);
+  color: var(--akzent-text);
+}
+.sql-leiste__nr--aktiv {
+  border: 2px solid var(--akzent);
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* SQL: Bausteine zum Antippen */
+.sql-bausteine {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  border: 1px solid var(--linie-1, var(--linie-2));
+  border-radius: var(--r-2, var(--r-1));
+  background: var(--flaeche-1);
+}
+.sql-bausteine__zeile {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+}
+.sql-bausteine__zeile + .sql-bausteine__zeile {
+  padding-top: var(--s-2);
+  border-top: 1px dashed var(--linie-2);
+}
+.sql-bausteine__titel {
+  flex: none;
+  width: 92px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sql-bausteine__reihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+.sql-bausteine__hinweis {
+  font-size: var(--t-s);
+}
+.sql-baustein {
+  font-variant-ligatures: none;
+  font-feature-settings: 'calt' 0, 'liga' 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: var(--r-1);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dauer) var(--kurve), border-color var(--dauer) var(--kurve), transform 80ms;
+}
+.sql-baustein:hover {
+  border-color: var(--akzent-linie);
+}
+.sql-baustein:active {
+  transform: scale(0.95);
+}
+.sql-baustein--kw {
+  color: var(--akzent);
+}
+.sql-baustein--tabelle {
+  font-weight: 600;
+}
+.sql-baustein--aktiv {
+  background: var(--akzent-weich);
+  border-color: var(--akzent);
+}
+@media (max-width: 700px) {
+  /* Auf dem Handy: Titel über der Reihe, die Reihe wischt man seitlich */
+  .sql-bausteine__zeile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .sql-bausteine__reihe {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .sql-baustein {
+    height: 34px;
+  }
+}
+
+/* SQL: Grundlagen */
+.sql-grund {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+.sql-grund__kopf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.sql-grund__klauseln {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sql-grund__klausel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 6px 12px 6px 6px;
+  border-radius: var(--r-rund);
+  background: var(--flaeche-2);
+  border: 1px solid var(--linie-2);
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sql-grund__klausel-nr {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--akzent-weich);
+  font-size: var(--t-xs);
+  font-family: var(--mono);
+}
+.sql-grund__satz {
+  font-size: var(--t-s);
+}
+.sql-grund__gruppen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s-2);
+}
+.sql-grund__gruppe {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-s);
+}
+.sql-grund__gruppe strong {
+  color: var(--akzent);
+}
+.sql-grund__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  position: sticky;
+  top: 64px;
+  z-index: 2;
+  padding: var(--s-2) 0;
+  background: var(--bg);
+}
+.sql-grund__nav .sql-baustein {
+  font-family: var(--schrift);
+  text-decoration: none;
+}
+.sql-grund__thema {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  scroll-margin-top: 120px;
+}
+.sql-grund__titel {
+  font-size: var(--t-l, 18px);
+  font-weight: 650;
+}
+.sql-grund__raster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  gap: var(--s-3);
+  align-items: start;
+}
+.sql-befehl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  min-width: 0;
+}
+.sql-befehl__name {
+  font-size: var(--t-m);
+  font-weight: 700;
+  color: var(--akzent);
+}
+.sql-befehl__text {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sql-befehl__syntax,
+.sql-befehl__beispiel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.sql-befehl .sql-code {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12.5px;
+}
+.sql-befehl__knoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-1);
 }
 
 /* ---------- Modellieren: Diagramme ---------- */

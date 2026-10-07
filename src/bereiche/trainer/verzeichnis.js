@@ -93,6 +93,7 @@ export const TRAINER = [
     icon: 'database',
     text: 'Echte Abfragen gegen eine Übungsdatenbank',
     modi: [
+      { id: 'grundlagen', name: 'Grundlagen', sp: ['AP2-4-2-1', 'AP2-4-2-2', 'AP2-4-2-3', 'AP2-4-2-4', 'AP2-4-3-1', 'AP2-4-3-2', 'AP2-4-3-3'] },
       { id: 'abfragen', name: 'Abfragen', sp: ['AP2-4-2-1', 'AP2-4-2-2', 'AP2-4-2-3', 'AP2-4-2-4'] },
       { id: 'aendern', name: 'Daten ändern', sp: ['AP2-4-3-1'] },
       { id: 'struktur', name: 'Tabellen & Index', sp: ['AP2-4-3-2'] },

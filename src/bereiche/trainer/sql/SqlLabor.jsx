@@ -5,11 +5,14 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { TrainerSeite, Spickzettel } from '../rahmen/Uebung.jsx';
 import { Icon, Knopf, Kbd, Rich, Marke, Aufklapp } from '../../../ui/bausteine.jsx';
+import { geheZu } from '../../../router.js';
 import { erfasse, useLernstand } from '../../../lernstand/store.js';
 import { einstellung, setzeEinstellung } from '../../../lernstand/einstellungen.js';
 import { ladeEngine } from './laden.js';
 import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
+import { GRUNDLAGEN, KLAUSELN, BEFEHLSGRUPPEN } from './grundlagen.js';
+import { setzeEin, genannteTabellen } from './einfuegen.js';
 
 const SPICKZETTEL = {
   abfragen:
@@ -70,6 +73,7 @@ function Labor({ modus, startAufgabe }) {
         <Icon name="database" groesse={18} /> Datenbank wird gestartet …
       </div>
     );
+  if (modus.id === 'grundlagen') return <Grundlagen engine={engine} />;
   if (modus.id === 'frei') return <FreiesLabor engine={engine} />;
   return <AufgabenLabor engine={engine} modus={modus} startAufgabe={startAufgabe} />;
 }
@@ -106,31 +110,65 @@ function AufgabenLabor({ engine, modus, startAufgabe }) {
         </div>
         <Spickzettel text={SPICKZETTEL[modus.id]} />
       </div>
-      <div class="sql__raster">
-        <nav class="flaeche sql-liste" aria-label="Aufgaben">
-          {liste.map((a, i) => [
-            GRUPPE[a.sp] && liste[i - 1]?.sp !== a.sp && (
-              <div key={`g-${a.sp}`} class="sql-liste__gruppe ueberschrift-klein">
-                {GRUPPE[a.sp]}
-              </div>
-            ),
-            <button key={a.id} class={`sql-liste__punkt ${a.id === aufgabe.id ? 'sql-liste__punkt--aktiv' : ''}`} aria-current={a.id === aufgabe.id ? 'true' : undefined} onClick={() => setAktuellId(a.id)}>
-              <span class="sql-liste__nr">{geloest.has(a.id) ? <Icon name="check" groesse={13} strich={2.6} /> : i + 1}</span>
-              <span class="sql-liste__titel">{a.titel}</span>
-            </button>,
-          ])}
-        </nav>
-        <AufgabeKarte
-          key={aufgabe.id}
-          engine={engine}
-          aufgabe={aufgabe}
-          nr={index + 1}
-          rechte={rechte}
-          warGeloest={geloest.has(aufgabe.id)}
-          weiter={index < liste.length - 1 ? () => setAktuellId(liste[index + 1].id) : null}
-        />
-      </div>
+      <AufgabenLeiste liste={liste} aktuell={aufgabe} geloest={geloest} waehle={setAktuellId} />
+      <AufgabeKarte
+        key={aufgabe.id}
+        engine={engine}
+        aufgabe={aufgabe}
+        nr={index + 1}
+        rechte={rechte}
+        warGeloest={geloest.has(aufgabe.id)}
+        weiter={index < liste.length - 1 ? () => setAktuellId(liste[index + 1].id) : null}
+      />
     </div>
+  );
+}
+
+// Kompakte Aufgabenwahl: Themen als Reiter (nur bei Abfragen), darunter die Aufgaben als Nummern
+function AufgabenLeiste({ liste, aktuell, geloest, waehle }) {
+  const gruppen = [...new Set(liste.map((a) => a.sp))].filter((sp) => GRUPPE[sp]);
+  const inGruppe = gruppen.length > 1 ? liste.filter((a) => a.sp === aktuell.sp) : liste;
+  const i = liste.indexOf(aktuell);
+  return (
+    <nav class="flaeche sql-leiste" aria-label="Aufgaben">
+      {gruppen.length > 1 && (
+        <div class="sql-leiste__gruppen" role="tablist">
+          {gruppen.map((sp) => {
+            const teil = liste.filter((a) => a.sp === sp);
+            const fertig = teil.filter((a) => geloest.has(a.id)).length;
+            return (
+              <button key={sp} role="tab" class="sql-leiste__gruppe" aria-selected={sp === aktuell.sp} onClick={() => sp !== aktuell.sp && waehle((teil.find((a) => !geloest.has(a.id)) ?? teil[0]).id)}>
+                {GRUPPE[sp]}
+                <span class="sql-leiste__fortschritt">
+                  {fertig}/{teil.length}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+      <div class="sql-leiste__zeile">
+        <button class="sql-leiste__pfeil" aria-label="Vorherige Aufgabe" disabled={i === 0} onClick={() => waehle(liste[i - 1].id)}>
+          <Icon name="chevron-left" groesse={16} />
+        </button>
+        <div class="sql-leiste__nummern">
+          {inGruppe.map((a) => (
+            <button
+              key={a.id}
+              class={`sql-leiste__nr ${a.id === aktuell.id ? 'sql-leiste__nr--aktiv' : ''} ${geloest.has(a.id) ? 'sql-leiste__nr--geloest' : ''}`}
+              aria-current={a.id === aktuell.id ? 'true' : undefined}
+              title={a.titel}
+              onClick={() => waehle(a.id)}
+            >
+              {geloest.has(a.id) && a.id !== aktuell.id ? <Icon name="check" groesse={13} strich={2.6} /> : liste.indexOf(a) + 1}
+            </button>
+          ))}
+        </div>
+        <button class="sql-leiste__pfeil" aria-label="Nächste Aufgabe" disabled={i === liste.length - 1} onClick={() => waehle(liste[i + 1].id)}>
+          <Icon name="chevron-right" groesse={16} />
+        </button>
+      </div>
+    </nav>
   );
 }
 
@@ -217,18 +255,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
     }
   };
 
-  const einfuegen = (wort) => {
-    const t = editor.current;
-    if (!t) return;
-    const a = t.selectionStart ?? text.length;
-    const b = t.selectionEnd ?? text.length;
-    const neu = text.slice(0, a) + wort + text.slice(b);
-    setText(neu);
-    requestAnimationFrame(() => {
-      t.focus();
-      t.setSelectionRange(a + wort.length, a + wort.length);
-    });
-  };
+  const einfuegen = useEinfuegen(editor, text, setText, basis.schema);
 
   const ok = pruefung?.ok;
   return (
@@ -268,6 +295,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             onKeyDown={taste}
           />
         </label>
+        <Bausteine art={rechte ? 'rechte' : aufgabe.modus} schema={basis.schema} text={text} einfuegen={einfuegen} />
         <div class="aufgabe__knoepfe">
           {!rechte && (
             <Knopf variante="zweit" icon="play" onClick={ausfuehrenJetzt}>
@@ -323,7 +351,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
 
         {lauf && <LaufAnzeige lauf={lauf} modus={aufgabe.modus} />}
       </section>
-      {!rechte && <SchemaAnsicht schema={basis.schema} einfuegen={einfuegen} />}
+      {!rechte && <SchemaAnsicht schema={basis.schema} einfuegen={(w) => einfuegen(w)} />}
     </div>
   );
 }
@@ -370,16 +398,7 @@ function FreiesLabor({ engine }) {
     setSchema(schemaAus(db.current));
   };
 
-  const einfuegen = (wort) => {
-    const t = editor.current;
-    const a = t?.selectionStart ?? text.length;
-    const b = t?.selectionEnd ?? text.length;
-    setText(text.slice(0, a) + wort + text.slice(b));
-    requestAnimationFrame(() => {
-      t?.focus();
-      t?.setSelectionRange(a + wort.length, a + wort.length);
-    });
-  };
+  const einfuegen = useEinfuegen(editor, text, setText, schema);
 
   return (
     <div class="sql">
@@ -415,6 +434,7 @@ function FreiesLabor({ engine }) {
               }}
             />
           </label>
+          <Bausteine art="frei" schema={schema} text={text} einfuegen={einfuegen} />
           <div class="aufgabe__knoepfe">
             <Knopf variante="primaer" icon="play" onClick={ausfuehrenJetzt}>
               Ausführen <Kbd>Strg+Enter</Kbd>
@@ -437,9 +457,210 @@ function FreiesLabor({ engine }) {
             </div>
           )}
         </section>
-        <SchemaAnsicht schema={schema} einfuegen={einfuegen} />
+        <SchemaAnsicht schema={schema} einfuegen={(w) => einfuegen(w)} />
       </div>
     </div>
+  );
+}
+
+// ---------- Bausteine zum Antippen ----------
+
+// Reihen mit Titel; je Baustein [Anzeige, eingefügter Text, Cursor zurück]
+const KOMMA = [[','], [';']];
+const BAUSTEINE = {
+  abfragen: [
+    ['Befehle', [['SELECT'], ['*'], ['FROM'], ['WHERE'], ['JOIN'], ['LEFT JOIN'], ['ON'], ['GROUP BY'], ['HAVING'], ['ORDER BY'], ['DESC'], ['DISTINCT'], ['AS'], ['UNION'], ...KOMMA]],
+    ['Bedingungen', [['='], ['<>'], ['>'], ['<'], ['>='], ['<='], ['AND'], ['OR'], ['NOT'], ["LIKE '%'", "LIKE '%'", 2], ['IS NULL'], ['IS NOT NULL'], ['IN ( )', 'IN ()', 1], ['BETWEEN … AND', 'BETWEEN'], ['EXISTS'], ['( SELECT … )', '(SELECT )', 1]]],
+    ['Funktionen', [['COUNT(*)'], ['COUNT( )', 'COUNT()', 1], ['SUM( )', 'SUM()', 1], ['AVG( )', 'AVG()', 1], ['MIN( )', 'MIN()', 1], ['MAX( )', 'MAX()', 1], ['ROUND( , 2)', 'ROUND(, 2)', 4], ['YEAR( )', 'YEAR()', 1], ['LEFT( , n)', 'LEFT(, )', 3], ["' '", "''", 1]]],
+  ],
+  aendern: [
+    ['Befehle', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['( )', '()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['WHERE'], ['SELECT'], ['*'], ['FROM'], ...KOMMA]],
+    ['Bedingungen', [['='], ['+'], ['*'], ['AND'], ['IN ( )', 'IN ()', 1], ['NOT IN ( )', 'NOT IN ()', 1], ['( SELECT … )', '(SELECT )', 1], ['YEAR( )', 'YEAR()', 1], ['UPPER( )', 'UPPER()', 1], ["' '", "''", 1]]],
+  ],
+  struktur: [
+    ['Befehle', [['CREATE TABLE'], ['( )', '()', 1], ['ALTER TABLE'], ['ADD COLUMN'], ['DROP TABLE'], ['CREATE INDEX'], ['ON'], ['UPDATE'], ['SET'], ['='], ['||'], ["' '", "''", 1], ...KOMMA]],
+    ['Typen & Schlüssel', [['INTEGER'], ['VARCHAR( )', 'VARCHAR()', 1], ['DECIMAL(8,2)'], ['DATE'], ['PRIMARY KEY'], ['NOT NULL'], ['FOREIGN KEY ( )', 'FOREIGN KEY ()', 1], ['REFERENCES']]],
+  ],
+  rechte: [
+    ['Befehle', [['GRANT'], ['REVOKE'], ['ON'], ['TO'], ['FROM'], ['WITH GRANT OPTION'], ['CREATE USER'], ["IDENTIFIED BY ' '", "IDENTIFIED BY ''", 1], ...KOMMA]],
+    ['Rechte', [['SELECT'], ['INSERT'], ['UPDATE'], ['DELETE'], ['ALL PRIVILEGES']]],
+  ],
+};
+BAUSTEINE.frei = [BAUSTEINE.abfragen[0], BAUSTEINE.abfragen[1], ['Ändern', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['CREATE TABLE'], ['ALTER TABLE'], ['DROP TABLE']]], BAUSTEINE.abfragen[2]];
+
+// Fügt an der Cursorposition ein – mit passenden Leerzeichen und Kommas (siehe einfuegen.js)
+function useEinfuegen(editor, text, setText, schema) {
+  const spalten = useMemo(() => new Set((schema ?? []).flatMap((t) => t.spalten.map(([n]) => n.toLowerCase()))), [schema]);
+  return (wort, zurueck = 0) => {
+    const t = editor.current;
+    const a = t && document.activeElement === t ? t.selectionStart : (t?.dataset.pos ? Number(t.dataset.pos) : text.length);
+    const b = t && document.activeElement === t ? t.selectionEnd : a;
+    const r = setzeEin(text, Math.min(a, text.length), Math.min(b, text.length), wort, { zurueck, spalten });
+    setText(r.text);
+    requestAnimationFrame(() => {
+      if (!t) return;
+      // Auf dem Handy nicht fokussieren – sonst springt die Tastatur bei jedem Baustein auf
+      if (!window.matchMedia('(hover: none)').matches) t.focus();
+      t.setSelectionRange(r.pos, r.pos);
+      t.dataset.pos = r.pos;
+    });
+  };
+}
+
+function Bausteine({ art, schema, text, einfuegen }) {
+  const tabellen = (schema ?? []).map((t) => t.name);
+  const genannt = genannteTabellen(text, tabellen);
+  const [gewaehlt, setGewaehlt] = useState(null);
+  const aktiv = gewaehlt && tabellen.includes(gewaehlt) ? gewaehlt : genannt[0] ?? null;
+  const spalten = aktiv ? schema.find((t) => t.name === aktiv).spalten : [];
+  return (
+    <div class="sql-bausteine" aria-label="Bausteine zum Antippen">
+      {(BAUSTEINE[art] ?? BAUSTEINE.abfragen).map(([titel, reihe]) => (
+        <div key={titel} class="sql-bausteine__zeile">
+          <span class="sql-bausteine__titel">{titel}</span>
+          <div class="sql-bausteine__reihe">
+            {reihe.map(([zeige, wort = zeige, zurueck = 0]) => (
+              <button key={zeige} type="button" class="sql-baustein sql-baustein--kw" onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(wort, zurueck)}>
+                {zeige}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+      {tabellen.length > 0 && (
+        <div class="sql-bausteine__zeile">
+          <span class="sql-bausteine__titel">Tabellen</span>
+          <div class="sql-bausteine__reihe">
+          {tabellen.map((n) => (
+            <button
+              key={n}
+              type="button"
+              class={`sql-baustein sql-baustein--tabelle ${n === aktiv ? 'sql-baustein--aktiv' : ''}`}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => {
+                setGewaehlt(n);
+                einfuegen(n);
+              }}
+            >
+              {n}
+            </button>
+          ))}
+          </div>
+        </div>
+      )}
+      {tabellen.length > 0 && (
+        <div class="sql-bausteine__zeile">
+          <span class="sql-bausteine__titel">Spalten</span>
+          <div class="sql-bausteine__reihe">
+          {aktiv ? (
+            spalten.map(([n, , marke]) => (
+              <button key={n} type="button" class="sql-baustein sql-baustein--spalte" onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(n)}>
+                {marke.includes('PK') && <span class="sql-schema__pk">PK</span>}
+                {n}
+              </button>
+            ))
+          ) : (
+            <span class="gedaempft sql-bausteine__hinweis">Tippe eine Tabelle an, dann erscheinen hier ihre Spalten.</span>
+          )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ---------- Grundlagen ----------
+
+function Grundlagen({ engine }) {
+  return (
+    <div class="sql-grund">
+      <section class="flaeche flaeche--gross sql-grund__kopf">
+        <div class="ueberschrift-klein ueberschrift-klein--akzent">So ist eine Abfrage aufgebaut</div>
+        <div class="sql-grund__klauseln">
+          {KLAUSELN.map((k, i) => (
+            <span key={k} class="sql-grund__klausel">
+              <span class="sql-grund__klausel-nr">{i + 1}</span>
+              <span class="mono">{k}</span>
+            </span>
+          ))}
+        </div>
+        <p class="gedaempft sql-grund__satz">Immer in dieser Reihenfolge. Nur SELECT und FROM sind Pflicht, der Rest kommt dazu, wenn man ihn braucht.</p>
+        <div class="sql-grund__gruppen">
+          {BEFEHLSGRUPPEN.map((g) => (
+            <div key={g.kurz} class="sql-grund__gruppe">
+              <strong class="mono">{g.kurz}</strong>
+              <span>{g.name}</span>
+              <span class="gedaempft mono">{g.befehle}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+      <nav class="sql-grund__nav" aria-label="Themen">
+        {GRUNDLAGEN.map((g) => (
+          <a key={g.id} href={`#sql-${g.id}`} class="sql-baustein" onClick={(e) => (e.preventDefault(), document.getElementById(`sql-${g.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }))}>
+            {g.titel}
+          </a>
+        ))}
+      </nav>
+      {GRUNDLAGEN.map((g) => (
+        <section key={g.id} id={`sql-${g.id}`} class="sql-grund__thema">
+          <h2 class="sql-grund__titel">{g.titel}</h2>
+          <div class="sql-grund__raster">
+            {g.befehle.map((b) => (
+              <BefehlKarte key={b.name} befehl={b} engine={engine} />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function BefehlKarte({ befehl, engine }) {
+  const [lauf, setLauf] = useState(null);
+  const ausprobieren = () => {
+    if (lauf) return setLauf(null);
+    const db = engine.neueDb();
+    try {
+      setLauf(ausfuehren(db, befehl.beispiel));
+    } catch (e) {
+      setLauf({ fehler: fehlerText(e) });
+    } finally {
+      db.close();
+    }
+  };
+  const imLabor = () => {
+    merkeEntwurf('frei', befehl.beispiel);
+    geheZu('AP2', 'trainer', 'sql', { modus: 'frei' });
+  };
+  return (
+    <article class="flaeche sql-befehl">
+      <h3 class="sql-befehl__name mono">{befehl.name}</h3>
+      <p class="sql-befehl__text">{befehl.text}</p>
+      <div class="sql-befehl__syntax">
+        <span class="ueberschrift-klein">Aufbau</span>
+        <SqlCode text={befehl.syntax} />
+      </div>
+      {befehl.beispiel && (
+        <div class="sql-befehl__beispiel">
+          <span class="ueberschrift-klein">Beispiel</span>
+          <SqlCode text={befehl.beispiel} />
+          {befehl.lauf !== false ? (
+            <div class="sql-befehl__knoepfe">
+              <Knopf variante="zweit" groesse="s" icon={lauf ? 'x' : 'play'} onClick={ausprobieren}>
+                {lauf ? 'Ergebnis ausblenden' : 'Ausprobieren'}
+              </Knopf>
+              <Knopf variante="geist" groesse="s" icon="pencil" onClick={imLabor}>
+                Im Labor bearbeiten
+              </Knopf>
+            </div>
+          ) : (
+            <p class="gedaempft sql-block__fuss">Die Übungsdatenbank kennt keine Benutzer – üben kannst du das im Reiter „Benutzer & Rechte".</p>
+          )}
+          {lauf && <LaufAnzeige lauf={lauf} modus="frei" klein />}
+        </div>
+      )}
+    </article>
   );
 }
 
@@ -535,7 +756,7 @@ function SchemaAnsicht({ schema, einfuegen }) {
         <Icon name="database" groesse={15} />
         <span class="ueberschrift-klein wachsen">Schema</span>
       </div>
-      <p class="gedaempft sql-schema__hilfe">Klick auf einen Namen fügt ihn in den Editor ein.</p>
+      <p class="gedaempft sql-schema__hilfe">Klick auf einen Namen fügt ihn in den Editor ein. PK = Primärschlüssel, FK = Fremdschlüssel.</p>
       {schema.map((t) => {
         const auf = !offen.has(t.name);
         return (
