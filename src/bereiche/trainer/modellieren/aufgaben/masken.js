@@ -84,8 +84,21 @@ export const notation = {
     '**Softwareergonomie:** gruppieren, einheitlich anordnen, verständlich beschriften, Pflichtfelder kennzeichnen, klare Fehlermeldungen („Bitte gib das Datum als TT.MM.JJJJ ein").',
     '**Corporate Identity:** Logo, Farben und Schrift des Unternehmens – in jeder Maske an derselben Stelle.',
     '**Barrierefreiheit:** dunkle Schrift auf hellem Grund (Kontrast), Schrift vergrößerbar, Bedienung mit Tab und Enter, Zustände zusätzlich als Text oder Symbol statt nur rot/grün.',
-    '**Grundsätze der Dialoggestaltung** (DIN EN ISO 9241-110), u. a.: Aufgabenangemessenheit, Selbstbeschreibungsfähigkeit, Erwartungskonformität, Steuerbarkeit, Fehlertoleranz.',
+    '**Grundsätze der Dialoggestaltung** (DIN EN ISO 9241-110): Aufgabenangemessenheit, Selbstbeschreibungsfähigkeit, Erwartungskonformität, Erlernbarkeit, Steuerbarkeit, Robustheit gegen Benutzungsfehler (früher: Fehlertoleranz), Benutzerbindung.',
     '**Prototyp:** ausprobierbares Modell. **Horizontal** = viele Masken, aber ohne Funktion dahinter; **vertikal** = eine Funktion vollständig durch alle Schichten. **Wegwerfprototyp** wird nach der Klärung verworfen, **evolutionärer** Prototyp wird zum Produkt weiterentwickelt.',
+  ],
+};
+
+// AP1: Maske entwerfen und beurteilen – ohne Mockup-Bausteine und Prototyping
+export const spickzettelAP1 = spickzettel.split('\n').filter((z) => !z.startsWith('- **Mockup**') && !z.startsWith('- **Prototyp**')).join('\n');
+
+export const notationAP1 = {
+  text: 'Eine **Maskenskizze** zeigt, wo welche Elemente einer Bildschirmmaske stehen – ohne echte Funktion. Für die Skizze reichen wenige Bausteine: Beschriftung, Eingabefeld, Auswahlliste, Optionsfeld, Kontrollkästchen, Schaltfläche und Rahmen für Gruppen.',
+  bilder: notation.bilder,
+  punkte: [
+    notation.punkte[0],
+    '**Datumsauswahl** (Kalender) statt freier Eingabe – so entstehen keine Formatfehler.',
+    ...notation.punkte.slice(2, 6),
   ],
 };
 
@@ -94,7 +107,7 @@ export const notation = {
 const OPT_MK1 = ['korrekt', 'zu wenig Kontrast', 'Information nur über Farbe', 'Beschriftung fehlt', 'Schaltflächen uneinheitlich'];
 const OPT_MK2 = ['korrekt', 'Corporate Identity nicht eingehalten', 'Information nur über Farbe', 'Fehlermeldung nicht verständlich'];
 const OPT_BEREICH = ['Softwareergonomie', 'Corporate Identity', 'Barrierefreiheit'];
-const OPT_DIALOG = ['Aufgabenangemessenheit', 'Selbstbeschreibungsfähigkeit', 'Erwartungskonformität', 'Steuerbarkeit', 'Fehlertoleranz'];
+const OPT_DIALOG = ['Aufgabenangemessenheit', 'Selbstbeschreibungsfähigkeit', 'Erwartungskonformität', 'Erlernbarkeit', 'Steuerbarkeit', 'Robustheit gegen Benutzungsfehler'];
 const OPT_BS = ['Wertanzeige in großer Schrift', 'Liniendiagramm', 'Datumsauswahl', 'Schalter / Kontrollkästchen', 'Freitextfeld'];
 const ANZ_BS = { 'Wertanzeige in großer Schrift': 'Wertanzeige', Liniendiagramm: 'Diagramm', Datumsauswahl: 'Datumsauswahl', 'Schalter / Kontrollkästchen': 'Schalter', Freitextfeld: 'Freitext' };
 
@@ -185,7 +198,7 @@ export const aufgaben = [
         kb('leiste', 'leiste', 16, 46, 580, 34, 'Bestellungen', { farbe: '#e8871e', marke: 1 }),
         kb('gSuche', 'rahmen', 32, 98, 548, 56, 'Suche', { marke: 4 }),
         tx('lKunde', 48, 112, 90, 'Kundenname'),
-        kb('fKunde', 'feld', 150, 112, 280, 28, 'Mia'),
+        kb('fKunde', 'feld', 150, 112, 280, 28, 'Mi'),
         kb('kSuche', 'knopf', 450, 112, 110, 28, 'Suchen'),
         kb('liste', 'liste', 32, 170, 548, 96),
         ...zeile('h', 170, ['Nr.', 'Kunde', 'Datum', 'Status'], [44, 120, 320, 470], { fett: true }),
@@ -215,7 +228,7 @@ export const aufgaben = [
     loesung: [
       '[1] **Corporate Identity** heißt: Hausfarbe, Logo und Schrift überall gleich. Orange statt Dunkelblau und das fehlende Logo passen nicht zum Unternehmen.',
       '[2] Rot und Grün sind für viele Menschen mit Farbsehschwäche nicht zu unterscheiden. Der Status muss **zusätzlich als Text oder Symbol** erkennbar sein.',
-      '[3] Eine gute Fehlermeldung sagt in der Sprache des Nutzers, **was** passiert ist und **was er tun kann** – z. B. „Zu „Mia" wurde kein Kunde gefunden. Prüfe die Schreibweise."',
+      '[3] Eine gute Fehlermeldung sagt in der Sprache des Nutzers, **was** passiert ist und **was er tun kann** – z. B. „Bitte gib mindestens 3 Buchstaben des Kundennamens ein."',
       '[4] Richtig: Was zusammen benutzt wird, steht **gruppiert** in einem Rahmen mit Titel.',
     ],
     muster: {
@@ -228,7 +241,7 @@ export const aufgaben = [
         kb('logo', 'bild', 26, 51, 64, 24, 'Logo'),
         kb('gSuche', 'rahmen', 32, 98, 548, 56, 'Suche'),
         tx('lKunde', 48, 112, 90, 'Kundenname'),
-        kb('fKunde', 'feld', 150, 112, 280, 28, 'Mia'),
+        kb('fKunde', 'feld', 150, 112, 280, 28, 'Mi'),
         kb('kSuche', 'knopf', 450, 112, 110, 28, 'Suchen'),
         kb('liste', 'liste', 32, 170, 548, 96),
         ...zeile('h', 170, ['Nr.', 'Kunde', 'Datum', 'Status'], [44, 120, 320, 470], { fett: true }),
@@ -241,7 +254,7 @@ export const aufgaben = [
         tx('t2', 490, 218, 80, 'offen', { h: 24 }),
         kb('s3', 'feld', 470, 247, 14, 14, undefined, { farbe: GRUEN }),
         tx('t3', 490, 242, 80, 'geliefert', { h: 24 }),
-        tx('fehler', 32, 276, 420, 'Zu „Mia" wurde kein Kunde gefunden. Prüfe die Schreibweise.'),
+        tx('fehler', 32, 276, 420, 'Bitte gib mindestens 3 Buchstaben des Kundennamens ein.'),
         kb('kNeu', 'knopf', 450, 306, 130, 30, 'Neue Bestellung'),
       ],
     },
@@ -301,7 +314,7 @@ export const aufgaben = [
       {
         id: 'd',
         label: 'Ein ungültiges Feld wird bisher nur rot umrandet. Was ergänzt du?',
-        optionen: ['einen dickeren roten Rahmen', 'ein Warnsymbol und einen Text unter dem Feld', 'einen Signalton', 'nichts – Rot ist eindeutig'],
+        optionen: ['einen dickeren roten Rahmen', 'ein Warnsymbol und einen Text unter dem Feld', 'einen blinkenden roten Rahmen', 'nichts – Rot ist eindeutig'],
         erwartet: 'ein Warnsymbol und einen Text unter dem Feld',
       },
       {
@@ -325,20 +338,23 @@ export const aufgaben = [
     raum: ['AP1', 'AP2'],
     sp: 'AP1-8-4-3',
     titel: 'Grundsätze der Dialoggestaltung',
-    text: 'Die Norm DIN EN ISO 9241-110 beschreibt Grundsätze für die Gestaltung von Dialogen. Ordne jede Eigenschaft eines Bestellportals dem passenden Grundsatz zu.',
+    text: 'Die Norm DIN EN ISO 9241-110 beschreibt Grundsätze für die Gestaltung von Dialogen. Ordne jede Eigenschaft eines Bestellportals dem Grundsatz zu, der hier im Vordergrund steht.',
     felder: [
       { id: 'a', label: 'Die Maske zeigt nur die Felder, die für die Bestellung gebraucht werden; das Bestelldatum wird automatisch eingetragen.', optionen: OPT_DIALOG, erwartet: 'Aufgabenangemessenheit' },
       { id: 'b', label: 'Neben dem Feld steht „Format: TT.MM.JJJJ"; ein Hinweistext erklärt, was in das Feld gehört.', optionen: OPT_DIALOG, erwartet: 'Selbstbeschreibungsfähigkeit' },
       { id: 'c', label: 'Strg+S speichert wie in anderen Programmen, „Speichern" steht in allen Masken unten rechts.', optionen: OPT_DIALOG, erwartet: 'Erwartungskonformität' },
       { id: 'd', label: 'Der Nutzer kann jederzeit einen Schritt zurückgehen oder den Vorgang abbrechen.', optionen: OPT_DIALOG, erwartet: 'Steuerbarkeit' },
-      { id: 'e', label: 'Bei einer falschen Postleitzahl bleiben alle anderen Eingaben erhalten, das Feld wird markiert und erklärt.', optionen: OPT_DIALOG, erwartet: 'Fehlertoleranz' },
+      { id: 'e', label: 'Bei einer falschen Postleitzahl bleiben alle anderen Eingaben erhalten; nur dieses Feld muss korrigiert werden.', optionen: OPT_DIALOG, erwartet: 'Robustheit gegen Benutzungsfehler' },
+      { id: 'f', label: 'Beim ersten Start führt eine kurze Einführung neue Nutzer Schritt für Schritt durch eine Bestellung.', optionen: OPT_DIALOG, erwartet: 'Erlernbarkeit' },
     ],
     loesung: [
       '**Aufgabenangemessenheit:** Der Dialog unterstützt die Aufgabe, ohne unnötige Schritte oder Felder.',
       '**Selbstbeschreibungsfähigkeit:** Der Nutzer erkennt jederzeit, was er tun kann und was erwartet wird.',
       '**Erwartungskonformität:** Der Dialog verhält sich so, wie man es gewohnt ist – einheitlich und wie in anderen Programmen.',
       '**Steuerbarkeit:** Der Nutzer bestimmt Ablauf und Tempo selbst (zurück, abbrechen, unterbrechen).',
-      '**Fehlertoleranz** (in der neuen Fassung „Robustheit gegen Benutzungsfehler"): Fehler werden verhindert oder lassen sich mit wenig Aufwand beheben.',
+      '**Robustheit gegen Benutzungsfehler** (früher „Fehlertoleranz"): Fehler werden verhindert oder lassen sich mit wenig Aufwand beheben – bereits Eingegebenes geht nicht verloren.',
+      '**Erlernbarkeit** (früher „Lernförderlichkeit"): Der Dialog hilft, die Bedienung kennenzulernen, z. B. mit einer Einführung oder Beispielen.',
+      'Die Norm nennt außerdem **Benutzerbindung**: Der Dialog ist so gestaltet, dass man ihn gern und dauerhaft nutzt.',
     ],
   },
 
@@ -349,7 +365,7 @@ export const aufgaben = [
     raum: ['AP2'],
     sp: 'AP2-1-5-2',
     titel: 'Smart-Home-App: Mockup ergänzen',
-    text: 'Die Seite „Wohnzimmer" einer Smart-Home-App soll zeigen: [1] die aktuelle Temperatur gut sichtbar, [2] den Temperaturverlauf der letzten sieben Tage, [3] die Wahl eines Tages, für den der Verlauf gezeigt wird, und [4] ob die Heizung ein- oder ausgeschaltet ist (zum Umschalten). Wähle für jeden Platzhalter den passenden Baustein.',
+    text: 'Die Seite „Wohnzimmer" einer Smart-Home-App soll zeigen: [1] die aktuelle Temperatur gut sichtbar, [2] den Temperaturverlauf über einen Tag, [3] die Wahl des Tages, für den der Verlauf gezeigt wird, und [4] ob die Heizung ein- oder ausgeschaltet ist (zum Umschalten). Wähle für jeden Platzhalter den passenden Baustein.',
     diagramm: {
       breite: 332,
       hoehe: 572,
@@ -370,7 +386,7 @@ export const aufgaben = [
     },
     felder: [
       { id: '1', label: 'Platzhalter für die aktuelle Temperatur', optionen: OPT_BS, erwartet: 'Wertanzeige in großer Schrift', anzeige: ANZ_BS },
-      { id: '2', label: 'Platzhalter für den Verlauf der letzten sieben Tage', optionen: OPT_BS, erwartet: 'Liniendiagramm', anzeige: ANZ_BS },
+      { id: '2', label: 'Platzhalter für den Temperaturverlauf', optionen: OPT_BS, erwartet: 'Liniendiagramm', anzeige: ANZ_BS },
       { id: '3', label: 'Platzhalter für die Wahl des Tages', optionen: OPT_BS, erwartet: 'Datumsauswahl', anzeige: ANZ_BS },
       { id: '4', label: 'Platzhalter für Heizung ein/aus', optionen: OPT_BS, erwartet: 'Schalter / Kontrollkästchen', anzeige: ANZ_BS },
       {
@@ -382,7 +398,7 @@ export const aufgaben = [
     ],
     loesung: [
       '[1] Der wichtigste Wert der Seite wird **nur angezeigt**, nicht eingegeben → Wertanzeige in großer Schrift.',
-      '[2] Ein **Verlauf** über mehrere Tage → Liniendiagramm.',
+      '[2] Ein **Verlauf** über die Stunden des Tages → Liniendiagramm.',
       '[3] Für ein Datum nimmst du eine **Datumsauswahl** (Kalender). Freitext führt zu Formatfehlern.',
       '[4] Zwei Zustände (ein/aus) → **Schalter** oder Kontrollkästchen.',
       'Diagramme machen Entwicklungen sichtbar; Tabellen eignen sich für genaue Einzelwerte.',
@@ -423,8 +439,8 @@ export const aufgaben = [
         tx('l2', 36, 140, 200, 'Datum', { h: 20 }),
         kb('fDatum', 'feld', 36, 162, 260, 32, 'Datum eingeben, z. B. 2026-10-07', { marke: 1 }),
         tx('l3', 36, 210, 200, 'Buchungen', { h: 20 }),
-        kb('tab', 'tabelle', 36, 232, 260, 132, undefined, { marke: 4 }),
-        tx('kopf', 40, 232, 250, 'Datum Kommen Gehen Pause Soll Ist Saldo', { h: 22, groesse: 8 }),
+        kb('tab', 'liste', 36, 232, 260, 132, undefined, { marke: 4 }),
+        ...['Datum', 'Kommen', 'Gehen', 'Pause', 'Soll', 'Ist', 'Saldo'].map((t, i) => tx(`kopf${i}`, 38 + i * 37, 232, 36, t, { h: 22, groesse: 8 })),
         kb('kKommen', 'knopf', 196, 470, 48, 20, 'Kommen', { groesse: 9 }),
         kb('kGehen', 'knopf', 248, 470, 48, 20, 'Gehen', { groesse: 9, marke: 2 }),
       ],
@@ -592,7 +608,7 @@ export const aufgaben = [
       '**Name** als Eingabefeld, **Abteilung** als Auswahlliste',
       '**Art** als drei Optionsfelder (genau eine Wahl), **dringend** als Kontrollkästchen',
       '**Beschreibung** als mehrzeiliges Eingabefeld',
-      'Pflichtfelder mit **\\*** und Hinweis „* Pflichtfeld" – nicht nur farbig markiert',
+      'Pflichtfelder mit Stern * und Hinweis „* Pflichtfeld" – nicht nur farbig markiert',
       '**Schaltflächen** gleich groß, an fester Stelle (unten rechts), Hauptaktion „Absenden" hervorgehoben',
     ],
     hinweise: 'Beschriftungen über den Feldern sind genauso richtig wie links davor – wichtig ist, dass es überall gleich ist. Statt „dringend" als Kontrollkästchen ist auch eine Auswahl „Priorität" (niedrig/mittel/hoch) vertretbar.',
@@ -709,10 +725,10 @@ export const aufgaben = [
       '**Lieferant** als Auswahlliste, **Lieferdatum** als Datumsauswahl',
       'Hinweis zur Menge **gut lesbar** (dunkle Schrift) statt hellgrau',
       'Schaltflächen **gleich groß** und nebeneinander unten rechts; Hauptaktion verständlich beschriftet (z. B. „Buchen") und hervorgehoben, „Abbrechen" schlicht',
-      'Pflichtfelder mit **\\*** und Hinweis gekennzeichnet',
+      'Pflichtfelder mit Stern * und Hinweis „* Pflichtfeld" gekennzeichnet',
     ],
     hinweise: 'Mängel im Entwurf: Beschriftungen uneinheitlich (links, rechts, darüber), Felder ohne Ordnung verteilt, Datum als Freitext ohne Format, Hinweis mit zu wenig Kontrast, „OK" winzig und unklar, „ABBRUCH" groß und rot – die Nebenaktion wirkt wichtiger als die Hauptaktion. Ob die Bezeichnung automatisch gefüllt wird, ist eine sinnvolle Idee, aber kein Muss.',
   },
 ];
 
-export default { spickzettel, notation, aufgaben };
+export default { spickzettel, notation, spickzettelAP1, notationAP1, aufgaben };

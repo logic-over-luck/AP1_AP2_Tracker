@@ -62,10 +62,10 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: SQL-Labor fertig, als Nächstes Modellieren)*
+*(zuletzt aktualisiert: alle Teile fertig, Abschluss-Durchgang erledigt)*
 
 ### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
-- Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 2,6 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
+- Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 3,1 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
 - Inhalte: 246 Kurzfassungen, 88 Blocksätze, ≈ 2.640 Lernkarten in 20 Paketen; jedes Paket von einem zweiten Bearbeiter
   unabhängig durchgesehen (Berichte in `inhalte/pruefberichte/`); Glossar mit 1.098 Begriffen zusammengeführt und geprüft
 - Grundgerüst: Leiste mit Raumwahl AP1/AP2/WiSo, eigene Akzentfarbe je Raum, Kopfzeile, Befehlspalette (Strg+K)
@@ -80,13 +80,16 @@ nächsten offenen Punkt weiter.
   7 Änderungs-, 5 Struktur- und 6 Rechte-Aufgaben, freies Labor mit Beispielen; Prüfung über das Ergebnis,
   erwartetes Ergebnis und Musterlösung abrufbar, Schema-Ansicht mit PK/FK (klickbar), Fehlermeldungen auf Deutsch.
   Gelöste Aufgaben stehen im Lernstand (Ereignis `aufgabe` mit Feld `a` = Aufgaben-ID), Entwürfe nur in der Ansicht
+- Modellieren: eigener SVG-Diagramm-Baukasten (`modellieren/diagramm.jsx`) für UML (Anwendungsfall, Klasse, Aktivität,
+  Sequenz, Zustand), ER- und Tabellenmodell, EPK/BPMN und Masken. 108 Aufgaben in 11 Bereichen: Lücken ergänzen und
+  Fehler finden (automatisch geprüft, Lösung erscheint im Diagramm), Verständnisfragen, Zeichen- und Schreibaufgaben mit
+  Musterlösung und Prüfliste zur Selbstbewertung, Notation je Bereich (für AP1 eigene, schlanke Fassung, wo nötig).
+  Jeder Bereich von einem Bearbeiter erstellt und von einem zweiten unabhängig geprüft; alle Bilder angesehen
+  (`tools/modell-galerie.mjs`); Struktur-Tests in `tests/modellieren.test.mjs`
 
-### In Arbeit: Modellieren (nächster Schritt)
-- Trainer für Diagramme und Modelle: zuordnen, ergänzen, Fehler finden; Musterlösung mit Prüfliste für Zeichnungen
-
-### Offen
-- Abschluss-Durchgang: alle Bereiche im Browser, schmale Fenster, Feinschliff
-- Liste der fachlich unsicheren Inhalte in Abschnitt 4 übertragen
+### Offen / bewusst nicht umgesetzt
+- Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
+- Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
 
 ---
 
@@ -171,7 +174,16 @@ Vor der Prüfung lohnt sich ein kurzer Abgleich mit Ausbilder, Lehrkraft oder de
 ### Trainer
 - **Netzplan**: Knotenaufbau FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ mit Start bei 0. Manche Unterlagen
   zählen ab Tag 1 oder ordnen die Felder anders – die Rechenlogik ist dieselbe.
-<!-- MODELLIEREN-UNSICHER -->
+- **ER/Tabellen/Normalisierung**: Kardinalitäten in Chen-Notation stehen neben der Entität, deren Anzahl sie angeben („1 Kunde – n Bestellungen"); andere Unterlagen schreiben sie gegenüber. Zusammengesetzte Anschrift gilt als 1NF-Verstoß (übliche Lesart, theoretisch umstritten). PLZ → Ort: eigene Ort-Tabelle und Verbleib beim Teilnehmer gelten beide als richtig. Spalten Kurs1, Kurs2, Kurs3 als Wiederholungsgruppe = nicht 1NF-gerecht (manche Bücher sehen das formal anders).
+- **Aktivitätsdiagramm**: Zwei eingehende Kanten direkt an einer Aktion bedeuten nach UML 2 „warten auf beide" – deshalb führt die App Zusammenführungen immer über eine Raute. Manche Lösungen sind da lockerer; bewertet wird die Regel in keiner Auswahl.
+- **Zustandsdiagramm**: Ein Zeitablauf ist ein Auslöser `after(15 min)`, keine Bedingung `[nach 15 min]` – so in zwei Aufgaben als Fehler gewertet.
+- **EPK**: „Mit XOR verzweigt, mit XOR zusammenführen" ist übliche Praxis, keine harte Regel jeder EPK-Lehre. Organisationseinheiten und Informationsobjekte hängen mit einfacher Linie an der Funktion.
+- **Dialoggestaltung (DIN EN ISO 9241-110)**: Abgefragt werden nur Grundsätze, die in alter und neuer Fassung stehen; „Fehlertoleranz" heißt seit 2020 „Robustheit gegen Benutzungsfehler".
+- **Lasten-/Pflichtenheft**: „Pflichtenheft ist nach Freigabe verbindliche Grundlage" ist Lehrmeinung; die Vertragspraxis kann abweichen.
+- **Klassendiagramm**: Aggregation vs. Komposition bei Lehrbuchfällen (Gebäude–Raum = Komposition, Projektteam–Mitarbeiter = Aggregation) ist diskutierbar; die Aufgabe nennt deshalb die Prüffrage „Was passiert mit den Teilen, wenn das Ganze gelöscht wird?". „Klasse mit Liste": Musterlösung als Attribut `List<…>`, Assoziation gilt als ebenso richtig.
+- **Sequenzdiagramm**: Erzeugen wird gestrichelt mit offener Spitze und «create» gezeichnet (manche Werkzeuge: durchgezogen); Rückgabe mit offener Spitze.
+- **Masken**: Grundsätze der Dialoggestaltung nach der Fassung 2020; die Grenze zwischen Selbstbeschreibungsfähigkeit und Erlernbarkeit ist fließend – die Aufgabe fragt nach dem Grundsatz, „der hier im Vordergrund steht".
+- **BPMN in AP1**: Sequenz- und Nachrichtenfluss werden in AP1 nur benannt/gelesen; Unterscheiden und Modellieren ist AP2.
 
 ---
 

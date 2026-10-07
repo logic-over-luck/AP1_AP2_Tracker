@@ -65,7 +65,7 @@ export const aufgaben = [
     felder: [
       { id: 'a', label: 'Wird vom Auftraggeber geschrieben.', optionen: OPT_DOK, erwartet: 'Lastenheft' },
       { id: 'b', label: 'Beschreibt, wie und womit die Anforderungen umgesetzt werden.', optionen: OPT_DOK, erwartet: 'Pflichtenheft' },
-      { id: 'c', label: '„Patienten sollen freie Termine online sehen und buchen können."', optionen: OPT_DOK, erwartet: 'Lastenheft' },
+      { id: 'c', label: 'Die Praxis schreibt: „Patienten sollen freie Termine online sehen und buchen können."', optionen: OPT_DOK, erwartet: 'Lastenheft' },
       { id: 'd', label: '„Die Terminbuchung wird als Web-App umgesetzt; die Termine liegen in einer PostgreSQL-Datenbank."', optionen: OPT_DOK, erwartet: 'Pflichtenheft' },
       { id: 'e', label: 'Auf seiner Grundlage erstellen mögliche Auftragnehmer ihre Angebote.', optionen: OPT_DOK, erwartet: 'Lastenheft' },
       { id: 'f', label: 'Wird nach der Freigabe durch den Auftraggeber zur verbindlichen Grundlage für Umsetzung und Abnahme.', optionen: OPT_DOK, erwartet: 'Pflichtenheft' },
@@ -264,7 +264,7 @@ export const aufgaben = [
     musterText: `**Funktionale Anforderungen**
 - /LF10/ Das System zeigt angemeldeten Beschäftigten den Speiseplan der aktuellen und der nächsten Woche.
 - /LF20/ Beschäftigte können für einen Tag genau ein Gericht aus dem Speiseplan vorbestellen.
-- /LF30/ Beschäftigte können eine Bestellung bis 10:00 Uhr des jeweiligen Tages ändern oder stornieren; danach sperrt das System die Bestellung.
+- /LF30/ Das System nimmt Bestellungen für einen Tag nur bis 10:00 Uhr dieses Tages an.
 - /LF40/ Das System zeigt der Kantine für jeden Tag die Zahl der bestellten Portionen je Gericht.
 - /LF50/ Beschäftigte melden sich mit ihrem vorhandenen Firmenkonto an.
 **Nicht funktionale Anforderungen**
@@ -323,7 +323,7 @@ export const aufgaben = [
       kopf: ['Nr.', 'Anforderung im Lastenheft'],
       zeilen: [
         ['/LF20/', 'Beschäftigte können für einen Tag genau ein Gericht aus dem Speiseplan vorbestellen.'],
-        ['/LF30/', 'Bis 10:00 Uhr des Tages kann eine Bestellung geändert oder storniert werden, danach nicht mehr.'],
+        ['/LF30/', 'Das System nimmt Bestellungen für einen Tag nur bis 10:00 Uhr dieses Tages an.'],
         ['/LF50/', 'Beschäftigte melden sich mit ihrem vorhandenen Firmenkonto an.'],
         ['/LQ10/', 'Bei 300 gleichzeitigen Bestellungen wird jede Bestellung in höchstens 2 Sekunden bestätigt.'],
       ],
@@ -332,7 +332,7 @@ export const aufgaben = [
       kopf: ['Nr.', 'Umsetzung im Pflichtenheft (wie / womit)'],
       zeilen: [
         ['/LF20/', 'Maske „Bestellen" (Angular) zeigt den Speiseplan des Tages; das Gericht wird per Optionsfeld gewählt und mit „Bestellen" gesendet. Der Server speichert die Bestellung in der Tabelle Bestellung (MitarbeiterID, Datum, GerichtID); ein eindeutiger Schlüssel auf MitarbeiterID und Datum verhindert eine zweite Bestellung am selben Tag.'],
-        ['/LF30/', 'Ändern und Stornieren über die Maske „Meine Bestellungen". Der Server prüft bei jeder Änderung die Serverzeit; ab 10:00 Uhr lehnt er die Änderung ab, und die Maske zeigt „Bestellschluss 10:00 Uhr erreicht".'],
+        ['/LF30/', 'Der Server prüft beim Speichern einer Bestellung die Serverzeit: Ist es für den gewählten Tag 10:00 Uhr oder später, lehnt er die Bestellung ab, und die Maske zeigt „Bestellschluss 10:00 Uhr erreicht". Für spätere Tage bleibt Bestellen möglich.'],
         ['/LF50/', 'Anmeldung über das Active Directory der Holm AG per LDAP; die Anwendung speichert keine eigenen Passwörter.'],
         ['/LQ10/', 'Index auf Bestellung.Datum, Verbindungspool im Server. Nachweis durch einen Lasttest mit 300 parallelen Bestellungen vor der Abnahme: Jede Bestellung muss in höchstens 2 Sekunden bestätigt sein.'],
       ],

@@ -247,15 +247,26 @@ function Knoten({ k, m, luecken, marken }) {
     case 'entscheidung':
     case 'beziehung':
     case 'gateway': {
+      // Lücke im Gateway-Typ: gewählte Antwort als echtes Symbol zeigen
+      let art = k.art;
+      let artKlasse = '';
+      const gm = k.typ === 'gateway' && String(art ?? '').match(/^\{(\d+)\}$/);
+      if (gm && luecken?.[gm[1]]?.text) {
+        const sym = { x: 'x', X: 'x', o: 'o', O: 'o', '+': '+' }[luecken[gm[1]].text];
+        if (sym) {
+          art = sym;
+          artKlasse = `dg-symbol--${luecken[gm[1]].zustand ?? 'gewaehlt'}`;
+        }
+      }
       const pfad = `M${cx},${y}L${x + w},${cy}L${cx},${y + h}L${x},${cy}Z`;
       inhalt = (
         <>
           <path class="dg-form" d={pfad} />
           {k.typ === 'beziehung' && <Text x={cx} y={cy} text={k.text} luecken={luecken} max={Math.floor(max * 0.7)} />}
-          {k.typ === 'gateway' && k.art === 'x' && <path class="dg-dick" d={`M${cx - 7},${cy - 7}L${cx + 7},${cy + 7}M${cx + 7},${cy - 7}L${cx - 7},${cy + 7}`} />}
-          {k.typ === 'gateway' && k.art === '+' && <path class="dg-dick" d={`M${cx},${cy - 10}V${cy + 10}M${cx - 10},${cy}H${cx + 10}`} />}
-          {k.typ === 'gateway' && k.art === 'o' && <circle class="dg-dick dg-ohne" cx={cx} cy={cy} r={9} />}
-          {k.typ === 'gateway' && k.art && !['x', '+', 'o'].includes(k.art) && <Text x={cx} y={cy} text={k.art} luecken={luecken} />}
+          {k.typ === 'gateway' && art === 'x' && <path class={`dg-dick ${artKlasse}`} d={`M${cx - 7},${cy - 7}L${cx + 7},${cy + 7}M${cx + 7},${cy - 7}L${cx - 7},${cy + 7}`} />}
+          {k.typ === 'gateway' && art === '+' && <path class={`dg-dick ${artKlasse}`} d={`M${cx},${cy - 10}V${cy + 10}M${cx - 10},${cy}H${cx + 10}`} />}
+          {k.typ === 'gateway' && art === 'o' && <circle class={`dg-dick dg-ohne ${artKlasse}`} cx={cx} cy={cy} r={9} />}
+          {k.typ === 'gateway' && art && !['x', '+', 'o'].includes(art) && <Text x={cx} y={cy} text={art} luecken={luecken} />}
           {k.typ !== 'beziehung' && k.text && <Text x={x + w + 6} y={y - 6} text={k.text} luecken={luecken} anker="start" klasse="dg-klein" />}
         </>
       );

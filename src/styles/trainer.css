@@ -1477,3 +1477,13 @@ button.codezeile:hover {
 .dg-luecke--falsch {
   font-family: var(--schrift);
 }
+.dg-symbol--gewaehlt {
+  stroke: var(--info);
+}
+.dg-symbol--richtig,
+.dg-symbol--loesung {
+  stroke: var(--akzent);
+}
+.dg-symbol--falsch {
+  stroke: var(--fehler);
+}

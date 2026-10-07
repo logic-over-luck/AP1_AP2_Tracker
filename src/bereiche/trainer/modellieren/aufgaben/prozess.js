@@ -141,6 +141,37 @@ export const notation = {
   ],
 };
 
+// AP1: nur lesen und benennen – ohne Datenobjekt und ohne Modellierungsregeln
+const bpmnUebersichtAP1 = {
+  ...bpmnUebersicht,
+  knoten: bpmnUebersicht.knoten.filter((k) => k.id !== 'd1' && k.id !== 'ld'),
+  kanten: bpmnUebersicht.kanten.filter((k) => k.von !== 'd1'),
+};
+
+export const spickzettelAP1 = `- **EPK-Ereignis** (Sechseck) = Zustand, der eingetreten ist („Antrag liegt vor"); **Funktion** (abgerundetes Rechteck) = Tätigkeit („Antrag prüfen")
+- **Ereignis und Funktion wechseln sich ab**; die EPK beginnt und endet mit einem Ereignis
+- **Organisationseinheit** (Ellipse mit Strich) = **wer** die Funktion ausführt; **Informationsobjekt** (Rechteck) = Daten, die sie nutzt
+- Konnektoren: **UND (∧)** alle Zweige, **XOR** genau ein Zweig, **ODER (∨)** mindestens ein Zweig
+- BPMN: **Aufgabe** (abgerundetes Rechteck), Ereignisse als Kreis: Start dünn, Zwischen doppelt, Ende dick; Gateways: **X** exklusiv, **O** inklusiv, **+** parallel
+- **Pool** = Beteiligter, **Lane** = Rolle darin – die Lane zeigt, **wer** eine Aufgabe erledigt
+- **Sequenzfluss** (durchgezogen) = Reihenfolge im Pool, **Nachrichtenfluss** (gestrichelt) = Nachricht zwischen zwei Pools`;
+
+export const notationAP1 = {
+  text: notation.text,
+  bilder: [
+    { titel: 'EPK – Urlaubsantrag', diagramm: epkUebersicht },
+    { titel: 'BPMN – Bestellung im Onlineshop', diagramm: bpmnUebersichtAP1 },
+  ],
+  punkte: [
+    notation.punkte[0],
+    '**Ereignis** = Zustand („… liegt vor", „… genehmigt"), **Funktion** = Tätigkeit („Antrag prüfen"). Beides wechselt sich ab; Anfang und Ende sind Ereignisse.',
+    '**Wer** etwas tut, steht in der EPK in der **Organisationseinheit** an der Funktion, in BPMN in der **Lane**, in der die Aufgabe liegt.',
+    '**BPMN-Gateways:** X = genau ein Weg (je nach Bedingung), O = ein oder mehrere Wege, + = alle Wege gleichzeitig. Die Bedingung steht am Gateway, die Antworten an den Pfeilen.',
+    '**BPMN lesen:** Die Bestellung kommt als Nachricht vom Kunden → der Vertrieb prüft sie → Ware vorrätig? nein: der Vertrieb sendet eine Absage an den Kunden; ja: das Lager versendet die Ware.',
+    '**Sequenzfluss** (durchgezogen, gefüllte Spitze) verbindet Schritte **in einem Pool** – auch über Lane-Grenzen. **Nachrichtenfluss** (gestrichelt, kleiner Kreis am Anfang) verbindet **zwei Pools**.',
+  ],
+};
+
 // ---------- Aufgaben ----------
 
 const OPT_EPK = ['Ereignis', 'Funktion', 'Organisationseinheit', 'Informationsobjekt'];
@@ -222,7 +253,7 @@ export const aufgaben = [
     raum: ['AP1', 'AP2'],
     sp: 'AP1-8-4-4',
     titel: 'BPMN lesen: Bestellung beim Lieferanten',
-    text: 'Das BPMN-Diagramm zeigt, wie eine Fachabteilung Material über den Einkauf beim Lieferanten bestellt. Benenne die markierten Sinnbilder 1–6.',
+    text: 'Das BPMN-Diagramm zeigt, wie eine Fachabteilung Material über den Einkauf beim Lieferanten bestellt. Benenne die markierten Sinnbilder 1–6 und beantworte die Fragen.',
     diagramm: {
       breite: 920,
       hoehe: 440,
@@ -301,13 +332,14 @@ export const aufgaben = [
     titel: 'Bewerbung: Wer macht was?',
     text: 'Das BPMN-Diagramm zeigt, wie ein Unternehmen eine Bewerbung bearbeitet. Gib den Ablauf in Worten wieder.',
     diagramm: {
-      breite: 950,
+      breite: 980,
       hoehe: 330,
-      rahmen: [{ typ: 'pool', x: 16, y: 16, w: 920, text: 'Unternehmen', lanes: [{ text: 'Personalabteilung', h: 170 }, { text: 'Fachabteilung', h: 130 }] }],
+      rahmen: [{ typ: 'pool', x: 16, y: 16, w: 948, text: 'Unternehmen', lanes: [{ text: 'Personalabteilung', h: 170 }, { text: 'Fachabteilung', h: 130 }] }],
       knoten: [
         S('s1', 84, 120, 'Bewerbung\neingegangen', { symbol: 'brief' }),
         A('a1', 136, 109, 'Unterlagen prüfen'),
-        G('g1', 290, 115, 'x', 'vollständig?'),
+        G('g1', 290, 115, 'x'),
+        notiz('g1t', 311, 172, 'vollständig?', 'middle'),
         A('a2', 360, 29, 'Unterlagen nachfordern'),
         EN('e1', 530, 40, 'Unterlagen\nnachgefordert'),
         G('g2', 410, 115, '+'),
@@ -592,7 +624,7 @@ export const aufgaben = [
       {
         id: '1',
         label: 'XOR direkt nach „Reklamation eingegangen"',
-        optionen: ['korrekt', 'falsch: Nach einem Ereignis darf nicht mit XOR verzweigt werden – davor fehlt eine Funktion', 'falsch: XOR darf nur zusammenführen, nicht verzweigen', 'falsch: Hier muss ein UND stehen'],
+        optionen: ['korrekt', 'falsch: Nach einem Ereignis darf nicht mit XOR verzweigt werden – davor fehlt eine Funktion', 'falsch: XOR darf nur zusammenführen, nicht verzweigen', 'falsch: Hier muss ein UND stehen, weil beide Wege durchlaufen werden'],
         erwartet: 'falsch: Nach einem Ereignis darf nicht mit XOR verzweigt werden – davor fehlt eine Funktion',
       },
       {
@@ -680,8 +712,8 @@ export const aufgaben = [
         A('ka1', 130, 33, 'Reparatur beauftragen'),
         Z('kz', 714, 44, '', { symbol: 'brief' }),
         notiz('kzt', 730, 30, 'Rechnung erhalten', 'middle'),
-        A('ka2', 800, 33, 'Rechnung bezahlen'),
-        EN('ke', 930, 44, 'bezahlt'),
+        A('ka2', 770, 33, 'Rechnung bezahlen'),
+        EN('ke', 904, 44, 'bezahlt'),
         S('ws', 174, 194, 'Auftrag\neingegangen', { symbol: 'brief' }),
         A('wa1', 230, 183, 'Auftrag annehmen'),
         A('wt1', 230, 273, 'Fahrzeug prüfen'),
@@ -756,8 +788,8 @@ export const aufgaben = [
         A('ka1', 130, 33, 'Reparatur beauftragen'),
         Z('kz', 714, 44, '', { symbol: 'brief' }),
         notiz('kzt', 730, 30, 'Rechnung erhalten', 'middle'),
-        A('ka2', 800, 33, 'Rechnung bezahlen'),
-        EN('ke', 930, 44, 'bezahlt'),
+        A('ka2', 770, 33, 'Rechnung bezahlen'),
+        EN('ke', 904, 44, 'bezahlt'),
         S('ws', 174, 194, 'Auftrag\neingegangen', { symbol: 'brief' }),
         A('wa1', 230, 183, 'Auftrag annehmen'),
         A('wt1', 230, 273, 'Fahrzeug prüfen'),
@@ -855,11 +887,11 @@ export const aufgaben = [
     titel: 'BPMN: Störungsmeldung',
     text: 'Zeichne den Ablauf als BPMN-Diagramm:\n- Ein **Mitarbeiter** meldet dem IT-Support eine Störung (eigener Pool, der Inhalt seines Pools muss nicht gezeigt werden).\n- Im Pool **IT-Support** gibt es die Lanes **1st-Level** und **2nd-Level**.\n- Der 1st-Level legt ein **Ticket** an (Datenobjekt) und analysiert die Störung.\n- Kann der 1st-Level die Störung selbst lösen, behebt er sie. Sonst behebt sie der 2nd-Level.\n- Danach informiert der 1st-Level den Mitarbeiter. Am Ende ist die Störung behoben.',
     muster: {
-      breite: 960,
+      breite: 990,
       hoehe: 416,
       rahmen: [
-        { typ: 'pool', x: 16, y: 16, w: 928, h: 60, text: 'Mitarbeiter' },
-        { typ: 'pool', x: 16, y: 120, w: 928, text: 'IT-Support', lanes: [{ text: '1st-Level', h: 170 }, { text: '2nd-Level', h: 110 }] },
+        { typ: 'pool', x: 16, y: 16, w: 958, h: 60, text: 'Mitarbeiter' },
+        { typ: 'pool', x: 16, y: 120, w: 958, text: 'IT-Support', lanes: [{ text: '1st-Level', h: 170 }, { text: '2nd-Level', h: 110 }] },
       ],
       knoten: [
         PUNKT('m1', 100, 76),
@@ -996,4 +1028,4 @@ export const aufgaben = [
   },
 ];
 
-export default { spickzettel, notation, aufgaben };
+export default { spickzettel, notation, spickzettelAP1, notationAP1, aufgaben };
