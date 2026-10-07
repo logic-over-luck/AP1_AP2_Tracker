@@ -1578,7 +1578,7 @@ mark.treffer {
 }
 .cockpit__raster {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--s-3);
 }
 .kachel {
@@ -1591,8 +1591,90 @@ mark.treffer {
   min-width: 0;
 }
 .kachel--fokus {
-  grid-row: span 2;
-  padding: var(--s-5);
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--s-6);
+  padding: var(--s-5) var(--s-6);
+}
+.fokus-haupt {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.fokus-neben {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding-left: var(--s-6);
+  border-left: 1px solid var(--linie);
+}
+.fokus-neben .fokus-weiter {
+  margin: 0;
+  align-items: flex-start;
+}
+.fokus-neben .fokus-weiter svg {
+  margin-top: 3px;
+}
+.fokus-neben__text {
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  line-height: 1.35;
+}
+.fokus-neben__vor {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.woche {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin-top: auto;
+}
+.woche__tage {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-1);
+}
+.woche__tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.woche__punkt {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--flaeche-3);
+}
+.woche__punkt.aktiv-zelle--1 {
+  background: rgba(var(--akzent-rgb), 0.3);
+}
+.woche__punkt.aktiv-zelle--2 {
+  background: rgba(var(--akzent-rgb), 0.5);
+}
+.woche__punkt.aktiv-zelle--3 {
+  background: rgba(var(--akzent-rgb), 0.75);
+}
+.woche__punkt.aktiv-zelle--4 {
+  background: var(--akzent);
+}
+.woche__tag--heute .woche__punkt {
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--akzent-linie);
+}
+.woche__kuerzel {
+  font-size: 10px;
+  color: var(--text-4);
+}
+.woche__tag--heute .woche__kuerzel {
+  color: var(--akzent);
+  font-weight: 600;
 }
 .kachel__kopf {
   display: flex;
@@ -1666,18 +1748,6 @@ mark.treffer {
 .kachel--fokus .fokus-karte__knoepfe {
   margin-top: var(--s-2);
 }
-.fokus-karte__unten {
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
-  padding-top: var(--s-3);
-  border-top: 1px solid var(--linie);
-}
-.fokus-karte__unten .fokus-weiter .wachsen {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .fortschritt {
   display: flex;
   align-items: center;
@@ -1703,6 +1773,9 @@ mark.treffer {
   gap: 2px;
   font-size: var(--t-m);
 }
+.fortschritt__tempo {
+  font-size: var(--t-s);
+}
 .fokus-kompakt__mitte {
   display: flex;
   align-items: center;
@@ -1723,21 +1796,6 @@ mark.treffer {
 .fokus-kompakt--laeuft .fokus-kompakt__zeit {
   color: var(--akzent);
 }
-.aktiv--kompakt {
-  gap: var(--s-2);
-  margin-top: auto;
-}
-.aktiv--kompakt .aktiv__raster {
-  gap: 2px;
-}
-.aktiv--kompakt .aktiv-spalte {
-  gap: 2px;
-}
-.aktiv--kompakt .aktiv-zelle {
-  aspect-ratio: auto;
-  height: 7px;
-  border-radius: 2px;
-}
 .lernen__kopf {
   display: flex;
   align-items: flex-end;
@@ -1757,8 +1815,15 @@ mark.treffer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .kachel--fokus {
-    grid-column: 1 / -1;
-    grid-row: auto;
+    flex-direction: column;
+    gap: var(--s-4);
+  }
+  .fokus-neben {
+    flex-basis: auto;
+    padding-left: 0;
+    padding-top: var(--s-3);
+    border-left: 0;
+    border-top: 1px solid var(--linie);
   }
   .kennzahlen {
     grid-template-columns: repeat(2, minmax(0, 1fr));

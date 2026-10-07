@@ -15,7 +15,7 @@ import { link, geheZu } from '../../router.js';
 import { Icon, Knopf, Balken, Zahl, PrioMarke, Marke, Ring } from '../../ui/bausteine.jsx';
 import { Dialog } from '../../ui/dialog.jsx';
 import { FokusTimer } from './FokusTimer.jsx';
-import { Aktivitaet } from './Aktivitaet.jsx';
+import { Woche } from './Aktivitaet.jsx';
 
 function gruss() {
   const h = new Date().getHours();
@@ -77,9 +77,10 @@ function Fokus({ raum, fokus, sus }) {
     ...fokus.weitere.slice(0, 2).map((v) => ({ block: v.block, icon: v.art === 'wiederholung' ? 'refresh-cw' : v.art === 'weiter' ? 'step-forward' : 'circle', vor: 'Danach', nach: v.etikett })),
     ...sus.schwaechen.slice(0, 2).map((w) => ({ block: w.block, icon: 'target', ton: 'text-warn', vor: 'Wiederholen lohnt' })),
     ...sus.staerken.slice(0, 1).map((w) => ({ block: w.block, icon: 'circle-check', ton: 'text-gut', vor: 'Sitzt gut' })),
-  ].slice(0, 3);
+  ].slice(0, 4);
   return (
     <section class="flaeche flaeche--akzent kachel kachel--fokus" aria-label="Dein nächster Schritt">
+      <div class="fokus-haupt">
       <div class="kachel__kopf kachel__kopf--akzent">
         <Icon name="sparkles" groesse={14} /> Dein nächster Schritt
         {h && (
@@ -108,16 +109,16 @@ function Fokus({ raum, fokus, sus }) {
           Zufallsmix
         </Knopf>
       </div>
+      </div>
       {unten.length > 0 && (
-        <div class="fokus-karte__unten">
+        <div class="fokus-neben" aria-label="Danach">
           {unten.map((u) => (
             <button key={u.vor + u.block.id} class="fokus-weiter" onClick={() => zuBlock(u.block)}>
               <Icon name={u.icon} groesse={14} class={u.ton ?? ''} />
-              <span class="wachsen">
-                <span class="gedaempft">{u.vor}: </span>
+              <span class="wachsen fokus-neben__text">
+                <span class="fokus-neben__vor">{u.vor}</span>
                 {u.block.titel}
               </span>
-              {u.nach && <span class="gedaempft">{u.nach}</span>}
             </button>
           ))}
         </div>
@@ -149,6 +150,9 @@ function Fortschritt({ erledigt, gesamt, bloeckeFertig, bloecke, termin, t, onTe
             <strong class="tabellenziffern">{bloeckeFertig}</strong>
             <span class="gedaempft"> / {bloecke} Blöcke</span>
           </div>
+          {termin && t.offen > 0 && t.tage > 0 && (
+            <div class={`fortschritt__tempo ${imPlan ? 'text-gut' : 'text-warn'}`}>{imPlan ? 'Du liegst im Plan' : `${t.jeWoche} Stichpunkte/Woche nötig`}</div>
+          )}
         </div>
       </div>
       <button class="kachel__fuss kachel__fuss--knopf" onClick={onTermin}>
@@ -161,7 +165,6 @@ function Fortschritt({ erledigt, gesamt, bloeckeFertig, bloecke, termin, t, onTe
           ) : (
             <>
               Prüfung in <strong>{t.tage}</strong> {t.tage === 1 ? 'Tag' : 'Tagen'}
-              {t.offen > 0 && t.tage > 0 && <span class={imPlan ? 'text-gut' : 'text-warn'}> · {imPlan ? 'im Plan' : `${t.jeWoche} pro Woche nötig`}</span>}
             </>
           )}
         </span>
@@ -214,7 +217,7 @@ function SerieKachel({ stand }) {
         <small>{stand.serie.aktuell === 1 ? 'Tag' : 'Tage'}</small>
         <span class="kachel__neben">{stand.serie.heuteAktiv ? 'heute dabei' : 'heute noch offen'}</span>
       </div>
-      <Aktivitaet stand={stand} kompakt />
+      <Woche stand={stand} />
     </button>
   );
 }

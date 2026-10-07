@@ -4,7 +4,7 @@ import { tagPlus, datumAusTag, datumMitWochentag } from '../../lernstand/zeit.js
 
 const WOCHEN = 12;
 
-export function Aktivitaet({ stand, kompakt }) {
+export function Aktivitaet({ stand }) {
   const heute = stand.heute;
   const wochentag = (datumAusTag(heute).getDay() + 6) % 7; // Mo = 0
   const erster = tagPlus(heute, -(WOCHEN - 1) * 7 - wochentag);
@@ -37,17 +37,6 @@ export function Aktivitaet({ stand, kompakt }) {
       </div>,
     );
   }
-  if (kompakt)
-    return (
-      <div class="aktiv aktiv--kompakt">
-        <div class="aktiv__raster" role="img" aria-label={`${aktiveTage} aktive Tage in den letzten ${WOCHEN} Wochen`}>
-          {spalten}
-        </div>
-        <div class="kachel__fuss gedaempft">
-          {aktiveTage} aktive Tage in {WOCHEN} Wochen · beste Serie {stand.serie.beste}
-        </div>
-      </div>
-    );
   return (
     <section class="flaeche flaeche--innen aktiv" aria-label="Aktivität">
       <div class="aktiv__kopf">
@@ -71,5 +60,32 @@ export function Aktivitaet({ stand, kompakt }) {
       </div>
       <div class="aktiv__serie gedaempft">Beste Serie: {stand.serie.beste} {stand.serie.beste === 1 ? 'Tag' : 'Tage'}</div>
     </section>
+  );
+}
+
+// Die letzten 7 Tage als Leiste (Mo–So) – kompakt fürs Cockpit
+const KUERZEL = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
+export function Woche({ stand }) {
+  const tage = Array.from({ length: 7 }, (_, i) => tagPlus(stand.heute, i - 6));
+  let aktiv = 0;
+  for (let i = 0; i < WOCHEN * 7; i++) if (stand.tage.get(tagPlus(stand.heute, -i))?.n) aktiv++;
+  return (
+    <div class="woche">
+      <div class="woche__tage" role="img" aria-label="Aktivität der letzten 7 Tage">
+        {tage.map((tag) => {
+          const e = stand.tage.get(tag);
+          const stufe = !e?.n ? 0 : e.xp < 15 ? 1 : e.xp < 40 ? 2 : e.xp < 90 ? 3 : 4;
+          return (
+            <span key={tag} class={`woche__tag ${tag === stand.heute ? 'woche__tag--heute' : ''}`} title={`${datumMitWochentag(tag)}: ${e?.n ? `${e.xp} XP` : 'keine Aktivität'}`}>
+              <span class={`woche__punkt aktiv-zelle--${stufe}`} />
+              <span class="woche__kuerzel">{KUERZEL[(datumAusTag(tag).getDay() + 6) % 7]}</span>
+            </span>
+          );
+        })}
+      </div>
+      <div class="kachel__fuss gedaempft">
+        {aktiv} Tage aktiv in {WOCHEN} Wochen · Rekord {stand.serie.beste}
+      </div>
+    </div>
   );
 }
