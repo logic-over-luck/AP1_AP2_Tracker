@@ -194,14 +194,14 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
         )}
         <label class="notiz">
           <span class="notiz__kopf">
-            <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· Hier kannst du rechnen oder deine Notizen zur Aufgabe schreiben</span>
+            <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· wird nicht geprüft</span>
           </span>
           <textarea
             class="feld feld--mono notiz__feld"
             rows={2}
             value={notiz}
             spellcheck={false}
-            placeholder="Hier kannst du rechnen, z. B. 200 : 16 = 12 Rest 8 …"
+            placeholder="Hier kannst du rechnen oder deine Notizen zur Aufgabe schreiben …"
             onInput={(e) => {
               setNotiz(e.currentTarget.value);
               e.currentTarget.style.height = 'auto';
