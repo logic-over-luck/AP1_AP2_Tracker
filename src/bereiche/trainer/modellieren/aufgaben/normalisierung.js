@@ -39,7 +39,7 @@ export const notation = {
     '**2. Normalform**: 1NF, und jedes Nichtschlüsselattribut hängt vom **ganzen** Primärschlüssel ab. Hat die Tabelle einen **einspaltigen** PK, ist sie in 1NF automatisch auch in 2NF.',
     '**3. Normalform**: 2NF, und kein Nichtschlüsselattribut hängt von einem anderen Nichtschlüsselattribut ab (z. B. KundenNr → Kundenname). Diese Gruppe kommt in eine eigene Tabelle.',
     '**Änderungsanomalie**: Ändert man einen mehrfach gespeicherten Wert nur in einer Zeile, widersprechen sich die Daten.',
-    '**Einfügeanomalie**: Ein neuer Kunde ohne Bestellung lässt sich nicht speichern, weil der Schlüssel (BestellNr) fehlt.',
+    '**Einfügeanomalie**: Ein neuer Kunde ohne Bestellung lässt sich nicht speichern, weil der Schlüssel (BestellNr + ArtikelNr) fehlt.',
     '**Löschanomalie**: Löscht man die einzige Bestellung eines Kunden, sind auch die Angaben zum Kunden weg.',
   ],
 };
@@ -252,7 +252,7 @@ export const aufgaben = [
         optionen: ['Nur die Note von Wolf', 'Alle Angaben zu Wolf und zum Kurs K-NET (Löschanomalie)', 'Nichts, weil K-NET noch in einer anderen Zeile steht'],
         erwartet: 'Alle Angaben zu Wolf und zum Kurs K-NET (Löschanomalie)',
       },
-      { id: 'e', label: 'Welche Normalform ist verletzt und verursacht diese Anomalien?', optionen: NF, erwartet: '2. Normalform' },
+      { id: 'e', label: 'Welche Normalform ist als erste verletzt und verursacht diese Anomalien?', optionen: NF, erwartet: '2. Normalform' },
     ],
     loesung: [
       '**Redundanz**: Titel und Preis von K-SQL sind eine Information über den Kurs, stehen aber in jeder Belegung dieses Kurses. Die gleiche Note bei zwei Teilnehmern sind zwei verschiedene Fakten.',
@@ -433,7 +433,7 @@ export const aufgaben = [
     },
     pruefliste: [
       '**1NF**: je Auftrag und Teil eine eigene Zeile – keine Listen „T-11; T-40" mehr',
-      '**2NF**: Teilbezeichnung hängt nur an TeilNr → eigene Tabelle **Teil**; Datum und Kennzeichen hängen nur an AuftragsNr → Tabelle **Auftrag**',
+      '**2NF**: Teilbezeichnung hängt nur an TeilNr → eigene Tabelle **Teil**; Datum, Kennzeichen, KundenNr und Kunde hängen nur an AuftragsNr → Tabelle **Auftrag**',
       'Zwischentabelle **Auftragsposition** mit PK aus AuftragsNr und TeilNr (beide FK) und der **Menge**',
       '**3NF**: KundenNr hängt am Kennzeichen → eigene Tabelle **Fahrzeug** (Kennzeichen, KundenNr), Auftrag behält nur den FK Kennzeichen',
       '**3NF**: Kundenname hängt an KundenNr → eigene Tabelle **Kunde**',
@@ -471,7 +471,7 @@ export const aufgaben = [
       'Jedes Beispiel nennt Zeilen bzw. Werte aus **dieser** Tabelle',
       'Ursache erkannt: Patientendaten hängen an der PatientenNr, nicht am Termin',
     ],
-    hinweise: 'Für die Löschanomalie passt auch T-102 (einziger Termin von Kaya). T-101 passt nicht – Weber steht noch in T-103.',
+    hinweise: 'Für die Löschanomalie passt auch T-102 (einziger Termin von Kaya). T-101 passt nicht – Weber steht noch in T-103. Kein gutes Redundanzbeispiel ist der doppelte Arztname: Ohne weitere Arztangaben ist er nur der Verweis auf den Arzt, so wie ein Fremdschlüssel.',
   },
 ];
 

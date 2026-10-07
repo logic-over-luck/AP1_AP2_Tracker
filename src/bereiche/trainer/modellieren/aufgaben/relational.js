@@ -44,7 +44,7 @@ export const notation = {
   punkte: [
     'Die Linie verbindet die Tabelle mit dem **FK** (Seite **n**) mit der Tabelle, auf deren **PK** er zeigt (Seite **1**).',
     'Eine m:n-Beziehung gibt es zwischen Tabellen nicht direkt – sie wird zu **zwei 1:n-Beziehungen** mit einer Zwischentabelle.',
-    'In Textform schreibt man z. B. **Bestellung (BestellNr, Datum, ↑KundenNr)**: PK unterstrichen, FK mit Pfeil oder dem Zusatz (FK).',
+    'In Textform schreibt man z. B. **Bestellung (BestellNr, Datum, ↑KundenNr)**: Den PK (hier BestellNr) unterstreichst du, den FK kennzeichnest du mit Pfeil oder dem Zusatz (FK).',
     '**Referenzielle Integrität**: Es darf keine Bestellung mit einer KundenNr geben, die in Kunde nicht vorkommt.',
     '**Weitergabe**: ON DELETE CASCADE / ON UPDATE CASCADE geben Löschen bzw. Schlüsseländerung an die abhängigen Zeilen weiter; RESTRICT verbietet die Aktion.',
   ],
@@ -157,7 +157,7 @@ export const aufgaben = [
     raum: ['AP2'],
     sp: 'AP2-2-2-2',
     titel: 'Referenzielle Integrität im Lager',
-    text: 'Die Tabelle **Lieferant** enthält genau die Lieferanten **L01, L02 und L04**. Die Tabelle **Artikel** wurde aus einer alten Anwendung übernommen, die keine Fremdschlüssel geprüft hat:',
+    text: 'Die Tabelle **Lieferant** enthält genau die Lieferanten **L01, L02 und L04**. Die Tabelle **Artikel** wurde aus einer alten Anwendung übernommen, die keine Fremdschlüssel geprüft hat. Für die Fragen b bis e gilt: Die fehlerhafte Zeile ist bereinigt, und die Datenbank prüft den Fremdschlüssel jetzt.',
     tabelle: {
       kopf: ['ArtikelNr (PK)', 'Bezeichnung', 'LieferantNr (FK)'],
       zeilen: [
@@ -478,7 +478,7 @@ export const aufgaben = [
       'Alle PK gekennzeichnet (unterstrichen oder „PK"), alle FK gekennzeichnet (Pfeil oder „FK")',
       'Verbindungen mit Kardinalitäten: jeweils **1** an der Tabelle mit dem PK, **n** an der Tabelle mit dem FK',
     ],
-    hinweise: 'Den Namen der Zwischentabelle wählst du selbst („Belegung", „Kursanmeldung" …). Auch die Textform ist erlaubt, z. B. Belegung (↑MitgliedsNr, ↑KursNr, Anmeldedatum) mit unterstrichenem PK.',
+    hinweise: 'Den Namen der Zwischentabelle wählst du selbst („Belegung", „Kursanmeldung" …). Auch die Textform ist erlaubt, z. B. Belegung (↑MitgliedsNr, ↑KursNr, Anmeldedatum), wobei MitgliedsNr und KursNr zusammen als PK unterstrichen werden.',
   },
   {
     id: 'rm-z2',
@@ -511,7 +511,7 @@ export const aufgaben = [
       'FK **AbteilungsNr** in Mitarbeiter, Verbindung 1 (Abteilung) zu n (Mitarbeiter)',
       'Zwischentabelle mit **PersonalNr** und **ProjektNr** als zusammengesetztem PK (beide FK) und der Spalte **Stunden**',
       'FK **KundenNr** in Projekt, Verbindung 1 (Kunde) zu n (Projekt)',
-      '1:1 Mitarbeiter – Notebook: FK **PersonalNr** in Notebook (oder InventarNr in Mitarbeiter), Kardinalität 1 und 1',
+      '1:1 Mitarbeiter – Notebook: FK **PersonalNr** in Notebook (oder InventarNr in Mitarbeiter), dort eindeutig (UNIQUE), Kardinalität 1 und 1',
       'Alle PK und FK eindeutig gekennzeichnet',
       'Keine Spalte doppelt: kein Abteilungsname in Mitarbeiter, kein Kundenname in Projekt',
     ],
