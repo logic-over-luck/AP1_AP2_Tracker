@@ -33,3 +33,12 @@ export function useEinstellung(name, standard) {
   }, []);
   return [einstellung(name, standard), (wert) => setzeEinstellung(name, typeof wert === 'function' ? wert(einstellung(name, standard)) : wert)];
 }
+
+// Alle Ansichts-Einstellungen löschen (beim Zurücksetzen der App)
+export function alleEinstellungenLoeschen() {
+  werte = {};
+  try {
+    localStorage.removeItem(SCHLUESSEL);
+  } catch {}
+  for (const h of hoerer) h();
+}

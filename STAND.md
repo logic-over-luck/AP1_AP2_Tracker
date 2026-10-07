@@ -206,6 +206,7 @@ Browserdaten löschst, einen anderen Browser nimmst oder – je nach Browser –
 - **Einlesen** auf derselben Seite: „Ersetzen" (Stand aus der Datei übernehmen) oder „Zusammenführen" (beide Stände
   vereinen, z. B. Laptop + PC). Jede Sicherung trägt eine Formatnummer; ältere Sicherungen werden beim Einlesen
   automatisch umgewandelt.
+- **Alles zurücksetzen** (ganz unten im Sicherungsfenster, mit Sicherheitsabfrage) löscht den gesamten Lernstand und die Ansichts-Einstellungen in diesem Browser.
 
 ### Neue Version einspielen
 1. Vorher eine **Sicherung** herunterladen.

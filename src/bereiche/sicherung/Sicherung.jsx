@@ -3,7 +3,7 @@
 import { useRef, useState } from 'preact/hooks';
 import { alleEreignisse, ersetzeAlle, useLernstand } from '../../lernstand/store.js';
 import { sicherungErstellen, sicherungLesen, zusammenfuehren, SicherungsFehler } from '../../lernstand/speicher.js';
-import { useEinstellung } from '../../lernstand/einstellungen.js';
+import { useEinstellung, alleEinstellungenLoeschen } from '../../lernstand/einstellungen.js';
 import { tagVon, tageZwischen, datumKurz } from '../../lernstand/zeit.js';
 import { Icon, Knopf } from '../../ui/bausteine.jsx';
 import { Dialog, melde, bestaetige } from '../../ui/dialog.jsx';
@@ -75,6 +75,20 @@ function SicherungsDialog({ offen, onSchliessen }) {
     }
   };
 
+  const zuruecksetzen = async () => {
+    const ok = await bestaetige({
+      titel: 'Alles zurücksetzen?',
+      text: `Dein gesamter Lernstand wird gelöscht: ${anzahl} Lernhandlungen – abgehakte Stichpunkte, Lernkarten, Trainer-Ergebnisse, Notizen, Prüfungstermine, Erfahrungspunkte und Serie. Das lässt sich nicht rückgängig machen. Lade vorher eine Sicherung herunter, wenn du den Stand behalten willst.`,
+      ja: 'Alles löschen',
+      gefahr: true,
+    });
+    if (!ok) return;
+    ersetzeAlle([]);
+    alleEinstellungenLoeschen();
+    melde('Alles zurückgesetzt – du startest wieder bei „Hello World".', { icon: 'rotate-ccw' });
+    onSchliessen();
+  };
+
   return (
     <Dialog offen={offen} titel="Lernstand sichern" icon="hard-drive-download" onSchliessen={onSchliessen}>
       <div class="stapel stapel--4">
@@ -110,6 +124,15 @@ function SicherungsDialog({ offen, onSchliessen }) {
             Datei wählen
           </Knopf>
           <input ref={datei} type="file" accept=".json,application/json" hidden onChange={einlesen} />
+        </div>
+        <div class="sicherung-zeile sicherung-zeile--gefahr">
+          <div class="wachsen">
+            <div class="sicherung-zeile__titel">Alles zurücksetzen</div>
+            <div class="gedaempft">Löscht deinen gesamten Lernstand in diesem Browser. Du fängst von vorn an.</div>
+          </div>
+          <Knopf variante="gefahr" icon="trash" onClick={zuruecksetzen}>
+            Zurücksetzen
+          </Knopf>
         </div>
       </div>
     </Dialog>
