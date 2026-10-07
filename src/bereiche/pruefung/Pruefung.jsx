@@ -808,7 +808,13 @@ function Ergebnis({ raum, z, pruefung, schliessen }) {
           <Knopf variante="geist" icon={details ? 'eye-off' : 'eye'} onClick={() => setDetails(!details)}>
             {details ? 'Lösungen ausblenden' : 'Alle Aufgaben mit Lösung ansehen'}
           </Knopf>
-          <Aufklapp offen={details}>{details && <WisoBogen pruefung={pruefung} antworten={z.antworten} setAntwort={() => {}} ergebnis />}</Aufklapp>
+          <Aufklapp offen={details}>
+            {details && (
+              <div class="pruefung">
+                <WisoBogen pruefung={pruefung} antworten={z.antworten} setAntwort={() => {}} ergebnis />
+              </div>
+            )}
+          </Aufklapp>
         </>
       )}
       <div class="pruefung-ende">
