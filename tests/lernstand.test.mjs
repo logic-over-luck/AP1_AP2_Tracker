@@ -82,18 +82,25 @@ test('Wiederholungs-Phasen: 1, 7, 30 Tage; Reihenfolge erzwungen; pausiert bei o
   assert.equal(blockZustand(s, b).naechste, null);
 });
 
-test('XP: Stichpunkt zählt nur beim ersten Abhaken', () => {
+test('XP: Abwählen nimmt die Punkte wieder weg, auch den Block-Bonus', () => {
   const id = 'AP1-1-1-1';
-  const s = ableiten(
-    [
-      { t: T0, e: 'sp', id, an: true },
-      { t: T0 + 1, e: 'sp', id, an: false },
-      { t: T0 + 2, e: 'sp', id, an: true },
-    ],
-    index,
-    heute,
-  );
+  let s = ableiten([{ t: T0, e: 'sp', id, an: true }, { t: T0 + 1, e: 'sp', id, an: false }], index, heute);
+  assert.equal(s.xp, 0);
+  s = ableiten([{ t: T0, e: 'sp', id, an: true }, { t: T0 + 1, e: 'sp', id, an: false }, { t: T0 + 2, e: 'sp', id, an: true }], index, heute);
   assert.equal(s.xp, 10);
+  // ganzer Block: 10 je Stichpunkt + 20 Bonus; einen abwählen → −10 und −20
+  const block = index.bloecke.get(index.sp.get(id).block);
+  const an = block.sp.map((x, i) => ({ t: T0 + i, e: 'sp', id: x, an: true }));
+  s = ableiten(an, index, heute);
+  assert.equal(s.xp, block.sp.length * 10 + 20);
+  s = ableiten([...an, { t: T0 + 100, e: 'sp', id, an: false }], index, heute);
+  assert.equal(s.xp, (block.sp.length - 1) * 10);
+  // Abwählen ist keine Lernhandlung: der Tag zählt nicht doppelt
+  assert.equal(s.tage.get(tagVon(T0)).n, block.sp.length);
+  // wieder fertig → Bonus wieder da, Wiederholungs-Phasen bleiben am ersten Abschluss
+  s = ableiten([...an, { t: T0 + 100, e: 'sp', id, an: false }, { t: T0 + 200, e: 'sp', id, an: true }], index, heute);
+  assert.equal(s.xp, block.sp.length * 10 + 20);
+  assert.equal(s.blockErledigtAm.get(block.id), T0 + block.sp.length - 1);
 });
 
 test('Lernkarten: Stufen und Fälligkeit', () => {

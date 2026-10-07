@@ -36,7 +36,7 @@ export function BlockKarte({ block, zustand: z, stand, offen, onUmschalten, ausw
     } else {
       const ok = await bestaetige({
         titel: 'Block wieder öffnen?',
-        text: `Alle ${block.sp.length} Stichpunkte von „${block.titel}" werden wieder als offen markiert. Erledigte Wiederholungen bleiben erhalten.`,
+        text: `Alle ${block.sp.length} Stichpunkte von „${block.titel}" werden wieder als offen markiert, die Punkte dafür werden abgezogen. Erledigte Wiederholungen bleiben erhalten.`,
         ja: 'Wieder öffnen',
       });
       if (ok) erfasse(...block.sp.map((id) => ({ e: 'sp', id, an: false })));

@@ -109,7 +109,7 @@ nächsten offenen Punkt weiter.
 - **Wiederholungs-Phasen** nach 1, 7 und 30 Tagen, gesperrt bis zum Fälligkeitstag. Wird ein Block wieder geöffnet,
   ruhen die Phasen; erledigte bleiben erhalten.
 - **Lernkarten-Abstände** 0/1/3/7/16/35/75 Tage; „sicher" ab Stufe 3. „Nicht gewusst" kommt in derselben Runde noch einmal. „Gewusst" bei einer neuen Karte springt gleich auf 3 Tage, „Unsicher" auf 1 Tag – so unterscheiden sich die Knöpfe auch beim ersten Mal.
-- **XP und Ränge** gelten über alle drei Räume (eine Person lernt), Fortschritt dagegen je Raum.
+- **XP und Ränge** gelten über alle drei Räume (eine Person lernt), Fortschritt dagegen je Raum. Abwählen eines Stichpunkts zieht seine Punkte und einen Block-Bonus wieder ab (auf den Tag, an dem sie gebucht wurden); An- und Abhaken bringt also nichts. Konfetti läuft zeitbasiert (gleich schnell auf 60- und 144-Hz-Bildschirmen), rund 4 Sekunden.
 - **„Alles anzeigen"** zeigt auch den Hinweis, wenn die Tiefe eines Stichpunkts laut Inhaltsdatei unklar ist (`rahmen_unklar`),
   weil das beim Lernen hilft (für die weitere Auslegung lernen). Belege, Katalogstellen und Vermerke bleiben unsichtbar.
 - **Prüfungstermine** sind anfangs leer; die Startseite bittet darum, sie einzutragen (kein geratenes Datum).

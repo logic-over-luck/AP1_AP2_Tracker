@@ -123,7 +123,7 @@ export function Hilfe() {
         <Abschnitt icon="award" titel="Ränge und Lernserie">
           <p>
             Jede Lernhandlung bringt Erfahrungspunkte: Stichpunkt {XP.stichpunkt}, Block geschafft +{XP.blockGeschafft}, Wiederholung {XP.wiederholung}, Karte{' '}
-            {XP.karte[0]}–{XP.karte[2]}, Aufgabe {XP.aufgabeRichtig}, Fokus 1 je {XP.fokusJeMinuten} Minuten.
+            {XP.karte[0]}–{XP.karte[2]}, Aufgabe {XP.aufgabeRichtig}, Fokus 1 je {XP.fokusJeMinuten} Minuten. Wählst du einen Stichpunkt wieder ab, werden seine Punkte (und ein Block-Bonus) wieder abgezogen.
           </p>
           <p>
             Die Rangleiter beginnt bei „{RAENGE[0].name}" und endet bei „{RAENGE[RAENGE.length - 1].name}". Die Lernserie zählt Tage am Stück, an denen du etwas

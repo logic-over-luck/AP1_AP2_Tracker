@@ -9,7 +9,8 @@ import { PHASEN_ABSTAND, KARTEN_ABSTAND, KARTE_SICHER_AB, naechsteStufe, XP, ran
 export function leererStand() {
   return {
     spErledigt: new Map(), // spId → Zeitpunkt
-    spJeMalAbgehakt: new Set(),
+    spXp: new Map(), // spId → Zeitpunkt, an dem die Punkte fürs Abhaken gebucht wurden
+    blockBonus: new Map(), // blockId → Zeitpunkt des gebuchten Block-Bonus
     blockErledigtAm: new Map(), // blockId → Zeitpunkt des ersten Abschlusses
     phasen: new Map(), // blockId → [t1, t2, t3]
     karten: new Map(), // kartenId → { stufe, faellig, n, richtig, zuletzt, note }
@@ -26,12 +27,14 @@ export function leererStand() {
   };
 }
 
-function buche(stand, t, xp) {
+// Bucht Erfahrungspunkte auf einen Tag. zaehlt = false: keine eigene Lernhandlung
+// (z. B. Abzug beim Wieder-Abwählen oder Bonus zusätzlich zu einer Handlung).
+function buche(stand, t, xp, zaehlt = true) {
   const tag = tagVon(t);
   let eintrag = stand.tage.get(tag);
   if (!eintrag) stand.tage.set(tag, (eintrag = { xp: 0, n: 0 }));
   eintrag.xp += xp;
-  eintrag.n += 1;
+  if (zaehlt) eintrag.n += 1;
   stand.xp += xp;
 }
 
@@ -48,20 +51,29 @@ export function ableiten(ereignisse, index, heute = tagVon(Date.now())) {
         if (ev.an && !war) {
           stand.spErledigt.set(ev.id, ev.t);
           spJeBlockErledigt.set(sp.block, (spJeBlockErledigt.get(sp.block) ?? 0) + 1);
-          let xp = 0;
-          if (!stand.spJeMalAbgehakt.has(ev.id)) {
-            stand.spJeMalAbgehakt.add(ev.id);
-            xp += XP.stichpunkt;
-          }
+          stand.spXp.set(ev.id, ev.t);
+          buche(stand, ev.t, XP.stichpunkt);
           const block = index.bloecke.get(sp.block);
-          if (block && spJeBlockErledigt.get(sp.block) === block.sp.length && !stand.blockErledigtAm.has(sp.block)) {
-            stand.blockErledigtAm.set(sp.block, ev.t);
-            xp += XP.blockGeschafft;
+          if (block && spJeBlockErledigt.get(sp.block) === block.sp.length) {
+            if (!stand.blockErledigtAm.has(sp.block)) stand.blockErledigtAm.set(sp.block, ev.t);
+            if (!stand.blockBonus.has(sp.block)) {
+              stand.blockBonus.set(sp.block, ev.t);
+              buche(stand, ev.t, XP.blockGeschafft, false);
+            }
           }
-          buche(stand, ev.t, xp);
         } else if (!ev.an && war) {
+          // Wieder abgewählt: Punkte zurück – am Tag, an dem sie gebucht wurden. So lässt sich
+          // durch An- und Abhaken nichts sammeln.
           stand.spErledigt.delete(ev.id);
           spJeBlockErledigt.set(sp.block, spJeBlockErledigt.get(sp.block) - 1);
+          if (stand.spXp.has(ev.id)) {
+            buche(stand, stand.spXp.get(ev.id), -XP.stichpunkt, false);
+            stand.spXp.delete(ev.id);
+          }
+          if (stand.blockBonus.has(sp.block)) {
+            buche(stand, stand.blockBonus.get(sp.block), -XP.blockGeschafft, false);
+            stand.blockBonus.delete(sp.block);
+          }
         }
         break;
       }

@@ -15,37 +15,46 @@ function konfetti(canvas, staerke = 1) {
   ctx.scale(dpr, dpr);
   const akzent = getComputedStyle(document.documentElement).getPropertyValue('--akzent').trim() || '#5ad1a7';
   const farben = [akzent, '#ffffff', '#f0a85a', '#7ea6ff', '#c39bff'];
-  const teile = Array.from({ length: Math.round(110 * staerke) }, () => ({
-    x: innerWidth / 2 + (Math.random() - 0.5) * 120,
-    y: innerHeight * 0.38,
-    vx: (Math.random() - 0.5) * 14,
-    vy: -Math.random() * 13 - 4,
-    w: 5 + Math.random() * 5,
+  // Zeitbasiert (nicht pro Bild), damit es auf 60-Hz- und 144-Hz-Bildschirmen gleich schnell ist.
+  // Werte in Pixel je Sekunde; Papierschnipsel flattern seitlich und fallen gebremst.
+  const DAUER = 4.2;
+  const teile = Array.from({ length: Math.round(120 * staerke) }, () => ({
+    x: innerWidth / 2 + (Math.random() - 0.5) * 160,
+    y: innerHeight * 0.4,
+    vx: (Math.random() - 0.5) * 520,
+    vy: -Math.random() * 520 - 180,
+    w: 6 + Math.random() * 5,
     h: 3 + Math.random() * 4,
     r: Math.random() * Math.PI,
-    vr: (Math.random() - 0.5) * 0.3,
+    vr: (Math.random() - 0.5) * 5,
+    phase: Math.random() * Math.PI * 2,
+    flattern: 18 + Math.random() * 30,
     f: farben[Math.floor(Math.random() * farben.length)],
   }));
   let frame;
   const start = performance.now();
+  let zuletzt = start;
   const schritt = (t) => {
     const alter = (t - start) / 1000;
+    const dt = Math.min(0.05, (t - zuletzt) / 1000);
+    zuletzt = t;
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     for (const p of teile) {
-      p.vy += 0.38;
-      p.vx *= 0.99;
-      p.x += p.vx;
-      p.y += p.vy;
-      p.r += p.vr;
+      p.vy = Math.min(p.vy + 520 * dt, 170); // Schwerkraft, aber gebremst wie Papier
+      p.vx *= Math.pow(0.35, dt); // Luftwiderstand
+      p.x += (p.vx + Math.sin(alter * 3 + p.phase) * p.flattern) * dt;
+      p.y += p.vy * dt;
+      p.r += p.vr * dt;
       ctx.save();
-      ctx.globalAlpha = Math.max(0, 1 - alter / 2.2);
+      ctx.globalAlpha = Math.max(0, Math.min(1, (DAUER - alter) / 1.2));
       ctx.translate(p.x, p.y);
       ctx.rotate(p.r);
+      ctx.scale(1, Math.abs(Math.cos(alter * 4 + p.phase)) * 0.7 + 0.3); // Drehen im Fallen
       ctx.fillStyle = p.f;
       ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
       ctx.restore();
     }
-    if (alter < 2.4) frame = requestAnimationFrame(schritt);
+    if (alter < DAUER) frame = requestAnimationFrame(schritt);
     else ctx.clearRect(0, 0, innerWidth, innerHeight);
   };
   frame = requestAnimationFrame(schritt);
@@ -67,7 +76,7 @@ export function Feier() {
     if (!moment) return;
     const stopp = konfetti(canvas.current, moment.art === 'rang' ? 1.4 : 0.7);
     let t;
-    if (moment.art !== 'rang') t = setTimeout(() => setMoment(null), 4200);
+    if (moment.art !== 'rang') t = setTimeout(() => setMoment(null), 5500);
     return () => {
       stopp();
       clearTimeout(t);
