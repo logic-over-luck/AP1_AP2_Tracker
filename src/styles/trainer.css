@@ -337,13 +337,14 @@
   font-size: 11px;
   line-height: 1.2;
   padding: 0 6px;
-  place-items: center start !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box !important;
+  text-align: center;
+  color: var(--text);
+}
+.nk__name > span {
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  color: var(--text);
+  overflow: hidden;
 }
 .nk__wert {
   color: var(--text);

@@ -39,12 +39,12 @@ function Bild(props) {
 
 const KB = 176; // Knotenbreite
 const KH = 112; // Knotenhöhe
-const AX = 64; // Abstand Spalten
+const AX = 72; // Abstand Spalten
 const AY = 32; // Abstand Zeilen
 
 function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
   const plan = aufgabe.plan;
-  const { pos, spalten, zeilen } = anordnen(plan.vorgaenge);
+  const { pos, kanten, spalten, zeilen } = anordnen(plan.vorgaenge);
   const breite = spalten * KB + (spalten - 1) * AX;
   const hoehe = zeilen * KH + (zeilen - 1) * AY;
   const gegeben = new Set(alleGegeben ? plan.vorgaenge.map((v) => v.id) : aufgabe.gegeben);
@@ -81,19 +81,28 @@ function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
               <path d="M0 0 L10 5 L0 10 z" fill="currentColor" />
             </marker>
           </defs>
-          {plan.vorgaenge.flatMap((v) =>
-            v.vorgaenger.map((p) => {
-              const a = xy(p);
-              const b = xy(v.id);
-              const x1 = a.x + KB;
-              const y1 = a.y + KH / 2;
-              const x2 = b.x - 2;
-              const y2 = b.y + KH / 2;
-              const mx = (x1 + x2) / 2;
-              const krit = kritisch.has(p) && kritisch.has(v.id) && plan.vorgaenge.find((x) => x.id === p).fez === v.faz;
-              return <path key={`${p}-${v.id}`} class={`netz__pfeil ${krit ? 'netz__pfeil--kritisch' : ''}`} d={`M${x1} ${y1} C${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`} marker-end="url(#np-spitze)" />;
-            }),
-          )}
+          {kanten.map(({ von, nach, ueber }) => {
+            // Start rechts am Vorgänger, durch die Hilfspunkte (freie Lücken), Ende links am Nachfolger
+            const a = xy(von);
+            const b = xy(nach);
+            const punkte = [[a.x + KB, a.y + KH / 2], ...ueber.flatMap((h) => {
+              const p = xy(h);
+              return [[p.x, p.y + KH / 2], [p.x + KB, p.y + KH / 2]];
+            }), [b.x - 2, b.y + KH / 2]];
+            let d = `M${punkte[0][0]} ${punkte[0][1]}`;
+            for (let i = 1; i < punkte.length; i++) {
+              const [x1, y1] = punkte[i - 1];
+              const [x2, y2] = punkte[i];
+              if (i % 2 === 0) d += ` L${x2} ${y2}`;
+              else {
+                const mx = (x1 + x2) / 2;
+                d += ` C${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+              }
+            }
+            const v = plan.vorgaenge.find((x) => x.id === nach);
+            const krit = kritisch.has(von) && kritisch.has(nach) && plan.vorgaenge.find((x) => x.id === von).fez === v.faz;
+            return <path key={`${von}-${nach}`} class={`netz__pfeil ${krit ? 'netz__pfeil--kritisch' : ''}`} d={d} marker-end="url(#np-spitze)" />;
+          })}
         </svg>
         {plan.vorgaenge.map((v) => {
           const p = xy(v.id);
@@ -106,7 +115,7 @@ function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
               <div class="nk__zeile nk__titel">
                 <span class="nk__nr">{v.id}</span>
                 <span class="nk__name" title={v.name}>
-                  {v.name}
+                  <span>{v.name}</span>
                 </span>
               </div>
               <div class="nk__zeile nk__zeile--drei">
@@ -137,7 +146,9 @@ function Legende() {
         </div>
         <div class="nk__zeile nk__titel">
           <span class="nk__nr">Nr.</span>
-          <span class="nk__name">Vorgang</span>
+          <span class="nk__name">
+            <span>Vorgang</span>
+          </span>
         </div>
         <div class="nk__zeile nk__zeile--drei">
           <span>D</span>

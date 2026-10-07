@@ -139,6 +139,11 @@ export function erzeuge(r, { min = 6, max = 9, thema = 'it' } = {}) {
 }
 
 // Anordnung für das Diagramm: Spalte = Ebene (längster Weg vom Start), Zeile = Position darin
+// Knoten in Spalten anordnen (Spalte = längster Weg vom Start).
+// Pfeile, die Spalten überspringen, bekommen Hilfspunkte in den Zwischenspalten – so laufen
+// sie durch eine freie Lücke statt hinter anderen Knoten. Die Reihenfolge in jeder Spalte wird
+// mehrmals nach der mittleren Höhe der Nachbarn sortiert (Baryzentrum), damit sich möglichst
+// wenige Pfeile kreuzen.
 export function anordnen(vorgaenge) {
   const byId = new Map(vorgaenge.map((v) => [v.id, v]));
   const tiefe = new Map();
@@ -150,11 +155,71 @@ export function anordnen(vorgaenge) {
     return d;
   };
   vorgaenge.forEach((v) => t(v.id));
-  const spalten = [];
-  for (const v of vorgaenge) (spalten[tiefe.get(v.id)] ??= []).push(v.id);
+  const anzahl = Math.max(...tiefe.values()) + 1;
+  const schichten = Array.from({ length: anzahl }, () => []);
+  for (const v of vorgaenge) schichten[tiefe.get(v.id)].push(v.id);
+
+  const vor = new Map();
+  const nach = new Map();
+  const verbinde = (a, b) => {
+    (nach.get(a) ?? nach.set(a, []).get(a)).push(b);
+    (vor.get(b) ?? vor.set(b, []).get(b)).push(a);
+  };
+  const kanten = [];
+  for (const v of vorgaenge)
+    for (const p of v.vorgaenger) {
+      const ueber = [];
+      let letzter = p;
+      for (let s = tiefe.get(p) + 1; s < tiefe.get(v.id); s++) {
+        const h = `~${p}${v.id}${s}`;
+        schichten[s].push(h);
+        ueber.push(h);
+        verbinde(letzter, h);
+        letzter = h;
+      }
+      verbinde(letzter, v.id);
+      kanten.push({ von: p, nach: v.id, ueber });
+    }
+
+  const hoehe = (s) => {
+    const m = new Map();
+    s.forEach((id, i) => m.set(id, i - (s.length - 1) / 2));
+    return m;
+  };
+  const sortiere = (s, nachbarn, h) => {
+    const schluessel = new Map(
+      s.map((id, i) => {
+        const n = (nachbarn.get(id) ?? []).filter((x) => h.has(x));
+        return [id, n.length ? n.reduce((a, x) => a + h.get(x), 0) / n.length : i - (s.length - 1) / 2];
+      }),
+    );
+    return [...s].sort((a, b) => schluessel.get(a) - schluessel.get(b));
+  };
+  const kreuzungen = (sch) => {
+    let k = 0;
+    for (let s = 0; s < sch.length - 1; s++) {
+      const oben = new Map(sch[s].map((id, i) => [id, i]));
+      const unten = new Map(sch[s + 1].map((id, i) => [id, i]));
+      const paare = sch[s].flatMap((a) => (nach.get(a) ?? []).filter((b) => unten.has(b)).map((b) => [oben.get(a), unten.get(b)]));
+      for (let i = 0; i < paare.length; i++)
+        for (let j = i + 1; j < paare.length; j++) if ((paare[i][0] - paare[j][0]) * (paare[i][1] - paare[j][1]) < 0) k++;
+    }
+    return k;
+  };
+  let beste = schichten.map((s) => [...s]);
+  let wenigste = kreuzungen(beste);
+  let akt = beste;
+  for (let runde = 0; runde < 6 && wenigste > 0; runde++) {
+    akt = akt.map((s) => [...s]);
+    for (let s = 1; s < anzahl; s++) akt[s] = sortiere(akt[s], vor, hoehe(akt[s - 1]));
+    for (let s = anzahl - 2; s >= 0; s--) akt[s] = sortiere(akt[s], nach, hoehe(akt[s + 1]));
+    const k = kreuzungen(akt);
+    if (k < wenigste) [beste, wenigste] = [akt, k];
+  }
+
   const pos = new Map();
-  spalten.forEach((s, x) => s.forEach((id, y) => pos.set(id, { x, y, anzahl: s.length })));
-  return { pos, spalten: spalten.length, zeilen: Math.max(...spalten.map((s) => s.length)) };
+  beste.forEach((s, x) => s.forEach((id, y) => pos.set(id, { x, y, anzahl: s.length })));
+  return { pos, kanten, spalten: anzahl, zeilen: Math.max(...beste.map((s) => s.length)) };
 }
 
 // Kritischen Weg aus einer Eingabe lesen: „A-C-F", „A, C, F", „ACF"
