@@ -12,6 +12,7 @@ import { KaufmaennischTrainer } from './kaufmaennisch/Kaufmaennisch.jsx';
 import { NetzplanTrainer } from './netzplan/Netzplan.jsx';
 import { CodeTrainer } from './code/CodeTrainer.jsx';
 import { SqlLabor } from './sql/SqlLabor.jsx';
+import { ModellierenTrainer } from './modellieren/Modellieren.jsx';
 
 // Komponenten je Trainer. Ein neuer Trainer: Eintrag in verzeichnis.js + Komponente hier.
 const KOMPONENTEN = {
@@ -21,6 +22,7 @@ const KOMPONENTEN = {
   netzplan: NetzplanTrainer,
   code: CodeTrainer,
   sql: SqlLabor,
+  modellieren: ModellierenTrainer,
 };
 
 export function TrainerBereich({ raum, trainerId, params }) {

@@ -84,7 +84,7 @@ export function Spickzettel({ titel = 'Formeln und Regeln', text, offenStart = f
 
 // Eine Übung aus einem Aufgabenerzeuger.
 // erzeuge(rng) → { titel?, text, tabelle?, felder: [...], loesung: [...], sp? }
-export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, ansicht: Ansicht }) {
+export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, ansicht: Ansicht, loesungName = 'Rechenweg' }) {
   const [startwert, setStartwert] = useState(() => Math.floor(Math.random() * 2 ** 31));
   const aufgabe = useMemo(() => erzeuge(zufall(startwert)), [startwert, erzeuge]);
   const [eingaben, setEingaben] = useState({});
@@ -228,7 +228,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
               </Knopf>
             )}
             <Knopf variante="zweit" icon={loesung ? 'eye-off' : 'eye'} onClick={aufdecken}>
-              {loesung ? 'Rechenweg ausblenden' : 'Rechenweg zeigen'}
+              {loesung ? `${loesungName} ausblenden` : `${loesungName} zeigen`}
             </Knopf>
             {!fertig && (
               <Knopf variante="geist" icon="refresh-cw" onClick={neu}>
@@ -249,7 +249,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
         )}
         <Aufklapp offen={loesung}>
           <div class="rechenweg">
-            <div class="ueberschrift-klein">Rechenweg</div>
+            <div class="ueberschrift-klein">{loesungName}</div>
             <ol class="rechenweg__schritte">
               {aufgabe.loesung.map((s, i) => (
                 <li key={i}>
