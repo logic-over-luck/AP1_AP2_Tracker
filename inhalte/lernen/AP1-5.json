@@ -1,0 +1,1138 @@
+{
+  "paket": "AP1-5",
+  "bloecke": {
+    "AP1-5-1": {
+      "satz": "Welche Arten von Software es gibt und wie man zwischen Standard-, Individual-, Cloud- und KI-Lösungen begründet auswählt."
+    },
+    "AP1-5-2": {
+      "satz": "Wie ein Betriebssystem ausgewählt, installiert und eingerichtet wird – von UEFI und Dateisystem über die Kommandozeile bis zur Domäne."
+    }
+  },
+  "stichpunkte": {
+    "AP1-5-1-1": {
+      "ziel": "Software nach ihrer Aufgabe einordnen und Produkte der richtigen Softwareart zuordnen.",
+      "punkte": [
+        "Anwendungssoftware und Systemsoftware unterscheiden",
+        "Standardsoftware: Office-Pakete, Datenbank-Managementsysteme, Browser",
+        "Branchensoftware: ERP-Systeme, Supply Chain Management, Customer Relationship Management",
+        "ERP plant die Ressourcen des ganzen Unternehmens, SCM steuert die Lieferkette, CRM die Kundenbeziehungen"
+      ]
+    },
+    "AP1-5-1-2": {
+      "ziel": "Zwischen Standard- und Individualsoftware bedarfsgerecht wählen und die Empfehlung begründen.",
+      "punkte": [
+        "Standardsoftware: sofort verfügbar, erprobt, günstiger",
+        "Individualsoftware: passt genau zu den Abläufen des Betriebs",
+        "Beurteilungskriterien: Anpassbarkeit, Wartbarkeit, Schnittstellen"
+      ]
+    },
+    "AP1-5-1-3": {
+      "ziel": "Cloudlösungen, virtuelle Desktops und Kommunikationssysteme erklären und gegen eine Installation im eigenen Haus abwägen.",
+      "punkte": [
+        "Software as a Service und Desktop as a Service erklären",
+        "Virtueller Desktop: in der Cloud oder lokal bereitgestellt",
+        "Vorteile: kein eigener Betrieb, flexible Kosten",
+        "Nachteile: Abhängigkeit von Anbieter und Internetverbindung, offene Datenschutzfragen",
+        "Videokonferenz- und Social-Media-Systeme einem Einsatzbereich zuordnen"
+      ]
+    },
+    "AP1-5-1-4": {
+      "ziel": "KI-Software praktisch beurteilen: Einsatzmöglichkeiten, Nutzen, Kosten und Risiken abwägen.",
+      "punkte": [
+        "Einsatz z. B. zum Recherchieren, Zusammenfassen, Übersetzen, Vorsortieren von Anfragen",
+        "Je einen Vorteil und Nachteil eines KI-Chatbots im Kundenkontakt beschreiben",
+        "Angebot auswerten: Kosten je Nutzer, Schulungsaufwand",
+        "Vorab klären: Datenschutz, Verlässlichkeit der Ergebnisse, Kosten, Schulung"
+      ]
+    },
+    "AP1-5-2-1": {
+      "ziel": "Ein Betriebssystem einem Einsatzzweck zuordnen und erklären, wie Dateien abgelegt und freigegeben werden.",
+      "punkte": [
+        "Betriebssysteme für Desktop, Server und Mobilgerät nennen",
+        "Aufgaben: Hardware verwalten, Programme ausführen, Dateien verwalten, Benutzer und Rechte verwalten",
+        "Dateien liegen in Ordnern auf Laufwerken",
+        "Freigabe: Zugriff für andere, geregelt über Lese- und Schreibrechte"
+      ]
+    },
+    "AP1-5-2-2": {
+      "ziel": "Die Schritte einer Systeminstallation kennen, ordnen und beurteilen – von BIOS/UEFI bis zum Dateisystem.",
+      "punkte": [
+        "BIOS/UEFI: Zweck und Einstellungen wie die Bootreihenfolge",
+        "Partitionieren und Formatieren unterscheiden",
+        "FAT32, NTFS, APFS und ext4 dem passenden Betriebssystem zuordnen",
+        "FAT32: von fast allen Systemen lesbar, aber Dateien nur bis 4 GiB, keine Zugriffsrechte",
+        "Installationsschritte in eine sinnvolle Reihenfolge bringen"
+      ]
+    },
+    "AP1-5-2-3": {
+      "ziel": "Befehle der Kommandozeile für Dateien und Verzeichnisse lesen, zuordnen und ihre Rechteangaben deuten.",
+      "punkte": [
+        "Aufbau: Befehlsname, Parameter bzw. Optionen, Argumente",
+        "dir/ls, mkdir, copy/cp, del dem Betriebssystem und Zweck zuordnen",
+        "chmod ändert Zugriffsrechte unter Linux, alias legt Kurznamen fest",
+        "Rechte Lesen, Schreiben, Ausführen für Besitzer, Gruppe, andere deuten, z. B. 754"
+      ]
+    },
+    "AP1-5-2-4": {
+      "ziel": "Beispiele für das Anpassen installierter Software nennen, Customizing erklären und die Dokumentation begründen.",
+      "punkte": [
+        "Anpassen an den Arbeitsplatz: Sprache, Standardspeicherorte, Vorlagen, Benutzerprofile",
+        "Customizing: Standardsoftware über Einstellungen oder Erweiterungen anpassen, ohne Neuprogrammierung",
+        "Begründen, warum Anpassungen dokumentiert werden"
+      ]
+    },
+    "AP1-5-2-5": {
+      "ziel": "Das Client-Server-Prinzip, die Einbindung in eine Domäne und Remote-Desktop erklären und den Nutzen zentraler Verwaltung nennen.",
+      "punkte": [
+        "Client fragt einen Dienst an, Server stellt ihn bereit",
+        "Domäne: zentrale Benutzerkonten, einheitliche Richtlinien, zentrale Rechtevergabe",
+        "Remote-Desktop steuert einen vorhandenen Rechner fern – anders als ein virtueller Desktop"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP1-5-1-1-K1-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K1",
+      "vorne": "Worin unterscheiden sich Systemsoftware und Anwendungssoftware?",
+      "hinten": "- Systemsoftware: betreibt den Rechner und bildet die Grundlage für andere Programme (z. B. Betriebssystem, Treiber)\n- Anwendungssoftware: erledigt konkrete Aufgaben des Benutzers (z. B. Textverarbeitung, ERP-System)"
+    },
+    {
+      "id": "AP1-5-1-1-K1-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K1",
+      "vorne": "Zu welcher Softwareart gehören Betriebssysteme und Gerätetreiber?",
+      "hinten": "Systemsoftware."
+    },
+    {
+      "id": "AP1-5-1-1-K2-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K2",
+      "vorne": "Zu welcher Softwareart gehören Office-Pakete, Datenbank-Managementsysteme und Browser?",
+      "hinten": "Standardsoftware: fertig am Markt erhältlich und für viele Anwender mit gleichen Anforderungen entwickelt."
+    },
+    {
+      "id": "AP1-5-1-1-K2-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K2",
+      "vorne": "Nenne drei typische Arten von Standardsoftware.",
+      "hinten": "- Office-Pakete\n- Datenbank-Managementsysteme\n- Browser"
+    },
+    {
+      "id": "AP1-5-1-1-K3-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K3",
+      "vorne": "Nenne drei Beispiele für Branchensoftware (ausgeschrieben).",
+      "hinten": "- ERP: Enterprise Resource Planning\n- SCM: Supply Chain Management\n- CRM: Customer Relationship Management"
+    },
+    {
+      "id": "AP1-5-1-1-K4-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K4",
+      "vorne": "Was leistet ein ERP-System?",
+      "hinten": "Es plant und steuert die Ressourcen des ganzen Unternehmens (z. B. Material, Personal, Finanzen, Produktion) in einem gemeinsamen System."
+    },
+    {
+      "id": "AP1-5-1-1-K4-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K4",
+      "vorne": "Was leistet ein SCM-System?",
+      "hinten": "Es steuert die Lieferkette – vom Lieferanten über Einkauf, Lager und Produktion bis zur Auslieferung an den Kunden."
+    },
+    {
+      "id": "AP1-5-1-1-K4-3",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K4",
+      "vorne": "Was leistet ein CRM-System?",
+      "hinten": "Es verwaltet die Kundenbeziehungen: Kundendaten, Kontakte, Anfragen, Angebote und Reklamationen an einer zentralen Stelle."
+    },
+    {
+      "id": "AP1-5-1-1-K5-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K5",
+      "vorne": "Ordne der Softwareart zu: Windows 11, LibreOffice, Firefox, Druckertreiber.",
+      "hinten": "- Windows 11: Systemsoftware\n- LibreOffice: Standardsoftware (Office-Paket)\n- Firefox: Standardsoftware (Browser)\n- Druckertreiber: Systemsoftware"
+    },
+    {
+      "id": "AP1-5-1-1-K5-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K5",
+      "vorne": "Ein Betrieb will alle Kundenkontakte, Angebote und Reklamationen zentral erfassen. Welche Art von System passt?",
+      "hinten": "Ein CRM-System (Customer Relationship Management) – Branchensoftware."
+    },
+    {
+      "id": "AP1-5-1-1-K5-3",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K5",
+      "vorne": "Ein Betrieb will Material, Personal, Finanzen und Produktion in einem gemeinsamen System planen. Welche Art von System passt?",
+      "hinten": "Ein ERP-System (Enterprise Resource Planning) – Branchensoftware."
+    },
+    {
+      "id": "AP1-5-1-2-K1-1",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K1",
+      "vorne": "Worin unterscheiden sich Standardsoftware und Individualsoftware?",
+      "hinten": "- Standardsoftware: fertig gekauft, für viele Anwender mit gleichen Anforderungen entwickelt\n- Individualsoftware: eigens für einen Betrieb nach dessen Anforderungen entwickelt (selbst oder im Auftrag)"
+    },
+    {
+      "id": "AP1-5-1-2-K2-1",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K2",
+      "vorne": "Nenne die Vorteile von Standardsoftware gegenüber Individualsoftware.",
+      "hinten": "- sofort verfügbar\n- erprobt (bei vielen Anwendern im Einsatz)\n- günstiger"
+    },
+    {
+      "id": "AP1-5-1-2-K2-2",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K2",
+      "vorne": "Was ist der Hauptvorteil von Individualsoftware?",
+      "hinten": "Sie passt genau zu den Abläufen des Betriebs."
+    },
+    {
+      "id": "AP1-5-1-2-K3-1",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K3",
+      "vorne": "Was beurteilst du beim Kriterium Anpassbarkeit einer Software?",
+      "hinten": "Wie weit sich die Software über Einstellungen oder Erweiterungen an die Abläufe des Betriebs anpassen lässt."
+    },
+    {
+      "id": "AP1-5-1-2-K3-2",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K3",
+      "vorne": "Was beurteilst du beim Kriterium Wartbarkeit einer Software?",
+      "hinten": "Wie gut sich die Software pflegen, korrigieren und aktualisieren lässt – und wer das übernimmt (Hersteller, eigene Entwickler oder Dienstleister)."
+    },
+    {
+      "id": "AP1-5-1-2-K3-3",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K3",
+      "vorne": "Was beurteilst du beim Kriterium Schnittstellen einer Software?",
+      "hinten": "Ob die Software Daten mit den vorhandenen Systemen austauschen kann, z. B. über Import und Export oder eine Anbindung an ERP-System oder Datenbank."
+    },
+    {
+      "id": "AP1-5-1-2-K4-1",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K4",
+      "vorne": "Ein Handwerksbetrieb mit acht Mitarbeitern braucht Textverarbeitung und Tabellenkalkulation. Standard- oder Individualsoftware? Begründe.",
+      "hinten": "Standardsoftware (Office-Paket): sofort verfügbar, erprobt und günstiger; der Bedarf ist nicht betriebsspezifisch."
+    },
+    {
+      "id": "AP1-5-1-2-K4-2",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K4",
+      "vorne": "Ein Betrieb hat einen einzigartigen Fertigungsablauf, den keine Software am Markt abbildet. Was empfiehlst du? Begründe.",
+      "hinten": "Individualsoftware: Sie lässt sich genau auf den Ablauf zuschneiden. Höhere Kosten und eine längere Entwicklungszeit werden dafür in Kauf genommen."
+    },
+    {
+      "id": "AP1-5-1-2-K4-3",
+      "sp": "AP1-5-1-2",
+      "k": "AP1-5-1-2-K4",
+      "vorne": "Nenne je einen Nachteil von Standardsoftware und von Individualsoftware.",
+      "hinten": "- Standardsoftware: passt oft nicht genau zu den eigenen Abläufen\n- Individualsoftware: teuer und erst nach der Entwicklungszeit verfügbar"
+    },
+    {
+      "id": "AP1-5-1-3-K1-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K1",
+      "vorne": "Was bedeutet Software as a Service (SaaS)?",
+      "hinten": "Der Anbieter betreibt eine Anwendung in seinem Rechenzentrum; der Kunde nutzt sie über das Internet, meist im Browser, und zahlt eine laufende Gebühr, z. B. je Nutzer und Monat."
+    },
+    {
+      "id": "AP1-5-1-3-K1-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K1",
+      "vorne": "Was bedeutet Desktop as a Service (DaaS)?",
+      "hinten": "Ein Anbieter stellt komplette virtuelle Desktops (Betriebssystem mit Anwendungen) aus der Cloud bereit; der Nutzer greift über das Netz von seinem Endgerät darauf zu."
+    },
+    {
+      "id": "AP1-5-1-3-K1-3",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K1",
+      "vorne": "Worin unterscheiden sich SaaS und DaaS?",
+      "hinten": "- SaaS: liefert eine einzelne Anwendung aus der Cloud\n- DaaS: liefert einen ganzen Arbeitsplatz-Desktop mit Betriebssystem und Anwendungen aus der Cloud"
+    },
+    {
+      "id": "AP1-5-1-3-K2-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K2",
+      "vorne": "Was ist ein virtueller Desktop?",
+      "hinten": "Eine Desktop-Umgebung (Betriebssystem mit Anwendungen), die nicht auf dem Endgerät, sondern in einer virtuellen Maschine auf einem Server läuft; das Endgerät zeigt nur das Bild an und überträgt die Eingaben."
+    },
+    {
+      "id": "AP1-5-1-3-K2-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K2",
+      "vorne": "Wo kann ein virtueller Desktop bereitgestellt werden?",
+      "hinten": "- in der Cloud bei einem Anbieter (Desktop as a Service)\n- lokal auf Servern im eigenen Haus"
+    },
+    {
+      "id": "AP1-5-1-3-K3-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K3",
+      "vorne": "Wodurch unterscheidet sich eine Cloudlösung von einer Installation im eigenen Haus?",
+      "hinten": "- Cloudlösung: läuft beim Anbieter, Zugriff über das Internet; Betrieb und Updates übernimmt der Anbieter\n- im eigenen Haus: läuft auf eigenen Rechnern; Betrieb, Wartung und Datensicherung übernimmt der Betrieb selbst"
+    },
+    {
+      "id": "AP1-5-1-3-K3-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K3",
+      "vorne": "Ein Betrieb hat keine eigene IT-Abteilung, die Mitarbeiter arbeiten oft unterwegs. Cloudlösung oder Installation im eigenen Haus?",
+      "hinten": "Cloudlösung: Es ist kein eigener Betrieb nötig, und der Zugriff ist von überall über das Internet möglich."
+    },
+    {
+      "id": "AP1-5-1-3-K3-3",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K3",
+      "vorne": "Ein Standort hat nur eine unzuverlässige Internetverbindung, und sensible Daten sollen das Haus nicht verlassen. Welche Variante passt?",
+      "hinten": "Installation im eigenen Haus: unabhängig von der Internetverbindung, und die Daten bleiben unter eigener Kontrolle."
+    },
+    {
+      "id": "AP1-5-1-3-K4-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K4",
+      "vorne": "Nenne die Vorteile einer Cloudlösung gegenüber einer Installation im eigenen Haus.",
+      "hinten": "- kein eigener Betrieb (Anbieter kümmert sich um Server, Wartung, Updates)\n- flexible Kosten (Bezahlung nach Nutzung, z. B. je Nutzer und Monat)"
+    },
+    {
+      "id": "AP1-5-1-3-K4-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K4",
+      "vorne": "Nenne die Nachteile einer Cloudlösung gegenüber einer Installation im eigenen Haus.",
+      "hinten": "- Abhängigkeit vom Anbieter\n- Abhängigkeit von der Internetverbindung\n- offene Fragen des Datenschutzes (wo und von wem die Daten verarbeitet werden)"
+    },
+    {
+      "id": "AP1-5-1-3-K5-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K5",
+      "vorne": "Wofür setzt ein Betrieb ein Videokonferenzsystem ein?",
+      "hinten": "Für Besprechungen mit Bild und Ton zwischen Teilnehmern an verschiedenen Orten, z. B. Teammeetings mit Homeoffice-Kollegen, Kundengespräche, Schulungen."
+    },
+    {
+      "id": "AP1-5-1-3-K5-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K5",
+      "vorne": "Wofür setzt ein Betrieb Social-Media-Systeme ein?",
+      "hinten": "Für die Kommunikation mit Kunden und Öffentlichkeit, z. B. Werbung, Produktinformationen, Kundenservice, Personalsuche."
+    },
+    {
+      "id": "AP1-5-1-3-K5-3",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K5",
+      "vorne": "Welches Kommunikationssystem passt? (a) wöchentliche Abstimmung eines verteilten Teams mit Bildschirmfreigabe, (b) neue Produkte einer breiten Öffentlichkeit vorstellen",
+      "hinten": "- (a) Videokonferenzsystem\n- (b) Social-Media-System"
+    },
+    {
+      "id": "AP1-5-1-4-K1-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K1",
+      "vorne": "Nenne Einsatzmöglichkeiten von KI-Software an einem Büroarbeitsplatz.",
+      "hinten": "z. B.\n- recherchieren\n- Texte zusammenfassen\n- übersetzen\n- Anfragen vorsortieren\n- Texte entwerfen"
+    },
+    {
+      "id": "AP1-5-1-4-K1-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K1",
+      "vorne": "Ein Kundenservice erhält täglich Hunderte E-Mails. Wie kann KI-Software dabei helfen?",
+      "hinten": "Sie sortiert die Anfragen vor (z. B. nach Thema oder Dringlichkeit) und leitet sie an die zuständige Stelle weiter; sie kann auch Antwortentwürfe vorschlagen."
+    },
+    {
+      "id": "AP1-5-1-4-K2-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K2",
+      "vorne": "Nenne einen Vorteil eines KI-Chatbots im Kundenkontakt.",
+      "hinten": "z. B.: Er ist rund um die Uhr erreichbar, beantwortet Standardfragen sofort und entlastet so die Mitarbeiter."
+    },
+    {
+      "id": "AP1-5-1-4-K2-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K2",
+      "vorne": "Nenne einen Nachteil eines KI-Chatbots im Kundenkontakt.",
+      "hinten": "z. B.: Er kann falsche oder erfundene Antworten geben, versteht ungewöhnliche Anliegen schlecht, und manche Kunden empfinden ihn als unpersönlich."
+    },
+    {
+      "id": "AP1-5-1-4-K3-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K3",
+      "vorne": "Welche Angaben eines Angebots für eine KI-Lösung wertest du für die Kosten aus?",
+      "hinten": "- Kosten je Nutzer und Zeitraum, hochgerechnet auf alle Nutzer\n- Schulungsaufwand: Schulungskosten und Arbeitszeit der Mitarbeiter"
+    },
+    {
+      "id": "AP1-5-1-4-K3-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K3",
+      "vorne": "Wie berechnest du die jährlichen Nutzungskosten einer KI-Lösung, die je Nutzer und Monat abgerechnet wird?",
+      "hinten": "`Kosten je Nutzer und Monat × Anzahl Nutzer × 12`"
+    },
+    {
+      "id": "AP1-5-1-4-K4-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K4",
+      "vorne": "Welche Punkte sind vor dem Einsatz von KI-Software zu klären?",
+      "hinten": "- Datenschutz\n- Verlässlichkeit der Ergebnisse\n- Kosten\n- Schulung der Mitarbeiter"
+    },
+    {
+      "id": "AP1-5-1-4-K4-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K4",
+      "vorne": "Warum ist vor dem Einsatz von KI-Software der Datenschutz zu klären?",
+      "hinten": "Eingegebene Daten werden oft beim Anbieter verarbeitet; personenbezogene Daten, z. B. von Kunden, dürfen nur nach den Regeln der DSGVO weitergegeben werden."
+    },
+    {
+      "id": "AP1-5-1-4-K4-3",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K4",
+      "vorne": "Warum müssen Ergebnisse von KI-Software geprüft werden?",
+      "hinten": "KI kann falsche oder erfundene Aussagen überzeugend formulieren; die Verantwortung für das Ergebnis bleibt beim Menschen."
+    },
+    {
+      "id": "AP1-5-2-1-K1-1",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K1",
+      "vorne": "Nenne gängige Betriebssysteme für die Einsatzzwecke Desktop, Server und Mobilgerät.",
+      "hinten": "- Desktop: Windows, macOS, Linux\n- Server: Windows Server, Linux\n- Mobilgerät: Android, iOS"
+    },
+    {
+      "id": "AP1-5-2-1-K1-2",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K1",
+      "vorne": "Wofür ist ein Server-Betriebssystem ausgelegt?",
+      "hinten": "Darauf, dauerhaft Dienste für viele Clients im Netz bereitzustellen, z. B. Dateiablage, Drucken, Anmeldung – nicht auf die Arbeit eines einzelnen Benutzers am Gerät."
+    },
+    {
+      "id": "AP1-5-2-1-K2-1",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K2",
+      "vorne": "Nenne die Aufgaben eines Betriebssystems.",
+      "hinten": "- Hardware verwalten (z. B. Prozessor, Arbeitsspeicher, Geräte)\n- Programme ausführen\n- Dateien verwalten\n- Benutzer und Rechte verwalten"
+    },
+    {
+      "id": "AP1-5-2-1-K3-1",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K3",
+      "vorne": "Wie werden Dateien auf einem Rechner organisiert?",
+      "hinten": "Hierarchisch: Ein Laufwerk enthält Ordner, diese enthalten Unterordner und Dateien. Jede Datei ist über ihren Pfad eindeutig erreichbar, z. B. `C:\\Daten\\Rechnung.pdf`."
+    },
+    {
+      "id": "AP1-5-2-1-K3-2",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K3",
+      "vorne": "Wie unterscheidet sich die Angabe von Laufwerken und Pfaden unter Windows und Linux?",
+      "hinten": "- Windows: jedes Laufwerk hat einen Buchstaben (z. B. `C:`), Trennzeichen `\\`\n- Linux: ein gemeinsamer Verzeichnisbaum ab `/`, weitere Laufwerke werden in Ordner eingehängt, Trennzeichen `/`"
+    },
+    {
+      "id": "AP1-5-2-1-K4-1",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K4",
+      "vorne": "Was ist eine Freigabe?",
+      "hinten": "Ein Ordner (oder Drucker), der über das Netzwerk für andere Benutzer zugänglich gemacht wird."
+    },
+    {
+      "id": "AP1-5-2-1-K4-2",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K4",
+      "vorne": "Was erlauben Leserecht und Schreibrecht auf einer Freigabe?",
+      "hinten": "- Leserecht: Dateien öffnen und kopieren, aber nicht ändern\n- Schreibrecht: Dateien ändern, neu anlegen und löschen"
+    },
+    {
+      "id": "AP1-5-2-1-K4-3",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K4",
+      "vorne": "Die Buchhaltung soll Rechnungen in einem freigegebenen Ordner bearbeiten, der Vertrieb sie nur ansehen. Welche Rechte bekommen die beiden Gruppen?",
+      "hinten": "- Buchhaltung: Lesen und Schreiben\n- Vertrieb: nur Lesen"
+    },
+    {
+      "id": "AP1-5-2-2-K1-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K1",
+      "vorne": "Wozu dient das BIOS bzw. UEFI?",
+      "hinten": "Es ist die Firmware der Hauptplatine: Beim Einschalten prüft und initialisiert es die Hardware und startet dann das Betriebssystem von einem Datenträger."
+    },
+    {
+      "id": "AP1-5-2-2-K1-2",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K1",
+      "vorne": "Nenne Einstellungen, die im BIOS/UEFI vorgenommen werden.",
+      "hinten": "z. B.\n- Bootreihenfolge\n- Datum und Uhrzeit\n- Secure Boot ein/aus\n- Virtualisierung ein/aus\n- Schnittstellen aktivieren/deaktivieren\n- Passwort"
+    },
+    {
+      "id": "AP1-5-2-2-K1-3",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K1",
+      "vorne": "Was legt die Bootreihenfolge fest?",
+      "hinten": "In welcher Reihenfolge die Firmware die Datenträger nach einem startfähigen System durchsucht. Für eine Installation vom USB-Stick wird dieser an die erste Stelle gesetzt."
+    },
+    {
+      "id": "AP1-5-2-2-K1-4",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K1",
+      "vorne": "Was unterscheidet UEFI vom klassischen BIOS?",
+      "hinten": "UEFI ist der moderne Nachfolger:\n- startet von GPT-Datenträgern, auch über 2 TiB\n- bietet Secure Boot\n- meist grafische Oberfläche mit Mausbedienung"
+    },
+    {
+      "id": "AP1-5-2-2-K2-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K2",
+      "vorne": "Was ist der Unterschied zwischen Partitionieren und Formatieren?",
+      "hinten": "- Partitionieren: den Datenträger in einen oder mehrere getrennte Bereiche (Partitionen) aufteilen\n- Formatieren: in einer Partition ein Dateisystem anlegen, damit Dateien gespeichert werden können"
+    },
+    {
+      "id": "AP1-5-2-2-K2-2",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K2",
+      "vorne": "Was kommt zuerst: Partitionieren oder Formatieren?",
+      "hinten": "Erst wird partitioniert, dann wird jede Partition formatiert."
+    },
+    {
+      "id": "AP1-5-2-2-K3-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K3",
+      "vorne": "Ordne die Dateisysteme FAT32, NTFS, APFS und ext4 dem passenden Betriebssystem zu.",
+      "hinten": "- FAT32: von fast allen Systemen lesbar, typisch für USB-Sticks und Speicherkarten\n- NTFS: Windows\n- APFS: macOS\n- ext4: Linux"
+    },
+    {
+      "id": "AP1-5-2-2-K3-2",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K3",
+      "vorne": "Welches Dateisystem verwendet Windows für die Systempartition?",
+      "hinten": "NTFS."
+    },
+    {
+      "id": "AP1-5-2-2-K4-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K4",
+      "vorne": "Nenne einen Vorteil und einen Nachteil von FAT32.",
+      "hinten": "- Vorteil: wird von fast allen Systemen gelesen\n- Nachteil: Dateien höchstens 4 GiB groß; keine Zugriffsrechte"
+    },
+    {
+      "id": "AP1-5-2-2-K5-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K5",
+      "vorne": "Wie groß darf eine einzelne Datei unter FAT32 höchstens sein?",
+      "hinten": "4 GiB (genau: 4 GiB minus 1 Byte)."
+    },
+    {
+      "id": "AP1-5-2-2-K5-2",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K5",
+      "vorne": "Warum eignet sich FAT32 nicht für Daten, auf die nur bestimmte Benutzer zugreifen dürfen?",
+      "hinten": "FAT32 kennt keine Zugriffsrechte für Dateien und Ordner; dafür braucht man z. B. NTFS oder ext4."
+    },
+    {
+      "id": "AP1-5-2-2-K5-3",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K5",
+      "vorne": "Ein USB-Stick soll unter Windows, macOS und Linux funktionieren; die größte Datei ist 6 GB groß. Reicht FAT32?",
+      "hinten": "Nein: 6 GB überschreiten die Grenze von 4 GiB je Datei."
+    },
+    {
+      "id": "AP1-5-2-2-K6-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K6",
+      "vorne": "Bringe die Schritte einer Betriebssysteminstallation in eine sinnvolle Reihenfolge.",
+      "hinten": "1. Daten sichern, Hardwareanforderungen prüfen\n2. Installationsmedium erstellen\n3. Bootreihenfolge einstellen, vom Medium starten\n4. Partitionieren und formatieren\n5. Betriebssystem installieren, Grundeinstellungen\n6. Treiber und Updates, dann Anwendungen"
+    },
+    {
+      "id": "AP1-5-2-2-K6-2",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K6",
+      "vorne": "Warum werden vor der Installation auf einem bereits genutzten Datenträger die Daten gesichert?",
+      "hinten": "Beim Partitionieren und Formatieren gehen die vorhandenen Daten verloren."
+    },
+    {
+      "id": "AP1-5-2-2-K6-3",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K6",
+      "vorne": "Warum werden nach der Installation zuerst Treiber und Updates eingespielt?",
+      "hinten": "Damit die Hardware richtig funktioniert und bekannte Sicherheitslücken geschlossen sind, bevor das System für die Arbeit genutzt wird."
+    },
+    {
+      "id": "AP1-5-2-3-K1-1",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K1",
+      "vorne": "Aus welchen Teilen besteht ein Befehl auf der Kommandozeile?",
+      "hinten": "- Befehlsname: was getan wird\n- Parameter bzw. Optionen: wie es getan wird\n- Argumente: womit es getan wird, z. B. Datei- oder Ordnernamen"
+    },
+    {
+      "id": "AP1-5-2-3-K1-2",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K1",
+      "vorne": "Benenne die Teile von `ls -l /home`.",
+      "hinten": "- `ls`: Befehlsname\n- `-l`: Option\n- `/home`: Argument"
+    },
+    {
+      "id": "AP1-5-2-3-K1-3",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K1",
+      "vorne": "Wie werden Optionen in der Windows-Eingabeaufforderung (cmd) und unter Linux meist eingeleitet?",
+      "hinten": "- Windows (cmd): mit Schrägstrich, z. B. `dir /s`\n- Linux: mit Bindestrich, z. B. `ls -l`"
+    },
+    {
+      "id": "AP1-5-2-3-K2-1",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K2",
+      "vorne": "Mit welchem Befehl zeigst du den Inhalt eines Verzeichnisses an – in der Windows-Eingabeaufforderung und unter Linux?",
+      "hinten": "- Windows: `dir`\n- Linux: `ls`"
+    },
+    {
+      "id": "AP1-5-2-3-K2-2",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K2",
+      "vorne": "Wozu dient `mkdir` und unter welchem Betriebssystem gibt es den Befehl?",
+      "hinten": "Legt ein neues Verzeichnis an; gibt es unter Windows und unter Linux."
+    },
+    {
+      "id": "AP1-5-2-3-K2-3",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K2",
+      "vorne": "Mit welchem Befehl kopierst du eine Datei in der Windows-Eingabeaufforderung, mit welchem unter Linux?",
+      "hinten": "- Windows: `copy`\n- Linux: `cp`"
+    },
+    {
+      "id": "AP1-5-2-3-K2-4",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K2",
+      "vorne": "Wozu dient `del` und zu welchem Betriebssystem gehört der Befehl?",
+      "hinten": "Löscht Dateien; Windows-Eingabeaufforderung."
+    },
+    {
+      "id": "AP1-5-2-3-K2-5",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K2",
+      "vorne": "Was bewirkt `copy bericht.txt D:\\Archiv` und auf welchem Betriebssystem?",
+      "hinten": "Kopiert die Datei bericht.txt in den Ordner D:\\Archiv; Windows (Eingabeaufforderung)."
+    },
+    {
+      "id": "AP1-5-2-3-K3-1",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K3",
+      "vorne": "Was bewirkt `chmod`?",
+      "hinten": "Ändert unter Linux die Zugriffsrechte (Lesen, Schreiben, Ausführen) einer Datei oder eines Verzeichnisses für Besitzer, Gruppe und andere."
+    },
+    {
+      "id": "AP1-5-2-3-K4-1",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K4",
+      "vorne": "Wozu dient `alias`?",
+      "hinten": "Legt einen eigenen Kurznamen für einen Befehl fest, z. B. `alias ll='ls -l'` – danach führt `ll` den Befehl `ls -l` aus."
+    },
+    {
+      "id": "AP1-5-2-3-K5-1",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K5",
+      "vorne": "Welchen Zahlenwert haben die Rechte r, w und x in der Zifferndarstellung von chmod?",
+      "hinten": "- r (Lesen) = 4\n- w (Schreiben) = 2\n- x (Ausführen) = 1\nDie Summe ergibt die Ziffer, z. B. 7 = rwx."
+    },
+    {
+      "id": "AP1-5-2-3-K5-2",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K5",
+      "vorne": "Für wen gelten die drei Ziffern bei `chmod 754`?",
+      "hinten": "1. Ziffer: Besitzer\n2. Ziffer: Gruppe\n3. Ziffer: andere"
+    },
+    {
+      "id": "AP1-5-2-3-K5-3",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K5",
+      "vorne": "Welche Rechte setzt `chmod 754 datei`?",
+      "hinten": "- Besitzer 7 = rwx: Lesen, Schreiben, Ausführen\n- Gruppe 5 = r-x: Lesen, Ausführen\n- andere 4 = r--: nur Lesen"
+    },
+    {
+      "id": "AP1-5-2-3-K5-4",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K5",
+      "vorne": "Was bedeutet die Ziffer 6 in einer chmod-Angabe?",
+      "hinten": "rw-: Lesen und Schreiben (4 + 2), kein Ausführen."
+    },
+    {
+      "id": "AP1-5-2-3-K5-5",
+      "sp": "AP1-5-2-3",
+      "k": "AP1-5-2-3-K5",
+      "vorne": "Wie lautet die Rechteangabe `rwxr-x---` als Zahl?",
+      "hinten": "750"
+    },
+    {
+      "id": "AP1-5-2-4-K1-1",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K1",
+      "vorne": "Nenne Beispiele, wie installierte Software an einen Arbeitsplatz angepasst wird.",
+      "hinten": "- Sprache einstellen\n- Standardspeicherorte festlegen\n- Vorlagen hinterlegen\n- Benutzerprofile einrichten"
+    },
+    {
+      "id": "AP1-5-2-4-K1-2",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K1",
+      "vorne": "Alle Mitarbeiter sollen Dokumente automatisch auf dem Netzlaufwerk speichern und Briefe mit dem Firmenkopf schreiben. Welche Anpassungen nimmst du vor?",
+      "hinten": "- Standardspeicherort auf das Netzlaufwerk setzen\n- Briefvorlage mit Firmenkopf hinterlegen"
+    },
+    {
+      "id": "AP1-5-2-4-K2-1",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K2",
+      "vorne": "Was bedeutet Customizing?",
+      "hinten": "Standardsoftware über Einstellungen oder Erweiterungen an die betrieblichen Abläufe anpassen, ohne sie neu zu programmieren."
+    },
+    {
+      "id": "AP1-5-2-4-K2-2",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K2",
+      "vorne": "Worin unterscheidet sich Customizing von der Entwicklung von Individualsoftware?",
+      "hinten": "- Customizing: vorhandene Standardsoftware wird angepasst\n- Individualsoftware: Software wird für den Betrieb neu entwickelt"
+    },
+    {
+      "id": "AP1-5-2-4-K3-1",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K3",
+      "vorne": "Warum werden Anpassungen an Software dokumentiert?",
+      "hinten": "- damit sie nach Updates, Neuinstallation oder an weiteren Arbeitsplätzen wiederhergestellt werden können\n- damit Kollegen und Support nachvollziehen können, was geändert wurde, z. B. bei der Fehlersuche"
+    },
+    {
+      "id": "AP1-5-2-5-K1-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K1",
+      "vorne": "Erkläre das Client-Server-Prinzip.",
+      "hinten": "Der Client fragt einen Dienst an, der Server stellt ihn bereit und antwortet. Ein Server bedient dabei viele Clients."
+    },
+    {
+      "id": "AP1-5-2-5-K1-2",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K1",
+      "vorne": "Nenne Beispiele für Dienste, die ein Server für Clients bereitstellt.",
+      "hinten": "z. B. Dateiablage, Drucken, E-Mail, Webseiten, Datenbank, zentrale Anmeldung"
+    },
+    {
+      "id": "AP1-5-2-5-K2-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K2",
+      "vorne": "Was bedeutet es, einen Rechner in eine Domäne einzubinden?",
+      "hinten": "Der Rechner wird Mitglied eines zentral verwalteten Netzes: Anmeldung, Rechte und Richtlinien kommen dann von einem zentralen Server (Domänencontroller), nicht mehr vom Rechner selbst."
+    },
+    {
+      "id": "AP1-5-2-5-K2-2",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K2",
+      "vorne": "Was ändert sich für einen Benutzer, wenn sein Rechner in eine Domäne eingebunden ist?",
+      "hinten": "Er meldet sich mit seinem zentralen Domänenkonto an – nicht mit einem lokalen Konto – und kann dasselbe Konto an anderen Rechnern der Domäne nutzen."
+    },
+    {
+      "id": "AP1-5-2-5-K3-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K3",
+      "vorne": "Nenne Vorteile einer Domäne.",
+      "hinten": "- zentrale Benutzerkonten\n- einheitliche Richtlinien (z. B. Passwortregeln)\n- zentrale Rechtevergabe"
+    },
+    {
+      "id": "AP1-5-2-5-K3-2",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K3",
+      "vorne": "Ein Betrieb hat 50 Rechner ohne Domäne. Welches Problem hat die IT bei der Verwaltung?",
+      "hinten": "Benutzerkonten, Rechte und Einstellungen müssen an jedem Rechner einzeln gepflegt werden."
+    },
+    {
+      "id": "AP1-5-2-5-K4-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K4",
+      "vorne": "Wozu dient Remote-Desktop?",
+      "hinten": "Einen entfernten Rechner über das Netz bedienen: Man sieht dessen Bildschirm und steuert ihn mit eigener Tastatur und Maus, z. B. für Fernwartung, Support oder die Arbeit am Büro-PC aus dem Homeoffice."
+    },
+    {
+      "id": "AP1-5-2-5-K5-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K5",
+      "vorne": "Worin unterscheidet sich Remote-Desktop von einem virtuellen Desktop?",
+      "hinten": "- Remote-Desktop: ein vorhandener Rechner wird ferngesteuert\n- virtueller Desktop: der Desktop läuft in einer virtuellen Maschine auf einem Server oder in der Cloud"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "glossar": [
+    {
+      "begriff": "Anwendungssoftware",
+      "erklaerung": "Software, die konkrete Aufgaben des Benutzers erledigt, z. B. Textverarbeitung oder ein ERP-System. Gegenstück zur Systemsoftware.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "Systemsoftware",
+      "erklaerung": "Software, die den Rechner betreibt und die Grundlage für Anwendungen bildet, z. B. Betriebssystem und Gerätetreiber.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "Standardsoftware",
+      "erklaerung": "Fertig am Markt erhältliche Software, die für viele Anwender mit gleichen Anforderungen entwickelt wurde, z. B. Office-Pakete oder Browser.",
+      "sp": [
+        "AP1-5-1-1",
+        "AP1-5-1-2",
+        "AP1-5-2-4"
+      ]
+    },
+    {
+      "begriff": "Branchensoftware",
+      "erklaerung": "Anwendungssoftware, die auf die Abläufe von Unternehmen bzw. einer Branche zugeschnitten ist, z. B. ERP-, SCM- und CRM-Systeme.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "Individualsoftware",
+      "erklaerung": "Software, die eigens für einen Betrieb nach dessen Anforderungen entwickelt wird – selbst oder im Auftrag.",
+      "sp": [
+        "AP1-5-1-2"
+      ]
+    },
+    {
+      "begriff": "Office-Paket",
+      "erklaerung": "Bündel von Büroprogrammen, meist Textverarbeitung, Tabellenkalkulation und Präsentation, z. B. Microsoft Office oder LibreOffice.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "DBMS",
+      "langform": "Datenbank-Managementsystem",
+      "erklaerung": "Software, die Datenbanken verwaltet: Sie speichert die Daten und regelt den Zugriff mehrerer Benutzer, z. B. MySQL.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "Browser",
+      "erklaerung": "Programm zum Anzeigen von Webseiten und Webanwendungen, z. B. Firefox, Chrome, Edge.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "ERP",
+      "langform": "Enterprise Resource Planning",
+      "erklaerung": "Software, die die Ressourcen des ganzen Unternehmens – z. B. Material, Personal, Finanzen, Produktion – in einem gemeinsamen System plant und steuert.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "SCM",
+      "langform": "Supply Chain Management",
+      "erklaerung": "Steuerung der Lieferkette vom Lieferanten über Lager und Produktion bis zum Kunden; SCM-Software unterstützt diese Planung.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "CRM",
+      "langform": "Customer Relationship Management",
+      "erklaerung": "Verwaltung der Kundenbeziehungen; CRM-Software bündelt Kundendaten, Kontakte, Anfragen und Angebote an einer Stelle.",
+      "sp": [
+        "AP1-5-1-1"
+      ]
+    },
+    {
+      "begriff": "Wartbarkeit",
+      "erklaerung": "Wie gut sich Software pflegen, korrigieren und aktualisieren lässt.",
+      "sp": [
+        "AP1-5-1-2"
+      ]
+    },
+    {
+      "begriff": "Schnittstelle",
+      "erklaerung": "Festgelegter Übergang, über den Programme oder Systeme Daten austauschen, z. B. ein Import/Export oder eine Programmierschnittstelle.",
+      "sp": [
+        "AP1-5-1-2"
+      ]
+    },
+    {
+      "begriff": "Cloud",
+      "erklaerung": "Bereitstellung von IT-Leistungen wie Software, Speicher oder Rechenleistung durch einen Anbieter über das Internet, meist nach Nutzung abgerechnet.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "SaaS",
+      "langform": "Software as a Service",
+      "erklaerung": "Cloudmodell: Der Anbieter betreibt eine Anwendung, der Kunde nutzt sie über das Internet, meist im Browser, gegen eine laufende Gebühr.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "DaaS",
+      "langform": "Desktop as a Service",
+      "erklaerung": "Cloudmodell: Der Anbieter stellt komplette virtuelle Desktops mit Betriebssystem und Anwendungen bereit, auf die man über das Netz zugreift.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "PaaS",
+      "langform": "Platform as a Service",
+      "erklaerung": "Cloudmodell: Der Anbieter stellt eine Plattform bereit, auf der Kunden eigene Anwendungen entwickeln und betreiben.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "IaaS",
+      "langform": "Infrastructure as a Service",
+      "erklaerung": "Cloudmodell: Der Anbieter stellt Rechenleistung, Speicher und Netz als virtuelle Infrastruktur bereit; Betriebssystem und Software verwaltet der Kunde.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "Virtueller Desktop",
+      "erklaerung": "Desktop-Umgebung, die in einer virtuellen Maschine auf einem Server oder in der Cloud läuft; das Endgerät zeigt nur das Bild und überträgt die Eingaben.",
+      "sp": [
+        "AP1-5-1-3",
+        "AP1-5-2-5"
+      ]
+    },
+    {
+      "begriff": "Videokonferenzsystem",
+      "erklaerung": "System für Besprechungen mit Bild und Ton zwischen Teilnehmern an verschiedenen Orten, meist mit Bildschirmfreigabe und Chat.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "Social Media",
+      "erklaerung": "Internetplattformen, auf denen Nutzer Inhalte teilen und sich austauschen; Betriebe nutzen sie z. B. für Werbung und Kundenkontakt.",
+      "sp": [
+        "AP1-5-1-3"
+      ]
+    },
+    {
+      "begriff": "Datenschutz",
+      "erklaerung": "Schutz personenbezogener Daten vor Missbrauch; in der EU vor allem durch die DSGVO geregelt.",
+      "sp": [
+        "AP1-5-1-3",
+        "AP1-5-1-4"
+      ]
+    },
+    {
+      "begriff": "KI",
+      "langform": "Künstliche Intelligenz",
+      "erklaerung": "Software, die Aufgaben löst, für die sonst menschliche Intelligenz nötig ist, z. B. Texte verstehen und erzeugen oder übersetzen.",
+      "sp": [
+        "AP1-5-1-4"
+      ]
+    },
+    {
+      "begriff": "Chatbot",
+      "erklaerung": "Programm, das in Textform oder per Sprache Gespräche mit Menschen führt, z. B. um Kundenfragen automatisch zu beantworten.",
+      "sp": [
+        "AP1-5-1-4"
+      ]
+    },
+    {
+      "begriff": "Betriebssystem",
+      "erklaerung": "Systemsoftware, die die Hardware verwaltet, Programme ausführt, Dateien verwaltet sowie Benutzer und Rechte verwaltet, z. B. Windows, Linux, macOS.",
+      "sp": [
+        "AP1-5-2-1",
+        "AP1-5-2-2",
+        "AP1-5-2-3"
+      ]
+    },
+    {
+      "begriff": "Freigabe",
+      "erklaerung": "Ordner oder Drucker, der über das Netzwerk für andere Benutzer zugänglich gemacht wird; der Zugriff wird über Rechte geregelt.",
+      "sp": [
+        "AP1-5-2-1"
+      ]
+    },
+    {
+      "begriff": "BIOS",
+      "langform": "Basic Input/Output System",
+      "erklaerung": "Ältere Firmware der Hauptplatine, die beim Einschalten die Hardware prüft und das Betriebssystem startet; heute weitgehend durch UEFI ersetzt.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "UEFI",
+      "langform": "Unified Extensible Firmware Interface",
+      "erklaerung": "Moderner Nachfolger des BIOS: initialisiert die Hardware und startet das Betriebssystem; unterstützt u. a. Secure Boot und GPT-Datenträger.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "Bootreihenfolge",
+      "erklaerung": "Reihenfolge, in der BIOS/UEFI die Datenträger nach einem startfähigen System durchsucht.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "Partition",
+      "erklaerung": "Getrennter Bereich eines Datenträgers, der wie ein eigenes Laufwerk behandelt wird; Partitionieren heißt, einen Datenträger in solche Bereiche aufzuteilen.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "Formatieren",
+      "erklaerung": "In einer Partition ein Dateisystem anlegen, damit Dateien gespeichert werden können; vorhandene Daten gehen dabei verloren.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "Dateisystem",
+      "erklaerung": "Ordnungsschema, nach dem Dateien und Ordner auf einem Datenträger abgelegt und wiedergefunden werden, z. B. NTFS oder ext4.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "FAT32",
+      "langform": "File Allocation Table, 32 Bit",
+      "erklaerung": "Älteres, einfaches Dateisystem, das fast alle Systeme lesen; Dateien höchstens 4 GiB, keine Zugriffsrechte. Typisch für USB-Sticks und Speicherkarten.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "NTFS",
+      "langform": "New Technology File System",
+      "erklaerung": "Standard-Dateisystem von Windows mit Zugriffsrechten und großen Dateien.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "APFS",
+      "langform": "Apple File System",
+      "erklaerung": "Standard-Dateisystem von Apple für macOS und iOS, auf SSDs ausgelegt.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "ext4",
+      "langform": "fourth extended filesystem",
+      "erklaerung": "Verbreitetes Dateisystem unter Linux mit Zugriffsrechten.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "GiB",
+      "langform": "Gibibyte",
+      "erklaerung": "Binäre Einheit: 1 GiB = 1.024³ Byte = 1.073.741.824 Byte; nicht zu verwechseln mit 1 GB = 1.000.000.000 Byte.",
+      "sp": [
+        "AP1-5-2-2"
+      ]
+    },
+    {
+      "begriff": "Kommandozeile",
+      "erklaerung": "Textbasierte Bedienoberfläche, in die Befehle eingetippt werden, z. B. Eingabeaufforderung (cmd) oder PowerShell unter Windows, Shell unter Linux.",
+      "sp": [
+        "AP1-5-2-3"
+      ]
+    },
+    {
+      "begriff": "Option",
+      "erklaerung": "Zusatzangabe zu einem Befehl, die steuert, wie er arbeitet, z. B. `-l` bei `ls`; auch Parameter oder Schalter genannt.",
+      "sp": [
+        "AP1-5-2-3"
+      ]
+    },
+    {
+      "begriff": "Argument",
+      "erklaerung": "Angabe, worauf ein Befehl wirkt, z. B. ein Datei- oder Ordnername.",
+      "sp": [
+        "AP1-5-2-3"
+      ]
+    },
+    {
+      "begriff": "chmod",
+      "langform": "change mode",
+      "erklaerung": "Linux-Befehl, der die Zugriffsrechte Lesen, Schreiben, Ausführen für Besitzer, Gruppe und andere ändert, z. B. `chmod 754 skript.sh`.",
+      "sp": [
+        "AP1-5-2-3"
+      ]
+    },
+    {
+      "begriff": "alias",
+      "erklaerung": "Befehl, mit dem man einen eigenen Kurznamen für einen Befehl festlegt, z. B. `alias ll='ls -l'`.",
+      "sp": [
+        "AP1-5-2-3"
+      ]
+    },
+    {
+      "begriff": "Customizing",
+      "erklaerung": "Anpassen von Standardsoftware über Einstellungen oder Erweiterungen an betriebliche Abläufe, ohne sie neu zu programmieren.",
+      "sp": [
+        "AP1-5-2-4"
+      ]
+    },
+    {
+      "begriff": "Benutzerprofil",
+      "erklaerung": "Sammlung der persönlichen Einstellungen und Daten eines Benutzers, die bei der Anmeldung geladen wird.",
+      "sp": [
+        "AP1-5-2-4"
+      ]
+    },
+    {
+      "begriff": "Client-Server-Prinzip",
+      "erklaerung": "Aufgabenteilung im Netz: Der Client fragt einen Dienst an, der Server stellt ihn bereit. Ein Server bedient viele Clients.",
+      "sp": [
+        "AP1-5-2-5"
+      ]
+    },
+    {
+      "begriff": "Domäne",
+      "erklaerung": "Zentral verwaltete Gruppe von Rechnern und Benutzern in einem Netzwerk; Anmeldung, Rechte und Richtlinien steuert ein Server (Domänencontroller).",
+      "sp": [
+        "AP1-5-2-5"
+      ]
+    },
+    {
+      "begriff": "Verzeichnisdienst",
+      "erklaerung": "Zentraler Dienst, der Benutzer, Gruppen, Rechner und Rechte eines Netzwerks speichert und verwaltet, z. B. Active Directory.",
+      "sp": [
+        "AP1-5-2-5"
+      ]
+    },
+    {
+      "begriff": "Remote-Desktop",
+      "erklaerung": "Fernsteuerung eines vorhandenen Rechners über das Netz: Man sieht dessen Bildschirm und bedient ihn mit eigener Tastatur und Maus.",
+      "sp": [
+        "AP1-5-2-5"
+      ]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP1-5-1-1-K3-1",
+      "frage": "Viele Lehrbücher zählen ERP-, SCM- und CRM-Systeme zur branchenübergreifenden (betriebswirtschaftlichen) Standardsoftware. Die Karten folgen der Zuordnung zur Branchensoftware aus dem Rahmen – reicht diese Zuordnung als erwartete Antwort?"
+    },
+    {
+      "id": "AP1-5-1-1-K2-1",
+      "frage": "Datenbank-Managementsysteme werden in manchen Lehrbüchern als systemnahe Software bzw. Systemsoftware eingeordnet; die Karte folgt dem Rahmen (Standardsoftware)."
+    },
+    {
+      "id": "AP1-5-1-3-K2-2",
+      "frage": "„Virtuelle Desktops lokal“: gemeint ist hier die Bereitstellung auf eigenen Servern im Haus. Unklar, ob auch eine virtuelle Maschine auf dem eigenen PC gemeint sein kann."
+    },
+    {
+      "id": "AP1-5-2-2-K6-1",
+      "frage": "Für die Installationsschritte gibt es keine feste Musterreihenfolge; Partitionieren und Formatieren erfolgen heute meist im Installationsassistenten. Die Karte gibt eine sinnvolle, nicht die einzig richtige Reihenfolge."
+    },
+    {
+      "id": "AP1-5-2-2-K3-1",
+      "frage": "ext4 ist bei vielen, aber nicht allen Linux-Distributionen Standard (z. B. Fedora: Btrfs, Red Hat: XFS); APFS wird auch von iOS genutzt. Die Zuordnung folgt der Erwartung des Rahmens."
+    },
+    {
+      "id": "AP1-5-2-3-K2-1",
+      "frage": "In der Windows PowerShell funktionieren auch `ls`, `cp` und `rm` (als Aliase). Die Karten ordnen nach Eingabeaufforderung (cmd) und Linux-Shell zu – unklar, ob die Prüfung diese Unterscheidung so erwartet."
+    },
+    {
+      "id": "AP1-5-2-5-K5-1",
+      "frage": "Auf virtuelle Desktops wird oft selbst per Remote-Desktop-Protokoll zugegriffen; die Abgrenzung folgt der Können-Aussage (Remote-Desktop steuert einen vorhandenen Rechner fern)."
+    }
+  ]
+}

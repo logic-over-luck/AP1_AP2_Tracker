@@ -1,0 +1,321 @@
+/* Grundaufbau: Leiste links, Kopfzeile, Inhalt in fester Breite. */
+
+.app {
+  display: grid;
+  grid-template-columns: var(--leiste-breite) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* ---------- Leiste ---------- */
+.leiste {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  padding: var(--s-5) var(--s-4) var(--s-4);
+  background: var(--bg-leiste);
+  border-right: 1px solid var(--linie);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.marke-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 0 var(--s-1);
+  color: var(--text);
+}
+.marke-logo__bild {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-2);
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, var(--akzent-stark), var(--akzent));
+  color: var(--akzent-text);
+  box-shadow: 0 4px 16px rgba(var(--akzent-rgb), 0.25);
+  transition: background var(--dauer-lang) var(--kurve), box-shadow var(--dauer-lang) var(--kurve);
+}
+.marke-logo__name {
+  font-weight: 700;
+  font-size: var(--t-l);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.marke-logo__zusatz {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
+.raumwahl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 3px;
+  background: var(--flaeche-1);
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  position: relative;
+}
+.raumwahl__knopf {
+  position: relative;
+  z-index: 1;
+  height: 30px;
+  border-radius: 7px;
+  font-size: var(--t-m);
+  font-weight: 600;
+  color: var(--text-3);
+  transition: color var(--dauer) var(--kurve);
+}
+.raumwahl__knopf:hover {
+  color: var(--text);
+}
+.raumwahl__knopf[aria-pressed='true'] {
+  color: var(--akzent);
+}
+.raumwahl__schieber {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc((100% - 6px - 4px) / 3);
+  border-radius: 7px;
+  background: var(--flaeche-4);
+  box-shadow: inset 0 0 0 1px var(--linie-2);
+  transition: transform var(--dauer-lang) var(--kurve);
+}
+
+.nav-gruppe {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-gruppe__titel {
+  padding: 0 var(--s-3) var(--s-2);
+}
+.nav-punkt {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  height: 36px;
+  padding: 0 var(--s-3);
+  border-radius: var(--r-2);
+  color: var(--text-2);
+  font-size: var(--t-n);
+  font-weight: 500;
+  transition:
+    background var(--dauer) var(--kurve),
+    color var(--dauer) var(--kurve);
+  position: relative;
+}
+.nav-punkt svg {
+  color: var(--text-3);
+  transition: color var(--dauer) var(--kurve);
+  flex: none;
+}
+.nav-punkt:hover {
+  background: var(--flaeche-2);
+  color: var(--text);
+}
+.nav-punkt[aria-current='page'] {
+  background: var(--akzent-weich);
+  color: var(--akzent-stark);
+}
+.nav-punkt[aria-current='page'] svg {
+  color: var(--akzent);
+}
+.nav-punkt__zahl {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+  min-width: 20px;
+  text-align: right;
+}
+.nav-punkt__zahl--faellig {
+  color: var(--warn);
+}
+.nav-punkt__punkt {
+  margin-left: auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--akzent);
+}
+
+.leiste__fuss {
+  margin-top: auto;
+}
+
+/* Rang in der Leiste */
+.rang-mini {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-1);
+  border: 1px solid var(--linie);
+  transition: border-color var(--dauer) var(--kurve), background var(--dauer) var(--kurve);
+}
+.rang-mini:hover {
+  border-color: var(--linie-2);
+  background: var(--flaeche-2);
+}
+.rang-mini__kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-2);
+}
+.rang-mini__name {
+  font-weight: 600;
+  font-size: var(--t-m);
+}
+.rang-mini__xp {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+
+/* ---------- Hauptbereich ---------- */
+.haupt {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.kopf {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  height: var(--kopf-hoehe);
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding: 0 var(--s-8);
+  background: rgba(12, 16, 19, 0.78);
+  backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid var(--linie);
+}
+.pfad {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--text-3);
+  min-width: 0;
+}
+.pfad__raum {
+  color: var(--akzent);
+  font-weight: 600;
+}
+.pfad__trenner {
+  color: var(--text-4);
+}
+.pfad__teil {
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kopf__rechts {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.kopf__status {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-s);
+  color: var(--text-3);
+  padding: 0 var(--s-2);
+}
+
+.inhalt {
+  width: 100%;
+  max-width: calc(var(--inhalt-breite) + 2 * var(--s-8));
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-8) var(--s-16);
+}
+
+.seitenkopf {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--s-6);
+  margin-bottom: var(--s-8);
+}
+.seitenkopf__titel {
+  font-size: var(--t-3xl);
+  line-height: 1.15;
+  margin-top: var(--s-2);
+}
+.seitenkopf__text {
+  color: var(--text-2);
+  margin-top: var(--s-2);
+  max-width: 640px;
+}
+.seitenkopf__rechts {
+  margin-left: auto;
+  flex: none;
+}
+
+.abschnitt {
+  margin-top: var(--s-12);
+}
+.abschnitt__kopf {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--s-4);
+  margin-bottom: var(--s-5);
+}
+.abschnitt__titel {
+  font-size: var(--t-xl);
+}
+.abschnitt__text {
+  color: var(--text-3);
+  font-size: var(--t-m);
+  margin-top: 2px;
+}
+
+/* Schmale Fenster: Leiste wird zur Schublade */
+.kopf__menue {
+  display: none;
+}
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .leiste {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--leiste-breite);
+    transform: translateX(-100%);
+    transition: transform var(--dauer-lang) var(--kurve);
+    box-shadow: var(--schatten-3);
+  }
+  .app[data-leiste-offen='true'] .leiste {
+    transform: none;
+  }
+  .kopf__menue {
+    display: inline-flex;
+  }
+  .kopf,
+  .inhalt {
+    padding-left: var(--s-4);
+    padding-right: var(--s-4);
+  }
+  .kopf__status {
+    display: none;
+  }
+}

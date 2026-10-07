@@ -1,0 +1,1565 @@
+{
+  "paket": "AP1-8",
+  "bloecke": {
+    "AP1-8-1": { "satz": "Wie aus Quelltext ein Programm wird, wie prozedurale und objektorientierte Programme aufgebaut sind und wonach man eine Sprache wählt." },
+    "AP1-8-2": { "satz": "Die Bausteine eines Programms kennen, Pseudocode lesen und schreiben, Code von Hand durchrechnen und Fehler darin finden." },
+    "AP1-8-3": { "satz": "Anwendungsfall-, Klassen- und Aktivitätsdiagramm der UML lesen, ergänzen und mit der richtigen Notation zeichnen." },
+    "AP1-8-4": { "satz": "Einfache ER-Modelle und Datentypen, Entwurf von Bildschirmmasken sowie das Lesen von Prozessdarstellungen in EPK und BPMN." }
+  },
+  "stichpunkte": {
+    "AP1-8-1-1": {
+      "ziel": "Erklären, wie Compiler, Linker, Interpreter und virtuelle Maschine aus Quelltext ein lauffähiges Programm machen, und Entwicklungswerkzeuge einordnen.",
+      "punkte": [
+        "Compiler: ganzes Programm vor der Ausführung übersetzen; Interpreter: schrittweise zur Laufzeit ausführen",
+        "Linker: übersetzte Programmteile und Bibliotheken zu einem ausführbaren Programm verbinden",
+        "Virtuelle Maschine (z. B. Java): führt Zwischencode auf verschiedenen Betriebssystemen aus",
+        "Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären",
+        "Vorteile: kompiliert läuft schneller; interpretiert lässt sich ohne Übersetzungsschritt testen"
+      ]
+    },
+    "AP1-8-1-2": {
+      "ziel": "Prozedurale und objektorientierte Programmierung unterscheiden und die Grundbegriffe Klasse, Objekt, Attribut, Methode und Sichtbarkeit erklären.",
+      "punkte": [
+        "Prozedurale und objektorientierte Herangehensweise unterscheiden",
+        "Klasse ist der Bauplan, Objekt ein konkretes Exemplar",
+        "Attribute und Methoden erklären",
+        "Sichtbarkeit: public und private unterscheiden",
+        "Attribute meist privat, Lesen und Ändern über Methoden"
+      ]
+    },
+    "AP1-8-1-3": {
+      "ziel": "Skriptsprachen, Bibliotheken und Frameworks einordnen, statische und dynamische Webseiten unterscheiden und die Wahl einer Programmiersprache begründen.",
+      "punkte": [
+        "Skriptsprache erklären, Beispiel Shell-Skript",
+        "Bibliothek rufst du auf; Framework gibt den Rahmen vor, in den du deinen Code einfügst",
+        "Statische Webseite: fertige Inhalte; dynamische: beim Aufruf erzeugt",
+        "Sprachen für dynamische Webinhalte, z. B. JavaScript, PHP, Python; HTML und CSS sind keine",
+        "Kriterien der Sprachwahl: Eignung für die Aufgabe, Kenntnisse im Team, verfügbare Frameworks"
+      ]
+    },
+    "AP1-8-2-1": {
+      "ziel": "Die Bausteine eines Programms – Variablen, Datentypen, Arrays, Verzweigungen, Schleifen, Prozeduren und Funktionen – erklären und im Code erkennen.",
+      "punkte": [
+        "Variable; Datentypen für Ganzzahl, Kommazahl, Wahrheitswert und Text",
+        "Array: Zugriff auf ein Element über den Index",
+        "Verzweigung und Schleife unterscheiden; zähler-, kopf- und fußgesteuerte Schleife",
+        "Funktion: benannter Codeblock mit Parametern und Rückgabewert",
+        "Prozedur ohne, Funktion mit Rückgabewert"
+      ]
+    },
+    "AP1-8-2-2": {
+      "ziel": "Pseudocode mit verschachtelten Verzweigungen und Schleifen lesen, kurze Abläufe selbst in Pseudocode schreiben und fehlerhafte Zeilen berichtigen.",
+      "punkte": [
+        "Verschachtelte Verzweigungen und Schleifen in Pseudocode lesen",
+        "Verzweigung und Schleife schreiben, Struktur durch Einrücken sichtbar machen",
+        "Eine fehlerhafte Zeile berichtigen",
+        "Einen in Worten beschriebenen Ablauf in Pseudocode übertragen"
+      ]
+    },
+    "AP1-8-2-3": {
+      "ziel": "Einen kurzen Code mit gegebenen Werten von Hand durchgehen und den Rückgabewert oder die Ausgabe richtig und begründet angeben.",
+      "punkte": [
+        "Code Zeile für Zeile durchgehen, Variablenwerte in einer Tabelle mitführen",
+        "Rückgabewert oder Ausgabe für einen Aufruf angeben und begründen",
+        "Richtig rechnen, auch mit Prozentwerten und Division ganzer Zahlen ohne Rest",
+        "Bei verschachtelten Verzweigungen den durchlaufenen Zweig bestimmen",
+        "Ergebnis wie verlangt angeben, z. B. mit zwei Nachkommastellen"
+      ]
+    },
+    "AP1-8-2-4": {
+      "ziel": "In einem kurzen Code einen Fehler finden, ihn als formalen oder inhaltlichen Fehler einordnen und seine Folge beschreiben.",
+      "punkte": [
+        "Formaler Fehler: Regelverstoß, Programm startet nicht; inhaltlicher: läuft, aber falsches Ergebnis",
+        "Fehlerhafte Stelle finden und beschreiben, was dort falsch läuft",
+        "Folgen bestimmter Eingabedaten erläutern, z. B. Zugriff über das Ende eines Arrays hinaus",
+        "Debugging erklären",
+        "Typisch: falsche Schleifengrenze, falscher Vergleich, nicht initialisierte Variable, Division durch null"
+      ]
+    },
+    "AP1-8-3-1": {
+      "ziel": "Ein begonnenes Anwendungsfalldiagramm nach einer Textvorgabe um Akteure, Anwendungsfälle und Beziehungen ergänzen.",
+      "punkte": [
+        "Akteure und Anwendungsfälle aus einem Text herauslesen",
+        "Akteur und Anwendungsfall durch eine Assoziation verbinden",
+        "Generalisierung zwischen Akteuren: der speziellere kann alles, was der allgemeine kann",
+        "include: schließt immer ein; extend: erweitert nur unter einer Bedingung, Pfeilrichtung beachten",
+        "Systemgrenze als Rahmen um die Anwendungsfälle"
+      ]
+    },
+    "AP1-8-3-2": {
+      "ziel": "Eine Klasse mit Attributen, Methoden und Sichtbarkeiten im Klassendiagramm darstellen und einfache Beziehungen mit Multiplizitäten lesen.",
+      "punkte": [
+        "Klasse als Kasten mit drei Bereichen: Name, Attribute, Methoden",
+        "Attribut als „Sichtbarkeit Name : Typ“, Methode mit Parametern und Rückgabetyp",
+        "Sichtbarkeit: + public, - private",
+        "Assoziation mit Multiplizitäten wie 1 und * lesen und eintragen",
+        "Klassen mit Attributen und Methoden aus einer Textbeschreibung ableiten"
+      ]
+    },
+    "AP1-8-3-3": {
+      "ziel": "Einen beschriebenen Ablauf mit Entscheidungen, Wiederholungen und parallelen Zweigen als Aktivitätsdiagramm darstellen.",
+      "punkte": [
+        "Startknoten, Aktion, Entscheidung mit [Bedingungen], Zusammenführung, Endknoten",
+        "Ablauf mit Verzweigung aus einer Beschreibung übertragen",
+        "Wiederholung als Rücksprung von einer Entscheidung",
+        "Parallele Abläufe mit Teilung und Synchronisation (Balken)",
+        "Schwimmbahnen ordnen Aktionen den Beteiligten zu"
+      ]
+    },
+    "AP1-8-4-1": {
+      "ziel": "Ein begonnenes ER-Diagramm nach einer Textbeschreibung um Entitäten, Attribute, Primärschlüssel, Beziehungen und Kardinalitäten ergänzen.",
+      "punkte": [
+        "Entität als Rechteck, Beziehung als Raute, Attribut als Ellipse",
+        "Entitäten, Attribute und Beziehungen aus einem Text ableiten",
+        "Für jede Entität einen Primärschlüssel festlegen und kennzeichnen",
+        "Kardinalitäten 1:1, 1:n und m:n bestimmen und an die Beziehung schreiben",
+        "Attribute der richtigen Entität zuordnen, nichts doppelt speichern"
+      ]
+    },
+    "AP1-8-4-2": {
+      "ziel": "Redundanz und ihre Folgen erklären und für Attribute passende Datentypen wählen und begründen.",
+      "punkte": [
+        "Redundanz: dieselbe Information ist mehrfach gespeichert",
+        "Folge: Wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten",
+        "Datentyp wählen und begründen: Datum, Ganzzahl, Text",
+        "Postleitzahl als Text: führende Nullen bleiben erhalten, gerechnet wird damit nicht"
+      ]
+    },
+    "AP1-8-4-3": {
+      "ziel": "Eine einfache Bildschirmmaske skizzieren oder beurteilen und dabei Softwareergonomie, Corporate Identity und Barrierefreiheit berücksichtigen.",
+      "punkte": [
+        "Maske mit Beschriftungen, Eingabefeldern, Auswahlfeldern und Schaltflächen skizzieren",
+        "Ergonomie: gruppieren, einheitlich anordnen, verständlich beschriften, klare Fehlermeldungen",
+        "Corporate Identity: Logo, Farben und Schrift des Unternehmens einheitlich verwenden",
+        "Barrierefreiheit: Kontrast, skalierbare Schrift, Tastaturbedienung, nicht nur über Farbe"
+      ]
+    },
+    "AP1-8-4-4": {
+      "ziel": "Eine ereignisgesteuerte Prozesskette oder ein BPMN-Diagramm lesen, die Sinnbilder benennen und den Ablauf in Worten wiedergeben.",
+      "punkte": [
+        "EPK: Ereignis, Funktion, Organisationseinheit, Objekt; Konnektoren Und, Exklusives Oder, Offenes Oder",
+        "EPK-Regel: Ereignisse und Funktionen wechseln sich ab, Anfang und Ende sind Ereignisse",
+        "BPMN: Aufgabe, Sequenz- und Nachrichtenfluss, Ereignisse, Gateways, Pool mit Lanes",
+        "Ablauf in Worten wiedergeben und sagen, wer welchen Schritt ausführt"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP1-8-1-1-K1-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K1",
+      "vorne": "Was macht ein Compiler mit dem Quelltext?",
+      "hinten": "Er übersetzt das ganze Programm vor der Ausführung, z. B. in Maschinencode. Ausgeführt wird danach das übersetzte Programm."
+    },
+    {
+      "id": "AP1-8-1-1-K1-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K1",
+      "vorne": "Was macht ein Interpreter mit dem Quelltext?",
+      "hinten": "Er führt den Quelltext zur Laufzeit schrittweise aus, Anweisung für Anweisung. Ein vorab übersetztes, eigenständiges Programm entsteht nicht."
+    },
+    {
+      "id": "AP1-8-1-1-K1-3",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K1",
+      "vorne": "Nenne je ein typisches Beispiel für eine kompilierte und für eine interpretierte Sprache.",
+      "hinten": "- kompiliert: z. B. C, C++\n- interpretiert: z. B. Python, PHP, JavaScript"
+    },
+    {
+      "id": "AP1-8-1-1-K2-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K2",
+      "vorne": "Welche Aufgabe hat der Linker?",
+      "hinten": "Er verbindet die übersetzten Programmteile und die benötigten Bibliotheken zu einem ausführbaren Programm."
+    },
+    {
+      "id": "AP1-8-1-1-K2-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K2",
+      "vorne": "In welcher Reihenfolge arbeiten Compiler und Linker, und was liefert jeder von beiden?",
+      "hinten": "1. Compiler: übersetzt den Quelltext in übersetzte Programmteile (Objektcode)\n2. Linker: verbindet diese Teile mit Bibliotheken zum ausführbaren Programm"
+    },
+    {
+      "id": "AP1-8-1-1-K3-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K3",
+      "vorne": "Wofür dient ein Editor beim Programmieren?",
+      "hinten": "Zum Schreiben und Bearbeiten des Quelltexts, meist mit Hilfen wie farbiger Hervorhebung der Sprachelemente."
+    },
+    {
+      "id": "AP1-8-1-1-K3-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K3",
+      "vorne": "Was ist ein Debugger?",
+      "hinten": "Ein Werkzeug zur Fehlersuche: Es führt das Programm schrittweise aus, hält an Haltepunkten an und zeigt die aktuellen Werte der Variablen."
+    },
+    {
+      "id": "AP1-8-1-1-K3-3",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K3",
+      "vorne": "Was ist eine integrierte Entwicklungsumgebung (IDE)?",
+      "hinten": "Ein Programm, das die Werkzeuge zum Entwickeln unter einer Oberfläche vereint: Editor, Compiler bzw. Interpreter, Debugger und weitere Hilfen."
+    },
+    {
+      "id": "AP1-8-1-1-K4-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K4",
+      "vorne": "Was leistet die virtuelle Maschine bei Java?",
+      "hinten": "Sie führt den Zwischencode (Bytecode) aus, den der Compiler erzeugt hat. Weil es sie für verschiedene Betriebssysteme gibt, läuft derselbe Zwischencode auf all diesen Systemen."
+    },
+    {
+      "id": "AP1-8-1-1-K4-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K4",
+      "vorne": "Warum muss ein Java-Programm nicht für jedes Betriebssystem eigens übersetzt werden?",
+      "hinten": "Der Compiler erzeugt keinen Maschinencode, sondern Zwischencode. Diesen führt auf jedem Betriebssystem die dort installierte virtuelle Maschine aus."
+    },
+    {
+      "id": "AP1-8-1-1-K5-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K5",
+      "vorne": "Nenne einen Vorteil kompilierter Programme gegenüber interpretierten.",
+      "hinten": "Sie laufen schneller, weil die Übersetzung schon vor der Ausführung erledigt ist."
+    },
+    {
+      "id": "AP1-8-1-1-K5-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K5",
+      "vorne": "Nenne einen Vorteil interpretierter Programme gegenüber kompilierten.",
+      "hinten": "Sie lassen sich ohne Übersetzungsschritt sofort ausführen und testen."
+    },
+    {
+      "id": "AP1-8-1-2-K1-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K1",
+      "vorne": "Wie ist ein prozedurales Programm aufgebaut?",
+      "hinten": "Als Folge von Anweisungen, gegliedert in Prozeduren und Funktionen. Daten und die Funktionen, die sie bearbeiten, sind voneinander getrennt."
+    },
+    {
+      "id": "AP1-8-1-2-K1-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K1",
+      "vorne": "Wie ist ein objektorientiertes Programm aufgebaut?",
+      "hinten": "Daten (Attribute) und die Funktionen, die mit ihnen arbeiten (Methoden), sind in Objekten zusammengefasst. Die Objekte entstehen nach Klassen und arbeiten zusammen."
+    },
+    {
+      "id": "AP1-8-1-2-K2-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K2",
+      "vorne": "Was ist der Unterschied zwischen Klasse und Objekt?",
+      "hinten": "- Klasse: Bauplan, der Attribute und Methoden festlegt\n- Objekt: konkretes Exemplar (Instanz) einer Klasse mit eigenen Attributwerten"
+    },
+    {
+      "id": "AP1-8-1-2-K2-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K2",
+      "vorne": "„Kunde“ und „Anna Schmidt, Kundennummer 4711“ – was davon ist Klasse, was Objekt?",
+      "hinten": "- Klasse: Kunde\n- Objekt: Anna Schmidt, Kundennummer 4711"
+    },
+    {
+      "id": "AP1-8-1-2-K3-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K3",
+      "vorne": "Was ist ein Attribut einer Klasse?",
+      "hinten": "Eine Eigenschaft, die die Klasse festlegt und für die jedes Objekt einen eigenen Wert hat, z. B. name oder kontostand."
+    },
+    {
+      "id": "AP1-8-1-2-K3-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K3",
+      "vorne": "Was ist eine Methode einer Klasse?",
+      "hinten": "Eine in der Klasse festgelegte Funktion, die beschreibt, was ein Objekt tun kann; sie arbeitet mit dessen Attributen, z. B. einzahlen()."
+    },
+    {
+      "id": "AP1-8-1-2-K4-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K4",
+      "vorne": "Was legt die Sichtbarkeit eines Attributs oder einer Methode fest?",
+      "hinten": "Von wo aus darauf zugegriffen werden darf."
+    },
+    {
+      "id": "AP1-8-1-2-K4-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K4",
+      "vorne": "Was ist der Unterschied zwischen public und private?",
+      "hinten": "- public: Zugriff von überall, auch aus anderen Klassen\n- private: Zugriff nur innerhalb der eigenen Klasse"
+    },
+    {
+      "id": "AP1-8-1-2-K5-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K5",
+      "vorne": "Warum sind Attribute meist private und werden nur über Methoden gelesen und geändert?",
+      "hinten": "Die Methoden können Werte prüfen und so ungültige Zustände verhindern (Datenkapselung). Die innere Umsetzung lässt sich ändern, ohne andere Klassen anzupassen."
+    },
+    {
+      "id": "AP1-8-1-2-K5-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K5",
+      "vorne": "Wie heißen die Methoden, die ein privates Attribut lesen bzw. ändern?",
+      "hinten": "- Getter: liest den Wert, z. B. getName()\n- Setter: ändert den Wert, z. B. setName(name)"
+    },
+    {
+      "id": "AP1-8-1-3-K1-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K1",
+      "vorne": "Was ist eine Skriptsprache?",
+      "hinten": "Eine meist interpretierte Sprache für kurze Programme (Skripte), die ohne eigenen Übersetzungsschritt ausgeführt werden, oft um Abläufe zu automatisieren."
+    },
+    {
+      "id": "AP1-8-1-3-K1-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K1",
+      "vorne": "Nenne Beispiele für Skriptsprachen.",
+      "hinten": "Shell-Skript (z. B. Bash), PowerShell, Python, JavaScript, PHP"
+    },
+    {
+      "id": "AP1-8-1-3-K2-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K2",
+      "vorne": "Was ist eine Bibliothek beim Programmieren?",
+      "hinten": "Eine Sammlung fertiger Funktionen oder Klassen, die dein Programm bei Bedarf aufruft. Den Ablauf bestimmt weiter dein eigener Code."
+    },
+    {
+      "id": "AP1-8-1-3-K2-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K2",
+      "vorne": "Was ist ein Framework?",
+      "hinten": "Ein Programmgerüst, das Aufbau und Ablauf vorgibt. Du fügst deinen Code an vorgesehenen Stellen ein, und das Framework ruft ihn auf."
+    },
+    {
+      "id": "AP1-8-1-3-K2-3",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K2",
+      "vorne": "Bibliothek und Framework: Wer ruft jeweils wen auf?",
+      "hinten": "- Bibliothek: Dein Code ruft die Bibliothek auf.\n- Framework: Das Framework ruft deinen Code auf."
+    },
+    {
+      "id": "AP1-8-1-3-K3-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K3",
+      "vorne": "Was ist der Unterschied zwischen einer statischen und einer dynamischen Webseite?",
+      "hinten": "- statisch: fertiger Inhalt, wird bei jedem Aufruf unverändert ausgeliefert\n- dynamisch: Inhalt wird erst beim Aufruf erzeugt, z. B. aus Datenbankdaten oder Eingaben"
+    },
+    {
+      "id": "AP1-8-1-3-K3-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K3",
+      "vorne": "Statisch oder dynamisch? (a) Impressum als feste HTML-Datei, (b) Trefferliste einer Shop-Suche",
+      "hinten": "- (a) statisch: immer derselbe, fertige Inhalt\n- (b) dynamisch: wird beim Aufruf aus der Suchanfrage erzeugt"
+    },
+    {
+      "id": "AP1-8-1-3-K4-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K4",
+      "vorne": "Nenne drei Programmiersprachen für dynamische Webinhalte.",
+      "hinten": "z. B. JavaScript, PHP, Python (auch möglich: Java, C#)"
+    },
+    {
+      "id": "AP1-8-1-3-K4-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K4",
+      "vorne": "Warum zählen HTML und CSS nicht als Programmiersprachen?",
+      "hinten": "HTML beschreibt die Struktur, CSS die Gestaltung einer Seite. Beide haben keine Kontrollstrukturen wie Verzweigungen oder Schleifen."
+    },
+    {
+      "id": "AP1-8-1-3-K5-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K5",
+      "vorne": "Nenne drei Kriterien für die Wahl einer Programmiersprache.",
+      "hinten": "- Eignung für die Aufgabe\n- Kenntnisse im Team\n- verfügbare Frameworks und Bibliotheken"
+    },
+    {
+      "id": "AP1-8-1-3-K5-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K5",
+      "vorne": "Warum spricht es für eine Programmiersprache, dass das Team sie schon kennt?",
+      "hinten": "Einarbeitung und Schulung entfallen; das Team arbeitet schneller und mit weniger Fehlern, und die spätere Wartung ist gesichert."
+    },
+    {
+      "id": "AP1-8-2-1-K1-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K1",
+      "vorne": "Was ist eine Variable?",
+      "hinten": "Ein benannter Speicherplatz für einen Wert, der sich während des Programmlaufs ändern kann. Ihr Datentyp legt fest, welche Werte sie aufnehmen kann."
+    },
+    {
+      "id": "AP1-8-2-1-K1-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K1",
+      "vorne": "Wie heißen die Datentypen für Ganzzahl, Kommazahl, Wahrheitswert und Text?",
+      "hinten": "- Ganzzahl: Integer (`int`)\n- Kommazahl: Gleitkommazahl (`float`, `double`)\n- Wahrheitswert: Boolean (`bool`), Werte wahr/falsch\n- Text: String (Zeichenkette)"
+    },
+    {
+      "id": "AP1-8-2-1-K1-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K1",
+      "vorne": "Welcher Datentyp passt jeweils? Anzahl Mitarbeiter, Gewicht 72,5 kg, ist_aktiv, Nachname",
+      "hinten": "- Anzahl Mitarbeiter: Ganzzahl\n- Gewicht: Kommazahl\n- ist_aktiv: Wahrheitswert\n- Nachname: Text"
+    },
+    {
+      "id": "AP1-8-2-1-K2-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K2",
+      "vorne": "Was ist ein Array?",
+      "hinten": "Eine Datenstruktur, die mehrere Werte desselben Datentyps unter einem Namen speichert. Jedes Element wird über seinen Index angesprochen."
+    },
+    {
+      "id": "AP1-8-2-1-K2-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K2",
+      "vorne": "Der Index eines Arrays `zahlen` beginnt bei 0. Wie greifst du auf das dritte Element zu?",
+      "hinten": "`zahlen[2]`"
+    },
+    {
+      "id": "AP1-8-2-1-K2-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K2",
+      "vorne": "Ein Array hat n Elemente, der Index beginnt bei 0. Welchen Index hat das letzte Element?",
+      "hinten": "n − 1"
+    },
+    {
+      "id": "AP1-8-2-1-K3-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K3",
+      "vorne": "Was ist der Unterschied zwischen einer Verzweigung und einer Schleife?",
+      "hinten": "- Verzweigung: führt je nach Bedingung einen von mehreren Zweigen einmal aus\n- Schleife: führt einen Block wiederholt aus, solange eine Bedingung gilt oder eine feste Anzahl Mal"
+    },
+    {
+      "id": "AP1-8-2-1-K3-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K3",
+      "vorne": "An welchen Schlüsselwörtern erkennst du im Code eine Verzweigung, an welchen eine Schleife?",
+      "hinten": "- Verzweigung: `if`/`else`, `switch`, Wenn/Sonst\n- Schleife: `for`, `while`, `do … while`, Für, Solange, Wiederhole"
+    },
+    {
+      "id": "AP1-8-2-1-K4-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K4",
+      "vorne": "Was ist eine Funktion?",
+      "hinten": "Ein benannter Codeblock, der über seinen Namen aufgerufen wird, Werte über Parameter erhält und ein Ergebnis als Rückgabewert liefert."
+    },
+    {
+      "id": "AP1-8-2-1-K4-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K4",
+      "vorne": "Was ist der Unterschied zwischen Parameter und Rückgabewert einer Funktion?",
+      "hinten": "- Parameter: Wert, der beim Aufruf an die Funktion übergeben wird (Eingabe)\n- Rückgabewert: Ergebnis, das die Funktion an den Aufrufer zurückgibt (Ausgabe)"
+    },
+    {
+      "id": "AP1-8-2-1-K5-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K5",
+      "vorne": "Was kennzeichnet eine zählergesteuerte Schleife?",
+      "hinten": "Die Anzahl der Durchläufe steht vorher fest: Eine Zählvariable läuft von einem Start- bis zu einem Endwert (`for`, Für)."
+    },
+    {
+      "id": "AP1-8-2-1-K5-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K5",
+      "vorne": "Was ist der Unterschied zwischen einer kopfgesteuerten und einer fußgesteuerten Schleife?",
+      "hinten": "- kopfgesteuert: Bedingung wird vor jedem Durchlauf geprüft, eventuell kein Durchlauf (`while`)\n- fußgesteuert: Bedingung wird nach jedem Durchlauf geprüft, mindestens ein Durchlauf (`do … while`)"
+    },
+    {
+      "id": "AP1-8-2-1-K5-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K5",
+      "vorne": "Welche Schleifenart wird in jedem Fall mindestens einmal durchlaufen?",
+      "hinten": "Die fußgesteuerte Schleife, weil die Bedingung erst nach dem Durchlauf geprüft wird."
+    },
+    {
+      "id": "AP1-8-2-1-K6-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K6",
+      "vorne": "Was ist der Unterschied zwischen einer Prozedur und einer Funktion?",
+      "hinten": "- Prozedur: liefert keinen Rückgabewert (in C# und Java Rückgabetyp `void`)\n- Funktion: liefert einen Rückgabewert"
+    },
+    {
+      "id": "AP1-8-2-2-K1-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K1",
+      "vorne": "Woran erkennst du in Pseudocode, welche Zeilen zu einem Wenn-Zweig oder einem Schleifenrumpf gehören?",
+      "hinten": "An der Einrückung: Alle darunter tiefer eingerückten Zeilen gehören dazu, bis wieder eine Zeile auf der Ebene von Wenn bzw. Für steht (oder ein Ende-Wort folgt)."
+    },
+    {
+      "id": "AP1-8-2-2-K1-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K1",
+      "vorne": "In verschachteltem Pseudocode stehen mehrere Wenn. Zu welchem Wenn gehört ein Sonst?",
+      "hinten": "Zu dem Wenn, das auf derselben Einrückungsebene steht."
+    },
+    {
+      "id": "AP1-8-2-2-K2-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K2",
+      "vorne": "Wie ist eine Verzweigung mit Alternative in Pseudocode aufgebaut?",
+      "hinten": "`Wenn Bedingung dann`\n  Anweisungen, eingerückt\n`Sonst`\n  Anweisungen, eingerückt\n`Ende Wenn`"
+    },
+    {
+      "id": "AP1-8-2-2-K2-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K2",
+      "vorne": "Wie schreibst du in Pseudocode eine zählergesteuerte und eine kopfgesteuerte Schleife?",
+      "hinten": "- `Für i von 1 bis 10` … Rumpf eingerückt … `Ende Für`\n- `Solange Bedingung` … Rumpf eingerückt … `Ende Solange`"
+    },
+    {
+      "id": "AP1-8-2-2-K2-3",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K2",
+      "vorne": "Warum wird Pseudocode eingerückt?",
+      "hinten": "Die Einrückung zeigt, welche Anweisungen zu welchem Zweig oder Schleifenrumpf gehören, und macht so die Struktur sichtbar."
+    },
+    {
+      "id": "AP1-8-2-2-K3-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K3",
+      "vorne": "Eine Schleife soll alle Elemente eines Arrays mit n Elementen durchlaufen, der Index beginnt bei 0. Wie lautet der Schleifenkopf richtig?",
+      "hinten": "`Für i von 0 bis n − 1`. Mit `bis n` würde zuletzt auf ein Element hinter dem Ende des Arrays zugegriffen."
+    },
+    {
+      "id": "AP1-8-2-2-K3-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K3",
+      "vorne": "Gezählt werden sollen alle Personen ab 18 Jahren. Die Zeile lautet `Wenn alter > 18 dann`. Wie lautet sie richtig?",
+      "hinten": "`Wenn alter >= 18 dann` (alter ≥ 18). Mit `>` würden 18-Jährige nicht mitgezählt."
+    },
+    {
+      "id": "AP1-8-2-2-K4-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K4",
+      "vorne": "Welche Kontrollstruktur setzt du für die Formulierungen „für jedes Element …“, „solange …“ und „falls …, sonst …“ ein?",
+      "hinten": "- „für jedes Element …“: zählergesteuerte Schleife (Für)\n- „solange …“: kopfgesteuerte Schleife (Solange)\n- „falls …, sonst …“: Verzweigung (Wenn … Sonst)"
+    },
+    {
+      "id": "AP1-8-2-3-K1-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K1",
+      "vorne": "Was ist ein Schreibtischtest?",
+      "hinten": "Einen gegebenen Code ohne Rechner von Hand mit bestimmten Eingabewerten durchgehen und dabei die Variablenwerte mitführen, um das Ergebnis zu ermitteln."
+    },
+    {
+      "id": "AP1-8-2-3-K1-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K1",
+      "vorne": "Wie legst du die Tabelle für einen Schreibtischtest an und führst sie?",
+      "hinten": "- eine Spalte je Variable (ggf. auch für Bedingung und Ausgabe)\n- Startwerte in die erste Zeile\n- Code Zeile für Zeile ausführen\n- jede Wertänderung neu eintragen, Bedingungen mit den aktuellen Werten prüfen"
+    },
+    {
+      "id": "AP1-8-2-3-K2-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K2",
+      "vorne": "Was ist der Unterschied zwischen dem Rückgabewert und der Ausgabe eines Programmteils?",
+      "hinten": "- Rückgabewert: Ergebnis, das eine Funktion mit Rückgabe/`return` an den Aufrufer zurückgibt\n- Ausgabe: Wert, der angezeigt wird, z. B. mit `print` oder Ausgabe"
+    },
+    {
+      "id": "AP1-8-2-3-K2-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K2",
+      "vorne": "Was passiert, wenn eine Funktion eine Rückgabe-Anweisung erreicht, etwa mitten in einer Schleife?",
+      "hinten": "Die Funktion endet sofort und gibt den Wert an den Aufrufer zurück. Folgende Zeilen und weitere Schleifendurchläufe werden nicht mehr ausgeführt."
+    },
+    {
+      "id": "AP1-8-2-3-K3-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Was ergibt `7 / 2` in C#, wenn beide Werte Ganzzahlen (`int`) sind?",
+      "hinten": "3 – bei der Division ganzer Zahlen fällt der Rest weg."
+    },
+    {
+      "id": "AP1-8-2-3-K3-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Was ergeben in Python `7 / 2` und `7 // 2`?",
+      "hinten": "- `7 / 2` ergibt 3.5 (in Python liefert `/` immer eine Kommazahl)\n- `7 // 2` ergibt 3 (Division ganzer Zahlen ohne Rest)"
+    },
+    {
+      "id": "AP1-8-2-3-K3-3",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Was liefert der Operator `%` (bzw. mod) bei ganzen Zahlen, z. B. `7 % 2`?",
+      "hinten": "Den Rest der ganzzahligen Division: `7 % 2` ergibt 1."
+    },
+    {
+      "id": "AP1-8-2-3-K3-4",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Mit welchem Faktor multiplizierst du einen Betrag, um ihn um 20 % zu erhöhen, und mit welchem, um ihn um 20 % zu senken?",
+      "hinten": "- erhöhen: × 1,2\n- senken: × 0,8"
+    },
+    {
+      "id": "AP1-8-2-3-K3-5",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "In welcher Reihenfolge wird `a + b * c` ausgewertet?",
+      "hinten": "Erst `b * c`, dann wird `a` addiert: Punkt- vor Strichrechnung, Klammern zuerst."
+    },
+    {
+      "id": "AP1-8-2-3-K4-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K4",
+      "vorne": "Wie bestimmst du bei verschachtelten Verzweigungen den Zweig, der durchlaufen wird?",
+      "hinten": "Von außen nach innen: erst die äußere Bedingung mit den aktuellen Werten prüfen, dann nur im zutreffenden Zweig die innere. Bei einer Kette Wenn – Sonst wenn gilt der erste zutreffende Zweig."
+    },
+    {
+      "id": "AP1-8-2-3-K4-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K4",
+      "vorne": "Wann ist eine mit „und“ verknüpfte Bedingung wahr, wann eine mit „oder“ verknüpfte?",
+      "hinten": "- und: nur wenn beide Teilbedingungen wahr sind\n- oder: wenn mindestens eine Teilbedingung wahr ist"
+    },
+    {
+      "id": "AP1-8-2-3-K5-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K5",
+      "vorne": "Nach welcher Regel rundest du ein Ergebnis von Hand auf zwei Nachkommastellen?",
+      "hinten": "Kaufmännisch: Ist die dritte Nachkommastelle 5 oder größer, wird aufgerundet, sonst abgerundet. Beispiel: 12,345 → 12,35; 12,344 → 12,34."
+    },
+    {
+      "id": "AP1-8-2-4-K1-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Was ist ein formaler Fehler im Quellcode?",
+      "hinten": "Ein Verstoß gegen die Regeln der Programmiersprache (Syntaxfehler), z. B. ein fehlendes Semikolon. Das Programm lässt sich nicht übersetzen bzw. startet nicht."
+    },
+    {
+      "id": "AP1-8-2-4-K1-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Was ist ein inhaltlicher (logischer) Fehler im Quellcode?",
+      "hinten": "Das Programm läuft, liefert aber ein falsches Ergebnis, z. B. wegen einer falschen Formel oder Schleifengrenze."
+    },
+    {
+      "id": "AP1-8-2-4-K1-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Formal oder inhaltlich? (a) `Wenn` ohne Bedingung, (b) Durchschnitt wird durch die falsche Anzahl geteilt",
+      "hinten": "- (a) formaler Fehler: Regel der Sprache verletzt\n- (b) inhaltlicher Fehler: Programm läuft, Ergebnis ist falsch"
+    },
+    {
+      "id": "AP1-8-2-4-K2-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K2",
+      "vorne": "Wie gehst du vor, um in einem kurzen Code die fehlerhafte Stelle zu finden?",
+      "hinten": "Mit Testwerten einen Schreibtischtest machen, erwartete und tatsächliche Werte vergleichen und die Zeile suchen, ab der sie voneinander abweichen."
+    },
+    {
+      "id": "AP1-8-2-4-K3-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K3",
+      "vorne": "Eine Funktion durchläuft zwei Arrays mit demselben Index bis zur Länge des ersten. Was passiert, wenn das zweite Array kürzer ist?",
+      "hinten": "Der Index läuft über das Ende des zweiten Arrays hinaus. Der Zugriff auf das nicht vorhandene Element führt in den meisten Sprachen zu einem Laufzeitfehler mit Programmabbruch."
+    },
+    {
+      "id": "AP1-8-2-4-K3-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K3",
+      "vorne": "Dieselbe Funktion: Was passiert, wenn das zweite Array länger ist als das erste?",
+      "hinten": "Das Programm läuft, aber die überzähligen Elemente des zweiten Arrays werden nicht berücksichtigt – das Ergebnis kann falsch sein."
+    },
+    {
+      "id": "AP1-8-2-4-K3-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K3",
+      "vorne": "Wie verhinderst du Probleme, wenn einer Funktion zwei Arrays übergeben werden, die gleich lang sein müssen?",
+      "hinten": "Vor der Verarbeitung prüfen, ob beide Arrays gleich lang sind, und sonst abbrechen bzw. einen Fehler melden."
+    },
+    {
+      "id": "AP1-8-2-4-K4-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K4",
+      "vorne": "Was ist Debugging?",
+      "hinten": "Das systematische Suchen und Beheben von Fehlern in einem Programm, meist mit einem Debugger: Haltepunkte setzen, schrittweise ausführen, Variablenwerte beobachten."
+    },
+    {
+      "id": "AP1-8-2-4-K4-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K4",
+      "vorne": "Was ist ein Haltepunkt (Breakpoint) beim Debugging?",
+      "hinten": "Eine markierte Codezeile, an der der Debugger das Programm anhält, damit man den aktuellen Zustand, etwa die Variablenwerte, untersuchen kann."
+    },
+    {
+      "id": "AP1-8-2-4-K5-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K5",
+      "vorne": "Nenne vier typische Fehlerquellen im Quellcode.",
+      "hinten": "- falsche Schleifengrenze\n- vertauschter Vergleichsoperator\n- nicht initialisierte Variable\n- Division durch null"
+    },
+    {
+      "id": "AP1-8-2-4-K5-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K5",
+      "vorne": "Eine Summe wird in einer Schleife gebildet, die Variable `summe` bekommt vorher aber keinen Startwert. Welcher Fehler ist das, und wie behebst du ihn?",
+      "hinten": "Eine nicht initialisierte Variable. Behebung: vor der Schleife `summe = 0` setzen."
+    },
+    {
+      "id": "AP1-8-2-4-K5-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K5",
+      "vorne": "Ein Durchschnitt wird mit `summe / anzahl` berechnet. Welcher Fehler droht, und wie verhinderst du ihn?",
+      "hinten": "Division durch null, wenn `anzahl` 0 ist. Vor der Division prüfen, ob `anzahl` ungleich 0 ist."
+    },
+    {
+      "id": "AP1-8-3-1-K1-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K1",
+      "vorne": "Was ist im Anwendungsfalldiagramm ein Akteur, und wie wird er gezeichnet?",
+      "hinten": "Eine Person, Rolle oder ein externes System außerhalb des Systems, das mit dem System arbeitet. Gezeichnet als Strichmännchen mit Namen darunter."
+    },
+    {
+      "id": "AP1-8-3-1-K1-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K1",
+      "vorne": "Was ist im Anwendungsfalldiagramm ein Anwendungsfall, und wie wird er gezeichnet?",
+      "hinten": "Eine Tätigkeit, die ein Akteur mit dem System ausführt und die ihm ein Ergebnis liefert. Gezeichnet als Ellipse mit Namen, z. B. „Buch ausleihen“."
+    },
+    {
+      "id": "AP1-8-3-1-K1-3",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K1",
+      "vorne": "Woran erkennst du in einer Textbeschreibung Akteure und Anwendungsfälle?",
+      "hinten": "- Akteure: Personen, Rollen oder externe Systeme, die das System nutzen\n- Anwendungsfälle: die Tätigkeiten, die sie mit dem System ausführen (Verb mit Objekt)"
+    },
+    {
+      "id": "AP1-8-3-1-K2-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K2",
+      "vorne": "Wie verbindest du im Anwendungsfalldiagramm einen Akteur mit einem Anwendungsfall?",
+      "hinten": "Mit einer Assoziation: einer durchgezogenen Linie zwischen Akteur und Anwendungsfall."
+    },
+    {
+      "id": "AP1-8-3-1-K3-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K3",
+      "vorne": "Wie zeichnest du eine Generalisierung zwischen zwei Akteuren?",
+      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreiecksspitze, die vom spezielleren zum allgemeinen Akteur zeigt."
+    },
+    {
+      "id": "AP1-8-3-1-K3-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K3",
+      "vorne": "Was bedeutet eine Generalisierung zwischen den Akteuren „Mitarbeiter“ (allgemein) und „Teamleiter“ (speziell)?",
+      "hinten": "Der Teamleiter kann alle Anwendungsfälle nutzen, die der Mitarbeiter nutzen kann, und gegebenenfalls weitere."
+    },
+    {
+      "id": "AP1-8-3-1-K4-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K4",
+      "vorne": "Wann setzt du im Anwendungsfalldiagramm eine «include»-Beziehung ein?",
+      "hinten": "Wenn ein Anwendungsfall einen anderen bei jeder Ausführung einschließt."
+    },
+    {
+      "id": "AP1-8-3-1-K4-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K4",
+      "vorne": "Wie wird eine «include»-Beziehung gezeichnet, und wohin zeigt der Pfeil?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze, beschriftet «include». Er zeigt vom einschließenden Anwendungsfall zum eingeschlossenen."
+    },
+    {
+      "id": "AP1-8-3-1-K5-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K5",
+      "vorne": "Wann setzt du im Anwendungsfalldiagramm eine «extend»-Beziehung ein?",
+      "hinten": "Wenn ein Anwendungsfall einen anderen nur unter einer bestimmten Bedingung erweitert."
+    },
+    {
+      "id": "AP1-8-3-1-K5-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K5",
+      "vorne": "Wie wird eine «extend»-Beziehung gezeichnet, und wohin zeigt der Pfeil?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze, beschriftet «extend». Er zeigt vom erweiternden Anwendungsfall zum Basisanwendungsfall, der erweitert wird."
+    },
+    {
+      "id": "AP1-8-3-1-K5-3",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K5",
+      "vorne": "include oder extend? (a) „Geld abheben“ prüft jedes Mal die PIN; (b) „Bestellen“ wird nur bei Neukunden um „Kundenkonto anlegen“ ergänzt",
+      "hinten": "- (a) include: „Geld abheben“ → „PIN prüfen“\n- (b) extend: „Kundenkonto anlegen“ → „Bestellen“"
+    },
+    {
+      "id": "AP1-8-3-1-K6-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K6",
+      "vorne": "Was ist die Systemgrenze im Anwendungsfalldiagramm, und wie wird sie gezeichnet?",
+      "hinten": "Ein Rechteck mit dem Systemnamen, das alle Anwendungsfälle des Systems umschließt. Die Akteure stehen außerhalb."
+    },
+    {
+      "id": "AP1-8-3-2-K1-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K1",
+      "vorne": "Welche drei Bereiche hat eine Klasse im Klassendiagramm, von oben nach unten?",
+      "hinten": "1. Klassenname\n2. Attribute\n3. Methoden"
+    },
+    {
+      "id": "AP1-8-3-2-K2-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K2",
+      "vorne": "Wie wird ein Attribut im Klassendiagramm notiert?",
+      "hinten": "`Sichtbarkeit Name : Typ`, z. B. `- name : String`"
+    },
+    {
+      "id": "AP1-8-3-2-K2-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K2",
+      "vorne": "Wie wird eine Methode mit Parameter und Rückgabetyp im Klassendiagramm notiert?",
+      "hinten": "`Sichtbarkeit name(parameter : Typ) : Rückgabetyp`, z. B. `+ berechneZins(jahre : int) : double`"
+    },
+    {
+      "id": "AP1-8-3-2-K3-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K3",
+      "vorne": "Welche Zeichen stehen im Klassendiagramm für die Sichtbarkeiten public und private?",
+      "hinten": "- `+` public\n- `-` private"
+    },
+    {
+      "id": "AP1-8-3-2-K4-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Was bedeuten im Klassendiagramm die Multiplizitäten 1, *, 0..1 und 1..*?",
+      "hinten": "- 1: genau eins\n- *: beliebig viele (0 bis viele)\n- 0..1: keins oder eins\n- 1..*: mindestens eins"
+    },
+    {
+      "id": "AP1-8-3-2-K4-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Zwischen „Kunde“ und „Bestellung“ steht eine Assoziation, bei Kunde die 1, bei Bestellung der *. Wie liest du das?",
+      "hinten": "Ein Kunde hat beliebig viele Bestellungen; jede Bestellung gehört zu genau einem Kunden."
+    },
+    {
+      "id": "AP1-8-3-2-K4-3",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Wie zeichnest du eine Assoziation zwischen zwei Klassen, und wo trägst du die Multiplizität ein?",
+      "hinten": "Als durchgezogene Linie zwischen den Klassen. Die Multiplizität steht am Linienende bei der Klasse, deren Anzahl sie angibt."
+    },
+    {
+      "id": "AP1-8-3-2-K5-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K5",
+      "vorne": "Wie leitest du aus einer Textbeschreibung Klassen, Attribute und Methoden ab?",
+      "hinten": "- Klassen: Substantive für eigenständige Dinge oder Personen\n- Attribute: deren Eigenschaften und Angaben\n- Methoden: Tätigkeiten (Verben), die diese Dinge ausführen"
+    },
+    {
+      "id": "AP1-8-3-3-K1-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie werden im Aktivitätsdiagramm Startknoten und Endknoten gezeichnet?",
+      "hinten": "- Startknoten: ausgefüllter schwarzer Kreis\n- Endknoten: Kreis mit einem kleineren ausgefüllten Kreis darin"
+    },
+    {
+      "id": "AP1-8-3-3-K1-2",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie wird im Aktivitätsdiagramm eine Aktion gezeichnet?",
+      "hinten": "Als Rechteck mit abgerundeten Ecken, darin die Tätigkeit, z. B. „Bestellung prüfen“."
+    },
+    {
+      "id": "AP1-8-3-3-K1-3",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie werden im Aktivitätsdiagramm Entscheidung und Zusammenführung gezeichnet?",
+      "hinten": "Beide als Raute:\n- Entscheidung: ein Eingang, mehrere Ausgänge mit Bedingungen\n- Zusammenführung: mehrere Eingänge, ein Ausgang"
+    },
+    {
+      "id": "AP1-8-3-3-K1-4",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie und wo werden im Aktivitätsdiagramm die Bedingungen einer Entscheidung notiert?",
+      "hinten": "In eckigen Klammern an den ausgehenden Kanten, z. B. `[betrag > 100]` und `[sonst]`. Sie müssen sich gegenseitig ausschließen."
+    },
+    {
+      "id": "AP1-8-3-3-K3-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K3",
+      "vorne": "Wie stellst du im Aktivitätsdiagramm eine Wiederholung dar?",
+      "hinten": "Eine Entscheidung prüft die Bedingung: Eine ausgehende Kante führt zurück zu einer früheren Aktion (meist über eine Zusammenführung), die andere verlässt die Wiederholung."
+    },
+    {
+      "id": "AP1-8-3-3-K4-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K4",
+      "vorne": "Wie stellst du im Aktivitätsdiagramm parallele Abläufe dar?",
+      "hinten": "- Teilung: dicker Balken mit einem Eingang und mehreren Ausgängen; die Zweige laufen parallel\n- Synchronisation: dicker Balken mit mehreren Eingängen und einem Ausgang"
+    },
+    {
+      "id": "AP1-8-3-3-K4-2",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K4",
+      "vorne": "Wann geht es nach einer Synchronisation (Balken) weiter, wann nach einer Zusammenführung (Raute)?",
+      "hinten": "- Synchronisation: erst, wenn alle parallelen Zweige angekommen sind\n- Zusammenführung: sobald einer der alternativen Zweige ankommt"
+    },
+    {
+      "id": "AP1-8-3-3-K5-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K5",
+      "vorne": "Was sind Schwimmbahnen im Aktivitätsdiagramm?",
+      "hinten": "Spalten oder Zeilen, die das Diagramm nach Beteiligten aufteilen, z. B. Kunde, Vertrieb, Lager. Jede Aktion steht in der Bahn dessen, der sie ausführt."
+    },
+    {
+      "id": "AP1-8-4-1-K1-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K1",
+      "vorne": "Mit welchen Symbolen werden im ER-Diagramm Entität, Beziehung und Attribut gezeichnet?",
+      "hinten": "- Entität: Rechteck\n- Beziehung: Raute\n- Attribut: Ellipse, mit einer Linie verbunden"
+    },
+    {
+      "id": "AP1-8-4-1-K1-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K1",
+      "vorne": "Was ist im ER-Modell eine Entität?",
+      "hinten": "Ein Gegenstand oder eine Person der realen Welt, über die Daten gespeichert werden, z. B. Kunde oder Artikel."
+    },
+    {
+      "id": "AP1-8-4-1-K2-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K2",
+      "vorne": "Wie leitest du aus einer Textbeschreibung Entitäten, Attribute und Beziehungen ab?",
+      "hinten": "- Entitäten: Substantive für Dinge oder Personen, über die Daten gespeichert werden\n- Attribute: deren Eigenschaften\n- Beziehungen: Verben, die Entitäten verbinden, z. B. „bestellt“"
+    },
+    {
+      "id": "AP1-8-4-1-K3-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K3",
+      "vorne": "Was ist ein Primärschlüssel?",
+      "hinten": "Ein Attribut (oder eine Kombination von Attributen), das jeden Datensatz einer Entität eindeutig kennzeichnet, z. B. Kundennummer. Sein Wert darf weder fehlen noch sich wiederholen."
+    },
+    {
+      "id": "AP1-8-4-1-K3-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K3",
+      "vorne": "Wie wird der Primärschlüssel im ER-Diagramm gekennzeichnet?",
+      "hinten": "Der Name des Schlüsselattributs in der Ellipse wird unterstrichen."
+    },
+    {
+      "id": "AP1-8-4-1-K4-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K4",
+      "vorne": "Wie bestimmst du aus einem Text die Kardinalität einer Beziehung zwischen A und B?",
+      "hinten": "In beide Richtungen fragen: Mit wie vielen B ist ein A verbunden, mit wie vielen A ein B? Je Seite: höchstens eins → 1, mehrere → n bzw. m."
+    },
+    {
+      "id": "AP1-8-4-1-K4-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K4",
+      "vorne": "Welche Kardinalität haben diese Beziehungen? (a) Kunde – Bestellung, (b) Schüler – Kurs, (c) Mitarbeiter – persönlicher Dienstausweis",
+      "hinten": "- (a) 1:n – ein Kunde, viele Bestellungen\n- (b) m:n – ein Schüler, viele Kurse; ein Kurs, viele Schüler\n- (c) 1:1 – je Mitarbeiter genau ein Ausweis"
+    },
+    {
+      "id": "AP1-8-4-1-K4-3",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K4",
+      "vorne": "Kunde – bestellt – Bestellung ist eine 1:n-Beziehung. Wo steht im ER-Diagramm die 1, wo das n?",
+      "hinten": "Die 1 steht an der Linie zur Entität Kunde, das n an der Linie zur Entität Bestellung."
+    },
+    {
+      "id": "AP1-8-4-1-K5-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K5",
+      "vorne": "Warum gehört der Kundenname zur Entität Kunde und nicht zur Entität Bestellung?",
+      "hinten": "Er ist eine Eigenschaft des Kunden. Stünde er bei der Bestellung, würde er bei jeder Bestellung erneut gespeichert – die Angabe wäre doppelt vorhanden."
+    },
+    {
+      "id": "AP1-8-4-1-K5-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K5",
+      "vorne": "Bestellung – enthält – Artikel ist eine m:n-Beziehung. Wohin gehört das Attribut Menge?",
+      "hinten": "An die Beziehung „enthält“: Die Menge beschreibt weder die Bestellung allein noch den Artikel allein, sondern den Artikel in dieser Bestellung."
+    },
+    {
+      "id": "AP1-8-4-2-K1-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K1",
+      "vorne": "Was bedeutet Redundanz bei gespeicherten Daten?",
+      "hinten": "Dieselbe Information ist mehrfach gespeichert."
+    },
+    {
+      "id": "AP1-8-4-2-K2-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K2",
+      "vorne": "Welches Problem entsteht durch Redundanz?",
+      "hinten": "Wird bei einer Änderung eine der Stellen vergessen, widersprechen sich die Daten (Inkonsistenz). Außerdem wird unnötig Speicher belegt."
+    },
+    {
+      "id": "AP1-8-4-2-K2-2",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K2",
+      "vorne": "Die Adresse eines Kunden ist bei jeder seiner Bestellungen gespeichert. Der Kunde zieht um. Was kann passieren?",
+      "hinten": "Wird die Adresse nicht bei allen Bestellungen geändert, gibt es für denselben Kunden verschiedene, widersprüchliche Adressen."
+    },
+    {
+      "id": "AP1-8-4-2-K3-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Welcher Datentyp passt jeweils? Geburtsdatum, Anzahl Kinder, Nachname",
+      "hinten": "- Geburtsdatum: Datum\n- Anzahl Kinder: Ganzzahl\n- Nachname: Text"
+    },
+    {
+      "id": "AP1-8-4-2-K3-2",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Warum speicherst du ein Geburtsdatum als Datum und nicht als Text?",
+      "hinten": "Nur gültige Daten sind möglich, man kann damit rechnen (z. B. Alter, Fristen), und die Sortierung nach Datum ist richtig."
+    },
+    {
+      "id": "AP1-8-4-2-K3-3",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Welchen Datentyp wählst du für eine Telefonnummer, und warum?",
+      "hinten": "Text: Die führende 0 bleibt erhalten, Zeichen wie + oder Leerzeichen sind möglich, und gerechnet wird damit nicht."
+    },
+    {
+      "id": "AP1-8-4-2-K4-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K4",
+      "vorne": "Warum wird eine Postleitzahl als Text und nicht als Ganzzahl gespeichert?",
+      "hinten": "Führende Nullen bleiben erhalten (z. B. 01067), und mit Postleitzahlen wird nicht gerechnet."
+    },
+    {
+      "id": "AP1-8-4-3-K1-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K1",
+      "vorne": "Welche Bedienelemente hat eine einfache Eingabemaske, und wofür dienen sie?",
+      "hinten": "- Beschriftung: sagt, was einzugeben ist\n- Eingabefeld: freie Eingabe\n- Auswahlfeld: Auswahl aus festen Werten\n- Schaltfläche: löst eine Aktion aus, z. B. Speichern"
+    },
+    {
+      "id": "AP1-8-4-3-K1-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K1",
+      "vorne": "Wann verwendest du in einer Maske ein Auswahlfeld statt eines Eingabefelds?",
+      "hinten": "Wenn nur bestimmte, feste Werte zulässig sind, z. B. Anrede oder Land. Das verhindert Tippfehler und ungültige Eingaben."
+    },
+    {
+      "id": "AP1-8-4-3-K2-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K2",
+      "vorne": "Nenne vier Regeln der Softwareergonomie für eine Bildschirmmaske.",
+      "hinten": "- Zusammengehöriges gruppieren\n- einheitliche Anordnung\n- verständliche Beschriftung\n- klare Fehlermeldungen"
+    },
+    {
+      "id": "AP1-8-4-3-K2-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K2",
+      "vorne": "Was macht eine klare Fehlermeldung aus?",
+      "hinten": "Sie sagt verständlich, was falsch ist und wie man es behebt, und steht beim betroffenen Feld – z. B. „Bitte eine fünfstellige PLZ eingeben“ statt „Fehler 17“."
+    },
+    {
+      "id": "AP1-8-4-3-K3-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K3",
+      "vorne": "Was bedeutet Corporate Identity für eine Bildschirmmaske?",
+      "hinten": "Logo, Farben und Schrift des Unternehmens werden einheitlich verwendet, sodass die Anwendung zum Erscheinungsbild des Unternehmens passt und wiedererkannt wird."
+    },
+    {
+      "id": "AP1-8-4-3-K4-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K4",
+      "vorne": "Nenne vier Anforderungen der Barrierefreiheit an eine Bildschirmmaske.",
+      "hinten": "- ausreichender Kontrast\n- skalierbare Schrift\n- Bedienung mit der Tastatur\n- Information nicht allein über Farbe"
+    },
+    {
+      "id": "AP1-8-4-3-K4-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K4",
+      "vorne": "Warum darf eine Maske Informationen, z. B. Pflichtfelder, nicht allein über Farbe kennzeichnen?",
+      "hinten": "Menschen mit Farbsehschwäche erkennen den Unterschied nicht. Zusätzlich Text oder ein Zeichen verwenden, z. B. * bei Pflichtfeldern."
+    },
+    {
+      "id": "AP1-8-4-3-K4-3",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K4",
+      "vorne": "Warum muss eine Maske vollständig mit der Tastatur bedienbar sein?",
+      "hinten": "Menschen, die keine Maus nutzen können, z. B. wegen motorischer Einschränkungen oder weil sie mit einem Screenreader arbeiten, müssen alle Funktionen erreichen."
+    },
+    {
+      "id": "AP1-8-4-4-K1-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K1",
+      "vorne": "Wie sehen in der EPK die Sinnbilder für Ereignis und Funktion aus?",
+      "hinten": "- Ereignis: Sechseck, beschreibt einen Zustand, z. B. „Bestellung ist eingegangen“\n- Funktion: Rechteck mit abgerundeten Ecken, beschreibt eine Tätigkeit, z. B. „Bestellung prüfen“"
+    },
+    {
+      "id": "AP1-8-4-4-K1-2",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K1",
+      "vorne": "Wie sehen in der EPK die Sinnbilder für Organisationseinheit und Objekt aus?",
+      "hinten": "- Organisationseinheit: Ellipse mit senkrechtem Strich am linken Rand\n- (Informations-)Objekt: Rechteck"
+    },
+    {
+      "id": "AP1-8-4-4-K1-3",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K1",
+      "vorne": "Welche Konnektoren gibt es in der EPK, und was bedeuten sie?",
+      "hinten": "- Und (∧): alle Zweige\n- Exklusives Oder (XOR): genau ein Zweig\n- Offenes Oder (∨): mindestens ein Zweig, auch mehrere"
+    },
+    {
+      "id": "AP1-8-4-4-K2-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K2",
+      "vorne": "Welche Grundregel gilt für die Abfolge in einer EPK?",
+      "hinten": "Ereignisse und Funktionen wechseln sich ab; der Ablauf beginnt und endet mit einem Ereignis."
+    },
+    {
+      "id": "AP1-8-4-4-K3-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Wie werden in BPMN eine Aufgabe sowie Start-, Zwischen- und Endereignis gezeichnet?",
+      "hinten": "- Aufgabe: Rechteck mit abgerundeten Ecken\n- Startereignis: Kreis mit dünnem Rand\n- Zwischenereignis: Kreis mit doppeltem Rand\n- Endereignis: Kreis mit dickem Rand"
+    },
+    {
+      "id": "AP1-8-4-4-K3-2",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Wie unterscheiden sich in BPMN Sequenzfluss und Nachrichtenfluss?",
+      "hinten": "- Sequenzfluss: durchgezogene Linie mit ausgefüllter Spitze; Reihenfolge innerhalb eines Pools\n- Nachrichtenfluss: gestrichelte Linie mit offener Spitze; Nachricht zwischen verschiedenen Pools"
+    },
+    {
+      "id": "AP1-8-4-4-K3-3",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Welche Gateways gibt es in BPMN, wie sind sie gekennzeichnet, und was bedeuten sie?",
+      "hinten": "Raute mit Zeichen:\n- exklusiv (×): genau ein Weg\n- inklusiv (○): ein oder mehrere Wege\n- parallel (+): alle Wege gleichzeitig"
+    },
+    {
+      "id": "AP1-8-4-4-K3-4",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Was ist in BPMN ein Pool, was eine Lane?",
+      "hinten": "- Pool: großer Rahmen für einen Beteiligten am Prozess, z. B. ein Unternehmen\n- Lane: Bahn innerhalb des Pools für eine Rolle oder Abteilung"
+    },
+    {
+      "id": "AP1-8-4-4-K4-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K4",
+      "vorne": "Woran erkennst du in einer EPK und in einem BPMN-Diagramm, wer einen Schritt ausführt?",
+      "hinten": "- EPK: an der Organisationseinheit, die mit der Funktion verbunden ist\n- BPMN: an der Lane (bzw. dem Pool), in der die Aufgabe liegt"
+    }
+  ],
+  "nicht_abgefragt": [
+    { "k": "AP1-8-3-3-K2", "grund": "Einen Ablauf als Aktivitätsdiagramm zu zeichnen ist eine Zeichenübung im Trainer; die nötige Notation fragen die Karten zu K1, K3 und K4 ab." }
+  ],
+  "glossar": [
+    {
+      "begriff": "Quelltext",
+      "erklaerung": "Der in einer Programmiersprache geschriebene, für Menschen lesbare Text eines Programms; er wird übersetzt oder interpretiert.",
+      "sp": ["AP1-8-1-1", "AP1-8-2-4"]
+    },
+    {
+      "begriff": "Compiler",
+      "erklaerung": "Programm, das den ganzen Quelltext vor der Ausführung übersetzt, z. B. in Maschinencode oder Zwischencode.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Linker",
+      "erklaerung": "Werkzeug, das übersetzte Programmteile und Bibliotheken zu einem ausführbaren Programm verbindet.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Interpreter",
+      "erklaerung": "Programm, das den Quelltext zur Laufzeit schrittweise ausführt, ohne ihn vorher als Ganzes zu übersetzen.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Virtuelle Maschine",
+      "langform": null,
+      "erklaerung": "Software, die Zwischencode (bei Java: Bytecode) ausführt; weil es sie für verschiedene Betriebssysteme gibt, läuft derselbe Zwischencode überall.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Zwischencode",
+      "erklaerung": "Vom Compiler erzeugter Code, der nicht direkt auf dem Prozessor, sondern in einer virtuellen Maschine läuft, z. B. Java-Bytecode.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Editor",
+      "erklaerung": "Programm zum Schreiben und Bearbeiten von Quelltext.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Debugger",
+      "erklaerung": "Werkzeug zur Fehlersuche, mit dem man ein Programm schrittweise ausführt, an Haltepunkten anhält und Variablenwerte ansieht.",
+      "sp": ["AP1-8-1-1", "AP1-8-2-4"]
+    },
+    {
+      "begriff": "IDE",
+      "langform": "Integrated Development Environment (integrierte Entwicklungsumgebung)",
+      "erklaerung": "Programm, das Editor, Compiler bzw. Interpreter, Debugger und weitere Entwicklungswerkzeuge unter einer Oberfläche vereint.",
+      "sp": ["AP1-8-1-1"]
+    },
+    {
+      "begriff": "Prozedurale Programmierung",
+      "erklaerung": "Programmierweise, bei der ein Programm aus einer Folge von Anweisungen besteht, gegliedert in Prozeduren und Funktionen; Daten und Funktionen sind getrennt.",
+      "sp": ["AP1-8-1-2"]
+    },
+    {
+      "begriff": "Objektorientierte Programmierung",
+      "langform": null,
+      "erklaerung": "Programmierweise, bei der Daten (Attribute) und zugehörige Funktionen (Methoden) in Objekten zusammengefasst sind, die nach Klassen gebildet werden.",
+      "sp": ["AP1-8-1-2"]
+    },
+    {
+      "begriff": "Klasse",
+      "erklaerung": "Bauplan, der festlegt, welche Attribute und Methoden die Objekte dieser Klasse haben.",
+      "sp": ["AP1-8-1-2", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "Objekt",
+      "erklaerung": "Konkretes Exemplar (Instanz) einer Klasse mit eigenen Attributwerten.",
+      "sp": ["AP1-8-1-2"]
+    },
+    {
+      "begriff": "Attribut",
+      "erklaerung": "Eigenschaft einer Klasse bzw. eines Objekts (OOP) oder einer Entität (ER-Modell), z. B. Name oder Kundennummer.",
+      "sp": ["AP1-8-1-2", "AP1-8-3-2", "AP1-8-4-1", "AP1-8-4-2"]
+    },
+    {
+      "begriff": "Methode",
+      "erklaerung": "In einer Klasse festgelegte Funktion, die beschreibt, was ein Objekt tun kann, und mit dessen Attributen arbeitet.",
+      "sp": ["AP1-8-1-2", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "Sichtbarkeit",
+      "erklaerung": "Legt fest, von wo aus auf ein Attribut oder eine Methode zugegriffen werden darf, z. B. public (+) oder private (-).",
+      "sp": ["AP1-8-1-2", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "public",
+      "erklaerung": "Sichtbarkeit: Zugriff von überall, auch aus anderen Klassen; im Klassendiagramm mit + gekennzeichnet.",
+      "sp": ["AP1-8-1-2", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "private",
+      "erklaerung": "Sichtbarkeit: Zugriff nur innerhalb der eigenen Klasse; im Klassendiagramm mit - gekennzeichnet.",
+      "sp": ["AP1-8-1-2", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "Skriptsprache",
+      "erklaerung": "Meist interpretierte Programmiersprache für kurze Programme (Skripte), die ohne eigenen Übersetzungsschritt laufen, z. B. Shell-Skript.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "Shell-Skript",
+      "erklaerung": "Textdatei mit Befehlen für die Kommandozeile (Shell) eines Betriebssystems, die nacheinander ausgeführt werden, etwa um Abläufe zu automatisieren.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "Bibliothek",
+      "erklaerung": "Sammlung fertiger Funktionen oder Klassen, die ein Programm bei Bedarf aufruft.",
+      "sp": ["AP1-8-1-1", "AP1-8-1-3"]
+    },
+    {
+      "begriff": "Framework",
+      "erklaerung": "Programmgerüst, das Aufbau und Ablauf einer Anwendung vorgibt; der eigene Code wird an vorgesehenen Stellen eingefügt und vom Framework aufgerufen.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "Statische Webseite",
+      "erklaerung": "Webseite mit fertigem Inhalt, die bei jedem Aufruf unverändert ausgeliefert wird.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "Dynamische Webseite",
+      "erklaerung": "Webseite, deren Inhalt erst beim Aufruf erzeugt wird, z. B. aus Datenbankdaten oder Eingaben des Nutzers.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "HTML",
+      "langform": "Hypertext Markup Language",
+      "erklaerung": "Auszeichnungssprache, die Struktur und Inhalt einer Webseite beschreibt; keine Programmiersprache.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "CSS",
+      "langform": "Cascading Style Sheets",
+      "erklaerung": "Sprache zur Gestaltung von Webseiten (Farben, Schriften, Anordnung); keine Programmiersprache.",
+      "sp": ["AP1-8-1-3"]
+    },
+    {
+      "begriff": "Variable",
+      "erklaerung": "Benannter Speicherplatz für einen Wert, der sich während des Programmlaufs ändern kann.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-3", "AP1-8-2-4"]
+    },
+    {
+      "begriff": "Datentyp",
+      "erklaerung": "Legt fest, welche Art von Werten eine Variable oder ein Attribut aufnehmen kann, z. B. Ganzzahl, Kommazahl, Wahrheitswert, Text oder Datum.",
+      "sp": ["AP1-8-2-1", "AP1-8-4-2"]
+    },
+    {
+      "begriff": "Integer",
+      "erklaerung": "Datentyp für Ganzzahlen ohne Nachkommastellen, z. B. `int`.",
+      "sp": ["AP1-8-2-1", "AP1-8-4-2"]
+    },
+    {
+      "begriff": "Gleitkommazahl",
+      "erklaerung": "Datentyp für Kommazahlen, z. B. `float` oder `double`.",
+      "sp": ["AP1-8-2-1"]
+    },
+    {
+      "begriff": "Boolean",
+      "erklaerung": "Datentyp für Wahrheitswerte; er kennt nur wahr (true) und falsch (false).",
+      "sp": ["AP1-8-2-1"]
+    },
+    {
+      "begriff": "String",
+      "erklaerung": "Datentyp für Text, also eine Zeichenkette aus Buchstaben, Ziffern und Sonderzeichen.",
+      "sp": ["AP1-8-2-1", "AP1-8-4-2"]
+    },
+    {
+      "begriff": "Datenstruktur",
+      "erklaerung": "Art, mehrere Daten geordnet zusammen zu speichern, z. B. ein Array.",
+      "sp": ["AP1-8-2-1"]
+    },
+    {
+      "begriff": "Array",
+      "erklaerung": "Datenstruktur, die mehrere Werte desselben Datentyps unter einem Namen speichert; jedes Element wird über seinen Index angesprochen.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-3", "AP1-8-2-4"]
+    },
+    {
+      "begriff": "Index",
+      "erklaerung": "Position eines Elements in einem Array; in den meisten Sprachen beginnt die Zählung bei 0.",
+      "sp": ["AP1-8-2-1"]
+    },
+    {
+      "begriff": "Kontrollstruktur",
+      "erklaerung": "Anweisung, die den Ablauf eines Programms steuert: Verzweigung oder Schleife.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-2"]
+    },
+    {
+      "begriff": "Verzweigung",
+      "erklaerung": "Kontrollstruktur, die je nach Bedingung einen von mehreren Programmzweigen ausführt (Wenn … Sonst, if … else).",
+      "sp": ["AP1-8-2-1", "AP1-8-2-2", "AP1-8-2-3", "AP1-8-3-3"]
+    },
+    {
+      "begriff": "Schleife",
+      "erklaerung": "Kontrollstruktur, die einen Block wiederholt ausführt: zählergesteuert, kopfgesteuert oder fußgesteuert.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-2", "AP1-8-2-3", "AP1-8-2-4"]
+    },
+    {
+      "begriff": "Funktion",
+      "erklaerung": "Benannter Codeblock, der Parameter erhält und einen Rückgabewert liefert.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-3", "AP1-8-2-4"]
+    },
+    {
+      "begriff": "Prozedur",
+      "erklaerung": "Benannter Codeblock wie eine Funktion, aber ohne Rückgabewert.",
+      "sp": ["AP1-8-2-1"]
+    },
+    {
+      "begriff": "Parameter",
+      "erklaerung": "Wert, der einer Funktion oder Methode beim Aufruf übergeben wird.",
+      "sp": ["AP1-8-2-1", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "Rückgabewert",
+      "erklaerung": "Ergebnis, das eine Funktion an die aufrufende Stelle zurückgibt.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-3", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "Pseudocode",
+      "erklaerung": "Programmnahe Beschreibung eines Ablaufs in Umgangssprache mit festen Schlüsselwörtern wie Wenn, Sonst, Für, Rückgabe; unabhängig von einer Programmiersprache.",
+      "sp": ["AP1-8-2-2", "AP1-8-2-3"]
+    },
+    {
+      "begriff": "Schreibtischtest",
+      "erklaerung": "Einen Code von Hand mit bestimmten Eingabewerten Zeile für Zeile durchgehen und die Variablenwerte in einer Tabelle mitführen, um das Ergebnis zu ermitteln.",
+      "sp": ["AP1-8-2-1", "AP1-8-2-3"]
+    },
+    {
+      "begriff": "Division ganzer Zahlen",
+      "erklaerung": "Teilen zweier Ganzzahlen, bei dem der Rest wegfällt: 7 ÷ 2 ergibt 3. In C# bei `int / int`, in Python mit `//`.",
+      "sp": ["AP1-8-2-3"]
+    },
+    {
+      "begriff": "Debugging",
+      "erklaerung": "Systematisches Suchen und Beheben von Fehlern in einem Programm, meist mit einem Debugger.",
+      "sp": ["AP1-8-2-4"]
+    },
+    {
+      "begriff": "Formaler Fehler",
+      "erklaerung": "Verstoß gegen die Regeln der Programmiersprache (Syntaxfehler); das Programm lässt sich nicht übersetzen bzw. startet nicht.",
+      "sp": ["AP1-8-2-4"]
+    },
+    {
+      "begriff": "Inhaltlicher Fehler",
+      "erklaerung": "Logischer Fehler: Das Programm läuft, liefert aber ein falsches Ergebnis.",
+      "sp": ["AP1-8-2-4"]
+    },
+    {
+      "begriff": "Initialisierung",
+      "erklaerung": "Zuweisen eines Startwerts an eine Variable vor ihrer ersten Verwendung, z. B. `summe = 0`.",
+      "sp": ["AP1-8-2-4"]
+    },
+    {
+      "begriff": "UML",
+      "langform": "Unified Modeling Language",
+      "erklaerung": "Genormte grafische Sprache zur Modellierung von Software, z. B. mit Anwendungsfall-, Klassen- und Aktivitätsdiagramm.",
+      "sp": ["AP1-8-3-1", "AP1-8-3-2", "AP1-8-3-3"]
+    },
+    {
+      "begriff": "Anwendungsfalldiagramm",
+      "erklaerung": "UML-Diagramm, das zeigt, welche Akteure ein System wofür benutzen (Use-Case-Diagramm).",
+      "sp": ["AP1-8-3-1"]
+    },
+    {
+      "begriff": "Akteur",
+      "erklaerung": "Person, Rolle oder externes System außerhalb des Systems, das mit ihm arbeitet; im Anwendungsfalldiagramm als Strichmännchen gezeichnet.",
+      "sp": ["AP1-8-3-1"]
+    },
+    {
+      "begriff": "Anwendungsfall",
+      "erklaerung": "Tätigkeit, die ein Akteur mit dem System ausführt und die ihm ein Ergebnis liefert (Use Case); als Ellipse gezeichnet.",
+      "sp": ["AP1-8-3-1"]
+    },
+    {
+      "begriff": "Assoziation",
+      "erklaerung": "UML-Beziehung, als durchgezogene Linie gezeichnet: zwischen Akteur und Anwendungsfall oder zwischen zwei Klassen.",
+      "sp": ["AP1-8-3-1", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "Generalisierung",
+      "erklaerung": "Beziehung vom Speziellen zum Allgemeinen; das Spezielle kann alles, was das Allgemeine kann. Linie mit nicht ausgefüllter Dreiecksspitze zum Allgemeinen.",
+      "sp": ["AP1-8-3-1", "AP1-8-3-2"]
+    },
+    {
+      "begriff": "include",
+      "erklaerung": "Beziehung im Anwendungsfalldiagramm: Ein Anwendungsfall schließt einen anderen immer ein. Gestrichelter Pfeil vom einschließenden zum eingeschlossenen Fall.",
+      "sp": ["AP1-8-3-1"]
+    },
+    {
+      "begriff": "extend",
+      "erklaerung": "Beziehung im Anwendungsfalldiagramm: Ein Anwendungsfall erweitert einen anderen nur unter einer Bedingung. Gestrichelter Pfeil vom erweiternden zum Basisfall.",
+      "sp": ["AP1-8-3-1"]
+    },
+    {
+      "begriff": "Systemgrenze",
+      "erklaerung": "Rechteck im Anwendungsfalldiagramm, das alle Anwendungsfälle des Systems umschließt; die Akteure stehen außerhalb.",
+      "sp": ["AP1-8-3-1"]
+    },
+    {
+      "begriff": "Klassendiagramm",
+      "erklaerung": "UML-Diagramm, das Klassen mit ihren Attributen, Methoden und Sichtbarkeiten sowie die Beziehungen zwischen den Klassen zeigt.",
+      "sp": ["AP1-8-3-2"]
+    },
+    {
+      "begriff": "Multiplizität",
+      "erklaerung": "Angabe am Ende einer Assoziation im Klassendiagramm, wie viele Objekte beteiligt sind, z. B. 1 (genau eins) oder * (beliebig viele).",
+      "sp": ["AP1-8-3-2"]
+    },
+    {
+      "begriff": "Aktivitätsdiagramm",
+      "erklaerung": "UML-Diagramm für Abläufe mit Aktionen, Entscheidungen, Wiederholungen und parallelen Zweigen.",
+      "sp": ["AP1-8-3-3", "AP1-8-4-4"]
+    },
+    {
+      "begriff": "Synchronisation",
+      "erklaerung": "Im Aktivitätsdiagramm ein Balken, der parallele Zweige wieder zusammenführt; es geht erst weiter, wenn alle Zweige angekommen sind.",
+      "sp": ["AP1-8-3-3"]
+    },
+    {
+      "begriff": "Schwimmbahn",
+      "erklaerung": "Bereich im Aktivitätsdiagramm, der die Aktionen eines Beteiligten zusammenfasst, z. B. einer Abteilung (auch Partition).",
+      "sp": ["AP1-8-3-3"]
+    },
+    {
+      "begriff": "ER-Modell",
+      "langform": "Entity-Relationship-Modell",
+      "erklaerung": "Datenmodell aus Entitäten, ihren Attributen und den Beziehungen zwischen ihnen; im Diagramm mit Rechteck, Raute und Ellipse gezeichnet.",
+      "sp": ["AP1-8-4-1", "AP1-8-4-2"]
+    },
+    {
+      "begriff": "Entität",
+      "erklaerung": "Gegenstand oder Person der realen Welt, über die Daten gespeichert werden, z. B. Kunde; im ER-Diagramm als Rechteck gezeichnet.",
+      "sp": ["AP1-8-4-1"]
+    },
+    {
+      "begriff": "Primärschlüssel",
+      "erklaerung": "Attribut oder Attributkombination, die jeden Datensatz einer Entität eindeutig kennzeichnet; im ER-Diagramm unterstrichen.",
+      "sp": ["AP1-8-4-1"]
+    },
+    {
+      "begriff": "Kardinalität",
+      "erklaerung": "Angabe an einer Beziehung im ER-Modell, wie viele Entitäten auf jeder Seite beteiligt sein können: 1:1, 1:n oder m:n.",
+      "sp": ["AP1-8-4-1"]
+    },
+    {
+      "begriff": "Redundanz",
+      "erklaerung": "Dieselbe Information ist mehrfach gespeichert; wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten.",
+      "sp": ["AP1-8-4-1", "AP1-8-4-2"]
+    },
+    {
+      "begriff": "Bildschirmmaske",
+      "erklaerung": "Bildschirmseite einer Anwendung zur Ein- oder Ausgabe von Daten mit Beschriftungen, Eingabe- und Auswahlfeldern und Schaltflächen.",
+      "sp": ["AP1-8-4-3"]
+    },
+    {
+      "begriff": "Softwareergonomie",
+      "erklaerung": "Gestaltung von Software, sodass Menschen sie leicht, sicher und ohne unnötige Belastung bedienen können.",
+      "sp": ["AP1-8-4-3"]
+    },
+    {
+      "begriff": "Corporate Identity",
+      "erklaerung": "Einheitliches Erscheinungsbild und Selbstverständnis eines Unternehmens; für eine Maske: Logo, Farben und Schrift des Unternehmens einheitlich verwenden.",
+      "sp": ["AP1-8-4-3"]
+    },
+    {
+      "begriff": "Barrierefreiheit",
+      "erklaerung": "Gestaltung, die auch Menschen mit Einschränkungen die Nutzung erlaubt, z. B. durch ausreichenden Kontrast, skalierbare Schrift und Tastaturbedienung.",
+      "sp": ["AP1-8-4-3"]
+    },
+    {
+      "begriff": "EPK",
+      "langform": "Ereignisgesteuerte Prozesskette",
+      "erklaerung": "Darstellung von Geschäftsprozessen, in der sich Ereignisse (Sechseck) und Funktionen (abgerundetes Rechteck) abwechseln, verbunden über Konnektoren.",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "Konnektor",
+      "erklaerung": "Verknüpfung in der EPK, die einen Ablauf teilt oder zusammenführt: Und (∧), Exklusives Oder (XOR), Offenes Oder (∨).",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "Organisationseinheit",
+      "erklaerung": "Sinnbild der EPK für die Stelle oder Abteilung, die eine Funktion ausführt; Ellipse mit senkrechtem Strich.",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "BPMN",
+      "langform": "Business Process Model and Notation",
+      "erklaerung": "Genormte grafische Notation für Geschäftsprozesse mit Aufgaben, Ereignissen, Gateways, Sequenz- und Nachrichtenflüssen sowie Pools und Lanes.",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "Gateway",
+      "erklaerung": "Raute in BPMN, die einen Ablauf verzweigt oder zusammenführt: exklusiv (×), inklusiv (○) oder parallel (+).",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "Sequenzfluss",
+      "erklaerung": "Durchgezogener Pfeil in BPMN, der die Reihenfolge der Schritte innerhalb eines Pools angibt.",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "Nachrichtenfluss",
+      "erklaerung": "Gestrichelter Pfeil in BPMN für eine Nachricht zwischen verschiedenen Pools.",
+      "sp": ["AP1-8-4-4"]
+    },
+    {
+      "begriff": "Pool und Lane",
+      "erklaerung": "In BPMN steht ein Pool für einen Prozessbeteiligten, z. B. ein Unternehmen; Lanes teilen ihn in Bahnen für Rollen oder Abteilungen.",
+      "sp": ["AP1-8-4-4"]
+    }
+  ],
+  "unsicher": [
+    { "id": "AP1-8-1-1-K1-3", "frage": "Die Einordnung von Python und JavaScript als interpretiert ist die übliche Lehrbuchsicht; heutige Umsetzungen nutzen auch Bytecode und Just-in-time-Übersetzung. Wird die einfache Zuordnung erwartet?" },
+    { "id": "AP1-8-1-2-K5-2", "frage": "Die Begriffe Getter und Setter (und Datenkapselung auf Karte K5-1) stehen nicht im Rahmen; sie sind gängig, gehen aber womöglich über die AP1-Erwartung hinaus." },
+    { "id": "AP1-8-2-1-K2-2", "frage": "Die Karten setzen den Array-Index ab 0 voraus. Ob Pseudocode in Aufgaben auch ab 1 zählt, ist nicht festgelegt; das muss jeweils der Aufgabe entnommen werden." },
+    { "id": "AP1-8-2-2-K2-1", "frage": "Pseudocode ist nicht genormt. Die Endwörter „Ende Wenn“, „Ende Für“, „Ende Solange“ sind eine übliche Form, aber nicht sicher die erwartete Schreibweise." },
+    { "id": "AP1-8-2-3-K3-3", "frage": "Der Modulo-Operator wird im Rahmen nicht genannt; er kommt in Schreibtischtests häufig vor (z. B. gerade/ungerade), ist aber nicht belegt." },
+    { "id": "AP1-8-2-3-K5-1", "frage": "Die Karte nennt kaufmännisches Runden. Die Rundungsfunktionen in Python und C# runden bei genau ,5 standardmäßig zur geraden Ziffer; ob das in Aufgaben eine Rolle spielt, ist offen." },
+    { "id": "AP1-8-2-4-K1-3", "frage": "Laufzeitfehler (z. B. Zugriff über das Array-Ende, Division durch null) passen nicht sauber in die Zweiteilung formal/inhaltlich; manche Lehrbücher führen sie als dritte Fehlerart. Wie sie einzuordnen sind, ist offen, daher keine Karte dazu." },
+    { "id": "AP1-8-3-2-K4-1", "frage": "Die Tiefe des Klassendiagramms ist offen (nur Klassen ergänzen oder auch Beziehungen eintragen). Die Multiplizitäten 0..1 und 1..* gehen über das „1 und *“ der Können-Aussage hinaus." },
+    { "id": "AP1-8-3-3-K4-1", "frage": "Ob parallele Abläufe und Schwimmbahnen (K4, K5) in AP1 verlangt werden und ob ein Diagramm nur ergänzt oder ganz erstellt werden muss, ist nicht belegt." },
+    { "id": "AP1-8-4-1-K4-3", "frage": "Die Platzierung von 1 und n folgt der Chen-Notation mit Rechteck, Raute und Ellipse. In der (min,max)-Notation stehen die Angaben auf der jeweils anderen Seite; die Karte gilt nur für die Chen-Schreibweise." },
+    { "id": "AP1-8-4-1-K5-2", "frage": "Attribute an einer m:n-Beziehung (z. B. Menge) sind in der Chen-Notation üblich, im Rahmen aber nicht ausdrücklich genannt." },
+    { "id": "AP1-8-4-3-K3-1", "frage": "Logo, Farben und Schrift gehören genau genommen zum Corporate Design als sichtbarem Teil der Corporate Identity. Die Karte folgt der Können-Aussage; ob die Unterscheidung erwartet wird, ist offen." },
+    { "id": "AP1-8-4-4-K1-1", "frage": "Ob EPK und BPMN in AP1 überhaupt als Diagramm vorkommen, ist offen; die Karten gehen vom Lesen der Sinnbilder aus dem Katalog-Anhang aus. Die genaue Form der Sinnbilder im Anhang (z. B. Gateway-Zeichen, Organisationseinheit) wurde nicht gegengeprüft." }
+  ]
+}

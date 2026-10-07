@@ -1,0 +1,1497 @@
+{
+  "paket": "AP1-6",
+  "bloecke": {
+    "AP1-6-1": {
+      "satz": "Wie das OSI-Modell Netzwerkaufgaben ordnet und welche Protokolle, Geräte und Übertragungsmedien dabei zusammenwirken."
+    },
+    "AP1-6-2": {
+      "satz": "Wie Geräte im Netz adressiert werden: IPv4 mit Subnetzmaske und Subnetting, IPv6, MAC-Adresse, ARP und DHCP."
+    },
+    "AP1-6-3": {
+      "satz": "Wie ein Gerät per WLAN oder VPN ins Netz kommt und wie man Verbindungsfehler mit Netzwerkbefehlen systematisch eingrenzt."
+    }
+  },
+  "stichpunkte": {
+    "AP1-6-1-1": {
+      "ziel": "Die sieben Schichten des OSI-Modells nennen und Protokolle, Adressen, Geräte und Tests der richtigen Schicht zuordnen.",
+      "punkte": [
+        "Sieben Schichten in richtiger Reihenfolge, deutsch oder englisch",
+        "Kabel/Buchse 1, MAC/Ethernet 2, IP-Adresse 3, TCP 4, DNS/DHCP/HTTPS 7",
+        "In einer Tabelle zur Fehlersuche Schicht, Protokoll oder Test ergänzen",
+        "Zweck: Aufgaben trennen, Fehler eingrenzen, Geräte verschiedener Hersteller verbinden"
+      ]
+    },
+    "AP1-6-1-2": {
+      "ziel": "Gängige Protokolle mit Aufgabe, Verschlüsselung und Standardport kennen und für einen Zweck das passende wählen.",
+      "punkte": [
+        "Aufgabe von Ethernet, IP und DNS erklären",
+        "IMAP statt POP3, wenn Mails auf dem Server bleiben und mehrere Geräte zugreifen",
+        "Fernzugriff mit SSH statt Telnet, weil SSH verschlüsselt",
+        "Standardports: SSH 22, SMTP 25, DNS 53, HTTP 80, HTTPS 443"
+      ]
+    },
+    "AP1-6-1-3": {
+      "ziel": "Switch, Router bzw. Gateway und Access Point nach ihrer Aufgabe unterscheiden und für eine Situation das passende Gerät wählen.",
+      "punkte": [
+        "Switch: verbindet Geräte innerhalb eines Netzes",
+        "Router/Gateway: verbindet Netze, z. B. das lokale Netz mit dem Internet",
+        "Access Point: bindet WLAN-Geräte an das kabelgebundene Netz an",
+        "Symbole für Switch, Router, Firewall, Accesspoint und Server im Netzwerkplan erkennen"
+      ]
+    },
+    "AP1-6-1-4": {
+      "ziel": "Übertragungsmedien nach Geschwindigkeit, Reichweite und Störfestigkeit beurteilen und das günstigste passende Kabel auswählen.",
+      "punkte": [
+        "Twisted Pair, Lichtwellenleiter und WLAN vergleichen",
+        "Schirmungskürzel: U ungeschirmt, S Geflechtschirm, F Folienschirm, TP Twisted Pair",
+        "Cat 5e, Cat 6a, Cat 7 nach Datenrate einordnen; günstigstes geeignetes Kabel wählen",
+        "Beschädigten Stecker oder Kabel als Ursache eines Verbindungsabbruchs erkennen",
+        "Ohne Festnetzanschluss ins Internet: Mobilfunk oder Satellit"
+      ]
+    },
+    "AP1-6-2-1": {
+      "ziel": "Einen Client mit IPv4-Adresse, Subnetzmaske und Standardgateway statisch oder per DHCP einrichten und die Einstellungen dokumentieren.",
+      "punkte": [
+        "Adresse, Maske und Standardgateway in die Konfigurationsmaske eintragen",
+        "Statisch oder automatisch; begründen, wann eine feste Adresse sinnvoll ist",
+        "Statische Adresse frei, im richtigen Netz und außerhalb des DHCP-Bereichs wählen",
+        "/24 entspricht 255.255.255.0; private Bereiche 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16",
+        "Dokumentieren: Adresse, Maske, Gateway, DNS-Server, Anschluss"
+      ]
+    },
+    "AP1-6-2-2": {
+      "ziel": "Zu einer IPv4-Adresse mit Präfix Netzadresse, Broadcastadresse, nutzbaren Hostbereich und Hostzahl bestimmen.",
+      "punkte": [
+        "Adressen `2^(32 − Präfix)`, nutzbare Hosts zwei weniger, z. B. /26: 64 und 62",
+        "Netzadresse und Broadcastadresse bestimmen",
+        "Erste, letzte und vorletzte nutzbare Hostadresse angeben",
+        "Präfix und Subnetzmaske umrechnen, z. B. /26 = 255.255.255.192",
+        "Prüfen, ob zwei Adressen im selben Subnetz liegen; fehlende Adresse in Netzskizze eintragen"
+      ]
+    },
+    "AP1-6-2-3": {
+      "ziel": "IPv6-Adressen lesen, kürzen und ausschreiben, Präfix und Interface-Identifier angeben und verbindungslokale Adressen erkennen.",
+      "punkte": [
+        "128 Bit, acht Blöcke zu je vier Hexadezimalziffern",
+        "Kürzen: führende Nullen weglassen, eine Folge von Nullblöcken einmal durch :: ersetzen",
+        "Präfix und Interface-Identifier einer Adresse angeben",
+        "Verbindungslokale Adresse beginnt mit fe80",
+        "Grund für IPv6: Der Adressraum von IPv4 ist erschöpft"
+      ]
+    },
+    "AP1-6-2-4": {
+      "ziel": "Aufbau der MAC-Adresse, Aufgabe von ARP und die Zuteilung durch DHCP erklären und eine Adresse aus 169.254.x.x deuten.",
+      "punkte": [
+        "MAC-Adresse: 48 Bit, sechs Bytes hexadezimal, vordere Hälfte Herstellerkennung",
+        "ARP ermittelt zu einer IP-Adresse im lokalen Netz die MAC-Adresse; `arp` zeigt die Zuordnung",
+        "DHCP teilt IP-Adresse, Subnetzmaske, Standardgateway und DNS-Server zu",
+        "169.254.x.x: kein DHCP-Server erreicht, Adresse selbst gegeben"
+      ]
+    },
+    "AP1-6-3-1": {
+      "ziel": "Die WLAN-Anmeldung mit Pre-shared Key und Enterprise unterscheiden und erklären, was ein VPN ist und wozu es dient.",
+      "punkte": [
+        "Pre-shared Key: ein gemeinsames Kennwort für alle",
+        "Enterprise: eigene Zugangsdaten je Benutzer, einzeln sperrbar",
+        "VPN: verschlüsselte Verbindung durch ein unsicheres Netz in ein privates Netz",
+        "Tunnel: Pakete werden verschlüsselt und in andere Pakete verpackt",
+        "Einsatz: Zugriff auf das Firmennetz von unterwegs"
+      ]
+    },
+    "AP1-6-3-2": {
+      "ziel": "Netzwerkverbindungen mit Konsolenbefehlen testen und einen Fehler Schritt für Schritt eingrenzen.",
+      "punkte": [
+        "`ipconfig` bzw. `ifconfig`/`ip`: eigene Konfiguration; `ping`: Erreichbarkeit",
+        "`traceroute`: Weg zum Ziel; `nslookup`: Namensauflösung",
+        "Reihenfolge: Kabel und LED, eigene Konfiguration, Gateway, Namensauflösung, Zielserver",
+        "Aus dem Testergebnis ableiten, wo der Fehler liegt",
+        "LED: Dauerlicht für Verbindung, Blinken für Datenverkehr"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP1-6-1-1-K1-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K1",
+      "vorne": "Wie heißen die sieben Schichten des OSI-Modells auf Deutsch, von Schicht 1 bis Schicht 7?",
+      "hinten": "1 Bitübertragungsschicht – 2 Sicherungsschicht – 3 Vermittlungsschicht – 4 Transportschicht – 5 Sitzungsschicht – 6 Darstellungsschicht – 7 Anwendungsschicht"
+    },
+    {
+      "id": "AP1-6-1-1-K1-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K1",
+      "vorne": "Wie heißen die sieben Schichten des OSI-Modells auf Englisch, von Schicht 1 bis Schicht 7?",
+      "hinten": "1 Physical – 2 Data Link – 3 Network – 4 Transport – 5 Session – 6 Presentation – 7 Application"
+    },
+    {
+      "id": "AP1-6-1-1-K1-3",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K1",
+      "vorne": "Welche Nummer haben im OSI-Modell die Sicherungsschicht, die Vermittlungsschicht und die Transportschicht?",
+      "hinten": "- Sicherungsschicht (Data Link): 2\n- Vermittlungsschicht (Network): 3\n- Transportschicht (Transport): 4"
+    },
+    {
+      "id": "AP1-6-1-1-K2-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man Kabel und Buchse zu, welcher die MAC-Adresse und Ethernet?",
+      "hinten": "- Kabel, Buchse: Schicht 1 (Bitübertragungsschicht)\n- MAC-Adresse, Ethernet: Schicht 2 (Sicherungsschicht)"
+    },
+    {
+      "id": "AP1-6-1-1-K2-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man die IP-Adresse zu, welcher TCP?",
+      "hinten": "- IP-Adresse: Schicht 3 (Vermittlungsschicht)\n- TCP: Schicht 4 (Transportschicht)"
+    },
+    {
+      "id": "AP1-6-1-1-K2-3",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man DNS, DHCP und HTTPS zu?",
+      "hinten": "Alle drei der Schicht 7 (Anwendungsschicht)."
+    },
+    {
+      "id": "AP1-6-1-1-K2-4",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man einen Switch zu, welcher einen Router?",
+      "hinten": "- Switch: Schicht 2, arbeitet mit MAC-Adressen\n- Router: Schicht 3, arbeitet mit IP-Adressen"
+    },
+    {
+      "id": "AP1-6-1-1-K3-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Welche Schicht prüft man mit einer Sichtprüfung von Kabel, Stecker und LED?",
+      "hinten": "Schicht 1, die Bitübertragungsschicht."
+    },
+    {
+      "id": "AP1-6-1-1-K3-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Mit welchem Befehl testet man typischerweise die Schicht 3, und was prüft er?",
+      "hinten": "`ping` auf eine IP-Adresse: prüft, ob das Ziel über IP erreichbar ist (den Weg dorthin zeigt `traceroute`)."
+    },
+    {
+      "id": "AP1-6-1-1-K3-3",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Mit welchem Befehl prüft man die Namensauflösung, und zu welcher Schicht gehört das Protokoll?",
+      "hinten": "`nslookup` prüft DNS; DNS gehört zur Schicht 7 (Anwendungsschicht)."
+    },
+    {
+      "id": "AP1-6-1-1-K3-4",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Welche Schicht und welches Protokoll testet der Aufruf einer Webseite im Browser?",
+      "hinten": "Schicht 7 (Anwendungsschicht), Protokoll HTTP bzw. HTTPS."
+    },
+    {
+      "id": "AP1-6-1-1-K4-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K4",
+      "vorne": "Wozu dient ein Schichtenmodell wie das OSI-Modell?",
+      "hinten": "- Aufgaben trennen: Jede Schicht hat eine abgegrenzte Aufgabe\n- Fehler eingrenzen: Schicht für Schicht prüfen\n- Geräte verschiedener Hersteller verbinden: gemeinsame Standards je Schicht"
+    },
+    {
+      "id": "AP1-6-1-1-K4-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K4",
+      "vorne": "Warum können Geräte verschiedener Hersteller dank eines Schichtenmodells zusammenarbeiten?",
+      "hinten": "Für jede Schicht sind Aufgaben und Schnittstellen einheitlich festgelegt; hält sich jeder Hersteller daran, passen die Geräte zusammen."
+    },
+    {
+      "id": "AP1-6-1-2-K1-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K1",
+      "vorne": "Welche Aufgabe hat Ethernet?",
+      "hinten": "Datenübertragung im kabelgebundenen lokalen Netz: legt Kabel, Signale und Datenrahmen fest und adressiert die Geräte über ihre MAC-Adressen."
+    },
+    {
+      "id": "AP1-6-1-2-K1-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K1",
+      "vorne": "Welche Aufgabe hat IP (Internet Protocol)?",
+      "hinten": "Adressiert Geräte mit IP-Adressen und leitet Datenpakete über Router netzübergreifend vom Absender zum Ziel (Routing)."
+    },
+    {
+      "id": "AP1-6-1-2-K1-3",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K1",
+      "vorne": "Welche Aufgabe hat DNS?",
+      "hinten": "Namensauflösung: übersetzt einen Namen wie www.example.com in die zugehörige IP-Adresse."
+    },
+    {
+      "id": "AP1-6-1-2-K2-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K2",
+      "vorne": "Was unterscheidet IMAP von POP3?",
+      "hinten": "- IMAP: Mails bleiben auf dem Server, Ordner und Lesestatus sind auf allen Geräten gleich\n- POP3: Mails werden auf ein Gerät heruntergeladen und in der Regel vom Server gelöscht"
+    },
+    {
+      "id": "AP1-6-1-2-K2-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K2",
+      "vorne": "Eine Mitarbeiterin liest ihre E-Mails auf Notebook, Smartphone und Büro-PC. Welches Abrufprotokoll passt, und warum?",
+      "hinten": "IMAP: Die Nachrichten bleiben auf dem Server und sind von allen Geräten aus mit demselben Stand erreichbar."
+    },
+    {
+      "id": "AP1-6-1-2-K2-3",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K2",
+      "vorne": "Welchen Vorteil kann POP3 gegenüber IMAP haben?",
+      "hinten": "Die Mails liegen lokal auf dem Gerät und sind ohne Verbindung lesbar; der Speicher auf dem Server wird entlastet."
+    },
+    {
+      "id": "AP1-6-1-2-K3-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K3",
+      "vorne": "Warum wählt man für einen Fernzugriff auf einen Server SSH statt Telnet?",
+      "hinten": "SSH verschlüsselt die gesamte Verbindung einschließlich der Anmeldedaten; Telnet überträgt alles im Klartext, auch das Passwort."
+    },
+    {
+      "id": "AP1-6-1-2-K3-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K3",
+      "vorne": "Welche dieser Protokolle übertragen verschlüsselt: HTTP, HTTPS, SSH, Telnet?",
+      "hinten": "HTTPS und SSH. HTTP und Telnet übertragen im Klartext."
+    },
+    {
+      "id": "AP1-6-1-2-K4-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K4",
+      "vorne": "Welchen Standardport nutzt SSH, welchen Telnet?",
+      "hinten": "- SSH: Port 22\n- Telnet: Port 23"
+    },
+    {
+      "id": "AP1-6-1-2-K4-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K4",
+      "vorne": "Was gibt ein Port bei einer Netzwerkverbindung an?",
+      "hinten": "Die Nummer, über die ein Rechner eine eingehende Verbindung dem richtigen Dienst bzw. Programm zuordnet, z. B. Port 22 für SSH."
+    },
+    {
+      "id": "AP1-6-1-2-K5-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Welche Standardports haben HTTP und HTTPS?",
+      "hinten": "- HTTP: 80\n- HTTPS: 443"
+    },
+    {
+      "id": "AP1-6-1-2-K5-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Welche Standardports haben DNS und SMTP?",
+      "hinten": "- DNS: 53\n- SMTP: 25"
+    },
+    {
+      "id": "AP1-6-1-2-K5-3",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Welches Protokoll gehört standardmäßig zu Port 443, welches zu Port 53?",
+      "hinten": "- 443: HTTPS\n- 53: DNS"
+    },
+    {
+      "id": "AP1-6-1-2-X1",
+      "sp": "AP1-6-1-2",
+      "k": null,
+      "vorne": "Wozu dient SMTP, wozu dienen IMAP und POP3?",
+      "hinten": "- SMTP: E-Mails versenden\n- IMAP und POP3: E-Mails vom Server abrufen"
+    },
+    {
+      "id": "AP1-6-1-2-X2",
+      "sp": "AP1-6-1-2",
+      "k": null,
+      "vorne": "Was unterscheidet HTTPS von HTTP?",
+      "hinten": "HTTPS überträgt Webseiten verschlüsselt (über TLS), HTTP im Klartext."
+    },
+    {
+      "id": "AP1-6-1-3-K1-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K1",
+      "vorne": "Welche Aufgabe hat ein Switch?",
+      "hinten": "Er verbindet Geräte innerhalb eines Netzes und leitet Daten anhand der MAC-Adresse gezielt an den Anschluss des Empfängers weiter."
+    },
+    {
+      "id": "AP1-6-1-3-K2-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K2",
+      "vorne": "Welche Aufgabe hat ein Router?",
+      "hinten": "Er verbindet verschiedene Netze miteinander, z. B. das lokale Netz mit dem Internet, und leitet Pakete anhand der IP-Adresse ins richtige Netz weiter."
+    },
+    {
+      "id": "AP1-6-1-3-K2-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K2",
+      "vorne": "Was ist ein Gateway?",
+      "hinten": "Der Übergang von einem Netz in ein anderes; im lokalen Netz meist der Router, über den die Geräte fremde Netze und das Internet erreichen."
+    },
+    {
+      "id": "AP1-6-1-3-K2-3",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K2",
+      "vorne": "Was unterscheidet einen Switch von einem Router?",
+      "hinten": "- Switch: verbindet Geräte innerhalb eines Netzes (MAC-Adressen, Schicht 2)\n- Router: verbindet verschiedene Netze (IP-Adressen, Schicht 3)"
+    },
+    {
+      "id": "AP1-6-1-3-K3-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K3",
+      "vorne": "Welche Aufgabe hat ein Access Point?",
+      "hinten": "Er stellt ein WLAN bereit und bindet die WLAN-Geräte an das kabelgebundene Netz an."
+    },
+    {
+      "id": "AP1-6-1-3-K3-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K3",
+      "vorne": "Was unterscheidet einen WLAN-Router von einem Access Point?",
+      "hinten": "Ein WLAN-Router vereint Router (Verbindung zum Internet), meist einen Switch und einen Access Point in einem Gerät. Ein Access Point stellt nur das WLAN bereit."
+    },
+    {
+      "id": "AP1-6-1-3-K4-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K4",
+      "vorne": "Im Büro sollen weitere PCs per Kabel ins vorhandene Netz, aber alle Anschlüsse sind belegt. Welches Gerät ergänzt man?",
+      "hinten": "Einen Switch: Er stellt zusätzliche Anschlüsse bereit und verbindet die PCs im selben Netz."
+    },
+    {
+      "id": "AP1-6-1-3-K4-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K4",
+      "vorne": "Ein Besprechungsraum hat eine Netzwerkdose und soll WLAN für Notebooks bekommen. Welches Gerät passt?",
+      "hinten": "Ein Access Point: an die Netzwerkdose angeschlossen, bindet er die WLAN-Geräte an das kabelgebundene Netz an."
+    },
+    {
+      "id": "AP1-6-1-3-K4-3",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K4",
+      "vorne": "Das lokale Netz eines kleinen Büros soll mit dem Internet verbunden werden. Welches Gerät wird gebraucht?",
+      "hinten": "Ein Router (Gateway): Er verbindet zwei verschiedene Netze, das lokale Netz und das Netz des Internetanbieters."
+    },
+    {
+      "id": "AP1-6-1-4-K1-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K1",
+      "vorne": "Wie unterscheiden sich Twisted-Pair-Kupferkabel und Lichtwellenleiter in Geschwindigkeit, Reichweite und Störanfälligkeit?",
+      "hinten": "- Twisted Pair: im LAN meist 1 oder 10 Gbit/s, höchstens 100 m je Strecke, anfällig für elektromagnetische Störungen\n- Lichtwellenleiter: sehr hohe Datenraten, bis in den Kilometerbereich, unempfindlich gegen elektromagnetische Störungen"
+    },
+    {
+      "id": "AP1-6-1-4-K1-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K1",
+      "vorne": "Welche Vor- und Nachteile hat WLAN gegenüber einer Kabelverbindung?",
+      "hinten": "- Vorteil: mobil, keine Verkabelung nötig\n- Nachteile: meist geringere und schwankende Datenrate, begrenzte Reichweite, störanfällig (Wände, andere Funknetze), muss gegen Mithören gesichert werden"
+    },
+    {
+      "id": "AP1-6-1-4-K1-3",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K1",
+      "vorne": "Zwei Gebäude 300 m voneinander entfernt sollen per Kabel verbunden werden. Welches Medium wählt man, und warum?",
+      "hinten": "Lichtwellenleiter: Twisted Pair reicht nur 100 m; LWL überbrückt die Strecke und ist unempfindlich gegen elektromagnetische Störungen."
+    },
+    {
+      "id": "AP1-6-1-4-K2-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K2",
+      "vorne": "Wofür stehen bei Netzwerkkabeln die Kürzel U, S, F und TP?",
+      "hinten": "- U: ungeschirmt\n- S: Geflechtschirm\n- F: Folienschirm\n- TP: Twisted Pair (paarweise verdrillte Adern)"
+    },
+    {
+      "id": "AP1-6-1-4-K2-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K2",
+      "vorne": "Wie liest man eine Bezeichnung wie S/FTP?",
+      "hinten": "Vor dem Schrägstrich die Gesamtschirmung, danach die Schirmung der Adernpaare: S/FTP = Geflechtschirm um das ganze Kabel, Folienschirm um jedes Paar, verdrillte Paare."
+    },
+    {
+      "id": "AP1-6-1-4-K2-3",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K2",
+      "vorne": "Was bedeuten U/UTP und F/UTP?",
+      "hinten": "- U/UTP: ganz ungeschirmt, weder Gesamt- noch Paarschirm\n- F/UTP: Folienschirm um alle Paare, die Paare selbst ungeschirmt"
+    },
+    {
+      "id": "AP1-6-1-4-K3-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K3",
+      "vorne": "Wie wählt man aus mehreren angebotenen Patchkabeln das günstigste geeignete aus?",
+      "hinten": "Zuerst alle aussortieren, die die geforderte Datenrate (Kategorie) oder Schirmung nicht erfüllen; von den übrigen das billigste wählen."
+    },
+    {
+      "id": "AP1-6-1-4-K3-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K3",
+      "vorne": "Gefordert: 1 Gbit/s, geschirmt. Angebot: U/UTP Cat 6a für 3 €, S/FTP Cat 5e für 4 €, S/FTP Cat 7 für 7 €. Welches Kabel wählt man?",
+      "hinten": "S/FTP Cat 5e für 4 €: schafft 1 Gbit/s und ist geschirmt. U/UTP ist ungeschirmt, Cat 7 erfüllt die Anforderung auch, ist aber teurer."
+    },
+    {
+      "id": "AP1-6-1-4-K4-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K4",
+      "vorne": "Ein PC verliert immer wieder die Netzwerkverbindung; am Stecker des Patchkabels ist die Rastnase abgebrochen. Was ist die wahrscheinliche Ursache?",
+      "hinten": "Der Stecker rastet nicht ein, rutscht leicht heraus und verliert den Kontakt zur Buchse. Abhilfe: Kabel tauschen."
+    },
+    {
+      "id": "AP1-6-1-4-K4-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K4",
+      "vorne": "Welche sichtbaren Schäden an Kabel oder Stecker können Verbindungsabbrüche verursachen?",
+      "hinten": "- abgebrochene Rastnase am Stecker\n- geknicktes oder gequetschtes Kabel\n- beschädigter Mantel, freiliegende Adern\n- verbogene Kontakte in Stecker oder Buchse"
+    },
+    {
+      "id": "AP1-6-1-4-K5-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K5",
+      "vorne": "Wie kommt man an einem Ort ohne Festnetzanschluss ins Internet?",
+      "hinten": "- über Mobilfunk (z. B. LTE oder 5G), etwa mit Router und SIM-Karte oder mobilem Hotspot\n- über eine Satellitenverbindung"
+    },
+    {
+      "id": "AP1-6-1-4-K6-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K6",
+      "vorne": "Welche Datenrate unterstützen Cat 5e, Cat 6a und Cat 7?",
+      "hinten": "- Cat 5e: 1 Gbit/s\n- Cat 6a: 10 Gbit/s\n- Cat 7: 10 Gbit/s, stets geschirmt"
+    },
+    {
+      "id": "AP1-6-1-4-K6-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K6",
+      "vorne": "Welche Kabelkategorie braucht man mindestens für 10 Gbit/s auf 100 m?",
+      "hinten": "Cat 6a (Cat 7 geht auch)."
+    },
+    {
+      "id": "AP1-6-2-1-K1-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Welche Werte trägt man bei einer statischen IPv4-Konfiguration eines Clients ein?",
+      "hinten": "- IP-Adresse\n- Subnetzmaske\n- Standardgateway\n- DNS-Server"
+    },
+    {
+      "id": "AP1-6-2-1-K1-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Wozu braucht ein Client die Angabe des Standardgateways?",
+      "hinten": "Pakete an Ziele außerhalb des eigenen Netzes schickt er an das Standardgateway (meist den Router), das sie weiterleitet."
+    },
+    {
+      "id": "AP1-6-2-1-K1-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Welche Bedingung muss die Adresse des Standardgateways in der Konfiguration eines Clients erfüllen?",
+      "hinten": "Sie muss im selben Netz liegen wie die Adresse des Clients."
+    },
+    {
+      "id": "AP1-6-2-1-K1-4",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Wozu dient die Subnetzmaske?",
+      "hinten": "Sie legt fest, welcher Teil der IP-Adresse das Netz und welcher das Gerät (Host) bezeichnet; daran erkennt der Rechner, ob ein Ziel im eigenen Netz liegt."
+    },
+    {
+      "id": "AP1-6-2-1-K2-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K2",
+      "vorne": "Welche Bedingungen muss eine statische IPv4-Adresse für einen Client erfüllen?",
+      "hinten": "- liegt im richtigen Netz\n- ist noch nicht vergeben\n- liegt außerhalb des DHCP-Bereichs\n- ist weder Netz- noch Broadcastadresse"
+    },
+    {
+      "id": "AP1-6-2-1-K2-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K2",
+      "vorne": "Netz 192.168.10.0/24, der DHCP-Server vergibt .100 bis .200. Ist 192.168.10.150 als statische Adresse geeignet?",
+      "hinten": "Nein: Sie liegt im DHCP-Bereich und könnte zusätzlich einem anderen Gerät zugeteilt werden. Geeignet wäre eine freie Adresse außerhalb, z. B. 192.168.10.20."
+    },
+    {
+      "id": "AP1-6-2-1-K2-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K2",
+      "vorne": "Warum darf eine statische Adresse nicht im DHCP-Bereich liegen?",
+      "hinten": "Der DHCP-Server könnte dieselbe Adresse einem anderen Gerät zuteilen; es käme zu einem Adresskonflikt."
+    },
+    {
+      "id": "AP1-6-2-1-K3-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K3",
+      "vorne": "Welche Subnetzmaske entspricht der Präfixlänge /24?",
+      "hinten": "255.255.255.0"
+    },
+    {
+      "id": "AP1-6-2-1-K3-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K3",
+      "vorne": "Welche Subnetzmasken entsprechen den Präfixlängen /8 und /16?",
+      "hinten": "- /8: 255.0.0.0\n- /16: 255.255.0.0"
+    },
+    {
+      "id": "AP1-6-2-1-K3-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K3",
+      "vorne": "Was gibt die Präfixlänge, z. B. /24, an?",
+      "hinten": "Wie viele Bits von links die Netzadresse bilden; genau diese Bits sind in der Subnetzmaske 1."
+    },
+    {
+      "id": "AP1-6-2-1-K4-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K4",
+      "vorne": "Was unterscheidet statische von automatischer IPv4-Adressvergabe?",
+      "hinten": "- statisch: Adresse und Einstellungen werden von Hand fest eingetragen\n- automatisch: Ein DHCP-Server teilt sie dem Client zu"
+    },
+    {
+      "id": "AP1-6-2-1-K4-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K4",
+      "vorne": "Für welche Geräte ist eine feste IP-Adresse sinnvoll, und warum?",
+      "hinten": "Für Geräte, die immer unter derselben Adresse erreichbar sein müssen, z. B. Server, Netzwerkdrucker, Router und Access Points."
+    },
+    {
+      "id": "AP1-6-2-1-K4-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K4",
+      "vorne": "Welchen Vorteil hat die automatische Adressvergabe per DHCP für Arbeitsplatzrechner?",
+      "hinten": "Weniger Aufwand, keine Tippfehler und keine doppelt vergebenen Adressen; Änderungen wie ein neuer DNS-Server werden zentral für alle Clients gesetzt."
+    },
+    {
+      "id": "AP1-6-2-1-K5-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K5",
+      "vorne": "Welche IPv4-Adressbereiche sind privat?",
+      "hinten": "- 10.0.0.0/8\n- 172.16.0.0/12 (172.16.0.0 bis 172.31.255.255)\n- 192.168.0.0/16"
+    },
+    {
+      "id": "AP1-6-2-1-K5-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K5",
+      "vorne": "Welche dieser Adressen sind privat: 172.20.5.1, 172.40.1.1, 192.168.1.10, 11.0.0.1?",
+      "hinten": "- 172.20.5.1: privat (172.16 bis 172.31)\n- 172.40.1.1: nicht privat\n- 192.168.1.10: privat\n- 11.0.0.1: nicht privat"
+    },
+    {
+      "id": "AP1-6-2-1-K5-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K5",
+      "vorne": "Was gilt für private IPv4-Adressen?",
+      "hinten": "Sie sind für lokale Netze vorgesehen, dürfen dort von jedem frei verwendet werden und werden im Internet nicht weitergeleitet."
+    },
+    {
+      "id": "AP1-6-2-1-K6-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K6",
+      "vorne": "Welche Angaben gehören in die Dokumentation der Netzwerkeinstellungen eines Arbeitsplatzes?",
+      "hinten": "- IP-Adresse (bzw. Vergabe per DHCP)\n- Subnetzmaske\n- Standardgateway\n- DNS-Server\n- Anschluss, z. B. Netzwerkdose oder Switch-Port"
+    },
+    {
+      "id": "AP1-6-2-2-K1-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Wie berechnet man aus der Präfixlänge n die Zahl der Adressen und der nutzbaren Hosts eines IPv4-Netzes?",
+      "hinten": "Adressen: `2^(32 − n)`\nNutzbare Hosts: `2^(32 − n) − 2`"
+    },
+    {
+      "id": "AP1-6-2-2-K1-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Wie viele Adressen und nutzbare Hosts hat ein /26-Netz?",
+      "hinten": "64 Adressen (`2^6`), davon 62 nutzbare Hosts."
+    },
+    {
+      "id": "AP1-6-2-2-K1-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Warum zieht man bei der Zahl der nutzbaren Hosts 2 ab?",
+      "hinten": "Die erste Adresse ist die Netzadresse, die letzte die Broadcastadresse; beide kann man keinem Gerät zuweisen."
+    },
+    {
+      "id": "AP1-6-2-2-K1-4",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Wie viele Adressen und nutzbare Hosts haben Netze mit /24, /25, /27 und /28?",
+      "hinten": "- /24: 256 Adressen, 254 Hosts\n- /25: 128 Adressen, 126 Hosts\n- /27: 32 Adressen, 30 Hosts\n- /28: 16 Adressen, 14 Hosts"
+    },
+    {
+      "id": "AP1-6-2-2-K2-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K2",
+      "vorne": "Wie bestimmt man zu einer IPv4-Adresse mit Präfix die Netzadresse und die Broadcastadresse?",
+      "hinten": "- Netzadresse: alle Hostbits auf 0 setzen\n- Broadcastadresse: alle Hostbits auf 1 setzen (= nächste Netzadresse − 1)"
+    },
+    {
+      "id": "AP1-6-2-2-K2-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K2",
+      "vorne": "Wie findet man die Netzadresse schnell über die Blockgröße, z. B. bei /26?",
+      "hinten": "Blockgröße = 256 − Maskenwert im betroffenen Oktett (bei /26: 256 − 192 = 64). Die Netze beginnen bei Vielfachen davon: 0, 64, 128, 192."
+    },
+    {
+      "id": "AP1-6-2-2-K2-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K2",
+      "vorne": "Welche Netzadresse und welche Broadcastadresse hat 192.168.1.100/26?",
+      "hinten": "- Netzadresse: 192.168.1.64\n- Broadcastadresse: 192.168.1.127"
+    },
+    {
+      "id": "AP1-6-2-2-K3-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K3",
+      "vorne": "Wie ergeben sich die erste, die letzte und die vorletzte nutzbare Hostadresse eines Netzes?",
+      "hinten": "- erste: Netzadresse + 1\n- letzte: Broadcastadresse − 1\n- vorletzte: Broadcastadresse − 2"
+    },
+    {
+      "id": "AP1-6-2-2-K3-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K3",
+      "vorne": "Welche sind die erste, die letzte und die vorletzte nutzbare Adresse im Netz 192.168.1.64/26?",
+      "hinten": "- erste: 192.168.1.65\n- letzte: 192.168.1.126\n- vorletzte: 192.168.1.125"
+    },
+    {
+      "id": "AP1-6-2-2-K4-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K4",
+      "vorne": "Eine Netzskizze zeigt das Netz 10.0.0.0/26. Welche Adressen kommen für einen neuen Drucker in Frage?",
+      "hinten": "Jede noch freie Adresse von 10.0.0.1 bis 10.0.0.62; nicht die Netzadresse .0, nicht die Broadcastadresse .63 und keine Adresse, die schon ein Gerät oder das Gateway hat."
+    },
+    {
+      "id": "AP1-6-2-2-K5-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Wie rechnet man eine Präfixlänge in eine Subnetzmaske um?",
+      "hinten": "Von links so viele Bits auf 1 setzen, wie die Präfixlänge angibt, den Rest auf 0, und je 8 Bit dezimal schreiben. /26: 11111111.11111111.11111111.11000000 = 255.255.255.192"
+    },
+    {
+      "id": "AP1-6-2-2-K5-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Welche Dezimalwerte kann ein Oktett einer Subnetzmaske haben, und wie viele Einsen stehen dafür?",
+      "hinten": "0 (0), 128 (1), 192 (2), 224 (3), 240 (4), 248 (5), 252 (6), 254 (7), 255 (8)"
+    },
+    {
+      "id": "AP1-6-2-2-K5-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Welche Präfixlänge gehört zur Subnetzmaske 255.255.255.224?",
+      "hinten": "/27 (24 Einsen in den ersten drei Oktetten + 3 Einsen in 224)."
+    },
+    {
+      "id": "AP1-6-2-2-K6-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K6",
+      "vorne": "Wie prüft man, ob zwei IPv4-Adressen im selben Subnetz liegen?",
+      "hinten": "Für beide mit derselben Subnetzmaske die Netzadresse bestimmen. Sind die Netzadressen gleich, liegen beide im selben Subnetz."
+    },
+    {
+      "id": "AP1-6-2-2-K6-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K6",
+      "vorne": "Liegen 192.168.1.60/26 und 192.168.1.70/26 im selben Subnetz?",
+      "hinten": "Nein: 192.168.1.60 gehört zum Netz 192.168.1.0 (bis .63), 192.168.1.70 zum Netz 192.168.1.64."
+    },
+    {
+      "id": "AP1-6-2-3-K1-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K1",
+      "vorne": "Wie lang ist eine IPv6-Adresse, und wie wird sie geschrieben?",
+      "hinten": "128 Bit; acht Blöcke zu je vier Hexadezimalziffern, durch Doppelpunkte getrennt."
+    },
+    {
+      "id": "AP1-6-2-3-K1-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K1",
+      "vorne": "Wie viele Bit stellen eine Hexadezimalziffer und ein Block einer IPv6-Adresse dar?",
+      "hinten": "Eine Hexadezimalziffer 4 Bit, ein Block aus vier Ziffern 16 Bit; 8 Blöcke × 16 Bit = 128 Bit."
+    },
+    {
+      "id": "AP1-6-2-3-K2-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Nach welchen Regeln kürzt man eine IPv6-Adresse?",
+      "hinten": "- führende Nullen in jedem Block weglassen (0db8 → db8, 0000 → 0)\n- eine zusammenhängende Folge von Nullblöcken einmal durch `::` ersetzen"
+    },
+    {
+      "id": "AP1-6-2-3-K2-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Warum darf `::` in einer IPv6-Adresse nur einmal vorkommen?",
+      "hinten": "Sonst ist nicht eindeutig, wie viele Nullblöcke jede Lücke ersetzt."
+    },
+    {
+      "id": "AP1-6-2-3-K2-3",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Darf man beim Kürzen einer IPv6-Adresse auch Nullen am Ende eines Blocks weglassen?",
+      "hinten": "Nein, nur führende Nullen. Aus 0db0 wird db0, nicht db."
+    },
+    {
+      "id": "AP1-6-2-3-K2-4",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Wie lautet fe80::1 vollständig ausgeschrieben?",
+      "hinten": "fe80:0000:0000:0000:0000:0000:0000:0001"
+    },
+    {
+      "id": "AP1-6-2-3-K2-5",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Wie lautet 2001:0db8:0000:0000:0000:0000:0000:0001 gekürzt?",
+      "hinten": "2001:db8::1"
+    },
+    {
+      "id": "AP1-6-2-3-K3-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K3",
+      "vorne": "Was gibt /64 hinter einer IPv6-Adresse an?",
+      "hinten": "Die Präfixlänge: Die ersten 64 Bit (vier Blöcke) bilden das Präfix, die übrigen 64 Bit den Interface-Identifier."
+    },
+    {
+      "id": "AP1-6-2-3-K3-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K3",
+      "vorne": "Welches sind Präfix und Interface-Identifier von fe80::1a2b:3cff:fe4d:5e6f/64?",
+      "hinten": "- Präfix: fe80:0000:0000:0000 (fe80::/64)\n- Interface-Identifier: 1a2b:3cff:fe4d:5e6f"
+    },
+    {
+      "id": "AP1-6-2-3-K3-3",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K3",
+      "vorne": "Was bezeichnen Präfix und Interface-Identifier einer IPv6-Adresse?",
+      "hinten": "- Präfix: das Netz\n- Interface-Identifier: die Netzwerkschnittstelle des Geräts in diesem Netz"
+    },
+    {
+      "id": "AP1-6-2-3-K4-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K4",
+      "vorne": "Woran erkennt man eine verbindungslokale IPv6-Adresse, und wo gilt sie?",
+      "hinten": "Sie beginnt mit fe80. Sie gilt nur im lokalen Netzabschnitt und wird von Routern nicht weitergeleitet."
+    },
+    {
+      "id": "AP1-6-2-3-K5-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K5",
+      "vorne": "Warum wurde IPv6 eingeführt?",
+      "hinten": "Der Adressraum von IPv4 (32 Bit, rund 4,3 Milliarden Adressen) ist erschöpft; IPv6 bietet mit 128 Bit erheblich mehr Adressen."
+    },
+    {
+      "id": "AP1-6-2-4-K1-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K1",
+      "vorne": "Wie ist eine MAC-Adresse aufgebaut?",
+      "hinten": "48 Bit, sechs Bytes in Hexadezimalschreibweise, z. B. 00:1A:2B:3C:4D:5E. Die vordere Hälfte ist die Herstellerkennung, die hintere vergibt der Hersteller."
+    },
+    {
+      "id": "AP1-6-2-4-K1-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K1",
+      "vorne": "Was gibt die vordere Hälfte einer MAC-Adresse an?",
+      "hinten": "Die Herstellerkennung: welcher Hersteller die Netzwerkschnittstelle gebaut hat."
+    },
+    {
+      "id": "AP1-6-2-4-K2-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K2",
+      "vorne": "Welche Aufgabe hat ARP?",
+      "hinten": "ARP ermittelt zu einer bekannten IP-Adresse im lokalen Netz die zugehörige MAC-Adresse."
+    },
+    {
+      "id": "AP1-6-2-4-K2-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K2",
+      "vorne": "Warum braucht ein PC ARP, bevor er Daten an einen Rechner im selben lokalen Netz schickt?",
+      "hinten": "Im lokalen Netz werden die Daten an die MAC-Adresse zugestellt. Der PC kennt nur die IP-Adresse des Ziels und muss die MAC-Adresse erst erfragen."
+    },
+    {
+      "id": "AP1-6-2-4-K2-3",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K2",
+      "vorne": "Wie läuft eine ARP-Anfrage ab?",
+      "hinten": "Der PC fragt per Broadcast alle im lokalen Netz: „Wer hat IP-Adresse X?“ Das Gerät mit dieser Adresse antwortet mit seiner MAC-Adresse; der PC merkt sich die Zuordnung im ARP-Cache."
+    },
+    {
+      "id": "AP1-6-2-4-K3-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K3",
+      "vorne": "Was zeigt der Befehl `arp -a`?",
+      "hinten": "Den ARP-Cache: welche IP-Adresse zu welcher physischen Adresse (MAC-Adresse) gehört, mit dem Typ dynamisch oder statisch."
+    },
+    {
+      "id": "AP1-6-2-4-K3-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K3",
+      "vorne": "`arp -a` zeigt die Zeile „192.168.0.1   00-1a-2b-3c-4d-5e   dynamisch“. Was bedeutet sie?",
+      "hinten": "Das Gerät mit der IP-Adresse 192.168.0.1 hat die MAC-Adresse 00-1a-2b-3c-4d-5e; der Eintrag wurde automatisch per ARP gelernt."
+    },
+    {
+      "id": "AP1-6-2-4-K4-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K4",
+      "vorne": "Welche Einstellungen teilt ein DHCP-Server einem Client zu?",
+      "hinten": "- IP-Adresse\n- Subnetzmaske\n- Standardgateway\n- DNS-Server"
+    },
+    {
+      "id": "AP1-6-2-4-K4-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K4",
+      "vorne": "Welche Aufgabe hat DHCP?",
+      "hinten": "DHCP verteilt die Netzwerkeinstellungen automatisch an die Clients, sodass man sie nicht an jedem Gerät von Hand eintragen muss."
+    },
+    {
+      "id": "AP1-6-2-4-K5-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K5",
+      "vorne": "Ein PC hat die Adresse 169.254.12.34. Was bedeutet das?",
+      "hinten": "Er hat keinen DHCP-Server erreicht und sich selbst eine Adresse aus 169.254.x.x gegeben. Damit erreicht er höchstens Geräte im selben Netzabschnitt, nicht das Internet."
+    },
+    {
+      "id": "AP1-6-2-4-K5-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K5",
+      "vorne": "Ein Client hat eine 169.254.x.x-Adresse. Was prüft man?",
+      "hinten": "- Kabel bzw. WLAN-Verbindung des Clients\n- ob der DHCP-Server läuft und erreichbar ist\n- ob der DHCP-Server noch freie Adressen hat"
+    },
+    {
+      "id": "AP1-6-3-1-K1-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K1",
+      "vorne": "Wie meldet man sich an einem WLAN mit Pre-shared Key an?",
+      "hinten": "Mit einem gemeinsamen Kennwort, das für alle Benutzer und Geräte dieses WLANs gleich ist."
+    },
+    {
+      "id": "AP1-6-3-1-K1-2",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K1",
+      "vorne": "Wie meldet man sich an einem WLAN mit Enterprise-Verfahren an?",
+      "hinten": "Jeder Benutzer meldet sich mit eigenen Zugangsdaten an (z. B. Benutzername und Kennwort), die zentral geprüft werden."
+    },
+    {
+      "id": "AP1-6-3-1-K2-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K2",
+      "vorne": "Warum eignet sich für Unternehmen das Enterprise-Verfahren besser als ein Pre-shared Key?",
+      "hinten": "Jeder hat eigene Zugangsdaten. Verlässt jemand das Unternehmen, sperrt man nur seinen Zugang, statt das Kennwort für alle zu ändern."
+    },
+    {
+      "id": "AP1-6-3-1-K2-2",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K2",
+      "vorne": "Ein Mitarbeiter verlässt das Unternehmen; das WLAN nutzt einen Pre-shared Key. Welches Problem entsteht?",
+      "hinten": "Er kennt weiter das gemeinsame Kennwort. Um ihn auszusperren, muss man es ändern und auf allen Geräten neu eintragen."
+    },
+    {
+      "id": "AP1-6-3-1-K3-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K3",
+      "vorne": "Was ist ein VPN?",
+      "hinten": "Ein Virtual Private Network: eine verschlüsselte Verbindung durch ein unsicheres Netz wie das Internet in ein privates Netz, z. B. das Firmennetz."
+    },
+    {
+      "id": "AP1-6-3-1-K3-2",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K3",
+      "vorne": "Wie nennt man eine verschlüsselte Verbindung durch ein unsicheres Netz in ein privates Netz?",
+      "hinten": "VPN (Virtual Private Network)."
+    },
+    {
+      "id": "AP1-6-3-1-K4-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K4",
+      "vorne": "Nenne einen typischen Einsatzfall für ein VPN.",
+      "hinten": "Zugriff auf das Firmennetz von unterwegs oder aus dem Homeoffice, z. B. auf Dateiserver und Anwendungen der Firma."
+    },
+    {
+      "id": "AP1-6-3-1-K5-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K5",
+      "vorne": "Was beschreibt das Bild des Tunnels beim VPN?",
+      "hinten": "Die Datenpakete werden verschlüsselt und in andere Pakete verpackt übertragen; von außen sieht man nur die äußeren Pakete, nicht den Inhalt."
+    },
+    {
+      "id": "AP1-6-3-1-K5-2",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K5",
+      "vorne": "Warum sind Daten im VPN-Tunnel auch in einem öffentlichen WLAN geschützt?",
+      "hinten": "Sie werden verschlüsselt übertragen. Wer mitliest, sieht nur die äußeren Pakete zum VPN-Endpunkt, nicht Inhalt und eigentliches Ziel."
+    },
+    {
+      "id": "AP1-6-3-2-K1-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `ipconfig` (Linux: `ifconfig` bzw. `ip`)?",
+      "hinten": "Zeigt die eigene Netzwerkkonfiguration: IP-Adresse, Subnetzmaske, Standardgateway; `ipconfig /all` zusätzlich u. a. DNS-Server und MAC-Adresse."
+    },
+    {
+      "id": "AP1-6-3-2-K1-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `ping`?",
+      "hinten": "Prüft, ob ein Ziel (IP-Adresse oder Name) erreichbar ist, und zeigt die Antwortzeit."
+    },
+    {
+      "id": "AP1-6-3-2-K1-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `traceroute` (Windows: `tracert`)?",
+      "hinten": "Zeigt den Weg der Pakete zum Ziel: alle Router auf der Strecke mit Antwortzeit. So sieht man, bis wohin die Verbindung funktioniert."
+    },
+    {
+      "id": "AP1-6-3-2-K1-4",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `nslookup`?",
+      "hinten": "Prüft die Namensauflösung: fragt einen DNS-Server nach der IP-Adresse zu einem Namen."
+    },
+    {
+      "id": "AP1-6-3-2-K2-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Mit welchem Befehl prüft man, ob das Standardgateway erreichbar ist?",
+      "hinten": "`ping` auf die IP-Adresse des Gateways, z. B. `ping 192.168.1.1`."
+    },
+    {
+      "id": "AP1-6-3-2-K2-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Wie ermittelt man die MAC-Adresse des eigenen PCs?",
+      "hinten": "Windows: `ipconfig /all`, Eintrag „Physische Adresse“. Linux: `ip link` bzw. `ifconfig`."
+    },
+    {
+      "id": "AP1-6-3-2-K2-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Mit welchem Befehl findet man heraus, an welchem Router auf dem Weg zum Ziel die Verbindung abbricht?",
+      "hinten": "`traceroute` (Windows: `tracert`)."
+    },
+    {
+      "id": "AP1-6-3-2-K2-4",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Mit welchem Befehl prüft man, ob ein Name wie www.example.com in eine IP-Adresse aufgelöst wird?",
+      "hinten": "`nslookup www.example.com`"
+    },
+    {
+      "id": "AP1-6-3-2-K3-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K3",
+      "vorne": "In welcher Reihenfolge geht man bei einer systematischen Fehlersuche im Netzwerk vor, beginnend bei der Hardware?",
+      "hinten": "- Kabel und LED prüfen\n- eigene Konfiguration (`ipconfig`)\n- Gateway anpingen\n- Namensauflösung prüfen (`nslookup`)\n- Zielserver prüfen"
+    },
+    {
+      "id": "AP1-6-3-2-K3-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K3",
+      "vorne": "Warum prüft man bei der Fehlersuche Kabel und LED früh?",
+      "hinten": "Ohne physische Verbindung kann kein weiterer Test gelingen; die Sichtprüfung ist zudem schnell und einfach."
+    },
+    {
+      "id": "AP1-6-3-2-K3-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K3",
+      "vorne": "Kann man eine Fehlersuche auch beim Browser beginnen und bis zum Kabel hinunter prüfen?",
+      "hinten": "Ja: vom Browser über `nslookup` und `ping` bis zur Sichtprüfung von LED und Kabel. Wichtig ist, Schicht für Schicht vorzugehen."
+    },
+    {
+      "id": "AP1-6-3-2-K4-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "`ping` auf die IP-Adresse eines Webservers gelingt, der Aufruf über den Namen scheitert. Wo liegt der Fehler?",
+      "hinten": "Bei der Namensauflösung (DNS), z. B. falscher oder nicht erreichbarer DNS-Server. Prüfen mit `nslookup`."
+    },
+    {
+      "id": "AP1-6-3-2-K4-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "`ipconfig` zeigt eine passende Adresse, aber `ping` auf das Standardgateway scheitert. Wo sucht man weiter?",
+      "hinten": "Zwischen PC und Gateway: Kabel und Switch, falsch eingetragene Gateway-Adresse oder Subnetzmaske, Gateway selbst gestört."
+    },
+    {
+      "id": "AP1-6-3-2-K4-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "Das Gateway antwortet auf `ping`, eine IP-Adresse im Internet nicht. Wo liegt der Fehler?",
+      "hinten": "Hinter dem Gateway: Router, Internetanschluss oder Weg zum Ziel; mit `traceroute` eingrenzen. Möglich ist auch, dass das Ziel keine pings beantwortet."
+    },
+    {
+      "id": "AP1-6-3-2-K5-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K5",
+      "vorne": "Was zeigen die LEDs an einer Netzwerkbuchse an?",
+      "hinten": "- Dauerlicht: Verbindung besteht\n- Blinken: Daten werden übertragen\n- aus: keine Verbindung"
+    }
+  ],
+  "nicht_abgefragt": [
+    {
+      "k": "AP1-6-1-3-K5",
+      "grund": "Das Erkennen von Symbolen braucht Abbildungen; eine Textkarte kann sie nicht zeigen."
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "OSI-Modell",
+      "langform": "Open Systems Interconnection",
+      "erklaerung": "Schichtenmodell, das die Kommunikation im Netzwerk in sieben Schichten mit klar getrennten Aufgaben gliedert, von der Bitübertragung bis zur Anwendung.",
+      "sp": [
+        "AP1-6-1-1"
+      ]
+    },
+    {
+      "begriff": "Protokoll",
+      "erklaerung": "Festgelegte Regeln, nach denen Geräte im Netz Daten austauschen, z. B. IP, TCP oder DNS.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-1-2",
+        "AP1-6-3-1"
+      ]
+    },
+    {
+      "begriff": "MAC-Adresse",
+      "langform": "Media Access Control",
+      "erklaerung": "Weltweit eindeutige Hardware-Adresse einer Netzwerkschnittstelle: 48 Bit, sechs Bytes hexadezimal, vordere Hälfte Herstellerkennung.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-2-4",
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "Ethernet",
+      "erklaerung": "Standard für kabelgebundene lokale Netze; legt Kabel, Signale und Datenrahmen fest und adressiert Geräte über MAC-Adressen.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-1-2",
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "IP",
+      "langform": "Internet Protocol",
+      "erklaerung": "Protokoll der Vermittlungsschicht: adressiert Geräte mit IP-Adressen und leitet Pakete über Router zum Ziel; Versionen IPv4 und IPv6.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-1-2",
+        "AP1-6-2-1"
+      ]
+    },
+    {
+      "begriff": "IP-Adresse",
+      "erklaerung": "Logische Adresse eines Geräts im Netz, bei IPv4 32 Bit, bei IPv6 128 Bit lang; sie besteht aus Netz- und Hostteil.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-2-1",
+        "AP1-6-2-4",
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "TCP",
+      "langform": "Transmission Control Protocol",
+      "erklaerung": "Protokoll der Transportschicht, das Daten verbindungsorientiert und zuverlässig überträgt.",
+      "sp": [
+        "AP1-6-1-1"
+      ]
+    },
+    {
+      "begriff": "DNS",
+      "langform": "Domain Name System",
+      "erklaerung": "Dienst zur Namensauflösung: übersetzt Namen wie www.example.com in IP-Adressen; Standardport 53.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-1-2",
+        "AP1-6-2-1",
+        "AP1-6-2-4",
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "DHCP",
+      "langform": "Dynamic Host Configuration Protocol",
+      "erklaerung": "Protokoll, mit dem ein DHCP-Server Clients automatisch IP-Adresse, Subnetzmaske, Standardgateway und DNS-Server zuteilt.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-2-1",
+        "AP1-6-2-4"
+      ]
+    },
+    {
+      "begriff": "HTTP",
+      "langform": "Hypertext Transfer Protocol",
+      "erklaerung": "Protokoll zur Übertragung von Webseiten, unverschlüsselt; Standardport 80.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "HTTPS",
+      "langform": "Hypertext Transfer Protocol Secure",
+      "erklaerung": "Verschlüsselte Variante von HTTP zur Übertragung von Webseiten; Standardport 443.",
+      "sp": [
+        "AP1-6-1-1",
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "IMAP",
+      "langform": "Internet Message Access Protocol",
+      "erklaerung": "Protokoll zum Abruf von E-Mails, bei dem die Nachrichten auf dem Server bleiben und von mehreren Geräten aus erreichbar sind.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "POP3",
+      "langform": "Post Office Protocol Version 3",
+      "erklaerung": "Protokoll zum Abruf von E-Mails, bei dem die Nachrichten auf ein Gerät geladen und in der Regel vom Server gelöscht werden.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "SMTP",
+      "langform": "Simple Mail Transfer Protocol",
+      "erklaerung": "Protokoll zum Versenden von E-Mails; Standardport 25.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "SSH",
+      "langform": "Secure Shell",
+      "erklaerung": "Protokoll für einen verschlüsselten Fernzugriff auf die Konsole eines anderen Rechners; Standardport 22.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Telnet",
+      "erklaerung": "Altes Protokoll für den Fernzugriff auf einen Rechner; überträgt alles im Klartext, auch Passwörter, und wird deshalb durch SSH ersetzt.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Port",
+      "erklaerung": "Nummer, über die ein Rechner Datenverkehr dem richtigen Dienst zuordnet, z. B. 443 für HTTPS.",
+      "sp": [
+        "AP1-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Switch",
+      "erklaerung": "Netzwerkgerät, das Geräte innerhalb eines Netzes verbindet und Daten anhand der MAC-Adresse gezielt an den Empfänger weiterleitet.",
+      "sp": [
+        "AP1-6-1-3"
+      ]
+    },
+    {
+      "begriff": "Router",
+      "erklaerung": "Netzwerkgerät, das verschiedene Netze verbindet, z. B. das lokale Netz mit dem Internet, und Pakete anhand der IP-Adresse weiterleitet.",
+      "sp": [
+        "AP1-6-1-3"
+      ]
+    },
+    {
+      "begriff": "Gateway",
+      "erklaerung": "Übergang von einem Netz in ein anderes, im lokalen Netz meist der Router; als Standardgateway trägt man ihn in die Konfiguration der Clients ein.",
+      "sp": [
+        "AP1-6-1-3",
+        "AP1-6-2-1",
+        "AP1-6-2-4",
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "Access Point",
+      "erklaerung": "Gerät, das ein WLAN bereitstellt und die WLAN-Geräte an das kabelgebundene Netz anbindet; auch Accesspoint geschrieben.",
+      "sp": [
+        "AP1-6-1-3"
+      ]
+    },
+    {
+      "begriff": "WLAN-Router",
+      "erklaerung": "Gerät, das Router, meist Switch und Access Point vereint und so ein lokales Netz mit WLAN ans Internet anbindet.",
+      "sp": [
+        "AP1-6-1-3"
+      ]
+    },
+    {
+      "begriff": "Firewall",
+      "erklaerung": "System, das Datenverkehr zwischen Netzen nach festgelegten Regeln erlaubt oder sperrt.",
+      "sp": [
+        "AP1-6-1-3"
+      ]
+    },
+    {
+      "begriff": "WLAN",
+      "langform": "Wireless Local Area Network",
+      "erklaerung": "Drahtloses lokales Netz, bei dem Geräte per Funk über einen Access Point verbunden sind.",
+      "sp": [
+        "AP1-6-1-3",
+        "AP1-6-1-4",
+        "AP1-6-3-1"
+      ]
+    },
+    {
+      "begriff": "Twisted Pair",
+      "erklaerung": "Kupfer-Netzwerkkabel mit paarweise verdrillten Adern; je nach Schirmung z. B. U/UTP oder S/FTP; Reichweite bis 100 m.",
+      "sp": [
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "Lichtwellenleiter",
+      "langform": "LWL",
+      "erklaerung": "Glasfaserkabel, das Daten als Licht überträgt: sehr hohe Datenraten, große Reichweite, unempfindlich gegen elektromagnetische Störungen.",
+      "sp": [
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "Kabelschirmung",
+      "erklaerung": "Hülle aus Folie (F) oder Geflecht (S) um ein Kabel oder Adernpaar, die vor elektromagnetischen Störungen schützt; U steht für ungeschirmt.",
+      "sp": [
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "Patchkabel",
+      "erklaerung": "Kurzes, flexibles Netzwerkkabel mit Steckern an beiden Enden, z. B. zwischen PC und Netzwerkdose.",
+      "sp": [
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "Kabelkategorie",
+      "langform": "Cat (Category)",
+      "erklaerung": "Leistungsklasse eines Twisted-Pair-Kabels: Cat 5e für 1 Gbit/s, Cat 6a und Cat 7 für 10 Gbit/s.",
+      "sp": [
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "Datenrate",
+      "erklaerung": "Datenmenge, die pro Sekunde übertragen wird, angegeben z. B. in Mbit/s oder Gbit/s.",
+      "sp": [
+        "AP1-6-1-4"
+      ]
+    },
+    {
+      "begriff": "IPv4",
+      "langform": "Internet Protocol Version 4",
+      "erklaerung": "Version des Internet Protocol mit 32 Bit langen Adressen, geschrieben als vier Dezimalzahlen von 0 bis 255, z. B. 192.168.1.10.",
+      "sp": [
+        "AP1-6-2-1",
+        "AP1-6-2-2",
+        "AP1-6-2-3"
+      ]
+    },
+    {
+      "begriff": "IPv6",
+      "langform": "Internet Protocol Version 6",
+      "erklaerung": "Nachfolger von IPv4 mit 128 Bit langen Adressen in acht hexadezimalen Blöcken; eingeführt, weil der IPv4-Adressraum erschöpft ist.",
+      "sp": [
+        "AP1-6-2-1",
+        "AP1-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Subnetzmaske",
+      "erklaerung": "Gibt bei IPv4 an, welcher Teil der IP-Adresse das Netz und welcher den Host bezeichnet, z. B. 255.255.255.0 für /24.",
+      "sp": [
+        "AP1-6-2-1",
+        "AP1-6-2-2",
+        "AP1-6-2-4"
+      ]
+    },
+    {
+      "begriff": "Präfixlänge",
+      "erklaerung": "Anzahl der Bits von links, die das Netz bezeichnen, geschrieben als /n hinter der Adresse, z. B. /24 oder bei IPv6 /64.",
+      "sp": [
+        "AP1-6-2-1",
+        "AP1-6-2-2",
+        "AP1-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Standardgateway",
+      "erklaerung": "Adresse des Routers, an den ein Client alle Pakete für Ziele außerhalb des eigenen Netzes schickt; liegt im selben Netz wie der Client.",
+      "sp": [
+        "AP1-6-2-1",
+        "AP1-6-2-4"
+      ]
+    },
+    {
+      "begriff": "Statische Adresse",
+      "erklaerung": "Von Hand fest eingetragene IP-Adresse, sinnvoll für Geräte, die immer unter derselben Adresse erreichbar sein müssen, etwa Server oder Drucker.",
+      "sp": [
+        "AP1-6-2-1"
+      ]
+    },
+    {
+      "begriff": "Private IP-Adresse",
+      "erklaerung": "Adresse aus 10.0.0.0/8, 172.16.0.0/12 oder 192.168.0.0/16, frei nutzbar in lokalen Netzen und im Internet nicht weitergeleitet.",
+      "sp": [
+        "AP1-6-2-1"
+      ]
+    },
+    {
+      "begriff": "Subnetting",
+      "erklaerung": "Berechnung und Aufteilung von IP-Netzen anhand der Präfixlänge, z. B. um Netzadresse, Broadcastadresse und Hostbereich zu bestimmen.",
+      "sp": [
+        "AP1-6-2-2",
+        "AP1-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Netzadresse",
+      "erklaerung": "Erste Adresse eines Netzes, bei der alle Hostbits 0 sind; bezeichnet das Netz selbst und wird keinem Gerät zugewiesen.",
+      "sp": [
+        "AP1-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Broadcastadresse",
+      "erklaerung": "Letzte Adresse eines IPv4-Netzes, bei der alle Hostbits 1 sind; Daten an sie erreichen alle Geräte im Netz.",
+      "sp": [
+        "AP1-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Host",
+      "erklaerung": "Gerät mit eigener IP-Adresse im Netz, z. B. PC, Drucker oder Server; nutzbare Hostadressen liegen zwischen Netz- und Broadcastadresse.",
+      "sp": [
+        "AP1-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Hexadezimal",
+      "erklaerung": "Zahlensystem zur Basis 16 mit den Ziffern 0–9 und A–F; eine Ziffer steht für 4 Bit. Darin schreibt man MAC- und IPv6-Adressen.",
+      "sp": [
+        "AP1-6-2-3",
+        "AP1-6-2-4"
+      ]
+    },
+    {
+      "begriff": "Interface-Identifier",
+      "erklaerung": "Hinterer Teil einer IPv6-Adresse, meist die letzten 64 Bit, der die Netzwerkschnittstelle eines Geräts im Netz bezeichnet.",
+      "sp": [
+        "AP1-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Verbindungslokale Adresse",
+      "langform": "Link-Local-Adresse",
+      "erklaerung": "IPv6-Adresse, die mit fe80 beginnt und nur im lokalen Netzabschnitt gilt; Router leiten sie nicht weiter.",
+      "sp": [
+        "AP1-6-2-3"
+      ]
+    },
+    {
+      "begriff": "ARP",
+      "langform": "Address Resolution Protocol",
+      "erklaerung": "Protokoll, das zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermittelt; der Befehl `arp -a` zeigt die gespeicherten Zuordnungen.",
+      "sp": [
+        "AP1-6-2-4",
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "Pre-shared Key",
+      "langform": "PSK",
+      "erklaerung": "WLAN-Anmeldung mit einem gemeinsamen Kennwort, das für alle Benutzer und Geräte gleich ist.",
+      "sp": [
+        "AP1-6-3-1"
+      ]
+    },
+    {
+      "begriff": "Enterprise-Verfahren",
+      "erklaerung": "WLAN-Anmeldung mit eigenen Zugangsdaten je Benutzer, die zentral geprüft werden; einzelne Zugänge lassen sich sperren.",
+      "sp": [
+        "AP1-6-3-1"
+      ]
+    },
+    {
+      "begriff": "VPN",
+      "langform": "Virtual Private Network",
+      "erklaerung": "Verschlüsselte Verbindung durch ein unsicheres Netz wie das Internet in ein privates Netz, z. B. für den Zugriff aufs Firmennetz von unterwegs.",
+      "sp": [
+        "AP1-6-3-1"
+      ]
+    },
+    {
+      "begriff": "Tunnel",
+      "erklaerung": "Bild für ein VPN: Die Datenpakete werden verschlüsselt und in andere Pakete verpackt durch das unsichere Netz übertragen.",
+      "sp": [
+        "AP1-6-3-1"
+      ]
+    },
+    {
+      "begriff": "ipconfig",
+      "erklaerung": "Windows-Befehl, der die eigene Netzwerkkonfiguration anzeigt; `ipconfig /all` zeigt zusätzlich u. a. DNS-Server und MAC-Adresse.",
+      "sp": [
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "ifconfig / ip",
+      "erklaerung": "Linux-Befehle, die die Netzwerkkonfiguration anzeigen und ändern; `ip` aus dem Paket iproute2 ersetzt das ältere `ifconfig`.",
+      "sp": [
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "ping",
+      "erklaerung": "Befehl, der prüft, ob ein Ziel im Netz erreichbar ist, und die Antwortzeit anzeigt.",
+      "sp": [
+        "AP1-6-2-3",
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "traceroute",
+      "erklaerung": "Befehl, der den Weg der Pakete zum Ziel mit allen Routern anzeigt; unter Windows `tracert`.",
+      "sp": [
+        "AP1-6-3-2"
+      ]
+    },
+    {
+      "begriff": "nslookup",
+      "erklaerung": "Befehl, der einen DNS-Server abfragt und so prüft, ob ein Name in eine IP-Adresse aufgelöst wird.",
+      "sp": [
+        "AP1-6-3-2"
+      ]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP1-6-1-1-K1-1",
+      "frage": "Die deutschen Schichtnamen schwanken in Lehrbüchern (Schicht 3 auch „Netzwerkschicht“, Schicht 5 auch „Kommunikationssteuerungsschicht“). Werden die hier gewählten Namen erwartet, oder sind die Varianten gleichwertig?"
+    },
+    {
+      "id": "AP1-6-1-1-K2-1",
+      "frage": "Ethernet umfasst genau genommen Schicht 1 und Schicht 2. Die Karte folgt der Können-Aussage (Schicht 2). Wird in der Prüfung auch Schicht 1 akzeptiert?"
+    },
+    {
+      "id": "AP1-6-1-1-K2-3",
+      "frage": "HTTPS ordnet die Karte gemäß Können-Aussage Schicht 7 zu; die Verschlüsselung (TLS) wird in manchen Lehrbüchern Schicht 5 oder 6 zugeordnet."
+    },
+    {
+      "id": "AP1-6-1-1-K2-4",
+      "frage": "Switch Schicht 2 und Router Schicht 3 gelten für klassische Geräte; es gibt auch Layer-3-Switches. Für AP1 vermutlich ohne Belang."
+    },
+    {
+      "id": "AP1-6-1-4-K1-1",
+      "frage": "Datenraten und Reichweiten von Lichtwellenleitern hängen stark vom Fasertyp ab; die Karte nennt sie nur qualitativ. Erwartet die Prüfung konkrete Zahlen?"
+    },
+    {
+      "id": "AP1-6-1-4-K6-1",
+      "frage": "Cat 7 ist nach Norm für 10 Gbit/s (600 MHz) ausgelegt; manche Lehrbücher und Händler nennen höhere Werte. Welche Angabe erwartet die Prüfung?"
+    },
+    {
+      "id": "AP1-6-1-3-K5",
+      "frage": "Die Symbole des Katalog-Anhangs liegen nicht vor; deshalb gibt es dazu keine Karte. Ein Bildtrainer oder Karten mit Abbildungen wären nötig."
+    },
+    {
+      "id": "AP1-6-3-2-K3-1",
+      "frage": "Die Können-Aussage nennt die Reihenfolge von unten (Kabel) nach oben, der Rahmen beschreibt auch eine Planung von oben (Browser) nach unten. Beide Richtungen gelten als systematisch; welche die Prüfung erwartet, ist offen."
+    },
+    {
+      "id": "AP1-6-3-2-K5-1",
+      "frage": "Farbe und Bedeutung der Netzwerk-LEDs sind herstellerabhängig (teils getrennte LEDs für Verbindung und Aktivität). Die Karte folgt der Können-Aussage."
+    }
+  ]
+}

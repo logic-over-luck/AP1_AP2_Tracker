@@ -1,0 +1,1224 @@
+{
+ "paket": "AP2-5",
+ "bloecke": {
+  "AP2-5-1": {
+   "satz": "Wie Software statisch und dynamisch, als Black-Box oder White-Box und in Stufen vom Baustein bis zum Gesamtsystem getestet wird."
+  },
+  "AP2-5-2": {
+   "satz": "Wie man Testdaten auswählt, die Testabdeckung beurteilt, Code im Schreibtischtest prüft und Tests protokolliert und auswertet."
+  },
+  "AP2-5-3": {
+   "satz": "Wie man Fehler mit Breakpoints, Ablaufverfolgung und Ausgaben findet und testgetrieben entwickelt."
+  },
+  "AP2-5-4": {
+   "satz": "Wie eine Versionsverwaltung Änderungen nachvollziehbar macht und mit Branch, Commit, Pull, Push und Merge gemeinsames Arbeiten ermöglicht."
+  },
+  "AP2-5-5": {
+   "satz": "Wie Qualität mit PDCA-Zyklus, KVP und Kennzahlen gesteuert, im Soll-Ist-Vergleich gemessen und mit Prüfverfahren gesichert wird."
+  }
+ },
+ "stichpunkte": {
+  "AP2-5-1-1": {
+   "ziel": "Statische und dynamische Testverfahren sowie Black-Box- und White-Box-Test unterscheiden und für eine Situation begründet auswählen.",
+   "punkte": [
+    "Statisch ohne Ausführung (z. B. Review), dynamisch mit Ausführung (Testlauf mit Testdaten)",
+    "Black-Box: gegen die Anforderungen testen, ohne den Code zu kennen",
+    "White-Box: Testfälle aus dem Code ableiten, damit möglichst alle Teile durchlaufen werden",
+    "Vorteile White-Box: genauere Eingrenzung von Fehlern, hohe Abdeckung des Codes"
+   ]
+  },
+  "AP2-5-1-2": {
+   "ziel": "Die Teststufen vom Komponententest bis zum Abnahmetest ordnen und Testarten einer Beschreibung zuordnen.",
+   "punkte": [
+    "Reihenfolge: Komponenten-, Integrations-, System-, Abnahmetest (beim Kunden)",
+    "Unit-Test: ein einzelner Baustein wird getrennt vom Rest automatisch geprüft",
+    "End-to-End-Test: vollständiger Ablauf aus Sicht des Benutzers durch das ganze System",
+    "Last-, Performance-, Belastungstest: erwartete Last, Antwortzeiten, an und über der Grenze"
+   ]
+  },
+  "AP2-5-2-1": {
+   "ziel": "Für eine Funktion sinnvolle Testdaten auswählen, die Normalfall, Grenzen, Sonderfälle und ungültige Eingaben abdecken.",
+   "punkte": [
+    "Normalfall, Grenzen und ungültige Eingaben abdecken",
+    "Extremwertetest: kleinste und größte zulässige Werte",
+    "Sonderfälle: leere Eingabe, fehlender Wert, nur ein Element",
+    "Äquivalenzklassen: je Klasse gleich behandelter Eingaben ein Vertreter",
+    "Testdatengeneratoren für große Mengen; echte Kundendaten nicht ungeschützt verwenden"
+   ]
+  },
+  "AP2-5-2-2": {
+   "ziel": "Testabdeckung sowie Anweisungs-, Zweig- und Pfadüberdeckung erläutern und für kurzen Code alle Pfade aufschreiben.",
+   "punkte": [
+    "Testabdeckung: Anteil des Codes, der von den Tests ausgeführt wird",
+    "Anweisungsüberdeckung: jede Anweisung mindestens einmal ausgeführt",
+    "Zweigüberdeckung: jede Verzweigung in jede Richtung mindestens einmal durchlaufen",
+    "Pfadüberdeckung: jeder mögliche Weg vom Anfang bis zum Ende durchlaufen",
+    "Pfad- schließt Zweig-, Zweig- schließt Anweisungsüberdeckung ein"
+   ]
+  },
+  "AP2-5-2-3": {
+   "ziel": "Eine Funktion mit Testdaten von Hand durchgehen, erwartetes und tatsächliches Ergebnis vergleichen und fehlerhafte Zeilen benennen und berichtigen.",
+   "punkte": [
+    "Tatsächliches Ergebnis durch Durchgehen des Codes von Hand bestimmen",
+    "Erwartetes Ergebnis aus der Beschreibung der Funktion ableiten und gegenüberstellen",
+    "Aus den Abweichungen die fehlerhafte Zeile mit Zeilennummer benennen und berichtigen",
+    "Typisch: falscher Startwert, Schleife beginnt oder endet eine Stelle zu früh oder zu spät"
+   ]
+  },
+  "AP2-5-2-4": {
+   "ziel": "Den Testprozess in seinen Schritten durchführen, Test- und Abnahmeprotokoll führen und Testergebnisse aufbereiten.",
+   "punkte": [
+    "Schritte: Verfahren auswählen, Kriterien festlegen, Testdaten erzeugen, Protokoll führen und auswerten",
+    "Festlegen, wann ein Test als bestanden gilt",
+    "Testprotokoll: Testfall, Eingabe, erwartetes und tatsächliches Ergebnis, Bewertung, Tester, Datum",
+    "Zweck und Inhalt des Abnahmeprotokolls kennen",
+    "Ergebnisse aufbereiten, z. B. Übersicht bestandener und fehlgeschlagener Testfälle"
+   ]
+  },
+  "AP2-5-3-1": {
+   "ziel": "Das Vorgehen beim Debuggen und beim testgetriebenen Arbeiten erklären und syntaktische von semantischen Fehlern unterscheiden.",
+   "punkte": [
+    "Breakpoint: Programm hält an, Variablen ansehen, schrittweise weitergehen",
+    "Ablaufverfolgung: Weg und Variablenwerte Schritt für Schritt nachvollziehen",
+    "print-Debugging: Zwischenwerte gezielt ausgeben",
+    "TDD: erst den Test, dann den Code, der ihn besteht, dann aufräumen",
+    "Syntaktisch: Regelverstoß der Sprache; semantisch: lauffähig, aber falsches Ergebnis"
+   ]
+  },
+  "AP2-5-4-1": {
+   "ziel": "Zweck und Grundfunktionen einer Versionsverwaltung erklären und den Ablauf der Zusammenarbeit beschreiben.",
+   "punkte": [
+    "Zweck: Änderungen nachvollziehen, alte Stände wiederherstellen, gemeinsam am Code arbeiten",
+    "Branch, Commit, Merge, Pull und Push erklären",
+    "Ablauf: Stand holen, im eigenen Zweig ändern, festschreiben, hochladen, zusammenführen",
+    "Merge-Konflikt erklären; lokales und entferntes Repository unterscheiden"
+   ]
+  },
+  "AP2-5-5-1": {
+   "ziel": "PDCA-Zyklus und KVP auf Beispiele anwenden, Kennzahlen erklären und qualitätssichernde Maßnahmen für ein Softwareprojekt erläutern.",
+   "punkte": [
+    "PDCA: Plan, Do, Check, Act – planen, umsetzen, prüfen, verbessern",
+    "KVP: ständige Verbesserung in kleinen Schritten, alle Mitarbeiter wirken mit",
+    "Kennzahlen messen die Zielerreichung, z. B. Fehleranzahl, Testabdeckung, Verfügbarkeit",
+    "Maßnahmen: Vorgehensmodell, festgelegte Testverfahren, Code-Reviews, Doku-Vorgaben"
+   ]
+  },
+  "AP2-5-5-2": {
+   "ziel": "Im Soll-Ist-Vergleich Abweichungen als Differenz und in Prozent berechnen, bewerten und Ursachen und Maßnahmen nennen.",
+   "punkte": [
+    "Abweichung als Differenz aus Ist- und Soll-Wert",
+    "Prozentuale Abweichung bezogen auf den Soll-Wert",
+    "Erhebliche Abweichungen erkennen und bewerten",
+    "Mögliche Ursachen nennen und eine Maßnahme vorschlagen"
+   ]
+  },
+  "AP2-5-5-3": {
+   "ziel": "Paritätsbit und Redundanz als Prüfverfahren erklären, die Fehler in gespeicherten oder übertragenen Daten erkennbar machen.",
+   "punkte": [
+    "Paritätsbit ergänzt die Anzahl der Einsen auf eine gerade oder ungerade Zahl",
+    "Erkennt einen einzelnen Bitfehler, kann ihn aber nicht berichtigen",
+    "Redundanz: zusätzliche Informationen mitspeichern oder mitsenden, damit Fehler auffallen"
+   ]
+  }
+ },
+ "karten": [
+  {
+   "id": "AP2-5-1-1-K1-1",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K1",
+   "vorne": "Worin unterscheiden sich statische und dynamische Testverfahren?",
+   "hinten": "- statisch: Das Programm wird **nicht** ausgeführt, der Code oder das Dokument wird geprüft\n- dynamisch: Das Programm wird mit Testdaten ausgeführt"
+  },
+  {
+   "id": "AP2-5-1-1-K1-2",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K1",
+   "vorne": "Nenne je ein Beispiel für ein statisches und ein dynamisches Testverfahren.",
+   "hinten": "- statisch: Review (auch Schreibtischtest)\n- dynamisch: Testlauf mit Testdaten"
+  },
+  {
+   "id": "AP2-5-1-1-K1-3",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K1",
+   "vorne": "Kollegen lesen den Quellcode gemeinsam durch und suchen nach Fehlern, ohne ihn auszuführen. Welche Art von Testverfahren ist das?",
+   "hinten": "Ein statisches Testverfahren (Review)."
+  },
+  {
+   "id": "AP2-5-1-1-K2-1",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K2",
+   "vorne": "Was ist ein Black-Box-Test?",
+   "hinten": "Ein Test gegen die Anforderungen: Der Tester prüft Eingaben und Ausgaben, ohne den Code zu kennen."
+  },
+  {
+   "id": "AP2-5-1-1-K2-2",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K2",
+   "vorne": "Woraus werden beim Black-Box-Test die Testfälle abgeleitet?",
+   "hinten": "Aus den Anforderungen (Spezifikation), nicht aus dem Code."
+  },
+  {
+   "id": "AP2-5-1-1-K3-1",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K3",
+   "vorne": "Was ist ein White-Box-Test?",
+   "hinten": "Ein Test, bei dem die Testfälle aus dem Code abgeleitet werden, damit möglichst alle Teile des Codes durchlaufen werden."
+  },
+  {
+   "id": "AP2-5-1-1-K3-2",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K3",
+   "vorne": "Was ist der Kernunterschied zwischen Black-Box- und White-Box-Test?",
+   "hinten": "- Black-Box: Code unbekannt, Prüfung gegen die Anforderungen\n- White-Box: Code bekannt, Testfälle aus dem Code abgeleitet"
+  },
+  {
+   "id": "AP2-5-1-1-K4-1",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K4",
+   "vorne": "Nenne zwei Vorteile des White-Box-Tests gegenüber dem Black-Box-Test.",
+   "hinten": "- Fehler lassen sich genauer eingrenzen (Stelle im Code)\n- hohe Abdeckung des Codes, auch selten durchlaufene Teile werden geprüft"
+  },
+  {
+   "id": "AP2-5-1-1-K5-1",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K5",
+   "vorne": "Die Fachabteilung soll prüfen, ob die Anwendung die Anforderungen erfüllt. Den Quellcode kennt sie nicht. Welches Testverfahren passt und warum?",
+   "hinten": "Black-Box-Test: Er prüft gegen die Anforderungen und setzt keine Kenntnis des Codes voraus."
+  },
+  {
+   "id": "AP2-5-1-1-K5-2",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K5",
+   "vorne": "Ein Entwickler will sicherstellen, dass jede Verzweigung seiner Funktion getestet wird. Welches Testverfahren passt und warum?",
+   "hinten": "White-Box-Test: Die Testfälle werden aus dem Code abgeleitet, so lässt sich jede Verzweigung gezielt durchlaufen."
+  },
+  {
+   "id": "AP2-5-1-1-K5-3",
+   "sp": "AP2-5-1-1",
+   "k": "AP2-5-1-1-K5",
+   "vorne": "Neuer Code soll geprüft werden, bevor er zum ersten Mal ausgeführt wird. Welche Art von Testverfahren passt?",
+   "hinten": "Ein statisches Verfahren, z. B. ein Review: Es prüft den Code ohne Ausführung."
+  },
+  {
+   "id": "AP2-5-1-2-K1-1",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K1",
+   "vorne": "Bringe Systemtest, Komponententest und Integrationstest in die richtige Reihenfolge.",
+   "hinten": "1. Komponententest\n2. Integrationstest\n3. Systemtest"
+  },
+  {
+   "id": "AP2-5-1-2-K1-2",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K1",
+   "vorne": "Was wird beim Integrationstest geprüft?",
+   "hinten": "Das Zusammenspiel mehrerer bereits getesteter Komponenten, vor allem ihre Schnittstellen."
+  },
+  {
+   "id": "AP2-5-1-2-K1-3",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K1",
+   "vorne": "Was wird beim Systemtest geprüft?",
+   "hinten": "Das vollständige System als Ganzes gegen die Anforderungen, in einer Umgebung, die dem späteren Betrieb möglichst nahekommt."
+  },
+  {
+   "id": "AP2-5-1-2-K2-1",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K2",
+   "vorne": "Was ist ein Unit-Test?",
+   "hinten": "Ein Test, der einen einzelnen Baustein (Komponente, Modul, z. B. eine Funktion oder Klasse) getrennt vom Rest automatisch prüft."
+  },
+  {
+   "id": "AP2-5-1-2-K2-2",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K2",
+   "vorne": "Welchen Zweck hat ein Unit-Test?",
+   "hinten": "Fehler in einem einzelnen Baustein früh und eindeutig zu finden; weil er automatisch läuft, lässt er sich nach jeder Änderung wiederholen."
+  },
+  {
+   "id": "AP2-5-1-2-K2-3",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K2",
+   "vorne": "Welche zwei anderen Bezeichnungen gibt es für den Komponententest?",
+   "hinten": "Modultest und Unit-Test."
+  },
+  {
+   "id": "AP2-5-1-2-K3-1",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K3",
+   "vorne": "Was ist ein End-to-End-Test?",
+   "hinten": "Ein Test, der einen vollständigen Ablauf aus Sicht des Benutzers durch das ganze System prüft, von der Eingabe bis zum Ergebnis."
+  },
+  {
+   "id": "AP2-5-1-2-K4-1",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K4",
+   "vorne": "Was prüft ein Lasttest?",
+   "hinten": "Das Verhalten des Systems unter der erwarteten Last, z. B. bei der geplanten Zahl gleichzeitiger Benutzer."
+  },
+  {
+   "id": "AP2-5-1-2-K4-2",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K4",
+   "vorne": "Was prüft ein Performancetest?",
+   "hinten": "Die Antwortzeiten des Systems."
+  },
+  {
+   "id": "AP2-5-1-2-K4-3",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K4",
+   "vorne": "Was prüft ein Belastungstest?",
+   "hinten": "Das Verhalten des Systems an und über seiner Belastungsgrenze."
+  },
+  {
+   "id": "AP2-5-1-2-K5-1",
+   "sp": "AP2-5-1-2",
+   "k": "AP2-5-1-2-K5",
+   "vorne": "Welche Teststufe folgt auf den Systemtest und wo findet sie statt?",
+   "hinten": "Der Abnahmetest; er ist die letzte Stufe und findet beim Kunden statt."
+  },
+  {
+   "id": "AP2-5-2-1-K1-1",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K1",
+   "vorne": "Welche drei Arten von Fällen sollen die Testdaten für eine Funktion abdecken?",
+   "hinten": "- den Normalfall\n- die Grenzen\n- ungültige Eingaben"
+  },
+  {
+   "id": "AP2-5-2-1-K1-2",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K1",
+   "vorne": "Eine Funktion akzeptiert ganze Zahlen von 1 bis 100. Nenne passende Testdaten für Normalfall, Grenzen und ungültige Eingaben.",
+   "hinten": "- Normalfall: z. B. 50\n- Grenzen: 1 und 100\n- ungültig: z. B. 0, 101, keine Zahl"
+  },
+  {
+   "id": "AP2-5-2-1-K2-1",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K2",
+   "vorne": "Was ist ein Extremwertetest?",
+   "hinten": "Ein Test mit den kleinsten und den größten zulässigen Werten einer Eingabe."
+  },
+  {
+   "id": "AP2-5-2-1-K3-1",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K3",
+   "vorne": "Nenne drei Sonderfälle, die beim Testen einer Funktion mit einer Liste geprüft werden müssen.",
+   "hinten": "- leere Eingabe (leere Liste)\n- fehlender Wert\n- nur ein Element"
+  },
+  {
+   "id": "AP2-5-2-1-K4-1",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K4",
+   "vorne": "Wozu dient ein Testdatengenerator?",
+   "hinten": "Er erzeugt automatisch große Mengen passender Testdaten."
+  },
+  {
+   "id": "AP2-5-2-1-K5-1",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K5",
+   "vorne": "Was ist eine Äquivalenzklasse?",
+   "hinten": "Eine Gruppe von Eingaben, die vom Programm gleich behandelt werden; getestet wird je Klasse mit einem Vertreter."
+  },
+  {
+   "id": "AP2-5-2-1-K5-2",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K5",
+   "vorne": "Ein Rabatt gilt für Bestellungen ab 100 € (ganze Euro). Welche Äquivalenzklassen gibt es für den Bestellwert?",
+   "hinten": "- ungültig: unter 0 €\n- gültig ohne Rabatt: 0 bis 99 €\n- gültig mit Rabatt: ab 100 €\nJe Klasse ein Vertreter, z. B. −5, 50, 150."
+  },
+  {
+   "id": "AP2-5-2-1-K5-3",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K5",
+   "vorne": "Warum testet man je Äquivalenzklasse nur einen Vertreter?",
+   "hinten": "Alle Werte einer Klasse werden gleich behandelt; ein weiterer Wert aus derselben Klasse würde keinen neuen Fehler zeigen. So bleibt die Zahl der Testfälle klein."
+  },
+  {
+   "id": "AP2-5-2-1-K6-1",
+   "sp": "AP2-5-2-1",
+   "k": "AP2-5-2-1-K6",
+   "vorne": "Warum dürfen echte Kundendaten nicht ungeschützt als Testdaten verwendet werden?",
+   "hinten": "Es sind personenbezogene Daten, die dem Datenschutz (DSGVO) unterliegen. Testumgebungen sind oft schwächer geschützt und mehr Personen haben Zugriff. Deshalb anonymisieren oder künstliche Testdaten verwenden."
+  },
+  {
+   "id": "AP2-5-2-2-K1-1",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K1",
+   "vorne": "Was versteht man unter Testabdeckung?",
+   "hinten": "Den Anteil des Codes, der von den Tests ausgeführt wird, meist in Prozent angegeben."
+  },
+  {
+   "id": "AP2-5-2-2-K2-1",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K2",
+   "vorne": "Wann ist Anweisungsüberdeckung erreicht?",
+   "hinten": "Wenn jede Anweisung des Codes mindestens einmal ausgeführt wurde."
+  },
+  {
+   "id": "AP2-5-2-2-K3-1",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K3",
+   "vorne": "Wann ist Zweigüberdeckung erreicht?",
+   "hinten": "Wenn jede Verzweigung in jede Richtung mindestens einmal durchlaufen wurde, also jede Bedingung einmal wahr und einmal falsch war."
+  },
+  {
+   "id": "AP2-5-2-2-K3-2",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K3",
+   "vorne": "Code: `if x > 0 then y = 1 end if` (ohne else). Wie viele Testfälle braucht man mindestens für Anweisungs- und für Zweigüberdeckung?",
+   "hinten": "- Anweisungsüberdeckung: 1 (x > 0)\n- Zweigüberdeckung: 2 (x > 0 und x ≤ 0), weil auch der leere Nein-Zweig durchlaufen werden muss"
+  },
+  {
+   "id": "AP2-5-2-2-K4-1",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K4",
+   "vorne": "Wann ist Pfadüberdeckung erreicht?",
+   "hinten": "Wenn jeder mögliche Weg vom Anfang bis zum Ende des Codes mindestens einmal durchlaufen wurde."
+  },
+  {
+   "id": "AP2-5-2-2-K5-1",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K5",
+   "vorne": "Wie bauen Anweisungs-, Zweig- und Pfadüberdeckung aufeinander auf?",
+   "hinten": "Vollständige Pfadüberdeckung schließt Zweigüberdeckung ein, Zweigüberdeckung schließt Anweisungsüberdeckung ein."
+  },
+  {
+   "id": "AP2-5-2-2-K5-2",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K5",
+   "vorne": "Ein Test erreicht 100 % Anweisungsüberdeckung. Ist damit auch Zweigüberdeckung erreicht?",
+   "hinten": "Nein, nicht unbedingt: Ein leerer Zweig (z. B. ein if ohne else) enthält keine Anweisung und kann unberücksichtigt bleiben. Umgekehrt gilt es: Zweigüberdeckung schließt Anweisungsüberdeckung ein."
+  },
+  {
+   "id": "AP2-5-2-2-K6-1",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K6",
+   "vorne": "Schreibe alle Pfade auf: `if a > 0 then (if b > 0 then x = 1 else x = 2) else x = 3`",
+   "hinten": "3 Pfade:\n- a > 0 und b > 0 → x = 1\n- a > 0 und b ≤ 0 → x = 2\n- a ≤ 0 → x = 3"
+  },
+  {
+   "id": "AP2-5-2-2-K6-2",
+   "sp": "AP2-5-2-2",
+   "k": "AP2-5-2-2-K6",
+   "vorne": "Ein Code enthält zwei unabhängige if-else-Verzweigungen hintereinander. Wie viele Pfade gibt es?",
+   "hinten": "4 Pfade (2 · 2): ja/ja, ja/nein, nein/ja, nein/nein."
+  },
+  {
+   "id": "AP2-5-2-3-K1-1",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K1",
+   "vorne": "Was ist ein Schreibtischtest?",
+   "hinten": "Ein statisches Testverfahren: Der Code wird mit vorgegebenen Testdaten von Hand Zeile für Zeile durchgegangen, ohne ihn auszuführen."
+  },
+  {
+   "id": "AP2-5-2-3-K1-2",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K1",
+   "vorne": "Wie hält man beim Schreibtischtest die Werte fest?",
+   "hinten": "In einer Tabelle: je Variable eine Spalte, je Schritt (oder Schleifendurchlauf) eine Zeile mit den aktuellen Werten."
+  },
+  {
+   "id": "AP2-5-2-3-K2-1",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K2",
+   "vorne": "Woraus leitet man beim Schreibtischtest das erwartete Ergebnis ab, woraus das tatsächliche?",
+   "hinten": "- erwartet: aus der Beschreibung der Funktion (was sie leisten soll)\n- tatsächlich: aus dem Durchgehen des Codes"
+  },
+  {
+   "id": "AP2-5-2-3-K2-2",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K2",
+   "vorne": "Warum darf das erwartete Ergebnis nicht aus dem Code abgelesen werden?",
+   "hinten": "Dann würde ein Fehler im Code mit in das erwartete Ergebnis übernommen und bliebe unentdeckt."
+  },
+  {
+   "id": "AP2-5-2-3-K3-1",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K3",
+   "vorne": "Wie findet man nach dem Schreibtischtest die fehlerhafte Zeile?",
+   "hinten": "Die Testfälle mit Abweichung vergleichen und den Ablauf verfolgen: Die Zeile, ab der ein Wert erstmals vom Erwarteten abweicht, ist die gesuchte; sie wird mit Zeilennummer benannt."
+  },
+  {
+   "id": "AP2-5-2-3-K5-1",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K5",
+   "vorne": "Nenne zwei typische inhaltliche Fehler, die man beim Schreibtischtest findet.",
+   "hinten": "- falscher Startwert einer Variablen\n- Schleife beginnt oder endet eine Stelle zu früh oder zu spät"
+  },
+  {
+   "id": "AP2-5-2-3-K5-2",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K5",
+   "vorne": "Eine Funktion soll die Summe eines Arrays bilden; der Code beginnt mit `summe = 1`. Welcher Fehler liegt vor und wie lautet die Berichtigung?",
+   "hinten": "Falscher Startwert: Jede Summe ist um 1 zu groß. Berichtigt: `summe = 0`."
+  },
+  {
+   "id": "AP2-5-2-3-K5-3",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K5",
+   "vorne": "Ein Array mit Index ab 0 soll vollständig durchlaufen werden: `for i = 1 to laenge(arr) - 1`. Welcher Fehler liegt vor und wie lautet die Berichtigung?",
+   "hinten": "Die Schleife beginnt eine Stelle zu spät, das erste Element (Index 0) fehlt. Berichtigt: `for i = 0 to laenge(arr) - 1`."
+  },
+  {
+   "id": "AP2-5-2-3-K5-4",
+   "sp": "AP2-5-2-3",
+   "k": "AP2-5-2-3-K5",
+   "vorne": "Ein Array mit Index ab 0 wird mit `for i = 0 to laenge(arr)` durchlaufen. Welcher Fehler liegt vor und wie lautet die Berichtigung?",
+   "hinten": "Die Schleife endet eine Stelle zu spät; der letzte Zugriff liegt außerhalb des Arrays. Berichtigt: `for i = 0 to laenge(arr) - 1`."
+  },
+  {
+   "id": "AP2-5-2-4-K1-1",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K1",
+   "vorne": "Nenne die vier Schritte des Testprozesses in der richtigen Reihenfolge.",
+   "hinten": "1. Testverfahren auswählen\n2. Kriterien für Testergebnisse festlegen\n3. Testdaten erzeugen und auswählen\n4. Testprotokoll führen und auswerten"
+  },
+  {
+   "id": "AP2-5-2-4-K2-1",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K2",
+   "vorne": "Wann gilt ein einzelner Testfall als bestanden?",
+   "hinten": "Wenn das tatsächliche Ergebnis mit dem vorher festgelegten erwarteten Ergebnis übereinstimmt."
+  },
+  {
+   "id": "AP2-5-2-4-K2-2",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K2",
+   "vorne": "Warum legt man die Kriterien für das Bestehen vor der Testdurchführung fest?",
+   "hinten": "Damit die Bewertung objektiv und nachvollziehbar ist und nicht nachträglich an das tatsächliche Ergebnis angepasst wird."
+  },
+  {
+   "id": "AP2-5-2-4-K3-1",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K3",
+   "vorne": "Wie wertet man ein Testprotokoll aus?",
+   "hinten": "Für jeden Testfall erwartetes und tatsächliches Ergebnis vergleichen, als bestanden oder fehlgeschlagen bewerten und die fehlgeschlagenen Fälle als Fehler zur Behebung weitergeben."
+  },
+  {
+   "id": "AP2-5-2-4-K4-1",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K4",
+   "vorne": "Welche Inhalte gehören in ein Testprotokoll?",
+   "hinten": "- Testfall\n- Eingabedaten\n- erwartetes Ergebnis\n- tatsächliches Ergebnis\n- Bewertung (bestanden/fehlgeschlagen)\n- Tester und Datum"
+  },
+  {
+   "id": "AP2-5-2-4-K5-1",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K5",
+   "vorne": "Wozu dient ein Abnahmeprotokoll?",
+   "hinten": "Es hält schriftlich fest, dass der Kunde die Leistung geprüft und abgenommen hat, und dient als Nachweis zwischen Auftraggeber und Auftragnehmer."
+  },
+  {
+   "id": "AP2-5-2-4-K5-2",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K5",
+   "vorne": "Was wird in einem Abnahmeprotokoll festgehalten?",
+   "hinten": "- abgenommene Leistung (Projekt, geprüfte Anforderungen)\n- Datum und Beteiligte\n- festgestellte Mängel\n- Ergebnis: abgenommen, unter Vorbehalt oder abgelehnt\n- Unterschriften"
+  },
+  {
+   "id": "AP2-5-2-4-K6-1",
+   "sp": "AP2-5-2-4",
+   "k": "AP2-5-2-4-K6",
+   "vorne": "Wie kann man Testergebnisse für eine Präsentation aufbereiten?",
+   "hinten": "Als Übersicht bestandener und fehlgeschlagener Testfälle, z. B. als Tabelle oder Diagramm mit Anzahl bzw. Anteil, ergänzt um die offenen Fehler."
+  },
+  {
+   "id": "AP2-5-3-1-K1-1",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K1",
+   "vorne": "Was ist Debugging?",
+   "hinten": "Das gezielte Suchen und Beheben von Fehlern in einem Programm, meist mit einem Debugger."
+  },
+  {
+   "id": "AP2-5-3-1-K1-2",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K1",
+   "vorne": "Was bewirkt ein Breakpoint?",
+   "hinten": "Das Programm hält an dieser Stelle an; man kann die Werte der Variablen ansehen und schrittweise weitergehen."
+  },
+  {
+   "id": "AP2-5-3-1-K2-1",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K2",
+   "vorne": "Was versteht man unter Ablaufverfolgung?",
+   "hinten": "Den Weg des Programms und die Werte der Variablen Schritt für Schritt nachzuvollziehen."
+  },
+  {
+   "id": "AP2-5-3-1-K3-1",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K3",
+   "vorne": "Was ist print-Debugging?",
+   "hinten": "Man lässt an gezielt gewählten Stellen Zwischenwerte ausgeben (z. B. mit `print`), um zu sehen, wo sich ein Wert anders entwickelt als erwartet."
+  },
+  {
+   "id": "AP2-5-3-1-K4-1",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K4",
+   "vorne": "Beschreibe das Vorgehen bei Test Driven Development (TDD).",
+   "hinten": "1. erst den Test schreiben (er schlägt fehl)\n2. dann den Code schreiben, der den Test besteht\n3. dann den Code aufräumen, die Tests müssen weiter bestehen"
+  },
+  {
+   "id": "AP2-5-3-1-K4-2",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K4",
+   "vorne": "Wofür steht die Abkürzung TDD?",
+   "hinten": "Test Driven Development (testgetriebene Entwicklung)."
+  },
+  {
+   "id": "AP2-5-3-1-K5-1",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K5",
+   "vorne": "Was ist der Unterschied zwischen einem syntaktischen und einem semantischen Fehler?",
+   "hinten": "- syntaktisch: Verstoß gegen die Regeln der Sprache, das Programm läuft nicht\n- semantisch: Das Programm läuft, liefert aber ein falsches Ergebnis"
+  },
+  {
+   "id": "AP2-5-3-1-K5-2",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K5",
+   "vorne": "In einer Schleife fehlt ein Semikolon, das die Sprache vorschreibt. Welche Art von Fehler ist das?",
+   "hinten": "Ein syntaktischer Fehler."
+  },
+  {
+   "id": "AP2-5-3-1-K5-3",
+   "sp": "AP2-5-3-1",
+   "k": "AP2-5-3-1-K5",
+   "vorne": "Eine Funktion soll den Durchschnitt berechnen, teilt die Summe aber durch die Anzahl plus 1. Welche Art von Fehler ist das?",
+   "hinten": "Ein semantischer Fehler: Der Code ist lauffähig, das Ergebnis aber falsch."
+  },
+  {
+   "id": "AP2-5-4-1-K1-1",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K1",
+   "vorne": "Wozu dient eine Versionsverwaltung?",
+   "hinten": "- Änderungen nachvollziehen (wer, wann, was)\n- alte Stände wiederherstellen\n- gemeinsam am selben Code arbeiten"
+  },
+  {
+   "id": "AP2-5-4-1-K2-1",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K2",
+   "vorne": "Was ist ein Branch?",
+   "hinten": "Ein eigener Entwicklungszweig, in dem man getrennt vom Hauptstand arbeiten kann, z. B. an einer neuen Funktion."
+  },
+  {
+   "id": "AP2-5-4-1-K2-2",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K2",
+   "vorne": "Was bedeutet Merge?",
+   "hinten": "Die Änderungen eines Zweigs mit einem anderen Zweig zusammenführen."
+  },
+  {
+   "id": "AP2-5-4-1-K2-3",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K2",
+   "vorne": "Was bewirken Pull und Push?",
+   "hinten": "- Pull: Änderungen aus dem entfernten Repository holen und in den lokalen Stand übernehmen\n- Push: lokale Änderungen (Commits) in das entfernte Repository hochladen"
+  },
+  {
+   "id": "AP2-5-4-1-K3-1",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K3",
+   "vorne": "Was ist ein Commit?",
+   "hinten": "Das Festschreiben von Änderungen als neuer Stand im Repository, mit einer Beschreibung der Änderung."
+  },
+  {
+   "id": "AP2-5-4-1-K3-2",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K3",
+   "vorne": "Beschreibe den Ablauf, wenn ein Entwickler im Team eine Änderung einbringt.",
+   "hinten": "1. aktuellen Stand holen (Pull)\n2. im eigenen Zweig (Branch) ändern\n3. Änderungen festschreiben (Commit)\n4. hochladen (Push)\n5. zusammenführen (Merge)"
+  },
+  {
+   "id": "AP2-5-4-1-K4-1",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K4",
+   "vorne": "Was ist ein Merge-Konflikt und wie entsteht er?",
+   "hinten": "Zwei Zweige haben dieselbe Stelle einer Datei unterschiedlich geändert. Beim Zusammenführen kann das System nicht selbst entscheiden; der Konflikt muss von Hand aufgelöst werden."
+  },
+  {
+   "id": "AP2-5-4-1-K5-1",
+   "sp": "AP2-5-4-1",
+   "k": "AP2-5-4-1-K5",
+   "vorne": "Was ist der Unterschied zwischen lokalem und entferntem Repository?",
+   "hinten": "- lokal: auf dem eigenen Rechner, dort wird gearbeitet und committet\n- entfernt (Remote): auf einem Server, gemeinsamer Stand des Teams, Austausch über Pull und Push"
+  },
+  {
+   "id": "AP2-5-5-1-K1-1",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K1",
+   "vorne": "Wofür stehen die vier Phasen des PDCA-Zyklus?",
+   "hinten": "- Plan: planen\n- Do: umsetzen\n- Check: prüfen\n- Act: verbessern"
+  },
+  {
+   "id": "AP2-5-5-1-K1-2",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K1",
+   "vorne": "Wende den PDCA-Zyklus auf das Ziel an, die Bearbeitungszeit von Störungen zu senken.",
+   "hinten": "- Plan: Ursachen analysieren, Ziel und Maßnahme festlegen\n- Do: Maßnahme umsetzen\n- Check: Bearbeitungszeit messen und mit dem Ziel vergleichen\n- Act: Bewährtes zum Standard machen, sonst neuen Zyklus starten"
+  },
+  {
+   "id": "AP2-5-5-1-K2-1",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K2",
+   "vorne": "Was ist der kontinuierliche Verbesserungsprozess (KVP)?",
+   "hinten": "Die ständige Verbesserung von Produkten und Abläufen in kleinen Schritten, an der alle Mitarbeiter mitwirken."
+  },
+  {
+   "id": "AP2-5-5-1-K2-2",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K2",
+   "vorne": "Wie hängen PDCA-Zyklus und KVP zusammen?",
+   "hinten": "Der PDCA-Zyklus wird immer wieder durchlaufen; jeder Durchlauf ist ein kleiner Verbesserungsschritt im KVP."
+  },
+  {
+   "id": "AP2-5-5-1-K3-1",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K3",
+   "vorne": "Was ist eine Kennzahl und wozu dient sie im Qualitätsmanagement?",
+   "hinten": "Eine Zahl, die einen Sachverhalt messbar macht. Sie dient dazu, die Zielerreichung zu messen, Entwicklungen zu vergleichen und Abweichungen früh zu erkennen."
+  },
+  {
+   "id": "AP2-5-5-1-K4-1",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K4",
+   "vorne": "Nenne vier Beispiele für Kennzahlen im Qualitätsmanagement der IT.",
+   "hinten": "- Anzahl gefundener Fehler\n- Testabdeckung\n- Bearbeitungszeit von Störungen\n- Verfügbarkeit"
+  },
+  {
+   "id": "AP2-5-5-1-K5-1",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K5",
+   "vorne": "Nenne vier qualitätssichernde Maßnahmen für ein Softwareprojekt.",
+   "hinten": "- einheitliches Vorgehensmodell\n- festgelegte Testverfahren\n- Code-Reviews\n- Vorgaben für die Dokumentation"
+  },
+  {
+   "id": "AP2-5-5-1-K5-2",
+   "sp": "AP2-5-5-1",
+   "k": "AP2-5-5-1-K5",
+   "vorne": "Wie trägt ein Code-Review zur Qualitätssicherung bei?",
+   "hinten": "Andere Entwickler prüfen den Code vor der Übernahme und finden so Fehler und Abweichungen von Vorgaben, bevor der Code ausgeführt oder ausgeliefert wird."
+  },
+  {
+   "id": "AP2-5-5-2-K1-1",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K1",
+   "vorne": "Wie berechnet man im Soll-Ist-Vergleich die Abweichung als Differenz?",
+   "hinten": "`Abweichung = Ist − Soll`\nPositiv: Ist liegt über Soll; negativ: Ist liegt unter Soll."
+  },
+  {
+   "id": "AP2-5-5-2-K2-1",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K2",
+   "vorne": "Wie berechnet man die Abweichung in Prozent?",
+   "hinten": "`Abweichung in % = (Ist − Soll) ÷ Soll · 100`\nBezugsgröße ist immer der Soll-Wert."
+  },
+  {
+   "id": "AP2-5-5-2-K2-2",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K2",
+   "vorne": "Geplant waren 40 Stunden, gebraucht wurden 50 Stunden. Wie groß ist die Abweichung absolut und in Prozent?",
+   "hinten": "- absolut: 50 h − 40 h = +10 h\n- in Prozent: 10 ÷ 40 · 100 = +25 %"
+  },
+  {
+   "id": "AP2-5-5-2-K3-1",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K3",
+   "vorne": "Woran erkennt man, ob eine Abweichung erheblich ist?",
+   "hinten": "Man vergleicht sie mit einer vorher festgelegten Toleranzgrenze; maßgeblich ist vor allem die prozentuale Abweichung, nicht nur die absolute."
+  },
+  {
+   "id": "AP2-5-5-2-K3-2",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K3",
+   "vorne": "Warum muss man bei der Bewertung einer Abweichung auf die Richtung achten?",
+   "hinten": "Ob sie günstig oder ungünstig ist, hängt von der Größe ab: Ist-Kosten über Soll sind ungünstig, eine Ist-Verfügbarkeit über Soll ist günstig."
+  },
+  {
+   "id": "AP2-5-5-2-K4-1",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K4",
+   "vorne": "Nenne mögliche Ursachen dafür, dass der Ist-Aufwand eines Projekts deutlich über dem Soll liegt.",
+   "hinten": "- Aufwand zu niedrig geschätzt\n- Anforderungen nachträglich geändert oder erweitert\n- Personalausfall\n- unerwartete technische Probleme"
+  },
+  {
+   "id": "AP2-5-5-2-K4-2",
+   "sp": "AP2-5-5-2",
+   "k": "AP2-5-5-2-K4",
+   "vorne": "Nenne mögliche Maßnahmen, wenn ein Projekt erheblich vom Soll abweicht.",
+   "hinten": "- Ursache klären und gegensteuern, z. B. zusätzliche Ressourcen\n- Umfang oder Termine mit dem Auftraggeber neu abstimmen\n- Planung anpassen und künftige Schätzungen verbessern"
+  },
+  {
+   "id": "AP2-5-5-3-K1-1",
+   "sp": "AP2-5-5-3",
+   "k": "AP2-5-5-3-K1",
+   "vorne": "Was ist ein Paritätsbit?",
+   "hinten": "Ein zusätzliches Bit, das die Anzahl der Einsen auf eine gerade (gerade Parität) oder ungerade Zahl (ungerade Parität) ergänzt."
+  },
+  {
+   "id": "AP2-5-5-3-K1-2",
+   "sp": "AP2-5-5-3",
+   "k": "AP2-5-5-3-K1",
+   "vorne": "Die Bitfolge 1011001 soll ein Paritätsbit für gerade Parität erhalten. Welchen Wert hat es?",
+   "hinten": "0: Die Folge enthält schon 4 Einsen, also eine gerade Anzahl."
+  },
+  {
+   "id": "AP2-5-5-3-K1-3",
+   "sp": "AP2-5-5-3",
+   "k": "AP2-5-5-3-K1",
+   "vorne": "Die Bitfolge 1011001 soll ein Paritätsbit für ungerade Parität erhalten. Welchen Wert hat es?",
+   "hinten": "1: Die Folge enthält 4 Einsen; mit dem Paritätsbit werden es 5, also eine ungerade Anzahl."
+  },
+  {
+   "id": "AP2-5-5-3-K2-1",
+   "sp": "AP2-5-5-3",
+   "k": "AP2-5-5-3-K2",
+   "vorne": "Was kann ein einzelnes Paritätsbit leisten und was nicht?",
+   "hinten": "- erkennt einen einzelnen Bitfehler\n- kann ihn nicht berichtigen, weil es nicht zeigt, welches Bit falsch ist"
+  },
+  {
+   "id": "AP2-5-5-3-K2-2",
+   "sp": "AP2-5-5-3",
+   "k": "AP2-5-5-3-K2",
+   "vorne": "Warum bleibt ein Fehler in zwei Bits mit einem Paritätsbit unerkannt?",
+   "hinten": "Zwei gekippte Bits ändern die Anzahl der Einsen um eine gerade Zahl; die Parität stimmt wieder."
+  },
+  {
+   "id": "AP2-5-5-3-K3-1",
+   "sp": "AP2-5-5-3",
+   "k": "AP2-5-5-3-K3",
+   "vorne": "Was bedeutet Redundanz als Prüfverfahren?",
+   "hinten": "Zusätzliche Informationen werden mitgespeichert oder mitgesendet, die für den Inhalt nicht nötig sind, damit Fehler auffallen. Beispiel: das Paritätsbit."
+  }
+ ],
+ "nicht_abgefragt": [
+  {
+   "k": "AP2-5-2-3-K4",
+   "grund": "Das Berichtigen einer Zeile ist eine Schreibübung im Schreibtischtest; die typischen Berichtigungen fragen die Karten zu K5 ab."
+  }
+ ],
+ "glossar": [
+  {
+   "begriff": "Statisches Testverfahren",
+   "erklaerung": "Testverfahren, bei dem das Programm nicht ausgeführt wird; geprüft werden Code oder Dokumente, z. B. durch Review oder Schreibtischtest.",
+   "sp": [
+    "AP2-5-1-1",
+    "AP2-5-2-3"
+   ]
+  },
+  {
+   "begriff": "Dynamisches Testverfahren",
+   "erklaerung": "Testverfahren, bei dem das Programm mit Testdaten ausgeführt und das Ergebnis mit dem erwarteten verglichen wird.",
+   "sp": [
+    "AP2-5-1-1"
+   ]
+  },
+  {
+   "begriff": "Review",
+   "erklaerung": "Statisches Testverfahren: Code oder Dokumente werden von anderen Personen gelesen und auf Fehler und Einhaltung von Vorgaben geprüft, ohne den Code auszuführen.",
+   "sp": [
+    "AP2-5-1-1",
+    "AP2-5-5-1"
+   ]
+  },
+  {
+   "begriff": "Black-Box-Test",
+   "erklaerung": "Test gegen die Anforderungen: Geprüft werden Eingaben und Ausgaben, ohne den Code zu kennen.",
+   "sp": [
+    "AP2-5-1-1"
+   ]
+  },
+  {
+   "begriff": "White-Box-Test",
+   "erklaerung": "Test, dessen Testfälle aus dem Code abgeleitet werden, damit möglichst alle Teile des Codes durchlaufen werden.",
+   "sp": [
+    "AP2-5-1-1",
+    "AP2-5-2-2"
+   ]
+  },
+  {
+   "begriff": "Teststufe",
+   "erklaerung": "Abschnitt des Testens nach Umfang des Prüfgegenstands: Komponenten-, Integrations-, System- und Abnahmetest.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Komponententest",
+   "erklaerung": "Teststufe, in der ein einzelner Baustein (Komponente, Modul) getrennt vom Rest geprüft wird; auch Modul- oder Unit-Test genannt.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Unit-Test",
+   "erklaerung": "Automatischer Test eines einzelnen Bausteins, z. B. einer Funktion oder Klasse, getrennt vom Rest des Programms.",
+   "sp": [
+    "AP2-5-1-2",
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Integrationstest",
+   "erklaerung": "Teststufe, die das Zusammenspiel mehrerer getesteter Komponenten, vor allem ihre Schnittstellen, prüft.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Systemtest",
+   "erklaerung": "Teststufe, die das vollständige System gegen die Anforderungen prüft, in einer betriebsnahen Umgebung.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "End-to-End-Test",
+   "langform": "E2E-Test",
+   "erklaerung": "Test eines vollständigen Ablaufs aus Sicht des Benutzers durch das ganze System, von der Eingabe bis zum Ergebnis.",
+   "sp": [
+    "AP2-5-1-2",
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Abnahmetest",
+   "erklaerung": "Letzte Teststufe, beim Kunden: Er prüft, ob die Software seine Anforderungen erfüllt, und entscheidet über die Abnahme.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Lasttest",
+   "erklaerung": "Prüft das Verhalten eines Systems unter der erwarteten Last, z. B. der geplanten Zahl gleichzeitiger Benutzer.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Performancetest",
+   "erklaerung": "Prüft die Antwortzeiten eines Systems.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Belastungstest",
+   "erklaerung": "Prüft das Verhalten eines Systems an und über seiner Belastungsgrenze.",
+   "sp": [
+    "AP2-5-1-2"
+   ]
+  },
+  {
+   "begriff": "Testfall",
+   "erklaerung": "Festgelegte Prüfung mit Eingabedaten und erwartetem Ergebnis, die durchgeführt und als bestanden oder fehlgeschlagen bewertet wird.",
+   "sp": [
+    "AP2-5-1-1",
+    "AP2-5-2-3",
+    "AP2-5-2-4"
+   ]
+  },
+  {
+   "begriff": "Testdaten",
+   "erklaerung": "Eingabewerte, mit denen ein Programm im Test ausgeführt wird; sie sollen Normalfall, Grenzen, Sonderfälle und ungültige Eingaben abdecken.",
+   "sp": [
+    "AP2-5-1-1",
+    "AP2-5-2-1",
+    "AP2-5-2-3",
+    "AP2-5-2-4"
+   ]
+  },
+  {
+   "begriff": "Extremwertetest",
+   "erklaerung": "Test mit den kleinsten und größten zulässigen Werten einer Eingabe.",
+   "sp": [
+    "AP2-5-2-1"
+   ]
+  },
+  {
+   "begriff": "Testdatengenerator",
+   "erklaerung": "Werkzeug, das große Mengen passender Testdaten automatisch erzeugt.",
+   "sp": [
+    "AP2-5-2-1"
+   ]
+  },
+  {
+   "begriff": "Äquivalenzklasse",
+   "erklaerung": "Gruppe von Eingaben, die das Programm gleich behandelt; getestet wird je Klasse mit einem Vertreter.",
+   "sp": [
+    "AP2-5-2-1"
+   ]
+  },
+  {
+   "begriff": "Testabdeckung",
+   "erklaerung": "Anteil des Codes, der von den Tests ausgeführt wird, meist in Prozent; englisch Code Coverage.",
+   "sp": [
+    "AP2-5-2-2",
+    "AP2-5-5-1"
+   ]
+  },
+  {
+   "begriff": "Anweisungsüberdeckung",
+   "erklaerung": "Abdeckungsmaß: Jede Anweisung des Codes wird mindestens einmal ausgeführt.",
+   "sp": [
+    "AP2-5-2-2"
+   ]
+  },
+  {
+   "begriff": "Zweigüberdeckung",
+   "erklaerung": "Abdeckungsmaß: Jede Verzweigung wird in jede Richtung mindestens einmal durchlaufen; schließt Anweisungsüberdeckung ein.",
+   "sp": [
+    "AP2-5-2-2"
+   ]
+  },
+  {
+   "begriff": "Pfadüberdeckung",
+   "erklaerung": "Abdeckungsmaß: Jeder mögliche Weg vom Anfang bis zum Ende des Codes wird durchlaufen; schließt Zweigüberdeckung ein.",
+   "sp": [
+    "AP2-5-2-2"
+   ]
+  },
+  {
+   "begriff": "Schreibtischtest",
+   "erklaerung": "Statisches Testverfahren: Code wird mit Testdaten von Hand durchgegangen; erwartetes und tatsächliches Ergebnis werden verglichen.",
+   "sp": [
+    "AP2-5-2-3",
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Testprotokoll",
+   "erklaerung": "Nachweis der Testdurchführung mit Testfall, Eingabedaten, erwartetem und tatsächlichem Ergebnis, Bewertung, Tester und Datum.",
+   "sp": [
+    "AP2-5-2-4"
+   ]
+  },
+  {
+   "begriff": "Abnahmeprotokoll",
+   "erklaerung": "Schriftlicher Nachweis, dass der Kunde die Leistung geprüft und abgenommen hat, mit festgestellten Mängeln, Ergebnis und Unterschriften.",
+   "sp": [
+    "AP2-5-2-4"
+   ]
+  },
+  {
+   "begriff": "Debugging",
+   "erklaerung": "Gezieltes Suchen und Beheben von Fehlern in einem Programm, meist mit einem Debugger.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Breakpoint",
+   "erklaerung": "Haltepunkt im Debugger: Das Programm stoppt an dieser Stelle, man kann Variablen ansehen und schrittweise weitergehen.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Ablaufverfolgung",
+   "erklaerung": "Schrittweises Nachvollziehen des Programmwegs und der Variablenwerte, z. B. im Debugger.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "print-Debugging",
+   "erklaerung": "Fehlersuche, bei der an gezielten Stellen Zwischenwerte ausgegeben werden.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "TDD",
+   "langform": "Test Driven Development",
+   "erklaerung": "Testgetriebene Entwicklung: erst den Test schreiben, dann den Code, der ihn besteht, dann den Code aufräumen.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Syntaktischer Fehler",
+   "erklaerung": "Verstoß gegen die Regeln der Programmiersprache; das Programm lässt sich nicht übersetzen oder ausführen.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Semantischer Fehler",
+   "erklaerung": "Inhaltlicher Fehler: Der Code ist lauffähig, liefert aber ein falsches Ergebnis.",
+   "sp": [
+    "AP2-5-3-1"
+   ]
+  },
+  {
+   "begriff": "Versionsverwaltung",
+   "erklaerung": "System, das Änderungen an Dateien protokolliert, alte Stände wiederherstellbar macht und gemeinsames Arbeiten am selben Code ermöglicht.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Repository",
+   "erklaerung": "Ablage der Versionsverwaltung mit allen Dateien und ihrer Änderungsgeschichte; lokal auf dem eigenen Rechner oder entfernt auf einem Server.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Branch",
+   "erklaerung": "Eigener Entwicklungszweig, in dem getrennt vom Hauptstand gearbeitet wird.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Commit",
+   "erklaerung": "Festschreiben von Änderungen als neuer Stand im Repository, mit Beschreibung der Änderung.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Merge",
+   "erklaerung": "Zusammenführen der Änderungen eines Zweigs mit einem anderen Zweig.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Merge-Konflikt",
+   "erklaerung": "Entsteht, wenn zwei Zweige dieselbe Stelle einer Datei unterschiedlich geändert haben; er muss von Hand aufgelöst werden.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Pull",
+   "erklaerung": "Änderungen aus dem entfernten Repository holen und in den lokalen Stand übernehmen.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Push",
+   "erklaerung": "Lokale Commits in das entfernte Repository hochladen.",
+   "sp": [
+    "AP2-5-4-1"
+   ]
+  },
+  {
+   "begriff": "Qualitätsmanagement",
+   "erklaerung": "Alle Maßnahmen, mit denen ein Unternehmen die Qualität seiner Produkte und Abläufe plant, lenkt, prüft und verbessert.",
+   "sp": [
+    "AP2-5-5-1",
+    "AP2-5-5-3"
+   ]
+  },
+  {
+   "begriff": "PDCA-Zyklus",
+   "langform": "Plan, Do, Check, Act",
+   "erklaerung": "Vierstufiger Kreislauf zur Verbesserung: planen, umsetzen, prüfen, verbessern; wird wiederholt durchlaufen.",
+   "sp": [
+    "AP2-5-5-1"
+   ]
+  },
+  {
+   "begriff": "KVP",
+   "langform": "kontinuierlicher Verbesserungsprozess",
+   "erklaerung": "Ständige Verbesserung von Produkten und Abläufen in kleinen Schritten, an der alle Mitarbeiter mitwirken.",
+   "sp": [
+    "AP2-5-5-1"
+   ]
+  },
+  {
+   "begriff": "Kennzahl",
+   "erklaerung": "Zahl, die einen Sachverhalt messbar macht, z. B. Fehleranzahl oder Verfügbarkeit; dient zur Messung der Zielerreichung.",
+   "sp": [
+    "AP2-5-5-1",
+    "AP2-5-5-2"
+   ]
+  },
+  {
+   "begriff": "Vorgehensmodell",
+   "erklaerung": "Festgelegter Ablauf für die Softwareentwicklung mit Phasen, Aufgaben und Ergebnissen, z. B. Wasserfallmodell oder Scrum.",
+   "sp": [
+    "AP2-5-5-1"
+   ]
+  },
+  {
+   "begriff": "Verfügbarkeit",
+   "erklaerung": "Anteil der Zeit, in der ein System wie vorgesehen nutzbar ist, meist in Prozent angegeben.",
+   "sp": [
+    "AP2-5-5-1"
+   ]
+  },
+  {
+   "begriff": "Soll-Ist-Vergleich",
+   "erklaerung": "Gegenüberstellung geplanter (Soll) und erreichter (Ist) Werte, um Abweichungen zu erkennen, zu berechnen und zu bewerten.",
+   "sp": [
+    "AP2-5-5-2"
+   ]
+  },
+  {
+   "begriff": "Paritätsbit",
+   "erklaerung": "Zusätzliches Bit, das die Anzahl der Einsen auf gerade oder ungerade ergänzt; erkennt einen einzelnen Bitfehler, berichtigt ihn aber nicht.",
+   "sp": [
+    "AP2-5-5-3"
+   ]
+  },
+  {
+   "begriff": "Redundanz",
+   "erklaerung": "Zusätzliche, für den Inhalt nicht nötige Informationen, die mitgespeichert oder mitgesendet werden, damit Fehler auffallen.",
+   "sp": [
+    "AP2-5-5-3"
+   ]
+  }
+ ],
+ "unsicher": [
+  {
+   "id": "AP2-5-5-2-K1-1",
+   "frage": "Vorzeichen der Abweichung: Lehrbücher rechnen teils Ist − Soll, teils Soll − Ist. Die Karte nutzt Ist − Soll; wird in der Prüfung eine bestimmte Richtung erwartet?"
+  },
+  {
+   "id": "AP2-5-5-2-K3-1",
+   "frage": "Wann eine Abweichung erheblich ist, legt der Rahmen nicht fest. Die Karte nennt eine vorher festgelegte Toleranzgrenze; feste Prozentschwellen werden bewusst nicht abgefragt."
+  },
+  {
+   "id": "AP2-5-5-3",
+   "frage": "Offen, ob „Redundanz“ zusätzliche Prüfinformationen in den Daten oder doppelt ausgelegte Technik meint. Die Karten folgen der Können-Aussage (Prüfinformationen); doppelt ausgelegte Technik ist nicht abgedeckt."
+  },
+  {
+   "id": "AP2-5-5-3-K1-2",
+   "frage": "Der Rahmen lässt offen, ob ein Paritätsbit berechnet werden muss. Zur Sicherheit fragen zwei Karten das Paritätsbit für eine kurze Bitfolge ab; Prüfziffern sind nicht abgedeckt."
+  },
+  {
+   "id": "AP2-5-5-3-K2-2",
+   "frage": "Die Karte zum unerkannten Zwei-Bit-Fehler ergänzt die Können-Aussage um die Grenze des Verfahrens; prüfen, ob sie im Rahmen bleibt."
+  },
+  {
+   "id": "AP2-5-2-1-K2-1",
+   "frage": "Abgrenzung Extremwertetest und Grenzwertanalyse: Manche Lehrbücher testen zusätzlich Werte direkt neben der Grenze (knapp außerhalb). Die Karte folgt der Können-Aussage (kleinste und größte zulässige Werte)."
+  },
+  {
+   "id": "AP2-5-1-2-K4-1",
+   "frage": "Die Begriffe Last-, Performance- und Belastungstest (Stresstest) werden in der Literatur nicht einheitlich abgegrenzt. Die Karten folgen der Zuordnung der Können-Aussage."
+  },
+  {
+   "id": "AP2-5-1-2-K1-1",
+   "frage": "Die Einordnung des End-to-End-Tests in die Reihenfolge der Teststufen ist nicht einheitlich (eigene Stufe oder Testart innerhalb von System- oder Abnahmetest). Die Karten ordnen ihn deshalb nicht in die Reihenfolge ein."
+  },
+  {
+   "id": "AP2-5-4-1-K2-3",
+   "frage": "Pull ist bei Git Holen und Zusammenführen (fetch und merge) in einem Schritt; bei zentralen Systemen wie SVN heißt der Vorgang Update, und ein Commit landet dort direkt auf dem Server. Die Karten beschreiben die verteilte Arbeitsweise wie bei Git."
+  },
+  {
+   "id": "AP2-5-4-1-K3-2",
+   "frage": "Der Ablauf „holen, ändern, festschreiben, hochladen, zusammenführen“ folgt der Können-Aussage; in der Praxis wird oft über einen Pull Request zusammengeführt oder vor dem Push erneut geholt. Ob die Prüfung eine bestimmte Reihenfolge erwartet, ist offen."
+  },
+  {
+   "id": "AP2-5-2-2-K5-1",
+   "frage": "Bei Schleifen kann die Zahl der Pfade sehr groß oder unbegrenzt werden, sodass vollständige Pfadüberdeckung praktisch nicht erreichbar ist. Die Karten gehen darauf nicht ein, weil der Rahmen es nicht verlangt."
+  },
+  {
+   "id": "AP2-5-2-4-K5-2",
+   "frage": "Die Inhalte des Abnahmeprotokolls sind im Rahmen nicht aufgezählt; die Karte nennt übliche Inhalte aus Fachwissen. Rechtsfolgen der Abnahme (Werkvertrag) sind bewusst nicht abgefragt."
+  }
+ ]
+}

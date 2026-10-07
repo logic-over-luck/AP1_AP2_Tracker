@@ -1,0 +1,123 @@
+/* Gestaltungsgrundlagen: Farben, Raster, Schrift, Bewegung.
+   Alle Abstände sind Vielfache der Grundeinheit 4 px. */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url('../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url('../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2') format('woff2');
+}
+
+:root {
+  /* Raster */
+  --u: 4px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+
+  --inhalt-breite: 1120px;
+  --leiste-breite: 248px;
+  --kopf-hoehe: 56px;
+
+  --r-1: 6px;
+  --r-2: 10px;
+  --r-3: 14px;
+  --r-rund: 999px;
+
+  /* Neutrale Töne */
+  --bg: #0c1013;
+  --bg-leiste: #0e1316;
+  --flaeche-1: #12181c;
+  --flaeche-2: #161d22;
+  --flaeche-3: #1b2329;
+  --flaeche-4: #212a31;
+  --linie: #222b31;
+  --linie-2: #2c363e;
+  --linie-3: #3a4651;
+  --text: #e7edf0;
+  --text-2: #a9b5bc;
+  --text-3: #73818a;
+  --text-4: #56626a;
+
+  /* Signalfarben */
+  --gut: #5ad1a7;
+  --warn: #f0a85a;
+  --fehler: #f07070;
+  --info: #7ea6ff;
+  --prio-hoch: #f0a85a;
+  --prio-mittel: #d9c46a;
+  --prio-normal: #8a979f;
+
+  /* Akzent je Lernraum (wird per data-raum gesetzt) */
+  --akzent: #5ad1a7;
+  --akzent-stark: #7fe0bf;
+  --akzent-text: #0a1713;
+  --akzent-rgb: 90, 209, 167;
+  --akzent-weich: rgba(var(--akzent-rgb), 0.12);
+  --akzent-linie: rgba(var(--akzent-rgb), 0.35);
+
+  /* Schrift */
+  --schrift: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  --t-xs: 11px;
+  --t-s: 12px;
+  --t-m: 13px;
+  --t-n: 14px;
+  --t-l: 16px;
+  --t-xl: 20px;
+  --t-2xl: 24px;
+  --t-3xl: 32px;
+  --t-4xl: 40px;
+
+  /* Bewegung: überall gleich lang */
+  --dauer: 180ms;
+  --dauer-lang: 320ms;
+  --kurve: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --kurve-feder: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  --schatten-1: 0 1px 0 rgba(255, 255, 255, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.3);
+  --schatten-2: 0 8px 24px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --schatten-3: 0 24px 64px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+html[data-raum='AP2'] {
+  --akzent: #7ea6ff;
+  --akzent-stark: #a3c0ff;
+  --akzent-text: #0a1020;
+  --akzent-rgb: 126, 166, 255;
+}
+html[data-raum='WISO'] {
+  --akzent: #c39bff;
+  --akzent-stark: #d6baff;
+  --akzent-text: #160c24;
+  --akzent-rgb: 195, 155, 255;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dauer: 1ms;
+    --dauer-lang: 1ms;
+  }
+}

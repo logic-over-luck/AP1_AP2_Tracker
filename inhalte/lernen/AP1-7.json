@@ -1,0 +1,1853 @@
+{
+ "paket": "AP1-7",
+ "bloecke": {
+  "AP1-7-1": {
+   "satz": "Die Schutzziele der Informationssicherheit, Arten von Schutzmaßnahmen, Sicherheitsrichtlinien und wer im Betrieb für Sicherheit zuständig ist."
+  },
+  "AP1-7-2": {
+   "satz": "Wie man nach IT-Grundschutz des BSI vorgeht, den Schutzbedarf feststellt und Risiken mit einer Matrix einordnet."
+  },
+  "AP1-7-3": {
+   "satz": "Verschlüsselung, Hashwerte und Signaturen, Zugangsschutz, Härtung des Arbeitsplatzrechners und Datensicherung."
+  },
+  "AP1-7-4": {
+   "satz": "Gängige Schadsoftware, Phishing und wie man sich beim Arbeiten außerhalb des Büros schützt."
+  },
+  "AP1-7-5": {
+   "satz": "Grundzüge von DSGVO und BDSG, Rechte der Betroffenen sowie Anonymisierung und Pseudonymisierung."
+  }
+ },
+ "stichpunkte": {
+  "AP1-7-1-1": {
+   "ziel": "Die drei Schutzziele erklären und einem Vorfall oder einer Maßnahme das betroffene Schutzziel zuordnen.",
+   "punkte": [
+    "Vertraulichkeit, Integrität, Verfügbarkeit erklären",
+    "Vorfall oder Begründung dem betroffenen Schutzziel zuordnen",
+    "Verschlüsselung → Vertraulichkeit, Hashwert → Integrität, Datensicherung → Verfügbarkeit",
+    "Authentizität wird oft als viertes Schutzziel genannt"
+   ]
+  },
+  "AP1-7-1-2": {
+   "ziel": "Schutzmaßnahmen nach ihrer Art einordnen und für einen beschriebenen Arbeitsplatz passende Maßnahmen vorschlagen.",
+   "punkte": [
+    "Technische, organisatorische und personelle Maßnahmen unterscheiden",
+    "Technisch: Virenschutz, Personal Firewall, Verschlüsselung",
+    "Organisatorisch: Regelungen, Berechtigungskonzept, Besucherregelung",
+    "Personell: Schulung, Verpflichtung auf Vertraulichkeit",
+    "Risiken erkennen, z. B. fremde Personen im Raum, private Geräte im Firmennetz"
+   ]
+  },
+  "AP1-7-1-3": {
+   "ziel": "IT-Sicherheitsrichtlinien wie eine Passwort-Policy erläutern und bewerten und das Sicherheitsbewusstsein fördern.",
+   "punkte": [
+    "Passwort-Policy: Mindestlänge, Zeichenvielfalt, keine Wiederverwendung, Sperre nach Fehlversuchen",
+    "Security by Design: Sicherheit von Anfang an einplanen",
+    "Security by Default: die Voreinstellungen sind die sicheren",
+    "Benutzer bekommen nur die Rechte, die sie für ihre Arbeit brauchen",
+    "Bewusstsein fördern: Schulungen, simulierte Phishing-Mails, klare Meldewege"
+   ]
+  },
+  "AP1-7-1-4": {
+   "ziel": "IT-Sicherheitsbeauftragten und Datenschutzbeauftragten unterscheiden und ein ISMS erklären und im eigenen Bereich unterstützen.",
+   "punkte": [
+    "IT-Sicherheitsbeauftragter: Sicherheit aller Informationen und Systeme",
+    "Datenschutzbeauftragter: Schutz personenbezogener Daten",
+    "ISMS: Regeln, Zuständigkeiten und Abläufe, um Informationssicherheit dauerhaft zu steuern",
+    "Unterstützen durch Einhalten der Richtlinien und Melden von Vorfällen",
+    "Sicherheitsmanagement ist ein fortlaufender Prozess nach dem PDCA-Zyklus"
+   ]
+  },
+  "AP1-7-2-1": {
+   "ziel": "Zweck des IT-Grundschutz-Kompendiums und seiner Bausteine erklären und eine vorgegebene Empfehlung fachlich begründen.",
+   "punkte": [
+    "BSI und Zweck des IT-Grundschutz-Kompendiums erklären",
+    "Baustein: typische Gefährdungen und Anforderungen für einen Gegenstand, z. B. Client oder Raum",
+    "Vorgehen: Bestand erfassen, Schutzbedarf feststellen, Bausteine zuordnen, Maßnahmen umsetzen und prüfen",
+    "Vorgegebene Empfehlungen begründen, ohne das Kompendium auswendig zu kennen"
+   ]
+  },
+  "AP1-7-2-2": {
+   "ziel": "Für Anwendungen, IT-Systeme, Räume und Kommunikationsverbindungen den Schutzbedarf je Schutzziel festlegen und begründen.",
+   "punkte": [
+    "Kategorien normal, hoch, sehr hoch nach der Schwere des möglichen Schadens",
+    "Begründen z. B. mit personenbezogenen Daten, wirtschaftlichem Schaden oder Imageschaden",
+    "Teilweise ausgefüllte Schutzbedarfstabelle ergänzen",
+    "IT-System richtet sich nach der Anwendung mit dem höchsten Schutzbedarf"
+   ]
+  },
+  "AP1-7-2-3": {
+   "ziel": "Ein Risiko nach Eintrittswahrscheinlichkeit und Schadenshöhe in eine Risikomatrix einordnen und daraus die Dringlichkeit ableiten.",
+   "punkte": [
+    "Matrix: Eintrittswahrscheinlichkeit auf einer, Schadenshöhe auf der anderen Achse",
+    "Risiko einordnen und Risikoklasse ablesen",
+    "Umgang: vermeiden, vermindern, übertragen (z. B. versichern), bewusst tragen",
+    "Begründen, welche Risiken zuerst behandelt werden"
+   ]
+  },
+  "AP1-7-3-1": {
+   "ziel": "Symmetrische, asymmetrische und hybride Verschlüsselung unterscheiden und den Ablauf mit den Schlüsseln erklären.",
+   "punkte": [
+    "Symmetrisch: derselbe geheime Schlüssel zum Ver- und Entschlüsseln",
+    "Asymmetrisch: mit dem öffentlichen Schlüssel des Empfängers verschlüsseln, mit seinem privaten entschlüsseln",
+    "Asymmetrisch: kein sicherer Schlüsseltausch nötig, aber rechenaufwendiger",
+    "Hybrid: symmetrischer Sitzungsschlüssel wird asymmetrisch geschützt übertragen",
+    "Beispiele: AES symmetrisch, RSA asymmetrisch, TLS hybrid"
+   ]
+  },
+  "AP1-7-3-2": {
+   "ziel": "Erklären, wozu Hashwerte, digitale Signaturen und Zertifikate dienen und wie sie zusammenhängen.",
+   "punkte": [
+    "Hashwert: Prüfwert fester Länge, ändert sich bei kleinster Änderung, nicht zurückrechenbar",
+    "Download prüfen: Hashwert selbst berechnen und mit dem angegebenen vergleichen",
+    "Signatur: Absender verschlüsselt den Hashwert mit privatem Schlüssel, Empfänger prüft mit öffentlichem",
+    "Signatur belegt Herkunft und Unverändertheit einer Nachricht",
+    "Zertifikat einer Zertifizierungsstelle bestätigt, wem ein öffentlicher Schlüssel gehört"
+   ]
+  },
+  "AP1-7-3-3": {
+   "ziel": "Zutritt, Zugang und Zugriff unterscheiden und Verfahren der Authentifizierung einschließlich Zwei-Faktor nennen.",
+   "punkte": [
+    "Zutritt (Raum), Zugang (System), Zugriff (Daten) auseinanderhalten",
+    "Authentifizierung mit Faktoren aus Wissen, Besitz, biometrischem Merkmal",
+    "Zwei-Faktor: z. B. Passwort und Code aus einer App",
+    "Zutrittskontrolle zu Räumen: Chipkarte, Zahlencode, Fingerabdruck"
+   ]
+  },
+  "AP1-7-3-4": {
+   "ziel": "Maßnahmen nennen und begründen, mit denen ein Arbeitsplatzrechner unempfindlicher gegen Angriffe wird.",
+   "punkte": [
+    "Härtung: Angriffsfläche verkleinern, Schwachstellen schließen",
+    "Updates, Firewall, sichere Passwörter, nicht benötigte Dienste und Programme entfernen",
+    "Minimalkonfiguration ist sicherer und leichter zu pflegen",
+    "Personal Firewall: einem Programm den Internetzugriff sperren",
+    "Zweck eines Virenschutzprogramms erklären"
+   ]
+  },
+  "AP1-7-3-5": {
+   "ziel": "Sicherungsarten unterscheiden, Regeln für eine zuverlässige Sicherung nennen und Lösungen für die Verfügbarkeit von Daten angeben.",
+   "punkte": [
+    "Vollsicherung, differenzielle und inkrementelle Sicherung unterscheiden",
+    "Regelmäßig sichern, getrennt lagern, Datenträger verschlüsseln, Wiederherstellung testen",
+    "Verfügbarkeit durch Datensicherung und mehrfache Speicherung",
+    "NAS: Speicher im Netzwerk, auf den mehrere Geräte zugreifen",
+    "3-2-1-Regel: drei Kopien, zwei verschiedene Medien, eine außer Haus"
+   ]
+  },
+  "AP1-7-4-1": {
+   "ziel": "Gängige Schadsoftware beschreiben, Phishing erkennen und Schutzmaßnahmen für Büro und unterwegs mit Grund und Folge nennen.",
+   "punkte": [
+    "Ransomware, Spyware, Scareware sowie Virus, Wurm, Trojaner beschreiben",
+    "Phishing-Merkmale: unpersönliche Anrede, Zeitdruck, Fehler im Text, Abfrage von Zugangsdaten",
+    "Schutzmaßnahmen getrennt nach Unternehmen und einzelnem Mitarbeiter",
+    "Unterwegs: Blickschutzfolie, Gerät sperren, VPN statt offenem WLAN, verschlüsselter Datenträger",
+    "Zu jeder Maßnahme die Folge bei Nichtbeachtung nennen"
+   ]
+  },
+  "AP1-7-5-1": {
+   "ziel": "Grundzüge von DSGVO und BDSG kennen: personenbezogene Daten, Betroffenenrechte, Einwilligung und Grundsätze der Verarbeitung.",
+   "punkte": [
+    "DSGVO und BDSG schützen personenbezogene Daten",
+    "Personenbezogene Daten erklären und Beispiele nennen",
+    "Rechte: z. B. Auskunft, Berichtigung, Löschung, Widerspruch; Einwilligung ist widerrufbar",
+    "Datenschutz (Schutz der Person) von Datensicherheit (Schutz der Daten) abgrenzen",
+    "Grundsätze: Zweckbindung, Datenminimierung, Speicherbegrenzung"
+   ]
+  },
+  "AP1-7-5-2": {
+   "ziel": "Anonymisierung und Pseudonymisierung unterscheiden und für einen Fall die passende Maßnahme wählen.",
+   "punkte": [
+    "Anonymisierung: Personenbezug lässt sich nicht wiederherstellen",
+    "Pseudonymisierung: Kennzeichen statt Name, Zuordnung getrennt aufbewahrt",
+    "Pseudonymisierte Daten bleiben personenbezogen, anonymisierte nicht",
+    "Statistik → anonymisieren; Auswertung mit Rückfragemöglichkeit → pseudonymisieren"
+   ]
+  }
+ },
+ "karten": [
+  {
+   "id": "AP1-7-1-1-K1-1",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K1",
+   "vorne": "Welche drei klassischen Schutzziele hat die Informationssicherheit?",
+   "hinten": "- Vertraulichkeit\n- Integrität\n- Verfügbarkeit"
+  },
+  {
+   "id": "AP1-7-1-1-K1-2",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K1",
+   "vorne": "Was bedeutet das Schutzziel **Vertraulichkeit**?",
+   "hinten": "Nur Befugte können die Informationen einsehen; Unbefugte erhalten keinen Zugriff."
+  },
+  {
+   "id": "AP1-7-1-1-K1-3",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K1",
+   "vorne": "Was bedeutet das Schutzziel **Integrität**?",
+   "hinten": "Daten sind vollständig und unverändert; nur Befugte dürfen sie ändern, und unerlaubte Änderungen sind erkennbar."
+  },
+  {
+   "id": "AP1-7-1-1-K1-4",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K1",
+   "vorne": "Was bedeutet das Schutzziel **Verfügbarkeit**?",
+   "hinten": "Daten und Systeme stehen den Berechtigten zur Verfügung, wenn sie gebraucht werden."
+  },
+  {
+   "id": "AP1-7-1-1-K2-1",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K2",
+   "vorne": "Ein Server fällt wegen eines Festplattendefekts aus; niemand kann mehr auf die Kundendaten zugreifen. Welches Schutzziel ist verletzt?",
+   "hinten": "Verfügbarkeit"
+  },
+  {
+   "id": "AP1-7-1-1-K2-2",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K2",
+   "vorne": "Ein Mitarbeiter liest Gehaltsdaten, für die er keine Berechtigung hat. Welches Schutzziel ist verletzt?",
+   "hinten": "Vertraulichkeit"
+  },
+  {
+   "id": "AP1-7-1-1-K2-3",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K2",
+   "vorne": "Ein Angreifer ändert unbemerkt die Bankverbindung in ausgehenden Rechnungen. Welches Schutzziel ist verletzt?",
+   "hinten": "Integrität"
+  },
+  {
+   "id": "AP1-7-1-1-K3-1",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K3",
+   "vorne": "Welches Schutzziel sichern diese Maßnahmen?\n- Verschlüsselung\n- Hashwert\n- Datensicherung",
+   "hinten": "- Verschlüsselung → Vertraulichkeit\n- Hashwert → Integrität (Veränderungen werden erkennbar)\n- Datensicherung → Verfügbarkeit"
+  },
+  {
+   "id": "AP1-7-1-1-K4-1",
+   "sp": "AP1-7-1-1",
+   "k": "AP1-7-1-1-K4",
+   "vorne": "Welches Schutzziel wird oft als viertes neben Vertraulichkeit, Integrität und Verfügbarkeit genannt, und was bedeutet es?",
+   "hinten": "Authentizität: Echtheit – Daten oder Kommunikationspartner stammen nachweislich von dem, der angegeben ist."
+  },
+  {
+   "id": "AP1-7-1-2-K1-1",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K1",
+   "vorne": "Wofür steht die Abkürzung TOM in der Informationssicherheit?",
+   "hinten": "Technische und organisatorische Maßnahmen zum Schutz von Daten und Systemen."
+  },
+  {
+   "id": "AP1-7-1-2-K1-2",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K1",
+   "vorne": "Woran unterscheiden sich technische, organisatorische und personelle Schutzmaßnahmen? Nenne je ein Beispiel.",
+   "hinten": "- technisch: mit Hard- oder Software umgesetzt, z. B. Virenschutz\n- organisatorisch: durch Regeln und Abläufe, z. B. Besucherregelung\n- personell: setzen beim Menschen an, z. B. Schulung"
+  },
+  {
+   "id": "AP1-7-1-2-K1-3",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K1",
+   "vorne": "Zu welcher Art von Schutzmaßnahme gehört jeweils:\na) Festplattenverschlüsselung\nb) Besucherregelung\nc) Verpflichtung auf Vertraulichkeit",
+   "hinten": "- a) technisch\n- b) organisatorisch\n- c) personell"
+  },
+  {
+   "id": "AP1-7-1-2-K2-1",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K2",
+   "vorne": "Welche drei technischen Maßnahmen schützen einen Arbeitsplatzrechner vor Schadsoftware, vor unerwünschten Netzwerkverbindungen und vor dem Auslesen gespeicherter Daten?",
+   "hinten": "- Virenschutz (gegen Schadsoftware)\n- Personal Firewall (gegen unerwünschte Verbindungen)\n- Verschlüsselung (gegen Auslesen der Daten)"
+  },
+  {
+   "id": "AP1-7-1-2-K3-1",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K3",
+   "vorne": "Ein Arbeitsplatz steht in einem Büro mit Publikumsverkehr. Welche Schutzmaßnahmen schlägst du vor?",
+   "hinten": "- Bildschirm beim Verlassen sperren, zusätzlich automatische Sperre\n- Bildschirm vom Publikum abwenden oder Blickschutzfilter\n- Unterlagen und Datenträger wegschließen\n- Besucher nicht unbeaufsichtigt lassen"
+  },
+  {
+   "id": "AP1-7-1-2-K3-2",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K3",
+   "vorne": "Nenne für einen Büroarbeitsplatz je eine technische, organisatorische und personelle Schutzmaßnahme.",
+   "hinten": "Zum Beispiel:\n- technisch: Virenschutz, Personal Firewall, Festplattenverschlüsselung\n- organisatorisch: Berechtigungskonzept, Passwort-Richtlinie\n- personell: Schulung zur Informationssicherheit"
+  },
+  {
+   "id": "AP1-7-1-2-K4-1",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K4",
+   "vorne": "Welches Sicherheitsrisiko entsteht, wenn sich fremde Personen unbeaufsichtigt im Büro aufhalten?",
+   "hinten": "Sie können Bildschirme und Unterlagen einsehen, Geräte oder Datenträger mitnehmen und an ungesperrten Rechnern Daten abrufen oder Schadsoftware einspielen, z. B. per USB-Stick."
+  },
+  {
+   "id": "AP1-7-1-2-K4-2",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K4",
+   "vorne": "Welches Sicherheitsrisiko entsteht, wenn Mitarbeiter private Geräte ins Firmennetz einbinden?",
+   "hinten": "Die Geräte werden nicht von der Firma verwaltet und sind oft schlecht geschützt (fehlende Updates, kein Virenschutz). Schadsoftware kann ins Firmennetz gelangen, Firmendaten können auf das private Gerät abfließen."
+  },
+  {
+   "id": "AP1-7-1-2-K5-1",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K5",
+   "vorne": "Nenne Beispiele für organisatorische Schutzmaßnahmen.",
+   "hinten": "- Regelungen und Richtlinien, z. B. Passwort-Richtlinie\n- Berechtigungskonzept\n- Besucherregelung"
+  },
+  {
+   "id": "AP1-7-1-2-K5-2",
+   "sp": "AP1-7-1-2",
+   "k": "AP1-7-1-2-K5",
+   "vorne": "Nenne Beispiele für personelle Schutzmaßnahmen.",
+   "hinten": "- Schulungen der Mitarbeiter\n- Verpflichtung auf Vertraulichkeit"
+  },
+  {
+   "id": "AP1-7-1-3-K1-1",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K1",
+   "vorne": "Was ist eine IT-Sicherheitsrichtlinie?",
+   "hinten": "Eine verbindliche Vorgabe des Unternehmens, die regelt, wie Mitarbeiter sicher mit IT und Informationen umgehen, z. B. eine Passwort-Policy."
+  },
+  {
+   "id": "AP1-7-1-3-K1-2",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K1",
+   "vorne": "Was regelt eine Passwort-Policy typischerweise?",
+   "hinten": "- Mindestlänge\n- Zeichenvielfalt (Groß-, Kleinbuchstaben, Ziffern, Sonderzeichen)\n- keine Wiederverwendung alter Passwörter\n- Sperre nach Fehlversuchen\n- Passwort geheim halten und nicht weitergeben"
+  },
+  {
+   "id": "AP1-7-1-3-K2-1",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K2",
+   "vorne": "Eine Passwort-Policy erlaubt Passwörter aus 6 Kleinbuchstaben und beliebig viele Anmeldeversuche. Wie bewertest du sie?",
+   "hinten": "Unsicher: zu kurz und zu wenig Zeichenvielfalt, daher leicht zu erraten oder durchzuprobieren; ohne Sperre sind unbegrenzt viele Versuche möglich. Besser: größere Mindestlänge, mehrere Zeichenarten, Sperre nach Fehlversuchen."
+  },
+  {
+   "id": "AP1-7-1-3-K2-2",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K2",
+   "vorne": "Warum sollte eine Passwort-Policy verbieten, alte Passwörter wiederzuverwenden?",
+   "hinten": "Ein altes Passwort könnte bereits bekannt geworden sein; wer es wieder verwendet, macht den Wechsel wirkungslos."
+  },
+  {
+   "id": "AP1-7-1-3-K3-1",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K3",
+   "vorne": "Nach welchen vier Kriterien bewertest du eine Passwort-Policy?",
+   "hinten": "- Mindestlänge\n- Zeichenvielfalt\n- keine Wiederverwendung\n- Sperre nach Fehlversuchen"
+  },
+  {
+   "id": "AP1-7-1-3-K3-2",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K3",
+   "vorne": "Warum erhöhen Mindestlänge und Zeichenvielfalt die Sicherheit eines Passworts?",
+   "hinten": "Es gibt viel mehr mögliche Kombinationen; das Passwort ist schwerer zu erraten und durch Ausprobieren kaum zu knacken."
+  },
+  {
+   "id": "AP1-7-1-3-K3-3",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K3",
+   "vorne": "Wogegen schützt eine Sperre nach mehreren Fehlversuchen?",
+   "hinten": "Gegen das massenhafte Durchprobieren von Passwörtern (Brute-Force-Angriff)."
+  },
+  {
+   "id": "AP1-7-1-3-K4-1",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K4",
+   "vorne": "Was bedeutet **Security by Design**?",
+   "hinten": "Sicherheit wird von Anfang an in Planung und Entwicklung eines Systems eingeplant und nicht erst nachträglich ergänzt."
+  },
+  {
+   "id": "AP1-7-1-3-K4-2",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K4",
+   "vorne": "Was bedeutet **Security by Default**?",
+   "hinten": "Die Voreinstellungen eines Systems sind die sicheren; wer nichts ändert, ist bereits geschützt – z. B. Firewall ab Werk eingeschaltet, kein Standardpasswort."
+  },
+  {
+   "id": "AP1-7-1-3-K5-1",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K5",
+   "vorne": "Warum sollten nicht alle Benutzer Administratorrechte bekommen?",
+   "hinten": "- Schadsoftware läuft mit den Rechten des Benutzers und könnte sonst das ganze System verändern\n- Fehlbedienungen richten weniger Schaden an\n- Benutzer können keine unerlaubte Software installieren oder Schutz abschalten"
+  },
+  {
+   "id": "AP1-7-1-3-K5-2",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K5",
+   "vorne": "Wie heißt der Grundsatz, dass Benutzer nur die Rechte erhalten, die sie für ihre Arbeit brauchen?",
+   "hinten": "Prinzip der minimalen Rechte (englisch: Least Privilege)"
+  },
+  {
+   "id": "AP1-7-1-3-K6-1",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K6",
+   "vorne": "Mit welchen Maßnahmen förderst du das Sicherheitsbewusstsein der Mitarbeiter?",
+   "hinten": "- Schulungen\n- simulierte Phishing-Mails\n- klare Meldewege für Vorfälle"
+  },
+  {
+   "id": "AP1-7-1-3-K6-2",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K6",
+   "vorne": "Wozu verschickt ein Unternehmen simulierte Phishing-Mails an die eigenen Mitarbeiter?",
+   "hinten": "Die Mitarbeiter üben, Phishing zu erkennen; das Unternehmen sieht, wo noch Schulungsbedarf besteht."
+  },
+  {
+   "id": "AP1-7-1-3-K6-3",
+   "sp": "AP1-7-1-3",
+   "k": "AP1-7-1-3-K6",
+   "vorne": "Warum braucht ein Unternehmen klare Meldewege für Sicherheitsvorfälle?",
+   "hinten": "Jeder weiß sofort, wem er einen Verdacht meldet; so kann schnell reagiert und der Schaden begrenzt werden."
+  },
+  {
+   "id": "AP1-7-1-4-K1-1",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K1",
+   "vorne": "Wofür ist der IT-Sicherheitsbeauftragte zuständig?",
+   "hinten": "Für die Sicherheit aller Informationen und IT-Systeme des Betriebs, z. B. Sicherheitskonzept, Umgang mit Sicherheitsvorfällen, Sensibilisierung der Mitarbeiter."
+  },
+  {
+   "id": "AP1-7-1-4-K1-2",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K1",
+   "vorne": "Wofür ist der Datenschutzbeauftragte zuständig?",
+   "hinten": "Für den Schutz personenbezogener Daten: Er berät den Betrieb, überwacht die Einhaltung des Datenschutzrechts und ist Ansprechpartner für Betroffene und Aufsichtsbehörde."
+  },
+  {
+   "id": "AP1-7-1-4-K2-1",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K2",
+   "vorne": "Wofür steht ISMS?",
+   "hinten": "Informationssicherheitsmanagementsystem"
+  },
+  {
+   "id": "AP1-7-1-4-K2-2",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K2",
+   "vorne": "Was ist ein ISMS?",
+   "hinten": "Festgelegte Regeln, Zuständigkeiten und Abläufe, mit denen ein Betrieb seine Informationssicherheit dauerhaft steuert und verbessert."
+  },
+  {
+   "id": "AP1-7-1-4-K3-1",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K3",
+   "vorne": "Wie unterstützt du als Mitarbeiter das ISMS in deinem Arbeitsbereich?",
+   "hinten": "- Sicherheitsrichtlinien einhalten\n- Sicherheitsvorfälle und Auffälligkeiten melden\n- an Schulungen teilnehmen\n- Schwachstellen und Verbesserungen ansprechen"
+  },
+  {
+   "id": "AP1-7-1-4-K4-1",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K4",
+   "vorne": "Warum ist IT-Sicherheitsmanagement keine einmalige Aufgabe?",
+   "hinten": "Bedrohungen, Technik und Abläufe ändern sich laufend; Sicherheit muss deshalb fortlaufend geplant, umgesetzt, überprüft und verbessert werden (PDCA-Zyklus)."
+  },
+  {
+   "id": "AP1-7-1-4-K4-2",
+   "sp": "AP1-7-1-4",
+   "k": "AP1-7-1-4-K4",
+   "vorne": "Wofür stehen die vier Phasen des PDCA-Zyklus im Sicherheitsmanagement?",
+   "hinten": "- Plan: Ziele und Maßnahmen planen\n- Do: Maßnahmen umsetzen\n- Check: Wirksamkeit überprüfen\n- Act: Mängel beheben und verbessern"
+  },
+  {
+   "id": "AP1-7-2-1-K1-1",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K1",
+   "vorne": "Was ist das BSI?",
+   "hinten": "Das Bundesamt für Sicherheit in der Informationstechnik, die Cyber-Sicherheitsbehörde des Bundes; es gibt u. a. Empfehlungen und Standards zur Informationssicherheit heraus."
+  },
+  {
+   "id": "AP1-7-2-1-K1-2",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K1",
+   "vorne": "Wozu dient das IT-Grundschutz-Kompendium des BSI?",
+   "hinten": "Es sammelt typische Gefährdungen und bewährte Sicherheitsanforderungen, geordnet in Bausteinen. Damit erreicht ein Betrieb mit vertretbarem Aufwand ein angemessenes Sicherheitsniveau."
+  },
+  {
+   "id": "AP1-7-2-1-K2-1",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K2",
+   "vorne": "Was ist ein Baustein im IT-Grundschutz-Kompendium?",
+   "hinten": "Eine Sammlung typischer Gefährdungen und Anforderungen für einen bestimmten Gegenstand, z. B. einen Client, einen Server oder einen Raum."
+  },
+  {
+   "id": "AP1-7-2-1-K3-1",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K3",
+   "vorne": "Begründe die Empfehlung: Der Bildschirm wird gesperrt, wenn der Benutzer den Arbeitsplatz verlässt.",
+   "hinten": "An einem ungesperrten Rechner können Unbefugte unter dem Konto des Benutzers Daten einsehen oder ändern; das gefährdet Vertraulichkeit und Integrität."
+  },
+  {
+   "id": "AP1-7-2-1-K3-2",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K3",
+   "vorne": "Begründe die Empfehlung: Wechseldatenträger wie USB-Sticks nur kontrolliert zulassen.",
+   "hinten": "Über fremde Datenträger kann Schadsoftware eingeschleppt werden, und Daten können unbemerkt kopiert und mitgenommen werden."
+  },
+  {
+   "id": "AP1-7-2-1-K3-3",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K3",
+   "vorne": "Begründe die Empfehlung: Sicherheitsupdates zeitnah einspielen.",
+   "hinten": "Updates schließen bekannte Sicherheitslücken; ohne sie können Angreifer diese Lücken gezielt ausnutzen."
+  },
+  {
+   "id": "AP1-7-2-1-K4-1",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K4",
+   "vorne": "Nenne die groben Schritte des Vorgehens nach IT-Grundschutz in der richtigen Reihenfolge.",
+   "hinten": "1. Bestand erfassen\n2. Schutzbedarf feststellen\n3. Bausteine zuordnen\n4. Maßnahmen umsetzen und prüfen"
+  },
+  {
+   "id": "AP1-7-2-1-K4-2",
+   "sp": "AP1-7-2-1",
+   "k": "AP1-7-2-1-K4",
+   "vorne": "Welcher Schritt folgt im Vorgehen nach IT-Grundschutz auf die Schutzbedarfsfeststellung?",
+   "hinten": "Die Bausteine des Kompendiums werden den erfassten Objekten zugeordnet."
+  },
+  {
+   "id": "AP1-7-2-2-K1-1",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K1",
+   "vorne": "Welche drei Schutzbedarfskategorien gibt es nach IT-Grundschutz?",
+   "hinten": "- normal\n- hoch\n- sehr hoch"
+  },
+  {
+   "id": "AP1-7-2-2-K1-2",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K1",
+   "vorne": "Wie unterscheiden sich die Schutzbedarfskategorien nach der Schwere des möglichen Schadens?",
+   "hinten": "- normal: Schaden begrenzt und überschaubar\n- hoch: Schaden beträchtlich\n- sehr hoch: Schaden kann existenzbedrohend, katastrophal sein"
+  },
+  {
+   "id": "AP1-7-2-2-K1-3",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K1",
+   "vorne": "Ein Ausfall würde den Betrieb in seiner Existenz bedrohen. Welche Schutzbedarfskategorie liegt vor?",
+   "hinten": "sehr hoch"
+  },
+  {
+   "id": "AP1-7-2-2-K2-1",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K2",
+   "vorne": "Für welche Arten von Objekten legst du in der Schutzbedarfsanalyse den Schutzbedarf fest?",
+   "hinten": "- Anwendungen\n- IT-Systeme\n- Räume\n- Kommunikationsverbindungen"
+  },
+  {
+   "id": "AP1-7-2-2-K2-2",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K2",
+   "vorne": "Wie wird der Schutzbedarf eines Objekts festgelegt?",
+   "hinten": "Für jedes Schutzziel (Vertraulichkeit, Integrität, Verfügbarkeit) einzeln, nach dem schwersten Schaden, der bei einer Verletzung entstehen kann."
+  },
+  {
+   "id": "AP1-7-2-2-K3-1",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K3",
+   "vorne": "Nenne drei typische Begründungen für einen hohen Schutzbedarf.",
+   "hinten": "- personenbezogene Daten sind betroffen\n- hoher wirtschaftlicher Schaden\n- Imageschaden"
+  },
+  {
+   "id": "AP1-7-2-2-K3-2",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K3",
+   "vorne": "Eine Anwendung verwaltet Gesundheitsdaten der Mitarbeiter. Wie stufst du die Vertraulichkeit mindestens ein, und warum?",
+   "hinten": "Mindestens hoch: Es sind besonders schutzwürdige personenbezogene Daten; ein Bekanntwerden schadet den Betroffenen erheblich und kann dem Betrieb Bußgelder und Imageschaden einbringen."
+  },
+  {
+   "id": "AP1-7-2-2-K4-1",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K4",
+   "vorne": "Wie gehst du vor, wenn du eine teilweise ausgefüllte Schutzbedarfstabelle ergänzt?",
+   "hinten": "Für jedes Objekt und jedes Schutzziel den möglichen Schaden abschätzen, normal, hoch oder sehr hoch eintragen und kurz begründen; IT-Systeme übernehmen den höchsten Bedarf ihrer Anwendungen."
+  },
+  {
+   "id": "AP1-7-2-2-K5-1",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K5",
+   "vorne": "Wonach richtet sich der Schutzbedarf eines IT-Systems?",
+   "hinten": "Nach der Anwendung mit dem höchsten Schutzbedarf, die darauf läuft – für jedes Schutzziel einzeln (Maximumprinzip)."
+  },
+  {
+   "id": "AP1-7-2-2-K5-2",
+   "sp": "AP1-7-2-2",
+   "k": "AP1-7-2-2-K5",
+   "vorne": "Auf einem Server laufen zwei Anwendungen: eine mit Verfügbarkeit normal, eine mit Verfügbarkeit hoch. Welchen Schutzbedarf hat der Server bei der Verfügbarkeit?",
+   "hinten": "hoch"
+  },
+  {
+   "id": "AP1-7-2-3-K1-1",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K1",
+   "vorne": "Wie ist eine Risikomatrix aufgebaut?",
+   "hinten": "Auf einer Achse die Eintrittswahrscheinlichkeit, auf der anderen die Schadenshöhe; jedes Feld gehört zu einer Risikoklasse, z. B. gering, mittel, hoch."
+  },
+  {
+   "id": "AP1-7-2-3-K1-2",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K1",
+   "vorne": "Aus welchen beiden Größen ergibt sich die Höhe eines Risikos?",
+   "hinten": "Aus der Eintrittswahrscheinlichkeit und der Schadenshöhe."
+  },
+  {
+   "id": "AP1-7-2-3-K2-1",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K2",
+   "vorne": "Ein Risiko tritt wahrscheinlich ein und verursacht einen großen Schaden. Wo liegt es in der Risikomatrix, und was folgt daraus?",
+   "hinten": "In dem Feld, in dem beide Achsen ihren höchsten Wert haben: höchste Risikoklasse, es muss sofort gehandelt werden."
+  },
+  {
+   "id": "AP1-7-2-3-K2-2",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K2",
+   "vorne": "Ein Risiko ist sehr unwahrscheinlich und hätte nur geringe Folgen. In welche Risikoklasse fällt es, und wie geht man meist damit um?",
+   "hinten": "Niedrigste Risikoklasse (gering); es kann oft bewusst getragen werden."
+  },
+  {
+   "id": "AP1-7-2-3-K3-1",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K3",
+   "vorne": "Welche vier Möglichkeiten gibt es, mit einem Risiko umzugehen?",
+   "hinten": "- vermeiden\n- vermindern\n- übertragen (z. B. versichern)\n- bewusst tragen"
+  },
+  {
+   "id": "AP1-7-2-3-K3-2",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K3",
+   "vorne": "Welche Art des Umgangs mit einem Risiko ist das jeweils?\na) eine Cyberversicherung abschließen\nb) einen unsicheren Dienst ganz abschalten\nc) eine Firewall installieren",
+   "hinten": "- a) übertragen\n- b) vermeiden\n- c) vermindern"
+  },
+  {
+   "id": "AP1-7-2-3-K4-1",
+   "sp": "AP1-7-2-3",
+   "k": "AP1-7-2-3-K4",
+   "vorne": "Welche Risiken werden zuerst behandelt, und warum?",
+   "hinten": "Die mit hoher Eintrittswahrscheinlichkeit und hohem Schaden (höchste Risikoklasse), weil von ihnen die größte Gefahr ausgeht; geringe Risiken können später behandelt oder getragen werden."
+  },
+  {
+   "id": "AP1-7-3-1-K1-1",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K1",
+   "vorne": "Wie funktioniert symmetrische Verschlüsselung?",
+   "hinten": "Sender und Empfänger verwenden denselben geheimen Schlüssel zum Ver- und Entschlüsseln."
+  },
+  {
+   "id": "AP1-7-3-1-K2-1",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K2",
+   "vorne": "Mit welchem Schlüssel wird bei asymmetrischer Verschlüsselung eine E-Mail verschlüsselt, mit welchem entschlüsselt?",
+   "hinten": "Verschlüsselt mit dem öffentlichen Schlüssel des Empfängers, entschlüsselt mit dem privaten Schlüssel des Empfängers."
+  },
+  {
+   "id": "AP1-7-3-1-K2-2",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K2",
+   "vorne": "Welche zwei Schlüssel hat jeder Teilnehmer bei asymmetrischer Verschlüsselung, und wer darf sie kennen?",
+   "hinten": "- öffentlicher Schlüssel: darf jeder kennen, wird weitergegeben\n- privater Schlüssel: kennt nur der Inhaber, bleibt geheim"
+  },
+  {
+   "id": "AP1-7-3-1-K3-1",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K3",
+   "vorne": "Nenne einen Vorteil und einen Nachteil der asymmetrischen gegenüber der symmetrischen Verschlüsselung.",
+   "hinten": "- Vorteil: kein sicherer Schlüsseltausch nötig, der öffentliche Schlüssel darf bekannt sein\n- Nachteil: rechenaufwendiger, also langsamer"
+  },
+  {
+   "id": "AP1-7-3-1-K3-2",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K3",
+   "vorne": "Welches Problem hat die symmetrische Verschlüsselung?",
+   "hinten": "Der gemeinsame geheime Schlüssel muss vorher auf sicherem Weg ausgetauscht werden."
+  },
+  {
+   "id": "AP1-7-3-1-K4-1",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K4",
+   "vorne": "Wie funktioniert hybride Verschlüsselung?",
+   "hinten": "Die Daten werden mit einem symmetrischen Sitzungsschlüssel verschlüsselt; dieser Sitzungsschlüssel wird asymmetrisch (mit dem öffentlichen Schlüssel des Empfängers) geschützt übertragen."
+  },
+  {
+   "id": "AP1-7-3-1-K4-2",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K4",
+   "vorne": "Warum kombiniert die hybride Verschlüsselung beide Verfahren?",
+   "hinten": "Sie nutzt die Vorteile beider: schnelle symmetrische Verschlüsselung der Daten und asymmetrische Übertragung des Schlüssels, sodass kein sicherer Schlüsseltausch vorab nötig ist."
+  },
+  {
+   "id": "AP1-7-3-1-K5-1",
+   "sp": "AP1-7-3-1",
+   "k": "AP1-7-3-1-K5",
+   "vorne": "Ordne zu – symmetrisch, asymmetrisch oder hybrid?\n- AES\n- RSA\n- TLS",
+   "hinten": "- AES: symmetrisch\n- RSA: asymmetrisch\n- TLS: hybrid"
+  },
+  {
+   "id": "AP1-7-3-2-K1-1",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K1",
+   "vorne": "Was ist ein Hashwert?",
+   "hinten": "Ein aus Daten berechneter Prüfwert fester Länge; er ändert sich schon bei kleinster Änderung der Daten und lässt sich nicht zu den Daten zurückrechnen."
+  },
+  {
+   "id": "AP1-7-3-2-K1-2",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K1",
+   "vorne": "Hängt die Länge eines Hashwerts von der Größe der Daten ab?",
+   "hinten": "Nein, ein Hashverfahren liefert immer einen Wert fester Länge, egal wie groß die Daten sind."
+  },
+  {
+   "id": "AP1-7-3-2-K2-1",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K2",
+   "vorne": "Wie prüfst du mit einem angegebenen Hashwert, ob ein Download unversehrt ist?",
+   "hinten": "Den Hashwert der heruntergeladenen Datei mit demselben Verfahren selbst berechnen und mit dem angegebenen vergleichen. Stimmen beide überein, ist die Datei unverändert."
+  },
+  {
+   "id": "AP1-7-3-2-K2-2",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K2",
+   "vorne": "Welchen Zweck hat ein Hashwert, der neben einer Installationsdatei zum Download angeboten wird?",
+   "hinten": "Man kann prüfen, ob die Datei vollständig und unverändert angekommen ist, also weder beschädigt noch manipuliert wurde (Integrität) – sofern der angegebene Hashwert selbst aus vertrauenswürdiger Quelle stammt."
+  },
+  {
+   "id": "AP1-7-3-2-K3-1",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K3",
+   "vorne": "Was belegt eine digitale Signatur?",
+   "hinten": "- von wem die Nachricht stammt (Authentizität)\n- dass sie nicht verändert wurde (Integrität)"
+  },
+  {
+   "id": "AP1-7-3-2-K4-1",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K4",
+   "vorne": "Wie erstellt der Absender eine digitale Signatur?",
+   "hinten": "Er bildet den Hashwert der Nachricht und verschlüsselt ihn mit seinem privaten Schlüssel."
+  },
+  {
+   "id": "AP1-7-3-2-K4-2",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K4",
+   "vorne": "Wie prüft der Empfänger eine digitale Signatur?",
+   "hinten": "Er entschlüsselt die Signatur mit dem öffentlichen Schlüssel des Absenders, berechnet selbst den Hashwert der Nachricht und vergleicht beide. Stimmen sie überein, ist die Signatur gültig."
+  },
+  {
+   "id": "AP1-7-3-2-K4-3",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K4",
+   "vorne": "Warum signiert der Absender mit seinem privaten und nicht mit seinem öffentlichen Schlüssel?",
+   "hinten": "Nur er besitzt seinen privaten Schlüssel, also kann nur er die Signatur erzeugen; prüfen kann sie jeder mit dem öffentlichen Schlüssel."
+  },
+  {
+   "id": "AP1-7-3-2-K5-1",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K5",
+   "vorne": "Wozu dient ein digitales Zertifikat?",
+   "hinten": "Es bestätigt, dass ein öffentlicher Schlüssel zu einer bestimmten Person, Organisation oder Website gehört."
+  },
+  {
+   "id": "AP1-7-3-2-K6-1",
+   "sp": "AP1-7-3-2",
+   "k": "AP1-7-3-2-K6",
+   "vorne": "Wer stellt ein digitales Zertifikat aus?",
+   "hinten": "Eine Zertifizierungsstelle (englisch: Certificate Authority, CA)."
+  },
+  {
+   "id": "AP1-7-3-3-K1-1",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K1",
+   "vorne": "Worin unterscheiden sich Zugangskontrolle und Zugriffskontrolle?",
+   "hinten": "- Zugangskontrolle: wer ein System überhaupt benutzen darf, z. B. Anmeldung\n- Zugriffskontrolle: was ein Benutzer dort sehen und ändern darf, z. B. Leserechte"
+  },
+  {
+   "id": "AP1-7-3-3-K2-1",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K2",
+   "vorne": "Was ist Authentifizierung?",
+   "hinten": "Die Prüfung, ob jemand wirklich der ist, für den er sich ausgibt, z. B. durch ein Passwort bei der Anmeldung."
+  },
+  {
+   "id": "AP1-7-3-3-K2-2",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K2",
+   "vorne": "Welche drei Arten von Faktoren gibt es bei der Authentifizierung?",
+   "hinten": "- Wissen, z. B. Passwort, PIN\n- Besitz, z. B. Chipkarte, Smartphone\n- biometrisches Merkmal, z. B. Fingerabdruck"
+  },
+  {
+   "id": "AP1-7-3-3-K2-3",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K2",
+   "vorne": "Zu welcher Faktorart gehört jeweils:\na) PIN\nb) Hardware-Token\nc) Gesichtserkennung",
+   "hinten": "- a) Wissen\n- b) Besitz\n- c) biometrisches Merkmal"
+  },
+  {
+   "id": "AP1-7-3-3-K3-1",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K3",
+   "vorne": "Was ist Zwei-Faktor-Authentifizierung? Nenne ein Beispiel.",
+   "hinten": "Anmeldung mit zwei Faktoren aus verschiedenen Arten (Wissen, Besitz, Biometrie), z. B. Passwort und Code aus einer Authenticator-App."
+  },
+  {
+   "id": "AP1-7-3-3-K3-2",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K3",
+   "vorne": "Ist eine Anmeldung mit Passwort und zusätzlicher Sicherheitsfrage eine Zwei-Faktor-Authentifizierung?",
+   "hinten": "Nein. Beides ist Wissen, also nur eine Faktorart."
+  },
+  {
+   "id": "AP1-7-3-3-K3-3",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K3",
+   "vorne": "Warum ist Zwei-Faktor-Authentifizierung sicherer als ein Passwort allein?",
+   "hinten": "Wer nur das Passwort erbeutet hat, z. B. durch Phishing, kommt ohne den zweiten Faktor trotzdem nicht hinein."
+  },
+  {
+   "id": "AP1-7-3-3-K4-1",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K4",
+   "vorne": "Nenne drei technische Möglichkeiten, den Zutritt zu einem Raum automatisch zu kontrollieren.",
+   "hinten": "- Chipkarte oder Transponder\n- Zahlencode (PIN-Tastatur)\n- Fingerabdruck oder anderes biometrisches Merkmal"
+  },
+  {
+   "id": "AP1-7-3-3-K5-1",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K5",
+   "vorne": "Was unterscheidet Zutritt, Zugang und Zugriff?",
+   "hinten": "- Zutritt: Betreten von Räumen\n- Zugang: Benutzen eines IT-Systems\n- Zugriff: Lesen oder Ändern von Daten"
+  },
+  {
+   "id": "AP1-7-3-3-K5-2",
+   "sp": "AP1-7-3-3",
+   "k": "AP1-7-3-3-K5",
+   "vorne": "Zutritt, Zugang oder Zugriff?\na) Anmeldung am PC mit Passwort\nb) Chipkarte an der Tür zum Serverraum\nc) Leserecht auf einen Ordner",
+   "hinten": "- a) Zugang\n- b) Zutritt\n- c) Zugriff"
+  },
+  {
+   "id": "AP1-7-3-4-K1-1",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K1",
+   "vorne": "Was bedeutet es, ein Betriebssystem zu härten?",
+   "hinten": "Die Angriffsfläche verkleinern und Schwachstellen schließen, damit das System unempfindlicher gegen Angriffe wird."
+  },
+  {
+   "id": "AP1-7-3-4-K2-1",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K2",
+   "vorne": "Nenne Maßnahmen zur Härtung eines Arbeitsplatzrechners.",
+   "hinten": "- Updates einspielen\n- Firewall einschalten\n- sichere Passwörter verwenden\n- nicht benötigte Dienste und Programme entfernen"
+  },
+  {
+   "id": "AP1-7-3-4-K2-2",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K2",
+   "vorne": "Warum gehört das Einspielen von Updates zur Härtung?",
+   "hinten": "Updates schließen bekannte Sicherheitslücken, die Angreifer sonst ausnutzen können."
+  },
+  {
+   "id": "AP1-7-3-4-K3-1",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K3",
+   "vorne": "Was ist eine Minimalkonfiguration?",
+   "hinten": "Es sind nur die Programme, Dienste und Funktionen installiert und aktiviert, die für die Aufgabe tatsächlich gebraucht werden."
+  },
+  {
+   "id": "AP1-7-3-4-K3-2",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K3",
+   "vorne": "Warum ist eine Minimalkonfiguration sicherer und leichter zu pflegen?",
+   "hinten": "- sicherer: weniger Programme und Dienste bedeuten weniger mögliche Schwachstellen und Angriffspunkte\n- leichter zu pflegen: weniger muss aktualisiert, überwacht und konfiguriert werden"
+  },
+  {
+   "id": "AP1-7-3-4-K4-1",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K4",
+   "vorne": "Was tut eine Personal Firewall?",
+   "hinten": "Sie läuft auf dem einzelnen Rechner und erlaubt oder blockiert anhand von Regeln ein- und ausgehende Netzwerkverbindungen, auch für einzelne Programme."
+  },
+  {
+   "id": "AP1-7-3-4-K4-2",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K4",
+   "vorne": "Wie sperrst du mit der Personal Firewall einem Programm den Zugriff auf das Internet?",
+   "hinten": "In den Firewall-Einstellungen eine Regel für ausgehende Verbindungen anlegen, die für dieses Programm die Verbindung blockiert."
+  },
+  {
+   "id": "AP1-7-3-4-K5-1",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K5",
+   "vorne": "Wozu dient ein Virenschutzprogramm?",
+   "hinten": "Es erkennt Schadsoftware, z. B. an bekannten Signaturen oder verdächtigem Verhalten, blockiert sie und entfernt sie oder verschiebt sie in Quarantäne."
+  },
+  {
+   "id": "AP1-7-3-4-K5-2",
+   "sp": "AP1-7-3-4",
+   "k": "AP1-7-3-4-K5",
+   "vorne": "Warum muss ein Virenschutzprogramm regelmäßig aktualisiert werden?",
+   "hinten": "Neue Schadsoftware erkennt es nur mit aktuellen Signaturen und Erkennungsregeln."
+  },
+  {
+   "id": "AP1-7-3-5-K1-1",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K1",
+   "vorne": "Was wird bei einer Vollsicherung gesichert?",
+   "hinten": "Alle ausgewählten Daten vollständig, egal ob sie sich seit der letzten Sicherung geändert haben."
+  },
+  {
+   "id": "AP1-7-3-5-K1-2",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K1",
+   "vorne": "Was wird bei einer differenziellen Sicherung gesichert?",
+   "hinten": "Alle Daten, die seit der letzten **Vollsicherung** neu sind oder sich geändert haben."
+  },
+  {
+   "id": "AP1-7-3-5-K1-3",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K1",
+   "vorne": "Was wird bei einer inkrementellen Sicherung gesichert?",
+   "hinten": "Nur die Daten, die seit der letzten Sicherung – gleich welcher Art – neu sind oder sich geändert haben."
+  },
+  {
+   "id": "AP1-7-3-5-K1-4",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K1",
+   "vorne": "Welche Sicherungen brauchst du zur vollständigen Wiederherstellung bei differenzieller und bei inkrementeller Sicherung?",
+   "hinten": "- differenziell: letzte Vollsicherung + letzte differenzielle Sicherung\n- inkrementell: letzte Vollsicherung + alle inkrementellen Sicherungen seitdem, in der richtigen Reihenfolge"
+  },
+  {
+   "id": "AP1-7-3-5-K1-5",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K1",
+   "vorne": "Welches Sicherungsverfahren braucht je Sicherungslauf am wenigsten Zeit und Speicherplatz, und was ist sein Nachteil?",
+   "hinten": "Die inkrementelle Sicherung; dafür ist die Wiederherstellung am aufwendigsten, weil alle Teilsicherungen seit der Vollsicherung nötig sind."
+  },
+  {
+   "id": "AP1-7-3-5-K2-1",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K2",
+   "vorne": "Was macht eine Datensicherung zuverlässig?",
+   "hinten": "- regelmäßig sichern\n- Sicherung getrennt vom Rechner lagern\n- Datenträger verschlüsseln\n- Wiederherstellung testen"
+  },
+  {
+   "id": "AP1-7-3-5-K2-2",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K2",
+   "vorne": "Warum lagert man die Sicherung getrennt vom gesicherten Rechner?",
+   "hinten": "Sonst können Brand, Diebstahl, Überspannung oder Schadsoftware Original und Sicherung zugleich zerstören."
+  },
+  {
+   "id": "AP1-7-3-5-K2-3",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K2",
+   "vorne": "Warum verschlüsselt man externe Sicherungsdatenträger?",
+   "hinten": "Geht der Datenträger verloren oder wird gestohlen, kann niemand die gesicherten Daten lesen."
+  },
+  {
+   "id": "AP1-7-3-5-K2-4",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K2",
+   "vorne": "Warum testet man die Wiederherstellung einer Datensicherung?",
+   "hinten": "Nur so ist sicher, dass die Sicherung vollständig und lesbar ist und sich im Ernstfall tatsächlich zurückspielen lässt."
+  },
+  {
+   "id": "AP1-7-3-5-K3-1",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K3",
+   "vorne": "Nenne zwei Lösungen, mit denen Daten auch bei einem Ausfall verfügbar bleiben.",
+   "hinten": "- Datensicherung (Backup)\n- mehrfache Speicherung, z. B. gespiegelte Festplatten oder ein zweiter Speicherort"
+  },
+  {
+   "id": "AP1-7-3-5-K3-2",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K3",
+   "vorne": "Warum ersetzt eine mehrfache (gespiegelte) Speicherung keine Datensicherung?",
+   "hinten": "Versehentliches Löschen oder Verschlüsselung durch Schadsoftware wirkt sofort auf alle Kopien; nur eine getrennte Sicherung erlaubt die Rückkehr zu einem älteren Stand."
+  },
+  {
+   "id": "AP1-7-3-5-K4-1",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K4",
+   "vorne": "Was ist ein NAS?",
+   "hinten": "Network Attached Storage: ein Speichergerät im Netzwerk, auf das mehrere Geräte zugreifen, z. B. für gemeinsame Dateien oder Datensicherungen."
+  },
+  {
+   "id": "AP1-7-3-5-K5-1",
+   "sp": "AP1-7-3-5",
+   "k": "AP1-7-3-5-K5",
+   "vorne": "Was besagt die 3-2-1-Regel der Datensicherung?",
+   "hinten": "- 3 Kopien der Daten\n- auf 2 verschiedenen Medien\n- davon 1 Kopie außer Haus"
+  },
+  {
+   "id": "AP1-7-4-1-K1-1",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K1",
+   "vorne": "Was macht **Ransomware**?",
+   "hinten": "Sie verschlüsselt Daten oder sperrt das System und fordert Lösegeld für die Freigabe."
+  },
+  {
+   "id": "AP1-7-4-1-K1-2",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K1",
+   "vorne": "Was macht **Spyware**?",
+   "hinten": "Sie späht unbemerkt Daten aus, z. B. Eingaben, Passwörter oder Surfverhalten, und übermittelt sie an den Angreifer."
+  },
+  {
+   "id": "AP1-7-4-1-K1-3",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K1",
+   "vorne": "Was macht **Scareware**?",
+   "hinten": "Sie täuscht eine Bedrohung vor, z. B. angebliche Virenfunde, um den Benutzer zu verunsichern und zum Kauf oder zur Installation einer (schädlichen) Software zu bewegen."
+  },
+  {
+   "id": "AP1-7-4-1-K6-1",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K6",
+   "vorne": "Was ist ein Computervirus?",
+   "hinten": "Ein Schadprogramm, das sich an andere Dateien oder Programme anhängt und sich verbreitet, wenn diese ausgeführt werden."
+  },
+  {
+   "id": "AP1-7-4-1-K6-2",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K6",
+   "vorne": "Was ist ein Wurm, und worin unterscheidet er sich vom Virus?",
+   "hinten": "Ein Schadprogramm, das sich selbstständig über Netzwerke verbreitet; anders als ein Virus braucht er keine Wirtsdatei und kein Zutun des Benutzers."
+  },
+  {
+   "id": "AP1-7-4-1-K6-3",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K6",
+   "vorne": "Was ist ein Trojaner?",
+   "hinten": "Ein Programm, das sich als nützlich tarnt und im Hintergrund unbemerkt schädliche Funktionen ausführt, z. B. eine Hintertür für Angreifer öffnet."
+  },
+  {
+   "id": "AP1-7-4-1-K2-1",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K2",
+   "vorne": "Nenne Maßnahmen für sicheres Arbeiten außerhalb des Büros.",
+   "hinten": "- Blickschutzfolie am Bildschirm\n- Gerät beim Verlassen sperren\n- VPN statt direkter Nutzung offener WLANs\n- verschlüsselter Datenträger"
+  },
+  {
+   "id": "AP1-7-4-1-K2-2",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K2",
+   "vorne": "Warum nutzt man unterwegs ein VPN, statt sich direkt über ein offenes WLAN zu verbinden?",
+   "hinten": "Im offenen WLAN können Dritte den Datenverkehr mitlesen oder manipulieren; das VPN verschlüsselt die Verbindung ins Firmennetz."
+  },
+  {
+   "id": "AP1-7-4-1-K2-3",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K2",
+   "vorne": "Wozu dient eine Blickschutzfolie am Notebook?",
+   "hinten": "Der Bildschirm ist nur von vorn lesbar; Personen daneben, z. B. im Zug, können nicht mitlesen."
+  },
+  {
+   "id": "AP1-7-4-1-K3-1",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K3",
+   "vorne": "Welche Folge droht, wenn das Notebook unterwegs kurz unbeaufsichtigt und ungesperrt bleibt?",
+   "hinten": "Fremde können Daten einsehen, kopieren oder ändern oder Schadsoftware aufspielen."
+  },
+  {
+   "id": "AP1-7-4-1-K3-2",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K3",
+   "vorne": "Welche Folge droht, wenn ein Notebook mit unverschlüsselter Festplatte gestohlen wird?",
+   "hinten": "Der Dieb kann alle gespeicherten Daten auslesen; sind personenbezogene Daten betroffen, liegt zudem eine Datenschutzverletzung vor."
+  },
+  {
+   "id": "AP1-7-4-1-K3-3",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K3",
+   "vorne": "Welche Folge droht, wenn man unterwegs ohne Blickschutzfolie mit vertraulichen Daten arbeitet?",
+   "hinten": "Umstehende können vertrauliche Daten vom Bildschirm ablesen – die Vertraulichkeit ist verletzt."
+  },
+  {
+   "id": "AP1-7-4-1-K4-1",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K4",
+   "vorne": "Was ist Phishing?",
+   "hinten": "Ein Betrugsversuch, bei dem Angreifer mit gefälschten Nachrichten oder Webseiten an Zugangsdaten oder andere vertrauliche Daten gelangen wollen."
+  },
+  {
+   "id": "AP1-7-4-1-K4-2",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K4",
+   "vorne": "Woran erkennst du eine Phishing-Mail?",
+   "hinten": "- unpersönliche Anrede\n- Zeitdruck oder Drohung\n- Fehler im Text\n- Aufforderung, Zugangsdaten einzugeben"
+  },
+  {
+   "id": "AP1-7-4-1-K5-1",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K5",
+   "vorne": "Welche Schutzmaßnahmen gegen Schadsoftware und Phishing richtet das Unternehmen ein?",
+   "hinten": "- Virenschutz und Firewall\n- Spam- und Mailfilter\n- Updates zentral einspielen\n- eingeschränkte Benutzerrechte\n- regelmäßige Datensicherung\n- Schulungen"
+  },
+  {
+   "id": "AP1-7-4-1-K5-2",
+   "sp": "AP1-7-4-1",
+   "k": "AP1-7-4-1-K5",
+   "vorne": "Was beachtet jeder Mitarbeiter zum Schutz vor Schadsoftware und Phishing?",
+   "hinten": "- keine Links oder Anhänge aus verdächtigen Mails öffnen\n- Absender und Linkziel prüfen\n- Zugangsdaten nie über Links aus Mails eingeben\n- keine fremden USB-Sticks anschließen\n- Verdacht sofort melden"
+  },
+  {
+   "id": "AP1-7-5-1-K1-1",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K1",
+   "vorne": "Welche zwei Rechtsgrundlagen regeln in Deutschland den Datenschutz in Unternehmen, und welchen Zweck haben sie?",
+   "hinten": "DSGVO (Datenschutz-Grundverordnung der EU) und BDSG (Bundesdatenschutzgesetz). Zweck: Schutz der Menschen bei der Verarbeitung ihrer personenbezogenen Daten."
+  },
+  {
+   "id": "AP1-7-5-1-K1-2",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K1",
+   "vorne": "Wie verhalten sich DSGVO und BDSG zueinander?",
+   "hinten": "Die DSGVO gilt als EU-Verordnung unmittelbar in allen EU-Staaten und hat Vorrang; das BDSG ergänzt sie in Deutschland dort, wo die DSGVO den Staaten Spielraum lässt."
+  },
+  {
+   "id": "AP1-7-5-1-K2-1",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K2",
+   "vorne": "Was sind personenbezogene Daten?",
+   "hinten": "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+  },
+  {
+   "id": "AP1-7-5-1-K2-2",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K2",
+   "vorne": "Nenne Beispiele für personenbezogene Daten.",
+   "hinten": "z. B. Name, Anschrift, Geburtsdatum, E-Mail-Adresse, Kontonummer, Personal- oder Kundennummer"
+  },
+  {
+   "id": "AP1-7-5-1-K2-3",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K2",
+   "vorne": "Sind Daten über ein Unternehmen, z. B. Firmenname und Umsatz einer GmbH, personenbezogene Daten?",
+   "hinten": "Nein. Personenbezogen sind nur Daten über natürliche Personen (Menschen) – außer die Unternehmensdaten lassen auf eine bestimmte Person schließen."
+  },
+  {
+   "id": "AP1-7-5-1-K3-1",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K3",
+   "vorne": "Nenne die wichtigsten Rechte der Betroffenen nach der DSGVO.",
+   "hinten": "- Auskunft\n- Berichtigung\n- Löschung\n- Einschränkung der Verarbeitung\n- Datenübertragbarkeit\n- Widerspruch"
+  },
+  {
+   "id": "AP1-7-5-1-K3-2",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K3",
+   "vorne": "Was kann ein Betroffener mit dem Auskunftsrecht verlangen?",
+   "hinten": "Die Bestätigung, ob Daten über ihn verarbeitet werden, und wenn ja eine Kopie der Daten sowie Angaben z. B. zu Zweck, Empfängern, Speicherdauer und Herkunft."
+  },
+  {
+   "id": "AP1-7-5-1-K3-3",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K3",
+   "vorne": "Eine ehemalige Kundin verlangt, dass ihre Daten gelöscht werden. Wann darf das Unternehmen Daten trotzdem behalten?",
+   "hinten": "Wenn eine gesetzliche Aufbewahrungspflicht besteht, z. B. für Rechnungen; diese Daten werden dann nur noch dafür aufbewahrt und nach Fristablauf gelöscht."
+  },
+  {
+   "id": "AP1-7-5-1-K4-1",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K4",
+   "vorne": "Was bewirkt eine Einwilligung im Datenschutz?",
+   "hinten": "Sie erlaubt die Verarbeitung der personenbezogenen Daten für den angegebenen Zweck. Sie muss freiwillig, für den bestimmten Fall, informiert und unmissverständlich erteilt werden."
+  },
+  {
+   "id": "AP1-7-5-1-K4-2",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K4",
+   "vorne": "Was gilt, wenn jemand seine Einwilligung widerruft?",
+   "hinten": "Der Widerruf ist jederzeit möglich. Ab dann dürfen die Daten auf dieser Grundlage nicht mehr verarbeitet werden; die Verarbeitung bis zum Widerruf bleibt rechtmäßig."
+  },
+  {
+   "id": "AP1-7-5-1-K4-3",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K4",
+   "vorne": "Darf ein Unternehmen personenbezogene Daten nur mit Einwilligung verarbeiten?",
+   "hinten": "Nein. Es braucht eine Rechtsgrundlage; neben der Einwilligung z. B. die Erfüllung eines Vertrags, eine gesetzliche Pflicht oder ein berechtigtes Interesse."
+  },
+  {
+   "id": "AP1-7-5-1-K5-1",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K5",
+   "vorne": "Was unterscheidet Datenschutz von Datensicherheit?",
+   "hinten": "- Datenschutz: schützt die Person vor Missbrauch ihrer personenbezogenen Daten\n- Datensicherheit: schützt Daten aller Art vor Verlust, Veränderung und unbefugtem Zugriff"
+  },
+  {
+   "id": "AP1-7-5-1-K5-2",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K5",
+   "vorne": "Datenschutz oder Datensicherheit?\na) Ein Kunde erhält Auskunft über seine gespeicherten Daten.\nb) Der Server wird täglich gesichert.",
+   "hinten": "- a) Datenschutz\n- b) Datensicherheit"
+  },
+  {
+   "id": "AP1-7-5-1-K6-1",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K6",
+   "vorne": "Was bedeutet der Grundsatz der **Zweckbindung**?",
+   "hinten": "Personenbezogene Daten dürfen nur für festgelegte, eindeutige Zwecke erhoben und nicht für damit unvereinbare Zwecke weiterverarbeitet werden."
+  },
+  {
+   "id": "AP1-7-5-1-K6-2",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K6",
+   "vorne": "Was bedeutet der Grundsatz der **Datenminimierung**?",
+   "hinten": "Es werden nur so viele personenbezogene Daten erhoben und verarbeitet, wie für den Zweck nötig sind."
+  },
+  {
+   "id": "AP1-7-5-1-K6-3",
+   "sp": "AP1-7-5-1",
+   "k": "AP1-7-5-1-K6",
+   "vorne": "Was bedeutet der Grundsatz der **Speicherbegrenzung**?",
+   "hinten": "Personenbezogene Daten werden nur so lange gespeichert, wie es für den Zweck nötig ist; danach werden sie gelöscht oder anonymisiert."
+  },
+  {
+   "id": "AP1-7-5-2-K1-1",
+   "sp": "AP1-7-5-2",
+   "k": "AP1-7-5-2-K1",
+   "vorne": "Was ist Anonymisierung?",
+   "hinten": "Der Bezug zur Person wird so entfernt, dass er nicht wiederhergestellt werden kann."
+  },
+  {
+   "id": "AP1-7-5-2-K2-1",
+   "sp": "AP1-7-5-2",
+   "k": "AP1-7-5-2-K2",
+   "vorne": "Was ist Pseudonymisierung?",
+   "hinten": "Der Name und andere direkt identifizierende Merkmale werden durch ein Kennzeichen ersetzt; mit einer getrennt aufbewahrten Zuordnung lässt sich der Personenbezug wiederherstellen."
+  },
+  {
+   "id": "AP1-7-5-2-K2-2",
+   "sp": "AP1-7-5-2",
+   "k": "AP1-7-5-2-K2",
+   "vorne": "Was muss bei der Pseudonymisierung besonders geschützt werden?",
+   "hinten": "Die Zuordnung von Kennzeichen zu Personen; sie wird getrennt von den Daten und geschützt aufbewahrt."
+  },
+  {
+   "id": "AP1-7-5-2-K3-1",
+   "sp": "AP1-7-5-2",
+   "k": "AP1-7-5-2-K3",
+   "vorne": "Gelten pseudonymisierte und anonymisierte Daten als personenbezogen?",
+   "hinten": "- pseudonymisiert: ja, das Datenschutzrecht gilt weiter\n- anonymisiert: nein, das Datenschutzrecht gilt nicht mehr"
+  },
+  {
+   "id": "AP1-7-5-2-K4-1",
+   "sp": "AP1-7-5-2",
+   "k": "AP1-7-5-2-K4",
+   "vorne": "Für eine Statistik über das Alter der Kunden ist kein Rückschluss auf einzelne Personen nötig. Anonymisieren oder pseudonymisieren?",
+   "hinten": "Anonymisieren: Der Personenbezug wird nicht gebraucht, und anonyme Daten fallen nicht mehr unter das Datenschutzrecht."
+  },
+  {
+   "id": "AP1-7-5-2-K4-2",
+   "sp": "AP1-7-5-2",
+   "k": "AP1-7-5-2-K4",
+   "vorne": "Bei einer Auswertung von Kundendaten sollen Rückfragen bei einzelnen Kunden möglich bleiben. Anonymisieren oder pseudonymisieren?",
+   "hinten": "Pseudonymisieren: Über die getrennt aufbewahrte Zuordnung lässt sich der Bezug zur Person bei Bedarf wiederherstellen."
+  }
+ ],
+ "nicht_abgefragt": [],
+ "glossar": [
+  {
+   "begriff": "Schutzziele",
+   "erklaerung": "Die Ziele der Informationssicherheit: Vertraulichkeit, Integrität und Verfügbarkeit; oft kommt Authentizität hinzu.",
+   "sp": [
+    "AP1-7-1-1",
+    "AP1-7-2-2"
+   ]
+  },
+  {
+   "begriff": "Vertraulichkeit",
+   "erklaerung": "Schutzziel: Nur Befugte können Informationen einsehen.",
+   "sp": [
+    "AP1-7-1-1",
+    "AP1-7-1-2"
+   ]
+  },
+  {
+   "begriff": "Integrität",
+   "erklaerung": "Schutzziel: Daten sind vollständig und unverändert; unerlaubte Änderungen sind erkennbar.",
+   "sp": [
+    "AP1-7-1-1"
+   ]
+  },
+  {
+   "begriff": "Verfügbarkeit",
+   "erklaerung": "Schutzziel: Daten und Systeme stehen den Berechtigten zur Verfügung, wenn sie gebraucht werden.",
+   "sp": [
+    "AP1-7-1-1",
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "Authentizität",
+   "erklaerung": "Echtheit: Daten oder Kommunikationspartner stammen nachweislich von dem, der angegeben ist. Wird oft als viertes Schutzziel genannt.",
+   "sp": [
+    "AP1-7-1-1"
+   ]
+  },
+  {
+   "begriff": "TOM",
+   "langform": "technische und organisatorische Maßnahmen",
+   "erklaerung": "Sammelbegriff für Maßnahmen, mit denen Daten und Systeme geschützt werden, z. B. Verschlüsselung (technisch) oder Besucherregelung (organisatorisch).",
+   "sp": [
+    "AP1-7-1-2"
+   ]
+  },
+  {
+   "begriff": "Personal Firewall",
+   "erklaerung": "Firewall-Software auf einem einzelnen Rechner, die ein- und ausgehende Netzwerkverbindungen nach Regeln erlaubt oder blockiert, auch je Programm.",
+   "sp": [
+    "AP1-7-1-2",
+    "AP1-7-3-4"
+   ]
+  },
+  {
+   "begriff": "Firewall",
+   "erklaerung": "Schutzsystem, das Netzwerkverbindungen anhand von Regeln erlaubt oder blockiert.",
+   "sp": [
+    "AP1-7-1-2",
+    "AP1-7-3-4"
+   ]
+  },
+  {
+   "begriff": "Virenschutzprogramm",
+   "erklaerung": "Software, die Schadsoftware erkennt, blockiert und entfernt oder in Quarantäne verschiebt.",
+   "sp": [
+    "AP1-7-1-2",
+    "AP1-7-3-4"
+   ]
+  },
+  {
+   "begriff": "Verschlüsselung",
+   "erklaerung": "Umwandlung von Daten mit einem Schlüssel in eine unlesbare Form, die nur mit dem passenden Schlüssel wieder lesbar wird.",
+   "sp": [
+    "AP1-7-1-1",
+    "AP1-7-1-2",
+    "AP1-7-3-1",
+    "AP1-7-3-2",
+    "AP1-7-3-5",
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Berechtigungskonzept",
+   "erklaerung": "Festlegung, welcher Benutzer oder welche Rolle auf welche Systeme und Daten wie zugreifen darf.",
+   "sp": [
+    "AP1-7-1-2"
+   ]
+  },
+  {
+   "begriff": "IT-Sicherheitsrichtlinie",
+   "erklaerung": "Verbindliche Vorgabe des Unternehmens zum sicheren Umgang mit IT und Informationen, z. B. eine Passwort-Policy.",
+   "sp": [
+    "AP1-7-1-3",
+    "AP1-7-1-4"
+   ]
+  },
+  {
+   "begriff": "Passwort-Policy",
+   "erklaerung": "Richtlinie mit Regeln für Passwörter, z. B. Mindestlänge, Zeichenvielfalt, keine Wiederverwendung, Sperre nach Fehlversuchen.",
+   "sp": [
+    "AP1-7-1-3"
+   ]
+  },
+  {
+   "begriff": "Security by Design",
+   "erklaerung": "Grundsatz, Sicherheit von Anfang an in Planung und Entwicklung eines Systems einzuplanen statt sie nachträglich zu ergänzen.",
+   "sp": [
+    "AP1-7-1-3"
+   ]
+  },
+  {
+   "begriff": "Security by Default",
+   "erklaerung": "Grundsatz, dass die Voreinstellungen eines Systems die sicheren sind.",
+   "sp": [
+    "AP1-7-1-3"
+   ]
+  },
+  {
+   "begriff": "Administratorrechte",
+   "erklaerung": "Weitreichende Rechte, mit denen ein Benutzer ein System verwalten, Software installieren und Einstellungen ändern kann.",
+   "sp": [
+    "AP1-7-1-3"
+   ]
+  },
+  {
+   "begriff": "Phishing",
+   "erklaerung": "Betrugsversuch, bei dem Angreifer mit gefälschten Nachrichten oder Webseiten Zugangsdaten oder andere vertrauliche Daten erbeuten wollen.",
+   "sp": [
+    "AP1-7-1-3",
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "IT-Sicherheitsbeauftragter",
+   "erklaerung": "Im Betrieb zuständig für die Sicherheit aller Informationen und IT-Systeme.",
+   "sp": [
+    "AP1-7-1-4"
+   ]
+  },
+  {
+   "begriff": "Datenschutzbeauftragter",
+   "erklaerung": "Berät den Betrieb zum Schutz personenbezogener Daten, überwacht die Einhaltung des Datenschutzrechts und ist Ansprechpartner für Betroffene und Aufsichtsbehörde.",
+   "sp": [
+    "AP1-7-1-4"
+   ]
+  },
+  {
+   "begriff": "ISMS",
+   "langform": "Informationssicherheitsmanagementsystem",
+   "erklaerung": "Festgelegte Regeln, Zuständigkeiten und Abläufe, mit denen ein Betrieb seine Informationssicherheit dauerhaft steuert und verbessert.",
+   "sp": [
+    "AP1-7-1-4"
+   ]
+  },
+  {
+   "begriff": "PDCA-Zyklus",
+   "langform": "Plan, Do, Check, Act",
+   "erklaerung": "Kreislauf zur fortlaufenden Verbesserung: planen, umsetzen, überprüfen, verbessern – und wieder von vorn.",
+   "sp": [
+    "AP1-7-1-4"
+   ]
+  },
+  {
+   "begriff": "BSI",
+   "langform": "Bundesamt für Sicherheit in der Informationstechnik",
+   "erklaerung": "Cyber-Sicherheitsbehörde des Bundes; gibt u. a. den IT-Grundschutz mit Empfehlungen zur Informationssicherheit heraus.",
+   "sp": [
+    "AP1-7-2-1"
+   ]
+  },
+  {
+   "begriff": "IT-Grundschutz",
+   "erklaerung": "Vorgehensweise des BSI, mit der ein Betrieb mit vertretbarem Aufwand ein angemessenes Sicherheitsniveau erreicht.",
+   "sp": [
+    "AP1-7-2-1"
+   ]
+  },
+  {
+   "begriff": "IT-Grundschutz-Kompendium",
+   "erklaerung": "Sammlung des BSI mit typischen Gefährdungen und Sicherheitsanforderungen, geordnet in Bausteinen.",
+   "sp": [
+    "AP1-7-2-1"
+   ]
+  },
+  {
+   "begriff": "Baustein",
+   "erklaerung": "Teil des IT-Grundschutz-Kompendiums mit typischen Gefährdungen und Anforderungen für einen Gegenstand, z. B. einen Client oder einen Raum.",
+   "sp": [
+    "AP1-7-2-1"
+   ]
+  },
+  {
+   "begriff": "Schutzbedarfsanalyse",
+   "erklaerung": "Festlegung, wie hoch der Schutzbedarf von Anwendungen, IT-Systemen, Räumen und Verbindungen je Schutzziel ist, mit Begründung.",
+   "sp": [
+    "AP1-7-2-1",
+    "AP1-7-2-2"
+   ]
+  },
+  {
+   "begriff": "Schutzbedarfskategorien",
+   "erklaerung": "Stufen des Schutzbedarfs nach IT-Grundschutz: normal, hoch, sehr hoch – je nach Schwere des möglichen Schadens.",
+   "sp": [
+    "AP1-7-2-2"
+   ]
+  },
+  {
+   "begriff": "Risikomatrix",
+   "erklaerung": "Tabelle, die Risiken nach Eintrittswahrscheinlichkeit und Schadenshöhe einordnet und so Risikoklassen zeigt.",
+   "sp": [
+    "AP1-7-2-3"
+   ]
+  },
+  {
+   "begriff": "Eintrittswahrscheinlichkeit",
+   "erklaerung": "Wie wahrscheinlich es ist, dass ein Schadensereignis eintritt; eine Achse der Risikomatrix.",
+   "sp": [
+    "AP1-7-2-3"
+   ]
+  },
+  {
+   "begriff": "Symmetrische Verschlüsselung",
+   "erklaerung": "Verfahren, bei dem derselbe geheime Schlüssel zum Ver- und Entschlüsseln dient.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "Asymmetrische Verschlüsselung",
+   "erklaerung": "Verfahren mit Schlüsselpaar: Mit dem öffentlichen Schlüssel des Empfängers wird verschlüsselt, nur sein privater Schlüssel entschlüsselt.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "Hybride Verschlüsselung",
+   "erklaerung": "Kombination: Die Daten werden symmetrisch verschlüsselt, der Sitzungsschlüssel wird asymmetrisch geschützt übertragen.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "Öffentlicher Schlüssel",
+   "erklaerung": "Teil des Schlüsselpaars bei asymmetrischen Verfahren, den jeder kennen darf; damit wird verschlüsselt oder eine Signatur geprüft.",
+   "sp": [
+    "AP1-7-3-1",
+    "AP1-7-3-2"
+   ]
+  },
+  {
+   "begriff": "Privater Schlüssel",
+   "erklaerung": "Geheimer Teil des Schlüsselpaars, den nur der Inhaber kennt; damit wird entschlüsselt oder signiert.",
+   "sp": [
+    "AP1-7-3-1",
+    "AP1-7-3-2"
+   ]
+  },
+  {
+   "begriff": "Sitzungsschlüssel",
+   "erklaerung": "Symmetrischer Schlüssel, der nur für eine Verbindung oder Nachricht erzeugt wird; bei hybrider Verschlüsselung asymmetrisch geschützt übertragen.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "AES",
+   "langform": "Advanced Encryption Standard",
+   "erklaerung": "Weit verbreitetes symmetrisches Verschlüsselungsverfahren.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "RSA",
+   "langform": "Rivest, Shamir, Adleman",
+   "erklaerung": "Bekanntes asymmetrisches Verfahren, benannt nach seinen Erfindern.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "TLS",
+   "langform": "Transport Layer Security",
+   "erklaerung": "Protokoll zur verschlüsselten Übertragung, z. B. bei HTTPS; arbeitet hybrid.",
+   "sp": [
+    "AP1-7-3-1"
+   ]
+  },
+  {
+   "begriff": "Hashwert",
+   "erklaerung": "Aus Daten berechneter Prüfwert fester Länge, der sich bei kleinster Änderung ändert und sich nicht zurückrechnen lässt.",
+   "sp": [
+    "AP1-7-1-1",
+    "AP1-7-3-2"
+   ]
+  },
+  {
+   "begriff": "Digitale Signatur",
+   "erklaerung": "Elektronische Unterschrift: belegt, von wem eine Nachricht stammt und dass sie nicht verändert wurde.",
+   "sp": [
+    "AP1-7-3-2"
+   ]
+  },
+  {
+   "begriff": "Zertifikat",
+   "erklaerung": "Elektronische Bescheinigung, die bestätigt, dass ein öffentlicher Schlüssel zu einer bestimmten Person, Organisation oder Website gehört.",
+   "sp": [
+    "AP1-7-3-2"
+   ]
+  },
+  {
+   "begriff": "Zertifizierungsstelle",
+   "langform": "englisch: Certificate Authority (CA)",
+   "erklaerung": "Vertrauenswürdige Stelle, die die Identität prüft und digitale Zertifikate ausstellt.",
+   "sp": [
+    "AP1-7-3-2"
+   ]
+  },
+  {
+   "begriff": "Authentifizierung",
+   "erklaerung": "Prüfung, ob jemand wirklich der ist, für den er sich ausgibt, z. B. mit Passwort, Chipkarte oder Fingerabdruck.",
+   "sp": [
+    "AP1-7-3-3"
+   ]
+  },
+  {
+   "begriff": "Zwei-Faktor-Authentifizierung",
+   "erklaerung": "Anmeldung mit zwei Faktoren verschiedener Art (Wissen, Besitz, Biometrie), z. B. Passwort und Code aus einer App.",
+   "sp": [
+    "AP1-7-3-3"
+   ]
+  },
+  {
+   "begriff": "Zutrittskontrolle",
+   "erklaerung": "Kontrolle, wer einen Raum oder ein Gebäude betreten darf.",
+   "sp": [
+    "AP1-7-3-3"
+   ]
+  },
+  {
+   "begriff": "Zugangskontrolle",
+   "erklaerung": "Kontrolle, wer ein IT-System benutzen darf, z. B. durch Anmeldung.",
+   "sp": [
+    "AP1-7-3-3"
+   ]
+  },
+  {
+   "begriff": "Zugriffskontrolle",
+   "erklaerung": "Kontrolle, welche Daten ein Benutzer im System sehen und ändern darf, z. B. durch Rechte.",
+   "sp": [
+    "AP1-7-3-3"
+   ]
+  },
+  {
+   "begriff": "Härtung",
+   "erklaerung": "Maßnahmen, die die Angriffsfläche eines Systems verkleinern und Schwachstellen schließen.",
+   "sp": [
+    "AP1-7-3-4"
+   ]
+  },
+  {
+   "begriff": "Minimalkonfiguration",
+   "erklaerung": "Einrichtung, bei der nur die wirklich benötigten Programme, Dienste und Funktionen installiert und aktiviert sind.",
+   "sp": [
+    "AP1-7-3-4"
+   ]
+  },
+  {
+   "begriff": "Datensicherung",
+   "langform": "auch Backup",
+   "erklaerung": "Kopie von Daten auf einem getrennten Speicher, damit sie bei Verlust wiederhergestellt werden können.",
+   "sp": [
+    "AP1-7-1-1",
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "Vollsicherung",
+   "erklaerung": "Sicherung aller ausgewählten Daten, unabhängig davon, ob sie sich geändert haben.",
+   "sp": [
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "Differenzielle Sicherung",
+   "erklaerung": "Sichert alle Daten, die seit der letzten Vollsicherung neu sind oder sich geändert haben.",
+   "sp": [
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "Inkrementelle Sicherung",
+   "erklaerung": "Sichert nur die Daten, die seit der letzten Sicherung gleich welcher Art neu sind oder sich geändert haben.",
+   "sp": [
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "NAS",
+   "langform": "Network Attached Storage",
+   "erklaerung": "Speichergerät im Netzwerk, auf das mehrere Geräte zugreifen, z. B. für gemeinsame Dateien und Datensicherungen.",
+   "sp": [
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "3-2-1-Regel",
+   "erklaerung": "Regel für Datensicherungen: drei Kopien der Daten, auf zwei verschiedenen Medien, davon eine außer Haus.",
+   "sp": [
+    "AP1-7-3-5"
+   ]
+  },
+  {
+   "begriff": "Schadsoftware",
+   "langform": "auch Malware",
+   "erklaerung": "Software, die Schaden anrichten soll, z. B. Viren, Würmer, Trojaner, Ransomware, Spyware.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Ransomware",
+   "erklaerung": "Schadsoftware, die Daten verschlüsselt oder das System sperrt und Lösegeld für die Freigabe fordert.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Spyware",
+   "erklaerung": "Schadsoftware, die unbemerkt Daten ausspäht und an den Angreifer übermittelt.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Scareware",
+   "erklaerung": "Schadsoftware, die eine Bedrohung vortäuscht, um den Benutzer zum Kauf oder zur Installation einer Software zu bewegen.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Virus",
+   "erklaerung": "Schadprogramm, das sich an andere Dateien oder Programme anhängt und sich verbreitet, wenn diese ausgeführt werden.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Wurm",
+   "erklaerung": "Schadprogramm, das sich selbstständig über Netzwerke verbreitet, ohne Wirtsdatei und ohne Zutun des Benutzers.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "Trojaner",
+   "erklaerung": "Programm, das sich als nützlich tarnt und unbemerkt schädliche Funktionen ausführt.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "VPN",
+   "langform": "Virtual Private Network",
+   "erklaerung": "Verschlüsselte Verbindung über ein unsicheres Netz, z. B. vom Notebook unterwegs ins Firmennetz.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "WLAN",
+   "langform": "Wireless Local Area Network",
+   "erklaerung": "Drahtloses lokales Netzwerk; ein offenes WLAN ist ohne Zugangsschutz für jeden nutzbar.",
+   "sp": [
+    "AP1-7-4-1"
+   ]
+  },
+  {
+   "begriff": "DSGVO",
+   "langform": "Datenschutz-Grundverordnung",
+   "erklaerung": "EU-Verordnung zum Schutz personenbezogener Daten; gilt unmittelbar in allen EU-Staaten.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "BDSG",
+   "langform": "Bundesdatenschutzgesetz",
+   "erklaerung": "Deutsches Gesetz, das die DSGVO dort ergänzt, wo sie den Mitgliedstaaten Spielraum lässt.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Personenbezogene Daten",
+   "erklaerung": "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen, z. B. Name oder Anschrift.",
+   "sp": [
+    "AP1-7-1-4",
+    "AP1-7-2-2",
+    "AP1-7-5-1",
+    "AP1-7-5-2"
+   ]
+  },
+  {
+   "begriff": "Betroffenenrechte",
+   "erklaerung": "Rechte der Person, deren Daten verarbeitet werden, z. B. Auskunft, Berichtigung, Löschung und Widerspruch.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Einwilligung",
+   "erklaerung": "Freiwillige, informierte und eindeutige Zustimmung einer Person zur Verarbeitung ihrer Daten für einen bestimmten Zweck; jederzeit widerrufbar.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Datenschutz",
+   "erklaerung": "Schutz der Menschen vor Missbrauch ihrer personenbezogenen Daten.",
+   "sp": [
+    "AP1-7-5-1",
+    "AP1-7-5-2"
+   ]
+  },
+  {
+   "begriff": "Datensicherheit",
+   "erklaerung": "Schutz von Daten aller Art vor Verlust, Veränderung und unbefugtem Zugriff.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Zweckbindung",
+   "erklaerung": "Grundsatz: Personenbezogene Daten dürfen nur für festgelegte, eindeutige Zwecke erhoben und verarbeitet werden.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Datenminimierung",
+   "erklaerung": "Grundsatz: Nur so viele personenbezogene Daten verarbeiten, wie für den Zweck nötig sind.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Speicherbegrenzung",
+   "erklaerung": "Grundsatz: Personenbezogene Daten nur so lange speichern, wie es für den Zweck nötig ist.",
+   "sp": [
+    "AP1-7-5-1"
+   ]
+  },
+  {
+   "begriff": "Anonymisierung",
+   "erklaerung": "Entfernen des Personenbezugs, sodass er nicht wiederhergestellt werden kann; anonyme Daten sind nicht mehr personenbezogen.",
+   "sp": [
+    "AP1-7-5-2"
+   ]
+  },
+  {
+   "begriff": "Pseudonymisierung",
+   "erklaerung": "Ersetzen des Namens durch ein Kennzeichen; mit einer getrennt aufbewahrten Zuordnung lässt sich der Personenbezug wiederherstellen.",
+   "sp": [
+    "AP1-7-5-2"
+   ]
+  }
+ ],
+ "unsicher": [
+  {
+   "id": "AP1-7-1-2-K1-2",
+   "frage": "Personelle Maßnahmen werden hier als eigene Art neben technischen und organisatorischen geführt. Die DSGVO kennt nur „technische und organisatorische Maßnahmen“, viele Lehrbücher zählen Schulung und Verpflichtung zu den organisatorischen. Akzeptiert die Prüfung beide Einteilungen?"
+  },
+  {
+   "id": "AP1-7-1-2-K1-1",
+   "frage": "Der Rahmen schreibt „technisch-organisatorische Maßnahmen (TOM)“; die Karte löst TOM als „technische und organisatorische Maßnahmen“ (Wortlaut DSGVO) auf. Inhaltlich gleich, aber die erwartete Schreibweise ist nicht sicher."
+  },
+  {
+   "id": "AP1-7-1-3-K2-1",
+   "frage": "Die Karte nennt bewusst keine konkrete Mindestlänge, weil Empfehlungen (BSI, NIST) je nach Verfahren und Zeichenvielfalt unterschiedliche Werte nennen. Ebenso fehlt „regelmäßiger Passwortwechsel“: Das BSI empfiehlt ihn seit 2020 nicht mehr ohne Anlass. Ob die Prüfung noch einen Pflichtwechsel als Kriterium erwartet, ist unklar."
+  },
+  {
+   "id": "AP1-7-2-2-K5-1",
+   "frage": "Die Karte nennt nur das Maximumprinzip. Der BSI-Standard 200-2 kennt zusätzlich Kumulations- und Verteilungseffekt, die den Schutzbedarf erhöhen oder senken können; sie gehen über den Rahmen hinaus und sind nicht abgefragt."
+  },
+  {
+   "id": "AP1-7-2-3-K1-1",
+   "frage": "Anzahl und Namen der Risikoklassen (z. B. gering/mittel/hoch oder vier bis fünf Stufen) sind nicht einheitlich festgelegt; die Karte nennt sie nur als Beispiel."
+  },
+  {
+   "id": "AP1-7-3-2-K4-1",
+   "frage": "„Hashwert mit dem privaten Schlüssel verschlüsseln“ ist die übliche Lehrbuch-Vereinfachung (so beim RSA-Verfahren). Fachlich genauer ist „signieren“, da andere Signaturverfahren nicht verschlüsseln. Für die Prüfung wird vermutlich die vereinfachte Form erwartet."
+  },
+  {
+   "id": "AP1-7-3-3-K2-1",
+   "frage": "Manche Lehrbücher unterscheiden Authentisierung (Nachweis durch den Benutzer), Authentifizierung (Prüfung durch das System) und Autorisierung (Rechtevergabe). Die Karte verwendet nur Authentifizierung im allgemeinen Sinn; ob die Prüfung die Dreiteilung erwartet, ist unklar."
+  },
+  {
+   "id": "AP1-7-3-5-K5-1",
+   "frage": "Bei der 3-2-1-Regel wird meist das Original als eine der drei Kopien mitgezählt (Original + zwei Sicherungen); einzelne Quellen verlangen drei Sicherungen. Die Karte bleibt beim Wortlaut „3 Kopien“."
+  },
+  {
+   "id": "AP1-7-5-2-K3-1",
+   "frage": "Nach Gesetz (DSGVO, Erwägungsgrund 26) bleiben pseudonymisierte Daten personenbezogen. Der EuGH hat 2025 (C-413/23 P) entschieden, dass sie für einen Empfänger ohne Zuordnungsmöglichkeit nicht personenbezogen sein können. Die Karte folgt der Gesetzesregel; für AP1 dürfte das genügen."
+  },
+  {
+   "id": "AP1-7-5-1-K3-1",
+   "frage": "Die Liste nennt die Rechte aus Art. 15–21 DSGVO. Weitere Rechte (Information bei Erhebung, Schutz vor automatisierten Einzelentscheidungen, Beschwerde bei der Aufsichtsbehörde) fehlen; die Frage verlangt nur die wichtigsten."
+  }
+ ]
+}

@@ -1,0 +1,1503 @@
+{
+  "paket": "AP2-7",
+  "bloecke": {
+    "AP2-7-1": {
+      "satz": "Welche Schäden Sicherheitsvorfälle anrichten, welche Schutzziele sie verletzen und wie man typischen Angriffen vorbeugt."
+    },
+    "AP2-7-2": {
+      "satz": "Wie man Sicherheitsanforderungen plant, Kunden zur IT-Sicherheit berät und umgesetzte Maßnahmen mit Werkzeugen überprüft."
+    },
+    "AP2-7-3": {
+      "satz": "Wie Gebäude, Systeme und Daten durch Kontrollen, Berechtigungen und technische Schutzmaßnahmen gesichert werden."
+    },
+    "AP2-7-4": {
+      "satz": "Wie Verschlüsselung, Hashwerte, digitale Signaturen und Anmeldeverfahren Daten in Anwendungen schützen."
+    },
+    "AP2-7-5": {
+      "satz": "Wie Anwendungen personenbezogene Daten rechtmäßig verarbeiten, weitergeben, archivieren und löschen."
+    }
+  },
+  "stichpunkte": {
+    "AP2-7-1-1": {
+      "ziel": "Für einen Sicherheitsvorfall mögliche Schäden einschätzen, dem verletzten Schutzziel zuordnen und ihre Schwere begründen.",
+      "punkte": [
+        "Schadensarten: Imageschaden, wirtschaftlicher Schaden, Datenverlust",
+        "Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit",
+        "Wirtschaftlich: Betriebsstillstand, Wiederherstellungskosten, Vertragsstrafen, Bußgelder",
+        "Schwere des Schadens für das betroffene Unternehmen einschätzen und begründen"
+      ]
+    },
+    "AP2-7-1-2": {
+      "ziel": "Typische Angriffe erklären, ihnen vorbeugen und für ein unsicheres Verfahren ein sichereres Vorgehen vorschlagen.",
+      "punkte": [
+        "Datendiebstahl, Ransomware, Phishing beschreiben und je eine Vorbeugung nennen",
+        "Man-in-the-Middle: Angreifer schaltet sich unbemerkt zwischen zwei Partner",
+        "SQL-Injection: fremder SQL-Code über ein Eingabefeld; Schutz durch Platzhalter und Eingabeprüfung",
+        "DDoS: viele Rechner überlasten einen Dienst, bis er nicht mehr erreichbar ist",
+        "Schwachstellen benennen, z. B. Passwort-Reset über einen zweiten Weg bestätigen lassen"
+      ]
+    },
+    "AP2-7-2-1": {
+      "ziel": "Sicherheitsanforderungen an eine Anwendung beschreiben, Kunden passend beraten und Bedrohungen in einer Risikoanalyse einordnen.",
+      "punkte": [
+        "Anforderungen: verschlüsselte Übertragung, sichere Anmeldung, sichere Speicherung, Abmeldung bei Untätigkeit",
+        "Sicherheitskriterien: Richtschnur für Entwickler, objektive Bewertung, Hilfe bei der Produktauswahl",
+        "Security by Design: Sicherheit von Beginn an im Entwurf einplanen",
+        "Beratung zuschneiden: privater Haushalt, Unternehmen, öffentliche Hand",
+        "Rahmenbedingungen unterscheiden; Risiken nach Eintrittswahrscheinlichkeit und Schadenshöhe einordnen"
+      ]
+    },
+    "AP2-7-2-2": {
+      "ziel": "Werkzeuge zur Überprüfung von Sicherheitsmaßnahmen erläutern und voneinander abgrenzen.",
+      "punkte": [
+        "Penetrationstest: Beauftragter dringt mit den Mitteln eines Angreifers ein",
+        "Schwachstellenanalyse: Systeme systematisch auf bekannte Lücken untersuchen",
+        "Device Security Check: Gerät erfüllt Vorgaben wie aktuelle Updates und Virenschutz",
+        "Identity & Access Management: Benutzer, Rollen und Rechte zentral verwalten",
+        "Log Management: Ereignisse sammeln und auswerten; Compliance Report: Vorgaben eingehalten?"
+      ]
+    },
+    "AP2-7-3-1": {
+      "ziel": "Zutritts-, Zugangs- und Zugriffskontrolle unterscheiden, Maßnahmen zuordnen und ein Berechtigungskonzept mit Rollen beschreiben.",
+      "punkte": [
+        "Zutritt: Gebäude und Räume; Zugang: Anmeldung am System; Zugriff: Rechte auf Daten",
+        "Berechtigungskonzept: Rechte an Rollen, Benutzer an Rollen",
+        "User- und Zugriffsmanagement: Konten anlegen, ändern, sperren; Rechte vergeben und entziehen",
+        "Geringste Rechte: jeder bekommt nur, was er für seine Aufgabe braucht",
+        "Wirksamkeit einer Maßnahme beurteilen und eine Schwäche benennen"
+      ]
+    },
+    "AP2-7-3-2": {
+      "ziel": "Möglichkeiten der physischen und softwaretechnischen Absicherung benennen und ihren Zweck erklären.",
+      "punkte": [
+        "Physisch: gesicherter Zugang zu Gebäude, Serverraum und Schrank",
+        "Elementarrisiken wie Feuer und Hochwasser",
+        "Schutz: Brandmelde- und Löschanlage, Serverraum nicht im Keller, Datensicherung an anderem Ort",
+        "Firewall regelt Verbindungen nach Adressen und Ports, Webfilter sperrt Inhalte und Webseiten",
+        "Portsecurity: nur bekannte Geräte am Switch-Anschluss; Bitlocker: Daten bei Verlust unlesbar"
+      ]
+    },
+    "AP2-7-4-1": {
+      "ziel": "Symmetrische, asymmetrische und hybride Verschlüsselung erklären, vergleichen und für ein Projekt begründet auswählen.",
+      "punkte": [
+        "Symmetrisch: ein gemeinsamer geheimer Schlüssel, schnell",
+        "Asymmetrisch (RSA): öffentlicher und privater Schlüssel, braucht viel Rechenleistung",
+        "Hybrid: Schlüsselaustausch asymmetrisch, Datenübertragung symmetrisch",
+        "Transport: nur der Übertragungsweg geschützt; Ende-zu-Ende: nur Absender und Empfänger lesen"
+      ]
+    },
+    "AP2-7-4-2": {
+      "ziel": "Integrität und Authentizität erläutern und erklären, wie Hashwert und digitale Signatur eine Manipulation aufdecken.",
+      "punkte": [
+        "Integrität: Daten vollständig und unverändert, Änderungen bleiben nicht unbemerkt",
+        "Authentizität: Daten stammen nachweislich vom angegebenen Absender",
+        "Hashwert bilden und mitschicken, beim Empfänger neu berechnen und vergleichen",
+        "Signatur: Hashwert mit privatem Schlüssel des Absenders verschlüsseln, mit öffentlichem prüfen",
+        "Passwörter als Hashwert statt im Klartext speichern"
+      ]
+    },
+    "AP2-7-4-3": {
+      "ziel": "Authentifizierung und Autorisierung unterscheiden und für eine Anwendung ein sicheres Anmeldeverfahren vorschlagen.",
+      "punkte": [
+        "Authentifizierung: Wer bist du? Autorisierung: Was darfst du?",
+        "Verfahren: Passwort, Besitz eines Geräts oder einer Karte, biometrisches Merkmal, zwei Faktoren",
+        "Autorisierung über Rollen mit Rechten, bei jedem Zugriff geprüft",
+        "Single Sign-on: einmal anmelden, mehrere Anwendungen nutzen"
+      ]
+    },
+    "AP2-7-5-1": {
+      "ziel": "Anwendungen datenschutzgerecht planen, die Weitergabe von Daten beurteilen und Archivierung mit Aufbewahrungs- und Löschpflichten erklären.",
+      "punkte": [
+        "Personenbezogene Daten: Datenschutzerklärung und Rechtsgrundlage, z. B. Einwilligung",
+        "Weitergabe an fremden Dienst: Vertraulichkeit, Speicherort, Anbieter prüfen; besser Testdaten",
+        "Archivierung: langfristig und unveränderbar; Datensicherung: Wiederherstellung nach Verlust",
+        "Aufbewahrungspflichten beachten; nach Wegfall des Zwecks und Fristablauf löschen",
+        "Beim Entwurf: nur nötige Daten erheben, Zweck festlegen, Löschung vorsehen"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP2-7-1-1-K1-1",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K1",
+      "vorne": "Welche drei Schadensarten können bei einem Sicherheitsvorfall entstehen?",
+      "hinten": "- Imageschaden\n- wirtschaftlicher Schaden\n- Datenverlust"
+    },
+    {
+      "id": "AP2-7-1-1-K1-2",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K1",
+      "vorne": "Ransomware legt die Auftragsdatenbank eines Händlers tagelang lahm, ein Teil der Aufträge ist nicht wiederherstellbar, Kunden beschweren sich öffentlich. Welche Schäden sind entstanden?",
+      "hinten": "- Datenverlust: nicht wiederherstellbare Aufträge\n- wirtschaftlicher Schaden: Stillstand, Wiederherstellungskosten, entgangene Umsätze\n- Imageschaden: Kunden verlieren Vertrauen"
+    },
+    {
+      "id": "AP2-7-1-1-K2-1",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K2",
+      "vorne": "Welche drei Schutzziele kann ein Sicherheitsvorfall verletzen, und was bedeuten sie?",
+      "hinten": "- Vertraulichkeit: Nur Befugte können die Daten lesen.\n- Integrität: Daten sind vollständig und unverändert.\n- Verfügbarkeit: Daten und Systeme sind nutzbar, wenn sie gebraucht werden."
+    },
+    {
+      "id": "AP2-7-1-1-K2-2",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K2",
+      "vorne": "Kundendaten werden gestohlen und im Internet veröffentlicht. Welches Schutzziel ist verletzt?",
+      "hinten": "Vertraulichkeit."
+    },
+    {
+      "id": "AP2-7-1-1-K2-3",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K2",
+      "vorne": "Ein Angreifer ändert unbemerkt die Preise in der Datenbank eines Onlineshops. Welches Schutzziel ist verletzt?",
+      "hinten": "Integrität."
+    },
+    {
+      "id": "AP2-7-1-1-K2-4",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K2",
+      "vorne": "Der Onlineshop eines Händlers ist nach einem Angriff stundenlang nicht erreichbar. Welches Schutzziel ist verletzt?",
+      "hinten": "Verfügbarkeit."
+    },
+    {
+      "id": "AP2-7-1-1-K3-1",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K3",
+      "vorne": "Warum wiegt ein eintägiger Ausfall der Webseite für einen reinen Onlinehändler schwerer als für einen Handwerksbetrieb?",
+      "hinten": "Der Onlinehändler macht seinen Umsatz über die Webseite – der Ausfall stoppt sein Kerngeschäft. Für den Handwerksbetrieb ist sie meist nur Werbung, die Arbeit läuft weiter."
+    },
+    {
+      "id": "AP2-7-1-1-K3-2",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K3",
+      "vorne": "Warum wiegt der Diebstahl der Patientendaten einer Arztpraxis besonders schwer?",
+      "hinten": "Gesundheitsdaten sind besonders sensibel: Die Betroffenen können erheblich geschädigt werden, es drohen Bußgelder, und die Praxis verliert das Vertrauen ihrer Patienten."
+    },
+    {
+      "id": "AP2-7-1-1-K4-1",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K4",
+      "vorne": "Nenne vier Beispiele für wirtschaftliche Schäden durch einen Sicherheitsvorfall.",
+      "hinten": "- Betriebsstillstand\n- Kosten der Wiederherstellung\n- Vertragsstrafen\n- Bußgelder"
+    },
+    {
+      "id": "AP2-7-1-1-K4-2",
+      "sp": "AP2-7-1-1",
+      "k": "AP2-7-1-1-K4",
+      "vorne": "Wie kann ein Sicherheitsvorfall zu einer Vertragsstrafe und wie zu einem Bußgeld führen?",
+      "hinten": "- Vertragsstrafe: Zugesagte Leistungen oder Termine werden verfehlt, für die eine Vertragsstrafe vereinbart ist.\n- Bußgeld: Eine Behörde ahndet einen Gesetzesverstoß, z. B. unzureichend geschützte personenbezogene Daten (DSGVO)."
+    },
+    {
+      "id": "AP2-7-1-2-K1-1",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K1",
+      "vorne": "Was ist Ransomware?",
+      "hinten": "Schadsoftware, die Daten verschlüsselt oder Systeme sperrt und für die Freigabe ein Lösegeld fordert (digitale Erpressung)."
+    },
+    {
+      "id": "AP2-7-1-2-K1-2",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K1",
+      "vorne": "Nenne vorbeugende Maßnahmen gegen Ransomware.",
+      "hinten": "- regelmäßige Datensicherung, getrennt vom Netz aufbewahrt\n- Updates zeitnah einspielen\n- Virenschutz\n- Mitarbeiter schulen: keine unbekannten Anhänge und Links öffnen"
+    },
+    {
+      "id": "AP2-7-1-2-K1-3",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K1",
+      "vorne": "Was ist Phishing?",
+      "hinten": "Angreifer geben sich per E-Mail, Nachricht oder gefälschter Webseite als vertrauenswürdige Stelle aus, um Zugangsdaten oder andere persönliche Daten zu erschleichen (Identitätsdiebstahl)."
+    },
+    {
+      "id": "AP2-7-1-2-K1-4",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K1",
+      "vorne": "Nenne vorbeugende Maßnahmen gegen Phishing.",
+      "hinten": "- Mitarbeiter schulen: Absender und Links prüfen, Zugangsdaten nie über Links aus E-Mails eingeben\n- Spamfilter\n- Zwei-Faktor-Authentifizierung, damit ein erbeutetes Passwort allein nicht reicht"
+    },
+    {
+      "id": "AP2-7-1-2-K1-5",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K1",
+      "vorne": "Was ist Datendiebstahl, und wie beugt man ihm vor?",
+      "hinten": "Unbefugtes Kopieren oder Abziehen vertraulicher Daten, z. B. von Kundendaten.\nVorbeugung: Zugriffsrechte auf das Nötige beschränken, Daten verschlüsseln, Zugriffe protokollieren und auswerten."
+    },
+    {
+      "id": "AP2-7-1-2-K1-6",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K1",
+      "vorne": "Warum sind Office-Anhänge in E-Mails ein Risiko, und wie begegnet man ihm?",
+      "hinten": "Sie können Makros oder eingebetteten Schadcode enthalten, der beim Öffnen ausgeführt wird und z. B. Ransomware nachlädt.\nSchutz: Makros standardmäßig deaktivieren, Anhänge unbekannter Absender nicht öffnen."
+    },
+    {
+      "id": "AP2-7-1-2-K2-1",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K2",
+      "vorne": "Was ist ein Man-in-the-Middle-Angriff?",
+      "hinten": "Ein Angreifer schaltet sich unbemerkt zwischen zwei Kommunikationspartner. Er kann Nachrichten mitlesen und verändern, während beide glauben, direkt miteinander zu kommunizieren."
+    },
+    {
+      "id": "AP2-7-1-2-K3-1",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K3",
+      "vorne": "Was ist SQL-Injection?",
+      "hinten": "Ein Angreifer schleust über ein Eingabefeld fremden SQL-Code ein, den die Anwendung ungeprüft in eine Abfrage übernimmt und die Datenbank ausführt."
+    },
+    {
+      "id": "AP2-7-1-2-K3-2",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K3",
+      "vorne": "Eine Anwendung setzt die Eingabe direkt in `SELECT * FROM kunde WHERE name = '<Eingabe>'` ein. Was bewirkt die Eingabe `' OR '1'='1`?",
+      "hinten": "Die Abfrage wird zu `SELECT * FROM kunde WHERE name = '' OR '1'='1'`. Die Bedingung ist immer wahr, es werden alle Kunden geliefert."
+    },
+    {
+      "id": "AP2-7-1-2-K4-1",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K4",
+      "vorne": "Welche zwei Maßnahmen schützen gegen SQL-Injection?",
+      "hinten": "- vorbereitete Anweisungen (Prepared Statements) mit Platzhaltern\n- Prüfung der Eingaben, z. B. auf Datentyp, Länge und erlaubte Zeichen"
+    },
+    {
+      "id": "AP2-7-1-2-K4-2",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K4",
+      "vorne": "Warum verhindern vorbereitete Anweisungen mit Platzhaltern SQL-Injection?",
+      "hinten": "Die SQL-Anweisung steht vorab fest; die Eingabe wird getrennt als reiner Wert übergeben und nie als SQL-Code ausgeführt."
+    },
+    {
+      "id": "AP2-7-1-2-K4-3",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K4",
+      "vorne": "Wie schützt man eine Verbindung gegen Man-in-the-Middle-Angriffe?",
+      "hinten": "Durch verschlüsselte und authentifizierte Übertragung, z. B. HTTPS mit Prüfung des Serverzertifikats: Der Angreifer kann nicht mitlesen und sich nicht unbemerkt als Gegenstelle ausgeben."
+    },
+    {
+      "id": "AP2-7-1-2-K5-1",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K5",
+      "vorne": "Was ist ein DDoS-Angriff?",
+      "hinten": "Distributed Denial of Service: Viele Rechner überlasten einen Dienst gleichzeitig mit Anfragen, sodass er für echte Nutzer nicht mehr erreichbar ist."
+    },
+    {
+      "id": "AP2-7-1-2-K5-2",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K5",
+      "vorne": "Was unterscheidet einen DDoS- von einem DoS-Angriff?",
+      "hinten": "Ein DoS-Angriff geht von einem Rechner aus, ein DDoS-Angriff von vielen verteilten Rechnern. Deshalb lässt er sich nicht einfach durch Sperren eines Absenders abwehren."
+    },
+    {
+      "id": "AP2-7-1-2-K6-1",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K6",
+      "vorne": "Ein Passwort wird über einen Link zurückgesetzt, der an die hinterlegte E-Mail-Adresse geschickt wird. Wo liegt die Schwachstelle?",
+      "hinten": "Der Link allein genügt: Wer Zugriff auf das Postfach hat oder den Link abfängt, kann das Passwort ändern und das Konto übernehmen."
+    },
+    {
+      "id": "AP2-7-1-2-K6-2",
+      "sp": "AP2-7-1-2",
+      "k": "AP2-7-1-2-K6",
+      "vorne": "Wie lässt sich das Zurücksetzen eines Passworts per Link sicherer gestalten?",
+      "hinten": "- zusätzlich einen zweiten Weg zur Bestätigung nutzen, z. B. Code per SMS oder Authenticator-App\n- Link nur einmal und nur kurz gültig\n- Link nur über HTTPS"
+    },
+    {
+      "id": "AP2-7-2-1-K1-1",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K1",
+      "vorne": "Nenne sicherheitstechnische Anforderungen an eine geplante Webanwendung mit Benutzerkonten.",
+      "hinten": "- verschlüsselte Übertragung (HTTPS)\n- sichere Anmeldung, z. B. starke Passwörter, zweiter Faktor\n- sichere Speicherung personenbezogener Daten, Passwörter nur als Hashwert\n- automatische Abmeldung bei Untätigkeit"
+    },
+    {
+      "id": "AP2-7-2-1-K1-2",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K1",
+      "vorne": "Warum sollte eine Anwendung Benutzer bei Untätigkeit automatisch abmelden?",
+      "hinten": "Damit an einem unbeaufsichtigten Gerät niemand die offene Sitzung weiter nutzen kann."
+    },
+    {
+      "id": "AP2-7-2-1-K2-1",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K2",
+      "vorne": "Wozu dienen IT-Sicherheitskriterien?",
+      "hinten": "- als Richtschnur für Entwickler\n- zur objektiven Bewertung von Systemen\n- zur Unterstützung bei der Produktauswahl"
+    },
+    {
+      "id": "AP2-7-2-1-K3-1",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K3",
+      "vorne": "Was bedeutet Security by Design?",
+      "hinten": "Sicherheit wird von Beginn an in den Entwurf einer Anwendung eingeplant, statt sie nachträglich hinzuzufügen."
+    },
+    {
+      "id": "AP2-7-2-1-K3-2",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K3",
+      "vorne": "Warum ist Security by Design günstiger als eine nachträgliche Absicherung?",
+      "hinten": "Lücken, die erst im fertigen System auffallen, erfordern oft aufwendige Umbauten. Im Entwurf lassen sie sich mit wenig Aufwand vermeiden."
+    },
+    {
+      "id": "AP2-7-2-1-K4-1",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K4",
+      "vorne": "Welche drei Kundengruppen unterscheidet man bei der Beratung zur IT-Sicherheit?",
+      "hinten": "- privater Haushalt\n- Unternehmen\n- öffentliche Hand"
+    },
+    {
+      "id": "AP2-7-2-1-K4-2",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K4",
+      "vorne": "Welche Schwerpunkte setzt eine Sicherheitsberatung für einen privaten Haushalt im Vergleich zu einem Unternehmen?",
+      "hinten": "- privater Haushalt: einfache, bezahlbare Maßnahmen wie Updates, Virenschutz, sichere Passwörter, Datensicherung\n- Unternehmen: zusätzlich TOM, Berechtigungskonzept, Datenschutzpflichten, Schutz des Geschäftsbetriebs"
+    },
+    {
+      "id": "AP2-7-2-1-K5-1",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K5",
+      "vorne": "Welche vier Arten von Rahmenbedingungen unterscheidet man bei der IT-Sicherheitsberatung?",
+      "hinten": "- technologische\n- organisatorische\n- rechtliche\n- ethische"
+    },
+    {
+      "id": "AP2-7-2-1-K5-2",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K5",
+      "vorne": "Ordne die Rahmenbedingungen zu: (a) DSGVO, (b) vorhandene Serverhardware, (c) Vertretungsregelung für den Administrator, (d) Verzicht auf eine erlaubte Auswertung des Surfverhaltens der Mitarbeiter.",
+      "hinten": "- (a) rechtlich\n- (b) technologisch\n- (c) organisatorisch\n- (d) ethisch"
+    },
+    {
+      "id": "AP2-7-2-1-K6-1",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K6",
+      "vorne": "Nach welchen zwei Größen ordnet man Bedrohungen in einer Risikoanalyse ein?",
+      "hinten": "- Eintrittswahrscheinlichkeit\n- Schadenshöhe"
+    },
+    {
+      "id": "AP2-7-2-1-K6-2",
+      "sp": "AP2-7-2-1",
+      "k": "AP2-7-2-1-K6",
+      "vorne": "Welche Bedrohungen behandelt man nach einer Risikoanalyse vorrangig?",
+      "hinten": "Die mit hoher Eintrittswahrscheinlichkeit und hoher Schadenshöhe."
+    },
+    {
+      "id": "AP2-7-2-2-K1-1",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K1",
+      "vorne": "Was ist ein Penetrationstest?",
+      "hinten": "Ein beauftragter Tester versucht mit den Mitteln eines Angreifers, in ein System einzudringen, um Schwachstellen aufzudecken, bevor echte Angreifer sie nutzen."
+    },
+    {
+      "id": "AP2-7-2-2-K1-2",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K1",
+      "vorne": "Was unterscheidet einen Penetrationstest von einem echten Angriff?",
+      "hinten": "Er ist vom Eigentümer des Systems beauftragt und abgesprochen. Die Ergebnisse werden dokumentiert, damit die gefundenen Lücken geschlossen werden können."
+    },
+    {
+      "id": "AP2-7-2-2-K2-1",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K2",
+      "vorne": "Was ist eine Schwachstellenanalyse?",
+      "hinten": "Systeme werden systematisch auf bekannte Sicherheitslücken untersucht, z. B. veraltete Software oder unsichere Einstellungen."
+    },
+    {
+      "id": "AP2-7-2-2-K2-2",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K2",
+      "vorne": "Worin unterscheiden sich Schwachstellenanalyse und Penetrationstest?",
+      "hinten": "- Schwachstellenanalyse: sucht bekannte Lücken und listet sie auf\n- Penetrationstest: nutzt Lücken tatsächlich aus, um zu zeigen, wie weit ein Angreifer käme"
+    },
+    {
+      "id": "AP2-7-2-2-K3-1",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K3",
+      "vorne": "Was ist Identity & Access Management (IAM)?",
+      "hinten": "Die zentrale Verwaltung von Benutzern, Rollen und Rechten: Konten anlegen, ändern und sperren, Rechte vergeben und entziehen."
+    },
+    {
+      "id": "AP2-7-2-2-K3-2",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K3",
+      "vorne": "Wie hilft ein zentrales Identity & Access Management bei der Überprüfung der Sicherheit?",
+      "hinten": "Es zeigt an einer Stelle, wer welche Rechte hat. So fallen überflüssige Rechte und verwaiste Konten ausgeschiedener Mitarbeiter auf und lassen sich entfernen."
+    },
+    {
+      "id": "AP2-7-2-2-K4-1",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K4",
+      "vorne": "Wozu dient Log Management?",
+      "hinten": "Ereignisse (Logs) aus verschiedenen Systemen sammeln und auswerten, um Sicherheitsvorfälle zu erkennen und nachzuweisen."
+    },
+    {
+      "id": "AP2-7-2-2-K4-2",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K4",
+      "vorne": "Für ein Konto gibt es nachts Hunderte fehlgeschlagene Anmeldeversuche. Mit welchem Werkzeug fällt das auf?",
+      "hinten": "Mit dem Log Management: Die Auswertung der Anmeldeprotokolle zeigt die gehäuften Fehlversuche."
+    },
+    {
+      "id": "AP2-7-2-2-K5-1",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K5",
+      "vorne": "Was zeigt ein Compliance Report?",
+      "hinten": "Ob die geltenden Vorgaben eingehalten werden, z. B. Gesetze, Verträge und interne Sicherheitsrichtlinien."
+    },
+    {
+      "id": "AP2-7-2-2-K6-1",
+      "sp": "AP2-7-2-2",
+      "k": "AP2-7-2-2-K6",
+      "vorne": "Was prüft ein Device Security Check?",
+      "hinten": "Ob ein Gerät die Sicherheitsvorgaben erfüllt, z. B. aktuelle Updates und eingeschalteter Virenschutz."
+    },
+    {
+      "id": "AP2-7-3-1-K1-1",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K1",
+      "vorne": "Was regelt die Zutrittskontrolle?",
+      "hinten": "Wer Gebäude und Räume mit IT-Anlagen betreten darf."
+    },
+    {
+      "id": "AP2-7-3-1-K1-2",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K1",
+      "vorne": "Was regelt die Zugangskontrolle?",
+      "hinten": "Wer sich an einem System anmelden und es nutzen darf."
+    },
+    {
+      "id": "AP2-7-3-1-K1-3",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K1",
+      "vorne": "Was regelt die Zugriffskontrolle?",
+      "hinten": "Welche Daten ein angemeldeter Benutzer lesen, ändern oder löschen darf (Rechte auf Daten)."
+    },
+    {
+      "id": "AP2-7-3-1-K1-4",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K1",
+      "vorne": "Jemand will im Serverraum an Daten einer Anwendung gelangen. In welcher Reihenfolge muss er die drei Kontrollen überwinden?",
+      "hinten": "1. Zutrittskontrolle (Raum betreten)\n2. Zugangskontrolle (am System anmelden)\n3. Zugriffskontrolle (Rechte auf die Daten)"
+    },
+    {
+      "id": "AP2-7-3-1-K2-1",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K2",
+      "vorne": "Zu welcher Kontrollart gehören Alarmanlage, Videoüberwachung und Besucherausweise?",
+      "hinten": "Zutrittskontrolle."
+    },
+    {
+      "id": "AP2-7-3-1-K2-2",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K2",
+      "vorne": "Zu welcher Kontrollart gehören Bildschirmschoner mit Passwortschutz, biometrische Verfahren und Chipkarte?",
+      "hinten": "Zugangskontrolle."
+    },
+    {
+      "id": "AP2-7-3-1-K2-3",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K2",
+      "vorne": "Zu welcher Kontrollart gehören Verschlüsselung, Löschung von Datenträgern und ein Rollenkonzept?",
+      "hinten": "Zugriffskontrolle."
+    },
+    {
+      "id": "AP2-7-3-1-K3-1",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K3",
+      "vorne": "Wie ist ein rollenbasiertes Berechtigungskonzept aufgebaut?",
+      "hinten": "Rechte werden an Rollen vergeben (z. B. Sachbearbeiter, Teamleiter). Benutzer werden einer oder mehreren Rollen zugeordnet und erhalten so deren Rechte."
+    },
+    {
+      "id": "AP2-7-3-1-K3-2",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K3",
+      "vorne": "Welchen Vorteil hat es, Rechte an Rollen statt an einzelne Benutzer zu vergeben?",
+      "hinten": "Es ist übersichtlicher und weniger fehleranfällig: Wechselt jemand die Stelle, ändert man nur seine Rollenzuordnung; Änderungen an einer Rolle gelten für alle ihre Benutzer."
+    },
+    {
+      "id": "AP2-7-3-1-K4-1",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K4",
+      "vorne": "Welche Aufgaben umfasst das User- und Zugriffsmanagement?",
+      "hinten": "- Konten anlegen, ändern und sperren\n- Rechte vergeben und entziehen"
+    },
+    {
+      "id": "AP2-7-3-1-K4-2",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K4",
+      "vorne": "Was muss das User- und Zugriffsmanagement tun, wenn ein Mitarbeiter das Unternehmen verlässt?",
+      "hinten": "Sein Konto sperren und seine Rechte entziehen, damit er nicht mehr auf Systeme und Daten zugreifen kann."
+    },
+    {
+      "id": "AP2-7-3-1-K5-1",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K5",
+      "vorne": "Der Serverraum ist mit Chipkarte gesichert, die Tür wird aber oft mit einem Keil offen gehalten. Wie beurteilst du die Maßnahme?",
+      "hinten": "Sie ist unwirksam, weil sie umgangen wird. Abhilfe: Tür mit Selbstschließer und Alarm bei offener Tür, Mitarbeiter unterweisen."
+    },
+    {
+      "id": "AP2-7-3-1-K5-2",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K5",
+      "vorne": "Welche Schwäche hat ein Bildschirmschoner mit Passwortschutz, der erst nach 60 Minuten startet?",
+      "hinten": "Verlässt der Benutzer seinen Platz, bleibt der Rechner bis zu einer Stunde ungeschützt. Die Wartezeit sollte kurz sein, und man sollte den Bildschirm beim Verlassen selbst sperren."
+    },
+    {
+      "id": "AP2-7-3-1-K6-1",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K6",
+      "vorne": "Was besagt der Grundsatz der geringsten Rechte?",
+      "hinten": "Jeder bekommt nur die Rechte, die er für seine Aufgabe braucht."
+    },
+    {
+      "id": "AP2-7-3-1-K6-2",
+      "sp": "AP2-7-3-1",
+      "k": "AP2-7-3-1-K6",
+      "vorne": "Warum begrenzt der Grundsatz der geringsten Rechte den Schaden eines Angriffs?",
+      "hinten": "Übernimmt ein Angreifer ein Konto, kann er nur tun, was dieses Konto darf. Ein Konto mit wenigen Rechten richtet weniger Schaden an."
+    },
+    {
+      "id": "AP2-7-3-2-K1-1",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K1",
+      "vorne": "Welche drei Stellen sichert man bei der physischen Absicherung von IT-Systemen gegen unbefugten Zugang?",
+      "hinten": "- Gebäude\n- Serverraum\n- Serverschrank"
+    },
+    {
+      "id": "AP2-7-3-2-K1-2",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K1",
+      "vorne": "Warum sollte ein Serverschrank zusätzlich abgeschlossen sein, obwohl der Serverraum gesichert ist?",
+      "hinten": "Auch Personen, die den Serverraum betreten dürfen (z. B. Reinigung, Techniker), sollen nicht an die Geräte, Anschlüsse und Datenträger gelangen."
+    },
+    {
+      "id": "AP2-7-3-2-K2-1",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K2",
+      "vorne": "Was sind Elementarrisiken? Nenne zwei Beispiele.",
+      "hinten": "Gefahren durch Naturgewalten, die IT-Anlagen zerstören können, z. B. Feuer und Hochwasser."
+    },
+    {
+      "id": "AP2-7-3-2-K3-1",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K3",
+      "vorne": "Nenne Schutzmaßnahmen gegen Elementarrisiken.",
+      "hinten": "- Brandmelde- und Löschanlage\n- Serverraum nicht im Keller\n- Datensicherung an einem anderen Ort"
+    },
+    {
+      "id": "AP2-7-3-2-K3-2",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K3",
+      "vorne": "Warum sollte die Datensicherung an einem anderen Ort aufbewahrt werden?",
+      "hinten": "Damit ein Feuer oder Hochwasser nicht gleichzeitig die Originaldaten und die Sicherung zerstört."
+    },
+    {
+      "id": "AP2-7-3-2-K3-3",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K3",
+      "vorne": "Warum gehört ein Serverraum nicht in den Keller?",
+      "hinten": "Bei Hochwasser oder Wasserschäden läuft der Keller zuerst voll."
+    },
+    {
+      "id": "AP2-7-3-2-K4-1",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K4",
+      "vorne": "Worin unterscheiden sich Firewall und Webfilter?",
+      "hinten": "- Firewall: regelt Verbindungen nach Adressen und Ports\n- Webfilter: sperrt Inhalte und Webseiten"
+    },
+    {
+      "id": "AP2-7-3-2-K4-2",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K4",
+      "vorne": "Mitarbeiter sollen keine Glücksspielseiten aufrufen können. Firewall oder Webfilter?",
+      "hinten": "Webfilter – es geht um das Sperren von Inhalten und Webseiten."
+    },
+    {
+      "id": "AP2-7-3-2-K4-3",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K4",
+      "vorne": "Von außen sollen nur Verbindungen zu Port 443 des Webservers möglich sein. Firewall oder Webfilter?",
+      "hinten": "Firewall – sie regelt Verbindungen nach Adressen und Ports."
+    },
+    {
+      "id": "AP2-7-3-2-K5-1",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K5",
+      "vorne": "Was ist Portsecurity?",
+      "hinten": "Eine Funktion des Switches: An einem Anschluss werden nur bekannte Geräte (anhand ihrer MAC-Adresse) zugelassen, fremde Geräte werden gesperrt."
+    },
+    {
+      "id": "AP2-7-3-2-K5-2",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K5",
+      "vorne": "Wogegen schützt Portsecurity?",
+      "hinten": "Dagegen, dass jemand ein fremdes Gerät, z. B. einen privaten Laptop, an eine Netzwerkdose anschließt und so ins Firmennetz gelangt."
+    },
+    {
+      "id": "AP2-7-3-2-K6-1",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K6",
+      "vorne": "Wozu dient die Verschlüsselung eines Datenträgers, z. B. mit Bitlocker?",
+      "hinten": "Bei Verlust oder Diebstahl des Geräts oder Datenträgers bleiben die Daten für Unbefugte unlesbar."
+    },
+    {
+      "id": "AP2-7-3-2-K6-2",
+      "sp": "AP2-7-3-2",
+      "k": "AP2-7-3-2-K6",
+      "vorne": "Schützt die Datenträgerverschlüsselung die Daten eines eingeschalteten Notebooks, an dem ein Benutzer angemeldet ist?",
+      "hinten": "Nein. Im laufenden Betrieb ist der Datenträger entsperrt und die Daten sind lesbar. Sie schützt Datenträger, die ausgeschaltet oder ausgebaut sind."
+    },
+    {
+      "id": "AP2-7-4-1-K1-1",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K1",
+      "vorne": "Wie funktioniert symmetrische Verschlüsselung?",
+      "hinten": "Sender und Empfänger verwenden denselben geheimen Schlüssel zum Ver- und Entschlüsseln (z. B. AES).\nVorteil: schnell. Nachteil: Der Schlüssel muss vorher sicher ausgetauscht werden."
+    },
+    {
+      "id": "AP2-7-4-1-K1-2",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K1",
+      "vorne": "Wie funktioniert asymmetrische Verschlüsselung?",
+      "hinten": "Jeder Teilnehmer hat ein Schlüsselpaar. Verschlüsselt wird mit dem öffentlichen Schlüssel des Empfängers, entschlüsseln kann nur dessen privater Schlüssel.\nVorteil: kein geheimer Schlüsselaustausch. Nachteil: langsam."
+    },
+    {
+      "id": "AP2-7-4-1-K1-3",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K1",
+      "vorne": "Wie funktioniert hybride Verschlüsselung?",
+      "hinten": "Ein symmetrischer Schlüssel wird mit einem asymmetrischen Verfahren sicher ausgetauscht. Die eigentlichen Daten werden dann mit diesem Schlüssel symmetrisch verschlüsselt."
+    },
+    {
+      "id": "AP2-7-4-1-K1-4",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K1",
+      "vorne": "Vergleiche symmetrische und asymmetrische Verschlüsselung nach Geschwindigkeit und Schlüsselaustausch.",
+      "hinten": "- symmetrisch: schnell; der gemeinsame Schlüssel muss geheim ausgetauscht werden\n- asymmetrisch: langsam; der öffentliche Schlüssel darf offen weitergegeben werden"
+    },
+    {
+      "id": "AP2-7-4-1-K2-1",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K2",
+      "vorne": "Welche Schlüssel verwendet RSA, und wer darf sie kennen?",
+      "hinten": "Ein Schlüsselpaar: Den öffentlichen Schlüssel darf jeder kennen, den privaten Schlüssel nur sein Besitzer."
+    },
+    {
+      "id": "AP2-7-4-1-K2-2",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K2",
+      "vorne": "Anna schickt Ben eine mit RSA verschlüsselte Nachricht. Mit welchem Schlüssel verschlüsselt Anna, mit welchem entschlüsselt Ben?",
+      "hinten": "Anna verschlüsselt mit Bens öffentlichem Schlüssel. Ben entschlüsselt mit seinem privaten Schlüssel."
+    },
+    {
+      "id": "AP2-7-4-1-K3-1",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K3",
+      "vorne": "Warum eignet sich asymmetrische Verschlüsselung schlecht für leistungsschwache Geräte?",
+      "hinten": "Sie braucht viel Rechenleistung und ist deutlich langsamer als symmetrische Verschlüsselung; schwache Geräte wären damit überlastet."
+    },
+    {
+      "id": "AP2-7-4-1-K3-2",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K3",
+      "vorne": "Wofür ist ein asymmetrisches Verfahren in einem Projekt sinnvoll, wofür nicht?",
+      "hinten": "Sinnvoll, wenn Partner ohne vorher ausgetauschten geheimen Schlüssel sicher kommunizieren sollen, z. B. für den Schlüsselaustausch. Für große Datenmengen ist es zu langsam – dafür hybrid arbeiten."
+    },
+    {
+      "id": "AP2-7-4-1-K4-1",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K4",
+      "vorne": "Welche Art von Verschlüsselungsverfahren nutzt eine Transportverschlüsselung wie TLS bei HTTPS?",
+      "hinten": "Ein hybrides Verfahren."
+    },
+    {
+      "id": "AP2-7-4-1-K4-2",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K4",
+      "vorne": "Warum arbeitet die Transportverschlüsselung hybrid?",
+      "hinten": "Der Schlüssel wird sicher mit dem asymmetrischen Verfahren ausgetauscht, die Daten werden schnell mit dem symmetrischen Verfahren übertragen. So verbindet sie die Vorteile beider."
+    },
+    {
+      "id": "AP2-7-4-1-K5-1",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K5",
+      "vorne": "Worin unterscheiden sich Transport- und Ende-zu-Ende-Verschlüsselung?",
+      "hinten": "- Transportverschlüsselung: Nur der Übertragungsweg ist geschützt; auf beteiligten Servern liegen die Daten lesbar vor.\n- Ende-zu-Ende: Nur Absender und Empfänger können die Daten lesen."
+    },
+    {
+      "id": "AP2-7-4-1-K5-2",
+      "sp": "AP2-7-4-1",
+      "k": "AP2-7-4-1-K5",
+      "vorne": "Eine E-Mail wird nur mit TLS-Transportverschlüsselung über einen Mailserver übertragen. Kann der Betreiber des Mailservers sie lesen?",
+      "hinten": "Ja. Auf dem Server liegt die Mail entschlüsselt vor. Davor schützt nur eine Ende-zu-Ende-Verschlüsselung."
+    },
+    {
+      "id": "AP2-7-4-2-K1-1",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K1",
+      "vorne": "Was bedeutet das Schutzziel Integrität?",
+      "hinten": "Daten sind vollständig und unverändert; Änderungen bleiben nicht unbemerkt."
+    },
+    {
+      "id": "AP2-7-4-2-K2-1",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K2",
+      "vorne": "Was bedeutet Authentizität von Daten?",
+      "hinten": "Die Daten stammen nachweislich vom angegebenen Absender."
+    },
+    {
+      "id": "AP2-7-4-2-K3-1",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K3",
+      "vorne": "Warum deckt der Vergleich von Hashwerten eine Manipulation auf?",
+      "hinten": "Schon die kleinste Änderung der Daten ergibt einen völlig anderen Hashwert. Stimmen neu berechneter und mitgeschickter Wert nicht überein, wurden die Daten verändert."
+    },
+    {
+      "id": "AP2-7-4-2-K4-1",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K4",
+      "vorne": "Was ist ein Hashwert?",
+      "hinten": "Ein Prüfwert fester Länge, den eine Hashfunktion aus beliebigen Daten berechnet. Aus ihm lassen sich die Daten nicht zurückgewinnen."
+    },
+    {
+      "id": "AP2-7-4-2-K4-2",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K4",
+      "vorne": "Beschreibe, wie ein Empfänger mit einem Hashwert prüft, ob Daten unterwegs verändert wurden.",
+      "hinten": "1. Der Absender bildet den Hashwert der Daten und schickt ihn mit.\n2. Der Empfänger berechnet den Hashwert der empfangenen Daten neu.\n3. Er vergleicht beide Werte; weichen sie ab, wurden die Daten verändert."
+    },
+    {
+      "id": "AP2-7-4-2-K4-3",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K4",
+      "vorne": "Warum beweist ein einfach mitgeschickter Hashwert nicht, dass die Daten echt vom Absender stammen?",
+      "hinten": "Ein Angreifer kann die Daten ändern und einen neuen, passenden Hashwert mitschicken. Erst die digitale Signatur bindet den Hashwert an den Absender."
+    },
+    {
+      "id": "AP2-7-4-2-K5-1",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K5",
+      "vorne": "Wie wird eine digitale Signatur erstellt und geprüft?",
+      "hinten": "- Erstellen: Der Absender verschlüsselt den Hashwert der Daten mit seinem privaten Schlüssel.\n- Prüfen: Der Empfänger entschlüsselt ihn mit dem öffentlichen Schlüssel des Absenders und vergleicht ihn mit dem selbst berechneten Hashwert."
+    },
+    {
+      "id": "AP2-7-4-2-K5-2",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K5",
+      "vorne": "Welche zwei Schutzziele sichert eine digitale Signatur?",
+      "hinten": "- Integrität: Die Daten sind unverändert.\n- Authentizität: Die Daten stammen vom Besitzer des privaten Schlüssels."
+    },
+    {
+      "id": "AP2-7-4-2-K5-3",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K5",
+      "vorne": "Warum kann nur der Absender eine gültige digitale Signatur erzeugen?",
+      "hinten": "Nur er besitzt seinen privaten Schlüssel. Mit dem öffentlichen Schlüssel kann jeder prüfen, aber niemand signieren."
+    },
+    {
+      "id": "AP2-7-4-2-K6-1",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K6",
+      "vorne": "Warum speichert man Passwörter als Hashwert und nicht im Klartext?",
+      "hinten": "Gelangt die Datenbank in falsche Hände, lassen sich die Passwörter nicht direkt ablesen. Zur Anmeldung wird das eingegebene Passwort gehasht und mit dem gespeicherten Hashwert verglichen."
+    },
+    {
+      "id": "AP2-7-4-3-K1-1",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K1",
+      "vorne": "Worin unterscheiden sich Authentifizierung und Autorisierung?",
+      "hinten": "- Authentifizierung: Nachweis der Identität – Wer bist du?\n- Autorisierung: Prüfung der Rechte – Was darfst du?"
+    },
+    {
+      "id": "AP2-7-4-3-K1-2",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K1",
+      "vorne": "Ein angemeldeter Benutzer ruft eine Seite auf, die nur Administratoren sehen dürfen, und wird abgewiesen. Welcher Schritt hat gegriffen?",
+      "hinten": "Die Autorisierung."
+    },
+    {
+      "id": "AP2-7-4-3-K1-3",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K1",
+      "vorne": "In welcher Reihenfolge laufen Authentifizierung und Autorisierung ab, und warum?",
+      "hinten": "Erst Authentifizierung, dann Autorisierung: Rechte lassen sich erst prüfen, wenn feststeht, wer jemand ist."
+    },
+    {
+      "id": "AP2-7-4-3-K2-1",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K2",
+      "vorne": "Welche Verfahren zur Authentifizierung gibt es?",
+      "hinten": "- Wissen: Passwort\n- Besitz: Gerät oder Karte, z. B. Smartphone, Chipkarte\n- biometrisches Merkmal, z. B. Fingerabdruck\n- Kombination aus zwei Faktoren"
+    },
+    {
+      "id": "AP2-7-4-3-K2-2",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K2",
+      "vorne": "Was ist Zwei-Faktor-Authentifizierung?",
+      "hinten": "Anmeldung mit zwei Merkmalen aus verschiedenen Kategorien, z. B. Passwort (Wissen) und Code vom Smartphone (Besitz)."
+    },
+    {
+      "id": "AP2-7-4-3-K2-3",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K2",
+      "vorne": "Ist die Abfrage von Passwort und Sicherheitsfrage eine Zwei-Faktor-Authentifizierung?",
+      "hinten": "Nein. Beides ist Wissen; es fehlt ein Faktor aus einer anderen Kategorie wie Besitz oder Biometrie."
+    },
+    {
+      "id": "AP2-7-4-3-K3-1",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K3",
+      "vorne": "Schlage ein sicheres Anmeldeverfahren für ein Kundenportal mit sensiblen Daten vor und begründe es.",
+      "hinten": "Zwei-Faktor-Authentifizierung, z. B. Passwort plus Code aus einer Authenticator-App. Begründung: Ein erbeutetes Passwort allein reicht dem Angreifer nicht."
+    },
+    {
+      "id": "AP2-7-4-3-K3-2",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K3",
+      "vorne": "Welche Maßnahmen erschweren es, Passwörter bei der Anmeldung durch Ausprobieren zu erraten?",
+      "hinten": "- Mindestanforderungen an Länge und Komplexität\n- Sperre oder Wartezeit nach mehreren Fehlversuchen\n- zweiter Faktor"
+    },
+    {
+      "id": "AP2-7-4-3-K4-1",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K4",
+      "vorne": "Wie wird Autorisierung in einer Anwendung umgesetzt?",
+      "hinten": "Benutzer erhalten Rollen mit Rechten. Bei jedem Zugriff prüft die Anwendung, ob die Rolle des Benutzers die Aktion erlaubt."
+    },
+    {
+      "id": "AP2-7-4-3-K4-2",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K4",
+      "vorne": "Warum genügt es nicht, Schaltflächen für unberechtigte Benutzer nur auszublenden?",
+      "hinten": "Wer die Adresse oder Schnittstelle direkt aufruft, umgeht die Oberfläche. Die Rechte müssen bei jedem Zugriff serverseitig geprüft werden."
+    },
+    {
+      "id": "AP2-7-4-3-K5-1",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K5",
+      "vorne": "Was ist Single Sign-on (SSO)?",
+      "hinten": "Der Benutzer meldet sich einmal an und kann danach mehrere Anwendungen nutzen, ohne sich erneut anzumelden."
+    },
+    {
+      "id": "AP2-7-4-3-K5-2",
+      "sp": "AP2-7-4-3",
+      "k": "AP2-7-4-3-K5",
+      "vorne": "Nenne einen Vorteil und einen Nachteil von Single Sign-on.",
+      "hinten": "- Vorteil: nur eine Anmeldung und ein Passwort, zentrale Verwaltung\n- Nachteil: Wird diese eine Anmeldung kompromittiert, sind alle angeschlossenen Anwendungen offen."
+    },
+    {
+      "id": "AP2-7-5-1-K1-1",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K1",
+      "vorne": "Warum braucht eine App, die personenbezogene Daten speichert, eine Datenschutzerklärung?",
+      "hinten": "Die DSGVO verpflichtet, die Betroffenen zu informieren: welche Daten zu welchem Zweck verarbeitet werden, wie lange sie gespeichert werden und welche Rechte sie haben."
+    },
+    {
+      "id": "AP2-7-5-1-K1-2",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K1",
+      "vorne": "Warum braucht eine App eine Rechtsgrundlage, um personenbezogene Daten zu verarbeiten?",
+      "hinten": "Nach der DSGVO ist die Verarbeitung personenbezogener Daten nur erlaubt, wenn eine Rechtsgrundlage vorliegt, z. B. die Einwilligung des Benutzers oder ein Vertrag (Verbot mit Erlaubnisvorbehalt)."
+    },
+    {
+      "id": "AP2-7-5-1-K1-3",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K1",
+      "vorne": "Welche Anforderungen stellt die DSGVO an eine wirksame Einwilligung?",
+      "hinten": "- freiwillig\n- für einen bestimmten Zweck\n- informiert\n- unmissverständlich, z. B. durch aktives Ankreuzen\n- jederzeit widerrufbar"
+    },
+    {
+      "id": "AP2-7-5-1-K2-1",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K2",
+      "vorne": "Was ist zu beachten, bevor eigene Daten an einen fremden Online-Dienst weitergegeben werden?",
+      "hinten": "- Wie vertraulich sind die Daten?\n- Wo werden sie gespeichert?\n- Ist der Anbieter vertrauenswürdig?\n- Lassen sich Testdaten statt echter Daten verwenden?"
+    },
+    {
+      "id": "AP2-7-5-1-K3-1",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K3",
+      "vorne": "Warum sollte man einen fremden Online-Dienst besser mit Testdaten als mit echten Daten nutzen?",
+      "hinten": "Echte, womöglich personenbezogene oder vertrauliche Daten verlassen sonst das Unternehmen. Gelangen Testdaten beim Anbieter in falsche Hände, entsteht kein Schaden."
+    },
+    {
+      "id": "AP2-7-5-1-K3-2",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K3",
+      "vorne": "Warum ist der Speicherort wichtig, wenn personenbezogene Daten an einen fremden Online-Dienst gehen?",
+      "hinten": "In Länder außerhalb der EU bzw. des EWR dürfen personenbezogene Daten nur unter besonderen Voraussetzungen übermittelt werden, z. B. bei angemessenem Datenschutzniveau. Dort können auch Behörden nach fremdem Recht zugreifen."
+    },
+    {
+      "id": "AP2-7-5-1-K4-1",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K4",
+      "vorne": "Worin unterscheiden sich Archivierung und Datensicherung?",
+      "hinten": "- Archivierung: langfristige, unveränderbare Aufbewahrung, z. B. wegen Aufbewahrungspflichten\n- Datensicherung: Kopie, um Daten nach einem Verlust wiederherzustellen"
+    },
+    {
+      "id": "AP2-7-5-1-K4-2",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K4",
+      "vorne": "Warum ersetzt eine Datensicherung kein Archiv?",
+      "hinten": "Sicherungen werden regelmäßig überschrieben und sind nicht gegen Veränderung geschützt. Ein Archiv bewahrt Daten über die ganze Frist unveränderbar auf."
+    },
+    {
+      "id": "AP2-7-5-1-K5-1",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K5",
+      "vorne": "Wann müssen personenbezogene Daten gelöscht werden?",
+      "hinten": "Wenn der Zweck ihrer Verarbeitung weggefallen ist und keine gesetzliche Aufbewahrungsfrist mehr entgegensteht."
+    },
+    {
+      "id": "AP2-7-5-1-K5-2",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K5",
+      "vorne": "Ein Kunde verlangt die Löschung seiner Daten, seine Rechnungen unterliegen aber einer Aufbewahrungspflicht. Was gilt?",
+      "hinten": "Die Rechnungsdaten werden bis zum Ende der Frist aufbewahrt und nur noch dafür genutzt, danach gelöscht. Daten ohne Aufbewahrungspflicht werden sofort gelöscht."
+    },
+    {
+      "id": "AP2-7-5-1-K6-1",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K6",
+      "vorne": "Welche Datenschutzgrundsätze beachtet man schon beim Entwurf einer Anwendung?",
+      "hinten": "- nur nötige Daten erheben (Datenminimierung)\n- Zweck der Verarbeitung festlegen (Zweckbindung)\n- Löschung von Anfang an vorsehen"
+    },
+    {
+      "id": "AP2-7-5-1-K6-2",
+      "sp": "AP2-7-5-1",
+      "k": "AP2-7-5-1-K6",
+      "vorne": "Ein Registrierungsformular verlangt Geburtsdatum und Telefonnummer als Pflichtfelder, obwohl der Dienst sie nicht braucht. Gegen welchen Grundsatz verstößt das?",
+      "hinten": "Gegen die Datenminimierung: Es dürfen nur Daten erhoben werden, die für den Zweck nötig sind."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "glossar": [
+    {
+      "begriff": "Schutzziele",
+      "erklaerung": "Grundwerte der Informationssicherheit: Vertraulichkeit, Integrität und Verfügbarkeit. Ein Sicherheitsvorfall verletzt mindestens eines davon.",
+      "sp": [
+        "AP2-7-1-1"
+      ]
+    },
+    {
+      "begriff": "Vertraulichkeit",
+      "erklaerung": "Schutzziel: Nur Befugte können Daten lesen. Verletzt z. B. durch Datendiebstahl oder Mitlesen.",
+      "sp": [
+        "AP2-7-1-1",
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Integrität",
+      "erklaerung": "Schutzziel: Daten sind vollständig und unverändert; Änderungen bleiben nicht unbemerkt.",
+      "sp": [
+        "AP2-7-1-1",
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "Verfügbarkeit",
+      "erklaerung": "Schutzziel: Daten und Systeme sind nutzbar, wenn sie gebraucht werden. Verletzt z. B. durch Ausfall oder DDoS.",
+      "sp": [
+        "AP2-7-1-1"
+      ]
+    },
+    {
+      "begriff": "Authentizität",
+      "erklaerung": "Echtheit: Daten stammen nachweislich vom angegebenen Absender. Wird z. B. mit einer digitalen Signatur gesichert.",
+      "sp": [
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "Imageschaden",
+      "erklaerung": "Verlust an Ansehen und Vertrauen bei Kunden, Partnern und Öffentlichkeit, z. B. nach einem bekannt gewordenen Datenleck.",
+      "sp": [
+        "AP2-7-1-1"
+      ]
+    },
+    {
+      "begriff": "Datendiebstahl",
+      "erklaerung": "Unbefugtes Kopieren oder Abziehen vertraulicher Daten, z. B. von Kundendaten.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "Ransomware",
+      "erklaerung": "Schadsoftware, die Daten verschlüsselt oder Systeme sperrt und für die Freigabe ein Lösegeld fordert (digitale Erpressung).",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "Phishing",
+      "erklaerung": "Angriff, bei dem sich Täter per E-Mail, Nachricht oder gefälschter Webseite als vertrauenswürdige Stelle ausgeben, um Zugangsdaten zu erschleichen.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "Identitätsdiebstahl",
+      "erklaerung": "Missbrauch fremder Zugangs- oder Personendaten, um unter dem Namen des Opfers zu handeln.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "Man-in-the-Middle",
+      "erklaerung": "Angriff, bei dem sich ein Angreifer unbemerkt zwischen zwei Kommunikationspartner schaltet und Nachrichten mitliest oder verändert.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "SQL-Injection",
+      "erklaerung": "Angriff, bei dem über ein Eingabefeld fremder SQL-Code in eine Datenbankabfrage eingeschleust wird.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "Prepared Statement",
+      "erklaerung": "Vorbereitete SQL-Anweisung mit Platzhaltern; Eingaben werden getrennt als Werte übergeben und nie als SQL-Code ausgeführt.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "DDoS",
+      "langform": "Distributed Denial of Service",
+      "erklaerung": "Angriff, bei dem viele Rechner einen Dienst mit Anfragen überlasten, sodass er nicht mehr erreichbar ist.",
+      "sp": [
+        "AP2-7-1-2"
+      ]
+    },
+    {
+      "begriff": "Sicherheitskriterien",
+      "erklaerung": "Festgelegte Anforderungen an die IT-Sicherheit; Richtschnur für Entwickler und Grundlage für die objektive Bewertung und Auswahl von Systemen.",
+      "sp": [
+        "AP2-7-2-1"
+      ]
+    },
+    {
+      "begriff": "Security by Design",
+      "erklaerung": "Grundsatz, Sicherheit von Beginn an in den Entwurf einer Anwendung einzuplanen statt sie nachträglich hinzuzufügen.",
+      "sp": [
+        "AP2-7-2-1"
+      ]
+    },
+    {
+      "begriff": "funktionale Anforderung",
+      "erklaerung": "Beschreibt, was ein System leisten soll, z. B. eine bestimmte Funktion.",
+      "sp": [
+        "AP2-7-2-1"
+      ]
+    },
+    {
+      "begriff": "Qualitätsanforderung",
+      "erklaerung": "Beschreibt, wie gut ein System etwas leisten soll, z. B. Sicherheit, Leistung oder Benutzbarkeit (nichtfunktionale Anforderung).",
+      "sp": [
+        "AP2-7-2-1"
+      ]
+    },
+    {
+      "begriff": "TOM",
+      "langform": "technische und organisatorische Maßnahmen",
+      "erklaerung": "Maßnahmen, mit denen personenbezogene Daten geschützt werden, z. B. Zutritts-, Zugangs- und Zugriffskontrolle.",
+      "sp": [
+        "AP2-7-2-1",
+        "AP2-7-3-1"
+      ]
+    },
+    {
+      "begriff": "Risikoanalyse",
+      "erklaerung": "Bedrohungen werden ermittelt und nach Eintrittswahrscheinlichkeit und Schadenshöhe eingeordnet, um Schutzmaßnahmen zu priorisieren.",
+      "sp": [
+        "AP2-7-2-1"
+      ]
+    },
+    {
+      "begriff": "Penetrationstest",
+      "erklaerung": "Beauftragter Angriffsversuch: Ein Tester versucht mit den Mitteln eines Angreifers, in ein System einzudringen, um Schwachstellen aufzudecken.",
+      "sp": [
+        "AP2-7-2-2"
+      ]
+    },
+    {
+      "begriff": "Schwachstellenanalyse",
+      "erklaerung": "Systematische Untersuchung von Systemen auf bekannte Sicherheitslücken.",
+      "sp": [
+        "AP2-7-2-2"
+      ]
+    },
+    {
+      "begriff": "Device Security Check",
+      "erklaerung": "Prüfung, ob ein Gerät die Sicherheitsvorgaben erfüllt, z. B. aktuelle Updates und eingeschalteter Virenschutz.",
+      "sp": [
+        "AP2-7-2-2"
+      ]
+    },
+    {
+      "begriff": "IAM",
+      "langform": "Identity & Access Management",
+      "erklaerung": "Zentrale Verwaltung von Benutzern, Rollen und Rechten.",
+      "sp": [
+        "AP2-7-2-2"
+      ]
+    },
+    {
+      "begriff": "Log Management",
+      "erklaerung": "Sammeln und Auswerten von Ereignisprotokollen (Logs) verschiedener Systeme, um Vorfälle zu erkennen und nachzuweisen.",
+      "sp": [
+        "AP2-7-2-2"
+      ]
+    },
+    {
+      "begriff": "Compliance Report",
+      "erklaerung": "Bericht, der zeigt, ob die geltenden Vorgaben wie Gesetze, Verträge und interne Richtlinien eingehalten werden.",
+      "sp": [
+        "AP2-7-2-2"
+      ]
+    },
+    {
+      "begriff": "Zutrittskontrolle",
+      "erklaerung": "Maßnahmen, die regeln, wer Gebäude und Räume mit IT-Anlagen betreten darf, z. B. Alarmanlage, Besucherausweise.",
+      "sp": [
+        "AP2-7-3-1"
+      ]
+    },
+    {
+      "begriff": "Zugangskontrolle",
+      "erklaerung": "Maßnahmen, die regeln, wer sich an einem System anmelden darf, z. B. Passwort, Chipkarte, biometrische Verfahren.",
+      "sp": [
+        "AP2-7-3-1",
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Zugriffskontrolle",
+      "erklaerung": "Maßnahmen, die regeln, welche Daten ein angemeldeter Benutzer lesen, ändern oder löschen darf, z. B. Rollenkonzept.",
+      "sp": [
+        "AP2-7-3-1"
+      ]
+    },
+    {
+      "begriff": "Berechtigungskonzept",
+      "erklaerung": "Festlegung, wer welche Rechte hat; üblich ist, Rechte an Rollen zu vergeben und Benutzer den Rollen zuzuordnen.",
+      "sp": [
+        "AP2-7-3-1"
+      ]
+    },
+    {
+      "begriff": "Rolle",
+      "erklaerung": "Bündel von Rechten für eine Aufgabe, z. B. Sachbearbeiter; Benutzer erhalten Rechte über die ihnen zugeordneten Rollen.",
+      "sp": [
+        "AP2-7-3-1",
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "Grundsatz der geringsten Rechte",
+      "erklaerung": "Jeder Benutzer bekommt nur die Rechte, die er für seine Aufgabe braucht (Least Privilege).",
+      "sp": [
+        "AP2-7-3-1"
+      ]
+    },
+    {
+      "begriff": "Biometrie",
+      "erklaerung": "Authentifizierung über körperliche Merkmale wie Fingerabdruck oder Gesicht.",
+      "sp": [
+        "AP2-7-3-1",
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "Elementarrisiken",
+      "erklaerung": "Gefahren durch Naturgewalten wie Feuer und Hochwasser, die IT-Anlagen zerstören können.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Firewall",
+      "erklaerung": "Schutzsystem, das Netzwerkverbindungen anhand von Regeln nach Adressen und Ports erlaubt oder sperrt.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Port",
+      "erklaerung": "Nummer, über die ein Dienst auf einem Rechner angesprochen wird, z. B. 443 für HTTPS.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Webfilter",
+      "erklaerung": "Schutzsystem, das den Aufruf bestimmter Inhalte und Webseiten sperrt.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Portsecurity",
+      "erklaerung": "Funktion eines Switches, die an einem Anschluss nur bekannte Geräte (anhand der MAC-Adresse) zulässt.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Switch",
+      "erklaerung": "Netzwerkgerät, das Geräte in einem lokalen Netz verbindet und Daten gezielt an den richtigen Anschluss weiterleitet.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Datenträgerverschlüsselung",
+      "erklaerung": "Verschlüsselung eines ganzen Datenträgers, damit die Daten bei Verlust oder Diebstahl unlesbar bleiben.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Bitlocker",
+      "erklaerung": "In Windows eingebaute Datenträgerverschlüsselung.",
+      "sp": [
+        "AP2-7-3-2"
+      ]
+    },
+    {
+      "begriff": "Datenschutz",
+      "erklaerung": "Schutz von Personen vor Missbrauch ihrer personenbezogenen Daten; in der EU vor allem durch die DSGVO geregelt.",
+      "sp": [
+        "AP2-7-4-1",
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Datensicherheit",
+      "erklaerung": "Schutz von Daten jeder Art vor Verlust, Verfälschung und unbefugtem Zugriff durch technische und organisatorische Maßnahmen.",
+      "sp": [
+        "AP2-7-4-1",
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "symmetrische Verschlüsselung",
+      "erklaerung": "Verfahren, bei dem derselbe geheime Schlüssel zum Ver- und Entschlüsseln dient; schnell, aber der Schlüssel muss sicher ausgetauscht werden.",
+      "sp": [
+        "AP2-7-4-1"
+      ]
+    },
+    {
+      "begriff": "asymmetrische Verschlüsselung",
+      "erklaerung": "Verfahren mit Schlüsselpaar: Verschlüsselt wird mit dem öffentlichen, entschlüsselt mit dem privaten Schlüssel; sicherer Austausch, aber langsam.",
+      "sp": [
+        "AP2-7-4-1"
+      ]
+    },
+    {
+      "begriff": "hybride Verschlüsselung",
+      "erklaerung": "Kombination: Ein symmetrischer Schlüssel wird asymmetrisch ausgetauscht, die Daten werden damit symmetrisch verschlüsselt.",
+      "sp": [
+        "AP2-7-4-1"
+      ]
+    },
+    {
+      "begriff": "RSA",
+      "langform": "Rivest, Shamir, Adleman",
+      "erklaerung": "Bekanntes asymmetrisches Verfahren mit öffentlichem und privatem Schlüssel, nach seinen Erfindern benannt.",
+      "sp": [
+        "AP2-7-4-1"
+      ]
+    },
+    {
+      "begriff": "öffentlicher Schlüssel",
+      "erklaerung": "Teil eines asymmetrischen Schlüsselpaars, den jeder kennen darf; dient zum Verschlüsseln an den Besitzer und zum Prüfen seiner Signaturen.",
+      "sp": [
+        "AP2-7-4-1",
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "privater Schlüssel",
+      "erklaerung": "Geheimer Teil eines asymmetrischen Schlüsselpaars, den nur der Besitzer kennt; dient zum Entschlüsseln und Signieren.",
+      "sp": [
+        "AP2-7-4-1",
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "Transportverschlüsselung",
+      "erklaerung": "Verschlüsselung des Übertragungswegs, z. B. TLS; an den Stationen liegen die Daten wieder lesbar vor.",
+      "sp": [
+        "AP2-7-4-1"
+      ]
+    },
+    {
+      "begriff": "Ende-zu-Ende-Verschlüsselung",
+      "erklaerung": "Verschlüsselung, bei der nur Absender und Empfänger die Daten lesen können, auch kein Betreiber dazwischen.",
+      "sp": [
+        "AP2-7-4-1"
+      ]
+    },
+    {
+      "begriff": "Hashwert",
+      "erklaerung": "Prüfwert fester Länge, den eine Hashfunktion aus Daten berechnet; jede Änderung der Daten ergibt einen anderen Wert, zurückrechnen ist nicht möglich.",
+      "sp": [
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "digitale Signatur",
+      "erklaerung": "Mit dem privaten Schlüssel des Absenders verschlüsselter Hashwert; sichert Integrität und Authentizität und wird mit dem öffentlichen Schlüssel geprüft.",
+      "sp": [
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "Klartext",
+      "erklaerung": "Unverschlüsselte, direkt lesbare Daten.",
+      "sp": [
+        "AP2-7-4-2"
+      ]
+    },
+    {
+      "begriff": "Authentifizierung",
+      "erklaerung": "Nachweis der Identität: Wer bist du? Z. B. per Passwort, Besitz oder biometrischem Merkmal.",
+      "sp": [
+        "AP2-7-1-2",
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "Autorisierung",
+      "erklaerung": "Prüfung der Rechte: Was darfst du? Erfolgt nach der Authentifizierung, meist über Rollen.",
+      "sp": [
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "Zwei-Faktor-Authentifizierung",
+      "erklaerung": "Anmeldung mit zwei Merkmalen aus verschiedenen Kategorien, z. B. Passwort (Wissen) und Code vom Smartphone (Besitz).",
+      "sp": [
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "SSO",
+      "langform": "Single Sign-on",
+      "erklaerung": "Verfahren, bei dem sich ein Benutzer einmal anmeldet und danach mehrere Anwendungen nutzen kann.",
+      "sp": [
+        "AP2-7-4-3"
+      ]
+    },
+    {
+      "begriff": "personenbezogene Daten",
+      "erklaerung": "Alle Informationen, die sich auf eine bestimmte oder bestimmbare Person beziehen, z. B. Name, E-Mail-Adresse, Kundennummer.",
+      "sp": [
+        "AP2-7-2-1",
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Datenschutzerklärung",
+      "erklaerung": "Information an die Betroffenen, welche personenbezogenen Daten zu welchem Zweck verarbeitet werden, wie lange und welche Rechte sie haben.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Rechtsgrundlage",
+      "erklaerung": "Erlaubnis, ohne die personenbezogene Daten nach DSGVO nicht verarbeitet werden dürfen, z. B. Einwilligung oder Vertrag.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Einwilligung",
+      "erklaerung": "Freiwillige, informierte und unmissverständliche Zustimmung einer Person zur Verarbeitung ihrer Daten für einen bestimmten Zweck; jederzeit widerrufbar.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Testdaten",
+      "erklaerung": "Erfundene oder unkenntlich gemachte Daten, die statt echter Daten zum Testen verwendet werden.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Archivierung",
+      "erklaerung": "Langfristige, unveränderbare Aufbewahrung von Daten, z. B. zur Erfüllung gesetzlicher Aufbewahrungspflichten.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Datensicherung",
+      "erklaerung": "Kopie von Daten, um sie nach einem Verlust wiederherstellen zu können (Backup).",
+      "sp": [
+        "AP2-7-3-2",
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Aufbewahrungspflicht",
+      "erklaerung": "Gesetzliche Pflicht, bestimmte Unterlagen wie Rechnungen für eine festgelegte Frist aufzubewahren.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Datenminimierung",
+      "erklaerung": "Datenschutzgrundsatz: Es werden nur die personenbezogenen Daten erhoben, die für den Zweck nötig sind.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    },
+    {
+      "begriff": "Zweckbindung",
+      "erklaerung": "Datenschutzgrundsatz: Personenbezogene Daten werden für einen festgelegten Zweck erhoben und nur dafür verarbeitet.",
+      "sp": [
+        "AP2-7-5-1"
+      ]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP2-7-3-2-K1-1",
+      "frage": "Der Rahmen spricht von „Zugangskontrollen für Gebäude, Serverraum und Schrank“. Im TOM-Sinn (AP2-7-3-1) ist das Betreten von Gebäuden und Räumen Zutrittskontrolle. Die Karte vermeidet den Begriff; sollte der Rahmen angeglichen werden?"
+    },
+    {
+      "id": "AP2-7-3-1-K2-2",
+      "frage": "Biometrische Verfahren und Chipkarten werden in der Praxis auch zur Zutrittskontrolle (Türöffner) eingesetzt. Die Karte ordnet sie wie die Können-Aussage der Zugangskontrolle zu. Ebenso zählen Verschlüsselung und Datenträgerlöschung je nach Lehrbuch auch zu anderen Kontrollarten (z. B. Weitergabekontrolle)."
+    },
+    {
+      "id": "AP2-7-4-1-K4-2",
+      "frage": "Aktuelles TLS 1.3 tauscht den Sitzungsschlüssel per Diffie-Hellman-Schlüsselvereinbarung aus, nicht durch RSA-Verschlüsselung des Schlüssels. Die Karte bleibt allgemein („asymmetrischer Schlüsselaustausch“); unklar, ob die Prüfung mehr Detail erwartet."
+    },
+    {
+      "id": "AP2-7-5-1-K5-1",
+      "frage": "Konkrete Aufbewahrungsfristen werden bewusst nicht abgefragt: Die Frist für Buchungsbelege wurde 2025 von 10 auf 8 Jahre verkürzt (Bürokratieentlastungsgesetz IV), viele Lernmaterialien nennen noch 10/6 Jahre. Unklar, welche Werte die Prüfung erwartet."
+    },
+    {
+      "id": "AP2-7-2-1-K4-2",
+      "frage": "Wie die Beratung je Kundengruppe (besonders für die öffentliche Hand) inhaltlich erwartet wird, gibt der Rahmen nicht vor. Die Karte nennt nur typische Schwerpunkte für Privathaushalt und Unternehmen."
+    },
+    {
+      "id": "AP2-7-2-1-K5-2",
+      "frage": "Ethische und rechtliche Rahmenbedingungen lassen sich nicht immer scharf trennen. Das Beispiel (d) ist bewusst als über das Gesetz hinausgehender Verzicht formuliert; unklar, welche Beispiele die Prüfung als „ethisch“ erwartet."
+    },
+    {
+      "id": "AP2-7-1-1-K3-1",
+      "frage": "Die Einschätzung der Schadensschwere ist offen; die Karten zeigen nur Beispielbegründungen. Einen festen Kriterienkatalog (etwa wie bei der BSI-Schutzbedarfsfeststellung) gibt der Rahmen nicht vor."
+    },
+    {
+      "id": "AP2-7-2-2-K6-1",
+      "frage": "„Device Security Check“ ist kein fest definierter Normbegriff; die Karte folgt der Können-Aussage (Updates, Virenschutz). Unklar, welche weiteren Prüfpunkte erwartet werden."
+    },
+    {
+      "id": "AP2-7-1-2-K6-1",
+      "frage": "Das genaue Szenario des Passwort-Resets aus dem Rahmen ist nicht bekannt; die Karte beschreibt die typische Schwachstelle eines Reset-Links per E-Mail allgemein."
+    }
+  ]
+}

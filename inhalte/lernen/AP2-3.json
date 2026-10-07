@@ -1,0 +1,1540 @@
+{
+  "paket": "AP2-3",
+  "bloecke": {
+    "AP2-3-1": {
+      "satz": "Programmierkonzepte einordnen, eine Programmiersprache begründet auswählen und die passenden Entwicklungswerkzeuge kennen."
+    },
+    "AP2-3-2": {
+      "satz": "Algorithmen in lesbarem Pseudocode aufschreiben: Listen auswerten, suchen und sortieren."
+    },
+    "AP2-3-3": {
+      "satz": "Vorgegebene Klassen nutzen und erweitern, objektorientierte Konzepte erklären und Fehlerfälle mit Ausnahmen behandeln."
+    },
+    "AP2-3-4": {
+      "satz": "Wiederkehrende Abläufe mit Skripten automatisieren und cyber-physische Systeme mit Sensoren und Aktoren beschreiben."
+    }
+  },
+  "stichpunkte": {
+    "AP2-3-1-1": {
+      "ziel": "Die Programmierkonzepte strukturiert, prozedural, funktional und objektorientiert unterscheiden und Beispielsprachen sowie Einsatzgebiete nennen.",
+      "punkte": [
+        "Konzepte strukturiert, prozedural, funktional und objektorientiert unterscheiden",
+        "Beispiele: C prozedural, Java und C# objektorientiert, Haskell funktional",
+        "Viele Sprachen wie Python vereinen mehrere Konzepte",
+        "Funktional: Funktionen ohne Seiteneffekte nehmen Werte entgegen und geben Werte zurück",
+        "Einsatzgebiete: Web, mobile Apps, hardwarenah, Datenauswertung, Automatisierung"
+      ]
+    },
+    "AP2-3-1-2": {
+      "ziel": "Für ein beschriebenes Projekt eine Programmiersprache vorschlagen und die Wahl mit mehreren Kriterien begründen.",
+      "punkte": [
+        "Kriterien: Performance und Speicherverbrauch, Portabilität, Frameworks und Bibliotheken",
+        "Weitere Kriterien: Unterstützung durch Entwicklungsumgebungen, vorhandenes Know-how",
+        "Portabilität: läuft ohne oder mit geringer Anpassung auf verschiedenen Plattformen",
+        "Abwägen, wenn Kriterien gegeneinander stehen, z. B. Geschwindigkeit gegen Entwicklungszeit"
+      ]
+    },
+    "AP2-3-1-3": {
+      "ziel": "Die Aufgabe der Entwicklungswerkzeuge kennen und für einen Arbeitsschritt das passende Werkzeug auswählen.",
+      "punkte": [
+        "Aufgabe von Editor, IDE, Compiler, Linker, Interpreter und Debugger nennen",
+        "Programmgenerator: erzeugt aus einer Beschreibung oder einem Modell Quellcode",
+        "Wozu Testsoftware und Versionsverwaltung in der Entwicklung dienen",
+        "IDE bietet zusätzlich Übersetzen, Debuggen, Codevervollständigung, Test- und Versionsanbindung",
+        "Für einen beschriebenen Arbeitsschritt das passende Werkzeug wählen"
+      ]
+    },
+    "AP2-3-2-1": {
+      "ziel": "Eine Funktion in Pseudocode so schreiben, dass Dritte sie ohne Kenntnis der Programmiersprache lesen können.",
+      "punkte": [
+        "Funktion mit Namen, Parametern und Rückgabewert; muss nicht kompilierbar sein",
+        "Verzweigung, Zählschleife, kopf- und fußgesteuerte Schleife durch Einrücken erkennbar",
+        "Variablen mit passendem Datentyp, Vergleichsoperatoren und logische Operatoren",
+        "Vorgegebene Methoden und Datenstrukturen nutzen, z. B. Listen mit add, size und get",
+        "Sonderfälle abfangen, z. B. leere Liste oder Division durch null"
+      ]
+    },
+    "AP2-3-2-2": {
+      "ziel": "Listen und Arrays von Objekten in Pseudocode auswerten: filtern, zählen, summieren, Extremwerte finden, abgleichen und gruppieren.",
+      "punkte": [
+        "Elemente nach einer oder mehreren Bedingungen in eine Ergebnisliste übernehmen",
+        "Zählen, summieren, Durchschnitt bilden, auch nur für einen Zeitraum",
+        "Kleinstes oder größtes Element nach einem Kriterium bestimmen und zurückgeben",
+        "Zwei Listen mit verschachtelten Schleifen abgleichen",
+        "Je Schlüsselwert gruppieren; Nachbarn vergleichen und in einem zweiten Array hochzählen"
+      ]
+    },
+    "AP2-3-2-3": {
+      "ziel": "Lineare und binäre Suche erklären und umsetzen sowie einen einfachen Sortieralgorithmus in Pseudocode schreiben und benennen.",
+      "punkte": [
+        "Lineare Suche: Elemente der Reihe nach vergleichen, bis das gesuchte gefunden ist",
+        "Binäre Suche: Mitte prüfen, unpassende Hälfte verwerfen; nur auf sortierten Daten",
+        "Bubble Sort, Selection Sort und Insertion Sort am Vorgehen unterscheiden",
+        "Einen Sortieralgorithmus auswendig schreiben, z. B. Bubble Sort mit Tausch benachbarter Elemente",
+        "Tausch über Hilfsvariable; vorgegebene Vergleichsfunktion einsetzen"
+      ]
+    },
+    "AP2-3-3-1": {
+      "ziel": "Aus einem Klassendiagramm die verfügbaren Attribute und Methoden ablesen und damit bestehende Klassen um neue Methoden erweitern.",
+      "punkte": [
+        "Attribute und Methoden aus dem Klassendiagramm ablesen und im Code verwenden",
+        "Objekte mit dem Konstruktor erzeugen und in eine Liste einfügen",
+        "Über Getter und Setter auf Attribute anderer Objekte zugreifen",
+        "Liste von Objekten durchlaufen und je Objekt eine Methode aufrufen",
+        "Enthalten-Prüfung mit Wahrheitswert; neue Methode nutzt Methoden derselben Klasse"
+      ]
+    },
+    "AP2-3-3-2": {
+      "ziel": "Kapselung, Vererbung, Polymorphie und Interfaces erklären und im Klassendiagramm wie in Erklärfragen anwenden.",
+      "punkte": [
+        "Kapselung: Attribute nur über Methoden lesen und ändern",
+        "Vererbung: Unterklasse übernimmt Attribute und Methoden, ergänzt oder überschreibt sie",
+        "Polymorphie: gleicher Aufruf, Code der tatsächlichen Klasse, Auswahl zur Laufzeit",
+        "Interface legt Methoden fest; abstrakte Klasse kann Attribute und fertige Methoden enthalten",
+        "Dank Polymorphie neue Unterklassen ohne Änderung des aufrufenden Codes"
+      ]
+    },
+    "AP2-3-3-3": {
+      "ziel": "Das Prinzip von Ausnahmen erklären, in gegebenem Code erkennen, wann eine ausgelöst wird, und den Fehlerfall im eigenen Code erkennbar behandeln.",
+      "punkte": [
+        "Ausnahme trennt den Fehlerfall vom normalen Ablauf",
+        "In gegebenem Code erkennen, bei welchen Eingaben eine Ausnahme ausgelöst wird",
+        "Ungültige Eingaben prüfen; Fehlerfall per Ausnahme oder besonderem Rückgabewert behandeln",
+        "Aufbau aus try, catch und finally",
+        "Laufzeitfehler: nicht vorhandenes Objekt, Index außerhalb des Arrays, Division durch null"
+      ]
+    },
+    "AP2-3-4-1": {
+      "ziel": "Wiederkehrende Abläufe mit einem kurzen Skript automatisieren, das Werte durchläuft, Funktionen aufruft und Ergebnisse strukturiert ausgibt.",
+      "punkte": [
+        "Eine Folge von Werten durchlaufen und je Wert eine vorgegebene Funktion aufrufen",
+        "Leere Ergebnisse abfangen und nur gültige Werte weiterverarbeiten",
+        "Ergebnisse in vorgegebener Struktur ausgeben, z. B. als JSON-Array",
+        "PowerShell, Bash und Python als Skriptsprachen einordnen",
+        "Automatisierbar: Datensicherung, Benutzer anlegen, Protokolle auswerten, Dienste überwachen"
+      ]
+    },
+    "AP2-3-4-2": {
+      "ziel": "Cyber-physische Systeme beschreiben, Sensoren und Aktoren auswählen und Abfragerhythmus sowie Datenübertragung begründet planen.",
+      "punkte": [
+        "Cyber-physisches System: Software über Sensoren und Aktoren mit der physischen Welt verbunden",
+        "Sensoren erfassen Messwerte, Aktoren bewirken etwas; passend zur Aufgabe auswählen",
+        "Software greift über Bibliotheken auf Sensoren und Aktoren zu",
+        "Abfragerhythmus nach Änderungsgeschwindigkeit, Energiebedarf und Datenmenge planen",
+        "Datenübertragung: z. B. große Reichweite bei geringem Energiebedarf"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP2-3-1-1-K1-1",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K1",
+      "vorne": "Was kennzeichnet strukturierte Programmierung?",
+      "hinten": "Der Ablauf wird nur aus den Kontrollstrukturen Folge (Sequenz), Verzweigung und Schleife aufgebaut; auf beliebige Sprünge (goto) wird verzichtet."
+    },
+    {
+      "id": "AP2-3-1-1-K1-2",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K1",
+      "vorne": "Was kennzeichnet prozedurale Programmierung?",
+      "hinten": "Das Programm wird in Prozeduren bzw. Funktionen zerlegt, die nacheinander aufgerufen werden und Daten verarbeiten; Daten und Funktionen sind voneinander getrennt."
+    },
+    {
+      "id": "AP2-3-1-1-K1-3",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K1",
+      "vorne": "Was kennzeichnet objektorientierte Programmierung?",
+      "hinten": "Daten (Attribute) und die zugehörigen Funktionen (Methoden) werden in Objekten zusammengefasst, die aus Klassen erzeugt werden. Kernkonzepte: Kapselung, Vererbung, Polymorphie."
+    },
+    {
+      "id": "AP2-3-1-1-K2-1",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K2",
+      "vorne": "Welchem Programmierkonzept ordnest du Haskell zu?",
+      "hinten": "Funktional."
+    },
+    {
+      "id": "AP2-3-1-1-K2-2",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K2",
+      "vorne": "Welchem Programmierkonzept ordnest du C# zu?",
+      "hinten": "Objektorientiert."
+    },
+    {
+      "id": "AP2-3-1-1-K3-1",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K3",
+      "vorne": "Nenne je eine Beispielsprache für prozedurale, objektorientierte und funktionale Programmierung.",
+      "hinten": "- prozedural: C\n- objektorientiert: Java oder C#\n- funktional: Haskell"
+    },
+    {
+      "id": "AP2-3-1-1-K3-2",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K3",
+      "vorne": "Welchem Programmierkonzept folgt Python?",
+      "hinten": "Mehreren: Python vereint prozedurale, objektorientierte und funktionale Elemente (Multiparadigmensprache)."
+    },
+    {
+      "id": "AP2-3-1-1-K4-1",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K4",
+      "vorne": "Nenne Einsatzgebiete von Programmiersprachen.",
+      "hinten": "- Webanwendungen\n- mobile Apps\n- hardwarenahe Programmierung\n- Datenauswertung\n- Automatisierung"
+    },
+    {
+      "id": "AP2-3-1-1-K4-2",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K4",
+      "vorne": "Für welches Einsatzgebiet ist C besonders verbreitet, und warum?",
+      "hinten": "Hardwarenahe Programmierung (z. B. Treiber, Mikrocontroller): C erzeugt schnellen, speichersparenden Code und erlaubt direkten Zugriff auf Speicher und Hardware."
+    },
+    {
+      "id": "AP2-3-1-1-K5-1",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K5",
+      "vorne": "Was macht funktionale Programmierung aus?",
+      "hinten": "Das Programm besteht aus Funktionen ohne Seiteneffekte: Sie nehmen Werte entgegen und geben Werte zurück, ohne einen Zustand außerhalb der Funktion zu ändern."
+    },
+    {
+      "id": "AP2-3-1-1-K5-2",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K5",
+      "vorne": "Was ist ein Seiteneffekt einer Funktion?",
+      "hinten": "Eine Wirkung über den Rückgabewert hinaus, z. B. eine globale Variable oder ein Attribut ändern, in eine Datei schreiben oder etwas ausgeben."
+    },
+    {
+      "id": "AP2-3-1-2-K1-1",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K1",
+      "vorne": "Nach welchen Kriterien wählt man eine Programmiersprache für ein Projekt aus?",
+      "hinten": "- Performance und Speicherverbrauch\n- Portabilität\n- verfügbare Frameworks und Bibliotheken\n- Unterstützung durch Entwicklungsumgebungen (IDE)\n- vorhandenes Know-how"
+    },
+    {
+      "id": "AP2-3-1-2-K1-2",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K1",
+      "vorne": "Warum ist vorhandenes Know-how ein Kriterium bei der Wahl der Programmiersprache?",
+      "hinten": "Ein Team, das die Sprache beherrscht, entwickelt schneller und mit weniger Fehlern; Einarbeitung und Schulung in eine neue Sprache kosten Zeit und Geld."
+    },
+    {
+      "id": "AP2-3-1-2-K1-3",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K1",
+      "vorne": "Warum spielen verfügbare Frameworks und Bibliotheken bei der Wahl der Programmiersprache eine Rolle?",
+      "hinten": "Fertige, erprobte Bausteine (z. B. für Weboberflächen oder Datenbankzugriff) müssen nicht selbst entwickelt werden; das spart Entwicklungszeit und vermeidet Fehler."
+    },
+    {
+      "id": "AP2-3-1-2-K2-1",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K2",
+      "vorne": "Ein Programm soll auf einem Mikrocontroller mit wenig Speicher Messwerte verarbeiten. Welche Sprache schlägst du vor, und mit welchen Kriterien begründest du das?",
+      "hinten": "Z. B. C: hohe Performance, geringer Speicherverbrauch, hardwarenaher Zugriff, Bibliotheken für Mikrocontroller verfügbar. Portabilität auf andere Plattformen ist hier nachrangig."
+    },
+    {
+      "id": "AP2-3-1-2-K2-2",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K2",
+      "vorne": "Ein Team, das seit Jahren in C# entwickelt, soll eine Windows-Desktopanwendung bauen. Welche Sprache liegt nahe, und warum?",
+      "hinten": "C#: Know-how ist vorhanden, gute IDE-Unterstützung (z. B. Visual Studio), passende Frameworks für Desktopoberflächen; Portabilität auf andere Systeme ist nicht gefordert."
+    },
+    {
+      "id": "AP2-3-1-2-K3-1",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K3",
+      "vorne": "Was bedeutet Portabilität eines Programms?",
+      "hinten": "Das Programm läuft ohne oder mit geringer Anpassung auf verschiedenen Plattformen (z. B. Betriebssystemen oder Hardware)."
+    },
+    {
+      "id": "AP2-3-1-2-K3-2",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K3",
+      "vorne": "Warum gelten Java-Programme als gut portabel?",
+      "hinten": "Der Compiler erzeugt plattformunabhängigen Bytecode, den die Java Virtual Machine (JVM) ausführt. Das Programm läuft auf jeder Plattform, für die es eine JVM gibt."
+    },
+    {
+      "id": "AP2-3-1-2-K4-1",
+      "sp": "AP2-3-1-2",
+      "k": "AP2-3-1-2-K4",
+      "vorne": "Ein Programm soll sehr schnell rechnen, aber auch in kurzer Zeit fertig werden. Wie wägst du bei der Sprachwahl ab?",
+      "hinten": "Höchste Performance spricht für eine kompilierte, hardwarenahe Sprache wie C oder C++, kurze Entwicklungszeit für eine Sprache mit vielen Bibliotheken wie Python. Entscheidend ist, welche Anforderung im Szenario Vorrang hat."
+    },
+    {
+      "id": "AP2-3-1-3-K1-1",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K1",
+      "vorne": "Welche Aufgabe hat ein Editor in der Softwareentwicklung?",
+      "hinten": "Quelltext schreiben und bearbeiten, oft mit Syntaxhervorhebung."
+    },
+    {
+      "id": "AP2-3-1-3-K1-2",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K1",
+      "vorne": "Welche Aufgabe hat ein Compiler?",
+      "hinten": "Er übersetzt den gesamten Quellcode vor der Ausführung in Maschinencode (oder einen Zwischencode wie Java-Bytecode) und meldet dabei Syntaxfehler."
+    },
+    {
+      "id": "AP2-3-1-3-K1-3",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K1",
+      "vorne": "Welche Aufgabe hat ein Linker?",
+      "hinten": "Er verbindet die vom Compiler erzeugten Objektdateien und die benötigten Bibliotheken zu einem ausführbaren Programm."
+    },
+    {
+      "id": "AP2-3-1-3-K1-4",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K1",
+      "vorne": "Wie arbeitet ein Interpreter?",
+      "hinten": "Er liest den Quellcode zur Laufzeit und führt ihn Anweisung für Anweisung aus, ohne vorher eine ausführbare Datei zu erzeugen."
+    },
+    {
+      "id": "AP2-3-1-3-K1-5",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K1",
+      "vorne": "Worin unterscheiden sich Compiler und Interpreter?",
+      "hinten": "- Compiler: übersetzt das ganze Programm einmal vorab; schnelle Ausführung, Syntaxfehler vor dem Start sichtbar\n- Interpreter: führt den Code zur Laufzeit Schritt für Schritt aus; kein Übersetzungsschritt, langsamere Ausführung"
+    },
+    {
+      "id": "AP2-3-1-3-K1-6",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K1",
+      "vorne": "Welche Aufgabe hat ein Debugger?",
+      "hinten": "Fehlersuche im laufenden Programm: an Haltepunkten anhalten, Schritt für Schritt ausführen und die Werte der Variablen ansehen."
+    },
+    {
+      "id": "AP2-3-1-3-K2-1",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K2",
+      "vorne": "Was ist ein Programmgenerator?",
+      "hinten": "Ein Werkzeug, das aus einer Beschreibung oder einem Modell Quellcode erzeugt."
+    },
+    {
+      "id": "AP2-3-1-3-K2-2",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K2",
+      "vorne": "Nenne ein Beispiel für einen Programmgenerator.",
+      "hinten": "Z. B. ein Werkzeug, das aus einem UML-Klassendiagramm Klassengerüste erzeugt, oder ein Oberflächen-Designer, der aus einer gezeichneten Oberfläche Code erzeugt."
+    },
+    {
+      "id": "AP2-3-1-3-K3-1",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K3",
+      "vorne": "Wozu dient Testsoftware in der Entwicklung?",
+      "hinten": "Tests automatisiert ausführen und auswerten (z. B. Unit-Tests), damit Fehler früh auffallen und Änderungen nichts Bestehendes beschädigen."
+    },
+    {
+      "id": "AP2-3-1-3-K3-2",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K3",
+      "vorne": "Wozu dient eine Versionsverwaltung wie Git?",
+      "hinten": "Änderungen am Quellcode nachvollziehbar speichern: frühere Stände wiederherstellen, sehen, wer was geändert hat, und im Team parallel arbeiten (z. B. in Branches)."
+    },
+    {
+      "id": "AP2-3-1-3-K4-1",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K4",
+      "vorne": "Ein Programm liefert falsche Ergebnisse. Du willst es an einer Stelle anhalten und Schritt für Schritt die Variablenwerte verfolgen. Welches Werkzeug nimmst du?",
+      "hinten": "Einen Debugger."
+    },
+    {
+      "id": "AP2-3-1-3-K4-2",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K4",
+      "vorne": "Mehrere Entwickler arbeiten am selben Quellcode, und jeder frühere Stand soll wiederherstellbar sein. Welches Werkzeug brauchst du?",
+      "hinten": "Eine Versionsverwaltung, z. B. Git."
+    },
+    {
+      "id": "AP2-3-1-3-K4-3",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K4",
+      "vorne": "Nach jeder Änderung sollen automatisch alle Unit-Tests laufen und ausgewertet werden. Welches Werkzeug brauchst du?",
+      "hinten": "Testsoftware (ein Testframework, z. B. JUnit)."
+    },
+    {
+      "id": "AP2-3-1-3-K5-1",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K5",
+      "vorne": "Was bietet eine IDE gegenüber einem einfachen Editor zusätzlich?",
+      "hinten": "- Übersetzen (Compiler eingebunden)\n- Debuggen\n- Codevervollständigung\n- Anbindung an Test und Versionsverwaltung"
+    },
+    {
+      "id": "AP2-3-1-3-K5-2",
+      "sp": "AP2-3-1-3",
+      "k": "AP2-3-1-3-K5",
+      "vorne": "Wofür steht die Abkürzung IDE?",
+      "hinten": "Integrated Development Environment – integrierte Entwicklungsumgebung."
+    },
+    {
+      "id": "AP2-3-2-1-K1-1",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K1",
+      "vorne": "Welche Anforderungen gelten an die Form von Pseudocode?",
+      "hinten": "- für Dritte ohne Kenntnis der Programmiersprache lesbar\n- muss nicht kompilierbar sein, Syntaxfehler werden toleriert\n- Kontrollstrukturen erkennbar, z. B. durch Einrücken\n- Orientierung an einer bekannten Sprache erlaubt"
+    },
+    {
+      "id": "AP2-3-2-1-K1-2",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K1",
+      "vorne": "Welche Angaben gehören in den Kopf einer Funktion in Pseudocode?",
+      "hinten": "Name der Funktion, Parameter (mit Datentyp) und Datentyp des Rückgabewerts, z. B. `funktion durchschnitt(werte: Liste): Kommazahl`. Die Schreibweise ist frei."
+    },
+    {
+      "id": "AP2-3-2-1-K1-3",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K1",
+      "vorne": "Wie gibt eine Funktion in Pseudocode ihr Ergebnis an den Aufrufer zurück?",
+      "hinten": "Mit einer Rückgabeanweisung, z. B. `return ergebnis` oder `gib ergebnis zurück`; danach endet die Funktion sofort."
+    },
+    {
+      "id": "AP2-3-2-1-K2-1",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K2",
+      "vorne": "Worin unterscheiden sich kopfgesteuerte und fußgesteuerte Schleife?",
+      "hinten": "- kopfgesteuert (while): Bedingung wird vor jedem Durchlauf geprüft; der Rumpf läuft eventuell gar nicht\n- fußgesteuert (do-while, wiederhole-bis): Bedingung nach dem Durchlauf geprüft; der Rumpf läuft mindestens einmal"
+    },
+    {
+      "id": "AP2-3-2-1-K2-2",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K2",
+      "vorne": "Wann verwendet man eine Zählschleife?",
+      "hinten": "Wenn die Anzahl der Durchläufe vorher feststeht, z. B. für alle Indizes einer Liste: `for i = 0 to liste.size() - 1`."
+    },
+    {
+      "id": "AP2-3-2-1-K2-3",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K2",
+      "vorne": "Eine Eingabe soll so lange erneut abgefragt werden, bis sie gültig ist. Welche Schleifenart passt, und warum?",
+      "hinten": "Eine fußgesteuerte Schleife, weil die Eingabe mindestens einmal abgefragt werden muss, bevor man sie prüfen kann."
+    },
+    {
+      "id": "AP2-3-2-1-K2-4",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K2",
+      "vorne": "Wie macht man in Pseudocode erkennbar, welche Anweisungen zu einer Schleife oder Verzweigung gehören?",
+      "hinten": "Durch Einrücken des Rumpfs, ergänzt durch ein klares Ende wie `end if` / `end while` oder geschweifte Klammern."
+    },
+    {
+      "id": "AP2-3-2-1-K3-1",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K3",
+      "vorne": "Welchen Datentyp wählst du für eine Anzahl, einen Preis, einen Namen und einen Ja/Nein-Wert?",
+      "hinten": "- Anzahl: Ganzzahl (int)\n- Preis: Kommazahl (double)\n- Name: Zeichenkette (String)\n- Ja/Nein: Wahrheitswert (boolean)"
+    },
+    {
+      "id": "AP2-3-2-1-K3-2",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K3",
+      "vorne": "Nenne die sechs Vergleichsoperatoren.",
+      "hinten": "gleich `==`, ungleich `!=`, kleiner `<`, größer `>`, kleiner oder gleich `<=`, größer oder gleich `>=`"
+    },
+    {
+      "id": "AP2-3-2-1-K3-3",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K3",
+      "vorne": "Wann liefern die logischen Operatoren UND, ODER und NICHT den Wert wahr?",
+      "hinten": "- UND: wenn beide Bedingungen wahr sind\n- ODER: wenn mindestens eine Bedingung wahr ist\n- NICHT: wenn die Bedingung falsch ist (kehrt den Wahrheitswert um)"
+    },
+    {
+      "id": "AP2-3-2-1-K3-4",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K3",
+      "vorne": "Warum liefert `summe / anzahl` in Sprachen wie Java oder C einen falschen Durchschnitt, wenn beide Variablen Ganzzahlen sind?",
+      "hinten": "Bei zwei Ganzzahlen wird ganzzahlig geteilt, der Nachkommaanteil fällt weg (7 / 2 ergibt 3). Abhilfe: Summe als Kommazahl führen oder vor der Division umwandeln."
+    },
+    {
+      "id": "AP2-3-2-1-K4-1",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K4",
+      "vorne": "Was leisten die Listenmethoden `add(x)`, `size()` und `get(i)`?",
+      "hinten": "- `add(x)`: hängt x hinten an die Liste an\n- `size()`: liefert die Anzahl der Elemente\n- `get(i)`: liefert das Element an Index i"
+    },
+    {
+      "id": "AP2-3-2-1-K4-2",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K4",
+      "vorne": "Welche Indizes sind gültig, wenn eine Liste n Elemente hat und ab 0 gezählt wird?",
+      "hinten": "0 bis n − 1. Der Index n liegt bereits außerhalb der Liste."
+    },
+    {
+      "id": "AP2-3-2-1-K5-1",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K5",
+      "vorne": "Welchen Sonderfall prüfst du, bevor du den Durchschnitt über eine Liste berechnest, und wie behandelst du ihn?",
+      "hinten": "Ob die Liste leer bzw. die Anzahl 0 ist, sonst droht eine Division durch null. Dann einen festgelegten Wert zurückgeben (z. B. 0) oder eine Ausnahme auslösen."
+    },
+    {
+      "id": "AP2-3-2-1-K5-2",
+      "sp": "AP2-3-2-1",
+      "k": "AP2-3-2-1-K5",
+      "vorne": "Warum muss man vor der Suche nach dem größten Element einer Liste prüfen, ob sie leer ist?",
+      "hinten": "Weil der Startwert meist das erste Element ist; bei einer leeren Liste gibt es keins. Dann z. B. null zurückgeben oder eine Ausnahme auslösen."
+    },
+    {
+      "id": "AP2-3-2-2-K1-1",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K1",
+      "vorne": "Wie ist das Muster „Elemente nach einer Bedingung filtern“ aufgebaut?",
+      "hinten": "- leere Ergebnisliste anlegen\n- jedes Element der Liste durchlaufen\n- Bedingung prüfen (mehrere mit UND/ODER verknüpft)\n- erfüllt: mit `add` in die Ergebnisliste\n- nach der Schleife die Ergebnisliste zurückgeben"
+    },
+    {
+      "id": "AP2-3-2-2-K1-2",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K1",
+      "vorne": "Wo steht beim Filtern einer Liste die Anweisung `return ergebnis`, und warum dort?",
+      "hinten": "Nach der Schleife. Stünde sie in der Schleife, endete die Funktion schon im ersten Durchlauf."
+    },
+    {
+      "id": "AP2-3-2-2-K2-1",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K2",
+      "vorne": "Wie berechnet man den Durchschnitt über die Elemente einer Liste?",
+      "hinten": "Summe und Zähler vor der Schleife mit 0 belegen; in der Schleife den Wert addieren und den Zähler erhöhen; danach Summe ÷ Zähler, aber nur wenn der Zähler > 0 ist."
+    },
+    {
+      "id": "AP2-3-2-2-K2-2",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K2",
+      "vorne": "Wie berücksichtigt man beim Zählen oder Summieren nur die Elemente eines Zeitraums?",
+      "hinten": "In der Schleife prüfen, ob das Datum im Zeitraum liegt (`datum >= von UND datum <= bis`); nur dann addieren bzw. zählen."
+    },
+    {
+      "id": "AP2-3-2-2-K2-3",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K2",
+      "vorne": "Warum werden Summe und Zähler vor der Schleife und nicht in ihr auf 0 gesetzt?",
+      "hinten": "In der Schleife würden sie bei jedem Durchlauf wieder auf 0 zurückgesetzt; am Ende stünde nur der Wert des letzten Elements darin."
+    },
+    {
+      "id": "AP2-3-2-2-K3-1",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K3",
+      "vorne": "Wie bestimmt man das Element mit dem größten Wert in einer Liste?",
+      "hinten": "- erstes Element als bisher größtes merken\n- die übrigen Elemente durchlaufen\n- ist der Wert größer als der des gemerkten: dieses Element merken\n- nach der Schleife das gemerkte Element zurückgeben"
+    },
+    {
+      "id": "AP2-3-2-2-K3-2",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K3",
+      "vorne": "Warum startet man die Suche nach dem kleinsten Wert besser mit dem ersten Element als mit dem Wert 0?",
+      "hinten": "Sind alle Werte größer als 0, bliebe 0 fälschlich das Minimum. Das erste Element ist immer ein gültiger Startwert."
+    },
+    {
+      "id": "AP2-3-2-2-K3-3",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K3",
+      "vorne": "Was merkt man sich, wenn nicht der größte Wert, sondern das Objekt mit dem größten Wert zurückgegeben werden soll?",
+      "hinten": "Das Objekt selbst (oder seinen Index), nicht nur den Wert. Verglichen wird über den Getter des Kriteriums, z. B. `p.getPreis() > max.getPreis()`."
+    },
+    {
+      "id": "AP2-3-2-2-K4-1",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K4",
+      "vorne": "Wie gleicht man zwei Listen ab, z. B. welche Elemente von A auch in B vorkommen?",
+      "hinten": "Äußere Schleife über A, darin eine innere Schleife über B. In der inneren Schleife vergleichen und bei einem Treffer das Element merken oder in die Ergebnisliste übernehmen."
+    },
+    {
+      "id": "AP2-3-2-2-K4-2",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K4",
+      "vorne": "Wozu dient beim Abgleich zweier Listen eine Merkervariable (Flag)?",
+      "hinten": "Sie wird vor der inneren Schleife auf falsch gesetzt und bei einem Treffer auf wahr. Nach der inneren Schleife zeigt sie, ob das Element in der anderen Liste vorkommt."
+    },
+    {
+      "id": "AP2-3-2-2-K5-1",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K5",
+      "vorne": "Wie erzeugt man aus einer Liste eine zweite, die jeden Schlüsselwert nur einmal enthält?",
+      "hinten": "Die Liste durchlaufen und für jedes Element prüfen, ob sein Schlüssel schon in der neuen Liste steht; nur wenn nicht, ihn hinzufügen."
+    },
+    {
+      "id": "AP2-3-2-2-K5-2",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K5",
+      "vorne": "Wie berechnet man je Gruppe einen Wert, z. B. den Umsatz je Kunde?",
+      "hinten": "Zuerst die eindeutigen Schlüssel sammeln. Dann für jeden Schlüssel die Ausgangsliste durchlaufen und die Werte der passenden Elemente summieren (zwei verschachtelte Schleifen)."
+    },
+    {
+      "id": "AP2-3-2-2-K6-1",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K6",
+      "vorne": "Wie vergleicht man jedes Element eines Arrays mit seinem Nachfolger, ohne den Index zu überschreiten?",
+      "hinten": "Schleife von i = 0 bis Länge − 2 und `a[i]` mit `a[i+1]` vergleichen (oder i = 1 bis Länge − 1 und `a[i-1]` mit `a[i]`)."
+    },
+    {
+      "id": "AP2-3-2-2-K6-2",
+      "sp": "AP2-3-2-2",
+      "k": "AP2-3-2-2-K6",
+      "vorne": "Wie zählt man Ergebnisse in einem zweiten Array an der passenden Stelle hoch?",
+      "hinten": "Ein Zählarray anlegen, alle Stellen mit 0. Aus dem Ergebnis den Index bestimmen und dort um 1 erhöhen: `zaehler[index] = zaehler[index] + 1`."
+    },
+    {
+      "id": "AP2-3-2-3-K1-1",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K1",
+      "vorne": "Wie arbeitet die lineare Suche?",
+      "hinten": "Die Elemente werden der Reihe nach mit dem gesuchten verglichen. Bei einem Treffer wird das Element bzw. sein Index zurückgegeben, nach dem letzten Element ohne Treffer ein Kennwert wie −1 oder null."
+    },
+    {
+      "id": "AP2-3-2-3-K1-2",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K1",
+      "vorne": "Setzt die lineare Suche sortierte Daten voraus?",
+      "hinten": "Nein, sie funktioniert auch auf unsortierten Daten."
+    },
+    {
+      "id": "AP2-3-2-3-K2-1",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K2",
+      "vorne": "Wie arbeitet die binäre Suche?",
+      "hinten": "- Element in der Mitte des Suchbereichs prüfen\n- Treffer: fertig\n- Gesuchtes kleiner: links weitersuchen, größer: rechts\n- wiederholen, bis gefunden oder der Bereich leer ist"
+    },
+    {
+      "id": "AP2-3-2-3-K2-2",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K2",
+      "vorne": "Welche Variablen führt die binäre Suche, und wie werden sie angepasst?",
+      "hinten": "Linke und rechte Grenze; `mitte = (links + rechts) / 2` ganzzahlig. Gesuchtes kleiner: `rechts = mitte - 1`, größer: `links = mitte + 1`. Schleife, solange `links <= rechts`."
+    },
+    {
+      "id": "AP2-3-2-3-K3-1",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K3",
+      "vorne": "Wie ist Bubble Sort in Pseudocode aufgebaut?",
+      "hinten": "Zwei verschachtelte Schleifen. Innen werden benachbarte Elemente `a[j]` und `a[j+1]` verglichen und getauscht, wenn sie in falscher Reihenfolge stehen."
+    },
+    {
+      "id": "AP2-3-2-3-K3-2",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K3",
+      "vorne": "Warum kann bei Bubble Sort die innere Schleife mit jedem äußeren Durchlauf um ein Element kürzer werden?",
+      "hinten": "Nach jedem Durchlauf ist das größte der noch unsortierten Elemente ans Ende gewandert und steht bereits an seiner endgültigen Stelle."
+    },
+    {
+      "id": "AP2-3-2-3-K4-1",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K4",
+      "vorne": "Wie arbeitet Selection Sort?",
+      "hinten": "Im unsortierten Teil das kleinste Element suchen und mit dem ersten unsortierten Element tauschen. Der sortierte Teil wächst so von vorn um ein Element je Durchlauf."
+    },
+    {
+      "id": "AP2-3-2-3-K4-2",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K4",
+      "vorne": "Wie arbeitet Insertion Sort?",
+      "hinten": "Das nächste Element aus dem unsortierten Teil nehmen und im bereits sortierten Teil an der richtigen Stelle einfügen; größere Elemente rücken dafür eine Stelle nach hinten."
+    },
+    {
+      "id": "AP2-3-2-3-K4-3",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K4",
+      "vorne": "Welches Sortierverfahren vergleicht immer benachbarte Elemente und tauscht sie bei falscher Reihenfolge?",
+      "hinten": "Bubble Sort."
+    },
+    {
+      "id": "AP2-3-2-3-K5-1",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K5",
+      "vorne": "Wie tauscht man die Werte von `a[i]` und `a[j]`?",
+      "hinten": "Über eine Hilfsvariable:\n`temp = a[i]`\n`a[i] = a[j]`\n`a[j] = temp`"
+    },
+    {
+      "id": "AP2-3-2-3-K5-2",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K5",
+      "vorne": "Warum braucht man beim Tausch zweier Werte eine Hilfsvariable?",
+      "hinten": "Ohne sie überschreibt `a[i] = a[j]` den alten Wert von `a[i]`; danach stünde in beiden Stellen derselbe Wert."
+    },
+    {
+      "id": "AP2-3-2-3-K5-3",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K5",
+      "vorne": "Eine Vergleichsfunktion `vergleiche(x, y)` ist vorgegeben. Wo setzt du sie im Sortieralgorithmus ein?",
+      "hinten": "An der Stelle, an der zwei Elemente verglichen werden: statt `a[j] > a[j+1]` die Funktion aufrufen und ihr Ergebnis so auswerten, wie die Aufgabe es festlegt."
+    },
+    {
+      "id": "AP2-3-2-3-K6-1",
+      "sp": "AP2-3-2-3",
+      "k": "AP2-3-2-3-K6",
+      "vorne": "Welche Voraussetzung müssen die Daten für die binäre Suche erfüllen?",
+      "hinten": "Sie müssen nach dem Suchkriterium sortiert sein."
+    },
+    {
+      "id": "AP2-3-3-1-K1-1",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K1",
+      "vorne": "Was liest du aus der Methodenangabe `+ getPreis(): double` in einem Klassendiagramm ab?",
+      "hinten": "- `+`: öffentlich (public)\n- `getPreis`: Name der Methode\n- `()`: keine Parameter\n- `double`: Rückgabetyp"
+    },
+    {
+      "id": "AP2-3-3-1-K1-2",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K1",
+      "vorne": "Was liest du aus der Attributangabe `- bestand: int` in einem Klassendiagramm ab?",
+      "hinten": "Ein privates Attribut (`-`) namens bestand vom Typ Ganzzahl. Von außen ist es nur über Methoden der Klasse erreichbar."
+    },
+    {
+      "id": "AP2-3-3-1-K2-1",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K2",
+      "vorne": "Wie erzeugst du ein Objekt der Klasse Kunde und fügst es in eine Liste ein?",
+      "hinten": "Den Konstruktor mit den Parametern aus dem Klassendiagramm aufrufen und das Objekt anhängen:\n`k = new Kunde(name, nummer)`\n`kunden.add(k)`"
+    },
+    {
+      "id": "AP2-3-3-1-K2-2",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K2",
+      "vorne": "Woran erkennst du den Konstruktor in einem Klassendiagramm?",
+      "hinten": "Er trägt den Namen der Klasse und hat keinen Rückgabetyp, z. B. `+ Kunde(name: String)`."
+    },
+    {
+      "id": "AP2-3-3-1-K3-1",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K3",
+      "vorne": "Wozu dienen Getter und Setter?",
+      "hinten": "- Getter liefert den Wert eines Attributs, z. B. `getName()`\n- Setter setzt einen neuen Wert, z. B. `setName(n)`, und kann ihn vorher prüfen"
+    },
+    {
+      "id": "AP2-3-3-1-K3-2",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K3",
+      "vorne": "Du schreibst eine Methode der Klasse Bestellung und brauchst das private Attribut preis eines Artikel-Objekts a. Wie greifst du darauf zu?",
+      "hinten": "Über den Getter: `a.getPreis()`. Ein direkter Zugriff `a.preis` ist von außerhalb der Klasse Artikel nicht erlaubt."
+    },
+    {
+      "id": "AP2-3-3-1-K4-1",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K4",
+      "vorne": "Wie rufst du für jedes Objekt einer Liste eine Methode auf?",
+      "hinten": "Die Liste mit einer Schleife durchlaufen und die Methode am jeweiligen Objekt aufrufen, z. B.\n`for i = 0 to liste.size() - 1`\n`    liste.get(i).aktualisieren()`"
+    },
+    {
+      "id": "AP2-3-3-1-K5-1",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K5",
+      "vorne": "Wie ist eine Methode aufgebaut, die prüft, ob ein Objekt schon in einer Liste enthalten ist?",
+      "hinten": "Liste durchlaufen und jedes Element mit dem Objekt vergleichen (z. B. über eine ID). Bei einem Treffer sofort `true` zurückgeben, nach der Schleife `false`."
+    },
+    {
+      "id": "AP2-3-3-1-K5-2",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K5",
+      "vorne": "Warum steht bei der Enthalten-Prüfung `return false` nach der Schleife und nicht im else-Zweig innerhalb der Schleife?",
+      "hinten": "Sonst gäbe die Methode schon beim ersten nicht passenden Element false zurück, obwohl das gesuchte Objekt weiter hinten stehen kann."
+    },
+    {
+      "id": "AP2-3-3-1-K6-1",
+      "sp": "AP2-3-3-1",
+      "k": "AP2-3-3-1-K6",
+      "vorne": "Wie ruft eine neue Methode eine andere Methode derselben Klasse auf?",
+      "hinten": "Direkt über den Methodennamen oder mit `this`, z. B. `summe = this.berechneSumme()`. Das Objekt ruft so seine eigene Methode auf."
+    },
+    {
+      "id": "AP2-3-3-2-K1-1",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K1",
+      "vorne": "Was versteht man unter Kapselung?",
+      "hinten": "Die Attribute eines Objekts sind von außen nicht direkt zugänglich (private) und werden nur über Methoden gelesen und geändert."
+    },
+    {
+      "id": "AP2-3-3-2-K1-2",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K1",
+      "vorne": "Welche Vorteile bringt Kapselung?",
+      "hinten": "- die Klasse kann neue Werte prüfen und so ungültige Zustände verhindern\n- die innere Umsetzung lässt sich ändern, ohne den Code der Nutzer der Klasse anzupassen"
+    },
+    {
+      "id": "AP2-3-3-2-K2-1",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K2",
+      "vorne": "Was versteht man unter Vererbung?",
+      "hinten": "Eine Unterklasse übernimmt die Attribute und Methoden ihrer Oberklasse und kann sie ergänzen oder Methoden überschreiben."
+    },
+    {
+      "id": "AP2-3-3-2-K2-2",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K2",
+      "vorne": "Was bedeutet es, eine Methode zu überschreiben?",
+      "hinten": "Die Unterklasse definiert eine geerbte Methode mit gleichem Namen und gleichen Parametern neu. Für Objekte der Unterklasse wird dann diese Fassung ausgeführt."
+    },
+    {
+      "id": "AP2-3-3-2-K2-3",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K2",
+      "vorne": "Wie wird Vererbung im UML-Klassendiagramm dargestellt?",
+      "hinten": "Durchgezogene Linie mit geschlossener, nicht ausgefüllter Pfeilspitze, die von der Unterklasse zur Oberklasse zeigt."
+    },
+    {
+      "id": "AP2-3-3-2-K3-1",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K3",
+      "vorne": "Was versteht man unter Polymorphie?",
+      "hinten": "Derselbe Methodenaufruf führt je nach tatsächlicher Klasse des Objekts unterschiedlichen Code aus; welche Methode läuft, wird erst zur Laufzeit entschieden."
+    },
+    {
+      "id": "AP2-3-3-2-K3-2",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K3",
+      "vorne": "Wie heißt der Mechanismus, der zur Laufzeit die passende überschriebene Methode einer Unterklasse auswählt?",
+      "hinten": "Polymorphie, technisch umgesetzt durch dynamische (späte) Bindung: Erst zur Laufzeit wird anhand der tatsächlichen Klasse des Objekts entschieden, welche Methode ausgeführt wird."
+    },
+    {
+      "id": "AP2-3-3-2-K3-3",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K3",
+      "vorne": "Eine Liste vom Typ Fahrzeug enthält ein Auto und ein Fahrrad; beide überschreiben `beschreibung()`. Was passiert beim Aufruf `f.beschreibung()` in einer Schleife über die Liste?",
+      "hinten": "Für das Auto läuft die Methode der Klasse Auto, für das Fahrrad die der Klasse Fahrrad. Entscheidend ist die tatsächliche Klasse des Objekts, nicht der Typ der Variablen."
+    },
+    {
+      "id": "AP2-3-3-2-K4-1",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K4",
+      "vorne": "Was ist ein Interface?",
+      "hinten": "Eine Festlegung von Methoden (Name, Parameter, Rückgabetyp), die jede Klasse bereitstellen muss, die das Interface implementiert."
+    },
+    {
+      "id": "AP2-3-3-2-K4-2",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K4",
+      "vorne": "Wie wird im UML-Klassendiagramm dargestellt, dass eine Klasse ein Interface implementiert?",
+      "hinten": "Gestrichelte Linie mit geschlossener, nicht ausgefüllter Pfeilspitze von der Klasse zum Interface; das Interface ist mit «interface» gekennzeichnet."
+    },
+    {
+      "id": "AP2-3-3-2-K5-1",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K5",
+      "vorne": "Worin unterscheiden sich abstrakte Klasse und Interface?",
+      "hinten": "- abstrakte Klasse: kann schon Attribute und fertige Methoden enthalten; wird vererbt\n- Interface: legt Methoden fest, die implementierende Klassen bereitstellen müssen; eine Klasse kann mehrere Interfaces implementieren"
+    },
+    {
+      "id": "AP2-3-3-2-K5-2",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K5",
+      "vorne": "Kann man von einer abstrakten Klasse direkt ein Objekt erzeugen?",
+      "hinten": "Nein. Objekte entstehen nur aus nicht abstrakten Unterklassen, die alle abstrakten Methoden implementieren."
+    },
+    {
+      "id": "AP2-3-3-2-K6-1",
+      "sp": "AP2-3-3-2",
+      "k": "AP2-3-3-2-K6",
+      "vorne": "Warum lässt sich ein Programm dank Polymorphie um neue Unterklassen erweitern, ohne den aufrufenden Code zu ändern?",
+      "hinten": "Der aufrufende Code arbeitet nur mit dem Typ der Oberklasse bzw. des Interfaces. Eine neue Unterklasse bringt ihre eigene Fassung der Methode mit, die zur Laufzeit automatisch ausgeführt wird."
+    },
+    {
+      "id": "AP2-3-3-3-K1-1",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K1",
+      "vorne": "Was ist eine Ausnahme (Exception)?",
+      "hinten": "Ein zur Laufzeit gemeldeter Fehlerfall: Der normale Ablauf bricht an dieser Stelle ab und wird in einer passenden Fehlerbehandlung fortgesetzt."
+    },
+    {
+      "id": "AP2-3-3-3-K1-2",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K1",
+      "vorne": "Wozu dienen Ausnahmen?",
+      "hinten": "Sie trennen den Fehlerfall vom normalen Ablauf: Der Code für den Normalfall bleibt übersichtlich, die Fehlerbehandlung steht an einer Stelle, und ein Fehler wird nicht stillschweigend übergangen."
+    },
+    {
+      "id": "AP2-3-3-3-K1-3",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K1",
+      "vorne": "Was passiert mit einer Ausnahme, die in einer Methode nicht abgefangen wird?",
+      "hinten": "Sie wird an die aufrufende Methode weitergereicht. Fängt sie dort und weiter oben niemand ab, bricht das Programm mit einer Fehlermeldung ab."
+    },
+    {
+      "id": "AP2-3-3-3-K2-1",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K2",
+      "vorne": "Gegeben: `if menge <= 0 then throw new IllegalArgumentException()`. Bei welchen Werten von menge wird die Ausnahme ausgelöst?",
+      "hinten": "Bei 0 und allen negativen Werten. Bei positiven Werten nicht."
+    },
+    {
+      "id": "AP2-3-3-3-K2-2",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K2",
+      "vorne": "Woran erkennst du in gegebenem Code, wo und wann eine Ausnahme ausgelöst wird?",
+      "hinten": "An der Anweisung `throw` (in Python `raise`). Sie steht meist in einer Verzweigung; deren Bedingung nennt die Eingaben, die die Ausnahme auslösen."
+    },
+    {
+      "id": "AP2-3-3-3-K2-3",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K2",
+      "vorne": "Eine Methode löst bei `alter < 0 ODER alter > 150` eine Ausnahme aus. Welche Testwerte prüfen die Grenzen?",
+      "hinten": "- −1 und 151: Ausnahme\n- 0 und 150: keine Ausnahme"
+    },
+    {
+      "id": "AP2-3-3-3-K3-1",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K3",
+      "vorne": "Wie kann eine Funktion auf eine ungültige Eingabe reagieren?",
+      "hinten": "Sie prüft die Eingabe mit einer Bedingung und\n- löst im Fehlerfall eine Ausnahme aus oder\n- liefert einen besonderen Rückgabewert, z. B. −1, null oder false"
+    },
+    {
+      "id": "AP2-3-3-3-K3-2",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K3",
+      "vorne": "Welchen Nachteil hat ein besonderer Rückgabewert als Fehlersignal gegenüber einer Ausnahme?",
+      "hinten": "Der Aufrufer muss ihn selbst prüfen und kann das vergessen. Außerdem kann der Kennwert mit einem gültigen Ergebnis verwechselt werden."
+    },
+    {
+      "id": "AP2-3-3-3-K4-1",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K4",
+      "vorne": "Welche Aufgabe haben die Blöcke try, catch und finally?",
+      "hinten": "- try: Code, der eine Ausnahme auslösen kann\n- catch: behandelt eine bestimmte Ausnahme; läuft nur im Fehlerfall\n- finally: läuft immer, z. B. um Dateien oder Verbindungen zu schließen"
+    },
+    {
+      "id": "AP2-3-3-3-K4-2",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K4",
+      "vorne": "Was geschieht mit den restlichen Anweisungen im try-Block, wenn darin eine Ausnahme auftritt?",
+      "hinten": "Sie werden übersprungen. Es geht im passenden catch-Block weiter, danach im finally-Block."
+    },
+    {
+      "id": "AP2-3-3-3-K5-1",
+      "sp": "AP2-3-3-3",
+      "k": "AP2-3-3-3-K5",
+      "vorne": "Nenne drei typische Laufzeitfehler, die abgefangen werden sollten.",
+      "hinten": "- Zugriff auf ein nicht vorhandenes Objekt (null)\n- Index außerhalb des Arrays\n- Division durch null"
+    },
+    {
+      "id": "AP2-3-4-1-K1-1",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K1",
+      "vorne": "Wie ist ein Skript aufgebaut, das eine Folge von Werten durchläuft und je Wert eine vorgegebene Funktion aufruft?",
+      "hinten": "- Ergebnisliste anlegen\n- Schleife über die Werte\n- Funktion mit dem Wert aufrufen, Ergebnis in einer Variablen merken\n- gültiges Ergebnis sammeln\n- nach der Schleife ausgeben"
+    },
+    {
+      "id": "AP2-3-4-1-K1-2",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K1",
+      "vorne": "Wie durchläuft ein Skript alle Hostadressen des Netzes 192.168.1.0/24?",
+      "hinten": "Zählschleife über das letzte Oktett von 1 bis 254 (0 ist die Netzadresse, 255 die Broadcastadresse); die Adresse wird je Durchlauf aus 192.168.1. und dem Zähler zusammengesetzt."
+    },
+    {
+      "id": "AP2-3-4-1-K2-1",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K2",
+      "vorne": "Eine vorgegebene Funktion liefert manchmal kein Ergebnis. Wie verarbeitet das Skript nur gültige Werte weiter?",
+      "hinten": "Das Ergebnis nach dem Aufruf prüfen (z. B. `if ergebnis != null`) und nur dann in die Ergebnisliste übernehmen; sonst mit dem nächsten Wert weitermachen."
+    },
+    {
+      "id": "AP2-3-4-1-K3-1",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K3",
+      "vorne": "Wie ist ein JSON-Array aufgebaut?",
+      "hinten": "Eckige Klammern mit durch Kommas getrennten Werten. Objekte darin stehen in geschweiften Klammern mit Schlüssel-Wert-Paaren; Schlüssel und Zeichenketten in doppelten Anführungszeichen."
+    },
+    {
+      "id": "AP2-3-4-1-K3-2",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K3",
+      "vorne": "Warum gibt man Skriptergebnisse oft als JSON aus?",
+      "hinten": "JSON ist ein textbasiertes Standardformat für strukturierte Daten, das andere Programme und Skripte einfach maschinell einlesen können."
+    },
+    {
+      "id": "AP2-3-4-1-K4-1",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K4",
+      "vorne": "Ordne PowerShell, Bash und Python ein.",
+      "hinten": "- PowerShell: Shell und Skriptsprache von Microsoft, vor allem für Windows-Administration\n- Bash: Standard-Shell unter Linux/Unix für Shellskripte\n- Python: plattformunabhängige Allzweck-Skriptsprache, auch für Automatisierung"
+    },
+    {
+      "id": "AP2-3-4-1-K4-2",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K4",
+      "vorne": "Was haben PowerShell, Bash und Python bei der Ausführung gemeinsam?",
+      "hinten": "Sie werden von einem Interpreter ausgeführt: Ein Skript läuft ohne separaten Kompilier- und Linkschritt direkt aus dem Quelltext."
+    },
+    {
+      "id": "AP2-3-4-1-K5-1",
+      "sp": "AP2-3-4-1",
+      "k": "AP2-3-4-1-K5",
+      "vorne": "Nenne Abläufe, die sich mit Skripten automatisieren lassen.",
+      "hinten": "- Datensicherung\n- Benutzer anlegen\n- Protokolle (Logs) auswerten\n- Dienste überwachen"
+    },
+    {
+      "id": "AP2-3-4-1-X1",
+      "sp": "AP2-3-4-1",
+      "k": null,
+      "vorne": "Wie lässt man ein Skript regelmäßig automatisch starten?",
+      "hinten": "Über einen Zeitplaner: unter Linux cron, unter Windows die Aufgabenplanung."
+    },
+    {
+      "id": "AP2-3-4-2-K1-1",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K1",
+      "vorne": "Was ist ein cyber-physisches System?",
+      "hinten": "Ein System, das Software über Sensoren und Aktoren mit der physischen Welt verbindet, meist vernetzt, z. B. eine automatische Gewächshaus- oder Anlagensteuerung."
+    },
+    {
+      "id": "AP2-3-4-2-K1-2",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K1",
+      "vorne": "Worin unterscheiden sich Sensor und Aktor?",
+      "hinten": "- Sensor: erfasst eine physikalische Größe als Messwert, z. B. Temperatur\n- Aktor: setzt ein Steuersignal in eine Wirkung um, z. B. Motor, Ventil, Relais"
+    },
+    {
+      "id": "AP2-3-4-2-K1-3",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K1",
+      "vorne": "Ordne zu, Sensor oder Aktor: Bewegungsmelder, Stellmotor, Feuchtigkeitsfühler, Relais, Lautsprecher.",
+      "hinten": "- Sensor: Bewegungsmelder, Feuchtigkeitsfühler\n- Aktor: Stellmotor, Relais, Lautsprecher"
+    },
+    {
+      "id": "AP2-3-4-2-K2-1",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K2",
+      "vorne": "Ein Gewächshaus soll automatisch bewässert werden, wenn der Boden zu trocken ist. Welchen Sensor und welchen Aktor brauchst du?",
+      "hinten": "- Sensor: Bodenfeuchtesensor, misst die Feuchte\n- Aktor: Pumpe oder Magnetventil, gibt Wasser frei\nDie Software vergleicht den Messwert mit einem Grenzwert und schaltet den Aktor."
+    },
+    {
+      "id": "AP2-3-4-2-K2-2",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K2",
+      "vorne": "Nach welchen Gesichtspunkten wählst du einen Sensor für eine Aufgabe aus?",
+      "hinten": "- Messgröße und Messbereich\n- Genauigkeit\n- Energiebedarf\n- Umgebungsbedingungen (z. B. Feuchte, Temperatur)\n- Anschluss und verfügbare Bibliothek"
+    },
+    {
+      "id": "AP2-3-4-2-K3-1",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K3",
+      "vorne": "Wie greift Software auf einen Sensor oder Aktor zu?",
+      "hinten": "Über eine Hardwareschnittstelle des Rechners oder Mikrocontrollers (z. B. digitale Ein-/Ausgänge, serielle Bussysteme). Meist ruft das Programm dafür Funktionen einer Bibliothek auf, z. B. `leseTemperatur()`."
+    },
+    {
+      "id": "AP2-3-4-2-K3-2",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K3",
+      "vorne": "Wozu dienen Bibliotheken beim Zugriff auf Sensoren und Aktoren?",
+      "hinten": "Sie stellen fertige, getestete Funktionen bereit und verbergen die Details von Hardware und Übertragungsprotokoll. Das spart Entwicklungszeit und vermeidet Fehler."
+    },
+    {
+      "id": "AP2-3-4-2-K4-1",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K4",
+      "vorne": "Nach welchem Grundsatz legt man den Abfragerhythmus eines Sensors fest?",
+      "hinten": "So oft, dass relevante Änderungen rechtzeitig erkannt werden, aber nicht öfter als nötig, um Energie und Datenmenge zu sparen."
+    },
+    {
+      "id": "AP2-3-4-2-K4-2",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K4",
+      "vorne": "Welcher Abfragerhythmus passt eher: Raumtemperatur in einem Büro oder Erschütterungen einer laufenden Maschine?",
+      "hinten": "- Raumtemperatur ändert sich langsam: Abfrage im Minutenabstand genügt\n- Erschütterungen ändern sich sehr schnell: viele Messungen pro Sekunde nötig"
+    },
+    {
+      "id": "AP2-3-4-2-K5-1",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K5",
+      "vorne": "Welche Gesichtspunkte bestimmen den Abfragerhythmus eines Sensors?",
+      "hinten": "- wie schnell sich der Messwert ändert\n- Energiebedarf\n- Datenmenge"
+    },
+    {
+      "id": "AP2-3-4-2-K5-2",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K5",
+      "vorne": "Warum verlängert ein größerer Abfrageabstand die Laufzeit eines batteriebetriebenen Funksensors?",
+      "hinten": "Zwischen den Messungen kann das Gerät in einen Stromsparmodus gehen. Messen und vor allem Senden verbrauchen Energie; seltener messen und senden spart Batterie."
+    },
+    {
+      "id": "AP2-3-4-2-K6-1",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K6",
+      "vorne": "Nenne Anforderungen an die Datenübertragung von Sensoren.",
+      "hinten": "Z. B. große Reichweite und geringer Energiebedarf (Batteriebetrieb); dazu Zuverlässigkeit. Eine hohe Datenrate ist meist nicht nötig."
+    },
+    {
+      "id": "AP2-3-4-2-K6-2",
+      "sp": "AP2-3-4-2",
+      "k": "AP2-3-4-2-K6",
+      "vorne": "Warum genügt für die Übertragung von Sensordaten meist eine geringe Datenrate?",
+      "hinten": "Sensoren senden nur kleine Datenmengen, etwa einzelne Messwerte, und das in größeren Zeitabständen."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "glossar": [
+    {
+      "begriff": "Strukturierte Programmierung",
+      "erklaerung": "Programmierkonzept, bei dem der Ablauf nur aus Folge, Verzweigung und Schleife aufgebaut wird; beliebige Sprünge (goto) werden vermieden.",
+      "sp": [
+        "AP2-3-1-1"
+      ]
+    },
+    {
+      "begriff": "Prozedurale Programmierung",
+      "erklaerung": "Programmierkonzept, bei dem ein Programm in Prozeduren bzw. Funktionen zerlegt wird, die Daten verarbeiten; Daten und Funktionen sind getrennt. Beispiel: C.",
+      "sp": [
+        "AP2-3-1-1"
+      ]
+    },
+    {
+      "begriff": "Funktionale Programmierung",
+      "erklaerung": "Programmierkonzept, bei dem das Programm aus Funktionen ohne Seiteneffekte besteht, die Werte entgegennehmen und zurückgeben. Beispiel: Haskell.",
+      "sp": [
+        "AP2-3-1-1"
+      ]
+    },
+    {
+      "begriff": "Objektorientierte Programmierung",
+      "erklaerung": "Programmierkonzept (OOP), bei dem Daten (Attribute) und Methoden in Objekten zusammengefasst werden, die aus Klassen entstehen. Kernkonzepte: Kapselung, Vererbung, Polymorphie.",
+      "sp": [
+        "AP2-3-1-1",
+        "AP2-3-3-2",
+        "AP2-3-3-3"
+      ]
+    },
+    {
+      "begriff": "Seiteneffekt",
+      "erklaerung": "Wirkung einer Funktion über ihren Rückgabewert hinaus, z. B. das Ändern einer globalen Variablen, das Schreiben in eine Datei oder eine Ausgabe.",
+      "sp": [
+        "AP2-3-1-1"
+      ]
+    },
+    {
+      "begriff": "Portabilität",
+      "erklaerung": "Eigenschaft eines Programms, ohne oder mit geringer Anpassung auf verschiedenen Plattformen zu laufen.",
+      "sp": [
+        "AP2-3-1-2"
+      ]
+    },
+    {
+      "begriff": "Framework",
+      "erklaerung": "Programmiergerüst mit fertigen Bausteinen und vorgegebener Struktur, in das eigener Code eingefügt wird, z. B. für Web- oder Desktopanwendungen.",
+      "sp": [
+        "AP2-3-1-2"
+      ]
+    },
+    {
+      "begriff": "Bibliothek",
+      "erklaerung": "Sammlung fertiger, wiederverwendbarer Funktionen oder Klassen, die ein Programm aufrufen kann, z. B. für Datenbankzugriff oder die Ansteuerung von Sensoren.",
+      "sp": [
+        "AP2-3-1-2",
+        "AP2-3-4-2"
+      ]
+    },
+    {
+      "begriff": "IDE",
+      "langform": "Integrated Development Environment",
+      "erklaerung": "Integrierte Entwicklungsumgebung: Editor mit eingebundenem Übersetzen, Debuggen, Codevervollständigung und Anbindung an Test und Versionsverwaltung.",
+      "sp": [
+        "AP2-3-1-2",
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Editor",
+      "erklaerung": "Programm zum Schreiben und Bearbeiten von Quelltext, oft mit Syntaxhervorhebung.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Compiler",
+      "erklaerung": "Übersetzt den gesamten Quellcode vor der Ausführung in Maschinencode oder einen Zwischencode und meldet dabei Syntaxfehler.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Linker",
+      "erklaerung": "Verbindet die vom Compiler erzeugten Objektdateien und benötigte Bibliotheken zu einem ausführbaren Programm.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Interpreter",
+      "erklaerung": "Führt Quellcode zur Laufzeit Anweisung für Anweisung aus, ohne vorher eine ausführbare Datei zu erzeugen.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Debugger",
+      "erklaerung": "Werkzeug zur Fehlersuche im laufenden Programm: anhalten an Haltepunkten, schrittweise Ausführung, Variablenwerte ansehen.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Programmgenerator",
+      "erklaerung": "Werkzeug, das aus einer Beschreibung oder einem Modell Quellcode erzeugt.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Testsoftware",
+      "erklaerung": "Werkzeug, das Tests wie Unit-Tests automatisiert ausführt und auswertet.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Versionsverwaltung",
+      "erklaerung": "System, das Änderungen an Dateien nachvollziehbar speichert, frühere Stände wiederherstellbar macht und paralleles Arbeiten im Team unterstützt, z. B. Git.",
+      "sp": [
+        "AP2-3-1-3"
+      ]
+    },
+    {
+      "begriff": "Pseudocode",
+      "erklaerung": "Allgemein verständliche, an Programmiersprachen angelehnte Beschreibung eines Algorithmus; muss nicht kompilierbar sein, Kontrollstrukturen werden durch Einrücken erkennbar.",
+      "sp": [
+        "AP2-3-2-1",
+        "AP2-3-2-2",
+        "AP2-3-2-3",
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "Kontrollstruktur",
+      "erklaerung": "Sprachelement, das den Ablauf steuert: Folge, Verzweigung oder Schleife.",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Datentyp",
+      "erklaerung": "Legt fest, welche Werte eine Variable aufnehmen kann und welche Operationen möglich sind, z. B. Ganzzahl, Kommazahl, Zeichenkette, Wahrheitswert.",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Zählschleife",
+      "erklaerung": "Schleife mit einer Zählvariablen, die von einem Start- bis zu einem Endwert läuft; geeignet, wenn die Anzahl der Durchläufe feststeht (for).",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Kopfgesteuerte Schleife",
+      "erklaerung": "Schleife, deren Bedingung vor jedem Durchlauf geprüft wird (while); der Rumpf wird eventuell gar nicht ausgeführt.",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Fußgesteuerte Schleife",
+      "erklaerung": "Schleife, deren Bedingung nach jedem Durchlauf geprüft wird (do-while); der Rumpf wird mindestens einmal ausgeführt.",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Verzweigung",
+      "erklaerung": "Kontrollstruktur, die abhängig von einer Bedingung unterschiedliche Anweisungen ausführt (if-else).",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Parameter",
+      "erklaerung": "Wert, den eine Funktion oder Methode beim Aufruf übergeben bekommt.",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Rückgabewert",
+      "erklaerung": "Ergebnis, das eine Funktion oder Methode an den Aufrufer zurückgibt (return).",
+      "sp": [
+        "AP2-3-2-1",
+        "AP2-3-3-1",
+        "AP2-3-3-3"
+      ]
+    },
+    {
+      "begriff": "Vergleichsoperator",
+      "erklaerung": "Operator, der zwei Werte vergleicht und einen Wahrheitswert liefert: ==, !=, <, >, <=, >=.",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Logischer Operator",
+      "erklaerung": "Verknüpft Wahrheitswerte: UND (beide wahr), ODER (mindestens einer wahr), NICHT (Umkehrung).",
+      "sp": [
+        "AP2-3-2-1"
+      ]
+    },
+    {
+      "begriff": "Array",
+      "erklaerung": "Datenstruktur mit fester Anzahl gleichartiger Elemente, auf die über einen Index zugegriffen wird, meist ab 0.",
+      "sp": [
+        "AP2-3-2-2",
+        "AP2-3-3-3",
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "Liste",
+      "erklaerung": "Datenstruktur mit veränderlicher Anzahl von Elementen; typische Methoden: add (anhängen), size (Anzahl), get (Element an Index).",
+      "sp": [
+        "AP2-3-2-1",
+        "AP2-3-2-2",
+        "AP2-3-3-1"
+      ]
+    },
+    {
+      "begriff": "Lineare Suche",
+      "erklaerung": "Suchverfahren, das die Elemente der Reihe nach mit dem gesuchten vergleicht; funktioniert auch auf unsortierten Daten.",
+      "sp": [
+        "AP2-3-2-3"
+      ]
+    },
+    {
+      "begriff": "Binäre Suche",
+      "erklaerung": "Suchverfahren für sortierte Daten: prüft die Mitte des Suchbereichs und verwirft die Hälfte, in der das Element nicht liegen kann.",
+      "sp": [
+        "AP2-3-2-3"
+      ]
+    },
+    {
+      "begriff": "Bubble Sort",
+      "erklaerung": "Sortierverfahren, das benachbarte Elemente vergleicht und bei falscher Reihenfolge tauscht, bis keine Vertauschung mehr nötig ist.",
+      "sp": [
+        "AP2-3-2-3"
+      ]
+    },
+    {
+      "begriff": "Selection Sort",
+      "erklaerung": "Sortierverfahren, das im unsortierten Teil das kleinste Element sucht und an den Anfang dieses Teils tauscht.",
+      "sp": [
+        "AP2-3-2-3"
+      ]
+    },
+    {
+      "begriff": "Insertion Sort",
+      "erklaerung": "Sortierverfahren, das jedes Element nacheinander an der richtigen Stelle in den bereits sortierten Teil einfügt.",
+      "sp": [
+        "AP2-3-2-3"
+      ]
+    },
+    {
+      "begriff": "Klasse",
+      "erklaerung": "Bauplan für Objekte, der Attribute und Methoden festlegt.",
+      "sp": [
+        "AP2-3-2-1",
+        "AP2-3-3-1",
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Objekt",
+      "erklaerung": "Konkrete Instanz einer Klasse mit eigenen Attributwerten.",
+      "sp": [
+        "AP2-3-2-2",
+        "AP2-3-3-1",
+        "AP2-3-3-2",
+        "AP2-3-3-3"
+      ]
+    },
+    {
+      "begriff": "Attribut",
+      "erklaerung": "Eigenschaft bzw. Datenfeld einer Klasse, das in jedem Objekt einen eigenen Wert hat.",
+      "sp": [
+        "AP2-3-3-1",
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Methode",
+      "erklaerung": "Funktion, die zu einer Klasse gehört und auf den Attributen ihrer Objekte arbeitet.",
+      "sp": [
+        "AP2-3-2-1",
+        "AP2-3-3-1",
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Konstruktor",
+      "erklaerung": "Besondere Methode mit dem Namen der Klasse, die beim Erzeugen eines Objekts aufgerufen wird und dessen Attribute belegt; hat keinen Rückgabetyp.",
+      "sp": [
+        "AP2-3-3-1"
+      ]
+    },
+    {
+      "begriff": "Getter und Setter",
+      "erklaerung": "Methoden zum Lesen (Getter) und Ändern (Setter) eines privaten Attributs; Setter können den neuen Wert prüfen.",
+      "sp": [
+        "AP2-3-3-1"
+      ]
+    },
+    {
+      "begriff": "UML",
+      "langform": "Unified Modeling Language",
+      "erklaerung": "Standardisierte grafische Modellierungssprache für Software, z. B. mit Klassendiagrammen.",
+      "sp": [
+        "AP2-3-3-1"
+      ]
+    },
+    {
+      "begriff": "Klassendiagramm",
+      "erklaerung": "UML-Diagramm, das Klassen mit ihren Attributen und Methoden sowie die Beziehungen zwischen den Klassen zeigt.",
+      "sp": [
+        "AP2-3-3-1",
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Sichtbarkeit",
+      "erklaerung": "Legt fest, von wo auf ein Attribut oder eine Methode zugegriffen werden darf; im UML-Diagramm z. B. + public, − private, # protected.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Kapselung",
+      "erklaerung": "Attribute eines Objekts sind von außen nicht direkt zugänglich und werden nur über Methoden gelesen und geändert.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Vererbung",
+      "erklaerung": "Eine Unterklasse übernimmt Attribute und Methoden einer Oberklasse und kann sie ergänzen oder überschreiben.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Überschreiben",
+      "erklaerung": "Eine Unterklasse definiert eine geerbte Methode mit gleichem Namen und gleichen Parametern neu.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Polymorphie",
+      "erklaerung": "Derselbe Methodenaufruf führt je nach tatsächlicher Klasse des Objekts unterschiedlichen Code aus; die Auswahl geschieht zur Laufzeit.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Interface",
+      "erklaerung": "Schnittstelle, die Methoden festlegt, die jede implementierende Klasse bereitstellen muss.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Abstrakte Klasse",
+      "erklaerung": "Klasse, von der keine Objekte erzeugt werden können; sie kann Attribute, fertige und abstrakte Methoden enthalten und dient als Oberklasse.",
+      "sp": [
+        "AP2-3-3-2"
+      ]
+    },
+    {
+      "begriff": "Ausnahme (Exception)",
+      "erklaerung": "Zur Laufzeit gemeldeter Fehlerfall, der den normalen Ablauf abbricht und in einer Fehlerbehandlung (catch) fortgesetzt wird.",
+      "sp": [
+        "AP2-3-3-3"
+      ]
+    },
+    {
+      "begriff": "try-catch-finally",
+      "erklaerung": "Aufbau der Ausnahmebehandlung: try enthält den riskanten Code, catch behandelt die Ausnahme, finally läuft in jedem Fall.",
+      "sp": [
+        "AP2-3-3-3"
+      ]
+    },
+    {
+      "begriff": "Laufzeitfehler",
+      "erklaerung": "Fehler, der erst beim Ausführen des Programms auftritt, z. B. Division durch null oder Index außerhalb des Arrays.",
+      "sp": [
+        "AP2-3-3-3"
+      ]
+    },
+    {
+      "begriff": "Skriptsprache",
+      "erklaerung": "Meist interpretierte Programmiersprache für kurze Programme (Skripte), z. B. zur Automatisierung von Systemabläufen.",
+      "sp": [
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "PowerShell",
+      "erklaerung": "Shell und Skriptsprache von Microsoft, vor allem für die Administration und Automatisierung unter Windows.",
+      "sp": [
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "Bash",
+      "langform": "Bourne Again Shell",
+      "erklaerung": "Verbreitete Kommandozeilen-Shell unter Linux/Unix, in der sich Shellskripte schreiben lassen.",
+      "sp": [
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "Python",
+      "erklaerung": "Plattformunabhängige, interpretierte Programmiersprache, die prozedurale, objektorientierte und funktionale Elemente vereint; oft für Automatisierung und Datenauswertung.",
+      "sp": [
+        "AP2-3-1-1",
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "JSON",
+      "langform": "JavaScript Object Notation",
+      "erklaerung": "Textbasiertes Format für strukturierte Daten aus Objekten (Schlüssel-Wert-Paare in geschweiften Klammern) und Arrays (Werte in eckigen Klammern).",
+      "sp": [
+        "AP2-3-4-1"
+      ]
+    },
+    {
+      "begriff": "Cyber-physisches System",
+      "erklaerung": "System, das Software über Sensoren und Aktoren mit der physischen Welt verbindet, meist vernetzt.",
+      "sp": [
+        "AP2-3-4-2"
+      ]
+    },
+    {
+      "begriff": "Sensor",
+      "erklaerung": "Bauteil, das eine physikalische Größe wie Temperatur oder Feuchte erfasst und als Messwert liefert.",
+      "sp": [
+        "AP2-3-4-2"
+      ]
+    },
+    {
+      "begriff": "Aktor",
+      "erklaerung": "Bauteil, das ein Steuersignal in eine physische Wirkung umsetzt, z. B. Motor, Ventil oder Relais.",
+      "sp": [
+        "AP2-3-4-2"
+      ]
+    },
+    {
+      "begriff": "Abfragerhythmus",
+      "erklaerung": "Zeitabstand, in dem eine Software einen Sensor ausliest; richtet sich nach der Änderungsgeschwindigkeit des Messwerts, dem Energiebedarf und der Datenmenge.",
+      "sp": [
+        "AP2-3-4-2"
+      ]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP2-3-3-2-K3-2",
+      "frage": "Wird als Name des Mechanismus „Polymorphie“ oder „dynamische (späte) Bindung“ erwartet? Die Karte nennt beides."
+    },
+    {
+      "id": "AP2-3-3-2-K5-1",
+      "frage": "In Java (ab 8) und C# (ab 8) dürfen Interfaces Default-Methoden mit Rumpf enthalten. Die Karte folgt der klassischen Lehrbuchabgrenzung aus der Können-Aussage; reicht das für die Prüfung?"
+    },
+    {
+      "id": "AP2-3-1-1-K1-1",
+      "frage": "Die Abgrenzung strukturiert/prozedural ist in Lehrbüchern unscharf (C gilt oft als beides). Wie trennscharf wird das erwartet?"
+    },
+    {
+      "id": "AP2-3-4-2-K6-1",
+      "frage": "Ob konkrete Funktechniken für Sensoren (z. B. LoRaWAN, NB-IoT, Zigbee) bekannt sein müssen, geht aus dem Rahmen nicht hervor; es gibt dazu keine Karte."
+    },
+    {
+      "id": "AP2-3-4-1-X1",
+      "frage": "Zeitgesteuertes Starten (cron, Aufgabenplanung) steht nicht ausdrücklich in den Können-Aussagen, gehört aber zum Automatisieren wiederkehrender Abläufe. Karte behalten?"
+    }
+  ]
+}
