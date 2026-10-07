@@ -165,25 +165,25 @@ export function fehlersuche(r, raum = 'AP1') {
   const falscherCode = fehlerCode(f);
   const zeilen = falscherCode.split('\n');
   const mitTests = raum === 'AP2' || r.ja(0.5);
-  const tests = f.tests.map((args) => {
+  // Ein Aufruf genügt – und zwar einer, an dem sich der Fehler zeigt
+  const alle = f.tests.map((args) => {
     const soll = fuehreAus(f.code, { aufruf: { name: f.aufruf, args } });
     const ist = fuehreAus(falscherCode, { aufruf: { name: f.aufruf, args } });
     return { args, soll: soll.rueckgabe, ist: ist.fehler ? 'Fehler' : ist.rueckgabe, istFehler: ist.fehler?.meldung };
   });
+  const tests = [alle.find((t) => t.ist === 'Fehler' || JSON.stringify(t.soll) !== JSON.stringify(t.ist)) ?? alle[0]];
   const korrekt = f.code.split('\n')[f.zeile - 1];
-  const optionen = r.mische([korrekt, ...f.alternativen]).map((t) => t.trim());
   const felder = [];
   if (mitTests)
     tests.forEach((t, i) => {
-      felder.push({ id: `soll${i}`, label: `Aufruf ${i + 1}: erwartet`, typ: 'eigen', soll: formatiere(t.soll), pruefe: (e) => pruefeWert(e, t.soll), imBild: true });
-      felder.push({ id: `ist${i}`, label: `Aufruf ${i + 1}: tatsächlich`, typ: 'eigen', soll: t.ist === 'Fehler' ? 'Fehler' : formatiere(t.ist), pruefe: (e) => (t.ist === 'Fehler' ? { ok: /fehler|abbruch|exception/i.test(String(e)), leer: !e } : pruefeWert(e, t.ist)), imBild: true });
+      felder.push({ id: `soll${i}`, label: 'Soll', typ: 'eigen', soll: formatiere(t.soll), pruefe: (e) => pruefeWert(e, t.soll), imBild: true });
+      felder.push({ id: `ist${i}`, label: 'Ist', typ: 'eigen', soll: t.ist === 'Fehler' ? 'Fehler' : formatiere(t.ist), pruefe: (e) => (t.ist === 'Fehler' ? { ok: /fehler|abbruch|exception/i.test(String(e)), leer: !e } : pruefeWert(e, t.ist)), imBild: true });
     });
   felder.push({ id: 'zeile', label: 'Fehlerhafte Zeile', typ: 'auswahl', erwartet: String(f.zeile), optionen: zeilen.map((_, i) => ({ wert: String(i + 1), text: `Zeile ${i + 1}` })) });
-  felder.push({ id: 'fix', label: 'Richtig muss die Zeile lauten', typ: 'auswahl', erwartet: korrekt.trim(), optionen, breit: true });
   return {
-    titel: f.titel.startsWith('Tausch') || raum === 'AP2' ? 'Fehler finden und berichtigen' : 'Fehler im Code finden',
+    titel: 'Fehler im Code finden',
     sp: raum === 'AP2' ? 'AP2-5-2-3' : 'AP1-8-2-4',
-    text: `${f.beschreibung} Der Code enthält **einen inhaltlichen Fehler**.${mitTests ? ' Trage für jeden Aufruf das erwartete und das tatsächliche Ergebnis ein, finde dann die fehlerhafte Zeile und berichtige sie.' : ' Finde die fehlerhafte Zeile und berichtige sie.'}`,
+    text: `${f.beschreibung} Der Code enthält **einen inhaltlichen Fehler**.${mitTests ? ' Trage für den Aufruf ein, was herauskommen sollte und was der Code tatsächlich liefert, und finde dann die fehlerhafte Zeile.' : ' Finde die fehlerhafte Zeile.'}`,
     code: falscherCode,
     tests: mitTests ? tests.map((t) => ({ aufruf: `${f.aufruf}(${t.args.map((a) => formatiere(a)).join(', ')})` })) : null,
     felder,

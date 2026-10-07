@@ -11,7 +11,7 @@ import { GRUNDLAGEN } from './grundlagen.js';
 const SPICKZETTEL = {
   schreibtisch: '- Startwerte in die erste Zeile, dann Zeile für Zeile\n- BIS ist einschließlich\n- DIV: ganzzahlig, MOD: Rest\n- Listen als 1, 2, 3 eintragen; Kommazahlen mit Komma oder Punkt',
   puzzle: '- Erst Startwerte, dann Schleife, dann Ausgabe\n- Jeder Block braucht sein Ende (ENDE WENN, ENDE FÜR …)\n- Gleichwertige Reihenfolgen zählen auch',
-  fehler: '- Erwartet: was die Beschreibung verlangt\n- Tatsächlich: was der Code wirklich liefert\n- Typisch: Grenze ±1, falscher Startwert, vertauschter Vergleich',
+  fehler: '- Soll: was die Beschreibung verlangt\n- Ist: was der Code wirklich liefert\n- Wo beides abweicht, steckt der Fehler\n- Typisch: Grenze ±1 (> statt >=), falscher Startwert, vertauschter Vergleich',
   sortieren: '- Bubble: Nachbarn tauschen, Größtes wandert nach hinten\n- Selection: Minimum suchen, nach vorn tauschen\n- Insertion: einfügen in den sortierten Teil\n- Binäre Suche: Mitte = (links + rechts) DIV 2',
 };
 
@@ -396,7 +396,7 @@ function FehlerBild({ aufgabe, eingaben, setze, ergebnis, loesung }) {
       <CodeBlock code={aufgabe.code} klickbar onZeile={(nr) => setze('zeile', String(nr))} gewaehlt={zeile} fehler={loesung ? aufgabe.felder.find((x) => x.id === 'zeile')?.erwartet * 1 : null} />
       <p class="gedaempft">
         {aufgabe.tests
-          ? 'So gehst du vor: Links rechnest du aus, was laut Aufgabentext herauskommen müsste. Rechts spielst du den Code Zeile für Zeile durch und trägst ein, was er wirklich liefert. Wo beide Spalten abweichen, steckt der Fehler. Die Zeile kannst du auch direkt im Code anklicken.'
+          ? 'Soll: was laut Aufgabe herauskommen müsste. Ist: was der Code wirklich liefert, wenn du ihn durchspielst. Die fehlerhafte Zeile kannst du direkt im Code anklicken.'
           : 'Tipp: Klicke auf eine Zeile, um sie als fehlerhaft auszuwählen.'}
       </p>
       {aufgabe.tests && (
