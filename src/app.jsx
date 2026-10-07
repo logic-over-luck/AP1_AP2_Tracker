@@ -111,8 +111,8 @@ function Leiste({ raum, route, stand }) {
   const faelligeBloecke = inhalt.raeume.get(raum).bloeckeListe.filter((b) => blockZustand(stand, b).faellig).length;
   const aktiv = (bereich, unter = null) => route.bereich === bereich && (unter === null || route.unter === unter);
 
-  const NavPunkt = ({ bereich, unter, icon, text, zahl, zahlTon }) => (
-    <a class="nav-punkt" href={link(raum, bereich, unter)} aria-current={aktiv(bereich, unter) ? 'page' : undefined}>
+  const navPunkt = ({ bereich, unter, icon, text, zahl, zahlTon }) => (
+    <a key={`${bereich}-${unter}`} class="nav-punkt" href={link(raum, bereich, unter)} aria-current={aktiv(bereich, unter) ? 'page' : undefined}>
       <Icon name={icon} groesse={17} />
       <span>{text}</span>
       {zahl ? <span class={`nav-punkt__zahl ${zahlTon ? `nav-punkt__zahl--${zahlTon}` : ''}`}>{zahl}</span> : null}
@@ -147,22 +147,20 @@ function Leiste({ raum, route, stand }) {
 
       <nav class="nav-gruppe" aria-label="Arbeitsplatz">
         <div class="nav-gruppe__titel ueberschrift-klein">Dein Arbeitsplatz</div>
-        <NavPunkt bereich="start" icon="layout-grid" text="Übersicht" />
-        <NavPunkt bereich="lernen" icon="list-checks" text="Lernplan" zahl={faelligeBloecke || null} zahlTon="faellig" />
-        <NavPunkt bereich="karten" icon="layers" text="Lernkarten" zahl={karten.faellig || null} zahlTon="faellig" />
+        {navPunkt({ bereich: "start", icon: "layout-grid", text: "Übersicht" })}
+        {navPunkt({ bereich: "lernen", icon: "list-checks", text: "Lernplan", zahl: faelligeBloecke || null, zahlTon: "faellig" })}
+        {navPunkt({ bereich: "karten", icon: "layers", text: "Lernkarten", zahl: karten.faellig || null, zahlTon: "faellig" })}
       </nav>
 
       <nav class="nav-gruppe" aria-label="Üben">
         <div class="nav-gruppe__titel ueberschrift-klein">Üben &amp; Verstehen</div>
-        {trainerIn(raum).map((t) => (
-          <NavPunkt key={t.id} bereich="trainer" unter={t.id} icon={t.icon} text={t.kurz} />
-        ))}
+        {trainerIn(raum).map((t) => navPunkt({ bereich: 'trainer', unter: t.id, icon: t.icon, text: t.kurz }))}
       </nav>
 
       <nav class="nav-gruppe" aria-label="Nachschlagen">
         <div class="nav-gruppe__titel ueberschrift-klein">Nachschlagen</div>
-        <NavPunkt bereich="glossar" icon="book-open" text="Glossar" />
-        <NavPunkt bereich="hilfe" icon="circle-question-mark" text="Hilfe" />
+        {navPunkt({ bereich: "glossar", icon: "book-open", text: "Glossar" })}
+        {navPunkt({ bereich: "hilfe", icon: "circle-question-mark", text: "Hilfe" })}
       </nav>
 
       <div class="leiste__fuss">

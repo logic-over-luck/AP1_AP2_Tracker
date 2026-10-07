@@ -1,0 +1,166 @@
+// Netzplan: Erzeugen, Berechnen, Anordnen. Rein, getestet in tests/netzplan.test.mjs.
+//
+// Konvention (Formeln aus dem Anhang des Prüfungskatalogs, wie in den Können-Aussagen):
+// – Start bei 0. FEZ = FAZ + Dauer. FAZ = größter FEZ aller Vorgänger.
+// – SEZ des letzten Vorgangs = sein FEZ. SAZ = SEZ − Dauer. SEZ = kleinster SAZ aller Nachfolger.
+// – GP = SAZ − FAZ (= SEZ − FEZ). FP = kleinster FAZ der Nachfolger − FEZ (letzter Vorgang: 0).
+// – Kritischer Weg: alle Vorgänge mit GP = 0.
+
+const NAMEN = {
+  it: [
+    'Anforderungen aufnehmen',
+    'Hardware bestellen',
+    'Software auswählen',
+    'Netzwerk planen',
+    'Lieferung abwarten',
+    'Lizenzen beschaffen',
+    'Verkabelung erneuern',
+    'Server einrichten',
+    'Clients installieren',
+    'Daten migrieren',
+    'Testen',
+    'Benutzer schulen',
+    'Dokumentation erstellen',
+    'Abnahme',
+  ],
+  sw: [
+    'Anforderungsanalyse',
+    'Datenbank entwerfen',
+    'Oberfläche entwerfen',
+    'Schnittstelle spezifizieren',
+    'Backend programmieren',
+    'Frontend programmieren',
+    'Testdaten erzeugen',
+    'Integrationstest',
+    'Benutzerhandbuch',
+    'Systemtest',
+    'Deployment vorbereiten',
+    'Schulung',
+    'Abnahme',
+  ],
+};
+
+export function berechne(vorgaenge) {
+  const byId = new Map(vorgaenge.map((v) => [v.id, { ...v, nachfolger: [] }]));
+  for (const v of byId.values()) for (const p of v.vorgaenger) byId.get(p).nachfolger.push(v.id);
+  const reihenfolge = topologisch([...byId.values()]);
+  for (const v of reihenfolge) {
+    v.faz = v.vorgaenger.length ? Math.max(...v.vorgaenger.map((p) => byId.get(p).fez)) : 0;
+    v.fez = v.faz + v.dauer;
+  }
+  const ende = Math.max(...reihenfolge.map((v) => v.fez));
+  for (const v of [...reihenfolge].reverse()) {
+    v.sez = v.nachfolger.length ? Math.min(...v.nachfolger.map((n) => byId.get(n).saz)) : ende;
+    v.saz = v.sez - v.dauer;
+  }
+  for (const v of reihenfolge) {
+    v.gp = v.saz - v.faz;
+    v.fp = v.nachfolger.length ? Math.min(...v.nachfolger.map((n) => byId.get(n).faz)) - v.fez : ende - v.fez;
+    v.kritisch = v.gp === 0;
+  }
+  const ergebnis = vorgaenge.map((v) => byId.get(v.id));
+  return { vorgaenge: ergebnis, dauer: ende, kritisch: kritischeWege(ergebnis) };
+}
+
+function topologisch(liste) {
+  const byId = new Map(liste.map((v) => [v.id, v]));
+  const besucht = new Set();
+  const aus = [];
+  const besuche = (v) => {
+    if (besucht.has(v.id)) return;
+    besucht.add(v.id);
+    for (const p of v.vorgaenger) besuche(byId.get(p));
+    aus.push(v);
+  };
+  for (const v of liste) besuche(v);
+  return aus;
+}
+
+// Alle Wege durch kritische Vorgänge vom Start bis zum Ende (meist genau einer)
+export function kritischeWege(vorgaenge) {
+  const byId = new Map(vorgaenge.map((v) => [v.id, v]));
+  const starts = vorgaenge.filter((v) => v.kritisch && v.vorgaenger.length === 0);
+  const wege = [];
+  const gehe = (v, weg) => {
+    const weiter = v.nachfolger.map((n) => byId.get(n)).filter((n) => n.kritisch && n.faz === v.fez);
+    if (!weiter.length) {
+      if (!v.nachfolger.length) wege.push([...weg, v.id]);
+      return;
+    }
+    for (const n of weiter) gehe(n, [...weg, v.id]);
+  };
+  for (const s of starts) gehe(s, []);
+  return wege;
+}
+
+// Zufälliger Netzplan mit einem Start- und einem Endvorgang
+export function erzeuge(r, { min = 6, max = 9, thema = 'it' } = {}) {
+  const n = r.ganz(min, max);
+  const pool = NAMEN[thema];
+  const namen = [pool[0], ...r.mische(pool.slice(1, -1)).slice(0, n - 2), pool.at(-1)];
+  const ids = 'ABCDEFGHIJKLMN'.slice(0, n).split('');
+  // Ebenen bilden, damit parallele Pfade entstehen
+  const ebenen = [[ids[0]]];
+  let i = 1;
+  while (i < n - 1) {
+    const breite = Math.min(r.ganz(1, 3), n - 1 - i);
+    ebenen.push(ids.slice(i, i + breite));
+    i += breite;
+  }
+  ebenen.push([ids[n - 1]]);
+  const vorgaenge = [];
+  ebenen.forEach((ebene, e) => {
+    for (const id of ebene) {
+      let vorgaenger = [];
+      if (e > 0) {
+        const vorher = ebenen[e - 1];
+        if (e === ebenen.length - 1) vorgaenger = [...vorher];
+        else {
+          vorgaenger = r.mische(vorher).slice(0, r.ganz(1, Math.min(2, vorher.length)));
+          // gelegentlich ein Vorgänger zwei Ebenen zurück
+          if (e >= 2 && r.ja(0.2)) vorgaenger.push(r.wahl(ebenen[e - 2]));
+        }
+      }
+      vorgaenge.push({ id, name: namen[ids.indexOf(id)], dauer: r.ganz(1, 8), vorgaenger: [...new Set(vorgaenger)].sort() });
+    }
+  });
+  // Jeder Vorgang außer dem letzten braucht einen Nachfolger
+  for (const v of vorgaenge) {
+    if (v.id === ids[n - 1]) continue;
+    const hatNachfolger = vorgaenge.some((w) => w.vorgaenger.includes(v.id));
+    if (!hatNachfolger) {
+      const e = ebenen.findIndex((x) => x.includes(v.id));
+      const ziel = r.wahl(ebenen[e + 1]);
+      const w = vorgaenge.find((x) => x.id === ziel);
+      w.vorgaenger = [...new Set([...w.vorgaenger, v.id])].sort();
+    }
+  }
+  return { vorgaenge, ebenen };
+}
+
+// Anordnung für das Diagramm: Spalte = Ebene (längster Weg vom Start), Zeile = Position darin
+export function anordnen(vorgaenge) {
+  const byId = new Map(vorgaenge.map((v) => [v.id, v]));
+  const tiefe = new Map();
+  const t = (id) => {
+    if (tiefe.has(id)) return tiefe.get(id);
+    const v = byId.get(id);
+    const d = v.vorgaenger.length ? 1 + Math.max(...v.vorgaenger.map(t)) : 0;
+    tiefe.set(id, d);
+    return d;
+  };
+  vorgaenge.forEach((v) => t(v.id));
+  const spalten = [];
+  for (const v of vorgaenge) (spalten[tiefe.get(v.id)] ??= []).push(v.id);
+  const pos = new Map();
+  spalten.forEach((s, x) => s.forEach((id, y) => pos.set(id, { x, y, anzahl: s.length })));
+  return { pos, spalten: spalten.length, zeilen: Math.max(...spalten.map((s) => s.length)) };
+}
+
+// Kritischen Weg aus einer Eingabe lesen: „A-C-F", „A, C, F", „ACF"
+export function liesWeg(text) {
+  return String(text ?? '')
+    .toUpperCase()
+    .replace(/[^A-Z]/g, '')
+    .split('');
+}

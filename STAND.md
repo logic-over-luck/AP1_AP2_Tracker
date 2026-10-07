@@ -62,28 +62,57 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(wird nach jedem Abschnitt aktualisiert)*
+*(zuletzt aktualisiert: nach dem Netzplan-Trainer)*
 
-### Fertig und geprüft
-– noch nichts –
-
-### Fertig, aber nicht geprüft
-– noch nichts –
+### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
+- Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 2,6 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
+- Inhalte: 246 Kurzfassungen, 88 Blocksätze, ≈ 2.640 Lernkarten in 20 Paketen; jedes Paket von einem zweiten Bearbeiter
+  unabhängig durchgesehen (Berichte in `inhalte/pruefberichte/`); Glossar mit 1.098 Begriffen zusammengeführt und geprüft
+- Grundgerüst: Leiste mit Raumwahl AP1/AP2/WiSo, eigene Akzentfarbe je Raum, Kopfzeile, Befehlspalette (Strg+K)
+- Lernstand: Ereignisprotokoll, Wiederholungs-Phasen (1/7/30 Tage), Kartenplanung, Serie, XP, Ränge, Sicherung mit Format-Version
+- Start: Kennzahlen, Heute im Fokus mit Regel, Fokus-Timer, Aktivität, Tempo bis zur Prüfung, Prüfungstermin je Raum
+- Lernplan: Ordner, Block-Karten, Stichpunkte abhaken, Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Notizen, Gegenstücke, Filter, Suche
+- Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
+- Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
+- Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan & Projektplanung (mit Tests für Erzeuger und Prüfer)
 
 ### Offen
-– alles aus dem Plan –
+- Code-Trainer (Pseudocode), SQL-Labor, Modellieren
+- Abschluss-Durchgang: alle Bereiche im Browser, schmale Fenster, Feinschliff
+- Liste der fachlich unsicheren Inhalte in Abschnitt 4 übertragen
 
 ---
 
 ## 3. Entscheidungen
 
-*(Abweichungen von der Vorgabe und warum)*
+- **Eine HTML-Datei** statt mehrerer Dateien: robust beim Kopieren, garantiert ohne Nachladen.
+- **Priorität eines Blocks = Durchschnitt** seiner Stichpunkte (hoch 3, mittel 2, normal 1; ab 2,5 hoch, ab 1,5 mittel).
+  Das Maximum hätte fast jeden Block „hoch" gemacht. Stichpunkt-Priorität: original_aktuell → hoch;
+  original_alt, stichwort_aktuell → mittel; stichwort_alt, kein_beleg → normal.
+- **Wiederholungs-Phasen** nach 1, 7 und 30 Tagen, gesperrt bis zum Fälligkeitstag. Wird ein Block wieder geöffnet,
+  ruhen die Phasen; erledigte bleiben erhalten.
+- **Lernkarten-Abstände** 0/1/3/7/16/35/75 Tage; „sicher" ab Stufe 3. „Nicht gewusst" kommt in derselben Runde noch einmal.
+- **XP und Ränge** gelten über alle drei Räume (eine Person lernt), Fortschritt dagegen je Raum.
+- **„Alles anzeigen"** zeigt auch den Hinweis, wenn die Tiefe eines Stichpunkts laut Inhaltsdatei unklar ist (`rahmen_unklar`),
+  weil das beim Lernen hilft (für die weitere Auslegung lernen). Belege, Katalogstellen und Vermerke bleiben unsichtbar.
+- **Prüfungstermine** sind anfangs leer; die Startseite bittet darum, sie einzutragen (kein geratenes Datum).
+- **Zuordnung Stichpunkt → Trainer** steht im Code (`src/bereiche/trainer/verzeichnis.js`); ein Test stellt sicher, dass
+  jeder der 49 Stichpunkte außer „Wissen" geübt werden kann. Zusätzlich geübt: chmod (AP1-5-2-3), Parität (AP2-5-5-3),
+  IPv4-Konfiguration und IPv6 (AP1-6-2-1, AP1-6-2-3).
+- **Subnetz-Trainer** nur in AP1 (laut Inhaltsdatei keine Subnetz-Rechnung in AP2). „Netz aufteilen" ist als **Zusatz**
+  markiert, weil es für AP1 laut Rahmen nicht belegt ist.
+- **/31 und /32:** Aufgaben fragen dort nur Netzadresse und Adressanzahl und erklären klassisch (0 Hosts) und RFC 3021.
+- **Prüfer:** Komma und Punkt beide erlaubt, Einheiten werden ignoriert, mehrdeutige Eingaben („1.234") zählen, wenn eine
+  Lesart stimmt; genauere Ergebnisse als verlangt sind richtig; Eurobeträge haben 1 Cent Toleranz (Zwischenrundung).
+- **Netzplan-Knoten:** FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ, Start bei 0. Bei mehreren kritischen
+  Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
+- **Sozialversicherung:** Sätze und Bemessungsgrenzen stehen in jeder Aufgabe („Werte laut Aufgabe"), weil sie sich jährlich ändern.
 
 ---
 
 ## 4. Inhalte, bei denen ich fachlich nicht sicher bin
 
-*(wird aus den Durchsichten gefüllt)*
+*(wird zum Abschluss aus den Prüfberichten übertragen)*
 
 ---
 

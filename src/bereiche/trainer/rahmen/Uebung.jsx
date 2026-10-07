@@ -134,6 +134,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
   };
 
   const fertig = ergebnis && aufgabe.felder.every((f) => ergebnis[f.id]?.ok);
+  const imBildFalsch = ergebnis ? aufgabe.felder.filter((f) => f.imBild && !ergebnis[f.id]?.ok).length : 0;
 
   return (
     <div class="uebung">
@@ -156,7 +157,15 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
           <Rich text={aufgabe.text} />
         </div>
         {aufgabe.tabelle && <Tabelle {...aufgabe.tabelle} />}
-        {Ansicht && <Ansicht aufgabe={aufgabe} />}
+        {Ansicht && (
+          <Ansicht
+            aufgabe={aufgabe}
+            eingaben={eingaben}
+            setze={(id, wert) => setEingaben((e) => ({ ...e, [id]: wert }))}
+            ergebnis={ergebnis}
+            loesung={loesung || fertig}
+          />
+        )}
         <form
           class="aufgabe__felder"
           onSubmit={(e) => {
@@ -166,6 +175,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
           }}
         >
           {aufgabe.felder.map((f, i) => {
+            if (f.imBild) return null;
             const r = ergebnis?.[f.id];
             return (
               <label key={f.id} class={`afeld ${f.breit ? 'afeld--breit' : ''}`}>
@@ -227,6 +237,11 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             )}
           </div>
         </form>
+        {imBildFalsch > 0 && !fertig && (
+          <div class="aufgabe__hinweis">
+            <Icon name="circle-x" groesse={16} /> {imBildFalsch} {imBildFalsch === 1 ? 'Wert' : 'Werte'} im Diagramm {imBildFalsch === 1 ? 'stimmt' : 'stimmen'} noch nicht (rot markiert).
+          </div>
+        )}
         {fertig && (
           <div class="aufgabe__lob erscheinen">
             <Icon name="party-popper" groesse={18} /> {gezaehlt && ergebnis ? 'Richtig!' : 'Stimmt.'} {aufgabe.lob ?? ''}

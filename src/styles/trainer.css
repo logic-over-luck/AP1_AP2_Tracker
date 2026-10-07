@@ -243,3 +243,275 @@
   font-weight: 650;
   background: var(--flaeche-2);
 }
+.aufgabe__hinweis {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--fehler);
+  font-size: var(--t-m);
+}
+
+/* ---------- Netzplan ---------- */
+.netz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.netz__flaeche {
+  position: relative;
+  margin: var(--s-2) 0;
+}
+.netz {
+  overflow-x: auto;
+  padding-bottom: var(--s-2);
+}
+.netz__pfeile {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  color: var(--text-3);
+}
+.netz__pfeil {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.netz__pfeil--kritisch {
+  stroke: var(--akzent);
+  stroke-width: 2.5;
+  color: var(--akzent);
+}
+.nk {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 1.25fr 1fr 1fr;
+  border: 1.5px solid var(--linie-3);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  transition: border-color var(--dauer-lang) var(--kurve), box-shadow var(--dauer-lang) var(--kurve);
+}
+.nk--offen {
+  background: var(--flaeche-1);
+  border-style: dashed;
+}
+.nk--kritisch {
+  border-color: var(--akzent);
+  border-style: solid;
+  box-shadow: 0 0 0 3px var(--akzent-weich);
+}
+.nk__zeile {
+  display: grid;
+  border-bottom: 1px solid var(--linie-2);
+  min-height: 0;
+}
+.nk__zeile:last-child {
+  border-bottom: 0;
+}
+.nk__zeile > * {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-right: 1px solid var(--linie-2);
+}
+.nk__zeile > *:last-child {
+  border-right: 0;
+}
+.nk__zeile--zwei {
+  grid-template-columns: 1fr 1fr;
+}
+.nk__zeile--drei {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.nk__titel {
+  grid-template-columns: 30px 1fr;
+}
+.nk__nr {
+  font-weight: 700;
+  color: var(--akzent);
+}
+.nk__name {
+  font-family: var(--schrift);
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 0 6px;
+  place-items: center start !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: var(--text);
+}
+.nk__wert {
+  color: var(--text);
+}
+.nk__dauer {
+  color: var(--text-2);
+  background: var(--flaeche-3);
+}
+.nk__eingabe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  color: var(--text);
+  padding: 0;
+}
+.nk__eingabe:focus {
+  outline: none;
+  background: var(--akzent-weich);
+}
+.nk__eingabe--richtig {
+  background: rgba(90, 209, 167, 0.12);
+  color: var(--gut);
+}
+.nk__eingabe--falsch {
+  background: rgba(240, 112, 112, 0.14);
+  color: var(--fehler);
+}
+.nk__eingabe[readonly] {
+  color: var(--warn);
+}
+.netz__legende {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+}
+.nk--legende {
+  position: relative;
+  width: 160px;
+  height: 92px;
+  color: var(--text-3);
+  font-size: 10px;
+}
+.netz__legende-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.netz__legende-text strong {
+  color: var(--text-2);
+}
+.netz__tipp {
+  font-size: var(--t-s);
+}
+
+/* ---------- Gantt ---------- */
+.gantt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-x: auto;
+  font-size: var(--t-s);
+}
+.gantt__kopf,
+.gantt__zeile {
+  display: grid;
+  grid-template-columns: 220px repeat(var(--tage), minmax(26px, 1fr));
+  align-items: center;
+  position: relative;
+}
+.gantt__zeile {
+  height: 30px;
+}
+.gantt__name {
+  grid-column: 1;
+  padding-right: var(--s-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-2);
+}
+.gantt__tag {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-3);
+}
+.gantt__zelle {
+  height: 100%;
+  border-left: 1px solid var(--linie);
+  grid-row: 1;
+}
+.gantt__zelle:nth-of-type(5n + 2) {
+  border-left-color: var(--linie-2);
+}
+.gantt__balken {
+  grid-row: 1;
+  height: 20px;
+  border-radius: 4px;
+  background: rgba(var(--akzent-rgb), 0.35);
+  border: 1px solid var(--akzent-linie);
+  font-family: var(--mono);
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  z-index: 1;
+}
+.gantt__balken--kritisch {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.gantt__balken--neu {
+  animation: ploppen 400ms var(--kurve-feder);
+  outline: 2px dashed var(--warn);
+}
+.gantt__fuss {
+  margin-top: var(--s-2);
+  font-size: var(--t-xs);
+}
+
+/* ---------- PSP ---------- */
+.psp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  border: 1px solid var(--linie);
+}
+.psp__projekt {
+  padding: var(--s-2) var(--s-5);
+  border-radius: var(--r-1);
+  background: var(--akzent);
+  color: var(--akzent-text);
+  font-weight: 650;
+}
+.psp__ebene {
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: var(--s-3);
+  width: 100%;
+}
+.psp__ast {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.psp__teil {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-1);
+  border: 1.5px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+  font-weight: 600;
+  font-size: var(--t-m);
+}
+.psp__paket {
+  margin-left: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-1);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+  font-size: var(--t-s);
+}
