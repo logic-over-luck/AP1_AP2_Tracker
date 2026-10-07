@@ -521,7 +521,8 @@ export default {
       situation:
         'Mitglieder von RegioRoll sollen gebuchte Fahrzeuge mit dem Smartphone öffnen. Nach einer Buchung erzeugt der Server einen ' +
         'digitalen Schlüssel – einen Datensatz mit Fahrzeug, Buchungsnummer, Gültigkeitszeitraum und Gerätekennung des Smartphones – und ' +
-        'signiert ihn digital. Die App überträgt ihn per Bluetooth an die Telematikeinheit im Fahrzeug, die daraufhin die Türen entriegelt.',
+        'signiert ihn digital. Zum Schlüssel gehört außerdem ein geheimer Wert, den außer dem Server nur die App und die Telematikeinheit kennen. Die App überträgt den signierten ' +
+        'Datensatz per Bluetooth an die Telematikeinheit im Fahrzeug, die ihn prüft und daraufhin die Türen entriegelt.',
       teile: [
         {
           nr: 'a',
@@ -548,7 +549,7 @@ export default {
                 'Instead of a physical key, the backend issues a short-lived digital key that is signed by the server and bound to one booking, ' +
                 'one vehicle and one smartphone. When the user approaches the car, the telematics unit and the phone run a challenge-response ' +
                 'protocol: the unit sends a random number, and the phone proves possession of the key by returning a value calculated from this ' +
-                'number and the key. Because the challenge is different every time, recorded messages cannot simply be replayed later.\n\n' +
+                'number and the secret belonging to the key. Because the challenge is different every time, recorded messages cannot simply be replayed later.\n\n' +
                 'However, a relay attack is still possible: two attackers forward the radio signals between a phone that is far away, for example ' +
                 'in a café, and the car, so that the car believes the phone is right next to it. Common countermeasures are distance bounding, ' +
                 'where the unit measures the round-trip time of the signal and rejects answers that arrive too late, and requiring an explicit ' +
@@ -558,10 +559,10 @@ export default {
           ],
           antwort: { art: 'text', zeilen: 5 },
           loesung: [
-            'Es wird ein Challenge-Response-Verfahren verwendet: Die Telematikeinheit schickt bei jedem Öffnungsversuch eine neue Zufallszahl (Challenge). Das Smartphone berechnet aus dieser Zahl und dem digitalen Schlüssel einen Antwortwert und sendet ihn zurück; damit beweist es, dass es den Schlüssel besitzt, ohne ihn selbst zu übertragen.',
+            'Es wird ein Challenge-Response-Verfahren verwendet: Die Telematikeinheit schickt bei jedem Öffnungsversuch eine neue Zufallszahl (Challenge). Das Smartphone berechnet aus dieser Zahl und dem geheimen Wert des digitalen Schlüssels einen Antwortwert und sendet ihn zurück; damit beweist es, dass es den Schlüssel besitzt, ohne das Geheimnis selbst zu übertragen.',
             'Da die Zufallszahl jedes Mal anders ist, passt eine früher aufgezeichnete Antwort nicht zur neuen Challenge. Ein Wiedereinspielen (Replay) aufgezeichneter Nachrichten öffnet das Fahrzeug daher nicht.',
           ],
-          bewertung: ['1 P Zufallszahl/Challenge von der Telematikeinheit', '1 P Antwort aus Zufallszahl und Schlüssel berechnet', '1 P Challenge ändert sich, alte Antwort ist wertlos'],
+          bewertung: ['1 P Zufallszahl/Challenge von der Telematikeinheit', '1 P Antwort aus Zufallszahl und (geheimem) Schlüssel berechnet', '1 P Challenge ändert sich, alte Antwort ist wertlos'],
         },
         {
           nr: 'bb',
