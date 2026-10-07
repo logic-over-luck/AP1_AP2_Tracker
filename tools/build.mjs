@@ -15,7 +15,8 @@ import { ladeDaten } from './daten.mjs';
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const argumente = new Set(process.argv.slice(2));
 const dev = argumente.has('--dev') || argumente.has('--watch');
-const ziel = path.join(wurzel, 'Lernstudio.html');
+// LERNSTUDIO_AUS=build/x.html baut in eine andere Datei (z. B. wenn mehrere gleichzeitig bauen)
+const ziel = process.env.LERNSTUDIO_AUS ? path.resolve(wurzel, process.env.LERNSTUDIO_AUS) : path.join(wurzel, 'Lernstudio.html');
 
 function iconPlugin() {
   return {
@@ -91,9 +92,10 @@ async function baue() {
 </body>
 </html>
 `;
+  fs.mkdirSync(path.dirname(ziel), { recursive: true });
   fs.writeFileSync(ziel, html);
   const kb = (fs.statSync(ziel).size / 1024).toFixed(0);
-  console.log(`Lernstudio.html gebaut (${kb} KB, ${Date.now() - start} ms${dev ? ', Entwicklungsmodus' : ''})`);
+  console.log(`${path.relative(wurzel, ziel)} gebaut (${kb} KB, ${Date.now() - start} ms${dev ? ', Entwicklungsmodus' : ''})`);
 }
 
 try {

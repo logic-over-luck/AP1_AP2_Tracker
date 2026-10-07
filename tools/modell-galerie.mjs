@@ -26,7 +26,7 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 const fehler = [];
 page.on('console', (m) => m.type() === 'error' && fehler.push(m.text()));
 page.on('pageerror', (e) => fehler.push(e.message));
-await page.goto(pathToFileURL(path.join(wurzel, 'Lernstudio.html')).href + `#/${raum}/trainer/modellieren?modus=${modus}&galerie=1`);
+await page.goto(pathToFileURL(process.env.LERNSTUDIO_AUS ? path.resolve(wurzel, process.env.LERNSTUDIO_AUS) : path.join(wurzel, 'Lernstudio.html')).href + `#/${raum}/trainer/modellieren?modus=${modus}&galerie=1`);
 await page.waitForSelector('.modell--galerie', { timeout: 10000 });
 await page.addStyleTag({ content: '.kopf { display: none !important; }' });
 await page.waitForTimeout(300);
