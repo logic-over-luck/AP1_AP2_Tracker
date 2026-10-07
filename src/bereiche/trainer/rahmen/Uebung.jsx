@@ -194,7 +194,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
         )}
         <label class="notiz">
           <span class="notiz__kopf">
-            <Icon name="pencil" groesse={13} /> Dein Rechenweg <span class="gedaempft">· nur für dich, wird nicht geprüft</span>
+            <Icon name="pencil" groesse={13} /> Rechenweg &amp; Notizen <span class="gedaempft">· Platz für deine eigene Rechnung, wird nicht geprüft</span>
           </span>
           <textarea
             class="feld feld--mono notiz__feld"
