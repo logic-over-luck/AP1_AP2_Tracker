@@ -13,7 +13,9 @@ export const KARTE_SICHER_AB = 3;
 export const NOTE = { NICHT: 0, UNSICHER: 1, GEWUSST: 2 };
 
 export function naechsteStufe(stufe, note) {
-  if (note === NOTE.GEWUSST) return Math.min(stufe + 1, KARTEN_MAX_STUFE);
+  // Von Stufe 0 (neu oder zuletzt nicht gewusst) springt „Gewusst" auf Stufe 2 (3 Tage),
+  // damit es sich von „Unsicher" (Stufe 1, morgen) unterscheidet.
+  if (note === NOTE.GEWUSST) return Math.min(stufe === 0 ? 2 : stufe + 1, KARTEN_MAX_STUFE);
   if (note === NOTE.UNSICHER) return Math.max(1, stufe - 1);
   return 0;
 }

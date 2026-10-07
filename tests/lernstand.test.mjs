@@ -97,7 +97,8 @@ test('XP: Stichpunkt zählt nur beim ersten Abhaken', () => {
 });
 
 test('Lernkarten: Stufen und Fälligkeit', () => {
-  assert.equal(naechsteStufe(0, 2), 1);
+  assert.equal(naechsteStufe(0, 2), 2);
+  assert.equal(naechsteStufe(1, 2), 2);
   assert.equal(naechsteStufe(3, 2), 4);
   assert.equal(naechsteStufe(6, 2), 6);
   assert.equal(naechsteStufe(0, 1), 1);
@@ -105,8 +106,8 @@ test('Lernkarten: Stufen und Fälligkeit', () => {
   assert.equal(naechsteStufe(5, 0), 0);
   const id = [...index.karten.keys()][0];
   let s = ableiten([{ t: T0, e: 'karte', id, n: 2 }], index, heute);
-  assert.equal(s.karten.get(id).stufe, 1);
-  assert.equal(s.karten.get(id).faellig, tagPlus(heute, KARTEN_ABSTAND[1]));
+  assert.equal(s.karten.get(id).stufe, 2);
+  assert.equal(s.karten.get(id).faellig, tagPlus(heute, KARTEN_ABSTAND[2]));
   s = ableiten([{ t: T0, e: 'karte', id, n: 0 }], index, heute);
   assert.equal(s.karten.get(id).faellig, heute);
   assert.equal(kartenZustand(s, [id]).faellig, 1);
