@@ -119,10 +119,96 @@ nächsten offenen Punkt weiter.
 
 ## 4. Inhalte, bei denen ich fachlich nicht sicher bin
 
-*(wird zum Abschluss aus den Prüfberichten übertragen)*
+Alles hier ist in der App so umgesetzt, wie es nach bestem Wissen richtig ist – aber die Frage ist nicht endgültig
+geklärt. Die IDs findest du in der App über die Suche (Strg+K) bzw. in `inhalte/lernen/*.json` (Feld `unsicher`).
+Vor der Prüfung lohnt sich ein kurzer Abgleich mit Ausbilder, Lehrkraft oder den Prüfungsunterlagen.
+
+### Rechtsstand (zuerst prüfen, ändert sich womöglich bis zur Prüfung)
+- **Arbeitszeitgesetz** (WISO-1-3-4, WISO-3-1-1): Karten und Kurzfassung geben das geltende Recht wieder
+  (8 bzw. 10 Stunden werktäglich, Stand Oktober 2026). Ein Regierungsentwurf will eine wöchentliche
+  Höchstarbeitszeit (48 Stunden) einführen. Tritt er in Kraft, sind WISO-1-3-4-K5-1, -K5-4, WISO-3-1-1-K3-1 und die
+  Kurzfassung WISO-1-3-4 anzupassen.
+- **Sozialversicherung** (Kaufmännisch-Trainer): Beitragssätze und Bemessungsgrenzen stehen bewusst **in jeder
+  Aufgabe** (KV 14,6 % + Zusatzbeitrag, PV 3,6 % + 0,6 % Kinderlosenzuschlag ab 23, RV 18,6 %, AV 2,6 %,
+  BBG KV/PV 5.812,50 €, RV/AV 8.450 € je Monat). Die Rechenwege bleiben richtig, auch wenn sich Werte ändern; die
+  Zahlen selbst sind jährlich zu prüfen.
+- **ISO/IEC 25010** (AP2-1-3-1-K3-2): Die Norm wurde 2023 überarbeitet. Welche Fassung und welche deutschen Begriffe
+  erwartet werden (z. B. „Reife" oder „Fehlerfreiheit"), ist offen.
+
+### AP1
+- **AP1-2-5-1-K1** Change-Management: Die Karten nutzen das Drei-Phasen-Modell nach Lewin. Ob ein anderes Modell
+  (Kotter, Streich) erwartet wird, ist offen.
+- **AP1-3-2-3-K1-1** Nutzwertanalyse: Wie Rangpunkte bei Gleichstand vergeben werden, wenn die Aufgabe nichts sagt.
+- **AP1-4-1-4-K2-1** Anschlüsse am Bild erkennen: Die Karten beschreiben die Anschlüsse nur in Worten.
+- **AP1-4-2-3-K2-1** Netzteil-Zuschlag: kein fester Prozentsatz; die Karten nennen keinen Wert.
+- **AP1-4-1-2-K3-4** Bauform SO-DIMM/DIMM: Karte geht über die Können-Aussage hinaus.
+- **AP1-5-1-3-K2-2** „Virtuelle Desktops (lokal)": nur eigene Server oder auch VM auf dem eigenen PC?
+- **AP1-6-1-3-K5** Netzwerksymbole: liegen nicht als Bild vor.
+- **AP1-8-2-4-K1-3** Laufzeitfehler: dritte Fehlerart oder inhaltlicher Fehler? Keine Karte fragt die Einordnung ab.
+- **AP1-8-4-1-K5-2** Attribute an einer m:n-Beziehung (z. B. Menge): in AP1 erwartet?
+- **AP1-8-4-4** EPK/BPMN: Sinnbilder nach ARIS bzw. BPMN 2.0; ob sie in AP1 überhaupt vorkommen, ist offen.
+
+### AP2
+- **AP2-2-1-1** „Klasse mit Liste": als Attributtyp `List<…>`, als Multiplizität am Attribut oder als Assoziation?
+- **AP2-2-1-4-K2-1** Rückgabe im Sequenzdiagramm: offene oder gefüllte Pfeilspitze (UML erlaubt beide; die App zeigt die offene).
+- **AP2-2-2-2-K3-3** Fremdschlüssel-Kennzeichnung im Tabellenmodell: „FK", „#" oder Pfeil? Die App schreibt „PK"/„FK".
+- **AP2-2-3-1** EPK und BPMN: Prüfungsrelevanz für Anwendungsentwickler unklar; „Objekt" in der EPK als Informationsobjekt angenommen.
+- **AP2-4-2-1-K6-3** `DATEDIFF`/`DATEADD`: Argumentreihenfolge je nach SQL-Dialekt. Das SQL-Labor akzeptiert
+  `DATEDIFF(ende, start)` und `DATEDIFF('day', start, ende)`, `DATEADD('day', n, datum)` und `DATE_ADD(datum, n)`; die Karten fragen nur den Zweck.
+- **AP2-4-3-2-K2-4** Datentyp ändern: `ALTER COLUMN` oder `MODIFY` – die Karten nennen beide.
+- **AP2-4-3-3** Rechte: Das SQL-Labor erwartet `CREATE USER name IDENTIFIED BY 'pw'`; andere Systeme schreiben `WITH PASSWORD`.
+  Rollen (`CREATE ROLE`) sind nicht abgedeckt.
+- **AP2-5-5-3** „Redundanz": Prüfinformationen in Daten (so umgesetzt) oder doppelt ausgelegte Technik? Prüfziffern sind nicht abgedeckt.
+- **AP2-6-1-1-K2-2** ARP: OSI-Schicht 2 (so in der Karte, mit Hinweis auf die uneinheitliche Zuordnung).
+- **AP2-6-4-2-K4-3** RAID: Kapazität wird nur als Regel genannt, nicht gerechnet.
+
+### WiSo
+- **WISO-1-5-2-K2-1** Urabstimmung: Die üblichen 75 %/25 % stehen in Satzungen, nicht im Gesetz – keine eigene Karte.
+- **WISO-3-2-1-K3-1** „Schwere Geräte heben": mechanische Gefährdung (laut Können-Aussage) oder physische Belastung?
+- **WISO-3-4-1-K1-1** Rettungskette: Reihenfolge „sichern – Notruf – Erste Hilfe" nach Können-Aussage; lebensrettende Sofortmaßnahmen teils früher.
+- **WISO-5-2-3** „Abgrenzung von Zuständigkeiten": Die Karten decken alle drei Auslegungen ab.
+
+### Trainer
+- **Netzplan**: Knotenaufbau FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ mit Start bei 0. Manche Unterlagen
+  zählen ab Tag 1 oder ordnen die Felder anders – die Rechenlogik ist dieselbe.
+<!-- MODELLIEREN-UNSICHER -->
 
 ---
 
 ## 5. Anleitung
 
-*(folgt, sobald die App startbar ist)*
+### Starten
+1. `Lernstudio.html` aus dem Repository herunterladen (auf GitHub: Datei öffnen → „Download raw file").
+2. In einen festen Ordner legen, z. B. `Dokumente/Lernstudio/`.
+3. Doppelklick – die Datei öffnet sich im Browser (Chrome, Edge oder Firefox). Kein Internet, keine Installation.
+4. Oben links den Lernraum wählen (AP1, AP2, WiSo), auf der Übersicht das Prüfungsdatum eintragen.
+
+Bedienung mit der Tastatur: **Strg+K** (oder **/**) sucht überall, in Lernkarten **Leertaste** = umdrehen,
+**1/2/3** = bewerten, in den Trainern **Enter** = prüfen, im SQL-Labor **Strg+Enter** = ausführen.
+
+### Lernstand sichern
+Der Lernstand liegt **nur in diesem Browser** auf diesem Rechner (localStorage). Er geht verloren, wenn du die
+Browserdaten löschst, einen anderen Browser nimmst oder – je nach Browser – die Datei verschiebst.
+- **Sicherung** (Knopf oben rechts) → „Sicherung herunterladen" speichert `lernstudio-sicherung-<Datum>.json`.
+  Ein Punkt am Knopf erinnert dich, wenn die letzte Sicherung älter als 7 Tage ist.
+- **Einlesen** auf derselben Seite: „Ersetzen" (Stand aus der Datei übernehmen) oder „Zusammenführen" (beide Stände
+  vereinen, z. B. Laptop + PC). Jede Sicherung trägt eine Formatnummer; ältere Sicherungen werden beim Einlesen
+  automatisch umgewandelt.
+
+### Neue Version einspielen
+1. Vorher eine **Sicherung** herunterladen.
+2. Die neue `Lernstudio.html` an **dieselbe Stelle** legen (alte Datei ersetzen) und öffnen.
+3. Der Lernstand ist normalerweise sofort wieder da. Falls nicht: Sicherung einlesen („Ersetzen").
+
+Lernstand und Inhalt sind nur über IDs verbunden. Ändert sich ein Inhalt, bleibt der Fortschritt erhalten;
+Häkchen zu Stichpunkten, die es nicht mehr gibt, werden einfach übersprungen.
+
+### Für die Weiterentwicklung
+- `npm install` einmalig, dann `npm run build` → baut `Lernstudio.html` neu (Inhalte, Code, Schriften, SQL-Engine in einer Datei).
+- `npm test` – alle automatischen Tests (Prüfer, Aufgabenerzeuger, Interpreter, SQL, Lernstand, Modellieren-Aufgaben).
+- `npm run inhalte` – prüft die Inhaltspakete in `inhalte/lernen/`.
+- `node tools/browser-check.mjs '#/ap2/trainer/sql'` – öffnet die Datei als file:// in Chromium, macht Fotos, meldet Konsolenfehler.
+- `node tools/modell-galerie.mjs <modus> ap2 <ordner>` – zeigt alle Modellieren-Aufgaben eines Modus mit Lösung als Bilder.
+- Neuer Trainer: Eintrag in `src/bereiche/trainer/verzeichnis.js` (welche Stichpunkte er übt) und Komponente in
+  `src/bereiche/trainer/index.jsx`. Neue Diagrammaufgaben: siehe `src/bereiche/trainer/modellieren/README.md`.
+- Die Inhaltsdatei `Inhaltsdatei_AP1_AP2_tracker.json` wird nie verändert; eigene Inhalte liegen in `inhalte/`.

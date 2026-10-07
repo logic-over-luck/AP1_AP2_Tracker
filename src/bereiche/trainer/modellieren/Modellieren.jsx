@@ -24,8 +24,8 @@ const fuerRaum = (liste, raum) => (liste ?? []).filter((a) => !a.raum || a.raum.
 
 function Modus({ raum, modus, params }) {
   const alle = useMemo(() => fuerRaum(AUFGABEN[modus.id], raum), [modus.id, raum]);
-  const ueben = alle.filter((a) => a.art !== 'zeichnen');
-  const zeichnen = alle.filter((a) => a.art === 'zeichnen');
+  const ueben = useMemo(() => alle.filter((a) => a.art !== 'zeichnen'), [alle]);
+  const zeichnen = useMemo(() => alle.filter((a) => a.art === 'zeichnen'), [alle]);
   const notation = NOTATION[modus.id];
   const eintraege = [
     ueben.length && { id: 'ueben', text: 'Üben', icon: 'target', zahl: ueben.length },
@@ -66,7 +66,7 @@ function Ueben({ aufgaben, modus }) {
       // nicht zweimal hintereinander dieselbe Aufgabe
       const zuletzt = Ueben.zuletzt?.[modus.id];
       const auswahl = aufgaben.length > 1 ? aufgaben.filter((a) => a.id !== zuletzt) : aufgaben;
-      const a = auswahl[Math.floor(rng() * auswahl.length)];
+      const a = rng.wahl(auswahl);
       Ueben.zuletzt = { ...Ueben.zuletzt, [modus.id]: a.id };
       return alsUebung(a);
     },

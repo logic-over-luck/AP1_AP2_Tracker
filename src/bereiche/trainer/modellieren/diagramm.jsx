@@ -167,7 +167,7 @@ function Kante({ kante, knoten, luecken, marken }) {
       {kante.text && <Text x={tx} y={ty} text={kante.text} luecken={luecken} anker={textPos.waagerecht ? 'middle' : seiteT > 0 ? 'start' : 'end'} klasse="dg-klein dg-kantentext" />}
       {ende(pts[0], pts[1], kante.textVon, kante.textSeite ?? 1)}
       {ende(pts[n - 1], pts[n - 2], kante.textNach, -(kante.textSeite ?? 1))}
-      {marken && kante.marke && <Marke x={textPos.p[0]} y={textPos.p[1]} n={kante.marke} />}
+      {marken && kante.marke && <Marke x={textPos.waagerecht ? textPos.p[0] : textPos.p[0] - 14 * seiteT} y={textPos.waagerecht ? textPos.p[1] + 14 * seiteT : textPos.p[1]} n={kante.marke} />}
     </g>
   );
 }
