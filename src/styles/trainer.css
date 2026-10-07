@@ -1235,82 +1235,99 @@ button.codezeile:hover {
   font-size: var(--t-xs);
   margin-left: auto;
 }
-.sql-bild__tabellen {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--s-2);
-  align-items: start;
+.sql-er {
+  overflow-x: auto;
 }
-.sql-bild__tabelle {
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-  overflow: hidden;
-  transition: border-color var(--dauer) var(--kurve), box-shadow var(--dauer) var(--kurve);
-}
-.sql-bild__tabelle--ziel {
-  border-color: var(--warn);
-  box-shadow: 0 0 0 2px rgba(240, 180, 90, 0.25);
-}
-.sql-bild__name {
+.sql-er__bild {
   display: block;
   width: 100%;
-  padding: 5px 10px;
-  text-align: left;
-  font-size: var(--t-s);
-  font-weight: 700;
-  color: var(--akzent);
-  background: var(--flaeche-3);
-  border-bottom: 1px solid var(--linie-2);
-}
-.sql-bild__spalten {
-  list-style: none;
-  margin: 0;
-  padding: 4px 0;
-}
-.sql-bild__spalten li {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  padding: 1px 10px;
-  font-size: 12px;
-}
-.sql-bild__spalte {
-  color: var(--text);
+  min-width: 860px;
+  height: auto;
+  font-family: var(--mono);
   font-feature-settings: 'calt' 0, 'liga' 0;
 }
-.sql-bild__spalte--pk {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 650;
+.er-linie path {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-opacity: 0.6;
+  stroke-width: 1.4;
+  transition: stroke var(--dauer) var(--kurve), opacity var(--dauer) var(--kurve);
 }
-.sql-bild__name:hover,
-.sql-bild__spalte:hover {
-  color: var(--akzent);
-}
-.sql-bild__fk {
+.er-kard {
   font-size: 11px;
-  color: var(--warn);
-  white-space: nowrap;
+  font-weight: 700;
+  fill: var(--text-3);
 }
-.sql-bild__typ {
-  margin-left: auto;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--text-3);
-  white-space: nowrap;
+.er-linie--an path {
+  stroke: var(--warn);
+  stroke-opacity: 1;
+  stroke-width: 2;
+}
+.er-linie--an .er-kard {
+  fill: var(--warn);
+}
+.er-linie--aus {
+  opacity: 0.25;
+}
+.er-kasten__rahmen {
+  fill: var(--flaeche-2);
+  stroke: var(--linie-3);
+  stroke-width: 1;
+  transition: stroke var(--dauer) var(--kurve);
+}
+.er-kasten__kopf {
+  fill: var(--akzent-weich);
+}
+.er-kasten--fokus .er-kasten__rahmen {
+  stroke: var(--akzent);
+  stroke-width: 1.6;
+}
+.er-kasten--verbunden .er-kasten__rahmen {
+  stroke: var(--warn);
+  stroke-width: 1.6;
+}
+.er-kasten__name {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--akzent);
+  cursor: pointer;
+}
+.er-zeile {
+  cursor: pointer;
+}
+.er-zeile__flaeche {
+  fill: transparent;
+}
+.er-zeile:hover .er-zeile__flaeche {
+  fill: var(--flaeche-3);
+}
+.er-spalte {
+  font-size: 12px;
+  fill: var(--text);
+}
+.er-spalte--pk {
+  font-weight: 700;
+}
+.er-typ {
+  font-size: 10px;
+  fill: var(--text-3);
+}
+.er-schluessel {
+  fill: none;
+  stroke: #e7b84a;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.er-raute {
+  fill: none;
+  stroke: var(--text-3);
+  stroke-width: 1.2;
+}
+.er-raute--fk {
+  fill: var(--warn);
+  stroke: var(--warn);
 }
 @media (max-width: 700px) {
-  /* Handy: Tabellen nebeneinander, seitlich wischen */
-  .sql-bild__tabellen {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: thin;
-  }
-  .sql-bild__tabelle {
-    flex: none;
-    width: 210px;
-  }
   .sql-bild__legende {
     margin-left: 0;
   }

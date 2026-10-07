@@ -129,8 +129,9 @@ nächsten offenen Punkt weiter.
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
 - **SQL-Labor:** Erster Reiter „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang (Begriff + eine
   Zeile Erklärung). Aufgaben werden über eine kompakte Leiste gewählt (Themen + Nummern). Die Datenbank steht
-  vollständig als Bild direkt über dem Editor (Kästen mit allen Spalten, Typ, PK unterstrichen, FK → Zieltabelle;
-  Maus auf FK hebt die Zieltabelle hervor; Klick fügt den Namen ein). In den Aufgaben schreibt man selbst wie in
+  vollständig als ER-Diagramm direkt über dem Editor (wie in einem Datenbank-Werkzeug: Kästen mit Schlüssel- und
+  Rautensymbolen, Datentyp, Linien Fremdschlüssel → Primärschlüssel mit n/1; Maus auf eine Tabelle hebt ihre
+  Beziehungen hervor; Klick fügt den Namen ein). In den Aufgaben schreibt man selbst wie in
   der Prüfung – Befehls-Bausteine gibt es nur im Freien Labor.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,

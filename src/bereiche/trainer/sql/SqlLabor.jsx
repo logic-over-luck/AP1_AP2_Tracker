@@ -12,6 +12,7 @@ import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
 import { GRUNDLAGEN, KLAUSELN, BEFEHLSGRUPPEN } from './grundlagen.js';
 import { setzeEin } from './einfuegen.js';
+import { erLayout, MASS } from './erLayout.js';
 
 const SPICKZETTEL = {
   abfragen:
@@ -633,41 +634,89 @@ export function ErgebnisTabelle({ ergebnis }) {
   );
 }
 
-// Die Datenbank wie im Prüfungsbild: jede Tabelle ein Kasten mit allen Spalten, Typ, Primärschlüssel
-// (unterstrichen) und Fremdschlüssel (→ Zieltabelle). Maus auf einen Fremdschlüssel hebt die Zieltabelle hervor.
-// Ein Klick auf einen Namen fügt ihn in den Editor ein – nur eine Abkürzung, die Abfrage schreibt man selbst.
+// Die Datenbank als ER-Diagramm wie in einem Datenbank-Werkzeug: Kästen mit Schlüssel-Symbolen und
+// Datentyp, Linien von jedem Fremdschlüssel zur Zieltabelle (n … 1). Maus auf eine Tabelle hebt ihre
+// Beziehungen hervor; ein Klick auf einen Namen fügt ihn in den Editor ein – schreiben muss man selbst.
 function SchemaBild({ schema, einfuegen }) {
-  const [ziel, setZiel] = useState(null);
+  const [fokus, setFokus] = useState(null);
+  const er = useMemo(() => erLayout(schema), [schema]);
+  const { breite: B, kopf: K, zeile: Z, rand: R } = MASS;
+  const verbunden = new Set(fokus ? er.linien.filter((l) => l.von === fokus || l.nach === fokus).flatMap((l) => [l.von, l.nach]) : []);
   return (
     <section class="sql-bild" aria-label="Datenbankschema">
       <div class="sql-bild__kopf">
         <Icon name="database" groesse={14} />
-        <span class="ueberschrift-klein">Datenbank</span>
+        <span class="ueberschrift-klein">Datenbank-Schema</span>
         <span class="gedaempft sql-bild__legende">
-          <u>unterstrichen</u> = Primärschlüssel · <span class="sql-bild__fk">→ tabelle</span> = Fremdschlüssel · Klick fügt den Namen ein
+          <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden="true">
+            <circle cx="3.5" cy="5" r="2.6" class="er-schluessel" />
+            <path d="M6 5h5.5M9.5 5v2.5" class="er-schluessel" />
+          </svg>{' '}
+          Primärschlüssel ·{' '}
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+            <path d="M5 1 9 5 5 9 1 5z" class="er-raute er-raute--fk" />
+          </svg>{' '}
+          Fremdschlüssel · Linie n → 1 · Klick fügt den Namen ein
         </span>
       </div>
-      <div class="sql-bild__tabellen">
-        {schema.map((t) => (
-          <div key={t.name} class={`sql-bild__tabelle ${ziel === t.name ? 'sql-bild__tabelle--ziel' : ''}`}>
-            <button class="sql-bild__name mono" title={`${t.zeilen} Zeilen`} onClick={() => einfuegen(t.name)}>
-              {t.name}
-            </button>
-            <ul class="sql-bild__spalten">
-              {t.spalten.map(([name, typ, marke]) => {
-                const fk = marke.match(/FK → (\w+)/)?.[1];
+      <div class="sql-er">
+        <svg class="sql-er__bild" viewBox={`-30 -8 ${er.breite + 38} ${er.hoehe + 16}`} role="img" aria-label="ER-Diagramm der Übungsdatenbank">
+          {er.linien.map((l) => {
+            const an = fokus && (l.von === fokus || l.nach === fokus);
+            return (
+              <g key={`${l.von}.${l.spalte}`} class={`er-linie ${an ? 'er-linie--an' : ''} ${fokus && !an ? 'er-linie--aus' : ''}`}>
+                <path d={l.d} />
+                <text x={l.n[0]} y={l.n[1]} class="er-kard">
+                  n
+                </text>
+                <text x={l.eins[0]} y={l.eins[1]} class="er-kard">
+                  1
+                </text>
+              </g>
+            );
+          })}
+          {er.kaesten.map((k) => (
+            <g
+              key={k.name}
+              transform={`translate(${k.x} ${k.y})`}
+              class={`er-kasten ${fokus === k.name ? 'er-kasten--fokus' : ''} ${verbunden.has(k.name) && fokus !== k.name ? 'er-kasten--verbunden' : ''}`}
+              onMouseEnter={() => setFokus(k.name)}
+              onMouseLeave={() => setFokus(null)}
+            >
+              <rect width={B} height={k.h} rx="5" class="er-kasten__rahmen" />
+              <path d={`M0 ${K} V5 a5 5 0 0 1 5 -5 H${B - 5} a5 5 0 0 1 5 5 V${K} Z`} class="er-kasten__kopf" />
+              <text x="10" y={K / 2 + 4.5} class="er-kasten__name" onClick={() => einfuegen(k.name)}>
+                <title>{`${k.tabelle.zeilen} Datensätze – Klick fügt den Namen ein`}</title>
+                {k.name}
+              </text>
+              {k.tabelle.spalten.map(([name, typ, marke], i) => {
+                const y = K + R + i * Z + Z / 2;
+                const pk = marke.includes('PK');
+                const fk = marke.includes('FK');
                 return (
-                  <li key={name} onMouseEnter={() => fk && setZiel(fk)} onMouseLeave={() => fk && setZiel(null)}>
-                    <button class={`sql-bild__spalte mono ${marke.includes('PK') ? 'sql-bild__spalte--pk' : ''}`} title={typ} onClick={() => einfuegen(name)}>
+                  <g key={name} class="er-zeile" onClick={() => einfuegen(name)}>
+                    <rect x="1" y={y - Z / 2} width={B - 2} height={Z} class="er-zeile__flaeche" />
+                    {pk ? (
+                      <g transform={`translate(8 ${y})`}>
+                        <circle cx="3.5" cy="0" r="2.8" class="er-schluessel" />
+                        <path d="M6.3 0h5.5M10 0v2.6" class="er-schluessel" />
+                      </g>
+                    ) : (
+                      <path d={`M${13} ${y - 4} l4 4 l-4 4 l-4 -4z`} class={`er-raute ${fk ? 'er-raute--fk' : ''}`} />
+                    )}
+                    {pk && fk && <path d={`M${B - 8} ${y - 4} l4 4 l-4 4 l-4 -4z`} class="er-raute er-raute--fk" />}
+                    <text x="26" y={y + 4} class={`er-spalte ${pk ? 'er-spalte--pk' : ''}`}>
                       {name}
-                    </button>
-                    {fk ? <span class="sql-bild__fk">→ {fk}</span> : <span class="sql-bild__typ">{typ}</span>}
-                  </li>
+                    </text>
+                    <text x={B - (pk && fk ? 16 : 8)} y={y + 4} text-anchor="end" class="er-typ">
+                      {typ}
+                    </text>
+                  </g>
                 );
               })}
-            </ul>
-          </div>
-        ))}
+            </g>
+          ))}
+        </svg>
       </div>
     </section>
   );

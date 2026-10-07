@@ -130,3 +130,20 @@ test('Antippen: Leerzeichen und Kommas kommen von selbst', () => {
   assert.equal(t, 'SELECT * FROM kunde ORDER BY ort, preis ');
   assert.deepEqual(genannteTabellen('SELECT * FROM kunde k JOIN bestellung b', ['kunde', 'bestellung', 'artikel']), ['bestellung', 'kunde']);
 });
+
+test('ER-Diagramm: jeder Fremdschlüssel hat eine Linie, Kästen überlappen nicht', async () => {
+  const { erLayout } = await import('../src/bereiche/trainer/sql/erLayout.js');
+  const { schemaAus } = await import('../src/bereiche/trainer/sql/engine.js');
+  const db = engine.neueDb();
+  const schema = schemaAus(db);
+  db.close();
+  const er = erLayout(schema);
+  assert.equal(er.kaesten.length, schema.length);
+  const fks = schema.flatMap((t) => t.spalten.filter(([, , m]) => m.includes('FK')));
+  assert.equal(er.linien.length, fks.length);
+  for (const a of er.kaesten)
+    for (const b of er.kaesten)
+      if (a !== b) assert.ok(a.x + 190 <= b.x || b.x + 190 <= a.x || a.y + a.h <= b.y || b.y + b.h <= a.y, `${a.name} überlappt ${b.name}`);
+  // Neue Tabelle im Freien Labor kommt dazu
+  assert.equal(erLayout([...schema, { name: 'wartung', zeilen: 0, spalten: [['wartung_id', 'INTEGER', 'PK'], ['artikel_id', 'INTEGER', 'FK → artikel']] }]).linien.length, fks.length + 1);
+});
