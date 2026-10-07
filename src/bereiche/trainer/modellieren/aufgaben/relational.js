@@ -128,15 +128,15 @@ export const aufgaben = [
       hoehe: 190,
       knoten: [
         tab('tn', 20, 50, 'Teilnehmer', ['#TeilnehmerNr', 'Name', 'E-Mail']),
-        tab('buchung', 250, 50, 'Buchung', ['#>{1}', '#>KursNr', '{3}'], { w: 170 }),
+        tab('buchung', 250, 50, 'Buchung', ['#>{1}', '#>KursNr', '{2}'], { w: 170 }),
         tab('kurs', 500, 50, 'Kurs', ['#KursNr', 'Titel', 'Preis']),
       ],
-      kanten: [rel('tn', 'buchung', '1', 'n'), rel('buchung', 'kurs', '{4}', '1')],
+      kanten: [rel('tn', 'buchung', '1', 'n'), rel('buchung', 'kurs', '{3}', '1')],
     },
     felder: [
       { id: '1', label: 'Erste Spalte der Zwischentabelle (PK und FK)', optionen: ['Name', 'TeilnehmerNr', 'Titel'], erwartet: 'TeilnehmerNr' },
-      { id: '3', label: 'Weitere Spalte der Zwischentabelle', optionen: ['Buchungsdatum', 'Preis', 'E-Mail'], erwartet: 'Buchungsdatum' },
-      { id: '4', label: 'Kardinalität an „Buchung" (Linie zu Kurs)', optionen: KARD, erwartet: 'n' },
+      { id: '2', label: 'Weitere Spalte der Zwischentabelle', optionen: ['Buchungsdatum', 'Preis', 'E-Mail'], erwartet: 'Buchungsdatum' },
+      { id: '3', label: 'Kardinalität an „Buchung" (Linie zu Kurs)', optionen: KARD, erwartet: 'n' },
       {
         id: 'p',
         label: 'Primärschlüssel der Tabelle Buchung',
@@ -146,8 +146,8 @@ export const aufgaben = [
     ],
     loesung: [
       '[1] Eine m:n-Beziehung wird mit einer **Zwischentabelle** aufgelöst. Sie enthält die PK beider Tabellen als Fremdschlüssel: TeilnehmerNr und KursNr.',
-      '[3] Das Buchungsdatum gehört zum Paar Teilnehmer + Kurs, also in die Zwischentabelle. Preis und E-Mail stehen schon in Kurs bzw. Teilnehmer.',
-      '[4] Ein Kurs hat viele Buchungen, jede Buchung gehört zu einem Kurs → 1 bei Kurs, n bei Buchung. Aus m:n werden **zwei 1:n**-Beziehungen.',
+      '[2] Das Buchungsdatum gehört zum Paar Teilnehmer + Kurs, also in die Zwischentabelle. Preis und E-Mail stehen schon in Kurs bzw. Teilnehmer.',
+      '[3] Ein Kurs hat viele Buchungen, jede Buchung gehört zu einem Kurs → 1 bei Kurs, n bei Buchung. Aus m:n werden **zwei 1:n**-Beziehungen.',
       'Der PK ist **zusammengesetzt**: Ein Teilnehmer kommt in vielen Buchungen vor, ein Kurs auch – erst das Paar ist eindeutig, weil jeder Kurs je Teilnehmer nur einmal gebucht wird.',
     ],
   },
