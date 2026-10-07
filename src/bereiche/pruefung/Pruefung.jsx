@@ -786,7 +786,7 @@ function Ergebnis({ raum, z, pruefung, schliessen }) {
             <div class="gedaempft">Minuten</div>
           </div>
         </div>
-        <p>{e.bestanden ? 'Bestanden – ab 50 % ist der Teil geschafft.' : 'Noch nicht bestanden – ab 50 % ist der Teil geschafft.'}</p>
+        <p>{bestehensText(pruefung.teil, e.prozent)}</p>
       </section>
       {schwach.length > 0 && (
         <section class="flaeche flaeche--gross">
@@ -818,6 +818,15 @@ function Ergebnis({ raum, z, pruefung, schliessen }) {
       </div>
     </div>
   );
+}
+
+// Bestehensregeln (FIAusbV §§ 16, 17): AP1 zählt nur mit 20 % in die Gesamtnote, ist allein kein Sperrfach.
+// In Teil 2 darf kein Bereich unter 30 liegen; unter 50 ist auf Antrag eine mündliche Ergänzungsprüfung möglich.
+function bestehensText(teil, prozent) {
+  if (teil === 'AP1') return prozent >= 50 ? 'Gut – über 50 Punkten. AP1 zählt mit 20 % in die Gesamtnote.' : 'Unter 50 Punkten. AP1 allein entscheidet nicht über das Bestehen, zählt aber mit 20 % in die Gesamtnote.';
+  if (prozent >= 50) return 'Bestanden – ab 50 Punkten ist der Prüfungsbereich geschafft.';
+  if (prozent >= 30) return 'Unter 50 Punkten. In einem schriftlichen Bereich von Teil 2 kannst du dann eine mündliche Ergänzungsprüfung beantragen.';
+  return 'Unter 30 Punkten – in Teil 2 wäre das ein Sperrfach: Die Prüfung gilt dann insgesamt als nicht bestanden.';
 }
 
 // ---------- Blöcke ----------
