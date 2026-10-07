@@ -42,8 +42,12 @@ export function erstelleEngine(SQL, heute = new Date()) {
 }
 
 // Führt einen oder mehrere Befehle aus. Liefert das letzte Ergebnis mit Zeilen.
+// Belegsatz-Schreibweise DATEADD(DAY, 14, datum) / DATEDIFF(MONTH, a, b): SQLite hielte DAY für eine
+// Spalte – deshalb wird der Datumsteil vorher in Anführungszeichen gesetzt.
+const DATUMSTEIL = /\b(DATEADD|DATEDIFF)\s*\(\s*(DAY|DAYS|MONTH|YEAR|HOUR|MINUTE|DD|MM|YY|YYYY)\s*,/gi;
+
 export function ausfuehren(db, text) {
-  const t = String(text ?? '').trim();
+  const t = String(text ?? '').trim().replace(DATUMSTEIL, (_, f, teil) => `${f}('${teil}',`);
   if (!t) return { ergebnis: null, meldung: 'Keine Anweisung.' };
   const vorher = db.exec('SELECT total_changes()')[0].values[0][0];
   const res = db.exec(t);

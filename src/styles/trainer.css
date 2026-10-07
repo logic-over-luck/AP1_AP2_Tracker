@@ -1215,48 +1215,6 @@ button.codezeile:hover {
   flex-direction: column;
   gap: var(--s-4);
 }
-.sql-situation {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-4) var(--s-5);
-}
-.sql-modell {
-  list-style: none;
-  margin: 0;
-  padding: var(--s-3) var(--s-4);
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-  font-family: var(--mono);
-  font-size: 13px;
-  line-height: 1.9;
-  color: var(--text);
-}
-.sql-modell__name {
-  font: inherit;
-  color: inherit;
-  padding: 0 1px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.sql-modell__name:hover {
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-.sql-modell__tabelle {
-  font-weight: 700;
-  color: var(--akzent);
-}
-.sql-modell u {
-  text-underline-offset: 3px;
-}
-.sql-modell__fk {
-  color: var(--warn);
-  font-weight: 700;
-}
-.sql-situation__legende {
-  font-size: var(--t-xs);
-}
 .sql-punkte {
   font-size: var(--t-s);
   font-weight: 600;
@@ -1357,6 +1315,111 @@ button.codezeile:hover {
   font-weight: 700;
 }
 
+/* SQL: Tabellen mit Beispieldaten wie in der Prüfung */
+.sql-db {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+}
+.sql-db__raster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4) var(--s-5);
+  align-items: flex-start;
+}
+.sql-db__tabelle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 100%;
+}
+.sql-db__titel {
+  font-size: var(--t-s);
+  font-weight: 650;
+  color: var(--text-2);
+}
+.sql-db__name {
+  font: inherit;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.sql-db__titel .sql-db__name {
+  font-style: italic;
+  color: var(--text);
+}
+.sql-db__name:hover {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sql-db__daten {
+  min-width: 0;
+  font-size: 12.5px;
+}
+.sql-db__daten th,
+.sql-db__daten td {
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.sql-db__daten th {
+  font-size: 12px;
+  color: var(--text);
+}
+.sql-db__hinweis {
+  font-size: var(--t-xs);
+}
+.sql-beispiel-ergebnis {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+.sql-beispiel-ergebnis__titel {
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sql-beispiel-ergebnis .atabelle {
+  min-width: 0;
+  font-size: 12.5px;
+}
+.sql-beispiel-ergebnis .atabelle th,
+.sql-beispiel-ergebnis .atabelle td {
+  padding: 3px 12px;
+}
+.sql-auslassung {
+  display: block;
+  padding: 0 12px;
+  color: var(--text-3);
+}
+
+/* SQL: Nachschlagewerk wie der Belegsatz */
+.sql-syntax {
+  width: 100%;
+  font-size: var(--t-s);
+}
+.sql-syntax th,
+.sql-syntax td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+.sql-syntax th:first-child {
+  width: 46%;
+}
+.sql-syntax__bereich td {
+  background: var(--flaeche-3);
+  font-weight: 650;
+  font-style: italic;
+  color: var(--text);
+}
+.sql-syntax__text {
+  font-family: var(--mono);
+  font-size: 12px;
+  white-space: pre-wrap;
+  font-feature-settings: 'calt' 0, 'liga' 0;
+}
+
 /* SQL: Nachschlagewerk unter der Aufgabe */
 .sql-nachschlagen .sql-lexikon {
   background: var(--flaeche-2);
@@ -1419,34 +1482,6 @@ button.codezeile:hover {
   break-inside: avoid;
   margin-bottom: var(--s-4);
   padding: var(--s-4) var(--s-5);
-}
-.sql-lexikon__titel {
-  font-size: var(--t-m);
-  font-weight: 650;
-  margin-bottom: var(--s-2);
-}
-.sql-lexikon__liste {
-  margin: 0;
-}
-.sql-lexikon__eintrag {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: var(--s-3);
-  padding: 6px 0;
-  border-top: 1px solid var(--linie-1, var(--linie-2));
-  font-size: var(--t-s);
-}
-.sql-lexikon__eintrag:first-child {
-  border-top: 0;
-}
-.sql-lexikon__eintrag dt {
-  font-weight: 600;
-  color: var(--akzent);
-  font-feature-settings: 'calt' 0, 'liga' 0;
-}
-.sql-lexikon__eintrag dd {
-  margin: 0;
-  color: var(--text-2);
 }
 @media (max-width: 560px) {
   .sql-lexikon__eintrag {

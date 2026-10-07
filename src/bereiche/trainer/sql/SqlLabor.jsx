@@ -176,7 +176,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
   const [lauf, setLauf] = useState(null); // { ergebnis, geaendert, fehler, nachher }
   const [pruefung, setPruefung] = useState(null); // { ok, grund, hinweis }
   const [loesung, setLoesung] = useState(false);
-  const [erwartet, setErwartet] = useState(false);
   const [nachschlagen, setNachschlagen] = useState(false);
   const gezaehlt = useRef({ erst: false, ok: false });
   const editor = useRef(null);
@@ -186,7 +185,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
     if (rechte) return { schema: schemaAusNeu(engine), soll: null };
     const db = engine.neueDb(aufgabe.vorbereitung);
     try {
-      const schema = schemaAus(db);
+      const schema = mitBeispiel(db, schemaAus(db));
       let soll = null;
       if (aufgabe.modus === 'abfragen') soll = ausfuehren(db, aufgabe.loesung).ergebnis;
       return { schema, soll };
@@ -260,7 +259,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
   const ok = pruefung?.ok;
   return (
     <div class="sql__einspaltig">
-      <DatenbankModell schema={basis.schema} einfuegen={einfuegen} />
+      <DatenbankTabellen schema={basis.schema} einfuegen={einfuegen} />
       <section class={`flaeche flaeche--gross aufgabe ${ok ? 'aufgabe--fertig' : ''}`}>
         <div class="zeile">
           <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">Aufgabe {nr}</div>
@@ -274,6 +273,12 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
         <div class="aufgabe__text">
           <Rich text={aufgabe.text} />
         </div>
+        {basis.soll && (
+          <div class="sql-beispiel-ergebnis">
+            <span class="sql-beispiel-ergebnis__titel">Ergebnisbeispiel:</span>
+            <ErgebnisTabelle ergebnis={basis.soll} grenze={3} />
+          </div>
+        )}
         {rechte && (
           <p class="trainer-hinweis">
             <Icon name="info" groesse={14} /> Die Übungsdatenbank kennt keine Benutzer. Deine Anweisung wird deshalb zerlegt und Teil für Teil geprüft:
@@ -310,11 +315,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
               Prüfen <Kbd>{rechte ? 'Strg+Enter' : 'Strg+⇧+Enter'}</Kbd>
             </Knopf>
           )}
-          {basis.soll && (
-            <Knopf variante="geist" icon="table" onClick={() => setErwartet(!erwartet)} aria-expanded={erwartet}>
-              {erwartet ? 'Soll-Ergebnis ausblenden' : 'Soll-Ergebnis'}
-            </Knopf>
-          )}
           <Knopf variante="geist" icon={loesung ? 'eye-off' : 'eye'} onClick={zeigeLoesung} aria-expanded={loesung}>
             {loesung ? 'Lösungshinweis ausblenden' : 'Lösungshinweis'}
           </Knopf>
@@ -333,14 +333,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
           </div>
         )}
 
-        <Aufklapp offen={erwartet}>
-          {basis.soll && (
-            <div class="sql-block">
-              <div class="ueberschrift-klein">So soll das Ergebnis aussehen</div>
-              <ErgebnisTabelle ergebnis={basis.soll} />
-            </div>
-          )}
-        </Aufklapp>
         <Aufklapp offen={loesung}>
           <div class="sql-block">
             <div class="zeile">
@@ -363,10 +355,22 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
 function schemaAusNeu(engine) {
   const db = engine.neueDb();
   try {
-    return schemaAus(db);
+    return mitBeispiel(db, schemaAus(db));
   } finally {
     db.close();
   }
+}
+
+// Wie in der Prüfung: von jeder Tabelle die ersten Datensätze als Auszug
+const AUSZUG = 4;
+function mitBeispiel(db, schema) {
+  return schema.map((t) => {
+    try {
+      return { ...t, beispiel: ausfuehren(db, `SELECT * FROM "${t.name}" LIMIT ${AUSZUG}`).ergebnis };
+    } catch {
+      return t;
+    }
+  });
 }
 
 // ---------- Freies Labor ----------
@@ -384,7 +388,7 @@ function FreiesLabor({ engine }) {
   const zuruecksetzen = () => {
     db.current?.close();
     db.current = engine.neueDb();
-    setSchema(schemaAus(db.current));
+    setSchema(mitBeispiel(db.current, schemaAus(db.current)));
     setLauf(null);
   };
   useEffect(() => {
@@ -401,14 +405,14 @@ function FreiesLabor({ engine }) {
     } catch (e) {
       setLauf({ fehler: fehlerText(e) });
     }
-    setSchema(schemaAus(db.current));
+    setSchema(mitBeispiel(db.current, schemaAus(db.current)));
   };
 
 
   return (
     <div class="sql">
       <div class="sql__einspaltig">
-        <DatenbankModell schema={schema} einfuegen={einfuegen} />
+        <DatenbankTabellen schema={schema} einfuegen={einfuegen} />
         <section class="flaeche flaeche--gross aufgabe">
           <div class="ueberschrift-klein ueberschrift-klein--akzent">Freies Labor</div>
           <p class="aufgabe__text text-2">
@@ -517,38 +521,66 @@ function Grundlagen() {
           ))}
         </div>
       </section>
-      <Lexikon />
+      <section class="flaeche sql-lexikon">
+        <Lexikon />
+      </section>
     </div>
   );
 }
 
+// Wie der Belegsatz „SQL-Syntax (Auszug)": Syntax | Beschreibung, nach Bereichen gegliedert
 function Lexikon() {
   return (
-    <div class="sql-grund__raster">
-      {GRUNDLAGEN.map((g) => (
-        <section key={g.id} class="flaeche sql-lexikon">
-          <h2 class="sql-lexikon__titel">{g.titel}</h2>
-          <dl class="sql-lexikon__liste">
-            {g.begriffe.map(([begriff, erklaerung]) => (
-              <div key={begriff} class="sql-lexikon__eintrag">
-                <dt class="mono">{begriff}</dt>
-                <dd>{erklaerung}</dd>
-              </div>
+    <div class="atabelle-huelle">
+      <table class="atabelle sql-syntax">
+        <thead>
+          <tr>
+            <th>Syntax</th>
+            <th>Beschreibung</th>
+          </tr>
+        </thead>
+        {GRUNDLAGEN.map((g) => (
+          <tbody key={g.id}>
+            <tr class="sql-syntax__bereich">
+              <td colSpan={2}>{g.titel}</td>
+            </tr>
+            {g.begriffe.map(([syntax, beschreibung, nicht]) => (
+              <tr key={syntax}>
+                <td class="sql-syntax__code">
+                  <SqlCodeZeile text={syntax} />
+                </td>
+                <td>
+                  {beschreibung}
+                  {nicht && <span class="gedaempft"> (in der Übungsdatenbank nicht ausführbar)</span>}
+                </td>
+              </tr>
             ))}
-          </dl>
-        </section>
-      ))}
+          </tbody>
+        ))}
+      </table>
     </div>
   );
 }
 
-// Wie der Belegsatz in der Prüfung: alle Befehle zum Nachschlagen, direkt unter der Aufgabe
+// Wie der Belegsatz in der Prüfung, direkt unter der Aufgabe
 function Nachschlagewerk() {
   return (
     <div class="sql-block sql-nachschlagen">
-      <div class="ueberschrift-klein">Nachschlagewerk SQL · Reihenfolge: {KLAUSELN.join(' → ')}</div>
+      <div class="ueberschrift-klein">SQL-Syntax (Auszug) · Reihenfolge: {KLAUSELN.join(' → ')}</div>
       <Lexikon />
     </div>
+  );
+}
+
+function SqlCodeZeile({ text }) {
+  return (
+    <code class="sql-syntax__text">
+      {hervorhebenSql(text).map((t, i) => (
+        <span key={i} class={t.art === 'text' ? '' : `hl-${t.art}`}>
+          {t.text}
+        </span>
+      ))}
+    </code>
   );
 }
 
@@ -594,7 +626,7 @@ function wertText(v) {
   return String(v);
 }
 
-export function ErgebnisTabelle({ ergebnis }) {
+export function ErgebnisTabelle({ ergebnis, grenze = GRENZE }) {
   if (!ergebnis.zeilen.length)
     return (
       <div class="sql-leer">
@@ -615,7 +647,7 @@ export function ErgebnisTabelle({ ergebnis }) {
           </tr>
         </thead>
         <tbody>
-          {ergebnis.zeilen.slice(0, GRENZE).map((z, i) => (
+          {ergebnis.zeilen.slice(0, grenze).map((z, i) => (
             <tr key={i}>
               {z.map((c, j) => (
                 <td key={j} class={zahl[j] ? 'rechts' : ''}>
@@ -626,40 +658,63 @@ export function ErgebnisTabelle({ ergebnis }) {
           ))}
         </tbody>
       </table>
-      {ergebnis.zeilen.length > GRENZE && <p class="gedaempft sql-block__fuss">… und {ergebnis.zeilen.length - GRENZE} weitere Zeilen.</p>}
+      {ergebnis.zeilen.length > grenze && grenze < GRENZE && <span class="sql-auslassung">…</span>}
+      {ergebnis.zeilen.length > grenze && grenze >= GRENZE && <p class="gedaempft sql-block__fuss">… und {ergebnis.zeilen.length - grenze} weitere Zeilen.</p>}
     </div>
   );
 }
 
-// Wie in der Prüfung: Auszug aus dem Datenbankmodell in
-// Relationen-Schreibweise – Primärschlüssel unterstrichen, Fremdschlüssel mit ↑.
-function DatenbankModell({ schema, einfuegen }) {
+// Wie in der Prüfung: jede Tabelle mit Spaltenköpfen und den ersten Datensätzen, ohne Schlüssel-Markierung –
+// welche Spalten zusammengehören, erkennt man wie dort an den Namen. Klick auf Tabellen- oder Spaltennamen
+// trägt ihn ins Lösungsfeld ein.
+function DatenbankTabellen({ schema, einfuegen }) {
   return (
-    <section class="flaeche sql-situation">
-      <div class="ueberschrift-klein ueberschrift-klein--akzent">Auszug aus dem Datenbankmodell</div>
-      <ul class="sql-modell">
+    <section class="flaeche sql-db">
+      <div class="ueberschrift-klein ueberschrift-klein--akzent">Die folgenden Tabellen stehen auszugsweise zur Verfügung</div>
+      <div class="sql-db__raster">
         {schema.map((t) => (
-          <li key={t.name}>
-            <button class="sql-modell__name sql-modell__tabelle" onClick={() => einfuegen(t.name)}>
-              {t.name}
-            </button>{' '}
-            (
-            {t.spalten.map(([name, typ, marke], i) => (
-              <span key={name}>
-                {i > 0 && ', '}
-                <button class="sql-modell__name" title={typ} onClick={() => einfuegen(name)}>
-                  {marke.includes('FK') && <span class="sql-modell__fk">↑</span>}
-                  {marke.includes('PK') ? <u>{name}</u> : name}
-                </button>
-              </span>
-            ))}
-            )
-          </li>
+          <div key={t.name} class="sql-db__tabelle">
+            <div class="sql-db__titel">
+              Tabelle{' '}
+              <button class="sql-db__name" onClick={() => einfuegen(t.name)}>
+                {t.name}
+              </button>
+            </div>
+            <div class="atabelle-huelle">
+              <table class="atabelle sql-db__daten">
+                <thead>
+                  <tr>
+                    {t.spalten.map(([name, typ]) => (
+                      <th key={name}>
+                        <button class="sql-db__name" title={typ} onClick={() => einfuegen(name)}>
+                          {name}
+                        </button>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {(t.beispiel?.zeilen ?? []).map((z, i) => (
+                    <tr key={i}>
+                      {z.map((c, j) => (
+                        <td key={j}>{wertText(c)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                  {t.zeilen > (t.beispiel?.zeilen.length ?? 0) && (
+                    <tr>
+                      {t.spalten.map(([name], j) => (
+                        <td key={name}>{j === 0 ? '…' : ''}</td>
+                      ))}
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
         ))}
-      </ul>
-      <p class="gedaempft sql-situation__legende">
-        <u>unterstrichen</u> = Primärschlüssel · <span class="sql-modell__fk">↑</span> = Fremdschlüssel · Klick auf einen Namen trägt ihn ins Lösungsfeld ein
-      </p>
+      </div>
+      <p class="gedaempft sql-db__hinweis">Klick auf einen Tabellen- oder Spaltennamen trägt ihn ins Lösungsfeld ein.</p>
     </section>
   );
 }
@@ -667,7 +722,7 @@ function DatenbankModell({ schema, einfuegen }) {
 // ---------- SQL hübsch anzeigen ----------
 
 const SCHLUESSELWOERTER = new Set(
-  'SELECT FROM WHERE AND OR NOT IN IS NULL AS JOIN INNER LEFT RIGHT OUTER ON GROUP BY HAVING ORDER ASC DESC DISTINCT INSERT INTO VALUES UPDATE SET DELETE CREATE TABLE ALTER ADD COLUMN DROP INDEX PRIMARY KEY FOREIGN REFERENCES UNION ALL EXISTS BETWEEN LIKE GRANT REVOKE TO WITH OPTION PRIVILEGES USER IDENTIFIED CASE WHEN THEN ELSE END LIMIT'.split(' '),
+  'SELECT FROM WHERE AND OR NOT IN IS NULL AS JOIN INNER LEFT RIGHT OUTER ON GROUP BY HAVING ORDER ASC DESC DISTINCT INSERT INTO VALUES UPDATE SET DELETE CREATE TABLE ALTER ADD COLUMN DROP INDEX PRIMARY KEY FOREIGN REFERENCES UNION ALL EXISTS BETWEEN LIKE GRANT REVOKE TO WITH OPTION PRIVILEGES USER IDENTIFIED CASE WHEN THEN ELSE END LIMIT MODIFY'.split(' '),
 );
 const TYPEN = new Set('INTEGER INT VARCHAR CHAR DATE DECIMAL TEXT BOOLEAN FLOAT DOUBLE'.split(' '));
 

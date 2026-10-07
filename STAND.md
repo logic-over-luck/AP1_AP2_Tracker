@@ -127,11 +127,14 @@ nächsten offenen Punkt weiter.
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
-- **SQL-Labor (prüfungsnah):** Oben ein „Auszug aus dem Datenbankmodell“ in Relationen-Schreibweise
-  (Primärschlüssel unterstrichen, Fremdschlüssel mit ↑); Tabellen- und Spaltennamen sind anklickbar und werden ins
-  Lösungsfeld eingetragen. Aufgaben im Prüfungsstil („Erstellen Sie eine SQL-Anweisung, die …“) mit Punkten
-  (geschätzt nach Umfang, nicht aus echten Prüfungen). Unter „Prüfen“: Soll-Ergebnis, Lösungshinweis und ein
-  Nachschlagewerk wie der Belegsatz (alle Befehle mit Kurzerklärung). Erster Reiter „Grundlagen“ = dasselbe Lexikon.
+- **SQL-Labor (prüfungsnah):** Aufbau nach echten AP2-Prüfungen (Winter 2025/26, Sommer 2026 – nur das Format
+  übernommen, keine Prüfungsinhalte im Repository): Die Datenbank steht als „Tabelle …“ mit Spaltenköpfen und den
+  ersten Datensätzen, ohne Schlüssel-Markierung; Namen sind anklickbar und landen im Lösungsfeld. Aufgaben im
+  Prüfungsstil mit Punkten (geschätzt nach Umfang) und – bei Abfragen – einem „Ergebnisbeispiel“. Unter „Prüfen“:
+  Lösungshinweis und Nachschlagewerk im Aufbau des Belegsatzes „SQL-Syntax (Auszug)“ (Syntax | Beschreibung, eigene
+  Formulierungen). Die Übungsdatenbank kennt zusätzlich die Belegsatz-Funktionen WEEKDAY, HOUR, MINUTE, STDDEV,
+  VARIANCE und DATEADD/DATEDIFF mit Datumsteil ohne Anführungszeichen. MODIFY COLUMN und nachträgliches ADD FOREIGN
+  KEY kann SQLite nicht – im Nachschlagewerk vermerkt.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine

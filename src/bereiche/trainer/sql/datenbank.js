@@ -262,4 +262,22 @@ export function registriereFunktionen(db, heute = new Date()) {
   // DATEADD(einheit, anzahl, datum) wie SQL Server; DATE_ADD(datum, tage) vereinfacht
   db.create_function('DATEADD', (e, n, d) => (d === null ? null : datumPlus(d, Number(n), EINHEIT[String(e).toLowerCase()] ?? 'd')));
   db.create_function('DATE_ADD', (d, n) => (d === null ? null : datumPlus(d, Number(n), 'd')));
+  // Weitere Funktionen aus dem Belegsatz
+  db.create_function('WEEKDAY', (d) => (tl(d) ? (new Date(`${tl(d).slice(0, 10)}T00:00:00Z`).getUTCDay() + 6) % 7 : null));
+  db.create_function('HOUR', (d) => (tl(d) && tl(d).length >= 13 ? Number(tl(d).slice(11, 13)) : tl(d) ? 0 : null));
+  db.create_function('MINUTE', (d) => (tl(d) && tl(d).length >= 16 ? Number(tl(d).slice(14, 16)) : tl(d) ? 0 : null));
+  const streuung = (wurzel) => ({
+    init: () => [],
+    step: (werte, x) => (x === null || x === undefined ? werte : [...werte, Number(x)]),
+    finalize: (werte) => {
+      if (!werte.length) return null;
+      const m = werte.reduce((a, b) => a + b, 0) / werte.length;
+      const v = werte.reduce((a, b) => a + (b - m) ** 2, 0) / werte.length;
+      return wurzel ? Math.sqrt(v) : v;
+    },
+  });
+  if (db.create_aggregate) {
+    db.create_aggregate('STDDEV', streuung(true));
+    db.create_aggregate('VARIANCE', streuung(false));
+  }
 }

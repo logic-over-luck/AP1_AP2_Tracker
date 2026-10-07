@@ -101,13 +101,26 @@ test('Schema-Ansicht liest PK, FK und Änderungen', async () => {
   db.close();
 });
 
-test('Grundlagen-Lexikon: jeder Begriff hat eine Erklärung, keine doppelten Begriffe', () => {
+test('Nachschlagewerk: jede Syntax hat eine Beschreibung, keine doppelten Einträge, Kernbefehle enthalten', () => {
   const alle = GRUNDLAGEN.flatMap((g) => g.begriffe.map(([b]) => b));
   assert.equal(new Set(alle).size, alle.length);
-  for (const g of GRUNDLAGEN) for (const [b, e] of g.begriffe) assert.ok(b && e && e.length > 10, b);
-  // Die Kernbefehle des Katalogs stehen drin
-  for (const muss of ['SELECT … FROM', 'WHERE', 'ORDER BY', 'INNER JOIN … ON', 'LEFT JOIN', 'GROUP BY', 'HAVING', 'UNION', 'UPDATE … SET', 'DELETE FROM', 'CREATE TABLE', 'ALTER TABLE', 'CREATE INDEX', 'GRANT', 'REVOKE'])
-    assert.ok(alle.includes(muss), muss);
+  for (const g of GRUNDLAGEN) for (const [b, e] of g.begriffe) assert.ok(b && e, b);
+  const text = alle.join(' ');
+  for (const muss of ['CREATE TABLE', 'ALTER TABLE', 'DROP TABLE', 'CREATE INDEX', 'PRIMARY KEY', 'FOREIGN KEY', 'SELECT DISTINCT', 'LEFT [OUTER] JOIN', 'GROUP BY', 'HAVING', 'ORDER BY', 'EXISTS', 'UNION', 'INSERT INTO', 'UPDATE', 'DELETE FROM', 'GRANT', 'REVOKE', 'COUNT', 'DATEADD', 'DATEDIFF', 'LIKE'])
+    assert.ok(text.includes(muss), muss);
+});
+
+test('Belegsatz-Funktionen: WEEKDAY, HOUR, MINUTE, STDDEV, VARIANCE, DATEADD(DAY, …) ohne Anführungszeichen', () => {
+  const db = engine.neueDb();
+  const q = (s) => ausfuehren(db, `SELECT ${s}`).ergebnis.zeilen[0][0];
+  assert.equal(q("WEEKDAY('2026-10-05')"), 0);
+  assert.equal(q("HOUR('2024-05-01 18:30:00')"), 18);
+  assert.equal(q("MINUTE('2024-05-01 18:30:00')"), 30);
+  assert.equal(q("DATEADD(DAY, 14, '2026-01-20')"), '2026-02-03');
+  assert.equal(q("DATEDIFF(MONTH, '2026-01-01', '2026-04-01')"), 3);
+  assert.equal(ausfuehren(db, 'SELECT VARIANCE(x) FROM (SELECT 2 AS x UNION ALL SELECT 4)').ergebnis.zeilen[0][0], 1);
+  assert.equal(ausfuehren(db, 'SELECT STDDEV(x) FROM (SELECT 2 AS x UNION ALL SELECT 4)').ergebnis.zeilen[0][0], 1);
+  db.close();
 });
 
 test('Jede Aufgabe hat Punkte wie in der Prüfung', () => {
