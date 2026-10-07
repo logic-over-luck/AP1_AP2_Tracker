@@ -287,10 +287,24 @@
   margin-top: 2px;
 }
 
-/* Schmale Fenster: Leiste wird zur Schublade */
-.kopf__menue {
-  display: none;
+/* Breite Fenster: Leiste lässt sich einklappen (Knopf links in der Kopfzeile) */
+@media (min-width: 901px) {
+  .app {
+    transition: grid-template-columns var(--dauer-lang) var(--kurve);
+  }
+  .app[data-leiste-zu='true'] {
+    grid-template-columns: 0 minmax(0, 1fr);
+  }
+  .app[data-leiste-zu='true'] .leiste {
+    visibility: hidden;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
 }
+
+/* Schmale Fenster: Leiste wird zur Schublade */
 @media (max-width: 900px) {
   .app {
     grid-template-columns: minmax(0, 1fr);
@@ -306,9 +320,6 @@
   }
   .app[data-leiste-offen='true'] .leiste {
     transform: none;
-  }
-  .kopf__menue {
-    display: inline-flex;
   }
   .kopf,
   .inhalt {

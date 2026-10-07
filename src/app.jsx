@@ -4,7 +4,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { inhalt } from './daten/inhalt.js';
 import { useRoute, link, geheZu } from './router.js';
 import { useLernstand, fehlerZustand } from './lernstand/store.js';
-import { setzeEinstellung, einstellung } from './lernstand/einstellungen.js';
+import { setzeEinstellung, einstellung, useEinstellung } from './lernstand/einstellungen.js';
 import { kartenZustand, blockZustand } from './lernstand/ableiten.js';
 import { Icon, SymbolKnopf, Balken } from './ui/bausteine.jsx';
 import { Meldungen, BestaetigungsDialog, melde } from './ui/dialog.jsx';
@@ -25,7 +25,11 @@ const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkart
 export function App() {
   const route = useRoute();
   const stand = useLernstand();
-  const [leisteOffen, setLeisteOffen] = useState(false);
+  const [leisteOffen, setLeisteOffen] = useState(false); // schmale Fenster: Schublade
+  const [leisteZu, setLeisteZu] = useEinstellung('leisteZu', false); // breite Fenster: eingeklappt
+  const schmal = useSchmal();
+  // Nach einem Klick in der Schublade (Navigation) die Schublade schließen
+  useEffect(() => setLeisteOffen(false), [location.hash]);
 
   // Ohne Raum in der Adresse: zuletzt gewählten Raum öffnen
   useEffect(() => {
@@ -70,11 +74,17 @@ export function App() {
   }
 
   return (
-    <div class="app" data-leiste-offen={leisteOffen}>
+    <div class="app" data-leiste-offen={leisteOffen} data-leiste-zu={leisteZu}>
       <Leiste raum={raum} route={route} stand={stand} />
       <div class="haupt">
         <header class="kopf">
-          <SymbolKnopf class="kopf__menue" icon="panel-left-open" label="Menü" onClick={() => setLeisteOffen(!leisteOffen)} />
+          <SymbolKnopf
+            class="kopf__menue"
+            icon={(schmal ? leisteOffen : !leisteZu) ? 'panel-left-close' : 'panel-left-open'}
+            label={schmal ? (leisteOffen ? 'Menü schließen' : 'Menü öffnen') : leisteZu ? 'Seitenleiste ausklappen' : 'Seitenleiste einklappen (mehr Platz)'}
+            tipUnten
+            onClick={() => (schmal ? setLeisteOffen(!leisteOffen) : setLeisteZu(!leisteZu))}
+          />
           <nav class="pfad" aria-label="Pfad">
             <a class="pfad__raum" href={link(raum)}>
               {inhalt.raeume.get(raum).name}
@@ -176,4 +186,17 @@ function Leiste({ raum, route, stand }) {
       </div>
     </aside>
   );
+}
+
+// true, solange das Fenster so schmal ist, dass die Leiste zur Schublade wird
+function useSchmal() {
+  const abfrage = '(max-width: 900px)';
+  const [schmal, setSchmal] = useState(() => matchMedia(abfrage).matches);
+  useEffect(() => {
+    const m = matchMedia(abfrage);
+    const h = () => setSchmal(m.matches);
+    m.addEventListener('change', h);
+    return () => m.removeEventListener('change', h);
+  }, []);
+  return schmal;
 }
