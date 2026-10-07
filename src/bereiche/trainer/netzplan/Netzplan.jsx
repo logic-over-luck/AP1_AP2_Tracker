@@ -3,7 +3,7 @@
 import { useCallback } from 'preact/hooks';
 import { TrainerSeite, Uebung, Tabelle } from '../rahmen/Uebung.jsx';
 import { ERZEUGER, WERTE, WERT_NAME } from './aufgaben.js';
-import { anordnen } from './plan.js';
+import { anordnen, pfeile } from './plan.js';
 
 const SPICKZETTEL = {
   berechnen:
@@ -39,12 +39,13 @@ function Bild(props) {
 
 const KB = 176; // Knotenbreite
 const KH = 112; // Knotenhöhe
-const AX = 72; // Abstand Spalten
+const AX = 80; // Abstand Spalten
 const AY = 32; // Abstand Zeilen
 
 function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
   const plan = aufgabe.plan;
-  const { pos, kanten, spalten, zeilen } = anordnen(plan.vorgaenge);
+  const anordnung = anordnen(plan.vorgaenge);
+  const { pos, spalten, zeilen } = anordnung;
   const breite = spalten * KB + (spalten - 1) * AX;
   const hoehe = zeilen * KH + (zeilen - 1) * AY;
   const gegeben = new Set(alleGegeben ? plan.vorgaenge.map((v) => v.id) : aufgabe.gegeben);
@@ -81,28 +82,12 @@ function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
               <path d="M0 0 L10 5 L0 10 z" fill="currentColor" />
             </marker>
           </defs>
-          {kanten.map(({ von, nach, ueber }) => {
-            // Start rechts am Vorgänger, durch die Hilfspunkte (freie Lücken), Ende links am Nachfolger
-            const a = xy(von);
-            const b = xy(nach);
-            const punkte = [[a.x + KB, a.y + KH / 2], ...ueber.flatMap((h) => {
-              const p = xy(h);
-              return [[p.x, p.y + KH / 2], [p.x + KB, p.y + KH / 2]];
-            }), [b.x - 2, b.y + KH / 2]];
-            let d = `M${punkte[0][0]} ${punkte[0][1]}`;
-            for (let i = 1; i < punkte.length; i++) {
-              const [x1, y1] = punkte[i - 1];
-              const [x2, y2] = punkte[i];
-              if (i % 2 === 0) d += ` L${x2} ${y2}`;
-              else {
-                const mx = (x1 + x2) / 2;
-                d += ` C${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
-              }
-            }
-            const v = plan.vorgaenge.find((x) => x.id === nach);
-            const krit = kritisch.has(von) && kritisch.has(nach) && plan.vorgaenge.find((x) => x.id === von).fez === v.faz;
-            return <path key={`${von}-${nach}`} class={`netz__pfeil ${krit ? 'netz__pfeil--kritisch' : ''}`} d={d} marker-end="url(#np-spitze)" />;
-          })}
+          {pfeile(anordnung, { KB, KH, AX, AY })
+            .map((p) => ({ ...p, krit: kritisch.has(p.von) && kritisch.has(p.nach) && plan.vorgaenge.find((x) => x.id === p.von).fez === plan.vorgaenge.find((x) => x.id === p.nach).faz }))
+            .sort((a, b) => a.krit - b.krit) // kritischer Weg zuletzt, damit er obenauf liegt
+            .map(({ von, nach, d, krit }) => (
+              <path key={`${von}-${nach}`} class={`netz__pfeil ${krit ? 'netz__pfeil--kritisch' : ''}`} d={d} marker-end="url(#np-spitze)" />
+            ))}
         </svg>
         {plan.vorgaenge.map((v) => {
           const p = xy(v.id);

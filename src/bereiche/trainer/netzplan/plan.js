@@ -229,3 +229,74 @@ export function liesWeg(text) {
     .replace(/[^A-Z]/g, '')
     .split('');
 }
+
+// Pfeile wie in IHK-Prüfungen: gerade und rechtwinklig. Waagerecht aus dem Vorgänger,
+// in der Lücke zwischen zwei Spalten senkrecht, waagerecht in den Nachfolger.
+// Alle Pfeile eines Vorgängers teilen sich eine senkrechte Bahn (Verzweigung wie ein Baum);
+// Vorgänger, deren Bahnen sich sonst überdecken würden, bekommen eine eigene Bahn daneben.
+export function pfeile({ pos, kanten, zeilen }, { KB, KH, AX, AY }) {
+  const xy = (id) => {
+    const p = pos.get(id);
+    return { x: p.x * (KB + AX), y: p.y * (KH + AY) + ((zeilen - p.anzahl) * (KH + AY)) / 2 + KH / 2 };
+  };
+  // Jede Kante in Abschnitte zwischen zwei benachbarten Spalten zerlegen
+  const abschnitte = [];
+  for (const k of kanten) {
+    const kette = [k.von, ...k.ueber, k.nach];
+    for (let i = 0; i < kette.length - 1; i++) abschnitte.push({ kante: k, von: kette[i], nach: kette[i + 1], spalte: pos.get(kette[i]).x, y1: xy(kette[i]).y, y2: xy(kette[i + 1]).y });
+  }
+  const bahn = new Map();
+  const bahnenJeSpalte = new Map();
+  const spalten = [...new Set(abschnitte.map((a) => a.spalte))];
+  for (const s of spalten) {
+    const hier = abschnitte.filter((a) => a.spalte === s);
+    const gruppen = [...new Set(hier.filter((a) => a.y1 !== a.y2).map((a) => a.von))].sort((a, b) => xy(a).y - xy(b).y);
+    const vergeben = new Map(); // von -> Bahnnummer
+    // Vorgänger mit genau denselben Nachfolgern dürfen sich eine Bahn teilen – das liest sich eindeutig
+    const ziele = (g) => hier.filter((a) => a.von === g).map((a) => a.nach).sort().join();
+    const konflikt = (g, n) =>
+      hier.some((e) => {
+        if (e.von !== g) return false;
+        return hier.some((f) => {
+          if (f.von === g || !vergeben.has(f.von) || f.y1 === f.y2) return false;
+          const m = vergeben.get(f.von);
+          const ueberlapp = (a1, a2, b1, b2) => Math.max(Math.min(a1, a2), Math.min(b1, b2)) < Math.min(Math.max(a1, a2), Math.max(b1, b2));
+          // gleiche Bahn, senkrechte Stücke überdecken sich, aber anderes Ziel
+          if (m === n && f.nach !== e.nach && ziele(g) !== ziele(f.von) && e.y1 !== e.y2 && ueberlapp(e.y1, e.y2, f.y1, f.y2)) return true;
+          // waagerechter Ausgang von e liegt auf dem waagerechten Eingang von f (gleiche Höhe)
+          if (e.y1 === f.y2 && m < n) return true;
+          if (f.y1 === e.y2 && n < m) return true;
+          return false;
+        });
+      });
+    for (const g of gruppen) {
+      let n = 0;
+      while (konflikt(g, n) && n < 6) n++;
+      vergeben.set(g, n);
+    }
+    const anzahl = Math.max(0, ...vergeben.values()) + 1;
+    bahnenJeSpalte.set(s, anzahl);
+    for (const [g, n] of vergeben) bahn.set(`${s}:${g}`, n);
+  }
+  const lauf = new Map(kanten.map((k) => [k, []]));
+  for (const a of abschnitte) {
+    const x1 = xy(a.von).x + KB;
+    const x2 = xy(a.nach).x;
+    const ziel = a.nach === a.kante.nach ? x2 - 2 : x2;
+    const teile = [];
+    if (a.y1 === a.y2) teile.push(`H${ziel}`);
+    else {
+      const anzahl = bahnenJeSpalte.get(a.spalte);
+      const n = bahn.get(`${a.spalte}:${a.von}`);
+      const bx = Math.round(x1 + (AX * (n + 1)) / (anzahl + 1));
+      teile.push(`H${bx}`, `V${a.y2}`, `H${ziel}`);
+    }
+    // Durch einen Hilfspunkt (übersprungene Spalte) geradeaus weiter
+    if (a.nach !== a.kante.nach) teile.push(`H${x2 + KB}`);
+    lauf.get(a.kante).push({ start: [x1, a.y1], teile });
+  }
+  return kanten.map((k) => {
+    const s = lauf.get(k);
+    return { von: k.von, nach: k.nach, d: `M${s[0].start[0]} ${s[0].start[1]} ${s.flatMap((x) => x.teile).join(' ')}` };
+  });
+}
