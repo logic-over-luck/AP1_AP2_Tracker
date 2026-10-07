@@ -128,8 +128,10 @@ nächsten offenen Punkt weiter.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
 - **SQL-Labor (prüfungsnah):** Aufbau nach echten AP2-Prüfungen (Winter 2025/26, Sommer 2026 – nur das Format
-  übernommen, keine Prüfungsinhalte im Repository): Die Datenbank steht als „Tabelle …“ mit Spaltenköpfen und den
-  ersten Datensätzen, ohne Schlüssel-Markierung; Namen sind anklickbar und landen im Lösungsfeld. Aufgaben im
+  übernommen, keine Prüfungsinhalte im Repository). Das Schema steht kompakt direkt über dem Lösungsfeld: je Tabelle
+  eine Karte mit Spalten, Typ und Schlüsselsymbol (anders als in der Prüfung, dort sind Schlüssel nicht markiert);
+  Namen sind anklickbar und landen im Lösungsfeld. Die ersten Datensätze jeder Tabelle („Beispieldaten“) lassen sich
+  aufklappen; die Wahl merkt sich der Browser. Aufgaben im
   Prüfungsstil mit Punkten (geschätzt nach Umfang) und – bei Abfragen – einem „Ergebnisbeispiel“. Unter „Prüfen“:
   Lösungshinweis und Nachschlagewerk im Aufbau des Belegsatzes „SQL-Syntax (Auszug)“ (Syntax | Beschreibung, eigene
   Formulierungen). Die Übungsdatenbank kennt zusätzlich die Belegsatz-Funktionen WEEKDAY, HOUR, MINUTE, STDDEV,

@@ -2091,6 +2091,27 @@ body {
   }
 }
 @media (max-width: 560px) {
+  /* SQL-Schema: zwei Spalten Karten, Typen ausgeblendet */
+  .aufgabe .sql-schema {
+    padding: var(--s-2);
+  }
+  .sql-schema__tipp,
+  .sql-tab__typ {
+    display: none;
+  }
+  .sql-schema .sql-schema__karten {
+    columns: 2;
+  }
+  .sql-schema .sql-tab__spalte {
+    grid-template-columns: 12px minmax(0, 1fr);
+    gap: 4px;
+    padding: 2px 6px;
+    font-size: 11.5px;
+  }
+  .sql-schema .sql-tab__kopf {
+    padding: 4px 6px;
+    font-size: 12.5px;
+  }
   .rb__tabelle td.rb__zelle {
     min-width: 96px;
   }

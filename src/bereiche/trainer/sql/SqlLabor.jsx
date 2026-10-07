@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { TrainerSeite, Spickzettel } from '../rahmen/Uebung.jsx';
 import { Icon, Knopf, Kbd, Rich, Marke, Aufklapp } from '../../../ui/bausteine.jsx';
 import { erfasse, useLernstand } from '../../../lernstand/store.js';
-import { einstellung, setzeEinstellung } from '../../../lernstand/einstellungen.js';
+import { einstellung, setzeEinstellung, useEinstellung } from '../../../lernstand/einstellungen.js';
 import { ladeEngine } from './laden.js';
 import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
@@ -259,7 +259,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
   const ok = pruefung?.ok;
   return (
     <div class="sql__einspaltig">
-      <DatenbankTabellen schema={basis.schema} einfuegen={einfuegen} />
       <section class={`flaeche flaeche--gross aufgabe ${ok ? 'aufgabe--fertig' : ''}`}>
         <div class="zeile">
           <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">Aufgabe {nr}</div>
@@ -270,21 +269,24 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
           )}
           <span class="sql-punkte">{aufgabe.punkte} Punkte</span>
         </div>
-        <div class="aufgabe__text">
-          <Rich text={aufgabe.text} />
-        </div>
-        {basis.soll && (
-          <div class="sql-beispiel-ergebnis">
-            <span class="sql-beispiel-ergebnis__titel">Ergebnisbeispiel:</span>
-            <ErgebnisTabelle ergebnis={basis.soll} grenze={3} />
+        <div class="sql-aufgabe-kopf">
+          <div class="aufgabe__text">
+            <Rich text={aufgabe.text} />
           </div>
-        )}
+          {basis.soll && (
+            <div class="sql-beispiel-ergebnis">
+              <span class="sql-beispiel-ergebnis__titel">Ergebnisbeispiel:</span>
+              <ErgebnisTabelle ergebnis={basis.soll} grenze={3} />
+            </div>
+          )}
+        </div>
         {rechte && (
           <p class="trainer-hinweis">
             <Icon name="info" groesse={14} /> Die Übungsdatenbank kennt keine Benutzer. Deine Anweisung wird deshalb zerlegt und Teil für Teil geprüft:
             Befehl, Rechte, Tabelle, Benutzer, Weitergabe.
           </p>
         )}
+        <Schema schema={basis.schema} einfuegen={einfuegen} />
         <label class="sql-editor">
           <span class="sql-editor__titel">Lösung</span>
           <textarea
@@ -412,7 +414,6 @@ function FreiesLabor({ engine }) {
   return (
     <div class="sql">
       <div class="sql__einspaltig">
-        <DatenbankTabellen schema={schema} einfuegen={einfuegen} />
         <section class="flaeche flaeche--gross aufgabe">
           <div class="ueberschrift-klein ueberschrift-klein--akzent">Freies Labor</div>
           <p class="aufgabe__text text-2">
@@ -425,6 +426,7 @@ function FreiesLabor({ engine }) {
               </button>
             ))}
           </div>
+          <Schema schema={schema} einfuegen={einfuegen} />
           <label class="sql-editor">
             <span class="sr-only">SQL-Anweisung</span>
             <textarea
@@ -664,58 +666,94 @@ export function ErgebnisTabelle({ ergebnis, grenze = GRENZE }) {
   );
 }
 
-// Wie in der Prüfung: jede Tabelle mit Spaltenköpfen und den ersten Datensätzen, ohne Schlüssel-Markierung –
-// welche Spalten zusammengehören, erkennt man wie dort an den Namen. Klick auf Tabellen- oder Spaltennamen
-// trägt ihn ins Lösungsfeld ein.
-function DatenbankTabellen({ schema, einfuegen }) {
+// Das Schema der Übungsdatenbank als Karten wie in einem Datenbank-Werkzeug: je Tabelle ihre Spalten mit Typ,
+// Schlüssel als Symbol. Klick auf einen Namen trägt ihn ins Lösungsfeld ein. Die ersten Datensätze jeder Tabelle
+// gibt es auf Wunsch darunter (wie im Auszug der Prüfung).
+function Schema({ schema, einfuegen }) {
+  const [daten, setDaten] = useEinstellung('sql.beispieldaten', false);
   return (
-    <section class="flaeche sql-db">
-      <div class="ueberschrift-klein ueberschrift-klein--akzent">Die folgenden Tabellen stehen auszugsweise zur Verfügung</div>
-      <div class="sql-db__raster">
+    <div class="sql-schema">
+      <div class="sql-schema__kopf">
+        <Icon name="database" groesse={15} />
+        <span class="sql-schema__titel">Datenbank</span>
+        <span class="sql-schema__tipp wachsen">Namen anklicken fügt sie ein</span>
+        <Knopf variante="geist" groesse="s" icon="table" onClick={() => setDaten(!daten)} aria-expanded={daten}>
+          {daten ? 'Beispieldaten ausblenden' : 'Beispieldaten'}
+        </Knopf>
+      </div>
+      <div class="sql-schema__karten">
         {schema.map((t) => (
-          <div key={t.name} class="sql-db__tabelle">
-            <div class="sql-db__titel">
-              Tabelle{' '}
-              <button class="sql-db__name" onClick={() => einfuegen(t.name)}>
-                {t.name}
-              </button>
-            </div>
-            <div class="atabelle-huelle">
-              <table class="atabelle sql-db__daten">
-                <thead>
-                  <tr>
-                    {t.spalten.map(([name, typ]) => (
-                      <th key={name}>
-                        <button class="sql-db__name" title={typ} onClick={() => einfuegen(name)}>
-                          {name}
-                        </button>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {(t.beispiel?.zeilen ?? []).map((z, i) => (
-                    <tr key={i}>
-                      {z.map((c, j) => (
-                        <td key={j}>{wertText(c)}</td>
-                      ))}
-                    </tr>
-                  ))}
-                  {t.zeilen > (t.beispiel?.zeilen.length ?? 0) && (
-                    <tr>
-                      {t.spalten.map(([name], j) => (
-                        <td key={name}>{j === 0 ? '…' : ''}</td>
-                      ))}
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
+          <div key={t.name} class="sql-tab">
+            <button class="sql-tab__kopf" onClick={() => einfuegen(t.name)} title={`${t.zeilen} Datensätze`}>
+              <Icon name="table-2" groesse={13} />
+              <span class="sql-tab__name">{t.name}</span>
+            </button>
+            {t.spalten.map(([name, typ, marken]) => {
+              const pk = marken.includes('PK');
+              const fk = marken.match(/FK → (\w+)/)?.[1];
+              return (
+                <button key={name} class="sql-tab__spalte" onClick={() => einfuegen(name)} title={[pk && 'Primärschlüssel', fk && `Fremdschlüssel → ${fk}`].filter(Boolean).join(', ') || typ}>
+                  <span class={`sql-tab__marke ${pk ? 'sql-tab__marke--pk' : ''}`}>{pk ? <Icon name="key-round" groesse={12} /> : fk ? <Icon name="link-2" groesse={12} /> : null}</span>
+                  <span class="sql-tab__spaltenname">{name}</span>
+                  <span class="sql-tab__typ">{typ.toLowerCase()}</span>
+                </button>
+              );
+            })}
           </div>
         ))}
       </div>
-      <p class="gedaempft sql-db__hinweis">Klick auf einen Tabellen- oder Spaltennamen trägt ihn ins Lösungsfeld ein.</p>
-    </section>
+      <Aufklapp offen={daten}>
+        <Beispieldaten schema={schema} einfuegen={einfuegen} />
+      </Aufklapp>
+    </div>
+  );
+}
+
+function Beispieldaten({ schema, einfuegen }) {
+  return (
+    <div class="sql-db__raster">
+      {schema.map((t) => (
+        <div key={t.name} class="sql-db__tabelle">
+          <div class="sql-db__titel">
+            Tabelle{' '}
+            <button class="sql-db__name" onClick={() => einfuegen(t.name)}>
+              {t.name}
+            </button>
+          </div>
+          <div class="atabelle-huelle">
+            <table class="atabelle sql-db__daten">
+              <thead>
+                <tr>
+                  {t.spalten.map(([name, typ]) => (
+                    <th key={name}>
+                      <button class="sql-db__name" title={typ} onClick={() => einfuegen(name)}>
+                        {name}
+                      </button>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {(t.beispiel?.zeilen ?? []).map((z, i) => (
+                  <tr key={i}>
+                    {z.map((c, j) => (
+                      <td key={j}>{wertText(c)}</td>
+                    ))}
+                  </tr>
+                ))}
+                {t.zeilen > (t.beispiel?.zeilen.length ?? 0) && (
+                  <tr>
+                    {t.spalten.map(([name], j) => (
+                      <td key={name}>{j === 0 ? '…' : ''}</td>
+                    ))}
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 

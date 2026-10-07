@@ -1315,18 +1315,13 @@ button.codezeile:hover {
   font-weight: 700;
 }
 
-/* SQL: Tabellen mit Beispieldaten wie in der Prüfung */
-.sql-db {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-3);
-  padding: var(--s-4) var(--s-5);
-}
+/* SQL: Beispieldaten (aufklappbar unter dem Schema) */
 .sql-db__raster {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-4) var(--s-5);
   align-items: flex-start;
+  padding-top: var(--s-3);
 }
 .sql-db__tabelle {
   display: flex;
@@ -1367,8 +1362,114 @@ button.codezeile:hover {
   font-size: 12px;
   color: var(--text);
 }
-.sql-db__hinweis {
+
+/* SQL: Schema als Tabellenkarten direkt über dem Lösungsfeld */
+.sql-schema {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sql-schema__kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--akzent);
+  min-height: 28px;
+}
+.sql-schema__titel {
+  font-size: var(--t-s);
+  font-weight: 650;
+  color: var(--text);
+}
+.sql-schema__tipp {
   font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sql-schema__karten {
+  columns: 172px;
+  column-gap: var(--s-2);
+}
+.sql-tab {
+  break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--s-2);
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-1);
+  overflow: hidden;
+}
+.sql-tab__kopf {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--linie-2);
+  background: var(--akzent-weich);
+  color: var(--akzent);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+}
+.sql-tab__name {
+  color: var(--text);
+}
+.sql-tab__spalte {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.sql-tab__spalte + .sql-tab__spalte {
+  border-top: 1px solid var(--linie);
+}
+.sql-tab__kopf:hover,
+.sql-tab__spalte:hover {
+  background: var(--akzent);
+  color: #fff;
+}
+.sql-tab__kopf:hover .sql-tab__name,
+.sql-tab__spalte:hover .sql-tab__typ,
+.sql-tab__spalte:hover .sql-tab__marke {
+  color: inherit;
+}
+.sql-tab__marke {
+  display: flex;
+  color: var(--text-3);
+}
+.sql-tab__marke--pk {
+  color: var(--warn);
+}
+.sql-tab__spaltenname {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sql-tab__typ {
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+.sql-aufgabe-kopf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+  align-items: flex-start;
+}
+.sql-aufgabe-kopf .aufgabe__text {
+  flex: 1 1 320px;
 }
 .sql-beispiel-ergebnis {
   display: flex;
