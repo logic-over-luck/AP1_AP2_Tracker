@@ -1,0 +1,9 @@
+# Netlify stellt nur die fertige App online – nicht den Quellcode oder die Inhaltsdatei.
+# Lernstudio.html ist schon gebaut (npm run build) und liegt im Repository.
+[build]
+  command = "mkdir -p web && cp Lernstudio.html web/index.html"
+  publish = "web"
+
+[build.environment]
+  # Kein Bauen nötig – Abhängigkeiten nicht installieren
+  NETLIFY_SKIP_INSTALL = "true"
