@@ -1,0 +1,925 @@
+<title>AP1 Lerntracker</title>
+<style>
+/* Aufbau: schmale Leiste links, eine Inhaltsspalte fester Breite (44rem), Gliederung über Abstand und Schriftgröße.
+   Jede Stilrichtung setzt nur Tokens; alle Bausteine lesen ausschließlich diese Tokens. */
+:root { color-scheme: dark; }
+
+/* A · Notizbuch: zurückhaltend, Serifenschrift, Haarlinien, kaum Spiel */
+:root, :root[data-stil="notizbuch"] {
+  --font: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Iowan Old Style", Georgia, serif;
+  --fs-1: .875rem; --fs-2: 1rem; --fs-3: 1.25rem; --fs-4: 1.75rem;
+  --lh: 1.6; --w-kopf: 600;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 48px; --s6: 64px;
+  --radius: 4px;
+  --dur: 220ms; --ease: cubic-bezier(.2,.7,.2,1); --ease-pop: cubic-bezier(.2,.7,.2,1);
+  --einzug: 40px; --haken: 18px; --balken: 2px;
+  --bg: #15171a; --leiste: #111316; --flaeche: #1c1f23; --linie: #2b2f35; --hover: rgba(220,228,240,.035);
+  --text: #e6e3dc; --gedaempft: #a1a5ad; --blass: #686d76;
+  --akzent: #8fb3d9; --akzent-tinte: #0e1620; --akzent-hauch: rgba(143,179,217,.13); --glut: transparent;
+  --ap2: #c4a3d6; --wiso: #a6c79a;
+}
+/* B · Konsole: Monospace, harte Kanten, Rasterschritte, mittleres Spiel */
+:root[data-stil="konsole"] {
+  --font: "Cascadia Mono", "Cascadia Code", Consolas, "SF Mono", Menlo, "DejaVu Sans Mono", "Liberation Mono", ui-monospace, monospace;
+  --fs-1: .8125rem; --fs-2: .875rem; --fs-3: 1rem; --fs-4: 1.375rem;
+  --lh: 1.6; --w-kopf: 700;
+  --s1: 4px; --s2: 12px; --s3: 20px; --s4: 28px; --s5: 40px; --s6: 56px;
+  --radius: 0px;
+  --dur: 120ms; --ease: linear; --ease-pop: steps(3, end);
+  --einzug: 32px; --haken: 16px; --balken: 8px;
+  --bg: #0f100d; --leiste: #0b0c09; --flaeche: #171812; --linie: #2e3026; --hover: rgba(232,163,61,.06);
+  --text: #e2dfcf; --gedaempft: #9d9a89; --blass: #67654f;
+  --akzent: #e8a33d; --akzent-tinte: #1a1205; --akzent-hauch: rgba(232,163,61,.13); --glut: transparent;
+  --ap2: #5fb6d9; --wiso: #d9786a;
+}
+/* C · Level: technische Grotesk, weiche Flächen, federnde Effekte, deutliches Spiel */
+:root[data-stil="level"] {
+  --font: Bahnschrift, "DIN Alternate", "Avenir Next", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-1: .8125rem; --fs-2: .9375rem; --fs-3: 1.25rem; --fs-4: 2rem;
+  --lh: 1.55; --w-kopf: 600;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 40px; --s5: 56px; --s6: 80px;
+  --radius: 12px;
+  --dur: 300ms; --ease: cubic-bezier(.22,.8,.24,1); --ease-pop: cubic-bezier(.34,1.56,.64,1);
+  --einzug: 40px; --haken: 20px; --balken: 8px;
+  --bg: #0f111a; --leiste: #0b0d14; --flaeche: #171a26; --linie: #272b3c; --hover: rgba(95,224,176,.05);
+  --text: #eceef7; --gedaempft: #a3a8bf; --blass: #646a84;
+  --akzent: #5fe0b0; --akzent-tinte: #052219; --akzent-hauch: rgba(95,224,176,.13); --glut: rgba(95,224,176,.45);
+  --ap2: #ff8a78; --wiso: #ffcf5c;
+}
+:root { --kante: calc(var(--einzug) + var(--s2)); --leiste-b: 112px; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scrollbar-gutter: stable; background: var(--bg); }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: var(--fs-2); line-height: var(--lh);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+h1, h2, h3, p, ul { margin: 0; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+button:disabled { cursor: not-allowed; }
+:focus-visible { outline: 2px solid var(--akzent); outline-offset: 2px; }
+svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* ---------- Rahmen ---------- */
+.app { display: grid; grid-template-columns: var(--leiste-b) minmax(0, 1fr); min-height: 100vh; }
+.leiste {
+  position: sticky; top: 0; height: 100vh; z-index: 10;
+  display: flex; flex-direction: column; gap: var(--s4);
+  padding: var(--s3) var(--s1); background: var(--leiste); border-right: 1px solid var(--linie);
+}
+.nav { display: flex; flex-direction: column; gap: var(--s1); }
+.nav-punkt {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: var(--s2) 4px; border-radius: var(--radius);
+  color: var(--gedaempft); font-size: var(--fs-1); line-height: 1.2; text-decoration: none;
+  transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.nav-punkt:not([aria-disabled="true"]):hover { color: var(--text); background: var(--hover); }
+.nav-punkt[aria-current="page"] { color: var(--text); background: var(--akzent-hauch); }
+.nav-punkt[aria-current="page"] .ico { color: var(--akzent); }
+.nav-punkt[aria-disabled="true"] { opacity: .36; cursor: not-allowed; }
+
+/* Prüfungskennung oben links */
+.pruefung { position: relative; }
+.pruefung-knopf {
+  display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; min-height: 40px;
+  border-radius: var(--radius); color: var(--gedaempft); font-size: var(--fs-1); font-weight: 600; letter-spacing: .08em;
+  transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.pruefung-knopf:hover, .pruefung-knopf[aria-expanded="true"] { color: var(--text); background: var(--hover); }
+.pruefung-knopf .pfeil { width: 16px; height: 16px; }
+.pruefung-menue {
+  position: absolute; top: calc(100% + var(--s1)); left: 0; z-index: 30;
+  width: 20rem; max-width: calc(100vw - 32px); padding: var(--s1);
+  display: grid; gap: 2px;
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+  opacity: 0; transform: translateY(-4px); visibility: hidden;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
+.pruefung-menue[data-offen="true"] { opacity: 1; transform: none; visibility: visible; transition-delay: 0s; }
+.pm-punkt {
+  display: grid; grid-template-columns: 8px minmax(0, 1fr) 16px; align-items: center; gap: var(--s2);
+  width: 100%; padding: var(--s1) var(--s2); border-radius: var(--radius);
+  transition: background-color var(--dur) var(--ease);
+}
+.pm-punkt:hover { background: var(--hover); }
+.pm-farbe { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.pm-name { font-weight: 600; }
+.pm-titel { display: block; font-size: var(--fs-1); color: var(--gedaempft); line-height: 1.35; }
+.pm-punkt .ico { width: 16px; height: 16px; color: var(--akzent); }
+.pm-hinweis { margin-top: 4px; padding: var(--s1) var(--s2) 4px; border-top: 1px solid var(--linie); font-size: var(--fs-1); color: var(--blass); }
+
+/* ---------- Inhaltsspalte ---------- */
+.haupt { min-width: 0; padding: var(--s6) var(--s4) 160px; }
+.spalte { width: min(100%, 44rem); margin-inline: auto; }
+.seitenkopf { display: grid; gap: var(--s2); padding-bottom: var(--s5); }
+.eyebrow, .label { font-size: var(--fs-1); color: var(--gedaempft); }
+.titel { font-size: var(--fs-4); line-height: 1.2; font-weight: var(--w-kopf); text-wrap: balance; }
+.lead { color: var(--gedaempft); max-width: 60ch; }
+.stand { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s1) var(--s2); margin-top: var(--s1); font-size: var(--fs-1); color: var(--gedaempft); }
+.zahl { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
+
+/* Fortschrittsbalken */
+.balken { position: relative; display: block; height: var(--balken); background: var(--linie); border-radius: var(--radius); overflow: hidden; }
+.balken > i {
+  position: absolute; inset: 0 auto 0 0; width: calc(var(--p, 0) * 100%);
+  background: var(--akzent); border-radius: inherit;
+  transition: width var(--dur) var(--ease);
+}
+
+/* Ordner */
+.ordner { border-top: 1px solid var(--linie); }
+.ordner:last-child { border-bottom: 1px solid var(--linie); }
+.ordner-kopf { font: inherit; }
+.ordner-knopf {
+  width: 100%; min-height: 56px; padding: var(--s3) 0;
+  display: grid; grid-template-columns: var(--einzug) minmax(0, 1fr) auto 4rem 24px; align-items: center; column-gap: var(--s2);
+}
+.ordner-nr { position: relative; display: grid; place-items: start; color: var(--blass); font-size: var(--fs-1); font-variant-numeric: tabular-nums; }
+.ordner-nr .ico { display: none; width: 18px; height: 18px; color: var(--akzent); stroke-width: 2; }
+.ordner[data-fertig] .nr-zahl { display: none; }
+.ordner[data-fertig] .ordner-nr .ico { display: block; }
+.ordner-titel { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; text-wrap: balance; }
+.ordner-stand { font-size: var(--fs-1); color: var(--gedaempft); white-space: nowrap; }
+.ordner-stand .zahl { font-weight: 400; }
+.balken.mini { height: min(var(--balken), 4px); }
+.ordner-knopf:hover .ordner-titel { color: var(--akzent); }
+.ordner-titel { transition: color var(--dur) var(--ease); }
+
+.block { display: grid; gap: var(--s1); padding-bottom: var(--s3); }
+.block-titel { padding-left: var(--kante); }
+.sp-liste { list-style: none; padding: 0; margin: 0; display: grid; }
+
+/* Stichpunkt */
+.sp-zeile {
+  display: grid; grid-template-columns: var(--einzug) minmax(0, 1fr); align-items: start; column-gap: var(--s2);
+  border-radius: var(--radius); transition: background-color var(--dur) var(--ease);
+}
+.sp-zeile:hover { background: var(--hover); }
+.haken { display: flex; align-items: center; justify-content: flex-start; width: 100%; height: 40px; padding-left: 0; }
+.haken-box {
+  display: grid; place-items: center; width: var(--haken); height: var(--haken);
+  border: 1.5px solid var(--blass); border-radius: min(var(--radius), calc(var(--haken) / 2));
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.haken-box svg { width: 100%; height: 100%; fill: none; stroke: var(--akzent-tinte); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.haken-box path { stroke-dasharray: 16; stroke-dashoffset: 16; transition: stroke-dashoffset var(--dur) var(--ease); }
+.haken:hover .haken-box { border-color: var(--akzent); }
+.haken[aria-checked="true"] .haken-box { background: var(--akzent); border-color: var(--akzent); }
+.haken[aria-checked="true"] path { stroke-dashoffset: 0; transition-delay: calc(var(--dur) / 3); }
+.haken:disabled .haken-box { border-color: var(--linie); background: var(--hover); }
+.haken:disabled:hover .haken-box { border-color: var(--linie); }
+
+.sp-knopf {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto 24px; align-items: start; column-gap: var(--s2);
+  padding-block: calc((40px - var(--fs-2) * var(--lh)) / 2); padding-right: var(--s1); min-height: 40px;
+}
+.sp-titel { transition: color var(--dur) var(--ease); overflow-wrap: anywhere; }
+.sp[data-erledigt] .sp-titel { color: var(--gedaempft); }
+.art { font-size: var(--fs-1); color: var(--gedaempft); white-space: nowrap; line-height: calc(var(--fs-2) * var(--lh)); }
+.pfeil { display: grid; place-items: center; width: 24px; height: calc(var(--fs-2) * var(--lh)); color: var(--blass); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
+.pfeil::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+[aria-expanded="true"] > .pfeil { transform: rotate(180deg); color: var(--akzent); }
+.sp-knopf:hover .pfeil, .ordner-knopf:hover .pfeil { color: var(--text); }
+
+/* Aufklappen: schiebt den Rest weich nach unten */
+.klapp { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur) var(--ease); }
+.klapp[data-offen="true"] { grid-template-rows: 1fr; }
+.klapp-innen { min-height: 0; overflow: hidden; opacity: 0; transition: opacity var(--dur) var(--ease); }
+.klapp[data-offen="true"] > .klapp-innen { opacity: 1; }
+
+.sp-detail { display: grid; gap: var(--s3); padding: var(--s1) var(--s1) var(--s4) var(--kante); }
+.feld { display: grid; gap: var(--s1); }
+.rahmen { max-width: 62ch; }
+.koennen { list-style: none; padding: 0; display: grid; gap: var(--s1); max-width: 62ch; }
+.koennen li { position: relative; padding-left: 1.25em; }
+.koennen li::before { content: "–"; position: absolute; left: 0; color: var(--blass); }
+.aktionen { display: flex; flex-wrap: wrap; gap: var(--s2); }
+
+/* Knöpfe: zwei Arten */
+.knopf {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s1);
+  min-height: 40px; padding: 0 var(--s3); border: 1px solid transparent; border-radius: var(--radius);
+  font-size: var(--fs-1); font-weight: 600; white-space: nowrap;
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease-pop);
+}
+.knopf.primaer { background: var(--akzent); color: var(--akzent-tinte); }
+.knopf.primaer:hover, .knopf.primaer.ist-hover { background: color-mix(in srgb, var(--akzent) 84%, white); }
+.knopf.primaer:active, .knopf.primaer.ist-aktiv { background: color-mix(in srgb, var(--akzent) 78%, black); transform: translateY(1px); }
+.knopf.sekundaer { border-color: var(--linie); color: var(--text); }
+.knopf.sekundaer:hover, .knopf.sekundaer.ist-hover { border-color: var(--gedaempft); background: var(--hover); }
+.knopf.sekundaer:active, .knopf.sekundaer.ist-aktiv { background: var(--akzent-hauch); border-color: var(--akzent); transform: translateY(1px); }
+.knopf:disabled, .knopf:disabled:hover { background: transparent; border-color: var(--linie); color: var(--blass); transform: none; box-shadow: none; }
+.knopf.primaer:disabled { background: var(--linie); border-color: var(--linie); }
+.ist-hover, .ist-aktiv { pointer-events: none; }
+
+/* Karte: die eine Art Karte */
+.karte { display: grid; gap: var(--s2); padding: var(--s3); background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); }
+.karte-titel { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; text-wrap: balance; }
+.karte-meta { font-size: var(--fs-1); color: var(--gedaempft); }
+
+/* Rang-Chip im Kopf (nur Konsole und Level) */
+.rang-chip { display: inline-flex; align-items: center; gap: var(--s1); color: var(--gedaempft); }
+
+/* ---------- Bausteine-Seite ---------- */
+.bs { display: grid; gap: var(--s3); padding-block: var(--s5); border-top: 1px solid var(--linie); }
+.bs-kopf { display: grid; gap: var(--s1); }
+.bs h2 { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; }
+.bs-text { font-size: var(--fs-1); color: var(--gedaempft); max-width: 60ch; }
+.zustand-name { font-size: var(--fs-1); color: var(--blass); }
+.scroll-x { overflow-x: auto; }
+.knopf-raster { display: grid; grid-template-columns: 6rem repeat(4, minmax(7.5rem, 1fr)); gap: var(--s2); align-items: center; min-width: 38rem; }
+.muster-reihe { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); }
+.muster { display: flex; align-items: center; gap: var(--s1); }
+.muster .haken { width: auto; }
+.zwei { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+.stapel { display: grid; gap: var(--s2); }
+.leer { display: grid; justify-items: start; align-content: start; gap: var(--s1); padding: var(--s3); border: 1px dashed var(--linie); border-radius: var(--radius); }
+.leer .ico { width: 24px; height: 24px; color: var(--blass); margin-bottom: var(--s1); }
+.leer-titel { font-weight: 600; }
+.leer-text { font-size: var(--fs-1); color: var(--gedaempft); }
+.gesperrt { color: var(--blass); }
+.gesperrt .leer-titel { color: var(--gedaempft); }
+.gesperrt { border-style: solid; background: var(--hover); }
+
+/* Rangabzeichen */
+.raenge { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--s2); }
+.abz { display: grid; justify-items: center; align-content: start; gap: var(--s1); text-align: center; }
+.abz-form { position: relative; display: grid; place-items: center; width: 56px; height: 56px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--gedaempft); }
+.abz-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); fill: none; stroke-width: 1.5; }
+.abz-ring .grund { stroke: var(--linie); }
+.abz-ring .voll { stroke: var(--akzent); stroke-dasharray: 145; stroke-dashoffset: 145; }
+.abz-erreicht .abz-ring .voll, .abz-aktuell .abz-ring .voll { stroke-dashoffset: 0; }
+.abz-erreicht .abz-form { color: var(--text); }
+.abz-aktuell .abz-form { color: var(--akzent); }
+.abz-gesperrt .abz-ring .grund { stroke-dasharray: 3 4; }
+.abz-gesperrt .abz-form { color: var(--blass); }
+.abz-schloss { display: none; }
+.abz-name { font-size: var(--fs-1); color: var(--gedaempft); line-height: 1.3; overflow-wrap: anywhere; }
+.abz-aktuell .abz-name { color: var(--text); font-weight: 600; }
+.abz-gesperrt .abz-name { color: var(--blass); }
+.abz-gross .abz-form { width: 96px; height: 96px; font-size: var(--fs-4); }
+
+.rang-weg { display: grid; gap: var(--s1); }
+
+/* Aktivitätsübersicht */
+.aktiv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s1); }
+.aktiv-tage { display: grid; grid-template-rows: repeat(7, 14px); gap: 3px; font-size: var(--fs-1); line-height: 14px; color: var(--blass); }
+.raster { display: grid; grid-template-rows: repeat(7, 14px); grid-auto-flow: column; grid-auto-columns: 14px; gap: 3px; }
+.raster i { border-radius: calc(var(--radius) / 4); background: var(--linie); }
+.raster i[data-s="1"] { background: color-mix(in srgb, var(--akzent) 30%, var(--linie)); }
+.raster i[data-s="2"] { background: color-mix(in srgb, var(--akzent) 55%, var(--linie)); }
+.raster i[data-s="3"] { background: color-mix(in srgb, var(--akzent) 80%, var(--linie)); }
+.raster i[data-s="4"] { background: var(--akzent); }
+.raster i.heute { outline: 1px solid var(--text); outline-offset: 1px; }
+.aktiv-fuss { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s1) var(--s3); font-size: var(--fs-1); color: var(--gedaempft); }
+.legende { display: inline-flex; align-items: center; gap: 3px; }
+.legende i { width: 14px; height: 14px; }
+
+/* Besonderer Moment */
+.moment {
+  position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 16px;
+  background: rgba(4, 5, 8, .74);
+  opacity: 0; visibility: hidden; transition: opacity var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
+.moment[data-offen="true"] { opacity: 1; visibility: visible; transition-delay: 0s; }
+.moment-karte {
+  position: relative; width: min(100%, 24rem); display: grid; justify-items: center; gap: var(--s2); text-align: center;
+  padding: var(--s5) var(--s4) var(--s4); background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  transform: translateY(8px); transition: transform var(--dur) var(--ease);
+}
+.moment[data-offen="true"] .moment-karte { transform: none; }
+.moment-karte .knopf { margin-top: var(--s2); }
+.moment .abz-ring .voll { stroke-dashoffset: 145; }
+.moment[data-offen="true"] .abz-ring .voll { animation: ring calc(var(--dur) * 4) var(--ease) calc(var(--dur)) forwards; }
+@keyframes ring { to { stroke-dashoffset: 0; } }
+.moment h2 { font-size: var(--fs-4); font-weight: var(--w-kopf); line-height: 1.2; }
+.moment-text { color: var(--gedaempft); font-size: var(--fs-1); }
+.log { display: none; }
+.funken { position: absolute; left: 50%; top: calc(var(--s5) + 48px); width: 0; height: 0; pointer-events: none; }
+
+/* Hinweis unten */
+.hinweis {
+  position: fixed; left: calc(50% + var(--leiste-b) / 2); bottom: 84px; z-index: 40;
+  max-width: calc(100vw - 32px); padding: var(--s1) var(--s2);
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  font-size: var(--fs-1); color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  opacity: 0; transform: translate(-50%, 8px); pointer-events: none;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.hinweis[data-offen="true"] { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Stilrichtung A · Notizbuch ---------- */
+[data-stil="notizbuch"] .eyebrow, [data-stil="notizbuch"] .label { font-size: var(--fs-2); font-variant-caps: all-small-caps; letter-spacing: .07em; }
+[data-stil="notizbuch"] .art { font-style: italic; }
+[data-stil="notizbuch"] .rang-chip { display: none; }
+
+/* ---------- Stilrichtung B · Konsole ---------- */
+[data-stil="konsole"] .label, [data-stil="konsole"] .eyebrow { text-transform: lowercase; }
+[data-stil="konsole"] .label::before { content: "// "; color: var(--blass); }
+[data-stil="konsole"] .titel::after { content: "▍"; margin-left: .15em; color: var(--akzent); font-weight: 400; animation: blinken 1s steps(1) 4; }
+@keyframes blinken { 50% { opacity: 0; } }
+[data-stil="konsole"] .ordner { border-top-style: dashed; }
+[data-stil="konsole"] .ordner:last-child { border-bottom-style: dashed; }
+[data-stil="konsole"] .balken, [data-stil="konsole"] .balken > i { background: repeating-linear-gradient(90deg, var(--linie) 0 6px, transparent 6px 8px); }
+[data-stil="konsole"] .balken > i { background: repeating-linear-gradient(90deg, var(--akzent) 0 6px, transparent 6px 8px); transition-timing-function: steps(6, end); }
+[data-stil="konsole"] .balken.mini { height: 4px; }
+[data-stil="konsole"] .pfeil::before { content: "+"; width: auto; height: auto; border: 0; transform: none; }
+[data-stil="konsole"] [aria-expanded="true"] > .pfeil { transform: none; }
+[data-stil="konsole"] [aria-expanded="true"] > .pfeil::before { content: "−"; }
+[data-stil="konsole"] .haken-box path { transition-timing-function: steps(4, end); }
+[data-stil="konsole"] .art::before { content: "#"; }
+[data-stil="konsole"] .art { text-transform: lowercase; }
+[data-stil="konsole"] .koennen li::before { content: ">"; color: var(--akzent); }
+[data-stil="konsole"] .knopf.sekundaer::before { content: "["; color: var(--blass); }
+[data-stil="konsole"] .knopf.sekundaer::after { content: "]"; color: var(--blass); }
+[data-stil="konsole"] .knopf.primaer:active, [data-stil="konsole"] .knopf.ist-aktiv { transform: translate(1px, 1px); }
+[data-stil="konsole"] .rang-chip { color: var(--gedaempft); }
+[data-stil="konsole"] .rang-chip b { color: var(--akzent); font-weight: 400; }
+[data-stil="konsole"] .sp-zeile:hover { box-shadow: inset 2px 0 0 var(--akzent); }
+[data-stil="konsole"] .abz-ring { display: none; }
+[data-stil="konsole"] .abz-form { border: 1px solid var(--linie); }
+[data-stil="konsole"] .abz-erreicht .abz-form { border-color: var(--gedaempft); }
+[data-stil="konsole"] .abz-aktuell .abz-form { border-color: var(--akzent); background: var(--akzent); color: var(--akzent-tinte); }
+[data-stil="konsole"] .abz-gesperrt .abz-form { border-style: dashed; }
+[data-stil="konsole"] .moment-karte { justify-items: start; text-align: left; }
+[data-stil="konsole"] .moment .abz-form { background: var(--akzent); border-color: var(--akzent); color: var(--akzent-tinte); }
+[data-stil="konsole"] .log { display: block; margin: 0; width: 100%; font: inherit; font-size: var(--fs-1); color: var(--gedaempft); white-space: pre-wrap; min-height: calc(5 * var(--fs-1) * 1.6); }
+[data-stil="konsole"] .log b { color: var(--akzent); font-weight: 400; }
+[data-stil="konsole"] .moment-ende { display: grid; gap: var(--s2); justify-items: start; }
+[data-stil="konsole"] .moment-ende[hidden] { display: none; }
+
+/* ---------- Stilrichtung C · Level ---------- */
+[data-stil="level"] .eyebrow, [data-stil="level"] .label { text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+[data-stil="level"] .ordner-liste { display: grid; gap: var(--s2); }
+[data-stil="level"] .ordner, [data-stil="level"] .ordner:last-child { border: 0; background: var(--flaeche); border-radius: var(--radius); padding-inline: var(--s3); }
+[data-stil="level"] .ordner-knopf { padding-block: var(--s3); }
+[data-stil="level"] .ordner-nr { place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--linie); color: var(--gedaempft); font-weight: 600; transition: background-color var(--dur) var(--ease); }
+[data-stil="level"] .ordner[data-fertig] .ordner-nr { background: var(--akzent); }
+[data-stil="level"] .ordner[data-fertig] .ordner-nr .ico { color: var(--akzent-tinte); animation: plopp var(--dur) var(--ease-pop); }
+[data-stil="level"] .balken > i { box-shadow: 0 0 12px var(--glut); }
+[data-stil="level"] .balken > i::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); transform: translateX(-100%); }
+[data-stil="level"] .balken.glanz > i::after { animation: glanz calc(var(--dur) * 3) var(--ease); }
+@keyframes glanz { to { transform: translateX(100%); } }
+[data-stil="level"] .haken.frisch .haken-box { animation: plopp var(--dur) var(--ease-pop); }
+@keyframes plopp { 0% { transform: scale(.6); } 100% { transform: scale(1); } }
+[data-stil="level"] .art { padding: 0 var(--s1); border: 1px solid var(--linie); border-radius: var(--radius); line-height: 1.6; margin-top: 2px; }
+[data-stil="level"] .koennen li::before { content: ""; top: .62em; left: .25em; width: 5px; height: 5px; border-radius: 50%; background: var(--blass); }
+[data-stil="level"] .knopf.primaer:hover, [data-stil="level"] .knopf.primaer.ist-hover { box-shadow: 0 0 24px -4px var(--glut); transform: translateY(-1px); }
+[data-stil="level"] .knopf:active, [data-stil="level"] .knopf.ist-aktiv { transform: scale(.96); }
+[data-stil="level"] .karte { border-color: transparent; }
+[data-stil="level"] .rang-chip { padding: 4px var(--s2) 4px 4px; border-radius: 999px; background: var(--flaeche); color: var(--text); font-weight: 600; }
+[data-stil="level"] .rang-chip .mini-hex { display: grid; place-items: center; width: 22px; height: 22px; background: var(--akzent); color: var(--akzent-tinte); font-size: 11px; clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%); }
+[data-stil="level"] .abz-ring { display: none; }
+[data-stil="level"] .abz-form { clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%); background: var(--linie); }
+[data-stil="level"] .abz-erreicht .abz-form { background: var(--akzent-hauch); color: var(--akzent); }
+[data-stil="level"] .abz-aktuell .abz-form { background: var(--akzent); color: var(--akzent-tinte); }
+[data-stil="level"] .abz-aktuell { filter: drop-shadow(0 0 14px var(--glut)); }
+[data-stil="level"] .abz-gesperrt .abz-form { background: var(--flaeche); outline: 1px solid var(--linie); }
+[data-stil="level"] .abz-gesperrt .abz-nr { display: none; }
+[data-stil="level"] .abz-gesperrt .abz-schloss { display: block; width: 18px; height: 18px; }
+[data-stil="level"] .moment-karte { transform: scale(.9); transition-timing-function: var(--ease-pop); }
+[data-stil="level"] .moment[data-offen="true"] .moment-karte { transform: none; }
+[data-stil="level"] .moment[data-offen="true"] .abz-gross { animation: hochploppen calc(var(--dur) * 2) var(--ease-pop) var(--dur) both; }
+@keyframes hochploppen { from { transform: scale(.2) rotate(-30deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.funken i { position: absolute; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: var(--c); opacity: 0; animation: funke calc(var(--dur) * 4) cubic-bezier(.1,.7,.3,1) var(--verz) forwards; }
+@keyframes funke { 0% { opacity: 1; transform: translate(0, 0) scale(1); } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(.3); } }
+.plus { position: absolute; pointer-events: none; font-size: var(--fs-1); font-weight: 700; color: var(--akzent); animation: aufsteigen calc(var(--dur) * 3) var(--ease) forwards; }
+@keyframes aufsteigen { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-24px); } }
+
+/* ---------- Entwurfsleiste (gehört nicht zum Design) ---------- */
+.entwurf {
+  position: fixed; left: calc(50% + var(--leiste-b) / 2); bottom: 16px; transform: translateX(-50%); z-index: 50;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 12px; max-width: calc(100vw - 32px);
+  padding: 6px; background: #26272b; border: 1px solid #3b3c42; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  font: 13px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #c9cad0;
+}
+.entwurf-name { padding-left: 8px; color: #8b8d96; letter-spacing: .06em; text-transform: uppercase; font-size: 11px; }
+.entwurf-gruppe { display: flex; gap: 2px; padding: 2px; background: #1b1c1f; border-radius: 16px; }
+.entwurf button { padding: 6px 12px; border-radius: 14px; color: #b7b9c1; transition: background-color 150ms, color 150ms; }
+.entwurf button:hover { color: #fff; }
+.entwurf button[aria-pressed="true"] { background: #3d3f46; color: #fff; }
+.entwurf button:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+
+/* ---------- Schmale Fenster: Leiste wandert nach oben ---------- */
+@media (max-width: 760px) {
+  :root { --leiste-b: 0px; }
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .leiste { height: auto; flex-direction: row; align-items: center; gap: var(--s1); padding: var(--s1) 16px; border-right: 0; border-bottom: 1px solid var(--linie); }
+  .pruefung-knopf { padding: 0 var(--s1); }
+  .nav { flex-direction: row; flex: 1; justify-content: flex-end; gap: 2px; }
+  .nav-punkt { padding: 6px; }
+  .nav-punkt span { display: none; }
+  .haupt { padding: var(--s5) 16px 200px; }
+  .ordner-knopf { grid-template-columns: var(--einzug) minmax(0, 1fr) auto 24px; }
+  .ordner-knopf .balken.mini { display: none; }
+  .raenge { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: var(--s3); }
+  .zwei { grid-template-columns: minmax(0, 1fr); }
+  [data-stil="level"] .ordner, [data-stil="level"] .ordner:last-child { padding-inline: var(--s1); }
+  .entwurf .lang, .entwurf-name { display: none; }
+  .entwurf { flex-wrap: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-stil] { --dur: 1ms; }
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; }
+  .funken { display: none; }
+}
+</style>
+<!--KOERPER-->
+<div class="app">
+  <aside class="leiste" aria-label="Hauptnavigation">
+    <div class="pruefung">
+      <button class="pruefung-knopf" id="pruefung-knopf" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="pruefung-menue" aria-label="Prüfung wählen, aktuell AP1">
+        AP1<span class="pfeil" aria-hidden="true"></span>
+      </button>
+      <div class="pruefung-menue" id="pruefung-menue" data-offen="false" role="menu" aria-label="Prüfung">
+        <button class="pm-punkt" type="button" role="menuitemradio" aria-checked="true" style="--c: var(--akzent)">
+          <span class="pm-farbe"></span><span><span class="pm-name">AP1</span><span class="pm-titel">Einrichten eines IT-gestützten Arbeitsplatzes</span></span>
+          <svg class="ico" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </button>
+        <button class="pm-punkt" type="button" role="menuitemradio" aria-checked="false" style="--c: var(--ap2)">
+          <span class="pm-farbe"></span><span><span class="pm-name">AP2</span><span class="pm-titel">Fachprüfungen</span></span><span></span>
+        </button>
+        <button class="pm-punkt" type="button" role="menuitemradio" aria-checked="false" style="--c: var(--wiso)">
+          <span class="pm-farbe"></span><span><span class="pm-name">WiSo</span><span class="pm-titel">Wirtschafts- und Sozialkunde</span></span><span></span>
+        </button>
+        <p class="pm-hinweis">Im Entwurf nur zur Ansicht. Die Farbpunkte zeigen die späteren Akzente.</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="nav-punkt" role="link" aria-disabled="true" title="Kommt später">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5v8.5a.5.5 0 0 1-.5.5H15v-6H9v6H4.5a.5.5 0 0 1-.5-.5z"/></svg><span>Start</span>
+      </a>
+      <a class="nav-punkt" href="#" id="nav-lernen" aria-current="page">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3.5 5.5c2.8-1 5.6-1 8.5.8v13c-2.9-1.8-5.7-1.8-8.5-.8z"/><path d="M20.5 5.5c-2.8-1-5.6-1-8.5.8v13c2.9-1.8 5.7-1.8 8.5-.8z"/></svg><span>Lernen</span>
+      </a>
+      <a class="nav-punkt" role="link" aria-disabled="true" title="Kommt später">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/></svg><span>Üben</span>
+      </a>
+      <a class="nav-punkt" role="link" aria-disabled="true" title="Kommt später">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M20 20l-5.2-5.2"/></svg><span>Nachschlagen</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="haupt">
+    <div class="spalte" id="ansicht-lernen"></div>
+    <div class="spalte" id="ansicht-bausteine" hidden></div>
+  </main>
+</div>
+
+<div class="moment" id="moment" data-offen="false" role="dialog" aria-modal="true" aria-labelledby="moment-titel">
+  <div class="moment-karte" id="moment-karte" tabindex="-1"></div>
+</div>
+<div class="hinweis" id="hinweis" role="status" aria-live="polite" data-offen="false"></div>
+
+<div class="entwurf" role="toolbar" aria-label="Entwurf: Ansicht und Stilrichtung">
+  <span class="entwurf-name">Entwurf</span>
+  <div class="entwurf-gruppe" role="group" aria-label="Ansicht">
+    <button type="button" data-ansicht="lernen">Lernseite</button>
+    <button type="button" data-ansicht="bausteine">Bausteine</button>
+  </div>
+  <div class="entwurf-gruppe" role="group" aria-label="Stilrichtung">
+    <button type="button" data-stil="notizbuch">A<span class="lang"> · Notizbuch</span></button>
+    <button type="button" data-stil="konsole">B<span class="lang"> · Konsole</span></button>
+    <button type="button" data-stil="level">C<span class="lang"> · Level</span></button>
+  </div>
+</div>
+
+<script>
+const D = /*__DATEN__*/null;
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const root = document.documentElement;
+const ruhig = matchMedia("(prefers-reduced-motion: reduce)");
+
+const STILE = { notizbuch: "Notizbuch", konsole: "Konsole", level: "Level" };
+const RAENGE = ["Hello World", "Syntax-Sicher", "Bugjäger", "Refactorer", "Architekt", "Prüfungsreif"];
+
+const alleSp = D.ordner.flatMap((o) => o.bloecke.flatMap((b) => b.stichpunkte));
+const ordnerVon = {};
+D.ordner.forEach((o) => o.bloecke.forEach((b) => b.stichpunkte.forEach((s) => (ordnerVon[s.id] = o))));
+
+// Nur im geöffneten Fenster, gespeichert wird nichts.
+const Z = { erledigt: new Set(), ordnerOffen: new Set([D.ordner[0].id]), spOffen: new Set() };
+const demo = { stand: 37, rang: 2, punkte: 42 };
+
+let stil = "notizbuch", ansicht = "lernen";
+try {
+  stil = localStorage.getItem("entwurf-stil") || stil;
+  ansicht = localStorage.getItem("entwurf-ansicht") || ansicht;
+} catch (e) {}
+if (!STILE[stil]) stil = "notizbuch";
+
+const ICO = {
+  haken: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.8 8.4l2.8 2.8 5.6-6.2"/></svg>',
+  hakenGross: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  schloss: '<svg class="ico abz-schloss" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="11" width="13" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>',
+  schlossGross: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="11" width="13" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>',
+  liste: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="3" height="3" rx=".5"/><path d="M10 6.5h10"/><rect x="4" y="11" width="3" height="3" rx=".5"/><path d="M10 12.5h7"/><rect x="4" y="17" width="3" height="3" rx=".5" stroke-dasharray="2 2"/><path d="M10 18.5h4" stroke-dasharray="2 2"/></svg>',
+};
+
+const nr = (n) => (stil === "konsole" ? String(n).padStart(2, "0") : String(n));
+
+function dauer() {
+  if (ruhig.matches) return 0;
+  const v = getComputedStyle(root).getPropertyValue("--dur").trim();
+  return parseFloat(v) * (v.endsWith("ms") ? 1 : 1000);
+}
+
+// Zahl zählt hoch (oder runter), so lang wie ein Übergang
+function zaehle(el, ziel) {
+  if (!el) return;
+  const von = Number(el.dataset.wert || 0);
+  el.dataset.wert = ziel;
+  const d = dauer() * (Math.abs(ziel - von) > 1 ? 3 : 1);
+  if (!d || von === ziel) { el.textContent = ziel; return; }
+  const t0 = performance.now();
+  const schritt = (t) => {
+    const k = Math.min(1, (t - t0) / d);
+    el.textContent = Math.round(von + (ziel - von) * (1 - Math.pow(1 - k, 3)));
+    if (k < 1 && el.dataset.wert == ziel) requestAnimationFrame(schritt);
+  };
+  requestAnimationFrame(schritt);
+}
+
+function setzeAnteil(el, p) {
+  if (!el) return;
+  const alt = parseFloat(el.style.getPropertyValue("--p")) || 0;
+  el.style.setProperty("--p", p);
+  if (stil === "level" && p > alt) { el.classList.remove("glanz"); void el.offsetWidth; el.classList.add("glanz"); }
+}
+
+/* ---------- Lernseite ---------- */
+function rangChip() {
+  if (stil === "konsole") return `<span class="rang-chip">rang=<b>hello_world</b></span>`;
+  if (stil === "level") return `<span class="rang-chip"><span class="mini-hex">1</span>Hello World</span>`;
+  return "";
+}
+
+function renderSp(s, praefix = "") {
+  const id = praefix + s.id, an = Z.erledigt.has(s.id), offen = Z.spOffen.has(id);
+  return `<li class="sp" data-sp="${s.id}"${an ? " data-erledigt" : ""}>
+    <div class="sp-zeile">
+      <button class="haken" type="button" role="checkbox" aria-checked="${an}" data-haken="${s.id}" aria-label="Erledigt: ${esc(s.titel)}"><span class="haken-box">${ICO.haken}</span></button>
+      <button class="sp-knopf" type="button" data-klapp="s:${id}" aria-expanded="${offen}" aria-controls="k-${id}">
+        <span class="sp-titel">${esc(s.titel)}</span>${s.art !== "Wissen" ? `<span class="art">${esc(s.art)}</span>` : "<span></span>"}<span class="pfeil" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="klapp" id="k-${id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen"><div class="sp-detail">
+      <div class="feld"><p class="label">Rahmen</p><p class="rahmen">${esc(s.rahmen)}</p></div>
+      <div class="feld"><p class="label">Können</p><ul class="koennen">${s.koennen.map((k) => `<li>${esc(k)}</li>`).join("")}</ul></div>
+      <div class="aktionen">
+        <button class="knopf primaer" type="button" data-spaeter="Der Übungstrainer kommt später.">Üben</button>
+        <button class="knopf sekundaer" type="button" data-spaeter="Lernprompt kopieren kommt später.">Lernprompt kopieren</button>
+      </div>
+    </div></div></div>
+  </li>`;
+}
+
+function renderOrdner(o, i) {
+  const ids = o.bloecke.flatMap((b) => b.stichpunkte.map((s) => s.id));
+  const f = ids.filter((id) => Z.erledigt.has(id)).length;
+  const offen = Z.ordnerOffen.has(o.id);
+  return `<section class="ordner" data-ordner="${o.id}"${f === ids.length ? " data-fertig" : ""}>
+    <h2 class="ordner-kopf"><button class="ordner-knopf" type="button" data-klapp="o:${o.id}" aria-expanded="${offen}" aria-controls="k-${o.id}">
+      <span class="ordner-nr" aria-hidden="true"><span class="nr-zahl">${nr(i + 1)}</span>${ICO.hakenGross}</span>
+      <span class="ordner-titel">${esc(o.titel)}</span>
+      <span class="ordner-stand"><span class="zahl" data-wert="${f}">${f}</span> von ${ids.length}</span>
+      <span class="balken mini" style="--p:${f / ids.length}"><i></i></span>
+      <span class="pfeil" aria-hidden="true"></span>
+    </button></h2>
+    <div class="klapp" id="k-${o.id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen">
+      ${o.bloecke.map((b) => `<div class="block"><h3 class="label block-titel">${esc(b.titel)}</h3><ul class="sp-liste">${b.stichpunkte.map((s) => renderSp(s)).join("")}</ul></div>`).join("")}
+    </div></div>
+  </section>`;
+}
+
+function renderLernen() {
+  const g = alleSp.length, n = Z.erledigt.size;
+  const eyebrow = stil === "konsole" ? "~/ap1/lernen" : "AP1 · Teil 1 der gestreckten Abschlussprüfung";
+  $("#ansicht-lernen").innerHTML = `
+    <header class="seitenkopf">
+      <p class="eyebrow">${eyebrow}</p>
+      <h1 class="titel">${esc(D.titel)}</h1>
+      <div class="stand"><span><span class="zahl" id="gesamt-zahl" data-wert="${n}">${n}</span> von ${g} erledigt</span>${rangChip()}</div>
+      <span class="balken" id="gesamt-balken" style="--p:${n / g}"><i></i></span>
+    </header>
+    <div class="ordner-liste">${D.ordner.map(renderOrdner).join("")}</div>`;
+}
+
+function aktualisiereStand() {
+  zaehle($("#gesamt-zahl"), Z.erledigt.size);
+  setzeAnteil($("#gesamt-balken"), Z.erledigt.size / alleSp.length);
+  D.ordner.forEach((o) => {
+    const sec = $(`[data-ordner="${o.id}"]`);
+    if (!sec) return;
+    const ids = o.bloecke.flatMap((b) => b.stichpunkte.map((s) => s.id));
+    const f = ids.filter((id) => Z.erledigt.has(id)).length;
+    zaehle($(".ordner-stand .zahl", sec), f);
+    setzeAnteil($(".balken", sec), f / ids.length);
+    sec.toggleAttribute("data-fertig", f === ids.length);
+  });
+}
+
+function plusEins(btn) {
+  if (ruhig.matches) return;
+  const r = btn.getBoundingClientRect();
+  const el = document.createElement("span");
+  el.className = "plus";
+  el.textContent = "+1";
+  el.style.left = r.left + window.scrollX + 2 + "px";
+  el.style.top = r.top + window.scrollY - 6 + "px";
+  document.body.appendChild(el);
+  el.addEventListener("animationend", () => el.remove());
+}
+
+function schalteHaken(id, ausloeser) {
+  const an = !Z.erledigt.has(id);
+  an ? Z.erledigt.add(id) : Z.erledigt.delete(id);
+  $$(`[data-haken="${id}"]`).forEach((b) => {
+    b.setAttribute("aria-checked", an);
+    b.closest(".sp")?.toggleAttribute("data-erledigt", an);
+    b.classList.toggle("frisch", an);
+  });
+  if (an && stil === "level") plusEins(ausloeser);
+  aktualisiereStand();
+}
+
+function klapp(btn) {
+  const offen = btn.getAttribute("aria-expanded") !== "true";
+  btn.setAttribute("aria-expanded", offen);
+  const k = document.getElementById(btn.getAttribute("aria-controls"));
+  k.dataset.offen = offen;
+  k.inert = !offen;
+  const [typ, id] = btn.dataset.klapp.split(/:(.*)/);
+  const menge = typ === "o" ? Z.ordnerOffen : Z.spOffen;
+  offen ? menge.add(id) : menge.delete(id);
+}
+
+/* ---------- Bausteine ---------- */
+function abzeichen(nummer, name, zustand, gross = false) {
+  return `<span class="abz abz-${zustand}${gross ? " abz-gross" : ""}">
+    <span class="abz-form">
+      <svg class="abz-ring" viewBox="0 0 48 48" aria-hidden="true"><circle class="grund" cx="24" cy="24" r="23"/><circle class="voll" cx="24" cy="24" r="23"/></svg>
+      <span class="abz-nr">${nr(nummer)}</span>${ICO.schloss}
+    </span>
+    ${gross ? "" : `<span class="abz-name">${esc(name)}</span>`}
+  </span>`;
+}
+
+function abschnitt(titel, text, inhalt) {
+  return `<section class="bs"><div class="bs-kopf"><h2>${titel}</h2><p class="bs-text">${text}</p></div>${inhalt}</section>`;
+}
+
+function hakenMuster(an, gesperrt) {
+  return `<button type="button" class="haken" role="checkbox" aria-checked="${an}" ${gesperrt ? "disabled" : "data-demo-haken"} aria-label="Beispiel-Häkchen"><span class="haken-box">${ICO.haken}</span></button>`;
+}
+
+function zufall(seed) {
+  return () => {
+    seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function aktivitaet() {
+  const wochen = 20, r = zufall(12);
+  const heute = new Date(); heute.setHours(0, 0, 0, 0);
+  const wt = (heute.getDay() + 6) % 7; // Montag = 0
+  const start = new Date(heute); start.setDate(heute.getDate() - wt - (wochen - 1) * 7);
+  let zellen = "", aktiv = 0, serie = 0, beste = 0;
+  for (let i = 0; i < wochen * 7; i++) {
+    const tag = new Date(start); tag.setDate(start.getDate() + i);
+    if (tag > heute) { zellen += '<i style="visibility:hidden"></i>'; continue; }
+    const dichte = 0.3 + 0.5 * (i / (wochen * 7));
+    const anzahl = r() < dichte ? 1 + Math.floor(r() * r() * 9) : 0;
+    const stufe = anzahl === 0 ? 0 : anzahl < 2 ? 1 : anzahl < 4 ? 2 : anzahl < 6 ? 3 : 4;
+    if (anzahl) { aktiv++; serie++; beste = Math.max(beste, serie); } else serie = 0;
+    const datum = tag.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+    zellen += `<i data-s="${stufe}" title="${anzahl} Stichpunkte am ${datum}"${+tag === +heute ? ' class="heute"' : ""}></i>`;
+  }
+  return `<div class="stapel">
+    <div class="scroll-x"><div class="aktiv" role="img" aria-label="Aktivität der letzten ${wochen} Wochen, Beispielwerte: ${aktiv} aktive Tage">
+      <div class="aktiv-tage" aria-hidden="true"><span>Mo</span><span></span><span>Mi</span><span></span><span>Fr</span><span></span><span></span></div>
+      <div class="raster">${zellen}</div>
+    </div></div>
+    <div class="aktiv-fuss"><span>${aktiv} aktive Tage · längste Serie ${beste} Tage</span>
+      <span class="legende">weniger&nbsp;<span class="raster" style="display:inline-flex;gap:3px"><i></i><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i></span>&nbsp;mehr</span></div>
+  </div>`;
+}
+
+function rangBereich() {
+  return `<div class="stapel" id="rang-bereich">
+    <div class="raenge">${RAENGE.map((n, i) => abzeichen(i + 1, n, i < demo.rang ? "erreicht" : i === demo.rang ? "aktuell" : "gesperrt")).join("")}</div>
+  </div>`;
+}
+
+function rangWeg() {
+  const ziel = 50, naechster = RAENGE[demo.rang + 1];
+  if (!naechster) return `<p class="bs-text">Höchster Rang erreicht.</p><div class="aktionen"><button class="knopf sekundaer" type="button" data-demo="rang-reset">Von vorn</button></div>`;
+  return `<div class="rang-weg">
+      <div class="stand"><span>${esc(RAENGE[demo.rang])} → <b>${esc(naechster)}</b></span><span><span class="zahl" id="rang-zahl" data-wert="${demo.punkte}">${demo.punkte}</span> von ${ziel} Punkten</span></div>
+      <span class="balken" id="rang-balken" style="--p:${demo.punkte / ziel}"><i></i></span>
+    </div>
+    <div class="aktionen"><button class="knopf sekundaer" type="button" data-demo="punkte">+ 4 Punkte</button></div>`;
+}
+
+function renderBausteine() {
+  const bsp = alleSp.find((s) => s.titel.startsWith("Netzwerkbefehle")) || alleSp[0];
+  const zust = ["Normal", "Berührt", "Gedrückt", "Gesperrt"];
+  const knopfZeile = (art, name, text) =>
+    `<span class="zustand-name">${name}</span>` +
+    zust.map((_, i) => `<span><button type="button" class="knopf ${art}${i === 1 ? " ist-hover" : i === 2 ? " ist-aktiv" : ""}"${i === 3 ? " disabled" : ""}${i === 1 || i === 2 ? ' tabindex="-1" aria-hidden="true"' : ""}${i === 0 ? ' data-spaeter="Ein Beispielknopf ohne Funktion."' : ""}>${text}</button></span>`).join("");
+
+  $("#ansicht-bausteine").innerHTML = `
+    <header class="seitenkopf">
+      <p class="eyebrow">${stil === "konsole" ? "~/entwurf/bausteine" : "Entwurf · Stilrichtung " + STILE[stil]}</p>
+      <h1 class="titel">Bausteine</h1>
+      <p class="lead">Jeder Baustein einzeln und in jedem Zustand. Zahlen, Ränge und Aktivität sind erfundene Beispielwerte.</p>
+    </header>
+
+    ${abschnitt("Knöpfe", "Zwei Arten: Primär für die eine wichtigste Handlung, Sekundär für alles andere. Die Spalte „Normal“ reagiert echt auf Maus und Tastatur.",
+      `<div class="scroll-x"><div class="knopf-raster"><span></span>${zust.map((z) => `<span class="zustand-name">${z}</span>`).join("")}${knopfZeile("primaer", "Primär", "Üben")}${knopfZeile("sekundaer", "Sekundär", "Kopieren")}</div></div>`)}
+
+    ${abschnitt("Häkchen", "Ein Klick hakt ab, ein zweiter nimmt es zurück. Das Häkchen zeichnet sich.",
+      `<div class="muster-reihe">
+        <span class="muster">${hakenMuster(false)}<span class="zustand-name">Offen</span></span>
+        <span class="muster">${hakenMuster(true)}<span class="zustand-name">Erledigt</span></span>
+        <span class="muster">${hakenMuster(false, true)}<span class="zustand-name">Gesperrt</span></span>
+      </div>`)}
+
+    ${abschnitt("Fortschrittsbalken", "Der Balken füllt sich, die Zahl zählt mit.",
+      `<div class="stapel">
+        <div class="stand"><span><span class="zahl" id="demo-zahl" data-wert="${demo.stand}">${demo.stand}</span> von 98 erledigt</span></div>
+        <span class="balken" id="demo-balken" style="--p:${demo.stand / 98}"><i></i></span>
+        <div class="aktionen">
+          <button class="knopf sekundaer" type="button" data-demo="plus">+ 10 erledigt</button>
+          <button class="knopf sekundaer" type="button" data-demo="null">Auf 0 setzen</button>
+        </div>
+      </div>`)}
+
+    ${abschnitt("Karte", "Die einzige Art Karte. Sie hebt genau ein Ding hervor, zum Beispiel den Einstieg auf dem späteren Startbildschirm.",
+      `<article class="karte">
+        <p class="eyebrow">Zuletzt geöffnet</p>
+        <h3 class="karte-titel">${esc(bsp.titel)}</h3>
+        <p class="karte-meta">${esc(ordnerVon[bsp.id].titel)} · ${bsp.koennen.length} Können-Aussagen</p>
+        <div class="aktionen"><button class="knopf primaer" type="button" data-spaeter="Weiterlernen springt später zum Stichpunkt.">Weiterlernen</button></div>
+      </article>`)}
+
+    ${abschnitt("Aufklappbarer Bereich", "Ein echter Stichpunkt mit langem Titel. Beim Aufklappen rutscht alles darunter weich nach unten.",
+      `<ul class="sp-liste">${renderSp(bsp, "bs-")}</ul>`)}
+
+    ${abschnitt("Leer und gesperrt", "Auch Zustände ohne Inhalt sind gestaltet.",
+      `<div class="zwei">
+        <div class="leer">${ICO.liste}<p class="leer-titel">Noch nichts abgehakt</p><p class="leer-text">Hake einen Stichpunkt ab, sobald du alle Können-Aussagen sicher beherrschst. Er erscheint dann hier.</p></div>
+        <div class="leer gesperrt" aria-disabled="true">${ICO.schlossGross}<p class="leer-titel">Übungstrainer</p><p class="leer-text">Kommt später: SQL, Pseudocode, Subnetting, IT-Rechnen und Netzplan.</p></div>
+      </div>`)}
+
+    ${abschnitt("Rangabzeichen", "Sechs Ränge, der erste heißt „Hello World“. Die übrigen Namen sind Platzhalter. Im Beispiel ist Rang 3 erreicht.", rangBereich())}
+
+    ${abschnitt("Weg zum nächsten Rang", "Bei 50 Punkten folgt der Rangaufstieg.", `<div class="stapel" id="rang-weg">${rangWeg()}</div>`)}
+
+    ${abschnitt("Aktivitätsübersicht", "Ein Kästchen je Tag, die letzten 20 Wochen. Je kräftiger, desto mehr Stichpunkte an dem Tag.", aktivitaet())}
+
+    ${abschnitt("Besonderer Moment", "Ein Rangaufstieg. Hier darf es einmal deutlich werden.",
+      `<div class="aktionen"><button class="knopf primaer" type="button" data-demo="moment">Rangaufstieg ansehen</button></div>`)}
+  `;
+}
+
+/* ---------- Rangaufstieg ---------- */
+let vorherFokus = null, logTimer = [];
+function zeigeMoment(idx) {
+  const m = $("#moment"), k = $("#moment-karte");
+  logTimer.forEach(clearTimeout); logTimer = [];
+  vorherFokus = document.activeElement;
+  const kopf = `${abzeichen(idx + 1, RAENGE[idx], "aktuell", true)}
+    <p class="eyebrow">Neuer Rang</p>
+    <h2 id="moment-titel">${esc(RAENGE[idx])}</h2>
+    <p class="moment-text">Rang ${idx + 1} von ${RAENGE.length}. Weiter so.</p>
+    <button class="knopf primaer" type="button" data-demo="moment-zu">Weiter</button>`;
+
+  if (stil === "konsole") {
+    k.innerHTML = `<pre class="log" aria-hidden="true"></pre><div class="moment-ende" hidden>${kopf}</div>`;
+    const zeilen = ["$ rang --pruefen", "punkte  50/50", `rang    ${nr(idx)} → ${nr(idx + 1)}`, `<b>» neuer rang: ${esc(RAENGE[idx].toLowerCase())}</b>`];
+    const log = $(".log", k), ende = $(".moment-ende", k);
+    const takt = ruhig.matches ? 0 : dauer() * 2;
+    zeilen.forEach((z, i) => logTimer.push(setTimeout(() => { log.innerHTML += (i ? "\n" : "") + z; }, takt * (i + 1))));
+    logTimer.push(setTimeout(() => { ende.hidden = false; $(".knopf", ende).focus(); }, takt * (zeilen.length + 1)));
+    k.focus();
+  } else {
+    k.innerHTML = kopf + (stil === "level" ? '<div class="funken" aria-hidden="true"></div>' : "");
+    if (stil === "level" && !ruhig.matches) {
+      const f = $(".funken", k);
+      for (let i = 0; i < 28; i++) {
+        const w = (i / 28) * Math.PI * 2 + Math.random() * 0.3, r = 70 + Math.random() * 90;
+        const el = document.createElement("i");
+        el.style.cssText = `--dx:${Math.cos(w) * r}px;--dy:${Math.sin(w) * r}px;--verz:${dauer() * 1.5}ms;--c:${i % 3 ? "var(--akzent)" : "var(--text)"}`;
+        f.appendChild(el);
+      }
+    }
+    setTimeout(() => $(".knopf", k)?.focus(), 0);
+  }
+  m.dataset.offen = "true";
+}
+function schliesseMoment() {
+  logTimer.forEach(clearTimeout);
+  $("#moment").dataset.offen = "false";
+  vorherFokus?.focus?.();
+}
+
+/* ---------- Schalter ---------- */
+let hinweisTimer;
+function hinweis(text) {
+  const el = $("#hinweis");
+  el.textContent = text;
+  el.dataset.offen = "true";
+  clearTimeout(hinweisTimer);
+  hinweisTimer = setTimeout(() => (el.dataset.offen = "false"), 2200);
+}
+
+function setzeStil(neu) {
+  stil = neu;
+  root.dataset.stil = neu;
+  $$(".entwurf [data-stil]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.stil === neu));
+  renderLernen();
+  renderBausteine();
+  try { localStorage.setItem("entwurf-stil", neu); } catch (e) {}
+}
+function setzeAnsicht(neu) {
+  ansicht = neu;
+  $("#ansicht-lernen").hidden = neu !== "lernen";
+  $("#ansicht-bausteine").hidden = neu !== "bausteine";
+  $$(".entwurf [data-ansicht]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.ansicht === neu));
+  $("#nav-lernen").toggleAttribute("aria-current", neu === "lernen");
+  if (neu === "lernen") $("#nav-lernen").setAttribute("aria-current", "page");
+  window.scrollTo(0, 0);
+  try { localStorage.setItem("entwurf-ansicht", neu); } catch (e) {}
+}
+
+function menue(offen) {
+  $("#pruefung-knopf").setAttribute("aria-expanded", offen);
+  $("#pruefung-menue").dataset.offen = offen;
+  if (offen) $("#pruefung-menue .pm-punkt").focus();
+}
+
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("button, a");
+  if (!t) { menue(false); return; }
+  if (!t.closest(".pruefung")) menue(false);
+
+  if (t.matches("[data-haken]")) return schalteHaken(t.dataset.haken, t);
+  if (t.matches("[data-klapp]")) return klapp(t);
+  if (t.matches("[data-demo-haken]")) { const an = t.getAttribute("aria-checked") !== "true"; t.setAttribute("aria-checked", an); t.classList.toggle("frisch", an); if (an && stil === "level") plusEins(t); return; }
+  if (t.matches("[data-spaeter]")) return hinweis(t.dataset.spaeter);
+  if (t.matches(".entwurf [data-stil]")) return setzeStil(t.dataset.stil);
+  if (t.matches(".entwurf [data-ansicht]")) return setzeAnsicht(t.dataset.ansicht);
+  if (t.id === "pruefung-knopf") return menue(t.getAttribute("aria-expanded") !== "true");
+  if (t.matches(".pm-punkt")) { menue(false); $("#pruefung-knopf").focus(); if (t.getAttribute("aria-checked") !== "true") hinweis("Der Wechsel zu " + $(".pm-name", t).textContent + " kommt später."); return; }
+  if (t.matches(".nav-punkt")) { e.preventDefault(); if (t.id === "nav-lernen") setzeAnsicht("lernen"); return; }
+
+  switch (t.dataset.demo) {
+    case "plus": demo.stand = Math.min(98, demo.stand + 10); break;
+    case "null": demo.stand = 0; break;
+    case "moment": return zeigeMoment(demo.rang + 1 < RAENGE.length ? demo.rang + 1 : demo.rang);
+    case "moment-zu": return schliesseMoment();
+    case "punkte":
+      demo.punkte = Math.min(50, demo.punkte + 4);
+      zaehle($("#rang-zahl"), demo.punkte);
+      setzeAnteil($("#rang-balken"), demo.punkte / 50);
+      if (demo.punkte >= 50) setTimeout(() => {
+        demo.rang++; demo.punkte = 0;
+        zeigeMoment(demo.rang);
+        $("#rang-bereich").outerHTML = rangBereich();
+        $("#rang-weg").innerHTML = rangWeg();
+      }, dauer() * 2);
+      return;
+    case "rang-reset":
+      demo.rang = 2; demo.punkte = 42;
+      $("#rang-bereich").outerHTML = rangBereich();
+      $("#rang-weg").innerHTML = rangWeg();
+      return;
+    default: return;
+  }
+  zaehle($("#demo-zahl"), demo.stand);
+  setzeAnteil($("#demo-balken"), demo.stand / 98);
+});
+
+$("#moment").addEventListener("click", (e) => { if (e.target.id === "moment") schliesseMoment(); });
+document.addEventListener("animationend", (e) => e.target.classList?.contains("haken-box") && e.target.parentElement.classList.remove("frisch"));
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if ($("#moment").dataset.offen === "true") schliesseMoment();
+  else if ($("#pruefung-knopf").getAttribute("aria-expanded") === "true") { menue(false); $("#pruefung-knopf").focus(); }
+});
+
+setzeStil(stil);
+setzeAnsicht(ansicht);
+</script>

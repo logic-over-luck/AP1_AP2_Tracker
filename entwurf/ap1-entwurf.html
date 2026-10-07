@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AP1 Lerntracker</title>
+<style>
+/* Aufbau: schmale Leiste links, eine Inhaltsspalte fester Breite (44rem), Gliederung über Abstand und Schriftgröße.
+   Jede Stilrichtung setzt nur Tokens; alle Bausteine lesen ausschließlich diese Tokens. */
+:root { color-scheme: dark; }
+
+/* A · Notizbuch: zurückhaltend, Serifenschrift, Haarlinien, kaum Spiel */
+:root, :root[data-stil="notizbuch"] {
+  --font: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Iowan Old Style", Georgia, serif;
+  --fs-1: .875rem; --fs-2: 1rem; --fs-3: 1.25rem; --fs-4: 1.75rem;
+  --lh: 1.6; --w-kopf: 600;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 48px; --s6: 64px;
+  --radius: 4px;
+  --dur: 220ms; --ease: cubic-bezier(.2,.7,.2,1); --ease-pop: cubic-bezier(.2,.7,.2,1);
+  --einzug: 40px; --haken: 18px; --balken: 2px;
+  --bg: #15171a; --leiste: #111316; --flaeche: #1c1f23; --linie: #2b2f35; --hover: rgba(220,228,240,.035);
+  --text: #e6e3dc; --gedaempft: #a1a5ad; --blass: #686d76;
+  --akzent: #8fb3d9; --akzent-tinte: #0e1620; --akzent-hauch: rgba(143,179,217,.13); --glut: transparent;
+  --ap2: #c4a3d6; --wiso: #a6c79a;
+}
+/* B · Konsole: Monospace, harte Kanten, Rasterschritte, mittleres Spiel */
+:root[data-stil="konsole"] {
+  --font: "Cascadia Mono", "Cascadia Code", Consolas, "SF Mono", Menlo, "DejaVu Sans Mono", "Liberation Mono", ui-monospace, monospace;
+  --fs-1: .8125rem; --fs-2: .875rem; --fs-3: 1rem; --fs-4: 1.375rem;
+  --lh: 1.6; --w-kopf: 700;
+  --s1: 4px; --s2: 12px; --s3: 20px; --s4: 28px; --s5: 40px; --s6: 56px;
+  --radius: 0px;
+  --dur: 120ms; --ease: linear; --ease-pop: steps(3, end);
+  --einzug: 32px; --haken: 16px; --balken: 8px;
+  --bg: #0f100d; --leiste: #0b0c09; --flaeche: #171812; --linie: #2e3026; --hover: rgba(232,163,61,.06);
+  --text: #e2dfcf; --gedaempft: #9d9a89; --blass: #67654f;
+  --akzent: #e8a33d; --akzent-tinte: #1a1205; --akzent-hauch: rgba(232,163,61,.13); --glut: transparent;
+  --ap2: #5fb6d9; --wiso: #d9786a;
+}
+/* C · Level: technische Grotesk, weiche Flächen, federnde Effekte, deutliches Spiel */
+:root[data-stil="level"] {
+  --font: Bahnschrift, "DIN Alternate", "Avenir Next", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-1: .8125rem; --fs-2: .9375rem; --fs-3: 1.25rem; --fs-4: 2rem;
+  --lh: 1.55; --w-kopf: 600;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 40px; --s5: 56px; --s6: 80px;
+  --radius: 12px;
+  --dur: 300ms; --ease: cubic-bezier(.22,.8,.24,1); --ease-pop: cubic-bezier(.34,1.56,.64,1);
+  --einzug: 40px; --haken: 20px; --balken: 8px;
+  --bg: #0f111a; --leiste: #0b0d14; --flaeche: #171a26; --linie: #272b3c; --hover: rgba(95,224,176,.05);
+  --text: #eceef7; --gedaempft: #a3a8bf; --blass: #646a84;
+  --akzent: #5fe0b0; --akzent-tinte: #052219; --akzent-hauch: rgba(95,224,176,.13); --glut: rgba(95,224,176,.45);
+  --ap2: #ff8a78; --wiso: #ffcf5c;
+}
+:root { --kante: calc(var(--einzug) + var(--s2)); --leiste-b: 112px; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scrollbar-gutter: stable; background: var(--bg); }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: var(--fs-2); line-height: var(--lh);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+h1, h2, h3, p, ul { margin: 0; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+button:disabled { cursor: not-allowed; }
+:focus-visible { outline: 2px solid var(--akzent); outline-offset: 2px; }
+svg.ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* ---------- Rahmen ---------- */
+.app { display: grid; grid-template-columns: var(--leiste-b) minmax(0, 1fr); min-height: 100vh; }
+.leiste {
+  position: sticky; top: 0; height: 100vh; z-index: 10;
+  display: flex; flex-direction: column; gap: var(--s4);
+  padding: var(--s3) var(--s1); background: var(--leiste); border-right: 1px solid var(--linie);
+}
+.nav { display: flex; flex-direction: column; gap: var(--s1); }
+.nav-punkt {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: var(--s2) 4px; border-radius: var(--radius);
+  color: var(--gedaempft); font-size: var(--fs-1); line-height: 1.2; text-decoration: none;
+  transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.nav-punkt:not([aria-disabled="true"]):hover { color: var(--text); background: var(--hover); }
+.nav-punkt[aria-current="page"] { color: var(--text); background: var(--akzent-hauch); }
+.nav-punkt[aria-current="page"] .ico { color: var(--akzent); }
+.nav-punkt[aria-disabled="true"] { opacity: .36; cursor: not-allowed; }
+
+/* Prüfungskennung oben links */
+.pruefung { position: relative; }
+.pruefung-knopf {
+  display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; min-height: 40px;
+  border-radius: var(--radius); color: var(--gedaempft); font-size: var(--fs-1); font-weight: 600; letter-spacing: .08em;
+  transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.pruefung-knopf:hover, .pruefung-knopf[aria-expanded="true"] { color: var(--text); background: var(--hover); }
+.pruefung-knopf .pfeil { width: 16px; height: 16px; }
+.pruefung-menue {
+  position: absolute; top: calc(100% + var(--s1)); left: 0; z-index: 30;
+  width: 20rem; max-width: calc(100vw - 32px); padding: var(--s1);
+  display: grid; gap: 2px;
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+  opacity: 0; transform: translateY(-4px); visibility: hidden;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
+.pruefung-menue[data-offen="true"] { opacity: 1; transform: none; visibility: visible; transition-delay: 0s; }
+.pm-punkt {
+  display: grid; grid-template-columns: 8px minmax(0, 1fr) 16px; align-items: center; gap: var(--s2);
+  width: 100%; padding: var(--s1) var(--s2); border-radius: var(--radius);
+  transition: background-color var(--dur) var(--ease);
+}
+.pm-punkt:hover { background: var(--hover); }
+.pm-farbe { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.pm-name { font-weight: 600; }
+.pm-titel { display: block; font-size: var(--fs-1); color: var(--gedaempft); line-height: 1.35; }
+.pm-punkt .ico { width: 16px; height: 16px; color: var(--akzent); }
+.pm-hinweis { margin-top: 4px; padding: var(--s1) var(--s2) 4px; border-top: 1px solid var(--linie); font-size: var(--fs-1); color: var(--blass); }
+
+/* ---------- Inhaltsspalte ---------- */
+.haupt { min-width: 0; padding: var(--s6) var(--s4) 160px; }
+.spalte { width: min(100%, 44rem); margin-inline: auto; }
+.seitenkopf { display: grid; gap: var(--s2); padding-bottom: var(--s5); }
+.eyebrow, .label { font-size: var(--fs-1); color: var(--gedaempft); }
+.titel { font-size: var(--fs-4); line-height: 1.2; font-weight: var(--w-kopf); text-wrap: balance; }
+.lead { color: var(--gedaempft); max-width: 60ch; }
+.stand { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s1) var(--s2); margin-top: var(--s1); font-size: var(--fs-1); color: var(--gedaempft); }
+.zahl { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
+
+/* Fortschrittsbalken */
+.balken { position: relative; display: block; height: var(--balken); background: var(--linie); border-radius: var(--radius); overflow: hidden; }
+.balken > i {
+  position: absolute; inset: 0 auto 0 0; width: calc(var(--p, 0) * 100%);
+  background: var(--akzent); border-radius: inherit;
+  transition: width var(--dur) var(--ease);
+}
+
+/* Ordner */
+.ordner { border-top: 1px solid var(--linie); }
+.ordner:last-child { border-bottom: 1px solid var(--linie); }
+.ordner-kopf { font: inherit; }
+.ordner-knopf {
+  width: 100%; min-height: 56px; padding: var(--s3) 0;
+  display: grid; grid-template-columns: var(--einzug) minmax(0, 1fr) auto 4rem 24px; align-items: center; column-gap: var(--s2);
+}
+.ordner-nr { position: relative; display: grid; place-items: start; color: var(--blass); font-size: var(--fs-1); font-variant-numeric: tabular-nums; }
+.ordner-nr .ico { display: none; width: 18px; height: 18px; color: var(--akzent); stroke-width: 2; }
+.ordner[data-fertig] .nr-zahl { display: none; }
+.ordner[data-fertig] .ordner-nr .ico { display: block; }
+.ordner-titel { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; text-wrap: balance; }
+.ordner-stand { font-size: var(--fs-1); color: var(--gedaempft); white-space: nowrap; }
+.ordner-stand .zahl { font-weight: 400; }
+.balken.mini { height: min(var(--balken), 4px); }
+.ordner-knopf:hover .ordner-titel { color: var(--akzent); }
+.ordner-titel { transition: color var(--dur) var(--ease); }
+
+.block { display: grid; gap: var(--s1); padding-bottom: var(--s3); }
+.block-titel { padding-left: var(--kante); }
+.sp-liste { list-style: none; padding: 0; margin: 0; display: grid; }
+
+/* Stichpunkt */
+.sp-zeile {
+  display: grid; grid-template-columns: var(--einzug) minmax(0, 1fr); align-items: start; column-gap: var(--s2);
+  border-radius: var(--radius); transition: background-color var(--dur) var(--ease);
+}
+.sp-zeile:hover { background: var(--hover); }
+.haken { display: flex; align-items: center; justify-content: flex-start; width: 100%; height: 40px; padding-left: 0; }
+.haken-box {
+  display: grid; place-items: center; width: var(--haken); height: var(--haken);
+  border: 1.5px solid var(--blass); border-radius: min(var(--radius), calc(var(--haken) / 2));
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.haken-box svg { width: 100%; height: 100%; fill: none; stroke: var(--akzent-tinte); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.haken-box path { stroke-dasharray: 16; stroke-dashoffset: 16; transition: stroke-dashoffset var(--dur) var(--ease); }
+.haken:hover .haken-box { border-color: var(--akzent); }
+.haken[aria-checked="true"] .haken-box { background: var(--akzent); border-color: var(--akzent); }
+.haken[aria-checked="true"] path { stroke-dashoffset: 0; transition-delay: calc(var(--dur) / 3); }
+.haken:disabled .haken-box { border-color: var(--linie); background: var(--hover); }
+.haken:disabled:hover .haken-box { border-color: var(--linie); }
+
+.sp-knopf {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto 24px; align-items: start; column-gap: var(--s2);
+  padding-block: calc((40px - var(--fs-2) * var(--lh)) / 2); padding-right: var(--s1); min-height: 40px;
+}
+.sp-titel { transition: color var(--dur) var(--ease); overflow-wrap: anywhere; }
+.sp[data-erledigt] .sp-titel { color: var(--gedaempft); }
+.art { font-size: var(--fs-1); color: var(--gedaempft); white-space: nowrap; line-height: calc(var(--fs-2) * var(--lh)); }
+.pfeil { display: grid; place-items: center; width: 24px; height: calc(var(--fs-2) * var(--lh)); color: var(--blass); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
+.pfeil::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+[aria-expanded="true"] > .pfeil { transform: rotate(180deg); color: var(--akzent); }
+.sp-knopf:hover .pfeil, .ordner-knopf:hover .pfeil { color: var(--text); }
+
+/* Aufklappen: schiebt den Rest weich nach unten */
+.klapp { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur) var(--ease); }
+.klapp[data-offen="true"] { grid-template-rows: 1fr; }
+.klapp-innen { min-height: 0; overflow: hidden; opacity: 0; transition: opacity var(--dur) var(--ease); }
+.klapp[data-offen="true"] > .klapp-innen { opacity: 1; }
+
+.sp-detail { display: grid; gap: var(--s3); padding: var(--s1) var(--s1) var(--s4) var(--kante); }
+.feld { display: grid; gap: var(--s1); }
+.rahmen { max-width: 62ch; }
+.koennen { list-style: none; padding: 0; display: grid; gap: var(--s1); max-width: 62ch; }
+.koennen li { position: relative; padding-left: 1.25em; }
+.koennen li::before { content: "–"; position: absolute; left: 0; color: var(--blass); }
+.aktionen { display: flex; flex-wrap: wrap; gap: var(--s2); }
+
+/* Knöpfe: zwei Arten */
+.knopf {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s1);
+  min-height: 40px; padding: 0 var(--s3); border: 1px solid transparent; border-radius: var(--radius);
+  font-size: var(--fs-1); font-weight: 600; white-space: nowrap;
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease-pop);
+}
+.knopf.primaer { background: var(--akzent); color: var(--akzent-tinte); }
+.knopf.primaer:hover, .knopf.primaer.ist-hover { background: color-mix(in srgb, var(--akzent) 84%, white); }
+.knopf.primaer:active, .knopf.primaer.ist-aktiv { background: color-mix(in srgb, var(--akzent) 78%, black); transform: translateY(1px); }
+.knopf.sekundaer { border-color: var(--linie); color: var(--text); }
+.knopf.sekundaer:hover, .knopf.sekundaer.ist-hover { border-color: var(--gedaempft); background: var(--hover); }
+.knopf.sekundaer:active, .knopf.sekundaer.ist-aktiv { background: var(--akzent-hauch); border-color: var(--akzent); transform: translateY(1px); }
+.knopf:disabled, .knopf:disabled:hover { background: transparent; border-color: var(--linie); color: var(--blass); transform: none; box-shadow: none; }
+.knopf.primaer:disabled { background: var(--linie); border-color: var(--linie); }
+.ist-hover, .ist-aktiv { pointer-events: none; }
+
+/* Karte: die eine Art Karte */
+.karte { display: grid; gap: var(--s2); padding: var(--s3); background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); }
+.karte-titel { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; text-wrap: balance; }
+.karte-meta { font-size: var(--fs-1); color: var(--gedaempft); }
+
+/* Rang-Chip im Kopf (nur Konsole und Level) */
+.rang-chip { display: inline-flex; align-items: center; gap: var(--s1); color: var(--gedaempft); }
+
+/* ---------- Bausteine-Seite ---------- */
+.bs { display: grid; gap: var(--s3); padding-block: var(--s5); border-top: 1px solid var(--linie); }
+.bs-kopf { display: grid; gap: var(--s1); }
+.bs h2 { font-size: var(--fs-3); font-weight: var(--w-kopf); line-height: 1.3; }
+.bs-text { font-size: var(--fs-1); color: var(--gedaempft); max-width: 60ch; }
+.zustand-name { font-size: var(--fs-1); color: var(--blass); }
+.scroll-x { overflow-x: auto; }
+.knopf-raster { display: grid; grid-template-columns: 6rem repeat(4, minmax(7.5rem, 1fr)); gap: var(--s2); align-items: center; min-width: 38rem; }
+.muster-reihe { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); }
+.muster { display: flex; align-items: center; gap: var(--s1); }
+.muster .haken { width: auto; }
+.zwei { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+.stapel { display: grid; gap: var(--s2); }
+.leer { display: grid; justify-items: start; align-content: start; gap: var(--s1); padding: var(--s3); border: 1px dashed var(--linie); border-radius: var(--radius); }
+.leer .ico { width: 24px; height: 24px; color: var(--blass); margin-bottom: var(--s1); }
+.leer-titel { font-weight: 600; }
+.leer-text { font-size: var(--fs-1); color: var(--gedaempft); }
+.gesperrt { color: var(--blass); }
+.gesperrt .leer-titel { color: var(--gedaempft); }
+.gesperrt { border-style: solid; background: var(--hover); }
+
+/* Rangabzeichen */
+.raenge { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--s2); }
+.abz { display: grid; justify-items: center; align-content: start; gap: var(--s1); text-align: center; }
+.abz-form { position: relative; display: grid; place-items: center; width: 56px; height: 56px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--gedaempft); }
+.abz-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); fill: none; stroke-width: 1.5; }
+.abz-ring .grund { stroke: var(--linie); }
+.abz-ring .voll { stroke: var(--akzent); stroke-dasharray: 145; stroke-dashoffset: 145; }
+.abz-erreicht .abz-ring .voll, .abz-aktuell .abz-ring .voll { stroke-dashoffset: 0; }
+.abz-erreicht .abz-form { color: var(--text); }
+.abz-aktuell .abz-form { color: var(--akzent); }
+.abz-gesperrt .abz-ring .grund { stroke-dasharray: 3 4; }
+.abz-gesperrt .abz-form { color: var(--blass); }
+.abz-schloss { display: none; }
+.abz-name { font-size: var(--fs-1); color: var(--gedaempft); line-height: 1.3; overflow-wrap: anywhere; }
+.abz-aktuell .abz-name { color: var(--text); font-weight: 600; }
+.abz-gesperrt .abz-name { color: var(--blass); }
+.abz-gross .abz-form { width: 96px; height: 96px; font-size: var(--fs-4); }
+
+.rang-weg { display: grid; gap: var(--s1); }
+
+/* Aktivitätsübersicht */
+.aktiv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s1); }
+.aktiv-tage { display: grid; grid-template-rows: repeat(7, 14px); gap: 3px; font-size: var(--fs-1); line-height: 14px; color: var(--blass); }
+.raster { display: grid; grid-template-rows: repeat(7, 14px); grid-auto-flow: column; grid-auto-columns: 14px; gap: 3px; }
+.raster i { border-radius: calc(var(--radius) / 4); background: var(--linie); }
+.raster i[data-s="1"] { background: color-mix(in srgb, var(--akzent) 30%, var(--linie)); }
+.raster i[data-s="2"] { background: color-mix(in srgb, var(--akzent) 55%, var(--linie)); }
+.raster i[data-s="3"] { background: color-mix(in srgb, var(--akzent) 80%, var(--linie)); }
+.raster i[data-s="4"] { background: var(--akzent); }
+.raster i.heute { outline: 1px solid var(--text); outline-offset: 1px; }
+.aktiv-fuss { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s1) var(--s3); font-size: var(--fs-1); color: var(--gedaempft); }
+.legende { display: inline-flex; align-items: center; gap: 3px; }
+.legende i { width: 14px; height: 14px; }
+
+/* Besonderer Moment */
+.moment {
+  position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 16px;
+  background: rgba(4, 5, 8, .74);
+  opacity: 0; visibility: hidden; transition: opacity var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
+.moment[data-offen="true"] { opacity: 1; visibility: visible; transition-delay: 0s; }
+.moment-karte {
+  position: relative; width: min(100%, 24rem); display: grid; justify-items: center; gap: var(--s2); text-align: center;
+  padding: var(--s5) var(--s4) var(--s4); background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  transform: translateY(8px); transition: transform var(--dur) var(--ease);
+}
+.moment[data-offen="true"] .moment-karte { transform: none; }
+.moment-karte .knopf { margin-top: var(--s2); }
+.moment .abz-ring .voll { stroke-dashoffset: 145; }
+.moment[data-offen="true"] .abz-ring .voll { animation: ring calc(var(--dur) * 4) var(--ease) calc(var(--dur)) forwards; }
+@keyframes ring { to { stroke-dashoffset: 0; } }
+.moment h2 { font-size: var(--fs-4); font-weight: var(--w-kopf); line-height: 1.2; }
+.moment-text { color: var(--gedaempft); font-size: var(--fs-1); }
+.log { display: none; }
+.funken { position: absolute; left: 50%; top: calc(var(--s5) + 48px); width: 0; height: 0; pointer-events: none; }
+
+/* Hinweis unten */
+.hinweis {
+  position: fixed; left: calc(50% + var(--leiste-b) / 2); bottom: 84px; z-index: 40;
+  max-width: calc(100vw - 32px); padding: var(--s1) var(--s2);
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius);
+  font-size: var(--fs-1); color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  opacity: 0; transform: translate(-50%, 8px); pointer-events: none;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.hinweis[data-offen="true"] { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Stilrichtung A · Notizbuch ---------- */
+[data-stil="notizbuch"] .eyebrow, [data-stil="notizbuch"] .label { font-size: var(--fs-2); font-variant-caps: all-small-caps; letter-spacing: .07em; }
+[data-stil="notizbuch"] .art { font-style: italic; }
+[data-stil="notizbuch"] .rang-chip { display: none; }
+
+/* ---------- Stilrichtung B · Konsole ---------- */
+[data-stil="konsole"] .label, [data-stil="konsole"] .eyebrow { text-transform: lowercase; }
+[data-stil="konsole"] .label::before { content: "// "; color: var(--blass); }
+[data-stil="konsole"] .titel::after { content: "▍"; margin-left: .15em; color: var(--akzent); font-weight: 400; animation: blinken 1s steps(1) 4; }
+@keyframes blinken { 50% { opacity: 0; } }
+[data-stil="konsole"] .ordner { border-top-style: dashed; }
+[data-stil="konsole"] .ordner:last-child { border-bottom-style: dashed; }
+[data-stil="konsole"] .balken, [data-stil="konsole"] .balken > i { background: repeating-linear-gradient(90deg, var(--linie) 0 6px, transparent 6px 8px); }
+[data-stil="konsole"] .balken > i { background: repeating-linear-gradient(90deg, var(--akzent) 0 6px, transparent 6px 8px); transition-timing-function: steps(6, end); }
+[data-stil="konsole"] .balken.mini { height: 4px; }
+[data-stil="konsole"] .pfeil::before { content: "+"; width: auto; height: auto; border: 0; transform: none; }
+[data-stil="konsole"] [aria-expanded="true"] > .pfeil { transform: none; }
+[data-stil="konsole"] [aria-expanded="true"] > .pfeil::before { content: "−"; }
+[data-stil="konsole"] .haken-box path { transition-timing-function: steps(4, end); }
+[data-stil="konsole"] .art::before { content: "#"; }
+[data-stil="konsole"] .art { text-transform: lowercase; }
+[data-stil="konsole"] .koennen li::before { content: ">"; color: var(--akzent); }
+[data-stil="konsole"] .knopf.sekundaer::before { content: "["; color: var(--blass); }
+[data-stil="konsole"] .knopf.sekundaer::after { content: "]"; color: var(--blass); }
+[data-stil="konsole"] .knopf.primaer:active, [data-stil="konsole"] .knopf.ist-aktiv { transform: translate(1px, 1px); }
+[data-stil="konsole"] .rang-chip { color: var(--gedaempft); }
+[data-stil="konsole"] .rang-chip b { color: var(--akzent); font-weight: 400; }
+[data-stil="konsole"] .sp-zeile:hover { box-shadow: inset 2px 0 0 var(--akzent); }
+[data-stil="konsole"] .abz-ring { display: none; }
+[data-stil="konsole"] .abz-form { border: 1px solid var(--linie); }
+[data-stil="konsole"] .abz-erreicht .abz-form { border-color: var(--gedaempft); }
+[data-stil="konsole"] .abz-aktuell .abz-form { border-color: var(--akzent); background: var(--akzent); color: var(--akzent-tinte); }
+[data-stil="konsole"] .abz-gesperrt .abz-form { border-style: dashed; }
+[data-stil="konsole"] .moment-karte { justify-items: start; text-align: left; }
+[data-stil="konsole"] .moment .abz-form { background: var(--akzent); border-color: var(--akzent); color: var(--akzent-tinte); }
+[data-stil="konsole"] .log { display: block; margin: 0; width: 100%; font: inherit; font-size: var(--fs-1); color: var(--gedaempft); white-space: pre-wrap; min-height: calc(5 * var(--fs-1) * 1.6); }
+[data-stil="konsole"] .log b { color: var(--akzent); font-weight: 400; }
+[data-stil="konsole"] .moment-ende { display: grid; gap: var(--s2); justify-items: start; }
+[data-stil="konsole"] .moment-ende[hidden] { display: none; }
+
+/* ---------- Stilrichtung C · Level ---------- */
+[data-stil="level"] .eyebrow, [data-stil="level"] .label { text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+[data-stil="level"] .ordner-liste { display: grid; gap: var(--s2); }
+[data-stil="level"] .ordner, [data-stil="level"] .ordner:last-child { border: 0; background: var(--flaeche); border-radius: var(--radius); padding-inline: var(--s3); }
+[data-stil="level"] .ordner-knopf { padding-block: var(--s3); }
+[data-stil="level"] .ordner-nr { place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--linie); color: var(--gedaempft); font-weight: 600; transition: background-color var(--dur) var(--ease); }
+[data-stil="level"] .ordner[data-fertig] .ordner-nr { background: var(--akzent); }
+[data-stil="level"] .ordner[data-fertig] .ordner-nr .ico { color: var(--akzent-tinte); animation: plopp var(--dur) var(--ease-pop); }
+[data-stil="level"] .balken > i { box-shadow: 0 0 12px var(--glut); }
+[data-stil="level"] .balken > i::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); transform: translateX(-100%); }
+[data-stil="level"] .balken.glanz > i::after { animation: glanz calc(var(--dur) * 3) var(--ease); }
+@keyframes glanz { to { transform: translateX(100%); } }
+[data-stil="level"] .haken.frisch .haken-box { animation: plopp var(--dur) var(--ease-pop); }
+@keyframes plopp { 0% { transform: scale(.6); } 100% { transform: scale(1); } }
+[data-stil="level"] .art { padding: 0 var(--s1); border: 1px solid var(--linie); border-radius: var(--radius); line-height: 1.6; margin-top: 2px; }
+[data-stil="level"] .koennen li::before { content: ""; top: .62em; left: .25em; width: 5px; height: 5px; border-radius: 50%; background: var(--blass); }
+[data-stil="level"] .knopf.primaer:hover, [data-stil="level"] .knopf.primaer.ist-hover { box-shadow: 0 0 24px -4px var(--glut); transform: translateY(-1px); }
+[data-stil="level"] .knopf:active, [data-stil="level"] .knopf.ist-aktiv { transform: scale(.96); }
+[data-stil="level"] .karte { border-color: transparent; }
+[data-stil="level"] .rang-chip { padding: 4px var(--s2) 4px 4px; border-radius: 999px; background: var(--flaeche); color: var(--text); font-weight: 600; }
+[data-stil="level"] .rang-chip .mini-hex { display: grid; place-items: center; width: 22px; height: 22px; background: var(--akzent); color: var(--akzent-tinte); font-size: 11px; clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%); }
+[data-stil="level"] .abz-ring { display: none; }
+[data-stil="level"] .abz-form { clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%); background: var(--linie); }
+[data-stil="level"] .abz-erreicht .abz-form { background: var(--akzent-hauch); color: var(--akzent); }
+[data-stil="level"] .abz-aktuell .abz-form { background: var(--akzent); color: var(--akzent-tinte); }
+[data-stil="level"] .abz-aktuell { filter: drop-shadow(0 0 14px var(--glut)); }
+[data-stil="level"] .abz-gesperrt .abz-form { background: var(--flaeche); outline: 1px solid var(--linie); }
+[data-stil="level"] .abz-gesperrt .abz-nr { display: none; }
+[data-stil="level"] .abz-gesperrt .abz-schloss { display: block; width: 18px; height: 18px; }
+[data-stil="level"] .moment-karte { transform: scale(.9); transition-timing-function: var(--ease-pop); }
+[data-stil="level"] .moment[data-offen="true"] .moment-karte { transform: none; }
+[data-stil="level"] .moment[data-offen="true"] .abz-gross { animation: hochploppen calc(var(--dur) * 2) var(--ease-pop) var(--dur) both; }
+@keyframes hochploppen { from { transform: scale(.2) rotate(-30deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.funken i { position: absolute; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: var(--c); opacity: 0; animation: funke calc(var(--dur) * 4) cubic-bezier(.1,.7,.3,1) var(--verz) forwards; }
+@keyframes funke { 0% { opacity: 1; transform: translate(0, 0) scale(1); } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(.3); } }
+.plus { position: absolute; pointer-events: none; font-size: var(--fs-1); font-weight: 700; color: var(--akzent); animation: aufsteigen calc(var(--dur) * 3) var(--ease) forwards; }
+@keyframes aufsteigen { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-24px); } }
+
+/* ---------- Entwurfsleiste (gehört nicht zum Design) ---------- */
+.entwurf {
+  position: fixed; left: calc(50% + var(--leiste-b) / 2); bottom: 16px; transform: translateX(-50%); z-index: 50;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 12px; max-width: calc(100vw - 32px);
+  padding: 6px; background: #26272b; border: 1px solid #3b3c42; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  font: 13px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #c9cad0;
+}
+.entwurf-name { padding-left: 8px; color: #8b8d96; letter-spacing: .06em; text-transform: uppercase; font-size: 11px; }
+.entwurf-gruppe { display: flex; gap: 2px; padding: 2px; background: #1b1c1f; border-radius: 16px; }
+.entwurf button { padding: 6px 12px; border-radius: 14px; color: #b7b9c1; transition: background-color 150ms, color 150ms; }
+.entwurf button:hover { color: #fff; }
+.entwurf button[aria-pressed="true"] { background: #3d3f46; color: #fff; }
+.entwurf button:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+
+/* ---------- Schmale Fenster: Leiste wandert nach oben ---------- */
+@media (max-width: 760px) {
+  :root { --leiste-b: 0px; }
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .leiste { height: auto; flex-direction: row; align-items: center; gap: var(--s1); padding: var(--s1) 16px; border-right: 0; border-bottom: 1px solid var(--linie); }
+  .pruefung-knopf { padding: 0 var(--s1); }
+  .nav { flex-direction: row; flex: 1; justify-content: flex-end; gap: 2px; }
+  .nav-punkt { padding: 6px; }
+  .nav-punkt span { display: none; }
+  .haupt { padding: var(--s5) 16px 200px; }
+  .ordner-knopf { grid-template-columns: var(--einzug) minmax(0, 1fr) auto 24px; }
+  .ordner-knopf .balken.mini { display: none; }
+  .raenge { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: var(--s3); }
+  .zwei { grid-template-columns: minmax(0, 1fr); }
+  [data-stil="level"] .ordner, [data-stil="level"] .ordner:last-child { padding-inline: var(--s1); }
+  .entwurf .lang, .entwurf-name { display: none; }
+  .entwurf { flex-wrap: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-stil] { --dur: 1ms; }
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; }
+  .funken { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="leiste" aria-label="Hauptnavigation">
+    <div class="pruefung">
+      <button class="pruefung-knopf" id="pruefung-knopf" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="pruefung-menue" aria-label="Prüfung wählen, aktuell AP1">
+        AP1<span class="pfeil" aria-hidden="true"></span>
+      </button>
+      <div class="pruefung-menue" id="pruefung-menue" data-offen="false" role="menu" aria-label="Prüfung">
+        <button class="pm-punkt" type="button" role="menuitemradio" aria-checked="true" style="--c: var(--akzent)">
+          <span class="pm-farbe"></span><span><span class="pm-name">AP1</span><span class="pm-titel">Einrichten eines IT-gestützten Arbeitsplatzes</span></span>
+          <svg class="ico" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </button>
+        <button class="pm-punkt" type="button" role="menuitemradio" aria-checked="false" style="--c: var(--ap2)">
+          <span class="pm-farbe"></span><span><span class="pm-name">AP2</span><span class="pm-titel">Fachprüfungen</span></span><span></span>
+        </button>
+        <button class="pm-punkt" type="button" role="menuitemradio" aria-checked="false" style="--c: var(--wiso)">
+          <span class="pm-farbe"></span><span><span class="pm-name">WiSo</span><span class="pm-titel">Wirtschafts- und Sozialkunde</span></span><span></span>
+        </button>
+        <p class="pm-hinweis">Im Entwurf nur zur Ansicht. Die Farbpunkte zeigen die späteren Akzente.</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="nav-punkt" role="link" aria-disabled="true" title="Kommt später">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5v8.5a.5.5 0 0 1-.5.5H15v-6H9v6H4.5a.5.5 0 0 1-.5-.5z"/></svg><span>Start</span>
+      </a>
+      <a class="nav-punkt" href="#" id="nav-lernen" aria-current="page">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3.5 5.5c2.8-1 5.6-1 8.5.8v13c-2.9-1.8-5.7-1.8-8.5-.8z"/><path d="M20.5 5.5c-2.8-1-5.6-1-8.5.8v13c2.9-1.8 5.7-1.8 8.5-.8z"/></svg><span>Lernen</span>
+      </a>
+      <a class="nav-punkt" role="link" aria-disabled="true" title="Kommt später">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/></svg><span>Üben</span>
+      </a>
+      <a class="nav-punkt" role="link" aria-disabled="true" title="Kommt später">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M20 20l-5.2-5.2"/></svg><span>Nachschlagen</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="haupt">
+    <div class="spalte" id="ansicht-lernen"></div>
+    <div class="spalte" id="ansicht-bausteine" hidden></div>
+  </main>
+</div>
+
+<div class="moment" id="moment" data-offen="false" role="dialog" aria-modal="true" aria-labelledby="moment-titel">
+  <div class="moment-karte" id="moment-karte" tabindex="-1"></div>
+</div>
+<div class="hinweis" id="hinweis" role="status" aria-live="polite" data-offen="false"></div>
+
+<div class="entwurf" role="toolbar" aria-label="Entwurf: Ansicht und Stilrichtung">
+  <span class="entwurf-name">Entwurf</span>
+  <div class="entwurf-gruppe" role="group" aria-label="Ansicht">
+    <button type="button" data-ansicht="lernen">Lernseite</button>
+    <button type="button" data-ansicht="bausteine">Bausteine</button>
+  </div>
+  <div class="entwurf-gruppe" role="group" aria-label="Stilrichtung">
+    <button type="button" data-stil="notizbuch">A<span class="lang"> · Notizbuch</span></button>
+    <button type="button" data-stil="konsole">B<span class="lang"> · Konsole</span></button>
+    <button type="button" data-stil="level">C<span class="lang"> · Level</span></button>
+  </div>
+</div>
+
+<script>
+const D = {"teil":"AP1","titel":"Einrichten eines IT-gestützten Arbeitsplatzes","ordner":[{"id":"AP1-1","titel":"Projektmanagement und Qualität","bloecke":[{"id":"AP1-1-1","titel":"Projektgrundlagen","stichpunkte":[{"id":"AP1-1-1-1","titel":"Projektmerkmale und SMART-Ziele","art":"Wissen","rahmen":"Du grenzt ein Projekt von einer Daueraufgabe ab und formulierst Projektziele sauber. Das Thema beginnt bei den Merkmalen eines Projektes und reicht bis zur Anwendung der SMART-Kriterien auf gegebene Aussagen. In der Prüfung 2026 waren Beschreibungen eines Projektes dem passenden SMART-Kriterium zuzuordnen; die fünf Begriffe standen dabei.","koennen":["Du kannst Merkmale eines Projektes nennen und an einem Beispiel entscheiden, ob ein Projekt vorliegt.","Du kennst als typische Merkmale: einmalig, zeitlich begrenzt, klares Ziel, begrenzte Mittel, eigenes Team.","Du kannst die fünf SMART-Kriterien nennen: spezifisch, messbar, akzeptiert, realistisch, terminiert.","Du kannst eine Zielbeschreibung dem passenden SMART-Kriterium zuordnen.","Du kannst ein unscharfes Ziel so umformulieren, dass es alle fünf Kriterien erfüllt."]},{"id":"AP1-1-1-2","titel":"Vorgehen im Projekt: Wasserfallmodell und Scrum","art":"Wissen","rahmen":"Der Katalog verlangt, die Projektphasen am Beispiel des Wasserfallmodells bzw. von Scrum definieren zu können. Für AP1 reicht das Grundprinzip beider Vorgehensweisen mit Phasen, Vorteilen und Nachteilen. Weitere Modelle (V-Modell, Spiralmodell) und die begründete Auswahl für ein Softwareprojekt nennt der AP1-Katalog nicht.","koennen":["Du kannst die Phasen des Wasserfallmodells in der richtigen Reihenfolge nennen und erklären, dass eine Phase abgeschlossen wird, bevor die nächste beginnt.","Du kannst je einen Vorteil und einen Nachteil des Wasserfallmodells beschreiben.","Du kannst den Ablauf von Scrum beschreiben: Arbeit in kurzen, gleich langen Sprints, an deren Ende ein nutzbares Zwischenergebnis steht.","Du kannst die Rollen Product Owner, Scrum Master und Entwicklungsteam sowie die Begriffe Product Backlog, Sprint Planning, Daily, Review und Retrospektive erklären.","Du kannst begründen, wann ein planbasiertes und wann ein agiles Vorgehen besser passt."]},{"id":"AP1-1-1-3","titel":"Stakeholder und Risikoanalyse","art":"Wissen","rahmen":"Du beurteilst, wer Einfluss auf ein Projekt hat und was schiefgehen kann. Der Katalog führt beides unter „Machbarkeit und Wirtschaftlichkeit von Projekten beurteilen\". Für AP1 genügt es, Stakeholder zu benennen und ihren Einfluss einzuschätzen sowie Risiken mit Auswirkung und Gegenmaßnahme zu beschreiben. In den beiden AP1-Prüfungen nach aktuellem Katalog war das Thema nicht dran.","koennen":["Du kannst erklären, was ein Stakeholder ist, und für ein Projekt Stakeholder nennen.","Du kannst den Einfluss eines Stakeholders auf ein Projekt beurteilen.","Du kannst Stakeholder nach Einfluss und Interesse einordnen und daraus ableiten, wen du eng einbindest.","Du kannst für ein Projekt Risiken benennen.","Du kannst ein Risiko nach Eintrittswahrscheinlichkeit und Schadenshöhe bewerten und eine Gegenmaßnahme vorschlagen."]},{"id":"AP1-1-1-4","titel":"Teamphasen und Reflexion: Feedback, Lessons Learned","art":"Wissen","rahmen":"Der Katalog verlangt, die Phasen der Teambildung und -entwicklung sowie Reflexionsmethoden zu kennen. Es bleibt beim Kennen und Zuordnen: Phasen benennen, eine beschriebene Situation einordnen, den Zweck von Feedback und Lessons Learned erklären. Belege aus Prüfungen nach aktuellem Katalog gibt es nicht.","koennen":["Du kannst die Phasen der Teambildung und -entwicklung nennen.","Du kennst das Phasenmodell nach Tuckman (Forming, Storming, Norming, Performing, Adjourning) und kannst eine beschriebene Teamsituation einer Phase zuordnen.","Du kannst erklären, was Lessons Learned sind und wozu sie am Ende eines Projektes oder Auftrags festgehalten werden.","Du kannst erklären, was eine Feedback-Kultur ist.","Du kannst Regeln für konstruktives Feedback nennen: konkret, zeitnah, auf das Verhalten bezogen, als Ich-Botschaft."]}]},{"id":"AP1-1-2","titel":"Projektplanung und Termine","stichpunkte":[{"id":"AP1-1-2-1","titel":"Projektstrukturplan und Gantt-Diagramm","art":"Zeichnen","rahmen":"Der Katalog nennt Strukturplan und Gantt-Diagramm neben dem Netzplan als Werkzeuge der Projektplanung, die du anwenden können sollst. Für AP1 heißt das: ein Projekt in Teilaufgaben und Arbeitspakete gliedern und Vorgänge mit Dauer und Abhängigkeiten als Balken in ein Zeitraster eintragen oder daraus ablesen. In den Prüfungen nach aktuellem Katalog kam bisher nur der Netzplan vor.","koennen":["Du kannst ein Projekt in einem Projektstrukturplan in Teilaufgaben und Arbeitspakete gliedern.","Du kannst Vorgänge mit Dauer und Vorgängern als Balken in ein Gantt-Diagramm eintragen.","Du kannst aus einem Gantt-Diagramm Projektdauer, parallele Vorgänge und Meilensteine ablesen.","Du kannst den Unterschied erklären: Der Projektstrukturplan zeigt, was zu tun ist; das Gantt-Diagramm zeigt, wann es getan wird."]},{"id":"AP1-1-2-2","titel":"Netzplan: Zeiten, Puffer und kritischen Weg berechnen","art":"Rechnen","rahmen":"Du berechnest für einen Netzplan die frühesten und spätesten Zeitpunkte, die Puffer und den kritischen Weg. Der Anhang des Katalogs legt den Aufbau des Vorgangsknotens und die Formeln fest. In der Prüfung Frühjahr 2025 war ein teilweise ausgefüllter Netzplan mit zehn Vorgängen zu vervollständigen; Vorgangsliste, Legende und Pufferformeln standen dabei. Einen Netzplan vollständig selbst zu zeichnen war dort nicht verlangt.","koennen":["Du kannst den frühesten Anfangszeitpunkt (FAZ) und den frühesten Endzeitpunkt (FEZ) in der Vorwärtsrechnung bestimmen; bei mehreren Vorgängern zählt der größte FEZ.","Du kannst den spätesten Anfangszeitpunkt (SAZ) und den spätesten Endzeitpunkt (SEZ) in der Rückwärtsrechnung bestimmen; bei mehreren Nachfolgern zählt der kleinste SAZ.","Du kannst den Gesamtpuffer berechnen: GP = SAZ − FAZ oder GP = SEZ − FEZ.","Du kannst den freien Puffer berechnen: FP = FAZ des Nachfolgers − FEZ des Vorgangs.","Du kannst den kritischen Weg angeben, also die Vorgänge ohne Puffer, und daran die Projektdauer ablesen.","Du kannst einen fehlenden Vorgangsknoten aus der Vorgangsliste ergänzen."]},{"id":"AP1-1-2-3","titel":"Meilensteine, Termintreue und Reaktion auf Terminprobleme","art":"Wissen","rahmen":"Hier geht es um das Steuern der Termine, nicht um das Rechnen. Du erklärst, was ein Meilenstein ist, wie Termine fristgerecht geplant werden und was man tun kann, wenn ein Termin nicht gehalten wird. In der Prüfung 2026 waren zwei sinnvolle Reaktionen eines Projektleiters auf einen verfehlten Meilenstein zu beschreiben.","koennen":["Du kannst erklären, was ein Meilenstein ist: ein Zeitpunkt, zu dem ein Zwischenergebnis vorliegen und geprüft werden soll.","Du kannst Lösungsmöglichkeiten bei Terminproblemen beschreiben.","Du kannst sinnvolle Reaktionen auf einen nicht erreichten Meilenstein beschreiben.","Du kennst als Möglichkeiten: Ursache klären, Puffer nutzen, Personal aufstocken oder umverteilen, Vorgänge parallel legen, Umfang kürzen, Termin neu abstimmen und den Auftraggeber informieren.","Du kannst erklären, warum eine Verzögerung auf dem kritischen Weg das Projektende verschiebt."]}]},{"id":"AP1-1-3","titel":"Serviceanfragen und Störungen","stichpunkte":[{"id":"AP1-1-3-1","titel":"Support-Level, Ticketsystem und Bearbeitungsstatus","art":"Wissen","rahmen":"Serviceanfragen werden nach Schwierigkeit auf Support-Stufen verteilt und in einem Ticketsystem verfolgt. Für AP1 sollst du die drei Support-Level unterscheiden, den Weg einer Anfrage beschreiben und den Nutzen eines Ticketsystems erklären. Eskalationsstufen nennt der AP1-Katalog nicht.","koennen":["Du kannst First-, Second- und Third-Level-Support unterscheiden und eine Anfrage der passenden Stufe zuordnen.","Du kannst erklären, wozu ein Ticketsystem dient und wie daran der Bearbeitungsstatus sichtbar wird.","Du kannst typische Statuswerte eines Tickets nennen: offen, in Bearbeitung, wartet auf Rückmeldung, gelöst, geschlossen.","Du kannst Angaben nennen, die in ein Ticket gehören: Melder, Zeitpunkt, Beschreibung, Priorität, Bearbeiter, Lösung."]},{"id":"AP1-1-3-2","titel":"Fehler- und Störungsmanagement, Kundenkommunikation im Service","art":"Wissen","rahmen":"Der Katalog nennt Kundenkommunikation, Fehlermanagement und Störungs-Management als Teile der Arbeit an Serviceanfragen. Gemeint ist das geordnete Vorgehen von der Meldung bis zur Lösung, bei dem der Kunde informiert bleibt. Die technische Fehlersuche selbst steht bei den Fachthemen Hardware und Netzwerk.","koennen":["Du kannst beschreiben, wie eine Störung von der Meldung bis zur Lösung bearbeitet wird.","Du kennst eine sinnvolle Reihenfolge: aufnehmen, einordnen und priorisieren, Ursache eingrenzen, beheben, Erfolg prüfen, dokumentieren.","Du kannst einem Kunden den Stand der Bearbeitung verständlich und sachlich mitteilen.","Du kannst Rückfragen so stellen, dass ein Laie sie beantworten kann: was genau, seit wann, bei wem, was wurde geändert.","Du kannst erklären, warum bekannte Fehler und ihre Lösungen dokumentiert werden."]},{"id":"AP1-1-3-3","titel":"KI-Unterstützung in Arbeitsabläufen","art":"Wissen","rahmen":"Der Katalog nennt KI-Unterstützung als Teil der Arbeitsorganisation. Gefragt ist kein technisches KI-Wissen, sondern ein Blick für sinnvolle Einsatzstellen in einem Ablauf samt Nutzen und Grenzen. In der Prüfung Frühjahr 2025 war für drei Schritte eines Geschäftsablaufs zu beschreiben, wie KI dort helfen kann, und ein Vorteil für skeptische Mitarbeiter zu erläutern.","koennen":["Du kannst für einzelne Schritte eines beschriebenen Arbeitsablaufs einen sinnvollen KI-Einsatz beschreiben.","Du kannst einen Vorteil der KI-Unterstützung für die Mitarbeiter erläutern, zum Beispiel weniger Fehler oder mehr Zeit für anspruchsvolle Aufgaben.","Du kannst Grenzen und Risiken nennen: falsche Antworten, Datenschutz bei eingegebenen Daten, fehlende Nachvollziehbarkeit.","Du kannst begründen, warum Ergebnisse einer KI von einem Menschen geprüft werden müssen."]}]},{"id":"AP1-1-4","titel":"Leistung erbringen und abschließen","stichpunkte":[{"id":"AP1-1-4-1","titel":"Leistungserbringung vor Ort oder remote und Kundenvorgaben","art":"Wissen","rahmen":"Du unterscheidest, wie eine Leistung beim Kunden erbracht werden kann, und berücksichtigst seine Vorgaben. Das Katalogverb ist „kennen\": Varianten nennen, Vor- und Nachteile abwägen, Vorgaben wie Termin, Erfüllungsort, technische Voraussetzungen und Budget einhalten. Die Technik des Fernzugriffs steht im Ordner Software und Betriebssysteme.","koennen":["Du kannst Leistungserbringung vor Ort und remote vergleichen und für eine Situation die passende Variante begründen.","Du kannst Kundenvorgaben nennen, die einzuhalten sind: Termin und Erfüllungsort, technische Voraussetzungen wie Betriebssystem oder Hersteller, Budget.","Du kannst Vorteile der Fernwartung (keine Anfahrt, schnelle Reaktion) und ihre Grenzen (Hardwaredefekt, fehlende Netzverbindung, Sicherheitsbedenken) nennen.","Du kannst erklären, was der Erfüllungsort ist."]},{"id":"AP1-1-4-2","titel":"Abnahme, Übergabe und Einweisung: Abnahmeprotokoll","art":"Wissen","rahmen":"Am Ende eines Auftrags wird die Leistung übergeben, der Kunde eingewiesen und die Abnahme dokumentiert. Der Katalog nennt ausdrücklich den Inhalt des Abnahmeprotokolls. Du sollst wissen, was hineingehört und welche Bedeutung die Abnahme hat; dass ein vollständiges Protokoll frei zu formulieren ist, ist nicht belegt.","koennen":["Du kannst die Inhalte eines Abnahmeprotokolls nennen.","Du kennst als typische Inhalte: Vertragspartner, Gegenstand, Datum und Ort, geprüfte Leistungen mit Ergebnis, festgestellte Mängel mit Frist zur Behebung, Unterschriften.","Du kannst eine Übergabe und Einweisung planen: was übergeben wird, wer eingewiesen wird, was dokumentiert wird.","Du kannst erklären, welche Folgen die Abnahme hat: Die Leistung gilt als erbracht, die Vergütung wird fällig, die Gewährleistungsfrist beginnt."]},{"id":"AP1-1-4-3","titel":"Auftrag auswerten: Soll-Ist-Vergleich, Abweichungsanalyse, Nachfolgeaufträge","art":"Wissen","rahmen":"Nach dem Abschluss wird die erbrachte Leistung bewertet und dokumentiert. Du vergleichst geplante mit tatsächlichen Werten, benennst Abweichungen mit ihren Ursachen und erkennst Ansatzpunkte für Folgeaufträge. Das Rechnen mit Kosten steht bei der Vor- und Nachkalkulation im Ordner Wirtschaftlichkeit und Verträge.","koennen":["Du kannst erklären, was ein Soll-Ist-Vergleich ist und wozu eine Abweichungsanalyse dient.","Du kannst aus gegebenen Soll- und Ist-Werten die Abweichungen benennen und mögliche Ursachen nennen.","Du kannst Möglichkeiten nennen, aus einem abgeschlossenen Auftrag Nachfolgeaufträge zu gewinnen.","Du kennst Beispiele für Nachfolgeaufträge: Wartungsvertrag, Schulung, Erweiterung, Ersatzbeschaffung."]}]},{"id":"AP1-1-5","titel":"Qualitätsmanagement","stichpunkte":[{"id":"AP1-1-5-1","titel":"QM-Systeme, QS-Normen und Zertifizierung","art":"Wissen","rahmen":"Der Katalog verlangt hier nur ein Grundverständnis der Fachbegriffe. Du sollst erklären können, was ein betriebliches Qualitätsmanagementsystem ist, wozu Normen dienen und was eine Zertifizierung bedeutet. Einzelne Normabschnitte oder der Ablauf eines Audits sind nicht gefragt.","koennen":["Du kannst erklären, was ein betriebliches Qualitätsmanagementsystem ist.","Du kannst erklären, wozu Normen der Qualitätssicherung dienen.","Du kannst erklären, was eine Zertifizierung ist und welchen Nutzen sie für ein Unternehmen hat.","Du kennst die ISO 9001 als Beispiel einer Norm für Qualitätsmanagementsysteme.","Du kannst erklären, dass eine unabhängige Stelle das Zertifikat nach einer Prüfung ausstellt und es regelmäßig erneuert werden muss."]},{"id":"AP1-1-5-2","titel":"Qualitätsplanung, Qualitätslenkung und PDCA-Zyklus","art":"Wissen","rahmen":"Hier geht es um Qualitätsmaßnahmen im eigenen Arbeitsbereich. Du leitest Qualitätsziele aus Ist- und Ziel-Zustand ab, ordnest die Umsetzung als Qualitätslenkung ein und erklärst den PDCA-Zyklus als Kreislauf. Kennzahlen und den kontinuierlichen Verbesserungsprozess nennt der AP1-Katalog nicht.","koennen":["Du kannst Qualitätsplanung beschreiben: Ist-Zustand ermitteln und Ziel-Zustand festlegen.","Du kannst Qualitätslenkung als Umsetzung der Planung einordnen.","Du kannst die vier Schritte Plan, Do, Check, Act nennen und erklären.","Du kannst Maßnahmen aus einem Beispiel den vier Schritten des PDCA-Zyklus zuordnen."]},{"id":"AP1-1-5-3","titel":"Testprotokoll für einen eingerichteten Arbeitsplatz","art":"Wissen","rahmen":"Wenn ein Arbeitsplatz eingerichtet ist, wird geprüft und protokolliert, ob er der Spezifikation entspricht. In der Prüfung 2026 bildete ein Testprotokoll mit den Spalten Testfall, Beschreibung, erwartetes Ergebnis und Ergebnis den Rahmen einer ganzen Aufgabe: Abweichungen waren zu erklären und das weitere Vorgehen zu beschreiben. Du musst ein Testprotokoll lesen, Abweichungen fachlich deuten und sinnvolle Testfälle für einen Arbeitsplatz kennen.","koennen":["Du kannst den Aufbau eines Testprotokolls beschreiben: Testfall, Beschreibung, erwartetes Ergebnis, tatsächliches Ergebnis.","Du kannst eine Abweichung zwischen erwartetem und tatsächlichem Ergebnis fachlich begründen.","Du kannst nach einem fehlgeschlagenen Testfall weitere Prüfschritte vorschlagen.","Du kannst sinnvolle Testfälle für einen neuen Arbeitsplatz nennen: Hardware erkannt, Netzwerk und Internet erreichbar, Drucker, Anmeldung, benötigte Software startet."]}]}]},{"id":"AP1-2","titel":"Kunde, Markt und Unternehmen","bloecke":[{"id":"AP1-2-1","titel":"Markt und Vertrieb","stichpunkte":[{"id":"AP1-2-1-1","titel":"Marktformen und Käufer-/Verkäufermarkt","art":"Wissen","rahmen":"Du bewertest eine Marktsituation anhand der Zahl der Anbieter und Nachfrager. Der Katalog nennt als Beispiele Monopol, Oligopol, Polypol sowie Käufer- und Verkäufermarkt. Es reicht, eine beschriebene Situation der richtigen Marktform zuzuordnen und die Folgen für Preis und Verhandlungsposition zu erklären; Preisbildungsmodelle sind nicht gefragt.","koennen":["Du kannst Monopol, Oligopol und Polypol nach der Zahl der Anbieter unterscheiden und je ein Beispiel nennen.","Du kannst Käufermarkt und Verkäufermarkt unterscheiden.","Du kannst erklären, wer im Käufermarkt und wer im Verkäufermarkt die stärkere Verhandlungsposition hat und warum.","Du kannst eine beschriebene Marktsituation der passenden Marktform zuordnen."]},{"id":"AP1-2-1-2","titel":"Zielgruppen und Vertriebsformen: direkter und indirekter Vertrieb","art":"Wissen","rahmen":"Du grenzt ab, für wen ein Produkt oder eine Leistung gedacht ist, und kennst die beiden Wege, auf denen es zum Kunden kommt. Der Katalog führt die Vertriebsformen unter „Marketingaktivitäten unterstützen können\". Es bleibt bei Begriffen, Abgrenzung und Vor- und Nachteilen.","koennen":["Du kannst eine Zielgruppe für ein Produkt beschreiben und von anderen Gruppen abgrenzen.","Du kannst Merkmale nennen, nach denen Zielgruppen gebildet werden: Privat- oder Geschäftskunden, Branche, Unternehmensgröße, Bedarf, Budget.","Du kannst direkten und indirekten Vertrieb unterscheiden.","Du kannst je einen Vorteil nennen: beim direkten Vertrieb Kundennähe und volle Marge, beim indirekten Vertrieb größere Reichweite über Händler."]}]},{"id":"AP1-2-2","titel":"Bedarf ermitteln und beraten","stichpunkte":[{"id":"AP1-2-2-1","titel":"Bedarfsanalyse: Daten erheben und auswerten","art":"Wissen","rahmen":"Bevor ein Arbeitsplatz ausgestattet wird, muss der Bedarf des Kunden feststehen. Du sollst eine zielgruppengerechte Bedarfsanalyse durchführen können: eigene Daten erheben, etwa mit einer Kundenbefragung, und vorhandene Daten auswerten, etwa Anforderungen an Büroarbeitsplätze. Das Ergebnis ist die Grundlage für ein Angebot.","koennen":["Du kannst Wege nennen, den Bedarf eines Kunden selbst zu erheben, zum Beispiel Kundenbefragung, Interview oder Beobachtung am Arbeitsplatz.","Du kannst vorhandene Daten auswerten, um Anforderungen an einen Arbeitsplatz abzuleiten.","Du kannst aus einer Situationsbeschreibung den Bedarf eines Kunden ermitteln und daraus ein passendes Angebot ableiten.","Du kannst offene und geschlossene Fragen unterscheiden und passend einsetzen.","Du kannst Anforderungen in Muss- und Kann-Anforderungen trennen."]},{"id":"AP1-2-2-2","titel":"Lastenheft und Pflichtenheft","art":"Wissen","rahmen":"Der Katalog nennt zu beiden Dokumenten Zweck, Urheber und Inhalt. Du sollst sie sicher auseinanderhalten: wer schreibt welches, was steht drin, in welcher Reihenfolge entstehen sie. In der Prüfung Herbst 2024 waren Zweck und ein Inhaltsbeispiel für beide in eine Tabelle einzutragen. Ein ganzes Lasten- oder Pflichtenheft zu erstellen verlangt der AP1-Katalog nicht.","koennen":["Du kannst den Zweck des Lastenhefts erklären: Der Auftraggeber beschreibt, was er haben will.","Du kannst den Zweck des Pflichtenhefts erklären: Der Auftragnehmer beschreibt, wie er die Anforderungen umsetzen will.","Du kannst für beide Dokumente den Urheber nennen und je ein Beispiel für einen Inhalt angeben.","Du kannst die Reihenfolge erklären: Das Pflichtenheft baut auf dem Lastenheft auf und wird nach der Freigabe durch den Auftraggeber Vertragsgrundlage."]},{"id":"AP1-2-2-3","titel":"Kundenkommunikation und Kommunikationsmodelle: 4-Ohren-Modell, Sender-Empfänger-Modell","art":"Wissen","rahmen":"Du sollst Methoden der Kundenberatung kennen und beurteilen. Dazu gehören die beiden im Katalog genannten Kommunikationsmodelle und ein Gespräch, das zur Situation und zum Kunden passt. Erwartet wird, eine Aussage mit dem Modell zu deuten und Störungen der Verständigung zu erklären.","koennen":["Du kannst das Sender-Empfänger-Modell erklären: Nachricht, Verschlüsseln, Übertragungsweg, Entschlüsseln, Rückmeldung.","Du kannst die vier Seiten einer Nachricht nennen: Sachinhalt, Selbstkundgabe, Beziehung, Appell.","Du kannst eine Kundenaussage auf allen vier Seiten deuten und ein Missverständnis damit erklären.","Du kannst dein Gesprächsverhalten an Situation und Kunden anpassen, zum Beispiel Fachsprache bei Laien vermeiden.","Du kannst Ursachen für gestörte Kommunikation nennen: Fachbegriffe, Lärm, unterschiedliche Erwartungen, fehlende Rückfrage."]}]},{"id":"AP1-2-3","titel":"Informieren und präsentieren","stichpunkte":[{"id":"AP1-2-3-1","titel":"Englische Fachtexte verstehen","art":"Wissen","rahmen":"Englisch wird nicht als eigenes Fach geprüft, sondern steckt in den Aufgaben. In beiden Prüfungen nach aktuellem Katalog war ein kurzer englischer Herstellertext oder Satz zu lesen und der Inhalt auf Deutsch wiederzugeben; im Frühjahr 2025 durfte auch auf Englisch geantwortet werden. Du musst englische IT-Fachtexte sinngemäß verstehen und gezielt Informationen herausziehen. Selbst längere englische Texte zu schreiben war nicht verlangt.","koennen":["Du kannst aus einem kurzen englischen Fachtext die gefragten Informationen herausziehen und auf Deutsch nennen.","Du kannst englische Bezeichner und Kommentare in einem Quelltext verstehen.","Du kennst gängige englische Fachbegriffe aus Hardware, Netzwerk und IT-Sicherheit, zum Beispiel firewall, update, vulnerability, backup, unauthorized access.","Du kannst einen englischen Satz sinngemäß übersetzen, ohne Wort für Wort vorzugehen."]},{"id":"AP1-2-3-2","titel":"Informationen aufbereiten, Quellen auswerten und präsentieren","art":"Wissen","rahmen":"Du sollst Informationen aus technischen und kaufmännischen Texten gewinnen, verständlich aufbereiten und vor Kunden präsentieren können. Der Katalog nennt dazu „Präsentation und Medienkompetenz\". Belegt ist bisher nur die Frage nach Wegen der Informationsbeschaffung; eine Präsentation zu entwerfen wurde nach aktuellem Katalog nicht verlangt.","koennen":["Du kannst Quellen nennen, aus denen du Fachinformationen beschaffst, zum Beispiel Herstellerdokumentation, Fachforen, Suchmaschinen.","Du kannst aus einem technischen oder kaufmännischen Text die für einen Kunden wichtigen Angaben herausarbeiten.","Du kannst die Verlässlichkeit einer Quelle einschätzen: Herausgeber, Aktualität, Belege.","Du kannst Regeln für eine gute Präsentation nennen: Aufbau mit Einleitung, Hauptteil und Schluss, wenig Text je Folie, Sprache der Zielgruppe.","Du kannst erklären, was Medienkompetenz bedeutet: Medien gezielt auswählen, bedienen und ihre Inhalte kritisch bewerten."]}]},{"id":"AP1-2-4","titel":"Unternehmen und Organisation","stichpunkte":[{"id":"AP1-2-4-1","titel":"Unternehmensziele und Leitbild: ökonomisch, ökologisch, sozial","art":"Wissen","rahmen":"Du sollst die Zielsetzungen eines Unternehmens seinem Leitbild entnehmen können. Der Katalog teilt die Ziele in ökonomische, ökologische und soziale. Erwartet wird, Ziele aus einem Text herauszulesen, sie einzuordnen und Beispiele zu nennen; in der Prüfung Herbst 2024 waren ökologische Gesichtspunkte einer Neuanschaffung zu beschreiben.","koennen":["Du kannst erklären, was ein Unternehmensleitbild ist.","Du kannst Ziele aus einem Leitbild herauslesen und als ökonomisch, ökologisch oder sozial einordnen.","Du kannst je ein Beispiel nennen: Umsatz und Gewinn, Ressourcenschonung und Nachhaltigkeit, gute Arbeitsbedingungen.","Du kannst ökologische Gesichtspunkte einer Anschaffung beschreiben, zum Beispiel Energieverbrauch, Materialeinsatz, Entsorgung des Altgeräts.","Du kannst an einem Beispiel zeigen, wie zwei Ziele miteinander in Konflikt geraten."]},{"id":"AP1-2-4-2","titel":"Aufbauorganisation und Vollmachten: Einlinien-, Mehrlinien-, Matrixorganisation","art":"Wissen","rahmen":"Du stimmst die Leistungserbringung mit der Aufbauorganisation des eigenen Unternehmens ab. Dafür musst du die drei im Katalog genannten Organisationsformen unterscheiden und wissen, wer was entscheiden darf. Rechtsformen und weitere Leitungssysteme nennt der AP1-Katalog nicht.","koennen":["Du kannst Einliniensystem, Mehrliniensystem und Matrixorganisation an einem Organigramm erkennen.","Du kannst die drei Formen unterscheiden: eine weisungsbefugte Stelle, mehrere fachliche Vorgesetzte, Überschneidung von zwei Gliederungen.","Du kannst je einen Vorteil und einen Nachteil nennen, zum Beispiel klare Zuständigkeit gegenüber langen Dienstwegen.","Du kannst erklären, was Handlungs- und Entscheidungsspielräume und Vollmachten sind.","Du kannst Handlungsvollmacht und Prokura unterscheiden."]}]},{"id":"AP1-2-5","titel":"Veränderungen begleiten","stichpunkte":[{"id":"AP1-2-5-1","titel":"Veränderungsprozesse: Schritte, Chancen und Einbeziehung der Mitarbeiter","art":"Wissen","rahmen":"Wenn neue IT eingeführt wird, ändert sich die Arbeit der Betroffenen. Du sollst solche Veränderungsprozesse begleiten und unterstützen: die Schritte darstellen, die Chancen betonen und die Mitarbeiter einbeziehen und qualifizieren. In der Prüfung Frühjahr 2025 war ein Vorteil einer Neuerung für skeptische Mitarbeiter zu erläutern; der Podcast führt „Change Management\" für beide folgenden Termine.","koennen":["Du kannst die Schritte einer Veränderung benennen und in eine sinnvolle Reihenfolge bringen.","Du kannst die Chancen einer Veränderung für die Betroffenen herausstellen.","Du kannst Maßnahmen nennen, mit denen Mitarbeiter einbezogen werden: früh informieren, beteiligen, Rückmeldungen aufnehmen.","Du kannst Blended Learning und den Einsatz von Multiplikatoren als Wege der Mitarbeiterqualifizierung erklären.","Du kannst erklären, dass Blended Learning Präsenzschulung und Online-Lernen verbindet und Multiplikatoren ihr Wissen an Kollegen weitergeben."]},{"id":"AP1-2-5-2","titel":"Rollen und Widerstände im Veränderungsprozess","art":"Wissen","rahmen":"Menschen reagieren unterschiedlich auf Veränderungen. Der Katalog nennt vier Typen und drei Ursachen von Widerstand. Du sollst die Typen an ihrem Verhalten erkennen, Ursachen benennen und passende Reaktionen vorschlagen.","koennen":["Du kannst Promoter, Bremser, Skeptiker und Widerständler unterscheiden und eine beschriebene Person zuordnen.","Du kannst Ursachen von Widerständen nennen: Angst vor Kompetenzverlust, Wissenslücken, persönliche Historie.","Du kannst zu jeder Ursache eine passende Maßnahme vorschlagen, zum Beispiel Schulung bei Wissenslücken.","Du kannst erklären, warum Promoter gezielt als Unterstützer eingesetzt werden."]}]}]},{"id":"AP1-3","titel":"Wirtschaftlichkeit und Verträge","bloecke":[{"id":"AP1-3-1","titel":"Kosten und Kalkulation","stichpunkte":[{"id":"AP1-3-1-1","titel":"Kostenarten: Anschaffung, Betrieb, Lizenz, Finanzierung, fix und variabel","art":"Wissen","rahmen":"Bevor du rechnest, musst du Kosten einordnen können. Der Katalog nennt Anschaffungs-, Betriebs-, Lizenz- und Finanzierungskosten sowie variable und fixe Kosten. Du sollst die Positionen eines Angebots der richtigen Kostenart zuordnen und einmalige von laufenden Kosten trennen.","koennen":["Du kannst Anschaffungs-, Betriebs-, Lizenz- und Finanzierungskosten unterscheiden und Beispiele nennen.","Du kannst fixe und variable Kosten unterscheiden.","Du kannst die Positionen eines Angebots als einmalige oder laufende Kosten einordnen.","Du kannst erklären, warum der niedrigste Kaufpreis nicht das günstigste Angebot sein muss: Entscheidend sind die Kosten über die ganze Nutzungsdauer."]},{"id":"AP1-3-1-2","titel":"Kosten über die Nutzungsdauer berechnen","art":"Rechnen","rahmen":"Das ist die häufigste Rechenaufgabe in AP1: aus Kaufpreis, Nutzungsdauer und laufenden Kosten die Kosten je Monat oder über mehrere Jahre bestimmen. In jeder ausgewerteten AP1-Prüfung kam eine solche Rechnung vor, meist mit drei bis sieben Punkten und verlangtem Rechenweg. Es bleibt bei Grundrechenarten, Prozentrechnung und Rundung.","koennen":["Du kannst einen Kaufpreis gleichmäßig auf die Nutzungsdauer verteilen und laufende Kosten für Verbrauch, Wartung und Lizenzen dazurechnen.","Du kannst Kosten je Monat und je Jahr ineinander umrechnen und über mehrere Jahre aufsummieren.","Du kannst einen Rabatt abziehen und aus einem Nettobetrag den Bruttobetrag mit 19 % Umsatzsteuer berechnen.","Du kannst entgangenen Umsatz als Kosten berücksichtigen, zum Beispiel Arbeitszeit, die wegen einer Schulung ausfällt.","Du kannst den Rechenweg nachvollziehbar aufschreiben und das Ergebnis wie verlangt runden."]},{"id":"AP1-3-1-3","titel":"Machbarkeit mit Budgetvorgabe, Vor- und Nachkalkulation","art":"Rechnen","rahmen":"Du prüfst, ob ein Vorhaben mit dem vorgegebenen Budget machbar ist, und vergleichst die geplanten mit den tatsächlichen Kosten. Der Katalog nennt die Machbarkeitsanalyse mithilfe einer Budgetvorgabe sowie Vor- und Nachkalkulation. Erwartet wird eine einfache Aufstellung aus Stunden, Stundensatz und Material; in den Prüfungen nach aktuellem Katalog gab es dazu noch keine eigene Aufgabe.","koennen":["Du kannst die Kosten eines Vorhabens aus Arbeitsstunden, Stundensatz und Materialkosten zusammenstellen.","Du kannst prüfen, ob die Kosten innerhalb einer Budgetvorgabe liegen, und das Ergebnis begründen.","Du kannst erklären, was Vor- und Nachkalkulation sind und wann sie erstellt werden.","Du kannst aus Vor- und Nachkalkulation die Abweichung in Euro berechnen.","Du kannst die Abweichung auch in Prozent der geplanten Kosten angeben."]},{"id":"AP1-3-1-4","titel":"Rechnung prüfen: Rabatt, Umsatzsteuer, Skonto","art":"Rechnen","rahmen":"Der Anhang des Katalogs enthält eine Musterrechnung mit Rabatt, Nettopreis, Mehrwertsteuer, Rechnungsbetrag und Skonto. Für Herbst 2025 nennen der Podcast und Gedächtnisprotokolle eine Aufgabe, in der Rechnungspositionen zu kontrollieren und zu begründen waren. Die genaue Tiefe ist nicht belegt, weil diese Prüfung nicht im Original vorlag; sicher brauchst du den Rechenweg der Musterrechnung.","koennen":["Du kannst die Positionen einer Rechnung nachrechnen: Menge mal Einzelpreis, Rabatt, Nettopreis, Umsatzsteuer, Rechnungsbetrag.","Du kannst Skonto abziehen und den Zahlbetrag bei Zahlung innerhalb der Skontofrist berechnen.","Du kannst eine Rechnung mit der Bestellung vergleichen und Abweichungen bei Menge, Preis oder Zahlungsziel benennen.","Du kennst die Reihenfolge: erst Rabatt abziehen, dann Umsatzsteuer aufschlagen; Skonto wird erst bei der Zahlung abgezogen.","Du kannst Pflichtangaben einer Rechnung nennen, zum Beispiel Rechnungsnummer, Datum, Leistungsbeschreibung, Steuersatz und Steuerbetrag."]},{"id":"AP1-3-1-5","titel":"Wertschöpfung","art":"Wissen","rahmen":"Der Katalog nennt „Wertschöpfung\" als letzten Spiegelstrich unter „Wirtschaftlichkeit von IT-Systemen bestimmen und beurteilen\", ohne Erläuterung. In keiner ausgewerteten Prüfung kam der Begriff vor.","koennen":["Du kannst Wertschöpfung als Differenz zwischen dem Wert der eigenen Leistung und den zugekauften Vorleistungen erklären.","Du kannst an einem Beispiel beschreiben, wie ein IT-System zur Wertschöpfung beiträgt, etwa durch schnellere Abläufe oder weniger Fehler.","Du kannst die Stufen einer einfachen Wertschöpfungskette nennen: Beschaffung, Leistungserstellung, Absatz."]}]},{"id":"AP1-3-2","titel":"Finanzierung und Angebotsvergleich","stichpunkte":[{"id":"AP1-3-2-1","titel":"Kostenvergleich rechnen: Kauf, Leasing, Finanzierung, Pay-per-Use, Eigenleistung oder Fremdvergabe","art":"Rechnen","rahmen":"Du vergleichst Beschaffungswege rechnerisch. Der Katalog spricht von einem „einfachen Kostenvergleich\" zwischen Leasing, Kauf, Finanzierung und Pay-per-Use und nennt Finanzierungskosten. In der Prüfung Herbst 2024 war ein Tilgungsplan für ein Darlehen mit gleichbleibender Tilgung auszufüllen; in der Prüfung 2026 waren die Kosten einer internen Entwicklung mit denen einer externen Vergabe zu vergleichen.","koennen":["Du kannst die Gesamtkosten von Kauf, Leasing, Finanzierung und Pay-per-Use über einen gegebenen Zeitraum berechnen und vergleichen.","Du kannst für ein Darlehen mit gleichbleibender Tilgung je Jahr Restschuld, Zinsen, Tilgung und Zahlung berechnen.","Du kannst die Summe der Zinsen als Finanzierungskosten angeben.","Du kannst die Kosten einer internen Lösung und einer externen Vergabe aus Stunden und Stundensätzen berechnen und vergleichen.","Du kannst das Ergebnis beurteilen und Gründe gegen eine Fremdvergabe nennen, die nicht in der Rechnung stehen, zum Beispiel Abhängigkeit und Weitergabe von Know-how.","Du kannst die Nutzungsmenge bestimmen, ab der sich ein Kauf gegenüber Pay-per-Use lohnt."]},{"id":"AP1-3-2-2","titel":"Quantitativer Angebotsvergleich und Preis-Leistungs-Verhältnis","art":"Rechnen","rahmen":"Beim quantitativen Angebotsvergleich zählt, was ein Angebot unter dem Strich kostet. Du rechnest die Angebote auf eine gemeinsame Basis um und stellst Preis und Leistung gegenüber. Der Katalog nennt das Thema an drei Stellen; eine reine Preisvergleichsrechnung war in den Prüfungen nach aktuellem Katalog aber nicht dran, dort lag der Schwerpunkt auf der Nutzwertanalyse.","koennen":["Du kannst mehrere Angebote auf eine gemeinsame Basis bringen, zum Beispiel Gesamtpreis für die benötigte Menge oder Kosten je Monat.","Du kannst das Preis-Leistungs-Verhältnis zweier Angebote vergleichen, etwa über den Preis je Leistungseinheit.","Du kannst das rechnerisch günstigste Angebot bestimmen und das Ergebnis begründen.","Du kannst Rabatt, Skonto und Bezugskosten wie Versand in den Vergleich einrechnen."]},{"id":"AP1-3-2-3","titel":"Qualitativer Angebotsvergleich mit der Nutzwertanalyse","art":"Rechnen","rahmen":"Die Nutzwertanalyse macht Angebote vergleichbar, wenn nicht nur der Preis zählt. Sie steht zweimal im Katalog und war laut Podcast das punktstärkste Einzelthema der bisherigen AP1-Prüfungen. Im Frühjahr 2025 waren für drei Geräte je Kriterium Rangpunkte selbst zu vergeben und zu summieren, ohne Gewichtung; im Frühjahr 2024 war eine gewichtete Tabelle zu vervollständigen. Du musst beide Formen beherrschen.","koennen":["Du kannst aus technischen Daten je Kriterium Punkte vergeben, zum Beispiel als Rangfolge mit 3 für den besten und 1 für den schlechtesten Wert.","Du kannst Punkte mit Gewichtungsfaktoren multiplizieren und je Angebot zum Nutzwert aufsummieren.","Du kannst fehlende Werte in einer teilweise ausgefüllten Nutzwerttabelle ergänzen: Gewichtung, Punkte, gewichtete Punkte, Summe.","Du kannst eine Rangfolge der Angebote bilden und das beste auswählen.","Du kannst eine Zusatzbedingung berücksichtigen, die ein Angebot ausschließt, auch wenn es die meisten Punkte hat.","Du beachtest, dass bei Kosten der niedrigste Wert die meisten Punkte bekommt."]}]},{"id":"AP1-3-3","titel":"Verträge","stichpunkte":[{"id":"AP1-3-3-1","titel":"Kauf-, Miet- und Leasingvertrag; Vertragsbestandteile","art":"Wissen","rahmen":"Du sollst Vertragsarten und Vertragsbestandteile kennen und unterscheiden. Für Kauf, Miete und Leasing heißt das: wer wird Eigentümer, wer trägt welche Pflichten, was spricht für welche Form. In der Prüfung Herbst 2024 waren Vorteile des Leasings und die Möglichkeiten nach Vertragsende zu beschreiben, im Frühjahr 2024 das Zustandekommen und die Inhalte eines Kaufvertrags.","koennen":["Du kannst Kaufvertrag, Mietvertrag und Leasing unterscheiden, vor allem danach, wer Eigentümer wird.","Du kannst Vorteile des Leasings gegenüber dem Kauf beschreiben, zum Beispiel geschonte Liquidität und gleichbleibende, planbare Raten.","Du kannst Möglichkeiten nach Ablauf eines Leasingvertrags nennen: Rückgabe, Verlängerung, Kauf, Austausch gegen ein neues Gerät.","Du kannst erklären, wie ein Kaufvertrag zustande kommt: durch zwei übereinstimmende Willenserklärungen, Antrag und Annahme.","Du kannst Vertragsbestandteile nennen: Leistungsbeschreibung, Termine, Entgelte, Sanktionen bzw. Konventionalstrafen."]},{"id":"AP1-3-3-2","titel":"Werkvertrag, Dienstvertrag, Servicevertrag und Service Level Agreement","art":"Wissen","rahmen":"Bei Verträgen über Arbeit kommt es darauf an, was geschuldet ist. Du sollst Werkvertrag und Dienstvertrag sicher unterscheiden und wissen, was ein Servicevertrag und ein Service Level Agreement regeln. In den ausgewerteten AP1-Prüfungen gab es dazu keine Aufgabe.","koennen":["Du kannst Werkvertrag und Dienstvertrag unterscheiden: Beim Werkvertrag wird ein Erfolg geschuldet, beim Dienstvertrag die Tätigkeit.","Du kannst IT-Leistungen zuordnen, zum Beispiel die Erstellung einer Software als Werkvertrag und eine Schulung als Dienstvertrag.","Du kannst erklären, was ein Servicevertrag regelt.","Du kannst erklären, was ein Service Level Agreement ist.","Du kennst typische Inhalte eines SLA: Verfügbarkeit, Reaktionszeit, Wiederherstellungszeit, Servicezeiten, Folgen bei Verstößen."]},{"id":"AP1-3-3-3","titel":"Vertragsstörungen und Mängelarten: Schlechtleistung, Falschlieferung, Minderlieferung","art":"Wissen","rahmen":"Du sollst erkennen, wann ein Vertrag nicht ordnungsgemäß erfüllt wird, und die Mängelarten des Katalogs unterscheiden. Erwartet wird die Zuordnung eines geschilderten Falls und eine sinnvolle Reaktion; im Frühjahr 2024 waren zwei Kaufvertragsstörungen und je eine vorbeugende Maßnahme zu nennen. Fristen und Paragrafen im Einzelnen waren nicht gefragt.","koennen":["Du kannst Vertragsstörungen nennen und einen geschilderten Fall zuordnen.","Du kennst Lieferverzug, Zahlungsverzug, Annahmeverzug und mangelhafte Lieferung.","Du kannst Schlechtleistung, Falschlieferung und Minderlieferung unterscheiden.","Du kannst zu einer Vertragsstörung eine vorbeugende Maßnahme nennen.","Du kannst die Rechte des Käufers bei einem Mangel nennen: zuerst Nacherfüllung durch Nachbesserung oder Ersatzlieferung, danach Minderung, Rücktritt oder Schadensersatz."]}]},{"id":"AP1-3-4","titel":"Urheberrecht und Lizenzen","stichpunkte":[{"id":"AP1-3-4-1","titel":"Urheberrecht und Lizenzen: EULA, OEM, GNU GPL, Pay-per-Use","art":"Wissen","rahmen":"Software ist urheberrechtlich geschützt; wer sie nutzt, braucht eine Lizenz. Du sollst die Grundlagen des Urheberschutzes kennen und Lizenzmodelle unterscheiden. In der Prüfung 2026 waren zwei Kernideen einer verbreiteten Open-Source-Lizenz, der GNU GPL, zu beschreiben.","koennen":["Du kannst erklären, dass das Urheberrecht dem Urheber die Rechte an seinem Werk sichert und Software nur im Rahmen einer Lizenz genutzt und kopiert werden darf.","Du kannst EULA (Endbenutzer-Lizenzvertrag, dem der Nutzer bei der Installation zustimmt), OEM-Lizenz (Lizenz, die zusammen mit einem Gerät verkauft wird und an dieses gebunden ist) und GNU GPL (Lizenz für freie Software) unterscheiden.","Du kannst zwei Kernideen der GNU GPL beschreiben.","Du kennst als Grundgedanken der GPL: Die Software darf frei genutzt, untersucht, verändert und weitergegeben werden; weitergegebene Abwandlungen müssen wieder unter derselben Lizenz stehen (Copyleft).","Du kannst Pay-per-Use als Abrechnung nach tatsächlicher Nutzung erklären.","Du kannst erklären, was ein Lizenzvertrag regelt."]},{"id":"AP1-3-4-2","titel":"Open Source und proprietäre Software","art":"Wissen","rahmen":"Bei der Softwareauswahl steht oft die Frage, ob eine quelloffene oder eine herstellergebundene Lösung besser passt. Du sollst beide Modelle erklären und ihre Vorteile gegenüberstellen. Im Frühjahr 2025 waren je zwei Vorteile zu nennen.","koennen":["Du kannst Open-Source-Software und proprietäre Software unterscheiden.","Du kannst Vorteile von Open-Source-Software nennen, zum Beispiel keine oder geringe Lizenzkosten und offener, überprüfbarer Quellcode.","Du kannst Vorteile proprietärer Software nennen, zum Beispiel Hersteller-Support und gutes Zusammenspiel mit anderen Produkten desselben Herstellers.","Du kannst erklären, dass Open Source nicht automatisch kostenlos bedeutet und auch dort Lizenzbedingungen gelten."]}]}]},{"id":"AP1-4","titel":"Hardware und Arbeitsplatz","bloecke":[{"id":"AP1-4-1","titel":"Geräte und Komponenten","stichpunkte":[{"id":"AP1-4-1-1","titel":"Geräteklassen und Arbeitsplatzsysteme auswählen","art":"Wissen","rahmen":"Du wählst für einen beschriebenen Bedarf die passende Geräteklasse und begründest die Wahl. Der Katalog nennt Desktops, Notebooks, All-in-One, Thin Clients, Tablets und Smartphones sowie mobile und stationäre Arbeitsplatzsysteme. Es geht um Eignung und Begründung, nicht um technische Einzelheiten der Geräte.","koennen":["Du kannst Desktop, Notebook, All-in-One, Thin Client, Tablet und Smartphone unterscheiden.","Du kannst für einen beschriebenen Arbeitsplatz eine Geräteklasse auswählen und die Wahl begründen.","Du kannst mobile und stationäre Arbeitsplatzsysteme gegenüberstellen.","Du kannst erklären, dass ein Thin Client kaum eigene Rechenleistung hat und seine Anwendungen von einem Server bezieht."]},{"id":"AP1-4-1-2","titel":"Prozessor, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil","art":"Wissen","rahmen":"Du sollst marktgängige Hardware kennen, unterscheiden und beurteilen. Das bedeutet: Kenngrößen der Komponenten lesen, Angebote vergleichen und prüfen, ob Teile zusammenpassen. Im Herbst 2024 war die Verträglichkeit von drei Speicherriegeln mit einem vorhandenen Notebook zu beurteilen; 2026 war zu beschreiben, wie die Größe des Arbeitsspeichers geprüft und ein defekter Riegel gefunden wird.","koennen":["Du kannst die Aufgaben von CPU, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil erklären.","Du kannst Kenngrößen aus einem Datenblatt lesen und vergleichen, zum Beispiel Kernzahl und Taktfrequenz der CPU, Größe und Typ des Arbeitsspeichers.","Du kannst beurteilen, ob ein Speicherriegel zu einem System passt: Die DDR-Generation muss gleich sein; bei unterschiedlichem Takt gilt der niedrigere.","Du kannst Wege nennen, die Größe des verbauten Arbeitsspeichers zu prüfen, und beschreiben, wie du einen defekten Riegel eingrenzt.","Du kennst dafür die Anzeige im BIOS/UEFI und in den Systeminformationen des Betriebssystems sowie das Testen jedes Riegels einzeln."]},{"id":"AP1-4-1-3","titel":"Datenspeicher: HDD und SSD","art":"Wissen","rahmen":"Der Katalog nennt Datenspeicher (SSD/HDD) bei den Kenngrößen und Leistungsdaten. Du sollst beide Techniken vergleichen und für einen Einsatzzweck empfehlen. Im Herbst 2024 waren drei Vorteile einer SSD gegenüber einer HDD zu nennen.","koennen":["Du kannst HDD und SSD nach dem Funktionsprinzip unterscheiden: rotierende Magnetscheiben gegenüber Flash-Speicher ohne bewegliche Teile.","Du kannst Vorteile der SSD nennen: schnelleres Lesen und Schreiben, unempfindlich gegen Erschütterung, lautlos, geringerer Energiebedarf.","Du kannst einen Vorteil der HDD nennen: niedrigerer Preis je Gigabyte bei großen Kapazitäten.","Du kannst Anschlussarten für Datenspeicher zuordnen: SATA sowie M.2 mit NVMe."]},{"id":"AP1-4-1-4","titel":"Peripheriegeräte und Anschlüsse","art":"Wissen","rahmen":"Zum Arbeitsplatz gehören Peripheriegeräte und die Anschlüsse, über die sie verbunden werden. Der Katalog nennt nur „Peripheriegeräte\"; das Erkennen von Steckern und Buchsen steht dort nicht, kam aber im Frühjahr 2025 und im Frühjahr 2024 als Zuordnung von Bildern zu Bezeichnungen vor. Du musst gängige Anschlüsse am Aussehen erkennen und ihrem Zweck zuordnen.","koennen":["Du kannst Peripheriegeräte nennen und nach Ein- und Ausgabe einordnen, zum Beispiel Monitor, Drucker, Scanner, Multifunktionsgerät.","Du kannst gängige Anschlüsse am Bild erkennen: RJ45, USB Typ A, USB Typ C, Kaltgerätebuchse, HDMI, DisplayPort, DVI.","Du kannst die Symbole für WLAN und Bluetooth benennen.","Du kannst einem Anschluss seinen Zweck zuordnen: Netzwerk, Daten, Bild, Stromversorgung.","Du kannst erklären, was Daisy Chaining ist: Geräte werden hintereinander an einen Anschluss gehängt, zum Beispiel mehrere Monitore."]}]},{"id":"AP1-4-2","titel":"Kenngrößen berechnen","stichpunkte":[{"id":"AP1-4-2-1","titel":"Zahlensysteme und Präfixe: binär, hexadezimal, kB und KiB","art":"Rechnen","rahmen":"Zahlensysteme brauchst du für Subnetting, IPv6- und MAC-Adressen, die Präfixe für jede Rechnung mit Datenmengen. Der Anhang des Katalogs legt fest: Datenmengen werden mit Binärpräfixen angegeben (KiB, MiB, GiB), physikalische Größen mit Dezimalpräfixen. In der Prüfung 2026 war zu begründen und nachzurechnen, warum ein Datenträger mit 1.000 GB als 931 GiB angezeigt wird.","koennen":["Du kannst Zahlen zwischen Dezimal-, Binär- und Hexadezimalsystem umrechnen.","Du kennst die Zweierpotenzen bis 2 hoch 10 und kannst mit ihnen rechnen.","Du kannst Dezimalpräfixe (1 kB = 1.000 Byte) und Binärpräfixe (1 KiB = 1.024 Byte) unterscheiden und sagen, wofür welche verwendet werden.","Du kannst zwischen Dezimal- und Binärpräfixen umrechnen, zum Beispiel GB in GiB.","Du kannst Bit und Byte ineinander umrechnen: 8 Bit sind 1 Byte."]},{"id":"AP1-4-2-2","titel":"Datenmengen, Übertragungsraten und Übertragungszeiten berechnen","art":"Rechnen","rahmen":"Der Katalog nennt Übertragungsraten, -zeiten und Datenmengen von digitalisierten Dokumenten, Videos usw. als Kenngrößen. Du berechnest aus Anzahl, Auflösung oder Bittiefe den Speicherbedarf und aus Datenmenge und Übertragungsrate die Dauer. Im Frühjahr 2024 kamen beide Rechnungen vor; der Podcast nennt „Dateigrößen berechnen\" auch für Herbst 2025 und Frühjahr 2026.","koennen":["Du kannst den Speicherbedarf aus der Anzahl der Werte und den Bit je Wert berechnen und in KiB, MiB oder GiB angeben.","Du kannst aus der Bittiefe die Zahl der darstellbaren Werte berechnen, zum Beispiel 2 hoch 24 Farben bei 3 mal 8 Bit.","Du kannst die Übertragungsdauer aus Datenmenge und Übertragungsrate berechnen und in Minuten und Sekunden angeben.","Du achtest auf die Einheiten: Datenmenge in Byte mit Binärpräfix, Übertragungsrate in Bit je Sekunde mit Dezimalpräfix.","Du kannst einen Mehrbedarf in Prozent ausdrücken.","Du kannst den Speicherbedarf eines unkomprimierten Bildes aus Breite, Höhe und Farbtiefe berechnen."]},{"id":"AP1-4-2-3","titel":"Leistung, Energie, Wirkungsgrad und Stromkosten berechnen","art":"Rechnen","rahmen":"Der Katalog nennt Strom, Spannung, Leistung, Wirkungsgrad, Energie und Energiekosten. Du rechnest mit den Grundformeln und kommst von der Leistungsaufnahme über die Betriebsdauer zu den Stromkosten. Im Frühjahr 2024 war die Leistungsaufnahme der Komponenten zu summieren, ein Netzteil auszuwählen und die Stromkosten zu berechnen; der Podcast nennt das Thema auch für Herbst 2025 und Frühjahr 2026.","koennen":["Du kannst mit P = U · I rechnen (Leistung in Watt = Spannung in Volt mal Stromstärke in Ampere) und die Formel nach jeder Größe umstellen.","Du kannst die Leistungsaufnahme mehrerer Komponenten summieren, einen Zuschlag einrechnen und ein passendes Netzteil auswählen.","Du kannst die Energie aus Leistung und Zeit berechnen (W = P · t) und in kWh angeben.","Du kannst den Wirkungsgrad berücksichtigen: Die aufgenommene Leistung ist die abgegebene Leistung geteilt durch den Wirkungsgrad.","Du kannst Stromkosten aus Energie und Preis je kWh berechnen."]}]},{"id":"AP1-4-3","titel":"Ergonomie, Barrierefreiheit und Umwelt","stichpunkte":[{"id":"AP1-4-3-1","titel":"Ergonomie am Arbeitsplatz","art":"Wissen","rahmen":"Ergonomie steht im Katalog als funktionaler Aspekt bei der Beurteilung von IT-Systemen. Du sollst einen Arbeitsplatz danach beurteilen und Verbesserungen vorschlagen. Der Podcast nennt „Ergonomierichtlinien\" für Frühjahr 2026; die verlangte Tiefe ist nicht belegt.","koennen":["Du kannst ergonomische Anforderungen an einen Bildschirmarbeitsplatz nennen.","Du kennst als Beispiele: höhenverstellbarer Tisch und Stuhl, Bildschirm blendfrei und quer zum Fenster, Oberkante etwa auf Augenhöhe, getrennte Tastatur, ausreichende Beleuchtung.","Du kannst einen beschriebenen Arbeitsplatz ergonomisch beurteilen und Verbesserungen vorschlagen.","Du kannst Folgen schlechter Ergonomie nennen: Verspannungen, Augenbeschwerden, geringere Leistung."]},{"id":"AP1-4-3-2","titel":"Barrierefreiheit durch Hardware und Einstellungen","art":"Wissen","rahmen":"IT-Systeme sollen auch für Menschen mit Einschränkungen nutzbar sein. Der Katalog nennt zusätzliche Hardware wie größeren Monitor, breitere Tastatur, Lautsprecher und Mikrofon sowie Einstellungsmöglichkeiten auf Webseiten. Du sollst für eine beschriebene Einschränkung passende Hilfen vorschlagen.","koennen":["Du kannst Hardware nennen, die den Zugang erleichtert: größerer Monitor, breitere Tastatur, Lautsprecher und Mikrofon.","Du kannst Einstellungen nennen, die den Zugriff auf Webseiten erleichtern.","Du kennst dafür Schriftgröße und Zoom, hohen Kontrast, Vorlesefunktion und die Bedienung allein mit der Tastatur.","Du kannst für eine beschriebene Einschränkung eine passende Unterstützung vorschlagen und begründen."]},{"id":"AP1-4-3-3","titel":"Energieeffizienz, Gütesiegel und ökologische Aspekte","art":"Wissen","rahmen":"IT-Systeme sollst du auch nach Energieverbrauch und Umweltwirkung beurteilen. Der Katalog nennt Gütesiegel für Energieeffizienz und ökologische Aspekte wie Nutzungsdauer, Energieverbrauch und Recyclingfähigkeit. Im Herbst 2024 waren zwei ökologische Gesichtspunkte einer Neuanschaffung zu beschreiben.","koennen":["Du kannst ökologische Gesichtspunkte bei der Auswahl eines IT-Systems nennen: Energieverbrauch, Nutzungsdauer, Recyclingfähigkeit.","Du kannst erklären, wozu Gütesiegel für Energieeffizienz dienen.","Du kennst Beispiele für Siegel: EU-Energielabel, Energy Star, Blauer Engel, TCO Certified.","Du kannst eine Neuanschaffung ökologisch abwägen: geringerer Verbrauch des neuen Geräts gegen Herstellungsaufwand und Entsorgung des alten."]}]}]},{"id":"AP1-5","titel":"Software und Betriebssysteme","bloecke":[{"id":"AP1-5-1","titel":"Softwarearten und Softwareauswahl","stichpunkte":[{"id":"AP1-5-1-1","titel":"Softwarearten: Anwendungs-, Standard-, Branchen- und Systemsoftware","art":"Wissen","rahmen":"Du ordnest Software nach ihrer Aufgabe ein. Der Katalog nennt Anwendungssoftware, Standardsoftware (Office-Pakete, Datenbank-Managementsysteme, Browser), Branchensoftware (ERP-Systeme, Supply Chain Management, Customer Relationship) und Systemsoftware. Es geht ums Kennen, Unterscheiden und Zuordnen von Beispielen.","koennen":["Du kannst Anwendungssoftware und Systemsoftware unterscheiden.","Du kannst Standardsoftware nennen: Office-Pakete, Datenbank-Managementsysteme, Browser.","Du kannst Branchensoftware nennen: ERP-Systeme, Supply Chain Management, Customer Relationship Management.","Du kannst erklären: ERP plant die Ressourcen des ganzen Unternehmens, SCM steuert die Lieferkette, CRM verwaltet die Kundenbeziehungen.","Du kannst ein Softwareprodukt der richtigen Art zuordnen."]},{"id":"AP1-5-1-2","titel":"Standard- oder Individualsoftware auswählen: Anpassbarkeit, Wartbarkeit, Schnittstellen","art":"Wissen","rahmen":"Du sollst Software bedarfsgerecht auswählen und die Wahl begründen. Der Katalog nennt die Entscheidung zwischen Standard- und Individualsoftware und als Beurteilungskriterien Anpassbarkeit, Wartbarkeit und Schnittstellen. Die Lizenzfrage steht im Ordner Wirtschaftlichkeit und Verträge.","koennen":["Du kannst Standardsoftware und Individualsoftware unterscheiden.","Du kannst je einen Vorteil nennen: Standardsoftware ist sofort verfügbar, erprobt und günstiger; Individualsoftware passt genau zu den Abläufen des Betriebs.","Du kannst Software nach Anpassbarkeit, Wartbarkeit und Schnittstellen beurteilen.","Du kannst für einen beschriebenen Bedarf eine Empfehlung geben und begründen."]},{"id":"AP1-5-1-3","titel":"Cloudlösungen, virtuelle Desktops und Kommunikationssysteme","art":"Wissen","rahmen":"Software muss nicht auf dem eigenen Rechner laufen. Der Katalog nennt Cloudlösungen wie Software as a Service und Desktop as a Service, virtuelle Desktops in der Cloud oder lokal sowie Kommunikationssysteme wie Videokonferenz- und Social-Media-Systeme. Du sollst die Begriffe erklären, Einsatzbereiche zuordnen und gegen eine lokale Installation abwägen. Die Servicemodelle PaaS und IaaS nennt der AP1-Katalog nicht.","koennen":["Du kannst Software as a Service und Desktop as a Service erklären.","Du kannst erklären, was ein virtueller Desktop ist und dass er in der Cloud oder lokal bereitgestellt werden kann.","Du kannst eine Cloudlösung von einer Installation im eigenen Haus abgrenzen und für eine Vorgabe die passende Variante wählen.","Du kannst Vor- und Nachteile nennen: kein eigener Betrieb und flexible Kosten gegenüber Abhängigkeit vom Anbieter und von der Internetverbindung sowie offenen Fragen des Datenschutzes.","Du kannst Kommunikationssysteme wie Videokonferenz- und Social-Media-Systeme einem Einsatzbereich zuordnen."]},{"id":"AP1-5-1-4","titel":"KI-Software auswählen und einsetzen","art":"Wissen","rahmen":"KI-Software steht an drei Stellen des Katalogs: als marktgängiges Produkt, bei der Softwareauswahl und bei der Einrichtung. Erwartet wird eine praktische Beurteilung: was kostet sie, was bringt sie, welche Risiken hat sie. Im Frühjahr 2025 war ein Angebot für einen KI-Chatbot auszuwerten und je ein Vorteil und Nachteil eines Chatbots zu beschreiben. Wie KI technisch funktioniert, war nicht gefragt.","koennen":["Du kannst Einsatzmöglichkeiten von KI-Software an einem Arbeitsplatz nennen, zum Beispiel recherchieren, Texte zusammenfassen, übersetzen, Anfragen vorsortieren.","Du kannst für einen KI-Chatbot im Kundenkontakt je einen Vorteil und Nachteil beschreiben.","Du kannst die Angaben eines Angebots für eine KI-Lösung auswerten: Kosten je Nutzer, Schulungsaufwand.","Du kannst Punkte nennen, die vor dem Einsatz zu klären sind: Datenschutz, Verlässlichkeit der Ergebnisse, Kosten, Schulung der Mitarbeiter."]}]},{"id":"AP1-5-2","titel":"Betriebssystem einrichten","stichpunkte":[{"id":"AP1-5-2-1","titel":"Betriebssysteme: Einsatzzweck, Dateiverwaltung und Freigaben","art":"Wissen","rahmen":"Der Katalog nennt Betriebssysteme mit den Stichworten Einsatzzweck, Filemanagement und Freigaben managen. Du sollst ein Betriebssystem für einen Zweck auswählen, seine Aufgaben kennen und erklären, wie Dateien abgelegt und für andere freigegeben werden. Laut Podcast-Auswertung brachten Betriebssysteme in den bisherigen AP1-Prüfungen kaum Punkte.","koennen":["Du kannst gängige Betriebssysteme nennen und einem Einsatzzweck zuordnen: Desktop, Server, Mobilgerät.","Du kannst Aufgaben eines Betriebssystems nennen: Hardware verwalten, Programme ausführen, Dateien verwalten, Benutzer und Rechte verwalten.","Du kannst erklären, wie Dateien in Ordnern und Laufwerken organisiert werden.","Du kannst erklären, was eine Freigabe ist und wie Lese- und Schreibrechte den Zugriff regeln."]},{"id":"AP1-5-2-2","titel":"Installation und Einrichtung: BIOS/UEFI, Partitionieren, Formatieren, Dateisysteme FAT32, NTFS, APFS, ext4","art":"Wissen","rahmen":"Du sollst die Schritte kennen, mit denen ein System installiert und eingerichtet wird, und sie beurteilen können. Der Katalog nennt BIOS und UEFI mit ihren Einstellungsmöglichkeiten, Partitionierung und Formatierung sowie die Dateisysteme FAT32, NTFS, APFS und ext4. In der Prüfung 2026 waren ein Vorteil und ein Nachteil von FAT32 zu nennen.","koennen":["Du kannst erklären, wozu BIOS bzw. UEFI dienen, und Einstellungen nennen, die dort vorgenommen werden, zum Beispiel die Bootreihenfolge.","Du kannst Partitionieren und Formatieren unterscheiden.","Du kannst die Dateisysteme FAT32, NTFS, APFS und ext4 dem passenden Betriebssystem zuordnen.","Du kannst einen Vorteil und einen Nachteil von FAT32 nennen.","Du kennst dafür: FAT32 wird von fast allen Systemen gelesen, erlaubt aber nur Dateien bis 4 GiB und kennt keine Zugriffsrechte.","Du kannst die Schritte einer Betriebssysteminstallation in eine sinnvolle Reihenfolge bringen."]},{"id":"AP1-5-2-3","titel":"Kommandozeile: Befehle für Dateioperationen","art":"Wissen","rahmen":"Der Katalog nennt das Arbeiten mit der Kommandozeile samt Befehlssyntax und Parametern und zählt Befehle für Windows und Linux auf. Hier geht es um die Befehle für Dateien und Verzeichnisse; die Netzwerkbefehle stehen im Ordner Netzwerk. Eine Aufgabe, in der Dateibefehle zu schreiben waren, gab es in den ausgewerteten Prüfungen nicht.","koennen":["Du kannst den Aufbau eines Befehls erklären: Befehlsname, Parameter bzw. Optionen, Argumente.","Du kannst die Befehle dir und ls (Inhalt anzeigen), mkdir (Verzeichnis anlegen), cp und copy (kopieren) sowie del (löschen) dem richtigen Betriebssystem zuordnen und ihren Zweck nennen.","Du kannst erklären, was chmod bewirkt: die Zugriffsrechte einer Datei unter Linux ändern.","Du kannst erklären, wozu alias dient: einen eigenen Kurznamen für einen Befehl festlegen.","Du kannst die Rechte Lesen, Schreiben und Ausführen für Besitzer, Gruppe und andere deuten, zum Beispiel bei chmod 754."]},{"id":"AP1-5-2-4","titel":"Software anpassen","art":"Wissen","rahmen":"Der Katalog nennt „Anpassung von Software\" als eigenen Spiegelstrich unter den Aktivitäten bei Installationen und Konfigurationen, ohne Beispiel. In keiner ausgewerteten Prüfung war dazu eine Aufgabe erkennbar.","koennen":["Du kannst Beispiele nennen, wie installierte Software an einen Arbeitsplatz angepasst wird: Sprache, Standardspeicherorte, Vorlagen, Benutzerprofile.","Du kannst erklären, was Customizing bedeutet: Standardsoftware über Einstellungen oder Erweiterungen an betriebliche Abläufe anpassen, ohne sie neu zu programmieren.","Du kannst begründen, warum Anpassungen dokumentiert werden."]},{"id":"AP1-5-2-5","titel":"Client-Server-Systeme, Domäne und Remote-Desktop","art":"Wissen","rahmen":"Arbeitsplätze hängen in der Regel an zentralen Diensten. Der Katalog nennt Client-Server-Systeme, die Einbindung in eine Domäne und Remote-Desktop. Du sollst das Prinzip erklären und den Nutzen einer zentralen Verwaltung nennen; das Einrichten eines Servers oder Verzeichnisdienstes ist nicht Stoff von AP1.","koennen":["Du kannst das Client-Server-Prinzip erklären: Der Client fragt einen Dienst an, der Server stellt ihn bereit.","Du kannst erklären, was es bedeutet, einen Rechner in eine Domäne einzubinden.","Du kannst Vorteile einer Domäne nennen: zentrale Benutzerkonten, einheitliche Richtlinien, zentrale Rechtevergabe.","Du kannst erklären, wozu Remote-Desktop dient.","Du kannst den Unterschied zum virtuellen Desktop erklären: Remote-Desktop steuert einen vorhandenen Rechner fern."]}]}]},{"id":"AP1-6","titel":"Netzwerk","bloecke":[{"id":"AP1-6-1","titel":"Modelle, Protokolle und Geräte","stichpunkte":[{"id":"AP1-6-1-1","titel":"OSI-Modell","art":"Wissen","rahmen":"Der Katalog nennt Netzwerkprotokolle und das OSI-Modell unter den IT-Systemen, die du identifizieren und zuordnen sollst. Du benennst die sieben Schichten und ordnest Protokolle, Adressen und Geräte der richtigen Schicht zu. In der Prüfung 2026 war eine Tabelle zur Fehlersuche entlang der Schichten zu ergänzen, im Frühjahr 2024 waren Schichten zu benennen und Begriffe zuzuordnen. Das TCP/IP-Modell nennt der AP1-Katalog nicht.","koennen":["Du kannst die sieben Schichten des OSI-Modells in der richtigen Reihenfolge mit deutschem oder englischem Namen nennen.","Du kannst Begriffe einer Schicht zuordnen: Kabel und Buchse zu Schicht 1, MAC-Adresse und Ethernet zu Schicht 2, IP-Adresse zu Schicht 3, TCP zu Schicht 4, DNS, DHCP und HTTPS zu Schicht 7.","Du kannst in einer Tabelle zur Fehlersuche die fehlende Schicht, das Protokoll oder den passenden Test ergänzen.","Du kannst erklären, wozu ein Schichtenmodell dient: Aufgaben trennen, Fehler eingrenzen, Geräte verschiedener Hersteller verbinden."]},{"id":"AP1-6-1-2","titel":"Protokolle und ihre Aufgaben, mit Ports","art":"Wissen","rahmen":"Der Katalog nennt als Beispiele nur Ethernet, IP und DNS. Im Frühjahr 2025 kamen weitere Protokolle vor: IMAP und POP3 waren gegeneinander abzuwägen, und für eine gesicherte Fernverbindung war aus einer abgedruckten Porttabelle das richtige Protokoll mit Port zu wählen. Du musst die gängigen Protokolle mit ihrer Aufgabe kennen und wissen, welche verschlüsselt übertragen. Die Standardports standen in der Aufgabe; sie auswendig zu können spart Zeit.","koennen":["Du kannst die Aufgabe von Ethernet, IP und DNS erklären.","Du kannst die E-Mail-Protokolle IMAP und POP3 unterscheiden und begründen, wann IMAP besser passt: Die Nachrichten bleiben auf dem Server und sind von mehreren Geräten aus erreichbar.","Du kannst für einen Fernzugriff SSH statt Telnet wählen und das mit der Verschlüsselung begründen.","Du kannst einem Protokoll mithilfe einer Porttabelle seinen Standardport zuordnen, zum Beispiel SSH Port 22.","Du kennst weitere gängige Zuordnungen: HTTP 80, HTTPS 443, DNS 53, SMTP 25."]},{"id":"AP1-6-1-3","titel":"Netzwerkkomponenten: Switch, Router, Gateway, Access Point","art":"Wissen","rahmen":"Der Katalog nennt WLAN-Router, Switch, Gateway und Accesspoint als Hardware, die du kennen, unterscheiden und beurteilen sollst. Für AP1 genügt es, die Aufgabe jedes Geräts zu erklären und es für eine Situation auszuwählen. Die Symbole des Netzwerkplans aus dem Katalog-Anhang wurden in keiner AP1-Originalprüfung verwendet; Bridge und Firewall als Netzwerkgeräte nennt der AP1-Katalog nicht.","koennen":["Du kannst die Aufgabe eines Switches erklären: Geräte innerhalb eines Netzes verbinden.","Du kannst die Aufgabe eines Routers bzw. Gateways erklären: Netze miteinander verbinden, zum Beispiel das lokale Netz mit dem Internet.","Du kannst die Aufgabe eines Access Points erklären: WLAN-Geräte an das kabelgebundene Netz anbinden.","Du kannst für eine beschriebene Situation das passende Gerät auswählen.","Du kannst die Symbole des Katalog-Anhangs für Switch, Router, Firewall, Accesspoint und Server in einem einfachen Netzwerkplan erkennen."]},{"id":"AP1-6-1-4","titel":"Kabel und Standards: Ethernet, Lichtwellenleiter, WLAN","art":"Wissen","rahmen":"Der Katalog nennt LWL, Ethernet-Standards und WLAN-Standards als Kenngrößen. Du sollst Übertragungsmedien nach Geschwindigkeit, Reichweite und Störfestigkeit beurteilen und ein passendes Kabel auswählen. In der Prüfung 2026 waren die Kürzel der Kabelschirmung zu erklären, das günstigste geeignete Patchkabel zu wählen und ein beschädigter Stecker als Fehlerursache zu deuten.","koennen":["Du kannst Kupferkabel (Twisted Pair), Lichtwellenleiter und WLAN nach Geschwindigkeit, Reichweite und Störanfälligkeit vergleichen.","Du kannst die Kürzel der Kabelschirmung erklären: U für ungeschirmt, S für Geflechtschirm, F für Folienschirm, TP für Twisted Pair.","Du kannst aus mehreren Kabeln das günstigste auswählen, das die geforderte Datenrate und Schirmung erfüllt.","Du kannst einen sichtbaren Schaden an Stecker oder Kabel mit einem Verbindungsabbruch in Zusammenhang bringen.","Du kannst Möglichkeiten nennen, an einem Ort ohne Festnetzanschluss ins Internet zu kommen, zum Beispiel über Mobilfunk oder Satellit.","Du kannst Kabelkategorien wie Cat 5e, Cat 6a und Cat 7 nach ihrer Datenrate einordnen."]}]},{"id":"AP1-6-2","titel":"Adressierung","stichpunkte":[{"id":"AP1-6-2-1","titel":"IPv4-Konfiguration: Adresse, Subnetzmaske, Gateway, statisch oder per DHCP","art":"Wissen","rahmen":"Der Katalog nennt die IP(v4/v6)-Konfiguration bei der Einrichtung von Systemen sowie Konfiguration, Test und Dokumentation von Netzwerkverbindungen. Du richtest einen Client ein: Adresse, Subnetzmaske und Standardgateway eintragen, statische von automatischer Vergabe unterscheiden, die Einstellung dokumentieren. Im Herbst 2024 war eine Eingabemaske nach Vorgaben auszufüllen; für Herbst 2025 berichten Prüflinge dasselbe.","koennen":["Du kannst IP-Adresse, Subnetzmaske und Standardgateway in eine Konfigurationsmaske eintragen.","Du kannst eine freie statische Adresse wählen, die im richtigen Netz und außerhalb des DHCP-Bereichs liegt.","Du kannst eine Präfixlänge wie /24 in die Subnetzmaske 255.255.255.0 umsetzen.","Du kannst statische und automatische Adressvergabe unterscheiden und begründen, wann eine feste Adresse sinnvoll ist.","Du kannst private Adressbereiche erkennen: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.","Du kannst die Netzwerkeinstellungen eines Arbeitsplatzes dokumentieren: Adresse, Maske, Gateway, DNS-Server, Anschluss."]},{"id":"AP1-6-2-2","titel":"Subnetting: Netzadresse, Broadcastadresse und Hostbereich berechnen","art":"Rechnen","rahmen":"Der Katalog nennt Subnetting nicht wörtlich, die Prüfungen verlangen es trotzdem. Im Frühjahr 2025 war in einer einfachen Netzskizze mit zwei PCs und einem Drucker für ein /26-Netz die vorletzte nutzbare Adresse zu bestimmen; das brachte zwei Punkte. Du musst zu einer Adresse mit Präfix Netzadresse, Broadcastadresse und nutzbaren Hostbereich bestimmen können. Das Aufteilen eines Netzes in mehrere Subnetze ist für AP1 nach aktuellem Katalog nicht belegt.","koennen":["Du kannst aus der Präfixlänge die Zahl der Adressen und der nutzbaren Hosts berechnen, zum Beispiel bei /26: 64 Adressen, 62 Hosts.","Du kannst zu einer IPv4-Adresse mit Präfix die Netzadresse und die Broadcastadresse bestimmen.","Du kannst die erste, die letzte und die vorletzte nutzbare Hostadresse angeben.","Du kannst eine einfache Netzskizze mit Endgeräten und Netzadresse lesen und eine fehlende Adresse eintragen.","Du kannst eine Präfixlänge in eine Subnetzmaske umrechnen und umgekehrt, zum Beispiel /26 = 255.255.255.192.","Du kannst prüfen, ob zwei Adressen im selben Subnetz liegen."]},{"id":"AP1-6-2-3","titel":"IPv6-Adressen","art":"Wissen","rahmen":"Der Katalog nennt IPv6 gleichrangig mit IPv4 bei der Konfiguration. Belegt ist das Lesen und Zerlegen einer Adresse: Im Frühjahr 2024 waren Länge, ungekürzte Schreibweise, Präfixlänge und Interface-Identifier einer verbindungslokalen Adresse anzugeben; 2026 tauchte eine IPv6-Adresse als Ziel eines ping-Tests auf. IPv6-Subnetting war nicht verlangt.","koennen":["Du kannst sagen, dass eine IPv6-Adresse 128 Bit lang ist und in acht Blöcken zu je vier Hexadezimalziffern geschrieben wird.","Du kannst eine gekürzte IPv6-Adresse ausschreiben und eine ausgeschriebene kürzen: führende Nullen weglassen, eine Folge von Nullblöcken einmal durch :: ersetzen.","Du kannst Präfix und Interface-Identifier einer Adresse angeben.","Du kannst eine verbindungslokale Adresse am Anfang fe80 erkennen.","Du kannst einen Grund für IPv6 nennen: Der Adressraum von IPv4 ist erschöpft."]},{"id":"AP1-6-2-4","titel":"MAC-Adresse, ARP und DHCP","art":"Wissen","rahmen":"Diese drei sorgen dafür, dass ein Rechner im lokalen Netz erreichbar ist. DHCP steht im Katalog bei der Konfiguration von Netzwerkverbindungen, „arp\" bei den Konsolenbefehlen; die MAC-Adresse wird im AP1-Katalog nicht wörtlich genannt, ist aber die Grundlage für beides. Aufgaben dazu gab es nur in Prüfungen nach altem Katalog: Aufbau und Ermittlung der MAC-Adresse, Aufgabe von ARP, Angaben eines DHCP-Servers und die Deutung einer Adresse aus dem Bereich 169.254.","koennen":["Du kannst den Aufbau einer MAC-Adresse beschreiben: 48 Bit, sechs Bytes in Hexadezimalschreibweise, vordere Hälfte Herstellerkennung.","Du kannst die Aufgabe von ARP erklären: zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermitteln.","Du kannst die Ausgabe von arp deuten: Zuordnung von IP-Adresse und physischer Adresse.","Du kannst nennen, was ein DHCP-Server einem Client zuteilt: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server.","Du kannst eine Adresse aus dem Bereich 169.254.x.x deuten: Der Client hat keinen DHCP-Server erreicht und sich selbst eine Adresse gegeben."]}]},{"id":"AP1-6-3","titel":"Verbindungen einrichten und Fehler finden","stichpunkte":[{"id":"AP1-6-3-1","titel":"WLAN-Zugang (Pre-shared Key, Enterprise) und VPN","art":"Wissen","rahmen":"Der Katalog nennt beim Einrichten von Netzwerkverbindungen den WLAN-Zugang mit Pre-shared Key bzw. Enterprise und VPN. Du sollst erklären, wie sich ein Gerät am WLAN anmeldet und wozu ein VPN dient. In der Prüfung 2026 waren Begriff und Grundprinzip von VPN zu erklären. VPN-Modelle und Protokolle wie IPsec nennt der AP1-Katalog nicht.","koennen":["Du kannst die Anmeldung am WLAN mit Pre-shared Key (ein gemeinsames Kennwort für alle) und mit Enterprise-Verfahren (eigene Zugangsdaten je Benutzer) unterscheiden.","Du kannst begründen, warum sich das Enterprise-Verfahren für Unternehmen eignet: Einzelne Zugänge lassen sich sperren, ohne das Kennwort für alle zu ändern.","Du kannst erklären, was ein VPN ist: eine verschlüsselte Verbindung durch ein unsicheres Netz in ein privates Netz.","Du kannst einen Einsatzfall für VPN nennen, zum Beispiel den Zugriff auf das Firmennetz von unterwegs.","Du kannst das Bild des Tunnels erklären: Die Datenpakete werden verschlüsselt und in andere Pakete verpackt übertragen."]},{"id":"AP1-6-3-2","titel":"Netzwerkbefehle und systematische Fehlersuche: ping, traceroute, nslookup, ipconfig","art":"Wissen","rahmen":"Du sollst Netzwerkverbindungen testen und Fehler eingrenzen. Der Katalog zählt die Befehle auf: ipconfig, ifconfig/ip, iproute2, arp, ping, traceroute, nslookup. In der Prüfung 2026 war eine Fehlersuche Schicht für Schicht zu planen, vom Browser über nslookup und ping bis zur Sichtprüfung von LED und Kabel; im Herbst 2024 war ein Vorgehen mit ping zu beschreiben.","koennen":["Du kannst den Zweck der Befehle nennen: ipconfig bzw. ifconfig/ip zeigt die eigene Konfiguration, ping prüft die Erreichbarkeit, traceroute zeigt den Weg, nslookup prüft die Namensauflösung.","Du kannst einen Befehl für einen Zweck angeben, zum Beispiel für die Erreichbarkeit des Gateways oder für die eigene MAC-Adresse.","Du kannst eine Fehlersuche in sinnvoller Reihenfolge planen: Kabel und LED, eigene Konfiguration, Gateway, Namensauflösung, Zielserver.","Du kannst aus dem Ergebnis eines Tests schließen, wo der Fehler liegt, zum Beispiel wenn der ping auf die IP-Adresse gelingt, der Aufruf des Namens aber scheitert.","Du kannst die LEDs an einer Netzwerkbuchse deuten: Dauerlicht für eine bestehende Verbindung, Blinken für Datenverkehr."]}]}]},{"id":"AP1-7","titel":"IT-Sicherheit und Datenschutz","bloecke":[{"id":"AP1-7-1","titel":"Schutzziele und Organisation","stichpunkte":[{"id":"AP1-7-1-1","titel":"Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit","art":"Wissen","rahmen":"Die drei Schutzziele sind der Maßstab für alle Sicherheitsfragen in AP1. Du sollst sie erklären und einem Fall oder einer Maßnahme das betroffene Ziel zuordnen. Im Frühjahr 2025 war das Ziel zu nennen, das eine Verschlüsselung erreicht; 2026 waren in einer Schutzbedarfstabelle die Schutzziele zu ergänzen.","koennen":["Du kannst Vertraulichkeit, Integrität und Verfügbarkeit erklären.","Du kannst einem beschriebenen Vorfall oder einer Begründung das betroffene Schutzziel zuordnen.","Du kannst zu einer Maßnahme das Schutzziel nennen, das sie sichert, zum Beispiel Verschlüsselung für Vertraulichkeit, Hashwert für Integrität, Datensicherung für Verfügbarkeit.","Du weißt, dass Authentizität oft als viertes Ziel genannt wird."]},{"id":"AP1-7-1-2","titel":"TOM: technische, organisatorische und personelle Maßnahmen","art":"Wissen","rahmen":"Maßnahmen der Informationssicherheit werden nach ihrer Art eingeteilt. Der Katalog nennt technisch-organisatorische Maßnahmen (TOM), technische Maßnahmen wie Virenschutz, Personal Firewall und Verschlüsselung sowie personelle Maßnahmen. Du sollst Maßnahmen benennen, einordnen und für eine Situation vorschlagen; in der Prüfung 2026 waren zweimal konkrete Maßnahmen für einen Arbeitsplatz zu nennen.","koennen":["Du kannst technische, organisatorische und personelle Maßnahmen unterscheiden und je ein Beispiel nennen.","Du kannst technische Maßnahmen benennen: Virenschutz, Personal Firewall, Verschlüsselung.","Du kannst für einen beschriebenen Arbeitsplatz konkrete Schutzmaßnahmen vorschlagen.","Du kannst das Sicherheitsrisiko einer beschriebenen Situation beschreiben, zum Beispiel fremde Personen im Raum oder private Geräte im Firmennetz.","Du kennst Beispiele für organisatorische Maßnahmen (Regelungen, Berechtigungskonzept, Besucherregelung) und personelle Maßnahmen (Schulung, Verpflichtung auf Vertraulichkeit)."]},{"id":"AP1-7-1-3","titel":"Sicherheitsrichtlinien, Passwort-Policy und Sicherheitsbewusstsein: Security by Design, Security by Default","art":"Wissen","rahmen":"Regeln nützen nur, wenn die Mitarbeiter sie kennen und einhalten. Der Katalog verlangt, IT-Sicherheitsrichtlinien wie eine Passwort-Policy zu erläutern und zu bewerten und ein Sicherheitsbewusstsein zu schaffen; als Beispiele nennt er Security by Design und Security by Default. Im Frühjahr 2025 war zu erläutern, warum nicht alle Benutzer Administratorrechte bekommen sollten.","koennen":["Du kannst erklären, was eine IT-Sicherheitsrichtlinie ist, und Inhalte einer Passwort-Policy nennen.","Du kannst eine gegebene Passwort-Policy bewerten.","Du kennst Kriterien dafür: Mindestlänge, Zeichenvielfalt, keine Wiederverwendung, Sperre nach Fehlversuchen.","Du kannst Security by Design und Security by Default erklären: Sicherheit wird von Anfang an eingeplant; die Voreinstellungen sind die sicheren.","Du kannst begründen, warum Benutzer nur die Rechte bekommen, die sie für ihre Arbeit brauchen.","Du kannst Maßnahmen nennen, die das Sicherheitsbewusstsein fördern: Schulungen, simulierte Phishing-Mails, klare Meldewege."]},{"id":"AP1-7-1-4","titel":"IT-Sicherheitsbeauftragter, Datenschutzbeauftragter, ISMS und IT-Sicherheitsmanagement","art":"Wissen","rahmen":"Sicherheit braucht Zuständige und ein System. Du sollst die beiden Beauftragten unterscheiden und erklären, was ein Informations-Sicherheitsmanagementsystem ist und wie du es im eigenen Arbeitsbereich unterstützt. Der Katalog verlangt beim ISMS „kennen und unterstützen\"; Aufbau und Zertifizierung eines ISMS sind nicht gefragt.","koennen":["Du kannst IT-Sicherheitsbeauftragten und Datenschutzbeauftragten unterscheiden: Der eine kümmert sich um die Sicherheit aller Informationen und Systeme, der andere um den Schutz personenbezogener Daten.","Du kannst erklären, was ein ISMS ist: festgelegte Regeln, Zuständigkeiten und Abläufe, mit denen ein Betrieb seine Informationssicherheit dauerhaft steuert und verbessert.","Du kannst beschreiben, wie du ein ISMS im eigenen Arbeitsbereich unterstützt, zum Beispiel Richtlinien einhalten und Vorfälle melden.","Du kannst erklären, dass IT-Sicherheitsmanagement ein fortlaufender Prozess ist, der dem PDCA-Zyklus folgt."]}]},{"id":"AP1-7-2","titel":"BSI IT-Grundschutz","stichpunkte":[{"id":"AP1-7-2-1","titel":"IT-Grundschutz-Kompendium und Bausteine","art":"Wissen","rahmen":"Der IT-Grundschutz des BSI ist der Rahmen, auf den sich der Katalog bei der Sicherheit bezieht. Er spricht von „Auszügen\" aus dem Kompendium und von Bausteinen. Du musst das Kompendium nicht auswendig kennen: Im Herbst 2024 waren Empfehlungen aus dem Grundschutz vorgegeben und zu begründen.","koennen":["Du kannst erklären, was das BSI ist und wozu das IT-Grundschutz-Kompendium dient.","Du kannst erklären, was ein Baustein ist: eine Sammlung typischer Gefährdungen und Anforderungen für einen bestimmten Gegenstand, zum Beispiel einen Client oder einen Raum.","Du kannst eine vorgegebene Empfehlung aus dem Grundschutz fachlich begründen.","Du kannst das Vorgehen nach IT-Grundschutz in groben Schritten nennen: Bestand erfassen, Schutzbedarf feststellen, Bausteine zuordnen, Maßnahmen umsetzen und prüfen."]},{"id":"AP1-7-2-2","titel":"Schutzbedarfsanalyse und Schutzbedarfskategorien","art":"Wissen","rahmen":"Du führst eine Schutzbedarfsanalyse im eigenen Arbeitsbereich durch: für Anwendungen, IT-Systeme, Räume und Kommunikationsverbindungen festlegen, wie hoch der Schutzbedarf je Schutzziel ist, und das begründen. Die Kategorien sind normal, hoch und sehr hoch. In der Prüfung 2026 war eine teilweise ausgefüllte Tabelle für zwei Anwendungen zu ergänzen.","koennen":["Du kannst die drei Schutzbedarfskategorien normal, hoch und sehr hoch nennen und nach der Schwere des möglichen Schadens unterscheiden.","Du kannst den Schutzbedarf für Anwendungen, IT-Systeme, Räume und Kommunikationsverbindungen festlegen.","Du kannst eine Einstufung begründen, zum Beispiel mit personenbezogenen Daten, wirtschaftlichem Schaden oder Imageschaden.","Du kannst eine teilweise ausgefüllte Schutzbedarfstabelle ergänzen.","Du kannst erklären, dass sich der Schutzbedarf eines IT-Systems nach der Anwendung mit dem höchsten Bedarf richtet, die darauf läuft."]},{"id":"AP1-7-2-3","titel":"Risiken klassifizieren mit der Risikomatrix","art":"Wissen","rahmen":"Der Katalog nennt die Risiko-Klassifikation, zum Beispiel mit einer Matrix, als Teil der Modellierung eines Sicherheitskonzeptes. Du ordnest ein Risiko nach Eintrittswahrscheinlichkeit und Schadenshöhe ein und liest daraus ab, wie dringend gehandelt werden muss. In den ausgewerteten Prüfungen gab es dazu keine Aufgabe.","koennen":["Du kannst erklären, wie eine Risikomatrix aufgebaut ist: Eintrittswahrscheinlichkeit auf der einen, Schadenshöhe auf der anderen Achse.","Du kannst ein beschriebenes Risiko in eine Matrix einordnen und die Risikoklasse ablesen.","Du kannst Möglichkeiten nennen, mit einem Risiko umzugehen: vermeiden, vermindern, übertragen (zum Beispiel versichern), bewusst tragen.","Du kannst begründen, welche Risiken zuerst behandelt werden."]}]},{"id":"AP1-7-3","titel":"Technische Schutzmaßnahmen","stichpunkte":[{"id":"AP1-7-3-1","titel":"Symmetrische, asymmetrische und hybride Verschlüsselung","art":"Wissen","rahmen":"Der Katalog verlangt an zwei Stellen, die drei Verfahren zu unterscheiden. Im Frühjahr 2025 war anhand einer Skizze zu beschreiben, mit welchem Schlüssel eine E-Mail verschlüsselt und mit welchem sie entschlüsselt wird, und ein Vor- und Nachteil gegenüber dem symmetrischen Verfahren zu nennen. Du musst den Ablauf mit den Schlüsseln erklären können; mathematische Einzelheiten und Namen von Algorithmen waren nicht gefragt.","koennen":["Du kannst symmetrische Verschlüsselung erklären: derselbe geheime Schlüssel zum Ver- und Entschlüsseln.","Du kannst asymmetrische Verschlüsselung erklären: Mit dem öffentlichen Schlüssel des Empfängers wird verschlüsselt, nur sein privater Schlüssel entschlüsselt.","Du kannst je einen Vorteil und Nachteil nennen: Das asymmetrische Verfahren braucht keinen sicheren Schlüsseltausch, ist aber rechenaufwendiger.","Du kannst hybride Verschlüsselung erklären: Ein symmetrischer Sitzungsschlüssel wird asymmetrisch geschützt übertragen, die Daten selbst werden symmetrisch verschlüsselt.","Du kennst Beispiele: AES als symmetrisches, RSA als asymmetrisches Verfahren, TLS als hybride Anwendung."]},{"id":"AP1-7-3-2","titel":"Hashwerte, Zertifikate und digitale Signatur","art":"Wissen","rahmen":"Der Katalog verlangt, Hashwerte, Zertifikate und digitale Signaturen zu verwenden. Im Frühjahr 2025 war der Zweck eines Hashwerts zu erläutern, der neben einer Installationsdatei zum Download angeboten wird. Für Herbst 2025 berichten Prüflinge von einer Frage zur digitalen Signatur. Du musst erklären können, wozu die drei dienen und wie sie zusammenhängen.","koennen":["Du kannst erklären, was ein Hashwert ist: ein Prüfwert fester Länge, der sich schon bei kleinster Änderung der Daten ändert und sich nicht zurückrechnen lässt.","Du kannst erläutern, wie man mit einem Hashwert die Unversehrtheit eines Downloads prüft: Wert selbst berechnen und mit dem angegebenen vergleichen.","Du kannst erklären, was eine digitale Signatur leistet: Sie belegt, von wem eine Nachricht stammt und dass sie nicht verändert wurde.","Du kannst den Ablauf beschreiben: Der Absender verschlüsselt den Hashwert mit seinem privaten Schlüssel; der Empfänger prüft mit dem öffentlichen Schlüssel.","Du kannst erklären, wozu ein Zertifikat dient: Es bestätigt, dass ein öffentlicher Schlüssel zu einer bestimmten Person oder Website gehört.","Du weißt, dass eine Zertifizierungsstelle das Zertifikat ausstellt."]},{"id":"AP1-7-3-3","titel":"Authentifizierung, Zwei-Faktor-Verfahren, Zugangs- und Zugriffskontrolle","art":"Wissen","rahmen":"Hier geht es darum, wer an ein System kommt und was er dort darf. Der Katalog nennt Zugangs- und Zugriffskontrolle sowie Authentifizierung mit dem Beispiel Zweifaktor. Du sollst die Begriffe unterscheiden und Verfahren nennen; im Herbst 2024 waren drei technische Möglichkeiten einer automatischen Zutrittskontrolle zu nennen.","koennen":["Du kannst Zugangskontrolle (wer darf ein System benutzen) und Zugriffskontrolle (was darf er dort sehen und ändern) unterscheiden.","Du kannst erklären, was Authentifizierung ist, und die drei Arten von Faktoren nennen: Wissen, Besitz, biometrisches Merkmal.","Du kannst Zwei-Faktor-Authentifizierung erklären und ein Beispiel nennen, etwa Passwort und Code aus einer App.","Du kannst technische Möglichkeiten nennen, den Zutritt zu einem Raum zu kontrollieren: Chipkarte, Zahlencode, Fingerabdruck.","Du kannst Zutritt (Raum), Zugang (System) und Zugriff (Daten) auseinanderhalten."]},{"id":"AP1-7-3-4","titel":"Betriebssystem härten, Virenschutz und Personal Firewall","art":"Wissen","rahmen":"Der Katalog nennt die Härtung des Betriebssystems (Schwachstellen schließen) und das Anpassen der Personal Firewall, zum Beispiel einem Programm den Zugriff auf das Internet zu sperren. Du sollst Maßnahmen nennen und begründen, mit denen ein Arbeitsplatzrechner unempfindlicher gegen Angriffe wird. Im Frühjahr 2025 standen solche Maßnahmen in einem englischen Herstellertext; im Herbst 2024 war eine Minimalkonfiguration zu begründen.","koennen":["Du kannst erklären, was Härtung bedeutet: Angriffsfläche verkleinern und Schwachstellen schließen.","Du kannst Maßnahmen zur Härtung nennen: Updates einspielen, Firewall einschalten, sichere Passwörter verwenden, nicht benötigte Dienste und Programme entfernen.","Du kannst begründen, warum eine Minimalkonfiguration sicherer und leichter zu pflegen ist.","Du kannst erklären, was eine Personal Firewall tut und wie man damit einem Programm den Zugriff auf das Internet sperrt.","Du kannst erklären, wozu ein Virenschutzprogramm dient."]},{"id":"AP1-7-3-5","titel":"Datensicherung und Verfügbarkeit: Backup-Verfahren, NAS","art":"Wissen","rahmen":"Der Katalog nennt Datensicherung bzw. Backup-Verfahren und die Sicherung der Verfügbarkeit mit dem Beispiel NAS. Du sollst Sicherungsarten unterscheiden und Regeln für eine zuverlässige Sicherung nennen. In der Prüfung 2026 waren zwei Lösungen für die Ausfallsicherheit von Daten zu nennen; im Frühjahr 2024 drei Punkte, die bei der Sicherung auf externe Festplatten zu beachten sind.","koennen":["Du kannst Vollsicherung, differenzielle und inkrementelle Sicherung unterscheiden.","Du kannst Punkte nennen, die eine Sicherung zuverlässig machen: regelmäßig sichern, die Sicherung getrennt vom Rechner lagern, Datenträger verschlüsseln, die Wiederherstellung testen.","Du kannst Lösungen nennen, die Daten auch bei einem Ausfall verfügbar halten: Datensicherung und mehrfache Speicherung.","Du kannst erklären, was ein NAS ist: ein Speicher im Netzwerk, auf den mehrere Geräte zugreifen.","Du kannst die 3-2-1-Regel erklären: drei Kopien, zwei verschiedene Medien, eine außer Haus."]}]},{"id":"AP1-7-4","titel":"Bedrohungen im Arbeitsalltag","stichpunkte":[{"id":"AP1-7-4-1","titel":"Schadsoftware, Phishing und sicheres mobiles Arbeiten","art":"Wissen","rahmen":"Der AP1-Katalog nennt Schutzmaßnahmen, aber nicht die Bedrohungen selbst. Die Prüfungen fragen trotzdem danach: 2026 war eine von drei Arten von Schadsoftware zu beschreiben, und für das Arbeiten außerhalb des Büros waren Maßnahmen mit Grund und Folge anzugeben. Phishing war nur im Herbst 2024 nach altem Katalog dran. Du solltest gängige Arten von Schadsoftware beschreiben, Phishing erkennen und Verhaltensregeln für unterwegs nennen können.","koennen":["Du kannst Arten von Schadsoftware beschreiben, zum Beispiel Ransomware (verschlüsselt Daten und fordert Lösegeld), Spyware (späht aus) und Scareware (täuscht eine Bedrohung vor).","Du kannst Maßnahmen für das Arbeiten außerhalb des Büros nennen und begründen, zum Beispiel Blickschutzfolie, Gerät sperren, VPN statt offenem WLAN, verschlüsselter Datenträger.","Du kannst zu jeder Maßnahme die Folge nennen, die bei Nichtbeachtung droht.","Du kannst Merkmale einer Phishing-Mail nennen: unpersönliche Anrede, Zeitdruck, Fehler im Text, Aufforderung zur Eingabe von Zugangsdaten.","Du kannst Schutzmaßnahmen gegen Schadsoftware und Phishing nennen, getrennt nach dem, was das Unternehmen einrichtet, und dem, was jeder Mitarbeiter beachtet.","Du kennst weitere Arten von Schadsoftware: Virus, Wurm, Trojaner."]}]},{"id":"AP1-7-5","titel":"Datenschutz","stichpunkte":[{"id":"AP1-7-5-1","titel":"DSGVO und BDSG: personenbezogene Daten, Betroffenenrechte, Einwilligung","art":"Wissen","rahmen":"Du sollst die Grundzüge der Datenschutzgesetze kennen und ihre Einhaltung überprüfen. Der Katalog nennt die Definition personenbezogener Daten, die Rechte der Betroffenen und die Konsequenzen der Einwilligung. Im Frühjahr 2025 waren eine Rechtsgrundlage und ihr Zweck zu nennen; 2026 war Datenschutz von Datensicherheit abzugrenzen. Artikelnummern waren nicht verlangt.","koennen":["Du kannst DSGVO und BDSG als Rechtsgrundlagen nennen und ihren Zweck beschreiben: den Schutz personenbezogener Daten.","Du kannst erklären, was personenbezogene Daten sind, und Beispiele nennen.","Du kannst Rechte der Betroffenen nennen, zum Beispiel Auskunft, Berichtigung, Löschung, Widerspruch.","Du kannst erklären, was eine Einwilligung bewirkt und dass sie widerrufen werden kann.","Du kannst Datenschutz und Datensicherheit unterscheiden und je ein Beispiel nennen: Schutz der Person vor Missbrauch ihrer Daten gegenüber Schutz der Daten vor Verlust, Veränderung und unbefugtem Zugriff.","Du kannst Grundsätze der Verarbeitung nennen: Zweckbindung, Datenminimierung, Speicherbegrenzung."]},{"id":"AP1-7-5-2","titel":"Anonymisierung und Pseudonymisierung","art":"Wissen","rahmen":"Der Katalog nennt beide als Maßnahmen des Datenschutzes. Du sollst sie unterscheiden und an einem Beispiel erklären können. In den ausgewerteten Prüfungen gab es dazu keine Aufgabe.","koennen":["Du kannst Anonymisierung erklären: Der Bezug zur Person wird so entfernt, dass er nicht wiederhergestellt werden kann.","Du kannst Pseudonymisierung erklären: Der Name wird durch ein Kennzeichen ersetzt; mit einer getrennt aufbewahrten Zuordnung lässt sich der Bezug wiederherstellen.","Du weißt, dass pseudonymisierte Daten weiter als personenbezogen gelten, anonymisierte nicht.","Du kannst für einen Fall entscheiden, welche der beiden Maßnahmen passt, zum Beispiel Statistik gegenüber Auswertung mit Rückfragemöglichkeit."]}]}]},{"id":"AP1-8","titel":"Programmieren und Modellieren","bloecke":[{"id":"AP1-8-1","titel":"Programmiersprachen und Werkzeuge","stichpunkte":[{"id":"AP1-8-1-1","titel":"Compiler, Linker, Interpreter und Entwicklungswerkzeuge","art":"Wissen","rahmen":"Du sollst wissen, wie aus Quelltext ein lauffähiges Programm wird und welche Werkzeuge dabei helfen. Der Katalog nennt Compiler, Linker und Interpreter als Merkmale von Programmiersprachen und führt Compiler, virtuelle Maschinen, Interpreter, Editoren, Debugger und die integrierte Entwicklungsumgebung als Software auf. Im Herbst 2024 war der Unterschied zwischen Compiler- und Interpreter-Sprachen zu erläutern.","koennen":["Du kannst den Unterschied zwischen Compiler und Interpreter erläutern: Übersetzung des ganzen Programms vor der Ausführung gegenüber schrittweiser Ausführung zur Laufzeit.","Du kannst die Aufgabe des Linkers erklären: übersetzte Programmteile und Bibliotheken zu einem ausführbaren Programm verbinden.","Du kannst Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären.","Du kannst erklären, was eine virtuelle Maschine bei Sprachen wie Java leistet: Sie führt Zwischencode auf verschiedenen Betriebssystemen aus.","Du kannst je einen Vorteil nennen: Kompilierte Programme laufen schneller; interpretierte lassen sich ohne Übersetzungsschritt testen."]},{"id":"AP1-8-1-2","titel":"Prozedurale und objektorientierte Programmierung: Klassen, Objekte, Attribute, Methoden, Sichtbarkeit","art":"Wissen","rahmen":"Der Katalog verlangt, die prozedurale und die objektorientierte Herangehensweise zu kennen, einzuordnen und zu unterscheiden, und nennt die Grundbegriffe der Objektorientierung. Für AP1 bleibt es bei den Begriffen und ihrem Zusammenhang. Vererbung, Polymorphie und Interfaces nennt der AP1-Katalog nicht.","koennen":["Du kannst prozedurale und objektorientierte Programmierung unterscheiden.","Du kannst Klasse und Objekt unterscheiden: Die Klasse ist der Bauplan, das Objekt ein konkretes Exemplar.","Du kannst Attribute und Methoden erklären.","Du kannst erklären, was Sichtbarkeit bedeutet, und public von private unterscheiden.","Du kannst erklären, warum Attribute meist privat sind und über Methoden gelesen und geändert werden."]},{"id":"AP1-8-1-3","titel":"Skriptsprachen, Bibliotheken und Frameworks; Programmiersprache auswählen","art":"Wissen","rahmen":"Der Katalog nennt Skriptsprachen wie Shell-Skript sowie Bibliotheken und Frameworks als Merkmale, die du einordnen sollst. Die Auswahl einer Sprache steht im AP1-Katalog nicht, wurde aber gefragt: Im Frühjahr 2025 waren statische und dynamische Webseiten zu unterscheiden und drei Sprachen für dynamische Webinhalte zu nennen, im Herbst 2024 ein Kriterium für die Sprachwahl. Skripte selbst zu schreiben verlangt der AP1-Katalog nicht.","koennen":["Du kannst erklären, was eine Skriptsprache ist, und Beispiele nennen, etwa Shell-Skript.","Du kannst Bibliothek und Framework unterscheiden: Eine Bibliothek rufst du auf; ein Framework gibt den Rahmen vor, in den du deinen Code einfügst.","Du kannst statische und dynamische Webseiten unterscheiden: fertige, unveränderte Inhalte gegenüber Inhalten, die beim Aufruf erzeugt werden.","Du kannst Programmiersprachen für dynamische Webinhalte nennen, zum Beispiel JavaScript, PHP, Python; HTML und CSS zählen nicht als Programmiersprachen.","Du kannst ein Kriterium für die Wahl einer Programmiersprache nennen und begründen, zum Beispiel Eignung für die Aufgabe, Kenntnisse im Team, verfügbare Frameworks."]}]},{"id":"AP1-8-2","titel":"Code lesen, schreiben und prüfen","stichpunkte":[{"id":"AP1-8-2-1","titel":"Bausteine eines Programms: Variablen, Datentypen, Datenstrukturen, Kontrollstrukturen, Prozeduren und Funktionen","art":"Wissen","rahmen":"Das sind die Begriffe, die du brauchst, um Code zu lesen. Der Katalog führt sie als Merkmale von Programmiersprachen auf, die du kennen und unterscheiden sollst. In den Prüfungen kamen sie nicht als Begriffsfrage vor, sondern in jedem Schreibtischtest: Arrays, Schleifen, Verzweigungen, Funktionen mit Parametern und Rückgabewert.","koennen":["Du kannst erklären, was eine Variable ist, und die Datentypen für Ganzzahl, Kommazahl, Wahrheitswert und Text unterscheiden.","Du kannst erklären, was ein Array ist und wie über den Index auf ein Element zugegriffen wird.","Du kannst Verzweigung und Schleife unterscheiden und im Code erkennen.","Du kannst erklären, was eine Funktion ist: ein benannter Codeblock mit Parametern und Rückgabewert.","Du kannst zählergesteuerte, kopfgesteuerte und fußgesteuerte Schleifen unterscheiden.","Du kannst Prozedur (ohne Rückgabewert) und Funktion (mit Rückgabewert) unterscheiden."]},{"id":"AP1-8-2-2","titel":"Pseudocode: Kontrollstrukturen abbilden","art":"Schreiben","rahmen":"Der Katalog verlangt, Kontrollstrukturen wie Verzweigung und Schleife mittels Pseudocode abzubilden. In den Originalprüfungen war Pseudocode bisher nur zu lesen, mit deutschen Schlüsselwörtern wie Wenn, Sonst, Für und Rückgabe. Für Herbst 2025 berichten Prüflinge, dass Fehler in Pseudocode zu finden und zu korrigieren waren. Rechne damit, wenige Zeilen selbst zu schreiben oder zu berichtigen; ganze Algorithmen zu entwerfen war in den ausgewerteten AP1-Prüfungen nicht verlangt.","koennen":["Du kannst Pseudocode mit Verzweigungen und Schleifen lesen, auch wenn sie mehrfach verschachtelt sind.","Du kannst eine einfache Verzweigung und eine Schleife in Pseudocode schreiben und die Struktur durch Einrücken sichtbar machen.","Du kannst eine fehlerhafte Zeile in Pseudocode berichtigen.","Du kannst einen kurzen, in Worten beschriebenen Ablauf in Pseudocode übertragen."]},{"id":"AP1-8-2-3","titel":"Schreibtischtest","art":"Rechnen","rahmen":"Beim Schreibtischtest gehst du einen gegebenen Code von Hand mit bestimmten Eingabewerten durch und ermittelst das Ergebnis. Der Katalog nennt ihn ausdrücklich, und in jeder ausgewerteten AP1-Prüfung seit Herbst 2024 kam einer vor, zuletzt mit 6 bis 14 Punkten. Der Code war Pseudocode oder an Python bzw. C# angelehnt und höchstens 20 Zeilen lang: eine Schleife über ein Array, Verzweigungen, einfache Rechnungen.","koennen":["Du kannst einen Code Zeile für Zeile mit gegebenen Werten durchgehen und die Werte der Variablen in einer Tabelle mitführen.","Du kannst den Rückgabewert oder die Ausgabe für einen gegebenen Aufruf angeben und begründen.","Du kannst Rechnungen im Code richtig ausführen, auch Prozentwerte und die Division ganzer Zahlen ohne Rest.","Du kannst bei verschachtelten Verzweigungen den Zweig bestimmen, der durchlaufen wird.","Du kannst ein Ergebnis wie verlangt angeben, zum Beispiel mit zwei Nachkommastellen."]},{"id":"AP1-8-2-4","titel":"Fehler im Quellcode finden: Debugging, formale und inhaltliche Fehler","art":"Wissen","rahmen":"Der Katalog verlangt, Fehler in einem gegebenen Quellcode zu finden, und nennt Debugging sowie formale und inhaltliche Fehler. In der Prüfung 2026 war zu erläutern, welches Problem entsteht, wenn zwei Arrays unterschiedlicher Länge an eine Funktion übergeben werden. Du sollst einen Fehler im Code erkennen, seine Art benennen und die Folge beschreiben.","koennen":["Du kannst formale Fehler (Verstoß gegen die Regeln der Sprache, das Programm startet nicht) und inhaltliche Fehler (das Programm läuft, liefert aber ein falsches Ergebnis) unterscheiden.","Du kannst in einem kurzen Code eine fehlerhafte Stelle finden und beschreiben, was dort falsch läuft.","Du kannst erläutern, welches Problem bestimmte Eingabedaten auslösen, zum Beispiel ein Zugriff über das Ende eines Arrays hinaus.","Du kannst erklären, was Debugging ist.","Du kennst typische Fehlerquellen: falsche Schleifengrenze, vertauschter Vergleichsoperator, nicht initialisierte Variable, Division durch null."]}]},{"id":"AP1-8-3","titel":"UML-Diagramme","stichpunkte":[{"id":"AP1-8-3-1","titel":"Anwendungsfalldiagramm","art":"Zeichnen","rahmen":"Das Anwendungsfalldiagramm zeigt, wer ein System wofür benutzt. Es steht im AP1-Katalog und war in der Prüfung 2026 mit sieben und im Herbst 2024 mit fünf Punkten dran. Beide Male war ein begonnenes Diagramm nach Textvorgaben zu erweitern; 2026 war die Notationsübersicht aus dem Katalog-Anhang abgedruckt. Ein vollständiges Diagramm aus dem Nichts zu erstellen war in den ausgewerteten AP1-Prüfungen nicht verlangt.","koennen":["Du kannst Akteure und Anwendungsfälle aus einem Text herauslesen und in ein begonnenes Diagramm eintragen.","Du kannst einen Akteur mit einem Anwendungsfall durch eine Assoziation verbinden.","Du kannst eine Generalisierung zwischen Akteuren zeichnen: Der speziellere Akteur kann alles, was der allgemeine kann.","Du kannst eine include-Beziehung einsetzen, wenn ein Anwendungsfall immer einen anderen einschließt.","Du kannst eine extend-Beziehung einsetzen, wenn ein Anwendungsfall einen anderen nur unter einer Bedingung erweitert, und die Pfeilrichtung richtig setzen.","Du kannst die Systemgrenze als Rahmen um die Anwendungsfälle zeichnen."]},{"id":"AP1-8-3-2","titel":"Klassendiagramm","art":"Zeichnen","rahmen":"Das Klassendiagramm steht im AP1-Katalog bei den Programmierwerkzeugen. In den beiden Originalprüfungen nach aktuellem Katalog kam es nicht vor; der Podcast nennt es für Frühjahr 2026. Für AP1 passt dazu der Katalogpunkt „Klassen, Attribute, Objekte, Methoden, Sichtbarkeit\": eine Klasse mit Attributen, Methoden und Sichtbarkeiten darstellen und einfache Beziehungen lesen.","koennen":["Du kannst eine Klasse als Kasten mit drei Bereichen zeichnen: Name, Attribute, Methoden.","Du kannst Attribute in der Form „Sichtbarkeit Name : Typ\" und Methoden mit Parametern und Rückgabetyp notieren.","Du kannst die Sichtbarkeitszeichen + für public und - für private verwenden.","Du kannst eine Assoziation zwischen zwei Klassen mit Multiplizitäten wie 1 und * lesen und eintragen.","Du kannst aus einer Textbeschreibung Klassen mit ihren Attributen und Methoden ableiten."]},{"id":"AP1-8-3-3","titel":"Aktivitätsdiagramm","art":"Zeichnen","rahmen":"Das Aktivitätsdiagramm ist im aktuellen Katalog die grafische Darstellung für Abläufe mit Entscheidungen und parallelen Zweigen. In den beiden Originalprüfungen nach aktuellem Katalog kam es nicht vor; für Herbst 2025 nennen es der Podcast und Prüflinge, die es als zeitaufwendig beschreiben. Du solltest einen beschriebenen Ablauf in ein Aktivitätsdiagramm übertragen können.","koennen":["Du kannst Startknoten, Aktion, Entscheidung mit Bedingungen in eckigen Klammern, Zusammenführung und Endknoten zeichnen.","Du kannst einen in Worten beschriebenen Ablauf mit Verzweigung in ein Aktivitätsdiagramm übertragen.","Du kannst eine Wiederholung als Rücksprung von einer Entscheidung darstellen.","Du kannst parallele Abläufe mit Teilung und Synchronisation (Balken) darstellen.","Du kannst Schwimmbahnen verwenden, um Aktionen verschiedenen Beteiligten zuzuordnen."]}]},{"id":"AP1-8-4","titel":"Daten, Oberflächen und Prozesse","stichpunkte":[{"id":"AP1-8-4-1","titel":"Einfache ER-Modelle","art":"Zeichnen","rahmen":"Von den Datenbanken ist in AP1 nur das einfache ER-Modell geblieben. In der Prüfung 2026 war ein begonnenes ER-Diagramm nach einer Textbeschreibung um Entitäten, Attribute, Schlüssel, Beziehungen und Kardinalitäten zu ergänzen und brachte neun Punkte; im Herbst 2024 war ein Modell um eine Entität zu erweitern. Gezeichnet wurde in der Schreibweise mit Rechteck, Raute und Ellipse. Normalisierung und das Überführen in Tabellen nennt der AP1-Katalog nicht.","koennen":["Du kannst Entitäten als Rechtecke, Beziehungen als Rauten und Attribute als Ellipsen zeichnen.","Du kannst aus einer Textbeschreibung Entitäten, ihre Attribute und die Beziehungen zwischen ihnen ableiten.","Du kannst für jede Entität einen Primärschlüssel festlegen und kennzeichnen.","Du kannst die Kardinalitäten 1:1, 1:n und m:n aus dem Text bestimmen und an die Beziehung schreiben.","Du kannst ein Attribut der richtigen Entität zuordnen, sodass keine Angabe doppelt gespeichert wird."]},{"id":"AP1-8-4-2","titel":"Redundanz erkennen und Datentypen wählen","art":"Wissen","rahmen":"Zwei Fragen rund um das ER-Modell standen in den Prüfungen, ohne im Katalog genannt zu sein. Im Frühjahr 2025 waren der Begriff Redundanz zu erklären und ein Problem zu beschreiben, das daraus entsteht. In der Prüfung 2026 waren für drei Attribute passende Datentypen zu bestimmen und zu begründen. Datenbankabfragen gehören nicht mehr zu AP1.","koennen":["Du kannst Redundanz erklären: Dieselbe Information ist mehrfach gespeichert.","Du kannst ein Problem beschreiben, das durch Redundanz entsteht: Wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten.","Du kannst für ein Attribut einen passenden Datentyp wählen und begründen: Datum, Ganzzahl, Text.","Du kannst begründen, warum eine Postleitzahl als Text gespeichert wird: Führende Nullen bleiben erhalten, und gerechnet wird damit nicht."]},{"id":"AP1-8-4-3","titel":"Bildschirmmasken entwerfen: Softwareergonomie, Corporate Identity, Barrierefreiheit","art":"Zeichnen","rahmen":"Der Katalog nennt den Entwurf von Bildschirmausgabemasken mit den Gesichtspunkten Softwareergonomie, Corporate Identity und Barrierefreiheit. In den ausgewerteten AP1-Prüfungen gab es dazu keine Aufgabe. Der Katalog spricht vom Entwerfen; zu rechnen ist deshalb mit einer einfachen Skizze oder mit der Beurteilung einer gegebenen Maske.","koennen":["Du kannst eine einfache Bildschirmmaske mit Beschriftungen, Eingabefeldern, Auswahlfeldern und Schaltflächen skizzieren.","Du kannst Regeln der Softwareergonomie anwenden: Zusammengehöriges gruppieren, einheitliche Anordnung, verständliche Beschriftung, klare Fehlermeldungen.","Du kannst erklären, was Corporate Identity für eine Maske bedeutet: Logo, Farben und Schrift des Unternehmens einheitlich verwenden.","Du kannst Anforderungen der Barrierefreiheit nennen: ausreichender Kontrast, skalierbare Schrift, Bedienung mit der Tastatur, Information nicht allein über Farbe."]},{"id":"AP1-8-4-4","titel":"Prozessdarstellungen lesen: EPK und BPMN","art":"Wissen","rahmen":"Der Anhang des Katalogs enthält die Sinnbilder der ereignisgesteuerten Prozesskette (EPK) und der BPM-Notation; die Vorbemerkung nennt BPMN als neuere Methode, für die Platz geschaffen wurde. Im Themenkreis für AP1 wird keine der beiden Notationen genannt, und in keiner ausgewerteten Prüfung kamen sie vor. Der Podcast führt für Herbst 2025 und Frühjahr 2026 das Stichwort „Prozessanalyse\", ohne zu sagen, in welcher Darstellung.","koennen":["Du kannst die Sinnbilder der EPK aus dem Anhang benennen: Ereignis, Funktion, Organisationseinheit, Objekt und die Konnektoren Und, Exklusives Oder, Offenes Oder.","Du kennst die Grundregel der EPK: Ereignisse und Funktionen wechseln sich ab; der Ablauf beginnt und endet mit einem Ereignis.","Du kannst die Sinnbilder der BPM-Notation aus dem Anhang benennen: Aufgabe, Sequenzfluss, Nachrichtenfluss, Start-, Zwischen- und Endereignis, exklusives, inklusives und paralleles Gateway, Pool mit Lanes.","Du kannst einen dargestellten Ablauf in Worten wiedergeben und sagen, wer welchen Schritt ausführt."]}]}]}]};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const root = document.documentElement;
+const ruhig = matchMedia("(prefers-reduced-motion: reduce)");
+
+const STILE = { notizbuch: "Notizbuch", konsole: "Konsole", level: "Level" };
+const RAENGE = ["Hello World", "Syntax-Sicher", "Bugjäger", "Refactorer", "Architekt", "Prüfungsreif"];
+
+const alleSp = D.ordner.flatMap((o) => o.bloecke.flatMap((b) => b.stichpunkte));
+const ordnerVon = {};
+D.ordner.forEach((o) => o.bloecke.forEach((b) => b.stichpunkte.forEach((s) => (ordnerVon[s.id] = o))));
+
+// Nur im geöffneten Fenster, gespeichert wird nichts.
+const Z = { erledigt: new Set(), ordnerOffen: new Set([D.ordner[0].id]), spOffen: new Set() };
+const demo = { stand: 37, rang: 2, punkte: 42 };
+
+let stil = "notizbuch", ansicht = "lernen";
+try {
+  stil = localStorage.getItem("entwurf-stil") || stil;
+  ansicht = localStorage.getItem("entwurf-ansicht") || ansicht;
+} catch (e) {}
+if (!STILE[stil]) stil = "notizbuch";
+
+const ICO = {
+  haken: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.8 8.4l2.8 2.8 5.6-6.2"/></svg>',
+  hakenGross: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  schloss: '<svg class="ico abz-schloss" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="11" width="13" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>',
+  schlossGross: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="11" width="13" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>',
+  liste: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="3" height="3" rx=".5"/><path d="M10 6.5h10"/><rect x="4" y="11" width="3" height="3" rx=".5"/><path d="M10 12.5h7"/><rect x="4" y="17" width="3" height="3" rx=".5" stroke-dasharray="2 2"/><path d="M10 18.5h4" stroke-dasharray="2 2"/></svg>',
+};
+
+const nr = (n) => (stil === "konsole" ? String(n).padStart(2, "0") : String(n));
+
+function dauer() {
+  if (ruhig.matches) return 0;
+  const v = getComputedStyle(root).getPropertyValue("--dur").trim();
+  return parseFloat(v) * (v.endsWith("ms") ? 1 : 1000);
+}
+
+// Zahl zählt hoch (oder runter), so lang wie ein Übergang
+function zaehle(el, ziel) {
+  if (!el) return;
+  const von = Number(el.dataset.wert || 0);
+  el.dataset.wert = ziel;
+  const d = dauer() * (Math.abs(ziel - von) > 1 ? 3 : 1);
+  if (!d || von === ziel) { el.textContent = ziel; return; }
+  const t0 = performance.now();
+  const schritt = (t) => {
+    const k = Math.min(1, (t - t0) / d);
+    el.textContent = Math.round(von + (ziel - von) * (1 - Math.pow(1 - k, 3)));
+    if (k < 1 && el.dataset.wert == ziel) requestAnimationFrame(schritt);
+  };
+  requestAnimationFrame(schritt);
+}
+
+function setzeAnteil(el, p) {
+  if (!el) return;
+  const alt = parseFloat(el.style.getPropertyValue("--p")) || 0;
+  el.style.setProperty("--p", p);
+  if (stil === "level" && p > alt) { el.classList.remove("glanz"); void el.offsetWidth; el.classList.add("glanz"); }
+}
+
+/* ---------- Lernseite ---------- */
+function rangChip() {
+  if (stil === "konsole") return `<span class="rang-chip">rang=<b>hello_world</b></span>`;
+  if (stil === "level") return `<span class="rang-chip"><span class="mini-hex">1</span>Hello World</span>`;
+  return "";
+}
+
+function renderSp(s, praefix = "") {
+  const id = praefix + s.id, an = Z.erledigt.has(s.id), offen = Z.spOffen.has(id);
+  return `<li class="sp" data-sp="${s.id}"${an ? " data-erledigt" : ""}>
+    <div class="sp-zeile">
+      <button class="haken" type="button" role="checkbox" aria-checked="${an}" data-haken="${s.id}" aria-label="Erledigt: ${esc(s.titel)}"><span class="haken-box">${ICO.haken}</span></button>
+      <button class="sp-knopf" type="button" data-klapp="s:${id}" aria-expanded="${offen}" aria-controls="k-${id}">
+        <span class="sp-titel">${esc(s.titel)}</span>${s.art !== "Wissen" ? `<span class="art">${esc(s.art)}</span>` : "<span></span>"}<span class="pfeil" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="klapp" id="k-${id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen"><div class="sp-detail">
+      <div class="feld"><p class="label">Rahmen</p><p class="rahmen">${esc(s.rahmen)}</p></div>
+      <div class="feld"><p class="label">Können</p><ul class="koennen">${s.koennen.map((k) => `<li>${esc(k)}</li>`).join("")}</ul></div>
+      <div class="aktionen">
+        <button class="knopf primaer" type="button" data-spaeter="Der Übungstrainer kommt später.">Üben</button>
+        <button class="knopf sekundaer" type="button" data-spaeter="Lernprompt kopieren kommt später.">Lernprompt kopieren</button>
+      </div>
+    </div></div></div>
+  </li>`;
+}
+
+function renderOrdner(o, i) {
+  const ids = o.bloecke.flatMap((b) => b.stichpunkte.map((s) => s.id));
+  const f = ids.filter((id) => Z.erledigt.has(id)).length;
+  const offen = Z.ordnerOffen.has(o.id);
+  return `<section class="ordner" data-ordner="${o.id}"${f === ids.length ? " data-fertig" : ""}>
+    <h2 class="ordner-kopf"><button class="ordner-knopf" type="button" data-klapp="o:${o.id}" aria-expanded="${offen}" aria-controls="k-${o.id}">
+      <span class="ordner-nr" aria-hidden="true"><span class="nr-zahl">${nr(i + 1)}</span>${ICO.hakenGross}</span>
+      <span class="ordner-titel">${esc(o.titel)}</span>
+      <span class="ordner-stand"><span class="zahl" data-wert="${f}">${f}</span> von ${ids.length}</span>
+      <span class="balken mini" style="--p:${f / ids.length}"><i></i></span>
+      <span class="pfeil" aria-hidden="true"></span>
+    </button></h2>
+    <div class="klapp" id="k-${o.id}" data-offen="${offen}"${offen ? "" : " inert"}><div class="klapp-innen">
+      ${o.bloecke.map((b) => `<div class="block"><h3 class="label block-titel">${esc(b.titel)}</h3><ul class="sp-liste">${b.stichpunkte.map((s) => renderSp(s)).join("")}</ul></div>`).join("")}
+    </div></div>
+  </section>`;
+}
+
+function renderLernen() {
+  const g = alleSp.length, n = Z.erledigt.size;
+  const eyebrow = stil === "konsole" ? "~/ap1/lernen" : "AP1 · Teil 1 der gestreckten Abschlussprüfung";
+  $("#ansicht-lernen").innerHTML = `
+    <header class="seitenkopf">
+      <p class="eyebrow">${eyebrow}</p>
+      <h1 class="titel">${esc(D.titel)}</h1>
+      <div class="stand"><span><span class="zahl" id="gesamt-zahl" data-wert="${n}">${n}</span> von ${g} erledigt</span>${rangChip()}</div>
+      <span class="balken" id="gesamt-balken" style="--p:${n / g}"><i></i></span>
+    </header>
+    <div class="ordner-liste">${D.ordner.map(renderOrdner).join("")}</div>`;
+}
+
+function aktualisiereStand() {
+  zaehle($("#gesamt-zahl"), Z.erledigt.size);
+  setzeAnteil($("#gesamt-balken"), Z.erledigt.size / alleSp.length);
+  D.ordner.forEach((o) => {
+    const sec = $(`[data-ordner="${o.id}"]`);
+    if (!sec) return;
+    const ids = o.bloecke.flatMap((b) => b.stichpunkte.map((s) => s.id));
+    const f = ids.filter((id) => Z.erledigt.has(id)).length;
+    zaehle($(".ordner-stand .zahl", sec), f);
+    setzeAnteil($(".balken", sec), f / ids.length);
+    sec.toggleAttribute("data-fertig", f === ids.length);
+  });
+}
+
+function plusEins(btn) {
+  if (ruhig.matches) return;
+  const r = btn.getBoundingClientRect();
+  const el = document.createElement("span");
+  el.className = "plus";
+  el.textContent = "+1";
+  el.style.left = r.left + window.scrollX + 2 + "px";
+  el.style.top = r.top + window.scrollY - 6 + "px";
+  document.body.appendChild(el);
+  el.addEventListener("animationend", () => el.remove());
+}
+
+function schalteHaken(id, ausloeser) {
+  const an = !Z.erledigt.has(id);
+  an ? Z.erledigt.add(id) : Z.erledigt.delete(id);
+  $$(`[data-haken="${id}"]`).forEach((b) => {
+    b.setAttribute("aria-checked", an);
+    b.closest(".sp")?.toggleAttribute("data-erledigt", an);
+    b.classList.toggle("frisch", an);
+  });
+  if (an && stil === "level") plusEins(ausloeser);
+  aktualisiereStand();
+}
+
+function klapp(btn) {
+  const offen = btn.getAttribute("aria-expanded") !== "true";
+  btn.setAttribute("aria-expanded", offen);
+  const k = document.getElementById(btn.getAttribute("aria-controls"));
+  k.dataset.offen = offen;
+  k.inert = !offen;
+  const [typ, id] = btn.dataset.klapp.split(/:(.*)/);
+  const menge = typ === "o" ? Z.ordnerOffen : Z.spOffen;
+  offen ? menge.add(id) : menge.delete(id);
+}
+
+/* ---------- Bausteine ---------- */
+function abzeichen(nummer, name, zustand, gross = false) {
+  return `<span class="abz abz-${zustand}${gross ? " abz-gross" : ""}">
+    <span class="abz-form">
+      <svg class="abz-ring" viewBox="0 0 48 48" aria-hidden="true"><circle class="grund" cx="24" cy="24" r="23"/><circle class="voll" cx="24" cy="24" r="23"/></svg>
+      <span class="abz-nr">${nr(nummer)}</span>${ICO.schloss}
+    </span>
+    ${gross ? "" : `<span class="abz-name">${esc(name)}</span>`}
+  </span>`;
+}
+
+function abschnitt(titel, text, inhalt) {
+  return `<section class="bs"><div class="bs-kopf"><h2>${titel}</h2><p class="bs-text">${text}</p></div>${inhalt}</section>`;
+}
+
+function hakenMuster(an, gesperrt) {
+  return `<button type="button" class="haken" role="checkbox" aria-checked="${an}" ${gesperrt ? "disabled" : "data-demo-haken"} aria-label="Beispiel-Häkchen"><span class="haken-box">${ICO.haken}</span></button>`;
+}
+
+function zufall(seed) {
+  return () => {
+    seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function aktivitaet() {
+  const wochen = 20, r = zufall(12);
+  const heute = new Date(); heute.setHours(0, 0, 0, 0);
+  const wt = (heute.getDay() + 6) % 7; // Montag = 0
+  const start = new Date(heute); start.setDate(heute.getDate() - wt - (wochen - 1) * 7);
+  let zellen = "", aktiv = 0, serie = 0, beste = 0;
+  for (let i = 0; i < wochen * 7; i++) {
+    const tag = new Date(start); tag.setDate(start.getDate() + i);
+    if (tag > heute) { zellen += '<i style="visibility:hidden"></i>'; continue; }
+    const dichte = 0.3 + 0.5 * (i / (wochen * 7));
+    const anzahl = r() < dichte ? 1 + Math.floor(r() * r() * 9) : 0;
+    const stufe = anzahl === 0 ? 0 : anzahl < 2 ? 1 : anzahl < 4 ? 2 : anzahl < 6 ? 3 : 4;
+    if (anzahl) { aktiv++; serie++; beste = Math.max(beste, serie); } else serie = 0;
+    const datum = tag.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+    zellen += `<i data-s="${stufe}" title="${anzahl} Stichpunkte am ${datum}"${+tag === +heute ? ' class="heute"' : ""}></i>`;
+  }
+  return `<div class="stapel">
+    <div class="scroll-x"><div class="aktiv" role="img" aria-label="Aktivität der letzten ${wochen} Wochen, Beispielwerte: ${aktiv} aktive Tage">
+      <div class="aktiv-tage" aria-hidden="true"><span>Mo</span><span></span><span>Mi</span><span></span><span>Fr</span><span></span><span></span></div>
+      <div class="raster">${zellen}</div>
+    </div></div>
+    <div class="aktiv-fuss"><span>${aktiv} aktive Tage · längste Serie ${beste} Tage</span>
+      <span class="legende">weniger&nbsp;<span class="raster" style="display:inline-flex;gap:3px"><i></i><i data-s="1"></i><i data-s="2"></i><i data-s="3"></i><i data-s="4"></i></span>&nbsp;mehr</span></div>
+  </div>`;
+}
+
+function rangBereich() {
+  return `<div class="stapel" id="rang-bereich">
+    <div class="raenge">${RAENGE.map((n, i) => abzeichen(i + 1, n, i < demo.rang ? "erreicht" : i === demo.rang ? "aktuell" : "gesperrt")).join("")}</div>
+  </div>`;
+}
+
+function rangWeg() {
+  const ziel = 50, naechster = RAENGE[demo.rang + 1];
+  if (!naechster) return `<p class="bs-text">Höchster Rang erreicht.</p><div class="aktionen"><button class="knopf sekundaer" type="button" data-demo="rang-reset">Von vorn</button></div>`;
+  return `<div class="rang-weg">
+      <div class="stand"><span>${esc(RAENGE[demo.rang])} → <b>${esc(naechster)}</b></span><span><span class="zahl" id="rang-zahl" data-wert="${demo.punkte}">${demo.punkte}</span> von ${ziel} Punkten</span></div>
+      <span class="balken" id="rang-balken" style="--p:${demo.punkte / ziel}"><i></i></span>
+    </div>
+    <div class="aktionen"><button class="knopf sekundaer" type="button" data-demo="punkte">+ 4 Punkte</button></div>`;
+}
+
+function renderBausteine() {
+  const bsp = alleSp.find((s) => s.titel.startsWith("Netzwerkbefehle")) || alleSp[0];
+  const zust = ["Normal", "Berührt", "Gedrückt", "Gesperrt"];
+  const knopfZeile = (art, name, text) =>
+    `<span class="zustand-name">${name}</span>` +
+    zust.map((_, i) => `<span><button type="button" class="knopf ${art}${i === 1 ? " ist-hover" : i === 2 ? " ist-aktiv" : ""}"${i === 3 ? " disabled" : ""}${i === 1 || i === 2 ? ' tabindex="-1" aria-hidden="true"' : ""}${i === 0 ? ' data-spaeter="Ein Beispielknopf ohne Funktion."' : ""}>${text}</button></span>`).join("");
+
+  $("#ansicht-bausteine").innerHTML = `
+    <header class="seitenkopf">
+      <p class="eyebrow">${stil === "konsole" ? "~/entwurf/bausteine" : "Entwurf · Stilrichtung " + STILE[stil]}</p>
+      <h1 class="titel">Bausteine</h1>
+      <p class="lead">Jeder Baustein einzeln und in jedem Zustand. Zahlen, Ränge und Aktivität sind erfundene Beispielwerte.</p>
+    </header>
+
+    ${abschnitt("Knöpfe", "Zwei Arten: Primär für die eine wichtigste Handlung, Sekundär für alles andere. Die Spalte „Normal“ reagiert echt auf Maus und Tastatur.",
+      `<div class="scroll-x"><div class="knopf-raster"><span></span>${zust.map((z) => `<span class="zustand-name">${z}</span>`).join("")}${knopfZeile("primaer", "Primär", "Üben")}${knopfZeile("sekundaer", "Sekundär", "Kopieren")}</div></div>`)}
+
+    ${abschnitt("Häkchen", "Ein Klick hakt ab, ein zweiter nimmt es zurück. Das Häkchen zeichnet sich.",
+      `<div class="muster-reihe">
+        <span class="muster">${hakenMuster(false)}<span class="zustand-name">Offen</span></span>
+        <span class="muster">${hakenMuster(true)}<span class="zustand-name">Erledigt</span></span>
+        <span class="muster">${hakenMuster(false, true)}<span class="zustand-name">Gesperrt</span></span>
+      </div>`)}
+
+    ${abschnitt("Fortschrittsbalken", "Der Balken füllt sich, die Zahl zählt mit.",
+      `<div class="stapel">
+        <div class="stand"><span><span class="zahl" id="demo-zahl" data-wert="${demo.stand}">${demo.stand}</span> von 98 erledigt</span></div>
+        <span class="balken" id="demo-balken" style="--p:${demo.stand / 98}"><i></i></span>
+        <div class="aktionen">
+          <button class="knopf sekundaer" type="button" data-demo="plus">+ 10 erledigt</button>
+          <button class="knopf sekundaer" type="button" data-demo="null">Auf 0 setzen</button>
+        </div>
+      </div>`)}
+
+    ${abschnitt("Karte", "Die einzige Art Karte. Sie hebt genau ein Ding hervor, zum Beispiel den Einstieg auf dem späteren Startbildschirm.",
+      `<article class="karte">
+        <p class="eyebrow">Zuletzt geöffnet</p>
+        <h3 class="karte-titel">${esc(bsp.titel)}</h3>
+        <p class="karte-meta">${esc(ordnerVon[bsp.id].titel)} · ${bsp.koennen.length} Können-Aussagen</p>
+        <div class="aktionen"><button class="knopf primaer" type="button" data-spaeter="Weiterlernen springt später zum Stichpunkt.">Weiterlernen</button></div>
+      </article>`)}
+
+    ${abschnitt("Aufklappbarer Bereich", "Ein echter Stichpunkt mit langem Titel. Beim Aufklappen rutscht alles darunter weich nach unten.",
+      `<ul class="sp-liste">${renderSp(bsp, "bs-")}</ul>`)}
+
+    ${abschnitt("Leer und gesperrt", "Auch Zustände ohne Inhalt sind gestaltet.",
+      `<div class="zwei">
+        <div class="leer">${ICO.liste}<p class="leer-titel">Noch nichts abgehakt</p><p class="leer-text">Hake einen Stichpunkt ab, sobald du alle Können-Aussagen sicher beherrschst. Er erscheint dann hier.</p></div>
+        <div class="leer gesperrt" aria-disabled="true">${ICO.schlossGross}<p class="leer-titel">Übungstrainer</p><p class="leer-text">Kommt später: SQL, Pseudocode, Subnetting, IT-Rechnen und Netzplan.</p></div>
+      </div>`)}
+
+    ${abschnitt("Rangabzeichen", "Sechs Ränge, der erste heißt „Hello World“. Die übrigen Namen sind Platzhalter. Im Beispiel ist Rang 3 erreicht.", rangBereich())}
+
+    ${abschnitt("Weg zum nächsten Rang", "Bei 50 Punkten folgt der Rangaufstieg.", `<div class="stapel" id="rang-weg">${rangWeg()}</div>`)}
+
+    ${abschnitt("Aktivitätsübersicht", "Ein Kästchen je Tag, die letzten 20 Wochen. Je kräftiger, desto mehr Stichpunkte an dem Tag.", aktivitaet())}
+
+    ${abschnitt("Besonderer Moment", "Ein Rangaufstieg. Hier darf es einmal deutlich werden.",
+      `<div class="aktionen"><button class="knopf primaer" type="button" data-demo="moment">Rangaufstieg ansehen</button></div>`)}
+  `;
+}
+
+/* ---------- Rangaufstieg ---------- */
+let vorherFokus = null, logTimer = [];
+function zeigeMoment(idx) {
+  const m = $("#moment"), k = $("#moment-karte");
+  logTimer.forEach(clearTimeout); logTimer = [];
+  vorherFokus = document.activeElement;
+  const kopf = `${abzeichen(idx + 1, RAENGE[idx], "aktuell", true)}
+    <p class="eyebrow">Neuer Rang</p>
+    <h2 id="moment-titel">${esc(RAENGE[idx])}</h2>
+    <p class="moment-text">Rang ${idx + 1} von ${RAENGE.length}. Weiter so.</p>
+    <button class="knopf primaer" type="button" data-demo="moment-zu">Weiter</button>`;
+
+  if (stil === "konsole") {
+    k.innerHTML = `<pre class="log" aria-hidden="true"></pre><div class="moment-ende" hidden>${kopf}</div>`;
+    const zeilen = ["$ rang --pruefen", "punkte  50/50", `rang    ${nr(idx)} → ${nr(idx + 1)}`, `<b>» neuer rang: ${esc(RAENGE[idx].toLowerCase())}</b>`];
+    const log = $(".log", k), ende = $(".moment-ende", k);
+    const takt = ruhig.matches ? 0 : dauer() * 2;
+    zeilen.forEach((z, i) => logTimer.push(setTimeout(() => { log.innerHTML += (i ? "\n" : "") + z; }, takt * (i + 1))));
+    logTimer.push(setTimeout(() => { ende.hidden = false; $(".knopf", ende).focus(); }, takt * (zeilen.length + 1)));
+    k.focus();
+  } else {
+    k.innerHTML = kopf + (stil === "level" ? '<div class="funken" aria-hidden="true"></div>' : "");
+    if (stil === "level" && !ruhig.matches) {
+      const f = $(".funken", k);
+      for (let i = 0; i < 28; i++) {
+        const w = (i / 28) * Math.PI * 2 + Math.random() * 0.3, r = 70 + Math.random() * 90;
+        const el = document.createElement("i");
+        el.style.cssText = `--dx:${Math.cos(w) * r}px;--dy:${Math.sin(w) * r}px;--verz:${dauer() * 1.5}ms;--c:${i % 3 ? "var(--akzent)" : "var(--text)"}`;
+        f.appendChild(el);
+      }
+    }
+    setTimeout(() => $(".knopf", k)?.focus(), 0);
+  }
+  m.dataset.offen = "true";
+}
+function schliesseMoment() {
+  logTimer.forEach(clearTimeout);
+  $("#moment").dataset.offen = "false";
+  vorherFokus?.focus?.();
+}
+
+/* ---------- Schalter ---------- */
+let hinweisTimer;
+function hinweis(text) {
+  const el = $("#hinweis");
+  el.textContent = text;
+  el.dataset.offen = "true";
+  clearTimeout(hinweisTimer);
+  hinweisTimer = setTimeout(() => (el.dataset.offen = "false"), 2200);
+}
+
+function setzeStil(neu) {
+  stil = neu;
+  root.dataset.stil = neu;
+  $$(".entwurf [data-stil]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.stil === neu));
+  renderLernen();
+  renderBausteine();
+  try { localStorage.setItem("entwurf-stil", neu); } catch (e) {}
+}
+function setzeAnsicht(neu) {
+  ansicht = neu;
+  $("#ansicht-lernen").hidden = neu !== "lernen";
+  $("#ansicht-bausteine").hidden = neu !== "bausteine";
+  $$(".entwurf [data-ansicht]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.ansicht === neu));
+  $("#nav-lernen").toggleAttribute("aria-current", neu === "lernen");
+  if (neu === "lernen") $("#nav-lernen").setAttribute("aria-current", "page");
+  window.scrollTo(0, 0);
+  try { localStorage.setItem("entwurf-ansicht", neu); } catch (e) {}
+}
+
+function menue(offen) {
+  $("#pruefung-knopf").setAttribute("aria-expanded", offen);
+  $("#pruefung-menue").dataset.offen = offen;
+  if (offen) $("#pruefung-menue .pm-punkt").focus();
+}
+
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("button, a");
+  if (!t) { menue(false); return; }
+  if (!t.closest(".pruefung")) menue(false);
+
+  if (t.matches("[data-haken]")) return schalteHaken(t.dataset.haken, t);
+  if (t.matches("[data-klapp]")) return klapp(t);
+  if (t.matches("[data-demo-haken]")) { const an = t.getAttribute("aria-checked") !== "true"; t.setAttribute("aria-checked", an); t.classList.toggle("frisch", an); if (an && stil === "level") plusEins(t); return; }
+  if (t.matches("[data-spaeter]")) return hinweis(t.dataset.spaeter);
+  if (t.matches(".entwurf [data-stil]")) return setzeStil(t.dataset.stil);
+  if (t.matches(".entwurf [data-ansicht]")) return setzeAnsicht(t.dataset.ansicht);
+  if (t.id === "pruefung-knopf") return menue(t.getAttribute("aria-expanded") !== "true");
+  if (t.matches(".pm-punkt")) { menue(false); $("#pruefung-knopf").focus(); if (t.getAttribute("aria-checked") !== "true") hinweis("Der Wechsel zu " + $(".pm-name", t).textContent + " kommt später."); return; }
+  if (t.matches(".nav-punkt")) { e.preventDefault(); if (t.id === "nav-lernen") setzeAnsicht("lernen"); return; }
+
+  switch (t.dataset.demo) {
+    case "plus": demo.stand = Math.min(98, demo.stand + 10); break;
+    case "null": demo.stand = 0; break;
+    case "moment": return zeigeMoment(demo.rang + 1 < RAENGE.length ? demo.rang + 1 : demo.rang);
+    case "moment-zu": return schliesseMoment();
+    case "punkte":
+      demo.punkte = Math.min(50, demo.punkte + 4);
+      zaehle($("#rang-zahl"), demo.punkte);
+      setzeAnteil($("#rang-balken"), demo.punkte / 50);
+      if (demo.punkte >= 50) setTimeout(() => {
+        demo.rang++; demo.punkte = 0;
+        zeigeMoment(demo.rang);
+        $("#rang-bereich").outerHTML = rangBereich();
+        $("#rang-weg").innerHTML = rangWeg();
+      }, dauer() * 2);
+      return;
+    case "rang-reset":
+      demo.rang = 2; demo.punkte = 42;
+      $("#rang-bereich").outerHTML = rangBereich();
+      $("#rang-weg").innerHTML = rangWeg();
+      return;
+    default: return;
+  }
+  zaehle($("#demo-zahl"), demo.stand);
+  setzeAnteil($("#demo-balken"), demo.stand / 98);
+});
+
+$("#moment").addEventListener("click", (e) => { if (e.target.id === "moment") schliesseMoment(); });
+document.addEventListener("animationend", (e) => e.target.classList?.contains("haken-box") && e.target.parentElement.classList.remove("frisch"));
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if ($("#moment").dataset.offen === "true") schliesseMoment();
+  else if ($("#pruefung-knopf").getAttribute("aria-expanded") === "true") { menue(false); $("#pruefung-knopf").focus(); }
+});
+
+setzeStil(stil);
+setzeAnsicht(ansicht);
+</script>
+</body>
+</html>
