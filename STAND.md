@@ -132,7 +132,7 @@ nächsten offenen Punkt weiter.
   eine Karte mit Spalten, Typ und Schlüsselsymbol (anders als in der Prüfung, dort sind Schlüssel nicht markiert);
   Namen sind anklickbar und landen im Lösungsfeld. Die ersten Datensätze jeder Tabelle („Beispieldaten“) lassen sich
   aufklappen; die Wahl merkt sich der Browser. Aufgaben im
-  Prüfungsstil mit Punkten (geschätzt nach Umfang) und – bei Abfragen – einem „Ergebnisbeispiel“. Unter „Prüfen“:
+  Prüfungsstil mit Punkten (geschätzt nach Umfang), ohne Ergebnisbeispiel. Unter „Prüfen“:
   Lösungshinweis und Nachschlagewerk im Aufbau des Belegsatzes „SQL-Syntax (Auszug)“ (Syntax | Beschreibung, eigene
   Formulierungen). Die Übungsdatenbank kennt zusätzlich die Belegsatz-Funktionen WEEKDAY, HOUR, MINUTE, STDDEV,
   VARIANCE und DATEADD/DATEDIFF mit Datumsteil ohne Anführungszeichen. MODIFY COLUMN und nachträgliches ADD FOREIGN

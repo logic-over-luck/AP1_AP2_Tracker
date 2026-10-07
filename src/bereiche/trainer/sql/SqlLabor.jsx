@@ -180,15 +180,12 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
   const gezaehlt = useRef({ erst: false, ok: false });
   const editor = useRef(null);
 
-  // Basis-Datenbank für Schema und erwartetes Ergebnis
+  // Basis-Datenbank für das Schema
   const basis = useMemo(() => {
-    if (rechte) return { schema: schemaAusNeu(engine), soll: null };
+    if (rechte) return { schema: schemaAusNeu(engine) };
     const db = engine.neueDb(aufgabe.vorbereitung);
     try {
-      const schema = mitBeispiel(db, schemaAus(db));
-      let soll = null;
-      if (aufgabe.modus === 'abfragen') soll = ausfuehren(db, aufgabe.loesung).ergebnis;
-      return { schema, soll };
+      return { schema: mitBeispiel(db, schemaAus(db)) };
     } finally {
       db.close();
     }
@@ -269,16 +266,8 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
           )}
           <span class="sql-punkte">{aufgabe.punkte} Punkte</span>
         </div>
-        <div class="sql-aufgabe-kopf">
-          <div class="aufgabe__text">
-            <Rich text={aufgabe.text} />
-          </div>
-          {basis.soll && (
-            <div class="sql-beispiel-ergebnis">
-              <span class="sql-beispiel-ergebnis__titel">Ergebnisbeispiel:</span>
-              <ErgebnisTabelle ergebnis={basis.soll} grenze={3} />
-            </div>
-          )}
+        <div class="aufgabe__text">
+          <Rich text={aufgabe.text} />
         </div>
         {rechte && (
           <p class="trainer-hinweis">
@@ -660,8 +649,7 @@ export function ErgebnisTabelle({ ergebnis, grenze = GRENZE }) {
           ))}
         </tbody>
       </table>
-      {ergebnis.zeilen.length > grenze && grenze < GRENZE && <span class="sql-auslassung">…</span>}
-      {ergebnis.zeilen.length > grenze && grenze >= GRENZE && <p class="gedaempft sql-block__fuss">… und {ergebnis.zeilen.length - grenze} weitere Zeilen.</p>}
+      {ergebnis.zeilen.length > grenze && <p class="gedaempft sql-block__fuss">… und {ergebnis.zeilen.length - grenze} weitere Zeilen.</p>}
     </div>
   );
 }
