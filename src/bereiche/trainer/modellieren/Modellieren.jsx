@@ -29,7 +29,7 @@ function Modus({ raum, modus, params }) {
   const notation = NOTATION[modus.id];
   const eintraege = [
     ueben.length && { id: 'ueben', text: 'Üben', icon: 'target', zahl: ueben.length },
-    zeichnen.length && { id: 'zeichnen', text: 'Zeichnen', icon: 'pencil', zahl: zeichnen.length },
+    zeichnen.length && { id: 'zeichnen', text: zeichnen.every((a) => a.muster) ? 'Zeichnen' : zeichnen.some((a) => a.muster) ? 'Zeichnen & Schreiben' : 'Ausarbeiten', icon: 'pencil', zahl: zeichnen.length },
     notation && { id: 'notation', text: 'Notation', icon: 'shapes' },
   ].filter(Boolean);
   const [reiter, setReiter] = useState(params.ansicht && eintraege.some((e) => e.id === params.ansicht) ? params.ansicht : eintraege[0]?.id);
@@ -134,7 +134,7 @@ function ZeichenAufgabe({ a, modus, weiter }) {
   };
   return (
     <section class="flaeche flaeche--gross aufgabe">
-      <div class="ueberschrift-klein ueberschrift-klein--akzent">Zeichnen · {a.titel}</div>
+      <div class="ueberschrift-klein ueberschrift-klein--akzent">{a.muster ? 'Zeichnen' : 'Ausarbeiten'} · {a.titel}</div>
       <div class="aufgabe__text">
         <Rich text={a.text} />
       </div>
@@ -146,11 +146,14 @@ function ZeichenAufgabe({ a, modus, weiter }) {
         </div>
       )}
       <p class="trainer-hinweis">
-        <Icon name="pencil" groesse={14} /> Zeichne auf Papier – so wie in der Prüfung. Danach vergleichst du mit der Musterlösung und hakst ab, was du richtig hast.
+        <Icon name="pencil" groesse={14} />{' '}
+        {a.muster
+          ? 'Zeichne auf Papier – so wie in der Prüfung. Danach vergleichst du mit der Musterlösung und hakst ab, was du richtig hast.'
+          : 'Schreib deine Antwort auf Papier – in ganzen Sätzen, so wie in der Prüfung. Danach vergleichst du mit der Musterlösung und hakst ab, was du drin hast.'}
       </p>
       <div class="aufgabe__knoepfe">
         <Knopf variante={offen ? 'zweit' : 'primaer'} icon={offen ? 'eye-off' : 'eye'} onClick={() => setOffen(!offen)} aria-expanded={offen}>
-          {offen ? 'Musterlösung ausblenden' : 'Fertig gezeichnet – Musterlösung zeigen'}
+          {offen ? 'Musterlösung ausblenden' : a.muster ? 'Fertig gezeichnet – Musterlösung zeigen' : 'Fertig – Musterlösung zeigen'}
         </Knopf>
       </div>
       <Aufklapp offen={offen}>
