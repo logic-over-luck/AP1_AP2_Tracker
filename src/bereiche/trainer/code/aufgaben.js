@@ -177,7 +177,7 @@ export function fehlersuche(r, raum = 'AP1') {
   if (mitTests)
     tests.forEach((t, i) => {
       felder.push({ id: `soll${i}`, label: 'Soll', typ: 'eigen', soll: formatiere(t.soll), pruefe: (e) => pruefeWert(e, t.soll), imBild: true });
-      felder.push({ id: `ist${i}`, label: 'Ist', typ: 'eigen', soll: t.ist === 'Fehler' ? 'Fehler' : formatiere(t.ist), pruefe: (e) => (t.ist === 'Fehler' ? { ok: /fehler|abbruch|exception/i.test(String(e)), leer: !e } : pruefeWert(e, t.ist)), imBild: true });
+      felder.push({ id: `ist${i}`, label: 'Ist', typ: 'eigen', soll: t.ist === 'Fehler' ? 'Fehler' : formatiere(t.ist), pruefe: (e) => (t.ist === 'Fehler' ? { ok: /fehler|error|abbruch|absturz|abst[üu]rz|exception|crash|au(ss|ß)erhalb|out of/i.test(String(e)), leer: !e } : pruefeWert(e, t.ist)), imBild: true });
     });
   felder.push({ id: 'zeile', label: 'Fehlerhafte Zeile', typ: 'auswahl', erwartet: String(f.zeile), optionen: zeilen.map((_, i) => ({ wert: String(i + 1), text: `Zeile ${i + 1}` })) });
   return {
@@ -188,7 +188,7 @@ export function fehlersuche(r, raum = 'AP1') {
     tests: mitTests ? tests.map((t) => ({ aufruf: `${f.aufruf}(${t.args.map((a) => formatiere(a)).join(', ')})` })) : null,
     felder,
     loesung: [
-      ...(mitTests ? tests.map((t) => `${f.aufruf}(${t.args.map(formatiere).join(', ')}): erwartet ${formatiere(t.soll)}, tatsächlich ${t.ist === 'Fehler' ? `Fehler (${t.istFehler})` : formatiere(t.ist)}`) : []),
+      ...(mitTests ? tests.map((t) => `${f.aufruf}(${t.args.map(formatiere).join(', ')}): Soll ${formatiere(t.soll)}, Ist ${t.ist === 'Fehler' ? `Fehler (${t.istFehler})` : formatiere(t.ist)}`) : []),
       `Fehler in **Zeile ${f.zeile}**: \`${f.falsch.trim()}\``,
       `Richtig: \`${korrekt.trim()}\``,
       'Ein inhaltlicher (semantischer) Fehler: Das Programm läuft, liefert aber ein falsches Ergebnis.',

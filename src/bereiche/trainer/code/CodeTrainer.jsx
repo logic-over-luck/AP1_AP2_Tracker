@@ -385,7 +385,7 @@ function FehlerBild({ aufgabe, eingaben, setze, ergebnis, loesung }) {
         class={`feld feld--mono tt__feld ${r ? (r.ok ? 'feld--richtig' : 'feld--falsch') : ''}`}
         value={loesung && !r?.ok ? feld.soll : (eingaben[id] ?? '')}
         readOnly={loesung && !r?.ok}
-        placeholder="?"
+        placeholder={id.startsWith('ist') ? 'Wert oder „Fehler“' : '?'}
         onInput={(e) => setze(id, e.currentTarget.value)}
       />
     );
@@ -396,7 +396,7 @@ function FehlerBild({ aufgabe, eingaben, setze, ergebnis, loesung }) {
       <CodeBlock code={aufgabe.code} klickbar onZeile={(nr) => setze('zeile', String(nr))} gewaehlt={zeile} fehler={loesung ? aufgabe.felder.find((x) => x.id === 'zeile')?.erwartet * 1 : null} />
       <p class="gedaempft">
         {aufgabe.tests
-          ? 'Soll: was laut Aufgabe herauskommen müsste. Ist: was der Code wirklich liefert, wenn du ihn durchspielst. Die fehlerhafte Zeile kannst du direkt im Code anklicken.'
+          ? 'Soll: was laut Aufgabe herauskommen müsste. Ist: was der Code wirklich liefert, wenn du ihn durchspielst – bricht er ab (z. B. Zugriff außerhalb des Arrays), schreib „Fehler“. Die fehlerhafte Zeile kannst du direkt im Code anklicken.'
           : 'Tipp: Klicke auf eine Zeile, um sie als fehlerhaft auszuwählen.'}
       </p>
       {aufgabe.tests && (
