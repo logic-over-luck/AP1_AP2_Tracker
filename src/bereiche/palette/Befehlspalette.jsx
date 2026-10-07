@@ -9,8 +9,7 @@ import { Icon, Kbd } from '../../ui/bausteine.jsx';
 function eintraegeFuer(raum) {
   const liste = [];
   const r = inhalt.raeume.get(raum);
-  liste.push({ art: 'Bereich', icon: 'layout-grid', titel: 'Übersicht', ziel: link(raum) });
-  liste.push({ art: 'Bereich', icon: 'list-checks', titel: 'Lernplan', ziel: link(raum, 'lernen') });
+  liste.push({ art: 'Bereich', icon: 'list-checks', titel: 'Lernplan & Übersicht', ziel: link(raum, 'lernen') });
   liste.push({ art: 'Bereich', icon: 'layers', titel: 'Lernkarten', ziel: link(raum, 'karten') });
   liste.push({ art: 'Bereich', icon: 'refresh-cw', titel: 'Fällige Lernkarten lernen', ziel: link(raum, 'karten', 'sitzung', { quelle: 'faellig' }) });
   liste.push({ art: 'Bereich', icon: 'shuffle', titel: 'Zufallsmix', ziel: link(raum, 'karten', 'sitzung', { quelle: 'mix' }) });

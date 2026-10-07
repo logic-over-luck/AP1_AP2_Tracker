@@ -9,7 +9,6 @@ import { kartenZustand, blockZustand } from './lernstand/ableiten.js';
 import { Icon, SymbolKnopf, Balken } from './ui/bausteine.jsx';
 import { Meldungen, BestaetigungsDialog, melde } from './ui/dialog.jsx';
 import { trainerIn, trainerById } from './bereiche/trainer/verzeichnis.js';
-import { Start } from './bereiche/start/Start.jsx';
 import { Lernen } from './bereiche/lernen/Lernen.jsx';
 import { Karten } from './bereiche/karten/Karten.jsx';
 import { Glossar } from './bereiche/glossar/Glossar.jsx';
@@ -20,7 +19,7 @@ import { Feier } from './bereiche/feier/Feier.jsx';
 import { Befehlspalette } from './bereiche/palette/Befehlspalette.jsx';
 import { TimerPille } from './bereiche/start/FokusTimer.jsx';
 
-const BEREICH_NAMEN = { start: 'Übersicht', lernen: 'Lernplan', karten: 'Lernkarten', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
+const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
 
 export function App() {
   const route = useRoute();
@@ -66,7 +65,7 @@ export function App() {
       bereich = <Hilfe raum={raum} />;
       break;
     default:
-      bereich = <Start raum={raum} />;
+      bereich = <Lernen raum={raum} params={route.params} />;
   }
 
   return (
@@ -109,7 +108,8 @@ function Leiste({ raum, route, stand }) {
   const kartenIds = inhalt.kartenJeRaum.get(raum) ?? [];
   const karten = kartenZustand(stand, kartenIds);
   const faelligeBloecke = inhalt.raeume.get(raum).bloeckeListe.filter((b) => blockZustand(stand, b).faellig).length;
-  const aktiv = (bereich, unter = null) => route.bereich === bereich && (unter === null || route.unter === unter);
+  // Übersicht und Lernplan sind eine Seite: der Raum-Start gilt als Lernplan
+  const aktiv = (bereich, unter = null) => (route.bereich === bereich || (bereich === 'lernen' && (route.bereich === 'start' || !route.bereich))) && (unter === null || route.unter === unter);
 
   const navPunkt = ({ bereich, unter, icon, text, zahl, zahlTon }) => (
     <a key={`${bereich}-${unter}`} class="nav-punkt" href={link(raum, bereich, unter)} aria-current={aktiv(bereich, unter) ? 'page' : undefined}>
@@ -147,7 +147,6 @@ function Leiste({ raum, route, stand }) {
 
       <nav class="nav-gruppe" aria-label="Arbeitsplatz">
         <div class="nav-gruppe__titel ueberschrift-klein">Dein Arbeitsplatz</div>
-        {navPunkt({ bereich: "start", icon: "layout-grid", text: "Übersicht" })}
         {navPunkt({ bereich: "lernen", icon: "list-checks", text: "Lernplan", zahl: faelligeBloecke || null, zahlTon: "faellig" })}
         {navPunkt({ bereich: "karten", icon: "layers", text: "Lernkarten", zahl: karten.faellig || null, zahlTon: "faellig" })}
       </nav>

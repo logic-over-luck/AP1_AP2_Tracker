@@ -1,4 +1,4 @@
-// Lernplan: Ordner → Blöcke → Stichpunkte. Das Herzstück.
+// Lernplan: oben die kompakte Übersicht, darunter Ordner → Blöcke → Stichpunkte. Das Herzstück.
 
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { inhalt } from '../../daten/inhalt.js';
@@ -8,6 +8,7 @@ import { useEinstellung } from '../../lernstand/einstellungen.js';
 import { link } from '../../router.js';
 import { Reiter, Suchfeld, Knopf, Leer, Icon } from '../../ui/bausteine.jsx';
 import { BlockKarte } from './BlockKarte.jsx';
+import { Uebersicht } from '../start/Start.jsx';
 
 function normal(text) {
   return (text ?? '').toLowerCase();
@@ -95,12 +96,13 @@ export function Lernen({ raum, params }) {
 
   return (
     <div class="lernen">
-      <header class="seitenkopf">
+      <Uebersicht raum={raum} />
+
+      <header class="lernen__kopf" id="lernplan">
         <div>
-          <div class="ueberschrift-klein ueberschrift-klein--akzent">{r.name} · Lernplan</div>
-          <h1 class="seitenkopf__titel">Dein Lernplan</h1>
-          <p class="seitenkopf__text">
-            {r.ordner.length} Themenbereiche, {r.bloeckeListe.length} Blöcke, {spGesamt} Stichpunkte – ein Schritt nach dem anderen.
+          <h2 class="lernen__titel">Dein Lernplan</h2>
+          <p class="gedaempft">
+            {r.ordner.length} Themenbereiche · {r.bloeckeListe.length} Blöcke · {spGesamt} Stichpunkte
           </p>
         </div>
         <div class="seitenkopf__rechts zeile">

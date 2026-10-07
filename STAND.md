@@ -70,7 +70,8 @@ nächsten offenen Punkt weiter.
   unabhängig durchgesehen (Berichte in `inhalte/pruefberichte/`); Glossar mit 1.098 Begriffen zusammengeführt und geprüft
 - Grundgerüst: Leiste mit Raumwahl AP1/AP2/WiSo, eigene Akzentfarbe je Raum, Kopfzeile, Befehlspalette (Strg+K)
 - Lernstand: Ereignisprotokoll, Wiederholungs-Phasen (1/7/30 Tage), Kartenplanung, Serie, XP, Ränge, Sicherung mit Format-Version
-- Start: Kennzahlen, Heute im Fokus mit Regel, Fokus-Timer, Aktivität, Tempo bis zur Prüfung, Prüfungstermin je Raum
+- Lernplan-Seite mit kompakter Übersicht oben (auf Wunsch zusammengelegt): Zahlenleiste (Lernplan, Karten, Serie, Prüfung),
+  nächster Schritt mit Regel, aufklappbar Tempo bis zur Prüfung, Stärken/Schwächen, Fokus-Timer, Aktivität
 - Lernplan: Ordner, Block-Karten, Stichpunkte abhaken, Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Notizen, Gegenstücke, Filter, Suche
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
@@ -199,7 +200,7 @@ Vor der Prüfung lohnt sich ein kurzer Abgleich mit Ausbilder, Lehrkraft oder de
 1. `Lernstudio.html` aus dem Repository herunterladen (auf GitHub: Datei öffnen → „Download raw file").
 2. In einen festen Ordner legen, z. B. `Dokumente/Lernstudio/`.
 3. Doppelklick – die Datei öffnet sich im Browser (Chrome, Edge oder Firefox). Kein Internet, keine Installation.
-4. Oben links den Lernraum wählen (AP1, AP2, WiSo), auf der Übersicht das Prüfungsdatum eintragen.
+4. Oben links den Lernraum wählen (AP1, AP2, WiSo), oben auf der Lernplan-Seite bei „Prüfung“ das Prüfungsdatum eintragen.
 
 Bedienung mit der Tastatur: **Strg+K** (oder **/**) sucht überall, in Lernkarten **Leertaste** = umdrehen,
 **1/2/3** = bewerten, in den Trainern **Enter** = prüfen, im SQL-Labor **Strg+Enter** = ausführen.

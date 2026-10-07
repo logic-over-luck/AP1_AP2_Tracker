@@ -1,13 +1,15 @@
-// Startseite eines Lernraums: Kennzahlen, Heute im Fokus, Timer, Aktivität, Tempo.
+// Kompakte Übersicht eines Lernraums – steht oben auf der Lernplan-Seite:
+// eine Zahlenleiste, dein nächster Schritt und aufklappbar Tempo, Bilanz, Fokus-Timer und Aktivität.
 
 import { useState } from 'preact/hooks';
 import { inhalt } from '../../daten/inhalt.js';
 import { useLernstand, erfasse } from '../../lernstand/store.js';
 import { kartenZustand } from '../../lernstand/ableiten.js';
+import { useEinstellung } from '../../lernstand/einstellungen.js';
 import { heuteImFokus, staerkenUndSchwaechen, tempo } from '../../lernstand/empfehlung.js';
 import { datumLang, datumKurz, tageZwischen, tagPlus, tagVon } from '../../lernstand/zeit.js';
 import { link, geheZu } from '../../router.js';
-import { Icon, Knopf, Balken, Zahl, PrioMarke, Marke } from '../../ui/bausteine.jsx';
+import { Icon, Knopf, Balken, Zahl, PrioMarke, Marke, Aufklapp } from '../../ui/bausteine.jsx';
 import { Dialog } from '../../ui/dialog.jsx';
 import { FokusTimer } from './FokusTimer.jsx';
 import { Aktivitaet } from './Aktivitaet.jsx';
@@ -21,10 +23,11 @@ function gruss() {
   return 'Späte Lernrunde?';
 }
 
-export function Start({ raum }) {
+export function Uebersicht({ raum }) {
   const stand = useLernstand();
   const r = inhalt.raeume.get(raum);
   const [terminOffen, setTerminOffen] = useState(false);
+  const [mehr, setMehr] = useEinstellung('uebersicht.mehr', false);
 
   const spIds = r.bloeckeListe.flatMap((b) => b.sp);
   const spErledigt = spIds.filter((id) => stand.spErledigt.has(id)).length;
@@ -39,162 +42,170 @@ export function Start({ raum }) {
   const gemerkt = [...stand.gemerkt].filter((id) => inhalt.karten.has(id) && inhalt.raumVon(id) === raum).length;
 
   return (
-    <div class="start">
-      <header class="seitenkopf">
+    <section class="uebersicht" aria-label="Übersicht">
+      <header class="uebersicht__kopf">
         <div>
-          <div class="ueberschrift-klein ueberschrift-klein--akzent">Dein {r.name}-Lernraum</div>
-          <h1 class="seitenkopf__titel">{gruss()}</h1>
-          <p class="seitenkopf__text">{r.titel}</p>
+          <div class="ueberschrift-klein ueberschrift-klein--akzent">
+            {r.name} · {datumLang(stand.heute)}
+          </div>
+          <h1 class="uebersicht__titel">{gruss()}</h1>
         </div>
-        <div class="seitenkopf__rechts gedaempft">{datumLang(stand.heute)}</div>
       </header>
 
-      <div class="kennzahlen">
-        <a class="flaeche kennzahl flaeche--klickbar" href={link(raum, 'lernen')}>
-          <div class="kennzahl__kopf">
-            Lernplan <Icon name="trending-up" groesse={16} />
-          </div>
-          <div class="kennzahl__wert">
+      <div class="flaeche uebersicht__zahlen">
+        <a class="uzahl" href="#lernplan" onClick={(e) => (e.preventDefault(), document.getElementById('lernplan')?.scrollIntoView({ behavior: 'smooth' }))}>
+          <span class="uzahl__kopf">
+            <Icon name="list-checks" groesse={14} /> Lernplan
+          </span>
+          <span class="uzahl__wert">
             <Zahl wert={anteilPlan * 100} />
-            <span class="kennzahl__einheit">%</span>
-          </div>
-          <div class="kennzahl__text">
-            {spErledigt} von {spIds.length} Stichpunkten · {bloeckeFertig}/{r.bloeckeListe.length} Blöcke
-          </div>
-          <div class="kennzahl__fuss">
-            <Balken wert={anteilPlan} label="Lernplan" />
-          </div>
+            <small>%</small>
+          </span>
+          <span class="uzahl__text">
+            {spErledigt}/{spIds.length} Stichpunkte · {bloeckeFertig}/{r.bloeckeListe.length} Blöcke
+          </span>
+          <Balken wert={anteilPlan} label="Lernplan" />
         </a>
-
-        <a class="flaeche kennzahl flaeche--klickbar" href={link(raum, 'karten')}>
-          <div class="kennzahl__kopf">
-            Lernkarten <Icon name="layers" groesse={16} />
-          </div>
-          <div class="kennzahl__wert">
-            <Zahl wert={karten.gesamt ? (karten.sicher / karten.gesamt) * 100 : 0} />
-            <span class="kennzahl__einheit">% sicher</span>
-          </div>
-          <div class="kennzahl__text">
-            {karten.faellig > 0 ? <span class="text-warn">{karten.faellig} fällig</span> : 'nichts fällig'} · {karten.gesamt - karten.neu} von {karten.gesamt} gesehen
-          </div>
-          <div class="kennzahl__fuss">
-            <Balken wert={karten.gesamt ? karten.sicher / karten.gesamt : 0} label="Lernkarten sicher" />
-          </div>
+        <a class="uzahl" href={link(raum, 'karten')}>
+          <span class="uzahl__kopf">
+            <Icon name="layers" groesse={14} /> Lernkarten
+          </span>
+          <span class="uzahl__wert">
+            {karten.faellig > 0 ? (
+              <>
+                <span class="text-warn">
+                  <Zahl wert={karten.faellig} />
+                </span>
+                <small>fällig</small>
+              </>
+            ) : (
+              <>
+                <Zahl wert={karten.gesamt ? (karten.sicher / karten.gesamt) * 100 : 0} />
+                <small>% sicher</small>
+              </>
+            )}
+          </span>
+          <span class="uzahl__text">
+            {karten.gesamt - karten.neu} von {karten.gesamt} gesehen
+          </span>
+          <Balken wert={karten.gesamt ? karten.sicher / karten.gesamt : 0} label="Lernkarten sicher" />
         </a>
-
-        <button class="flaeche kennzahl flaeche--klickbar" onClick={() => window.dispatchEvent(new CustomEvent('raenge-zeigen'))}>
-          <div class="kennzahl__kopf">
-            Deine Lernserie <Icon name="flame" groesse={16} class={stand.serie.heuteAktiv ? 'flamme-an' : ''} />
-          </div>
-          <div class="kennzahl__wert">
+        <button class="uzahl" onClick={() => window.dispatchEvent(new CustomEvent('raenge-zeigen'))}>
+          <span class="uzahl__kopf">
+            <Icon name="flame" groesse={14} class={stand.serie.heuteAktiv ? 'flamme-an' : ''} /> Serie
+          </span>
+          <span class="uzahl__wert">
             <Zahl wert={stand.serie.aktuell} />
-            <span class="kennzahl__einheit">{stand.serie.aktuell === 1 ? 'Tag' : 'Tage'}</span>
-          </div>
-          <div class="kennzahl__text">
+            <small>{stand.serie.aktuell === 1 ? 'Tag' : 'Tage'}</small>
+          </span>
+          <span class="uzahl__text">
             <span class="text-akzent">{stand.rang.name}</span>
-            {stand.serie.heuteAktiv ? ' · heute dabei' : stand.serie.aktuell > 0 ? ' · heute noch offen' : ' · starte heute'}
-          </div>
-          <div class="kennzahl__fuss">
-            <Balken wert={stand.rang.anteil} label="Fortschritt zum nächsten Rang" />
-          </div>
+            {stand.serie.heuteAktiv ? ' · heute dabei' : ' · heute noch offen'}
+          </span>
+          <Balken wert={stand.rang.anteil} label="Fortschritt zum nächsten Rang" />
         </button>
-
-        <button class="flaeche kennzahl flaeche--klickbar" onClick={() => setTerminOffen(true)}>
-          <div class="kennzahl__kopf">
-            Bis zur Prüfung <Icon name="calendar-days" groesse={16} />
-          </div>
+        <button class="uzahl" onClick={() => setTerminOffen(true)}>
+          <span class="uzahl__kopf">
+            <Icon name="calendar-days" groesse={14} /> Prüfung
+          </span>
           {termin ? (
             <>
-              <div class="kennzahl__wert">
+              <span class="uzahl__wert">
                 {tageBis >= 0 ? <Zahl wert={tageBis} /> : '–'}
-                <span class="kennzahl__einheit">{tageBis === 1 ? 'Tag' : 'Tage'}</span>
-              </div>
-              <div class="kennzahl__text">
-                {r.name} · {datumKurz(termin)}
+                <small>{tageBis === 1 ? 'Tag' : 'Tage'}</small>
+              </span>
+              <span class="uzahl__text">
+                {datumKurz(termin)}
                 {tageBis < 0 ? ' · vorbei' : tageBis === 0 ? ' · heute! Viel Erfolg!' : ''}
-              </div>
+              </span>
             </>
           ) : (
             <>
-              <div class="kennzahl__wert kennzahl__wert--leer">–</div>
-              <div class="kennzahl__text">Noch kein Termin eingetragen</div>
+              <span class="uzahl__wert uzahl__wert--leer">–</span>
+              <span class="uzahl__text uzahl__link">
+                Termin festlegen <Icon name="arrow-right" groesse={12} />
+              </span>
             </>
           )}
-          <div class="kennzahl__fuss kennzahl__link">
-            {termin ? 'Termin anpassen' : 'Termin festlegen'} <Icon name="arrow-right" groesse={12} />
-          </div>
         </button>
       </div>
 
-      <div class="start-raster">
-        <div class="stapel stapel--4">
-          <Fokus raum={raum} fokus={fokus} gemerkt={gemerkt} sus={sus} stand={stand} />
-          <Tempo t={t} raum={raum} onTermin={() => setTerminOffen(true)} />
+      <Fokus raum={raum} fokus={fokus} gemerkt={gemerkt} />
+
+      <button class="uebersicht__mehr" aria-expanded={mehr} onClick={() => setMehr(!mehr)}>
+        <Icon name="chevron-down" groesse={14} class={`spickzettel__pfeil ${mehr ? 'spickzettel__pfeil--offen' : ''}`} />
+        {mehr ? 'Weniger anzeigen' : 'Mehr: Tempo, Stärken & Schwächen, Fokus-Timer, Aktivität'}
+      </button>
+      <Aufklapp offen={mehr}>
+        <div class="start-raster">
+          <div class="stapel stapel--4">
+            <Tempo t={t} raum={raum} onTermin={() => setTerminOffen(true)} />
+            <Bilanz raum={raum} fokus={fokus} sus={sus} />
+          </div>
+          <div class="stapel stapel--4">
+            <FokusTimer raum={raum} />
+            <Aktivitaet stand={stand} />
+          </div>
         </div>
-        <div class="stapel stapel--4">
-          <FokusTimer raum={raum} />
-          <Aktivitaet stand={stand} />
-        </div>
-      </div>
+      </Aufklapp>
 
       <TerminDialog offen={terminOffen} raum={raum} termin={termin} heute={stand.heute} onSchliessen={() => setTerminOffen(false)} />
-    </div>
+    </section>
   );
 }
 
-function Fokus({ raum, fokus, gemerkt, sus }) {
+function Fokus({ raum, fokus, gemerkt }) {
   const h = fokus.haupt;
   const zuBlock = (block) => geheZu(raum, 'lernen', null, { block: block.id });
+  const karten = (quelle) => geheZu(raum, 'karten', 'sitzung', { quelle });
   return (
-    <section class="flaeche flaeche--akzent flaeche--gross fokus-karte" aria-label="Heute im Fokus">
-      <div class="ueberschrift-klein ueberschrift-klein--akzent zeile">
-        <Icon name="sparkles" groesse={14} /> Dein nächster Schritt
+    <section class="flaeche flaeche--akzent fokus-karte fokus-karte--kompakt" aria-label="Dein nächster Schritt">
+      <div class="fokus-karte__links">
+        <div class="zeile fokus-karte__etikett">
+          <span class="ueberschrift-klein ueberschrift-klein--akzent zeile">
+            <Icon name="sparkles" groesse={13} /> Nächster Schritt
+          </span>
+          {h && (
+            <>
+              <Marke ton={h.art === 'wiederholung' ? 'warn' : 'akzent'} icon={h.art === 'wiederholung' ? 'refresh-cw' : h.art === 'weiter' ? 'step-forward' : 'rocket'}>
+                {h.etikett}
+              </Marke>
+              <PrioMarke prio={h.block.prio} pruefungen={h.block.pruefungen} punkte={h.block.punkte} />
+            </>
+          )}
+        </div>
+        <h2 class="fokus-karte__titel">{h ? h.block.titel : 'Alles abgehakt und wiederholt.'}</h2>
+        <p class="fokus-karte__grund">
+          <Icon name="lightbulb" groesse={14} />{' '}
+          {h ? h.grund : fokus.karten.faellig ? `${fokus.karten.faellig} Lernkarten warten auf dich.` : 'Halte das Wissen mit Lernkarten und Trainern frisch.'}
+        </p>
       </div>
-      {h ? (
-        <>
-          <div class="fokus-karte__etikett zeile">
-            <Marke ton={h.art === 'wiederholung' ? 'warn' : 'akzent'} icon={h.art === 'wiederholung' ? 'refresh-cw' : h.art === 'weiter' ? 'step-forward' : 'rocket'}>
-              {h.etikett}
-            </Marke>
-            <PrioMarke prio={h.block.prio} pruefungen={h.block.pruefungen} punkte={h.block.punkte} />
-          </div>
-          <h2 class="fokus-karte__titel">{h.block.titel}</h2>
-          <p class="fokus-karte__satz">{h.block.satz ?? inhalt.ordner.get(h.block.ordner).titel}</p>
-          <p class="fokus-karte__grund">
-            <Icon name="lightbulb" groesse={14} /> {h.grund}
-          </p>
-        </>
-      ) : (
-        <>
-          <h2 class="fokus-karte__titel">Alles abgehakt und wiederholt.</h2>
-          <p class="fokus-karte__satz">
-            {fokus.karten.faellig ? `${fokus.karten.faellig} Lernkarten warten auf dich.` : 'Halte das Wissen mit Lernkarten und Trainern frisch.'}
-          </p>
-        </>
-      )}
       <div class="fokus-karte__knoepfe">
-        {h ? (
-          <Knopf variante="primaer" groesse="l" iconRechts="arrow-right" onClick={() => zuBlock(h.block)}>
-            {h.art === 'wiederholung' ? 'Jetzt wiederholen' : 'Lernen starten'}
-          </Knopf>
-        ) : (
-          <Knopf variante="primaer" groesse="l" iconRechts="arrow-right" onClick={() => geheZu(raum, 'karten', 'sitzung', { quelle: 'faellig' })}>
-            Karten lernen
-          </Knopf>
-        )}
-        <Knopf variante="zweit" groesse="l" icon="layers" zahl={fokus.karten.faellig || null} onClick={() => geheZu(raum, 'karten', 'sitzung', { quelle: 'faellig' })}>
+        <Knopf variante="primaer" iconRechts="arrow-right" onClick={() => (h ? zuBlock(h.block) : karten('faellig'))}>
+          {h ? (h.art === 'wiederholung' ? 'Jetzt wiederholen' : 'Lernen starten') : 'Karten lernen'}
+        </Knopf>
+        <Knopf icon="layers" zahl={fokus.karten.faellig || null} onClick={() => karten('faellig')}>
           Fällige Karten
         </Knopf>
-        <Knopf variante="zweit" groesse="l" icon="shuffle" onClick={() => geheZu(raum, 'karten', 'sitzung', { quelle: 'mix' })}>
+        <Knopf icon="shuffle" onClick={() => karten('mix')}>
           Zufallsmix
         </Knopf>
-        <Knopf variante="zweit" groesse="l" icon="bookmark" zahl={gemerkt} disabled={!gemerkt} onClick={() => geheZu(raum, 'karten', 'sitzung', { quelle: 'gemerkt' })}>
-          Gemerkt
-        </Knopf>
+        {gemerkt > 0 && (
+          <Knopf icon="bookmark" zahl={gemerkt} onClick={() => karten('gemerkt')}>
+            Gemerkt
+          </Knopf>
+        )}
       </div>
+    </section>
+  );
+}
 
+function Bilanz({ raum, fokus, sus }) {
+  const zuBlock = (block) => geheZu(raum, 'lernen', null, { block: block.id });
+  return (
+    <section class="flaeche flaeche--innen bilanz">
       {fokus.weitere.length > 0 && (
-        <div class="fokus-karte__weitere">
+        <div class="fokus-karte__weitere bilanz__danach">
           <div class="ueberschrift-klein">Danach</div>
           {fokus.weitere.map((v) => (
             <button key={v.block.id} class="fokus-weiter" onClick={() => zuBlock(v.block)}>
@@ -205,7 +216,6 @@ function Fokus({ raum, fokus, gemerkt, sus }) {
           ))}
         </div>
       )}
-
       <div class="fokus-karte__bilanz">
         <div>
           <div class="ueberschrift-klein">Das sitzt schon gut</div>
@@ -315,4 +325,3 @@ function TerminDialog({ offen, raum, termin, heute, onSchliessen }) {
   );
 }
 
-export { tagVon };
