@@ -75,6 +75,39 @@ export const notation = {
   ],
 };
 
+// Übersicht nur mit AP1-Stoff: Klasse, + und -, Assoziation mit 1 und *
+const notizL = (id, y, text) => ({ id, typ: 'text', x: 140, y, anker: 'end', text, klein: true });
+const notationAP1Diagramm = {
+  breite: 740,
+  hoehe: 215,
+  knoten: [
+    kl('kunde', 150, 40, 'Kunde', ['- kundenNr : int', '- name : String'], ['+ getName() : String', '+ setName(name : String) : void']),
+    kl('bestellung', 520, 32.5, 'Bestellung', ['- bestellNr : int', '- datum : Date', '- summe : double'], ['+ berechneSumme() : double', '+ stornieren() : void']),
+    notizL('n-name', 54, 'Klassenname'),
+    notizL('n-attr', 88, 'Attribute'),
+    notizL('n-meth', 128, 'Methoden'),
+    { id: 'n-1', typ: 'text', x: 452, y: 122, anker: 'middle', text: '1 = genau eins', klein: true },
+    { id: 'n-stern', typ: 'text', x: 452, y: 138, anker: 'middle', text: '* = beliebig viele', klein: true },
+    { id: 'n-sicht', typ: 'text', x: 150, y: 172, text: '- private: nur die Klasse selbst', klein: true },
+    { id: 'n-sicht2', typ: 'text', x: 150, y: 190, text: '+ public: alle Klassen', klein: true },
+    { id: 'n-sig', typ: 'text', x: 400, y: 172, text: 'Attribut:  - name : Typ', klein: true },
+    { id: 'n-sig2', typ: 'text', x: 400, y: 190, text: 'Methode:  + name(parameter : Typ) : Rückgabetyp', klein: true },
+  ],
+  kanten: [{ von: 'kunde', nach: 'bestellung', typ: 'assoziation', vonSeite: 'rechts', nachSeite: 'links', text: 'gibt auf ▸', textVon: '1', textNach: '*' }],
+};
+
+export const notationAP1 = {
+  text: 'So liest du das Diagramm: Jede Klasse ist ein Kasten mit drei Bereichen – oben der **Name**, in der Mitte die **Attribute**, unten die **Methoden**. Die Attribute sind privat (`-`), von außen kommt man nur über die öffentlichen Methoden (`+`) an sie heran. Die Linie zwischen den Klassen ist eine **Assoziation**: Ein Kunde gibt beliebig viele Bestellungen auf (`*` bei Bestellung), jede Bestellung gehört zu genau einem Kunden (`1` bei Kunde).',
+  diagramm: notationAP1Diagramm,
+  punkte: [
+    '**Attribut**: `Sichtbarkeit Name : Typ`, z. B. `- datum : Date`. **Methode**: `Sichtbarkeit Name(Parameter : Typ) : Rückgabetyp`, z. B. `+ setName(name : String) : void`. Der Typ steht in UML immer **hinter** dem Doppelpunkt, nicht davor wie in Java.',
+    '`void` heißt „gibt nichts zurück", leere Klammern heißen „bekommt nichts übergeben".',
+    '**Sichtbarkeit**: `-` private = nur die Klasse selbst darf zugreifen (Datenkapselung), `+` public = alle Klassen dürfen zugreifen.',
+    '**Multiplizität** lesen: „Ein Kunde gibt `*` Bestellungen auf" – die Angabe steht **bei der Bestellung**, also am anderen Ende der Linie. `*` schließt null ein.',
+    '**Klassen aus Text ableiten**: Substantive mit eigenen Eigenschaften werden Klassen, ihre Eigenschaften Attribute, Tätigkeiten Methoden.',
+  ],
+};
+
 const OPT_MULT_AP1 = ['1', '*'];
 const OPT_MULT = ['1', '0..1', '1..*', '*'];
 const OPT_SICHT = ['+', '#', '-', '~'];
@@ -110,7 +143,7 @@ export const aufgaben = [
       {
         id: 'b',
         label: 'In welchem Bereich der Klasse stehen die Methoden?',
-        optionen: ['Im oberen Bereich, neben dem Namen', 'Im mittleren Bereich, unter den Attributen', 'Im unteren Bereich, unter den Attributen'],
+        optionen: ['Im oberen Bereich, zusammen mit dem Namen', 'Im mittleren Bereich, zusammen mit den Attributen', 'Im unteren Bereich, unter den Attributen'],
         erwartet: 'Im unteren Bereich, unter den Attributen',
       },
     ],
@@ -449,7 +482,7 @@ export const aufgaben = [
     raum: ['AP2'],
     sp: 'AP2-2-1-1',
     titel: 'Aggregation, Komposition, Multiplizität',
-    text: 'Entscheide für jedes Paar „Ganzes – Teil", ob eine Aggregation oder eine Komposition passt, und deute die Angaben.',
+    text: 'Entscheide für jedes Paar „Ganzes – Teil", ob eine Aggregation oder eine Komposition passt. Frage dich dabei: Was passiert mit den Teilen, wenn das Ganze gelöscht wird? Deute danach die Angaben.',
     felder: [
       { id: 'a', label: 'Rechnung – Rechnungsposition', optionen: OPT_GANZES, erwartet: 'Komposition' },
       { id: 'b', label: 'Playlist – Song', optionen: OPT_GANZES, erwartet: 'Aggregation' },
