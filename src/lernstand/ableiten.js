@@ -18,6 +18,7 @@ export function leererStand() {
     notizen: new Map(),
     aufgaben: new Map(), // spId → { n, ok, zuletzt }
     trainer: new Map(), // trainerId → { n, ok }
+    geloest: new Set(), // „trainerId:aufgabenId" fester Aufgaben (SQL-Labor), die schon einmal gelöst wurden
     fokusMinuten: 0,
     tage: new Map(), // tag → { xp, n }
     xp: 0,
@@ -106,6 +107,7 @@ export function ableiten(ereignisse, index, heute = tagVon(Date.now())) {
         tr.n += 1;
         if (ev.ok) tr.ok += 1;
         stand.trainer.set(ev.tr, tr);
+        if (ev.ok && ev.a) stand.geloest.add(`${ev.tr}:${ev.a}`);
         buche(stand, ev.t, ev.ok ? XP.aufgabeRichtig : XP.aufgabeVersucht);
         break;
       }

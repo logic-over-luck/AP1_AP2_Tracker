@@ -62,7 +62,7 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: Pseudocode-Trainer fertig, SQL-Labor halb fertig)*
+*(zuletzt aktualisiert: SQL-Labor fertig, als Nächstes Modellieren)*
 
 ### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
 - Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 2,6 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
@@ -76,16 +76,15 @@ nächsten offenen Punkt weiter.
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
 - Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan & Projektplanung (mit Tests für Erzeuger und Prüfer)
 - Pseudocode-Trainer: eigener Interpreter (`src/bereiche/trainer/code/pseudo.js`), Grundlagen, Visualizer, Schreibtischtest, Puzzle, Fehlersuche, Suchen & Sortieren
+- SQL-Labor (nur AP2): sql.js läuft aus dem eingebetteten WebAssembly (`sql/laden.js`, kein fetch), 32 Abfragen,
+  7 Änderungs-, 5 Struktur- und 6 Rechte-Aufgaben, freies Labor mit Beispielen; Prüfung über das Ergebnis,
+  erwartetes Ergebnis und Musterlösung abrufbar, Schema-Ansicht mit PK/FK (klickbar), Fehlermeldungen auf Deutsch.
+  Gelöste Aufgaben stehen im Lernstand (Ereignis `aufgabe` mit Feld `a` = Aufgaben-ID), Entwürfe nur in der Ansicht
 
-### In Arbeit: SQL-Labor (nächster Schritt)
-- Fertig und getestet (`tests/sql.test.mjs`): Übungsdatenbank `sql/datenbank.js` mit Belegsatz-Funktionen (YEAR, MONTH,
-  LEFT, RIGHT, CONCAT, DATEDIFF, DATEADD, NOW), 41 Aufgaben + 6 Rechte-Aufgaben `sql/aufgaben.js`, Prüfung über das Ergebnis `sql/engine.js`
-- Fehlt: Laden von sql.js im Browser aus dem eingebetteten WebAssembly (`<script id="sqljs-wasm">`, Base64 →
-  `initSqlJs({ instantiateWasm })`), Oberfläche `sql/SqlLabor.jsx` (Aufgabenliste je Modus, Editor, Strg+Enter,
-  Ergebnistabelle, Schema-Ansicht, Musterlösung, freies Labor), Eintrag in `trainer/index.jsx`, Browser-Prüfung als file://
+### In Arbeit: Modellieren (nächster Schritt)
+- Trainer für Diagramme und Modelle: zuordnen, ergänzen, Fehler finden; Musterlösung mit Prüfliste für Zeichnungen
 
 ### Offen
-- Modellieren (Diagramme: zuordnen, ergänzen, Fehler finden; Musterlösung mit Prüfliste)
 - Abschluss-Durchgang: alle Bereiche im Browser, schmale Fenster, Feinschliff
 - Liste der fachlich unsicheren Inhalte in Abschnitt 4 übertragen
 

@@ -106,3 +106,18 @@ export function pruefeAufgabe(engine, aufgabe, eingabe) {
     ist.close();
   }
 }
+
+// Liest den aktuellen Aufbau einer Datenbank (für die Schema-Ansicht, auch nach CREATE/ALTER/DROP).
+export function schemaAus(db) {
+  const werte = (q) => db.exec(q)[0]?.values ?? [];
+  return werte("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY rowid").map(([name]) => {
+    const n = String(name).replace(/'/g, "''");
+    const fks = new Map(werte(`SELECT "from", "table" FROM pragma_foreign_key_list('${n}')`).map(([von, ziel]) => [von, ziel]));
+    const spalten = werte(`SELECT name, type, pk FROM pragma_table_info('${n}') ORDER BY cid`).map(([sp, typ, pk]) => {
+      const marken = [pk ? 'PK' : '', fks.has(sp) ? `FK → ${fks.get(sp)}` : ''].filter(Boolean).join(', ');
+      return [sp, typ || '–', marken];
+    });
+    const zeilen = werte(`SELECT COUNT(*) FROM "${String(name).replace(/"/g, '""')}"`)[0]?.[0] ?? 0;
+    return { name, spalten, zeilen };
+  });
+}

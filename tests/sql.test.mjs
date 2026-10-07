@@ -83,3 +83,18 @@ test('Rechte zerlegen und prüfen', () => {
   assert.ok(pruefeRecht("CREATE USER 'pruefer'@'localhost' IDENTIFIED BY 'Start#2026';", RECHTE_AUFGABEN[4].soll).ok);
   assert.equal(zerlegeRecht('SELECT * FROM x'), null);
 });
+
+test('Schema-Ansicht liest PK, FK und Änderungen', async () => {
+  const { schemaAus } = await import('../src/bereiche/trainer/sql/engine.js');
+  const db = engine.neueDb();
+  let s = schemaAus(db);
+  assert.deepEqual(s.map((t) => t.name), ['kategorie', 'artikel', 'kunde', 'mitarbeiter', 'bestellung', 'bestellposition', 'lieferant']);
+  const pos = s.find((t) => t.name === 'bestellposition');
+  assert.deepEqual(pos.spalten[0], ['bestell_id', 'INTEGER', 'PK, FK → bestellung']);
+  assert.equal(pos.zeilen, 31);
+  ausfuehren(db, 'ALTER TABLE kunde ADD COLUMN email VARCHAR(100); DROP TABLE lieferant;');
+  s = schemaAus(db);
+  assert.ok(!s.some((t) => t.name === 'lieferant'));
+  assert.deepEqual(s.find((t) => t.name === 'kunde').spalten.at(-1), ['email', 'VARCHAR(100)', '']);
+  db.close();
+});

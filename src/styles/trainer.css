@@ -854,3 +854,334 @@ button.codezeile:hover {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ---------- SQL-Labor ---------- */
+.sql {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.sql__raster {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: start;
+}
+.sql__haupt {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: var(--s-4);
+  align-items: start;
+}
+.sql-laden {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-6);
+  color: var(--text-3);
+}
+.sql-laden svg {
+  animation: pulsieren 1.4s ease-in-out infinite;
+}
+.sql-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--s-2);
+  position: sticky;
+  top: var(--s-4);
+}
+.sql-liste__punkt {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-2);
+  border-radius: var(--r-1);
+  text-align: left;
+  font-size: var(--t-m);
+  color: var(--text-2);
+  transition: background var(--dauer) var(--kurve), color var(--dauer) var(--kurve);
+}
+.sql-liste__punkt:hover {
+  background: var(--flaeche-2);
+  color: var(--text);
+}
+.sql-liste__punkt--aktiv {
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.sql-liste__nr {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--linie-2);
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sql-liste__punkt--aktiv .sql-liste__nr {
+  border-color: var(--akzent-linie);
+  color: var(--akzent);
+}
+.sql-liste__nr:has(svg) {
+  background: var(--akzent);
+  border-color: var(--akzent);
+  color: var(--akzent-text);
+}
+.sql-liste__titel {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.sql-editor {
+  display: block;
+}
+.sql-editor__feld {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--s-3) var(--s-4);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+  background: #0a0e11;
+  resize: vertical;
+  tab-size: 2;
+}
+.sql-urteil {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  font-weight: 600;
+}
+.sql-urteil svg {
+  flex: none;
+  margin-top: 2px;
+}
+.sql-urteil--gut {
+  color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.sql-urteil--falsch {
+  color: var(--fehler);
+  background: rgba(240, 112, 112, 0.1);
+  font-weight: 500;
+}
+.sql-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+}
+.sql-block__fuss {
+  font-size: var(--t-s);
+}
+.sql-code {
+  padding: var(--s-3) var(--s-4);
+  white-space: pre-wrap;
+}
+.sql-meldung {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sql-meldung svg {
+  flex: none;
+  color: var(--akzent);
+}
+.sql-meldung--fehler {
+  align-items: flex-start;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: rgba(240, 112, 112, 0.1);
+  color: var(--fehler);
+}
+.sql-meldung--fehler svg {
+  color: var(--fehler);
+  margin-top: 2px;
+}
+.sql-tabelle {
+  max-height: 420px;
+  overflow: auto;
+  border-radius: var(--r-1);
+}
+.sql-tabelle .atabelle {
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+.sql-tabelle th {
+  position: sticky;
+  top: 0;
+}
+.sql-null {
+  color: var(--text-4);
+  font-style: italic;
+}
+.sql-leer {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--text-3);
+}
+.sql-schema {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  position: sticky;
+  top: var(--s-4);
+  max-height: calc(100vh - 2 * var(--s-4));
+  overflow-y: auto;
+}
+.sql-schema__hilfe {
+  font-size: var(--t-xs);
+}
+.sql-schema__tabelle + .sql-schema__tabelle {
+  border-top: 1px solid var(--linie);
+  padding-top: var(--s-2);
+}
+.sql-schema__kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+.sql-schema__pfeil {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--r-1);
+  color: var(--text-3);
+}
+.sql-schema__name {
+  font-weight: 600;
+  font-size: var(--t-m);
+  color: var(--akzent);
+}
+.sql-schema__zahl {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+}
+.sql-schema__spalten {
+  list-style: none;
+  margin: var(--s-1) 0 0;
+  padding: 0 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12.5px;
+}
+.sql-schema__spalten li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--s-2);
+}
+.sql-schema__spalte {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  color: var(--text);
+}
+.sql-schema__name:hover,
+.sql-schema__spalte:hover {
+  text-decoration: underline;
+}
+.sql-schema__pk {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 0 3px;
+  border-radius: 3px;
+  background: rgba(240, 168, 90, 0.18);
+  color: var(--warn);
+}
+.sql-schema__typ {
+  color: var(--text-4);
+  font-family: var(--mono);
+  font-size: 11px;
+}
+.sql-schema__fk {
+  flex-basis: 100%;
+  color: var(--info);
+  font-size: 11px;
+}
+.sql-beispiele {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sql-beispiel {
+  padding: var(--s-1) var(--s-3);
+  border-radius: 999px;
+  border: 1px solid var(--linie-2);
+  font-size: var(--t-s);
+  color: var(--text-2);
+  transition: border-color var(--dauer) var(--kurve), color var(--dauer) var(--kurve);
+}
+.sql-beispiel:hover {
+  border-color: var(--akzent-linie);
+  color: var(--text);
+}
+.sql-verlauf {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sql-verlauf__punkt {
+  text-align: left;
+  padding: var(--s-1) var(--s-2);
+  border-radius: var(--r-1);
+  font-size: 12px;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sql-verlauf__punkt:hover {
+  background: var(--flaeche-2);
+  color: var(--text);
+}
+@media (max-width: 1180px) {
+  .sql__haupt {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sql-schema {
+    position: static;
+    max-height: none;
+  }
+}
+@media (max-width: 820px) {
+  .sql__raster {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sql-liste {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sql-liste__titel {
+    display: none;
+  }
+  .sql-liste__punkt--aktiv .sql-liste__titel {
+    display: inline;
+  }
+}
+.sql-liste__gruppe {
+  padding: var(--s-3) var(--s-2) var(--s-1);
+  font-size: 10px;
+}
+.sql-liste__gruppe:first-child {
+  padding-top: var(--s-1);
+}
+@media (max-width: 820px) {
+  .sql-liste__gruppe {
+    display: none;
+  }
+}

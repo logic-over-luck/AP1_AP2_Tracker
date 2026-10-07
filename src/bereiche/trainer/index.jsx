@@ -11,6 +11,7 @@ import { SubnetzTrainer } from './subnetz/Subnetz.jsx';
 import { KaufmaennischTrainer } from './kaufmaennisch/Kaufmaennisch.jsx';
 import { NetzplanTrainer } from './netzplan/Netzplan.jsx';
 import { CodeTrainer } from './code/CodeTrainer.jsx';
+import { SqlLabor } from './sql/SqlLabor.jsx';
 
 // Komponenten je Trainer. Ein neuer Trainer: Eintrag in verzeichnis.js + Komponente hier.
 const KOMPONENTEN = {
@@ -19,6 +20,7 @@ const KOMPONENTEN = {
   kaufmaennisch: KaufmaennischTrainer,
   netzplan: NetzplanTrainer,
   code: CodeTrainer,
+  sql: SqlLabor,
 };
 
 export function TrainerBereich({ raum, trainerId, params }) {
