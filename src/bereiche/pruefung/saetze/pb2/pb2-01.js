@@ -91,9 +91,9 @@ export default {
             zeilen: [
               ['0', 'L-1001', 'E-50211', '2026-10-01', 'null'],
               ['1', 'L-1002', 'E-50317', '2026-10-10', 'null'],
-              ['2', 'L-1001', 'E-61002', '2026-09-02', 'null'],
+              ['2', 'L-1001', 'E-61045', '2026-09-02', 'null'],
               ['3', 'L-1003', 'E-50488', '2026-09-20', '2026-10-05'],
-              ['4', 'L-1004', 'E-70015', '2026-10-08', 'null'],
+              ['4', 'L-1004', 'E-70031', '2026-10-08', 'null'],
               ['5', 'L-1003', 'E-61177', '2026-09-28', 'null'],
             ],
           },
@@ -171,9 +171,9 @@ export default {
           sp: ['AP2-3-2-2', 'AP2-3-2-1'],
           text:
             'Für eine Übersicht an der Servicetheke wird der Mahnfall mit der höchsten Gebühr benötigt.\n' +
-            'Erstellen Sie die Methode `hoechsterMahnfall`. Sie erhält eine Liste von Mahnfällen (z. B. das Ergebnis aus a) – Sie dürfen davon ausgehen, dass a) korrekt umgesetzt ist) und liefert den Mahnfall mit der höchsten Gebühr. ' +
+            'Erstellen Sie die Methode `hoechsterMahnfall`. Sie erhält eine Liste von Mahnfällen, z. B. das Ergebnis der Methode aus Teil a (Sie dürfen davon ausgehen, dass diese korrekt umgesetzt ist), und liefert den Mahnfall mit der höchsten Gebühr. ' +
             'Haben mehrere Mahnfälle dieselbe höchste Gebühr, wird der mit den meisten Medien geliefert. Ist die Liste `null` oder leer, liefert die Methode `null`.\n' +
-            'Für das Ergebnis aus a) liefert die Methode den Mahnfall L-1001. Gebühren sind centgenau; der Vergleich mit `==` ist hier zulässig.',
+            'Für das Ergebnis aus Teil a liefert die Methode den Mahnfall L-1001. Gebühren sind centgenau; der Vergleich mit `==` ist hier zulässig.',
           antwort: {
             art: 'code',
             zeilen: 14,
@@ -309,7 +309,8 @@ export default {
       sp: ['AP2-5-2-3', 'AP2-5-1-2', 'AP2-5-2-2'],
       situation:
         'Bevor die Bibliothekssoftware „Ausleihwerk“ in der Stadtbibliothek Auenstadt in Betrieb geht, prüft das Projektteam die Gebührenberechnung. ' +
-        'Ein Kollege hat dafür die unten stehende Java-Methode geschrieben.',
+        'Ein Kollege hat dafür die unten stehende Java-Methode `gesamtGebuehrCent` geschrieben (Vorgaben zur Berechnung siehe Teil b).',
+      vorgaben: [{ code: TESTCODE, nummern: true, titel: 'Java-Methode gesamtGebuehrCent' }],
       teile: [
         {
           nr: 'aa',
@@ -331,10 +332,10 @@ export default {
           nr: 'ab',
           punkte: 3,
           sp: ['AP2-5-2-2'],
-          text: 'Für die Methode `gesamtGebuehrCent` aus Teil b) wird eine Zweigüberdeckung von 100 % gefordert. Erläutern Sie diesen Begriff und grenzen Sie ihn von der Anweisungsüberdeckung ab.',
+          text: 'Für die Methode `gesamtGebuehrCent` wird eine Zweigüberdeckung von 100 % gefordert. Erläutern Sie diesen Begriff und grenzen Sie ihn von der Anweisungsüberdeckung ab.',
           antwort: { art: 'text', zeilen: 5 },
           loesung: [
-            'Zweigüberdeckung (C1) von 100 % heißt: Die Testfälle sorgen dafür, dass jeder Zweig des Programms mindestens einmal durchlaufen wird – jede Bedingung (if, Schleife) muss also mindestens einmal wahr und einmal falsch ausgewertet werden.',
+            'Zweigüberdeckung (C1) von 100 % heißt: Die Testfälle sorgen dafür, dass jeder Zweig des Programms mindestens einmal durchlaufen wird – jede Entscheidung (if-Bedingung, Schleifenbedingung) muss also insgesamt mindestens einmal wahr und einmal falsch ausgewertet werden.',
             'Anweisungsüberdeckung (C0) verlangt nur, dass jede Anweisung mindestens einmal ausgeführt wird. Ein `if` ohne `else` ist damit schon abgedeckt, wenn die Bedingung einmal wahr ist; der leere „falsch“-Zweig wird nicht geprüft. 100 % Zweigüberdeckung schließt 100 % Anweisungsüberdeckung ein, aber nicht umgekehrt.',
           ],
           bewertung: ['Erläuterung Zweigüberdeckung: 2 P', 'Abgrenzung zur Anweisungsüberdeckung: 1 P'],
@@ -349,7 +350,6 @@ export default {
             '- Das Ergebnis ist die Summe der Gebühren aller Medien.\n' +
             '- Ist das Array `null` oder leer, wird eine `IllegalArgumentException` ausgelöst.\n' +
             'Die Methode enthält zwei inhaltliche Fehler. Führen Sie einen Schreibtischtest durch: Tragen Sie für jeden Testfall das laut Vorgabe **erwartete** und das von der Methode **tatsächlich** gelieferte Ergebnis ein.',
-          vorgaben: [{ code: TESTCODE, nummern: true, titel: 'Java-Methode gesamtGebuehrCent' }],
           antwort: {
             art: 'tabelle',
             kopf: ['Nr.', 'tageUeberfaellig', 'erwartetes Ergebnis', 'tatsächliches Ergebnis'],
@@ -639,7 +639,7 @@ DELETE FROM Ausleihe
 WHERE A_Rueckgabe < '2026-01-01';`,
             },
             'Im Auszug wird nur Ausleihe 9001 archiviert (Rückgabe 2025-12-10); 9002 wurde erst 2026 zurückgegeben. Offene Ausleihen (A_Rueckgabe NULL) erfüllen die Bedingung nicht, weil ein Vergleich mit NULL nie wahr ist; ein zusätzliches `A_Rueckgabe IS NOT NULL` ist zulässig. ' +
-              'Gleichwertig: `YEAR(a.A_Rueckgabe) < 2026` bzw. `< YEAR(CURRENT_DATE)`. Die Reihenfolge ist wichtig: erst einfügen, dann löschen (ideal in einer Transaktion).',
+              'Gleichwertig: `YEAR(a.A_Rueckgabe) < 2026`. Die Reihenfolge ist wichtig: erst einfügen, dann löschen (ideal in einer Transaktion).',
           ],
           bewertung: [
             'INSERT INTO Ausleihe_Archiv mit passender Spaltenliste (ohne L_Nr, A_Faellig): 2 P',
