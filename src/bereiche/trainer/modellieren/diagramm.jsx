@@ -23,12 +23,12 @@ function Teile({ text, luecken }) {
   });
 }
 
-function Text({ x, y, text, luecken, anker = 'middle', klasse = '', max, groesse }) {
+function Text({ x, y, text, luecken, anker = 'middle', klasse = '', max, groesse, farbe }) {
   const zeilen = umbrechen(text, max);
   const zh = groesse ? groesse * 1.25 : ZEILE;
   const y0 = y - ((zeilen.length - 1) * zh) / 2;
   return (
-    <text class={`dg-text ${klasse}`} text-anchor={anker} style={groesse ? { fontSize: `${groesse}px` } : undefined}>
+    <text class={`dg-text ${klasse}`} text-anchor={anker} style={groesse || farbe ? { ...(groesse ? { fontSize: `${groesse}px` } : {}), ...(farbe ? { fill: farbe } : {}) } : undefined}>
       {zeilen.map((z, i) => (
         <tspan key={i} x={x} y={y0 + i * zh + (groesse ?? PX) * 0.35}>
           <Teile text={z} luecken={luecken} />
@@ -414,7 +414,7 @@ function Kasten({ k, m, luecken }) {
   const textFarbe = k.textFarbe ? { fill: k.textFarbe } : undefined;
   const t = (tx, ty, anker = 'start', kl = '') => (
     <g style={textFarbe}>
-      <Text x={tx} y={ty} text={k.text} luecken={luecken} anker={anker} klasse={`mk-text ${kl}`} groesse={k.groesse} />
+      <Text x={tx} y={ty} text={k.text} luecken={luecken} anker={anker} klasse={`mk-text ${kl}`} groesse={k.groesse} farbe={k.textFarbe} />
     </g>
   );
   switch (k.stil) {
