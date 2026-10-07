@@ -1209,128 +1209,62 @@ button.codezeile:hover {
   }
 }
 
-/* SQL: Datenbank als Bild über dem Editor */
+/* SQL: wie in der Prüfung – Ausgangssituation, Datenbankmodell, Lösung */
 .sql__einspaltig {
   display: flex;
   flex-direction: column;
   gap: var(--s-4);
 }
-.sql-bild {
+.sql-situation {
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
-  padding: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+}
+.sql-situation__text {
+  font-size: var(--t-m);
+  color: var(--text-2);
+  max-width: 80ch;
+  margin-bottom: var(--s-2);
+}
+.sql-modell {
+  list-style: none;
+  margin: 0;
+  padding: var(--s-3) var(--s-4);
   border-radius: var(--r-1);
-  border: 1px solid var(--linie-2);
-  background: var(--flaeche-1);
-}
-.sql-bild__kopf {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s-2);
-  color: var(--text-3);
-}
-.sql-bild__legende {
-  font-size: var(--t-xs);
-  margin-left: auto;
-}
-.sql-er {
-  overflow-x: auto;
-}
-.sql-er__bild {
-  display: block;
-  width: 100%;
-  min-width: 860px;
-  height: auto;
+  background: var(--flaeche-2);
   font-family: var(--mono);
-  font-feature-settings: 'calt' 0, 'liga' 0;
-}
-.er-linie path {
-  fill: none;
-  stroke: var(--text-2);
-  stroke-opacity: 0.6;
-  stroke-width: 1.4;
-  transition: stroke var(--dauer) var(--kurve), opacity var(--dauer) var(--kurve);
-}
-.er-kard {
-  font-size: 11px;
-  font-weight: 700;
-  fill: var(--text-3);
-}
-.er-linie--an path {
-  stroke: var(--warn);
-  stroke-opacity: 1;
-  stroke-width: 2;
-}
-.er-linie--an .er-kard {
-  fill: var(--warn);
-}
-.er-linie--aus {
-  opacity: 0.25;
-}
-.er-kasten__rahmen {
-  fill: var(--flaeche-2);
-  stroke: var(--linie-3);
-  stroke-width: 1;
-  transition: stroke var(--dauer) var(--kurve);
-}
-.er-kasten__kopf {
-  fill: var(--akzent-weich);
-}
-.er-kasten--fokus .er-kasten__rahmen {
-  stroke: var(--akzent);
-  stroke-width: 1.6;
-}
-.er-kasten--verbunden .er-kasten__rahmen {
-  stroke: var(--warn);
-  stroke-width: 1.6;
-}
-.er-kasten__name {
   font-size: 13px;
-  font-weight: 700;
-  fill: var(--akzent);
-  cursor: pointer;
+  line-height: 1.9;
+  color: var(--text);
 }
-.er-zeile {
-  cursor: pointer;
+.sql-modell strong {
+  color: var(--akzent);
 }
-.er-zeile__flaeche {
-  fill: transparent;
+.sql-modell u {
+  text-underline-offset: 3px;
 }
-.er-zeile:hover .er-zeile__flaeche {
-  fill: var(--flaeche-3);
-}
-.er-spalte {
-  font-size: 12px;
-  fill: var(--text);
-}
-.er-spalte--pk {
+.sql-modell__fk {
+  color: var(--warn);
   font-weight: 700;
 }
-.er-typ {
-  font-size: 10px;
-  fill: var(--text-3);
+.sql-situation__legende {
+  font-size: var(--t-xs);
 }
-.er-schluessel {
-  fill: none;
-  stroke: #e7b84a;
-  stroke-width: 1.6;
-  stroke-linecap: round;
+.sql-punkte {
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-2);
+  padding: 2px 10px;
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-2);
 }
-.er-raute {
-  fill: none;
-  stroke: var(--text-3);
-  stroke-width: 1.2;
-}
-.er-raute--fk {
-  fill: var(--warn);
-  stroke: var(--warn);
-}
-@media (max-width: 700px) {
-  .sql-bild__legende {
-    margin-left: 0;
-  }
+.sql-editor__titel {
+  display: block;
+  margin-bottom: var(--s-1);
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-2);
 }
 
 /* SQL: Aufgabenleiste */
@@ -1415,92 +1349,6 @@ button.codezeile:hover {
   border: 2px solid var(--akzent);
   color: var(--text);
   font-weight: 700;
-}
-
-/* SQL: Bausteine zum Antippen */
-.sql-bausteine {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-3);
-  border: 1px solid var(--linie-1, var(--linie-2));
-  border-radius: var(--r-2, var(--r-1));
-  background: var(--flaeche-1);
-}
-.sql-bausteine__zeile {
-  display: flex;
-  align-items: baseline;
-  gap: var(--s-2);
-}
-.sql-bausteine__zeile + .sql-bausteine__zeile {
-  padding-top: var(--s-2);
-  border-top: 1px dashed var(--linie-2);
-}
-.sql-bausteine__titel {
-  flex: none;
-  width: 92px;
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-.sql-bausteine__reihe {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  min-width: 0;
-}
-.sql-bausteine__hinweis {
-  font-size: var(--t-s);
-}
-.sql-baustein {
-  font-variant-ligatures: none;
-  font-feature-settings: 'calt' 0, 'liga' 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  height: 28px;
-  padding: 0 10px;
-  border-radius: var(--r-1);
-  border: 1px solid var(--linie-2);
-  background: var(--flaeche-2);
-  font-family: var(--mono);
-  font-size: 12.5px;
-  color: var(--text);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background var(--dauer) var(--kurve), border-color var(--dauer) var(--kurve), transform 80ms;
-}
-.sql-baustein:hover {
-  border-color: var(--akzent-linie);
-}
-.sql-baustein:active {
-  transform: scale(0.95);
-}
-.sql-baustein--kw {
-  color: var(--akzent);
-}
-.sql-baustein--tabelle {
-  font-weight: 600;
-}
-.sql-baustein--aktiv {
-  background: var(--akzent-weich);
-  border-color: var(--akzent);
-}
-@media (max-width: 700px) {
-  /* Auf dem Handy: Titel über der Reihe, die Reihe wischt man seitlich */
-  .sql-bausteine__zeile {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-  }
-  .sql-bausteine__reihe {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-bottom: 2px;
-  }
-  .sql-baustein {
-    height: 34px;
-  }
 }
 
 /* SQL: Grundlagen als Lexikon */

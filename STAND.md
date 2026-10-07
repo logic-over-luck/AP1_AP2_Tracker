@@ -127,12 +127,11 @@ nächsten offenen Punkt weiter.
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
-- **SQL-Labor:** Erster Reiter „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang (Begriff + eine
-  Zeile Erklärung). Aufgaben werden über eine kompakte Leiste gewählt (Themen + Nummern). Die Datenbank steht
-  vollständig als ER-Diagramm direkt über dem Editor (wie in einem Datenbank-Werkzeug: Kästen mit Schlüssel- und
-  Rautensymbolen, Datentyp, Linien Fremdschlüssel → Primärschlüssel mit n/1; Maus auf eine Tabelle hebt ihre
-  Beziehungen hervor; Klick fügt den Namen ein). In den Aufgaben schreibt man selbst wie in
-  der Prüfung – Befehls-Bausteine gibt es nur im Freien Labor.
+- **SQL-Labor (prüfungsnah):** Oben die Ausgangssituation und ein „Auszug aus dem Datenbankmodell“ in
+  Relationen-Schreibweise (Primärschlüssel unterstrichen, Fremdschlüssel mit ↑). Die Aufgaben sind wie in der
+  Prüfung formuliert („Erstellen Sie eine SQL-Anweisung, die …“) und haben Punkte (geschätzt nach Umfang, nicht
+  aus echten Prüfungen). Man schreibt die Lösung selbst; Hilfen: Soll-Ergebnis und Lösungshinweis. Erster Reiter
+  „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine

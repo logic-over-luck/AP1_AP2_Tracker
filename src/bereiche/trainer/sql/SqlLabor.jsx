@@ -11,8 +11,6 @@ import { ladeEngine } from './laden.js';
 import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
 import { GRUNDLAGEN, KLAUSELN, BEFEHLSGRUPPEN } from './grundlagen.js';
-import { setzeEin } from './einfuegen.js';
-import { erLayout, MASS } from './erLayout.js';
 
 const SPICKZETTEL = {
   abfragen:
@@ -255,21 +253,19 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
     }
   };
 
-  const einfuegen = useEinfuegen(editor, text, setText, basis.schema);
-
   const ok = pruefung?.ok;
   return (
     <div class="sql__einspaltig">
+      <Ausgangssituation schema={basis.schema} />
       <section class={`flaeche flaeche--gross aufgabe ${ok ? 'aufgabe--fertig' : ''}`}>
         <div class="zeile">
-          <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">
-            Aufgabe {nr} · {aufgabe.titel}
-          </div>
+          <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">Aufgabe {nr}</div>
           {warGeloest && !ok && (
             <Marke ton="gut" icon="check">
               schon gelöst
             </Marke>
           )}
+          <span class="sql-punkte">{aufgabe.punkte} Punkte</span>
         </div>
         <div class="aufgabe__text">
           <Rich text={aufgabe.text} />
@@ -280,9 +276,8 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             Befehl, Rechte, Tabelle, Benutzer, Weitergabe.
           </p>
         )}
-        {!rechte && <SchemaBild schema={basis.schema} einfuegen={(w) => einfuegen(w)} />}
         <label class="sql-editor">
-          <span class="sr-only">SQL-Anweisung</span>
+          <span class="sql-editor__titel">Lösung</span>
           <textarea
             ref={editor}
             class="feld sql-editor__feld"
@@ -291,7 +286,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             spellcheck={false}
             autoComplete="off"
             autoCapitalize="off"
-            placeholder={rechte ? 'GRANT …' : aufgabe.modus === 'abfragen' ? 'SELECT …' : aufgabe.modus === 'aendern' ? 'INSERT / UPDATE / DELETE …' : 'CREATE / ALTER / DROP …'}
+            placeholder="Ihre SQL-Anweisung …"
             onInput={(e) => setText(e.currentTarget.value)}
             onKeyDown={taste}
           />
@@ -313,11 +308,11 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
           )}
           {basis.soll && (
             <Knopf variante="geist" icon="table" onClick={() => setErwartet(!erwartet)} aria-expanded={erwartet}>
-              {erwartet ? 'Erwartetes Ergebnis ausblenden' : 'Erwartetes Ergebnis'}
+              {erwartet ? 'Soll-Ergebnis ausblenden' : 'Soll-Ergebnis'}
             </Knopf>
           )}
           <Knopf variante="geist" icon={loesung ? 'eye-off' : 'eye'} onClick={zeigeLoesung} aria-expanded={loesung}>
-            {loesung ? 'Lösung ausblenden' : 'Musterlösung'}
+            {loesung ? 'Lösungshinweis ausblenden' : 'Lösungshinweis'}
           </Knopf>
         </div>
 
@@ -339,7 +334,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
         <Aufklapp offen={loesung}>
           <div class="sql-block">
             <div class="zeile">
-              <div class="ueberschrift-klein wachsen">Musterlösung</div>
+              <div class="ueberschrift-klein wachsen">Lösungshinweis</div>
               <Knopf variante="geist" groesse="s" icon="corner-down-left" onClick={() => setText(formatiereSql(aufgabe.loesung))}>
                 In den Editor
               </Knopf>
@@ -397,11 +392,11 @@ function FreiesLabor({ engine }) {
     setSchema(schemaAus(db.current));
   };
 
-  const einfuegen = useEinfuegen(editor, text, setText, schema);
 
   return (
     <div class="sql">
       <div class="sql__einspaltig">
+        <Ausgangssituation schema={schema} />
         <section class="flaeche flaeche--gross aufgabe">
           <div class="ueberschrift-klein ueberschrift-klein--akzent">Freies Labor</div>
           <p class="aufgabe__text text-2">
@@ -414,7 +409,6 @@ function FreiesLabor({ engine }) {
               </button>
             ))}
           </div>
-          <SchemaBild schema={schema} einfuegen={(w) => einfuegen(w)} />
           <label class="sql-editor">
             <span class="sr-only">SQL-Anweisung</span>
             <textarea
@@ -434,7 +428,6 @@ function FreiesLabor({ engine }) {
               }}
             />
           </label>
-          <Bausteine art="frei" einfuegen={einfuegen} />
           <div class="aufgabe__knoepfe">
             <Knopf variante="primaer" icon="play" onClick={ausfuehrenJetzt}>
               Ausführen <Kbd>Strg+Enter</Kbd>
@@ -458,57 +451,6 @@ function FreiesLabor({ engine }) {
           )}
         </section>
       </div>
-    </div>
-  );
-}
-
-// ---------- Bausteine zum Antippen ----------
-
-// Reihen mit Titel; je Baustein [Anzeige, eingefügter Text, Cursor zurück]
-const BAUSTEINE = {
-  frei: [
-    ['Befehle', [['SELECT'], ['*'], ['FROM'], ['WHERE'], ['JOIN'], ['LEFT JOIN'], ['ON'], ['GROUP BY'], ['HAVING'], ['ORDER BY'], ['DESC'], ['DISTINCT'], ['AS'], ['UNION'], [','], [';']]],
-    ['Bedingungen', [['='], ['<>'], ['>'], ['<'], ['>='], ['<='], ['AND'], ['OR'], ['NOT'], ["LIKE '%'", "LIKE '%'", 2], ['IS NULL'], ['IN ( )', 'IN ()', 1], ['BETWEEN … AND', 'BETWEEN'], ['( SELECT … )', '(SELECT )', 1]]],
-    ['Ändern', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['CREATE TABLE'], ['ALTER TABLE'], ['DROP TABLE']]],
-    ['Funktionen', [['COUNT(*)'], ['COUNT( )', 'COUNT()', 1], ['SUM( )', 'SUM()', 1], ['AVG( )', 'AVG()', 1], ['MIN( )', 'MIN()', 1], ['MAX( )', 'MAX()', 1], ['ROUND( , 2)', 'ROUND(, 2)', 4], ['YEAR( )', 'YEAR()', 1]]],
-  ],
-};
-
-// Fügt an der Cursorposition ein – mit passenden Leerzeichen und Kommas (siehe einfuegen.js)
-function useEinfuegen(editor, text, setText, schema) {
-  const spalten = useMemo(() => new Set((schema ?? []).flatMap((t) => t.spalten.map(([n]) => n.toLowerCase()))), [schema]);
-  return (wort, zurueck = 0) => {
-    const t = editor.current;
-    const a = t && document.activeElement === t ? t.selectionStart : (t?.dataset.pos ? Number(t.dataset.pos) : text.length);
-    const b = t && document.activeElement === t ? t.selectionEnd : a;
-    const r = setzeEin(text, Math.min(a, text.length), Math.min(b, text.length), wort, { zurueck, spalten });
-    setText(r.text);
-    requestAnimationFrame(() => {
-      if (!t) return;
-      // Auf dem Handy nicht fokussieren – sonst springt die Tastatur bei jedem Baustein auf
-      if (!window.matchMedia('(hover: none)').matches) t.focus();
-      t.setSelectionRange(r.pos, r.pos);
-      t.dataset.pos = r.pos;
-    });
-  };
-}
-
-// Nur im Freien Labor: Befehle zum Antippen. In den Aufgaben schreibt man selbst – wie in der Prüfung.
-function Bausteine({ art, einfuegen }) {
-  return (
-    <div class="sql-bausteine" aria-label="Befehle zum Antippen">
-      {(BAUSTEINE[art] ?? BAUSTEINE.abfragen).map(([titel, reihe]) => (
-        <div key={titel} class="sql-bausteine__zeile">
-          <span class="sql-bausteine__titel">{titel}</span>
-          <div class="sql-bausteine__reihe">
-            {reihe.map(([zeige, wort = zeige, zurueck = 0]) => (
-              <button key={zeige} type="button" class="sql-baustein sql-baustein--kw" onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(wort, zurueck)}>
-                {zeige}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
     </div>
   );
 }
@@ -634,90 +576,35 @@ export function ErgebnisTabelle({ ergebnis }) {
   );
 }
 
-// Die Datenbank als ER-Diagramm wie in einem Datenbank-Werkzeug: Kästen mit Schlüssel-Symbolen und
-// Datentyp, Linien von jedem Fremdschlüssel zur Zieltabelle (n … 1). Maus auf eine Tabelle hebt ihre
-// Beziehungen hervor; ein Klick auf einen Namen fügt ihn in den Editor ein – schreiben muss man selbst.
-function SchemaBild({ schema, einfuegen }) {
-  const [fokus, setFokus] = useState(null);
-  const er = useMemo(() => erLayout(schema), [schema]);
-  const { breite: B, kopf: K, zeile: Z, rand: R } = MASS;
-  const verbunden = new Set(fokus ? er.linien.filter((l) => l.von === fokus || l.nach === fokus).flatMap((l) => [l.von, l.nach]) : []);
+// Wie in der Prüfung: kurze Ausgangssituation und ein Auszug aus dem Datenbankmodell in
+// Relationen-Schreibweise – Primärschlüssel unterstrichen, Fremdschlüssel mit ↑.
+function Ausgangssituation({ schema }) {
   return (
-    <section class="sql-bild" aria-label="Datenbankschema">
-      <div class="sql-bild__kopf">
-        <Icon name="database" groesse={14} />
-        <span class="ueberschrift-klein">Datenbank-Schema</span>
-        <span class="gedaempft sql-bild__legende">
-          <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden="true">
-            <circle cx="3.5" cy="5" r="2.6" class="er-schluessel" />
-            <path d="M6 5h5.5M9.5 5v2.5" class="er-schluessel" />
-          </svg>{' '}
-          Primärschlüssel ·{' '}
-          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
-            <path d="M5 1 9 5 5 9 1 5z" class="er-raute er-raute--fk" />
-          </svg>{' '}
-          Fremdschlüssel · Linie n → 1 · Klick fügt den Namen ein
-        </span>
-      </div>
-      <div class="sql-er">
-        <svg class="sql-er__bild" viewBox={`-30 -8 ${er.breite + 38} ${er.hoehe + 16}`} role="img" aria-label="ER-Diagramm der Übungsdatenbank">
-          {er.linien.map((l) => {
-            const an = fokus && (l.von === fokus || l.nach === fokus);
-            return (
-              <g key={`${l.von}.${l.spalte}`} class={`er-linie ${an ? 'er-linie--an' : ''} ${fokus && !an ? 'er-linie--aus' : ''}`}>
-                <path d={l.d} />
-                <text x={l.n[0]} y={l.n[1]} class="er-kard">
-                  n
-                </text>
-                <text x={l.eins[0]} y={l.eins[1]} class="er-kard">
-                  1
-                </text>
-              </g>
-            );
-          })}
-          {er.kaesten.map((k) => (
-            <g
-              key={k.name}
-              transform={`translate(${k.x} ${k.y})`}
-              class={`er-kasten ${fokus === k.name ? 'er-kasten--fokus' : ''} ${verbunden.has(k.name) && fokus !== k.name ? 'er-kasten--verbunden' : ''}`}
-              onMouseEnter={() => setFokus(k.name)}
-              onMouseLeave={() => setFokus(null)}
-            >
-              <rect width={B} height={k.h} rx="5" class="er-kasten__rahmen" />
-              <path d={`M0 ${K} V5 a5 5 0 0 1 5 -5 H${B - 5} a5 5 0 0 1 5 5 V${K} Z`} class="er-kasten__kopf" />
-              <text x="10" y={K / 2 + 4.5} class="er-kasten__name" onClick={() => einfuegen(k.name)}>
-                <title>{`${k.tabelle.zeilen} Datensätze – Klick fügt den Namen ein`}</title>
-                {k.name}
-              </text>
-              {k.tabelle.spalten.map(([name, typ, marke], i) => {
-                const y = K + R + i * Z + Z / 2;
-                const pk = marke.includes('PK');
-                const fk = marke.includes('FK');
-                return (
-                  <g key={name} class="er-zeile" onClick={() => einfuegen(name)}>
-                    <rect x="1" y={y - Z / 2} width={B - 2} height={Z} class="er-zeile__flaeche" />
-                    {pk ? (
-                      <g transform={`translate(8 ${y})`}>
-                        <circle cx="3.5" cy="0" r="2.8" class="er-schluessel" />
-                        <path d="M6.3 0h5.5M10 0v2.6" class="er-schluessel" />
-                      </g>
-                    ) : (
-                      <path d={`M${13} ${y - 4} l4 4 l-4 4 l-4 -4z`} class={`er-raute ${fk ? 'er-raute--fk' : ''}`} />
-                    )}
-                    {pk && fk && <path d={`M${B - 8} ${y - 4} l4 4 l-4 4 l-4 -4z`} class="er-raute er-raute--fk" />}
-                    <text x="26" y={y + 4} class={`er-spalte ${pk ? 'er-spalte--pk' : ''}`}>
-                      {name}
-                    </text>
-                    <text x={B - (pk && fk ? 16 : 8)} y={y + 4} text-anchor="end" class="er-typ">
-                      {typ}
-                    </text>
-                  </g>
-                );
-              })}
-            </g>
-          ))}
-        </svg>
-      </div>
+    <section class="flaeche sql-situation">
+      <div class="ueberschrift-klein ueberschrift-klein--akzent">Ausgangssituation</div>
+      <p class="sql-situation__text">
+        Die Systemhaus Rheinblick GmbH in Mainz vertreibt IT-Hardware und Software an Geschäftskunden. Kunden, Artikel, Bestellungen und Mitarbeiter werden in einer
+        relationalen Datenbank verwaltet.
+      </p>
+      <div class="ueberschrift-klein">Auszug aus dem Datenbankmodell</div>
+      <ul class="sql-modell">
+        {schema.map((t) => (
+          <li key={t.name}>
+            <strong>{t.name}</strong> (
+            {t.spalten.map(([name, typ, marke], i) => (
+              <span key={name} title={typ}>
+                {i > 0 && ', '}
+                {marke.includes('FK') && <span class="sql-modell__fk">↑</span>}
+                {marke.includes('PK') ? <u>{name}</u> : name}
+              </span>
+            ))}
+            )
+          </li>
+        ))}
+      </ul>
+      <p class="gedaempft sql-situation__legende">
+        <u>unterstrichen</u> = Primärschlüssel · <span class="sql-modell__fk">↑</span> = Fremdschlüssel
+      </p>
     </section>
   );
 }

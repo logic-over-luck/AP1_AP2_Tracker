@@ -4,7 +4,6 @@ import { createRequire } from 'node:module';
 import { erstelleEngine, ausfuehren, pruefeAufgabe, fehlerText } from '../src/bereiche/trainer/sql/engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht, zerlegeRecht } from '../src/bereiche/trainer/sql/aufgaben.js';
 import { GRUNDLAGEN } from '../src/bereiche/trainer/sql/grundlagen.js';
-import { setzeEin, genannteTabellen } from '../src/bereiche/trainer/sql/einfuegen.js';
 
 const require = createRequire(import.meta.url);
 const initSqlJs = require('sql.js');
@@ -110,40 +109,6 @@ test('Grundlagen-Lexikon: jeder Begriff hat eine Erklärung, keine doppelten Beg
     assert.ok(alle.includes(muss), muss);
 });
 
-test('Antippen: Leerzeichen und Kommas kommen von selbst', () => {
-  const spalten = new Set(['bezeichnung', 'preis', 'ort']);
-  let t = '';
-  let p = 0;
-  const tipp = (w, zurueck = 0) => ({ text: t, pos: p } = setzeEin(t, p, p, w, { zurueck, spalten }));
-  for (const w of ['SELECT', 'bezeichnung', 'preis', 'FROM', 'artikel', 'WHERE', 'preis', '>', '300', ';']) tipp(w);
-  assert.equal(t, 'SELECT bezeichnung, preis FROM artikel WHERE preis > 300;\n');
-  t = '';
-  p = 0;
-  tipp('SELECT');
-  tipp('COUNT()', 1);
-  tipp('preis');
-  assert.equal(t, 'SELECT COUNT(preis)');
-  // ORDER BY mit zwei Spalten → Komma, WHERE ohne
-  t = 'SELECT * FROM kunde ORDER BY ort';
-  p = t.length;
-  tipp('preis');
-  assert.equal(t, 'SELECT * FROM kunde ORDER BY ort, preis ');
-  assert.deepEqual(genannteTabellen('SELECT * FROM kunde k JOIN bestellung b', ['kunde', 'bestellung', 'artikel']), ['bestellung', 'kunde']);
-});
-
-test('ER-Diagramm: jeder Fremdschlüssel hat eine Linie, Kästen überlappen nicht', async () => {
-  const { erLayout } = await import('../src/bereiche/trainer/sql/erLayout.js');
-  const { schemaAus } = await import('../src/bereiche/trainer/sql/engine.js');
-  const db = engine.neueDb();
-  const schema = schemaAus(db);
-  db.close();
-  const er = erLayout(schema);
-  assert.equal(er.kaesten.length, schema.length);
-  const fks = schema.flatMap((t) => t.spalten.filter(([, , m]) => m.includes('FK')));
-  assert.equal(er.linien.length, fks.length);
-  for (const a of er.kaesten)
-    for (const b of er.kaesten)
-      if (a !== b) assert.ok(a.x + 190 <= b.x || b.x + 190 <= a.x || a.y + a.h <= b.y || b.y + b.h <= a.y, `${a.name} überlappt ${b.name}`);
-  // Neue Tabelle im Freien Labor kommt dazu
-  assert.equal(erLayout([...schema, { name: 'wartung', zeilen: 0, spalten: [['wartung_id', 'INTEGER', 'PK'], ['artikel_id', 'INTEGER', 'FK → artikel']] }]).linien.length, fks.length + 1);
+test('Jede Aufgabe hat Punkte wie in der Prüfung', () => {
+  for (const a of [...SQL_AUFGABEN, ...RECHTE_AUFGABEN]) assert.ok(Number.isInteger(a.punkte) && a.punkte >= 1 && a.punkte <= 10, a.id);
 });
