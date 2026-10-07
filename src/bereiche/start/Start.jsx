@@ -147,7 +147,7 @@ function Fortschritt({ i, erledigt, gesamt, bloeckeFertig, bloecke, termin, t, o
   const anteil = gesamt ? erledigt / gesamt : 0;
   const imPlan = t.offen === 0 || (t.tage > 0 && t.dieseWoche >= t.jeWoche);
   return (
-    <section class="flaeche kachel" aria-label="Fortschritt und Prüfung" style={{ '--i': i }}>
+    <section class="flaeche kachel kachel--breit" aria-label="Fortschritt und Prüfung" style={{ '--i': i }}>
       <div class="kachel__kopf">
         <Icon name="trending-up" groesse={14} /> Fortschritt
       </div>

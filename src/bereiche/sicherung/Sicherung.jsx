@@ -28,9 +28,9 @@ export function SicherungsKnopf() {
   const mahnen = alleEreignisse().length > 20 && (tage === null || tage >= 7);
   return (
     <>
-      <button class={`knopf knopf--zweit knopf--s sicherung-knopf ${mahnen ? 'sicherung-knopf--mahnen' : ''}`} onClick={() => setOffen(true)} data-tip={letzte ? `Letzte Sicherung: ${datumKurz(tagVon(letzte))}` : 'Noch keine Sicherung'} data-tip-unten="">
+      <button class={`knopf knopf--zweit knopf--s sicherung-knopf ${mahnen ? 'sicherung-knopf--mahnen' : ''}`} onClick={() => setOffen(true)} aria-label="Sicherung" data-tip={letzte ? `Letzte Sicherung: ${datumKurz(tagVon(letzte))}` : 'Noch keine Sicherung'} data-tip-unten="">
         <Icon name="hard-drive-download" groesse={14} />
-        Sicherung
+        <span class="kopf__text">Sicherung</span>
         {mahnen && <span class="sicherung-knopf__punkt" aria-label="Sicherung empfohlen" />}
       </button>
       <SicherungsDialog offen={offen} onSchliessen={() => setOffen(false)} />

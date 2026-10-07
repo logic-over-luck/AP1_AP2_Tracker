@@ -131,7 +131,7 @@ export function FokusTimer({ raum, kompakt, i }) {
 function FokusKompakt({ t, raum, i }) {
   const startklar = t.timer.start === null;
   return (
-    <section class={`flaeche kachel fokus-kompakt ${t.laeuft ? 'fokus-kompakt--laeuft' : ''}`} aria-label="Fokus-Timer" style={{ '--i': i }}>
+    <section class={`flaeche kachel kachel--breit fokus-kompakt ${t.laeuft ? 'fokus-kompakt--laeuft' : ''}`} aria-label="Fokus-Timer" style={{ '--i': i }}>
       <div class="kachel__kopf">
         <Icon name="timer" groesse={14} /> Fokus-Timer
         <span class="kachel__rang">{t.laeuft ? 'läuft' : t.pausiert ? 'pausiert' : 'bereit'}</span>

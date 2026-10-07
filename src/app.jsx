@@ -92,8 +92,8 @@ export function App() {
           </nav>
           <div class="kopf__rechts">
             <TimerPille raum={raum} />
-            <button class="kopf__status knopf knopf--geist knopf--s" onClick={() => window.dispatchEvent(new Event('palette-oeffnen'))}>
-              <Icon name="search" groesse={14} /> Suchen <kbd class="kbd">Strg K</kbd>
+            <button class="kopf__status knopf knopf--geist knopf--s" aria-label="Suchen" onClick={() => window.dispatchEvent(new Event('palette-oeffnen'))}>
+              <Icon name="search" groesse={14} /> <span class="kopf__text">Suchen</span> <kbd class="kbd">Strg K</kbd>
             </button>
             <SicherungsKnopf />
           </div>

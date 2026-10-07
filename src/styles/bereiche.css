@@ -2047,3 +2047,108 @@ mark.treffer {
     animation: none;
   }
 }
+
+/* ================= Handy und Touch ================= */
+/* Nie seitlich wackeln: nichts darf die Seite breiter machen als den Bildschirm
+   (clip statt hidden, damit die klebende Kopfzeile weiter funktioniert) */
+html,
+body {
+  overflow-x: clip;
+}
+/* Ohne Maus: Tastatur-Hinweise in Knöpfen sind nutzlos, Hover-Tooltips auch */
+@media (hover: none) {
+  [data-tip]::after {
+    display: none;
+  }
+  .knopf .kbd,
+  .kopf .kbd,
+  .bewertung .kbd,
+  .reiter .kbd,
+  .lernkarte .kbd {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  /* Der nächste Schritt zuerst */
+  .cockpit .kachel--fokus {
+    order: -1;
+  }
+  /* iPhone zoomt in Felder unter 16 px hinein */
+  .feld,
+  input.feld,
+  select.feld,
+  textarea.feld {
+    font-size: 16px;
+  }
+  /* Diagramme lesbar lassen: lieber seitlich wischen als winzig */
+  .dg-huelle .dg {
+    min-width: 600px;
+  }
+  .dg-huelle {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 560px) {
+  .kopf__text,
+  .knopf .kbd,
+  .kopf .kbd,
+  .bewertung .kbd {
+    display: none;
+  }
+  .kopf .knopf--s {
+    padding-left: var(--s-2);
+    padding-right: var(--s-2);
+  }
+  .pfad {
+    min-width: 0;
+    overflow: hidden;
+  }
+  .pfad__teil {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cockpit__raster {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-2);
+  }
+  .cockpit .kachel--fokus,
+  .cockpit .kachel--breit {
+    grid-column: 1 / -1;
+  }
+  .kachel {
+    padding: var(--s-3);
+  }
+  .kachel--fokus {
+    padding: var(--s-4);
+  }
+  .kachel--fokus .fokus-karte__titel {
+    font-size: var(--t-xl);
+  }
+  .kachel__neben,
+  .kachel__rang {
+    display: none;
+  }
+  .kachel__wert {
+    font-size: var(--t-xl);
+  }
+  .cockpit__gruss {
+    font-size: var(--t-xl);
+  }
+  /* Lernkarten: drei Bewertungen nebeneinander */
+  .bewertung {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-2);
+  }
+  .bewertung__knopf {
+    padding: var(--s-2) var(--s-1);
+  }
+  .bewertung__titel {
+    font-size: var(--t-s);
+    text-align: center;
+  }
+  .bewertung__wann {
+    font-size: 10px;
+    text-align: center;
+  }
+}

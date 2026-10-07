@@ -35,7 +35,8 @@ fs.mkdirSync(fotos, { recursive: true });
 const datei = pathToFileURL(path.join(wurzel, 'Lernstudio.html')).href;
 
 const browser = await playwright.chromium.launch({ executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? undefined : undefined });
-const context = await browser.newContext({ viewport: { width: Number(process.env.BREITE ?? 1440), height: Number(process.env.HOEHE ?? 900) }, deviceScaleFactor: 1 });
+const handy = process.env.HANDY === '1';
+const context = await browser.newContext({ viewport: { width: Number(process.env.BREITE ?? (handy ? 390 : 1440)), height: Number(process.env.HOEHE ?? (handy ? 844 : 900)) }, deviceScaleFactor: 1, isMobile: handy, hasTouch: handy });
 const page = await context.newPage();
 // Intro nur zeigen, wenn ausdrücklich gewünscht (INTRO=1) – sonst verdeckt es die Fotos
 if (process.env.INTRO !== '1') await page.addInitScript(() => sessionStorage.setItem('lernstudio.intro', '1'));
