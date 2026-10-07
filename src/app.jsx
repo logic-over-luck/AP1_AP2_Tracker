@@ -8,7 +8,7 @@ import { setzeEinstellung, einstellung } from './lernstand/einstellungen.js';
 import { kartenZustand, blockZustand } from './lernstand/ableiten.js';
 import { Icon, SymbolKnopf, Balken } from './ui/bausteine.jsx';
 import { Meldungen, BestaetigungsDialog, melde } from './ui/dialog.jsx';
-import { trainerIn } from './bereiche/trainer/verzeichnis.js';
+import { trainerIn, trainerById } from './bereiche/trainer/verzeichnis.js';
 import { Start } from './bereiche/start/Start.jsx';
 import { Lernen } from './bereiche/lernen/Lernen.jsx';
 import { Karten } from './bereiche/karten/Karten.jsx';
@@ -46,6 +46,8 @@ export function App() {
   }, []);
 
   let titel = BEREICH_NAMEN[route.bereich] ?? '';
+  if (route.bereich === 'trainer' && route.unter) titel = trainerById(route.unter)?.name ?? titel;
+  if (route.bereich === 'karten' && route.unter === 'sitzung') titel = 'Lernkarten · Sitzung';
   let bereich;
   switch (route.bereich) {
     case 'lernen':

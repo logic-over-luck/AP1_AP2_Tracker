@@ -7,10 +7,12 @@ import { Icon, Leer, Knopf } from '../../ui/bausteine.jsx';
 import { TRAINER, trainerById, trainerIn, modiIn } from './verzeichnis.js';
 
 import { ZahlenTrainer } from './zahlen/Zahlen.jsx';
+import { SubnetzTrainer } from './subnetz/Subnetz.jsx';
 
 // Komponenten je Trainer. Ein neuer Trainer: Eintrag in verzeichnis.js + Komponente hier.
 const KOMPONENTEN = {
   zahlen: ZahlenTrainer,
+  subnetz: SubnetzTrainer,
 };
 
 export function TrainerBereich({ raum, trainerId, params }) {
