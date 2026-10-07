@@ -1161,76 +1161,48 @@ button.codezeile:hover {
 }
 .sql-schema__hilfe {
   font-size: var(--t-xs);
+  line-height: 1.5;
 }
-.sql-schema__tabelle + .sql-schema__tabelle {
-  border-top: 1px solid var(--linie);
-  padding-top: var(--s-2);
-}
-.sql-schema__kopf {
-  display: flex;
-  align-items: center;
-  gap: var(--s-1);
-}
-.sql-schema__pfeil {
-  display: grid;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: var(--r-1);
-  color: var(--text-3);
-}
-.sql-schema__name {
-  font-weight: 600;
-  font-size: var(--t-m);
-  color: var(--akzent);
-}
-.sql-schema__zahl {
-  margin-left: auto;
-  font-family: var(--mono);
-  font-size: var(--t-xs);
-}
-.sql-schema__spalten {
-  list-style: none;
-  margin: var(--s-1) 0 0;
-  padding: 0 0 0 22px;
+.sql-schema__tabelle {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 12.5px;
 }
-.sql-schema__spalten li {
+.sql-schema__tabelle + .sql-schema__tabelle {
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--linie-1, var(--linie-2));
+}
+.sql-schema__name {
+  align-self: flex-start;
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--akzent);
+}
+.sql-schema__spalten {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  column-gap: var(--s-2);
+  gap: 2px 10px;
 }
 .sql-schema__spalte {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s-1);
+  font-size: 11.5px;
+  color: var(--text-2);
+  font-feature-settings: 'calt' 0, 'liga' 0;
+}
+.sql-schema__spalte--pk {
+  text-decoration: underline;
+  text-underline-offset: 3px;
   color: var(--text);
 }
 .sql-schema__name:hover,
 .sql-schema__spalte:hover {
-  text-decoration: underline;
-}
-.sql-schema__pk {
-  font-size: 9px;
-  font-weight: 700;
-  padding: 0 3px;
+  color: var(--text);
+  background: var(--flaeche-2);
   border-radius: 3px;
-  background: rgba(240, 168, 90, 0.18);
-  color: var(--warn);
-}
-.sql-schema__typ {
-  color: var(--text-4);
-  font-family: var(--mono);
-  font-size: 11px;
 }
 .sql-schema__fk {
-  flex-basis: 100%;
-  color: var(--info);
-  font-size: 11px;
+  font-size: 10.5px;
+  color: var(--warn);
+  margin-left: 1px;
 }
 .sql-beispiele {
   display: flex;
@@ -1476,16 +1448,17 @@ button.codezeile:hover {
   }
 }
 
-/* SQL: Grundlagen */
+/* SQL: Grundlagen als Lexikon */
 .sql-grund {
   display: flex;
   flex-direction: column;
-  gap: var(--s-5);
+  gap: var(--s-4);
 }
 .sql-grund__kopf {
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
 }
 .sql-grund__klauseln {
   display: flex;
@@ -1496,107 +1469,76 @@ button.codezeile:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--s-2);
-  padding: 6px 12px 6px 6px;
+  padding: 4px 12px 4px 4px;
   border-radius: var(--r-rund);
   background: var(--flaeche-2);
   border: 1px solid var(--linie-2);
   font-weight: 600;
+  font-size: var(--t-s);
   color: var(--akzent);
 }
 .sql-grund__klausel-nr {
   display: grid;
   place-items: center;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--akzent-weich);
   font-size: var(--t-xs);
   font-family: var(--mono);
 }
-.sql-grund__satz {
-  font-size: var(--t-s);
-}
 .sql-grund__gruppen {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--s-2);
-}
-.sql-grund__gruppe {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: var(--s-2) var(--s-3);
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-5);
   font-size: var(--t-s);
+  color: var(--text-2);
 }
 .sql-grund__gruppe strong {
   color: var(--akzent);
 }
-.sql-grund__nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2);
-  position: sticky;
-  top: 64px;
-  z-index: 2;
-  padding: var(--s-2) 0;
-  background: var(--bg);
-}
-.sql-grund__nav .sql-baustein {
-  font-family: var(--schrift);
-  text-decoration: none;
-}
-.sql-grund__thema {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-3);
-  scroll-margin-top: 120px;
-}
-.sql-grund__titel {
-  font-size: var(--t-l, 18px);
-  font-weight: 650;
-}
 .sql-grund__raster {
+  columns: 2 420px;
+  column-gap: var(--s-4);
+}
+.sql-lexikon {
+  break-inside: avoid;
+  margin-bottom: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+}
+.sql-lexikon__titel {
+  font-size: var(--t-m);
+  font-weight: 650;
+  margin-bottom: var(--s-2);
+}
+.sql-lexikon__liste {
+  margin: 0;
+}
+.sql-lexikon__eintrag {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  grid-template-columns: 150px minmax(0, 1fr);
   gap: var(--s-3);
-  align-items: start;
+  padding: 6px 0;
+  border-top: 1px solid var(--linie-1, var(--linie-2));
+  font-size: var(--t-s);
 }
-.sql-befehl {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-4);
-  min-width: 0;
+.sql-lexikon__eintrag:first-child {
+  border-top: 0;
 }
-.sql-befehl__name {
-  font-size: var(--t-m);
-  font-weight: 700;
+.sql-lexikon__eintrag dt {
+  font-weight: 600;
   color: var(--akzent);
+  font-feature-settings: 'calt' 0, 'liga' 0;
 }
-.sql-befehl__text {
-  font-size: var(--t-m);
+.sql-lexikon__eintrag dd {
+  margin: 0;
   color: var(--text-2);
 }
-.sql-befehl__syntax,
-.sql-befehl__beispiel {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-.sql-befehl .sql-code {
-  margin: 0;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  font-size: 12.5px;
-}
-.sql-befehl__knoepfe {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2);
-  margin-top: var(--s-1);
+@media (max-width: 560px) {
+  .sql-lexikon__eintrag {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
 }
 
 /* ---------- Modellieren: Diagramme ---------- */

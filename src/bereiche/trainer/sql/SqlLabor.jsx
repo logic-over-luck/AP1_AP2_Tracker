@@ -5,7 +5,6 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { TrainerSeite, Spickzettel } from '../rahmen/Uebung.jsx';
 import { Icon, Knopf, Kbd, Rich, Marke, Aufklapp } from '../../../ui/bausteine.jsx';
-import { geheZu } from '../../../router.js';
 import { erfasse, useLernstand } from '../../../lernstand/store.js';
 import { einstellung, setzeEinstellung } from '../../../lernstand/einstellungen.js';
 import { ladeEngine } from './laden.js';
@@ -73,7 +72,7 @@ function Labor({ modus, startAufgabe }) {
         <Icon name="database" groesse={18} /> Datenbank wird gestartet …
       </div>
     );
-  if (modus.id === 'grundlagen') return <Grundlagen engine={engine} />;
+  if (modus.id === 'grundlagen') return <Grundlagen />;
   if (modus.id === 'frei') return <FreiesLabor engine={engine} />;
   return <AufgabenLabor engine={engine} modus={modus} startAufgabe={startAufgabe} />;
 }
@@ -295,7 +294,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             onKeyDown={taste}
           />
         </label>
-        <Bausteine art={rechte ? 'rechte' : aufgabe.modus} schema={basis.schema} text={text} einfuegen={einfuegen} />
+        <Bausteine art={rechte ? 'rechte' : aufgabe.modus} schema={basis.schema} text={text} start={aufgabe.loesung} einfuegen={einfuegen} />
         <div class="aufgabe__knoepfe">
           {!rechte && (
             <Knopf variante="zweit" icon="play" onClick={ausfuehrenJetzt}>
@@ -507,11 +506,15 @@ function useEinfuegen(editor, text, setText, schema) {
   };
 }
 
-function Bausteine({ art, schema, text, einfuegen }) {
+function Bausteine({ art, schema, text, start = '', einfuegen }) {
   const tabellen = (schema ?? []).map((t) => t.name);
   const genannt = genannteTabellen(text, tabellen);
   const [gewaehlt, setGewaehlt] = useState(null);
-  const aktiv = gewaehlt && tabellen.includes(gewaehlt) ? gewaehlt : genannt[0] ?? null;
+  // Schreibt man eine andere Tabelle in den Editor, folgen die Spalten ihr
+  useEffect(() => setGewaehlt(null), [genannt[0]]);
+  // Spalten sind immer sichtbar: angetippte Tabelle, sonst die zuletzt im Editor genannte,
+  // sonst die Tabelle, um die es in der Aufgabe geht, sonst die erste
+  const aktiv = (gewaehlt && tabellen.includes(gewaehlt) ? gewaehlt : null) ?? genannt[0] ?? genannteTabellen(start, tabellen).at(-1) ?? tabellen[0] ?? null;
   const spalten = aktiv ? schema.find((t) => t.name === aktiv).spalten : [];
   return (
     <div class="sql-bausteine" aria-label="Bausteine zum Antippen">
@@ -550,12 +553,11 @@ function Bausteine({ art, schema, text, einfuegen }) {
       )}
       {tabellen.length > 0 && (
         <div class="sql-bausteine__zeile">
-          <span class="sql-bausteine__titel">Spalten</span>
+          <span class="sql-bausteine__titel">Spalten {aktiv}</span>
           <div class="sql-bausteine__reihe">
           {aktiv ? (
             spalten.map(([n, , marke]) => (
-              <button key={n} type="button" class="sql-baustein sql-baustein--spalte" onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(n)}>
-                {marke.includes('PK') && <span class="sql-schema__pk">PK</span>}
+              <button key={n} type="button" class={`sql-baustein sql-baustein--spalte ${marke.includes('PK') ? 'sql-schema__spalte--pk' : ''}`} title={marke || undefined} onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(n)}>
                 {n}
               </button>
             ))
@@ -569,13 +571,13 @@ function Bausteine({ art, schema, text, einfuegen }) {
   );
 }
 
-// ---------- Grundlagen ----------
+// ---------- Grundlagen: kleines Lexikon ----------
 
-function Grundlagen({ engine }) {
+function Grundlagen() {
   return (
     <div class="sql-grund">
-      <section class="flaeche flaeche--gross sql-grund__kopf">
-        <div class="ueberschrift-klein ueberschrift-klein--akzent">So ist eine Abfrage aufgebaut</div>
+      <section class="flaeche sql-grund__kopf">
+        <div class="ueberschrift-klein ueberschrift-klein--akzent">Reihenfolge in einer Abfrage</div>
         <div class="sql-grund__klauseln">
           {KLAUSELN.map((k, i) => (
             <span key={k} class="sql-grund__klausel">
@@ -584,83 +586,30 @@ function Grundlagen({ engine }) {
             </span>
           ))}
         </div>
-        <p class="gedaempft sql-grund__satz">Immer in dieser Reihenfolge. Nur SELECT und FROM sind Pflicht, der Rest kommt dazu, wenn man ihn braucht.</p>
         <div class="sql-grund__gruppen">
           {BEFEHLSGRUPPEN.map((g) => (
-            <div key={g.kurz} class="sql-grund__gruppe">
-              <strong class="mono">{g.kurz}</strong>
-              <span>{g.name}</span>
-              <span class="gedaempft mono">{g.befehle}</span>
-            </div>
+            <span key={g.kurz} class="sql-grund__gruppe">
+              <strong class="mono">{g.kurz}</strong> {g.name}: <span class="mono gedaempft">{g.befehle}</span>
+            </span>
           ))}
         </div>
       </section>
-      <nav class="sql-grund__nav" aria-label="Themen">
+      <div class="sql-grund__raster">
         {GRUNDLAGEN.map((g) => (
-          <a key={g.id} href={`#sql-${g.id}`} class="sql-baustein" onClick={(e) => (e.preventDefault(), document.getElementById(`sql-${g.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }))}>
-            {g.titel}
-          </a>
+          <section key={g.id} class="flaeche sql-lexikon">
+            <h2 class="sql-lexikon__titel">{g.titel}</h2>
+            <dl class="sql-lexikon__liste">
+              {g.begriffe.map(([begriff, erklaerung]) => (
+                <div key={begriff} class="sql-lexikon__eintrag">
+                  <dt class="mono">{begriff}</dt>
+                  <dd>{erklaerung}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
         ))}
-      </nav>
-      {GRUNDLAGEN.map((g) => (
-        <section key={g.id} id={`sql-${g.id}`} class="sql-grund__thema">
-          <h2 class="sql-grund__titel">{g.titel}</h2>
-          <div class="sql-grund__raster">
-            {g.befehle.map((b) => (
-              <BefehlKarte key={b.name} befehl={b} engine={engine} />
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
-function BefehlKarte({ befehl, engine }) {
-  const [lauf, setLauf] = useState(null);
-  const ausprobieren = () => {
-    if (lauf) return setLauf(null);
-    const db = engine.neueDb();
-    try {
-      setLauf(ausfuehren(db, befehl.beispiel));
-    } catch (e) {
-      setLauf({ fehler: fehlerText(e) });
-    } finally {
-      db.close();
-    }
-  };
-  const imLabor = () => {
-    merkeEntwurf('frei', befehl.beispiel);
-    geheZu('AP2', 'trainer', 'sql', { modus: 'frei' });
-  };
-  return (
-    <article class="flaeche sql-befehl">
-      <h3 class="sql-befehl__name mono">{befehl.name}</h3>
-      <p class="sql-befehl__text">{befehl.text}</p>
-      <div class="sql-befehl__syntax">
-        <span class="ueberschrift-klein">Aufbau</span>
-        <SqlCode text={befehl.syntax} />
       </div>
-      {befehl.beispiel && (
-        <div class="sql-befehl__beispiel">
-          <span class="ueberschrift-klein">Beispiel</span>
-          <SqlCode text={befehl.beispiel} />
-          {befehl.lauf !== false ? (
-            <div class="sql-befehl__knoepfe">
-              <Knopf variante="zweit" groesse="s" icon={lauf ? 'x' : 'play'} onClick={ausprobieren}>
-                {lauf ? 'Ergebnis ausblenden' : 'Ausprobieren'}
-              </Knopf>
-              <Knopf variante="geist" groesse="s" icon="pencil" onClick={imLabor}>
-                Im Labor bearbeiten
-              </Knopf>
-            </div>
-          ) : (
-            <p class="gedaempft sql-block__fuss">Die Übungsdatenbank kennt keine Benutzer – üben kannst du das im Reiter „Benutzer & Rechte".</p>
-          )}
-          {lauf && <LaufAnzeige lauf={lauf} modus="frei" klein />}
-        </div>
-      )}
-    </article>
+    </div>
   );
 }
 
@@ -743,50 +692,35 @@ export function ErgebnisTabelle({ ergebnis }) {
   );
 }
 
+// Kompakt: je Tabelle eine Zeile mit ihren Spalten. Typ beim Darüberfahren, PK und FK markiert.
 function SchemaAnsicht({ schema, einfuegen }) {
-  const [offen, setOffen] = useState(() => new Set());
-  const umschalten = (n) => {
-    const s = new Set(offen);
-    s.has(n) ? s.delete(n) : s.add(n);
-    setOffen(s);
-  };
   return (
     <aside class="flaeche sql-schema" aria-label="Datenbankschema">
       <div class="zeile">
         <Icon name="database" groesse={15} />
         <span class="ueberschrift-klein wachsen">Schema</span>
       </div>
-      <p class="gedaempft sql-schema__hilfe">Klick auf einen Namen fügt ihn in den Editor ein. PK = Primärschlüssel, FK = Fremdschlüssel.</p>
-      {schema.map((t) => {
-        const auf = !offen.has(t.name);
-        return (
-          <div key={t.name} class="sql-schema__tabelle">
-            <div class="sql-schema__kopf">
-              <button class="sql-schema__pfeil" aria-expanded={auf} aria-label={`${t.name} ${auf ? 'zuklappen' : 'aufklappen'}`} onClick={() => umschalten(t.name)}>
-                <Icon name={auf ? 'chevron-down' : 'chevron-right'} groesse={14} />
-              </button>
-              <button class="sql-schema__name mono" onClick={() => einfuegen(t.name)}>
-                {t.name}
-              </button>
-              <span class="gedaempft sql-schema__zahl">{t.zeilen}</span>
-            </div>
-            {auf && (
-              <ul class="sql-schema__spalten">
-                {t.spalten.map(([name, typ, marke]) => (
-                  <li key={name}>
-                    <button class="sql-schema__spalte mono" onClick={() => einfuegen(name)}>
-                      {marke.includes('PK') && <span class="sql-schema__pk" title="Primärschlüssel">PK</span>}
-                      {name}
-                    </button>
-                    <span class="sql-schema__typ">{typ}</span>
-                    {marke.includes('FK') && <span class="sql-schema__fk">{marke.replace(/^PK, /, '')}</span>}
-                  </li>
-                ))}
-              </ul>
-            )}
+      {schema.map((t) => (
+        <div key={t.name} class="sql-schema__tabelle">
+          <button class="sql-schema__name mono" title={`${t.zeilen} Zeilen – antippen zum Einfügen`} onClick={() => einfuegen(t.name)}>
+            {t.name}
+          </button>
+          <div class="sql-schema__spalten">
+            {t.spalten.map(([name, typ, marke]) => {
+              const fk = marke.match(/FK → (\w+)/)?.[1];
+              return (
+                <button key={name} class={`sql-schema__spalte mono ${marke.includes('PK') ? 'sql-schema__spalte--pk' : ''}`} title={`${typ}${marke ? ' · ' + marke : ''}`} onClick={() => einfuegen(name)}>
+                  {name}
+                  {fk && <span class="sql-schema__fk">→{fk}</span>}
+                </button>
+              );
+            })}
           </div>
-        );
-      })}
+        </div>
+      ))}
+      <p class="gedaempft sql-schema__hilfe">
+        <span class="sql-schema__spalte--pk mono">unterstrichen</span> = Primärschlüssel · <span class="sql-schema__fk">→tabelle</span> = Fremdschlüssel
+      </p>
     </aside>
   );
 }

@@ -127,10 +127,11 @@ nächsten offenen Punkt weiter.
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
-- **SQL-Labor:** Erster Reiter „Grundlagen“ mit allen Befehlen aus dem Katalog-Anhang (Aufbau, Beispiel zum Ausprobieren,
-  „Im Labor bearbeiten“). Aufgaben werden über eine kompakte Leiste gewählt (Themen + Nummern). Unter dem Editor
-  liegen Bausteine zum Antippen (Befehle, Bedingungen, Funktionen, Tabellen, Spalten der gewählten Tabelle);
-  Leerzeichen und Kommas zwischen Spalten setzt die App selbst.
+- **SQL-Labor:** Erster Reiter „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang (Begriff + eine
+  Zeile Erklärung). Aufgaben werden über eine kompakte Leiste gewählt (Themen + Nummern). Unter dem Editor liegen
+  Bausteine zum Antippen (Befehle, Bedingungen, Funktionen, Tabellen und immer die Spalten einer Tabelle – zuerst
+  die der Aufgabe); Leerzeichen und Kommas zwischen Spalten setzt die App selbst. Das Schema rechts ist kompakt
+  (eine Tabelle je Block, PK unterstrichen, FK mit Pfeil).
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine

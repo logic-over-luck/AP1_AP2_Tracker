@@ -101,23 +101,13 @@ test('Schema-Ansicht liest PK, FK und Änderungen', async () => {
   db.close();
 });
 
-test('Grundlagen: jedes Beispiel läuft auf der Übungsdatenbank und liefert ein Ergebnis', () => {
-  for (const g of GRUNDLAGEN)
-    for (const b of g.befehle) {
-      if (!b.beispiel || b.lauf === false) continue;
-      const db = engine.neueDb();
-      try {
-        if (b.name === 'Constraints') {
-          // Absicht: der CHECK-Constraint lehnt den Wert ab
-          assert.throws(() => ausfuehren(db, b.beispiel), /CHECK/i);
-          continue;
-        }
-        const r = ausfuehren(db, b.beispiel);
-        assert.ok(r.ergebnis && r.ergebnis.zeilen.length > 0, `${b.name}: kein Ergebnis`);
-      } finally {
-        db.close();
-      }
-    }
+test('Grundlagen-Lexikon: jeder Begriff hat eine Erklärung, keine doppelten Begriffe', () => {
+  const alle = GRUNDLAGEN.flatMap((g) => g.begriffe.map(([b]) => b));
+  assert.equal(new Set(alle).size, alle.length);
+  for (const g of GRUNDLAGEN) for (const [b, e] of g.begriffe) assert.ok(b && e && e.length > 10, b);
+  // Die Kernbefehle des Katalogs stehen drin
+  for (const muss of ['SELECT … FROM', 'WHERE', 'ORDER BY', 'INNER JOIN … ON', 'LEFT JOIN', 'GROUP BY', 'HAVING', 'UNION', 'UPDATE … SET', 'DELETE FROM', 'CREATE TABLE', 'ALTER TABLE', 'CREATE INDEX', 'GRANT', 'REVOKE'])
+    assert.ok(alle.includes(muss), muss);
 });
 
 test('Antippen: Leerzeichen und Kommas kommen von selbst', () => {
