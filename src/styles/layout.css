@@ -287,21 +287,10 @@
   margin-top: 2px;
 }
 
-/* Breite Fenster: Leiste lässt sich einklappen (Knopf links in der Kopfzeile) */
-@media (min-width: 901px) {
-  .app {
-    transition: grid-template-columns var(--dauer-lang) var(--kurve);
-  }
-  .app[data-leiste-zu='true'] {
-    grid-template-columns: 0 minmax(0, 1fr);
-  }
-  .app[data-leiste-zu='true'] .leiste {
-    visibility: hidden;
-    overflow: hidden;
-    padding-left: 0;
-    padding-right: 0;
-    border-right: 0;
-  }
+/* Der Menü-Knopf gibt es nur auf schmalen Fenstern (Leiste als Schublade).
+   Doppelte Klasse, damit .symbolknopf das display nicht überschreibt. */
+.symbolknopf.kopf__menue {
+  display: none;
 }
 
 /* Schmale Fenster: Leiste wird zur Schublade */
@@ -320,6 +309,9 @@
   }
   .app[data-leiste-offen='true'] .leiste {
     transform: none;
+  }
+  .symbolknopf.kopf__menue {
+    display: inline-grid;
   }
   .kopf,
   .inhalt {
