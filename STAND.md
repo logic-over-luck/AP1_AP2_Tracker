@@ -138,6 +138,13 @@ nächsten offenen Punkt weiter.
   Formulierungen). Die Übungsdatenbank kennt zusätzlich die Belegsatz-Funktionen WEEKDAY, HOUR, MINUTE, STDDEV,
   VARIANCE und DATEADD/DATEDIFF mit Datumsteil ohne Anführungszeichen. MODIFY COLUMN und nachträgliches ADD FOREIGN
   KEY kann SQLite nicht – im Nachschlagewerk vermerkt.
+- **Probeprüfung (im Aufbau):** eigener Bereich je Lernraum (`src/bereiche/pruefung/`). Bauplan aus der Auswertung echter
+  Prüfungen (AP1 F24–2026, AP2 PB1/PB2 S24–S26, WiSo S24–S26; nur Aufbau, Typen, Punkte und Themen übernommen, keine
+  Prüfungsinhalte im Repository). Prüfungssätze = eigene fiktive Firma mit 4 Aufgaben/100 P bzw. 30 WiSo-Fragen
+  (Format: `src/bereiche/pruefung/README.md`, Prüfung mit `node tools/pruefe-satz.mjs`). „Gemischt“ zieht gewichtet nach
+  Wichtigkeit und Bauplan (PB2: Algorithmus + SQL, PB1: Modell), Uhr mit Pause, WiSo automatisch bewertet (Teilpunkte bei
+  Mehrfachauswahl/Zuordnung), sonst Selbstbewertung mit Musterlösung und Punkteschema; Ergebnis mit IHK-Note als Ereignis
+  `pruefung` im Lernstand (XP, Schwächen je Stichpunkt). Offen: Aufgabenvorrat.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine

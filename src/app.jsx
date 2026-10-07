@@ -14,13 +14,14 @@ import { Karten } from './bereiche/karten/Karten.jsx';
 import { Glossar } from './bereiche/glossar/Glossar.jsx';
 import { Hilfe } from './bereiche/hilfe/Hilfe.jsx';
 import { TrainerBereich } from './bereiche/trainer/index.jsx';
+import { PruefungBereich } from './bereiche/pruefung/Pruefung.jsx';
 import { SicherungsKnopf } from './bereiche/sicherung/Sicherung.jsx';
 import { Feier } from './bereiche/feier/Feier.jsx';
 import { Befehlspalette } from './bereiche/palette/Befehlspalette.jsx';
 import { Intro, spieleIntro } from './bereiche/intro/Intro.jsx';
 import { TimerPille } from './bereiche/start/FokusTimer.jsx';
 
-const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
+const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', pruefung: 'Probeprüfung', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
 
 export function App() {
   const route = useRoute();
@@ -57,6 +58,9 @@ export function App() {
       break;
     case 'karten':
       bereich = <Karten raum={raum} unter={route.unter} params={route.params} />;
+      break;
+    case 'pruefung':
+      bereich = <PruefungBereich raum={raum} />;
       break;
     case 'trainer':
       bereich = <TrainerBereich raum={raum} trainerId={route.unter} params={route.params} />;
@@ -159,6 +163,7 @@ function Leiste({ raum, route, stand }) {
         <div class="nav-gruppe__titel ueberschrift-klein">Dein Arbeitsplatz</div>
         {navPunkt({ bereich: "lernen", icon: "list-checks", text: "Lernplan", zahl: faelligeBloecke || null, zahlTon: "faellig" })}
         {navPunkt({ bereich: "karten", icon: "layers", text: "Lernkarten", zahl: karten.faellig || null, zahlTon: "faellig" })}
+        {navPunkt({ bereich: "pruefung", icon: "timer", text: "Probeprüfung" })}
       </nav>
 
       <nav class="nav-gruppe" aria-label="Üben">

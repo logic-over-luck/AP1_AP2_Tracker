@@ -29,6 +29,7 @@ export const XP = {
   aufgabeRichtig: 5,
   aufgabeVersucht: 1,
   fokusJeMinuten: 2, // 1 Punkt je 2 Minuten
+  pruefung: 40, // abgeschlossene Probeprüfung
 };
 
 export const RAENGE = [

@@ -20,6 +20,7 @@ export function leererStand() {
     aufgaben: new Map(), // spId → { n, ok, zuletzt }
     trainer: new Map(), // trainerId → { n, ok }
     geloest: new Set(), // „trainerId:aufgabenId" fester Aufgaben (SQL-Labor), die schon einmal gelöst wurden
+    pruefungen: [], // abgeschlossene Probeprüfungen { t, teil, titel, satz, p, max, dauer, sp }
     fokusMinuten: 0,
     tage: new Map(), // tag → { xp, n }
     xp: 0,
@@ -127,6 +128,22 @@ export function ableiten(ereignisse, index, heute = tagVon(Date.now())) {
         const min = Math.max(0, Math.min(180, Math.round(ev.min ?? 0)));
         stand.fokusMinuten += min;
         buche(stand, ev.t, Math.floor(min / XP.fokusJeMinuten));
+        break;
+      }
+      case 'pruefung': {
+        if (!(ev.max > 0)) break;
+        stand.pruefungen.push({ t: ev.t, teil: ev.teil, titel: ev.titel, satz: ev.satz ?? null, p: ev.p, max: ev.max, dauer: ev.dauer ?? null, sp: ev.sp ?? {} });
+        // Punkte je Stichpunkt fließen wie Trainer-Aufgaben in Stärken und Schwächen ein: ab der Hälfte gilt es als gekonnt
+        for (const [id, [erreicht, max]] of Object.entries(ev.sp ?? {})) {
+          if (!index.sp.has(id) || !(max > 0)) continue;
+          const a = stand.aufgaben.get(id) ?? { n: 0, ok: 0, zuletzt: null, fehlerZuletzt: null };
+          a.n += 1;
+          if (erreicht >= max / 2) a.ok += 1;
+          else a.fehlerZuletzt = ev.t;
+          a.zuletzt = ev.t;
+          stand.aufgaben.set(id, a);
+        }
+        buche(stand, ev.t, XP.pruefung);
         break;
       }
       case 'termin':

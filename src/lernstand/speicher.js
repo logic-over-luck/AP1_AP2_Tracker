@@ -8,7 +8,7 @@ export const FORMAT = 1;
 export const SCHLUESSEL = 'lernstudio.lernstand';
 export const APP_KENNUNG = 'Lernstudio Fachinformatik';
 
-const ERLAUBTE_TYPEN = new Set(['sp', 'wdh', 'karte', 'merken', 'aufgabe', 'fokus', 'termin', 'notiz']);
+const ERLAUBTE_TYPEN = new Set(['sp', 'wdh', 'karte', 'merken', 'aufgabe', 'fokus', 'termin', 'notiz', 'pruefung']);
 
 export class SicherungsFehler extends Error {}
 
