@@ -345,6 +345,18 @@ export function sollText(f) {
 // Rechenblatt: eine Tabelle wie im Unterricht (Kalkulationsschema), die Eingaben stehen direkt in den Zellen.
 // blatt: { kopf?, zeilen: [[zelle …] | { zellen, summe? }], rechtsbuendig? }
 // zelle: Text | { feld: id } | { text, span }   – Zeilen, die mit „=“ beginnen, bekommen einen Summenstrich.
+// Enter springt wie in einer Tabellenkalkulation zur nächsten leeren Zelle; erst wenn alle gefüllt sind, wird geprüft.
+function weiterMitEnter(e) {
+  if (e.key !== 'Enter') return;
+  const alle = [...e.currentTarget.closest('table').querySelectorAll('.rb__eingabe')];
+  const i = alle.indexOf(e.currentTarget);
+  const naechste = [...alle.slice(i + 1), ...alle.slice(0, i)].find((x) => !x.value.trim());
+  if (naechste) {
+    e.preventDefault();
+    naechste.focus();
+  }
+}
+
 function Rechenblatt({ blatt, felder, eingaben, setze, ergebnis, loesung, erstesFeld }) {
   const { kopf, zeilen, rechtsbuendig = [] } = blatt;
   let erstes = true;
@@ -370,6 +382,7 @@ function Rechenblatt({ blatt, felder, eingaben, setze, ergebnis, loesung, erstes
               aria-label={f.label}
               title={r && !r.ok && r.grund ? r.grund : undefined}
               onInput={(e) => setze(f.id, e.currentTarget.value)}
+              onKeyDown={weiterMitEnter}
             />
             {f.einheit && <span class="rb__einheit">{f.einheit}</span>}
           </span>
