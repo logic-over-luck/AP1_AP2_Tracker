@@ -1,6 +1,6 @@
 // Netzplan-Trainer: Ausfüllen direkt in den Vorgangsknoten, Gantt-Diagramm, PSP.
 
-import { useCallback } from 'preact/hooks';
+import { useCallback, useState } from 'preact/hooks';
 import { TrainerSeite, Uebung, Tabelle } from '../rahmen/Uebung.jsx';
 import { ERZEUGER, WERTE, WERT_NAME } from './aufgaben.js';
 import { anordnen, pfeile } from './plan.js';
@@ -61,13 +61,12 @@ function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
     const id = `${v.id}.${w}`;
     const r = ergebnis?.[id];
     return (
-      <input
-        class={`nk__eingabe ${r ? (r.ok ? 'nk__eingabe--richtig' : 'nk__eingabe--falsch') : ''}`}
-        value={loesung && !(r?.ok) ? v[w] : (eingaben[id] ?? '')}
-        readOnly={loesung && !(r?.ok)}
-        inputMode="numeric"
-        aria-label={`${v.id} ${WERT_NAME[w]}`}
-        onInput={(e) => setze(id, e.currentTarget.value)}
+      <NkFeld
+        r={r}
+        soll={loesung && !r?.ok ? String(v[w]) : null}
+        wert={eingaben[id] ?? ''}
+        label={`${v.id} ${WERT_NAME[w]}`}
+        onInput={(x) => setze(id, x)}
       />
     );
   };
@@ -118,6 +117,25 @@ function Netz({ aufgabe, eingaben, setze, ergebnis, loesung, alleGegeben }) {
       </div>
       {aufgabe.felder.some((f) => f.imBild) && <p class="netz__tipp gedaempft">Trage die Werte direkt in die leeren Knoten ein. Mit Tab springst du von Feld zu Feld.</p>}
     </div>
+  );
+}
+
+// Eingabe im Knoten. Bei gezeigter Lösung steht der richtige Wert (orange) drin –
+// sobald man hineinklickt, erscheint wieder die eigene Eingabe und lässt sich ändern.
+function NkFeld({ r, soll, wert, label, onInput }) {
+  const [fokus, setFokus] = useState(false);
+  const zeigeSoll = soll !== null && !fokus;
+  return (
+    <input
+      class={`nk__eingabe ${r ? (r.ok ? 'nk__eingabe--richtig' : 'nk__eingabe--falsch') : ''} ${zeigeSoll ? 'nk__eingabe--soll' : ''}`}
+      value={zeigeSoll ? soll : wert}
+      title={soll !== null ? `richtig: ${soll}${wert ? ` · deine Eingabe: ${wert}` : ''}` : undefined}
+      inputMode="numeric"
+      aria-label={label}
+      onFocus={() => setFokus(true)}
+      onBlur={() => setFokus(false)}
+      onInput={(e) => onInput(e.currentTarget.value)}
+    />
   );
 }
 

@@ -280,14 +280,16 @@ function SchreibtischBild({ aufgabe, eingaben, setze, ergebnis, loesung }) {
     const r = ergebnis?.[id];
     const soll = aufgabe.zeilen[i][j];
     return (
-      <input
-        class={`feld feld--mono tt__feld ${r ? (r.ok ? 'feld--richtig' : 'feld--falsch') : ''}`}
-        value={loesung && !r?.ok ? formatiere(soll) : (eingaben[id] ?? '')}
-        readOnly={loesung && !r?.ok}
-        placeholder="?"
-        aria-label={`Zeile ${i + 1}, ${aufgabe.spalten[j]}`}
-        onInput={(e) => setze(id, e.currentTarget.value)}
-      />
+      <>
+        <input
+          class={`feld feld--mono tt__feld ${r ? (r.ok ? 'feld--richtig' : 'feld--falsch') : ''}`}
+          value={eingaben[id] ?? ''}
+          placeholder="?"
+          aria-label={`Zeile ${i + 1}, ${aufgabe.spalten[j]}`}
+          onInput={(e) => setze(id, e.currentTarget.value)}
+        />
+        {loesung && !r?.ok && <span class="rb__soll">richtig: {formatiere(soll)}</span>}
+      </>
     );
   };
   return (
@@ -381,13 +383,15 @@ function FehlerBild({ aufgabe, eingaben, setze, ergebnis, loesung }) {
     const r = ergebnis?.[id];
     const feld = aufgabe.felder.find((x) => x.id === id);
     return (
-      <input
-        class={`feld feld--mono tt__feld ${r ? (r.ok ? 'feld--richtig' : 'feld--falsch') : ''}`}
-        value={loesung && !r?.ok ? feld.soll : (eingaben[id] ?? '')}
-        readOnly={loesung && !r?.ok}
-        placeholder={id.startsWith('ist') ? 'Wert oder „Fehler“' : '?'}
-        onInput={(e) => setze(id, e.currentTarget.value)}
-      />
+      <>
+        <input
+          class={`feld feld--mono tt__feld ${r ? (r.ok ? 'feld--richtig' : 'feld--falsch') : ''}`}
+          value={eingaben[id] ?? ''}
+          placeholder={id.startsWith('ist') ? 'Wert oder „Fehler“' : '?'}
+          onInput={(e) => setze(id, e.currentTarget.value)}
+        />
+        {loesung && !r?.ok && <span class="rb__soll">richtig: {feld.soll}</span>}
+      </>
     );
   };
   const zeile = Number(eingaben.zeile) || null;

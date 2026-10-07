@@ -120,6 +120,16 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
 
   const umschalten = (name) => setGewaehlt(auswahl.includes(name) ? auswahl.filter((n) => n !== name) : [...auswahl, name]);
 
+  // Eingabe ändern – eine rot/grün markierte Zelle wird dabei wieder neutral, bis man erneut prüft
+  const setzeFeld = (id, wert) => {
+    setEingaben((e) => ({ ...e, [id]: wert }));
+    setErgebnis((r) => {
+      if (!r?.[id]) return r;
+      const { [id]: _, ...rest } = r;
+      return rest;
+    });
+  };
+
   const zaehle = (ok) => {
     if (gezaehlt) return;
     setGezaehlt(true);
@@ -148,7 +158,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
   };
 
   const fertig = ergebnis && aufgabe.felder.every((f) => ergebnis[f.id]?.ok);
-  const imBildFalsch = ergebnis ? aufgabe.felder.filter((f) => (f.imBild || f.imBlatt) && !ergebnis[f.id]?.ok).length : 0;
+  const imBildFalsch = ergebnis ? aufgabe.felder.filter((f) => (f.imBild || f.imBlatt) && ergebnis[f.id] && !ergebnis[f.id].ok).length : 0;
 
   // Notizfeld – steht immer direkt über den Knöpfen
   const notizFeld = (
@@ -209,7 +219,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
           <Ansicht
             aufgabe={aufgabe}
             eingaben={eingaben}
-            setze={(id, wert) => setEingaben((e) => ({ ...e, [id]: wert }))}
+            setze={setzeFeld}
             ergebnis={ergebnis}
             loesung={loesung || fertig}
           />
@@ -227,7 +237,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
               blatt={aufgabe.rechenblatt}
               felder={aufgabe.felder}
               eingaben={eingaben}
-              setze={(id, wert) => setEingaben((e) => ({ ...e, [id]: wert }))}
+              setze={setzeFeld}
               ergebnis={ergebnis}
               loesung={loesung}
               erstesFeld={erstesFeld}
@@ -342,6 +352,7 @@ function Rechenblatt({ blatt, felder, eingaben, setze, ergebnis, loesung, erstes
     if (c && typeof c === 'object' && c.feld) {
       const f = felder.find((x) => x.id === c.feld);
       const r = ergebnis?.[f.id];
+      // Deine Eingabe bleibt stehen und bearbeitbar – der richtige Wert steht bei Bedarf klein darunter
       const zeigeSoll = loesung && !r?.ok;
       const ref = erstes ? erstesFeld : null;
       erstes = false;
@@ -351,8 +362,7 @@ function Rechenblatt({ blatt, felder, eingaben, setze, ergebnis, loesung, erstes
             <input
               ref={ref}
               class={`rb__eingabe ${r ? (r.ok ? 'rb__eingabe--richtig' : 'rb__eingabe--falsch') : ''}`}
-              value={zeigeSoll ? sollText({ ...f, einheit: undefined }) : (eingaben[f.id] ?? '')}
-              readOnly={zeigeSoll}
+              value={eingaben[f.id] ?? ''}
               inputMode={f.typ === 'auswahl' || f.typ === 'text' ? 'text' : 'decimal'}
               autoComplete="off"
               spellcheck={false}
@@ -363,6 +373,7 @@ function Rechenblatt({ blatt, felder, eingaben, setze, ergebnis, loesung, erstes
             />
             {f.einheit && <span class="rb__einheit">{f.einheit}</span>}
           </span>
+          {zeigeSoll && <span class="rb__soll">richtig: {sollText(f)}</span>}
         </td>
       );
     }
