@@ -984,12 +984,6 @@ button.codezeile:hover {
   gap: var(--s-4);
   align-items: start;
 }
-.sql__haupt {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 250px;
-  gap: var(--s-4);
-  align-items: start;
-}
 .sql-laden {
   display: flex;
   align-items: center;
@@ -1149,61 +1143,6 @@ button.codezeile:hover {
   font-size: var(--t-m);
   color: var(--text-3);
 }
-.sql-schema {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-3) var(--s-4);
-  position: sticky;
-  top: var(--s-4);
-  max-height: calc(100vh - 2 * var(--s-4));
-  overflow-y: auto;
-}
-.sql-schema__hilfe {
-  font-size: var(--t-xs);
-  line-height: 1.5;
-}
-.sql-schema__tabelle {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.sql-schema__tabelle + .sql-schema__tabelle {
-  padding-top: var(--s-2);
-  border-top: 1px solid var(--linie-1, var(--linie-2));
-}
-.sql-schema__name {
-  align-self: flex-start;
-  font-size: var(--t-s);
-  font-weight: 700;
-  color: var(--akzent);
-}
-.sql-schema__spalten {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 10px;
-}
-.sql-schema__spalte {
-  font-size: 11.5px;
-  color: var(--text-2);
-  font-feature-settings: 'calt' 0, 'liga' 0;
-}
-.sql-schema__spalte--pk {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: var(--text);
-}
-.sql-schema__name:hover,
-.sql-schema__spalte:hover {
-  color: var(--text);
-  background: var(--flaeche-2);
-  border-radius: 3px;
-}
-.sql-schema__fk {
-  font-size: 10.5px;
-  color: var(--warn);
-  margin-left: 1px;
-}
 .sql-beispiele {
   display: flex;
   flex-wrap: wrap;
@@ -1240,15 +1179,7 @@ button.codezeile:hover {
   background: var(--flaeche-2);
   color: var(--text);
 }
-@media (max-width: 1180px) {
-  .sql__haupt {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .sql-schema {
-    position: static;
-    max-height: none;
-  }
-}
+
 @media (max-width: 820px) {
   .sql__raster {
     grid-template-columns: minmax(0, 1fr);
@@ -1275,6 +1206,113 @@ button.codezeile:hover {
 @media (max-width: 820px) {
   .sql-liste__gruppe {
     display: none;
+  }
+}
+
+/* SQL: Datenbank als Bild über dem Editor */
+.sql__einspaltig {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.sql-bild {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  border-radius: var(--r-1);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+}
+.sql-bild__kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--text-3);
+}
+.sql-bild__legende {
+  font-size: var(--t-xs);
+  margin-left: auto;
+}
+.sql-bild__tabellen {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--s-2);
+  align-items: start;
+}
+.sql-bild__tabelle {
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  overflow: hidden;
+  transition: border-color var(--dauer) var(--kurve), box-shadow var(--dauer) var(--kurve);
+}
+.sql-bild__tabelle--ziel {
+  border-color: var(--warn);
+  box-shadow: 0 0 0 2px rgba(240, 180, 90, 0.25);
+}
+.sql-bild__name {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  text-align: left;
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--akzent);
+  background: var(--flaeche-3);
+  border-bottom: 1px solid var(--linie-2);
+}
+.sql-bild__spalten {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+}
+.sql-bild__spalten li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 1px 10px;
+  font-size: 12px;
+}
+.sql-bild__spalte {
+  color: var(--text);
+  font-feature-settings: 'calt' 0, 'liga' 0;
+}
+.sql-bild__spalte--pk {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 650;
+}
+.sql-bild__name:hover,
+.sql-bild__spalte:hover {
+  color: var(--akzent);
+}
+.sql-bild__fk {
+  font-size: 11px;
+  color: var(--warn);
+  white-space: nowrap;
+}
+.sql-bild__typ {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  /* Handy: Tabellen nebeneinander, seitlich wischen */
+  .sql-bild__tabellen {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .sql-bild__tabelle {
+    flex: none;
+    width: 210px;
+  }
+  .sql-bild__legende {
+    margin-left: 0;
   }
 }
 

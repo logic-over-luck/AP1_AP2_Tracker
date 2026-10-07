@@ -11,7 +11,7 @@ import { ladeEngine } from './laden.js';
 import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
 import { GRUNDLAGEN, KLAUSELN, BEFEHLSGRUPPEN } from './grundlagen.js';
-import { setzeEin, genannteTabellen } from './einfuegen.js';
+import { setzeEin } from './einfuegen.js';
 
 const SPICKZETTEL = {
   abfragen:
@@ -258,7 +258,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
 
   const ok = pruefung?.ok;
   return (
-    <div class="sql__haupt">
+    <div class="sql__einspaltig">
       <section class={`flaeche flaeche--gross aufgabe ${ok ? 'aufgabe--fertig' : ''}`}>
         <div class="zeile">
           <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">
@@ -279,6 +279,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             Befehl, Rechte, Tabelle, Benutzer, Weitergabe.
           </p>
         )}
+        {!rechte && <SchemaBild schema={basis.schema} einfuegen={(w) => einfuegen(w)} />}
         <label class="sql-editor">
           <span class="sr-only">SQL-Anweisung</span>
           <textarea
@@ -294,7 +295,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             onKeyDown={taste}
           />
         </label>
-        <Bausteine art={rechte ? 'rechte' : aufgabe.modus} schema={basis.schema} text={text} start={aufgabe.loesung} einfuegen={einfuegen} />
         <div class="aufgabe__knoepfe">
           {!rechte && (
             <Knopf variante="zweit" icon="play" onClick={ausfuehrenJetzt}>
@@ -350,7 +350,6 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
 
         {lauf && <LaufAnzeige lauf={lauf} modus={aufgabe.modus} />}
       </section>
-      {!rechte && <SchemaAnsicht schema={basis.schema} einfuegen={(w) => einfuegen(w)} />}
     </div>
   );
 }
@@ -401,7 +400,7 @@ function FreiesLabor({ engine }) {
 
   return (
     <div class="sql">
-      <div class="sql__haupt">
+      <div class="sql__einspaltig">
         <section class="flaeche flaeche--gross aufgabe">
           <div class="ueberschrift-klein ueberschrift-klein--akzent">Freies Labor</div>
           <p class="aufgabe__text text-2">
@@ -414,6 +413,7 @@ function FreiesLabor({ engine }) {
               </button>
             ))}
           </div>
+          <SchemaBild schema={schema} einfuegen={(w) => einfuegen(w)} />
           <label class="sql-editor">
             <span class="sr-only">SQL-Anweisung</span>
             <textarea
@@ -433,7 +433,7 @@ function FreiesLabor({ engine }) {
               }}
             />
           </label>
-          <Bausteine art="frei" schema={schema} text={text} einfuegen={einfuegen} />
+          <Bausteine art="frei" einfuegen={einfuegen} />
           <div class="aufgabe__knoepfe">
             <Knopf variante="primaer" icon="play" onClick={ausfuehrenJetzt}>
               Ausführen <Kbd>Strg+Enter</Kbd>
@@ -456,7 +456,6 @@ function FreiesLabor({ engine }) {
             </div>
           )}
         </section>
-        <SchemaAnsicht schema={schema} einfuegen={(w) => einfuegen(w)} />
       </div>
     </div>
   );
@@ -465,27 +464,14 @@ function FreiesLabor({ engine }) {
 // ---------- Bausteine zum Antippen ----------
 
 // Reihen mit Titel; je Baustein [Anzeige, eingefügter Text, Cursor zurück]
-const KOMMA = [[','], [';']];
 const BAUSTEINE = {
-  abfragen: [
-    ['Befehle', [['SELECT'], ['*'], ['FROM'], ['WHERE'], ['JOIN'], ['LEFT JOIN'], ['ON'], ['GROUP BY'], ['HAVING'], ['ORDER BY'], ['DESC'], ['DISTINCT'], ['AS'], ['UNION'], ...KOMMA]],
-    ['Bedingungen', [['='], ['<>'], ['>'], ['<'], ['>='], ['<='], ['AND'], ['OR'], ['NOT'], ["LIKE '%'", "LIKE '%'", 2], ['IS NULL'], ['IS NOT NULL'], ['IN ( )', 'IN ()', 1], ['BETWEEN … AND', 'BETWEEN'], ['EXISTS'], ['( SELECT … )', '(SELECT )', 1]]],
-    ['Funktionen', [['COUNT(*)'], ['COUNT( )', 'COUNT()', 1], ['SUM( )', 'SUM()', 1], ['AVG( )', 'AVG()', 1], ['MIN( )', 'MIN()', 1], ['MAX( )', 'MAX()', 1], ['ROUND( , 2)', 'ROUND(, 2)', 4], ['YEAR( )', 'YEAR()', 1], ['LEFT( , n)', 'LEFT(, )', 3], ["' '", "''", 1]]],
-  ],
-  aendern: [
-    ['Befehle', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['( )', '()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['WHERE'], ['SELECT'], ['*'], ['FROM'], ...KOMMA]],
-    ['Bedingungen', [['='], ['+'], ['*'], ['AND'], ['IN ( )', 'IN ()', 1], ['NOT IN ( )', 'NOT IN ()', 1], ['( SELECT … )', '(SELECT )', 1], ['YEAR( )', 'YEAR()', 1], ['UPPER( )', 'UPPER()', 1], ["' '", "''", 1]]],
-  ],
-  struktur: [
-    ['Befehle', [['CREATE TABLE'], ['( )', '()', 1], ['ALTER TABLE'], ['ADD COLUMN'], ['DROP TABLE'], ['CREATE INDEX'], ['ON'], ['UPDATE'], ['SET'], ['='], ['||'], ["' '", "''", 1], ...KOMMA]],
-    ['Typen & Schlüssel', [['INTEGER'], ['VARCHAR( )', 'VARCHAR()', 1], ['DECIMAL(8,2)'], ['DATE'], ['PRIMARY KEY'], ['NOT NULL'], ['FOREIGN KEY ( )', 'FOREIGN KEY ()', 1], ['REFERENCES']]],
-  ],
-  rechte: [
-    ['Befehle', [['GRANT'], ['REVOKE'], ['ON'], ['TO'], ['FROM'], ['WITH GRANT OPTION'], ['CREATE USER'], ["IDENTIFIED BY ' '", "IDENTIFIED BY ''", 1], ...KOMMA]],
-    ['Rechte', [['SELECT'], ['INSERT'], ['UPDATE'], ['DELETE'], ['ALL PRIVILEGES']]],
+  frei: [
+    ['Befehle', [['SELECT'], ['*'], ['FROM'], ['WHERE'], ['JOIN'], ['LEFT JOIN'], ['ON'], ['GROUP BY'], ['HAVING'], ['ORDER BY'], ['DESC'], ['DISTINCT'], ['AS'], ['UNION'], [','], [';']]],
+    ['Bedingungen', [['='], ['<>'], ['>'], ['<'], ['>='], ['<='], ['AND'], ['OR'], ['NOT'], ["LIKE '%'", "LIKE '%'", 2], ['IS NULL'], ['IN ( )', 'IN ()', 1], ['BETWEEN … AND', 'BETWEEN'], ['( SELECT … )', '(SELECT )', 1]]],
+    ['Ändern', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['CREATE TABLE'], ['ALTER TABLE'], ['DROP TABLE']]],
+    ['Funktionen', [['COUNT(*)'], ['COUNT( )', 'COUNT()', 1], ['SUM( )', 'SUM()', 1], ['AVG( )', 'AVG()', 1], ['MIN( )', 'MIN()', 1], ['MAX( )', 'MAX()', 1], ['ROUND( , 2)', 'ROUND(, 2)', 4], ['YEAR( )', 'YEAR()', 1]]],
   ],
 };
-BAUSTEINE.frei = [BAUSTEINE.abfragen[0], BAUSTEINE.abfragen[1], ['Ändern', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['CREATE TABLE'], ['ALTER TABLE'], ['DROP TABLE']]], BAUSTEINE.abfragen[2]];
 
 // Fügt an der Cursorposition ein – mit passenden Leerzeichen und Kommas (siehe einfuegen.js)
 function useEinfuegen(editor, text, setText, schema) {
@@ -506,18 +492,10 @@ function useEinfuegen(editor, text, setText, schema) {
   };
 }
 
-function Bausteine({ art, schema, text, start = '', einfuegen }) {
-  const tabellen = (schema ?? []).map((t) => t.name);
-  const genannt = genannteTabellen(text, tabellen);
-  const [gewaehlt, setGewaehlt] = useState(null);
-  // Schreibt man eine andere Tabelle in den Editor, folgen die Spalten ihr
-  useEffect(() => setGewaehlt(null), [genannt[0]]);
-  // Spalten sind immer sichtbar: angetippte Tabelle, sonst die zuletzt im Editor genannte,
-  // sonst die Tabelle, um die es in der Aufgabe geht, sonst die erste
-  const aktiv = (gewaehlt && tabellen.includes(gewaehlt) ? gewaehlt : null) ?? genannt[0] ?? genannteTabellen(start, tabellen).at(-1) ?? tabellen[0] ?? null;
-  const spalten = aktiv ? schema.find((t) => t.name === aktiv).spalten : [];
+// Nur im Freien Labor: Befehle zum Antippen. In den Aufgaben schreibt man selbst – wie in der Prüfung.
+function Bausteine({ art, einfuegen }) {
   return (
-    <div class="sql-bausteine" aria-label="Bausteine zum Antippen">
+    <div class="sql-bausteine" aria-label="Befehle zum Antippen">
       {(BAUSTEINE[art] ?? BAUSTEINE.abfragen).map(([titel, reihe]) => (
         <div key={titel} class="sql-bausteine__zeile">
           <span class="sql-bausteine__titel">{titel}</span>
@@ -530,43 +508,6 @@ function Bausteine({ art, schema, text, start = '', einfuegen }) {
           </div>
         </div>
       ))}
-      {tabellen.length > 0 && (
-        <div class="sql-bausteine__zeile">
-          <span class="sql-bausteine__titel">Tabellen</span>
-          <div class="sql-bausteine__reihe">
-          {tabellen.map((n) => (
-            <button
-              key={n}
-              type="button"
-              class={`sql-baustein sql-baustein--tabelle ${n === aktiv ? 'sql-baustein--aktiv' : ''}`}
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => {
-                setGewaehlt(n);
-                einfuegen(n);
-              }}
-            >
-              {n}
-            </button>
-          ))}
-          </div>
-        </div>
-      )}
-      {tabellen.length > 0 && (
-        <div class="sql-bausteine__zeile">
-          <span class="sql-bausteine__titel">Spalten {aktiv}</span>
-          <div class="sql-bausteine__reihe">
-          {aktiv ? (
-            spalten.map(([n, , marke]) => (
-              <button key={n} type="button" class={`sql-baustein sql-baustein--spalte ${marke.includes('PK') ? 'sql-schema__spalte--pk' : ''}`} title={marke || undefined} onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(n)}>
-                {n}
-              </button>
-            ))
-          ) : (
-            <span class="gedaempft sql-bausteine__hinweis">Tippe eine Tabelle an, dann erscheinen hier ihre Spalten.</span>
-          )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -692,36 +633,43 @@ export function ErgebnisTabelle({ ergebnis }) {
   );
 }
 
-// Kompakt: je Tabelle eine Zeile mit ihren Spalten. Typ beim Darüberfahren, PK und FK markiert.
-function SchemaAnsicht({ schema, einfuegen }) {
+// Die Datenbank wie im Prüfungsbild: jede Tabelle ein Kasten mit allen Spalten, Typ, Primärschlüssel
+// (unterstrichen) und Fremdschlüssel (→ Zieltabelle). Maus auf einen Fremdschlüssel hebt die Zieltabelle hervor.
+// Ein Klick auf einen Namen fügt ihn in den Editor ein – nur eine Abkürzung, die Abfrage schreibt man selbst.
+function SchemaBild({ schema, einfuegen }) {
+  const [ziel, setZiel] = useState(null);
   return (
-    <aside class="flaeche sql-schema" aria-label="Datenbankschema">
-      <div class="zeile">
-        <Icon name="database" groesse={15} />
-        <span class="ueberschrift-klein wachsen">Schema</span>
+    <section class="sql-bild" aria-label="Datenbankschema">
+      <div class="sql-bild__kopf">
+        <Icon name="database" groesse={14} />
+        <span class="ueberschrift-klein">Datenbank</span>
+        <span class="gedaempft sql-bild__legende">
+          <u>unterstrichen</u> = Primärschlüssel · <span class="sql-bild__fk">→ tabelle</span> = Fremdschlüssel · Klick fügt den Namen ein
+        </span>
       </div>
-      {schema.map((t) => (
-        <div key={t.name} class="sql-schema__tabelle">
-          <button class="sql-schema__name mono" title={`${t.zeilen} Zeilen – antippen zum Einfügen`} onClick={() => einfuegen(t.name)}>
-            {t.name}
-          </button>
-          <div class="sql-schema__spalten">
-            {t.spalten.map(([name, typ, marke]) => {
-              const fk = marke.match(/FK → (\w+)/)?.[1];
-              return (
-                <button key={name} class={`sql-schema__spalte mono ${marke.includes('PK') ? 'sql-schema__spalte--pk' : ''}`} title={`${typ}${marke ? ' · ' + marke : ''}`} onClick={() => einfuegen(name)}>
-                  {name}
-                  {fk && <span class="sql-schema__fk">→{fk}</span>}
-                </button>
-              );
-            })}
+      <div class="sql-bild__tabellen">
+        {schema.map((t) => (
+          <div key={t.name} class={`sql-bild__tabelle ${ziel === t.name ? 'sql-bild__tabelle--ziel' : ''}`}>
+            <button class="sql-bild__name mono" title={`${t.zeilen} Zeilen`} onClick={() => einfuegen(t.name)}>
+              {t.name}
+            </button>
+            <ul class="sql-bild__spalten">
+              {t.spalten.map(([name, typ, marke]) => {
+                const fk = marke.match(/FK → (\w+)/)?.[1];
+                return (
+                  <li key={name} onMouseEnter={() => fk && setZiel(fk)} onMouseLeave={() => fk && setZiel(null)}>
+                    <button class={`sql-bild__spalte mono ${marke.includes('PK') ? 'sql-bild__spalte--pk' : ''}`} title={typ} onClick={() => einfuegen(name)}>
+                      {name}
+                    </button>
+                    {fk ? <span class="sql-bild__fk">→ {fk}</span> : <span class="sql-bild__typ">{typ}</span>}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-        </div>
-      ))}
-      <p class="gedaempft sql-schema__hilfe">
-        <span class="sql-schema__spalte--pk mono">unterstrichen</span> = Primärschlüssel · <span class="sql-schema__fk">→tabelle</span> = Fremdschlüssel
-      </p>
-    </aside>
+        ))}
+      </div>
+    </section>
   );
 }
 

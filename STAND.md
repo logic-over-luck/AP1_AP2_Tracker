@@ -128,10 +128,10 @@ nächsten offenen Punkt weiter.
 - **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
   die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
 - **SQL-Labor:** Erster Reiter „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang (Begriff + eine
-  Zeile Erklärung). Aufgaben werden über eine kompakte Leiste gewählt (Themen + Nummern). Unter dem Editor liegen
-  Bausteine zum Antippen (Befehle, Bedingungen, Funktionen, Tabellen und immer die Spalten einer Tabelle – zuerst
-  die der Aufgabe); Leerzeichen und Kommas zwischen Spalten setzt die App selbst. Das Schema rechts ist kompakt
-  (eine Tabelle je Block, PK unterstrichen, FK mit Pfeil).
+  Zeile Erklärung). Aufgaben werden über eine kompakte Leiste gewählt (Themen + Nummern). Die Datenbank steht
+  vollständig als Bild direkt über dem Editor (Kästen mit allen Spalten, Typ, PK unterstrichen, FK → Zieltabelle;
+  Maus auf FK hebt die Zieltabelle hervor; Klick fügt den Namen ein). In den Aufgaben schreibt man selbst wie in
+  der Prüfung – Befehls-Bausteine gibt es nur im Freien Labor.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine
