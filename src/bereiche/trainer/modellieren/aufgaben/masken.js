@@ -18,7 +18,7 @@ const li = (von, nach, extra = {}) => ({ von, nach, typ: 'linie', ...extra });
 
 const ROT = '#c62828';
 const GRUEN = '#2e9e4f';
-const HELLGRAU = '#c9d0d5';
+const ROSA = '#f6caca';
 const PLATZ = '#e3e8eb';
 
 // ---------- Notation ----------
@@ -117,16 +117,17 @@ export const aufgaben = [
       knoten: [
         tx('lMa', 40, 60, 100, 'Mitarbeiter'),
         kb('fMa', 'feld', 150, 60, 220, 28, 'Max Muster'),
-        tx('rest', 400, 60, 150, 'Resturlaub: 12 Tage', { textFarbe: HELLGRAU, marke: 1 }),
+        { id: 'rest', typ: 'text', x: 400, y: 74, text: 'Resturlaub: 12 Tage', anker: 'start', klein: true },
+        PUNKT('restM', 514, 62, { marke: 1 }),
         kb('gZeit', 'rahmen', 32, 110, 528, 70, 'Zeitraum', { marke: 5 }),
-        tx('lVon', 48, 132, 40, 'Von', { textFarbe: ROT }),
-        kb('fVon', 'feld', 96, 132, 160, 28, 'TT.MM.JJJJ'),
-        tx('lBis', 290, 132, 34, 'Bis', { textFarbe: ROT, marke: 2 }),
-        kb('fBis', 'feld', 344, 132, 160, 28, 'TT.MM.JJJJ'),
+        tx('lVon', 48, 132, 40, 'Von'),
+        kb('fVon', 'feld', 96, 132, 160, 28, 'TT.MM.JJJJ', { farbe: ROSA }),
+        tx('lBis', 290, 132, 34, 'Bis'),
+        kb('fBis', 'feld', 344, 132, 160, 28, 'TT.MM.JJJJ', { farbe: ROSA, marke: 2 }),
         tx('lArt', 40, 200, 100, 'Urlaubsart'),
-        kb('aArt', 'auswahl', 150, 200, 240, 28, 'Erholungsurlaub'),
+        kb('aArt', 'auswahl', 150, 200, 240, 28, 'Erholungsurlaub', { farbe: ROSA }),
         kb('aOhne', 'auswahl', 150, 240, 240, 28, 'Bitte wählen …', { marke: 3 }),
-        tx('hinweis', 40, 282, 420, 'Rot beschriftete Felder müssen ausgefüllt werden.', { h: 20 }),
+        tx('hinweis', 40, 282, 420, 'Rot hinterlegte Felder müssen ausgefüllt werden.', { h: 20 }),
         kb('kSenden', 'knopf', 40, 322, 150, 40, 'Senden'),
         kb('kAbbr', 'knopf', 400, 332, 70, 22, 'abbrechen', { zweit: true, groesse: 10 }),
         kb('kVerw', 'knopf', 480, 328, 80, 30, 'Verwerfen', { farbe: ROT, marke: 4 }),
@@ -134,14 +135,14 @@ export const aufgaben = [
     },
     felder: [
       { id: '1', label: 'Text „Resturlaub: 12 Tage"', optionen: OPT_MK1, erwartet: 'zu wenig Kontrast' },
-      { id: '2', label: 'Rote Beschriftung „Bis" (und „Von")', optionen: OPT_MK1, erwartet: 'Information nur über Farbe' },
+      { id: '2', label: 'Rot hinterlegte Pflichtfelder (z. B. „Bis")', optionen: OPT_MK1, erwartet: 'Information nur über Farbe' },
       { id: '3', label: 'Zweite Auswahlliste „Bitte wählen …"', optionen: OPT_MK1, erwartet: 'Beschriftung fehlt' },
       { id: '4', label: 'Schaltflächen „Senden", „abbrechen", „Verwerfen"', optionen: OPT_MK1, erwartet: 'Schaltflächen uneinheitlich' },
       { id: '5', label: 'Rahmen „Zeitraum" um Von und Bis', optionen: OPT_MK1, erwartet: 'korrekt' },
     ],
     loesung: [
       '[1] Hellgrau auf Weiß ist kaum lesbar – besonders bei Sehschwäche oder Sonnenlicht. Text braucht **ausreichenden Kontrast**.',
-      '[2] Pflichtfelder nur durch rote Schrift zu kennzeichnen schließt Menschen mit Rot-Grün-Schwäche aus. Information **nie allein über Farbe**: zusätzlich ein * und der Hinweis „* Pflichtfeld".',
+      '[2] Pflichtfelder nur durch rote Farbe zu kennzeichnen schließt Menschen mit Rot-Grün-Schwäche aus. Information **nie allein über Farbe**: zusätzlich ein * und der Hinweis „* Pflichtfeld".',
       '[3] Ohne Beschriftung weiß niemand, was hier gewählt werden soll (z. B. „Vertretung"). Jedes Feld braucht eine **verständliche Beschriftung** – Screenreader lesen sie auch vor.',
       '[4] Drei Größen, drei Farben, kein fester Platz. Schaltflächen sollen **gleich groß** sein und **einheitlich** an derselben Stelle stehen; nur die Hauptaktion wird hervorgehoben.',
       '[5] Richtig: Von und Bis gehören zusammen und sind in einem Rahmen mit Titel **gruppiert**.',
@@ -192,9 +193,10 @@ export const aufgaben = [
         ...zeile('b', 218, ['4712', 'Autohaus Lenz', '03.10.'], [44, 120, 320]),
         ...zeile('c', 242, ['4713', 'Café Mira', '05.10.'], [44, 120, 320]),
         kb('s1', 'feld', 480, 199, 14, 14, undefined, { farbe: GRUEN }),
-        kb('s2', 'feld', 480, 223, 14, 14, undefined, { farbe: ROT, marke: 2 }),
+        kb('s2', 'feld', 480, 223, 14, 14, undefined, { farbe: ROT }),
+        PUNKT('s2m', 512, 230, { marke: 2 }),
         kb('s3', 'feld', 480, 247, 14, 14, undefined, { farbe: GRUEN }),
-        tx('fehler', 32, 280, 200, 'Fehler 0x80004005', { textFarbe: ROT, marke: 3 }),
+        tx('fehler', 32, 280, 130, 'Fehler 0x80004005', { marke: 3 }),
         kb('kNeu', 'knopf', 450, 300, 130, 30, 'Neue Bestellung'),
       ],
     },
@@ -221,9 +223,9 @@ export const aufgaben = [
       hoehe: 362,
       rahmen: [{ typ: 'maske', x: 16, y: 16, w: 580, h: 330, text: 'Bestellverwaltung' }],
       knoten: [
-        kb('leiste', 'leiste', 16, 46, 580, 34, ''),
+        kb('leiste0', 'leiste', 16, 46, 84, 34, ''),
+        kb('leiste', 'leiste', 100, 46, 496, 34, 'Nordlicht GmbH – Bestellungen'),
         kb('logo', 'bild', 26, 51, 64, 24, 'Logo'),
-        tx('firma', 100, 46, 300, 'Nordlicht GmbH – Bestellungen', { h: 34, textFarbe: '#ffffff', fett: true }),
         kb('gSuche', 'rahmen', 32, 98, 548, 56, 'Suche'),
         tx('lKunde', 48, 112, 90, 'Kundenname'),
         kb('fKunde', 'feld', 150, 112, 280, 28, 'Mia'),
@@ -239,7 +241,7 @@ export const aufgaben = [
         tx('t2', 490, 218, 80, 'offen', { h: 24 }),
         kb('s3', 'feld', 470, 247, 14, 14, undefined, { farbe: GRUEN }),
         tx('t3', 490, 242, 80, 'geliefert', { h: 24 }),
-        tx('fehler', 32, 276, 400, 'Zu „Mia" wurde kein Kunde gefunden. Prüfe die Schreibweise.', { textFarbe: ROT }),
+        tx('fehler', 32, 276, 420, 'Zu „Mia" wurde kein Kunde gefunden. Prüfe die Schreibweise.'),
         kb('kNeu', 'knopf', 450, 306, 130, 30, 'Neue Bestellung'),
       ],
     },
@@ -663,7 +665,7 @@ export const aufgaben = [
         tx('lLief', 468, 60, 80, 'Lieferant'),
         tx('lDat', 40, 104, 100, 'Lieferdatum', { h: 20 }),
         kb('fDat', 'feld', 40, 126, 140, 28),
-        tx('hin', 210, 126, 140, 'Menge prüfen!', { textFarbe: HELLGRAU }),
+        { id: 'hin', typ: 'text', x: 210, y: 140, text: 'Menge prüfen!', anker: 'start', klein: true },
         kb('fMenge', 'feld', 360, 126, 120, 28),
         tx('lMenge', 488, 126, 60, 'Menge'),
         tx('lLs', 40, 186, 120, 'Lieferschein-Nr.'),

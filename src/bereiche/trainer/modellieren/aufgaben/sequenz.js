@@ -125,7 +125,7 @@ const kinoFalsch = {
     { von: 'k', nach: 's', typ: 'nachricht', y: 190, text: 'reserviere(reihe, platz)' },
     { von: 's', nach: 'k', typ: 'antwort', y: 215 },
     { von: 'k', nach: 'k', typ: 'nachricht', y: 262, text: 'zeigeHinweis()' },
-    { von: 'k', nach: 'd', typ: 'async', y: 327, text: 'druckeBon(ticket)', marke: 3 },
+    { von: 'k', nach: 'd', typ: 'async', y: 327, text: 'druckeBon(ticket)', marke: 3, textPos: 0.75 },
   ],
 };
 
@@ -329,7 +329,7 @@ export const aufgaben = [
       kanten: [
         { von: 'ts', nach: 'ts', typ: 'nachricht', y: 85, text: 'pruefeZeitfenster(datum)' },
         { von: 'ts', nach: 't', typ: 'erzeugen', y: 130, text: '«create»' },
-        { von: 'ts', nach: 'k', typ: 'async', y: 175, text: 'trageEin(t)', marke: 4 },
+        { von: 'ts', nach: 'k', typ: 'async', y: 175, text: 'trageEin(t)', marke: 4, textPos: 0.25 },
         { von: 'k', nach: 'ts', typ: 'antwort', y: 200, text: 'ok' },
         { von: 'ts', nach: 's', typ: 'nachricht', y: 245, text: '«destroy»' },
         { von: 'ts', nach: 's', typ: 'nachricht', y: 285, text: 'getPatientId()', marke: 2 },
