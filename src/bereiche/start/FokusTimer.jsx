@@ -82,8 +82,9 @@ export function useTimer() {
   };
 }
 
-export function FokusTimer({ raum }) {
+export function FokusTimer({ raum, kompakt }) {
   const t = useTimer();
+  if (kompakt) return <FokusKompakt t={t} raum={raum} />;
   const umfang = 2 * Math.PI * 52;
   return (
     <section class="flaeche flaeche--innen fokus" aria-label="Fokus-Timer">
@@ -118,6 +119,42 @@ export function FokusTimer({ raum }) {
       <div class="fokus__dauern" role="group" aria-label="Dauer">
         {DAUERN.map((m) => (
           <button key={m} class="fokus__dauer" aria-pressed={t.timer.minuten === m} disabled={t.timer.start !== null} onClick={() => t.waehle(m)}>
+            {m} min
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// Kompakte Kachel fürs Cockpit: Zeit, Start/Pause, Dauer
+function FokusKompakt({ t, raum }) {
+  const startklar = t.timer.start === null;
+  return (
+    <section class={`flaeche kachel fokus-kompakt ${t.laeuft ? 'fokus-kompakt--laeuft' : ''}`} aria-label="Fokus-Timer">
+      <div class="kachel__kopf">
+        <Icon name="timer" groesse={14} /> Fokus-Timer
+        <span class="kachel__rang">{t.laeuft ? 'läuft' : t.pausiert ? 'pausiert' : 'bereit'}</span>
+      </div>
+      <div class="fokus-kompakt__mitte">
+        <span class="fokus-kompakt__zeit tabellenziffern">{format(startklar ? t.timer.minuten * 60 : t.rest)}</span>
+        {!t.laeuft ? (
+          <button class="fokus__start fokus-kompakt__start" aria-label={t.pausiert ? 'Weiter' : 'Starten'} onClick={() => (t.pausiert ? t.weiter() : t.starte(raum))}>
+            <Icon name="play" groesse={16} />
+          </button>
+        ) : (
+          <button class="fokus__start fokus__start--laeuft fokus-kompakt__start" aria-label="Pause" onClick={t.pausiere}>
+            <Icon name="pause" groesse={16} />
+          </button>
+        )}
+        <SymbolKnopf icon="rotate-ccw" label="Beenden" groesse="s" disabled={startklar} onClick={t.abbrechen} />
+      </div>
+      <div class="balken" aria-hidden="true">
+        <div class="balken__fuellung" style={{ width: `${t.anteil * 100}%` }} />
+      </div>
+      <div class="fokus__dauern fokus-kompakt__dauern" role="group" aria-label="Dauer">
+        {DAUERN.map((m) => (
+          <button key={m} class="fokus__dauer" aria-pressed={t.timer.minuten === m} disabled={!startklar} onClick={() => t.waehle(m)}>
             {m} min
           </button>
         ))}

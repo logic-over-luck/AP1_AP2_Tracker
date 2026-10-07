@@ -1558,133 +1558,185 @@ mark.treffer {
 }
 
 
-/* ================= Übersicht (oben auf der Lernplan-Seite) ================= */
-.uebersicht {
+/* ================= Cockpit (oben auf der Lernplan-Seite) ================= */
+.cockpit {
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
   margin-bottom: var(--s-2);
 }
-.uebersicht__titel {
+.cockpit__kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+.cockpit__gruss {
   font-size: var(--t-2xl);
   line-height: 1.2;
-  margin-top: var(--s-1);
 }
-.uebersicht__zahlen {
+.cockpit__raster {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding: 0;
-  overflow: hidden;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s-3);
 }
-.uzahl {
+.kachel {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: var(--s-3) var(--s-4);
+  gap: var(--s-2);
+  padding: var(--s-4);
   text-align: left;
   color: inherit;
-  border-right: 1px solid var(--linie);
-  transition: background var(--dauer) var(--kurve);
+  min-width: 0;
 }
-.uzahl:last-child {
-  border-right: 0;
+.kachel--fokus {
+  grid-row: span 2;
+  padding: var(--s-5);
 }
-.uzahl:hover {
-  background: var(--flaeche-2);
-}
-.uzahl__kopf {
+.kachel__kopf {
   display: flex;
   align-items: center;
   gap: var(--s-2);
   font-size: var(--t-s);
+  font-weight: 500;
   color: var(--text-3);
+  min-height: 20px;
 }
-.uzahl__wert {
+.kachel__kopf--akzent {
+  color: var(--akzent);
+  font-weight: 600;
+}
+.kachel__marken {
+  margin-left: auto;
+  display: flex;
+  gap: var(--s-1);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.kachel__rang {
+  margin-left: auto;
+  font-size: var(--t-xs);
+  color: var(--akzent);
+  white-space: nowrap;
+}
+.kachel__wert {
   display: flex;
   align-items: baseline;
   gap: var(--s-1);
-  font-size: var(--t-xl);
+  font-size: var(--t-2xl);
   font-weight: 650;
+  line-height: 1.15;
   font-variant-numeric: tabular-nums;
-  line-height: 1.3;
 }
-.uzahl__wert small {
+.kachel__wert small {
   font-size: var(--t-s);
   font-weight: 500;
   color: var(--text-3);
 }
-.uzahl__wert--leer {
-  color: var(--text-4);
-}
-.uzahl__text {
-  font-size: var(--t-s);
+.kachel__neben {
+  margin-left: auto;
+  font-size: var(--t-xs);
+  font-weight: 400;
   color: var(--text-3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: var(--s-2);
 }
-.uzahl__link {
-  display: flex;
-  align-items: center;
-  gap: var(--s-1);
-  color: var(--text-2);
-}
-.uzahl .balken {
+.kachel__fuss {
+  font-size: var(--t-s);
   margin-top: auto;
 }
-.fokus-karte--kompakt {
-  flex-direction: row;
-  align-items: center;
-  gap: var(--s-6);
-  padding: var(--s-4) var(--s-5);
-}
-.fokus-karte--kompakt .fokus-karte__links {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-1);
-}
-.fokus-karte--kompakt .fokus-karte__etikett {
-  margin-top: 0;
-  flex-wrap: wrap;
-}
-.fokus-karte--kompakt .fokus-karte__titel {
-  font-size: var(--t-xl);
-}
-.fokus-karte--kompakt .fokus-karte__knoepfe {
-  margin-top: 0;
-  flex: 0 1 auto;
-  justify-content: flex-end;
-  max-width: 560px;
-}
-.uebersicht__mehr {
+.kachel__fuss--knopf {
   display: flex;
   align-items: center;
   gap: var(--s-2);
-  align-self: flex-start;
-  padding: var(--s-1) var(--s-2);
-  margin-left: calc(-1 * var(--s-2));
+  padding: var(--s-2);
+  margin: auto calc(-1 * var(--s-2)) calc(-1 * var(--s-2));
   border-radius: var(--r-1);
-  font-size: var(--t-s);
-  color: var(--text-3);
+  color: var(--text-2);
+  text-align: left;
+  transition: background var(--dauer) var(--kurve);
 }
-.uebersicht__mehr:hover {
-  color: var(--text);
+.kachel__fuss--knopf:hover {
   background: var(--flaeche-2);
+  color: var(--text);
 }
-.uebersicht .start-raster {
-  margin-top: 0;
-  padding-bottom: var(--s-1);
+.kachel--fokus .fokus-karte__titel {
+  font-size: var(--t-2xl);
+  margin-top: var(--s-1);
 }
-.bilanz__danach {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
+.kachel--fokus .fokus-karte__knoepfe {
+  margin-top: var(--s-2);
 }
-.bilanz .fokus-karte__bilanz {
-  margin-top: var(--s-3);
+.fokus-karte__unten {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--linie);
+}
+.fokus-karte__unten .fokus-weiter .wachsen {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fortschritt {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+.fortschritt__ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex: none;
+}
+.fortschritt__prozent {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 650;
+  font-size: var(--t-m);
+}
+.fortschritt__zahlen {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--t-m);
+}
+.fokus-kompakt__mitte {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.fokus-kompakt__zeit {
+  font-size: var(--t-2xl);
+  font-weight: 650;
+  margin-right: auto;
+}
+.fokus-kompakt__start {
+  width: 36px;
+  height: 36px;
+}
+.fokus-kompakt__dauern .fokus__dauer {
+  height: 26px;
+}
+.fokus-kompakt--laeuft .fokus-kompakt__zeit {
+  color: var(--akzent);
+}
+.aktiv--kompakt {
+  gap: var(--s-2);
+  margin-top: auto;
+}
+.aktiv--kompakt .aktiv__raster {
+  gap: 2px;
+}
+.aktiv--kompakt .aktiv-spalte {
+  gap: 2px;
+}
+.aktiv--kompakt .aktiv-zelle {
+  aspect-ratio: auto;
+  height: 7px;
+  border-radius: 2px;
 }
 .lernen__kopf {
   display: flex;
@@ -1701,23 +1753,12 @@ mark.treffer {
 
 /* ================= Schmale Fenster ================= */
 @media (max-width: 1100px) {
-  .uebersicht__zahlen {
+  .cockpit__raster {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .uzahl:nth-child(2) {
-    border-right: 0;
-  }
-  .uzahl:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--linie);
-  }
-  .fokus-karte--kompakt {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--s-3);
-  }
-  .fokus-karte--kompakt .fokus-karte__knoepfe {
-    justify-content: flex-start;
-    max-width: none;
+  .kachel--fokus {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
   .kennzahlen {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1755,12 +1796,8 @@ mark.treffer {
   }
 }
 @media (max-width: 560px) {
-  .uebersicht__zahlen {
+  .cockpit__raster {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .uzahl {
-    border-right: 0;
-    border-bottom: 1px solid var(--linie);
   }
   .lernen__kopf {
     flex-direction: column;
