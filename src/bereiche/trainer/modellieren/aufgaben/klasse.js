@@ -2,11 +2,19 @@
 
 export const spickzettel = `- **Klasse** = Kasten mit drei Bereichen: **Name** (Substantiv, Einzahl) | **Attribute** | **Methoden**
 - **Attribut**: \`- preis : double\` – **Methode**: \`+ berechne(menge : int) : double\` (Sichtbarkeit Name(Parameter : Typ) : Rückgabetyp, \`void\` = keine Rückgabe)
-- **Sichtbarkeit**: \`+\` public, \`-\` private, \`#\` protected (auch Unterklassen), \`~\` package (nur gleiches Paket) – \`#\` und \`~\` erst in AP2
+- **Sichtbarkeit**: \`+\` public, \`-\` private, \`#\` protected (auch Unterklassen), \`~\` package (nur gleiches Paket)
 - **Multiplizität** steht am Ende der **gezählten** Klasse: \`1\`, \`0..1\`, \`*\` (beliebig viele, auch keins), \`1..*\` (mindestens eins)
-- **Vererbung**: hohles Dreieck **an der Oberklasse**; kursiv = abstrakt; **Interface** «interface», Realisierung gestrichelt mit hohlem Dreieck (AP2)
-- **Aggregation** (hohle Raute) / **Komposition** (volle Raute): Raute **am Ganzen** – bei der Komposition kann das Teil **nicht ohne** das Ganze bestehen (AP2)
-- **Gerichtete Assoziation**: offene Pfeilspitze – nur die Klasse am Anfang kennt die Klasse an der Spitze (AP2)`;
+- **Vererbung**: hohles Dreieck **an der Oberklasse**; kursiv = abstrakt; **Interface** «interface», Realisierung gestrichelt mit hohlem Dreieck zum Interface
+- **Aggregation** (hohle Raute) / **Komposition** (volle Raute): Raute **am Ganzen** – bei der Komposition kann das Teil **nicht ohne** das Ganze bestehen
+- **Gerichtete Assoziation**: offene Pfeilspitze – nur die Klasse am Anfang kennt die Klasse an der Spitze`;
+
+export const spickzettelAP1 = `- **Klasse** = Kasten mit drei Bereichen: oben der **Name** (Substantiv, Einzahl), in der Mitte die **Attribute**, unten die **Methoden**
+- **Attribut**: Sichtbarkeit Name : Typ, z. B. \`- preis : double\`
+- **Methode**: Sichtbarkeit Name(Parameter : Typ) : Rückgabetyp, z. B. \`+ berechne(menge : int) : double\` – \`void\` = keine Rückgabe, leere Klammern = keine Parameter
+- **Sichtbarkeit**: \`+\` public (alle Klassen dürfen zugreifen), \`-\` private (nur die Klasse selbst) – Attribute meist \`-\`, Methoden meist \`+\`
+- **Assoziation**: Linie zwischen zwei Klassen; die **Multiplizität** steht am Ende der **gezählten** Klasse: \`1\` = genau eins, \`*\` = beliebig viele (auch keins)
+- **Aus dem Text ableiten**: Substantive mit eigenen Eigenschaften → Klassen, Eigenschaften → Attribute, Tätigkeiten → Methoden
+- **Typen**: ganze Zahl \`int\`, Kommazahl \`double\`, Text \`String\`, ja/nein \`boolean\`, Datum \`Date\``;
 
 // Klasse mit etwas mehr Breite als die Automatik, damit lange Signaturen nicht am Rand kleben
 const zeichen = (t) => String(t).replace(/^[*_]/, '').replace(/\{\d+\}/g, '[0]').length;
@@ -55,7 +63,7 @@ const notationDiagramm = {
 };
 
 export const notation = {
-  text: 'So liest du das Diagramm: **Medium** ist abstrakt (kursiv) – es gibt nur Bücher und DVDs. Beide erben Titel, Inventarnummer und Methoden und müssen die abstrakte Methode `berechneLeihfrist()` selbst umsetzen. Medium realisiert das Interface **Ausleihbar**. Ein Leser leiht beliebig viele Medien aus, ein Medium ist bei keinem oder einem Leser. Ein Regal fasst Medien zusammen – ein Medium gibt es aber auch ohne Regal (Aggregation). Der Leserausweis gehört fest zum Leser und verschwindet mit ihm (Komposition). Ein Medium kennt seinen Verlag, der Verlag kennt seine Medien nicht (gerichtet). Für AP1 reichen Klasse, `+`/`-`, Assoziation und die Multiplizitäten `1` und `*`; alles Weitere kommt in AP2 dazu.',
+  text: 'So liest du das Diagramm: **Medium** ist abstrakt (kursiv) – es gibt nur Bücher und DVDs. Beide erben Titel, Inventarnummer und Methoden und müssen die abstrakte Methode `berechneLeihfrist()` selbst umsetzen. Medium realisiert das Interface **Ausleihbar**. Ein Leser leiht beliebig viele Medien aus, ein Medium ist bei keinem oder einem Leser. Ein Regal fasst Medien zusammen – ein Medium gibt es aber auch ohne Regal (Aggregation). Der Leserausweis gehört fest zum Leser und verschwindet mit ihm (Komposition). Ein Medium kennt seinen Verlag, der Verlag kennt seine Medien nicht (gerichtet).',
   diagramm: notationDiagramm,
   punkte: [
     '**Sichtbarkeit** vor jedem Attribut und jeder Methode: `+` public, `-` private, `#` protected, `~` package. Attribute meist `-`, Methoden meist `+`.',
@@ -587,4 +595,4 @@ export const aufgaben = [
   },
 ];
 
-export default { spickzettel, notation, aufgaben };
+export default { spickzettel, notation, spickzettelAP1, notationAP1, aufgaben };
