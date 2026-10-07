@@ -1,0 +1,245 @@
+/* Trainer: Module, Aufgaben, Felder, Rechenweg */
+
+.trainer-modi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-bottom: var(--s-6);
+}
+.trainer-modus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 34px;
+  padding: 0 var(--s-4);
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+  font-size: var(--t-m);
+  font-weight: 600;
+  color: var(--text-2);
+  transition: all var(--dauer) var(--kurve);
+}
+.trainer-modus:hover {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.trainer-modus[aria-selected='true'] {
+  background: var(--akzent);
+  border-color: var(--akzent);
+  color: var(--akzent-text);
+}
+.trainer-modus__zusatz {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.trainer-hinweis {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: calc(-1 * var(--s-3)) 0 var(--s-5);
+  font-size: var(--t-m);
+  color: var(--text-3);
+}
+.trainer-themen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-8);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--linie);
+}
+
+.uebung {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.uebung__kopf {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+.uebung__sitzung {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-m);
+  color: var(--text-3);
+  min-height: 34px;
+}
+.uebung__sitzung strong {
+  color: var(--text);
+}
+
+.spickzettel {
+  min-width: 280px;
+  max-width: 520px;
+  flex: 1 1 280px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-1);
+}
+.spickzettel__knopf {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  width: 100%;
+  height: 34px;
+  padding: 0 var(--s-3);
+  font-size: var(--t-m);
+  font-weight: 600;
+  color: var(--text-2);
+}
+.spickzettel__knopf > svg:first-child {
+  color: var(--warn);
+}
+.spickzettel__pfeil {
+  margin-left: auto;
+  transition: transform var(--dauer-lang) var(--kurve);
+}
+.spickzettel__pfeil--offen {
+  transform: rotate(180deg);
+}
+.spickzettel__inhalt {
+  padding: 0 var(--s-4) var(--s-4);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+
+.aufgabe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  animation: hochgleiten var(--dauer-lang) var(--kurve);
+  transition: border-color var(--dauer-lang) var(--kurve);
+}
+.aufgabe--fertig {
+  border-color: var(--akzent-linie);
+}
+.aufgabe__text {
+  font-size: var(--t-l);
+  line-height: 1.55;
+  max-width: 820px;
+}
+.aufgabe__felder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--s-4);
+  align-items: start;
+}
+.afeld {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.afeld--breit {
+  grid-column: 1 / -1;
+}
+.afeld__label {
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-2);
+}
+.afeld__eingabe {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.afeld__eingabe .feld {
+  flex: 1;
+  min-width: 0;
+}
+.afeld__einheit {
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  color: var(--text-3);
+  min-width: 24px;
+}
+.afeld__soll {
+  font-size: var(--t-s);
+  color: var(--fehler);
+}
+.afeld__soll--gut {
+  color: var(--text-3);
+}
+.aufgabe__knoepfe {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-1);
+}
+.aufgabe__knoepfe .kbd {
+  margin-left: var(--s-1);
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+.aufgabe__lob {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--akzent);
+  font-weight: 600;
+}
+.rechenweg {
+  margin-top: var(--s-2);
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  border: 1px solid var(--linie);
+}
+.rechenweg__schritte {
+  margin: var(--s-2) 0 0;
+  padding-left: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.rechenweg__schritte li::marker {
+  font-family: var(--mono);
+  color: var(--text-3);
+}
+
+.atabelle-huelle {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.atabelle {
+  border-collapse: collapse;
+  font-size: var(--t-m);
+  min-width: 320px;
+}
+.atabelle th,
+.atabelle td {
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--linie-2);
+  text-align: left;
+  vertical-align: middle;
+}
+.atabelle th {
+  background: var(--flaeche-2);
+  font-weight: 600;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.atabelle td.rechts,
+.atabelle th.rechts {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.atabelle tfoot td {
+  font-weight: 650;
+  background: var(--flaeche-2);
+}

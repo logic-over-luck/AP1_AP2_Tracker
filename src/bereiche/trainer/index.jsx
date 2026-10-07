@@ -6,11 +6,12 @@ import { link } from '../../router.js';
 import { Icon, Leer, Knopf } from '../../ui/bausteine.jsx';
 import { TRAINER, trainerById, trainerIn, modiIn } from './verzeichnis.js';
 
+import { ZahlenTrainer } from './zahlen/Zahlen.jsx';
+
 // Komponenten je Trainer. Ein neuer Trainer: Eintrag in verzeichnis.js + Komponente hier.
-const KOMPONENTEN = {};
-export function registriereTrainer(id, komponente) {
-  KOMPONENTEN[id] = komponente;
-}
+const KOMPONENTEN = {
+  zahlen: ZahlenTrainer,
+};
 
 export function TrainerBereich({ raum, trainerId, params }) {
   const stand = useLernstand();
