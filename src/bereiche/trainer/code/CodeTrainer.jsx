@@ -394,15 +394,19 @@ function FehlerBild({ aufgabe, eingaben, setze, ergebnis, loesung }) {
   return (
     <div class="stapel stapel--4">
       <CodeBlock code={aufgabe.code} klickbar onZeile={(nr) => setze('zeile', String(nr))} gewaehlt={zeile} fehler={loesung ? aufgabe.felder.find((x) => x.id === 'zeile')?.erwartet * 1 : null} />
-      <p class="gedaempft">Tipp: Klicke auf eine Zeile, um sie als fehlerhaft auszuwählen.</p>
+      <p class="gedaempft">
+        {aufgabe.tests
+          ? 'So gehst du vor: Links rechnest du aus, was laut Aufgabentext herauskommen müsste. Rechts spielst du den Code Zeile für Zeile durch und trägst ein, was er wirklich liefert. Wo beide Spalten abweichen, steckt der Fehler. Die Zeile kannst du auch direkt im Code anklicken.'
+          : 'Tipp: Klicke auf eine Zeile, um sie als fehlerhaft auszuwählen.'}
+      </p>
       {aufgabe.tests && (
         <div class="atabelle-huelle">
           <table class="atabelle tt">
             <thead>
               <tr>
                 <th>Aufruf</th>
-                <th>erwartetes Ergebnis</th>
-                <th>tatsächliches Ergebnis</th>
+                <th>Soll (laut Aufgabe)</th>
+                <th>Ist (was der Code liefert)</th>
               </tr>
             </thead>
             <tbody>
