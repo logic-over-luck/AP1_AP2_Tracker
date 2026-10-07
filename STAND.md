@@ -131,7 +131,7 @@ nächsten offenen Punkt weiter.
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine
   Ein-Zahl-Aufgaben (Kennzahlen, Soll-Ist, Pay-per-Use …) behalten einzelne Felder.
-- **Eigener Rechenweg:** Rechen-Trainer (Zahlen, Subnetze, Kaufmännisch, Netzplan, Pseudocode außer Puzzle) haben ein Feld „Rechenweg & Notizen“. Es wird nicht geprüft und nicht
+- **Eigener Rechenweg:** Rechen-Trainer (Zahlen, Subnetze, Kaufmännisch, Netzplan, Pseudocode außer Puzzle) haben ein Feld „Rechenweg & Notizen“. Es steht immer direkt über „Prüfen“, wird nicht geprüft und nicht
   gespeichert, bei „Neue Aufgabe“ ist es wieder leer.
 - **Netzplan-Pfeile:** gerade und rechtwinklig wie in den Prüfungsheften (waagerecht raus, in der Lücke senkrecht,
   waagerecht rein). Spalten werden so sortiert, dass sich wenige Pfeile kreuzen; Pfeile über mehrere Spalten laufen

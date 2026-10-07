@@ -150,7 +150,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
   const fertig = ergebnis && aufgabe.felder.every((f) => ergebnis[f.id]?.ok);
   const imBildFalsch = ergebnis ? aufgabe.felder.filter((f) => (f.imBild || f.imBlatt) && !ergebnis[f.id]?.ok).length : 0;
 
-  // Beim Rechenblatt ist die Tabelle selbst der Rechenweg – Notizen dann darunter
+  // Notizfeld – steht immer direkt über den Knöpfen
   const notizFeld = (
     <label class="notiz">
       <span class="notiz__kopf">
@@ -214,7 +214,6 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             loesung={loesung || fertig}
           />
         )}
-        {notizen && !aufgabe.rechenblatt && notizFeld}
         <form
           class="aufgabe__felder"
           onSubmit={(e) => {
@@ -277,6 +276,7 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
               </label>
             );
           })}
+          {notizen && notizFeld}
           <div class="aufgabe__knoepfe">
             {fertig ? (
               <Knopf variante="primaer" type="submit" iconRechts="arrow-right">
@@ -297,7 +297,6 @@ export function Uebung({ erzeuge, trainerId, modusId, spIds = [], spickzettel, a
             )}
           </div>
         </form>
-        {notizen && aufgabe.rechenblatt && notizFeld}
         {imBildFalsch > 0 && !fertig && (
           <div class="aufgabe__hinweis">
             <Icon name="circle-x" groesse={16} /> {imBildFalsch} {imBildFalsch === 1 ? 'Wert' : 'Werte'} {aufgabe.rechenblatt ? 'in der Tabelle' : 'im Diagramm'} {imBildFalsch === 1 ? 'stimmt' : 'stimmen'} noch nicht (rot markiert).
