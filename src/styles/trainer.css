@@ -1238,7 +1238,19 @@ button.codezeile:hover {
   line-height: 1.9;
   color: var(--text);
 }
-.sql-modell strong {
+.sql-modell__name {
+  font: inherit;
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.sql-modell__name:hover {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sql-modell__tabelle {
+  font-weight: 700;
   color: var(--akzent);
 }
 .sql-modell u {
@@ -1349,6 +1361,92 @@ button.codezeile:hover {
   border: 2px solid var(--akzent);
   color: var(--text);
   font-weight: 700;
+}
+
+/* SQL: Bausteine zum Antippen */
+.sql-bausteine {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  border: 1px solid var(--linie-1, var(--linie-2));
+  border-radius: var(--r-2, var(--r-1));
+  background: var(--flaeche-1);
+}
+.sql-bausteine__zeile {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+}
+.sql-bausteine__zeile + .sql-bausteine__zeile {
+  padding-top: var(--s-2);
+  border-top: 1px dashed var(--linie-2);
+}
+.sql-bausteine__titel {
+  flex: none;
+  width: 92px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sql-bausteine__reihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+.sql-bausteine__hinweis {
+  font-size: var(--t-s);
+}
+.sql-baustein {
+  font-variant-ligatures: none;
+  font-feature-settings: 'calt' 0, 'liga' 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: var(--r-1);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dauer) var(--kurve), border-color var(--dauer) var(--kurve), transform 80ms;
+}
+.sql-baustein:hover {
+  border-color: var(--akzent-linie);
+}
+.sql-baustein:active {
+  transform: scale(0.95);
+}
+.sql-baustein--kw {
+  color: var(--akzent);
+}
+.sql-baustein--tabelle {
+  font-weight: 600;
+}
+.sql-baustein--aktiv {
+  background: var(--akzent-weich);
+  border-color: var(--akzent);
+}
+@media (max-width: 700px) {
+  /* Auf dem Handy: Titel über der Reihe, die Reihe wischt man seitlich */
+  .sql-bausteine__zeile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .sql-bausteine__reihe {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .sql-baustein {
+    height: 34px;
+  }
 }
 
 /* SQL: Grundlagen als Lexikon */

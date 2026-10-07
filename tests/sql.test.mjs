@@ -4,6 +4,7 @@ import { createRequire } from 'node:module';
 import { erstelleEngine, ausfuehren, pruefeAufgabe, fehlerText } from '../src/bereiche/trainer/sql/engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht, zerlegeRecht } from '../src/bereiche/trainer/sql/aufgaben.js';
 import { GRUNDLAGEN } from '../src/bereiche/trainer/sql/grundlagen.js';
+import { setzeEin, genannteTabellen } from '../src/bereiche/trainer/sql/einfuegen.js';
 
 const require = createRequire(import.meta.url);
 const initSqlJs = require('sql.js');
@@ -111,4 +112,25 @@ test('Grundlagen-Lexikon: jeder Begriff hat eine Erklärung, keine doppelten Beg
 
 test('Jede Aufgabe hat Punkte wie in der Prüfung', () => {
   for (const a of [...SQL_AUFGABEN, ...RECHTE_AUFGABEN]) assert.ok(Number.isInteger(a.punkte) && a.punkte >= 1 && a.punkte <= 10, a.id);
+});
+
+test('Antippen: Leerzeichen und Kommas kommen von selbst', () => {
+  const spalten = new Set(['bezeichnung', 'preis', 'ort']);
+  let t = '';
+  let p = 0;
+  const tipp = (w, zurueck = 0) => ({ text: t, pos: p } = setzeEin(t, p, p, w, { zurueck, spalten }));
+  for (const w of ['SELECT', 'bezeichnung', 'preis', 'FROM', 'artikel', 'WHERE', 'preis', '>', '300', ';']) tipp(w);
+  assert.equal(t, 'SELECT bezeichnung, preis FROM artikel WHERE preis > 300;\n');
+  t = '';
+  p = 0;
+  tipp('SELECT');
+  tipp('COUNT()', 1);
+  tipp('preis');
+  assert.equal(t, 'SELECT COUNT(preis)');
+  // ORDER BY mit zwei Spalten → Komma, WHERE ohne
+  t = 'SELECT * FROM kunde ORDER BY ort';
+  p = t.length;
+  tipp('preis');
+  assert.equal(t, 'SELECT * FROM kunde ORDER BY ort, preis ');
+  assert.deepEqual(genannteTabellen('SELECT * FROM kunde k JOIN bestellung b', ['kunde', 'bestellung', 'artikel']), ['bestellung', 'kunde']);
 });

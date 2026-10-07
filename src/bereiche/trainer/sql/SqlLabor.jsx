@@ -11,6 +11,7 @@ import { ladeEngine } from './laden.js';
 import { ausfuehren, pruefeAufgabe, fehlerText, schemaAus } from './engine.js';
 import { SQL_AUFGABEN, RECHTE_AUFGABEN, pruefeRecht } from './aufgaben.js';
 import { GRUNDLAGEN, KLAUSELN, BEFEHLSGRUPPEN } from './grundlagen.js';
+import { setzeEin } from './einfuegen.js';
 
 const SPICKZETTEL = {
   abfragen:
@@ -253,10 +254,12 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
     }
   };
 
+  const einfuegen = useEinfuegen(editor, text, setText, basis.schema);
+
   const ok = pruefung?.ok;
   return (
     <div class="sql__einspaltig">
-      <Ausgangssituation schema={basis.schema} />
+      <Ausgangssituation schema={basis.schema} einfuegen={einfuegen} />
       <section class={`flaeche flaeche--gross aufgabe ${ok ? 'aufgabe--fertig' : ''}`}>
         <div class="zeile">
           <div class="ueberschrift-klein ueberschrift-klein--akzent wachsen">Aufgabe {nr}</div>
@@ -291,6 +294,7 @@ function AufgabeKarte({ engine, aufgabe, nr, rechte, warGeloest, weiter }) {
             onKeyDown={taste}
           />
         </label>
+        <Bausteine einfuegen={einfuegen} />
         <div class="aufgabe__knoepfe">
           {!rechte && (
             <Knopf variante="zweit" icon="play" onClick={ausfuehrenJetzt}>
@@ -368,6 +372,7 @@ function FreiesLabor({ engine }) {
   const [lauf, setLauf] = useState(null);
   const [verlauf, setVerlauf] = useState([]);
   const editor = useRef(null);
+  const einfuegen = useEinfuegen(editor, text, setText, schema);
 
   const zuruecksetzen = () => {
     db.current?.close();
@@ -396,7 +401,7 @@ function FreiesLabor({ engine }) {
   return (
     <div class="sql">
       <div class="sql__einspaltig">
-        <Ausgangssituation schema={schema} />
+        <Ausgangssituation schema={schema} einfuegen={einfuegen} />
         <section class="flaeche flaeche--gross aufgabe">
           <div class="ueberschrift-klein ueberschrift-klein--akzent">Freies Labor</div>
           <p class="aufgabe__text text-2">
@@ -428,6 +433,7 @@ function FreiesLabor({ engine }) {
               }}
             />
           </label>
+          <Bausteine einfuegen={einfuegen} />
           <div class="aufgabe__knoepfe">
             <Knopf variante="primaer" icon="play" onClick={ausfuehrenJetzt}>
               Ausführen <Kbd>Strg+Enter</Kbd>
@@ -451,6 +457,57 @@ function FreiesLabor({ engine }) {
           )}
         </section>
       </div>
+    </div>
+  );
+}
+
+// ---------- Bausteine zum Antippen ----------
+
+// Reihen mit Titel; je Baustein [Anzeige, eingefügter Text, Cursor zurück]
+const BAUSTEINE = {
+  alle: [
+    ['Befehle', [['SELECT'], ['*'], ['FROM'], ['WHERE'], ['JOIN'], ['LEFT JOIN'], ['ON'], ['GROUP BY'], ['HAVING'], ['ORDER BY'], ['DESC'], ['DISTINCT'], ['AS'], ['UNION'], [','], [';']]],
+    ['Bedingungen', [['='], ['<>'], ['>'], ['<'], ['>='], ['<='], ['AND'], ['OR'], ['NOT'], ["LIKE '%'", "LIKE '%'", 2], ['IS NULL'], ['IN ( )', 'IN ()', 1], ['BETWEEN … AND', 'BETWEEN'], ['( SELECT … )', '(SELECT )', 1]]],
+    ['Ändern', [['INSERT INTO'], ['VALUES ( )', 'VALUES ()', 1], ['UPDATE'], ['SET'], ['DELETE FROM'], ['CREATE TABLE'], ['ALTER TABLE'], ['DROP TABLE']]],
+    ['Funktionen', [['COUNT(*)'], ['COUNT( )', 'COUNT()', 1], ['SUM( )', 'SUM()', 1], ['AVG( )', 'AVG()', 1], ['MIN( )', 'MIN()', 1], ['MAX( )', 'MAX()', 1], ['ROUND( , 2)', 'ROUND(, 2)', 4], ['YEAR( )', 'YEAR()', 1]]],
+  ],
+};
+
+// Fügt an der Cursorposition ein – mit passenden Leerzeichen und Kommas (siehe einfuegen.js)
+function useEinfuegen(editor, text, setText, schema) {
+  const spalten = useMemo(() => new Set((schema ?? []).flatMap((t) => t.spalten.map(([n]) => n.toLowerCase()))), [schema]);
+  return (wort, zurueck = 0) => {
+    const t = editor.current;
+    const a = t && document.activeElement === t ? t.selectionStart : (t?.dataset.pos ? Number(t.dataset.pos) : text.length);
+    const b = t && document.activeElement === t ? t.selectionEnd : a;
+    const r = setzeEin(text, Math.min(a, text.length), Math.min(b, text.length), wort, { zurueck, spalten });
+    setText(r.text);
+    requestAnimationFrame(() => {
+      if (!t) return;
+      // Auf dem Handy nicht fokussieren – sonst springt die Tastatur bei jedem Baustein auf
+      if (!window.matchMedia('(hover: none)').matches) t.focus();
+      t.setSelectionRange(r.pos, r.pos);
+      t.dataset.pos = r.pos;
+    });
+  };
+}
+
+// Befehle zum Antippen – Tabellen und Spalten tippt man im Datenbankmodell an
+function Bausteine({ einfuegen }) {
+  return (
+    <div class="sql-bausteine" aria-label="Befehle zum Antippen">
+      {BAUSTEINE.alle.map(([titel, reihe]) => (
+        <div key={titel} class="sql-bausteine__zeile">
+          <span class="sql-bausteine__titel">{titel}</span>
+          <div class="sql-bausteine__reihe">
+            {reihe.map(([zeige, wort = zeige, zurueck = 0]) => (
+              <button key={zeige} type="button" class="sql-baustein sql-baustein--kw" onMouseDown={(e) => e.preventDefault()} onClick={() => einfuegen(wort, zurueck)}>
+                {zeige}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -578,7 +635,7 @@ export function ErgebnisTabelle({ ergebnis }) {
 
 // Wie in der Prüfung: kurze Ausgangssituation und ein Auszug aus dem Datenbankmodell in
 // Relationen-Schreibweise – Primärschlüssel unterstrichen, Fremdschlüssel mit ↑.
-function Ausgangssituation({ schema }) {
+function Ausgangssituation({ schema, einfuegen }) {
   return (
     <section class="flaeche sql-situation">
       <div class="ueberschrift-klein ueberschrift-klein--akzent">Ausgangssituation</div>
@@ -590,12 +647,17 @@ function Ausgangssituation({ schema }) {
       <ul class="sql-modell">
         {schema.map((t) => (
           <li key={t.name}>
-            <strong>{t.name}</strong> (
+            <button class="sql-modell__name sql-modell__tabelle" onClick={() => einfuegen(t.name)}>
+              {t.name}
+            </button>{' '}
+            (
             {t.spalten.map(([name, typ, marke], i) => (
-              <span key={name} title={typ}>
+              <span key={name}>
                 {i > 0 && ', '}
-                {marke.includes('FK') && <span class="sql-modell__fk">↑</span>}
-                {marke.includes('PK') ? <u>{name}</u> : name}
+                <button class="sql-modell__name" title={typ} onClick={() => einfuegen(name)}>
+                  {marke.includes('FK') && <span class="sql-modell__fk">↑</span>}
+                  {marke.includes('PK') ? <u>{name}</u> : name}
+                </button>
               </span>
             ))}
             )
@@ -603,7 +665,7 @@ function Ausgangssituation({ schema }) {
         ))}
       </ul>
       <p class="gedaempft sql-situation__legende">
-        <u>unterstrichen</u> = Primärschlüssel · <span class="sql-modell__fk">↑</span> = Fremdschlüssel
+        <u>unterstrichen</u> = Primärschlüssel · <span class="sql-modell__fk">↑</span> = Fremdschlüssel · Klick auf einen Namen trägt ihn ins Lösungsfeld ein
       </p>
     </section>
   );

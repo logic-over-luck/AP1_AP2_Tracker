@@ -130,7 +130,9 @@ nächsten offenen Punkt weiter.
 - **SQL-Labor (prüfungsnah):** Oben die Ausgangssituation und ein „Auszug aus dem Datenbankmodell“ in
   Relationen-Schreibweise (Primärschlüssel unterstrichen, Fremdschlüssel mit ↑). Die Aufgaben sind wie in der
   Prüfung formuliert („Erstellen Sie eine SQL-Anweisung, die …“) und haben Punkte (geschätzt nach Umfang, nicht
-  aus echten Prüfungen). Man schreibt die Lösung selbst; Hilfen: Soll-Ergebnis und Lösungshinweis. Erster Reiter
+  aus echten Prüfungen). Tabellen- und Spaltennamen im Modell sind anklickbar und werden ins
+  Lösungsfeld eingetragen; darunter liegen Befehls-Bausteine zum Antippen (Leerzeichen und Kommas setzt die App).
+  Welche Tabellen und Spalten man braucht, sucht man selbst aus. Hilfen: Soll-Ergebnis und Lösungshinweis. Erster Reiter
   „Grundlagen“ = kleines Lexikon aller Befehle aus dem Katalog-Anhang.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
