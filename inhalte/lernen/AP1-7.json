@@ -90,7 +90,7 @@
     "Symmetrisch: derselbe geheime Schlüssel zum Ver- und Entschlüsseln",
     "Asymmetrisch: mit dem öffentlichen Schlüssel des Empfängers verschlüsseln, mit seinem privaten entschlüsseln",
     "Asymmetrisch: kein sicherer Schlüsseltausch nötig, aber rechenaufwendiger",
-    "Hybrid: symmetrischer Sitzungsschlüssel wird asymmetrisch geschützt übertragen",
+    "Hybrid: Daten symmetrisch verschlüsseln, Sitzungsschlüssel asymmetrisch geschützt übertragen",
     "Beispiele: AES symmetrisch, RSA asymmetrisch, TLS hybrid"
    ]
   },
@@ -217,7 +217,7 @@
    "id": "AP1-7-1-1-K3-1",
    "sp": "AP1-7-1-1",
    "k": "AP1-7-1-1-K3",
-   "vorne": "Welches Schutzziel sichern diese Maßnahmen?\n- Verschlüsselung\n- Hashwert\n- Datensicherung",
+   "vorne": "Welches Schutzziel sichert jeweils diese Maßnahme?\n- Verschlüsselung\n- Hashwert\n- Datensicherung",
    "hinten": "- Verschlüsselung → Vertraulichkeit\n- Hashwert → Integrität (Veränderungen werden erkennbar)\n- Datensicherung → Verfügbarkeit"
   },
   {
@@ -232,7 +232,7 @@
    "sp": "AP1-7-1-2",
    "k": "AP1-7-1-2-K1",
    "vorne": "Wofür steht die Abkürzung TOM in der Informationssicherheit?",
-   "hinten": "Technische und organisatorische Maßnahmen zum Schutz von Daten und Systemen."
+   "hinten": "Technische und organisatorische Maßnahmen (auch „technisch-organisatorische Maßnahmen“) zum Schutz von Daten und Systemen."
   },
   {
    "id": "AP1-7-1-2-K1-2",
@@ -246,7 +246,7 @@
    "sp": "AP1-7-1-2",
    "k": "AP1-7-1-2-K1",
    "vorne": "Zu welcher Art von Schutzmaßnahme gehört jeweils:\na) Festplattenverschlüsselung\nb) Besucherregelung\nc) Verpflichtung auf Vertraulichkeit",
-   "hinten": "- a) technisch\n- b) organisatorisch\n- c) personell"
+   "hinten": "- a) technisch\n- b) organisatorisch\n- c) personell (im Datenschutzrecht oft zu den organisatorischen gezählt)"
   },
   {
    "id": "AP1-7-1-2-K2-1",
@@ -329,7 +329,7 @@
    "id": "AP1-7-1-3-K3-1",
    "sp": "AP1-7-1-3",
    "k": "AP1-7-1-3-K3",
-   "vorne": "Nach welchen vier Kriterien bewertest du eine Passwort-Policy?",
+   "vorne": "Nenne vier Kriterien, nach denen du eine Passwort-Policy bewertest.",
    "hinten": "- Mindestlänge\n- Zeichenvielfalt\n- keine Wiederverwendung\n- Sperre nach Fehlversuchen"
   },
   {
@@ -539,8 +539,8 @@
    "id": "AP1-7-2-2-K3-1",
    "sp": "AP1-7-2-2",
    "k": "AP1-7-2-2-K3",
-   "vorne": "Nenne drei typische Begründungen für einen hohen Schutzbedarf.",
-   "hinten": "- personenbezogene Daten sind betroffen\n- hoher wirtschaftlicher Schaden\n- Imageschaden"
+   "vorne": "Mit welchen möglichen Schäden begründest du typischerweise die Einstufung des Schutzbedarfs? Nenne drei.",
+   "hinten": "- Verletzung des Schutzes personenbezogener Daten\n- wirtschaftlicher (finanzieller) Schaden\n- Imageschaden"
   },
   {
    "id": "AP1-7-2-2-K3-2",
@@ -561,7 +561,7 @@
    "sp": "AP1-7-2-2",
    "k": "AP1-7-2-2-K5",
    "vorne": "Wonach richtet sich der Schutzbedarf eines IT-Systems?",
-   "hinten": "Nach der Anwendung mit dem höchsten Schutzbedarf, die darauf läuft – für jedes Schutzziel einzeln (Maximumprinzip)."
+   "hinten": "In der Regel nach der Anwendung mit dem höchsten Schutzbedarf, die darauf läuft – für jedes Schutzziel einzeln (Maximumprinzip)."
   },
   {
    "id": "AP1-7-2-2-K5-2",
@@ -651,7 +651,7 @@
    "id": "AP1-7-3-1-K3-2",
    "sp": "AP1-7-3-1",
    "k": "AP1-7-3-1-K3",
-   "vorne": "Welches Problem hat die symmetrische Verschlüsselung?",
+   "vorne": "Welches Problem der symmetrischen Verschlüsselung löst das asymmetrische Verfahren?",
    "hinten": "Der gemeinsame geheime Schlüssel muss vorher auf sicherem Weg ausgetauscht werden."
   },
   {
@@ -967,7 +967,7 @@
    "sp": "AP1-7-3-5",
    "k": "AP1-7-3-5-K5",
    "vorne": "Was besagt die 3-2-1-Regel der Datensicherung?",
-   "hinten": "- 3 Kopien der Daten\n- auf 2 verschiedenen Medien\n- davon 1 Kopie außer Haus"
+   "hinten": "- mindestens 3 Kopien der Daten (meist Original + 2 Sicherungen)\n- auf 2 verschiedenen Medien\n- davon 1 Kopie außer Haus"
   },
   {
    "id": "AP1-7-4-1-K1-1",
@@ -1085,7 +1085,7 @@
    "id": "AP1-7-5-1-K1-1",
    "sp": "AP1-7-5-1",
    "k": "AP1-7-5-1-K1",
-   "vorne": "Welche zwei Rechtsgrundlagen regeln in Deutschland den Datenschutz in Unternehmen, und welchen Zweck haben sie?",
+   "vorne": "Welche zwei zentralen Rechtsgrundlagen regeln in Deutschland den Datenschutz in Unternehmen, und welchen Zweck haben sie?",
    "hinten": "DSGVO (Datenschutz-Grundverordnung der EU) und BDSG (Bundesdatenschutzgesetz). Zweck: Schutz der Menschen bei der Verarbeitung ihrer personenbezogenen Daten."
   },
   {
@@ -1134,7 +1134,7 @@
    "id": "AP1-7-5-1-K3-3",
    "sp": "AP1-7-5-1",
    "k": "AP1-7-5-1-K3",
-   "vorne": "Eine ehemalige Kundin verlangt, dass ihre Daten gelöscht werden. Wann darf das Unternehmen Daten trotzdem behalten?",
+   "vorne": "Eine ehemalige Kundin verlangt, dass ihre Daten gelöscht werden. Aus welchem typischen Grund darf das Unternehmen bestimmte Daten trotzdem noch aufbewahren?",
    "hinten": "Wenn eine gesetzliche Aufbewahrungspflicht besteht, z. B. für Rechnungen; diese Daten werden dann nur noch dafür aufbewahrt und nach Fristablauf gelöscht."
   },
   {
@@ -1279,7 +1279,7 @@
   {
    "begriff": "TOM",
    "langform": "technische und organisatorische Maßnahmen",
-   "erklaerung": "Sammelbegriff für Maßnahmen, mit denen Daten und Systeme geschützt werden, z. B. Verschlüsselung (technisch) oder Besucherregelung (organisatorisch).",
+   "erklaerung": "Sammelbegriff für Maßnahmen, mit denen Daten und Systeme geschützt werden, z. B. Verschlüsselung (technisch) oder Besucherregelung (organisatorisch); personelle Maßnahmen zählen oft zu den organisatorischen.",
    "sp": [
     "AP1-7-1-2"
    ]
@@ -1551,8 +1551,7 @@
   },
   {
    "begriff": "Zertifizierungsstelle",
-   "langform": "englisch: Certificate Authority (CA)",
-   "erklaerung": "Vertrauenswürdige Stelle, die die Identität prüft und digitale Zertifikate ausstellt.",
+   "erklaerung": "Vertrauenswürdige Stelle (englisch: Certificate Authority, CA), die die Identität prüft und digitale Zertifikate ausstellt.",
    "sp": [
     "AP1-7-3-2"
    ]
@@ -1608,8 +1607,7 @@
   },
   {
    "begriff": "Datensicherung",
-   "langform": "auch Backup",
-   "erklaerung": "Kopie von Daten auf einem getrennten Speicher, damit sie bei Verlust wiederhergestellt werden können.",
+   "erklaerung": "Kopie von Daten auf einem getrennten Speicher, damit sie bei Verlust wiederhergestellt werden können; englisch: Backup.",
    "sp": [
     "AP1-7-1-1",
     "AP1-7-3-5"
@@ -1646,15 +1644,14 @@
   },
   {
    "begriff": "3-2-1-Regel",
-   "erklaerung": "Regel für Datensicherungen: drei Kopien der Daten, auf zwei verschiedenen Medien, davon eine außer Haus.",
+   "erklaerung": "Regel für Datensicherungen: mindestens drei Kopien der Daten (meist Original und zwei Sicherungen), auf zwei verschiedenen Medien, davon eine außer Haus.",
    "sp": [
     "AP1-7-3-5"
    ]
   },
   {
    "begriff": "Schadsoftware",
-   "langform": "auch Malware",
-   "erklaerung": "Software, die Schaden anrichten soll, z. B. Viren, Würmer, Trojaner, Ransomware, Spyware.",
+   "erklaerung": "Software, die Schaden anrichten soll (englisch: Malware), z. B. Viren, Würmer, Trojaner, Ransomware, Spyware.",
    "sp": [
     "AP1-7-4-1"
    ]
@@ -1761,6 +1758,7 @@
    "begriff": "Datenschutz",
    "erklaerung": "Schutz der Menschen vor Missbrauch ihrer personenbezogenen Daten.",
    "sp": [
+    "AP1-7-1-4",
     "AP1-7-5-1",
     "AP1-7-5-2"
    ]
@@ -1808,46 +1806,5 @@
    ]
   }
  ],
- "unsicher": [
-  {
-   "id": "AP1-7-1-2-K1-2",
-   "frage": "Personelle Maßnahmen werden hier als eigene Art neben technischen und organisatorischen geführt. Die DSGVO kennt nur „technische und organisatorische Maßnahmen“, viele Lehrbücher zählen Schulung und Verpflichtung zu den organisatorischen. Akzeptiert die Prüfung beide Einteilungen?"
-  },
-  {
-   "id": "AP1-7-1-2-K1-1",
-   "frage": "Der Rahmen schreibt „technisch-organisatorische Maßnahmen (TOM)“; die Karte löst TOM als „technische und organisatorische Maßnahmen“ (Wortlaut DSGVO) auf. Inhaltlich gleich, aber die erwartete Schreibweise ist nicht sicher."
-  },
-  {
-   "id": "AP1-7-1-3-K2-1",
-   "frage": "Die Karte nennt bewusst keine konkrete Mindestlänge, weil Empfehlungen (BSI, NIST) je nach Verfahren und Zeichenvielfalt unterschiedliche Werte nennen. Ebenso fehlt „regelmäßiger Passwortwechsel“: Das BSI empfiehlt ihn seit 2020 nicht mehr ohne Anlass. Ob die Prüfung noch einen Pflichtwechsel als Kriterium erwartet, ist unklar."
-  },
-  {
-   "id": "AP1-7-2-2-K5-1",
-   "frage": "Die Karte nennt nur das Maximumprinzip. Der BSI-Standard 200-2 kennt zusätzlich Kumulations- und Verteilungseffekt, die den Schutzbedarf erhöhen oder senken können; sie gehen über den Rahmen hinaus und sind nicht abgefragt."
-  },
-  {
-   "id": "AP1-7-2-3-K1-1",
-   "frage": "Anzahl und Namen der Risikoklassen (z. B. gering/mittel/hoch oder vier bis fünf Stufen) sind nicht einheitlich festgelegt; die Karte nennt sie nur als Beispiel."
-  },
-  {
-   "id": "AP1-7-3-2-K4-1",
-   "frage": "„Hashwert mit dem privaten Schlüssel verschlüsseln“ ist die übliche Lehrbuch-Vereinfachung (so beim RSA-Verfahren). Fachlich genauer ist „signieren“, da andere Signaturverfahren nicht verschlüsseln. Für die Prüfung wird vermutlich die vereinfachte Form erwartet."
-  },
-  {
-   "id": "AP1-7-3-3-K2-1",
-   "frage": "Manche Lehrbücher unterscheiden Authentisierung (Nachweis durch den Benutzer), Authentifizierung (Prüfung durch das System) und Autorisierung (Rechtevergabe). Die Karte verwendet nur Authentifizierung im allgemeinen Sinn; ob die Prüfung die Dreiteilung erwartet, ist unklar."
-  },
-  {
-   "id": "AP1-7-3-5-K5-1",
-   "frage": "Bei der 3-2-1-Regel wird meist das Original als eine der drei Kopien mitgezählt (Original + zwei Sicherungen); einzelne Quellen verlangen drei Sicherungen. Die Karte bleibt beim Wortlaut „3 Kopien“."
-  },
-  {
-   "id": "AP1-7-5-2-K3-1",
-   "frage": "Nach Gesetz (DSGVO, Erwägungsgrund 26) bleiben pseudonymisierte Daten personenbezogen. Der EuGH hat 2025 (C-413/23 P) entschieden, dass sie für einen Empfänger ohne Zuordnungsmöglichkeit nicht personenbezogen sein können. Die Karte folgt der Gesetzesregel; für AP1 dürfte das genügen."
-  },
-  {
-   "id": "AP1-7-5-1-K3-1",
-   "frage": "Die Liste nennt die Rechte aus Art. 15–21 DSGVO. Weitere Rechte (Information bei Erhebung, Schutz vor automatisierten Einzelentscheidungen, Beschwerde bei der Aufsichtsbehörde) fehlen; die Frage verlangt nur die wichtigsten."
-  }
- ]
+ "unsicher": []
 }

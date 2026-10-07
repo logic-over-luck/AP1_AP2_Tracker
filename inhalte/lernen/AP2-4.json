@@ -1,0 +1,2023 @@
+{
+  "paket": "AP2-4",
+  "bloecke": {
+    "AP2-4-1": {
+      "satz": "Wie Datenbanken Daten speichern, welche Datentypen es gibt und wie Constraints, Validierung und Transaktionen die Daten korrekt halten."
+    },
+    "AP2-4-2": {
+      "satz": "Daten mit SELECT abfragen: filtern, sortieren, Tabellen verbinden, gruppieren, Abfragen verschachteln und Ergebnisse vereinigen."
+    },
+    "AP2-4-3": {
+      "satz": "Daten einfügen, ändern und löschen, Tabellen und Indizes anlegen und ändern sowie Benutzern Rechte geben und entziehen."
+    },
+    "AP2-4-4": {
+      "satz": "Daten über CSV, XML und JSON austauschen, Dienste über REST nutzen und Daten aus verschiedenen Quellen zusammenführen."
+    }
+  },
+  "stichpunkte": {
+    "AP2-4-1-1": {
+      "ziel": "Relationale und NoSQL-Datenbanken abgrenzen und für ein Attribut den passenden Datentyp wählen.",
+      "punkte": [
+        "Relational: Tabellen mit festem Schema und Beziehungen; NoSQL: flexibles Schema",
+        "NoSQL-Arten: dokumentenorientiert, Schlüssel-Wert-Speicher, spaltenorientiert, Graphdatenbank",
+        "Datentypen: Boolesch, Ganzzahl, Gleitkomma, Währung, Datum, Text fest/variabel, BLOB, Geokoordinaten",
+        "SQL-Datentyp wählen, z. B. INTEGER, DECIMAL, VARCHAR, DATE",
+        "Geldbeträge als Festkommazahl (DECIMAL), nicht als Gleitkommazahl"
+      ]
+    },
+    "AP2-4-1-2": {
+      "ziel": "Die Datenintegrität mit Constraints, Validierungen und Transaktionen beurteilen und sicherstellen.",
+      "punkte": [
+        "Constraints: Primärschlüssel, Fremdschlüssel, NOT NULL, UNIQUE, CHECK",
+        "Formale Prüfung (Aufbau, Datentyp, Pflichtfeld) von inhaltlicher Plausibilitätsprüfung unterscheiden",
+        "Eine Schemaprüfung allein erkennt keine inhaltlichen Fehler",
+        "Mängel: uneinheitliche Formate, mehrere Werte in einem Feld, ungültige Werte, Schreibweisen",
+        "Transaktion: Folge von Anweisungen, die ganz oder gar nicht ausgeführt wird"
+      ]
+    },
+    "AP2-4-2-1": {
+      "ziel": "Abfragen auf einer Tabelle schreiben: Spalten auswählen, Zeilen filtern, rechnen und sortieren.",
+      "punkte": [
+        "SELECT … FROM, Spalten mit AS umbenennen",
+        "WHERE mit AND, OR, NOT, Vergleichsoperatoren, LIKE (% und _) und IS NULL",
+        "In der Ausgabe rechnen, z. B. Menge · Preis",
+        "ORDER BY auf- und absteigend, DISTINCT entfernt doppelte Zeilen",
+        "Funktionen wie YEAR, MONTH, NOW, DATEDIFF, DATEADD, LEFT, RIGHT"
+      ]
+    },
+    "AP2-4-2-2": {
+      "ziel": "Mehrere Tabellen über Primär- und Fremdschlüssel verbinden und erkennen, wann ein LEFT JOIN nötig ist.",
+      "punkte": [
+        "INNER JOIN … ON über Primär- und Fremdschlüssel",
+        "Drei und mehr Tabellen in einer Abfrage verketten",
+        "LEFT JOIN: alle Zeilen der linken Tabelle, auch ohne Partner rechts",
+        "RIGHT JOIN als Spiegelbild des LEFT JOIN",
+        "Aliasnamen für Tabellen, gleichnamige Spalten eindeutig ansprechen"
+      ]
+    },
+    "AP2-4-2-3": {
+      "ziel": "Daten mit Aggregatfunktionen auswerten, nach Gruppen zusammenfassen, Gruppen filtern und nach Aggregaten sortieren.",
+      "punkte": [
+        "COUNT, SUM, AVG, MIN, MAX, auch zusammen mit JOIN",
+        "GROUP BY: jede nicht aggregierte Ausgabespalte muss in GROUP BY stehen",
+        "WHERE filtert Zeilen vor dem Gruppieren, HAVING filtert Gruppen danach",
+        "Nach einem aggregierten Wert sortieren, z. B. absteigend nach der Summe",
+        "COUNT(*) zählt alle Zeilen, COUNT(Spalte) nur die ohne NULL in der Spalte"
+      ]
+    },
+    "AP2-4-2-4": {
+      "ziel": "Unterabfragen in WHERE und FROM einsetzen und die Ergebnisse zweier Abfragen mit UNION vereinigen.",
+      "punkte": [
+        "Unterabfrage in WHERE mit IN oder NOT IN",
+        "Unterabfrage, die einen einzelnen Wert liefert (z. B. Höchstwert), zum Vergleich",
+        "Unterabfrage in FROM mit einem Namen über AS",
+        "EXISTS und NOT EXISTS",
+        "UNION: gleiche Spaltenzahl, Gesamtergebnis sortieren"
+      ]
+    },
+    "AP2-4-3-1": {
+      "ziel": "Datensätze einfügen, ändern und löschen, auch aus Abfragen heraus und über mehrere Tabellen in der richtigen Reihenfolge.",
+      "punkte": [
+        "INSERT INTO … VALUES mit Spaltenliste und INSERT INTO … SELECT",
+        "UPDATE … SET … WHERE, auch berechnet oder mit Textfunktion",
+        "DELETE FROM … WHERE; ohne WHERE sind alle Zeilen betroffen",
+        "Erst Zeilen mit dem Fremdschlüssel löschen, dann die Zeile, auf die sie verweisen",
+        "Archivieren: in die Archivtabelle übertragen, dann im Original löschen"
+      ]
+    },
+    "AP2-4-3-2": {
+      "ziel": "Tabellen mit CREATE, ALTER und DROP TABLE anlegen, ändern und löschen und einen Index anlegen.",
+      "punkte": [
+        "CREATE TABLE mit Spalten, Datentypen, Primär- und Fremdschlüssel",
+        "ALTER TABLE: Spalte hinzufügen, ändern, entfernen, Fremdschlüssel ergänzen",
+        "Struktur: CREATE, ALTER, DROP; Daten: INSERT, UPDATE, DELETE; Abfrage: SELECT",
+        "Index (CREATE INDEX) beschleunigt die Suche, braucht Speicher und bremst Einfügen und Ändern"
+      ]
+    },
+    "AP2-4-3-3": {
+      "ziel": "Benutzer anlegen und ihnen mit GRANT und REVOKE gezielt Rechte auf Datenbankobjekte geben und entziehen.",
+      "punkte": [
+        "CREATE USER legt einen Benutzer an",
+        "GRANT … ON … TO gibt ein Recht, REVOKE … ON … FROM entzieht es",
+        "Rechte wie SELECT, INSERT, UPDATE, DELETE nur nach Bedarf vergeben",
+        "WITH GRANT OPTION: Der Benutzer darf das Recht weitergeben"
+      ]
+    },
+    "AP2-4-4-1": {
+      "ziel": "CSV, XML und JSON lesen und unterscheiden und ihre Einsatzbereiche kennen.",
+      "punkte": [
+        "JSON: Objekte in geschweiften, Arrays in eckigen Klammern, Paare aus Name und Wert",
+        "XML: Elemente mit öffnendem und schließendem Tag, Attribute, Verschachtelung",
+        "CSV für einfache Tabellen, JSON für Webschnittstellen, XML für strenge Struktur mit Schema",
+        "Wohlgeformt: hält die XML-Regeln ein; gültig: entspricht zusätzlich dem Schema",
+        "Schemaprüfung prüft Aufbau und Datentypen, nicht die inhaltliche Richtigkeit"
+      ]
+    },
+    "AP2-4-4-2": {
+      "ziel": "Das Konzept einer REST-API und den Zweck eines API-Schlüssels erläutern, Anfragen deuten und REST von SOAP abgrenzen.",
+      "punkte": [
+        "REST: Ressourcen über URL, nur Daten übertragen, jede Anfrage steht für sich (zustandslos)",
+        "GET lesen, POST anlegen, PUT/PATCH ändern, DELETE löschen",
+        "Anfrage: Adresse mit Pfad und Abfrageparametern, Methode, Kopfzeilen, Datenteil",
+        "Statuscodes: 2xx erfolgreich, 4xx Fehler beim Client, 5xx Fehler beim Server",
+        "SOAP: Protokoll mit XML-Nachrichten; REST: Architekturstil auf Grundlage von HTTP"
+      ]
+    },
+    "AP2-4-4-3": {
+      "ziel": "Den Weg von Daten aus fremden Quellen in einen Zielbestand beschreiben und Data Lake, Data Warehouse und Open Data einordnen.",
+      "punkte": [
+        "Übernahme: auslesen, bereinigen und vereinheitlichen, in die Zielstruktur umformen, einspielen",
+        "Beurteilen und begründen, ob ein Bestand ohne Nacharbeit importiert werden kann",
+        "Data Lake: Daten aus vielen Quellen im Rohformat",
+        "Data Warehouse: Daten bereits aufbereitet und strukturiert",
+        "Open Data: frei zugängliche Daten, meist über Schnittstelle oder als Datei"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP2-4-1-1-K1-1",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K1",
+      "vorne": "Wodurch unterscheidet sich eine relationale Datenbank von einer NoSQL-Datenbank?",
+      "hinten": "- relational: Daten in Tabellen mit festem Schema, Tabellen über Schlüssel verbunden\n- NoSQL: kein festes Tabellenschema, die Struktur der Daten ist flexibel"
+    },
+    {
+      "id": "AP2-4-1-1-K1-2",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K1",
+      "vorne": "Was bedeutet „festes Schema“ bei einer relationalen Datenbank?",
+      "hinten": "Spalten und ihre Datentypen sind für jede Tabelle vorab festgelegt; jede Zeile einer Tabelle hat denselben Aufbau."
+    },
+    {
+      "id": "AP2-4-1-1-K2-1",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K2",
+      "vorne": "Welche vier Hauptarten von NoSQL-Datenbanken unterscheidet man?",
+      "hinten": "- dokumentenorientiert\n- Schlüssel-Wert-Speicher\n- spaltenorientiert\n- Graphdatenbank"
+    },
+    {
+      "id": "AP2-4-1-1-K2-2",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K2",
+      "vorne": "Welche Art von NoSQL-Datenbank speichert Daten als Knoten und Kanten (Beziehungen)?",
+      "hinten": "Die Graphdatenbank."
+    },
+    {
+      "id": "AP2-4-1-1-K2-3",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K2",
+      "vorne": "Wie speichert eine dokumentenorientierte Datenbank ihre Daten?",
+      "hinten": "Als in sich geschlossene Dokumente, z. B. im JSON-Format; die Dokumente dürfen unterschiedlich aufgebaut sein."
+    },
+    {
+      "id": "AP2-4-1-1-K2-4",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K2",
+      "vorne": "Wie speichert ein Schlüssel-Wert-Speicher seine Daten?",
+      "hinten": "Als Paare aus einem eindeutigen Schlüssel und einem Wert; zugegriffen wird über den Schlüssel."
+    },
+    {
+      "id": "AP2-4-1-1-K3-1",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K3",
+      "vorne": "Welcher allgemeine Datentyp (nicht der SQL-Typ) passt jeweils? Lagerbestand in Stück, Artikelpreis, Lieferdatum, Produktfoto, Merkmal „ist aktiv“ (ja/nein)",
+      "hinten": "- Lagerbestand: Ganzzahl\n- Artikelpreis: Währung\n- Lieferdatum: Datum\n- Produktfoto: BLOB\n- ist aktiv: Boolescher Wert"
+    },
+    {
+      "id": "AP2-4-1-1-K3-2",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K3",
+      "vorne": "Was ist ein BLOB?",
+      "hinten": "Binary Large Object: ein Datentyp für große Binärdaten wie Bilder oder Dateien."
+    },
+    {
+      "id": "AP2-4-1-1-K3-3",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K3",
+      "vorne": "Wann wählt man Text fester Länge, wann Text variabler Länge?",
+      "hinten": "- feste Länge (`CHAR(n)`): Werte sind immer gleich lang, z. B. Ländercode DE\n- variable Länge (`VARCHAR(n)`): Länge schwankt, z. B. Nachname; höchstens n Zeichen"
+    },
+    {
+      "id": "AP2-4-1-1-K3-4",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K3",
+      "vorne": "Welcher Datentyp passt für einen Messwert mit Nachkommastellen wie 21,7 °C?",
+      "hinten": "Gleitkommawert (z. B. `FLOAT`): Er speichert Zahlen mit Nachkommastellen; kleine Rundungsfehler stören bei Messwerten nicht."
+    },
+    {
+      "id": "AP2-4-1-1-K3-5",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K3",
+      "vorne": "Wie lassen sich Geokoordinaten speichern?",
+      "hinten": "Als Paar aus Breitengrad und Längengrad, z. B. in zwei Zahlenspalten mit Nachkommastellen oder in einem eigenen Geodatentyp des Datenbanksystems."
+    },
+    {
+      "id": "AP2-4-1-1-K4-1",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K4",
+      "vorne": "Welche SQL-Datentypen passen für: fortlaufende Kundennummer, Nachname, Geburtsdatum, Rechnungsbetrag?",
+      "hinten": "- Kundennummer: `INTEGER`\n- Nachname: `VARCHAR(n)`\n- Geburtsdatum: `DATE`\n- Rechnungsbetrag: `DECIMAL(p,s)`, z. B. `DECIMAL(10,2)`"
+    },
+    {
+      "id": "AP2-4-1-1-K4-2",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K4",
+      "vorne": "Was bedeuten p und s in `DECIMAL(p,s)`?",
+      "hinten": "p ist die Gesamtzahl der Stellen, s die Zahl der Nachkommastellen davon. `DECIMAL(10,2)` speichert bis zu 8 Stellen vor und 2 nach dem Komma."
+    },
+    {
+      "id": "AP2-4-1-1-K4-3",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K4",
+      "vorne": "Warum speichert man eine Postleitzahl als `CHAR(5)` und nicht als `INTEGER`?",
+      "hinten": "Mit ihr wird nicht gerechnet, und führende Nullen (z. B. 01067) gingen als Zahl verloren."
+    },
+    {
+      "id": "AP2-4-1-1-K5-1",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K5",
+      "vorne": "Warum speichert man Geldbeträge als `DECIMAL` und nicht als Gleitkommazahl?",
+      "hinten": "Eine Gleitkommazahl speichert viele Dezimalbrüche (z. B. 0,10) nur angenähert, es entstehen Rundungsfehler. `DECIMAL` speichert Festkommazahlen exakt mit fester Zahl an Nachkommastellen."
+    },
+    {
+      "id": "AP2-4-1-1-K6-1",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K6",
+      "vorne": "In welchem Fall passt eine relationale Datenbank besser als eine NoSQL-Datenbank? Beispiel?",
+      "hinten": "Wenn die Daten fest strukturiert sind, in Beziehung zueinander stehen und konsistent bleiben müssen, z. B. Kunden, Bestellungen und Rechnungen."
+    },
+    {
+      "id": "AP2-4-1-1-K6-2",
+      "sp": "AP2-4-1-1",
+      "k": "AP2-4-1-1-K6",
+      "vorne": "In welchem Fall passt eine NoSQL-Datenbank besser als eine relationale? Beispiel?",
+      "hinten": "Wenn die Struktur der Daten wechselt oder sehr große Datenmengen anfallen, z. B. ein Produktkatalog mit je Produkt verschiedenen Merkmalen, Sitzungsdaten oder das Beziehungsnetz eines sozialen Netzwerks."
+    },
+    {
+      "id": "AP2-4-1-2-K1-1",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K1",
+      "vorne": "Was ist ein Constraint?",
+      "hinten": "Eine Regel in der Tabellendefinition, die die Datenbank bei jedem Einfügen und Ändern erzwingt; Änderungen, die sie verletzen, werden abgewiesen."
+    },
+    {
+      "id": "AP2-4-1-2-K2-1",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K2",
+      "vorne": "Welche fünf Constraints sichern die Integrität einer Tabelle?",
+      "hinten": "- Primärschlüssel (`PRIMARY KEY`)\n- Fremdschlüssel (`FOREIGN KEY`)\n- `NOT NULL`\n- `UNIQUE`\n- `CHECK`"
+    },
+    {
+      "id": "AP2-4-1-2-K2-2",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K2",
+      "vorne": "Was erzwingen `NOT NULL` und `UNIQUE`?",
+      "hinten": "- `NOT NULL`: Die Spalte muss einen Wert haben.\n- `UNIQUE`: Jeder Wert darf in der Spalte nur einmal vorkommen."
+    },
+    {
+      "id": "AP2-4-1-2-K2-3",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K2",
+      "vorne": "Was erzwingt ein `CHECK`-Constraint?",
+      "hinten": "Eine Bedingung, die jeder Wert der Spalte erfüllen muss, z. B. `CHECK (Menge > 0)`."
+    },
+    {
+      "id": "AP2-4-1-2-K2-4",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K2",
+      "vorne": "Was erzwingt ein Primärschlüssel?",
+      "hinten": "Jede Zeile ist eindeutig gekennzeichnet: Der Wert kommt nur einmal vor und ist nie NULL (wirkt wie `UNIQUE` und `NOT NULL` zusammen)."
+    },
+    {
+      "id": "AP2-4-1-2-K2-5",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K2",
+      "vorne": "Was erzwingt ein Fremdschlüssel?",
+      "hinten": "Referenzielle Integrität: Jeder Wert im Fremdschlüssel muss als Primärschlüssel in der Tabelle vorkommen, auf die er verweist (oder NULL sein)."
+    },
+    {
+      "id": "AP2-4-1-2-K3-1",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K3",
+      "vorne": "Was prüft eine formale Validierung?",
+      "hinten": "Ob ein Wert richtig aufgebaut ist: Aufbau/Format, Datentyp und ob ein Pflichtfeld ausgefüllt ist."
+    },
+    {
+      "id": "AP2-4-1-2-K3-2",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K3",
+      "vorne": "Was prüft eine Plausibilitätsprüfung?",
+      "hinten": "Ob ein Wert inhaltlich stimmen kann, z. B. Lieferdatum nicht vor dem Bestelldatum oder Gesamtsumme passt zu den Positionen."
+    },
+    {
+      "id": "AP2-4-1-2-K3-3",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K3",
+      "vorne": "Formale Prüfung oder Plausibilitätsprüfung? a) Pflichtfeld E-Mail ist leer b) Geburtsdatum liegt in der Zukunft c) im Feld Menge steht Text",
+      "hinten": "a) formal\nb) Plausibilität (inhaltlich)\nc) formal"
+    },
+    {
+      "id": "AP2-4-1-2-K4-1",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K4",
+      "vorne": "Eine XML-Rechnung besteht die Prüfung gegen ihr Schema, die Gesamtsumme ist aber falsch berechnet. Warum fällt das nicht auf?",
+      "hinten": "Das Schema legt nur Aufbau und Datentypen fest. Die falsche Summe ist trotzdem eine gültige Zahl; ob sie zu den Positionen passt, prüft das Schema nicht."
+    },
+    {
+      "id": "AP2-4-1-2-K4-2",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K4",
+      "vorne": "Wie findet man inhaltliche Fehler, die eine Schemaprüfung nicht erkennt?",
+      "hinten": "Mit einer zusätzlichen Plausibilitätsprüfung, z. B. die Positionen nachrechnen und mit der angegebenen Gesamtsumme vergleichen."
+    },
+    {
+      "id": "AP2-4-1-2-K5-1",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K5",
+      "vorne": "Welche typischen Qualitätsmängel treten in einem von Hand gepflegten Datenbestand auf?",
+      "hinten": "- uneinheitliche Formate (Datum mal 01.02.2025, mal 2025-02-01)\n- mehrere Werte in einem Feld\n- ungültige Werte\n- unterschiedliche Schreibweisen desselben Werts"
+    },
+    {
+      "id": "AP2-4-1-2-K5-2",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K5",
+      "vorne": "Im Feld Telefon steht „0221 123456, 0171 987654“. Welcher Mangel liegt vor, und welche Folge hat er?",
+      "hinten": "Mehrere Werte in einem Feld. Die Nummern lassen sich nicht einzeln suchen oder in eine Spalte mit einem Wert übernehmen; sie müssen vor dem Import aufgeteilt werden."
+    },
+    {
+      "id": "AP2-4-1-2-K5-3",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K5",
+      "vorne": "Welche Folge haben unterschiedliche Schreibweisen wie „Köln“ und „Koeln“ in einer Spalte?",
+      "hinten": "Dasselbe wird als Verschiedenes behandelt: Gruppierungen und Zählungen werden falsch, Dubletten bleiben unentdeckt."
+    },
+    {
+      "id": "AP2-4-1-2-K6-1",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K6",
+      "vorne": "Was ist eine Transaktion?",
+      "hinten": "Eine Folge von Anweisungen, die als Einheit ganz oder gar nicht ausgeführt wird."
+    },
+    {
+      "id": "AP2-4-1-2-K6-2",
+      "sp": "AP2-4-1-2",
+      "k": "AP2-4-1-2-K6",
+      "vorne": "Warum gehören Abbuchen und Gutschreiben einer Überweisung in eine Transaktion?",
+      "hinten": "Bricht der Vorgang nach dem Abbuchen ab, werden alle Änderungen zurückgenommen. So geht kein Geld verloren, der Datenbestand bleibt stimmig."
+    },
+    {
+      "id": "AP2-4-2-1-K1-1",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K1",
+      "vorne": "Wie gibt man alle Spalten der Tabelle Kunde aus?",
+      "hinten": "`SELECT * FROM Kunde;`"
+    },
+    {
+      "id": "AP2-4-2-1-K1-2",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K1",
+      "vorne": "Wie benennt man eine Spalte in der Ausgabe um, z. B. Nachname in Name?",
+      "hinten": "Mit `AS`: `SELECT Nachname AS Name FROM Kunde;`"
+    },
+    {
+      "id": "AP2-4-2-1-K1-3",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K1",
+      "vorne": "Was ist eine Projektion?",
+      "hinten": "Die Auswahl bestimmter Spalten; in SQL über die Spaltenliste hinter `SELECT`."
+    },
+    {
+      "id": "AP2-4-2-1-K2-1",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K2",
+      "vorne": "Was ist eine Selektion?",
+      "hinten": "Die Auswahl bestimmter Zeilen über eine Bedingung; in SQL mit `WHERE`."
+    },
+    {
+      "id": "AP2-4-2-1-K2-2",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K2",
+      "vorne": "Was bewirken `AND`, `OR` und `NOT` in einer WHERE-Bedingung?",
+      "hinten": "- `AND`: beide Bedingungen müssen gelten\n- `OR`: mindestens eine muss gelten\n- `NOT`: kehrt eine Bedingung um"
+    },
+    {
+      "id": "AP2-4-2-1-K2-3",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K2",
+      "vorne": "Welche Zeilen liefert `WHERE Ort = 'Köln' OR Ort = 'Bonn' AND Umsatz > 1000`?",
+      "hinten": "`AND` bindet stärker als `OR`: alle Kölner und dazu die Bonner mit Umsatz über 1000. Sollen beide Orte gefiltert werden, braucht man Klammern: `(Ort = 'Köln' OR Ort = 'Bonn') AND Umsatz > 1000`."
+    },
+    {
+      "id": "AP2-4-2-1-K3-1",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K3",
+      "vorne": "Welche Vergleichsoperatoren gibt es in SQL?",
+      "hinten": "`=`, `<>` (ungleich, in vielen Systemen auch `!=`), `<`, `>`, `<=`, `>=`"
+    },
+    {
+      "id": "AP2-4-2-1-K3-2",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K3",
+      "vorne": "Was bedeuten die Platzhalter `%` und `_` bei `LIKE`?",
+      "hinten": "- `%`: beliebig viele Zeichen, auch keins\n- `_`: genau ein Zeichen"
+    },
+    {
+      "id": "AP2-4-2-1-K3-3",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K3",
+      "vorne": "Wie findet man alle Kunden, deren Nachname mit M beginnt?",
+      "hinten": "`SELECT * FROM Kunde WHERE Nachname LIKE 'M%';`"
+    },
+    {
+      "id": "AP2-4-2-1-K3-4",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K3",
+      "vorne": "Warum schreibt man `WHERE Telefon IS NULL` und nicht `WHERE Telefon = NULL`?",
+      "hinten": "NULL bedeutet „kein Wert“. Ein Vergleich mit `=` ergibt dabei nie wahr; fehlende Werte prüft man nur mit `IS NULL` bzw. `IS NOT NULL`."
+    },
+    {
+      "id": "AP2-4-2-1-K4-1",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K4",
+      "vorne": "Wie gibt man je Bestellposition den Positionswert aus Menge und Preis aus?",
+      "hinten": "`SELECT Menge * Preis AS Positionswert FROM Bestellposition;`"
+    },
+    {
+      "id": "AP2-4-2-1-K5-1",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K5",
+      "vorne": "Wie sortiert man auf- und absteigend, und was gilt ohne Angabe?",
+      "hinten": "`ORDER BY Spalte ASC` aufsteigend, `ORDER BY Spalte DESC` absteigend; ohne Angabe wird aufsteigend sortiert."
+    },
+    {
+      "id": "AP2-4-2-1-K5-2",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K5",
+      "vorne": "Wie sortiert man nach Ort aufsteigend und innerhalb eines Orts nach Name absteigend?",
+      "hinten": "`ORDER BY Ort, Name DESC`"
+    },
+    {
+      "id": "AP2-4-2-1-K5-3",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K5",
+      "vorne": "Was bewirkt `SELECT DISTINCT Ort FROM Kunde;`?",
+      "hinten": "Jeder Ort wird nur einmal ausgegeben; doppelte Ergebniszeilen werden entfernt."
+    },
+    {
+      "id": "AP2-4-2-1-K6-1",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K6",
+      "vorne": "Was liefern `YEAR(Datum)`, `MONTH(Datum)` und `NOW()`?",
+      "hinten": "- `YEAR`: die Jahreszahl\n- `MONTH`: die Monatszahl (1–12)\n- `NOW()`: das aktuelle Datum mit Uhrzeit"
+    },
+    {
+      "id": "AP2-4-2-1-K6-2",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K6",
+      "vorne": "Was liefern `LEFT(Text, n)` und `RIGHT(Text, n)`?",
+      "hinten": "Die ersten bzw. die letzten n Zeichen des Textes, z. B. ergibt `LEFT('Berlin', 3)` den Text `'Ber'`."
+    },
+    {
+      "id": "AP2-4-2-1-K6-3",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K6",
+      "vorne": "Wofür dienen `DATEDIFF` und `DATEADD`?",
+      "hinten": "- `DATEDIFF`: den Abstand zwischen zwei Datumswerten berechnen, z. B. in Tagen\n- `DATEADD`: zu einem Datum eine Zeitspanne addieren, z. B. 30 Tage"
+    },
+    {
+      "id": "AP2-4-2-1-K6-4",
+      "sp": "AP2-4-2-1",
+      "k": "AP2-4-2-1-K6",
+      "vorne": "Wie filtert man alle Bestellungen aus dem Jahr 2025?",
+      "hinten": "`SELECT * FROM Bestellung WHERE YEAR(Bestelldatum) = 2025;`"
+    },
+    {
+      "id": "AP2-4-2-2-K1-1",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K1",
+      "vorne": "Wie verbindet man die Tabellen Kunde und Bestellung über die Kundennummer?",
+      "hinten": "`SELECT … FROM Kunde INNER JOIN Bestellung ON Kunde.KundenNr = Bestellung.KundenNr`\nIn ON steht: Primärschlüssel der einen = Fremdschlüssel der anderen Tabelle."
+    },
+    {
+      "id": "AP2-4-2-2-K1-2",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K1",
+      "vorne": "Welche Zeilen liefert ein INNER JOIN?",
+      "hinten": "Nur Zeilen, zu denen es in beiden Tabellen einen passenden Partner gibt, für die also die ON-Bedingung erfüllt ist."
+    },
+    {
+      "id": "AP2-4-2-2-K1-3",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K1",
+      "vorne": "Was bedeutet `JOIN` ohne Zusatz?",
+      "hinten": "Einen INNER JOIN."
+    },
+    {
+      "id": "AP2-4-2-2-K1-4",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K1",
+      "vorne": "Woran erkennt man im Tabellenmodell die Spalten für die ON-Bedingung?",
+      "hinten": "Am Fremdschlüssel in der einen Tabelle und am Primärschlüssel der anderen Tabelle, auf den er verweist."
+    },
+    {
+      "id": "AP2-4-2-2-K2-1",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K2",
+      "vorne": "Wie verkettet man die Tabellen Kunde, Bestellung und Position in einer Abfrage?",
+      "hinten": "`FROM Kunde k JOIN Bestellung b ON k.KundenNr = b.KundenNr JOIN Position p ON b.BestellNr = p.BestellNr`\nJe weitere Tabelle ein weiterer JOIN mit eigener ON-Bedingung."
+    },
+    {
+      "id": "AP2-4-2-2-K2-2",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K2",
+      "vorne": "Wie viele JOIN-Bedingungen braucht man, um n Tabellen in einer Kette zu verbinden?",
+      "hinten": "n − 1: eine ON-Bedingung je Verbindung zweier Tabellen."
+    },
+    {
+      "id": "AP2-4-2-2-K3-1",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K3",
+      "vorne": "Welche Zeilen liefert `A LEFT JOIN B`?",
+      "hinten": "Alle Zeilen von A. Gibt es in B keinen passenden Datensatz, stehen in den Spalten von B NULL-Werte."
+    },
+    {
+      "id": "AP2-4-2-2-K4-1",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K4",
+      "vorne": "Alle Kategorien sollen mit ihren Artikeln erscheinen, auch Kategorien ohne Artikel. Welcher JOIN ist nötig?",
+      "hinten": "`Kategorie LEFT JOIN Artikel`. Ein INNER JOIN würde Kategorien ohne Artikel weglassen. Die Tabelle, deren Zeilen alle erscheinen sollen, steht links."
+    },
+    {
+      "id": "AP2-4-2-2-K4-2",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K4",
+      "vorne": "Woran erkennt man in einer Aufgabe, dass ein LEFT JOIN nötig ist?",
+      "hinten": "Wenn auch Datensätze ohne zugehörige Einträge erscheinen sollen, z. B. „auch Kunden ohne Bestellung“ oder „Anzahl 0 anzeigen“."
+    },
+    {
+      "id": "AP2-4-2-2-K4-3",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K4",
+      "vorne": "Wie findet man mit einem LEFT JOIN alle Kunden ohne Bestellung?",
+      "hinten": "`SELECT k.* FROM Kunde k LEFT JOIN Bestellung b ON k.KundenNr = b.KundenNr WHERE b.BestellNr IS NULL;`"
+    },
+    {
+      "id": "AP2-4-2-2-K5-1",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K5",
+      "vorne": "Wie vergibt man einen Aliasnamen für eine Tabelle, und wie spricht man dann ihre Spalten an?",
+      "hinten": "Hinter dem Tabellennamen, mit oder ohne AS: `FROM Kunde AS k` oder `FROM Kunde k`. Danach `k.Name`."
+    },
+    {
+      "id": "AP2-4-2-2-K5-2",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K5",
+      "vorne": "Warum muss man KundenNr in einer Abfrage über Kunde und Bestellung mit Tabellenname oder Alias schreiben?",
+      "hinten": "Die Spalte gibt es in beiden Tabellen. Ohne Präfix wie `k.KundenNr` ist sie mehrdeutig, und die Abfrage schlägt fehl."
+    },
+    {
+      "id": "AP2-4-2-2-K6-1",
+      "sp": "AP2-4-2-2",
+      "k": "AP2-4-2-2-K6",
+      "vorne": "Welche Zeilen liefert `A RIGHT JOIN B`?",
+      "hinten": "Alle Zeilen von B, auch ohne passenden Datensatz in A (dort NULL). Spiegelbild des LEFT JOIN: `A RIGHT JOIN B` entspricht `B LEFT JOIN A`."
+    },
+    {
+      "id": "AP2-4-2-3-K1-1",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K1",
+      "vorne": "Was berechnen COUNT, SUM, AVG, MIN und MAX?",
+      "hinten": "- `COUNT`: Anzahl\n- `SUM`: Summe\n- `AVG`: Durchschnitt\n- `MIN`: kleinster Wert\n- `MAX`: größter Wert"
+    },
+    {
+      "id": "AP2-4-2-3-K1-2",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K1",
+      "vorne": "Wie behandeln SUM, AVG, MIN und MAX NULL-Werte?",
+      "hinten": "Sie lassen NULL-Werte weg. AVG teilt deshalb nur durch die Anzahl der Werte, die nicht NULL sind."
+    },
+    {
+      "id": "AP2-4-2-3-K1-3",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K1",
+      "vorne": "Wie ermittelt man den Durchschnittspreis aller Artikel?",
+      "hinten": "`SELECT AVG(Preis) FROM Artikel;`"
+    },
+    {
+      "id": "AP2-4-2-3-K2-1",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K2",
+      "vorne": "Was bewirkt GROUP BY?",
+      "hinten": "Es fasst alle Zeilen mit gleichen Werten in den Gruppierungsspalten zu einer Gruppe zusammen; Aggregatfunktionen rechnen dann je Gruppe."
+    },
+    {
+      "id": "AP2-4-2-3-K2-2",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K2",
+      "vorne": "Welche Regel gilt bei GROUP BY für die Spalten hinter SELECT?",
+      "hinten": "Jede ausgegebene Spalte, die nicht in einer Aggregatfunktion steht, muss in GROUP BY stehen."
+    },
+    {
+      "id": "AP2-4-2-3-K2-3",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K2",
+      "vorne": "Was ist an `SELECT Ort, Name, COUNT(*) FROM Kunde GROUP BY Ort;` falsch?",
+      "hinten": "Name steht weder in GROUP BY noch in einer Aggregatfunktion. Richtig wäre, Name wegzulassen oder `GROUP BY Ort, Name` zu schreiben."
+    },
+    {
+      "id": "AP2-4-2-3-K3-1",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K3",
+      "vorne": "Was ist der Unterschied zwischen WHERE und HAVING?",
+      "hinten": "WHERE filtert einzelne Zeilen vor dem Gruppieren, HAVING filtert Gruppen nach dem Gruppieren, auch mit Bedingungen auf Aggregate."
+    },
+    {
+      "id": "AP2-4-2-3-K3-2",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K3",
+      "vorne": "Wie gibt man alle Kundennummern mit mindestens drei Bestellungen aus?",
+      "hinten": "`SELECT KundenNr, COUNT(*) FROM Bestellung GROUP BY KundenNr HAVING COUNT(*) >= 3;`"
+    },
+    {
+      "id": "AP2-4-2-3-K3-3",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K3",
+      "vorne": "Warum ist `WHERE COUNT(*) >= 3` falsch?",
+      "hinten": "WHERE wird vor dem Gruppieren ausgewertet, dort gibt es noch keine Aggregate. Bedingungen auf Aggregate gehören in HAVING."
+    },
+    {
+      "id": "AP2-4-2-3-K3-4",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K3",
+      "vorne": "In welcher Reihenfolge stehen die Klauseln einer SELECT-Anweisung?",
+      "hinten": "`SELECT` – `FROM` – `WHERE` – `GROUP BY` – `HAVING` – `ORDER BY`"
+    },
+    {
+      "id": "AP2-4-2-3-K4-1",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K4",
+      "vorne": "Wie sortiert man ein gruppiertes Ergebnis absteigend nach der Umsatzsumme?",
+      "hinten": "`ORDER BY SUM(Umsatz) DESC` oder über den Aliasnamen der Summe, z. B. `ORDER BY Gesamt DESC`."
+    },
+    {
+      "id": "AP2-4-2-3-K5-1",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K5",
+      "vorne": "Wie gibt man den Umsatz je Kunde mit Namen aus? (Kunde, Bestellung, Position mit Menge und Preis)",
+      "hinten": "`SELECT k.KundenNr, k.Name, SUM(p.Menge * p.Preis) AS Umsatz FROM Kunde k JOIN Bestellung b ON k.KundenNr = b.KundenNr JOIN Position p ON b.BestellNr = p.BestellNr GROUP BY k.KundenNr, k.Name;`"
+    },
+    {
+      "id": "AP2-4-2-3-K5-2",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K5",
+      "vorne": "Warum gruppiert man beim Umsatz je Kunde nach KundenNr und Name statt nur nach Name?",
+      "hinten": "Zwei Kunden können gleich heißen; die KundenNr hält sie getrennt. Name muss als ausgegebene Spalte trotzdem in GROUP BY stehen."
+    },
+    {
+      "id": "AP2-4-2-3-K6-1",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K6",
+      "vorne": "Was ist der Unterschied zwischen `COUNT(*)` und `COUNT(Spalte)`?",
+      "hinten": "`COUNT(*)` zählt alle Zeilen, `COUNT(Spalte)` nur die Zeilen, in denen die Spalte nicht NULL ist."
+    },
+    {
+      "id": "AP2-4-2-3-K6-2",
+      "sp": "AP2-4-2-3",
+      "k": "AP2-4-2-3-K6",
+      "vorne": "Warum zählt man nach `Kategorie k LEFT JOIN Artikel a` die Artikel je Kategorie mit `COUNT(a.ArtikelNr)` statt `COUNT(*)`?",
+      "hinten": "Eine Kategorie ohne Artikel erscheint als eine Zeile mit NULL in den Artikelspalten. `COUNT(*)` zählt sie als 1, `COUNT(a.ArtikelNr)` ergibt richtig 0."
+    },
+    {
+      "id": "AP2-4-2-4-K1-1",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K1",
+      "vorne": "Wie gibt man mit einer Unterabfrage alle Kunden aus, die schon bestellt haben?",
+      "hinten": "`SELECT * FROM Kunde WHERE KundenNr IN (SELECT KundenNr FROM Bestellung);`"
+    },
+    {
+      "id": "AP2-4-2-4-K1-2",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K1",
+      "vorne": "Wie gibt man mit einer Unterabfrage alle Artikel aus, die nie bestellt wurden?",
+      "hinten": "`SELECT * FROM Artikel WHERE ArtikelNr NOT IN (SELECT ArtikelNr FROM Position);`"
+    },
+    {
+      "id": "AP2-4-2-4-K1-3",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K1",
+      "vorne": "Was muss eine Unterabfrage hinter IN liefern?",
+      "hinten": "Genau eine Spalte; ihre Werte bilden die Liste, mit der verglichen wird."
+    },
+    {
+      "id": "AP2-4-2-4-K2-1",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K2",
+      "vorne": "Wie gibt man den teuersten Artikel aus?",
+      "hinten": "`SELECT * FROM Artikel WHERE Preis = (SELECT MAX(Preis) FROM Artikel);`"
+    },
+    {
+      "id": "AP2-4-2-4-K2-2",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K2",
+      "vorne": "Warum funktioniert `WHERE Preis = MAX(Preis)` nicht?",
+      "hinten": "Aggregatfunktionen sind in WHERE nicht erlaubt. Den Höchstwert muss eine Unterabfrage liefern."
+    },
+    {
+      "id": "AP2-4-2-4-K2-3",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K2",
+      "vorne": "Was muss eine Unterabfrage liefern, deren Ergebnis mit `=`, `<` oder `>` verglichen wird?",
+      "hinten": "Genau einen Wert: eine Zeile mit einer Spalte."
+    },
+    {
+      "id": "AP2-4-2-4-K2-4",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K2",
+      "vorne": "Wie gibt man alle Artikel aus, die teurer sind als der Durchschnitt?",
+      "hinten": "`SELECT * FROM Artikel WHERE Preis > (SELECT AVG(Preis) FROM Artikel);`"
+    },
+    {
+      "id": "AP2-4-2-4-K3-1",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K3",
+      "vorne": "Wie verwendet man eine Unterabfrage in FROM?",
+      "hinten": "Ihr Ergebnis dient als Tabelle und bekommt mit AS einen Namen: `SELECT … FROM (SELECT …) AS t`. Danach spricht man ihre Spalten mit `t.Spalte` an."
+    },
+    {
+      "id": "AP2-4-2-4-K4-1",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K4",
+      "vorne": "Wann ist `EXISTS (Unterabfrage)` wahr, wann `NOT EXISTS (Unterabfrage)`?",
+      "hinten": "- `EXISTS`: wenn die Unterabfrage mindestens eine Zeile liefert\n- `NOT EXISTS`: wenn sie keine Zeile liefert"
+    },
+    {
+      "id": "AP2-4-2-4-K4-2",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K4",
+      "vorne": "Wie findet man mit NOT EXISTS alle Kunden ohne Bestellung?",
+      "hinten": "`SELECT * FROM Kunde k WHERE NOT EXISTS (SELECT * FROM Bestellung b WHERE b.KundenNr = k.KundenNr);`"
+    },
+    {
+      "id": "AP2-4-2-4-K5-1",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K5",
+      "vorne": "Was setzt UNION voraus, und was geschieht mit doppelten Zeilen?",
+      "hinten": "Beide Abfragen liefern gleich viele Spalten mit passenden Datentypen in gleicher Reihenfolge. UNION entfernt doppelte Zeilen."
+    },
+    {
+      "id": "AP2-4-2-4-K5-2",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K5",
+      "vorne": "Wie sortiert man das Gesamtergebnis einer UNION?",
+      "hinten": "Mit einem einzigen ORDER BY ganz am Ende hinter der letzten Abfrage; es gilt für das ganze Ergebnis."
+    },
+    {
+      "id": "AP2-4-2-4-K5-3",
+      "sp": "AP2-4-2-4",
+      "k": "AP2-4-2-4-K5",
+      "vorne": "Wie gibt man Name und Ort aller Kunden und Lieferanten in einer gemeinsamen, nach Name sortierten Liste aus?",
+      "hinten": "`SELECT Name, Ort FROM Kunde UNION SELECT Name, Ort FROM Lieferant ORDER BY Name;`"
+    },
+    {
+      "id": "AP2-4-3-1-K1-1",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K1",
+      "vorne": "Wie fügt man einen Kunden mit Nummer 1001, Name Meier und Ort Köln ein?",
+      "hinten": "`INSERT INTO Kunde (KundenNr, Name, Ort) VALUES (1001, 'Meier', 'Köln');`"
+    },
+    {
+      "id": "AP2-4-3-1-K1-2",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K1",
+      "vorne": "Warum gibt man bei INSERT die Spaltenliste an?",
+      "hinten": "Die Werte werden eindeutig den Spalten zugeordnet, unabhängig von der Reihenfolge in der Tabelle. Nicht genannte Spalten erhalten ihren Standardwert, sonst NULL."
+    },
+    {
+      "id": "AP2-4-3-1-K1-3",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K1",
+      "vorne": "Wie schreibt man Text- und Datumswerte in einer SQL-Anweisung?",
+      "hinten": "In einfachen Anführungszeichen, z. B. `'Köln'` oder `'2025-03-31'`; Zahlen ohne Anführungszeichen."
+    },
+    {
+      "id": "AP2-4-3-1-K2-1",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K2",
+      "vorne": "Wie fügt man Datensätze aus einer Abfrage in eine Tabelle ein?",
+      "hinten": "`INSERT INTO Ziel (Sp1, Sp2) SELECT Sp1, Sp2 FROM Quelle WHERE …;`\nOhne VALUES; Spaltenzahl und Reihenfolge müssen zusammenpassen."
+    },
+    {
+      "id": "AP2-4-3-1-K3-1",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K3",
+      "vorne": "Wie erhöht man die Preise aller Artikel der Kategorie 3 um 5 %?",
+      "hinten": "`UPDATE Artikel SET Preis = Preis * 1.05 WHERE KategorieNr = 3;`"
+    },
+    {
+      "id": "AP2-4-3-1-K3-2",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K3",
+      "vorne": "Wie füllt man die Spalte Kuerzel mit den ersten drei Zeichen des Namens?",
+      "hinten": "`UPDATE Kunde SET Kuerzel = LEFT(Name, 3);`"
+    },
+    {
+      "id": "AP2-4-3-1-K3-3",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K3",
+      "vorne": "Wie ändert man mehrere Spalten in einer UPDATE-Anweisung?",
+      "hinten": "Die Zuweisungen in SET durch Komma trennen: `UPDATE Kunde SET Ort = 'Bonn', PLZ = '53111' WHERE KundenNr = 7;`"
+    },
+    {
+      "id": "AP2-4-3-1-K3-4",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K3",
+      "vorne": "Was passiert bei einer UPDATE-Anweisung ohne WHERE?",
+      "hinten": "Die Änderung wird auf alle Zeilen der Tabelle angewendet."
+    },
+    {
+      "id": "AP2-4-3-1-K4-1",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K4",
+      "vorne": "Was passiert bei `DELETE FROM Kunde;` ohne WHERE?",
+      "hinten": "Alle Zeilen der Tabelle werden gelöscht; die Tabelle selbst bleibt bestehen."
+    },
+    {
+      "id": "AP2-4-3-1-K4-2",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K4",
+      "vorne": "Wie löscht man alle Bestellungen mit Bestelldatum vor dem 01.01.2020?",
+      "hinten": "`DELETE FROM Bestellung WHERE Bestelldatum < '2020-01-01';`"
+    },
+    {
+      "id": "AP2-4-3-1-K5-1",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K5",
+      "vorne": "Kunde 7 soll samt seinen Bestellungen gelöscht werden. In welcher Reihenfolge, und warum?",
+      "hinten": "Erst die Bestellungen, dann den Kunden: `DELETE FROM Bestellung WHERE KundenNr = 7;` danach `DELETE FROM Kunde WHERE KundenNr = 7;` Die Bestellungen verweisen per Fremdschlüssel auf den Kunden."
+    },
+    {
+      "id": "AP2-4-3-1-K5-2",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K5",
+      "vorne": "Warum scheitert das Löschen eines Kunden, solange noch Bestellungen auf ihn verweisen?",
+      "hinten": "Der Fremdschlüssel sichert die referenzielle Integrität: Die Datenbank lässt keine Verweise ins Leere entstehen."
+    },
+    {
+      "id": "AP2-4-3-1-K5-3",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K5",
+      "vorne": "Positionen verweisen auf Bestellungen, Bestellungen auf Kunden. In welcher Reihenfolge löscht man einen Kunden mit allem, was zu ihm gehört?",
+      "hinten": "Positionen, dann Bestellungen, dann den Kunden. Immer zuerst die Zeilen, die den Fremdschlüssel enthalten."
+    },
+    {
+      "id": "AP2-4-3-1-K6-1",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K6",
+      "vorne": "Wie verschiebt man alle Bestellungen vor 2020 in die gleich aufgebaute Tabelle Bestellung_Archiv?",
+      "hinten": "1. `INSERT INTO Bestellung_Archiv SELECT * FROM Bestellung WHERE Bestelldatum < '2020-01-01';`\n2. `DELETE FROM Bestellung WHERE Bestelldatum < '2020-01-01';`\nIn beiden Anweisungen dieselbe Bedingung."
+    },
+    {
+      "id": "AP2-4-3-1-K6-2",
+      "sp": "AP2-4-3-1",
+      "k": "AP2-4-3-1-K6",
+      "vorne": "Warum kopiert man beim Archivieren zuerst und löscht erst danach?",
+      "hinten": "Würde zuerst gelöscht, wären die Daten zum Kopieren nicht mehr vorhanden."
+    },
+    {
+      "id": "AP2-4-3-2-K1-1",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K1",
+      "vorne": "Wie legt man die Tabelle Bestellung an mit Primärschlüssel BestellNr, Spalte Datum und Fremdschlüssel KundenNr auf Kunde?",
+      "hinten": "`CREATE TABLE Bestellung (BestellNr INTEGER PRIMARY KEY, Datum DATE, KundenNr INTEGER, FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr));`"
+    },
+    {
+      "id": "AP2-4-3-2-K1-2",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K1",
+      "vorne": "Wie notiert man einen Fremdschlüssel in CREATE TABLE?",
+      "hinten": "`FOREIGN KEY (Spalte) REFERENCES Tabelle(Spalte)`"
+    },
+    {
+      "id": "AP2-4-3-2-K1-3",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K1",
+      "vorne": "Wie legt man in CREATE TABLE einen Primärschlüssel aus zwei Spalten fest?",
+      "hinten": "Als eigene Angabe nach den Spalten: `PRIMARY KEY (BestellNr, PosNr)`."
+    },
+    {
+      "id": "AP2-4-3-2-K2-1",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K2",
+      "vorne": "Wie fügt man der Tabelle Kunde eine Spalte Email hinzu?",
+      "hinten": "`ALTER TABLE Kunde ADD Email VARCHAR(100);`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-2",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K2",
+      "vorne": "Wie entfernt man die Spalte Telefon aus der Tabelle Kunde?",
+      "hinten": "`ALTER TABLE Kunde DROP COLUMN Telefon;`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-3",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K2",
+      "vorne": "Wie ergänzt man in der Tabelle Bestellung nachträglich einen Fremdschlüssel KundenNr auf Kunde?",
+      "hinten": "`ALTER TABLE Bestellung ADD FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr);`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-4",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K2",
+      "vorne": "Wie ändert man den Datentyp der Spalte Name in der Tabelle Kunde?",
+      "hinten": "Mit ALTER TABLE; das Schlüsselwort hängt vom Datenbanksystem ab: `ALTER TABLE Kunde ALTER COLUMN Name VARCHAR(200);` oder `ALTER TABLE Kunde MODIFY Name VARCHAR(200);`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-5",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K2",
+      "vorne": "Die Spalte Name soll durch Vorname und Nachname ersetzt werden. Welche Schritte sind nötig?",
+      "hinten": "1. mit `ALTER TABLE … ADD` die beiden neuen Spalten anlegen\n2. sie mit `UPDATE … SET` füllen\n3. mit `ALTER TABLE … DROP COLUMN Name` die alte Spalte entfernen"
+    },
+    {
+      "id": "AP2-4-3-2-K3-1",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K3",
+      "vorne": "Was ist der Unterschied zwischen `DROP TABLE Kunde;` und `DELETE FROM Kunde;`?",
+      "hinten": "- `DROP TABLE`: löscht die Tabelle samt Struktur und Daten\n- `DELETE`: löscht nur die Zeilen, die Tabelle bleibt bestehen"
+    },
+    {
+      "id": "AP2-4-3-2-K4-1",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K4",
+      "vorne": "Ordne zu – Struktur, Daten oder Abfrage: CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT",
+      "hinten": "- Struktur: CREATE, ALTER, DROP\n- Daten: INSERT, UPDATE, DELETE\n- Abfrage: SELECT"
+    },
+    {
+      "id": "AP2-4-3-2-K4-2",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K4",
+      "vorne": "Welcher SQL-Befehl gehört zu den Grundoperationen Anlegen, Lesen, Ändern und Löschen?",
+      "hinten": "- Anlegen: INSERT\n- Lesen: SELECT\n- Ändern: UPDATE\n- Löschen: DELETE"
+    },
+    {
+      "id": "AP2-4-3-2-K5-1",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K5",
+      "vorne": "Wozu dient ein Index?",
+      "hinten": "Er beschleunigt das Suchen, Sortieren und Verbinden über eine Spalte, ähnlich dem Register eines Buchs: Die Datenbank muss nicht alle Zeilen durchgehen."
+    },
+    {
+      "id": "AP2-4-3-2-K5-2",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K5",
+      "vorne": "Wie legt man einen Index auf die Spalte Nachname der Tabelle Kunde an?",
+      "hinten": "`CREATE INDEX idx_nachname ON Kunde (Nachname);`"
+    },
+    {
+      "id": "AP2-4-3-2-K5-3",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K5",
+      "vorne": "Für welche Spalten lohnt sich ein Index?",
+      "hinten": "Für Spalten, nach denen oft gesucht, sortiert oder über die verbunden wird, z. B. Fremdschlüssel."
+    },
+    {
+      "id": "AP2-4-3-2-K6-1",
+      "sp": "AP2-4-3-2",
+      "k": "AP2-4-3-2-K6",
+      "vorne": "Welche Nachteile hat ein Index?",
+      "hinten": "Er braucht zusätzlichen Speicher und bremst Einfügen und Ändern, weil er dabei jedes Mal mit aktualisiert werden muss."
+    },
+    {
+      "id": "AP2-4-3-3-K1-1",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K1",
+      "vorne": "Wie gibt man dem Benutzer lager das Leserecht auf die Tabelle Artikel?",
+      "hinten": "`GRANT SELECT ON Artikel TO lager;`"
+    },
+    {
+      "id": "AP2-4-3-3-K1-2",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K1",
+      "vorne": "Wie gibt man einem Benutzer mehrere Rechte in einer Anweisung?",
+      "hinten": "Die Rechte durch Komma getrennt aufzählen: `GRANT SELECT, INSERT ON Artikel TO lager;`"
+    },
+    {
+      "id": "AP2-4-3-3-K2-1",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K2",
+      "vorne": "Wie entzieht man dem Benutzer lager das Recht, in Artikel zu löschen?",
+      "hinten": "`REVOKE DELETE ON Artikel FROM lager;`"
+    },
+    {
+      "id": "AP2-4-3-3-K2-2",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K2",
+      "vorne": "Wie sind GRANT und REVOKE aufgebaut?",
+      "hinten": "- `GRANT Recht ON Objekt TO Benutzer`\n- `REVOKE Recht ON Objekt FROM Benutzer`"
+    },
+    {
+      "id": "AP2-4-3-3-K3-1",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K3",
+      "vorne": "Wie legt man einen Benutzer lager mit Passwort an?",
+      "hinten": "`CREATE USER lager IDENTIFIED BY 'Geheim123';` – die Angabe des Passworts unterscheidet sich je nach Datenbanksystem."
+    },
+    {
+      "id": "AP2-4-3-3-K4-1",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K4",
+      "vorne": "Ein Benutzer auswertung soll Bestellungen nur lesen. Welche Anweisung gibt ihm genau das?",
+      "hinten": "`GRANT SELECT ON Bestellung TO auswertung;` – kein INSERT, UPDATE oder DELETE."
+    },
+    {
+      "id": "AP2-4-3-3-K4-2",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K4",
+      "vorne": "Nach welchem Grundsatz vergibt man Datenbankrechte?",
+      "hinten": "Minimalprinzip: Jeder Benutzer bekommt nur die Rechte, die er für seine Aufgabe braucht."
+    },
+    {
+      "id": "AP2-4-3-3-K5-1",
+      "sp": "AP2-4-3-3",
+      "k": "AP2-4-3-3-K5",
+      "vorne": "Was bewirkt `WITH GRANT OPTION`?",
+      "hinten": "Der Benutzer darf das erhaltene Recht an andere Benutzer weitergeben, z. B. `GRANT SELECT ON Artikel TO lager WITH GRANT OPTION;`"
+    },
+    {
+      "id": "AP2-4-4-1-K1-1",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K1",
+      "vorne": "Woran erkennt man CSV, XML und JSON am Aufbau?",
+      "hinten": "- CSV: Zeilen mit Werten, getrennt durch Komma oder Semikolon\n- XML: Elemente mit Tags in spitzen Klammern\n- JSON: geschweifte und eckige Klammern, Paare aus Name und Wert"
+    },
+    {
+      "id": "AP2-4-4-1-K1-2",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K1",
+      "vorne": "Wie ist eine CSV-Datei aufgebaut?",
+      "hinten": "Jede Zeile ist ein Datensatz, die Werte sind durch ein Trennzeichen (Komma oder Semikolon) getrennt; die erste Zeile enthält oft die Spaltennamen. Es gibt keine Verschachtelung."
+    },
+    {
+      "id": "AP2-4-4-1-K2-1",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K2",
+      "vorne": "Wie ist JSON aufgebaut?",
+      "hinten": "- Objekte in geschweiften Klammern `{ }`\n- Arrays in eckigen Klammern `[ ]`\n- ein Objekt enthält Paare aus Name und Wert: Name, Doppelpunkt, Wert; Paare durch Komma getrennt\n- Namen stehen in doppelten Anführungszeichen"
+    },
+    {
+      "id": "AP2-4-4-1-K2-2",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K2",
+      "vorne": "Welche Arten von Werten kennt JSON?",
+      "hinten": "Zeichenkette, Zahl, `true`/`false`, `null`, Objekt und Array."
+    },
+    {
+      "id": "AP2-4-4-1-K2-3",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K2",
+      "vorne": "Wie stellt man in JSON eine Liste von drei Kunden dar?",
+      "hinten": "Als Array mit drei Objekten: `[ {…}, {…}, {…} ]`"
+    },
+    {
+      "id": "AP2-4-4-1-K3-1",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K3",
+      "vorne": "Woraus besteht ein XML-Element?",
+      "hinten": "Aus öffnendem Tag, Inhalt und schließendem Tag, z. B. `<ort>Köln</ort>`; ein leeres Element kann auch `<ort/>` geschrieben werden."
+    },
+    {
+      "id": "AP2-4-4-1-K3-2",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K3",
+      "vorne": "Was ist ein XML-Attribut?",
+      "hinten": "Ein Paar aus Name und Wert im öffnenden Tag, z. B. `<kunde id='42'>`."
+    },
+    {
+      "id": "AP2-4-4-1-K3-3",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K3",
+      "vorne": "Wie stellt XML zusammengehörende Daten dar, etwa einen Kunden mit Name und Ort?",
+      "hinten": "Durch Verschachtelung: Ein Element enthält weitere Elemente, z. B. `<kunde><name>…</name><ort>…</ort></kunde>`. Alles liegt unter einem Wurzelelement."
+    },
+    {
+      "id": "AP2-4-4-1-K4-1",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K4",
+      "vorne": "Was leistet die Prüfung eines XML-Dokuments gegen ein Schema, und was nicht?",
+      "hinten": "Sie prüft den Aufbau (Elemente, Reihenfolge, Pflichtangaben) und die Datentypen. Ob die Werte inhaltlich richtig sind, z. B. ob eine Summe stimmt, prüft sie nicht."
+    },
+    {
+      "id": "AP2-4-4-1-K5-1",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K5",
+      "vorne": "Welches Format passt jeweils? a) einfache Tabelle zum Öffnen in einer Tabellenkalkulation b) Daten einer Webschnittstelle c) Dokument mit strenger Struktur, das gegen ein Schema geprüft wird",
+      "hinten": "a) CSV\nb) JSON\nc) XML"
+    },
+    {
+      "id": "AP2-4-4-1-K5-2",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K5",
+      "vorne": "Warum eignet sich CSV schlecht für verschachtelte Daten wie Bestellungen mit Positionen?",
+      "hinten": "CSV kennt nur flache Zeilen und Spalten; Verschachtelung lässt sich nicht abbilden. Dafür eignen sich JSON oder XML."
+    },
+    {
+      "id": "AP2-4-4-1-K6-1",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K6",
+      "vorne": "Was ist der Unterschied zwischen einem wohlgeformten und einem gültigen XML-Dokument?",
+      "hinten": "- wohlgeformt: hält die XML-Regeln ein\n- gültig: ist wohlgeformt und entspricht zusätzlich dem Schema"
+    },
+    {
+      "id": "AP2-4-4-1-K6-2",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K6",
+      "vorne": "Welche Regeln muss ein wohlgeformtes XML-Dokument einhalten?",
+      "hinten": "- genau ein Wurzelelement\n- jedes Element wird geschlossen\n- korrekt verschachtelt, nicht überkreuzt\n- Attributwerte in Anführungszeichen\n- Groß-/Kleinschreibung von öffnendem und schließendem Tag stimmt überein"
+    },
+    {
+      "id": "AP2-4-4-1-K6-3",
+      "sp": "AP2-4-4-1",
+      "k": "AP2-4-4-1-K6",
+      "vorne": "Kann ein XML-Dokument gültig, aber nicht wohlgeformt sein?",
+      "hinten": "Nein. Gültig setzt wohlgeformt voraus; umgekehrt ist nicht jedes wohlgeformte Dokument gültig."
+    },
+    {
+      "id": "AP2-4-4-2-K1-1",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K1",
+      "vorne": "Was kennzeichnet eine REST-API?",
+      "hinten": "- Ressourcen werden über eine URL angesprochen\n- zwischen Client und Server werden nur Daten übertragen, z. B. JSON\n- jede Anfrage steht für sich (zustandslos)\n- Zugriff über die HTTP-Methoden"
+    },
+    {
+      "id": "AP2-4-4-2-K1-2",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K1",
+      "vorne": "Was bedeutet zustandslos bei REST?",
+      "hinten": "Jede Anfrage enthält alle nötigen Angaben; der Server speichert zwischen zwei Anfragen keinen Sitzungszustand des Clients."
+    },
+    {
+      "id": "AP2-4-4-2-K1-3",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K1",
+      "vorne": "Was ist bei REST eine Ressource?",
+      "hinten": "Ein Datenobjekt, das über eine eigene URL erreichbar ist, z. B. `/kunden/42` für den Kunden mit der Nummer 42."
+    },
+    {
+      "id": "AP2-4-4-2-K2-1",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K2",
+      "vorne": "Welche HTTP-Methoden gehören zu Lesen, Anlegen, Ändern und Löschen?",
+      "hinten": "- Lesen: GET\n- Anlegen: POST\n- Ändern: PUT oder PATCH\n- Löschen: DELETE"
+    },
+    {
+      "id": "AP2-4-4-2-K2-2",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K2",
+      "vorne": "Was ist der Unterschied zwischen PUT und PATCH?",
+      "hinten": "PUT ersetzt die Ressource vollständig, PATCH ändert nur einzelne Felder."
+    },
+    {
+      "id": "AP2-4-4-2-K2-3",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K2",
+      "vorne": "Ein Client sendet `DELETE /kunden/42`. Was soll der Server tun?",
+      "hinten": "Den Kunden mit der Nummer 42 löschen."
+    },
+    {
+      "id": "AP2-4-4-2-K3-1",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K3",
+      "vorne": "Aus welchen Bestandteilen besteht eine Anfrage an eine REST-API?",
+      "hinten": "- Methode, z. B. GET\n- Adresse mit Pfad und ggf. Abfrageparametern\n- Kopfzeilen (Header)\n- Datenteil (Body), z. B. JSON-Daten bei POST"
+    },
+    {
+      "id": "AP2-4-4-2-K3-2",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K3",
+      "vorne": "Was geben Pfad und Abfrageparameter in `https://shop.example/api/artikel?kategorie=3&seite=2` an?",
+      "hinten": "- Pfad `/api/artikel`: die Ressource, hier die Artikel\n- Abfrageparameter nach `?`, getrennt durch `&`: Kategorie 3, Seite 2"
+    },
+    {
+      "id": "AP2-4-4-2-K3-3",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K3",
+      "vorne": "Was steht in den Kopfzeilen einer Anfrage?",
+      "hinten": "Zusatzangaben zur Anfrage, z. B. das Format der Daten (`Content-Type: application/json`) oder Zugangsdaten wie ein API-Schlüssel."
+    },
+    {
+      "id": "AP2-4-4-2-K4-1",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K4",
+      "vorne": "Was bedeuten die Statuscode-Klassen 2xx, 4xx und 5xx?",
+      "hinten": "- 2xx: Anfrage erfolgreich\n- 4xx: Fehler beim Client\n- 5xx: Fehler beim Server"
+    },
+    {
+      "id": "AP2-4-4-2-K4-2",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K4",
+      "vorne": "Zu welcher Klasse gehören die Statuscodes 201, 403 und 503, und was sagt das jeweils aus?",
+      "hinten": "- 201 (Created): 2xx, Anfrage erfolgreich\n- 403 (Forbidden): 4xx, Fehler beim Client\n- 503 (Service Unavailable): 5xx, Fehler beim Server"
+    },
+    {
+      "id": "AP2-4-4-2-K4-3",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K4",
+      "vorne": "Ein Client fragt `/kunden/9999` ab, den Kunden gibt es nicht. Welcher Statuscode kommt zurück, und zu welcher Klasse gehört er?",
+      "hinten": "404 Not Found, Klasse 4xx: Der Fehler liegt bei der Anfrage des Clients."
+    },
+    {
+      "id": "AP2-4-4-2-K5-1",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K5",
+      "vorne": "Wie unterscheiden sich SOAP und REST?",
+      "hinten": "- SOAP: ein Protokoll; die Nachrichten sind immer in XML\n- REST: ein Architekturstil auf Grundlage von HTTP; nutzt URLs und HTTP-Methoden, Daten meist in JSON"
+    },
+    {
+      "id": "AP2-4-4-2-K6-1",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K6",
+      "vorne": "Wozu dient ein API-Schlüssel?",
+      "hinten": "Er weist aus, welche Anwendung die API aufruft. So kann der Anbieter den Zugriff erlauben oder sperren und die Nutzung zählen und begrenzen. Er wird mit jeder Anfrage mitgeschickt."
+    },
+    {
+      "id": "AP2-4-4-2-K6-2",
+      "sp": "AP2-4-4-2",
+      "k": "AP2-4-4-2-K6",
+      "vorne": "Warum darf ein API-Schlüssel nicht offen im Quellcode einer Webseite stehen?",
+      "hinten": "Wer ihn kennt, kann die API im Namen des Inhabers nutzen, mit dessen Rechten und auf dessen Kosten."
+    },
+    {
+      "id": "AP2-4-4-3-K1-1",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K1",
+      "vorne": "In welchen Schritten übernimmt man Daten aus einer fremden Quelle in den eigenen Bestand?",
+      "hinten": "1. auslesen\n2. bereinigen und vereinheitlichen\n3. in die Zielstruktur umformen\n4. einspielen"
+    },
+    {
+      "id": "AP2-4-4-3-K1-2",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K1",
+      "vorne": "Was gehört zum Bereinigen und Vereinheitlichen von Daten?",
+      "hinten": "Formate angleichen (z. B. Datum), Schreibweisen vereinheitlichen, ungültige Werte korrigieren, Felder mit mehreren Werten aufteilen, Dubletten entfernen."
+    },
+    {
+      "id": "AP2-4-4-3-K1-3",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K1",
+      "vorne": "Was bedeutet es, Daten in die Zielstruktur umzuformen?",
+      "hinten": "Die Daten auf Tabellen, Spalten und Datentypen des Zielbestands abbilden, z. B. eine Spalte Name in Vorname und Nachname aufteilen oder Werte auf mehrere Tabellen verteilen."
+    },
+    {
+      "id": "AP2-4-4-3-K2-1",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K2",
+      "vorne": "Woran erkennt man, dass eine von Hand geführte Tabelle nicht ohne Nacharbeit importiert werden kann?",
+      "hinten": "An Mängeln wie uneinheitlichen Formaten, mehreren Werten in einem Feld, ungültigen Werten, unterschiedlichen Schreibweisen, fehlenden Pflichtangaben oder einem Aufbau, der nicht zur Zieltabelle passt."
+    },
+    {
+      "id": "AP2-4-4-3-K2-2",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K2",
+      "vorne": "Was kann passieren, wenn mangelhafte Daten ungeprüft importiert werden?",
+      "hinten": "- Der Import bricht ab, weil Datentypen oder Constraints verletzt werden.\n- Oder fehlerhafte Daten gelangen in den Bestand, z. B. Dubletten, die Auswertungen verfälschen."
+    },
+    {
+      "id": "AP2-4-4-3-K3-1",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K3",
+      "vorne": "Was ist ein Data Lake?",
+      "hinten": "Ein Speicher, der Daten aus vielen Quellen im Rohformat aufnimmt, strukturiert wie unstrukturiert; aufbereitet wird erst bei der Nutzung."
+    },
+    {
+      "id": "AP2-4-4-3-K4-1",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K4",
+      "vorne": "Was ist Open Data?",
+      "hinten": "Frei zugängliche Daten, die jeder nutzen und weiterverwenden darf, z. B. von Behörden; bereitgestellt meist über eine Schnittstelle (API) oder als Datei."
+    },
+    {
+      "id": "AP2-4-4-3-K5-1",
+      "sp": "AP2-4-4-3",
+      "k": "AP2-4-4-3-K5",
+      "vorne": "Was unterscheidet ein Data Warehouse von einem Data Lake?",
+      "hinten": "- Data Warehouse: Daten liegen bereits aufbereitet und strukturiert vor, bereit für Auswertungen\n- Data Lake: Daten liegen im Rohformat vor"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "glossar": [
+    {
+      "begriff": "Relationale Datenbank",
+      "erklaerung": "Datenbank, die Daten in Tabellen mit festem Schema speichert; die Tabellen sind über Primär- und Fremdschlüssel miteinander verbunden.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "NoSQL",
+      "langform": "Not only SQL",
+      "erklaerung": "Sammelbegriff für nicht-relationale Datenbanken mit flexiblem Schema: dokumentenorientiert, Schlüssel-Wert-Speicher, spaltenorientiert, Graphdatenbank.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Schema (Datenbank)",
+      "erklaerung": "Festgelegte Struktur einer Datenbank: Tabellen, Spalten, Datentypen und Beziehungen.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Dokumentenorientierte Datenbank",
+      "erklaerung": "NoSQL-Datenbank, die Daten als in sich geschlossene Dokumente speichert, z. B. im JSON-Format; die Dokumente dürfen unterschiedlich aufgebaut sein.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Schlüssel-Wert-Speicher",
+      "erklaerung": "NoSQL-Datenbank, die Daten als Paare aus eindeutigem Schlüssel und Wert ablegt; zugegriffen wird über den Schlüssel.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Spaltenorientierte Datenbank",
+      "erklaerung": "Art von NoSQL-Datenbank, die Daten nach Spalten statt nach Zeilen organisiert.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Graphdatenbank",
+      "erklaerung": "NoSQL-Datenbank, die Daten als Knoten und Kanten (Beziehungen) speichert, z. B. für soziale Netzwerke.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Datentyp",
+      "erklaerung": "Legt fest, welche Art von Werten eine Spalte aufnehmen darf, z. B. Ganzzahl, Text oder Datum.",
+      "sp": [
+        "AP2-4-1-1",
+        "AP2-4-1-2",
+        "AP2-4-3-2",
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Boolescher Wert",
+      "erklaerung": "Wahrheitswert mit genau zwei Zuständen: wahr oder falsch.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "INTEGER",
+      "erklaerung": "SQL-Datentyp für ganze Zahlen ohne Nachkommastellen.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Gleitkommazahl",
+      "erklaerung": "Zahl, die als Mantisse und Exponent gespeichert wird: großer Wertebereich, aber viele Dezimalbrüche nur angenähert, daher Rundungsfehler.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "DECIMAL",
+      "erklaerung": "SQL-Datentyp für Festkommazahlen: `DECIMAL(p,s)` hat p Stellen, davon s Nachkommastellen, und speichert Dezimalwerte exakt, z. B. Geldbeträge.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Währung (Datentyp)",
+      "erklaerung": "Datentyp für Geldbeträge mit fester Zahl an Nachkommastellen; in SQL meist als `DECIMAL` umgesetzt.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "CHAR",
+      "erklaerung": "SQL-Datentyp für Text fester Länge: `CHAR(n)` speichert immer genau n Zeichen.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "VARCHAR",
+      "erklaerung": "SQL-Datentyp für Text variabler Länge: `VARCHAR(n)` speichert höchstens n Zeichen.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "DATE",
+      "erklaerung": "SQL-Datentyp für ein Kalenderdatum.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "BLOB",
+      "langform": "Binary Large Object",
+      "erklaerung": "Datentyp für große Binärdaten wie Bilder oder Dateien.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Geokoordinaten",
+      "erklaerung": "Angabe eines Orts auf der Erde durch Breiten- und Längengrad.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Attribut (Datenmodell)",
+      "erklaerung": "Eigenschaft eines Datensatzes; in einer Tabelle eine Spalte.",
+      "sp": [
+        "AP2-4-1-1"
+      ]
+    },
+    {
+      "begriff": "Datenintegrität",
+      "erklaerung": "Zustand, in dem die gespeicherten Daten korrekt, vollständig und widerspruchsfrei sind.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "Constraint",
+      "erklaerung": "Regel in der Tabellendefinition, die die Datenbank bei jedem Einfügen und Ändern erzwingt, z. B. Primärschlüssel, NOT NULL oder CHECK.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "Primärschlüssel",
+      "erklaerung": "Spalte oder Spaltenkombination, die jede Zeile einer Tabelle eindeutig kennzeichnet; der Wert ist eindeutig und nie NULL.",
+      "sp": [
+        "AP2-4-1-2",
+        "AP2-4-2-2",
+        "AP2-4-3-2"
+      ]
+    },
+    {
+      "begriff": "Fremdschlüssel",
+      "erklaerung": "Spalte, die auf den Primärschlüssel einer anderen Tabelle verweist und so eine Beziehung zwischen den Tabellen herstellt.",
+      "sp": [
+        "AP2-4-1-2",
+        "AP2-4-2-2",
+        "AP2-4-3-1",
+        "AP2-4-3-2"
+      ]
+    },
+    {
+      "begriff": "NOT NULL",
+      "erklaerung": "Constraint: Die Spalte muss in jeder Zeile einen Wert haben.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "UNIQUE",
+      "erklaerung": "Constraint: Jeder Wert darf in der Spalte nur einmal vorkommen.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "CHECK",
+      "erklaerung": "Constraint mit einer Bedingung, die jeder Wert der Spalte erfüllen muss, z. B. `CHECK (Menge > 0)`.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "Validierung",
+      "erklaerung": "Prüfung von Daten auf formale Richtigkeit (Aufbau, Datentyp, Pflichtfeld) und auf inhaltliche Plausibilität.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "Plausibilitätsprüfung",
+      "erklaerung": "Prüfung, ob ein Wert inhaltlich stimmen kann, z. B. Lieferdatum nicht vor Bestelldatum.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "Pflichtfeld",
+      "erklaerung": "Feld, das bei der Eingabe ausgefüllt sein muss.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "Transaktion",
+      "erklaerung": "Folge von Anweisungen, die als Einheit ganz oder gar nicht ausgeführt wird; bei einem Fehler werden alle Änderungen zurückgenommen.",
+      "sp": [
+        "AP2-4-1-2"
+      ]
+    },
+    {
+      "begriff": "SQL",
+      "langform": "Structured Query Language",
+      "erklaerung": "Standardsprache, um in relationalen Datenbanken Strukturen anzulegen, Daten zu ändern und abzufragen.",
+      "sp": [
+        "AP2-4-1-1",
+        "AP2-4-2-1",
+        "AP2-4-2-2",
+        "AP2-4-3-2",
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "NULL",
+      "erklaerung": "Markierung für „kein Wert vorhanden“; sie ist weder 0 noch leerer Text und wird mit `IS NULL` geprüft.",
+      "sp": [
+        "AP2-4-1-2",
+        "AP2-4-2-1",
+        "AP2-4-2-3"
+      ]
+    },
+    {
+      "begriff": "SELECT",
+      "erklaerung": "SQL-Befehl zum Abfragen von Daten aus einer oder mehreren Tabellen.",
+      "sp": [
+        "AP2-4-2-1",
+        "AP2-4-3-1",
+        "AP2-4-3-2",
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "Projektion",
+      "erklaerung": "Auswahl bestimmter Spalten einer Tabelle; in SQL über die Spaltenliste hinter SELECT.",
+      "sp": [
+        "AP2-4-2-1"
+      ]
+    },
+    {
+      "begriff": "Selektion",
+      "erklaerung": "Auswahl bestimmter Zeilen einer Tabelle über eine Bedingung; in SQL mit WHERE.",
+      "sp": [
+        "AP2-4-2-1",
+        "AP2-4-2-4"
+      ]
+    },
+    {
+      "begriff": "WHERE",
+      "erklaerung": "SQL-Klausel, die Zeilen über eine Bedingung filtert.",
+      "sp": [
+        "AP2-4-2-1",
+        "AP2-4-2-3",
+        "AP2-4-2-4",
+        "AP2-4-3-1"
+      ]
+    },
+    {
+      "begriff": "LIKE",
+      "erklaerung": "SQL-Operator für Textvergleiche mit Platzhaltern: `%` für beliebig viele Zeichen, `_` für genau ein Zeichen.",
+      "sp": [
+        "AP2-4-2-1"
+      ]
+    },
+    {
+      "begriff": "ORDER BY",
+      "erklaerung": "SQL-Klausel zum Sortieren des Ergebnisses, aufsteigend mit ASC (Standard) oder absteigend mit DESC.",
+      "sp": [
+        "AP2-4-2-1",
+        "AP2-4-2-3",
+        "AP2-4-2-4"
+      ]
+    },
+    {
+      "begriff": "DISTINCT",
+      "erklaerung": "SQL-Schlüsselwort, das doppelte Zeilen aus dem Ergebnis entfernt.",
+      "sp": [
+        "AP2-4-2-1"
+      ]
+    },
+    {
+      "begriff": "Alias",
+      "erklaerung": "Ersatzname für eine Spalte oder Tabelle innerhalb einer Abfrage, vergeben mit AS oder direkt hinter dem Tabellennamen.",
+      "sp": [
+        "AP2-4-2-1",
+        "AP2-4-2-2",
+        "AP2-4-2-4"
+      ]
+    },
+    {
+      "begriff": "JOIN",
+      "erklaerung": "Verknüpfung von Tabellen in einer Abfrage über eine Bedingung, meist Primärschlüssel = Fremdschlüssel.",
+      "sp": [
+        "AP2-4-2-2",
+        "AP2-4-2-3"
+      ]
+    },
+    {
+      "begriff": "INNER JOIN",
+      "erklaerung": "JOIN, der nur Zeilen liefert, zu denen es in beiden Tabellen einen passenden Partner gibt.",
+      "sp": [
+        "AP2-4-2-2"
+      ]
+    },
+    {
+      "begriff": "LEFT JOIN",
+      "erklaerung": "JOIN, der alle Zeilen der linken Tabelle liefert; fehlt rechts ein Partner, stehen dort NULL-Werte.",
+      "sp": [
+        "AP2-4-2-2"
+      ]
+    },
+    {
+      "begriff": "RIGHT JOIN",
+      "erklaerung": "Spiegelbild des LEFT JOIN: liefert alle Zeilen der rechten Tabelle, auch ohne Partner links.",
+      "sp": [
+        "AP2-4-2-2"
+      ]
+    },
+    {
+      "begriff": "Aggregatfunktion",
+      "erklaerung": "Funktion, die aus den Werten mehrerer Zeilen einen Wert berechnet: COUNT, SUM, AVG, MIN, MAX.",
+      "sp": [
+        "AP2-4-2-3"
+      ]
+    },
+    {
+      "begriff": "GROUP BY",
+      "erklaerung": "SQL-Klausel, die Zeilen mit gleichen Werten zu Gruppen zusammenfasst; Aggregatfunktionen rechnen dann je Gruppe.",
+      "sp": [
+        "AP2-4-2-3"
+      ]
+    },
+    {
+      "begriff": "HAVING",
+      "erklaerung": "SQL-Klausel, die Gruppen nach dem Gruppieren filtert, auch mit Bedingungen auf Aggregate.",
+      "sp": [
+        "AP2-4-2-3"
+      ]
+    },
+    {
+      "begriff": "Unterabfrage",
+      "erklaerung": "SELECT-Anweisung innerhalb einer anderen Anweisung, z. B. in WHERE oder FROM; auch verschachtelte Abfrage genannt.",
+      "sp": [
+        "AP2-4-2-4"
+      ]
+    },
+    {
+      "begriff": "EXISTS",
+      "erklaerung": "SQL-Bedingung, die wahr ist, wenn die Unterabfrage mindestens eine Zeile liefert; NOT EXISTS ist wahr, wenn sie keine liefert.",
+      "sp": [
+        "AP2-4-2-4"
+      ]
+    },
+    {
+      "begriff": "UNION",
+      "erklaerung": "SQL-Operator, der die Ergebnisse zweier Abfragen mit gleicher Spaltenzahl vereinigt und doppelte Zeilen entfernt.",
+      "sp": [
+        "AP2-4-2-4"
+      ]
+    },
+    {
+      "begriff": "INSERT",
+      "erklaerung": "SQL-Befehl zum Einfügen von Datensätzen in eine Tabelle.",
+      "sp": [
+        "AP2-4-3-1",
+        "AP2-4-3-2",
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "UPDATE",
+      "erklaerung": "SQL-Befehl zum Ändern vorhandener Datensätze.",
+      "sp": [
+        "AP2-4-3-1",
+        "AP2-4-3-2",
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "DELETE",
+      "erklaerung": "SQL-Befehl zum Löschen von Datensätzen; die Tabelle selbst bleibt bestehen.",
+      "sp": [
+        "AP2-4-3-1",
+        "AP2-4-3-2",
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "Archivtabelle",
+      "erklaerung": "Tabelle, in die nicht mehr aktiv benötigte Datensätze übertragen werden, bevor sie in der Ursprungstabelle gelöscht werden.",
+      "sp": [
+        "AP2-4-3-1"
+      ]
+    },
+    {
+      "begriff": "CREATE TABLE",
+      "erklaerung": "SQL-Befehl zum Anlegen einer Tabelle mit Spalten, Datentypen und Schlüsseln.",
+      "sp": [
+        "AP2-4-3-2"
+      ]
+    },
+    {
+      "begriff": "ALTER TABLE",
+      "erklaerung": "SQL-Befehl zum Ändern einer Tabellenstruktur, z. B. Spalte hinzufügen, ändern oder entfernen.",
+      "sp": [
+        "AP2-4-3-2"
+      ]
+    },
+    {
+      "begriff": "DROP TABLE",
+      "erklaerung": "SQL-Befehl, der eine Tabelle samt Struktur und Daten löscht.",
+      "sp": [
+        "AP2-4-3-2"
+      ]
+    },
+    {
+      "begriff": "Index",
+      "erklaerung": "Zusätzliche Suchstruktur zu einer Spalte, die Suchen und Sortieren beschleunigt; braucht Speicher und bremst Einfügen und Ändern.",
+      "sp": [
+        "AP2-4-3-2"
+      ]
+    },
+    {
+      "begriff": "GRANT",
+      "erklaerung": "SQL-Befehl, der einem Benutzer Rechte auf ein Datenbankobjekt gibt: `GRANT Recht ON Objekt TO Benutzer`.",
+      "sp": [
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "REVOKE",
+      "erklaerung": "SQL-Befehl, der einem Benutzer Rechte wieder entzieht: `REVOKE Recht ON Objekt FROM Benutzer`.",
+      "sp": [
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "CREATE USER",
+      "erklaerung": "SQL-Befehl zum Anlegen eines Datenbankbenutzers.",
+      "sp": [
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "WITH GRANT OPTION",
+      "erklaerung": "Zusatz zu GRANT: Der Benutzer darf das erhaltene Recht an andere weitergeben.",
+      "sp": [
+        "AP2-4-3-3"
+      ]
+    },
+    {
+      "begriff": "CSV",
+      "langform": "Comma-Separated Values",
+      "erklaerung": "Textformat für Tabellen: Jede Zeile ist ein Datensatz, die Werte sind durch Komma oder Semikolon getrennt.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "XML",
+      "langform": "Extensible Markup Language",
+      "erklaerung": "Auszeichnungssprache, die Daten in verschachtelten Elementen mit Tags und Attributen darstellt; lässt sich gegen ein Schema prüfen.",
+      "sp": [
+        "AP2-4-1-2",
+        "AP2-4-4-1",
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "JSON",
+      "langform": "JavaScript Object Notation",
+      "erklaerung": "Textformat für Daten aus Objekten in geschweiften und Arrays in eckigen Klammern mit Paaren aus Name und Wert; verbreitet bei Webschnittstellen.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "XML-Schema",
+      "erklaerung": "Beschreibung, welche Elemente, Attribute, Reihenfolgen und Datentypen ein XML-Dokument haben darf; ein Dokument wird dagegen geprüft.",
+      "sp": [
+        "AP2-4-1-2",
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Tag",
+      "erklaerung": "Auszeichnung in spitzen Klammern, die ein XML-Element öffnet (`<name>`) oder schließt (`</name>`).",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Element (XML)",
+      "erklaerung": "Baustein eines XML-Dokuments aus öffnendem Tag, Inhalt und schließendem Tag; Elemente lassen sich verschachteln.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Attribut (XML)",
+      "erklaerung": "Paar aus Name und Wert im öffnenden Tag eines XML-Elements, z. B. `id` in `<kunde id='42'>`.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Wohlgeformt",
+      "erklaerung": "Ein XML-Dokument ist wohlgeformt, wenn es die XML-Regeln einhält, z. B. ein Wurzelelement, alle Tags geschlossen, korrekt verschachtelt.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Gültig (XML)",
+      "erklaerung": "Ein XML-Dokument ist gültig, wenn es wohlgeformt ist und zusätzlich seinem Schema entspricht.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Array",
+      "erklaerung": "Geordnete Liste von Werten; in JSON in eckigen Klammern.",
+      "sp": [
+        "AP2-4-4-1"
+      ]
+    },
+    {
+      "begriff": "Schnittstelle",
+      "erklaerung": "Festgelegter Übergabepunkt, über den Programme Daten austauschen oder Dienste nutzen.",
+      "sp": [
+        "AP2-4-4-1",
+        "AP2-4-4-2",
+        "AP2-4-4-3"
+      ]
+    },
+    {
+      "begriff": "API",
+      "langform": "Application Programming Interface",
+      "erklaerung": "Programmierschnittstelle, über die eine Anwendung Funktionen oder Daten einer anderen Anwendung nutzt.",
+      "sp": [
+        "AP2-4-4-2",
+        "AP2-4-4-3"
+      ]
+    },
+    {
+      "begriff": "REST",
+      "langform": "Representational State Transfer",
+      "erklaerung": "Architekturstil für Webschnittstellen auf Grundlage von HTTP: Ressourcen über URLs, zustandslose Anfragen, Zugriff über HTTP-Methoden.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "HTTP",
+      "langform": "Hypertext Transfer Protocol",
+      "erklaerung": "Protokoll, mit dem Client und Server im Web Anfragen und Antworten austauschen.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "HTTP-Methoden",
+      "erklaerung": "Art einer HTTP-Anfrage: GET liest, POST legt an, PUT ersetzt, PATCH ändert teilweise, DELETE löscht.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Statuscode",
+      "erklaerung": "Dreistellige Zahl in der HTTP-Antwort; die erste Ziffer nennt die Klasse, z. B. 2xx Erfolg, 4xx Fehler beim Client, 5xx Fehler beim Server.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "SOAP",
+      "langform": "Simple Object Access Protocol",
+      "erklaerung": "Protokoll für Webdienste, das Nachrichten in XML austauscht.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "URL",
+      "langform": "Uniform Resource Locator",
+      "erklaerung": "Adresse einer Ressource im Netz, z. B. `https://shop.example/api/artikel`.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Ressource (REST)",
+      "erklaerung": "Datenobjekt, das über eine eigene URL ansprechbar ist, z. B. ein Kunde unter `/kunden/42`.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Zustandslos",
+      "erklaerung": "Jede Anfrage enthält alle nötigen Angaben; der Server speichert zwischen zwei Anfragen keinen Sitzungszustand des Clients.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Client",
+      "erklaerung": "Programm oder Gerät, das Dienste eines Servers anfragt.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Server",
+      "erklaerung": "Rechner oder Programm, das Dienste und Ressourcen für Clients bereitstellt.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Abfrageparameter",
+      "erklaerung": "Angaben in der URL nach dem Fragezeichen, mit & getrennt, z. B. `?kategorie=3&seite=2`.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Header",
+      "erklaerung": "Kopfzeilen einer HTTP-Anfrage oder -Antwort mit Zusatzangaben, z. B. Datenformat oder API-Schlüssel.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Body",
+      "erklaerung": "Datenteil einer HTTP-Anfrage oder -Antwort, z. B. JSON-Daten bei POST.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "API-Schlüssel",
+      "erklaerung": "Geheime Kennung, die eine Anwendung bei jeder Anfrage an eine API mitschickt; damit steuert der Anbieter Zugriff und Nutzung.",
+      "sp": [
+        "AP2-4-4-2"
+      ]
+    },
+    {
+      "begriff": "Datenimport",
+      "erklaerung": "Übernahme von Daten aus einer fremden Quelle in den eigenen Datenbestand.",
+      "sp": [
+        "AP2-4-1-2",
+        "AP2-4-4-3"
+      ]
+    },
+    {
+      "begriff": "Data Lake",
+      "erklaerung": "Speicher, der Daten aus vielen Quellen im Rohformat aufnimmt; aufbereitet wird erst bei der Nutzung.",
+      "sp": [
+        "AP2-4-4-3"
+      ]
+    },
+    {
+      "begriff": "Data Warehouse",
+      "erklaerung": "Zentraler Datenbestand, in dem Daten aus verschiedenen Quellen aufbereitet und strukturiert für Auswertungen vorliegen.",
+      "sp": [
+        "AP2-4-4-3"
+      ]
+    },
+    {
+      "begriff": "Open Data",
+      "erklaerung": "Frei zugängliche Daten, die jeder nutzen und weiterverwenden darf, meist über eine Schnittstelle oder als Datei bereitgestellt.",
+      "sp": [
+        "AP2-4-4-3"
+      ]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP2-4-2-1-K6-3",
+      "frage": "Die Reihenfolge der Argumente von DATEDIFF und DATEADD unterscheidet sich je nach SQL-Dialekt (z. B. DATEDIFF(Ende, Start) oder DATEDIFF(Einheit, Start, Ende)). Die genaue Syntax der Prüfungsunterlage lag nicht vor; die Karte fragt daher nur den Zweck ab."
+    },
+    {
+      "id": "AP2-4-3-2-K2-4",
+      "frage": "Zum Ändern des Datentyps einer Spalte gibt es je nach System `ALTER COLUMN Name VARCHAR(200)` (SQL Server), `ALTER COLUMN Name TYPE VARCHAR(200)` (PostgreSQL) oder `MODIFY Name VARCHAR(200)` (MySQL/Oracle). Welche Form der Belegsatz vorgibt, ist nicht belegt; die Karte nennt die erste und die letzte."
+    },
+    {
+      "id": "AP2-4-3-3-K3-1",
+      "frage": "Die Syntax für das Passwort bei CREATE USER (IDENTIFIED BY bzw. WITH PASSWORD) hängt vom Datenbanksystem ab; die Form der Prüfungsunterlage ist nicht belegt."
+    },
+    {
+      "id": "AP2-4-3-3",
+      "frage": "Die Tiefe des Stichpunkts ist nicht belegt (einzelne GRANT/REVOKE-Anweisung oder Rechtekonzept mit Rollen). Die Karten decken einzelne Anweisungen ab; Rollen (CREATE ROLE) sind nicht abgefragt."
+    }
+  ]
+}

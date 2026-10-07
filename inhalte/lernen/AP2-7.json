@@ -70,7 +70,7 @@
     "AP2-7-3-2": {
       "ziel": "Möglichkeiten der physischen und softwaretechnischen Absicherung benennen und ihren Zweck erklären.",
       "punkte": [
-        "Physisch: gesicherter Zugang zu Gebäude, Serverraum und Schrank",
+        "Physisch: Gebäude, Serverraum und Serverschrank gegen unbefugten Zutritt sichern",
         "Elementarrisiken wie Feuer und Hochwasser",
         "Schutz: Brandmelde- und Löschanlage, Serverraum nicht im Keller, Datensicherung an anderem Ort",
         "Firewall regelt Verbindungen nach Adressen und Ports, Webfilter sperrt Inhalte und Webseiten",
@@ -374,7 +374,7 @@
       "sp": "AP2-7-2-1",
       "k": "AP2-7-2-1-K6",
       "vorne": "Welche Bedrohungen behandelt man nach einer Risikoanalyse vorrangig?",
-      "hinten": "Die mit hoher Eintrittswahrscheinlichkeit und hoher Schadenshöhe."
+      "hinten": "Die mit dem höchsten Risiko, also hoher Eintrittswahrscheinlichkeit und hoher Schadenshöhe (Risiko = Eintrittswahrscheinlichkeit × Schadenshöhe)."
     },
     {
       "id": "AP2-7-2-2-K1-1",
@@ -486,7 +486,7 @@
       "sp": "AP2-7-3-1",
       "k": "AP2-7-3-1-K2",
       "vorne": "Zu welcher Kontrollart gehören Bildschirmschoner mit Passwortschutz, biometrische Verfahren und Chipkarte?",
-      "hinten": "Zugangskontrolle."
+      "hinten": "Zugangskontrolle.\n(Sichern Chipkarte oder Biometrie eine Tür, ist das Zutrittskontrolle.)"
     },
     {
       "id": "AP2-7-3-1-K2-3",
@@ -555,8 +555,8 @@
       "id": "AP2-7-3-2-K1-1",
       "sp": "AP2-7-3-2",
       "k": "AP2-7-3-2-K1",
-      "vorne": "Welche drei Stellen sichert man bei der physischen Absicherung von IT-Systemen gegen unbefugten Zugang?",
-      "hinten": "- Gebäude\n- Serverraum\n- Serverschrank"
+      "vorne": "Welche drei Stellen sichert man bei der physischen Absicherung von IT-Systemen gegen Unbefugte?",
+      "hinten": "- Gebäude\n- Serverraum\n- Serverschrank\n(im TOM-Sinn Zutrittskontrolle)"
     },
     {
       "id": "AP2-7-3-2-K1-2",
@@ -570,7 +570,7 @@
       "sp": "AP2-7-3-2",
       "k": "AP2-7-3-2-K2",
       "vorne": "Was sind Elementarrisiken? Nenne zwei Beispiele.",
-      "hinten": "Gefahren durch Naturgewalten, die IT-Anlagen zerstören können, z. B. Feuer und Hochwasser."
+      "hinten": "Gefahren durch Naturereignisse und Elemente, die IT-Anlagen beschädigen oder zerstören können, z. B. Feuer und Hochwasser (auch Blitz, Sturm)."
     },
     {
       "id": "AP2-7-3-2-K3-1",
@@ -746,6 +746,13 @@
       "k": "AP2-7-4-2-K3",
       "vorne": "Warum deckt der Vergleich von Hashwerten eine Manipulation auf?",
       "hinten": "Schon die kleinste Änderung der Daten ergibt einen völlig anderen Hashwert. Stimmen neu berechneter und mitgeschickter Wert nicht überein, wurden die Daten verändert."
+    },
+    {
+      "id": "AP2-7-4-2-K3-2",
+      "sp": "AP2-7-4-2",
+      "k": "AP2-7-4-2-K3",
+      "vorne": "Mit welchen Verfahren macht man unbemerkte Veränderungen von Daten erkennbar?",
+      "hinten": "- Hashwert bilden, mitschicken und beim Empfänger neu berechnen und vergleichen\n- digitale Signatur, wenn zusätzlich nachgewiesen werden soll, dass die Daten vom Absender stammen"
     },
     {
       "id": "AP2-7-4-2-K4-1",
@@ -934,28 +941,28 @@
       "sp": "AP2-7-5-1",
       "k": "AP2-7-5-1-K4",
       "vorne": "Warum ersetzt eine Datensicherung kein Archiv?",
-      "hinten": "Sicherungen werden regelmäßig überschrieben und sind nicht gegen Veränderung geschützt. Ein Archiv bewahrt Daten über die ganze Frist unveränderbar auf."
+      "hinten": "Sicherungen werden meist regelmäßig überschrieben und sind nicht gegen Veränderung geschützt. Ein Archiv bewahrt Daten über die ganze Frist unveränderbar auf."
     },
     {
       "id": "AP2-7-5-1-K5-1",
       "sp": "AP2-7-5-1",
       "k": "AP2-7-5-1-K5",
       "vorne": "Wann müssen personenbezogene Daten gelöscht werden?",
-      "hinten": "Wenn der Zweck ihrer Verarbeitung weggefallen ist und keine gesetzliche Aufbewahrungsfrist mehr entgegensteht."
+      "hinten": "Wenn der Zweck ihrer Verarbeitung weggefallen ist und keine gesetzliche Aufbewahrungsfrist mehr entgegensteht.\nAußerdem z. B. nach Widerruf der Einwilligung ohne andere Rechtsgrundlage oder bei unrechtmäßiger Verarbeitung."
     },
     {
       "id": "AP2-7-5-1-K5-2",
       "sp": "AP2-7-5-1",
       "k": "AP2-7-5-1-K5",
       "vorne": "Ein Kunde verlangt die Löschung seiner Daten, seine Rechnungen unterliegen aber einer Aufbewahrungspflicht. Was gilt?",
-      "hinten": "Die Rechnungsdaten werden bis zum Ende der Frist aufbewahrt und nur noch dafür genutzt, danach gelöscht. Daten ohne Aufbewahrungspflicht werden sofort gelöscht."
+      "hinten": "Die Rechnungsdaten werden bis zum Ende der Frist aufbewahrt und nur noch dafür genutzt, danach gelöscht. Daten ohne Aufbewahrungspflicht werden unverzüglich gelöscht."
     },
     {
       "id": "AP2-7-5-1-K6-1",
       "sp": "AP2-7-5-1",
       "k": "AP2-7-5-1-K6",
       "vorne": "Welche Datenschutzgrundsätze beachtet man schon beim Entwurf einer Anwendung?",
-      "hinten": "- nur nötige Daten erheben (Datenminimierung)\n- Zweck der Verarbeitung festlegen (Zweckbindung)\n- Löschung von Anfang an vorsehen"
+      "hinten": "- nur nötige Daten erheben (Datenminimierung)\n- Zweck der Verarbeitung festlegen (Zweckbindung)\n- Löschung von Anfang an vorsehen (Speicherbegrenzung)"
     },
     {
       "id": "AP2-7-5-1-K6-2",
@@ -1159,12 +1166,13 @@
       "begriff": "Zutrittskontrolle",
       "erklaerung": "Maßnahmen, die regeln, wer Gebäude und Räume mit IT-Anlagen betreten darf, z. B. Alarmanlage, Besucherausweise.",
       "sp": [
-        "AP2-7-3-1"
+        "AP2-7-3-1",
+        "AP2-7-3-2"
       ]
     },
     {
       "begriff": "Zugangskontrolle",
-      "erklaerung": "Maßnahmen, die regeln, wer sich an einem System anmelden darf, z. B. Passwort, Chipkarte, biometrische Verfahren.",
+      "erklaerung": "Maßnahmen, die regeln, wer sich an einem System anmelden darf, z. B. Passwort, Chipkarte, Biometrie. Gesicherter „Zugang“ zu Gebäuden und Räumen ist im TOM-Sinn Zutrittskontrolle.",
       "sp": [
         "AP2-7-3-1",
         "AP2-7-3-2"
@@ -1209,7 +1217,7 @@
     },
     {
       "begriff": "Elementarrisiken",
-      "erklaerung": "Gefahren durch Naturgewalten wie Feuer und Hochwasser, die IT-Anlagen zerstören können.",
+      "erklaerung": "Gefahren durch Naturereignisse und Elemente wie Feuer, Hochwasser, Blitz oder Sturm, die IT-Anlagen beschädigen oder zerstören können.",
       "sp": [
         "AP2-7-3-2"
       ]
@@ -1288,7 +1296,7 @@
     },
     {
       "begriff": "asymmetrische Verschlüsselung",
-      "erklaerung": "Verfahren mit Schlüsselpaar: Verschlüsselt wird mit dem öffentlichen, entschlüsselt mit dem privaten Schlüssel; sicherer Austausch, aber langsam.",
+      "erklaerung": "Verfahren mit Schlüsselpaar: Verschlüsselt wird mit dem öffentlichen, entschlüsselt mit dem privaten Schlüssel; kein geheimer Schlüsselaustausch nötig, aber langsam.",
       "sp": [
         "AP2-7-4-1"
       ]
@@ -1391,7 +1399,7 @@
     },
     {
       "begriff": "personenbezogene Daten",
-      "erklaerung": "Alle Informationen, die sich auf eine bestimmte oder bestimmbare Person beziehen, z. B. Name, E-Mail-Adresse, Kundennummer.",
+      "erklaerung": "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen, z. B. Name, E-Mail-Adresse, Kundennummer.",
       "sp": [
         "AP2-7-2-1",
         "AP2-7-5-1"
@@ -1462,42 +1470,5 @@
       ]
     }
   ],
-  "unsicher": [
-    {
-      "id": "AP2-7-3-2-K1-1",
-      "frage": "Der Rahmen spricht von „Zugangskontrollen für Gebäude, Serverraum und Schrank“. Im TOM-Sinn (AP2-7-3-1) ist das Betreten von Gebäuden und Räumen Zutrittskontrolle. Die Karte vermeidet den Begriff; sollte der Rahmen angeglichen werden?"
-    },
-    {
-      "id": "AP2-7-3-1-K2-2",
-      "frage": "Biometrische Verfahren und Chipkarten werden in der Praxis auch zur Zutrittskontrolle (Türöffner) eingesetzt. Die Karte ordnet sie wie die Können-Aussage der Zugangskontrolle zu. Ebenso zählen Verschlüsselung und Datenträgerlöschung je nach Lehrbuch auch zu anderen Kontrollarten (z. B. Weitergabekontrolle)."
-    },
-    {
-      "id": "AP2-7-4-1-K4-2",
-      "frage": "Aktuelles TLS 1.3 tauscht den Sitzungsschlüssel per Diffie-Hellman-Schlüsselvereinbarung aus, nicht durch RSA-Verschlüsselung des Schlüssels. Die Karte bleibt allgemein („asymmetrischer Schlüsselaustausch“); unklar, ob die Prüfung mehr Detail erwartet."
-    },
-    {
-      "id": "AP2-7-5-1-K5-1",
-      "frage": "Konkrete Aufbewahrungsfristen werden bewusst nicht abgefragt: Die Frist für Buchungsbelege wurde 2025 von 10 auf 8 Jahre verkürzt (Bürokratieentlastungsgesetz IV), viele Lernmaterialien nennen noch 10/6 Jahre. Unklar, welche Werte die Prüfung erwartet."
-    },
-    {
-      "id": "AP2-7-2-1-K4-2",
-      "frage": "Wie die Beratung je Kundengruppe (besonders für die öffentliche Hand) inhaltlich erwartet wird, gibt der Rahmen nicht vor. Die Karte nennt nur typische Schwerpunkte für Privathaushalt und Unternehmen."
-    },
-    {
-      "id": "AP2-7-2-1-K5-2",
-      "frage": "Ethische und rechtliche Rahmenbedingungen lassen sich nicht immer scharf trennen. Das Beispiel (d) ist bewusst als über das Gesetz hinausgehender Verzicht formuliert; unklar, welche Beispiele die Prüfung als „ethisch“ erwartet."
-    },
-    {
-      "id": "AP2-7-1-1-K3-1",
-      "frage": "Die Einschätzung der Schadensschwere ist offen; die Karten zeigen nur Beispielbegründungen. Einen festen Kriterienkatalog (etwa wie bei der BSI-Schutzbedarfsfeststellung) gibt der Rahmen nicht vor."
-    },
-    {
-      "id": "AP2-7-2-2-K6-1",
-      "frage": "„Device Security Check“ ist kein fest definierter Normbegriff; die Karte folgt der Können-Aussage (Updates, Virenschutz). Unklar, welche weiteren Prüfpunkte erwartet werden."
-    },
-    {
-      "id": "AP2-7-1-2-K6-1",
-      "frage": "Das genaue Szenario des Passwort-Resets aus dem Rahmen ist nicht bekannt; die Karte beschreibt die typische Schwachstelle eines Reset-Links per E-Mail allgemein."
-    }
-  ]
+  "unsicher": []
 }

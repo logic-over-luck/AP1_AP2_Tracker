@@ -115,7 +115,7 @@
       ]
     },
     "AP2-3-4-2": {
-      "ziel": "Cyber-physische Systeme beschreiben, Sensoren und Aktoren auswählen und Abfragerhythmus sowie Datenübertragung begründet planen.",
+      "ziel": "Cyber-physische Systeme beschreiben, Sensoren und Aktoren begründet auswählen, einen Abfragerhythmus planen und Anforderungen an die Datenübertragung nennen.",
       "punkte": [
         "Cyber-physisches System: Software über Sensoren und Aktoren mit der physischen Welt verbunden",
         "Sensoren erfassen Messwerte, Aktoren bewirken etwas; passend zur Aufgabe auswählen",
@@ -148,6 +148,13 @@
       "hinten": "Daten (Attribute) und die zugehörigen Funktionen (Methoden) werden in Objekten zusammengefasst, die aus Klassen erzeugt werden. Kernkonzepte: Kapselung, Vererbung, Polymorphie."
     },
     {
+      "id": "AP2-3-1-1-K1-4",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K1",
+      "vorne": "Worin unterscheiden sich strukturierte und prozedurale Programmierung?",
+      "hinten": "- strukturiert: betrifft den Ablauf, nur Folge, Verzweigung und Schleife, kein goto\n- prozedural: betrifft die Gliederung des Programms in Prozeduren bzw. Funktionen\nBeides ergänzt sich; C ist strukturiert und prozedural."
+    },
+    {
       "id": "AP2-3-1-1-K2-1",
       "sp": "AP2-3-1-1",
       "k": "AP2-3-1-1-K2",
@@ -162,6 +169,13 @@
       "hinten": "Objektorientiert."
     },
     {
+      "id": "AP2-3-1-1-K2-3",
+      "sp": "AP2-3-1-1",
+      "k": "AP2-3-1-1-K2",
+      "vorne": "Nenne eine Beispielsprache für strukturierte Programmierung.",
+      "hinten": "Z. B. Pascal oder C."
+    },
+    {
       "id": "AP2-3-1-1-K3-1",
       "sp": "AP2-3-1-1",
       "k": "AP2-3-1-1-K3",
@@ -172,7 +186,7 @@
       "id": "AP2-3-1-1-K3-2",
       "sp": "AP2-3-1-1",
       "k": "AP2-3-1-1-K3",
-      "vorne": "Welchem Programmierkonzept folgt Python?",
+      "vorne": "Wie ordnest du Python den Programmierkonzepten zu?",
       "hinten": "Mehreren: Python vereint prozedurale, objektorientierte und funktionale Elemente (Multiparadigmensprache)."
     },
     {
@@ -292,7 +306,7 @@
       "sp": "AP2-3-1-3",
       "k": "AP2-3-1-3-K1",
       "vorne": "Worin unterscheiden sich Compiler und Interpreter?",
-      "hinten": "- Compiler: übersetzt das ganze Programm einmal vorab; schnelle Ausführung, Syntaxfehler vor dem Start sichtbar\n- Interpreter: führt den Code zur Laufzeit Schritt für Schritt aus; kein Übersetzungsschritt, langsamere Ausführung"
+      "hinten": "- Compiler: übersetzt das ganze Programm vorab; schnelle Ausführung, Syntaxfehler vor dem Start sichtbar\n- Interpreter: führt den Code zur Laufzeit Schritt für Schritt aus; langsamer, Fehler erst beim Erreichen der Stelle"
     },
     {
       "id": "AP2-3-1-3-K1-6",
@@ -502,7 +516,7 @@
       "sp": "AP2-3-2-2",
       "k": "AP2-3-2-2-K2",
       "vorne": "Warum werden Summe und Zähler vor der Schleife und nicht in ihr auf 0 gesetzt?",
-      "hinten": "In der Schleife würden sie bei jedem Durchlauf wieder auf 0 zurückgesetzt; am Ende stünde nur der Wert des letzten Elements darin."
+      "hinten": "In der Schleife würden sie bei jedem Durchlauf wieder auf 0 zurückgesetzt; am Ende enthielten sie nur den Beitrag des letzten Elements."
     },
     {
       "id": "AP2-3-2-2-K3-1",
@@ -586,7 +600,7 @@
       "sp": "AP2-3-2-3",
       "k": "AP2-3-2-3-K2",
       "vorne": "Wie arbeitet die binäre Suche?",
-      "hinten": "- Element in der Mitte des Suchbereichs prüfen\n- Treffer: fertig\n- Gesuchtes kleiner: links weitersuchen, größer: rechts\n- wiederholen, bis gefunden oder der Bereich leer ist"
+      "hinten": "- Element in der Mitte des Suchbereichs prüfen\n- Treffer: fertig\n- Gesuchtes kleiner: links weitersuchen, größer: rechts (bei aufsteigender Sortierung)\n- wiederholen, bis gefunden oder der Bereich leer ist"
     },
     {
       "id": "AP2-3-2-3-K2-2",
@@ -887,7 +901,7 @@
       "sp": "AP2-3-3-3",
       "k": "AP2-3-3-3-K4",
       "vorne": "Was geschieht mit den restlichen Anweisungen im try-Block, wenn darin eine Ausnahme auftritt?",
-      "hinten": "Sie werden übersprungen. Es geht im passenden catch-Block weiter, danach im finally-Block."
+      "hinten": "Sie werden übersprungen. Es geht im passenden catch-Block weiter, danach im finally-Block (falls vorhanden)."
     },
     {
       "id": "AP2-3-3-3-K5-1",
@@ -1184,6 +1198,7 @@
         "AP2-3-2-1",
         "AP2-3-2-2",
         "AP2-3-2-3",
+        "AP2-3-3-3",
         "AP2-3-4-1"
       ]
     },
@@ -1515,26 +1530,5 @@
       ]
     }
   ],
-  "unsicher": [
-    {
-      "id": "AP2-3-3-2-K3-2",
-      "frage": "Wird als Name des Mechanismus „Polymorphie“ oder „dynamische (späte) Bindung“ erwartet? Die Karte nennt beides."
-    },
-    {
-      "id": "AP2-3-3-2-K5-1",
-      "frage": "In Java (ab 8) und C# (ab 8) dürfen Interfaces Default-Methoden mit Rumpf enthalten. Die Karte folgt der klassischen Lehrbuchabgrenzung aus der Können-Aussage; reicht das für die Prüfung?"
-    },
-    {
-      "id": "AP2-3-1-1-K1-1",
-      "frage": "Die Abgrenzung strukturiert/prozedural ist in Lehrbüchern unscharf (C gilt oft als beides). Wie trennscharf wird das erwartet?"
-    },
-    {
-      "id": "AP2-3-4-2-K6-1",
-      "frage": "Ob konkrete Funktechniken für Sensoren (z. B. LoRaWAN, NB-IoT, Zigbee) bekannt sein müssen, geht aus dem Rahmen nicht hervor; es gibt dazu keine Karte."
-    },
-    {
-      "id": "AP2-3-4-1-X1",
-      "frage": "Zeitgesteuertes Starten (cron, Aufgabenplanung) steht nicht ausdrücklich in den Können-Aussagen, gehört aber zum Automatisieren wiederkehrender Abläufe. Karte behalten?"
-    }
-  ]
+  "unsicher": []
 }

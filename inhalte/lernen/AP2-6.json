@@ -1,0 +1,2292 @@
+{
+  "paket": "AP2-6",
+  "bloecke": {
+    "AP2-6-1": {
+      "satz": "Schichtenmodelle und Adressen, die Netzwerkkomponenten und die Übertragungsprotokolle TCP, UDP, HTTP und HTTPS."
+    },
+    "AP2-6-2": {
+      "satz": "Netzarten nach Ausdehnung, Verkabelung und VLAN, Funknetze mit Zugriffsschutz, Netzwerkpläne sowie Peer-to-Peer und Client-Server."
+    },
+    "AP2-6-3": {
+      "satz": "Die Netzdienste DNS, DHCP und Proxy sowie die Verbindung von Standorten und Endgeräten über VPN."
+    },
+    "AP2-6-4": {
+      "satz": "Wie verfügbar Dienste sein müssen und wie USV, Redundanz, RAID und Backups den Betrieb sichern."
+    },
+    "AP2-6-5": {
+      "satz": "Systeme überwachen, Störungen nach festen Abläufen bearbeiten und den Betrieb dokumentieren."
+    },
+    "AP2-6-6": {
+      "satz": "Speicherlösungen im Netz, Service- und Liefermodelle sowie das Berechnen von Datenmengen und Übertragungsdauern."
+    }
+  },
+  "stichpunkte": {
+    "AP2-6-1-1": {
+      "ziel": "Die Schichten von OSI- und TCP/IP-Modell nennen, Adressen und Protokolle zuordnen, IPv4 und IPv6 unterscheiden und MAC-Adresse und Ethernet-Frame beschreiben.",
+      "punkte": [
+        "OSI-Modell (7 Schichten) und TCP/IP-Modell nennen und einander zuordnen",
+        "MAC und ARP, IPv4/IPv6, TCP/UDP der richtigen Schicht zuordnen",
+        "MAC-Adresse: 48 Bit, hexadezimal, vordere Hälfte Herstellerkennung; ARP ermittelt sie zur IP-Adresse",
+        "IPv4: 32 Bit, dezimal mit Punkten; IPv6: 128 Bit, hexadezimal mit Doppelpunkten",
+        "Ethernet-Frame: Präambel, Zieladresse, Quelladresse, Typ, Nutzdaten, Prüfsumme"
+      ]
+    },
+    "AP2-6-1-2": {
+      "ziel": "Switch, Bridge, Router und Firewall nach Aufgabe und OSI-Schicht vergleichen und beschreiben.",
+      "punkte": [
+        "Switching: innerhalb eines Netzes nach MAC-Adresse; Routing: zwischen Netzen nach IP-Adresse",
+        "Switch und Bridge auf Schicht 2, Router auf Schicht 3",
+        "Firewall: Verkehr nach Regeln zulassen oder sperren, zustandsbehaftet bis Schicht 4",
+        "Symbole des Netzwerkplans den Geräten zuordnen"
+      ]
+    },
+    "AP2-6-1-3": {
+      "ziel": "TCP, UDP, HTTP und HTTPS mit ihren Eigenschaften erläutern und für eine Anwendung das passende Protokoll begründet wählen.",
+      "punkte": [
+        "TCP: verbindungsorientiert, bestätigt, richtige Reihenfolge",
+        "UDP: verbindungslos, schnell, ohne Zustellgarantie – etwa für Sprache in Echtzeit",
+        "HTTPS überträgt verschlüsselt; Standardports 80 (HTTP) und 443 (HTTPS)",
+        "Transportverschlüsselung hybrid: asymmetrisch für den Schlüsselaustausch, symmetrisch für die Daten"
+      ]
+    },
+    "AP2-6-2-1": {
+      "ziel": "Netzarten nach Ausdehnung unterscheiden und begründet zuordnen sowie strukturierte Verkabelung und VLAN erklären.",
+      "punkte": [
+        "LAN, MAN, WAN, GAN nach Ausdehnung unterscheiden und einem Anwendungsgebiet zuordnen",
+        "Strukturierte Verkabelung: einheitlich, in Bereiche gegliedert, unabhängig von der Nutzung geplant",
+        "Primärbereich zwischen Gebäuden, Sekundär- zwischen Stockwerken, Tertiär- bis zur Anschlussdose",
+        "VLAN: logisch abgetrenntes Netz auf denselben Switches",
+        "VLAN-Gründe: Abteilungen trennen, mehr Sicherheit, weniger Rundsendeverkehr"
+      ]
+    },
+    "AP2-6-2-2": {
+      "ziel": "Drahtlosnetze einordnen, ihre Risiken und Schutzmaßnahmen nennen und den Zweck von RADIUS und Kerberos erklären.",
+      "punkte": [
+        "PAN, WLAN und Mesh unterscheiden; Bluetooth für kurze Entfernungen",
+        "Risiken: Mithören, unbefugter Zugang, gefälschte Zugangspunkte",
+        "Schutz: aktuelle Verschlüsselung, eigene Zugangsdaten je Benutzer",
+        "RADIUS prüft den Netzzugang zentral; Kerberos: einmal anmelden, Tickets für Dienste",
+        "Funktechniken nach Reichweite, Datenrate und Energiebedarf beurteilen"
+      ]
+    },
+    "AP2-6-2-3": {
+      "ziel": "Einen gegebenen Netzwerkplan lesen: Geräte und Teilnetze erkennen und Verbindungswege nachvollziehen.",
+      "punkte": [
+        "Switch, Router, Firewall, Accesspoint, Server und Teilnetze an ihren Symbolen erkennen",
+        "ablesen, welche Geräte in welchem Teilnetz liegen und wie sie verbunden sind",
+        "erkennen, zwischen welchen Teilnetzen eine Firewall den Verkehr regelt",
+        "Grundformen Stern, Bus, Ring und Masche unterscheiden",
+        "ein Plan zeigt meist nur den für die Aufgabe wichtigen Teil des Netzes"
+      ]
+    },
+    "AP2-6-2-4": {
+      "ziel": "Peer-to-Peer und Client-Server vergleichen, für eine Situation bewerten und SMB/CIFS, HTTP und ODBC einordnen.",
+      "punkte": [
+        "Peer-to-Peer: gleichberechtigte Rechner, ohne Server",
+        "Client-Server: zentraler Dienst, zentral verwalten und sichern",
+        "SMB/CIFS: Dateien und Drucker im Netz freigeben",
+        "ODBC: einheitliche Schnittstelle zu verschiedenen Datenbanken; HTTP für den Datenabruf"
+      ]
+    },
+    "AP2-6-3-1": {
+      "ziel": "Aufgabe und groben Ablauf von DNS, DHCP und Proxy beschreiben und die Folgen eines Ausfalls nennen.",
+      "punkte": [
+        "DNS: Namen in IP-Adressen auflösen",
+        "DHCP: Adresse, Maske, Gateway und DNS-Server automatisch zuteilen",
+        "Proxy: vermittelt stellvertretend, kann filtern, zwischenspeichern, protokollieren",
+        "beschreiben, was bei Ausfall von DNS oder DHCP nicht mehr funktioniert"
+      ]
+    },
+    "AP2-6-3-2": {
+      "ziel": "VPN-Modelle unterscheiden, für eine Situation das passende wählen und Tunneling und IPsec erklären.",
+      "punkte": [
+        "Standort zu Standort, Endgerät zu Standort, Endgerät zu Endgerät",
+        "Tunneling: Pakete verschlüsselt und verpackt durch ein fremdes Netz transportieren",
+        "IPsec: Verschlüsselung auf Netzwerkebene"
+      ]
+    },
+    "AP2-6-4-1": {
+      "ziel": "Beurteilen, wie schwer der Ausfall eines Dienstes wiegt, und MTBF, AFR, Verfügbarkeit und Notfallkonzept erklären.",
+      "punkte": [
+        "Ausfallfolgen für Echtzeitkommunikation, Mail-, Webserver, Groupware und Datenbanken beurteilen",
+        "MTBF: mittlere Betriebsdauer zwischen zwei Ausfällen",
+        "AFR: Anteil der Geräte, der innerhalb eines Jahres ausfällt",
+        "Verfügbarkeit: Anteil der Betriebszeit an der Gesamtzeit",
+        "Notfallkonzept: wer nach schwerem Ausfall was in welcher Reihenfolge tut"
+      ]
+    },
+    "AP2-6-4-2": {
+      "ziel": "USV, Redundanz, RAID und Backups als Maßnahmen zur Sicherung des Betriebs erklären und beurteilen.",
+      "punkte": [
+        "USV überbrückt Stromausfälle bis zum geordneten Herunterfahren",
+        "Redundanz: wichtige Teile mehrfach vorhanden",
+        "RAID 0, 1, 5 und 10 nach Ausfallsicherheit und nutzbarer Kapazität unterscheiden",
+        "RAID ersetzt kein Backup",
+        "Vollsicherung, differenzielle und inkrementelle Sicherung unterscheiden"
+      ]
+    },
+    "AP2-6-5-1": {
+      "ziel": "Überwachungswerte und Schwellwerte festlegen, SNMP und S.M.A.R.T. einordnen und aus Messwerten Engpässe und Maßnahmen ableiten.",
+      "punkte": [
+        "Werte: Auslastung von Prozessor, Arbeitsspeicher, Datenträgern, Antwortzeiten, Erreichbarkeit",
+        "Schwellwerte lösen Warnung oder Alarm aus",
+        "SNMP fragt Netzwerkgeräte ab; S.M.A.R.T. ist die Selbstüberwachung von Datenträgern",
+        "aus der Systemlast einen Ressourcenengpass erkennen und eine Maßnahme vorschlagen",
+        "Predictive Maintenance: Ausfall vorhersagen und vorher tauschen"
+      ]
+    },
+    "AP2-6-5-2": {
+      "ziel": "Den geregelten Ablauf der Störungsbearbeitung mit SOP, SLA, Service Levels, Incident Management und Eskalation erklären.",
+      "punkte": [
+        "SOP: festgelegte Schritt-für-Schritt-Anweisung für wiederkehrende Vorgänge",
+        "SLA: zugesagte Verfügbarkeit, Reaktions- und Lösungszeiten",
+        "Service Level 1 bis 3: Annahme und einfache Fälle, Fachleute, Spezialisten oder Hersteller",
+        "Incident Management: Störungen erfassen, einordnen, beheben, im Ticketsystem dokumentieren",
+        "Eskalation fachlich an Spezialisten oder hierarchisch an Vorgesetzte"
+      ]
+    },
+    "AP2-6-5-3": {
+      "ziel": "Arten von Dokumentation nach Zielgruppe und Inhalt unterscheiden und Checklisten für wiederkehrende Vorgänge aufstellen.",
+      "punkte": [
+        "Benutzerhandbuch und Handbuch für Systembetreuer unterscheiden",
+        "Programmdokumentation: Aufbau, Schnittstellen, Datenmodell",
+        "Konfigurationsdokumentation: Einstellungen, Versionen, Abhängigkeiten",
+        "Checklisten für wiederkehrende Vorgänge",
+        "gute Dokumentation: verständlich, aktuell, vollständig, auffindbar"
+      ]
+    },
+    "AP2-6-6-1": {
+      "ziel": "NAS und SAN unterscheiden, ein SAN dem Rechenzentrum zuordnen und die Speicherprotokolle einordnen.",
+      "punkte": [
+        "NAS stellt Dateien im Netz bereit; SAN ist ein eigenes Netz mit blockweisem Speicher",
+        "SAN passt ins Rechenzentrum",
+        "SMB und NFS für Dateifreigaben",
+        "iSCSI über Ethernet, Fibre Channel über ein eigenes Netz",
+        "NAS einfach und günstig; SAN schneller und besser erweiterbar"
+      ]
+    },
+    "AP2-6-6-2": {
+      "ziel": "On-Premises, Cloud und die Modelle IaaS, PaaS und SaaS unterscheiden und für einen Bedarf begründet auswählen.",
+      "punkte": [
+        "On-Premises und Cloud gegenüberstellen",
+        "IaaS: Infrastruktur, PaaS: Plattform, SaaS: fertige Anwendung als Dienst",
+        "Verantwortung von Anbieter und Kunde je Modell",
+        "Kriterien: Kosten, Skalierbarkeit, Datenschutz, Anbieterabhängigkeit, eigenes Fachwissen"
+      ]
+    },
+    "AP2-6-6-3": {
+      "ziel": "Speicherbedarf und Übertragungsdauer mit richtigen Einheiten berechnen und den Rechenweg nachvollziehbar aufschreiben.",
+      "punkte": [
+        "Speicherbedarf aus Anzahl, Auflösung und Farbtiefe, über einen Zeitraum hochgerechnet",
+        "Bit ÷ 8 = Byte; weiter in KiB, MiB, GiB, TiB jeweils ÷ 1.024",
+        "Dauer = Datenmenge ÷ Übertragungsrate",
+        "Megapixel und Bit/s mit Dezimalpräfix",
+        "Rechenweg aufschreiben, auf die verlangte Stellenzahl runden"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP2-6-1-1-K1-1",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K1",
+      "vorne": "Nenne die sieben Schichten des OSI-Modells von unten nach oben.",
+      "hinten": "1 Bitübertragungsschicht – 2 Sicherungsschicht – 3 Vermittlungsschicht – 4 Transportschicht – 5 Sitzungsschicht – 6 Darstellungsschicht – 7 Anwendungsschicht"
+    },
+    {
+      "id": "AP2-6-1-1-K1-2",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K1",
+      "vorne": "Nenne die vier Schichten des TCP/IP-Modells von unten nach oben.",
+      "hinten": "- Netzzugangsschicht\n- Internetschicht\n- Transportschicht\n- Anwendungsschicht"
+    },
+    {
+      "id": "AP2-6-1-1-K1-3",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K1",
+      "vorne": "Welche OSI-Schichten entsprechen den vier Schichten des TCP/IP-Modells?",
+      "hinten": "- Netzzugangsschicht: OSI 1 und 2\n- Internetschicht: OSI 3\n- Transportschicht: OSI 4\n- Anwendungsschicht: OSI 5 bis 7"
+    },
+    {
+      "id": "AP2-6-1-1-K1-4",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K1",
+      "vorne": "Welche OSI-Schichten heißen auf Englisch „Data Link Layer“ und „Network Layer“?",
+      "hinten": "- Data Link Layer: Schicht 2, Sicherungsschicht\n- Network Layer: Schicht 3, Vermittlungsschicht"
+    },
+    {
+      "id": "AP2-6-1-1-K2-1",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K2",
+      "vorne": "Ordne MAC-Adresse, IPv4/IPv6, TCP und UDP den OSI-Schichten zu.",
+      "hinten": "- MAC-Adresse: Schicht 2 (Sicherungsschicht)\n- IPv4/IPv6: Schicht 3 (Vermittlungsschicht)\n- TCP und UDP: Schicht 4 (Transportschicht)"
+    },
+    {
+      "id": "AP2-6-1-1-K2-2",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht wird ARP zugeordnet?",
+      "hinten": "Der Schicht 2 bzw. „zwischen Schicht 2 und 3“: ARP verknüpft IP-Adressen (Schicht 3) mit MAC-Adressen (Schicht 2). Die Lehrbücher ordnen es nicht einheitlich zu."
+    },
+    {
+      "id": "AP2-6-1-1-K2-3",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K2",
+      "vorne": "Welchen Schichten des TCP/IP-Modells gehören IP, TCP und UDP an?",
+      "hinten": "- IP (IPv4/IPv6): Internetschicht\n- TCP und UDP: Transportschicht"
+    },
+    {
+      "id": "AP2-6-1-1-K3-1",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K3",
+      "vorne": "Wie ist eine MAC-Adresse aufgebaut?",
+      "hinten": "- 48 Bit (6 Byte)\n- hexadezimal geschrieben, z. B. 00:1A:2B:3C:4D:5E\n- vordere 24 Bit: Herstellerkennung\n- hintere 24 Bit: vom Hersteller vergebene Gerätenummer"
+    },
+    {
+      "id": "AP2-6-1-1-K3-2",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K3",
+      "vorne": "Was gibt die vordere Hälfte einer MAC-Adresse an?",
+      "hinten": "Den Hersteller der Netzwerkkarte (Herstellerkennung, OUI)."
+    },
+    {
+      "id": "AP2-6-1-1-K3-3",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K3",
+      "vorne": "Ist 3C-52-82-A1-07-FF eine MAC-Adresse oder eine IPv6-Adresse? Begründe.",
+      "hinten": "Eine MAC-Adresse: 6 Gruppen zu je 2 Hex-Ziffern = 48 Bit. Eine IPv6-Adresse hat 128 Bit, geschrieben in Blöcken zu 4 Hex-Ziffern mit Doppelpunkten."
+    },
+    {
+      "id": "AP2-6-1-1-K4-1",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K4",
+      "vorne": "Wozu dient ARP?",
+      "hinten": "Es ermittelt zu einer IP-Adresse im lokalen Netz die zugehörige MAC-Adresse."
+    },
+    {
+      "id": "AP2-6-1-1-K4-2",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K4",
+      "vorne": "Wie läuft eine ARP-Anfrage grob ab?",
+      "hinten": "- Rundsendung an alle: „Wer hat die IP-Adresse x?“\n- der Besitzer dieser Adresse antwortet mit seiner MAC-Adresse\n- der Anfragende speichert die Zuordnung im ARP-Cache"
+    },
+    {
+      "id": "AP2-6-1-1-K4-3",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K4",
+      "vorne": "Warum braucht ein Rechner ARP, obwohl er die IP-Adresse des Ziels im eigenen Netz schon kennt?",
+      "hinten": "Im lokalen Netz werden Ethernet-Frames an MAC-Adressen zugestellt. Ohne die MAC-Adresse des Ziels kann er den Frame nicht adressieren."
+    },
+    {
+      "id": "AP2-6-1-1-K5-1",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K5",
+      "vorne": "Nenne die Felder eines Ethernet-Frames in der richtigen Reihenfolge.",
+      "hinten": "Präambel – Zieladresse – Quelladresse – Typ – Nutzdaten – Prüfsumme"
+    },
+    {
+      "id": "AP2-6-1-1-K5-2",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K5",
+      "vorne": "Welche MAC-Adresse steht im Ethernet-Frame zuerst: die Quell- oder die Zieladresse?",
+      "hinten": "Die Zieladresse – direkt nach der Präambel, vor der Quelladresse."
+    },
+    {
+      "id": "AP2-6-1-1-K5-3",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K5",
+      "vorne": "Wozu dienen Präambel und Typfeld im Ethernet-Frame?",
+      "hinten": "- Präambel: festes Bitmuster, mit dem sich der Empfänger auf die Übertragung einstellt (synchronisiert)\n- Typ: gibt an, welches Protokoll in den Nutzdaten steckt, z. B. IPv4, IPv6 oder ARP"
+    },
+    {
+      "id": "AP2-6-1-1-K5-4",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K5",
+      "vorne": "Wozu dient die Prüfsumme am Ende eines Ethernet-Frames?",
+      "hinten": "Der Empfänger erkennt damit Übertragungsfehler; fehlerhafte Frames werden verworfen."
+    },
+    {
+      "id": "AP2-6-1-1-K6-1",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K6",
+      "vorne": "Wie unterscheiden sich IPv4- und IPv6-Adressen in Länge und Schreibweise?",
+      "hinten": "- IPv4: 32 Bit, vier Dezimalzahlen mit Punkten, z. B. 192.168.1.10\n- IPv6: 128 Bit, hexadezimal in Blöcken mit Doppelpunkten, z. B. 2001:db8::1"
+    },
+    {
+      "id": "AP2-6-1-1-K6-2",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K6",
+      "vorne": "Ordne zu: 10.0.0.254 – fe80::1a2b – 00:1A:2B:3C:4D:5E",
+      "hinten": "- 10.0.0.254: IPv4 (dezimal, Punkte)\n- fe80::1a2b: IPv6 (hexadezimal, Doppelpunkte, verkürzt)\n- 00:1A:2B:3C:4D:5E: MAC-Adresse (6 Gruppen zu 2 Hex-Ziffern)"
+    },
+    {
+      "id": "AP2-6-1-1-K6-3",
+      "sp": "AP2-6-1-1",
+      "k": "AP2-6-1-1-K6",
+      "vorne": "Was bedeutet „::“ in einer IPv6-Adresse?",
+      "hinten": "Ein oder mehrere aufeinanderfolgende Blöcke aus Nullen sind weggelassen. „::“ darf in einer Adresse nur einmal vorkommen."
+    },
+    {
+      "id": "AP2-6-1-2-K1-1",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K1",
+      "vorne": "Worin unterscheiden sich Switching und Routing?",
+      "hinten": "- Switching: Weiterleiten innerhalb eines Netzes anhand der MAC-Adresse\n- Routing: Weiterleiten zwischen Netzen anhand der IP-Adresse"
+    },
+    {
+      "id": "AP2-6-1-2-K1-2",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K1",
+      "vorne": "Ein Paket soll aus dem Firmennetz ins Internet. Welches Gerät leitet es aus dem Netz hinaus, und anhand welcher Adresse?",
+      "hinten": "Ein Router, anhand der Ziel-IP-Adresse."
+    },
+    {
+      "id": "AP2-6-1-2-K2-1",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K2",
+      "vorne": "Auf welchen OSI-Schichten arbeiten Switch und Router?",
+      "hinten": "- Switch: Schicht 2 (Sicherungsschicht)\n- Router: Schicht 3 (Vermittlungsschicht)"
+    },
+    {
+      "id": "AP2-6-1-2-K2-2",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K2",
+      "vorne": "Was ist die Aufgabe eines Switches?",
+      "hinten": "Er verbindet Geräte innerhalb eines Netzes und leitet jeden Frame gezielt an den Anschluss, an dem die Ziel-MAC-Adresse hängt. Die Zuordnung lernt er in seiner MAC-Adresstabelle."
+    },
+    {
+      "id": "AP2-6-1-2-K2-3",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K2",
+      "vorne": "Was ist die Aufgabe eines Routers?",
+      "hinten": "Er verbindet verschiedene Netze und wählt anhand der Ziel-IP-Adresse und seiner Routingtabelle den Weg, über den ein Paket weitergeleitet wird."
+    },
+    {
+      "id": "AP2-6-1-2-K3-1",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K3",
+      "vorne": "Was ist die Aufgabe einer Firewall?",
+      "hinten": "Sie kontrolliert den Datenverkehr zwischen Netzen und lässt ihn nach festgelegten Regeln zu oder sperrt ihn."
+    },
+    {
+      "id": "AP2-6-1-2-K3-2",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K3",
+      "vorne": "Nach welchen Angaben kann eine Firewall, die bis Schicht 4 prüft, den Verkehr filtern?",
+      "hinten": "- Quell- und Ziel-IP-Adresse\n- Protokoll, z. B. TCP oder UDP\n- Quell- und Zielport"
+    },
+    {
+      "id": "AP2-6-1-2-K5-1",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K5",
+      "vorne": "Was macht eine Bridge?",
+      "hinten": "Sie verbindet zwei Netzsegmente auf Schicht 2 und leitet Frames anhand der MAC-Adresse nur dann ins andere Segment, wenn das Ziel dort liegt."
+    },
+    {
+      "id": "AP2-6-1-2-K5-2",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K5",
+      "vorne": "Wie hängen Bridge und Switch zusammen?",
+      "hinten": "Beide arbeiten auf Schicht 2 mit MAC-Adressen. Ein Switch ist im Prinzip eine Bridge mit vielen Anschlüssen."
+    },
+    {
+      "id": "AP2-6-1-2-K6-1",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K6",
+      "vorne": "Was bedeutet zustandsbehaftete Prüfung (Stateful Inspection) bei einer Firewall?",
+      "hinten": "Die Firewall merkt sich bestehende Verbindungen und lässt die zugehörigen Antworten durch."
+    },
+    {
+      "id": "AP2-6-1-2-K6-2",
+      "sp": "AP2-6-1-2",
+      "k": "AP2-6-1-2-K6",
+      "vorne": "Ein Client im Firmennetz ruft eine Webseite ab. Warum braucht eine zustandsbehaftete Firewall keine eigene Regel für die Antwort des Webservers?",
+      "hinten": "Sie hat die von innen aufgebaute Verbindung gespeichert und erkennt die Antwort als zugehörig. Pakete von außen ohne passende Verbindung lässt sie nur durch, wenn eine Regel es erlaubt."
+    },
+    {
+      "id": "AP2-6-1-3-K1-1",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K1",
+      "vorne": "Nenne die Eigenschaften von TCP.",
+      "hinten": "- verbindungsorientiert: Verbindung wird vor der Übertragung aufgebaut\n- Empfang wird bestätigt, Verlorenes neu gesendet\n- Daten kommen in der richtigen Reihenfolge an\n- dadurch zuverlässig, aber langsamer als UDP"
+    },
+    {
+      "id": "AP2-6-1-3-K1-2",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K1",
+      "vorne": "Nenne die Eigenschaften von UDP.",
+      "hinten": "- verbindungslos\n- keine Bestätigung, keine Zustellgarantie\n- keine Sicherung der Reihenfolge\n- wenig Verwaltungsaufwand, dadurch schnell"
+    },
+    {
+      "id": "AP2-6-1-3-K2-1",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K2",
+      "vorne": "TCP oder UDP für eine Dateiübertragung? Begründe.",
+      "hinten": "TCP: Die Datei muss vollständig und in richtiger Reihenfolge ankommen. TCP bestätigt den Empfang und sendet Verlorenes neu."
+    },
+    {
+      "id": "AP2-6-1-3-K2-2",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K2",
+      "vorne": "TCP oder UDP für Sprachübertragung in Echtzeit, z. B. Internettelefonie? Begründe.",
+      "hinten": "UDP: Geringe Verzögerung ist wichtiger als Vollständigkeit. Ein neu gesendetes Paket käme zu spät, einzelne Verluste fallen kaum auf."
+    },
+    {
+      "id": "AP2-6-1-3-K2-3",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K2",
+      "vorne": "TCP oder UDP? E-Mail versenden – Live-Videokonferenz – Software-Update herunterladen – Positionsdaten in einem Echtzeit-Onlinespiel",
+      "hinten": "- E-Mail: TCP\n- Videokonferenz: UDP\n- Software-Update: TCP\n- Positionsdaten im Spiel: UDP"
+    },
+    {
+      "id": "AP2-6-1-3-K3-1",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K3",
+      "vorne": "Was unterscheidet HTTPS von HTTP?",
+      "hinten": "HTTPS überträgt die Daten verschlüsselt (HTTP über TLS), HTTP im Klartext. Außerdem weist sich der Server bei HTTPS mit einem Zertifikat aus."
+    },
+    {
+      "id": "AP2-6-1-3-K3-2",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K3",
+      "vorne": "Warum darf ein Anmeldeformular nicht über HTTP übertragen werden?",
+      "hinten": "Benutzername und Passwort gingen im Klartext über das Netz und könnten unterwegs mitgelesen werden."
+    },
+    {
+      "id": "AP2-6-1-3-K4-1",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K4",
+      "vorne": "Nach welcher Art von Verfahren arbeitet die Transportverschlüsselung bei HTTPS?",
+      "hinten": "Hybrid: asymmetrisch für den Schlüsselaustausch, danach symmetrisch für die Daten."
+    },
+    {
+      "id": "AP2-6-1-3-K4-2",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K4",
+      "vorne": "Welchen Vorteil hat das hybride Verfahren bei der Transportverschlüsselung?",
+      "hinten": "Es verbindet die Stärken beider Verfahren: Das asymmetrische löst den sicheren Schlüsselaustausch ohne vorher vereinbartes Geheimnis, das symmetrische verschlüsselt die Daten schnell."
+    },
+    {
+      "id": "AP2-6-1-3-K4-3",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K4",
+      "vorne": "Warum werden bei HTTPS nicht alle Daten asymmetrisch verschlüsselt?",
+      "hinten": "Asymmetrische Verfahren sind deutlich rechenaufwendiger und damit langsamer als symmetrische."
+    },
+    {
+      "id": "AP2-6-1-3-K5-1",
+      "sp": "AP2-6-1-3",
+      "k": "AP2-6-1-3-K5",
+      "vorne": "Welche Standardports haben HTTP und HTTPS?",
+      "hinten": "- HTTP: 80\n- HTTPS: 443"
+    },
+    {
+      "id": "AP2-6-2-1-K1-1",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K1",
+      "vorne": "Welche Ausdehnung haben LAN, MAN, WAN und GAN jeweils?",
+      "hinten": "- LAN: Gebäude oder Firmengelände\n- MAN: Stadt oder Region\n- WAN: große Entfernungen, ein Land oder mehrere Länder\n- GAN: weltweit, über Kontinente hinweg"
+    },
+    {
+      "id": "AP2-6-2-1-K1-2",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K1",
+      "vorne": "Wofür stehen LAN, MAN, WAN und GAN?",
+      "hinten": "Local, Metropolitan, Wide und Global Area Network"
+    },
+    {
+      "id": "AP2-6-2-1-K2-1",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K2",
+      "vorne": "Welche Netzart passt für die Vernetzung der Rechner in einem Bürogebäude? Begründe.",
+      "hinten": "LAN – die Ausdehnung bleibt auf ein Gebäude beschränkt."
+    },
+    {
+      "id": "AP2-6-2-1-K2-2",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K2",
+      "vorne": "Welche Netzart passt, wenn die Standorte einer Stadtverwaltung innerhalb der Stadt verbunden werden? Begründe.",
+      "hinten": "MAN – das Netz erstreckt sich über das Stadtgebiet."
+    },
+    {
+      "id": "AP2-6-2-1-K2-3",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K2",
+      "vorne": "Welche Netzart passt für die Verbindung von Niederlassungen in ganz Deutschland, welche für Standorte auf mehreren Kontinenten?",
+      "hinten": "- ganz Deutschland: WAN – große Entfernungen über ein Land\n- mehrere Kontinente: GAN – weltweite Ausdehnung"
+    },
+    {
+      "id": "AP2-6-2-1-K3-1",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K3",
+      "vorne": "Was ist strukturierte Verkabelung?",
+      "hinten": "Eine einheitliche, in Bereiche gegliederte Verkabelung, die unabhängig von der späteren Nutzung geplant wird."
+    },
+    {
+      "id": "AP2-6-2-1-K3-2",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K3",
+      "vorne": "Welchen Vorteil hat es, die Verkabelung unabhängig von der späteren Nutzung zu planen?",
+      "hinten": "Sie bleibt bei Umzügen, neuen Geräten oder geänderter Nutzung verwendbar; es müssen keine neuen Kabel verlegt werden."
+    },
+    {
+      "id": "AP2-6-2-1-K4-1",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K4",
+      "vorne": "Nenne die drei Bereiche der strukturierten Verkabelung und was sie jeweils verbinden.",
+      "hinten": "- Primärbereich: zwischen Gebäuden\n- Sekundärbereich: zwischen Stockwerken\n- Tertiärbereich: bis zur Anschlussdose"
+    },
+    {
+      "id": "AP2-6-2-1-K4-2",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K4",
+      "vorne": "Wie heißt der Bereich der strukturierten Verkabelung, der die Stockwerke eines Gebäudes verbindet?",
+      "hinten": "Sekundärbereich"
+    },
+    {
+      "id": "AP2-6-2-1-K4-3",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K4",
+      "vorne": "Wie heißt der Bereich der strukturierten Verkabelung, der bis zur Anschlussdose am Arbeitsplatz führt?",
+      "hinten": "Tertiärbereich"
+    },
+    {
+      "id": "AP2-6-2-1-K5-1",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K5",
+      "vorne": "Was ist ein VLAN?",
+      "hinten": "Ein virtuelles LAN: ein logisch abgetrenntes Netz innerhalb derselben Switch-Infrastruktur. Geräte verschiedener VLANs sind getrennt, obwohl sie an denselben Switches hängen."
+    },
+    {
+      "id": "AP2-6-2-1-K6-1",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K6",
+      "vorne": "Nenne Gründe für den Einsatz von VLANs.",
+      "hinten": "- Abteilungen voneinander trennen\n- mehr Sicherheit\n- weniger Rundsendeverkehr"
+    },
+    {
+      "id": "AP2-6-2-1-K6-2",
+      "sp": "AP2-6-2-1",
+      "k": "AP2-6-2-1-K6",
+      "vorne": "Warum verringert ein VLAN den Rundsendeverkehr?",
+      "hinten": "Rundsendungen (Broadcasts) werden nur innerhalb des eigenen VLANs verteilt, nicht an alle Geräte an denselben Switches."
+    },
+    {
+      "id": "AP2-6-2-2-K1-1",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K1",
+      "vorne": "Was ist ein PAN?",
+      "hinten": "Personal Area Network: ein Netz im Nahbereich einer Person, z. B. Smartphone mit Kopfhörer oder Smartwatch."
+    },
+    {
+      "id": "AP2-6-2-2-K1-2",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K1",
+      "vorne": "Worin unterscheiden sich PAN, WLAN und Mesh?",
+      "hinten": "- PAN: Nahbereich einer Person, wenige Meter\n- WLAN: lokales Funknetz, Geräte verbinden sich mit einem Accesspoint\n- Mesh: mehrere Funkknoten verbinden sich untereinander und reichen Daten weiter"
+    },
+    {
+      "id": "AP2-6-2-2-K1-3",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K1",
+      "vorne": "Wie ordnest du Bluetooth ein?",
+      "hinten": "Als Funktechnik für kurze Entfernungen, typisch für ein PAN, z. B. Headset, Tastatur oder Fitnessarmband."
+    },
+    {
+      "id": "AP2-6-2-2-K1-4",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K1",
+      "vorne": "Welchen Vorteil hat ein Mesh-Netz gegenüber einem WLAN mit nur einem Accesspoint?",
+      "hinten": "Es deckt größere Flächen ab, und fällt ein Knoten aus, finden die Daten einen anderen Weg."
+    },
+    {
+      "id": "AP2-6-2-2-K2-1",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K2",
+      "vorne": "Nenne Maßnahmen für die Sicherheit in Drahtlosnetzen.",
+      "hinten": "- aktuelle Verschlüsselung, z. B. WPA3\n- Anmeldung mit eigenen Zugangsdaten je Benutzer\n- Gäste in ein vom Firmennetz getrenntes Netz\n- Firmware der Accesspoints aktuell halten"
+    },
+    {
+      "id": "AP2-6-2-2-K2-2",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K2",
+      "vorne": "Warum ist eine Anmeldung mit eigenen Zugangsdaten je Benutzer sicherer als ein gemeinsames WLAN-Passwort?",
+      "hinten": "Jeder Zugang gehört zu einer Person und lässt sich einzeln sperren. Verlässt jemand die Firma, muss nicht das Passwort für alle geändert werden."
+    },
+    {
+      "id": "AP2-6-2-2-K3-1",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K3",
+      "vorne": "Nenne Risiken in Drahtlosnetzen.",
+      "hinten": "- Mithören des Funkverkehrs\n- unbefugter Zugang zum Netz\n- gefälschte Zugangspunkte"
+    },
+    {
+      "id": "AP2-6-2-2-K3-2",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K3",
+      "vorne": "Warum lässt sich ein Funknetz leichter abhören als ein Kabelnetz?",
+      "hinten": "Funk breitet sich im Raum aus, auch über Wände und Grundstücksgrenzen hinaus. Jeder in Reichweite kann ihn empfangen, ohne an ein Kabel zu müssen."
+    },
+    {
+      "id": "AP2-6-2-2-K3-3",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K3",
+      "vorne": "Was ist ein gefälschter Zugangspunkt?",
+      "hinten": "Ein Accesspoint eines Angreifers, der sich als bekanntes Netz ausgibt. Wer sich verbindet, schickt seinen Datenverkehr über das Gerät des Angreifers."
+    },
+    {
+      "id": "AP2-6-2-2-K4-1",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K4",
+      "vorne": "Wozu dient RADIUS?",
+      "hinten": "Ein zentraler Server prüft Benutzer und Geräte, wenn sie Zugang zum Netz wollen, z. B. am WLAN. Accesspoints und Switches fragen ihn, statt selbst Zugangsdaten zu verwalten."
+    },
+    {
+      "id": "AP2-6-2-2-K5-1",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K5",
+      "vorne": "Wozu dient Kerberos?",
+      "hinten": "Benutzer melden sich einmal an und erhalten Tickets, mit denen sie die Dienste im Netz nutzen, ohne sich bei jedem Dienst neu anzumelden."
+    },
+    {
+      "id": "AP2-6-2-2-K5-2",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K5",
+      "vorne": "Worin unterscheiden sich RADIUS und Kerberos im Zweck?",
+      "hinten": "- RADIUS: prüft zentral den Zugang zum Netz, z. B. beim WLAN\n- Kerberos: einmalige Anmeldung, danach Tickets für die Dienste im Netz"
+    },
+    {
+      "id": "AP2-6-2-2-K6-1",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K6",
+      "vorne": "Nach welchen Merkmalen beurteilst du eine Funktechnik?",
+      "hinten": "- Reichweite\n- Datenrate\n- Energiebedarf"
+    },
+    {
+      "id": "AP2-6-2-2-K6-2",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K6",
+      "vorne": "Batteriebetriebene Sensoren senden alle paar Minuten wenige Messwerte über ein Firmengelände. Welche Merkmale der Funktechnik sind wichtig?",
+      "hinten": "Geringer Energiebedarf für lange Batterielaufzeit und genügend Reichweite für das Gelände. Eine hohe Datenrate ist nicht nötig, weil nur wenige Daten anfallen."
+    },
+    {
+      "id": "AP2-6-2-2-K6-3",
+      "sp": "AP2-6-2-2",
+      "k": "AP2-6-2-2-K6",
+      "vorne": "Vergleiche Bluetooth und WLAN nach Reichweite, Datenrate und Energiebedarf.",
+      "hinten": "- Bluetooth: geringere Reichweite, geringere Datenrate, geringerer Energiebedarf\n- WLAN: größere Reichweite, höhere Datenrate, höherer Energiebedarf"
+    },
+    {
+      "id": "AP2-6-2-3-K2-1",
+      "sp": "AP2-6-2-3",
+      "k": "AP2-6-2-3-K2",
+      "vorne": "Welches Gerät verbindet in einem Netzwerkplan zwei Teilnetze miteinander, und was verbindet die Geräte innerhalb eines Teilnetzes?",
+      "hinten": "- zwischen Teilnetzen: ein Router (oder eine Firewall, die zugleich routet)\n- innerhalb eines Teilnetzes: Switches"
+    },
+    {
+      "id": "AP2-6-2-3-K2-2",
+      "sp": "AP2-6-2-3",
+      "k": "AP2-6-2-3-K2",
+      "vorne": "Wie bestimmst du in einem Netzwerkplan den Weg von einem Client zu einem Datenbankserver?",
+      "hinten": "Den Verbindungslinien vom Client bis zum Server folgen, jedes Gerät auf dem Weg notieren (Switch, Router, Firewall) und festhalten, welche Teilnetze durchquert werden."
+    },
+    {
+      "id": "AP2-6-2-3-K3-1",
+      "sp": "AP2-6-2-3",
+      "k": "AP2-6-2-3-K3",
+      "vorne": "Woran erkennst du im Netzwerkplan, zwischen welchen Teilnetzen eine Firewall den Verkehr regelt?",
+      "hinten": "An ihren Anschlüssen: Sie regelt den Verkehr zwischen den Teilnetzen, die an ihr hängen. Verkehr zwischen diesen Netzen muss durch sie hindurch."
+    },
+    {
+      "id": "AP2-6-2-3-K4-1",
+      "sp": "AP2-6-2-3",
+      "k": "AP2-6-2-3-K4",
+      "vorne": "Beschreibe die Topologien Stern, Bus, Ring und Masche.",
+      "hinten": "- Stern: alle Geräte an einem zentralen Knoten\n- Bus: alle an einer gemeinsamen Leitung\n- Ring: jedes Gerät mit zwei Nachbarn, geschlossener Kreis\n- Masche: Geräte über mehrere Wege verbunden"
+    },
+    {
+      "id": "AP2-6-2-3-K4-2",
+      "sp": "AP2-6-2-3",
+      "k": "AP2-6-2-3-K4",
+      "vorne": "Alle Rechner eines Büros hängen an einem zentralen Switch. Welche Topologie ist das, und was ist ihr Schwachpunkt?",
+      "hinten": "Stern. Fällt der zentrale Switch aus, ist das ganze Netz unterbrochen."
+    },
+    {
+      "id": "AP2-6-2-3-K4-3",
+      "sp": "AP2-6-2-3",
+      "k": "AP2-6-2-3-K4",
+      "vorne": "Welche der Topologien Stern, Bus, Ring und Masche ist am ausfallsichersten? Warum?",
+      "hinten": "Die Masche: Fällt eine Verbindung aus, gibt es andere Wege."
+    },
+    {
+      "id": "AP2-6-2-4-K1-1",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K1",
+      "vorne": "Worin unterscheiden sich Peer-to-Peer und Client-Server?",
+      "hinten": "- Peer-to-Peer: gleichberechtigte Rechner, jeder bietet Dienste an und nutzt sie\n- Client-Server: ein zentraler Server bietet Dienste an, die Clients nutzen sie"
+    },
+    {
+      "id": "AP2-6-2-4-K2-1",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K2",
+      "vorne": "Nenne je einen Vorteil von Peer-to-Peer und von Client-Server.",
+      "hinten": "- Peer-to-Peer: kommt ohne Server aus\n- Client-Server: lässt sich zentral verwalten und sichern"
+    },
+    {
+      "id": "AP2-6-2-4-K3-1",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K3",
+      "vorne": "Nenne je einen Nachteil von Peer-to-Peer und von Client-Server.",
+      "hinten": "- Peer-to-Peer: Rechte und Sicherung auf jedem Rechner einzeln, bei vielen Rechnern unübersichtlich\n- Client-Server: Server kostet Geld, und fällt er aus, sind alle Clients betroffen"
+    },
+    {
+      "id": "AP2-6-2-4-K3-2",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K3",
+      "vorne": "Drei Mitarbeiter eines kleinen Büros wollen gelegentlich Dateien austauschen; einen Administrator gibt es nicht. Welches Konzept passt? Begründe.",
+      "hinten": "Peer-to-Peer: Bei wenigen Rechnern ist kein Server nötig, das spart Kosten; zentrale Verwaltung lohnt sich nicht."
+    },
+    {
+      "id": "AP2-6-2-4-K3-3",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K3",
+      "vorne": "80 Mitarbeiter brauchen gemeinsame Daten mit Zugriffsrechten und täglicher Sicherung. Welches Konzept passt? Begründe.",
+      "hinten": "Client-Server: Daten, Rechte und Sicherung lassen sich zentral auf dem Server verwalten."
+    },
+    {
+      "id": "AP2-6-2-4-K4-1",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K4",
+      "vorne": "Wozu dient SMB/CIFS?",
+      "hinten": "Dateien und Drucker im Netz freigeben, vor allem in Windows-Umgebungen."
+    },
+    {
+      "id": "AP2-6-2-4-K4-2",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K4",
+      "vorne": "Wie hängen SMB und CIFS zusammen?",
+      "hinten": "CIFS ist eine ältere Version von SMB. Heute werden die neueren SMB-Versionen eingesetzt."
+    },
+    {
+      "id": "AP2-6-2-4-K5-1",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K5",
+      "vorne": "Wozu dient ODBC?",
+      "hinten": "Open Database Connectivity: eine einheitliche Schnittstelle, über die Anwendungen auf verschiedene Datenbanken zugreifen. Für jede Datenbank gibt es einen eigenen Treiber."
+    },
+    {
+      "id": "AP2-6-2-4-K5-2",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K5",
+      "vorne": "Welchen Vorteil hat es, wenn eine Anwendung über ODBC auf die Datenbank zugreift?",
+      "hinten": "Der Zugriff ist für alle Datenbanken gleich; beim Wechsel der Datenbank wird vor allem der Treiber getauscht, statt den Zugriff neu zu programmieren."
+    },
+    {
+      "id": "AP2-6-2-4-K6-1",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K6",
+      "vorne": "Wie ruft ein Client per HTTP Daten ab?",
+      "hinten": "Er sendet eine Anfrage (z. B. GET) an eine URL. Der Server antwortet mit einem Statuscode und den Daten, z. B. HTML oder JSON."
+    },
+    {
+      "id": "AP2-6-2-4-K6-2",
+      "sp": "AP2-6-2-4",
+      "k": "AP2-6-2-4-K6",
+      "vorne": "Auf welcher OSI-Schicht ist HTTP einzuordnen?",
+      "hinten": "Auf der Anwendungsschicht (Schicht 7)."
+    },
+    {
+      "id": "AP2-6-3-1-K1-1",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K1",
+      "vorne": "Welche Aufgabe hat DNS?",
+      "hinten": "Domain Name System: Es löst Namen wie www.beispiel.de in IP-Adressen auf."
+    },
+    {
+      "id": "AP2-6-3-1-K1-2",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K1",
+      "vorne": "Wie läuft eine DNS-Auflösung grob ab?",
+      "hinten": "- der Client fragt seinen DNS-Server nach dem Namen\n- kennt der ihn nicht, fragt er weitere DNS-Server bis zum zuständigen\n- die IP-Adresse geht an den Client zurück und wird zwischengespeichert"
+    },
+    {
+      "id": "AP2-6-3-1-K2-1",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K2",
+      "vorne": "Welche Aufgabe hat DHCP?",
+      "hinten": "Dynamic Host Configuration Protocol: Es teilt Clients automatisch IP-Adresse, Subnetzmaske, Gateway und DNS-Server zu."
+    },
+    {
+      "id": "AP2-6-3-1-K2-2",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K2",
+      "vorne": "Wie läuft die Adresszuteilung per DHCP grob ab?",
+      "hinten": "- Discover: Client sucht per Rundsendung einen DHCP-Server\n- Offer: Server bietet eine Adresse an\n- Request: Client fordert sie an\n- Acknowledge: Server bestätigt; die Adresse gilt für eine begrenzte Zeit (Lease)"
+    },
+    {
+      "id": "AP2-6-3-1-K3-1",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K3",
+      "vorne": "Welche Aufgabe hat ein Proxy?",
+      "hinten": "Er vermittelt Anfragen stellvertretend für die Clients: Die Clients schicken ihre Anfrage an den Proxy, der sie an den Zielserver weitergibt und die Antwort zurückliefert."
+    },
+    {
+      "id": "AP2-6-3-1-K3-2",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K3",
+      "vorne": "Welche Zusatzaufgaben kann ein Proxy beim Vermitteln übernehmen?",
+      "hinten": "- filtern, z. B. Seiten sperren\n- zwischenspeichern\n- protokollieren"
+    },
+    {
+      "id": "AP2-6-3-1-K3-3",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K3",
+      "vorne": "Welche IP-Adresse sieht der Zielserver, wenn ein Client über einen Proxy zugreift?",
+      "hinten": "Die des Proxys, nicht die des Clients."
+    },
+    {
+      "id": "AP2-6-3-1-K4-1",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K4",
+      "vorne": "Was funktioniert nicht mehr, wenn der DNS-Server ausfällt?",
+      "hinten": "Namen lassen sich nicht mehr auflösen: Webseiten und Dienste sind über ihren Namen nicht erreichbar (außer noch zwischengespeicherte). Zugriff über die IP-Adresse funktioniert weiter."
+    },
+    {
+      "id": "AP2-6-3-1-K4-2",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K4",
+      "vorne": "Was funktioniert nicht mehr, wenn der DHCP-Server ausfällt?",
+      "hinten": "Neu verbundene Clients und solche mit abgelaufener Lease bekommen keine gültige Adresse und können nicht kommunizieren. Geräte mit fester Adresse oder gültiger Lease arbeiten weiter."
+    },
+    {
+      "id": "AP2-6-3-1-K4-3",
+      "sp": "AP2-6-3-1",
+      "k": "AP2-6-3-1-K4",
+      "vorne": "www.beispiel.de ist nicht erreichbar, die IP-Adresse des Servers im Browser funktioniert aber. Welcher Dienst ist wahrscheinlich gestört?",
+      "hinten": "DNS: Die Verbindung steht, nur die Namensauflösung schlägt fehl."
+    },
+    {
+      "id": "AP2-6-3-2-K2-1",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K2",
+      "vorne": "Nenne die drei VPN-Modelle.",
+      "hinten": "- Standort zu Standort: zwei Netze werden verbunden\n- Endgerät zu Standort: ein einzelner Rechner wählt sich in ein Netz ein\n- Endgerät zu Endgerät: zwei einzelne Rechner werden verbunden"
+    },
+    {
+      "id": "AP2-6-3-2-K1-1",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K1",
+      "vorne": "Das Netz einer Filiale soll dauerhaft mit dem Netz der Zentrale verbunden werden. Welches VPN-Modell passt?",
+      "hinten": "Standort zu Standort (Site-to-Site): Es verbindet zwei ganze Netze."
+    },
+    {
+      "id": "AP2-6-3-2-K1-2",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K1",
+      "vorne": "Mitarbeiter im Homeoffice sollen auf das Firmennetz zugreifen. Welches VPN-Modell passt?",
+      "hinten": "Endgerät zu Standort (End-to-Site): Der einzelne Rechner wählt sich ins Firmennetz ein."
+    },
+    {
+      "id": "AP2-6-3-2-K1-3",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K1",
+      "vorne": "Ein Administrator braucht eine geschützte Verbindung direkt zwischen seinem Rechner und einem einzelnen Server. Welches VPN-Modell passt?",
+      "hinten": "Endgerät zu Endgerät (End-to-End)."
+    },
+    {
+      "id": "AP2-6-3-2-K3-1",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K3",
+      "vorne": "Was ist Tunneling?",
+      "hinten": "Pakete werden verschlüsselt und in andere Pakete verpackt durch ein fremdes Netz, z. B. das Internet, transportiert und am Tunnelende wieder ausgepackt."
+    },
+    {
+      "id": "AP2-6-3-2-K3-2",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K3",
+      "vorne": "Warum erkennt ein Dritter im Internet bei einem VPN-Tunnel zwischen zwei Standorten nicht, welche Rechner miteinander kommunizieren?",
+      "hinten": "Das ursprüngliche Paket samt Adressen steckt verschlüsselt im äußeren Paket. Sichtbar sind nur die Adressen der beiden Tunnelenden."
+    },
+    {
+      "id": "AP2-6-3-2-K4-1",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K4",
+      "vorne": "Wie ist IPsec einzuordnen?",
+      "hinten": "Als Verfahren zur Verschlüsselung auf Netzwerkebene (OSI-Schicht 3). Es schützt IP-Pakete und wird häufig für VPNs eingesetzt."
+    },
+    {
+      "id": "AP2-6-3-2-K4-2",
+      "sp": "AP2-6-3-2",
+      "k": "AP2-6-3-2-K4",
+      "vorne": "Worin unterscheidet sich IPsec von der Transportverschlüsselung bei HTTPS?",
+      "hinten": "- IPsec: verschlüsselt auf Schicht 3 alle IP-Pakete, unabhängig von der Anwendung\n- HTTPS (TLS): schützt nur die Verbindung einer Anwendung, oberhalb von TCP"
+    },
+    {
+      "id": "AP2-6-4-1-K1-1",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K1",
+      "vorne": "Wovon hängt ab, wie schwer der Ausfall eines Dienstes wiegt?",
+      "hinten": "- wie viele Nutzer und Abläufe darauf angewiesen sind\n- ob sich die Arbeit verschieben oder nachholen lässt\n- Folgeschäden wie Umsatzverlust, Imageschaden, Datenverlust\n- wie lange der Ausfall dauert"
+    },
+    {
+      "id": "AP2-6-4-1-K1-2",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K1",
+      "vorne": "Warum wiegt ein kurzer Ausfall des Mailservers meist weniger schwer als einer der Echtzeitkommunikation, z. B. Telefonie?",
+      "hinten": "Sendende Mailserver halten Mails zurück und stellen sie später erneut zu. Bei Echtzeitkommunikation brechen Gespräche sofort ab und lassen sich nicht nachholen."
+    },
+    {
+      "id": "AP2-6-4-1-K1-3",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K1",
+      "vorne": "Warum wiegt der Ausfall eines Datenbankservers oft besonders schwer?",
+      "hinten": "Viele Anwendungen hängen von der Datenbank ab und fallen mit aus. Zudem drohen Datenverlust oder inkonsistente Daten."
+    },
+    {
+      "id": "AP2-6-4-1-K1-4",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K1",
+      "vorne": "Warum kann der Ausfall eines Webservers mit Onlineshop schwer wiegen?",
+      "hinten": "Kunden erreichen den Shop nicht: Umsatz geht sofort verloren, und der Ausfall ist öffentlich sichtbar (Imageschaden)."
+    },
+    {
+      "id": "AP2-6-4-1-K2-1",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K2",
+      "vorne": "Was bedeutet MTBF?",
+      "hinten": "Mean Time Between Failures: die mittlere Betriebsdauer zwischen zwei Ausfällen, meist in Stunden."
+    },
+    {
+      "id": "AP2-6-4-1-K2-2",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K2",
+      "vorne": "Festplatte A hat eine MTBF von 1.000.000 h, Festplatte B von 1.500.000 h. Welche ist zuverlässiger?",
+      "hinten": "B – je höher die MTBF, desto seltener fällt das Gerät im Mittel aus."
+    },
+    {
+      "id": "AP2-6-4-1-K2-3",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K2",
+      "vorne": "Heißt eine MTBF von 1.000.000 Stunden, dass eine einzelne Festplatte über 100 Jahre hält?",
+      "hinten": "Nein. Die MTBF ist ein statistischer Mittelwert über viele Geräte, keine Lebensdauerzusage für ein einzelnes Gerät."
+    },
+    {
+      "id": "AP2-6-4-1-K3-1",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K3",
+      "vorne": "Was bedeutet AFR?",
+      "hinten": "Annualized Failure Rate: der Anteil der Geräte, der innerhalb eines Jahres ausfällt, meist in Prozent."
+    },
+    {
+      "id": "AP2-6-4-1-K3-2",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K3",
+      "vorne": "Modell A hat eine AFR von 0,5 %, Modell B von 1,2 %. Welches ist zuverlässiger?",
+      "hinten": "A – je niedriger die AFR, desto weniger Geräte fallen pro Jahr aus."
+    },
+    {
+      "id": "AP2-6-4-1-K4-1",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K4",
+      "vorne": "Was regelt ein Notfallkonzept (Disaster Recovery)?",
+      "hinten": "Wer nach einem schweren Ausfall was in welcher Reihenfolge tut, um den Betrieb wiederherzustellen."
+    },
+    {
+      "id": "AP2-6-4-1-K4-2",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K4",
+      "vorne": "Nenne typische Inhalte eines Notfallkonzepts.",
+      "hinten": "- Zuständigkeiten und Ansprechpartner\n- Meldewege\n- Reihenfolge des Wiederanlaufs nach Wichtigkeit der Systeme\n- Schritte zur Wiederherstellung, z. B. aus Backups"
+    },
+    {
+      "id": "AP2-6-4-1-K5-1",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K5",
+      "vorne": "Wie ist die Verfügbarkeit eines Systems definiert?",
+      "hinten": "Als Anteil der Betriebszeit an der Gesamtzeit: `Verfügbarkeit = Betriebszeit ÷ Gesamtzeit` (× 100 für Prozent). Gesamtzeit = Betriebszeit + Ausfallzeit."
+    },
+    {
+      "id": "AP2-6-4-1-K5-2",
+      "sp": "AP2-6-4-1",
+      "k": "AP2-6-4-1-K5",
+      "vorne": "Was bedeutet eine Verfügbarkeit von 99,9 %?",
+      "hinten": "Der Dienst ist 99,9 % der betrachteten Zeit in Betrieb; die übrigen 0,1 % der Zeit ist er ausgefallen."
+    },
+    {
+      "id": "AP2-6-4-2-K1-1",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K1",
+      "vorne": "Wozu dient eine USV?",
+      "hinten": "Unterbrechungsfreie Stromversorgung: Sie überbrückt Stromausfälle und Spannungsschwankungen, bis die Systeme geordnet heruntergefahren sind."
+    },
+    {
+      "id": "AP2-6-4-2-K1-2",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K1",
+      "vorne": "Warum soll eine USV die Server geordnet herunterfahren lassen, statt sie einfach weiter zu versorgen?",
+      "hinten": "Ihr Akku reicht nur begrenzte Zeit. Geordnetes Herunterfahren verhindert Datenverlust und beschädigte Dateien oder Datenbanken durch hartes Abschalten."
+    },
+    {
+      "id": "AP2-6-4-2-K2-1",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K2",
+      "vorne": "Was ist Redundanz?",
+      "hinten": "Wichtige Teile sind mehrfach vorhanden, sodass der Ausfall eines Teils nicht den Betrieb beendet."
+    },
+    {
+      "id": "AP2-6-4-2-K2-2",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K2",
+      "vorne": "Nenne Beispiele für Redundanz in der Hardware.",
+      "hinten": "- zwei Netzteile im Server\n- gespiegelte Festplatten (RAID)\n- zweite Netzwerkverbindung über einen zweiten Switch\n- zweiter Server, der bei Ausfall übernimmt"
+    },
+    {
+      "id": "AP2-6-4-2-K3-1",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K3",
+      "vorne": "Was ist RAID?",
+      "hinten": "Redundant Array of Independent Disks: Mehrere Datenträger werden zu einem Verbund zusammengefasst, der je nach Stufe (Level) Ausfälle verkraftet."
+    },
+    {
+      "id": "AP2-6-4-2-K4-1",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K4",
+      "vorne": "Beschreibe RAID 0 nach Ausfallsicherheit und nutzbarer Kapazität.",
+      "hinten": "Daten werden auf die Platten verteilt (Striping).\n- keine Ausfallsicherheit: fällt eine Platte aus, sind alle Daten verloren\n- nutzbar: die volle Kapazität aller Platten"
+    },
+    {
+      "id": "AP2-6-4-2-K4-2",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K4",
+      "vorne": "Beschreibe RAID 1 nach Ausfallsicherheit und nutzbarer Kapazität.",
+      "hinten": "Daten werden gespiegelt.\n- verkraftet den Ausfall einer Platte\n- nutzbar: die Kapazität einer Platte (bei zwei Platten die Hälfte)"
+    },
+    {
+      "id": "AP2-6-4-2-K4-3",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K4",
+      "vorne": "Beschreibe RAID 5 nach Ausfallsicherheit und nutzbarer Kapazität.",
+      "hinten": "Daten und Paritätsinformationen werden auf mindestens drei Platten verteilt.\n- verkraftet den Ausfall einer Platte\n- nutzbar: die Kapazität aller Platten außer einer"
+    },
+    {
+      "id": "AP2-6-4-2-K4-4",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K4",
+      "vorne": "Beschreibe RAID 10 nach Ausfallsicherheit und nutzbarer Kapazität.",
+      "hinten": "Gespiegelte Paare, über die die Daten verteilt werden; mindestens vier Platten.\n- verkraftet mindestens einen Plattenausfall, höchstens einen je Spiegelpaar\n- nutzbar: die Hälfte der Gesamtkapazität"
+    },
+    {
+      "id": "AP2-6-4-2-K4-5",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K4",
+      "vorne": "Welcher der RAID-Level 0, 1, 5 und 10 bietet keine Ausfallsicherheit?",
+      "hinten": "RAID 0."
+    },
+    {
+      "id": "AP2-6-4-2-K5-1",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K5",
+      "vorne": "Warum ersetzt RAID kein Backup?",
+      "hinten": "RAID schützt nur vor dem Ausfall einzelner Platten. Versehentliches Löschen oder Schadsoftware wirken sofort auf alle Platten, Brand oder Diebstahl treffen den ganzen Verbund. Ältere Datenstände gibt es nicht."
+    },
+    {
+      "id": "AP2-6-4-2-K6-1",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K6",
+      "vorne": "Was sichern Vollsicherung, differenzielle und inkrementelle Sicherung jeweils?",
+      "hinten": "- Vollsicherung: alle Daten\n- differenziell: alle Änderungen seit der letzten Vollsicherung\n- inkrementell: alle Änderungen seit der letzten Sicherung, gleich welcher Art"
+    },
+    {
+      "id": "AP2-6-4-2-K6-2",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K6",
+      "vorne": "Welche Sicherungen brauchst du zur Wiederherstellung bei differenzieller und bei inkrementeller Sicherung?",
+      "hinten": "- differenziell: letzte Vollsicherung + letzte differenzielle Sicherung\n- inkrementell: letzte Vollsicherung + alle inkrementellen Sicherungen danach, in ihrer Reihenfolge"
+    },
+    {
+      "id": "AP2-6-4-2-K6-3",
+      "sp": "AP2-6-4-2",
+      "k": "AP2-6-4-2-K6",
+      "vorne": "Welches Sicherungsverfahren braucht je Lauf am wenigsten Zeit und Speicher, und welchen Nachteil hat es?",
+      "hinten": "Die inkrementelle Sicherung. Nachteil: Die Wiederherstellung ist am aufwendigsten, weil alle Teilsicherungen seit der letzten Vollsicherung nötig sind."
+    },
+    {
+      "id": "AP2-6-5-1-K1-1",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K1",
+      "vorne": "Nenne Werte, die das Monitoring eines Servers überwachen sollte.",
+      "hinten": "- Auslastung von Prozessor, Arbeitsspeicher und Datenträgern\n- Antwortzeiten\n- Erreichbarkeit"
+    },
+    {
+      "id": "AP2-6-5-1-K2-1",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K2",
+      "vorne": "Wozu dienen Schwellwerte im Monitoring?",
+      "hinten": "Wird ein Schwellwert über- oder unterschritten, warnt oder alarmiert das System, z. B. wenn ein Datenträger zu 90 % belegt ist."
+    },
+    {
+      "id": "AP2-6-5-1-K2-2",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K2",
+      "vorne": "Warum legt man für einen Wert oft zwei Schwellwerte fest, z. B. 80 % und 95 % Belegung?",
+      "hinten": "Der niedrigere löst eine Warnung aus, damit Zeit zum Handeln bleibt; der höhere einen Alarm, weil ein Ausfall droht."
+    },
+    {
+      "id": "AP2-6-5-1-K3-1",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K3",
+      "vorne": "Wozu dient SNMP?",
+      "hinten": "Simple Network Management Protocol: Zustandswerte von Netzwerkgeräten wie Switches und Routern abfragen, z. B. Auslastung oder Fehlerzähler."
+    },
+    {
+      "id": "AP2-6-5-1-K3-2",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K3",
+      "vorne": "Wozu dient S.M.A.R.T.?",
+      "hinten": "Self-Monitoring, Analysis and Reporting Technology: Datenträger überwachen sich selbst, z. B. Temperatur, Betriebsstunden und defekte Sektoren, und machen drohende Ausfälle erkennbar."
+    },
+    {
+      "id": "AP2-6-5-1-K3-3",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K3",
+      "vorne": "SNMP oder S.M.A.R.T.? a) Auslastung der Anschlüsse eines Switches b) Zahl der defekten Sektoren einer Festplatte",
+      "hinten": "- a) SNMP\n- b) S.M.A.R.T."
+    },
+    {
+      "id": "AP2-6-5-1-K4-1",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K4",
+      "vorne": "Der Arbeitsspeicher eines Servers ist dauerhaft fast voll, das System lagert stark auf die Festplatte aus. Engpass und Maßnahme?",
+      "hinten": "Engpass: Arbeitsspeicher. Maßnahme: Arbeitsspeicher erweitern oder speicherhungrige Dienste auf einen anderen Server verlagern."
+    },
+    {
+      "id": "AP2-6-5-1-K4-2",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K4",
+      "vorne": "Die Prozessorlast eines Servers liegt dauerhaft nahe 100 %, die Antwortzeiten steigen. Engpass und Maßnahme?",
+      "hinten": "Engpass: Prozessor. Maßnahme: Last auf weitere Server verteilen, stärkeren Prozessor einsetzen oder rechenintensive Prozesse optimieren."
+    },
+    {
+      "id": "AP2-6-5-1-K4-3",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K4",
+      "vorne": "Die Belegung eines Datenträgers steigt seit Wochen um etwa 2 % pro Woche und liegt bei 85 %. Engpass und Maßnahme?",
+      "hinten": "Engpass: Speicherplatz, in einigen Wochen voll. Maßnahme: rechtzeitig erweitern oder alte Daten archivieren bzw. löschen."
+    },
+    {
+      "id": "AP2-6-5-1-K5-1",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K5",
+      "vorne": "Was ist Predictive Maintenance?",
+      "hinten": "Vorausschauende Wartung: Aus Messwerten wird vorhergesagt, wann ein Teil ausfallen wird, und es wird vorher getauscht."
+    },
+    {
+      "id": "AP2-6-5-1-K5-2",
+      "sp": "AP2-6-5-1",
+      "k": "AP2-6-5-1-K5",
+      "vorne": "Wie unterscheidet sich Predictive Maintenance von einer Wartung nach festem Zeitplan?",
+      "hinten": "Getauscht wird nach dem gemessenen Zustand, wenn ein Ausfall absehbar ist, nicht nach festen Fristen. So werden Ausfälle vermieden und intakte Teile nicht zu früh ersetzt."
+    },
+    {
+      "id": "AP2-6-5-2-K1-1",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K1",
+      "vorne": "Was ist eine Standard Operation Procedure (SOP)?",
+      "hinten": "Eine festgelegte Schritt-für-Schritt-Anweisung für einen wiederkehrenden Vorgang, z. B. das Zurückspielen einer Sicherung."
+    },
+    {
+      "id": "AP2-6-5-2-K1-2",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K1",
+      "vorne": "Welchen Nutzen haben SOPs?",
+      "hinten": "Wiederkehrende Vorgänge laufen immer gleich und vollständig ab, auch wenn eine Vertretung sie ausführt; Fehler werden vermieden."
+    },
+    {
+      "id": "AP2-6-5-2-K2-1",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K2",
+      "vorne": "Was regelt ein Service Level Agreement (SLA)?",
+      "hinten": "Die zugesagte Leistung eines Dienstes, z. B. Verfügbarkeit, Reaktions- und Lösungszeiten."
+    },
+    {
+      "id": "AP2-6-5-2-K2-2",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K2",
+      "vorne": "Worin unterscheiden sich Reaktionszeit und Lösungszeit in einem SLA?",
+      "hinten": "- Reaktionszeit: bis mit der Bearbeitung der Störung begonnen wird\n- Lösungszeit: bis die Störung behoben ist"
+    },
+    {
+      "id": "AP2-6-5-2-K3-1",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K3",
+      "vorne": "Unterscheide die Service Level 1 bis 3.",
+      "hinten": "- Level 1: nimmt Störungen an und löst einfache Fälle\n- Level 2: Fachleute\n- Level 3: Spezialisten oder der Hersteller"
+    },
+    {
+      "id": "AP2-6-5-2-K3-2",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K3",
+      "vorne": "Ein Benutzer hat sein Passwort vergessen. Welcher Service Level löst das?",
+      "hinten": "Level 1 – ein einfacher Standardfall."
+    },
+    {
+      "id": "AP2-6-5-2-K3-3",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K3",
+      "vorne": "Ein Programmfehler in einer gekauften Software muss im Quellcode behoben werden. Welcher Service Level ist zuständig?",
+      "hinten": "Level 3 – Spezialisten bzw. der Hersteller."
+    },
+    {
+      "id": "AP2-6-5-2-K4-1",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K4",
+      "vorne": "Was umfasst Incident Management?",
+      "hinten": "Störungen erfassen, einordnen, beheben und im Ticketsystem dokumentieren."
+    },
+    {
+      "id": "AP2-6-5-2-K4-2",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K4",
+      "vorne": "Wozu dient das Ticketsystem im Incident Management?",
+      "hinten": "Jede Störung wird als Ticket erfasst: Stand, Zuständigkeit und Lösung sind nachvollziehbar, nichts geht verloren, Fristen lassen sich überwachen."
+    },
+    {
+      "id": "AP2-6-5-2-K5-1",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K5",
+      "vorne": "Was bedeutet Eskalation bei der Störungsbearbeitung?",
+      "hinten": "Eine Störung wird an die nächste Stufe weitergegeben, wenn sie nicht rechtzeitig gelöst wird."
+    },
+    {
+      "id": "AP2-6-5-2-K6-1",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K6",
+      "vorne": "Unterscheide fachliche und hierarchische Eskalation.",
+      "hinten": "- fachlich: an Spezialisten mit mehr Fachwissen, z. B. von Level 1 an Level 2\n- hierarchisch: an Vorgesetzte, die entscheiden oder Mittel freigeben"
+    },
+    {
+      "id": "AP2-6-5-2-K6-2",
+      "sp": "AP2-6-5-2",
+      "k": "AP2-6-5-2-K6",
+      "vorne": "Eine Störung droht die zugesagte Lösungszeit zu überschreiten; dafür müssen Mitarbeiter von anderen Aufgaben abgezogen werden. Welche Art der Eskalation ist nötig?",
+      "hinten": "Hierarchische Eskalation: Vorgesetzte müssen entscheiden und Mitarbeiter bereitstellen."
+    },
+    {
+      "id": "AP2-6-5-3-K1-1",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K1",
+      "vorne": "Unterscheide Benutzerhandbuch und Handbuch für Systembetreuer nach Zielgruppe und Inhalt.",
+      "hinten": "- Benutzerhandbuch: für Anwender; Bedienung und Arbeitsabläufe, ohne technische Einzelheiten\n- Systembetreuer: für Administratoren; Installation, Konfiguration, Datensicherung, Wartung, Fehlerbehebung"
+    },
+    {
+      "id": "AP2-6-5-3-K1-2",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K1",
+      "vorne": "Gehört die Einrichtung der Datenbankverbindung einer Anwendung ins Benutzerhandbuch oder ins Handbuch für Systembetreuer?",
+      "hinten": "Ins Handbuch für Systembetreuer: Es ist eine technische Einrichtungsaufgabe, keine Bedienung."
+    },
+    {
+      "id": "AP2-6-5-3-K2-1",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K2",
+      "vorne": "Was gehört in eine Programmdokumentation?",
+      "hinten": "Die Beschreibung des Programms selbst, z. B. Aufbau, Schnittstellen und Datenmodell – für alle, die es warten oder erweitern."
+    },
+    {
+      "id": "AP2-6-5-3-K2-2",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K2",
+      "vorne": "Was gehört in eine Konfigurationsdokumentation?",
+      "hinten": "Wie das System eingerichtet ist, z. B. Einstellungen, Versionen und Abhängigkeiten."
+    },
+    {
+      "id": "AP2-6-5-3-K3-1",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K3",
+      "vorne": "Programm- oder Konfigurationsdokumentation? a) Datenmodell der Datenbank b) eingesetzte Version der Laufzeitumgebung c) Schnittstelle zu einem Fremdsystem d) Port des Webservers",
+      "hinten": "- a) Programmdokumentation\n- b) Konfigurationsdokumentation\n- c) Programmdokumentation\n- d) Konfigurationsdokumentation"
+    },
+    {
+      "id": "AP2-6-5-3-K4-1",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K4",
+      "vorne": "Wozu dienen Checklisten?",
+      "hinten": "Bei wiederkehrenden Vorgängen wird kein Schritt vergessen; der Ablauf ist einheitlich, und das Abhaken weist nach, was erledigt ist."
+    },
+    {
+      "id": "AP2-6-5-3-K5-1",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K5",
+      "vorne": "Nenne Anforderungen an gute Dokumentation.",
+      "hinten": "- verständlich für die Zielgruppe\n- aktuell\n- vollständig\n- auffindbar"
+    },
+    {
+      "id": "AP2-6-5-3-K5-2",
+      "sp": "AP2-6-5-3",
+      "k": "AP2-6-5-3-K5",
+      "vorne": "Warum ist eine veraltete Dokumentation gefährlich?",
+      "hinten": "Wer sich darauf verlässt, arbeitet mit falschen Angaben, z. B. bei Wartung oder Störungen. Das führt zu Fehlern und längeren Ausfällen."
+    },
+    {
+      "id": "AP2-6-6-1-K1-1",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K1",
+      "vorne": "Worin unterscheiden sich NAS und SAN?",
+      "hinten": "- NAS: stellt Dateien im Netz bereit\n- SAN: eigenes Netz, das Servern Speicher blockweise wie eine lokale Festplatte bereitstellt"
+    },
+    {
+      "id": "AP2-6-6-1-K1-2",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K1",
+      "vorne": "Wofür stehen NAS und SAN?",
+      "hinten": "- NAS: Network Attached Storage\n- SAN: Storage Area Network"
+    },
+    {
+      "id": "AP2-6-6-1-K2-1",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K2",
+      "vorne": "Welche Speicherlösung passt in ein Rechenzentrum mit vielen Servern? Begründe.",
+      "hinten": "Ein SAN: Es stellt vielen Servern schnellen Speicher blockweise über ein eigenes Netz bereit, entlastet das übrige Netz und lässt sich gut erweitern."
+    },
+    {
+      "id": "AP2-6-6-1-K3-1",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K3",
+      "vorne": "Wie ordnest du SMB und NFS ein?",
+      "hinten": "Als Protokolle für Dateifreigaben im Netz: SMB vor allem unter Windows, NFS vor allem unter Linux und Unix."
+    },
+    {
+      "id": "AP2-6-6-1-K3-2",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K3",
+      "vorne": "Über welche Protokolle stellt ein NAS seine Dateien typischerweise bereit?",
+      "hinten": "Über SMB und NFS."
+    },
+    {
+      "id": "AP2-6-6-1-K4-1",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K4",
+      "vorne": "Wie ordnest du iSCSI und Fibre Channel ein?",
+      "hinten": "Als Techniken zur Anbindung von Blockspeicher: iSCSI über das normale Ethernet, Fibre Channel über ein eigenes Netz."
+    },
+    {
+      "id": "AP2-6-6-1-K4-2",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K4",
+      "vorne": "Welchen Vorteil hat iSCSI gegenüber Fibre Channel?",
+      "hinten": "Es nutzt die vorhandene Ethernet-Technik; ein eigenes Speichernetz mit eigenen Geräten entfällt, das ist günstiger."
+    },
+    {
+      "id": "AP2-6-6-1-K5-1",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K5",
+      "vorne": "Nenne je einen Vorteil von NAS und SAN.",
+      "hinten": "- NAS: einfach und günstig einzurichten\n- SAN: schneller und besser erweiterbar"
+    },
+    {
+      "id": "AP2-6-6-1-K5-2",
+      "sp": "AP2-6-6-1",
+      "k": "AP2-6-6-1-K5",
+      "vorne": "Ein kleines Büro will Dateien für zehn Mitarbeiter zentral ablegen. NAS oder SAN? Begründe.",
+      "hinten": "NAS: einfach und günstig einzurichten; der Dateizugriff über das vorhandene Netz reicht aus."
+    },
+    {
+      "id": "AP2-6-6-2-K1-1",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K1",
+      "vorne": "Stelle On-Premises und Cloud gegenüber.",
+      "hinten": "- On-Premises: eigene Hardware und Software im eigenen Haus; volle Kontrolle, hohe Anschaffungskosten, eigener Betrieb\n- Cloud: beim Anbieter gemietet; Kosten nach Nutzung, schnell skalierbar, abhängig vom Anbieter"
+    },
+    {
+      "id": "AP2-6-6-2-K2-1",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K2",
+      "vorne": "Unterscheide IaaS, PaaS und SaaS.",
+      "hinten": "- IaaS: gemietete Infrastruktur\n- PaaS: gemietete Plattform für eigene Anwendungen\n- SaaS: fertige Anwendung als Dienst"
+    },
+    {
+      "id": "AP2-6-6-2-K2-2",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K2",
+      "vorne": "Wofür stehen IaaS, PaaS und SaaS?",
+      "hinten": "Infrastructure, Platform und Software as a Service"
+    },
+    {
+      "id": "AP2-6-6-2-K2-3",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K2",
+      "vorne": "IaaS, PaaS oder SaaS? a) Büroprogramme im Browser b) gemietete virtuelle Server c) Laufzeitumgebung, in die man eigenen Code hochlädt",
+      "hinten": "- a) SaaS\n- b) IaaS\n- c) PaaS"
+    },
+    {
+      "id": "AP2-6-6-2-K3-1",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K3",
+      "vorne": "Ein Entwicklerteam will eine eigene Webanwendung betreiben, ohne sich um Server und Betriebssystem zu kümmern. Welches Modell passt? Begründe.",
+      "hinten": "PaaS: Der Anbieter betreibt Server, Betriebssystem und Laufzeitumgebung; das Team liefert nur Anwendung und Daten."
+    },
+    {
+      "id": "AP2-6-6-2-K3-2",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K3",
+      "vorne": "Ein kleiner Betrieb ohne IT-Fachleute braucht eine Lösung für E-Mail und Kalender. Welches Modell passt? Begründe.",
+      "hinten": "SaaS: Die Anwendung ist fertig, Betrieb und Wartung übernimmt der Anbieter; eigenes Fachwissen ist kaum nötig."
+    },
+    {
+      "id": "AP2-6-6-2-K3-3",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K3",
+      "vorne": "Eine Firma will ihre Software auf selbst eingerichteten Betriebssystemen betreiben, aber keine Hardware kaufen. Welches Modell passt? Begründe.",
+      "hinten": "IaaS: Sie mietet virtuelle Server und verwaltet Betriebssystem und alles darüber selbst."
+    },
+    {
+      "id": "AP2-6-6-2-K4-1",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K4",
+      "vorne": "Wer ist bei IaaS wofür verantwortlich?",
+      "hinten": "- Anbieter: Rechenzentrum, Hardware, Netz, Virtualisierung\n- Kunde: Betriebssystem, Laufzeitumgebung, Anwendungen, Daten"
+    },
+    {
+      "id": "AP2-6-6-2-K4-2",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K4",
+      "vorne": "Wer ist bei PaaS wofür verantwortlich?",
+      "hinten": "- Anbieter: Infrastruktur, Betriebssystem und Laufzeitumgebung\n- Kunde: eigene Anwendung und Daten"
+    },
+    {
+      "id": "AP2-6-6-2-K4-3",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K4",
+      "vorne": "Wer ist bei SaaS wofür verantwortlich?",
+      "hinten": "- Anbieter: alles bis einschließlich der Anwendung\n- Kunde: Nutzung, Benutzerverwaltung und die eigenen Daten"
+    },
+    {
+      "id": "AP2-6-6-2-K5-1",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K5",
+      "vorne": "Nenne Gesichtspunkte für die Entscheidung zwischen On-Premises und Cloud.",
+      "hinten": "- Kosten\n- Skalierbarkeit\n- Datenschutz\n- Abhängigkeit vom Anbieter\n- eigenes Fachwissen"
+    },
+    {
+      "id": "AP2-6-6-2-K5-2",
+      "sp": "AP2-6-6-2",
+      "k": "AP2-6-6-2-K5",
+      "vorne": "Warum kann der Datenschutz gegen eine Cloud-Lösung sprechen?",
+      "hinten": "Personenbezogene Daten liegen beim Anbieter, eventuell außerhalb der EU. Das Unternehmen bleibt für sie verantwortlich und muss den Anbieter vertraglich und technisch absichern."
+    },
+    {
+      "id": "AP2-6-6-3-K1-1",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K1",
+      "vorne": "Wie berechnest du den Speicherbedarf eines unkomprimierten Bildes in Bit?",
+      "hinten": "`Bildpunkte × Farbtiefe in Bit`, mit Bildpunkte = Breite × Höhe (bzw. Megapixel × 1.000.000)."
+    },
+    {
+      "id": "AP2-6-6-3-K1-2",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K1",
+      "vorne": "Wie rechnest du den Speicherbedarf einer Bildersammlung über einen Zeitraum hoch?",
+      "hinten": "`Speicher je Bild × Bilder je Tag × Anzahl Tage`, z. B. × 365 für ein Jahr."
+    },
+    {
+      "id": "AP2-6-6-3-K1-3",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K1",
+      "vorne": "Wie viele Byte belegt ein Bildpunkt bei 24 Bit Farbtiefe?",
+      "hinten": "3 Byte (24 ÷ 8)."
+    },
+    {
+      "id": "AP2-6-6-3-K2-1",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K2",
+      "vorne": "Wie rechnest du Bit in Byte um?",
+      "hinten": "Durch 8 teilen (1 Byte = 8 Bit)."
+    },
+    {
+      "id": "AP2-6-6-3-K2-2",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K2",
+      "vorne": "Wie rechnest du Byte in KiB, MiB, GiB und TiB um?",
+      "hinten": "Bei jedem Schritt durch 1.024 teilen: Byte → KiB → MiB → GiB → TiB. Von Byte direkt in TiB: ÷ 1.024⁴."
+    },
+    {
+      "id": "AP2-6-6-3-K2-3",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K2",
+      "vorne": "Was unterscheidet 1 KiB von 1 kB?",
+      "hinten": "- 1 KiB (Kibibyte, Binärpräfix) = 1.024 Byte\n- 1 kB (Kilobyte, Dezimalpräfix) = 1.000 Byte"
+    },
+    {
+      "id": "AP2-6-6-3-K3-1",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K3",
+      "vorne": "Wann rundest du bei einer Rechnung mit mehreren Schritten?",
+      "hinten": "Erst das Endergebnis auf die verlangte Stellenzahl; Zwischenergebnisse ungerundet weiterverwenden."
+    },
+    {
+      "id": "AP2-6-6-3-K3-2",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K3",
+      "vorne": "Was gehört zu einem nachvollziehbaren Rechenweg?",
+      "hinten": "- jeder Schritt mit Formel und eingesetzten Werten\n- Einheiten bei jedem Zwischenergebnis\n- Ergebnis mit Einheit und verlangter Stellenzahl"
+    },
+    {
+      "id": "AP2-6-6-3-K4-1",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K4",
+      "vorne": "Wie berechnest du die Dauer einer Datenübertragung?",
+      "hinten": "`Dauer = Datenmenge ÷ Übertragungsrate` – vorher beide in dieselbe Einheit bringen, meist Bit und Bit/s."
+    },
+    {
+      "id": "AP2-6-6-3-K5-1",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K5",
+      "vorne": "Wie viele Bildpunkte hat ein Bild mit 12 Megapixeln?",
+      "hinten": "12.000.000 – ein Megapixel sind eine Million Bildpunkte."
+    },
+    {
+      "id": "AP2-6-6-3-K5-2",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K5",
+      "vorne": "Wie viele Bit pro Sekunde sind 100 Mbit/s?",
+      "hinten": "100.000.000 Bit/s – Übertragungsraten stehen mit Dezimalpräfix (1 Mbit/s = 1.000.000 Bit/s)."
+    },
+    {
+      "id": "AP2-6-6-3-K5-3",
+      "sp": "AP2-6-6-3",
+      "k": "AP2-6-6-3-K5",
+      "vorne": "Eine 2 GiB große Datei soll über eine Leitung mit 50 Mbit/s übertragen werden. Welche Umrechnungen brauchst du vor dem Teilen?",
+      "hinten": "- Datenmenge in Bit: 2 × 1.024³ × 8\n- Rate in Bit/s: 50 × 1.000.000\n- dann Bit ÷ Bit/s = Sekunden"
+    }
+  ],
+  "nicht_abgefragt": [
+    {
+      "k": "AP2-6-1-2-K4",
+      "grund": "Die Symbole sind grafisch und lassen sich auf einer Textkarte nicht zeigen; das Zuordnen übt man am Plan mit den Symbolen aus dem Anhang."
+    },
+    {
+      "k": "AP2-6-2-3-K1",
+      "grund": "Symbole erkennen ist eine Übung am gezeichneten Plan; auf einer Textkarte lässt sich kein Symbol zeigen."
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "OSI-Modell",
+      "langform": "Open Systems Interconnection",
+      "erklaerung": "Referenzmodell mit sieben Schichten, das die Netzwerkkommunikation von der Bitübertragung bis zur Anwendung in Aufgaben gliedert.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-1-2"
+      ]
+    },
+    {
+      "begriff": "TCP/IP-Modell",
+      "erklaerung": "Schichtenmodell der Internetprotokolle mit vier Schichten: Netzzugang, Internet, Transport und Anwendung.",
+      "sp": [
+        "AP2-6-1-1"
+      ]
+    },
+    {
+      "begriff": "IP-Adresse",
+      "langform": "Internet-Protocol-Adresse",
+      "erklaerung": "Logische Adresse eines Geräts im Netz auf Schicht 3, mit der Pakete auch zwischen Netzen zugestellt werden; es gibt IPv4 und IPv6.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-1-2",
+        "AP2-6-3-1"
+      ]
+    },
+    {
+      "begriff": "IPv4",
+      "langform": "Internet Protocol Version 4",
+      "erklaerung": "Version 4 des Internet Protocol mit 32 Bit langen Adressen, geschrieben als vier Dezimalzahlen mit Punkten, z. B. 192.168.1.10.",
+      "sp": [
+        "AP2-6-1-1"
+      ]
+    },
+    {
+      "begriff": "IPv6",
+      "langform": "Internet Protocol Version 6",
+      "erklaerung": "Version 6 des Internet Protocol mit 128 Bit langen Adressen, hexadezimal in Blöcken mit Doppelpunkten geschrieben, z. B. 2001:db8::1.",
+      "sp": [
+        "AP2-6-1-1"
+      ]
+    },
+    {
+      "begriff": "MAC-Adresse",
+      "langform": "Media Access Control",
+      "erklaerung": "Physische Adresse einer Netzwerkschnittstelle auf Schicht 2: 48 Bit, hexadezimal geschrieben, die vordere Hälfte kennzeichnet den Hersteller.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-1-2"
+      ]
+    },
+    {
+      "begriff": "ARP",
+      "langform": "Address Resolution Protocol",
+      "erklaerung": "Protokoll, das im lokalen Netz zu einer IP-Adresse die zugehörige MAC-Adresse ermittelt.",
+      "sp": [
+        "AP2-6-1-1"
+      ]
+    },
+    {
+      "begriff": "TCP",
+      "langform": "Transmission Control Protocol",
+      "erklaerung": "Verbindungsorientiertes Transportprotokoll (Schicht 4): bestätigt den Empfang, sendet Verlorenes neu und liefert die Daten in richtiger Reihenfolge.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-1-3"
+      ]
+    },
+    {
+      "begriff": "UDP",
+      "langform": "User Datagram Protocol",
+      "erklaerung": "Verbindungsloses Transportprotokoll (Schicht 4): schnell und schlank, aber ohne Bestätigung und ohne Zustellgarantie.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-1-3"
+      ]
+    },
+    {
+      "begriff": "Ethernet",
+      "erklaerung": "Verbreitete Technik für kabelgebundene lokale Netze; Daten werden in Ethernet-Frames mit Ziel- und Quell-MAC-Adresse übertragen.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "Ethernet-Frame",
+      "erklaerung": "Dateneinheit im Ethernet mit den Feldern Präambel, Zieladresse, Quelladresse, Typ, Nutzdaten und Prüfsumme.",
+      "sp": [
+        "AP2-6-1-1"
+      ]
+    },
+    {
+      "begriff": "Hexadezimal",
+      "erklaerung": "Zahlensystem zur Basis 16 mit den Ziffern 0–9 und A–F; eine Hex-Ziffer steht für 4 Bit.",
+      "sp": [
+        "AP2-6-1-1"
+      ]
+    },
+    {
+      "begriff": "Switch",
+      "erklaerung": "Netzwerkgerät auf Schicht 2, das Geräte eines Netzes verbindet und Frames anhand der MAC-Adresse gezielt an den richtigen Anschluss weiterleitet.",
+      "sp": [
+        "AP2-6-1-2",
+        "AP2-6-2-1",
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Bridge",
+      "erklaerung": "Netzwerkgerät auf Schicht 2, das zwei Netzsegmente verbindet und Frames anhand der MAC-Adresse weiterleitet.",
+      "sp": [
+        "AP2-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Router",
+      "erklaerung": "Netzwerkgerät auf Schicht 3, das verschiedene Netze verbindet und Pakete anhand der Ziel-IP-Adresse weiterleitet.",
+      "sp": [
+        "AP2-6-1-2",
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Routing",
+      "erklaerung": "Weiterleiten von Paketen zwischen verschiedenen Netzen anhand der IP-Adresse.",
+      "sp": [
+        "AP2-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Switching",
+      "erklaerung": "Weiterleiten von Frames innerhalb eines Netzes anhand der MAC-Adresse.",
+      "sp": [
+        "AP2-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Firewall",
+      "erklaerung": "System, das den Datenverkehr zwischen Netzen nach festgelegten Regeln zulässt oder sperrt.",
+      "sp": [
+        "AP2-6-1-2",
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Zustandsbehaftete Prüfung",
+      "erklaerung": "Prüfverfahren einer Firewall (Stateful Inspection): Sie merkt sich bestehende Verbindungen und lässt die zugehörigen Antworten durch.",
+      "sp": [
+        "AP2-6-1-2"
+      ]
+    },
+    {
+      "begriff": "Netzwerkplan",
+      "erklaerung": "Zeichnung eines Netzes mit festgelegten Symbolen für Geräte, Teilnetze und Verbindungen; meist nur der für die Aufgabe wichtige Teil.",
+      "sp": [
+        "AP2-6-1-2",
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "HTTP",
+      "langform": "Hypertext Transfer Protocol",
+      "erklaerung": "Protokoll der Anwendungsschicht, mit dem Clients Webseiten und Daten von Servern abrufen; Standardport 80, unverschlüsselt.",
+      "sp": [
+        "AP2-6-1-3",
+        "AP2-6-2-4"
+      ]
+    },
+    {
+      "begriff": "HTTPS",
+      "langform": "Hypertext Transfer Protocol Secure",
+      "erklaerung": "HTTP mit Transportverschlüsselung (TLS): Daten werden verschlüsselt übertragen, der Server weist sich mit einem Zertifikat aus; Standardport 443.",
+      "sp": [
+        "AP2-6-1-3"
+      ]
+    },
+    {
+      "begriff": "Port",
+      "erklaerung": "Nummer, die auf Transportebene einen Dienst auf einem Rechner kennzeichnet, z. B. 80 für HTTP und 443 für HTTPS.",
+      "sp": [
+        "AP2-6-1-3"
+      ]
+    },
+    {
+      "begriff": "Hybride Verschlüsselung",
+      "erklaerung": "Kombination beider Verfahren: asymmetrisch für den sicheren Schlüsselaustausch, symmetrisch für die schnelle Verschlüsselung der Daten.",
+      "sp": [
+        "AP2-6-1-3"
+      ]
+    },
+    {
+      "begriff": "LAN",
+      "langform": "Local Area Network",
+      "erklaerung": "Lokales Netz mit der Ausdehnung eines Gebäudes oder Firmengeländes.",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "MAN",
+      "langform": "Metropolitan Area Network",
+      "erklaerung": "Netz mit der Ausdehnung einer Stadt oder Region.",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "WAN",
+      "langform": "Wide Area Network",
+      "erklaerung": "Weitverkehrsnetz über große Entfernungen, z. B. über ein Land oder mehrere Länder.",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "GAN",
+      "langform": "Global Area Network",
+      "erklaerung": "Weltweites Netz über Kontinente hinweg.",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "Strukturierte Verkabelung",
+      "erklaerung": "Einheitliche, unabhängig von der Nutzung geplante Verkabelung in drei Bereichen: Primär- (zwischen Gebäuden), Sekundär- (Stockwerke), Tertiärbereich (bis zur Dose).",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "VLAN",
+      "langform": "Virtual Local Area Network",
+      "erklaerung": "Logisch abgetrenntes Netz innerhalb derselben Switch-Infrastruktur, z. B. um Abteilungen zu trennen.",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "Broadcast",
+      "erklaerung": "Rundsendung an alle Geräte eines Netzes, z. B. eine ARP-Anfrage.",
+      "sp": [
+        "AP2-6-2-1"
+      ]
+    },
+    {
+      "begriff": "PAN",
+      "langform": "Personal Area Network",
+      "erklaerung": "Netz im Nahbereich einer Person, z. B. Smartphone mit Kopfhörer.",
+      "sp": [
+        "AP2-6-2-2"
+      ]
+    },
+    {
+      "begriff": "WLAN",
+      "langform": "Wireless Local Area Network",
+      "erklaerung": "Lokales Funknetz, in dem sich Geräte über einen Accesspoint verbinden.",
+      "sp": [
+        "AP2-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Mesh",
+      "erklaerung": "Funknetz aus mehreren Knoten, die sich untereinander verbinden und Daten weiterreichen; deckt große Flächen ab und umgeht ausgefallene Knoten.",
+      "sp": [
+        "AP2-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Bluetooth",
+      "erklaerung": "Funktechnik für kurze Entfernungen mit geringem Energiebedarf, z. B. für Headsets, Tastaturen oder Sensoren.",
+      "sp": [
+        "AP2-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Accesspoint",
+      "erklaerung": "Zugangspunkt, über den sich Funkgeräte mit dem WLAN bzw. dem kabelgebundenen Netz verbinden.",
+      "sp": [
+        "AP2-6-2-2",
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "RADIUS",
+      "langform": "Remote Authentication Dial-In User Service",
+      "erklaerung": "Dienst, mit dem ein zentraler Server Benutzer und Geräte beim Zugang zum Netz prüft, z. B. bei der WLAN-Anmeldung.",
+      "sp": [
+        "AP2-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Kerberos",
+      "erklaerung": "Anmeldedienst: Benutzer melden sich einmal an und erhalten Tickets, mit denen sie die Dienste im Netz nutzen.",
+      "sp": [
+        "AP2-6-2-2"
+      ]
+    },
+    {
+      "begriff": "Netzwerktopologie",
+      "erklaerung": "Grundform, in der die Geräte eines Netzes verbunden sind, z. B. Stern, Bus, Ring oder Masche.",
+      "sp": [
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Teilnetz",
+      "erklaerung": "Abgegrenzter Teil eines Netzes (Subnetz); Geräte verschiedener Teilnetze kommunizieren über einen Router.",
+      "sp": [
+        "AP2-6-1-1",
+        "AP2-6-2-3"
+      ]
+    },
+    {
+      "begriff": "Peer-to-Peer",
+      "erklaerung": "Netzkonzept mit gleichberechtigten Rechnern, die Dienste zugleich anbieten und nutzen, ohne zentralen Server.",
+      "sp": [
+        "AP2-6-2-4"
+      ]
+    },
+    {
+      "begriff": "Client-Server",
+      "erklaerung": "Netzkonzept, in dem ein zentraler Server Dienste bereitstellt, die von Clients genutzt werden.",
+      "sp": [
+        "AP2-6-2-4"
+      ]
+    },
+    {
+      "begriff": "SMB/CIFS",
+      "langform": "Server Message Block / Common Internet File System",
+      "erklaerung": "Protokoll für Datei- und Druckerfreigaben im Netz, vor allem unter Windows; CIFS ist eine ältere Version von SMB.",
+      "sp": [
+        "AP2-6-2-4",
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "ODBC",
+      "langform": "Open Database Connectivity",
+      "erklaerung": "Einheitliche Schnittstelle, über die Anwendungen mit einem passenden Treiber auf verschiedene Datenbanken zugreifen.",
+      "sp": [
+        "AP2-6-2-4"
+      ]
+    },
+    {
+      "begriff": "DNS",
+      "langform": "Domain Name System",
+      "erklaerung": "Dienst, der Namen wie www.beispiel.de in IP-Adressen auflöst.",
+      "sp": [
+        "AP2-6-3-1"
+      ]
+    },
+    {
+      "begriff": "DHCP",
+      "langform": "Dynamic Host Configuration Protocol",
+      "erklaerung": "Dienst, der Clients automatisch IP-Adresse, Subnetzmaske, Gateway und DNS-Server zuteilt.",
+      "sp": [
+        "AP2-6-3-1"
+      ]
+    },
+    {
+      "begriff": "Gateway",
+      "erklaerung": "Standardausgang eines Netzes, meist der Router, über den Pakete an Ziele außerhalb des eigenen Netzes gehen.",
+      "sp": [
+        "AP2-6-3-1"
+      ]
+    },
+    {
+      "begriff": "Subnetzmaske",
+      "erklaerung": "Angabe, welcher Teil einer IPv4-Adresse das Netz und welcher das Gerät kennzeichnet, z. B. 255.255.255.0.",
+      "sp": [
+        "AP2-6-3-1"
+      ]
+    },
+    {
+      "begriff": "Proxy",
+      "erklaerung": "Vermittler, der Anfragen stellvertretend für Clients weitergibt und dabei filtern, zwischenspeichern und protokollieren kann.",
+      "sp": [
+        "AP2-6-3-1"
+      ]
+    },
+    {
+      "begriff": "VPN",
+      "langform": "Virtual Private Network",
+      "erklaerung": "Virtuelles privates Netz: geschützte Verbindung durch ein fremdes Netz wie das Internet, z. B. zwischen Standorten oder vom Homeoffice ins Firmennetz.",
+      "sp": [
+        "AP2-6-3-2"
+      ]
+    },
+    {
+      "begriff": "Tunneling",
+      "erklaerung": "Verfahren, bei dem Pakete verschlüsselt und in andere Pakete verpackt durch ein fremdes Netz transportiert werden.",
+      "sp": [
+        "AP2-6-3-2"
+      ]
+    },
+    {
+      "begriff": "IPsec",
+      "langform": "Internet Protocol Security",
+      "erklaerung": "Protokollfamilie zur Verschlüsselung und Absicherung von IP-Paketen auf Netzwerkebene (Schicht 3), häufig für VPNs.",
+      "sp": [
+        "AP2-6-3-2"
+      ]
+    },
+    {
+      "begriff": "MTBF",
+      "langform": "Mean Time Between Failures",
+      "erklaerung": "Mittlere Betriebsdauer zwischen zwei Ausfällen, meist in Stunden; je höher, desto zuverlässiger.",
+      "sp": [
+        "AP2-6-4-1"
+      ]
+    },
+    {
+      "begriff": "AFR",
+      "langform": "Annualized Failure Rate",
+      "erklaerung": "Jährliche Ausfallrate: Anteil der Geräte, der innerhalb eines Jahres ausfällt; je niedriger, desto zuverlässiger.",
+      "sp": [
+        "AP2-6-4-1"
+      ]
+    },
+    {
+      "begriff": "Verfügbarkeit",
+      "erklaerung": "Anteil der Betriebszeit an der Gesamtzeit, meist in Prozent angegeben.",
+      "sp": [
+        "AP2-6-4-1",
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Notfallkonzept",
+      "erklaerung": "Plan (Disaster Recovery), der festlegt, wer nach einem schweren Ausfall was in welcher Reihenfolge tut, um den Betrieb wiederherzustellen.",
+      "sp": [
+        "AP2-6-4-1"
+      ]
+    },
+    {
+      "begriff": "Groupware",
+      "erklaerung": "Software für die Zusammenarbeit im Team, z. B. gemeinsame Kalender, Kontakte, Aufgaben und E-Mail.",
+      "sp": [
+        "AP2-6-4-1"
+      ]
+    },
+    {
+      "begriff": "USV",
+      "langform": "Unterbrechungsfreie Stromversorgung",
+      "erklaerung": "Gerät mit Akku, das Stromausfälle und Spannungsschwankungen überbrückt, bis die Systeme geordnet heruntergefahren sind.",
+      "sp": [
+        "AP2-6-4-2"
+      ]
+    },
+    {
+      "begriff": "Redundanz",
+      "erklaerung": "Wichtige Teile sind mehrfach vorhanden, sodass der Ausfall eines Teils nicht den Betrieb beendet.",
+      "sp": [
+        "AP2-6-4-2"
+      ]
+    },
+    {
+      "begriff": "RAID",
+      "langform": "Redundant Array of Independent Disks",
+      "erklaerung": "Verbund mehrerer Datenträger, der je nach Level Ausfälle verkraftet und die nutzbare Kapazität bestimmt, z. B. RAID 0, 1, 5, 10.",
+      "sp": [
+        "AP2-6-4-2"
+      ]
+    },
+    {
+      "begriff": "Backup",
+      "erklaerung": "Datensicherung auf einem getrennten Medium, aus der sich frühere Datenstände wiederherstellen lassen.",
+      "sp": [
+        "AP2-6-4-2"
+      ]
+    },
+    {
+      "begriff": "Differenzielle Sicherung",
+      "erklaerung": "Sichert alle Änderungen seit der letzten Vollsicherung.",
+      "sp": [
+        "AP2-6-4-2"
+      ]
+    },
+    {
+      "begriff": "Inkrementelle Sicherung",
+      "erklaerung": "Sichert nur die Änderungen seit der letzten Sicherung, gleich welcher Art.",
+      "sp": [
+        "AP2-6-4-2"
+      ]
+    },
+    {
+      "begriff": "Monitoring",
+      "erklaerung": "Laufende Überwachung von Systemen anhand von Messwerten wie Auslastung, Antwortzeit und Erreichbarkeit.",
+      "sp": [
+        "AP2-6-5-1",
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Schwellwert",
+      "erklaerung": "Grenzwert für einen Messwert; wird er über- oder unterschritten, gibt das Monitoring eine Warnung oder einen Alarm aus.",
+      "sp": [
+        "AP2-6-5-1"
+      ]
+    },
+    {
+      "begriff": "SNMP",
+      "langform": "Simple Network Management Protocol",
+      "erklaerung": "Protokoll, mit dem Zustandswerte von Netzwerkgeräten wie Switches und Routern abgefragt werden.",
+      "sp": [
+        "AP2-6-5-1"
+      ]
+    },
+    {
+      "begriff": "S.M.A.R.T.",
+      "langform": "Self-Monitoring, Analysis and Reporting Technology",
+      "erklaerung": "Selbstüberwachung von Datenträgern, z. B. Temperatur, Betriebsstunden und defekte Sektoren, um drohende Ausfälle zu erkennen.",
+      "sp": [
+        "AP2-6-5-1"
+      ]
+    },
+    {
+      "begriff": "Systemlastanalyse",
+      "erklaerung": "Auswertung der Auslastung von Prozessor, Arbeitsspeicher, Datenträgern und Netz, um Ressourcenengpässe zu erkennen.",
+      "sp": [
+        "AP2-6-5-1"
+      ]
+    },
+    {
+      "begriff": "Predictive Maintenance",
+      "erklaerung": "Vorausschauende Wartung: Aus Messwerten wird vorhergesagt, wann ein Teil ausfällt, und es wird vorher getauscht.",
+      "sp": [
+        "AP2-6-5-1"
+      ]
+    },
+    {
+      "begriff": "SOP",
+      "langform": "Standard Operation Procedure, üblich auch Standard Operating Procedure",
+      "erklaerung": "Festgelegte Schritt-für-Schritt-Anweisung für einen wiederkehrenden Vorgang.",
+      "sp": [
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "SLA",
+      "langform": "Service Level Agreement",
+      "erklaerung": "Vereinbarung über die zugesagte Leistung eines Dienstes, z. B. Verfügbarkeit, Reaktions- und Lösungszeiten.",
+      "sp": [
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Service Level 1 bis 3",
+      "erklaerung": "Stufen der Störungsbearbeitung: Level 1 nimmt an und löst einfache Fälle, Level 2 sind Fachleute, Level 3 Spezialisten oder der Hersteller.",
+      "sp": [
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Incident Management",
+      "erklaerung": "Geregelter Umgang mit Störungen: erfassen, einordnen, beheben und im Ticketsystem dokumentieren.",
+      "sp": [
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Ticketsystem",
+      "erklaerung": "Software, in der jede Störung oder Anfrage als Ticket mit Stand, Zuständigkeit und Lösung erfasst wird.",
+      "sp": [
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Eskalation",
+      "erklaerung": "Weitergabe einer Störung an die nächste Stufe, wenn sie nicht rechtzeitig gelöst wird – fachlich an Spezialisten oder hierarchisch an Vorgesetzte.",
+      "sp": [
+        "AP2-6-5-2"
+      ]
+    },
+    {
+      "begriff": "Programmdokumentation",
+      "erklaerung": "Beschreibung eines Programms für Entwickler, z. B. Aufbau, Schnittstellen und Datenmodell.",
+      "sp": [
+        "AP2-6-5-3"
+      ]
+    },
+    {
+      "begriff": "Konfigurationsdokumentation",
+      "erklaerung": "Beschreibung, wie ein System eingerichtet ist, z. B. Einstellungen, Versionen und Abhängigkeiten.",
+      "sp": [
+        "AP2-6-5-3"
+      ]
+    },
+    {
+      "begriff": "NAS",
+      "langform": "Network Attached Storage",
+      "erklaerung": "Speichergerät im Netz, das Dateien über Protokolle wie SMB oder NFS bereitstellt.",
+      "sp": [
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "SAN",
+      "langform": "Storage Area Network",
+      "erklaerung": "Eigenes Speichernetz, das Servern Speicher blockweise wie eine lokale Festplatte bereitstellt, z. B. über Fibre Channel oder iSCSI.",
+      "sp": [
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "NFS",
+      "langform": "Network File System",
+      "erklaerung": "Protokoll für Dateifreigaben im Netz, vor allem unter Linux und Unix.",
+      "sp": [
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "iSCSI",
+      "langform": "Internet Small Computer System Interface",
+      "erklaerung": "Technik, die Blockspeicher über das normale Ethernet bzw. TCP/IP an Server anbindet.",
+      "sp": [
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "Fibre Channel",
+      "erklaerung": "Technik, die Blockspeicher über ein eigenes Hochgeschwindigkeitsnetz an Server anbindet; typisch für SANs.",
+      "sp": [
+        "AP2-6-6-1"
+      ]
+    },
+    {
+      "begriff": "On-Premises",
+      "erklaerung": "Betrieb von Hard- und Software im eigenen Haus statt beim Cloud-Anbieter.",
+      "sp": [
+        "AP2-6-6-2"
+      ]
+    },
+    {
+      "begriff": "Cloud",
+      "erklaerung": "Bereitstellung von IT-Leistungen wie Rechenleistung, Speicher oder Anwendungen über das Netz durch einen Anbieter, bezahlt nach Nutzung.",
+      "sp": [
+        "AP2-6-6-2"
+      ]
+    },
+    {
+      "begriff": "IaaS",
+      "langform": "Infrastructure as a Service",
+      "erklaerung": "Cloud-Modell, bei dem Infrastruktur wie virtuelle Server, Speicher und Netz gemietet wird; Betriebssystem und Anwendungen verwaltet der Kunde.",
+      "sp": [
+        "AP2-6-6-2"
+      ]
+    },
+    {
+      "begriff": "PaaS",
+      "langform": "Platform as a Service",
+      "erklaerung": "Cloud-Modell, bei dem eine Plattform mit Betriebssystem und Laufzeitumgebung gemietet wird, auf der der Kunde eigene Anwendungen betreibt.",
+      "sp": [
+        "AP2-6-6-2"
+      ]
+    },
+    {
+      "begriff": "SaaS",
+      "langform": "Software as a Service",
+      "erklaerung": "Cloud-Modell, bei dem eine fertige Anwendung als Dienst genutzt wird; Betrieb und Wartung übernimmt der Anbieter.",
+      "sp": [
+        "AP2-6-6-2"
+      ]
+    },
+    {
+      "begriff": "Skalierbarkeit",
+      "erklaerung": "Fähigkeit eines Systems, Leistung oder Kapazität an den Bedarf anzupassen, z. B. durch Zubuchen von Servern.",
+      "sp": [
+        "AP2-6-6-2"
+      ]
+    },
+    {
+      "begriff": "Binärpräfix",
+      "erklaerung": "Vorsilbe für Zweierpotenzen bei Datenmengen: 1 KiB = 1.024 Byte, MiB, GiB und TiB jeweils das 1.024-Fache.",
+      "sp": [
+        "AP2-6-6-3"
+      ]
+    },
+    {
+      "begriff": "Dezimalpräfix",
+      "erklaerung": "Vorsilbe für Zehnerpotenzen, z. B. k = 1.000, M = 1.000.000; üblich bei Übertragungsraten und Megapixeln.",
+      "sp": [
+        "AP2-6-6-3"
+      ]
+    },
+    {
+      "begriff": "Datenübertragungsrate",
+      "erklaerung": "Datenmenge, die pro Zeiteinheit übertragen wird, angegeben in Bit pro Sekunde, z. B. Mbit/s.",
+      "sp": [
+        "AP2-6-6-3"
+      ]
+    },
+    {
+      "begriff": "Farbtiefe",
+      "erklaerung": "Anzahl der Bit, mit der die Farbe eines Bildpunkts gespeichert wird, z. B. 24 Bit.",
+      "sp": [
+        "AP2-6-6-3"
+      ]
+    },
+    {
+      "begriff": "Megapixel",
+      "erklaerung": "Eine Million Bildpunkte; Maß für die Auflösung eines Bildes.",
+      "sp": [
+        "AP2-6-6-3"
+      ]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP2-6-1-1-K2-2",
+      "frage": "ARP wird uneinheitlich zugeordnet (Schicht 2, „zwischen 2 und 3“ oder Schicht 3; im TCP/IP-Modell Netzzugangsschicht). Welche OSI-Zuordnung erwartet der Prüfungsausschuss?"
+    },
+    {
+      "id": "AP2-6-4-2-K4-3",
+      "frage": "Die Quelle lässt offen, ob RAID-Kapazitäten zu berechnen sind (Auslegung b). Die Karten nennen die Kapazität nur als Regel; reicht das, oder braucht es eigene Rechenkarten bzw. eine Trainer-Übung?"
+    }
+  ]
+}

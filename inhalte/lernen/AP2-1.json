@@ -1,0 +1,1668 @@
+{
+ "paket": "AP2-1",
+ "bloecke": {
+  "AP2-1-1": {
+   "satz": "Wie ein Softwareprojekt vorgeht, Anforderungen festhält und Machbarkeit, Risiken und Termine plant."
+  },
+  "AP2-1-2": {
+   "satz": "Kundenbeziehungen rechtlich einordnen, Daten passend präsentieren und englische Fachtexte auswerten."
+  },
+  "AP2-1-3": {
+   "satz": "Qualitätsmerkmale von Software kennen und fachliche Anforderungen schrittweise in einen Entwurf überführen."
+  },
+  "AP2-1-4": {
+   "satz": "Bewährte Entwurfs- und Architekturmuster erklären und für eine Situation das passende auswählen."
+  },
+  "AP2-1-5": {
+   "satz": "Benutzeroberflächen ergonomisch und barrierefrei gestalten, beurteilen und als Mockup skizzieren."
+  }
+ },
+ "stichpunkte": {
+  "AP2-1-1-1": {
+   "ziel": "Klassische und agile Vorgehensmodelle unterscheiden und für ein Projekt ein passendes Modell begründet empfehlen.",
+   "punkte": [
+    "Klassisch: feste Planung, früh festgelegte Anforderungen; agil: schrittweise Planung, laufende Anpassung",
+    "Wasserfallmodell, Spiralmodell und V-Modell in Grundzügen beschreiben",
+    "V-Modell: Jeder Entwurfsstufe steht eine Teststufe gegenüber",
+    "Spiralmodell: Phasen mehrfach durchlaufen, in jeder Runde Risiken bewerten",
+    "Scrum: Sprints, Rollen und regelmäßige Abstimmung"
+   ]
+  },
+  "AP2-1-1-2": {
+   "ziel": "Anforderungen aus einer Situationsbeschreibung herausarbeiten, einordnen und Lasten- und Pflichtenheft gliedern.",
+   "punkte": [
+    "Anforderungen aus einem Szenario herausarbeiten und knapp formulieren",
+    "Funktionale und nicht funktionale Anforderungen unterscheiden",
+    "Gliederungspunkte von Ausgangslage und Ziel bis zu den Abnahmekriterien nennen",
+    "Pflichtenheft setzt die Anforderungen des Lastenhefts in eine Lösungsbeschreibung um"
+   ]
+  },
+  "AP2-1-1-3": {
+   "ziel": "Machbarkeit, Risiken, Stakeholder und Erfolg eines Softwareprojekts mit Bezug zum Szenario beschreiben.",
+   "punkte": [
+    "Machbarkeit: technisch, wirtschaftlich, zeitlich, organisatorisch",
+    "Zu einem Problem das Projektrisiko und eine Gegenmaßnahme beschreiben",
+    "Projekterfolg: Plan und Ergebnis bei Zielen, Terminen und Kosten vergleichen",
+    "Stakeholder nennen, zu einem Befürchtung und Maßnahme beschreiben",
+    "Meilenstein, Stakeholder, Lessons Learned und Change Request erläutern"
+   ]
+  },
+  "AP2-1-1-4": {
+   "ziel": "Einen Netzplan aus einer Textbeschreibung erweitern, alle Zeiten und Puffer berechnen und den kritischen Pfad angeben.",
+   "punkte": [
+    "Vorgänge, Dauern und Abhängigkeiten aus dem Text lesen, fehlende Knoten und Pfeile ergänzen",
+    "FAZ, FEZ, SAZ, SEZ, Gesamtpuffer und freien Puffer berechnen, auch bei parallelen Pfaden",
+    "Den kritischen Pfad angeben",
+    "Gesamtpuffer schont das Projektende, freier Puffer den frühesten Beginn des Nachfolgers"
+   ]
+  },
+  "AP2-1-2-1": {
+   "ziel": "Erklären, was BGB, HGB und UWG regeln, was AGB sind und was Compliance und CRM bedeuten.",
+   "punkte": [
+    "BGB: allgemeines Vertragsrecht; HGB: besondere Regeln für Kaufleute",
+    "UWG: schützt vor unlauterem Wettbewerb, z. B. irreführender Werbung",
+    "AGB: vorformulierte Vertragsbedingungen, geregelt im BGB",
+    "Compliance: Einhalten von Gesetzen und unternehmensinternen Regeln",
+    "CRM: Kundenbeziehungen gestalten, CRM-System als Werkzeug dafür"
+   ]
+  },
+  "AP2-1-2-2": {
+   "ziel": "Für Daten eine passende Diagrammart wählen, Werkzeuge zuordnen und Präsentationen einheitlich und übersichtlich gestalten.",
+   "punkte": [
+    "Säulen oder Balken für Vergleiche, Linie für Verläufe über die Zeit, Kreis für Anteile",
+    "Für einen Datenbestand die Diagrammart wählen und begründen",
+    "Einsatz von Tabellenkalkulation, Präsentations- und Multimedia-Programmen nennen",
+    "Corporate Identity: einheitlich mit Logo, Farben und Schrift des Unternehmens",
+    "Eine Aussage je Darstellung, Achsen beschriften, sparsam mit Farben"
+   ]
+  },
+  "AP2-1-2-3": {
+   "ziel": "Englische Fachtexte auswerten, Aussagen und Merkmale auf Deutsch wiedergeben und auf ein Szenario beziehen.",
+   "punkte": [
+    "Hauptaussage herausarbeiten und auf Deutsch erläutern",
+    "Merkmale oder Anforderungen gezielt aus dem Text nennen",
+    "Mit Angaben aus dem Text die Eignung einer Technik für ein Projekt begründen",
+    "Englische Testbegriffe wie statement, branch und path coverage verstehen",
+    "Unbekannte Wörter aus dem Zusammenhang erschließen"
+   ]
+  },
+  "AP2-1-3-1": {
+   "ziel": "Qualitätsmerkmale von Software beschreiben, Anforderungen zuordnen und prüfbare Qualitätsanforderungen formulieren.",
+   "punkte": [
+    "Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Wartbarkeit, Änderbarkeit, Übertragbarkeit",
+    "Zuverlässigkeit: Leistung unter festgelegten Bedingungen und Zeitraum, auch bei Fehlern",
+    "Norm ISO/IEC 25010 mit weiteren Merkmalen wie Sicherheit, Kompatibilität; älter: ISO/IEC 9126",
+    "Beschriebene Anforderungen dem passenden Merkmal zuordnen",
+    "Prüfbare Anforderung formulieren, z. B. höchste Antwortzeit für Effizienz"
+   ]
+  },
+  "AP2-1-3-2": {
+   "ziel": "Top-down, Bottom-up und Modularisierung erklären und aus einer fachlichen Beschreibung Daten, Klassen und Schnittstellen ableiten.",
+   "punkte": [
+    "Top-down: vom Ganzen zu den Teilen; Bottom-up: aus fertigen Bausteinen zum Ganzen",
+    "Modularisierung: Wiederverwendung, getrenntes Testen, Arbeitsteilung, leichtere Wartung",
+    "Aus einer fachlichen Beschreibung Daten, Klassen und Schnittstellen ableiten",
+    "OOA: was fachlich geleistet wird; OOD: wie es mit Klassen umgesetzt wird"
+   ]
+  },
+  "AP2-1-4-1": {
+   "ziel": "Zweck und Aufbau von Observer, Singleton, Factory und MVC erklären und für eine Situation das passende Muster begründet wählen.",
+   "punkte": [
+    "Vorteile: bewährte Lösungen, gemeinsame Sprache im Team",
+    "Kategorien: Erzeugungs-, Struktur- und Verhaltensmuster",
+    "Observer: Beobachter werden bei Zustandsänderung automatisch benachrichtigt",
+    "Singleton: genau ein Objekt; Factory: Erzeugung an eigene Stelle ausgelagert",
+    "MVC: Model mit Daten und Fachlogik, View stellt dar, Controller nimmt Eingaben an"
+   ]
+  },
+  "AP2-1-5-1": {
+   "ziel": "Anforderungen an ergonomische und barrierefreie Software benennen, Maßnahmen angeben und Oberflächen begründet beurteilen.",
+   "punkte": [
+    "Anforderungen an Barrierefreiheit mit je einer Maßnahme nennen",
+    "Kontrast, skalierbare Schrift, Tastaturbedienung, Alternativtexte, nicht allein über Farbe",
+    "Mängel eines Entwurfs beschreiben: Anordnung, überflüssige Elemente, Beschriftung",
+    "Usability: Bedienbarkeit; User Experience: gesamtes Erlebnis rund um die Nutzung",
+    "Dialoggestaltung: aufgabenangemessen, selbsterklärend, erwartungskonform, fehlertolerant, steuerbar"
+   ]
+  },
+  "AP2-1-5-2": {
+   "ziel": "Mockups von Bildschirmseiten skizzieren, ergänzen und verbessern sowie Prototyping und seine Vorteile erklären.",
+   "punkte": [
+    "Mockup mit allen verlangten Elementen skizzieren: Anzeigen, Eingaben, Auswahl, Schaltflächen",
+    "Begonnenes Mockup nach Textvorgaben ergänzen, z. B. um Diagramm und Datumsauswahl",
+    "Gegebenen Entwurf verbessern und erkannte Mängel beheben",
+    "Vorteile: frühe Rückmeldung, Missverständnisse früh sichtbar, Änderungen günstig",
+    "Prototyping erklären und sagen, wann es in der Konzeption sinnvoll ist"
+   ]
+  }
+ },
+ "karten": [
+  {
+   "id": "AP2-1-1-1-K1-1",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K1",
+   "vorne": "Welche zwei Kategorien von Vorgehensmodellen unterscheidet man, und welche Modelle gehören beispielhaft dazu?",
+   "hinten": "- klassische (plangetriebene) Modelle, z. B. Wasserfallmodell, V-Modell\n- agile Modelle, z. B. Scrum"
+  },
+  {
+   "id": "AP2-1-1-1-K1-2",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K1",
+   "vorne": "Was kennzeichnet ein klassisches, was ein agiles Vorgehensmodell?",
+   "hinten": "- klassisch: Das Projekt wird zu Beginn vollständig geplant und in festen, aufeinanderfolgenden Phasen durchgeführt\n- agil: Das Projekt wird in kurzen Zyklen schrittweise geplant, umgesetzt und laufend angepasst"
+  },
+  {
+   "id": "AP2-1-1-1-K2-1",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K2",
+   "vorne": "Wie unterscheiden sich klassisches und agiles Vorgehen bei Planung und Anforderungen?",
+   "hinten": "- klassisch: feste Planung, Anforderungen werden früh festgelegt\n- agil: schrittweise Planung, Anforderungen werden laufend an Änderungen angepasst"
+  },
+  {
+   "id": "AP2-1-1-1-K2-2",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K2",
+   "vorne": "Welcher Nachteil des klassischen Vorgehens zeigt sich, wenn sich Anforderungen spät im Projekt ändern?",
+   "hinten": "Die Anforderungen sind früh festgelegt; späte Änderungen erfordern Umplanung und das Überarbeiten bereits abgeschlossener Phasen und sind deshalb aufwendig und teuer."
+  },
+  {
+   "id": "AP2-1-1-1-K3-1",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K3",
+   "vorne": "Wie läuft das Wasserfallmodell ab?",
+   "hinten": "Die Phasen (z. B. Analyse, Entwurf, Implementierung, Test, Einführung) werden nacheinander durchlaufen. Eine Phase beginnt erst, wenn die vorige abgeschlossen ist; ihr Ergebnis ist die Grundlage der nächsten."
+  },
+  {
+   "id": "AP2-1-1-1-K3-2",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K3",
+   "vorne": "Wie ist das V-Modell aufgebaut?",
+   "hinten": "- linker Ast: Entwurfsstufen vom Groben zum Feinen (Anforderungen bis Komponentenentwurf)\n- unten: Implementierung\n- rechter Ast: Teststufen vom Komponententest bis zum Abnahmetest\nJede Teststufe prüft das Ergebnis der gegenüberliegenden Entwurfsstufe."
+  },
+  {
+   "id": "AP2-1-1-1-K3-3",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K3",
+   "vorne": "Wie läuft das Spiralmodell grundsätzlich ab?",
+   "hinten": "Das Projekt durchläuft die Phasen in mehreren Runden. In jeder Runde: Ziele festlegen, Risiken bewerten und verringern (z. B. mit Prototypen), entwickeln und prüfen, nächste Runde planen. Das Produkt wächst von Runde zu Runde."
+  },
+  {
+   "id": "AP2-1-1-1-K4-1",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K4",
+   "vorne": "Welches Vorgehensmodell stellt jeder Entwurfsstufe eine eigene Teststufe gegenüber?",
+   "hinten": "Das V-Modell."
+  },
+  {
+   "id": "AP2-1-1-1-K4-2",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K4",
+   "vorne": "Welches Vorgehensmodell durchläuft die Phasen mehrfach und bewertet in jeder Runde die Risiken?",
+   "hinten": "Das Spiralmodell."
+  },
+  {
+   "id": "AP2-1-1-1-K4-3",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K4",
+   "vorne": "Welche Teststufe steht im V-Modell der Anforderungsdefinition gegenüber?",
+   "hinten": "Der Abnahmetest: Er prüft, ob das fertige System die Anforderungen des Auftraggebers erfüllt."
+  },
+  {
+   "id": "AP2-1-1-1-K5-1",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K5",
+   "vorne": "Was ist ein Sprint in Scrum?",
+   "hinten": "Ein fester, kurzer Zeitabschnitt (höchstens ein Monat, oft 2–4 Wochen), in dem das Team ein nutzbares Zwischenergebnis (Inkrement) fertigstellt."
+  },
+  {
+   "id": "AP2-1-1-1-K5-2",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K5",
+   "vorne": "Welche Rollen gibt es in Scrum, und was ist jeweils ihre Aufgabe?",
+   "hinten": "- Product Owner: verantwortet das Product Backlog und priorisiert die Anforderungen\n- Scrum Master: sorgt dafür, dass Scrum eingehalten wird, beseitigt Hindernisse\n- Developers (Entwickler): setzen die Anforderungen im Sprint in ein Inkrement um"
+  },
+  {
+   "id": "AP2-1-1-1-K5-3",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K5",
+   "vorne": "Welche regelmäßigen Abstimmungen (Events) gibt es in Scrum?",
+   "hinten": "- Sprint Planning: Sprint planen\n- Daily Scrum: tägliche kurze Abstimmung des Teams (höchstens 15 Minuten)\n- Sprint Review: Ergebnis mit den Stakeholdern prüfen\n- Sprint Retrospective: Zusammenarbeit verbessern"
+  },
+  {
+   "id": "AP2-1-1-1-K6-1",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K6",
+   "vorne": "Ein Kunde kann seine Anforderungen zu Beginn nur grob beschreiben und erwartet häufige Änderungen. Welches Vorgehen empfiehlst du, und warum?",
+   "hinten": "Agiles Vorgehen, z. B. Scrum: Es plant schrittweise, liefert in kurzen Sprints Zwischenergebnisse für Rückmeldungen und passt die Anforderungen laufend an."
+  },
+  {
+   "id": "AP2-1-1-1-K6-2",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K6",
+   "vorne": "Die Anforderungen sind vollständig bekannt und stabil, Termine und Kosten sollen von Beginn an fest geplant werden. Welches Vorgehen passt, und warum?",
+   "hinten": "Ein klassisches Modell, z. B. Wasserfall- oder V-Modell: Die Anforderungen lassen sich früh festlegen, und das Projekt ist von Anfang an durchplanbar."
+  },
+  {
+   "id": "AP2-1-1-1-K6-3",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K6",
+   "vorne": "Ein großes Projekt setzt neue, wenig erprobte Technik ein und birgt hohe Risiken. Welches Vorgehensmodell passt, und warum?",
+   "hinten": "Das Spiralmodell: Es bewertet in jeder Runde die Risiken und kann sie früh verringern, z. B. durch Prototypen."
+  },
+  {
+   "id": "AP2-1-1-1-K6-4",
+   "sp": "AP2-1-1-1",
+   "k": "AP2-1-1-1-K6",
+   "vorne": "Für eine sicherheitskritische Software soll jede Entwurfsstufe nachweisbar getestet werden. Welches Vorgehensmodell passt, und warum?",
+   "hinten": "Das V-Modell: Jeder Entwurfsstufe steht eine Teststufe gegenüber, die ihr Ergebnis prüft."
+  },
+  {
+   "id": "AP2-1-1-2-K1-1",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K1",
+   "vorne": "Welche Eigenschaften soll eine aus einem Szenario formulierte Anforderung haben?",
+   "hinten": "- eindeutig: nur eine Deutung möglich\n- prüfbar: messbare Angaben statt „schnell“ oder „einfach“\n- eine Anforderung je Satz\n- beschreibt, was gefordert ist, nicht wie es technisch umgesetzt wird"
+  },
+  {
+   "id": "AP2-1-1-2-K1-2",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K1",
+   "vorne": "Wie formuliert man eine Anforderung knapp und verbindlich?",
+   "hinten": "Als vollständiger Satz mit Subjekt und Verpflichtung, z. B. „Das System muss …“ bzw. „Der Nutzer muss … können“, ergänzt um messbare Angaben, wo nötig."
+  },
+  {
+   "id": "AP2-1-1-2-K2-1",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K2",
+   "vorne": "Worin unterscheiden sich funktionale und nicht funktionale Anforderungen?",
+   "hinten": "- funktional: was das System tun soll (Funktionen, Daten, Verhalten)\n- nicht funktional: wie gut bzw. unter welchen Bedingungen es das tun soll (z. B. Antwortzeit, Sicherheit, Bedienbarkeit, Rahmenbedingungen)"
+  },
+  {
+   "id": "AP2-1-1-2-K2-2",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K2",
+   "vorne": "„Kunden können ihre bisherigen Bestellungen in einer Liste einsehen.“ – Funktionale oder nicht funktionale Anforderung?",
+   "hinten": "Funktional: Sie beschreibt eine Funktion des Systems."
+  },
+  {
+   "id": "AP2-1-1-2-K2-3",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K2",
+   "vorne": "„Die Bestellübersicht wird in höchstens 2 Sekunden angezeigt.“ – Funktionale oder nicht funktionale Anforderung?",
+   "hinten": "Nicht funktional: Sie beschreibt eine Qualitätseigenschaft (Antwortzeit, Effizienz), keine Funktion."
+  },
+  {
+   "id": "AP2-1-1-2-K3-1",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K3",
+   "vorne": "Nenne typische Gliederungspunkte eines Lasten- bzw. Pflichtenhefts.",
+   "hinten": "- Ausgangslage und Ziel\n- Produkteinsatz\n- funktionale Anforderungen\n- Qualitätsanforderungen\n- Rahmenbedingungen\n- Abnahmekriterien"
+  },
+  {
+   "id": "AP2-1-1-2-K3-2",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K3",
+   "vorne": "In welchem Gliederungspunkt eines Lasten- bzw. Pflichtenhefts steht, woran geprüft wird, ob das gelieferte Produkt die Anforderungen erfüllt?",
+   "hinten": "In den Abnahmekriterien."
+  },
+  {
+   "id": "AP2-1-1-2-K3-3",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K3",
+   "vorne": "Was gehört in den Gliederungspunkt „Rahmenbedingungen“?",
+   "hinten": "Vorgaben, die die Lösung einschränken, z. B. vorhandene Hard- und Software, Schnittstellen zu bestehenden Systemen, gesetzliche Vorgaben, Termine und Budget."
+  },
+  {
+   "id": "AP2-1-1-2-K4-1",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K4",
+   "vorne": "Wer erstellt das Lastenheft, wer das Pflichtenheft, und was beschreibt es jeweils?",
+   "hinten": "- Lastenheft: Auftraggeber; beschreibt, was und wofür (die Anforderungen)\n- Pflichtenheft: Auftragnehmer; beschreibt, wie und womit die Anforderungen umgesetzt werden (Lösungsbeschreibung)"
+  },
+  {
+   "id": "AP2-1-1-2-K4-2",
+   "sp": "AP2-1-1-2",
+   "k": "AP2-1-1-2-K4",
+   "vorne": "Wie setzt das Pflichtenheft die Anforderungen des Lastenhefts um?",
+   "hinten": "Es greift jede Anforderung des Lastenhefts auf und beschreibt, wie sie technisch gelöst wird. Nach Zustimmung des Auftraggebers ist es meist Grundlage des Vertrags und der Abnahme."
+  },
+  {
+   "id": "AP2-1-1-3-K1-1",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K1",
+   "vorne": "Nenne vier Kriterien einer Machbarkeitsanalyse.",
+   "hinten": "- technische Machbarkeit\n- wirtschaftliche Machbarkeit\n- zeitliche Machbarkeit\n- organisatorische Machbarkeit"
+  },
+  {
+   "id": "AP2-1-1-3-K1-2",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K1",
+   "vorne": "Was wird bei der technischen Machbarkeit geprüft?",
+   "hinten": "Ob sich das Vorhaben mit vorhandener oder beschaffbarer Technik (Hardware, Software, Schnittstellen) und dem verfügbaren Fachwissen umsetzen lässt."
+  },
+  {
+   "id": "AP2-1-1-3-K1-3",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K1",
+   "vorne": "Was wird bei der wirtschaftlichen Machbarkeit geprüft?",
+   "hinten": "Ob sich das Projekt lohnt: Die Kosten werden dem erwarteten Nutzen gegenübergestellt, und es wird geprüft, ob das Budget reicht."
+  },
+  {
+   "id": "AP2-1-1-3-K1-4",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K1",
+   "vorne": "Was prüfen die zeitliche und die organisatorische Machbarkeit?",
+   "hinten": "- zeitlich: ob das Projekt im vorgegebenen Zeitrahmen fertig werden kann\n- organisatorisch: ob Personal, Zuständigkeiten und Abläufe im Unternehmen die Umsetzung und Einführung zulassen"
+  },
+  {
+   "id": "AP2-1-1-3-K2-1",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K2",
+   "vorne": "Wie beschreibt man zu einem Problem im Projekt das Risiko und die Gegenmaßnahme?",
+   "hinten": "- Risiko: was durch das Problem eintreten kann und welche Folge das für das Projekt hat (z. B. Verzug, Mehrkosten)\n- Gegenmaßnahme: was man tut, um den Eintritt oder die Folgen zu verringern"
+  },
+  {
+   "id": "AP2-1-1-3-K2-2",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K2",
+   "vorne": "Problem: Nur ein Entwickler kennt die eingesetzte Schnittstelle. Welches Risiko besteht, und welche Gegenmaßnahme passt?",
+   "hinten": "Risiko: Fällt er aus (Krankheit, Kündigung), geht das Wissen verloren und das Projekt verzögert sich. Gegenmaßnahme: Wissen dokumentieren und auf weitere Teammitglieder verteilen, z. B. durch Einarbeitung oder Pair Programming."
+  },
+  {
+   "id": "AP2-1-1-3-K2-3",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K2",
+   "vorne": "Problem: Der Kunde ändert während des Projekts häufig seine Anforderungen. Welches Risiko besteht, und welche Gegenmaßnahme passt?",
+   "hinten": "Risiko: Termine und Budget werden überschritten. Gegenmaßnahme: Änderungen nur über ein geregeltes Verfahren (Change Requests) bewerten und freigeben oder agil vorgehen."
+  },
+  {
+   "id": "AP2-1-1-3-K3-1",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K3",
+   "vorne": "Woran lässt sich nach Projektende prüfen, ob ein Projekt erfolgreich war?",
+   "hinten": "Am Vergleich von Plan und Ergebnis: Wurden die Ziele erreicht, die Termine eingehalten und die Kosten im Budget gehalten? Ergänzend z. B. an der Abnahme und der Zufriedenheit von Kunde und Nutzern."
+  },
+  {
+   "id": "AP2-1-1-3-K4-1",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K4",
+   "vorne": "Nenne typische Stakeholder eines Softwareprojekts.",
+   "hinten": "- Auftraggeber bzw. Kunde und Geschäftsführung\n- spätere Nutzer (Mitarbeiter)\n- Projektleitung und Entwicklerteam\n- Betriebsrat\n- Datenschutzbeauftragter, IT-Betrieb\n- ggf. Lieferanten, Behörden"
+  },
+  {
+   "id": "AP2-1-1-3-K4-2",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K4",
+   "vorne": "Stakeholder: die Mitarbeiter, die die neue Software nutzen sollen. Nenne eine typische Befürchtung und eine passende Maßnahme.",
+   "hinten": "Befürchtung: z. B. Überforderung durch das neue System oder Mehrarbeit. Maßnahme: früh informieren und einbeziehen (z. B. bei Tests und Rückmeldungen) und Schulungen anbieten."
+  },
+  {
+   "id": "AP2-1-1-3-K4-3",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K4",
+   "vorne": "Stakeholder: der Betriebsrat. Nenne eine typische Befürchtung und eine passende Maßnahme.",
+   "hinten": "Befürchtung: Die Software ermöglicht eine Leistungs- oder Verhaltenskontrolle der Mitarbeiter. Maßnahme: den Betriebsrat früh einbeziehen, Auswertungen begrenzen und eine Betriebsvereinbarung abschließen."
+  },
+  {
+   "id": "AP2-1-1-3-K5-1",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K5",
+   "vorne": "Was ist ein Meilenstein?",
+   "hinten": "Ein festgelegter Zeitpunkt im Projekt, zu dem ein wichtiges Zwischenergebnis vorliegen muss und geprüft wird. Ein Meilenstein hat keine Dauer."
+  },
+  {
+   "id": "AP2-1-1-3-K5-2",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K5",
+   "vorne": "Was ist ein Stakeholder?",
+   "hinten": "Eine Person oder Gruppe, die an einem Projekt beteiligt oder von ihm betroffen ist oder ein Interesse an seinem Verlauf oder Ergebnis hat."
+  },
+  {
+   "id": "AP2-1-1-3-K5-3",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K5",
+   "vorne": "Was versteht man unter Lessons Learned?",
+   "hinten": "Das Festhalten der Erfahrungen aus einem Projekt (was lief gut, was schlecht), meist beim Projektabschluss, damit spätere Projekte davon profitieren."
+  },
+  {
+   "id": "AP2-1-1-3-K5-4",
+   "sp": "AP2-1-1-3",
+   "k": "AP2-1-1-3-K5",
+   "vorne": "Was ist ein Change Request?",
+   "hinten": "Ein formaler Antrag, bereits vereinbarte Anforderungen oder Projektinhalte zu ändern. Er wird auf Aufwand, Kosten und Termine geprüft und erst nach Freigabe umgesetzt."
+  },
+  {
+   "id": "AP2-1-1-4-K1-1",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K1",
+   "vorne": "Woran erkennst du in einer Textbeschreibung die Abhängigkeiten zwischen Vorgängen, und wie stellst du sie im Netzplan dar?",
+   "hinten": "An Formulierungen wie „nach Abschluss von …“, „erst wenn … fertig ist“, „setzt … voraus“. Jede Abhängigkeit wird ein Pfeil vom Vorgänger zum Nachfolger; Vorgänge ohne gegenseitige Abhängigkeit können parallel laufen."
+  },
+  {
+   "id": "AP2-1-1-4-K1-2",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K1",
+   "vorne": "Welche Angaben enthält ein Knoten im Vorgangsknotennetzplan?",
+   "hinten": "Nummer und Bezeichnung des Vorgangs, Dauer, FAZ, FEZ, SAZ, SEZ, Gesamtpuffer (GP) und freien Puffer (FP)."
+  },
+  {
+   "id": "AP2-1-1-4-K2-1",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K2",
+   "vorne": "Wie berechnet man FAZ und FEZ (Vorwärtsrechnung)?",
+   "hinten": "- `FEZ = FAZ + Dauer`\n- FAZ des ersten Vorgangs = Projektbeginn (meist 0)\n- FAZ eines Nachfolgers = FEZ des Vorgängers; bei mehreren Vorgängern das größte FEZ\nAlle Formeln gelten für die übliche Zählung ab 0."
+  },
+  {
+   "id": "AP2-1-1-4-K2-2",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K2",
+   "vorne": "Wie berechnet man SEZ und SAZ (Rückwärtsrechnung)?",
+   "hinten": "- `SAZ = SEZ − Dauer`\n- SEZ des letzten Vorgangs = sein FEZ (Projektende)\n- SEZ eines Vorgängers = SAZ des Nachfolgers; bei mehreren Nachfolgern der kleinste SAZ"
+  },
+  {
+   "id": "AP2-1-1-4-K2-3",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K2",
+   "vorne": "Wie berechnet man den Gesamtpuffer eines Vorgangs?",
+   "hinten": "`GP = SAZ − FAZ` (gleichwertig: `GP = SEZ − FEZ`)"
+  },
+  {
+   "id": "AP2-1-1-4-K2-4",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K2",
+   "vorne": "Wie berechnet man den freien Puffer eines Vorgangs?",
+   "hinten": "`FP = FAZ des Nachfolgers − FEZ des Vorgangs`; bei mehreren Nachfolgern mit dem kleinsten FAZ."
+  },
+  {
+   "id": "AP2-1-1-4-K3-1",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K3",
+   "vorne": "Was ist der kritische Pfad, und woran erkennt man ihn im berechneten Netzplan?",
+   "hinten": "Die durchgehende Folge von Vorgängen vom Start bis zum Ende, deren Gesamtpuffer 0 ist. Er ist der längste Weg und bestimmt die Projektdauer; jede Verzögerung darauf verschiebt das Projektende."
+  },
+  {
+   "id": "AP2-1-1-4-K4-1",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K4",
+   "vorne": "Worin unterscheiden sich Gesamtpuffer und freier Puffer?",
+   "hinten": "- Gesamtpuffer: Zeit, um die sich ein Vorgang verschieben lässt, ohne das Projektende zu verschieben\n- freier Puffer: Zeit, um die sich ein Vorgang verschieben lässt, ohne den frühesten Beginn des Nachfolgers zu verschieben"
+  },
+  {
+   "id": "AP2-1-1-4-K4-2",
+   "sp": "AP2-1-1-4",
+   "k": "AP2-1-1-4-K4",
+   "vorne": "Ein Vorgang hat einen Gesamtpuffer von 3 Tagen und einen freien Puffer von 0. Was bedeutet eine Verzögerung um 2 Tage?",
+   "hinten": "Das Projektende verschiebt sich nicht, aber der früheste Beginn des Nachfolgers verschiebt sich um 2 Tage; dabei wird Puffer der nachfolgenden Vorgänge verbraucht."
+  },
+  {
+   "id": "AP2-1-2-1-K1-1",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K1",
+   "vorne": "Was regeln das BGB und das HGB?",
+   "hinten": "- BGB (Bürgerliches Gesetzbuch): das allgemeine Privatrecht, darunter das allgemeine Vertragsrecht, z. B. Kauf-, Werk- und Dienstvertrag\n- HGB (Handelsgesetzbuch): besondere Regeln für Kaufleute, ergänzend zum BGB"
+  },
+  {
+   "id": "AP2-1-2-1-K1-2",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K1",
+   "vorne": "Welches Gesetz enthält die besonderen Regeln für Kaufleute?",
+   "hinten": "Das Handelsgesetzbuch (HGB)."
+  },
+  {
+   "id": "AP2-1-2-1-K2-1",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K2",
+   "vorne": "Wovor schützt das Gesetz gegen den unlauteren Wettbewerb (UWG)?",
+   "hinten": "Es schützt Mitbewerber, Verbraucher und sonstige Marktteilnehmer vor unlauteren geschäftlichen Handlungen und zugleich das Interesse der Allgemeinheit an einem unverfälschten Wettbewerb."
+  },
+  {
+   "id": "AP2-1-2-1-K3-1",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K3",
+   "vorne": "Nenne Beispiele für unlauteres Verhalten im Sinne des UWG.",
+   "hinten": "- irreführende Werbung, z. B. falsche Angaben zu Preis oder Eigenschaften\n- unzumutbare Belästigung, z. B. Werbe-E-Mails ohne Einwilligung\n- Herabsetzen von Mitbewerbern\n- aggressive geschäftliche Handlungen, z. B. Druck ausüben"
+  },
+  {
+   "id": "AP2-1-2-1-K3-2",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K3",
+   "vorne": "Ein Händler wirbt mit „heute 50 % reduziert“, obwohl der Preis seit Monaten unverändert ist. Wie nennt man dieses unlautere Verhalten?",
+   "hinten": "Irreführende Werbung."
+  },
+  {
+   "id": "AP2-1-2-1-K4-1",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K4",
+   "vorne": "Was sind Allgemeine Geschäftsbedingungen (AGB)?",
+   "hinten": "Für eine Vielzahl von Verträgen vorformulierte Vertragsbedingungen, die eine Vertragspartei (der Verwender) der anderen beim Vertragsschluss stellt."
+  },
+  {
+   "id": "AP2-1-2-1-K4-2",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K4",
+   "vorne": "In welchem Gesetz sind die Regeln zu AGB heute enthalten?",
+   "hinten": "Im BGB (§§ 305–310). Das frühere eigene AGB-Gesetz wurde 2002 in das BGB übernommen."
+  },
+  {
+   "id": "AP2-1-2-1-K4-3",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K4",
+   "vorne": "Wozu verwenden Unternehmen AGB?",
+   "hinten": "Damit sie nicht jeden Vertrag einzeln aushandeln müssen: Sie legen einheitliche Bedingungen für viele Verträge fest, z. B. zu Lieferung und Zahlung."
+  },
+  {
+   "id": "AP2-1-2-1-K5-1",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K5",
+   "vorne": "Was bedeutet Compliance?",
+   "hinten": "Regelkonformität: das Einhalten von Gesetzen und unternehmensinternen Regeln (z. B. Richtlinien, Verhaltenskodex) durch das Unternehmen und seine Mitarbeiter."
+  },
+  {
+   "id": "AP2-1-2-1-K5-2",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K5",
+   "vorne": "Eine interne Richtlinie verbietet Vertriebsmitarbeitern, Geschenke über einem bestimmten Wert anzunehmen. Zu welchem Begriff gehört diese Regel?",
+   "hinten": "Compliance: Es ist eine unternehmensinterne Regel, deren Einhaltung zur Regelkonformität gehört."
+  },
+  {
+   "id": "AP2-1-2-1-K6-1",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K6",
+   "vorne": "Was ist Customer Relationship Management (CRM)?",
+   "hinten": "Die systematische Gestaltung und Pflege der Beziehungen eines Unternehmens zu seinen Kunden mit dem Ziel, Kunden zu gewinnen und dauerhaft zu binden."
+  },
+  {
+   "id": "AP2-1-2-1-K6-2",
+   "sp": "AP2-1-2-1",
+   "k": "AP2-1-2-1-K6",
+   "vorne": "Wozu dient ein CRM-System?",
+   "hinten": "Es speichert Kundendaten und alle Kontakte (Anfragen, Angebote, Aufträge, Beschwerden) zentral, damit Vertrieb, Marketing und Service einheitlich darauf zugreifen und Kunden gezielt betreuen können."
+  },
+  {
+   "id": "AP2-1-2-2-K1-1",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K1",
+   "vorne": "Die monatlichen Umsätze eines Jahres sollen als Entwicklung dargestellt werden. Welche Diagrammart passt, und warum?",
+   "hinten": "Ein Liniendiagramm: Es zeigt Verläufe über die Zeit."
+  },
+  {
+   "id": "AP2-1-2-2-K1-2",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K1",
+   "vorne": "Die Marktanteile von fünf Anbietern (zusammen 100 %) sollen dargestellt werden. Welche Diagrammart passt, und warum?",
+   "hinten": "Ein Kreisdiagramm: Es zeigt Anteile an einem Ganzen."
+  },
+  {
+   "id": "AP2-1-2-2-K1-3",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K1",
+   "vorne": "Die Zahl der Supportanfragen soll zwischen fünf Abteilungen verglichen werden. Welche Diagrammart passt, und warum?",
+   "hinten": "Ein Säulen- oder Balkendiagramm: Es eignet sich für den Vergleich von Werten."
+  },
+  {
+   "id": "AP2-1-2-2-K2-1",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K2",
+   "vorne": "Nenne die Faustregeln zur Wahl der Diagrammart.",
+   "hinten": "- Säulen oder Balken: Vergleiche\n- Linie: Verläufe über die Zeit\n- Kreis: Anteile an einem Ganzen"
+  },
+  {
+   "id": "AP2-1-2-2-K2-2",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K2",
+   "vorne": "Warum ist ein Kreisdiagramm für die Umsatzentwicklung über zwölf Monate ungeeignet?",
+   "hinten": "Ein Kreis zeigt Anteile an einem Ganzen, keinen zeitlichen Verlauf. Für Verläufe passt ein Liniendiagramm."
+  },
+  {
+   "id": "AP2-1-2-2-K3-1",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K3",
+   "vorne": "Wofür setzt man eine Tabellenkalkulation ein?",
+   "hinten": "Zum Erfassen, Berechnen und Auswerten von Daten in Tabellen (Formeln, Funktionen, Sortieren, Filtern) und zum Erstellen von Diagrammen aus diesen Daten."
+  },
+  {
+   "id": "AP2-1-2-2-K3-2",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K3",
+   "vorne": "Wofür setzt man ein Präsentationsprogramm ein, wofür Programme zum Erstellen multimedialer Inhalte?",
+   "hinten": "- Präsentationsprogramm: Folien mit Text, Diagrammen und Bildern für einen Vortrag gestalten und vorführen\n- Multimedia-Programme: Bilder, Audio, Video oder Animationen erstellen und bearbeiten"
+  },
+  {
+   "id": "AP2-1-2-2-K4-1",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K4",
+   "vorne": "Was bedeutet Corporate Identity für eine Präsentation?",
+   "hinten": "Die Präsentation zeigt das einheitliche Erscheinungsbild des Unternehmens: Logo, Unternehmensfarben und -schrift, meist über eine Folienvorlage. (Der sichtbare Teil der CI heißt genau genommen Corporate Design.)"
+  },
+  {
+   "id": "AP2-1-2-2-K4-2",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K4",
+   "vorne": "Warum soll eine Präsentation die Corporate Identity des Unternehmens einhalten?",
+   "hinten": "Sie wirkt einheitlich und professionell, und das Unternehmen wird sofort wiedererkannt."
+  },
+  {
+   "id": "AP2-1-2-2-K5-1",
+   "sp": "AP2-1-2-2",
+   "k": "AP2-1-2-2-K5",
+   "vorne": "Nenne Regeln für eine gute Visualisierung von Daten.",
+   "hinten": "- eine Aussage je Darstellung\n- Achsen beschriften (mit Einheiten)\n- sparsam mit Farben umgehen\n- Titel bzw. Legende angeben"
+  },
+  {
+   "id": "AP2-1-2-3-K1-1",
+   "sp": "AP2-1-2-3",
+   "k": "AP2-1-2-3-K1",
+   "vorne": "Was bedeuten in englischen Fachtexten: main objective, purpose, to ensure, to comply with?",
+   "hinten": "- main objective: Hauptziel\n- purpose: Zweck\n- to ensure: sicherstellen, gewährleisten\n- to comply with: einhalten, erfüllen (z. B. eine Vorschrift)"
+  },
+  {
+   "id": "AP2-1-2-3-K2-1",
+   "sp": "AP2-1-2-3",
+   "k": "AP2-1-2-3-K2",
+   "vorne": "Was bedeuten in englischen Fachtexten: requirement, feature, constraint, mandatory?",
+   "hinten": "- requirement: Anforderung\n- feature: Merkmal, Funktion\n- constraint: Einschränkung, Randbedingung\n- mandatory: verpflichtend, vorgeschrieben"
+  },
+  {
+   "id": "AP2-1-2-3-K3-1",
+   "sp": "AP2-1-2-3",
+   "k": "AP2-1-2-3-K3",
+   "vorne": "Was bedeuten bei der Beschreibung einer Funktechnik: range, data rate, latency, power consumption?",
+   "hinten": "- range: Reichweite\n- data rate: Datenrate (Übertragungsgeschwindigkeit)\n- latency: Latenz, Verzögerung\n- power consumption: Stromverbrauch"
+  },
+  {
+   "id": "AP2-1-2-3-K4-1",
+   "sp": "AP2-1-2-3",
+   "k": "AP2-1-2-3-K4",
+   "vorne": "Was bedeutet statement coverage?",
+   "hinten": "Anweisungsüberdeckung (C0): Anteil der Anweisungen, die durch die Tests mindestens einmal ausgeführt werden. Ziel: jede Anweisung mindestens einmal."
+  },
+  {
+   "id": "AP2-1-2-3-K4-2",
+   "sp": "AP2-1-2-3",
+   "k": "AP2-1-2-3-K4",
+   "vorne": "Was bedeutet branch coverage?",
+   "hinten": "Zweigüberdeckung (C1): Anteil der Zweige (z. B. bei einer Verzweigung der Wahr- und der Falsch-Zweig), die durch die Tests mindestens einmal durchlaufen werden."
+  },
+  {
+   "id": "AP2-1-2-3-K4-3",
+   "sp": "AP2-1-2-3",
+   "k": "AP2-1-2-3-K4",
+   "vorne": "Was bedeutet path coverage?",
+   "hinten": "Pfadüberdeckung: Anteil der möglichen Pfade vom Anfang bis zum Ende des Programms, die durch die Tests durchlaufen werden. Bei Schleifen ist sie meist nicht vollständig erreichbar."
+  },
+  {
+   "id": "AP2-1-3-1-K1-1",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K1",
+   "vorne": "Nenne die klassischen Qualitätsmerkmale von Software (angelehnt an ISO/IEC 9126).",
+   "hinten": "- Funktionalität\n- Zuverlässigkeit\n- Benutzbarkeit\n- Effizienz\n- Wartbarkeit, Änderbarkeit bzw. Erweiterbarkeit\n- Übertragbarkeit"
+  },
+  {
+   "id": "AP2-1-3-1-K1-2",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K1",
+   "vorne": "Was beschreibt das Qualitätsmerkmal Funktionalität?",
+   "hinten": "Ob die Software die geforderten Funktionen vollständig und korrekt bereitstellt."
+  },
+  {
+   "id": "AP2-1-3-1-K1-3",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K1",
+   "vorne": "Was beschreibt das Qualitätsmerkmal Benutzbarkeit?",
+   "hinten": "Wie leicht Nutzer die Software verstehen, erlernen und bedienen können, um ihre Aufgaben zu erledigen."
+  },
+  {
+   "id": "AP2-1-3-1-K1-4",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K1",
+   "vorne": "Was beschreibt das Qualitätsmerkmal Effizienz?",
+   "hinten": "Das Zeit- und Verbrauchsverhalten: Antwortzeiten und Durchsatz im Verhältnis zu den eingesetzten Ressourcen wie Rechenzeit und Speicher."
+  },
+  {
+   "id": "AP2-1-3-1-K1-5",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K1",
+   "vorne": "Was beschreiben Wartbarkeit und Änderbarkeit bzw. Erweiterbarkeit?",
+   "hinten": "- Wartbarkeit: wie leicht sich die Software analysieren, korrigieren, ändern und testen lässt\n- Änderbarkeit bzw. Erweiterbarkeit: wie leicht sie sich anpassen oder um Funktionen ergänzen lässt"
+  },
+  {
+   "id": "AP2-1-3-1-K1-6",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K1",
+   "vorne": "Was beschreibt das Qualitätsmerkmal Übertragbarkeit?",
+   "hinten": "Wie leicht sich die Software in eine andere Umgebung (Hardware, Betriebssystem, Plattform) übertragen, dort installieren und anpassen lässt. Auch Portabilität genannt."
+  },
+  {
+   "id": "AP2-1-3-1-K2-1",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K2",
+   "vorne": "„Die Software soll ohne Anpassung auch unter Linux laufen.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+   "hinten": "Übertragbarkeit (Portabilität)."
+  },
+  {
+   "id": "AP2-1-3-1-K2-2",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K2",
+   "vorne": "„Neue Mitarbeiter sollen die Hauptfunktionen ohne Schulung nutzen können.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+   "hinten": "Benutzbarkeit."
+  },
+  {
+   "id": "AP2-1-3-1-K2-3",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K2",
+   "vorne": "„Fällt ein Server aus, arbeitet das System ohne Datenverlust weiter.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+   "hinten": "Zuverlässigkeit (Fehlertoleranz)."
+  },
+  {
+   "id": "AP2-1-3-1-K2-4",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K2",
+   "vorne": "„Ein weiteres Zahlungsverfahren soll sich später mit geringem Aufwand ergänzen lassen.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+   "hinten": "Änderbarkeit bzw. Erweiterbarkeit (Teil der Wartbarkeit)."
+  },
+  {
+   "id": "AP2-1-3-1-K3-1",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K3",
+   "vorne": "Wie beschreibt man das Qualitätsmerkmal Zuverlässigkeit?",
+   "hinten": "Die Software erbringt ihre Leistung unter festgelegten Bedingungen über einen festgelegten Zeitraum, auch wenn Fehler auftreten."
+  },
+  {
+   "id": "AP2-1-3-1-K3-2",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K3",
+   "vorne": "Welche Teilmerkmale gehören in ISO/IEC 25010 zur Zuverlässigkeit?",
+   "hinten": "- Reife (in der Fassung 2023: Fehlerfreiheit)\n- Verfügbarkeit\n- Fehlertoleranz\n- Wiederherstellbarkeit"
+  },
+  {
+   "id": "AP2-1-3-1-K4-1",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K4",
+   "vorne": "In welcher Norm sind die Qualitätsmerkmale von Software heute festgelegt?",
+   "hinten": "In ISO/IEC 25010 (Qualitätsmodell für Softwareprodukte)."
+  },
+  {
+   "id": "AP2-1-3-1-K5-1",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K5",
+   "vorne": "Nenne zwei Qualitätsmerkmale der ISO/IEC 25010, die in der Liste Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Wartbarkeit, Übertragbarkeit fehlen.",
+   "hinten": "- Sicherheit: Schutz von Daten und Funktionen vor unberechtigtem Zugriff\n- Kompatibilität: Zusammenarbeit und Datenaustausch mit anderen Systemen"
+  },
+  {
+   "id": "AP2-1-3-1-K5-2",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K5",
+   "vorne": "Welcher älteren Norm steht die Merkmalsliste Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit, Übertragbarkeit nahe?",
+   "hinten": "ISO/IEC 9126; sie wurde durch ISO/IEC 25010 abgelöst."
+  },
+  {
+   "id": "AP2-1-3-1-K6-1",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K6",
+   "vorne": "Wodurch wird eine Qualitätsanforderung prüfbar?",
+   "hinten": "Durch eine messbare Angabe mit Wert und Bedingung, z. B. „Bei 100 gleichzeitigen Nutzern zeigt die Suche Ergebnisse in höchstens 2 Sekunden an.“ statt „Die Suche soll schnell sein.“"
+  },
+  {
+   "id": "AP2-1-3-1-K6-2",
+   "sp": "AP2-1-3-1",
+   "k": "AP2-1-3-1-K6",
+   "vorne": "Formuliere eine prüfbare Anforderung zur Zuverlässigkeit.",
+   "hinten": "Zum Beispiel: „Das System ist montags bis freitags von 7 bis 19 Uhr zu mindestens 99,5 % verfügbar.“"
+  },
+  {
+   "id": "AP2-1-3-2-K1-1",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K1",
+   "vorne": "Was versteht man unter Top-down-Entwurf?",
+   "hinten": "Man beginnt beim Gesamtsystem und zerlegt es schrittweise in immer kleinere Teile (schrittweise Verfeinerung), bis diese direkt umsetzbar sind."
+  },
+  {
+   "id": "AP2-1-3-2-K1-2",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K1",
+   "vorne": "Was versteht man unter Bottom-up-Entwurf?",
+   "hinten": "Man beginnt bei vorhandenen oder einzeln entwickelten Bausteinen und setzt sie schrittweise zum Gesamtsystem zusammen."
+  },
+  {
+   "id": "AP2-1-3-2-K1-3",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K1",
+   "vorne": "Ein Team baut einen Webshop, indem es vorhandene Bausteine für Zahlung, Versand und Anmeldung zusammensetzt. Welcher Entwurfsansatz ist das?",
+   "hinten": "Bottom-up: Aus fertigen Bausteinen wird das Ganze zusammengesetzt."
+  },
+  {
+   "id": "AP2-1-3-2-K2-1",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K2",
+   "vorne": "Was ist Modularisierung?",
+   "hinten": "Die Zerlegung eines Programms in abgeschlossene Teile (Module) mit klar festgelegter Aufgabe und Schnittstelle; wie ein Modul innen arbeitet, ist nach außen verborgen."
+  },
+  {
+   "id": "AP2-1-3-2-K3-1",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K3",
+   "vorne": "Nenne Vorteile der Modularisierung.",
+   "hinten": "- Wiederverwendung von Modulen\n- Module lassen sich getrennt testen\n- Arbeitsteilung im Team\n- leichtere Wartung"
+  },
+  {
+   "id": "AP2-1-3-2-K3-2",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K3",
+   "vorne": "Warum erleichtert Modularisierung die Arbeitsteilung?",
+   "hinten": "Module mit festgelegten Schnittstellen können von verschiedenen Entwicklern gleichzeitig und unabhängig voneinander entwickelt und getestet werden."
+  },
+  {
+   "id": "AP2-1-3-2-K4-1",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K4",
+   "vorne": "Wie leitest du aus einer fachlichen Beschreibung mögliche Klassen, Attribute und Methoden ab?",
+   "hinten": "Substantive (Personen, Dinge, Vorgänge) sind Kandidaten für Klassen oder Attribute, Verben Kandidaten für Methoden oder Beziehungen. Danach Doppeltes und für das System Unwichtiges streichen."
+  },
+  {
+   "id": "AP2-1-3-2-K4-2",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K4",
+   "vorne": "Was leitest du aus einer fachlichen Beschreibung außer den Klassen noch für eine Lösung ab?",
+   "hinten": "- die Daten, die dauerhaft gespeichert werden müssen (z. B. als Tabellen)\n- die Schnittstellen zu Nutzern und anderen Systemen: welche Daten in welcher Form ausgetauscht werden"
+  },
+  {
+   "id": "AP2-1-3-2-K5-1",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K5",
+   "vorne": "Worin unterscheiden sich objektorientierte Analyse (OOA) und objektorientiertes Design (OOD)?",
+   "hinten": "- OOA: was das System fachlich leisten soll, unabhängig von der Technik\n- OOD: wie das technisch mit Klassen, Methoden und Schnittstellen umgesetzt wird"
+  },
+  {
+   "id": "AP2-1-3-2-K5-2",
+   "sp": "AP2-1-3-2",
+   "k": "AP2-1-3-2-K5",
+   "vorne": "In welcher Reihenfolge folgen OOA, OOD und objektorientierte Programmierung (OOP) aufeinander?",
+   "hinten": "Erst OOA (fachlich analysieren), dann OOD (technisch entwerfen), dann OOP (programmieren)."
+  },
+  {
+   "id": "AP2-1-4-1-K1-1",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K1",
+   "vorne": "Was ist ein Entwurfsmuster?",
+   "hinten": "Eine bewährte, allgemeine Lösungsschablone für ein wiederkehrendes Entwurfsproblem. Es beschreibt beteiligte Klassen und ihr Zusammenspiel, keinen fertigen Code."
+  },
+  {
+   "id": "AP2-1-4-1-K1-2",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K1",
+   "vorne": "Nenne Vorteile von Entwurfsmustern.",
+   "hinten": "- bewährte, erprobte Lösungen für wiederkehrende Probleme\n- gemeinsame Sprache im Team: ein Name steht für die ganze Lösung\n- verständlicherer, besser wartbarer und erweiterbarer Code"
+  },
+  {
+   "id": "AP2-1-4-1-K2-1",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K2",
+   "vorne": "Welche drei Kategorien von Entwurfsmustern unterscheidet man, und worum geht es jeweils?",
+   "hinten": "- Erzeugungsmuster: das Erzeugen von Objekten\n- Strukturmuster: das Zusammensetzen von Klassen und Objekten zu größeren Strukturen\n- Verhaltensmuster: die Zusammenarbeit und Aufgabenverteilung zwischen Objekten"
+  },
+  {
+   "id": "AP2-1-4-1-K2-2",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K2",
+   "vorne": "Ordne Singleton, Factory und Observer den Kategorien der Entwurfsmuster zu.",
+   "hinten": "- Singleton: Erzeugungsmuster\n- Factory: Erzeugungsmuster\n- Observer: Verhaltensmuster"
+  },
+  {
+   "id": "AP2-1-4-1-K2-3",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K2",
+   "vorne": "Nenne Beispiele für Strukturmuster.",
+   "hinten": "Zum Beispiel Adapter, Fassade, Kompositum, Dekorierer, Proxy."
+  },
+  {
+   "id": "AP2-1-4-1-K2-4",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K2",
+   "vorne": "Gehört MVC zu den Erzeugungs-, Struktur- oder Verhaltensmustern?",
+   "hinten": "Zu keiner dieser Kategorien: MVC ist ein Architekturmuster und beschreibt die Aufteilung einer ganzen Anwendung. Intern nutzt es Entwurfsmuster, z. B. Observer."
+  },
+  {
+   "id": "AP2-1-4-1-K3-1",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K3",
+   "vorne": "Wozu dient das Observer-Muster?",
+   "hinten": "Mehrere Objekte (Beobachter) werden automatisch benachrichtigt, wenn sich der Zustand eines anderen Objekts (Subjekt) ändert. Das Subjekt muss die konkreten Beobachter dabei nicht kennen."
+  },
+  {
+   "id": "AP2-1-4-1-K3-2",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K3",
+   "vorne": "Eine Wetterstation misst die Temperatur; Anzeige, Statistik und Warnsystem sollen bei jedem neuen Messwert sofort aktualisiert werden. Welches Muster passt, und warum?",
+   "hinten": "Observer: Die drei Komponenten melden sich als Beobachter bei der Station an und werden bei jeder Änderung automatisch benachrichtigt. Weitere Beobachter lassen sich ohne Änderung der Station ergänzen."
+  },
+  {
+   "id": "AP2-1-4-1-K4-1",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K4",
+   "vorne": "Was stellt das Singleton-Muster sicher, und wie wird es typischerweise umgesetzt?",
+   "hinten": "Von einer Klasse gibt es genau ein Objekt. Umsetzung: privater Konstruktor, statisches Attribut für die Instanz und statische Methode (z. B. `getInstance()`), die beim ersten Aufruf das Objekt erzeugt und danach immer dasselbe zurückgibt."
+  },
+  {
+   "id": "AP2-1-4-1-K4-2",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K4",
+   "vorne": "Wann passt das Singleton-Muster? Nenne Beispiele.",
+   "hinten": "Wenn es von einer Klasse genau ein gemeinsames Objekt geben darf, z. B. für die Konfiguration, einen Logger oder die Verwaltung der Datenbankverbindungen."
+  },
+  {
+   "id": "AP2-1-4-1-K4-3",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K4",
+   "vorne": "Was ist die Idee des Factory-Musters?",
+   "hinten": "Das Erzeugen von Objekten wird an eine eigene Stelle (Fabrikklasse oder Fabrikmethode) ausgelagert. Der aufrufende Code fordert ein Objekt an, ohne die konkrete Klasse selbst mit `new` zu erzeugen."
+  },
+  {
+   "id": "AP2-1-4-1-K4-4",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K4",
+   "vorne": "Wann passt das Factory-Muster?",
+   "hinten": "Wenn erst zur Laufzeit feststeht, welche konkrete Klasse erzeugt wird (z. B. PDF- oder CSV-Export je nach Auswahl), oder wenn die Erzeugung aufwendig ist und an einer Stelle gebündelt werden soll."
+  },
+  {
+   "id": "AP2-1-4-1-K5-1",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K5",
+   "vorne": "Welche Aufgaben haben Model, View und Controller im MVC-Muster?",
+   "hinten": "- Model: hält die Daten und die Fachlogik\n- View: stellt die Daten dar\n- Controller: nimmt Eingaben entgegen und steuert Model und View"
+  },
+  {
+   "id": "AP2-1-4-1-K5-2",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K5",
+   "vorne": "Welche Vorteile bietet das MVC-Muster?",
+   "hinten": "- Daten und Fachlogik sind von der Darstellung getrennt\n- mehrere Ansichten auf dieselben Daten möglich\n- Oberfläche austauschbar, ohne die Fachlogik zu ändern\n- Teile getrennt test- und wartbar, Arbeitsteilung"
+  },
+  {
+   "id": "AP2-1-4-1-K6-1",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K6",
+   "vorne": "Welche Beteiligten zeigt ein Klassendiagramm des Observer-Musters?",
+   "hinten": "- Subjekt: hält eine Liste der Beobachter, Methoden zum An- und Abmelden und zum Benachrichtigen\n- Beobachter-Schnittstelle mit einer Methode zum Aktualisieren, z. B. `update()`\n- konkrete Beobachter, die diese Schnittstelle implementieren"
+  },
+  {
+   "id": "AP2-1-4-1-K6-2",
+   "sp": "AP2-1-4-1",
+   "k": "AP2-1-4-1-K6",
+   "vorne": "Woran erkennst du im Klassendiagramm die Beobachter-Schnittstelle des Observer-Musters?",
+   "hinten": "Am Stereotyp «interface» mit einer Methode zum Aktualisieren (z. B. `update()`). Die konkreten Beobachter implementieren sie (gestrichelte Linie mit hohlem Dreieck), das Subjekt kennt sie über eine Liste bzw. Assoziation mit Multiplizität `*`."
+  },
+  {
+   "id": "AP2-1-5-1-K1-1",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K1",
+   "vorne": "Anforderung: Die Software soll für blinde Nutzer bedienbar sein. Nenne passende Maßnahmen.",
+   "hinten": "- alle Funktionen allein mit der Tastatur erreichbar\n- Inhalte für Screenreader auslesbar\n- Alternativtexte für Bilder\n- eindeutige Beschriftung aller Eingabefelder"
+  },
+  {
+   "id": "AP2-1-5-1-K1-2",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K1",
+   "vorne": "Anforderung: Inhalte sollen auch für Menschen mit Farbsehschwäche erkennbar sein. Nenne passende Maßnahmen.",
+   "hinten": "Informationen nicht allein über Farbe vermitteln, sondern zusätzlich durch Text, Symbol oder Muster; ausreichenden Kontrast verwenden."
+  },
+  {
+   "id": "AP2-1-5-1-K1-3",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K1",
+   "vorne": "Anforderung: Menschen mit motorischen Einschränkungen sollen die Software bedienen können. Nenne passende Maßnahmen.",
+   "hinten": "- vollständige Bedienung allein mit der Tastatur\n- ausreichend große Schaltflächen und Klickbereiche\n- keine knappen Zeitlimits bzw. Zeitlimits verlängerbar"
+  },
+  {
+   "id": "AP2-1-5-1-K2-1",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K2",
+   "vorne": "Nenne Beispiele für Maßnahmen der Barrierefreiheit in einer Software.",
+   "hinten": "- ausreichender Kontrast\n- skalierbare Schrift\n- Bedienung allein mit der Tastatur\n- Alternativtexte für Bilder\n- Information nicht allein über Farbe"
+  },
+  {
+   "id": "AP2-1-5-1-K2-2",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K2",
+   "vorne": "Warum soll eine Information nicht allein über Farbe vermittelt werden?",
+   "hinten": "Menschen mit Farbsehschwäche (z. B. Rot-Grün-Schwäche) oder Blinde erkennen den Unterschied sonst nicht. Deshalb zusätzlich Text, Symbol oder Muster verwenden."
+  },
+  {
+   "id": "AP2-1-5-1-K2-3",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K2",
+   "vorne": "Wozu dienen Alternativtexte für Bilder?",
+   "hinten": "Screenreader lesen sie blinden und sehbehinderten Nutzern vor, damit sie Inhalt bzw. Zweck des Bildes erfassen."
+  },
+  {
+   "id": "AP2-1-5-1-K3-1",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K3",
+   "vorne": "Welche typischen Mängel kann ein Oberflächenentwurf haben?",
+   "hinten": "- ungünstige Anordnung, z. B. Zusammengehöriges getrennt, unlogische Reihenfolge\n- überflüssige oder doppelte Elemente\n- missverständliche oder fehlende Beschriftung\n- uneinheitliche Gestaltung"
+  },
+  {
+   "id": "AP2-1-5-1-K3-2",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K3",
+   "vorne": "Ein Dialog hat die Schaltflächen „OK“ und „Übernehmen“, die genau dasselbe tun. Welcher Mangel ist das, und wie behebst du ihn?",
+   "hinten": "Ein doppeltes Element, das den Nutzer verwirrt. Eine Schaltfläche entfernen und die andere eindeutig beschriften, z. B. „Speichern“."
+  },
+  {
+   "id": "AP2-1-5-1-K3-3",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K3",
+   "vorne": "Was gehört zur begründeten Beschreibung eines Mangels in einem Oberflächenentwurf?",
+   "hinten": "Den Mangel konkret benennen (welches Element, wo), die Folge für den Nutzer erklären und möglichst den verletzten Gestaltungsgrundsatz oder eine Verbesserung nennen."
+  },
+  {
+   "id": "AP2-1-5-1-K4-1",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K4",
+   "vorne": "Worin unterscheiden sich Usability und User Experience?",
+   "hinten": "- Usability: wie gut sich eine Software bedienen lässt (wirksam, effizient, zufriedenstellend)\n- User Experience: das gesamte Erlebnis rund um die Nutzung, auch Erwartungen vorher und Eindruck danach"
+  },
+  {
+   "id": "AP2-1-5-1-K5-1",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K5",
+   "vorne": "Nenne Grundsätze der Dialoggestaltung nach DIN EN ISO 9241-110.",
+   "hinten": "- aufgabenangemessen\n- selbsterklärend (selbstbeschreibungsfähig)\n- erwartungskonform\n- fehlertolerant (Fassung 2020: robust gegen Benutzerfehler)\n- steuerbar\nDazu: lernförderlich bzw. erlernbar sowie individualisierbar (2006) bzw. Benutzerbindung (2020)."
+  },
+  {
+   "id": "AP2-1-5-1-K5-2",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K5",
+   "vorne": "Was bedeuten die Dialoggrundsätze „aufgabenangemessen“ und „selbsterklärend“?",
+   "hinten": "- aufgabenangemessen: Der Dialog unterstützt den Nutzer, seine Aufgabe wirksam und ohne unnötige Schritte zu erledigen\n- selbsterklärend: Der Nutzer erkennt jederzeit, wo er ist, was er tun kann und wie"
+  },
+  {
+   "id": "AP2-1-5-1-K5-3",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K5",
+   "vorne": "Was bedeutet der Dialoggrundsatz „erwartungskonform“?",
+   "hinten": "Der Dialog verhält sich so, wie der Nutzer es aus Erfahrung und üblichen Konventionen erwartet, z. B. einheitliche Begriffe, Symbole und Positionen von Bedienelementen."
+  },
+  {
+   "id": "AP2-1-5-1-K5-4",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K5",
+   "vorne": "Was bedeutet der Dialoggrundsatz „fehlertolerant“?",
+   "hinten": "Das Ziel wird trotz Eingabefehlern mit wenig Korrekturaufwand erreicht: Fehler werden verhindert oder erkannt, verständlich gemeldet und lassen sich leicht korrigieren."
+  },
+  {
+   "id": "AP2-1-5-1-K5-5",
+   "sp": "AP2-1-5-1",
+   "k": "AP2-1-5-1-K5",
+   "vorne": "Was bedeutet der Dialoggrundsatz „steuerbar“?",
+   "hinten": "Der Nutzer kann Ablauf, Richtung und Tempo des Dialogs selbst bestimmen, z. B. abbrechen, zurückgehen oder eine Aktion rückgängig machen."
+  },
+  {
+   "id": "AP2-1-5-2-K1-1",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K1",
+   "vorne": "Was ist ein Mockup?",
+   "hinten": "Eine meist skizzierte Darstellung einer Bildschirmseite ohne Funktion. Sie zeigt, welche Elemente die Oberfläche enthält und wie sie angeordnet sind."
+  },
+  {
+   "id": "AP2-1-5-2-K1-2",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K1",
+   "vorne": "Wie stellt man typische Bedienelemente in einer Mockup-Skizze dar?",
+   "hinten": "- Eingabefeld: Rechteck mit Beschriftung davor oder darüber\n- Auswahlfeld (Dropdown): Rechteck mit Pfeil ▼\n- Schaltfläche: Rechteck mit Text\n- Kontrollkästchen ☐, Optionsfeld ○\n- Bild: Rechteck mit Kreuz"
+  },
+  {
+   "id": "AP2-1-5-2-K1-3",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K1",
+   "vorne": "Worauf kommt es bei einer handgezeichneten Mockup-Skizze an?",
+   "hinten": "Alle verlangten Elemente sind enthalten, erkennbar und eindeutig beschriftet und sinnvoll angeordnet (Zusammengehöriges zusammen, Navigation an üblicher Stelle). Zeichnerische Genauigkeit zählt nicht."
+  },
+  {
+   "id": "AP2-1-5-2-K2-1",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K2",
+   "vorne": "Wie stellt man in einem Mockup eine Datumsauswahl dar?",
+   "hinten": "Als Feld mit Datumsformat (z. B. TT.MM.JJJJ) und Kalendersymbol, bei Bedarf mit aufgeklapptem Kalender."
+  },
+  {
+   "id": "AP2-1-5-2-K2-2",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K2",
+   "vorne": "Wie stellt man in einem Mockup ein Verlaufsdiagramm dar?",
+   "hinten": "Als Rechteck mit Titel und beschrifteten Achsen (x: Zeit, y: Wert mit Einheit) und einer angedeuteten Linie."
+  },
+  {
+   "id": "AP2-1-5-2-K3-1",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K3",
+   "vorne": "Wie gehst du vor, wenn du einen gegebenen Oberflächenentwurf verbessern sollst?",
+   "hinten": "Jeden zuvor erkannten Mangel gezielt beheben (z. B. doppelte Elemente entfernen, eindeutig beschriften, logisch anordnen), alle geforderten Funktionen beibehalten und die Seite neu skizzieren."
+  },
+  {
+   "id": "AP2-1-5-2-K4-1",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K4",
+   "vorne": "Nenne Vorteile von Mockups.",
+   "hinten": "- frühe Rückmeldung des Kunden\n- Missverständnisse werden vor der Programmierung sichtbar\n- Änderungen kosten wenig"
+  },
+  {
+   "id": "AP2-1-5-2-K5-1",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K5",
+   "vorne": "Warum sind Änderungen an einem Mockup billiger als am fertigen Programm?",
+   "hinten": "Es ist noch kein Code geschrieben: Eine Skizze ist schnell geändert, während Änderungen an programmierter Software Entwicklungs- und Testaufwand kosten."
+  },
+  {
+   "id": "AP2-1-5-2-K5-2",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K5",
+   "vorne": "Wie helfen Mockups, Missverständnisse zwischen Kunde und Entwicklung zu vermeiden?",
+   "hinten": "Der Kunde sieht die geplante Oberfläche, bevor programmiert wird, und kann früh Rückmeldung geben. Abweichungen von seinen Vorstellungen werden so sichtbar, solange sie noch billig zu beheben sind."
+  },
+  {
+   "id": "AP2-1-5-2-K6-1",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K6",
+   "vorne": "Was ist Prototyping?",
+   "hinten": "Ein Vorgehen, bei dem früh ein vorläufiges, vereinfachtes Modell der Software (Prototyp) erstellt und mit Kunden und Nutzern erprobt wird, um Anforderungen zu klären und die Lösung zu verbessern."
+  },
+  {
+   "id": "AP2-1-5-2-K6-2",
+   "sp": "AP2-1-5-2",
+   "k": "AP2-1-5-2-K6",
+   "vorne": "Wann ist Prototyping in der Konzeption sinnvoll?",
+   "hinten": "- wenn Anforderungen unklar sind oder der Kunde sie schwer beschreiben kann\n- bei neuen oder komplexen Benutzeroberflächen\n- wenn die technische Machbarkeit früh geprüft werden soll"
+  }
+ ],
+ "nicht_abgefragt": [
+  {
+   "k": "AP2-1-2-3-K5",
+   "grund": "Wörter aus dem Zusammenhang zu erschließen ist eine Lesefertigkeit, die sich nur an ganzen Texten üben lässt."
+  }
+ ],
+ "glossar": [
+  {
+   "begriff": "Vorgehensmodell",
+   "erklaerung": "Festgelegter Ablauf, nach dem ein Softwareprojekt in Phasen bzw. Schritten durchgeführt wird, z. B. Wasserfallmodell, V-Modell, Spiralmodell oder Scrum.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "Wasserfallmodell",
+   "erklaerung": "Klassisches Vorgehensmodell, bei dem die Phasen nacheinander durchlaufen werden; eine Phase beginnt erst, wenn die vorige abgeschlossen ist.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "V-Modell",
+   "erklaerung": "Klassisches Vorgehensmodell, das jeder Entwurfsstufe eine Teststufe gegenüberstellt, z. B. den Anforderungen den Abnahmetest.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "Spiralmodell",
+   "erklaerung": "Vorgehensmodell, das die Phasen in mehreren Runden durchläuft und in jeder Runde die Risiken bewertet und verringert.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "Scrum",
+   "erklaerung": "Agiles Vorgehensmodell mit kurzen Sprints, den Rollen Product Owner, Scrum Master und Developers (Entwickler) und regelmäßigen Abstimmungen.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "Sprint",
+   "erklaerung": "Fester, kurzer Zeitabschnitt in Scrum (höchstens ein Monat), in dem das Team ein nutzbares Zwischenergebnis fertigstellt.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "Agiles Vorgehen",
+   "erklaerung": "Vorgehen, bei dem schrittweise in kurzen Zyklen geplant und umgesetzt wird und die Anforderungen laufend an Änderungen angepasst werden.",
+   "sp": [
+    "AP2-1-1-1"
+   ]
+  },
+  {
+   "begriff": "Lastenheft",
+   "erklaerung": "Vom Auftraggeber erstelltes Dokument, das beschreibt, was die Software leisten soll und wofür (Anforderungen).",
+   "sp": [
+    "AP2-1-1-2"
+   ]
+  },
+  {
+   "begriff": "Pflichtenheft",
+   "erklaerung": "Vom Auftragnehmer erstelltes Dokument, das beschreibt, wie und womit die Anforderungen des Lastenhefts umgesetzt werden.",
+   "sp": [
+    "AP2-1-1-2"
+   ]
+  },
+  {
+   "begriff": "Funktionale Anforderung",
+   "erklaerung": "Anforderung, die beschreibt, was ein System tun soll, z. B. eine Funktion oder ein Verhalten.",
+   "sp": [
+    "AP2-1-1-2"
+   ]
+  },
+  {
+   "begriff": "Nicht funktionale Anforderung",
+   "erklaerung": "Anforderung, die beschreibt, wie gut oder unter welchen Bedingungen ein System seine Funktionen erbringt, z. B. Antwortzeit oder Sicherheit.",
+   "sp": [
+    "AP2-1-1-2"
+   ]
+  },
+  {
+   "begriff": "Abnahmekriterien",
+   "erklaerung": "Festgelegte, prüfbare Bedingungen, an denen der Auftraggeber bei der Abnahme feststellt, ob das Produkt die Anforderungen erfüllt.",
+   "sp": [
+    "AP2-1-1-2"
+   ]
+  },
+  {
+   "begriff": "Machbarkeitsanalyse",
+   "erklaerung": "Prüfung vor Projektbeginn, ob ein Vorhaben technisch, wirtschaftlich, zeitlich und organisatorisch umsetzbar ist.",
+   "sp": [
+    "AP2-1-1-3"
+   ]
+  },
+  {
+   "begriff": "Stakeholder",
+   "erklaerung": "Person oder Gruppe, die an einem Projekt beteiligt oder von ihm betroffen ist oder ein Interesse an seinem Verlauf oder Ergebnis hat.",
+   "sp": [
+    "AP2-1-1-3"
+   ]
+  },
+  {
+   "begriff": "Meilenstein",
+   "erklaerung": "Festgelegter Zeitpunkt im Projekt ohne eigene Dauer, zu dem ein wichtiges Zwischenergebnis vorliegen muss.",
+   "sp": [
+    "AP2-1-1-3"
+   ]
+  },
+  {
+   "begriff": "Lessons Learned",
+   "erklaerung": "Festgehaltene Erfahrungen aus einem Projekt (was gut und was schlecht lief), damit spätere Projekte davon profitieren.",
+   "sp": [
+    "AP2-1-1-3"
+   ]
+  },
+  {
+   "begriff": "Change Request",
+   "erklaerung": "Formaler Antrag, vereinbarte Anforderungen oder Projektinhalte zu ändern; er wird bewertet und erst nach Freigabe umgesetzt.",
+   "sp": [
+    "AP2-1-1-3"
+   ]
+  },
+  {
+   "begriff": "Netzplan",
+   "erklaerung": "Grafische Darstellung der Vorgänge eines Projekts mit ihren Dauern und Abhängigkeiten, aus der sich Termine, Puffer und der kritische Pfad berechnen lassen.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "FAZ",
+   "langform": "frühester Anfangszeitpunkt",
+   "erklaerung": "Frühester Zeitpunkt, zu dem ein Vorgang beginnen kann; ergibt sich in der Vorwärtsrechnung aus dem größten FEZ der Vorgänger.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "FEZ",
+   "langform": "frühester Endzeitpunkt",
+   "erklaerung": "Frühester Zeitpunkt, zu dem ein Vorgang enden kann: `FEZ = FAZ + Dauer`.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "SAZ",
+   "langform": "spätester Anfangszeitpunkt",
+   "erklaerung": "Spätester Zeitpunkt, zu dem ein Vorgang beginnen muss, ohne das Projektende zu verschieben: `SAZ = SEZ − Dauer`.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "SEZ",
+   "langform": "spätester Endzeitpunkt",
+   "erklaerung": "Spätester Zeitpunkt, zu dem ein Vorgang enden muss; ergibt sich in der Rückwärtsrechnung aus dem kleinsten SAZ der Nachfolger.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "Gesamtpuffer",
+   "erklaerung": "Zeit, um die sich ein Vorgang verschieben lässt, ohne das Projektende zu verschieben: `GP = SAZ − FAZ`.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "Freier Puffer",
+   "erklaerung": "Zeit, um die sich ein Vorgang verschieben lässt, ohne den frühesten Beginn des Nachfolgers zu verschieben: `FP = FAZ des Nachfolgers − FEZ`.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "Kritischer Pfad",
+   "erklaerung": "Folge von Vorgängen ohne Gesamtpuffer vom Projektstart bis zum Ende; jede Verzögerung darauf verschiebt das Projektende.",
+   "sp": [
+    "AP2-1-1-4"
+   ]
+  },
+  {
+   "begriff": "BGB",
+   "langform": "Bürgerliches Gesetzbuch",
+   "erklaerung": "Gesetz des allgemeinen Privatrechts; enthält unter anderem das allgemeine Vertragsrecht und die Regeln zu AGB.",
+   "sp": [
+    "AP2-1-2-1"
+   ]
+  },
+  {
+   "begriff": "HGB",
+   "langform": "Handelsgesetzbuch",
+   "erklaerung": "Gesetz mit besonderen Regeln für Kaufleute; ergänzt das BGB.",
+   "sp": [
+    "AP2-1-2-1"
+   ]
+  },
+  {
+   "begriff": "UWG",
+   "langform": "Gesetz gegen den unlauteren Wettbewerb",
+   "erklaerung": "Schützt Mitbewerber, Verbraucher und sonstige Marktteilnehmer vor unlauteren geschäftlichen Handlungen, z. B. irreführender Werbung.",
+   "sp": [
+    "AP2-1-2-1"
+   ]
+  },
+  {
+   "begriff": "AGB",
+   "langform": "Allgemeine Geschäftsbedingungen",
+   "erklaerung": "Für viele Verträge vorformulierte Vertragsbedingungen, die eine Vertragspartei der anderen beim Vertragsschluss stellt; geregelt in §§ 305–310 BGB.",
+   "sp": [
+    "AP2-1-2-1"
+   ]
+  },
+  {
+   "begriff": "Compliance",
+   "erklaerung": "Regelkonformität: das Einhalten von Gesetzen und unternehmensinternen Regeln durch ein Unternehmen und seine Mitarbeiter.",
+   "sp": [
+    "AP2-1-2-1"
+   ]
+  },
+  {
+   "begriff": "CRM",
+   "langform": "Customer Relationship Management",
+   "erklaerung": "Systematische Gestaltung der Kundenbeziehungen; ein CRM-System bündelt Kundendaten und Kontakte für Vertrieb, Marketing und Service.",
+   "sp": [
+    "AP2-1-2-1"
+   ]
+  },
+  {
+   "begriff": "Corporate Identity",
+   "erklaerung": "Einheitliches Erscheinungsbild und Selbstverständnis eines Unternehmens; in Präsentationen sichtbar an Logo, Farben und Schrift.",
+   "sp": [
+    "AP2-1-2-2"
+   ]
+  },
+  {
+   "begriff": "Tabellenkalkulation",
+   "erklaerung": "Programm zum Erfassen, Berechnen und Auswerten von Daten in Tabellen mit Formeln und Funktionen sowie zum Erstellen von Diagrammen.",
+   "sp": [
+    "AP2-1-2-2"
+   ]
+  },
+  {
+   "begriff": "Statement coverage",
+   "erklaerung": "Anweisungsüberdeckung (C0): Anteil der Anweisungen eines Programms, die durch Tests mindestens einmal ausgeführt werden.",
+   "sp": [
+    "AP2-1-2-3"
+   ]
+  },
+  {
+   "begriff": "Branch coverage",
+   "erklaerung": "Zweigüberdeckung (C1): Anteil der Programmzweige, die durch Tests mindestens einmal durchlaufen werden.",
+   "sp": [
+    "AP2-1-2-3"
+   ]
+  },
+  {
+   "begriff": "Path coverage",
+   "erklaerung": "Pfadüberdeckung: Anteil der möglichen Pfade durch ein Programm, die durch Tests durchlaufen werden.",
+   "sp": [
+    "AP2-1-2-3"
+   ]
+  },
+  {
+   "begriff": "Qualitätsmerkmal",
+   "erklaerung": "Eigenschaft, an der die Qualität einer Software beurteilt wird, z. B. Zuverlässigkeit, Benutzbarkeit oder Effizienz.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "Zuverlässigkeit",
+   "erklaerung": "Qualitätsmerkmal: Die Software erbringt ihre Leistung unter festgelegten Bedingungen über einen festgelegten Zeitraum, auch wenn Fehler auftreten.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "Benutzbarkeit",
+   "erklaerung": "Qualitätsmerkmal: wie leicht Nutzer eine Software verstehen, erlernen und bedienen können.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "Effizienz",
+   "erklaerung": "Qualitätsmerkmal: Zeit- und Verbrauchsverhalten einer Software, also Antwortzeiten und Ressourcenbedarf.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "Wartbarkeit",
+   "erklaerung": "Qualitätsmerkmal: wie leicht sich eine Software analysieren, korrigieren, ändern und testen lässt.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "Übertragbarkeit",
+   "erklaerung": "Qualitätsmerkmal, auch Portabilität: wie leicht sich eine Software in eine andere Umgebung übertragen und dort betreiben lässt.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "ISO/IEC 25010",
+   "erklaerung": "Internationale Norm, die das Qualitätsmodell für Softwareprodukte mit seinen Qualitätsmerkmalen festlegt; Nachfolgerin der ISO/IEC 9126.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "ISO/IEC 9126",
+   "erklaerung": "Ältere, durch ISO/IEC 25010 abgelöste Norm für Softwarequalität mit den Merkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit, Übertragbarkeit.",
+   "sp": [
+    "AP2-1-3-1"
+   ]
+  },
+  {
+   "begriff": "Programmspezifikation",
+   "erklaerung": "Genaue Festlegung, was ein Programm leisten soll: Ein- und Ausgaben, Verarbeitung und Schnittstellen, als Vorgabe für die Umsetzung.",
+   "sp": [
+    "AP2-1-3-2"
+   ]
+  },
+  {
+   "begriff": "Top-down-Entwurf",
+   "erklaerung": "Entwurf vom Gesamtsystem ausgehend, das schrittweise in immer kleinere Teile zerlegt wird.",
+   "sp": [
+    "AP2-1-3-2"
+   ]
+  },
+  {
+   "begriff": "Bottom-up-Entwurf",
+   "erklaerung": "Entwurf, der aus vorhandenen oder einzeln entwickelten Bausteinen schrittweise das Gesamtsystem zusammensetzt.",
+   "sp": [
+    "AP2-1-3-2"
+   ]
+  },
+  {
+   "begriff": "Modularisierung",
+   "erklaerung": "Zerlegung eines Programms in abgeschlossene Module mit festgelegter Aufgabe und Schnittstelle.",
+   "sp": [
+    "AP2-1-3-2"
+   ]
+  },
+  {
+   "begriff": "OOA",
+   "langform": "objektorientierte Analyse",
+   "erklaerung": "Erster Schritt der objektorientierten Entwicklung: klären, was das System fachlich leisten soll, unabhängig von der Technik.",
+   "sp": [
+    "AP2-1-3-2"
+   ]
+  },
+  {
+   "begriff": "OOD",
+   "langform": "objektorientiertes Design",
+   "erklaerung": "Auf der OOA aufbauender Schritt: festlegen, wie das System mit Klassen, Methoden und Schnittstellen technisch umgesetzt wird.",
+   "sp": [
+    "AP2-1-3-2"
+   ]
+  },
+  {
+   "begriff": "Klasse",
+   "erklaerung": "Bauplan für Objekte, der ihre Attribute (Daten) und Methoden (Verhalten) festlegt.",
+   "sp": [
+    "AP2-1-3-2",
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Schnittstelle",
+   "erklaerung": "Festgelegte Stelle, über die Komponenten oder Systeme zusammenarbeiten und Daten austauschen; in der OOP auch ein Interface, das Methoden vorgibt.",
+   "sp": [
+    "AP2-1-3-2",
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Klassendiagramm",
+   "erklaerung": "UML-Diagramm, das Klassen mit Attributen und Methoden sowie ihre Beziehungen zueinander darstellt.",
+   "sp": [
+    "AP2-1-3-2",
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Entwurfsmuster",
+   "erklaerung": "Bewährte, allgemeine Lösungsschablone für ein wiederkehrendes Entwurfsproblem, englisch Design Pattern; eingeteilt in Erzeugungs-, Struktur- und Verhaltensmuster.",
+   "sp": [
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Architekturmuster",
+   "erklaerung": "Muster für die grundlegende Aufteilung einer ganzen Anwendung in Teile und deren Zusammenspiel, z. B. MVC.",
+   "sp": [
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Observer",
+   "erklaerung": "Verhaltensmuster: Beobachter melden sich bei einem Subjekt an und werden automatisch benachrichtigt, wenn sich dessen Zustand ändert.",
+   "sp": [
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Singleton",
+   "erklaerung": "Erzeugungsmuster, das sicherstellt, dass es von einer Klasse genau ein Objekt gibt.",
+   "sp": [
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Factory",
+   "erklaerung": "Erzeugungsmuster, bei dem das Erzeugen von Objekten an eine eigene Stelle (Fabrikklasse oder -methode) ausgelagert wird.",
+   "sp": [
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "MVC",
+   "langform": "Model-View-Controller",
+   "erklaerung": "Architekturmuster: Model hält Daten und Fachlogik, View stellt dar, Controller nimmt Eingaben entgegen und steuert.",
+   "sp": [
+    "AP2-1-4-1"
+   ]
+  },
+  {
+   "begriff": "Softwareergonomie",
+   "erklaerung": "Gestaltung von Software, sodass Menschen ihre Aufgaben damit wirksam, effizient und zufriedenstellend erledigen können.",
+   "sp": [
+    "AP2-1-5-1"
+   ]
+  },
+  {
+   "begriff": "Barrierefreiheit",
+   "erklaerung": "Eigenschaft einer Software, auch von Menschen mit Behinderungen ohne besondere Erschwernis genutzt werden zu können.",
+   "sp": [
+    "AP2-1-5-1"
+   ]
+  },
+  {
+   "begriff": "Usability",
+   "erklaerung": "Gebrauchstauglichkeit: wie gut sich eine Software bedienen lässt, also wirksam, effizient und zufriedenstellend.",
+   "sp": [
+    "AP2-1-5-1"
+   ]
+  },
+  {
+   "begriff": "User Experience",
+   "erklaerung": "Das gesamte Erlebnis eines Nutzers rund um die Nutzung eines Produkts, einschließlich Erwartungen vorher und Eindruck danach; kurz UX.",
+   "sp": [
+    "AP2-1-5-1"
+   ]
+  },
+  {
+   "begriff": "Alternativtext",
+   "erklaerung": "Textbeschreibung eines Bildes, die Screenreader vorlesen, damit blinde und sehbehinderte Nutzer den Inhalt erfassen.",
+   "sp": [
+    "AP2-1-5-1"
+   ]
+  },
+  {
+   "begriff": "Mockup",
+   "erklaerung": "Skizze einer Bildschirmseite ohne Funktion, die zeigt, welche Elemente die Oberfläche enthält und wie sie angeordnet sind.",
+   "sp": [
+    "AP2-1-5-2"
+   ]
+  },
+  {
+   "begriff": "Prototyping",
+   "erklaerung": "Vorgehen, bei dem früh ein vereinfachtes Modell der Software (Prototyp) erstellt und mit Kunden erprobt wird, um Anforderungen zu klären.",
+   "sp": [
+    "AP2-1-5-2"
+   ]
+  }
+ ],
+ "unsicher": [
+  {
+   "id": "AP2-1-3-1-K3-2",
+   "frage": "ISO/IEC 25010 wurde 2023 überarbeitet (u. a. faultlessness statt maturity, interaction capability statt usability, flexibility statt portability, neu safety). Eine amtliche deutsche Fassung der Neuausgabe mit festen Bezeichnungen (z. B. „Fehlerfreiheit“ statt „Reife“) ist nicht sicher belegt; unklar, welche Fassung und welche deutschen Begriffe erwartet werden."
+  }
+ ]
+}

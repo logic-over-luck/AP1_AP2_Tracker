@@ -115,7 +115,7 @@
       "sp": "AP1-6-1-1",
       "k": "AP1-6-1-1-K1",
       "vorne": "Wie heißen die sieben Schichten des OSI-Modells auf Deutsch, von Schicht 1 bis Schicht 7?",
-      "hinten": "1 Bitübertragungsschicht – 2 Sicherungsschicht – 3 Vermittlungsschicht – 4 Transportschicht – 5 Sitzungsschicht – 6 Darstellungsschicht – 7 Anwendungsschicht"
+      "hinten": "1 Bitübertragungsschicht – 2 Sicherungsschicht – 3 Vermittlungsschicht (auch Netzwerkschicht) – 4 Transportschicht – 5 Sitzungsschicht (auch Kommunikationssteuerungsschicht) – 6 Darstellungsschicht – 7 Anwendungsschicht"
     },
     {
       "id": "AP1-6-1-1-K1-2",
@@ -136,7 +136,7 @@
       "sp": "AP1-6-1-1",
       "k": "AP1-6-1-1-K2",
       "vorne": "Welcher OSI-Schicht ordnet man Kabel und Buchse zu, welcher die MAC-Adresse und Ethernet?",
-      "hinten": "- Kabel, Buchse: Schicht 1 (Bitübertragungsschicht)\n- MAC-Adresse, Ethernet: Schicht 2 (Sicherungsschicht)"
+      "hinten": "- Kabel, Buchse: Schicht 1 (Bitübertragungsschicht)\n- MAC-Adresse, Ethernet: Schicht 2 (Sicherungsschicht); Ethernet legt zusätzlich Kabel und Signale der Schicht 1 fest"
     },
     {
       "id": "AP1-6-1-1-K2-2",
@@ -374,7 +374,7 @@
       "sp": "AP1-6-1-4",
       "k": "AP1-6-1-4-K1",
       "vorne": "Wie unterscheiden sich Twisted-Pair-Kupferkabel und Lichtwellenleiter in Geschwindigkeit, Reichweite und Störanfälligkeit?",
-      "hinten": "- Twisted Pair: im LAN meist 1 oder 10 Gbit/s, höchstens 100 m je Strecke, anfällig für elektromagnetische Störungen\n- Lichtwellenleiter: sehr hohe Datenraten, bis in den Kilometerbereich, unempfindlich gegen elektromagnetische Störungen"
+      "hinten": "- Twisted Pair: im LAN meist 1 oder 10 Gbit/s, höchstens 100 m je Strecke, anfällig für elektromagnetische Störungen\n- Lichtwellenleiter: sehr hohe Datenraten, je nach Faser Hunderte Meter bis viele Kilometer, unempfindlich gegen elektromagnetische Störungen"
     },
     {
       "id": "AP1-6-1-4-K1-2",
@@ -528,7 +528,7 @@
       "sp": "AP1-6-2-1",
       "k": "AP1-6-2-1-K3",
       "vorne": "Was gibt die Präfixlänge, z. B. /24, an?",
-      "hinten": "Wie viele Bits von links die Netzadresse bilden; genau diese Bits sind in der Subnetzmaske 1."
+      "hinten": "Wie viele Bits von links den Netzanteil der Adresse bilden; genau diese Bits sind in der Subnetzmaske 1."
     },
     {
       "id": "AP1-6-2-1-K4-1",
@@ -913,7 +913,7 @@
       "sp": "AP1-6-3-2",
       "k": "AP1-6-3-2-K1",
       "vorne": "Wozu dient `ipconfig` (Linux: `ifconfig` bzw. `ip`)?",
-      "hinten": "Zeigt die eigene Netzwerkkonfiguration: IP-Adresse, Subnetzmaske, Standardgateway; `ipconfig /all` zusätzlich u. a. DNS-Server und MAC-Adresse."
+      "hinten": "Zeigt die eigene Netzwerkkonfiguration: IP-Adresse, Subnetzmaske, Standardgateway; `ipconfig /all` zusätzlich u. a. DNS-Server und MAC-Adresse. Unter Linux zeigt `ip addr` die Adressen, `ip route` das Gateway."
     },
     {
       "id": "AP1-6-3-2-K1-2",
@@ -982,8 +982,8 @@
       "id": "AP1-6-3-2-K3-3",
       "sp": "AP1-6-3-2",
       "k": "AP1-6-3-2-K3",
-      "vorne": "Kann man eine Fehlersuche auch beim Browser beginnen und bis zum Kabel hinunter prüfen?",
-      "hinten": "Ja: vom Browser über `nslookup` und `ping` bis zur Sichtprüfung von LED und Kabel. Wichtig ist, Schicht für Schicht vorzugehen."
+      "vorne": "Wie geht man bei einer Fehlersuche Schicht für Schicht vor, wenn man beim Browser beginnt?",
+      "hinten": "- Webseite im Browser aufrufen (Schicht 7)\n- Namensauflösung mit `nslookup` prüfen\n- Erreichbarkeit mit `ping` prüfen (Schicht 3)\n- Sichtprüfung von LED und Kabel (Schicht 1)"
     },
     {
       "id": "AP1-6-3-2-K4-1",
@@ -1041,7 +1041,7 @@
     {
       "begriff": "MAC-Adresse",
       "langform": "Media Access Control",
-      "erklaerung": "Weltweit eindeutige Hardware-Adresse einer Netzwerkschnittstelle: 48 Bit, sechs Bytes hexadezimal, vordere Hälfte Herstellerkennung.",
+      "erklaerung": "Vom Hersteller fest vergebene, in der Regel weltweit eindeutige Hardware-Adresse einer Netzwerkschnittstelle: 48 Bit, sechs Bytes hexadezimal, vordere Hälfte Herstellerkennung.",
       "sp": [
         "AP1-6-1-1",
         "AP1-6-2-4",
@@ -1330,7 +1330,7 @@
     },
     {
       "begriff": "Subnetting",
-      "erklaerung": "Berechnung und Aufteilung von IP-Netzen anhand der Präfixlänge, z. B. um Netzadresse, Broadcastadresse und Hostbereich zu bestimmen.",
+      "erklaerung": "Aufteilen eines IP-Netzes in Teilnetze anhand der Präfixlänge; dazu gehört das Berechnen von Netzadresse, Broadcastadresse und Hostbereich eines Netzes.",
       "sp": [
         "AP1-6-2-2",
         "AP1-6-2-3"
@@ -1458,40 +1458,8 @@
   ],
   "unsicher": [
     {
-      "id": "AP1-6-1-1-K1-1",
-      "frage": "Die deutschen Schichtnamen schwanken in Lehrbüchern (Schicht 3 auch „Netzwerkschicht“, Schicht 5 auch „Kommunikationssteuerungsschicht“). Werden die hier gewählten Namen erwartet, oder sind die Varianten gleichwertig?"
-    },
-    {
-      "id": "AP1-6-1-1-K2-1",
-      "frage": "Ethernet umfasst genau genommen Schicht 1 und Schicht 2. Die Karte folgt der Können-Aussage (Schicht 2). Wird in der Prüfung auch Schicht 1 akzeptiert?"
-    },
-    {
-      "id": "AP1-6-1-1-K2-3",
-      "frage": "HTTPS ordnet die Karte gemäß Können-Aussage Schicht 7 zu; die Verschlüsselung (TLS) wird in manchen Lehrbüchern Schicht 5 oder 6 zugeordnet."
-    },
-    {
-      "id": "AP1-6-1-1-K2-4",
-      "frage": "Switch Schicht 2 und Router Schicht 3 gelten für klassische Geräte; es gibt auch Layer-3-Switches. Für AP1 vermutlich ohne Belang."
-    },
-    {
-      "id": "AP1-6-1-4-K1-1",
-      "frage": "Datenraten und Reichweiten von Lichtwellenleitern hängen stark vom Fasertyp ab; die Karte nennt sie nur qualitativ. Erwartet die Prüfung konkrete Zahlen?"
-    },
-    {
-      "id": "AP1-6-1-4-K6-1",
-      "frage": "Cat 7 ist nach Norm für 10 Gbit/s (600 MHz) ausgelegt; manche Lehrbücher und Händler nennen höhere Werte. Welche Angabe erwartet die Prüfung?"
-    },
-    {
       "id": "AP1-6-1-3-K5",
-      "frage": "Die Symbole des Katalog-Anhangs liegen nicht vor; deshalb gibt es dazu keine Karte. Ein Bildtrainer oder Karten mit Abbildungen wären nötig."
-    },
-    {
-      "id": "AP1-6-3-2-K3-1",
-      "frage": "Die Können-Aussage nennt die Reihenfolge von unten (Kabel) nach oben, der Rahmen beschreibt auch eine Planung von oben (Browser) nach unten. Beide Richtungen gelten als systematisch; welche die Prüfung erwartet, ist offen."
-    },
-    {
-      "id": "AP1-6-3-2-K5-1",
-      "frage": "Farbe und Bedeutung der Netzwerk-LEDs sind herstellerabhängig (teils getrennte LEDs für Verbindung und Aktivität). Die Karte folgt der Können-Aussage."
+      "frage": "Die Symbole des Katalog-Anhangs (Switch, Router, Firewall, Accesspoint, Server) liegen nicht vor; eine Textkarte kann sie nicht zeigen. Soll dafür ein Bildtrainer oder eine Karte mit Abbildung ergänzt werden?"
     }
   ]
 }

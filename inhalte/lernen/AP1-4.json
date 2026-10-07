@@ -247,6 +247,13 @@
       "hinten": "Beide mit dem niedrigeren Takt, also als DDR4-2666."
     },
     {
+      "id": "AP1-4-1-2-K3-4",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K3",
+      "vorne": "Ein Speicherriegel für einen Desktop-PC soll in ein Notebook eingebaut werden. Passt er?",
+      "hinten": "Nein. Notebooks verwenden die kürzere Bauform SO-DIMM, Desktop-PCs die längere Bauform DIMM; die Bauform muss passen."
+    },
+    {
       "id": "AP1-4-1-2-K4-1",
       "sp": "AP1-4-1-2",
       "k": "AP1-4-1-2-K4",
@@ -370,7 +377,7 @@
       "sp": "AP1-4-1-4",
       "k": "AP1-4-1-4-K2",
       "vorne": "Woran erkennst du einen DVI-Anschluss?",
-      "hinten": "Breiter, oft weißer Anschluss mit vielen Stiften in drei Reihen und einem flachen Kontakt daneben, mit zwei Schrauben gesichert."
+      "hinten": "Breiter, oft weißer Anschluss mit vielen Kontakten in drei Reihen und einem flachen Kontakt daneben, mit zwei Schrauben gesichert."
     },
     {
       "id": "AP1-4-1-4-K2-5",
@@ -573,7 +580,7 @@
       "sp": "AP1-4-2-2",
       "k": "AP1-4-2-2-K4",
       "vorne": "In welchen Einheiten werden Datenmenge und Übertragungsrate angegeben?",
-      "hinten": "- Datenmenge: Byte mit Binärpräfix (KiB, MiB, GiB)\n- Übertragungsrate: Bit je Sekunde mit Dezimalpräfix (kbit/s, Mbit/s, Gbit/s)"
+      "hinten": "- Datenmenge: Byte mit Binärpräfix (KiB, MiB, GiB)\n- Übertragungsrate: Bit je Sekunde mit Dezimalpräfix (kbit/s, Mbit/s, Gbit/s)\nSteht eine Datenmenge ausdrücklich in MB oder GB, wird dezimal gerechnet."
     },
     {
       "id": "AP1-4-2-2-K4-2",
@@ -713,7 +720,7 @@
       "sp": "AP1-4-3-1",
       "k": "AP1-4-3-1-K2",
       "vorne": "Wie hoch soll die Oberkante des Bildschirms stehen?",
-      "hinten": "Etwa auf Augenhöhe, sodass der Blick leicht nach unten geht."
+      "hinten": "Etwa auf Augenhöhe, nicht darüber, sodass der Blick leicht nach unten geht."
     },
     {
       "id": "AP1-4-3-1-K2-3",
@@ -932,6 +939,14 @@
       ]
     },
     {
+      "begriff": "SO-DIMM",
+      "langform": "Small Outline Dual Inline Memory Module",
+      "erklaerung": "Kurze Bauform von Arbeitsspeicher-Riegeln für Notebooks; Desktop-PCs verwenden die längere Bauform DIMM. Beide passen nicht in den Steckplatz des anderen.",
+      "sp": [
+        "AP1-4-1-2"
+      ]
+    },
+    {
       "begriff": "BIOS",
       "langform": "Basic Input/Output System",
       "erklaerung": "Ältere Firmware auf dem Mainboard, die beim Einschalten die Hardware prüft und das Betriebssystem startet; heute durch UEFI abgelöst.",
@@ -1040,7 +1055,7 @@
     {
       "begriff": "DVI",
       "langform": "Digital Visual Interface",
-      "erklaerung": "Älterer Bildanschluss für Monitore mit vielen Stiften und Schraubsicherung.",
+      "erklaerung": "Älterer Bildanschluss für Monitore mit vielen Kontakten in drei Reihen und Schraubsicherung.",
       "sp": [
         "AP1-4-1-4"
       ]
@@ -1248,7 +1263,7 @@
     },
     {
       "begriff": "Bildschirmarbeitsplatz",
-      "erklaerung": "Arbeitsplatz, an dem überwiegend mit einem Bildschirmgerät gearbeitet wird.",
+      "erklaerung": "Arbeitsplatz, der mit einem Bildschirmgerät und weiteren Arbeitsmitteln wie Tastatur und Maus ausgestattet ist; die Arbeitsstättenverordnung stellt an ihn besondere Anforderungen.",
       "sp": [
         "AP1-4-3-1"
       ]
@@ -1320,43 +1335,15 @@
   "unsicher": [
     {
       "id": "AP1-4-1-4-K2-1",
-      "frage": "Die Können-Aussage verlangt das Erkennen am Bild. Die Karten zu K2 beschreiben das Aussehen nur in Worten; Bilder der Anschlüsse würden das Lernen deutlich verbessern."
-    },
-    {
-      "id": "AP1-4-1-4-K2-5",
-      "frage": "Technisch sitzt am Gerät ein Kaltgeräte-Einbaustecker (C14) und am Kabel die Buchse (C13). Rahmen und Können sprechen von „Kaltgerätebuchse“; die Karte übernimmt diesen Sprachgebrauch für den Anschluss am Gerät."
-    },
-    {
-      "id": "AP1-4-1-2-K3-3",
-      "frage": "Regel „bei unterschiedlichem Takt gilt der niedrigere“ vereinfacht: Der tatsächliche Takt hängt zusätzlich davon ab, was Mainboard und CPU unterstützen. Die Karte bleibt bei der Regel aus der Können-Aussage."
-    },
-    {
-      "id": "AP1-4-1-2-K1-5",
-      "frage": "Die konkreten Ausgangsspannungen des Netzteils (12 V, 5 V, 3,3 V) wurden bewusst weggelassen, weil der Rahmen sie nicht verlangt. Falls die Prüfung sie erwartet, ergänzen."
-    },
-    {
-      "id": "AP1-4-2-2-K4-1",
-      "frage": "Die Einheitenregel (Datenmenge binär, Übertragungsrate dezimal) folgt der Können-Aussage. Aufgaben, die Datenmengen ausdrücklich dezimal (MB, GB) angeben, sind dann so zu rechnen, wie angegeben; ob die Prüfung immer konsequent ist, ist nicht belegt."
+      "frage": "K2 verlangt das Erkennen am Bild; die Karten zu K2 beschreiben das Aussehen nur in Worten. Bilder der Anschlüsse ergänzen, sobald das Kartenformat Bilder zulässt."
     },
     {
       "id": "AP1-4-2-3-K2-1",
       "frage": "Die Höhe des Zuschlags für das Netzteil ist nicht festgelegt (je nach Aufgabe z. B. 20 % oder 30 %); die Karten nennen deshalb keinen festen Wert."
     },
     {
-      "id": "AP1-4-3-1-K2-2",
-      "frage": "Lehrbücher nennen für die Bildschirmoberkante „auf Augenhöhe“ oder „etwas unterhalb der Augenhöhe“. Die Karte folgt der Können-Aussage („etwa auf Augenhöhe“). Die verlangte Tiefe der Ergonomierichtlinien ist laut Rahmen nicht belegt."
-    },
-    {
-      "id": "AP1-4-3-3-K3-4",
-      "frage": "Das Energy-Star-Abkommen zwischen EU und USA ist 2018 ausgelaufen; das Siegel ist in der EU nicht mehr offiziell, steht aber im Katalog und ist auf Geräten noch zu sehen. Die Karte beschreibt es als US-Siegel."
-    },
-    {
-      "id": "AP1-4-3-3-K3-2",
-      "frage": "Das EU-Energielabel gilt für Monitore (elektronische Displays, Skala A bis G seit 2021), nicht für PCs oder Notebooks selbst. Die Karte nennt deshalb Monitore als Beispiel."
-    },
-    {
-      "id": "AP1-4-3-2-K4-3",
-      "frage": "Spracheingabe per Mikrofon ist aus der Hardwareliste des Rahmens abgeleitet (Mikrofon); dass sie als Lösung für motorische Einschränkungen erwartet wird, ist nicht belegt."
+      "id": "AP1-4-1-2-K3-4",
+      "frage": "Die Bauform (SO-DIMM/DIMM) steht nicht in K3, gehört aber laut Rahmen zur Prüfung, ob Speicher zu einem Notebook passt. Karte bewusst ergänzt; prüfen, ob die Aufgabe Herbst 2024 die Bauform tatsächlich verlangte."
     }
   ]
 }

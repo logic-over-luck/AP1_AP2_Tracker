@@ -1,0 +1,1352 @@
+{
+  "paket": "AP2-2",
+  "bloecke": {
+    "AP2-2-1": { "satz": "Die fünf UML-Diagramme für Klassen, Anwendungsfälle, Abläufe, Nachrichten und Zustände mit ihrer Notation zeichnen." },
+    "AP2-2-2": { "satz": "Vom ER-Modell zum relationalen Modell: Schlüssel, Beziehungen, Anomalien und Normalisierung bis zur 3. Normalform." },
+    "AP2-2-3": { "satz": "Abläufe als ereignisgesteuerte Prozesskette (EPK) oder in BPMN darstellen." }
+  },
+  "stichpunkte": {
+    "AP2-2-1-1": {
+      "ziel": "Aus einer Textbeschreibung ein vollständiges Klassendiagramm mit Attributen, Methoden, Sichtbarkeiten und Beziehungen zeichnen.",
+      "punkte": [
+        "Attribut: Sichtbarkeit Name : Typ; Methode: Sichtbarkeit Name(Parameter) : Rückgabetyp",
+        "Sichtbarkeiten + public, # protected, - private, ~ package",
+        "Vererbung, abstrakte Klassen und Methoden, Interface mit Implementierung",
+        "Assoziation, gerichtete Assoziation, Aggregation, Komposition; Multiplizitäten 1, 0..1, 1..*, *",
+        "Komposition: Das Teil kann nicht ohne das Ganze bestehen"
+      ]
+    },
+    "AP2-2-1-2": {
+      "ziel": "Aus einem Anforderungstext ein vollständiges Anwendungsfalldiagramm mit Akteuren, Systemgrenze und Beziehungen zeichnen.",
+      "punkte": [
+        "Alle Akteure und Anwendungsfälle herauslesen, Systemgrenze ziehen",
+        "Anwendungsfälle aus Sicht des Akteurs mit Gegenstand und Tätigkeit benennen",
+        "include für verpflichtende, extend für optionale oder bedingte Teilabläufe, Pfeilrichtung beachten",
+        "Bei extend Bedingung und Erweiterungspunkt angeben",
+        "Generalisierung zwischen Akteuren und zwischen Anwendungsfällen"
+      ]
+    },
+    "AP2-2-1-3": {
+      "ziel": "Einen beschriebenen Ablauf oder die Kontrollstrukturen eines Algorithmus vollständig als Aktivitätsdiagramm zeichnen.",
+      "punkte": [
+        "Start- und Endknoten, Aktionen, Entscheidungen mit Bedingungen, Zusammenführungen",
+        "Parallele Abläufe mit Teilung und Synchronisation (Balken)",
+        "Schwimmbahnen: jede Aktion dem richtigen Beteiligten zuordnen",
+        "Endknoten beendet alle Aktivitäten, Ablaufende nur den aktuellen Fluss",
+        "Schleifen und Verzweigungen eines Algorithmus abbilden"
+      ]
+    },
+    "AP2-2-1-4": {
+      "ziel": "Den Nachrichtenaustausch zwischen Objekten in zeitlicher Reihenfolge als Sequenzdiagramm darstellen.",
+      "punkte": [
+        "Teilnehmer mit Lebenslinien, Nachrichten von oben nach unten in zeitlicher Reihenfolge",
+        "Synchron gefüllte Pfeilspitze, asynchron offene Pfeilspitze, Rückgabe gestrichelt",
+        "Nachrichten mit Methodenname und Parametern beschriften",
+        "Kombinierte Fragmente alt, opt und loop",
+        "Selbstaufruf sowie Erzeugen und Zerstören eines Objekts"
+      ]
+    },
+    "AP2-2-1-5": {
+      "ziel": "Aus einer Textbeschreibung die Zustände eines Objekts und ihre Übergänge als Zustandsdiagramm zeichnen.",
+      "punkte": [
+        "Zustände mit Start- und Endknoten",
+        "Übergänge beschriften: Auslöser [Bedingung] / Aktion",
+        "Aktionen im Zustand mit entry, do und exit",
+        "Bedingungen mit Grenzwerten lückenlos und ohne Überschneidung setzen",
+        "Rücksprünge in frühere Zustände, Übergang nach Zeitablauf mit after"
+      ]
+    },
+    "AP2-2-2-1": {
+      "ziel": "Aus Anforderungen ein ER-Modell ableiten oder ein vorhandenes erweitern, mit Kardinalitäten und Primärschlüsseln.",
+      "punkte": [
+        "Entität als Rechteck, Beziehung als Raute, Attribut als Ellipse",
+        "Kardinalitäten 1:1, 1:n und m:n bestimmen und eintragen, Primärschlüssel festlegen",
+        "Vorhandenes Modell erweitern, ohne Angaben doppelt zu speichern",
+        "Attribut an die Beziehung hängen, wenn es zu keiner Entität allein gehört"
+      ]
+    },
+    "AP2-2-2-2": {
+      "ziel": "Ein ER-Modell in Tabellen mit Primär- und Fremdschlüsseln und Kardinalitäten überführen und referenzielle Integrität erklären.",
+      "punkte": [
+        "Jede Entität eine Tabelle, bei 1:n der Fremdschlüssel auf der n-Seite",
+        "m:n über eine Zwischentabelle mit beiden Fremdschlüsseln auflösen",
+        "Primär-, zusammengesetzte Primär- und Fremdschlüssel kennzeichnen, Kardinalitäten einzeichnen",
+        "Referenzielle Integrität: jeder Fremdschlüsselwert verweist auf einen vorhandenen Primärschlüssel",
+        "Lösch- und Aktualisierungsweitergabe an abhängige Datensätze"
+      ]
+    },
+    "AP2-2-2-3": {
+      "ziel": "An einer gegebenen Tabelle Redundanz und die drei Anomalien erkennen und jeweils mit einem Beispiel aus der Tabelle belegen.",
+      "punkte": [
+        "Redundanz an der gegebenen Tabelle konkret belegen",
+        "Änderungsanomalie: mehrfach stehender Wert wird nicht überall geändert",
+        "Einfügeanomalie: Datensatz nicht anlegbar, weil Angaben zu anderem Sachverhalt fehlen",
+        "Löschanomalie: mit einem Datensatz gehen Informationen verloren, die man behalten wollte"
+      ]
+    },
+    "AP2-2-2-4": {
+      "ziel": "Die drei Normalformen erklären, an einer Tabelle prüfen und eine unnormalisierte Tabelle schrittweise in Tabellen in 3. Normalform zerlegen.",
+      "punkte": [
+        "1. NF: jede Zelle genau ein Wert, zusammengesetzte Angaben in eigene Spalten",
+        "2. NF: jedes Nichtschlüsselattribut hängt vom ganzen Primärschlüssel ab",
+        "3. NF: kein Nichtschlüsselattribut hängt von einem anderen Nichtschlüsselattribut ab",
+        "Erfüllte Normalform prüfen, Verletzung benennen, beim Zerlegen Schlüssel festlegen"
+      ]
+    },
+    "AP2-2-3-1": {
+      "ziel": "Die Sinnbilder von EPK und BPMN verwenden und einen einfachen Ablauf mit Verzweigung in beiden Notationen darstellen.",
+      "punkte": [
+        "EPK: Ereignis, Funktion, Organisationseinheit, Objekt; Konnektoren Und, Exklusives Oder, Offenes Oder",
+        "EPK-Grundregel: Ereignis und Funktion wechseln sich ab, Anfang und Ende sind Ereignisse",
+        "BPMN: Aufgabe, Start-, Zwischen- und Endereignis, Gateways, Datenobjekt, Pool mit Lanes",
+        "Sequenzfluss innerhalb eines Pools, Nachrichtenfluss zwischen Pools"
+      ]
+    }
+  },
+  "karten": [
+    {
+      "id": "AP2-2-1-1-K1-1",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K1",
+      "vorne": "Wie wird ein Attribut im Klassendiagramm notiert? Nenne den Aufbau und ein Beispiel.",
+      "hinten": "`Sichtbarkeit Name : Typ`\nBeispiel: `- nachname : String`"
+    },
+    {
+      "id": "AP2-2-1-1-K1-2",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K1",
+      "vorne": "Wie wird eine Methode im Klassendiagramm notiert? Nenne den Aufbau und ein Beispiel.",
+      "hinten": "`Sichtbarkeit Name(Parameter : Typ) : Rückgabetyp`\nBeispiel: `+ berechnePreis(menge : int) : double`"
+    },
+    {
+      "id": "AP2-2-1-1-K1-3",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K1",
+      "vorne": "In welche drei Bereiche ist das Rechteck einer Klasse im Klassendiagramm gegliedert?",
+      "hinten": "- oben: Klassenname\n- Mitte: Attribute\n- unten: Methoden"
+    },
+    {
+      "id": "AP2-2-1-1-K2-1",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K2",
+      "vorne": "Wie wird Vererbung im Klassendiagramm gezeichnet?",
+      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreieckspitze, die von der Unterklasse zur Oberklasse zeigt."
+    },
+    {
+      "id": "AP2-2-1-1-K2-2",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K2",
+      "vorne": "Wie kennzeichnet man im Klassendiagramm eine abstrakte Klasse oder eine abstrakte Methode?",
+      "hinten": "Den Namen kursiv schreiben oder mit `{abstract}` ergänzen; verbreitet ist auch «abstract» über dem Namen. Eine abstrakte Methode hat keine Implementierung; nicht abstrakte Unterklassen müssen sie implementieren."
+    },
+    {
+      "id": "AP2-2-1-1-K2-3",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K2",
+      "vorne": "Wie wird ein Interface im Klassendiagramm dargestellt und wie seine Implementierung durch eine Klasse?",
+      "hinten": "- Interface: Klassenrechteck mit «interface» über dem Namen\n- Implementierung: gestrichelte Linie mit nicht ausgefüllter Dreieckspitze von der Klasse zum Interface"
+    },
+    {
+      "id": "AP2-2-1-1-K2-4",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K2",
+      "vorne": "Worin unterscheiden sich die Pfeile für Vererbung und für die Implementierung eines Interfaces?",
+      "hinten": "Beide haben eine nicht ausgefüllte Dreieckspitze. Vererbung: durchgezogene Linie. Implementierung: gestrichelte Linie."
+    },
+    {
+      "id": "AP2-2-1-1-K3-1",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K3",
+      "vorne": "Wie werden Assoziation und gerichtete Assoziation im Klassendiagramm gezeichnet?",
+      "hinten": "- Assoziation: einfache durchgezogene Linie\n- gerichtete Assoziation: durchgezogene Linie mit offener Pfeilspitze; navigierbar in Pfeilrichtung, die Klasse am Linienanfang kennt die an der Spitze"
+    },
+    {
+      "id": "AP2-2-1-1-K3-2",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K3",
+      "vorne": "Wie werden Aggregation und Komposition im Klassendiagramm gezeichnet, und an welchem Ende sitzt das Symbol?",
+      "hinten": "- Aggregation: Linie mit nicht ausgefüllter Raute\n- Komposition: Linie mit ausgefüllter Raute\nDie Raute sitzt jeweils am Ganzen, nicht am Teil."
+    },
+    {
+      "id": "AP2-2-1-1-K4-1",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K4",
+      "vorne": "Was bedeuten die Multiplizitäten 1, 0..1, 1..* und *?",
+      "hinten": "- `1`: genau eins\n- `0..1`: keins oder eins\n- `1..*`: mindestens eins\n- `*`: beliebig viele, auch keins (wie `0..*`)"
+    },
+    {
+      "id": "AP2-2-1-1-K4-2",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K4",
+      "vorne": "`Kunde 1 —— * Bestellung`: Wie liest man diese Multiplizitäten in Worten?",
+      "hinten": "Ein Kunde hat beliebig viele (auch keine) Bestellungen; jede Bestellung gehört zu genau einem Kunden."
+    },
+    {
+      "id": "AP2-2-1-1-K4-3",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K4",
+      "vorne": "Zwischen Kunde und Bestellung: An welches Linienende schreibt man die Multiplizität, die angibt, wie viele Bestellungen ein Kunde hat?",
+      "hinten": "An das Ende bei der Klasse Bestellung, also gegenüber von Kunde."
+    },
+    {
+      "id": "AP2-2-1-1-K5-1",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K5",
+      "vorne": "Woran entscheidest du, ob eine Teil-Ganzes-Beziehung als Aggregation oder als Komposition modelliert wird?",
+      "hinten": "Kann das Teil nicht ohne das Ganze bestehen (es endet mit ihm), ist es eine Komposition. Kann das Teil unabhängig vom Ganzen bestehen, ist es eine Aggregation."
+    },
+    {
+      "id": "AP2-2-1-1-K5-2",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K5",
+      "vorne": "Gebäude und Raum: Aggregation oder Komposition? Begründe.",
+      "hinten": "Komposition: Ein Raum kann nicht ohne sein Gebäude bestehen; wird das Gebäude abgerissen, gibt es auch den Raum nicht mehr."
+    },
+    {
+      "id": "AP2-2-1-1-K5-3",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K5",
+      "vorne": "Mannschaft und Spieler: Aggregation oder Komposition? Begründe.",
+      "hinten": "Aggregation: Ein Spieler besteht auch ohne die Mannschaft weiter, z. B. nach einem Wechsel oder wenn die Mannschaft aufgelöst wird."
+    },
+    {
+      "id": "AP2-2-1-1-K5-4",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K5",
+      "vorne": "Welche Multiplizität ist bei einer Komposition am Ganzen höchstens möglich, und warum?",
+      "hinten": "Höchstens 1 (also 1 oder 0..1): Ein Teil gehört zu genau einem Ganzen und kann nicht auf mehrere aufgeteilt sein."
+    },
+    {
+      "id": "AP2-2-1-1-K6-1",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K6",
+      "vorne": "Welche Sichtbarkeiten bedeuten die Zeichen +, #, - und ~ im Klassendiagramm?",
+      "hinten": "- `+` public\n- `#` protected\n- `-` private\n- `~` package"
+    },
+    {
+      "id": "AP2-2-1-1-K6-2",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K6",
+      "vorne": "Wer darf auf ein Attribut zugreifen, das mit # gekennzeichnet ist?",
+      "hinten": "Die eigene Klasse und ihre Unterklassen (protected). In Java zusätzlich alle Klassen im selben Paket."
+    },
+    {
+      "id": "AP2-2-1-1-K6-3",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K6",
+      "vorne": "Wer darf auf ein Element mit der Sichtbarkeit private, package bzw. public zugreifen?",
+      "hinten": "- private (`-`): nur die eigene Klasse\n- package (`~`): alle Klassen im selben Paket\n- public (`+`): alle Klassen"
+    },
+    {
+      "id": "AP2-2-1-1-K6-4",
+      "sp": "AP2-2-1-1",
+      "k": "AP2-2-1-1-K6",
+      "vorne": "Welche Sichtbarkeit erhalten Attribute nach dem Prinzip der Datenkapselung, und wie greifen andere Klassen auf sie zu?",
+      "hinten": "private (`-`); der Zugriff von außen läuft über öffentliche Methoden (`+`), z. B. Getter und Setter."
+    },
+    {
+      "id": "AP2-2-1-2-K1-1",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K1",
+      "vorne": "Welche Grundelemente hat ein Anwendungsfalldiagramm, und wie werden sie gezeichnet?",
+      "hinten": "- Akteur: Strichmännchen außerhalb der Systemgrenze\n- Anwendungsfall: Ellipse innerhalb der Systemgrenze\n- Systemgrenze: Rechteck mit dem Systemnamen\n- Assoziation: Linie zwischen Akteur und Anwendungsfall"
+    },
+    {
+      "id": "AP2-2-1-2-K1-2",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K1",
+      "vorne": "Was ist ein Akteur im Anwendungsfalldiagramm?",
+      "hinten": "Eine Rolle außerhalb des Systems, die mit dem System interagiert – eine Person oder ein anderes System."
+    },
+    {
+      "id": "AP2-2-1-2-K1-3",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K1",
+      "vorne": "Was zeigt die Systemgrenze im Anwendungsfalldiagramm?",
+      "hinten": "Was zum System gehört: Die Anwendungsfälle liegen innerhalb des Rechtecks, die Akteure außerhalb."
+    },
+    {
+      "id": "AP2-2-1-2-K2-1",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K2",
+      "vorne": "Wann setzt man im Anwendungsfalldiagramm eine Generalisierung zwischen zwei Akteuren ein?",
+      "hinten": "Wenn ein Akteur alle Anwendungsfälle (Rechte) eines anderen Akteurs hat und darüber hinaus weitere, z. B. Administrator und Benutzer."
+    },
+    {
+      "id": "AP2-2-1-2-K2-2",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K2",
+      "vorne": "Wie wird die Generalisierung zwischen Akteuren gezeichnet?",
+      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreieckspitze vom spezielleren Akteur (z. B. Administrator) zum allgemeineren (z. B. Benutzer)."
+    },
+    {
+      "id": "AP2-2-1-2-K3-1",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K3",
+      "vorne": "Wann verwendet man im Anwendungsfalldiagramm «include», wann «extend»?",
+      "hinten": "- «include»: Der Teilablauf wird immer ausgeführt (verpflichtend)\n- «extend»: Der Teilablauf wird nur optional oder unter einer Bedingung ausgeführt"
+    },
+    {
+      "id": "AP2-2-1-2-K3-2",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K3",
+      "vorne": "Wie sieht der «include»-Pfeil aus, und in welche Richtung zeigt er?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze und «include», vom einbindenden Basis-Anwendungsfall zum eingebundenen Anwendungsfall."
+    },
+    {
+      "id": "AP2-2-1-2-K3-3",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K3",
+      "vorne": "Wie sieht der «extend»-Pfeil aus, und in welche Richtung zeigt er?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze und «extend», vom erweiternden Anwendungsfall zum Basis-Anwendungsfall, der erweitert wird."
+    },
+    {
+      "id": "AP2-2-1-2-K3-4",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K3",
+      "vorne": "„Geld abheben“ prüft immer die PIN; einen Beleg druckt es nur auf Wunsch. Welche Beziehungen zeichnest du, und wohin zeigen die Pfeile?",
+      "hinten": "- «include» von „Geld abheben“ zu „PIN prüfen“\n- «extend» von „Beleg drucken“ zu „Geld abheben“"
+    },
+    {
+      "id": "AP2-2-1-2-K4-1",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K4",
+      "vorne": "Welche zwei Angaben gehören zu einer «extend»-Beziehung?",
+      "hinten": "- die Bedingung, unter der erweitert wird, z. B. `{Kunde wünscht Beleg}`\n- der Erweiterungspunkt: die Stelle im Basis-Anwendungsfall, an der die Erweiterung eingreift"
+    },
+    {
+      "id": "AP2-2-1-2-K4-2",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K4",
+      "vorne": "Wo werden Erweiterungspunkt und Bedingung einer «extend»-Beziehung notiert?",
+      "hinten": "- Erweiterungspunkt: im Basis-Anwendungsfall unter „extension points“\n- Bedingung: in einer Notiz an der «extend»-Beziehung, z. B. `condition: {Kunde wünscht Beleg}`; verkürzt auch in geschweiften Klammern direkt am Pfeil"
+    },
+    {
+      "id": "AP2-2-1-2-K5-1",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K5",
+      "vorne": "Was bedeutet eine Generalisierung zwischen zwei Anwendungsfällen, und wie wird sie gezeichnet?",
+      "hinten": "Der speziellere Anwendungsfall ist eine besondere Form des allgemeinen und übernimmt dessen Verhalten, z. B. „Per Karte bezahlen“ zu „Bezahlen“. Durchgezogene Linie mit nicht ausgefüllter Dreieckspitze zum allgemeinen Fall."
+    },
+    {
+      "id": "AP2-2-1-2-K6-1",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K6",
+      "vorne": "Wie benennt man einen Anwendungsfall?",
+      "hinten": "Aus Sicht des Akteurs mit Gegenstand und Tätigkeit, z. B. „Buch ausleihen“ oder „Rechnung erstellen“."
+    },
+    {
+      "id": "AP2-2-1-2-K6-2",
+      "sp": "AP2-2-1-2",
+      "k": "AP2-2-1-2-K6",
+      "vorne": "Ist „Datenbankabfrage ausführen“ ein guter Name für einen Anwendungsfall eines Bibliothekskunden?",
+      "hinten": "Nein: Das beschreibt einen internen Systemvorgang, nicht das Anliegen des Akteurs. Besser z. B. „Buch suchen“."
+    },
+    {
+      "id": "AP2-2-1-3-K1-1",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K1",
+      "vorne": "Wie werden Startknoten, Endknoten und Aktion im Aktivitätsdiagramm gezeichnet?",
+      "hinten": "- Startknoten: ausgefüllter Kreis\n- Endknoten: ausgefüllter Kreis mit äußerem Ring\n- Aktion: Rechteck mit abgerundeten Ecken"
+    },
+    {
+      "id": "AP2-2-1-3-K1-2",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K1",
+      "vorne": "Wie wird eine Entscheidung im Aktivitätsdiagramm gezeichnet und beschriftet?",
+      "hinten": "Raute mit einem eingehenden und mehreren ausgehenden Flüssen; jeder ausgehende Fluss trägt eine Bedingung in eckigen Klammern, z. B. `[Betrag > 100]` und `[else]`."
+    },
+    {
+      "id": "AP2-2-1-3-K1-3",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K1",
+      "vorne": "Was ist eine Zusammenführung im Aktivitätsdiagramm, und wie wird sie gezeichnet?",
+      "hinten": "Eine Raute mit mehreren eingehenden und einem ausgehenden Fluss; sie führt alternative Zweige nach einer Entscheidung wieder zusammen."
+    },
+    {
+      "id": "AP2-2-1-3-K1-4",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K1",
+      "vorne": "Welche Regel gilt für die Bedingungen an den Ausgängen einer Entscheidung?",
+      "hinten": "Sie müssen sich gegenseitig ausschließen und zusammen alle Fälle abdecken, notfalls mit `[else]`."
+    },
+    {
+      "id": "AP2-2-1-3-K2-1",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K2",
+      "vorne": "Wie stellt man im Aktivitätsdiagramm dar, dass Aktionen parallel ablaufen?",
+      "hinten": "- Teilung: Balken mit einem eingehenden und mehreren ausgehenden Flüssen\n- Synchronisation: Balken mit mehreren eingehenden und einem ausgehenden Fluss"
+    },
+    {
+      "id": "AP2-2-1-3-K2-2",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K2",
+      "vorne": "Wann geht es nach einem Synchronisationsbalken weiter?",
+      "hinten": "Erst, wenn alle eingehenden parallelen Flüsse dort angekommen sind."
+    },
+    {
+      "id": "AP2-2-1-3-K2-3",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K2",
+      "vorne": "Worin unterscheiden sich Synchronisation (Balken) und Zusammenführung (Raute) im Aktivitätsdiagramm?",
+      "hinten": "Die Synchronisation wartet, bis alle eingehenden Flüsse da sind. Die Zusammenführung leitet weiter, sobald ein Fluss ankommt."
+    },
+    {
+      "id": "AP2-2-1-3-K3-1",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K3",
+      "vorne": "Wozu dienen Schwimmbahnen im Aktivitätsdiagramm?",
+      "hinten": "Sie teilen das Diagramm in Bereiche je Beteiligtem (Person, Rolle, Abteilung oder System); jede Aktion steht in der Bahn dessen, der sie ausführt."
+    },
+    {
+      "id": "AP2-2-1-3-K4-1",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K4",
+      "vorne": "Worin unterscheiden sich Endknoten und Ablaufende im Aktivitätsdiagramm?",
+      "hinten": "- Endknoten (Kreis mit Ring): beendet die ganze Aktivität, auch alle parallelen Flüsse\n- Ablaufende (Kreis mit X): beendet nur den Fluss, der es erreicht"
+    },
+    {
+      "id": "AP2-2-1-3-K4-2",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K4",
+      "vorne": "Ein paralleler Zweig ist fertig, der andere soll weiterlaufen. Welches Element setzt du ans Ende des fertigen Zweigs?",
+      "hinten": "Ein Ablaufende (Kreis mit X). Ein Endknoten würde auch den anderen Zweig beenden."
+    },
+    {
+      "id": "AP2-2-1-3-K5-1",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K5",
+      "vorne": "Wie stellt man eine Schleife im Aktivitätsdiagramm dar?",
+      "hinten": "Mit einer Entscheidung, deren einer Ausgang über eine Zusammenführung zu einer früheren Stelle zurückführt; der andere Ausgang verlässt die Schleife."
+    },
+    {
+      "id": "AP2-2-1-3-K5-2",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K5",
+      "vorne": "Wie unterscheiden sich kopf- und fußgesteuerte Schleife im Aktivitätsdiagramm?",
+      "hinten": "- kopfgesteuert: Die Entscheidung steht vor den Aktionen des Schleifenrumpfs\n- fußgesteuert: Die Entscheidung steht nach dem Rumpf, der deshalb mindestens einmal durchlaufen wird"
+    },
+    {
+      "id": "AP2-2-1-3-K5-3",
+      "sp": "AP2-2-1-3",
+      "k": "AP2-2-1-3-K5",
+      "vorne": "Wie bildet man eine Verzweigung (if-else) im Aktivitätsdiagramm ab?",
+      "hinten": "Entscheidung (Raute) mit zwei Ausgängen, z. B. `[Bedingung]` und `[else]`; danach führt eine Zusammenführung (Raute) beide Zweige wieder zusammen."
+    },
+    {
+      "id": "AP2-2-1-4-K1-1",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K1",
+      "vorne": "Wie wird ein Teilnehmer im Sequenzdiagramm dargestellt?",
+      "hinten": "Oben ein Rechteck mit dem Namen, z. B. `k:Kunde`, darunter eine senkrechte gestrichelte Lebenslinie."
+    },
+    {
+      "id": "AP2-2-1-4-K1-2",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K1",
+      "vorne": "Wie wird im Sequenzdiagramm die zeitliche Reihenfolge der Nachrichten dargestellt?",
+      "hinten": "Die Zeit läuft von oben nach unten: Eine weiter unten eingetragene Nachricht wird später gesendet."
+    },
+    {
+      "id": "AP2-2-1-4-K2-1",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K2",
+      "vorne": "Wie werden synchrone Nachricht, asynchrone Nachricht und Rückgabe im Sequenzdiagramm gezeichnet?",
+      "hinten": "- synchron: durchgezogene Linie, gefüllte Pfeilspitze\n- asynchron: durchgezogene Linie, offene Pfeilspitze\n- Rückgabe: gestrichelte Linie, offene Pfeilspitze"
+    },
+    {
+      "id": "AP2-2-1-4-K2-2",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K2",
+      "vorne": "Was unterscheidet eine synchrone von einer asynchronen Nachricht in der Bedeutung?",
+      "hinten": "Synchron: Der Sender wartet, bis die Antwort kommt. Asynchron: Der Sender arbeitet sofort weiter, ohne auf eine Antwort zu warten."
+    },
+    {
+      "id": "AP2-2-1-4-K3-1",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K3",
+      "vorne": "Wie beschriftet man im Sequenzdiagramm eine Nachricht und ihre Rückgabe?",
+      "hinten": "- Nachricht: Methodenname mit Parametern, z. B. `pruefeBestand(artikelNr)`\n- Rückgabe: der zurückgegebene Wert, z. B. `bestand`"
+    },
+    {
+      "id": "AP2-2-1-4-K4-1",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K4",
+      "vorne": "Was bedeuten die kombinierten Fragmente alt, opt und loop im Sequenzdiagramm?",
+      "hinten": "- alt: Alternativen; nur der Bereich, dessen Bedingung zutrifft, wird ausgeführt\n- opt: Der Bereich wird nur ausgeführt, wenn die Bedingung zutrifft\n- loop: Der Bereich wird wiederholt, solange die Bedingung gilt"
+    },
+    {
+      "id": "AP2-2-1-4-K4-2",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K4",
+      "vorne": "Wie wird ein alt-Fragment im Sequenzdiagramm gezeichnet?",
+      "hinten": "Rahmen mit „alt“ in der linken oberen Ecke, durch gestrichelte Linien in Bereiche geteilt; jeder Bereich hat eine Bedingung in eckigen Klammern, z. B. `[bestand > 0]` und `[else]`."
+    },
+    {
+      "id": "AP2-2-1-4-K4-3",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K4",
+      "vorne": "Ein Rabatt wird nur berechnet, wenn ein Gutscheincode vorliegt; sonst geschieht an dieser Stelle nichts. Welches Fragment setzt du ein?",
+      "hinten": "opt: ein einziger Bereich mit Bedingung, ohne Alternativzweig."
+    },
+    {
+      "id": "AP2-2-1-4-K5-1",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K5",
+      "vorne": "Wie stellt man einen Selbstaufruf im Sequenzdiagramm dar?",
+      "hinten": "Mit einem Nachrichtenpfeil, der von der eigenen Lebenslinie ausgeht und auf sie zurückführt, z. B. `berechneSumme()`."
+    },
+    {
+      "id": "AP2-2-1-4-K5-2",
+      "sp": "AP2-2-1-4",
+      "k": "AP2-2-1-4-K5",
+      "vorne": "Wie stellt man im Sequenzdiagramm das Erzeugen und das Zerstören eines Objekts dar?",
+      "hinten": "- Erzeugen: Die Nachricht (z. B. «create» oder `new`) zeigt direkt auf das Rechteck des neuen Teilnehmers, das erst auf dieser Höhe beginnt\n- Zerstören: ein X am Ende seiner Lebenslinie"
+    },
+    {
+      "id": "AP2-2-1-5-K1-1",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K1",
+      "vorne": "Wie werden Zustand, Startknoten und Endknoten im Zustandsdiagramm gezeichnet?",
+      "hinten": "- Zustand: Rechteck mit abgerundeten Ecken und Namen\n- Startknoten: ausgefüllter Kreis\n- Endknoten: ausgefüllter Kreis mit äußerem Ring"
+    },
+    {
+      "id": "AP2-2-1-5-K1-2",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K1",
+      "vorne": "Woran erkennst du in einer Textbeschreibung einen Zustand?",
+      "hinten": "An einer Situation, in der das Objekt verweilt, bis ein Ereignis eintritt, z. B. „bestellt“, „bezahlt“, „versandt“. Das Ereignis selbst ist kein Zustand, sondern Auslöser eines Übergangs."
+    },
+    {
+      "id": "AP2-2-1-5-K2-1",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K2",
+      "vorne": "In welcher Form wird ein Übergang im Zustandsdiagramm beschriftet?",
+      "hinten": "`Auslöser [Bedingung] / Aktion`\nBeispiel: `PIN eingegeben [PIN korrekt] / Konto anzeigen`"
+    },
+    {
+      "id": "AP2-2-1-5-K2-2",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K2",
+      "vorne": "Was bedeuten die drei Teile einer Übergangsbeschriftung im Zustandsdiagramm?",
+      "hinten": "- Auslöser: Ereignis, das den Übergang anstößt\n- [Bedingung]: muss wahr sein, damit der Übergang stattfindet\n- / Aktion: wird beim Übergang ausgeführt"
+    },
+    {
+      "id": "AP2-2-1-5-K3-1",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K3",
+      "vorne": "Was bedeuten entry, do und exit in einem Zustand?",
+      "hinten": "- `entry /`: Aktion beim Betreten des Zustands\n- `do /`: Aktivität, solange das Objekt im Zustand ist\n- `exit /`: Aktion beim Verlassen des Zustands"
+    },
+    {
+      "id": "AP2-2-1-5-K3-2",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K3",
+      "vorne": "Wo werden entry-, do- und exit-Aktionen im Zustandsdiagramm notiert?",
+      "hinten": "Im Zustandssymbol unter dem Zustandsnamen, durch eine Linie abgetrennt, z. B. `entry / Lampe einschalten`."
+    },
+    {
+      "id": "AP2-2-1-5-K4-1",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K4",
+      "vorne": "Mehrere Übergänge mit demselben Auslöser verlassen einen Zustand. Welche Regel gilt für ihre Bedingungen?",
+      "hinten": "Sie dürfen sich nicht überschneiden und müssen zusammen alle Fälle abdecken; sonst ist das Verhalten mehrdeutig oder ein Fall bleibt offen."
+    },
+    {
+      "id": "AP2-2-1-5-K4-2",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K4",
+      "vorne": "Unter 20 °C soll die Heizung einschalten, ab 20 °C nicht. Wie lauten die beiden Bedingungen?",
+      "hinten": "`[t < 20]` und `[t >= 20]` – der Grenzwert 20 gehört genau zu einem der beiden Fälle."
+    },
+    {
+      "id": "AP2-2-1-5-K5-1",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K5",
+      "vorne": "Wie stellt man im Zustandsdiagramm dar, dass ein Objekt in einen früheren Zustand zurückkehrt?",
+      "hinten": "Mit einem beschrifteten Übergangspfeil vom aktuellen Zustand zurück zum früheren, z. B. von „gesperrt“ nach „aktiv“ mit dem Auslöser `entsperren`."
+    },
+    {
+      "id": "AP2-2-1-5-K6-1",
+      "sp": "AP2-2-1-5",
+      "k": "AP2-2-1-5-K6",
+      "vorne": "Wie stellt man im Zustandsdiagramm einen Übergang dar, der nach Ablauf einer Zeit erfolgt?",
+      "hinten": "Mit dem Zeitereignis `after(Dauer)` als Auslöser, z. B. `after(30 s)`. Die Zeit zählt ab dem Betreten des Zustands."
+    },
+    {
+      "id": "AP2-2-2-1-K1-1",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K1",
+      "vorne": "Wie werden Entität, Beziehung und Attribut im ER-Diagramm (Chen-Schreibweise) gezeichnet?",
+      "hinten": "- Entität: Rechteck\n- Beziehung: Raute\n- Attribut: Ellipse"
+    },
+    {
+      "id": "AP2-2-2-1-K1-2",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K1",
+      "vorne": "Was ist eine Entität im ER-Modell?",
+      "hinten": "Ein eindeutig unterscheidbares Objekt, über das Daten gespeichert werden, z. B. ein Kunde oder ein Artikel."
+    },
+    {
+      "id": "AP2-2-2-1-K1-3",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K1",
+      "vorne": "Wie findest du in einem Anforderungstext Entitäten, Attribute und Beziehungen?",
+      "hinten": "- Dinge, über die Daten gespeichert werden (meist Substantive): Entitäten\n- ihre Eigenschaften: Attribute\n- Verben, die Dinge verbinden: Beziehungen"
+    },
+    {
+      "id": "AP2-2-2-1-K2-1",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K2",
+      "vorne": "Was bedeuten die Kardinalitäten 1:1, 1:n und m:n?",
+      "hinten": "- 1:1: Jede Entität ist höchstens einer der anderen Seite zugeordnet\n- 1:n: Eine Entität der 1-Seite ist mehreren der n-Seite zugeordnet, umgekehrt nur einer\n- m:n: auf beiden Seiten mehrere"
+    },
+    {
+      "id": "AP2-2-2-1-K2-2",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K2",
+      "vorne": "Jeder Mitarbeiter gehört zu genau einer Abteilung, eine Abteilung hat mehrere Mitarbeiter. Welche Kardinalität, und wo steht in der Chen-Schreibweise welche Zahl?",
+      "hinten": "1:n – die 1 steht bei Abteilung, das n bei Mitarbeiter."
+    },
+    {
+      "id": "AP2-2-2-1-K2-3",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K2",
+      "vorne": "Ein Schüler belegt mehrere Kurse, ein Kurs hat mehrere Schüler. Welche Kardinalität hat die Beziehung?",
+      "hinten": "m:n"
+    },
+    {
+      "id": "AP2-2-2-1-K3-1",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K3",
+      "vorne": "Welche Anforderungen muss ein Primärschlüssel erfüllen?",
+      "hinten": "- identifiziert jeden Datensatz eindeutig\n- ist nie leer\n- ändert sich möglichst nicht\n- enthält nur so viele Attribute wie nötig"
+    },
+    {
+      "id": "AP2-2-2-1-K3-2",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K3",
+      "vorne": "Wie wird der Primärschlüssel im ER-Diagramm gekennzeichnet?",
+      "hinten": "Der Name des Schlüsselattributs wird unterstrichen."
+    },
+    {
+      "id": "AP2-2-2-1-K3-3",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K3",
+      "vorne": "Warum ist der Name eines Kunden als Primärschlüssel ungeeignet, und was nimmt man stattdessen?",
+      "hinten": "Namen sind nicht eindeutig und können sich ändern. Besser ist eine eigene Kennung, z. B. `KundenNr`."
+    },
+    {
+      "id": "AP2-2-2-1-K4-1",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K4",
+      "vorne": "Worauf achtest du, wenn du ein vorhandenes ER-Modell um neue Angaben erweiterst?",
+      "hinten": "Jede Angabe nur an einer Stelle speichern: Für einen neuen Sachverhalt eine eigene Entität anlegen und über eine Beziehung anbinden, statt seine Attribute bei vorhandenen Entitäten zu wiederholen."
+    },
+    {
+      "id": "AP2-2-2-1-K4-2",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K4",
+      "vorne": "Zu jedem Artikel sollen Name und Anschrift seines Herstellers gespeichert werden; ein Hersteller liefert viele Artikel. Wie erweiterst du das ER-Modell?",
+      "hinten": "Neue Entität Hersteller mit Name und Anschrift, über eine 1:n-Beziehung mit Artikel verbunden – nicht Name und Anschrift als Attribute an jedem Artikel."
+    },
+    {
+      "id": "AP2-2-2-1-K5-1",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K5",
+      "vorne": "Wann hängt man im ER-Modell ein Attribut an eine Beziehung statt an eine Entität?",
+      "hinten": "Wenn es zu keiner der beiden Entitäten allein gehört, sondern erst durch ihre Verbindung entsteht – typisch bei m:n-Beziehungen."
+    },
+    {
+      "id": "AP2-2-2-1-K5-2",
+      "sp": "AP2-2-2-1",
+      "k": "AP2-2-2-1-K5",
+      "vorne": "Bestellung „enthält“ Artikel (m:n). Wohin gehört das Attribut Menge?",
+      "hinten": "An die Beziehung „enthält“: Die Menge gilt für einen Artikel in einer bestimmten Bestellung, nicht für die Bestellung oder den Artikel allein."
+    },
+    {
+      "id": "AP2-2-2-2-K1-1",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K1",
+      "vorne": "Was wird beim Überführen ins relationale Modell aus einer Entität und ihren Attributen?",
+      "hinten": "Jede Entität wird eine Tabelle, ihre Attribute werden Spalten, ihr Primärschlüssel wird Primärschlüssel der Tabelle."
+    },
+    {
+      "id": "AP2-2-2-2-K1-2",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K1",
+      "vorne": "In welche Tabelle kommt bei einer 1:n-Beziehung der Fremdschlüssel?",
+      "hinten": "In die Tabelle auf der n-Seite; er verweist auf den Primärschlüssel der 1-Seite. Beispiel: `AbtNr` als Fremdschlüssel in Mitarbeiter."
+    },
+    {
+      "id": "AP2-2-2-2-K1-3",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K1",
+      "vorne": "Warum kommt der Fremdschlüssel bei einer 1:n-Beziehung nicht auf die 1-Seite?",
+      "hinten": "Dann müsste eine Zelle mehrere Werte aufnehmen, z. B. alle Mitarbeiter einer Abteilung – das verletzt die 1. Normalform."
+    },
+    {
+      "id": "AP2-2-2-2-K2-1",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K2",
+      "vorne": "Wie wird eine m:n-Beziehung im relationalen Modell umgesetzt?",
+      "hinten": "Mit einer Zwischentabelle, die die Primärschlüssel beider Tabellen als Fremdschlüssel enthält; zusammen bilden sie meist ihren Primärschlüssel. Aus m:n werden zwei 1:n-Beziehungen."
+    },
+    {
+      "id": "AP2-2-2-2-K2-2",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K2",
+      "vorne": "Bestellung und Artikel stehen in einer m:n-Beziehung mit dem Attribut Menge. Wie sieht die Zwischentabelle aus?",
+      "hinten": "`Bestellposition(BestellNr, ArtikelNr, Menge)`: BestellNr und ArtikelNr sind Fremdschlüssel und zusammen Primärschlüssel; Menge kommt mit in die Zwischentabelle."
+    },
+    {
+      "id": "AP2-2-2-2-K3-1",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K3",
+      "vorne": "Was ist ein zusammengesetzter Primärschlüssel?",
+      "hinten": "Ein Primärschlüssel aus mehreren Spalten, die nur gemeinsam jeden Datensatz eindeutig machen, z. B. `(BestellNr, ArtikelNr)` in einer Zwischentabelle."
+    },
+    {
+      "id": "AP2-2-2-2-K3-2",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K3",
+      "vorne": "Was ist ein Fremdschlüssel?",
+      "hinten": "Eine Spalte (oder Spaltenkombination), die auf den Primärschlüssel einer anderen Tabelle verweist und so die beiden Tabellen verknüpft."
+    },
+    {
+      "id": "AP2-2-2-2-K3-3",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K3",
+      "vorne": "Wie kennzeichnet man Primär- und Fremdschlüssel im relationalen Modell üblicherweise?",
+      "hinten": "- Primärschlüssel: unterstrichen oder mit „PK“\n- Fremdschlüssel: mit „FK“\nBei einem zusammengesetzten Primärschlüssel werden alle beteiligten Spalten gekennzeichnet."
+    },
+    {
+      "id": "AP2-2-2-2-K4-1",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K4",
+      "vorne": "Welche Kardinalität kommt zwischen den Tabellen eines fertigen relationalen Modells nicht vor, und warum?",
+      "hinten": "m:n – sie ist über eine Zwischentabelle in zwei 1:n-Beziehungen aufgelöst. Es bleiben 1:1 und 1:n."
+    },
+    {
+      "id": "AP2-2-2-2-K4-2",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K4",
+      "vorne": "Die Zwischentabelle Bestellposition verbindet Bestellung und Artikel. Welche Kardinalitäten zeichnest du ein?",
+      "hinten": "- Bestellung 1 : n Bestellposition\n- Artikel 1 : n Bestellposition\nDie n-Seite (beim Krähenfuß der Fuß) liegt jeweils bei der Zwischentabelle."
+    },
+    {
+      "id": "AP2-2-2-2-K5-1",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K5",
+      "vorne": "Was bedeutet referenzielle Integrität?",
+      "hinten": "Jeder Fremdschlüsselwert muss auf einen vorhandenen Primärschlüsselwert der verknüpften Tabelle verweisen."
+    },
+    {
+      "id": "AP2-2-2-2-K5-2",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K5",
+      "vorne": "Welche Vorgänge weist eine Datenbank ohne Weitergabe zurück, um die referenzielle Integrität zu wahren?",
+      "hinten": "- einen Fremdschlüsselwert eintragen, zu dem es keinen Primärschlüssel gibt\n- einen Datensatz löschen oder seinen Schlüssel ändern, solange noch Fremdschlüssel auf ihn verweisen"
+    },
+    {
+      "id": "AP2-2-2-2-K6-1",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K6",
+      "vorne": "Was bewirkt die Löschweitergabe?",
+      "hinten": "Wird ein Datensatz gelöscht, werden alle Datensätze, die per Fremdschlüssel auf ihn verweisen, mitgelöscht (SQL: `ON DELETE CASCADE`)."
+    },
+    {
+      "id": "AP2-2-2-2-K6-2",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K6",
+      "vorne": "Was bewirkt die Aktualisierungsweitergabe?",
+      "hinten": "Ändert sich der Primärschlüssel eines Datensatzes, werden die Fremdschlüssel der abhängigen Datensätze automatisch angepasst (SQL: `ON UPDATE CASCADE`)."
+    },
+    {
+      "id": "AP2-2-2-2-K6-3",
+      "sp": "AP2-2-2-2",
+      "k": "AP2-2-2-2-K6",
+      "vorne": "Ein Kunde mit drei Bestellungen wird gelöscht; für den Fremdschlüssel in Bestellung ist Löschweitergabe eingestellt. Was geschieht mit den Bestellungen?",
+      "hinten": "Sie werden ebenfalls gelöscht."
+    },
+    {
+      "id": "AP2-2-2-3-K1-1",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K1",
+      "vorne": "Was ist Redundanz in einer Tabelle?",
+      "hinten": "Dieselbe Information ist mehrfach gespeichert, z. B. der Name eines Kunden in jeder seiner Bestellungen. Redundanz ist die Ursache der Anomalien."
+    },
+    {
+      "id": "AP2-2-2-3-K1-2",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K1",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`: Belege Redundanz mit einem konkreten Beispiel.",
+      "hinten": "Der Lesername steht in jeder Ausleihe desselben Lesers erneut: Leiht Leser 17 fünf Bücher aus, steht sein Name fünfmal in der Tabelle. Ebenso steht der Titel bei jeder Ausleihe desselben Buchs."
+    },
+    {
+      "id": "AP2-2-2-3-K2-1",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K2",
+      "vorne": "Was ist eine Änderungsanomalie?",
+      "hinten": "Ein Wert steht mehrfach in der Tabelle und wird beim Ändern nicht an allen Stellen geändert; danach widersprechen sich die Daten."
+    },
+    {
+      "id": "AP2-2-2-3-K3-1",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K3",
+      "vorne": "Was ist eine Einfügeanomalie?",
+      "hinten": "Ein Datensatz lässt sich nicht anlegen, weil Angaben zu einem anderen Sachverhalt noch fehlen, z. B. ein neuer Kunde, solange es keine Bestellung für ihn gibt."
+    },
+    {
+      "id": "AP2-2-2-3-K4-1",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K4",
+      "vorne": "Was ist eine Löschanomalie?",
+      "hinten": "Mit einem gelöschten Datensatz gehen Informationen verloren, die man behalten wollte, z. B. die Kundendaten zusammen mit der letzten Bestellung."
+    },
+    {
+      "id": "AP2-2-2-3-K5-1",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K5",
+      "vorne": "Welche drei Anomalien können in einer Tabelle mit Redundanz auftreten?",
+      "hinten": "- Änderungsanomalie\n- Einfügeanomalie\n- Löschanomalie"
+    },
+    {
+      "id": "AP2-2-2-3-K5-2",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K5",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`: Beschreibe eine Änderungsanomalie.",
+      "hinten": "Heiratet Leser 17 und ändert seinen Namen, muss der Name in allen seinen Ausleihen geändert werden. Wird eine Zeile vergessen, steht er danach mit zwei verschiedenen Namen in der Tabelle."
+    },
+    {
+      "id": "AP2-2-2-3-K5-3",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K5",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`, Primärschlüssel AusleihNr: Beschreibe eine Einfügeanomalie.",
+      "hinten": "Ein neues Buch, das noch nie ausgeliehen wurde, lässt sich nicht erfassen: Ohne Ausleihe gibt es keine AusleihNr und damit keinen Datensatz. Dasselbe gilt für einen neuen Leser."
+    },
+    {
+      "id": "AP2-2-2-3-K5-4",
+      "sp": "AP2-2-2-3",
+      "k": "AP2-2-2-3-K5",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`: Beschreibe eine Löschanomalie.",
+      "hinten": "Wird die einzige Ausleihe eines Buchs gelöscht, geht mit ihr auch der Titel des Buchs verloren, obwohl das Buch weiter im Bestand ist."
+    },
+    {
+      "id": "AP2-2-2-3-X1",
+      "sp": "AP2-2-2-3",
+      "k": null,
+      "vorne": "Wodurch beseitigt man Redundanz und die daraus folgenden Anomalien?",
+      "hinten": "Durch Normalisierung: Die Tabelle wird so in mehrere Tabellen zerlegt, dass jede Angabe nur einmal gespeichert ist; die Tabellen werden über Fremdschlüssel verknüpft."
+    },
+    {
+      "id": "AP2-2-2-4-K1-1",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K1",
+      "vorne": "Wann ist eine Tabelle in der 1. Normalform?",
+      "hinten": "Wenn jede Zelle genau einen Wert enthält: keine Listen mehrerer Werte in einer Zelle, zusammengesetzte Angaben sind in eigene Spalten zerlegt."
+    },
+    {
+      "id": "AP2-2-2-4-K1-2",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K1",
+      "vorne": "Die Spalte Anschrift enthält „Hauptstr. 5, 50667 Köln“. Wie stellst du die 1. Normalform her?",
+      "hinten": "Die Angabe in eigene Spalten zerlegen: `Strasse`, `PLZ`, `Ort`. Die Hausnummer bekommt je nach Vorgabe eine eigene Spalte `Hausnr`."
+    },
+    {
+      "id": "AP2-2-2-4-K1-3",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K1",
+      "vorne": "Eine Zelle enthält mehrere gleichartige Werte, z. B. zwei Telefonnummern eines Kunden. Wie behebst du das?",
+      "hinten": "Jeder Wert bekommt einen eigenen Datensatz; spätestens mit der 2. Normalform in einer eigenen Tabelle, z. B. `Telefon(KundenNr, Nummer)`. Nicht in durchnummerierte Spalten wie Telefon1, Telefon2."
+    },
+    {
+      "id": "AP2-2-2-4-K2-1",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K2",
+      "vorne": "Wann ist eine Tabelle in der 2. Normalform?",
+      "hinten": "Wenn sie in 1. Normalform ist und jedes Nichtschlüsselattribut vom ganzen Primärschlüssel abhängt, nicht nur von einem Teil davon."
+    },
+    {
+      "id": "AP2-2-2-4-K2-2",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K2",
+      "vorne": "Bei welcher Art von Primärschlüssel kann die 2. Normalform überhaupt verletzt sein?",
+      "hinten": "Nur bei einem zusammengesetzten Primärschlüssel. Besteht er aus einer Spalte, ist eine Tabelle in 1. Normalform auch in 2. Normalform."
+    },
+    {
+      "id": "AP2-2-2-4-K2-3",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K2",
+      "vorne": "Wie stellst du die 2. Normalform her?",
+      "hinten": "Attribute, die nur von einem Teil des Primärschlüssels abhängen, zusammen mit diesem Schlüsselteil in eine eigene Tabelle auslagern; der Schlüsselteil bleibt in der Ausgangstabelle als Fremdschlüssel."
+    },
+    {
+      "id": "AP2-2-2-4-K3-1",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K3",
+      "vorne": "Wann ist eine Tabelle in der 3. Normalform?",
+      "hinten": "Wenn sie in 2. Normalform ist und kein Nichtschlüsselattribut von einem anderen Nichtschlüsselattribut abhängt (keine transitive Abhängigkeit)."
+    },
+    {
+      "id": "AP2-2-2-4-K3-2",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K3",
+      "vorne": "Wie stellst du die 3. Normalform her?",
+      "hinten": "Das abhängige Attribut zusammen mit dem Nichtschlüsselattribut, von dem es abhängt, in eine eigene Tabelle auslagern. Dieses wird dort Primärschlüssel und bleibt in der Ausgangstabelle als Fremdschlüssel."
+    },
+    {
+      "id": "AP2-2-2-4-K4-1",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K4",
+      "vorne": "In welchen Schritten zerlegst du eine unnormalisierte Tabelle bis zur 3. Normalform?",
+      "hinten": "- 1. NF: Mehrfachwerte und zusammengesetzte Angaben auflösen, Primärschlüssel festlegen\n- 2. NF: Teilabhängigkeiten vom Schlüssel auslagern\n- 3. NF: Abhängigkeiten zwischen Nichtschlüsselattributen auslagern\n- Primär- und Fremdschlüssel jeder Tabelle festlegen"
+    },
+    {
+      "id": "AP2-2-2-4-K4-2",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K4",
+      "vorne": "Was darf beim Zerlegen einer Tabelle in mehrere Tabellen nicht verloren gehen?",
+      "hinten": "Keine Information: Über die Fremdschlüssel müssen sich die ursprünglichen Daten wieder vollständig zusammensetzen lassen."
+    },
+    {
+      "id": "AP2-2-2-4-K5-1",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K5",
+      "vorne": "`Bestellposition(BestellNr, ArtikelNr, Artikelname, Menge)` mit Primärschlüssel (BestellNr, ArtikelNr). Welche Normalform ist verletzt, und warum?",
+      "hinten": "Die 2. Normalform: Artikelname hängt nur von ArtikelNr ab, also nur von einem Teil des Primärschlüssels."
+    },
+    {
+      "id": "AP2-2-2-4-K5-2",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K5",
+      "vorne": "`Mitarbeiter(PersNr, Name, AbtNr, AbtName)` mit Primärschlüssel PersNr. Welche Normalform ist verletzt, und warum?",
+      "hinten": "Die 3. Normalform: AbtName hängt von AbtNr ab, also von einem Nichtschlüsselattribut. 1. und 2. Normalform sind erfüllt."
+    },
+    {
+      "id": "AP2-2-2-4-K5-3",
+      "sp": "AP2-2-2-4",
+      "k": "AP2-2-2-4-K5",
+      "vorne": "In einer Kundentabelle enthält die Spalte Telefon „0221 123456, 0170 987654“. Welche Normalform ist verletzt?",
+      "hinten": "Die 1. Normalform: Die Zelle enthält mehr als einen Wert."
+    },
+    {
+      "id": "AP2-2-3-1-K1-1",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K1",
+      "vorne": "Mit welchen Sinnbildern werden Ereignis, Funktion, Organisationseinheit und Objekt in der EPK dargestellt?",
+      "hinten": "- Ereignis: Sechseck\n- Funktion: Rechteck mit abgerundeten Ecken\n- Organisationseinheit: Ellipse mit senkrechtem Strich\n- Objekt (Informationsobjekt): Rechteck"
+    },
+    {
+      "id": "AP2-2-3-1-K1-2",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K1",
+      "vorne": "Was beschreiben Ereignis und Funktion in einer EPK? Nenne je ein Beispiel.",
+      "hinten": "- Ereignis: ein eingetretener Zustand, der eine Funktion auslöst oder ihr Ergebnis ist, z. B. „Auftrag ist eingegangen“\n- Funktion: eine Tätigkeit, z. B. „Auftrag prüfen“"
+    },
+    {
+      "id": "AP2-2-3-1-K1-3",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K1",
+      "vorne": "Was bedeuten die EPK-Konnektoren Und, Exklusives Oder und Offenes Oder?",
+      "hinten": "- Und (∧): alle Zweige\n- Exklusives Oder (XOR): genau ein Zweig\n- Offenes Oder (∨): mindestens ein Zweig, auch mehrere"
+    },
+    {
+      "id": "AP2-2-3-1-K2-1",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K2",
+      "vorne": "Welche Grundregel gilt für die Abfolge der Elemente in einer EPK?",
+      "hinten": "Ereignisse und Funktionen wechseln sich ab; der Ablauf beginnt und endet mit einem Ereignis."
+    },
+    {
+      "id": "AP2-2-3-1-K4-1",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K4",
+      "vorne": "Nach welchem Element verzweigt eine EPK mit einem Exklusiven Oder: nach einem Ereignis oder nach einer Funktion?",
+      "hinten": "Nach einer Funktion: Sie trifft die Entscheidung, und jeder Zweig beginnt mit einem eigenen Ereignis. Ein Ereignis kann nichts entscheiden."
+    },
+    {
+      "id": "AP2-2-3-1-K4-2",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K4",
+      "vorne": "Mit welchem Element stellst du in BPMN eine Entweder-oder-Verzweigung dar, und wie führst du die Zweige wieder zusammen?",
+      "hinten": "Mit einem exklusiven Gateway (Raute mit X); die ausgehenden Sequenzflüsse tragen die Bedingungen. Ein weiteres exklusives Gateway führt die Zweige wieder zusammen."
+    },
+    {
+      "id": "AP2-2-3-1-K3-1",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K3",
+      "vorne": "Wie werden Start-, Zwischen- und Endereignis in BPMN gezeichnet?",
+      "hinten": "Jeweils als Kreis:\n- Startereignis: dünner Rand\n- Zwischenereignis: doppelter Rand\n- Endereignis: dicker Rand"
+    },
+    {
+      "id": "AP2-2-3-1-K3-2",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K3",
+      "vorne": "Was bedeuten exklusives, inklusives und paralleles Gateway in BPMN, und wie sind sie gekennzeichnet?",
+      "hinten": "Jeweils eine Raute:\n- exklusiv (X): genau ein Pfad\n- inklusiv (Kreis): ein oder mehrere Pfade\n- parallel (+): alle Pfade"
+    },
+    {
+      "id": "AP2-2-3-1-K3-3",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K3",
+      "vorne": "Wie werden Aufgabe und Datenobjekt in BPMN gezeichnet?",
+      "hinten": "- Aufgabe: Rechteck mit abgerundeten Ecken\n- Datenobjekt: Blatt mit umgeknickter Ecke, über eine gepunktete Linie angebunden"
+    },
+    {
+      "id": "AP2-2-3-1-K3-4",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K3",
+      "vorne": "Was ist der Unterschied zwischen Pool und Lane in BPMN?",
+      "hinten": "- Pool: Rahmen für einen eigenständigen Beteiligten, z. B. ein Unternehmen oder den Kunden\n- Lane: Unterteilung eines Pools, z. B. eine Abteilung oder Rolle, der Aufgaben zugeordnet werden"
+    },
+    {
+      "id": "AP2-2-3-1-K5-1",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K5",
+      "vorne": "Was unterscheidet Sequenzfluss und Nachrichtenfluss in BPMN in Bedeutung und Darstellung?",
+      "hinten": "- Sequenzfluss: Reihenfolge innerhalb eines Pools; durchgezogene Linie mit gefüllter Pfeilspitze\n- Nachrichtenfluss: Nachricht zwischen zwei Pools; gestrichelte Linie mit kleinem Kreis am Anfang und offener Pfeilspitze"
+    },
+    {
+      "id": "AP2-2-3-1-K5-2",
+      "sp": "AP2-2-3-1",
+      "k": "AP2-2-3-1-K5",
+      "vorne": "Der Kunde (eigener Pool) schickt eine Bestellung an den Händler (eigener Pool). Welche Verbindung zeichnest du?",
+      "hinten": "Einen Nachrichtenfluss, weil er zwei Pools verbindet. Ein Sequenzfluss darf keine Poolgrenze überschreiten."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "glossar": [
+    {
+      "begriff": "UML",
+      "langform": "Unified Modeling Language",
+      "erklaerung": "Standardisierte grafische Sprache zur Modellierung von Software, mit Strukturdiagrammen (z. B. Klassendiagramm) und Verhaltensdiagrammen (z. B. Aktivitäts-, Sequenz-, Zustandsdiagramm).",
+      "sp": ["AP2-2-1-1", "AP2-2-1-2", "AP2-2-1-3", "AP2-2-1-4", "AP2-2-1-5"]
+    },
+    {
+      "begriff": "Klassendiagramm",
+      "erklaerung": "UML-Strukturdiagramm, das Klassen mit Attributen und Methoden sowie ihre Beziehungen (Vererbung, Assoziation, Aggregation, Komposition) zeigt.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Attribut",
+      "erklaerung": "Eigenschaft einer Klasse oder Entität, z. B. Name oder Preis. Im Klassendiagramm mit Sichtbarkeit, Name und Typ notiert, im ER-Diagramm als Ellipse.",
+      "sp": ["AP2-2-1-1", "AP2-2-2-1"]
+    },
+    {
+      "begriff": "Methodensignatur",
+      "erklaerung": "Kopf einer Methode im Klassendiagramm: Sichtbarkeit, Name, Parameter mit Typen und Rückgabetyp, z. B. `+ berechnePreis(menge : int) : double`.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Sichtbarkeit",
+      "erklaerung": "Legt fest, wer auf ein Attribut oder eine Methode zugreifen darf: `+` public, `#` protected, `-` private, `~` package.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Vererbung",
+      "erklaerung": "Eine Unterklasse übernimmt Attribute und Methoden einer Oberklasse und kann sie erweitern. Im Klassendiagramm: Linie mit nicht ausgefüllter Dreieckspitze zur Oberklasse.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Abstrakte Klasse",
+      "erklaerung": "Klasse, von der keine Objekte erzeugt werden können; sie dient als Oberklasse und kann abstrakte Methoden ohne Implementierung enthalten.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Interface",
+      "erklaerung": "Schnittstelle, die Methoden vorgibt, ohne sie umzusetzen; eine Klasse, die sie implementiert, muss alle diese Methoden bereitstellen. Im Klassendiagramm mit «interface» gekennzeichnet.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Assoziation",
+      "erklaerung": "Allgemeine Beziehung zwischen Klassen, als Linie gezeichnet; die gerichtete Assoziation zeigt mit einer Pfeilspitze, welche Klasse die andere kennt.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Aggregation",
+      "erklaerung": "Teil-Ganzes-Beziehung, bei der das Teil auch ohne das Ganze bestehen kann. Im Klassendiagramm: nicht ausgefüllte Raute am Ganzen.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Komposition",
+      "erklaerung": "Strenge Teil-Ganzes-Beziehung: Das Teil kann nicht ohne das Ganze bestehen. Im Klassendiagramm: ausgefüllte Raute am Ganzen.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Multiplizität",
+      "erklaerung": "Angabe an einem Beziehungsende im Klassendiagramm, wie viele Objekte beteiligt sind, z. B. `1`, `0..1`, `1..*`, `*`.",
+      "sp": ["AP2-2-1-1"]
+    },
+    {
+      "begriff": "Anwendungsfalldiagramm",
+      "erklaerung": "UML-Diagramm (Use-Case-Diagramm), das zeigt, welche Akteure welche Anwendungsfälle eines Systems nutzen.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "Akteur",
+      "erklaerung": "Rolle außerhalb des Systems, die mit ihm interagiert, z. B. eine Person oder ein anderes System; als Strichmännchen gezeichnet.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "Systemgrenze",
+      "erklaerung": "Rechteck im Anwendungsfalldiagramm, das die Anwendungsfälle des Systems umschließt; die Akteure stehen außerhalb.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "Generalisierung",
+      "erklaerung": "Beziehung zwischen einem allgemeinen und einem spezielleren Element, z. B. zwischen Akteuren oder Anwendungsfällen; Linie mit nicht ausgefüllter Dreieckspitze zum allgemeinen Element.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "include",
+      "erklaerung": "Beziehung im Anwendungsfalldiagramm: Der Basis-Anwendungsfall bindet einen anderen immer (verpflichtend) ein. Gestrichelter Pfeil zum eingebundenen Fall.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "extend",
+      "erklaerung": "Beziehung im Anwendungsfalldiagramm: Ein Anwendungsfall erweitert einen Basis-Anwendungsfall optional oder unter einer Bedingung. Gestrichelter Pfeil zum Basisfall.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "Erweiterungspunkt",
+      "erklaerung": "Stelle in einem Basis-Anwendungsfall, an der eine «extend»-Erweiterung eingreifen kann; wird im Basis-Anwendungsfall unter „extension points“ aufgeführt.",
+      "sp": ["AP2-2-1-2"]
+    },
+    {
+      "begriff": "Aktivitätsdiagramm",
+      "erklaerung": "UML-Verhaltensdiagramm, das einen Ablauf mit Aktionen, Entscheidungen, parallelen Zweigen und ggf. Schwimmbahnen darstellt.",
+      "sp": ["AP2-2-1-3"]
+    },
+    {
+      "begriff": "Kontrollstruktur",
+      "erklaerung": "Element, das den Ablauf eines Algorithmus steuert: Folge, Verzweigung und Schleife.",
+      "sp": ["AP2-2-1-3"]
+    },
+    {
+      "begriff": "Schwimmbahn",
+      "erklaerung": "Bereich im Aktivitätsdiagramm, der einem Beteiligten zugeordnet ist; jede Aktion steht in der Bahn dessen, der sie ausführt.",
+      "sp": ["AP2-2-1-3"]
+    },
+    {
+      "begriff": "Teilung und Synchronisation",
+      "erklaerung": "Balken im Aktivitätsdiagramm: Die Teilung startet parallele Flüsse, die Synchronisation wartet, bis alle angekommen sind, und führt sie zusammen.",
+      "sp": ["AP2-2-1-3"]
+    },
+    {
+      "begriff": "Endknoten",
+      "erklaerung": "Ausgefüllter Kreis mit äußerem Ring. Im Aktivitätsdiagramm beendet er die ganze Aktivität, im Zustandsdiagramm das Ende des modellierten Ablaufs.",
+      "sp": ["AP2-2-1-3", "AP2-2-1-5"]
+    },
+    {
+      "begriff": "Ablaufende",
+      "erklaerung": "Kreis mit X im Aktivitätsdiagramm; beendet nur den Fluss, der es erreicht, andere parallele Flüsse laufen weiter.",
+      "sp": ["AP2-2-1-3"]
+    },
+    {
+      "begriff": "Sequenzdiagramm",
+      "erklaerung": "UML-Verhaltensdiagramm, das zeigt, welche Nachrichten Objekte in welcher zeitlichen Reihenfolge austauschen.",
+      "sp": ["AP2-2-1-4"]
+    },
+    {
+      "begriff": "Lebenslinie",
+      "erklaerung": "Senkrechte gestrichelte Linie unter einem Teilnehmer im Sequenzdiagramm; die Zeit läuft von oben nach unten.",
+      "sp": ["AP2-2-1-4"]
+    },
+    {
+      "begriff": "Synchrone Nachricht",
+      "erklaerung": "Nachricht, bei der der Sender auf die Antwort wartet; im Sequenzdiagramm mit gefüllter Pfeilspitze.",
+      "sp": ["AP2-2-1-4"]
+    },
+    {
+      "begriff": "Asynchrone Nachricht",
+      "erklaerung": "Nachricht, bei der der Sender nicht auf eine Antwort wartet; im Sequenzdiagramm mit offener Pfeilspitze.",
+      "sp": ["AP2-2-1-4"]
+    },
+    {
+      "begriff": "Kombiniertes Fragment",
+      "erklaerung": "Rahmen im Sequenzdiagramm, der Nachrichten unter einer Bedingung zusammenfasst, z. B. alt (Alternative), opt (optional), loop (Wiederholung).",
+      "sp": ["AP2-2-1-4"]
+    },
+    {
+      "begriff": "Zustandsdiagramm",
+      "erklaerung": "UML-Verhaltensdiagramm, das die Zustände eines Objekts und die Übergänge zwischen ihnen mit Auslöser, Bedingung und Aktion zeigt.",
+      "sp": ["AP2-2-1-5"]
+    },
+    {
+      "begriff": "Übergang",
+      "erklaerung": "Pfeil von einem Zustand zum nächsten (Transition), beschriftet mit `Auslöser [Bedingung] / Aktion`.",
+      "sp": ["AP2-2-1-5"]
+    },
+    {
+      "begriff": "entry, do, exit",
+      "erklaerung": "Aktionen innerhalb eines Zustands: entry beim Betreten, do während des Verweilens, exit beim Verlassen.",
+      "sp": ["AP2-2-1-5"]
+    },
+    {
+      "begriff": "after",
+      "erklaerung": "Zeitereignis im Zustandsdiagramm: `after(Dauer)` löst den Übergang aus, wenn die Zeit seit Betreten des Zustands abgelaufen ist.",
+      "sp": ["AP2-2-1-5"]
+    },
+    {
+      "begriff": "ER-Modell",
+      "langform": "Entity-Relationship-Modell",
+      "erklaerung": "Datenmodell, das Entitäten, ihre Attribute und Beziehungen mit Kardinalitäten darstellt; in Chen-Schreibweise mit Rechteck, Raute und Ellipse.",
+      "sp": ["AP2-2-2-1", "AP2-2-2-2"]
+    },
+    {
+      "begriff": "Entität",
+      "erklaerung": "Eindeutig unterscheidbares Objekt, über das Daten gespeichert werden, z. B. ein Kunde. Im ER-Diagramm als Rechteck, im relationalen Modell als Tabelle.",
+      "sp": ["AP2-2-2-1", "AP2-2-2-2"]
+    },
+    {
+      "begriff": "Kardinalität",
+      "erklaerung": "Gibt an, wie viele Entitäten bzw. Datensätze auf jeder Seite einer Beziehung beteiligt sind: 1:1, 1:n oder m:n.",
+      "sp": ["AP2-2-2-1", "AP2-2-2-2"]
+    },
+    {
+      "begriff": "Primärschlüssel",
+      "erklaerung": "Attribut oder Attributkombination, die jeden Datensatz einer Tabelle eindeutig identifiziert; darf nicht leer sein.",
+      "sp": ["AP2-2-2-1", "AP2-2-2-2", "AP2-2-2-4"]
+    },
+    {
+      "begriff": "Zusammengesetzter Primärschlüssel",
+      "erklaerung": "Primärschlüssel aus mehreren Spalten, die nur gemeinsam eindeutig sind, z. B. `(BestellNr, ArtikelNr)` in einer Zwischentabelle.",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Fremdschlüssel",
+      "erklaerung": "Spalte (oder Spaltenkombination), die auf den Primärschlüssel einer anderen Tabelle verweist und die Tabellen so verknüpft.",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Relationales Modell",
+      "erklaerung": "Darstellung der Daten als Tabellen mit Spalten, Primär- und Fremdschlüsseln; Grundlage für das Anlegen der Datenbank.",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Zwischentabelle",
+      "erklaerung": "Tabelle zum Auflösen einer m:n-Beziehung; enthält die Primärschlüssel beider Tabellen als Fremdschlüssel.",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Referenzielle Integrität",
+      "erklaerung": "Regel, dass jeder Fremdschlüsselwert auf einen vorhandenen Primärschlüsselwert der verknüpften Tabelle verweisen muss.",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Löschweitergabe",
+      "erklaerung": "Wird ein Datensatz gelöscht, werden die abhängigen Datensätze mitgelöscht (SQL: `ON DELETE CASCADE`).",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Aktualisierungsweitergabe",
+      "erklaerung": "Ändert sich ein Primärschlüssel, werden die Fremdschlüssel der abhängigen Datensätze angepasst (SQL: `ON UPDATE CASCADE`).",
+      "sp": ["AP2-2-2-2"]
+    },
+    {
+      "begriff": "Redundanz",
+      "erklaerung": "Mehrfache Speicherung derselben Information in einer Datenbank; Ursache von Anomalien.",
+      "sp": ["AP2-2-2-3"]
+    },
+    {
+      "begriff": "Änderungsanomalie",
+      "erklaerung": "Ein mehrfach gespeicherter Wert wird nicht überall geändert, sodass sich die Daten danach widersprechen.",
+      "sp": ["AP2-2-2-3"]
+    },
+    {
+      "begriff": "Einfügeanomalie",
+      "erklaerung": "Ein Datensatz lässt sich nicht anlegen, weil Angaben zu einem anderen Sachverhalt noch fehlen.",
+      "sp": ["AP2-2-2-3"]
+    },
+    {
+      "begriff": "Löschanomalie",
+      "erklaerung": "Beim Löschen eines Datensatzes gehen Informationen verloren, die man behalten wollte.",
+      "sp": ["AP2-2-2-3"]
+    },
+    {
+      "begriff": "Normalisierung",
+      "erklaerung": "Schrittweises Zerlegen von Tabellen nach den Normalformen, um Redundanz und Anomalien zu beseitigen.",
+      "sp": ["AP2-2-2-3", "AP2-2-2-4"]
+    },
+    {
+      "begriff": "Normalform",
+      "erklaerung": "Stufe der Normalisierung: 1. NF genau ein Wert je Zelle, 2. NF volle Abhängigkeit vom ganzen Schlüssel, 3. NF keine Abhängigkeit zwischen Nichtschlüsselattributen.",
+      "sp": ["AP2-2-2-2", "AP2-2-2-4"]
+    },
+    {
+      "begriff": "Nichtschlüsselattribut",
+      "erklaerung": "Attribut einer Tabelle, das nicht zum Primärschlüssel gehört.",
+      "sp": ["AP2-2-2-4"]
+    },
+    {
+      "begriff": "EPK",
+      "langform": "Ereignisgesteuerte Prozesskette",
+      "erklaerung": "Darstellung von Geschäftsprozessen als abwechselnde Folge von Ereignissen (Sechsecke) und Funktionen (abgerundete Rechtecke), verbunden über Konnektoren.",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Konnektor",
+      "erklaerung": "Verknüpfungssymbol der EPK zum Verzweigen und Zusammenführen: Und (∧), Exklusives Oder (XOR), Offenes Oder (∨).",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Organisationseinheit",
+      "erklaerung": "EPK-Sinnbild (Ellipse mit senkrechtem Strich) für die Stelle oder Abteilung, die eine Funktion ausführt.",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "BPMN",
+      "langform": "Business Process Model and Notation",
+      "erklaerung": "Standardisierte Notation für Geschäftsprozesse mit Aufgaben, Ereignissen, Gateways, Sequenz- und Nachrichtenflüssen sowie Pools und Lanes.",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Gateway",
+      "erklaerung": "Raute in BPMN zum Verzweigen und Zusammenführen: exklusiv (X, genau ein Pfad), inklusiv (Kreis, ein oder mehrere), parallel (+, alle).",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Pool und Lane",
+      "erklaerung": "Pool: Rahmen für einen eigenständigen Prozessbeteiligten in BPMN. Lane: Unterteilung eines Pools, z. B. nach Abteilung oder Rolle.",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Sequenzfluss",
+      "erklaerung": "Durchgezogener Pfeil in BPMN, der die Reihenfolge der Elemente innerhalb eines Pools angibt.",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Nachrichtenfluss",
+      "erklaerung": "Gestrichelter Pfeil in BPMN mit kleinem Kreis am Anfang; zeigt den Austausch von Nachrichten zwischen zwei Pools.",
+      "sp": ["AP2-2-3-1"]
+    },
+    {
+      "begriff": "Datenobjekt",
+      "erklaerung": "BPMN-Sinnbild (Blatt mit umgeknickter Ecke) für Informationen, die eine Aufgabe benötigt oder erzeugt.",
+      "sp": ["AP2-2-3-1"]
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP2-2-1-1",
+      "frage": "Der Rahmen nennt eine „Klasse mit Liste“. Ob die Liste als Attributtyp (z. B. `List<Position>`), mit Multiplizität am Attribut (`[*]`) oder als Assoziation erwartet wird, ist offen; deshalb keine Karte dazu."
+    },
+    {
+      "id": "AP2-2-2-2-K3-3",
+      "frage": "Kennzeichnung von Fremdschlüsseln im relationalen Modell: „FK“, „#“, Kursivschrift oder Pfeil sind verbreitet. Die in den Prüfungsunterlagen verwendete Notation ist nicht bekannt."
+    },
+    {
+      "id": "AP2-2-3-1",
+      "frage": "Prüfungsrelevanz von EPK und BPMN für Anwendungsentwickler ist unklar (Rahmen nennt Auslegungen a bis d). Die Karten folgen den Auslegungen b und c und fragen die Sinnbilder ab."
+    },
+    {
+      "id": "AP2-2-3-1-K1-1",
+      "frage": "Für das EPK-Sinnbild „Objekt“ wird hier das Informationsobjekt (Rechteck) angenommen; welche Objektart das Sinnbild im Katalog-Anhang meint, ist nicht geprüft."
+    },
+    {
+      "id": "AP2-2-1-4-K2-1",
+      "frage": "Rückgabe: UML 2.5 erlaubt an der gestrichelten Linie eine offene oder gefüllte Pfeilspitze; die Karte nennt die verbreitete offene Spitze. Ob die Prüfung eine bestimmte Form verlangt, ist offen."
+    }
+  ]
+}

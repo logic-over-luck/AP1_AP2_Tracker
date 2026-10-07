@@ -140,8 +140,8 @@
    "id": "AP2-5-1-1-K1-3",
    "sp": "AP2-5-1-1",
    "k": "AP2-5-1-1-K1",
-   "vorne": "Kollegen lesen den Quellcode gemeinsam durch und suchen nach Fehlern, ohne ihn auszuführen. Welche Art von Testverfahren ist das?",
-   "hinten": "Ein statisches Testverfahren (Review)."
+   "vorne": "Kollegen lesen den Quellcode gemeinsam Zeile für Zeile durch und suchen nach Fehlern. Welche Art von Testverfahren ist das?",
+   "hinten": "Ein statisches Testverfahren (Review): Der Code wird geprüft, ohne ihn auszuführen."
   },
   {
    "id": "AP2-5-1-1-K2-1",
@@ -322,15 +322,15 @@
    "id": "AP2-5-2-1-K5-2",
    "sp": "AP2-5-2-1",
    "k": "AP2-5-2-1-K5",
-   "vorne": "Ein Rabatt gilt für Bestellungen ab 100 € (ganze Euro). Welche Äquivalenzklassen gibt es für den Bestellwert?",
-   "hinten": "- ungültig: unter 0 €\n- gültig ohne Rabatt: 0 bis 99 €\n- gültig mit Rabatt: ab 100 €\nJe Klasse ein Vertreter, z. B. −5, 50, 150."
+   "vorne": "Ein Bestellwert (ganze Euro) ist ab 1 € gültig; ab 100 € gibt es Rabatt. Welche Äquivalenzklassen gibt es für den Bestellwert?",
+   "hinten": "- ungültig: 0 € und weniger\n- gültig ohne Rabatt: 1 bis 99 €\n- gültig mit Rabatt: ab 100 €\nJe Klasse ein Vertreter, z. B. −5, 50, 150."
   },
   {
    "id": "AP2-5-2-1-K5-3",
    "sp": "AP2-5-2-1",
    "k": "AP2-5-2-1-K5",
    "vorne": "Warum testet man je Äquivalenzklasse nur einen Vertreter?",
-   "hinten": "Alle Werte einer Klasse werden gleich behandelt; ein weiterer Wert aus derselben Klasse würde keinen neuen Fehler zeigen. So bleibt die Zahl der Testfälle klein."
+   "hinten": "Alle Werte einer Klasse werden gleich behandelt; man geht davon aus, dass ein weiterer Wert derselben Klasse keinen neuen Fehler aufdeckt. So bleibt die Zahl der Testfälle klein."
   },
   {
    "id": "AP2-5-2-1-K6-1",
@@ -358,7 +358,7 @@
    "sp": "AP2-5-2-2",
    "k": "AP2-5-2-2-K3",
    "vorne": "Wann ist Zweigüberdeckung erreicht?",
-   "hinten": "Wenn jede Verzweigung in jede Richtung mindestens einmal durchlaufen wurde, also jede Bedingung einmal wahr und einmal falsch war."
+   "hinten": "Wenn jede Verzweigung in jede Richtung mindestens einmal durchlaufen wurde, also die Bedingung jeder Verzweigung einmal wahr und einmal falsch war."
   },
   {
    "id": "AP2-5-2-2-K3-2",
@@ -407,7 +407,7 @@
    "sp": "AP2-5-2-3",
    "k": "AP2-5-2-3-K1",
    "vorne": "Was ist ein Schreibtischtest?",
-   "hinten": "Ein statisches Testverfahren: Der Code wird mit vorgegebenen Testdaten von Hand Zeile für Zeile durchgegangen, ohne ihn auszuführen."
+   "hinten": "Ein statisches Testverfahren: Der Code wird mit vorgegebenen Testdaten von Hand Zeile für Zeile durchgegangen, ohne ihn auf dem Rechner auszuführen."
   },
   {
    "id": "AP2-5-2-3-K1-2",
@@ -435,7 +435,7 @@
    "sp": "AP2-5-2-3",
    "k": "AP2-5-2-3-K3",
    "vorne": "Wie findet man nach dem Schreibtischtest die fehlerhafte Zeile?",
-   "hinten": "Die Testfälle mit Abweichung vergleichen und den Ablauf verfolgen: Die Zeile, ab der ein Wert erstmals vom Erwarteten abweicht, ist die gesuchte; sie wird mit Zeilennummer benannt."
+   "hinten": "Die Testfälle mit Abweichung vergleichen und den Ablauf verfolgen: Die Zeile, ab der ein Wert erstmals vom Erwarteten abweicht, ist in der Regel die fehlerhafte; sie wird mit Zeilennummer benannt."
   },
   {
    "id": "AP2-5-2-3-K5-1",
@@ -505,7 +505,7 @@
    "sp": "AP2-5-2-4",
    "k": "AP2-5-2-4-K5",
    "vorne": "Wozu dient ein Abnahmeprotokoll?",
-   "hinten": "Es hält schriftlich fest, dass der Kunde die Leistung geprüft und abgenommen hat, und dient als Nachweis zwischen Auftraggeber und Auftragnehmer."
+   "hinten": "Es hält das Ergebnis der Abnahme durch den Kunden schriftlich fest (abgenommen, unter Vorbehalt oder abgelehnt) und dient als Nachweis zwischen Auftraggeber und Auftragnehmer."
   },
   {
    "id": "AP2-5-2-4-K5-2",
@@ -729,7 +729,7 @@
    "sp": "AP2-5-5-2",
    "k": "AP2-5-5-2-K3",
    "vorne": "Warum muss man bei der Bewertung einer Abweichung auf die Richtung achten?",
-   "hinten": "Ob sie günstig oder ungünstig ist, hängt von der Größe ab: Ist-Kosten über Soll sind ungünstig, eine Ist-Verfügbarkeit über Soll ist günstig."
+   "hinten": "Ob sie günstig oder ungünstig ist, hängt davon ab, was gemessen wird: Ist-Kosten über Soll sind ungünstig, eine Ist-Verfügbarkeit über Soll ist günstig."
   },
   {
    "id": "AP2-5-5-2-K4-1",
@@ -871,8 +871,7 @@
   },
   {
    "begriff": "End-to-End-Test",
-   "langform": "E2E-Test",
-   "erklaerung": "Test eines vollständigen Ablaufs aus Sicht des Benutzers durch das ganze System, von der Eingabe bis zum Ergebnis.",
+   "erklaerung": "Test eines vollständigen Ablaufs aus Sicht des Benutzers durch das ganze System, von der Eingabe bis zum Ergebnis; kurz E2E-Test.",
    "sp": [
     "AP2-5-1-2",
     "AP2-5-3-1"
@@ -992,7 +991,7 @@
   },
   {
    "begriff": "Abnahmeprotokoll",
-   "erklaerung": "Schriftlicher Nachweis, dass der Kunde die Leistung geprüft und abgenommen hat, mit festgestellten Mängeln, Ergebnis und Unterschriften.",
+   "erklaerung": "Schriftlicher Nachweis über die Abnahme durch den Kunden mit geprüfter Leistung, festgestellten Mängeln, Ergebnis (abgenommen, unter Vorbehalt, abgelehnt) und Unterschriften.",
    "sp": [
     "AP2-5-2-4"
    ]
@@ -1107,8 +1106,7 @@
    "begriff": "Qualitätsmanagement",
    "erklaerung": "Alle Maßnahmen, mit denen ein Unternehmen die Qualität seiner Produkte und Abläufe plant, lenkt, prüft und verbessert.",
    "sp": [
-    "AP2-5-5-1",
-    "AP2-5-5-3"
+    "AP2-5-5-1"
    ]
   },
   {
@@ -1173,52 +1171,12 @@
  ],
  "unsicher": [
   {
-   "id": "AP2-5-5-2-K1-1",
-   "frage": "Vorzeichen der Abweichung: Lehrbücher rechnen teils Ist − Soll, teils Soll − Ist. Die Karte nutzt Ist − Soll; wird in der Prüfung eine bestimmte Richtung erwartet?"
-  },
-  {
-   "id": "AP2-5-5-2-K3-1",
-   "frage": "Wann eine Abweichung erheblich ist, legt der Rahmen nicht fest. Die Karte nennt eine vorher festgelegte Toleranzgrenze; feste Prozentschwellen werden bewusst nicht abgefragt."
-  },
-  {
    "id": "AP2-5-5-3",
    "frage": "Offen, ob „Redundanz“ zusätzliche Prüfinformationen in den Daten oder doppelt ausgelegte Technik meint. Die Karten folgen der Können-Aussage (Prüfinformationen); doppelt ausgelegte Technik ist nicht abgedeckt."
   },
   {
    "id": "AP2-5-5-3-K1-2",
-   "frage": "Der Rahmen lässt offen, ob ein Paritätsbit berechnet werden muss. Zur Sicherheit fragen zwei Karten das Paritätsbit für eine kurze Bitfolge ab; Prüfziffern sind nicht abgedeckt."
-  },
-  {
-   "id": "AP2-5-5-3-K2-2",
-   "frage": "Die Karte zum unerkannten Zwei-Bit-Fehler ergänzt die Können-Aussage um die Grenze des Verfahrens; prüfen, ob sie im Rahmen bleibt."
-  },
-  {
-   "id": "AP2-5-2-1-K2-1",
-   "frage": "Abgrenzung Extremwertetest und Grenzwertanalyse: Manche Lehrbücher testen zusätzlich Werte direkt neben der Grenze (knapp außerhalb). Die Karte folgt der Können-Aussage (kleinste und größte zulässige Werte)."
-  },
-  {
-   "id": "AP2-5-1-2-K4-1",
-   "frage": "Die Begriffe Last-, Performance- und Belastungstest (Stresstest) werden in der Literatur nicht einheitlich abgegrenzt. Die Karten folgen der Zuordnung der Können-Aussage."
-  },
-  {
-   "id": "AP2-5-1-2-K1-1",
-   "frage": "Die Einordnung des End-to-End-Tests in die Reihenfolge der Teststufen ist nicht einheitlich (eigene Stufe oder Testart innerhalb von System- oder Abnahmetest). Die Karten ordnen ihn deshalb nicht in die Reihenfolge ein."
-  },
-  {
-   "id": "AP2-5-4-1-K2-3",
-   "frage": "Pull ist bei Git Holen und Zusammenführen (fetch und merge) in einem Schritt; bei zentralen Systemen wie SVN heißt der Vorgang Update, und ein Commit landet dort direkt auf dem Server. Die Karten beschreiben die verteilte Arbeitsweise wie bei Git."
-  },
-  {
-   "id": "AP2-5-4-1-K3-2",
-   "frage": "Der Ablauf „holen, ändern, festschreiben, hochladen, zusammenführen“ folgt der Können-Aussage; in der Praxis wird oft über einen Pull Request zusammengeführt oder vor dem Push erneut geholt. Ob die Prüfung eine bestimmte Reihenfolge erwartet, ist offen."
-  },
-  {
-   "id": "AP2-5-2-2-K5-1",
-   "frage": "Bei Schleifen kann die Zahl der Pfade sehr groß oder unbegrenzt werden, sodass vollständige Pfadüberdeckung praktisch nicht erreichbar ist. Die Karten gehen darauf nicht ein, weil der Rahmen es nicht verlangt."
-  },
-  {
-   "id": "AP2-5-2-4-K5-2",
-   "frage": "Die Inhalte des Abnahmeprotokolls sind im Rahmen nicht aufgezählt; die Karte nennt übliche Inhalte aus Fachwissen. Rechtsfolgen der Abnahme (Werkvertrag) sind bewusst nicht abgefragt."
+   "frage": "Die Quelle nennt als Auslegung (b) auch das Bestimmen einer Prüfziffer, ohne Können-Aussage dazu. Ob Prüfziffern verlangt werden, ist offen; keine Karte dazu."
   }
  ]
 }
