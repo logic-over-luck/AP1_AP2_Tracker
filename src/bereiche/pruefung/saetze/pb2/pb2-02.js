@@ -112,7 +112,7 @@ export default {
           text:
             'Erstellen Sie aus der Liste und den zusätzlichen Informationen ein relationales Datenmodell in der **3. Normalform**. ' +
             'Geben Sie alle Tabellen mit ihren Attributen an, kennzeichnen Sie Primärschlüssel und Fremdschlüssel und zeichnen Sie die Beziehungen mit Kardinalitäten ein. ' +
-            'Die Darstellung ist frei (Tabellenkästen mit Verbindungslinien oder Textform wie `Tabelle(<u>PK</u>, #FK, …)` mit einer Liste der Beziehungen).',
+            'Die Darstellung ist frei (Tabellenkästen mit Verbindungslinien oder Textform wie `Tabelle(PK, #FK, …)` mit unterstrichenem bzw. als „PK“ markiertem Primärschlüssel und einer Liste der Beziehungen).',
           antwort: { art: 'papier' },
           loesung: [
             'Musterlösung (PK unterstrichen bzw. „PK“, Fremdschlüssel mit #):',
@@ -144,7 +144,7 @@ export default {
               },
             },
             'Begründung der Schritte: **1. NF** – „Kunde“ wird in Nachname/Vorname zerlegt, die vier Profiltiefen kommen in eigene Spalten, die Mehrfachwerte bei „Leistungen“ werden aufgelöst. ' +
-              '**2. NF** – Bezeichnung und Preis einer Leistung hängen nur von der Leistung ab, nicht von der ganzen Kombination Einlagerung/Leistung → eigene Tabelle Leistung und Zuordnungstabelle. ' +
+              '**2. NF** – Nach der Auflösung der Leistungen ist der Schlüssel (EinlNr, Leistung). Bezeichnung und Preis einer Leistung hängen nur von der Leistung ab, alle übrigen Attribute nur von EinlNr, also jeweils nur von einem Teil des Schlüssels → eigene Tabellen Leistung und Einlagerung sowie die Zuordnungstabelle Einlagerung_Leistung. ' +
               '**3. NF** – Kundendaten hängen über das Kennzeichen (Fahrzeug → KdNr → Name, Telefon), der Werkstattname über WNr transitiv vom Schlüssel der Einlagerung ab → eigene Tabellen Kunde, Fahrzeug, Werkstatt.',
             'Gleichwertig: künstlicher Schlüssel FzNr für Fahrzeug (das Kennzeichen kann sich bei einer Ummeldung ändern) mit Kennzeichen als normalem Attribut; eigene Tabelle Profilmessung(#EinlNr, Radposition, Profiltiefe) statt vier Spalten; ' +
               'eigene Tabelle Lagerplatz(#WNr, Platz) mit Fremdschlüssel aus Einlagerung; zusätzlich ein Attribut „berechneter Preis“ in Einlagerung_Leistung, damit spätere Preisänderungen alte Einlagerungen nicht verändern. ' +
@@ -540,7 +540,7 @@ public void sortiere(List<Werkstattauftrag> auftraege) {
           loesung: [
             '- **Red:** Zuerst wird ein Test geschrieben, der die neue Regel prüft, z. B. `kulanzProzent(24, 80000, true)` erwartet 75. Er wird ausgeführt und schlägt fehl, weil die Methode noch 80 liefert.\n' +
               '- **Green:** Danach wird nur so viel Code geändert, dass der Test besteht, z. B. nach Zeile 13 `if (prozent > 75) { prozent = 75; }` bzw. Zeile 13 mit `Math.min(prozent + 10, 75)`. Alle Tests laufen erneut – auch die alten müssen grün bleiben.\n' +
-              '- **Refactor:** Der Code wird aufgeräumt (z. B. Konstante `MAX_KULANZ = 75`), ohne das Verhalten zu ändern; die Tests sichern das ab. Dann beginnt der Zyklus mit dem nächsten Test (z. B. Grenzfall 60 Monate mit Scheckheft → weiterhin 50).',
+              '- **Refactor:** Der Code wird aufgeräumt (z. B. Konstante `MAX_KULANZ = 75`), ohne das Verhalten zu ändern; die Tests sichern das ab. Dann beginnt der Zyklus mit dem nächsten Test (z. B. Kontrollfall 60 Monate mit Scheckheft → weiterhin 50, die Obergrenze greift hier nicht).',
           ],
           bewertung: ['Reihenfolge Test zuerst → fehlschlagend → minimaler Code → grün → Refactoring: 2 P', 'passender konkreter Testfall mit erwartetem Ergebnis: 1 P'],
         },
@@ -644,7 +644,7 @@ public void sortiere(List<Werkstattauftrag> auftraege) {
           punkte: 6,
           sp: ['AP2-4-2-2', 'AP2-4-2-1'],
           text:
-            'Das Lager soll Teile zurückgeben, die noch **nie** in einem Auftrag verbaut wurden. Erstellen Sie eine SQL-Abfrage, die alle Ersatzteile mit Bestand ausgibt, zu denen es keinen Eintrag in der Tabelle `Verbrauch` gibt. ' +
+            'Das Lager soll Teile zurückgeben, die in keinem aktuellen Auftrag verbaut wurden (archivierte Aufträge bleiben unberücksichtigt). Erstellen Sie eine SQL-Abfrage, die alle Ersatzteile mit Bestand ausgibt, zu denen es keinen Eintrag in der Tabelle `Verbrauch` gibt. ' +
             'Der Lagerwert ist Bestand × Einkaufspreis. Sortieren Sie absteigend nach dem Lagerwert. Verwenden Sie einen **LEFT JOIN**.',
           vorgaben: [
             {
