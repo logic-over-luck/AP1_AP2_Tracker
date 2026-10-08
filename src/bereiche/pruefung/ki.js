@@ -1,12 +1,38 @@
-// KI-Korrektur ohne Internet in der App: Die App baut einen Text (Prüferauftrag, Aufgaben, eigene Antworten,
-// Musterlösung, Punkteschema), den man selbst bei einer KI einfügt. Die KI antwortet mit einer Maschinenzeile
-//   PUNKTE: 1a=4; 1b=5,5; 2a=?; …
-// die die App wieder einliest. Werte werden auf 0 … Höchstpunkte begrenzt und auf halbe Punkte gerundet;
-// „?“ (z. B. Zeichnungen auf Papier) bleibt offen. Rein, ohne Browser-Abhängigkeit (Tests).
+// Bewertung durch eine KI, ohne dass die App online geht: Die App baut einen Prompt (Prüferauftrag, Aufgaben,
+// Antworten, Musterlösung, Punkteschema) für alle Teilaufgaben, die sie nicht selbst prüfen kann. Die KI antwortet
+// ausschließlich mit einer Zeile je Teilaufgabe im Format
+//   1aa:4
+//   1b:2,5
+// Die App liest das streng: jede erwartete Nummer genau einmal, Punkte 0 … Höchstpunkte in halben Schritten,
+// sonst nichts. Zahlenfelder und Auswahl bewertet die App selbst (automatischePunkte); Zeichnungen auf Papier
+// werden nicht bewertet (istZeichnung).
+// Rein, ohne Browser-Abhängigkeit (Tests).
 
-import { teilSchluessel } from './generator.js';
+import { teilSchluessel, automatischePunkte, istZeichnung } from './generator.js';
 
 export const kurz = (i, t) => `${i + 1}${t.nr}`;
+const zahl = (x) => String(x).replace('.', ',');
+
+// Teilaufgaben, die die KI bewerten muss: { kurz, k, max, aufgabe, teil, i }
+export function kiTeile(pruefung) {
+  const liste = [];
+  pruefung.aufgaben.forEach(({ aufgabe }, i) => {
+    for (const t of aufgabe.teile) if (!istZeichnung(t) && automatischePunkte(t, undefined) === null) liste.push({ kurz: kurz(i, t), k: teilSchluessel(aufgabe, t), max: t.punkte, aufgabe, teil: t, i });
+  });
+  return liste;
+}
+
+// Punkte, die die App selbst vergibt (Zahlen, Auswahl)
+export function eigenePunkte(pruefung, antworten) {
+  const punkte = {};
+  for (const { aufgabe } of pruefung.aufgaben)
+    for (const t of aufgabe.teile) {
+      const k = teilSchluessel(aufgabe, t);
+      const p = automatischePunkte(t, antworten[k]);
+      if (p !== null) punkte[k] = p;
+    }
+  return punkte;
+}
 
 function blockText(b) {
   if (!b) return '';
@@ -22,7 +48,7 @@ function blockText(b) {
     return `${b.titel ? `${b.titel}:\n` : ''}\`\`\`\n${text}\n\`\`\``;
   }
   if (b.hinweis) return `Hinweis: ${b.hinweis}`;
-  if (b.diagramm) return `[Diagramm${b.titel ? ` „${b.titel}“` : ''} – nur in der App sichtbar]`;
+  if (b.diagramm) return `[Diagramm${b.titel ? ` „${b.titel}“` : ''} – siehe Aufgabentext und Lösungsbeschreibung]`;
   return '';
 }
 
@@ -35,16 +61,8 @@ function antwortText(t, wert) {
     case 'tabelle': {
       if (!wert || !Object.values(wert).some((v) => String(v).trim())) return leer;
       const zeilen = a.zeilen.map((r, i) => r.map((c, j) => (c === null ? `»${String(wert[`${i}:${j}`] ?? '').trim() || '–'}«` : String(c))));
-      return blockText({ tabelle: { kopf: a.kopf, zeilen } }) + '\n(»…« = Eintrag des Prüflings)';
+      return blockText({ tabelle: { kopf: a.kopf, zeilen } }) + '\n(»…« = Eintrag des Prüflings, – = leer)';
     }
-    case 'zahlen':
-      return a.felder.map((f) => `${f.label}: ${String(wert?.[f.id] ?? '').trim() || '–'}${f.einheit ? ' ' + f.einheit : ''}`).join('\n');
-    case 'auswahl': {
-      const gewaehlt = a.mehrfach ? (wert ?? []) : wert === undefined || wert === null ? [] : [wert];
-      return gewaehlt.length ? gewaehlt.map((i) => `☒ ${a.optionen[i]}`).join('\n') : leer;
-    }
-    case 'papier':
-      return `ZEICHNUNG AUF PAPIER – nicht sichtbar.${String(wert ?? '').trim() ? ` Notizen: ${wert}` : ''}`;
     case 'code':
       return String(wert ?? '').trim() ? `\`\`\`\n${wert}\n\`\`\`` : leer;
     default:
@@ -53,67 +71,90 @@ function antwortText(t, wert) {
 }
 
 export function kiPrompt(pruefung, antworten) {
-  const teile = [];
-  const keys = [];
-  pruefung.aufgaben.forEach(({ satz, aufgabe }, i) => {
-    teile.push(`\n==================== ${i + 1}. Aufgabe: ${aufgabe.titel} (${aufgabe.punkte} Punkte) ====================`);
-    teile.push(`Situation: ${satz.situation}`);
-    if (aufgabe.situation) teile.push(aufgabe.situation);
-    if (aufgabe.vorgaben) teile.push(bloecke(aufgabe.vorgaben));
-    for (const t of aufgabe.teile) {
-      const k = kurz(i, t);
-      keys.push(k);
-      teile.push(
-        [
-          `\n---------- Teilaufgabe ${k} (höchstens ${String(t.punkte).replace('.', ',')} Punkte) ----------`,
-          `AUFGABE:\n${t.text}`,
-          t.vorgaben ? bloecke(t.vorgaben) : null,
-          `ANTWORT DES PRÜFLINGS:\n${antwortText(t, antworten[teilSchluessel(aufgabe, t)])}`,
-          `MUSTERLÖSUNG:\n${bloecke(t.loesung)}`,
-          t.bewertung?.length ? `PUNKTESCHEMA:\n${t.bewertung.map((b) => `- ${b}`).join('\n')}` : null,
-        ]
-          .filter(Boolean)
-          .join('\n\n'),
-      );
+  const teile = kiTeile(pruefung);
+  const abschnitte = [];
+  let letzte = null;
+  for (const { kurz: nr, max, aufgabe, teil: t, i } of teile) {
+    if (letzte !== aufgabe.id) {
+      const { satz } = pruefung.aufgaben[i];
+      abschnitte.push(`\n=== ${i + 1}. Aufgabe: ${aufgabe.titel} ===`, `Situation: ${satz.situation}`);
+      if (aufgabe.situation) abschnitte.push(aufgabe.situation);
+      if (aufgabe.vorgaben) abschnitte.push(bloecke(aufgabe.vorgaben));
+      letzte = aufgabe.id;
     }
-  });
+    abschnitte.push(
+      [
+        `\n--- ${nr} (höchstens ${zahl(max)} Punkte) ---`,
+        `AUFGABE:\n${t.text}`,
+        t.vorgaben ? bloecke(t.vorgaben) : null,
+        `ANTWORT DES PRÜFLINGS:\n${antwortText(t, antworten[teilSchluessel(aufgabe, t)])}`,
+        `MUSTERLÖSUNG:\n${bloecke(t.loesung)}`,
+        t.bewertung?.length ? `PUNKTESCHEMA:\n${t.bewertung.map((b) => `- ${b}`).join('\n')}` : null,
+      ]
+        .filter(Boolean)
+        .join('\n\n'),
+    );
+  }
   return [
     'Du bist Mitglied eines IHK-Prüfungsausschusses (Fachinformatiker/in Anwendungsentwicklung) und korrigierst eine Probeprüfung.',
-    'Bewerte jede Teilaufgabe streng, aber fair nach dem Punkteschema: Andere fachlich richtige Antworten zählen voll, auch wenn sie anders formuliert sind als die Musterlösung. Bei „nennen“ zählen nur so viele Angaben, wie verlangt sind (die ersten). Folgefehler werden nicht doppelt abgezogen. Vergib halbe Punkte, wo es passt.',
-    'Bei Zeichnungen auf Papier siehst du die Antwort nicht – vergib dort „?“.',
     '',
-    'Gib zuerst je Teilaufgabe eine kurze Begründung (1–3 Sätze: was fehlt oder falsch ist). Schreib danach als allerletzte Zeile genau eine Zeile in diesem Format, ohne Formatierung:',
-    `PUNKTE: ${keys.map((k) => `${k}=<Punkte>`).join('; ')}`,
+    'Regeln für die Bewertung:',
+    '- Bewerte jede Teilaufgabe nach dem Punkteschema. Andere fachlich richtige Antworten zählen voll, auch wenn sie anders formuliert sind als die Musterlösung.',
+    '- Bei „nennen“ zählen nur so viele Angaben, wie verlangt sind (die ersten).',
+    '- Folgefehler werden nicht doppelt abgezogen.',
+    '- Keine oder leere Antwort = 0.',
+    '- Vergib ganze oder halbe Punkte, nie mehr als die Höchstpunkte.',
+    '',
+    'ANTWORTFORMAT – STRENG EINHALTEN:',
+    'Antworte ausschließlich mit genau einer Zeile je Teilaufgabe in dieser Reihenfolge, Format <Nummer>:<Punkte>, halbe Punkte mit Komma.',
+    'Kein weiterer Text, keine Begründung, keine Überschrift, keine Formatierung, kein Codeblock.',
+    'Genau diese Zeilen (Höchstpunkte in Klammern, die Klammern NICHT mit ausgeben):',
+    ...teile.map((x) => `${x.kurz}:<Punkte>   (max. ${zahl(x.max)})`),
+    '',
+    'Beispiel für eine korrekte Antwort:',
+    ...teile.slice(0, 3).map((x, j) => `${x.kurz}:${zahl([x.max, Math.max(0, x.max - 1.5), 0][j])}`),
+    '…',
     '',
     `Prüfung: ${pruefung.titel}`,
-    ...teile,
+    ...abschnitte,
   ].join('\n');
 }
 
-// Liest die Maschinenzeile. Ergebnis: { punkte: { teilSchluessel: wert }, gelesen, offen, unbekannt }
+// Liest die Antwort der KI. Ergebnis: { punkte } oder { fehler: [Text …] }
 export function lesePunkte(text, pruefung) {
-  const zeile = String(text ?? '')
-    .split('\n')
-    .reverse()
-    .find((z) => /PUNKTE\s*:/i.test(z));
-  if (!zeile) return null;
-  const nachKurz = new Map();
-  pruefung.aufgaben.forEach(({ aufgabe }, i) => aufgabe.teile.forEach((t) => nachKurz.set(kurz(i, t), { k: teilSchluessel(aufgabe, t), max: t.punkte })));
+  const erwartet = new Map(kiTeile(pruefung).map((x) => [x.kurz, x]));
   const punkte = {};
-  const unbekannt = [];
-  let offen = 0;
-  for (const m of zeile.replace(/^.*PUNKTE\s*:/i, '').matchAll(/(\d+[a-z]+)\s*[=:]\s*(\?|-?\d+(?:[.,]\d+)?)/gi)) {
-    const ziel = nachKurz.get(m[1].toLowerCase());
-    if (!ziel) {
-      unbekannt.push(m[1]);
+  const fehler = [];
+  const gesehen = new Set();
+  const zeilen = String(text ?? '')
+    .split('\n')
+    .map((z) => z.trim())
+    .filter((z) => z && !/^```/.test(z));
+  for (const z of zeilen) {
+    const m = z.match(/^(\d+[a-z]+)\s*:\s*(\d+(?:[.,]5|[.,]0)?)$/i);
+    if (!m) {
+      fehler.push(`Zeile „${z.length > 40 ? z.slice(0, 40) + '…' : z}“ hat nicht das Format Nummer:Punkte.`);
       continue;
     }
-    if (m[2] === '?') {
-      offen++;
+    const nr = m[1].toLowerCase();
+    const x = erwartet.get(nr);
+    if (!x) {
+      fehler.push(`${nr} gibt es in dieser Prüfung nicht (oder wird von der App selbst bewertet).`);
       continue;
     }
-    const wert = Math.round(Number(m[2].replace(',', '.')) * 2) / 2;
-    punkte[ziel.k] = Math.max(0, Math.min(ziel.max, wert));
+    if (gesehen.has(nr)) {
+      fehler.push(`${nr} steht doppelt.`);
+      continue;
+    }
+    gesehen.add(nr);
+    const wert = Number(m[2].replace(',', '.'));
+    if (wert > x.max) {
+      fehler.push(`${nr}: ${zahl(wert)} Punkte, höchstens ${zahl(x.max)} möglich.`);
+      continue;
+    }
+    punkte[x.k] = wert;
   }
-  return { punkte, gelesen: Object.keys(punkte).length, offen, unbekannt };
+  const fehlen = [...erwartet.keys()].filter((nr) => !gesehen.has(nr));
+  if (fehlen.length) fehler.push(`Es fehlen: ${fehlen.join(', ')}.`);
+  return fehler.length ? { fehler } : { punkte };
 }

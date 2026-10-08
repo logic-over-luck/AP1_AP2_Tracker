@@ -446,43 +446,6 @@
 .pruefung-eigene.mono {
   font-family: var(--mono);
 }
-.pruefung-schema {
-  margin-top: var(--s-3);
-  font-size: var(--t-s);
-}
-.pruefung-schema ul {
-  margin: 4px 0 0;
-  padding-left: 1.2em;
-  color: var(--text-2);
-}
-.pruefung-punktwahl {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
-}
-.pruefung-punkt {
-  min-width: 34px;
-  height: 30px;
-  padding: 0 8px;
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-  font: inherit;
-  font-size: var(--t-s);
-  font-variant-numeric: tabular-nums;
-  color: var(--text);
-  cursor: pointer;
-}
-.pruefung-punkt:hover {
-  border-color: var(--akzent);
-}
-.pruefung-punkt--an {
-  border-color: var(--akzent);
-  background: var(--akzent);
-  color: var(--akzent-text);
-  font-weight: 700;
-}
 .pruefung-ende {
   display: flex;
   justify-content: flex-end;
@@ -554,20 +517,6 @@
   gap: var(--s-2);
   padding: var(--s-4) var(--s-5);
 }
-.pruefung-ki__kopf {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: var(--s-2) var(--s-3);
-}
-.pruefung-ki__kopf > svg {
-  margin-top: 3px;
-  color: var(--akzent);
-}
-.pruefung-ki__kopf p {
-  margin: 2px 0 0;
-  font-size: var(--t-s);
-}
 .pruefung-ki__einfuegen {
   display: flex;
   flex-direction: column;
@@ -588,4 +537,44 @@
 }
 .pruefung-ki__meldung--falsch {
   color: var(--fehler);
+}
+.pruefung-ki__titel {
+  font-size: var(--t-2xl);
+  font-weight: 700;
+}
+.pruefung-ki__schritte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  margin: var(--s-2) 0 0;
+  padding-left: 1.4em;
+}
+.pruefung-ki__schritte > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+}
+.pruefung-ki__schritte p {
+  margin: 2px 0 0;
+  font-size: var(--t-s);
+}
+.pruefung-ki__schritte > li.pruefung-ki__einfuegen {
+  flex-direction: column;
+  align-items: flex-start;
+}
+ul.pruefung-ki__meldung {
+  padding-left: 1.2em;
+}
+.pruefung-offen {
+  display: flex;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-s);
+}
+.pruefung-offen svg {
+  flex: none;
+  margin-top: 3px;
 }

@@ -9,9 +9,9 @@ import { einstellung, setzeEinstellung } from '../../lernstand/einstellungen.js'
 import { link } from '../../router.js';
 import { Icon, Knopf, Marke, Rich, Aufklapp, Leer } from '../../ui/bausteine.jsx';
 import { Diagramm } from '../trainer/modellieren/diagramm.jsx';
-import { TEILE, TEILE_IN_RAUM, stelleZusammen, auswerten, automatischePunkte, teilSchluessel, bewerteFrage, runde1, note } from './generator.js';
+import { TEILE, TEILE_IN_RAUM, stelleZusammen, auswerten, teilSchluessel, bewerteFrage, runde1, note } from './generator.js';
 import { SAETZE } from './saetze/index.js';
-import { kiPrompt, lesePunkte } from './ki.js';
+import { kiPrompt, lesePunkte, eigenePunkte, kiTeile } from './ki.js';
 import { kopiere } from '../lernen/lernprompt.js';
 
 const SCHLUESSEL = (raum) => `pruefung.laufend.${raum}`;
@@ -206,7 +206,7 @@ function Durchgang({ raum, zustand, pruefung, setZustand }) {
   };
 
   if (z.phase === 'fertig') return <Ergebnis raum={raum} z={z} pruefung={pruefung} schliessen={() => setZustand(null)} />;
-  if (z.phase === 'bewerten') return <Bewerten z={z} pruefung={pruefung} aendere={aendere} abschliessen={(neu) => aendere(neu, true)} />;
+  if (z.phase === 'bewerten') return <KiBewertung z={z} pruefung={pruefung} aendere={aendere} abbrechen={abbrechen} />;
   return <Schreiben teil={teil} z={z} pruefung={pruefung} aendere={aendere} abbrechen={abbrechen} />;
 }
 
@@ -256,7 +256,7 @@ function Schreiben({ teil, z, pruefung, aendere, abbrechen }) {
     const abgabe = Date.now();
     const neu = { ...z, abgabe: z.pausiertSeit ?? abgabe, pausiertSeit: null };
     if (pruefung.fragen) aendere({ ...neu, phase: 'fertig', ergebnis: speichere(neu, pruefung) }, true);
-    else aendere({ ...neu, phase: 'bewerten', punkte: vorschlag(pruefung, z.antworten) }, true);
+    else aendere({ ...neu, phase: 'bewerten', punkte: eigenePunkte(pruefung, z.antworten) }, true);
   };
   return (
     <div class="pruefung">
@@ -425,7 +425,7 @@ function Antwortfeld({ teil, wert, setze, nurLesen = false }) {
       return (
         <div class="pruefung-papier">
           <p class="gedaempft">
-            <Icon name="pencil" groesse={14} /> Zeichnen Sie auf Papier. Hier können Sie Notizen festhalten.
+            <Icon name="pencil" groesse={14} /> Zeichnen Sie auf Papier. Zeichnungen werden nicht automatisch bewertet – vergleichen Sie danach mit der Musterlösung. Hier ist Platz für Notizen.
           </p>
           <textarea class="feld" rows={3} value={wert ?? ''} disabled={nurLesen} onInput={(e) => setze(e.currentTarget.value)} />
         </div>
@@ -628,148 +628,122 @@ function FrageEingabe({ frage, wert, setze, ergebnis }) {
   }
 }
 
-// ---------- Bewerten (AP1, PB1, PB2) ----------
+// ---------- Bewertung durch KI (AP1, PB1, PB2) ----------
+// Zahlen und Auswahl bewertet die App selbst. Für alles andere: Prompt kopieren, bei einer KI einfügen,
+// deren Antwort (nur Zeilen „1aa:4“) zurückkopieren – die App prüft das Format streng.
 
-function vorschlag(pruefung, antworten) {
-  const punkte = {};
-  for (const { aufgabe } of pruefung.aufgaben)
-    for (const t of aufgabe.teile) {
-      const k = teilSchluessel(aufgabe, t);
-      const p = automatischePunkte(t, antworten[k]);
-      if (p !== null) punkte[k] = p;
-    }
-  return punkte;
-}
-
-function Bewerten({ z, pruefung, aendere, abschliessen }) {
-  const setPunkte = (k, p) => aendere({ ...z, punkte: { ...z.punkte, [k]: p } });
-  const alleTeile = pruefung.aufgaben.flatMap(({ aufgabe }) => aufgabe.teile.map((t) => teilSchluessel(aufgabe, t)));
-  const offen = alleTeile.filter((k) => z.punkte[k] === undefined).length;
-  const vorlaeufig = auswerten(pruefung, { punkte: z.punkte });
-  const fertig = () => {
-    if (offen && !confirm(`${offen} Teilaufgaben sind noch nicht bewertet und zählen mit 0 Punkten. Trotzdem abschließen?`)) return;
-    abschliessen({ ...z, phase: 'fertig', ergebnis: speichere(z, pruefung) });
+function KiBewertung({ z, pruefung, aendere, abbrechen }) {
+  const [text, setText] = useState('');
+  const [meldung, setMeldung] = useState(null);
+  const [kopiert, setKopiert] = useState(false);
+  const anzahl = kiTeile(pruefung).length;
+  const kopieren = async () => {
+    const ok = await kopiere(kiPrompt(pruefung, z.antworten));
+    setKopiert(ok);
+    setMeldung(ok ? null : { ton: 'falsch', text: ['Kopieren hat nicht geklappt – der Browser sperrt die Zwischenablage.'] });
+  };
+  const auswerten = () => {
+    const r = lesePunkte(text, pruefung);
+    if (r.fehler) return setMeldung({ ton: 'falsch', text: r.fehler });
+    const neu = { ...z, punkte: { ...z.punkte, ...r.punkte } };
+    aendere({ ...neu, phase: 'fertig', ergebnis: speichere(neu, pruefung) }, true);
   };
   return (
     <div class="pruefung">
-      <div class="pruefung-leiste">
-        <div class="wachsen pruefung-leiste__titel">
-          <span class="ueberschrift-klein ueberschrift-klein--akzent">Selbst bewerten</span>
-          <span>
-            {zahl(vorlaeufig.erreicht)} von {zahl(vorlaeufig.max)} Punkten {offen > 0 && <span class="gedaempft">· noch {offen} offen</span>}
-          </span>
-        </div>
-        <Knopf variante="primaer" icon="check" onClick={fertig}>
-          Bewertung abschließen
-        </Knopf>
-      </div>
-      <p class="trainer-hinweis">
-        <Icon name="info" groesse={14} /> Vergleiche deine Antwort mit der Musterlösung und vergib Punkte nach dem Schema – ehrlich wie ein Prüfer. Andere sinnvolle Antworten zählen auch. Zahlen und Auswahl hat die App schon vorgeschlagen.
-      </p>
-      <KiKorrektur z={z} pruefung={pruefung} aendere={aendere} />
-      {pruefung.aufgaben.map(({ aufgabe }, i) => (
-        <section key={aufgabe.id} class="flaeche flaeche--gross pruefung-aufgabe">
-          <div class="pruefung-aufgabe__kopf">
-            <h2 class="wachsen">
-              {i + 1}. Aufgabe <span class="gedaempft">· {aufgabe.titel}</span>
-            </h2>
-            <span class="sql-punkte">
-              {zahl(aufgabe.teile.reduce((s, t) => s + (Number(z.punkte[teilSchluessel(aufgabe, t)]) || 0), 0))} / {aufgabe.punkte} P
-            </span>
-          </div>
-          {aufgabe.teile.map((t) => {
-            const k = teilSchluessel(aufgabe, t);
-            return (
-              <div key={t.nr} class="pruefung-teilaufgabe pruefung-bewertung">
-                <div class="pruefung-teilaufgabe__kopf">
-                  <span class="pruefung-teilaufgabe__nr">{t.nr})</span>
-                  <div class="wachsen">
-                    <Rich text={t.text} />
-                  </div>
-                </div>
-                <div class="pruefung-bewertung__raster">
-                  <div>
-                    <div class="ueberschrift-klein">Deine Antwort</div>
-                    <EigeneAntwort teil={t} wert={z.antworten[k]} />
-                  </div>
-                  <div>
-                    <div class="ueberschrift-klein">Musterlösung</div>
-                    <Bloecke liste={Array.isArray(t.loesung) ? t.loesung : [t.loesung]} />
-                    {t.bewertung?.length > 0 && (
-                      <div class="pruefung-schema">
-                        <div class="ueberschrift-klein">Punkteschema</div>
-                        <ul>
-                          {t.bewertung.map((b, j) => (
-                            <li key={j}>
-                              <Rich text={b} />
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <PunkteWahl max={t.punkte} wert={z.punkte[k]} setze={(p) => setPunkte(k, p)} />
-              </div>
-            );
-          })}
-        </section>
-      ))}
+      <section class="flaeche flaeche--gross pruefung-ki">
+        <div class="ueberschrift-klein ueberschrift-klein--akzent">Bewertung</div>
+        <h1 class="pruefung-ki__titel">{pruefung.titel}</h1>
+        <p class="gedaempft">
+          Rechenfelder und Auswahl hat die App schon bewertet. Die übrigen {anzahl} Teilaufgaben bewertet eine KI deiner Wahl (z. B. Claude) – die App selbst bleibt offline. Zeichnungen werden nicht bewertet.
+        </p>
+        <ol class="pruefung-ki__schritte">
+          <li>
+            <div class="wachsen">
+              <strong>Prompt kopieren</strong>
+              <p class="gedaempft">Enthält Prüferauftrag, Aufgaben, deine Antworten, Musterlösung und Punkteschema.</p>
+            </div>
+            <Knopf variante={kopiert ? 'zweit' : 'primaer'} icon={kopiert ? 'check' : 'copy'} onClick={kopieren}>
+              {kopiert ? 'Kopiert' : 'Prompt kopieren'}
+            </Knopf>
+          </li>
+          <li>
+            <div class="wachsen">
+              <strong>Bei der KI einfügen</strong>
+              <p class="gedaempft">Am besten in einem neuen Chat. Die KI antwortet nur mit Zeilen wie „1aa:4“ – eine je Teilaufgabe.</p>
+            </div>
+          </li>
+          <li class="pruefung-ki__einfuegen">
+            <strong>Antwort der KI hier einfügen</strong>
+            <textarea class="feld mono" rows={8} placeholder={'1aa:4\n1ab:2\n…'} value={text} onInput={(e) => (setText(e.currentTarget.value), setMeldung(null))} />
+            {meldung && (
+              <ul class={`pruefung-ki__meldung pruefung-ki__meldung--${meldung.ton}`}>
+                {meldung.text.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            )}
+            <Knopf variante="primaer" icon="check" onClick={auswerten} disabled={!text.trim()}>
+              Auswerten
+            </Knopf>
+          </li>
+        </ol>
+      </section>
       <div class="pruefung-ende">
-        <Knopf variante="primaer" icon="check" onClick={fertig}>
-          Bewertung abschließen
+        <Knopf variante="geist" icon="x" onClick={abbrechen}>
+          Prüfung verwerfen
         </Knopf>
       </div>
     </div>
   );
 }
 
-// KI-Korrektur: Text für eine KI kopieren, deren Maschinenzeile wieder einlesen
-function KiKorrektur({ z, pruefung, aendere }) {
-  const [offen, setOffen] = useState(false);
-  const [text, setText] = useState('');
-  const [meldung, setMeldung] = useState(null);
-  const kopieren = async () => {
-    const ok = await kopiere(kiPrompt(pruefung, z.antworten));
-    setMeldung(ok ? { ton: 'gut', text: 'Kopiert. Füge den Text bei einer KI deiner Wahl ein (z. B. Claude) und kopiere die ganze Antwort zurück.' } : { ton: 'falsch', text: 'Kopieren hat nicht geklappt – dein Browser sperrt die Zwischenablage.' });
-    setOffen(true);
-  };
-  const uebernehmen = () => {
-    const r = lesePunkte(text, pruefung);
-    if (!r) return setMeldung({ ton: 'falsch', text: 'Keine Zeile „PUNKTE: …“ gefunden. Kopiere die komplette Antwort der KI.' });
-    aendere({ ...z, punkte: { ...z.punkte, ...r.punkte } }, true);
-    const teile = [`${r.gelesen} Teilaufgaben übernommen`];
-    if (r.offen) teile.push(`${r.offen} offen (Zeichnungen – selbst bewerten)`);
-    if (r.unbekannt.length) teile.push(`unbekannt: ${r.unbekannt.join(', ')}`);
-    setMeldung({ ton: 'gut', text: teile.join(' · ') + '. Prüfe die Punkte – du hast das letzte Wort.' });
-    setText('');
-  };
-  return (
-    <section class="flaeche pruefung-ki">
-      <div class="pruefung-ki__kopf">
-        <Icon name="sparkles" groesse={16} />
-        <div class="wachsen">
-          <strong>Von einer KI korrigieren lassen</strong>
-          <p class="gedaempft">Die App bleibt offline: Sie kopiert Aufgaben, deine Antworten, Musterlösung und Punkteschema. Die KI antwortet mit einer Zeile „PUNKTE: …“, die du hier einfügst.</p>
-        </div>
-        <Knopf variante="zweit" icon="copy" onClick={kopieren}>
-          Für KI kopieren
-        </Knopf>
-        <Knopf variante="geist" icon={offen ? 'chevron-up' : 'chevron-down'} onClick={() => setOffen(!offen)} aria-expanded={offen}>
-          Ergebnis einfügen
-        </Knopf>
+// Nach dem Ergebnis: jede Teilaufgabe mit eigener Antwort, Musterlösung und erhaltenen Punkten
+function Loesungen({ z, pruefung }) {
+  return pruefung.aufgaben.map(({ aufgabe }, i) => (
+    <section key={aufgabe.id} class="flaeche flaeche--gross pruefung-aufgabe">
+      <div class="pruefung-aufgabe__kopf">
+        <h2 class="wachsen">
+          {i + 1}. Aufgabe <span class="gedaempft">· {aufgabe.titel}</span>
+        </h2>
+        <span class="sql-punkte">
+          {zahl(aufgabe.teile.reduce((s, t) => s + (Number(z.punkte[teilSchluessel(aufgabe, t)]) || 0), 0))} / {aufgabe.punkte} P
+          {aufgabe.teile.some((t) => t.antwort?.art === 'papier') && <span class="gedaempft"> (ohne Zeichnung)</span>}
+        </span>
       </div>
-      <Aufklapp offen={offen}>
-        <div class="pruefung-ki__einfuegen">
-          <textarea class="feld" rows={4} placeholder="Antwort der KI hier einfügen (mit der Zeile PUNKTE: …)" value={text} onInput={(e) => setText(e.currentTarget.value)} />
-          <Knopf variante="primaer" icon="check" onClick={uebernehmen} disabled={!text.trim()}>
-            Punkte übernehmen
-          </Knopf>
-        </div>
-      </Aufklapp>
-      {meldung && <p class={`pruefung-ki__meldung pruefung-ki__meldung--${meldung.ton}`}>{meldung.text}</p>}
+      {aufgabe.teile.map((t) => {
+        const k = teilSchluessel(aufgabe, t);
+        const p = Number(z.punkte[k]) || 0;
+        const zeichnung = t.antwort?.art === 'papier';
+        return (
+          <div key={t.nr} class="pruefung-teilaufgabe">
+            <div class="pruefung-teilaufgabe__kopf">
+              <span class="pruefung-teilaufgabe__nr">{t.nr})</span>
+              <div class="wachsen">
+                <Rich text={t.text} />
+              </div>
+              {zeichnung ? (
+                <span class="pruefung-teilaufgabe__punkte gedaempft">nicht ermittelt · {zahl(t.punkte)} P</span>
+              ) : (
+                <span class={`pruefung-teilaufgabe__punkte pruefung-note--${p >= t.punkte / 2 ? 'gut' : 'schlecht'}`}>
+                  {zahl(p)} / {zahl(t.punkte)} P
+                </span>
+              )}
+            </div>
+            <div class="pruefung-bewertung__raster">
+              <div>
+                <div class="ueberschrift-klein">Deine Antwort</div>
+                <EigeneAntwort teil={t} wert={z.antworten[k]} />
+              </div>
+              <div>
+                <div class="ueberschrift-klein">Musterlösung</div>
+                <Bloecke liste={Array.isArray(t.loesung) ? t.loesung : [t.loesung]} />
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </section>
-  );
+  ));
 }
 
 function EigeneAntwort({ teil, wert }) {
@@ -778,23 +752,6 @@ function EigeneAntwort({ teil, wert }) {
     return leer(wert) ? <p class="gedaempft">– keine Antwort –</p> : <pre class={`pruefung-eigene ${art === 'code' ? 'mono' : ''}`}>{wert}</pre>;
   }
   return <Antwortfeld teil={teil} wert={wert} setze={() => {}} nurLesen />;
-}
-
-function PunkteWahl({ max, wert, setze }) {
-  const stufen = [];
-  const schritt = max > 12 ? 1 : 0.5;
-  for (let p = 0; p <= max + 1e-9; p += schritt) stufen.push(runde1(p));
-  if (stufen[stufen.length - 1] !== max) stufen.push(max);
-  return (
-    <div class="pruefung-punktwahl" role="radiogroup" aria-label="Punkte">
-      <span class="gedaempft">Punkte:</span>
-      {stufen.map((p) => (
-        <button key={p} role="radio" aria-checked={wert === p} class={`pruefung-punkt ${wert === p ? 'pruefung-punkt--an' : ''}`} onClick={() => setze(p)}>
-          {zahl(p)}
-        </button>
-      ))}
-    </div>
-  );
 }
 
 // ---------- Ergebnis ----------
@@ -837,6 +794,14 @@ function Ergebnis({ raum, z, pruefung, schliessen }) {
             <div class="gedaempft">Minuten</div>
           </div>
         </div>
+        {e.offen > 0 && (
+          <p class="pruefung-offen">
+            <Icon name="pencil" groesse={14} />
+            <span>
+              Zeichenaufgaben über <strong>{zahl(e.offen)} Punkte</strong> konnten nicht ermittelt werden. Vergleiche deine Zeichnung mit der Musterlösung und rechne die Punkte im Kopf dazu. Prozent und Note beziehen sich auf die {zahl(e.max)} ermittelten Punkte.
+            </span>
+          </p>
+        )}
         <p>{bestehensText(pruefung.teil, e.prozent)}</p>
       </section>
       {schwach.length > 0 && (
@@ -854,20 +819,16 @@ function Ergebnis({ raum, z, pruefung, schliessen }) {
           </ul>
         </section>
       )}
-      {pruefung.fragen && (
-        <>
-          <Knopf variante="geist" icon={details ? 'eye-off' : 'eye'} onClick={() => setDetails(!details)}>
-            {details ? 'Lösungen ausblenden' : 'Alle Aufgaben mit Lösung ansehen'}
-          </Knopf>
-          <Aufklapp offen={details}>
-            {details && (
-              <div class="pruefung">
-                <WisoBogen pruefung={pruefung} antworten={z.antworten} setAntwort={() => {}} ergebnis />
-              </div>
-            )}
-          </Aufklapp>
-        </>
-      )}
+      <Knopf variante="geist" icon={details ? 'eye-off' : 'eye'} onClick={() => setDetails(!details)}>
+        {details ? 'Lösungen ausblenden' : 'Alle Aufgaben mit Lösung ansehen'}
+      </Knopf>
+      <Aufklapp offen={details}>
+        {details && (
+          <div class="pruefung">
+            {pruefung.fragen ? <WisoBogen pruefung={pruefung} antworten={z.antworten} setAntwort={() => {}} ergebnis /> : <Loesungen z={z} pruefung={pruefung} />}
+          </div>
+        )}
+      </Aufklapp>
       <div class="pruefung-ende">
         <Knopf variante="primaer" icon="arrow-left" onClick={schliessen}>
           Zur Übersicht

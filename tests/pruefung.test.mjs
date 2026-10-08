@@ -118,17 +118,25 @@ test('Gemischte Prüfungen aus dem echten Vorrat', () => {
   }
 });
 
-test('KI-Korrektur: Prompt enthält alle Teilaufgaben, Maschinenzeile wird sicher gelesen', async () => {
-  const { kiPrompt, lesePunkte } = await import('../src/bereiche/pruefung/ki.js');
-  const p = stelleZusammen('PB2', vorrat, { satzId: 'pb2-1' });
-  const text = kiPrompt(p, { 'pb2-1-1:a': 'Meine Antwort' });
-  assert.match(text, /PUNKTE: 1a=<Punkte>; 1b=<Punkte>; 2a=/);
+test('KI-Bewertung: Prompt nur für Teile ohne Automatik/Zeichnung, Antwort wird streng gelesen', async () => {
+  const { kiPrompt, lesePunkte, kiTeile } = await import('../src/bereiche/pruefung/ki.js');
+  const zeichnung = { ...vorrat[0], id: 'pb2-9', aufgaben: vorrat[0].aufgaben.map((a, i) => ({ ...a, id: `pb2-9-${i + 1}`, teile: [a.teile[0], { ...a.teile[1], antwort: i === 0 ? { art: 'papier' } : i === 1 ? { art: 'zahlen', felder: [{ id: 'x', erwartet: 3 }] } : undefined }] })) };
+  const p = stelleZusammen('PB2', [zeichnung], { satzId: 'pb2-9' });
+  assert.deepEqual(kiTeile(p).map((x) => x.kurz), ['1a', '2a', '3a', '3b', '4a', '4b'], 'ohne Zeichnung 1b und Zahlenfeld 2b');
+  const text = kiPrompt(p, { 'pb2-9-1:a': 'Meine Antwort' });
   assert.match(text, /Meine Antwort/);
-  const r = lesePunkte('Begründung …\nPUNKTE: 1a=7,5; 1b=99; 2a=?; 2b=-3; 9z=4', p);
-  assert.equal(r.punkte['pb2-1-1:a'], 7.5);
-  assert.equal(r.punkte['pb2-1-1:b'], 15, 'auf Höchstpunkte begrenzt');
-  assert.equal(r.punkte['pb2-1-2:b'], 0, 'nicht negativ');
-  assert.equal(r.offen, 1);
-  assert.deepEqual(r.unbekannt, ['9z']);
-  assert.equal(lesePunkte('ohne Zeile', p), null);
+  assert.match(text, /^1a:<Punkte> {3}\(max\. 10\)$/m);
+  assert.doesNotMatch(text, /--- 1b /);
+  const gut = lesePunkte('```\n1a:7,5\n2a:10\n3a:0\n3b:15\n4a:4.5\n4b:1\n```', p);
+  assert.deepEqual(gut.punkte, { 'pb2-9-1:a': 7.5, 'pb2-9-2:a': 10, 'pb2-9-3:a': 0, 'pb2-9-3:b': 15, 'pb2-9-4:a': 4.5, 'pb2-9-4:b': 1 });
+  const schlecht = lesePunkte('Hier die Bewertung:\n1a:11\n2a:3,3\n3a:1\n3a:2\n9z:1', p);
+  assert.ok(schlecht.fehler.some((f) => f.includes('nicht das Format')), 'Freitext');
+  assert.ok(schlecht.fehler.some((f) => f.includes('höchstens 10')), 'über Höchstpunkte');
+  assert.ok(schlecht.fehler.some((f) => f.includes('doppelt')));
+  assert.ok(schlecht.fehler.some((f) => f.includes('9z')));
+  assert.ok(schlecht.fehler.some((f) => f.startsWith('Es fehlen: 2a, 3b, 4a, 4b')));
+  // Zeichnung zählt nicht mit, wird als offen ausgewiesen
+  const e = auswerten(p, { punkte: gut.punkte });
+  assert.equal(e.offen, 15);
+  assert.equal(e.max, 85);
 });

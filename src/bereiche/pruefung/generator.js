@@ -179,8 +179,13 @@ export function automatischePunkte(teil, antwort) {
   return null;
 }
 
+// Zeichenaufgaben (auf Papier) bewertet niemand automatisch – sie zählen nicht mit und werden als
+// „nicht ermittelt“ ausgewiesen.
+export const istZeichnung = (t) => t.antwort?.art === 'papier';
+
 // Ergebnis einer Prüfung. punkte: Map/Objekt teilKey → Punkte (bei AP1/PB1/PB2), antworten bei WiSo.
-// Liefert erreicht, max, prozent, Note und die Punkte je Stichpunkt (für Lernstand und „Daran hängst du“).
+// Liefert erreicht, max (ohne Zeichnungen), offen (Punkte der Zeichnungen), prozent und Note bezogen auf die
+// ermittelten Punkte und die Punkte je Stichpunkt (für Lernstand und „Daran hängst du“).
 export function auswerten(pruefung, { punkte = {}, antworten = {} } = {}) {
   const jeSp = {};
   const buche = (sps, erreicht, max) => {
@@ -192,6 +197,7 @@ export function auswerten(pruefung, { punkte = {}, antworten = {} } = {}) {
   };
   let erreicht = 0;
   let max = 0;
+  let offen = 0;
   if (pruefung.fragen) {
     const je = 100 / pruefung.fragen.length;
     for (const { frage } of pruefung.fragen) {
@@ -203,6 +209,10 @@ export function auswerten(pruefung, { punkte = {}, antworten = {} } = {}) {
   } else {
     for (const { aufgabe } of pruefung.aufgaben) {
       for (const t of aufgabe.teile) {
+        if (istZeichnung(t)) {
+          offen += t.punkte;
+          continue;
+        }
         const k = teilSchluessel(aufgabe, t);
         const p = Math.max(0, Math.min(t.punkte, Number(punkte[k]) || 0));
         erreicht += p;
@@ -213,7 +223,7 @@ export function auswerten(pruefung, { punkte = {}, antworten = {} } = {}) {
   }
   const prozent = max ? (erreicht / max) * 100 : 0;
   for (const id in jeSp) jeSp[id] = jeSp[id].map(runde1);
-  return { erreicht: runde1(erreicht), max: runde1(max), prozent: runde1(prozent), ...note(prozent), jeSp };
+  return { erreicht: runde1(erreicht), max: runde1(max), offen: runde1(offen), prozent: runde1(prozent), ...note(prozent), jeSp };
 }
 
 export const teilSchluessel = (aufgabe, t) => `${aufgabe.id}:${t.nr}`;
