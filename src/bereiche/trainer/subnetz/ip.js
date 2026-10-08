@@ -86,6 +86,18 @@ export function zerlege(ip, praefix) {
   return { zahl, m, n, oktette, index, netzBitsImOktett, block, maskenwert, wert, blockNr, start, ende: start + block - 1 };
 }
 
+// Alle Teilnetze im entscheidenden Oktett (für die Liste im Visualizer): je Block Netz, Hostbereich, Broadcast
+export function subnetzeImOktett(ip, praefix) {
+  const z = zerlege(ip, praefix);
+  const liste = [];
+  for (let s = 0; s < 256; s += z.block) {
+    const okt = z.oktette.map((o, i) => (i < z.index ? o : i === z.index ? s : 0));
+    const n = netz(okt.join('.'), praefix);
+    liste.push({ nr: s / z.block, start: s, netz: n.netz, erster: n.erster, letzter: n.letzter, broadcast: n.broadcast, aktiv: s === z.start });
+  }
+  return liste;
+}
+
 export function gleichesNetz(a, b, praefix) {
   const m = maskeZahl(praefix);
   return ((ipZuZahl(a) & m) >>> 0) === ((ipZuZahl(b) & m) >>> 0);

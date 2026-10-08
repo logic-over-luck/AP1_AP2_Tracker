@@ -110,3 +110,12 @@ test('Visualizer: entscheidendes Oktett, Blockgröße und Block', async () => {
   z = zerlege('192.168.1.6', 30);
   assert.deepEqual([z.block, z.start, z.ende], [4, 4, 7]);
 });
+
+test('Visualizer: alle Teilnetze im Oktett', async () => {
+  const { subnetzeImOktett } = await import('../src/bereiche/trainer/subnetz/ip.js');
+  const l = subnetzeImOktett('192.168.40.150', 26);
+  assert.equal(l.length, 4);
+  assert.deepEqual(l[2], { nr: 2, start: 128, netz: '192.168.40.128', erster: '192.168.40.129', letzter: '192.168.40.190', broadcast: '192.168.40.191', aktiv: true });
+  assert.equal(subnetzeImOktett('10.20.77.5', 20)[4].broadcast, '10.20.79.255');
+  assert.equal(subnetzeImOktett('192.168.1.6', 30).length, 64);
+});

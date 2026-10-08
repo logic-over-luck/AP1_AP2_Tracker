@@ -149,10 +149,11 @@ nächsten offenen Punkt weiter.
   wird streng gelesen (jede Nummer genau einmal, 0 … Höchstpunkte, halbe Punkte). Zeichenaufgaben werden nicht bewertet
   und im Ergebnis als „nicht ermittelt“ mit ihren Punkten ausgewiesen; Prozent und Note beziehen sich auf die
   ermittelten Punkte. Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
-- **Subnetz-Visualizer:** neuer erster Reiter im Subnetz-Trainer (`subnetz/Visualizer.jsx`, Rechnung `zerlege` in `ip.js`,
-  getestet): IP und Präfix wählen, Rechenweg in 4 Schritten (Grenze, Maske, Blockgröße, Block der Adresse), alle 32 Bits
-  für IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits per Klick umschaltbar), Zahlenstrahl des entscheidenden
-  Oktetts mit Blöcken, Ergebnis-Tabelle.
+- **Subnetz-Visualizer:** erster Reiter im Subnetz-Trainer (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
+  `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
+  Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits
+  per Klick umschaltbar), Kennzahlen-Kacheln (inkl. Wildcard, privat/öffentlich, Teilnetze), Zahlenstrahl des
+  entscheidenden Oktetts (Hover zeigt den Block, Klick springt hinein), Liste aller Teilnetze und Präfix-Tabelle /24–/30.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine
