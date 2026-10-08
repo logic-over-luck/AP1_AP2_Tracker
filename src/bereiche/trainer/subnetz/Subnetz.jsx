@@ -1,6 +1,7 @@
 import { useCallback } from 'preact/hooks';
 import { TrainerSeite, Uebung } from '../rahmen/Uebung.jsx';
 import { ERZEUGER } from './aufgaben.js';
+import { SubnetzVisualizer } from './Visualizer.jsx';
 
 const SPICKZETTEL = {
   analyse:
@@ -15,7 +16,7 @@ const SPICKZETTEL = {
 export function SubnetzTrainer({ raum, trainer, modi, params }) {
   return (
     <TrainerSeite raum={raum} trainer={trainer} modi={modi} modus={params.modus}>
-      {(m) => <SubnetzUebung key={m.id} modus={m} />}
+      {(m) => (m.id === 'visual' ? <SubnetzVisualizer /> : <SubnetzUebung key={m.id} modus={m} />)}
     </TrainerSeite>
   );
 }

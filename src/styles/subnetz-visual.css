@@ -1,0 +1,327 @@
+/* Subnetz-Visualizer */
+.snv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.snv-eingabe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s-4);
+}
+.snv-feld {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.snv-feld input.feld {
+  width: 200px;
+  font-size: var(--t-l);
+}
+.snv-feld--falsch {
+  border-color: var(--fehler) !important;
+}
+.snv-praefix {
+  flex: 1 1 280px;
+}
+.snv-praefix__zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.snv-praefix__zeile input[type='range'] {
+  flex: 1;
+  accent-color: var(--akzent);
+}
+.snv-praefix__wert {
+  min-width: 3ch;
+  font-size: var(--t-xl);
+  font-weight: 700;
+  color: var(--akzent);
+}
+.snv-schritt {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+}
+.snv-schnell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.snv-chip {
+  padding: 2px 10px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-rund);
+  background: var(--flaeche-2);
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  color: var(--text-2);
+  cursor: pointer;
+}
+.snv-chip--an {
+  border-color: var(--akzent);
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+
+/* Rechenweg */
+.snv-schritte ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  margin: var(--s-2) 0 0;
+  padding-left: 1.4em;
+  line-height: 1.6;
+}
+.snv-schritte li::marker {
+  font-weight: 700;
+  color: var(--akzent);
+}
+.snv-folgerung {
+  margin-top: 6px;
+  padding: var(--s-2) var(--s-3);
+  border-left: 3px solid var(--akzent);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+}
+
+/* Bits */
+.snv-bits__kopf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2);
+  margin-bottom: var(--s-3);
+}
+.snv-legende {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.snv-tabelle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  overflow-x: auto;
+}
+.snv-zeile {
+  display: grid;
+  grid-template-columns: 190px auto;
+  align-items: end;
+  gap: var(--s-3);
+}
+.snv-zeile__name {
+  padding-bottom: 4px;
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+.snv-zeile__oktette {
+  display: flex;
+  gap: 10px;
+}
+.snv-oktett {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: var(--r-1);
+}
+.snv-oktett--wichtig {
+  background: var(--akzent-weich);
+  box-shadow: inset 0 0 0 1px var(--akzent-linie);
+}
+.snv-oktett__wert {
+  font-size: var(--t-s);
+  font-weight: 700;
+}
+.snv-oktett__bits {
+  display: flex;
+  gap: 2px;
+}
+.snv-bit {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 24px;
+  border: 0;
+  border-radius: 3px;
+  font: 600 13px var(--mono);
+  font-style: normal;
+}
+button.snv-bit {
+  cursor: pointer;
+}
+button.snv-bit:hover {
+  outline: 2px solid var(--text);
+}
+.snv-bit--netz {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.snv-bit--host {
+  background: var(--flaeche-3);
+  color: var(--text);
+}
+.snv-bit--grenze {
+  box-shadow: -3px 0 0 var(--warn);
+}
+.snv-gewicht {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  font: 10px var(--mono);
+  font-style: normal;
+  color: var(--text-3);
+}
+.snv-tipp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: var(--s-3) 0 0;
+  font-size: var(--t-s);
+}
+
+/* Zahlenstrahl */
+.snv-strahl__leiste {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 56px;
+  margin: var(--s-8) 0 var(--s-6);
+}
+.snv-block {
+  position: relative;
+  min-width: 2px;
+  border-radius: 3px;
+  background: var(--flaeche-3);
+}
+.snv-block--aktiv {
+  background: linear-gradient(90deg, var(--akzent) 0 4px, color-mix(in srgb, var(--akzent) 30%, transparent) 4px calc(100% - 4px), var(--warn) calc(100% - 4px));
+  box-shadow: 0 0 0 2px var(--akzent);
+}
+.snv-block__von,
+.snv-block__bis {
+  position: absolute;
+  bottom: -20px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+.snv-block__von {
+  left: 0;
+}
+.snv-strahl__ende {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+.snv-block__bereich {
+  position: absolute;
+  inset: auto 0 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.snv-marke {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+}
+.snv-marke span {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+.snv-strahl__erklaerung {
+  margin-top: var(--s-2);
+}
+.snv-strahl__erklaerung,
+.snv-aktiv-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px var(--s-4);
+  font-size: var(--t-s);
+}
+.snv-aktiv-block {
+  gap: 6px;
+  margin-top: var(--s-3);
+  font-size: var(--t-m);
+}
+.snv-pfeil {
+  color: var(--text-3);
+}
+.snv-farbe {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 2px;
+}
+.snv-farbe--netz {
+  background: var(--akzent);
+}
+.snv-farbe--host {
+  background: color-mix(in srgb, var(--akzent) 30%, transparent);
+}
+.snv-farbe--bc {
+  background: var(--warn);
+}
+.snv-ergebnis th {
+  width: 220px;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .snv-zeile {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .snv-zeile--gewichte .snv-zeile__name {
+    display: none;
+  }
+  .snv-zeile__oktette {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .snv-bit,
+  .snv-gewicht {
+    width: 15px;
+    height: 20px;
+    font-size: 11px;
+  }
+  .snv-gewicht {
+    font-size: 8px;
+    height: auto;
+  }
+  .snv-feld input.feld {
+    width: 100%;
+    font-size: 16px;
+  }
+  .snv-feld {
+    flex: 1 1 100%;
+  }
+}

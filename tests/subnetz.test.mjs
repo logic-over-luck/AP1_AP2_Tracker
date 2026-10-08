@@ -95,3 +95,18 @@ test('Subnetz: Erzeuger rechnen wie die Bibliothek', () => {
     assert.equal(a.felder[0].erwartet, n.netz);
   }
 });
+
+test('Visualizer: entscheidendes Oktett, Blockgröße und Block', async () => {
+  const { zerlege } = await import('../src/bereiche/trainer/subnetz/ip.js');
+  let z = zerlege('192.168.40.150', 26);
+  assert.deepEqual([z.index, z.netzBitsImOktett, z.maskenwert, z.block, z.start, z.ende], [3, 2, 192, 64, 128, 191]);
+  assert.equal(z.n.netz, '192.168.40.128');
+  assert.equal(z.n.broadcast, '192.168.40.191');
+  z = zerlege('10.20.77.5', 20);
+  assert.deepEqual([z.index, z.netzBitsImOktett, z.maskenwert, z.block, z.start, z.ende], [2, 4, 240, 16, 64, 79]);
+  assert.equal(z.n.broadcast, '10.20.79.255');
+  z = zerlege('172.16.5.9', 24);
+  assert.deepEqual([z.index, z.netzBitsImOktett, z.maskenwert, z.block, z.start, z.ende], [3, 0, 0, 256, 0, 255]);
+  z = zerlege('192.168.1.6', 30);
+  assert.deepEqual([z.block, z.start, z.ende], [4, 4, 7]);
+});

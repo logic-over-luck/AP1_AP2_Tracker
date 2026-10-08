@@ -68,6 +68,24 @@ export function netz(ip, praefix) {
   };
 }
 
+// Alles, was die Ansicht braucht, aus Adresse und Präfix
+// Für den Visualizer: entscheidendes Oktett, Blockgröße, Block der Adresse
+export function zerlege(ip, praefix) {
+  const zahl = ipZuZahl(ip);
+  const m = maskeZahl(praefix);
+  const n = netz(ip, praefix);
+  const oktette = ip.split('.').map(Number);
+  // entscheidendes Oktett: dort liegt das erste Hostbit (bei /24 also das 4. Oktett, bei /20 das 3.)
+  const index = Math.min(3, Math.floor(praefix / 8));
+  const netzBitsImOktett = praefix - index * 8; // 0 … 8
+  const block = 2 ** (8 - netzBitsImOktett); // Blockgröße in diesem Oktett
+  const maskenwert = 256 - block;
+  const wert = oktette[index];
+  const blockNr = Math.floor(wert / block);
+  const start = blockNr * block;
+  return { zahl, m, n, oktette, index, netzBitsImOktett, block, maskenwert, wert, blockNr, start, ende: start + block - 1 };
+}
+
 export function gleichesNetz(a, b, praefix) {
   const m = maskeZahl(praefix);
   return ((ipZuZahl(a) & m) >>> 0) === ((ipZuZahl(b) & m) >>> 0);
