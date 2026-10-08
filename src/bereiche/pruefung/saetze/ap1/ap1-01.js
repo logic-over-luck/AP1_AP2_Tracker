@@ -21,7 +21,7 @@ export default {
           nr: 'aa',
           punkte: 6,
           sp: ['AP1-3-2-3'],
-          text: 'Vervollständigen Sie die Nutzwertanalyse: Berechnen Sie die gewichteten Punkte für die Angebote B und C, die Summen (Nutzwerte) aller drei Angebote und tragen Sie die Rangfolge ein. Die Spalte „A gew.“ ist als Beispiel vorgegeben.',
+          text: 'Vervollständigen Sie die Nutzwertanalyse: Berechnen Sie die gewichteten Punkte für die Angebote B und C, die Summen (Nutzwerte) aller drei Angebote und tragen Sie die Rangfolge ein (Rang 1 = höchster Nutzwert). Die Gewichtung eines Kriteriums gilt für alle Angebote gleich; gewichteter Wert = Punkte × Gewichtung. Die Spalte „A gew.“ ist als Beispiel vorgegeben.',
           antwort: {
             art: 'tabelle',
             kopf: ['Kriterium', 'Gewichtung', 'A Punkte', 'A gew.', 'B Punkte', 'B gew.', 'C Punkte', 'C gew.'],
