@@ -117,3 +117,18 @@ test('Gemischte Prüfungen aus dem echten Vorrat', () => {
     else assert.equal(p.aufgaben.length, Math.min(4, eigene.length * 4));
   }
 });
+
+test('KI-Korrektur: Prompt enthält alle Teilaufgaben, Maschinenzeile wird sicher gelesen', async () => {
+  const { kiPrompt, lesePunkte } = await import('../src/bereiche/pruefung/ki.js');
+  const p = stelleZusammen('PB2', vorrat, { satzId: 'pb2-1' });
+  const text = kiPrompt(p, { 'pb2-1-1:a': 'Meine Antwort' });
+  assert.match(text, /PUNKTE: 1a=<Punkte>; 1b=<Punkte>; 2a=/);
+  assert.match(text, /Meine Antwort/);
+  const r = lesePunkte('Begründung …\nPUNKTE: 1a=7,5; 1b=99; 2a=?; 2b=-3; 9z=4', p);
+  assert.equal(r.punkte['pb2-1-1:a'], 7.5);
+  assert.equal(r.punkte['pb2-1-1:b'], 15, 'auf Höchstpunkte begrenzt');
+  assert.equal(r.punkte['pb2-1-2:b'], 0, 'nicht negativ');
+  assert.equal(r.offen, 1);
+  assert.deepEqual(r.unbekannt, ['9z']);
+  assert.equal(lesePunkte('ohne Zeile', p), null);
+});

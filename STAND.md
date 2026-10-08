@@ -144,7 +144,9 @@ nächsten offenen Punkt weiter.
   (Format: `src/bereiche/pruefung/README.md`, Prüfung mit `node tools/pruefe-satz.mjs`). „Gemischt“ zieht gewichtet nach
   Wichtigkeit und Bauplan (PB2: Algorithmus + SQL, PB1: Modell), Uhr mit Pause, WiSo automatisch bewertet (Teilpunkte bei
   Mehrfachauswahl/Zuordnung), sonst Selbstbewertung mit Musterlösung und Punkteschema; Ergebnis mit IHK-Note als Ereignis
-  `pruefung` im Lernstand (XP, Schwächen je Stichpunkt). Offen: Aufgabenvorrat.
+  `pruefung` im Lernstand (XP, Schwächen je Stichpunkt). KI-Korrektur ohne Online-Zugriff (`ki.js`): kopiert
+  Prüferauftrag, Antworten, Musterlösung und Schema; die Zeile „PUNKTE: 1a=…“ der KI wird eingelesen (begrenzt, „?“ bleibt
+  offen). Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
 - **Kaufmännisch im Schema:** Rechnung, Kosten je Monat, Budget, Vor-/Nachkalkulation, Kauf/Leasing/Finanzierung,
   Tilgungsplan, Angebotsvergleich (Listenpreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Nutzwertanalyse,
   Sozialversicherung und Gewinnverteilung werden direkt in einer Tabelle ausgefüllt wie im Unterricht. Kleine

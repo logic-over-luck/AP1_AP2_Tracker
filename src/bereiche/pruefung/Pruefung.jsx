@@ -11,6 +11,8 @@ import { Icon, Knopf, Marke, Rich, Aufklapp, Leer } from '../../ui/bausteine.jsx
 import { Diagramm } from '../trainer/modellieren/diagramm.jsx';
 import { TEILE, TEILE_IN_RAUM, stelleZusammen, auswerten, automatischePunkte, teilSchluessel, bewerteFrage, runde1, note } from './generator.js';
 import { SAETZE } from './saetze/index.js';
+import { kiPrompt, lesePunkte } from './ki.js';
+import { kopiere } from '../lernen/lernprompt.js';
 
 const SCHLUESSEL = (raum) => `pruefung.laufend.${raum}`;
 const zahl = (x) => String(runde1(x)).replace('.', ',');
@@ -664,6 +666,7 @@ function Bewerten({ z, pruefung, aendere, abschliessen }) {
       <p class="trainer-hinweis">
         <Icon name="info" groesse={14} /> Vergleiche deine Antwort mit der Musterlösung und vergib Punkte nach dem Schema – ehrlich wie ein Prüfer. Andere sinnvolle Antworten zählen auch. Zahlen und Auswahl hat die App schon vorgeschlagen.
       </p>
+      <KiKorrektur z={z} pruefung={pruefung} aendere={aendere} />
       {pruefung.aufgaben.map(({ aufgabe }, i) => (
         <section key={aufgabe.id} class="flaeche flaeche--gross pruefung-aufgabe">
           <div class="pruefung-aufgabe__kopf">
@@ -718,6 +721,54 @@ function Bewerten({ z, pruefung, aendere, abschliessen }) {
         </Knopf>
       </div>
     </div>
+  );
+}
+
+// KI-Korrektur: Text für eine KI kopieren, deren Maschinenzeile wieder einlesen
+function KiKorrektur({ z, pruefung, aendere }) {
+  const [offen, setOffen] = useState(false);
+  const [text, setText] = useState('');
+  const [meldung, setMeldung] = useState(null);
+  const kopieren = async () => {
+    const ok = await kopiere(kiPrompt(pruefung, z.antworten));
+    setMeldung(ok ? { ton: 'gut', text: 'Kopiert. Füge den Text bei einer KI deiner Wahl ein (z. B. Claude) und kopiere die ganze Antwort zurück.' } : { ton: 'falsch', text: 'Kopieren hat nicht geklappt – dein Browser sperrt die Zwischenablage.' });
+    setOffen(true);
+  };
+  const uebernehmen = () => {
+    const r = lesePunkte(text, pruefung);
+    if (!r) return setMeldung({ ton: 'falsch', text: 'Keine Zeile „PUNKTE: …“ gefunden. Kopiere die komplette Antwort der KI.' });
+    aendere({ ...z, punkte: { ...z.punkte, ...r.punkte } }, true);
+    const teile = [`${r.gelesen} Teilaufgaben übernommen`];
+    if (r.offen) teile.push(`${r.offen} offen (Zeichnungen – selbst bewerten)`);
+    if (r.unbekannt.length) teile.push(`unbekannt: ${r.unbekannt.join(', ')}`);
+    setMeldung({ ton: 'gut', text: teile.join(' · ') + '. Prüfe die Punkte – du hast das letzte Wort.' });
+    setText('');
+  };
+  return (
+    <section class="flaeche pruefung-ki">
+      <div class="pruefung-ki__kopf">
+        <Icon name="sparkles" groesse={16} />
+        <div class="wachsen">
+          <strong>Von einer KI korrigieren lassen</strong>
+          <p class="gedaempft">Die App bleibt offline: Sie kopiert Aufgaben, deine Antworten, Musterlösung und Punkteschema. Die KI antwortet mit einer Zeile „PUNKTE: …“, die du hier einfügst.</p>
+        </div>
+        <Knopf variante="zweit" icon="copy" onClick={kopieren}>
+          Für KI kopieren
+        </Knopf>
+        <Knopf variante="geist" icon={offen ? 'chevron-up' : 'chevron-down'} onClick={() => setOffen(!offen)} aria-expanded={offen}>
+          Ergebnis einfügen
+        </Knopf>
+      </div>
+      <Aufklapp offen={offen}>
+        <div class="pruefung-ki__einfuegen">
+          <textarea class="feld" rows={4} placeholder="Antwort der KI hier einfügen (mit der Zeile PUNKTE: …)" value={text} onInput={(e) => setText(e.currentTarget.value)} />
+          <Knopf variante="primaer" icon="check" onClick={uebernehmen} disabled={!text.trim()}>
+            Punkte übernehmen
+          </Knopf>
+        </div>
+      </Aufklapp>
+      {meldung && <p class={`pruefung-ki__meldung pruefung-ki__meldung--${meldung.ton}`}>{meldung.text}</p>}
+    </section>
   );
 }
 
