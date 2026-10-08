@@ -10,6 +10,7 @@ deren IDs auf sie. Die Inhaltsdatei selbst wird nie verändert.
 | `trainer/` | feste Aufgaben der Trainer (Pseudocode, SQL, Modellieren) |
 | `zuordnung.json` | welcher Stichpunkt in welchem Trainer geübt wird |
 | `pruefberichte/<paket>.md` | Ergebnis der unabhängigen Durchsicht je Paket |
+| `pruefpakete/<paket>.md` | lesbare Fassung je Paket für eine externe Durchsicht (Vorgabe neben Kurzfassung, Karten, Glossar); erzeugt mit `node tools/pruefpakete.mjs`, Auftrag dazu in `pruefpakete/PRUEFAUFTRAG.md` |
 
 Prüfen: `node tools/inhalte-pruefen.mjs` (alle Pakete) oder
 `node tools/inhalte-pruefen.mjs inhalte/lernen/AP1-1.json` (ein Paket).

@@ -267,6 +267,7 @@ Häkchen zu Stichpunkten, die es nicht mehr gibt, werden einfach übersprungen.
 - `npm install` einmalig, dann `npm run build` → baut `Lernstudio.html` neu (Inhalte, Code, Schriften, SQL-Engine in einer Datei).
 - `npm test` – alle automatischen Tests (Prüfer, Aufgabenerzeuger, Interpreter, SQL, Lernstand, Modellieren-Aufgaben).
 - `npm run inhalte` – prüft die Inhaltspakete in `inhalte/lernen/`.
+- `node tools/pruefpakete.mjs` – schreibt `inhalte/pruefpakete/<paket>.md` neu (nach jeder Änderung an `inhalte/lernen/`). Für eine externe Durchsicht ein Paket zusammen mit `inhalte/pruefpakete/PRUEFAUFTRAG.md` an eine KI oder Lehrkraft geben.
 - `node tools/browser-check.mjs '#/ap2/trainer/sql'` – öffnet die Datei als file:// in Chromium, macht Fotos, meldet Konsolenfehler.
 - `node tools/modell-galerie.mjs <modus> ap2 <ordner>` – zeigt alle Modellieren-Aufgaben eines Modus mit Lösung als Bilder.
 - Neuer Trainer: Eintrag in `src/bereiche/trainer/verzeichnis.js` (welche Stichpunkte er übt) und Komponente in
