@@ -68,7 +68,7 @@ export default {
           nr: 'b',
           punkte: 6,
           sp: ['AP1-3-1-2', 'AP1-3-1-4'],
-          text: 'Die Kanzlei entscheidet sich für den Kauf bei Anbieter A. Berechnen Sie die monatlichen Kosten der neuen Arbeitsplätze. Die Anschaffungskosten werden gleichmäßig auf die geplante Nutzungsdauer verteilt. Runden Sie auf zwei Nachkommastellen.',
+          text: 'Die Kanzlei entscheidet sich für den Kauf bei Anbieter A. Die Geräte werden einmalig bezahlt. Um den Kauf später mit einem Leasingangebot vergleichen zu können, sollen Sie die durchschnittlichen Kosten je Monat ermitteln: Verteilen Sie die Anschaffungskosten gleichmäßig auf die geplante Nutzungsdauer und rechnen Sie die Wartung auf einen Monat um. Runden Sie auf zwei Nachkommastellen.',
           vorgaben: [
             {
               tabelle: {
