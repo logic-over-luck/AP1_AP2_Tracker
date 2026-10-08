@@ -43,7 +43,7 @@ export default {
         'Der Dienstag wird mit der durchschnittlichen täglichen Ausbildungszeit von acht Stunden angerechnet; Jonas muss danach nicht mehr in den Betrieb.',
         'Angerechnet wird nur die reine Unterrichtszeit von 4,5 Stunden; die übrige Zeit bis acht Stunden muss Jonas im Betrieb nacharbeiten.',
         'Taunuscode darf Jonas vor dem Unterricht von 6:30 bis 7:15 Uhr im Betrieb beschäftigen, wenn er pünktlich zur Schule kommt.',
-        'Die Berufsschulzeit wird nicht auf die Ausbildungszeit angerechnet; Jonas muss sie an den anderen Tagen der Woche ausgleichen.',
+        'Die Berufsschulzeit wird nicht auf die Ausbildungszeit angerechnet, weil sie außerhalb des Betriebs liegt; Jonas muss sie an den anderen Tagen ausgleichen.',
       ],
       richtig: [1],
       erklaerung:
@@ -56,7 +56,7 @@ export default {
       art: 'einfach',
       situation: 's1',
       text:
-        'Mia Kowalskis Ausbildungsvertrag sieht den gesetzlichen Mindesturlaub vor. Wie viele Werktage Urlaub stehen ihr für das Kalenderjahr 2026 nach dem Jugendarbeitsschutzgesetz mindestens zu?',
+        'Mia Kowalskis Ausbildungsvertrag sieht den gesetzlichen Mindesturlaub vor. Gehen Sie davon aus, dass ihr für 2026 der volle Jahresurlaub zusteht (kein Teilurlaub). Wie viele Werktage Urlaub stehen ihr für das Kalenderjahr 2026 nach dem Jugendarbeitsschutzgesetz mindestens zu?',
       optionen: ['20 Werktage', '24 Werktage', '25 Werktage', '27 Werktage', '30 Werktage'],
       richtig: [3],
       erklaerung:
@@ -70,9 +70,9 @@ export default {
       situation: 's1',
       text: 'Jonas Becker beendet im Sommer 2027 seine Ausbildung. Welche Aussage zum Ausbildungszeugnis trifft zu?',
       optionen: [
-        'Das Ausbildungszeugnis stellt die IHK zusammen mit dem Prüfungszeugnis aus; Taunuscode muss selbst kein Zeugnis ausstellen.',
+        'Das Ausbildungszeugnis stellt die IHK zusammen mit dem Prüfungszeugnis aus; Taunuscode muss deshalb selbst kein eigenes Zeugnis mehr ausstellen.',
         'Taunuscode muss ein Ausbildungszeugnis nur ausstellen, wenn Jonas die Abschlussprüfung bestanden hat.',
-        'Taunuscode muss ein Zeugnis über Art, Dauer und Ziel der Ausbildung und die erworbenen Kenntnisse ausstellen; Verhalten und Leistung kommen auf Verlangen hinzu.',
+        'Taunuscode muss ein Zeugnis über Art, Dauer, Ziel und erworbene Kenntnisse ausstellen; Angaben zu Verhalten und Leistung nur auf Verlangen.',
         'Das Zeugnis muss immer Angaben zu Verhalten und Leistung enthalten, auch wenn Jonas das ausdrücklich nicht möchte.',
         'Jonas erhält nur dann ein Ausbildungszeugnis, wenn er nach der Ausbildung nicht von Taunuscode übernommen wird.',
       ],
@@ -160,7 +160,7 @@ export default {
         'Frau Lindner kann die Verringerung verlangen; sie muss ihren Wunsch spätestens drei Monate vor dem gewünschten Beginn in Textform geltend machen.',
         'Frau Lindner hat keinen Anspruch, weil ein Anspruch auf Teilzeit erst in Unternehmen mit mehr als 45 Arbeitnehmern besteht.',
         'Taunuscode muss jedem Teilzeitwunsch zustimmen; betriebliche Gründe dürfen dem Wunsch nicht entgegengehalten werden.',
-        'Frau Lindner kann auch verlangen, die Arbeitszeit nur für zwei Jahre zu verringern und danach zur Vollzeit zurückzukehren.',
+        'Frau Lindner kann nach dem Teilzeit- und Befristungsgesetz auch verlangen, die Arbeitszeit nur für zwei Jahre zu verringern und danach zur Vollzeit zurückzukehren.',
         'Eine Verringerung der Arbeitszeit ist nur wirksam, wenn der Betriebsrat ihr vorher zugestimmt hat.',
       ],
       richtig: [0],
@@ -183,7 +183,7 @@ export default {
       ],
       richtig: [4],
       erklaerung:
-        'Die Kündigung schwerbehinderter Menschen durch den Arbeitgeber bedarf der vorherigen Zustimmung des Integrationsamts (§ 168 SGB IX), wenn das Arbeitsverhältnis länger als sechs Monate besteht (§ 173 SGB IX). Ausgeschlossen ist sie damit nicht. ' +
+        'Die Kündigung schwerbehinderter Menschen durch den Arbeitgeber bedarf der vorherigen Zustimmung des Integrationsamts (§ 168 SGB IX; in Hessen das Integrationsamt beim Landeswohlfahrtsverband, in einigen anderen Ländern heute „Inklusionsamt“ genannt), wenn das Arbeitsverhältnis länger als sechs Monate besteht (§ 173 SGB IX). Ausgeschlossen ist sie damit nicht. ' +
         'Schwerbehindert ist, wer einen Grad der Behinderung von mindestens 50 hat (§ 2 Abs. 2 SGB IX). Der Zusatzurlaub beträgt fünf Arbeitstage bei einer Fünftagewoche (§ 208 SGB IX). Die Zustimmung des Betriebsrats ersetzt die des Integrationsamts nicht.',
     },
     {
@@ -214,7 +214,7 @@ export default {
         'Tim Rauscher ist in den letzten Wochen mehrfach ohne Entschuldigung zu spät zu vereinbarten Kundenterminen erschienen. Taunuscode erteilt ihm deshalb eine Abmahnung. Welche Aussage trifft zu?',
       optionen: [
         'Die Abmahnung ist nur wirksam, wenn der Betriebsrat ihr vorher ausdrücklich zugestimmt hat.',
-        'Mit der Abmahnung endet das Arbeitsverhältnis, wenn Herr Rauscher nicht binnen einer Woche widerspricht.',
+        'Mit der Abmahnung endet das Arbeitsverhältnis automatisch, wenn Herr Rauscher nicht binnen einer Woche schriftlich widerspricht.',
         'Die Abmahnung rügt ein konkretes Fehlverhalten und kündigt für den Wiederholungsfall Konsequenzen bis zur Kündigung an.',
         'Wegen der bereits abgemahnten Verspätungen kann Taunuscode zusätzlich sofort kündigen, auch ohne weiteren Verstoß.',
         'Eine Abmahnung muss schriftlich erfolgen; eine mündliche Abmahnung ist in jedem Fall unwirksam.',
@@ -267,12 +267,12 @@ export default {
         'Die Betriebsvereinbarung wird zwischen einer Gewerkschaft und der Geschäftsführung abgeschlossen.',
         'Die Betriebsvereinbarung gilt nur für Beschäftigte, die ihr einzeln schriftlich zugestimmt haben.',
         'Die Betriebsvereinbarung ist wirksam, wenn sie mündlich in einer Betriebsversammlung beschlossen wurde.',
-        'Kommt keine Einigung zustande, legt das Arbeitsgericht den Inhalt der Regelung abschließend fest.',
+        'Können sich Geschäftsführung und Betriebsrat nicht einigen, legt das zuständige Arbeitsgericht den Inhalt der Regelung abschließend und verbindlich fest.',
         'Die Betriebsvereinbarung ist schriftlich niederzulegen, von beiden Seiten zu unterzeichnen und gilt unmittelbar und zwingend.',
       ],
       richtig: [4],
       erklaerung:
-        'Betriebsvereinbarungen werden von Arbeitgeber und Betriebsrat beschlossen, schriftlich niedergelegt und von beiden Seiten unterzeichnet (§ 77 Abs. 2 BetrVG). Sie gelten unmittelbar und zwingend für alle Arbeitnehmer des Betriebs (§ 77 Abs. 4 BetrVG). ' +
+        'Betriebsvereinbarungen werden von Arbeitgeber und Betriebsrat beschlossen, schriftlich niedergelegt und von beiden Seiten unterzeichnet; alternativ ist die elektronische Form mit qualifizierter elektronischer Signatur beider Seiten möglich (§ 77 Abs. 2 BetrVG). Sie gelten unmittelbar und zwingend für alle Arbeitnehmer des Betriebs (§ 77 Abs. 4 BetrVG). ' +
         'Die Ausgestaltung mobiler Arbeit ist mitbestimmungspflichtig (§ 87 Abs. 1 Nr. 14 BetrVG); kommt keine Einigung zustande, entscheidet die Einigungsstelle (§ 87 Abs. 2, § 76 BetrVG). Gewerkschaften schließen Tarifverträge, keine Betriebsvereinbarungen.',
     },
     {
@@ -284,7 +284,7 @@ export default {
       optionen: [
         'Während des Streiks ruhen die Hauptpflichten; Streikende erhalten kein Entgelt, Gewerkschaftsmitglieder bekommen Streikgeld.',
         'Der Betriebsrat des IT-Dienstleisters darf zum Streik aufrufen, wenn die Mehrheit der Beschäftigten zustimmt.',
-        'Mit einer Aussperrung kündigt der Arbeitgeber allen Streikenden fristlos; sie müssen später neu eingestellt werden.',
+        'Mit einer Aussperrung kündigt der Arbeitgeber allen Streikenden fristlos; nach dem Arbeitskampf müssen sie neu eingestellt werden.',
         'Streikende haben für die Dauer des Streiks Anspruch auf Arbeitslosengeld der Bundesagentur für Arbeit.',
         'Ein Streik ist auch während der Laufzeit des Tarifvertrags jederzeit zulässig, wenn die Gewerkschaft ihn beschließt.',
       ],
@@ -302,7 +302,7 @@ export default {
       situation: 's3',
       text: 'Ein Lieferant möchte wissen, wer für die Verbindlichkeiten der Taunuscode Software GmbH & Co. KG haftet. Welche Aussage trifft zu?',
       optionen: [
-        'Henrik Albers haftet als Geschäftsführer der Komplementär-GmbH mit seinem gesamten Privatvermögen unbeschränkt.',
+        'Henrik Albers haftet als Geschäftsführer der Komplementär-GmbH und als Kommanditist mit seinem gesamten Privatvermögen unbeschränkt für alle Schulden.',
         'Alle Gesellschafter haften wie bei einer OHG unbeschränkt und gesamtschuldnerisch mit ihrem Privatvermögen.',
         'Die Kommanditisten haften bis zur doppelten Höhe ihrer Einlage, Dr. Sabine Wendt also bis 160.000 €.',
         'Die GmbH & Co. KG ist eine Kapitalgesellschaft; Gläubigern haftet nur das Stammkapital von 25.000 €.',
@@ -338,7 +338,7 @@ export default {
       situation: 's3',
       text: 'Welche Aussage zum Handelsregister trifft zu?',
       optionen: [
-        'Das Handelsregister wird von der IHK Wiesbaden geführt; Einsicht erhalten nur deren Mitglieder.',
+        'Das Handelsregister wird von der IHK Wiesbaden geführt; Einsicht in die Eintragungen erhalten nur deren Mitglieder.',
         'Die Taunuscode Software GmbH & Co. KG steht in Abteilung A, die Taunuscode Verwaltungs-GmbH in Abteilung B.',
         'Neben der Prokura von Frau Morawe müssen auch alle Handlungsvollmachten eingetragen werden.',
         'Die Prokura von Frau Morawe wird erst mit ihrer Eintragung in das Handelsregister wirksam.',
@@ -445,7 +445,7 @@ export default {
       optionen: [
         'Der Staat erhöht die Einkommen- und Unternehmensteuern, um seine Schulden schneller abzubauen.',
         'Der Staat kürzt geplante Investitionen in Schulgebäude und den Breitbandausbau.',
-        'Der Staat legt zusätzliche Mittel in einer Konjunkturausgleichsrücklage still, statt sie auszugeben.',
+        'Der Staat legt zusätzliche Steuereinnahmen in einer Konjunkturausgleichsrücklage bei der Bundesbank still, statt sie für Investitionen auszugeben.',
         'Die Europäische Zentralbank erhöht die Leitzinsen, damit Kredite teurer werden.',
         'Der Staat zieht öffentliche Investitionen vor, z. B. in die Digitalisierung der Verwaltung, und stärkt so die Nachfrage.',
       ],
@@ -463,7 +463,7 @@ export default {
       text: 'Taunuscode hat für die Büroarbeitsplätze noch keine Gefährdungsbeurteilung erstellt. Welche Aussage trifft zu?',
       optionen: [
         'Eine Gefährdungsbeurteilung ist erst für Betriebe mit mindestens 50 Beschäftigten vorgeschrieben.',
-        'Die Gefährdungsbeurteilung erfasst nur körperliche Gefährdungen; psychische Belastungen bleiben außer Betracht.',
+        'Die Gefährdungsbeurteilung erfasst nur körperliche Gefährdungen wie Stolperstellen oder Kabel; psychische Belastungen wie Zeitdruck bleiben außer Betracht.',
         'Die Gefährdungsbeurteilung erstellt die Berufsgenossenschaft, die dafür unaufgefordert in den Betrieb kommt.',
         'Taunuscode muss die Gefährdungen einschließlich psychischer Belastungen ermitteln, Schutzmaßnahmen festlegen und dies dokumentieren.',
         'Die Gefährdungsbeurteilung wird einmal erstellt; eine Überprüfung bei Änderungen der Arbeit ist nicht vorgesehen.',
