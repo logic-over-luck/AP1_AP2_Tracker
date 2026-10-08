@@ -62,7 +62,7 @@ export default {
           loesung: [
             '**Angebot A.** Angebot B hat zwar den höchsten Nutzwert, scheidet aber aus, weil die Lieferzeit von 7 Wochen nach dem Umzugstermin (in 5 Wochen) liegt. Die Lieferzeit ist ein K.-o.-Kriterium. Unter den verbleibenden Angeboten hat A mit 7,40 den höheren Nutzwert (C: 7,10).',
           ],
-          bewertung: ['1 P für Angebot A', '1 P für die Begründung (B wegen Lieferzeit ausgeschlossen, A hat dann den höchsten Nutzwert)', 'Folgefehler aus aa) werden ohne Abzug gewertet'],
+          bewertung: ['1 P für Angebot A', '1 P für die Begründung (B wegen Lieferzeit ausgeschlossen, A hat dann den höchsten Nutzwert)', 'Wahl von C: 0 P für die Wahl; 1 P für die Begründung, wenn B wegen der Lieferzeit ausgeschlossen und die Wahl schlüssig begründet ist (z. B. höchste Gewichtung beim Preis)', 'Folgefehler aus aa) werden ohne Abzug gewertet'],
         },
         {
           nr: 'b',
