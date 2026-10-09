@@ -43,7 +43,7 @@ const bitWort = (n) => (n === 1 ? '1 Bit' : `${n} Bits`);
 
 const SCHRITTE = [
   { kurz: 'Aufbau', titel: 'Woraus besteht eine IP-Adresse?', Inhalt: Aufbau },
-  { kurz: 'Bits', titel: 'Von der Zahl zu den Bits', Inhalt: Bits, frisch: true },
+  { kurz: 'Bits', titel: 'Von der Zahl zu den Bits', Inhalt: Bits },
   { kurz: 'Präfix', titel: 'Der Präfix ist ein Trennstrich', Inhalt: Praefix },
   { kurz: 'Maske', titel: 'Die Maske ist der Strich als Zahl', Inhalt: Maske },
   { kurz: 'Oktett', titel: 'Gerechnet wird nur in einem Oktett', Inhalt: Oktett },
@@ -75,6 +75,11 @@ export function SubnetzVerstehen() {
   const geheZu = (i) => {
     setSchritt(i);
     setBesucht((b) => Math.max(b, i));
+  };
+  // Von einem Schritt aus die Adresse ändern (Bits umschalten): Eingabefeld oben zieht mit
+  const uebernehmeIp = (neu) => {
+    setIp(neu);
+    setEingabe(neu);
   };
   const neuerFall = () => {
     const a = zufallsAufgabe(zufall());
@@ -167,7 +172,7 @@ export function SubnetzVerstehen() {
           </h2>
         </header>
         {/* Rätsel beginnen bei neuer Adresse oder neuem Präfix von vorn; Schritte mit eigenem Regler behalten ihren Stand */}
-        <Inhalt key={s.frisch ? `${schritt}|${ip}/${praefix}` : schritt} z={z} ip={ip} praefix={praefix} setPraefix={setPraefix} />
+        <Inhalt key={s.frisch ? `${schritt}|${ip}/${praefix}` : schritt} z={z} ip={ip} praefix={praefix} setPraefix={setPraefix} setIp={uebernehmeIp} />
         <footer class="sv-fuss">
           <Knopf icon="arrow-left" onClick={() => geheZu(schritt - 1)} disabled={schritt === 0}>
             Zurück
@@ -508,23 +513,36 @@ function Aufbau({ z }) {
 
 // ---------- 2. Bits ----------
 
-function Bits({ z }) {
+// Nach dem Umrechnen lassen sich die Bits umschalten. Das ändert das Oktett der echten Adresse oben mit,
+// damit klar ist: Bits und Dezimalzahl sind dieselbe Adresse. Alle weiteren Schritte rechnen dann damit.
+function Bits({ z, ip, setIp }) {
   const [okt, setOkt] = useState(z.index);
   const [gezeigt, setGezeigt] = useState(0);
-  const [eigene, setEigene] = useState(null); // nach dem Umrechnen selbst umgeschaltete Bits
+  const ursprung = useRef(ip); // Adresse beim Öffnen bzw. nach der letzten Eingabe oben
+  const selbst = useRef(false); // die letzte Änderung der Adresse kam vom Umschalten hier
+  useEffect(() => {
+    if (selbst.current) selbst.current = false;
+    else {
+      // oben eine andere Adresse eingetippt: Umrechnen beginnt von vorn
+      ursprung.current = ip;
+      setGezeigt(0);
+    }
+  }, [ip]);
   const wert = z.oktette[okt];
   const schritte = binaerSchritte(wert);
   const fertig = gezeigt >= 8;
   const letzter = gezeigt > 0 && !fertig ? schritte[gezeigt - 1] : null;
-  const bits = eigene ?? schritte.map((s) => s.bit);
-  const summe = bits.reduce((a, bit, j) => a + bit * STELLENWERTE[j], 0);
+  const bits = schritte.map((s) => s.bit);
   const teile = STELLENWERTE.filter((g, j) => bits[j]);
+  const geaendert = ip !== ursprung.current;
   const waehle = (i) => {
     setOkt(i);
     setGezeigt(0);
-    setEigene(null);
   };
-  const kippe = (j) => setEigene(bits.map((x, i) => (i === j ? 1 - x : x)));
+  const kippe = (j) => {
+    selbst.current = true;
+    setIp(z.oktette.map((o, i) => (i === okt ? o ^ (1 << (7 - j)) : o)).join('.'));
+  };
 
   return (
     <div class="sv-inhalt">
@@ -599,18 +617,25 @@ function Bits({ z }) {
       ) : (
         <>
           <p class="sv-formel mono">
-            {summe} = {teile.length ? teile.join(' + ') : '0'} → <strong>{bits.join('')}</strong>
+            {wert} = {teile.length ? teile.join(' + ') : '0'} → <strong>{bits.join('')}</strong>
           </p>
           <Hinweis icon="info">
-            {eigene ? (
+            {geaendert ? (
               <>
-                Du hast Bits umgeschaltet – die Zahl rechnet mit.{' '}
-                <button type="button" class="sv-link sv-link--inline" onClick={() => setEigene(null)}>
-                  zurück zu {wert}
+                Oben in der IP-Adresse hat sich das {okt + 1}. Oktett mitgeändert: jetzt <strong class="mono">{ip}</strong>. Alle weiteren Schritte rechnen mit dieser Adresse.{' '}
+                <button
+                  type="button"
+                  class="sv-link sv-link--inline"
+                  onClick={() => {
+                    selbst.current = true;
+                    setIp(ursprung.current);
+                  }}
+                >
+                  zurück zu {ursprung.current}
                 </button>
               </>
             ) : (
-              'Jetzt du: Klick auf ein Bit, um es an- oder auszuschalten. Alle an ergibt 255, alle aus 0.'
+              'Jetzt du: Klick auf ein Bit, um es an- oder auszuschalten – die Zahl und oben die IP-Adresse ändern sich mit. Alle an ergibt 255, alle aus 0.'
             )}
           </Hinweis>
         </>

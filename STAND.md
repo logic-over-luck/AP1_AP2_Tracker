@@ -154,7 +154,7 @@ nächsten offenen Punkt weiter.
   Schritte an einer Adresse (oben IP und Präfix /8 … /30, Start 192.168.40.150/26), je Schritt eine Idee. Leitbild:
   Straße (Netz) + Hausnummer (Host). Farben überall gleich und oben in der Leiste als Legende: Netz grün (Akzent), Host blau (--info), Strich orange, reserviert rot (auf Wunsch Host blau statt grau, damit Netz und Host klar unterscheidbar sind).
   1 Aufbau (für dich / für den Computer, 4 × 8 Bit, drei Erklärkästen – wie gewünscht beibehalten), 2 Bits (Stellenwert-Tafel,
-  Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten), 3 Präfix (Netzbits färben sich ein, Strich,
+  Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten – das ändert das Oktett der IP oben mit, alle weiteren Schritte rechnen damit; „zurück zu …“ stellt die alte Adresse wieder her), 3 Präfix (Netzbits färben sich ein, Strich,
   Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Maske (Adresse und Maske übereinander,
   die 9 möglichen Oktettwerte), 5 Oktett (abschreiben / hier rechnen / 0 oder 255, Vorschau „192.168.40.?“; bei /8, /16, /24
   „nichts zu rechnen“), 6 Blöcke (Blockgröße = Stellenwert des letzten Netzbits = 256 − Maske, Zahlenstrahl mit Netzbit-Codes),
