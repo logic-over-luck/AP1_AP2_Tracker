@@ -1,0 +1,691 @@
+/* Subnetz „Verstehen“: Lernweg in Schritten. Baut auf subnetz-visual.css auf (Leiste, Bits, Tabellen). */
+.snl-praefix .snv-praefix__wert {
+  min-width: 3.4ch;
+  text-align: center;
+}
+.snv-schritt:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.snl-klein {
+  font-size: var(--t-xs);
+}
+
+/* Beispiele */
+.snl-beispiele {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  gap: 4px;
+}
+.snl-beispiele__liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.snl-beispiel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-rund);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+  font: inherit;
+  font-size: var(--t-xs);
+  cursor: pointer;
+}
+.snl-beispiel:hover {
+  border-color: var(--akzent);
+  color: var(--text);
+}
+.snl-beispiel--aktiv {
+  border-color: var(--akzent-linie);
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+
+/* Schritt-Leiste */
+.snl-schritte {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: thin;
+}
+.snl-schritte li {
+  flex: 1 0 auto;
+}
+.snl-schritt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-1);
+  background: var(--flaeche-1);
+  color: var(--text-3);
+  font: inherit;
+  font-size: var(--t-s);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.snl-schritt:hover {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.snl-schritt__nr {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--flaeche-3);
+  font-size: var(--t-xs);
+  font-weight: 700;
+}
+.snl-schritt--fertig {
+  color: var(--text-2);
+}
+.snl-schritt--fertig .snl-schritt__nr {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.snl-schritt--aktiv {
+  border-color: var(--akzent-linie);
+  background: var(--akzent-weich);
+  color: var(--text);
+  font-weight: 600;
+}
+.snl-schritt--aktiv .snl-schritt__nr {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+
+/* Karte */
+.snl .snl-karte {
+  padding: var(--s-4) var(--s-5);
+}
+.snl-karte__kopf {
+  margin-bottom: var(--s-3);
+}
+.snl-karte__titel {
+  margin: 2px 0 0;
+  font-size: var(--t-xl);
+  font-weight: 700;
+}
+.snl-inhalt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-3);
+  font-size: var(--t-n);
+  line-height: 1.6;
+}
+.snl-inhalt > p {
+  max-width: 78ch;
+  margin: 0;
+}
+.snl-inhalt > * {
+  max-width: 100%;
+}
+.snl-fuss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2);
+  margin-top: var(--s-5);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--linie);
+}
+.snl-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.snl-rechnung {
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+}
+.snl-rechnung strong {
+  color: var(--akzent);
+}
+
+/* Merke, Wirkung, Rückmeldung, Falle */
+.snl-merke,
+.snl-effekt,
+.snl-rueck,
+.snl-falle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  max-width: 78ch;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--r-2);
+  font-size: var(--t-m);
+  line-height: 1.55;
+}
+.snl-merke svg,
+.snl-effekt svg,
+.snl-rueck svg,
+.snl-falle svg {
+  flex: none;
+  margin-top: 2px;
+}
+.snl-merke {
+  border: 1px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+}
+.snl-merke svg {
+  color: var(--akzent);
+}
+.snl-effekt,
+.snl-falle.snl-falle--info {
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  background: color-mix(in srgb, var(--info) 10%, transparent);
+}
+.snl-effekt svg,
+.snl-falle.snl-falle--info svg {
+  color: var(--info);
+}
+.snl-rueck {
+  padding: 6px 12px;
+}
+.snl-rueck--gut {
+  background: color-mix(in srgb, var(--gut) 12%, transparent);
+  color: var(--gut);
+}
+.snl-rueck--falsch {
+  background: color-mix(in srgb, var(--fehler) 12%, transparent);
+  color: var(--fehler);
+}
+.snl-rueck span {
+  color: var(--text);
+}
+.snl-falle {
+  border: 1px solid color-mix(in srgb, var(--warn) 45%, transparent);
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+}
+.snl-falle svg {
+  color: var(--warn);
+}
+
+/* Bits mit Trennstrich */
+.snl-bits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+}
+.snl-bits__oktett {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.snl-bits__dez {
+  font-size: var(--t-m);
+  font-weight: 700;
+}
+.snl-bits__reihe {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.snl-bit.snv-bit {
+  width: 20px;
+  height: 28px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+button.snl-bit {
+  cursor: pointer;
+}
+button.snl-bit:hover {
+  outline: 2px solid var(--text);
+  outline-offset: -1px;
+}
+.snl-trenner {
+  width: 4px;
+  height: 38px;
+  margin: 0 3px;
+  border-radius: 2px;
+  background: var(--warn);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--warn) 60%, transparent);
+}
+.snl-teile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.snl-teil {
+  padding: 4px 12px;
+  border-radius: var(--r-rund);
+  font-size: var(--t-s);
+}
+.snl-teil--netz {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.snl-teil--host {
+  background: var(--flaeche-3);
+  color: var(--text);
+}
+
+/* Oktett-Karten */
+.snl-oktette {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-2);
+  width: 100%;
+  max-width: 720px;
+}
+.snl-okt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  line-height: 1.35;
+}
+.snl-okt__nr {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.snl-okt__wert {
+  font-size: var(--t-2xl);
+  font-weight: 700;
+}
+.snl-okt__rolle {
+  font-size: var(--t-s);
+  font-weight: 700;
+}
+.snl-okt__text {
+  font-size: var(--t-xs);
+  color: var(--text-2);
+}
+.snl-okt--fest .snl-okt__wert,
+.snl-okt--fest .snl-okt__rolle {
+  color: var(--text-3);
+}
+.snl-okt--grenze {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.snl-okt--grenze .snl-okt__rolle {
+  color: var(--akzent);
+}
+.snl-okt--frei .snl-okt__rolle {
+  color: var(--warn);
+}
+
+/* Lupe */
+.snl-lupe {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.snl-lupe__bits {
+  display: flex;
+  gap: 3px;
+}
+.snl-lupe__spalte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.snl-lupe__spalte .snl-bit {
+  width: 32px;
+}
+.snl-lupe__gewicht {
+  font-size: var(--t-xs);
+  color: var(--text-4);
+}
+.snl-lupe__gewicht--an {
+  color: var(--akzent);
+  font-weight: 700;
+}
+
+/* Zahlenstrahl */
+.snl-strahl {
+  width: 100%;
+  padding: 0 4px;
+}
+.snl-strahl__leiste {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 36px;
+  margin: 26px 0 22px;
+}
+.snl-block {
+  position: relative;
+  flex: 1;
+  min-width: 1px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: var(--flaeche-3);
+  transition: background var(--dauer) var(--kurve);
+}
+.snl-block--klick {
+  cursor: pointer;
+}
+.snl-block--klick:hover {
+  background: var(--linie-3);
+}
+.snl-block--aktiv {
+  background: linear-gradient(90deg, var(--akzent) 0 4px, color-mix(in srgb, var(--akzent) 30%, transparent) 4px calc(100% - 4px), var(--warn) calc(100% - 4px));
+  box-shadow: 0 0 0 2px var(--akzent);
+}
+.snl-block--falsch {
+  background: color-mix(in srgb, var(--fehler) 35%, transparent);
+}
+.snl-block__von,
+.snl-strahl__ende {
+  position: absolute;
+  bottom: -19px;
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+.snl-block__von {
+  left: 0;
+}
+.snl-strahl__ende {
+  right: 0;
+}
+.snl-zeiger {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+  pointer-events: none;
+}
+.snl-zeiger span {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.snl-zeiger--gut,
+.snl-zeiger--gut span {
+  background: var(--gut);
+}
+.snl-zeiger--fremd,
+.snl-zeiger--fremd span {
+  background: var(--fehler);
+}
+
+/* Fragen */
+.snl-frage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.snl-frage__feld {
+  width: 80px;
+  font-weight: 600;
+}
+.snl-frage__feld--ip {
+  width: 170px;
+}
+.snl-optionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.snl-option {
+  min-width: 72px;
+  height: 44px;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text);
+  font-size: var(--t-l);
+  font-weight: 700;
+  cursor: pointer;
+}
+.snl-option:hover:not(:disabled) {
+  border-color: var(--akzent);
+}
+.snl-option:disabled {
+  cursor: default;
+}
+.snl-option--gut {
+  border-color: var(--gut);
+  background: color-mix(in srgb, var(--gut) 15%, transparent);
+}
+.snl-option--falsch {
+  border-color: var(--fehler);
+  background: color-mix(in srgb, var(--fehler) 15%, transparent);
+}
+
+/* Blockgrenze vergrößert */
+.snl-zoom {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+.snl-zoom__zelle {
+  display: grid;
+  place-items: center;
+  min-width: 56px;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  font-weight: 700;
+}
+.snl-zoom__zelle--dein {
+  background: color-mix(in srgb, var(--akzent) 25%, transparent);
+}
+.snl-zoom__zelle--dein:nth-child(2) {
+  box-shadow: inset 0 -3px 0 var(--warn);
+}
+.snl-zoom__zelle--leer {
+  background: none;
+  color: var(--text-3);
+  font-size: var(--t-xs);
+  font-weight: 400;
+}
+.snl-zoom__wand {
+  width: 4px;
+  margin: -4px 4px;
+  border-radius: 2px;
+  background: var(--warn);
+}
+.snl-zoom__legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-5);
+  margin-top: -6px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+
+/* Adresstabelle */
+.snl-tab-rahmen {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.snl-tab {
+  border-collapse: collapse;
+  font-size: var(--t-l);
+}
+.snl-tab th {
+  padding: 6px 16px 6px 0;
+  font-size: var(--t-s);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--text-2);
+}
+.snl-tab td {
+  padding: 6px 0;
+  border-top: 1px solid var(--linie);
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+.snl-tab th {
+  border-top: 1px solid var(--linie);
+}
+.snl-tab tr:first-child th,
+.snl-tab tr:first-child td {
+  border-top: 0;
+}
+.snl-tab__punkt {
+  padding: 0 2px;
+  color: var(--text-4);
+}
+.snl-tab td.snl-tab__text {
+  padding-left: var(--s-5);
+  font-size: var(--t-s);
+  font-weight: 400;
+  text-align: left;
+  color: var(--text-3);
+}
+.snl-tab__reserviert th {
+  color: var(--text);
+}
+.snl-z--fest {
+  color: var(--text-3);
+}
+.snl-z--grenze {
+  color: var(--akzent);
+}
+.snl-z--frei {
+  color: var(--warn);
+}
+.snl-legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--text-2);
+}
+.snl-farbe {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+.snl-farbe--fest {
+  background: var(--text-3);
+}
+.snl-farbe--grenze {
+  background: var(--akzent);
+}
+.snl-farbe--frei {
+  background: var(--warn);
+}
+
+/* Nachbarn */
+.snl-pc {
+  padding: 5px 10px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+}
+.snl-vergleich {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px var(--s-3);
+  font-size: var(--t-m);
+}
+.snl-vergleich span {
+  color: var(--text-2);
+}
+
+/* Aufteilen */
+.snl-aufteil {
+  width: auto;
+  min-width: 420px;
+}
+.snl-aufteil td,
+.snl-aufteil th {
+  padding-right: var(--s-4);
+}
+.snl-wozu ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+}
+.snl-wozu li {
+  margin: 2px 0;
+}
+
+@media (max-width: 560px) {
+  .snl .snl-karte {
+    padding: var(--s-3);
+  }
+  .snl-karte__titel {
+    font-size: var(--t-l);
+  }
+  .snl-schritt__name {
+    display: none;
+  }
+  .snl-schritt--aktiv .snl-schritt__name {
+    display: inline;
+  }
+  .snl-schritte li {
+    flex: 0 0 auto;
+  }
+  .snl-bits {
+    gap: 6px 10px;
+  }
+  .snl-bits__reihe {
+    gap: 1px;
+  }
+  .snl-bit.snv-bit {
+    width: 15px;
+    height: 24px;
+    font-size: 11px;
+  }
+  .snl-trenner {
+    width: 3px;
+    height: 30px;
+    margin: 0 2px;
+  }
+  .snl-oktette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .snl-lupe__spalte .snl-bit {
+    width: 28px;
+  }
+  .snl-tab {
+    font-size: var(--t-n);
+  }
+  .snl-tab td.snl-tab__text {
+    display: none;
+  }
+  .snl-aufteil {
+    min-width: 0;
+  }
+  .snl-vergleich {
+    grid-template-columns: 1fr;
+  }
+}

@@ -119,3 +119,64 @@ test('Visualizer: alle Teilnetze im Oktett', async () => {
   assert.equal(subnetzeImOktett('10.20.77.5', 20)[4].broadcast, '10.20.79.255');
   assert.equal(subnetzeImOktett('192.168.1.6', 30).length, 64);
 });
+
+test('Lernweg: Rollen der Oktette, Blockende-Optionen, Aufteilen, Fallen', async () => {
+  const lw = await import('../src/bereiche/trainer/subnetz/lernweg.js');
+  assert.deepEqual(lw.oktettRollen(26), ['fest', 'fest', 'fest', 'grenze']);
+  assert.deepEqual(lw.oktettRollen(24), ['fest', 'fest', 'fest', 'grenze']);
+  assert.deepEqual(lw.oktettRollen(23), ['fest', 'fest', 'grenze', 'frei']);
+  assert.deepEqual(lw.oktettRollen(8), ['fest', 'grenze', 'frei', 'frei']);
+
+  // Blockende: richtige Antwort und der typische Fehler (Anfang des nächsten Blocks) sind dabei
+  const z = ip.zerlege('192.168.40.150', 26);
+  const opt = lw.endeOptionen(z);
+  assert.ok(opt.includes(191) && opt.includes(192));
+  assert.deepEqual(opt, [...opt].sort((a, b) => a - b));
+  for (let p = 8; p <= 30; p++)
+    for (const wert of [0, 1, 77, 128, 150, 254, 255]) {
+      const zz = ip.zerlege(`10.${wert}.${wert}.${wert}`, p);
+      const o = lw.endeOptionen(zz);
+      assert.ok(o.includes(zz.ende), `/${p} ${wert}`);
+      assert.ok(o.length >= 1 && o.length <= 4);
+      assert.ok(o.every((x) => x >= zz.start && x <= 255));
+    }
+
+  // Aufteilen: Netze × Adressen ist in jeder Zeile gleich
+  for (const p of [8, 16, 20, 23, 24, 26, 30]) {
+    const { gesamt, zeilen } = lw.aufteilTabelle(p);
+    assert.ok(zeilen.some((r) => r.praefix === p));
+    for (const r of zeilen) {
+      assert.equal(r.netze * r.adressen, gesamt);
+      assert.equal(r.hostsGesamt + r.reserviert, gesamt);
+    }
+  }
+  const t26 = lw.aufteilTabelle(26);
+  assert.equal(t26.gesamt, 256);
+  assert.deepEqual(
+    t26.zeilen.map((r) => r.praefix),
+    [24, 25, 26, 27, 28, 29, 30],
+  );
+  assert.equal(t26.zeilen.find((r) => r.praefix === 26).hostsGesamt, 248);
+
+  // Nachbar: bei mehreren Blöcken ein anderes Netz, bei einem Block dasselbe
+  assert.equal(lw.nachbarVorschlag('192.168.40.150', 26), '192.168.40.86');
+  assert.ok(!ip.gleichesNetz('192.168.40.150', lw.nachbarVorschlag('192.168.40.150', 26), 26));
+  assert.ok(!ip.gleichesNetz('192.168.40.10', lw.nachbarVorschlag('192.168.40.10', 26), 26));
+  assert.ok(!ip.gleichesNetz('192.168.41.150', lw.nachbarVorschlag('192.168.41.150', 23), 23));
+  assert.ok(ip.gleichesNetz('192.168.40.150', lw.nachbarVorschlag('192.168.40.150', 24), 24));
+
+  // Fallen unter /24: x.255 und (x+1).0 liegen mitten im Netz
+  assert.equal(lw.fallen('192.168.40.150', 26), null);
+  assert.deepEqual(lw.fallen('192.168.41.150', 23), { endeErstes: '192.168.40.255', anfangZweites: '192.168.41.0' });
+  assert.deepEqual(lw.fallen('172.20.77.5', 20), { endeErstes: '172.20.64.255', anfangZweites: '172.20.65.0' });
+  for (const [adresse, p] of [['192.168.41.150', 23], ['172.20.77.5', 20], ['10.9.8.7', 12]]) {
+    const f = lw.fallen(adresse, p);
+    const n = ip.netz(adresse, p);
+    assert.ok(ipZwischen(f.endeErstes, n.erster, n.letzter) && ipZwischen(f.anfangZweites, n.erster, n.letzter));
+  }
+});
+
+function ipZwischen(a, von, bis) {
+  const z = ip.ipZuZahl(a);
+  return z >= ip.ipZuZahl(von) && z <= ip.ipZuZahl(bis);
+}

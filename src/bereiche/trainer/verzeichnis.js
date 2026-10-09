@@ -30,6 +30,7 @@ export const TRAINER = [
     icon: 'network',
     text: 'Netzadresse, Broadcast, Hostbereich, Maske, IPv6',
     modi: [
+      { id: 'verstehen', name: 'Verstehen', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
       { id: 'visual', name: 'Visualizer', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
       { id: 'analyse', name: 'Netz bestimmen', sp: ['AP1-6-2-2'] },
       { id: 'maske', name: 'Präfix und Maske', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
