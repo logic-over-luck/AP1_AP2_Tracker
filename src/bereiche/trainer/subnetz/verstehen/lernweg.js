@@ -32,7 +32,6 @@ const L = [
       'Eine **IPv4-Adresse** ist eine 32 Bit lange logische Adresse, die ein Gerät in einem IP-Netz eindeutig bezeichnet. Man schreibt sie als vier Dezimalzahlen von 0 bis 255 (**Oktette**), getrennt durch Punkte, z. B. `192.168.1.10`.',
     merksatz: 'IPv4 = 4 Oktette × 8 Bit = 32 Bit. Jedes Oktett ist eine Zahl von 0 bis 255.',
     fehler: [{ falsch: '192.168.1.256 ist eine gültige Adresse.', richtig: 'Ein Oktett geht nur bis 255 – mehr passt nicht in 8 Bit.' }],
-    uebung: 'maske',
   },
   {
     id: 'netz-host',
@@ -186,6 +185,7 @@ const L = [
     definition:
       'Eine Subnetz-Aufgabe löst man immer in derselben Reihenfolge: **1.** Subnetzmaske · **2.** entscheidendes Oktett und Blockgröße · **3.** Netzadresse · **4.** Broadcastadresse · **5.** erste und letzte Hostadresse · **6.** Anzahl der Hosts.',
     merksatz: 'Erst die Blockgröße, dann ist alles andere Abschreiben, Abrunden und ±1.',
+    fehler: [{ falsch: 'Die Netzadresse gleich raten, z. B. „100 → .100“ oder „irgendwas mit .0“.', richtig: 'Immer zuerst die Blockgröße. Die Netzadresse ist ein Vielfaches davon – das lässt sich am Ende gegenprüfen.' }],
     uebung: 'analyse',
   },
 
@@ -332,7 +332,7 @@ const L = [
     block: 'ipv6',
     begriff: 'Präfix und Interface-Identifier',
     leitfrage: 'Welcher Teil ist Netz, welcher Gerät?',
-    braucht: ['praefix', 'ipv6-kurz'],
+    braucht: ['praefix', 'mac', 'ipv6-kurz'],
     kompetenzen: ['AP1-6-2-3-K3'],
     definition:
       'Auch bei IPv6 gibt die **Präfixlänge** an, wie viele Bits von links das Netz bezeichnen, meist `/64`. Die übrigen Bits sind der **Interface-Identifier**: Er bezeichnet die Netzwerkschnittstelle des Geräts in diesem Netz. Bei /64 sind das die ersten vier und die letzten vier Blöcke.',
