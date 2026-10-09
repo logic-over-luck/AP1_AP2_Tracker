@@ -1,6 +1,6 @@
 // Aufgabenerzeuger Subnetz-Trainer. Rein, getestet in tests/subnetz.test.mjs.
 
-import { netz, maske, binaer, gleichesNetz, istPrivat, ipv6Voll, ipv6Kurz, gruppenVoll, istRichtigGekuerzt, aufteilen as vlsm, ipZuZahl, zahlZuIp } from './ip.js';
+import { netz, maske, binaer, gleichesNetz, istPrivat, ipv6Voll, ipv6Kurz, gruppenVoll, istRichtigGekuerzt, aufteilen as vlsm, ipZuZahl, zahlZuIp } from '../ip.js';
 
 const SP = { subnetting: 'AP1-6-2-2', konfig: 'AP1-6-2-1', ipv6: 'AP1-6-2-3' };
 

@@ -30,22 +30,24 @@ export const TRAINER = [
     icon: 'network',
     text: 'Netzadresse, Broadcast, Hostbereich, Maske, IPv6',
     modi: [
-      // bereich: Der Subnetz-Trainer hat zwei Räume – Verstehen (Lektionen) und Üben (Aufgaben + Visualizer)
-      { id: 'verstehen', name: 'Lektionen', bereich: 'verstehen', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
-      { id: 'analyse', name: 'Netz bestimmen', bereich: 'ueben', sp: ['AP1-6-2-2'] },
-      { id: 'maske', name: 'Präfix und Maske', bereich: 'ueben', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
-      { id: 'gleich', name: 'Gleiches Netz?', bereich: 'ueben', sp: ['AP1-6-2-2'] },
-      { id: 'privat', name: 'Private Adressen', bereich: 'ueben', sp: ['AP1-6-2-1'] },
-      { id: 'ipv6', name: 'IPv6 kürzen & ausschreiben', bereich: 'ueben', sp: ['AP1-6-2-3'] },
+      // Drei Räume (Feld bereich): verstehen (Lernweg), ueben (Aufgaben, nach Themen-Blöcken des Lernwegs: thema),
+      // visualisieren (Visualizer). Eigener Rahmen in subnetz/Subnetz.jsx.
+      { id: 'verstehen', name: 'Lernweg', bereich: 'verstehen', sp: ['AP1-6-2-2', 'AP1-6-2-1', 'AP1-6-2-3', 'AP1-6-2-4'] },
+      { id: 'maske', name: 'Präfix und Subnetzmaske', bereich: 'ueben', thema: 'adresse', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
+      { id: 'analyse', name: 'Netz bestimmen', bereich: 'ueben', thema: 'subnetting', sp: ['AP1-6-2-2'] },
+      { id: 'gleich', name: 'Gleiches Netz?', bereich: 'ueben', thema: 'subnetting', sp: ['AP1-6-2-2'] },
       {
         id: 'aufteilen',
-        name: 'Netz aufteilen (Zusatz)',
+        name: 'Netz aufteilen',
         bereich: 'ueben',
+        thema: 'subnetting',
         sp: [],
         zusatzIn: ['AP1'],
         hinweis: 'Für AP1 laut Rahmen nicht belegt – zum Vertiefen.',
       },
-      { id: 'visual', name: 'Visualizer (Nachschlagen)', bereich: 'ueben', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
+      { id: 'privat', name: 'Private Adressen', bereich: 'ueben', thema: 'konfiguration', sp: ['AP1-6-2-1'] },
+      { id: 'ipv6', name: 'IPv6 kürzen & ausschreiben', bereich: 'ueben', thema: 'ipv6', sp: ['AP1-6-2-3'] },
+      { id: 'visual', name: 'Visualizer', bereich: 'visualisieren', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
     ],
   },
   {

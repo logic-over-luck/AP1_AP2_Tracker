@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import * as ip from '../src/bereiche/trainer/subnetz/ip.js';
-import * as aufgaben from '../src/bereiche/trainer/subnetz/aufgaben.js';
+import * as aufgaben from '../src/bereiche/trainer/subnetz/ueben/aufgaben.js';
 import { pruefeErzeuger } from './hilfen/erzeuger.mjs';
 import { zufall } from '../src/bereiche/trainer/rahmen/zufall.js';
 

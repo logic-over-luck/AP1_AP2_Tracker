@@ -10,17 +10,9 @@ import { Icon, Knopf, Rich, Kbd, Aufklapp, Marke } from '../../../ui/bausteine.j
 import { pruefeFeld, zahlText, runde } from './pruefen.js';
 import { zufall } from './zufall.js';
 
-// Räume eines Trainers (optional, über das Feld `bereich` der Module): oben zwei große Schalter, darunter die Module des Raums
-const BEREICHE = {
-  verstehen: { name: 'Verstehen', text: 'Lektionen, ein Begriff nach dem anderen', icon: 'lightbulb' },
-  ueben: { name: 'Üben', text: 'Aufgaben mit Prüfen und Visualizer', icon: 'target' },
-};
-
 export function TrainerSeite({ raum, trainer, modi, modus, children, untertitel }) {
   const r = inhalt.raeume.get(raum);
   const aktiv = modi.find((m) => m.id === modus) ?? modi[0];
-  const bereiche = [...new Set(modi.map((m) => m.bereich).filter(Boolean))];
-  const sichtbar = bereiche.length > 1 ? modi.filter((m) => m.bereich === aktiv.bereich) : modi;
   return (
     <div class="trainer">
       <header class="seitenkopf">
@@ -30,28 +22,9 @@ export function TrainerSeite({ raum, trainer, modi, modus, children, untertitel 
           <p class="seitenkopf__text">{untertitel ?? trainer.text}</p>
         </div>
       </header>
-      {bereiche.length > 1 && (
-        <div class="trainer-bereiche" role="tablist" aria-label="Räume">
-          {bereiche.map((b) => (
-            <button
-              key={b}
-              role="tab"
-              aria-selected={b === aktiv.bereich}
-              class="trainer-bereich"
-              onClick={() => geheZu(raum, 'trainer', trainer.id, { modus: modi.find((m) => m.bereich === b).id }, { ersetzen: true })}
-            >
-              <Icon name={BEREICHE[b].icon} groesse={18} />
-              <span>
-                <span class="trainer-bereich__name">{BEREICHE[b].name}</span>
-                <span class="trainer-bereich__text">{BEREICHE[b].text}</span>
-              </span>
-            </button>
-          ))}
-        </div>
-      )}
-      {sichtbar.length > 1 && (
+      {modi.length > 1 && (
         <div class="trainer-modi" role="tablist" aria-label="Übungsarten">
-          {sichtbar.map((m) => (
+          {modi.map((m) => (
             <button
               key={m.id}
               role="tab"
@@ -76,7 +49,7 @@ export function TrainerSeite({ raum, trainer, modi, modus, children, untertitel 
   );
 }
 
-function ThemenLinks({ raum, modus }) {
+export function ThemenLinks({ raum, modus }) {
   const sps = modus.sp.map((id) => inhalt.sp.get(id)).filter((s) => s && s.raum === raum);
   if (!sps.length) return null;
   return (

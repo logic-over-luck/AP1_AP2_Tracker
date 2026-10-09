@@ -1,0 +1,109 @@
+/* Subnetz-Trainer (subnetz/): Räume, Lernweg, Lektionen, Bausteine. Präfix sn-, nur Tokens aus tokens.css.
+   Die Farben bedeuten überall dasselbe: Netz = Akzent (grün), Host = --info (blau), Grenze = --warn (orange),
+   reserviert (Netzadresse, Broadcast) = --fehler (rot). */
+
+.sn {
+  --sn-netz: var(--akzent);
+  --sn-netz-weich: var(--akzent-weich);
+  --sn-host: var(--info);
+  --sn-host-flaeche: color-mix(in srgb, var(--info) 42%, var(--flaeche-2));
+  --sn-host-weich: color-mix(in srgb, var(--info) 14%, transparent);
+  --sn-grenze: var(--warn);
+  --sn-res: var(--fehler);
+  --sn-res-weich: color-mix(in srgb, var(--fehler) 14%, transparent);
+  --sn-bitluecke: 3px;
+  --sn-oktettluecke: var(--s-4);
+}
+
+/* ---------- Räume ---------- */
+.sn-raeume {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-3);
+  max-width: 900px;
+  margin-bottom: var(--s-6);
+}
+.sn-raum {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-width: 0;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+  text-align: left;
+  color: var(--text-2);
+  transition: all var(--dauer) var(--kurve);
+}
+.sn-raum > svg {
+  flex: none;
+}
+.sn-raum > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.sn-raum:hover {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.sn-raum[aria-selected='true'] {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sn-raum__name {
+  font-size: var(--t-l);
+  font-weight: 650;
+  color: var(--text);
+}
+.sn-raum__text {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+
+/* ---------- Üben: Übungen nach Themen ---------- */
+.sn-themen {
+  display: grid;
+  gap: var(--s-3);
+  margin-bottom: var(--s-6);
+}
+.sn-thema {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
+}
+.sn-thema__titel {
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-3);
+}
+.sn-thema__liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+@media (max-width: 640px) {
+  .sn-raeume {
+    gap: var(--s-2);
+  }
+  .sn-raum {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--s-1);
+    padding: var(--s-3) var(--s-2);
+    text-align: center;
+  }
+  .sn-raum__name {
+    font-size: var(--t-n);
+  }
+  .sn-raum__text {
+    display: none;
+  }
+  .sn-thema {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
