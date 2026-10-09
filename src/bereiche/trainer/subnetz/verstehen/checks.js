@@ -1,13 +1,11 @@
 // Kurz-Check am Ende jeder Lektion: 2–3 Fragen. Rein, getestet in tests/subnetz.test.mjs.
 //
-// Frage:
-//   { frage, optionen: [...], richtig, tipp, erklaerung }                       – Auswahl
-//   { frage, eingabe: 'zahl' | 'ipv4' | 'text' | 'ipv6kurz' | 'ipv6voll' | 'iid',
-//     loesung, auch?: [...], platzhalter?, tipp, erklaerung, beleg? }           – Eingabe
+// Fragenformat und eingebaute Eingabe-Typen: lernweg/pruefen.js. Dazu hier: 'ipv4' | 'ipv6kurz' | 'ipv6voll' | 'iid'.
 // tipp erscheint nach einer falschen Antwort, erklaerung nach der richtigen.
 // beleg: { ip, praefix, feld } – der Test rechnet die Lösung mit ip.js nach (feld aus netz()).
 
-import { leseIp, leseZahl, ipv6Voll, istRichtigGekuerzt, gruppenVoll } from '../ip.js';
+import { leseIp, ipv6Voll, istRichtigGekuerzt, gruppenVoll } from '../ip.js';
+import { TYPEN, pruefeAntwort as pruefeAllgemein } from '../../lernweg/pruefen.js';
 
 export const CHECKS = {
   // ---------- Block 1 ----------
@@ -648,39 +646,36 @@ export const CHECKS = {
   ],
 };
 
-// Prüft eine Antwort. Auswahl: Text der Option. Eingabe: je nach Art.
-// → { ok, leer?, grund? }
-export function pruefeAntwort(frage, eingabe) {
-  const s = String(eingabe ?? '').trim();
-  if (!s) return { ok: false, leer: true };
-  if (frage.optionen) return { ok: s === frage.richtig };
-  switch (frage.eingabe) {
-    case 'zahl': {
-      const z = leseZahl(s);
-      return z === null ? { ok: false, grund: 'Bitte eine ganze Zahl eingeben.' } : { ok: z === Number(frage.loesung) };
-    }
-    case 'ipv4': {
+// Eigene Eingabe-Typen dieses Lernwegs (zusätzlich zu zahl, text … aus lernweg/pruefen.js)
+export const SUBNETZ_TYPEN = {
+  ipv4: {
+    zahlartig: true,
+    platzhalter: 'z. B. 192.168.1.0',
+    pruefe: (s, f) => {
       const ip = leseIp(s);
-      return ip === null ? { ok: false, grund: 'Keine gültige IPv4-Adresse (vier Zahlen von 0 bis 255 mit Punkten).' } : { ok: ip === frage.loesung };
-    }
-    case 'text': {
-      const norm = (x) => x.replace(/\s+/g, '').toLowerCase();
-      return { ok: [frage.loesung, ...(frage.auch ?? [])].some((l) => norm(l) === norm(s)) };
-    }
-    case 'ipv6kurz': {
-      const r = istRichtigGekuerzt(s, frage.loesung);
+      return ip === null ? { ok: false, grund: 'Keine gültige IPv4-Adresse (vier Zahlen von 0 bis 255 mit Punkten).' } : { ok: ip === f.loesung };
+    },
+  },
+  ipv6kurz: {
+    pruefe: (s, f) => {
+      const r = istRichtigGekuerzt(s, f.loesung);
       return r.ok ? r : { ok: false, grund: r.grund };
-    }
-    case 'ipv6voll': {
+    },
+  },
+  ipv6voll: {
+    pruefe: (s, f) => {
       const gruppen = s.toLowerCase().split(':');
       if (gruppen.length !== 8 || gruppen.some((g) => g.length !== 4)) return { ok: false, grund: 'Ausgeschrieben heißt: acht Blöcke mit je vier Ziffern, ohne ::.' };
-      return { ok: ipv6Voll(s) === ipv6Voll(frage.loesung) };
-    }
-    case 'iid': {
+      return { ok: ipv6Voll(s) === ipv6Voll(f.loesung) };
+    },
+  },
+  iid: {
+    pruefe: (s, f) => {
       const v = gruppenVoll(s, 4);
-      return v === null ? { ok: false, grund: 'Vier Blöcke angeben (gekürzt oder ausgeschrieben).' } : { ok: v === gruppenVoll(frage.loesung, 4) };
-    }
-    default:
-      return { ok: false };
-  }
-}
+      return v === null ? { ok: false, grund: 'Vier Blöcke angeben (gekürzt oder ausgeschrieben).' } : { ok: v === gruppenVoll(f.loesung, 4) };
+    },
+  },
+};
+
+// Prüft eine Antwort. Auswahl: Text der Option. Eingabe: je nach Typ. → { ok, leer?, grund? }
+export const pruefeAntwort = (frage, eingabe) => pruefeAllgemein(frage, eingabe, { ...TYPEN, ...SUBNETZ_TYPEN });

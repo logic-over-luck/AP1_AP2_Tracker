@@ -1,68 +1,65 @@
 // Subnetz-Trainer: drei Räume – Verstehen (Lernweg), Üben (Aufgaben nach Themen), Visualisieren (Visualizer).
-// Welcher Raum offen ist, ergibt sich aus ?modus= (Feld `bereich` der Module in verzeichnis.js). So bleiben die
-// Sprünge aus dem Lernplan („Üben: Netz bestimmen“ → ?modus=analyse) gültig.
+// Rahmen, Lernweg und Üben-Raum kommen aus lernweg/; hier stehen Inhalt, Spickzettel und der Visualizer.
 
-import { inhalt } from '../../../daten/inhalt.js';
-import { geheZu } from '../../../router.js';
-import { useEinstellung } from '../../../lernstand/einstellungen.js';
-import { Icon } from '../../../ui/bausteine.jsx';
-import { ThemenLinks } from '../rahmen/Uebung.jsx';
+import { useCallback } from 'preact/hooks';
+import { Uebung } from '../rahmen/Uebung.jsx';
+import { RaumTrainer, VERSTEHEN, UEBEN } from '../lernweg/RaumTrainer.jsx';
+import { Verstehen } from '../lernweg/Verstehen.jsx';
+import { Ueben } from '../lernweg/Ueben.jsx';
 import { SubnetzVisualizer } from './Visualizer.jsx';
-import { Verstehen } from './verstehen/Verstehen.jsx';
-import { Ueben } from './ueben/Ueben.jsx';
+import { LERNWEG } from './verstehen/lernweg.js';
+import { CHECKS, SUBNETZ_TYPEN } from './verstehen/checks.js';
+import { INHALT } from './verstehen/inhalt/index.js';
+import { ERZEUGER } from './ueben/aufgaben.js';
 
-const RAEUME = [
-  { id: 'verstehen', name: 'Verstehen', text: 'Lernweg, ein Begriff nach dem anderen', icon: 'lightbulb' },
-  { id: 'ueben', name: 'Üben', text: 'Aufgaben mit Prüfen', icon: 'target' },
-  { id: 'visualisieren', name: 'Visualisieren', text: 'Eine Adresse zerlegt ansehen', icon: 'eye' },
-];
+const RAEUME = [VERSTEHEN, UEBEN, { id: 'visualisieren', name: 'Visualisieren', text: 'Eine Adresse zerlegt ansehen', icon: 'eye' }];
+
+const SPICKZETTEL = {
+  binaer:
+    '- Stellenwerte: 128 · 64 · 32 · 16 · 8 · 4 · 2 · 1\n- Binär → dezimal: Stellenwerte über den Einsen addieren\n- Dezimal → binär: von links fragen „Passt der Stellenwert in den Rest?“ – ja → 1 und abziehen, nein → 0',
+  hosts:
+    '- Adressen: 2^(32 − Präfix) · nutzbare Hosts: Adressen − 2\n- Entscheidendes Oktett: das erste Oktett der Subnetzmaske, das nicht 255 ist\n- Blockgröße = 256 − Wert der Subnetzmaske in diesem Oktett',
+  konfig:
+    '- Einzutragen: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- Statische Adresse: im richtigen Netz, nicht Netz-/Broadcastadresse, nicht vergeben, außerhalb des DHCP-Bereichs\n- Das Standardgateway liegt im selben Netz wie das Gerät',
+  mac: '- MAC-Adresse: 48 Bit, 6 Bytes hexadezimal, vordere Hälfte = Herstellerkennung\n- ARP: zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermitteln; `arp -a` zeigt den Cache\n- DHCP teilt zu: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- 169.254.x.x: kein DHCP-Server erreicht',
+  analyse:
+    '- Netzadresse: alle Hostbits 0 · Broadcast: alle Hostbits 1\n- Hostbereich: Netzadresse + 1 bis Broadcast − 1\n- Nutzbare Hosts: 2^(32 − Präfix) − 2\n- Blockgröße im letzten Oktett: 256 − Maskenwert (z. B. /26 → 256 − 192 = 64)\n- /31: RFC 3021 Punkt-zu-Punkt, /32: ein einzelner Host',
+  maske: '- /24 = 255.255.255.0 · /25 = .128 · /26 = .192 · /27 = .224 · /28 = .240 · /29 = .248 · /30 = .252\n- Präfix = Anzahl der Einsen in der Subnetzmaske',
+  gleich: '- Beide Adressen mit der Subnetzmaske verknüpfen (UND); gleiche Netzadresse = gleiches Netz\n- Verschiedene Netze brauchen einen Router (Standardgateway)',
+  privat: '- 10.0.0.0/8\n- 172.16.0.0/12 (172.16.0.0 bis 172.31.255.255)\n- 192.168.0.0/16',
+  ipv6: '- 128 Bit, 8 Gruppen à 4 Hex-Ziffern\n- Führende Nullen je Gruppe weglassen\n- Eine Folge von Nullgruppen einmal durch :: ersetzen (die längste)\n- /64: vordere 64 Bit Präfix, hintere 64 Bit Interface-Identifier\n- fe80::/10 = verbindungslokal (Link-Local)',
+  aufteilen: '- Bedarf absteigend sortieren\n- Je Netz: kleinste Blockgröße 2^h mit 2^h − 2 ≥ Hosts → Präfix 32 − h\n- Netze lückenlos hintereinander vergeben',
+};
 
 export function SubnetzTrainer({ raum, trainer, modi, params }) {
-  const aktiv = modi.find((m) => m.id === params.modus) ?? modi[0];
-  const [letzteUebung, setLetzteUebung] = useEinstellung('subnetz.uebung', null);
-  const uebungen = modi.filter((m) => m.bereich === 'ueben');
-  const r = inhalt.raeume.get(raum);
-
-  const oeffne = (modus, weitere = {}, optionen = {}) => geheZu(raum, 'trainer', trainer.id, { modus, ...weitere }, optionen);
-  const wechsle = (b) => {
-    if (b === aktiv.bereich) return;
-    const ziel = b === 'ueben' ? (uebungen.find((m) => m.id === letzteUebung) ?? uebungen[0]) : modi.find((m) => m.bereich === b);
-    oeffne(ziel.id, {}, { ersetzen: true });
-  };
-
   return (
-    <div class="trainer sn">
-      <header class="seitenkopf">
-        <div>
-          <div class="ueberschrift-klein ueberschrift-klein--akzent">{r.name} · Trainer</div>
-          <h1 class="seitenkopf__titel">{trainer.name}</h1>
-          <p class="seitenkopf__text">IP-Adressen und Subnetting: verstehen, üben, ansehen.</p>
-        </div>
-      </header>
-      <div class="sn-raeume" role="tablist" aria-label="Räume">
-        {RAEUME.map((b) => (
-          <button key={b.id} type="button" role="tab" aria-selected={b.id === aktiv.bereich} class="sn-raum" onClick={() => wechsle(b.id)}>
-            <Icon name={b.icon} groesse={18} />
-            <span>
-              <span class="sn-raum__name">{b.name}</span>
-              <span class="sn-raum__text">{b.text}</span>
-            </span>
-          </button>
-        ))}
-      </div>
-      {aktiv.bereich === 'verstehen' && <Verstehen lektionId={params.lektion} onLektion={(id) => oeffne('verstehen', { lektion: id ?? undefined })} />}
-      {aktiv.bereich === 'ueben' && (
-        <Ueben
-          uebungen={uebungen}
-          aktiv={aktiv}
-          onWahl={(m) => {
-            setLetzteUebung(m.id);
-            oeffne(m.id, {}, { ersetzen: true });
-          }}
-        />
+    <RaumTrainer raum={raum} trainer={trainer} modi={modi} params={params} raeume={RAEUME} kuerzel="sn" untertitel="IP-Adressen und Subnetting: verstehen, üben, ansehen.">
+      {(aktiv, { uebungen, oeffne, waehleUebung }) => (
+        <>
+          {aktiv.bereich === 'verstehen' && (
+            <Verstehen
+              raum={raum}
+              lernweg={LERNWEG}
+              checks={CHECKS}
+              inhalt={INHALT}
+              typen={SUBNETZ_TYPEN}
+              lektionId={params.lektion}
+              onLektion={(id) => oeffne('verstehen', { lektion: id ?? undefined })}
+            />
+          )}
+          {aktiv.bereich === 'ueben' && (
+            <Ueben raum={raum} lernweg={LERNWEG} uebungen={uebungen} aktiv={aktiv} onWahl={waehleUebung}>
+              <SubnetzUebung key={aktiv.id} modus={aktiv} />
+            </Ueben>
+          )}
+          {aktiv.bereich === 'visualisieren' && <SubnetzVisualizer />}
+        </>
       )}
-      {aktiv.bereich === 'visualisieren' && <SubnetzVisualizer />}
-      <ThemenLinks raum={raum} modus={aktiv} />
-    </div>
+    </RaumTrainer>
   );
+}
+
+function SubnetzUebung({ modus }) {
+  const erzeuge = useCallback((rng) => ERZEUGER[modus.id](rng), [modus.id]);
+  return <Uebung erzeuge={erzeuge} trainerId="subnetz" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} />;
 }

@@ -170,8 +170,8 @@ function NetzgroesseErklaerung() {
               <Absatz>
                 Die Zweierpotenzen sind genau die Stellenwerte aus Lektion 3 – plus 256. Wer die Reihe 1, 2, 4 … 128, 256 kann, kann jede Netzgröße von /24 bis /32 auswendig:
               </Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Präfix</th>
@@ -181,7 +181,7 @@ function NetzgroesseErklaerung() {
                   </thead>
                   <tbody>
                     {[24, 25, 26, 27, 28, 29, 30].map((p) => (
-                      <tr key={p} class={p === 26 ? 'sn-tabelle__aktiv' : ''}>
+                      <tr key={p} class={p === 26 ? 'lw-tabelle__aktiv' : ''}>
                         <td class="mono">/{p}</td>
                         <td class="mono sn-f-host">{32 - p}</td>
                         <td class="mono">
@@ -226,7 +226,7 @@ function NetzgroesseAusprobieren() {
   const n = 2 ** h;
   return (
     <Werkbank leiste={<PraefixWahl praefix={praefix} setPraefix={setPraefix} min={16} max={30} />}>
-      <p class="sn-aufgabe">Verschieb den Präfix. Wie verändert sich die Zahl der Adressen?</p>
+      <p class="lw-aufgabe">Verschieb den Präfix. Wie verändert sich die Zahl der Adressen?</p>
       <Bitband zahl={ipZuZahl('192.168.1.100')} praefix={praefix} dezimal={false} />
       <Formel>
         32 − {praefix} = <Host>{h} Hostbits</Host> → {hoch(2, h)} = <strong>{tausend(n)} Adressen</strong>
@@ -301,8 +301,8 @@ function BlockgroesseErklaerung() {
                 Bei /26 gehören im 4. Oktett die ersten <Netz>2 Bits</Netz> zum Netz, die anderen <Host>6 Bits</Host> zum Host. Die 2 Netzbits haben 4 Kombinationen – das sind die
                 4 Netze. Innerhalb eines Netzes zählen nur die 6 Hostbits von 000000 bis 111111:
               </Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Netzbits</th>
@@ -364,8 +364,8 @@ function BlockgroesseErklaerung() {
           titel: 'Die Tabelle zum Merken',
           inhalt: (
             <>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Präfix</th>
@@ -445,9 +445,9 @@ function BlockgroesseAusprobieren() {
       <Zahlenstrahl block={z.block} werte={[gewaehlt]} aktiv={[gewaehlt]} beschriftung={[`ab ${gewaehlt}`]} />
       <div class="sn-anfaenge">
         <span class="sn-beschrift">Netzanfänge – klick einen an:</span>
-        <div class="sn-beispiele">
+        <div class="lw-beispiele">
           {anfaenge.slice(0, 64).map((a) => (
-            <button key={a} type="button" class={`sn-chip mono ${a === gewaehlt ? 'sn-chip--aktiv' : ''}`} onClick={() => setAktiv(a)}>
+            <button key={a} type="button" class={`lw-chip mono ${a === gewaehlt ? 'lw-chip--aktiv' : ''}`} onClick={() => setAktiv(a)}>
               {a}
             </button>
           ))}
@@ -565,7 +565,7 @@ function NetzadresseAusprobieren() {
         </>
       }
     >
-      <p class="sn-aufgabe">Ändere Adresse und Präfix. Wo liegt der Blockanfang?</p>
+      <p class="lw-aufgabe">Ändere Adresse und Präfix. Wo liegt der Blockanfang?</p>
       <Zahlenstrahl block={z.block} werte={[z.wert]} aktiv={[z.start]} />
       <Formel>
         Blockgröße 256 − {z.maskenwert} = {z.block} · {z.wert} : {z.block} = {z.blockNr} Rest {z.wert - z.start} → {z.blockNr} × {z.block} = <strong>{z.start}</strong>
@@ -683,7 +683,7 @@ function BroadcastAusprobieren() {
         </>
       }
     >
-      <p class="sn-aufgabe">Ändere Adresse und Präfix. Wo endet der Block – und wo beginnt schon der nächste?</p>
+      <p class="lw-aufgabe">Ändere Adresse und Präfix. Wo endet der Block – und wo beginnt schon der nächste?</p>
       <Zahlenstrahl block={z.block} werte={[z.wert]} aktiv={[z.start]} />
       <Grenzlupe start={z.start} ende={z.ende} />
       <Formel>
@@ -769,8 +769,8 @@ function HostbereichErklaerung() {
               <Absatz>
                 Alle Adressen minus die zwei reservierten. Mit der Formel aus Lektion 6: <strong>Hosts = {hoch(2, 'h')} − 2</strong>.
               </Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Präfix</th>
@@ -1264,7 +1264,7 @@ function RechenwegAusprobieren() {
   };
   return (
     <Werkbank>
-      <p class="sn-aufgabe">
+      <p class="lw-aufgabe">
         Jetzt du: Ein Rechner hat die Adresse{' '}
         <strong class="mono">
           {aufgabe.ip}/{aufgabe.praefix}
@@ -1296,7 +1296,7 @@ function RechenwegAusprobieren() {
             {geprueft && <Icon name={ok(f) ? 'circle-check' : 'circle-x'} groesse={18} class={ok(f) ? 'text-gut' : 'text-fehler'} />}
           </label>
         ))}
-        <div class="sn-knoepfe">
+        <div class="lw-knoepfe">
           <Knopf variante="primaer" groesse="s" type="submit" icon="check">
             Prüfen
           </Knopf>

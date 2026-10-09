@@ -176,18 +176,18 @@ function GatewayAusprobieren() {
     <Werkbank
       leiste={
         <>
-          <span class="sn-feld">
-            <span class="sn-feld__name">PC</span>
+          <span class="lw-feld">
+            <span class="lw-feld__name">PC</span>
             <strong class="mono">
               {pc}/{praefix}
             </strong>
             <span class="sn-beschrift">Gateway {gw}</span>
           </span>
-          <span class="sn-feld">
-            <span class="sn-feld__name">Präfix des Netzes</span>
-            <span class="sn-beispiele">
+          <span class="lw-feld">
+            <span class="lw-feld__name">Präfix des Netzes</span>
+            <span class="lw-beispiele">
               {[24, 25, 16].map((p) => (
-                <button key={p} type="button" class={`sn-chip mono ${p === praefix ? 'sn-chip--aktiv' : ''}`} onClick={() => setPraefix(p)}>
+                <button key={p} type="button" class={`lw-chip mono ${p === praefix ? 'lw-chip--aktiv' : ''}`} onClick={() => setPraefix(p)}>
                   /{p}
                 </button>
               ))}
@@ -261,14 +261,14 @@ function PrivatErklaerung() {
         {
           titel: 'Die drei privaten Bereiche',
           inhalt: (
-            <div class="sn-tabelle-huelle">
-              <table class="sn-tabelle">
+            <div class="lw-tabelle-huelle">
+              <table class="lw-tabelle">
                 <thead>
                   <tr>
                     <th>Bereich</th>
                     <th>von – bis</th>
                     <th>Adressen</th>
-                    <th class="sn-tabelle__extra">typisch für</th>
+                    <th class="lw-tabelle__extra">typisch für</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -281,7 +281,7 @@ function PrivatErklaerung() {
                         {b.von} – {b.bis}
                       </td>
                       <td class="mono">{b.adressen}</td>
-                      <td class="sn-tabelle__extra">{b.typisch}</td>
+                      <td class="lw-tabelle__extra">{b.typisch}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -422,8 +422,8 @@ function KonfigErklaerung() {
         {
           titel: 'Was jeder Eintrag bewirkt',
           inhalt: (
-            <div class="sn-tabelle-huelle">
-              <table class="sn-tabelle">
+            <div class="lw-tabelle-huelle">
+              <table class="lw-tabelle">
                 <thead>
                   <tr>
                     <th>Eintrag</th>
@@ -531,8 +531,8 @@ function KonfigErklaerung() {
                 Zur Einrichtung gehört die Dokumentation: Wer später einen Fehler sucht, muss wissen, wie jedes Gerät eingestellt ist und <strong>wo es angeschlossen</strong> ist –
                 an welcher Netzwerkdose bzw. an welchem Anschluss (Port) des <strong>Switches</strong>, also des Verteilers, an dem die Kabel eines Netzes zusammenlaufen.
               </Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Gerät</th>
@@ -625,7 +625,7 @@ function KonfigAusprobieren() {
   const alle = felder.every(([id]) => grund(id) === null);
   return (
     <Werkbank>
-      <p class="sn-aufgabe">{s.text}</p>
+      <p class="lw-aufgabe">{s.text}</p>
       <form
         class="sn-schema"
         onSubmit={(ev) => {
@@ -653,7 +653,7 @@ function KonfigAusprobieren() {
             </label>
           );
         })}
-        <div class="sn-knoepfe">
+        <div class="lw-knoepfe">
           <Knopf variante="primaer" groesse="s" type="submit" icon="check">
             Prüfen
           </Knopf>
@@ -851,7 +851,7 @@ function DhcpAusprobieren() {
         </>
       }
     >
-      <p class="sn-aufgabe">Stell die Lage ein und schalte den PC ein. Was zeigt ipconfig danach?</p>
+      <p class="lw-aufgabe">Stell die Lage ein und schalte den PC ein. Was zeigt ipconfig danach?</p>
       <Knopf variante="akzent" groesse="s" icon="play" onClick={() => setGestartet(true)}>
         PC einschalten
       </Knopf>
@@ -1105,10 +1105,10 @@ function StatischAusprobieren() {
   };
   return (
     <Werkbank>
-      <p class="sn-aufgabe">{s.text} Trag eine passende Adresse ein.</p>
+      <p class="lw-aufgabe">{s.text} Trag eine passende Adresse ein.</p>
       <Skizze s={s} vorschlag={r?.ok ? leseIp(text) : null} ok={r ? r.ok : null} />
       <AdressPlan netzAdr={s.netzAdr} praefix={s.praefix} belegt={s.belegt} dhcp={s.dhcp} />
-      <form class="sn-frage__eingabe sn-frage__eingabe--ohne" onSubmit={pruefe}>
+      <form class="lw-frage__eingabe lw-frage__eingabe--ohne" onSubmit={pruefe}>
         <input
           class={`feld feld--mono ${r ? (r.ok ? 'feld--richtig' : 'feld--falsch') : ''}`}
           value={text}

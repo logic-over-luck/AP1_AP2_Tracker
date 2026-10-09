@@ -113,7 +113,7 @@ function HexAusprobieren() {
   };
   return (
     <Werkbank>
-      <p class="sn-aufgabe">Schalte Bits um – oder tippe eine zweistellige Hex-Zahl ein.</p>
+      <p class="lw-aufgabe">Schalte Bits um – oder tippe eine zweistellige Hex-Zahl ein.</p>
       <BitTafel
         wert={wert}
         onWert={(w) => {
@@ -122,10 +122,10 @@ function HexAusprobieren() {
         }}
         nibbles
       />
-      <label class="sn-feld">
-        <span class="sn-feld__name">Hex</span>
+      <label class="lw-feld">
+        <span class="lw-feld__name">Hex</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${/^[0-9a-f]{1,2}$/i.test(text.trim()) ? '' : 'feld--falsch'}`}
+          class={`feld feld--mono lw-feld__eingabe ${/^[0-9a-f]{1,2}$/i.test(text.trim()) ? '' : 'feld--falsch'}`}
           value={text}
           maxLength={2}
           spellcheck={false}
@@ -222,8 +222,8 @@ function MacErklaerung() {
                 Ein Gerät hat also zwei Adressen. Vergleich mit der Post: Die <strong>IP-Adresse</strong> ist wie die Wohnanschrift – sie hängt davon ab, wo das Gerät gerade ist,
                 und ändert sich beim „Umzug“ in ein anderes Netz. Die <strong>MAC-Adresse</strong> ist wie eine Seriennummer – sie bleibt immer gleich.
               </Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th />
@@ -308,11 +308,11 @@ function MacAusprobieren() {
   const bytes = leseMac(text);
   return (
     <Werkbank>
-      <p class="sn-aufgabe">Gib eine MAC-Adresse ein – oder probier die Beispiele, auch die falschen.</p>
-      <label class="sn-feld sn-feld--breit">
-        <span class="sn-feld__name">MAC-Adresse</span>
+      <p class="lw-aufgabe">Gib eine MAC-Adresse ein – oder probier die Beispiele, auch die falschen.</p>
+      <label class="lw-feld lw-feld--breit">
+        <span class="lw-feld__name">MAC-Adresse</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${bytes ? 'feld--richtig' : 'feld--falsch'}`}
+          class={`feld feld--mono lw-feld__eingabe ${bytes ? 'feld--richtig' : 'feld--falsch'}`}
           value={text}
           spellcheck={false}
           onInput={(e) => setText(e.currentTarget.value)}
@@ -487,13 +487,13 @@ function ArpAusprobieren() {
   };
   return (
     <Werkbank>
-      <p class="sn-aufgabe">
+      <p class="lw-aufgabe">
         Du bist PC-A (<span class="mono">192.168.1.10/24</span>). Schick Pakete an verschiedene Ziele und beobachte den ARP-Cache.
       </p>
-      <div class="sn-beispiele">
-        <span class="sn-beispiele__titel">Paket senden an:</span>
+      <div class="lw-beispiele">
+        <span class="lw-beispiele__titel">Paket senden an:</span>
         {[...LAN, FERN].map((z) => (
-          <button key={z.ip} type="button" class="sn-chip" onClick={() => sende(z)}>
+          <button key={z.ip} type="button" class="lw-chip" onClick={() => sende(z)}>
             <Icon name={z.icon} groesse={13} /> &nbsp;{z.name}
           </button>
         ))}

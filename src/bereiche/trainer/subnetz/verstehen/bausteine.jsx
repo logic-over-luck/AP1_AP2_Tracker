@@ -1,142 +1,20 @@
-// Gemeinsame Bausteine der Lektionen. Teils aus dem früheren Verstehen-Raum herausgelöst (Bitband, Bit-Tafel,
-// Maskenrechnung, Zahlenstrahl mit Lupe, „für dich / für den Computer“, Faktenboxen), teils neu.
+// Bausteine der Subnetz-Lektionen (Bitband, Bit-Tafel, Maskenrechnung, Zahlenstrahl mit Lupe, Geräte, Adressen …).
+// Allgemeine Bausteine (Schritte, Zwischenfragen, Text, Werkbank, Konsole) kommen aus lernweg/bausteine.jsx.
 // Farben überall gleich: Netz grün (Akzent), Host blau, Grenze orange, reserviert rot.
 
-import { Fragment, createContext } from 'preact';
+import { Fragment } from 'preact';
 import { useContext, useEffect, useRef, useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../../ui/bausteine.jsx';
+import { AlleOffen } from '../../lernweg/bausteine.jsx';
 import { ipZuZahl, maskeZahl, netzBitsJeOktett, maskenwert, STELLENWERTE, leseIp, ipFehler } from '../ip.js';
+
+// Allgemeine Bausteine aus dem Lernweg-Rahmen – hier weitergereicht, damit inhalt/ nur eine Quelle importiert
+export { AlleOffen, Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Beispiele, Ergebnis, Werkbank, Konsole, Grundlage } from '../../lernweg/bausteine.jsx';
 
 export const bitsVon = (zahl) => Array.from({ length: 32 }, (_, i) => (zahl >>> (31 - i)) & 1);
 export const oktetteVon = (zahl) => [24, 16, 8, 0].map((s) => (zahl >>> s) & 255);
 export const tausend = (n) => n.toLocaleString('de-DE');
 export const bin8 = (wert) => wert.toString(2).padStart(8, '0');
-
-// ---------- Schritte und Zwischenfragen ----------
-
-// true: Alle Schritte gleich offen und Zwischenfragen gelöst (z. B. wenn die Lektion schon verstanden ist)
-export const AlleOffen = createContext(false);
-
-// Eine Erklärung in Schritten: Jeder Schritt hat Titel und Inhalt; „Weiter“ deckt den nächsten auf.
-export function Schritte({ schritte }) {
-  const alleOffen = useContext(AlleOffen);
-  const [gezeigt, setGezeigt] = useState(alleOffen ? schritte.length : 1);
-  const letzter = useRef(null);
-  const zeige = (n) => {
-    setGezeigt(n);
-    setTimeout(() => letzter.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 60);
-  };
-  const naechster = schritte[gezeigt];
-  return (
-    <div class="sn-schritte">
-      <ol class="sn-schritte__liste">
-        {schritte.slice(0, gezeigt).map((s, i) => (
-          <li key={i} class="sn-schritt erscheinen" ref={i === gezeigt - 1 ? letzter : null}>
-            <span class="sn-schritt__nr mono">{i + 1}</span>
-            <div class="sn-schritt__inhalt">
-              <h4 class="sn-schritt__titel">{s.titel}</h4>
-              {s.inhalt}
-            </div>
-          </li>
-        ))}
-      </ol>
-      {naechster && (
-        <div class="sn-schritte__weiter">
-          <Knopf variante="akzent" groesse="s" iconRechts="arrow-down" onClick={() => zeige(gezeigt + 1)}>
-            Weiter: {naechster.titel}
-          </Knopf>
-          <span class="sn-schritte__stand mono">
-            Schritt {gezeigt} von {schritte.length}
-          </span>
-          <button type="button" class="sn-link sn-schritte__alle" onClick={() => zeige(schritte.length)}>
-            alle zeigen
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// Zwischenfrage in einer Erklärung: erst selbst überlegen. Falsche Antworten bleiben durchgestrichen und bekommen
-// einen Hinweis (hinweis(v)); „Zeig’s mir“ löst auf. Nach der Lösung erscheint children.
-export function Raten({ frage, optionen, richtig, hinweis, format = (v) => v, children }) {
-  const alleOffen = useContext(AlleOffen);
-  const [falsch, setFalsch] = useState([]);
-  const [ok, setOk] = useState(alleOffen);
-  const letzterFalsch = falsch[falsch.length - 1];
-  // Kurze Werte (Zahlen, Adressen) in Monospace, Sätze in normaler Schrift
-  const mono = optionen.every((o) => String(format(o)).length <= 16);
-  return (
-    <div class={`sn-raten ${ok ? 'sn-raten--ok' : ''}`}>
-      <span class="sn-raten__frage">
-        <Icon name="circle-question-mark" groesse={15} /> {frage}
-      </span>
-      <div class="sn-raten__optionen" role="group" aria-label={frage}>
-        {optionen.map((o) => {
-          const istFalsch = falsch.includes(o);
-          const istRichtig = ok && o === richtig;
-          return (
-            <button
-              key={String(o)}
-              type="button"
-              class={`sn-option sn-option--klein ${mono ? 'mono' : ''} ${istFalsch ? 'sn-option--falsch' : ''} ${istRichtig ? 'sn-option--richtig' : ''}`}
-              disabled={ok || istFalsch}
-              onClick={() => (o === richtig ? setOk(true) : setFalsch([...falsch, o]))}
-            >
-              {format(o)}
-            </button>
-          );
-        })}
-        {!ok && falsch.length > 0 && (
-          <button type="button" class="sn-link" onClick={() => setOk(true)}>
-            Zeig’s mir
-          </button>
-        )}
-      </div>
-      {!ok && letzterFalsch !== undefined && hinweis && (
-        <p class="sn-raten__hinweis" role="status">
-          <Icon name="lightbulb" groesse={14} /> {hinweis(letzterFalsch)}
-        </p>
-      )}
-      {ok && <div class="sn-raten__danach erscheinen">{children}</div>}
-    </div>
-  );
-}
-
-// ---------- Text-Bausteine ----------
-
-export function Absatz({ children }) {
-  return <p class="sn-text">{children}</p>;
-}
-
-export function Fakten({ children }) {
-  return <div class="sn-fakten">{children}</div>;
-}
-
-export function Fakt({ titel, icon, children }) {
-  return (
-    <div class="sn-fakt">
-      <span class="sn-fakt__titel">
-        {icon && <Icon name={icon} groesse={14} />}
-        {titel}
-      </span>
-      <span>{children}</span>
-    </div>
-  );
-}
-
-export function Formel({ children }) {
-  return <p class="sn-formel mono">{children}</p>;
-}
-
-export function Hinweis({ icon = 'info', ton = '', children }) {
-  return (
-    <p class={`sn-hinweis ${ton ? `sn-hinweis--${ton}` : ''}`} role={ton ? 'status' : undefined}>
-      <Icon name={icon} groesse={16} />
-      <span>{children}</span>
-    </p>
-  );
-}
 
 // Farbiger Text in den festen Farben
 export const Netz = ({ children }) => <span class="sn-f-netz">{children}</span>;
@@ -287,7 +165,7 @@ export function BitTafel({ wert, onWert, nibbles = false, ziel = null }) {
           </span>
         </div>
       )}
-      <p class={`sn-formel mono ${ziel !== null && wert === ziel ? 'sn-formel--gut' : ''}`}>
+      <p class={`lw-formel mono ${ziel !== null && wert === ziel ? 'lw-formel--gut' : ''}`}>
         {teile.length ? teile.join(' + ') : '0'} = <strong>{wert}</strong>
         {nibbles && (
           <>
@@ -449,7 +327,7 @@ export function PraefixWahl({ praefix, setPraefix, min = 8, max = 30, label = 'P
   const setze = (p) => setPraefix(Math.max(min, Math.min(max, p)));
   return (
     <div class="sn-pwahl">
-      <span class="sn-feld__name">{label}</span>
+      <span class="lw-feld__name">{label}</span>
       <div class="sn-pwahl__reihe">
         <button type="button" class="sn-pwahl__knopf" onClick={() => setze(praefix - 1)} disabled={praefix <= min} aria-label="Präfix kleiner">
           −
@@ -472,10 +350,10 @@ export function IpFeld({ ip, onIp, label = 'IP-Adresse', breit = false }) {
   }, [ip]);
   const fehler = ipFehler(text);
   return (
-    <label class={`sn-feld ${breit ? 'sn-feld--breit' : ''}`}>
-      <span class="sn-feld__name">{label}</span>
+    <label class={`lw-feld ${breit ? 'lw-feld--breit' : ''}`}>
+      <span class="lw-feld__name">{label}</span>
       <input
-        class={`feld feld--mono sn-feld__eingabe ${fehler ? 'feld--falsch' : ''}`}
+        class={`feld feld--mono lw-feld__eingabe ${fehler ? 'feld--falsch' : ''}`}
         value={text}
         spellcheck={false}
         autoComplete="off"
@@ -487,50 +365,8 @@ export function IpFeld({ ip, onIp, label = 'IP-Adresse', breit = false }) {
           if (g) onIp(g);
         }}
       />
-      {fehler && <span class="sn-feld__fehler">{fehler}</span>}
+      {fehler && <span class="lw-feld__fehler">{fehler}</span>}
     </label>
-  );
-}
-
-// Beispiel-Knöpfe
-export function Beispiele({ titel = 'Beispiele:', liste, aktiv, onWahl }) {
-  return (
-    <div class="sn-beispiele" role="group" aria-label={titel}>
-      <span class="sn-beispiele__titel">{titel}</span>
-      {liste.map((b) => {
-        const wert = typeof b === 'object' ? b.wert : b;
-        return (
-          <button key={wert} type="button" class={`sn-chip mono ${wert === aktiv ? 'sn-chip--aktiv' : ''}`} aria-pressed={wert === aktiv} onClick={() => onWahl(wert)}>
-            {typeof b === 'object' ? b.text : b}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-// Ergebnis-Liste: [{ name, wert, ton? ('netz' | 'host' | 'res' | 'gut' | 'fehler'), info? }]
-export function Ergebnis({ zeilen }) {
-  return (
-    <dl class="sn-ergebnis">
-      {zeilen.map((z) => (
-        <div key={z.name} class={`sn-ergebnis__zeile ${z.ton ? `sn-ergebnis__zeile--${z.ton}` : ''}`}>
-          <dt>{z.name}</dt>
-          <dd class="mono">{z.wert}</dd>
-          {z.info && <span class="sn-ergebnis__info">{z.info}</span>}
-        </div>
-      ))}
-    </dl>
-  );
-}
-
-// Eine Werkzeug-Fläche fürs Ausprobieren
-export function Werkbank({ children, leiste }) {
-  return (
-    <div class="sn-werkbank">
-      {leiste && <div class="sn-werkbank__leiste">{leiste}</div>}
-      <div class="sn-werkbank__inhalt">{children}</div>
-    </div>
   );
 }
 
@@ -552,23 +388,6 @@ export function IpZellen({ ip, rollen }) {
 export const maskeOktette = (praefix) => oktetteVon(maskeZahl(praefix));
 
 // ---------- Bilder ----------
-
-// Konsolen-Ausgabe (z. B. ipconfig, arp -a). zeilen: Text oder { text, hervor: true }
-export function Konsole({ titel, zeilen }) {
-  return (
-    <div class="sn-konsole">
-      {titel && <span class="sn-konsole__titel mono">{titel}</span>}
-      <pre class="sn-konsole__text mono">
-        {zeilen.map((z, i) => (
-          <span key={i} class={typeof z === 'object' && z.hervor ? 'sn-konsole__hervor' : ''}>
-            {typeof z === 'object' ? z.text : z}
-            {'\n'}
-          </span>
-        ))}
-      </pre>
-    </div>
-  );
-}
 
 // Ein Gerät mit Symbol, Name und Adresse
 export function Geraet({ icon = 'monitor', name, ip, ton = '', klein = false, children }) {
@@ -654,7 +473,7 @@ export function Umrechner({ wert }) {
         </p>
       </div>
       {!fertig && (
-        <div class="sn-knoepfe">
+        <div class="lw-knoepfe">
           <Knopf variante="zweit" groesse="s" iconRechts="arrow-right" onClick={() => setGezeigt(gezeigt + 1)}>
             {gezeigt === 0 ? 'Erstes Bit' : 'Nächstes Bit'}
           </Knopf>

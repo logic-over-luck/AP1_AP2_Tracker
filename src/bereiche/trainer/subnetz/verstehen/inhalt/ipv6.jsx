@@ -128,8 +128,8 @@ function Ipv6Erklaerung() {
         {
           titel: 'IPv4 und IPv6 im Vergleich',
           inhalt: (
-            <div class="sn-tabelle-huelle">
-              <table class="sn-tabelle">
+            <div class="lw-tabelle-huelle">
+              <table class="lw-tabelle">
                 <thead>
                   <tr>
                     <th />
@@ -197,11 +197,11 @@ function Ipv6Ausprobieren() {
   const g = voll?.split(':');
   return (
     <Werkbank>
-      <p class="sn-aufgabe">Gib eine IPv6-Adresse ein und klick auf einen Block, um seine 16 Bits zu sehen.</p>
-      <label class="sn-feld sn-feld--breit">
-        <span class="sn-feld__name">IPv6-Adresse</span>
+      <p class="lw-aufgabe">Gib eine IPv6-Adresse ein und klick auf einen Block, um seine 16 Bits zu sehen.</p>
+      <label class="lw-feld lw-feld--breit">
+        <span class="lw-feld__name">IPv6-Adresse</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
+          class={`feld feld--mono lw-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
           value={text}
           spellcheck={false}
           onInput={(e) => setText(e.currentTarget.value)}
@@ -346,11 +346,11 @@ function KurzAusprobieren() {
   const voll = ipv6Voll(text);
   return (
     <Werkbank>
-      <p class="sn-aufgabe">Gib eine Adresse ein – ausgeschrieben oder gekürzt. Du siehst beide Regeln einzeln.</p>
-      <label class="sn-feld sn-feld--breit">
-        <span class="sn-feld__name">IPv6-Adresse</span>
+      <p class="lw-aufgabe">Gib eine Adresse ein – ausgeschrieben oder gekürzt. Du siehst beide Regeln einzeln.</p>
+      <label class="lw-feld lw-feld--breit">
+        <span class="lw-feld__name">IPv6-Adresse</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
+          class={`feld feld--mono lw-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
           value={text}
           spellcheck={false}
           onInput={(e) => setText(e.currentTarget.value)}
@@ -491,11 +491,11 @@ function PraefixV6Ausprobieren() {
   return (
     <Werkbank
       leiste={
-        <span class="sn-feld">
-          <span class="sn-feld__name">Präfixlänge</span>
-          <span class="sn-beispiele">
+        <span class="lw-feld">
+          <span class="lw-feld__name">Präfixlänge</span>
+          <span class="lw-beispiele">
             {[32, 48, 64].map((p) => (
-              <button key={p} type="button" class={`sn-chip mono ${p === praefix ? 'sn-chip--aktiv' : ''}`} onClick={() => setPraefix(p)}>
+              <button key={p} type="button" class={`lw-chip mono ${p === praefix ? 'lw-chip--aktiv' : ''}`} onClick={() => setPraefix(p)}>
                 /{p}
               </button>
             ))}
@@ -503,10 +503,10 @@ function PraefixV6Ausprobieren() {
         </span>
       }
     >
-      <label class="sn-feld sn-feld--breit">
-        <span class="sn-feld__name">IPv6-Adresse</span>
+      <label class="lw-feld lw-feld--breit">
+        <span class="lw-feld__name">IPv6-Adresse</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
+          class={`feld feld--mono lw-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
           value={text}
           spellcheck={false}
           onInput={(e) => setText(e.currentTarget.value)}
@@ -616,8 +616,8 @@ function LinkLocalErklaerung() {
         {
           titel: 'Nicht verwechseln mit 169.254',
           inhalt: (
-            <div class="sn-tabelle-huelle">
-              <table class="sn-tabelle">
+            <div class="lw-tabelle-huelle">
+              <table class="lw-tabelle">
                 <thead>
                   <tr>
                     <th />
@@ -686,11 +686,11 @@ function LinkLocalAusprobieren() {
   const voll = ipv6Voll(text);
   return (
     <Werkbank>
-      <p class="sn-aufgabe">Welche Art von Adresse ist das? Probier verschiedene aus.</p>
-      <label class="sn-feld sn-feld--breit">
-        <span class="sn-feld__name">IPv6-Adresse</span>
+      <p class="lw-aufgabe">Welche Art von Adresse ist das? Probier verschiedene aus.</p>
+      <label class="lw-feld lw-feld--breit">
+        <span class="lw-feld__name">IPv6-Adresse</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
+          class={`feld feld--mono lw-feld__eingabe ${voll ? 'feld--richtig' : 'feld--falsch'}`}
           value={text}
           spellcheck={false}
           onInput={(e) => setText(e.currentTarget.value)}

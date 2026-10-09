@@ -163,11 +163,11 @@ function IpAusprobieren() {
   const teile = text.replace(/\s+/g, '').split('.');
   return (
     <Werkbank>
-      <p class="sn-aufgabe">Tippe eine Adresse ein – auch eine falsche. Was macht sie gültig, was nicht?</p>
-      <label class="sn-feld">
-        <span class="sn-feld__name">IP-Adresse</span>
+      <p class="lw-aufgabe">Tippe eine Adresse ein – auch eine falsche. Was macht sie gültig, was nicht?</p>
+      <label class="lw-feld">
+        <span class="lw-feld__name">IP-Adresse</span>
         <input
-          class={`feld feld--mono sn-feld__eingabe ${fehler ? 'feld--falsch' : 'feld--richtig'}`}
+          class={`feld feld--mono lw-feld__eingabe ${fehler ? 'feld--falsch' : 'feld--richtig'}`}
           value={text}
           spellcheck={false}
           autoComplete="off"
@@ -346,7 +346,7 @@ function NetzHostAusprobieren() {
   const richtig = GERAETE.filter((g) => antworten[g.name] === g.ip.startsWith(`${meinNetz}.`)).length;
   return (
     <Werkbank>
-      <p class="sn-aufgabe">
+      <p class="lw-aufgabe">
         PC-A hat die Adresse{' '}
         <strong class="mono">
           <Netz>192.168.1</Netz>.<Host>25</Host>
@@ -371,10 +371,10 @@ function NetzHostAusprobieren() {
                 )}
               </span>
               <span class="sn-sortier__knoepfe">
-                <button type="button" class="sn-chip" aria-pressed={a === true} onClick={() => setAntworten({ ...antworten, [g.name]: true })}>
+                <button type="button" class="lw-chip" aria-pressed={a === true} onClick={() => setAntworten({ ...antworten, [g.name]: true })}>
                   selbes Netz
                 </button>
-                <button type="button" class="sn-chip" aria-pressed={a === false} onClick={() => setAntworten({ ...antworten, [g.name]: false })}>
+                <button type="button" class="lw-chip" aria-pressed={a === false} onClick={() => setAntworten({ ...antworten, [g.name]: false })}>
                   anderes Netz
                 </button>
               </span>
@@ -505,7 +505,7 @@ function BinaerAusprobieren() {
   const geschafft = wert === ziel;
   return (
     <Werkbank>
-      <p class="sn-aufgabe">
+      <p class="lw-aufgabe">
         Klick auf die Bits, um sie an- und auszuschalten. Aufgabe: Stell die Zahl <strong class="mono">{ziel}</strong> ein.
       </p>
       <BitTafel wert={wert} onWert={setWert} ziel={ziel} />
@@ -524,7 +524,7 @@ function BinaerAusprobieren() {
           </ol>
         )
       )}
-      <div class="sn-knoepfe">
+      <div class="lw-knoepfe">
         <Knopf
           variante={geschafft ? 'primaer' : 'zweit'}
           groesse="s"
@@ -627,8 +627,8 @@ function PraefixErklaerung() {
           inhalt: (
             <>
               <Absatz>Was nicht Netz ist, ist Host. Die Zahl der Hostbits ist deshalb immer 32 minus Präfix:</Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Präfix</th>
@@ -700,7 +700,7 @@ function PraefixAusprobieren() {
         </>
       }
     >
-      <p class="sn-aufgabe">Schieb den Präfix hin und her und beobachte, wo die Grenze landet.</p>
+      <p class="lw-aufgabe">Schieb den Präfix hin und her und beobachte, wo die Grenze landet.</p>
       <Bitband zahl={ipZuZahl(ip)} praefix={praefix} nummern unter={unter} />
       <Formel>
         {k.filter((n) => n > 0).join(' + ')} = <Netz>{praefix} Netzbits</Netz> · 32 − {praefix} = <Host>{32 - praefix} Hostbits</Host>
@@ -807,8 +807,8 @@ function MaskeErklaerung() {
                 Umgekehrt zählt man die Einsen. 255 sind 8 Einsen, 0 sind keine, und die Werte dazwischen liest du aus der Reihe oben ab. Beispiel{' '}
                 <strong class="mono">255.255.240.0</strong>:
               </Absatz>
-              <div class="sn-tabelle-huelle">
-                <table class="sn-tabelle">
+              <div class="lw-tabelle-huelle">
+                <table class="lw-tabelle">
                   <thead>
                     <tr>
                       <th>Oktett</th>
@@ -874,10 +874,10 @@ function MaskeAusprobieren() {
         </div>
         <div class="sn-teilwerk">
           <span class="sn-teilwerk__titel">Subnetzmaske → Präfix</span>
-          <label class="sn-feld">
-            <span class="sn-feld__name">Subnetzmaske</span>
+          <label class="lw-feld">
+            <span class="lw-feld__name">Subnetzmaske</span>
             <input
-              class={`feld feld--mono sn-feld__eingabe ${m && p !== null ? 'feld--richtig' : 'feld--falsch'}`}
+              class={`feld feld--mono lw-feld__eingabe ${m && p !== null ? 'feld--richtig' : 'feld--falsch'}`}
               value={maskeText}
               spellcheck={false}
               onInput={(e) => setMaskeText(e.currentTarget.value)}

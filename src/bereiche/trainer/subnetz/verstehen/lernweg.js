@@ -1,5 +1,5 @@
-// Der Lernweg im Raum „Verstehen“: Themen-Blöcke und Lektionen in fester Reihenfolge.
-// Rein und ohne Browser-Abhängigkeit, getestet in tests/subnetz.test.mjs.
+// Der Lernweg des Subnetz-Trainers (Raum „Verstehen“): Themen-Blöcke und Lektionen in fester Reihenfolge.
+// Rein und ohne Browser-Abhängigkeit, getestet in tests/subnetz.test.mjs. Abfragen: lernweg/lernweg.js.
 //
 // Eine Lektion = ein Begriff oder eine Idee. Felder:
 //   id, block, begriff, leitfrage (kurz, für die Kachel)
@@ -10,6 +10,8 @@
 //   check: 2–3 Fragen (siehe CHECKS unten)
 //   uebung: passende Übung im Raum „Üben“ (modus-ID)
 // Erklärung und Ausprobieren (JSX) stehen je Block in inhalt/.
+
+import { baueLernweg } from '../../lernweg/lernweg.js';
 
 export const BLOECKE = [
   { id: 'adresse', titel: 'Die IPv4-Adresse', text: 'Vier Zahlen, zwei Teile, eine Grenze – und wie man sie in Bits sieht.' },
@@ -381,35 +383,6 @@ const L = [
   },
 ];
 
-export const LEKTIONEN = L.map((l, i) => ({ ...l, nr: i + 1 }));
+export const LERNWEG = { trainer: 'subnetz', schluessel: 'subnetz.lernweg', bloecke: BLOECKE, lektionen: L };
 
-const NACH_ID = new Map(LEKTIONEN.map((l) => [l.id, l]));
-
-export function lektion(id) {
-  return NACH_ID.get(id) ?? null;
-}
-
-export function lektionenIn(blockId) {
-  return LEKTIONEN.filter((l) => l.block === blockId);
-}
-
-export function blockVon(lektionId) {
-  const l = lektion(lektionId);
-  return l ? BLOECKE.find((b) => b.id === l.block) : null;
-}
-
-// Erste noch nicht verstandene Lektion in der festen Reihenfolge (null, wenn alle verstanden sind)
-export function naechsteLektion(verstanden) {
-  return LEKTIONEN.find((l) => !verstanden.has(l.id)) ?? null;
-}
-
-// 'verstanden' | 'naechste' | 'offen'
-export function status(id, verstanden) {
-  if (verstanden.has(id)) return 'verstanden';
-  return naechsteLektion(verstanden)?.id === id ? 'naechste' : 'offen';
-}
-
-// Lektionen, auf die eine Lektion aufbaut und die noch nicht verstanden sind
-export function luecken(id, verstanden) {
-  return (lektion(id)?.braucht ?? []).filter((b) => !verstanden.has(b)).map(lektion);
-}
+export const { LEKTIONEN, lektion, lektionenIn, blockVon, naechsteLektion, status, luecken } = baueLernweg(LERNWEG);
