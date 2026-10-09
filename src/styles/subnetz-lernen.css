@@ -367,185 +367,182 @@
   color: var(--akzent);
 }
 
-/* 3. Was der Strich in echt macht */
-.snl-echt {
+/* 3. Trennstrich in vier Teilen */
+.snl-teilkopf {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0;
+  font-size: var(--t-l);
+  font-weight: 700;
+}
+.snl-teilkopf__nr {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--akzent);
+  color: var(--akzent-text);
+  font-size: var(--t-s);
+}
+.snl-teilstueck {
   display: flex;
   flex-direction: column;
-  gap: var(--s-2);
+  align-items: flex-start;
+  gap: var(--s-3);
   width: 100%;
   margin-top: var(--s-2);
   padding-top: var(--s-4);
   border-top: 1px dashed var(--linie-2);
+  animation: snl-auf var(--dauer-lang) var(--kurve);
 }
-.snl-echt > p {
+.snl-teilstueck > p {
+  max-width: 78ch;
   margin: 0;
 }
-.snl-echt__oktette {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, max-content));
-  gap: var(--s-2);
+@keyframes snl-auf {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
 }
-.snl-echt__okt {
+.snl-zaehlstand {
+  font-size: var(--t-l);
+  font-weight: 700;
+  color: var(--akzent);
+}
+.snl-bit.snl-bit--jetzt {
+  outline: 2px solid var(--warn);
+  outline-offset: 1px;
+}
+.snl-okbits {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.snl-okbits .snv-bit {
+  width: 20px;
+  height: 26px;
+  font-size: 13px;
+}
+.snv-bit.snl-bit--null {
+  opacity: 0.35;
+}
+.snv-bit.snl-bit--anders {
+  background: var(--fehler);
+  color: var(--bg);
+}
+.snl-pcs {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 10px 12px;
+  gap: var(--s-2);
+}
+.snl-pc2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px var(--s-4);
+  padding: 8px 12px;
   border: 1px solid var(--linie);
   border-radius: var(--r-2);
   background: var(--flaeche-2);
 }
-.snl-echt__okt--geteilt {
-  flex-direction: row;
-  gap: var(--s-4);
-  border-color: var(--warn);
-}
-.snl-echt__links {
+.snl-pc2__name {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  width: 150px;
+  font-size: var(--t-s);
+  font-weight: 700;
 }
-.snl-lupe2 {
+.snl-pc2__name .mono {
+  font-weight: 400;
+  color: var(--text-2);
+}
+.snl-pc2__bits {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 6px;
-  width: 260px;
-  padding-left: var(--s-4);
-  border-left: 1px dashed var(--linie-2);
 }
-.snl-lupe2__titel {
-  font-size: var(--t-xs);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--warn);
-}
-.snl-lupe2__leiste {
-  position: relative;
-  height: 18px;
-  margin: 22px 10px 0;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--akzent) 0 5px, color-mix(in srgb, var(--akzent) 25%, transparent) 5px calc(100% - 5px), var(--warn) calc(100% - 5px));
-}
-.snl-lupe2__abstand {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 2px;
-  background: var(--text-3);
-  transform: translateY(-50%);
-}
-.snl-lupe2__abstand span {
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--text-2);
-  transform: translateX(-50%);
-}
-.snl-lupe2__zeiger {
-  position: absolute;
-  top: -5px;
-  bottom: -5px;
-  width: 2px;
-  background: var(--text);
-  transform: translateX(-1px);
-}
-.snl-lupe2__zeiger span {
-  position: absolute;
-  top: -19px;
-  left: 50%;
-  padding: 0 5px;
-  border-radius: 3px;
-  background: var(--text);
-  color: var(--bg);
-  font-size: 11px;
-  font-weight: 700;
-  transform: translateX(-50%);
-}
-.snl-lupe2__enden {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--s-2);
-  margin-top: 10px;
-}
-.snl-lupe2__enden > span {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--t-xs);
-  line-height: 1.35;
-  color: var(--text-3);
-}
-.snl-lupe2__enden strong {
-  font-size: var(--t-l);
-}
-.snl-lupe2__rechts {
-  align-items: flex-end;
-  text-align: right;
-}
-.snl-lupe2__text {
-  margin: 0;
-  font-size: var(--t-xs);
-  line-height: 1.5;
-  color: var(--text-2);
-}
-.snl-echt__kopf {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s-2);
-}
-.snl-echt__dez {
-  font-size: var(--t-xl);
-  font-weight: 700;
-}
-.snl-echt__art {
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-.snl-echt__okt--geteilt .snl-echt__art {
-  color: var(--warn);
+.snl-pc2__urteil {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--t-s);
   font-weight: 600;
 }
-.snl-echt__bits {
-  display: flex;
-  align-items: center;
-  gap: 1px;
+.snl-pc2__urteil--gut {
+  color: var(--gut);
 }
-.snl-echt__teil {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: var(--t-s);
-  color: var(--text-2);
+.snl-pc2__urteil--fremd {
+  color: var(--fehler);
 }
-.snl-echt__teil strong {
-  margin-left: auto;
-  color: var(--text);
-}
-.snl-echt__notiz {
-  margin-top: 2px;
-  padding-top: 4px;
-  border-top: 1px solid var(--linie);
-  font-size: var(--t-s);
-  font-weight: 700;
-  color: var(--warn);
-}
-.snl-echt__ergebnis {
+.snl-teilen {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: var(--t-m);
+  gap: var(--s-2);
 }
-.snl-echt__ergebnis > div {
+.snl-teilen__zeile {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px var(--s-2);
+  gap: 6px var(--s-4);
 }
-.snl-echt__ergebnis .snl-teil {
-  min-width: 78px;
-  text-align: center;
+.snl-teilen__name {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  font-size: var(--t-m);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.snl-teilen__name span {
+  font-size: var(--t-xs);
+  font-weight: 400;
+  color: var(--text-3);
+}
+.snl-teilen__wert {
+  font-size: var(--t-xl);
+  font-weight: 700;
+}
+.snl-gleichung {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--s-2);
+}
+.snl-gleichung__teil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px 14px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.snl-gleichung__wert {
+  font-size: var(--t-l);
+  font-weight: 700;
+  color: var(--text);
+}
+.snl-gleichung__teil--netz {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.snl-gleichung__teil--netz .snl-gleichung__wert {
+  color: var(--akzent);
+}
+.snl-gleichung__teil--host .snl-gleichung__wert {
+  color: var(--warn);
+}
+.snl-gleichung__op {
+  align-self: center;
+  font-size: var(--t-2xl);
+  font-weight: 700;
+  color: var(--text-3);
 }
 
 /* Bits mit Trennstrich */
@@ -603,11 +600,6 @@ button.snl-bit:hover {
   background: var(--warn);
   color: var(--bg);
   font-weight: 700;
-}
-.snl-zaehlhilfe {
-  margin: -4px 0 0;
-  font-size: var(--t-s);
-  color: var(--text-2);
 }
 .snl-bits__reihe .snl-trenner {
   align-self: flex-start;
@@ -1053,22 +1045,24 @@ button.snl-bit:hover {
     height: 30px;
     margin: 0 2px;
   }
-  .snl-oktette,
-  .snl-echt__oktette {
+  .snl-oktette {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .snl-echt__okt {
-    padding: 8px;
+  .snl-pc2__name,
+  .snl-teilen__name {
+    width: 100%;
   }
-  .snl-echt__okt--geteilt {
-    flex-direction: column;
-    grid-column: 1 / -1;
+  .snl-okbits .snv-bit {
+    width: 16px;
+    height: 22px;
+    font-size: 11px;
   }
-  .snl-lupe2 {
-    width: auto;
-    padding: var(--s-2) 0 0;
-    border-top: 1px dashed var(--linie-2);
-    border-left: 0;
+  .snl-pc2__bits {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .snl-gleichung__op {
+    font-size: var(--t-l);
   }
   .snl-zaehler {
     min-width: 15px;
@@ -1076,11 +1070,6 @@ button.snl-bit:hover {
   }
   .snl-bits__reihe .snl-trenner {
     height: 38px;
-  }
-  .snl-echt__bits .snv-bit {
-    width: 12px;
-    height: 18px;
-    font-size: 10px;
   }
   .snl-fakten {
     grid-template-columns: minmax(0, 1fr);

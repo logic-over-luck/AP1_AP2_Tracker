@@ -152,11 +152,12 @@ nächsten offenen Punkt weiter.
 - **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer (`subnetz/Verstehen.jsx`, Rechnung in `lernweg.js`,
   getestet). Lernweg in zehn Schritten an einer Adresse (oben IP und Präfix, keine Beispiel-Knöpfe), jeder Schritt zeigt
   nur eine Idee: Aufbau (für dich dezimal / für den Computer 32 Bits, 4 Oktette × 8 Bit, warum 0–255), Binär (Oktett
-  wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich (verschiebbar, „halbiert/verdoppelt“,
-  Zählreihe 1 … 32 unter den Bits, darunter was der Strich mit der echten Adresse macht: je Oktett Netz- und Hostanteil,
-  Lupe auf das geteilte Oktett mit Blockanfang, Blockende und Position der IP, Netzadresse, Gerät Nr., Maske),
+  wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich in vier Teilen, die nacheinander aufgedeckt werden (a Mitzählen: Bits
+  werden bis zum Präfix animiert grün, Zählreihe 1 … 32; b drei PCs im Vergleich – selbes Netz links gleich, Nachbarnetz
+  links anders; c das geteilte Oktett als Deine Zahl / Netzanteil / Hostanteil, z. B. 150 = 128 + 22; d Ergebnis
+  Adresse = Netz + Gerät Nr., Hostbits → Adressen, Maske, danach Strich verschiebbar mit „halbiert/verdoppelt“),
   Oktett finden, Blöcke schneiden, eigenen Block raten, Blockende raten (Fehler „Anfang des nächsten Blocks“ wird
-  erklärt), Broadcast selbst eingeben und Adress-Tabelle (Prüfungsfalle x.255 / (x+1).0 unter /24), Nachbar-Prüfung
+  erklärt, danach Anfang/Ende als Bits: alle Hostbits 0 bzw. 1), Broadcast selbst eingeben und Adress-Tabelle (Prüfungsfalle x.255 / (x+1).0 unter /24), Nachbar-Prüfung
   (direkt oder über Gateway), Aufteilen-Tabelle. „Neue Adresse, von vorn“ am Ende wählt eine Zufallsadresse.
 - **Subnetz-Visualizer:** zweiter Reiter im Subnetz-Trainer, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier

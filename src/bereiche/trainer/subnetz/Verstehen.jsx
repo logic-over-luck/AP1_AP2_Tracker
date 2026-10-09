@@ -2,9 +2,9 @@
 // eine Idee, an den wichtigen Stellen wird erst geraten und dann aufgedeckt. Der Visualizer („alles auf
 // einen Blick“) bleibt der Modus zum Nachschlagen.
 
-import { useMemo, useState } from 'preact/hooks';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../ui/bausteine.jsx';
-import { zerlege, maske, gleichesNetz } from './ip.js';
+import { zerlege, maske, gleichesNetz, ipZuZahl, zahlZuIp } from './ip.js';
 import { oktettRollen, endeOptionen, aufteilTabelle, nachbarVorschlag, fallen, binaerSchritte, teileAdresse } from './lernweg.js';
 import { zufall } from '../rahmen/zufall.js';
 
@@ -118,7 +118,8 @@ export function SubnetzVerstehen() {
           </span>
           <h2 class="snl-karte__titel">{SCHRITTE[schritt].titel}</h2>
         </div>
-        <Inhalt key={fall} {...props} />
+        {/* Beim Trennstrich bleibt der Fortschritt erhalten, wenn man den Strich verschiebt */}
+        <Inhalt key={Inhalt === Trennstrich ? ip : fall} {...props} />
         <div class="snl-fuss">
           <Knopf icon="arrow-left" onClick={() => setSchritt(schritt - 1)} disabled={schritt === 0}>
             Zurück
@@ -165,42 +166,59 @@ function Rueckmeldung({ ok, children }) {
   );
 }
 
-// Die 32 Bits der IP mit Trennstrich nach Bit `praefix`. Klick auf ein Bit setzt den Strich dahinter.
-// Darunter wird von links mitgezählt (1 … 32): bis zum Präfix zählen, dahinter sitzt der Strich.
-function BitLeiste({ z, praefix, onGrenze }) {
+// Die 32 Bits der IP mit Trennstrich nach Bit `praefix`, darunter von links mitgezählt (1 … 32).
+// `gezaehlt`: beim Mitzählen werden nur die ersten Bits grün, der Strich erscheint erst am Ende.
+// Mit `onGrenze` setzt ein Klick auf ein Bit den Strich dahinter.
+function BitLeiste({ z, praefix, onGrenze, gezaehlt = praefix }) {
   const b = bits(z.zahl);
+  const gruen = Math.min(gezaehlt, praefix);
+  const fertig = gezaehlt >= praefix;
   return (
-    <>
-      <div class="snl-bits">
-        {[0, 1, 2, 3].map((o) => (
-          <div key={o} class="snl-bits__oktett">
-            <span class="snl-bits__dez mono">{z.oktette[o]}</span>
-            <span class="snl-bits__reihe">
-              {b.slice(o * 8, o * 8 + 8).map((bit, j) => {
-                const i = o * 8 + j;
-                return [
-                  i === praefix && <span key={`t${i}`} class="snl-trenner" aria-hidden="true" />,
-                  <span key={i} class="snl-bitspalte">
-                    <button
-                      class={`snv-bit snl-bit ${i < praefix ? 'snv-bit--netz' : 'snv-bit--host'}`}
-                      onClick={() => onGrenze(i + 1)}
-                      title={`Trennstrich hinter Bit ${i + 1} setzen (/${begrenze(i + 1)})`}
-                    >
+    <div class="snl-bits">
+      {[0, 1, 2, 3].map((o) => (
+        <div key={o} class="snl-bits__oktett">
+          <span class="snl-bits__dez mono">{z.oktette[o]}</span>
+          <span class="snl-bits__reihe">
+            {b.slice(o * 8, o * 8 + 8).map((bit, j) => {
+              const i = o * 8 + j;
+              const cls = `snv-bit snl-bit ${i < gruen ? 'snv-bit--netz' : 'snv-bit--host'} ${!fertig && i === gezaehlt - 1 ? 'snl-bit--jetzt' : ''}`;
+              return [
+                fertig && i === praefix && <span key={`t${i}`} class="snl-trenner" aria-hidden="true" />,
+                <span key={i} class="snl-bitspalte">
+                  {onGrenze ? (
+                    <button class={cls} onClick={() => onGrenze(i + 1)} title={`Trennstrich hinter Bit ${i + 1} setzen (/${begrenze(i + 1)})`}>
                       {bit}
                     </button>
-                    <span class={`snl-zaehler mono ${i < praefix ? 'snl-zaehler--netz' : ''} ${i + 1 === praefix ? 'snl-zaehler--grenze' : ''}`}>{i + 1}</span>
-                  </span>,
-                ];
-              })}
-            </span>
-          </div>
-        ))}
-      </div>
-      <p class="snl-zaehlhilfe">
-        Von links mitzählen: 1, 2, 3 … bis <strong class="mono">{praefix}</strong> – genau dahinter sitzt der Strich. Alles bis {praefix} ist Netz, ab {praefix + 1} beginnt der
-        Host.
-      </p>
-    </>
+                  ) : (
+                    <i class={cls}>{bit}</i>
+                  )}
+                  <span class={`snl-zaehler mono ${i < gruen ? 'snl-zaehler--netz' : ''} ${fertig && i + 1 === praefix ? 'snl-zaehler--grenze' : ''}`}>{i + 1}</span>
+                </span>,
+              ];
+            })}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// 8 Bits eines Oktetts mit Strich nach `netzBits`. `nur`: 'netz' setzt die Hostbits auf 0, 'host' die Netzbits.
+function OktettBits({ wert, netzBits, nur, markiere = [] }) {
+  return (
+    <span class="snl-okbits">
+      {Array.from({ length: 8 }, (_, j) => {
+        const istNetz = j < netzBits;
+        const genullt = (nur === 'netz' && !istNetz) || (nur === 'host' && istNetz);
+        const bit = genullt ? 0 : (wert >> (7 - j)) & 1;
+        return [
+          j === netzBits && j > 0 && <span key={`t${j}`} class="snl-trenner snl-trenner--klein" aria-hidden="true" />,
+          <i key={j} class={`snv-bit ${istNetz ? 'snv-bit--netz' : 'snv-bit--host'} ${genullt ? 'snl-bit--null' : ''} ${markiere.includes(j) ? 'snl-bit--anders' : ''}`}>
+            {bit}
+          </i>,
+        ];
+      })}
+    </span>
   );
 }
 
@@ -407,170 +425,256 @@ function Binaer({ z }) {
 
 // ---------- 3. Trennstrich ----------
 
-// Lupe auf das geteilte Oktett: links der Anfang des Blocks (Hostbits alle 0), rechts das Ende (alle 1),
-// dazwischen sitzt der Wert der IP.
-function Lupe({ o }) {
-  const hb = 8 - o.netzBits;
-  const groesse = 2 ** hb;
-  const ende = o.netz + groesse - 1;
-  const stelle = (o.host / (groesse - 1)) * 100;
+const TEILE = ['Mitzählen', 'Links Netz, rechts Gerät', 'Die Zahl am Strich teilen', 'Das Ergebnis'];
+
+function Trennstrich({ z, ip, praefix, setPraefix, aenderung }) {
+  const [teil, setTeil] = useState(0);
+  const [gezaehlt, setGezaehlt] = useState(0);
+  const uhr = useRef(null);
+  useEffect(() => () => clearInterval(uhr.current), []);
+  const fertig = gezaehlt >= praefix;
+  const zaehle = () => {
+    clearInterval(uhr.current);
+    let n = 0;
+    setGezaehlt(0);
+    uhr.current = setInterval(() => {
+      n += 1;
+      if (n >= praefix) {
+        clearInterval(uhr.current);
+        setGezaehlt(ALLE);
+      } else setGezaehlt(n);
+    }, 110);
+  };
+
+  const t = teileAdresse(ip, praefix);
+  const h = 32 - praefix;
+  const kopf = (i) => (
+    <h3 class="snl-teilkopf">
+      <span class="snl-teilkopf__nr mono">{'abcd'[i]}</span> {TEILE[i]}
+    </h3>
+  );
+  const weiter = (i) =>
+    teil === i && (
+      <Knopf variante="akzent" groesse="s" iconRechts="chevron-down" onClick={() => setTeil(i + 1)} class="snl-teilweiter">
+        Weiter: {TEILE[i + 1]}
+      </Knopf>
+    );
+
   return (
-    <div class="snl-lupe2">
-      <span class="snl-lupe2__titel">Lupe: wo sitzt die {o.wert}?</span>
-      <div class="snl-lupe2__leiste">
-        <span class="snl-lupe2__zeiger" style={{ left: `${stelle}%` }}>
-          <span class="mono">{o.wert}</span>
-        </span>
-        <span class="snl-lupe2__abstand" style={{ width: `${stelle}%` }}>
-          {o.host > 0 && <span class="mono">+{o.host}</span>}
-        </span>
-      </div>
-      <div class="snl-lupe2__enden">
-        <span>
-          <strong class="mono snl-z--grenze">{o.netz}</strong>
-          <span>Anfang</span>
-          <span class="mono">Host {'0'.repeat(hb)} = 0</span>
-        </span>
-        <span class="snl-lupe2__rechts">
-          <strong class="mono snl-z--frei">{ende}</strong>
-          <span>Ende</span>
-          <span class="mono">
-            Host {'1'.repeat(hb)} = {groesse - 1}
-          </span>
-        </span>
-      </div>
-      <p class="snl-lupe2__text">
-        Links steht nur der Netzanteil ({o.netz}), {hb === 1 ? 'das Hostbit ist 0' : `alle ${hb} Hostbits sind 0`}. Nach rechts zählen die Hostbits hoch, bis{' '}
-        {hb === 1 ? 'es 1 ist' : 'alle 1 sind'} ({ende}).{' '}
-        {o.host === 0 ? (
-          <>Die {o.wert} sitzt genau am Anfang.</>
-        ) : (
-          <>
-            Die {o.wert} sitzt <strong>{o.host === 1 ? '1 Schritt' : `${o.host} Schritte`}</strong> nach dem Anfang.
-          </>
-        )}
+    <div class="snl-inhalt">
+      {kopf(0)}
+      <p>
+        <strong class="mono">/{praefix}</strong> bedeutet: <strong>Die ersten {praefix} Bits gehören zum Netz.</strong> Zähl von links mit – nach Bit {praefix} kommt ein Strich.
       </p>
+      <BitLeiste z={z} praefix={praefix} gezaehlt={gezaehlt} onGrenze={teil >= 3 ? setPraefix : null} />
+      {!fertig ? (
+        <div class="snl-zeile">
+          <Knopf variante="primaer" groesse="s" iconRechts="arrow-right" onClick={zaehle}>
+            {gezaehlt > 0 ? 'Nochmal zählen' : 'Mitzählen'}
+          </Knopf>
+          <Knopf variante="geist" groesse="s" onClick={() => setGezaehlt(ALLE)}>
+            Überspringen
+          </Knopf>
+          {gezaehlt > 0 && <span class="snl-zaehlstand mono">{gezaehlt} …</span>}
+        </div>
+      ) : (
+        <p class="snl-rechnung mono">
+          Bit 1 bis {praefix} = <strong>Netz</strong> · Bit {praefix + 1} bis 32 = Host ({h} Bits)
+        </p>
+      )}
+      {teil >= 3 && (
+        <>
+          <div class="snl-zeile">
+            <Knopf groesse="s" icon="arrow-left" onClick={() => setPraefix(praefix - 1)} disabled={praefix <= MIN}>
+              Strich nach links
+            </Knopf>
+            <Knopf groesse="s" iconRechts="arrow-right" onClick={() => setPraefix(praefix + 1)} disabled={praefix >= MAX}>
+              Strich nach rechts
+            </Knopf>
+            <span class="gedaempft snl-klein">oder auf ein Bit klicken – unten ändert sich alles mit</span>
+          </div>
+          <Wirkung aenderung={aenderung} />
+        </>
+      )}
+      {fertig && weiter(0)}
+
+      {teil >= 1 && (
+        <section class="snl-teilstueck">
+          {kopf(1)}
+          <VergleichPCs z={z} ip={ip} praefix={praefix} />
+          {weiter(1)}
+        </section>
+      )}
+      {teil >= 2 && (
+        <section class="snl-teilstueck">
+          {kopf(2)}
+          <ZahlTeilen z={z} t={t} />
+          {weiter(2)}
+        </section>
+      )}
+      {teil >= 3 && (
+        <section class="snl-teilstueck">
+          {kopf(3)}
+          <Ergebnis ip={ip} praefix={praefix} t={t} />
+        </section>
+      )}
     </div>
   );
 }
+const ALLE = 99;
 
-function Trennstrich({ z, ip, praefix, setPraefix, aenderung }) {
-  const h = 32 - praefix;
+// Drei PCs untereinander: dein PC, einer im selben Netz, einer im Nachbarnetz. Gezeigt werden die Bits ab dem
+// Oktett mit dem Strich; die Oktette davor stehen als Text davor (sie sind bei allen dreien gleich).
+function VergleichPCs({ z, ip, praefix }) {
   const t = teileAdresse(ip, praefix);
+  const netz = ipZuZahl(t.netz);
+  const gleich = zahlZuIp(netz + (t.hostNummer === 1 ? 2 : 1));
+  const nachbar = zahlZuIp((z.zahl ^ (1 << (32 - praefix))) >>> 0);
+  const pcs = [
+    { name: 'Dein PC', ip, text: null },
+    { name: 'PC im selben Netz', ip: gleich, text: 'links gleich → selbes Netz', ok: true },
+    { name: 'PC im Nachbarnetz', ip: nachbar, text: 'links anders → anderes Netz', ok: false },
+  ];
+  const vorne = z.oktette.slice(0, z.index);
+  return (
+    <>
+      <p>
+        Was heißt „gehört zum Netz“? Vergleich drei PCs. Die ersten {z.index} Oktett{z.index === 1 ? '' : 'e'} ({vorne.join('.')}) sind bei allen gleich, darum zeigen wir nur die
+        Bits ab dem {z.index + 1}. Oktett:
+      </p>
+      <div class="snl-pcs">
+        {pcs.map((pc) => {
+          const okt = pc.ip.split('.').map(Number);
+          return (
+            <div key={pc.name} class={`snl-pc2 ${pc.ok === false ? 'snl-pc2--fremd' : ''}`}>
+              <span class="snl-pc2__name">
+                {pc.name}
+                <span class="mono">{pc.ip}</span>
+              </span>
+              <span class="snl-pc2__bits">
+                <span class="mono gedaempft">{vorne.join('.')}.</span>
+                {okt.slice(z.index).map((wert, k) => {
+                  const o = z.index + k;
+                  const netzBits = Math.max(0, Math.min(8, praefix - o * 8));
+                  const meins = z.oktette[o];
+                  const anders = Array.from({ length: 8 }, (_, j) => j).filter((j) => j < netzBits && ((wert ^ meins) >> (7 - j)) & 1);
+                  return <OktettBits key={o} wert={wert} netzBits={netzBits} markiere={pc.ok === false ? anders : []} />;
+                })}
+              </span>
+              {pc.text && (
+                <span class={`snl-pc2__urteil ${pc.ok ? 'snl-pc2__urteil--gut' : 'snl-pc2__urteil--fremd'}`}>
+                  <Icon name={pc.ok ? 'circle-check' : 'circle-x'} groesse={14} /> {pc.text}
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <Merke>
+        <strong>Links vom Strich</strong> steht das Netz – wie die <em>Straße</em>. Alle PCs im selben Netz haben dort exakt dieselben Bits. <strong>Rechts vom Strich</strong>{' '}
+        steht die Nummer des Geräts – wie die <em>Hausnummer</em>.
+      </Merke>
+    </>
+  );
+}
+
+// Das Oktett, durch das der Strich geht, in Netzanteil und Hostanteil zerlegen
+function ZahlTeilen({ z, t }) {
+  const o = t.oktette[z.index];
+  const k = o.netzBits;
+  const vorne = z.oktette.slice(0, z.index);
+  const hinten = z.oktette.slice(z.index + 1);
+  const zeilen = [
+    { name: 'Deine Zahl', nur: null, wert: o.wert, cls: '' },
+    { name: 'Netzanteil', text: 'nur die Bits links vom Strich, rechts alles 0', nur: 'netz', wert: o.netz, cls: 'snl-z--grenze' },
+    { name: 'Hostanteil', text: 'nur die Bits rechts vom Strich, links alles 0', nur: 'host', wert: o.host, cls: 'snl-z--frei' },
+  ];
+  return (
+    <>
+      <p>
+        {k ? (
+          <>
+            Im {z.index + 1}. Oktett geht der Strich <strong>mitten durch die {o.wert}</strong>: {k} Bit{k > 1 ? 's' : ''} links, {8 - k} rechts. Die Zahl wird einfach an der
+            Stelle aufgeteilt:
+          </>
+        ) : (
+          <>
+            Bei /{z.index * 8} liegt der Strich genau <strong>vor der {o.wert}</strong> – sie gehört komplett zum Host:
+          </>
+        )}
+      </p>
+      <div class="snl-teilen">
+        {zeilen.map((r) => (
+          <div key={r.name} class="snl-teilen__zeile">
+            <span class="snl-teilen__name">
+              {r.name}
+              {r.text && <span>{r.text}</span>}
+            </span>
+            <OktettBits wert={o.wert} netzBits={k} nur={r.nur} />
+            <span class={`snl-teilen__wert mono ${r.cls}`}>= {r.wert}</span>
+          </div>
+        ))}
+      </div>
+      <p class="snl-rechnung mono">
+        {o.wert} = <span class="snl-z--grenze">{o.netz}</span> + <span class="snl-z--frei">{o.host}</span>
+      </p>
+      <p class="snl-klein gedaempft">
+        {vorne.length > 0 && (
+          <>
+            {vorne.length === 1 ? 'Das Oktett' : 'Die Oktette'} davor ({vorne.join('.')}) {vorne.length === 1 ? 'liegt' : 'liegen'} ganz links vom Strich –{' '}
+            {vorne.length === 1 ? 'es gehört' : 'sie gehören'} komplett zum Netz und {vorne.length === 1 ? 'bleibt, wie es ist' : 'bleiben, wie sie sind'}.{' '}
+          </>
+        )}
+        {hinten.length > 0 && (
+          <>
+            {hinten.length === 1 ? 'Das Oktett' : 'Die Oktette'} danach ({hinten.join('.')}) {hinten.length === 1 ? 'liegt' : 'liegen'} ganz rechts –{' '}
+            {hinten.length === 1 ? 'es ist' : 'sie sind'} komplett Host, im Netzanteil also 0.
+          </>
+        )}
+      </p>
+    </>
+  );
+}
+
+function Ergebnis({ ip, praefix, t }) {
+  const h = 32 - praefix;
   const hostEnde = 2 ** h - 1;
   // Hostnummer über mehrere Oktette nachvollziehbar machen, z. B. 0.0.1.150 → 1 × 256 + 150
   const hostOktette = t.host.split('.').map(Number);
   const hostTeile = hostOktette.map((v, i) => (v === 0 ? null : i === 3 ? String(v) : `${v} × ${tausend(256 ** (3 - i))}`)).filter(Boolean);
   const hostRechnung = hostOktette.slice(0, 3).some((v) => v > 0) ? hostTeile.join(' + ') : null;
+  const geraet = t.hostNummer > 0 && t.hostNummer < hostEnde;
   return (
-    <div class="snl-inhalt">
-      <p>
-        Jetzt kommt der Präfix dazu. <strong class="mono">/{praefix}</strong> heißt: <strong>Die ersten {praefix} Bits sind das Netz.</strong> Man kann sich das als Trennstrich
-        nach Bit {praefix} vorstellen:
-      </p>
-      <BitLeiste z={z} praefix={praefix} onGrenze={setPraefix} />
-      <div class="snl-teile">
-        <span class="snl-teil snl-teil--netz">
-          <strong>Netzteil</strong> · {praefix} Bit · wie die <em>Straße</em>
+    <>
+      <div class="snl-gleichung">
+        <span class="snl-gleichung__teil">
+          <span class="mono snl-gleichung__wert">{ip}</span>
+          <span>deine Adresse</span>
         </span>
-        <span class="snl-teil snl-teil--host">
-          <strong>Hostteil</strong> · {h} Bit · wie die <em>Hausnummer</em>
+        <span class="snl-gleichung__op">=</span>
+        <span class="snl-gleichung__teil snl-gleichung__teil--netz">
+          <span class="mono snl-gleichung__wert">{t.netz}</span>
+          <span>Netz („Straße“) = die Netzadresse</span>
         </span>
-      </div>
-      <div class="snl-zeile">
-        <Knopf groesse="s" icon="arrow-left" onClick={() => setPraefix(praefix - 1)} disabled={praefix <= MIN}>
-          Strich nach links
-        </Knopf>
-        <Knopf groesse="s" iconRechts="arrow-right" onClick={() => setPraefix(praefix + 1)} disabled={praefix >= MAX}>
-          Strich nach rechts
-        </Knopf>
-        <span class="gedaempft snl-klein">oder auf ein Bit klicken</span>
+        <span class="snl-gleichung__op">+</span>
+        <span class="snl-gleichung__teil snl-gleichung__teil--host">
+          <span class="mono snl-gleichung__wert">{geraet ? `Gerät Nr. ${tausend(t.hostNummer)}` : t.host}</span>
+          <span>
+            {geraet ? (hostRechnung ? `Hausnummer (${hostRechnung})` : 'Hausnummer') : t.hostNummer === 0 ? 'Hostteil 0 = Netzadresse selbst' : 'alle Hostbits 1 = Broadcast'}
+          </span>
+        </span>
       </div>
       <p class="snl-rechnung mono">
         {h} Hostbits → 2<sup>{h}</sup> = <strong>{tausend(2 ** h)}</strong> Adressen in diesem Netz
       </p>
-      <Wirkung aenderung={aenderung} />
-
-      <div class="snl-echt">
-        <span class="ueberschrift-klein ueberschrift-klein--akzent">Was der Strich mit der echten Adresse macht</span>
-        <p>Jedes Oktett wird am Strich geteilt. Was links liegt, gehört zum Netz – was rechts liegt, zum Gerät:</p>
-        <div class="snl-echt__oktette">
-          {t.oktette.map((o, i) => {
-            const art = o.netzBits === 8 ? 'netz' : o.netzBits === 0 ? 'host' : 'geteilt';
-            return (
-              <div key={i} class={`snl-echt__okt snl-echt__okt--${art}`}>
-                <div class="snl-echt__links">
-                  <span class="snl-echt__kopf">
-                    <span class="snl-echt__dez mono">{o.wert}</span>
-                    <span class="snl-echt__art">{art === 'netz' ? 'ganz Netz' : art === 'host' ? 'ganz Host' : 'wird geteilt'}</span>
-                  </span>
-                  <span class="snl-echt__bits">
-                    {Array.from({ length: 8 }, (_, j) => [
-                      j === o.netzBits && j > 0 && <span key={`t${j}`} class="snl-trenner snl-trenner--klein" aria-hidden="true" />,
-                      <i key={j} class={`snv-bit ${j < o.netzBits ? 'snv-bit--netz' : 'snv-bit--host'}`}>
-                        {(o.wert >> (7 - j)) & 1}
-                      </i>,
-                    ])}
-                  </span>
-                  <span class="snl-echt__teil">
-                    <i class="snl-farbe snl-farbe--grenze" /> Netz <strong class="mono">{o.netz}</strong>
-                  </span>
-                  <span class="snl-echt__teil">
-                    <i class="snl-farbe snl-farbe--host" /> Host <strong class="mono">{o.host}</strong>
-                  </span>
-                  {art === 'geteilt' && (
-                    <span class="snl-echt__notiz mono">
-                      {o.wert} = {o.netz} + {o.host}
-                    </span>
-                  )}
-                </div>
-                {art === 'geteilt' && <Lupe o={o} />}
-              </div>
-            );
-          })}
-        </div>
-        <div class="snl-echt__ergebnis">
-          <div>
-            <span class="snl-teil snl-teil--netz">Netzteil</span>
-            <span>
-              Hostbits auf 0 → <strong class="mono">{t.netz}</strong> – das ist die <strong>Netzadresse</strong> (die „Straße“)
-            </span>
-          </div>
-          <div>
-            <span class="snl-teil snl-teil--host">Hostteil</span>
-            <span>
-              Netzbits auf 0 → <strong class="mono">{t.host}</strong> –{' '}
-              {t.hostNummer === 0 ? (
-                <>alle Hostbits 0: das ist die Netzadresse selbst, kein Gerät</>
-              ) : t.hostNummer === hostEnde ? (
-                <>alle Hostbits 1: das ist der Broadcast, kein Gerät</>
-              ) : (
-                <>
-                  Gerät <strong>Nr. {tausend(t.hostNummer)}</strong>
-                  {hostRechnung && <span class="mono"> ({hostRechnung})</span>} in diesem Netz (die „Hausnummer“)
-                </>
-              )}
-            </span>
-          </div>
-          <div>
-            <span class="snl-teil snl-teil--maske">Maske</span>
-            <span>
-              der Strich als Zahl: links alles 1, rechts alles 0 → <strong class="mono">{t.maske}</strong> ist dasselbe wie /{praefix}
-            </span>
-          </div>
-        </div>
-      </div>
+      <p class="snl-rechnung mono">
+        Maske = der Strich als Zahl: {praefix} Einsen, {h} Nullen → <strong>{t.maske}</strong>
+      </p>
       <Merke>
-        Der Strich teilt die Adresse in <strong>Netz + Gerät</strong>
-        {t.hostNummer > 0 && t.hostNummer < hostEnde && (
-          <>
-            {' '}
-            ({ip} = Netz {t.netz} + Gerät Nr. {tausend(t.hostNummer)})
-          </>
-        )}
-        . Alle Geräte im selben Netz haben links vom Strich dieselben Bits (gleiche Straße), rechts unterscheiden sie sich (Hausnummer).
+        Der Strich teilt die Adresse in <strong>Netz + Gerät</strong>. Jetzt du: Schieb den Strich oben nach rechts – dann wird der Hostteil kürzer und das Netz hat nur noch halb
+        so viele Adressen.
       </Merke>
-    </div>
+    </>
   );
 }
 
@@ -829,8 +933,26 @@ function Blockende({ z }) {
             </span>
             {naechster <= 255 && <span>nächster Block ab {naechster} →</span>}
           </div>
+          <div class="snl-teilen">
+            <span class="ueberschrift-klein">Warum? Schau auf die Bits</span>
+            {[
+              { wert: z.start, name: 'Anfang', text: 'alle Hostbits 0 → Netzadresse', cls: 'snl-z--grenze' },
+              { wert: z.ende, name: 'Ende', text: 'alle Hostbits 1 → Broadcast', cls: 'snl-z--frei' },
+            ].map((r) => (
+              <div key={r.name} class="snl-teilen__zeile">
+                <span class="snl-teilen__name">
+                  {r.name}
+                  <span>{r.text}</span>
+                </span>
+                <OktettBits wert={r.wert} netzBits={z.netzBitsImOktett} />
+                <span class={`snl-teilen__wert mono ${r.cls}`}>= {r.wert}</span>
+              </div>
+            ))}
+            {z.index < 3 && <span class="snl-klein gedaempft">Die Oktette danach: beim Anfang 0, beim Ende 255 – auch dort alle Hostbits 0 bzw. 1.</span>}
+          </div>
           <Merke>
-            <strong>Ende = nächster Blockanfang − 1.</strong> Das ist der häufigste Fehler: {naechster} ist nicht das Ende, sondern schon der Anfang des Nachbarn.
+            <strong>Ende = nächster Blockanfang − 1.</strong> Das ist der häufigste Fehler: {naechster} ist nicht das Ende, sondern schon der Anfang des Nachbarn. Links vom Strich
+            bleibt alles gleich, rechts zählen die Hostbits von lauter 0 bis lauter 1.
           </Merke>
         </>
       )}
