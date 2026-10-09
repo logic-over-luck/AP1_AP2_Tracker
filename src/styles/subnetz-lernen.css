@@ -893,52 +893,6 @@ button.sv-tafel__bit:hover {
 }
 
 /* ---------- 6. Blöcke ---------- */
-.sv-blockgr {
-  display: grid;
-  gap: var(--s-2);
-  max-width: 560px;
-}
-.sv-blockgr__reihe {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: var(--sv-bitluecke);
-}
-.sv-blockgr__zelle {
-  position: relative;
-  display: grid;
-  place-items: center;
-  height: 32px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  background: var(--sv-host-weich);
-  font-size: var(--t-m);
-  color: var(--sv-host);
-}
-.sv-blockgr__zelle--netz {
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-.sv-blockgr__zelle--letzte {
-  border-color: var(--akzent);
-  background: var(--akzent);
-  color: var(--akzent-text);
-  font-weight: 600;
-}
-.sv-blockgr__zelle--strich::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  bottom: -5px;
-  left: calc(var(--sv-bitluecke) / -2 - 1.5px);
-  width: 3px;
-  border-radius: 2px;
-  background: var(--sv-strich);
-}
-.sv-blockgr__text {
-  font-size: var(--t-m);
-  color: var(--text-2);
-}
-
 /* Zahlenstrahl */
 .sv-strahl {
   display: grid;
@@ -1011,10 +965,6 @@ button.sv-tafel__bit:hover {
   font-weight: 600;
   color: var(--text);
 }
-.sv-block__code {
-  font-size: var(--t-xs);
-  color: var(--akzent);
-}
 .sv-strahl__skala {
   position: relative;
   height: 16px;
@@ -1033,6 +983,129 @@ button.sv-tafel__bit:hover {
   left: auto;
   right: 0;
   transform: none;
+}
+
+.sv-formel--gross {
+  font-size: var(--t-l);
+  padding: var(--s-2) var(--s-4);
+}
+.sv-strahl__leiste--hoch {
+  height: 46px;
+}
+.sv-block__vonbis {
+  display: grid;
+  justify-items: center;
+  line-height: 1.25;
+  font-size: var(--t-s);
+  color: var(--text);
+}
+.sv-block__vonbis span:last-child {
+  color: var(--text-3);
+}
+.sv-spruenge {
+  display: grid;
+  gap: var(--s-2);
+}
+.sv-spruenge__titel,
+.sv-treppe__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-spruenge__reihe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.sv-spruenge__start {
+  min-width: 40px;
+  padding: 4px 10px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  text-align: center;
+  font-weight: 600;
+}
+.sv-spruenge__plus {
+  font-size: var(--t-xs);
+  color: var(--akzent);
+}
+.sv-spruenge__luecke {
+  color: var(--text-3);
+}
+.sv-abkuerzung {
+  display: grid;
+  gap: var(--s-1);
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+  font-size: var(--t-n);
+  color: var(--text-2);
+}
+.sv-abkuerzung__titel {
+  font-family: var(--schrift);
+  font-weight: 600;
+  color: var(--text);
+}
+.sv-abkuerzung__tipp {
+  font-family: var(--schrift);
+  font-size: var(--t-s);
+  color: var(--akzent);
+}
+.sv-treppe {
+  display: grid;
+  gap: 6px;
+  max-width: 780px;
+}
+.sv-treppe__titel {
+  margin-bottom: var(--s-1);
+  line-height: 1.5;
+}
+.sv-treppe__zeile {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-3);
+  padding: 5px var(--s-2);
+  border-radius: var(--r-2);
+  border: 1px solid transparent;
+  text-align: left;
+  transition:
+    background var(--dauer) var(--kurve),
+    border-color var(--dauer) var(--kurve);
+}
+.sv-treppe__zeile:hover {
+  background: var(--flaeche-2);
+}
+.sv-treppe__zeile--aktiv {
+  border-color: var(--akzent-linie);
+  background: var(--akzent-weich);
+}
+.sv-treppe__name {
+  font-size: var(--t-s);
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.sv-treppe__zeile--aktiv .sv-treppe__name {
+  color: var(--text);
+  font-weight: 600;
+}
+.sv-treppe__leiste {
+  height: 16px;
+}
+.sv-treppe__leiste .sv-block {
+  background: var(--linie-3);
+}
+.sv-treppe__leiste .sv-block--zwei {
+  background: var(--flaeche-4);
+}
+.sv-treppe__zeile--aktiv .sv-block {
+  background: color-mix(in srgb, var(--akzent) 45%, var(--flaeche-3));
+}
+.sv-treppe__zeile--aktiv .sv-block--zwei {
+  background: color-mix(in srgb, var(--akzent) 25%, var(--flaeche-3));
 }
 
 /* ---------- 7. Dein Block ---------- */
@@ -1749,6 +1822,13 @@ button.sv-tafel__bit:hover {
   }
   .sv-mrechnung__summe {
     grid-column: 2;
+  }
+  .sv-treppe__zeile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .sv-block__vonbis {
+    font-size: 10px;
   }
   .sv-rezept__schritt {
     grid-template-columns: 20px minmax(0, 1fr);

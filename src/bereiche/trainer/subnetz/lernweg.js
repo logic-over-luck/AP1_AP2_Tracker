@@ -123,6 +123,15 @@ export function vergleichsZiele(ip, praefix) {
   ].map((ziel) => ({ ...ziel, gleich: gleichesNetz(ip, ziel.ip, praefix), netz: netz(ziel.ip, praefix).netz }));
 }
 
+// Die „Treppe“ für den Schritt Blöcke: dasselbe Oktett bei jedem Präfix, vom ganzen Oktett (1 Block) bis zu den
+// kleinsten Blöcken, die im Lernblock vorkommen (Präfix höchstens /30).
+export function blockTreppe(praefix) {
+  const basis = Math.min(3, Math.floor(praefix / 8)) * 8;
+  const zeilen = [];
+  for (let p = basis; p <= Math.min(basis + 7, 30); p++) zeilen.push({ praefix: p, anzahl: 2 ** (p - basis), block: 2 ** (8 - (p - basis)) });
+  return zeilen;
+}
+
 // Wie das freie Stück (ab dem Oktett mit dem Strich) bei jedem Präfix aufgeteilt wird.
 // Alle Zeilen teilen dieselbe Menge Adressen – nur in mehr oder weniger Netze.
 export function aufteilTabelle(praefix) {
