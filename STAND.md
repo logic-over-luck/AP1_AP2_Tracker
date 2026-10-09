@@ -150,12 +150,13 @@ nächsten offenen Punkt weiter.
   und im Ergebnis als „nicht ermittelt“ mit ihren Punkten ausgewiesen; Prozent und Note beziehen sich auf die
   ermittelten Punkte. Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
 - **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer (`subnetz/Verstehen.jsx`, Rechnung in `lernweg.js`,
-  getestet). Lernweg in acht Schritten an einer Adresse, jeder Schritt zeigt nur eine Idee: Präfix als Trennstrich in den
-  32 Bits (verschiebbar, zeigt „halbiert/verdoppelt“), Oktett finden (abschreiben / rechnen / 0 bzw. 255), Blöcke schneiden,
-  eigenen Block raten (Klick oder Eingabe, gezielte Hinweise), Blockende raten (Fehler „Anfang des nächsten Blocks“
-  wird erklärt), Broadcast selbst eingeben und dann die Adress-Tabelle (Farben je Oktett-Rolle, Prüfungsfalle x.255 /
-  (x+1).0 unter /24), Nachbar-Prüfung mit zweiter Adresse (direkt oder über Gateway), Aufteilen-Tabelle („Netze ×
-  Adressen“ bleibt gleich, reservierte Adressen). Beispiel-Chips für /26, /23, /30, /24, /20 und Zufall.
+  getestet). Lernweg in zehn Schritten an einer Adresse (oben IP und Präfix, keine Beispiel-Knöpfe), jeder Schritt zeigt
+  nur eine Idee: Aufbau (für dich dezimal / für den Computer 32 Bits, 4 Oktette × 8 Bit, warum 0–255), Binär (Oktett
+  wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich (verschiebbar, „halbiert/verdoppelt“,
+  darunter was der Strich mit der echten Adresse macht: je Oktett Netz- und Hostanteil, Netzadresse, Gerät Nr., Maske),
+  Oktett finden, Blöcke schneiden, eigenen Block raten, Blockende raten (Fehler „Anfang des nächsten Blocks“ wird
+  erklärt), Broadcast selbst eingeben und Adress-Tabelle (Prüfungsfalle x.255 / (x+1).0 unter /24), Nachbar-Prüfung
+  (direkt oder über Gateway), Aufteilen-Tabelle. „Neue Adresse, von vorn“ am Ende wählt eine Zufallsadresse.
 - **Subnetz-Visualizer:** zweiter Reiter im Subnetz-Trainer, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
   Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits

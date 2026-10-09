@@ -180,3 +180,31 @@ function ipZwischen(a, von, bis) {
   const z = ip.ipZuZahl(a);
   return z >= ip.ipZuZahl(von) && z <= ip.ipZuZahl(bis);
 }
+
+test('Lernweg: Dezimal → binär und Trennstrich in der echten Adresse', async () => {
+  const lw = await import('../src/bereiche/trainer/subnetz/lernweg.js');
+  const s = lw.binaerSchritte(150);
+  assert.equal(s.map((x) => x.bit).join(''), '10010110');
+  assert.deepEqual(s[0], { gewicht: 128, vorher: 150, passt: true, nachher: 22, bit: 1 });
+  assert.equal(s[7].nachher, 0);
+  for (let w = 0; w <= 255; w++) assert.equal(parseInt(lw.binaerSchritte(w).map((x) => x.bit).join(''), 2), w);
+
+  const t = lw.teileAdresse('192.168.40.150', 26);
+  assert.equal(t.netz, '192.168.40.128');
+  assert.equal(t.host, '0.0.0.22');
+  assert.equal(t.hostNummer, 22);
+  assert.equal(t.maske, '255.255.255.192');
+  assert.deepEqual(t.oktette[3], { wert: 150, netzBits: 2, maske: 192, netz: 128, host: 22 });
+  assert.deepEqual(t.oktette[0], { wert: 192, netzBits: 8, maske: 255, netz: 192, host: 0 });
+
+  const u = lw.teileAdresse('192.168.41.150', 23);
+  assert.equal(u.netz, '192.168.40.0');
+  assert.equal(u.host, '0.0.1.150');
+  assert.equal(u.hostNummer, 406);
+  assert.deepEqual(u.oktette[3], { wert: 150, netzBits: 0, maske: 0, netz: 0, host: 150 });
+  for (const [a, p] of [['10.20.30.40', 8], ['172.20.77.5', 20], ['10.0.0.6', 30]]) {
+    const v = lw.teileAdresse(a, p);
+    assert.equal(v.netz, ip.netz(a, p).netz);
+    assert.equal(v.oktette.every((o) => o.netz + o.host === o.wert), true);
+  }
+});

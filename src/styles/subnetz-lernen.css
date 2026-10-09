@@ -11,42 +11,6 @@
   font-size: var(--t-xs);
 }
 
-/* Beispiele */
-.snl-beispiele {
-  display: flex;
-  flex: 1 1 320px;
-  flex-direction: column;
-  gap: 4px;
-}
-.snl-beispiele__liste {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.snl-beispiel {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  height: 28px;
-  padding: 0 10px;
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-rund);
-  background: var(--flaeche-2);
-  color: var(--text-2);
-  font: inherit;
-  font-size: var(--t-xs);
-  cursor: pointer;
-}
-.snl-beispiel:hover {
-  border-color: var(--akzent);
-  color: var(--text);
-}
-.snl-beispiel--aktiv {
-  border-color: var(--akzent-linie);
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-
 /* Schritt-Leiste */
 .snl-schritte {
   display: flex;
@@ -221,6 +185,277 @@
   color: var(--warn);
 }
 
+/* 1. Aufbau */
+.snl-zwei {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 6px var(--s-4);
+  padding: 12px 16px;
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.snl-zwei__name {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.snl-zwei__wert {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.snl-zwei__wert--dez {
+  font-size: var(--t-2xl);
+}
+.snl-zwei__wert--bin {
+  font-size: var(--t-l);
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+}
+.snl-aufbau {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-4);
+}
+.snl-aufbau__oktett {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.snl-aufbau__dez {
+  font-size: var(--t-2xl);
+  font-weight: 700;
+}
+.snl-aufbau__klammer {
+  width: 100%;
+  height: 8px;
+  border: 2px solid var(--akzent);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.snl-aufbau__bits {
+  display: flex;
+  gap: 2px;
+}
+.snl-aufbau__name {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.snl-aufbau__name strong {
+  color: var(--akzent);
+}
+.snl-fakten {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-2);
+  width: 100%;
+}
+.snl-fakt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-s);
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.snl-fakt__titel {
+  font-size: var(--t-m);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* 2. Binär */
+.snl-wahl {
+  min-width: 56px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+  font-size: var(--t-l);
+  font-weight: 700;
+  cursor: pointer;
+}
+.snl-wahl:hover {
+  border-color: var(--akzent);
+}
+.snl-wahl--aktiv {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.snl-stellen {
+  display: flex;
+  gap: 4px;
+}
+.snl-stelle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 48px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+}
+.snl-stelle__wert {
+  width: 100%;
+  padding: 3px 0;
+  background: var(--flaeche-3);
+  font-size: var(--t-s);
+  text-align: center;
+  color: var(--text-2);
+}
+.snl-stelle__bit {
+  padding: 6px 0;
+  font-size: var(--t-xl);
+  font-weight: 700;
+  color: var(--text-4);
+}
+.snl-stelle--an {
+  border-color: var(--akzent);
+}
+.snl-stelle--an .snl-stelle__bit {
+  background: var(--akzent);
+  width: 100%;
+  text-align: center;
+  color: var(--akzent-text);
+}
+.snl-stelle--aus .snl-stelle__bit {
+  color: var(--text);
+}
+.snl-stelle--jetzt {
+  border-color: var(--warn);
+  box-shadow: 0 0 0 1px var(--warn);
+}
+.snl-wegliste {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-m);
+}
+.snl-wegliste:empty {
+  display: none;
+}
+.snl-wegliste li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  color: var(--text-2);
+}
+.snl-wegliste__wert {
+  min-width: 3ch;
+  font-weight: 700;
+  text-align: right;
+  color: var(--text-3);
+}
+.snl-wegliste--an {
+  color: var(--text) !important;
+}
+.snl-wegliste--an .snl-wegliste__wert {
+  color: var(--akzent);
+}
+
+/* 3. Was der Strich in echt macht */
+.snl-echt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  width: 100%;
+  margin-top: var(--s-2);
+  padding-top: var(--s-4);
+  border-top: 1px dashed var(--linie-2);
+}
+.snl-echt > p {
+  margin: 0;
+}
+.snl-echt__oktette {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  gap: var(--s-2);
+}
+.snl-echt__okt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.snl-echt__okt--geteilt {
+  border-color: var(--warn);
+}
+.snl-echt__kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+.snl-echt__dez {
+  font-size: var(--t-xl);
+  font-weight: 700;
+}
+.snl-echt__art {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.snl-echt__okt--geteilt .snl-echt__art {
+  color: var(--warn);
+  font-weight: 600;
+}
+.snl-echt__bits {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.snl-echt__teil {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.snl-echt__teil strong {
+  margin-left: auto;
+  color: var(--text);
+}
+.snl-echt__notiz {
+  margin-top: 2px;
+  padding-top: 4px;
+  border-top: 1px solid var(--linie);
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--warn);
+}
+.snl-echt__ergebnis {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--t-m);
+}
+.snl-echt__ergebnis > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px var(--s-2);
+}
+.snl-echt__ergebnis .snl-teil {
+  min-width: 78px;
+  text-align: center;
+}
+
 /* Bits mit Trennstrich */
 .snl-bits {
   display: flex;
@@ -280,6 +515,15 @@ button.snl-bit:hover {
 .snl-teil--host {
   background: var(--flaeche-3);
   color: var(--text);
+}
+.snl-teil--maske {
+  border: 1px solid var(--linie-3);
+  color: var(--text-2);
+}
+.snl-trenner.snl-trenner--klein {
+  width: 3px;
+  height: 26px;
+  margin: 0 2px;
 }
 
 /* Oktett-Karten */
@@ -370,6 +614,17 @@ button.snl-bit:hover {
   gap: 2px;
   height: 36px;
   margin: 26px 0 22px;
+}
+.snl-strahl__leiste--dicht {
+  gap: 0;
+}
+.snl-strahl__leiste--dicht .snl-block {
+  border-radius: 0;
+  box-shadow: inset -1px 0 0 var(--flaeche-1);
+}
+.snl-strahl__leiste--dicht .snl-block--aktiv {
+  z-index: 1;
+  box-shadow: 0 0 0 2px var(--akzent);
 }
 .snl-block {
   position: relative;
@@ -604,6 +859,10 @@ button.snl-bit:hover {
 .snl-farbe--frei {
   background: var(--warn);
 }
+.snl-farbe--host {
+  background: var(--flaeche-4);
+  box-shadow: inset 0 0 0 1px var(--linie-3);
+}
 
 /* Nachbarn */
 .snl-pc {
@@ -670,8 +929,53 @@ button.snl-bit:hover {
     height: 30px;
     margin: 0 2px;
   }
-  .snl-oktette {
+  .snl-oktette,
+  .snl-echt__oktette {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .snl-echt__okt {
+    padding: 8px;
+  }
+  .snl-echt__bits .snv-bit {
+    width: 12px;
+    height: 18px;
+    font-size: 10px;
+  }
+  .snl-fakten {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .snl-zwei {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .snl-zwei__wert--dez {
+    margin-bottom: 6px;
+    font-size: var(--t-xl);
+  }
+  .snl-zwei__wert--bin {
+    font-size: var(--t-m);
+  }
+  .snl-aufbau {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .snl-aufbau__dez {
+    font-size: var(--t-xl);
+  }
+  .snl-stellen {
+    gap: 2px;
+  }
+  .snl-stelle {
+    width: 38px;
+  }
+  .snl-stelle__wert {
+    font-size: 10px;
+  }
+  .snl-stelle__bit {
+    font-size: var(--t-l);
+  }
+  .snl-wegliste {
+    font-size: var(--t-s);
   }
   .snl-lupe__spalte .snl-bit {
     width: 28px;
