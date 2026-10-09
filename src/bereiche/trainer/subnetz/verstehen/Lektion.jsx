@@ -33,10 +33,22 @@ export function Lektion({ lektion, fortschritt, onLektion }) {
           {lektion.nr} / {LEKTIONEN.length}
         </span>
         <span class="sn-lnav__blaettern">
-          <button type="button" class="sn-lnav__pfeil" disabled={!vorige} onClick={() => onLektion(vorige.id)} aria-label={vorige ? `Vorige Lektion: ${vorige.begriff}` : 'Keine vorige Lektion'}>
+          <button
+            type="button"
+            class="sn-lnav__pfeil"
+            disabled={!vorige}
+            onClick={() => onLektion(vorige.id)}
+            aria-label={vorige ? `Vorige Lektion: ${vorige.begriff}` : 'Keine vorige Lektion'}
+          >
             <Icon name="chevron-left" groesse={16} />
           </button>
-          <button type="button" class="sn-lnav__pfeil" disabled={!naechste} onClick={() => onLektion(naechste.id)} aria-label={naechste ? `Nächste Lektion: ${naechste.begriff}` : 'Keine nächste Lektion'}>
+          <button
+            type="button"
+            class="sn-lnav__pfeil"
+            disabled={!naechste}
+            onClick={() => onLektion(naechste.id)}
+            aria-label={naechste ? `Nächste Lektion: ${naechste.begriff}` : 'Keine nächste Lektion'}
+          >
             <Icon name="chevron-right" groesse={16} />
           </button>
         </span>
@@ -73,16 +85,19 @@ export function Lektion({ lektion, fortschritt, onLektion }) {
         )}
         {fehlt.length > 0 && (
           <p class="sn-baut__luecke">
-            <Icon name="info" groesse={14} /> Diese Lektion benutzt {fehlt.length === 1 ? 'einen Begriff, den' : 'Begriffe, die'} du noch nicht abgehakt hast. Am besten zuerst{' '}
-            {fehlt.map((b, i) => (
-              <span key={b.id}>
-                {i > 0 && (i === fehlt.length - 1 ? ' und ' : ', ')}
-                <button type="button" class="sn-link" onClick={() => onLektion(b.id)}>
-                  {b.nr}. {b.begriff}
-                </button>
-              </span>
-            ))}
-            .
+            <Icon name="info" groesse={14} />
+            <span>
+              Diese Lektion benutzt {fehlt.length === 1 ? 'einen Begriff, den' : 'Begriffe, die'} du noch nicht abgehakt hast. Am besten zuerst{' '}
+              {fehlt.map((b, i) => (
+                <span key={b.id}>
+                  {i > 0 && (i === fehlt.length - 1 ? ' und ' : ', ')}
+                  <button type="button" class="sn-link" onClick={() => onLektion(b.id)}>
+                    {b.nr}. {b.begriff}
+                  </button>
+                </span>
+              ))}
+              .
+            </span>
           </p>
         )}
       </header>

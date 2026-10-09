@@ -342,7 +342,12 @@ export const CHECKS = {
     },
     {
       frage: 'Was ist ein Router?',
-      optionen: ['ein Gerät, das verschiedene Netze verbindet und Pakete weiterleitet', 'die erste Adresse eines Netzes', 'ein Programm, das Namen in Adressen übersetzt', 'ein Gerät, das nur im eigenen Netz arbeitet'],
+      optionen: [
+        'ein Gerät, das verschiedene Netze verbindet und Pakete weiterleitet',
+        'die erste Adresse eines Netzes',
+        'ein Programm, das Namen in Adressen übersetzt',
+        'ein Gerät, das nur im eigenen Netz arbeitet',
+      ],
       richtig: 'ein Gerät, das verschiedene Netze verbindet und Pakete weiterleitet',
       tipp: 'Wozu braucht man ihn, wenn das Ziel in einem anderen Netz liegt?',
       erklaerung: 'Der Router verbindet Netze. Seine Adresse im eigenen Netz ist das Standardgateway.',

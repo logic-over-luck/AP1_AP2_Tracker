@@ -86,7 +86,6 @@
   gap: var(--s-2);
 }
 
-
 /* ---------- Lernweg ---------- */
 .sn-lernweg {
   --sn-pfeil: 32px;
@@ -1172,6 +1171,7 @@
 .sn-check {
   display: grid;
   gap: var(--s-4);
+  min-width: 0;
 }
 .sn-check__kopf {
   display: flex;
@@ -1227,6 +1227,7 @@
 }
 .sn-frage__text {
   min-width: 0;
+  overflow-wrap: anywhere;
   padding-top: 1px;
   font-weight: 600;
   color: var(--text);
@@ -1241,6 +1242,7 @@
   padding-left: 36px;
 }
 .sn-option {
+  overflow-wrap: anywhere;
   display: inline-flex;
   align-items: center;
   gap: var(--s-2);
@@ -1927,7 +1929,6 @@
   color: var(--text);
 }
 
-
 /* ---------- Schritte und Zwischenfragen ---------- */
 .sn-schritte {
   display: grid;
@@ -2353,7 +2354,6 @@
   color: var(--text-3);
 }
 
-
 /* ---------- Block 2: Subnetting ---------- */
 .sn-hostleiste {
   display: grid;
@@ -2662,6 +2662,614 @@
   color: var(--text-2);
 }
 
+/* ---------- Block 3: Einen PC ins Netz bringen ---------- */
+.sn-weg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sn-weg__glied {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sn-weg__pfeil {
+  color: var(--text-3);
+}
+.sn-weg--direkt .sn-weg__pfeil {
+  color: var(--akzent);
+}
+.sn-weg--gateway .sn-weg__pfeil {
+  color: var(--warn);
+}
+.sn-netzkasten {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  border-radius: var(--r-3);
+  border: 1px dashed var(--akzent-linie);
+}
+.sn-netzkasten__titel {
+  font-size: var(--t-s);
+  color: var(--akzent);
+}
+.sn-netzkasten__geraete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-zweinetze-router {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-3);
+  max-width: 820px;
+}
+.sn-router {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: var(--s-1);
+}
+.sn-router__bein {
+  font-size: var(--t-xs);
+  color: var(--info);
+}
+.sn-entscheid {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 680px;
+}
+.sn-entscheid__frage {
+  justify-self: center;
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-3);
+  background: var(--flaeche-2);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-entscheid__zweige {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+.sn-entscheid__zweig {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  text-align: center;
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sn-entscheid__zweig--ja {
+  background: var(--akzent-weich);
+}
+.sn-entscheid__zweig--nein {
+  background: color-mix(in srgb, var(--warn) 12%, transparent);
+}
+.sn-dialog__wahl {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--text-2);
+}
+.sn-dialog__radio {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-3);
+}
+.sn-dialog__radio--an {
+  border-color: var(--akzent);
+  background: radial-gradient(var(--akzent) 45%, transparent 50%);
+}
+.sn-dialog__feld--aus {
+  min-height: 26px;
+  opacity: 0.4;
+}
+.sn-liste-ok {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding-left: var(--s-5);
+  color: var(--text-2);
+}
+.sn-dhcp-paket {
+  justify-self: start;
+  display: grid;
+  gap: 2px;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sn-dhcp-paket__titel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-1);
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sn-dora {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 760px;
+}
+.sn-dora__zeile {
+  display: grid;
+  grid-template-columns: 24px 210px 110px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border-left: 3px solid var(--warn);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+}
+.sn-dora__zeile--zurueck {
+  border-left-color: var(--akzent);
+}
+.sn-dora__nr {
+  color: var(--text-3);
+}
+.sn-dora__weg {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-dora__name {
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-dora__text {
+  color: var(--text-2);
+}
+.sn-schalter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+  cursor: pointer;
+}
+.sn-schalter input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--akzent);
+}
+.sn-dhcp-ergebnis {
+  display: grid;
+  gap: var(--s-3);
+}
+.sn-regeln {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding-left: var(--s-5);
+  color: var(--text-2);
+}
+.sn-plan {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 780px;
+}
+.sn-plan__leiste {
+  position: relative;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sn-plan__teil {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.sn-plan__teil--frei {
+  background: var(--sn-host-flaeche);
+}
+.sn-plan__teil--dhcp {
+  background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--warn) 55%, var(--flaeche-2)) 0 6px, color-mix(in srgb, var(--warn) 30%, var(--flaeche-2)) 6px 12px);
+}
+.sn-plan__punkt {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: max(4px, 1.2%);
+}
+.sn-plan__punkt--belegt {
+  background: var(--text);
+}
+.sn-plan__punkt--res {
+  background: var(--sn-res);
+}
+.sn-plan__legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-4);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-plan__legende span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sn-plan__farbe {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.sn-plan__farbe--res {
+  background: var(--sn-res);
+}
+.sn-plan__farbe--belegt {
+  background: var(--text);
+}
+.sn-plan__farbe--dhcp {
+  background: color-mix(in srgb, var(--warn) 55%, var(--flaeche-2));
+}
+.sn-plan__farbe--frei {
+  background: var(--sn-host-flaeche);
+}
+.sn-skizze {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px dashed var(--akzent-linie);
+}
+.sn-skizze__netz {
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sn-skizze__geraete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-skizze__dhcp {
+  font-size: var(--t-s);
+  color: var(--warn);
+}
+.sn-schema__zeile--breit {
+  grid-template-columns: 190px minmax(0, 220px) minmax(0, 1fr);
+}
+.sn-schema__grund {
+  font-size: var(--t-s);
+}
+.sn-frage__eingabe--ohne {
+  padding-left: 0;
+}
+
+/* ---------- Block 4: MAC und ARP ---------- */
+.sn-vergleich-zeilen {
+  display: grid;
+  gap: 2px;
+  max-width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  overflow-wrap: anywhere;
+  color: var(--text-2);
+}
+.sn-hextafel {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  max-width: 640px;
+}
+.sn-hextafel__zelle {
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  padding: var(--s-1) 2px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-hextafel__zelle strong {
+  font-size: var(--t-l);
+  color: var(--text);
+}
+.sn-hextafel__zelle--buchstabe {
+  background: var(--akzent-weich);
+}
+.sn-hextafel__zelle--buchstabe strong {
+  color: var(--akzent);
+}
+.sn-nibbles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sn-nibbles__haelfte {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-nibbles__haelfte strong {
+  font-size: var(--t-xl);
+  color: var(--akzent);
+}
+.sn-nibbles__gleich {
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-mac {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--s-2);
+  max-width: 820px;
+}
+.sn-mac__byte {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  min-width: 0;
+  padding: var(--s-2) 2px;
+  border-radius: var(--r-2);
+}
+.sn-mac__byte strong {
+  font-size: var(--t-xl);
+}
+.sn-mac__byte--hersteller {
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+}
+.sn-mac__byte--hersteller strong {
+  color: var(--warn);
+}
+.sn-mac__byte--geraet {
+  background: var(--sn-host-weich);
+}
+.sn-mac__byte--geraet strong {
+  color: var(--sn-host);
+}
+.sn-mac .sn-okbits {
+  grid-template-columns: repeat(8, minmax(0, 11px));
+  gap: 1px;
+}
+.sn-mac .sn-okbits .sn-bit {
+  height: 16px;
+  font-size: 9px;
+}
+.sn-mac__nr {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-mac__teil {
+  grid-column: span 3;
+  padding-top: 2px;
+  text-align: center;
+  font-size: var(--t-s);
+  border-top: 2px solid currentColor;
+}
+.sn-mac__teil--hersteller {
+  color: var(--warn);
+}
+.sn-mac__teil--geraet {
+  color: var(--sn-host);
+}
+.sn-aufkleber {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px dashed var(--linie-3);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-luecke {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-luecke strong {
+  color: var(--text);
+}
+.sn-arp-bild {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+}
+.sn-arp-bild__ruf {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+.sn-arp-bild__blase {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-3);
+  border: 1px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+  font-size: var(--t-m);
+  color: var(--text);
+}
+.sn-arp-bild__blase--antwort {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.sn-arp-bild__alle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  padding: var(--s-2);
+  border-radius: var(--r-2);
+  border: 1px dashed var(--warn);
+}
+.sn-ablauf {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding: var(--s-3) var(--s-4) var(--s-3) var(--s-8);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+
+/* ---------- Block 5: IPv6 ---------- */
+.sn-v6 {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  max-width: 820px;
+}
+.sn-v6__block {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 0;
+  padding: var(--s-2) 2px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-3);
+  text-align: center;
+  color: var(--text);
+}
+button.sn-v6__block:hover {
+  border-color: var(--linie-3);
+}
+.sn-v6__block strong {
+  font-size: var(--t-l);
+}
+.sn-v6__block--netz {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sn-v6__block--host {
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+.sn-v6__block--aktiv {
+  border-color: var(--akzent);
+  box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.15);
+}
+.sn-v6__bits {
+  font-size: 9px;
+  color: var(--text-3);
+}
+.sn-v6__detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  color: var(--text-2);
+}
+.sn-v6__nibbles {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-v6__nibbles span {
+  display: inline-grid;
+  justify-items: center;
+  padding: 2px var(--s-2);
+  border-radius: 4px;
+  background: var(--flaeche-3);
+}
+.sn-v6__nibbles strong {
+  color: var(--akzent);
+}
+.sn-v6-teile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 820px;
+  text-align: center;
+  font-size: var(--t-s);
+}
+.sn-kuerzen {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-2) var(--s-4);
+  max-width: 820px;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sn-kuerzen__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-kuerzen__wert {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--t-n);
+  color: var(--text);
+}
+.sn-kuerzen__wert--ziel {
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sn-kuerzen__weg {
+  color: var(--sn-res);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+.sn-kuerzen__neu {
+  color: var(--warn);
+}
+.sn-laengen {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  max-width: 640px;
+}
+.sn-laengen__balken {
+  height: 16px;
+  border-radius: 4px;
+  background: var(--flaeche-4);
+}
+.sn-laengen__balken--v6 {
+  background: var(--akzent);
+}
+.sn-regel1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-regel1__paar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--s-1) var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-regel1__paar strong {
+  color: var(--akzent);
+}
+
 @media (max-width: 640px) {
   .sn-raeume {
     gap: var(--s-2);
@@ -2851,5 +3459,67 @@
   .sn-und {
     grid-template-columns: minmax(0, 1fr);
     gap: 4px;
+  }
+  .sn-zweinetze-router {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sn-router {
+    justify-self: center;
+  }
+  .sn-entscheid__zweige {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sn-dora__zeile {
+    grid-template-columns: 20px minmax(0, 1fr);
+  }
+  .sn-dora__name,
+  .sn-dora__text {
+    grid-column: 2;
+  }
+  .sn-schema__zeile--breit {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .sn-schema__zeile--breit .feld {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .sn-hextafel {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .sn-mac {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .sn-mac__teil {
+    display: none;
+  }
+  .sn-v6 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .sn-v6-teile {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: left;
+  }
+  .sn-kuerzen {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .sn-kuerzen__name {
+    margin-top: var(--s-2);
+  }
+  .sn-konsole__text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: var(--t-xs);
+  }
+  .sn-tabelle {
+    font-size: var(--t-s);
+  }
+  .sn-tabelle th,
+  .sn-tabelle td {
+    padding: 6px;
+  }
+  .sn-tabelle__extra {
+    display: none;
   }
 }

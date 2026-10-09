@@ -73,8 +73,7 @@ export function Lernweg({ fortschritt, onLektion }) {
           )}
         </div>
       </section>
-      {breite > 0 &&
-        BLOECKE.map((b, i) => <Block key={b.id} block={b} nr={i + 1} verstanden={verstanden} breite={breite} onLektion={onLektion} />)}
+      {breite > 0 && BLOECKE.map((b, i) => <Block key={b.id} block={b} nr={i + 1} verstanden={verstanden} breite={breite} onLektion={onLektion} />)}
     </div>
   );
 }

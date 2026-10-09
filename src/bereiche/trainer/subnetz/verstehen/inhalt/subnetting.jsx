@@ -108,8 +108,8 @@ function NetzgroesseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Wie viele Adressen hat ein Netz? Alle Geräte im Netz haben dieselben Netzbits – die stehen fest. Unterscheiden können sie sich nur in den <Host>Hostbits</Host>. Jede
-                andere Kombination der Hostbits ist eine andere Adresse. Die Frage ist also: <strong>Wie viele Kombinationen haben die Hostbits?</strong>
+                Wie viele Adressen hat ein Netz? Alle Geräte im Netz haben dieselben Netzbits – die stehen fest. Unterscheiden können sie sich nur in den <Host>Hostbits</Host>.
+                Jede andere Kombination der Hostbits ist eine andere Adresse. Die Frage ist also: <strong>Wie viele Kombinationen haben die Hostbits?</strong>
               </Absatz>
               <Legende />
               <Bitband zahl={zahl} praefix={26} unter={['fest', 'fest', 'fest', '2 fest · 6 frei']} />
@@ -138,7 +138,12 @@ function NetzgroesseErklaerung() {
               <Absatz>
                 Jedes zusätzliche Bit <strong>verdoppelt</strong> die Anzahl: Jede bisherige Kombination gibt es einmal mit 0 und einmal mit 1 davor.
               </Absatz>
-              <Raten frage="Wie viele Kombinationen haben 4 Bits?" optionen={[4, 8, 16, 32]} richtig={16} hinweis={(v) => (v === 4 ? 'Nicht 4 × 1 – sondern verdoppeln: 3 Bits haben 8.' : v === 8 ? '8 sind es bei 3 Bits. Ein Bit mehr verdoppelt.' : 'Das wären 5 Bits.')}>
+              <Raten
+                frage="Wie viele Kombinationen haben 4 Bits?"
+                optionen={[4, 8, 16, 32]}
+                richtig={16}
+                hinweis={(v) => (v === 4 ? 'Nicht 4 × 1 – sondern verdoppeln: 3 Bits haben 8.' : v === 8 ? '8 sind es bei 3 Bits. Ein Bit mehr verdoppelt.' : 'Das wären 5 Bits.')}
+              >
                 <Formel>
                   2 · 2 · 2 · 2 = {hoch(2, 4)} = <strong>16</strong>
                 </Formel>
@@ -150,15 +155,11 @@ function NetzgroesseErklaerung() {
           titel: 'Die Formel',
           inhalt: (
             <>
-              <Absatz>
-                Bei h Hostbits gibt es also 2 · 2 · … · 2 (h-mal) = {hoch(2, 'h')} Adressen. Die Hostbits sind 32 − Präfix (Lektion 4). Für /26:
-              </Absatz>
+              <Absatz>Bei h Hostbits gibt es also 2 · 2 · … · 2 (h-mal) = {hoch(2, 'h')} Adressen. Die Hostbits sind 32 − Präfix (Lektion 4). Für /26:</Absatz>
               <Formel>
                 32 − 26 = <Host>6 Hostbits</Host> → {hoch(2, 6)} = 2 · 2 · 2 · 2 · 2 · 2 = <strong>64 Adressen</strong>
               </Formel>
-              <Formel>
-                Adressen = {hoch(2, '(32 − Präfix)')}
-              </Formel>
+              <Formel>Adressen = {hoch(2, '(32 − Präfix)')}</Formel>
             </>
           ),
         },
@@ -203,7 +204,9 @@ function NetzgroesseErklaerung() {
                 frage="Ein /24 hat 256 Adressen. Wie viele hat ein /23?"
                 optionen={[23, 255, 512, 1024]}
                 richtig={512}
-                hinweis={(v) => (v === 1024 ? '1024 wäre /22 – zwei Bits mehr.' : v === 23 ? '23 ist der Präfix, nicht die Größe. Hostbits: 32 − 23 = 9.' : 'Ein Hostbit mehr verdoppelt.')}
+                hinweis={(v) =>
+                  v === 1024 ? '1024 wäre /22 – zwei Bits mehr.' : v === 23 ? '23 ist der Präfix, nicht die Größe. Hostbits: 32 − 23 = 9.' : 'Ein Hostbit mehr verdoppelt.'
+                }
               >
                 <Formel>
                   32 − 23 = 9 Hostbits → {hoch(2, 9)} = <strong>512 Adressen</strong> · /16 → {hoch(2, 16)} = {tausend(65536)} · /8 → {hoch(2, 24)} = {tausend(2 ** 24)}
@@ -237,7 +240,9 @@ function NetzgroesseAusprobieren() {
       ) : (
         <div class="sn-raster sn-raster--gross" aria-label={`${n / 256} mal 256 Adressen`}>
           {Array.from({ length: Math.min(n / 256, 64) }, (_, i) => (
-            <span key={i} class="sn-raster__stueck">256</span>
+            <span key={i} class="sn-raster__stueck">
+              256
+            </span>
           ))}
           {n / 256 > 64 && <span class="sn-raster__mehr">… insgesamt {tausend(n / 256)} Stücke zu je 256</span>}
         </div>
@@ -261,8 +266,8 @@ function BlockgroesseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Nimm alle Adressen von 192.168.1.0 bis 192.168.1.255 – ein /24 mit 256 Adressen. Ein Betrieb will daraus kleinere Netze machen, zum Beispiel /26-Netze mit je 64 Adressen
-                (Lektion 6): eins für das Büro, eins für das Lager …
+                Nimm alle Adressen von 192.168.1.0 bis 192.168.1.255 – ein /24 mit 256 Adressen. Ein Betrieb will daraus kleinere Netze machen, zum Beispiel /26-Netze mit je 64
+                Adressen (Lektion 6): eins für das Büro, eins für das Lager …
               </Absatz>
               <Raten frage="Wie viele /26-Netze passen in die 256 Adressen?" optionen={[2, 4, 8, 64]} richtig={4} hinweis={() => '256 Adressen geteilt durch 64 Adressen je Netz.'}>
                 <Formel>
@@ -277,12 +282,13 @@ function BlockgroesseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Die vier Netze liegen <strong>lückenlos hintereinander</strong>, wie gleich große Zimmer in einem Flur. Hier der Zahlenstrahl des letzten Oktetts, geschnitten in die vier
-                Netze:
+                Die vier Netze liegen <strong>lückenlos hintereinander</strong>, wie gleich große Zimmer in einem Flur. Hier der Zahlenstrahl des letzten Oktetts, geschnitten in
+                die vier Netze:
               </Absatz>
               <Zahlenstrahl block={64} lupe={false} />
               <Absatz>
-                Die Größe eines solchen Stücks heißt <strong>Blockgröße</strong>. Bei /26 ist sie 64: Die Netze beginnen bei <strong>0, 64, 128 und 192</strong> – nie irgendwo dazwischen.
+                Die Größe eines solchen Stücks heißt <strong>Blockgröße</strong>. Bei /26 ist sie 64: Die Netze beginnen bei <strong>0, 64, 128 und 192</strong> – nie irgendwo
+                dazwischen.
               </Absatz>
             </>
           ),
@@ -292,8 +298,8 @@ function BlockgroesseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Bei /26 gehören im 4. Oktett die ersten <Netz>2 Bits</Netz> zum Netz, die anderen <Host>6 Bits</Host> zum Host. Die 2 Netzbits haben 4 Kombinationen – das sind die 4
-                Netze. Innerhalb eines Netzes zählen nur die 6 Hostbits von 000000 bis 111111:
+                Bei /26 gehören im 4. Oktett die ersten <Netz>2 Bits</Netz> zum Netz, die anderen <Host>6 Bits</Host> zum Host. Die 2 Netzbits haben 4 Kombinationen – das sind die
+                4 Netze. Innerhalb eines Netzes zählen nur die 6 Hostbits von 000000 bis 111111:
               </Absatz>
               <div class="sn-tabelle-huelle">
                 <table class="sn-tabelle">
@@ -341,7 +347,10 @@ function BlockgroesseErklaerung() {
               <div class="sn-blockgr">
                 <div class="sn-blockgr__reihe">
                   {STELLENWERTE.map((g, j) => (
-                    <span key={j} class={`sn-blockgr__zelle mono ${j < 2 ? 'sn-blockgr__zelle--netz' : ''} ${j === 1 ? 'sn-blockgr__zelle--letzte' : ''} ${j === 2 ? 'sn-blockgr__zelle--grenze' : ''}`}>
+                    <span
+                      key={j}
+                      class={`sn-blockgr__zelle mono ${j < 2 ? 'sn-blockgr__zelle--netz' : ''} ${j === 1 ? 'sn-blockgr__zelle--letzte' : ''} ${j === 2 ? 'sn-blockgr__zelle--grenze' : ''}`}
+                    >
                       {g}
                     </span>
                   ))}
@@ -390,7 +399,13 @@ function BlockgroesseErklaerung() {
                 optionen={['0, 14, 28, 42 …', '0, 16, 32, 48 …', '0, 28, 56, 84 …', '1, 17, 33, 49 …']}
                 richtig="0, 16, 32, 48 …"
                 format={(v) => v}
-                hinweis={(v) => (v.startsWith('1') ? 'Netze beginnen immer bei 0, nicht bei 1.' : v.startsWith('0, 28') ? '28 ist der Präfix. Die Blockgröße ist 256 − 240.' : '14 ist die Zahl der Hosts. Die Blockgröße ist 256 − 240.')}
+                hinweis={(v) =>
+                  v.startsWith('1')
+                    ? 'Netze beginnen immer bei 0, nicht bei 1.'
+                    : v.startsWith('0, 28')
+                      ? '28 ist der Präfix. Die Blockgröße ist 256 − 240.'
+                      : '14 ist die Zahl der Hosts. Die Blockgröße ist 256 − 240.'
+                }
               >
                 <Formel>
                   /28 → Maske 240 → 256 − 240 = <strong>16</strong> → 0, 16, 32, 48, 64 …
@@ -459,8 +474,8 @@ function NetzadresseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Unser Beispiel: <strong class="mono">192.168.1.100/26</strong>. Blockgröße 64 (Lektion 7) – die Netze im 4. Oktett sind 0–63, 64–127, 128–191, 192–255. Die 100 liegt in
-                genau einem davon. Die Lupe zeigt den Ausschnitt um die 100:
+                Unser Beispiel: <strong class="mono">192.168.1.100/26</strong>. Blockgröße 64 (Lektion 7) – die Netze im 4. Oktett sind 0–63, 64–127, 128–191, 192–255. Die 100
+                liegt in genau einem davon. Die Lupe zeigt den Ausschnitt um die 100:
               </Absatz>
               <Zahlenstrahl block={64} werte={[100]} />
               <Absatz>
@@ -480,8 +495,8 @@ function NetzadresseErklaerung() {
                   100 : 64 = 1 Rest 36 → 1 × 64 = <strong>64</strong>
                 </Formel>
                 <Absatz>
-                  Rechentrick: Die Zahl durch die Blockgröße teilen, den Rest wegwerfen, wieder mal Blockgröße. Das ergibt das <strong>größte Vielfache der Blockgröße, das nicht größer
-                  ist</strong> als die Zahl.
+                  Rechentrick: Die Zahl durch die Blockgröße teilen, den Rest wegwerfen, wieder mal Blockgröße. Das ergibt das{' '}
+                  <strong>größte Vielfache der Blockgröße, das nicht größer ist</strong> als die Zahl.
                 </Absatz>
               </Raten>
             </>
@@ -529,8 +544,8 @@ function NetzadresseErklaerung() {
           titel: 'Warum bekommt sie kein Gerät?',
           inhalt: (
             <Absatz>
-              Die Netzadresse steht für das <strong>ganze Netz</strong> – in Netzplänen, Skizzen und Tabellen schreibt man „Netz 192.168.1.64/26“. Bekäme ein Gerät diese Adresse, wäre
-              nicht mehr klar, ob das Netz oder das Gerät gemeint ist. Darum ist sie <Res>reserviert</Res>.
+              Die Netzadresse steht für das <strong>ganze Netz</strong> – in Netzplänen, Skizzen und Tabellen schreibt man „Netz 192.168.1.64/26“. Bekäme ein Gerät diese Adresse,
+              wäre nicht mehr klar, ob das Netz oder das Gerät gemeint ist. Darum ist sie <Res>reserviert</Res>.
             </Absatz>
           ),
         },
@@ -598,8 +613,8 @@ function BroadcastErklaerung() {
                   64 + 64 = 128 ist schon der nächste Block → 128 − 1 = <strong>127</strong>
                 </Formel>
                 <Absatz>
-                  Das ist der <strong>häufigste Fehler</strong> beim Subnetting: Anfang + Blockgröße ist schon der Anfang des nächsten Blocks. Das Ende liegt immer eins davor. Probe: Von 64
-                  bis 127 sind es 127 − 64 + 1 = 64 Zahlen.
+                  Das ist der <strong>häufigste Fehler</strong> beim Subnetting: Anfang + Blockgröße ist schon der Anfang des nächsten Blocks. Das Ende liegt immer eins davor.
+                  Probe: Von 64 bis 127 sind es 127 − 64 + 1 = 64 Zahlen.
                 </Absatz>
               </Raten>
             </>
@@ -643,8 +658,8 @@ function BroadcastErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                „Broadcast“ heißt <strong>Rundruf</strong>. Ein Paket an die Broadcastadresse geht an <strong>alle Geräte im Netz</strong> gleichzeitig. Das braucht man, wenn ein Gerät
-                jemanden sucht, ohne seine Adresse zu kennen – etwa „Gibt es hier einen Server, der mir eine Adresse gibt?“ (DHCP, Lektion 17).
+                „Broadcast“ heißt <strong>Rundruf</strong>. Ein Paket an die Broadcastadresse geht an <strong>alle Geräte im Netz</strong> gleichzeitig. Das braucht man, wenn ein
+                Gerät jemanden sucht, ohne seine Adresse zu kennen – etwa „Gibt es hier einen Server, der mir eine Adresse gibt?“ (DHCP, Lektion 17).
               </Absatz>
               <Hinweis icon="info">
                 Weil ein Paket an diese Adresse bei allen ankommt, darf sie kein einzelnes Gerät bekommen – sie ist <Res>reserviert</Res>, genau wie die Netzadresse.
@@ -696,8 +711,8 @@ function HostbereichErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Netzadresse und Broadcastadresse bilden den <Res>Rahmen</Res> eines Netzes. Alles dazwischen ist der <Host>Hostbereich</Host>: die Adressen, die Geräte bekommen können.
-                Ganz klein am Beispiel <strong class="mono">192.168.1.64/29</strong> (Blockgröße 8):
+                Netzadresse und Broadcastadresse bilden den <Res>Rahmen</Res> eines Netzes. Alles dazwischen ist der <Host>Hostbereich</Host>: die Adressen, die Geräte bekommen
+                können. Ganz klein am Beispiel <strong class="mono">192.168.1.64/29</strong> (Blockgröße 8):
               </Absatz>
               <HostLeiste start={64} block={8} prefix="192.168.1." />
               <Legende teile={['host', 'res']} />
@@ -720,7 +735,9 @@ function HostbereichErklaerung() {
                 frage="Netz 192.168.1.64/26 (Broadcast .127). Welche ist die letzte nutzbare Adresse?"
                 optionen={['192.168.1.125', '192.168.1.126', '192.168.1.127', '192.168.1.128']}
                 richtig="192.168.1.126"
-                hinweis={(v) => (v.endsWith('127') ? '.127 ist der Broadcast – den bekommt kein Gerät.' : v.endsWith('128') ? '.128 gehört schon zum nächsten Netz.' : '.125 ist die vorletzte.')}
+                hinweis={(v) =>
+                  v.endsWith('127') ? '.127 ist der Broadcast – den bekommt kein Gerät.' : v.endsWith('128') ? '.128 gehört schon zum nächsten Netz.' : '.125 ist die vorletzte.'
+                }
               >
                 <HostLeiste start={64} block={64} prefix="192.168.1." />
                 <Formel>
@@ -735,8 +752,8 @@ function HostbereichErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                In der Prüfung war schon nach der <strong>vorletzten nutzbaren Adresse</strong> gefragt, weil die letzte bereits vergeben war (für den Router – das kommt in Lektion 14).
-                Einfach noch eins weiter zurück:
+                In der Prüfung war schon nach der <strong>vorletzten nutzbaren Adresse</strong> gefragt, weil die letzte bereits vergeben war (für den Router – das kommt in Lektion
+                14). Einfach noch eins weiter zurück:
               </Absatz>
               <HostLeiste start={64} block={64} prefix="192.168.1." vorletzte />
               <Formel>
@@ -750,10 +767,7 @@ function HostbereichErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Alle Adressen minus die zwei reservierten. Mit der Formel aus Lektion 6: <strong>
-                  Hosts = {hoch(2, 'h')} − 2
-                </strong>
-                .
+                Alle Adressen minus die zwei reservierten. Mit der Formel aus Lektion 6: <strong>Hosts = {hoch(2, 'h')} − 2</strong>.
               </Absatz>
               <div class="sn-tabelle-huelle">
                 <table class="sn-tabelle">
@@ -778,8 +792,8 @@ function HostbereichErklaerung() {
                 </table>
               </div>
               <Hinweis icon="info">
-                Sonderfälle: /31 hat nur 2 Adressen und klassisch gerechnet keinen Host (in der Praxis nutzt man es für Verbindungen zwischen genau zwei Routern), /32 ist eine einzelne
-                Adresse. In der AP1 rechnest du mit /30 und kleiner.
+                Sonderfälle: /31 hat nur 2 Adressen und klassisch gerechnet keinen Host (in der Praxis nutzt man es für Verbindungen zwischen genau zwei Routern), /32 ist eine
+                einzelne Adresse. In der AP1 rechnest du mit /30 und kleiner.
               </Hinweis>
             </>
           ),
@@ -834,8 +848,8 @@ function GleichErklaerung() {
           titel: 'Die Frage vor jedem Senden',
           inhalt: (
             <Absatz>
-              Bevor ein Gerät ein Paket losschickt, prüft es: <strong>Liegt das Ziel in meinem Netz?</strong> Wenn ja, schickt es das Paket direkt dorthin. Wenn nein, muss das Paket aus
-              dem Netz hinaus – das geht nicht direkt (wie, zeigt Lektion 14). Diese Prüfung musst du auch in der Prüfung können.
+              Bevor ein Gerät ein Paket losschickt, prüft es: <strong>Liegt das Ziel in meinem Netz?</strong> Wenn ja, schickt es das Paket direkt dorthin. Wenn nein, muss das
+              Paket aus dem Netz hinaus – das geht nicht direkt (wie, zeigt Lektion 14). Diese Prüfung musst du auch in der Prüfung können.
             </Absatz>
           ),
         },
@@ -861,7 +875,9 @@ function GleichErklaerung() {
           inhalt: (
             <>
               <ol class="sn-verfahren">
-                <li>Für beide Adressen mit <strong>derselben Subnetzmaske</strong> die Netzadresse bestimmen (Lektion 8).</li>
+                <li>
+                  Für beide Adressen mit <strong>derselben Subnetzmaske</strong> die Netzadresse bestimmen (Lektion 8).
+                </li>
                 <li>Netzadressen vergleichen: gleich → gleiches Netz, verschieden → verschiedene Netze.</li>
               </ol>
               <Ergebnis
@@ -895,7 +911,8 @@ function GleichErklaerung() {
           titel: 'Die Falle',
           inhalt: (
             <Hinweis icon="triangle-alert">
-              Nur bei <strong>/24</strong> reicht es, die ersten drei Zahlen zu vergleichen. Bei jedem anderen Präfix muss man die Netzadressen ausrechnen – „sieht ähnlich aus“ zählt nicht.
+              Nur bei <strong>/24</strong> reicht es, die ersten drei Zahlen zu vergleichen. Bei jedem anderen Präfix muss man die Netzadressen ausrechnen – „sieht ähnlich aus“
+              zählt nicht.
             </Hinweis>
           ),
         },
@@ -972,8 +989,8 @@ function Oktett3Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Bisher lag die Grenze immer im 4. Oktett (/24 bis /30). In Firmen gibt es aber auch Netze mit <strong>mehr als 256 Adressen</strong>, zum Beispiel /23, /22 oder /20. Dann
-                liegt die Grenze <strong>im 3. Oktett</strong> – und das 4. Oktett gehört ganz zum Host. Unser Beispiel: <strong class="mono">10.4.7.20/23</strong>.
+                Bisher lag die Grenze immer im 4. Oktett (/24 bis /30). In Firmen gibt es aber auch Netze mit <strong>mehr als 256 Adressen</strong>, zum Beispiel /23, /22 oder
+                /20. Dann liegt die Grenze <strong>im 3. Oktett</strong> – und das 4. Oktett gehört ganz zum Host. Unser Beispiel: <strong class="mono">10.4.7.20/23</strong>.
               </Absatz>
               <Legende />
               <Bitband zahl={ipZuZahl('10.4.7.20')} praefix={23} unter={['8 Netz', '8 Netz', '7 Netz · 1 Host', '8 Host']} />
@@ -985,8 +1002,8 @@ function Oktett3Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Die Subnetzmaske von /23 ist <strong class="mono">255.255.254.0</strong>. Das <strong>entscheidende Oktett</strong> ist das, in dem die Grenze liegt – du erkennst es
-                daran, dass es das <strong>erste Oktett der Subnetzmaske ist, das nicht 255 ist</strong>.
+                Die Subnetzmaske von /23 ist <strong class="mono">255.255.254.0</strong>. Das <strong>entscheidende Oktett</strong> ist das, in dem die Grenze liegt – du erkennst
+                es daran, dass es das <strong>erste Oktett der Subnetzmaske ist, das nicht 255 ist</strong>.
               </Absatz>
               <Raten
                 frage="Welches Oktett ist bei 255.255.254.0 das entscheidende?"
@@ -1033,7 +1050,12 @@ function Oktett3Erklaerung() {
           inhalt: (
             <>
               <Zusammenbau titel="Netzadresse" ip="10.4.6.0" rollen={['netz', 'netz', 'rechnen', 'host']} rezept="10.4 abschreiben · 3. Oktett: Blockanfang 6 · 4. Oktett: 0" />
-              <Zusammenbau titel="Broadcastadresse" ip="10.4.7.255" rollen={['netz', 'netz', 'rechnen', 'host']} rezept="10.4 abschreiben · 3. Oktett: Blockende 7 · 4. Oktett: 255" />
+              <Zusammenbau
+                titel="Broadcastadresse"
+                ip="10.4.7.255"
+                rollen={['netz', 'netz', 'rechnen', 'host']}
+                rezept="10.4 abschreiben · 3. Oktett: Blockende 7 · 4. Oktett: 255"
+              />
               <Ergebnis
                 zeilen={[
                   { name: 'Erste nutzbare', wert: '10.4.6.1', ton: 'host' },
@@ -1060,12 +1082,12 @@ function Oktett3Erklaerung() {
                 )}
               </div>
               <Absatz>
-                Darum liegen <strong class="mono">10.4.6.255</strong> und <strong class="mono">10.4.7.0</strong> <strong>mitten im Netz</strong> – es sind ganz normale Host-Adressen, keine
-                Broadcast- oder Netzadressen! Reserviert sind nur der Anfang 10.4.6.0 und das Ende 10.4.7.255.
+                Darum liegen <strong class="mono">10.4.6.255</strong> und <strong class="mono">10.4.7.0</strong> <strong>mitten im Netz</strong> – es sind ganz normale
+                Host-Adressen, keine Broadcast- oder Netzadressen! Reserviert sind nur der Anfang 10.4.6.0 und das Ende 10.4.7.255.
               </Absatz>
               <Hinweis icon="triangle-alert">
-                Achtung: Die Blockgröße im 3. Oktett (2) ist <strong>nicht</strong> die Netzgröße. Die Netzgröße rechnest du weiter mit den Hostbits: 32 − 23 = 9 → {hoch(2, 9)} = 512
-                Adressen, <strong>510 Hosts</strong>.
+                Achtung: Die Blockgröße im 3. Oktett (2) ist <strong>nicht</strong> die Netzgröße. Die Netzgröße rechnest du weiter mit den Hostbits: 32 − 23 = 9 → {hoch(2, 9)} =
+                512 Adressen, <strong>510 Hosts</strong>.
               </Hinweis>
             </>
           ),
@@ -1099,7 +1121,9 @@ function Oktett3Ausprobieren() {
       <OktettRollen ip={ip} praefix={praefix} />
       {z.netzBitsImOktett > 0 ? (
         <>
-          <span class="sn-beschrift">Entscheidendes Oktett: das {z.index + 1}. – Blockgröße 256 − {z.maskenwert} = {z.block}</span>
+          <span class="sn-beschrift">
+            Entscheidendes Oktett: das {z.index + 1}. – Blockgröße 256 − {z.maskenwert} = {z.block}
+          </span>
           <Zahlenstrahl block={z.block} werte={[z.wert]} aktiv={[z.start]} />
         </>
       ) : (
@@ -1192,8 +1216,12 @@ function RechenwegErklaerung() {
             titel: 'Gegenprobe',
             inhalt: (
               <Fakten>
-                <Fakt titel="Netzadresse teilbar?">Im entscheidenden Oktett muss die Netzadresse durch die Blockgröße teilbar sein: {r.start} : {r.block} = {r.start / r.block} ✓</Fakt>
-                <Fakt titel="Broadcast + 1 teilbar?">Broadcast + 1 ist der nächste Netzanfang: {r.ende} + 1 = {r.ende + 1} = {(r.ende + 1) / r.block} × {r.block} ✓</Fakt>
+                <Fakt titel="Netzadresse teilbar?">
+                  Im entscheidenden Oktett muss die Netzadresse durch die Blockgröße teilbar sein: {r.start} : {r.block} = {r.start / r.block} ✓
+                </Fakt>
+                <Fakt titel="Broadcast + 1 teilbar?">
+                  Broadcast + 1 ist der nächste Netzanfang: {r.ende} + 1 = {r.ende + 1} = {(r.ende + 1) / r.block} × {r.block} ✓
+                </Fakt>
                 <Fakt titel="Liegt die Adresse drin?">
                   {r.start} ≤ {r.wert} ≤ {r.ende} ✓
                 </Fakt>
@@ -1237,7 +1265,11 @@ function RechenwegAusprobieren() {
   return (
     <Werkbank>
       <p class="sn-aufgabe">
-        Jetzt du: Ein Rechner hat die Adresse <strong class="mono">{aufgabe.ip}/{aufgabe.praefix}</strong>. Fülle das Schema von oben nach unten aus.
+        Jetzt du: Ein Rechner hat die Adresse{' '}
+        <strong class="mono">
+          {aufgabe.ip}/{aufgabe.praefix}
+        </strong>
+        . Fülle das Schema von oben nach unten aus.
       </p>
       <form
         class="sn-schema"

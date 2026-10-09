@@ -18,7 +18,9 @@ export function Check({ fragen, schonVerstanden, onFertig }) {
   return (
     <div class="sn-check">
       <p class="sn-check__kopf">
-        {schonVerstanden ? 'Du hast diese Lektion schon verstanden – der Check ist zum Wiederholen.' : `${fragen.length} kurze Fragen. Sind alle richtig, gilt die Lektion als verstanden.`}
+        {schonVerstanden
+          ? 'Du hast diese Lektion schon verstanden – der Check ist zum Wiederholen.'
+          : `${fragen.length} kurze Fragen. Sind alle richtig, gilt die Lektion als verstanden.`}
         <span class="sn-check__stand mono">
           {anzahl}/{fragen.length}
         </span>

@@ -156,10 +156,11 @@ const L = [
     leitfrage: 'Können zwei Geräte direkt miteinander reden?',
     braucht: ['netzadresse'],
     kompetenzen: ['AP1-6-2-2-K6'],
-    definition:
-      'Zwei IPv4-Adressen liegen **im selben Subnetz**, wenn sie mit derselben Subnetzmaske dieselbe Netzadresse ergeben. Nur dann erreichen sich die Geräte direkt.',
+    definition: 'Zwei IPv4-Adressen liegen **im selben Subnetz**, wenn sie mit derselben Subnetzmaske dieselbe Netzadresse ergeben. Nur dann erreichen sich die Geräte direkt.',
     merksatz: 'Nicht auf die Zahlen schauen – die Netzadressen vergleichen.',
-    fehler: [{ falsch: '192.168.1.60/26 und 192.168.1.70/26 – beide 192.168.1.x, also gleiches Netz.', richtig: '60 liegt im Block 0–63, 70 im Block 64–127: verschiedene Netze.' }],
+    fehler: [
+      { falsch: '192.168.1.60/26 und 192.168.1.70/26 – beide 192.168.1.x, also gleiches Netz.', richtig: '60 liegt im Block 0–63, 70 im Block 64–127: verschiedene Netze.' },
+    ],
     uebung: 'gleich',
   },
   {
@@ -185,7 +186,12 @@ const L = [
     definition:
       'Eine Subnetz-Aufgabe löst man immer in derselben Reihenfolge: **1.** Subnetzmaske · **2.** entscheidendes Oktett und Blockgröße · **3.** Netzadresse · **4.** Broadcastadresse · **5.** erste und letzte Hostadresse · **6.** Anzahl der Hosts.',
     merksatz: 'Erst die Blockgröße, dann ist alles andere Abschreiben, Abrunden und ±1.',
-    fehler: [{ falsch: 'Die Netzadresse gleich raten, z. B. „100 → .100“ oder „irgendwas mit .0“.', richtig: 'Immer zuerst die Blockgröße. Die Netzadresse ist ein Vielfaches davon – das lässt sich am Ende gegenprüfen.' }],
+    fehler: [
+      {
+        falsch: 'Die Netzadresse gleich raten, z. B. „100 → .100“ oder „irgendwas mit .0“.',
+        richtig: 'Immer zuerst die Blockgröße. Die Netzadresse ist ein Vielfaches davon – das lässt sich am Ende gegenprüfen.',
+      },
+    ],
     uebung: 'analyse',
   },
 
@@ -239,7 +245,12 @@ const L = [
     definition:
       '**DHCP** (Dynamic Host Configuration Protocol) verteilt Netzwerkeinstellungen automatisch: Ein DHCP-Server teilt einem Client **IP-Adresse, Subnetzmaske, Standardgateway und DNS-Server** aus einem festgelegten Adressbereich zu. Erreicht der Client keinen DHCP-Server, gibt er sich selbst eine Adresse aus **169.254.x.x**.',
     merksatz: '169.254.x.x heißt: Kein DHCP-Server geantwortet – Kabel, WLAN und Server prüfen.',
-    fehler: [{ falsch: '169.254.12.34 ist eine normale Adresse vom Router.', richtig: 'Die hat sich der PC selbst gegeben, weil kein DHCP-Server geantwortet hat. Ins Internet kommt er so nicht.' }],
+    fehler: [
+      {
+        falsch: '169.254.12.34 ist eine normale Adresse vom Router.',
+        richtig: 'Die hat sich der PC selbst gegeben, weil kein DHCP-Server geantwortet hat. Ins Internet kommt er so nicht.',
+      },
+    ],
     uebung: 'mac',
   },
   {
@@ -252,7 +263,12 @@ const L = [
     definition:
       'Eine **statische Adresse** wird von Hand fest eingetragen. Sinnvoll ist sie für Geräte, die immer unter derselben Adresse erreichbar sein müssen (Server, Drucker, Router). Sie muss **im richtigen Netz** liegen, **frei** sein, darf **weder Netz- noch Broadcastadresse** sein und muss **außerhalb des DHCP-Bereichs** liegen.',
     merksatz: 'Richtiges Netz · nicht Netz/Broadcast · nicht vergeben · nicht im DHCP-Bereich.',
-    fehler: [{ falsch: 'DHCP vergibt .100 bis .200, der Drucker bekommt fest .150.', richtig: 'Der DHCP-Server kann .150 auch einem anderen Gerät geben – Adresskonflikt. Eine Adresse außerhalb nehmen.' }],
+    fehler: [
+      {
+        falsch: 'DHCP vergibt .100 bis .200, der Drucker bekommt fest .150.',
+        richtig: 'Der DHCP-Server kann .150 auch einem anderen Gerät geben – Adresskonflikt. Eine Adresse außerhalb nehmen.',
+      },
+    ],
     uebung: 'konfig',
   },
 
@@ -293,7 +309,12 @@ const L = [
     definition:
       '**ARP** (Address Resolution Protocol) ermittelt zu einer IP-Adresse im lokalen Netz die zugehörige MAC-Adresse: Der PC fragt per Broadcast alle „Wer hat diese IP-Adresse?“, das Gerät mit dieser Adresse antwortet mit seiner MAC-Adresse. Die Zuordnung landet im **ARP-Cache**; `arp -a` zeigt ihn an.',
     merksatz: 'ARP: IP-Adresse bekannt → MAC-Adresse gesucht. Für fremde Netze fragt der PC nach der MAC-Adresse des Gateways.',
-    fehler: [{ falsch: 'Für einen Server im Internet fragt der PC per ARP nach dessen MAC-Adresse.', richtig: 'ARP gilt nur im lokalen Netz. Der PC fragt nach der MAC-Adresse seines Standardgateways.' }],
+    fehler: [
+      {
+        falsch: 'Für einen Server im Internet fragt der PC per ARP nach dessen MAC-Adresse.',
+        richtig: 'ARP gilt nur im lokalen Netz. Der PC fragt nach der MAC-Adresse seines Standardgateways.',
+      },
+    ],
     uebung: 'mac',
   },
 

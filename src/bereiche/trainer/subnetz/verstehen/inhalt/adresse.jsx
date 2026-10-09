@@ -61,7 +61,8 @@ function IpErklaerung() {
                 <Geraet icon="printer" name="Drucker" ip="192.168.1.20" />
               </div>
               <Hinweis icon="info">
-                Jedes Gerät, das im Netz sendet oder empfängt, braucht eine IP-Adresse. Zwei Geräte im selben Netz dürfen nie dieselbe Adresse haben – sonst weiß niemand, wer gemeint ist.
+                Jedes Gerät, das im Netz sendet oder empfängt, braucht eine IP-Adresse. Zwei Geräte im selben Netz dürfen nie dieselbe Adresse haben – sonst weiß niemand, wer
+                gemeint ist.
               </Hinweis>
             </>
           ),
@@ -71,8 +72,8 @@ function IpErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Hier geht es um <strong>IPv4</strong>, die Version 4 – die Adressen, die du überall siehst. Eine IPv4-Adresse besteht aus <strong>vier Zahlen, getrennt durch Punkte</strong>.
-                Unter Windows zeigt der Befehl <code>ipconfig</code> die Adresse deines PCs:
+                Hier geht es um <strong>IPv4</strong>, die Version 4 – die Adressen, die du überall siehst. Eine IPv4-Adresse besteht aus{' '}
+                <strong>vier Zahlen, getrennt durch Punkte</strong>. Unter Windows zeigt der Befehl <code>ipconfig</code> die Adresse deines PCs:
               </Absatz>
               <Konsole
                 titel="Eingabeaufforderung › ipconfig"
@@ -93,8 +94,9 @@ function IpErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Eine IP-Adresse gibt es in zwei Schreibweisen. Wir Menschen schreiben vier Zahlen mit Punkten. Der Computer kennt nur <strong>0 und 1</strong> – für ihn ist die Adresse eine
-                Kette aus <strong>32 Bits</strong>. Ein <strong>Bit</strong> ist die kleinste Informationseinheit: eine Stelle, die 0 oder 1 sein kann (Strom aus oder an).
+                Eine IP-Adresse gibt es in zwei Schreibweisen. Wir Menschen schreiben vier Zahlen mit Punkten. Der Computer kennt nur <strong>0 und 1</strong> – für ihn ist die
+                Adresse eine Kette aus <strong>32 Bits</strong>. Ein <strong>Bit</strong> ist die kleinste Informationseinheit: eine Stelle, die 0 oder 1 sein kann (Strom aus oder
+                an).
               </Absatz>
               <ZweiSichten ip="192.168.1.10" />
               <Absatz>Beides ist dieselbe Adresse. Wie man von der einen Schreibweise zur anderen kommt, zeigt Lektion 3.</Absatz>
@@ -108,7 +110,12 @@ function IpErklaerung() {
               <Absatz>
                 32 Nullen und Einsen am Stück kann niemand lesen. Darum schneidet man sie in <strong>vier Päckchen</strong>. Jedes Päckchen wird als eine Dezimalzahl geschrieben.
               </Absatz>
-              <Raten frage="Wie viele Bit hat dann jedes Päckchen?" optionen={[4, 8, 16, 32]} richtig={8} hinweis={(v) => (v === 32 ? '32 Bit sind die ganze Adresse – und die wird auf vier Päckchen verteilt.' : `4 × ${v} = ${4 * v} – es müssen aber 32 Bit werden.`)}>
+              <Raten
+                frage="Wie viele Bit hat dann jedes Päckchen?"
+                optionen={[4, 8, 16, 32]}
+                richtig={8}
+                hinweis={(v) => (v === 32 ? '32 Bit sind die ganze Adresse – und die wird auf vier Päckchen verteilt.' : `4 × ${v} = ${4 * v} – es müssen aber 32 Bit werden.`)}
+              >
                 <Bitband
                   zahl={ipZuZahl('192.168.1.10')}
                   klammer
@@ -122,7 +129,8 @@ function IpErklaerung() {
                   4 Oktette × 8 Bit = <strong>32 Bit</strong>
                 </Formel>
                 <Absatz>
-                  So ein Päckchen aus 8 Bit heißt <strong>Oktett</strong> (lateinisch octo = acht). 8 Bit nennt man auch <strong>1 Byte</strong>. Eine IPv4-Adresse ist also 4 Byte groß.
+                  So ein Päckchen aus 8 Bit heißt <strong>Oktett</strong> (lateinisch octo = acht). 8 Bit nennt man auch <strong>1 Byte</strong>. Eine IPv4-Adresse ist also 4 Byte
+                  groß.
                 </Absatz>
               </Raten>
             </>
@@ -133,8 +141,8 @@ function IpErklaerung() {
           inhalt: (
             <Fakten>
               <Fakt titel="Jedes Oktett: 0 bis 255">
-                8 Bit haben genau 256 Möglichkeiten: von <span class="mono">00000000</span> (= 0) bis <span class="mono">11111111</span> (= 255). Darum ist 192.168.1.256 ungültig – 256
-                passt nicht in 8 Bit.
+                8 Bit haben genau 256 Möglichkeiten: von <span class="mono">00000000</span> (= 0) bis <span class="mono">11111111</span> (= 255). Darum ist 192.168.1.256 ungültig –
+                256 passt nicht in 8 Bit.
               </Fakt>
               <Fakt titel="Die Punkte sind nur für dich">Sie trennen die vier Oktette, damit Menschen die Adresse lesen können. Für den Computer gibt es sie nicht.</Fakt>
               <Fakt titel="Rund 4,3 Milliarden Adressen">
@@ -158,7 +166,13 @@ function IpAusprobieren() {
       <p class="sn-aufgabe">Tippe eine Adresse ein – auch eine falsche. Was macht sie gültig, was nicht?</p>
       <label class="sn-feld">
         <span class="sn-feld__name">IP-Adresse</span>
-        <input class={`feld feld--mono sn-feld__eingabe ${fehler ? 'feld--falsch' : 'feld--richtig'}`} value={text} spellcheck={false} autoComplete="off" onInput={(e) => setText(e.currentTarget.value)} />
+        <input
+          class={`feld feld--mono sn-feld__eingabe ${fehler ? 'feld--falsch' : 'feld--richtig'}`}
+          value={text}
+          spellcheck={false}
+          autoComplete="off"
+          onInput={(e) => setText(e.currentTarget.value)}
+        />
       </label>
       <Beispiele liste={['192.168.1.10', '10.0.0.1', '8.8.8.8', '192.168.1.256', '172.16.5', '10.0.0.1.5']} aktiv={text} onWahl={setText} />
       <div class="sn-oktettliste">
@@ -201,9 +215,9 @@ function NetzHostErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Eine Postanschrift hat zwei Teile: die <strong>Straße</strong> (welche Gegend?) und die <strong>Hausnummer</strong> (welches Haus dort?). Eine IP-Adresse ist genauso
-                gebaut. Der vordere Teil sagt, in welchem Netz ein Gerät steht: der <Netz>Netzanteil</Netz>. Der hintere Teil sagt, welches Gerät in diesem Netz gemeint ist: der{' '}
-                <Host>Hostanteil</Host>.
+                Eine Postanschrift hat zwei Teile: die <strong>Straße</strong> (welche Gegend?) und die <strong>Hausnummer</strong> (welches Haus dort?). Eine IP-Adresse ist
+                genauso gebaut. Der vordere Teil sagt, in welchem Netz ein Gerät steht: der <Netz>Netzanteil</Netz>. Der hintere Teil sagt, welches Gerät in diesem Netz gemeint
+                ist: der <Host>Hostanteil</Host>.
               </Absatz>
               <div class="sn-vergleich">
                 <span class="sn-vergleich__name">Post</span>
@@ -222,8 +236,8 @@ function NetzHostErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Alle Geräte, die zu einem Netz gehören – zum Beispiel alle Geräte im Büro – haben <strong>denselben Netzanteil</strong>. Sie unterscheiden sich nur im Hostanteil, so
-                wie die Häuser einer Straße nur in der Hausnummer.
+                Alle Geräte, die zu einem Netz gehören – zum Beispiel alle Geräte im Büro – haben <strong>denselben Netzanteil</strong>. Sie unterscheiden sich nur im Hostanteil,
+                so wie die Häuser einer Straße nur in der Hausnummer.
               </Absatz>
               <div class="sn-zweinetze">
                 <div class="sn-zweinetze__netz">
@@ -272,8 +286,8 @@ function NetzHostErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Bevor ein Gerät ein Paket losschickt, stellt es sich eine Frage: <strong>Ist der Empfänger in meinem Netz?</strong> Dafür vergleicht es nur die Netzanteile. Sind sie
-                gleich, kann es das Paket direkt zustellen. Sind sie verschieden, muss das Paket aus dem eigenen Netz hinaus – wie das geht, zeigt Block 3.
+                Bevor ein Gerät ein Paket losschickt, stellt es sich eine Frage: <strong>Ist der Empfänger in meinem Netz?</strong> Dafür vergleicht es nur die Netzanteile. Sind
+                sie gleich, kann es das Paket direkt zustellen. Sind sie verschieden, muss das Paket aus dem eigenen Netz hinaus – wie das geht, zeigt Block 3.
               </Absatz>
               <Raten
                 frage="PC-A (192.168.1.10) schickt etwas an 192.168.1.50. Liegt der Empfänger im selben Netz? (Grenze nach der dritten Zahl)"
@@ -282,8 +296,8 @@ function NetzHostErklaerung() {
                 hinweis={() => 'Vergleich nur die ersten drei Zahlen: 192.168.1 und 192.168.1.'}
               >
                 <Hinweis ton="gut" icon="circle-check">
-                  Netzanteil <Netz>192.168.1</Netz> = <Netz>192.168.1</Netz> → gleiches Netz, das Paket geht direkt zum Drucker. Genau diese Prüfung wirst du in Lektion 11 mit jeder
-                  beliebigen Grenze können.
+                  Netzanteil <Netz>192.168.1</Netz> = <Netz>192.168.1</Netz> → gleiches Netz, das Paket geht direkt zum Drucker. Genau diese Prüfung wirst du in Lektion 11 mit
+                  jeder beliebigen Grenze können.
                 </Hinweis>
               </Raten>
             </>
@@ -294,8 +308,8 @@ function NetzHostErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Die Grenze zwischen Netzanteil und Hostanteil ist <strong>nicht immer nach der dritten Zahl</strong>. Dieselbe Adresse kann – je nach Konfiguration – ganz verschieden
-                aufgeteilt sein:
+                Die Grenze zwischen Netzanteil und Hostanteil ist <strong>nicht immer nach der dritten Zahl</strong>. Dieselbe Adresse kann – je nach Konfiguration – ganz
+                verschieden aufgeteilt sein:
               </Absatz>
               <div class="sn-aufteilungen">
                 <Anschrift netz="10" host="20.30.40" netzName="Netz" hostName="Host" />
@@ -303,8 +317,8 @@ function NetzHostErklaerung() {
                 <Anschrift netz="10.20.30" host="40" netzName="Netz" hostName="Host" />
               </div>
               <Absatz>
-                Welche Aufteilung gilt, steht in der Konfiguration des Geräts: als <strong>Präfix</strong> (Lektion 4) oder als <strong>Subnetzmaske</strong> (Lektion 5). Und oft liegt
-                die Grenze sogar <strong>mitten in einer Zahl</strong>. Um das zu sehen, brauchen wir die Bits – das ist die nächste Lektion.
+                Welche Aufteilung gilt, steht in der Konfiguration des Geräts: als <strong>Präfix</strong> (Lektion 4) oder als <strong>Subnetzmaske</strong> (Lektion 5). Und oft
+                liegt die Grenze sogar <strong>mitten in einer Zahl</strong>. Um das zu sehen, brauchen wir die Bits – das ist die nächste Lektion.
               </Absatz>
               <Hinweis icon="info">In dieser Lektion liegt die Grenze immer nach der dritten Zahl – so kannst du das Prinzip in Ruhe ausprobieren.</Hinweis>
             </>
@@ -397,8 +411,8 @@ function BinaerErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Im Zehnersystem hat jede Stelle einen <strong>Stellenwert</strong>: Einer, Zehner, Hunderter. Die Zahl 352 bedeutet „3 Hunderter, 5 Zehner, 2 Einer“. Von rechts nach links
-                wird der Stellenwert jeweils <strong>zehnmal</strong> so groß.
+                Im Zehnersystem hat jede Stelle einen <strong>Stellenwert</strong>: Einer, Zehner, Hunderter. Die Zahl 352 bedeutet „3 Hunderter, 5 Zehner, 2 Einer“. Von rechts
+                nach links wird der Stellenwert jeweils <strong>zehnmal</strong> so groß.
               </Absatz>
               <Stellen werte={[100, 10, 1]} ziffern={[3, 5, 2]} summe="= 3·100 + 5·10 + 2·1 = 352" />
             </>
@@ -409,8 +423,8 @@ function BinaerErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Das <strong>Binärsystem</strong> (Zweiersystem) hat nur die Ziffern 0 und 1 – genau die Bits. Darum wird der Stellenwert von rechts nach links nicht zehnmal, sondern{' '}
-                <strong>zweimal</strong> so groß. Für ein Oktett mit 8 Bit:
+                Das <strong>Binärsystem</strong> (Zweiersystem) hat nur die Ziffern 0 und 1 – genau die Bits. Darum wird der Stellenwert von rechts nach links nicht zehnmal,
+                sondern <strong>zweimal</strong> so groß. Für ein Oktett mit 8 Bit:
               </Absatz>
               <div class="sn-verdopplung mono" aria-label="Stellenwerte verdoppeln sich">
                 {[128, 64, 32, 16, 8, 4, 2, 1].map((g, i) => (
@@ -421,7 +435,8 @@ function BinaerErklaerung() {
                 ))}
               </div>
               <Absatz>
-                Diese Reihe <span class="mono">128 · 64 · 32 · 16 · 8 · 4 · 2 · 1</span> brauchst du ab jetzt ständig. Am einfachsten: von rechts bei 1 anfangen und immer verdoppeln.
+                Diese Reihe <span class="mono">128 · 64 · 32 · 16 · 8 · 4 · 2 · 1</span> brauchst du ab jetzt ständig. Am einfachsten: von rechts bei 1 anfangen und immer
+                verdoppeln.
               </Absatz>
             </>
           ),
@@ -436,7 +451,9 @@ function BinaerErklaerung() {
                 frage="Und welche Zahl ist 00001010?"
                 optionen={[10, 12, 20, 1010]}
                 richtig={10}
-                hinweis={(v) => (v === 1010 ? 'Das ist die Binärschreibweise selbst – gesucht ist der Wert. Welche Stellenwerte stehen über den Einsen?' : 'Die Einsen stehen unter 8 und 2.')}
+                hinweis={(v) =>
+                  v === 1010 ? 'Das ist die Binärschreibweise selbst – gesucht ist der Wert. Welche Stellenwerte stehen über den Einsen?' : 'Die Einsen stehen unter 8 und 2.'
+                }
               >
                 <Stellen werte={[128, 64, 32, 16, 8, 4, 2, 1]} ziffern={[0, 0, 0, 0, 1, 0, 1, 0]} summe="= 8 + 2 = 10" />
               </Raten>
@@ -448,8 +465,8 @@ function BinaerErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Umgekehrt geht man von links nach rechts und fragt bei jedem Stellenwert: <strong>Passt er in den Rest?</strong> Ja → 1 schreiben und abziehen. Nein → 0 schreiben. Klick
-                dich durch das Beispiel 150:
+                Umgekehrt geht man von links nach rechts und fragt bei jedem Stellenwert: <strong>Passt er in den Rest?</strong> Ja → 1 schreiben und abziehen. Nein → 0 schreiben.
+                Klick dich durch das Beispiel 150:
               </Absatz>
               <Umrechner wert={150} />
             </>
@@ -462,8 +479,8 @@ function BinaerErklaerung() {
               <Absatz>Die größte Zahl mit 8 Bit entsteht, wenn alle Bits 1 sind:</Absatz>
               <Stellen werte={[128, 64, 32, 16, 8, 4, 2, 1]} ziffern={[1, 1, 1, 1, 1, 1, 1, 1]} summe="= 255" />
               <Absatz>
-                Die kleinste ist <span class="mono">00000000</span> = 0. Von 0 bis 255 sind das <strong>256 verschiedene Werte</strong> – mehr gibt es mit 8 Bit nicht. Darum steht in
-                jedem Oktett einer IP-Adresse eine Zahl von 0 bis 255.
+                Die kleinste ist <span class="mono">00000000</span> = 0. Von 0 bis 255 sind das <strong>256 verschiedene Werte</strong> – mehr gibt es mit 8 Bit nicht. Darum steht
+                in jedem Oktett einer IP-Adresse eine Zahl von 0 bis 255.
               </Absatz>
             </>
           ),
@@ -537,8 +554,8 @@ function PraefixErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Du kennst jetzt beide Zutaten: Eine Adresse hat einen <Netz>Netzanteil</Netz> und einen <Host>Hostanteil</Host> (Lektion 2), und sie besteht aus 32 Bits (Lektion 3). Die
-                Grenze zwischen Netz und Host liegt also <strong>zwischen zwei Bits</strong>. Man zählt einfach, wie viele Bits von links zum Netz gehören.
+                Du kennst jetzt beide Zutaten: Eine Adresse hat einen <Netz>Netzanteil</Netz> und einen <Host>Hostanteil</Host> (Lektion 2), und sie besteht aus 32 Bits (Lektion
+                3). Die Grenze zwischen Netz und Host liegt also <strong>zwischen zwei Bits</strong>. Man zählt einfach, wie viele Bits von links zum Netz gehören.
               </Absatz>
               <Bitband zahl={zahl} nummern />
               <Absatz>Die kleinen Zahlen unter den Bits sind ihre Nummern von 1 bis 32 – damit lässt sich die Grenze genau angeben.</Absatz>
@@ -550,8 +567,8 @@ function PraefixErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Diese Zahl heißt <strong>Präfixlänge</strong>, kurz <strong>Präfix</strong>. Man schreibt sie mit Schrägstrich hinter die Adresse: <strong class="mono">192.168.1.10/24</strong>{' '}
-                heißt: Bit 1 bis 24 sind Netz, der Rest ist Host.
+                Diese Zahl heißt <strong>Präfixlänge</strong>, kurz <strong>Präfix</strong>. Man schreibt sie mit Schrägstrich hinter die Adresse:{' '}
+                <strong class="mono">192.168.1.10/24</strong> heißt: Bit 1 bis 24 sind Netz, der Rest ist Host.
               </Absatz>
               <Legende />
               <Bitband zahl={zahl} praefix={24} nummern unter={['8 Netz', '8 Netz', '8 Netz', '8 Host']} />
@@ -577,7 +594,13 @@ function PraefixErklaerung() {
                 frage="Die 10 im 4. Oktett ist binär 00001010. Wie viele dieser 8 Bits gehören bei /26 zum Netz?"
                 optionen={[2, 6, 8, 26]}
                 richtig={2}
-                hinweis={(v) => (v === 26 ? '26 sind alle Netzbits zusammen. Wie viele davon bleiben nach den ersten drei Oktetten (24 Bit) übrig?' : v === 6 ? '6 ist die Zahl der Hostbits im 4. Oktett.' : 'Bei /24 wären es 0. Bei /26 sind es zwei mehr.')}
+                hinweis={(v) =>
+                  v === 26
+                    ? '26 sind alle Netzbits zusammen. Wie viele davon bleiben nach den ersten drei Oktetten (24 Bit) übrig?'
+                    : v === 6
+                      ? '6 ist die Zahl der Hostbits im 4. Oktett.'
+                      : 'Bei /24 wären es 0. Bei /26 sind es zwei mehr.'
+                }
               >
                 <div class="sn-oktettbild">
                   <span class="mono">10 =</span>
@@ -599,30 +622,32 @@ function PraefixErklaerung() {
           inhalt: (
             <>
               <Absatz>Was nicht Netz ist, ist Host. Die Zahl der Hostbits ist deshalb immer 32 minus Präfix:</Absatz>
-              <table class="sn-tabelle">
-                <thead>
-                  <tr>
-                    <th>Präfix</th>
-                    <th>Netzbits</th>
-                    <th>Hostbits</th>
-                    <th>Die Grenze liegt …</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[8, 16, 20, 24, 26, 30].map((p) => {
-                    const k = netzBitsJeOktett(p);
-                    const im = k.findIndex((n) => n > 0 && n < 8);
-                    return (
-                      <tr key={p}>
-                        <td class="mono">/{p}</td>
-                        <td class="mono sn-f-netz">{p}</td>
-                        <td class="mono sn-f-host">{32 - p}</td>
-                        <td>{im === -1 ? `zwischen ${p / 8}. und ${p / 8 + 1}. Oktett` : `im ${im + 1}. Oktett (${k[im]} Netz · ${8 - k[im]} Host)`}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <div class="sn-tabelle-huelle">
+                <table class="sn-tabelle">
+                  <thead>
+                    <tr>
+                      <th>Präfix</th>
+                      <th>Netzbits</th>
+                      <th>Hostbits</th>
+                      <th>Die Grenze liegt …</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[8, 16, 20, 24, 26, 30].map((p) => {
+                      const k = netzBitsJeOktett(p);
+                      const im = k.findIndex((n) => n > 0 && n < 8);
+                      return (
+                        <tr key={p}>
+                          <td class="mono">/{p}</td>
+                          <td class="mono sn-f-netz">{p}</td>
+                          <td class="mono sn-f-host">{32 - p}</td>
+                          <td>{im === -1 ? `zwischen ${p / 8}. und ${p / 8 + 1}. Oktett` : `im ${im + 1}. Oktett (${k[im]} Netz · ${8 - k[im]} Host)`}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </>
           ),
         },
@@ -713,8 +738,8 @@ function MaskeErklaerung() {
                 <span class="sn-dialog__feld mono">…</span>
               </div>
               <Absatz>
-                Die Subnetzmaske ist <strong>keine neue Information</strong>: Sie beschreibt dieselbe Grenze wie der Präfix, nur in einer anderen Schreibweise. 255.255.255.192 und /26 sagen
-                genau dasselbe.
+                Die Subnetzmaske ist <strong>keine neue Information</strong>: Sie beschreibt dieselbe Grenze wie der Präfix, nur in einer anderen Schreibweise. 255.255.255.192 und
+                /26 sagen genau dasselbe.
               </Absatz>
             </>
           ),
@@ -724,8 +749,8 @@ function MaskeErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                So entsteht die Subnetzmaske: Man nimmt 32 Bits und schreibt für jedes Netzbit eine <strong>1</strong>, für jedes Hostbit eine <strong>0</strong>. Bei /26 also 26 Einsen,
-                dann 6 Nullen.
+                So entsteht die Subnetzmaske: Man nimmt 32 Bits und schreibt für jedes Netzbit eine <strong>1</strong>, für jedes Hostbit eine <strong>0</strong>. Bei /26 also 26
+                Einsen, dann 6 Nullen.
               </Absatz>
               <Legende />
               <span class="sn-beschrift">Adresse 192.168.1.10/26</span>
@@ -741,9 +766,7 @@ function MaskeErklaerung() {
             <>
               <Absatz>Jetzt jedes Oktett in eine Dezimalzahl umrechnen – genau wie in Lektion 3: die Stellenwerte über den Einsen addieren.</Absatz>
               <MaskenRechnung praefix={26} />
-              <Absatz>
-                Volle Oktette (8 Einsen) ergeben immer 255, leere (8 Nullen) immer 0. Rechnen musst du nur in dem Oktett, in dem die Grenze liegt.
-              </Absatz>
+              <Absatz>Volle Oktette (8 Einsen) ergeben immer 255, leere (8 Nullen) immer 0. Rechnen musst du nur in dem Oktett, in dem die Grenze liegt.</Absatz>
             </>
           ),
         },
@@ -760,7 +783,9 @@ function MaskeErklaerung() {
                 frage="Welchen Wert hat ein Masken-Oktett mit 3 Einsen (11100000)?"
                 optionen={[3, 192, 224, 240]}
                 richtig={224}
-                hinweis={(v) => (v === 3 ? '3 ist die Zahl der Einsen – gesucht ist der Wert: 128 + 64 + 32.' : v === 192 ? '192 sind nur 2 Einsen (128 + 64).' : '240 sind 4 Einsen.')}
+                hinweis={(v) =>
+                  v === 3 ? '3 ist die Zahl der Einsen – gesucht ist der Wert: 128 + 64 + 32.' : v === 192 ? '192 sind nur 2 Einsen (128 + 64).' : '240 sind 4 Einsen.'
+                }
               >
                 <Formel>
                   11100000 = 128 + 64 + 32 = <strong>224</strong>
@@ -774,30 +799,33 @@ function MaskeErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Umgekehrt zählt man die Einsen. 255 sind 8 Einsen, 0 sind keine, und die Werte dazwischen liest du aus der Reihe oben ab. Beispiel <strong class="mono">255.255.240.0</strong>:
+                Umgekehrt zählt man die Einsen. 255 sind 8 Einsen, 0 sind keine, und die Werte dazwischen liest du aus der Reihe oben ab. Beispiel{' '}
+                <strong class="mono">255.255.240.0</strong>:
               </Absatz>
-              <table class="sn-tabelle">
-                <thead>
-                  <tr>
-                    <th>Oktett</th>
-                    <th>Wert</th>
-                    <th>Bits</th>
-                    <th>Einsen</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[255, 255, 240, 0].map((w, i) => (
-                    <tr key={i}>
-                      <td>{i + 1}.</td>
-                      <td class="mono">{w}</td>
-                      <td class="mono">
-                        <OktettBits wert={w} netzBits={w.toString(2).replace(/0+$/, '').length * (w > 0 ? 1 : 0)} />
-                      </td>
-                      <td class="mono">{w ? w.toString(2).replace(/0+$/, '').length : 0}</td>
+              <div class="sn-tabelle-huelle">
+                <table class="sn-tabelle">
+                  <thead>
+                    <tr>
+                      <th>Oktett</th>
+                      <th>Wert</th>
+                      <th>Bits</th>
+                      <th>Einsen</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {[255, 255, 240, 0].map((w, i) => (
+                      <tr key={i}>
+                        <td>{i + 1}.</td>
+                        <td class="mono">{w}</td>
+                        <td class="mono">
+                          <OktettBits wert={w} netzBits={w.toString(2).replace(/0+$/, '').length * (w > 0 ? 1 : 0)} />
+                        </td>
+                        <td class="mono">{w ? w.toString(2).replace(/0+$/, '').length : 0}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <Formel>
                 8 + 8 + 4 + 0 = <strong>/20</strong>
               </Formel>
@@ -809,7 +837,8 @@ function MaskeErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Eine Subnetzmaske beschreibt <strong>eine</strong> Grenze. Deshalb stehen alle Einsen zusammen links, danach nur Nullen. Gibt es eine Lücke, ist es keine Subnetzmaske:
+                Eine Subnetzmaske beschreibt <strong>eine</strong> Grenze. Deshalb stehen alle Einsen zusammen links, danach nur Nullen. Gibt es eine Lücke, ist es keine
+                Subnetzmaske:
               </Absatz>
               <div class="sn-oktettbild">
                 <span class="mono">100 =</span>
@@ -842,7 +871,12 @@ function MaskeAusprobieren() {
           <span class="sn-teilwerk__titel">Subnetzmaske → Präfix</span>
           <label class="sn-feld">
             <span class="sn-feld__name">Subnetzmaske</span>
-            <input class={`feld feld--mono sn-feld__eingabe ${m && p !== null ? 'feld--richtig' : 'feld--falsch'}`} value={maskeText} spellcheck={false} onInput={(e) => setMaskeText(e.currentTarget.value)} />
+            <input
+              class={`feld feld--mono sn-feld__eingabe ${m && p !== null ? 'feld--richtig' : 'feld--falsch'}`}
+              value={maskeText}
+              spellcheck={false}
+              onInput={(e) => setMaskeText(e.currentTarget.value)}
+            />
           </label>
           <Beispiele liste={['255.255.255.0', '255.255.255.192', '255.255.240.0', '255.255.255.100']} aktiv={maskeText} onWahl={setMaskeText} />
           {m ? (
@@ -879,4 +913,3 @@ export const ADRESSE = {
   praefix: { Erklaerung: PraefixErklaerung, Ausprobieren: PraefixAusprobieren },
   subnetzmaske: { Erklaerung: MaskeErklaerung, Ausprobieren: MaskeAusprobieren },
 };
-

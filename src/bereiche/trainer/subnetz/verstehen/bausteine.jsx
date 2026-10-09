@@ -64,6 +64,8 @@ export function Raten({ frage, optionen, richtig, hinweis, format = (v) => v, ch
   const [falsch, setFalsch] = useState([]);
   const [ok, setOk] = useState(alleOffen);
   const letzterFalsch = falsch[falsch.length - 1];
+  // Kurze Werte (Zahlen, Adressen) in Monospace, Sätze in normaler Schrift
+  const mono = optionen.every((o) => String(format(o)).length <= 16);
   return (
     <div class={`sn-raten ${ok ? 'sn-raten--ok' : ''}`}>
       <span class="sn-raten__frage">
@@ -77,7 +79,7 @@ export function Raten({ frage, optionen, richtig, hinweis, format = (v) => v, ch
             <button
               key={String(o)}
               type="button"
-              class={`sn-option sn-option--klein mono ${istFalsch ? 'sn-option--falsch' : ''} ${istRichtig ? 'sn-option--richtig' : ''}`}
+              class={`sn-option sn-option--klein ${mono ? 'mono' : ''} ${istFalsch ? 'sn-option--falsch' : ''} ${istRichtig ? 'sn-option--richtig' : ''}`}
               disabled={ok || istFalsch}
               onClick={() => (o === richtig ? setOk(true) : setFalsch([...falsch, o]))}
             >
@@ -242,7 +244,10 @@ export function OktettBits({ wert, netzBits = null, hostArt = 'host' }) {
   return (
     <span class="sn-okbits">
       {Array.from({ length: 8 }, (_, j) => (
-        <i key={j} class={`sn-bit sn-bit--${netzBits === null ? 'neutral' : j < netzBits ? 'netz' : hostArt} ${netzBits !== null && j > 0 && j === netzBits ? 'sn-bit--grenze' : ''}`}>
+        <i
+          key={j}
+          class={`sn-bit sn-bit--${netzBits === null ? 'neutral' : j < netzBits ? 'netz' : hostArt} ${netzBits !== null && j > 0 && j === netzBits ? 'sn-bit--grenze' : ''}`}
+        >
           {(wert >> (7 - j)) & 1}
         </i>
       ))}
@@ -640,7 +645,10 @@ export function Umrechner({ wert }) {
           {fertig && (
             <>
               {' '}
-              Fertig: <strong class="mono">{wert} = {schritte.map((s) => s.bit).join('')}</strong>
+              Fertig:{' '}
+              <strong class="mono">
+                {wert} = {schritte.map((s) => s.bit).join('')}
+              </strong>
             </>
           )}
         </p>

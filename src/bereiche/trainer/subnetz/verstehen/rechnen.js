@@ -1,7 +1,7 @@
 // Rechenhilfen für die Erklärungen im Lernweg (Zwischenfragen mit typischen Fehlern, Bilder für große Netze).
 // Rein, getestet in tests/subnetz.test.mjs. Blockanfang/-ende raten stammt aus dem früheren lernweg.js.
 
-import { ipZuZahl, zahlZuIp, zerlege, netz } from '../ip.js';
+import { ipZuZahl, zahlZuIp, zerlege, netz, gleichesNetz, leseIp, ipFehler } from '../ip.js';
 
 // Antwortmöglichkeiten für „Wo beginnt der Block?“ (im entscheidenden Oktett), aufsteigend, 2 … 4 Stück.
 // Neben der richtigen Antwort die typischen Fehler: die Zahl selbst, der Block davor und der danach.
@@ -101,4 +101,19 @@ export function zufallsAufgabe(r) {
     const n = netz(ip, praefix);
     if (ip !== n.netz && ip !== n.broadcast) return { ip, praefix };
   }
+}
+
+// Prüft eine vorgeschlagene statische Adresse (Lektion „Statische Adresse“). belegt: [{ ip, name }], dhcp: [von, bis] oder null
+export function pruefeStatisch(eingabe, { netzAdr, praefix, belegt, dhcp }) {
+  const ip = leseIp(eingabe);
+  if (!ip) return { ok: false, grund: ipFehler(eingabe) ?? 'Keine gültige IPv4-Adresse.' };
+  const n = netz(netzAdr, praefix);
+  if (!gleichesNetz(ip, netzAdr, praefix)) return { ok: false, grund: `Liegt nicht im Netz ${n.netz}/${praefix} (${n.netz} bis ${n.broadcast}).` };
+  if (ip === n.netz) return { ok: false, grund: 'Das ist die Netzadresse – reserviert.' };
+  if (ip === n.broadcast) return { ok: false, grund: 'Das ist die Broadcastadresse – reserviert.' };
+  const b = belegt.find((x) => x.ip === ip);
+  if (b) return { ok: false, grund: `Schon vergeben an: ${b.name}.` };
+  const z = ipZuZahl(ip);
+  if (dhcp && z >= ipZuZahl(dhcp[0]) && z <= ipZuZahl(dhcp[1])) return { ok: false, grund: `Liegt im DHCP-Bereich ${dhcp[0]} bis ${dhcp[1]} – Adresskonflikt möglich.` };
+  return { ok: true };
 }
