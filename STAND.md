@@ -289,3 +289,201 @@ Häkchen zu Stichpunkten, die es nicht mehr gibt, werden einfach übersprungen.
 - Neuer Trainer: Eintrag in `src/bereiche/trainer/verzeichnis.js` (welche Stichpunkte er übt) und Komponente in
   `src/bereiche/trainer/index.jsx`. Neue Diagrammaufgaben: siehe `src/bereiche/trainer/modellieren/README.md`.
 - Die Inhaltsdatei `Inhaltsdatei_AP1_AP2_tracker.json` wird nie verändert; eigene Inhalte liegen in `inhalte/`.
+
+---
+
+## 6. Subnetz-Trainer – Neuaufbau (Plan)
+
+Der alte Trainer („Verstehen“ als Tabs → Schritte → Lektionen) wird nicht weiter ausgebessert, sondern neu
+aufgestellt. Geplant ist von den Inhalten her, nicht vom alten Code aus; der alte Code dient danach nur als
+Steinbruch für einzelne Bausteine (siehe 6.6).
+
+### 6.1 Drei Räume
+
+Oben im Trainer genau drei Umschalter:
+
+| Raum | Inhalt |
+|---|---|
+| **Verstehen** | Lernweg: 5 Themen-Blöcke, 25 Lektionen, Begriff für Begriff |
+| **Üben** | Aufgaben mit Prüfen, gruppiert nach denselben Themen-Blöcken |
+| **Visualisieren** | der bestehende Visualizer, unverändert |
+
+Adresse: `#/ap1/trainer/subnetz?modus=<id>&lektion=<id>`. `modus` bleibt der Schlüssel, weil Lernplan und
+Block-Karten schon mit `?modus=analyse` usw. in den Trainer springen. Der Raum ergibt sich aus dem Modus
+(`verstehen`, `visual` oder eine Übung).
+
+### 6.2 Gliederung „Verstehen“
+
+**Block 1 – Die IPv4-Adresse** (Lektion 1–5)
+Erst das Ding selbst (vier Zahlen mit Punkten), dann die eine Idee, auf der alles Weitere ruht: Eine Adresse
+besteht aus Netz und Gerät. Binärzahlen kommen erst danach, wenn klar ist, *wozu* man sie braucht: weil die
+Grenze mitten in einer Zahl liegen kann. Präfix und Subnetzmaske sind zwei Schreibweisen derselben Grenze.
+
+| Nr | id | Begriff | Leitfrage | braucht |
+|---|---|---|---|---|
+| 1 | `ip-adresse` | IP-Adresse | Woran erkennt das Netz ein Gerät? | – |
+| 2 | `netz-host` | Netzanteil und Hostanteil | Welcher Teil nennt das Netz, welcher das Gerät? | 1 |
+| 3 | `binaer` | Binärzahl | Warum geht jedes Oktett nur bis 255? | 1 |
+| 4 | `praefix` | Präfix | Wo liegt die Grenze zwischen Netz und Host? | 2, 3 |
+| 5 | `subnetzmaske` | Subnetzmaske | Wie schreibt man die Grenze als Adresse? | 4 |
+
+**Block 2 – Subnetting** (Lektion 6–13)
+Zuerst nur Netze, deren Grenze im letzten Oktett liegt (/24 bis /30): Dort steht alles Wichtige in einer
+Zahl, Netzgröße und Blockgröße sind gleich. Von „Wie groß?“ über „Wo fängt es an, wo hört es auf?“ zu
+„Welche Adressen bekommen Geräte?“; erst wenn das sitzt, kommt die Grenze im dritten Oktett (die häufigste
+Stolperstelle) und am Ende das feste Rechenschema für die Prüfung.
+
+| Nr | id | Begriff | Leitfrage | braucht |
+|---|---|---|---|---|
+| 6 | `netzgroesse` | Netzgröße | Wie viele Adressen hat ein Netz? | 4 |
+| 7 | `blockgroesse` | Blockgröße | In welchen Schritten liegen die Netze? | 5, 6 |
+| 8 | `netzadresse` | Netzadresse | Mit welcher Adresse beginnt mein Netz? | 7 |
+| 9 | `broadcast` | Broadcastadresse | Wo endet mein Netz? | 8 |
+| 10 | `hostbereich` | Hostbereich | Welche Adressen bekommen Geräte? | 6, 9 |
+| 11 | `gleiches-netz` | Gleiches Netz? | Können zwei Geräte direkt miteinander reden? | 8 |
+| 12 | `oktett3` | Entscheidendes Oktett | Was, wenn die Grenze im dritten Oktett liegt? | 10, 11 |
+| 13 | `rechenweg` | Rechenweg | In welcher Reihenfolge rechne ich? | 12 |
+
+**Block 3 – Einen PC ins Netz bringen** (Lektion 14–18)
+Jetzt wird das Gerechnete angewendet. Zuerst die Tür nach draußen (Standardgateway), dann welche Adressen
+man intern überhaupt nimmt (privat), dann die vollständige Konfiguration, dann wer sie automatisch verteilt
+(DHCP) – und zum Schluss die Prüfungsaufgabe „freie statische Adresse in einer Netzskizze“, die alles verbindet.
+
+| Nr | id | Begriff | Leitfrage | braucht |
+|---|---|---|---|---|
+| 14 | `standardgateway` | Standardgateway | Wohin schickt ein PC Pakete für fremde Netze? | 10, 11 |
+| 15 | `privat` | Private Adressen | Welche Adressen darf jeder intern nutzen? | 12, 14 |
+| 16 | `konfiguration` | IPv4-Konfiguration | Was trägt man an einem PC ein? | 14 |
+| 17 | `dhcp` | DHCP | Wer verteilt die Einstellungen automatisch? | 9, 16 |
+| 18 | `statisch` | Statische Adresse | Welche feste Adresse ist frei und erlaubt? | 10, 17 |
+
+**Block 4 – Im lokalen Netz: MAC und ARP** (Lektion 19–21)
+Bisher ging es um die logische Adresse. Im lokalen Netz wird aber an die Hardware-Adresse zugestellt. Die wird
+hexadezimal geschrieben – deshalb zuerst Hexadezimalzahlen, dann die MAC-Adresse, dann ARP, das beide verbindet.
+
+| Nr | id | Begriff | Leitfrage | braucht |
+|---|---|---|---|---|
+| 19 | `hex` | Hexadezimalzahl | Wie schreibt man 4 Bit mit einem Zeichen? | 3 |
+| 20 | `mac` | MAC-Adresse | Welche Adresse hat die Netzwerkkarte ab Werk? | 2, 19 |
+| 21 | `arp` | ARP | Wie findet ein PC zur IP-Adresse die MAC-Adresse? | 9, 14, 20 |
+
+**Block 5 – IPv6** (Lektion 22–25)
+IPv6 löst dieselbe Aufgabe mit längeren Adressen. Erst Grund und Aufbau, dann die Kurzschreibweise (die größte
+Stolperstelle), dann wie bei IPv4 Netz- und Geräteteil, zum Schluss die Adresse, die jedes Gerät von selbst hat.
+
+| Nr | id | Begriff | Leitfrage | braucht |
+|---|---|---|---|---|
+| 22 | `ipv6` | IPv6-Adresse | Warum IPv6, und wie sieht die Adresse aus? | 1, 19 |
+| 23 | `ipv6-kurz` | Kurzschreibweise | Wie kürzt man eine IPv6-Adresse – und zurück? | 22 |
+| 24 | `ipv6-praefix` | Präfix und Interface-Identifier | Welcher Teil ist Netz, welcher Gerät? | 4, 23 |
+| 25 | `link-local` | Verbindungslokale Adresse | Welche Adresse hat jedes Gerät von selbst? | 17, 24 |
+
+### 6.3 Eine Lektion
+
+Alle Lektionen haben denselben Aufbau, in dieser Reihenfolge:
+
+1. **Kopf:** Block, Nummer, Begriff, Leitfrage; darunter „Baut auf“ mit den `braucht`-Lektionen (anklickbar,
+   mit Status – wer eine Lücke hat, sieht sie sofort).
+2. **Verstehen:** kurze Erklärung, bei Bedarf „für dich / für den Computer“ und Faktenboxen, Bilder in den festen Farben.
+3. **Definition:** ein Kasten „So sagst du es in der Prüfung“.
+4. **Ausprobieren:** ein kleines Werkzeug zum Selbst-Ändern (Bit-Schalter, Regler, Zahlenstrahl, Eingabemaske …).
+5. **Stolperfallen und Merksatz** (wo sie helfen).
+6. **Check:** 2–3 Fragen (Auswahl oder Eingabe) mit Erklärung nach jeder Antwort. Sind alle richtig beantwortet
+   (Wiederholen erlaubt), ist die Lektion „verstanden“ und der Knopf „Weiter zu Lektion n+1“ erscheint.
+
+Fortschritt: `useEinstellung('subnetz.lernweg', [])` (Liste der verstandenen Lektionen), zurücksetzbar im Lernweg.
+
+### 6.4 Lernweg-Ansicht
+
+Je Block: Titel, ein Satz, Fortschritt (z. B. 3/5) und ein aufklappbarer **Merkzettel** mit allen Definitionen
+des Blocks (eigene Idee: Wiederholen vor der Prüfung). Darunter die Lektionen als kleine Kacheln (Nummer, Begriff,
+Leitfrage, Status ✓ verstanden / als Nächstes / noch nicht dran) als **Schlange**: Reihen von links nach rechts mit
+Pfeilen, am Reihenende ein geschwungener Pfeil zurück zum Anfang der nächsten Reihe. Die Zahl der Spalten richtet
+sich nach der Breite; am Handy eine Spalte mit Pfeilen nach unten. Auch „noch nicht dran“ lässt sich öffnen
+(zum Hineinschauen); der Kopf der Lektion zeigt dann, was vorher fehlt.
+
+### 6.5 Kompetenz → Lektion
+
+| Kompetenz | Inhalt (kurz) | Lektion |
+|---|---|---|
+| AP1-6-2-1-K1 | IP, Subnetzmaske, Gateway eintragen | 16 Konfiguration (Gateway: 14) |
+| AP1-6-2-1-K2 | freie statische Adresse außerhalb des DHCP-Bereichs | 18 Statische Adresse |
+| AP1-6-2-1-K3 | /24 → 255.255.255.0 | 5 Subnetzmaske |
+| AP1-6-2-1-K4 | statisch oder automatisch, wann fest | 17 DHCP, 18 Statische Adresse |
+| AP1-6-2-1-K5 | private Bereiche | 15 Private Adressen |
+| AP1-6-2-1-K6 | Einstellungen dokumentieren | 16 Konfiguration |
+| AP1-6-2-2-K1 | Adressen und nutzbare Hosts aus dem Präfix | 6 Netzgröße, 10 Hostbereich |
+| AP1-6-2-2-K2 | Netzadresse und Broadcastadresse | 8 Netzadresse, 9 Broadcast, 12 Entscheidendes Oktett |
+| AP1-6-2-2-K3 | erste, letzte, vorletzte Hostadresse | 10 Hostbereich |
+| AP1-6-2-2-K4 | Netzskizze lesen, Adresse eintragen | 18 Statische Adresse (mit 14) |
+| AP1-6-2-2-K5 | Präfix ↔ Subnetzmaske | 5 Subnetzmaske |
+| AP1-6-2-2-K6 | zwei Adressen im selben Subnetz? | 11 Gleiches Netz? |
+| AP1-6-2-3-K1 | 128 Bit, 8 Blöcke à 4 Hex-Ziffern | 22 IPv6-Adresse |
+| AP1-6-2-3-K2 | kürzen und ausschreiben | 23 Kurzschreibweise |
+| AP1-6-2-3-K3 | Präfix und Interface-Identifier | 24 Präfix und Interface-Identifier |
+| AP1-6-2-3-K4 | fe80 = verbindungslokal | 25 Verbindungslokale Adresse |
+| AP1-6-2-3-K5 | Grund: IPv4-Adressraum erschöpft | 22 IPv6-Adresse |
+| AP1-6-2-4-K1 | MAC: 48 Bit, 6 Bytes hex, Herstellerkennung | 20 MAC-Adresse |
+| AP1-6-2-4-K2 | Aufgabe von ARP | 21 ARP |
+| AP1-6-2-4-K3 | Ausgabe von `arp` deuten | 21 ARP |
+| AP1-6-2-4-K4 | was DHCP zuteilt | 17 DHCP |
+| AP1-6-2-4-K5 | 169.254.x.x deuten | 17 DHCP |
+
+Nicht im Tracker, aber zum Verstehen nötig: Binärzahl (3), Netzanteil/Hostanteil (2), Netzgröße (6),
+Blockgröße (7), Entscheidendes Oktett (12), Hexadezimalzahl (19). Ein Test prüft, dass jede Kompetenz von
+AP1-6-2-1 bis AP1-6-2-4 mindestens einer Lektion zugeordnet ist und `braucht` nur auf frühere Lektionen zeigt.
+
+### 6.6 Üben
+
+Die bestehenden Übungen bleiben und werden nach den Blöcken sortiert; Lücken werden gefüllt.
+
+| Block | Übungen |
+|---|---|
+| Die IPv4-Adresse | Oktett binär *(neu)*, Präfix und Subnetzmaske |
+| Subnetting | Adressen und Hosts *(aus „Präfix und Maske“ herausgelöst)*, Netz bestimmen, Gleiches Netz?, Netz aufteilen (Zusatz) |
+| Einen PC ins Netz bringen | Private Adressen, Konfiguration prüfen *(neu: freie statische Adresse, Gateway, Maske)* |
+| MAC und ARP | MAC, ARP und DHCP *(neu)* |
+| IPv6 | IPv6 kürzen & ausschreiben |
+
+### 6.7 Dateistruktur (neu)
+
+```
+src/bereiche/trainer/subnetz/
+  Subnetz.jsx              Rahmen: Kopf, drei Räume, Auswahl über ?modus=
+  ip.js                    Rechnung IPv4/IPv6 (bleibt, ergänzt um kleine Helfer)
+  Visualizer.jsx           unverändert
+  verstehen/
+    lernweg.js             Blöcke + Lektionen: braucht, Kompetenzen, Definition, Check (rein, getestet)
+    fortschritt.js         verstanden / als Nächstes / zurücksetzen
+    Lernweg.jsx            Übersicht: Blöcke mit Kacheln als Schlange
+    Lektion.jsx            Rahmen einer Lektion (immer gleich)
+    Check.jsx              Kurz-Check
+    bausteine.jsx          Bits, Bit-Schalter, Zahlenstrahl mit Lupe, Maskenrechnung, Faktenbox, Netzbild
+    inhalt/                Erklärung + Ausprobieren je Block (adresse, subnetting, konfiguration, lokal, ipv6)
+  ueben/
+    Ueben.jsx              Übungen nach Blöcken
+    aufgaben.js            Aufgabenerzeuger
+src/styles/subnetz.css     Stile des neuen Trainers (Präfix sn-), ersetzt subnetz-lernen.css
+src/styles/subnetz-visual.css   bleibt (Visualizer)
+tests/subnetz.test.mjs     Rechnung, Aufgaben, Lernweg-Struktur, Checks
+```
+Wegfallen: `Verstehen.jsx`, das alte `lernweg.js`, `subnetz-lernen.css`, die Raum-Logik (`bereich`) in
+`TrainerSeite` (gab es nur für den Subnetz-Trainer).
+
+### 6.8 Steinbruch: was aus dem alten Code herausgelöst wird
+
+| Baustein | alt | neu |
+|---|---|---|
+| IPv4- und IPv6-Rechnung (getestet) | `ip.js` | bleibt `ip.js` (der Visualizer importiert daraus) |
+| Helfer: Stellenwerte, Netzbits je Oktett, Maskenwert, Dezimal → binär in Schritten, Eingaben lesen | `lernweg.js` | in `ip.js` übernommen (rein, getestet); der Rest von `lernweg.js` (Blockanfang raten, Kurz-Checks, Aufteil-Tabelle …) fällt weg |
+| „Für dich / für den Computer“ mit Faktenboxen | `Verstehen.jsx` → `Aufbau` | Lektion 1 (Erklärung neu gefasst, Faktenbox als Baustein `Fakten`) |
+| 32-Bit-Band mit Netz/Host-Farben und Strich | `Bitband` | Baustein `Bitband` |
+| Bit-Tafel mit Stellenwerten und Umschalten | `Bits` | Baustein `BitTafel` (Lektion 3, auch in 19) |
+| Präfix → Subnetzmaske für alle vier Oktette, die neun Maskenwerte | `Maske` | Baustein `MaskenRechnung` (Lektion 5) |
+| Zahlenstrahl 0–255 in Blöcken mit Lupe und Trichter | `Strahl` | Baustein `Zahlenstrahl` (Lektion 7–12) |
+| Aufgabenerzeuger | `aufgaben.js` | `ueben/aufgaben.js`, unverändert bis auf die Trennung „Präfix ↔ Maske“ / „Adressen und Hosts“ |
+| Farbschema: Netz = Akzent (grün), Host = `--info` (blau), Grenze = `--warn` (orange), reserviert = `--fehler` (rot) | `subnetz-lernen.css` | `subnetz.css` (Präfix `sn-`), Legende in jeder Lektion mit Bits |
+| Visualizer | `Visualizer.jsx`, `subnetz-visual.css` | unverändert im Raum „Visualisieren“ |
+
+Nicht übernommen: Lektionsliste, Teile-Leiste, Kurz-Check-Logik, Übersicht, Gateway-/Aufteilen-/Unter-24-Bilder,
+„Jetzt du“ – der neue Aufbau braucht sie in dieser Form nicht.
