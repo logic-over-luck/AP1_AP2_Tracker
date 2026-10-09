@@ -3,13 +3,14 @@
 // Farben überall gleich: Netz grün (Akzent), Host blau, Grenze orange, reserviert rot.
 
 import { Fragment } from 'preact';
-import { useContext, useEffect, useRef, useState } from 'preact/hooks';
-import { Icon, Knopf } from '../../../../ui/bausteine.jsx';
-import { AlleOffen } from '../../lernweg/bausteine.jsx';
+import { useEffect, useState } from 'preact/hooks';
+import { Icon } from '../../../../ui/bausteine.jsx';
 import { ipZuZahl, maskeZahl, netzBitsJeOktett, maskenwert, STELLENWERTE, leseIp, ipFehler } from '../ip.js';
 
 // Allgemeine Bausteine aus dem Lernweg-Rahmen – hier weitergereicht, damit inhalt/ nur eine Quelle importiert
 export { AlleOffen, Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Beispiele, Ergebnis, Werkbank, Konsole, Grundlage } from '../../lernweg/bausteine.jsx';
+// Zahl-Bausteine aus dem Zahlen-Trainer
+export { Stellen, BitTafel, Umrechner } from '../../zahlen/verstehen/bausteine.jsx';
 
 export const bitsVon = (zahl) => Array.from({ length: 32 }, (_, i) => (zahl >>> (31 - i)) & 1);
 export const oktetteVon = (zahl) => [24, 16, 8, 0].map((s) => (zahl >>> s) & 255);
@@ -130,51 +131,6 @@ export function OktettBits({ wert, netzBits = null, hostArt = 'host' }) {
         </i>
       ))}
     </span>
-  );
-}
-
-// Bit-Tafel: 8 Schalter mit Stellenwerten darüber, Summe darunter. nibbles: Hexadezimalziffer je 4 Bit zeigen.
-export function BitTafel({ wert, onWert, nibbles = false, ziel = null }) {
-  const bits = Array.from({ length: 8 }, (_, j) => (wert >> (7 - j)) & 1);
-  const teile = STELLENWERTE.filter((_, j) => bits[j]);
-  return (
-    <div class="sn-tafel-huelle">
-      <div class={`sn-tafel ${nibbles ? 'sn-tafel--nibbles' : ''}`}>
-        {bits.map((bit, j) => (
-          <div key={j} class="sn-tafel__spalte">
-            <span class={`sn-tafel__wert mono ${bit ? 'sn-tafel__wert--an' : ''}`}>{STELLENWERTE[j]}</span>
-            <button
-              type="button"
-              class={`sn-tafel__bit mono ${bit ? 'sn-tafel__bit--an' : ''}`}
-              aria-pressed={!!bit}
-              aria-label={`Bit mit Stellenwert ${STELLENWERTE[j]} umschalten`}
-              onClick={() => onWert(wert ^ (1 << (7 - j)))}
-            >
-              {bit}
-            </button>
-          </div>
-        ))}
-      </div>
-      {nibbles && (
-        <div class="sn-tafel__hex">
-          <span>
-            <span class="mono">{bits.slice(0, 4).join('')}</span> = {wert >> 4} = <strong class="mono">{(wert >> 4).toString(16).toUpperCase()}</strong>
-          </span>
-          <span>
-            <span class="mono">{bits.slice(4).join('')}</span> = {wert & 15} = <strong class="mono">{(wert & 15).toString(16).toUpperCase()}</strong>
-          </span>
-        </div>
-      )}
-      <p class={`lw-formel mono ${ziel !== null && wert === ziel ? 'lw-formel--gut' : ''}`}>
-        {teile.length ? teile.join(' + ') : '0'} = <strong>{wert}</strong>
-        {nibbles && (
-          <>
-            {' '}
-            = hex <strong>{wert.toString(16).toUpperCase().padStart(2, '0')}</strong>
-          </>
-        )}
-      </p>
-    </div>
   );
 }
 
@@ -401,99 +357,6 @@ export function Geraet({ icon = 'monitor', name, ip, ton = '', klein = false, ch
       {children}
     </div>
   );
-}
-
-// Stellenwert-Tafel ohne Schalter: werte (z. B. [100, 10, 1]), ziffern, Summe als Text
-export function Stellen({ werte, ziffern, summe, an = null }) {
-  return (
-    <div class="sn-stellen">
-      {werte.map((g, j) => {
-        const leuchtet = an ? an[j] : Number(ziffern[j]) > 0;
-        return (
-          <span key={j} class={`sn-stellen__spalte ${leuchtet ? 'sn-stellen__spalte--an' : ''}`}>
-            <span class="sn-stellen__wert mono">{g}</span>
-            <span class="sn-stellen__bit mono">{ziffern[j]}</span>
-          </span>
-        );
-      })}
-      {summe && <span class="sn-stellen__summe mono">{summe}</span>}
-    </div>
-  );
-}
-
-// Dezimal → binär zum Mitklicken: von links nach rechts „Passt der Stellenwert in den Rest?“
-export function Umrechner({ wert }) {
-  const alleOffen = useContext(AlleOffen);
-  const [gezeigt, setGezeigt] = useState(alleOffen ? 8 : 0);
-  useEffect(() => setGezeigt(alleOffen ? 8 : 0), [wert]);
-  const schritte = binaerSchritteLokal(wert);
-  const fertig = gezeigt >= 8;
-  const letzter = gezeigt > 0 ? schritte[gezeigt - 1] : null;
-  return (
-    <div class="sn-umrechner">
-      <div class="sn-tafel">
-        {schritte.map((s, j) => {
-          const offen = j < gezeigt;
-          return (
-            <div key={j} class={`sn-tafel__spalte ${!fertig && j === gezeigt ? 'sn-tafel__spalte--jetzt' : ''}`}>
-              <span class={`sn-tafel__wert mono ${offen && s.bit ? 'sn-tafel__wert--an' : ''}`}>{s.gewicht}</span>
-              <span class={`sn-tafel__bit mono ${offen ? (s.bit ? 'sn-tafel__bit--an' : '') : 'sn-tafel__bit--frage'}`}>{offen ? s.bit : '?'}</span>
-            </div>
-          );
-        })}
-      </div>
-      <div class="sn-umrechner__zeile">
-        <span class="sn-rest">
-          <span class="sn-rest__name">Noch übrig</span>
-          <strong class="mono">{letzter ? letzter.nachher : wert}</strong>
-        </span>
-        <p class="sn-umrechner__text" role="status">
-          {!letzter ? (
-            <>
-              Start bei <strong>{wert}</strong>. Erste Frage: Passt <strong>128</strong> in {wert}?
-            </>
-          ) : letzter.passt ? (
-            <>
-              Passt {letzter.gewicht} in {letzter.vorher}? <strong>Ja → 1.</strong> Abziehen: {letzter.vorher} − {letzter.gewicht} = {letzter.nachher}
-            </>
-          ) : (
-            <>
-              Passt {letzter.gewicht} in {letzter.vorher}? <strong>Nein → 0.</strong> Der Rest bleibt {letzter.vorher}.
-            </>
-          )}
-          {fertig && (
-            <>
-              {' '}
-              Fertig:{' '}
-              <strong class="mono">
-                {wert} = {schritte.map((s) => s.bit).join('')}
-              </strong>
-            </>
-          )}
-        </p>
-      </div>
-      {!fertig && (
-        <div class="lw-knoepfe">
-          <Knopf variante="zweit" groesse="s" iconRechts="arrow-right" onClick={() => setGezeigt(gezeigt + 1)}>
-            {gezeigt === 0 ? 'Erstes Bit' : 'Nächstes Bit'}
-          </Knopf>
-          <Knopf variante="geist" groesse="s" onClick={() => setGezeigt(8)}>
-            Alle auf einmal
-          </Knopf>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function binaerSchritteLokal(wert) {
-  let rest = wert;
-  return STELLENWERTE.map((g) => {
-    const passt = rest >= g;
-    const vorher = rest;
-    if (passt) rest -= g;
-    return { gewicht: g, vorher, passt, nachher: rest, bit: passt ? 1 : 0 };
-  });
 }
 
 // Netzadresse/Broadcast zusammenbauen: Adresse mit Rollen je Oktett und Rezept in Worten

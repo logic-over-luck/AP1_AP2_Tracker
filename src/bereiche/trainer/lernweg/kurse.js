@@ -3,8 +3,9 @@
 
 import { baueLernweg } from './lernweg.js';
 import { LERNWEG as SUBNETZ } from '../subnetz/verstehen/lernweg.js';
+import { LERNWEG as ZAHLEN } from '../zahlen/verstehen/lernweg.js';
 
-export const LERNWEGE = { subnetz: SUBNETZ };
+export const LERNWEGE = { subnetz: SUBNETZ, zahlen: ZAHLEN };
 
 const cache = new Map();
 

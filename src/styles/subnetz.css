@@ -162,59 +162,6 @@
   letter-spacing: 0.04em;
   color: var(--text-2);
 }
-.sn-tafel {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: var(--s-2);
-  max-width: 560px;
-}
-.sn-tafel__spalte {
-  display: grid;
-  gap: var(--s-1);
-  padding: var(--s-1);
-  border-radius: var(--r-2);
-  border: 1px solid transparent;
-  transition:
-    background var(--dauer) var(--kurve),
-    border-color var(--dauer) var(--kurve);
-}
-.sn-tafel__spalte--jetzt {
-  border-color: var(--linie-3);
-  background: var(--flaeche-2);
-}
-.sn-tafel__wert {
-  text-align: center;
-  font-size: var(--t-s);
-  color: var(--text-3);
-}
-.sn-tafel__wert--an {
-  font-weight: 600;
-  color: var(--text);
-}
-.sn-tafel__bit {
-  display: grid;
-  place-items: center;
-  height: 44px;
-  border-radius: var(--r-1);
-  border: 1px solid transparent;
-  background: var(--flaeche-3);
-  font-size: var(--t-xl);
-  font-weight: 600;
-  color: var(--text-3);
-  transition:
-    background var(--dauer) var(--kurve),
-    color var(--dauer) var(--kurve);
-}
-.sn-tafel__bit--an {
-  border-color: var(--text-3);
-  background: var(--flaeche-4);
-  color: var(--text);
-}
-.sn-tafel__bit--frage {
-  border: 1px dashed var(--linie-3);
-  background: transparent;
-  color: var(--text-4);
-}
 .sn-masken {
   display: grid;
   gap: var(--s-2);
@@ -790,48 +737,6 @@
 .sn-sortier__zeile--falsch .sn-sortier__info svg {
   color: var(--fehler);
 }
-.sn-stellen {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 4px;
-}
-.sn-stellen__spalte {
-  display: grid;
-  justify-items: center;
-  gap: 2px;
-  width: 44px;
-}
-.sn-stellen__wert {
-  font-size: var(--t-s);
-  color: var(--text-3);
-}
-.sn-stellen__bit {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 36px;
-  border-radius: var(--r-1);
-  background: var(--flaeche-3);
-  font-size: var(--t-l);
-  font-weight: 600;
-  color: var(--text-3);
-}
-.sn-stellen__spalte--an .sn-stellen__wert {
-  font-weight: 600;
-  color: var(--text);
-}
-.sn-stellen__spalte--an .sn-stellen__bit {
-  background: var(--flaeche-4);
-  box-shadow: inset 0 0 0 1px var(--text-3);
-  color: var(--text);
-}
-.sn-stellen__summe {
-  align-self: center;
-  margin-left: var(--s-3);
-  padding-top: 18px;
-  color: var(--text-2);
-}
 .sn-rechenweg {
   display: grid;
   gap: var(--s-2);
@@ -856,26 +761,6 @@
 }
 .sn-rechenweg__ja {
   color: var(--text);
-}
-.sn-tafel-huelle {
-  display: grid;
-  gap: var(--s-3);
-}
-.sn-tafel__hex {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s-2);
-  max-width: 560px;
-  font-size: var(--t-s);
-  text-align: center;
-  color: var(--text-3);
-}
-.sn-tafel__hex strong {
-  font-size: var(--t-l);
-  color: var(--text);
-}
-.sn-tafel--nibbles .sn-tafel__spalte:nth-child(4) {
-  margin-right: var(--s-3);
 }
 .sn-mrechnung__ergebnis {
   margin-top: 4px;
@@ -982,30 +867,6 @@
   font-weight: 600;
   color: var(--warn);
 }
-.sn-verdopplung {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2px;
-}
-.sn-verdopplung__glied {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-}
-.sn-verdopplung__wert {
-  min-width: 40px;
-  padding: var(--s-1) var(--s-2);
-  border-radius: var(--r-1);
-  background: var(--flaeche-3);
-  text-align: center;
-  font-weight: 600;
-  color: var(--text);
-}
-.sn-verdopplung__mal {
-  font-size: var(--t-xs);
-  color: var(--text-4);
-}
 .sn-aufteilungen {
   display: grid;
   justify-items: start;
@@ -1053,38 +914,6 @@
 .sn-dialog__feld--hervor {
   border-color: var(--akzent);
   box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.15);
-}
-.sn-umrechner {
-  display: grid;
-  gap: var(--s-3);
-}
-.sn-umrechner__zeile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s-3) var(--s-5);
-}
-.sn-umrechner__text {
-  flex: 1 1 260px;
-  margin: 0;
-  color: var(--text-2);
-}
-.sn-rest {
-  display: grid;
-  justify-items: center;
-  min-width: 88px;
-  padding: var(--s-2) var(--s-3);
-  border-radius: var(--r-2);
-  background: var(--flaeche-2);
-}
-.sn-rest__name {
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-.sn-rest strong {
-  font-size: var(--t-2xl);
-  line-height: 1.2;
-  color: var(--text);
 }
 .sn-bau {
   display: grid;
@@ -1755,57 +1584,6 @@
   overflow-wrap: anywhere;
   color: var(--text-2);
 }
-.sn-hextafel {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 4px;
-  max-width: 640px;
-}
-.sn-hextafel__zelle {
-  display: grid;
-  justify-items: center;
-  gap: 1px;
-  padding: var(--s-1) 2px;
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-.sn-hextafel__zelle strong {
-  font-size: var(--t-l);
-  color: var(--text);
-}
-.sn-hextafel__zelle--buchstabe {
-  background: var(--akzent-weich);
-}
-.sn-hextafel__zelle--buchstabe strong {
-  color: var(--akzent);
-}
-.sn-nibbles {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s-2);
-}
-.sn-nibbles__haelfte {
-  display: grid;
-  justify-items: center;
-  gap: 2px;
-  padding: var(--s-2) var(--s-3);
-  border-radius: var(--r-2);
-  border: 1px solid var(--linie-2);
-  background: var(--flaeche-2);
-  color: var(--text-2);
-}
-.sn-nibbles__haelfte strong {
-  font-size: var(--t-xl);
-  color: var(--akzent);
-}
-.sn-nibbles__gleich {
-  font-size: var(--t-xl);
-  font-weight: 600;
-  color: var(--text);
-}
 .sn-mac {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -2084,19 +1862,6 @@ button.sn-v6__block:hover {
   .sn-zwei__wert--bin {
     font-size: var(--t-m);
   }
-  .sn-tafel {
-    gap: 3px;
-  }
-  .sn-tafel__spalte {
-    padding: 2px;
-  }
-  .sn-tafel__bit {
-    height: 38px;
-    font-size: var(--t-l);
-  }
-  .sn-tafel__wert {
-    font-size: 10px;
-  }
   .sn-masken__reihe {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -2125,14 +1890,6 @@ button.sn-v6__block:hover {
   .sn-sortier__knoepfe,
   .sn-sortier__info {
     grid-column: 1 / -1;
-  }
-  .sn-stellen__spalte {
-    width: 34px;
-  }
-  .sn-stellen__summe {
-    flex-basis: 100%;
-    margin-left: 0;
-    padding-top: var(--s-1);
   }
   .sn-pwahl__regler {
     width: 120px;
@@ -2185,9 +1942,6 @@ button.sn-v6__block:hover {
   .sn-schema__zeile--breit .feld {
     grid-column: 1;
     grid-row: auto;
-  }
-  .sn-hextafel {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .sn-mac {
     grid-template-columns: repeat(3, minmax(0, 1fr));

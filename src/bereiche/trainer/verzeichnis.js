@@ -14,13 +14,16 @@ export const TRAINER = [
     icon: 'binary',
     text: 'Zahlensysteme, Präfixe, Datenmengen, Übertragung, Energie',
     modi: [
-      { id: 'zahlensysteme', name: 'Zahlensysteme', sp: ['AP1-4-2-1'] },
-      { id: 'praefixe', name: 'Präfixe: kB und KiB', sp: ['AP1-4-2-1'] },
-      { id: 'datenmenge', name: 'Speicherbedarf', sp: ['AP1-4-2-2', 'AP2-6-6-3'] },
-      { id: 'uebertragung', name: 'Übertragungszeit', sp: ['AP1-4-2-2', 'AP2-6-6-3'] },
-      { id: 'energie', name: 'Leistung & Stromkosten', sp: ['AP1-4-2-3'] },
-      { id: 'rechte', name: 'Dateirechte (chmod)', sp: ['AP1-5-2-3'] },
-      { id: 'paritaet', name: 'Paritätsbit', sp: ['AP2-5-5-3'] },
+      // Zwei Räume (Feld bereich): verstehen (Lernweg), ueben (Aufgaben, nach Themen-Blöcken des Lernwegs: thema).
+      // Eigener Rahmen in zahlen/Zahlen.jsx.
+      { id: 'verstehen', name: 'Lernweg', bereich: 'verstehen', sp: ['AP1-4-2-1', 'AP1-4-2-2', 'AP1-4-2-3', 'AP1-5-2-3', 'AP2-6-6-3', 'AP2-5-5-3'] },
+      { id: 'zahlensysteme', name: 'Zahlensysteme', bereich: 'ueben', thema: 'zahlensysteme', sp: ['AP1-4-2-1'] },
+      { id: 'praefixe', name: 'Bit, Byte, kB und KiB', bereich: 'ueben', thema: 'datenmengen', sp: ['AP1-4-2-1'] },
+      { id: 'datenmenge', name: 'Speicherbedarf', bereich: 'ueben', thema: 'datenmengen', sp: ['AP1-4-2-2', 'AP2-6-6-3'] },
+      { id: 'uebertragung', name: 'Übertragungsdauer', bereich: 'ueben', thema: 'datenmengen', sp: ['AP1-4-2-2', 'AP2-6-6-3'] },
+      { id: 'rechte', name: 'Dateirechte (chmod)', bereich: 'ueben', thema: 'bits', sp: ['AP1-5-2-3'] },
+      { id: 'paritaet', name: 'Paritätsbit', bereich: 'ueben', thema: 'bits', sp: ['AP2-5-5-3'] },
+      { id: 'energie', name: 'Leistung & Stromkosten', bereich: 'ueben', thema: 'strom', sp: ['AP1-4-2-3'] },
     ],
   },
   {

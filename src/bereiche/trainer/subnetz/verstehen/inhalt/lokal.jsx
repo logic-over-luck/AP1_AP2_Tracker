@@ -40,9 +40,9 @@ function HexErklaerung() {
                 Im Zehnersystem gibt es 10 Ziffern, im Binärsystem 2 – im Hexadezimalsystem (kurz Hex) <strong>16</strong>. Für die Werte 10 bis 15 nimmt man Buchstaben: A = 10, B
                 = 11 … F = 15.
               </Absatz>
-              <div class="sn-hextafel">
+              <div class="zl-hextafel">
                 {Array.from({ length: 16 }, (_, i) => (
-                  <span key={i} class={`sn-hextafel__zelle ${i >= 10 ? 'sn-hextafel__zelle--buchstabe' : ''}`}>
+                  <span key={i} class={`zl-hextafel__zelle ${i >= 10 ? 'zl-hextafel__zelle--buchstabe' : ''}`}>
                     <strong class="mono">{HEX[i]}</strong>
                     <span class="mono">{i.toString(2).padStart(4, '0')}</span>
                     <span>= {i}</span>
@@ -79,16 +79,16 @@ function HexErklaerung() {
                 Ein Byte (8 Bit) teilt man in zwei Hälften zu je 4 Bit – jede Hälfte wird eine Hex-Ziffer. So wird jedes Byte zu <strong>genau zwei Hex-Ziffern</strong>, von 00 bis
                 FF.
               </Absatz>
-              <div class="sn-nibbles">
-                <span class="sn-nibbles__haelfte">
+              <div class="zl-nibbles">
+                <span class="zl-nibbles__haelfte">
                   <span class="mono">1100</span>
                   <strong class="mono">C</strong>
                 </span>
-                <span class="sn-nibbles__haelfte">
+                <span class="zl-nibbles__haelfte">
                   <span class="mono">1000</span>
                   <strong class="mono">8</strong>
                 </span>
-                <span class="sn-nibbles__gleich mono">= C8</span>
+                <span class="zl-nibbles__gleich mono">= C8</span>
               </div>
               <Absatz>Und zurück ins Dezimale: Die linke Ziffer zählt 16-fach (Stellenwerte 16 und 1):</Absatz>
               <Stellen werte={[16, 1]} ziffern={['C', 8]} an={[true, true]} summe="= 12 · 16 + 8 · 1 = 200" />

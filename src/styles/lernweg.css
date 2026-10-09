@@ -487,6 +487,10 @@
   border-color: var(--akzent-linie);
   color: var(--akzent);
 }
+.lw-baut__chip--extern {
+  border-style: dashed;
+  text-decoration: none;
+}
 .lw-baut__luecke {
   display: flex;
   align-items: flex-start;
@@ -880,6 +884,32 @@
 .lw-hinweis--fehler {
   background: color-mix(in srgb, var(--fehler) 14%, transparent);
   color: var(--text);
+}
+.lw-hinweis--warn {
+  background: color-mix(in srgb, var(--warn) 14%, transparent);
+  color: var(--text);
+}
+.lw-hinweis--warn svg {
+  color: var(--warn);
+}
+/* Verweis auf eine Lektion in einem anderen Trainer */
+.lw-grundlage {
+  justify-self: start;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  max-width: 80ch;
+  margin: 0;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px dashed var(--linie-3);
+  font-size: var(--t-m);
+  line-height: 1.5;
+  color: var(--text-3);
+}
+.lw-grundlage svg {
+  flex: none;
+  margin-top: 3px;
 }
 /* ---------- Bausteine: Werkbank und Eingaben ---------- */
 .lw-werkbank {

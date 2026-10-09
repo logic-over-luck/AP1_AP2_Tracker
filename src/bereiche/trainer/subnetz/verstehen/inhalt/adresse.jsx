@@ -431,11 +431,11 @@ function BinaerErklaerung() {
                 Das <strong>Binärsystem</strong> (Zweiersystem) hat nur die Ziffern 0 und 1 – genau die Bits. Darum wird der Stellenwert von rechts nach links nicht zehnmal,
                 sondern <strong>zweimal</strong> so groß. Für ein Oktett mit 8 Bit:
               </Absatz>
-              <div class="sn-verdopplung mono" aria-label="Stellenwerte verdoppeln sich">
+              <div class="zl-verdopplung mono" aria-label="Stellenwerte verdoppeln sich">
                 {[128, 64, 32, 16, 8, 4, 2, 1].map((g, i) => (
-                  <span key={g} class="sn-verdopplung__glied">
-                    <span class="sn-verdopplung__wert">{g}</span>
-                    {i < 7 && <span class="sn-verdopplung__mal">←·2</span>}
+                  <span key={g} class="zl-verdopplung__glied">
+                    <span class="zl-verdopplung__wert">{g}</span>
+                    {i < 7 && <span class="zl-verdopplung__mal">←·2</span>}
                   </span>
                 ))}
               </div>
