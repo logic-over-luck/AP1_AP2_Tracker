@@ -149,17 +149,15 @@ nächsten offenen Punkt weiter.
   wird streng gelesen (jede Nummer genau einmal, 0 … Höchstpunkte, halbe Punkte). Zeichenaufgaben werden nicht bewertet
   und im Ergebnis als „nicht ermittelt“ mit ihren Punkten ausgewiesen; Prozent und Note beziehen sich auf die
   ermittelten Punkte. Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
-- **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer (`subnetz/Verstehen.jsx`, Rechnung in `lernweg.js`,
-  getestet). Lernweg in zehn Schritten an einer Adresse (oben IP und Präfix, keine Beispiel-Knöpfe), jeder Schritt zeigt
-  nur eine Idee: Aufbau (für dich dezimal / für den Computer 32 Bits, 4 Oktette × 8 Bit, warum 0–255), Binär (Oktett
-  wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich in vier Teilen, die nacheinander aufgedeckt werden (a Mitzählen: Bits
-  werden bis zum Präfix animiert grün, Zählreihe 1 … 32, danach Zoom auf das Oktett mit dem Strich: es wird groß,
-  die anderen grau, mit Stellenwerten, Netz-/Host-Klammern und Rechnung, z. B. Host 16 + 4 + 2 = 22; b drei PCs im Vergleich – selbes Netz links gleich, Nachbarnetz
-  links anders; c das geteilte Oktett als Deine Zahl / Netzanteil / Hostanteil, z. B. 150 = 128 + 22; d Ergebnis
-  Adresse = Netz + Gerät Nr., Hostbits → Adressen, Maske, danach Strich verschiebbar mit „halbiert/verdoppelt“),
-  Oktett finden, Blöcke schneiden, eigenen Block raten, Blockende raten (Fehler „Anfang des nächsten Blocks“ wird
-  erklärt, danach Anfang/Ende als Bits: alle Hostbits 0 bzw. 1), Broadcast selbst eingeben und Adress-Tabelle (Prüfungsfalle x.255 / (x+1).0 unter /24), Nachbar-Prüfung
-  (direkt oder über Gateway), Aufteilen-Tabelle. „Neue Adresse, von vorn“ am Ende wählt eine Zufallsadresse.
+- **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer. Oben eine feste Bühne (`subnetz/Buehne.jsx`), darunter
+  die Erklärung je Schritt (`subnetz/Verstehen.jsx`), Rechnung in `lernweg.js` (getestet). Die Bühne zeigt immer dieselbe
+  Adresse als Ebenen und zoomt von Schritt zu Schritt näher: ganze Adresse (32 Bit) → Lupe auf das Oktett mit dem Strich
+  (Stellenwerte, Netz-/Host-Klammern) → dieses Oktett als Zahlenstrahl 0–255 (Blöcke mit Netz-Bit-Mustern 00, 01 …) →
+  Lupe auf den eigenen Block (Anfang, Ende, Position der IP). Ein gestrichelter Trichter verbindet den vergrößerten
+  Ausschnitt mit der Ebene darunter (gemessen über `data-quelle`/`data-ziel`). Schritte: Adresse, Strich (Mitzählen),
+  Oktett (Bits lesen, am Strich teilen), Blöcke (Block raten), Dein Block (Ende raten, Bits als Begründung), Ergebnis
+  (Broadcast eingeben, Prüfungsfalle unter /24), Nachbarn (zweite IP, Gateway), Kurzweg (Prüfungs-Rechenweg in sieben
+  Zeilen mit Sprung zum passenden Schritt, Bühne zeigt alle Zoomstufen), Aufteilen. Rätsel-Stand gilt je Adresse/Präfix.
 - **Subnetz-Visualizer:** zweiter Reiter im Subnetz-Trainer, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
   Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits

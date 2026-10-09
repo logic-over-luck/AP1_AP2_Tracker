@@ -1,0 +1,1224 @@
+/* Subnetz „Verstehen“: oben die Bühne (immer dieselbe Adresse, Ebene für Ebene näher), darunter die Erklärung.
+   Leiste und Tabelle kommen aus subnetz-visual.css (snv-leiste, snv-tab). */
+.slv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.slv-praefix .snv-praefix__wert {
+  min-width: 3.4ch;
+  text-align: center;
+}
+.snv-schritt:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.slv-klein {
+  font-size: var(--t-xs);
+}
+@keyframes slv-auf {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* ---------- Schritt-Leiste ---------- */
+.slv-schritte {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: thin;
+}
+.slv-schritte li {
+  flex: 1 0 auto;
+}
+.slv-schritt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-1);
+  background: var(--flaeche-1);
+  color: var(--text-3);
+  font: inherit;
+  font-size: var(--t-s);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.slv-schritt:hover {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.slv-schritt__nr {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--flaeche-3);
+  font-size: var(--t-xs);
+  font-weight: 700;
+}
+.slv-schritt--fertig {
+  color: var(--text-2);
+}
+.slv-schritt--fertig .slv-schritt__nr {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.slv-schritt--aktiv {
+  border-color: var(--akzent-linie);
+  background: var(--akzent-weich);
+  color: var(--text);
+  font-weight: 600;
+}
+.slv-schritt--aktiv .slv-schritt__nr {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+
+/* ---------- Bühne ---------- */
+.slv-buehne-rahmen {
+  padding: var(--s-4);
+  scroll-margin-top: calc(var(--kopf-hoehe) + 12px);
+}
+.slv-buehne {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.slv-trichter {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.slv-trichter polygon {
+  fill: rgba(var(--akzent-rgb), 0.07);
+  stroke: var(--akzent-linie);
+  stroke-dasharray: 4 3;
+  stroke-width: 1;
+  transition: all var(--dauer) var(--kurve);
+}
+.slv-ebene {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  animation: slv-auf var(--dauer-lang) var(--kurve);
+}
+.slv-ebene__titel {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* Bits: Größe kommt über Variablen, damit der Zoom weich animiert */
+.slv-bit {
+  display: inline-grid;
+  place-items: center;
+  width: var(--bw, 20px);
+  height: var(--bh, 28px);
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: var(--flaeche-3);
+  color: var(--text);
+  font: 600 var(--bf, 13px) var(--mono);
+  font-style: normal;
+  transition:
+    width var(--dauer-lang) var(--kurve),
+    height var(--dauer-lang) var(--kurve),
+    font-size var(--dauer-lang) var(--kurve),
+    background var(--dauer) var(--kurve),
+    color var(--dauer) var(--kurve);
+}
+button.slv-bit {
+  cursor: pointer;
+}
+button.slv-bit:hover {
+  outline: 2px solid var(--text);
+  outline-offset: -1px;
+}
+.slv-bit--netz {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.slv-bit--host {
+  background: var(--flaeche-4);
+  color: var(--text);
+}
+.slv-bit--eins {
+  background: var(--linie-3);
+  color: var(--text);
+}
+.slv-bit--offen {
+  background: none;
+  box-shadow: inset 0 0 0 1px var(--linie-2);
+  color: var(--text-4);
+}
+.slv-bit.slv-bit--jetzt {
+  outline: 2px solid var(--warn);
+  outline-offset: 1px;
+}
+.slv-spalte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.slv-strich {
+  flex: none;
+  align-self: flex-start;
+  width: 4px;
+  height: calc(var(--bh, 28px) + 20px);
+  margin: -4px 4px 0;
+  border-radius: 2px;
+  background: var(--warn);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--warn) 60%, transparent);
+  transition: height var(--dauer-lang) var(--kurve);
+}
+.slv-zaehler {
+  min-width: var(--bw, 20px);
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  color: var(--text-4);
+  transition: min-width var(--dauer-lang) var(--kurve);
+}
+.slv-zaehler--netz {
+  color: var(--akzent);
+}
+.slv-zaehler.slv-zaehler--grenze {
+  border-radius: 3px;
+  background: var(--warn);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Ebene 1: die ganze Adresse */
+.slv-adresse {
+  --bw: 20px;
+  --bh: 28px;
+  --bf: 13px;
+}
+.slv-adresse--kompakt {
+  --bw: 14px;
+  --bh: 20px;
+  --bf: 10px;
+}
+.slv-oktette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--s-2) var(--s-4);
+}
+.slv-okt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: var(--r-1);
+  transition:
+    opacity var(--dauer-lang) var(--kurve),
+    filter var(--dauer-lang) var(--kurve),
+    background var(--dauer-lang) var(--kurve);
+}
+.slv-okt__dez {
+  font-size: var(--t-l);
+  font-weight: 700;
+  transition: font-size var(--dauer-lang) var(--kurve);
+}
+.slv-adresse--kompakt .slv-okt__dez {
+  font-size: var(--t-m);
+}
+.slv-okt__bits {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+.slv-okt__name {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.slv-okt__name strong {
+  color: var(--akzent);
+}
+.slv-okt--grau {
+  --bw: 10px;
+  --bh: 15px;
+  --bf: 8px;
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+.slv-okt--fokus {
+  background: rgba(var(--akzent-rgb), 0.08);
+  box-shadow: inset 0 0 0 1px var(--akzent-linie);
+}
+.slv-okt--fokus .slv-okt__dez {
+  color: var(--akzent);
+}
+
+/* Ebene 2: Lupe auf das Oktett */
+.slv-lupe {
+  --bw: 40px;
+  --bh: 50px;
+  --bf: 22px;
+}
+.slv-lupe--kompakt {
+  --bw: 24px;
+  --bh: 30px;
+  --bf: 14px;
+}
+.slv-lupe__inhalt {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slv-lupe__bits {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.slv-lupe .slv-bit {
+  border-radius: 5px;
+}
+.slv-lupe .slv-strich {
+  height: calc(var(--bh) + 26px);
+}
+.slv-wert {
+  min-width: var(--bw);
+  padding: 1px 0;
+  border-radius: 3px;
+  font-size: var(--t-s);
+  text-align: center;
+  color: var(--text-4);
+  transition: min-width var(--dauer-lang) var(--kurve);
+}
+.slv-lupe--kompakt .slv-wert {
+  font-size: 10px;
+}
+.slv-wert--an {
+  font-weight: 700;
+  color: var(--text);
+}
+.slv-wert--an.slv-wert--netz {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.slv-wert--an.slv-wert--host {
+  background: color-mix(in srgb, var(--warn) 14%, transparent);
+  color: var(--warn);
+}
+.slv-klammern {
+  display: flex;
+  gap: 14px;
+}
+.slv-klammer {
+  flex-basis: 0;
+  padding-top: 3px;
+  border: 2px solid;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+.slv-klammer--netz {
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.slv-klammer--host {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+.slv-summen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px var(--s-5);
+  font-size: var(--t-m);
+}
+
+/* Ebene 3: Zahlenstrahl */
+.slv-strahl__leiste {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  width: 100%;
+  height: 40px;
+  margin: 18px 0 18px;
+  transition: height var(--dauer-lang) var(--kurve);
+}
+.slv-strahl--kompakt .slv-strahl__leiste {
+  height: 26px;
+}
+.slv-block {
+  position: relative;
+  display: grid;
+  flex: 1;
+  place-items: center;
+  min-width: 1px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: var(--flaeche-3);
+  transition: background var(--dauer) var(--kurve);
+}
+.slv-strahl__leiste--dicht {
+  gap: 0;
+}
+.slv-strahl__leiste--dicht .slv-block {
+  border-radius: 0;
+  box-shadow: inset -1px 0 0 var(--flaeche-1);
+}
+.slv-block--klick {
+  cursor: pointer;
+}
+.slv-block--klick:hover {
+  background: var(--linie-3);
+}
+.slv-block--dein,
+.slv-strahl__leiste--dicht .slv-block--dein {
+  z-index: 1;
+  background: linear-gradient(90deg, var(--akzent) 0 4px, color-mix(in srgb, var(--akzent) 30%, transparent) 4px calc(100% - 4px), var(--warn) calc(100% - 4px));
+  box-shadow: 0 0 0 2px var(--akzent);
+}
+.slv-block--fremd {
+  background: color-mix(in srgb, var(--fehler) 30%, transparent);
+  box-shadow: 0 0 0 2px var(--fehler);
+}
+.slv-block--falsch {
+  background: color-mix(in srgb, var(--fehler) 35%, transparent);
+}
+.slv-block__muster {
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--text-3);
+}
+.slv-block--dein .slv-block__muster {
+  color: var(--text);
+}
+.slv-strahl--kompakt .slv-block__muster {
+  font-size: 10px;
+}
+.slv-block__von,
+.slv-strahl__ende {
+  position: absolute;
+  bottom: -18px;
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+.slv-block__von {
+  left: 0;
+}
+.slv-strahl__ende {
+  right: 0;
+}
+.slv-zeiger {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  z-index: 2;
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+  pointer-events: none;
+}
+.slv-zeiger span {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.slv-zeiger--gut,
+.slv-zeiger--gut span {
+  background: var(--gut);
+}
+.slv-zeiger--fremd,
+.slv-zeiger--fremd span {
+  background: var(--fehler);
+}
+
+/* Ebene 4: Lupe auf deinen Block */
+.slv-blupe {
+  max-width: 680px;
+}
+.slv-blupe__zeile {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  width: 100%;
+}
+.slv-blupe__leiste {
+  position: relative;
+  flex: 1;
+  height: 30px;
+  margin-top: 22px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--akzent) 0 6px, color-mix(in srgb, var(--akzent) 25%, transparent) 6px calc(100% - 6px), var(--warn) calc(100% - 6px));
+  transition: height var(--dauer-lang) var(--kurve);
+}
+.slv-blupe--kompakt .slv-blupe__leiste {
+  height: 20px;
+}
+.slv-blupe__strecke {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background: var(--text-3);
+  transform: translateY(-50%);
+}
+.slv-blupe__strecke span {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text);
+  transform: translateX(-50%);
+}
+.slv-blupe__zeiger {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+}
+.slv-blupe__zeiger span {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+.slv-blupe__naechster {
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  height: 30px;
+  padding: 0 8px;
+  border-left: 4px solid var(--warn);
+  border-radius: 0 5px 5px 0;
+  background: var(--flaeche-3);
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--text-3);
+}
+.slv-blupe--kompakt .slv-blupe__naechster {
+  height: 20px;
+}
+.slv-blupe__naechster--zu {
+  color: var(--text-4);
+}
+.slv-blupe__enden {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  width: 100%;
+}
+.slv-blupe__enden > span {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--t-xs);
+  line-height: 1.35;
+  color: var(--text-3);
+}
+.slv-blupe__enden strong {
+  font-size: var(--t-xl);
+}
+.slv-blupe--kompakt .slv-blupe__enden strong {
+  font-size: var(--t-m);
+}
+.slv-blupe__enden small {
+  font-size: var(--t-xs);
+  color: var(--text-2);
+}
+.slv-blupe__rechts {
+  align-items: flex-end;
+  text-align: right;
+}
+.slv-blupe--kompakt .slv-blupe__enden small {
+  display: none;
+}
+
+/* Ergebnis */
+.slv-tab-rahmen {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.slv-ergebnis__tab {
+  border-collapse: collapse;
+  font-size: var(--t-l);
+}
+.slv-ergebnis__tab th {
+  padding: 6px 16px 6px 0;
+  font-size: var(--t-s);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--text-2);
+}
+.slv-ergebnis__tab td {
+  padding: 6px 0;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+.slv-ergebnis__tab tr + tr th,
+.slv-ergebnis__tab tr + tr td {
+  border-top: 1px solid var(--linie);
+}
+.slv-ergebnis__punkt {
+  padding: 0 2px;
+  color: var(--text-4);
+}
+.slv-ergebnis__tab td.slv-ergebnis__text {
+  padding-left: var(--s-5);
+  font-size: var(--t-s);
+  font-weight: 400;
+  text-align: left;
+  color: var(--text-3);
+}
+.slv-z--fest {
+  color: var(--text-3);
+}
+.slv-z--grenze {
+  color: var(--akzent);
+}
+.slv-z--frei {
+  color: var(--warn);
+}
+.slv-legende {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--text-2);
+}
+.slv-farbe {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+.slv-farbe--fest {
+  background: var(--text-3);
+}
+.slv-farbe--grenze {
+  background: var(--akzent);
+}
+.slv-farbe--frei {
+  background: var(--warn);
+}
+.slv-farbe-netz {
+  color: var(--akzent);
+}
+.slv-farbe-host {
+  color: var(--warn);
+}
+
+/* Mini-Bits für Beweis-Zeilen */
+.slv-minibits {
+  --bw: 20px;
+  --bh: 26px;
+  --bf: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.slv-strich--mini {
+  align-self: center;
+  height: 32px;
+  margin: 0 3px;
+}
+
+/* ---------- Erklärung ---------- */
+.slv-karte {
+  padding: var(--s-4) var(--s-5);
+}
+.slv-karte__kopf {
+  margin-bottom: var(--s-3);
+}
+.slv-karte__titel {
+  margin: 2px 0 0;
+  font-size: var(--t-xl);
+  font-weight: 700;
+}
+.slv-inhalt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-3);
+  font-size: var(--t-n);
+  line-height: 1.6;
+  animation: slv-auf var(--dauer-lang) var(--kurve);
+}
+.slv-inhalt > * {
+  max-width: 100%;
+}
+.slv-inhalt > p {
+  max-width: 78ch;
+  margin: 0;
+}
+.slv-unterkopf {
+  margin: var(--s-2) 0 0;
+  font-size: var(--t-l);
+  font-weight: 700;
+}
+.slv-fuss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2);
+  margin-top: var(--s-5);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--linie);
+}
+.slv-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.slv-rechnung {
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+}
+.slv-rechnung strong {
+  color: var(--akzent);
+}
+.slv-zaehlstand {
+  font-size: var(--t-l);
+  font-weight: 700;
+  color: var(--akzent);
+}
+
+/* Kästen */
+.slv-merke,
+.slv-hinweis,
+.slv-rueck,
+.slv-falle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  max-width: 78ch;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--r-2);
+  font-size: var(--t-m);
+  line-height: 1.55;
+}
+.slv-merke svg,
+.slv-hinweis svg,
+.slv-rueck svg,
+.slv-falle svg {
+  flex: none;
+  margin-top: 2px;
+}
+.slv-merke {
+  border: 1px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+}
+.slv-merke svg {
+  color: var(--akzent);
+}
+.slv-falle {
+  border: 1px solid color-mix(in srgb, var(--warn) 45%, transparent);
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+}
+.slv-falle svg {
+  color: var(--warn);
+}
+.slv-hinweis,
+.slv-falle.slv-falle--info {
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  background: color-mix(in srgb, var(--info) 10%, transparent);
+}
+.slv-hinweis svg,
+.slv-falle.slv-falle--info svg {
+  color: var(--info);
+}
+.slv-rueck {
+  padding: 6px 12px;
+}
+.slv-rueck span {
+  color: var(--text);
+}
+.slv-rueck--gut {
+  background: color-mix(in srgb, var(--gut) 12%, transparent);
+  color: var(--gut);
+}
+.slv-rueck--falsch {
+  background: color-mix(in srgb, var(--fehler) 12%, transparent);
+  color: var(--fehler);
+}
+
+/* Schritt 1 */
+.slv-zwei {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 6px var(--s-4);
+  padding: 12px 16px;
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.slv-zwei__name {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.slv-zwei__wert {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.slv-zwei__wert--dez {
+  font-size: var(--t-xl);
+}
+.slv-zwei__wert--bin {
+  font-size: var(--t-m);
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+}
+.slv-fakten {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-2);
+  width: 100%;
+}
+.slv-fakt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-s);
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.slv-fakt__titel {
+  font-size: var(--t-m);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Schritt 2 */
+.slv-teile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.slv-teil {
+  padding: 4px 12px;
+  border-radius: var(--r-rund);
+  font-size: var(--t-s);
+}
+.slv-teil--netz {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.slv-teil--host {
+  background: var(--flaeche-4);
+  color: var(--text);
+}
+
+/* Schritt 3 */
+.slv-wegliste {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-m);
+}
+.slv-wegliste li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  color: var(--text-2);
+  animation: slv-auf var(--dauer) var(--kurve);
+}
+.slv-wegliste__wert {
+  min-width: 3ch;
+  font-weight: 700;
+  text-align: right;
+  color: var(--text-3);
+}
+.slv-wegliste li.slv-wegliste--an {
+  color: var(--text);
+}
+.slv-wegliste--an .slv-wegliste__wert {
+  color: var(--akzent);
+}
+.slv-gleichung {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--s-2);
+}
+.slv-gleichung__teil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 14px;
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.slv-gleichung__wert {
+  font-size: var(--t-xl);
+  font-weight: 700;
+  color: var(--text);
+}
+.slv-gleichung__teil--netz {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.slv-gleichung__teil--netz .slv-gleichung__wert {
+  color: var(--akzent);
+}
+.slv-gleichung__teil--host {
+  border-color: color-mix(in srgb, var(--warn) 60%, transparent);
+}
+.slv-gleichung__teil--host .slv-gleichung__wert {
+  color: var(--warn);
+}
+.slv-gleichung__op {
+  align-self: center;
+  font-size: var(--t-2xl);
+  font-weight: 700;
+  color: var(--text-3);
+}
+
+/* Schritt 4 */
+.slv-frage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.slv-frage__feld {
+  width: 80px;
+  font-weight: 600;
+}
+.slv-frage__feld--ip {
+  width: 170px;
+}
+.slv-wege {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: var(--s-2);
+}
+.slv-weg {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+}
+.slv-weg__titel {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.slv-weg strong {
+  color: var(--akzent);
+}
+
+/* Schritt 5 */
+.slv-optionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.slv-option {
+  min-width: 72px;
+  height: 44px;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--linie-2);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text);
+  font-size: var(--t-l);
+  font-weight: 700;
+  cursor: pointer;
+}
+.slv-option:hover:not(:disabled) {
+  border-color: var(--akzent);
+}
+.slv-option:disabled {
+  cursor: default;
+}
+.slv-option--gut {
+  border-color: var(--gut);
+  background: color-mix(in srgb, var(--gut) 15%, transparent);
+}
+.slv-option--falsch {
+  border-color: var(--fehler);
+  background: color-mix(in srgb, var(--fehler) 15%, transparent);
+}
+.slv-beweis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.slv-beweis__zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px var(--s-4);
+}
+.slv-beweis__name {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+  font-size: var(--t-m);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.slv-beweis__name span {
+  font-size: var(--t-xs);
+  font-weight: 400;
+  color: var(--text-3);
+}
+.slv-beweis__wert {
+  font-size: var(--t-xl);
+  font-weight: 700;
+}
+
+/* Schritt 7 */
+.slv-pc {
+  padding: 5px 10px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+}
+.slv-vergleich {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px var(--s-3);
+  font-size: var(--t-m);
+}
+.slv-vergleich span {
+  color: var(--text-2);
+}
+
+/* Schritt 8 */
+.slv-rezept {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 760px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slv-rezept li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 8px 12px;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.slv-rezept__nr {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--akzent);
+  color: var(--akzent-text);
+  font-size: var(--t-s);
+  font-weight: 700;
+}
+.slv-rezept__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  font-size: var(--t-m);
+}
+.slv-rezept__text .mono {
+  overflow-wrap: anywhere;
+  color: var(--text-2);
+}
+
+/* Schritt 9 */
+.slv-aufteil {
+  width: auto;
+  min-width: 420px;
+}
+.slv-aufteil td,
+.slv-aufteil th {
+  padding-right: var(--s-4);
+}
+.slv-wozu ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+}
+.slv-wozu li {
+  margin: 2px 0;
+}
+
+/* ---------- Handy ---------- */
+@media (max-width: 1100px) {
+  .slv-fakten {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .slv-buehne-rahmen {
+    padding: var(--s-3) var(--s-2);
+  }
+  .slv-buehne {
+    gap: 26px;
+  }
+  .slv-karte {
+    padding: var(--s-3);
+  }
+  .slv-karte__titel {
+    font-size: var(--t-l);
+  }
+  .slv-schritte li {
+    flex: 0 0 auto;
+  }
+  .slv-schritt__name {
+    display: none;
+  }
+  .slv-schritt--aktiv .slv-schritt__name {
+    display: inline;
+  }
+  .slv-adresse {
+    --bw: 15px;
+    --bh: 22px;
+    --bf: 11px;
+  }
+  .slv-adresse--kompakt {
+    --bw: 11px;
+    --bh: 16px;
+    --bf: 9px;
+  }
+  .slv-okt--grau {
+    --bw: 6px;
+    --bh: 11px;
+    --bf: 6px;
+  }
+  .slv-oktette {
+    gap: 6px 10px;
+  }
+  .slv-okt {
+    padding: 2px 3px;
+  }
+  .slv-okt__bits {
+    gap: 1px;
+  }
+  .slv-zaehler {
+    font-size: 8px;
+  }
+  .slv-strich {
+    width: 3px;
+    margin: -3px 2px 0;
+  }
+  .slv-lupe {
+    --bw: 32px;
+    --bh: 42px;
+    --bf: 18px;
+  }
+  .slv-lupe--kompakt {
+    --bw: 22px;
+    --bh: 28px;
+    --bf: 13px;
+  }
+  .slv-lupe__bits {
+    gap: 2px;
+  }
+  .slv-wert {
+    font-size: 10px;
+  }
+  .slv-klammern {
+    gap: 8px;
+  }
+  .slv-ergebnis__tab {
+    font-size: var(--t-n);
+  }
+  .slv-ergebnis__tab td.slv-ergebnis__text {
+    display: none;
+  }
+  .slv-minibits {
+    --bw: 16px;
+    --bh: 22px;
+    --bf: 11px;
+  }
+  .slv-beweis__name {
+    width: 100%;
+  }
+  .slv-wege {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .slv-gleichung__op {
+    font-size: var(--t-l);
+  }
+  .slv-vergleich {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .slv-aufteil {
+    min-width: 0;
+  }
+  .slv-rezept li {
+    flex-wrap: wrap;
+  }
+}

@@ -1,6 +1,6 @@
 // Rechenhilfen für den Lernweg „Verstehen“ im Subnetz-Trainer. Rein, getestet in tests/subnetz.test.mjs.
 
-import { ipZuZahl, zahlZuIp, zerlege, maskeZahl } from './ip.js';
+import { ipZuZahl, zahlZuIp, zerlege } from './ip.js';
 
 // Rolle jedes Oktetts: 'fest' (ganz Netz, wird abgeschrieben), 'grenze' (hier wird gerechnet),
 // 'frei' (ganz Host: 0 bei der Netzadresse, 255 beim Broadcast)
@@ -68,20 +68,27 @@ export function binaerSchritte(wert) {
   });
 }
 
-// Was der Trennstrich mit der echten Adresse macht: je Oktett Netzanteil (Hostbits auf 0) und Hostanteil
-// (Netzbits auf 0). Der Netzanteil zusammen ist die Netzadresse, der Hostanteil die Nummer des Geräts im Netz.
-export function teileAdresse(ip, praefix) {
-  const zahl = ipZuZahl(ip);
-  const m = maskeZahl(praefix);
-  const netz = (zahl & m) >>> 0;
-  const host = (zahl & ~m) >>> 0;
-  const oktette = zahlZuIp(zahl)
-    .split('.')
-    .map(Number)
-    .map((wert, i) => {
-      const netzBits = Math.max(0, Math.min(8, praefix - i * 8));
-      const maske = 256 - 2 ** (8 - netzBits);
-      return { wert, netzBits, maske, netz: wert & maske, host: wert & ~maske & 255 };
-    });
-  return { oktette, netz: zahlZuIp(netz), host: zahlZuIp(host), hostNummer: host, maske: zahlZuIp(m) };
+// Der schnelle Rechenweg für die Prüfung, mit allen Zwischenwerten
+export function kurzweg(ip, praefix) {
+  const z = zerlege(ip, praefix);
+  const k = z.netzBitsImOktett;
+  return {
+    teile: [...Array(z.index).fill(8), ...(k ? [k] : [])],
+    nr: z.index + 1,
+    wert: z.wert,
+    netzBits: k,
+    maskenteile: [128, 64, 32, 16, 8, 4, 2, 1].slice(0, k),
+    maskenwert: z.maskenwert,
+    block: z.block,
+    blockNr: z.blockNr,
+    rest: z.wert - z.start,
+    start: z.start,
+    ende: z.ende,
+    netz: z.n.netz,
+    broadcast: z.n.broadcast,
+    erster: z.n.erster,
+    letzter: z.n.letzter,
+    hostBits: 32 - praefix,
+    hosts: z.n.hostsKlassisch,
+  };
 }
