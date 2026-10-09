@@ -3,10 +3,18 @@
 import { useCallback } from 'preact/hooks';
 import { Icon } from '../../../../ui/bausteine.jsx';
 import { Uebung } from '../../rahmen/Uebung.jsx';
-import { BLOECKE } from '../verstehen/lernweg.js';
+import { link } from '../../../../router.js';
+import { BLOECKE, LEKTIONEN } from '../verstehen/lernweg.js';
 import { ERZEUGER } from './aufgaben.js';
 
 const SPICKZETTEL = {
+  binaer:
+    '- Stellenwerte: 128 · 64 · 32 · 16 · 8 · 4 · 2 · 1\n- Binär → dezimal: Stellenwerte über den Einsen addieren\n- Dezimal → binär: von links fragen „Passt der Stellenwert in den Rest?“ – ja → 1 und abziehen, nein → 0',
+  hosts:
+    '- Adressen: 2^(32 − Präfix) · nutzbare Hosts: Adressen − 2\n- Entscheidendes Oktett: das erste Oktett der Subnetzmaske, das nicht 255 ist\n- Blockgröße = 256 − Wert der Subnetzmaske in diesem Oktett',
+  konfig:
+    '- Einzutragen: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- Statische Adresse: im richtigen Netz, nicht Netz-/Broadcastadresse, nicht vergeben, außerhalb des DHCP-Bereichs\n- Das Standardgateway liegt im selben Netz wie das Gerät',
+  mac: '- MAC-Adresse: 48 Bit, 6 Bytes hexadezimal, vordere Hälfte = Herstellerkennung\n- ARP: zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermitteln; `arp -a` zeigt den Cache\n- DHCP teilt zu: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- 169.254.x.x: kein DHCP-Server erreicht',
   analyse:
     '- Netzadresse: alle Hostbits 0 · Broadcast: alle Hostbits 1\n- Hostbereich: Netzadresse + 1 bis Broadcast − 1\n- Nutzbare Hosts: 2^(32 − Präfix) − 2\n- Blockgröße im letzten Oktett: 256 − Maskenwert (z. B. /26 → 256 − 192 = 64)\n- /31: RFC 3021 Punkt-zu-Punkt, /32: ein einzelner Host',
   maske: '- /24 = 255.255.255.0 · /25 = .128 · /26 = .192 · /27 = .224 · /28 = .240 · /29 = .248 · /30 = .252\n- Präfix = Anzahl der Einsen in der Subnetzmaske',
@@ -41,6 +49,25 @@ export function Ueben({ uebungen, aktiv, onWahl }) {
         </p>
       )}
       <SubnetzUebung key={aktiv.id} modus={aktiv} />
+      <DazuImLernweg modus={aktiv} />
+    </div>
+  );
+}
+
+// Lektionen, die zu dieser Übung hinführen
+function DazuImLernweg({ modus }) {
+  const lektionen = LEKTIONEN.filter((l) => l.uebung === modus.id);
+  if (!lektionen.length) return null;
+  return (
+    <div class="sn-dazu">
+      <span class="ueberschrift-klein">
+        <Icon name="lightbulb" groesse={13} /> Dazu im Lernweg
+      </span>
+      {lektionen.map((l) => (
+        <a key={l.id} class="sn-baut__chip" href={link('AP1', 'trainer', 'subnetz', { modus: 'verstehen', lektion: l.id })}>
+          {l.nr}. {l.begriff}
+        </a>
+      ))}
     </div>
   );
 }

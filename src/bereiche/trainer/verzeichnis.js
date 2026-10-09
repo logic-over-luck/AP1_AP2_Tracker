@@ -33,7 +33,9 @@ export const TRAINER = [
       // Drei Räume (Feld bereich): verstehen (Lernweg), ueben (Aufgaben, nach Themen-Blöcken des Lernwegs: thema),
       // visualisieren (Visualizer). Eigener Rahmen in subnetz/Subnetz.jsx.
       { id: 'verstehen', name: 'Lernweg', bereich: 'verstehen', sp: ['AP1-6-2-2', 'AP1-6-2-1', 'AP1-6-2-3', 'AP1-6-2-4'] },
+      { id: 'binaer', name: 'Oktett binär', bereich: 'ueben', thema: 'adresse', sp: ['AP1-6-2-2'] },
       { id: 'maske', name: 'Präfix und Subnetzmaske', bereich: 'ueben', thema: 'adresse', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
+      { id: 'hosts', name: 'Adressen, Hosts, Blockgröße', bereich: 'ueben', thema: 'subnetting', sp: ['AP1-6-2-2'] },
       { id: 'analyse', name: 'Netz bestimmen', bereich: 'ueben', thema: 'subnetting', sp: ['AP1-6-2-2'] },
       { id: 'gleich', name: 'Gleiches Netz?', bereich: 'ueben', thema: 'subnetting', sp: ['AP1-6-2-2'] },
       {
@@ -46,6 +48,8 @@ export const TRAINER = [
         hinweis: 'Für AP1 laut Rahmen nicht belegt – zum Vertiefen.',
       },
       { id: 'privat', name: 'Private Adressen', bereich: 'ueben', thema: 'konfiguration', sp: ['AP1-6-2-1'] },
+      { id: 'konfig', name: 'Konfiguration prüfen', bereich: 'ueben', thema: 'konfiguration', sp: ['AP1-6-2-1', 'AP1-6-2-2'] },
+      { id: 'mac', name: 'MAC, ARP und DHCP', bereich: 'ueben', thema: 'lokal', sp: ['AP1-6-2-4'] },
       { id: 'ipv6', name: 'IPv6 kürzen & ausschreiben', bereich: 'ueben', thema: 'ipv6', sp: ['AP1-6-2-3'] },
       { id: 'visual', name: 'Visualizer', bereich: 'visualisieren', sp: ['AP1-6-2-2', 'AP1-6-2-1'] },
     ],

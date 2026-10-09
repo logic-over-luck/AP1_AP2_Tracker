@@ -3270,6 +3270,19 @@ button.sn-v6__block:hover {
   color: var(--akzent);
 }
 
+.sn-dazu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-5);
+}
+.sn-dazu .ueberschrift-klein {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
 @media (max-width: 640px) {
   .sn-raeume {
     gap: var(--s-2);

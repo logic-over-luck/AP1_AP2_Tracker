@@ -1,8 +1,24 @@
 // Aufgabenerzeuger Subnetz-Trainer. Rein, getestet in tests/subnetz.test.mjs.
 
-import { netz, maske, binaer, gleichesNetz, istPrivat, ipv6Voll, ipv6Kurz, gruppenVoll, istRichtigGekuerzt, aufteilen as vlsm, ipZuZahl, zahlZuIp } from '../ip.js';
+import {
+  netz,
+  maske,
+  binaer,
+  gleichesNetz,
+  istPrivat,
+  ipv6Voll,
+  ipv6Kurz,
+  gruppenVoll,
+  istRichtigGekuerzt,
+  aufteilen as vlsm,
+  ipZuZahl,
+  zahlZuIp,
+  binaerSchritte,
+  zerlege,
+} from '../ip.js';
+import { pruefeStatisch } from '../verstehen/rechnen.js';
 
-const SP = { subnetting: 'AP1-6-2-2', konfig: 'AP1-6-2-1', ipv6: 'AP1-6-2-3' };
+const SP = { subnetting: 'AP1-6-2-2', konfig: 'AP1-6-2-1', ipv6: 'AP1-6-2-3', mac: 'AP1-6-2-4' };
 
 function zufallsIp(r, praefix) {
   const art = r.wahl(['192.168', '192.168', '10', '172', 'oeff']);
@@ -21,11 +37,7 @@ function bitWeg(ip, praefix) {
   const m = '1'.repeat(praefix).padEnd(32, '0');
   const fmt = (s) => s.match(/.{8}/g).join('.');
   const netzBits = b.slice(0, praefix);
-  return [
-    `Adresse:  \`${fmt(b)}\``,
-    `Maske /${praefix}: \`${fmt(m)}\``,
-    `Netzanteil = erste ${praefix} Bit: \`${netzBits}\` | Hostanteil: ${32 - praefix} Bit`,
-  ];
+  return [`Adresse:  \`${fmt(b)}\``, `Maske /${praefix}: \`${fmt(m)}\``, `Netzanteil = erste ${praefix} Bit: \`${netzBits}\` | Hostanteil: ${32 - praefix} Bit`];
 }
 
 // Netz bestimmen: Netzadresse, Broadcast, Hostbereich, Anzahl Hosts
@@ -76,11 +88,10 @@ export function analyse(r) {
   };
 }
 
-// Präfix ↔ Maske, Anzahl Adressen und Hosts
+// Präfix ↔ Subnetzmaske
 export function maskeAufgabe(r) {
   const p = r.wahl([8, 16, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30]);
-  const art = r.wahl(['p2m', 'm2p', 'hosts']);
-  if (art === 'p2m')
+  if (r.ja())
     return {
       titel: 'Präfix → Subnetzmaske',
       sp: SP.konfig,
@@ -88,14 +99,36 @@ export function maskeAufgabe(r) {
       felder: [{ id: 'm', label: 'Subnetzmaske', typ: 'ipv4', erwartet: maske(p) }],
       loesung: [`/${p} = ${p} Einsen, dann ${32 - p} Nullen`, `\`${binaer(maske(p))}\``, `= **${maske(p)}**`],
     };
-  if (art === 'm2p')
+  return {
+    titel: 'Subnetzmaske → Präfix',
+    sp: SP.konfig,
+    text: `Welche Präfixlänge gehört zur Subnetzmaske **${maske(p)}**?`,
+    felder: [{ id: 'p', label: 'Präfix (ohne /)', erwartet: p, platzhalter: 'z. B. 24' }],
+    loesung: [`Binär: \`${binaer(maske(p))}\``, `Einsen zählen: **${p}** → /${p}`],
+  };
+}
+
+// Netzgröße, nutzbare Hosts und Blockgröße
+export function hostsAufgabe(r) {
+  const p = r.wahl([16, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30]);
+  if (r.ja(0.4)) {
+    const z = zerlege('10.0.0.0', p);
+    const nr = z.index + 1;
     return {
-      titel: 'Subnetzmaske → Präfix',
-      sp: SP.konfig,
-      text: `Welche Präfixlänge gehört zur Subnetzmaske **${maske(p)}**?`,
-      felder: [{ id: 'p', label: 'Präfix (ohne /)', erwartet: p, platzhalter: 'z. B. 24' }],
-      loesung: [`Binär: \`${binaer(maske(p))}\``, `Einsen zählen: **${p}** → /${p}`],
+      titel: 'Blockgröße',
+      sp: SP.subnetting,
+      text: `Ein Netz hat die Subnetzmaske **${maske(p)}** (/${p}). In welchem Oktett liegt die Grenze, und wie groß ist dort die Blockgröße?`,
+      felder: [
+        { id: 'o', label: 'Entscheidendes Oktett', typ: 'auswahl', erwartet: String(nr), optionen: ['1', '2', '3', '4'].map((x) => ({ wert: x, text: `${x}. Oktett` })) },
+        { id: 'b', label: 'Blockgröße', erwartet: z.block },
+      ],
+      loesung: [
+        `Erstes Oktett der Subnetzmaske, das nicht 255 ist: das **${nr}.** (Wert ${z.maskenwert})`,
+        `Blockgröße = 256 − ${z.maskenwert} = **${z.block}**`,
+        z.block === 256 ? 'Die Grenze liegt genau zwischen zwei Oktetten – das ganze Oktett ist ein Block (0 bis 255).' : `Netze beginnen dort bei 0, ${z.block}, ${2 * z.block} …`,
+      ],
     };
+  }
   return {
     titel: 'Adressen und Hosts',
     sp: SP.subnetting,
@@ -104,7 +137,49 @@ export function maskeAufgabe(r) {
       { id: 'a', label: 'Adressen', erwartet: 2 ** (32 - p) },
       { id: 'h', label: 'Nutzbare Hosts', erwartet: 2 ** (32 - p) - 2 },
     ],
-    loesung: [`Hostbits: 32 − ${p} = ${32 - p}`, `Adressen: 2^${32 - p} = ${(2 ** (32 - p)).toLocaleString('de-DE')}`, `Hosts: Adressen − 2 (Netz und Broadcast) = **${(2 ** (32 - p) - 2).toLocaleString('de-DE')}**`],
+    loesung: [
+      `Hostbits: 32 − ${p} = ${32 - p}`,
+      `Adressen: 2^${32 - p} = ${(2 ** (32 - p)).toLocaleString('de-DE')}`,
+      `Hosts: Adressen − 2 (Netz und Broadcast) = **${(2 ** (32 - p) - 2).toLocaleString('de-DE')}**`,
+    ],
+  };
+}
+
+// Oktett dezimal ↔ binär
+const OKTETTE = [0, 1, 10, 64, 100, 127, 128, 150, 168, 172, 192, 200, 224, 240, 248, 252, 254, 255];
+
+export function binaerAufgabe(r) {
+  const w = r.ja(0.6) ? r.wahl(OKTETTE) : r.ganz(1, 254);
+  const bits = w.toString(2).padStart(8, '0');
+  const summe = binaerSchritte(w)
+    .filter((x) => x.bit)
+    .map((x) => x.gewicht);
+  const weg = [`Stellenwerte: \`128 64 32 16 8 4 2 1\``, `${w} = ${summe.length ? summe.join(' + ') : '0'}`];
+  const art = r.wahl(['d2b', 'b2d', 'ip']);
+  if (art === 'b2d')
+    return {
+      titel: 'Binär → dezimal',
+      sp: SP.subnetting,
+      text: `Welche Dezimalzahl steht hinter dem Oktett **${bits}**?`,
+      felder: [{ id: 'd', label: 'Dezimal', erwartet: w }],
+      loesung: [...weg, `→ **${w}**`],
+    };
+  if (art === 'ip') {
+    const ip = [r.wahl([10, 172, 192]), r.ganz(0, 255), w, r.ganz(1, 254)];
+    return {
+      titel: 'Ein Oktett einer Adresse',
+      sp: SP.subnetting,
+      text: `Wie lautet das **3. Oktett** der Adresse **${ip.join('.')}** in Binärschreibweise (8 Bit)?`,
+      felder: [{ id: 'b', label: '3. Oktett binär', typ: 'basis', basis: 2, erwartet: w, platzhalter: 'z. B. 11000000' }],
+      loesung: [`3. Oktett: ${w}`, ...weg.slice(1), `→ **${bits}**`],
+    };
+  }
+  return {
+    titel: 'Dezimal → binär',
+    sp: SP.subnetting,
+    text: `Schreibe das Oktett **${w}** als 8-stellige Binärzahl.`,
+    felder: [{ id: 'b', label: 'Binär', typ: 'basis', basis: 2, erwartet: w, platzhalter: 'z. B. 11000000' }],
+    loesung: [...weg, `→ **${bits}**`],
   };
 }
 
@@ -123,7 +198,11 @@ export function gleich(r) {
     sp: SP.subnetting,
     text: `Liegen **${a}/${p}** und **${b}/${p}** im selben Subnetz – können sie sich ohne Router erreichen?`,
     felder: [{ id: 'x', label: 'Selbes Netz?', typ: 'auswahl', erwartet: ja ? 'ja' : 'nein', optionen: ['ja', 'nein'] }],
-    loesung: [`Netz von ${a}: ${n.netz} (Bereich bis ${n.broadcast})`, `Netz von ${b}: ${netz(b, p).netz}`, ja ? '**Ja** – gleiche Netzadresse.' : '**Nein** – unterschiedliche Netzadressen, dazwischen braucht es einen Router.'],
+    loesung: [
+      `Netz von ${a}: ${n.netz} (Bereich bis ${n.broadcast})`,
+      `Netz von ${b}: ${netz(b, p).netz}`,
+      ja ? '**Ja** – gleiche Netzadresse.' : '**Nein** – unterschiedliche Netzadressen, dazwischen braucht es einen Router.',
+    ],
   };
 }
 
@@ -148,10 +227,257 @@ export function privat(r) {
         label: 'Bereich',
         typ: 'auswahl',
         erwartet: bereich ?? 'öffentlich',
-        optionen: [{ wert: '10.0.0.0/8', text: 'privat: 10.0.0.0/8' }, { wert: '172.16.0.0/12', text: 'privat: 172.16.0.0/12' }, { wert: '192.168.0.0/16', text: 'privat: 192.168.0.0/16' }, { wert: 'öffentlich', text: 'nicht privat (öffentlich)' }],
+        optionen: [
+          { wert: '10.0.0.0/8', text: 'privat: 10.0.0.0/8' },
+          { wert: '172.16.0.0/12', text: 'privat: 172.16.0.0/12' },
+          { wert: '192.168.0.0/16', text: 'privat: 192.168.0.0/16' },
+          { wert: 'öffentlich', text: 'nicht privat (öffentlich)' },
+        ],
       },
     ],
-    loesung: ['Private Bereiche: 10.0.0.0/8 · 172.16.0.0/12 (172.16.0.0 bis 172.31.255.255) · 192.168.0.0/16', bereich ? `**${ip}** liegt in **${bereich}**.` : `**${ip}** liegt in keinem privaten Bereich.`],
+    loesung: [
+      'Private Bereiche: 10.0.0.0/8 · 172.16.0.0/12 (172.16.0.0 bis 172.31.255.255) · 192.168.0.0/16',
+      bereich ? `**${ip}** liegt in **${bereich}**.` : `**${ip}** liegt in keinem privaten Bereich.`,
+    ],
+  };
+}
+
+// ---------- Konfiguration prüfen ----------
+
+// Ein kleines Firmennetz: Netz, Gateway (erste oder letzte nutzbare), Server, DHCP-Bereich (bei größeren Netzen)
+function firmennetz(r) {
+  const p = r.wahl([24, 24, 25, 26, 27, 28]);
+  const art = r.wahl(['192.168', '10', '172']);
+  const ip =
+    art === '192.168'
+      ? [192, 168, r.ganz(0, 254), r.ganz(1, 254)]
+      : art === '10'
+        ? [10, r.ganz(0, 255), r.ganz(0, 254), r.ganz(1, 254)]
+        : [172, r.ganz(16, 31), r.ganz(0, 254), r.ganz(1, 254)];
+  const n = netz(ip.join('.'), p);
+  const start = ipZuZahl(n.netz);
+  const groesse = n.adressen;
+  const gwErster = r.ja();
+  const gw = gwErster ? n.erster : n.letzter;
+  const server = zahlZuIp(start + (gwErster ? 2 : 1) + r.ganz(0, 3));
+  const dhcp = groesse >= 64 ? [zahlZuIp(start + Math.floor(groesse / 2)), zahlZuIp(start + groesse - 10)] : null;
+  return {
+    n,
+    p,
+    gw,
+    gwErster,
+    server,
+    dhcp,
+    belegt: [
+      { ip: gw, name: 'Router' },
+      { ip: server, name: 'Server' },
+    ],
+  };
+}
+
+export function konfig(r) {
+  const f = firmennetz(r);
+  const { n, p } = f;
+  const netzText = `${n.netz}/${p}`;
+  const art = r.wahl(['frei', 'eintragen', 'fehler']);
+  if (art === 'frei') {
+    const s = { netzAdr: n.netz, praefix: p, belegt: f.belegt, dhcp: f.dhcp };
+    let soll = null;
+    for (let z = ipZuZahl(n.erster); z <= ipZuZahl(n.letzter); z++)
+      if (pruefeStatisch(zahlZuIp(z), s).ok) {
+        soll = zahlZuIp(z);
+        break;
+      }
+    return {
+      titel: 'Freie statische Adresse',
+      sp: SP.konfig,
+      text: `Netz **${netzText}**. Der Router hat **${f.gw}**, der Server **${f.server}**.${f.dhcp ? ` Der DHCP-Server vergibt **${f.dhcp[0]}** bis **${f.dhcp[1]}**.` : ''} Trage für den neuen Netzwerkdrucker eine passende statische Adresse und die Subnetzmaske ein.`,
+      felder: [
+        {
+          id: 'ip',
+          label: 'IP-Adresse des Druckers',
+          typ: 'eigen',
+          soll,
+          platzhalter: 'eine freie Adresse',
+          pruefe: (e) => (String(e ?? '').trim() ? pruefeStatisch(e, s) : { ok: false, leer: true }),
+        },
+        { id: 'm', label: 'Subnetzmaske', typ: 'ipv4', erwartet: n.maske },
+        { id: 'gw', label: 'Standardgateway', typ: 'ipv4', erwartet: f.gw },
+      ],
+      loesung: [
+        `Netz ${n.netz} bis ${n.broadcast} (Blockgröße ${n.adressen}), Hosts ${n.erster} bis ${n.letzter}`,
+        `Belegt: Router ${f.gw}, Server ${f.server}${f.dhcp ? `; DHCP-Bereich ${f.dhcp[0]} bis ${f.dhcp[1]} meiden` : ''}`,
+        `Zum Beispiel **${soll}** – jede andere freie Adresse im Hostbereich ist auch richtig`,
+        `Subnetzmaske /${p} = **${n.maske}**, Standardgateway = Router **${f.gw}**`,
+      ],
+    };
+  }
+  if (art === 'eintragen') {
+    const pc = zahlZuIp(ipZuZahl(n.erster) + Math.floor(n.hosts / 2));
+    return {
+      titel: 'Eingabemaske ausfüllen',
+      sp: SP.konfig,
+      text: `Netz **${netzText}**. Der Router hat die **${f.gwErster ? 'erste' : 'letzte'} nutzbare Adresse** und ist auch DNS-Server. Ein PC bekommt fest **${pc}**. Was trägst du ein?`,
+      felder: [
+        { id: 'm', label: 'Subnetzmaske', typ: 'ipv4', erwartet: n.maske },
+        { id: 'gw', label: 'Standardgateway', typ: 'ipv4', erwartet: f.gw },
+        { id: 'dns', label: 'Bevorzugter DNS-Server', typ: 'ipv4', erwartet: f.gw },
+      ],
+      loesung: [
+        `/${p} → Subnetzmaske **${n.maske}**`,
+        `Netz ${n.netz}, Broadcast ${n.broadcast} → ${f.gwErster ? `erste nutzbare = Netzadresse + 1` : 'letzte nutzbare = Broadcast − 1'} = **${f.gw}**`,
+        `DNS-Server = Router = **${f.gw}**`,
+      ],
+    };
+  }
+  // Fehler finden
+  const pc = zahlZuIp(ipZuZahl(n.erster) + Math.floor(n.hosts / 2));
+  const fehler = r.wahl(['gw', 'ip', 'maske', 'keiner']);
+  const fremdGw = zahlZuIp(ipZuZahl(n.netz) + n.adressen + 1);
+  const conf = {
+    ip: fehler === 'ip' ? r.wahl([n.netz, n.broadcast]) : pc,
+    maske: fehler === 'maske' ? n.maske.replace(/\d+$/, (x) => (x === '0' ? '100' : String(Number(x) + 1))) : n.maske,
+    gw: fehler === 'gw' ? fremdGw : f.gw,
+  };
+  const optionen = [
+    { wert: 'ip', text: 'die IP-Adresse' },
+    { wert: 'maske', text: 'die Subnetzmaske' },
+    { wert: 'gw', text: 'das Standardgateway' },
+    { wert: 'keiner', text: 'nichts – alles passt' },
+  ];
+  const grund = {
+    ip: `${conf.ip} ist die ${conf.ip === n.netz ? 'Netzadresse' : 'Broadcastadresse'} des Netzes ${netzText} – die bekommt kein Gerät.`,
+    maske: `${conf.maske} ist keine gültige Subnetzmaske (die Einsen stehen nicht lückenlos links); richtig wäre ${n.maske}.`,
+    gw: `${fremdGw} liegt nicht im Netz ${netzText} (${n.netz} bis ${n.broadcast}) – der PC kann das Gateway nicht direkt erreichen.`,
+    keiner: `Adresse ist ein Host, Subnetzmaske passt zu /${p}, Gateway ${f.gw} liegt im selben Netz.`,
+  };
+  return {
+    titel: 'Fehler in der Konfiguration',
+    sp: SP.konfig,
+    text: `Das Netz ist **${netzText}**, der Router hat **${f.gw}**. Ein PC ist so eingestellt:\n- IP-Adresse: **${conf.ip}**\n- Subnetzmaske: **${conf.maske}**\n- Standardgateway: **${conf.gw}**\nWas ist falsch?`,
+    felder: [{ id: 'x', label: 'Fehler', typ: 'auswahl', erwartet: fehler, optionen }],
+    loesung: [
+      `Netz ${n.netz} bis ${n.broadcast}, Hosts ${n.erster} bis ${n.letzter}, Subnetzmaske ${n.maske}`,
+      `**${optionen.find((o) => o.wert === fehler).text}**: ${grund[fehler]}`,
+    ],
+  };
+}
+
+// ---------- MAC, ARP und DHCP ----------
+
+const HERSTELLER = ['00:1A:2B', '3C:52:82', '00:80:77', 'F4:8E:38', 'AC:DE:48', '00:50:56'];
+const hexByte = (r) => r.ganz(0, 255).toString(16).toUpperCase().padStart(2, '0');
+const macNorm = (s) =>
+  String(s ?? '')
+    .replace(/[\s:.-]/g, '')
+    .toUpperCase();
+
+function macFeld(id, label, soll) {
+  return {
+    id,
+    label,
+    typ: 'eigen',
+    breit: true,
+    soll,
+    platzhalter: 'z. B. 00-1A-2B',
+    pruefe: (e) => (String(e ?? '').trim() ? { ok: macNorm(e) === macNorm(soll) } : { ok: false, leer: true }),
+  };
+}
+
+export function macAufgabe(r) {
+  const art = r.wahl(['hersteller', 'arp', 'apipa', 'dhcp']);
+  if (art === 'hersteller') {
+    const trenner = r.wahl([':', '-']);
+    const bytes = [...r.wahl(HERSTELLER).split(':'), hexByte(r), hexByte(r), hexByte(r)];
+    const mac = bytes.join(trenner);
+    return {
+      titel: 'MAC-Adresse lesen',
+      sp: SP.mac,
+      text: `Ein Gerät hat die MAC-Adresse **${mac}**. Wie lang ist eine MAC-Adresse, und wie lautet die Herstellerkennung?`,
+      felder: [{ id: 'bit', label: 'Länge in Bit', erwartet: 48, einheit: 'Bit' }, macFeld('h', 'Herstellerkennung', bytes.slice(0, 3).join(trenner))],
+      loesung: [
+        '6 Bytes × 8 Bit = **48 Bit**, geschrieben als 12 Hexadezimalziffern',
+        `Die vordere Hälfte (3 Bytes) ist die Herstellerkennung: **${bytes.slice(0, 3).join(trenner)}**`,
+      ],
+    };
+  }
+  if (art === 'arp') {
+    const basis = r.wahl(['192.168.0', '192.168.1', '10.0.0', '172.16.5']);
+    const eintraege = r
+      .mische([1, 10, 20, 30, 50, 100, 254])
+      .slice(0, 3)
+      .map((h) => ({ ip: `${basis}.${h}`, mac: [hexByte(r), hexByte(r), hexByte(r), hexByte(r), hexByte(r), hexByte(r)].join('-').toLowerCase() }));
+    const ziel = r.wahl(eintraege);
+    const zeilen = eintraege.map((e) => `- \`${e.ip.padEnd(15)}  ${e.mac}  dynamisch\``).join('\n');
+    return {
+      titel: 'arp -a deuten',
+      sp: SP.mac,
+      text: `Der Befehl \`arp -a\` zeigt:\n${zeilen}\nWelche MAC-Adresse hat das Gerät **${ziel.ip}**, und wie ist der Eintrag entstanden?`,
+      felder: [
+        macFeld('m', `MAC-Adresse von ${ziel.ip}`, ziel.mac),
+        {
+          id: 'w',
+          label: '„dynamisch“ heißt',
+          typ: 'auswahl',
+          erwartet: 'arp',
+          optionen: [
+            { wert: 'arp', text: 'automatisch per ARP gelernt' },
+            { wert: 'dhcp', text: 'vom DHCP-Server zugeteilt' },
+            { wert: 'hand', text: 'von Hand eingetragen' },
+          ],
+        },
+      ],
+      loesung: [
+        `Spalten: IP-Adresse (Internetadresse) · MAC-Adresse (physische Adresse) · Typ`,
+        `${ziel.ip} → **${ziel.mac}**`,
+        '„dynamisch“ = per **ARP** gelernt (Anfrage per Broadcast, Antwort des Geräts); „statisch“ = fest eingetragen',
+      ],
+    };
+  }
+  if (art === 'apipa') {
+    const ip = `169.254.${r.ganz(1, 254)}.${r.ganz(1, 254)}`;
+    return {
+      titel: 'Adresse aus 169.254.x.x',
+      sp: SP.mac,
+      text: `Ein PC soll seine Adresse per DHCP bekommen. ipconfig zeigt **${ip}** und kein Standardgateway. Was ist passiert?`,
+      felder: [
+        {
+          id: 'x',
+          label: 'Ursache',
+          typ: 'auswahl',
+          erwartet: 'kein-dhcp',
+          optionen: [
+            { wert: 'kein-dhcp', text: 'kein DHCP-Server erreicht – der PC hat sich selbst eine Adresse gegeben' },
+            { wert: 'router', text: 'der Router hat ihm eine öffentliche Adresse gegeben' },
+            { wert: 'statisch', text: 'jemand hat die Adresse statisch eingetragen' },
+            { wert: 'ipv6', text: 'das ist eine IPv6-Adresse' },
+          ],
+        },
+      ],
+      loesung: [
+        '169.254.0.0/16 nimmt sich ein Client selbst, wenn **kein DHCP-Server antwortet** (APIPA)',
+        'Prüfen: Kabel bzw. WLAN, läuft der DHCP-Server, hat er noch freie Adressen?',
+      ],
+    };
+  }
+  const fehlt = r.wahl(['MAC-Adresse', 'Broadcastadresse']);
+  return {
+    titel: 'Was liefert DHCP?',
+    sp: SP.mac,
+    text: 'Welche dieser Angaben teilt ein DHCP-Server einem Client **nicht** zu?',
+    felder: [
+      {
+        id: 'x',
+        label: 'Antwort',
+        typ: 'auswahl',
+        erwartet: fehlt,
+        optionen: r.mische([...r.mische(['IP-Adresse', 'Subnetzmaske', 'Standardgateway', 'DNS-Server']).slice(0, 3), fehlt]),
+      },
+    ],
+    loesung: [
+      'DHCP teilt zu: **IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server**',
+      fehlt === 'MAC-Adresse' ? 'Die MAC-Adresse ist fest in der Netzwerkkarte – sie wird nicht verteilt.' : 'Die Broadcastadresse ergibt sich aus IP-Adresse und Subnetzmaske.',
+    ],
   };
 }
 
@@ -182,7 +508,10 @@ export function ipv6(r) {
   const voll = zufallsIpv6(r);
   const kurz = ipv6Kurz(voll);
   const art = r.wahl(['kuerzen', 'kuerzen', 'ausschreiben', 'teile']);
-  const regeln = ['Regel 1: führende Nullen in jeder Gruppe weglassen (0db8 → db8, 0000 → 0).', 'Regel 2: eine Folge von Nullgruppen genau einmal durch :: ersetzen – die längste.'];
+  const regeln = [
+    'Regel 1: führende Nullen in jeder Gruppe weglassen (0db8 → db8, 0000 → 0).',
+    'Regel 2: eine Folge von Nullgruppen genau einmal durch :: ersetzen – die längste.',
+  ];
   if (art === 'ausschreiben')
     return {
       titel: 'IPv6 ausschreiben',
@@ -197,7 +526,9 @@ export function ipv6(r) {
           soll: voll,
           platzhalter: 'xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx',
           pruefe: (e) => {
-            const s = String(e ?? '').trim().toLowerCase();
+            const s = String(e ?? '')
+              .trim()
+              .toLowerCase();
             if (!s) return { ok: false, leer: true };
             const gruppen = s.split(':');
             if (gruppen.length !== 8 || gruppen.some((x) => x.length !== 4)) return { ok: false, grund: 'acht Gruppen mit je vier Ziffern' };
@@ -205,7 +536,11 @@ export function ipv6(r) {
           },
         },
       ],
-      loesung: [`:: steht für ${8 - kurz.split('::').flatMap((t) => (t ? t.split(':') : [])).length} Nullgruppen.`, 'Jede Gruppe vorne mit Nullen auf vier Ziffern auffüllen.', `**${voll}**`],
+      loesung: [
+        `:: steht für ${8 - kurz.split('::').flatMap((t) => (t ? t.split(':') : [])).length} Nullgruppen.`,
+        'Jede Gruppe vorne mit Nullen auf vier Ziffern auffüllen.',
+        `**${voll}**`,
+      ],
     };
   if (art === 'teile') {
     const g = voll.split(':');
@@ -230,14 +565,29 @@ export function ipv6(r) {
         },
         { id: 'll', label: 'Verbindungslokal (fe80::/10)?', typ: 'auswahl', erwartet: g[0] === 'fe80' ? 'ja' : 'nein', optionen: ['ja', 'nein'] },
       ],
-      loesung: ['IPv6: 128 Bit, 8 Gruppen à 16 Bit (4 Hex-Ziffern).', `Ausgeschrieben: ${voll}`, `/64: die ersten 4 Gruppen sind das Präfix (${g.slice(0, 4).join(':')}), die letzten 4 der Interface-Identifier: **${iid}**`, g[0] === 'fe80' ? 'Beginnt mit fe80 → verbindungslokale Adresse (Link-Local).' : 'Beginnt nicht mit fe80 → keine verbindungslokale Adresse.'],
+      loesung: [
+        'IPv6: 128 Bit, 8 Gruppen à 16 Bit (4 Hex-Ziffern).',
+        `Ausgeschrieben: ${voll}`,
+        `/64: die ersten 4 Gruppen sind das Präfix (${g.slice(0, 4).join(':')}), die letzten 4 der Interface-Identifier: **${iid}**`,
+        g[0] === 'fe80' ? 'Beginnt mit fe80 → verbindungslokale Adresse (Link-Local).' : 'Beginnt nicht mit fe80 → keine verbindungslokale Adresse.',
+      ],
     };
   }
   return {
     titel: 'IPv6 kürzen',
     sp: SP.ipv6,
     text: `Kürze die Adresse **${voll}** so weit wie möglich.`,
-    felder: [{ id: 'x', label: 'Gekürzt', typ: 'eigen', breit: true, soll: kurz, platzhalter: 'z. B. 2001:db8::1', pruefe: (e) => (String(e ?? '').trim() ? istRichtigGekuerzt(e, voll) : { ok: false, leer: true }) }],
+    felder: [
+      {
+        id: 'x',
+        label: 'Gekürzt',
+        typ: 'eigen',
+        breit: true,
+        soll: kurz,
+        platzhalter: 'z. B. 2001:db8::1',
+        pruefe: (e) => (String(e ?? '').trim() ? istRichtigGekuerzt(e, voll) : { ok: false, leer: true }),
+      },
+    ],
     loesung: [...regeln, `Ergebnis: **${kurz}**`],
   };
 }
@@ -270,4 +620,4 @@ export function aufteilen(r) {
   };
 }
 
-export const ERZEUGER = { analyse, maske: maskeAufgabe, gleich, privat, ipv6, aufteilen };
+export const ERZEUGER = { binaer: binaerAufgabe, maske: maskeAufgabe, hosts: hostsAufgabe, analyse, gleich, aufteilen, privat, konfig, mac: macAufgabe, ipv6 };

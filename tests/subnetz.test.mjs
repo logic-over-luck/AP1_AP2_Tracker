@@ -127,251 +127,238 @@ test('Visualizer: alle Teilnetze im Oktett', async () => {
   assert.equal(subnetzeImOktett('192.168.1.6', 30).length, 64);
 });
 
-// ---------- Lernblock „Verstehen“ (lernweg.js) ----------
+// ---------- Raum „Verstehen“: Lernweg, Checks, Rechenhilfen ----------
 
-const lernweg = () => import('../src/bereiche/trainer/subnetz/lernweg.js');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { BLOECKE, LEKTIONEN, lektion, naechsteLektion, status, luecken } from '../src/bereiche/trainer/subnetz/verstehen/lernweg.js';
+import { CHECKS, pruefeAntwort } from '../src/bereiche/trainer/subnetz/verstehen/checks.js';
+import * as rechnen from '../src/bereiche/trainer/subnetz/verstehen/rechnen.js';
+import { TRAINER } from '../src/bereiche/trainer/verzeichnis.js';
 
-test('Verstehen: Netzbits je Oktett, Rollen und Maskenwerte', async () => {
-  const lw = await lernweg();
-  assert.deepEqual(lw.netzBitsJeOktett(26), [8, 8, 8, 2]);
-  assert.deepEqual(lw.netzBitsJeOktett(23), [8, 8, 7, 0]);
-  assert.deepEqual(lw.netzBitsJeOktett(8), [8, 0, 0, 0]);
-  assert.deepEqual(lw.oktettRollen(26), ['netz', 'netz', 'netz', 'strich']);
-  assert.deepEqual(lw.oktettRollen(24), ['netz', 'netz', 'netz', 'host'], 'bei /24 liegt der Strich zwischen zwei Oktetten');
-  assert.deepEqual(lw.oktettRollen(23), ['netz', 'netz', 'strich', 'host']);
-  assert.deepEqual(lw.oktettRollen(20), ['netz', 'netz', 'strich', 'host']);
-  assert.deepEqual(lw.oktettRollen(16), ['netz', 'netz', 'host', 'host']);
-  assert.deepEqual(lw.oktettRollen(30), ['netz', 'netz', 'netz', 'strich']);
-  assert.deepEqual([0, 1, 2, 3, 4, 5, 6, 7, 8].map(lw.maskenwert), [0, 128, 192, 224, 240, 248, 252, 254, 255]);
-  for (let p = 8; p <= 30; p++) {
-    const bits = lw.netzBitsJeOktett(p);
-    assert.equal(
-      bits.reduce((a, b) => a + b, 0),
-      p,
+const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const inhalt = JSON.parse(fs.readFileSync(path.join(wurzel, 'Inhaltsdatei_AP1_AP2_tracker.json'), 'utf8'));
+const STICHPUNKTE = ['AP1-6-2-1', 'AP1-6-2-2', 'AP1-6-2-3', 'AP1-6-2-4'];
+const KOMPETENZEN = inhalt.stichpunkte.filter((s) => STICHPUNKTE.includes(s.id)).flatMap((s) => s.koennen.map((k) => k.id));
+
+test('Lernweg: Blöcke, Lektionen und Pflichtfelder', () => {
+  assert.equal(BLOECKE[0].id, 'adresse', 'der Block um IPv4-Adressen kommt zuerst');
+  assert.equal(new Set(LEKTIONEN.map((l) => l.id)).size, LEKTIONEN.length, 'IDs eindeutig');
+  for (const b of BLOECKE)
+    assert.ok(
+      LEKTIONEN.some((l) => l.block === b.id),
+      `Block ${b.id} ohne Lektion`,
     );
-    assert.equal(bits.map(lw.maskenwert).join('.'), ip.maske(p), `/${p}`);
+  let letzterBlock = -1;
+  for (const l of LEKTIONEN) {
+    const bi = BLOECKE.findIndex((b) => b.id === l.block);
+    assert.ok(bi >= 0, `${l.id}: unbekannter Block`);
+    assert.ok(bi >= letzterBlock, `${l.id}: Blöcke müssen zusammenhängend in Reihenfolge stehen`);
+    letzterBlock = bi;
+    assert.ok(l.begriff && l.leitfrage && l.definition, `${l.id}: Begriff, Leitfrage oder Definition fehlt`);
+    assert.ok(l.leitfrage.length <= 60, `${l.id}: Leitfrage zu lang für die Kachel`);
+    assert.ok(l.merksatz && l.fehler?.length, `${l.id}: Merksatz oder Stolperfalle fehlt`);
+    assert.equal(lektion(l.id), l);
   }
 });
 
-test('Verstehen: Dezimal → binär Schritt für Schritt', async () => {
-  const lw = await lernweg();
-  const s = lw.binaerSchritte(150);
-  assert.equal(s.map((x) => x.bit).join(''), '10010110');
-  assert.deepEqual(s[0], { gewicht: 128, vorher: 150, passt: true, nachher: 22, bit: 1 });
-  assert.deepEqual(s[1], { gewicht: 64, vorher: 22, passt: false, nachher: 22, bit: 0 });
-  assert.equal(s[7].nachher, 0);
-  for (let w = 0; w <= 255; w++)
-    assert.equal(
-      parseInt(
-        lw
-          .binaerSchritte(w)
-          .map((x) => x.bit)
-          .join(''),
-        2,
-      ),
-      w,
+test('Lernweg: braucht zeigt nur auf frühere Lektionen', () => {
+  for (const l of LEKTIONEN) {
+    for (const b of l.braucht) {
+      const vorher = lektion(b);
+      assert.ok(vorher, `${l.id}: braucht unbekannte Lektion ${b}`);
+      assert.ok(vorher.nr < l.nr, `${l.id} (${l.nr}) braucht ${b} (${vorher.nr}) – das kommt erst später`);
+    }
+  }
+  // Jede Lektion außer der ersten baut auf etwas auf
+  for (const l of LEKTIONEN.slice(1)) assert.ok(l.braucht.length > 0, `${l.id}: braucht ist leer`);
+});
+
+test('Lernweg: jede Kompetenz von AP1-6-2-1 bis AP1-6-2-4 ist abgedeckt', () => {
+  assert.ok(KOMPETENZEN.length >= 20);
+  const abgedeckt = new Set(LEKTIONEN.flatMap((l) => l.kompetenzen));
+  for (const k of KOMPETENZEN) assert.ok(abgedeckt.has(k), `${k} gehört zu keiner Lektion`);
+  for (const k of abgedeckt) assert.ok(KOMPETENZEN.includes(k), `${k} gibt es in der Inhaltsdatei nicht`);
+});
+
+test('Lernweg: Übungs-Verweise zeigen auf echte Übungen', () => {
+  const modi = TRAINER.find((t) => t.id === 'subnetz').modi;
+  for (const l of LEKTIONEN)
+    if (l.uebung)
+      assert.ok(
+        modi.some((m) => m.id === l.uebung && m.bereich === 'ueben'),
+        `${l.id}: Übung ${l.uebung} fehlt`,
+      );
+  for (const m of modi.filter((m) => m.bereich === 'ueben'))
+    assert.ok(
+      BLOECKE.some((b) => b.id === m.thema),
+      `${m.id}: Thema ${m.thema} ist kein Block`,
     );
 });
 
-test('Verstehen: Blockanfang und Blockende raten', async () => {
-  const lw = await lernweg();
-  const z = ip.zerlege('192.168.40.150', 26);
-  assert.deepEqual(lw.startOptionen(z), [64, 128, 150, 192]);
-  assert.equal(lw.bewerteStart(z, 128), 'richtig');
-  assert.equal(lw.bewerteStart(z, 150), 'kein-anfang');
-  assert.equal(lw.bewerteStart(z, 192), 'zu-weit');
-  assert.equal(lw.bewerteStart(z, 64), 'zu-frueh');
-  assert.deepEqual(lw.endeOptionen(z), [160, 190, 191, 192]);
-  assert.equal(lw.bewerteEnde(z, 191), 'richtig');
-  assert.equal(lw.bewerteEnde(z, 192), 'naechster-anfang', '128 + 64 = 192 ist schon der nächste Block');
-  assert.equal(lw.bewerteEnde(z, 190), 'zu-kurz');
-
-  // Für jeden Präfix mit Strich im Oktett und viele Werte: Optionen gültig, richtige Antwort dabei, Bewertung stimmig
-  for (let p = 8; p <= 30; p++) {
-    if (p % 8 === 0) continue;
-    for (const wert of [0, 1, 2, 3, 63, 64, 77, 127, 128, 150, 191, 192, 254, 255]) {
-      const zz = ip.zerlege(`10.${wert}.${wert}.${wert}`, p);
-      const so = lw.startOptionen(zz);
-      assert.ok(so.includes(zz.start), `/${p} ${wert}`);
-      assert.ok(so.length >= 2 && so.length <= 4, `/${p} ${wert}: ${so}`);
-      assert.deepEqual(
-        so,
-        [...so].sort((a, b) => a - b),
-      );
-      assert.ok(so.every((x) => x >= 0 && x <= 255));
-      assert.equal(so.filter((x) => lw.bewerteStart(zz, x) === 'richtig').length, 1);
-      const eo = lw.endeOptionen(zz);
-      assert.ok(eo.includes(zz.ende) && eo.length >= 1 && eo.length <= 4);
-      assert.ok(eo.every((x) => x >= zz.start && x <= 255));
-      assert.equal(eo.filter((x) => lw.bewerteEnde(zz, x) === 'richtig').length, 1);
-      if (zz.ende < 255) assert.ok(eo.includes(zz.ende + 1), 'der typische Fehler ist dabei');
-    }
-  }
-});
-
-test('Verstehen: Adressart und Hostbits', async () => {
-  const lw = await lernweg();
-  assert.equal(lw.adressArt('192.168.40.150', 26), 'host');
-  assert.equal(lw.adressArt('192.168.40.128', 26), 'netz');
-  assert.equal(lw.adressArt('192.168.40.191', 26), 'broadcast');
-  assert.equal(lw.adressArt('192.168.40.255', 23), 'host');
-  assert.equal(lw.hostBits('192.168.40.150', 26), '010110');
-  assert.equal(lw.hostBits('192.168.40.255', 23), '0 11111111');
-  assert.equal(lw.hostBits('192.168.41.0', 23), '1 00000000');
-  assert.equal(lw.hostBits('172.20.64.255', 20), '0000 11111111');
-  assert.equal(lw.hostBits('10.0.0.1', 8), '00000000 00000000 00000001');
-});
-
-test('Verstehen: Präfixe unter /24 – x.255 und (x+1).0 liegen mitten im Netz', async () => {
-  const lw = await lernweg();
-  const g = lw.grossesNetz('192.168.40.150', 26);
-  assert.equal(g.praefix, 23, 'bei /24 und mehr: Beispiel mit /23');
-  assert.equal(g.eigenes, false);
-  assert.deepEqual([g.netz, g.broadcast, g.endeErstes, g.anfangZweites, g.stuecke, g.hosts], ['192.168.40.0', '192.168.41.255', '192.168.40.255', '192.168.41.0', 2, 510]);
+test('Lernweg: Status, als Nächstes und Lücken', () => {
+  const v = new Set(['ip-adresse', 'netz-host']);
+  assert.equal(naechsteLektion(new Set()).id, 'ip-adresse');
+  assert.equal(naechsteLektion(v).id, 'binaer');
+  assert.equal(status('netz-host', v), 'verstanden');
+  assert.equal(status('binaer', v), 'naechste');
+  assert.equal(status('praefix', v), 'offen');
   assert.deepEqual(
-    g.zeilen.map((z) => `${z.von}-${z.bis}`),
-    ['192.168.40.0-192.168.40.255', '192.168.41.0-192.168.41.255'],
+    luecken('praefix', v).map((l) => l.id),
+    ['binaer'],
   );
-  const h = lw.grossesNetz('172.20.77.5', 20);
-  assert.equal(h.eigenes, true);
-  assert.equal(h.stuecke, 16);
-  assert.equal(h.zeilen.length, 4);
-  assert.equal(h.zeilen[2], null);
-  assert.equal(h.zeilen[3].bis, '172.20.79.255');
-  for (let p = 8; p <= 30; p++) {
-    const f = lw.grossesNetz('10.9.8.7', p);
-    const n = ip.netz('10.9.8.7', f.praefix);
-    assert.ok(f.praefix < 24);
-    assert.equal(lw.adressArt(f.endeErstes, f.praefix), 'host');
-    assert.equal(lw.adressArt(f.anfangZweites, f.praefix), 'host');
-    assert.ok(ipZwischen(f.endeErstes, n.erster, n.letzter) && ipZwischen(f.anfangZweites, n.erster, n.letzter));
-    assert.equal(f.zeilen[0].von, n.netz);
-    assert.equal(f.zeilen.at(-1).bis, n.broadcast);
-  }
+  assert.equal(naechsteLektion(new Set(LEKTIONEN.map((l) => l.id))), null);
 });
 
-function ipZwischen(a, von, bis) {
-  const z = ip.ipZuZahl(a);
-  return z >= ip.ipZuZahl(von) && z <= ip.ipZuZahl(bis);
-}
-
-test('Verstehen: Ziele für „Gleiches Netz?“', async () => {
-  const lw = await lernweg();
-  const z = lw.vergleichsZiele('192.168.40.150', 26);
-  assert.deepEqual(
-    z.map((x) => [x.id, x.ip, x.gleich, x.netz]),
-    [
-      ['drucker', '192.168.40.190', true, '192.168.40.128'],
-      ['server', '192.168.40.214', false, '192.168.40.192'],
-      ['internet', '8.8.8.8', false, '8.8.8.0'],
-    ],
-  );
-  for (let p = 8; p <= 30; p++)
-    for (const adresse of ['192.168.40.150', '10.0.0.1', '172.16.255.254', '8.8.8.9', '192.168.1.6', '255.255.255.254']) {
-      const [drucker, server, internet] = lw.vergleichsZiele(adresse, p);
-      assert.ok(drucker.gleich && drucker.ip !== adresse, `/${p} ${adresse}`);
-      assert.ok(!server.gleich, `/${p} ${adresse}`);
-      assert.ok(!internet.gleich, `/${p} ${adresse}`);
-    }
-});
-
-test('Verstehen: Aufteilen – Netze × Adressen bleibt gleich', async () => {
-  const lw = await lernweg();
-  for (const p of [8, 16, 20, 23, 24, 26, 30]) {
-    const { gesamt, zeilen } = lw.aufteilTabelle(p);
-    assert.ok(zeilen.some((r) => r.praefix === p));
-    for (const r of zeilen) {
-      assert.equal(r.netze * r.adressen, gesamt);
-      assert.equal(r.hostsGesamt + r.reserviert, gesamt);
-    }
-  }
-  const t26 = lw.aufteilTabelle(26);
-  assert.equal(t26.gesamt, 256);
-  assert.equal(t26.basis, 24);
-  assert.deepEqual(
-    t26.zeilen.map((r) => r.praefix),
-    [24, 25, 26, 27, 28, 29, 30],
-  );
-  assert.equal(t26.zeilen.find((r) => r.praefix === 26).hostsGesamt, 248);
-});
-
-test('Verstehen: schneller Rechenweg für jeden Präfix von /8 bis /30', async () => {
-  const lw = await lernweg();
-  const r = lw.rechenweg('192.168.40.150', 26);
-  assert.deepEqual(r.teile, [8, 8, 8, 2]);
-  assert.deepEqual([r.nr, r.netzBits, r.block, r.maskenwert, r.blockNr, r.rest, r.start, r.ende, r.hostBits, r.hosts], [4, 2, 64, 192, 2, 22, 128, 191, 6, 62]);
-  assert.deepEqual([r.netz, r.erster, r.letzter, r.broadcast, r.maske], ['192.168.40.128', '192.168.40.129', '192.168.40.190', '192.168.40.191', '255.255.255.192']);
-  const v = lw.rechenweg('192.168.40.150', 24);
-  assert.equal(v.ohneRechnung, true);
-  assert.deepEqual(v.teile, [8, 8, 8]);
-  assert.deepEqual([v.netz, v.broadcast, v.hosts], ['192.168.40.0', '192.168.40.255', 254]);
-  const d = lw.rechenweg('192.168.41.150', 23);
-  assert.deepEqual([d.teile, d.nr, d.block, d.start, d.ende, d.netz, d.broadcast, d.hosts], [[8, 8, 7], 3, 2, 40, 41, '192.168.40.0', '192.168.41.255', 510]);
-  for (let p = 8; p <= 30; p++)
-    for (const adresse of ['192.168.40.150', '10.20.30.40', '172.31.255.254', '1.0.0.0']) {
-      const w = lw.rechenweg(adresse, p);
-      const n = ip.netz(adresse, p);
-      assert.equal(
-        w.teile.reduce((a, b) => a + b, 0),
-        p,
-      );
-      assert.equal(w.block, 256 - w.maskenwert);
-      assert.equal(w.block, 2 ** (8 - w.netzBits), 'Blockgröße = Stellenwert des letzten Netzbits');
-      assert.equal(w.start, w.blockNr * w.block);
-      assert.equal(w.start + w.rest, w.wert);
-      assert.equal(w.ende, w.start + w.block - 1);
-      assert.equal(w.netz.split('.')[w.nr - 1], String(w.start));
-      assert.equal(w.broadcast.split('.')[w.nr - 1], String(w.ende));
-      assert.deepEqual([w.netz, w.broadcast, w.erster, w.letzter, w.hosts], [n.netz, n.broadcast, n.erster, n.letzter, 2 ** (32 - p) - 2]);
-    }
-});
-
-test('Verstehen: Übungsaufgaben und Eingaben lesen', async () => {
-  const lw = await lernweg();
-  for (let s = 1; s < 300; s++) {
-    const a = lw.zufallsAufgabe(zufall(s));
-    assert.ok(a.praefix >= 20 && a.praefix <= 30);
-    assert.equal(lw.adressArt(a.ip, a.praefix), 'host');
-    assert.equal(lw.leseIp(a.ip), a.ip);
-  }
-  assert.equal(lw.leseIp(' 192.168.040.1 '), '192.168.40.1');
-  assert.equal(lw.leseIp('192.168.1'), null);
-  assert.equal(lw.leseIp('192.168.1.256'), null);
-  assert.equal(lw.leseIp('a.b.c.d'), null);
-  assert.equal(lw.leseZahl('4.094'), 4094);
-  assert.equal(lw.leseZahl(' 62 '), 62);
-  assert.equal(lw.leseZahl('62 Hosts'), null);
-  assert.equal(lw.leseZahl(''), null);
-  const t = lw.teileAdresse('192.168.40.150', 26);
-  assert.deepEqual(t, { netz: '192.168.40.128', hostNummer: 22 });
-  assert.deepEqual(lw.teileAdresse('192.168.41.150', 23), { netz: '192.168.40.0', hostNummer: 406 });
-});
-
-test('Verstehen: Kurz-Checks der Lektionen sind stimmig', async () => {
-  const lw = await lernweg();
-  for (const id of ['ip', 'binaer', 'praefix', 'maske', 'netzadresse', 'broadcast', 'hosts', 'unter24', 'gateway', 'aufteilen']) {
-    const fragen = lw.kurzCheck(id);
-    assert.ok(fragen.length >= 1, id);
+test('Checks: jede Lektion hat 2–3 stimmige Fragen', () => {
+  for (const l of LEKTIONEN) {
+    const fragen = CHECKS[l.id];
+    assert.ok(fragen && fragen.length >= 2 && fragen.length <= 3, `${l.id}: ${fragen?.length ?? 0} Fragen`);
     for (const f of fragen) {
-      assert.ok(f.optionen.includes(f.richtig), `${id}: ${f.frage}`);
-      assert.equal(new Set(f.optionen).size, f.optionen.length, `${id}: doppelte Optionen`);
-      assert.ok(f.tipp && f.erklaerung, id);
+      assert.ok(f.frage && f.tipp && f.erklaerung, `${l.id}: Frage unvollständig – ${f.frage}`);
+      if (f.optionen) {
+        assert.ok(f.optionen.includes(f.richtig), `${l.id}: „${f.richtig}“ steht nicht in den Optionen`);
+        assert.equal(new Set(f.optionen).size, f.optionen.length, `${l.id}: doppelte Option`);
+        assert.ok(pruefeAntwort(f, f.richtig).ok);
+        for (const o of f.optionen.filter((o) => o !== f.richtig)) assert.ok(!pruefeAntwort(f, o).ok, `${l.id}: „${o}“ gilt fälschlich als richtig`);
+      } else {
+        assert.ok(pruefeAntwort(f, f.loesung).ok, `${l.id}: Lösung „${f.loesung}“ wird abgelehnt`);
+        assert.ok(!pruefeAntwort(f, '').ok && pruefeAntwort(f, '').leer);
+        assert.ok(!pruefeAntwort(f, '1').ok || f.loesung === '1', `${l.id}: „1“ gilt als richtig`);
+      }
+      if (f.beleg) {
+        const n = ip.netz(f.beleg.ip, f.beleg.praefix);
+        assert.equal(String(n[f.beleg.feld]), f.loesung, `${l.id}: ${f.frage}`);
+      }
     }
   }
-  assert.deepEqual(lw.kurzCheck('rechenweg'), []);
-  // Die richtigen Antworten stimmen mit der Rechnung überein
-  const n = ip.netz('172.16.8.100', 27);
-  assert.equal(lw.kurzCheck('netzadresse')[0].richtig, '172.16.8.96');
-  assert.equal(lw.kurzCheck('broadcast')[0].richtig, '172.16.8.127');
-  assert.equal(lw.kurzCheck('hosts')[0].richtig, String(n.hosts));
-  assert.equal(lw.kurzCheck('maske')[0].richtig, '255.255.255.224');
-  assert.equal(lw.kurzCheck('maske')[1].richtig, `/${ip.praefixAusMaske('255.255.255.240')}`);
-  assert.equal(lw.kurzCheck('unter24')[0].richtig, '10.4.7.255');
-  assert.equal(lw.adressArt('10.4.6.255', 23), 'host');
-  assert.equal(lw.kurzCheck('gateway')[0].richtig, 'Übers Gateway');
-  assert.equal(lw.kurzCheck('gateway')[1].richtig, 'Direkt');
-  assert.equal(parseInt(lw.kurzCheck('binaer')[0].richtig, 2), 192);
-  assert.equal(parseInt('00101000', 2), Number(lw.kurzCheck('binaer')[1].richtig));
-  assert.equal(lw.aufteilTabelle(26).zeilen.find((r) => r.praefix === 26).netze, 4);
-  assert.equal(lw.aufteilTabelle(26).zeilen.find((r) => r.praefix === 26).reserviert, 8);
+});
+
+test('Checks: Eingaben in mehreren Schreibweisen', () => {
+  const zahl = { eingabe: 'zahl', loesung: '4094' };
+  assert.ok(pruefeAntwort(zahl, '4.094').ok && pruefeAntwort(zahl, ' 4094 ').ok);
+  const adr = { eingabe: 'ipv4', loesung: '10.4.6.0' };
+  assert.ok(pruefeAntwort(adr, '10.4.6.0').ok && pruefeAntwort(adr, ' 10.4.006.0').ok);
+  assert.ok(!pruefeAntwort(adr, '10.4.6.256').ok);
+  const kurz = CHECKS['ipv6-kurz'][0];
+  assert.ok(pruefeAntwort(kurz, '2001:DB8::1').ok);
+  assert.ok(!pruefeAntwort(kurz, '2001:0db8::1').ok, 'führende Nullen nicht gekürzt');
+  const voll = CHECKS['ipv6-kurz'][1];
+  assert.ok(!pruefeAntwort(voll, 'fe80::1').ok, 'gekürzt statt ausgeschrieben');
+  const iid = CHECKS['ipv6-praefix'][1];
+  for (const e of ['::5', '0:0:0:5', '0000:0000:0000:0005']) assert.ok(pruefeAntwort(iid, e).ok, e);
+  const hex = CHECKS.hex[1];
+  assert.ok(pruefeAntwort(hex, 'ff').ok && pruefeAntwort(hex, '0xFF').ok);
+});
+
+test('Rechenhilfen: Blockanfang und -ende raten', () => {
+  const z = ip.zerlege('192.168.1.100', 26);
+  assert.ok(rechnen.startOptionen(z).includes(64));
+  assert.equal(rechnen.bewerteStart(z, 64), 'richtig');
+  assert.equal(rechnen.bewerteStart(z, 100), 'kein-anfang');
+  assert.equal(rechnen.bewerteStart(z, 128), 'zu-weit');
+  assert.equal(rechnen.bewerteStart(z, 0), 'zu-frueh');
+  assert.ok(rechnen.endeOptionen(z).includes(127) && rechnen.endeOptionen(z).includes(128));
+  assert.equal(rechnen.bewerteEnde(z, 128), 'naechster-anfang');
+  assert.match(rechnen.endeHinweis(z, 128), /nächsten Blocks/);
+  for (let p = 8; p <= 30; p++) {
+    const zz = ip.zerlege('172.20.130.77', p);
+    const o = rechnen.startOptionen(zz);
+    assert.ok(o.includes(zz.start) && o.length >= 1 && o.length <= 4, `/${p}`);
+    assert.ok(rechnen.endeOptionen(zz).includes(zz.ende), `/${p}`);
+  }
+});
+
+test('Rechenhilfen: Oktett-Rollen, große Netze, Rechenweg', () => {
+  assert.deepEqual(rechnen.oktettRollen(26), ['netz', 'netz', 'netz', 'rechnen']);
+  assert.deepEqual(rechnen.oktettRollen(23), ['netz', 'netz', 'rechnen', 'host']);
+  assert.deepEqual(rechnen.oktettRollen(24), ['netz', 'netz', 'netz', 'host']);
+  const g = rechnen.grossesNetz('10.4.7.20', 23);
+  assert.equal(g.stuecke, 2);
+  assert.deepEqual([g.netz, g.broadcast, g.hosts], ['10.4.6.0', '10.4.7.255', 510]);
+  assert.equal(rechnen.grossesNetz('10.4.7.20', 20).zeilen.length, 4);
+  for (let p = 8; p <= 30; p++) {
+    const r = rechnen.rechenweg('172.20.130.77', p);
+    const n = ip.netz('172.20.130.77', p);
+    assert.equal(r.maske, ip.maske(p));
+    assert.equal(r.block, 256 - r.maskenwert);
+    assert.equal(r.start % r.block, 0);
+    assert.ok(r.start <= r.wert && r.wert <= r.ende);
+    assert.deepEqual([r.netz, r.broadcast, r.hosts], [n.netz, n.broadcast, n.hostsKlassisch]);
+  }
+  for (let s = 1; s < 300; s++) {
+    const a = rechnen.zufallsAufgabe(zufall(s));
+    const n = ip.netz(a.ip, a.praefix);
+    assert.ok(a.ip !== n.netz && a.ip !== n.broadcast, `${a.ip}/${a.praefix}`);
+  }
+});
+
+test('Rechenhilfen: statische Adresse prüfen', () => {
+  const s = { netzAdr: '192.168.10.0', praefix: 24, belegt: [{ ip: '192.168.10.1', name: 'Router' }], dhcp: ['192.168.10.100', '192.168.10.200'] };
+  assert.ok(rechnen.pruefeStatisch('192.168.10.20', s).ok);
+  assert.match(rechnen.pruefeStatisch('192.168.11.20', s).grund, /nicht im Netz/);
+  assert.match(rechnen.pruefeStatisch('192.168.10.0', s).grund, /Netzadresse/);
+  assert.match(rechnen.pruefeStatisch('192.168.10.255', s).grund, /Broadcast/);
+  assert.match(rechnen.pruefeStatisch('192.168.10.1', s).grund, /Router/);
+  assert.match(rechnen.pruefeStatisch('192.168.10.150', s).grund, /DHCP/);
+  assert.ok(!rechnen.pruefeStatisch('192.168.10.300', s).ok);
+});
+
+test('ip.js: Helfer für den Lernweg', () => {
+  assert.deepEqual([0, 1, 2, 3, 8].map(ip.maskenwert), [0, 128, 192, 224, 255]);
+  assert.deepEqual(ip.netzBitsJeOktett(23), [8, 8, 7, 0]);
+  assert.equal(
+    ip
+      .binaerSchritte(150)
+      .map((s) => s.bit)
+      .join(''),
+    '10010110',
+  );
+  assert.equal(ip.leseIp(' 192.168.001.010 '), '192.168.1.10');
+  assert.equal(ip.leseIp('192.168.1.256'), null);
+  assert.equal(ip.leseZahl('4.094'), 4094);
+  assert.equal(ip.ipFehler('1.2.3.4'), null);
+  assert.match(ip.ipFehler('192.168.1.256'), /255/);
+  assert.match(ip.ipFehler('192.168.1'), /3 Teile/);
+  assert.deepEqual(ip.leseMac('00:1a:2b:3c:4d:5e'), ['00', '1A', '2B', '3C', '4D', '5E']);
+  assert.equal(ip.leseMac('00:1a-2b:3c:4d:5e'), null, 'gemischte Trennzeichen');
+  assert.equal(ip.leseMac('00:1a:2b:3c:4d'), null);
+  assert.equal(ip.ipv6Art('fe80::1'), 'link-local');
+  assert.equal(ip.ipv6Art('2001:db8::1'), 'global');
+  assert.equal(ip.ipv6Art('::1'), 'loopback');
+  assert.equal(ip.ipv6Art('fec0::1'), 'andere');
+  assert.equal(ip.ipv6Art('xyz'), null);
+  assert.equal(ip.adressArt('192.168.1.64', 26), 'netz');
+  assert.equal(ip.adressArt('192.168.1.127', 26), 'broadcast');
+  assert.equal(ip.adressArt('10.4.6.255', 23), 'host');
+});
+
+test('Üben: neue Übungen rechnen richtig', () => {
+  for (let s = 1; s < 300; s++) {
+    const b = aufgaben.binaerAufgabe(zufall(s));
+    const m = b.text.match(/\*\*([01]{8})\*\*/);
+    if (m) assert.equal(b.felder[0].erwartet, parseInt(m[1], 2));
+
+    const k = aufgaben.konfig(zufall(s));
+    if (k.titel === 'Freie statische Adresse') {
+      const f = k.felder[0];
+      const gw = k.felder.find((x) => x.id === 'gw').erwartet;
+      assert.ok(!f.pruefe(gw).ok, 'das Gateway ist keine freie Adresse');
+      assert.ok(f.pruefe(f.soll).ok);
+    }
+    if (k.titel === 'Fehler in der Konfiguration') {
+      const adr = k.text.match(/IP-Adresse: \*\*([\d.]+)\*\*/)[1];
+      const gw = k.text.match(/Standardgateway: \*\*([\d.]+)\*\*/)[1];
+      const maske = k.text.match(/Subnetzmaske: \*\*([\d.]+)\*\*/)[1];
+      const p = Number(k.text.match(/Netz ist \*\*[\d.]+\/(\d+)\*\*/)[1]);
+      const art = k.felder[0].erwartet;
+      assert.equal(ip.gleichesNetz(adr, gw, p), art !== 'gw', `${art}: ${k.text}`);
+      assert.equal(ip.praefixAusMaske(maske) === p, art !== 'maske', `${art}: ${k.text}`);
+      assert.equal(ip.adressArt(adr, p) === 'host', art !== 'ip', `${art}: ${k.text}`);
+    }
+
+    const h = aufgaben.hostsAufgabe(zufall(s));
+    if (h.titel === 'Blockgröße') assert.equal(256 % h.felder[1].erwartet, 0);
+  }
 });
