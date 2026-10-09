@@ -169,14 +169,15 @@ function Rueckmeldung({ ok, children }) {
 // Die 32 Bits der IP mit Trennstrich nach Bit `praefix`, darunter von links mitgezählt (1 … 32).
 // `gezaehlt`: beim Mitzählen werden nur die ersten Bits grün, der Strich erscheint erst am Ende.
 // Mit `onGrenze` setzt ein Klick auf ein Bit den Strich dahinter.
-function BitLeiste({ z, praefix, onGrenze, gezaehlt = praefix }) {
+// `fokus`: das Oktett mit dem Strich wird groß und bekommt Stellenwerte und Rechnung, die anderen werden grau.
+function BitLeiste({ z, praefix, onGrenze, gezaehlt = praefix, fokus = false }) {
   const b = bits(z.zahl);
   const gruen = Math.min(gezaehlt, praefix);
   const fertig = gezaehlt >= praefix;
   return (
-    <div class="snl-bits">
+    <div class={`snl-bits ${fokus ? 'snl-bits--fokus' : ''}`}>
       {[0, 1, 2, 3].map((o) => (
-        <div key={o} class="snl-bits__oktett">
+        <div key={o} class={`snl-bits__oktett ${fokus ? (o === z.index ? 'snl-bits__oktett--fokus' : 'snl-bits__oktett--grau') : ''}`}>
           <span class="snl-bits__dez mono">{z.oktette[o]}</span>
           <span class="snl-bits__reihe">
             {b.slice(o * 8, o * 8 + 8).map((bit, j) => {
@@ -193,12 +194,51 @@ function BitLeiste({ z, praefix, onGrenze, gezaehlt = praefix }) {
                     <i class={cls}>{bit}</i>
                   )}
                   <span class={`snl-zaehler mono ${i < gruen ? 'snl-zaehler--netz' : ''} ${fertig && i + 1 === praefix ? 'snl-zaehler--grenze' : ''}`}>{i + 1}</span>
+                  {fokus && o === z.index && (
+                    <span class={`snl-stellenwert mono ${bit ? 'snl-stellenwert--an' : ''} ${i < praefix ? 'snl-stellenwert--netz' : 'snl-stellenwert--host'}`}>{GEWICHTE[j]}</span>
+                  )}
                 </span>,
               ];
             })}
           </span>
+          {fokus && o === z.index && <FokusDetail wert={z.oktette[o]} k={z.netzBitsImOktett} />}
         </div>
       ))}
+    </div>
+  );
+}
+
+// Unter dem fokussierten Oktett: Klammern für Netz und Host und die Rechnung mit den Stellenwerten
+function FokusDetail({ wert, k }) {
+  const an = (j) => (wert >> (7 - j)) & 1;
+  const netz = GEWICHTE.filter((g, j) => j < k && an(j));
+  const host = GEWICHTE.filter((g, j) => j >= k && an(j));
+  const summe = (liste) => liste.reduce((a, b) => a + b, 0);
+  return (
+    <div class="snl-fokus">
+      <div class="snl-fokus__klammern">
+        {k > 0 && (
+          <span class="snl-fokus__klammer snl-fokus__klammer--netz" style={{ flexGrow: k }}>
+            Netz · {k} Bit{k > 1 ? 's' : ''}
+          </span>
+        )}
+        <span class="snl-fokus__klammer snl-fokus__klammer--host" style={{ flexGrow: 8 - k }}>
+          Host · {8 - k} Bit{8 - k > 1 ? 's' : ''}
+        </span>
+      </div>
+      <div class="snl-fokus__rechnung mono">
+        <span class="snl-z--grenze">
+          Netz: {netz.length ? `${netz.join(' + ')} = ` : ''}
+          <strong>{summe(netz)}</strong>
+        </span>
+        <span class="snl-z--frei">
+          Host: {host.length ? `${host.join(' + ')} = ` : ''}
+          <strong>{summe(host)}</strong>
+        </span>
+        <span>
+          {wert} = <span class="snl-z--grenze">{summe(netz)}</span> + <span class="snl-z--frei">{summe(host)}</span>
+        </span>
+      </div>
     </div>
   );
 }
@@ -430,18 +470,34 @@ const TEILE = ['Mitzählen', 'Links Netz, rechts Gerät', 'Die Zahl am Strich te
 function Trennstrich({ z, ip, praefix, setPraefix, aenderung }) {
   const [teil, setTeil] = useState(0);
   const [gezaehlt, setGezaehlt] = useState(0);
+  const [fokus, setFokus] = useState(false);
   const uhr = useRef(null);
-  useEffect(() => () => clearInterval(uhr.current), []);
+  const fokusUhr = useRef(null);
+  useEffect(
+    () => () => {
+      clearInterval(uhr.current);
+      clearTimeout(fokusUhr.current);
+    },
+    [],
+  );
   const fertig = gezaehlt >= praefix;
+  // Nach dem Zählen kurz die ganze Adresse zeigen, dann auf das Oktett mit dem Strich zoomen
+  const fertigGezaehlt = () => {
+    setGezaehlt(ALLE);
+    clearTimeout(fokusUhr.current);
+    fokusUhr.current = setTimeout(() => setFokus(true), 700);
+  };
   const zaehle = () => {
     clearInterval(uhr.current);
+    clearTimeout(fokusUhr.current);
+    setFokus(false);
     let n = 0;
     setGezaehlt(0);
     uhr.current = setInterval(() => {
       n += 1;
       if (n >= praefix) {
         clearInterval(uhr.current);
-        setGezaehlt(ALLE);
+        fertigGezaehlt();
       } else setGezaehlt(n);
     }, 110);
   };
@@ -466,21 +522,26 @@ function Trennstrich({ z, ip, praefix, setPraefix, aenderung }) {
       <p>
         <strong class="mono">/{praefix}</strong> bedeutet: <strong>Die ersten {praefix} Bits gehören zum Netz.</strong> Zähl von links mit – nach Bit {praefix} kommt ein Strich.
       </p>
-      <BitLeiste z={z} praefix={praefix} gezaehlt={gezaehlt} onGrenze={teil >= 3 ? setPraefix : null} />
+      <BitLeiste z={z} praefix={praefix} gezaehlt={gezaehlt} fokus={fokus} onGrenze={teil >= 3 ? setPraefix : null} />
       {!fertig ? (
         <div class="snl-zeile">
           <Knopf variante="primaer" groesse="s" iconRechts="arrow-right" onClick={zaehle}>
             {gezaehlt > 0 ? 'Nochmal zählen' : 'Mitzählen'}
           </Knopf>
-          <Knopf variante="geist" groesse="s" onClick={() => setGezaehlt(ALLE)}>
+          <Knopf variante="geist" groesse="s" onClick={fertigGezaehlt}>
             Überspringen
           </Knopf>
           {gezaehlt > 0 && <span class="snl-zaehlstand mono">{gezaehlt} …</span>}
         </div>
       ) : (
-        <p class="snl-rechnung mono">
-          Bit 1 bis {praefix} = <strong>Netz</strong> · Bit {praefix + 1} bis 32 = Host ({h} Bits)
-        </p>
+        <div class="snl-zeile">
+          <p class="snl-rechnung mono">
+            Bit 1 bis {praefix} = <strong>Netz</strong> · Bit {praefix + 1} bis 32 = Host ({h} Bits)
+          </p>
+          <Knopf variante="geist" groesse="s" icon={fokus ? 'eye' : 'search'} onClick={() => setFokus(!fokus)}>
+            {fokus ? 'Ganze Adresse zeigen' : `Fokus auf die ${z.wert}`}
+          </Knopf>
+        </div>
       )}
       {teil >= 3 && (
         <>

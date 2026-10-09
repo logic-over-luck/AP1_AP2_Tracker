@@ -153,7 +153,8 @@ nächsten offenen Punkt weiter.
   getestet). Lernweg in zehn Schritten an einer Adresse (oben IP und Präfix, keine Beispiel-Knöpfe), jeder Schritt zeigt
   nur eine Idee: Aufbau (für dich dezimal / für den Computer 32 Bits, 4 Oktette × 8 Bit, warum 0–255), Binär (Oktett
   wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich in vier Teilen, die nacheinander aufgedeckt werden (a Mitzählen: Bits
-  werden bis zum Präfix animiert grün, Zählreihe 1 … 32; b drei PCs im Vergleich – selbes Netz links gleich, Nachbarnetz
+  werden bis zum Präfix animiert grün, Zählreihe 1 … 32, danach Zoom auf das Oktett mit dem Strich: es wird groß,
+  die anderen grau, mit Stellenwerten, Netz-/Host-Klammern und Rechnung, z. B. Host 16 + 4 + 2 = 22; b drei PCs im Vergleich – selbes Netz links gleich, Nachbarnetz
   links anders; c das geteilte Oktett als Deine Zahl / Netzanteil / Hostanteil, z. B. 150 = 128 + 22; d Ergebnis
   Adresse = Netz + Gerät Nr., Hostbits → Adressen, Maske, danach Strich verschiebbar mit „halbiert/verdoppelt“),
   Oktett finden, Blöcke schneiden, eigenen Block raten, Blockende raten (Fehler „Anfang des nächsten Blocks“ wird

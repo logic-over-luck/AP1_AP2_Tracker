@@ -571,6 +571,124 @@
   height: 28px;
   border-radius: 3px;
   font-size: 13px;
+  transition:
+    width var(--dauer-lang) var(--kurve),
+    height var(--dauer-lang) var(--kurve),
+    font-size var(--dauer-lang) var(--kurve),
+    background var(--dauer) var(--kurve);
+}
+
+/* Fokus: das Oktett mit dem Strich wird groß, die anderen grau */
+.snl-bits__oktett {
+  transition:
+    opacity var(--dauer-lang) var(--kurve),
+    filter var(--dauer-lang) var(--kurve);
+}
+.snl-bits__dez {
+  transition:
+    font-size var(--dauer-lang) var(--kurve),
+    color var(--dauer-lang) var(--kurve);
+}
+.snl-bits--fokus {
+  align-items: flex-start;
+}
+.snl-bits__oktett--grau {
+  opacity: 0.28;
+  filter: grayscale(1);
+}
+.snl-bits__oktett--grau .snl-bit.snv-bit {
+  width: 13px;
+  height: 20px;
+  font-size: 9px;
+}
+.snl-bits__oktett--grau .snl-zaehler {
+  min-width: 13px;
+  font-size: 8px;
+}
+.snl-bits__oktett--grau .snl-trenner {
+  height: 30px;
+}
+.snl-bits__oktett--fokus .snl-bits__dez {
+  font-size: var(--t-3xl);
+  color: var(--text);
+}
+.snl-bits__oktett--fokus .snl-bit.snv-bit {
+  width: 40px;
+  height: 52px;
+  border-radius: 5px;
+  font-size: 22px;
+}
+.snl-bits__oktett--fokus .snl-zaehler {
+  min-width: 40px;
+  font-size: 11px;
+}
+.snl-bits__oktett--fokus .snl-bits__reihe .snl-trenner {
+  width: 5px;
+  height: 92px;
+  margin: -4px 5px 0;
+}
+.snl-stellenwert {
+  min-width: 40px;
+  padding: 2px 0;
+  border-radius: 3px;
+  font-size: var(--t-s);
+  text-align: center;
+  color: var(--text-4);
+  animation: snl-auf var(--dauer-lang) var(--kurve);
+}
+.snl-stellenwert--an {
+  font-weight: 700;
+}
+.snl-stellenwert--an.snl-stellenwert--netz {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.snl-stellenwert--an.snl-stellenwert--host {
+  background: color-mix(in srgb, var(--warn) 14%, transparent);
+  color: var(--warn);
+}
+.snl-fokus {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  width: 100%;
+  margin-top: 6px;
+  animation: snl-auf var(--dauer-lang) var(--kurve);
+}
+.snl-fokus__klammern {
+  display: flex;
+  gap: 12px;
+}
+.snl-fokus__klammer {
+  flex-basis: 0;
+  padding-top: 4px;
+  border: 2px solid;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  text-align: center;
+}
+.snl-fokus__klammer--netz {
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.snl-fokus__klammer--host {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+.snl-fokus__rechnung {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--t-m);
+}
+.snl-fokus__rechnung > span:last-child {
+  margin-top: 2px;
+  padding-top: 4px;
+  border-top: 1px solid var(--linie);
+  font-size: var(--t-l);
+  font-weight: 700;
 }
 button.snl-bit {
   cursor: pointer;
@@ -1039,6 +1157,29 @@ button.snl-bit:hover {
     width: 15px;
     height: 24px;
     font-size: 11px;
+  }
+  .snl-bits__oktett--grau .snl-bit.snv-bit {
+    width: 9px;
+    height: 16px;
+    font-size: 7px;
+  }
+  .snl-bits__oktett--grau .snl-zaehler {
+    min-width: 9px;
+    font-size: 6px;
+  }
+  .snl-bits--fokus .snl-bits__oktett--fokus {
+    order: 5;
+    width: 100%;
+  }
+  .snl-bits__oktett--fokus .snl-bit.snv-bit {
+    width: 34px;
+    height: 46px;
+    font-size: 19px;
+  }
+  .snl-bits__oktett--fokus .snl-zaehler,
+  .snl-stellenwert {
+    min-width: 34px;
+    font-size: 10px;
   }
   .snl-trenner {
     width: 3px;
