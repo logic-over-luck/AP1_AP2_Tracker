@@ -78,6 +78,9 @@ nächsten offenen Punkt weiter.
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
 - Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan & Projektplanung (mit Tests für Erzeuger und Prüfer)
+- Subnetz-Trainer neu aufgestellt (Abschnitt 6): drei Räume, Lernweg mit 25 Lektionen als Schlange, jede Lektion gleich
+  aufgebaut (Erklärung in Schritten, Prüfungsdefinition, Ausprobieren, Stolperfallen, Check), 12 Übungen nach Themen;
+  Tests für `braucht`, Kompetenz-Abdeckung, Checks und Übungen; im Browser auf Desktop und Handy (390 px) durchgeklickt
 - Pseudocode-Trainer: eigener Interpreter (`src/bereiche/trainer/code/pseudo.js`), Grundlagen, Visualizer, Schreibtischtest, Puzzle, Fehlersuche, Suchen & Sortieren
 - SQL-Labor (nur AP2): sql.js läuft aus dem eingebetteten WebAssembly (`sql/laden.js`, kein fetch), 32 Abfragen,
   7 Änderungs-, 5 Struktur- und 6 Rechte-Aufgaben, freies Labor mit Beispielen; Prüfung über das Ergebnis,
@@ -149,23 +152,11 @@ nächsten offenen Punkt weiter.
   wird streng gelesen (jede Nummer genau einmal, 0 … Höchstpunkte, halbe Punkte). Zeichenaufgaben werden nicht bewertet
   und im Ergebnis als „nicht ermittelt“ mit ihren Punkten ausgewiesen; Prozent und Note beziehen sich auf die
   ermittelten Punkte. Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
-- **Subnetz-Trainer in zwei Räumen** (auf Wunsch): oben zwei große Schalter **Verstehen** (Lektionen) und **Üben** (Netz
-  bestimmen, Präfix und Maske, Gleiches Netz, Private Adressen, IPv6, Netz aufteilen, Visualizer zum Nachschlagen).
-  Allgemein in `TrainerSeite` über das Feld `bereich` der Module (`verzeichnis.js`); andere Trainer ohne `bereich` bleiben
-  wie sie sind.
-- **Subnetz „Verstehen“ als Lektionen** (`subnetz/Verstehen.jsx`, Rechnung `lernweg.js` + `ip.js`, Tests in
-  `tests/subnetz.test.mjs`, Stile `subnetz-lernen.css` mit Präfix `sv-`). Eine Lektion je Begriff, in fester Reihenfolge,
-  weil jeder Begriff auf den vorigen aufbaut: 1 IP-Adresse, 2 Binär (Bits umschalten ändert die IP oben mit), 3 Präfix,
-  4 Subnetzmaske (Rechnung für alle vier Oktette), 5 Netzadresse (Teile: ein Oktett, Blöcke, Blockanfang + zusammenbauen; unter jedem Zahlenstrahl eine Lupe auf den Block mit der Zahl und seine Nachbarn, Rahmen + Trichter zeigen den vergrößerten Abschnitt, bei Blöcken bis 4 jede Zahl einzeln),
-  6 Broadcast (Blockende mit dem Fehler „128 + 64 = 192 ist schon der nächste Block“, zusammenbauen, Bits 0…0/1…1),
-  7 Hosts (Rahmen und Inneres aufdecken, 2^h − 2), 8 Netze unter /24 (x.255 als normaler Host), 9 Gateway, 10 Aufteilen,
-  11 Rechenweg (mit „Jetzt du“). Jede Lektion endet mit einem Kurz-Check an einer neuen Adresse (172.16.8.100/27 bzw.
-  10.4.7.20/23, `kurzCheck` in `lernweg.js`, getestet); erst danach „Verstanden – weiter zu …“. Der Stand „verstanden“ ist
-  eine Ansichts-Einstellung im Browser (`subnetz.verstanden`), die Übersicht zeigt ihn mit „als Nächstes“; die offene
-  Lektion steht in der Adresszeile (`?modus=verstehen&lektion=…`). Beispiel-Adresse oben (Start 192.168.40.150/26, /8 … /30),
-  Farben überall gleich und als Legende oben: Netz grün, Host blau, Strich orange, reserviert rot. Geprüft im Browser:
-  alle Lektionen mit Kurz-Check auf Desktop und Handy für /26, /23, /24.
-- **Subnetz-Visualizer:** zweiter Reiter im Subnetz-Trainer, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
+- **Subnetz-Trainer neu aufgestellt** (auf Wunsch, Oktober 2026): drei Räume **Verstehen** (Lernweg mit 25 Lektionen in
+  5 Themen-Blöcken), **Üben** (Aufgaben nach denselben Blöcken) und **Visualisieren** (Visualizer unverändert). Der alte
+  Verstehen-Raum (Tabs → Schritte → Lektionen) wurde nicht weiter umgebaut, sondern ersetzt; Plan, Gliederung, Tabelle
+  Kompetenz → Lektion und Dateistruktur in Abschnitt 6.
+- **Subnetz-Visualizer:** eigener Raum „Visualisieren“, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
   Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits
   per Klick umschaltbar), Kennzahlen-Kacheln (inkl. Wildcard, privat/öffentlich, Teilnetze), Zahlenstrahl des
@@ -292,7 +283,9 @@ Häkchen zu Stichpunkten, die es nicht mehr gibt, werden einfach übersprungen.
 
 ---
 
-## 6. Subnetz-Trainer – Neuaufbau (Plan)
+## 6. Subnetz-Trainer – Neuaufbau
+
+*Stand: umgesetzt (Etappen 1–5), getestet (`tests/subnetz.test.mjs`), im Browser auf Desktop und Handy geprüft.*
 
 Der alte Trainer („Verstehen“ als Tabs → Schritte → Lektionen) wird nicht weiter ausgebessert, sondern neu
 aufgestellt. Geplant ist von den Inhalten her, nicht vom alten Code aus; der alte Code dient danach nur als
@@ -375,23 +368,29 @@ Stolperstelle), dann wie bei IPv4 Netz- und Geräteteil, zum Schluss die Adresse
 |---|---|---|---|---|
 | 22 | `ipv6` | IPv6-Adresse | Warum IPv6, und wie sieht die Adresse aus? | 1, 19 |
 | 23 | `ipv6-kurz` | Kurzschreibweise | Wie kürzt man eine IPv6-Adresse – und zurück? | 22 |
-| 24 | `ipv6-praefix` | Präfix und Interface-Identifier | Welcher Teil ist Netz, welcher Gerät? | 4, 23 |
+| 24 | `ipv6-praefix` | Präfix und Interface-Identifier | Welcher Teil ist Netz, welcher Gerät? | 4, 20, 23 |
 | 25 | `link-local` | Verbindungslokale Adresse | Welche Adresse hat jedes Gerät von selbst? | 17, 24 |
 
 ### 6.3 Eine Lektion
 
-Alle Lektionen haben denselben Aufbau, in dieser Reihenfolge:
+Alle Lektionen haben denselben Aufbau (`verstehen/Lektion.jsx`):
 
-1. **Kopf:** Block, Nummer, Begriff, Leitfrage; darunter „Baut auf“ mit den `braucht`-Lektionen (anklickbar,
-   mit Status – wer eine Lücke hat, sieht sie sofort).
-2. **Verstehen:** kurze Erklärung, bei Bedarf „für dich / für den Computer“ und Faktenboxen, Bilder in den festen Farben.
-3. **Definition:** ein Kasten „So sagst du es in der Prüfung“.
-4. **Ausprobieren:** ein kleines Werkzeug zum Selbst-Ändern (Bit-Schalter, Regler, Zahlenstrahl, Eingabemaske …).
-5. **Stolperfallen und Merksatz** (wo sie helfen).
-6. **Check:** 2–3 Fragen (Auswahl oder Eingabe) mit Erklärung nach jeder Antwort. Sind alle richtig beantwortet
-   (Wiederholen erlaubt), ist die Lektion „verstanden“ und der Knopf „Weiter zu Lektion n+1“ erscheint.
+1. **Kopf:** Block, Nummer, Begriff, Leitfrage; darunter „Baut auf“ mit den `braucht`-Lektionen (anklickbar, mit
+   Status). Fehlt davon etwas, steht ein Hinweis mit Link darunter. Vor/zurück blättern und „Lernweg“ oben.
+2. **① Verstehen:** die Erklärung als **Schritte** (Baustein `Schritte`): 4–7 Schritte, jeder mit Titel, Text und Bild
+   (Bitband, Zahlenstrahl mit Lupe, Netzskizze, Konsole …); „Weiter“ deckt den nächsten Schritt auf, „alle zeigen“ alles.
+   Mitten in den Schritten **Zwischenfragen** (Baustein `Raten`): erst selbst überlegen, falsche Antworten bekommen
+   einen gezielten Hinweis (z. B. „64 + 64 = 128 ist schon der nächste Block“), danach geht die Erklärung weiter.
+   Am Ende der Kasten **„So sagst du es in der Prüfung“** mit der Definition.
+3. **② Ausprobieren:** ein Werkzeug zum Selbst-Ändern (Bit-Schalter, Präfix-Regler, Zahlenstrahl, Eingabemaske,
+   DHCP-Simulation, ARP-Cache …).
+4. **③ Aufpassen:** typische Fehler (falsch → richtig) und ein Merksatz.
+5. **④ Check:** 2–3 Fragen (Auswahl oder Eingabe), Tipp nach falscher Antwort, Erklärung nach der richtigen; bei
+   Eingaben nach zwei Fehlversuchen „Lösung zeigen“. Erst wenn alle richtig beantwortet sind, gilt die Lektion als
+   verstanden und „Weiter zu …“ erscheint. Bei verstandenen Lektionen sind alle Schritte gleich offen.
 
-Fortschritt: `useEinstellung('subnetz.lernweg', [])` (Liste der verstandenen Lektionen), zurücksetzbar im Lernweg.
+Fortschritt: `useEinstellung('subnetz.lernweg', [])` (Liste der verstandenen Lektionen), zurücksetzbar im Lernweg
+(mit Sicherheitsabfrage). Der frühere Schlüssel `subnetz.verstanden` wird nicht mehr gelesen.
 
 ### 6.4 Lernweg-Ansicht
 
@@ -408,13 +407,13 @@ sich nach der Breite; am Handy eine Spalte mit Pfeilen nach unten. Auch „noch 
 |---|---|---|
 | AP1-6-2-1-K1 | IP, Subnetzmaske, Gateway eintragen | 16 Konfiguration (Gateway: 14) |
 | AP1-6-2-1-K2 | freie statische Adresse außerhalb des DHCP-Bereichs | 18 Statische Adresse |
-| AP1-6-2-1-K3 | /24 → 255.255.255.0 | 5 Subnetzmaske |
+| AP1-6-2-1-K3 | /24 → 255.255.255.0 | 4 Präfix, 5 Subnetzmaske |
 | AP1-6-2-1-K4 | statisch oder automatisch, wann fest | 17 DHCP, 18 Statische Adresse |
 | AP1-6-2-1-K5 | private Bereiche | 15 Private Adressen |
 | AP1-6-2-1-K6 | Einstellungen dokumentieren | 16 Konfiguration |
-| AP1-6-2-2-K1 | Adressen und nutzbare Hosts aus dem Präfix | 6 Netzgröße, 10 Hostbereich |
-| AP1-6-2-2-K2 | Netzadresse und Broadcastadresse | 8 Netzadresse, 9 Broadcast, 12 Entscheidendes Oktett |
-| AP1-6-2-2-K3 | erste, letzte, vorletzte Hostadresse | 10 Hostbereich |
+| AP1-6-2-2-K1 | Adressen und nutzbare Hosts aus dem Präfix | 6 Netzgröße, 10 Hostbereich, 13 Rechenweg |
+| AP1-6-2-2-K2 | Netzadresse und Broadcastadresse | 7 Blockgröße, 8 Netzadresse, 9 Broadcast, 12 Entscheidendes Oktett, 13 Rechenweg |
+| AP1-6-2-2-K3 | erste, letzte, vorletzte Hostadresse | 10 Hostbereich, 13 Rechenweg |
 | AP1-6-2-2-K4 | Netzskizze lesen, Adresse eintragen | 18 Statische Adresse (mit 14) |
 | AP1-6-2-2-K5 | Präfix ↔ Subnetzmaske | 5 Subnetzmaske |
 | AP1-6-2-2-K6 | zwei Adressen im selben Subnetz? | 11 Gleiches Netz? |
@@ -435,55 +434,78 @@ AP1-6-2-1 bis AP1-6-2-4 mindestens einer Lektion zugeordnet ist und `braucht` nu
 
 ### 6.6 Üben
 
-Die bestehenden Übungen bleiben und werden nach den Blöcken sortiert; Lücken werden gefüllt.
+Die bestehenden Übungen bleiben und sind nach den Blöcken sortiert; Lücken sind gefüllt. Unter jeder Übung steht
+„Dazu im Lernweg“ mit den passenden Lektionen (Feld `uebung` der Lektion), jede Lektion verlinkt umgekehrt ihre Übung.
 
-| Block | Übungen |
+| Block | Übungen (modus-ID) |
 |---|---|
-| Die IPv4-Adresse | Oktett binär *(neu)*, Präfix und Subnetzmaske |
-| Subnetting | Adressen und Hosts *(aus „Präfix und Maske“ herausgelöst)*, Netz bestimmen, Gleiches Netz?, Netz aufteilen (Zusatz) |
-| Einen PC ins Netz bringen | Private Adressen, Konfiguration prüfen *(neu: freie statische Adresse, Gateway, Maske)* |
-| MAC und ARP | MAC, ARP und DHCP *(neu)* |
-| IPv6 | IPv6 kürzen & ausschreiben |
+| Die IPv4-Adresse | Oktett binär (`binaer`, neu), Präfix und Subnetzmaske (`maske`) |
+| Subnetting | Adressen, Hosts, Blockgröße (`hosts`, aus „Präfix und Maske“ herausgelöst + Blockgröße), Netz bestimmen (`analyse`), Gleiches Netz? (`gleich`), Netz aufteilen (`aufteilen`, Zusatz) |
+| Einen PC ins Netz bringen | Private Adressen (`privat`), Konfiguration prüfen (`konfig`, neu: freie statische Adresse, Eingabemaske, Fehler finden) |
+| MAC und ARP | MAC, ARP und DHCP (`mac`, neu: Herstellerkennung, `arp -a`, 169.254, was DHCP zuteilt) |
+| IPv6 | IPv6 kürzen & ausschreiben (`ipv6`) |
 
-### 6.7 Dateistruktur (neu)
+### 6.7 Dateistruktur
 
 ```
 src/bereiche/trainer/subnetz/
-  Subnetz.jsx              Rahmen: Kopf, drei Räume, Auswahl über ?modus=
-  ip.js                    Rechnung IPv4/IPv6 (bleibt, ergänzt um kleine Helfer)
+  Subnetz.jsx              Rahmen: Kopf, drei Räume, Auswahl über ?modus= (merkt sich die letzte Übung)
+  ip.js                    Rechnung IPv4/IPv6 + Helfer (Stellenwerte, Maskenwert, Eingaben lesen, MAC, IPv6-Art)
   Visualizer.jsx           unverändert
   verstehen/
-    lernweg.js             Blöcke + Lektionen: braucht, Kompetenzen, Definition, Check (rein, getestet)
+    Verstehen.jsx          Raum: ohne ?lektion= der Lernweg, sonst die Lektion
+    lernweg.js             Blöcke + Lektionen: braucht, Kompetenzen, Definition, Merksatz, Stolperfallen (rein, getestet)
+    checks.js              Check-Fragen je Lektion + Prüffunktion (rein, getestet)
+    rechnen.js             Rechenhilfen der Erklärungen: Blockanfang/-ende raten, Oktett-Rollen, Rechenweg, statische Adresse prüfen
     fortschritt.js         verstanden / als Nächstes / zurücksetzen
-    Lernweg.jsx            Übersicht: Blöcke mit Kacheln als Schlange
+    Lernweg.jsx            Übersicht: Blöcke mit Kacheln als Schlange, Merkzettel je Block
     Lektion.jsx            Rahmen einer Lektion (immer gleich)
     Check.jsx              Kurz-Check
-    bausteine.jsx          Bits, Bit-Schalter, Zahlenstrahl mit Lupe, Maskenrechnung, Faktenbox, Netzbild
+    bausteine.jsx          Schritte, Raten, Bitband, Bit-Tafel, Umrechner, Maskenrechnung, Zahlenstrahl mit Lupe,
+                           Grenzlupe, Konsole, Gerät, Faktenboxen …
     inhalt/                Erklärung + Ausprobieren je Block (adresse, subnetting, konfiguration, lokal, ipv6)
   ueben/
-    Ueben.jsx              Übungen nach Blöcken
-    aufgaben.js            Aufgabenerzeuger
-src/styles/subnetz.css     Stile des neuen Trainers (Präfix sn-), ersetzt subnetz-lernen.css
-src/styles/subnetz-visual.css   bleibt (Visualizer)
-tests/subnetz.test.mjs     Rechnung, Aufgaben, Lernweg-Struktur, Checks
+    Ueben.jsx              Übungen nach Blöcken, Spickzettel, „Dazu im Lernweg“
+    aufgaben.js            Aufgabenerzeuger (getestet)
+src/styles/subnetz.css     Stile des Trainers (Präfix sn-)
+src/styles/subnetz-visual.css   Visualizer (unverändert)
+tests/subnetz.test.mjs     Rechnung, Aufgaben, Lernweg-Struktur, Checks, Rechenhilfen
 ```
-Wegfallen: `Verstehen.jsx`, das alte `lernweg.js`, `subnetz-lernen.css`, die Raum-Logik (`bereich`) in
-`TrainerSeite` (gab es nur für den Subnetz-Trainer).
+Entfernt: das alte `subnetz/Verstehen.jsx`, das alte `subnetz/lernweg.js`, `subnetz-lernen.css`, die Raum-Logik
+(`bereich`) in `TrainerSeite` (gab es nur für den Subnetz-Trainer).
 
-### 6.8 Steinbruch: was aus dem alten Code herausgelöst wird
+### 6.8 Steinbruch: was aus dem alten Code herausgelöst wurde
 
 | Baustein | alt | neu |
 |---|---|---|
 | IPv4- und IPv6-Rechnung (getestet) | `ip.js` | bleibt `ip.js` (der Visualizer importiert daraus) |
-| Helfer: Stellenwerte, Netzbits je Oktett, Maskenwert, Dezimal → binär in Schritten, Eingaben lesen | `lernweg.js` | in `ip.js` übernommen (rein, getestet); der Rest von `lernweg.js` (Blockanfang raten, Kurz-Checks, Aufteil-Tabelle …) fällt weg |
-| „Für dich / für den Computer“ mit Faktenboxen | `Verstehen.jsx` → `Aufbau` | Lektion 1 (Erklärung neu gefasst, Faktenbox als Baustein `Fakten`) |
-| 32-Bit-Band mit Netz/Host-Farben und Strich | `Bitband` | Baustein `Bitband` |
-| Bit-Tafel mit Stellenwerten und Umschalten | `Bits` | Baustein `BitTafel` (Lektion 3, auch in 19) |
-| Präfix → Subnetzmaske für alle vier Oktette, die neun Maskenwerte | `Maske` | Baustein `MaskenRechnung` (Lektion 5) |
-| Zahlenstrahl 0–255 in Blöcken mit Lupe und Trichter | `Strahl` | Baustein `Zahlenstrahl` (Lektion 7–12) |
-| Aufgabenerzeuger | `aufgaben.js` | `ueben/aufgaben.js`, unverändert bis auf die Trennung „Präfix ↔ Maske“ / „Adressen und Hosts“ |
-| Farbschema: Netz = Akzent (grün), Host = `--info` (blau), Grenze = `--warn` (orange), reserviert = `--fehler` (rot) | `subnetz-lernen.css` | `subnetz.css` (Präfix `sn-`), Legende in jeder Lektion mit Bits |
+| Helfer: Stellenwerte, Netzbits je Oktett, Maskenwert, Dezimal → binär in Schritten, Eingaben lesen | `lernweg.js` | `ip.js` |
+| Blockanfang/-ende raten mit typischen Fehlern | `lernweg.js` | `verstehen/rechnen.js` (Zwischenfragen in Lektion 8, 9, 12) |
+| „Für dich / für den Computer“ mit Faktenboxen | `Verstehen.jsx` → `Aufbau` | Lektion 1 (Bausteine `ZweiSichten`, `Fakten`) |
+| 32-Bit-Band mit Netz/Host-Farben und Grenze | `Bitband` | Baustein `Bitband` |
+| Bit-Tafel mit Stellenwerten, „Passt es noch?“ Schritt für Schritt | `Bits` | Bausteine `BitTafel` (Lektion 3, 19) und `Umrechner` |
+| Präfix → Subnetzmaske für alle vier Oktette, die neun Maskenwerte | `Maske` | Bausteine `MaskenRechnung`, `MaskenWerte` (Lektion 5) |
+| Zahlenstrahl 0–255 in Blöcken mit Lupe und Trichter | `Strahl` | Baustein `Zahlenstrahl` (Lektion 7–13, 15), jetzt auch mit zwei Markierungen |
+| Lupe auf die Blockgrenze, Blockgröße = Stellenwert des letzten Netzbits | `Grenze`, `Bloecke` | Baustein `Grenzlupe`, Schritt in Lektion 7 |
+| Aufgabenerzeuger | `aufgaben.js` | `ueben/aufgaben.js`; „Präfix und Maske“ geteilt, vier Übungen neu |
+| Farbschema: Netz = Akzent (grün), Host = `--info` (blau), Grenze = `--warn` (orange), reserviert = `--fehler` (rot) | `subnetz-lernen.css` | `subnetz.css` (Präfix `sn-`), Legende bei jedem Bit-Bild |
 | Visualizer | `Visualizer.jsx`, `subnetz-visual.css` | unverändert im Raum „Visualisieren“ |
 
-Nicht übernommen: Lektionsliste, Teile-Leiste, Kurz-Check-Logik, Übersicht, Gateway-/Aufteilen-/Unter-24-Bilder,
-„Jetzt du“ – der neue Aufbau braucht sie in dieser Form nicht.
+Nicht übernommen: Lektionsliste, Teile-Leiste, Kurz-Check-Logik, Übersicht, Gateway-/Aufteilen-Bilder und die
+gemeinsame Beispiel-Adresse oben – jede Lektion hat jetzt ihr eigenes, festes Beispiel und ihr eigenes Werkzeug.
+
+### 6.9 Eigene Ideen (umgesetzt)
+
+- **Merkzettel** je Block: alle Prüfungsdefinitionen des Blocks auf einen Blick – zum Wiederholen vor der Prüfung.
+- **„Baut auf“** im Kopf jeder Lektion mit Status und Lücken-Hinweis; **„Dazu im Lernweg“** unter jeder Übung.
+- **Zwischenfragen mit gezielten Hinweisen** zu den typischen Fehlern (Blockende, 2·h statt 2^h, 172.32 …).
+- **Simulationen:** DHCP mit Schaltern (Kabel, Server, freie Adressen → 169.254), ARP-Cache zum Mitverfolgen mit
+  `arp -a`, Netzskizze wie in der Prüfung mit Adressplan (reserviert, vergeben, DHCP-Bereich, frei).
+- **„Jetzt du“** in der Lektion Rechenweg: das komplette Schema an einer zufälligen Adresse, mit Lösungsweg.
+
+### 6.10 Offen / Ideen für später
+
+- Der Fortschritt im Lernweg ist eine Ansichts-Einstellung, kein Lernstand-Ereignis: Er ist nicht in der Sicherung
+  enthalten. Wer das möchte, kann ihn als Ereignis (`lektion`) ins Protokoll aufnehmen.
+- IPv6-Subnetting und Netz aufteilen (VLSM) sind für AP1 nicht belegt und deshalb nicht im Lernweg (Aufteilen bleibt als
+  Zusatz-Übung).
