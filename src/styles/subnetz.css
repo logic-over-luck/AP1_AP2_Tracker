@@ -86,6 +86,271 @@
   gap: var(--s-2);
 }
 
+
+/* ---------- Lernweg ---------- */
+.sn-lernweg {
+  --sn-pfeil: 32px;
+  display: grid;
+  gap: var(--s-8);
+  min-width: 0;
+}
+.sn-start {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4) var(--s-8);
+  padding: var(--s-5) var(--s-6);
+}
+.sn-start__text {
+  display: grid;
+  gap: var(--s-2);
+  min-width: 0;
+}
+.sn-start__stand {
+  font-size: var(--t-l);
+  color: var(--text-2);
+}
+.sn-start__stand strong {
+  font-size: var(--t-2xl);
+  color: var(--text);
+}
+.sn-start__erkl {
+  max-width: 68ch;
+  font-size: var(--t-m);
+  line-height: 1.55;
+  color: var(--text-3);
+}
+.sn-start__aktion {
+  display: grid;
+  justify-items: end;
+  gap: var(--s-2);
+}
+.sn-start__fertig {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-weight: 600;
+  color: var(--akzent);
+}
+
+.sn-block {
+  display: grid;
+  gap: var(--s-4);
+  min-width: 0;
+}
+.sn-block__kopf {
+  display: grid;
+  gap: var(--s-1);
+}
+.sn-block__titelzeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-2) var(--s-3);
+}
+.sn-block__nr {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--akzent);
+}
+.sn-block__titel {
+  margin: 0;
+  font-size: var(--t-xl);
+  font-weight: 650;
+  color: var(--text);
+}
+.sn-block__stand {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px var(--s-2);
+  border-radius: var(--r-rund);
+  background: var(--flaeche-3);
+  font-family: var(--mono);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-block--fertig .sn-block__stand {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sn-block__text {
+  font-size: var(--t-m);
+  color: var(--text-3);
+}
+
+/* Schlange */
+.sn-schlange {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sn-schlange__reihe {
+  display: grid;
+  align-items: stretch;
+}
+.sn-schlange--spalte {
+  gap: 0;
+}
+.sn-schlange__glied {
+  display: grid;
+  justify-items: stretch;
+}
+.sn-kachel {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 2px;
+  min-width: 0;
+  min-height: 132px;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+  text-align: left;
+  color: var(--text-2);
+  transition:
+    border-color var(--dauer) var(--kurve),
+    background var(--dauer) var(--kurve),
+    transform var(--dauer) var(--kurve);
+}
+.sn-kachel:hover {
+  border-color: var(--linie-3);
+  background: var(--flaeche-2);
+  transform: translateY(-1px);
+}
+.sn-kachel__nr {
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-4);
+}
+.sn-kachel__begriff {
+  font-size: var(--t-l);
+  font-weight: 650;
+  line-height: 1.25;
+  color: var(--text);
+}
+.sn-kachel__frage {
+  font-size: var(--t-m);
+  line-height: 1.4;
+  color: var(--text-3);
+}
+.sn-kachel__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: var(--s-2);
+  font-size: var(--t-s);
+  color: var(--text-4);
+}
+.sn-kachel--verstanden {
+  border-color: var(--akzent-linie);
+}
+.sn-kachel--verstanden .sn-kachel__nr,
+.sn-kachel--verstanden .sn-kachel__status {
+  color: var(--akzent);
+}
+.sn-kachel--naechste {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+  box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.12);
+}
+.sn-kachel--naechste .sn-kachel__nr {
+  color: var(--akzent);
+}
+.sn-kachel--naechste .sn-kachel__status {
+  align-self: end;
+  justify-self: start;
+  padding: 2px var(--s-2);
+  border-radius: var(--r-rund);
+  background: var(--akzent);
+  font-weight: 600;
+  color: var(--akzent-text);
+}
+.sn-kachel--offen .sn-kachel__begriff {
+  color: var(--text-2);
+}
+
+/* Pfeile */
+.sn-pfeil {
+  display: grid;
+  place-items: center;
+}
+.sn-pfeil svg,
+.sn-kurve svg {
+  display: block;
+  overflow: visible;
+}
+.sn-pfeil path,
+.sn-kurve path {
+  fill: none;
+  stroke: var(--linie-3);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sn-pfeil--fertig path {
+  stroke: var(--akzent);
+}
+.sn-pfeil--runter {
+  height: 32px;
+}
+.sn-kurve {
+  display: block;
+  height: 44px;
+  margin: 4px 0;
+}
+
+/* Merkzettel je Block */
+.sn-merk__knopf {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) 0;
+  font-size: var(--t-m);
+  color: var(--text-3);
+}
+.sn-merk__knopf:hover {
+  color: var(--text);
+}
+.sn-merk__pfeil {
+  transition: transform var(--dauer) var(--kurve);
+}
+.sn-merk__pfeil--offen {
+  transform: rotate(180deg);
+}
+.sn-merk {
+  display: grid;
+  gap: var(--s-3);
+  margin: 0;
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-1);
+}
+.sn-merk__eintrag {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--s-1) var(--s-4);
+}
+.sn-merk__eintrag dt {
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-merk__eintrag dd {
+  margin: 0;
+  font-size: var(--t-m);
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.sn-merk__nr {
+  color: var(--text-4);
+}
+
 @media (max-width: 640px) {
   .sn-raeume {
     gap: var(--s-2);
@@ -104,6 +369,22 @@
     display: none;
   }
   .sn-thema {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sn-start {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--s-4);
+  }
+  .sn-start__aktion {
+    justify-items: stretch;
+  }
+  .sn-kachel {
+    min-height: 0;
+  }
+  .sn-merk {
+    padding: var(--s-3) var(--s-4);
+  }
+  .sn-merk__eintrag {
     grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -8,7 +8,7 @@ import { useEinstellung } from '../../../lernstand/einstellungen.js';
 import { Icon } from '../../../ui/bausteine.jsx';
 import { ThemenLinks } from '../rahmen/Uebung.jsx';
 import { SubnetzVisualizer } from './Visualizer.jsx';
-import { SubnetzVerstehen } from './Verstehen.jsx';
+import { Verstehen } from './verstehen/Verstehen.jsx';
 import { Ueben } from './ueben/Ueben.jsx';
 
 const RAEUME = [
@@ -50,7 +50,7 @@ export function SubnetzTrainer({ raum, trainer, modi, params }) {
           </button>
         ))}
       </div>
-      {aktiv.bereich === 'verstehen' && <SubnetzVerstehen lektion={params.lektion} onLektion={(id) => oeffne('verstehen', { lektion: id ?? undefined })} />}
+      {aktiv.bereich === 'verstehen' && <Verstehen lektionId={params.lektion} onLektion={(id) => oeffne('verstehen', { lektion: id ?? undefined })} />}
       {aktiv.bereich === 'ueben' && (
         <Ueben
           uebungen={uebungen}
