@@ -43,7 +43,12 @@ const L = [
     definition:
       'Eine IP-Adresse besteht aus **Netzanteil** und **Hostanteil**. Der Netzanteil bezeichnet das Netz und ist bei allen Geräten im selben Netz gleich. Der Hostanteil bezeichnet das einzelne Gerät (den **Host**) in diesem Netz.',
     merksatz: 'Netzanteil = Straße, Hostanteil = Hausnummer. Gleiche Straße = gleiches Netz.',
-    fehler: [{ falsch: 'Das Netz sind immer die ersten drei Zahlen.', richtig: 'Wo die Grenze liegt, steht in der Konfiguration des Geräts – sie kann an vielen Stellen liegen.' }],
+    fehler: [
+      {
+        falsch: 'Der Netzanteil sind immer die ersten drei Oktette.',
+        richtig: 'Wie lang der Netzanteil ist, steht in der Konfiguration des Geräts – er kann kürzer oder länger sein.',
+      },
+    ],
   },
   {
     id: 'binaer',

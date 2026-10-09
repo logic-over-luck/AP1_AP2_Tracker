@@ -43,10 +43,10 @@ export const CHECKS = {
       erklaerung: 'Der Hostanteil ist die „Hausnummer“ – er unterscheidet die Geräte innerhalb eines Netzes.',
     },
     {
-      frage: 'Die Grenze liegt hier nach der dritten Zahl. Welche Adresse liegt im selben Netz wie 10.20.30.40?',
+      frage: 'Der Netzanteil sind hier die ersten drei Oktette. Welche Adresse liegt im selben Netz wie 10.20.30.40?',
       optionen: ['10.20.31.40', '10.20.30.99', '10.21.30.40', '11.20.30.40'],
       richtig: '10.20.30.99',
-      tipp: 'Der Netzanteil – die ersten drei Zahlen – muss gleich sein.',
+      tipp: 'Der Netzanteil – die ersten drei Oktette – muss gleich sein.',
       erklaerung: 'Netzanteil 10.20.30 ist gleich, nur der Hostanteil (40 bzw. 99) unterscheidet sich.',
     },
     {

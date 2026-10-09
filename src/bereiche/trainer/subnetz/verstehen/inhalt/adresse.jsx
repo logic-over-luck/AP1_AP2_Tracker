@@ -290,10 +290,10 @@ function NetzHostErklaerung() {
                 sie gleich, kann es das Paket direkt zustellen. Sind sie verschieden, muss das Paket aus dem eigenen Netz hinaus – wie das geht, zeigt Block 3.
               </Absatz>
               <Raten
-                frage="PC-A (192.168.1.10) schickt etwas an 192.168.1.50. Liegt der Empfänger im selben Netz? (Grenze nach der dritten Zahl)"
+                frage="PC-A (192.168.1.10) schickt etwas an 192.168.1.50. Der Netzanteil sind die ersten drei Oktette. Liegt der Empfänger im selben Netz?"
                 optionen={['ja', 'nein']}
                 richtig="ja"
-                hinweis={() => 'Vergleich nur die ersten drei Zahlen: 192.168.1 und 192.168.1.'}
+                hinweis={() => 'Vergleiche nur den Netzanteil, also die ersten drei Oktette: 192.168.1 und 192.168.1.'}
               >
                 <Hinweis ton="gut" icon="circle-check">
                   Netzanteil <Netz>192.168.1</Netz> = <Netz>192.168.1</Netz> → gleiches Netz, das Paket geht direkt zum Drucker. Genau diese Prüfung wirst du in Lektion 11 mit
@@ -308,8 +308,7 @@ function NetzHostErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Die Grenze zwischen Netzanteil und Hostanteil ist <strong>nicht immer nach der dritten Zahl</strong>. Dieselbe Adresse kann – je nach Konfiguration – ganz
-                verschieden aufgeteilt sein:
+                Der Netzanteil sind <strong>nicht immer die ersten drei Oktette</strong>. Dieselbe Adresse kann – je nach Konfiguration – ganz verschieden aufgeteilt sein:
               </Absatz>
               <div class="sn-aufteilungen">
                 <Anschrift netz="10" host="20.30.40" netzName="Netz" hostName="Host" />
@@ -320,7 +319,9 @@ function NetzHostErklaerung() {
                 Welche Aufteilung gilt, steht in der Konfiguration des Geräts: als <strong>Präfix</strong> (Lektion 4) oder als <strong>Subnetzmaske</strong> (Lektion 5). Und oft
                 liegt die Grenze sogar <strong>mitten in einer Zahl</strong>. Um das zu sehen, brauchen wir die Bits – das ist die nächste Lektion.
               </Absatz>
-              <Hinweis icon="info">In dieser Lektion liegt die Grenze immer nach der dritten Zahl – so kannst du das Prinzip in Ruhe ausprobieren.</Hinweis>
+              <Hinweis icon="info">
+                In dieser Lektion ist der Netzanteil immer die ersten drei Oktette und der Hostanteil das vierte – so kannst du das Prinzip in Ruhe ausprobieren.
+              </Hinweis>
             </>
           ),
         },
@@ -346,7 +347,11 @@ function NetzHostAusprobieren() {
   return (
     <Werkbank>
       <p class="sn-aufgabe">
-        PC-A hat die Adresse <strong class="mono">192.168.1.25</strong>, die Grenze liegt nach der dritten Zahl. Welche Geräte stehen im selben Netz?
+        PC-A hat die Adresse{' '}
+        <strong class="mono">
+          <Netz>192.168.1</Netz>.<Host>25</Host>
+        </strong>
+        . Der Netzanteil sind die ersten drei Oktette (<Netz>192.168.1</Netz>), der Hostanteil das vierte (<Host>25</Host>). Welche Geräte liegen im selben Netz wie PC-A?
       </p>
       <ul class="sn-sortier">
         {GERAETE.map((g) => {

@@ -911,7 +911,7 @@ function GleichErklaerung() {
           titel: 'Die Falle',
           inhalt: (
             <Hinweis icon="triangle-alert">
-              Nur bei <strong>/24</strong> reicht es, die ersten drei Zahlen zu vergleichen. Bei jedem anderen Präfix muss man die Netzadressen ausrechnen – „sieht ähnlich aus“
+              Nur bei <strong>/24</strong> reicht es, die ersten drei Oktette zu vergleichen. Bei jedem anderen Präfix muss man die Netzadressen ausrechnen – „sieht ähnlich aus“
               zählt nicht.
             </Hinweis>
           ),
