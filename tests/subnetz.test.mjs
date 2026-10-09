@@ -200,13 +200,13 @@ test('Lernweg: Übungs-Verweise zeigen auf echte Übungen', () => {
 test('Lernweg: Status, als Nächstes und Lücken', () => {
   const v = new Set(['ip-adresse', 'netz-host']);
   assert.equal(naechsteLektion(new Set()).id, 'ip-adresse');
-  assert.equal(naechsteLektion(v).id, 'binaer');
+  assert.equal(naechsteLektion(v).id, 'praefix');
   assert.equal(status('netz-host', v), 'verstanden');
-  assert.equal(status('binaer', v), 'naechste');
-  assert.equal(status('praefix', v), 'offen');
+  assert.equal(status('praefix', v), 'naechste');
+  assert.equal(status('subnetzmaske', v), 'offen');
   assert.deepEqual(
-    luecken('praefix', v).map((l) => l.id),
-    ['binaer'],
+    luecken('subnetzmaske', v).map((l) => l.id),
+    ['praefix'],
   );
   assert.equal(naechsteLektion(new Set(LEKTIONEN.map((l) => l.id))), null);
 });
@@ -248,8 +248,6 @@ test('Checks: Eingaben in mehreren Schreibweisen', () => {
   assert.ok(!pruefeAntwort(voll, 'fe80::1').ok, 'gekürzt statt ausgeschrieben');
   const iid = CHECKS['ipv6-praefix'][1];
   for (const e of ['::5', '0:0:0:5', '0000:0000:0000:0005']) assert.ok(pruefeAntwort(iid, e).ok, e);
-  const hex = CHECKS.hex[1];
-  assert.ok(pruefeAntwort(hex, 'ff').ok && pruefeAntwort(hex, '0xFF').ok);
 });
 
 test('Rechenhilfen: Blockanfang und -ende raten', () => {
@@ -336,9 +334,11 @@ test('ip.js: Helfer für den Lernweg', () => {
 
 test('Üben: neue Übungen rechnen richtig', () => {
   for (let s = 1; s < 300; s++) {
-    const b = aufgaben.binaerAufgabe(zufall(s));
-    const m = b.text.match(/\*\*([01]{8})\*\*/);
-    if (m) assert.equal(b.felder[0].erwartet, parseInt(m[1], 2));
+    const d = aufgaben.dhcpAufgabe(zufall(s));
+    if (d.titel === 'Größe des DHCP-Bereichs') {
+      const [von, bis] = [...d.text.matchAll(/\.(\d+)\*\*/g)].map((m) => Number(m[1]));
+      assert.equal(d.felder[0].erwartet, bis - von + 1);
+    }
 
     const k = aufgaben.konfig(zufall(s));
     if (k.titel === 'Freie statische Adresse') {

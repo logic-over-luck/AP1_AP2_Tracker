@@ -737,31 +737,6 @@
 .sn-sortier__zeile--falsch .sn-sortier__info svg {
   color: var(--fehler);
 }
-.sn-rechenweg {
-  display: grid;
-  gap: var(--s-2);
-  padding: var(--s-4);
-  border-radius: var(--r-3);
-  border: 1px solid var(--linie);
-}
-.sn-rechenweg__titel {
-  font-weight: 600;
-  color: var(--text);
-}
-.sn-rechenweg__liste {
-  display: grid;
-  gap: 2px;
-  margin: 0;
-  padding-left: var(--s-5);
-  font-size: var(--t-m);
-  color: var(--text-3);
-}
-.sn-rechenweg__liste--klein {
-  font-size: var(--t-s);
-}
-.sn-rechenweg__ja {
-  color: var(--text);
-}
 .sn-mrechnung__ergebnis {
   margin-top: 4px;
   padding: 4px var(--s-2) 0;
@@ -1573,17 +1548,6 @@
   font-size: var(--t-s);
 }
 /* ---------- Block 4: MAC und ARP ---------- */
-.sn-vergleich-zeilen {
-  display: grid;
-  gap: 2px;
-  max-width: 100%;
-  padding: var(--s-3) var(--s-4);
-  border-radius: var(--r-2);
-  background: var(--flaeche-2);
-  font-size: var(--t-m);
-  overflow-wrap: anywhere;
-  color: var(--text-2);
-}
 .sn-mac {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));

@@ -3,7 +3,7 @@
 import { useState } from 'preact/hooks';
 import { Icon } from '../../../../../ui/bausteine.jsx';
 import { ipv6Voll, ipv6Kurz, ipv6Art } from '../../ip.js';
-import { Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Netz, Host, Konsole, Werkbank, Beispiele, Geraet } from '../bausteine.jsx';
+import { Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Netz, Host, Konsole, Werkbank, Beispiele, Geraet, Grundlage } from '../bausteine.jsx';
 
 // Die 8 Blöcke einer ausgeschriebenen IPv6-Adresse; praefix: Anzahl Bits fürs Netz (färbt Blöcke), auswahl: hervorgehobener Block
 function Bloecke({ voll, praefix = null, auswahl = null, onWahl = null, nummern = true }) {
@@ -65,7 +65,7 @@ function Gekuerzt({ voll }) {
   );
 }
 
-// ---------- 22 IPv6-Adresse ----------
+// ---------- IPv6-Adresse ----------
 
 function Ipv6Erklaerung() {
   const voll = '2001:0db8:0000:0000:0000:ff00:0042:8329';
@@ -77,8 +77,9 @@ function Ipv6Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                IPv4 hat rund <strong>4,3 Milliarden</strong> Adressen (Lektion 1). Auf der Erde leben über 8 Milliarden Menschen, und viele haben mehrere Geräte: Smartphone,
-                Laptop, Fernseher, Uhr … Die freien IPv4-Adressen sind <strong>aufgebraucht</strong>. Private Adressen mit NAT (Lektion 15) sind nur eine Notlösung.
+                IPv4 hat rund <strong>4,3 Milliarden</strong> Adressen (Lektion „IP-Adresse“). Auf der Erde leben über 8 Milliarden Menschen, und viele haben mehrere Geräte:
+                Smartphone, Laptop, Fernseher, Uhr … Die freien IPv4-Adressen sind <strong>aufgebraucht</strong>. Private Adressen mit NAT (Lektion „Private Adressen“) sind nur
+                eine Notlösung.
               </Absatz>
               <Absatz>
                 Darum gibt es den Nachfolger: <strong>IPv6</strong> (Internet Protocol Version 6). Er macht dasselbe wie IPv4 – Geräte adressieren, Pakete zum Ziel bringen –, nur
@@ -101,7 +102,7 @@ function Ipv6Erklaerung() {
                 frage="IPv6 hat 4-mal so viele Bits. Wie viele Adressen hat es im Vergleich zu IPv4?"
                 optionen={['4-mal so viele', '96-mal so viele', '2⁹⁶-mal so viele']}
                 richtig="2⁹⁶-mal so viele"
-                hinweis={() => 'Jedes zusätzliche Bit verdoppelt die Zahl der Adressen (Lektion 6). Wie viele Bits kommen dazu?'}
+                hinweis={() => 'Jedes zusätzliche Bit verdoppelt die Zahl der Adressen (Lektion „Netzgröße“). Wie viele Bits kommen dazu?'}
               >
                 <Formel>
                   2<sup>128</sup> ≈ 340.000.000.000.000.000.000.000.000.000.000.000.000 Adressen (3,4 · 10<sup>38</sup>) – 96 Bits mehr heißt 96-mal verdoppeln.
@@ -115,9 +116,10 @@ function Ipv6Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                128 Bit dezimal mit Punkten wären 16 Zahlen – unhandlich. IPv6 schreibt man darum <strong>hexadezimal</strong> (Lektion 19): <strong>8 Blöcke</strong> zu je{' '}
+                128 Bit dezimal mit Punkten wären 16 Zahlen – unhandlich. IPv6 schreibt man darum <strong>hexadezimal</strong>: <strong>8 Blöcke</strong> zu je{' '}
                 <strong>4 Hex-Ziffern</strong>, getrennt durch <strong>Doppelpunkte</strong>.
               </Absatz>
+              <Grundlage verweis="zahlen:hex">Hexadezimalzahlen unklar?</Grundlage>
               <Bloecke voll={voll} />
               <Formel>
                 8 Blöcke × 4 Hex-Ziffern × 4 Bit = 8 × 16 Bit = <strong>128 Bit</strong>
@@ -235,7 +237,7 @@ function Ipv6Ausprobieren() {
   );
 }
 
-// ---------- 23 Kurzschreibweise ----------
+// ---------- Kurzschreibweise ----------
 
 function KurzErklaerung() {
   const voll = '2001:0db8:0000:0000:0000:ff00:0042:8329';
@@ -377,7 +379,7 @@ function KurzAusprobieren() {
   );
 }
 
-// ---------- 24 Präfix und Interface-Identifier ----------
+// ---------- Präfix und Interface-Identifier ----------
 
 function PraefixV6Erklaerung() {
   const voll = ipv6Voll('2001:db8:abcd:12::5');
@@ -389,9 +391,9 @@ function PraefixV6Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Auch eine IPv6-Adresse hat zwei Teile (Lektion 2): vorne das <Netz>Netz</Netz>, hinten das <Host>Gerät</Host>. Wie viele Bits zum Netz gehören, sagt wieder die{' '}
-                <strong>Präfixlänge</strong> (Lektion 4) – geschrieben mit Schrägstrich, z. B. <strong class="mono">/64</strong>. Der Geräteteil heißt bei IPv6{' '}
-                <strong>Interface-Identifier</strong> (Kennung der Schnittstelle).
+                Auch eine IPv6-Adresse hat zwei Teile (Lektion „Netzanteil und Hostanteil“): vorne das <Netz>Netz</Netz>, hinten das <Host>Gerät</Host>. Wie viele Bits zum Netz
+                gehören, sagt wieder die <strong>Präfixlänge</strong> (Lektion „Präfix“) – geschrieben mit Schrägstrich, z. B. <strong class="mono">/64</strong>. Der Geräteteil
+                heißt bei IPv6 <strong>Interface-Identifier</strong> (Kennung der Schnittstelle).
               </Absatz>
               <Fakten>
                 <Fakt titel="Präfix">bezeichnet das Netz – wie der Netzanteil bei IPv4</Fakt>
@@ -425,8 +427,8 @@ function PraefixV6Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Bei gekürzten Adressen sieht man die Grenze nicht – <strong>2001:db8:abcd:12::5</strong> hat scheinbar nur 5 Blöcke. Also zuerst ausschreiben (Lektion 23), dann
-                nach 4 Blöcken teilen:
+                Bei gekürzten Adressen sieht man die Grenze zwischen Präfix und Interface-Identifier nicht – <strong>2001:db8:abcd:12::5</strong> hat scheinbar nur 5 Blöcke. Also
+                zuerst ausschreiben (Lektion „Kurzschreibweise“), dann nach 4 Blöcken teilen:
               </Absatz>
               <div class="sn-kuerzen">
                 <span class="sn-kuerzen__name">ausgeschrieben</span>
@@ -460,8 +462,8 @@ function PraefixV6Erklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Oft bildet das Gerät ihn selbst aus seiner <strong>MAC-Adresse</strong> (Lektion 20): Die 48 Bit werden in der Mitte um <span class="mono">ff:fe</span> ergänzt (so
-                werden es 64) und ein Bit im ersten Byte wird umgedreht. Darum erkennst du solche Adressen am <strong>ff:fe in der Mitte</strong>:
+                Oft bildet das Gerät ihn selbst aus seiner <strong>MAC-Adresse</strong> (Lektion „MAC-Adresse“): Die 48 Bit werden in der Mitte um <span class="mono">ff:fe</span>{' '}
+                ergänzt (so werden es 64) und ein Bit im ersten Byte wird umgedreht. Darum erkennst du solche Adressen am <strong>ff:fe in der Mitte</strong>:
               </Absatz>
               <div class="sn-kuerzen">
                 <span class="sn-kuerzen__name">MAC-Adresse</span>
@@ -541,7 +543,7 @@ function PraefixV6Ausprobieren() {
   );
 }
 
-// ---------- 25 Verbindungslokale Adresse ----------
+// ---------- Verbindungslokale Adresse ----------
 
 function LinkLocalErklaerung() {
   return (
@@ -633,7 +635,7 @@ function LinkLocalErklaerung() {
                   </tr>
                   <tr>
                     <td>bedeutet</td>
-                    <td>Problem – Fehlersuche nötig (Lektion 17)</td>
+                    <td>Problem – Fehlersuche nötig (Lektion „DHCP“)</td>
                     <td>Normalfall</td>
                   </tr>
                   <tr>

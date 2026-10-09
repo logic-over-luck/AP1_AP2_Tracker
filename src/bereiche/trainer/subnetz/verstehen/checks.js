@@ -55,29 +55,6 @@ export const CHECKS = {
       erklaerung: 'Gleicher Netzanteil = gleiches Netz. Der Hostanteil muss sich unterscheiden, sonst hätten beide dieselbe Adresse.',
     },
   ],
-  binaer: [
-    {
-      frage: 'Welche Bits ergeben die Zahl 192?',
-      optionen: ['10000000', '10100000', '11000000', '11100000'],
-      richtig: '11000000',
-      tipp: 'Passt 128 in 192? Was bleibt übrig – passt dann 64?',
-      erklaerung: '192 = 128 + 64 → die ersten beiden Bits sind 1: 11000000.',
-    },
-    {
-      frage: 'Welche Dezimalzahl ist 00101000?',
-      eingabe: 'zahl',
-      loesung: '40',
-      tipp: 'Schreib die Stellenwerte 128 64 32 16 8 4 2 1 darüber und addiere die unter den Einsen.',
-      erklaerung: 'Die Einsen stehen bei 32 und 8: 32 + 8 = 40.',
-    },
-    {
-      frage: 'Welchen Wert hat 11111111?',
-      optionen: ['8', '128', '255', '256'],
-      richtig: '255',
-      tipp: 'Alle Stellenwerte zählen mit: 128 + 64 + … + 1.',
-      erklaerung: '128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255 – die größte Zahl mit 8 Bit.',
-    },
-  ],
   praefix: [
     {
       frage: 'Wie viele Hostbits hat ein /27?',
@@ -87,7 +64,7 @@ export const CHECKS = {
       erklaerung: '32 − 27 = 5 Hostbits.',
     },
     {
-      frage: 'In welchem Oktett liegt die Grenze bei /20?',
+      frage: 'In welchem Oktett endet bei /20 der Netzanteil?',
       optionen: ['im 1. Oktett', 'im 2. Oktett', 'im 3. Oktett', 'im 4. Oktett'],
       richtig: 'im 3. Oktett',
       tipp: 'Zähl in Schritten von 8: Wie viele ganze Oktette passen in 20 Bit?',
@@ -122,7 +99,7 @@ export const CHECKS = {
       optionen: ['255.255.255.0', '255.255.255.128', '255.255.255.100', '255.255.0.0'],
       richtig: '255.255.255.100',
       tipp: 'In einer Subnetzmaske stehen alle Einsen lückenlos links. Welcher Wert passt nicht in die Reihe 0, 128, 192, 224 …?',
-      erklaerung: '100 = 01100100 – da stehen Nullen zwischen den Einsen. Das kann keine Grenze sein.',
+      erklaerung: '100 = 01100100 – da stehen Nullen zwischen den Einsen. So kann keine Subnetzmaske aussehen.',
     },
   ],
 
@@ -375,7 +352,7 @@ export const CHECKS = {
       frage: 'Bis wohin reicht der private Bereich 172.16.0.0/12?',
       optionen: ['172.16.255.255', '172.31.255.255', '172.32.255.255', '172.255.255.255'],
       richtig: '172.31.255.255',
-      tipp: '/12: Grenze im 2. Oktett, 4 Netzbits darin → Subnetzmaske 255.240.0.0. Blockgröße?',
+      tipp: '/12: Der Netzanteil endet im 2. Oktett, 4 Netzbits darin → Subnetzmaske 255.240.0.0. Blockgröße?',
       erklaerung: 'Blockgröße 256 − 240 = 16 → Block 16 bis 31 im 2. Oktett, dahinter 255.255.',
     },
   ],
@@ -461,31 +438,6 @@ export const CHECKS = {
   ],
 
   // ---------- Block 4 ----------
-  hex: [
-    {
-      frage: 'Wie viele Bit stellt eine Hexadezimalziffer dar?',
-      optionen: ['2', '4', '8', '16'],
-      richtig: '4',
-      tipp: 'Wie viele Bit braucht man für die Zahlen 0 bis 15?',
-      erklaerung: '4 Bit ergeben 2⁴ = 16 Möglichkeiten – genau die Ziffern 0 bis F.',
-    },
-    {
-      frage: 'Wie schreibt man 1111 1111 hexadezimal?',
-      eingabe: 'text',
-      loesung: 'FF',
-      auch: ['0xFF'],
-      platzhalter: 'zwei Ziffern',
-      tipp: 'Je 4 Bit eine Ziffer. 1111 = 15 = ?',
-      erklaerung: '1111 = 15 = F, zweimal: FF (= 255).',
-    },
-    {
-      frage: 'Welche Dezimalzahl ist hexadezimal 1A?',
-      eingabe: 'zahl',
-      loesung: '26',
-      tipp: 'Die erste Ziffer zählt 16-fach: 1 · 16 + A.',
-      erklaerung: '1 · 16 + 10 = 26.',
-    },
-  ],
   mac: [
     {
       frage: 'Wie lang ist eine MAC-Adresse?',

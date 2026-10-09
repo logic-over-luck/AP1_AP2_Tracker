@@ -3,141 +3,9 @@
 import { useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../../../ui/bausteine.jsx';
 import { gleichesNetz, leseMac } from '../../ip.js';
-import { Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Netz, Host, Konsole, Geraet, Stellen, BitTafel, Werkbank, Beispiele, OktettBits } from '../bausteine.jsx';
+import { Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Netz, Host, Konsole, Geraet, Werkbank, Beispiele, OktettBits, Grundlage } from '../bausteine.jsx';
 
-const HEX = '0123456789ABCDEF';
-
-// ---------- 19 Hexadezimalzahl ----------
-
-function HexErklaerung() {
-  return (
-    <Schritte
-      schritte={[
-        {
-          titel: 'Lange Bitketten',
-          inhalt: (
-            <>
-              <Absatz>
-                Gleich kommen Adressen mit 48 Bit (MAC-Adresse) und 128 Bit (IPv6). Binär geschrieben wären sie endlos lang. Dezimal passt schlecht zu Bits – man sieht der Zahl 200
-                nicht an, welche Bits gesetzt sind. Die Lösung ist ein Zahlensystem, bei dem <strong>eine Ziffer genau 4 Bit</strong> entspricht: das{' '}
-                <strong>Hexadezimalsystem</strong>.
-              </Absatz>
-              <div class="sn-vergleich-zeilen mono">
-                <span class="sn-beschrift">binär</span>
-                <span>000000000001101000101011001111000100110101011110</span>
-                <span class="sn-beschrift">hexadezimal</span>
-                <span class="sn-f-netz">00:1A:2B:3C:4D:5E</span>
-              </div>
-              <span class="sn-beschrift">Beides ist dieselbe MAC-Adresse.</span>
-            </>
-          ),
-        },
-        {
-          titel: 'Basis 16: Ziffern 0 bis 9 und A bis F',
-          inhalt: (
-            <>
-              <Absatz>
-                Im Zehnersystem gibt es 10 Ziffern, im Binärsystem 2 – im Hexadezimalsystem (kurz Hex) <strong>16</strong>. Für die Werte 10 bis 15 nimmt man Buchstaben: A = 10, B
-                = 11 … F = 15.
-              </Absatz>
-              <div class="zl-hextafel">
-                {Array.from({ length: 16 }, (_, i) => (
-                  <span key={i} class={`zl-hextafel__zelle ${i >= 10 ? 'zl-hextafel__zelle--buchstabe' : ''}`}>
-                    <strong class="mono">{HEX[i]}</strong>
-                    <span class="mono">{i.toString(2).padStart(4, '0')}</span>
-                    <span>= {i}</span>
-                  </span>
-                ))}
-              </div>
-            </>
-          ),
-        },
-        {
-          titel: 'Eine Hex-Ziffer = 4 Bit',
-          inhalt: (
-            <>
-              <Absatz>
-                Die Tabelle zeigt: Für die 16 Werte 0 bis 15 braucht man genau <strong>4 Bit</strong> (0000 bis 1111, 2<sup>4</sup> = 16). Jede Hex-Ziffer steht also für ein
-                4er-Päckchen Bits – man kann sie direkt ineinander übersetzen.
-              </Absatz>
-              <Raten
-                frage="Welche Hex-Ziffer steht für 1100?"
-                optionen={['B', 'C', 'D', '12']}
-                richtig="C"
-                hinweis={(v) => (v === '12' ? '1100 ist dezimal 12 – als Hex-Ziffer schreibt man dafür einen Buchstaben.' : '1100 = 8 + 4 = 12. Welcher Buchstabe steht für 12?')}
-              >
-                <Stellen werte={[8, 4, 2, 1]} ziffern={[1, 1, 0, 0]} summe="= 8 + 4 = 12 = C" />
-              </Raten>
-            </>
-          ),
-        },
-        {
-          titel: 'Ein Byte = zwei Hex-Ziffern',
-          inhalt: (
-            <>
-              <Absatz>
-                Ein Byte (8 Bit) teilt man in zwei Hälften zu je 4 Bit – jede Hälfte wird eine Hex-Ziffer. So wird jedes Byte zu <strong>genau zwei Hex-Ziffern</strong>, von 00 bis
-                FF.
-              </Absatz>
-              <div class="zl-nibbles">
-                <span class="zl-nibbles__haelfte">
-                  <span class="mono">1100</span>
-                  <strong class="mono">C</strong>
-                </span>
-                <span class="zl-nibbles__haelfte">
-                  <span class="mono">1000</span>
-                  <strong class="mono">8</strong>
-                </span>
-                <span class="zl-nibbles__gleich mono">= C8</span>
-              </div>
-              <Absatz>Und zurück ins Dezimale: Die linke Ziffer zählt 16-fach (Stellenwerte 16 und 1):</Absatz>
-              <Stellen werte={[16, 1]} ziffern={['C', 8]} an={[true, true]} summe="= 12 · 16 + 8 · 1 = 200" />
-              <Fakten>
-                <Fakt titel="00 bis FF">Ein Byte geht von 00 (= 0) bis FF (= 15 · 16 + 15 = 255) – genau wie ein Oktett von 0 bis 255.</Fakt>
-                <Fakt titel="Groß oder klein">C8 und c8 sind dasselbe. MAC-Adressen sieht man oft groß, IPv6-Adressen meist klein.</Fakt>
-              </Fakten>
-            </>
-          ),
-        },
-      ]}
-    />
-  );
-}
-
-function HexAusprobieren() {
-  const [wert, setWert] = useState(200);
-  const [text, setText] = useState('C8');
-  const setzeHex = (t) => {
-    setText(t);
-    if (/^[0-9a-f]{1,2}$/i.test(t.trim())) setWert(parseInt(t.trim(), 16));
-  };
-  return (
-    <Werkbank>
-      <p class="lw-aufgabe">Schalte Bits um – oder tippe eine zweistellige Hex-Zahl ein.</p>
-      <BitTafel
-        wert={wert}
-        onWert={(w) => {
-          setWert(w);
-          setText(w.toString(16).toUpperCase().padStart(2, '0'));
-        }}
-        nibbles
-      />
-      <label class="lw-feld">
-        <span class="lw-feld__name">Hex</span>
-        <input
-          class={`feld feld--mono lw-feld__eingabe ${/^[0-9a-f]{1,2}$/i.test(text.trim()) ? '' : 'feld--falsch'}`}
-          value={text}
-          maxLength={2}
-          spellcheck={false}
-          onInput={(e) => setzeHex(e.currentTarget.value)}
-        />
-      </label>
-      <Beispiele liste={['FF', '00', 'A0', '1A', 'C0', '7F']} aktiv={text.toUpperCase()} onWahl={setzeHex} />
-    </Werkbank>
-  );
-}
-
-// ---------- 20 MAC-Adresse ----------
+// ---------- MAC-Adresse ----------
 
 function MacBild({ bytes }) {
   return (
@@ -181,9 +49,10 @@ function MacErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Eine MAC-Adresse ist <strong>48 Bit</strong> lang. Man schreibt sie als <strong>sechs Bytes</strong>, jedes mit zwei Hex-Ziffern (Lektion 19), getrennt durch
-                Doppelpunkt oder Bindestrich (Windows).
+                Eine MAC-Adresse ist <strong>48 Bit</strong> lang. Man schreibt sie als <strong>sechs Bytes</strong>, jedes mit zwei Hexadezimalziffern, getrennt durch Doppelpunkt
+                oder Bindestrich (Windows).
               </Absatz>
+              <Grundlage verweis="zahlen:hex">Hexadezimalziffern und „zwei Ziffern = ein Byte“ unklar?</Grundlage>
               <MacBild bytes={['00', '1A', '2B', '3C', '4D', '5E']} />
               <Raten
                 frage="Wie viele Hex-Ziffern hat eine MAC-Adresse insgesamt?"
@@ -336,7 +205,7 @@ function MacAusprobieren() {
   );
 }
 
-// ---------- 21 ARP ----------
+// ---------- ARP ----------
 
 function ArpErklaerung() {
   return (
@@ -448,7 +317,7 @@ function ArpErklaerung() {
             <>
               <Absatz>
                 ARP funktioniert nur im <strong>lokalen</strong> Netz – Rundrufe gehen nicht über den Router hinaus. Liegt das Ziel woanders, schickt der PC das Paket ja ohnehin
-                ans Standardgateway (Lektion 14). Also braucht er dessen MAC-Adresse.
+                ans Standardgateway (Lektion „Standardgateway“). Also braucht er dessen MAC-Adresse.
               </Absatz>
               <Raten
                 frage="PC-A (192.168.1.10/24) will an 8.8.8.8 senden. Nach welcher IP-Adresse fragt er per ARP?"
@@ -554,7 +423,6 @@ function ArpAusprobieren() {
 }
 
 export const LOKAL = {
-  hex: { Erklaerung: HexErklaerung, Ausprobieren: HexAusprobieren },
   mac: { Erklaerung: MacErklaerung, Ausprobieren: MacAusprobieren },
   arp: { Erklaerung: ArpErklaerung, Ausprobieren: ArpAusprobieren },
 };

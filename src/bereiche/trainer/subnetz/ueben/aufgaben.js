@@ -1,21 +1,6 @@
 // Aufgabenerzeuger Subnetz-Trainer. Rein, getestet in tests/subnetz.test.mjs.
 
-import {
-  netz,
-  maske,
-  binaer,
-  gleichesNetz,
-  istPrivat,
-  ipv6Voll,
-  ipv6Kurz,
-  gruppenVoll,
-  istRichtigGekuerzt,
-  aufteilen as vlsm,
-  ipZuZahl,
-  zahlZuIp,
-  binaerSchritte,
-  zerlege,
-} from '../ip.js';
+import { netz, maske, binaer, gleichesNetz, istPrivat, ipv6Voll, ipv6Kurz, gruppenVoll, istRichtigGekuerzt, aufteilen as vlsm, ipZuZahl, zahlZuIp, zerlege } from '../ip.js';
 import { pruefeStatisch } from '../verstehen/rechnen.js';
 
 const SP = { subnetting: 'AP1-6-2-2', konfig: 'AP1-6-2-1', ipv6: 'AP1-6-2-3', mac: 'AP1-6-2-4' };
@@ -142,44 +127,6 @@ export function hostsAufgabe(r) {
       `Adressen: 2^${32 - p} = ${(2 ** (32 - p)).toLocaleString('de-DE')}`,
       `Hosts: Adressen − 2 (Netz und Broadcast) = **${(2 ** (32 - p) - 2).toLocaleString('de-DE')}**`,
     ],
-  };
-}
-
-// Oktett dezimal ↔ binär
-const OKTETTE = [0, 1, 10, 64, 100, 127, 128, 150, 168, 172, 192, 200, 224, 240, 248, 252, 254, 255];
-
-export function binaerAufgabe(r) {
-  const w = r.ja(0.6) ? r.wahl(OKTETTE) : r.ganz(1, 254);
-  const bits = w.toString(2).padStart(8, '0');
-  const summe = binaerSchritte(w)
-    .filter((x) => x.bit)
-    .map((x) => x.gewicht);
-  const weg = [`Stellenwerte: \`128 64 32 16 8 4 2 1\``, `${w} = ${summe.length ? summe.join(' + ') : '0'}`];
-  const art = r.wahl(['d2b', 'b2d', 'ip']);
-  if (art === 'b2d')
-    return {
-      titel: 'Binär → dezimal',
-      sp: SP.subnetting,
-      text: `Welche Dezimalzahl steht hinter dem Oktett **${bits}**?`,
-      felder: [{ id: 'd', label: 'Dezimal', erwartet: w }],
-      loesung: [...weg, `→ **${w}**`],
-    };
-  if (art === 'ip') {
-    const ip = [r.wahl([10, 172, 192]), r.ganz(0, 255), w, r.ganz(1, 254)];
-    return {
-      titel: 'Ein Oktett einer Adresse',
-      sp: SP.subnetting,
-      text: `Wie lautet das **3. Oktett** der Adresse **${ip.join('.')}** in Binärschreibweise (8 Bit)?`,
-      felder: [{ id: 'b', label: '3. Oktett binär', typ: 'basis', basis: 2, erwartet: w, platzhalter: 'z. B. 11000000' }],
-      loesung: [`3. Oktett: ${w}`, ...weg.slice(1), `→ **${bits}**`],
-    };
-  }
-  return {
-    titel: 'Dezimal → binär',
-    sp: SP.subnetting,
-    text: `Schreibe das Oktett **${w}** als 8-stellige Binärzahl.`,
-    felder: [{ id: 'b', label: 'Binär', typ: 'basis', basis: 2, erwartet: w, platzhalter: 'z. B. 11000000' }],
-    loesung: [...weg, `→ **${bits}**`],
   };
 }
 
@@ -385,7 +332,7 @@ function macFeld(id, label, soll) {
 }
 
 export function macAufgabe(r) {
-  const art = r.wahl(['hersteller', 'arp', 'apipa', 'dhcp']);
+  const art = r.wahl(['hersteller', 'arp']);
   if (art === 'hersteller') {
     const trenner = r.wahl([':', '-']);
     const bytes = [...r.wahl(HERSTELLER).split(':'), hexByte(r), hexByte(r), hexByte(r)];
@@ -401,7 +348,8 @@ export function macAufgabe(r) {
       ],
     };
   }
-  if (art === 'arp') {
+  // art === 'arp'
+  {
     const basis = r.wahl(['192.168.0', '192.168.1', '10.0.0', '172.16.5']);
     const eintraege = r
       .mische([1, 10, 20, 30, 50, 100, 254])
@@ -434,6 +382,26 @@ export function macAufgabe(r) {
       ],
     };
   }
+}
+
+// DHCP: was er zuteilt, wie viele Adressen ein Bereich hat, was 169.254.x.x bedeutet
+export function dhcpAufgabe(r) {
+  const art = r.wahl(['apipa', 'liefert', 'bereich']);
+  if (art === 'bereich') {
+    const basis = r.wahl(['192.168.10', '192.168.178', '10.1.20', '172.16.4']);
+    const von = r.wahl([20, 50, 100, 101, 150]);
+    const bis = Math.min(254, von + r.wahl([49, 99, 100, 50, 30]));
+    return {
+      titel: 'Größe des DHCP-Bereichs',
+      sp: SP.mac,
+      text: `Im Netz **${basis}.0/24** vergibt der DHCP-Server die Adressen **${basis}.${von}** bis **${basis}.${bis}**. Wie viele Clients können höchstens gleichzeitig eine Adresse per DHCP bekommen?`,
+      felder: [{ id: 'x', label: 'Clients', erwartet: bis - von + 1 }],
+      loesung: [
+        `Von ${von} bis ${bis} – beide Enden zählen mit: ${bis} − ${von} + 1 = **${bis - von + 1}**`,
+        'Jede Adresse kann nur an einen Client gleichzeitig vergeben werden.',
+      ],
+    };
+  }
   if (art === 'apipa') {
     const ip = `169.254.${r.ganz(1, 254)}.${r.ganz(1, 254)}`;
     return {
@@ -460,6 +428,7 @@ export function macAufgabe(r) {
       ],
     };
   }
+  // art === 'liefert'
   const fehlt = r.wahl(['MAC-Adresse', 'Broadcastadresse']);
   return {
     titel: 'Was liefert DHCP?',
@@ -620,4 +589,4 @@ export function aufteilen(r) {
   };
 }
 
-export const ERZEUGER = { binaer: binaerAufgabe, maske: maskeAufgabe, hosts: hostsAufgabe, analyse, gleich, aufteilen, privat, konfig, mac: macAufgabe, ipv6 };
+export const ERZEUGER = { maske: maskeAufgabe, hosts: hostsAufgabe, analyse, gleich, aufteilen, privat, konfig, dhcp: dhcpAufgabe, mac: macAufgabe, ipv6 };

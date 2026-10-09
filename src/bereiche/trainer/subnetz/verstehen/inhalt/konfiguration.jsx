@@ -31,7 +31,7 @@ function NetzKasten({ titel, children, ton = '' }) {
   );
 }
 
-// ---------- 14 Standardgateway ----------
+// ---------- Standardgateway ----------
 
 function GatewayErklaerung() {
   return (
@@ -42,8 +42,8 @@ function GatewayErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Aus Lektion 11 weißt du: Liegt das Ziel im eigenen Netz, schickt ein Gerät das Paket direkt. Aber was ist mit einem Ziel in einem <strong>anderen Netz</strong> –
-                dem Lager nebenan oder einem Server im Internet? Dafür braucht es ein Gerät, das Netze verbindet: einen <strong>Router</strong>.
+                Aus Lektion „Gleiches Netz?“ weißt du: Liegt das Ziel im eigenen Netz, schickt ein Gerät das Paket direkt. Aber was ist mit einem Ziel in einem{' '}
+                <strong>anderen Netz</strong> – dem Lager nebenan oder einem Server im Internet? Dafür braucht es ein Gerät, das Netze verbindet: einen <strong>Router</strong>.
               </Absatz>
               <div class="sn-zweinetze-router">
                 <NetzKasten titel="Büro · 192.168.1.0/24">
@@ -92,7 +92,7 @@ function GatewayErklaerung() {
           inhalt: (
             <>
               <div class="sn-entscheid">
-                <span class="sn-entscheid__frage">Liegt das Ziel in meinem Netz? (Netzadressen vergleichen, Lektion 11)</span>
+                <span class="sn-entscheid__frage">Liegt das Ziel in meinem Netz? (Netzadressen vergleichen, Lektion „Gleiches Netz?“)</span>
                 <div class="sn-entscheid__zweige">
                   <div class="sn-entscheid__zweig sn-entscheid__zweig--ja">
                     <strong>Ja</strong> → direkt an das Ziel
@@ -227,7 +227,7 @@ function GatewayAusprobieren() {
   );
 }
 
-// ---------- 15 Private Adressen ----------
+// ---------- Private Adressen ----------
 
 const BEREICHE = [
   { netz: '10.0.0.0/8', von: '10.0.0.0', bis: '10.255.255.255', typisch: 'große Firmennetze', adressen: '16,7 Mio.' },
@@ -244,8 +244,9 @@ function PrivatErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                IPv4 hat nur rund 4,3 Milliarden Adressen (Lektion 1). Bekäme jedes Gerät jedes Haushalts und jeder Firma eine eigene, weltweit eindeutige Adresse, wären sie längst
-                aufgebraucht. Die Lösung: Drei Bereiche wurden für <strong>interne Netze</strong> reserviert. Jeder darf sie in seinem eigenen Netz benutzen – ohne zu fragen.
+                IPv4 hat nur rund 4,3 Milliarden Adressen (Lektion „IP-Adresse“). Bekäme jedes Gerät jedes Haushalts und jeder Firma eine eigene, weltweit eindeutige Adresse, wären
+                sie längst aufgebraucht. Die Lösung: Drei Bereiche wurden für <strong>interne Netze</strong> reserviert. Jeder darf sie in seinem eigenen Netz benutzen – ohne zu
+                fragen.
               </Absatz>
               <Fakten>
                 <Fakt titel="Privat" icon="house">
@@ -294,9 +295,9 @@ function PrivatErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Die ersten und letzten Bereiche erkennst du sofort (alles mit 10 am Anfang, alles mit 192.168). Beim mittleren hilft Lektion 12: /12 heißt 8 + 4 – die Grenze liegt
-                im <strong>2. Oktett</strong>, dort 4 Netzbits. Subnetzmaske 255.<strong>240</strong>.0.0, Blockgröße im 2. Oktett 256 − 240 = <strong>16</strong>. Der Block, der
-                bei 16 beginnt, geht bis 31:
+                Die ersten und letzten Bereiche erkennst du sofort (alles mit 10 am Anfang, alles mit 192.168). Beim mittleren hilft Lektion „Entscheidendes Oktett“: /12 heißt 8 +
+                4 – die Grenze liegt im <strong>2. Oktett</strong>, dort 4 Netzbits. Subnetzmaske 255.<strong>240</strong>.0.0, Blockgröße im 2. Oktett 256 − 240 ={' '}
+                <strong>16</strong>. Der Block, der bei 16 beginnt, geht bis 31:
               </Absatz>
               <Zahlenstrahl block={16} werte={[16]} aktiv={[16]} beschriftung={['172.16']} />
               <Raten
@@ -337,7 +338,7 @@ function PrivatErklaerung() {
               <Fakt titel="172.15.x.x / 172.32.x.x">Knapp daneben – öffentlich. Nur 172.16 bis 172.31.</Fakt>
               <Fakt titel="192.169.x.x">Öffentlich. Privat ist nur 192.168.</Fakt>
               <Fakt titel="10.x.x.x">Immer privat, egal was dahinter steht.</Fakt>
-              <Fakt titel="169.254.x.x">Kein privater Bereich im Sinne der Liste, sondern ein Notfall-Bereich – den lernst du in Lektion 17 kennen.</Fakt>
+              <Fakt titel="169.254.x.x">Kein privater Bereich im Sinne der Liste, sondern ein Notfall-Bereich – den lernst du in Lektion „DHCP“ kennen.</Fakt>
             </Fakten>
           ),
         },
@@ -361,7 +362,7 @@ function PrivatAusprobieren() {
       : a === 192
         ? '192 – aber nicht 192.168.'
         : a === 169 && b === 254
-          ? '169.254 ist der Notfall-Bereich ohne DHCP (Lektion 17) – kein privater Bereich.'
+          ? '169.254 ist der Notfall-Bereich ohne DHCP (Lektion „DHCP“) – kein privater Bereich.'
           : 'Kein privater Bereich beginnt so.';
   return (
     <Werkbank leiste={<IpFeld ip={ip} onIp={setIp} />}>
@@ -374,7 +375,7 @@ function PrivatAusprobieren() {
   );
 }
 
-// ---------- 16 IPv4-Konfiguration ----------
+// ---------- IPv4-Konfiguration ----------
 
 function Dialog({ werte, hervor = null, automatisch = false }) {
   const felder = [
@@ -437,21 +438,21 @@ function KonfigErklaerung() {
                       <strong>IP-Adresse</strong>
                     </td>
                     <td>Wer bin ich im Netz?</td>
-                    <td>Lektion 1</td>
+                    <td>„IP-Adresse“</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>Subnetzmaske</strong>
                     </td>
                     <td>Wie groß ist mein Netz – wen erreiche ich direkt?</td>
-                    <td>Lektion 5, 11</td>
+                    <td>„Subnetzmaske“, „Gleiches Netz?“</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>Standardgateway</strong>
                     </td>
                     <td>Wohin mit Paketen für fremde Netze?</td>
-                    <td>Lektion 14</td>
+                    <td>„Standardgateway“</td>
                   </tr>
                   <tr>
                     <td>
@@ -500,13 +501,13 @@ function KonfigErklaerung() {
               <Absatz>Die vier Werte hängen voneinander ab. Bevor du auf OK klickst, prüfe:</Absatz>
               <ul class="sn-liste-ok">
                 <li>
-                  Die IP-Adresse ist ein <strong>Host</strong> – nicht Netz- oder Broadcastadresse (Lektion 10).
+                  Die IP-Adresse ist ein <strong>Host</strong> – nicht Netz- oder Broadcastadresse (Lektion „Hostbereich“).
                 </li>
                 <li>
-                  Die Subnetzmaske ist <strong>gültig</strong> und passt zum Netz (Lektion 5).
+                  Die Subnetzmaske ist <strong>gültig</strong> und passt zum Netz (Lektion „Subnetzmaske“).
                 </li>
                 <li>
-                  Das Standardgateway liegt <strong>im selben Netz</strong> wie die IP-Adresse (Lektion 14).
+                  Das Standardgateway liegt <strong>im selben Netz</strong> wie die IP-Adresse (Lektion „Standardgateway“).
                 </li>
                 <li>Keine Adresse ist doppelt vergeben.</li>
               </ul>
@@ -557,7 +558,7 @@ function KonfigErklaerung() {
                     <tr>
                       <td>Laptop-03</td>
                       <td>DHCP</td>
-                      <td colSpan={4}>vom DHCP-Server (Lektion 17)</td>
+                      <td colSpan={4}>vom DHCP-Server (Lektion „DHCP“)</td>
                       <td>WLAN</td>
                     </tr>
                   </tbody>
@@ -680,7 +681,7 @@ function KonfigAusprobieren() {
   );
 }
 
-// ---------- 17 DHCP ----------
+// ---------- DHCP ----------
 
 const DORA = [
   { von: 'Client', an: 'alle (Broadcast)', name: 'Discover', text: '„Gibt es hier einen DHCP-Server?“' },
@@ -780,7 +781,7 @@ function DhcpErklaerung() {
                 Für Arbeitsplatz-PCs, Laptops, Smartphones, Gäste. Vorteile: wenig Aufwand, keine Tippfehler, keine doppelten Adressen, Änderungen zentral für alle.
               </Fakt>
               <Fakt titel="Fest (statisch)" icon="map-pin">
-                Für Geräte, die andere immer unter derselben Adresse finden müssen: Server, Netzwerkdrucker, Router. Mehr dazu in Lektion 18.
+                Für Geräte, die andere immer unter derselben Adresse finden müssen: Server, Netzwerkdrucker, Router. Mehr dazu in Lektion „Statische Adresse“.
               </Fakt>
             </Fakten>
           ),
@@ -897,7 +898,7 @@ function DhcpAusprobieren() {
   );
 }
 
-// ---------- 18 Statische Adresse ----------
+// ---------- Statische Adresse ----------
 
 const SKIZZEN = [
   {
@@ -1018,7 +1019,7 @@ function StatischErklaerung() {
           titel: 'So gehst du vor',
           inhalt: (
             <ol class="sn-verfahren">
-              <li>Netz bestimmen: Netzadresse, Broadcast, Hostbereich (Rechenweg aus Lektion 13).</li>
+              <li>Netz bestimmen: Netzadresse, Broadcast, Hostbereich (wie in der Lektion „Rechenweg“).</li>
               <li>Alle schon vergebenen Adressen aus der Skizze streichen.</li>
               <li>Den DHCP-Bereich streichen.</li>
               <li>Aus dem Rest eine Adresse wählen – oder genau die, nach der gefragt ist (z. B. „vorletzte nutzbare“).</li>

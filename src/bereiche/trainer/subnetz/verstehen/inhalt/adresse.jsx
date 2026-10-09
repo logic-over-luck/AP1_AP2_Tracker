@@ -2,20 +2,19 @@
 
 import { useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../../../ui/bausteine.jsx';
-import { ipZuZahl, maskeZahl, netzBitsJeOktett, binaerSchritte, leseIp, praefixAusMaske, ipFehler } from '../../ip.js';
+import { ipZuZahl, maskeZahl, netzBitsJeOktett, leseIp, praefixAusMaske, ipFehler } from '../../ip.js';
 import {
   Schritte,
   Raten,
   Konsole,
   Geraet,
-  Stellen,
-  Umrechner,
   OktettBits,
   Absatz,
   Fakten,
   Fakt,
   Formel,
   Hinweis,
+  Grundlage,
   Netz,
   Host,
   Grenze,
@@ -23,7 +22,6 @@ import {
   ZweiSichten,
   Anschrift,
   Bitband,
-  BitTafel,
   MaskenRechnung,
   MaskenWerte,
   PraefixWahl,
@@ -33,7 +31,7 @@ import {
   bin8,
 } from '../bausteine.jsx';
 
-// ---------- 1 IP-Adresse ----------
+// ---------- IP-Adresse ----------
 
 function IpErklaerung() {
   return (
@@ -85,7 +83,10 @@ function IpErklaerung() {
                   '   Standardgateway . . . . . . . . . : 192.168.1.1',
                 ]}
               />
-              <Absatz>Die beiden Zeilen darunter – Subnetzmaske und Standardgateway – lernst du in den Lektionen 5 und 14 kennen. Am Ende verstehst du jede Zeile.</Absatz>
+              <Absatz>
+                Die beiden Zeilen darunter – Subnetzmaske und Standardgateway – lernst du in den Lektionen „Subnetzmaske“ und „Standardgateway“ kennen. Am Ende verstehst du jede
+                Zeile.
+              </Absatz>
             </>
           ),
         },
@@ -99,7 +100,7 @@ function IpErklaerung() {
                 an).
               </Absatz>
               <ZweiSichten ip="192.168.1.10" />
-              <Absatz>Beides ist dieselbe Adresse. Wie man von der einen Schreibweise zur anderen kommt, zeigt Lektion 3.</Absatz>
+              <Absatz>Beides ist dieselbe Adresse. Wie man von der einen Schreibweise zur anderen kommt, zeigt die Lektion „Binärzahl“ im Zahlen-Trainer.</Absatz>
             </>
           ),
         },
@@ -204,7 +205,7 @@ function IpAusprobieren() {
   );
 }
 
-// ---------- 2 Netzanteil und Hostanteil ----------
+// ---------- Netzanteil und Hostanteil ----------
 
 function NetzHostErklaerung() {
   return (
@@ -296,15 +297,15 @@ function NetzHostErklaerung() {
                 hinweis={() => 'Vergleiche nur den Netzanteil, also die ersten drei Oktette: 192.168.1 und 192.168.1.'}
               >
                 <Hinweis ton="gut" icon="circle-check">
-                  Netzanteil <Netz>192.168.1</Netz> = <Netz>192.168.1</Netz> → gleiches Netz, das Paket geht direkt zum Drucker. Genau diese Prüfung wirst du in Lektion 11 mit
-                  jeder beliebigen Grenze können.
+                  Netzanteil <Netz>192.168.1</Netz> = <Netz>192.168.1</Netz> → gleiches Netz, das Paket geht direkt zum Drucker. Genau diese Prüfung wirst du in Lektion „Gleiches
+                  Netz?“ mit jedem beliebigen Präfix können.
                 </Hinweis>
               </Raten>
             </>
           ),
         },
         {
-          titel: 'Wo genau liegt die Grenze?',
+          titel: 'Wo endet der Netzanteil?',
           inhalt: (
             <>
               <Absatz>
@@ -316,9 +317,14 @@ function NetzHostErklaerung() {
                 <Anschrift netz="10.20.30" host="40" netzName="Netz" hostName="Host" />
               </div>
               <Absatz>
-                Welche Aufteilung gilt, steht in der Konfiguration des Geräts: als <strong>Präfix</strong> (Lektion 4) oder als <strong>Subnetzmaske</strong> (Lektion 5). Und oft
-                liegt die Grenze sogar <strong>mitten in einer Zahl</strong>. Um das zu sehen, brauchen wir die Bits – das ist die nächste Lektion.
+                Welche Aufteilung gilt, steht in der Konfiguration des Geräts: als <strong>Präfix</strong> (Lektion „Präfix“) oder als <strong>Subnetzmaske</strong> (Lektion
+                „Subnetzmaske“). Und oft endet der Netzanteil sogar <strong>mitten in einem Oktett</strong>. Um das zu sehen, brauchen wir die Bits – das ist die nächste Lektion,
+                „Präfix“.
               </Absatz>
+              <Hinweis icon="lightbulb">
+                Die Stelle, an der der Netzanteil endet und der Hostanteil beginnt, nennen wir in diesem Lernweg kurz die <strong>Grenze zwischen Netz- und Hostanteil</strong>. Das
+                ist ein Hilfswort, kein Prüfungsbegriff – in der Prüfung gibst du sie als Präfix oder Subnetzmaske an.
+              </Hinweis>
               <Hinweis icon="info">
                 In dieser Lektion ist der Netzanteil immer die ersten drei Oktette und der Hostanteil das vierte – so kannst du das Prinzip in Ruhe ausprobieren.
               </Hinweis>
@@ -405,149 +411,7 @@ function NetzHostAusprobieren() {
   );
 }
 
-// ---------- 3 Binärzahl ----------
-
-function BinaerErklaerung() {
-  return (
-    <Schritte
-      schritte={[
-        {
-          titel: 'Stellenwerte kennst du schon',
-          inhalt: (
-            <>
-              <Absatz>
-                Im Zehnersystem hat jede Stelle einen <strong>Stellenwert</strong>: Einer, Zehner, Hunderter. Die Zahl 352 bedeutet „3 Hunderter, 5 Zehner, 2 Einer“. Von rechts
-                nach links wird der Stellenwert jeweils <strong>zehnmal</strong> so groß.
-              </Absatz>
-              <Stellen werte={[100, 10, 1]} ziffern={[3, 5, 2]} summe="= 3·100 + 5·10 + 2·1 = 352" />
-            </>
-          ),
-        },
-        {
-          titel: 'Im Binärsystem: nur 0 und 1',
-          inhalt: (
-            <>
-              <Absatz>
-                Das <strong>Binärsystem</strong> (Zweiersystem) hat nur die Ziffern 0 und 1 – genau die Bits. Darum wird der Stellenwert von rechts nach links nicht zehnmal,
-                sondern <strong>zweimal</strong> so groß. Für ein Oktett mit 8 Bit:
-              </Absatz>
-              <div class="zl-verdopplung mono" aria-label="Stellenwerte verdoppeln sich">
-                {[128, 64, 32, 16, 8, 4, 2, 1].map((g, i) => (
-                  <span key={g} class="zl-verdopplung__glied">
-                    <span class="zl-verdopplung__wert">{g}</span>
-                    {i < 7 && <span class="zl-verdopplung__mal">←·2</span>}
-                  </span>
-                ))}
-              </div>
-              <Absatz>
-                Diese Reihe <span class="mono">128 · 64 · 32 · 16 · 8 · 4 · 2 · 1</span> brauchst du ab jetzt ständig. Am einfachsten: von rechts bei 1 anfangen und immer
-                verdoppeln.
-              </Absatz>
-            </>
-          ),
-        },
-        {
-          titel: 'Binär → dezimal: addieren',
-          inhalt: (
-            <>
-              <Absatz>Eine 1 heißt: Dieser Stellenwert zählt mit. Eine 0 heißt: zählt nicht. Also einfach die Stellenwerte über den Einsen addieren:</Absatz>
-              <Stellen werte={[128, 64, 32, 16, 8, 4, 2, 1]} ziffern={[1, 1, 0, 0, 0, 0, 0, 0]} summe="= 128 + 64 = 192" />
-              <Raten
-                frage="Und welche Zahl ist 00001010?"
-                optionen={[10, 12, 20, 1010]}
-                richtig={10}
-                hinweis={(v) =>
-                  v === 1010 ? 'Das ist die Binärschreibweise selbst – gesucht ist der Wert. Welche Stellenwerte stehen über den Einsen?' : 'Die Einsen stehen unter 8 und 2.'
-                }
-              >
-                <Stellen werte={[128, 64, 32, 16, 8, 4, 2, 1]} ziffern={[0, 0, 0, 0, 1, 0, 1, 0]} summe="= 8 + 2 = 10" />
-              </Raten>
-            </>
-          ),
-        },
-        {
-          titel: 'Dezimal → binär: Passt es noch?',
-          inhalt: (
-            <>
-              <Absatz>
-                Umgekehrt geht man von links nach rechts und fragt bei jedem Stellenwert: <strong>Passt er in den Rest?</strong> Ja → 1 schreiben und abziehen. Nein → 0 schreiben.
-                Klick dich durch das Beispiel 150:
-              </Absatz>
-              <Umrechner wert={150} />
-            </>
-          ),
-        },
-        {
-          titel: 'Darum geht ein Oktett nur bis 255',
-          inhalt: (
-            <>
-              <Absatz>Die größte Zahl mit 8 Bit entsteht, wenn alle Bits 1 sind:</Absatz>
-              <Stellen werte={[128, 64, 32, 16, 8, 4, 2, 1]} ziffern={[1, 1, 1, 1, 1, 1, 1, 1]} summe="= 255" />
-              <Absatz>
-                Die kleinste ist <span class="mono">00000000</span> = 0. Von 0 bis 255 sind das <strong>256 verschiedene Werte</strong> – mehr gibt es mit 8 Bit nicht. Darum steht
-                in jedem Oktett einer IP-Adresse eine Zahl von 0 bis 255.
-              </Absatz>
-            </>
-          ),
-        },
-      ]}
-    />
-  );
-}
-
-const ZIELE = [192, 172, 10, 255, 168, 224, 100, 64, 1, 240, 127, 254];
-
-function BinaerAusprobieren() {
-  const [wert, setWert] = useState(0);
-  const [zielNr, setZielNr] = useState(0);
-  const [weg, setWeg] = useState(false);
-  const ziel = ZIELE[zielNr % ZIELE.length];
-  const geschafft = wert === ziel;
-  return (
-    <Werkbank>
-      <p class="lw-aufgabe">
-        Klick auf die Bits, um sie an- und auszuschalten. Aufgabe: Stell die Zahl <strong class="mono">{ziel}</strong> ein.
-      </p>
-      <BitTafel wert={wert} onWert={setWert} ziel={ziel} />
-      {geschafft ? (
-        <Hinweis ton="gut" icon="party-popper">
-          Genau: {ziel} = <span class="mono">{bin8(ziel)}</span>.
-        </Hinweis>
-      ) : (
-        weg && (
-          <ol class="sn-rechenweg__liste sn-rechenweg__liste--klein">
-            {binaerSchritte(ziel).map((s) => (
-              <li key={s.gewicht} class={s.passt ? 'sn-rechenweg__ja' : ''}>
-                {s.gewicht} in {s.vorher}? {s.passt ? `ja → 1, Rest ${s.nachher}` : 'nein → 0'}
-              </li>
-            ))}
-          </ol>
-        )
-      )}
-      <div class="lw-knoepfe">
-        <Knopf
-          variante={geschafft ? 'primaer' : 'zweit'}
-          groesse="s"
-          iconRechts="arrow-right"
-          onClick={() => {
-            setZielNr(zielNr + 1);
-            setWert(0);
-            setWeg(false);
-          }}
-        >
-          Nächste Zahl
-        </Knopf>
-        {!geschafft && (
-          <Knopf variante="geist" groesse="s" icon="lightbulb" onClick={() => setWeg(!weg)}>
-            {weg ? 'Rechenweg ausblenden' : 'Rechenweg zeigen'}
-          </Knopf>
-        )}
-      </div>
-    </Werkbank>
-  );
-}
-
-// ---------- 4 Präfix ----------
+// ---------- Präfix ----------
 
 function PraefixErklaerung() {
   const zahl = ipZuZahl('192.168.1.10');
@@ -555,12 +419,14 @@ function PraefixErklaerung() {
     <Schritte
       schritte={[
         {
-          titel: 'Die Grenze liegt zwischen zwei Bits',
+          titel: 'Netz- und Hostanteil trennen sich zwischen zwei Bits',
           inhalt: (
             <>
+              <Grundlage verweis="zahlen:binaer">Wie man ein Oktett in Bits schreibt, ist noch unklar?</Grundlage>
               <Absatz>
-                Du kennst jetzt beide Zutaten: Eine Adresse hat einen <Netz>Netzanteil</Netz> und einen <Host>Hostanteil</Host> (Lektion 2), und sie besteht aus 32 Bits (Lektion
-                3). Die Grenze zwischen Netz und Host liegt also <strong>zwischen zwei Bits</strong>. Man zählt einfach, wie viele Bits von links zum Netz gehören.
+                Du kennst jetzt beide Zutaten: Eine Adresse hat einen <Netz>Netzanteil</Netz> und einen <Host>Hostanteil</Host> (Lektion „Netzanteil und Hostanteil“), und sie
+                besteht aus 32 Bits (Lektion „IP-Adresse“). Die Grenze zwischen Netz- und Hostanteil liegt also <strong>zwischen zwei Bits</strong>. Man zählt einfach, wie viele
+                Bits von links zum Netz gehören.
               </Absatz>
               <Bitband zahl={zahl} nummern />
               <Absatz>Die kleinen Zahlen unter den Bits sind ihre Nummern von 1 bis 32 – damit lässt sich die Grenze genau angeben.</Absatz>
@@ -578,7 +444,8 @@ function PraefixErklaerung() {
               <Legende />
               <Bitband zahl={zahl} praefix={24} nummern unter={['8 Netz', '8 Netz', '8 Netz', '8 Host']} />
               <Absatz>
-                24 = 8 + 8 + 8: Die Grenze liegt genau zwischen dem 3. und 4. Oktett. Darum kann man hier Netz und Host direkt an den Dezimalzahlen ablesen – wie in Lektion 2:{' '}
+                24 = 8 + 8 + 8: Die Grenze liegt genau zwischen dem 3. und 4. Oktett. Darum kann man hier Netz und Host direkt an den Dezimalzahlen ablesen – wie in Lektion
+                „Netzanteil und Hostanteil“:{' '}
                 <span class="mono">
                   <Netz>192.168.1</Netz>.<Host>10</Host>
                 </span>
@@ -662,7 +529,7 @@ function PraefixErklaerung() {
             <>
               <Absatz>
                 Schiebt man die Grenze nach rechts (größerer Präfix), werden die Hostbits weniger. Weniger Hostbits heißt: weniger verschiedene Hostanteile – also{' '}
-                <strong>weniger Geräte im Netz</strong>. Wie viele genau, rechnest du in Lektion 6 aus.
+                <strong>weniger Geräte im Netz</strong>. Wie viele genau, rechnest du in Lektion „Netzgröße“ aus.
               </Absatz>
               <span class="sn-beschrift mono">/24 – 8 Hostbits</span>
               <Bitband zahl={zahl} praefix={24} dezimal={false} />
@@ -719,7 +586,7 @@ function PraefixAusprobieren() {
   );
 }
 
-// ---------- 5 Subnetzmaske ----------
+// ---------- Subnetzmaske ----------
 
 function MaskeErklaerung() {
   return (
@@ -729,6 +596,7 @@ function MaskeErklaerung() {
           titel: 'Wo du sie siehst',
           inhalt: (
             <>
+              <Grundlage verweis="zahlen:binaer">Für diese Lektion musst du Binärzahlen in Dezimalzahlen umrechnen können. Unsicher?</Grundlage>
               <Absatz>
                 Viele Eingabemasken fragen nicht nach dem Präfix, sondern nach der <strong>Subnetzmaske</strong> – zum Beispiel die IPv4-Einstellungen unter Windows und auch die
                 Prüfungsaufgaben:
@@ -769,7 +637,7 @@ function MaskeErklaerung() {
           titel: 'Oktett für Oktett umrechnen',
           inhalt: (
             <>
-              <Absatz>Jetzt jedes Oktett in eine Dezimalzahl umrechnen – genau wie in Lektion 3: die Stellenwerte über den Einsen addieren.</Absatz>
+              <Absatz>Jetzt jedes Oktett in eine Dezimalzahl umrechnen – wie bei jeder Binärzahl: die Stellenwerte über den Einsen addieren.</Absatz>
               <MaskenRechnung praefix={26} />
               <Absatz>Volle Oktette (8 Einsen) ergeben immer 255, leere (8 Nullen) immer 0. Rechnen musst du nur in dem Oktett, in dem die Grenze liegt.</Absatz>
             </>
@@ -914,7 +782,6 @@ function MaskeAusprobieren() {
 export const ADRESSE = {
   'ip-adresse': { Erklaerung: IpErklaerung, Ausprobieren: IpAusprobieren },
   'netz-host': { Erklaerung: NetzHostErklaerung, Ausprobieren: NetzHostAusprobieren },
-  binaer: { Erklaerung: BinaerErklaerung, Ausprobieren: BinaerAusprobieren },
   praefix: { Erklaerung: PraefixErklaerung, Ausprobieren: PraefixAusprobieren },
   subnetzmaske: { Erklaerung: MaskeErklaerung, Ausprobieren: MaskeAusprobieren },
 };

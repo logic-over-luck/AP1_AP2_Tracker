@@ -9,8 +9,6 @@ import { ipZuZahl, maskeZahl, netzBitsJeOktett, maskenwert, STELLENWERTE, leseIp
 
 // Allgemeine Bausteine aus dem Lernweg-Rahmen – hier weitergereicht, damit inhalt/ nur eine Quelle importiert
 export { AlleOffen, Schritte, Raten, Absatz, Fakten, Fakt, Formel, Hinweis, Beispiele, Ergebnis, Werkbank, Konsole, Grundlage } from '../../lernweg/bausteine.jsx';
-// Zahl-Bausteine aus dem Zahlen-Trainer
-export { Stellen, BitTafel, Umrechner } from '../../zahlen/verstehen/bausteine.jsx';
 
 export const bitsVon = (zahl) => Array.from({ length: 32 }, (_, i) => (zahl >>> (31 - i)) & 1);
 export const oktetteVon = (zahl) => [24, 16, 8, 0].map((s) => (zahl >>> s) & 255);
@@ -24,7 +22,7 @@ export const Res = ({ children }) => <span class="sn-f-res">{children}</span>;
 export const Grenze = ({ children }) => <span class="sn-f-grenze">{children}</span>;
 
 export function Legende({ teile = ['netz', 'host', 'grenze'] }) {
-  const namen = { netz: 'Netzanteil', host: 'Hostanteil', grenze: 'Grenze', res: 'reserviert (Netzadresse, Broadcast)' };
+  const namen = { netz: 'Netzanteil', host: 'Hostanteil', grenze: 'Grenze Netz | Host', res: 'reserviert (Netzadresse, Broadcast)' };
   return (
     <div class="sn-legende" aria-label="Farben">
       {teile.map((t) => (

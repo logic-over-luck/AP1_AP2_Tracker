@@ -1,6 +1,5 @@
 // Bausteine der Zahlen-Lektionen: Stellenwert-Tafel, Bit-Schalter, Umrechner (Stellenwert- und Restwertverfahren),
-// Hex-Tafel, Einheiten-Treppe, Rechenweg. Klassen-Präfix zl- (styles/zahlen.css). Stellen, BitTafel und Umrechner
-// nutzt auch der Subnetz-Trainer.
+// Hex-Tafel, Einheiten-Treppe, Rechenweg. Klassen-Präfix zl- (styles/zahlen.css).
 
 import { useContext, useEffect, useState } from 'preact/hooks';
 import { Knopf } from '../../../../ui/bausteine.jsx';

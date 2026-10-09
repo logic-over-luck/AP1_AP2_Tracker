@@ -1,5 +1,5 @@
 // Block 2 – Subnetting: Netzgröße, Blockgröße, Netzadresse, Broadcastadresse, Hostbereich, Gleiches Netz?,
-// Entscheidendes Oktett, Rechenweg. Bis Lektion 11 liegt die Grenze im 4. Oktett (/24 … /30).
+// Entscheidendes Oktett, Rechenweg. Bis „Gleiches Netz?“ endet der Netzanteil im 4. Oktett (/24 … /30).
 
 import { useMemo, useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../../../ui/bausteine.jsx';
@@ -27,6 +27,7 @@ import {
   Werkbank,
   Zusammenbau,
   Grenzlupe,
+  Grundlage,
   tausend,
 } from '../bausteine.jsx';
 
@@ -94,7 +95,7 @@ function useAdresse(startIp, startPraefix) {
   return { ip, setIp, praefix, setPraefix, z };
 }
 
-// ---------- 6 Netzgröße ----------
+// ---------- Netzgröße ----------
 
 const KOMBIS = [1, 2, 3].map((n) => Array.from({ length: 2 ** n }, (_, i) => i.toString(2).padStart(n, '0')));
 
@@ -155,7 +156,7 @@ function NetzgroesseErklaerung() {
           titel: 'Die Formel',
           inhalt: (
             <>
-              <Absatz>Bei h Hostbits gibt es also 2 · 2 · … · 2 (h-mal) = {hoch(2, 'h')} Adressen. Die Hostbits sind 32 − Präfix (Lektion 4). Für /26:</Absatz>
+              <Absatz>Bei h Hostbits gibt es also 2 · 2 · … · 2 (h-mal) = {hoch(2, 'h')} Adressen. Die Hostbits sind 32 − Präfix (Lektion „Präfix“). Für /26:</Absatz>
               <Formel>
                 32 − 26 = <Host>6 Hostbits</Host> → {hoch(2, 6)} = 2 · 2 · 2 · 2 · 2 · 2 = <strong>64 Adressen</strong>
               </Formel>
@@ -168,8 +169,9 @@ function NetzgroesseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Die Zweierpotenzen sind genau die Stellenwerte aus Lektion 3 – plus 256. Wer die Reihe 1, 2, 4 … 128, 256 kann, kann jede Netzgröße von /24 bis /32 auswendig:
+                Die Zweierpotenzen sind genau die Stellenwerte einer Binärzahl – plus 256. Wer die Reihe 1, 2, 4 … 128, 256 kann, kann jede Netzgröße von /24 bis /32 auswendig:
               </Absatz>
+              <Grundlage verweis="zahlen:zweierpotenzen">Zweierpotenzen noch nicht sicher?</Grundlage>
               <div class="lw-tabelle-huelle">
                 <table class="lw-tabelle">
                   <thead>
@@ -255,7 +257,7 @@ function NetzgroesseAusprobieren() {
   );
 }
 
-// ---------- 7 Blockgröße ----------
+// ---------- Blockgröße ----------
 
 function BlockgroesseErklaerung() {
   return (
@@ -267,7 +269,7 @@ function BlockgroesseErklaerung() {
             <>
               <Absatz>
                 Nimm alle Adressen von 192.168.1.0 bis 192.168.1.255 – ein /24 mit 256 Adressen. Ein Betrieb will daraus kleinere Netze machen, zum Beispiel /26-Netze mit je 64
-                Adressen (Lektion 6): eins für das Büro, eins für das Lager …
+                Adressen (Lektion „Netzgröße“): eins für das Büro, eins für das Lager …
               </Absatz>
               <Raten frage="Wie viele /26-Netze passen in die 256 Adressen?" optionen={[2, 4, 8, 64]} richtig={4} hinweis={() => '256 Adressen geteilt durch 64 Adressen je Netz.'}>
                 <Formel>
@@ -340,7 +342,7 @@ function BlockgroesseErklaerung() {
               <Absatz>Zwei Wege, die immer dasselbe ergeben:</Absatz>
               <Fakten>
                 <Fakt titel="Weg 1: 256 − Subnetzmaske">
-                  /26 hat im 4. Oktett den Maskenwert 192 (Lektion 5): <strong class="mono">256 − 192 = 64</strong>.
+                  /26 hat im 4. Oktett den Maskenwert 192 (Lektion „Subnetzmaske“): <strong class="mono">256 − 192 = 64</strong>.
                 </Fakt>
                 <Fakt titel="Weg 2: Stellenwert des letzten Netzbits">Das letzte Netzbit im Oktett steht bei /26 unter dem Stellenwert 64. Das ist die Blockgröße.</Fakt>
               </Fakten>
@@ -460,7 +462,7 @@ function BlockgroesseAusprobieren() {
   );
 }
 
-// ---------- 8 Netzadresse ----------
+// ---------- Netzadresse ----------
 
 const BSP = zerlege('192.168.1.100', 26);
 
@@ -474,8 +476,8 @@ function NetzadresseErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Unser Beispiel: <strong class="mono">192.168.1.100/26</strong>. Blockgröße 64 (Lektion 7) – die Netze im 4. Oktett sind 0–63, 64–127, 128–191, 192–255. Die 100
-                liegt in genau einem davon. Die Lupe zeigt den Ausschnitt um die 100:
+                Unser Beispiel: <strong class="mono">192.168.1.100/26</strong>. Blockgröße 64 (Lektion „Blockgröße“) – die Netze im 4. Oktett sind 0–63, 64–127, 128–191, 192–255.
+                Die 100 liegt in genau einem davon. Die Lupe zeigt den Ausschnitt um die 100:
               </Absatz>
               <Zahlenstrahl block={64} werte={[100]} />
               <Absatz>
@@ -583,7 +585,7 @@ function NetzadresseAusprobieren() {
   );
 }
 
-// ---------- 9 Broadcastadresse ----------
+// ---------- Broadcastadresse ----------
 
 function BroadcastErklaerung() {
   const z = BSP;
@@ -595,8 +597,8 @@ function BroadcastErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Weiter mit <strong class="mono">192.168.1.100/26</strong>. Der Block beginnt bei 64 (Lektion 8). Die <strong>letzte Adresse</strong> dieses Blocks ist die{' '}
-                <strong>Broadcastadresse</strong>.
+                Weiter mit <strong class="mono">192.168.1.100/26</strong>. Der Block beginnt bei 64 (Lektion „Netzadresse“). Die <strong>letzte Adresse</strong> dieses Blocks ist
+                die <strong>Broadcastadresse</strong>.
               </Absatz>
               <Zahlenstrahl block={64} werte={[100]} aktiv={[64]} />
             </>
@@ -659,7 +661,7 @@ function BroadcastErklaerung() {
             <>
               <Absatz>
                 „Broadcast“ heißt <strong>Rundruf</strong>. Ein Paket an die Broadcastadresse geht an <strong>alle Geräte im Netz</strong> gleichzeitig. Das braucht man, wenn ein
-                Gerät jemanden sucht, ohne seine Adresse zu kennen – etwa „Gibt es hier einen Server, der mir eine Adresse gibt?“ (DHCP, Lektion 17).
+                Gerät jemanden sucht, ohne seine Adresse zu kennen – etwa „Gibt es hier einen Server, der mir eine Adresse gibt?“ (DHCP, Lektion „DHCP“).
               </Absatz>
               <Hinweis icon="info">
                 Weil ein Paket an diese Adresse bei allen ankommt, darf sie kein einzelnes Gerät bekommen – sie ist <Res>reserviert</Res>, genau wie die Netzadresse.
@@ -700,7 +702,7 @@ function BroadcastAusprobieren() {
   );
 }
 
-// ---------- 10 Hostbereich ----------
+// ---------- Hostbereich ----------
 
 function HostbereichErklaerung() {
   return (
@@ -767,7 +769,7 @@ function HostbereichErklaerung() {
           inhalt: (
             <>
               <Absatz>
-                Alle Adressen minus die zwei reservierten. Mit der Formel aus Lektion 6: <strong>Hosts = {hoch(2, 'h')} − 2</strong>.
+                Alle Adressen minus die zwei reservierten. Mit der Formel aus Lektion „Netzgröße“: <strong>Hosts = {hoch(2, 'h')} − 2</strong>.
               </Absatz>
               <div class="lw-tabelle-huelle">
                 <table class="lw-tabelle">
@@ -838,7 +840,7 @@ function HostbereichAusprobieren() {
   );
 }
 
-// ---------- 11 Gleiches Netz? ----------
+// ---------- Gleiches Netz? ----------
 
 function GleichErklaerung() {
   return (
@@ -849,7 +851,7 @@ function GleichErklaerung() {
           inhalt: (
             <Absatz>
               Bevor ein Gerät ein Paket losschickt, prüft es: <strong>Liegt das Ziel in meinem Netz?</strong> Wenn ja, schickt es das Paket direkt dorthin. Wenn nein, muss das
-              Paket aus dem Netz hinaus – das geht nicht direkt (wie, zeigt Lektion 14). Diese Prüfung musst du auch in der Prüfung können.
+              Paket aus dem Netz hinaus – das geht nicht direkt (wie, zeigt Lektion „Standardgateway“). Diese Prüfung musst du auch in der Prüfung können.
             </Absatz>
           ),
         },
@@ -876,7 +878,7 @@ function GleichErklaerung() {
             <>
               <ol class="sn-verfahren">
                 <li>
-                  Für beide Adressen mit <strong>derselben Subnetzmaske</strong> die Netzadresse bestimmen (Lektion 8).
+                  Für beide Adressen mit <strong>derselben Subnetzmaske</strong> die Netzadresse bestimmen (Lektion „Netzadresse“).
                 </li>
                 <li>Netzadressen vergleichen: gleich → gleiches Netz, verschieden → verschiedene Netze.</li>
               </ol>
@@ -955,7 +957,7 @@ function GleichAusprobieren() {
   );
 }
 
-// ---------- 12 Entscheidendes Oktett ----------
+// ---------- Entscheidendes Oktett ----------
 
 const ROLLEN_TEXT = { netz: 'abschreiben', rechnen: 'hier rechnen', host: '0 bzw. 255' };
 
@@ -1144,7 +1146,7 @@ function Oktett3Ausprobieren() {
   );
 }
 
-// ---------- 13 Rechenweg ----------
+// ---------- Rechenweg ----------
 
 function RechenwegErklaerung() {
   const r = rechenweg('172.16.8.100', 27);

@@ -14,10 +14,10 @@
 import { baueLernweg } from '../../lernweg/lernweg.js';
 
 export const BLOECKE = [
-  { id: 'adresse', titel: 'Die IPv4-Adresse', text: 'Vier Zahlen, zwei Teile, eine Grenze – und wie man sie in Bits sieht.' },
+  { id: 'adresse', titel: 'Die IPv4-Adresse', text: 'Vier Oktette, Netz- und Hostanteil – und wie Präfix und Subnetzmaske die beiden trennen.' },
   { id: 'subnetting', titel: 'Subnetting', text: 'Wie groß ist ein Netz, wo beginnt und endet es, welche Adressen bekommen Geräte?' },
   { id: 'konfiguration', titel: 'Einen PC ins Netz bringen', text: 'Standardgateway, private Adressen, Konfiguration, DHCP und feste Adressen.' },
-  { id: 'lokal', titel: 'Im lokalen Netz: MAC und ARP', text: 'Hexadezimalzahlen, die Hardware-Adresse und wie ein PC sie findet.' },
+  { id: 'lokal', titel: 'Im lokalen Netz: MAC und ARP', text: 'Die Hardware-Adresse der Netzwerkkarte und wie ein PC sie im lokalen Netz findet.' },
   { id: 'ipv6', titel: 'IPv6', text: 'Der Nachfolger: 128 Bit, Kurzschreibweise, Präfix und verbindungslokale Adresse.' },
 ];
 
@@ -53,37 +53,31 @@ const L = [
     ],
   },
   {
-    id: 'binaer',
-    block: 'adresse',
-    begriff: 'Binärzahl',
-    leitfrage: 'Warum geht jedes Oktett nur bis 255?',
-    braucht: ['ip-adresse'],
-    kompetenzen: [],
-    definition:
-      'Eine **Binärzahl** besteht nur aus den Ziffern 0 und 1 (Bits). Jede Stelle hat einen festen **Stellenwert**, bei 8 Bit von links `128 64 32 16 8 4 2 1`. Der Wert ist die Summe der Stellenwerte, unter denen eine 1 steht. Mit 8 Bit lassen sich die Zahlen 0 bis 255 darstellen.',
-    merksatz: 'Von links nach rechts: Passt der Stellenwert in den Rest? Ja → 1 und abziehen. Nein → 0.',
-    fehler: [{ falsch: '11000000 = 1 + 1 = 2', richtig: 'Die Einsen zählen mit ihrem Stellenwert: 128 + 64 = 192.' }],
-    uebung: 'binaer',
-  },
-  {
     id: 'praefix',
     block: 'adresse',
     begriff: 'Präfix',
-    leitfrage: 'Wo liegt die Grenze zwischen Netz und Host?',
-    braucht: ['netz-host', 'binaer'],
+    leitfrage: 'Wie viele Bits gehören zum Netzanteil?',
+    braucht: ['netz-host'],
+    grundlagen: ['zahlen:binaer'],
     kompetenzen: ['AP1-6-2-1-K3'],
     definition:
       'Die **Präfixlänge** (kurz Präfix) gibt an, wie viele Bits von links zum Netzanteil gehören. Man schreibt sie mit Schrägstrich hinter die Adresse, z. B. `192.168.1.10/24`. Die übrigen 32 − Präfix Bits sind **Hostbits**.',
     merksatz: 'Präfix = Anzahl der Netzbits. Hostbits = 32 − Präfix.',
-    fehler: [{ falsch: 'Die Grenze liegt immer zwischen zwei Oktetten.', richtig: 'Bei /26 liegt sie mitten im 4. Oktett: 2 Bits Netz, 6 Bits Host.' }],
+    fehler: [
+      {
+        falsch: 'Netz- und Hostanteil trennen sich immer zwischen zwei Oktetten.',
+        richtig: 'Bei /26 endet der Netzanteil mitten im 4. Oktett: 2 Bit davon gehören zum Netzanteil, 6 Bit zum Hostanteil.',
+      },
+    ],
     uebung: 'maske',
   },
   {
     id: 'subnetzmaske',
     block: 'adresse',
     begriff: 'Subnetzmaske',
-    leitfrage: 'Wie schreibt man die Grenze als Adresse?',
+    leitfrage: 'Wie schreibt man den Präfix als Adresse?',
     braucht: ['praefix'],
+    grundlagen: ['zahlen:binaer'],
     kompetenzen: ['AP1-6-2-1-K3', 'AP1-6-2-2-K5'],
     definition:
       'Die **Subnetzmaske** gibt an, welcher Teil der IP-Adresse das Netz und welcher den Host bezeichnet: Jedes Netzbit ist 1, jedes Hostbit 0, geschrieben wie eine IP-Adresse. Präfix `/24` entspricht `255.255.255.0`, `/26` entspricht `255.255.255.192`.',
@@ -99,6 +93,7 @@ const L = [
     begriff: 'Netzgröße',
     leitfrage: 'Wie viele Adressen hat ein Netz?',
     braucht: ['praefix'],
+    grundlagen: ['zahlen:zweierpotenzen'],
     kompetenzen: ['AP1-6-2-2-K1'],
     definition: 'Ein Netz mit Präfix /n hat 32 − n Hostbits und damit **2^(32 − n) Adressen**, z. B. `/26`: 2⁶ = 64 Adressen.',
     merksatz: 'Jedes Hostbit mehr verdoppelt das Netz. Ein Bit weniger halbiert es.',
@@ -113,7 +108,7 @@ const L = [
     braucht: ['subnetzmaske', 'netzgroesse'],
     kompetenzen: ['AP1-6-2-2-K2'],
     definition:
-      'Netze gleicher Größe liegen lückenlos hintereinander. Die **Blockgröße** ist der Abstand, in dem sie aufeinander folgen: **256 − Wert der Subnetzmaske** im Oktett, in dem die Grenze liegt. Netze beginnen bei 0 und bei jedem Vielfachen der Blockgröße.',
+      'Netze gleicher Größe liegen lückenlos hintereinander. Die **Blockgröße** ist der Abstand, in dem sie aufeinander folgen: **256 − Wert der Subnetzmaske** im Oktett, in dem der Netzanteil endet. Netze beginnen bei 0 und bei jedem Vielfachen der Blockgröße.',
     merksatz: '/26 → 256 − 192 = 64 → Netze beginnen bei 0, 64, 128, 192.',
     fehler: [{ falsch: 'Ein /26-Netz kann bei 100 beginnen.', richtig: 'Nur bei Vielfachen von 64: 0, 64, 128, 192.' }],
     uebung: 'analyse',
@@ -174,11 +169,11 @@ const L = [
     id: 'oktett3',
     block: 'subnetting',
     begriff: 'Entscheidendes Oktett',
-    leitfrage: 'Was, wenn die Grenze im dritten Oktett liegt?',
+    leitfrage: 'Was, wenn der Netzanteil im 3. Oktett endet?',
     braucht: ['hostbereich', 'gleiches-netz'],
     kompetenzen: ['AP1-6-2-2-K2'],
     definition:
-      'Das **entscheidende Oktett** ist das Oktett, in dem die Grenze zwischen Netz und Host liegt – das erste Oktett der Subnetzmaske, das nicht 255 ist. Nur dort wird mit der Blockgröße gerechnet. Oktette davor werden abgeschrieben, Oktette danach sind in der Netzadresse 0 und in der Broadcastadresse 255.',
+      'Das **entscheidende Oktett** ist das Oktett, in dem der Netzanteil endet – das erste Oktett der Subnetzmaske, das nicht 255 ist. Nur dort wird mit der Blockgröße gerechnet. Oktette davor werden abgeschrieben, Oktette danach sind in der Netzadresse 0 und in der Broadcastadresse 255.',
     merksatz: 'Davor abschreiben · im entscheidenden Oktett rechnen · dahinter 0 bzw. 255.',
     fehler: [{ falsch: '10.4.6.255/23 ist eine Broadcastadresse.', richtig: 'Das Netz geht von 10.4.6.0 bis 10.4.7.255 – 10.4.6.255 liegt mittendrin und ist ein normaler Host.' }],
     uebung: 'analyse',
@@ -258,7 +253,7 @@ const L = [
         richtig: 'Die hat sich der PC selbst gegeben, weil kein DHCP-Server geantwortet hat. Ins Internet kommt er so nicht.',
       },
     ],
-    uebung: 'mac',
+    uebung: 'dhcp',
   },
   {
     id: 'statisch',
@@ -281,24 +276,12 @@ const L = [
 
   // ---------- Block 4: Im lokalen Netz – MAC und ARP ----------
   {
-    id: 'hex',
-    block: 'lokal',
-    begriff: 'Hexadezimalzahl',
-    leitfrage: 'Wie schreibt man 4 Bit mit einem Zeichen?',
-    braucht: ['binaer'],
-    kompetenzen: [],
-    definition:
-      'Das **Hexadezimalsystem** hat die Basis 16 mit den Ziffern 0–9 und A–F (A = 10 … F = 15). Eine Hexadezimalziffer steht für genau **4 Bit**, zwei Ziffern für ein **Byte** (8 Bit, 00 bis FF = 0 bis 255).',
-    merksatz: '1 Hex-Ziffer = 4 Bit · 2 Hex-Ziffern = 1 Byte.',
-    fehler: [{ falsch: 'Hex 10 = zehn', richtig: 'Hex 10 = 1 · 16 + 0 = 16. Zehn ist A.' }],
-    uebung: 'mac',
-  },
-  {
     id: 'mac',
     block: 'lokal',
     begriff: 'MAC-Adresse',
     leitfrage: 'Welche Adresse hat die Netzwerkkarte ab Werk?',
-    braucht: ['netz-host', 'hex'],
+    braucht: ['netz-host'],
+    grundlagen: ['zahlen:hex'],
     kompetenzen: ['AP1-6-2-4-K1'],
     definition:
       'Die **MAC-Adresse** ist die vom Hersteller vergebene Hardware-Adresse einer Netzwerkschnittstelle: **48 Bit**, geschrieben als **sechs Bytes in Hexadezimalschreibweise**, z. B. `00:1A:2B:3C:4D:5E`. Die vordere Hälfte ist die **Herstellerkennung**.',
@@ -331,7 +314,8 @@ const L = [
     block: 'ipv6',
     begriff: 'IPv6-Adresse',
     leitfrage: 'Warum IPv6, und wie sieht die Adresse aus?',
-    braucht: ['ip-adresse', 'hex'],
+    braucht: ['ip-adresse'],
+    grundlagen: ['zahlen:hex'],
     kompetenzen: ['AP1-6-2-3-K1', 'AP1-6-2-3-K5'],
     definition:
       '**IPv6** ist der Nachfolger von IPv4. Eine IPv6-Adresse ist **128 Bit** lang und wird in **acht Blöcken zu je vier Hexadezimalziffern** geschrieben, getrennt durch Doppelpunkte. Grund: Der IPv4-Adressraum (32 Bit, rund 4,3 Milliarden Adressen) ist erschöpft.',

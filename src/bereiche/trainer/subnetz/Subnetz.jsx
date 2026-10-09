@@ -15,13 +15,12 @@ import { ERZEUGER } from './ueben/aufgaben.js';
 const RAEUME = [VERSTEHEN, UEBEN, { id: 'visualisieren', name: 'Visualisieren', text: 'Eine Adresse zerlegt ansehen', icon: 'eye' }];
 
 const SPICKZETTEL = {
-  binaer:
-    '- Stellenwerte: 128 · 64 · 32 · 16 · 8 · 4 · 2 · 1\n- Binär → dezimal: Stellenwerte über den Einsen addieren\n- Dezimal → binär: von links fragen „Passt der Stellenwert in den Rest?“ – ja → 1 und abziehen, nein → 0',
   hosts:
     '- Adressen: 2^(32 − Präfix) · nutzbare Hosts: Adressen − 2\n- Entscheidendes Oktett: das erste Oktett der Subnetzmaske, das nicht 255 ist\n- Blockgröße = 256 − Wert der Subnetzmaske in diesem Oktett',
   konfig:
     '- Einzutragen: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- Statische Adresse: im richtigen Netz, nicht Netz-/Broadcastadresse, nicht vergeben, außerhalb des DHCP-Bereichs\n- Das Standardgateway liegt im selben Netz wie das Gerät',
-  mac: '- MAC-Adresse: 48 Bit, 6 Bytes hexadezimal, vordere Hälfte = Herstellerkennung\n- ARP: zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermitteln; `arp -a` zeigt den Cache\n- DHCP teilt zu: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- 169.254.x.x: kein DHCP-Server erreicht',
+  mac: '- MAC-Adresse: 48 Bit, 6 Bytes hexadezimal, vordere Hälfte = Herstellerkennung\n- ARP: zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermitteln; `arp -a` zeigt den Cache',
+  dhcp: '- DHCP teilt zu: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server\n- Größe eines Bereichs: letzte − erste + 1\n- 169.254.x.x: kein DHCP-Server erreicht, der Client hat sich selbst eine Adresse gegeben',
   analyse:
     '- Netzadresse: alle Hostbits 0 · Broadcast: alle Hostbits 1\n- Hostbereich: Netzadresse + 1 bis Broadcast − 1\n- Nutzbare Hosts: 2^(32 − Präfix) − 2\n- Blockgröße im letzten Oktett: 256 − Maskenwert (z. B. /26 → 256 − 192 = 64)\n- /31: RFC 3021 Punkt-zu-Punkt, /32: ein einzelner Host',
   maske: '- /24 = 255.255.255.0 · /25 = .128 · /26 = .192 · /27 = .224 · /28 = .240 · /29 = .248 · /30 = .252\n- Präfix = Anzahl der Einsen in der Subnetzmaske',
