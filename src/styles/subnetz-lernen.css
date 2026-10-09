@@ -395,7 +395,99 @@
   background: var(--flaeche-2);
 }
 .snl-echt__okt--geteilt {
+  flex-direction: row;
+  gap: var(--s-4);
   border-color: var(--warn);
+}
+.snl-echt__links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.snl-lupe2 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 260px;
+  padding-left: var(--s-4);
+  border-left: 1px dashed var(--linie-2);
+}
+.snl-lupe2__titel {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--warn);
+}
+.snl-lupe2__leiste {
+  position: relative;
+  height: 18px;
+  margin: 22px 10px 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--akzent) 0 5px, color-mix(in srgb, var(--akzent) 25%, transparent) 5px calc(100% - 5px), var(--warn) calc(100% - 5px));
+}
+.snl-lupe2__abstand {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background: var(--text-3);
+  transform: translateY(-50%);
+}
+.snl-lupe2__abstand span {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-2);
+  transform: translateX(-50%);
+}
+.snl-lupe2__zeiger {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+}
+.snl-lupe2__zeiger span {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+.snl-lupe2__enden {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-2);
+  margin-top: 10px;
+}
+.snl-lupe2__enden > span {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--t-xs);
+  line-height: 1.35;
+  color: var(--text-3);
+}
+.snl-lupe2__enden strong {
+  font-size: var(--t-l);
+}
+.snl-lupe2__rechts {
+  align-items: flex-end;
+  text-align: right;
+}
+.snl-lupe2__text {
+  margin: 0;
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  color: var(--text-2);
 }
 .snl-echt__kopf {
   display: flex;
@@ -489,6 +581,38 @@ button.snl-bit {
 button.snl-bit:hover {
   outline: 2px solid var(--text);
   outline-offset: -1px;
+}
+.snl-bitspalte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.snl-zaehler {
+  min-width: 20px;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  color: var(--text-4);
+}
+.snl-zaehler--netz {
+  color: var(--akzent);
+}
+.snl-zaehler.snl-zaehler--grenze {
+  border-radius: 3px;
+  background: var(--warn);
+  color: var(--bg);
+  font-weight: 700;
+}
+.snl-zaehlhilfe {
+  margin: -4px 0 0;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.snl-bits__reihe .snl-trenner {
+  align-self: flex-start;
+  height: 46px;
+  margin-top: -4px;
 }
 .snl-trenner {
   width: 4px;
@@ -935,6 +1059,23 @@ button.snl-bit:hover {
   }
   .snl-echt__okt {
     padding: 8px;
+  }
+  .snl-echt__okt--geteilt {
+    flex-direction: column;
+    grid-column: 1 / -1;
+  }
+  .snl-lupe2 {
+    width: auto;
+    padding: var(--s-2) 0 0;
+    border-top: 1px dashed var(--linie-2);
+    border-left: 0;
+  }
+  .snl-zaehler {
+    min-width: 15px;
+    font-size: 8px;
+  }
+  .snl-bits__reihe .snl-trenner {
+    height: 38px;
   }
   .snl-echt__bits .snv-bit {
     width: 12px;

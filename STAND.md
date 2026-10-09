@@ -153,7 +153,8 @@ nächsten offenen Punkt weiter.
   getestet). Lernweg in zehn Schritten an einer Adresse (oben IP und Präfix, keine Beispiel-Knöpfe), jeder Schritt zeigt
   nur eine Idee: Aufbau (für dich dezimal / für den Computer 32 Bits, 4 Oktette × 8 Bit, warum 0–255), Binär (Oktett
   wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich (verschiebbar, „halbiert/verdoppelt“,
-  darunter was der Strich mit der echten Adresse macht: je Oktett Netz- und Hostanteil, Netzadresse, Gerät Nr., Maske),
+  Zählreihe 1 … 32 unter den Bits, darunter was der Strich mit der echten Adresse macht: je Oktett Netz- und Hostanteil,
+  Lupe auf das geteilte Oktett mit Blockanfang, Blockende und Position der IP, Netzadresse, Gerät Nr., Maske),
   Oktett finden, Blöcke schneiden, eigenen Block raten, Blockende raten (Fehler „Anfang des nächsten Blocks“ wird
   erklärt), Broadcast selbst eingeben und Adress-Tabelle (Prüfungsfalle x.255 / (x+1).0 unter /24), Nachbar-Prüfung
   (direkt oder über Gateway), Aufteilen-Tabelle. „Neue Adresse, von vorn“ am Ende wählt eine Zufallsadresse.
