@@ -708,6 +708,40 @@ button.sv-tafel__bit:hover {
   margin-top: var(--s-2);
 }
 
+.sv-mrechnung {
+  display: grid;
+  gap: 2px;
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+}
+.sv-mrechnung__zeile {
+  display: grid;
+  grid-template-columns: 76px auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 2px var(--s-3);
+  padding: 4px var(--s-2);
+  border-radius: var(--r-1);
+  font-size: var(--t-n);
+}
+.sv-mrechnung__zeile--strich {
+  background: color-mix(in srgb, var(--sv-strich) 9%, transparent);
+}
+.sv-mrechnung__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-mrechnung__bits {
+  letter-spacing: 0.06em;
+}
+.sv-mrechnung__summe {
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+
 /* ---------- 5. Oktett ---------- */
 .sv-oktette {
   display: grid;
@@ -1709,6 +1743,12 @@ button.sv-tafel__bit:hover {
   .sv-hb__zeile {
     grid-template-columns: minmax(0, 1fr);
     gap: 6px;
+  }
+  .sv-mrechnung__zeile {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+  .sv-mrechnung__summe {
+    grid-column: 2;
   }
   .sv-rezept__schritt {
     grid-template-columns: 20px minmax(0, 1fr);

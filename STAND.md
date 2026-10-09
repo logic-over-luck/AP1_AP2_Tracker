@@ -155,7 +155,7 @@ nächsten offenen Punkt weiter.
   Straße (Netz) + Hausnummer (Host). Farben überall gleich und oben in der Leiste als Legende: Netz grün (Akzent), Host blau (--info), Strich orange, reserviert rot (auf Wunsch Host blau statt grau, damit Netz und Host klar unterscheidbar sind).
   1 Aufbau (für dich / für den Computer, 4 × 8 Bit, drei Erklärkästen – wie gewünscht beibehalten), 2 Bits (Stellenwert-Tafel,
   Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten – das ändert das Oktett der IP oben mit, alle weiteren Schritte rechnen damit; „zurück zu …“ stellt die alte Adresse wieder her), 3 Präfix (Netzbits färben sich ein, Strich,
-  Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Subnetzmaske (Fachbegriff eingeführt, auch Netzmaske, kurz Maske; Adresse und Subnetzmaske übereinander,
+  Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Subnetzmaske (Fachbegriff eingeführt, auch Netzmaske, kurz Maske; Adresse und Subnetzmaske übereinander mit Oktett-Nummern, Rechnung für alle vier Oktette in Netz-/Host-Farben,
   die 9 möglichen Oktettwerte), 5 Oktett (abschreiben / hier rechnen / 0 oder 255, Vorschau „192.168.40.?“; bei /8, /16, /24
   „nichts zu rechnen“), 6 Blöcke (Blockgröße = Stellenwert des letzten Netzbits = 256 − Maske, Zahlenstrahl mit Netzbit-Codes),
   7 Dein Block (Anfang und Ende raten, falsche Antworten erklärt, v. a. „128 + 64 = 192 ist schon der nächste Block“, Lupe

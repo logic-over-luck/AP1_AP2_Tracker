@@ -715,7 +715,6 @@ function Maske({ z, praefix, setPraefix }) {
   const maske = oktetteVon(m).join('.');
   const k = z.netzBitsImOktett;
   const nr = z.index + 1;
-  const summanden = STELLENWERTE.slice(0, k);
   return (
     <div class="sv-inhalt">
       <p class="sv-text">
@@ -727,18 +726,23 @@ function Maske({ z, praefix, setPraefix }) {
         <span class="sv-paar__name">Deine Adresse</span>
         <Bitband zahl={z.zahl} praefix={praefix} />
         <span class="sv-paar__name">Subnetzmaske: Netzbits → 1, Hostbits → 0</span>
-        <Bitband zahl={m} praefix={praefix} />
+        <Bitband zahl={m} praefix={praefix} unter={[0, 1, 2, 3].map((o) => `${o + 1}. Oktett`)} />
       </div>
-      <p class="sv-formel mono">
-        {k > 0 ? (
-          <>
-            {nr}. Oktett: {'1'.repeat(k)}
-            {'0'.repeat(8 - k)} → {summanden.join(' + ')} = <strong>{z.maskenwert}</strong>
-          </>
-        ) : (
-          <>Der Strich liegt genau zwischen zwei Oktetten – in der Subnetzmaske stehen nur 255 und 0.</>
-        )}
-      </p>
+      <div class="sv-mrechnung" aria-label="Rechnung je Oktett">
+        {netzBitsJeOktett(praefix).map((einsen, o) => (
+          <div key={o} class={`sv-mrechnung__zeile ${einsen > 0 && einsen < 8 ? 'sv-mrechnung__zeile--strich' : ''}`}>
+            <span class="sv-mrechnung__name">{o + 1}. Oktett</span>
+            <span class="sv-mrechnung__bits mono">
+              <span class="sv-farbe-netz">{'1'.repeat(einsen)}</span>
+              <span class="sv-farbe-host">{'0'.repeat(8 - einsen)}</span>
+            </span>
+            <span class="sv-mrechnung__summe mono">
+              → {einsen ? STELLENWERTE.slice(0, einsen).join(' + ') : 'keine Eins'} = <strong>{maskenwert(einsen)}</strong>
+            </span>
+          </div>
+        ))}
+        {k === 0 && <span class="sv-klein">Der Strich liegt genau zwischen zwei Oktetten – in der Subnetzmaske stehen nur 255 und 0.</span>}
+      </div>
       <div class="sv-masken">
         <span class="sv-masken__titel">Nur diese 9 Werte kann ein Oktett der Subnetzmaske haben. Von links immer den nächsten Stellenwert dazu:</span>
         <div class="sv-masken__reihe">
