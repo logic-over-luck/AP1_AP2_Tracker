@@ -45,7 +45,7 @@ const SCHRITTE = [
   { kurz: 'Aufbau', titel: 'Woraus besteht eine IP-Adresse?', Inhalt: Aufbau },
   { kurz: 'Bits', titel: 'Von der Zahl zu den Bits', Inhalt: Bits },
   { kurz: 'Präfix', titel: 'Der Präfix ist ein Trennstrich', Inhalt: Praefix },
-  { kurz: 'Maske', titel: 'Die Maske ist der Strich als Zahl', Inhalt: Maske },
+  { kurz: 'Subnetzmaske', titel: 'Die Subnetzmaske ist der Strich als Zahl', Inhalt: Maske },
   { kurz: 'Oktett', titel: 'Gerechnet wird nur in einem Oktett', Inhalt: Oktett },
   { kurz: 'Blöcke', titel: 'Das Oktett in Blöcke schneiden', Inhalt: Bloecke },
   { kurz: 'Dein Block', titel: 'Wo beginnt und wo endet dein Block?', Inhalt: DeinBlock, frisch: true },
@@ -719,13 +719,14 @@ function Maske({ z, praefix, setPraefix }) {
   return (
     <div class="sv-inhalt">
       <p class="sv-text">
-        Die Maske ist <strong>derselbe Strich, nur als Zahl geschrieben</strong>: Jedes Netzbit wird eine <strong>1</strong>, jedes Hostbit eine <strong>0</strong>. Dann rechnet
-        man jedes Oktett in eine Dezimalzahl um – wie eben in Schritt 2.
+        Die <strong>Subnetzmaske</strong> (auch Netzmaske, kurz Maske) ist <strong>derselbe Strich, nur als Zahl geschrieben</strong>: Jedes Netzbit wird eine <strong>1</strong>,
+        jedes Hostbit eine <strong>0</strong>. Dann rechnet man jedes Oktett in eine Dezimalzahl um – wie eben in Schritt 2. Präfix (/{praefix}) und Subnetzmaske sind also zwei
+        Schreibweisen derselben Sache.
       </p>
       <div class="sv-paar">
         <span class="sv-paar__name">Deine Adresse</span>
         <Bitband zahl={z.zahl} praefix={praefix} />
-        <span class="sv-paar__name">Maske: Netzbits → 1, Hostbits → 0</span>
+        <span class="sv-paar__name">Subnetzmaske: Netzbits → 1, Hostbits → 0</span>
         <Bitband zahl={m} praefix={praefix} />
       </div>
       <p class="sv-formel mono">
@@ -735,11 +736,11 @@ function Maske({ z, praefix, setPraefix }) {
             {'0'.repeat(8 - k)} → {summanden.join(' + ')} = <strong>{z.maskenwert}</strong>
           </>
         ) : (
-          <>Der Strich liegt genau zwischen zwei Oktetten – in der Maske stehen nur 255 und 0.</>
+          <>Der Strich liegt genau zwischen zwei Oktetten – in der Subnetzmaske stehen nur 255 und 0.</>
         )}
       </p>
       <div class="sv-masken">
-        <span class="sv-masken__titel">Nur diese 9 Werte kann ein Masken-Oktett haben. Von links immer den nächsten Stellenwert dazu:</span>
+        <span class="sv-masken__titel">Nur diese 9 Werte kann ein Oktett der Subnetzmaske haben. Von links immer den nächsten Stellenwert dazu:</span>
         <div class="sv-masken__reihe">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
             <div key={n} class={`sv-masken__zelle ${n === k && n > 0 ? 'sv-masken__zelle--aktiv' : ''}`}>
@@ -750,11 +751,11 @@ function Maske({ z, praefix, setPraefix }) {
         </div>
       </div>
       <p class="sv-formel mono">
-        /{praefix} = <strong>{maske}</strong>
+        /{praefix} = Subnetzmaske <strong>{maske}</strong>
       </p>
       <StrichKnoepfe praefix={praefix} setPraefix={setPraefix} />
       <Merke>
-        <span class="mono">/{praefix}</span> und <span class="mono">{maske}</span> sagen dasselbe:{' '}
+        Der Präfix <span class="mono">/{praefix}</span> und die Subnetzmaske <span class="mono">{maske}</span> sagen dasselbe:{' '}
         <strong>
           {praefix} Einsen, dann {32 - praefix} Nullen.
         </strong>
@@ -865,7 +866,7 @@ function Bloecke({ z, praefix, setPraefix }) {
             ))}
           </div>
           <p class="sv-blockgr__text">
-            Abkürzung: <strong>Blockgröße = Stellenwert des letzten Netzbits = {z.block}</strong>. Probe: 256 − {z.maskenwert} (Maske) = {z.block}.
+            Abkürzung: <strong>Blockgröße = Stellenwert des letzten Netzbits = {z.block}</strong>. Probe: 256 − {z.maskenwert} (Subnetzmaske) = {z.block}.
           </p>
         </div>
       )}
@@ -1222,8 +1223,8 @@ function Gateway({ z, ip, praefix }) {
   return (
     <div class="sv-inhalt">
       <p class="sv-text">
-        Bevor dein PC ein Paket losschickt, prüft er <strong>selbst</strong>: Liegt das Ziel in meinem Netz? Dazu nimmt er <strong>seine eigene Maske</strong>, rechnet damit die
-        Netzadresse des Ziels aus und vergleicht sie mit seiner. Gleich → direkt hin. Verschieden → ab zum <strong>Standardgateway</strong> (dem Router).
+        Bevor dein PC ein Paket losschickt, prüft er <strong>selbst</strong>: Liegt das Ziel in meinem Netz? Dazu nimmt er <strong>seine eigene Subnetzmaske</strong>, rechnet damit
+        die Netzadresse des Ziels aus und vergleicht sie mit seiner. Gleich → direkt hin. Verschieden → ab zum <strong>Standardgateway</strong> (dem Router).
       </p>
       <div class="sv-pc">
         <span class="sv-pc__teil">
@@ -1262,8 +1263,8 @@ function Gateway({ z, ip, praefix }) {
         {eigenesZiel && <ZielKarte ziel={eigenesZiel} meinNetz={n.netz} praefix={praefix} antwort="gezeigt" />}
       </div>
       <Merke>
-        „Netz“ ist eine <strong>Rechnung im PC</strong> (eigene IP + eigene Maske), kein Kabel. Darum brauchen alle Geräte eines Netzes dieselbe Maske – und das Gateway muss selbst
-        im eigenen Netz liegen.
+        „Netz“ ist eine <strong>Rechnung im PC</strong> (eigene IP + eigene Subnetzmaske), kein Kabel. Darum brauchen alle Geräte eines Netzes dieselbe Subnetzmaske – und das
+        Gateway muss selbst im eigenen Netz liegen.
       </Merke>
     </div>
   );
