@@ -1,7 +1,10 @@
 /* Subnetz „Verstehen“: Lernblock in Schritten (Verstehen.jsx). Eigenständig (Präfix sv-), nur Tokens aus tokens.css.
-   Die Farben bedeuten überall dasselbe: Netz = Akzent, Host = grau, Trennstrich = --warn, reserviert = --fehler. */
+   Die Farben bedeuten überall dasselbe: Netz = Akzent (grün), Host = --info (blau), Trennstrich = --warn, reserviert = --fehler. */
 
 .sv {
+  --sv-host: var(--info);
+  --sv-host-flaeche: color-mix(in srgb, var(--info) 42%, var(--flaeche-2));
+  --sv-host-weich: color-mix(in srgb, var(--info) 14%, transparent);
   --sv-strich: var(--warn);
   --sv-res: var(--fehler);
   --sv-bitluecke: 3px;
@@ -13,10 +16,13 @@
 .sv strong {
   color: var(--text);
 }
-.sv-farbe-netz {
+.sv .sv-farbe-netz {
   color: var(--akzent);
 }
-.sv-farbe-res {
+.sv .sv-farbe-host {
+  color: var(--sv-host);
+}
+.sv .sv-farbe-res {
   color: var(--sv-res);
 }
 .sv-klein {
@@ -75,6 +81,27 @@
   font-size: var(--t-xl);
   font-weight: 600;
   color: var(--akzent);
+}
+.sv-farben {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
+  margin-left: auto;
+  padding-bottom: 10px;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sv-farben > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sv-farben__strich {
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--sv-strich);
 }
 .sv-leiste__hinweis {
   flex-basis: 100%;
@@ -315,6 +342,10 @@
 .sv-bit--neutral {
   color: var(--text);
 }
+.sv-bit--host {
+  background: var(--sv-host-flaeche);
+  color: var(--text);
+}
 .sv-bit--netz {
   background: var(--akzent);
   color: var(--akzent-text);
@@ -379,6 +410,10 @@
 }
 .sv-band__nr--netz {
   color: var(--akzent);
+  opacity: 0.75;
+}
+.sv-band__nr--host {
+  color: var(--sv-host);
   opacity: 0.75;
 }
 .sv-band__nr--grenze {
@@ -517,8 +552,8 @@
     border-color var(--dauer) var(--kurve);
 }
 .sv-tafel__spalte--jetzt {
-  border-color: color-mix(in srgb, var(--info) 50%, transparent);
-  background: color-mix(in srgb, var(--info) 8%, transparent);
+  border-color: var(--linie-3);
+  background: var(--flaeche-2);
 }
 .sv-tafel__wert {
   text-align: center;
@@ -527,7 +562,7 @@
 }
 .sv-tafel__wert--an {
   font-weight: 600;
-  color: var(--info);
+  color: var(--text);
 }
 .sv-tafel__bit {
   display: grid;
@@ -544,8 +579,8 @@
     color var(--dauer) var(--kurve);
 }
 .sv-tafel__bit--an {
-  border-color: color-mix(in srgb, var(--info) 55%, transparent);
-  background: color-mix(in srgb, var(--info) 22%, var(--flaeche-3));
+  border-color: var(--text-3);
+  background: var(--flaeche-4);
   color: var(--text);
 }
 .sv-tafel__bit--frage {
@@ -604,6 +639,9 @@ button.sv-tafel__bit:hover {
 }
 .sv-anschrift__teil--netz {
   border-left-color: var(--akzent);
+}
+.sv-anschrift__teil--host {
+  border-left-color: var(--sv-host);
 }
 .sv-anschrift__name {
   font-weight: 600;
@@ -731,8 +769,8 @@ button.sv-tafel__bit:hover {
   color: var(--sv-strich);
 }
 .sv-okt--host .sv-okt__rolle {
-  background: var(--flaeche-4);
-  color: var(--text-2);
+  background: var(--sv-host-weich);
+  color: var(--sv-host);
 }
 .sv-okt__text {
   font-size: var(--t-s);
@@ -783,8 +821,8 @@ button.sv-tafel__bit:hover {
   color: var(--sv-strich);
 }
 .sv-ip__teil--host {
-  background: var(--flaeche-3);
-  color: var(--text-2);
+  background: var(--sv-host-weich);
+  color: var(--sv-host);
 }
 .sv-ip__punkt {
   color: var(--text-4);
@@ -812,12 +850,9 @@ button.sv-tafel__bit:hover {
 .sv-legende__farbe--strich {
   background: var(--sv-strich);
 }
-.sv-legende__farbe--host {
-  background: var(--flaeche-4);
-  box-shadow: inset 0 0 0 1px var(--linie-3);
-}
+.sv-legende__farbe--host,
 .sv-legende__farbe--geraet {
-  background: var(--akzent);
+  background: var(--sv-host);
 }
 .sv-legende__farbe--res {
   background: var(--sv-res);
@@ -841,9 +876,9 @@ button.sv-tafel__bit:hover {
   height: 32px;
   border-radius: 4px;
   border: 1px solid transparent;
-  background: var(--flaeche-3);
+  background: var(--sv-host-weich);
   font-size: var(--t-m);
-  color: var(--text-3);
+  color: var(--sv-host);
 }
 .sv-blockgr__zelle--netz {
   background: var(--akzent-weich);
@@ -1183,7 +1218,7 @@ button.sv-tafel__bit:hover {
   color: var(--sv-res);
 }
 .sv-stueck__marke--host {
-  color: var(--info);
+  color: var(--sv-host);
 }
 .sv-stueck__balken {
   position: relative;
@@ -1212,7 +1247,7 @@ button.sv-tafel__bit:hover {
 }
 .sv-stueck__balken--start-host::before,
 .sv-stueck__balken--ende-host::after {
-  background: var(--info);
+  background: var(--sv-host);
 }
 .sv-hb {
   display: grid;
@@ -1255,7 +1290,7 @@ button.sv-tafel__bit:hover {
   font-weight: 600;
 }
 .sv-hb__urteil--host {
-  color: var(--info);
+  color: var(--sv-host);
 }
 .sv-hb__urteil--res {
   color: var(--sv-res);
@@ -1357,7 +1392,7 @@ button.sv-tafel__bit:hover {
   shape-rendering: crispEdges;
 }
 .sv-balken__geraet {
-  fill: var(--akzent);
+  fill: var(--sv-host);
 }
 .sv-balken__res {
   fill: var(--sv-res);
@@ -1378,7 +1413,7 @@ button.sv-tafel__bit:hover {
   overflow: hidden;
 }
 .sv-anteil__geraet {
-  background: var(--akzent);
+  background: var(--sv-host);
 }
 .sv-anteil__res {
   min-width: 3px;
@@ -1550,6 +1585,11 @@ button.sv-tafel__bit:hover {
   }
   .sv-leiste__ip {
     width: 190px;
+  }
+  .sv-farben {
+    margin-left: 0;
+    padding-bottom: 0;
+    flex-basis: 100%;
   }
   .sv-weg__knopf {
     min-width: 24px;

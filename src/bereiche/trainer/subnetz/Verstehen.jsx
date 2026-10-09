@@ -1,6 +1,6 @@
 // Subnetting verstehen: ein Lernblock in zwölf ruhigen Schritten an einer Adresse. Jeder Schritt zeigt eine Idee;
 // an den wichtigen Stellen wird erst geraten und dann aufgedeckt. Die Farben bedeuten überall dasselbe:
-// Netz grün (Akzent), Host grau, Trennstrich orange, reserviert rot. Rechnung in lernweg.js und ip.js (getestet).
+// Netz grün (Akzent), Host blau, Trennstrich orange, reserviert rot. Rechnung in lernweg.js und ip.js (getestet).
 // Der Visualizer bleibt der Modus zum Nachschlagen.
 
 import { Fragment } from 'preact';
@@ -131,6 +131,20 @@ export function SubnetzVerstehen() {
             </button>
           </div>
         </div>
+        <div class="sv-farben" aria-label="Farben in allen Schritten">
+          <span>
+            <i class="sv-legende__farbe sv-legende__farbe--netz" /> Netz
+          </span>
+          <span>
+            <i class="sv-legende__farbe sv-legende__farbe--host" /> Host
+          </span>
+          <span>
+            <i class="sv-farben__strich" /> Trennstrich
+          </span>
+          <span>
+            <i class="sv-legende__farbe sv-legende__farbe--res" /> reserviert
+          </span>
+        </div>
         {art !== 'host' && (
           <p class="sv-leiste__hinweis">
             <Icon name="info" groesse={14} />
@@ -231,7 +245,7 @@ function Hinweis({ icon = 'info', ton = '', children }) {
 }
 
 // Die 32 Bits einer Adresse in vier Oktetten (auf schmalen Bildschirmen zwei je Zeile). Ohne Präfix sind alle Bits
-// neutral; mit Präfix sind die Bits davor grün (Netz), danach grau (Host), und hinter Bit `praefix` steht der Strich.
+// neutral; mit Präfix sind die Bits davor grün (Netz), danach blau (Host), und hinter Bit `praefix` steht der Strich.
 // dezimal: Zahl über jedem Oktett · klammer: Klammer zwischen Zahl und Bits · nummern: Bitnummer 1 … 32 darunter
 // unter: Text je Oktett · gefuellt: false zeigt erst alles grau · einlauf: Bits färben sich nacheinander
 function Bitband({ zahl, praefix = null, dezimal = true, klammer = false, nummern = false, unter = null, gefuellt = true, einlauf = false }) {
@@ -261,7 +275,7 @@ function Bitband({ zahl, praefix = null, dezimal = true, klammer = false, nummer
                 {Array.from({ length: 8 }, (_, j) => {
                   const nr = o * 8 + j + 1;
                   return (
-                    <span key={j} class={nr === praefix ? 'sv-band__nr--grenze' : nr <= praefix ? 'sv-band__nr--netz' : ''}>
+                    <span key={j} class={nr === praefix ? 'sv-band__nr--grenze' : nr <= praefix ? 'sv-band__nr--netz' : 'sv-band__nr--host'}>
                       {nr}
                     </span>
                   );
@@ -629,29 +643,32 @@ function Praefix({ z, praefix, setPraefix }) {
     n === 8 ? (
       <span class="sv-farbe-netz">8 Netz</span>
     ) : n === 0 ? (
-      '8 Host'
+      <span class="sv-farbe-host">8 Host</span>
     ) : (
       <>
-        <span class="sv-farbe-netz">{n} Netz</span> · {8 - n} Host
+        <span class="sv-farbe-netz">{n} Netz</span> · <span class="sv-farbe-host">{8 - n} Host</span>
       </>
     ),
   );
   return (
     <div class="sv-inhalt">
       <p class="sv-text">
-        Zu jeder Adresse gehört ein Präfix, hier <strong class="mono">/{praefix}</strong>. Er heißt: <strong>Die ersten {praefix} Bits sind das Netz.</strong> Nach Bit {praefix}{' '}
-        kommt ein Strich. Alles rechts davon ist der <strong>Host</strong> – das einzelne Gerät.
+        Zu jeder Adresse gehört ein Präfix, hier <strong class="mono">/{praefix}</strong>. Er heißt:{' '}
+        <strong>
+          Die ersten {praefix} Bits sind das <span class="sv-farbe-netz">Netz</span>.
+        </strong>{' '}
+        Nach Bit {praefix} kommt ein Strich. Alles rechts davon ist der <strong class="sv-farbe-host">Host</strong> – das einzelne Gerät.
       </p>
       <Bitband zahl={z.zahl} praefix={praefix} nummern unter={unter} gefuellt={gefuellt} einlauf={einlauf} />
       <p class="sv-formel mono">
-        {k.filter((n) => n > 0).join(' + ')} = <span class="sv-farbe-netz">{praefix} Netzbits</span> · 32 − {praefix} = <strong>{h} Hostbits</strong>
+        {k.filter((n) => n > 0).join(' + ')} = <span class="sv-farbe-netz">{praefix} Netzbits</span> · 32 − {praefix} = <strong class="sv-farbe-host">{h} Hostbits</strong>
       </p>
       <div class="sv-anschrift">
         <div class="sv-anschrift__teil sv-anschrift__teil--netz">
           <span class="sv-anschrift__name">Netzteil = Straße</span>
           <span>Bei allen Geräten im selben Netz exakt gleich.</span>
         </div>
-        <div class="sv-anschrift__teil">
+        <div class="sv-anschrift__teil sv-anschrift__teil--host">
           <span class="sv-anschrift__name">Hostteil = Hausnummer</span>
           <span>
             Für jedes Gerät anders. {h} Hostbits ergeben 2<sup>{h}</sup> = <strong>{tausend(2 ** h)}</strong> Nummern je Netz.
@@ -1294,7 +1311,7 @@ function Aufteilen({ praefix, setPraefix }) {
       <AdressBalken praefix={praefix} jetzt={jetzt} gesamt={gesamt} />
       <div class="sv-legende">
         <span>
-          <i class="sv-legende__farbe sv-legende__farbe--geraet" /> für Geräte
+          <i class="sv-legende__farbe sv-legende__farbe--geraet" /> für Geräte (Hosts)
         </span>
         <span>
           <i class="sv-legende__farbe sv-legende__farbe--res" /> reserviert (Netzadresse + Broadcast)

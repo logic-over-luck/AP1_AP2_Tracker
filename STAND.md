@@ -152,7 +152,7 @@ nächsten offenen Punkt weiter.
 - **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer, von Grund auf neu gebaut (`subnetz/Verstehen.jsx`, Rechnung in
   `lernweg.js` + `ip.js`, getestet in `tests/subnetz.test.mjs`, Stile `subnetz-lernen.css` mit Präfix `sv-`). Zwölf ruhige
   Schritte an einer Adresse (oben IP und Präfix /8 … /30, Start 192.168.40.150/26), je Schritt eine Idee. Leitbild:
-  Straße (Netz) + Hausnummer (Host). Farben überall gleich: Netz grün (Akzent), Host grau, Strich orange, reserviert rot.
+  Straße (Netz) + Hausnummer (Host). Farben überall gleich und oben in der Leiste als Legende: Netz grün (Akzent), Host blau (--info), Strich orange, reserviert rot (auf Wunsch Host blau statt grau, damit Netz und Host klar unterscheidbar sind).
   1 Aufbau (für dich / für den Computer, 4 × 8 Bit, drei Erklärkästen – wie gewünscht beibehalten), 2 Bits (Stellenwert-Tafel,
   Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten), 3 Präfix (Netzbits färben sich ein, Strich,
   Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Maske (Adresse und Maske übereinander,
