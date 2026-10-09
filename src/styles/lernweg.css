@@ -72,9 +72,8 @@
 }
 /* ---------- Lernweg ---------- */
 .lw-lernweg {
-  --lw-pfeil: 32px;
   display: grid;
-  gap: var(--s-8);
+  gap: var(--s-10);
   min-width: 0;
 }
 .lw-start {
@@ -115,173 +114,202 @@
   font-weight: 600;
   color: var(--akzent);
 }
+/* Block als Kapitel: links der Kopf, rechts die Lektionen */
 .lw-block {
   display: grid;
-  gap: var(--s-4);
+  grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+  gap: var(--s-4) var(--s-10);
   min-width: 0;
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--linie);
+}
+.lw-start + .lw-block {
+  padding-top: var(--s-2);
+  border-top: 0;
 }
 .lw-block__kopf {
   display: grid;
-  gap: var(--s-1);
-}
-.lw-block__titelzeile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--s-2) var(--s-3);
+  align-content: start;
+  gap: var(--s-2);
+  min-width: 0;
 }
 .lw-block__nr {
-  font-family: var(--mono);
   font-size: var(--t-xs);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--akzent);
+  color: var(--text-4);
 }
 .lw-block__titel {
   margin: 0;
   font-size: var(--t-xl);
   font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--text);
-}
-.lw-block__stand {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 1px var(--s-2);
-  border-radius: var(--r-rund);
-  background: var(--flaeche-3);
-  font-family: var(--mono);
-  font-size: var(--t-s);
-  color: var(--text-3);
-}
-.lw-block--fertig .lw-block__stand {
-  background: var(--akzent-weich);
-  color: var(--akzent);
 }
 .lw-block__text {
   font-size: var(--t-m);
+  line-height: 1.55;
   color: var(--text-3);
 }
-/* Schlange */
-.lw-schlange {
+.lw-block__stand {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+}
+.lw-block__balken {
+  flex: 1;
+  max-width: 120px;
+  height: 3px;
+  border-radius: var(--r-rund);
+  background: var(--flaeche-4);
+  overflow: hidden;
+}
+.lw-block__balken > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--akzent);
+  transition: width var(--dauer-lang) var(--kurve);
+}
+.lw-block__zahl {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--t-s);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-3);
+}
+.lw-block--fertig .lw-block__zahl {
+  color: var(--akzent);
+}
+.lw-block__inhalt {
+  display: grid;
+  gap: var(--s-3);
+  min-width: 0;
+}
+/* Lektionsliste mit Statuspunkten; die Linie zwischen den Punkten füllt sich mit dem Fortschritt */
+.lw-liste {
+  --lw-punkt: 28px;
+  --lw-rand: var(--s-3);
   display: grid;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.lw-schlange__reihe {
-  display: grid;
-  align-items: stretch;
+.lw-liste__eintrag {
+  position: relative;
 }
-.lw-schlange--spalte {
-  gap: 0;
+.lw-liste__eintrag::before,
+.lw-liste__eintrag::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--lw-rand) + var(--lw-punkt) / 2 - 1px);
+  width: 2px;
+  background: var(--linie-2);
+  pointer-events: none;
 }
-.lw-schlange__glied {
-  display: grid;
-  justify-items: stretch;
+.lw-liste__eintrag::before {
+  top: 0;
+  height: calc(50% - var(--lw-punkt) / 2 - 3px);
 }
-.lw-kachel {
+.lw-liste__eintrag::after {
+  bottom: 0;
+  height: calc(50% - var(--lw-punkt) / 2 - 3px);
+}
+.lw-liste__eintrag:first-child::before,
+.lw-liste__eintrag:last-child::after {
+  display: none;
+}
+.lw-liste__eintrag--verstanden::after,
+.lw-liste__eintrag--vorher::before {
+  background: var(--akzent-linie);
+}
+.lw-zeile {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 2px;
-  min-width: 0;
-  min-height: 132px;
-  padding: var(--s-3) var(--s-4);
-  border-radius: var(--r-3);
-  border: 1px solid var(--linie-2);
-  background: var(--flaeche-1);
+  grid-template-columns: var(--lw-punkt) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  width: 100%;
+  padding: var(--s-3) var(--lw-rand);
+  border-radius: var(--r-2);
   text-align: left;
   color: var(--text-2);
-  transition:
-    border-color var(--dauer) var(--kurve),
-    background var(--dauer) var(--kurve),
-    transform var(--dauer) var(--kurve);
+  transition: background var(--dauer) var(--kurve);
 }
-.lw-kachel:hover {
-  border-color: var(--linie-3);
+.lw-zeile:hover {
   background: var(--flaeche-2);
-  transform: translateY(-1px);
 }
-.lw-kachel__nr {
-  font-size: var(--t-s);
-  font-weight: 600;
-  color: var(--text-4);
-}
-.lw-kachel__begriff {
-  font-size: var(--t-l);
-  font-weight: 650;
-  line-height: 1.25;
-  color: var(--text);
-}
-.lw-kachel__frage {
-  font-size: var(--t-m);
-  line-height: 1.4;
-  color: var(--text-3);
-}
-.lw-kachel__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: var(--s-2);
-  font-size: var(--t-s);
-  color: var(--text-4);
-}
-.lw-kachel--verstanden {
-  border-color: var(--akzent-linie);
-}
-.lw-kachel--verstanden .lw-kachel__nr,
-.lw-kachel--verstanden .lw-kachel__status {
-  color: var(--akzent);
-}
-.lw-kachel--naechste {
-  border-color: var(--akzent);
-  background: var(--akzent-weich);
-  box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.12);
-}
-.lw-kachel--naechste .lw-kachel__nr {
-  color: var(--akzent);
-}
-.lw-kachel--naechste .lw-kachel__status {
-  align-self: end;
-  justify-self: start;
-  padding: 2px var(--s-2);
-  border-radius: var(--r-rund);
-  background: var(--akzent);
-  font-weight: 600;
-  color: var(--akzent-text);
-}
-.lw-kachel--offen .lw-kachel__begriff {
-  color: var(--text-2);
-}
-/* Pfeile */
-.lw-pfeil {
+.lw-zeile__punkt {
   display: grid;
   place-items: center;
+  width: var(--lw-punkt);
+  height: var(--lw-punkt);
+  border-radius: 50%;
+  border: 1.5px solid var(--linie-3);
+  background: var(--flaeche-1);
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-3);
 }
-.lw-pfeil svg,
-.lw-kurve svg {
-  display: block;
-  overflow: visible;
+.lw-zeile__text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
 }
-.lw-pfeil path,
-.lw-kurve path {
-  fill: none;
-  stroke: var(--linie-3);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.lw-zeile__begriff {
+  font-size: var(--t-n);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
 }
-.lw-pfeil--fertig path {
-  stroke: var(--akzent);
+.lw-zeile__frage {
+  font-size: var(--t-m);
+  line-height: 1.45;
+  color: var(--text-3);
 }
-.lw-pfeil--runter {
-  height: 32px;
+.lw-zeile__pfeil {
+  color: var(--text-4);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity var(--dauer) var(--kurve),
+    transform var(--dauer) var(--kurve);
 }
-.lw-kurve {
-  display: block;
-  height: 44px;
-  margin: 4px 0;
+.lw-zeile:hover .lw-zeile__pfeil,
+.lw-zeile:focus-visible .lw-zeile__pfeil {
+  opacity: 1;
+  transform: none;
+}
+.lw-zeile__marke {
+  padding: 3px var(--s-2);
+  border-radius: var(--r-rund);
+  background: var(--akzent);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--akzent-text);
+}
+.lw-zeile--verstanden .lw-zeile__punkt {
+  border-color: var(--akzent);
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.lw-zeile--naechste {
+  background: var(--akzent-weich);
+}
+.lw-zeile--naechste:hover {
+  background: rgba(var(--akzent-rgb), 0.18);
+}
+.lw-zeile--naechste .lw-zeile__punkt {
+  border-color: var(--akzent);
+  box-shadow: 0 0 0 4px rgba(var(--akzent-rgb), 0.15);
+  color: var(--akzent);
+}
+.lw-zeile--offen .lw-zeile__begriff {
+  color: var(--text-2);
 }
 /* Merkzettel je Block */
 .lw-merk__knopf {
@@ -289,6 +317,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--s-2);
+  margin-left: var(--s-3);
   padding: var(--s-1) 0;
   font-size: var(--t-m);
   color: var(--text-3);
@@ -1261,8 +1290,20 @@
   .lw-start__aktion {
     justify-items: stretch;
   }
-  .lw-kachel {
-    min-height: 0;
+  .lw-block {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: var(--s-6);
+  }
+  .lw-liste {
+    --lw-punkt: 26px;
+    --lw-rand: var(--s-2);
+  }
+  .lw-zeile {
+    gap: var(--s-3);
+  }
+  .lw-zeile__pfeil {
+    opacity: 1;
+    transform: none;
   }
   .lw-merk {
     padding: var(--s-3) var(--s-4);

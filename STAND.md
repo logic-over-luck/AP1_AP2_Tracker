@@ -78,7 +78,7 @@ nächsten offenen Punkt weiter.
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
 - Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan & Projektplanung (mit Tests für Erzeuger und Prüfer)
-- Subnetz-Trainer neu aufgestellt (Abschnitt 6): drei Räume, Lernweg mit 23 Lektionen als Schlange, jede Lektion gleich
+- Subnetz-Trainer neu aufgestellt (Abschnitt 6): drei Räume, Lernweg mit 23 Lektionen als Kapitel-Liste, jede Lektion gleich
   aufgebaut (Erklärung in Schritten, Prüfungsdefinition, Ausprobieren, Stolperfallen, Check), 10 Übungen nach Themen;
   Tests für `braucht`, Kompetenz-Abdeckung, Checks und Übungen; im Browser auf Desktop und Handy (390 px) durchgeklickt
 - Zahlen-Trainer mit Räumen Verstehen und Üben (Abschnitt 7): Lernweg mit 13 Lektionen (Zahlensysteme, Datenmengen,
@@ -412,12 +412,13 @@ Fortschritt: `useEinstellung('subnetz.lernweg', [])` (Liste der verstandenen Lek
 
 ### 6.4 Lernweg-Ansicht
 
-Je Block: Titel, ein Satz, Fortschritt (z. B. 3/5) und ein aufklappbarer **Merkzettel** mit allen Definitionen
-des Blocks (eigene Idee: Wiederholen vor der Prüfung). Darunter die Lektionen als kleine Kacheln (Nummer, Begriff,
-Leitfrage, Status ✓ verstanden / als Nächstes / noch nicht dran) als **Schlange**: Reihen von links nach rechts mit
-Pfeilen, am Reihenende ein geschwungener Pfeil zurück zum Anfang der nächsten Reihe. Die Zahl der Spalten richtet
-sich nach der Breite; am Handy eine Spalte mit Pfeilen nach unten. Auch „noch nicht dran“ lässt sich öffnen
-(zum Hineinschauen); der Kopf der Lektion zeigt dann, was vorher fehlt.
+Je Block ein **Kapitel**: links „Block N“, Titel, ein Satz und ein schmaler Fortschrittsbalken („3 von 5“), rechts
+die Lektionen als ruhige Liste (Begriff, Leitfrage). Vor jeder Lektion ein runder Statuspunkt: Nummer (noch nicht
+dran), Akzent-Ring mit Marke „Als Nächstes“ und hinterlegter Zeile, gefüllter Punkt mit ✓ (verstanden). Eine dünne
+Linie verbindet die Punkte und färbt sich, soweit verstanden ist. Unter der Liste ein aufklappbarer **Merkzettel**
+mit allen Definitionen des Blocks (eigene Idee: Wiederholen vor der Prüfung). Am Handy steht der Kopf über der
+Liste. Auf Wunsch ersetzt diese Liste die frühere „Schlange“ aus Kacheln mit Pfeilen (zu unruhig). Auch „noch nicht
+dran“ lässt sich öffnen (zum Hineinschauen); der Kopf der Lektion zeigt dann, was vorher fehlt.
 
 ### 6.5 Kompetenz → Lektion
 
@@ -598,7 +599,7 @@ pruefen.js        Check-Antworten prüfen; Typen zahl, dezimal (Komma, Toleranz)
                   eigene Typen mitgeben (Subnetz: ipv4, ipv6kurz, ipv6voll, iid)
 RaumTrainer.jsx   Kopf, Raum-Umschalter, „Gehört zu“; merkt sich die letzte Übung je Trainer
 Verstehen.jsx     Lernweg oder Lektion
-Lernweg.jsx       Schlange mit Kacheln, Merkzettel je Block
+Lernweg.jsx       Kapitel-Liste mit Statuspunkten, Merkzettel je Block
 Lektion.jsx       Rahmen einer Lektion (Kopf mit „Baut auf“ und Grundlagen, ① bis ④, Fuß mit „Weiter“ und Übung)
 Check.jsx         Kurz-Check
 Ueben.jsx         Übungen nach Blöcken, „Dazu im Lernweg“
