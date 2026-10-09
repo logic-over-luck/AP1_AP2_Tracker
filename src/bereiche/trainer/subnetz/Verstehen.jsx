@@ -610,40 +610,98 @@ function StrichKnoepfe({ praefix, setPraefix, links = 'Strich nach links', recht
 }
 
 // Zahlenstrahl 0 … 255 des Oktetts mit dem Strich, in Blöcke geschnitten. marke: Wert mit Stecknadel ·
-// aktiv: Anfang des hervorgehobenen Blocks · codes: die Netzbits jedes Blocks (nur bei wenigen Blöcken)
+// aktiv: Anfang des hervorgehobenen Blocks · codes: die Netzbits jedes Blocks (nur bei wenigen Blöcken).
+// Darunter immer eine Lupe auf den Block mit der Zahl und seine Nachbarn; Rahmen und Trichter zeigen, welcher Abschnitt das ist.
+const NACHBAR = { '-2': '2 Blöcke davor', '-1': 'Block davor', 1: 'Block danach', 2: '2 Blöcke danach' };
+
 function Strahl({ z, marke = null, aktiv = null, codes = false }) {
   const anzahl = 256 / z.block;
   const k = z.netzBitsImOktett;
   const jede = Math.max(1, anzahl / 8);
+  // Lupe: bis zu drei Blöcke um die Zahl der Adresse herum (am Rand verschoben, damit es immer drei sind)
+  const wert = marke ?? z.wert;
+  const mitte = Math.floor(wert / z.block);
+  const erster = Math.max(0, Math.min(mitte - 1, anzahl - 3));
+  const fenster = Array.from({ length: Math.min(3, anzahl) }, (_, i) => erster + i);
+  const von = fenster[0] * z.block;
+  const bis = (fenster[fenster.length - 1] + 1) * z.block - 1;
+  const prozent = (x) => (x / 256) * 100;
   return (
-    <div class="sv-strahl" role="img" aria-label={`Zahlen 0 bis 255, geschnitten in ${anzahl} ${anzahl === 1 ? 'Block' : 'Blöcke'} zu je ${z.block}`}>
-      {marke !== null && (
-        <div class="sv-strahl__nadelbahn">
-          <span class="sv-nadel" style={{ left: `${((marke + 0.5) / 256) * 100}%` }}>
-            <span class="sv-nadel__text mono">{marke}</span>
-          </span>
+    <div class="sv-strahl">
+      <div role="img" aria-label={`Zahlen 0 bis 255, geschnitten in ${anzahl} ${anzahl === 1 ? 'Block' : 'Blöcke'} zu je ${z.block}`}>
+        {marke !== null && (
+          <div class="sv-strahl__nadelbahn">
+            <span class="sv-nadel" style={{ left: `${((marke + 0.5) / 256) * 100}%` }}>
+              <span class="sv-nadel__text mono">{marke}</span>
+            </span>
+          </div>
+        )}
+        <div class={`sv-strahl__leiste ${anzahl > 32 ? 'sv-strahl__leiste--dicht' : ''}`}>
+          {Array.from({ length: anzahl }, (_, nr) => (
+            <span key={nr} class={`sv-block ${nr % 2 ? 'sv-block--zwei' : ''} ${aktiv === nr * z.block ? 'sv-block--aktiv' : ''}`}>
+              {codes && k > 0 && anzahl <= 8 && <span class="sv-block__code mono">{nr.toString(2).padStart(k, '0')}</span>}
+              {aktiv === nr * z.block && anzahl <= 4 && (
+                <span class="sv-block__bereich mono">
+                  {aktiv}–{aktiv + z.block - 1}
+                </span>
+              )}
+            </span>
+          ))}
+          {anzahl > 1 && <span class="sv-strahl__rahmen" style={{ left: `${prozent(von)}%`, width: `${prozent(bis - von + 1)}%` }} aria-hidden="true" />}
         </div>
+        <div class="sv-strahl__skala mono" aria-hidden="true">
+          {Array.from({ length: anzahl / jede }, (_, i) => i * jede * z.block).map((start) => (
+            <span key={start} class={`sv-strahl__zahl ${start === 0 ? 'sv-strahl__zahl--null' : ''}`} style={{ left: `${(start / 256) * 100}%` }}>
+              {start}
+            </span>
+          ))}
+          <span class="sv-strahl__zahl sv-strahl__zahl--ende">255</span>
+        </div>
+      </div>
+      {anzahl > 1 && (
+        <>
+          {/* Trichter: vom Rahmen auf dem Strahl hinunter zur Lupe – so sieht man, welcher Abschnitt vergrößert ist */}
+          <svg class="sv-trichter" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points={`${prozent(von)},0 ${prozent(bis + 1)},0 100,24 0,24`} class="sv-trichter__flaeche" />
+            <line x1={prozent(von)} y1="0" x2="0" y2="24" class="sv-trichter__linie" vector-effect="non-scaling-stroke" />
+            <line x1={prozent(bis + 1)} y1="0" x2="100" y2="24" class="sv-trichter__linie" vector-effect="non-scaling-stroke" />
+          </svg>
+          <div class="sv-lupe" aria-label={`Lupe: Ausschnitt ${von} bis ${bis}`}>
+            <span class="sv-lupe__titel">
+              <Icon name="search" groesse={13} /> Lupe auf {von}–{bis}
+            </span>
+            <div class="sv-lupe__bloecke">
+              {fenster.map((nr) => {
+                const start = nr * z.block;
+                const ende = start + z.block - 1;
+                const hier = nr === mitte;
+                return (
+                  <div key={nr} class={`sv-lupe__block ${aktiv === start ? 'sv-lupe__block--aktiv' : ''}`}>
+                    <div class="sv-lupe__balken">
+                      {z.block <= 4
+                        ? Array.from({ length: z.block }, (_, i) => (
+                            <span key={i} class={`sv-lupe__zelle mono ${start + i === wert ? 'sv-lupe__zelle--wert' : ''}`}>
+                              {start + i}
+                            </span>
+                          ))
+                        : hier && (
+                            <span class="sv-lupe__nadel" style={{ left: `${((wert - start + 0.5) / z.block) * 100}%` }}>
+                              <span class="mono">{wert}</span>
+                            </span>
+                          )}
+                    </div>
+                    <div class="sv-lupe__zahlen mono">
+                      <span>{start}</span>
+                      <span>{ende}</span>
+                    </div>
+                    <span class="sv-lupe__name">{aktiv === start ? 'dein Block' : hier ? `hier liegt die ${wert}` : NACHBAR[nr - mitte]}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </>
       )}
-      <div class={`sv-strahl__leiste ${anzahl > 32 ? 'sv-strahl__leiste--dicht' : ''}`}>
-        {Array.from({ length: anzahl }, (_, nr) => (
-          <span key={nr} class={`sv-block ${nr % 2 ? 'sv-block--zwei' : ''} ${aktiv === nr * z.block ? 'sv-block--aktiv' : ''}`}>
-            {codes && k > 0 && anzahl <= 8 && <span class="sv-block__code mono">{nr.toString(2).padStart(k, '0')}</span>}
-            {aktiv === nr * z.block && anzahl <= 4 && (
-              <span class="sv-block__bereich mono">
-                {aktiv}–{aktiv + z.block - 1}
-              </span>
-            )}
-          </span>
-        ))}
-      </div>
-      <div class="sv-strahl__skala mono" aria-hidden="true">
-        {Array.from({ length: anzahl / jede }, (_, i) => i * jede * z.block).map((start) => (
-          <span key={start} class={`sv-strahl__zahl ${start === 0 ? 'sv-strahl__zahl--null' : ''}`} style={{ left: `${(start / 256) * 100}%` }}>
-            {start}
-          </span>
-        ))}
-        <span class="sv-strahl__zahl sv-strahl__zahl--ende">255</span>
-      </div>
     </div>
   );
 }

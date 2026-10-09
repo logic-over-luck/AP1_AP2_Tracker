@@ -1015,6 +1015,125 @@ button.sv-tafel__bit:hover {
   font-size: var(--t-xs);
   color: var(--akzent);
 }
+.sv-strahl__leiste {
+  position: relative;
+}
+.sv-strahl__rahmen {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  min-width: 6px;
+  border: 2px solid var(--text-2);
+  border-radius: 5px;
+  pointer-events: none;
+}
+.sv-trichter {
+  display: block;
+  width: 100%;
+  max-width: 780px;
+  height: 22px;
+  margin-top: -2px;
+}
+.sv-trichter__flaeche {
+  fill: color-mix(in srgb, var(--text) 6%, transparent);
+}
+.sv-trichter__linie {
+  stroke: var(--text-3);
+  stroke-width: 1.5px;
+}
+.sv-lupe {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 780px;
+  padding: var(--s-3);
+  border-radius: var(--r-3);
+  border: 2px solid var(--text-3);
+  background: var(--flaeche-2);
+}
+.sv-lupe__titel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sv-lupe__bloecke {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--s-3);
+  padding-top: 24px;
+}
+.sv-lupe__block {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.sv-lupe__balken {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 40px;
+  border-radius: 5px;
+  background: var(--flaeche-4);
+}
+.sv-lupe__block--aktiv .sv-lupe__balken {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  box-shadow: inset 0 0 0 1.5px var(--akzent);
+}
+.sv-lupe__zelle {
+  flex: 1 1 0;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-radius: 4px;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sv-lupe__zelle--wert {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+}
+.sv-lupe__nadel {
+  position: absolute;
+  top: -22px;
+  bottom: 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  transform: translateX(-50%);
+}
+.sv-lupe__nadel span {
+  padding: 0 6px;
+  border-radius: var(--r-1);
+  background: var(--text);
+  color: var(--bg);
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+.sv-lupe__nadel::after {
+  content: '';
+  width: 2px;
+  height: 44px;
+  background: var(--text);
+}
+.sv-lupe__zahlen {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text);
+}
+.sv-lupe__name {
+  text-align: center;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sv-lupe__block--aktiv .sv-lupe__name {
+  color: var(--akzent);
+  font-weight: 600;
+}
 .sv-strahl__skala {
   position: relative;
   height: 16px;

@@ -156,7 +156,7 @@ nächsten offenen Punkt weiter.
 - **Subnetz „Verstehen“ als Lektionen** (`subnetz/Verstehen.jsx`, Rechnung `lernweg.js` + `ip.js`, Tests in
   `tests/subnetz.test.mjs`, Stile `subnetz-lernen.css` mit Präfix `sv-`). Eine Lektion je Begriff, in fester Reihenfolge,
   weil jeder Begriff auf den vorigen aufbaut: 1 IP-Adresse, 2 Binär (Bits umschalten ändert die IP oben mit), 3 Präfix,
-  4 Subnetzmaske (Rechnung für alle vier Oktette), 5 Netzadresse (Teile: ein Oktett, Blöcke, Blockanfang + zusammenbauen),
+  4 Subnetzmaske (Rechnung für alle vier Oktette), 5 Netzadresse (Teile: ein Oktett, Blöcke, Blockanfang + zusammenbauen; unter jedem Zahlenstrahl eine Lupe auf den Block mit der Zahl und seine Nachbarn, Rahmen + Trichter zeigen den vergrößerten Abschnitt, bei Blöcken bis 4 jede Zahl einzeln),
   6 Broadcast (Blockende mit dem Fehler „128 + 64 = 192 ist schon der nächste Block“, zusammenbauen, Bits 0…0/1…1),
   7 Hosts (Rahmen und Inneres aufdecken, 2^h − 2), 8 Netze unter /24 (x.255 als normaler Host), 9 Gateway, 10 Aufteilen,
   11 Rechenweg (mit „Jetzt du“). Jede Lektion endet mit einem Kurz-Check an einer neuen Adresse (172.16.8.100/27 bzw.
