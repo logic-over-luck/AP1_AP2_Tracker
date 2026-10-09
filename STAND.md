@@ -149,17 +149,24 @@ nächsten offenen Punkt weiter.
   wird streng gelesen (jede Nummer genau einmal, 0 … Höchstpunkte, halbe Punkte). Zeichenaufgaben werden nicht bewertet
   und im Ergebnis als „nicht ermittelt“ mit ihren Punkten ausgewiesen; Prozent und Note beziehen sich auf die
   ermittelten Punkte. Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
-- **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer (`subnetz/Verstehen.jsx`, Rechnung in `lernweg.js`,
-  getestet). Lernweg in zehn Schritten an einer Adresse (oben IP und Präfix, keine Beispiel-Knöpfe), jeder Schritt zeigt
-  nur eine Idee: Aufbau (für dich dezimal / für den Computer 32 Bits, 4 Oktette × 8 Bit, warum 0–255), Binär (Oktett
-  wählen, Bit für Bit „passt der Stellenwert in den Rest?“), Präfix als Trennstrich in vier Teilen, die nacheinander aufgedeckt werden (a Mitzählen: Bits
-  werden bis zum Präfix animiert grün, Zählreihe 1 … 32, danach Zoom auf das Oktett mit dem Strich: es wird groß,
-  die anderen grau, mit Stellenwerten, Netz-/Host-Klammern und Rechnung, z. B. Host 16 + 4 + 2 = 22; b drei PCs im Vergleich – selbes Netz links gleich, Nachbarnetz
-  links anders; c das geteilte Oktett als Deine Zahl / Netzanteil / Hostanteil, z. B. 150 = 128 + 22; d Ergebnis
-  Adresse = Netz + Gerät Nr., Hostbits → Adressen, Maske, danach Strich verschiebbar mit „halbiert/verdoppelt“),
-  Oktett finden, Blöcke schneiden, eigenen Block raten, Blockende raten (Fehler „Anfang des nächsten Blocks“ wird
-  erklärt, danach Anfang/Ende als Bits: alle Hostbits 0 bzw. 1), Broadcast selbst eingeben und Adress-Tabelle (Prüfungsfalle x.255 / (x+1).0 unter /24), Nachbar-Prüfung
-  (direkt oder über Gateway), Aufteilen-Tabelle. „Neue Adresse, von vorn“ am Ende wählt eine Zufallsadresse.
+- **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer, von Grund auf neu gebaut (`subnetz/Verstehen.jsx`, Rechnung in
+  `lernweg.js` + `ip.js`, getestet in `tests/subnetz.test.mjs`, Stile `subnetz-lernen.css` mit Präfix `sv-`). Zwölf ruhige
+  Schritte an einer Adresse (oben IP und Präfix /8 … /30, Start 192.168.40.150/26), je Schritt eine Idee. Leitbild:
+  Straße (Netz) + Hausnummer (Host). Farben überall gleich: Netz grün (Akzent), Host grau, Strich orange, reserviert rot.
+  1 Aufbau (für dich / für den Computer, 4 × 8 Bit, drei Erklärkästen – wie gewünscht beibehalten), 2 Bits (Stellenwert-Tafel,
+  Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten), 3 Präfix (Netzbits färben sich ein, Strich,
+  Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Maske (Adresse und Maske übereinander,
+  die 9 möglichen Oktettwerte), 5 Oktett (abschreiben / hier rechnen / 0 oder 255, Vorschau „192.168.40.?“; bei /8, /16, /24
+  „nichts zu rechnen“), 6 Blöcke (Blockgröße = Stellenwert des letzten Netzbits = 256 − Maske, Zahlenstrahl mit Netzbit-Codes),
+  7 Dein Block (Anfang und Ende raten, falsche Antworten erklärt, v. a. „128 + 64 = 192 ist schon der nächste Block“, Lupe
+  auf die Grenze, Anfang/Ende als Bits), 8 Adressen (erst Rahmen, dann Inneres aufdecken, 2^h − 2), 9 Unter /24 (bei /24 und
+  mehr dieselbe IP mit /23: Netz aus 256er-Stücken, Quiz „darf ein PC x.255 haben?“, Hostbits erklären es), 10 Gateway
+  (drei Ziele raten: direkt oder übers Gateway, Rechnung des PCs und Weg des Pakets, eigenes Ziel testbar), 11 Aufteilen
+  (Adressbalken: je Netz 2 rot, Tabelle Netze × Adressen, wozu kleine Netze), 12 Rechenweg (Prüfungsweg mit den eigenen
+  Zahlen, „Jetzt du“ mit Zufallsaufgabe und Prüfen, Link zu „Netz bestimmen“). Schrittleiste als Punkte (am Handy ohne
+  Namen), freie Navigation, Rätsel beginnen bei neuer IP/neuem Präfix von vorn. Am Handy (390 px) zwei Oktette je Zeile,
+  bei vielen Blöcken (z. B. /23 = 128) ein dichter Strahl mit Stecknadel. Geprüft für /8 … /30 (Tests) und im Browser
+  für /26, /24, /23, /30, /20, /8 auf Desktop und Handy.
 - **Subnetz-Visualizer:** zweiter Reiter im Subnetz-Trainer, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
   Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits

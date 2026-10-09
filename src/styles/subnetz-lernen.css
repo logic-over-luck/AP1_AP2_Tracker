@@ -1,1266 +1,1687 @@
-/* Subnetz „Verstehen“: Lernweg in Schritten. Baut auf subnetz-visual.css auf (Leiste, Bits, Tabellen). */
-.snl-praefix .snv-praefix__wert {
-  min-width: 3.4ch;
-  text-align: center;
+/* Subnetz „Verstehen“: Lernblock in Schritten (Verstehen.jsx). Eigenständig (Präfix sv-), nur Tokens aus tokens.css.
+   Die Farben bedeuten überall dasselbe: Netz = Akzent, Host = grau, Trennstrich = --warn, reserviert = --fehler. */
+
+.sv {
+  --sv-strich: var(--warn);
+  --sv-res: var(--fehler);
+  --sv-bitluecke: 3px;
+  --sv-oktettluecke: var(--s-4);
+  display: grid;
+  gap: var(--s-4);
+  min-width: 0;
 }
-.snv-schritt:disabled {
+.sv strong {
+  color: var(--text);
+}
+.sv-farbe-netz {
+  color: var(--akzent);
+}
+.sv-farbe-res {
+  color: var(--sv-res);
+}
+.sv-klein {
+  margin: 0;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+
+/* ---------- Leiste oben: IP und Präfix ---------- */
+.sv-leiste {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s-3) var(--s-6);
+  padding: var(--s-4) var(--s-5);
+}
+.sv-leiste__feld {
+  display: grid;
+  gap: var(--s-2);
+}
+.sv-leiste__ip {
+  width: 210px;
+  height: 40px;
+  font-size: var(--t-l);
+}
+.sv-stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 40px;
+}
+.sv-stepper__knopf {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  color: var(--text);
+  transition:
+    background var(--dauer) var(--kurve),
+    border-color var(--dauer) var(--kurve);
+}
+.sv-stepper__knopf:hover:not(:disabled) {
+  background: var(--flaeche-3);
+  border-color: var(--linie-3);
+}
+.sv-stepper__knopf:disabled {
   opacity: 0.4;
   cursor: default;
 }
-.snl-klein {
-  font-size: var(--t-xs);
+.sv-stepper__wert {
+  min-width: 3.2ch;
+  text-align: center;
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sv-leiste__hinweis {
+  flex-basis: 100%;
+  display: flex;
+  gap: var(--s-2);
+  align-items: flex-start;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sv-leiste__hinweis svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--info);
 }
 
-/* Schritt-Leiste */
-.snl-schritte {
-  display: flex;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-  overflow-x: auto;
-  list-style: none;
-  scrollbar-width: thin;
-}
-.snl-schritte li {
-  flex: 1 0 auto;
-}
-.snl-schritt {
+/* ---------- Schrittleiste ---------- */
+.sv-weg__liste {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 6px;
-  width: 100%;
-  padding: 6px 10px;
-  border: 1px solid var(--linie);
-  border-radius: var(--r-1);
-  background: var(--flaeche-1);
-  color: var(--text-3);
-  font: inherit;
-  font-size: var(--t-s);
-  white-space: nowrap;
-  cursor: pointer;
+  justify-content: space-between;
+  gap: var(--s-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.snl-schritt:hover {
+.sv-weg__liste::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--linie-2);
+}
+.sv-weg__liste::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: calc((100% - 28px) * var(--fortschritt, 0));
+  height: 2px;
+  margin-top: -1px;
+  background: var(--akzent-linie);
+  transition: width var(--dauer-lang) var(--kurve);
+}
+.sv-weg__eintrag {
+  position: relative;
+  z-index: 1;
+}
+.sv-weg__knopf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 28px;
+  height: 28px;
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  color: var(--text-3);
+  font-size: var(--t-s);
+  transition:
+    background var(--dauer) var(--kurve),
+    border-color var(--dauer) var(--kurve),
+    color var(--dauer) var(--kurve);
+}
+.sv-weg__knopf:hover {
   border-color: var(--linie-3);
   color: var(--text);
 }
-.snl-schritt__nr {
-  display: grid;
-  flex: none;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--flaeche-3);
+.sv-weg__nr {
   font-size: var(--t-xs);
-  font-weight: 700;
-}
-.snl-schritt--fertig {
-  color: var(--text-2);
-}
-.snl-schritt--fertig .snl-schritt__nr {
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-.snl-schritt--aktiv {
-  border-color: var(--akzent-linie);
-  background: var(--akzent-weich);
-  color: var(--text);
   font-weight: 600;
 }
-.snl-schritt--aktiv .snl-schritt__nr {
+.sv-weg__name {
+  display: none;
+}
+.sv-weg__eintrag--besucht .sv-weg__knopf {
+  border-color: var(--akzent-linie);
+  color: var(--akzent);
+  background: var(--flaeche-1);
+}
+.sv-weg__eintrag--aktiv .sv-weg__knopf {
+  padding: 0 var(--s-3) 0 10px;
   background: var(--akzent);
+  border-color: var(--akzent);
   color: var(--akzent-text);
 }
+.sv-weg__eintrag--aktiv .sv-weg__name {
+  display: inline;
+  font-weight: 600;
+  white-space: nowrap;
+}
 
-/* Karte */
-.snl .snl-karte {
-  padding: var(--s-4) var(--s-5);
+/* ---------- Karte ---------- */
+.sv-karte {
+  display: grid;
+  gap: var(--s-5);
+  min-width: 0;
+  padding: var(--s-6);
+  scroll-margin-top: calc(var(--kopf-hoehe) + var(--s-3));
 }
-.snl-karte__kopf {
-  margin-bottom: var(--s-3);
+.sv-karte__kopf {
+  display: grid;
+  gap: var(--s-1);
 }
-.snl-karte__titel {
-  margin: 2px 0 0;
+.sv-karte__titel {
   font-size: var(--t-xl);
-  font-weight: 700;
 }
-.snl-inhalt {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--s-3);
-  font-size: var(--t-n);
-  line-height: 1.6;
+.sv-inhalt {
+  display: grid;
+  gap: var(--s-4);
+  min-width: 0;
 }
-.snl-inhalt > p {
-  max-width: 78ch;
-  margin: 0;
+.sv-text {
+  max-width: 74ch;
+  line-height: 1.65;
+  color: var(--text-2);
 }
-.snl-inhalt > * {
-  max-width: 100%;
-}
-.snl-fuss {
+.sv-fuss {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--s-2);
-  margin-top: var(--s-5);
-  padding-top: var(--s-3);
+  gap: var(--s-3);
+  padding-top: var(--s-4);
   border-top: 1px solid var(--linie);
 }
-.snl-zeile {
+.sv-knoepfe {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--s-2);
 }
-.snl-rechnung {
-  margin: 0;
-  padding: 6px 12px;
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-  font-size: var(--t-m);
-}
-.snl-rechnung strong {
-  color: var(--akzent);
-}
 
-/* Merke, Wirkung, Rückmeldung, Falle */
-.snl-merke,
-.snl-effekt,
-.snl-rueck,
-.snl-falle {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--s-2);
-  max-width: 78ch;
-  margin: 0;
-  padding: 10px 14px;
+/* Formelzeile, Merke, Rückmeldung, Hinweis */
+.sv-formel {
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-2) var(--s-3);
   border-radius: var(--r-2);
-  font-size: var(--t-m);
-  line-height: 1.55;
-}
-.snl-merke svg,
-.snl-effekt svg,
-.snl-rueck svg,
-.snl-falle svg {
-  flex: none;
-  margin-top: 2px;
-}
-.snl-merke {
-  border: 1px solid var(--akzent-linie);
-  background: var(--akzent-weich);
-}
-.snl-merke svg {
-  color: var(--akzent);
-}
-.snl-effekt,
-.snl-falle.snl-falle--info {
-  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
-  background: color-mix(in srgb, var(--info) 10%, transparent);
-}
-.snl-effekt svg,
-.snl-falle.snl-falle--info svg {
-  color: var(--info);
-}
-.snl-rueck {
-  padding: 6px 12px;
-}
-.snl-rueck--gut {
-  background: color-mix(in srgb, var(--gut) 12%, transparent);
-  color: var(--gut);
-}
-.snl-rueck--falsch {
-  background: color-mix(in srgb, var(--fehler) 12%, transparent);
-  color: var(--fehler);
-}
-.snl-rueck span {
-  color: var(--text);
-}
-.snl-falle {
-  border: 1px solid color-mix(in srgb, var(--warn) 45%, transparent);
-  background: color-mix(in srgb, var(--warn) 10%, transparent);
-}
-.snl-falle svg {
-  color: var(--warn);
-}
-
-/* 1. Aufbau */
-.snl-zwei {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: baseline;
-  gap: 6px var(--s-4);
-  padding: 12px 16px;
-  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
   background: var(--flaeche-2);
-}
-.snl-zwei__name {
-  font-size: var(--t-xs);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-.snl-zwei__wert {
-  font-weight: 700;
+  font-size: var(--t-n);
+  line-height: 1.6;
+  color: var(--text-2);
   overflow-wrap: anywhere;
 }
-.snl-zwei__wert--dez {
-  font-size: var(--t-2xl);
+.sv-merke,
+.sv-rueck,
+.sv-hinweis {
+  justify-self: start;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  max-width: 80ch;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  line-height: 1.55;
 }
-.snl-zwei__wert--bin {
-  font-size: var(--t-l);
-  letter-spacing: 0.06em;
+.sv-merke svg,
+.sv-rueck svg,
+.sv-hinweis svg {
+  flex: none;
+  margin-top: 3px;
+}
+.sv-merke {
+  border: 1px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.sv-merke svg {
+  color: var(--akzent);
+}
+.sv-rueck {
+  padding: var(--s-2) var(--s-3);
+  font-size: var(--t-m);
+}
+.sv-rueck--gut {
+  border: 1px solid color-mix(in srgb, var(--gut) 45%, transparent);
+  background: color-mix(in srgb, var(--gut) 10%, transparent);
+  color: var(--text);
+}
+.sv-rueck--gut svg {
+  color: var(--gut);
+}
+.sv-rueck--falsch {
+  border: 1px solid color-mix(in srgb, var(--fehler) 45%, transparent);
+  background: color-mix(in srgb, var(--fehler) 9%, transparent);
+  color: var(--text);
+}
+.sv-rueck--falsch svg {
+  color: var(--fehler);
+}
+.sv-hinweis {
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
   color: var(--text-2);
 }
-.snl-aufbau {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-3) var(--s-4);
+.sv-hinweis svg {
+  color: var(--info);
 }
-.snl-aufbau__oktett {
-  display: flex;
-  flex-direction: column;
+.sv-link {
+  justify-self: start;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.snl-aufbau__dez {
+.sv-link:hover {
+  color: var(--text);
+}
+.sv-link--inline {
+  display: inline;
+  font-size: inherit;
+}
+
+/* ---------- Bits ---------- */
+.sv-bit {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 28px;
+  border-radius: 4px;
+  font: 600 var(--t-m) var(--mono);
+  font-style: normal;
+  background: var(--flaeche-3);
+  color: var(--text-2);
+  transition:
+    background-color var(--dauer-lang) var(--kurve),
+    color var(--dauer-lang) var(--kurve);
+}
+.sv-bit--neutral {
+  color: var(--text);
+}
+.sv-bit--netz {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+/* Der Strich vor dem ersten Hostbit */
+.sv-bit--strich::before,
+.sv-band__oktett--strich .sv-band__bits::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--sv-strich);
+  transition: opacity var(--dauer-lang) var(--kurve);
+}
+.sv-bit--strich::before {
+  left: calc(var(--sv-bitluecke) / -2 - 1.5px);
+}
+.sv-band__oktett--strich .sv-band__bits::before {
+  left: calc(var(--sv-oktettluecke) / -2 - 1.5px);
+}
+
+/* Band: 32 Bits in vier Oktetten */
+.sv-band {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-4) var(--sv-oktettluecke);
+  max-width: 780px;
+}
+.sv-band__oktett {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.sv-band__dez {
+  text-align: center;
   font-size: var(--t-2xl);
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
 }
-.snl-aufbau__klammer {
-  width: 100%;
+.sv-band__klammer {
   height: 8px;
-  border: 2px solid var(--akzent);
+  margin: 0 2px;
+  border: 1.5px solid var(--akzent-linie);
   border-bottom: 0;
   border-radius: 4px 4px 0 0;
 }
-.snl-aufbau__bits {
-  display: flex;
-  gap: 2px;
-}
-.snl-aufbau__name {
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-.snl-aufbau__name strong {
-  color: var(--akzent);
-}
-.snl-fakten {
+.sv-band__bits,
+.sv-band__nummern {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s-2);
-  width: 100%;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--sv-bitluecke);
 }
-.snl-fakt {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 10px 12px;
-  border: 1px solid var(--linie);
-  border-radius: var(--r-2);
-  background: var(--flaeche-2);
-  font-size: var(--t-s);
-  line-height: 1.5;
-  color: var(--text-2);
-}
-.snl-fakt__titel {
-  font-size: var(--t-m);
-  font-weight: 700;
-  color: var(--text);
-}
-
-/* 2. Binär */
-.snl-wahl {
-  min-width: 56px;
-  height: 36px;
-  padding: 0 12px;
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-  color: var(--text-2);
-  font-size: var(--t-l);
-  font-weight: 700;
-  cursor: pointer;
-}
-.snl-wahl:hover {
-  border-color: var(--akzent);
-}
-.snl-wahl--aktiv {
-  border-color: var(--akzent);
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-.snl-stellen {
-  display: flex;
-  gap: 4px;
-}
-.snl-stelle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  width: 48px;
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-}
-.snl-stelle__wert {
-  width: 100%;
-  padding: 3px 0;
-  background: var(--flaeche-3);
-  font-size: var(--t-s);
+.sv-band__nummern {
+  margin-top: -2px;
+  font-size: 9px;
   text-align: center;
-  color: var(--text-2);
-}
-.snl-stelle__bit {
-  padding: 6px 0;
-  font-size: var(--t-xl);
-  font-weight: 700;
   color: var(--text-4);
 }
-.snl-stelle--an {
-  border-color: var(--akzent);
-}
-.snl-stelle--an .snl-stelle__bit {
-  background: var(--akzent);
-  width: 100%;
-  text-align: center;
-  color: var(--akzent-text);
-}
-.snl-stelle--aus .snl-stelle__bit {
-  color: var(--text);
-}
-.snl-stelle--jetzt {
-  border-color: var(--warn);
-  box-shadow: 0 0 0 1px var(--warn);
-}
-.snl-wegliste {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: var(--t-m);
-}
-.snl-wegliste:empty {
-  display: none;
-}
-.snl-wegliste li {
-  display: flex;
-  align-items: baseline;
-  gap: var(--s-3);
-  color: var(--text-2);
-}
-.snl-wegliste__wert {
-  min-width: 3ch;
-  font-weight: 700;
-  text-align: right;
-  color: var(--text-3);
-}
-.snl-wegliste--an {
-  color: var(--text) !important;
-}
-.snl-wegliste--an .snl-wegliste__wert {
+.sv-band__nr--netz {
   color: var(--akzent);
+  opacity: 0.75;
 }
-
-/* 3. Trennstrich in vier Teilen */
-.snl-teilkopf {
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
-  margin: 0;
-  font-size: var(--t-l);
-  font-weight: 700;
-}
-.snl-teilkopf__nr {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--akzent);
-  color: var(--akzent-text);
-  font-size: var(--t-s);
-}
-.snl-teilstueck {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--s-3);
-  width: 100%;
-  margin-top: var(--s-2);
-  padding-top: var(--s-4);
-  border-top: 1px dashed var(--linie-2);
-  animation: snl-auf var(--dauer-lang) var(--kurve);
-}
-.snl-teilstueck > p {
-  max-width: 78ch;
-  margin: 0;
-}
-@keyframes snl-auf {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-}
-.snl-zaehlstand {
-  font-size: var(--t-l);
-  font-weight: 700;
-  color: var(--akzent);
-}
-.snl-bit.snl-bit--jetzt {
-  outline: 2px solid var(--warn);
-  outline-offset: 1px;
-}
-.snl-okbits {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-}
-.snl-okbits .snv-bit {
-  width: 20px;
-  height: 26px;
-  font-size: 13px;
-}
-.snv-bit.snl-bit--null {
-  opacity: 0.35;
-}
-.snv-bit.snl-bit--anders {
-  background: var(--fehler);
-  color: var(--bg);
-}
-.snl-pcs {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-}
-.snl-pc2 {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px var(--s-4);
-  padding: 8px 12px;
-  border: 1px solid var(--linie);
-  border-radius: var(--r-2);
-  background: var(--flaeche-2);
-}
-.snl-pc2__name {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  font-size: var(--t-s);
-  font-weight: 700;
-}
-.snl-pc2__name .mono {
-  font-weight: 400;
-  color: var(--text-2);
-}
-.snl-pc2__bits {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.snl-pc2__urteil {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: var(--t-s);
+.sv-band__nr--grenze {
+  color: var(--sv-strich);
   font-weight: 600;
 }
-.snl-pc2__urteil--gut {
-  color: var(--gut);
-}
-.snl-pc2__urteil--fremd {
-  color: var(--fehler);
-}
-.snl-teilen {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-}
-.snl-teilen__zeile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px var(--s-4);
-}
-.snl-teilen__name {
-  display: flex;
-  flex-direction: column;
-  width: 190px;
-  font-size: var(--t-m);
-  font-weight: 700;
-  line-height: 1.3;
-}
-.snl-teilen__name span {
-  font-size: var(--t-xs);
-  font-weight: 400;
+.sv-band__unter {
+  text-align: center;
+  font-size: var(--t-s);
   color: var(--text-3);
 }
-.snl-teilen__wert {
-  font-size: var(--t-xl);
-  font-weight: 700;
+/* Einlauf: Netzbits färben sich von links nach rechts, der Strich erscheint zuletzt */
+.sv-band--einlauf .sv-bit,
+.sv-band--einlauf .sv-bit--strich::before,
+.sv-band--einlauf .sv-band__oktett--strich .sv-band__bits::before {
+  transition-delay: calc(var(--i, 0) * 18ms);
 }
-.snl-gleichung {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: var(--s-2);
+.sv-band--leer .sv-bit--strich::before,
+.sv-band--leer .sv-band__oktett--strich .sv-band__bits::before {
+  opacity: 0;
 }
-.snl-gleichung__teil {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-  padding: 10px 14px;
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-2);
+
+/* Bits eines einzelnen Oktetts */
+.sv-okbits {
+  display: grid;
+  grid-template-columns: repeat(8, 22px);
+  gap: var(--sv-bitluecke);
+}
+.sv-okbits .sv-bit {
+  height: 26px;
+}
+
+/* ---------- 1. Aufbau ---------- */
+.sv-zwei {
+  justify-self: start;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-2) var(--s-6);
+  max-width: 100%;
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--r-3);
   background: var(--flaeche-2);
+}
+.sv-zwei__name {
+  font-family: var(--mono);
   font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-3);
 }
-.snl-gleichung__wert {
-  font-size: var(--t-l);
-  font-weight: 700;
-  color: var(--text);
+.sv-zwei__wert {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
-.snl-gleichung__teil--netz {
-  border-color: var(--akzent);
-  background: var(--akzent-weich);
-}
-.snl-gleichung__teil--netz .snl-gleichung__wert {
-  color: var(--akzent);
-}
-.snl-gleichung__teil--host .snl-gleichung__wert {
-  color: var(--warn);
-}
-.snl-gleichung__op {
-  align-self: center;
+.sv-zwei__wert--dez {
   font-size: var(--t-2xl);
-  font-weight: 700;
-  color: var(--text-3);
-}
-
-/* Bits mit Trennstrich */
-.snl-bits {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2) var(--s-3);
-}
-.snl-bits__oktett {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-.snl-bits__dez {
-  font-size: var(--t-m);
-  font-weight: 700;
-}
-.snl-bits__reihe {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-.snl-bit.snv-bit {
-  width: 20px;
-  height: 28px;
-  border-radius: 3px;
-  font-size: 13px;
-  transition:
-    width var(--dauer-lang) var(--kurve),
-    height var(--dauer-lang) var(--kurve),
-    font-size var(--dauer-lang) var(--kurve),
-    background var(--dauer) var(--kurve);
-}
-
-/* Fokus: das Oktett mit dem Strich wird groß, die anderen grau */
-.snl-bits__oktett {
-  transition:
-    opacity var(--dauer-lang) var(--kurve),
-    filter var(--dauer-lang) var(--kurve);
-}
-.snl-bits__dez {
-  transition:
-    font-size var(--dauer-lang) var(--kurve),
-    color var(--dauer-lang) var(--kurve);
-}
-.snl-bits--fokus {
-  align-items: flex-start;
-}
-.snl-bits__oktett--grau {
-  opacity: 0.28;
-  filter: grayscale(1);
-}
-.snl-bits__oktett--grau .snl-bit.snv-bit {
-  width: 13px;
-  height: 20px;
-  font-size: 9px;
-}
-.snl-bits__oktett--grau .snl-zaehler {
-  min-width: 13px;
-  font-size: 8px;
-}
-.snl-bits__oktett--grau .snl-trenner {
-  height: 30px;
-}
-.snl-bits__oktett--fokus .snl-bits__dez {
-  font-size: var(--t-3xl);
+  font-weight: 600;
   color: var(--text);
 }
-.snl-bits__oktett--fokus .snl-bit.snv-bit {
-  width: 40px;
-  height: 52px;
-  border-radius: 5px;
-  font-size: 22px;
-}
-.snl-bits__oktett--fokus .snl-zaehler {
-  min-width: 40px;
-  font-size: 11px;
-}
-.snl-bits__oktett--fokus .snl-bits__reihe .snl-trenner {
-  width: 5px;
-  height: 92px;
-  margin: -4px 5px 0;
-}
-.snl-stellenwert {
-  min-width: 40px;
-  padding: 2px 0;
-  border-radius: 3px;
-  font-size: var(--t-s);
-  text-align: center;
-  color: var(--text-4);
-  animation: snl-auf var(--dauer-lang) var(--kurve);
-}
-.snl-stellenwert--an {
-  font-weight: 700;
-}
-.snl-stellenwert--an.snl-stellenwert--netz {
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-.snl-stellenwert--an.snl-stellenwert--host {
-  background: color-mix(in srgb, var(--warn) 14%, transparent);
-  color: var(--warn);
-}
-.snl-fokus {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  width: 100%;
-  margin-top: 6px;
-  animation: snl-auf var(--dauer-lang) var(--kurve);
-}
-.snl-fokus__klammern {
-  display: flex;
-  gap: 12px;
-}
-.snl-fokus__klammer {
-  flex-basis: 0;
-  padding-top: 4px;
-  border: 2px solid;
-  border-bottom: 0;
-  border-radius: 6px 6px 0 0;
-  font-size: var(--t-xs);
-  font-weight: 700;
-  text-align: center;
-}
-.snl-fokus__klammer--netz {
-  border-color: var(--akzent);
-  color: var(--akzent);
-}
-.snl-fokus__klammer--host {
-  border-color: var(--warn);
-  color: var(--warn);
-}
-.snl-fokus__rechnung {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: var(--t-m);
-}
-.snl-fokus__rechnung > span:last-child {
-  margin-top: 2px;
-  padding-top: 4px;
-  border-top: 1px solid var(--linie);
+.sv-zwei__wert--bin {
   font-size: var(--t-l);
-  font-weight: 700;
-}
-button.snl-bit {
-  cursor: pointer;
-}
-button.snl-bit:hover {
-  outline: 2px solid var(--text);
-  outline-offset: -1px;
-}
-.snl-bitspalte {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-}
-.snl-zaehler {
-  min-width: 20px;
-  font-size: 10px;
-  line-height: 14px;
-  text-align: center;
-  color: var(--text-4);
-}
-.snl-zaehler--netz {
-  color: var(--akzent);
-}
-.snl-zaehler.snl-zaehler--grenze {
-  border-radius: 3px;
-  background: var(--warn);
-  color: var(--bg);
-  font-weight: 700;
-}
-.snl-bits__reihe .snl-trenner {
-  align-self: flex-start;
-  height: 46px;
-  margin-top: -4px;
-}
-.snl-trenner {
-  width: 4px;
-  height: 38px;
-  margin: 0 3px;
-  border-radius: 2px;
-  background: var(--warn);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--warn) 60%, transparent);
-}
-.snl-teile {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2);
-}
-.snl-teil {
-  padding: 4px 12px;
-  border-radius: var(--r-rund);
-  font-size: var(--t-s);
-}
-.snl-teil--netz {
-  background: var(--akzent);
-  color: var(--akzent-text);
-}
-.snl-teil--host {
-  background: var(--flaeche-3);
-  color: var(--text);
-}
-.snl-teil--maske {
-  border: 1px solid var(--linie-3);
+  letter-spacing: 0.04em;
   color: var(--text-2);
 }
-.snl-trenner.snl-trenner--klein {
-  width: 3px;
-  height: 26px;
-  margin: 0 2px;
+.sv-fakten {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--s-3);
+}
+.sv-fakt {
+  display: grid;
+  align-content: start;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.sv-fakt__titel {
+  font-weight: 600;
+  color: var(--text);
 }
 
-/* Oktett-Karten */
-.snl-oktette {
+/* ---------- 2. Bits ---------- */
+.sv-wahl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sv-wahl__titel {
+  margin-right: var(--s-1);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-chip {
+  min-width: 52px;
+  height: 32px;
+  padding: 0 var(--s-3);
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+  transition:
+    border-color var(--dauer) var(--kurve),
+    color var(--dauer) var(--kurve);
+}
+.sv-chip:hover {
+  border-color: var(--linie-3);
+  color: var(--text);
+}
+.sv-chip--aktiv {
+  border-color: var(--akzent-linie);
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sv-tafel {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--s-2);
+  max-width: 560px;
+}
+.sv-tafel__spalte {
+  display: grid;
+  gap: var(--s-1);
+  padding: var(--s-1);
+  border-radius: var(--r-2);
+  border: 1px solid transparent;
+  transition:
+    background var(--dauer) var(--kurve),
+    border-color var(--dauer) var(--kurve);
+}
+.sv-tafel__spalte--jetzt {
+  border-color: color-mix(in srgb, var(--info) 50%, transparent);
+  background: color-mix(in srgb, var(--info) 8%, transparent);
+}
+.sv-tafel__wert {
+  text-align: center;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-tafel__wert--an {
+  font-weight: 600;
+  color: var(--info);
+}
+.sv-tafel__bit {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-3);
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--text-3);
+  transition:
+    background var(--dauer) var(--kurve),
+    color var(--dauer) var(--kurve);
+}
+.sv-tafel__bit--an {
+  border-color: color-mix(in srgb, var(--info) 55%, transparent);
+  background: color-mix(in srgb, var(--info) 22%, var(--flaeche-3));
+  color: var(--text);
+}
+.sv-tafel__bit--frage {
+  border: 1px dashed var(--linie-3);
+  background: transparent;
+  color: var(--text-4);
+}
+button.sv-tafel__bit:hover {
+  border-color: var(--text-3);
+}
+.sv-rechne {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+}
+.sv-rest {
+  display: grid;
+  justify-items: center;
+  min-width: 88px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sv-rest__name {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sv-rest strong {
+  font-size: var(--t-2xl);
+  line-height: 1.2;
+}
+.sv-rechne__text {
+  flex: 1 1 260px;
+  color: var(--text-2);
+}
+
+/* ---------- 3. Präfix ---------- */
+.sv-anschrift {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+  max-width: 780px;
+}
+.sv-anschrift__teil {
+  display: grid;
+  align-content: start;
+  gap: var(--s-1);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  border-left: 3px solid var(--linie-3);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sv-anschrift__teil--netz {
+  border-left-color: var(--akzent);
+}
+.sv-anschrift__name {
+  font-weight: 600;
+  color: var(--text);
+}
+.sv-schieben {
+  display: grid;
+  gap: var(--s-2);
+}
+.sv-wirkung {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+
+/* ---------- 4. Maske ---------- */
+.sv-masken {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 640px;
+}
+.sv-masken__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-masken__reihe {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 3px;
+}
+.sv-masken__zelle {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 6px 2px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-2);
+}
+.sv-masken__zelle--aktiv {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.sv-masken__einsen {
+  font-size: 10px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+.sv-masken__wert {
+  font-size: var(--t-m);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Adresse und Maske übereinander */
+.sv-paar {
+  display: grid;
+  gap: var(--s-2);
+}
+.sv-paar__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-paar__name:not(:first-child) {
+  margin-top: var(--s-2);
+}
+
+/* ---------- 5. Oktett ---------- */
+.sv-oktette {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-3);
+  max-width: 880px;
+}
+.sv-okt {
+  display: grid;
+  justify-items: center;
+  align-content: start;
   gap: var(--s-2);
-  width: 100%;
-  max-width: 720px;
-}
-.snl-okt {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 10px 12px;
+  padding: var(--s-3);
+  border-radius: var(--r-3);
   border: 1px solid var(--linie);
-  border-radius: var(--r-2);
   background: var(--flaeche-2);
-  line-height: 1.35;
+  text-align: center;
+  min-width: 0;
 }
-.snl-okt__nr {
+.sv-okt--strich {
+  border-color: color-mix(in srgb, var(--sv-strich) 55%, transparent);
+  background: color-mix(in srgb, var(--sv-strich) 7%, var(--flaeche-2));
+}
+.sv-okt__nr {
   font-size: var(--t-xs);
   color: var(--text-3);
 }
-.snl-okt__wert {
+.sv-okt__wert {
   font-size: var(--t-2xl);
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.1;
 }
-.snl-okt__rolle {
+.sv-okt .sv-okbits {
+  grid-template-columns: repeat(8, minmax(0, 14px));
+  gap: 2px;
+}
+.sv-okt .sv-okbits .sv-bit {
+  height: 16px;
+  font-size: 10px;
+  border-radius: 2px;
+}
+.sv-okt .sv-bit--strich::before {
+  top: -3px;
+  bottom: -3px;
+  left: -2.5px;
+}
+.sv-okt__rolle {
+  padding: 2px 10px;
+  border-radius: var(--r-rund);
   font-size: var(--t-s);
-  font-weight: 700;
+  font-weight: 600;
 }
-.snl-okt__text {
-  font-size: var(--t-xs);
-  color: var(--text-2);
-}
-.snl-okt--fest .snl-okt__wert,
-.snl-okt--fest .snl-okt__rolle {
-  color: var(--text-3);
-}
-.snl-okt--grenze {
-  border-color: var(--akzent);
+.sv-okt--netz .sv-okt__rolle {
   background: var(--akzent-weich);
-}
-.snl-okt--grenze .snl-okt__rolle {
   color: var(--akzent);
 }
-.snl-okt--frei .snl-okt__rolle {
-  color: var(--warn);
+.sv-okt--strich .sv-okt__rolle {
+  background: color-mix(in srgb, var(--sv-strich) 18%, transparent);
+  color: var(--sv-strich);
+}
+.sv-okt--host .sv-okt__rolle {
+  background: var(--flaeche-4);
+  color: var(--text-2);
+}
+.sv-okt__text {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-vorschau {
+  display: grid;
+  gap: var(--s-2);
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px dashed var(--linie-2);
+}
+.sv-vorschau__zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-1) var(--s-4);
+}
+.sv-vorschau__name {
+  min-width: 100px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-vorschau__text {
+  font-size: var(--t-s);
+  color: var(--text-3);
 }
 
-/* Lupe */
-.snl-lupe {
+/* Adresse mit farbigen Oktetten */
+.sv-ip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: var(--t-xl);
+  font-weight: 600;
+}
+.sv-ip__teil {
+  padding: 1px 5px;
+  border-radius: var(--r-1);
+}
+.sv-ip__teil--netz {
+  color: var(--akzent);
+}
+.sv-ip__teil--strich {
+  background: color-mix(in srgb, var(--sv-strich) 15%, transparent);
+  color: var(--sv-strich);
+}
+.sv-ip__teil--host {
+  background: var(--flaeche-3);
+  color: var(--text-2);
+}
+.sv-ip__punkt {
+  color: var(--text-4);
+}
+.sv-legende {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-legende > span {
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
 }
-.snl-lupe__bits {
-  display: flex;
-  gap: 3px;
-}
-.snl-lupe__spalte {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-.snl-lupe__spalte .snl-bit {
-  width: 32px;
-}
-.snl-lupe__gewicht {
-  font-size: var(--t-xs);
-  color: var(--text-4);
-}
-.snl-lupe__gewicht--an {
-  color: var(--akzent);
-  font-weight: 700;
-}
-
-/* Zahlenstrahl */
-.snl-strahl {
-  width: 100%;
-  padding: 0 4px;
-}
-.snl-strahl__leiste {
-  position: relative;
-  display: flex;
-  gap: 2px;
-  height: 36px;
-  margin: 26px 0 22px;
-}
-.snl-strahl__leiste--dicht {
-  gap: 0;
-}
-.snl-strahl__leiste--dicht .snl-block {
-  border-radius: 0;
-  box-shadow: inset -1px 0 0 var(--flaeche-1);
-}
-.snl-strahl__leiste--dicht .snl-block--aktiv {
-  z-index: 1;
-  box-shadow: 0 0 0 2px var(--akzent);
-}
-.snl-block {
-  position: relative;
-  flex: 1;
-  min-width: 1px;
-  padding: 0;
-  border: 0;
+.sv-legende__farbe {
+  width: 12px;
+  height: 12px;
   border-radius: 3px;
-  background: var(--flaeche-3);
-  transition: background var(--dauer) var(--kurve);
 }
-.snl-block--klick {
-  cursor: pointer;
-}
-.snl-block--klick:hover {
-  background: var(--linie-3);
-}
-.snl-block--aktiv {
-  background: linear-gradient(90deg, var(--akzent) 0 4px, color-mix(in srgb, var(--akzent) 30%, transparent) 4px calc(100% - 4px), var(--warn) calc(100% - 4px));
-  box-shadow: 0 0 0 2px var(--akzent);
-}
-.snl-block--falsch {
-  background: color-mix(in srgb, var(--fehler) 35%, transparent);
-}
-.snl-block__von,
-.snl-strahl__ende {
-  position: absolute;
-  bottom: -19px;
-  font-size: 10.5px;
-  color: var(--text-3);
-}
-.snl-block__von {
-  left: 0;
-}
-.snl-strahl__ende {
-  right: 0;
-}
-.snl-zeiger {
-  position: absolute;
-  top: -6px;
-  bottom: -6px;
-  width: 2px;
-  background: var(--text);
-  transform: translateX(-1px);
-  pointer-events: none;
-}
-.snl-zeiger span {
-  position: absolute;
-  top: -19px;
-  left: 50%;
-  padding: 0 5px;
-  border-radius: 3px;
-  background: var(--text);
-  color: var(--bg);
-  font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
-  transform: translateX(-50%);
-}
-.snl-zeiger--gut,
-.snl-zeiger--gut span {
-  background: var(--gut);
-}
-.snl-zeiger--fremd,
-.snl-zeiger--fremd span {
-  background: var(--fehler);
-}
-
-/* Fragen */
-.snl-frage {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s-2);
-}
-.snl-frage__feld {
-  width: 80px;
-  font-weight: 600;
-}
-.snl-frage__feld--ip {
-  width: 170px;
-}
-.snl-optionen {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2);
-}
-.snl-option {
-  min-width: 72px;
-  height: 44px;
-  padding: 0 var(--s-4);
-  border: 1px solid var(--linie-2);
-  border-radius: var(--r-2);
-  background: var(--flaeche-2);
-  color: var(--text);
-  font-size: var(--t-l);
-  font-weight: 700;
-  cursor: pointer;
-}
-.snl-option:hover:not(:disabled) {
-  border-color: var(--akzent);
-}
-.snl-option:disabled {
-  cursor: default;
-}
-.snl-option--gut {
-  border-color: var(--gut);
-  background: color-mix(in srgb, var(--gut) 15%, transparent);
-}
-.snl-option--falsch {
-  border-color: var(--fehler);
-  background: color-mix(in srgb, var(--fehler) 15%, transparent);
-}
-
-/* Blockgrenze vergrößert */
-.snl-zoom {
-  display: flex;
-  align-items: stretch;
-  gap: 4px;
-}
-.snl-zoom__zelle {
-  display: grid;
-  place-items: center;
-  min-width: 56px;
-  height: 40px;
-  padding: 0 8px;
-  border-radius: var(--r-1);
-  background: var(--flaeche-3);
-  font-weight: 700;
-}
-.snl-zoom__zelle--dein {
-  background: color-mix(in srgb, var(--akzent) 25%, transparent);
-}
-.snl-zoom__zelle--dein:nth-child(2) {
-  box-shadow: inset 0 -3px 0 var(--warn);
-}
-.snl-zoom__zelle--leer {
-  background: none;
-  color: var(--text-3);
-  font-size: var(--t-xs);
-  font-weight: 400;
-}
-.snl-zoom__wand {
-  width: 4px;
-  margin: -4px 4px;
-  border-radius: 2px;
-  background: var(--warn);
-}
-.snl-zoom__legende {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-1) var(--s-5);
-  margin-top: -6px;
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-
-/* Adresstabelle */
-.snl-tab-rahmen {
-  max-width: 100%;
-  overflow-x: auto;
-}
-.snl-tab {
-  border-collapse: collapse;
-  font-size: var(--t-l);
-}
-.snl-tab th {
-  padding: 6px 16px 6px 0;
-  font-size: var(--t-s);
-  font-weight: 600;
-  text-align: left;
-  white-space: nowrap;
-  color: var(--text-2);
-}
-.snl-tab td {
-  padding: 6px 0;
-  border-top: 1px solid var(--linie);
-  font-weight: 700;
-  text-align: right;
-  white-space: nowrap;
-}
-.snl-tab th {
-  border-top: 1px solid var(--linie);
-}
-.snl-tab tr:first-child th,
-.snl-tab tr:first-child td {
-  border-top: 0;
-}
-.snl-tab__punkt {
-  padding: 0 2px;
-  color: var(--text-4);
-}
-.snl-tab td.snl-tab__text {
-  padding-left: var(--s-5);
-  font-size: var(--t-s);
-  font-weight: 400;
-  text-align: left;
-  color: var(--text-3);
-}
-.snl-tab__reserviert th {
-  color: var(--text);
-}
-.snl-z--fest {
-  color: var(--text-3);
-}
-.snl-z--grenze {
-  color: var(--akzent);
-}
-.snl-z--frei {
-  color: var(--warn);
-}
-.snl-legende {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px var(--s-4);
-  font-size: var(--t-xs);
-  color: var(--text-2);
-}
-.snl-farbe {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-right: 3px;
-  border-radius: 2px;
-}
-.snl-farbe--fest {
-  background: var(--text-3);
-}
-.snl-farbe--grenze {
+.sv-legende__farbe--netz {
   background: var(--akzent);
 }
-.snl-farbe--frei {
-  background: var(--warn);
+.sv-legende__farbe--strich {
+  background: var(--sv-strich);
 }
-.snl-farbe--host {
+.sv-legende__farbe--host {
   background: var(--flaeche-4);
   box-shadow: inset 0 0 0 1px var(--linie-3);
 }
+.sv-legende__farbe--geraet {
+  background: var(--akzent);
+}
+.sv-legende__farbe--res {
+  background: var(--sv-res);
+}
 
-/* Nachbarn */
-.snl-pc {
-  padding: 5px 10px;
-  border-radius: var(--r-1);
-  background: var(--flaeche-2);
-}
-.snl-vergleich {
+/* ---------- 6. Blöcke ---------- */
+.sv-blockgr {
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 2px var(--s-3);
-  font-size: var(--t-m);
+  gap: var(--s-2);
+  max-width: 560px;
 }
-.snl-vergleich span {
+.sv-blockgr__reihe {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--sv-bitluecke);
+}
+.sv-blockgr__zelle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: var(--flaeche-3);
+  font-size: var(--t-m);
+  color: var(--text-3);
+}
+.sv-blockgr__zelle--netz {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sv-blockgr__zelle--letzte {
+  border-color: var(--akzent);
+  background: var(--akzent);
+  color: var(--akzent-text);
+  font-weight: 600;
+}
+.sv-blockgr__zelle--strich::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: calc(var(--sv-bitluecke) / -2 - 1.5px);
+  width: 3px;
+  border-radius: 2px;
+  background: var(--sv-strich);
+}
+.sv-blockgr__text {
+  font-size: var(--t-m);
   color: var(--text-2);
 }
 
-/* Aufteilen */
-.snl-aufteil {
-  width: auto;
-  min-width: 420px;
+/* Zahlenstrahl */
+.sv-strahl {
+  display: grid;
+  gap: 4px;
+  max-width: 780px;
 }
-.snl-aufteil td,
-.snl-aufteil th {
-  padding-right: var(--s-4);
+.sv-strahl__nadelbahn {
+  position: relative;
+  height: 30px;
 }
-.snl-wozu ul {
-  margin: 4px 0 0;
-  padding-left: 1.2em;
+.sv-nadel {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  justify-items: center;
+  transform: translateX(-50%);
 }
-.snl-wozu li {
-  margin: 2px 0;
+.sv-nadel__text {
+  padding: 1px 7px;
+  border-radius: var(--r-1);
+  background: var(--text);
+  color: var(--bg);
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+.sv-nadel::after {
+  content: '';
+  width: 2px;
+  height: 7px;
+  background: var(--text);
+}
+.sv-strahl__leiste {
+  display: flex;
+  gap: 2px;
+  height: 34px;
+}
+.sv-strahl__leiste--dicht {
+  gap: 0;
+}
+.sv-block {
+  flex: 1 1 0;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-radius: 3px;
+  background: var(--flaeche-3);
+  transition:
+    background var(--dauer) var(--kurve),
+    box-shadow var(--dauer) var(--kurve);
+}
+.sv-block--zwei {
+  background: var(--flaeche-4);
+}
+.sv-strahl__leiste--dicht .sv-block {
+  border-radius: 0;
+}
+.sv-strahl__leiste--dicht .sv-block--zwei {
+  background: color-mix(in srgb, var(--flaeche-4) 55%, var(--flaeche-3));
+}
+.sv-block--aktiv {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  box-shadow: inset 0 0 0 1.5px var(--akzent);
+}
+.sv-strahl__leiste--dicht .sv-block--aktiv {
+  background: var(--akzent);
+  box-shadow: none;
+}
+.sv-block__bereich {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--text);
+}
+.sv-block__code {
+  font-size: var(--t-xs);
+  color: var(--akzent);
+}
+.sv-strahl__skala {
+  position: relative;
+  height: 16px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sv-strahl__zahl {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+.sv-strahl__zahl--null {
+  transform: none;
+}
+.sv-strahl__zahl--ende {
+  left: auto;
+  right: 0;
+  transform: none;
 }
 
-@media (max-width: 560px) {
-  .snl .snl-karte {
-    padding: var(--s-3);
+/* ---------- 7. Dein Block ---------- */
+.sv-frage {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+}
+.sv-frage__titel {
+  font-weight: 600;
+  color: var(--text);
+}
+.sv-frage__optionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sv-option {
+  min-width: 68px;
+  height: 42px;
+  padding: 0 var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-1);
+  font-size: var(--t-l);
+  color: var(--text);
+  transition:
+    border-color var(--dauer) var(--kurve),
+    background var(--dauer) var(--kurve);
+}
+.sv-option:hover:not(:disabled) {
+  border-color: var(--akzent-linie);
+  background: var(--flaeche-3);
+}
+.sv-option:disabled {
+  cursor: default;
+}
+.sv-option--text {
+  font-size: var(--t-n);
+}
+.sv-option--gut {
+  border-color: var(--gut);
+  background: color-mix(in srgb, var(--gut) 14%, var(--flaeche-1));
+  color: var(--gut);
+}
+.sv-option--falsch {
+  border-color: color-mix(in srgb, var(--fehler) 50%, transparent);
+  color: var(--fehler);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+.sv-grenze {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-2);
+}
+.sv-grenze__zellen {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.sv-grenze__zelle {
+  display: grid;
+  place-items: center;
+  min-width: 54px;
+  height: 42px;
+  padding: 0 var(--s-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  font-size: var(--t-l);
+  color: var(--text-3);
+}
+.sv-grenze__zelle--dein {
+  background: color-mix(in srgb, var(--akzent) 22%, var(--flaeche-3));
+  box-shadow: inset 0 0 0 1px var(--akzent-linie);
+  color: var(--text);
+}
+.sv-grenze__zelle--leer {
+  font-size: var(--t-s);
+}
+.sv-grenze__wand {
+  width: 3px;
+  height: 56px;
+  margin: 0 6px;
+  border-radius: 2px;
+  background: var(--sv-strich);
+}
+.sv-grenze__legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-5);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-ae {
+  display: grid;
+  gap: var(--s-3);
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+}
+.sv-ae__titel,
+.sv-ae__fuss {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-ae__fuss {
+  max-width: 64ch;
+}
+.sv-ae__zeile {
+  display: grid;
+  grid-template-columns: 64px auto auto auto;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+}
+.sv-ae__name {
+  font-weight: 600;
+}
+.sv-ae__wert {
+  font-size: var(--t-l);
+  font-weight: 600;
+}
+.sv-ae__text {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+
+/* ---------- 8. Adressen ---------- */
+.sv-adressen {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 780px;
+}
+.sv-adresse {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
+  min-height: 64px;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  border-left: 3px solid var(--linie-3);
+  background: var(--flaeche-2);
+  transition: border-color var(--dauer) var(--kurve);
+}
+.sv-adresse--reserviert {
+  border-left-color: var(--sv-res);
+}
+.sv-adresse--dran {
+  border-top-color: var(--akzent-linie);
+  border-right-color: var(--akzent-linie);
+  border-bottom-color: var(--akzent-linie);
+}
+.sv-adresse__kopf {
+  display: grid;
+  gap: 2px;
+}
+.sv-adresse__name {
+  font-weight: 600;
+}
+.sv-adresse__rezept {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-adresse__wert {
+  justify-self: end;
+}
+.sv-adresse__leer {
+  font-size: var(--t-l);
+  letter-spacing: 0.06em;
+  color: var(--text-4);
+}
+
+/* ---------- 9. Unter /24 ---------- */
+.sv-stuecke {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 780px;
+  padding: var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--akzent-linie);
+}
+.sv-stuecke__titel {
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sv-stuecke__luecke {
+  text-align: center;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-stueck {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr) 128px;
+  align-items: center;
+  gap: var(--s-3);
+}
+.sv-stueck__ende {
+  display: grid;
+  gap: 1px;
+  font-size: var(--t-m);
+}
+.sv-stueck__ende--rechts {
+  text-align: right;
+}
+.sv-stueck__marke {
+  font-size: var(--t-xs);
+  font-weight: 600;
+}
+.sv-stueck__marke--res {
+  color: var(--sv-res);
+}
+.sv-stueck__marke--host {
+  color: var(--info);
+}
+.sv-stueck__balken {
+  position: relative;
+  height: 22px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--akzent) 30%, var(--flaeche-3));
+  overflow: hidden;
+}
+.sv-stueck__balken::before,
+.sv-stueck__balken::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+}
+.sv-stueck__balken::before {
+  left: 0;
+}
+.sv-stueck__balken::after {
+  right: 0;
+}
+.sv-stueck__balken--start-res::before,
+.sv-stueck__balken--ende-res::after {
+  background: var(--sv-res);
+}
+.sv-stueck__balken--start-host::before,
+.sv-stueck__balken--ende-host::after {
+  background: var(--info);
+}
+.sv-hb {
+  display: grid;
+  gap: var(--s-3);
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+}
+.sv-hb__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-hb__zeile {
+  display: grid;
+  grid-template-columns: 140px auto auto;
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
+}
+.sv-hb__ip {
+  font-size: var(--t-m);
+}
+.sv-hb__bits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sv-hb__gruppe {
+  display: flex;
+  gap: 2px;
+}
+.sv-hb__gruppe .sv-bit {
+  width: 18px;
+  height: 24px;
+  font-size: var(--t-s);
+}
+.sv-hb__urteil {
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+.sv-hb__urteil--host {
+  color: var(--info);
+}
+.sv-hb__urteil--res {
+  color: var(--sv-res);
+}
+
+/* ---------- 10. Gateway ---------- */
+.sv-pc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sv-pc__teil {
+  display: grid;
+  gap: 2px;
+}
+.sv-pc__name {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sv-ziele {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 780px;
+}
+.sv-ziel {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+}
+.sv-ziel__kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2) var(--s-4);
+}
+.sv-ziel__name {
+  display: grid;
+  gap: 2px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-ziel__ip {
+  font-size: var(--t-l);
+}
+.sv-ziel__rechnung {
+  font-size: var(--t-s);
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+.sv-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-station {
+  padding: 3px 10px;
+  border-radius: var(--r-rund);
+  background: var(--flaeche-4);
+  color: var(--text-2);
+}
+.sv-station--gw {
+  background: color-mix(in srgb, var(--sv-strich) 16%, var(--flaeche-3));
+  color: var(--sv-strich);
+}
+.sv-eigenes {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 780px;
+}
+.sv-eigenes__feld {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 260px;
+}
+.sv-eigenes__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+
+/* ---------- 11. Aufteilen ---------- */
+.sv-balken {
+  display: block;
+  width: 100%;
+  max-width: 780px;
+  height: 30px;
+  border-radius: 4px;
+  shape-rendering: crispEdges;
+}
+.sv-balken__geraet {
+  fill: var(--akzent);
+}
+.sv-balken__res {
+  fill: var(--sv-res);
+}
+.sv-balken__grenze {
+  stroke: var(--flaeche-1);
+  stroke-width: 2px;
+}
+.sv-balken-gross {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 780px;
+}
+.sv-anteil {
+  display: flex;
+  height: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.sv-anteil__geraet {
+  background: var(--akzent);
+}
+.sv-anteil__res {
+  min-width: 3px;
+  background: var(--sv-res);
+}
+.sv-tabelle-rahmen {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.sv-tabelle {
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: var(--t-m);
+}
+.sv-tabelle th {
+  padding: var(--s-2) var(--s-3);
+  border-bottom: 1px solid var(--linie-2);
+  font-family: var(--schrift);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  text-align: right;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+.sv-tabelle td {
+  padding: 6px var(--s-3);
+  border-bottom: 1px solid var(--linie);
+  text-align: right;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.sv-tabelle th:first-child,
+.sv-tabelle td:first-child {
+  text-align: left;
+}
+.sv-tabelle__aktiv td {
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.sv-tabelle__wahl {
+  padding: 2px 8px;
+  border-radius: var(--r-1);
+  border: 1px solid var(--linie-2);
+  color: var(--text);
+}
+.sv-tabelle__wahl:hover {
+  border-color: var(--akzent-linie);
+}
+.sv-tabelle__aktiv .sv-tabelle__wahl {
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.sv-wozu {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 74ch;
+}
+.sv-wozu__titel {
+  font-weight: 600;
+}
+.sv-wozu ul {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding-left: var(--s-5);
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+/* ---------- 12. Rechenweg ---------- */
+.sv-rezept {
+  display: grid;
+  max-width: 840px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+  overflow: hidden;
+}
+.sv-rezept__schritt {
+  display: grid;
+  grid-template-columns: 24px 128px minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-1) var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-top: 1px solid var(--linie);
+}
+.sv-rezept__schritt:first-child {
+  border-top: 0;
+}
+.sv-rezept__nr {
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sv-rezept__name {
+  font-weight: 600;
+}
+.sv-rezept__inhalt {
+  font-size: var(--t-m);
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+.sv-jetzt {
+  display: grid;
+  gap: var(--s-4);
+  max-width: 840px;
+  padding: var(--s-5);
+  border-radius: var(--r-3);
+  border: 1px solid var(--akzent-linie);
+  background: var(--flaeche-2);
+}
+.sv-jetzt__kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-2) var(--s-4);
+}
+.sv-jetzt__aufgabe {
+  font-size: var(--t-xl);
+  font-weight: 600;
+}
+.sv-jetzt__felder {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+.sv-jetzt__feld {
+  display: grid;
+  gap: 6px;
+}
+.sv-jetzt__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sv-jetzt__knoepfe {
+  grid-column: 1 / -1;
+}
+.sv-jetzt .sv-rezept {
+  background: var(--flaeche-1);
+}
+.sv-weiter {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-m);
+}
+.sv-weiter:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Schmale Bildschirme ---------- */
+@media (max-width: 760px) {
+  .sv-oktette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .snl-karte__titel {
-    font-size: var(--t-l);
+  .sv-jetzt__felder {
+    grid-template-columns: minmax(0, 1fr);
   }
-  .snl-schritt__name {
+}
+@media (max-width: 640px) {
+  .sv {
+    --sv-oktettluecke: var(--s-3);
+  }
+  .sv-leiste {
+    padding: var(--s-3) var(--s-4);
+    gap: var(--s-3) var(--s-4);
+  }
+  .sv-leiste__ip {
+    width: 190px;
+  }
+  .sv-weg__knopf {
+    min-width: 24px;
+    height: 24px;
+  }
+  .sv-weg__liste::before {
+    left: 12px;
+    right: 12px;
+  }
+  .sv-weg__eintrag--aktiv .sv-weg__knopf {
+    padding: 0;
+  }
+  .sv-weg__eintrag--aktiv .sv-weg__name {
     display: none;
   }
-  .snl-schritt--aktiv .snl-schritt__name {
-    display: inline;
+  .sv-karte {
+    padding: var(--s-4);
+    gap: var(--s-4);
   }
-  .snl-schritte li {
-    flex: 0 0 auto;
+  .sv-karte__titel {
+    font-size: var(--t-l);
   }
-  .snl-bits {
-    gap: 6px 10px;
+  .sv-band {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .snl-bits__reihe {
-    gap: 1px;
-  }
-  .snl-bit.snv-bit {
-    width: 15px;
+  .sv-bit {
     height: 24px;
-    font-size: 11px;
-  }
-  .snl-bits__oktett--grau .snl-bit.snv-bit {
-    width: 9px;
-    height: 16px;
-    font-size: 7px;
-  }
-  .snl-bits__oktett--grau .snl-zaehler {
-    min-width: 9px;
-    font-size: 6px;
-  }
-  .snl-bits--fokus .snl-bits__oktett--fokus {
-    order: 5;
-    width: 100%;
-  }
-  .snl-bits__oktett--fokus .snl-bit.snv-bit {
-    width: 34px;
-    height: 46px;
-    font-size: 19px;
-  }
-  .snl-bits__oktett--fokus .snl-zaehler,
-  .snl-stellenwert {
-    min-width: 34px;
-    font-size: 10px;
-  }
-  .snl-trenner {
-    width: 3px;
-    height: 30px;
-    margin: 0 2px;
-  }
-  .snl-oktette {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .snl-pc2__name,
-  .snl-teilen__name {
-    width: 100%;
-  }
-  .snl-okbits .snv-bit {
-    width: 16px;
-    height: 22px;
-    font-size: 11px;
-  }
-  .snl-pc2__bits {
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .snl-gleichung__op {
-    font-size: var(--t-l);
-  }
-  .snl-zaehler {
-    min-width: 15px;
-    font-size: 8px;
-  }
-  .snl-bits__reihe .snl-trenner {
-    height: 38px;
-  }
-  .snl-fakten {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .snl-zwei {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2px;
-  }
-  .snl-zwei__wert--dez {
-    margin-bottom: 6px;
-    font-size: var(--t-xl);
-  }
-  .snl-zwei__wert--bin {
-    font-size: var(--t-m);
-  }
-  .snl-aufbau {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .snl-aufbau__dez {
-    font-size: var(--t-xl);
-  }
-  .snl-stellen {
-    gap: 2px;
-  }
-  .snl-stelle {
-    width: 38px;
-  }
-  .snl-stelle__wert {
-    font-size: 10px;
-  }
-  .snl-stelle__bit {
-    font-size: var(--t-l);
-  }
-  .snl-wegliste {
     font-size: var(--t-s);
   }
-  .snl-lupe__spalte .snl-bit {
-    width: 28px;
+  .sv-band__dez {
+    font-size: var(--t-xl);
   }
-  .snl-tab {
+  .sv-zwei {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+    padding: var(--s-3) var(--s-4);
+  }
+  .sv-zwei__wert--dez {
+    margin-bottom: var(--s-2);
+  }
+  .sv-zwei__wert--bin {
+    font-size: var(--t-m);
+  }
+  .sv-tafel {
+    gap: 3px;
+  }
+  .sv-tafel__spalte {
+    padding: 2px;
+  }
+  .sv-tafel__bit {
+    height: 38px;
+    font-size: var(--t-l);
+  }
+  .sv-tafel__wert {
+    font-size: 10px;
+  }
+  .sv-anschrift {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sv-masken__reihe {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .sv-ae {
+    padding: var(--s-3);
+  }
+  .sv-ae__zeile {
+    grid-template-columns: 52px auto auto;
+    gap: 2px var(--s-2);
+  }
+  .sv-ae__text {
+    grid-column: 2 / -1;
+  }
+  .sv-okbits {
+    grid-template-columns: repeat(8, 17px);
+  }
+  .sv-option {
+    min-width: 56px;
+    padding: 0 var(--s-3);
+  }
+  .sv-tabelle {
+    font-size: var(--t-s);
+  }
+  .sv-tabelle th {
+    padding: var(--s-2) 6px;
+    white-space: normal;
+    vertical-align: bottom;
+  }
+  .sv-tabelle td {
+    padding: 6px;
+  }
+  .sv-tabelle__wahl {
+    padding: 2px 5px;
+  }
+  .sv-okbits .sv-bit {
+    height: 24px;
+  }
+  .sv-vorschau__name {
+    flex-basis: 100%;
+  }
+  .sv-adresse {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sv-adresse__wert {
+    justify-self: start;
+  }
+  .sv-ip {
+    font-size: var(--t-l);
+  }
+  .sv-stueck {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 6px var(--s-3);
+  }
+  .sv-stueck__balken {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .sv-hb__zeile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+  .sv-rezept__schritt {
+    grid-template-columns: 20px minmax(0, 1fr);
+    padding: var(--s-3);
+  }
+  .sv-rezept__inhalt {
+    grid-column: 2;
+  }
+  .sv-jetzt {
+    padding: var(--s-4);
+  }
+  .sv-grenze__zelle {
+    min-width: 44px;
     font-size: var(--t-n);
-  }
-  .snl-tab td.snl-tab__text {
-    display: none;
-  }
-  .snl-aufteil {
-    min-width: 0;
-  }
-  .snl-vergleich {
-    grid-template-columns: 1fr;
   }
 }
