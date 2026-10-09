@@ -477,7 +477,7 @@ function NetzadresseErklaerung() {
             <>
               <Absatz>
                 Unser Beispiel: <strong class="mono">192.168.1.100/26</strong>. Blockgröße 64 (Lektion „Blockgröße“) – die Netze im 4. Oktett sind 0–63, 64–127, 128–191, 192–255.
-                Die 100 liegt in genau einem davon. Die Lupe zeigt den Ausschnitt um die 100:
+                Die 100 liegt in genau einem davon:
               </Absatz>
               <Zahlenstrahl block={64} werte={[100]} />
               <Absatz>

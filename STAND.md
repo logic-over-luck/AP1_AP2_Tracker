@@ -501,7 +501,7 @@ Entfernt: das alte `subnetz/Verstehen.jsx`, das alte `subnetz/lernweg.js`, `subn
 | 32-Bit-Band mit Netz/Host-Farben und Grenze | `Bitband` | Baustein `Bitband` |
 | Bit-Tafel mit Stellenwerten, „Passt es noch?“ Schritt für Schritt | `Bits` | Bausteine `BitTafel` und `Umrechner`, jetzt im Zahlen-Trainer (`zahlen/verstehen/bausteine.jsx`) |
 | Präfix → Subnetzmaske für alle vier Oktette, die neun Maskenwerte | `Maske` | Bausteine `MaskenRechnung`, `MaskenWerte` (Lektion „Subnetzmaske“) |
-| Zahlenstrahl 0–255 in Blöcken mit Lupe und Trichter | `Strahl` | Baustein `Zahlenstrahl` (Block Subnetting, private Adressen), jetzt auch mit zwei Markierungen |
+| Zahlenstrahl 0–255 in Blöcken mit Lupe und Trichter | `Strahl` | Baustein `Zahlenstrahl` (Block Subnetting, private Adressen), auch mit zwei Markierungen. Bis 4 Blöcke stehen die Bereiche im Block und darunter „Block mit der …“, ohne Lupe. Ab 8 Blöcken vergrößert die Lupe den Block mit der Zahl und seine Nachbarn („rund N-mal so groß“); ein Fenster auf der Leiste und ein gestrichelter Trichter zeigen den Ausschnitt. Dichte Schilder zeigen voneinander weg, Schilder am Rand ragen nicht hinaus |
 | Lupe auf die Blockgrenze, Blockgröße = Stellenwert des letzten Netzbits | `Grenze`, `Bloecke` | Baustein `Grenzlupe`, Schritt in der Lektion „Blockgröße“ |
 | Aufgabenerzeuger | `aufgaben.js` | `ueben/aufgaben.js`; „Präfix und Maske“ geteilt, vier Übungen neu |
 | Farbschema: Netz = Akzent (grün), Host = `--info` (blau), Grenze = `--warn` (orange), reserviert = `--fehler` (rot) | `subnetz-lernen.css` | `subnetz.css` (Präfix `sn-`), Legende bei jedem Bit-Bild |

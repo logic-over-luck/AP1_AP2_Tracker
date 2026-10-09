@@ -177,14 +177,19 @@ export function MaskenWerte({ aktiv = null }) {
 
 // ---------- Zahlenstrahl mit Lupe ----------
 
-// Zahlenstrahl 0 … 255 eines Oktetts, in Blöcke der Größe `block` geschnitten. werte: markierte Zahlen
-// (die erste bekommt die Lupe), aktiv: hervorgehobene Blockanfänge. Darunter eine Lupe auf den Block mit der
-// ersten Zahl und seine Nachbarn; Rahmen und Trichter zeigen den vergrößerten Abschnitt. Bei Blöcken bis 4
-// steht jede Zahl einzeln da.
+// Zahlenstrahl 0 … 255 eines Oktetts, in Blöcke der Größe `block` geschnitten. werte: markierte Zahlen,
+// aktiv: hervorgehobene Blockanfänge, beschriftung: eigener Text an den Nadeln.
+// Bis 4 Blöcke steht jeder Bereich direkt im Block, darunter heißt der Block mit der Zahl „Block mit der …“.
+// Ab 8 Blöcken sind die Blöcke zu schmal zum Lesen: Dann vergrößert eine Lupe den Block mit der ersten Zahl
+// und seine Nachbarn. Ein Fenster im Strahl und ein Trichter zeigen, welcher Ausschnitt vergrößert ist.
 const NACHBAR = { '-2': '2 Blöcke davor', '-1': 'Block davor', 1: 'Block danach', 2: '2 Blöcke danach' };
+
+// Nadeln am Rand nicht über den Strahl hinausragen lassen
+const randKlasse = (prozent) => (prozent < 4 ? 'sn-nadel--links' : prozent > 96 ? 'sn-nadel--rechts' : '');
 
 export function Zahlenstrahl({ block, werte = [], aktiv = [], lupe = true, beschriftung = null }) {
   const anzahl = 256 / block;
+  const breit = anzahl <= 4; // Bereiche passen in die Blöcke
   const jede = Math.max(1, anzahl / 8);
   const wert = werte[0] ?? null;
   const mitte = wert === null ? 0 : Math.floor(wert / block);
@@ -193,83 +198,119 @@ export function Zahlenstrahl({ block, werte = [], aktiv = [], lupe = true, besch
   const von = fenster[0] * block;
   const bis = (fenster[fenster.length - 1] + 1) * block - 1;
   const prozent = (x) => (x / 256) * 100;
-  const mitLupe = lupe && anzahl > 1 && wert !== null;
+  const mitLupe = lupe && !breit && wert !== null;
+  // Zwei Nadeln dicht beieinander: Die Schilder zeigen voneinander weg, damit sie sich nicht überdecken
+  const dicht = werte.length > 1 && Math.abs(werte[1] - werte[0]) < 40;
+  const richtung = (w) => (w === Math.min(...werte) ? 'sn-nadel--rechts' : 'sn-nadel--links');
   return (
     <div class="sn-strahl">
       <div role="img" aria-label={`Zahlen 0 bis 255, geschnitten in ${anzahl} ${anzahl === 1 ? 'Block' : 'Blöcke'} zu je ${block}`}>
         {werte.length > 0 && (
           <div class="sn-strahl__nadelbahn">
-            {werte.map((w, i) => (
-              <span key={i} class={`sn-nadel ${i ? 'sn-nadel--zwei' : ''}`} style={{ left: `${((w + 0.5) / 256) * 100}%` }}>
-                <span class="sn-nadel__text mono">{beschriftung?.[i] ?? w}</span>
-              </span>
-            ))}
+            {werte.map((w, i) => {
+              const pos = ((w + 0.5) / 256) * 100;
+              return (
+                <span key={i} class={`sn-nadel ${i ? 'sn-nadel--zwei' : ''} ${dicht ? richtung(w) : randKlasse(pos)}`} style={{ left: `${pos}%` }}>
+                  <span class="sn-nadel__text mono">{beschriftung?.[i] ?? w}</span>
+                </span>
+              );
+            })}
           </div>
         )}
         <div class={`sn-strahl__leiste ${anzahl > 32 ? 'sn-strahl__leiste--dicht' : ''}`}>
           {Array.from({ length: anzahl }, (_, nr) => (
             <span key={nr} class={`sn-seg ${nr % 2 ? 'sn-seg--zwei' : ''} ${aktiv.includes(nr * block) ? 'sn-seg--aktiv' : ''}`}>
-              {anzahl <= 4 && (
+              {breit && (
                 <span class="sn-seg__bereich mono">
                   {nr * block}–{nr * block + block - 1}
                 </span>
               )}
             </span>
           ))}
-          {mitLupe && <span class="sn-strahl__rahmen" style={{ left: `${prozent(von)}%`, width: `${prozent(bis - von + 1)}%` }} aria-hidden="true" />}
+          {mitLupe && <span class="sn-strahl__fenster" style={{ left: `${prozent(von)}%`, width: `${prozent(bis - von + 1)}%` }} aria-hidden="true" />}
         </div>
-        <div class="sn-strahl__skala mono" aria-hidden="true">
-          {Array.from({ length: anzahl / jede }, (_, i) => i * jede * block).map((start) => (
-            <span key={start} class={`sn-strahl__zahl ${start === 0 ? 'sn-strahl__zahl--null' : ''}`} style={{ left: `${prozent(start)}%` }}>
-              {start}
-            </span>
-          ))}
-          <span class="sn-strahl__zahl sn-strahl__zahl--ende">255</span>
-        </div>
-      </div>
-      {mitLupe && (
-        <>
-          <svg class="sn-trichter" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
-            <polygon points={`${prozent(von)},0 ${prozent(bis + 1)},0 100,24 0,24`} class="sn-trichter__flaeche" />
-            <line x1={prozent(von)} y1="0" x2="0" y2="24" class="sn-trichter__linie" vector-effect="non-scaling-stroke" />
-            <line x1={prozent(bis + 1)} y1="0" x2="100" y2="24" class="sn-trichter__linie" vector-effect="non-scaling-stroke" />
-          </svg>
-          <div class="sn-lupe" aria-label={`Lupe: Ausschnitt ${von} bis ${bis}`}>
-            <span class="sn-lupe__titel">
-              <Icon name="search" groesse={13} /> Lupe auf {von}–{bis}
-            </span>
-            <div class="sn-lupe__bloecke">
-              {fenster.map((nr) => {
-                const start = nr * block;
-                const ende = start + block - 1;
-                const hier = werte.filter((w) => w >= start && w <= ende);
+        {breit ? (
+          werte.length > 0 && (
+            <div class="sn-strahl__namen" style={{ gridTemplateColumns: `repeat(${anzahl}, minmax(0, 1fr))` }}>
+              {Array.from({ length: anzahl }, (_, nr) => {
+                const hier = werte.filter((w) => Math.floor(w / block) === nr);
                 return (
-                  <div key={nr} class={`sn-lupe__block ${aktiv.includes(start) ? 'sn-lupe__block--aktiv' : ''}`}>
-                    <div class="sn-lupe__balken">
-                      {block <= 4
-                        ? Array.from({ length: block }, (_, i) => (
-                            <span key={i} class={`sn-lupe__zelle mono ${hier.includes(start + i) ? 'sn-lupe__zelle--wert' : ''}`}>
-                              {start + i}
-                            </span>
-                          ))
-                        : hier.map((w) => (
-                            <span key={w} class={`sn-lupe__nadel ${w !== wert ? 'sn-lupe__nadel--zwei' : ''}`} style={{ left: `${((w - start + 0.5) / block) * 100}%` }}>
-                              <span class="mono">{w}</span>
-                            </span>
-                          ))}
-                    </div>
-                    <div class="sn-lupe__zahlen mono">
-                      <span>{start}</span>
-                      <span>{ende}</span>
-                    </div>
-                    <span class="sn-lupe__name">{nr === mitte ? `Block mit der ${wert}` : NACHBAR[nr - mitte]}</span>
-                  </div>
+                  <span key={nr} class={`sn-strahl__name ${aktiv.includes(nr * block) ? 'sn-strahl__name--aktiv' : ''}`}>
+                    {hier.length ? `Block mit der ${hier.join(' und der ')}` : ''}
+                  </span>
                 );
               })}
             </div>
+          )
+        ) : (
+          <div class="sn-strahl__skala mono" aria-hidden="true">
+            {Array.from({ length: anzahl / jede }, (_, i) => i * jede * block).map((start) => (
+              <span key={start} class={`sn-strahl__zahl ${start === 0 ? 'sn-strahl__zahl--null' : ''}`} style={{ left: `${prozent(start)}%` }}>
+                {start}
+              </span>
+            ))}
+            <span class="sn-strahl__zahl sn-strahl__zahl--ende">255</span>
           </div>
+        )}
+      </div>
+      {mitLupe && (
+        <>
+          <svg class="sn-trichter" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points={`${prozent(von)},0 ${prozent(bis + 1)},0 100,28 0,28`} class="sn-trichter__flaeche" />
+            <line x1={prozent(von)} y1="0" x2="0.2" y2="28" class="sn-trichter__linie" vector-effect="non-scaling-stroke" />
+            <line x1={prozent(bis + 1)} y1="0" x2="99.8" y2="28" class="sn-trichter__linie" vector-effect="non-scaling-stroke" />
+          </svg>
+          <Lupe block={block} fenster={fenster} mitte={mitte} werte={werte} wert={wert} aktiv={aktiv} von={von} bis={bis} />
         </>
       )}
+    </div>
+  );
+}
+
+function Lupe({ block, fenster, mitte, werte, wert, aktiv, von, bis }) {
+  const zellen = block <= 4; // jede Zahl einzeln
+  return (
+    <div class="sn-lupe" aria-label={`Lupe: Ausschnitt ${von} bis ${bis}`}>
+      <span class="sn-lupe__titel">
+        <Icon name="search" groesse={13} />
+        <span>
+          Lupe auf {von} bis {bis}, rund {Math.round(256 / (bis - von + 1))}-mal so groß
+        </span>
+      </span>
+      <div class={`sn-lupe__bloecke ${zellen ? '' : 'sn-lupe__bloecke--nadeln'}`}>
+        {fenster.map((nr) => {
+          const start = nr * block;
+          const ende = start + block - 1;
+          const hier = werte.filter((w) => w >= start && w <= ende);
+          return (
+            <div key={nr} class={`sn-lupe__block ${aktiv.includes(start) ? 'sn-lupe__block--aktiv' : ''}`}>
+              <div class="sn-lupe__balken">
+                {zellen
+                  ? Array.from({ length: block }, (_, i) => (
+                      <span key={i} class={`sn-lupe__zelle mono ${hier.includes(start + i) ? 'sn-lupe__zelle--wert' : ''}`}>
+                        {start + i}
+                      </span>
+                    ))
+                  : hier.map((w) => {
+                      const pos = ((w - start + 0.5) / block) * 100;
+                      return (
+                        <span key={w} class={`sn-nadel sn-lupe__nadel ${w !== wert ? 'sn-nadel--zwei' : ''} ${randKlasse(pos)}`} style={{ left: `${pos}%` }}>
+                          <span class="sn-nadel__text mono">{w}</span>
+                        </span>
+                      );
+                    })}
+              </div>
+              {!zellen && (
+                <div class="sn-lupe__zahlen mono">
+                  <span>{start}</span>
+                  <span>{ende}</span>
+                </div>
+              )}
+              <span class="sn-lupe__name">{nr === mitte ? `Block mit der ${wert}` : NACHBAR[nr - mitte]}</span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

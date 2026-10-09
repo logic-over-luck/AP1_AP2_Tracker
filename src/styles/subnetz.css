@@ -234,12 +234,14 @@
 }
 .sn-strahl {
   display: grid;
-  gap: 4px;
   max-width: 780px;
+  min-width: 0;
 }
+/* Nadeln über dem Strahl */
 .sn-strahl__nadelbahn {
   position: relative;
   height: 30px;
+  margin-bottom: 2px;
 }
 .sn-nadel {
   position: absolute;
@@ -247,6 +249,15 @@
   display: grid;
   justify-items: center;
   transform: translateX(-50%);
+  z-index: 1;
+}
+.sn-nadel--links {
+  justify-items: start;
+  transform: translateX(-1px);
+}
+.sn-nadel--rechts {
+  justify-items: end;
+  transform: translateX(calc(-100% + 1px));
 }
 .sn-nadel__text {
   padding: 1px 7px;
@@ -255,6 +266,7 @@
   color: var(--bg);
   font-size: var(--t-s);
   font-weight: 600;
+  white-space: nowrap;
 }
 .sn-nadel::after {
   content: '';
@@ -262,7 +274,15 @@
   height: 7px;
   background: var(--text);
 }
+.sn-nadel--zwei .sn-nadel__text {
+  background: var(--warn);
+}
+.sn-nadel--zwei::after {
+  background: var(--warn);
+}
+/* Leiste mit den Blöcken */
 .sn-strahl__leiste {
+  position: relative;
   display: flex;
   gap: 2px;
   height: 34px;
@@ -303,132 +323,37 @@
   font-weight: 600;
   color: var(--text);
 }
-.sn-seg__code {
-  font-size: var(--t-xs);
-  color: var(--akzent);
-}
-.sn-strahl__leiste {
-  position: relative;
-}
-.sn-strahl__rahmen {
+/* Fenster: der Ausschnitt, den die Lupe vergrößert – liegt genau auf der Leiste */
+.sn-strahl__fenster {
   position: absolute;
-  top: -4px;
-  bottom: -4px;
-  min-width: 6px;
-  border: 2px solid var(--text-2);
-  border-radius: 5px;
+  top: 0;
+  bottom: 0;
+  min-width: 4px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  box-shadow: inset 0 0 0 1.5px var(--text-2);
   pointer-events: none;
 }
-.sn-trichter {
-  display: block;
-  width: 100%;
-  max-width: 780px;
-  height: 22px;
-  margin-top: -2px;
-}
-.sn-trichter__flaeche {
-  fill: color-mix(in srgb, var(--text) 6%, transparent);
-}
-.sn-trichter__linie {
-  stroke: var(--text-3);
-  stroke-width: 1.5px;
-}
-.sn-lupe {
+/* Namen unter breiten Blöcken */
+.sn-strahl__namen {
   display: grid;
-  gap: var(--s-2);
-  max-width: 780px;
-  padding: var(--s-3);
-  border-radius: var(--r-3);
-  border: 2px solid var(--text-3);
-  background: var(--flaeche-2);
-}
-.sn-lupe__titel {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: var(--t-xs);
-  color: var(--text-3);
-}
-.sn-lupe__bloecke {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 1fr);
-  gap: var(--s-3);
-  padding-top: 24px;
-}
-.sn-lupe__block {
-  display: grid;
-  gap: 4px;
-  min-width: 0;
-}
-.sn-lupe__balken {
-  position: relative;
-  display: flex;
   gap: 2px;
-  height: 40px;
-  border-radius: 5px;
-  background: var(--flaeche-4);
+  margin-top: 6px;
 }
-.sn-lupe__block--aktiv .sn-lupe__balken {
-  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
-  box-shadow: inset 0 0 0 1.5px var(--akzent);
-}
-.sn-lupe__zelle {
-  flex: 1 1 0;
-  display: grid;
-  place-items: center;
-  min-width: 0;
-  border-radius: 4px;
-  font-size: var(--t-s);
-  color: var(--text-2);
-}
-.sn-lupe__zelle--wert {
-  background: var(--text);
-  color: var(--bg);
-  font-weight: 600;
-}
-.sn-lupe__nadel {
-  position: absolute;
-  top: -22px;
-  bottom: 0;
-  display: grid;
-  justify-items: center;
-  align-content: start;
-  transform: translateX(-50%);
-}
-.sn-lupe__nadel span {
-  padding: 0 6px;
-  border-radius: var(--r-1);
-  background: var(--text);
-  color: var(--bg);
-  font-size: var(--t-s);
-  font-weight: 600;
-}
-.sn-lupe__nadel::after {
-  content: '';
-  width: 2px;
-  height: 44px;
-  background: var(--text);
-}
-.sn-lupe__zahlen {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--t-s);
-  font-weight: 600;
-  color: var(--text);
-}
-.sn-lupe__name {
+.sn-strahl__name {
   text-align: center;
   font-size: var(--t-xs);
   color: var(--text-3);
 }
-.sn-lupe__block--aktiv .sn-lupe__name {
-  color: var(--akzent);
+.sn-strahl__name--aktiv {
   font-weight: 600;
+  color: var(--akzent);
 }
+/* Skala unter schmalen Blöcken */
 .sn-strahl__skala {
   position: relative;
-  height: 16px;
+  height: 18px;
+  margin-top: 4px;
   font-size: var(--t-xs);
   color: var(--text-3);
 }
@@ -444,6 +369,110 @@
   left: auto;
   right: 0;
   transform: none;
+}
+/* Trichter von der Skala zur Lupe */
+.sn-trichter {
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+.sn-trichter__flaeche {
+  fill: color-mix(in srgb, var(--text) 5%, transparent);
+}
+.sn-trichter__linie {
+  stroke: var(--text-3);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+}
+/* Lupe */
+.sn-lupe {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie-3);
+  background: color-mix(in srgb, var(--text) 3%, var(--flaeche-2));
+}
+.sn-lupe__titel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-lupe__bloecke {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--s-2);
+}
+.sn-lupe__bloecke--nadeln {
+  padding-top: 30px;
+}
+.sn-lupe__block {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.sn-lupe__balken {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 40px;
+  border-radius: 5px;
+  background: var(--flaeche-4);
+}
+.sn-lupe__block--aktiv .sn-lupe__balken {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  box-shadow: inset 0 0 0 1.5px var(--akzent);
+}
+.sn-lupe__bloecke:not(.sn-lupe__bloecke--nadeln) .sn-lupe__balken {
+  background: none;
+  box-shadow: none;
+}
+.sn-lupe__zelle {
+  flex: 1 1 0;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-radius: 4px;
+  background: var(--flaeche-4);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sn-lupe__block--aktiv .sn-lupe__zelle {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  color: var(--text);
+}
+.sn-lupe__zelle.sn-lupe__zelle--wert {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+}
+/* Nadel in der Lupe: Schild über dem Balken, Strich durch den Balken */
+.sn-lupe__nadel {
+  top: -30px;
+  bottom: 0;
+  grid-template-rows: auto 1fr;
+}
+.sn-lupe__nadel::after {
+  height: auto;
+}
+.sn-lupe__zahlen {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-2);
+}
+.sn-lupe__name {
+  text-align: center;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-lupe__block--aktiv .sn-lupe__name {
+  color: var(--akzent);
+  font-weight: 600;
 }
 /* ---------- Bausteine: Text ---------- */
 .sn-f-netz {
@@ -749,23 +778,6 @@
 }
 .sn-bit--knopf:hover {
   outline: 1px solid var(--text-3);
-}
-.sn-nadel--zwei .sn-nadel__text {
-  background: var(--warn);
-}
-.sn-nadel--zwei::after {
-  background: var(--warn);
-}
-.sn-lupe__nadel--zwei span {
-  background: var(--warn);
-}
-.sn-lupe__nadel--zwei::after {
-  background: var(--warn);
-}
-.sn-seg__bereich {
-  font-size: var(--t-xs);
-  font-weight: 600;
-  color: var(--text);
 }
 /* ---------- Bilder ---------- */
 .sn-geraet {
@@ -1802,6 +1814,19 @@ button.sn-v6__block:hover {
   color: var(--akzent);
 }
 @media (max-width: 640px) {
+  .sn-lupe {
+    padding: var(--s-3);
+  }
+  .sn-lupe__bloecke {
+    gap: var(--s-1);
+  }
+  .sn-lupe__balken {
+    gap: 1px;
+  }
+  .sn-lupe__zelle {
+    font-size: 10px;
+    letter-spacing: -0.03em;
+  }
   .sn {
     --sn-oktettluecke: var(--s-3);
   }
