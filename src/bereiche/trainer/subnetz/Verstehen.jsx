@@ -23,7 +23,6 @@ import {
   grossesNetz,
   vergleichsZiele,
   aufteilTabelle,
-  blockTreppe,
   rechenweg,
   zufallsAufgabe,
   leseIp,
@@ -417,10 +416,10 @@ function StrichKnoepfe({ praefix, setPraefix, links = 'Strich nach links', recht
 }
 
 // Zahlenstrahl 0 … 255 des Oktetts mit dem Strich, in Blöcke geschnitten. marke: Wert mit Stecknadel ·
-// aktiv: Anfang des hervorgehobenen Blocks · bereiche: von–bis in jedem Block (nur bei wenigen Blöcken)
-function Strahl({ z, marke = null, aktiv = null, bereiche = false }) {
+// aktiv: Anfang des hervorgehobenen Blocks · codes: die Netzbits jedes Blocks (nur bei wenigen Blöcken)
+function Strahl({ z, marke = null, aktiv = null, codes = false }) {
   const anzahl = 256 / z.block;
-  const mitBereich = bereiche && anzahl <= 8;
+  const k = z.netzBitsImOktett;
   const jede = Math.max(1, anzahl / 8);
   return (
     <div class="sv-strahl" role="img" aria-label={`Zahlen 0 bis 255, geschnitten in ${anzahl} ${anzahl === 1 ? 'Block' : 'Blöcke'} zu je ${z.block}`}>
@@ -431,15 +430,10 @@ function Strahl({ z, marke = null, aktiv = null, bereiche = false }) {
           </span>
         </div>
       )}
-      <div class={`sv-strahl__leiste ${anzahl > 32 ? 'sv-strahl__leiste--dicht' : ''} ${mitBereich ? 'sv-strahl__leiste--hoch' : ''}`}>
+      <div class={`sv-strahl__leiste ${anzahl > 32 ? 'sv-strahl__leiste--dicht' : ''}`}>
         {Array.from({ length: anzahl }, (_, nr) => (
           <span key={nr} class={`sv-block ${nr % 2 ? 'sv-block--zwei' : ''} ${aktiv === nr * z.block ? 'sv-block--aktiv' : ''}`}>
-            {mitBereich && (
-              <span class="sv-block__vonbis mono">
-                <span>{nr * z.block}</span>
-                <span>–{nr * z.block + z.block - 1}</span>
-              </span>
-            )}
+            {codes && k > 0 && anzahl <= 8 && <span class="sv-block__code mono">{nr.toString(2).padStart(k, '0')}</span>}
             {aktiv === nr * z.block && anzahl <= 4 && (
               <span class="sv-block__bereich mono">
                 {aktiv}–{aktiv + z.block - 1}
@@ -448,16 +442,14 @@ function Strahl({ z, marke = null, aktiv = null, bereiche = false }) {
           </span>
         ))}
       </div>
-      {!mitBereich && (
-        <div class="sv-strahl__skala mono" aria-hidden="true">
-          {Array.from({ length: anzahl / jede }, (_, i) => i * jede * z.block).map((start) => (
-            <span key={start} class={`sv-strahl__zahl ${start === 0 ? 'sv-strahl__zahl--null' : ''}`} style={{ left: `${(start / 256) * 100}%` }}>
-              {start}
-            </span>
-          ))}
-          <span class="sv-strahl__zahl sv-strahl__zahl--ende">255</span>
-        </div>
-      )}
+      <div class="sv-strahl__skala mono" aria-hidden="true">
+        {Array.from({ length: anzahl / jede }, (_, i) => i * jede * z.block).map((start) => (
+          <span key={start} class={`sv-strahl__zahl ${start === 0 ? 'sv-strahl__zahl--null' : ''}`} style={{ left: `${(start / 256) * 100}%` }}>
+            {start}
+          </span>
+        ))}
+        <span class="sv-strahl__zahl sv-strahl__zahl--ende">255</span>
+      </div>
     </div>
   );
 }
@@ -844,105 +836,64 @@ function Oktett({ z, praefix }) {
 
 // ---------- 6. Blöcke ----------
 
-// Erst konkret (wie viele Netze passen ins Oktett?), dann die Abkürzung, dann die Treppe aller Präfixe als Zusammenhang
 function Bloecke({ z, praefix, setPraefix }) {
   const k = z.netzBitsImOktett;
   const hb = 8 - k;
   const anzahl = 256 / z.block;
   const nr = z.index + 1;
-  const starts = Array.from({ length: anzahl }, (_, i) => i * z.block);
-  const gezeigt = anzahl <= 5 ? starts : [...starts.slice(0, 4), null, starts[anzahl - 1]];
   return (
     <div class="sv-inhalt">
       {k > 0 ? (
         <p class="sv-text">
-          Bei /{praefix} gehören im {nr}. Oktett <strong class="sv-farbe-host">{bitWort(hb)} zum Host</strong>. Damit lassen sich 2<sup>{hb}</sup> ={' '}
-          <strong>{z.block} Adressen</strong> durchnummerieren – so groß ist <strong>ein Netz</strong> (in diesem Oktett). Im Oktett gibt es aber die Zahlen 0 bis 255, also{' '}
-          <strong>256 Stück</strong>. Wie viele Netze passen da nebeneinander hinein?
+          Im {nr}. Oktett sind {bitWort(k)} Netz und {bitWort(hb)} Host. Die Hostbits zählen von{' '}
+          <span class="mono">
+            {'0'.repeat(hb)} bis {'1'.repeat(hb)}
+          </span>{' '}
+          – das sind 2<sup>{hb}</sup> = <strong>{z.block} Zahlen</strong>. So groß ist ein Block. Die Netzbits sagen, <strong>welcher</strong> Block: 2<sup>{k}</sup> = {anzahl}{' '}
+          Blöcke.
         </p>
       ) : (
         <p class="sv-text">
-          Bei /{praefix} gehören im {nr}. Oktett <strong class="sv-farbe-host">alle 8 Bits zum Host</strong>. Damit lassen sich 2<sup>8</sup> = <strong>256 Adressen</strong>{' '}
-          durchnummerieren – genau so viele, wie das Oktett Zahlen hat (0 bis 255). Es passt also nur <strong>ein Netz</strong> hinein.
+          Bei /{praefix} liegt der Strich genau vor dem {nr}. Oktett. Alle 8 Bits sind Host – es gibt nur <strong>einen Block</strong> von 0 bis 255 (2<sup>8</sup> = 256).
         </p>
-      )}
-      <p class="sv-formel sv-formel--gross mono">
-        256 : {z.block} = <strong>{anzahl === 1 ? '1 Netz' : `${anzahl} Netze`}</strong>
-      </p>
-      <p class="sv-text">
-        Jedes dieser Stücke heißt <strong>Block</strong>. <strong>Ein Block ist ein eigenes Netz.</strong>
-        {anzahl > 1 && ' Die Blöcke liegen lückenlos nebeneinander:'}
-      </p>
-      <Strahl z={z} bereiche />
-      <p class="sv-klein">
-        Deine Adresse ({z.oktette.join('.')}) liegt in {anzahl === 1 ? 'diesem einen Block' : 'genau einem dieser Blöcke'} – {anzahl === 1 ? 'das' : 'in welchem'} klären wir im
-        nächsten Schritt.
-      </p>
-      {anzahl > 1 && (
-        <div class="sv-spruenge" aria-label={`Blockanfänge: ${starts.slice(0, 5).join(', ')}`}>
-          <span class="sv-spruenge__titel">Blockanfänge: bei 0 starten, dann immer + {z.block}</span>
-          <div class="sv-spruenge__reihe mono">
-            {gezeigt.map((start, i) => (
-              <Fragment key={i}>
-                {i > 0 && <span class="sv-spruenge__plus">{start === null ? '' : `+${z.block}`}</span>}
-                {start === null ? <span class="sv-spruenge__luecke">…</span> : <span class="sv-spruenge__start">{start}</span>}
-              </Fragment>
-            ))}
-          </div>
-        </div>
       )}
       {k > 0 && (
-        <div class="sv-abkuerzung">
-          <span class="sv-abkuerzung__titel">Blockgröße schnell ausrechnen</span>
-          <span class="mono">
-            2<sup>Hostbits</sup>: 2<sup>{hb}</sup> = <strong>{z.block}</strong>
-          </span>
-          <span class="mono">
-            256 − Subnetzmaske: 256 − {z.maskenwert} = <strong>{z.block}</strong>
-            <span class="sv-abkuerzung__tipp"> ← in der Prüfung am schnellsten</span>
-          </span>
+        <div class="sv-blockgr">
+          <div class="sv-blockgr__reihe">
+            {STELLENWERTE.map((g, j) => (
+              <span
+                key={j}
+                class={`sv-blockgr__zelle mono ${j < k ? 'sv-blockgr__zelle--netz' : ''} ${j === k - 1 ? 'sv-blockgr__zelle--letzte' : ''} ${j === k ? 'sv-blockgr__zelle--strich' : ''}`}
+              >
+                {g}
+              </span>
+            ))}
+          </div>
+          <p class="sv-blockgr__text">
+            Abkürzung: <strong>Blockgröße = Stellenwert des letzten Netzbits = {z.block}</strong>. Probe: 256 − {z.maskenwert} (Subnetzmaske) = {z.block}.
+          </p>
         </div>
       )}
-      {z.index < 3 && (
-        <p class="sv-klein">
-          Hier zählt nur das {nr}. Oktett. Die Oktette danach gehören ganz zum Host und kommen in jedem Block noch dazu – darum ist das ganze Netz sogar {tausend(z.n.adressen)}{' '}
-          Adressen groß.
-        </p>
-      )}
-      <div class="sv-treppe">
-        <span class="sv-treppe__titel">
-          Und wenn der Präfix größer wird? Jedes Bit mehr fürs Netz <strong>halbiert</strong> die Blöcke: doppelt so viele Netze, jedes halb so groß. Zeile anklicken = Präfix
-          wählen.
-        </span>
-        {blockTreppe(praefix).map((r) => (
-          <button
-            type="button"
-            key={r.praefix}
-            class={`sv-treppe__zeile ${r.praefix === praefix ? 'sv-treppe__zeile--aktiv' : ''}`}
-            onClick={() => setPraefix(r.praefix)}
-            aria-pressed={r.praefix === praefix}
-          >
-            <span class="sv-treppe__name">
-              <span class="mono">/{r.praefix}</span> {r.anzahl === 1 ? '1 Block' : `${r.anzahl} Blöcke`} à {r.block}
-            </span>
-            <span class={`sv-strahl__leiste sv-treppe__leiste ${r.anzahl > 32 ? 'sv-strahl__leiste--dicht' : ''}`} aria-hidden="true">
-              {Array.from({ length: r.anzahl }, (_, i) => (
-                <span key={i} class={`sv-block ${i % 2 ? 'sv-block--zwei' : ''}`} />
-              ))}
-            </span>
-          </button>
-        ))}
-      </div>
+      <Strahl z={z} codes />
+      <p class="sv-formel mono">
+        {anzahl} {anzahl === 1 ? 'Block' : 'Blöcke'} × {z.block} = 256
+      </p>
+      <StrichKnoepfe praefix={praefix} setPraefix={setPraefix} links="Blöcke zusammenlegen" rechts="Blöcke halbieren" />
       <Merke>
-        <strong>Ein Block = ein Netz.</strong> Blockgröße = Adressen je Netz. Die Blöcke beginnen bei 0 und dann immer + Blockgröße
-        {anzahl > 1 && (
-          <span class="mono">
-            {' '}
-            ({starts.slice(0, 4).join(', ')}
-            {anzahl > 4 ? ' …' : ''})
-          </span>
+        {anzahl === 1 ? (
+          <>
+            Liegt der Strich zwischen zwei Oktetten, ist das ganze Oktett <strong>ein Block: 0 bis 255</strong>.
+          </>
+        ) : (
+          <>
+            Blöcke beginnen immer bei <strong>Vielfachen der Blockgröße</strong>:{' '}
+            <span class="mono">
+              {Array.from({ length: Math.min(anzahl, 5) }, (_, i) => i * z.block).join(', ')}
+              {anzahl > 5 && ' …'}
+            </span>
+            {anzahl > 5 ? '' : '.'} Jede Zahl von 0 bis 255 gehört zu genau einem Block.
+          </>
         )}
-        . Jede Zahl von 0 bis 255 liegt in genau einem Block.
       </Merke>
     </div>
   );
@@ -1550,7 +1501,7 @@ function RechenwegListe({ ip, praefix }) {
         [
           'Blockgröße',
           <>
-            256 − {r.maskenwert} = <strong>{r.block}</strong> (oder 2<sup>{8 - r.netzBits}</sup> = {r.block})
+            letztes Netzbit = <strong>{r.block}</strong> (Probe: 256 − {r.maskenwert} = {r.block})
           </>,
         ],
         [

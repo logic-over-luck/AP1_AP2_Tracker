@@ -157,7 +157,7 @@ nächsten offenen Punkt weiter.
   Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten – das ändert das Oktett der IP oben mit, alle weiteren Schritte rechnen damit; „zurück zu …“ stellt die alte Adresse wieder her), 3 Präfix (Netzbits färben sich ein, Strich,
   Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Subnetzmaske (Fachbegriff eingeführt, auch Netzmaske, kurz Maske; Adresse und Subnetzmaske übereinander mit Oktett-Nummern, Rechnung für alle vier Oktette in Netz-/Host-Farben,
   die 9 möglichen Oktettwerte), 5 Oktett (abschreiben / hier rechnen / 0 oder 255, Vorschau „192.168.40.?“; bei /8, /16, /24
-  „nichts zu rechnen“), 6 Blöcke (nach Anfänger-Rückmeldung neu: erst konkret „Hostbits im Oktett → Adressen je Netz, 256 : 64 = 4 Netze“, Satz „Ein Block ist ein eigenes Netz“, Zahlenstrahl mit von–bis in jedem Block, Blockanfänge „0 → +64 → 64 …“, Abkürzung 2^h bzw. 256 − Subnetzmaske, dann die Treppe /24 … /30 als Zusammenhang: jede Zeile dasselbe Oktett feiner geschnitten, anklickbar),
+  „nichts zu rechnen“), 6 Blöcke (Blockgröße = Stellenwert des letzten Netzbits = 256 − Maske, Zahlenstrahl mit Netzbit-Codes),
   7 Dein Block (Anfang und Ende raten, falsche Antworten erklärt, v. a. „128 + 64 = 192 ist schon der nächste Block“, Lupe
   auf die Grenze, Anfang/Ende als Bits), 8 Adressen (erst Rahmen, dann Inneres aufdecken, 2^h − 2), 9 Unter /24 (bei /24 und
   mehr dieselbe IP mit /23: Netz aus 256er-Stücken, Quiz „darf ein PC x.255 haben?“, Hostbits erklären es), 10 Gateway

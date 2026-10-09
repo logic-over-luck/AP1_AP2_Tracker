@@ -295,37 +295,6 @@ test('Verstehen: Aufteilen – Netze × Adressen bleibt gleich', async () => {
   assert.equal(t26.zeilen.find((r) => r.praefix === 26).hostsGesamt, 248);
 });
 
-test('Verstehen: Treppe der Blöcke', async () => {
-  const lw = await lernweg();
-  assert.deepEqual(
-    lw.blockTreppe(26).map((r) => [r.praefix, r.anzahl, r.block]),
-    [
-      [24, 1, 256],
-      [25, 2, 128],
-      [26, 4, 64],
-      [27, 8, 32],
-      [28, 16, 16],
-      [29, 32, 8],
-      [30, 64, 4],
-    ],
-  );
-  assert.deepEqual(
-    lw.blockTreppe(20).map((r) => r.praefix),
-    [16, 17, 18, 19, 20, 21, 22, 23],
-  );
-  for (let p = 8; p <= 30; p++) {
-    const t = lw.blockTreppe(p);
-    assert.ok(
-      t.some((r) => r.praefix === p),
-      `/${p}`,
-    );
-    for (const r of t) {
-      assert.equal(r.anzahl * r.block, 256);
-      assert.equal(r.block, ip.zerlege('10.20.30.40', r.praefix).block);
-    }
-  }
-});
-
 test('Verstehen: schneller Rechenweg für jeden Präfix von /8 bis /30', async () => {
   const lw = await lernweg();
   const r = lw.rechenweg('192.168.40.150', 26);
