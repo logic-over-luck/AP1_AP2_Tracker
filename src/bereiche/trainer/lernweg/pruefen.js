@@ -21,13 +21,18 @@ export function leseDezimal(text) {
 
 // Binärzahl („1010 0110“, „0b1010“) → Wert oder null
 export function leseBinaer(text) {
-  const s = String(text ?? '').replace(/\s/g, '').replace(/^0b/i, '');
+  const s = String(text ?? '')
+    .replace(/\s/g, '')
+    .replace(/^0b/i, '');
   return /^[01]+$/.test(s) ? parseInt(s, 2) : null;
 }
 
 // Hexadezimalzahl („3F“, „0x3f“, „3f h“) → Wert oder null
 export function leseHex(text) {
-  const s = String(text ?? '').replace(/\s/g, '').replace(/^0x/i, '').replace(/h$/i, '');
+  const s = String(text ?? '')
+    .replace(/\s/g, '')
+    .replace(/^0x/i, '')
+    .replace(/h$/i, '');
   return /^[0-9a-f]+$/i.test(s) ? parseInt(s, 16) : null;
 }
 
