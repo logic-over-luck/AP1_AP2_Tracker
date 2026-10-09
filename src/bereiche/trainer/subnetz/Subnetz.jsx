@@ -1,4 +1,5 @@
 import { useCallback } from 'preact/hooks';
+import { geheZu } from '../../../router.js';
 import { TrainerSeite, Uebung } from '../rahmen/Uebung.jsx';
 import { ERZEUGER } from './aufgaben.js';
 import { SubnetzVisualizer } from './Visualizer.jsx';
@@ -17,7 +18,15 @@ const SPICKZETTEL = {
 export function SubnetzTrainer({ raum, trainer, modi, params }) {
   return (
     <TrainerSeite raum={raum} trainer={trainer} modi={modi} modus={params.modus}>
-      {(m) => (m.id === 'verstehen' ? <SubnetzVerstehen /> : m.id === 'visual' ? <SubnetzVisualizer /> : <SubnetzUebung key={m.id} modus={m} />)}
+      {(m) =>
+        m.id === 'verstehen' ? (
+          <SubnetzVerstehen lektion={params.lektion} onLektion={(id) => geheZu(raum, 'trainer', trainer.id, { modus: 'verstehen', lektion: id ?? undefined })} />
+        ) : m.id === 'visual' ? (
+          <SubnetzVisualizer />
+        ) : (
+          <SubnetzUebung key={m.id} modus={m} />
+        )
+      }
     </TrainerSeite>
   );
 }

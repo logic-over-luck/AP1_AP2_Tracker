@@ -149,24 +149,22 @@ nächsten offenen Punkt weiter.
   wird streng gelesen (jede Nummer genau einmal, 0 … Höchstpunkte, halbe Punkte). Zeichenaufgaben werden nicht bewertet
   und im Ergebnis als „nicht ermittelt“ mit ihren Punkten ausgewiesen; Prozent und Note beziehen sich auf die
   ermittelten Punkte. Vorrat: je Teil 2 Sätze (ap1-01/02, pb1-01/02, pb2-01/02, wiso-01/02), jeder unabhängig geprüft.
-- **Subnetz „Verstehen“:** erster Reiter im Subnetz-Trainer, von Grund auf neu gebaut (`subnetz/Verstehen.jsx`, Rechnung in
-  `lernweg.js` + `ip.js`, getestet in `tests/subnetz.test.mjs`, Stile `subnetz-lernen.css` mit Präfix `sv-`). Zwölf ruhige
-  Schritte an einer Adresse (oben IP und Präfix /8 … /30, Start 192.168.40.150/26), je Schritt eine Idee. Leitbild:
-  Straße (Netz) + Hausnummer (Host). Farben überall gleich und oben in der Leiste als Legende: Netz grün (Akzent), Host blau (--info), Strich orange, reserviert rot (auf Wunsch Host blau statt grau, damit Netz und Host klar unterscheidbar sind).
-  1 Aufbau (für dich / für den Computer, 4 × 8 Bit, drei Erklärkästen – wie gewünscht beibehalten), 2 Bits (Stellenwert-Tafel,
-  Bit für Bit „passt der Stellenwert in den Rest?“, danach Bits selbst umschalten – das ändert das Oktett der IP oben mit, alle weiteren Schritte rechnen damit; „zurück zu …“ stellt die alte Adresse wieder her), 3 Präfix (Netzbits färben sich ein, Strich,
-  Bitnummern, Straße/Hausnummer, Strich verschieben mit „halbiert/verdoppelt“), 4 Subnetzmaske (Fachbegriff eingeführt, auch Netzmaske, kurz Maske; Adresse und Subnetzmaske übereinander mit Oktett-Nummern, Rechnung für alle vier Oktette in Netz-/Host-Farben,
-  die 9 möglichen Oktettwerte), 5 Oktett (abschreiben / hier rechnen / 0 oder 255, Vorschau „192.168.40.?“; bei /8, /16, /24
-  „nichts zu rechnen“), 6 Blöcke (Blockgröße = Stellenwert des letzten Netzbits = 256 − Maske, Zahlenstrahl mit Netzbit-Codes),
-  7 Dein Block (Anfang und Ende raten, falsche Antworten erklärt, v. a. „128 + 64 = 192 ist schon der nächste Block“, Lupe
-  auf die Grenze, Anfang/Ende als Bits), 8 Adressen (erst Rahmen, dann Inneres aufdecken, 2^h − 2), 9 Unter /24 (bei /24 und
-  mehr dieselbe IP mit /23: Netz aus 256er-Stücken, Quiz „darf ein PC x.255 haben?“, Hostbits erklären es), 10 Gateway
-  (drei Ziele raten: direkt oder übers Gateway, Rechnung des PCs und Weg des Pakets, eigenes Ziel testbar), 11 Aufteilen
-  (Adressbalken: je Netz 2 rot, Tabelle Netze × Adressen, wozu kleine Netze), 12 Rechenweg (Prüfungsweg mit den eigenen
-  Zahlen, „Jetzt du“ mit Zufallsaufgabe und Prüfen, Link zu „Netz bestimmen“). Schrittleiste als Punkte (am Handy ohne
-  Namen), freie Navigation, Rätsel beginnen bei neuer IP/neuem Präfix von vorn. Am Handy (390 px) zwei Oktette je Zeile,
-  bei vielen Blöcken (z. B. /23 = 128) ein dichter Strahl mit Stecknadel. Geprüft für /8 … /30 (Tests) und im Browser
-  für /26, /24, /23, /30, /20, /8 auf Desktop und Handy.
+- **Subnetz-Trainer in zwei Räumen** (auf Wunsch): oben zwei große Schalter **Verstehen** (Lektionen) und **Üben** (Netz
+  bestimmen, Präfix und Maske, Gleiches Netz, Private Adressen, IPv6, Netz aufteilen, Visualizer zum Nachschlagen).
+  Allgemein in `TrainerSeite` über das Feld `bereich` der Module (`verzeichnis.js`); andere Trainer ohne `bereich` bleiben
+  wie sie sind.
+- **Subnetz „Verstehen“ als Lektionen** (`subnetz/Verstehen.jsx`, Rechnung `lernweg.js` + `ip.js`, Tests in
+  `tests/subnetz.test.mjs`, Stile `subnetz-lernen.css` mit Präfix `sv-`). Eine Lektion je Begriff, in fester Reihenfolge,
+  weil jeder Begriff auf den vorigen aufbaut: 1 IP-Adresse, 2 Binär (Bits umschalten ändert die IP oben mit), 3 Präfix,
+  4 Subnetzmaske (Rechnung für alle vier Oktette), 5 Netzadresse (Teile: ein Oktett, Blöcke, Blockanfang + zusammenbauen),
+  6 Broadcast (Blockende mit dem Fehler „128 + 64 = 192 ist schon der nächste Block“, zusammenbauen, Bits 0…0/1…1),
+  7 Hosts (Rahmen und Inneres aufdecken, 2^h − 2), 8 Netze unter /24 (x.255 als normaler Host), 9 Gateway, 10 Aufteilen,
+  11 Rechenweg (mit „Jetzt du“). Jede Lektion endet mit einem Kurz-Check an einer neuen Adresse (172.16.8.100/27 bzw.
+  10.4.7.20/23, `kurzCheck` in `lernweg.js`, getestet); erst danach „Verstanden – weiter zu …“. Der Stand „verstanden“ ist
+  eine Ansichts-Einstellung im Browser (`subnetz.verstanden`), die Übersicht zeigt ihn mit „als Nächstes“; die offene
+  Lektion steht in der Adresszeile (`?modus=verstehen&lektion=…`). Beispiel-Adresse oben (Start 192.168.40.150/26, /8 … /30),
+  Farben überall gleich und als Legende oben: Netz grün, Host blau, Strich orange, reserviert rot. Geprüft im Browser:
+  alle Lektionen mit Kurz-Check auf Desktop und Handy für /26, /23, /24.
 - **Subnetz-Visualizer:** zweiter Reiter im Subnetz-Trainer, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
   Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits

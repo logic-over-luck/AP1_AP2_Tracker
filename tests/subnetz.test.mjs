@@ -346,3 +346,32 @@ test('Verstehen: Übungsaufgaben und Eingaben lesen', async () => {
   assert.deepEqual(t, { netz: '192.168.40.128', hostNummer: 22 });
   assert.deepEqual(lw.teileAdresse('192.168.41.150', 23), { netz: '192.168.40.0', hostNummer: 406 });
 });
+
+test('Verstehen: Kurz-Checks der Lektionen sind stimmig', async () => {
+  const lw = await lernweg();
+  for (const id of ['ip', 'binaer', 'praefix', 'maske', 'netzadresse', 'broadcast', 'hosts', 'unter24', 'gateway', 'aufteilen']) {
+    const fragen = lw.kurzCheck(id);
+    assert.ok(fragen.length >= 1, id);
+    for (const f of fragen) {
+      assert.ok(f.optionen.includes(f.richtig), `${id}: ${f.frage}`);
+      assert.equal(new Set(f.optionen).size, f.optionen.length, `${id}: doppelte Optionen`);
+      assert.ok(f.tipp && f.erklaerung, id);
+    }
+  }
+  assert.deepEqual(lw.kurzCheck('rechenweg'), []);
+  // Die richtigen Antworten stimmen mit der Rechnung überein
+  const n = ip.netz('172.16.8.100', 27);
+  assert.equal(lw.kurzCheck('netzadresse')[0].richtig, '172.16.8.96');
+  assert.equal(lw.kurzCheck('broadcast')[0].richtig, '172.16.8.127');
+  assert.equal(lw.kurzCheck('hosts')[0].richtig, String(n.hosts));
+  assert.equal(lw.kurzCheck('maske')[0].richtig, '255.255.255.224');
+  assert.equal(lw.kurzCheck('maske')[1].richtig, `/${ip.praefixAusMaske('255.255.255.240')}`);
+  assert.equal(lw.kurzCheck('unter24')[0].richtig, '10.4.7.255');
+  assert.equal(lw.adressArt('10.4.6.255', 23), 'host');
+  assert.equal(lw.kurzCheck('gateway')[0].richtig, 'Übers Gateway');
+  assert.equal(lw.kurzCheck('gateway')[1].richtig, 'Direkt');
+  assert.equal(parseInt(lw.kurzCheck('binaer')[0].richtig, 2), 192);
+  assert.equal(parseInt('00101000', 2), Number(lw.kurzCheck('binaer')[1].richtig));
+  assert.equal(lw.aufteilTabelle(26).zeilen.find((r) => r.praefix === 26).netze, 4);
+  assert.equal(lw.aufteilTabelle(26).zeilen.find((r) => r.praefix === 26).reserviert, 8);
+});

@@ -1,12 +1,14 @@
-// Subnetting verstehen: ein Lernblock in zwölf ruhigen Schritten an einer Adresse. Jeder Schritt zeigt eine Idee;
-// an den wichtigen Stellen wird erst geraten und dann aufgedeckt. Die Farben bedeuten überall dasselbe:
-// Netz grün (Akzent), Host blau, Trennstrich orange, reserviert rot. Rechnung in lernweg.js und ip.js (getestet).
-// Der Visualizer bleibt der Modus zum Nachschlagen.
+// Subnetting verstehen: der Verstehen-Raum des Subnetz-Trainers. Eine Lektion je Begriff (IP-Adresse, Binär, Präfix,
+// Subnetzmaske, Netzadresse, Broadcast …) in fester Reihenfolge, weil jeder Begriff auf den vorigen aufbaut. Jede Lektion
+// hat wenige Teile und am Ende einen Kurz-Check an einer neuen Adresse; danach ist sie „verstanden“ (Ansichts-Einstellung
+// im Browser). Die Farben bedeuten überall dasselbe: Netz grün (Akzent), Host blau, Trennstrich orange, reserviert rot.
+// Rechnung in lernweg.js und ip.js (getestet). Üben und Visualizer liegen im Übungs-Raum.
 
 import { Fragment } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../ui/bausteine.jsx';
 import { link } from '../../../router.js';
+import { useEinstellung } from '../../../lernstand/einstellungen.js';
 import { zerlege, netz, maskeZahl } from './ip.js';
 import {
   STELLENWERTE,
@@ -27,6 +29,7 @@ import {
   zufallsAufgabe,
   leseIp,
   leseZahl,
+  kurzCheck,
 } from './lernweg.js';
 import { zufall } from '../rahmen/zufall.js';
 
@@ -41,30 +44,76 @@ const tausend = (n) => n.toLocaleString('de-DE');
 const begrenze = (p) => Math.max(MIN, Math.min(MAX, p));
 const bitWort = (n) => (n === 1 ? '1 Bit' : `${n} Bits`);
 
-const SCHRITTE = [
-  { kurz: 'Aufbau', titel: 'Woraus besteht eine IP-Adresse?', Inhalt: Aufbau },
-  { kurz: 'Bits', titel: 'Von der Zahl zu den Bits', Inhalt: Bits },
-  { kurz: 'Präfix', titel: 'Der Präfix ist ein Trennstrich', Inhalt: Praefix },
-  { kurz: 'Subnetzmaske', titel: 'Die Subnetzmaske ist der Strich als Zahl', Inhalt: Maske },
-  { kurz: 'Oktett', titel: 'Gerechnet wird nur in einem Oktett', Inhalt: Oktett },
-  { kurz: 'Blöcke', titel: 'Das Oktett in Blöcke schneiden', Inhalt: Bloecke },
-  { kurz: 'Dein Block', titel: 'Wo beginnt und wo endet dein Block?', Inhalt: DeinBlock, frisch: true },
-  { kurz: 'Adressen', titel: 'Die Adressen zusammenbauen', Inhalt: Adressen, frisch: true },
-  { kurz: 'Unter /24', titel: 'Wenn der Strich weiter links liegt', Inhalt: Unter24, frisch: true },
-  { kurz: 'Gateway', titel: 'Gleiches Netz – oder übers Gateway?', Inhalt: Gateway, frisch: true },
-  { kurz: 'Aufteilen', titel: 'Aufteilen, nicht wegnehmen', Inhalt: Aufteilen },
-  { kurz: 'Rechenweg', titel: 'Der schnelle Rechenweg für die Prüfung', Inhalt: Rechenweg },
+// Die Lektionen in der Reihenfolge, in der sie aufeinander aufbauen. Je Lektion ein Begriff, in Teilen;
+// der Kurz-Check (kurzCheck in lernweg.js) kommt automatisch als letzter Teil dazu.
+const LEKTIONEN = [
+  { id: 'ip', name: 'IP-Adresse', frage: 'Woraus besteht eine IP-Adresse?', teile: [{ kurz: 'Aufbau', titel: 'Woraus besteht eine IP-Adresse?', Inhalt: Aufbau }] },
+  { id: 'binaer', name: 'Binär', frage: 'Wie wird aus einer Zahl eine Folge aus Bits?', teile: [{ kurz: 'Bits', titel: 'Von der Zahl zu den Bits', Inhalt: Bits }] },
+  { id: 'praefix', name: 'Präfix', frage: 'Was bedeutet /26 hinter der Adresse?', teile: [{ kurz: 'Trennstrich', titel: 'Der Präfix ist ein Trennstrich', Inhalt: Praefix }] },
+  {
+    id: 'maske',
+    name: 'Subnetzmaske',
+    frage: 'Was hat 255.255.255.192 mit /26 zu tun?',
+    teile: [{ kurz: 'Strich als Zahl', titel: 'Die Subnetzmaske ist der Strich als Zahl', Inhalt: Maske }],
+  },
+  {
+    id: 'netzadresse',
+    name: 'Netzadresse',
+    frage: 'Mit welcher Adresse beginnt das Netz?',
+    teile: [
+      { kurz: 'Ein Oktett', titel: 'Gerechnet wird nur in einem Oktett', Inhalt: Oktett },
+      { kurz: 'Blöcke', titel: 'Das Oktett in Blöcke schneiden', Inhalt: Bloecke },
+      { kurz: 'Blockanfang', titel: 'Die Netzadresse finden', Inhalt: NetzadresseFinden, frisch: true },
+    ],
+  },
+  {
+    id: 'broadcast',
+    name: 'Broadcast',
+    frage: 'Mit welcher Adresse endet das Netz?',
+    teile: [{ kurz: 'Blockende', titel: 'Den Broadcast finden', Inhalt: BroadcastFinden, frisch: true }],
+  },
+  {
+    id: 'hosts',
+    name: 'Hosts',
+    frage: 'Welche Adressen bekommen die Geräte – und wie viele?',
+    teile: [{ kurz: 'Zusammenbauen', titel: 'Alle Adressen des Netzes', Inhalt: Adressen, frisch: true }],
+  },
+  {
+    id: 'unter24',
+    name: 'Netze unter /24',
+    frage: 'Warum ist x.255 manchmal ein ganz normaler Host?',
+    teile: [{ kurz: 'Unter /24', titel: 'Wenn der Strich weiter links liegt', Inhalt: Unter24, frisch: true }],
+  },
+  {
+    id: 'gateway',
+    name: 'Gateway',
+    frage: 'Wann geht ein Paket direkt, wann über den Router?',
+    teile: [{ kurz: 'Gleiches Netz?', titel: 'Gleiches Netz – oder übers Gateway?', Inhalt: Gateway, frisch: true }],
+  },
+  {
+    id: 'aufteilen',
+    name: 'Aufteilen',
+    frage: 'Was passiert, wenn man ein Netz in kleinere teilt?',
+    teile: [{ kurz: 'Aufteilen', titel: 'Aufteilen, nicht wegnehmen', Inhalt: Aufteilen }],
+  },
+  {
+    id: 'rechenweg',
+    name: 'Rechenweg',
+    frage: 'Wie rechne ich das in der Prüfung ohne Bilder?',
+    teile: [{ kurz: 'Rechenweg', titel: 'Der schnelle Rechenweg für die Prüfung', Inhalt: Rechenweg }],
+  },
 ];
 
-export function SubnetzVerstehen() {
+// lektion: ID aus der Adresszeile (oder leer = Übersicht) · onLektion(id | null): Lektion öffnen bzw. zurück zur Übersicht
+export function SubnetzVerstehen({ lektion: lektionId, onLektion }) {
   const [ip, setIp] = useState(START_IP);
   const [eingabe, setEingabe] = useState(START_IP);
   const [praefix, setPraefixRoh] = useState(START_PRAEFIX);
-  const [schritt, setSchritt] = useState(0);
-  const [besucht, setBesucht] = useState(0);
-  const karte = useRef(null);
-  const ersterLauf = useRef(true);
+  const [verstanden, setVerstanden] = useEinstellung('subnetz.verstanden', []);
   const z = useMemo(() => zerlege(ip, praefix), [ip, praefix]);
+  const nr = LEKTIONEN.findIndex((l) => l.id === lektionId) + 1;
+
+  if (!nr) return <Uebersicht verstanden={verstanden} onWahl={onLektion} onZuruecksetzen={() => setVerstanden([])} />;
 
   const setPraefix = (p) => setPraefixRoh(begrenze(p));
   const tippe = (text) => {
@@ -72,24 +121,157 @@ export function SubnetzVerstehen() {
     const gelesen = leseIp(text);
     if (gelesen) setIp(gelesen);
   };
-  const geheZu = (i) => {
-    setSchritt(i);
-    setBesucht((b) => Math.max(b, i));
-  };
   // Von einem Schritt aus die Adresse ändern (Bits umschalten): Eingabefeld oben zieht mit
   const uebernehmeIp = (neu) => {
     setIp(neu);
     setEingabe(neu);
   };
-  const neuerFall = () => {
-    const a = zufallsAufgabe(zufall());
-    setIp(a.ip);
-    setEingabe(a.ip);
-    setPraefixRoh(a.praefix);
-    setSchritt(0);
-  };
+  const art = adressArt(ip, praefix);
+  const leiste = (
+    <div class="flaeche sv-leiste">
+      <label class="sv-leiste__feld">
+        <span class="ueberschrift-klein">Beispiel-Adresse</span>
+        <input
+          class={`feld mono sv-leiste__ip ${leseIp(eingabe) ? '' : 'feld--falsch'}`}
+          value={eingabe}
+          inputMode="decimal"
+          spellcheck={false}
+          autocomplete="off"
+          onInput={(e) => tippe(e.currentTarget.value)}
+        />
+      </label>
+      <div class="sv-leiste__feld">
+        <span class="ueberschrift-klein" id="sv-praefix-titel">
+          Präfix
+        </span>
+        <div class="sv-stepper" role="group" aria-labelledby="sv-praefix-titel">
+          <button type="button" class="sv-stepper__knopf" onClick={() => setPraefix(praefix - 1)} disabled={praefix <= MIN} aria-label="Präfix verkleinern">
+            <Icon name="minus" groesse={15} />
+          </button>
+          <span class="sv-stepper__wert mono" aria-live="polite">
+            /{praefix}
+          </span>
+          <button type="button" class="sv-stepper__knopf" onClick={() => setPraefix(praefix + 1)} disabled={praefix >= MAX} aria-label="Präfix vergrößern">
+            <Icon name="plus" groesse={15} />
+          </button>
+        </div>
+      </div>
+      <div class="sv-farben" aria-label="Farben in allen Lektionen">
+        <span>
+          <i class="sv-legende__farbe sv-legende__farbe--netz" /> Netz
+        </span>
+        <span>
+          <i class="sv-legende__farbe sv-legende__farbe--host" /> Host
+        </span>
+        <span>
+          <i class="sv-farben__strich" /> Trennstrich
+        </span>
+        <span>
+          <i class="sv-legende__farbe sv-legende__farbe--res" /> reserviert
+        </span>
+      </div>
+      {art !== 'host' && (
+        <p class="sv-leiste__hinweis">
+          <Icon name="info" groesse={14} />
+          <span>
+            {ip} ist bei /{praefix} {art === 'netz' ? 'die Netzadresse' : 'der Broadcast'} – kein Gerät darf sie haben. Zum Rechnen ist das egal.
+          </span>
+        </p>
+      )}
+    </div>
+  );
+  return (
+    <Lektion
+      key={lektionId}
+      lektion={LEKTIONEN[nr - 1]}
+      nr={nr}
+      leiste={leiste}
+      verstanden={verstanden}
+      onVerstanden={(id) => setVerstanden((v) => (v.includes(id) ? v : [...v, id]))}
+      onLektion={onLektion}
+      inhalt={{ z, ip, praefix, setPraefix, setIp: uebernehmeIp }}
+    />
+  );
+}
 
-  // Beim Schrittwechsel an den Anfang der Karte, wenn sie oben aus dem Bild gerutscht ist (z. B. am Handy)
+// ---------- Übersicht: die Lektionen als Weg von oben nach unten ----------
+
+function Uebersicht({ verstanden, onWahl, onZuruecksetzen }) {
+  const naechste = LEKTIONEN.find((l) => !verstanden.includes(l.id));
+  const anzahl = LEKTIONEN.filter((l) => verstanden.includes(l.id)).length;
+  return (
+    <div class="sv">
+      <section class="flaeche sv-start">
+        <div class="sv-start__text">
+          <span class="ueberschrift-klein ueberschrift-klein--akzent">Verstehen</span>
+          <h2 class="sv-start__titel">Subnetting – ein Begriff nach dem anderen</h2>
+          <p class="sv-text">
+            Jede Lektion erklärt <strong>genau einen Begriff</strong>, Schritt für Schritt an einer Beispiel-Adresse. Die Lektionen bauen aufeinander auf – geh sie von oben nach
+            unten durch. Am Ende prüft ein kurzer Check an einer neuen Adresse, ob es sitzt.
+          </p>
+        </div>
+        <div class="sv-start__stand">
+          <span class="sv-start__zahl">
+            <strong>{anzahl}</strong> von {LEKTIONEN.length} verstanden
+          </span>
+          <span class="sv-start__balken" aria-hidden="true">
+            <i style={{ width: `${(anzahl / LEKTIONEN.length) * 100}%` }} />
+          </span>
+          {naechste ? (
+            <Knopf variante="primaer" iconRechts="arrow-right" onClick={() => onWahl(naechste.id)}>
+              {anzahl ? 'Weiter mit' : 'Los geht’s mit'}: {naechste.name}
+            </Knopf>
+          ) : (
+            <span class="sv-start__fertig">
+              <Icon name="party-popper" groesse={16} /> Alles verstanden – jetzt im Übungs-Raum festigen.
+            </span>
+          )}
+        </div>
+      </section>
+      <ol class="sv-lektionen">
+        {LEKTIONEN.map((l, i) => {
+          const ok = verstanden.includes(l.id);
+          const dran = naechste?.id === l.id;
+          const vorher = LEKTIONEN[i - 1];
+          const spaeter = !ok && !dran && vorher && !verstanden.includes(vorher.id);
+          return (
+            <li key={l.id} class={`sv-lektion ${ok ? 'sv-lektion--ok' : ''} ${dran ? 'sv-lektion--dran' : ''} ${spaeter ? 'sv-lektion--spaeter' : ''}`}>
+              <button type="button" class="sv-lektion__knopf" onClick={() => onWahl(l.id)}>
+                <span class="sv-lektion__nr mono">{ok ? <Icon name="check" groesse={14} strich={2.5} /> : i + 1}</span>
+                <span class="sv-lektion__text">
+                  <span class="sv-lektion__name">{l.name}</span>
+                  <span class="sv-lektion__frage">{l.frage}</span>
+                </span>
+                <span class="sv-lektion__stand">{ok ? 'verstanden' : dran ? 'als Nächstes' : ''}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+      {anzahl > 0 && (
+        <button type="button" class="sv-link" onClick={onZuruecksetzen}>
+          Fortschritt zurücksetzen
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ---------- Eine Lektion: Teile nacheinander, am Ende der Kurz-Check ----------
+
+function Lektion({ lektion, nr, leiste, verstanden, onVerstanden, onLektion, inhalt }) {
+  const check = useMemo(() => kurzCheck(lektion.id), [lektion.id]);
+  const teile = check.length ? [...lektion.teile, { kurz: 'Kurz-Check', titel: 'Kurz-Check: Sitzt es?', check }] : lektion.teile;
+  const [teil, setTeil] = useState(0);
+  const [besucht, setBesucht] = useState(0);
+  const [checkFertig, setCheckFertig] = useState(false);
+  const karte = useRef(null);
+  const ersterLauf = useRef(true);
+  const geheZu = (i) => {
+    setTeil(i);
+    setBesucht((b) => Math.max(b, i));
+  };
+  // Beim Teilwechsel an den Anfang der Karte, wenn sie oben aus dem Bild gerutscht ist (z. B. am Handy)
   useEffect(() => {
     if (ersterLauf.current) {
       ersterLauf.current = false;
@@ -100,90 +282,73 @@ export function SubnetzVerstehen() {
       const ruhig = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
       el.scrollIntoView({ block: 'start', behavior: ruhig ? 'auto' : 'smooth' });
     }
-  }, [schritt]);
+  }, [teil]);
 
-  const s = SCHRITTE[schritt];
-  const Inhalt = s.Inhalt;
-  const art = adressArt(ip, praefix);
+  const t = teile[teil];
+  const Inhalt = t.Inhalt;
+  const letzter = teil === teile.length - 1;
+  const naechste = LEKTIONEN[nr];
+  const vorige = LEKTIONEN[nr - 2];
+  const istVerstanden = verstanden.includes(lektion.id);
+  const fehlt = vorige && !verstanden.includes(vorige.id) && !istVerstanden;
+  const abschliessen = () => {
+    onVerstanden(lektion.id);
+    onLektion(naechste ? naechste.id : null);
+  };
 
   return (
     <div class="sv">
-      <div class="flaeche sv-leiste">
-        <label class="sv-leiste__feld">
-          <span class="ueberschrift-klein">IP-Adresse</span>
-          <input
-            class={`feld mono sv-leiste__ip ${leseIp(eingabe) ? '' : 'feld--falsch'}`}
-            value={eingabe}
-            inputMode="decimal"
-            spellcheck={false}
-            autocomplete="off"
-            onInput={(e) => tippe(e.currentTarget.value)}
-          />
-        </label>
-        <div class="sv-leiste__feld">
-          <span class="ueberschrift-klein" id="sv-praefix-titel">
-            Präfix
-          </span>
-          <div class="sv-stepper" role="group" aria-labelledby="sv-praefix-titel">
-            <button type="button" class="sv-stepper__knopf" onClick={() => setPraefix(praefix - 1)} disabled={praefix <= MIN} aria-label="Präfix verkleinern">
-              <Icon name="minus" groesse={15} />
-            </button>
-            <span class="sv-stepper__wert mono" aria-live="polite">
-              /{praefix}
+      <div class="sv-lkopf">
+        <button type="button" class="sv-link" onClick={() => onLektion(null)}>
+          <Icon name="arrow-left" groesse={14} /> Alle Lektionen
+        </button>
+        <span class="ueberschrift-klein ueberschrift-klein--akzent">
+          Lektion {nr} von {LEKTIONEN.length}
+        </span>
+        <h2 class="sv-lkopf__titel">
+          {lektion.name}
+          {istVerstanden && (
+            <span class="sv-lkopf__ok">
+              <Icon name="check" groesse={13} strich={2.5} /> verstanden
             </span>
-            <button type="button" class="sv-stepper__knopf" onClick={() => setPraefix(praefix + 1)} disabled={praefix >= MAX} aria-label="Präfix vergrößern">
-              <Icon name="plus" groesse={15} />
+          )}
+        </h2>
+        <p class="sv-lkopf__frage">{lektion.frage}</p>
+        {fehlt && (
+          <Hinweis>
+            Diese Lektion baut auf „{vorige.name}“ auf.{' '}
+            <button type="button" class="sv-link sv-link--inline" onClick={() => onLektion(vorige.id)}>
+              Erst „{vorige.name}“ ansehen
             </button>
-          </div>
-        </div>
-        <div class="sv-farben" aria-label="Farben in allen Schritten">
-          <span>
-            <i class="sv-legende__farbe sv-legende__farbe--netz" /> Netz
-          </span>
-          <span>
-            <i class="sv-legende__farbe sv-legende__farbe--host" /> Host
-          </span>
-          <span>
-            <i class="sv-farben__strich" /> Trennstrich
-          </span>
-          <span>
-            <i class="sv-legende__farbe sv-legende__farbe--res" /> reserviert
-          </span>
-        </div>
-        {art !== 'host' && (
-          <p class="sv-leiste__hinweis">
-            <Icon name="info" groesse={14} />
-            <span>
-              {ip} ist bei /{praefix} {art === 'netz' ? 'die Netzadresse' : 'der Broadcast'} – kein Gerät darf sie haben. Zum Rechnen ist das egal.
-            </span>
-          </p>
+          </Hinweis>
         )}
       </div>
-
-      <Wegleiste schritt={schritt} besucht={besucht} onWahl={geheZu} />
-
+      {leiste}
+      {teile.length > 1 && <Wegleiste eintraege={teile.map((x) => x.kurz)} schritt={teil} besucht={besucht} onWahl={geheZu} />}
       <section class="flaeche sv-karte" ref={karte} aria-labelledby="sv-titel">
         <header class="sv-karte__kopf">
-          <span class="ueberschrift-klein ueberschrift-klein--akzent">
-            Schritt {schritt + 1} von {SCHRITTE.length}
-          </span>
-          <h2 class="sv-karte__titel" id="sv-titel">
-            {s.titel}
-          </h2>
+          <span class="ueberschrift-klein ueberschrift-klein--akzent">{teile.length > 1 ? `Teil ${teil + 1} von ${teile.length}` : lektion.name}</span>
+          <h3 class="sv-karte__titel" id="sv-titel">
+            {t.titel}
+          </h3>
         </header>
-        {/* Rätsel beginnen bei neuer Adresse oder neuem Präfix von vorn; Schritte mit eigenem Regler behalten ihren Stand */}
-        <Inhalt key={s.frisch ? `${schritt}|${ip}/${praefix}` : schritt} z={z} ip={ip} praefix={praefix} setPraefix={setPraefix} setIp={uebernehmeIp} />
+        {t.check ? (
+          <KurzCheck fragen={t.check} onFertig={() => setCheckFertig(true)} />
+        ) : (
+          /* Rätsel beginnen bei neuer Adresse oder neuem Präfix von vorn; Teile mit eigenem Regler behalten ihren Stand */
+          <Inhalt key={t.frisch ? `${teil}|${inhalt.ip}/${inhalt.praefix}` : teil} {...inhalt} />
+        )}
         <footer class="sv-fuss">
-          <Knopf icon="arrow-left" onClick={() => geheZu(schritt - 1)} disabled={schritt === 0}>
+          <Knopf icon="arrow-left" onClick={() => geheZu(teil - 1)} disabled={teil === 0}>
             Zurück
           </Knopf>
-          {schritt < SCHRITTE.length - 1 ? (
-            <Knopf variante="primaer" iconRechts="arrow-right" onClick={() => geheZu(schritt + 1)}>
-              Weiter: {SCHRITTE[schritt + 1].kurz}
+          {!letzter ? (
+            <Knopf variante="primaer" iconRechts="arrow-right" onClick={() => geheZu(teil + 1)}>
+              Weiter: {teile[teil + 1].kurz}
             </Knopf>
           ) : (
-            <Knopf variante="primaer" icon="shuffle" onClick={neuerFall}>
-              Neue Adresse, von vorn
+            <Knopf variante="primaer" icon="check" onClick={abschliessen} disabled={t.check && !checkFertig && !istVerstanden}>
+              {naechste ? `Verstanden – weiter zu: ${naechste.name}` : 'Verstanden – zur Übersicht'}
             </Knopf>
           )}
         </footer>
@@ -192,27 +357,55 @@ export function SubnetzVerstehen() {
   );
 }
 
+// Kurz-Check: alle Fragen an einer neuen Adresse; sind alle beantwortet, darf man abhaken
+function KurzCheck({ fragen, onFertig }) {
+  const [geloest, setGeloest] = useState(0);
+  useEffect(() => {
+    if (geloest >= fragen.length) onFertig();
+  }, [geloest]);
+  return (
+    <div class="sv-inhalt">
+      <p class="sv-text">
+        Jetzt an einer <strong>neuen Adresse</strong> und ohne Bilder. Rate zuerst – bei einer falschen Antwort bekommst du einen Tipp.
+      </p>
+      {fragen.map((f, i) => (
+        <Frage
+          key={i}
+          titel={f.frage}
+          optionen={f.optionen}
+          richtig={f.richtig}
+          text={f.text}
+          hinweis={() => `Noch nicht. Tipp: ${f.tipp}`}
+          erklaerung={f.erklaerung}
+          onGeloest={() => setGeloest((n) => n + 1)}
+        />
+      ))}
+      {geloest >= fragen.length && <Rueckmeldung ok>Alles beantwortet – du kannst die Lektion als verstanden abhaken.</Rueckmeldung>}
+    </div>
+  );
+}
+
 // ---------- Bausteine ----------
 
-// Schrittleiste: Punkte mit Nummer, der aktuelle Schritt zeigt seinen Namen (nicht am Handy, dort steht er im Titel)
-function Wegleiste({ schritt, besucht, onWahl }) {
+// Leiste der Teile einer Lektion: Punkte mit Nummer und Namen (am Handy nur beim aktuellen Teil)
+function Wegleiste({ eintraege, schritt, besucht, onWahl }) {
   return (
-    <nav class="sv-weg" aria-label="Schritte">
-      <ol class="sv-weg__liste" style={{ '--fortschritt': schritt / (SCHRITTE.length - 1) }}>
-        {SCHRITTE.map((s, i) => {
+    <nav class="sv-weg sv-weg--namen" aria-label="Teile der Lektion">
+      <ol class="sv-weg__liste" style={{ '--fortschritt': schritt / (eintraege.length - 1) }}>
+        {eintraege.map((name, i) => {
           const zustand = i === schritt ? 'aktiv' : i <= besucht ? 'besucht' : 'offen';
           return (
-            <li key={s.kurz} class={`sv-weg__eintrag sv-weg__eintrag--${zustand}`}>
+            <li key={name} class={`sv-weg__eintrag sv-weg__eintrag--${zustand}`}>
               <button
                 type="button"
                 class="sv-weg__knopf"
                 onClick={() => onWahl(i)}
                 aria-current={i === schritt ? 'step' : undefined}
-                aria-label={`Schritt ${i + 1}: ${s.kurz}`}
-                title={`${i + 1}. ${s.kurz}`}
+                aria-label={`Teil ${i + 1}: ${name}`}
+                title={`${i + 1}. ${name}`}
               >
                 <span class="sv-weg__nr mono">{i + 1}</span>
-                <span class="sv-weg__name">{s.kurz}</span>
+                <span class="sv-weg__name">{name}</span>
               </button>
             </li>
           );
@@ -340,7 +533,7 @@ function Legende({ rollen }) {
 }
 
 // Auswahlfrage: erst raten, falsche Antworten werden erklärt und bleiben durchgestrichen, „Zeig's mir“ deckt auf.
-function Frage({ titel, optionen, richtig, hinweis, onGeloest, format = (v) => v, text = false }) {
+function Frage({ titel, optionen, richtig, hinweis, onGeloest, erklaerung, format = (v) => v, text = false }) {
   const [gewaehlt, setGewaehlt] = useState(null);
   const [falsch, setFalsch] = useState([]);
   const [geloest, setGeloest] = useState(false);
@@ -374,6 +567,7 @@ function Frage({ titel, optionen, richtig, hinweis, onGeloest, format = (v) => v
       </div>
       {!geloest && gewaehlt !== null && <Rueckmeldung ok={false}>{hinweis(gewaehlt)}</Rueckmeldung>}
       {geloest && gewaehlt === richtig && <Rueckmeldung ok>Richtig!</Rueckmeldung>}
+      {geloest && erklaerung && <p class="sv-frage__erklaerung">{erklaerung}</p>}
       {!geloest && (
         <button type="button" class="sv-link" onClick={loese}>
           <Icon name="eye" groesse={14} /> Zeig's mir
@@ -823,7 +1017,9 @@ function Oktett({ z, praefix }) {
           </div>
         ))}
         <span class="sv-vorschau__text">
-          {ohne ? `Fertig, ohne zu rechnen: Netzadresse ${z.n.netz}, Broadcast ${z.n.broadcast}.` : 'Nur das ? musst du ausrechnen – das zeigen die nächsten zwei Schritte.'}
+          {ohne
+            ? `Fertig, ohne zu rechnen: Netzadresse ${z.n.netz}, Broadcast ${z.n.broadcast}.`
+            : 'Nur das ? musst du ausrechnen. Für die Netzadresse kommt das gleich in dieser Lektion, für den Broadcast in der nächsten.'}
         </span>
       </div>
       <Merke>
@@ -899,7 +1095,7 @@ function Bloecke({ z, praefix, setPraefix }) {
   );
 }
 
-// ---------- 7. Dein Block ----------
+// ---------- Netzadresse und Broadcast ----------
 
 const START_HINWEIS = {
   'kein-anfang': (z, v) => `${v} ist kein Blockanfang – Blöcke beginnen nur bei Vielfachen von ${z.block}.`,
@@ -912,57 +1108,104 @@ const ENDE_HINWEIS = {
   'zu-weit': () => 'Zu weit – das gehört schon zum nächsten Block.',
 };
 
-function DeinBlock({ z, praefix }) {
+// Lektion Netzadresse, letzter Teil: den Blockanfang finden und die Adresse zusammenbauen
+function NetzadresseFinden({ z, praefix }) {
   const nurEiner = z.block === 256;
-  const [startOk, setStartOk] = useState(nurEiner);
-  const [endeOk, setEndeOk] = useState(nurEiner);
+  const [ok, setOk] = useState(nurEiner);
+  const rollen = oktettRollen(praefix);
   const nr = z.index + 1;
   return (
     <div class="sv-inhalt">
       <p class="sv-text">
-        Im {nr}. Oktett deiner Adresse steht die <strong class="mono">{z.wert}</strong>.{' '}
-        {nurEiner ? `Bei /${praefix} gibt es dort nur einen Block: 0 bis 255.` : 'In welchem Block liegt sie?'}
+        Die <strong>Netzadresse</strong> ist die <strong>erste Adresse</strong> eines Netzes. Sie steht für das Netz als Ganzes – kein Gerät bekommt sie. Im {nr}. Oktett ist sie
+        also der <strong>Anfang deines Blocks</strong>. Dort steht bei dir die <strong class="mono">{z.wert}</strong>.{' '}
+        {nurEiner ? `Bei /${praefix} gibt es dort nur einen Block (0 bis 255) – er beginnt bei 0.` : 'Bei welcher Zahl beginnt ihr Block?'}
       </p>
-      <Strahl z={z} marke={z.wert} aktiv={startOk ? z.start : null} />
+      <Strahl z={z} marke={z.wert} aktiv={ok ? z.start : null} />
       {!nurEiner && (
         <Frage
           titel="Bei welcher Zahl beginnt der Block?"
           optionen={startOptionen(z)}
           richtig={z.start}
           hinweis={(v) => START_HINWEIS[bewerteStart(z, v)](z, v)}
-          onGeloest={() => setStartOk(true)}
+          onGeloest={() => setOk(true)}
         />
       )}
-      {startOk && !nurEiner && (
+      {ok && (
         <>
-          <p class="sv-formel mono">
-            {z.wert} : {z.block} = {z.blockNr} Rest {z.wert - z.start} → {z.blockNr} × {z.block} = <strong>{z.start}</strong>
-          </p>
-          <Frage
-            titel={`Und wo endet der Block, der bei ${z.start} beginnt?`}
-            optionen={endeOptionen(z)}
-            richtig={z.ende}
-            hinweis={(v) => ENDE_HINWEIS[bewerteEnde(z, v)](z, v)}
-            onGeloest={() => setEndeOk(true)}
-          />
+          {!nurEiner && (
+            <p class="sv-formel mono">
+              {z.wert} : {z.block} = {z.blockNr} Rest {z.wert - z.start} → {z.blockNr} × {z.block} = <strong>{z.start}</strong>
+            </p>
+          )}
+          <Zusammenbau titel="Jetzt die ganze Netzadresse zusammenbauen:" ip={z.n.netz} rollen={rollen} rezept={rezeptText(z, 'netz')} />
+          <AnfangEnde z={z} nur="anfang" />
+          <Merke>
+            Netzadresse = <strong>Blockanfang, danach alles 0</strong>. In Bits: <strong>alle Hostbits 0</strong>.
+          </Merke>
         </>
       )}
-      {endeOk && (
+    </div>
+  );
+}
+
+// Lektion Broadcast: das Blockende finden (mit dem häufigsten Fehler) und die Adresse zusammenbauen
+function BroadcastFinden({ z, praefix }) {
+  const nurEiner = z.block === 256;
+  const [ok, setOk] = useState(nurEiner);
+  const rollen = oktettRollen(praefix);
+  const nr = z.index + 1;
+  return (
+    <div class="sv-inhalt">
+      <p class="sv-text">
+        Der <strong>Broadcast</strong> ist die <strong>letzte Adresse</strong> eines Netzes. Ein Paket an diese Adresse geht an <strong>alle Geräte</strong> im Netz – darum bekommt
+        auch sie kein Gerät. Im {nr}. Oktett ist sie das <strong>Ende deines Blocks</strong>. Den Anfang kennst du schon aus der Netzadresse:{' '}
+        <strong class="mono">{z.start}</strong>. {nurEiner ? `Bei /${praefix} gibt es dort nur einen Block – er endet bei 255.` : `Der Block hat ${z.block} Zahlen. Wo endet er?`}
+      </p>
+      <Strahl z={z} marke={z.wert} aktiv={z.start} />
+      {!nurEiner && (
+        <Frage
+          titel={`Wo endet der Block, der bei ${z.start} beginnt?`}
+          optionen={endeOptionen(z)}
+          richtig={z.ende}
+          hinweis={(v) => ENDE_HINWEIS[bewerteEnde(z, v)](z, v)}
+          onGeloest={() => setOk(true)}
+        />
+      )}
+      {ok && (
         <>
           <Grenze z={z} />
+          <Zusammenbau titel="Jetzt den ganzen Broadcast zusammenbauen:" ip={z.n.broadcast} rollen={rollen} rezept={rezeptText(z, 'broadcast')} />
           <AnfangEnde z={z} />
           <Merke>
-            <strong>Ende = nächster Blockanfang − 1.</strong>{' '}
-            {z.ende < 255 ? (
+            Broadcast = <strong>Blockende, danach alles 255</strong>. In Bits: <strong>alle Hostbits 1</strong>.{' '}
+            {z.ende < 255 && (
               <>
-                Der häufigste Fehler: {z.start} + {z.block} = {z.ende + 1} ist nicht das Ende, sondern schon der Anfang des Nachbarn.
+                Häufigster Fehler: {z.start} + {z.block} = {z.ende + 1} ist schon der Anfang des nächsten Blocks – das Ende liegt eins davor.
               </>
-            ) : (
-              'Hier gibt es keinen nächsten Block mehr, also endet er bei 255.'
             )}
           </Merke>
         </>
       )}
+    </div>
+  );
+}
+
+// Wie die Adresse entsteht, in Worten (für Netzadresse und Broadcast)
+function rezeptText(z, art) {
+  const rest = art === 'netz' ? '0' : '255';
+  if (z.netzBitsImOktett === 0) return `davor abschreiben · danach ${rest}`;
+  const wert = art === 'netz' ? `Blockanfang ${z.start}` : `Blockende ${z.ende}`;
+  return `davor abschreiben · ${wert}${z.index < 3 ? ` · danach ${rest}` : ''}`;
+}
+
+function Zusammenbau({ titel, ip, rollen, rezept }) {
+  return (
+    <div class="sv-bau">
+      <span class="sv-bau__titel">{titel}</span>
+      <IpZellen ip={ip} rollen={rollen} />
+      <span class="sv-bau__rezept">{rezept}</span>
+      <Legende rollen={rollen} />
     </div>
   );
 }
@@ -1004,7 +1247,7 @@ function Grenze({ z }) {
 }
 
 // Anfang und Ende als Bits: links vom Strich gleich, rechts lauter 0 bzw. lauter 1
-function AnfangEnde({ z }) {
+function AnfangEnde({ z, nur }) {
   const k = z.netzBitsImOktett;
   return (
     <div class="sv-ae">
@@ -1012,19 +1255,25 @@ function AnfangEnde({ z }) {
       {[
         { name: 'Anfang', wert: z.start, text: 'alle Hostbits 0' },
         { name: 'Ende', wert: z.ende, text: 'alle Hostbits 1' },
-      ].map((r) => (
-        <div key={r.name} class="sv-ae__zeile">
-          <span class="sv-ae__name">{r.name}</span>
-          <OktettBits wert={r.wert} netzBits={k} />
-          <span class="sv-ae__wert mono">= {r.wert}</span>
-          <span class="sv-ae__text">{r.text}</span>
-        </div>
-      ))}
+      ]
+        .filter((r) => nur !== 'anfang' || r.name === 'Anfang')
+        .map((r) => (
+          <div key={r.name} class="sv-ae__zeile">
+            <span class="sv-ae__name">{r.name}</span>
+            <OktettBits wert={r.wert} netzBits={k} />
+            <span class="sv-ae__wert mono">= {r.wert}</span>
+            <span class="sv-ae__text">{r.text}</span>
+          </div>
+        ))}
       <p class="sv-ae__fuss">
-        {k > 0
-          ? 'Links vom Strich bleibt alles gleich. Rechts zählen die Hostbits von lauter 0 bis lauter 1 – mehr Platz gibt es im Block nicht.'
-          : 'Alle 8 Bits sind Host: Sie zählen von lauter 0 bis lauter 1.'}
-        {z.index < 3 && ' In den Oktetten danach genauso: beim Anfang 0, beim Ende 255.'}
+        {nur === 'anfang'
+          ? k > 0
+            ? 'Links vom Strich stehen die Netzbits deiner Adresse, rechts davon nur Nullen – kleiner geht es in diesem Block nicht.'
+            : 'Alle 8 Bits sind Host – bei der Netzadresse stehen dort nur Nullen.'
+          : k > 0
+            ? 'Links vom Strich bleibt alles gleich. Rechts zählen die Hostbits von lauter 0 bis lauter 1 – mehr Platz gibt es im Block nicht.'
+            : 'Alle 8 Bits sind Host: Sie zählen von lauter 0 bis lauter 1.'}
+        {z.index < 3 && (nur === 'anfang' ? ' In den Oktetten danach ebenfalls: alles 0.' : ' In den Oktetten danach genauso: beim Anfang 0, beim Ende 255.')}
       </p>
     </div>
   );
@@ -1058,8 +1307,8 @@ function Adressen({ z, praefix }) {
   return (
     <div class="sv-inhalt">
       <p class="sv-text">
-        Jetzt setzt du die ganzen Adressen zusammen. Erst den <strong>Rahmen</strong> (Netzadresse und Broadcast), dann das <strong>Innere</strong>. Überleg jeweils kurz selbst,
-        dann deck auf.
+        Netzadresse und Broadcast kennst du schon – sie bilden den <strong>Rahmen</strong> des Netzes. Alles dazwischen sind die <strong>Hosts</strong>: die Adressen, die Geräte
+        bekommen. Überleg jeweils kurz selbst, dann deck auf.
       </p>
       <div class="sv-adressen">
         {ZEILEN.map((zeile) => {

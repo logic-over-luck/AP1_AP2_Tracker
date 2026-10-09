@@ -1600,6 +1600,220 @@ button.sv-tafel__bit:hover {
   text-decoration: underline;
 }
 
+/* ---------- Übersicht der Lektionen ---------- */
+.sv-start {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4) var(--s-8);
+  padding: var(--s-6);
+}
+.sv-start__text {
+  display: grid;
+  gap: var(--s-2);
+}
+.sv-start__titel {
+  font-size: var(--t-xl);
+}
+.sv-start__stand {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-2);
+  min-width: 240px;
+}
+.sv-start__zahl {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sv-start__balken {
+  width: 100%;
+  height: 6px;
+  border-radius: var(--r-rund);
+  background: var(--flaeche-3);
+  overflow: hidden;
+}
+.sv-start__balken i {
+  display: block;
+  height: 100%;
+  background: var(--akzent);
+  transition: width var(--dauer-lang) var(--kurve);
+}
+.sv-start__fertig {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--akzent);
+}
+.sv-lektionen {
+  position: relative;
+  display: grid;
+  gap: var(--s-2);
+  max-width: 820px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* senkrechte Linie hinter den Nummern: ein Weg von oben nach unten */
+.sv-lektionen::before {
+  content: '';
+  position: absolute;
+  left: 31px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: var(--linie-2);
+}
+.sv-lektion__knopf {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-1);
+  text-align: left;
+  transition:
+    border-color var(--dauer) var(--kurve),
+    background var(--dauer) var(--kurve);
+}
+.sv-lektion__knopf:hover {
+  border-color: var(--linie-3);
+  background: var(--flaeche-2);
+}
+.sv-lektion__nr {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-rund);
+  border: 1px solid var(--linie-3);
+  background: var(--flaeche-2);
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-2);
+}
+.sv-lektion__text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.sv-lektion__name {
+  font-weight: 650;
+  color: var(--text);
+}
+.sv-lektion__frage {
+  font-size: var(--t-m);
+  color: var(--text-3);
+}
+.sv-lektion__stand {
+  font-size: var(--t-s);
+  color: var(--text-3);
+  white-space: nowrap;
+}
+.sv-lektion--ok .sv-lektion__nr {
+  border-color: var(--akzent);
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.sv-lektion--ok .sv-lektion__stand {
+  color: var(--akzent);
+}
+.sv-lektion--dran .sv-lektion__knopf {
+  border-color: var(--akzent-linie);
+  background: var(--akzent-weich);
+}
+.sv-lektion--dran .sv-lektion__nr {
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.sv-lektion--dran .sv-lektion__stand {
+  color: var(--akzent);
+  font-weight: 600;
+}
+.sv-lektion--spaeter .sv-lektion__name,
+.sv-lektion--spaeter .sv-lektion__frage {
+  opacity: 0.6;
+}
+
+/* ---------- Kopf einer Lektion ---------- */
+.sv-lkopf {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-1);
+}
+.sv-lkopf .sv-link {
+  margin-bottom: var(--s-2);
+}
+.sv-lkopf__titel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  font-size: var(--t-2xl);
+}
+.sv-lkopf__ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: var(--r-rund);
+  background: var(--akzent-weich);
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sv-lkopf__frage {
+  font-size: var(--t-l);
+  color: var(--text-2);
+}
+.sv-lkopf .sv-hinweis {
+  margin-top: var(--s-2);
+}
+
+/* Leiste der Teile: bei wenigen Teilen stehen alle Namen da */
+.sv-weg--namen .sv-weg__liste {
+  justify-content: flex-start;
+  gap: var(--s-3);
+}
+.sv-weg--namen .sv-weg__liste::before,
+.sv-weg--namen .sv-weg__liste::after {
+  display: none;
+}
+.sv-weg--namen .sv-weg__name {
+  display: inline;
+  white-space: nowrap;
+}
+.sv-weg--namen .sv-weg__knopf {
+  padding: 0 var(--s-3) 0 10px;
+}
+
+/* Erklärung nach einer gelösten Frage, Zusammenbau einer Adresse */
+.sv-frage__erklaerung {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sv-bau {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-2);
+  max-width: 100%;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+}
+.sv-bau__titel {
+  font-weight: 600;
+}
+.sv-bau__rezept {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+
 /* ---------- Schmale Bildschirme ---------- */
 @media (max-width: 760px) {
   .sv-oktette {
@@ -1638,6 +1852,50 @@ button.sv-tafel__bit:hover {
   }
   .sv-weg__eintrag--aktiv .sv-weg__name {
     display: none;
+  }
+  .sv-weg--namen .sv-weg__liste {
+    gap: var(--s-2);
+  }
+  .sv-weg--namen .sv-weg__eintrag:not(.sv-weg__eintrag--aktiv) .sv-weg__name {
+    display: none;
+  }
+  .sv-weg--namen .sv-weg__eintrag:not(.sv-weg__eintrag--aktiv) .sv-weg__knopf {
+    padding: 0;
+  }
+  .sv-weg--namen .sv-weg__eintrag--aktiv .sv-weg__name {
+    display: inline;
+  }
+  .sv-weg--namen .sv-weg__eintrag--aktiv .sv-weg__knopf {
+    padding: 0 var(--s-3) 0 8px;
+  }
+  .sv-start {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--s-4);
+  }
+  .sv-start__stand {
+    min-width: 0;
+  }
+  .sv-lektionen::before {
+    left: 27px;
+  }
+  .sv-lektion__knopf {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: var(--s-3);
+    padding: var(--s-3);
+  }
+  .sv-lektion__nr {
+    width: 28px;
+    height: 28px;
+  }
+  .sv-lektion__stand {
+    grid-column: 2;
+    white-space: normal;
+  }
+  .sv-lkopf__titel {
+    font-size: var(--t-xl);
+  }
+  .sv-lkopf__frage {
+    font-size: var(--t-n);
   }
   .sv-karte {
     padding: var(--s-4);

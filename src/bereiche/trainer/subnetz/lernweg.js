@@ -201,3 +201,164 @@ export function teileAdresse(ip, praefix) {
   const host = (zahl & ~m) >>> 0;
   return { netz: zahlZuIp((zahl & m) >>> 0), hostNummer: host };
 }
+
+// Kurz-Check am Ende jeder Lektion im Verstehen-Raum. Absichtlich an einer anderen Adresse als im Beispiel
+// (172.16.8.100/27, für Netze unter /24: 10.4.7.20/23), damit man überträgt statt wiedererkennt.
+// Je Frage: frage, optionen, richtig, tipp (bei falscher Antwort), erklaerung (nach dem Lösen), text (keine Zahlen).
+export function kurzCheck(lektion) {
+  const n = netz('172.16.8.100', 27);
+  const g = netz('10.4.7.20', 23);
+  const fragen = {
+    ip: [
+      {
+        frage: 'Aus wie vielen Bits besteht eine IPv4-Adresse?',
+        optionen: ['8', '16', '32', '64'],
+        richtig: '32',
+        tipp: 'Wie viele Oktette, wie viele Bits je Oktett?',
+        erklaerung: '4 Oktette × 8 Bit = 32 Bit.',
+      },
+      {
+        frage: 'Ist 192.168.1.256 eine gültige IP-Adresse?',
+        optionen: ['Ja', 'Nein'],
+        richtig: 'Nein',
+        text: true,
+        tipp: 'Wie groß kann eine Zahl mit 8 Bits höchstens werden?',
+        erklaerung: '8 Bits reichen nur von 0 bis 255 – eine 256 passt nicht in ein Oktett.',
+      },
+    ],
+    binaer: [
+      {
+        frage: 'Welche Bits ergeben die Zahl 192?',
+        optionen: ['10000000', '10100000', '11000000', '11100000'],
+        richtig: '11000000',
+        tipp: 'Passt 128 hinein? Und danach 64?',
+        erklaerung: '128 + 64 = 192 → 11000000.',
+      },
+      {
+        frage: 'Welche Zahl steht hinter 00101000?',
+        optionen: ['28', '40', '48', '80'],
+        richtig: '40',
+        tipp: 'Welche Stellenwerte stehen über den Einsen?',
+        erklaerung: 'Die Einsen stehen bei 32 und 8: 32 + 8 = 40.',
+      },
+    ],
+    praefix: [
+      {
+        frage: 'Wie viele Hostbits hat ein /27?',
+        optionen: ['3', '5', '8', '27'],
+        richtig: '5',
+        tipp: 'Eine Adresse hat 32 Bits. Wie viele bleiben nach den Netzbits übrig?',
+        erklaerung: '32 − 27 = 5 Hostbits.',
+      },
+      {
+        frage: 'Wie viele Adressen hat ein /27-Netz?',
+        optionen: ['27', '30', '32', '64'],
+        richtig: String(n.adressen),
+        tipp: '2 hoch Hostbits.',
+        erklaerung: '5 Hostbits → 2⁵ = 32 Adressen.',
+      },
+    ],
+    maske: [
+      {
+        frage: 'Welche Subnetzmaske gehört zu /27?',
+        optionen: ['255.255.255.192', '255.255.255.224', '255.255.255.240', '255.255.255.27'],
+        richtig: n.maske,
+        tipp: '27 = 8 + 8 + 8 + 3. Wie viel ergeben 3 Einsen von links?',
+        erklaerung: '27 = 8 + 8 + 8 + 3 → im 4. Oktett 3 Einsen: 128 + 64 + 32 = 224.',
+      },
+      {
+        frage: 'Welcher Präfix gehört zu 255.255.255.240?',
+        optionen: ['/24', '/26', '/28', '/30'],
+        richtig: '/28',
+        tipp: 'Wie viele Einsen stecken in 240?',
+        erklaerung: '240 = 128 + 64 + 32 + 16 → 4 Einsen. 24 + 4 = /28.',
+      },
+    ],
+    netzadresse: [
+      {
+        frage: 'Wie lautet die Netzadresse von 172.16.8.100/27?',
+        optionen: ['172.16.8.64', '172.16.8.96', '172.16.8.100', '172.16.8.128'],
+        richtig: n.netz,
+        tipp: 'Blockgröße = 256 − 224. In welchem Block liegt die 100?',
+        erklaerung: 'Blockgröße 256 − 224 = 32. 100 : 32 = 3 Rest 4 → 3 × 32 = 96.',
+      },
+    ],
+    broadcast: [
+      {
+        frage: 'Wie lautet der Broadcast von 172.16.8.100/27?',
+        optionen: ['172.16.8.126', '172.16.8.127', '172.16.8.128', '172.16.8.255'],
+        richtig: n.broadcast,
+        tipp: 'Der Block beginnt bei 96 und hat 32 Zahlen. Wo ist der nächste Block?',
+        erklaerung: '96 + 32 = 128 ist schon der nächste Block → Ende 127.',
+      },
+    ],
+    hosts: [
+      {
+        frage: 'Wie viele Hosts passen in ein /27-Netz?',
+        optionen: ['27', '30', '31', '32'],
+        richtig: String(n.hostsKlassisch),
+        tipp: 'Zwei Adressen bekommt kein Gerät.',
+        erklaerung: '2⁵ = 32 Adressen − Netzadresse − Broadcast = 30.',
+      },
+      {
+        frage: 'Welcher ist der erste Host von 172.16.8.100/27?',
+        optionen: ['172.16.8.1', '172.16.8.96', '172.16.8.97', '172.16.8.101'],
+        richtig: n.erster,
+        tipp: 'Netzadresse + 1.',
+        erklaerung: 'Netzadresse 172.16.8.96 + 1 = 172.16.8.97.',
+      },
+    ],
+    unter24: [
+      {
+        frage: 'Wie lautet der Broadcast von 10.4.7.20/23?',
+        optionen: ['10.4.6.255', '10.4.7.254', '10.4.7.255', '10.4.255.255'],
+        richtig: g.broadcast,
+        tipp: 'Bei /23 liegt der Strich im 3. Oktett. Blockgröße dort: 256 − 254.',
+        erklaerung: 'Blockgröße 2 → Block 6–7 im 3. Oktett. Broadcast: 7 im 3. Oktett, danach 255 → 10.4.7.255.',
+      },
+      {
+        frage: 'Darf ein PC im Netz 10.4.6.0/23 die Adresse 10.4.6.255 bekommen?',
+        optionen: ['Ja', 'Nein'],
+        richtig: 'Ja',
+        text: true,
+        tipp: 'Wo endet das Netz 10.4.6.0/23?',
+        erklaerung: 'Das Netz geht bis 10.4.7.255. 10.4.6.255 liegt mittendrin – ein ganz normaler Host.',
+      },
+    ],
+    gateway: [
+      {
+        frage: 'Ein PC hat 172.16.8.100/27 und schickt ein Paket an 172.16.8.130. Wie?',
+        optionen: ['Direkt', 'Übers Gateway'],
+        richtig: gleichesNetz('172.16.8.100', '172.16.8.130', 27) ? 'Direkt' : 'Übers Gateway',
+        text: true,
+        tipp: 'Sein Block ist 96–127. Wo liegt die 130?',
+        erklaerung: '130 liegt im Block 128–159 – anderes Netz, also ans Standardgateway.',
+      },
+      {
+        frage: 'Und an 172.16.8.120?',
+        optionen: ['Direkt', 'Übers Gateway'],
+        richtig: gleichesNetz('172.16.8.100', '172.16.8.120', 27) ? 'Direkt' : 'Übers Gateway',
+        text: true,
+        tipp: 'Liegt 120 im Block 96–127?',
+        erklaerung: '120 liegt im selben Block 96–127 – gleiches Netz, das Paket geht direkt.',
+      },
+    ],
+    aufteilen: [
+      {
+        frage: 'Ein /24 wird in /26-Netze aufgeteilt. Wie viele Netze entstehen?',
+        optionen: ['2', '4', '6', '64'],
+        richtig: '4',
+        tipp: 'Wie viele Bits kommen fürs Netz dazu?',
+        erklaerung: '2 Netzbits mehr → 2² = 4 Netze zu je 64 Adressen.',
+      },
+      {
+        frage: 'Wie viele Adressen sind dabei insgesamt für Netzadressen und Broadcasts reserviert?',
+        optionen: ['2', '4', '8', '0'],
+        richtig: '8',
+        tipp: 'Jedes Netz braucht 2.',
+        erklaerung: '4 Netze × 2 = 8. Alle anderen 248 Adressen bleiben für Geräte.',
+      },
+    ],
+  };
+  return fragen[lektion] ?? [];
+}
