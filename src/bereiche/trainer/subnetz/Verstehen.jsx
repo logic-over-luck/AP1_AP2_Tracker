@@ -751,7 +751,7 @@ function Maske({ z, praefix, setPraefix }) {
         </div>
       </div>
       <p class="sv-formel mono">
-        /{praefix} = Subnetzmaske <strong>{maske}</strong>
+        Präfix <strong>/{praefix}</strong> entspricht Subnetzmaske <strong>{maske}</strong>
       </p>
       <StrichKnoepfe praefix={praefix} setPraefix={setPraefix} />
       <Merke>
