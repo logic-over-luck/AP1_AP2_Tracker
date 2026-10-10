@@ -11,13 +11,20 @@ import { geheZu, link } from '../../router.js';
 import { Icon, Knopf, SymbolKnopf, Haken, PrioMarke, Marke, Aufklapp, Ring, Rich, Treffer } from '../../ui/bausteine.jsx';
 import { melde, bestaetige } from '../../ui/dialog.jsx';
 import { uebungenFuer, uebungenFuerBlock } from '../trainer/verzeichnis.js';
-import { lernpromptBlock, lernpromptStichpunkt, kopiere } from './lernprompt.js';
+import { lernpromptBlock, lernpromptStichpunkt, blockAuswahl, kopiere } from './lernprompt.js';
 
 export const ART_ICON = { Wissen: 'book-open', Rechnen: 'calculator', Zeichnen: 'shapes', Schreiben: 'code-xml' };
 
-async function promptKopieren(text) {
+async function promptKopieren(text, was = 'Lernprompt') {
   const ok = await kopiere(text);
-  melde(ok ? 'Lernprompt kopiert – füge ihn in deinen KI-Chat ein.' : 'Kopieren hat nicht geklappt. Bitte erneut versuchen.', { icon: 'copy', fehler: !ok });
+  melde(ok ? `${was} kopiert – füge ihn in deinen KI-Chat ein.` : 'Kopieren hat nicht geklappt. Bitte erneut versuchen.', { icon: 'copy', fehler: !ok });
+}
+
+// Block-Prompt: nur offene Stichpunkte; ist alles abgehakt, ein Wiederholungs-Prompt
+function blockPromptKopieren(block, stand) {
+  const { modus, ids } = blockAuswahl(block, stand);
+  const was = modus === 'wiederholen' ? 'Wiederholungs-Prompt' : ids.length === 1 ? 'Lernprompt für den offenen Stichpunkt' : `Lernprompt für ${ids.length} offene Stichpunkte`;
+  promptKopieren(lernpromptBlock(block, inhalt, stand), was);
 }
 
 export function BlockKarte({ block, zustand: z, stand, offen, onUmschalten, auswahl, onAuswahl, suche, treffer, raum }) {
@@ -91,7 +98,11 @@ export function BlockKarte({ block, zustand: z, stand, offen, onUmschalten, ausw
           ) : (
             <span class="symbolknopf-platz" aria-hidden="true" />
           )}
-          <SymbolKnopf icon="copy" label="Lernprompt kopieren" onClick={() => promptKopieren(lernpromptBlock(block, inhalt))} />
+          <SymbolKnopf
+            icon="copy"
+            label={z.fertig ? 'Wiederholungs-Prompt kopieren' : 'Lernprompt kopieren (nur offene Stichpunkte)'}
+            onClick={() => blockPromptKopieren(block, stand)}
+          />
           <Knopf
             groesse="s"
             variante="akzent"
@@ -147,6 +158,7 @@ function SpZeile({ sp, an, gewaehlt, onWahl, suche, treffer, stand }) {
           <Icon name="chevron-right" groesse={14} class="sp__pfeil" />
         </span>
       </button>
+      <SymbolKnopf icon="copy" groesse="s" label={`Lernprompt kopieren: ${sp.titel}`} class="sp__kopie" onClick={() => promptKopieren(lernpromptStichpunkt(sp, inhalt, stand))} />
     </li>
   );
 }
@@ -236,7 +248,7 @@ function SpDetail({ sp, stand, raum }) {
             Üben: {u.modus.name}
           </Knopf>
         ))}
-        <Knopf groesse="s" variante="geist" icon="copy" onClick={() => promptKopieren(lernpromptStichpunkt(sp, inhalt))}>
+        <Knopf groesse="s" variante="geist" icon="copy" onClick={() => promptKopieren(lernpromptStichpunkt(sp, inhalt, stand))}>
           Lernprompt
         </Knopf>
         <Knopf groesse="s" variante="geist" icon="notebook-pen" onClick={() => setNotizOffen(!notizOffen)} aria-pressed={notizOffen}>

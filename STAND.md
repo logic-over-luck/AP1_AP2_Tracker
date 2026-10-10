@@ -75,6 +75,11 @@ nächsten offenen Punkt weiter.
 - Intro beim Öffnen (einmal je Tab, jederzeit per Klick aufs Logo, überspringbar, von selbst nicht bei „Bewegung reduzieren"): Terminal tippt „hello world",
   Logo erscheint; die Cockpit-Kacheln warten und treten erst nach dem Intro nacheinander auf (auch nach Überspringen sofort)
 - Lernplan: Ordner, Block-Karten, Stichpunkte abhaken, Phasen, Kurzfassung, „Alles anzeigen", Lernprompt, Notizen, Gegenstücke, Filter, Suche
+- Lernprompts (`lernen/lernprompt.js`): Block-Knopf kopiert nur die noch offenen Stichpunkte (erledigte stehen nur als
+  Einordnung dabei), jede Stichpunkt-Zeile hat einen eigenen Kopier-Knopf. Die KI geht die Stichpunkte einzeln durch
+  (Vorwissen fragen → erklären → je Können-Aussage eine Frage → Zusatz je Art) und sagt am Ende „✅ Kannst du abhaken: …“.
+  Unklare Tiefe und eigene Notiz stehen mit drin. Ist alles abgehakt, wird daraus ein Wiederholungs-Prompt.
+  Tests: `tests/lernprompt.test.mjs`
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
 - Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan & Projektplanung (mit Tests für Erzeuger und Prüfer)
