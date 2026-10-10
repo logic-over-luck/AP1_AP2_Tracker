@@ -19,6 +19,6 @@ Dein Lernstand wird im Browser gespeichert. Mach ab und zu eine **Sicherung** (K
 
 - Lernplan mit allen Themen aus der Inhaltsdatei, Kurzfassungen, Wiederholungs-Phasen, Lernprompts
 - ≈ 2.600 Lernkarten mit Wiederholungsplanung, Glossar mit ≈ 1.100 Begriffen
-- Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan, Pseudocode, SQL-Labor (AP2), Modellieren (UML, ER, Normalisierung, EPK/BPMN, Masken)
+- Trainer: Zahlen & IT-Rechnen (Lernweg mit 13 Lektionen, Übungen), Subnetze (Lernweg mit 23 Lektionen, Übungen, Visualizer), Kaufmännisches Rechnen, Netzplan, Pseudocode, SQL-Labor (AP2), Modellieren (UML, ER, Normalisierung, EPK/BPMN, Masken)
 
 Genauer Stand, offene Punkte, fachlich unsichere Inhalte und Anleitung zu Sicherung und Update: **[STAND.md](STAND.md)**.

@@ -217,3 +217,87 @@ export function istRichtigGekuerzt(eingabe, adresse) {
   }
   return { ok: true };
 }
+
+// ---------- Helfer für den Lernweg (aus dem früheren lernweg.js übernommen) ----------
+
+export const STELLENWERTE = [128, 64, 32, 16, 8, 4, 2, 1];
+
+// Netzbits je Oktett (0 … 8), z. B. /26 → [8, 8, 8, 2], /23 → [8, 8, 7, 0]
+export function netzBitsJeOktett(praefix) {
+  return [0, 1, 2, 3].map((i) => Math.max(0, Math.min(8, praefix - i * 8)));
+}
+
+// Wert eines Masken-Oktetts mit `einsen` Einsen von links: 0, 128, 192, 224, 240, 248, 252, 254, 255
+export function maskenwert(einsen) {
+  return 256 - 2 ** (8 - einsen);
+}
+
+// Dezimal → binär wie auf Papier: von links nach rechts prüfen, ob der Stellenwert in den Rest passt.
+// Je Stelle: Stellenwert, Rest vorher, passt (Bit 1) und Rest nachher.
+export function binaerSchritte(wert) {
+  let rest = wert;
+  return STELLENWERTE.map((g) => {
+    const passt = rest >= g;
+    const vorher = rest;
+    if (passt) rest -= g;
+    return { gewicht: g, vorher, passt, nachher: rest, bit: passt ? 1 : 0 };
+  });
+}
+
+// Eingegebene IPv4-Adresse lesen (Leerzeichen und führende Nullen sind egal). null, wenn ungültig.
+export function leseIp(text) {
+  const teile = String(text ?? '')
+    .replace(/\s+/g, '')
+    .split('.');
+  if (teile.length !== 4 || teile.some((t) => !/^\d{1,3}$/.test(t) || Number(t) > 255)) return null;
+  return teile.map(Number).join('.');
+}
+
+// Eingegebene ganze Zahl lesen; Tausenderpunkte und Leerzeichen sind erlaubt („4.094“). null, wenn keine Zahl.
+export function leseZahl(text) {
+  const s = String(text ?? '').replace(/[\s.]/g, '');
+  return /^\d+$/.test(s) ? Number(s) : null;
+}
+
+// Warum eine Eingabe keine gültige IPv4-Adresse ist – in Worten (null, wenn sie gültig ist)
+export function ipFehler(text) {
+  const s = String(text ?? '').replace(/\s+/g, '');
+  if (!s) return 'Noch leer.';
+  const teile = s.split('.');
+  if (teile.length !== 4) return `${teile.length} ${teile.length === 1 ? 'Teil' : 'Teile'} statt 4 – eine IPv4-Adresse hat genau vier Oktette.`;
+  const leer = teile.findIndex((t) => t === '');
+  if (leer !== -1) return `Das ${leer + 1}. Oktett fehlt.`;
+  const keineZahl = teile.findIndex((t) => !/^\d+$/.test(t));
+  if (keineZahl !== -1) return `Im ${keineZahl + 1}. Oktett steht „${teile[keineZahl]}“ – erlaubt sind nur Ziffern.`;
+  const zuGross = teile.findIndex((t) => Number(t) > 255);
+  if (zuGross !== -1) return `Das ${zuGross + 1}. Oktett ist ${Number(teile[zuGross])} – mehr als 255 passt nicht in 8 Bit.`;
+  return null;
+}
+
+// Rolle einer Adresse in ihrem Netz: 'netz' | 'broadcast' | 'host' (nur /0 … /30)
+export function adressArt(ip, praefix) {
+  const n = netz(ip, praefix);
+  if (praefix <= 30 && ip === n.netz) return 'netz';
+  if (praefix <= 30 && ip === n.broadcast) return 'broadcast';
+  return 'host';
+}
+
+// MAC-Adresse lesen: sechs Bytes aus je zwei Hex-Ziffern, getrennt durch : oder - (einheitlich).
+// Liefert die Bytes in Großbuchstaben oder null.
+export function leseMac(text) {
+  const s = String(text ?? '').trim();
+  const m = s.match(/^([0-9a-f]{2})([:-])([0-9a-f]{2})\2([0-9a-f]{2})\2([0-9a-f]{2})\2([0-9a-f]{2})\2([0-9a-f]{2})$/i);
+  if (!m) return null;
+  return [m[1], m[3], m[4], m[5], m[6], m[7]].map((b) => b.toUpperCase());
+}
+
+// Art einer IPv6-Adresse für den Lernweg: 'link-local' (fe80::/10), 'loopback' (::1), 'global' (2000::/3), 'andere'; null bei ungültig
+export function ipv6Art(adresse) {
+  const voll = ipv6Voll(adresse);
+  if (!voll) return null;
+  if (voll === '0000:0000:0000:0000:0000:0000:0000:0001') return 'loopback';
+  const erster = parseInt(voll.slice(0, 4), 16);
+  if ((erster & 0xffc0) === 0xfe80) return 'link-local';
+  if ((erster & 0xe000) === 0x2000) return 'global';
+  return 'andere';
+}

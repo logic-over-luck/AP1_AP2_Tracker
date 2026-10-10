@@ -1,0 +1,898 @@
+.zl-tafel {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--s-2);
+  max-width: 560px;
+}
+.zl-tafel__spalte {
+  display: grid;
+  gap: var(--s-1);
+  padding: var(--s-1);
+  border-radius: var(--r-2);
+  border: 1px solid transparent;
+  transition:
+    background var(--dauer) var(--kurve),
+    border-color var(--dauer) var(--kurve);
+}
+.zl-tafel__spalte--jetzt {
+  border-color: var(--linie-3);
+  background: var(--flaeche-2);
+}
+.zl-tafel__wert {
+  text-align: center;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-tafel__wert--an {
+  font-weight: 600;
+  color: var(--text);
+}
+.zl-tafel__bit {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-3);
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--text-3);
+  transition:
+    background var(--dauer) var(--kurve),
+    color var(--dauer) var(--kurve);
+}
+.zl-tafel__bit--an {
+  border-color: var(--text-3);
+  background: var(--flaeche-4);
+  color: var(--text);
+}
+.zl-tafel__bit--frage {
+  border: 1px dashed var(--linie-3);
+  background: transparent;
+  color: var(--text-4);
+}
+.zl-stellen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 4px;
+}
+.zl-stellen__spalte {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  width: 44px;
+}
+.zl-stellen__wert {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-stellen__bit {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 36px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  font-size: var(--t-l);
+  font-weight: 600;
+  color: var(--text-3);
+}
+.zl-stellen__spalte--an .zl-stellen__wert {
+  font-weight: 600;
+  color: var(--text);
+}
+.zl-stellen__spalte--an .zl-stellen__bit {
+  background: var(--flaeche-4);
+  box-shadow: inset 0 0 0 1px var(--text-3);
+  color: var(--text);
+}
+.zl-stellen__summe {
+  align-self: center;
+  margin-left: var(--s-3);
+  padding-top: 18px;
+  color: var(--text-2);
+}
+.zl-tafel-huelle {
+  display: grid;
+  gap: var(--s-3);
+}
+.zl-tafel__hex {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-2);
+  max-width: 560px;
+  font-size: var(--t-s);
+  text-align: center;
+  color: var(--text-3);
+}
+.zl-tafel__hex strong {
+  font-size: var(--t-l);
+  color: var(--text);
+}
+.zl-tafel--nibbles .zl-tafel__spalte:nth-child(4) {
+  margin-right: var(--s-3);
+}
+.zl-verdopplung {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+}
+.zl-verdopplung__glied {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.zl-verdopplung__wert {
+  min-width: 40px;
+  padding: var(--s-1) var(--s-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text);
+}
+.zl-verdopplung__mal {
+  font-size: var(--t-xs);
+  color: var(--text-4);
+}
+.zl-umrechner {
+  display: grid;
+  gap: var(--s-3);
+}
+.zl-umrechner__zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+}
+.zl-umrechner__text {
+  flex: 1 1 260px;
+  margin: 0;
+  color: var(--text-2);
+}
+.zl-rest {
+  display: grid;
+  justify-items: center;
+  min-width: 88px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.zl-rest__name {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.zl-rest strong {
+  font-size: var(--t-2xl);
+  line-height: 1.2;
+  color: var(--text);
+}
+.zl-hextafel {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  max-width: 640px;
+}
+.zl-hextafel__zelle {
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  padding: var(--s-1) 2px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.zl-hextafel__zelle strong {
+  font-size: var(--t-l);
+  color: var(--text);
+}
+.zl-hextafel__zelle--buchstabe {
+  background: var(--akzent-weich);
+}
+.zl-hextafel__zelle--buchstabe strong {
+  color: var(--akzent);
+}
+.zl-nibbles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.zl-nibbles__haelfte {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.zl-nibbles__haelfte strong {
+  font-size: var(--t-xl);
+  color: var(--akzent);
+}
+.zl-nibbles__gleich {
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--text);
+}
+@media (max-width: 640px) {
+  .zl-tafel {
+    gap: 3px;
+  }
+  .zl-tafel__spalte {
+    padding: 2px;
+  }
+  .zl-tafel__bit {
+    height: 38px;
+    font-size: var(--t-l);
+  }
+  .zl-tafel__wert {
+    font-size: 10px;
+  }
+  .zl-stellen__spalte {
+    width: 34px;
+  }
+  .zl-stellen__summe {
+    flex-basis: 100%;
+    margin-left: 0;
+    padding-top: var(--s-1);
+  }
+  .zl-hextafel {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Lektionen: Bausteine ---------- */
+.zl-liste-weg {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding-left: var(--s-5);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-liste-weg__ja {
+  color: var(--text);
+}
+/* Restwertverfahren */
+.zl-restwert {
+  display: grid;
+  gap: var(--s-3);
+}
+.zl-restwert__tabelle {
+  display: flex;
+  align-items: stretch;
+  gap: var(--s-3);
+}
+.zl-restwert__liste {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zl-restwert__zeile {
+  display: grid;
+  grid-template-columns: minmax(150px, auto) auto;
+  gap: var(--s-4);
+  padding: 4px var(--s-3);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.zl-restwert__rest strong {
+  display: inline-block;
+  min-width: 1.4em;
+  text-align: center;
+  color: var(--akzent);
+}
+.zl-restwert__klein {
+  color: var(--text-4);
+}
+.zl-restwert__pfeil {
+  display: flex;
+  align-items: stretch;
+  gap: var(--s-1);
+  color: var(--akzent);
+  font-size: var(--t-xs);
+}
+.zl-restwert__pfeil svg {
+  width: 16px;
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.zl-restwert__pfeil span {
+  align-self: center;
+  max-width: 90px;
+  line-height: 1.3;
+}
+/* Bitmuster aufzählen */
+.zl-muster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--s-4);
+}
+.zl-muster__spalte {
+  display: grid;
+  gap: 3px;
+  justify-items: start;
+}
+.zl-muster__kopf {
+  margin-bottom: 2px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-muster__kopf strong {
+  color: var(--akzent);
+}
+.zl-muster__wert {
+  padding: 2px var(--s-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  color: var(--text);
+}
+.zl-zaehlen th,
+.zl-potenzen th {
+  width: 1%;
+  white-space: nowrap;
+}
+.zl-zaehlen td,
+.zl-potenzen td {
+  text-align: center;
+}
+/* Regler für die Anzahl Bit */
+.zl-regler {
+  display: grid;
+  gap: var(--s-1);
+}
+.zl-regler__reihe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.zl-regler__knopf {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-xl);
+  color: var(--text);
+}
+.zl-regler__knopf:hover:not(:disabled) {
+  border-color: var(--akzent);
+}
+.zl-regler__knopf:disabled {
+  opacity: 0.35;
+}
+.zl-regler__wert {
+  min-width: 70px;
+  text-align: center;
+  font-size: var(--t-xl);
+  color: var(--text);
+}
+.zl-regler__regler {
+  width: 220px;
+  max-width: 100%;
+  accent-color: var(--akzent);
+}
+/* binär und hex untereinander */
+.zl-vergleich {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-2) var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  overflow-wrap: anywhere;
+  color: var(--text-2);
+}
+.zl-vergleich__name {
+  font-family: var(--schrift);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-vergleich__hex {
+  font-size: var(--t-l);
+  color: var(--akzent);
+}
+.zl-dreifach {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--s-3);
+}
+/* Rechenweg */
+.zl-weg {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 680px;
+}
+.zl-weg__titel {
+  font-weight: 600;
+  color: var(--text);
+}
+.zl-weg__liste {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zl-weg__zeile {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: 6px var(--s-3);
+  border-radius: var(--r-1);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.zl-weg__nr {
+  font-size: var(--t-xs);
+  color: var(--text-4);
+}
+.zl-weg__wert {
+  text-align: right;
+  white-space: nowrap;
+  color: var(--text);
+}
+.zl-weg__zeile--gut {
+  background: var(--akzent-weich);
+}
+.zl-weg__zeile--gut .zl-weg__wert {
+  color: var(--akzent);
+}
+.zl-weg__zeile--fehler {
+  background: color-mix(in srgb, var(--fehler) 14%, transparent);
+}
+/* Einheiten-Treppe */
+.zl-treppe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s-2) 0;
+}
+.zl-treppe__stufe {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: calc(var(--stufe) * 8px);
+}
+.zl-treppe__stufe > strong {
+  display: grid;
+  place-items: center;
+  min-width: 56px;
+  height: 36px;
+  padding: 0 var(--s-2);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  color: var(--text);
+}
+.zl-treppe__stufe--aktiv > strong {
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.zl-treppe__faktor {
+  display: grid;
+  gap: 2px;
+  padding: 0 var(--s-2) 3px;
+  font-size: var(--t-xs);
+  line-height: 1.3;
+  text-align: center;
+  color: var(--text-2);
+}
+.zl-treppe__faktor span:last-child {
+  color: var(--text-4);
+}
+.zl-zahlfeld {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.zl-zahlfeld__eingabe {
+  width: 140px;
+}
+.zl-zahlfeld__einheit {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+/* Byte aus 8 Bit */
+.zl-byte {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-1);
+}
+.zl-byte__bits {
+  display: flex;
+  gap: 3px;
+}
+.zl-byte__bit {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 36px;
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  font-weight: 600;
+  color: var(--text-3);
+}
+.zl-byte__bit--an {
+  background: var(--flaeche-4);
+  box-shadow: inset 0 0 0 1px var(--text-3);
+  color: var(--text);
+}
+.zl-byte__klammer {
+  width: calc(8 * 32px + 7 * 3px);
+  height: 8px;
+  border: 2px solid var(--akzent);
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+}
+.zl-byte__name {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.zl-kaesten {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.zl-kaesten__byte {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: var(--r-1);
+  border: 1px solid var(--akzent);
+}
+.zl-kaesten__byte--rest {
+  border-style: dashed;
+  border-color: var(--warn);
+}
+.zl-kaesten__byte i {
+  width: 10px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--flaeche-4);
+}
+/* Abweichung dezimal/binär */
+.zl-abweichung {
+  display: grid;
+  gap: var(--s-1);
+  max-width: 520px;
+}
+.zl-abweichung__zeile {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 70px;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.zl-abweichung__balken {
+  height: 10px;
+  border-radius: var(--r-rund);
+  background: linear-gradient(90deg, var(--warn) var(--breite), var(--flaeche-3) var(--breite));
+}
+.zl-abweichung__zeile strong {
+  text-align: right;
+  color: var(--text);
+}
+/* Bild als Raster */
+.zl-raster {
+  display: grid;
+  grid-template-columns: repeat(8, 22px);
+  gap: 2px;
+}
+.zl-raster i {
+  height: 22px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--akzent) var(--ton), var(--info));
+}
+/* Übertragung bei verschiedenen Raten */
+.zl-vergleich-raten {
+  display: grid;
+  gap: var(--s-1);
+  max-width: 600px;
+}
+.zl-vergleich-raten__zeile {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 110px;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 2px var(--s-2);
+  border-radius: var(--r-1);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.zl-vergleich-raten__zeile--aktiv {
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.zl-vergleich-raten__balken {
+  height: 10px;
+  border-radius: var(--r-rund);
+  background: linear-gradient(90deg, var(--info) var(--breite), var(--flaeche-3) var(--breite));
+}
+.zl-vergleich-raten__zeile > span:last-child {
+  text-align: right;
+}
+/* chmod */
+.zl-rechte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+.zl-rechte__gruppe {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-1);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+}
+.zl-rechte__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-rechte__zeichen {
+  display: flex;
+  gap: 4px;
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--akzent);
+}
+.zl-rechte__zeichen i {
+  font-style: normal;
+}
+.zl-rechte__aus {
+  color: var(--text-4);
+}
+.zl-chmod-zerlegt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+.zl-chmod-zerlegt > div {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 96px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.zl-chmod-zerlegt strong {
+  font-size: var(--t-2xl);
+  color: var(--akzent);
+}
+.zl-chmod-zerlegt__name {
+  font-family: var(--schrift);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-chmod th,
+.zl-chmod td {
+  text-align: center;
+}
+.zl-chmod tbody th {
+  text-align: left;
+}
+.zl-chmod__haken {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--akzent);
+}
+/* Paritätsbit */
+.zl-pbits {
+  display: inline-flex;
+  gap: 3px;
+}
+.zl-pbits__bit {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 34px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-3);
+  font-weight: 600;
+  color: var(--text-3);
+}
+.zl-pbits__bit:disabled {
+  cursor: default;
+}
+.zl-pbits__bit:not(:disabled):hover {
+  border-color: var(--linie-3);
+}
+.zl-pbits__bit--an {
+  background: var(--flaeche-4);
+  color: var(--text);
+}
+.zl-pbits__bit--p {
+  margin-left: var(--s-2);
+  border-color: var(--akzent);
+  color: var(--akzent);
+}
+.zl-pbits__bit--gekippt {
+  border-color: var(--fehler);
+  background: color-mix(in srgb, var(--fehler) 22%, transparent);
+  color: var(--text);
+}
+.zl-pbeispiel {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.zl-pstrecke {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+}
+.zl-pstrecke__seite {
+  display: grid;
+  gap: var(--s-2);
+}
+.zl-pstrecke__info {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.zl-pstrecke__leitung {
+  font-size: var(--t-s);
+  color: var(--warn);
+}
+/* Formeldreieck */
+.zl-dreieck {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: 58px 50px;
+  place-items: center;
+  width: 190px;
+  font: 700 var(--t-2xl) var(--mono);
+  color: var(--text);
+}
+.zl-dreieck::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: var(--flaeche-3);
+}
+.zl-dreieck::after {
+  content: '';
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 54%;
+  border-top: 2px solid var(--text-3);
+}
+.zl-dreieck > span {
+  position: relative;
+}
+.zl-dreieck__p {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  color: var(--akzent);
+}
+.zl-dreieck__u {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: end;
+}
+.zl-dreieck__mal {
+  grid-column: 2;
+  grid-row: 2;
+  color: var(--text-3);
+}
+.zl-dreieck__i {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: start;
+}
+/* Wirkungsgrad */
+.zl-wirkung {
+  display: grid;
+  gap: var(--s-1);
+  max-width: 520px;
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.zl-wirkung__balken {
+  display: flex;
+  height: 32px;
+  border-radius: var(--r-2);
+  overflow: hidden;
+}
+.zl-wirkung__legende {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.zl-wirkung__legende i {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--warn) 45%, transparent);
+}
+.zl-wirkung__ab {
+  display: grid;
+  place-items: center;
+  flex: 0 0 var(--anteil);
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.zl-wirkung__verlust {
+  flex: 1;
+  background: color-mix(in srgb, var(--warn) 45%, transparent);
+}
+.zl-komponenten {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+}
+@media (max-width: 640px) {
+  .zl-treppe__stufe {
+    margin-bottom: 0;
+  }
+  .zl-vergleich-raten__zeile {
+    font-size: var(--t-s);
+  }
+  .zl-dreifach {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .zl-weg__zeile {
+    grid-template-columns: 18px minmax(0, 1fr);
+  }
+  .zl-weg__wert {
+    grid-column: 2;
+    text-align: left;
+  }
+  .zl-restwert__zeile {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--s-2);
+  }
+  .zl-abweichung__zeile {
+    grid-template-columns: 80px minmax(0, 1fr) 64px;
+    gap: var(--s-2);
+  }
+  .zl-vergleich-raten__zeile {
+    grid-template-columns: 76px minmax(0, 1fr) 92px;
+    gap: var(--s-2);
+  }
+  .zl-pbeispiel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-1);
+  }
+  .zl-pbeispiel > span:nth-child(3n) {
+    margin-bottom: var(--s-2);
+  }
+  .zl-pbits__bit {
+    width: 26px;
+  }
+}

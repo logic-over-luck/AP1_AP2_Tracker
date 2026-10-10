@@ -66,7 +66,7 @@ function TrainerUebersicht({ raum, stand }) {
               <span class="trainer-kachel__titel">{t.name}</span>
               <span class="trainer-kachel__text">{t.text}</span>
               <span class="trainer-kachel__fuss gedaempft">
-                {modiIn(t, raum).length} Übungsarten{s ? ` · ${s.ok}/${s.n} richtig` : ''}
+                {modiIn(t, raum).filter((m) => !m.bereich || m.bereich === 'ueben').length} Übungsarten{s ? ` · ${s.ok}/${s.n} richtig` : ''}
               </span>
             </a>
           );

@@ -1,0 +1,1955 @@
+/* Subnetz-Trainer (subnetz/): Bausteine und Bilder der Lektionen, Üben, Visualizer-Umfeld. Präfix sn-, nur Tokens
+   aus tokens.css. Rahmen (Räume, Lernweg, Lektion, Check, Text-Bausteine) steht in lernweg.css (Präfix lw-).
+   Die Farben bedeuten überall dasselbe: Netz = Akzent (grün), Host = --info (blau), Grenze = --warn (orange),
+   reserviert (Netzadresse, Broadcast) = --fehler (rot). */
+.sn {
+  --sn-netz: var(--akzent);
+  --sn-netz-weich: var(--akzent-weich);
+  --sn-host: var(--info);
+  --sn-host-flaeche: color-mix(in srgb, var(--info) 42%, var(--flaeche-2));
+  --sn-host-weich: color-mix(in srgb, var(--info) 14%, transparent);
+  --sn-grenze: var(--warn);
+  --sn-res: var(--fehler);
+  --sn-res-weich: color-mix(in srgb, var(--fehler) 14%, transparent);
+  --sn-bitluecke: 3px;
+  --sn-oktettluecke: var(--s-4);
+}
+/* ---------- Bausteine aus dem früheren Verstehen-Raum (Bits, Zahlenstrahl, Lupe, Tafel, Subnetzmaske) ---------- */
+.sn-bit {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 28px;
+  border-radius: 4px;
+  font: 600 var(--t-m) var(--mono);
+  font-style: normal;
+  background: var(--flaeche-3);
+  color: var(--text-2);
+  transition:
+    background-color var(--dauer-lang) var(--kurve),
+    color var(--dauer-lang) var(--kurve);
+}
+.sn-bit--neutral {
+  color: var(--text);
+}
+.sn-bit--host {
+  background: var(--sn-host-flaeche);
+  color: var(--text);
+}
+.sn-bit--netz {
+  background: var(--akzent);
+  color: var(--akzent-text);
+}
+.sn-bit--grenze::before,
+.sn-band__oktett--grenze .sn-band__bits::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--sn-grenze);
+  transition: opacity var(--dauer-lang) var(--kurve);
+}
+.sn-bit--grenze::before {
+  left: calc(var(--sn-bitluecke) / -2 - 1.5px);
+}
+.sn-band__oktett--grenze .sn-band__bits::before {
+  left: calc(var(--sn-oktettluecke) / -2 - 1.5px);
+}
+.sn-band {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-4) var(--sn-oktettluecke);
+  max-width: 780px;
+}
+.sn-band__oktett {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.sn-band__dez {
+  text-align: center;
+  font-size: var(--t-2xl);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+}
+.sn-band__klammer {
+  height: 8px;
+  margin: 0 2px;
+  border: 1.5px solid var(--akzent-linie);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.sn-band__bits,
+.sn-band__nummern {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--sn-bitluecke);
+}
+.sn-band__nummern {
+  margin-top: -2px;
+  font-size: 9px;
+  text-align: center;
+  color: var(--text-4);
+}
+.sn-band__nr--netz {
+  color: var(--akzent);
+  opacity: 0.75;
+}
+.sn-band__nr--host {
+  color: var(--sn-host);
+  opacity: 0.75;
+}
+.sn-band__nr--grenze {
+  color: var(--sn-grenze);
+  font-weight: 600;
+}
+.sn-band__unter {
+  text-align: center;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-band--einlauf .sn-bit,
+.sn-band--einlauf .sn-bit--grenze::before,
+.sn-band--einlauf .sn-band__oktett--grenze .sn-band__bits::before {
+  transition-delay: calc(var(--i, 0) * 18ms);
+}
+.sn-band--leer .sn-bit--grenze::before,
+.sn-band--leer .sn-band__oktett--grenze .sn-band__bits::before {
+  opacity: 0;
+}
+.sn-okbits {
+  display: grid;
+  grid-template-columns: repeat(8, 22px);
+  gap: var(--sn-bitluecke);
+}
+.sn-okbits .sn-bit {
+  height: 26px;
+}
+.sn-zwei {
+  justify-self: start;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-2) var(--s-6);
+  max-width: 100%;
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--r-3);
+  background: var(--flaeche-2);
+}
+.sn-zwei__name {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.sn-zwei__wert {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.sn-zwei__wert--dez {
+  font-size: var(--t-2xl);
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-zwei__wert--bin {
+  font-size: var(--t-l);
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+}
+.sn-masken {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 640px;
+}
+.sn-masken__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-masken__reihe {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 3px;
+}
+.sn-masken__zelle {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 6px 2px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-2);
+}
+.sn-masken__zelle--aktiv {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.sn-masken__einsen {
+  font-size: 10px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+.sn-masken__wert {
+  font-size: var(--t-m);
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-mrechnung {
+  display: grid;
+  gap: 2px;
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+  background: var(--flaeche-2);
+}
+.sn-mrechnung__zeile {
+  display: grid;
+  grid-template-columns: 76px auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 2px var(--s-3);
+  padding: 4px var(--s-2);
+  border-radius: var(--r-1);
+  font-size: var(--t-n);
+}
+.sn-mrechnung__zeile--grenze {
+  background: color-mix(in srgb, var(--sn-grenze) 9%, transparent);
+}
+.sn-mrechnung__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-mrechnung__bits {
+  letter-spacing: 0.06em;
+}
+.sn-mrechnung__summe {
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+.sn-strahl {
+  display: grid;
+  max-width: 780px;
+  min-width: 0;
+}
+/* Nadeln über dem Strahl */
+.sn-strahl__nadelbahn {
+  position: relative;
+  height: 30px;
+  margin-bottom: 2px;
+}
+.sn-nadel {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  justify-items: center;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.sn-nadel--links {
+  justify-items: start;
+  transform: translateX(-1px);
+}
+.sn-nadel--rechts {
+  justify-items: end;
+  transform: translateX(calc(-100% + 1px));
+}
+.sn-nadel__text {
+  padding: 1px 7px;
+  border-radius: var(--r-1);
+  background: var(--text);
+  color: var(--bg);
+  font-size: var(--t-s);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.sn-nadel::after {
+  content: '';
+  width: 2px;
+  height: 7px;
+  background: var(--text);
+}
+.sn-nadel--zwei .sn-nadel__text {
+  background: var(--warn);
+}
+.sn-nadel--zwei::after {
+  background: var(--warn);
+}
+/* Leiste mit den Blöcken */
+.sn-strahl__leiste {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 34px;
+}
+.sn-strahl__leiste--dicht {
+  gap: 0;
+}
+.sn-seg {
+  flex: 1 1 0;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-radius: 3px;
+  background: var(--flaeche-3);
+  transition:
+    background var(--dauer) var(--kurve),
+    box-shadow var(--dauer) var(--kurve);
+}
+.sn-seg--zwei {
+  background: var(--flaeche-4);
+}
+.sn-strahl__leiste--dicht .sn-seg {
+  border-radius: 0;
+}
+.sn-strahl__leiste--dicht .sn-seg--zwei {
+  background: color-mix(in srgb, var(--flaeche-4) 55%, var(--flaeche-3));
+}
+.sn-seg--aktiv {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  box-shadow: inset 0 0 0 1.5px var(--akzent);
+}
+.sn-strahl__leiste--dicht .sn-seg--aktiv {
+  background: var(--akzent);
+  box-shadow: none;
+}
+.sn-seg__bereich {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--text);
+}
+/* Fenster: der Ausschnitt, den die Lupe vergrößert – liegt genau auf der Leiste */
+.sn-strahl__fenster {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 4px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  box-shadow: inset 0 0 0 1.5px var(--text-2);
+  pointer-events: none;
+}
+/* Namen unter breiten Blöcken */
+.sn-strahl__namen {
+  display: grid;
+  gap: 2px;
+  margin-top: 6px;
+}
+.sn-strahl__name {
+  text-align: center;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-strahl__name--aktiv {
+  font-weight: 600;
+  color: var(--akzent);
+}
+/* Skala unter schmalen Blöcken */
+.sn-strahl__skala {
+  position: relative;
+  height: 18px;
+  margin-top: 4px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-strahl__zahl {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+.sn-strahl__zahl--null {
+  transform: none;
+}
+.sn-strahl__zahl--ende {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+/* Trichter von der Skala zur Lupe */
+.sn-trichter {
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+.sn-trichter__flaeche {
+  fill: color-mix(in srgb, var(--text) 5%, transparent);
+}
+.sn-trichter__linie {
+  stroke: var(--text-3);
+  stroke-width: 1px;
+  stroke-dasharray: 3 3;
+}
+/* Lupe */
+.sn-lupe {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px solid var(--linie-3);
+  background: color-mix(in srgb, var(--text) 3%, var(--flaeche-2));
+}
+.sn-lupe__titel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-lupe__bloecke {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--s-2);
+}
+.sn-lupe__bloecke--nadeln {
+  padding-top: 30px;
+}
+.sn-lupe__block {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.sn-lupe__balken {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 40px;
+  border-radius: 5px;
+  background: var(--flaeche-4);
+}
+.sn-lupe__block--aktiv .sn-lupe__balken {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  box-shadow: inset 0 0 0 1.5px var(--akzent);
+}
+.sn-lupe__bloecke:not(.sn-lupe__bloecke--nadeln) .sn-lupe__balken {
+  background: none;
+  box-shadow: none;
+}
+.sn-lupe__zelle {
+  flex: 1 1 0;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-radius: 4px;
+  background: var(--flaeche-4);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sn-lupe__block--aktiv .sn-lupe__zelle {
+  background: color-mix(in srgb, var(--akzent) 35%, var(--flaeche-3));
+  color: var(--text);
+}
+.sn-lupe__zelle.sn-lupe__zelle--wert {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+}
+/* Nadel in der Lupe: Schild über dem Balken, Strich durch den Balken */
+.sn-lupe__nadel {
+  top: -30px;
+  bottom: 0;
+  grid-template-rows: auto 1fr;
+}
+.sn-lupe__nadel::after {
+  height: auto;
+}
+.sn-lupe__zahlen {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-2);
+}
+.sn-lupe__name {
+  text-align: center;
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-lupe__block--aktiv .sn-lupe__name {
+  color: var(--akzent);
+  font-weight: 600;
+}
+/* ---------- Bausteine: Text ---------- */
+.sn-f-netz {
+  color: var(--sn-netz);
+}
+.sn-f-host {
+  color: var(--sn-host);
+}
+.sn-f-res {
+  color: var(--sn-res);
+}
+.sn-f-grenze {
+  color: var(--sn-grenze);
+}
+.sn-beschrift {
+  font-size: var(--t-s);
+  color: var(--text-3);
+  margin-bottom: calc(-1 * var(--s-2));
+}
+.sn-legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-legende > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sn-legende__farbe {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.sn-legende__farbe--netz {
+  background: var(--sn-netz);
+}
+.sn-legende__farbe--host {
+  background: var(--sn-host-flaeche);
+}
+.sn-legende__farbe--grenze {
+  width: 3px;
+  height: 14px;
+  background: var(--sn-grenze);
+}
+.sn-legende__farbe--res {
+  background: var(--sn-res);
+}
+/* Anschrift aus zwei Teilen */
+.sn-vergleich {
+  justify-self: start;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--r-3);
+  background: var(--flaeche-2);
+}
+.sn-vergleich__name {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.sn-anschrift {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  font-size: var(--t-xl);
+}
+.sn-anschrift__teil {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+.sn-anschrift__wert {
+  padding: 2px var(--s-2);
+  border-radius: var(--r-1);
+  font-weight: 600;
+}
+.sn-anschrift__teil--netz .sn-anschrift__wert {
+  background: var(--sn-netz-weich);
+  color: var(--sn-netz);
+}
+.sn-anschrift__teil--host .sn-anschrift__wert {
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+.sn-anschrift__name {
+  font-family: var(--schrift);
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-anschrift__trenner {
+  padding-top: 2px;
+  color: var(--text-3);
+}
+.sn-zweinetze {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+  max-width: 640px;
+}
+.sn-zweinetze__netz {
+  display: grid;
+  align-content: start;
+  gap: var(--s-1);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px dashed var(--linie-3);
+}
+.sn-zweinetze__titel {
+  margin-bottom: var(--s-1);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-zweinetze__geraet {
+  font-size: var(--t-n);
+}
+/* ---------- Bausteine: Werkbank und Eingaben ---------- */
+.sn-pwahl {
+  display: grid;
+  gap: var(--s-1);
+  min-width: 0;
+}
+.sn-pwahl__reihe {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 40px;
+}
+.sn-pwahl__knopf {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-xl);
+  color: var(--text);
+}
+.sn-pwahl__knopf:hover:not(:disabled) {
+  border-color: var(--akzent);
+}
+.sn-pwahl__knopf:disabled {
+  opacity: 0.35;
+}
+.sn-pwahl__wert {
+  min-width: 44px;
+  text-align: center;
+  font-size: var(--t-xl);
+  color: var(--text);
+}
+.sn-pwahl__regler {
+  width: 180px;
+  accent-color: var(--akzent);
+}
+.sn-zwei-spalten {
+  display: grid;
+  gap: var(--s-5);
+}
+.sn-zwei-spalten > * + * {
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--linie);
+}
+.sn-teilwerk {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+  min-width: 0;
+}
+.sn-teilwerk__titel {
+  font-weight: 650;
+  color: var(--text);
+}
+.lw-ergebnis__zeile--netz dd {
+  color: var(--sn-netz);
+}
+.lw-ergebnis__zeile--host dd {
+  color: var(--sn-host);
+}
+.lw-ergebnis__zeile--res dd {
+  color: var(--sn-res);
+}
+.sn-ip {
+  font-size: var(--t-xl);
+  font-weight: 600;
+}
+.sn-ip__punkt {
+  color: var(--text-3);
+}
+.sn-ip__teil {
+  padding: 1px 5px;
+  border-radius: var(--r-1);
+}
+.sn-ip__teil--netz {
+  background: var(--sn-netz-weich);
+  color: var(--sn-netz);
+}
+.sn-ip__teil--rechnen {
+  background: color-mix(in srgb, var(--sn-grenze) 16%, transparent);
+  color: var(--sn-grenze);
+}
+.sn-ip__teil--host {
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+/* Block 1: Oktettliste, Sortieren, Stellenwerte, Rechenweg */
+.sn-oktettliste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-oktettliste__teil {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 96px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+}
+.sn-oktettliste__teil--ok {
+  border-color: var(--akzent-linie);
+}
+.sn-oktettliste__teil--falsch {
+  border-color: color-mix(in srgb, var(--fehler) 50%, transparent);
+  background: var(--sn-res-weich);
+}
+.sn-oktettliste__nr {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-oktettliste__teil strong {
+  font-size: var(--t-xl);
+  color: var(--text);
+}
+.sn-oktettliste__bits {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-sortier {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sn-sortier__zeile {
+  display: grid;
+  grid-template-columns: 110px 170px auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie);
+}
+.sn-sortier__zeile--gut {
+  border-color: var(--akzent-linie);
+}
+.sn-sortier__zeile--falsch {
+  border-color: color-mix(in srgb, var(--fehler) 50%, transparent);
+}
+.sn-sortier__name {
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-sortier__ip {
+  font-size: var(--t-n);
+}
+.sn-sortier__knoepfe {
+  display: flex;
+  gap: var(--s-1);
+}
+.sn-sortier__info {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-sortier__zeile--gut .sn-sortier__info svg {
+  color: var(--akzent);
+}
+.sn-sortier__zeile--falsch .sn-sortier__info svg {
+  color: var(--fehler);
+}
+.sn-mrechnung__ergebnis {
+  margin-top: 4px;
+  padding: 4px var(--s-2) 0;
+  border-top: 1px solid var(--linie);
+  color: var(--text-2);
+}
+.sn-bit--knopf {
+  cursor: pointer;
+  border: 0;
+}
+.sn-bit--knopf:hover {
+  outline: 1px solid var(--text-3);
+}
+/* ---------- Bilder ---------- */
+.sn-geraet {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 2px;
+  min-width: 96px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  text-align: center;
+}
+.sn-geraet--klein {
+  min-width: 80px;
+  padding: var(--s-1) var(--s-2);
+}
+.sn-geraet__symbol {
+  color: var(--text-2);
+}
+.sn-geraet__name {
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-geraet__ip {
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sn-geraet--netz {
+  border-color: var(--akzent-linie);
+}
+.sn-geraet--netz .sn-geraet__symbol {
+  color: var(--akzent);
+}
+.sn-geraet--fremd {
+  border-color: color-mix(in srgb, var(--warn) 50%, transparent);
+}
+.sn-geraet--fremd .sn-geraet__symbol {
+  color: var(--warn);
+}
+.sn-geraet--router .sn-geraet__symbol {
+  color: var(--info);
+}
+.sn-geraet--aktiv {
+  border-color: var(--akzent);
+  box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.15);
+}
+.sn-paketweg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+}
+.sn-paketweg__pfeil {
+  color: var(--warn);
+}
+.sn-paket {
+  position: relative;
+  display: grid;
+  gap: 1px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border: 1px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 9%, transparent);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sn-paket__titel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: var(--warn);
+}
+.sn-aufteilungen {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-3);
+  background: var(--flaeche-2);
+}
+.sn-oktettbild {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+}
+.sn-dialog {
+  display: grid;
+  grid-template-columns: auto minmax(0, 220px);
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+}
+.sn-dialog__titel {
+  grid-column: 1 / -1;
+  margin-bottom: var(--s-1);
+  font-size: var(--t-s);
+  font-weight: 600;
+  color: var(--text-3);
+}
+.sn-dialog__name {
+  color: var(--text-2);
+}
+.sn-dialog__feld {
+  padding: 4px var(--s-2);
+  border-radius: 4px;
+  border: 1px solid var(--linie-3);
+  background: var(--bg);
+  color: var(--text);
+}
+.sn-dialog__feld--hervor {
+  border-color: var(--akzent);
+  box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.15);
+}
+.sn-bau {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-2);
+}
+.sn-bau__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-bau__rezept {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-grenzlupe {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-1);
+}
+.sn-grenzlupe__zellen {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+.sn-grenzlupe__zelle {
+  display: grid;
+  place-items: center;
+  min-width: 52px;
+  height: 40px;
+  padding: 0 var(--s-2);
+  border-radius: var(--r-1);
+  background: var(--flaeche-3);
+  font-size: var(--t-l);
+  color: var(--text-2);
+}
+.sn-grenzlupe__zelle--dein {
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+.sn-grenzlupe__zelle--ende {
+  background: var(--sn-res-weich);
+  box-shadow: inset 0 0 0 1.5px var(--sn-res);
+  font-weight: 600;
+  color: var(--sn-res);
+}
+.sn-grenzlupe__zelle--anfang {
+  box-shadow: inset 0 0 0 1.5px var(--text-3);
+  color: var(--text);
+}
+.sn-grenzlupe__zelle--leer {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-grenzlupe__wand {
+  width: 4px;
+  margin: -4px 4px;
+  border-radius: 2px;
+  background: var(--sn-grenze);
+}
+.sn-grenzlupe__legende {
+  display: flex;
+  gap: var(--s-6);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+/* ---------- Block 2: Subnetting ---------- */
+.sn-hostleiste {
+  display: grid;
+  grid-template-columns: repeat(min(var(--n), 16), minmax(0, 1fr));
+  gap: 3px;
+  max-width: 780px;
+}
+.sn-hostleiste--kurz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.sn-hostleiste__zelle {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 1px;
+  min-width: 0;
+  min-height: 40px;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: var(--t-s);
+}
+.sn-hostleiste--kurz .sn-hostleiste__zelle {
+  min-width: 56px;
+  padding: 2px var(--s-2);
+}
+.sn-hostleiste__zelle--host {
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+.sn-hostleiste__zelle--netz,
+.sn-hostleiste__zelle--bc {
+  background: var(--sn-res-weich);
+  box-shadow: inset 0 0 0 1.5px var(--sn-res);
+  font-weight: 600;
+  color: var(--sn-res);
+}
+.sn-hostleiste__marke {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+.sn-hostleiste__luecke {
+  display: grid;
+  place-items: center;
+  flex: 1 1 120px;
+  min-height: 40px;
+  border-radius: 4px;
+  border: 1px dashed var(--sn-host);
+  font-size: var(--t-s);
+  color: var(--sn-host);
+}
+.sn-kombis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+.sn-kombis__spalte {
+  display: grid;
+  align-content: start;
+  gap: var(--s-2);
+  min-width: 120px;
+  padding: var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sn-kombis__titel {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-kombis__titel strong {
+  color: var(--text);
+}
+.sn-kombis__liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.sn-kombis__liste span {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+.sn-raster {
+  display: grid;
+  grid-template-columns: repeat(var(--spalten), minmax(0, 18px));
+  gap: 3px;
+}
+.sn-raster__zelle {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--sn-host-flaeche);
+}
+.sn-raster--gross {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.sn-raster__stueck {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 28px;
+  border-radius: 4px;
+  background: var(--sn-host-flaeche);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text);
+}
+.sn-raster__mehr {
+  align-self: center;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-blockgr {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 560px;
+}
+.sn-blockgr__reihe {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: var(--sn-bitluecke);
+}
+.sn-blockgr__zelle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: var(--sn-host-weich);
+  font-size: var(--t-m);
+  color: var(--sn-host);
+}
+.sn-blockgr__zelle--netz {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sn-blockgr__zelle--letzte {
+  border-color: var(--akzent);
+  background: var(--akzent);
+  color: var(--akzent-text);
+  font-weight: 600;
+}
+.sn-blockgr__zelle--grenze::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: calc(var(--sn-bitluecke) / -2 - 1.5px);
+  width: 3px;
+  border-radius: 2px;
+  background: var(--sn-grenze);
+}
+.sn-anfaenge {
+  display: grid;
+  gap: var(--s-2);
+}
+.sn-und {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: start;
+  gap: var(--s-2) var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sn-und__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-und__ergebnis {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  color: var(--text);
+}
+.sn-verfahren {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding-left: var(--s-5);
+  color: var(--text-2);
+}
+.sn-rollen {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-2);
+  max-width: 780px;
+}
+.sn-rollen__oktett {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: var(--s-2);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-2);
+}
+.sn-rollen__oktett--netz {
+  border-color: var(--akzent-linie);
+}
+.sn-rollen__oktett--rechnen {
+  border-color: var(--sn-grenze);
+  background: color-mix(in srgb, var(--sn-grenze) 8%, transparent);
+}
+.sn-rollen__oktett--host {
+  border-color: color-mix(in srgb, var(--sn-host) 50%, transparent);
+}
+.sn-rollen__nr,
+.sn-rollen__maske {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-rollen__wert {
+  font-size: var(--t-xl);
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-rollen__rolle {
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+.sn-rollen__oktett--netz .sn-rollen__rolle {
+  color: var(--akzent);
+}
+.sn-rollen__oktett--rechnen .sn-rollen__rolle {
+  color: var(--sn-grenze);
+}
+.sn-rollen__oktett--host .sn-rollen__rolle {
+  color: var(--sn-host);
+}
+.sn-rollen .sn-okbits {
+  grid-template-columns: repeat(8, minmax(0, 14px));
+}
+.sn-rollen .sn-okbits .sn-bit {
+  height: 20px;
+  font-size: 10px;
+}
+.sn-stuecke {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 640px;
+}
+.sn-stuecke__stueck {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sn-stuecke__balken {
+  height: 14px;
+  border-radius: 3px;
+  background: var(--sn-host-flaeche);
+}
+.sn-stuecke__stueck:first-child .sn-stuecke__balken {
+  border-left: 4px solid var(--sn-res);
+}
+.sn-stuecke__stueck:last-child .sn-stuecke__balken {
+  border-right: 4px solid var(--sn-res);
+}
+.sn-bau-paar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4) var(--s-8);
+}
+.sn-schema {
+  display: grid;
+  gap: var(--s-2);
+}
+.sn-schema__zeile {
+  display: grid;
+  grid-template-columns: 24px 170px minmax(0, 220px) 20px;
+  align-items: center;
+  gap: var(--s-3);
+}
+.sn-schema__nr {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--flaeche-3);
+  font-size: var(--t-xs);
+  color: var(--text-2);
+}
+.sn-schema__name {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sn-loesungsweg {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding: var(--s-3) var(--s-4) var(--s-3) var(--s-8);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+/* ---------- Block 3: Einen PC ins Netz bringen ---------- */
+.sn-weg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sn-weg__glied {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.sn-weg__pfeil {
+  color: var(--text-3);
+}
+.sn-weg--direkt .sn-weg__pfeil {
+  color: var(--akzent);
+}
+.sn-weg--gateway .sn-weg__pfeil {
+  color: var(--warn);
+}
+.sn-netzkasten {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  border-radius: var(--r-3);
+  border: 1px dashed var(--akzent-linie);
+}
+.sn-netzkasten__titel {
+  font-size: var(--t-s);
+  color: var(--akzent);
+}
+.sn-netzkasten__geraete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-zweinetze-router {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-3);
+  max-width: 820px;
+}
+.sn-router {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: var(--s-1);
+}
+.sn-router__bein {
+  font-size: var(--t-xs);
+  color: var(--info);
+}
+.sn-entscheid {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 680px;
+}
+.sn-entscheid__frage {
+  justify-self: center;
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--linie-3);
+  background: var(--flaeche-2);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-entscheid__zweige {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+.sn-entscheid__zweig {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  text-align: center;
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sn-entscheid__zweig--ja {
+  background: var(--akzent-weich);
+}
+.sn-entscheid__zweig--nein {
+  background: color-mix(in srgb, var(--warn) 12%, transparent);
+}
+.sn-dialog__wahl {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--text-2);
+}
+.sn-dialog__radio {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-3);
+}
+.sn-dialog__radio--an {
+  border-color: var(--akzent);
+  background: radial-gradient(var(--akzent) 45%, transparent 50%);
+}
+.sn-dialog__feld--aus {
+  min-height: 26px;
+  opacity: 0.4;
+}
+.sn-liste-ok {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding-left: var(--s-5);
+  color: var(--text-2);
+}
+.sn-dhcp-paket {
+  justify-self: start;
+  display: grid;
+  gap: 2px;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--akzent-linie);
+  background: var(--akzent-weich);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.sn-dhcp-paket__titel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-1);
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sn-dora {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 760px;
+}
+.sn-dora__zeile {
+  display: grid;
+  grid-template-columns: 24px 210px 110px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  border-left: 3px solid var(--warn);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+}
+.sn-dora__zeile--zurueck {
+  border-left-color: var(--akzent);
+}
+.sn-dora__nr {
+  color: var(--text-3);
+}
+.sn-dora__weg {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-dora__name {
+  font-weight: 600;
+  color: var(--text);
+}
+.sn-dora__text {
+  color: var(--text-2);
+}
+.sn-schalter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+  cursor: pointer;
+}
+.sn-schalter input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--akzent);
+}
+.sn-dhcp-ergebnis {
+  display: grid;
+  gap: var(--s-3);
+}
+.sn-regeln {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding-left: var(--s-5);
+  color: var(--text-2);
+}
+.sn-plan {
+  display: grid;
+  gap: var(--s-2);
+  max-width: 780px;
+}
+.sn-plan__leiste {
+  position: relative;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sn-plan__teil {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.sn-plan__teil--frei {
+  background: var(--sn-host-flaeche);
+}
+.sn-plan__teil--dhcp {
+  background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--warn) 55%, var(--flaeche-2)) 0 6px, color-mix(in srgb, var(--warn) 30%, var(--flaeche-2)) 6px 12px);
+}
+.sn-plan__punkt {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: max(4px, 1.2%);
+}
+.sn-plan__punkt--belegt {
+  background: var(--text);
+}
+.sn-plan__punkt--res {
+  background: var(--sn-res);
+}
+.sn-plan__legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-4);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-plan__legende span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sn-plan__farbe {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.sn-plan__farbe--res {
+  background: var(--sn-res);
+}
+.sn-plan__farbe--belegt {
+  background: var(--text);
+}
+.sn-plan__farbe--dhcp {
+  background: color-mix(in srgb, var(--warn) 55%, var(--flaeche-2));
+}
+.sn-plan__farbe--frei {
+  background: var(--sn-host-flaeche);
+}
+.sn-skizze {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border-radius: var(--r-3);
+  border: 1px dashed var(--akzent-linie);
+}
+.sn-skizze__netz {
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sn-skizze__geraete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-skizze__dhcp {
+  font-size: var(--t-s);
+  color: var(--warn);
+}
+.sn-schema__zeile--breit {
+  grid-template-columns: 190px minmax(0, 220px) minmax(0, 1fr);
+}
+.sn-schema__grund {
+  font-size: var(--t-s);
+}
+/* ---------- Block 4: MAC und ARP ---------- */
+.sn-mac {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--s-2);
+  max-width: 820px;
+}
+.sn-mac__byte {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  min-width: 0;
+  padding: var(--s-2) 2px;
+  border-radius: var(--r-2);
+}
+.sn-mac__byte strong {
+  font-size: var(--t-xl);
+}
+.sn-mac__byte--hersteller {
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+}
+.sn-mac__byte--hersteller strong {
+  color: var(--warn);
+}
+.sn-mac__byte--geraet {
+  background: var(--sn-host-weich);
+}
+.sn-mac__byte--geraet strong {
+  color: var(--sn-host);
+}
+.sn-mac .sn-okbits {
+  grid-template-columns: repeat(8, minmax(0, 11px));
+  gap: 1px;
+}
+.sn-mac .sn-okbits .sn-bit {
+  height: 16px;
+  font-size: 9px;
+}
+.sn-mac__nr {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+}
+.sn-mac__teil {
+  grid-column: span 3;
+  padding-top: 2px;
+  text-align: center;
+  font-size: var(--t-s);
+  border-top: 2px solid currentColor;
+}
+.sn-mac__teil--hersteller {
+  color: var(--warn);
+}
+.sn-mac__teil--geraet {
+  color: var(--sn-host);
+}
+.sn-aufkleber {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px dashed var(--linie-3);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-luecke {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-luecke strong {
+  color: var(--text);
+}
+.sn-arp-bild {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+}
+.sn-arp-bild__ruf {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+.sn-arp-bild__blase {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-3);
+  border: 1px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+  font-size: var(--t-m);
+  color: var(--text);
+}
+.sn-arp-bild__blase--antwort {
+  border-color: var(--akzent);
+  background: var(--akzent-weich);
+}
+.sn-arp-bild__alle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  padding: var(--s-2);
+  border-radius: var(--r-2);
+  border: 1px dashed var(--warn);
+}
+.sn-ablauf {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding: var(--s-3) var(--s-4) var(--s-3) var(--s-8);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+/* ---------- Block 5: IPv6 ---------- */
+.sn-v6 {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  max-width: 820px;
+}
+.sn-v6__block {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 0;
+  padding: var(--s-2) 2px;
+  border-radius: var(--r-1);
+  border: 1px solid transparent;
+  background: var(--flaeche-3);
+  text-align: center;
+  color: var(--text);
+}
+button.sn-v6__block:hover {
+  border-color: var(--linie-3);
+}
+.sn-v6__block strong {
+  font-size: var(--t-l);
+}
+.sn-v6__block--netz {
+  background: var(--akzent-weich);
+  color: var(--akzent);
+}
+.sn-v6__block--host {
+  background: var(--sn-host-weich);
+  color: var(--sn-host);
+}
+.sn-v6__block--aktiv {
+  border-color: var(--akzent);
+  box-shadow: 0 0 0 3px rgba(var(--akzent-rgb), 0.15);
+}
+.sn-v6__bits {
+  font-size: 9px;
+  color: var(--text-3);
+}
+.sn-v6__detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  color: var(--text-2);
+}
+.sn-v6__nibbles {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-v6__nibbles span {
+  display: inline-grid;
+  justify-items: center;
+  padding: 2px var(--s-2);
+  border-radius: 4px;
+  background: var(--flaeche-3);
+}
+.sn-v6__nibbles strong {
+  color: var(--akzent);
+}
+.sn-v6-teile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 820px;
+  text-align: center;
+  font-size: var(--t-s);
+}
+.sn-kuerzen {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s-2) var(--s-4);
+  max-width: 820px;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+}
+.sn-kuerzen__name {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.sn-kuerzen__wert {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--t-n);
+  color: var(--text);
+}
+.sn-kuerzen__wert--ziel {
+  font-weight: 600;
+  color: var(--akzent);
+}
+.sn-kuerzen__weg {
+  color: var(--sn-res);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+.sn-kuerzen__neu {
+  color: var(--warn);
+}
+.sn-laengen {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-2) var(--s-3);
+  max-width: 640px;
+}
+.sn-laengen__balken {
+  height: 16px;
+  border-radius: 4px;
+  background: var(--flaeche-4);
+}
+.sn-laengen__balken--v6 {
+  background: var(--akzent);
+}
+.sn-regel1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sn-regel1__paar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--s-1) var(--s-3);
+  border-radius: var(--r-2);
+  background: var(--flaeche-2);
+  color: var(--text-2);
+}
+.sn-regel1__paar strong {
+  color: var(--akzent);
+}
+@media (max-width: 640px) {
+  .sn-lupe {
+    padding: var(--s-3);
+  }
+  .sn-lupe__bloecke {
+    gap: var(--s-1);
+  }
+  .sn-lupe__balken {
+    gap: 1px;
+  }
+  .sn-lupe__zelle {
+    font-size: 10px;
+    letter-spacing: -0.03em;
+  }
+  .sn {
+    --sn-oktettluecke: var(--s-3);
+  }
+  .sn-band {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sn-bit {
+    height: 24px;
+    font-size: var(--t-s);
+  }
+  .sn-band__dez {
+    font-size: var(--t-xl);
+  }
+  .sn-zwei {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+    padding: var(--s-3) var(--s-4);
+  }
+  .sn-zwei__wert--dez {
+    margin-bottom: var(--s-2);
+  }
+  .sn-zwei__wert--bin {
+    font-size: var(--t-m);
+  }
+  .sn-masken__reihe {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .sn-mrechnung__zeile {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+  .sn-mrechnung__summe {
+    grid-column: 2;
+  }
+  .sn-okbits {
+    grid-template-columns: repeat(8, 17px);
+  }
+  .sn-zweinetze {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sn-vergleich {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--s-3) var(--s-4);
+  }
+  .sn-anschrift {
+    font-size: var(--t-l);
+  }
+  .sn-sortier__zeile {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .sn-sortier__knoepfe,
+  .sn-sortier__info {
+    grid-column: 1 / -1;
+  }
+  .sn-pwahl__regler {
+    width: 120px;
+  }
+  .sn-dialog {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .sn-grenzlupe__zelle {
+    min-width: 40px;
+    font-size: var(--t-n);
+  }
+  .sn-hostleiste {
+    grid-template-columns: repeat(min(var(--n), 8), minmax(0, 1fr));
+  }
+  .sn-rollen {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sn-schema__zeile {
+    grid-template-columns: 24px minmax(0, 1fr) 20px;
+  }
+  .sn-schema__zeile .feld {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .sn-und {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .sn-zweinetze-router {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sn-router {
+    justify-self: center;
+  }
+  .sn-entscheid__zweige {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sn-dora__zeile {
+    grid-template-columns: 20px minmax(0, 1fr);
+  }
+  .sn-dora__name,
+  .sn-dora__text {
+    grid-column: 2;
+  }
+  .sn-schema__zeile--breit {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .sn-schema__zeile--breit .feld {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .sn-mac {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .sn-mac__teil {
+    display: none;
+  }
+  .sn-v6 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .sn-v6-teile {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: left;
+  }
+  .sn-kuerzen {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .sn-kuerzen__name {
+    margin-top: var(--s-2);
+  }
+}

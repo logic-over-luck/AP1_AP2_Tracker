@@ -1,53 +1,5 @@
 /* Trainer: Module, Aufgaben, Felder, Rechenweg */
 
-/* Räume (z. B. Subnetze: Verstehen / Üben) */
-.trainer-bereiche {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s-3);
-  max-width: 720px;
-  margin-bottom: var(--s-5);
-}
-.trainer-bereich {
-  display: flex;
-  align-items: center;
-  gap: var(--s-3);
-  padding: var(--s-3) var(--s-4);
-  border-radius: var(--r-3);
-  border: 1px solid var(--linie-2);
-  background: var(--flaeche-1);
-  text-align: left;
-  color: var(--text-2);
-  transition: all var(--dauer) var(--kurve);
-}
-.trainer-bereich > span {
-  display: grid;
-  gap: 2px;
-}
-.trainer-bereich:hover {
-  border-color: var(--linie-3);
-  color: var(--text);
-}
-.trainer-bereich[aria-selected='true'] {
-  border-color: var(--akzent);
-  background: var(--akzent-weich);
-  color: var(--akzent);
-}
-.trainer-bereich__name {
-  font-size: var(--t-l);
-  font-weight: 650;
-  color: var(--text);
-}
-.trainer-bereich__text {
-  font-size: var(--t-s);
-  color: var(--text-3);
-}
-@media (max-width: 600px) {
-  .trainer-bereich__text {
-    display: none;
-  }
-}
-
 .trainer-modi {
   display: flex;
   flex-wrap: wrap;
