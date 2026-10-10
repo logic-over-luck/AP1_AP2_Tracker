@@ -6,9 +6,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { liesKorrekturen, pruefeKorrekturen, wendeKorrekturenAn } from './korrekturen.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const inhalt = JSON.parse(fs.readFileSync(path.join(wurzel, 'Inhaltsdatei_AP1_AP2_tracker.json'), 'utf8'));
+const original = JSON.parse(fs.readFileSync(path.join(wurzel, 'Inhaltsdatei_AP1_AP2_tracker.json'), 'utf8'));
+// Geprüft wird gegen die korrigierte Vorgabe (inhalte/korrekturen.json); deren Fehler stehen mit in der Liste.
+const korrekturen = liesKorrekturen(wurzel);
+const korrekturFehler = pruefeKorrekturen(original, korrekturen);
+const inhalt = korrekturFehler.length ? original : wendeKorrekturenAn(original, korrekturen);
 
 const spById = new Map(inhalt.stichpunkte.map((s) => [s.id, s]));
 const blockById = new Map();
@@ -26,8 +31,9 @@ function bloeckeDesPakets(paket) {
   return [...blockById.keys()].filter((b) => b.startsWith(paket + '-'));
 }
 
-const fehler = [];
+const fehler = korrekturFehler.map((f) => `korrekturen.json ${f}`);
 const warnungen = [];
+const entfallen = new Set(inhalt.stichpunkte.flatMap((s) => s.koennen_entfallen ?? []));
 const gesehen = { karten: new Set(), koennenAbgedeckt: new Set(), sp: new Set(), bloecke: new Set() };
 let anzahlKarten = 0;
 
@@ -105,7 +111,8 @@ function pruefeDatei(datei) {
     if (k.k === null) {
       if (!new RegExp(`^${k.sp}-X\\d+$`).test(k.id)) fehler.push(`${ort}: ID muss ${k.sp}-X<n> lauten`);
     } else {
-      if (!sp.koennen.some((kk) => kk.id === k.k)) fehler.push(`${ort}: Können-ID ${k.k} gehört nicht zu ${k.sp}`);
+      if (entfallen.has(k.k)) fehler.push(`${ort}: Können-Aussage ${k.k} ist laut korrekturen.json entfallen – Karte löschen oder umhängen`);
+      else if (!sp.koennen.some((kk) => kk.id === k.k)) fehler.push(`${ort}: Können-ID ${k.k} gehört nicht zu ${k.sp}`);
       if (!new RegExp(`^${k.k}-\\d+$`).test(k.id)) fehler.push(`${ort}: ID muss ${k.k}-<n> lauten`);
       gesehen.koennenAbgedeckt.add(k.k);
     }
@@ -117,7 +124,8 @@ function pruefeDatei(datei) {
   const ohneKarte = new Set();
   for (const s of sollSp) for (const kk of spById.get(s).koennen) if (!(daten.karten ?? []).some((k) => k.k === kk.id)) ohneKarte.add(kk.id);
   for (const n of daten.nicht_abgefragt ?? []) {
-    if (!ohneKarte.has(n.k)) warnungen.push(`${name}: nicht_abgefragt ${n.k} hat doch eine Karte oder ist unbekannt`);
+    if (entfallen.has(n.k)) fehler.push(`${name}: nicht_abgefragt ${n.k} ist laut korrekturen.json entfallen`);
+    else if (!ohneKarte.has(n.k)) warnungen.push(`${name}: nicht_abgefragt ${n.k} hat doch eine Karte oder ist unbekannt`);
     if (!n.grund) fehler.push(`${name}: nicht_abgefragt ${n.k} ohne Grund`);
     ohneKarte.delete(n.k);
   }
@@ -149,6 +157,7 @@ for (const d of dateien) pruefeDatei(d);
 if (!argumente.length) {
   const alleBloecke = [...blockById.keys()];
   const fehlendeBloecke = alleBloecke.filter((b) => !gesehen.bloecke.has(b));
+  console.log(`Korrekturen an der Vorgabe: ${(korrekturen.korrekturen ?? []).length}`);
   console.log(`\nGesamt: ${anzahlKarten} Karten, ${gesehen.sp.size}/${spById.size} Stichpunkte, ${gesehen.bloecke.size}/${alleBloecke.length} Blöcke`);
   if (fehlendeBloecke.length) console.log(`Noch ohne Paket: ${fehlendeBloecke.length} Blöcke`);
 }

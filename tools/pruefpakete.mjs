@@ -7,14 +7,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { ladeInhalt } from "./korrekturen.mjs";
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const inhalt = JSON.parse(
-  fs.readFileSync(
-    path.join(wurzel, "Inhaltsdatei_AP1_AP2_tracker.json"),
-    "utf8",
-  ),
-);
+// Vorgabe mit den Korrekturen aus inhalte/korrekturen.json
+const inhalt = ladeInhalt(wurzel);
 const blockById = new Map();
 for (const teil of inhalt.struktur)
   for (const ordner of teil.ordner)
@@ -25,6 +22,7 @@ const VERMERK = {
   in_pruefung_belegt: "nur Prüfung",
   abgeleitet: "abgeleitet",
   grundlage: "Grundlage",
+  korrektur: "Korrektur",
 };
 const zitat = (text) =>
   String(text)
@@ -53,7 +51,8 @@ for (const datei of fs
     "Vermerke an den Können-Aussagen:",
     "",
     ...Object.entries(VERMERK).map(
-      ([k, name]) => `- *${name}*: ${inhalt.meta.vermerke[k]}`,
+      ([k, name]) =>
+        `- *${name}*: ${inhalt.meta.vermerke[k] ?? "neu oder geändert laut inhalte/korrekturen.json"}`,
     ),
     "",
   );
@@ -83,7 +82,7 @@ for (const datei of fs
       z.push("**Vorgabe – Können-Aussagen**", "");
       for (const k of sp.koennen ?? [])
         z.push(
-          `- \`${k.id.slice(sp.id.length + 1)}\` ${k.text} *(${VERMERK[k.vermerk] ?? k.vermerk})*`,
+          `- \`${k.id.slice(sp.id.length + 1)}\` ${k.text} *(${VERMERK[k.vermerk] ?? k.vermerk}${k.korrigiert ? ", korrigiert" : ""})*`,
         );
       z.push("");
       if (kurz) {

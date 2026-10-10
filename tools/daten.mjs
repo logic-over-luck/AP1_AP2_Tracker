@@ -4,6 +4,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { ladeInhalt } from './korrekturen.mjs';
 
 const RAUM_NAMEN = { AP1: 'AP1', AP2: 'AP2', WISO: 'WiSo' };
 
@@ -12,7 +13,9 @@ const RAUM_NAMEN = { AP1: 'AP1', AP2: 'AP2', WISO: 'WiSo' };
 // – Häufigkeit: in wie vielen Prüfungen kam er vor (jede Prüfung zählt nur einmal)
 // – Aktualität und Sicherheit: Originalprüfung nach aktuellem Katalog zählt voll, ältere Kataloge
 //   und bloße Themen-Stichworte (Podcast-Themenliste, Gedächtnisprotokolle) zählen weniger
-// – Punkte: Aufgaben mit vielen Punkten heben den Stichpunkt an (aus dem Rahmen und inhalte/gewichtung.json)
+// – Punkte: Aufgaben mit vielen Punkten heben den Stichpunkt an (aus dem Rahmen und inhalte/gewichtung.json;
+//   in inhalte/korrekturen.json gesetzte Punkte gelten statt dieser beiden)
+// Als falsch markierte Belege (inhalte/korrekturen.json) zählen nicht.
 // Gezeigt wird nur das Ergebnis (Stufe, Anzahl Prüfungen), nie die Quellen selbst.
 
 export const BELEG_GEWICHT = {
@@ -42,9 +45,9 @@ export const stufeFuer = (wert, grenzen = STUFEN_SP) => grenzen.find(([, g]) => 
 
 export function wichtigkeit(s, punkteZusatz) {
   const jePruefung = new Map();
-  for (const b of s.belege ?? []) jePruefung.set(b.pruefung_id, Math.max(jePruefung.get(b.pruefung_id) ?? 0, belegGewicht(b)));
+  for (const b of s.belege ?? []) if (!b.falsch) jePruefung.set(b.pruefung_id, Math.max(jePruefung.get(b.pruefung_id) ?? 0, belegGewicht(b)));
   const ausRahmen = [...String(s.rahmen ?? '').matchAll(/(\d+) Punkte/g)].map((m) => Number(m[1]));
-  const punkte = Math.max(0, punkteZusatz ?? 0, ...ausRahmen);
+  const punkte = s.punkte ?? Math.max(0, punkteZusatz ?? 0, ...ausRahmen);
   const wert = [...jePruefung.values()].reduce((a, b) => a + b, 0) + punkteBonus(punkte);
   return { wert: Math.round(wert * 100) / 100, pruefungen: [...jePruefung.entries()].sort(), punkte: punkte || null, stufe: stufeFuer(wert) };
 }
@@ -59,7 +62,7 @@ function liesJsonOrdner(ordner) {
 }
 
 export function ladeDaten(wurzel) {
-  const inhalt = JSON.parse(fs.readFileSync(path.join(wurzel, 'Inhaltsdatei_AP1_AP2_tracker.json'), 'utf8'));
+  const inhalt = ladeInhalt(wurzel);
   const pakete = liesJsonOrdner(path.join(wurzel, 'inhalte', 'lernen'));
 
   const kurz = {};
