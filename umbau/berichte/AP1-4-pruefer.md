@@ -11,7 +11,6 @@ Ohne Musterlösung, nur gegen die Aufgabenstellung geprüft: 2025H-A2-ca, -cb, 2
 
 | Stichpunkt | Art | Fund | Vorschlag |
 |---|---|---|---|
-| AP1-4-1-1 | K1 | 2026H-A4-a verlangt **zwei** Möglichkeiten für einen Internetzugang auf der Baustelle (nicht amtliche Lösung: mobiler LTE/5G-Router und Hotspot über das Smartphone). K7 nennt als Beispiel nur den mobilen Router. | K7 um „… oder einen mobilen Hotspot über das Smartphone (Tethering)“ ergänzen. |
 | AP1-4-1-3 | K2 | K6 „begründet empfehlen“: „empfehlen“ steht nicht in 4.1, „begründet“ ist nur Beiwort. | „Du kannst für einen Einsatzzweck **begründen**, ob eine HDD oder eine SSD passt“ (Stufe 4). |
 | AP1-4-1-4 | K2 | K1 hat zwei Operatoren, „nennen“ (1) und „einordnen“ (2), trägt aber Stufe 1. Nach 4.1 zählt die höchste; F1 verlangt genau einen. | Stufe 2 mit „… Peripheriegeräte als Ein- oder Ausgabegeräte **einordnen**“ oder Stufe 1 nur mit „nennen“. |
 | AP1-4-2-1 | K2 | K1, K5, K7 („umrechnen“) und K2 („rechnen“) enthalten keinen Operator aus 4.1; die Stufe 3 ist nicht ableitbar. | Je „… **berechnen**“ oder den Prüfungsoperator „Umrechnung durchführen“ (Stufe 3). |
@@ -23,6 +22,7 @@ Ohne Musterlösung, nur gegen die Aufgabenstellung geprüft: 2025H-A2-ca, -cb, 2
 
 ## Ohne Befund
 
+- AP1-4-1-1 – ohne Befund (2026H-A4-a: die zweite Möglichkeit, der Hotspot über das Smartphone, steht in AP1-6-1-4-K5, dieselbe Teilaufgabe)
 - AP1-4-1-2 – ohne Befund
 - AP1-4-1-5 – ohne Befund
 - AP1-4-1-6 – ohne Befund (2026F-A1-ab ohne Musterlösung)
@@ -35,4 +35,4 @@ Geprüfte Rechnungen ohne Musterlösung (eigene Lösung, nur zur Kontrolle von K
 0,3 ≈ 448 Mbit/s. Die Aussagen in AP1-4-2-1 bis AP1-4-2-4 reichen dafür aus. 2026H-A2-a (1.000 GB → 931 GiB) ist in
 AP1-4-2-1-K4 vollständig abgedeckt.
 
-Summe: 9 Funde (K1: 1, K2: 8, K3: 0).
+Summe: 8 Funde (K1: 0, K2: 8, K3: 0).
