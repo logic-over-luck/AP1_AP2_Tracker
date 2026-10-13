@@ -454,6 +454,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P22 | **Entschieden (Claude im Auftrag des Projektinhabers):** G4 bleibt, Normabschnitte und -nummern sind Außen. Name und Zweck der ISO 9001 sind als Kür eingetragen (AP1-1-5-1), weil sie ohne Hilfsmittel abfragbar sind. | erledigt |
 | P23 | **Entschieden (Claude im Auftrag des Projektinhabers):** Die Kennzeichnung „Ordner“ im Hinweis-Abgleich bleibt. Sie ist nur Buchführung: Das Thema steht dort, wo es wohnt. | erledigt |
 | P24 | **Entschieden (Projektinhaber, 13.10.2026): Pflicht.** Was der Katalog-Anhang zeigt, gehört zu AP1; Prüfungen erweitern nur. Umgesetzt: EPK und BPMN (AP1-8-4-4) bleiben Kern, Aggregation und Komposition sind jetzt Kern (neue Aussage AP1-8-3-2-K6). | erledigt |
+| P25 | **Formoperatoren in Z3** (gefunden bei P16): Prüfungsoperatoren, die nur die Antwortform bezeichnen („eintragen“, „ausfüllen“, „vervollständigen“, „ergänzen“, „markieren“), bestimmen nach Z3 die Stufe der Teilaufgabe und damit die Mindesttiefe aller zugeordneten Bausteine. Beispiel: 2023H-A2-d „Tragen Sie Vor- und Nachteile von Homeoffice ein“ hebt AP1.07.02.3 von Stufe 1 auf 3, fachlich ist es „nennen“. Soll in solchen Fällen der fachliche Kern zählen? Verwandt mit P13. | offen |
 
 ---
 
