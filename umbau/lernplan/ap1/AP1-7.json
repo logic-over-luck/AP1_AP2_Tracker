@@ -1,0 +1,2509 @@
+{
+  "oberblock": {
+    "id": "AP1-7",
+    "titel": "IT-Sicherheit und Datenschutz",
+    "raum": "AP1",
+    "gebiete": [
+      "G.AP1.03"
+    ]
+  },
+  "themenbloecke": [
+    {
+      "id": "AP1-7-1",
+      "titel": "Schutzziele und Organisation",
+      "satz": "Was geschützt werden soll, mit welchen Arten von Maßnahmen und wer dafür zuständig ist.",
+      "stichpunkte": [
+        {
+          "id": "AP1-7-1-1",
+          "titel": "Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit",
+          "ziel": "Die Schutzziele erklären und Vorfällen und Maßnahmen begründet zuordnen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01"
+            },
+            {
+              "id": "AP1.06.01.1"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A4-a",
+            "2023H-A3-cc",
+            "2025F-A2-bb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-1-1-K1",
+              "text": "Du kannst Vertraulichkeit, Integrität und Verfügbarkeit erklären.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.1"
+              ]
+            },
+            {
+              "id": "AP1-7-1-1-K2",
+              "text": "Du kannst einem beschriebenen Vorfall oder einer Begründung das betroffene Schutzziel zuordnen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.1"
+              ]
+            },
+            {
+              "id": "AP1-7-1-1-K3",
+              "text": "Du kannst zu einer Maßnahme das Schutzziel nennen, das sie sichert, zum Beispiel Verschlüsselung für Vertraulichkeit, Hashwert für Integrität, Datensicherung für Verfügbarkeit.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2025F-A2-bb",
+                "katalog:AP1.06.01.1"
+              ]
+            },
+            {
+              "id": "AP1-7-1-1-K5",
+              "text": "Du kannst Sicherheitsmaßnahmen den Schutzzielen zuordnen und die Zuordnung begründen, zum Beispiel zentrale Bearbeitung auf dem Server für Integrität.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2021H-A4-a"
+              ]
+            },
+            {
+              "id": "AP1-7-1-1-K6",
+              "text": "Du kannst beschreiben, was Vertraulichkeit und Integrität für verschlüsselte Daten bedeuten: Nur Berechtigte können sie lesen; Veränderungen werden bemerkt.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023H-A3-cc"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Authentizität und Verbindlichkeit als weitere Schutzziele.",
+              "quellen": [
+                "podcast:themen-ap1",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "AP1.06.01.1 nennt drei Schutzziele; weitere stehen weder im AP1-Katalog noch in einer AP1-Prüfung."
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-1-2",
+          "titel": "TOM: technische, organisatorische und personelle Maßnahmen",
+          "ziel": "Maßnahmen nach ihrer Art einordnen, Risiken einer Situation beschreiben und passende Maßnahmen für einen Arbeitsplatz vorschlagen und beurteilen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2"
+            },
+            {
+              "id": "AP1.06.01.2.1"
+            },
+            {
+              "id": "AP1.06.01.2.4"
+            },
+            {
+              "id": "AP1.06.04.3"
+            },
+            {
+              "id": "AP1.06.02.1.3"
+            }
+          ],
+          "teilaufgaben": [
+            "2024H-A1-b",
+            "2025H-A3-d",
+            "2026H-A2-db",
+            "2026H-A4-bb",
+            "2025F-A1-ea"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-1-2-K1",
+              "text": "Du kannst technische, organisatorische und personelle Maßnahmen unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.2.1",
+                "katalog:AP1.06.04.3"
+              ]
+            },
+            {
+              "id": "AP1-7-1-2-K2",
+              "text": "Du kannst technische Maßnahmen benennen: Virenschutz, Personal Firewall, Verschlüsselung.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.01.2.4"
+              ]
+            },
+            {
+              "id": "AP1-7-1-2-K3",
+              "text": "Du kannst für einen beschriebenen Arbeitsplatz konkrete Schutzmaßnahmen vorschlagen, zum Beispiel Backups und Festplattenverschlüsselung oder bei einem Baucontainer Abschließen und Kabelschloss.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026H-A2-db",
+                "beleg:2026H-A4-bb"
+              ]
+            },
+            {
+              "id": "AP1-7-1-2-K4",
+              "text": "Du kannst das Sicherheitsrisiko einer beschriebenen Situation beschreiben, zum Beispiel fremde Personen im Raum, private Geräte im Firmennetz oder manipulierte Geräte aus einer unsicheren Lieferkette.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024H-A1-b",
+                "beleg:2025H-A3-d"
+              ]
+            },
+            {
+              "id": "AP1-7-1-2-K5",
+              "text": "Du kannst Beispiele für organisatorische Maßnahmen (Regelungen, Berechtigungskonzept, Besucherregelung) und personelle Maßnahmen (Schulung, Verpflichtung auf Vertraulichkeit) nennen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.01.2.1",
+                "katalog:AP1.06.04.3"
+              ]
+            },
+            {
+              "id": "AP1-7-1-2-K6",
+              "text": "Du kannst beurteilen, ob die Maßnahmen für einen Arbeitsplatz zum festgestellten Schutzbedarf passen.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.01.2",
+                "katalog:AP1.06.01.2.1"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Sicherheitsmaßnahmen aus einem englischen Herstellertext (2025F-A1-ea) entnehmen steht im Ordner Kunde, Markt und Unternehmen (AP1-2-3-1)."
+        },
+        {
+          "id": "AP1-7-1-3",
+          "titel": "Sicherheitsrichtlinien, Passwort-Policy und Sicherheitsbewusstsein: Security by Design, Security by Default",
+          "ziel": "Richtlinien wie die Passwort-Policy erklären und bewerten, Rechte nach Bedarf begründen und das Sicherheitsbewusstsein fördern.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2.3"
+            },
+            {
+              "id": "AP1.06.01.2.5"
+            },
+            {
+              "id": "AP1.06.04.1"
+            },
+            {
+              "id": "AP1.06.04.10"
+            },
+            {
+              "id": "AP1.06.04.7"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A4-e",
+            "2023H-A3-ca",
+            "2025F-A1-eb",
+            "2026F-A1-aa"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-1-3-K1",
+              "text": "Du kannst erklären, was eine IT-Sicherheitsrichtlinie ist, zum Beispiel eine Passwort-Policy.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.2.3"
+              ]
+            },
+            {
+              "id": "AP1-7-1-3-K2",
+              "text": "Du kannst eine gegebene Passwort-Policy bewerten.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.04.10"
+              ]
+            },
+            {
+              "id": "AP1-7-1-3-K3",
+              "text": "Du kannst Kriterien für sichere Passwörter begründen: Länge und Zeichenvielfalt erschweren das Erraten, keine Wörterbuchbegriffe, für jeden Zugang ein eigenes Passwort.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2021H-A4-e",
+                "beleg:2023H-A3-ca"
+              ]
+            },
+            {
+              "id": "AP1-7-1-3-K4",
+              "text": "Du kannst Security by Design und Security by Default erklären: Sicherheit wird von Anfang an eingeplant; die Voreinstellungen sind die sicheren.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.1"
+              ]
+            },
+            {
+              "id": "AP1-7-1-3-K5",
+              "text": "Du kannst begründen, warum Benutzer nur die Rechte bekommen, die sie für ihre Arbeit brauchen, zum Beispiel keine Administratorrechte für alle.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025F-A1-eb"
+              ]
+            },
+            {
+              "id": "AP1-7-1-3-K6",
+              "text": "Du kannst personelle Maßnahmen zur Förderung des Sicherheitsbewusstseins bewerten, zum Beispiel ob eine einmalige Schulung genügt oder regelmäßige Übungen mit simulierten Phishing-Mails und klare Meldewege nötig sind.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.01.2.5",
+                "katalog:AP1.06.04.1"
+              ]
+            },
+            {
+              "id": "AP1-7-1-3-K7",
+              "text": "Du kannst beschreiben, was die Vorgabe „no default passwords“ bei einem Gerät bedeutet: Es gibt kein voreingestelltes Kennwort, bei der Einrichtung muss ein eigenes vergeben werden.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A1-aa"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Die Musterlösung zu 2026F-A1-aa fehlt; K7 folgt der Aufgabenstellung."
+        },
+        {
+          "id": "AP1-7-1-4",
+          "titel": "IT-Sicherheitsbeauftragter, Datenschutzbeauftragter, ISMS und IT-Sicherheitsmanagement",
+          "ziel": "Die Beauftragten unterscheiden, ein ISMS erklären und unterstützen und den Nutzen der Protokollierung beschreiben.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2.2"
+            },
+            {
+              "id": "AP1.06.03.4"
+            },
+            {
+              "id": "AP1.06.04.2"
+            }
+          ],
+          "teilaufgaben": [
+            "2023F-A3-ca"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-1-4-K1",
+              "text": "Du kannst IT-Sicherheitsbeauftragten und Datenschutzbeauftragten unterscheiden: Der eine kümmert sich um die Sicherheit aller Informationen und Systeme, der andere um den Schutz personenbezogener Daten.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.2.2"
+              ]
+            },
+            {
+              "id": "AP1-7-1-4-K2",
+              "text": "Du kannst erklären, was ein ISMS ist: festgelegte Regeln, Zuständigkeiten und Abläufe, mit denen ein Betrieb seine Informationssicherheit dauerhaft steuert und verbessert.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.03.4"
+              ]
+            },
+            {
+              "id": "AP1-7-1-4-K3",
+              "text": "Du kannst beschreiben, wie du ein ISMS im eigenen Arbeitsbereich unterstützt, zum Beispiel Richtlinien einhalten und Vorfälle melden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.03.4"
+              ]
+            },
+            {
+              "id": "AP1-7-1-4-K4",
+              "text": "Du kannst erklären, dass IT-Sicherheitsmanagement ein fortlaufender Prozess ist, der dem PDCA-Zyklus folgt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.2"
+              ]
+            },
+            {
+              "id": "AP1-7-1-4-K5",
+              "text": "Du kannst für eine Frage im Betrieb beurteilen, ob der IT-Sicherheitsbeauftragte oder der Datenschutzbeauftragte zuständig ist.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.01.2.2"
+              ]
+            },
+            {
+              "id": "AP1-7-1-4-K6",
+              "text": "Du kannst beschreiben, wie Protokollierung (Logging) zur IT-Sicherheit beiträgt: Fehler und unerlaubte Aktivitäten werden mit Zeit und Benutzer erkennbar.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023F-A3-ca",
+                "katalog:AP1.06.04.2"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Aufbau und Zertifizierung eines ISMS nach ISO 27001 gehören nicht dazu.",
+              "begruendung": "AP1.06.03.4 verlangt das ISMS „kennen und unterstützen“ (Stufe 2); B3: die ISO-27000-Normen sind aus dem AP1-Katalog gestrichen.",
+              "katalog": [
+                "AP1.06.03.4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AP1-7-2",
+      "titel": "BSI IT-Grundschutz",
+      "satz": "Den Schutzbedarf nach IT-Grundschutz feststellen und Risiken einordnen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-7-2-1",
+          "titel": "IT-Grundschutz-Kompendium und Bausteine",
+          "ziel": "Das BSI und den IT-Grundschutz erklären, Bausteine zuweisen und Anforderungen mit Maßnahmen umsetzen und begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2.6"
+            },
+            {
+              "id": "AP1.06.03.1"
+            },
+            {
+              "id": "AP1.06.03"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A4-b",
+            "2023F-A3-ba",
+            "2024H-A1-c"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-2-1-K1",
+              "text": "Du kannst erklären, was das BSI ist und wozu das IT-Grundschutz-Kompendium dient, und Aufgaben des BSI nennen, zum Beispiel Standards erarbeiten und Anlaufstelle für Sicherheitsfragen sein.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.2.6",
+                "beleg:2023F-A3-ba"
+              ]
+            },
+            {
+              "id": "AP1-7-2-1-K2",
+              "text": "Du kannst erklären, was ein Baustein ist: eine Sammlung typischer Gefährdungen und Anforderungen für einen bestimmten Gegenstand, zum Beispiel einen Client oder einen Raum.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.03.1"
+              ]
+            },
+            {
+              "id": "AP1-7-2-1-K3",
+              "text": "Du kannst eine vorgegebene Empfehlung aus dem Grundschutz fachlich begründen, zum Beispiel Minimalkonfiguration und getrenntes Netz für einen Präsentationsrechner.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A1-c"
+              ]
+            },
+            {
+              "id": "AP1-7-2-1-K4",
+              "text": "Du kannst das Vorgehen nach IT-Grundschutz in groben Schritten nennen: Bestand erfassen, Schutzbedarf feststellen, Bausteine zuordnen, Maßnahmen umsetzen und prüfen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.03"
+              ]
+            },
+            {
+              "id": "AP1-7-2-1-K5",
+              "text": "Du kannst zu einer Anforderung aus dem Grundschutz eine passende Maßnahme nennen, zum Beispiel automatische Updates aktivieren oder Benutzerrollen trennen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2021H-A4-b"
+              ]
+            },
+            {
+              "id": "AP1-7-2-1-K6",
+              "text": "Du kannst einem Arbeitsplatz die passenden Bausteine des Grundschutz-Kompendiums zuweisen, zum Beispiel Client, Büroraum, mobiles Arbeiten.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.06.03.1"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "IT-Sicherheitsgesetz und BSI-Standards.",
+              "quellen": [
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-2-2",
+          "titel": "Schutzbedarfsanalyse und Schutzbedarfskategorien",
+          "ziel": "Den Schutzbedarf je Schutzziel für Anwendungen, Systeme, Räume und Verbindungen festlegen und begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.02"
+            },
+            {
+              "id": "AP1.06.02.1"
+            },
+            {
+              "id": "AP1.06.02.1.1"
+            },
+            {
+              "id": "AP1.06.02.1.2"
+            },
+            {
+              "id": "AP1.06.02.1.3"
+            },
+            {
+              "id": "AP1.06.02.1.4"
+            },
+            {
+              "id": "AP1.06.03.2"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A4-c",
+            "2026H-A2-da"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-2-2-K1",
+              "text": "Du kannst die drei Schutzbedarfskategorien normal, hoch und sehr hoch nennen und nach der Schwere des möglichen Schadens unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.03.2"
+              ]
+            },
+            {
+              "id": "AP1-7-2-2-K2",
+              "text": "Du kannst den Schutzbedarf für Anwendungen, IT-Systeme, Räume und Kommunikationsverbindungen festlegen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.06.02.1",
+                "katalog:AP1.06.02.1.1",
+                "katalog:AP1.06.02.1.2",
+                "katalog:AP1.06.02.1.3",
+                "katalog:AP1.06.02.1.4"
+              ]
+            },
+            {
+              "id": "AP1-7-2-2-K3",
+              "text": "Du kannst eine Einstufung begründen, zum Beispiel mit personenbezogenen Daten, wirtschaftlichem Schaden oder Imageschaden.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2021H-A4-c",
+                "katalog:AP1.06.03.2"
+              ]
+            },
+            {
+              "id": "AP1-7-2-2-K4",
+              "text": "Du kannst eine teilweise ausgefüllte Schutzbedarfstabelle ergänzen, zum Beispiel das zur Begründung passende Schutzziel.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026H-A2-da"
+              ]
+            },
+            {
+              "id": "AP1-7-2-2-K5",
+              "text": "Du kannst erklären, dass sich der Schutzbedarf eines IT-Systems nach der Anwendung mit dem höchsten Bedarf richtet, die darauf läuft.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.02.1.2"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-7-2-3",
+          "titel": "Risiken klassifizieren mit der Risikomatrix",
+          "ziel": "Risiken nach Eintrittswahrscheinlichkeit und Schadenshöhe einordnen und daraus die Reihenfolge der Behandlung festlegen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.03.3"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-7-2-3-K1",
+              "text": "Du kannst erklären, wie eine Risikomatrix aufgebaut ist: Eintrittswahrscheinlichkeit auf der einen, Schadenshöhe auf der anderen Achse.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.03.3"
+              ]
+            },
+            {
+              "id": "AP1-7-2-3-K2",
+              "text": "Du kannst ein beschriebenes Risiko in eine Matrix einordnen und die Risikoklasse ablesen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.03.3"
+              ]
+            },
+            {
+              "id": "AP1-7-2-3-K3",
+              "text": "Du kannst Möglichkeiten nennen, mit einem Risiko umzugehen: vermeiden, vermindern, übertragen (zum Beispiel versichern), bewusst tragen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.03.3"
+              ]
+            },
+            {
+              "id": "AP1-7-2-3-K4",
+              "text": "Du kannst aus der Risikomatrix festlegen, welche Risiken zuerst behandelt werden.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.06.03.3"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Die Risikoanalyse im Projekt (AP1.01.02.4) steht im Ordner Projektmanagement und Qualität (AP1-1-1-3)."
+        }
+      ]
+    },
+    {
+      "id": "AP1-7-3",
+      "titel": "Technische Schutzmaßnahmen",
+      "satz": "Verschlüsselung, Signaturen, Anmeldung, Härtung und Datensicherung am Arbeitsplatz.",
+      "stichpunkte": [
+        {
+          "id": "AP1-7-3-1",
+          "titel": "Symmetrische, asymmetrische und hybride Verschlüsselung",
+          "ziel": "Die drei Verfahren mit ihren Schlüsseln erklären, vergleichen und den Schutz verschlüsselter Daten beurteilen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.04.8"
+            },
+            {
+              "id": "AP1.06.01.2.4"
+            }
+          ],
+          "teilaufgaben": [
+            "2025F-A2-ba",
+            "2025F-A2-bc",
+            "2023H-A3-cb",
+            "2023H-A3-cd",
+            "2025F-A4-eb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-3-1-K1",
+              "text": "Du kannst symmetrische Verschlüsselung erklären: derselbe geheime Schlüssel zum Ver- und Entschlüsseln.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.8"
+              ]
+            },
+            {
+              "id": "AP1-7-3-1-K2",
+              "text": "Du kannst asymmetrische Verschlüsselung beschreiben: Mit dem öffentlichen Schlüssel des Empfängers wird verschlüsselt, nur sein privater Schlüssel entschlüsselt.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A2-ba"
+              ],
+              "vorgegeben": "Skizze mit Schlüsseln"
+            },
+            {
+              "id": "AP1-7-3-1-K3",
+              "text": "Du kannst je einen Vorteil und Nachteil nennen: Das asymmetrische Verfahren braucht keinen sicheren Schlüsseltausch, ist aber rechenaufwendiger.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2025F-A2-bc"
+              ]
+            },
+            {
+              "id": "AP1-7-3-1-K4",
+              "text": "Du kannst hybride Verschlüsselung erklären: Ein symmetrischer Sitzungsschlüssel wird asymmetrisch geschützt übertragen, die Daten selbst werden symmetrisch verschlüsselt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.8",
+                "katalog:AP1.06.01.2.4"
+              ]
+            },
+            {
+              "id": "AP1-7-3-1-K6",
+              "text": "Du kannst beurteilen, ob eine Datenträgerverschlüsselung die Daten bei Diebstahl des Laptops schützt.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2023H-A3-cd"
+              ]
+            },
+            {
+              "id": "AP1-7-3-1-K7",
+              "text": "Du kannst Verfahren zum Aufbewahren eines Wiederherstellungsschlüssels beurteilen: Datei auf dem PC, Cloud-Speicher, USB-Stick, Ausdruck mit je einem Vor- und Nachteil.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2023H-A3-cb"
+              ]
+            },
+            {
+              "id": "AP1-7-3-1-K8",
+              "text": "Du kannst begründen, warum unverschlüsselte Verbindungsarten wie Telnet für einen Fernzugriff ungeeignet sind und eine verschlüsselte wie SSH gewählt wird.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025F-A4-eb"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Mathematische Grundlagen der Verfahren gehören nicht dazu.",
+              "begruendung": "G4: Herleitungen sind ohne Hilfsmittel nicht abfragbar; AP1.06.04.8 verlangt Verschlüsselungstechniken „kennen“.",
+              "katalog": [
+                "AP1.06.04.8"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Namen von Verfahren: AES (symmetrisch), RSA (asymmetrisch), TLS (hybrid).",
+              "quellen": [
+                "podcast:themen-ap1",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Der Katalog nennt nur die Arten symmetrisch, asymmetrisch und hybrid; die Namen stehen weder im Katalog noch in einer Prüfung."
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-3-2",
+          "titel": "Hashwerte, Zertifikate und digitale Signatur",
+          "ziel": "Hashwert, Signatur und Zertifikat erklären, ihren Ablauf beschreiben und für einen Zweck das passende Mittel einsetzen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.04.9"
+            }
+          ],
+          "teilaufgaben": [
+            "2025F-A2-da",
+            "2025H-A3-h",
+            "2023H-A3-db"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-3-2-K1",
+              "text": "Du kannst erklären, was ein Hashwert ist: ein Prüfwert fester Länge, der sich schon bei kleinster Änderung der Daten ändert und sich nicht zurückrechnen lässt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.9"
+              ]
+            },
+            {
+              "id": "AP1-7-3-2-K2",
+              "text": "Du kannst erläutern, wie man mit einem Hashwert die Unversehrtheit eines Downloads prüft: Wert selbst berechnen und mit dem angegebenen vergleichen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A2-da"
+              ]
+            },
+            {
+              "id": "AP1-7-3-2-K3",
+              "text": "Du kannst erklären, was eine digitale Signatur leistet: Sie belegt, von wem eine Nachricht stammt und dass sie nicht verändert wurde.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.9"
+              ]
+            },
+            {
+              "id": "AP1-7-3-2-K4",
+              "text": "Du kannst den Ablauf beschreiben: Der Absender verschlüsselt den Hashwert mit seinem privaten Schlüssel; der Empfänger prüft mit dem öffentlichen Schlüssel des Absenders.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025H-A3-h"
+              ],
+              "vorgegeben": "Skizze mit Schlüsseln"
+            },
+            {
+              "id": "AP1-7-3-2-K5",
+              "text": "Du kannst erklären, wozu ein Zertifikat dient: Es bestätigt, dass ein öffentlicher Schlüssel zu einer bestimmten Person oder Website gehört, und kann so zum Beispiel einen Mitarbeiter gegenüber dem Firmenserver ausweisen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.9",
+                "beleg:2023H-A3-db"
+              ]
+            },
+            {
+              "id": "AP1-7-3-2-K6",
+              "text": "Du kannst erklären, dass eine Zertifizierungsstelle das Zertifikat ausstellt und beglaubigt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.9"
+              ]
+            },
+            {
+              "id": "AP1-7-3-2-K7",
+              "text": "Du kannst für einen Zweck das passende Mittel einsetzen: Hashwert für die Unversehrtheit, Signatur für Herkunft und Unversehrtheit, Zertifikat für die Zugehörigkeit eines öffentlichen Schlüssels.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.06.04.9"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Die Musterlösung zu 2025H-A3-h fehlt; K4 folgt der Aufgabenstellung."
+        },
+        {
+          "id": "AP1-7-3-3",
+          "titel": "Authentifizierung, Zwei-Faktor-Verfahren, Zugangs- und Zugriffskontrolle",
+          "ziel": "Zutritt, Zugang und Zugriff unterscheiden, Authentifizierungsmittel vergleichen und ein passendes Verfahren beurteilen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.04.7"
+            },
+            {
+              "id": "AP1.06.04.10"
+            }
+          ],
+          "teilaufgaben": [
+            "2024H-A1-a",
+            "2025H-A3-b",
+            "2023F-A3-be"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-3-3-K1",
+              "text": "Du kannst Zugangskontrolle (wer darf ein System benutzen) und Zugriffskontrolle (was darf er dort sehen und ändern) unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.7"
+              ]
+            },
+            {
+              "id": "AP1-7-3-3-K2",
+              "text": "Du kannst erklären, was Authentifizierung ist: Nachweis der Identität über Wissen, Besitz oder ein biometrisches Merkmal.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.10"
+              ]
+            },
+            {
+              "id": "AP1-7-3-3-K3",
+              "text": "Du kannst Zwei-Faktor-Authentifizierung erklären und ein Beispiel nennen, etwa Passwort und Code aus einer App.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.10"
+              ]
+            },
+            {
+              "id": "AP1-7-3-3-K4",
+              "text": "Du kannst technische Möglichkeiten nennen, den Zutritt zu einem Raum zu kontrollieren: Chipkarte, Zahlencode, Fingerabdruck, Stimmenerkennung.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024H-A1-a"
+              ]
+            },
+            {
+              "id": "AP1-7-3-3-K5",
+              "text": "Du kannst Zutritt (Raum), Zugang (System) und Zugriff (Daten) auseinanderhalten.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.7"
+              ]
+            },
+            {
+              "id": "AP1-7-3-3-K6",
+              "text": "Du kannst Fingerabdruck, Passwort und Chipkarte nach Methode, Vorteil und Sicherheitsrisiko in einer Tabelle ergänzen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A3-b"
+              ]
+            },
+            {
+              "id": "AP1-7-3-3-K7",
+              "text": "Du kannst beurteilen, welches Verfahren der Zugangs- und Zugriffskontrolle zu einem Schutzbedarf passt, zum Beispiel Zwei-Faktor-Anmeldung, Gruppenrichtlinien und Rechte nur nach Bedarf.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.04.7",
+                "beleg:2023F-A3-be"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Die Musterlösung zu 2025H-A3-b fehlt; K6 folgt der Aufgabenstellung. Gruppenrichtlinien als Werkzeug stehen im Ordner Software und Betriebssysteme (AP1-5-2-1-K6)."
+        },
+        {
+          "id": "AP1-7-3-4",
+          "titel": "Betriebssystem härten, Virenschutz und Personal Firewall",
+          "ziel": "Einen Arbeitsplatzrechner härten, Bordmittel einsetzen, die Personal Firewall anpassen und Maßnahmen begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.04.4"
+            },
+            {
+              "id": "AP1.06.04.11"
+            },
+            {
+              "id": "AP1.06.01.2.4"
+            }
+          ],
+          "teilaufgaben": [
+            "2023F-A3-bb",
+            "2023F-A3-bc",
+            "2023F-A3-bd",
+            "2025H-A3-c"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-3-4-K1",
+              "text": "Du kannst erklären, was Härtung bedeutet: Angriffsfläche verkleinern und Schwachstellen schließen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023F-A3-bb"
+              ]
+            },
+            {
+              "id": "AP1-7-3-4-K2",
+              "text": "Du kannst Maßnahmen zur Härtung nennen: Updates einspielen, nicht benötigte Dienste, Programme, Konten und Ports entfernen, Rechte auf das Nötige beschränken.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2023F-A3-bc"
+              ]
+            },
+            {
+              "id": "AP1-7-3-4-K3",
+              "text": "Du kannst begründen, warum eine Minimalkonfiguration sicherer und leichter zu pflegen ist.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.04.4"
+              ]
+            },
+            {
+              "id": "AP1-7-3-4-K4",
+              "text": "Du kannst erklären, was eine Personal Firewall tut und wie man damit einem Programm den Zugriff auf das Internet sperrt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.11"
+              ]
+            },
+            {
+              "id": "AP1-7-3-4-K5",
+              "text": "Du kannst erklären, wozu ein Virenschutzprogramm dient.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.2.4"
+              ]
+            },
+            {
+              "id": "AP1-7-3-4-K6",
+              "text": "Du kannst Bordmittel des Betriebssystems nennen, die die Sicherheit erhöhen: Firewall, Virenschutz, Datensicherung, Benutzerverwaltung.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2023F-A3-bd"
+              ]
+            },
+            {
+              "id": "AP1-7-3-4-K7",
+              "text": "Du kannst begründen, warum vor der Inbetriebnahme eines Geräts ein Softwareupdate eingespielt wird: Bekannte Sicherheitslücken werden geschlossen.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025H-A3-c"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Netzwerk-Firewalls, Firewall-Typen und Webfilter gehören nicht hierher.",
+              "begruendung": "Firewall als Netzwerkkomponente (AP2b.01.02.4) und Firewall/Webfilter (AP2b.02.03.2) stehen im AP2-Katalog; AP1.06.04.11 nennt die Personal Firewall am Arbeitsplatz.",
+              "katalog": [
+                "AP1.06.04.11",
+                "AP2b.01.02.4",
+                "AP2b.02.03.2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-3-5",
+          "titel": "Datensicherung und Verfügbarkeit: Backup-Verfahren, NAS",
+          "ziel": "Sicherungsarten unterscheiden, eine Datensicherung zuverlässig planen und beurteilen und die Verfügbarkeit von Daten sichern.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.04.5"
+            },
+            {
+              "id": "AP1.06.04.6"
+            },
+            {
+              "id": "AP1.06.01.2"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A4-fa",
+            "2021H-A4-fb",
+            "2024F-A4-c",
+            "2026H-A4-f",
+            "2026H-A2-db"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-3-5-K1",
+              "text": "Du kannst Vollsicherung, differenzielle und inkrementelle Sicherung unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.5"
+              ]
+            },
+            {
+              "id": "AP1-7-3-5-K2",
+              "text": "Du kannst Punkte nennen, die eine Sicherung zuverlässig machen: regelmäßig sichern, die Sicherung getrennt vom Rechner lagern, Datenträger verschlüsseln, die Wiederherstellung testen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A4-c",
+                "beleg:2021H-A4-fb"
+              ]
+            },
+            {
+              "id": "AP1-7-3-5-K3",
+              "text": "Du kannst Lösungen nennen, die Daten auch bei einem Ausfall verfügbar halten: verfügbare Datensicherungen und Redundanz.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026H-A4-f"
+              ]
+            },
+            {
+              "id": "AP1-7-3-5-K4",
+              "text": "Du kannst erklären, was ein NAS ist: ein Speicher im Netzwerk, auf den mehrere Geräte zugreifen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.04.6"
+              ]
+            },
+            {
+              "id": "AP1-7-3-5-K5",
+              "text": "Du kannst die 3-2-1-Regel erklären: drei Kopien, zwei verschiedene Medien, eine außer Haus.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A2-db"
+              ]
+            },
+            {
+              "id": "AP1-7-3-5-K6",
+              "text": "Du kannst eine bestehende Datensicherung beurteilen, zum Beispiel ob sie räumlich getrennt und oft genug erfolgt.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2021H-A4-fa",
+                "beleg:2021H-A4-fb"
+              ]
+            },
+            {
+              "id": "AP1-7-3-5-K7",
+              "text": "Du kannst das Generationenprinzip erklären: Mehrere nummerierte Datenträger werden reihum genutzt, damit ältere Sicherungsstände erhalten bleiben.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A4-c"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "RAID und Redundanz in Servern gehören nicht hierher.",
+              "begruendung": "B3: RAID steht nur noch im AP2-Katalog (AP2b.01.10.2); Backups als Betriebsmaßnahme ebenfalls (AP2b.01.10.3).",
+              "katalog": [
+                "AP2b.01.10.2",
+                "AP2b.01.10.3"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Hot- und Cold-Backup; Spiegelung.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AP1-7-4",
+      "titel": "Bedrohungen im Arbeitsalltag",
+      "satz": "Schadsoftware und Phishing erkennen und unterwegs sicher arbeiten.",
+      "stichpunkte": [
+        {
+          "id": "AP1-7-4-1",
+          "titel": "Schadsoftware erkennen und abwehren",
+          "ziel": "Arten von Schadsoftware nennen, beschreiben und unterscheiden und Empfehlungen zum Schutz erläutern.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2.4"
+            },
+            {
+              "id": "AP1.06.04.3"
+            }
+          ],
+          "teilaufgaben": [
+            "2024F-A4-da",
+            "2024F-A4-db",
+            "2024F-A4-e",
+            "2026H-A4-d"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-4-1-K1",
+              "text": "Du kannst Arten von Schadsoftware beschreiben, zum Beispiel Ransomware (verschlüsselt Daten und fordert Lösegeld), Spyware (späht aus) und Scareware (täuscht eine Bedrohung vor).",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A4-d"
+              ]
+            },
+            {
+              "id": "AP1-7-4-1-K6",
+              "text": "Du kannst Arten von Malware nennen: Virus, Wurm, Trojaner, Spyware, Ransomware, Scareware.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A4-da"
+              ]
+            },
+            {
+              "id": "AP1-7-4-1-K7",
+              "text": "Du kannst Arten von Malware ihr Merkmal zuweisen, zum Beispiel Wurm verbreitet sich selbst, Trojaner versteckt sich in nützlicher Software.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A4-db"
+              ]
+            },
+            {
+              "id": "AP1-7-4-1-K8",
+              "text": "Du kannst Empfehlungen zum Schutz vor Malware erläutern: keine unbekannten Datenträger, keine Downloads aus unsicheren Quellen, keine Makros und Anhänge unbekannter Herkunft ausführen, Updates einspielen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A4-e"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Angriffsarten wie Man-in-the-Middle, SQL-Injection oder DDoS im Einzelnen gehören nicht dazu.",
+              "begruendung": "Bedrohungsszenarien wie Man-in-the-Middle, SQL-Injection und DDoS stehen im AP2-Katalog (AP2a.04.04.9).",
+              "katalog": [
+                "AP2a.04.04.9"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-4-2",
+          "titel": "Phishing erkennen und abwehren",
+          "ziel": "Gefahren durch Phishing beschreiben, Phishing-Mails erkennen und Schutzmaßnahmen für Unternehmen und Mitarbeiter nennen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2.5"
+            },
+            {
+              "id": "AP1.06.04.1"
+            },
+            {
+              "id": "AP1.06.04.3"
+            },
+            {
+              "id": "AP1.06.01.2.3"
+            },
+            {
+              "id": "AP1.06.01.2.4"
+            }
+          ],
+          "teilaufgaben": [
+            "2024H-A3-ca",
+            "2024H-A3-cb",
+            "2024H-A3-cc",
+            "2024H-A3-cd"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-4-2-K1",
+              "text": "Du kannst Merkmale einer Phishing-Mail nennen: unpersönliche Anrede, Zeitdruck, Fehler im Text, Aufforderung zur Eingabe von Zugangsdaten.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024H-A3-cb"
+              ]
+            },
+            {
+              "id": "AP1-7-4-2-K2",
+              "text": "Du kannst Schutzmaßnahmen gegen Phishing nennen, getrennt nach dem, was das Unternehmen einrichtet (Spamfilter, simulierte Angriffe, Schulung), und dem, was jeder Mitarbeiter beachtet (keine Links und Anhänge öffnen, keine Zugangsdaten per Mail, Verdacht melden).",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024H-A3-cc",
+                "beleg:2024H-A3-cd"
+              ]
+            },
+            {
+              "id": "AP1-7-4-2-K3",
+              "text": "Du kannst eine Gefahr durch Phishing-Mails beschreiben: Zugangsdaten werden gestohlen, Angreifer gelangen an vertrauliche Informationen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024H-A3-ca"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Social Engineering, Spear-Phishing und CEO-Betrug.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Social Engineering steht im WiSo-Katalog (WISO.05.02.9); Spear-Phishing und CEO-Betrug stehen weder im Katalog noch in einer Prüfung."
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-4-3",
+          "titel": "Sicher mobil und in Telearbeit arbeiten",
+          "ziel": "Maßnahmen für das Arbeiten außerhalb des Büros und in Telearbeit erläutern und Folgen bei Nichtbeachtung nennen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.2.5"
+            },
+            {
+              "id": "AP1.06.04.1"
+            },
+            {
+              "id": "AP1.06.04.8"
+            },
+            {
+              "id": "AP1.06.04.7"
+            },
+            {
+              "id": "AP1.06.01.2.1"
+            },
+            {
+              "id": "AP1.06.01.2.6"
+            }
+          ],
+          "teilaufgaben": [
+            "2024F-A4-a",
+            "2026H-A4-c",
+            "2023H-A3-b"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-4-3-K1",
+              "text": "Du kannst Maßnahmen für das Arbeiten außerhalb des Büros mit Grund erläutern, zum Beispiel Blickschutzfolie, Gerät sperren, VPN statt offenem WLAN, verschlüsselter Datenträger.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A4-c",
+                "beleg:2024F-A4-a"
+              ]
+            },
+            {
+              "id": "AP1-7-4-3-K2",
+              "text": "Du kannst zu jeder Maßnahme die Folge nennen, die bei Nichtbeachtung droht.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A4-a",
+                "beleg:2026H-A4-c"
+              ]
+            },
+            {
+              "id": "AP1-7-4-3-K3",
+              "text": "Du kannst für Telearbeit technisch-organisatorische Maßnahmen nennen: Arbeitsraum und Schrank abschließen, sichere Anmeldung mit zwei Faktoren, VPN, sicherer Transport von Datenträgern.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2023H-A3-b"
+              ]
+            }
+          ],
+          "grenzen": []
+        }
+      ]
+    },
+    {
+      "id": "AP1-7-5",
+      "titel": "Datenschutz",
+      "satz": "Personenbezogene Daten nach DSGVO und BDSG schützen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-7-5-1",
+          "titel": "DSGVO und BDSG: personenbezogene Daten, Betroffenenrechte, Einwilligung",
+          "ziel": "Die Grundzüge der Datenschutzgesetze kennen, Datenschutz von Datensicherheit unterscheiden und die Einhaltung der Grundsätze überprüfen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.3"
+            },
+            {
+              "id": "AP1.06.01.3.1"
+            },
+            {
+              "id": "AP1.06.01.3.2"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A4-d",
+            "2023H-A3-a",
+            "2025F-A2-aa",
+            "2025F-A2-ab",
+            "2026H-A4-eb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-5-1-K1",
+              "text": "Du kannst DSGVO und BDSG als Rechtsgrundlagen nennen und ihren Zweck beschreiben: den Schutz personenbezogener Daten.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A2-aa",
+                "beleg:2025F-A2-ab",
+                "beleg:2023H-A3-a"
+              ]
+            },
+            {
+              "id": "AP1-7-5-1-K2",
+              "text": "Du kannst erklären, was personenbezogene Daten sind, und Beispiele nennen, auch für besonders geschützte wie Patientendaten.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.3.1",
+                "beleg:2021H-A4-d"
+              ]
+            },
+            {
+              "id": "AP1-7-5-1-K3",
+              "text": "Du kannst Rechte der Betroffenen nennen, zum Beispiel Auskunft, Berichtigung, Löschung, Widerspruch.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.01.3.2"
+              ]
+            },
+            {
+              "id": "AP1-7-5-1-K4",
+              "text": "Du kannst nennen, dass eine Einwilligung die Verarbeitung erlaubt und jederzeit widerrufen werden kann.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.01.3.2"
+              ]
+            },
+            {
+              "id": "AP1-7-5-1-K5",
+              "text": "Du kannst Datenschutz und Datensicherheit unterscheiden und je ein Beispiel nennen: Schutz der Person vor Missbrauch ihrer Daten gegenüber Schutz der Daten vor Verlust, Veränderung und unbefugtem Zugriff.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A4-eb"
+              ]
+            },
+            {
+              "id": "AP1-7-5-1-K6",
+              "text": "Du kannst Grundsätze der Verarbeitung nennen: Zweckbindung, Datenminimierung, Speicherbegrenzung.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.06.01.3"
+              ]
+            },
+            {
+              "id": "AP1-7-5-1-K7",
+              "text": "Du kannst überprüfen, ob ein Vorgehen im Betrieb die Grundsätze der DSGVO einhält, zum Beispiel Zweckbindung und Datenminimierung.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.01.3",
+                "katalog:AP1.06.01.3.1"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Artikelnummern der DSGVO und Bußgeldhöhen gehören nicht dazu.",
+              "begruendung": "G4: Paragrafen- und Artikelnummern sind ohne Hilfsmittel nicht abfragbar; AP1.06.01.3 verlangt die Grundzüge der Datenschutzgesetze.",
+              "katalog": [
+                "AP1.06.01.3"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Persönlichkeitsrechte und Recht am eigenen Bild.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-7-5-2",
+          "titel": "Anonymisierung und Pseudonymisierung",
+          "ziel": "Anonymisierung und Pseudonymisierung unterscheiden und für einen Fall die passende Maßnahme begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.3.3"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-7-5-2-K1",
+              "text": "Du kannst Anonymisierung erklären: Der Bezug zur Person wird so entfernt, dass er nicht wiederhergestellt werden kann.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.3.3"
+              ]
+            },
+            {
+              "id": "AP1-7-5-2-K2",
+              "text": "Du kannst Pseudonymisierung erklären: Der Name wird durch ein Kennzeichen ersetzt; mit einer getrennt aufbewahrten Zuordnung lässt sich der Bezug wiederherstellen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.3.3"
+              ]
+            },
+            {
+              "id": "AP1-7-5-2-K3",
+              "text": "Du kannst erklären, dass pseudonymisierte Daten weiter als personenbezogen gelten, anonymisierte nicht.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.3.3"
+              ]
+            },
+            {
+              "id": "AP1-7-5-2-K4",
+              "text": "Du kannst für einen Fall begründen, welche der beiden Maßnahmen passt, zum Beispiel Statistik gegenüber Auswertung mit Rückfragemöglichkeit.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.06.01.3.3"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-7-5-3",
+          "titel": "Datenschutz in der Praxis: Protokollierung, Videoaufnahmen, Gesundheitsdaten",
+          "ziel": "Datenschutzpflichten bei Protokollierung, Videoaufnahmen und besonderen Daten beschreiben und begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.06.01.3"
+            },
+            {
+              "id": "AP1.06.01.3.1"
+            },
+            {
+              "id": "AP1.06.01.3.3"
+            }
+          ],
+          "teilaufgaben": [
+            "2023F-A3-cb",
+            "2025H-A3-a",
+            "2026F-A3-a"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-7-5-3-K1",
+              "text": "Du kannst Datenschutz-Anforderungen an die Protokollierung beschreiben: nur nötige Daten, begrenzt speichern und auswerten (Datensparsamkeit).",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023F-A3-cb"
+              ]
+            },
+            {
+              "id": "AP1-7-5-3-K2",
+              "text": "Du kannst begründen, warum Gesundheitsdaten als besondere personenbezogene Daten erhöhten Schutzanforderungen nach der DSGVO unterliegen.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025H-A3-a"
+              ]
+            },
+            {
+              "id": "AP1-7-5-3-K3",
+              "text": "Du kannst eine Pflicht beim Einsatz von Videokameras beschreiben, zum Beispiel auf die Aufnahme hinweisen, nur für einen festgelegten Zweck aufnehmen, Aufnahmen fristgerecht löschen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A3-a"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Die Musterlösungen zu 2025H-A3-a und 2026F-A3-a fehlen; K2 und K3 folgen den Aufgabenstellungen."
+        }
+      ]
+    }
+  ],
+  "alt_neu": {
+    "koennen": [
+      {
+        "alt": "AP1-7-1-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-1-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-1-1-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-1-1-K3",
+        "grund": "Beleg 2025F-A2-bb"
+      },
+      {
+        "alt": "AP1-7-1-1-K4",
+        "status": "gestrichen",
+        "neu": null,
+        "grund": "Kür: Authentizität steht weder im AP1-Katalog (AP1.06.01.1 nennt drei Schutzziele) noch in einer AP1-Prüfung"
+      },
+      {
+        "alt": "AP1-7-1-2-K1",
+        "status": "angepasst",
+        "neu": "AP1-7-1-2-K1",
+        "grund": "ein Operator (F1): unterscheiden; Beispiele stehen in K5"
+      },
+      {
+        "alt": "AP1-7-1-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-1-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-1-2-K3",
+        "grund": "Beispiele aus 2026H-A2-db und 2026H-A4-bb"
+      },
+      {
+        "alt": "AP1-7-1-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-1-2-K4",
+        "grund": "Beispiel Lieferkette ergänzt (2025H-A3-d)"
+      },
+      {
+        "alt": "AP1-7-1-2-K5",
+        "status": "angepasst",
+        "neu": "AP1-7-1-2-K5",
+        "grund": "„Du kannst … nennen“ statt „Du kennst“"
+      },
+      {
+        "alt": "AP1-7-1-3-K1",
+        "status": "angepasst",
+        "neu": "AP1-7-1-3-K1",
+        "grund": "ein Operator (F1): erklären; Kriterien in K3"
+      },
+      {
+        "alt": "AP1-7-1-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-1-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-3-K3",
+        "status": "angepasst",
+        "neu": "AP1-7-1-3-K3",
+        "grund": "„begründen“ wie in 2021H-A4-e statt „Du kennst“"
+      },
+      {
+        "alt": "AP1-7-1-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-1-3-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-3-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-1-3-K5",
+        "grund": "Beleg 2025F-A1-eb"
+      },
+      {
+        "alt": "AP1-7-1-3-K6",
+        "status": "angepasst",
+        "neu": "AP1-7-1-3-K6",
+        "grund": "auf „bewerten“ angehoben wie der Katalog für AP1.06.01.2 verlangt"
+      },
+      {
+        "alt": "AP1-7-1-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-1-4-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-4-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-1-4-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-4-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-1-4-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-1-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-1-4-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-1-K1",
+        "status": "angepasst",
+        "neu": "AP1-7-2-1-K1",
+        "grund": "um Aufgaben des BSI ergänzt (2023F-A3-ba)"
+      },
+      {
+        "alt": "AP1-7-2-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-2-1-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-2-1-K3",
+        "grund": "Beispiel aus 2024H-A1-c"
+      },
+      {
+        "alt": "AP1-7-2-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-2-1-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-2-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-2-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-2-2-K3",
+        "grund": "Beleg 2021H-A4-c"
+      },
+      {
+        "alt": "AP1-7-2-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-2-2-K4",
+        "grund": "Beleg 2026H-A2-da"
+      },
+      {
+        "alt": "AP1-7-2-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-2-2-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-2-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-2-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-2-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-2-3-K4",
+        "status": "angepasst",
+        "neu": "AP1-7-2-3-K4",
+        "grund": "„festlegen“ statt „begründen“ (G3: Katalogstufe 3)"
+      },
+      {
+        "alt": "AP1-7-3-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-3-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-1-K2",
+        "status": "angepasst",
+        "neu": "AP1-7-3-1-K2",
+        "grund": "„beschreiben“ wie in 2025F-A2-ba"
+      },
+      {
+        "alt": "AP1-7-3-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-3-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-3-1-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-1-K5",
+        "status": "gestrichen",
+        "neu": null,
+        "grund": "Kür: Namen von Verfahren (AES, RSA, TLS) stehen weder im Katalog noch in einer Prüfung"
+      },
+      {
+        "alt": "AP1-7-3-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-3-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-3-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-3-2-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-3-2-K4",
+        "grund": "jetzt belegt (2025H-A3-h)"
+      },
+      {
+        "alt": "AP1-7-3-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-3-2-K5",
+        "grund": "Beispiel aus 2023H-A3-db ergänzt"
+      },
+      {
+        "alt": "AP1-7-3-2-K6",
+        "status": "angepasst",
+        "neu": "AP1-7-3-2-K6",
+        "grund": "„erklären“ statt „Du weißt“"
+      },
+      {
+        "alt": "AP1-7-3-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-3-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-3-K2",
+        "status": "angepasst",
+        "neu": "AP1-7-3-3-K2",
+        "grund": "ein Operator (F1): erklären, Faktoren im Text"
+      },
+      {
+        "alt": "AP1-7-3-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-3-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-3-3-K4",
+        "grund": "Stimmenerkennung ergänzt (2024H-A1-a)"
+      },
+      {
+        "alt": "AP1-7-3-3-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-3-3-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-3-4-K1",
+        "grund": "Beleg 2023F-A3-bb"
+      },
+      {
+        "alt": "AP1-7-3-4-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-3-4-K2",
+        "grund": "Beispiele aus 2023F-A3-bc"
+      },
+      {
+        "alt": "AP1-7-3-4-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-3-4-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-3-4-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-4-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-3-4-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-5-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-3-5-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-5-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-3-5-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-5-K3",
+        "status": "angepasst",
+        "neu": "AP1-7-3-5-K3",
+        "grund": "laut Musterlösung 2026H-A4-f: Backup-Verfügbarkeit und Redundanz"
+      },
+      {
+        "alt": "AP1-7-3-5-K4",
+        "status": "übernommen",
+        "neu": "AP1-7-3-5-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-3-5-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-3-5-K5",
+        "grund": "jetzt belegt (Musterlösung 2026H-A2-db)"
+      },
+      {
+        "alt": "AP1-7-4-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-4-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-4-1-K2",
+        "status": "verschoben",
+        "neu": "AP1-7-4-3-K1",
+        "grund": "Sicheres mobiles Arbeiten bekommt einen eigenen Stichpunkt (F4: Themenblock braucht 3 Stichpunkte)"
+      },
+      {
+        "alt": "AP1-7-4-1-K3",
+        "status": "verschoben",
+        "neu": "AP1-7-4-3-K2",
+        "grund": "Sicheres mobiles Arbeiten bekommt einen eigenen Stichpunkt"
+      },
+      {
+        "alt": "AP1-7-4-1-K4",
+        "status": "verschoben",
+        "neu": "AP1-7-4-2-K1",
+        "grund": "Phishing bekommt einen eigenen Stichpunkt"
+      },
+      {
+        "alt": "AP1-7-4-1-K5",
+        "status": "verschoben",
+        "neu": "AP1-7-4-2-K2",
+        "grund": "Phishing bekommt einen eigenen Stichpunkt"
+      },
+      {
+        "alt": "AP1-7-4-1-K6",
+        "status": "angepasst",
+        "neu": "AP1-7-4-1-K6",
+        "grund": "„Du kannst … nennen“ statt „Du kennst“, Beleg 2024F-A4-da"
+      },
+      {
+        "alt": "AP1-7-5-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-5-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-5-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-5-1-K2",
+        "grund": "Beispiel aus 2021H-A4-d"
+      },
+      {
+        "alt": "AP1-7-5-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-7-5-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-5-1-K4",
+        "status": "angepasst",
+        "neu": "AP1-7-5-1-K4",
+        "grund": "„nennen“ statt „erklären“ (G3: AP1.06.01.3.2 „kennen“, Stufe 1)"
+      },
+      {
+        "alt": "AP1-7-5-1-K5",
+        "status": "übernommen",
+        "neu": "AP1-7-5-1-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-5-1-K6",
+        "status": "übernommen",
+        "neu": "AP1-7-5-1-K6",
+        "grund": "Herkunft katalog:AP1.06.01.3 (Grundzüge)"
+      },
+      {
+        "alt": "AP1-7-5-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-7-5-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-5-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-7-5-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-7-5-2-K3",
+        "status": "angepasst",
+        "neu": "AP1-7-5-2-K3",
+        "grund": "„erklären“ statt „Du weißt“"
+      },
+      {
+        "alt": "AP1-7-5-2-K4",
+        "status": "angepasst",
+        "neu": "AP1-7-5-2-K4",
+        "grund": "„begründen“ statt „entscheiden“"
+      }
+    ],
+    "rahmen": [
+      {
+        "alt": "AP1-7-1-4",
+        "satz": "Aufbau und Zertifizierung eines ISMS sind nicht gefragt.",
+        "status": "übernommen",
+        "grund": "Mit AP1.06.03.4 (Stufe 2) und B3 (ISO 27000) begründet."
+      },
+      {
+        "alt": "AP1-7-2-3",
+        "satz": "In den ausgewerteten Prüfungen gab es dazu keine Aufgabe.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze."
+      },
+      {
+        "alt": "AP1-7-3-1",
+        "satz": "mathematische Einzelheiten und Namen von Algorithmen waren nicht gefragt.",
+        "status": "angepasst",
+        "grund": "Grenze Mathematik mit G4; Namen von Verfahren sind Kür (keine Katalogstelle), nicht wegen fehlender Prüfungen."
+      },
+      {
+        "alt": "AP1-7-4-1",
+        "satz": "Phishing war nur im Herbst 2024 nach altem Katalog dran.",
+        "status": "gestrichen",
+        "grund": "Beleg nach altem Katalog zählt voll (B3); eigener Stichpunkt AP1-7-4-2."
+      },
+      {
+        "alt": "AP1-7-5-1",
+        "satz": "Artikelnummern waren nicht verlangt.",
+        "status": "angepasst",
+        "grund": "Grenze jetzt mit G4 begründet."
+      },
+      {
+        "alt": "AP1-7-5-2",
+        "satz": "In den ausgewerteten Prüfungen gab es dazu keine Aufgabe.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze."
+      }
+    ]
+  },
+  "meta": {
+    "schicht": "3+4",
+    "regelwerk_version": "1.2",
+    "stand": "2026-10-13",
+    "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-7-4-2, AP1-7-4-3 (Block Bedrohungen hatte nur einen Stichpunkt, F4) und AP1-7-5-3 (Block Datenschutz, F4).",
+    "kerntest": {
+      "stand": "2026-10-13",
+      "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+      "ergebnis": "Alle 56 Teilaufgaben des Ordners gegen ihre Musterlösung gelesen; Lücken beim Bau geschlossen (Zuordnung mit Begründung 2021H-A4-a, Bordmittel 2023F-A3-bd, Logging 2023F-A3-ca/-cb, Wiederherstellungsschlüssel 2023H-A3-cb, Diebstahl 2023H-A3-cd, Generationenprinzip 2024F-A4-c, Malware-Merkmale 2024F-A4-db, Telearbeit 2023H-A3-b, Authentifizierungsmittel 2025H-A3-b, Update vor Inbetriebnahme 2025H-A3-c, Videoaufnahmen 2026F-A3-a, Gesundheitsdaten 2025H-A3-a, Telnet und SSH 2025F-A4-eb). Ohne Musterlösung (nur Aufgabe geprüft): 2025H-A3-a bis -d, 2025H-A3-h, 2026F-A1-aa, 2026F-A3-a."
+    },
+    "hinweisquellen": {
+      "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitte IT-Sicherheit und Datenschutz",
+      "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
+      "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 11.1–11.24",
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Datenschutz, Gefährdung der IT-Sicherheit, Maßnahmen, IT-Grundschutz, IT-Sicherheitsgesetz, Verschlüsselungsverfahren, Datensicherungskonzept, TOM"
+    },
+    "hinweisabgleich": {
+      "stand": "2026-10-13",
+      "umfang": "ganzer Ordner",
+      "vorgehen": "Jedes in den Hinweisquellen genannte Thema des Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als „Ordner“ (P23).",
+      "themen": [
+        {
+          "thema": "Schutzziele Vertraulichkeit, Integrität, Verfügbarkeit",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-1-1-K1",
+            "AP1-7-1-1-K5"
+          ]
+        },
+        {
+          "thema": "Authentizität als Schutzziel",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-1-1"
+          ]
+        },
+        {
+          "thema": "Maßnahmen organisatorisch, technisch, personell; TOM",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-1-2-K1",
+            "AP1-7-1-2-K5"
+          ]
+        },
+        {
+          "thema": "Passwortsicherheit, Passwort-Policy, Sicherheitsrichtlinien",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-1-3-K2",
+            "AP1-7-1-3-K3"
+          ]
+        },
+        {
+          "thema": "Security by Design, Security by Default",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-1-3-K4"
+          ]
+        },
+        {
+          "thema": "IT-Sicherheitsbeauftragter, Datenschutzbeauftragter, ISMS",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-1-4-K1",
+            "AP1-7-1-4-K2"
+          ]
+        },
+        {
+          "thema": "ISO 27001",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-7-1-4"
+          ],
+          "notiz": "B3 (ISO-27000-Normen gestrichen), G4"
+        },
+        {
+          "thema": "Logging",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-1-4-K6",
+            "AP1-7-5-3-K1"
+          ]
+        },
+        {
+          "thema": "BSI, IT-Grundschutz-Kompendium, Bausteine",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-2-1-K1",
+            "AP1-7-2-1-K2",
+            "AP1-7-2-1-K6"
+          ]
+        },
+        {
+          "thema": "IT-Sicherheitsgesetz, BSI-Standards",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-2-1"
+          ]
+        },
+        {
+          "thema": "Schutzbedarfsanalyse, Schutzbedarf",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-2-2-K2",
+            "AP1-7-2-2-K3",
+            "AP1-7-2-2-K4"
+          ]
+        },
+        {
+          "thema": "Risikoanalyse, Risikomatrix",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-2-3-K2",
+            "AP1-7-2-3-K4"
+          ]
+        },
+        {
+          "thema": "Verschlüsselung symmetrisch, asymmetrisch, hybrid",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-3-1-K1",
+            "AP1-7-3-1-K2",
+            "AP1-7-3-1-K4"
+          ]
+        },
+        {
+          "thema": "AES, RSA, TLS",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-3-1"
+          ]
+        },
+        {
+          "thema": "Hashverfahren, Zertifikat, digitale Signatur, PKI",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-3-2-K1",
+            "AP1-7-3-2-K3",
+            "AP1-7-3-2-K5",
+            "AP1-7-3-2-K6"
+          ]
+        },
+        {
+          "thema": "Authentifizierung und Autorisierung, 2FA/MFA, Zugangs-/Zugriffs-/Zutrittskontrolle",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-3-3-K1",
+            "AP1-7-3-3-K2",
+            "AP1-7-3-3-K3",
+            "AP1-7-3-3-K5"
+          ]
+        },
+        {
+          "thema": "Härtung, Endpoint-Security, Virenschutz, Personal Firewall",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-3-4-K1",
+            "AP1-7-3-4-K2",
+            "AP1-7-3-4-K4"
+          ]
+        },
+        {
+          "thema": "Firewall-Typen, DMZ",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-7-3-4"
+          ],
+          "notiz": "AP2b.01.02.4, AP2b.02.03.2"
+        },
+        {
+          "thema": "Datensicherung voll, inkrementell, differenziell; Generationenprinzip; NAS",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-3-5-K1",
+            "AP1-7-3-5-K7",
+            "AP1-7-3-5-K4"
+          ]
+        },
+        {
+          "thema": "Hot- und Cold-Backup",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-3-5"
+          ]
+        },
+        {
+          "thema": "RAID, Redundanz",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-7-3-5"
+          ],
+          "notiz": "B3; AP2b.01.10.2"
+        },
+        {
+          "thema": "Malware, Schadsoftware",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-4-1-K1",
+            "AP1-7-4-1-K6",
+            "AP1-7-4-1-K7"
+          ]
+        },
+        {
+          "thema": "Angriffsarten (Man-in-the-Middle, SQL-Injection, DDoS)",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-7-4-1"
+          ],
+          "notiz": "AP2a.04.04.9"
+        },
+        {
+          "thema": "Phishing",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-4-2-K1",
+            "AP1-7-4-2-K2",
+            "AP1-7-4-2-K3"
+          ]
+        },
+        {
+          "thema": "Social Engineering",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "WISO"
+          ],
+          "notiz": "WISO.05.02.9"
+        },
+        {
+          "thema": "Remotearbeit, mobiles Arbeiten, Telearbeit",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-4-3-K1",
+            "AP1-7-4-3-K3"
+          ]
+        },
+        {
+          "thema": "DSGVO, BDSG, personenbezogene Daten, Betroffenenrechte, Einwilligung",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-5-1-K1",
+            "AP1-7-5-1-K2",
+            "AP1-7-5-1-K3",
+            "AP1-7-5-1-K4"
+          ]
+        },
+        {
+          "thema": "Grundsätze der Verarbeitung (Art. 5 DSGVO)",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-5-1-K6",
+            "AP1-7-5-1-K7"
+          ],
+          "notiz": "ohne Artikelnummer (G4)"
+        },
+        {
+          "thema": "Datenschutz gegen Datensicherheit gegen Datensicherung",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-5-1-K5"
+          ]
+        },
+        {
+          "thema": "Anonymisierung, Pseudonymisierung",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-7-5-2-K1",
+            "AP1-7-5-2-K2"
+          ]
+        },
+        {
+          "thema": "Persönlichkeitsrechte",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-5-1"
+          ]
+        }
+      ]
+    },
+    "geschwister": [
+      {
+        "katalog": "AP1.06.01.1",
+        "paar": "Verfügbarkeit, Vertraulichkeit, Integrität",
+        "abgedeckt": {
+          "alle drei": [
+            "AP1-7-1-1-K1",
+            "AP1-7-1-1-K5"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.04.3",
+        "paar": "technisch, organisatorisch, personell",
+        "abgedeckt": {
+          "technisch": [
+            "AP1-7-1-2-K2"
+          ],
+          "organisatorisch": [
+            "AP1-7-1-2-K5"
+          ],
+          "personell": [
+            "AP1-7-1-2-K5"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.04.1",
+        "paar": "Security by Design, Security by Default",
+        "abgedeckt": {
+          "Design": [
+            "AP1-7-1-3-K4"
+          ],
+          "Default": [
+            "AP1-7-1-3-K4",
+            "AP1-7-1-3-K7"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.01.2.2",
+        "paar": "IT-Sicherheitsbeauftragter, Datenschutzbeauftragter",
+        "abgedeckt": {
+          "beide": [
+            "AP1-7-1-4-K1",
+            "AP1-7-1-4-K5"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.03.2",
+        "paar": "normal, hoch, sehr hoch",
+        "abgedeckt": {
+          "alle drei": [
+            "AP1-7-2-2-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.02.1",
+        "paar": "Anwendungen, IT-Systeme, Räume, Kommunikationsverbindungen",
+        "abgedeckt": {
+          "alle vier": [
+            "AP1-7-2-2-K2"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.04.8",
+        "paar": "symmetrisch, asymmetrisch, hybrid",
+        "abgedeckt": {
+          "symmetrisch": [
+            "AP1-7-3-1-K1"
+          ],
+          "asymmetrisch": [
+            "AP1-7-3-1-K2"
+          ],
+          "hybrid": [
+            "AP1-7-3-1-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.04.9",
+        "paar": "Hashwerte, Zertifikate, digitale Signaturen",
+        "abgedeckt": {
+          "Hash": [
+            "AP1-7-3-2-K1"
+          ],
+          "Zertifikat": [
+            "AP1-7-3-2-K5"
+          ],
+          "Signatur": [
+            "AP1-7-3-2-K3"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.04.7",
+        "paar": "Zugangs- und Zugriffskontrolle",
+        "abgedeckt": {
+          "Zugang": [
+            "AP1-7-3-3-K1"
+          ],
+          "Zugriff": [
+            "AP1-7-3-3-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.01.2.4",
+        "paar": "Virenschutz, Personal Firewall, Verschlüsselung",
+        "abgedeckt": {
+          "Virenschutz": [
+            "AP1-7-3-4-K5"
+          ],
+          "Personal Firewall": [
+            "AP1-7-3-4-K4"
+          ],
+          "Verschlüsselung": [
+            "AP1-7-3-1-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.01.3",
+        "paar": "DSGVO, BDSG (EU und national)",
+        "abgedeckt": {
+          "beide": [
+            "AP1-7-5-1-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.06.01.3.3",
+        "paar": "Anonymisierung, Pseudonymisierung",
+        "abgedeckt": {
+          "Anonymisierung": [
+            "AP1-7-5-2-K1"
+          ],
+          "Pseudonymisierung": [
+            "AP1-7-5-2-K2"
+          ]
+        }
+      }
+    ]
+  }
+}
