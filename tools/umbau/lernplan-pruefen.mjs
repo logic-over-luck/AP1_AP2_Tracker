@@ -15,6 +15,7 @@
 //             (bei geteilten Bausteinen mit „anteil" nur Hinweis – der Rest wird in anderen Ordnern erreicht)
 //   ALT       jede alte Können-Aussage des Ordners ist einsortiert; alte IDs bleiben erhalten, keine ID wird neu vergeben
 //   R3        Hinweis-Abgleich: jedes Thema hat einen Ring, Hinweisquellen beschrieben, Verweis passt zum Ring
+//             (Ring „Ordner“: Thema wohnt in einem anderen AP1-Ordner oder einem späteren Raum)
 //   R4        Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
@@ -185,7 +186,7 @@ for (const t of abgleich) {
     if (t.ring === 'Kern' || t.ring === 'Puffer') { if (!kMap.has(w)) F(`${name}: Können-Aussage ${w} gibt es nicht`); }
     else if (t.ring === 'Kür') { if (!spMap.get(w)?.kuer?.length) F(`${name}: Stichpunkt ${w} hat keinen Kür-Eintrag`); }
     else if (t.ring === 'Außen') { if (!spMap.get(w)?.grenzen?.length) F(`${name}: Stichpunkt ${w} hat keine Grenze`); }
-    else if (t.ring === 'Ordner') { if (!/^[A-Z0-9]+-\d+$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner`); }
+    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
   }
   if (t.ring === 'Puffer' && !t.wo.some((w) => kMap.get(w)?.herkunft.some((h) => h.startsWith('regel:')))) F(`${name}: Puffer, aber keine der Aussagen hat Herkunft regel:`);
 }
