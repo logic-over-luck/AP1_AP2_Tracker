@@ -35,3 +35,9 @@ Teilaufgaben im Lernplan, Katalogwortlaut, Abschriften mit Musterlösung. Bau- u
 | AP1-1-5-3 K2: K3 „vorschlagen“ | behoben (jetzt „festlegen“, Stufe 3, Herkunft mit `katalog:AP1.05.02.4`) |
 
 **Abgleich:** 8 alte Funde, 8 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-1-2-1 K2: nach F1 neu kein Fund mehr (2023H-A4-ba verlangt „erstellen, einzeichnen“); K2 auf genau diese Verben umgestellt.
+
+Alle Ordner- und Raum-Prüfungen danach grün.

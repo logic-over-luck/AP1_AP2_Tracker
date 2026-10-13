@@ -36,3 +36,11 @@ Teilaufgaben im Lernplan, Katalogwortlaut, Abschriften mit Musterlösung. Bau- u
 | AP1-2-5-3 K2: K4 Herkunft `regel:P-GESCHWISTER` | behoben (auf `beleg:2026F-A3-eb` umgestellt, eine der beiden vorgeschlagenen Varianten; dazu neuer Fund oben) |
 
 **Abgleich:** 9 alte Funde, 8 behoben, 1 nicht behoben (bewusst nach P25).
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-2-1-1: Grenze nur noch mit AP1.02.01.1 (G3) begründet, WiSo-Verweis entfernt; Hinweis-Abgleich angepasst.
+- AP1-2-2-1: Kür-Grund korrigiert (Marktbeobachtung = betriebliche Handlung AP1.02.H1); P26 entschieden: Kür.
+- AP1-2-5-3: K4 Herkunft jetzt `katalog:AP1.07.05.2`.
+
+Alle Ordner- und Raum-Prüfungen danach grün.

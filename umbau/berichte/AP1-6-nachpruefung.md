@@ -43,3 +43,9 @@ Teilaufgaben im Lernplan, Katalogwortlaut, Abschriften mit Musterlösung. Bau- u
 | AP1-6-3-2 K2: K7 „angeben“ mit Stufe 3 | behoben (jetzt Stufe 1) |
 
 **Abgleich:** 15 alte Funde, 15 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-6-2-3: K4 nur noch „erklären“ (deckt 2022F-A3-eb und 2022H-A3-f).
+
+Alle Ordner- und Raum-Prüfungen danach grün.

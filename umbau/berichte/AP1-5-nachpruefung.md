@@ -28,3 +28,9 @@ Hinweis AP1-5-2-2: 2026H nicht amtlich, nur gegen die Aufgabenstellung geprüft;
 | AP1-5-2-4 K3: Paketmanager in K4 | behoben (aus K4 gestrichen, als Kür geführt) |
 
 **Abgleich:** 3 alte Funde, 3 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-5-2-2: K1 nur noch „unterscheiden“ (keine Teilaufgabe mit zwei Verben).
+
+Alle Ordner- und Raum-Prüfungen danach grün.

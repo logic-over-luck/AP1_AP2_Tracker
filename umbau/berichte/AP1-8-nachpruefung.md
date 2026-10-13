@@ -47,3 +47,10 @@ Hinweis AP1-8-2-2: Beide Teilaufgaben (2022F, 2022H) waren als Struktogramm zu l
 | AP1-8-4-5 K2: K4 Reihenfolge mit Stufe 3 | behoben (jetzt Stufe 2) |
 
 **Abgleich:** 14 alte Funde, 14 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-8-2-2: Grenze auf Algorithmen über kurze Abläufe hinaus eingeschränkt (AP2b.04.16, AP2b.04.18).
+- AP1-8-4-1: Grenze um AP2b.04.10.2 („Relationales Modell“) ergänzt.
+
+Alle Ordner- und Raum-Prüfungen danach grün.

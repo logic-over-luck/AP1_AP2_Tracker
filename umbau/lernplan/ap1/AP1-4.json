@@ -361,10 +361,11 @@
             },
             {
               "id": "AP1-4-1-4-K5",
-              "text": "Du kannst erklären, was Daisy Chaining ist und welchen Vorteil es hat: Monitore werden hintereinander an einen Anschluss gehängt, das spart Anschlüsse und Kabel.",
+              "text": "Du kannst Daisy Chaining erläutern: Monitore werden hintereinander an einen einzigen Bildausgang gehängt, das spart Anschlüsse und Kabel; Voraussetzung ist, dass Grafikkarte und Monitore DisplayPort oder Thunderbolt mit Multi-Stream Transport (MST) unterstützen und die Monitore einen DP-Ausgang haben.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2026F-A1-ca"
+                "beleg:2026F-A1-ca",
+                "beleg:2026F-A1-cb"
               ]
             },
             {
@@ -377,10 +378,9 @@
             },
             {
               "id": "AP1-4-1-4-K7",
-              "text": "Du kannst mehrere Monitore per Daisy Chaining verbinden und die Voraussetzung erläutern: Grafikkarte und Monitore müssen DisplayPort mit Durchreichen (MST) unterstützen, die Monitore brauchen einen DP-Ausgang.",
+              "text": "Du kannst in einer Skizze mehrere Monitore per Daisy Chaining über DisplayPort miteinander und mit dem PC verbinden.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2026F-A1-cb",
                 "beleg:2026F-A1-cc"
               ]
             }
@@ -1454,7 +1454,7 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.2",
+    "regelwerk_version": "1.4",
     "stand": "2026-10-13",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-4-1-5 (Hardware einbauen), AP1-4-1-6 (Kennzeichnung, Sensoren) und AP1-4-2-4 (Übertragungsraten), weil Stichpunkte sonst über 7 Aussagen gekommen wären (F3). AP1.03.01.2 und AP1.03.03.1 sind mit AP1-5 und AP1-6 geteilt.",
     "kerntest": {

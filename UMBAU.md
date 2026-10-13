@@ -136,9 +136,9 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v1.3 [fest]
+## 4. Regelwerk – v1.4 [fest]
 
-Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). Maßgeblich für die
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
 `tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
@@ -183,6 +183,10 @@ testen und dokumentieren" → Stufe 3 für IPv4 **und** IPv6.
   Vererbung, Struktogramm, PAP, SQL, nicht-relationale Datenbanken, ISO-27000-Normen, SWOT-Analyse,
   Suchoperatoren. Belege zu diesen Themen zählen für AP1 nicht (SAN, RAID, Vererbung, SQL, NoSQL stehen im
   AP2-Katalog und zählen dort).
+  **Seit v1.4** gilt das auch für Prüfungen nach neuem Katalog: Teilaufgaben oder Lösungsteile zu diesen gestrichenen
+  Themen zählen nicht (Stand 14.10.2026 betroffen: nur „LTE/5G-Router“ in der nicht amtlichen Lösung zu 2026H-A4-a).
+  Themen, die nie im Katalog standen, aber in einer Prüfung verlangt wurden, sind **nicht** gestrichen; sie bleiben
+  Zusatzbausteine (Z1).
 - **B4** Material, das in der Aufgabe vorgegeben war (z. B. „die fünf SMART-Begriffe standen dabei"),
   wird als „anwenden, nicht auswendig" vermerkt.
 
@@ -213,7 +217,10 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
 
 ### 4.5 Form
 
-- **F1** Können-Aussage: „Du kannst …", genau ein Operator, prüfbar (man kann eine Frage dazu stellen).
+- **F1** Können-Aussage: „Du kannst …", genau ein Operator, prüfbar (man kann eine Frage dazu stellen). **Seit v1.4:**
+  Mehrere Operatoren sind erlaubt, wenn genau diese Operatoren zusammen in **einer** Teilaufgabe der Herkunft stehen
+  (z. B. 2023H-A4-ba „erstellen, einzeichnen“); Stufe = höchste. Maßstab ist die Teilaufgabe, nicht die Aufgabe (wie Z3).
+  Operatoren aus verschiedenen Teilaufgaben kommen in getrennte Aussagen oder werden unter einem Operator zusammengefasst.
 - **F2** Jede Können-Aussage hat eine Herkunft: `katalog:<Baustein-ID>` · `beleg:<Teilaufgaben-ID>` ·
   `regel:<P-…>`.
 - **F3** Stichpunkt: 3–7 Können-Aussagen, eine Lerneinheit von etwa 30–90 Minuten.
@@ -257,7 +264,7 @@ einen** Ring. So muss keine Sitzung neu überlegen, ob etwas dazugehört.
 |---|---|---|
 | **Kern** | steht im Katalog (Baustein) oder wurde in einer Originalprüfung verlangt (Beleg, Zusatzbaustein) | Können-Aussage, Pflicht |
 | **Puffer** | Regel P-GESCHWISTER, P-NÄCHSTE-STUFE oder P-GRUNDLAGE trifft zu | Können-Aussage, Pflicht, Herkunft `regel:…` |
-| **Kür** | nur in einer Hinweisquelle (Podcast, Lernzettel, Unterricht), weder Kern noch Puffer, aber auch nicht vom Katalog ausgeschlossen | Feld `kuer` am Stichpunkt: Text, Hinweisquelle(n), Grund; sichtbar, freiwillig, zählt nicht zum Fortschritt, keine Pflichtkarten |
+| **Kür** | nur in einer Hinweisquelle (Podcast, Lernzettel, Unterricht) oder nur als betriebliche Handlung im Katalog (P26), weder Kern noch Puffer, aber auch nicht vom Katalog ausgeschlossen | Feld `kuer` am Stichpunkt: Text, Hinweisquelle(n), Grund; sichtbar, freiwillig, zählt nicht zum Fortschritt, keine Pflichtkarten |
 | **Außen** | der Katalog schließt es aus (G1–G6, z. B. weil es im AP2-Katalog steht) | Grenze mit Katalogstelle |
 
 - **R1** Reihenfolge der Prüfung: erst Kern, dann Puffer, dann Außen; was übrig bleibt, ist Kür.
@@ -454,7 +461,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P13 | Z3 überträgt die Stufe einer Teilaufgabe auf alle ihre Bausteine. Bei Teilaufgaben mit mehreren Bausteinen kann ein Nebenbaustein dadurch zu hoch eingestuft werden (Richtung „eher mehr lernen“, also mit der goldenen Regel vereinbar). Im Probelauf vom KI-Prüfer (K2) je Stichpunkt prüfen lassen. **Entschieden (Projektinhaber hat die Entscheidung übertragen, 13.10.2026): keine neue Regel, falsche Zuordnungen einzeln korrigieren.** Der KI-Prüfer (P16) fand zwei Fälle: 2023H-A2-a (Telearbeitsplatz) verliert AP1.07.03.1, 2024F-A1-d (Zustandekommen des Kaufvertrags) verliert AP1.07.01.5, je mit `hinweis` in der Zuordnung. AP1.07.03.1 sinkt von 4 auf 3, AP1.07.01.5 von 4 auf die Katalogstufe 2. Folgen: AP1-1-4-1-K1 jetzt „festlegen“ (Stufe 3), AP1-1-4-1-K5 entfällt (Telearbeitsplatz steht in AP1-4-1-1-K7). Weitere Fälle findet der KI-Prüfer (K2) und werden genauso behandelt. | erledigt |
 | P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
 | P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |
-| P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). **Durchgeführt 13.10.2026:** unabhängige Prüfung K1–K3, Berichte `umbau/berichte/AP1-<n>-pruefer.md`, 76 Funde (K1 6, K2 64, K3 6). Alle Vorschläge eingebaut (Freigabe Projektinhaber), Die beiden P13-Fälle sind danach mit P13 gelöst; AP1-2-4-1-K6 bleibt Stufe 3 nach Z3a. Nachprüfung der geänderten Stichpunkte durch eine frische Sitzung durchgeführt (14.10.2026): 12 neue Funde (K1 1, K2 11), Berichte `umbau/berichte/AP1-<n>-nachpruefung.md`; von 76 alten Funden 75 behoben, 1 bewusst nicht (AP1-2-4-1-K6, P25). Neue Funde noch nicht eingebaut. | erledigt (neue Funde offen) |
+| P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). **Durchgeführt 13.10.2026:** unabhängige Prüfung K1–K3, Berichte `umbau/berichte/AP1-<n>-pruefer.md`, 76 Funde (K1 6, K2 64, K3 6). Alle Vorschläge eingebaut (Freigabe Projektinhaber), Die beiden P13-Fälle sind danach mit P13 gelöst; AP1-2-4-1-K6 bleibt Stufe 3 nach Z3a. Nachprüfung der geänderten Stichpunkte durch eine frische Sitzung durchgeführt (14.10.2026): 12 neue Funde (K1 1, K2 11), Berichte `umbau/berichte/AP1-<n>-nachpruefung.md`; von 76 alten Funden 75 behoben, 1 bewusst nicht (AP1-2-4-1-K6, P25). Neue Funde am 14.10.2026 nach Regelwerk v1.4 eingebaut (Nachtrag in den Berichten): alle 12 umgesetzt; bei 2 Operator-Funden (AP1-1-2-1-K2, AP1-6-2-3-K4) wäre nach F1 neu kein Fund geblieben, sie wurden nur an die Teilaufgabe angepasst. | erledigt |
 | P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). Bis zur Entscheidung als Kür geführt (Grund nennt P17): AP1-6 Hub, FTP/SFTP/NTP/LDAP, ICMP; AP1-1 Retrospektive. | offen |
 | P18 | **Vorschlag, noch nicht beschlossen:** Regel P-MUSTER – Können-Aussagen für nie geprüfte Katalogthemen nach den Aufgabentypen formulieren, die die IHK beim selben Verb sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründete Empfehlung). | offen |
 | P19 | **Entschieden (Projektinhaber):** kein Zeitbudget. Maßstab ist fachliche Richtigkeit und Vollständigkeit nach den Regeln (Kern + Puffer Pflicht, Kür freiwillig), nicht die verfügbare Zeit. P7 entfällt. | erledigt |
@@ -464,7 +471,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P23 | **Entschieden (Claude im Auftrag des Projektinhabers):** Die Kennzeichnung „Ordner“ im Hinweis-Abgleich bleibt. Sie ist nur Buchführung: Das Thema steht dort, wo es wohnt. | erledigt |
 | P24 | **Entschieden (Projektinhaber, 13.10.2026): Pflicht.** Was der Katalog-Anhang zeigt, gehört zu AP1; Prüfungen erweitern nur. Umgesetzt: EPK und BPMN (AP1-8-4-4) bleiben Kern, Aggregation und Komposition sind jetzt Kern (neue Aussage AP1-8-3-2-K6). | erledigt |
 | P25 | **Formoperatoren in Z3** (gefunden bei P16): Prüfungsoperatoren, die nur die Antwortform bezeichnen („eintragen“, „ausfüllen“, „vervollständigen“, „ergänzen“, „markieren“), bestimmen nach Z3 die Stufe der Teilaufgabe und damit die Mindesttiefe aller zugeordneten Bausteine. Beispiel: 2023H-A2-d „Tragen Sie Vor- und Nachteile von Homeoffice ein“ hebt AP1.07.02.3 von Stufe 1 auf 3, fachlich ist es „nennen“. Soll in solchen Fällen der fachliche Kern zählen? Verwandt mit P13. **Entschieden (Projektinhaber hat die Entscheidung übertragen, 13.10.2026): Regel Z3a, Regelwerk v1.3.** Formoperatoren zählen nur, wenn kein anderer Operator dasteht. Betroffen: 2023H-A4-ab, 2024F-A4-a, 2026F-A2-b, 2026F-A4-c; Mindesttiefe ändert sich nur bei AP1.06.04.1 (3 → 2). Reine Formaufgaben behalten ihre Stufe (mechanisch, goldene Regel „eher mehr lernen“), auch 2023H-A2-d. | erledigt |
-| P26 | **Ring für betriebliche Handlungen** (gefunden bei der Nachprüfung P16, AP1-2-2-1): Die „Beispiele für betriebliche Handlungen/Qualifikationen“ (z. B. AP1.02.H1 Marktbeobachtung) sind Bausteine im Fundament, aber nicht abdeckungspflichtig. 4.8 sagt „steht im Katalog (Baustein) → Kern“. Sind Themen, die nur in einer betrieblichen Handlung stehen, Kern, Puffer oder Kür? | offen |
+| P26 | **Ring für betriebliche Handlungen** (gefunden bei der Nachprüfung P16, AP1-2-2-1): Die „Beispiele für betriebliche Handlungen/Qualifikationen“ (z. B. AP1.02.H1 Marktbeobachtung) sind Bausteine im Fundament, aber nicht abdeckungspflichtig. 4.8 sagt „steht im Katalog (Baustein) → Kern“. Sind Themen, die nur in einer betrieblichen Handlung stehen, Kern, Puffer oder Kür? **Entschieden (Claude im Auftrag des Projektinhabers, 14.10.2026): Kür.** Die betrieblichen Handlungen sind im Katalog als „Beispiele“ überschrieben und nicht abdeckungspflichtig (T1); prüfungsrelevant sind laut Katalog die Überschriften mit Operatoren (PDF-S. 8). Ein Prüfungsbeleg macht ein solches Thema wie jedes andere zum Kern. Umgesetzt: AP1-2-2-1 (Marktbeobachtung). | erledigt |
 
 ---
 

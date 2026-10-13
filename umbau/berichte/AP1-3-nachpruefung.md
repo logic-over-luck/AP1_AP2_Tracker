@@ -42,3 +42,10 @@ Hinweis AP1-3-1-4: alle drei Teilaufgaben (2025H) ohne Musterlösung, nur gegen 
 | AP1-3-3-2 K2: K6 „begründet empfehlen“ | behoben (jetzt „begründen“) |
 
 **Abgleich:** 13 alte Funde, 13 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-3-1-4: K2 nur noch mit den Verben der Teilaufgabe 2025H-A1-ca („berechnen, runden“).
+- AP1-3-3-1: neue Aussage K7 „Grundprinzip des Leasings beschreiben“ (Stufe 2, `katalog:AP1.07.01.1`, `beleg:2023F-A2-ba`).
+
+Alle Ordner- und Raum-Prüfungen danach grün.

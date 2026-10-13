@@ -37,3 +37,9 @@ Hinweis AP1-7-3-3: 2025H-A3-b ohne Musterlösung, nur gegen die Aufgabenstellung
 Nebenbei: Der alte Hinweis zu AP1-7-3-1-K8 (serielle Verbindung fehlt) ist ebenfalls erledigt; K8 nennt sie jetzt.
 
 **Abgleich:** 6 alte Funde, 6 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-7-3-3: K3 nur noch „erklären“ (keine Teilaufgabe mit zwei Verben).
+
+Alle Ordner- und Raum-Prüfungen danach grün.

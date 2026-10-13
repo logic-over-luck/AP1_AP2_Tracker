@@ -36,3 +36,9 @@ Hinweis AP1-4-1-4: 2026F-A1-ca bis -cc ohne Musterlösung, nur gegen die Aufgabe
 | AP1-4-2-4 K2: K2 „umrechnen“ | behoben (jetzt „Umrechnung durchführen“) |
 
 **Abgleich:** 8 alte Funde, 8 behoben, 0 nicht behoben.
+
+## Nachtrag 14.10.2026 – Umsetzung nach Regelwerk v1.4
+
+- AP1-4-1-4: K7 nur noch „verbinden“ (2026F-A1-cc); die Voraussetzung (2026F-A1-cb) steht jetzt in K5 („erläutern“), weil F3 höchstens 7 Aussagen erlaubt. Maßstab nach F1 neu: je Teilaufgabe.
+
+Alle Ordner- und Raum-Prüfungen danach grün.
