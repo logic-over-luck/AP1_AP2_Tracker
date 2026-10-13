@@ -1,0 +1,2274 @@
+{
+  "oberblock": {
+    "id": "AP1-8",
+    "titel": "Programmieren und Modellieren",
+    "raum": "AP1",
+    "gebiete": [
+      "G.AP1.02",
+      "G.AP1.03"
+    ]
+  },
+  "themenbloecke": [
+    {
+      "id": "AP1-8-1",
+      "titel": "Programmiersprachen und Werkzeuge",
+      "satz": "Wie aus Quelltext ein Programm wird und welche Sprachen und Werkzeuge es dafür gibt.",
+      "stichpunkte": [
+        {
+          "id": "AP1-8-1-1",
+          "titel": "Compiler, Linker, Interpreter und Entwicklungswerkzeuge",
+          "ziel": "Erklären, wie aus Quelltext ein lauffähiges Programm wird, und Entwicklungswerkzeuge für einen Einsatz beurteilen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.06.1"
+            },
+            {
+              "id": "AP1.03.01.3.4"
+            },
+            {
+              "id": "AP1.04.03.3"
+            }
+          ],
+          "teilaufgaben": [
+            "2024H-A2-c"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-1-1-K1",
+              "text": "Du kannst den Unterschied zwischen Compiler und Interpreter erläutern: Übersetzung des ganzen Programms vor der Ausführung gegenüber schrittweiser Ausführung zur Laufzeit.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024H-A2-c",
+                "katalog:AP1.04.06.1"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K2",
+              "text": "Du kannst die Aufgabe des Linkers erklären: übersetzte Programmteile und Bibliotheken zu einem ausführbaren Programm verbinden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.1"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K3",
+              "text": "Du kannst Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.3.4",
+                "katalog:AP1.04.03.3"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K4",
+              "text": "Du kannst erklären, was eine virtuelle Maschine bei Sprachen wie Java leistet: Sie führt Zwischencode auf verschiedenen Betriebssystemen aus.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.3.4"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K5",
+              "text": "Du kannst je einen Vorteil nennen: Kompilierte Programme laufen schneller; interpretierte lassen sich ohne Übersetzungsschritt testen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.04.06.1"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K6",
+              "text": "Du kannst Entwicklungssysteme für einen Einsatz beurteilen, zum Beispiel ob für ein kleines Automatisierungsskript eine interpretierte Sprache genügt oder ein kompiliertes Programm nötig ist.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.01.3.4"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K7",
+              "text": "Du kannst die Wahl einer IDE begründen: Editor, Übersetzer und Debugger in einer Oberfläche, dazu Hilfen wie Syntaxhervorhebung und Autovervollständigung.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.04.03.3"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Sprachhöhen: Maschinensprache, Assembler, Hochsprache.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-8-1-2",
+          "titel": "Prozedurale und objektorientierte Programmierung: Klassen, Objekte, Attribute, Methoden, Sichtbarkeit",
+          "ziel": "Die prozedurale und die objektorientierte Herangehensweise unterscheiden und die Grundbegriffe der Objektorientierung erklären.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.06.2"
+            },
+            {
+              "id": "AP1.04.06.6"
+            }
+          ],
+          "teilaufgaben": [
+            "2026F-A4-a"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-1-2-K1",
+              "text": "Du kannst prozedurale und objektorientierte Programmierung unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.2"
+              ]
+            },
+            {
+              "id": "AP1-8-1-2-K2",
+              "text": "Du kannst Klasse und Objekt unterscheiden: Die Klasse ist der Bauplan, das Objekt ein konkretes Exemplar.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.6"
+              ]
+            },
+            {
+              "id": "AP1-8-1-2-K3",
+              "text": "Du kannst Attribute und Methoden erklären.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.6"
+              ]
+            },
+            {
+              "id": "AP1-8-1-2-K4",
+              "text": "Du kannst erklären, was Sichtbarkeit bedeutet, und public von private unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.6"
+              ]
+            },
+            {
+              "id": "AP1-8-1-2-K5",
+              "text": "Du kannst erklären, warum Attribute meist privat sind und über Methoden gelesen und geändert werden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.6"
+              ]
+            },
+            {
+              "id": "AP1-8-1-2-K6",
+              "text": "Du kannst Vorteile der objektorientierten gegenüber der prozeduralen Programmierung nennen, zum Beispiel Wiederverwendbarkeit, bessere Wartbarkeit und Nähe zu den Dingen der realen Welt.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026F-A4-a"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Vererbung und Polymorphie gehören nicht dazu; Kapselung nur so weit, wie sie die Sichtbarkeit erklärt.",
+              "begruendung": "AP1.04.06.6 nennt Klassen, Attribute, Objekte, Methoden und Sichtbarkeit; Kapselung, Vererbung und Polymorphie stehen im AP2-Katalog (AP2b.04.17.1–.3), Vererbung ist aus AP1 gestrichen (B3).",
+              "katalog": [
+                "AP1.04.06.6",
+                "AP2b.04.17.1",
+                "AP2b.04.17.2",
+                "AP2b.04.17.3"
+              ]
+            }
+          ],
+          "hinweis": "Die Musterlösung zu 2026F-A4-a fehlt; K6 folgt der Aufgabenstellung."
+        },
+        {
+          "id": "AP1-8-1-3",
+          "titel": "Skriptsprachen, Bibliotheken und Frameworks; Programmiersprache auswählen",
+          "ziel": "Skriptsprachen, Bibliotheken und Frameworks einordnen, Sprachen für dynamische Webinhalte nennen und eine Sprachwahl begründen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.06.7"
+            },
+            {
+              "id": "AP1.04.06.8"
+            },
+            {
+              "id": "AP1.03.02.2",
+              "anteil": "dynamische Webseiten"
+            },
+            {
+              "id": "AP1.04.03.7",
+              "anteil": "Kriterium für die Wahl einer Programmiersprache"
+            }
+          ],
+          "teilaufgaben": [
+            "2025F-A3-b",
+            "2025F-A3-c",
+            "2024H-A2-b"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-1-3-K1",
+              "text": "Du kannst erklären, was eine Skriptsprache ist, und Beispiele nennen, etwa Shell-Skript.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.8"
+              ]
+            },
+            {
+              "id": "AP1-8-1-3-K2",
+              "text": "Du kannst Bibliothek und Framework unterscheiden: Eine Bibliothek rufst du auf; ein Framework gibt den Rahmen vor, in den du deinen Code einfügst.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.7"
+              ]
+            },
+            {
+              "id": "AP1-8-1-3-K3",
+              "text": "Du kannst statische und dynamische Webseiten unterscheiden: fertige, unveränderte Inhalte gegenüber Inhalten, die beim Aufruf erzeugt werden.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A3-b"
+              ]
+            },
+            {
+              "id": "AP1-8-1-3-K4",
+              "text": "Du kannst Programmiersprachen für dynamische Webinhalte nennen, zum Beispiel JavaScript, PHP, Python; HTML und CSS zählen nicht als Programmiersprachen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2025F-A3-c"
+              ]
+            },
+            {
+              "id": "AP1-8-1-3-K5",
+              "text": "Du kannst ein Kriterium für die Wahl einer Programmiersprache begründen, zum Beispiel Eignung für die Aufgabe, Kenntnisse im Team, verfügbare Frameworks.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A2-b"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Skripte selbst zu schreiben gehört nicht dazu; ein gegebenes Skript lesen und einzelne Zeilen berichtigen schon (AP1-8-2-4).",
+              "begruendung": "AP1.04.06.8 verlangt Skriptsprachen „kennen, einordnen und unterscheiden“; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16).",
+              "katalog": [
+                "AP1.04.06.8",
+                "AP2b.04.16"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AP1-8-2",
+      "titel": "Code lesen, schreiben und prüfen",
+      "satz": "Die Bausteine eines Programms erkennen, Pseudocode schreiben, Schreibtischtests durchführen und Fehler finden.",
+      "stichpunkte": [
+        {
+          "id": "AP1-8-2-1",
+          "titel": "Bausteine eines Programms: Variablen, Datentypen, Datenstrukturen, Kontrollstrukturen, Prozeduren und Funktionen",
+          "ziel": "Die Begriffe kennen, die du zum Lesen von Code brauchst, und sie im Code erkennen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.06.3"
+            },
+            {
+              "id": "AP1.04.06.4"
+            },
+            {
+              "id": "AP1.04.06.5"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-8-2-1-K1",
+              "text": "Du kannst erklären, was eine Variable ist, und die Datentypen für Ganzzahl, Kommazahl, Wahrheitswert und Text unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.3"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K2",
+              "text": "Du kannst erklären, was ein Array ist und wie über den Index auf ein Element zugegriffen wird.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.3"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K3",
+              "text": "Du kannst Verzweigung und Schleife im Code unterscheiden, auch eine Mehrfachauswahl.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.4"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K4",
+              "text": "Du kannst erklären, was eine Funktion ist: ein benannter Codeblock mit Parametern und Rückgabewert.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.5"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K5",
+              "text": "Du kannst zählergesteuerte, kopfgesteuerte und fußgesteuerte Schleifen unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.4"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K6",
+              "text": "Du kannst Prozedur (ohne Rückgabewert) und Funktion (mit Rückgabewert) unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.5"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Weitere Datenstrukturen: Liste, Stapel (Stack), Warteschlange (Queue), Hash-Tabelle.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Parameterübergabe als Wert oder als Verweis (Call by Value, Call by Reference).",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-8-2-2",
+          "titel": "Pseudocode: Kontrollstrukturen abbilden",
+          "ziel": "Pseudocode lesen, kurze Abläufe mit Verzweigung und Schleife in Pseudocode schreiben und fehlerhafte Zeilen berichtigen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.1"
+            },
+            {
+              "id": "AP1.04.06.4"
+            },
+            {
+              "id": "AP1.04.06.5"
+            },
+            {
+              "id": "AP1.04.07.4"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A4-d",
+            "2022H-A4-b"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-2-2-K1",
+              "text": "Du kannst Pseudocode mit Verzweigungen und Schleifen lesen, auch wenn sie mehrfach verschachtelt sind.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.07.1"
+              ]
+            },
+            {
+              "id": "AP1-8-2-2-K2",
+              "text": "Du kannst eine einfache Verzweigung und eine Schleife in Pseudocode schreiben und die Struktur durch Einrücken sichtbar machen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.1"
+              ]
+            },
+            {
+              "id": "AP1-8-2-2-K3",
+              "text": "Du kannst eine fehlerhafte Zeile in Pseudocode berichtigen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.4"
+              ]
+            },
+            {
+              "id": "AP1-8-2-2-K4",
+              "text": "Du kannst einen kurzen, in Worten beschriebenen Ablauf in Pseudocode übertragen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.1"
+              ]
+            },
+            {
+              "id": "AP1-8-2-2-K5",
+              "text": "Du kannst vorgegebene Anweisungen in die richtige Reihenfolge und Verschachtelung bringen, zum Beispiel zwei ineinander geschachtelte Schleifen über Listen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022F-A4-d"
+              ],
+              "vorgegeben": "Variablen, Felder und Funktionen"
+            },
+            {
+              "id": "AP1-8-2-2-K6",
+              "text": "Du kannst eine Funktion mit einer Schleife und einer zusammengesetzten Abbruchbedingung ergänzen, zum Beispiel wiederholen, solange die Stückzahl nicht erreicht und kein Notaus ausgelöst ist.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022H-A4-b"
+              ],
+              "vorgegeben": "Funktionen der Schnittstelle"
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Struktogramm und Programmablaufplan gehören nicht mehr dazu.",
+              "begruendung": "B3: in der Vorbemerkung des Katalogs gestrichen; AP1.04.07.1 nennt die Abbildung mit Pseudocode.",
+              "katalog": [
+                "AP1.04.07.1"
+              ]
+            },
+            {
+              "text": "Eigene Algorithmen zu entwerfen gehört nicht dazu.",
+              "begruendung": "AP1.04.07.1 verlangt, Kontrollstrukturen abzubilden; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16).",
+              "katalog": [
+                "AP1.04.07.1",
+                "AP2b.04.16"
+              ]
+            }
+          ],
+          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird."
+        },
+        {
+          "id": "AP1-8-2-3",
+          "titel": "Schreibtischtest",
+          "ziel": "Einen gegebenen Code von Hand mit Eingabewerten durchgehen, das Ergebnis ermitteln und begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.5"
+            },
+            {
+              "id": "AP1.04.06.3"
+            },
+            {
+              "id": "AP1.04.06.4"
+            }
+          ],
+          "teilaufgaben": [
+            "2024H-A2-e",
+            "2025F-A3-d",
+            "2025F-A3-e",
+            "2026F-A4-bb",
+            "2026H-A3-ba"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-2-3-K1",
+              "text": "Du kannst einen Code Zeile für Zeile mit gegebenen Werten durchgehen und die Werte der Variablen in einer Tabelle mitführen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.5",
+                "beleg:2026H-A3-ba"
+              ]
+            },
+            {
+              "id": "AP1-8-2-3-K2",
+              "text": "Du kannst das Ergebnis eines Schreibtischtests mit dem Durchlauf der Schleifen und Verzweigungen begründen.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A2-e"
+              ]
+            },
+            {
+              "id": "AP1-8-2-3-K3",
+              "text": "Du kannst Rechnungen im Code richtig ausführen, auch Prozentwerte und die Division ganzer Zahlen ohne Rest.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025F-A3-d",
+                "beleg:2026F-A4-bb"
+              ]
+            },
+            {
+              "id": "AP1-8-2-3-K4",
+              "text": "Du kannst bei verschachtelten Verzweigungen den Zweig bestimmen, der durchlaufen wird.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025F-A3-e"
+              ]
+            },
+            {
+              "id": "AP1-8-2-3-K5",
+              "text": "Du kannst ein Ergebnis wie verlangt angeben, zum Beispiel mit zwei Nachkommastellen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2025F-A3-d"
+              ]
+            },
+            {
+              "id": "AP1-8-2-3-K6",
+              "text": "Du kannst den Rückgabewert einer Funktion mit verschachtelten Schleifen über ein zweidimensionales Array ermitteln.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A2-e"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-8-2-4",
+          "titel": "Fehler im Quellcode finden: Debugging, formale und inhaltliche Fehler",
+          "ziel": "Fehler in einem gegebenen Code oder Skript finden, ihre Art benennen, die Folge erläutern und die Zeile berichtigen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.4"
+            },
+            {
+              "id": "AP1.04.06.9"
+            },
+            {
+              "id": "AP1.04.06.8"
+            },
+            {
+              "id": "AP1.02.03.4",
+              "anteil": "englische Befehlsbeschreibung"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A2-e",
+            "2026H-A3-bb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-2-4-K1",
+              "text": "Du kannst formale Fehler (Verstoß gegen die Regeln der Sprache, das Programm startet nicht) und inhaltliche Fehler (das Programm läuft, liefert aber ein falsches Ergebnis) unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.9"
+              ]
+            },
+            {
+              "id": "AP1-8-2-4-K2",
+              "text": "Du kannst fehlerhafte Zeilen in einem kurzen Skript berichtigen, zum Beispiel einen vertauschten Vergleichsoperator oder einen falschen Faktor in einer Prozentrechnung.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2021H-A2-e"
+              ],
+              "vorgegeben": "englische Anleitung zu den Vergleichsoperatoren"
+            },
+            {
+              "id": "AP1-8-2-4-K3",
+              "text": "Du kannst erläutern, welches Problem bestimmte Eingabedaten auslösen, zum Beispiel ein Zugriff über das Ende eines Arrays hinaus.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A3-bb"
+              ]
+            },
+            {
+              "id": "AP1-8-2-4-K4",
+              "text": "Du kannst erklären, was Debugging ist.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.9"
+              ]
+            },
+            {
+              "id": "AP1-8-2-4-K5",
+              "text": "Du kannst typische Fehlerquellen nennen: falsche Schleifengrenze, vertauschter Vergleichsoperator, nicht initialisierte Variable, Division durch null.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.04.07.4"
+              ]
+            }
+          ],
+          "grenzen": []
+        }
+      ]
+    },
+    {
+      "id": "AP1-8-3",
+      "titel": "UML-Diagramme",
+      "satz": "Anwendungsfall-, Klassen- und Aktivitätsdiagramm lesen und nach Vorgaben ergänzen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-8-3-1",
+          "titel": "Anwendungsfalldiagramm",
+          "ziel": "Ein begonnenes Anwendungsfalldiagramm nach Textvorgaben mit Akteuren, Anwendungsfällen und Beziehungen erweitern.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.2"
+            },
+            {
+              "id": "ANH.uml-anwendungsfalldiagramm"
+            }
+          ],
+          "teilaufgaben": [
+            "2023H-A1-a",
+            "2024H-A2-d",
+            "2026H-A1-a"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-3-1-K1",
+              "text": "Du kannst Akteure und Anwendungsfälle aus einem Text in ein begonnenes Anwendungsfalldiagramm eintragen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2023H-A1-a",
+                "beleg:2024H-A2-d",
+                "beleg:2026H-A1-a"
+              ]
+            },
+            {
+              "id": "AP1-8-3-1-K2",
+              "text": "Du kannst einen Akteur mit einem Anwendungsfall durch eine Assoziation verbinden.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024H-A2-d"
+              ]
+            },
+            {
+              "id": "AP1-8-3-1-K3",
+              "text": "Du kannst eine Generalisierung zwischen Akteuren zeichnen: Der speziellere Akteur kann alles, was der allgemeine kann.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A2-d",
+                "beleg:2026H-A1-a"
+              ]
+            },
+            {
+              "id": "AP1-8-3-1-K4",
+              "text": "Du kannst eine include-Beziehung einsetzen, wenn ein Anwendungsfall immer einen anderen einschließt.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A2-d",
+                "beleg:2026H-A1-a"
+              ]
+            },
+            {
+              "id": "AP1-8-3-1-K5",
+              "text": "Du kannst eine extend-Beziehung mit der richtigen Pfeilrichtung einsetzen, wenn ein Anwendungsfall einen anderen nur unter einer Bedingung erweitert.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:ANH.uml-anwendungsfalldiagramm"
+              ]
+            },
+            {
+              "id": "AP1-8-3-1-K6",
+              "text": "Du kannst die Systemgrenze als Rahmen um die Anwendungsfälle zeichnen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:ANH.uml-anwendungsfalldiagramm"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-8-3-2",
+          "titel": "Klassendiagramm",
+          "ziel": "Klassen mit Attributen, Datentypen, Methoden und Sichtbarkeiten im Klassendiagramm darstellen und aus einem Text ableiten.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.2"
+            },
+            {
+              "id": "AP1.04.06.6"
+            },
+            {
+              "id": "ANH.uml-klassendiagramm"
+            }
+          ],
+          "teilaufgaben": [
+            "2023F-A4-c",
+            "2026F-A4-ba"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-3-2-K1",
+              "text": "Du kannst eine Klasse als Kasten mit drei Bereichen zeichnen: Name, Attribute, Methoden.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A4-ba"
+              ]
+            },
+            {
+              "id": "AP1-8-3-2-K2",
+              "text": "Du kannst Attribute in der Form „Sichtbarkeit Name : Typ“ und Methoden mit Parametern und Rückgabetyp notieren.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A4-ba"
+              ]
+            },
+            {
+              "id": "AP1-8-3-2-K3",
+              "text": "Du kannst die Sichtbarkeitszeichen + für public und - für private verwenden.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A4-ba"
+              ]
+            },
+            {
+              "id": "AP1-8-3-2-K4",
+              "text": "Du kannst eine Assoziation zwischen zwei Klassen mit Multiplizitäten wie 1 und * lesen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.uml-klassendiagramm"
+              ]
+            },
+            {
+              "id": "AP1-8-3-2-K5",
+              "text": "Du kannst aus einer Textbeschreibung Klassen mit ihren Attributen und Methoden ableiten.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2023F-A4-c"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Klassenhierarchien mit Oberklasse und Vererbungspfeil, abstrakte Klassen und Schnittstellen gehören nicht dazu.",
+              "begruendung": "AP1.04.06.6 nennt Klassen, Attribute, Objekte, Methoden und Sichtbarkeit; Vererbung ist aus AP1 gestrichen (B3) und steht im AP2-Katalog (AP2b.04.17.2).",
+              "katalog": [
+                "AP1.04.06.6",
+                "AP2b.04.17.2"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Aggregation und Komposition im Klassendiagramm.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Die Notationsübersicht im Katalog-Anhang zeigt sie, AP1.04.06.6 und die AP1-Prüfungen verlangen sie nicht. Einordnung hängt an P24 (Anhang-Notationen ohne Katalogpunkt im AP1-Teil), solange offen: Kür."
+            }
+          ],
+          "hinweis": "2023F-A4-c: der Vererbungsanteil zählt nach Z4 nicht, belegt ist das Ableiten der Klassen. Die Musterlösung zu 2026F-A4-ba fehlt; K1–K3 folgen der Aufgabenstellung."
+        },
+        {
+          "id": "AP1-8-3-3",
+          "titel": "Aktivitätsdiagramm",
+          "ziel": "Einen beschriebenen Ablauf mit Entscheidungen und parallelen Zweigen in ein Aktivitätsdiagramm übertragen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.2"
+            },
+            {
+              "id": "ANH.uml-aktivitaetsdiagramm"
+            }
+          ],
+          "teilaufgaben": [
+            "2025H-A2-ba"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-3-3-K1",
+              "text": "Du kannst Startknoten, Aktion, Entscheidung mit Bedingungen in eckigen Klammern, Zusammenführung und Endknoten zeichnen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A2-ba"
+              ],
+              "vorgegeben": "Notationshilfe"
+            },
+            {
+              "id": "AP1-8-3-3-K2",
+              "text": "Du kannst einen in Worten beschriebenen Ablauf mit Verzweigung in ein Aktivitätsdiagramm übertragen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A2-ba"
+              ],
+              "vorgegeben": "Notationshilfe und Vorlage"
+            },
+            {
+              "id": "AP1-8-3-3-K3",
+              "text": "Du kannst eine Wiederholung als Rücksprung von einer Entscheidung darstellen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.2"
+              ]
+            },
+            {
+              "id": "AP1-8-3-3-K4",
+              "text": "Du kannst parallele Abläufe mit Teilung und Synchronisation (Balken) darstellen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A2-ba"
+              ]
+            },
+            {
+              "id": "AP1-8-3-3-K5",
+              "text": "Du kannst Schwimmbahnen verwenden, um Aktionen verschiedenen Beteiligten zuzuordnen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:ANH.uml-aktivitaetsdiagramm"
+              ]
+            },
+            {
+              "id": "AP1-8-3-3-K6",
+              "text": "Du kannst Endknoten (beendet alle Abläufe) und Ablaufende (beendet nur den eigenen Zweig) unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.uml-aktivitaetsdiagramm"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Sequenz- und Zustandsdiagramm gehören nicht dazu.",
+              "begruendung": "AP1.04.07.2 nennt Anwendungsfall-, Klassen- und Aktivitätsdiagramm; Sequenz- und Zustandsdiagramm stehen im AP2-Katalog (AP2b.03.02.7, AP2b.03.02.8).",
+              "katalog": [
+                "AP1.04.07.2",
+                "AP2b.03.02.7",
+                "AP2b.03.02.8"
+              ]
+            }
+          ],
+          "hinweis": "Die Musterlösung zu 2025H-A2-ba fehlt; K1, K2 und K4 folgen der Aufgabenstellung (gleichzeitig bezahlen und archivieren)."
+        }
+      ]
+    },
+    {
+      "id": "AP1-8-4",
+      "titel": "Daten, Masken und Abläufe modellieren",
+      "satz": "ER-Modelle und Tabellen, Bildschirmmasken und Prozessdarstellungen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-8-4-1",
+          "titel": "Einfache ER-Modelle",
+          "ziel": "Ein begonnenes ER-Modell nach einer Textbeschreibung um Entitäten, Attribute, Schlüssel, Beziehungen und Kardinalitäten ergänzen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.08.1"
+            }
+          ],
+          "teilaufgaben": [
+            "2022H-A4-c",
+            "2023H-A4-ca",
+            "2024H-A4-b",
+            "2026F-A4-c",
+            "2026H-A3-ca"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-4-1-K1",
+              "text": "Du kannst Entitäten als Rechtecke, Beziehungen als Rauten und Attribute als Ellipsen zeichnen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026H-A3-ca"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K2",
+              "text": "Du kannst aus einer Textbeschreibung Entitäten, ihre Attribute und die Beziehungen zwischen ihnen ableiten.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A4-c",
+                "beleg:2026H-A3-ca"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K3",
+              "text": "Du kannst im ER-Diagramm für jede Entität den Primärschlüssel ergänzen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A4-c",
+                "beleg:2026H-A3-ca"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K4",
+              "text": "Du kannst die Kardinalitäten 1:1, 1:n und m:n aus dem Text bestimmen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022H-A4-c",
+                "beleg:2023H-A4-ca"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K5",
+              "text": "Du kannst ein ER-Modell so ergänzen, dass jedes Attribut bei der richtigen Entität steht und keine Angabe doppelt gespeichert wird.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A4-b"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K6",
+              "text": "Du kannst ein bestehendes ER-Modell um eine Entität mit ihrer Beziehung erweitern.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A4-b"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K7",
+              "text": "Du kannst Attribute, die erst durch die Beziehung entstehen, an die Beziehung zeichnen, zum Beispiel Menge und Verladezeit zwischen Artikel und LKW.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A4-c"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Normalisierung und das Überführen in Tabellen gehören nicht dazu.",
+              "begruendung": "AP1.04.08.1 nennt einfache ER-Modelle; Normalisieren steht im AP2-Katalog (AP2a.02.03.4, AP2b.04.11).",
+              "katalog": [
+                "AP1.04.08.1",
+                "AP2a.02.03.4",
+                "AP2b.04.11"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Sonderformen der Chen-Notation: schwache Entität, mehrwertiges und abgeleitetes Attribut, Teilnahmegrad.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ],
+          "hinweis": "Die Musterlösung zu 2026F-A4-c fehlt; K7 folgt der Aufgabenstellung."
+        },
+        {
+          "id": "AP1-8-4-2",
+          "titel": "Redundanz erkennen und Datentypen wählen",
+          "ziel": "Redundanz und ihre Folgen erklären und für Attribute passende Datentypen begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.08"
+            },
+            {
+              "id": "AP1.04.06.3"
+            }
+          ],
+          "teilaufgaben": [
+            "2025F-A4-fa",
+            "2025F-A4-fb",
+            "2026H-A3-cb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-4-2-K1",
+              "text": "Du kannst Redundanz erklären: Dieselbe Information ist mehrfach gespeichert.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A4-fa"
+              ]
+            },
+            {
+              "id": "AP1-8-4-2-K2",
+              "text": "Du kannst ein Problem beschreiben, das durch Redundanz entsteht: Wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A4-fb"
+              ]
+            },
+            {
+              "id": "AP1-8-4-2-K3",
+              "text": "Du kannst für ein Attribut einen passenden Datentyp begründen, zum Beispiel Datum, Ganzzahl oder Text.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2026H-A3-cb"
+              ]
+            },
+            {
+              "id": "AP1-8-4-2-K4",
+              "text": "Du kannst begründen, warum eine Postleitzahl als Text gespeichert wird: Führende Nullen bleiben erhalten, und gerechnet wird damit nicht.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2026H-A3-cb"
+              ]
+            },
+            {
+              "id": "AP1-8-4-2-K5",
+              "text": "Du kannst Einfüge-, Änderungs- und Löschanomalie unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025F-A4-fb"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Datenbankabfragen mit SQL gehören nicht dazu.",
+              "begruendung": "B3: SQL ist laut Vorbemerkung nur noch AP2 (AP2b.04.22); AP1.04.08 verlangt Grundlagen relationaler Datenbanken.",
+              "katalog": [
+                "AP1.04.08",
+                "AP2b.04.22"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-8-4-5",
+          "titel": "Relationale Tabellen: Primär- und Fremdschlüssel",
+          "ziel": "Die Aufgabe von Primär- und Fremdschlüssel beschreiben, den Nutzen verknüpfter Tabellen erklären und die Phasen des Datenbankentwurfs ordnen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.08"
+            },
+            {
+              "id": "AP1.04.08.1"
+            }
+          ],
+          "teilaufgaben": [
+            "2025H-A4-aa",
+            "2025H-A4-ab",
+            "2025H-A4-ac",
+            "2023H-A4-ab"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-8-4-5-K1",
+              "text": "Du kannst die Funktion eines Primärschlüssels beschreiben: Er kennzeichnet jeden Datensatz einer Tabelle eindeutig.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025H-A4-aa"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K2",
+              "text": "Du kannst den Zweck eines Fremdschlüssels beschreiben: Er verweist auf den Primärschlüssel einer anderen Tabelle und verbindet so die Tabellen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025H-A4-ab"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K3",
+              "text": "Du kannst den Vorteil verknüpfter Tabellen beschreiben: Jede Information wird nur einmal gespeichert und bleibt dadurch widerspruchsfrei.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2025H-A4-ac"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K4",
+              "text": "Du kannst die Phasen des Datenbankentwurfs in die richtige Reihenfolge bringen: Anforderungsanalyse, konzeptioneller Entwurf, logischer Entwurf, Verteilung im Netz, physischer Entwurf, Test, Anwendung und Wartung.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2023H-A4-ab"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K5",
+              "text": "Du kannst Tabelle, Datensatz und Attribut einer relationalen Datenbank unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.08"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Referentielle Integrität mit Lösch- und Aktualisierungsweitergabe gehört nicht dazu.",
+              "begruendung": "AP1.04.08 verlangt Grundlagen relationaler Datenbanken; referentielle Integrität, Aktualisierungs- und Löschweitergabe stehen im AP2-Katalog (AP2a.02.03.5).",
+              "katalog": [
+                "AP1.04.08",
+                "AP2a.02.03.5"
+              ]
+            }
+          ],
+          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen."
+        },
+        {
+          "id": "AP1-8-4-3",
+          "titel": "Bildschirmmasken entwerfen: Softwareergonomie, Corporate Identity, Barrierefreiheit",
+          "ziel": "Eine einfache Bildschirmmaske skizzieren und dabei Softwareergonomie, Corporate Identity und Barrierefreiheit beachten.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.07.3"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-8-4-3-K1",
+              "text": "Du kannst eine einfache Bildschirmmaske mit Beschriftungen, Eingabefeldern, Auswahlfeldern und Schaltflächen skizzieren.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.3"
+              ]
+            },
+            {
+              "id": "AP1-8-4-3-K2",
+              "text": "Du kannst Regeln der Softwareergonomie anwenden: Zusammengehöriges gruppieren, einheitliche Anordnung, verständliche Beschriftung, klare Fehlermeldungen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.07.3"
+              ]
+            },
+            {
+              "id": "AP1-8-4-3-K3",
+              "text": "Du kannst erklären, was Corporate Identity für eine Maske bedeutet: Logo, Farben und Schrift des Unternehmens einheitlich verwenden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.07.3"
+              ]
+            },
+            {
+              "id": "AP1-8-4-3-K4",
+              "text": "Du kannst Anforderungen der Barrierefreiheit nennen: ausreichender Kontrast, skalierbare Schrift, Bedienung mit der Tastatur, Information nicht allein über Farbe.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.04.07.3"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Klickbare Prototypen (Mockups) zu erstellen gehört nicht dazu.",
+              "begruendung": "AP1.04.07.3 nennt den Entwurf der Masken; Prototypen (Mockups) erstellen steht im AP2-Katalog (AP2b.04.15).",
+              "katalog": [
+                "AP1.04.07.3",
+                "AP2b.04.15"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Richtlinien zur Barrierefreiheit wie WCAG und BITV 2.0.",
+              "quellen": [
+                "lernzettel:fi-de-2025",
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-8-4-4",
+          "titel": "Prozessdarstellungen lesen: EPK und BPMN",
+          "ziel": "Die Sinnbilder von EPK und BPM-Notation aus dem Katalog-Anhang benennen und einen dargestellten Ablauf wiedergeben.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "ANH.notationen"
+            },
+            {
+              "id": "ANH.bpm-notation-business-process-modeling-notation"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-8-4-4-K1",
+              "text": "Du kannst die Sinnbilder der EPK aus dem Anhang benennen: Ereignis, Funktion, Organisationseinheit, Objekt und die Konnektoren Und, Exklusives Oder, Offenes Oder.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:ANH.notationen"
+              ]
+            },
+            {
+              "id": "AP1-8-4-4-K2",
+              "text": "Du kannst die Grundregel der EPK erklären: Ereignisse und Funktionen wechseln sich ab; der Ablauf beginnt und endet mit einem Ereignis.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.notationen"
+              ]
+            },
+            {
+              "id": "AP1-8-4-4-K3",
+              "text": "Du kannst die Sinnbilder der BPM-Notation aus dem Anhang benennen: Aufgabe, Sequenzfluss, Nachrichtenfluss, Start-, Zwischen- und Endereignis, exklusives, inklusives und paralleles Gateway, Pool mit Lanes.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:ANH.bpm-notation-business-process-modeling-notation"
+              ]
+            },
+            {
+              "id": "AP1-8-4-4-K4",
+              "text": "Du kannst einen dargestellten Ablauf in Worten wiedergeben und sagen, wer welchen Schritt ausführt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.notationen",
+                "katalog:ANH.bpm-notation-business-process-modeling-notation"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Unverändert übernommen. Ob Anhang-Notationen ohne Katalogpunkt im AP1-Teil Pflicht oder Kür sind, ist offen (Parkplatz P24); bis dahin bleibt der Stand des alten Plans."
+        }
+      ]
+    }
+  ],
+  "alt_neu": {
+    "koennen": [
+      {
+        "alt": "AP1-8-1-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-1-1-K1",
+        "grund": "Beleg 2024H-A2-c"
+      },
+      {
+        "alt": "AP1-8-1-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-1-1-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-1-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-1-1-K4",
+        "grund": "Katalog nennt virtuelle Maschinen (AP1.03.01.3.4)"
+      },
+      {
+        "alt": "AP1-8-1-1-K5",
+        "status": "übernommen",
+        "neu": "AP1-8-1-1-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-1-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-1-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-1-2-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-1-2-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-8-1-2-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-1-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-1-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-1-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-1-3-K3",
+        "grund": "Beleg 2025F-A3-b"
+      },
+      {
+        "alt": "AP1-8-1-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-1-3-K4",
+        "grund": "Beleg 2025F-A3-c"
+      },
+      {
+        "alt": "AP1-8-1-3-K5",
+        "status": "angepasst",
+        "neu": "AP1-8-1-3-K5",
+        "grund": "ein Operator (F1): begründen wie in 2024H-A2-b"
+      },
+      {
+        "alt": "AP1-8-2-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-2-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-2-1-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-1-K3",
+        "status": "angepasst",
+        "neu": "AP1-8-2-1-K3",
+        "grund": "ein Operator (F1): unterscheiden; Mehrfachauswahl ergänzt"
+      },
+      {
+        "alt": "AP1-8-2-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-2-1-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-1-K5",
+        "status": "übernommen",
+        "neu": "AP1-8-2-1-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-1-K6",
+        "status": "übernommen",
+        "neu": "AP1-8-2-1-K6",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-2-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-2-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-2-2-K3",
+        "grund": "Herkunft jetzt Katalog AP1.04.07.4 (Forenberichte sind kein Beleg, B2)"
+      },
+      {
+        "alt": "AP1-8-2-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-2-2-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-2-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-3-K2",
+        "status": "angepasst",
+        "neu": "AP1-8-2-3-K2",
+        "grund": "ein Operator (F1): begründen wie in 2024H-A2-e; Ermitteln steht in K6"
+      },
+      {
+        "alt": "AP1-8-2-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-2-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-2-3-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-3-K5",
+        "status": "übernommen",
+        "neu": "AP1-8-2-3-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-2-4-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-4-K2",
+        "status": "angepasst",
+        "neu": "AP1-8-2-4-K2",
+        "grund": "ein Operator (F1): berichtigen wie in 2021H-A2-e"
+      },
+      {
+        "alt": "AP1-8-2-4-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-2-4-K3",
+        "grund": "Beleg 2026H-A3-bb"
+      },
+      {
+        "alt": "AP1-8-2-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-2-4-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-2-4-K5",
+        "status": "angepasst",
+        "neu": "AP1-8-2-4-K5",
+        "grund": "„Du kannst … nennen“ statt „Du kennst“ (F1)"
+      },
+      {
+        "alt": "AP1-8-3-1-K1",
+        "status": "angepasst",
+        "neu": "AP1-8-3-1-K1",
+        "grund": "ein Operator (F1): eintragen"
+      },
+      {
+        "alt": "AP1-8-3-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-3-1-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-3-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-3-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-3-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-3-1-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-3-1-K5",
+        "status": "angepasst",
+        "neu": "AP1-8-3-1-K5",
+        "grund": "ein Operator (F1): einsetzen, Pfeilrichtung als Teil davon"
+      },
+      {
+        "alt": "AP1-8-3-1-K6",
+        "status": "übernommen",
+        "neu": "AP1-8-3-1-K6",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-3-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-3-2-K1",
+        "grund": "jetzt belegt (2026F-A4-ba)"
+      },
+      {
+        "alt": "AP1-8-3-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-3-2-K2",
+        "grund": "jetzt belegt (2026F-A4-ba)"
+      },
+      {
+        "alt": "AP1-8-3-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-3-2-K3",
+        "grund": "jetzt belegt (2026F-A4-ba)"
+      },
+      {
+        "alt": "AP1-8-3-2-K4",
+        "status": "angepasst",
+        "neu": "AP1-8-3-2-K4",
+        "grund": "ein Operator (F1): lesen; Herkunft Katalog-Anhang"
+      },
+      {
+        "alt": "AP1-8-3-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-8-3-2-K5",
+        "grund": "Beleg 2023F-A4-c"
+      },
+      {
+        "alt": "AP1-8-3-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-3-3-K1",
+        "grund": "jetzt belegt (2025H-A2-ba)"
+      },
+      {
+        "alt": "AP1-8-3-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-3-3-K2",
+        "grund": "jetzt belegt (2025H-A2-ba)"
+      },
+      {
+        "alt": "AP1-8-3-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-3-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-3-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-3-3-K4",
+        "grund": "jetzt belegt (2025H-A2-ba)"
+      },
+      {
+        "alt": "AP1-8-3-3-K5",
+        "status": "übernommen",
+        "neu": "AP1-8-3-3-K5",
+        "grund": "in der Notationshilfe des Katalog-Anhangs"
+      },
+      {
+        "alt": "AP1-8-4-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-4-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-4-1-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-1-K3",
+        "status": "angepasst",
+        "neu": "AP1-8-4-1-K3",
+        "grund": "ein Operator (F1): ergänzen wie in 2026F-A4-c und 2026H-A3-ca"
+      },
+      {
+        "alt": "AP1-8-4-1-K4",
+        "status": "angepasst",
+        "neu": "AP1-8-4-1-K4",
+        "grund": "ein Operator (F1): bestimmen"
+      },
+      {
+        "alt": "AP1-8-4-1-K5",
+        "status": "angepasst",
+        "neu": "AP1-8-4-1-K5",
+        "grund": "Operator ergänzen wie in 2024H-A4-b (Stufe 3)"
+      },
+      {
+        "alt": "AP1-8-4-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-4-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-4-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-2-K3",
+        "status": "angepasst",
+        "neu": "AP1-8-4-2-K3",
+        "grund": "ein Operator (F1): begründen wie in 2026H-A3-cb"
+      },
+      {
+        "alt": "AP1-8-4-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-4-2-K4",
+        "grund": "jetzt belegt (Musterlösung 2026H-A3-cb)"
+      },
+      {
+        "alt": "AP1-8-4-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-4-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-8-4-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-4-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-4-3-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-8-4-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-8-4-4-K1",
+        "grund": "P24 offen"
+      },
+      {
+        "alt": "AP1-8-4-4-K2",
+        "status": "angepasst",
+        "neu": "AP1-8-4-4-K2",
+        "grund": "„Du kannst … erklären“ statt „Du kennst“ (F1); P24 offen"
+      },
+      {
+        "alt": "AP1-8-4-4-K3",
+        "status": "übernommen",
+        "neu": "AP1-8-4-4-K3",
+        "grund": "P24 offen"
+      },
+      {
+        "alt": "AP1-8-4-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-8-4-4-K4",
+        "grund": "P24 offen"
+      }
+    ],
+    "rahmen": [
+      {
+        "alt": "AP1-8-1-2",
+        "satz": "Vererbung, Polymorphie und Interfaces nennt der AP1-Katalog nicht.",
+        "status": "angepasst",
+        "grund": "Grenze jetzt mit Katalogstellen AP2b.04.17.1–.3 und B3 begründet."
+      },
+      {
+        "alt": "AP1-8-1-3",
+        "satz": "Skripte selbst zu schreiben verlangt der AP1-Katalog nicht.",
+        "status": "angepasst",
+        "grund": "Grenze mit AP1.04.06.8 und AP2b.04.16; Zeilen berichtigen gehört dazu (2021H-A2-e)."
+      },
+      {
+        "alt": "AP1-8-2-2",
+        "satz": "ganze Algorithmen zu entwerfen war in den ausgewerteten AP1-Prüfungen nicht verlangt.",
+        "status": "angepasst",
+        "grund": "E6: fehlende Belege sind keine Grenze; Grenze jetzt mit AP2b.04.16 begründet."
+      },
+      {
+        "alt": "AP1-8-2-2",
+        "satz": "Für Herbst 2025 berichten Prüflinge, dass Fehler in Pseudocode zu finden und zu korrigieren waren.",
+        "status": "gestrichen",
+        "grund": "Forenberichte sind kein Beleg (B2); K3 ist durch AP1.04.07.4 gedeckt."
+      },
+      {
+        "alt": "AP1-8-3-1",
+        "satz": "Ein vollständiges Diagramm aus dem Nichts zu erstellen war in den ausgewerteten AP1-Prüfungen nicht verlangt.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze."
+      },
+      {
+        "alt": "AP1-8-4-1",
+        "satz": "Normalisierung und das Überführen in Tabellen nennt der AP1-Katalog nicht.",
+        "status": "angepasst",
+        "grund": "Grenze jetzt mit AP2a.02.03.4 und AP2b.04.11 begründet."
+      },
+      {
+        "alt": "AP1-8-4-2",
+        "satz": "Datenbankabfragen gehören nicht mehr zu AP1.",
+        "status": "angepasst",
+        "grund": "Grenze mit B3 (SQL) und AP2b.04.22 begründet."
+      },
+      {
+        "alt": "AP1-8-4-3",
+        "satz": "In den ausgewerteten AP1-Prüfungen gab es dazu keine Aufgabe.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze."
+      },
+      {
+        "alt": "AP1-8-4-4",
+        "satz": "in keiner ausgewerteten Prüfung kamen sie vor.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze; Einordnung offen (P24)."
+      }
+    ]
+  },
+  "meta": {
+    "schicht": "3+4",
+    "regelwerk_version": "1.2",
+    "stand": "2026-10-13",
+    "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neuer Stichpunkt AP1-8-4-5 (Primär- und Fremdschlüssel, Belege 2025H-A4-a und 2023H-A4-ab). Offene Frage zu den Anhang-Notationen EPK/BPMN und Aggregation/Komposition auf dem Parkplatz (P24).",
+    "kerntest": {
+      "stand": "2026-10-13",
+      "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+      "ergebnis": "Alle 32 Teilaufgaben des Ordners gegen ihre Musterlösung gelesen; Lücken beim Bau geschlossen (Linker und IDE-Wahl über AP1.03.01.3.4/AP1.04.03.3, Struktogramm-Aufgaben 2022F-A4-d und 2022H-A4-b als Pseudocode-Logik, 2D-Array 2024H-A2-e, englische Anleitung 2021H-A2-e, Beziehungsattribute 2026F-A4-c, Anomalien 2025F-A4-fb, Schlüssel 2025H-A4-a, Phasen des Datenbankentwurfs 2023H-A4-ab). Ohne Musterlösung (nur Aufgabe geprüft): 2025H-A2-ba, 2025H-A4-aa bis -ac, 2026F-A4-a, 2026F-A4-ba, 2026F-A4-c."
+    },
+    "hinweisquellen": {
+      "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitt Softwareentwicklung",
+      "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026), Schlagworte Pseudocode, Schreibtischtest, ERM (Herbst 2025), Aktivitätsdiagramm, Klassendiagramm, Prozessanalyse",
+      "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 3.4 und 8.1–8.12",
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten"
+    },
+    "hinweisabgleich": {
+      "stand": "2026-10-13",
+      "umfang": "ganzer Ordner",
+      "vorgehen": "Jedes in den Hinweisquellen genannte Thema des Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als „Ordner“ (P23).",
+      "themen": [
+        {
+          "thema": "Compiler, Linker, Interpreter",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-1-1-K1",
+            "AP1-8-1-1-K2"
+          ]
+        },
+        {
+          "thema": "Virtuelle Maschine, Bytecode (Hybrid-Modell)",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-1-1-K4"
+          ]
+        },
+        {
+          "thema": "Sprachhöhen",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-1"
+          ]
+        },
+        {
+          "thema": "Programmierparadigmen",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-1-2-K1"
+          ],
+          "notiz": "prozedural und objektorientiert (AP1.04.06.2); weitere Paradigmen nennt AP2b.04.06"
+        },
+        {
+          "thema": "Klassen, Objekte, Attribute, Methoden, Sichtbarkeit",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-1-2-K2",
+            "AP1-8-1-2-K3",
+            "AP1-8-1-2-K4"
+          ]
+        },
+        {
+          "thema": "Vererbung, Polymorphie, Kapselung",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-8-1-2",
+            "AP1-8-3-2"
+          ],
+          "notiz": "B3; AP2b.04.17.1–.3"
+        },
+        {
+          "thema": "Bibliotheken und Frameworks",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-1-3-K2"
+          ]
+        },
+        {
+          "thema": "Skriptsprachen, Shell-Skript",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-1-3-K1"
+          ]
+        },
+        {
+          "thema": "Variablen, Datentypen, Datenstrukturen (Array)",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-2-1-K1",
+            "AP1-8-2-1-K2"
+          ]
+        },
+        {
+          "thema": "Liste, Stack, Queue, Hash-Tabelle",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-1"
+          ]
+        },
+        {
+          "thema": "Kontrollstrukturen: Verzweigung, Mehrfachauswahl, Schleifenarten",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-2-1-K3",
+            "AP1-8-2-1-K5"
+          ]
+        },
+        {
+          "thema": "Prozeduren und Funktionen, Parameter, Rückgabewert",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-2-1-K4",
+            "AP1-8-2-1-K6"
+          ]
+        },
+        {
+          "thema": "Call by Value, Call by Reference",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-1"
+          ]
+        },
+        {
+          "thema": "Pseudocode",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-2-2-K1",
+            "AP1-8-2-2-K2"
+          ]
+        },
+        {
+          "thema": "Schreibtischtest, Code erklären",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-2-3-K1",
+            "AP1-8-2-3-K2"
+          ]
+        },
+        {
+          "thema": "Fehlersuche, Debugging",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-2-4-K1",
+            "AP1-8-2-4-K4"
+          ]
+        },
+        {
+          "thema": "Software-Testarten (Black-Box, White-Box, Modul-, Integrations-, System-, Abnahmetest)",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-1"
+          ],
+          "notiz": "dort als Grenze (AP2a.03.01.2)"
+        },
+        {
+          "thema": "UML-Anwendungsfalldiagramm",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-3-1-K1",
+            "AP1-8-3-1-K4"
+          ]
+        },
+        {
+          "thema": "UML-Klassendiagramm",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-3-2-K1",
+            "AP1-8-3-2-K2"
+          ]
+        },
+        {
+          "thema": "Aggregation, Komposition",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-3-2"
+          ],
+          "notiz": "P24"
+        },
+        {
+          "thema": "UML-Aktivitätsdiagramm",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-3-3-K1",
+            "AP1-8-3-3-K2"
+          ]
+        },
+        {
+          "thema": "Mockups",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-8-4-3"
+          ],
+          "notiz": "AP2b.04.15"
+        },
+        {
+          "thema": "ER-Modelle: Entität, Attribut, Beziehung, Kardinalität",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-4-1-K1",
+            "AP1-8-4-1-K4"
+          ]
+        },
+        {
+          "thema": "Chen-Notation: schwache Entität, mehrwertiges Attribut, Teilnahmegrad",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-4-1"
+          ]
+        },
+        {
+          "thema": "Normalisierung",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-8-4-1"
+          ],
+          "notiz": "AP2a.02.03.4, AP2b.04.11"
+        },
+        {
+          "thema": "Redundanz, Anomalien, Datenkonsistenz",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-4-2-K1",
+            "AP1-8-4-2-K2",
+            "AP1-8-4-2-K5"
+          ]
+        },
+        {
+          "thema": "SQL, NoSQL",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-8-4-2"
+          ],
+          "notiz": "B3; AP2b.04.22"
+        },
+        {
+          "thema": "Primärschlüssel, Fremdschlüssel",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-4-5-K1",
+            "AP1-8-4-5-K2"
+          ]
+        },
+        {
+          "thema": "Referentielle Integrität",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-8-4-5"
+          ],
+          "notiz": "AP2a.02.03.5"
+        },
+        {
+          "thema": "Bildschirmmasken: Softwareergonomie, Corporate Identity, Barrierefreiheit",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-4-3-K2",
+            "AP1-8-4-3-K3",
+            "AP1-8-4-3-K4"
+          ]
+        },
+        {
+          "thema": "WCAG, BITV 2.0",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-4-3"
+          ]
+        },
+        {
+          "thema": "Prozessanalyse (EPK, BPMN)",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-4-4-K1",
+            "AP1-8-4-4-K3"
+          ],
+          "notiz": "Stand des alten Plans übernommen, Einordnung offen (P24)"
+        },
+        {
+          "thema": "Funktionale und nicht-funktionale Anforderungen",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-2"
+          ],
+          "notiz": "AP1.04.01.2"
+        }
+      ]
+    },
+    "geschwister": [
+      {
+        "katalog": "AP1.04.06.1",
+        "paar": "Compiler, Linker, Interpreter",
+        "abgedeckt": {
+          "Compiler": [
+            "AP1-8-1-1-K1"
+          ],
+          "Linker": [
+            "AP1-8-1-1-K2"
+          ],
+          "Interpreter": [
+            "AP1-8-1-1-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.01.3.4",
+        "paar": "Compiler, virtuelle Maschinen, Interpreter, Editoren, Debugger",
+        "abgedeckt": {
+          "Compiler": [
+            "AP1-8-1-1-K1"
+          ],
+          "virtuelle Maschinen": [
+            "AP1-8-1-1-K4"
+          ],
+          "Interpreter": [
+            "AP1-8-1-1-K1"
+          ],
+          "Editoren": [
+            "AP1-8-1-1-K3"
+          ],
+          "Debugger": [
+            "AP1-8-1-1-K3"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.2",
+        "paar": "prozedural, objektorientiert",
+        "abgedeckt": {
+          "beide": [
+            "AP1-8-1-2-K1",
+            "AP1-8-1-2-K6"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.6",
+        "paar": "Klassen, Attribute, Objekte, Methoden, Sichtbarkeit",
+        "abgedeckt": {
+          "Klassen und Objekte": [
+            "AP1-8-1-2-K2"
+          ],
+          "Attribute und Methoden": [
+            "AP1-8-1-2-K3"
+          ],
+          "Sichtbarkeit": [
+            "AP1-8-1-2-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.7",
+        "paar": "Bibliotheken, Frameworks",
+        "abgedeckt": {
+          "beide": [
+            "AP1-8-1-3-K2"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.3",
+        "paar": "Variablen, Datentypen, Datenstrukturen",
+        "abgedeckt": {
+          "Variablen und Datentypen": [
+            "AP1-8-2-1-K1"
+          ],
+          "Datenstrukturen": [
+            "AP1-8-2-1-K2"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.4",
+        "paar": "Verzweigung, Schleife",
+        "abgedeckt": {
+          "Verzweigung": [
+            "AP1-8-2-1-K3"
+          ],
+          "Schleife": [
+            "AP1-8-2-1-K3",
+            "AP1-8-2-1-K5"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.5",
+        "paar": "Prozeduren, Funktionen",
+        "abgedeckt": {
+          "Prozeduren": [
+            "AP1-8-2-1-K6"
+          ],
+          "Funktionen": [
+            "AP1-8-2-1-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.06.9",
+        "paar": "Debugging, formale und inhaltliche Fehler",
+        "abgedeckt": {
+          "Debugging": [
+            "AP1-8-2-4-K4"
+          ],
+          "formale und inhaltliche Fehler": [
+            "AP1-8-2-4-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.07.2",
+        "paar": "Anwendungsfall-, Klassen-, Aktivitätsdiagramm",
+        "abgedeckt": {
+          "Anwendungsfall": [
+            "AP1-8-3-1-K1"
+          ],
+          "Klasse": [
+            "AP1-8-3-2-K1"
+          ],
+          "Aktivität": [
+            "AP1-8-3-3-K2"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.07.3",
+        "paar": "Softwareergonomie, Corporate Identity, Barrierefreiheit",
+        "abgedeckt": {
+          "Softwareergonomie": [
+            "AP1-8-4-3-K2"
+          ],
+          "Corporate Identity": [
+            "AP1-8-4-3-K3"
+          ],
+          "Barrierefreiheit": [
+            "AP1-8-4-3-K4"
+          ]
+        }
+      }
+    ]
+  }
+}
