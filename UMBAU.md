@@ -379,7 +379,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P4 | 41 Katalogpunkte ohne Operator: im Regelwerk v1.0 festgelegt (Abschnitt 4.1, `ohne_operator`). | erledigt |
 | P5 | Rahmenlehrplan (KMK, 13.12.2019): LF1–LF5 im 1., LF6 im 2. Ausbildungsjahr; laut Rahmenlehrplan sind „aufgrund ihrer Prüfungsrelevanz“ LF1–6 vor Teil 1 zu unterrichten. Die Lernfelder sind als Kompetenzen formuliert (z. B. LF3: Netzwerkinfrastruktur analysieren, Clients konfigurieren und einbinden); Adressierungsdetails (IPv4/IPv6) wurden in der NRW-Fassung nicht gefunden [unbestätigt, Wortlaut nicht vollständig gelesen]. Für die Tiefe weniger genau als der Katalog → nicht eingebunden. Wieder aufnehmen, wenn das Original-PDF vorliegt. | zurückgestellt |
 | P6 | Lernstand-Umzug: Tabelle alte ID → neue ID für Stichpunkte und Karten; bisherige Sicherungen müssen lesbar bleiben. | offen |
-| P7 | Zeitbudget je Raum aus der Gewichtung; Lernzeit je Stichpunkt schätzen; Puffer zuerst kürzen, wenn das Budget überschritten wird. | offen |
+| P7 | Zeitbudget – verworfen, siehe P19. | erledigt |
 | P8 | PROJEKT: Vorgaben der IHK für Rheinhessen (Antrag, Umfang, Dokumentation, Präsentation, Fachgespräch) beschaffen. Die IT-Prüfungsseite der IHK Rheinhessen nennt sie nicht; dort steht ein Ansprechpartner für die IT-Prüfungen. | offen |
 | P9 | Katalog-Zusätze „kann Bestandteil der praktischen Prüfung sein" (Versionsverwaltung AP2b.05.04, Präsentieren AP2b.05.05): gehört das in den Raum PROJEKT? | offen |
 | P10 | Kapitel AP2b.01–03 sind laut Katalog gemeinsame Inhalte aller Fachinformatiker-Fachrichtungen (Quellenauffälligkeit, PDF-S. 21). Tiefe für Anwendungsentwickler? | offen |
@@ -391,7 +391,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). | offen |
 | P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). | offen |
 | P18 | **Vorschlag, noch nicht beschlossen:** Regel P-MUSTER – Können-Aussagen für nie geprüfte Katalogthemen nach den Aufgabentypen formulieren, die die IHK beim selben Verb sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründete Empfehlung). | offen |
-| P19 | Zeitbudget (P7) braucht Prüfungstermin AP1 und Lernstunden pro Woche vom Projektinhaber. | offen |
+| P19 | **Entschieden (Projektinhaber):** kein Zeitbudget. Maßstab ist fachliche Richtigkeit und Vollständigkeit nach den Regeln (Kern + Puffer Pflicht, Kür freiwillig), nicht die verfügbare Zeit. P7 entfällt. | erledigt |
 | P20 | **Nächste Sitzung, sparsam:** Hinweis-Abgleich (R3) für den Rest von AP1-6, danach je Sitzung ein weiterer AP1-Ordner nach dem Muster von AP1-6. Vorher nur diese Datei und den Bericht des letzten Ordners lesen, nicht alle Quellen. | offen |
 
 ---
