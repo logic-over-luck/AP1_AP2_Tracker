@@ -77,7 +77,10 @@ Siehe Abschnitt 3. Jede Schicht wird nur aus den Schichten darunter erzeugt. Ist
 | **Raster (Gebiete)** | Gerüst je Prüfungsbereich: Jeder Stichpunkt hängt an mindestens einem Gebiet seines Raums. |
 | **Altprüfungen** | Stichprobe, kein Fundament. Rollen: (1) Mindesttiefe belegen, (2) IHK-Stil zeigen (Operatoren, Antwortformate, Situationen), (3) Prioritäten (Häufigkeit, Punkte), (4) Gruppierung (was zusammen abgefragt wird), (5) katalogfremde Themen aufdecken, (6) zeigen, was als Material vorgegeben wird und nicht auswendig gelernt werden muss, (7) zeigen, wie bewertet wird. **Nicht:** zeigen, was fehlt; Obergrenzen setzen. |
 | **Rahmenlehrplan, Ausbildungsrahmenplan** | Offizielle Ordnungsmittel, auf die der Katalog verweist (Lernfelder). Der Katalog „schränkt die zugrundeliegenden Ordnungsmittel nicht ein" (PDF-S. 4). Noch nicht eingebunden → Parkplatz P5. |
-| **Forum, Podcast, Gedächtnisprotokolle** | Nur Hinweis auf ein Thema, nie Beleg für Tiefe. |
+| **Forum, Gedächtnisprotokolle** | Nur Hinweis auf ein Thema, nie Beleg für Tiefe. |
+| **IT-Berufe-Podcast** (it-berufe-podcast.de, Stefan Macke) | Hinweis. (a) Themen-Schlagworte je Prüfungstermin (AP1 Herbst 2021 bis Frühjahr 2026) – zum Gegenprüfen der eigenen Zuordnung; (b) Änderungsliste alter → neuer AP1-Katalog (Folge #190) – Grundlage für B3, gegen den neuen Katalog mechanisch nachgeprüft. Nie Beleg für Tiefe. |
+| **Community-Lernzettel** (fachinformatiker.de: Obsidian-Lernzettel 03/2025 nach aktuellem Katalog, 125 S.; Word-Lernzettel 02/2024 nach altem Katalog, 56 S.) | Material und Lückenhinweis. Nutzen: (1) Abgleich „Thema im Lernzettel, aber keinem Baustein zugeordnet?“ → prüfen, nicht automatisch übernehmen; (2) Anregung für Erklärungen. Nie Beleg, nie Tiefe, Fakten nicht ungeprüft übernehmen, keinen Text übernehmen (fremdes Werk) – Inhalte in eigenen Worten. |
+| **BIBB-Umsetzungshilfe** (Fachinformatiker/-in, BIBB 2020, frei als PDF, CC BY-NC-ND) | Hintergrund zur Ausbildungsordnung und Beispiele für Lernsituationen. Für Tiefe in der schriftlichen Prüfung nachrangig; nicht eingebunden. |
 
 **E6 – Prüfungen heben die Tiefe nur an** [fest]
 Was in einer Prüfung verlangt wurde, wird mindestens so tief gelernt. Was **nicht** vorkam, ist
@@ -161,10 +164,16 @@ testen und dokumentieren" → Stufe 3 für IPv4 **und** IPv6.
 
 - **B1** Mindesttiefe = höchste Stufe aus Katalog und Belegen.
 - **B2** Ein Beleg zählt nur aus einer **Originalprüfung** (eigene Abschrift mit Teilaufgaben-ID, z. B.
-  `2024H-A1-db`). Forum und Podcast sind kein Beleg.
+  `2024H-A1-db`). Forum, Podcast und Lernzettel sind kein Beleg. Aufgabenstellung und Operator zählen immer;
+  die Musterlösung nur, wenn sie amtlich ist (`lösungshinweise_amtlich: ja`). Nicht amtliche Lösungen
+  (2026H) zeigen nur, was gefragt war, nicht, was als Antwort reicht.
 - **B3** Prüfungen nach altem Katalog (vor AP1 Frühjahr 2025 / AP2 Sommer 2025) zählen voll, **außer**
   für Themen, die der neue Katalog gestrichen oder verschoben hat. Laut Vorbemerkung (PDF-S. 4): SQL und
-  RAID nur noch in AP2; Struktogramm und PAP gestrichen.
+  RAID nur noch in AP2; Struktogramm und PAP gestrichen. Laut IT-Berufe-Podcast #190 außerdem aus AP1
+  entfernt; mechanisch nachgeprüft, dass keines davon im neuen AP1-Katalog steht: SAN, RAID, LTE, 5G,
+  Vererbung, Struktogramm, PAP, SQL, nicht-relationale Datenbanken, ISO-27000-Normen, SWOT-Analyse,
+  Suchoperatoren. Belege zu diesen Themen zählen für AP1 nicht (SAN, RAID, Vererbung, SQL, NoSQL stehen im
+  AP2-Katalog und zählen dort).
 - **B4** Material, das in der Aufgabe vorgegeben war (z. B. „die fünf SMART-Begriffe standen dabei"),
   wird als „anwenden, nicht auswendig" vermerkt.
 
@@ -218,6 +227,7 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 
 | Nr | Prüft | Stand |
 |---|---|---|
+| T-1 | Prüfungsabschriften: IDs passen zu Datei und Prüfung, keine doppelten IDs, Punkte der Teilaufgaben ergeben die Aufgabe, Aufgaben ergeben 100; Hinweise bei fehlendem Operator oder fehlender Musterlösung | ✓ `tools/umbau/pruefungen-pruefen.mjs` (+ Test) |
 | T0 | Fundament: jeder Katalog-Listenpunkt, Katalogpunkt, Fragenkomplex und jedes Gebiet ist ein Baustein; kein Baustein erfunden; Wortlaut unverändert; IDs eindeutig; Verweise gültig; Nummerierung lückenlos | ✓ `tools/umbau/fundament-pruefen.mjs` |
 | T0b | Der Prüfer selbst erkennt eingebaute Fehler (fehlender, erfundener, veränderter Baustein, doppelte ID, kaputter Verweis, fehlendes Gebiet) | ✓ `tests/umbau-fundament.test.mjs` |
 | T0c | Regelwerk lückenlos: jeder Operator hat eine Stufe, jeder abdeckungspflichtige Baustein hat eine Stufe, Tabelle in 4.1 = `regelwerk.json` | ✓ `tools/umbau/tiefe-berechnen.mjs` |
@@ -249,10 +259,22 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 Aktueller Katalog gilt ab AP1 Frühjahr 2025 und AP2 Sommer 2025 (Katalog, PDF-S. 5). Ältere Prüfungen →
 Regel B3. Spalte „.md" = Abschrift im Format wie `2024H_AP1.md` (Teilaufgaben-IDs, YAML je Teilaufgabe).
 
-| Prüfung | Raum | Katalog | .md | Lösungshinweise | Bemerkung |
-|---|---|---|---|---|---|
-| 2024H (17.09.2024) | AP1 | alt | ✓ | ✓ | vollständig |
-| *(weitere eintragen)* | | | | | |
+| Prüfung | Raum | Katalog | .md | Lösungshinweise | Teilaufgaben | Bemerkung |
+|---|---|---|---|---|---|---|
+| 2021H (29.09.2021) | AP1 | alt | ✓ | ✓ | 23 | vollständig |
+| 2022F (30.03.2022) | AP1 | alt | ✓ | ✓ | 30 | vollständig; 2 Teilaufgaben ohne Operator (A1-cb, A4-c) |
+| 2022H (21.09.2022) | AP1 | alt | ✓ | ✓ | 27 | vollständig |
+| 2023F (01.03.2023) | AP1 | alt | ✓ | ✓ | 24 | vollständig |
+| 2023H (19.09.2023) | AP1 | alt | ✓ | ✓ | 31 | Lösungshinweise zu A4-cb bis A4-cd fehlen |
+| 2024F (28.02.2024) | AP1 | alt | ✓ | ✓ | 30 | vollständig |
+| 2024H (17.09.2024) | AP1 | alt | ✓ | ✓ | 26 | vollständig |
+| 2025F (25.03.2025) | AP1 | aktuell | ✓ | ✓ | 30 | vollständig |
+| 2025H (17.09.2025) | AP1 | aktuell | ✓ | – | 26 | A4 ab b) fehlt (18 von 24 Punkten) |
+| 2026F (25.02.2026) | AP1 | aktuell | ✓ | – | 27 | vollständig |
+| 2026H (30.09.2026) | AP1 | aktuell | ✓ | nicht amtlich | 27 | vollständig |
+
+Summe AP1: 11 Prüfungen, 301 Teilaufgaben (kleinste bewertete Einheiten), davon 4 Prüfungen nach aktuellem
+Katalog. Alle Abschriften bestehen T-1. PB1, PB2, WiSo: noch keine Abschriften.
 
 Zuordnung Teilaufgabe → Baustein und Aufgabentyp kommt **nicht** in die Abschriften, sondern in eine
 eigene Datei je Prüfung (Schicht 3). So bleiben die Abschriften reine Quellen.
@@ -264,8 +286,12 @@ eigene Datei je Prüfung (Schicht 3). So bleiben die Abschriften reine Quellen.
 - [x] **Schritt 0 – Fundament Katalog:** Zerleger, Prüfer, Prüfer-Test (Abschnitt 9)
 - [x] **Schritt 1 – Regelwerk v1.0:** freigegeben, als Datendatei `umbau/regeln/regelwerk.json`, Tiefe je
       Baustein berechnet (`umbau/fundament/tiefe.json`), P1, P2, P4 erledigt
+- [x] **Schritt 1b – Quellen AP1 geprüft:** 11 Abschriften bestehen T-1; Rollen von Podcast, Lernzettel,
+      BIBB und Rahmenlehrplan festgelegt (E5)
 - [ ] **Schritt 2 – Zuordnungsformat für Prüfungen:** Datei je Prüfung, je Teilaufgabe: Baustein-IDs,
-      Aufgabentyp, Operator, vorgegebenes Material. Plus Check T2.
+      Aufgabentyp, vorgegebenes Material. Dazu die **Prüfungsoperatoren** (57 verschiedene in den
+      AP1-Abschriften, z. B. nennen, beschreiben, angeben, berechnen, begründen) im Regelwerk den Stufen 1–4
+      zuordnen, damit Belege die Tiefe anheben können (B1). Plus Check T2.
 - [ ] **Schritt 3 – Probelauf AP1 / Netzwerk:** ein Ordner komplett von Schicht 1 bis 5, altes Material
       einsortiert, Liste „alt → neu". **Abnahmekriterium:** IPv6 steht mit Stufe 3 und Begründung aus dem
       Katalog drin; T1–T6 grün für diesen Ordner. Der Projektinhaber entscheidet, ob es so weitergeht.
@@ -287,16 +313,26 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P2 | Nachgeprüft: § 10 Abs. 2 FIAusbV, Wortlaut „nur insoweit einbezogen werden, als es für die Feststellung der beruflichen Handlungsfähigkeit erforderlich ist". Bei E2 eingetragen. | erledigt |
 | P3 | Zuordnung der AP2-Katalogpunkte zu PB1/PB2 (W2): Liste erstellen und vom Projektinhaber bestätigen lassen. | offen |
 | P4 | 41 Katalogpunkte ohne Operator: im Regelwerk v1.0 festgelegt (Abschnitt 4.1, `ohne_operator`). | erledigt |
-| P5 | Rahmenlehrplan (KMK, 13.12.2019) als zusätzliche offizielle Quelle für Tiefe einbinden? Wenn ja: als weitere Quelle in Schicht 0, eigene Bausteine. | offen |
+| P5 | Rahmenlehrplan (KMK, 13.12.2019): LF1–LF5 im 1., LF6 im 2. Ausbildungsjahr; laut Rahmenlehrplan sind „aufgrund ihrer Prüfungsrelevanz“ LF1–6 vor Teil 1 zu unterrichten. Die Lernfelder sind als Kompetenzen formuliert (z. B. LF3: Netzwerkinfrastruktur analysieren, Clients konfigurieren und einbinden); Adressierungsdetails (IPv4/IPv6) wurden in der NRW-Fassung nicht gefunden [unbestätigt, Wortlaut nicht vollständig gelesen]. Für die Tiefe weniger genau als der Katalog → nicht eingebunden. Wieder aufnehmen, wenn das Original-PDF vorliegt. | zurückgestellt |
 | P6 | Lernstand-Umzug: Tabelle alte ID → neue ID für Stichpunkte und Karten; bisherige Sicherungen müssen lesbar bleiben. | offen |
 | P7 | Zeitbudget je Raum aus der Gewichtung; Lernzeit je Stichpunkt schätzen; Puffer zuerst kürzen, wenn das Budget überschritten wird. | offen |
-| P8 | PROJEKT: Vorgaben der IHK für Rheinhessen (Antrag, Umfang, Dokumentation, Präsentation, Fachgespräch) beschaffen. | offen |
+| P8 | PROJEKT: Vorgaben der IHK für Rheinhessen (Antrag, Umfang, Dokumentation, Präsentation, Fachgespräch) beschaffen. Die IT-Prüfungsseite der IHK Rheinhessen nennt sie nicht; dort steht ein Ansprechpartner für die IT-Prüfungen. | offen |
 | P9 | Katalog-Zusätze „kann Bestandteil der praktischen Prüfung sein" (Versionsverwaltung AP2b.05.04, Präsentieren AP2b.05.05): gehört das in den Raum PROJEKT? | offen |
 | P10 | Kapitel AP2b.01–03 sind laut Katalog gemeinsame Inhalte aller Fachinformatiker-Fachrichtungen (Quellenauffälligkeit, PDF-S. 21). Tiefe für Anwendungsentwickler? | offen |
+| P11 | Gegenprüfung mit den Themenlisten des IT-Berufe-Podcasts: Deckt sich die eigene Zuordnung (Schritt 2) mit den Schlagworten je Termin? Abweichungen ansehen. | offen |
+| P12 | Lücken-Abgleich mit den Community-Lernzetteln (nach Schritt 3/4): Themen im Lernzettel ohne Baustein → einzeln entscheiden (katalogfremd, alter Katalog oder echte Lücke). | offen |
 
 ---
 
 ## 9. Fundament erzeugen und prüfen
+
+Lokale Quellen (nicht im Repo, werden der Sitzung angehängt):
+
+```
+quellen/katalog.md                  aus der Word-Fassung (pandoc, siehe unten)
+quellen/pruefungen/ap1/<ID>_AP1.md  Prüfungsabschriften, z. B. 2024H_AP1.md
+quellen/lernzettel/*.pdf            Community-Lernzettel (nur Material)
+```
 
 Einmalig die Katalogquelle anlegen (Word-Fassung → Markdown):
 
@@ -310,6 +346,7 @@ Dann:
 npm run umbau:katalog     # zerlegt quellen/katalog.md → umbau/fundament/katalog-bausteine.json
 npm run umbau:pruefen     # prüft die Bausteine unabhängig gegen den Katalog
 npm run umbau:tiefe       # berechnet die Mindesttiefe je Baustein und prüft das Regelwerk
+npm run umbau:pruefungen  # prüft die Prüfungsabschriften, erzeugt das Teilaufgaben-Verzeichnis
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 

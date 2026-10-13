@@ -55,3 +55,58 @@ test('Tiefe-Berechnung läuft fehlerfrei', { skip: !vorhanden && 'Katalogquelle 
   const r = spawnSync(process.execPath, ['tools/umbau/tiefe-berechnen.mjs'], { encoding: 'utf8' });
   assert.equal(r.status, 0, r.stdout);
 });
+
+// ---------- Prüfungsabschriften (Schicht 0) ----------
+import { lies } from '../tools/umbau/pruefungen-pruefen.mjs';
+
+const MUSTER = `---
+id: 2099F
+prüfung: AP1
+punkte_gesamt: 100
+aufgaben_punkte: [25, 25, 25, 25]
+lösungshinweise: ja
+vollständig: ja
+---
+# 2099F-A1 · 25 Punkte
+## 2099F-A1-a · 24 Punkte
+\`\`\`yaml
+operator: [nennen]
+\`\`\`
+**Musterlösung:** x
+## 2099F-A1-b · 1 Punkt (Summe aus ba–bb)
+### 2099F-A1-ba · 0,5 Punkte
+\`\`\`yaml
+operator: [nennen]
+\`\`\`
+**Musterlösung:** x
+### 2099F-A1-bb · 0,5 Punkte
+\`\`\`yaml
+operator: [nennen]
+\`\`\`
+**Musterlösung:** x
+# 2099F-A2 · 25 Punkte
+## 2099F-A2-a · 25 Punkte
+# 2099F-A3 · 25 Punkte
+## 2099F-A3-a · 25 Punkte
+# 2099F-A4 · 25 Punkte
+## 2099F-A4-a · 25 Punkte
+`;
+
+test('Abschriften-Prüfer: stimmige Musterdatei hat keine Fehler', () => {
+  const r = lies('2099F_AP1.md', MUSTER);
+  assert.deepEqual(r.fehler, []);
+  assert.equal(r.pruefung.teilaufgaben.filter((t) => t.blatt).length, 6);
+});
+
+const abschriftFehler = {
+  'falsche Teilpunkte': (m) => m.replace('2099F-A1-a · 24 Punkte', '2099F-A1-a · 23 Punkte'),
+  'falsche Unterteilpunkte': (m) => m.replace('2099F-A1-bb · 0,5 Punkte', '2099F-A1-bb · 1 Punkt'),
+  'doppelte ID': (m) => m.replace('2099F-A3-a', '2099F-A2-a'),
+  'fremde ID': (m) => m.replace('2099F-A4-a', '2098F-A4-a'),
+  'Kopf passt nicht zum Dateinamen': (m) => m.replace('id: 2099F', 'id: 2099H'),
+};
+for (const [name, aendern] of Object.entries(abschriftFehler)) {
+  test(`Abschriften-Prüfer erkennt: ${name}`, () => {
+    assert.ok(lies('2099F_AP1.md', aendern(MUSTER)).fehler.length > 0);
+  });
+}
