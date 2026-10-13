@@ -179,7 +179,7 @@
             },
             {
               "id": "AP1-5-1-2-K4",
-              "text": "Du kannst für einen beschriebenen Bedarf begründet empfehlen, ob Standard- oder Individualsoftware passt.",
+              "text": "Du kannst für einen beschriebenen Bedarf begründen, ob Standard- oder Individualsoftware passt.",
               "stufe": 4,
               "herkunft": [
                 "katalog:AP1.04.03.4",
@@ -534,7 +534,8 @@
               "text": "Du kannst die Eigenschaften von FAT32 erklären: Es wird von fast allen Systemen gelesen, erlaubt aber nur Dateien bis 4 GiB und kennt keine Zugriffsrechte.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2026H-A4-ba"
+                "beleg:2026H-A4-ba",
+                "katalog:AP1.03.03.1"
               ]
             },
             {
@@ -678,14 +679,23 @@
             },
             {
               "id": "AP1-5-2-4-K4",
-              "text": "Du kannst Wege nennen, Software anzupassen: Einstellungen in der Oberfläche, Konfigurationsdateien, Erweiterungen, Paketmanager für Installation und Updates.",
+              "text": "Du kannst Wege nennen, Software anzupassen: Einstellungen in der Oberfläche, Konfigurationsdateien, Erweiterungen.",
               "stufe": 1,
               "herkunft": [
                 "katalog:AP1.04.05.4"
               ]
             }
           ],
-          "grenzen": []
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Paketmanager für Installation und Updates, zum Beispiel winget oder apt.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Steht im Lernzettel; Installation und Updates gehören nicht zur Anpassung (AP1.04.05.4), Paketmanager stehen weder im Katalog noch in einem Beleg (P16)."
+            }
+          ]
         },
         {
           "id": "AP1-5-2-5",
@@ -850,7 +860,7 @@
         "alt": "AP1-5-1-2-K4",
         "status": "angepasst",
         "neu": "AP1-5-1-2-K4",
-        "grund": "ein Operator (F1): begründete Empfehlung"
+        "grund": "ein Operator (F1): begründen (P16: „empfehlen“ ist kein Operator)"
       },
       {
         "alt": "AP1-5-1-3-K1",
@@ -1352,7 +1362,7 @@
           "notiz": "P17"
         },
         {
-          "thema": "Software anpassen, Konfigurationsdateien, Paketmanager",
+          "thema": "Software anpassen, Konfigurationsdateien",
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
@@ -1361,6 +1371,17 @@
             "AP1-5-2-4-K2",
             "AP1-5-2-4-K4"
           ]
+        },
+        {
+          "thema": "Paketmanager",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-2-4"
+          ],
+          "notiz": "P16 (K3): Installation, nicht Anpassung (AP1.04.05.4); weder Katalog noch Beleg"
         },
         {
           "thema": "Client-Server, Domäne",
