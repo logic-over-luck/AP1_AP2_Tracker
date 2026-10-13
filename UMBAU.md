@@ -136,9 +136,9 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v1.2 [fest]
+## 4. Regelwerk – v1.3 [fest]
 
-Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). Maßgeblich für die
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
 `tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
@@ -238,6 +238,10 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   für Karten und Probeprüfungen im IHK-Stil.
 - **Z3** Stufe einer Teilaufgabe = höchste Stufe ihrer Prüfungsoperatoren (`pruefungsoperatoren` im
   Regelwerk). Sie gilt für alle Bausteine, denen die Teilaufgabe zugeordnet ist.
+- **Z3a** (seit v1.3, P25) **Formoperatoren** bezeichnen nur die Antwortform („eintragen“, „ausfüllen“,
+  „vervollständigen“, „ergänzen“, „markieren“; Liste `pruefungsoperatoren.formoperatoren`). Sie zählen in Z3
+  nur, wenn die Teilaufgabe keinen anderen Operator hat. Beispiel: 2026F-A2-b „ausfüllen, angeben“ → Stufe 1.
+  Steht nur ein Formoperator da (Netzplan, ERD, Diagramm ergänzen), bleibt seine Stufe.
 - **Z4** Teilaufgaben zu gestrichenen Themen: Ist nur die **Darstellungsform** gestrichen (Struktogramm)
   oder nur ein **Teil** (Vererbung in einer Klassenaufgabe), bleibt die Teilaufgabe den verbliebenen
   Bausteinen zugeordnet, mit `hinweis`. Ist das **ganze Thema** gestrichen (RAID, SAN, SQL), steht sie unter
@@ -338,7 +342,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
 - 183 abdeckungspflichtige Bausteine (179 Katalog + 4 Zusatz). **125 mit Prüfungsbeleg**, davon 46 nur aus
   Prüfungen nach altem Katalog. **58 ohne Beleg** – sie bleiben vollständig mit ihrer Katalogtiefe
   drin (goldene Regel); auffällig: Qualitätsmanagement (AP1.05) kam in keiner der 11 Prüfungen vor.
-- **23 Bausteine durch Belege angehoben**, z. B. Verschlüsselungstechniken 1 → 4, Härtung 2 → 4,
+- **23 Bausteine durch Belege angehoben** (seit v1.3: 22, AP1.06.04.1 bleibt bei Katalogstufe 2), z. B. Verschlüsselungstechniken 1 → 4, Härtung 2 → 4,
   Kontrollstrukturen 2 → 4, Schreibtischtest 3 → 4.
 - Zusatzbausteine: `ZB.ipv4-subnetting` (2022F, 2025F, 2025H, 2026F), `ZB.ipv6-subnetting` (2022H: Teilnetz-
   Anzahl bestimmen, Adressen aus Präfix vergeben), `ZB.datendarstellung` (2024F, 2026F), `ZB.rechnung` (2025H).
@@ -454,7 +458,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P22 | **Entschieden (Claude im Auftrag des Projektinhabers):** G4 bleibt, Normabschnitte und -nummern sind Außen. Name und Zweck der ISO 9001 sind als Kür eingetragen (AP1-1-5-1), weil sie ohne Hilfsmittel abfragbar sind. | erledigt |
 | P23 | **Entschieden (Claude im Auftrag des Projektinhabers):** Die Kennzeichnung „Ordner“ im Hinweis-Abgleich bleibt. Sie ist nur Buchführung: Das Thema steht dort, wo es wohnt. | erledigt |
 | P24 | **Entschieden (Projektinhaber, 13.10.2026): Pflicht.** Was der Katalog-Anhang zeigt, gehört zu AP1; Prüfungen erweitern nur. Umgesetzt: EPK und BPMN (AP1-8-4-4) bleiben Kern, Aggregation und Komposition sind jetzt Kern (neue Aussage AP1-8-3-2-K6). | erledigt |
-| P25 | **Formoperatoren in Z3** (gefunden bei P16): Prüfungsoperatoren, die nur die Antwortform bezeichnen („eintragen“, „ausfüllen“, „vervollständigen“, „ergänzen“, „markieren“), bestimmen nach Z3 die Stufe der Teilaufgabe und damit die Mindesttiefe aller zugeordneten Bausteine. Beispiel: 2023H-A2-d „Tragen Sie Vor- und Nachteile von Homeoffice ein“ hebt AP1.07.02.3 von Stufe 1 auf 3, fachlich ist es „nennen“. Soll in solchen Fällen der fachliche Kern zählen? Verwandt mit P13. | offen |
+| P25 | **Formoperatoren in Z3** (gefunden bei P16): Prüfungsoperatoren, die nur die Antwortform bezeichnen („eintragen“, „ausfüllen“, „vervollständigen“, „ergänzen“, „markieren“), bestimmen nach Z3 die Stufe der Teilaufgabe und damit die Mindesttiefe aller zugeordneten Bausteine. Beispiel: 2023H-A2-d „Tragen Sie Vor- und Nachteile von Homeoffice ein“ hebt AP1.07.02.3 von Stufe 1 auf 3, fachlich ist es „nennen“. Soll in solchen Fällen der fachliche Kern zählen? Verwandt mit P13. **Entschieden (Projektinhaber hat die Entscheidung übertragen, 13.10.2026): Regel Z3a, Regelwerk v1.3.** Formoperatoren zählen nur, wenn kein anderer Operator dasteht. Betroffen: 2023H-A4-ab, 2024F-A4-a, 2026F-A2-b, 2026F-A4-c; Mindesttiefe ändert sich nur bei AP1.06.04.1 (3 → 2). Reine Formaufgaben behalten ihre Stufe (mechanisch, goldene Regel „eher mehr lernen“), auch 2023H-A2-d. | erledigt |
 
 ---
 

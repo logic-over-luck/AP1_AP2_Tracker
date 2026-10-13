@@ -1,7 +1,7 @@
 {
   "meta": {
     "erzeugt_mit": "node tools/umbau/zuordnung-pruefen.mjs ap1",
-    "regelwerk_version": "1.2",
+    "regelwerk_version": "1.3",
     "hinweis": "stufe = max(katalog_stufe, beleg_stufe) (goldene Regel E6). Belege nur als Teilaufgaben-IDs.",
     "pruefungen_zugeordnet": 11,
     "teilaufgaben": 301,
@@ -9,7 +9,7 @@
     "teilaufgaben_ausserhalb": 13,
     "bausteine_abdeckungspflichtig": 183,
     "bausteine_mit_beleg": 125,
-    "bausteine_angehoben": 23
+    "bausteine_angehoben": 22
   },
   "bausteine": {
     "AP1.01.01.1": {
@@ -190,7 +190,7 @@
     },
     "AP1.01.03.2": {
       "katalog_stufe": 3,
-      "beleg_stufe": 3,
+      "beleg_stufe": 2,
       "stufe": 3,
       "angehoben": false,
       "belege_aktuell": [
@@ -1406,7 +1406,7 @@
     },
     "AP1.06.01.2.5": {
       "katalog_stufe": 4,
-      "beleg_stufe": 3,
+      "beleg_stufe": 2,
       "stufe": 4,
       "angehoben": false,
       "belege_aktuell": [
@@ -1566,9 +1566,9 @@
     },
     "AP1.06.04.1": {
       "katalog_stufe": 2,
-      "beleg_stufe": 3,
-      "stufe": 3,
-      "angehoben": true,
+      "beleg_stufe": 2,
+      "stufe": 2,
+      "angehoben": false,
       "belege_aktuell": [
         "2026H-A4-c"
       ],

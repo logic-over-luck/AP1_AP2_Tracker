@@ -54,6 +54,8 @@ const katalogIds = new Set([
 ]);
 const anhangIds = new Set(b.anhang.map((a) => a.id));
 const opStufe = regeln.pruefungsoperatoren.stufen;
+const formOps = new Set(regeln.pruefungsoperatoren.formoperatoren ?? []);
+for (const op of formOps) if (!(op in opStufe)) fehler.push(`Formoperator ohne Stufe im Regelwerk: „${op}"`);
 
 // Zusatzbausteine gültig?
 for (const [id, z] of Object.entries(zusatz)) {
@@ -106,7 +108,11 @@ for (const p of index.pruefungen) {
     } else if (e.ausserhalb) {
       fehler.push(`${t.id}: hat Bausteine und zugleich „ausserhalb"`);
     }
-    const stufe = (t.operator ?? []).length ? Math.max(...t.operator.map((o) => opStufe[o] ?? 0)) : null;
+    // Z3 mit Z3a (v1.3, P25): Formoperatoren zählen nur, wenn die Teilaufgabe keinen anderen Operator hat.
+    const ops = t.operator ?? [];
+    const fachlich = ops.filter((o) => !formOps.has(o));
+    const zaehlend = fachlich.length ? fachlich : ops;
+    const stufe = zaehlend.length ? Math.max(...zaehlend.map((o) => opStufe[o] ?? 0)) : null;
     for (const bid of e.bausteine) {
       const gueltig = katalogIds.has(bid) || anhangIds.has(bid) || bid in zusatz;
       if (!gueltig) { fehler.push(`${t.id}: unbekannter Baustein ${bid}`); continue; }
