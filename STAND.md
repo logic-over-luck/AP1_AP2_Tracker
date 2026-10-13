@@ -3,6 +3,10 @@
 Diese Datei ist das Gedächtnis des Projekts. Eine neue Sitzung liest sie und macht beim
 nächsten offenen Punkt weiter.
 
+> **Umbau der Lerninhalte läuft (Branch `umbau`).** Wer an Lernplan, Stichpunkten, Rahmen oder
+> Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)** und hält sich an die Regeln dort.
+> Die Inhaltsdatei und `inhalte/` werden bis dahin nicht mehr inhaltlich nachgebessert.
+
 ---
 
 ## 1. Plan
