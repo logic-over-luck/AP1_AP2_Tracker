@@ -9,6 +9,14 @@ arbeitet, liest zuerst diese Datei** und hält sich an die Entscheidungen und Re
 - Die App (Trainer, Lernkarten-System, Lernstand, Oberfläche, Glossar) bleibt. Neu gebaut werden die
   **Lerninhalte**: Gliederung, Rahmen, Können-Aussagen, Grenzen.
 
+**Arbeitsweise jeder neuen Sitzung** (Entscheidung Projektinhaber, 13.10.2026):
+- Modell: Opus auf hoher Denkstufe. Ein AP1-Ordner pro Sitzung.
+- Zuerst diese Datei komplett lesen, Quellen nach Abschnitt 9 unter `quellen/` ablegen, alle Prüfskripte laufen lassen.
+- Nach jedem Zwischenschritt committen und pushen, damit bei erschöpftem Nutzungslimit nichts verloren geht.
+- Am Ende dem Projektinhaber die Ausgabe von `node tools/umbau/lernplan-pruefen.mjs <Ordner>` zeigen.
+  Er achtet nur auf „OK … bestanden“ oder „FEHLER“; bei Fehlern werden sie behoben.
+- Hinweis-Abgleich (R3) und Geschwister-Prüfung (R4) macht die Sitzung selbst; der Projektinhaber liefert kein Material.
+
 Status-Kennzeichen in dieser Datei: **[fest]** = entschieden · **[Vorschlag]** = Entwurf, vom Projektinhaber
 zu bestätigen · **[unbestätigt]** = aus dem Gedächtnis, muss an der Quelle nachgeprüft werden.
 Seitenangaben „PDF-S.“ = Original-PDF-Seite, wie sie in der Katalog-Fassung markiert ist.
@@ -279,6 +287,7 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | T5 | Größen stimmen (F3, F4) | ✓ je Ordner |
 | T6 | Jeder Stichpunkt hat ein Gebiet seines Raums | ✓ je Ordner |
 | T7 | Inhalte früherer Räume sind importiert, nicht doppelt (E2) | geplant |
+| T9 | Rückblick-Test: Punkte je Prüfung auf Themen, die vorher weder im Katalog noch in einer früheren Prüfung standen; bei jeder neuen Prüfung neu berechnen | einmal von Hand gerechnet (6.1), als Skript geplant |
 
 **KI-Prüfer (Inhalt; eigene Sitzung, sieht nur einen Stichpunkt mit seinen Quellen)**
 
@@ -332,6 +341,14 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   Anzahl bestimmen, Adressen aus Präfix vergeben), `ZB.datendarstellung` (2024F, 2026F), `ZB.rechnung` (2025H).
 - **IPv6:** AP1.04.01.3 Stufe 4 mit 14 Belegen; IPv6-Präfixe aufteilen ist belegt (2022H) und damit Teil
   von AP1. Der alte Satz „IPv6-Subnetting war nicht verlangt“ war falsch.
+- **Rückblick-Test (13.10.2026):** Prüfungen in zeitlicher Reihenfolge; gezählt wurden Punkte auf Themen, die
+  weder im Katalog standen noch in einer früheren Prüfung vorkamen: 2022F 3, 2022H 2, 2024F 4, 2025H 4 Punkte,
+  in den übrigen 7 Prüfungen 0 (je von 100). Die Puffer-Regeln hätten 2022H (P-GESCHWISTER nach 2022F) und
+  2024F (P-GRUNDLAGE) vorhergesagt; 2025H ist bis auf den GiroCode durch den Katalog-Anhang „Rechnung“ gedeckt.
+  Grenze der Messung: Sie erfasst neue Themen, nicht neue Blickwinkel auf bekannte Themen.
+- **Drei Arten von Unbekanntem:** (1) Themen außerhalb des Katalogs – gemessen, klein (oben);
+  (2) Katalogthemen ohne Prüfungsbeleg (58 von 183) – Tiefe aus dem Operator, Formulierung nach P-MUSTER (P18);
+  (3) offene „z. B.“-Listen (43 Stellen im AP1-Katalog) – P-BEISPIELLISTE (P17).
 
 ---
 
