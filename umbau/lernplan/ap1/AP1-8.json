@@ -261,14 +261,14 @@
               ]
             }
           ],
-          "grenzen": [],
-          "kuer": [
+          "grenzen": [
             {
-              "text": "Eigene Skripte schreiben (ein gegebenes Skript lesen und berichtigen gehört zu AP1-8-2-4).",
-              "quellen": [
-                "katalog-ap2"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.04.16); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.06.8 verlangt Skriptsprachen „kennen, einordnen und unterscheiden“; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16)."
+              "text": "Skripte selbst zu schreiben gehört nicht dazu; ein gegebenes Skript lesen und einzelne Zeilen berichtigen schon (AP1-8-2-4).",
+              "begruendung": "AP1.04.06.8 verlangt Skriptsprachen „kennen, einordnen und unterscheiden“; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16).",
+              "katalog": [
+                "AP1.04.06.8",
+                "AP2b.04.16"
+              ]
             }
           ]
         }
@@ -450,18 +450,17 @@
               "katalog": [
                 "AP1.04.07.1"
               ]
+            },
+            {
+              "text": "Eigene Algorithmen zu entwerfen gehört nicht dazu.",
+              "begruendung": "AP1.04.07.1 verlangt, Kontrollstrukturen abzubilden; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16).",
+              "katalog": [
+                "AP1.04.07.1",
+                "AP2b.04.16"
+              ]
             }
           ],
-          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird.",
-          "kuer": [
-            {
-              "text": "Eigene Algorithmen entwerfen.",
-              "quellen": [
-                "katalog-ap2"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.04.16); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.07.1 verlangt, Kontrollstrukturen abzubilden; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16)."
-            }
-          ]
+          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird."
         },
         {
           "id": "AP1-8-2-3",
@@ -850,17 +849,18 @@
               ]
             }
           ],
-          "grenzen": [],
-          "hinweis": "Die Musterlösung zu 2025H-A2-ba fehlt; K1, K2 und K4 folgen der Aufgabenstellung (gleichzeitig bezahlen und archivieren).",
-          "kuer": [
+          "grenzen": [
             {
-              "text": "Sequenz- und Zustandsdiagramm.",
-              "quellen": [
-                "katalog-ap2"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.03.02.7, AP2b.03.02.8); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.07.2 nennt Anwendungsfall-, Klassen- und Aktivitätsdiagramm; Sequenz- und Zustandsdiagramm stehen im AP2-Katalog (AP2b.03.02.7, AP2b.03.02.8)."
+              "text": "Sequenz- und Zustandsdiagramm gehören nicht dazu.",
+              "begruendung": "AP1.04.07.2 nennt Anwendungsfall-, Klassen- und Aktivitätsdiagramm; Sequenz- und Zustandsdiagramm stehen im AP2-Katalog (AP2b.03.02.7, AP2b.03.02.8).",
+              "katalog": [
+                "AP1.04.07.2",
+                "AP2b.03.02.7",
+                "AP2b.03.02.8"
+              ]
             }
-          ]
+          ],
+          "hinweis": "Die Musterlösung zu 2025H-A2-ba fehlt; K1, K2 und K4 folgen der Aufgabenstellung (gleichzeitig bezahlen und archivieren)."
         }
       ]
     },
@@ -949,7 +949,17 @@
               ]
             }
           ],
-          "grenzen": [],
+          "grenzen": [
+            {
+              "text": "Normalisierung und das Überführen in Tabellen gehören nicht dazu.",
+              "begruendung": "AP1.04.08.1 nennt einfache ER-Modelle; Normalisieren steht im AP2-Katalog (AP2a.02.03.4, AP2b.04.11).",
+              "katalog": [
+                "AP1.04.08.1",
+                "AP2a.02.03.4",
+                "AP2b.04.11"
+              ]
+            }
+          ],
           "kuer": [
             {
               "text": "Sonderformen der Chen-Notation: schwache Entität, mehrwertiges und abgeleitetes Attribut, Teilnahmegrad.",
@@ -957,14 +967,6 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Normalisierung und das Überführen eines ER-Modells in Tabellen.",
-              "quellen": [
-                "lernzettel:fi-de-2024",
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2a.02.03.4, AP2b.04.11); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.08.1 nennt einfache ER-Modelle; Normalisieren steht im AP2-Katalog (AP2a.02.03.4, AP2b.04.11)."
             }
           ],
           "hinweis": "Die Musterlösung zu 2026F-A4-c fehlt; K7 folgt der Aufgabenstellung."
@@ -1105,17 +1107,17 @@
               ]
             }
           ],
-          "grenzen": [],
-          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen.",
-          "kuer": [
+          "grenzen": [
             {
-              "text": "Referentielle Integrität mit Lösch- und Aktualisierungsweitergabe.",
-              "quellen": [
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2a.02.03.5); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.08 verlangt Grundlagen relationaler Datenbanken; referentielle Integrität, Aktualisierungs- und Löschweitergabe stehen im AP2-Katalog (AP2a.02.03.5)."
+              "text": "Referentielle Integrität mit Lösch- und Aktualisierungsweitergabe gehört nicht dazu.",
+              "begruendung": "AP1.04.08 verlangt Grundlagen relationaler Datenbanken; referentielle Integrität, Aktualisierungs- und Löschweitergabe stehen im AP2-Katalog (AP2a.02.03.5).",
+              "katalog": [
+                "AP1.04.08",
+                "AP2a.02.03.5"
+              ]
             }
-          ]
+          ],
+          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen."
         },
         {
           "id": "AP1-8-4-3",
@@ -1164,7 +1166,16 @@
               ]
             }
           ],
-          "grenzen": [],
+          "grenzen": [
+            {
+              "text": "Klickbare Prototypen (Mockups) zu erstellen gehört nicht dazu.",
+              "begruendung": "AP1.04.07.3 nennt den Entwurf der Masken; Prototypen (Mockups) erstellen steht im AP2-Katalog (AP2b.04.15).",
+              "katalog": [
+                "AP1.04.07.3",
+                "AP2b.04.15"
+              ]
+            }
+          ],
           "kuer": [
             {
               "text": "Richtlinien zur Barrierefreiheit wie WCAG und BITV 2.0.",
@@ -1173,13 +1184,6 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Klickbare Prototypen (Mockups) erstellen.",
-              "quellen": [
-                "podcast:themen-ap1"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.04.15); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.07.3 nennt den Entwurf der Masken; Prototypen (Mockups) erstellen steht im AP2-Katalog (AP2b.04.15)."
             }
           ]
         },
@@ -1722,8 +1726,7 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitt Softwareentwicklung",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026), Schlagworte Pseudocode, Schreibtischtest, ERM (Herbst 2025), Aktivitätsdiagramm, Klassendiagramm, Prozessanalyse",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 3.4 und 8.1–8.12",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten",
-      "katalog-ap2": "AP2-/WiSo-Teil des Prüfungskatalogs (Stelle im Kür-Grund genannt); nach P21 als Quelle für Kür zugelassen, wenn keine Hinweisquelle das Thema nennt"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1978,7 +1981,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Kür",
+          "ring": "Außen",
           "wo": [
             "AP1-8-4-3"
           ],
@@ -2013,7 +2016,7 @@
             "lernzettel:fi-de-2025",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Kür",
+          "ring": "Außen",
           "wo": [
             "AP1-8-4-1"
           ],
@@ -2059,7 +2062,7 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Kür",
+          "ring": "Außen",
           "wo": [
             "AP1-8-4-5"
           ],

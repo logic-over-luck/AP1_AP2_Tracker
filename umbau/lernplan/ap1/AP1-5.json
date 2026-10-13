@@ -273,7 +273,16 @@
               ]
             }
           ],
-          "grenzen": [],
+          "grenzen": [
+            {
+              "text": "Weitere Cloud-Servicemodelle wie IaaS und PaaS gehören nicht dazu.",
+              "begruendung": "AP1.03.01.4 nennt Software as a Service und Desktop as a Service; „SaaS, IaaS, PaaS“ als Bereitstellungsmodelle stehen im AP2-Katalog (AP2b.02.04.2).",
+              "katalog": [
+                "AP1.03.01.4",
+                "AP2b.02.04.2"
+              ]
+            }
+          ],
           "kuer": [
             {
               "text": "Virtualisierung: Hypervisor-Typen, virtuelle Maschine gegenüber Container; Cloud-Arten (public, private, hybrid).",
@@ -282,13 +291,6 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Weitere Cloud-Servicemodelle wie IaaS und PaaS.",
-              "quellen": [
-                "podcast:themen-ap1"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.02.04.2); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.03.01.4 nennt Software as a Service und Desktop as a Service; „SaaS, IaaS, PaaS“ als Bereitstellungsmodelle stehen im AP2-Katalog (AP2b.02.04.2)."
             }
           ],
           "hinweis": "Das kundengerechte Beschreiben von Cloud-Leistungen (2022F-A1-b) steht im Ordner Kunde, Markt und Unternehmen (AP1-2-2-4)."
@@ -770,7 +772,16 @@
               ]
             }
           ],
-          "grenzen": [],
+          "grenzen": [
+            {
+              "text": "Server und Verzeichnisdienste einrichten sowie Client-Server- und Peer-to-Peer-Konzepte vergleichen gehören nicht dazu.",
+              "begruendung": "G2: AP1 prüft die Sicht des Arbeitsplatzes; „Peer 2 Peer bzw. Client-Server-Konzepte vergleichen und bewerten“ steht im AP2-Katalog (AP2b.01.04).",
+              "katalog": [
+                "AP1.03.02.2",
+                "AP2b.01.04"
+              ]
+            }
+          ],
           "kuer": [
             {
               "text": "Webgrundlagen: Aufbau einer URL, HTML, CSS, JavaScript, PHP, Content-Management-System; Fernwartung mit VNC.",
@@ -779,13 +790,6 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Server und Verzeichnisdienste einrichten sowie Client-Server- und Peer-to-Peer-Konzepte vergleichen.",
-              "quellen": [
-                "katalog-ap2"
-              ],
-              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.04); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: G2: AP1 prüft die Sicht des Arbeitsplatzes; „Peer 2 Peer bzw. Client-Server-Konzepte vergleichen und bewerten“ steht im AP2-Katalog (AP2b.01.04)."
             }
           ]
         }
@@ -1094,8 +1098,7 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitte Software, Betriebssysteme, Virtualisierung, Internet",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 3.1–3.10, 4.2–4.4, 4.6",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte UEFI/BIOS, Cloud Computing, Server-Virtualisierung, Betriebssysteme, Anwendungssysteme, Fernwartung",
-      "katalog-ap2": "AP2-/WiSo-Teil des Prüfungskatalogs (Stelle im Kür-Grund genannt); nach P21 als Quelle für Kür zugelassen, wenn keine Hinweisquelle das Thema nennt"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte UEFI/BIOS, Cloud Computing, Server-Virtualisierung, Betriebssysteme, Anwendungssysteme, Fernwartung"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1179,7 +1182,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Kür",
+          "ring": "Außen",
           "wo": [
             "AP1-5-1-3"
           ],
