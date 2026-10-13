@@ -122,12 +122,13 @@
               "text": "Du kannst begründen, warum für ein E-Mail-Postfach IMAP statt POP3 gewählt wird: Die Mails bleiben auf dem Server und sind von mehreren Geräten aus nutzbar.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2025F-A2-db"
+                "beleg:2025F-A2-db",
+                "katalog:AP1.03.02.5"
               ]
             },
             {
               "id": "AP1-6-1-2-K3",
-              "text": "Du kannst begründen, warum für einen Fernzugriff SSH statt Telnet gewählt wird: SSH überträgt verschlüsselt, Telnet nicht.",
+              "text": "Du kannst begründen, warum für einen Fernzugriff SSH statt Telnet oder einer seriellen Verbindung gewählt wird: SSH überträgt verschlüsselt, Telnet und eine serielle Verbindung nicht.",
               "stufe": 4,
               "herkunft": [
                 "beleg:2025F-A4-eb"
@@ -135,8 +136,8 @@
             },
             {
               "id": "AP1-6-1-2-K4",
-              "text": "Du kannst mithilfe einer vorgegebenen Porttabelle Verbindungsart und Standardport in ein Formular eintragen, zum Beispiel SSH mit Port 22.",
-              "stufe": 3,
+              "text": "Du kannst mithilfe einer vorgegebenen Porttabelle Verbindungsart und Standardport für eine Verbindung angeben, zum Beispiel SSH mit Port 22.",
+              "stufe": 1,
               "herkunft": [
                 "beleg:2025F-A4-ea"
               ],
@@ -340,7 +341,8 @@
               "text": "Du kannst die Kürzel der Kabelschirmung erklären: U ungeschirmt, S Geflechtschirm, F Folienschirm, TP Twisted Pair.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2026H-A2-cb"
+                "beleg:2026H-A2-cb",
+                "katalog:AP1.03.03.1"
               ]
             },
             {
@@ -354,7 +356,7 @@
             },
             {
               "id": "AP1-6-1-4-K4",
-              "text": "Du kannst einen sichtbaren Schaden an Stecker oder Kabel, zum Beispiel eine fehlende Rastnase, mit einem Verbindungsabbruch in Zusammenhang bringen.",
+              "text": "Du kannst erklären, warum ein sichtbarer Schaden an Stecker oder Kabel, zum Beispiel eine fehlende Rastnase, die Verbindung unterbricht.",
               "stufe": 2,
               "herkunft": [
                 "beleg:2026H-A2-ca"
@@ -653,7 +655,7 @@
             },
             {
               "id": "AP1-6-2-2-K5",
-              "text": "Du kannst eine Präfixlänge in eine Subnetzmaske umrechnen und umgekehrt, zum Beispiel /25 = 255.255.255.128.",
+              "text": "Du kannst aus einer Präfixlänge die Subnetzmaske bestimmen und umgekehrt, zum Beispiel /25 = 255.255.255.128.",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A2-a"
@@ -710,7 +712,7 @@
           "koennen": [
             {
               "id": "AP1-6-2-3-K1",
-              "text": "Du kannst sagen, dass eine IPv6-Adresse 128 Bit lang ist und in acht Blöcken zu je vier Hexadezimalziffern geschrieben wird.",
+              "text": "Du kannst den Aufbau einer IPv6-Adresse nennen: 128 Bit, geschrieben in acht Blöcken zu je vier Hexadezimalziffern.",
               "stufe": 1,
               "herkunft": [
                 "beleg:2024F-A2-c"
@@ -718,11 +720,12 @@
             },
             {
               "id": "AP1-6-2-3-K2",
-              "text": "Du kannst eine gekürzte IPv6-Adresse vollständig ausschreiben und eine ausgeschriebene kürzen: führende Nullen weglassen, eine Folge von Nullblöcken einmal durch :: ersetzen.",
+              "text": "Du kannst eine IPv6-Adresse gekürzt und ungekürzt darstellen: führende Nullen weglassen, eine Folge von Nullblöcken einmal durch :: ersetzen.",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024F-A2-c",
-                "beleg:2022H-A3-b"
+                "beleg:2022H-A3-b",
+                "katalog:AP1.04.01.3"
               ]
             },
             {
@@ -730,7 +733,8 @@
               "text": "Du kannst bei einer Adresse mit /64 den Präfix und den Interface-Identifier bestimmen.",
               "stufe": 3,
               "herkunft": [
-                "beleg:2024F-A2-c"
+                "beleg:2024F-A2-c",
+                "katalog:AP1.04.01.3"
               ]
             },
             {
@@ -819,7 +823,8 @@
               "text": "Du kannst berechnen, wie viele Teilnetze ein Präfix ergibt, zum Beispiel 2^16 Teilnetze mit /64 aus einem /48-Präfix.",
               "stufe": 3,
               "herkunft": [
-                "beleg:2022H-A3-c"
+                "beleg:2022H-A3-c",
+                "katalog:ZB.ipv6-subnetting"
               ]
             },
             {
@@ -849,7 +854,7 @@
             },
             {
               "id": "AP1-6-2-5-K6",
-              "text": "Du kannst das n-te Teilnetz eines /48-Präfixes als /64-Netz hinschreiben, zum Beispiel 2001:db8:abcd:5::/64.",
+              "text": "Du kannst das n-te Teilnetz eines /48-Präfixes als /64-Netz bestimmen, zum Beispiel 2001:db8:abcd:5::/64.",
               "stufe": 3,
               "herkunft": [
                 "regel:P-GESCHWISTER",
@@ -1009,7 +1014,7 @@
             },
             {
               "id": "AP1-6-2-4-K7",
-              "text": "Du kannst sagen, dass IPv6 statt ARP das Neighbor Discovery Protocol (NDP) nutzt und keinen Broadcast kennt, sondern Multicast.",
+              "text": "Du kannst nennen, was IPv6 statt ARP und Broadcast nutzt: das Neighbor Discovery Protocol (NDP) und Multicast.",
               "stufe": 1,
               "herkunft": [
                 "regel:P-GESCHWISTER"
@@ -1058,7 +1063,8 @@
               "text": "Du kannst die Anmeldung am WLAN mit Pre-shared Key (ein gemeinsames Kennwort für alle) und mit Enterprise-Verfahren (eigene Zugangsdaten je Benutzer) unterscheiden.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2022F-A3-b"
+                "beleg:2022F-A3-b",
+                "katalog:AP1.04.05.5"
               ]
             },
             {
@@ -1066,7 +1072,8 @@
               "text": "Du kannst begründen, für welche Unternehmensgröße sich PSK und Enterprise eignen: Enterprise ist sicherer, weil sich einzelne Zugänge sperren lassen, braucht aber einen RADIUS-Server.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2022F-A3-b"
+                "beleg:2022F-A3-b",
+                "katalog:AP1.04.05.5"
               ]
             },
             {
@@ -1082,7 +1089,8 @@
               "text": "Du kannst erklären, wozu beim Enterprise-Verfahren ein RADIUS-Server dient: Er prüft die Zugangsdaten jedes einzelnen Benutzers.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2022F-A3-b"
+                "beleg:2022F-A3-b",
+                "katalog:AP1.04.05.5"
               ]
             }
           ],
@@ -1238,7 +1246,7 @@
             },
             {
               "id": "AP1-6-3-2-K4",
-              "text": "Du kannst aus dem Ergebnis eines Tests beurteilen, wo der Fehler liegt, zum Beispiel wenn der ping auf die IP-Adresse gelingt, der Aufruf des Namens aber scheitert.",
+              "text": "Du kannst aus dem Ergebnis eines Tests beurteilen, wo der Fehler liegt, zum Beispiel wenn der ping auf die IP-Adresse gelingt, der Aufruf des Namens aber scheitert, oder wenn eine ping-Ausgabe Paketverlust oder hohe, stark schwankende Antwortzeiten zeigt.",
               "stufe": 4,
               "herkunft": [
                 "beleg:2022F-A3-fc",
@@ -1248,7 +1256,7 @@
             },
             {
               "id": "AP1-6-3-2-K5",
-              "text": "Du kannst die LEDs an einer Netzwerkbuchse deuten: Dauerlicht für eine bestehende Verbindung, Blinken für Datenverkehr.",
+              "text": "Du kannst die LEDs an einer Netzwerkbuchse interpretieren: Dauerlicht für eine bestehende Verbindung, Blinken für Datenverkehr.",
               "stufe": 2,
               "herkunft": [
                 "beleg:2024F-A2-a"
@@ -1265,7 +1273,7 @@
             {
               "id": "AP1-6-3-2-K7",
               "text": "Du kannst für typische Fehlerursachen eine Überprüfung und eine Behebung angeben, zum Beispiel falsche DNS-Einstellung: mit nslookup prüfen, DNS-Server korrigieren.",
-              "stufe": 3,
+              "stufe": 1,
               "herkunft": [
                 "beleg:2026F-A2-b"
               ]
@@ -1326,15 +1334,15 @@
       },
       {
         "alt": "AP1-6-1-2-K3",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-1-2-K3",
-        "grund": "leicht umformuliert, Stufe 4 (begründen)"
+        "grund": "leicht umformuliert, Stufe 4 (begründen); P16 (K1): serielle Verbindung ergänzt (2025F-A4-eb)"
       },
       {
         "alt": "AP1-6-1-2-K4",
         "status": "angepasst",
         "neu": "AP1-6-1-2-K4",
-        "grund": "„eintragen“ statt „zuordnen“, Porttabelle als vorgegeben markiert (B4)"
+        "grund": "„angeben“ statt „zuordnen“ wie in 2025F-A4-ea (P16, Z3a), Porttabelle als vorgegeben markiert (B4)"
       },
       {
         "alt": "AP1-6-1-2-K5",
@@ -1392,9 +1400,9 @@
       },
       {
         "alt": "AP1-6-1-4-K4",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-1-4-K4",
-        "grund": "um Beispiel Rastnase ergänzt"
+        "grund": "um Beispiel Rastnase ergänzt; P16 (K2): Operator „erklären“"
       },
       {
         "alt": "AP1-6-1-4-K5",
@@ -1470,9 +1478,9 @@
       },
       {
         "alt": "AP1-6-2-2-K5",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-2-2-K5",
-        "grund": "Beispiel /25 aus 2026F"
+        "grund": "Beispiel /25 aus 2026F; P16 (K2): Operator „bestimmen“"
       },
       {
         "alt": "AP1-6-2-2-K6",
@@ -1482,15 +1490,15 @@
       },
       {
         "alt": "AP1-6-2-3-K1",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-2-3-K1",
-        "grund": ""
+        "grund": "P16 (K2): Operator „nennen“"
       },
       {
         "alt": "AP1-6-2-3-K2",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-2-3-K2",
-        "grund": ""
+        "grund": "P16 (K2): Operator „darstellen“"
       },
       {
         "alt": "AP1-6-2-3-K3",
@@ -1590,15 +1598,15 @@
       },
       {
         "alt": "AP1-6-3-2-K4",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-3-2-K4",
-        "grund": "„beurteilen“ (Stufe 4, Katalog: kennen und beurteilen)"
+        "grund": "„beurteilen“ (Stufe 4, Katalog: kennen und beurteilen); P16 (K1): ping-Werte deuten (2026F-A3-db)"
       },
       {
         "alt": "AP1-6-3-2-K5",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-6-3-2-K5",
-        "grund": ""
+        "grund": "P16 (K2): Operator „interpretieren“"
       }
     ],
     "rahmen": [
