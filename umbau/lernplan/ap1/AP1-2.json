@@ -63,7 +63,8 @@
               "stufe": 2,
               "herkunft": [
                 "beleg:2022H-A1-aa",
-                "beleg:2022H-A1-ab"
+                "beleg:2022H-A1-ab",
+                "katalog:AP1.02.01.1"
               ]
             },
             {
@@ -185,16 +186,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Marketingkonzepte wie AIDA, ABC-Analyse oder Produktlebenszyklus gehören nicht dazu.",
-              "begruendung": "G1: AP1.02.05 nennt zum Unterstützen von Marketingaktivitäten nur Nutzwertanalyse und Vertriebsformen (Stufe 2).",
-              "katalog": [
-                "AP1.02.05",
-                "AP1.02.05.2"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Marketing-Begriffe: AIDA-Formel, ABC-Analyse, Produktlebenszyklus, Cross- und Upselling.",
@@ -274,7 +266,7 @@
             },
             {
               "id": "AP1-2-2-1-K5",
-              "text": "Du kannst Anforderungen in Muss- und Kann-Anforderungen trennen.",
+              "text": "Du kannst bei Anforderungen Muss- und Kann-Anforderungen unterscheiden.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.01.1"
@@ -581,7 +573,7 @@
             },
             {
               "id": "AP1-2-3-1-K4",
-              "text": "Du kannst einen englischen Satz sinngemäß auf Deutsch wiedergeben, ohne Wort für Wort vorzugehen.",
+              "text": "Du kannst den Sinn eines englischen Satzes auf Deutsch erläutern, ohne Wort für Wort vorzugehen.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.02.03.4"
@@ -602,7 +594,8 @@
               "stufe": 4,
               "herkunft": [
                 "beleg:2026F-A1-aa",
-                "beleg:2026F-A1-ab"
+                "beleg:2026F-A1-ab",
+                "katalog:AP1.02.03.4"
               ]
             }
           ],
@@ -726,7 +719,8 @@
               "text": "Du kannst aus einer Situationsbeschreibung die Botschaften auswählen, die einen Kunden überzeugen, und ungeeignete wie einen Wechsel der Geschäftsführung weglassen.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2022F-A1-aa"
+                "beleg:2022F-A1-aa",
+                "katalog:AP1.02.04.2"
               ]
             },
             {
@@ -828,14 +822,6 @@
               ]
             },
             {
-              "id": "AP1-2-4-1-K5",
-              "text": "Du kannst an einem Beispiel beschreiben, wie zwei Ziele miteinander in Konflikt geraten.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.07.02.1"
-              ]
-            },
-            {
               "id": "AP1-2-4-1-K6",
               "text": "Du kannst für eine Maßnahme Vor- und Nachteile unter wirtschaftlichen und sozialen Gesichtspunkten in eine Tabelle eintragen, zum Beispiel für einen KI-Chatbot oder Homeoffice.",
               "stufe": 3,
@@ -854,7 +840,16 @@
               ]
             }
           ],
-          "grenzen": []
+          "grenzen": [
+            {
+              "text": "Zielkonflikte zwischen Unternehmenszielen gehören nicht dazu.",
+              "begruendung": "AP1.07.02 verlangt, Unternehmensziele und Leitbild zu kennen und einzuordnen; Zielkonflikte stehen im WiSo-Katalog (WISO.02.05.4) und sind nach P21 in AP1 Außen.",
+              "katalog": [
+                "AP1.07.02",
+                "WISO.02.05.4"
+              ]
+            }
+          ]
         },
         {
           "id": "AP1-2-4-2",
@@ -1196,7 +1191,7 @@
               "text": "Du kannst einen Nachteil des Parallelbetriebs beschreiben: doppelter Aufwand, weil Daten in beiden Systemen gepflegt werden.",
               "stufe": 2,
               "herkunft": [
-                "regel:P-GESCHWISTER"
+                "beleg:2026F-A3-eb"
               ]
             }
           ],
@@ -1292,9 +1287,9 @@
       },
       {
         "alt": "AP1-2-2-1-K5",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-2-2-1-K5",
-        "grund": "Herkunft katalog:AP1.04.01.1"
+        "grund": "P16 (K2): Operator aus 4.1 (unterscheiden)"
       },
       {
         "alt": "AP1-2-2-2-K1",
@@ -1372,7 +1367,7 @@
         "alt": "AP1-2-3-1-K4",
         "status": "angepasst",
         "neu": "AP1-2-3-1-K4",
-        "grund": "„wiedergeben“ statt „übersetzen“"
+        "grund": "„erläutern“ statt „übersetzen“ (P16: „wiedergeben“ ist kein Operator)"
       },
       {
         "alt": "AP1-2-3-2-K1",
@@ -1430,9 +1425,9 @@
       },
       {
         "alt": "AP1-2-4-1-K5",
-        "status": "übernommen",
-        "neu": "AP1-2-4-1-K5",
-        "grund": "„beschreiben“ statt „zeigen“"
+        "status": "gestrichen",
+        "neu": null,
+        "grund": "P16 (K3): Zielkonflikte stehen nur im WiSo-Katalog (WISO.02.05.4), nach P21 in AP1 Außen; jetzt Grenze in AP1-2-4-1"
       },
       {
         "alt": "AP1-2-4-2-K1",
