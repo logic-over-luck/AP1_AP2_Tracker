@@ -266,7 +266,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 
 | Nr | Frage | Stand |
 |---|---|---|
-| P1 | **Repo ist öffentlich.** Katalog und Prüfungsabschriften sind urheberrechtlich geschützt. Optionen: (a) Repo privat stellen und die App weiter veröffentlichen (z. B. über Netlify, das schon eingerichtet ist), dann darf das Fundament ins Repo; (b) Quellen und Fundament bleiben nur lokal (jetziger Stand). Der bisherige Stand enthält bereits Katalog-Wortlaut in der Inhaltsdatei. | offen |
+| P1 | **Repo ist öffentlich.** Katalog und Prüfungsabschriften sind urheberrechtlich geschützt. Die App soll weiter über GitHub Pages laufen (kein Netlify mehr); Pages geht mit kostenlosem Konto nur bei öffentlichen Repos. Vorschlag: **zweites, privates Repo nur für Quellen** (Katalog, Prüfungsabschriften, Fundament); dieses Repo bleibt öffentlich mit App und eigenen Inhalten. Alternativen: GitHub Pro (privat + Pages) oder Quellen nur lokal (jetziger Stand). Der bisherige Stand enthält bereits Katalog-Wortlaut in der Inhaltsdatei. | offen |
 | P2 | [unbestätigt] Ausbildungsordnung: Inhalte aus Teil 1 sollen in Teil 2 nur einbezogen werden, soweit für die Berufsbefähigung nötig. Wortlaut in der Verordnung vom 5. März 2020 nachprüfen; stützt E2. | offen |
 | P3 | Zuordnung der AP2-Katalogpunkte zu PB1/PB2 (W2): Liste erstellen und vom Projektinhaber bestätigen lassen. | offen |
 | P4 | 41 Katalogpunkte ohne Operator: 37 in WiSo, dazu AP1.06.03, AP2a.01.01, AP2b.02.01, AP2b.03.08. Vorschlag WiSo: Tiefe aus dem Prüfungsformat (ca. 30 maschinell auswertbare Aufgaben) → Stufe 2 als Regel, Rechenaufgaben aus Belegen. Die vier anderen einzeln entscheiden. | offen |
