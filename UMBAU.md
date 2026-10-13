@@ -197,6 +197,8 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
 - **G3** Was über die Stufe aus 4.1/4.2 hinausgeht, gehört nicht dazu – außer über eine Puffer-Regel.
 - **G4** Prüfungsformat: Eine Teilaufgabe bringt meist 2–8 Punkte und wird ohne Hilfsmittel gelöst.
   Was so nicht abfragbar ist (Herleitungen, Herstellerdetails, Normnummern), gehört nicht dazu.
+- **G6** Bei **Zusatzbausteinen** (nicht im Katalog) reicht der Umfang so weit wie die Belege plus Puffer
+  (P-NÄCHSTE-STUFE, P-GESCHWISTER). Weil der Katalog sie nicht nennt, ist das hier die Katalog-Begründung.
 - **G5** „nicht Bestandteil der schriftlichen Prüfung" (AP2a.01.01) und „kann Bestandteil der
   praktischen Prüfung sein" (AP2b.05.04, AP2b.05.05) werden ausgewiesen, nicht stillschweigend weggelassen.
 
@@ -248,11 +250,13 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | T0c | Regelwerk lückenlos: jeder Operator hat eine Stufe, jeder abdeckungspflichtige Baustein hat eine Stufe, Tabelle in 4.1 = `regelwerk.json` | ✓ `tools/umbau/tiefe-berechnen.mjs` |
 | T1 | Jeder abdeckungspflichtige Baustein des Raums steckt in mindestens einem Stichpunkt | geplant |
 | T2 | Jede Teilaufgabe der Prüfungen dieses Raums ist zugeordnet: Bausteine oder „ausserhalb“ mit Katalog-Begründung (B3, RAUM, G5); gültige Baustein-IDs; fester Aufgabentyp; jeder Prüfungsoperator hat eine Stufe. Prüft zugleich die **goldene Regel**: belegte Tiefe nie unter Katalogtiefe, kein Katalog-Baustein verliert seine Abdeckungspflicht | ✓ `tools/umbau/zuordnung-pruefen.mjs` (+ Tests) |
-| T2b | Jede Teilaufgabe ist mindestens einem Stichpunkt zugeordnet (über ihre Bausteine) | geplant (Schritt 3) |
-| T3 | Jede Können-Aussage hat eine gültige Herkunft (F2) | geplant |
-| T4 | Jede Grenze nennt eine Katalogstelle (G1) | geplant |
-| T5 | Größen stimmen (F3, F4) | geplant |
-| T6 | Jeder Stichpunkt hat ein Gebiet seines Raums | geplant |
+| T2b | Jede Teilaufgabe, die einen Baustein des Ordners betrifft, steckt in einem Stichpunkt (Teilaufgaben nur mit geteilten Bausteinen: auf Raum-Ebene) | ✓ je Ordner `tools/umbau/lernplan-pruefen.mjs` |
+| T8 | Tiefe erreicht: je Baustein erreicht mindestens eine Können-Aussage die belegte Tiefe | ✓ je Ordner (geteilte Bausteine: Hinweis, Rest auf Raum-Ebene) |
+| ALT | Jede alte Können-Aussage ist einsortiert (übernommen, angepasst, verschoben, gestrichen); übernommene und angepasste behalten ihre ID; freigewordene IDs werden nie neu vergeben | ✓ je Ordner |
+| T3 | Jede Können-Aussage hat eine gültige Herkunft (F2) | ✓ je Ordner |
+| T4 | Jede Grenze nennt eine Katalogstelle (G1) | ✓ je Ordner (lehnt Begründungen wie „kam nicht vor“ ab) |
+| T5 | Größen stimmen (F3, F4) | ✓ je Ordner |
+| T6 | Jeder Stichpunkt hat ein Gebiet seines Raums | ✓ je Ordner |
 | T7 | Inhalte früherer Räume sind importiert, nicht doppelt (E2) | geplant |
 
 **KI-Prüfer (Inhalt; eigene Sitzung, sieht nur einen Stichpunkt mit seinen Quellen)**
@@ -321,9 +325,14 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       `umbau/zuordnung/ap1/<Prüfung>.json`; 57 Prüfungsoperatoren im Regelwerk v1.1 eingestuft;
       4 Zusatzbausteine (Abschnitt 4.7); Ergebnis in `umbau/fundament/belege-ap1.json` (siehe 6.1);
       T2 grün; Gegenprüfung mit den Podcast-Schlagworten (P11) hat 3 Zuordnungen korrigiert
-- [ ] **Schritt 3 – Probelauf AP1 / Netzwerk:** ein Ordner komplett von Schicht 1 bis 5, altes Material
-      einsortiert, Liste „alt → neu". **Abnahmekriterium:** IPv6 steht mit Stufe 3 und Begründung aus dem
-      Katalog drin; T1–T6 grün für diesen Ordner. Der Projektinhaber entscheidet, ob es so weitergeht.
+- [x] **Schritt 3 – Probelauf AP1 / Netzwerk (Schicht 3+4):** `umbau/lernplan/ap1/AP1-6.json`, Bericht
+      `umbau/berichte/AP1-6.md`. 3 Themenblöcke, 12 Stichpunkte (2 neu: AP1-6-2-5 IPv6 im Netz, AP1-6-3-3 VPN),
+      69 Können-Aussagen. Alt → neu: 52 alte Aussagen, davon 37 übernommen, 12 angepasst, 3 verschoben,
+      0 gestrichen; 17 neu. Karten: 92 bleiben, 30 prüfen, 5 umhängen, 0 entfallen. Abnahmekriterium erfüllt:
+      IPv6 mit Stufe 3 (AP1-6-2-3, AP1-6-2-5), begründet mit AP1.04.01.3 und Belegen aus 2022H. Alle
+      Ordner-Prüfungen grün. Kerntest K1 als Selbstprüfung: 2 Lücken gefunden und geschlossen.
+- [ ] **Schritt 3b – Abnahme durch den Projektinhaber:** Bericht lesen, Stichproben, entscheiden.
+      Danach Schicht 5 für den Ordner (Karten prüfen/umhängen/neu, Lernprompts) und unabhängiger KI-Prüfer (K1–K3).
 - [ ] **Schritt 4 – Rest von AP1**, Ordner für Ordner nach dem Muster des Probelaufs
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
@@ -351,7 +360,9 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P11 | Gegenprüfung mit den Themen-Schlagworten des IT-Berufe-Podcasts (AP1 Herbst 2021 bis Frühjahr 2026) durchgeführt: 2 Struktogramm-Aufgaben (2022F-A4-d, 2022H-A4-b) und 1 fehlender Baustein (2024F-A4-a Zugangs-/Zugriffskontrolle) korrigiert. Für 2025H nennt der Podcast zusätzlich Pseudocode, Schreibtischtest, Code erklären, ERM – das liegt im fehlenden Teil der Abschrift (P14). | erledigt |
 | P12 | Lücken-Abgleich mit den Community-Lernzetteln (nach Schritt 3/4): Themen im Lernzettel ohne Baustein → einzeln entscheiden (katalogfremd, alter Katalog oder echte Lücke). | offen |
 | P13 | Z3 überträgt die Stufe einer Teilaufgabe auf alle ihre Bausteine. Bei Teilaufgaben mit mehreren Bausteinen kann ein Nebenbaustein dadurch zu hoch eingestuft werden (Richtung „eher mehr lernen“, also mit der goldenen Regel vereinbar). Im Probelauf vom KI-Prüfer (K2) je Stichpunkt prüfen lassen. | offen |
-| P14 | 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | offen |
+| P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
+| P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |
+| P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). | offen |
 
 ---
 
@@ -379,6 +390,7 @@ npm run umbau:pruefen     # prüft die Bausteine unabhängig gegen den Katalog
 npm run umbau:tiefe       # berechnet die Mindesttiefe je Baustein und prüft das Regelwerk
 npm run umbau:pruefungen  # prüft die Prüfungsabschriften, erzeugt das Teilaufgaben-Verzeichnis
 npm run umbau:zuordnung   # T2 + goldene Regel, berechnet die belegte Tiefe (belege-ap1.json)
+node tools/umbau/lernplan-pruefen.mjs AP1-6   # prüft einen Ordner des neuen Lernplans, schreibt umbau/berichte/AP1-6.md
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 

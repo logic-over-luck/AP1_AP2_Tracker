@@ -1,0 +1,1369 @@
+{
+  "oberblock": {
+    "id": "AP1-6",
+    "titel": "Netzwerk",
+    "raum": "AP1",
+    "gebiete": [
+      "G.AP1.02",
+      "G.AP1.03"
+    ]
+  },
+  "themenbloecke": [
+    {
+      "id": "AP1-6-1",
+      "titel": "Modelle, Protokolle und Geräte",
+      "satz": "Wie ein Netzwerk aufgebaut ist: Schichten, Protokolle, Geräte und Leitungen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-6-1-1",
+          "titel": "OSI-Modell und Zuordnung",
+          "ziel": "Die Schichten des OSI-Modells nennen und Protokolle, Adressen, Geräte und Fehler der richtigen Schicht zuordnen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.02.5",
+              "anteil": "OSI-Modell"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A3-c",
+            "2022F-A3-d",
+            "2024F-A2-b",
+            "2026H-A2-cd"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-1-1-K1",
+              "text": "Du kannst die sieben Schichten des OSI-Modells in der richtigen Reihenfolge mit deutschem oder englischem Namen nennen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.02.5",
+                "beleg:2024F-A2-b"
+              ]
+            },
+            {
+              "id": "AP1-6-1-1-K2",
+              "text": "Du kannst Begriffe der richtigen Schicht zuordnen: Kabel, Buchse und LED zu 1, MAC-Adresse und Ethernet zu 2, IPv4- und IPv6-Adressen zu 3, TCP, UDP und Ports zu 4, DNS, DHCP und HTTPS zu 7.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.02.5",
+                "beleg:2022F-A3-c",
+                "beleg:2024F-A2-b"
+              ]
+            },
+            {
+              "id": "AP1-6-1-1-K3",
+              "text": "Du kannst in einer Tabelle zur Fehlersuche je Schicht ein Protokoll, eine Adressart, einen Test oder einen möglichen Fehler ergänzen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022F-A3-c",
+                "beleg:2026H-A2-cd"
+              ]
+            },
+            {
+              "id": "AP1-6-1-1-K4",
+              "text": "Du kannst erklären, wozu ein Schichtenmodell dient: Aufgaben trennen, Fehler eingrenzen, Geräte verschiedener Hersteller zusammenarbeiten lassen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.02.5"
+              ]
+            },
+            {
+              "id": "AP1-6-1-1-K5",
+              "text": "Du kannst angezeigte Werte wie Medienstatus, Signalqualität oder Übertragungsrate der Schicht 1 zuordnen und daraus deuten, ob der Fehler in einer höheren Schicht liegt.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A3-d"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Das TCP/IP-Modell und der Vergleich der Modelle gehören nicht hierher.",
+              "begruendung": "E2/W1: „Schichtenmodelle, z. B. OSI, TCP/IP benennen und zuordnen“ steht im AP2-Katalog und wohnt dort; AP1 nennt nur das OSI-Modell (AP1.03.02.5).",
+              "katalog": [
+                "AP1.03.02.5",
+                "AP2b.01.01"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-1-2",
+          "titel": "Protokolle und ihre Aufgaben",
+          "ziel": "Gängige Protokolle ihrem Zweck zuordnen und für eine Verbindung das passende, sichere Protokoll wählen und begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.02.5",
+              "anteil": "Netzwerkprotokolle"
+            }
+          ],
+          "teilaufgaben": [
+            "2025F-A2-db",
+            "2025F-A4-ea",
+            "2025F-A4-eb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-1-2-K1",
+              "text": "Du kannst die Aufgabe von Ethernet, IP und DNS erklären.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.02.5"
+              ]
+            },
+            {
+              "id": "AP1-6-1-2-K2",
+              "text": "Du kannst begründen, warum für ein E-Mail-Postfach IMAP statt POP3 gewählt wird: Die Mails bleiben auf dem Server und sind von mehreren Geräten aus nutzbar.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025F-A2-db"
+              ]
+            },
+            {
+              "id": "AP1-6-1-2-K3",
+              "text": "Du kannst begründen, warum für einen Fernzugriff SSH statt Telnet gewählt wird: SSH überträgt verschlüsselt, Telnet nicht.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025F-A4-eb"
+              ]
+            },
+            {
+              "id": "AP1-6-1-2-K4",
+              "text": "Du kannst mithilfe einer vorgegebenen Porttabelle Verbindungsart und Standardport in ein Formular eintragen, zum Beispiel SSH mit Port 22.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025F-A4-ea"
+              ],
+              "vorgegeben": "Porttabelle"
+            },
+            {
+              "id": "AP1-6-1-2-K5",
+              "text": "Du kannst gängige Protokolle ihrem Zweck zuordnen: HTTP und HTTPS für Webseiten, SMTP, IMAP und POP3 für E-Mail, DNS für Namen, DHCP für Adressen, SSH für Fernzugriff.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.02.5"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Aufbau der Protokolle (Header, Verbindungsaufbau) gehört nicht dazu; Portnummern musst du nicht auswendig können.",
+              "begruendung": "G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle erläutern“ steht im AP2-Katalog.",
+              "katalog": [
+                "AP1.03.02",
+                "AP2b.01.05"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-1-3",
+          "titel": "Netzwerkkomponenten: Switch, Router, Access Point, Patchfeld",
+          "ziel": "Die Aufgabe der Netzwerkgeräte am Arbeitsplatz erklären und für eine Situation Gerät oder Anschluss begründet auswählen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Netzwerkkomponenten wie WLAN-Router, Switch, Gateway, Accesspoint"
+            },
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "Gateway/Router, Switch"
+            },
+            {
+              "id": "ANH.it-netzwerk-diagramm-netzwerkplan"
+            }
+          ],
+          "teilaufgaben": [
+            "2025H-A3-g"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-1-3-K1",
+              "text": "Du kannst die Aufgabe eines Switches erklären: Geräte innerhalb eines Netzes verbinden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-6-1-3-K2",
+              "text": "Du kannst die Aufgabe eines Routers bzw. Gateways erklären: Netze miteinander verbinden, zum Beispiel das lokale Netz mit dem Internet.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-6-1-3-K3",
+              "text": "Du kannst die Aufgabe eines Access Points erklären: WLAN-Geräte an das kabelgebundene Netz anbinden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-6-1-3-K4",
+              "text": "Du kannst für eine beschriebene Situation das passende Netzwerkgerät auswählen und die Wahl begründen.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-6-1-3-K5",
+              "text": "Du kannst die Symbole des Katalog-Anhangs für Switch, Router, Firewall, Access Point und Server in einem einfachen Netzwerkplan erkennen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:ANH.it-netzwerk-diagramm-netzwerkplan"
+              ]
+            },
+            {
+              "id": "AP1-6-1-3-K6",
+              "text": "Du kannst anhand von Dosenbeschriftung und Patchplan die Netzwerkdose wählen, die über Patchfeld und Switch ins richtige Netz führt, und die Wahl begründen.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025H-A3-g"
+              ],
+              "vorgegeben": "Dosenbeschriftung und Patchplan"
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Konfiguration von Switch und Router (Routing, VLAN) und das Planen einer strukturierten Verkabelung gehören nicht dazu; Bridge und Firewall als Netzwerkgeräte vergleichen ebenfalls nicht.",
+              "begruendung": "G2: AP1 prüft die Sicht des Arbeitsplatzes (Prüfungsbereich „Einrichten eines IT-gestützten Arbeitsplatzes“); Routing, Switching, Bridge, Firewall, VLAN und strukturierte Verkabelung stehen im AP2-Katalog.",
+              "katalog": [
+                "AP2b.01.01",
+                "AP2b.01.02",
+                "AP2b.01.03.5",
+                "AP2b.01.03.6"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-1-4",
+          "titel": "Leitungen, Standards und Internetanbindung",
+          "ziel": "Übertragungsmedien vergleichen, Kabelbezeichnungen deuten, ein passendes Kabel auswählen und einen Internetzugang ohne Festnetz nennen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "LWL, Ethernet-Standards, WLAN-Standards"
+            },
+            {
+              "id": "AP1.04.02.2",
+              "anteil": "LAN, WLAN"
+            },
+            {
+              "id": "AP1.04.01.3",
+              "anteil": "Netzwerkanbindungen"
+            }
+          ],
+          "teilaufgaben": [
+            "2026H-A2-ca",
+            "2026H-A2-cb",
+            "2026H-A2-cc",
+            "2026H-A4-a",
+            "2025F-A1-c"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-1-4-K1",
+              "text": "Du kannst Kupferkabel (Twisted Pair), Lichtwellenleiter und WLAN nach Geschwindigkeit, Reichweite und Störanfälligkeit vergleichen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-6-1-4-K2",
+              "text": "Du kannst die Kürzel der Kabelschirmung erklären: U ungeschirmt, S Geflechtschirm, F Folienschirm, TP Twisted Pair.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A2-cb"
+              ]
+            },
+            {
+              "id": "AP1-6-1-4-K3",
+              "text": "Du kannst aus mehreren Kabeln das günstigste auswählen, das geforderte Datenrate und Schirmung erfüllt.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2026H-A2-cc"
+              ],
+              "vorgegeben": "Produktliste"
+            },
+            {
+              "id": "AP1-6-1-4-K4",
+              "text": "Du kannst einen sichtbaren Schaden an Stecker oder Kabel, zum Beispiel eine fehlende Rastnase, mit einem Verbindungsabbruch in Zusammenhang bringen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A2-ca"
+              ]
+            },
+            {
+              "id": "AP1-6-1-4-K5",
+              "text": "Du kannst Möglichkeiten nennen, an einem Ort ohne Festnetzanschluss ins Internet zu kommen: mobiler Router mit SIM-Karte oder Tethering über das Smartphone.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026H-A4-a"
+              ]
+            },
+            {
+              "id": "AP1-6-1-4-K6",
+              "text": "Du kannst Kabelkategorien wie Cat 5e, Cat 6a und Cat 7 nach ihrer Datenrate einordnen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1",
+                "beleg:2026H-A2-cc"
+              ]
+            },
+            {
+              "id": "AP1-6-1-4-K7",
+              "text": "Du kannst die Symbole für WLAN und Bluetooth an einem Gerät erkennen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2025F-A1-c"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Technik der Mobilfunkstandards (LTE, 5G) und Bluetooth im Detail gehören nicht dazu.",
+              "begruendung": "G1: AP1.03.03.1 nennt LWL, Ethernet- und WLAN-Standards, keine Mobilfunkstandards (LTE und 5G laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen); Bluetooth steht im AP2-Katalog.",
+              "katalog": [
+                "AP1.03.03.1",
+                "AP2b.01.03.9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AP1-6-2",
+      "titel": "Adressierung",
+      "satz": "Wie Geräte im Netz eine Adresse bekommen und wie man mit Netzadressen rechnet – für IPv4 und IPv6.",
+      "stichpunkte": [
+        {
+          "id": "AP1-6-2-1",
+          "titel": "IPv4-Konfiguration: Adresse, Subnetzmaske, Gateway, statisch oder per DHCP",
+          "ziel": "Einen Client mit IPv4 einrichten, die passende statische Adresse festlegen und die Wahl zwischen statisch und automatisch begründen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.01.3",
+              "anteil": "IP(v4)-Konfiguration"
+            },
+            {
+              "id": "AP1.04.05.5",
+              "anteil": "IP-Adressen, Dokumentation"
+            }
+          ],
+          "teilaufgaben": [
+            "2024H-A1-db",
+            "2025H-A3-f",
+            "2026F-A3-da"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-2-1-K1",
+              "text": "Du kannst IP-Adresse, Subnetzmaske und Standardgateway in eine Konfigurationsmaske eintragen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A1-db"
+              ]
+            },
+            {
+              "id": "AP1-6-2-1-K2",
+              "text": "Du kannst eine freie statische Adresse festlegen, die im richtigen Netz und außerhalb des DHCP-Bereichs liegt.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A1-db"
+              ],
+              "vorgegeben": "Netz, DHCP-Bereich und Router"
+            },
+            {
+              "id": "AP1-6-2-1-K3",
+              "text": "Du kannst eine Präfixlänge wie /24 in die Subnetzmaske 255.255.255.0 umsetzen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024H-A1-db"
+              ]
+            },
+            {
+              "id": "AP1-6-2-1-K4",
+              "text": "Du kannst statische und automatische Adressvergabe unterscheiden und begründen, wann eine feste Adresse sinnvoll ist, zum Beispiel für Drucker oder Fernwartung.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.04.05.5",
+                "katalog:AP1.04.01.3",
+                "beleg:2024H-A1-db"
+              ]
+            },
+            {
+              "id": "AP1-6-2-1-K5",
+              "text": "Du kannst private IPv4-Bereiche erkennen (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) und erklären, dass sie im Internet nicht direkt erreichbar sind.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A3-da"
+              ]
+            },
+            {
+              "id": "AP1-6-2-1-K6",
+              "text": "Du kannst die Netzwerkeinstellungen eines Arbeitsplatzes dokumentieren: Adresse, Maske, Gateway, DNS-Server, Anschluss.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:AP1.04.05.5"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-6-2-2",
+          "titel": "IPv4-Subnetting: Netzadresse, Broadcastadresse und Hostbereich",
+          "ziel": "Zu einer IPv4-Adresse mit Präfix Netz, Broadcast und nutzbare Adressen berechnen und ein Netz in gleich große Teilnetze aufteilen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "ZB.ipv4-subnetting"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A3-fb",
+            "2025F-A1-d",
+            "2025H-A3-f",
+            "2026F-A2-a"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-2-2-K1",
+              "text": "Du kannst aus der Präfixlänge die Zahl der Adressen und der nutzbaren Hosts berechnen, zum Beispiel bei /26: 64 Adressen, 62 Hosts.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A2-a"
+              ]
+            },
+            {
+              "id": "AP1-6-2-2-K2",
+              "text": "Du kannst zu einer IPv4-Adresse mit Präfix die Netzadresse, den Hostanteil und die Broadcastadresse bestimmen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022F-A3-fb",
+                "beleg:2026F-A2-a"
+              ]
+            },
+            {
+              "id": "AP1-6-2-2-K3",
+              "text": "Du kannst die erste, die letzte und die vorletzte nutzbare Hostadresse bestimmen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025F-A1-d",
+                "beleg:2025H-A3-f"
+              ]
+            },
+            {
+              "id": "AP1-6-2-2-K4",
+              "text": "Du kannst in einer Netzskizze mit Endgeräten und Netzadresse eine fehlende Adresse eintragen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025F-A1-d"
+              ]
+            },
+            {
+              "id": "AP1-6-2-2-K5",
+              "text": "Du kannst eine Präfixlänge in eine Subnetzmaske umrechnen und umgekehrt, zum Beispiel /25 = 255.255.255.128.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A2-a"
+              ]
+            },
+            {
+              "id": "AP1-6-2-2-K6",
+              "text": "Du kannst bestimmen, ob zwei Adressen im selben Netz liegen und damit direkt miteinander kommunizieren können.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A3-f"
+              ]
+            },
+            {
+              "id": "AP1-6-2-2-K7",
+              "text": "Du kannst ein Netz in gleich große Teilnetze aufteilen und für jedes Teilnetz Netzadresse und Broadcastadresse bestimmen.",
+              "stufe": 3,
+              "herkunft": [
+                "regel:P-NAECHSTE-STUFE"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Teilnetze unterschiedlicher Größe (VLSM) und das Zusammenfassen von Netzen gehören nicht dazu.",
+              "begruendung": "G6: Subnetting ist ein Zusatzbaustein (nicht im Katalog); sein Umfang reicht so weit wie die Belege plus Puffer – belegt ist das Rechnen in einem Netz, Puffer ist das Aufteilen in gleich große Teilnetze.",
+              "katalog": [
+                "AP1.04.05.5"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-2-3",
+          "titel": "IPv6-Adressen lesen und schreiben",
+          "ziel": "IPv6-Adressen kürzen und ausschreiben, in Präfix und Interface-Identifier zerlegen und von IPv4 unterscheiden.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.01.3",
+              "anteil": "IP(v6)-Konfiguration"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A3-eb",
+            "2022H-A3-a",
+            "2022H-A3-f",
+            "2024F-A2-c",
+            "2026F-A2-c",
+            "2022H-A3-b"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-2-3-K1",
+              "text": "Du kannst sagen, dass eine IPv6-Adresse 128 Bit lang ist und in acht Blöcken zu je vier Hexadezimalziffern geschrieben wird.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A2-c"
+              ]
+            },
+            {
+              "id": "AP1-6-2-3-K2",
+              "text": "Du kannst eine gekürzte IPv6-Adresse vollständig ausschreiben und eine ausgeschriebene kürzen: führende Nullen weglassen, eine Folge von Nullblöcken einmal durch :: ersetzen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A2-c",
+                "beleg:2022H-A3-b"
+              ]
+            },
+            {
+              "id": "AP1-6-2-3-K3",
+              "text": "Du kannst bei einer Adresse mit /64 Präfix und Interface-Identifier bestimmen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A2-c"
+              ]
+            },
+            {
+              "id": "AP1-6-2-3-K4",
+              "text": "Du kannst eine verbindungslokale Adresse (fe80::) erkennen und erklären, warum sie ohne Konfiguration automatisch entsteht.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A3-eb",
+                "beleg:2022H-A3-f"
+              ]
+            },
+            {
+              "id": "AP1-6-2-3-K5",
+              "text": "Du kannst Vorteile von IPv6 gegenüber IPv4 nennen: viel größerer Adressraum, weltweite Erreichbarkeit einzelner Geräte, automatische Konfiguration.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2022H-A3-a"
+              ]
+            },
+            {
+              "id": "AP1-6-2-3-K6",
+              "text": "Du kannst Unterschiede zwischen IPv4 und IPv6 beschreiben: 32 gegen 128 Bit, dezimal mit Punkten gegen hexadezimal mit Doppelpunkten, Art der Adressvergabe.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A2-c"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-6-2-5",
+          "titel": "IPv6 im Netz: Präfixe aufteilen, Adressen vergeben, mit IPv4 kombinieren",
+          "ziel": "Ein IPv6-Präfix in Teilnetze aufteilen, Geräten Adressen und Gateway vergeben, die Erreichbarkeit prüfen und den gemeinsamen Betrieb mit IPv4 erklären.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "ZB.ipv6-subnetting"
+            },
+            {
+              "id": "AP1.04.01.3",
+              "anteil": "IP(v6)-Konfiguration"
+            },
+            {
+              "id": "AP1.04.05.6",
+              "anteil": "ping"
+            }
+          ],
+          "teilaufgaben": [
+            "2022H-A3-b",
+            "2022H-A3-c",
+            "2022H-A3-d",
+            "2022H-A3-e",
+            "2026F-A2-d"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-2-5-K1",
+              "text": "Du kannst in einer IPv6-Adresse Standortpräfix (48 Bit), Teilnetz-ID (16 Bit) und Interface-Identifier (64 Bit) identifizieren.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022H-A3-b"
+              ]
+            },
+            {
+              "id": "AP1-6-2-5-K2",
+              "text": "Du kannst berechnen, wie viele Teilnetze ein Präfix ergibt, zum Beispiel 2^16 Teilnetze mit /64 aus einem /48-Präfix.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022H-A3-c"
+              ]
+            },
+            {
+              "id": "AP1-6-2-5-K3",
+              "text": "Du kannst aus einem /48-Präfix ein eigenes /64-Teilnetz bilden und den Geräten darin Adressen und das Standardgateway vergeben.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022H-A3-d"
+              ]
+            },
+            {
+              "id": "AP1-6-2-5-K4",
+              "text": "Du kannst die Befehle angeben, um mit ping die eigene Loopback-Adresse (::1) und das Gateway über IPv6 zu prüfen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2022H-A3-e",
+                "katalog:AP1.04.05.6"
+              ]
+            },
+            {
+              "id": "AP1-6-2-5-K5",
+              "text": "Du kannst erklären, wie IPv4 und IPv6 gemeinsam betrieben werden: Dual Stack oder Tunnel.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A2-d"
+              ]
+            },
+            {
+              "id": "AP1-6-2-5-K6",
+              "text": "Du kannst das n-te Teilnetz eines /48-Präfixes als /64-Netz hinschreiben, zum Beispiel 2001:db8:abcd:5::/64.",
+              "stufe": 3,
+              "herkunft": [
+                "regel:P-GESCHWISTER",
+                "regel:P-NAECHSTE-STUFE"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Präfixgrenzen, die mitten in einer Hexadezimalziffer liegen (z. B. /62), und Details der automatischen Adressbildung (SLAAC, EUI-64) gehören nicht dazu.",
+              "begruendung": "G6: IPv6-Subnetting ist ein Zusatzbaustein; belegt sind /48 und /64 (2022H), Puffer ist das Aufteilen auf 16-Bit-Grenzen. G3: zur automatischen Adresse reicht „erklären“ (AP1-6-2-3-K4).",
+              "katalog": [
+                "AP1.04.01.3"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-2-4",
+          "titel": "MAC-Adresse, ARP und DHCP",
+          "ziel": "Erklären, wie ein Rechner im lokalen Netz Adressen bekommt und findet, und Ausgaben von ipconfig und arp deuten.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.02.5",
+              "anteil": "Ethernet/MAC"
+            },
+            {
+              "id": "AP1.04.05.5",
+              "anteil": "DHCP"
+            },
+            {
+              "id": "AP1.04.05.6",
+              "anteil": "arp, ipconfig"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A3-ea",
+            "2022F-A3-fa",
+            "2022F-A3-fc",
+            "2024F-A2-d",
+            "2024F-A2-e",
+            "2024F-A2-g",
+            "2024H-A1-da",
+            "2024H-A1-dd"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-2-4-K1",
+              "text": "Du kannst den Aufbau einer MAC-Adresse beschreiben: 48 Bit, sechs Bytes hexadezimal, vom Hersteller fest vergeben, vordere Hälfte Herstellerkennung.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A3-ea",
+                "beleg:2024H-A1-dd"
+              ]
+            },
+            {
+              "id": "AP1-6-2-4-K2",
+              "text": "Du kannst die Aufgabe von ARP erklären: zu einer IP-Adresse im lokalen Netz die MAC-Adresse ermitteln.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A2-e"
+              ]
+            },
+            {
+              "id": "AP1-6-2-4-K3",
+              "text": "Du kannst aus den Ausgaben von ipconfig /all und arp -a IP- und MAC-Adressen den richtigen Geräten zuordnen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A2-g"
+              ]
+            },
+            {
+              "id": "AP1-6-2-4-K4",
+              "text": "Du kannst nennen, was ein DHCP-Server einem Client zuteilt: IP-Adresse, Subnetzmaske, Standardgateway, DNS-Server.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A2-d",
+                "beleg:2022F-A3-fa"
+              ]
+            },
+            {
+              "id": "AP1-6-2-4-K5",
+              "text": "Du kannst eine Adresse aus dem Bereich 169.254.x.x begründen: Der Client sollte per DHCP eine Adresse bekommen, hat keinen DHCP-Server erreicht und sich selbst eine gegeben.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A1-da",
+                "beleg:2022F-A3-fc"
+              ]
+            },
+            {
+              "id": "AP1-6-2-4-K6",
+              "text": "Du kannst einen Befehl zum Ermitteln der eigenen MAC-Adresse angeben (ipconfig /all, getmac, ip link) und eine MAC-Adresse korrekt hexadezimal schreiben.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024H-A1-dd",
+                "katalog:AP1.04.05.6"
+              ]
+            }
+          ],
+          "grenzen": []
+        }
+      ]
+    },
+    {
+      "id": "AP1-6-3",
+      "titel": "Verbindungen einrichten und Fehler finden",
+      "satz": "Einen Arbeitsplatz ins WLAN und per VPN ins Firmennetz bringen und Netzwerkfehler systematisch eingrenzen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-6-3-1",
+          "titel": "WLAN-Zugang: Pre-shared Key und Enterprise",
+          "ziel": "Die Anmeldung an einem WLAN mit Pre-shared Key und mit Enterprise-Verfahren unterscheiden und das passende Verfahren empfehlen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.05.5",
+              "anteil": "WLAN-Zugang, Pre shared key/Enterprise"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A3-a",
+            "2022F-A3-b"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-3-1-K1",
+              "text": "Du kannst die Anmeldung am WLAN mit Pre-shared Key (ein gemeinsames Kennwort für alle) und mit Enterprise-Verfahren (eigene Zugangsdaten je Benutzer) unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A3-b"
+              ]
+            },
+            {
+              "id": "AP1-6-3-1-K2",
+              "text": "Du kannst begründen, für welche Unternehmensgröße sich PSK und Enterprise eignen: Enterprise ist sicherer, weil sich einzelne Zugänge sperren lassen, braucht aber einen RADIUS-Server.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2022F-A3-b"
+              ]
+            },
+            {
+              "id": "AP1-6-3-1-K6",
+              "text": "Du kannst die Angaben nennen, die du für die Anmeldung an einem WPA-PSK-WLAN brauchst: SSID und Schlüssel.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2022F-A3-a"
+              ]
+            },
+            {
+              "id": "AP1-6-3-1-K7",
+              "text": "Du kannst erklären, wozu beim Enterprise-Verfahren ein RADIUS-Server dient: Er prüft die Zugangsdaten jedes einzelnen Benutzers.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A3-b"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Einrichten eines RADIUS-Servers und Sicherheit in Drahtlosnetzen über die Wahl des Verfahrens hinaus gehören nicht dazu.",
+              "begruendung": "G2: AP1 richtet den Arbeitsplatz ein (AP1.04.05.5 „WLAN-Zugang“); Zugriffskontrolle im Netzwerk (RADIUS) und Sicherheit in Drahtlosnetzen stehen im AP2-Katalog.",
+              "katalog": [
+                "AP1.04.05.5",
+                "AP2b.01.03.3",
+                "AP2b.01.03.8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-3-3",
+          "titel": "VPN",
+          "ziel": "Erklären, was ein VPN ist, wozu es dient und welchen Sicherheitsvorteil es bringt.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.05.5",
+              "anteil": "VPN"
+            }
+          ],
+          "teilaufgaben": [
+            "2023H-A3-da",
+            "2024F-A4-b",
+            "2026H-A4-ea"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-3-3-K1",
+              "text": "Du kannst erklären, was ein VPN ist: eine verschlüsselte Verbindung durch ein unsicheres Netz, mit der ein Gerät arbeitet, als wäre es im Firmennetz.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A4-b",
+                "beleg:2026H-A4-ea"
+              ]
+            },
+            {
+              "id": "AP1-6-3-3-K2",
+              "text": "Du kannst einen Einsatzfall für VPN nennen, zum Beispiel Daten von unterwegs auf dem Firmenserver sichern.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A4-b"
+              ]
+            },
+            {
+              "id": "AP1-6-3-3-K3",
+              "text": "Du kannst das Bild des Tunnels erklären: Die Datenpakete werden verschlüsselt und in andere Pakete verpackt übertragen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A4-ea"
+              ]
+            },
+            {
+              "id": "AP1-6-3-3-K4",
+              "text": "Du kannst den sicherheitstechnischen Vorteil eines VPN beschreiben: Die Daten bleiben auch über ein unsicheres Netz vertraulich.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023H-A3-da"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "VPN-Modelle (z. B. Site-to-Site, End-to-Site) und Protokolle wie IPsec gehören nicht dazu.",
+              "begruendung": "Katalog: AP1 nennt VPN nur bei der Konfiguration von Netzwerkverbindungen (AP1.04.05.5); VPN-Modelle, Tunneling und IPsec stehen im AP2-Katalog.",
+              "katalog": [
+                "AP1.04.05.5",
+                "AP2b.01.06"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-6-3-2",
+          "titel": "Netzwerkbefehle und systematische Fehlersuche",
+          "ziel": "Mit den Netzwerkbefehlen Verbindungen prüfen, eine Fehlersuche in sinnvoller Reihenfolge planen und aus Testergebnissen auf die Fehlerursache schließen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.05.6",
+              "anteil": "Netzwerktroubleshooting: ipconfig, ifconfig/ip, iproute2, arp, ping, traceroute, nslookup"
+            },
+            {
+              "id": "AP1.04.05.5",
+              "anteil": "Test, Troubleshooting"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A3-d",
+            "2022F-A3-fc",
+            "2022H-A3-e",
+            "2024F-A2-a",
+            "2024F-A2-f",
+            "2024H-A1-dc",
+            "2026F-A2-b",
+            "2026F-A3-db",
+            "2026H-A2-cd",
+            "2026H-A2-ca"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-3-2-K1",
+              "text": "Du kannst den Zweck der Befehle nennen: ipconfig bzw. ifconfig/ip zeigt die eigene Konfiguration, ping prüft die Erreichbarkeit, traceroute zeigt den Weg, nslookup prüft die Namensauflösung.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.04.05.6"
+              ]
+            },
+            {
+              "id": "AP1-6-3-2-K2",
+              "text": "Du kannst für einen Zweck den passenden Befehl angeben, zum Beispiel für die Erreichbarkeit des Gateways oder einer Internetadresse.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A2-f",
+                "beleg:2022H-A3-e"
+              ]
+            },
+            {
+              "id": "AP1-6-3-2-K3",
+              "text": "Du kannst eine Fehlersuche in sinnvoller Reihenfolge planen: Kabel und LED, eigene Konfiguration, Gateway, Namensauflösung, Zielserver.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026H-A2-cd",
+                "beleg:2026F-A2-b"
+              ]
+            },
+            {
+              "id": "AP1-6-3-2-K4",
+              "text": "Du kannst aus dem Ergebnis eines Tests beurteilen, wo der Fehler liegt, zum Beispiel wenn der ping auf die IP-Adresse gelingt, der Aufruf des Namens aber scheitert.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2022F-A3-fc",
+                "beleg:2026F-A3-db",
+                "katalog:AP1.04.05.6"
+              ]
+            },
+            {
+              "id": "AP1-6-3-2-K5",
+              "text": "Du kannst die LEDs an einer Netzwerkbuchse deuten: Dauerlicht für eine bestehende Verbindung, Blinken für Datenverkehr.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A2-a"
+              ]
+            },
+            {
+              "id": "AP1-6-3-2-K6",
+              "text": "Du kannst beschreiben, wie du mit Patchkabel und ping herausfindest, welche Netzwerkdose zu welchem Netz gehört.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024H-A1-dc"
+              ]
+            },
+            {
+              "id": "AP1-6-3-2-K7",
+              "text": "Du kannst für typische Fehlerursachen eine Überprüfung und eine Behebung angeben, zum Beispiel falsche DNS-Einstellung: mit nslookup prüfen, DNS-Server korrigieren.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A2-b"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Netzwerkanalyse mit Mitschnitt- oder Monitoring-Werkzeugen gehört nicht dazu.",
+              "begruendung": "Katalog: AP1.04.05.6 zählt die Konsolenbefehle auf; Monitoringsysteme stehen im AP2-Katalog.",
+              "katalog": [
+                "AP1.04.05.6",
+                "AP2b.01.11"
+              ]
+            }
+          ],
+          "hinweis": "Die Konsolenbefehle für Dateioperationen (dir, ls, mkdir, del, cp, copy, chmod, alias) aus demselben Baustein AP1.04.05.6 wohnen im Ordner Software und Betriebssysteme."
+        }
+      ]
+    }
+  ],
+  "alt_neu": {
+    "koennen": [
+      {
+        "alt": "AP1-6-1-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-1-1-K1",
+        "grund": "unverändert, jetzt mit Beleg 2024F-A2-b"
+      },
+      {
+        "alt": "AP1-6-1-1-K2",
+        "status": "angepasst",
+        "neu": "AP1-6-1-1-K2",
+        "grund": "um IPv6, UDP, Ports, Buchse/LED ergänzt (Musterlösungen 2022F-A3-c, 2024F-A2-b)"
+      },
+      {
+        "alt": "AP1-6-1-1-K3",
+        "status": "angepasst",
+        "neu": "AP1-6-1-1-K3",
+        "grund": "Wortlaut an die Tabellen der Prüfungen angepasst (Protokoll, Adressart, Test, Fehler)"
+      },
+      {
+        "alt": "AP1-6-1-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-6-1-1-K4",
+        "grund": "Herkunft jetzt katalog:AP1.03.02.5"
+      },
+      {
+        "alt": "AP1-6-1-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-1-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-1-2-K2",
+        "grund": "leicht umformuliert, Stufe 4 (begründen)"
+      },
+      {
+        "alt": "AP1-6-1-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-6-1-2-K3",
+        "grund": "leicht umformuliert, Stufe 4 (begründen)"
+      },
+      {
+        "alt": "AP1-6-1-2-K4",
+        "status": "angepasst",
+        "neu": "AP1-6-1-2-K4",
+        "grund": "„eintragen“ statt „zuordnen“, Porttabelle als vorgegeben markiert (B4)"
+      },
+      {
+        "alt": "AP1-6-1-2-K5",
+        "status": "angepasst",
+        "neu": "AP1-6-1-2-K5",
+        "grund": "Ports auswendig gestrichen (B4: Porttabelle war vorgegeben); jetzt Protokolle ihrem Zweck zuordnen"
+      },
+      {
+        "alt": "AP1-6-1-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-1-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-1-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-6-1-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-3-K4",
+        "status": "angepasst",
+        "neu": "AP1-6-1-3-K4",
+        "grund": "um „begründen“ ergänzt (Katalog: kennen, unterscheiden und beurteilen)"
+      },
+      {
+        "alt": "AP1-6-1-3-K5",
+        "status": "übernommen",
+        "neu": "AP1-6-1-3-K5",
+        "grund": "Herkunft jetzt Katalog-Anhang Netzwerkplan statt „abgeleitet“"
+      },
+      {
+        "alt": "AP1-6-1-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-1-4-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-4-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-1-4-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-4-K3",
+        "status": "übernommen",
+        "neu": "AP1-6-1-4-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-1-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-6-1-4-K4",
+        "grund": "um Beispiel Rastnase ergänzt"
+      },
+      {
+        "alt": "AP1-6-1-4-K5",
+        "status": "angepasst",
+        "neu": "AP1-6-1-4-K5",
+        "grund": "ohne Mobilfunktechnik (LTE/5G aus dem AP1-Katalog gestrichen); Beispiele aus 2026H-A4-a"
+      },
+      {
+        "alt": "AP1-6-1-4-K6",
+        "status": "übernommen",
+        "neu": "AP1-6-1-4-K6",
+        "grund": "jetzt auch belegt (2026H-A2-cc)"
+      },
+      {
+        "alt": "AP1-6-2-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-2-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-2-1-K2",
+        "grund": "„festlegen“ statt „wählen“"
+      },
+      {
+        "alt": "AP1-6-2-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-6-2-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-6-2-1-K4",
+        "grund": "Beispiele ergänzt"
+      },
+      {
+        "alt": "AP1-6-2-1-K5",
+        "status": "angepasst",
+        "neu": "AP1-6-2-1-K5",
+        "grund": "um Erreichbarkeit im Internet ergänzt, jetzt belegt (2026F-A3-da)"
+      },
+      {
+        "alt": "AP1-6-2-1-K6",
+        "status": "übernommen",
+        "neu": "AP1-6-2-1-K6",
+        "grund": "Herkunft katalog:AP1.04.05.5 (Dokumentation)"
+      },
+      {
+        "alt": "AP1-6-2-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-2-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-2-K2",
+        "status": "angepasst",
+        "neu": "AP1-6-2-2-K2",
+        "grund": "um den Hostanteil ergänzt (Musterlösung 2022F-A3-fb)"
+      },
+      {
+        "alt": "AP1-6-2-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-6-2-2-K3",
+        "grund": "„bestimmen“ statt „angeben“"
+      },
+      {
+        "alt": "AP1-6-2-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-6-2-2-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-6-2-2-K5",
+        "grund": "Beispiel /25 aus 2026F"
+      },
+      {
+        "alt": "AP1-6-2-2-K6",
+        "status": "übernommen",
+        "neu": "AP1-6-2-2-K6",
+        "grund": "jetzt belegt (2025H-A3-f)"
+      },
+      {
+        "alt": "AP1-6-2-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-2-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-2-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-3-K3",
+        "status": "angepasst",
+        "neu": "AP1-6-2-3-K3",
+        "grund": "„bestimmen“ statt „angeben“"
+      },
+      {
+        "alt": "AP1-6-2-3-K4",
+        "status": "angepasst",
+        "neu": "AP1-6-2-3-K4",
+        "grund": "um „erklären, warum sie automatisch entsteht“ ergänzt (2022F-A3-eb, 2022H-A3-f)"
+      },
+      {
+        "alt": "AP1-6-2-3-K5",
+        "status": "angepasst",
+        "neu": "AP1-6-2-3-K5",
+        "grund": "weitere Vorteile laut Musterlösung 2022H-A3-a"
+      },
+      {
+        "alt": "AP1-6-2-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-2-4-K1",
+        "grund": "bisher „Grundlage“, jetzt belegt (2022F-A3-ea, 2024H-A1-dd)"
+      },
+      {
+        "alt": "AP1-6-2-4-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-2-4-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-4-K3",
+        "status": "angepasst",
+        "neu": "AP1-6-2-4-K3",
+        "grund": "als Zuordnungsaufgabe wie 2024F-A2-g formuliert"
+      },
+      {
+        "alt": "AP1-6-2-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-6-2-4-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-2-4-K5",
+        "status": "übernommen",
+        "neu": "AP1-6-2-4-K5",
+        "grund": "als „begründen“ (Stufe 4) wie 2024H-A1-da"
+      },
+      {
+        "alt": "AP1-6-3-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-3-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-3-1-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-3-1-K2",
+        "grund": "jetzt belegt (2022F-A3-b), um RADIUS ergänzt"
+      },
+      {
+        "alt": "AP1-6-3-1-K3",
+        "status": "verschoben",
+        "neu": "AP1-6-3-3-K1",
+        "grund": "VPN bekommt einen eigenen Stichpunkt (F3, F4)"
+      },
+      {
+        "alt": "AP1-6-3-1-K4",
+        "status": "verschoben",
+        "neu": "AP1-6-3-3-K2",
+        "grund": "VPN bekommt einen eigenen Stichpunkt"
+      },
+      {
+        "alt": "AP1-6-3-1-K5",
+        "status": "verschoben",
+        "neu": "AP1-6-3-3-K3",
+        "grund": "VPN bekommt einen eigenen Stichpunkt; jetzt belegt (2026H-A4-ea)"
+      },
+      {
+        "alt": "AP1-6-3-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-6-3-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-3-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-6-3-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-3-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-6-3-2-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-6-3-2-K4",
+        "status": "übernommen",
+        "neu": "AP1-6-3-2-K4",
+        "grund": "„beurteilen“ (Stufe 4, Katalog: kennen und beurteilen)"
+      },
+      {
+        "alt": "AP1-6-3-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-6-3-2-K5",
+        "grund": ""
+      }
+    ],
+    "rahmen": [
+      {
+        "alt": "AP1-6-2-3",
+        "satz": "IPv6-Subnetting war nicht verlangt.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze – und widerlegt: 2022H-A3-b bis -d verlangen IPv6-Präfixe aufteilen. Neuer Stichpunkt AP1-6-2-5."
+      },
+      {
+        "alt": "AP1-6-2-2",
+        "satz": "Das Aufteilen eines Netzes in mehrere Subnetze ist für AP1 nach aktuellem Katalog nicht belegt.",
+        "status": "gestrichen",
+        "grund": "E6: fehlende Belege sind keine Grenze. Aufteilen jetzt als Puffer (P-NAECHSTE-STUFE, AP1-6-2-2-K7)."
+      },
+      {
+        "alt": "AP1-6-1-3",
+        "satz": "Für AP1 genügt es, die Aufgabe jedes Geräts zu erklären und es für eine Situation auszuwählen.",
+        "status": "angepasst",
+        "grund": "Grenze jetzt mit Katalogstelle begründet (G2, AP2-Katalog)."
+      },
+      {
+        "alt": "AP1-6-3-1",
+        "satz": "VPN-Modelle und Protokolle wie IPsec nennt der AP1-Katalog nicht.",
+        "status": "übernommen",
+        "grund": "War schon mit dem Katalog begründet (E7); jetzt mit Verweis auf AP2b.01.06."
+      }
+    ]
+  },
+  "meta": {
+    "schicht": "3+4",
+    "regelwerk_version": "1.1",
+    "stand": "2026-10-13",
+    "hinweis": "Probelauf (UMBAU.md Schritt 3). IDs alter Stichpunkte und Können-Aussagen bleiben erhalten (Lernstand, Karten); neue IDs nur für neue Einträge.",
+    "kerntest": {
+      "stand": "2026-10-13",
+      "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+      "ergebnis": "Alle 47 Teilaufgaben des Ordners gegen ihre Musterlösung gelesen; 2 Lücken gefunden und geschlossen (AP1-6-2-2-K2 Hostanteil, AP1-6-2-5-K3 eigenes /64-Teilnetz bilden). Ohne Musterlösung (nur Aufgabe geprüft): 2025H-A3-f, 2025H-A3-g, 2026F-A2-a bis -d, 2026F-A3-da, 2026F-A3-db."
+    }
+  }
+}

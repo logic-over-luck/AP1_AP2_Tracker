@@ -138,3 +138,33 @@ for (const [name, f] of Object.entries(zuordnungFehler)) {
     assert.equal(zuordnungMit(f).status, 1);
   });
 }
+
+// ---------- Lernplan (Schicht 3+4), Probelauf AP1-6 ----------
+const lernplanDa = zuordnungDa && existsSync('umbau/lernplan/ap1/AP1-6.json');
+function lernplanMit(veraendern) {
+  const lp = JSON.parse(readFileSync('umbau/lernplan/ap1/AP1-6.json', 'utf8'));
+  veraendern(lp);
+  const datei = join(mkdtempSync(join(tmpdir(), 'lp-')), 'AP1-6.json');
+  writeFileSync(datei, JSON.stringify(lp));
+  return spawnSync(process.execPath, ['tools/umbau/lernplan-pruefen.mjs', 'AP1-6'], { encoding: 'utf8', env: { ...process.env, LERNPLAN_DATEI: datei } });
+}
+const sp0 = (lp) => lp.themenbloecke[0].stichpunkte[0];
+test('Lernplan AP1-6 besteht alle Prüfungen', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+  const r = lernplanMit(() => {});
+  assert.equal(r.status, 0, r.stdout);
+});
+const lernplanFehler = {
+  'Können ohne Herkunft': (lp) => { sp0(lp).koennen[0].herkunft = []; },
+  'Beleg, der nicht zum Stichpunkt gehört': (lp) => { sp0(lp).koennen[0].herkunft = ['beleg:2025H-A1-a']; },
+  'Grenze ohne Katalogstelle': (lp) => { sp0(lp).grenzen = [{ text: 'x', begruendung: 'weil es so ist, ganz sicher', katalog: [] }]; },
+  'Grenze mit „kam nicht vor“ (goldene Regel)': (lp) => { sp0(lp).grenzen = [{ text: 'IPv6-Subnetting', begruendung: 'kam in den Prüfungen nicht vor', katalog: ['AP1.04.01.3'] }]; },
+  'zu wenige Können-Aussagen': (lp) => { sp0(lp).koennen = sp0(lp).koennen.slice(0, 2); },
+  'alte ID geändert': (lp) => { sp0(lp).koennen[0].id = 'AP1-6-1-1-K9'; },
+  'verschobene ID neu vergeben': (lp) => { lp.themenbloecke[2].stichpunkte[0].koennen[2].id = 'AP1-6-3-1-K3'; },
+  'Tiefe nicht erreicht': (lp) => { for (const tb of lp.themenbloecke) for (const sp of tb.stichpunkte) for (const k of sp.koennen) if (sp.id === 'AP1-6-2-2') k.stufe = 1; },
+};
+for (const [name, f] of Object.entries(lernplanFehler)) {
+  test(`Lernplan-Prüfer erkennt: ${name}`, { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+    assert.equal(lernplanMit(f).status, 1);
+  });
+}
