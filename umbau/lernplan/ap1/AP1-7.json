@@ -139,11 +139,12 @@
             },
             {
               "id": "AP1-7-1-2-K3",
-              "text": "Du kannst für einen beschriebenen Arbeitsplatz konkrete Schutzmaßnahmen vorschlagen, zum Beispiel Backups und Festplattenverschlüsselung oder bei einem Baucontainer Abschließen und Kabelschloss.",
+              "text": "Du kannst für einen beschriebenen Arbeitsplatz konkrete Schutzmaßnahmen festlegen, zum Beispiel Backups und Festplattenverschlüsselung oder bei einem Baucontainer Abschließen und Kabelschloss.",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026H-A2-db",
-                "beleg:2026H-A4-bb"
+                "beleg:2026H-A4-bb",
+                "katalog:AP1.06.01.2"
               ]
             },
             {
@@ -230,7 +231,8 @@
               "stufe": 4,
               "herkunft": [
                 "beleg:2021H-A4-e",
-                "beleg:2023H-A3-ca"
+                "beleg:2023H-A3-ca",
+                "katalog:AP1.06.04.10"
               ]
             },
             {
@@ -246,7 +248,8 @@
               "text": "Du kannst begründen, warum Benutzer nur die Rechte bekommen, die sie für ihre Arbeit brauchen, zum Beispiel keine Administratorrechte für alle.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2025F-A1-eb"
+                "beleg:2025F-A1-eb",
+                "katalog:AP1.06.04.7"
               ]
             },
             {
@@ -558,14 +561,6 @@
               ]
             },
             {
-              "id": "AP1-7-2-3-K3",
-              "text": "Du kannst Möglichkeiten nennen, mit einem Risiko umzugehen: vermeiden, vermindern, übertragen (zum Beispiel versichern), bewusst tragen.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.06.03.3"
-              ]
-            },
-            {
               "id": "AP1-7-2-3-K4",
               "text": "Du kannst aus der Risikomatrix festlegen, welche Risiken zuerst behandelt werden.",
               "stufe": 3,
@@ -659,7 +654,7 @@
             },
             {
               "id": "AP1-7-3-1-K8",
-              "text": "Du kannst begründen, warum unverschlüsselte Verbindungsarten wie Telnet für einen Fernzugriff ungeeignet sind und eine verschlüsselte wie SSH gewählt wird.",
+              "text": "Du kannst begründen, warum unverschlüsselte Verbindungsarten wie Telnet oder eine serielle Verbindung für einen Fernzugriff ungeeignet sind und eine verschlüsselte wie SSH gewählt wird.",
               "stufe": 4,
               "herkunft": [
                 "beleg:2025F-A4-eb"
@@ -821,7 +816,7 @@
             },
             {
               "id": "AP1-7-3-3-K5",
-              "text": "Du kannst Zutritt (Raum), Zugang (System) und Zugriff (Daten) auseinanderhalten.",
+              "text": "Du kannst Zutritt (Raum), Zugang (System) und Zugriff (Daten) unterscheiden.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.06.04.7"
@@ -926,7 +921,8 @@
               "text": "Du kannst begründen, warum vor der Inbetriebnahme eines Geräts ein Softwareupdate eingespielt wird: Bekannte Sicherheitslücken werden geschlossen.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2025H-A3-c"
+                "beleg:2025H-A3-c",
+                "katalog:AP1.06.04.4"
               ]
             }
           ],
@@ -1176,14 +1172,22 @@
               ]
             }
           ],
-          "grenzen": [],
+          "grenzen": [
+            {
+              "text": "Social Engineering als eigenes Thema gehört nicht hierher; hier geht es nur um Phishing-Mails.",
+              "begruendung": "Social Engineering steht im WiSo-Katalog (WISO.05.02.9) und ist nach P21 in AP1 Außen; AP1 verlangt nur Phishing, wie es die Prüfungen zeigen.",
+              "katalog": [
+                "WISO.05.02.9"
+              ]
+            }
+          ],
           "kuer": [
             {
-              "text": "Social Engineering, Spear-Phishing und CEO-Betrug.",
+              "text": "Spear-Phishing und CEO-Betrug.",
               "quellen": [
                 "podcast:themen-ap1"
               ],
-              "grund": "Social Engineering steht im WiSo-Katalog (WISO.05.02.9); Spear-Phishing und CEO-Betrug stehen weder im Katalog noch in einer Prüfung."
+              "grund": "Spear-Phishing und CEO-Betrug stehen weder im Katalog noch in einer Prüfung."
             }
           ]
         },
@@ -1506,9 +1510,9 @@
       },
       {
         "alt": "AP1-7-1-2-K3",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-7-1-2-K3",
-        "grund": "Beispiele aus 2026H-A2-db und 2026H-A4-bb"
+        "grund": "Beispiele aus 2026H-A2-db und 2026H-A4-bb; P16 (K2): Operator „festlegen“, Herkunft AP1.06.01.2"
       },
       {
         "alt": "AP1-7-1-2-K4",
@@ -1650,9 +1654,9 @@
       },
       {
         "alt": "AP1-7-2-3-K3",
-        "status": "übernommen",
-        "neu": "AP1-7-2-3-K3",
-        "grund": ""
+        "status": "gestrichen",
+        "neu": null,
+        "grund": "P16 (K3): AP1.06.03.3 verlangt die Klassifikation von Risiken, nicht die Risikobehandlung; die vier Strategien stehen weder im Katalog noch in einem Beleg. K4 deckt die Katalogstelle ab."
       },
       {
         "alt": "AP1-7-2-3-K4",
@@ -1752,9 +1756,9 @@
       },
       {
         "alt": "AP1-7-3-3-K5",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-7-3-3-K5",
-        "grund": ""
+        "grund": "P16 (K2): Operator „unterscheiden“"
       },
       {
         "alt": "AP1-7-3-4-K1",
