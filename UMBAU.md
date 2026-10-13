@@ -421,6 +421,11 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **Raum-Prüfung AP1 (13.10.2026):** `tools/umbau/raum-pruefen.mjs AP1`, Bericht `umbau/berichte/AP1-raum.md`:
         T1 (183 Pflichtbausteine inkl. 4 Zusatzbausteine), T2b (288 Teilaufgaben) und T8 (183 Bausteine) über alle
         Ordner grün. Alle Ordner-Prüfungen grün; Kerntest je Ordner nur als Selbstprüfung (P16).
+  - [x] **Unabhängige Prüfung K1–K3 (P16, 13.10.2026):** 76 Funde in 8 Berichten (`umbau/berichte/AP1-<n>-pruefer.md`),
+        daraus Regelwerk v1.3 (Z3a, P25). Funde in alle 8 Lernpläne eingebaut: Operatoren nach 4.1, fehlende
+        Katalogstellen in der Herkunft, 6 K1-Lücken geschlossen, 3 Aussagen gestrichen oder verschoben
+        (AP1-1-4-2-K4 → AP1-3-3-2-K7, AP1-2-4-1-K5 und AP1-7-2-3-K3 gestrichen), Social Engineering und Zielkonflikte
+        als Grenze (P21), Paketmanager als Kür. Alle Ordner- und Raum-Prüfungen grün.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
@@ -449,7 +454,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P13 | Z3 überträgt die Stufe einer Teilaufgabe auf alle ihre Bausteine. Bei Teilaufgaben mit mehreren Bausteinen kann ein Nebenbaustein dadurch zu hoch eingestuft werden (Richtung „eher mehr lernen“, also mit der goldenen Regel vereinbar). Im Probelauf vom KI-Prüfer (K2) je Stichpunkt prüfen lassen. | offen |
 | P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
 | P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |
-| P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). | offen |
+| P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). **Durchgeführt 13.10.2026:** unabhängige Prüfung K1–K3, Berichte `umbau/berichte/AP1-<n>-pruefer.md`, 76 Funde (K1 6, K2 64, K3 6). Alle Vorschläge eingebaut (Freigabe Projektinhaber), Ausnahmen: die P13-Fälle AP1-1-4-1-K1 und die Zuordnung 2024F-A1-d → AP1.07.01.5 bleiben bei P13; AP1-2-4-1-K6 bleibt Stufe 3 nach Z3a. Noch offen: Nachprüfung der geänderten Stichpunkte durch eine frische Sitzung. | erledigt (Nachprüfung offen) |
 | P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). Bis zur Entscheidung als Kür geführt (Grund nennt P17): AP1-6 Hub, FTP/SFTP/NTP/LDAP, ICMP; AP1-1 Retrospektive. | offen |
 | P18 | **Vorschlag, noch nicht beschlossen:** Regel P-MUSTER – Können-Aussagen für nie geprüfte Katalogthemen nach den Aufgabentypen formulieren, die die IHK beim selben Verb sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründete Empfehlung). | offen |
 | P19 | **Entschieden (Projektinhaber):** kein Zeitbudget. Maßstab ist fachliche Richtigkeit und Vollständigkeit nach den Regeln (Kern + Puffer Pflicht, Kür freiwillig), nicht die verfügbare Zeit. P7 entfällt. | erledigt |
