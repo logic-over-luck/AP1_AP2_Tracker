@@ -261,14 +261,14 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "kuer": [
             {
-              "text": "Skripte selbst zu schreiben gehört nicht dazu; ein gegebenes Skript lesen und einzelne Zeilen berichtigen schon (AP1-8-2-4).",
-              "begruendung": "AP1.04.06.8 verlangt Skriptsprachen „kennen, einordnen und unterscheiden“; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16).",
-              "katalog": [
-                "AP1.04.06.8",
-                "AP2b.04.16"
-              ]
+              "text": "Eigene Skripte schreiben (ein gegebenes Skript lesen und berichtigen gehört zu AP1-8-2-4).",
+              "quellen": [
+                "katalog-ap2"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.04.16); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.06.8 verlangt Skriptsprachen „kennen, einordnen und unterscheiden“; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16)."
             }
           ]
         }
@@ -450,17 +450,18 @@
               "katalog": [
                 "AP1.04.07.1"
               ]
-            },
-            {
-              "text": "Eigene Algorithmen zu entwerfen gehört nicht dazu.",
-              "begruendung": "AP1.04.07.1 verlangt, Kontrollstrukturen abzubilden; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16).",
-              "katalog": [
-                "AP1.04.07.1",
-                "AP2b.04.16"
-              ]
             }
           ],
-          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird."
+          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird.",
+          "kuer": [
+            {
+              "text": "Eigene Algorithmen entwerfen.",
+              "quellen": [
+                "katalog-ap2"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.04.16); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.07.1 verlangt, Kontrollstrukturen abzubilden; Algorithmen erstellen steht im AP2-Katalog (AP2b.04.16)."
+            }
+          ]
         },
         {
           "id": "AP1-8-2-3",
@@ -757,6 +758,14 @@
               "herkunft": [
                 "beleg:2023F-A4-c"
               ]
+            },
+            {
+              "id": "AP1-8-3-2-K6",
+              "text": "Du kannst Aggregation und Komposition im Klassendiagramm unterscheiden: Bei der Aggregation kann das Teil auch ohne das Ganze bestehen, bei der Komposition nicht.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.uml-klassendiagramm"
+              ]
             }
           ],
           "grenzen": [
@@ -769,16 +778,7 @@
               ]
             }
           ],
-          "kuer": [
-            {
-              "text": "Aggregation und Komposition im Klassendiagramm.",
-              "quellen": [
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "Die Notationsübersicht im Katalog-Anhang zeigt sie, AP1.04.06.6 und die AP1-Prüfungen verlangen sie nicht. Einordnung hängt an P24 (Anhang-Notationen ohne Katalogpunkt im AP1-Teil), solange offen: Kür."
-            }
-          ],
-          "hinweis": "2023F-A4-c: der Vererbungsanteil zählt nach Z4 nicht, belegt ist das Ableiten der Klassen. Die Musterlösung zu 2026F-A4-ba fehlt; K1–K3 folgen der Aufgabenstellung."
+          "hinweis": "P24 entschieden: Aggregation und Komposition sind Pflicht, weil sie in der Notationsübersicht des Katalog-Anhangs stehen. 2023F-A4-c: der Vererbungsanteil zählt nach Z4 nicht, belegt ist das Ableiten der Klassen. Die Musterlösung zu 2026F-A4-ba fehlt; K1–K3 folgen der Aufgabenstellung."
         },
         {
           "id": "AP1-8-3-3",
@@ -850,18 +850,17 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "hinweis": "Die Musterlösung zu 2025H-A2-ba fehlt; K1, K2 und K4 folgen der Aufgabenstellung (gleichzeitig bezahlen und archivieren).",
+          "kuer": [
             {
-              "text": "Sequenz- und Zustandsdiagramm gehören nicht dazu.",
-              "begruendung": "AP1.04.07.2 nennt Anwendungsfall-, Klassen- und Aktivitätsdiagramm; Sequenz- und Zustandsdiagramm stehen im AP2-Katalog (AP2b.03.02.7, AP2b.03.02.8).",
-              "katalog": [
-                "AP1.04.07.2",
-                "AP2b.03.02.7",
-                "AP2b.03.02.8"
-              ]
+              "text": "Sequenz- und Zustandsdiagramm.",
+              "quellen": [
+                "katalog-ap2"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.03.02.7, AP2b.03.02.8); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.07.2 nennt Anwendungsfall-, Klassen- und Aktivitätsdiagramm; Sequenz- und Zustandsdiagramm stehen im AP2-Katalog (AP2b.03.02.7, AP2b.03.02.8)."
             }
-          ],
-          "hinweis": "Die Musterlösung zu 2025H-A2-ba fehlt; K1, K2 und K4 folgen der Aufgabenstellung (gleichzeitig bezahlen und archivieren)."
+          ]
         }
       ]
     },
@@ -950,17 +949,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Normalisierung und das Überführen in Tabellen gehören nicht dazu.",
-              "begruendung": "AP1.04.08.1 nennt einfache ER-Modelle; Normalisieren steht im AP2-Katalog (AP2a.02.03.4, AP2b.04.11).",
-              "katalog": [
-                "AP1.04.08.1",
-                "AP2a.02.03.4",
-                "AP2b.04.11"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Sonderformen der Chen-Notation: schwache Entität, mehrwertiges und abgeleitetes Attribut, Teilnahmegrad.",
@@ -968,6 +957,14 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Normalisierung und das Überführen eines ER-Modells in Tabellen.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2a.02.03.4, AP2b.04.11); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.08.1 nennt einfache ER-Modelle; Normalisieren steht im AP2-Katalog (AP2a.02.03.4, AP2b.04.11)."
             }
           ],
           "hinweis": "Die Musterlösung zu 2026F-A4-c fehlt; K7 folgt der Aufgabenstellung."
@@ -1108,17 +1105,17 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen.",
+          "kuer": [
             {
-              "text": "Referentielle Integrität mit Lösch- und Aktualisierungsweitergabe gehört nicht dazu.",
-              "begruendung": "AP1.04.08 verlangt Grundlagen relationaler Datenbanken; referentielle Integrität, Aktualisierungs- und Löschweitergabe stehen im AP2-Katalog (AP2a.02.03.5).",
-              "katalog": [
-                "AP1.04.08",
-                "AP2a.02.03.5"
-              ]
+              "text": "Referentielle Integrität mit Lösch- und Aktualisierungsweitergabe.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2a.02.03.5); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.08 verlangt Grundlagen relationaler Datenbanken; referentielle Integrität, Aktualisierungs- und Löschweitergabe stehen im AP2-Katalog (AP2a.02.03.5)."
             }
-          ],
-          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen."
+          ]
         },
         {
           "id": "AP1-8-4-3",
@@ -1167,16 +1164,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Klickbare Prototypen (Mockups) zu erstellen gehört nicht dazu.",
-              "begruendung": "AP1.04.07.3 nennt den Entwurf der Masken; Prototypen (Mockups) erstellen steht im AP2-Katalog (AP2b.04.15).",
-              "katalog": [
-                "AP1.04.07.3",
-                "AP2b.04.15"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Richtlinien zur Barrierefreiheit wie WCAG und BITV 2.0.",
@@ -1185,6 +1173,13 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Klickbare Prototypen (Mockups) erstellen.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.04.15); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: AP1.04.07.3 nennt den Entwurf der Masken; Prototypen (Mockups) erstellen steht im AP2-Katalog (AP2b.04.15)."
             }
           ]
         },
@@ -1240,7 +1235,7 @@
             }
           ],
           "grenzen": [],
-          "hinweis": "Unverändert übernommen. Ob Anhang-Notationen ohne Katalogpunkt im AP1-Teil Pflicht oder Kür sind, ist offen (Parkplatz P24); bis dahin bleibt der Stand des alten Plans."
+          "hinweis": "Unverändert aus dem alten Plan übernommen. P24 entschieden: Alles, was der Katalog-Anhang zeigt, ist Pflicht; Prüfungen erweitern, begrenzen aber nichts."
         }
       ]
     }
@@ -1635,25 +1630,25 @@
         "alt": "AP1-8-4-4-K1",
         "status": "übernommen",
         "neu": "AP1-8-4-4-K1",
-        "grund": "P24 offen"
+        "grund": "Anhang-Notation, Pflicht (P24)"
       },
       {
         "alt": "AP1-8-4-4-K2",
         "status": "angepasst",
         "neu": "AP1-8-4-4-K2",
-        "grund": "„Du kannst … erklären“ statt „Du kennst“ (F1); P24 offen"
+        "grund": "„Du kannst … erklären“ statt „Du kennst“ (F1)"
       },
       {
         "alt": "AP1-8-4-4-K3",
         "status": "übernommen",
         "neu": "AP1-8-4-4-K3",
-        "grund": "P24 offen"
+        "grund": "Anhang-Notation, Pflicht (P24)"
       },
       {
         "alt": "AP1-8-4-4-K4",
         "status": "übernommen",
         "neu": "AP1-8-4-4-K4",
-        "grund": "P24 offen"
+        "grund": "Anhang-Notation, Pflicht (P24)"
       }
     ],
     "rahmen": [
@@ -1709,7 +1704,7 @@
         "alt": "AP1-8-4-4",
         "satz": "in keiner ausgewerteten Prüfung kamen sie vor.",
         "status": "gestrichen",
-        "grund": "E6: fehlende Belege sind keine Grenze; Einordnung offen (P24)."
+        "grund": "E6: fehlende Belege sind keine Grenze; Anhang-Notation, Pflicht (P24)."
       }
     ]
   },
@@ -1717,7 +1712,7 @@
     "schicht": "3+4",
     "regelwerk_version": "1.2",
     "stand": "2026-10-13",
-    "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neuer Stichpunkt AP1-8-4-5 (Primär- und Fremdschlüssel, Belege 2025H-A4-a und 2023H-A4-ab). Offene Frage zu den Anhang-Notationen EPK/BPMN und Aggregation/Komposition auf dem Parkplatz (P24).",
+    "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neuer Stichpunkt AP1-8-4-5 (Primär- und Fremdschlüssel, Belege 2025H-A4-a und 2023H-A4-ab). Anhang-Notationen (EPK, BPMN, Aggregation, Komposition) sind Pflicht (P24 entschieden).",
     "kerntest": {
       "stand": "2026-10-13",
       "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
@@ -1727,7 +1722,8 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitt Softwareentwicklung",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026), Schlagworte Pseudocode, Schreibtischtest, ERM (Herbst 2025), Aktivitätsdiagramm, Klassendiagramm, Prozessanalyse",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 3.4 und 8.1–8.12",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten",
+      "katalog-ap2": "AP2-/WiSo-Teil des Prüfungskatalogs (Stelle im Kür-Grund genannt); nach P21 als Quelle für Kür zugelassen, wenn keine Hinweisquelle das Thema nennt"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1958,11 +1954,11 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-8-3-2"
+            "AP1-8-3-2-K6"
           ],
-          "notiz": "P24"
+          "notiz": "P24: Pflicht (Katalog-Anhang)"
         },
         {
           "thema": "UML-Aktivitätsdiagramm",
@@ -1982,7 +1978,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-8-4-3"
           ],
@@ -2017,7 +2013,7 @@
             "lernzettel:fi-de-2025",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-8-4-1"
           ],
@@ -2063,7 +2059,7 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-8-4-5"
           ],
@@ -2104,7 +2100,7 @@
             "AP1-8-4-4-K1",
             "AP1-8-4-4-K3"
           ],
-          "notiz": "Stand des alten Plans übernommen, Einordnung offen (P24)"
+          "notiz": "P24: Pflicht (Katalog-Anhang)"
         },
         {
           "thema": "Funktionale und nicht-funktionale Anforderungen",

@@ -79,14 +79,15 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "kuer": [
             {
-              "text": "Das TCP/IP-Modell und der Vergleich der Modelle gehören nicht hierher.",
-              "begruendung": "E2/W1: „Schichtenmodelle, z. B. OSI, TCP/IP benennen und zuordnen“ steht im AP2-Katalog und wohnt dort; AP1 nennt nur das OSI-Modell (AP1.03.02.5).",
-              "katalog": [
-                "AP1.03.02.5",
-                "AP2b.01.01"
-              ]
+              "text": "Das TCP/IP-Modell und der Vergleich der Schichtenmodelle.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.01); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: E2/W1: „Schichtenmodelle, z. B. OSI, TCP/IP benennen und zuordnen“ steht im AP2-Katalog und wohnt dort; AP1 nennt nur das OSI-Modell (AP1.03.02.5)."
             }
           ]
         },
@@ -151,18 +152,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Aufbau der Protokolle (Header, Verbindungsaufbau wie der Drei-Wege-Handshake), die Eigenschaften von TCP und UDP und Dateifreigabe-Protokolle wie SMB oder NFS gehören nicht dazu; Portnummern musst du nicht auswendig können.",
-              "begruendung": "G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle und ihre Eigenschaften erläutern, z. B. TCP/UDP“ (AP2b.01.05) und „Dateifreigaben, z. B. SMB/CIFS“ (AP2b.01.04.1) stehen im AP2-Katalog.",
-              "katalog": [
-                "AP1.03.02",
-                "AP2b.01.05",
-                "AP2b.01.05.1",
-                "AP2b.01.04.1"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Weitere Protokolle mit ihrem Zweck: FTP und SFTP für Dateiübertragung, NTP für die Uhrzeit, LDAP für Verzeichnisdienste.",
@@ -179,6 +169,15 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "ping selbst ist Kern (AP1.04.05.6); das Protokoll dahinter nennt weder Katalog noch Prüfung. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+            },
+            {
+              "text": "Aufbau der Protokolle (Header, Drei-Wege-Handshake), die Eigenschaften von TCP und UDP und Dateifreigabe-Protokolle wie SMB oder NFS.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "lernzettel:fi-de-2025",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.05, AP2b.01.05.1, AP2b.01.04.1); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle und ihre Eigenschaften erläutern, z. B. TCP/UDP“ (AP2b.01.05) und „Dateifreigaben, z. B. SMB/CIFS“ (AP2b.01.04.1) stehen im AP2-Katalog."
             }
           ]
         },
@@ -266,20 +265,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Konfiguration von Switch und Router (Routing, VLAN), das Planen einer strukturierten Verkabelung und Netzwerktopologien gehören nicht dazu; Bridge und Firewall als Netzwerkgeräte vergleichen und Proxy ebenfalls nicht.",
-              "begruendung": "G2: AP1 prüft die Sicht des Arbeitsplatzes (Prüfungsbereich „Einrichten eines IT-gestützten Arbeitsplatzes“); Routing, Switching, Bridge, Firewall, VLAN, strukturierte Verkabelung, Netzwerktopologie und Proxy stehen im AP2-Katalog.",
-              "katalog": [
-                "AP2b.01.01",
-                "AP2b.01.02",
-                "AP2b.01.03.5",
-                "AP2b.01.03.6",
-                "AP2b.01.03.11",
-                "AP2b.01.07.3"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Hub als Vorläufer des Switches: Er leitet jedes Signal an alle Anschlüsse weiter.",
@@ -294,6 +280,15 @@
                 "podcast:themen-ap1"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Konfiguration von Switch und Router (Routing, VLAN), strukturierte Verkabelung, Netzwerktopologien, Bridge und Firewall als Netzwerkgeräte und Proxy.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "lernzettel:fi-de-2025",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.01, AP2b.01.02, AP2b.01.03.5, AP2b.01.03.6, AP2b.01.03.11, AP2b.01.07.3); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: G2: AP1 prüft die Sicht des Arbeitsplatzes (Prüfungsbereich „Einrichten eines IT-gestützten Arbeitsplatzes“); Routing, Switching, Bridge, Firewall, VLAN, strukturierte Verkabelung, Netzwerktopologie und Proxy stehen im AP2-Katalog."
             }
           ]
         },
@@ -388,12 +383,10 @@
           ],
           "grenzen": [
             {
-              "text": "Technik der Mobilfunkstandards (LTE, 5G), Bluetooth im Detail und Netzarten nach Ausdehnung (MAN, WAN, GAN) gehören nicht dazu.",
-              "begruendung": "G1: AP1.03.03.1 nennt LWL, Ethernet- und WLAN-Standards, keine Mobilfunkstandards (LTE und 5G laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen); Bluetooth (AP2b.01.03.9) und die Ausdehnung LAN/WAN/MAN/GAN (AP2b.01.03.1) stehen im AP2-Katalog.",
+              "text": "Technik der Mobilfunkstandards (LTE, 5G) gehört nicht dazu.",
+              "begruendung": "B3: LTE und 5G sind laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen; AP1.03.03.1 nennt LWL, Ethernet- und WLAN-Standards.",
               "katalog": [
-                "AP1.03.03.1",
-                "AP2b.01.03.9",
-                "AP2b.01.03.1"
+                "AP1.03.03.1"
               ]
             }
           ],
@@ -412,6 +405,14 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "AP1.04.01.3 nennt nur „Netzwerkanbindungen“; DSL-Arten stehen weder im Katalog noch in einer Prüfung, keine Puffer-Regel."
+            },
+            {
+              "text": "Bluetooth im Detail und Netzarten nach Ausdehnung (MAN, WAN, GAN).",
+              "quellen": [
+                "lernzettel:fi-de-2025",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.03.9, AP2b.01.03.1); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: G1: AP1.03.03.1 nennt LWL, Ethernet- und WLAN-Standards, keine Mobilfunkstandards (LTE und 5G laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen); Bluetooth (AP2b.01.03.9) und die Ausdehnung LAN/WAN/MAN/GAN (AP2b.01.03.1) stehen im AP2-Katalog."
             }
           ]
         },
@@ -1016,15 +1017,16 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "kuer": [
             {
-              "text": "Der Ablauf der DHCP-Vergabe (Discover, Offer, Request, Acknowledge), Lease-Zeiten und die Eintragsarten im DNS (z. B. A, AAAA, MX) gehören nicht dazu.",
-              "begruendung": "G2/E2: AP1.04.05.5 verlangt Konfiguration, Test und Troubleshooting von Netzwerkverbindungen am Arbeitsplatz; „Netzwerkrelevante Dienste beschreiben: DNS, DHCP“ steht im AP2-Katalog (AP2b.01.07) und wohnt dort.",
-              "katalog": [
-                "AP1.04.05.5",
-                "AP2b.01.07.1",
-                "AP2b.01.07.2"
-              ]
+              "text": "Der Ablauf der DHCP-Vergabe (Discover, Offer, Request, Acknowledge), Lease-Zeiten und die Eintragsarten im DNS (z. B. A, AAAA, MX).",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "podcast:ipv6-ap1",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.07.1, AP2b.01.07.2); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: G2/E2: AP1.04.05.5 verlangt Konfiguration, Test und Troubleshooting von Netzwerkverbindungen am Arbeitsplatz; „Netzwerkrelevante Dienste beschreiben: DNS, DHCP“ steht im AP2-Katalog (AP2b.01.07) und wohnt dort."
             }
           ]
         }
@@ -1086,17 +1088,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Einrichten eines RADIUS-Servers und Sicherheit in Drahtlosnetzen über die Wahl des Verfahrens hinaus (z. B. Vergleich von WEP, WPA, WPA2 und WPA3, WPS) gehören nicht dazu.",
-              "begruendung": "G2: AP1 richtet den Arbeitsplatz ein (AP1.04.05.5 „WLAN-Zugang“); Zugriffskontrolle im Netzwerk (RADIUS) und Sicherheit in Drahtlosnetzen stehen im AP2-Katalog.",
-              "katalog": [
-                "AP1.04.05.5",
-                "AP2b.01.03.3",
-                "AP2b.01.03.8"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Mehrere WLANs an einem Access Point (Multi-SSID), zum Beispiel ein getrenntes Gast-WLAN, und zentrale Verwaltung vieler Access Points über einen WLAN-Controller.",
@@ -1104,6 +1096,14 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Einrichten eines RADIUS-Servers und Sicherheit in Drahtlosnetzen über die Wahl des Verfahrens hinaus (Vergleich von WEP, WPA, WPA2, WPA3, WPS).",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.03.3, AP2b.01.03.8); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: G2: AP1 richtet den Arbeitsplatz ein (AP1.04.05.5 „WLAN-Zugang“); Zugriffskontrolle im Netzwerk (RADIUS) und Sicherheit in Drahtlosnetzen stehen im AP2-Katalog."
             }
           ]
         },
@@ -1168,15 +1168,15 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "kuer": [
             {
-              "text": "VPN-Modelle (z. B. Site-to-Site, End-to-Site), Tunnel- und Transportmodus sowie Protokolle und Verschlüsselungsverfahren wie IPsec gehören nicht dazu.",
-              "begruendung": "Katalog: AP1 nennt VPN nur bei der Konfiguration von Netzwerkverbindungen (AP1.04.05.5); VPN-Modelle, Tunneling, IPsec und Verschlüsselung auf Netzwerkebene stehen im AP2-Katalog.",
-              "katalog": [
-                "AP1.04.05.5",
-                "AP2b.01.06",
-                "AP2b.01.03.4"
-              ]
+              "text": "VPN-Modelle, Tunnel- und Transportmodus sowie Protokolle und Verschlüsselungsverfahren wie IPsec.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.06, AP2b.01.03.4); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: Katalog: AP1 nennt VPN nur bei der Konfiguration von Netzwerkverbindungen (AP1.04.05.5); VPN-Modelle, Tunneling, IPsec und Verschlüsselung auf Netzwerkebene stehen im AP2-Katalog."
             }
           ]
         },
@@ -1271,17 +1271,17 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "hinweis": "Die Konsolenbefehle für Dateioperationen (dir, ls, mkdir, del, cp, copy, chmod, alias) aus demselben Baustein AP1.04.05.6 wohnen im Ordner Software und Betriebssysteme.",
+          "kuer": [
             {
-              "text": "Netzwerkanalyse mit Mitschnitt- oder Monitoring-Werkzeugen (z. B. Wireshark) gehört nicht dazu.",
-              "begruendung": "Katalog: AP1.04.05.6 zählt die Konsolenbefehle auf; Monitoringsysteme stehen im AP2-Katalog.",
-              "katalog": [
-                "AP1.04.05.6",
-                "AP2b.01.11"
-              ]
+              "text": "Netzwerkanalyse mit Mitschnitt- oder Monitoring-Werkzeugen wie Wireshark.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.11); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: Katalog: AP1.04.05.6 zählt die Konsolenbefehle auf; Monitoringsysteme stehen im AP2-Katalog."
             }
-          ],
-          "hinweis": "Die Konsolenbefehle für Dateioperationen (dir, ls, mkdir, del, cp, copy, chmod, alias) aus demselben Baustein AP1.04.05.6 wohnen im Ordner Software und Betriebssysteme."
+          ]
         }
       ]
     }
@@ -1671,7 +1671,7 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-1"
           ],
@@ -1724,7 +1724,7 @@
             "lernzettel:fi-de-2025",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-2"
           ],
@@ -1747,7 +1747,7 @@
           "quellen": [
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-2"
           ],
@@ -1820,7 +1820,7 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-3"
           ],
@@ -1831,7 +1831,7 @@
           "quellen": [
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-3"
           ],
@@ -1842,7 +1842,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-3"
           ],
@@ -1854,7 +1854,7 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-3"
           ],
@@ -1865,7 +1865,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-3"
           ],
@@ -1887,7 +1887,7 @@
             "lernzettel:fi-de-2025",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-3"
           ],
@@ -1943,7 +1943,7 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-4"
           ],
@@ -1954,7 +1954,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-1-4"
           ],
@@ -2135,7 +2135,7 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-2-4"
           ],
@@ -2148,7 +2148,7 @@
             "lernzettel:fi-de-2024",
             "podcast:ipv6-ap1"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-2-4"
           ],
@@ -2307,7 +2307,7 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-3-1"
           ],
@@ -2355,7 +2355,7 @@
             "lernzettel:fi-de-2025",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-3-3"
           ],
@@ -2390,7 +2390,7 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-6-3-2"
           ],

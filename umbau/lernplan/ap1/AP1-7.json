@@ -930,15 +930,14 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "kuer": [
             {
-              "text": "Netzwerk-Firewalls, Firewall-Typen und Webfilter gehören nicht hierher.",
-              "begruendung": "Firewall als Netzwerkkomponente (AP2b.01.02.4) und Firewall/Webfilter (AP2b.02.03.2) stehen im AP2-Katalog; AP1.06.04.11 nennt die Personal Firewall am Arbeitsplatz.",
-              "katalog": [
-                "AP1.06.04.11",
-                "AP2b.01.02.4",
-                "AP2b.02.03.2"
-              ]
+              "text": "Netzwerk-Firewalls, Firewall-Typen und Webfilter.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2b.01.02.4, AP2b.02.03.2); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: Firewall als Netzwerkkomponente (AP2b.01.02.4) und Firewall/Webfilter (AP2b.02.03.2) stehen im AP2-Katalog; AP1.06.04.11 nennt die Personal Firewall am Arbeitsplatz."
             }
           ]
         },
@@ -1109,13 +1108,15 @@
               ]
             }
           ],
-          "grenzen": [
+          "grenzen": [],
+          "kuer": [
             {
-              "text": "Angriffsarten wie Man-in-the-Middle, SQL-Injection oder DDoS im Einzelnen gehören nicht dazu.",
-              "begruendung": "Bedrohungsszenarien wie Man-in-the-Middle, SQL-Injection und DDoS stehen im AP2-Katalog (AP2a.04.04.9).",
-              "katalog": [
-                "AP2a.04.04.9"
-              ]
+              "text": "Angriffsarten wie Man-in-the-Middle, SQL-Injection oder DDoS im Einzelnen.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "podcast:themen-ap1"
+              ],
+              "grund": "Steht im AP2-/WiSo-Katalog (AP2a.04.04.9); nach P21 für AP1 freiwillig statt Außen. Ursprüngliche Begründung: Bedrohungsszenarien wie Man-in-the-Middle, SQL-Injection und DDoS stehen im AP2-Katalog (AP2a.04.04.9)."
             }
           ]
         },
@@ -2193,7 +2194,7 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-7-3-4"
           ],
@@ -2256,7 +2257,7 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Außen",
+          "ring": "Kür",
           "wo": [
             "AP1-7-4-1"
           ],
