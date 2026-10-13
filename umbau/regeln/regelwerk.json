@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "stand": "2026-10-13",
   "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen.",
   "stufen": {
@@ -173,5 +173,11 @@
     "abweichungen": {
       "nachweisen": "Katalog: „Grundverständnis nachweisen“ (Stufe 2); in Prüfungen: „durch eine Rechnung nachweisen“ (Stufe 3)."
     }
+  },
+  "ringe": {
+    "kern": "Katalog-Baustein oder Prüfungsbeleg (inkl. Zusatzbaustein)",
+    "puffer": "Regel P-GESCHWISTER, P-NAECHSTE-STUFE, P-GRUNDLAGE",
+    "kuer": "nur Hinweisquelle, nicht vom Katalog ausgeschlossen; freiwillig, zählt nicht zum Fortschritt",
+    "aussen": "vom Katalog ausgeschlossen (Grenze G1–G6)"
   }
 }

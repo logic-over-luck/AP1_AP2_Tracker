@@ -78,8 +78,8 @@ Siehe Abschnitt 3. Jede Schicht wird nur aus den Schichten darunter erzeugt. Ist
 | **Altprüfungen** | Stichprobe, kein Fundament. Rollen: (1) Mindesttiefe belegen, (2) IHK-Stil zeigen (Operatoren, Antwortformate, Situationen), (3) Prioritäten (Häufigkeit, Punkte), (4) Gruppierung (was zusammen abgefragt wird), (5) katalogfremde Themen aufdecken, (6) zeigen, was als Material vorgegeben wird und nicht auswendig gelernt werden muss, (7) zeigen, wie bewertet wird. **Nicht:** zeigen, was fehlt; Obergrenzen setzen. |
 | **Rahmenlehrplan, Ausbildungsrahmenplan** | Offizielle Ordnungsmittel, auf die der Katalog verweist (Lernfelder). Der Katalog „schränkt die zugrundeliegenden Ordnungsmittel nicht ein" (PDF-S. 4). Noch nicht eingebunden → Parkplatz P5. |
 | **Forum, Gedächtnisprotokolle** | Nur Hinweis auf ein Thema, nie Beleg für Tiefe. |
-| **IT-Berufe-Podcast** (it-berufe-podcast.de, Stefan Macke) | Hinweis. (a) Themen-Schlagworte je Prüfungstermin (AP1 Herbst 2021 bis Frühjahr 2026) – zum Gegenprüfen der eigenen Zuordnung; (b) Änderungsliste alter → neuer AP1-Katalog (Folge #190) – Grundlage für B3, gegen den neuen Katalog mechanisch nachgeprüft. Nie Beleg für Tiefe. |
-| **Community-Lernzettel** (fachinformatiker.de: Obsidian-Lernzettel 03/2025 nach aktuellem Katalog, 125 S.; Word-Lernzettel 02/2024 nach altem Katalog, 56 S.) | Material und Lückenhinweis. Nutzen: (1) Abgleich „Thema im Lernzettel, aber keinem Baustein zugeordnet?“ → prüfen, nicht automatisch übernehmen; (2) Anregung für Erklärungen. Nie Beleg, nie Tiefe, Fakten nicht ungeprüft übernehmen, keinen Text übernehmen (fremdes Werk) – Inhalte in eigenen Worten. |
+| **IT-Berufe-Podcast** (it-berufe-podcast.de, Stefan Macke) | Hinweisquelle (Ring Kür, Abgleich nach R3). (a) Themen-Schlagworte je Prüfungstermin (AP1 Herbst 2021 bis Frühjahr 2026) – zum Gegenprüfen der eigenen Zuordnung; (b) Änderungsliste alter → neuer AP1-Katalog (Folge #190) – Grundlage für B3, gegen den neuen Katalog mechanisch nachgeprüft. Nie Beleg für Tiefe. |
+| **Community-Lernzettel** (Hinweisquelle; fachinformatiker.de: Obsidian-Lernzettel 03/2025 nach aktuellem Katalog, 125 S.; Word-Lernzettel 02/2024 nach altem Katalog, 56 S.) | Material und Lückenhinweis. Nutzen: (1) Abgleich „Thema im Lernzettel, aber keinem Baustein zugeordnet?“ → prüfen, nicht automatisch übernehmen; (2) Anregung für Erklärungen. Nie Beleg, nie Tiefe, Fakten nicht ungeprüft übernehmen, keinen Text übernehmen (fremdes Werk) – Inhalte in eigenen Worten. |
 | **BIBB-Umsetzungshilfe** (Fachinformatiker/-in, BIBB 2020, frei als PDF, CC BY-NC-ND) | Hintergrund zur Ausbildungsordnung und Beispiele für Lernsituationen. Für Tiefe in der schriftlichen Prüfung nachrangig; nicht eingebunden. |
 
 **E6 – Prüfungen heben die Tiefe nur an** [fest]
@@ -127,9 +127,9 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v1.0 [fest]
+## 4. Regelwerk – v1.2 [fest]
 
-Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). Maßgeblich für die
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
 `tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
@@ -234,6 +234,27 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   Bausteinen zugeordnet, mit `hinweis`. Ist das **ganze Thema** gestrichen (RAID, SAN, SQL), steht sie unter
   `ausserhalb` mit B3-Begründung.
 
+
+### 4.8 Die vier Ringe (seit v1.2)
+
+Jedes Thema, das irgendwo auftaucht (Katalog, Prüfung, Podcast, Lernzettel, Unterricht), bekommt **genau
+einen** Ring. So muss keine Sitzung neu überlegen, ob etwas dazugehört.
+
+| Ring | Wann | Im Lernplan |
+|---|---|---|
+| **Kern** | steht im Katalog (Baustein) oder wurde in einer Originalprüfung verlangt (Beleg, Zusatzbaustein) | Können-Aussage, Pflicht |
+| **Puffer** | Regel P-GESCHWISTER, P-NÄCHSTE-STUFE oder P-GRUNDLAGE trifft zu | Können-Aussage, Pflicht, Herkunft `regel:…` |
+| **Kür** | nur in einer Hinweisquelle (Podcast, Lernzettel, Unterricht), weder Kern noch Puffer, aber auch nicht vom Katalog ausgeschlossen | Feld `kuer` am Stichpunkt: Text, Hinweisquelle(n), Grund; sichtbar, freiwillig, zählt nicht zum Fortschritt, keine Pflichtkarten |
+| **Außen** | der Katalog schließt es aus (G1–G6, z. B. weil es im AP2-Katalog steht) | Grenze mit Katalogstelle |
+
+- **R1** Reihenfolge der Prüfung: erst Kern, dann Puffer, dann Außen; was übrig bleibt, ist Kür.
+- **R2** Kür entsteht nur aus Hinweisquellen, die in `meta.hinweisquellen` des Ordners beschrieben sind.
+- **R3 Hinweis-Abgleich (fester Schritt je Ordner):** Die bauende Sitzung gleicht den Ordner mit den
+  Hinweisquellen ab (IT-Berufe-Podcast: Themenlisten und passende Folgen; Community-Lernzettel). Jedes dort
+  genannte Thema wird einem Ring zugeordnet. Der Projektinhaber muss dafür kein Material liefern.
+- **R4** P-GESCHWISTER wird je Ordner **systematisch** geprüft: Zu jeder Können-Aussage, deren Katalogstelle
+  zwei gleichrangige Begriffe nennt (IPv4/IPv6, TCP/UDP …), gibt es das Gegenstück.
+
 ---
 
 ## 5. Definition von „fertig" (Tests)
@@ -331,6 +352,11 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       0 gestrichen; 17 neu. Karten: 92 bleiben, 30 prüfen, 5 umhängen, 0 entfallen. Abnahmekriterium erfüllt:
       IPv6 mit Stufe 3 (AP1-6-2-3, AP1-6-2-5), begründet mit AP1.04.01.3 und Belegen aus 2022H. Alle
       Ordner-Prüfungen grün. Kerntest K1 als Selbstprüfung: 2 Lücken gefunden und geschlossen.
+- [x] **Schritt 3a – Vier Ringe (Regelwerk v1.2):** Anlass: IPv6-Video des IT-Berufe-Podcasts. Ergebnis für IPv6:
+      alle 7 im Video genannten Prüfungsthemen waren schon Kern; 3 Puffer-Aussagen ergänzt (IPv6-Adressarten,
+      Adressvergabe SLAAC/DHCPv6/statisch, NDP und Multicast statt ARP und Broadcast); 7 Kür-Einträge
+      (SLAAC-Ablauf, EUI-64, Multicast-Adressen, Privacy Extensions, Gateway aus RA, AAAA/DS-Lite, Anycast).
+      Eine falsch begründete Grenze (SLAAC/EUI-64 per G6) entfernt. Hinweis-Abgleich für den Rest des Ordners offen.
 - [ ] **Schritt 3b – Abnahme durch den Projektinhaber:** Bericht lesen, Stichproben, entscheiden.
       Danach Schicht 5 für den Ordner (Karten prüfen/umhängen/neu, Lernprompts) und unabhängiger KI-Prüfer (K1–K3).
 - [ ] **Schritt 4 – Rest von AP1**, Ordner für Ordner nach dem Muster des Probelaufs
@@ -358,7 +384,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P9 | Katalog-Zusätze „kann Bestandteil der praktischen Prüfung sein" (Versionsverwaltung AP2b.05.04, Präsentieren AP2b.05.05): gehört das in den Raum PROJEKT? | offen |
 | P10 | Kapitel AP2b.01–03 sind laut Katalog gemeinsame Inhalte aller Fachinformatiker-Fachrichtungen (Quellenauffälligkeit, PDF-S. 21). Tiefe für Anwendungsentwickler? | offen |
 | P11 | Gegenprüfung mit den Themen-Schlagworten des IT-Berufe-Podcasts (AP1 Herbst 2021 bis Frühjahr 2026) durchgeführt: 2 Struktogramm-Aufgaben (2022F-A4-d, 2022H-A4-b) und 1 fehlender Baustein (2024F-A4-a Zugangs-/Zugriffskontrolle) korrigiert. Für 2025H nennt der Podcast zusätzlich Pseudocode, Schreibtischtest, Code erklären, ERM – das liegt im fehlenden Teil der Abschrift (P14). | erledigt |
-| P12 | Lücken-Abgleich mit den Community-Lernzetteln (nach Schritt 3/4): Themen im Lernzettel ohne Baustein → einzeln entscheiden (katalogfremd, alter Katalog oder echte Lücke). | offen |
+| P12 | Lücken-Abgleich mit Lernzetteln und Podcast: jetzt fester Schritt R3 je Ordner (Abschnitt 4.8). | erledigt (Regel) |
 | P13 | Z3 überträgt die Stufe einer Teilaufgabe auf alle ihre Bausteine. Bei Teilaufgaben mit mehreren Bausteinen kann ein Nebenbaustein dadurch zu hoch eingestuft werden (Richtung „eher mehr lernen“, also mit der goldenen Regel vereinbar). Im Probelauf vom KI-Prüfer (K2) je Stichpunkt prüfen lassen. | offen |
 | P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
 | P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |

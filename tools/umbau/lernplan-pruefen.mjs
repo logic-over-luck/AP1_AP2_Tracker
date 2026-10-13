@@ -99,6 +99,12 @@ for (const tb of lp.themenbloecke) {
       const verben = Object.keys(opStufe).filter((op) => new RegExp(`(^|[^A-Za-zÄÖÜäöüß])${op}([^A-Za-zÄÖÜäöüß]|$)`).test(k.text));
       if (verben.length && !verben.some((v) => opStufe[v] === k.stufe)) H(`F1: ${k.id}: Stufe ${k.stufe}, Verben im Text: ${verben.map((v) => `${v} (${opStufe[v]})`).join(', ')}`);
     }
+    // Kür (K-Regeln): nur aus Hinweisquellen, nicht abdeckungspflichtig, zählt nicht zu F3
+    for (const ku of sp.kuer ?? []) {
+      if (!ku.text || !ku.grund) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Text oder Grund`);
+      if (!ku.quellen?.length) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Hinweisquelle: „${(ku.text ?? '').slice(0, 50)}…"`);
+      for (const q of ku.quellen ?? []) if (!(q in (lp.meta?.hinweisquellen ?? {}))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} nicht in meta.hinweisquellen beschrieben`);
+    }
     for (const g of sp.grenzen ?? []) {
       if (!g.katalog?.length) F(`T4: ${sp.id}: Grenze ohne Katalogstelle: „${g.text.slice(0, 60)}…"`);
       for (const id of g.katalog ?? []) if (!alleIds.has(id)) F(`T4: ${sp.id}: Grenze nennt unbekannte ID ${id}`);
@@ -191,6 +197,11 @@ for (const tb of lp.themenbloecke) {
     zeilen.push('| ID | Können | Stufe | Herkunft |', '|---|---|---|---|');
     for (const k of sp.koennen) zeilen.push(`| ${k.id.replace(sp.id + '-', '')} | ${k.text}${k.vorgegeben ? ` _(vorgegeben: ${k.vorgegeben})_` : ''} | ${k.stufe} | ${k.herkunft.join(', ')} |`);
     zeilen.push('');
+    if (sp.kuer?.length) {
+      zeilen.push('**Kür** (freiwillig, zählt nicht zum Fortschritt):', '');
+      for (const ku of sp.kuer) zeilen.push(`- ${ku.text} _(${ku.quellen.join(', ')})_`);
+      zeilen.push('');
+    }
     for (const g of sp.grenzen ?? []) zeilen.push(`**Grenze:** ${g.text} — _${g.begruendung}_ (${g.katalog.join(', ')})`, '');
     if (sp.hinweis) zeilen.push(`_Hinweis:_ ${sp.hinweis}`, '');
   }
@@ -215,7 +226,7 @@ if (!process.env.LERNPLAN_DATEI) {
   writeFileSync(`umbau/berichte/${ORDNER}.md`, zeilen.join('\n') + '\n');
 }
 
-console.log(`${ORDNER}: ${lp.themenbloecke.length} Themenblöcke, ${spIds.length} Stichpunkte, ${kIds.length} Können-Aussagen`);
+console.log(`${ORDNER}: ${lp.themenbloecke.length} Themenblöcke, ${spIds.length} Stichpunkte, ${kIds.length} Können-Aussagen, ${stichpunkte.reduce((a, sp) => a + (sp.kuer?.length ?? 0), 0)} Kür-Einträge`);
 console.log(`Alt → neu: ${zaehl('übernommen')} übernommen, ${zaehl('angepasst')} angepasst, ${zaehl('verschoben')} verschoben, ${zaehl('gestrichen')} gestrichen, ${neueKoennen.length} neu`);
 console.log(`Karten: ${JSON.stringify(karten)}`);
 for (const h of hinweise) console.log(`HINWEIS ${h}`);
