@@ -1,0 +1,29 @@
+{
+  "hinweis": "Themen, die in Originalprüfungen verlangt wurden, aber im Katalog nicht wörtlich stehen (E5: katalogfremde Themen aufdecken). Jeder Zusatzbaustein nennt den nächsten Katalogbezug und wird wie ein Katalog-Baustein abdeckungspflichtig. Neue Einträge nur mit Beleg (Teilaufgaben-ID).",
+  "bausteine": {
+    "ZB.ipv4-subnetting": {
+      "titel": "IPv4-Subnetting: zu Adresse und Präfix Netzadresse, Broadcastadresse, Hostbereich und Hostanzahl bestimmen",
+      "katalogbezug": "AP1.04.05.5",
+      "begruendung": "Der Katalog nennt nur „IP-Adressen“ (AP1.04.05.5) und „IP(v4/v6)-Konfiguration“ (AP1.04.01.3), nicht das Berechnen von Netz- und Broadcastadressen; Prüfungen verlangen es.",
+      "erster_beleg": "2022F-A3-fb"
+    },
+    "ZB.ipv6-subnetting": {
+      "titel": "IPv6-Präfixe aufteilen: Standortpräfix und Teilnetz-ID erkennen, Anzahl der Teilnetze bestimmen, Adressen aus einem Präfix vergeben",
+      "katalogbezug": "AP1.04.01.3",
+      "begruendung": "Der Katalog nennt „IP(v4/v6)-Konfiguration“ (AP1.04.01.3) gleichrangig für IPv4 und IPv6, aber kein Aufteilen von Präfixen; Prüfungen verlangen es.",
+      "erster_beleg": "2022H-A3-c"
+    },
+    "ZB.datendarstellung": {
+      "titel": "Datendarstellung: Bit und Byte, Binär- und Hexadezimalzahlen, Zeichencodierung (ASCII/Binärformat), Farbtiefe (z. B. 2^24 Farben)",
+      "katalogbezug": "AP1.03.03.4.1",
+      "begruendung": "Der Katalog nennt Datenmengen digitalisierter Dokumente (AP1.03.03.4.1) und die Präfixe im Anhang, aber nicht Zahlensysteme, Zeichencodierung oder Farbtiefe; Prüfungen verlangen sie (und Subnetting/IPv6 setzen Binär- und Hexadezimalzahlen voraus).",
+      "erster_beleg": "2024F-A3-c"
+    },
+    "ZB.rechnung": {
+      "titel": "Rechnung lesen und prüfen: kaufmännische Zeitpunkte (Bestellung, Lieferung, Rechnung), Rechnungsprüfung, Rabatt und Skonto, Zahlungshilfen (z. B. GiroCode)",
+      "katalogbezug": "AP1.03.04.8",
+      "begruendung": "Der Katalog nennt den Angebotsvergleich (AP1.03.04.8) und enthält im Anhang eine Musterrechnung, aber nicht das Prüfen und Bezahlen einer Rechnung; die Prüfung 2025H verlangt es.",
+      "erster_beleg": "2025H-A1-a"
+    }
+  }
+}

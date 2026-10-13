@@ -217,6 +217,21 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   PB2. Zuordnung über die Gebiete im Raster; Inhalte, die beide brauchen, wohnen in PB1 (früher gebaut).
   Offene Fälle → Parkplatz P3.
 
+### 4.7 Zusatzbausteine und Zuordnung (seit v1.1)
+
+- **Z1** Was in einer Originalprüfung verlangt wurde, aber nicht wörtlich im Katalog steht, wird ein
+  Zusatzbaustein (`umbau/regeln/zusatzbausteine.json`, ID `ZB.…`) mit nächstem Katalogbezug, Begründung
+  und erstem Beleg. Zusatzbausteine sind abdeckungspflichtig wie Katalog-Bausteine. Sie erweitern nur.
+- **Z2** Jede Teilaufgabe bekommt einen festen **Aufgabentyp** (aufzaehlen, erklaeren, begruenden,
+  berechnen, zuordnen, diagramm, code_lesen, code_schreiben, konfigurieren, vorgehen, text) – Grundlage
+  für Karten und Probeprüfungen im IHK-Stil.
+- **Z3** Stufe einer Teilaufgabe = höchste Stufe ihrer Prüfungsoperatoren (`pruefungsoperatoren` im
+  Regelwerk). Sie gilt für alle Bausteine, denen die Teilaufgabe zugeordnet ist.
+- **Z4** Teilaufgaben zu gestrichenen Themen: Ist nur die **Darstellungsform** gestrichen (Struktogramm)
+  oder nur ein **Teil** (Vererbung in einer Klassenaufgabe), bleibt die Teilaufgabe den verbliebenen
+  Bausteinen zugeordnet, mit `hinweis`. Ist das **ganze Thema** gestrichen (RAID, SAN, SQL), steht sie unter
+  `ausserhalb` mit B3-Begründung.
+
 ---
 
 ## 5. Definition von „fertig" (Tests)
@@ -232,7 +247,8 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | T0b | Der Prüfer selbst erkennt eingebaute Fehler (fehlender, erfundener, veränderter Baustein, doppelte ID, kaputter Verweis, fehlendes Gebiet) | ✓ `tests/umbau-fundament.test.mjs` |
 | T0c | Regelwerk lückenlos: jeder Operator hat eine Stufe, jeder abdeckungspflichtige Baustein hat eine Stufe, Tabelle in 4.1 = `regelwerk.json` | ✓ `tools/umbau/tiefe-berechnen.mjs` |
 | T1 | Jeder abdeckungspflichtige Baustein des Raums steckt in mindestens einem Stichpunkt | geplant |
-| T2 | Jede Teilaufgabe der Prüfungen dieses Raums ist mindestens einem Stichpunkt zugeordnet | geplant |
+| T2 | Jede Teilaufgabe der Prüfungen dieses Raums ist zugeordnet: Bausteine oder „ausserhalb“ mit Katalog-Begründung (B3, RAUM, G5); gültige Baustein-IDs; fester Aufgabentyp; jeder Prüfungsoperator hat eine Stufe. Prüft zugleich die **goldene Regel**: belegte Tiefe nie unter Katalogtiefe, kein Katalog-Baustein verliert seine Abdeckungspflicht | ✓ `tools/umbau/zuordnung-pruefen.mjs` (+ Tests) |
+| T2b | Jede Teilaufgabe ist mindestens einem Stichpunkt zugeordnet (über ihre Bausteine) | geplant (Schritt 3) |
 | T3 | Jede Können-Aussage hat eine gültige Herkunft (F2) | geplant |
 | T4 | Jede Grenze nennt eine Katalogstelle (G1) | geplant |
 | T5 | Größen stimmen (F3, F4) | geplant |
@@ -277,7 +293,20 @@ Summe AP1: 11 Prüfungen, 301 Teilaufgaben (kleinste bewertete Einheiten), davon
 Katalog. Alle Abschriften bestehen T-1. PB1, PB2, WiSo: noch keine Abschriften.
 
 Zuordnung Teilaufgabe → Baustein und Aufgabentyp kommt **nicht** in die Abschriften, sondern in eine
-eigene Datei je Prüfung (Schicht 3). So bleiben die Abschriften reine Quellen.
+eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die Abschriften reine Quellen.
+
+### 6.1 Ergebnis der Zuordnung AP1 (Regelwerk v1.1)
+
+- 301 Teilaufgaben zugeordnet, davon 13 außerhalb nach B3 (RAID 4, SAN 1, SQL 8).
+- 183 abdeckungspflichtige Bausteine (179 Katalog + 4 Zusatz). **125 mit Prüfungsbeleg**, davon 46 nur aus
+  Prüfungen nach altem Katalog. **58 ohne Beleg** – sie bleiben vollständig mit ihrer Katalogtiefe
+  drin (goldene Regel); auffällig: Qualitätsmanagement (AP1.05) kam in keiner der 11 Prüfungen vor.
+- **23 Bausteine durch Belege angehoben**, z. B. Verschlüsselungstechniken 1 → 4, Härtung 2 → 4,
+  Kontrollstrukturen 2 → 4, Schreibtischtest 3 → 4.
+- Zusatzbausteine: `ZB.ipv4-subnetting` (2022F, 2025F, 2025H, 2026F), `ZB.ipv6-subnetting` (2022H: Teilnetz-
+  Anzahl bestimmen, Adressen aus Präfix vergeben), `ZB.datendarstellung` (2024F, 2026F), `ZB.rechnung` (2025H).
+- **IPv6:** AP1.04.01.3 Stufe 4 mit 14 Belegen; IPv6-Präfixe aufteilen ist belegt (2022H) und damit Teil
+  von AP1. Der alte Satz „IPv6-Subnetting war nicht verlangt“ war falsch.
 
 ---
 
@@ -288,10 +317,10 @@ eigene Datei je Prüfung (Schicht 3). So bleiben die Abschriften reine Quellen.
       Baustein berechnet (`umbau/fundament/tiefe.json`), P1, P2, P4 erledigt
 - [x] **Schritt 1b – Quellen AP1 geprüft:** 11 Abschriften bestehen T-1; Rollen von Podcast, Lernzettel,
       BIBB und Rahmenlehrplan festgelegt (E5)
-- [ ] **Schritt 2 – Zuordnungsformat für Prüfungen:** Datei je Prüfung, je Teilaufgabe: Baustein-IDs,
-      Aufgabentyp, vorgegebenes Material. Dazu die **Prüfungsoperatoren** (57 verschiedene in den
-      AP1-Abschriften, z. B. nennen, beschreiben, angeben, berechnen, begründen) im Regelwerk den Stufen 1–4
-      zuordnen, damit Belege die Tiefe anheben können (B1). Plus Check T2.
+- [x] **Schritt 2 – Prüfungen zugeordnet (AP1):** alle 301 Teilaufgaben der 11 AP1-Prüfungen in
+      `umbau/zuordnung/ap1/<Prüfung>.json`; 57 Prüfungsoperatoren im Regelwerk v1.1 eingestuft;
+      4 Zusatzbausteine (Abschnitt 4.7); Ergebnis in `umbau/fundament/belege-ap1.json` (siehe 6.1);
+      T2 grün; Gegenprüfung mit den Podcast-Schlagworten (P11) hat 3 Zuordnungen korrigiert
 - [ ] **Schritt 3 – Probelauf AP1 / Netzwerk:** ein Ordner komplett von Schicht 1 bis 5, altes Material
       einsortiert, Liste „alt → neu". **Abnahmekriterium:** IPv6 steht mit Stufe 3 und Begründung aus dem
       Katalog drin; T1–T6 grün für diesen Ordner. Der Projektinhaber entscheidet, ob es so weitergeht.
@@ -319,8 +348,10 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P8 | PROJEKT: Vorgaben der IHK für Rheinhessen (Antrag, Umfang, Dokumentation, Präsentation, Fachgespräch) beschaffen. Die IT-Prüfungsseite der IHK Rheinhessen nennt sie nicht; dort steht ein Ansprechpartner für die IT-Prüfungen. | offen |
 | P9 | Katalog-Zusätze „kann Bestandteil der praktischen Prüfung sein" (Versionsverwaltung AP2b.05.04, Präsentieren AP2b.05.05): gehört das in den Raum PROJEKT? | offen |
 | P10 | Kapitel AP2b.01–03 sind laut Katalog gemeinsame Inhalte aller Fachinformatiker-Fachrichtungen (Quellenauffälligkeit, PDF-S. 21). Tiefe für Anwendungsentwickler? | offen |
-| P11 | Gegenprüfung mit den Themenlisten des IT-Berufe-Podcasts: Deckt sich die eigene Zuordnung (Schritt 2) mit den Schlagworten je Termin? Abweichungen ansehen. | offen |
+| P11 | Gegenprüfung mit den Themen-Schlagworten des IT-Berufe-Podcasts (AP1 Herbst 2021 bis Frühjahr 2026) durchgeführt: 2 Struktogramm-Aufgaben (2022F-A4-d, 2022H-A4-b) und 1 fehlender Baustein (2024F-A4-a Zugangs-/Zugriffskontrolle) korrigiert. Für 2025H nennt der Podcast zusätzlich Pseudocode, Schreibtischtest, Code erklären, ERM – das liegt im fehlenden Teil der Abschrift (P14). | erledigt |
 | P12 | Lücken-Abgleich mit den Community-Lernzetteln (nach Schritt 3/4): Themen im Lernzettel ohne Baustein → einzeln entscheiden (katalogfremd, alter Katalog oder echte Lücke). | offen |
+| P13 | Z3 überträgt die Stufe einer Teilaufgabe auf alle ihre Bausteine. Bei Teilaufgaben mit mehreren Bausteinen kann ein Nebenbaustein dadurch zu hoch eingestuft werden (Richtung „eher mehr lernen“, also mit der goldenen Regel vereinbar). Im Probelauf vom KI-Prüfer (K2) je Stichpunkt prüfen lassen. | offen |
+| P14 | 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | offen |
 
 ---
 
@@ -347,6 +378,7 @@ npm run umbau:katalog     # zerlegt quellen/katalog.md → umbau/fundament/katal
 npm run umbau:pruefen     # prüft die Bausteine unabhängig gegen den Katalog
 npm run umbau:tiefe       # berechnet die Mindesttiefe je Baustein und prüft das Regelwerk
 npm run umbau:pruefungen  # prüft die Prüfungsabschriften, erzeugt das Teilaufgaben-Verzeichnis
+npm run umbau:zuordnung   # T2 + goldene Regel, berechnet die belegte Tiefe (belege-ap1.json)
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 

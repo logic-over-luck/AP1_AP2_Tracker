@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "stand": "2026-10-13",
   "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen.",
   "stufen": {
@@ -107,6 +107,71 @@
     "AP2b.03.08": {
       "stufe": 3,
       "begruendung": "Kein Operator; Gebiet PB2 „Testszenarien auswählen und Testdaten generieren“ und AP2b.05.03 „Softwaretests erstellen, durchführen“ verlangen Anwenden."
+    }
+  },
+  "pruefungsoperatoren": {
+    "hinweis": "Operatoren aus den Aufgabenstellungen der Prüfungen (yaml-Feld operator). Stufe einer Teilaufgabe = höchste Stufe ihrer Operatoren. Steht ein Wort auch in der Katalog-Tabelle (operatoren), muss die Stufe gleich sein – außer es steht unter 'abweichungen'.",
+    "stufen": {
+      "Auskunft geben": 1,
+      "Rechenweg angeben": 3,
+      "Umrechnung durchführen": 3,
+      "Vorschläge machen": 3,
+      "analysieren": 4,
+      "anführen": 1,
+      "angeben": 1,
+      "anpassen": 3,
+      "aufrunden": 3,
+      "ausfüllen": 3,
+      "auswählen": 4,
+      "begründen": 4,
+      "begründen (Begründung hinzufügen)": 4,
+      "benennen": 1,
+      "berechnen": 3,
+      "berücksichtigen": 3,
+      "beschreiben": 2,
+      "bestimmen": 3,
+      "beurteilen": 4,
+      "bewerten": 4,
+      "darstellen": 3,
+      "durchführen": 3,
+      "eintragen": 3,
+      "einzeichnen": 3,
+      "entscheiden": 4,
+      "ergänzen": 3,
+      "erklären": 2,
+      "erläutern": 2,
+      "ermitteln": 3,
+      "errechnen": 3,
+      "erstellen": 3,
+      "erweitern": 3,
+      "formulieren": 3,
+      "geben": 1,
+      "gegenüberstellen": 2,
+      "hinweisen": 1,
+      "identifizieren": 2,
+      "in Reihenfolge bringen": 2,
+      "interpretieren": 2,
+      "kennzeichnen": 1,
+      "konfigurieren": 3,
+      "korrigieren": 3,
+      "markieren": 2,
+      "nachweisen": 3,
+      "nennen": 1,
+      "runden": 3,
+      "schildern": 2,
+      "unterbreiten (Vorschlag)": 3,
+      "verbinden": 2,
+      "vergeben": 3,
+      "vergleichen": 2,
+      "vermerken": 1,
+      "vervollständigen": 3,
+      "wählen": 4,
+      "zuordnen": 2,
+      "zuordnen (ankreuzen)": 2,
+      "zuweisen": 3
+    },
+    "abweichungen": {
+      "nachweisen": "Katalog: „Grundverständnis nachweisen“ (Stufe 2); in Prüfungen: „durch eine Rechnung nachweisen“ (Stufe 3)."
     }
   }
 }

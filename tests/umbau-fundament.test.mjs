@@ -110,3 +110,31 @@ for (const [name, aendern] of Object.entries(abschriftFehler)) {
     assert.ok(lies('2099F_AP1.md', aendern(MUSTER)).fehler.length > 0);
   });
 }
+
+// ---------- Zuordnung Teilaufgabe → Baustein (T2, goldene Regel) ----------
+import { cpSync, rmSync } from 'node:fs';
+const zuordnungDa = vorhanden && existsSync('umbau/fundament/pruefungen-ap1.json') && existsSync('umbau/zuordnung/ap1');
+
+function zuordnungMit(veraendern) {
+  const ordner = join(mkdtempSync(join(tmpdir(), 'zuo-')), 'ap1');
+  cpSync('umbau/zuordnung/ap1', ordner, { recursive: true });
+  veraendern(ordner);
+  return spawnSync(process.execPath, ['tools/umbau/zuordnung-pruefen.mjs', 'ap1'], { encoding: 'utf8', env: { ...process.env, ZUORDNUNG_ORDNER: ordner } });
+}
+const aendereJson = (datei, f) => { const j = JSON.parse(readFileSync(datei, 'utf8')); f(j); writeFileSync(datei, JSON.stringify(j)); };
+
+test('Zuordnung AP1 besteht T2 und die goldene Regel', { skip: !zuordnungDa && 'Quellen fehlen' }, () => {
+  assert.equal(zuordnungMit(() => {}).status, 0);
+});
+const zuordnungFehler = {
+  'fehlende Teilaufgabe': (o) => aendereJson(join(o, '2024H.json'), (j) => { delete j.teilaufgaben['2024H-A1-a']; }),
+  'unbekannter Baustein': (o) => aendereJson(join(o, '2024H.json'), (j) => { j.teilaufgaben['2024H-A1-a'].bausteine = ['AP1.99.99']; }),
+  '„kam nicht vor" als Begründung': (o) => aendereJson(join(o, '2024H.json'), (j) => { j.teilaufgaben['2024H-A1-a'] = { bausteine: [], typ: 'aufzaehlen', thema: 'x', ausserhalb: 'kam in keiner anderen Prüfung vor' }; }),
+  'fehlende Prüfung': (o) => rmSync(join(o, '2025F.json')),
+  'unbekannter Typ': (o) => aendereJson(join(o, '2024H.json'), (j) => { j.teilaufgaben['2024H-A1-a'].typ = 'raten'; }),
+};
+for (const [name, f] of Object.entries(zuordnungFehler)) {
+  test(`Zuordnungs-Prüfer erkennt: ${name}`, { skip: !zuordnungDa && 'Quellen fehlen' }, () => {
+    assert.equal(zuordnungMit(f).status, 1);
+  });
+}
