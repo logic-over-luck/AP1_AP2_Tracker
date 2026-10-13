@@ -217,7 +217,7 @@ const neueKoennen = kIds.filter((id) => !altSet.has(id) && !an.some((x) => x.neu
 // ---------- Bericht ----------
 const zaehl = (s) => an.filter((x) => x.status === s).length;
 const zeilen = [];
-zeilen.push(`# Probelauf ${ORDNER} – ${ob.titel}`, '', `Erzeugt mit \`node tools/umbau/lernplan-pruefen.mjs ${ORDNER}\`. Nicht von Hand bearbeiten.`, '');
+zeilen.push(`# Lernplan ${ORDNER} – ${ob.titel}`, '', `Erzeugt mit \`node tools/umbau/lernplan-pruefen.mjs ${ORDNER}\`. Nicht von Hand bearbeiten.`, '');
 zeilen.push(`**Ergebnis:** ${fehler.length ? `${fehler.length} Fehler` : 'alle Prüfungen bestanden'}, ${hinweise.length} Hinweise.`, '');
 zeilen.push('## Struktur', '');
 for (const tb of lp.themenbloecke) {

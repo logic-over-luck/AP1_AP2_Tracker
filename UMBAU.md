@@ -288,6 +288,8 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | T5 | Größen stimmen (F3, F4) | ✓ je Ordner |
 | T6 | Jeder Stichpunkt hat ein Gebiet seines Raums | ✓ je Ordner |
 | T7 | Inhalte früherer Räume sind importiert, nicht doppelt (E2) | geplant |
+| R3 | Hinweis-Abgleich: jedes Thema aus den Hinweisquellen hat einen Ring (Kern, Puffer, Kür, Außen; „Ordner“ = wohnt in anderem Ordner oder Raum, P23), Hinweisquelle beschrieben, Verweis passt zum Ring | ✓ je Ordner (`meta.hinweisabgleich`) |
+| R4 | Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage | ✓ je Ordner (`meta.geschwister`) |
 | T9 | Rückblick-Test: Punkte je Prüfung auf Themen, die vorher weder im Katalog noch in einer früheren Prüfung standen; bei jeder neuen Prüfung neu berechnen | einmal von Hand gerechnet (6.1), als Skript geplant |
 
 **KI-Prüfer (Inhalt; eigene Sitzung, sieht nur einen Stichpunkt mit seinen Quellen)**
@@ -375,9 +377,24 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       Adressvergabe SLAAC/DHCPv6/statisch, NDP und Multicast statt ARP und Broadcast); 7 Kür-Einträge
       (SLAAC-Ablauf, EUI-64, Multicast-Adressen, Privacy Extensions, Gateway aus RA, AAAA/DS-Lite, Anycast).
       Eine falsch begründete Grenze (SLAAC/EUI-64 per G6) entfernt. Hinweis-Abgleich für den Rest des Ordners offen.
+- [x] **Schritt 3c – AP1-6 abgeschlossen (13.10.2026):** Hinweis-Abgleich (R3) für den ganzen Ordner: 65 Themen aus
+      Podcast-Themenlisten und beiden Lernzetteln (Kern 29, Puffer 5, Kür 12, Außen 16, anderer Ordner 3).
+      Kern-Lücken geschlossen: WLAN- und Ethernet-Standards, Netzwerkkarte (Katalogwortlaut AP1.03.03.1) und PoE
+      (Beleg 2026F-A1-ac) im neuen Stichpunkt AP1-6-1-5; WLAN-Router als Kombigerät, NAT/PAT (Katalog-Anhang
+      Netzwerkplan), VPN am Arbeitsplatz einrichten (AP1.04.05.5). Grenzen ergänzt (TCP/UDP-Eigenschaften, SMB/NFS,
+      Proxy, Topologien, Netzausdehnung, DHCP-Ablauf, DNS-Eintragsarten, WLAN-Sicherheitsverfahren, VPN-Verfahren);
+      AAAA-Record nach R1 von Kür nach Außen. Geschwister-Prüfung (R4) systematisch: 14 Paare. Prüfskript prüft und
+      berichtet R3 und R4. Stand: 13 Stichpunkte, 80 Können-Aussagen, 17 Kür-Einträge.
 - [ ] **Schritt 3b – Abnahme durch den Projektinhaber:** Bericht lesen, Stichproben, entscheiden.
       Danach Schicht 5 für den Ordner (Karten prüfen/umhängen/neu, Lernprompts) und unabhängiger KI-Prüfer (K1–K3).
 - [ ] **Schritt 4 – Rest von AP1**, Ordner für Ordner nach dem Muster des Probelaufs
+  - [x] **AP1-1 Projektmanagement und Qualität (13.10.2026):** `umbau/lernplan/ap1/AP1-1.json`, Bericht
+        `umbau/berichte/AP1-1.md`. 5 Themenblöcke, 16 Stichpunkte, 93 Können-Aussagen, 10 Kür-Einträge. Alt → neu:
+        73 alte Aussagen, davon 39 übernommen, 32 angepasst, 2 gestrichen (AP1-1-1-2-K5: Vorgehensmodelle vergleichen
+        steht im AP2-Katalog, AP2b.04.02; AP1-1-5-1-K4: ISO 9001 nach G4, siehe P22); 22 neu. Karten: 74 bleiben,
+        83 prüfen, 3 entfallen. 32 Teilaufgaben zugeordnet, Kerntest als Selbstprüfung. R3: 52 Themen
+        (Kern 27, Kür 10, Außen 6, anderer Ordner oder Raum 9); R4: 12 Paare. Alle Ordner-Prüfungen grün.
+  - [ ] AP1-2, AP1-3, AP1-4, AP1-5, AP1-7, AP1-8
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
@@ -407,10 +424,13 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
 | P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |
 | P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). | offen |
-| P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). | offen |
+| P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). Bis zur Entscheidung als Kür geführt (Grund nennt P17): AP1-6 Hub, FTP/SFTP/NTP/LDAP, ICMP; AP1-1 Retrospektive. | offen |
 | P18 | **Vorschlag, noch nicht beschlossen:** Regel P-MUSTER – Können-Aussagen für nie geprüfte Katalogthemen nach den Aufgabentypen formulieren, die die IHK beim selben Verb sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründete Empfehlung). | offen |
 | P19 | **Entschieden (Projektinhaber):** kein Zeitbudget. Maßstab ist fachliche Richtigkeit und Vollständigkeit nach den Regeln (Kern + Puffer Pflicht, Kür freiwillig), nicht die verfügbare Zeit. P7 entfällt. | erledigt |
-| P20 | **Nächste Sitzung, sparsam:** Hinweis-Abgleich (R3) für den Rest von AP1-6, danach je Sitzung ein weiterer AP1-Ordner nach dem Muster von AP1-6. Vorher nur diese Datei und den Bericht des letzten Ordners lesen, nicht alle Quellen. | offen |
+| P20 | **Erledigt (13.10.2026):** R3 für den Rest von AP1-6 (Schritt 3c) und Ordner AP1-1 (Schritt 4). Weiter wie bisher: je Sitzung ein AP1-Ordner nach dem Muster von AP1-6/AP1-1; vorher nur diese Datei und den Bericht des letzten Ordners lesen. | erledigt |
+| P21 | **Zu bestätigen:** Außen bei Oberbegriffen des AP2-Katalogs. Angewandt: Ein Thema ist Außen, wenn eine Katalogstelle eines späteren Raums es selbst oder seinen Oberbegriff nennt, z. B. DHCP-Ablauf (DORA) und DNS-Eintragsarten über „Netzwerkrelevante Dienste beschreiben: DNS, DHCP“ (AP2b.01.07), Eigenschaften von TCP/UDP (AP2b.01.05), WEP/WPA-Vergleich über „Sicherheit in Drahtlosnetzen“ (AP2b.01.03.8), Scrum-Rollen über „Vorgehensmodelle unterscheiden … Scrum“ (AP2b.04.02). Folge: AAAA-Record in AP1-6 von Kür nach Außen verschoben. Nennt der AP2-Katalog nur ein Nachbarthema, bleibt es Kür (z. B. SLAAC-Ablauf, DS-Lite). | offen |
+| P22 | **Zu entscheiden:** G4 nimmt Normnummern aus. Angewandt: ISO 9001 ist Außen, die alte Aussage AP1-1-5-1-K4 („Du kennst die ISO 9001 …“) ist gestrichen. Soll der Name der bekanntesten QM-Norm als Ausnahme Kern bleiben? | offen |
+| P23 | **Zu bestätigen:** Im Hinweis-Abgleich (R3) gibt es neben den vier Ringen die Kennzeichnung „Ordner“ für Themen, die in einem anderen AP1-Ordner oder einem späteren Raum wohnen (z. B. Fernwartungstechnik → AP1-5, Mängelarten → AP1-3, Betriebsrat → WISO). Der Ring wird dort vergeben, wo das Thema wohnt. | offen |
 
 ---
 
@@ -438,7 +458,8 @@ npm run umbau:pruefen     # prüft die Bausteine unabhängig gegen den Katalog
 npm run umbau:tiefe       # berechnet die Mindesttiefe je Baustein und prüft das Regelwerk
 npm run umbau:pruefungen  # prüft die Prüfungsabschriften, erzeugt das Teilaufgaben-Verzeichnis
 npm run umbau:zuordnung   # T2 + goldene Regel, berechnet die belegte Tiefe (belege-ap1.json)
-node tools/umbau/lernplan-pruefen.mjs AP1-6   # prüft einen Ordner des neuen Lernplans, schreibt umbau/berichte/AP1-6.md
+node tools/umbau/lernplan-pruefen.mjs AP1-6   # prüft einen Ordner des neuen Lernplans (auch R3, R4), schreibt umbau/berichte/AP1-6.md
+node tools/umbau/lernplan-pruefen.mjs AP1-1
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 
