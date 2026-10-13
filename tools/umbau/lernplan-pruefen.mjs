@@ -53,7 +53,7 @@ const raumBausteine = new Set([
   ...b.anhang.map((x) => x.id), ...Object.keys(zusatz),
 ]);
 const gebieteRaum = new Set(b.pruefungsbereiche.find((p) => p.id === TEIL).gebiete.map((g) => g.id));
-const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE']);
+const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-BEISPIELLISTE']);
 const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
 
 // ---------- Struktur ----------

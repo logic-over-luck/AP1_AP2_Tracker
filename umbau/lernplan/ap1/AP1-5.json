@@ -624,19 +624,18 @@
               "herkunft": [
                 "katalog:AP1.04.05.3"
               ]
+            },
+            {
+              "id": "AP1-5-2-3-K7",
+              "stufe": 2,
+              "text": "Du kannst weitere Dateibefehle ihrem Zweck zuordnen: cd (Verzeichnis wechseln), pwd (aktuelles Verzeichnis anzeigen), rm (löschen), mv und move (verschieben oder umbenennen), type und cat (Dateiinhalt anzeigen).",
+              "herkunft": [
+                "regel:P-BEISPIELLISTE"
+              ]
             }
           ],
           "grenzen": [],
-          "kuer": [
-            {
-              "text": "Weitere Dateibefehle: cd, pwd, rm, mv, move, type und cat.",
-              "quellen": [
-                "podcast:themen-ap1",
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "AP1.04.05.6 nennt Konsolenbefehle als offene z. B.-Liste. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
-            }
-          ],
+          "kuer": [],
           "hinweis": "Die Netzwerkbefehle aus AP1.04.05.6 stehen im Ordner Netzwerk (AP1-6-3-2); Skripte im Ordner Programmieren und Modellieren."
         },
         {
@@ -1096,7 +1095,7 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.4",
+    "regelwerk_version": "1.5",
     "stand": "2026-10-13",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). AP1.04.01.3 und AP1.04.05.6 sind mit AP1-6 geteilt, AP1.03.03.1 mit AP1-4 und AP1-6.",
     "kerntest": {
@@ -1353,13 +1352,14 @@
         {
           "thema": "Weitere Befehle cd, pwd, rm, mv",
           "quellen": [
+            "podcast:themen-ap1",
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Kür",
+          "ring": "Puffer",
           "wo": [
-            "AP1-5-2-3"
+            "AP1-5-2-3-K7"
           ],
-          "notiz": "P17"
+          "notiz": "P-BEISPIELLISTE: zwei unabhängige Hinweisquellen"
         },
         {
           "thema": "Software anpassen, Konfigurationsdateien",

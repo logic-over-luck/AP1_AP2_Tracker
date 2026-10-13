@@ -136,9 +136,9 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v1.4 [fest]
+## 4. Regelwerk – v1.5 [fest]
 
-Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). Maßgeblich für die
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). v1.5 (14.10.2026, Projektinhaber): P-BEISPIELLISTE (P17), P-MUSTER als F6 (P18). Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
 `tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
@@ -201,6 +201,11 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   unter einer Stunde, wenn die Grundlage sitzt).
 - **P-GRUNDLAGE** Was gebraucht wird, um einen Baustein überhaupt bearbeiten zu können
   (z. B. Binär- und Hexadezimalzahlen für Subnetting und IPv6).
+- **P-BEISPIELLISTE** (seit v1.5, P17) Bei einer offenen „z. B.“-Liste im Katalog sind die genannten Beispiele Kern.
+  Weitere übliche Mitglieder derselben Gruppe werden Puffer, wenn mindestens **zwei unabhängige Hinweisquellen** sie
+  nennen, sonst Kür. Unabhängig heißt: verschiedene Quellenarten (Podcast, Lernzettel, Unterricht); die beiden
+  Lernzettel von fachinformatiker.de zählen zusammen als eine. Stufe der Puffer-Aussage: die Stufe der Katalogstelle.
+  Lehrbücher sind optional (nur die betroffene Stelle, nie ganze Bücher, nie eigene Themen, nie Tiefe).
 
 ### 4.4 Grenzen
 
@@ -227,6 +232,9 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
 - **F4** Themenblock: 3–6 Stichpunkte mit gemeinsamer Grundlage.
 - **F5** Gruppierung: Was in Prüfungen in derselben Aufgabe zusammen abgefragt wird, gehört in denselben
   Stichpunkt oder Themenblock. Grundlagen stehen vor ihrer Anwendung.
+- **F6 P-MUSTER** (seit v1.5, P18) Können-Aussagen zu Katalogthemen ohne Prüfungsbeleg werden nach dem Aufgabentyp
+  formuliert, den die IHK beim selben Operator sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründet
+  empfehlen). Das bestimmt nur die Form, nie die Stufe.
 
 ### 4.6 Räume
 
@@ -312,9 +320,14 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 
 **Mensch**
 
-- M1 Rote Stellen ansehen und entscheiden.
-- M2 Stichproben je Ordner.
-- M3 Parkplatz abarbeiten.
+Neu gefasst am 14.10.2026 (Projektinhaber): Die fachliche Richtigkeit prüfen Skripte und unabhängige KI-Prüfer (K1–K3).
+Der Projektinhaber nimmt aus Sicht des Lernenden ab, nicht fachlich.
+
+- M1 **Altprüfungs-Test:** je Ordner eine Altprüfung durchgehen – findet sich zu jeder Teilaufgabe der Stichpunkt, und
+  wüsste man nach dem Lernen seiner Aussagen, was zu tun ist? Jede Stelle, an der das nicht klappt, ist ein Fund.
+- M2 **Verständlichkeit und Größe:** Stichproben – ist eine Aussage ohne Vorwissen verständlich, wirkt ein Stichpunkt
+  wie eine Lerneinheit von etwa einer Stunde?
+- M3 **Grundsatzfragen:** Parkplatz-Punkte entscheiden, die den eigenen Lernplan betreffen (keine Fachfragen).
 
 ---
 
@@ -454,16 +467,16 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P6 | Lernstand-Umzug: Tabelle alte ID → neue ID für Stichpunkte und Karten; bisherige Sicherungen müssen lesbar bleiben. | offen |
 | P7 | Zeitbudget – verworfen, siehe P19. | erledigt |
 | P8 | PROJEKT: Vorgaben der IHK für Rheinhessen (Antrag, Umfang, Dokumentation, Präsentation, Fachgespräch) beschaffen. Die IT-Prüfungsseite der IHK Rheinhessen nennt sie nicht; dort steht ein Ansprechpartner für die IT-Prüfungen. | offen |
-| P9 | Katalog-Zusätze „kann Bestandteil der praktischen Prüfung sein" (Versionsverwaltung AP2b.05.04, Präsentieren AP2b.05.05): gehört das in den Raum PROJEKT? | offen |
+| P9 | Katalog-Zusätze „kann Bestandteil der praktischen Prüfung sein" (Versionsverwaltung AP2b.05.04, Präsentieren AP2b.05.05): gehört das in den Raum PROJEKT? **Entschieden (Projektinhaber, 14.10.2026): ja.** Beide wohnen im Raum PROJEKT; in PB1 stehen sie nur als Grenze mit Verweis auf PROJEKT und Katalogstelle (G5). | erledigt |
 | P10 | Kapitel AP2b.01–03 sind laut Katalog gemeinsame Inhalte aller Fachinformatiker-Fachrichtungen (Quellenauffälligkeit, PDF-S. 21). Tiefe für Anwendungsentwickler? | offen |
 | P11 | Gegenprüfung mit den Themen-Schlagworten des IT-Berufe-Podcasts (AP1 Herbst 2021 bis Frühjahr 2026) durchgeführt: 2 Struktogramm-Aufgaben (2022F-A4-d, 2022H-A4-b) und 1 fehlender Baustein (2024F-A4-a Zugangs-/Zugriffskontrolle) korrigiert. Für 2025H nennt der Podcast zusätzlich Pseudocode, Schreibtischtest, Code erklären, ERM – das liegt im fehlenden Teil der Abschrift (P14). | erledigt |
 | P12 | Lücken-Abgleich mit Lernzetteln und Podcast: jetzt fester Schritt R3 je Ordner (Abschnitt 4.8). | erledigt (Regel) |
 | P13 | Z3 überträgt die Stufe einer Teilaufgabe auf alle ihre Bausteine. Bei Teilaufgaben mit mehreren Bausteinen kann ein Nebenbaustein dadurch zu hoch eingestuft werden (Richtung „eher mehr lernen“, also mit der goldenen Regel vereinbar). Im Probelauf vom KI-Prüfer (K2) je Stichpunkt prüfen lassen. **Entschieden (Projektinhaber hat die Entscheidung übertragen, 13.10.2026): keine neue Regel, falsche Zuordnungen einzeln korrigieren.** Der KI-Prüfer (P16) fand zwei Fälle: 2023H-A2-a (Telearbeitsplatz) verliert AP1.07.03.1, 2024F-A1-d (Zustandekommen des Kaufvertrags) verliert AP1.07.01.5, je mit `hinweis` in der Zuordnung. AP1.07.03.1 sinkt von 4 auf 3, AP1.07.01.5 von 4 auf die Katalogstufe 2. Folgen: AP1-1-4-1-K1 jetzt „festlegen“ (Stufe 3), AP1-1-4-1-K5 entfällt (Telearbeitsplatz steht in AP1-4-1-1-K7). Weitere Fälle findet der KI-Prüfer (K2) und werden genauso behandelt. | erledigt |
 | P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
-| P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |
+| P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). **Entschieden (Projektinhaber, 14.10.2026): angenommen**; wird vom Prüfskript (ALT) erzwungen. | erledigt |
 | P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). **Durchgeführt 13.10.2026:** unabhängige Prüfung K1–K3, Berichte `umbau/berichte/AP1-<n>-pruefer.md`, 76 Funde (K1 6, K2 64, K3 6). Alle Vorschläge eingebaut (Freigabe Projektinhaber), Die beiden P13-Fälle sind danach mit P13 gelöst; AP1-2-4-1-K6 bleibt Stufe 3 nach Z3a. Nachprüfung der geänderten Stichpunkte durch eine frische Sitzung durchgeführt (14.10.2026): 12 neue Funde (K1 1, K2 11), Berichte `umbau/berichte/AP1-<n>-nachpruefung.md`; von 76 alten Funden 75 behoben, 1 bewusst nicht (AP1-2-4-1-K6, P25). Neue Funde am 14.10.2026 nach Regelwerk v1.4 eingebaut (Nachtrag in den Berichten): alle 12 umgesetzt; bei 2 Operator-Funden (AP1-1-2-1-K2, AP1-6-2-3-K4) wäre nach F1 neu kein Fund geblieben, sie wurden nur an die Teilaufgabe angepasst. | erledigt |
-| P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). Bis zur Entscheidung als Kür geführt (Grund nennt P17): AP1-6 Hub, FTP/SFTP/NTP/LDAP, ICMP; AP1-1 Retrospektive. | offen |
-| P18 | **Vorschlag, noch nicht beschlossen:** Regel P-MUSTER – Können-Aussagen für nie geprüfte Katalogthemen nach den Aufgabentypen formulieren, die die IHK beim selben Verb sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründete Empfehlung). | offen |
+| P17 | Regel P-BEISPIELLISTE für die 43 „z. B.“-Listen im AP1-Katalog. **Entschieden (Projektinhaber, 14.10.2026): angenommen, Regelwerk v1.5 (4.3).** Umgesetzt: Puffer wurden Retrospektive (AP1-1-1-4-K6), weitere Dateibefehle (AP1-5-2-3-K7) und FTP/SFTP/NTP/LDAP (AP1-6-1-2-K6); Kür bleiben u. a. Hub, ICMP (beide Lernzettel = eine Quelle), Fat/Zero Client, Monitor-Kenngrößen, weitere Lizenzen, Kommunikationsarten. | erledigt |
+| P18 | Regel P-MUSTER für Aussagen zu nie geprüften Katalogthemen. **Entschieden (Projektinhaber, 14.10.2026): angenommen als F6, Regelwerk v1.5.** Gilt für neu formulierte Aussagen; die bestehenden folgen ihr bereits weitgehend. | erledigt |
 | P19 | **Entschieden (Projektinhaber):** kein Zeitbudget. Maßstab ist fachliche Richtigkeit und Vollständigkeit nach den Regeln (Kern + Puffer Pflicht, Kür freiwillig), nicht die verfügbare Zeit. P7 entfällt. | erledigt |
 | P20 | **Erledigt (13.10.2026):** R3 für den Rest von AP1-6 (Schritt 3c) und Ordner AP1-1 (Schritt 4). Weiter wie bisher: je Sitzung ein AP1-Ordner nach dem Muster von AP1-6/AP1-1; vorher nur diese Datei und den Bericht des letzten Ordners lesen. | erledigt |
 | P21 | **Entschieden (Projektinhaber, 13.10.2026), nach Recherche:** Themen, die nur ein späterer Raum (AP2, WiSo) nennt, bleiben in AP1 **Außen** und werden dort gelernt. Geprüft wurden alle 29 betroffenen Themen gegen die 11 AP1-Prüfungen, den Katalog, die Podcast-Themenliste aller AP1-Termine und Podcast #190 (Katalog-Änderungen ab 2025): keines kam in AP1 vor, alle stehen im AP2- oder WiSo-Katalog; Vorgehensmodelle außer Wasserfall/Scrum sowie TCP/UDP/SMB/NFS sind laut #190 ausdrücklich aus AP1 gestrichen. Einzige Ausnahme: Scrum-Rollen sind Kür in AP1-1-1-2, weil Scrum in AP1 Pflicht ist. Ein erster Versuch (alle 29 als Kür, Commit 927621d) ist damit zurückgenommen. | erledigt |

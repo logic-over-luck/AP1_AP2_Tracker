@@ -150,6 +150,14 @@
               "herkunft": [
                 "katalog:AP1.03.02.5"
               ]
+            },
+            {
+              "id": "AP1-6-1-2-K6",
+              "stufe": 2,
+              "text": "Du kannst weitere gängige Protokolle ihrem Zweck zuordnen: FTP und SFTP für Dateiübertragung, NTP für die Uhrzeit, LDAP für Verzeichnisdienste.",
+              "herkunft": [
+                "regel:P-BEISPIELLISTE"
+              ]
             }
           ],
           "grenzen": [
@@ -166,20 +174,12 @@
           ],
           "kuer": [
             {
-              "text": "Weitere Protokolle mit ihrem Zweck: FTP und SFTP für Dateiübertragung, NTP für die Uhrzeit, LDAP für Verzeichnisdienste.",
-              "quellen": [
-                "podcast:themen-ap1",
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "AP1.03.02.5 nennt Netzwerkprotokolle als offene z. B.-Liste (Ethernet, IP, DNS). Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
-            },
-            {
               "text": "ICMP als Protokoll hinter ping: Echo Request und Echo Reply auf Schicht 3.",
               "quellen": [
                 "lernzettel:fi-de-2024",
                 "lernzettel:fi-de-2025"
               ],
-              "grund": "ping selbst ist Kern (AP1.04.05.6); das Protokoll dahinter nennt weder Katalog noch Prüfung. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+              "grund": "ping selbst ist Kern (AP1.04.05.6); das Protokoll dahinter nennt weder Katalog noch Prüfung. Nach P-BEISPIELLISTE (P17) Kür: Die beiden Lernzettel von fachinformatiker.de zählen zusammen als eine Hinweisquelle."
             }
           ]
         },
@@ -287,7 +287,7 @@
               "quellen": [
                 "podcast:themen-ap1"
               ],
-              "grund": "AP1.03.01.2 nennt Netzwerkkomponenten als offene z. B.-Liste ohne Hub. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+              "grund": "AP1.03.01.2 nennt Netzwerkkomponenten als offene z. B.-Liste ohne Hub. Nach P-BEISPIELLISTE (P17) Kür: nur eine Hinweisquelle."
             },
             {
               "text": "Quality of Service (QoS): Router oder Switch geben zeitkritischem Datenverkehr wie Telefonie Vorrang.",
@@ -1638,7 +1638,7 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.4",
+    "regelwerk_version": "1.5",
     "stand": "2026-10-13",
     "hinweis": "Probelauf (UMBAU.md Schritt 3). IDs alter Stichpunkte und Können-Aussagen bleiben erhalten (Lernstand, Karten); neue IDs nur für neue Einträge.",
     "kerntest": {
@@ -1744,11 +1744,11 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Kür",
+          "ring": "Puffer",
           "wo": [
-            "AP1-6-1-2"
+            "AP1-6-1-2-K6"
           ],
-          "notiz": "P17"
+          "notiz": "P-BEISPIELLISTE: zwei unabhängige Hinweisquellen"
         },
         {
           "thema": "SMB, NFS (Dateifreigaben)",
@@ -1771,7 +1771,7 @@
           "wo": [
             "AP1-6-1-2"
           ],
-          "notiz": "P17"
+          "notiz": "P-BEISPIELLISTE: nur eine Hinweisquelle, Kür"
         },
         {
           "thema": "RDP, VNC, Clientless Remote Access (Fernwartung)",
@@ -1820,7 +1820,7 @@
           "wo": [
             "AP1-6-1-3"
           ],
-          "notiz": "P17"
+          "notiz": "P-BEISPIELLISTE: nur eine Hinweisquelle, Kür"
         },
         {
           "thema": "Firewall als Netzwerkkomponente, DMZ",
