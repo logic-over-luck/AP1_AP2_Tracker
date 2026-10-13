@@ -13,8 +13,9 @@ arbeitet, liest zuerst diese Datei** und hält sich an die Entscheidungen und Re
 - Modell: Opus auf hoher Denkstufe. Ein AP1-Ordner pro Sitzung.
 - Zuerst diese Datei komplett lesen, Quellen nach Abschnitt 9 unter `quellen/` ablegen, alle Prüfskripte laufen lassen.
 - Nach jedem Zwischenschritt committen und pushen, damit bei erschöpftem Nutzungslimit nichts verloren geht.
-- Am Ende dem Projektinhaber die Ausgabe von `node tools/umbau/lernplan-pruefen.mjs <Ordner>` zeigen.
-  Er achtet nur auf „OK … bestanden“ oder „FEHLER“; bei Fehlern werden sie behoben.
+- **Nutzungsarm arbeiten:** Fehler der Prüfskripte selbst beheben, nicht nachfragen. Dem Projektinhaber am Ende
+  nur **eine Zeile** melden: „AP1-x fertig, alle Prüfungen bestanden“ – oder was offen bleibt. Keine langen
+  Zusammenfassungen; Details stehen im Bericht `umbau/berichte/<Ordner>.md`.
 - Hinweis-Abgleich (R3) und Geschwister-Prüfung (R4) macht die Sitzung selbst; der Projektinhaber liefert kein Material.
 
 Status-Kennzeichen in dieser Datei: **[fest]** = entschieden · **[Vorschlag]** = Entwurf, vom Projektinhaber
