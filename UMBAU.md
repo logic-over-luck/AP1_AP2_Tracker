@@ -278,10 +278,10 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | T0 | Fundament: jeder Katalog-Listenpunkt, Katalogpunkt, Fragenkomplex und jedes Gebiet ist ein Baustein; kein Baustein erfunden; Wortlaut unverändert; IDs eindeutig; Verweise gültig; Nummerierung lückenlos | ✓ `tools/umbau/fundament-pruefen.mjs` |
 | T0b | Der Prüfer selbst erkennt eingebaute Fehler (fehlender, erfundener, veränderter Baustein, doppelte ID, kaputter Verweis, fehlendes Gebiet) | ✓ `tests/umbau-fundament.test.mjs` |
 | T0c | Regelwerk lückenlos: jeder Operator hat eine Stufe, jeder abdeckungspflichtige Baustein hat eine Stufe, Tabelle in 4.1 = `regelwerk.json` | ✓ `tools/umbau/tiefe-berechnen.mjs` |
-| T1 | Jeder abdeckungspflichtige Baustein des Raums steckt in mindestens einem Stichpunkt | geplant |
+| T1 | Jeder abdeckungspflichtige Baustein des Raums steckt in mindestens einem Stichpunkt | ✓ Raum-Ebene `tools/umbau/raum-pruefen.mjs` (AP1 grün) |
 | T2 | Jede Teilaufgabe der Prüfungen dieses Raums ist zugeordnet: Bausteine oder „ausserhalb“ mit Katalog-Begründung (B3, RAUM, G5); gültige Baustein-IDs; fester Aufgabentyp; jeder Prüfungsoperator hat eine Stufe. Prüft zugleich die **goldene Regel**: belegte Tiefe nie unter Katalogtiefe, kein Katalog-Baustein verliert seine Abdeckungspflicht | ✓ `tools/umbau/zuordnung-pruefen.mjs` (+ Tests) |
-| T2b | Jede Teilaufgabe, die einen Baustein des Ordners betrifft, steckt in einem Stichpunkt (Teilaufgaben nur mit geteilten Bausteinen: auf Raum-Ebene) | ✓ je Ordner `tools/umbau/lernplan-pruefen.mjs` |
-| T8 | Tiefe erreicht: je Baustein erreicht mindestens eine Können-Aussage die belegte Tiefe | ✓ je Ordner (geteilte Bausteine: Hinweis, Rest auf Raum-Ebene) |
+| T2b | Jede Teilaufgabe, die einen Baustein des Ordners betrifft, steckt in einem Stichpunkt (Teilaufgaben nur mit geteilten Bausteinen: auf Raum-Ebene) | ✓ je Ordner `tools/umbau/lernplan-pruefen.mjs`, Raum-Ebene `tools/umbau/raum-pruefen.mjs` |
+| T8 | Tiefe erreicht: je Baustein erreicht mindestens eine Können-Aussage die belegte Tiefe | ✓ je Ordner (geteilte Bausteine: Hinweis), Raum-Ebene `tools/umbau/raum-pruefen.mjs` |
 | ALT | Jede alte Können-Aussage ist einsortiert (übernommen, angepasst, verschoben, gestrichen); übernommene und angepasste behalten ihre ID; freigewordene IDs werden nie neu vergeben | ✓ je Ordner |
 | T3 | Jede Können-Aussage hat eine gültige Herkunft (F2) | ✓ je Ordner |
 | T4 | Jede Grenze nennt eine Katalogstelle (G1) | ✓ je Ordner (lehnt Begründungen wie „kam nicht vor“ ab) |
@@ -387,14 +387,36 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       berichtet R3 und R4. Stand: 13 Stichpunkte, 80 Können-Aussagen, 17 Kür-Einträge.
 - [ ] **Schritt 3b – Abnahme durch den Projektinhaber:** Bericht lesen, Stichproben, entscheiden.
       Danach Schicht 5 für den Ordner (Karten prüfen/umhängen/neu, Lernprompts) und unabhängiger KI-Prüfer (K1–K3).
-- [ ] **Schritt 4 – Rest von AP1**, Ordner für Ordner nach dem Muster des Probelaufs
+- [x] **Schritt 4 – Rest von AP1**, Ordner für Ordner nach dem Muster des Probelaufs (alle 8 Ordner gebaut, Abnahme offen wie 3b)
   - [x] **AP1-1 Projektmanagement und Qualität (13.10.2026):** `umbau/lernplan/ap1/AP1-1.json`, Bericht
         `umbau/berichte/AP1-1.md`. 5 Themenblöcke, 16 Stichpunkte, 93 Können-Aussagen, 10 Kür-Einträge. Alt → neu:
         73 alte Aussagen, davon 39 übernommen, 32 angepasst, 2 gestrichen (AP1-1-1-2-K5: Vorgehensmodelle vergleichen
         steht im AP2-Katalog, AP2b.04.02; AP1-1-5-1-K4: ISO 9001 nach G4, siehe P22); 22 neu. Karten: 74 bleiben,
         83 prüfen, 3 entfallen. 32 Teilaufgaben zugeordnet, Kerntest als Selbstprüfung. R3: 52 Themen
         (Kern 27, Kür 10, Außen 6, anderer Ordner oder Raum 9); R4: 12 Paare. Alle Ordner-Prüfungen grün.
-  - [ ] AP1-2, AP1-3, AP1-4, AP1-5, AP1-7, AP1-8
+  - [x] **AP1-2 Kunde, Markt und Unternehmen (13.10.2026):** 5 Themenblöcke, 16 Stichpunkte, 76 Können-Aussagen,
+        9 Kür-Einträge. Alt → neu: 24 übernommen, 20 angepasst, 6 verschoben, 0 gestrichen; 26 neu. 34 Teilaufgaben.
+        R3: 37 Themen (Kern 18, Kür 10, Außen 4, anderer Ordner oder Raum 5); R4: 13 Paare.
+  - [x] **AP1-3 Wirtschaftlichkeit und Verträge (13.10.2026):** 4 Themenblöcke, 16 Stichpunkte, 87 Können-Aussagen,
+        9 Kür-Einträge. Alt → neu: 42 übernommen, 17 angepasst, 4 verschoben, 0 gestrichen; 24 neu. 51 Teilaufgaben.
+        R3: 32 Themen (Kern 20, Kür 9, Außen 1, anderer Ordner 2); R4: 10 Paare.
+  - [x] **AP1-4 Hardware und Arbeitsplatz (13.10.2026):** 3 Themenblöcke, 13 Stichpunkte, 78 Können-Aussagen,
+        7 Kür-Einträge. Alt → neu: 32 übernommen, 12 angepasst, 2 verschoben, 0 gestrichen; 32 neu. 53 Teilaufgaben.
+        R3: 29 Themen (Kern 14, Kür 8, Außen 4, anderer Ordner 3); R4: 8 Paare.
+  - [x] **AP1-5 Software und Betriebssysteme (13.10.2026):** 2 Themenblöcke, 9 Stichpunkte, 54 Können-Aussagen,
+        6 Kür-Einträge. Alt → neu: 34 übernommen, 7 angepasst, 0 verschoben, 0 gestrichen; 13 neu. 19 Teilaufgaben.
+        R3: 28 Themen (Kern 17, Kür 7, Außen 1, anderer Ordner 3); R4: 10 Paare.
+  - [x] **AP1-7 IT-Sicherheit und Datenschutz (13.10.2026):** 5 Themenblöcke, 18 Stichpunkte, 98 Können-Aussagen,
+        6 Kür-Einträge. Alt → neu: 53 übernommen, 15 angepasst, 4 verschoben, 2 gestrichen (AP1-7-1-1-K4 Authentizität
+        und AP1-7-3-1-K5 Verfahrensnamen AES/RSA/TLS: weder Katalog noch Prüfung, jetzt Kür); 26 neu. 56 Teilaufgaben.
+        R3: 31 Themen (Kern 21, Kür 5, Außen 4, anderer Raum 1); R4: 12 Paare.
+  - [x] **AP1-8 Programmieren und Modellieren (13.10.2026):** 4 Themenblöcke, 15 Stichpunkte, 83 Können-Aussagen,
+        6 Kür-Einträge. Alt → neu: 55 übernommen, 13 angepasst, 0 verschoben, 0 gestrichen; 15 neu (neuer Stichpunkt
+        AP1-8-4-5 Primär- und Fremdschlüssel). 32 Teilaufgaben. R3: 33 Themen (Kern 20, Kür 6, Außen 5, anderer
+        Ordner 2); R4: 11 Paare. EPK/BPMN unverändert übernommen, Einordnung offen (P24).
+  - [x] **Raum-Prüfung AP1 (13.10.2026):** `tools/umbau/raum-pruefen.mjs AP1`, Bericht `umbau/berichte/AP1-raum.md`:
+        T1 (183 Pflichtbausteine inkl. 4 Zusatzbausteine), T2b (288 Teilaufgaben) und T8 (183 Bausteine) über alle
+        Ordner grün. Alle Ordner-Prüfungen grün; Kerntest je Ordner nur als Selbstprüfung (P16).
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
@@ -431,6 +453,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P21 | **Zu bestätigen:** Außen bei Oberbegriffen des AP2-Katalogs. Angewandt: Ein Thema ist Außen, wenn eine Katalogstelle eines späteren Raums es selbst oder seinen Oberbegriff nennt, z. B. DHCP-Ablauf (DORA) und DNS-Eintragsarten über „Netzwerkrelevante Dienste beschreiben: DNS, DHCP“ (AP2b.01.07), Eigenschaften von TCP/UDP (AP2b.01.05), WEP/WPA-Vergleich über „Sicherheit in Drahtlosnetzen“ (AP2b.01.03.8), Scrum-Rollen über „Vorgehensmodelle unterscheiden … Scrum“ (AP2b.04.02). Folge: AAAA-Record in AP1-6 von Kür nach Außen verschoben. Nennt der AP2-Katalog nur ein Nachbarthema, bleibt es Kür (z. B. SLAAC-Ablauf, DS-Lite). | offen |
 | P22 | **Zu entscheiden:** G4 nimmt Normnummern aus. Angewandt: ISO 9001 ist Außen, die alte Aussage AP1-1-5-1-K4 („Du kennst die ISO 9001 …“) ist gestrichen. Soll der Name der bekanntesten QM-Norm als Ausnahme Kern bleiben? | offen |
 | P23 | **Zu bestätigen:** Im Hinweis-Abgleich (R3) gibt es neben den vier Ringen die Kennzeichnung „Ordner“ für Themen, die in einem anderen AP1-Ordner oder einem späteren Raum wohnen (z. B. Fernwartungstechnik → AP1-5, Mängelarten → AP1-3, Betriebsrat → WISO). Der Ring wird dort vergeben, wo das Thema wohnt. | offen |
+| P24 | **Zu entscheiden:** Der Katalog-Anhang enthält Notationen, die kein Katalogpunkt des AP1-Teils nennt: EPK und BPM-Notation (`ANH.notationen`, `ANH.bpm-notation-business-process-modeling-notation`) sowie im Klassendiagramm Aggregation, Komposition und Schnittstellen. Zählt der Anhang allein als Kern für AP1, oder nur dort, wo ein AP1-Katalogpunkt auf ihn verweist (wie Netzplan, Rechnung, Präfixe, UML)? Angewandt bis zur Entscheidung: AP1-8-4-4 (EPK/BPMN) unverändert aus dem alten Plan übernommen, Herkunft `katalog:ANH.…`; Aggregation/Komposition als Kür. | offen |
 
 ---
 
@@ -460,6 +483,7 @@ npm run umbau:pruefungen  # prüft die Prüfungsabschriften, erzeugt das Teilauf
 npm run umbau:zuordnung   # T2 + goldene Regel, berechnet die belegte Tiefe (belege-ap1.json)
 node tools/umbau/lernplan-pruefen.mjs AP1-6   # prüft einen Ordner des neuen Lernplans (auch R3, R4), schreibt umbau/berichte/AP1-6.md
 node tools/umbau/lernplan-pruefen.mjs AP1-1
+node tools/umbau/raum-pruefen.mjs AP1         # prüft T1, T2b, T8 über alle Ordner des Raums, schreibt umbau/berichte/AP1-raum.md
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 
