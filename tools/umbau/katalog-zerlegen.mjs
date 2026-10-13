@@ -38,9 +38,16 @@ export const OPERATOREN = [
   'beheben', 'erkennen', 'messen', 'verwenden',
 ];
 
+// Groß-/Kleinschreibung zählt: Verben sind klein geschrieben, gleichlautende Substantive groß
+// („Programm zum Erstellen" enthält keinen Operator). Ausnahme: Ein substantiviertes Verb ganz am
+// Anfang benennt die Tätigkeit selbst („Planen mit geeigneten Modellen", „Festlegen von …").
 function operatorenIn(text) {
-  const t = text.toLowerCase();
-  return OPERATOREN.filter((op) => new RegExp(`(^|[^a-zäöüß])${op}([^a-zäöüß]|$)`).test(t));
+  const grenze = '[^A-Za-zÄÖÜäöüß]';
+  return OPERATOREN.filter((op) => {
+    const gross = op[0].toUpperCase() + op.slice(1);
+    return new RegExp(`(^|${grenze})${op}(${grenze}|$)`).test(text)
+      || new RegExp(`^${gross}(${grenze}|$)`).test(text);
+  });
 }
 
 const norm = (s) => s.replace(/\s+/g, ' ').trim();

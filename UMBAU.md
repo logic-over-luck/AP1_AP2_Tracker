@@ -56,6 +56,8 @@ AP1 ist für alle IT-Berufe gleich (Katalog, PDF-S. 9: „AP1 – berufsübergre
 Wohnort ist der erste Raum in der Bau-Reihenfolge (E3), dessen Prüfung den Inhalt braucht. Spätere
 Räume schreiben ihn nicht neu, sondern **importieren** ihn (`baut_auf: <ID>`) und ergänzen nur, was dort
 **neu oder tiefer** ist. Lernkarten gibt es nur am Wohnort.
+Grundlage: § 10 Abs. 2 FIAusbV – Inhalte aus Teil 1 sollen in Teil 2 „nur insoweit einbezogen werden, als
+es für die Feststellung der beruflichen Handlungsfähigkeit erforderlich ist".
 
 **E3 – Bau-Reihenfolge der Räume** [fest]
 AP1 → PB1 → PB2 → WISO → PROJEKT. Ein Raum wird erst gebaut, wenn der vorige fertig ist (alle Tests
@@ -122,13 +124,20 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – Entwurf v0.1 [Vorschlag]
+## 4. Regelwerk – v1.0 [fest]
+
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). Maßgeblich für die
+Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
+`tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
 ### 4.1 Tiefe aus dem Operator
 
 Fast jeder Katalogpunkt hat einen oder mehrere Operatoren im Titel (`operatoren` im Fundament). Mehrere
 Operatoren → es gilt die **höchste** Stufe. Ein Spiegelstrich mit eigenem Operator („… definieren
-können") hat dessen Stufe, sonst die seines Katalogpunkts.
+können") hat dessen Stufe – auch wenn sie niedriger ist; so begrenzt der Katalog z. B. das ISMS auf
+„kennen und unterstützen" (AP1.06.03.4, Stufe 2). Sonst gilt die Stufe des Katalogpunkts.
+Groß-/Kleinschreibung zählt: „beim Testen" ist kein Operator, „testen" schon; ein substantiviertes Verb
+am Anfang („Planen mit geeigneten Modellen") zählt.
 
 | Stufe | Bedeutung | Operatoren |
 |---|---|---|
@@ -137,7 +146,13 @@ können") hat dessen Stufe, sonst die seines Katalogpunkts.
 | 3 Anwenden | selbst durchführen, an einem Fall | anwenden, abbilden, ableiten, abstimmen, aufbereiten, automatisieren, beheben, beraten, bestimmen, darstellen, dokumentieren, durchführen, einrichten, einsetzen, entwickeln, erfassen, erstellen, erweitern, festlegen, formulieren, gestalten, implementieren, konfigurieren, konzeptionieren, messen, modellieren, nutzen, planen, präsentieren, testen, umsetzen, verhindern, verwenden, vorbereiten, vornehmen, zusammenführen, überwachen |
 | 4 Beurteilen | entscheiden und begründen | beurteilen, bewerten, begründen, auswählen, analysieren, auswerten, einschätzen, prüfen, überprüfen |
 
-**Katalogpunkte ohne Operator** (41, fast alle WiSo, z. B. „Tarifrecht"): Tiefe offen → Parkplatz P4.
+**Katalogpunkte ohne Operator** (41): festgelegt in `regelwerk.json` → `ohne_operator`, je mit Begründung.
+WiSo (37 Punkte) Stufe 2, weil die Prüfung aus ca. 30 maschinell auswertbaren Aufgaben besteht;
+AP1.06.03 Stufe 3 („Modellierung"); AP2b.02.01 Stufe 2; AP2b.03.08 Stufe 3 (Gebiet PB2 „Testszenarien …");
+AP2a.01.01 keine (nicht Bestandteil der schriftlichen Prüfung).
+
+Ergebnis für die 679 abdeckungspflichtigen Bausteine (`umbau/fundament/tiefe.json`): Stufe 1: 36,
+Stufe 2: 298, Stufe 3: 189, Stufe 4: 156.
 
 Beispiel IPv6: AP1.04.01 nennt „IP(v4/v6)-Konfiguration" unter „konzeptionieren, konfigurieren,
 testen und dokumentieren" → Stufe 3 für IPv4 **und** IPv6.
@@ -205,6 +220,7 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 |---|---|---|
 | T0 | Fundament: jeder Katalog-Listenpunkt, Katalogpunkt, Fragenkomplex und jedes Gebiet ist ein Baustein; kein Baustein erfunden; Wortlaut unverändert; IDs eindeutig; Verweise gültig; Nummerierung lückenlos | ✓ `tools/umbau/fundament-pruefen.mjs` |
 | T0b | Der Prüfer selbst erkennt eingebaute Fehler (fehlender, erfundener, veränderter Baustein, doppelte ID, kaputter Verweis, fehlendes Gebiet) | ✓ `tests/umbau-fundament.test.mjs` |
+| T0c | Regelwerk lückenlos: jeder Operator hat eine Stufe, jeder abdeckungspflichtige Baustein hat eine Stufe, Tabelle in 4.1 = `regelwerk.json` | ✓ `tools/umbau/tiefe-berechnen.mjs` |
 | T1 | Jeder abdeckungspflichtige Baustein des Raums steckt in mindestens einem Stichpunkt | geplant |
 | T2 | Jede Teilaufgabe der Prüfungen dieses Raums ist mindestens einem Stichpunkt zugeordnet | geplant |
 | T3 | Jede Können-Aussage hat eine gültige Herkunft (F2) | geplant |
@@ -246,9 +262,8 @@ eigene Datei je Prüfung (Schicht 3). So bleiben die Abschriften reine Quellen.
 ## 7. Bau-Reihenfolge
 
 - [x] **Schritt 0 – Fundament Katalog:** Zerleger, Prüfer, Prüfer-Test (Abschnitt 9)
-- [ ] **Schritt 1 – Regelwerk bestätigen:** Der Projektinhaber liest Abschnitt 2 und 4, korrigiert, entscheidet
-      Parkplatz P1–P4. Danach Regelwerk v1.0 zusätzlich als Datendatei mit eigenem Check
-      (z. B. jeder Operator hat eine Stufe).
+- [x] **Schritt 1 – Regelwerk v1.0:** freigegeben, als Datendatei `umbau/regeln/regelwerk.json`, Tiefe je
+      Baustein berechnet (`umbau/fundament/tiefe.json`), P1, P2, P4 erledigt
 - [ ] **Schritt 2 – Zuordnungsformat für Prüfungen:** Datei je Prüfung, je Teilaufgabe: Baustein-IDs,
       Aufgabentyp, Operator, vorgegebenes Material. Plus Check T2.
 - [ ] **Schritt 3 – Probelauf AP1 / Netzwerk:** ein Ordner komplett von Schicht 1 bis 5, altes Material
@@ -269,9 +284,9 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | Nr | Frage | Stand |
 |---|---|---|
 | P1 | Repo ist öffentlich, Quellen urheberrechtlich geschützt. **Entschieden:** Quellen bleiben lokal und werden der Sitzung bei Bedarf angehängt (E10). | erledigt |
-| P2 | [unbestätigt] Ausbildungsordnung: Inhalte aus Teil 1 sollen in Teil 2 nur einbezogen werden, soweit für die Berufsbefähigung nötig. Wortlaut in der Verordnung vom 5. März 2020 nachprüfen; stützt E2. | offen |
+| P2 | Nachgeprüft: § 10 Abs. 2 FIAusbV, Wortlaut „nur insoweit einbezogen werden, als es für die Feststellung der beruflichen Handlungsfähigkeit erforderlich ist". Bei E2 eingetragen. | erledigt |
 | P3 | Zuordnung der AP2-Katalogpunkte zu PB1/PB2 (W2): Liste erstellen und vom Projektinhaber bestätigen lassen. | offen |
-| P4 | 41 Katalogpunkte ohne Operator: 37 in WiSo, dazu AP1.06.03, AP2a.01.01, AP2b.02.01, AP2b.03.08. Vorschlag WiSo: Tiefe aus dem Prüfungsformat (ca. 30 maschinell auswertbare Aufgaben) → Stufe 2 als Regel, Rechenaufgaben aus Belegen. Die vier anderen einzeln entscheiden. | offen |
+| P4 | 41 Katalogpunkte ohne Operator: im Regelwerk v1.0 festgelegt (Abschnitt 4.1, `ohne_operator`). | erledigt |
 | P5 | Rahmenlehrplan (KMK, 13.12.2019) als zusätzliche offizielle Quelle für Tiefe einbinden? Wenn ja: als weitere Quelle in Schicht 0, eigene Bausteine. | offen |
 | P6 | Lernstand-Umzug: Tabelle alte ID → neue ID für Stichpunkte und Karten; bisherige Sicherungen müssen lesbar bleiben. | offen |
 | P7 | Zeitbudget je Raum aus der Gewichtung; Lernzeit je Stichpunkt schätzen; Puffer zuerst kürzen, wenn das Budget überschritten wird. | offen |
@@ -294,6 +309,7 @@ Dann:
 ```
 npm run umbau:katalog     # zerlegt quellen/katalog.md → umbau/fundament/katalog-bausteine.json
 npm run umbau:pruefen     # prüft die Bausteine unabhängig gegen den Katalog
+npm run umbau:tiefe       # berechnet die Mindesttiefe je Baustein und prüft das Regelwerk
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 

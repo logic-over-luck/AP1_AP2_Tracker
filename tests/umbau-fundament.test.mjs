@@ -41,3 +41,17 @@ for (const [name, veraendern] of Object.entries(fehlerfaelle)) {
     assert.equal(r.status, 1, `Fehler „${name}" wurde nicht erkannt:\n${r.stdout}`);
   });
 }
+
+// ---------- Regelwerk (Schicht 2) ----------
+import { OPERATOREN } from '../tools/umbau/katalog-zerlegen.mjs';
+
+test('Regelwerk: jeder Operator hat genau eine Stufe 1–4', () => {
+  const r = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
+  for (const op of OPERATOREN) assert.ok([1, 2, 3, 4].includes(r.operatoren[op]), `Operator ohne gültige Stufe: ${op}`);
+  for (const op of Object.keys(r.operatoren)) assert.ok(OPERATOREN.includes(op), `unbekannter Operator im Regelwerk: ${op}`);
+});
+
+test('Tiefe-Berechnung läuft fehlerfrei', { skip: !vorhanden && 'Katalogquelle fehlt' }, () => {
+  const r = spawnSync(process.execPath, ['tools/umbau/tiefe-berechnen.mjs'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});

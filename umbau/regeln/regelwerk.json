@@ -1,0 +1,112 @@
+{
+  "version": "1.0",
+  "stand": "2026-10-13",
+  "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen.",
+  "stufen": {
+    "1": {
+      "name": "Wiedergeben",
+      "bedeutung": "nennen, erkennen, ohne Erklärung"
+    },
+    "2": {
+      "name": "Verstehen",
+      "bedeutung": "erklären, unterscheiden, zuordnen, mitwirken"
+    },
+    "3": {
+      "name": "Anwenden",
+      "bedeutung": "selbst durchführen, an einem Fall"
+    },
+    "4": {
+      "name": "Beurteilen",
+      "bedeutung": "entscheiden und begründen"
+    }
+  },
+  "operatoren": {
+    "abbilden": 3,
+    "ableiten": 3,
+    "abstimmen": 3,
+    "analysieren": 4,
+    "anwenden": 3,
+    "aufbereiten": 3,
+    "auswerten": 4,
+    "auswählen": 4,
+    "automatisieren": 3,
+    "begleiten": 2,
+    "begründen": 4,
+    "beheben": 3,
+    "benennen": 1,
+    "beraten": 3,
+    "beschreiben": 2,
+    "bestimmen": 3,
+    "beurteilen": 4,
+    "bewerten": 4,
+    "charakterisieren": 2,
+    "darstellen": 3,
+    "definieren": 2,
+    "dokumentieren": 3,
+    "durchführen": 3,
+    "einordnen": 2,
+    "einrichten": 3,
+    "einschätzen": 4,
+    "einsetzen": 3,
+    "entnehmen": 1,
+    "entwickeln": 3,
+    "erfassen": 3,
+    "erkennen": 1,
+    "erläutern": 2,
+    "erstellen": 3,
+    "erweitern": 3,
+    "festlegen": 3,
+    "formulieren": 3,
+    "gestalten": 3,
+    "identifizieren": 2,
+    "implementieren": 3,
+    "interpretieren": 2,
+    "kennen": 1,
+    "konfigurieren": 3,
+    "konzeptionieren": 3,
+    "messen": 3,
+    "modellieren": 3,
+    "nachweisen": 2,
+    "nennen": 1,
+    "nutzen": 3,
+    "planen": 3,
+    "präsentieren": 3,
+    "prüfen": 4,
+    "testen": 3,
+    "umsetzen": 3,
+    "unterscheiden": 2,
+    "unterstützen": 2,
+    "vergleichen": 2,
+    "verhindern": 3,
+    "verwenden": 3,
+    "vorbereiten": 3,
+    "vornehmen": 3,
+    "wahrnehmen": 1,
+    "zuordnen": 2,
+    "zusammenführen": 3,
+    "überprüfen": 4,
+    "überwachen": 3
+  },
+  "ohne_operator": {
+    "WISO": {
+      "stufe": 2,
+      "begruendung": "WiSo-Katalog nennt nur Themen ohne Operator; Prüfung mit ca. 30 maschinell auswertbaren Aufgaben → erkennen, erklären, zuordnen. Rechenaufgaben kommen über Belege (B1) dazu."
+    },
+    "AP1.06.03": {
+      "stufe": 3,
+      "begruendung": "„Modellierung eines … Sicherheitskonzeptes“ = modellieren (Stufe 3); Spiegelstriche verlangen zusätzlich ableiten und begründen."
+    },
+    "AP2a.01.01": {
+      "stufe": null,
+      "begruendung": "Laut Katalog „nicht Bestandteil der schriftlichen Prüfung“ (G5)."
+    },
+    "AP2b.02.01": {
+      "stufe": 2,
+      "begruendung": "Kein Operator; Nachbarpunkte im selben Fragenkomplex: 02 „benennen“ (1), 03 „implementieren“ (3). Standard Stufe 2 (erklären, zuordnen)."
+    },
+    "AP2b.03.08": {
+      "stufe": 3,
+      "begruendung": "Kein Operator; Gebiet PB2 „Testszenarien auswählen und Testdaten generieren“ und AP2b.05.03 „Softwaretests erstellen, durchführen“ verlangen Anwenden."
+    }
+  }
+}
