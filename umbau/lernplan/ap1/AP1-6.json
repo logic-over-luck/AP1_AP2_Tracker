@@ -153,12 +153,32 @@
           ],
           "grenzen": [
             {
-              "text": "Aufbau der Protokolle (Header, Verbindungsaufbau) gehört nicht dazu; Portnummern musst du nicht auswendig können.",
-              "begruendung": "G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle erläutern“ steht im AP2-Katalog.",
+              "text": "Aufbau der Protokolle (Header, Verbindungsaufbau wie der Drei-Wege-Handshake), die Eigenschaften von TCP und UDP und Dateifreigabe-Protokolle wie SMB oder NFS gehören nicht dazu; Portnummern musst du nicht auswendig können.",
+              "begruendung": "G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle und ihre Eigenschaften erläutern, z. B. TCP/UDP“ (AP2b.01.05) und „Dateifreigaben, z. B. SMB/CIFS“ (AP2b.01.04.1) stehen im AP2-Katalog.",
               "katalog": [
                 "AP1.03.02",
-                "AP2b.01.05"
+                "AP2b.01.05",
+                "AP2b.01.05.1",
+                "AP2b.01.04.1"
               ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Weitere Protokolle mit ihrem Zweck: FTP und SFTP für Dateiübertragung, NTP für die Uhrzeit, LDAP für Verzeichnisdienste.",
+              "quellen": [
+                "podcast:themen-ap1",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "AP1.03.02.5 nennt Netzwerkprotokolle als offene z. B.-Liste (Ethernet, IP, DNS). Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+            },
+            {
+              "text": "ICMP als Protokoll hinter ping: Echo Request und Echo Reply auf Schicht 3.",
+              "quellen": [
+                "lernzettel:fi-de-2024",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "ping selbst ist Kern (AP1.04.05.6); das Protokoll dahinter nennt weder Katalog noch Prüfung. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
             }
           ]
         },
@@ -235,18 +255,45 @@
                 "beleg:2025H-A3-g"
               ],
               "vorgegeben": "Dosenbeschriftung und Patchplan"
+            },
+            {
+              "id": "AP1-6-1-3-K7",
+              "text": "Du kannst erklären, dass ein WLAN-Router im kleinen Büro mehrere Geräte vereint: Router mit Internetzugang, Switch, Access Point und oft eine Firewall.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2",
+                "katalog:ANH.it-netzwerk-diagramm-netzwerkplan"
+              ]
             }
           ],
           "grenzen": [
             {
-              "text": "Konfiguration von Switch und Router (Routing, VLAN) und das Planen einer strukturierten Verkabelung gehören nicht dazu; Bridge und Firewall als Netzwerkgeräte vergleichen ebenfalls nicht.",
-              "begruendung": "G2: AP1 prüft die Sicht des Arbeitsplatzes (Prüfungsbereich „Einrichten eines IT-gestützten Arbeitsplatzes“); Routing, Switching, Bridge, Firewall, VLAN und strukturierte Verkabelung stehen im AP2-Katalog.",
+              "text": "Konfiguration von Switch und Router (Routing, VLAN), das Planen einer strukturierten Verkabelung und Netzwerktopologien gehören nicht dazu; Bridge und Firewall als Netzwerkgeräte vergleichen und Proxy ebenfalls nicht.",
+              "begruendung": "G2: AP1 prüft die Sicht des Arbeitsplatzes (Prüfungsbereich „Einrichten eines IT-gestützten Arbeitsplatzes“); Routing, Switching, Bridge, Firewall, VLAN, strukturierte Verkabelung, Netzwerktopologie und Proxy stehen im AP2-Katalog.",
               "katalog": [
                 "AP2b.01.01",
                 "AP2b.01.02",
                 "AP2b.01.03.5",
-                "AP2b.01.03.6"
+                "AP2b.01.03.6",
+                "AP2b.01.03.11",
+                "AP2b.01.07.3"
               ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Hub als Vorläufer des Switches: Er leitet jedes Signal an alle Anschlüsse weiter.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "AP1.03.01.2 nennt Netzwerkkomponenten als offene z. B.-Liste ohne Hub. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+            },
+            {
+              "text": "Quality of Service (QoS): Router oder Switch geben zeitkritischem Datenverkehr wie Telefonie Vorrang.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
             }
           ]
         },
@@ -341,14 +388,104 @@
           ],
           "grenzen": [
             {
-              "text": "Technik der Mobilfunkstandards (LTE, 5G) und Bluetooth im Detail gehören nicht dazu.",
-              "begruendung": "G1: AP1.03.03.1 nennt LWL, Ethernet- und WLAN-Standards, keine Mobilfunkstandards (LTE und 5G laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen); Bluetooth steht im AP2-Katalog.",
+              "text": "Technik der Mobilfunkstandards (LTE, 5G), Bluetooth im Detail und Netzarten nach Ausdehnung (MAN, WAN, GAN) gehören nicht dazu.",
+              "begruendung": "G1: AP1.03.03.1 nennt LWL, Ethernet- und WLAN-Standards, keine Mobilfunkstandards (LTE und 5G laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen); Bluetooth (AP2b.01.03.9) und die Ausdehnung LAN/WAN/MAN/GAN (AP2b.01.03.1) stehen im AP2-Katalog.",
               "katalog": [
                 "AP1.03.03.1",
-                "AP2b.01.03.9"
+                "AP2b.01.03.9",
+                "AP2b.01.03.1"
               ]
             }
+          ],
+          "kuer": [
+            {
+              "text": "Lichtwellenleiter-Arten: Singlemode für große Entfernungen, Multimode günstiger für kürzere Strecken.",
+              "quellen": [
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Der Katalog nennt LWL (AP1.03.03.1), aber keine Faserarten; kein Beleg, keine Puffer-Regel."
+            },
+            {
+              "text": "DSL-Varianten: ADSL (Download schneller als Upload), SDSL (beide Richtungen gleich schnell), VDSL (höhere Datenraten); das Modem verbindet mit dem Anschluss des Providers.",
+              "quellen": [
+                "podcast:themen-ap1",
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "AP1.04.01.3 nennt nur „Netzwerkanbindungen“; DSL-Arten stehen weder im Katalog noch in einer Prüfung, keine Puffer-Regel."
+            }
           ]
+        },
+        {
+          "id": "AP1-6-1-5",
+          "titel": "WLAN- und Ethernet-Standards, Power over Ethernet",
+          "ziel": "Netzwerkschnittstellen nach ihrem Standard einordnen, für einen Arbeitsplatz beurteilen und Geräte über das Netzwerkkabel mit Strom versorgen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "Netzwerkkarte, Ethernet-Standards, WLAN-Standards"
+            }
+          ],
+          "teilaufgaben": [
+            "2026F-A1-ac"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-6-1-5-K1",
+              "text": "Du kannst WLAN-Standards einordnen: Wi-Fi 4 (IEEE 802.11n), Wi-Fi 5 (802.11ac) und Wi-Fi 6 (802.11ax) als aufeinanderfolgende, schnellere Generationen, Wi-Fi 6E mit dem zusätzlichen Frequenzband 6 GHz.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-6-1-5-K2",
+              "text": "Du kannst Ethernet-Standards nach ihrer Datenrate einordnen: Fast Ethernet 100 Mbit/s, Gigabit-Ethernet 1 Gbit/s, 10-Gigabit-Ethernet 10 Gbit/s.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-6-1-5-K3",
+              "text": "Du kannst anhand der Datenblattangaben zu Netzwerkkarte und WLAN beurteilen, ob ein Gerät die geforderte Anbindung erfüllt, zum Beispiel Gigabit-LAN für große Datenmengen.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-6-1-5-K4",
+              "text": "Du kannst erklären, was Power over Ethernet (PoE) ist: Ein Switch versorgt Geräte wie Kameras, Access Points oder Telefone über das Netzwerkkabel mit Strom.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A1-ac"
+              ]
+            },
+            {
+              "id": "AP1-6-1-5-K5",
+              "text": "Du kannst mithilfe einer Tabelle den PoE-Standard auswählen, der die Leistungsaufnahme eines Geräts abdeckt, zum Beispiel IEEE 802.3at für 12,95 bis 25,5 W.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2026F-A1-ac"
+              ],
+              "vorgegeben": "Tabelle der PoE-Standards"
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "MIMO (mehrere Antennen gleichzeitig) und breitere Funkkanäle als Gründe für höhere WLAN-Datenraten.",
+              "quellen": [
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ],
+          "hinweis": "Die Berechnung der Stromstärke aus P = U · I in derselben Teilaufgabe (2026F-A1-ac) wohnt im Ordner Hardware und Arbeitsplatz (AP1.03.03.4.2)."
         }
       ]
     },
@@ -372,6 +509,9 @@
             {
               "id": "AP1.04.05.5",
               "anteil": "IP-Adressen, Dokumentation"
+            },
+            {
+              "id": "ANH.it-netzwerk-diagramm-netzwerkplan"
             }
           ],
           "teilaufgaben": [
@@ -430,9 +570,33 @@
               "herkunft": [
                 "katalog:AP1.04.05.5"
               ]
+            },
+            {
+              "id": "AP1-6-2-1-K7",
+              "text": "Du kannst erklären, dass ein Router per NAT bzw. PAT die privaten Adressen des lokalen Netzes für den Internetzugang auf seine öffentliche Adresse umsetzt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.it-netzwerk-diagramm-netzwerkplan"
+              ]
             }
           ],
-          "grenzen": []
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Historische Adressklassen A, B und C; heute gilt die Präfixlänge (CIDR).",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Portweiterleitung (Destination NAT), um einen Dienst im lokalen Netz aus dem Internet erreichbar zu machen.",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Der Katalog-Anhang nennt NAT/PAT als mögliche Router-Funktion (Kern, AP1-6-2-1-K7), nicht die Portweiterleitung; kein Beleg, keine Puffer-Regel."
+            }
+          ]
         },
         {
           "id": "AP1-6-2-2",
@@ -750,7 +914,7 @@
               "grund": "Nur in Lernhilfen erwähnt; weder Katalogwortlaut noch Prüfungsbeleg, und kein Gegenstück zu einem IPv4-Inhalt im Tracker (sonst Puffer)."
             },
             {
-              "text": "DNS unter IPv6: AAAA-Record statt A-Record; DS-Lite als Übergangstechnik beim Provider.",
+              "text": "DS-Lite als Übergangstechnik beim Provider: private IPv4-Adresse, im IPv6-Netz getunnelt.",
               "quellen": [
                 "podcast:ipv6-ap1",
                 "lernzettel:fi-de-2024"
@@ -852,7 +1016,17 @@
               ]
             }
           ],
-          "grenzen": []
+          "grenzen": [
+            {
+              "text": "Der Ablauf der DHCP-Vergabe (Discover, Offer, Request, Acknowledge), Lease-Zeiten und die Eintragsarten im DNS (z. B. A, AAAA, MX) gehören nicht dazu.",
+              "begruendung": "G2/E2: AP1.04.05.5 verlangt Konfiguration, Test und Troubleshooting von Netzwerkverbindungen am Arbeitsplatz; „Netzwerkrelevante Dienste beschreiben: DNS, DHCP“ steht im AP2-Katalog (AP2b.01.07) und wohnt dort.",
+              "katalog": [
+                "AP1.04.05.5",
+                "AP2b.01.07.1",
+                "AP2b.01.07.2"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -914,13 +1088,22 @@
           ],
           "grenzen": [
             {
-              "text": "Einrichten eines RADIUS-Servers und Sicherheit in Drahtlosnetzen über die Wahl des Verfahrens hinaus gehören nicht dazu.",
+              "text": "Einrichten eines RADIUS-Servers und Sicherheit in Drahtlosnetzen über die Wahl des Verfahrens hinaus (z. B. Vergleich von WEP, WPA, WPA2 und WPA3, WPS) gehören nicht dazu.",
               "begruendung": "G2: AP1 richtet den Arbeitsplatz ein (AP1.04.05.5 „WLAN-Zugang“); Zugriffskontrolle im Netzwerk (RADIUS) und Sicherheit in Drahtlosnetzen stehen im AP2-Katalog.",
               "katalog": [
                 "AP1.04.05.5",
                 "AP2b.01.03.3",
                 "AP2b.01.03.8"
               ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Mehrere WLANs an einem Access Point (Multi-SSID), zum Beispiel ein getrenntes Gast-WLAN, und zentrale Verwaltung vieler Access Points über einen WLAN-Controller.",
+              "quellen": [
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
             }
           ]
         },
@@ -975,15 +1158,24 @@
               "herkunft": [
                 "beleg:2023H-A3-da"
               ]
+            },
+            {
+              "id": "AP1-6-3-3-K5",
+              "text": "Du kannst die Angaben nennen, die für eine VPN-Verbindung am Arbeitsplatz eingerichtet werden: Adresse des VPN-Servers, Zugangsdaten oder Zertifikat und ein VPN-Client.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.04.05.5"
+              ]
             }
           ],
           "grenzen": [
             {
-              "text": "VPN-Modelle (z. B. Site-to-Site, End-to-Site) und Protokolle wie IPsec gehören nicht dazu.",
-              "begruendung": "Katalog: AP1 nennt VPN nur bei der Konfiguration von Netzwerkverbindungen (AP1.04.05.5); VPN-Modelle, Tunneling und IPsec stehen im AP2-Katalog.",
+              "text": "VPN-Modelle (z. B. Site-to-Site, End-to-Site), Tunnel- und Transportmodus sowie Protokolle und Verschlüsselungsverfahren wie IPsec gehören nicht dazu.",
+              "begruendung": "Katalog: AP1 nennt VPN nur bei der Konfiguration von Netzwerkverbindungen (AP1.04.05.5); VPN-Modelle, Tunneling, IPsec und Verschlüsselung auf Netzwerkebene stehen im AP2-Katalog.",
               "katalog": [
                 "AP1.04.05.5",
-                "AP2b.01.06"
+                "AP2b.01.06",
+                "AP2b.01.03.4"
               ]
             }
           ]
@@ -1081,7 +1273,7 @@
           ],
           "grenzen": [
             {
-              "text": "Netzwerkanalyse mit Mitschnitt- oder Monitoring-Werkzeugen gehört nicht dazu.",
+              "text": "Netzwerkanalyse mit Mitschnitt- oder Monitoring-Werkzeugen (z. B. Wireshark) gehört nicht dazu.",
               "begruendung": "Katalog: AP1.04.05.6 zählt die Konsolenbefehle auf; Monitoringsysteme stehen im AP2-Katalog.",
               "katalog": [
                 "AP1.04.05.6",
@@ -1438,7 +1630,7 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.1",
+    "regelwerk_version": "1.2",
     "stand": "2026-10-13",
     "hinweis": "Probelauf (UMBAU.md Schritt 3). IDs alter Stichpunkte und Können-Aussagen bleiben erhalten (Lernstand, Karten); neue IDs nur für neue Einträge.",
     "kerntest": {
@@ -1448,12 +1640,976 @@
     },
     "hinweisquellen": {
       "podcast:ipv6-ap1": "IT-Berufe-Podcast (Stefan Macke): Video „IPv6 für die AP1 der IT-Berufe“ mit Themenliste und Gegenüberstellung IPv4/IPv6 (vom Projektinhaber am 13.10.2026 eingebracht)",
-      "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitt IPv6",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitt IPv6"
+      "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 2.4 Netzwerk, 2.6 Netzwerkprotokolle und OSI-Modell, 2.7 Strukturierte Verkabelung, 4.5 Netzwerkverbindungen, 4.6 Konsolenbefehle",
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Netzwerk (VPN, OSI/TCP-IP, WLAN, Gebäudeverkabelung, IP-Konfiguration, IPv6, Kupferkabel, Fernwartung), DSL-Arten, Netzwerkkomponenten",
+      "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“, Abschnitt Netzwerktechnik (abgerufen 13.10.2026)",
+      "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
-      "umfang": "nur IPv6 (Stichpunkte AP1-6-2-3, -2-4, -2-5); restlicher Ordner offen"
-    }
+      "umfang": "ganzer Ordner (IPv6 aus Schritt 3a übernommen, Rest neu)",
+      "vorgehen": "Jedes in den Hinweisquellen genannte Netzwerk-Thema nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus, meist AP2-Katalog) → sonst Kür. Themen, die ein anderer AP1-Ordner abdeckt, stehen als Ring „Ordner“.",
+      "themen": [
+        {
+          "thema": "OSI-Modell: sieben Schichten, Zuordnung von Protokollen, Adressen, Geräten",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-1-K1",
+            "AP1-6-1-1-K2",
+            "AP1-6-1-1-K3"
+          ]
+        },
+        {
+          "thema": "TCP/IP-Modell, Vergleich mit OSI",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-1"
+          ],
+          "notiz": "AP2b.01.01"
+        },
+        {
+          "thema": "Protokolle DNS, DHCP, SMTP, IMAP, POP3, HTTP/HTTPS, SSH, Telnet",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-2-K1",
+            "AP1-6-1-2-K2",
+            "AP1-6-1-2-K3",
+            "AP1-6-1-2-K5"
+          ]
+        },
+        {
+          "thema": "Ports der Protokolle",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-2-K4"
+          ],
+          "notiz": "mit vorgegebener Porttabelle (B4); auswendig: Außen, Grenze AP1-6-1-2"
+        },
+        {
+          "thema": "TCP und UDP der Transportschicht zuordnen",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-1-K2"
+          ]
+        },
+        {
+          "thema": "Eigenschaften von TCP und UDP, Drei-Wege-Handshake",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-2"
+          ],
+          "notiz": "AP2b.01.05.1"
+        },
+        {
+          "thema": "FTP, SFTP, NTP, LDAP",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-2"
+          ],
+          "notiz": "P17"
+        },
+        {
+          "thema": "SMB, NFS (Dateifreigaben)",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-2"
+          ],
+          "notiz": "AP2b.01.04.1"
+        },
+        {
+          "thema": "ICMP hinter ping",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-2"
+          ],
+          "notiz": "P17"
+        },
+        {
+          "thema": "RDP, VNC, Clientless Remote Access (Fernwartung)",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-5",
+            "AP1-1"
+          ],
+          "notiz": "Remote-Desktop AP1.04.01.3 (Ordner Software und Betriebssysteme); Leistungserbringung remote AP1.07.03.1 (Ordner AP1-1)"
+        },
+        {
+          "thema": "Switch, Router, Gateway, Access Point",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-3-K1",
+            "AP1-6-1-3-K2",
+            "AP1-6-1-3-K3",
+            "AP1-6-1-3-K4"
+          ]
+        },
+        {
+          "thema": "WLAN-Router als Kombigerät",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-3-K7"
+          ],
+          "notiz": "neu: Katalogwortlaut „WLAN-Router“ (AP1.03.01.2) und Anhang „Kombigerät für SOHO-Umfeld“"
+        },
+        {
+          "thema": "Hub",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "P17"
+        },
+        {
+          "thema": "Firewall als Netzwerkkomponente, DMZ",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "AP2b.01.02.4; Personal Firewall ist Kern im Ordner IT-Sicherheit (AP1.06.04.11)"
+        },
+        {
+          "thema": "Proxy",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "AP2b.01.07.3"
+        },
+        {
+          "thema": "Netzwerktopologien",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "AP2b.01.03.11"
+        },
+        {
+          "thema": "VLAN, Trunk, Unterschied Subnetz/VLAN",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "AP2b.01.03.6"
+        },
+        {
+          "thema": "Routing",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "AP2b.01.01.3"
+        },
+        {
+          "thema": "Quality of Service",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-3"
+          ]
+        },
+        {
+          "thema": "Strukturierte Verkabelung: Primär-, Sekundär-, Tertiärbereich",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-3"
+          ],
+          "notiz": "AP2b.01.03.5"
+        },
+        {
+          "thema": "Kupferkabel (Twisted Pair, RJ45), Kabelkategorien Cat 5e bis Cat 8",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-4-K1",
+            "AP1-6-1-4-K6"
+          ]
+        },
+        {
+          "thema": "Lichtwellenleiter: Vor- und Nachteile",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-4-K1"
+          ]
+        },
+        {
+          "thema": "Lichtwellenleiter: Singlemode, Multimode",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-4"
+          ]
+        },
+        {
+          "thema": "DSL-Varianten, Modem",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-4"
+          ]
+        },
+        {
+          "thema": "Netzarten nach Ausdehnung (LAN, MAN, WAN, GAN)",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-4"
+          ],
+          "notiz": "AP2b.01.03.1; LAN/WLAN am Arbeitsplatz ist Kern (AP1-6-1-4-K1)"
+        },
+        {
+          "thema": "Bluetooth",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-1-4"
+          ],
+          "notiz": "Symbol erkennen ist Kern (AP1-6-1-4-K7, 2025F-A1-c); Technik AP2b.01.03.9"
+        },
+        {
+          "thema": "WLAN-Standards IEEE 802.11, Wi-Fi 5/6",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-5-K1"
+          ],
+          "notiz": "neu: Katalogwortlaut „WLAN-Standards“ (AP1.03.03.1) hatte keine eigene Können-Aussage"
+        },
+        {
+          "thema": "Ethernet-Standards und Datenraten",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-5-K2"
+          ],
+          "notiz": "neu: Katalogwortlaut „Ethernet Standards“ (AP1.03.03.1)"
+        },
+        {
+          "thema": "Netzwerkkarte",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-5-K3"
+          ],
+          "notiz": "neu: Katalogwortlaut „Netzwerkkarte“ (AP1.03.03.1)"
+        },
+        {
+          "thema": "Power over Ethernet",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-5-K4",
+            "AP1-6-1-5-K5"
+          ],
+          "notiz": "neu: Beleg 2026F-A1-ac"
+        },
+        {
+          "thema": "MIMO, Kanalbandbreite",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-1-5"
+          ]
+        },
+        {
+          "thema": "IPv4: Netz- und Hostanteil, Subnetzmaske, CIDR, Subnetting",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-2-K2",
+            "AP1-6-2-2-K5",
+            "AP1-6-2-2-K1"
+          ]
+        },
+        {
+          "thema": "Subnetze bilden (Anzahl 2^n)",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Puffer",
+          "wo": [
+            "AP1-6-2-2-K7"
+          ]
+        },
+        {
+          "thema": "Private IPv4-Bereiche",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-1-K5"
+          ]
+        },
+        {
+          "thema": "NAT/PAT",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-1-K7"
+          ],
+          "notiz": "neu: Katalog-Anhang Netzwerkplan nennt NAT/PAT als Router-Funktion"
+        },
+        {
+          "thema": "SNAT/DNAT, Portweiterleitung",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-2-1"
+          ]
+        },
+        {
+          "thema": "Adressklassen A, B, C",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-2-1"
+          ]
+        },
+        {
+          "thema": "Standardgateway im selben Netz wie der Client",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-1-K1",
+            "AP1-6-2-2-K6"
+          ]
+        },
+        {
+          "thema": "Loopback 127.0.0.1",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Puffer",
+          "wo": [
+            "AP1-6-2-3-K7"
+          ]
+        },
+        {
+          "thema": "APIPA 169.254.0.0/16",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-4-K5"
+          ]
+        },
+        {
+          "thema": "DHCP: Aufgabe, Vorteile, statisch oder dynamisch",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-4-K4",
+            "AP1-6-2-1-K4"
+          ]
+        },
+        {
+          "thema": "DHCP-Ablauf (DORA), Lease-Zeit, MAC-Liste am DHCP-Server",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-2-4"
+          ],
+          "notiz": "AP2b.01.07.2"
+        },
+        {
+          "thema": "DNS-Eintragsarten (A, AAAA, MX)",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024",
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-2-4"
+          ],
+          "notiz": "AP2b.01.07.1; AAAA stand bisher als Kür in AP1-6-2-5 – nach R1 (Außen vor Kür) korrigiert"
+        },
+        {
+          "thema": "DNS: Namensauflösung",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-1-2-K1",
+            "AP1-6-3-2-K1"
+          ]
+        },
+        {
+          "thema": "MAC-Adresse, ARP",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-4-K1",
+            "AP1-6-2-4-K2",
+            "AP1-6-2-4-K3"
+          ]
+        },
+        {
+          "thema": "IPv6: Aufbau, Kürzen, Präfix und Interface-ID",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024",
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-3-K1",
+            "AP1-6-2-3-K2",
+            "AP1-6-2-3-K3"
+          ]
+        },
+        {
+          "thema": "IPv6: Adressarten GUA, Link-Local, ULA, Loopback",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Puffer",
+          "wo": [
+            "AP1-6-2-3-K7"
+          ]
+        },
+        {
+          "thema": "IPv6: Anycast, unspezifizierte Adresse",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-2-3"
+          ]
+        },
+        {
+          "thema": "SLAAC (Podcast-Schlagwort 2022H)",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-3-K4"
+          ],
+          "notiz": "die Teilaufgabe 2022H-A3-f verlangt die automatisch entstandene Link-Local-Adresse; Adressvergabe-Arten sind Puffer (AP1-6-2-5-K7), der SLAAC-Ablauf ist Kür"
+        },
+        {
+          "thema": "IPv6: Adressvergabe statisch, DHCPv6, SLAAC",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Puffer",
+          "wo": [
+            "AP1-6-2-5-K7"
+          ]
+        },
+        {
+          "thema": "IPv6: SLAAC-Ablauf, EUI-64, Multicast, Privacy Extensions, Gateway aus RA, DS-Lite",
+          "quellen": [
+            "podcast:ipv6-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-2-5"
+          ]
+        },
+        {
+          "thema": "IPv6: Präfixe aufteilen /48 → /64",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-5-K2",
+            "AP1-6-2-5-K3"
+          ]
+        },
+        {
+          "thema": "IPv4 und IPv6 parallel (Dual Stack, Tunnel)",
+          "quellen": [
+            "lernzettel:fi-de-2024",
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-2-5-K5"
+          ]
+        },
+        {
+          "thema": "ARP und NDP",
+          "quellen": [
+            "podcast:ipv6-ap1"
+          ],
+          "ring": "Puffer",
+          "wo": [
+            "AP1-6-2-4-K7"
+          ]
+        },
+        {
+          "thema": "WLAN: SSID, PSK und Enterprise, RADIUS",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-3-1-K1",
+            "AP1-6-3-1-K2",
+            "AP1-6-3-1-K6",
+            "AP1-6-3-1-K7"
+          ]
+        },
+        {
+          "thema": "WLAN-Sicherheit WEP, WPA, WPA2, WPA3, WPS, AES",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-3-1"
+          ],
+          "notiz": "AP2b.01.03.8"
+        },
+        {
+          "thema": "Multi-SSID, Gast-WLAN, WLAN-Controller",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-3-1"
+          ]
+        },
+        {
+          "thema": "VPN: Zweck, Tunnel, Sicherheitsvorteil",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-3-3-K1",
+            "AP1-6-3-3-K3",
+            "AP1-6-3-3-K4"
+          ]
+        },
+        {
+          "thema": "VPN-Verbindung am Arbeitsplatz einrichten",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-3-3-K5"
+          ],
+          "notiz": "neu: Katalogwortlaut „Konfiguration … VPN“ (AP1.04.05.5)"
+        },
+        {
+          "thema": "VPN-Modelle, Tunnel- und Transportmodus, Authentifizierungs- und Verschlüsselungsverfahren",
+          "quellen": [
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-3-3"
+          ],
+          "notiz": "AP2b.01.06, AP2b.01.03.4"
+        },
+        {
+          "thema": "Netzwerkbefehle ipconfig, ifconfig/ip, iproute2, arp, ping, traceroute/tracert, nslookup",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-3-2-K1",
+            "AP1-6-3-2-K2"
+          ]
+        },
+        {
+          "thema": "Fehlersuche, Signalstärke, Verbindungstest, Dokumentation der Konfiguration",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-6-3-2-K3",
+            "AP1-6-1-1-K5",
+            "AP1-6-2-1-K6"
+          ]
+        },
+        {
+          "thema": "Netzwerküberwachung mit Werkzeugen wie Wireshark",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-6-3-2"
+          ],
+          "notiz": "AP2b.01.11"
+        },
+        {
+          "thema": "Client-Server, Domäne",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-5"
+          ],
+          "notiz": "AP1.03.02.2, AP1.03.02.3"
+        },
+        {
+          "thema": "Konsolenbefehle für Dateioperationen",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-5"
+          ],
+          "notiz": "AP1.04.05.6 (geteilt)"
+        }
+      ]
+    },
+    "geschwister": [
+      {
+        "katalog": "AP1.04.01.3",
+        "paar": "IPv4/IPv6 (Konfiguration)",
+        "abgedeckt": {
+          "IPv4": [
+            "AP1-6-2-1-K1",
+            "AP1-6-2-1-K4"
+          ],
+          "IPv6": [
+            "AP1-6-2-5-K3",
+            "AP1-6-2-5-K7"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.01.3",
+        "paar": "IPv4/IPv6 (Adressen lesen, Sonderadressen)",
+        "abgedeckt": {
+          "IPv4": [
+            "AP1-6-2-1-K5",
+            "AP1-6-2-4-K5"
+          ],
+          "IPv6": [
+            "AP1-6-2-3-K4",
+            "AP1-6-2-3-K7"
+          ]
+        }
+      },
+      {
+        "katalog": "ZB.ipv4-subnetting",
+        "paar": "IPv4/IPv6 (Netze aufteilen)",
+        "abgedeckt": {
+          "IPv4": [
+            "AP1-6-2-2-K7"
+          ],
+          "IPv6": [
+            "AP1-6-2-5-K2",
+            "AP1-6-2-5-K6"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.05.5",
+        "paar": "IP-Adressen/DHCP (statisch/automatisch)",
+        "abgedeckt": {
+          "statisch": [
+            "AP1-6-2-1-K2"
+          ],
+          "DHCP": [
+            "AP1-6-2-4-K4"
+          ],
+          "Vergleich": [
+            "AP1-6-2-1-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.05.5",
+        "paar": "DHCP/DHCPv6 und SLAAC",
+        "abgedeckt": {
+          "IPv4": [
+            "AP1-6-2-4-K4"
+          ],
+          "IPv6": [
+            "AP1-6-2-5-K7"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.05.5",
+        "paar": "Pre shared key/Enterprise",
+        "abgedeckt": {
+          "PSK": [
+            "AP1-6-3-1-K1",
+            "AP1-6-3-1-K6"
+          ],
+          "Enterprise": [
+            "AP1-6-3-1-K1",
+            "AP1-6-3-1-K7"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.05.6",
+        "paar": "ipconfig/ifconfig, ip (Windows/Linux)",
+        "abgedeckt": {
+          "Windows": [
+            "AP1-6-3-2-K1"
+          ],
+          "Linux": [
+            "AP1-6-3-2-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.05.6",
+        "paar": "ping über IPv4/IPv6",
+        "abgedeckt": {
+          "IPv4": [
+            "AP1-6-3-2-K2"
+          ],
+          "IPv6": [
+            "AP1-6-2-5-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.05.6",
+        "paar": "arp (IPv4) / NDP (IPv6)",
+        "abgedeckt": {
+          "IPv4": [
+            "AP1-6-2-4-K2"
+          ],
+          "IPv6": [
+            "AP1-6-2-4-K7"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.03.1",
+        "paar": "LWL/Ethernet-Standards/WLAN-Standards",
+        "abgedeckt": {
+          "LWL": [
+            "AP1-6-1-4-K1"
+          ],
+          "Ethernet": [
+            "AP1-6-1-5-K2",
+            "AP1-6-1-4-K6"
+          ],
+          "WLAN": [
+            "AP1-6-1-5-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.03.1",
+        "paar": "Gateway/Router, Switch",
+        "abgedeckt": {
+          "Router": [
+            "AP1-6-1-3-K2"
+          ],
+          "Switch": [
+            "AP1-6-1-3-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.01.2",
+        "paar": "WLAN-Router, Switch, Gateway, Accesspoint",
+        "abgedeckt": {
+          "WLAN-Router": [
+            "AP1-6-1-3-K7"
+          ],
+          "Switch": [
+            "AP1-6-1-3-K1"
+          ],
+          "Gateway": [
+            "AP1-6-1-3-K2"
+          ],
+          "Accesspoint": [
+            "AP1-6-1-3-K3"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.02.2",
+        "paar": "LAN/WLAN",
+        "abgedeckt": {
+          "LAN": [
+            "AP1-6-1-4-K1"
+          ],
+          "WLAN": [
+            "AP1-6-1-4-K1",
+            "AP1-6-1-5-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.02.5",
+        "paar": "IMAP/POP3, SSH/Telnet (aus Belegen)",
+        "abgedeckt": {
+          "IMAP/POP3": [
+            "AP1-6-1-2-K2"
+          ],
+          "SSH/Telnet": [
+            "AP1-6-1-2-K3"
+          ]
+        }
+      }
+    ]
   }
 }

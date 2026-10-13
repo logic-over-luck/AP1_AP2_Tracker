@@ -14,6 +14,8 @@
 //   T8        Tiefe erreicht: je Baustein erreicht mindestens eine Können-Aussage die belegte Tiefe
 //             (bei geteilten Bausteinen mit „anteil" nur Hinweis – der Rest wird in anderen Ordnern erreicht)
 //   ALT       jede alte Können-Aussage des Ordners ist einsortiert; alte IDs bleiben erhalten, keine ID wird neu vergeben
+//   R3        Hinweis-Abgleich: jedes Thema hat einen Ring, Hinweisquellen beschrieben, Verweis passt zum Ring
+//   R4        Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 
@@ -167,6 +169,36 @@ const freigewordene = new Set(an.filter((x) => x.status === 'verschoben' || x.st
 for (const id of kIds) if (freigewordene.has(id)) F(`ALT: ID ${id} wird neu vergeben, obwohl sie verschoben/gestrichen wurde`);
 for (const s of altSP) if (!spIds.includes(s.id)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
 
+// ---------- R3: Hinweis-Abgleich, R4: Geschwister-Prüfung (UMBAU.md 4.8) ----------
+const kMap = new Map(stichpunkte.flatMap((sp) => sp.koennen.map((k) => [k.id, k])));
+const spMap = new Map(stichpunkte.map((sp) => [sp.id, sp]));
+const RINGE = new Set(['Kern', 'Puffer', 'Kür', 'Außen', 'Ordner']);
+const abgleich = lp.meta?.hinweisabgleich?.themen ?? [];
+for (const t of abgleich) {
+  const name = `R3 „${(t.thema ?? '').slice(0, 40)}"`;
+  if (!t.thema) F('R3: Thema ohne Namen');
+  if (!RINGE.has(t.ring)) F(`${name}: unbekannter Ring ${t.ring}`);
+  if (!t.quellen?.length) F(`${name}: keine Hinweisquelle`);
+  for (const q of t.quellen ?? []) if (!(q in (lp.meta?.hinweisquellen ?? {}))) F(`${name}: Hinweisquelle ${q} nicht in meta.hinweisquellen beschrieben`);
+  if (!t.wo?.length) { F(`${name}: „wo" fehlt`); continue; }
+  for (const w of t.wo) {
+    if (t.ring === 'Kern' || t.ring === 'Puffer') { if (!kMap.has(w)) F(`${name}: Können-Aussage ${w} gibt es nicht`); }
+    else if (t.ring === 'Kür') { if (!spMap.get(w)?.kuer?.length) F(`${name}: Stichpunkt ${w} hat keinen Kür-Eintrag`); }
+    else if (t.ring === 'Außen') { if (!spMap.get(w)?.grenzen?.length) F(`${name}: Stichpunkt ${w} hat keine Grenze`); }
+    else if (t.ring === 'Ordner') { if (!/^[A-Z0-9]+-\d+$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner`); }
+  }
+  if (t.ring === 'Puffer' && !t.wo.some((w) => kMap.get(w)?.herkunft.some((h) => h.startsWith('regel:')))) F(`${name}: Puffer, aber keine der Aussagen hat Herkunft regel:`);
+}
+const geschwister = lp.meta?.geschwister ?? [];
+for (const g of geschwister) {
+  if (!alleIds.has(g.katalog)) F(`R4: Katalog-ID ${g.katalog} unbekannt`);
+  if (!g.paar) F(`R4: ${g.katalog} ohne Paar`);
+  for (const [seite, ids] of Object.entries(g.abgedeckt ?? {})) {
+    if (!ids.length) F(`R4: ${g.katalog} (${g.paar}): „${seite}" ohne Können-Aussage`);
+    for (const id of ids) if (!kMap.has(id)) F(`R4: ${g.katalog} (${g.paar}): Können-Aussage ${id} gibt es nicht`);
+  }
+}
+
 // Karten-Bilanz
 const statusVon = Object.fromEntries(an.map((x) => [x.alt, x]));
 const karten = { bleiben: 0, pruefen: 0, umhaengen: 0, entfallen: 0, ohne_koennen: 0 };
@@ -216,6 +248,16 @@ zeilen.push('| alt | Status | neu | Grund |', '|---|---|---|---|');
 for (const x of an) zeilen.push(`| ${x.alt} | ${x.status} | ${x.neu ?? '–'} | ${x.grund || ''} |`);
 zeilen.push('', '### Sätze aus alten Rahmentexten', '', '| alt | Satz | Status | Grund |', '|---|---|---|---|');
 for (const x of lp.alt_neu?.rahmen ?? []) zeilen.push(`| ${x.alt} | ${x.satz} | ${x.status} | ${x.grund} |`);
+if (abgleich.length) {
+  const ha = lp.meta.hinweisabgleich;
+  zeilen.push('', '## Hinweis-Abgleich (R3)', '', `Stand ${ha.stand}, Umfang: ${ha.umfang}. Ringe: ${[...RINGE].map((r) => `${r} ${abgleich.filter((t) => t.ring === r).length}`).join(', ')}.`, '');
+  zeilen.push('| Thema | Hinweisquellen | Ring | wo | Anmerkung |', '|---|---|---|---|---|');
+  for (const t of abgleich) zeilen.push(`| ${t.thema} | ${t.quellen.join(', ')} | ${t.ring} | ${t.wo.join(', ')} | ${t.notiz ?? ''} |`);
+}
+if (geschwister.length) {
+  zeilen.push('', '## Geschwister-Prüfung (R4)', '', '| Katalogstelle | Paar | abgedeckt durch |', '|---|---|---|');
+  for (const g of geschwister) zeilen.push(`| ${g.katalog} | ${g.paar} | ${Object.entries(g.abgedeckt).map(([s, ids]) => `${s}: ${ids.join(', ')}`).join(' · ')} |`);
+}
 if (fehler.length || hinweise.length) {
   zeilen.push('', '## Fehler und Hinweise', '');
   for (const f of fehler) zeilen.push(`- ✗ ${f}`);
@@ -231,4 +273,4 @@ console.log(`Alt → neu: ${zaehl('übernommen')} übernommen, ${zaehl('angepass
 console.log(`Karten: ${JSON.stringify(karten)}`);
 for (const h of hinweise) console.log(`HINWEIS ${h}`);
 if (fehler.length) { console.log(`FEHLER (${fehler.length})`); for (const f of fehler) console.log(`  - ${f}`); process.exitCode = 1; }
-else console.log('OK – Struktur, T2b, T3, T4, T6, T8 und Alt→neu bestanden.');
+else console.log(`OK – Struktur, T2b, T3, T4, T6, T8, Alt→neu${abgleich.length ? ', R3' : ''}${geschwister.length ? ', R4' : ''} bestanden.`);
