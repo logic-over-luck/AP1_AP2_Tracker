@@ -389,6 +389,10 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P14 | **Bewusst ignoriert (Entscheidung Projektinhaber):** 2025H ist unvollständig (A4 ab b fehlt, 18 Punkte; laut Podcast u. a. Pseudocode, Schreibtischtest, ERM). Rest der Prüfung beschaffen und abschreiben. 2025H und 2026F haben keine Lösungshinweise, 2026H nur nicht amtliche. | erledigt |
 | P15 | **ID-Erhalt** löst P6 zum großen Teil: Übernommene und angepasste Stichpunkte und Können-Aussagen behalten ihre alte ID (Lernstand und Karten bleiben gültig). Nur verschobene Aussagen brauchen eine Umzugstabelle (`alt_neu` im Lernplan). | Vorschlag |
 | P16 | Kerntest K1 wurde im Probelauf von der bauenden Sitzung selbst gemacht. Für die Abnahme: eine **unabhängige** Sitzung prüft je Stichpunkt mit Musterlösungen (K1–K3). Ohne Musterlösung waren 9 Teilaufgaben (2025H, 2026F). | offen |
+| P17 | **Vorschlag, noch nicht beschlossen:** Regel P-BEISPIELLISTE – bei den 43 „z. B.“-Listen im AP1-Katalog sind die genannten Beispiele Kern; weitere übliche Mitglieder derselben Gruppe werden Puffer nur, wenn mindestens zwei unabhängige Hinweisquellen sie nennen, sonst Kür. Lehrbücher sind dafür **optional** (nur die betroffenen Stellen, nie ganze Bücher, nie eigene Themen, nie Tiefe). | offen |
+| P18 | **Vorschlag, noch nicht beschlossen:** Regel P-MUSTER – Können-Aussagen für nie geprüfte Katalogthemen nach den Aufgabentypen formulieren, die die IHK beim selben Verb sonst nutzt (z. B. „beurteilen“ = Vor- und Nachteile nennen und begründete Empfehlung). | offen |
+| P19 | Zeitbudget (P7) braucht Prüfungstermin AP1 und Lernstunden pro Woche vom Projektinhaber. | offen |
+| P20 | **Nächste Sitzung, sparsam:** Hinweis-Abgleich (R3) für den Rest von AP1-6, danach je Sitzung ein weiterer AP1-Ordner nach dem Muster von AP1-6. Vorher nur diese Datei und den Bericht des letzten Ordners lesen, nicht alle Quellen. | offen |
 
 ---
 
