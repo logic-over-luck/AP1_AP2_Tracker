@@ -73,7 +73,7 @@
             },
             {
               "id": "AP1-1-1-1-K5",
-              "text": "Du kannst ein unscharfes Ziel so umformulieren, dass es alle fünf Kriterien erfüllt.",
+              "text": "Du kannst ein unscharfes Ziel so formulieren, dass es alle fünf Kriterien erfüllt.",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.01.01.2.5"
@@ -254,7 +254,7 @@
             },
             {
               "id": "AP1-1-1-3-K6",
-              "text": "Du kannst zu einem bewerteten Risiko eine passende Gegenmaßnahme vorschlagen.",
+              "text": "Du kannst zu einem bewerteten Risiko eine passende Gegenmaßnahme festlegen.",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.01.02.4"
@@ -396,7 +396,7 @@
           "koennen": [
             {
               "id": "AP1-1-2-1-K1",
-              "text": "Du kannst ein Projekt in einem Projektstrukturplan in Teilaufgaben und Arbeitspakete gliedern.",
+              "text": "Du kannst für ein Projekt einen Projektstrukturplan mit Teilaufgaben und Arbeitspaketen erstellen.",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.01.01.2"
@@ -519,12 +519,13 @@
             },
             {
               "id": "AP1-1-2-2-K4",
-              "text": "Du kannst den freien Puffer berechnen (FP = FAZ des Nachfolgers − FEZ des Vorgangs): Um so viel darf sich ein Vorgang verzögern, ohne dass sich sein Nachfolger verschiebt.",
+              "text": "Du kannst den freien Puffer berechnen (FP = FAZ des Nachfolgers − FEZ des Vorgangs; bei mehreren Nachfolgern zählt der kleinste FAZ): Um so viel darf sich ein Vorgang verzögern, ohne dass sich sein Nachfolger verschiebt.",
               "stufe": 3,
               "herkunft": [
                 "beleg:2021H-A1-c",
                 "beleg:2025F-A3-aa",
-                "katalog:AP1.01.01.2.2"
+                "katalog:AP1.01.01.2.2",
+                "beleg:2026F-A2-e"
               ],
               "vorgegeben": "Formeln für GP und FP"
             },
@@ -534,7 +535,8 @@
               "stufe": 3,
               "herkunft": [
                 "beleg:2021H-A1-d",
-                "beleg:2025F-A3-ab"
+                "beleg:2025F-A3-ab",
+                "katalog:AP1.01.01.2.1"
               ]
             },
             {
@@ -1068,14 +1070,6 @@
               ]
             },
             {
-              "id": "AP1-1-4-2-K4",
-              "text": "Du kannst erklären, welche Folgen die Abnahme hat: Die Leistung gilt als erbracht, die Vergütung wird fällig, die Gewährleistungsfrist beginnt.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.07.06"
-              ]
-            },
-            {
               "id": "AP1-1-4-2-K5",
               "text": "Du kannst Möglichkeiten beschreiben, Mitarbeiter in neue Software einzuweisen: Schulung am Arbeitsplatz (vor Ort während der Arbeitszeit), Webinar (online zu festem Termin, mit Rückfragen), Video-Tutorial (zeitlich flexibel, ohne Rückfragen), Multiplikatoren-Schulung (Geschulte geben ihr Wissen weiter).",
               "stufe": 2,
@@ -1366,7 +1360,7 @@
             },
             {
               "id": "AP1-1-5-3-K3",
-              "text": "Du kannst nach einem fehlgeschlagenen Testfall weitere Prüfschritte vorschlagen, zum Beispiel die RAM-Größe im UEFI oder im Task-Manager nachsehen.",
+              "text": "Du kannst nach einem fehlgeschlagenen Testfall weitere Prüfschritte festlegen, zum Beispiel die RAM-Größe im UEFI oder im Task-Manager nachsehen.",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026H-A2-ba",
@@ -1442,9 +1436,9 @@
       },
       {
         "alt": "AP1-1-1-1-K5",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-1-1-1-K5",
-        "grund": "Herkunft katalog:AP1.01.01.2.5"
+        "grund": "P16 (K2): Operator aus 4.1 (formulieren)"
       },
       {
         "alt": "AP1-1-1-2-K1",
@@ -1538,9 +1532,9 @@
       },
       {
         "alt": "AP1-1-2-1-K1",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-1-2-1-K1",
-        "grund": "Herkunft katalog:AP1.01.01.2"
+        "grund": "P16 (K2): Operator aus 4.1 (erstellen)"
       },
       {
         "alt": "AP1-1-2-1-K2",
@@ -1582,7 +1576,7 @@
         "alt": "AP1-1-2-2-K4",
         "status": "angepasst",
         "neu": "AP1-1-2-2-K4",
-        "grund": "Bedeutung des freien Puffers ergänzt; Formeln waren vorgegeben (B4)"
+        "grund": "Bedeutung des freien Puffers ergänzt; Formeln waren vorgegeben (B4); P16 (K1): bei mehreren Nachfolgern zählt der kleinste FAZ (2026F-A2-e)"
       },
       {
         "alt": "AP1-1-2-2-K5",
@@ -1748,9 +1742,9 @@
       },
       {
         "alt": "AP1-1-4-2-K4",
-        "status": "übernommen",
-        "neu": "AP1-1-4-2-K4",
-        "grund": "Herkunft katalog:AP1.07.06 (Leistungsübergabe)"
+        "status": "gestrichen",
+        "neu": null,
+        "grund": "P16 (K3): Rechtsfolgen der Abnahme gehören zum Werkvertrag (AP1.07.01.4), nicht zu AP1.07.06; jetzt AP1-3-3-2-K7 im Ordner AP1-3"
       },
       {
         "alt": "AP1-1-4-3-K1",
@@ -1844,9 +1838,9 @@
       },
       {
         "alt": "AP1-1-5-3-K3",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-1-5-3-K3",
-        "grund": "Beispiel aus 2026H-A2-ba"
+        "grund": "Beispiel aus 2026H-A2-ba; P16 (K2): Operator aus 4.1 (festlegen)"
       },
       {
         "alt": "AP1-1-5-3-K4",
@@ -2407,8 +2401,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-1-4-2-K1",
-            "AP1-1-4-2-K2",
-            "AP1-1-4-2-K4"
+            "AP1-1-4-2-K2"
           ]
         },
         {
