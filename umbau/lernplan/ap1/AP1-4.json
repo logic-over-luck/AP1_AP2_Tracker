@@ -1,0 +1,1939 @@
+{
+  "oberblock": {
+    "id": "AP1-4",
+    "titel": "Hardware und Arbeitsplatz",
+    "raum": "AP1",
+    "gebiete": [
+      "G.AP1.02",
+      "G.AP1.03"
+    ]
+  },
+  "themenbloecke": [
+    {
+      "id": "AP1-4-1",
+      "titel": "Geräte und Komponenten",
+      "satz": "Welche Geräte und Komponenten es gibt, wie man sie auswählt, anschließt und einbaut.",
+      "stichpunkte": [
+        {
+          "id": "AP1-4-1-1",
+          "titel": "Geräteklassen und Arbeitsplatzsysteme auswählen",
+          "ziel": "Geräteklassen unterscheiden, ihre Vor- und Nachteile nennen und für einen stationären oder mobilen Arbeitsplatz begründet auswählen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.02.1"
+            },
+            {
+              "id": "AP1.04.02.2"
+            },
+            {
+              "id": "AP1.03.02.4"
+            }
+          ],
+          "teilaufgaben": [
+            "2023F-A1-a",
+            "2023F-A1-c",
+            "2023H-A2-a",
+            "2023H-A2-b",
+            "2026H-A4-a"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-1-K1",
+              "text": "Du kannst Desktop, Notebook, All-in-One, Thin Client, Tablet und Smartphone unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.02.1",
+                "katalog:AP1.03.02.4"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K2",
+              "text": "Du kannst für einen beschriebenen Arbeitsplatz eine Geräteklasse begründet auswählen, zum Beispiel Thin Clients für wechselnde Arbeitsplätze.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.04.02.1",
+                "beleg:2023F-A1-c"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K3",
+              "text": "Du kannst mobile und stationäre Arbeitsplatzsysteme gegenüberstellen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.02.2"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K4",
+              "text": "Du kannst erklären, dass ein Thin Client kaum eigene Rechenleistung hat und seine Anwendungen von einem Server bezieht.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.02.1"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K5",
+              "text": "Du kannst je einen Vor- und Nachteil von Notebook, All-in-One-PC, Thin Client und Desktop nennen, zum Beispiel mobil gegenüber teuer oder gut erweiterbar gegenüber Platzbedarf.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2023F-A1-a"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K6",
+              "text": "Du kannst erläutern, warum ein Tablet die Anforderungen an einen Bildschirmarbeitsplatz nicht erfüllt: Ergonomie, Anschlüsse, Software, Leistung.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023H-A2-b"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K7",
+              "text": "Du kannst für einen mobilen Arbeitsplatz Ausstattung und Internetanbindung begründen, zum Beispiel Headset und Kamera, gesicherter Zugang oder mobiler Router an einem Ort ohne Festnetz.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2023H-A2-a",
+                "beleg:2026H-A4-a",
+                "katalog:AP1.04.02.2"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Die Technik der Netzanbindung (LAN, WLAN, Mobilfunk) gehört nicht hierher.",
+              "begruendung": "LAN und WLAN (AP1.04.02.2) lernst du im Ordner Netzwerk (AP1-6-1-4, AP1-6-1-5); Mobilfunkstandards stehen nicht im AP1-Katalog (AP1.03.03.1).",
+              "katalog": [
+                "AP1.04.02.2",
+                "AP1.03.03.1"
+              ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Fat Client gegenüber Thin Client; Zero Client.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "AP1.04.02.1 nennt Geräteklassen als offene z. B.-Liste. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+            }
+          ]
+        },
+        {
+          "id": "AP1-4-1-2",
+          "titel": "Prozessor, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil",
+          "ziel": "Aufgaben und Kenngrößen der Komponenten kennen, Datenblätter vergleichen, die Verträglichkeit beurteilen und den Arbeitsspeicher prüfen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Hardwareprodukte am Arbeitsplatz (ohne Netzwerkkomponenten)"
+            },
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "CPU, RAM, Grafikkarte"
+            },
+            {
+              "id": "AP1.04.05.1"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A2-ga",
+            "2022F-A2-gb",
+            "2024H-A3-ba",
+            "2026H-A2-ba",
+            "2026H-A2-bb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-2-K1",
+              "text": "Du kannst die Aufgaben von CPU, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil erklären.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K2",
+              "text": "Du kannst Kenngrößen aus einem Datenblatt lesen und vergleichen, zum Beispiel Kernzahl und Taktfrequenz der CPU, Größe und Typ des Arbeitsspeichers.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K3",
+              "text": "Du kannst beurteilen, ob ein Speicherriegel zu einem System passt: Die DDR-Generation muss gleich sein; bei unterschiedlichem Takt gilt der niedrigere.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A3-ba",
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K4",
+              "text": "Du kannst Wege nennen, die Größe des verbauten Arbeitsspeichers zu prüfen: UEFI/BIOS, Task-Manager, Systeminformationen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026H-A2-ba"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K5",
+              "text": "Du kannst beschreiben, wie du einen defekten Speicherriegel eingrenzt: Riegel einzeln einsetzen und testen, Gegenprobe im selben Steckplatz.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026H-A2-bb"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K6",
+              "text": "Du kannst logische Prozessoren und Cache erklären: Ein Kern führt mit Hyper-Threading zwei Threads aus; der Cache ist ein schneller Zwischenspeicher, der Zugriffe auf langsameren Speicher spart.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A2-ga",
+                "beleg:2022F-A2-gb"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Prozessorarchitekturen (von Neumann, Harvard, CISC/RISC), Rechenwerk, Steuerwerk und Busse; Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-4-1-3",
+          "titel": "Datenspeicher: HDD und SSD",
+          "ziel": "HDD und SSD nach Technik, Bauform und Anschluss vergleichen und für einen Einsatzzweck begründet empfehlen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Datenspeicher"
+            },
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "Datenspeicher (SSD/HDD)"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A2-d",
+            "2024H-A3-bc"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-3-K1",
+              "text": "Du kannst HDD und SSD nach dem Funktionsprinzip unterscheiden: rotierende Magnetscheiben gegenüber Flash-Speicher ohne bewegliche Teile.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-4-1-3-K2",
+              "text": "Du kannst Vorteile der SSD nennen: schnelleres Lesen und Schreiben, unempfindlich gegen Erschütterung, lautlos, geringerer Energiebedarf, kompakte Bauform.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024H-A3-bc"
+              ]
+            },
+            {
+              "id": "AP1-4-1-3-K3",
+              "text": "Du kannst einen Vorteil der HDD nennen: niedrigerer Preis je Gigabyte bei großen Kapazitäten.",
+              "stufe": 1,
+              "herkunft": [
+                "regel:P-GESCHWISTER"
+              ]
+            },
+            {
+              "id": "AP1-4-1-3-K4",
+              "text": "Du kannst Anschlussarten für Datenspeicher zuordnen: SATA sowie M.2 mit NVMe.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1",
+                "beleg:2022F-A2-d"
+              ]
+            },
+            {
+              "id": "AP1-4-1-3-K5",
+              "text": "Du kannst je einen Vor- und Nachteil einer M.2-SSD gegenüber einer SATA-SSD nennen: schneller und kompakter gegenüber teurer und wenigen Steckplätzen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2022F-A2-d"
+              ]
+            },
+            {
+              "id": "AP1-4-1-3-K6",
+              "text": "Du kannst für einen Einsatzzweck begründet empfehlen, ob eine HDD oder eine SSD passt.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "RAID, Speichernetze (SAN) und Festplattenüberwachung (S.M.A.R.T.) gehören nicht hierher.",
+              "begruendung": "B3: RAID und SAN stehen nur noch im AP2-Katalog (AP2b.01.10.2, AP2b.02.06.2); S.M.A.R.T. steht bei den Monitoringsystemen im AP2-Katalog (AP2b.01.11.2); NAS steht bei der Verfügbarkeit im Ordner IT-Sicherheit (AP1.06.04.6).",
+              "katalog": [
+                "AP2b.01.10.2",
+                "AP2b.02.06.2",
+                "AP2b.01.11.2",
+                "AP1.06.04.6"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AP1-4-1-4",
+          "titel": "Peripheriegeräte und Anschlüsse",
+          "ziel": "Peripheriegeräte einordnen, Anschlüsse erkennen und ihrem Zweck zuordnen und mehrere Monitore anschließen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Peripheriegeräte und Anschlüsse"
+            },
+            {
+              "id": "AP1.04.05.1"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A2-e",
+            "2022F-A2-fb",
+            "2024F-A1-c",
+            "2025F-A1-b",
+            "2025F-A1-c",
+            "2026F-A1-ca",
+            "2026F-A1-cb",
+            "2026F-A1-cc"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-4-K1",
+              "text": "Du kannst Peripheriegeräte nennen und nach Ein- und Ausgabe einordnen, zum Beispiel Monitor, Drucker, Scanner, Multifunktionsgerät.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K2",
+              "text": "Du kannst gängige Anschlüsse am Bild erkennen: RJ45, USB Typ A, USB Typ C, Kaltgerätebuchse, HDMI, DisplayPort, DVI.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2024F-A1-c",
+                "beleg:2025F-A1-b",
+                "beleg:2022F-A2-e"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K3",
+              "text": "Du kannst die Symbole für WLAN und Bluetooth benennen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2025F-A1-c"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K4",
+              "text": "Du kannst einem Anschluss seinen Zweck zuordnen: Netzwerk, Daten, Bild, Stromversorgung.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K5",
+              "text": "Du kannst erklären, was Daisy Chaining ist und welchen Vorteil es hat: Monitore werden hintereinander an einen Anschluss gehängt, das spart Anschlüsse und Kabel.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A1-ca"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K6",
+              "text": "Du kannst Vorteile von USB-C gegenüber USB 3 mit Typ-A-Stecker nennen: höhere Datenrate, mehr Leistung zur Stromversorgung, beidseitig steckbar.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2022F-A2-fb"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K7",
+              "text": "Du kannst mehrere Monitore per Daisy Chaining verbinden und die Voraussetzung erläutern: Grafikkarte und Monitore müssen DisplayPort mit Durchreichen (MST) unterstützen, die Monitore brauchen einen DP-Ausgang.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2026F-A1-cb",
+                "beleg:2026F-A1-cc"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Kenngrößen von Monitoren und Druckern, zum Beispiel Auflösung, Bildwiederholrate, Druckgeschwindigkeit.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "AP1.03.01.2 nennt Peripheriegeräte als offene z. B.-Liste ohne Kenngrößen. Einordnung hängt an P17 (P-BEISPIELLISTE), solange offen: Kür."
+            }
+          ],
+          "hinweis": "Die Musterlösungen zu 2026F-A1-ca bis -cc fehlen; K5 und K7 folgen der Aufgabenstellung."
+        },
+        {
+          "id": "AP1-4-1-5",
+          "titel": "Hardware einbauen: Prozessor, Kühler, Arbeitsspeicher",
+          "ziel": "Komponenten fachgerecht und sicher einbauen und beurteilen, ob sie zum System passen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.05.1"
+            },
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Mainboard-Anschlüsse"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A2-aa",
+            "2022F-A2-ab",
+            "2022F-A2-b",
+            "2022F-A2-c",
+            "2022F-A2-fa",
+            "2026H-A2-bb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-5-K1",
+              "text": "Du kannst die Schritte beim Einbau einer CPU nennen: Hebel öffnen, CPU einsetzen, Hebel schließen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2022F-A2-aa"
+              ],
+              "vorgegeben": "Einbauanleitung"
+            },
+            {
+              "id": "AP1-4-1-5-K2",
+              "text": "Du kannst beschreiben, worauf beim Einsetzen der CPU zu achten ist: Markierung an CPU und Sockel ausrichten, ohne Kraft einsetzen.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A2-ab"
+              ]
+            },
+            {
+              "id": "AP1-4-1-5-K3",
+              "text": "Du kannst die Aufgabe der Wärmeleitpaste erläutern: Sie füllt Unebenheiten zwischen CPU und Kühler, weil Luft Wärme schlecht leitet.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A2-b"
+              ]
+            },
+            {
+              "id": "AP1-4-1-5-K4",
+              "text": "Du kannst erläutern, wie zwei Speicherriegel für den Dual-Channel-Betrieb eingesetzt werden: gleich große Riegel in die laut Handbuch zusammengehörenden Steckplätze, zum Beispiel A1 und B1.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A2-c"
+              ]
+            },
+            {
+              "id": "AP1-4-1-5-K5",
+              "text": "Du kannst einen besonders gekennzeichneten USB-Anschluss am Mainboard erklären, über den das BIOS/UEFI aktualisiert werden kann.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A2-fa"
+              ]
+            },
+            {
+              "id": "AP1-4-1-5-K6",
+              "text": "Du kannst Schutzmaßnahmen beim Arbeiten im Gehäuse nennen: ausschalten, vom Stromnetz trennen, ESD-Schutz anlegen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026H-A2-bb"
+              ]
+            },
+            {
+              "id": "AP1-4-1-5-K7",
+              "text": "Du kannst bei der Installation beurteilen, ob eine Komponente zum System passt, zum Beispiel Sockel der CPU, Speichertyp und freie Steckplätze.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.04.05.1"
+              ]
+            }
+          ],
+          "grenzen": []
+        },
+        {
+          "id": "AP1-4-1-6",
+          "titel": "Kennzeichnung, Sensoren und Kameras: Barcode, QR-Code, RFID",
+          "ziel": "Kennzeichnungsverfahren vergleichen und auswählen und Sensoren und Gerätevarianten ihrem Zweck zuordnen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Sensoren, Kennzeichnung, Kameras"
+            }
+          ],
+          "teilaufgaben": [
+            "2022H-A2-e",
+            "2026F-A1-ab"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-6-K1",
+              "text": "Du kannst Barcode, QR-Code und RFID nach Vor- und Nachteilen gegenüberstellen: QR-Code günstig und mit mehr Daten, aber nur bei Sicht lesbar; RFID ohne Sichtkontakt lesbar, aber teurer.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022H-A2-e"
+              ]
+            },
+            {
+              "id": "AP1-4-1-6-K2",
+              "text": "Du kannst den Zweck von Kameravarianten mit Infrarot und Heizung nennen: Sicht bei Dunkelheit, Betrieb bei Kälte und gegen Beschlag.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026F-A1-ab"
+              ]
+            },
+            {
+              "id": "AP1-4-1-6-K3",
+              "text": "Du kannst Sensoren als Hardwareprodukte nennen und ihre Aufgabe erklären, zum Beispiel Temperatur-, Bewegungs- oder Helligkeitssensor.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-4-1-6-K4",
+              "text": "Du kannst für eine Kennzeichnungsaufgabe begründet auswählen, ob Barcode, QR-Code oder RFID passt.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.01.2",
+                "beleg:2022H-A2-e"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Asset-Tag und Service-Tag zur Inventarisierung; Industrie 4.0 und MQTT.",
+              "quellen": [
+                "podcast:themen-ap1",
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ],
+          "hinweis": "Die Musterlösung zu 2026F-A1-ab fehlt; K2 folgt der Aufgabenstellung."
+        }
+      ]
+    },
+    {
+      "id": "AP1-4-2",
+      "titel": "Kenngrößen berechnen",
+      "satz": "Mit Zahlensystemen, Datenmengen, Übertragungsraten und elektrischer Leistung rechnen.",
+      "stichpunkte": [
+        {
+          "id": "AP1-4-2-1",
+          "titel": "Zahlensysteme und Präfixe: binär, hexadezimal, kB und KiB",
+          "ziel": "Zwischen Zahlensystemen und Einheiten umrechnen, Dezimal- und Binärpräfixe richtig einsetzen und Text- und Binärdateien unterscheiden.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "ZB.datendarstellung"
+            },
+            {
+              "id": "ANH.praefixe"
+            },
+            {
+              "id": "AP1.03.03.4.1",
+              "anteil": "Einheiten"
+            },
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "Taktfrequenz"
+            }
+          ],
+          "teilaufgaben": [
+            "2024F-A3-c",
+            "2022F-A2-gc",
+            "2026H-A2-a"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-2-1-K1",
+              "text": "Du kannst Zahlen zwischen Dezimal-, Binär- und Hexadezimalsystem umrechnen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:ZB.datendarstellung"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K2",
+              "text": "Du kannst mit Zweierpotenzen bis 2 hoch 10 rechnen.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:ZB.datendarstellung"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K3",
+              "text": "Du kannst Dezimalpräfixe (1 kB = 1.000 Byte) und Binärpräfixe (1 KiB = 1.024 Byte) unterscheiden und sagen, wofür welche verwendet werden.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:ANH.praefixe"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K4",
+              "text": "Du kannst zwischen Dezimal- und Binärpräfixen umrechnen und begründen, warum ein Datenträger mit 1.000 GB als 931 GiB angezeigt wird.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2026H-A2-a"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K5",
+              "text": "Du kannst Bit und Byte ineinander umrechnen: 8 Bit sind 1 Byte.",
+              "stufe": 3,
+              "herkunft": [
+                "katalog:ZB.datendarstellung"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K6",
+              "text": "Du kannst den Unterschied zwischen einer Datei im ASCII-Format und einer Binärdatei erläutern: lesbare Zeichen, die jeder Texteditor öffnet, gegenüber binären Daten, die nur die passende Anwendung verarbeitet.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2024F-A3-c"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K7",
+              "text": "Du kannst physikalische Größen mit Dezimalpräfixen umrechnen, zum Beispiel 3,4 GHz = 3.400.000.000 Hz.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022F-A2-gc",
+                "katalog:ANH.praefixe"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Oktalsystem, BCD, Fest- und Gleitkommazahlen; Unicode und UTF-8 neben ASCII.",
+              "quellen": [
+                "podcast:themen-ap1",
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "ZB.datendarstellung umfasst nur, was Prüfungen verlangt haben (G6: Belege plus Puffer); diese Themen sind weder belegt noch Puffer."
+            }
+          ]
+        },
+        {
+          "id": "AP1-4-2-2",
+          "titel": "Datenmengen und Speicherbedarf berechnen",
+          "ziel": "Den Speicherbedarf von Dokumenten, Bildern und Aufzeichnungen berechnen, hochrechnen und beurteilen, ob der Speicher reicht.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.03.4"
+            },
+            {
+              "id": "AP1.03.03.4.1"
+            },
+            {
+              "id": "ZB.datendarstellung"
+            },
+            {
+              "id": "ANH.praefixe"
+            }
+          ],
+          "teilaufgaben": [
+            "2022H-A2-a",
+            "2022H-A2-ba",
+            "2022H-A2-bb",
+            "2024F-A3-da",
+            "2024F-A3-db",
+            "2024F-A3-dc",
+            "2025H-A2-ca",
+            "2025H-A2-cb",
+            "2026F-A1-b"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-2-2-K1",
+              "text": "Du kannst den Speicherbedarf aus der Anzahl der Werte und den Bit je Wert berechnen und in KiB, MiB oder GiB angeben.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A3-da",
+                "beleg:2025H-A2-ca"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K2",
+              "text": "Du kannst aus der Bittiefe die Zahl der darstellbaren Werte berechnen, zum Beispiel 2 hoch 24 Farben bei 3 mal 8 Bit.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A3-db"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K5",
+              "text": "Du kannst einen Mehrbedarf in Prozent ausdrücken.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A3-dc"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K6",
+              "text": "Du kannst den Speicherbedarf eines unkomprimierten Bildes aus Breite, Höhe, Auflösung und Farbtiefe berechnen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022H-A2-ba"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K7",
+              "text": "Du kannst eine Komprimierung einrechnen, zum Beispiel Speicherbedarf um 30 % verringert.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A2-cb"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K8",
+              "text": "Du kannst Mengen über die Zeit hochrechnen, zum Beispiel Aufnahmen je Tag aus Geschwindigkeit und Arbeitszeit, und den Gesamtbedarf wie verlangt auf volle TiB aufrunden.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022H-A2-a",
+                "beleg:2022H-A2-bb",
+                "beleg:2026F-A1-b"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K9",
+              "text": "Du kannst beurteilen, ob ein Speicher für die berechnete Datenmenge ausreicht.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.03.4.1",
+                "katalog:AP1.03.03.4"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Verlustfreie und verlustbehaftete Kompression; Bild- und Audioformate; OCR.",
+              "quellen": [
+                "podcast:themen-ap1"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ]
+        },
+        {
+          "id": "AP1-4-2-3",
+          "titel": "Leistung, Energie, Wirkungsgrad und Stromkosten berechnen",
+          "ziel": "Mit P = U · I und W = P · t rechnen, ein Netzteil wählen, Stromkosten berechnen und Überlastungen nachweisen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.03.4.2"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A2-a",
+            "2021H-A2-d",
+            "2024F-A3-e",
+            "2024F-A3-f",
+            "2025H-A3-ea",
+            "2025H-A3-eb",
+            "2026F-A1-ac"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-2-3-K1",
+              "text": "Du kannst mit P = U · I rechnen (Leistung in Watt = Spannung in Volt mal Stromstärke in Ampere) und die Formel nach jeder Größe umstellen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2025H-A3-ea",
+                "beleg:2026F-A1-ac"
+              ]
+            },
+            {
+              "id": "AP1-4-2-3-K2",
+              "text": "Du kannst die Leistungsaufnahme mehrerer Komponenten summieren, einen Zuschlag einrechnen und ein passendes Netzteil auswählen.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024F-A3-e"
+              ]
+            },
+            {
+              "id": "AP1-4-2-3-K3",
+              "text": "Du kannst die Energie aus Leistung und Zeit berechnen (W = P · t) und in kWh angeben.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A3-f",
+                "beleg:2021H-A2-a"
+              ]
+            },
+            {
+              "id": "AP1-4-2-3-K4",
+              "text": "Du kannst den Wirkungsgrad berücksichtigen: Die aufgenommene Leistung ist die abgegebene Leistung geteilt durch den Wirkungsgrad.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2021H-A2-a",
+                "beleg:2024F-A3-f"
+              ]
+            },
+            {
+              "id": "AP1-4-2-3-K5",
+              "text": "Du kannst Stromkosten aus Energie und Preis je kWh berechnen, auch bei nur teilweiser Auslastung.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A3-f"
+              ]
+            },
+            {
+              "id": "AP1-4-2-3-K6",
+              "text": "Du kannst rechnerisch nachweisen, dass Geräte eine Mehrfachsteckdose überlasten: zulässige Leistung (z. B. 16 A · 230 V = 3.680 W) mit der Summe der Leistungsaufnahmen vergleichen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2021H-A2-d"
+              ]
+            },
+            {
+              "id": "AP1-4-2-3-K7",
+              "text": "Du kannst begründen, warum ein Gerät an einem USB-Anschluss gestört arbeiten kann: Die benötigte Stromstärke (I = P / U) übersteigt, was der Anschluss liefert.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2025H-A3-eb",
+                "beleg:2025H-A3-ea"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Unterbrechungsfreie Stromversorgung (USV) und ihre Klassen gehören nicht hierher.",
+              "begruendung": "USV steht bei den Maßnahmen zur Sicherstellung des Betriebes im AP2-Katalog (AP2b.01.10.1).",
+              "katalog": [
+                "AP2b.01.10.1"
+              ]
+            }
+          ],
+          "hinweis": "Die Musterlösungen zu 2025H-A3-ea/-eb und 2026F-A1-ac fehlen; K1 und K7 folgen den Aufgabenstellungen."
+        },
+        {
+          "id": "AP1-4-2-4",
+          "titel": "Übertragungsraten und Übertragungszeiten berechnen",
+          "ziel": "Übertragungsdauern und benötigte Datenraten berechnen und dabei Bit und Byte, Dezimal- und Binärpräfixe sauber trennen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.03.4.1"
+            },
+            {
+              "id": "ANH.praefixe"
+            },
+            {
+              "id": "ZB.datendarstellung"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A4-e",
+            "2024F-A4-f",
+            "2026F-A1-ad"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-2-4-K1",
+              "text": "Du kannst die Übertragungsdauer aus Datenmenge und Übertragungsrate berechnen und in Minuten und Sekunden angeben.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A4-f",
+                "beleg:2022F-A4-e"
+              ]
+            },
+            {
+              "id": "AP1-4-2-4-K2",
+              "text": "Du kannst die Einheiten richtig umrechnen: Datenmenge in Byte mit Binärpräfix, Übertragungsrate in Bit je Sekunde mit Dezimalpräfix.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2024F-A4-f",
+                "katalog:ANH.praefixe"
+              ]
+            },
+            {
+              "id": "AP1-4-2-4-K3",
+              "text": "Du kannst die benötigte Datenrate eines Videostreams aus Auflösung, Farbtiefe, Bildrate und Komprimierung berechnen.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2026F-A1-ad"
+              ]
+            },
+            {
+              "id": "AP1-4-2-4-K4",
+              "text": "Du kannst die Übertragungszeit mit der passenden Richtung der Leitung berechnen, zum Beispiel mit dem Upload für eine Sicherung in die Cloud.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2022F-A4-e",
+                "beleg:2024F-A4-f"
+              ]
+            },
+            {
+              "id": "AP1-4-2-4-K5",
+              "text": "Du kannst beurteilen, ob eine Leitung für eine Übertragung in der gewünschten Zeit ausreicht.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.03.4.1"
+              ]
+            }
+          ],
+          "grenzen": []
+        }
+      ]
+    },
+    {
+      "id": "AP1-4-3",
+      "titel": "Ergonomie, Barrierefreiheit und Umwelt",
+      "satz": "Einen Arbeitsplatz gesund, für alle nutzbar und sparsam einrichten.",
+      "stichpunkte": [
+        {
+          "id": "AP1-4-3-1",
+          "titel": "Ergonomie am Arbeitsplatz",
+          "ziel": "Einen Bildschirmarbeitsplatz ergonomisch beurteilen und Maßnahmen zur Verbesserung nennen, auch für Notebooks.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.1",
+              "anteil": "Ergonomie"
+            },
+            {
+              "id": "AP1.04.02.3",
+              "anteil": "zusätzliche Hardware"
+            }
+          ],
+          "teilaufgaben": [
+            "2023H-A2-c",
+            "2026F-A3-ec"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-3-1-K1",
+              "text": "Du kannst ergonomische Anforderungen an einen Bildschirmarbeitsplatz nennen.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.01.1"
+              ]
+            },
+            {
+              "id": "AP1-4-3-1-K2",
+              "text": "Du kannst Maßnahmen nennen, um einen Bildschirmarbeitsplatz ergonomischer zu gestalten: höhenverstellbarer Tisch und Stuhl, externer Monitor mit Oberkante auf Augenhöhe, getrennte Tastatur und Maus, blendfreie Aufstellung, gute Beleuchtung, Kabel sicher verlegen.",
+              "stufe": 1,
+              "herkunft": [
+                "beleg:2026F-A3-ec",
+                "katalog:AP1.03.01.1"
+              ]
+            },
+            {
+              "id": "AP1-4-3-1-K3",
+              "text": "Du kannst einen beschriebenen Arbeitsplatz ergonomisch beurteilen.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.01.1"
+              ]
+            },
+            {
+              "id": "AP1-4-3-1-K4",
+              "text": "Du kannst Folgen schlechter Ergonomie nennen: Verspannungen, Augenbeschwerden, geringere Leistung.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.01.1"
+              ]
+            },
+            {
+              "id": "AP1-4-3-1-K5",
+              "text": "Du kannst beschreiben, wie ein Notebook-Arbeitsplatz ergonomischer wird: Dockingstation, externer Bildschirm, externe Tastatur und Maus.",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2023H-A2-c"
+              ]
+            }
+          ],
+          "grenzen": [
+            {
+              "text": "Arbeitsschutzvorschriften wie die Arbeitsstättenverordnung gehören nicht hierher.",
+              "begruendung": "Arbeitsstättenverordnung und Arbeitsplatzergonomie als Vorschrift stehen im WiSo-Katalog (WISO.03.01.5, WISO.03.01.7); AP1.03.01.1 nennt Ergonomie als Aspekt bei der Beurteilung von IT-Systemen.",
+              "katalog": [
+                "AP1.03.01.1",
+                "WISO.03.01.5",
+                "WISO.03.01.7"
+              ]
+            }
+          ],
+          "hinweis": "Die Musterlösung zu 2026F-A3-ec fehlt; K2 folgt der Aufgabenstellung und dem Foto."
+        },
+        {
+          "id": "AP1-4-3-2",
+          "titel": "Barrierefreiheit durch Hardware und Einstellungen",
+          "ziel": "Für eine Einschränkung passende Hardware und Einstellungen vorschlagen und begründen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.02.3"
+            },
+            {
+              "id": "AP1.03.03.2"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-4-3-2-K1",
+              "text": "Du kannst Hardware nennen, die den Zugang erleichtert: größerer Monitor, breitere Tastatur, Lautsprecher und Mikrofon.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.04.02.3"
+              ]
+            },
+            {
+              "id": "AP1-4-3-2-K2",
+              "text": "Du kannst Einstellungen nennen, die den Zugriff auf Webseiten erleichtern.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.03.2"
+              ]
+            },
+            {
+              "id": "AP1-4-3-2-K3",
+              "text": "Du kannst Einstellungsmöglichkeiten für barrierefreien Zugriff erklären: Schriftgröße und Zoom, hoher Kontrast, Vorlesefunktion, Bedienung allein mit der Tastatur.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.2"
+              ]
+            },
+            {
+              "id": "AP1-4-3-2-K4",
+              "text": "Du kannst für eine beschriebene Einschränkung eine passende Unterstützung begründen.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.04.02.3",
+                "katalog:AP1.03.03.2"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Barrierefreie-Informationstechnik-Verordnung (BITV 2.0).",
+              "quellen": [
+                "lernzettel:fi-de-2024"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ],
+          "hinweis": "Barrierefreie Bildschirmmasken (AP1.04.07.3) stehen im Ordner Programmieren und Modellieren."
+        },
+        {
+          "id": "AP1-4-3-3",
+          "titel": "Energieeffizienz, Gütesiegel und ökologische Aspekte",
+          "ziel": "IT-Systeme nach Energieverbrauch, Siegeln und Umweltwirkung beurteilen und Energiekosten senken.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.1",
+              "anteil": "Energieverbrauch, Nutzungsdauer, Recycling"
+            },
+            {
+              "id": "AP1.03.03.3"
+            }
+          ],
+          "teilaufgaben": [
+            "2021H-A2-c",
+            "2024H-A4-e"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-3-3-K1",
+              "text": "Du kannst ökologische Gesichtspunkte bei der Auswahl eines IT-Systems nennen: Energieverbrauch, Nutzungsdauer, Recyclingfähigkeit.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.01.1"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K2",
+              "text": "Du kannst erklären, wozu Gütesiegel für Energieeffizienz dienen.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.3"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K3",
+              "text": "Du kannst Beispiele für Siegel nennen: EU-Energielabel, Energy Star, Blauer Engel, TCO Certified, 80 PLUS für Netzteile.",
+              "stufe": 1,
+              "herkunft": [
+                "katalog:AP1.03.03.3"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K4",
+              "text": "Du kannst eine Neuanschaffung ökologisch beurteilen: geringerer Verbrauch und weniger Ausschuss des neuen Geräts gegen Herstellungsaufwand und Entsorgung des alten.",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A4-e",
+                "katalog:AP1.03.01.1"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K5",
+              "text": "Du kannst Vorschläge machen, die Energiekosten eines Arbeitsplatzes zu senken: schaltbare Steckdosen gegen Standby, Geräte mit gutem Energielabel, Thin Clients, Energiesparmodus.",
+              "stufe": 3,
+              "herkunft": [
+                "beleg:2021H-A2-c"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K6",
+              "text": "Du kannst anhand von Energielabel und Leistungsaufnahme beurteilen, welches Gerät energieeffizienter ist.",
+              "stufe": 4,
+              "herkunft": [
+                "katalog:AP1.03.03.3"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "hinweis": "Ökologische Unternehmensziele (AP1.07.02.2) stehen im Ordner Kunde, Markt und Unternehmen."
+        }
+      ]
+    }
+  ],
+  "alt_neu": {
+    "koennen": [
+      {
+        "alt": "AP1-4-1-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-1-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-1-K2",
+        "status": "angepasst",
+        "neu": "AP1-4-1-1-K2",
+        "grund": "ein Operator (F1): begründet auswählen; Beispiel aus 2023F-A1-c"
+      },
+      {
+        "alt": "AP1-4-1-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-4-1-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-4-1-1-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-1-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-1-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-2-K3",
+        "status": "übernommen",
+        "neu": "AP1-4-1-2-K3",
+        "grund": "Beleg 2024H-A3-ba"
+      },
+      {
+        "alt": "AP1-4-1-2-K4",
+        "status": "angepasst",
+        "neu": "AP1-4-1-2-K4",
+        "grund": "ein Operator (F1): nennen; Eingrenzen jetzt in K5"
+      },
+      {
+        "alt": "AP1-4-1-2-K5",
+        "status": "angepasst",
+        "neu": "AP1-4-1-2-K5",
+        "grund": "„beschreiben“ wie in 2026H-A2-bb statt „Du kennst“"
+      },
+      {
+        "alt": "AP1-4-1-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-1-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-1-3-K2",
+        "grund": "um kompakte Bauform ergänzt (2024H-A3-bc)"
+      },
+      {
+        "alt": "AP1-4-1-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-4-1-3-K3",
+        "grund": "Herkunft regel:P-GESCHWISTER (Gegenstück zu den belegten SSD-Vorteilen)"
+      },
+      {
+        "alt": "AP1-4-1-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-4-1-3-K4",
+        "grund": "jetzt belegt (2022F-A2-d)"
+      },
+      {
+        "alt": "AP1-4-1-4-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-1-4-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-4-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-1-4-K2",
+        "grund": "Belege 2024F-A1-c, 2025F-A1-b, 2022F-A2-e"
+      },
+      {
+        "alt": "AP1-4-1-4-K3",
+        "status": "übernommen",
+        "neu": "AP1-4-1-4-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-4-K4",
+        "status": "übernommen",
+        "neu": "AP1-4-1-4-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-1-4-K5",
+        "status": "angepasst",
+        "neu": "AP1-4-1-4-K5",
+        "grund": "um den Vorteil ergänzt (2026F-A1-ca)"
+      },
+      {
+        "alt": "AP1-4-2-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-2-1-K1",
+        "grund": "Herkunft katalog:ZB.datendarstellung"
+      },
+      {
+        "alt": "AP1-4-2-1-K2",
+        "status": "angepasst",
+        "neu": "AP1-4-2-1-K2",
+        "grund": "„Du kannst …“ statt „Du kennst“"
+      },
+      {
+        "alt": "AP1-4-2-1-K3",
+        "status": "übernommen",
+        "neu": "AP1-4-2-1-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-1-K4",
+        "status": "angepasst",
+        "neu": "AP1-4-2-1-K4",
+        "grund": "um „begründen“ ergänzt (2026H-A2-a)"
+      },
+      {
+        "alt": "AP1-4-2-1-K5",
+        "status": "übernommen",
+        "neu": "AP1-4-2-1-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-2-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-2-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-2-K3",
+        "status": "verschoben",
+        "neu": "AP1-4-2-4-K1",
+        "grund": "Übertragungsraten bekommen einen eigenen Stichpunkt (F3)"
+      },
+      {
+        "alt": "AP1-4-2-2-K4",
+        "status": "verschoben",
+        "neu": "AP1-4-2-4-K2",
+        "grund": "Übertragungsraten bekommen einen eigenen Stichpunkt (F3); „Du kannst … umrechnen“ statt „Du achtest“"
+      },
+      {
+        "alt": "AP1-4-2-2-K5",
+        "status": "übernommen",
+        "neu": "AP1-4-2-2-K5",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-2-K6",
+        "status": "übernommen",
+        "neu": "AP1-4-2-2-K6",
+        "grund": "jetzt belegt (2022H-A2-ba)"
+      },
+      {
+        "alt": "AP1-4-2-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-2-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-2-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-3-K3",
+        "status": "übernommen",
+        "neu": "AP1-4-2-3-K3",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-3-K4",
+        "status": "übernommen",
+        "neu": "AP1-4-2-3-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-2-3-K5",
+        "status": "übernommen",
+        "neu": "AP1-4-2-3-K5",
+        "grund": "um Auslastung ergänzt (2024F-A3-f)"
+      },
+      {
+        "alt": "AP1-4-3-1-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-3-1-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-3-1-K2",
+        "status": "angepasst",
+        "neu": "AP1-4-3-1-K2",
+        "grund": "„Du kannst Maßnahmen nennen“ statt „Du kennst“"
+      },
+      {
+        "alt": "AP1-4-3-1-K3",
+        "status": "angepasst",
+        "neu": "AP1-4-3-1-K3",
+        "grund": "ein Operator (F1): beurteilen"
+      },
+      {
+        "alt": "AP1-4-3-1-K4",
+        "status": "übernommen",
+        "neu": "AP1-4-3-1-K4",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-3-2-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-3-2-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-3-2-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-3-2-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-3-2-K3",
+        "status": "angepasst",
+        "neu": "AP1-4-3-2-K3",
+        "grund": "„erklären“ statt „Du kennst“"
+      },
+      {
+        "alt": "AP1-4-3-2-K4",
+        "status": "angepasst",
+        "neu": "AP1-4-3-2-K4",
+        "grund": "ein Operator (F1): begründen"
+      },
+      {
+        "alt": "AP1-4-3-3-K1",
+        "status": "übernommen",
+        "neu": "AP1-4-3-3-K1",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-3-3-K2",
+        "status": "übernommen",
+        "neu": "AP1-4-3-3-K2",
+        "grund": ""
+      },
+      {
+        "alt": "AP1-4-3-3-K3",
+        "status": "angepasst",
+        "neu": "AP1-4-3-3-K3",
+        "grund": "„nennen“ statt „Du kennst“, 80 PLUS ergänzt"
+      },
+      {
+        "alt": "AP1-4-3-3-K4",
+        "status": "angepasst",
+        "neu": "AP1-4-3-3-K4",
+        "grund": "„beurteilen“ statt „abwägen“, Beispiele aus 2024H-A4-e"
+      }
+    ],
+    "rahmen": [
+      {
+        "alt": "AP1-4-1-1",
+        "satz": "Es geht um Eignung und Begründung, nicht um technische Einzelheiten der Geräte.",
+        "status": "übernommen",
+        "grund": "Beschreibt den Schwerpunkt; die Kenngrößen stehen in AP1-4-1-2 und AP1-4-1-3."
+      },
+      {
+        "alt": "AP1-4-1-4",
+        "satz": "das Erkennen von Steckern und Buchsen steht dort nicht, kam aber … vor.",
+        "status": "angepasst",
+        "grund": "Belegt (2024F-A1-c, 2025F-A1-b, 2022F-A2-e) und damit Kern."
+      },
+      {
+        "alt": "AP1-4-3-1",
+        "satz": "die verlangte Tiefe ist nicht belegt.",
+        "status": "gestrichen",
+        "grund": "E6; Katalogtiefe Stufe 4 (beurteilen), belegt 2023H-A2-c und 2026F-A3-ec."
+      }
+    ]
+  },
+  "meta": {
+    "schicht": "3+4",
+    "regelwerk_version": "1.2",
+    "stand": "2026-10-13",
+    "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-4-1-5 (Hardware einbauen), AP1-4-1-6 (Kennzeichnung, Sensoren) und AP1-4-2-4 (Übertragungsraten), weil Stichpunkte sonst über 7 Aussagen gekommen wären (F3). AP1.03.01.2 und AP1.03.03.1 sind mit AP1-5 und AP1-6 geteilt.",
+    "kerntest": {
+      "stand": "2026-10-13",
+      "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+      "ergebnis": "Alle 53 Teilaufgaben des Ordners gegen ihre Musterlösung gelesen; Lücken beim Bau geschlossen (CPU-Einbau und Wärmeleitpaste 2022F-A2, Dual Channel, Hyper-Threading und Cache, M.2 gegen SATA, USB-C, QR/RFID, Mehrfachsteckdose 2021H-A2-d, Energiekosten senken 2021H-A2-c, Tablet als Bildschirmarbeitsplatz 2023H-A2-b, Videostream 2026F-A1-ad, Komprimierung 2025H-A2-cb, ASCII gegen Binärdatei 2024F-A3-c). Ohne Musterlösung (nur Aufgabe geprüft): 2025H-A2-ca/-cb, 2025H-A3-ea/-eb, 2026F-A1-ab bis -cc, 2026F-A3-ec."
+    },
+    "hinweisquellen": {
+      "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitte Hardware (inkl. Arbeitsplatz) und Multimedia",
+      "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
+      "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 1.2, 1.3, 2.1–2.3, 2.5, 2.8–2.11, 4.1",
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Installation von Hardware, IT-Grundkenntnisse (Rechnen), Schnittstellen, Prozessoren und Speicher, USV, Barrierefreiheit, Nachhaltigkeit"
+    },
+    "hinweisabgleich": {
+      "stand": "2026-10-13",
+      "umfang": "ganzer Ordner",
+      "vorgehen": "Jedes in den Hinweisquellen genannte Thema des Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als „Ordner“ (P23).",
+      "themen": [
+        {
+          "thema": "Geräteklassen, mobile und stationäre Arbeitsplätze, Thin Client",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-1-K1",
+            "AP1-4-1-1-K2",
+            "AP1-4-1-1-K4"
+          ]
+        },
+        {
+          "thema": "Fat Client, Zero Client",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-1"
+          ],
+          "notiz": "P17"
+        },
+        {
+          "thema": "CPU, Mainboard, RAM, Grafikkarte, Netzteil; RAM-Arten, Dual Channel, Cache",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-2-K1",
+            "AP1-4-1-2-K3",
+            "AP1-4-1-2-K6",
+            "AP1-4-1-5-K4"
+          ]
+        },
+        {
+          "thema": "Prozessorarchitekturen (von Neumann, Harvard, CISC/RISC), Busse, DDR-Datenrate, VRAM",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-2"
+          ]
+        },
+        {
+          "thema": "Wärmeleitpaste, CPU-Einbau",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-5-K1",
+            "AP1-4-1-5-K3"
+          ]
+        },
+        {
+          "thema": "Bootvorgang, POST",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-5"
+          ],
+          "notiz": "BIOS/UEFI (AP1.04.01.3)"
+        },
+        {
+          "thema": "HDD, SSD, Formfaktoren, SATA, M.2, NVMe",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-3-K1",
+            "AP1-4-1-3-K2",
+            "AP1-4-1-3-K4"
+          ]
+        },
+        {
+          "thema": "Hot Swap, Hot Spare, RAID, JBOD, NAS/SAN",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-4-1-3"
+          ],
+          "notiz": "B3; AP2b.01.10.2, AP2b.02.06.2"
+        },
+        {
+          "thema": "S.M.A.R.T.",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-4-1-3"
+          ],
+          "notiz": "AP2b.01.11.2"
+        },
+        {
+          "thema": "Peripherie: Drucker, Scanner, Monitore; Schnittstellen USB, HDMI, DisplayPort",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-4-K1",
+            "AP1-4-1-4-K2",
+            "AP1-4-1-4-K6"
+          ]
+        },
+        {
+          "thema": "Daisy Chaining",
+          "quellen": [
+            "podcast:pruefungsthemen"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-4-K5",
+            "AP1-4-1-4-K7"
+          ]
+        },
+        {
+          "thema": "Kenngrößen von Monitoren und Druckern",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-4"
+          ],
+          "notiz": "P17"
+        },
+        {
+          "thema": "Bluetooth",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-6"
+          ],
+          "notiz": "Symbol ist hier Kern (AP1-4-1-4-K3)"
+        },
+        {
+          "thema": "Barcodes, QR-Codes, RFID",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-1-6-K1",
+            "AP1-4-1-6-K4"
+          ]
+        },
+        {
+          "thema": "Asset-Tag, Service-Tag; Industrie 4.0, MQTT",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-6"
+          ]
+        },
+        {
+          "thema": "USV und USV-Klassen",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-4-2-3"
+          ],
+          "notiz": "AP2b.01.10.1"
+        },
+        {
+          "thema": "Leistung, Energie, Stromkosten (P = U · I, W = P · t), Wirkungsgrad",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-2-3-K1",
+            "AP1-4-2-3-K3",
+            "AP1-4-2-3-K4",
+            "AP1-4-2-3-K5"
+          ]
+        },
+        {
+          "thema": "Zahlensysteme, Zweierpotenzen, Bit und Byte, Präfixe",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-2-1-K1",
+            "AP1-4-2-1-K2",
+            "AP1-4-2-1-K3",
+            "AP1-4-2-1-K4"
+          ]
+        },
+        {
+          "thema": "ASCII, Dateiformate",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-2-1-K6"
+          ]
+        },
+        {
+          "thema": "Oktalsystem, BCD, Fest- und Gleitkommazahlen, Unicode/UTF-8",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-1"
+          ]
+        },
+        {
+          "thema": "Dateigrößen berechnen, Übertragungsdauer berechnen",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-2-2-K1",
+            "AP1-4-2-4-K1"
+          ]
+        },
+        {
+          "thema": "Kompression, Bild- und Audioformate, OCR",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-2"
+          ],
+          "notiz": "Komprimierung als Prozentrechnung ist Kern (AP1-4-2-2-K7)"
+        },
+        {
+          "thema": "Prüfziffern (EAN, IBAN)",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-6"
+          ]
+        },
+        {
+          "thema": "Ergonomie, Ergonomierichtlinien",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-3-1-K1",
+            "AP1-4-3-1-K2",
+            "AP1-4-3-1-K3"
+          ]
+        },
+        {
+          "thema": "Arbeitsstättenverordnung",
+          "quellen": [
+            "podcast:themen-ap1"
+          ],
+          "ring": "Außen",
+          "wo": [
+            "AP1-4-3-1"
+          ],
+          "notiz": "WISO.03.01.5"
+        },
+        {
+          "thema": "Barrierefreiheit: Hardware und Einstellungen",
+          "quellen": [
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2025",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-3-2-K1",
+            "AP1-4-3-2-K3"
+          ]
+        },
+        {
+          "thema": "BITV 2.0",
+          "quellen": [
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-2"
+          ]
+        },
+        {
+          "thema": "Green IT, Recycling, Energie sparen, Nachhaltigkeit, Gütesiegel",
+          "quellen": [
+            "podcast:pruefungsthemen",
+            "podcast:themen-ap1",
+            "lernzettel:fi-de-2024"
+          ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-4-3-3-K1",
+            "AP1-4-3-3-K3",
+            "AP1-4-3-3-K5"
+          ]
+        },
+        {
+          "thema": "Künstliche Intelligenz (Grundbegriffe)",
+          "quellen": [
+            "lernzettel:fi-de-2025"
+          ],
+          "ring": "Ordner",
+          "wo": [
+            "AP1-5"
+          ],
+          "notiz": "KI-Software (AP1.03.01.5)"
+        }
+      ]
+    },
+    "geschwister": [
+      {
+        "katalog": "AP1.04.02.2",
+        "paar": "mobile und stationäre Arbeitsplatzsysteme",
+        "abgedeckt": {
+          "mobil": [
+            "AP1-4-1-1-K3",
+            "AP1-4-1-1-K7"
+          ],
+          "stationär": [
+            "AP1-4-1-1-K3"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.03.1",
+        "paar": "Datenspeicher SSD/HDD",
+        "abgedeckt": {
+          "SSD": [
+            "AP1-4-1-3-K2"
+          ],
+          "HDD": [
+            "AP1-4-1-3-K3"
+          ]
+        }
+      },
+      {
+        "katalog": "ANH.praefixe",
+        "paar": "Dezimal- und Binärpräfixe",
+        "abgedeckt": {
+          "dezimal": [
+            "AP1-4-2-1-K3",
+            "AP1-4-2-1-K7"
+          ],
+          "binär": [
+            "AP1-4-2-1-K3",
+            "AP1-4-2-1-K4"
+          ]
+        }
+      },
+      {
+        "katalog": "ZB.datendarstellung",
+        "paar": "binär/hexadezimal",
+        "abgedeckt": {
+          "binär": [
+            "AP1-4-2-1-K1"
+          ],
+          "hexadezimal": [
+            "AP1-4-2-1-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.03.4.2",
+        "paar": "Strom, Spannung, Leistung, Wirkungsgrad, Energie, Energiekosten",
+        "abgedeckt": {
+          "P = U · I": [
+            "AP1-4-2-3-K1"
+          ],
+          "Wirkungsgrad": [
+            "AP1-4-2-3-K4"
+          ],
+          "Energie": [
+            "AP1-4-2-3-K3"
+          ],
+          "Energiekosten": [
+            "AP1-4-2-3-K5"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.03.4.1",
+        "paar": "Übertragungsraten, -zeiten, Datenmengen",
+        "abgedeckt": {
+          "Datenmengen": [
+            "AP1-4-2-2-K1"
+          ],
+          "Übertragungsrate": [
+            "AP1-4-2-4-K3"
+          ],
+          "Übertragungszeit": [
+            "AP1-4-2-4-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.04.02.3",
+        "paar": "größerer Monitor, breitere Tastatur, Lautsprecher/Mikrofon",
+        "abgedeckt": {
+          "alle": [
+            "AP1-4-3-2-K1"
+          ]
+        }
+      },
+      {
+        "katalog": "AP1.03.01.1",
+        "paar": "funktional, ökonomisch, ökologisch",
+        "abgedeckt": {
+          "funktional (Ergonomie)": [
+            "AP1-4-3-1-K3"
+          ],
+          "ökologisch": [
+            "AP1-4-3-3-K1",
+            "AP1-4-3-3-K4"
+          ]
+        }
+      }
+    ]
+  }
+}
