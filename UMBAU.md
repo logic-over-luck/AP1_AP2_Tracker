@@ -409,7 +409,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       Proxy, Topologien, Netzausdehnung, DHCP-Ablauf, DNS-Eintragsarten, WLAN-Sicherheitsverfahren, VPN-Verfahren);
       AAAA-Record nach R1 von Kür nach Außen. Geschwister-Prüfung (R4) systematisch: 14 Paare. Prüfskript prüft und
       berichtet R3 und R4. Stand: 13 Stichpunkte, 80 Können-Aussagen, 17 Kür-Einträge.
-- [ ] **Schritt 3b – Abnahme durch den Projektinhaber:** Bericht lesen, Stichproben, entscheiden.
+- [x] **Schritt 3b – Abnahme durch den Projektinhaber:** AP1 nach Gegenprüfung (3d) in der Vorschau abgenommen (14.10.2026).
       Danach Schicht 5 für den Ordner (Karten prüfen/umhängen/neu, Lernprompts) und unabhängiger KI-Prüfer (K1–K3).
 - [x] **Schritt 4 – Rest von AP1**, Ordner für Ordner nach dem Muster des Probelaufs (alle 8 Ordner gebaut, Abnahme offen wie 3b)
   - [x] **AP1-1 Projektmanagement und Qualität (13.10.2026):** `umbau/lernplan/ap1/AP1-1.json`, Bericht
