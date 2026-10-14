@@ -484,11 +484,15 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       außer AP1-6-1-3-K5 (Symbole, `nicht_abgefragt`). Vorschau und Test (`tests/vorschau-ap1.test.mjs`) nehmen die
       neuen Dateien. Berichte `umbau/berichte/AP1-<n>-karten.md`. Hinweis: npm-Registry war gesperrt, `Lernstudio.html`
       wurde durch Austausch des Datenliterals erzeugt (Code unverändert); `tests/sql.test.mjs` braucht sql.js.
-- [x] **Schritt 3f – Kurzfassungen AP1 (Wunsch Projektinhaber, 14.10.2026):** je Stichpunkt das Wissen zu den
-      Können-Aussagen, kompakt mit allen Details, in `umbau/kurz/ap1/AP1-<n>.json` (117 Stichpunkte). Die Vorschau
-      zeigt sie unter dem Ziel (`neu.kurz`, `BlockKarte.jsx`); Test in `tests/vorschau-ap1.test.mjs`. Die Änderung am
-      App-Code ist in `Lernstudio.html` von Hand nachgezogen, weil kein Build möglich war – beim nächsten
-      `npm run build` entsteht derselbe Stand aus dem Quellcode.
+- [x] **Schritt 3f – Teaser und Erklärungen AP1 (Wunsch Projektinhaber, 14.10.2026):** in
+      `umbau/kurz/ap1/AP1-<n>.json` zwei Felder. `teaser`: je Stichpunkt ein kurzer Einstieg (1–2 Sätze, oft mit einer
+      Frage), worum es geht – die Kurzfassung (116 Stichpunkte). `erklaerung`: je Können-Aussage die ausführliche
+      Erklärung mit Beispiel – die Langfassung (604 Aussagen). Die Vorschau zeigt den Teaser unter dem Ziel
+      (`neu.kurz`), die Erklärung lässt sich an jeder Aussage unter „Das musst du können“ aufklappen
+      (`erklaerung`, `<details class="np-erkl">` in `BlockKarte.jsx`). Test in `tests/vorschau-ap1.test.mjs`
+      (jeder Stichpunkt hat einen Teaser, jede Aussage eine Erklärung, keine fremden IDs). Schicht 5: hängt an den
+      Lernplänen, ändert sie aber nicht (AP1 bleibt eingefroren). Die erste Fassung (ein langer Text je Stichpunkt)
+      ist ersetzt.
 - [x] **Schritt 3g – AP1 mit Quellen nachgeprüft (14.10.2026):** Fundament aus dem Katalog neu erzeugt (T0, T0c grün),
       11 AP1-Abschriften (T-1), Zuordnung (T2, goldene Regel), alle 8 Ordner, Raum-Prüfung (T1, T2b, T8) und alle
       185 Tests grün; keine Datei hat sich dabei geändert. `Lernstudio.html` jetzt echt mit `npm run build` gebaut

@@ -150,7 +150,7 @@ test('Teaser und Erklärungen: vollständig je Ordner, keine fremden IDs', async
   if (!fs.existsSync(ordner)) return;
   for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f))) {
     const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
-    if (!d.teaser) continue; // alte Form (nur kurz), Übergang
+    assert.ok(d.teaser && d.erklaerung, `${f}: Felder teaser und erklaerung fehlen`);
     const plan = plaene.find((p) => p.oberblock.id === d.ordner);
     assert.ok(plan, `${f}: kein Lernplan für ${d.ordner}`);
     const sps = plan.themenbloecke.flatMap((t) => t.stichpunkte);

@@ -57,7 +57,7 @@ export function ladeKurzAp1(wurzel) {
   if (fs.existsSync(ordner)) {
     for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
       const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
-      for (const [id, text] of Object.entries(d.teaser ?? d.kurz ?? {})) teaser.set(id, text); // kurz: alte Form (Übergang)
+      for (const [id, text] of Object.entries(d.teaser ?? {})) teaser.set(id, text);
       for (const [id, text] of Object.entries(d.erklaerung ?? {})) erklaerung.set(id, text);
     }
   }
