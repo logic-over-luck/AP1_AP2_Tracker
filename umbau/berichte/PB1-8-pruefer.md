@@ -18,3 +18,20 @@
 | 10 | PB1-8-1-2 | zur Kür (Frage) | Der aktuelle Rechtsrahmen fehlt: Barrierefreiheitsstärkungsgesetz (in Kraft seit 28.06.2025, setzt den European Accessibility Act um), BITV 2.0, WCAG 2.1/2.2 bzw. EN 301 549. Der Katalog nennt nur „Barrierefreiheit“. | Als Kür aufnehmen (Hinweisquelle nötig); keine Pflicht. | niedrig |
 
 **Bilanz PB1-8:** 10 Funde (davon 1 hoch). Lücken: 0. Kann weg bzw. zusammengelegt: 6 Aussagen (Nr. 2 [−2], 5, 6, 7, 8). Vorher 19 → nach Vorschlägen etwa 13.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: `baut_auf` AP1-8-4-3, Mock-up-Aussage auf das Neue (Darstellungsform, Verbesserung) ausgerichtet |
+| 2 | umgesetzt: drei Mock-up-Aussagen zu einer, alle drei Belege daran |
+| 3 | umgesetzt: auf Eingabeelemente und Pflichtfelder gekürzt |
+| 4 | umgesetzt: auf Alternativtexte, Feldbeschriftungen, Fehlermeldungen gekürzt |
+| 5 | umgesetzt: Schrift und Farbe in einer Aussage |
+| 6 | umgesetzt: Vorteile in der Prototyping-Aussage |
+| 7 | umgesetzt: benennen und begründet entscheiden in einer Aussage (Stufe 4) |
+| 8 | umgesetzt: Mängel-Beschreibung als Beispiel im Beurteilen |
+| 9 | belassen (Stufe 1 passt zum Inhalt) |
+| 10 | umgesetzt als Kür (P35 Nr. 6) |
+
+Gliederung: Gestaltung und Mock-ups in einem Stichpunkt (F3). Ergebnis: 19 → 13 Aussagen.

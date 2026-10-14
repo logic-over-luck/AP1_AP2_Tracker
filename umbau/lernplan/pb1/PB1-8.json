@@ -70,9 +70,10 @@
       },
       {
        "id": "PB1-8-1-1-K4",
-       "text": "Du kannst Mängel eines Oberflächenentwurfs aus UI/UX-Sicht beschreiben, zum Beispiel uneinheitliche Ausrichtung, platzraubend untereinander gesetzte Links, Links, die unnötig neue Fenster öffnen, doppelte oder missverständliche Elemente.",
-       "stufe": 2,
+       "text": "Du kannst die Softwareergonomie einer Oberfläche anhand dieser Anforderungen beurteilen, zum Beispiel Mängel eines Entwurfs aus UI/UX-Sicht wie uneinheitliche Ausrichtung, platzraubend untereinander gesetzte Links, Links, die unnötig neue Fenster öffnen, doppelte oder missverständliche Elemente.",
+       "stufe": 4,
        "herkunft": [
+        "katalog:AP2b.04.13",
         "katalog:AP2b.04.14.2",
         "beleg:2024S-PB1-A4-ba"
        ],
@@ -80,14 +81,6 @@
       },
       {
        "id": "PB1-8-1-1-K5",
-       "text": "Du kannst die Softwareergonomie einer Oberfläche anhand dieser Anforderungen beurteilen und Verbesserungen begründet vorschlagen.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2b.04.13"
-       ]
-      },
-      {
-       "id": "PB1-8-1-1-K6",
        "text": "Du kannst Möglichkeiten beschreiben, die Usability während der Entwicklung zu testen: Befragung von Testbenutzern, Beobachtung mit Aufzeichnung von Klicks und Wegen, Blickverlaufsmessung (Eye-Tracking), lautes Denken, Auswertung von Logdateien.",
        "stufe": 2,
        "herkunft": [
@@ -133,7 +126,7 @@
       },
       {
        "id": "PB1-8-1-2-K2",
-       "text": "Du kannst Beispiele für inklusives Design bei der Schrift nennen: ausreichende Schriftgröße (im Fließtext etwa 16 Pixel und mehr), gut lesbare Schriftarten, begrenzte Zeilenlänge, großzügiger Zeilenabstand.",
+       "text": "Du kannst Beispiele für inklusives Design bei Schrift und Farbe nennen: ausreichende Schriftgröße (im Fließtext etwa 16 Pixel und mehr), gut lesbare Schriftarten, begrenzte Zeilenlänge, großzügiger Zeilenabstand; keine problematischen Farbkombinationen wie Rot-Grün, Farbauswahl zusätzlich beschriften (Kontraste und „nie nur über Farbe“ aus AP1).",
        "stufe": 1,
        "herkunft": [
         "beleg:2022W-PB1-A3-b"
@@ -141,15 +134,7 @@
       },
       {
        "id": "PB1-8-1-2-K3",
-       "text": "Du kannst Beispiele für inklusives Design bei der Farbgebung nennen: deutliche Kontraste, keine problematischen Farbkombinationen wie Rot-Grün, Informationen nie nur über Farbe vermitteln, Farbauswahl zusätzlich beschriften.",
-       "stufe": 1,
-       "herkunft": [
-        "beleg:2022W-PB1-A3-b"
-       ]
-      },
-      {
-       "id": "PB1-8-1-2-K4",
-       "text": "Du kannst eine Bildschirmmaske barrierefrei entwerfen: Bedienung allein mit der Tastatur, Alternativtexte für Bilder, Beschriftungen für alle Eingabefelder, skalierbare Schrift, verständliche Fehlermeldungen.",
+       "text": "Du kannst eine Bildschirmmaske über die Grundregeln aus AP1 (Tastaturbedienung, skalierbare Schrift) hinaus barrierefrei entwerfen: Alternativtexte für Bilder, Beschriftungen für alle Eingabefelder, verständliche Fehlermeldungen.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.02.3"
@@ -159,12 +144,21 @@
      "baut_auf": [
       "AP1-8-4-3",
       "AP1-4-3-2"
+     ],
+     "kuer": [
+      {
+       "text": "Rechtsrahmen der Barrierefreiheit: Barrierefreiheitsstärkungsgesetz (seit 28.06.2025, setzt den European Accessibility Act um), BITV 2.0 für öffentliche Stellen, WCAG 2.1/2.2 bzw. EN 301 549 als technischer Maßstab.",
+       "quellen": [
+        "podcast:themen-pb1"
+       ],
+       "grund": "Der Katalog nennt nur „Barrierefreiheit“; aktueller Rechtsstand als Kür (P30, P35)."
+      }
      ]
     },
     {
      "id": "PB1-8-1-3",
-     "titel": "Benutzeroberflächen gestalten: Elemente und Darstellungsformen",
-     "ziel": "Gängige Gestaltungselemente einsetzen, Darstellungsformen für Übersichten wählen und begründen und eine Oberfläche nach Anforderungen gestalten.",
+     "titel": "Oberflächen gestalten: Elemente, Darstellungsformen, Mock-ups und Prototypen",
+     "ziel": "Gängige Gestaltungselemente einsetzen, Darstellungsformen für Übersichten wählen und begründen, eine Oberfläche nach Anforderungen gestalten, Mock-ups skizzieren und Prototyping erklären.",
      "gebiete": [
       "G.PB1.03"
      ],
@@ -184,12 +178,22 @@
       {
        "id": "AP2b.04.13",
        "anteil": "begründete Wahl"
+      },
+      {
+       "id": "AP2b.04.15"
+      },
+      {
+       "id": "AP2b.03.02.4"
       }
      ],
      "teilaufgaben": [
       "2022W-PB1-A3-a",
       "2023W-PB1-A4-ba",
-      "2023W-PB1-A4-bb"
+      "2023W-PB1-A4-bb",
+      "2023W-PB1-A4-bc",
+      "2024S-PB1-A4-bb",
+      "2025S-PB1-A2-b",
+      "2025W-PB1-A3-c"
      ],
      "koennen": [
       {
@@ -203,105 +207,49 @@
       },
       {
        "id": "PB1-8-1-3-K2",
-       "text": "Du kannst Darstellungsformen für eine Übersicht von Datensätzen benennen: Liste oder Tabelle, Kacheln, Karte.",
-       "stufe": 1,
-       "herkunft": [
-        "katalog:AP2b.04.14",
-        "beleg:2023W-PB1-A4-ba"
-       ]
-      },
-      {
-       "id": "PB1-8-1-3-K3",
-       "text": "Du kannst dich für eine Darstellungsform entscheiden und die Wahl begründen: Liste für eine einfache, schnelle Übersicht, Kacheln für eine moderne Darstellung auf kleinen Bildschirmen, Karte für die geografische Einordnung.",
+       "text": "Du kannst Darstellungsformen für eine Übersicht von Datensätzen benennen (Liste oder Tabelle, Kacheln, Karte), dich für eine entscheiden und die Wahl begründen: Liste für eine einfache, schnelle Übersicht, Kacheln für eine moderne Darstellung auf kleinen Bildschirmen, Karte für die geografische Einordnung.",
        "stufe": 4,
        "herkunft": [
+        "katalog:AP2b.04.14",
         "katalog:AP2b.04.13",
+        "beleg:2023W-PB1-A4-ba",
         "beleg:2023W-PB1-A4-bb"
        ]
       },
       {
-       "id": "PB1-8-1-3-K4",
-       "text": "Du kannst eine Benutzeroberfläche nach Anforderungen gestalten: Elemente nach Aufgabe gruppieren, einheitlich ausrichten, passende Eingabeelemente wählen (Auswahlliste für vorgegebene Werte, Datumsauswahl), Pflichtfelder und Aktionen klar kennzeichnen, damit Bedienung (Usability) und Gesamteindruck (User Experience) stimmen.",
+       "id": "PB1-8-1-3-K3",
+       "text": "Du kannst eine Benutzeroberfläche über die Gestaltungsregeln aus AP1 (gruppieren, einheitlich anordnen) hinaus nach Anforderungen gestalten: passende Eingabeelemente wählen (Auswahlliste für vorgegebene Werte, Datumsauswahl), Pflichtfelder und Aktionen klar kennzeichnen, damit Bedienung (Usability) und Gesamteindruck (User Experience) stimmen.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.14",
         "katalog:AP2b.04.14.1",
         "katalog:AP2b.04.14.2"
        ]
-      }
-     ]
-    },
-    {
-     "id": "PB1-8-1-4",
-     "titel": "Mock-ups und Prototyping",
-     "ziel": "Mock-ups skizzieren und verbessern, Prototyping erklären und Vorteile früher Entwürfe nennen.",
-     "gebiete": [
-      "G.PB1.03"
-     ],
-     "bausteine": [
-      {
-       "id": "AP2b.04.15"
       },
       {
-       "id": "AP2b.03.02.4"
-      },
-      {
-       "id": "AP2b.04.14",
-       "anteil": "Entwurf umsetzen"
-      }
-     ],
-     "teilaufgaben": [
-      "2023W-PB1-A4-bc",
-      "2024S-PB1-A4-bb",
-      "2025S-PB1-A2-b",
-      "2025W-PB1-A3-c"
-     ],
-     "koennen": [
-      {
-       "id": "PB1-8-1-4-K1",
-       "text": "Du kannst ein Mock-up einer Bildschirmseite skizzieren, das alle verlangten Elemente enthält, zum Beispiel eine Eingabemaske für Patientendaten mit Auswahlliste für die hinterlegten Krankenkassen.",
+       "id": "PB1-8-1-3-K4",
+       "text": "Du kannst ein Mock-up einer Bildschirmseite skizzieren, das alle verlangten Elemente enthält, auch für eine gewählte Darstellungsform mit Beispieldatensätzen oder als Verbesserung eines mangelhaften Entwurfs, zum Beispiel eine Eingabemaske für Patientendaten mit Auswahlliste für die hinterlegten Krankenkassen.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.15",
         "katalog:AP2b.03.02.4",
-        "beleg:2025S-PB1-A2-b"
-       ]
-      },
-      {
-       "id": "PB1-8-1-4-K2",
-       "text": "Du kannst eine gewählte Darstellungsform mit Beispieldatensätzen als Skizze darstellen.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.15",
-        "beleg:2023W-PB1-A4-bc"
-       ]
-      },
-      {
-       "id": "PB1-8-1-4-K3",
-       "text": "Du kannst einen mangelhaften Entwurf als verbessertes Mock-up skizzieren und dabei die erkannten Mängel beheben.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.15",
+        "beleg:2025S-PB1-A2-b",
+        "beleg:2023W-PB1-A4-bc",
         "beleg:2024S-PB1-A4-bb"
        ]
       },
       {
-       "id": "PB1-8-1-4-K4",
-       "text": "Du kannst erklären, was Prototyping ist und wann es in der Konzeption sinnvoll ist: Eine vereinfachte Version eines Lösungsansatzes wird umgesetzt, um Aufwand, Machbarkeit oder Bedienung früh zu prüfen, besonders bei komplexen Aufgaben ohne Erfahrungswerte.",
+       "id": "PB1-8-1-3-K5",
+       "text": "Du kannst erklären, was Prototyping ist und wann es in der Konzeption sinnvoll ist: Eine vereinfachte Version eines Lösungsansatzes wird umgesetzt, um Aufwand, Machbarkeit oder Bedienung früh zu prüfen, besonders bei komplexen Aufgaben ohne Erfahrungswerte; Vorteile von Mock-ups und Prototypen sind frühe Rückmeldung des Kunden, sichtbare Missverständnisse vor der Programmierung und noch billige Änderungen.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.15",
         "beleg:2025W-PB1-A3-c"
        ]
-      },
-      {
-       "id": "PB1-8-1-4-K5",
-       "text": "Du kannst Vorteile von Mock-ups und Prototypen nennen: frühe Rückmeldung des Kunden, Missverständnisse werden vor der Programmierung sichtbar, Änderungen kosten noch wenig.",
-       "stufe": 1,
-       "herkunft": [
-        "katalog:AP2b.04.15"
-       ]
       }
+     ],
+     "baut_auf": [
+      "AP1-8-4-3"
      ]
     }
    ]
@@ -312,19 +260,20 @@
    {
     "alt": "AP2-1-5-1-K1",
     "status": "angepasst",
-    "neu": "PB1-8-1-2-K4",
+    "neu": "PB1-8-1-2-K3",
     "grund": "entwerfen (Katalog: Entwurf der Masken)"
    },
    {
     "alt": "AP2-1-5-1-K2",
     "status": "angepasst",
-    "neu": "PB1-8-1-2-K3",
+    "neu": "PB1-8-1-2-K2",
     "grund": "Beispiele laut 2022W-PB1-A3-b; Bedienung in bf4"
    },
    {
     "alt": "AP2-1-5-1-K3",
-    "status": "verschoben",
-    "neu": "PB1-8-1-1-K4"
+    "status": "angepasst",
+    "neu": "PB1-8-1-1-K4",
+    "grund": "Mängel beschreiben als Teil des Beurteilens"
    },
    {
     "alt": "AP2-1-5-1-K4",
@@ -341,36 +290,37 @@
    {
     "alt": "AP2-1-5-2-K1",
     "status": "angepasst",
-    "neu": "PB1-8-1-4-K1",
+    "neu": "PB1-8-1-3-K4",
     "grund": "Beispiel aus 2025S-PB1-A2-b"
    },
    {
     "alt": "AP2-1-5-2-K2",
     "status": "angepasst",
-    "neu": "PB1-8-1-4-K1",
+    "neu": "PB1-8-1-3-K4",
     "grund": "in mo1 aufgenommen"
    },
    {
     "alt": "AP2-1-5-2-K3",
-    "status": "verschoben",
-    "neu": "PB1-8-1-4-K3"
+    "status": "angepasst",
+    "neu": "PB1-8-1-3-K4",
+    "grund": "Verbesserung eines Entwurfs in der Mock-up-Aussage"
    },
    {
     "alt": "AP2-1-5-2-K4",
     "status": "angepasst",
-    "neu": "PB1-8-1-4-K5",
-    "grund": "mit Beispielen zusammengefasst"
+    "neu": "PB1-8-1-3-K5",
+    "grund": "Vorteile mit Prototyping zusammengefasst"
    },
    {
     "alt": "AP2-1-5-2-K5",
     "status": "angepasst",
-    "neu": "PB1-8-1-4-K5",
-    "grund": "in mo5 aufgenommen"
+    "neu": "PB1-8-1-3-K5",
+    "grund": "in mo4 aufgenommen"
    },
    {
     "alt": "AP2-1-5-2-K6",
     "status": "verschoben",
-    "neu": "PB1-8-1-4-K4"
+    "neu": "PB1-8-1-3-K5"
    }
   ],
   "rahmen": []
@@ -383,7 +333,7 @@
   "kerntest": {
    "stand": "2026-10-14",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Alle zwölf Teilaufgaben zu Oberflächen gegen die Musterlösungen gelesen (2025S ohne Lösungshinweise). Skizzen werden nach Vollständigkeit der verlangten Elemente und Behebung der Mängel bewertet; das steht in mo1 bis mo3."
+   "ergebnis": "Nach der unabhängigen Prüfung (umbau/berichte/PB1-8-pruefer.md) überarbeitet: Mock-ups je Fähigkeit statt je Teilaufgabe, Wiederholungen aus AP1-8-4-3 gekürzt. Alle zwölf Teilaufgaben zu Oberflächen gegen die Musterlösungen gelesen (2025S ohne Lösungshinweise). Skizzen werden nach Vollständigkeit der verlangten Elemente und Behebung der Mängel bewertet."
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
@@ -404,7 +354,7 @@
      "wo": [
       "PB1-8-1-1-K1",
       "PB1-8-1-1-K2",
-      "PB1-8-1-1-K6"
+      "PB1-8-1-1-K5"
      ]
     },
     {
@@ -416,8 +366,17 @@
      "wo": [
       "PB1-8-1-2-K1",
       "PB1-8-1-2-K2",
-      "PB1-8-1-2-K3",
-      "PB1-8-1-2-K4"
+      "PB1-8-1-2-K3"
+     ]
+    },
+    {
+     "thema": "Barrierefreiheitsstärkungsgesetz, WCAG",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-2"
      ]
     },
     {
@@ -428,7 +387,7 @@
      "ring": "Kern",
      "wo": [
       "PB1-8-1-3-K1",
-      "PB1-8-1-3-K4",
+      "PB1-8-1-3-K3",
       "PB1-8-1-1-K4"
      ]
     },
@@ -439,9 +398,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-8-1-4-K1",
-      "PB1-8-1-4-K2",
-      "PB1-8-1-4-K3"
+      "PB1-8-1-3-K4"
      ]
     },
     {
@@ -451,7 +408,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-8-1-4-K4"
+      "PB1-8-1-3-K5"
      ]
     },
     {
@@ -487,11 +444,11 @@
     "abgedeckt": {
      "Softwareergonomie": [
       "PB1-8-1-1-K2",
-      "PB1-8-1-1-K5"
+      "PB1-8-1-1-K4"
      ],
      "Barrierefreiheit": [
       "PB1-8-1-2-K1",
-      "PB1-8-1-2-K4"
+      "PB1-8-1-2-K3"
      ]
     }
    },
@@ -503,8 +460,8 @@
       "PB1-8-1-1-K3"
      ],
      "beurteilen": [
-      "PB1-8-1-1-K5",
-      "PB1-8-1-3-K3"
+      "PB1-8-1-1-K4",
+      "PB1-8-1-3-K2"
      ]
     }
    }
