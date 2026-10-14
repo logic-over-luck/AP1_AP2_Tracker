@@ -538,6 +538,9 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-5 Objektorientierter Entwurf und Entwurfsmuster (14.10.2026):** 2 Themenblöcke, 6 Stichpunkte,
         29 Können-Aussagen. Alte AP2-Aussagen: 22 angepasst, 3 verschoben, 4 für PB2 (Klassen erweitern, Ausnahmen im Code
         erkennen). Pseudocode-Teilaufgaben in PB1 setzen OO-Methoden um und bauen auf AP1-8-2-2 auf.
+  - [x] **PB1-6 Datenmodellierung und Datenhaltung (14.10.2026):** 1 Themenblock, 5 Stichpunkte, 25 Können-Aussagen.
+        Alte AP2-Aussagen: 26 angepasst, 3 verschoben, 2 für PB2 (SQL-Datentypen, Datenqualität beim Import); zwei weitere
+        Aussagen aus AP2-4-1-2 (Validierung, Schemaprüfung) sortiert PB1-7 ein.
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 

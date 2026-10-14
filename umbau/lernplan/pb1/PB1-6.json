@@ -1,0 +1,840 @@
+{
+ "oberblock": {
+  "id": "PB1-6",
+  "titel": "Datenmodellierung und Datenhaltung",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-6-1",
+   "titel": "Datenmodelle und Datenhaltung",
+   "satz": "Aus fachlichen Anforderungen ein Datenmodell ableiten: ER-Modell, relationales Modell, Normalisierung, Datentypen und Integrität, dazu die Wahl zwischen relationaler und NoSQL-Datenbank. Einfache ER-Modelle, Schlüssel und Anomalien kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-6-1-1",
+     "titel": "ER-Modell aus Anforderungen erstellen und erweitern",
+     "ziel": "Aus einer umfangreichen Beschreibung ein vollständiges ER-Modell erstellen, auch mit rekursiven Beziehungen, und ein bestehendes Modell um neue Anforderungen erweitern.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.10.1"
+      },
+      {
+       "id": "AP2b.03.02.1"
+      },
+      {
+       "id": "AP2a.02.03.5",
+       "anteil": "ER-Modell, Beziehungen, Kardinalitäten"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A2-b",
+      "2023W-PB1-A4-a",
+      "2024S-PB1-A4-a",
+      "2025S-PB1-A2-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-6-1-1-K1",
+       "text": "Du kannst aus einer umfangreichen Situationsbeschreibung ein vollständiges ER-Modell erstellen: Entitätstypen, Attribute, Beziehungen mit Kardinalitäten 1:1, 1:n und m:n sowie Primärschlüssel.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.10.1",
+        "katalog:AP2b.03.02.1",
+        "katalog:AP2a.02.03.5",
+        "beleg:2021W-PB1-A2-b",
+        "beleg:2023W-PB1-A4-a",
+        "beleg:2025S-PB1-A2-a"
+       ]
+      },
+      {
+       "id": "PB1-6-1-1-K2",
+       "text": "Du kannst rekursive Beziehungen einer Entität zu sich selbst modellieren, zum Beispiel „Arzt vertritt Arzt“ als m:n-Beziehung mit Start- und Enddatum als Beziehungsattributen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.10.1",
+        "beleg:2021W-PB1-A2-b"
+       ]
+      },
+      {
+       "id": "PB1-6-1-1-K3",
+       "text": "Du kannst Anforderungen aus Sicht der Beteiligten in eine passende Datenstruktur übertragen, zum Beispiel die Reihenfolge von Fragen über einen Erstellzeitpunkt und ein Zurückziehen ohne Löschen über ein Attribut istZurückgezogen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.02.1",
+        "beleg:2024S-PB1-A4-a"
+       ]
+      },
+      {
+       "id": "PB1-6-1-1-K4",
+       "text": "Du kannst ein vorhandenes ER-Modell so erweitern, dass neue Anforderungen abgedeckt sind, mit neuen Entitäten, 1:n- und m:n-Beziehungen, ohne Angaben doppelt zu speichern.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.10.1",
+        "beleg:2024S-PB1-A4-a"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-4-1"
+     ]
+    },
+    {
+     "id": "PB1-6-1-2",
+     "titel": "Relationales Modell: Tabellen, Schlüssel, Datentypen, Integrität",
+     "ziel": "Ein ER-Modell in Tabellen überführen, Schlüssel und Beziehungen kennzeichnen, Datentypen zuweisen und referenzielle Integrität mit Constraints sicherstellen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.10.2",
+       "anteil": "Tabellen und Schlüssel"
+      },
+      {
+       "id": "AP2b.03.02.2",
+       "anteil": "Tabellen und Schlüssel"
+      },
+      {
+       "id": "AP2a.02.03.5",
+       "anteil": "referenzielle Integrität, Weitergabe"
+      },
+      {
+       "id": "AP2a.02.03.2"
+      },
+      {
+       "id": "AP2b.05.02.1"
+      }
+     ],
+     "teilaufgaben": [
+      "2023S-PB1-A4-cb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-6-1-2-K1",
+       "text": "Du kannst ein ER-Modell in ein relationales Modell überführen: jede Entität eine Tabelle, bei 1:n der Fremdschlüssel auf der n-Seite, eine m:n-Beziehung als Zwischentabelle mit beiden Fremdschlüsseln als zusammengesetztem Primärschlüssel.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.10.2",
+        "katalog:AP2b.03.02.2"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K2",
+       "text": "Du kannst aus Beispieldaten und neuen Anforderungen (z. B. mehrere Sensoren je Beet mit ihren Messwerten) ein relationales Modell erstellen, Primär- und Fremdschlüssel kennzeichnen und die Beziehungen mit Kardinalitäten einzeichnen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.10.2",
+        "beleg:2023S-PB1-A4-cb"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K3",
+       "text": "Du kannst den Attributen eines Datenmodells Datentypen zuweisen: Boolescher Wert, Ganzzahl, Gleitkommawert, Währung als Festkommazahl, Datum, Text fester und variabler Länge.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.2"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K4",
+       "text": "Du kannst referenzielle Integrität erklären: Ein Fremdschlüsselwert muss auf einen vorhandenen Primärschlüssel verweisen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.5"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K5",
+       "text": "Du kannst für eine Beziehung festlegen, was beim Löschen oder Ändern des referenzierten Datensatzes geschieht: Löschweitergabe bzw. Aktualisierungsweitergabe (abhängige Datensätze werden mitgelöscht bzw. angepasst) oder Verbot der Änderung, solange abhängige Datensätze bestehen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.5"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K6",
+       "text": "Du kannst beurteilen, welche Constraints die Datenbank für ein Modell erzwingen soll, und sie festlegen: Primärschlüssel, Fremdschlüssel, NOT NULL, UNIQUE, CHECK.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.05.02.1"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-4-5",
+      "AP1-8-4-2"
+     ]
+    },
+    {
+     "id": "PB1-6-1-3",
+     "titel": "Redundanz, Anomalien und Normalisierung bis zur 3. Normalform",
+     "ziel": "Redundanz und Anomalien an konkreten Beispielen belegen und eine Tabelle in die 3. Normalform bringen und als relationales Modell zeichnen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.03.3"
+      },
+      {
+       "id": "AP2a.02.03.4"
+      },
+      {
+       "id": "AP2b.04.11"
+      },
+      {
+       "id": "AP2b.04.10.2",
+       "anteil": "Ergebnis der Normalisierung"
+      },
+      {
+       "id": "AP2b.03.02.2",
+       "anteil": "Ergebnis der Normalisierung"
+      }
+     ],
+     "teilaufgaben": [
+      "2023S-PB1-A4-ca",
+      "2025W-PB1-A4-a",
+      "2025W-PB1-A4-b",
+      "2025W-PB1-A4-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-6-1-3-K1",
+       "text": "Du kannst Redundanz an einem konkreten Beispiel aus einer gegebenen Tabelle beschreiben, zum Beispiel die vollständigen Kontaktdaten eines Gastes bei jedem seiner Besuche.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.3",
+        "beleg:2025W-PB1-A4-a"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K2",
+       "text": "Du kannst Änderungs-, Einfüge- und Löschanomalie je an einem konkreten Beispiel aus einer gegebenen Tabelle erläutern.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.3",
+        "beleg:2025W-PB1-A4-b",
+        "beleg:2023S-PB1-A4-ca"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K3",
+       "text": "Du kannst die 1. Normalform herstellen: Jede Zelle enthält genau einen Wert; Wiederholungsgruppen und zusammengesetzte Angaben werden aufgelöst.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.4",
+        "katalog:AP2b.04.11"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K4",
+       "text": "Du kannst die 2. und 3. Normalform herstellen: Jedes Nichtschlüsselattribut hängt vom ganzen Primärschlüssel ab (2. NF) und von keinem anderen Nichtschlüsselattribut (3. NF).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.4",
+        "katalog:AP2b.04.11"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K5",
+       "text": "Du kannst eine nicht normalisierte Tabelle in die 3. Normalform bringen und das Ergebnis als relationales Modell mit allen Primär- und Fremdschlüsseln und Beziehungen zeichnen, auch mit einem aus mehreren Attributen zusammengesetzten Schlüssel.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.11",
+        "katalog:AP2b.04.10.2",
+        "beleg:2025W-PB1-A4-c"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K6",
+       "text": "Du kannst bestimmen, welche Normalform eine Tabelle erfüllt, und die Verletzung der nächsten Normalform benennen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.4"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-4-2"
+     ]
+    },
+    {
+     "id": "PB1-6-1-4",
+     "titel": "Relationale und NoSQL-Datenbanken",
+     "ziel": "Relationale und NoSQL-Datenbanken unterscheiden, Begriffe zuordnen und für eine Anwendung begründet eine Datenbankart vorschlagen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.03.1"
+      },
+      {
+       "id": "AP1.02.03.4",
+       "anteil": "englischer Fachtext"
+      },
+      {
+       "id": "AP2b.05.02.3",
+       "anteil": "Transaktionssicherheit als Argument"
+      }
+     ],
+     "teilaufgaben": [
+      "2022S-PB1-A2-c",
+      "2022W-PB1-A4-c",
+      "2023W-PB1-A3-b",
+      "2023W-PB1-A3-cb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-6-1-4-K1",
+       "text": "Du kannst relationale Datenbanken (Tabellen mit festem Schema, Beziehungen über Schlüssel, Transaktionssicherheit) von NoSQL-Datenbanken (flexibles Schema) unterscheiden und Arten von NoSQL-Datenbanken nennen: dokumentenorientiert, Schlüssel-Wert, spaltenorientiert, Graph.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.1"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K2",
+       "text": "Du kannst Begriffe relationaler und dokumentenorientierter Datenbanken einander zuordnen: Tabelle – Collection, Datensatz – Dokument, Spalte – Feld, Datenbank – Datenbank.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.1",
+        "beleg:2023W-PB1-A3-b"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K3",
+       "text": "Du kannst Vorteile einer NoSQL-Datenbank wie MongoDB gegenüber relationalen Datenbanken aus einem englischen Text erläutern: flexibles Datenmodell für neue Funktionen, schnellere Abfragen ohne Joins, Datenstrukturen passend zum Programm.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.1",
+        "beleg:2022S-PB1-A2-c"
+       ],
+       "vorgegeben": "englischer Text zu MongoDB"
+      },
+      {
+       "id": "PB1-6-1-4-K4",
+       "text": "Du kannst für eine Anwendung ein dokumentenorientiertes oder ein relationales DBMS vorschlagen und die Wahl begründen, zum Beispiel flexible Ausstattungsmerkmale und große Datenmengen für NoSQL, Transaktionssicherheit und Konsistenz für relational.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.02.03.1",
+        "beleg:2022W-PB1-A4-c"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K5",
+       "text": "Du kannst erklären, warum verteilte Datenbanken nicht zugleich alle ACID-Eigenschaften und hohe Verfügbarkeit erfüllen können und deshalb oft dokumentenorientierte Systeme mit weniger strenger Konsistenz eingesetzt werden.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.1",
+        "beleg:2023W-PB1-A3-b"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K6",
+       "text": "Du kannst Daten, auf die meist gemeinsam zugegriffen wird, in einer Dokumentdatenbank gemeinsam speichern: die zugehörigen Dokumente als Array in das übergeordnete Dokument einbetten, statt sie wie in Tabellen über Schlüssel zu verknüpfen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.1",
+        "beleg:2023W-PB1-A3-cb"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-2-3-1"
+     ],
+     "kuer": [
+      {
+       "text": "CAP-Theorem (Consistency, Availability, Partition Tolerance) und BASE (Basically Available, Soft State, Eventual Consistency); weitere Datentypen wie BLOB und Geokoordinaten; Big Data mit dem 3V-/4V-Modell.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur Hinweisquelle; der Katalog nennt relationale und NoSQL-Datenbanken und eine feste Liste von Datentypen (AP2a.02.03.1, AP2a.02.03.2). Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    },
+    {
+     "id": "PB1-6-1-5",
+     "titel": "Transaktionen und Datenintegrität",
+     "ziel": "ACID-Eigenschaften beschreiben, Transaktionen einsetzen und die Maßnahmen zur Sicherung der Datenintegrität beurteilen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.05.02"
+      },
+      {
+       "id": "AP2b.05.02.3"
+      },
+      {
+       "id": "AP2b.05.02.1",
+       "anteil": "Constraints im Zusammenspiel"
+      }
+     ],
+     "teilaufgaben": [
+      "2023W-PB1-A3-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-6-1-5-K1",
+       "text": "Du kannst die ACID-Eigenschaften einer Transaktion beschreiben: Atomarität (ganz oder gar nicht), Konsistenz (die Regeln gelten vor und nach der Transaktion), Isolation (gleichzeitige Transaktionen beeinflussen sich nicht), Dauerhaftigkeit (bestätigte Änderungen bleiben erhalten).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.02.3",
+        "beleg:2023W-PB1-A3-a"
+       ]
+      },
+      {
+       "id": "PB1-6-1-5-K2",
+       "text": "Du kannst erklären, wann eine Transaktion nötig ist: wenn mehrere Änderungen nur zusammen sinnvoll sind, zum Beispiel eine Umbuchung zwischen zwei Konten oder das Verschieben von Datensätzen in ein Archiv (kopieren und löschen).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.02.3"
+       ]
+      },
+      {
+       "id": "PB1-6-1-5-K3",
+       "text": "Du kannst beurteilen, mit welchen technischen Maßnahmen die Datenintegrität einer Anwendung sichergestellt wird: Constraints in der Datenbank, Validierung der Eingaben in der Anwendung, Transaktionen für zusammengehörige Änderungen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.05.02",
+        "katalog:AP2b.05.02.1",
+        "katalog:AP2b.05.02.3"
+       ]
+      }
+     ],
+     "grenzen": [
+      {
+       "text": "Transaktionen und Constraints mit SQL anlegen (BEGIN, COMMIT, ROLLBACK, CREATE TABLE … CONSTRAINT) gehört zu PB2.",
+       "begruendung": "P3: SQL (AP2b.04.22, AP2a.02.03.7) wohnt in PB2, Gebiet G.PB2.04.",
+       "katalog": [
+        "AP2b.04.22",
+        "AP2a.02.03.7"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-2-2-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-6-1-1-K1",
+    "grund": "umfangreiche Beschreibung (PB1-Belege); Grundlage AP1-8-4-1"
+   },
+   {
+    "alt": "AP2-2-2-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-6-1-1-K1",
+    "grund": "in er1 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-6-1-1-K1",
+    "grund": "in er1 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-1-K4",
+    "status": "verschoben",
+    "neu": "PB1-6-1-1-K4"
+   },
+   {
+    "alt": "AP2-2-2-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-6-1-1-K2",
+    "grund": "Beziehungsattribute am Beispiel der rekursiven Beziehung (2021W-PB1-A2-b); Grundlage AP1-8-4-1-K7"
+   },
+   {
+    "alt": "AP2-2-2-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K1",
+    "grund": "mit m:n-Auflösung zusammengefasst"
+   },
+   {
+    "alt": "AP2-2-2-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K1",
+    "grund": "in rl1 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K2",
+    "grund": "mit Beispieldaten (2023S-PB1-A4-cb)"
+   },
+   {
+    "alt": "AP2-2-2-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K2",
+    "grund": "in rl2 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-2-K5",
+    "status": "verschoben",
+    "neu": "PB1-6-1-2-K4"
+   },
+   {
+    "alt": "AP2-2-2-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K5",
+    "grund": "festlegen (Katalog: modellieren)"
+   },
+   {
+    "alt": "AP2-2-2-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K1",
+    "grund": "beschreiben laut 2025W-PB1-A4-a"
+   },
+   {
+    "alt": "AP2-2-2-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K2",
+    "grund": "drei Anomalien je mit Beispiel"
+   },
+   {
+    "alt": "AP2-2-2-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K2",
+    "grund": "in nf2 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-3-K4",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K2",
+    "grund": "in nf2 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-3-K5",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K2",
+    "grund": "in nf2 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-4-K1",
+    "status": "verschoben",
+    "neu": "PB1-6-1-3-K3"
+   },
+   {
+    "alt": "AP2-2-2-4-K2",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K4",
+    "grund": "2. und 3. NF zusammen"
+   },
+   {
+    "alt": "AP2-2-2-4-K3",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K4",
+    "grund": "in nf4 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-2-4-K4",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K5",
+    "grund": "mit Zeichnen des Modells (2025W-PB1-A4-c)"
+   },
+   {
+    "alt": "AP2-2-2-4-K5",
+    "status": "angepasst",
+    "neu": "PB1-6-1-3-K6",
+    "grund": "bestimmen (Stufe 3)"
+   },
+   {
+    "alt": "AP2-4-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-6-1-4-K1",
+    "grund": "mit NoSQL-Arten zusammengefasst"
+   },
+   {
+    "alt": "AP2-4-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-6-1-4-K1",
+    "grund": "in no1 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K3",
+    "grund": "Katalogliste; BLOB und Geokoordinaten als Kür"
+   },
+   {
+    "alt": "AP2-4-1-1-K4",
+    "status": "PB2",
+    "grund": "SQL-Datentypen aus dem Belegsatz wählen: SQL wohnt in PB2 (2022W-PB2-A3-c)"
+   },
+   {
+    "alt": "AP2-4-1-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K3",
+    "grund": "Festkommazahl für Währung in rl3 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-1-1-K6",
+    "status": "angepasst",
+    "neu": "PB1-6-1-4-K4",
+    "grund": "vorschlagen und begründen (2022W-PB1-A4-c)"
+   },
+   {
+    "alt": "AP2-4-1-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K6",
+    "grund": "beurteilen und festlegen (Katalog: beurteilen)"
+   },
+   {
+    "alt": "AP2-4-1-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-6-1-2-K6",
+    "grund": "in rl6 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-1-2-K5",
+    "status": "PB2",
+    "grund": "Qualitätsmängel eines Datenbestands vor dem Import: 2024W-PB2-A3-b"
+   },
+   {
+    "alt": "AP2-4-1-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-6-1-5-K2",
+    "grund": "mit Anwendungsfall"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Alle Datenmodell-Teilaufgaben gegen die beschriebenen Lösungsgrafiken gelesen (2025S ohne Lösungshinweise; 2025W-PB1-A4-c mit Lösung, Zeichenseite fehlt nur im Aufgabensatz). Neu gegenüber AP1: rekursive Beziehung, Anforderungen in Attribute übertragen, zusammengesetzter Schlüssel, 3. Normalform, NoSQL-Entscheidung, ACID."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "ERM, ER-Diagramm, Kardinalitäten",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-1-K1",
+      "PB1-6-1-1-K2",
+      "PB1-6-1-1-K4"
+     ]
+    },
+    {
+     "thema": "Relationales Datenmodell, Primär- und Fremdschlüssel",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-2-K1",
+      "PB1-6-1-2-K2"
+     ]
+    },
+    {
+     "thema": "Referenzielle Integrität, Lösch- und Aktualisierungsweitergabe (CASCADE, RESTRICT)",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-2-K4",
+      "PB1-6-1-2-K5"
+     ]
+    },
+    {
+     "thema": "Anomalien, Redundanz",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-3-K1",
+      "PB1-6-1-3-K2"
+     ]
+    },
+    {
+     "thema": "Normalisierung 1. bis 3. NF",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-3-K3",
+      "PB1-6-1-3-K4",
+      "PB1-6-1-3-K5"
+     ]
+    },
+    {
+     "thema": "Datentypen (Boolesch, Ganzzahl, Gleitkomma, Währung, Datum, Text)",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-2-K3"
+     ]
+    },
+    {
+     "thema": "BLOB, Geokoordinaten, CAP, BASE, Big Data",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-4"
+     ]
+    },
+    {
+     "thema": "Dokumentenorientierte Datenbank, NoSQL, MongoDB",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-4-K1",
+      "PB1-6-1-4-K2",
+      "PB1-6-1-4-K3",
+      "PB1-6-1-4-K4",
+      "PB1-6-1-4-K6"
+     ]
+    },
+    {
+     "thema": "Transaktionen, ACID",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-5-K1",
+      "PB1-6-1-5-K2"
+     ]
+    },
+    {
+     "thema": "Englisch (Fachtext zu MongoDB)",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-6-1-4-K3"
+     ]
+    },
+    {
+     "thema": "Index, Stored Procedure, Trigger, View",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2"
+     ],
+     "notiz": "SQL-Datenbankobjekte, Belege in PB2 (2022S-PB2-A4)"
+    },
+    {
+     "thema": "SQL, SQL-Injection",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2"
+     ],
+     "notiz": "SQL wohnt in PB2; SQL-Injection als Bedrohung in PB1-10"
+    },
+    {
+     "thema": "Entwurfsphasen (extern, konzeptionell, logisch, physisch)",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "AP1-8-4-5"
+     ],
+     "notiz": "Phasen des Datenbankentwurfs in AP1-8-4-5-K4"
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2a.02.03.1",
+    "paar": "relational / NoSQL",
+    "abgedeckt": {
+     "relational": [
+      "PB1-6-1-4-K1",
+      "PB1-6-1-4-K4"
+     ],
+     "NoSQL": [
+      "PB1-6-1-4-K1",
+      "PB1-6-1-4-K3",
+      "PB1-6-1-4-K4"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.04.10",
+    "paar": "ER-Modell / relationales Modell",
+    "abgedeckt": {
+     "ER": [
+      "PB1-6-1-1-K1"
+     ],
+     "relational": [
+      "PB1-6-1-2-K1",
+      "PB1-6-1-2-K2",
+      "PB1-6-1-3-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.02.03.5",
+    "paar": "Aktualisierungsweitergabe / Löschweitergabe",
+    "abgedeckt": {
+     "Aktualisierung": [
+      "PB1-6-1-2-K5"
+     ],
+     "Löschen": [
+      "PB1-6-1-2-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.02.03.3",
+    "paar": "Anomalien / Redundanzen",
+    "abgedeckt": {
+     "Anomalien": [
+      "PB1-6-1-3-K2"
+     ],
+     "Redundanzen": [
+      "PB1-6-1-3-K1"
+     ]
+    }
+   }
+  ]
+ }
+}
