@@ -468,6 +468,10 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       zeigt sie unter dem Ziel (`neu.kurz`, `BlockKarte.jsx`); Test in `tests/vorschau-ap1.test.mjs`. Die Änderung am
       App-Code ist in `Lernstudio.html` von Hand nachgezogen, weil kein Build möglich war – beim nächsten
       `npm run build` entsteht derselbe Stand aus dem Quellcode.
+- [x] **Schritt 3g – AP1 mit Quellen nachgeprüft (14.10.2026):** Fundament aus dem Katalog neu erzeugt (T0, T0c grün),
+      11 AP1-Abschriften (T-1), Zuordnung (T2, goldene Regel), alle 8 Ordner, Raum-Prüfung (T1, T2b, T8) und alle
+      185 Tests grün; keine Datei hat sich dabei geändert. `Lernstudio.html` jetzt echt mit `npm run build` gebaut
+      (gleiche Funktionen, nur andere Minifizierung) und im Browser ohne Konsolenfehler geöffnet.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
