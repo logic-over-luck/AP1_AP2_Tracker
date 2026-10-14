@@ -564,8 +564,17 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         42 gestrichen, 91 für PB2 vermerkt (Algorithmen, SQL, Testdaten, Überdeckung, Debugging, Datenmengen).
         Gesamt PB1: 12 Ordner, 23 Themenblöcke, 78 Stichpunkte, 343 Können-Aussagen, 15 Kür-Einträge. Test in
         `tests/umbau-fundament.test.mjs` prüft alle PB1-Ordner und den Raum.
-  - [ ] **PB1 offen:** unabhängige Prüfung K1–K3 (wie P16), Lernkarten (wie 3e; die alten AP2-Karten hängen über `alt_neu`
-        an den neuen IDs), Kurzfassungen und Vorschau in der App, Abnahme durch den Projektinhaber, danach Export PB1 (E3).
+  - [x] **Unabhängige Prüfung PB1 (14.10.2026):** Prüf-Agent ohne Kenntnis des Baus, Auftrag `umbau/auftraege/PB1-pruefung.md`
+        (K1–K3 und ausdrücklich Doppeltes und Unnötiges, auch gegen den AP1-Export). Berichte `umbau/berichte/PB1-<n>-pruefer.md`,
+        Bilanz `PB1-pruefer-bilanz.md`: 153 Funde (41 hoch). Fragen entschieden mit P35. Alle Funde eingebaut, je Bericht ein
+        Abschnitt „Umsetzung“ (umgesetzt, teilweise mit Grund). Wichtigstes: Doppelungen innerhalb PB1 und zu AP1 gestrichen
+        (E2 heißt mehr Inhalt), Last-/Performancetest, BLOB und Geokoordinaten als Kern, Netzwerktopologie außen (E7, Ausnahme
+        in `raeume-ap2.json`), fachliche Fehler korrigiert (V-Modell, Signatur, DSGVO-Rechtsgrundlagen, E-Rechnung, Factory).
+        Danach: **12 Ordner, 17 Themenblöcke, 67 Stichpunkte, 266 Können-Aussagen (vorher 343), 17 Kür-Einträge**; alle
+        Ordner, Raum-Prüfung und Tests grün; ALT: 445 alte Aussagen → 20 verschoben, 285 angepasst, 48 gestrichen, 92 PB2.
+        Umzugstabelle neu erzeugt.
+  - [ ] **PB1 offen:** Lernkarten (wie 3e; die alten AP2-Karten hängen über `umbau/umzug.json` an den neuen IDs),
+        Kurzfassungen und Vorschau in der App, Abnahme durch den Projektinhaber, danach Export PB1 (E3).
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).

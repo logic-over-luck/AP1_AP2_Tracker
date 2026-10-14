@@ -94,3 +94,10 @@ Der PB1-Lernplan ist **vollständig**: Alle 152 Teilaufgaben der 9 Prüfungen la
 7. **Fachlich falsche amtliche Lösungen:** Soll der Lernplan Abweichungen ausdrücklich vermerken (z. B. 2021W-A3-c DNS als 404-Ursache, 2022S-A1-a Prince2 als agil, 2021W-A4-bb Code-Signing-Zertifikat „vom Betriebssystemhersteller“, 2022S/2023S Plattform-Lauffähigkeit als funktional, 2024W-A1-d „Einwilligung immer nötig“), oder gehört das nur in Karten und Erklärungen?
 8. **B4 für den Belegsatz:** Soll die Notation von UML und ER grundsätzlich als „vorgegeben“ gelten, da alle 9 Prüfungen sie im Belegsatz mitliefern? Das würde PB1-4 und PB1-6 deutlich entlasten.
 9. **E6 bei Stichpunkten ohne jeden Beleg:** z. B. CPS (6 Aussagen), Recht BGB/HGB/UWG/AGB (5), Data Lake/Open Data (4), Monitoring (5). Soll der Umfang solcher Stichpunkte auf 2–3 Aussagen begrenzt werden, ohne den Katalogpunkt zu streichen?
+
+## Umsetzung (bauende Sitzung, 14.10.2026)
+
+Offene Fragen entschieden mit P35 (UMBAU.md, Parkplatz). Alle Funde eingebaut, die Einzelheiten stehen im Abschnitt
+„Umsetzung“ jedes Ordnerberichts; wo ein Fund nur teilweise umgesetzt wurde, steht der Grund dort (meist: die Aussage
+trägt allein die belegte Tiefe eines Bausteins, T8). Ergebnis: 343 → 266 Können-Aussagen, 78 → 67 Stichpunkte,
+23 → 17 Themenblöcke. Alle Ordner-, Raum- und Testprüfungen grün.

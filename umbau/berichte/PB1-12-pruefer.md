@@ -19,3 +19,19 @@
 Ordnerübergreifend: PB1-12-1-2-K1 bleibt Wohnort für 2022W-A1-a. Das Duplikat PB1-11-2-2-K5 ist in Bericht PB1-11, Nr. 6 gezählt. Die Überwachung per Skript (PB1-3-2-2-K5) ist in Bericht PB1-3, Nr. 9 gezählt.
 
 **Bilanz PB1-12:** 9 Funde (davon 1 hoch). Lücken: 0. Kann weg bzw. zusammengelegt: 2 Aussagen (Nr. 1, 2). Vorher 25 → nach Vorschlägen etwa 23.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: PDCA-Aussage gestrichen; AP2b.01.09.1 hängt als Halbsatz (Verbesserung im PDCA-Zyklus aus AP1) am Notfallkonzept, damit der Pflichtbaustein in PB1 eine Aussage hat |
+| 2 | umgesetzt: anderes Beispiel (Speicherengpass, Überlast), Verweis auf Predictive Maintenance |
+| 3 | teilweise: Halbsatz „als nichtfunktionale Anforderung“ gestrichen, Hinweis auf PB1-1; der Beleg 2022W-A1-b bleibt, weil er die Stufe 4 von AP2b.01.08 trägt |
+| 4 | umgesetzt: auf „RAID ersetzt kein Backup“ und Snapshots gekürzt |
+| 5 | umgesetzt: auf die Wahl zwischen IaaS, PaaS und SaaS gekürzt |
+| 6 | umgesetzt: Hinweis TB dezimal, als Datenmenge in TiB |
+| 7 | umgesetzt: beide Lesarten von „Service Level 1–3“ genannt, Eskalation verweist auf AP1-1-3-1 |
+| 8 | umgesetzt: RAID 6, JBOD, DAS als eigene Kür beim RAID-Stichpunkt |
+| 9 | entschieden mit P10/P35: Die Stufe-4-Aussagen bleiben, weil der Katalog sie mit „beurteilen“ (AP2b.01.08, .10) und „analysieren, bestimmen“ (AP2b.01.12) verlangt |
+
+Ergebnis: 25 → 24 Aussagen.

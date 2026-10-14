@@ -67,7 +67,7 @@
       },
       {
        "id": "PB1-12-1-1-K3",
-       "text": "Du kannst für einen Dienst eine angemessene Verfügbarkeit festlegen und begründen, welche Maßnahmen dafür nötig sind, auch als nichtfunktionale Anforderung an eine IT-Infrastruktur.",
+       "text": "Du kannst für einen Dienst eine angemessene Verfügbarkeit festlegen und begründen, welche Maßnahmen dafür nötig sind.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.08",
@@ -75,12 +75,12 @@
        ]
       }
      ],
-     "hinweis": "Betreiben von IT-Systemen ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; Tiefe für AE offen (P10). Bis dahin gilt die Katalogtiefe."
+     "hinweis": "Betreiben von IT-Systemen ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; es gilt die Katalogtiefe (P10). Verfügbarkeit als nichtfunktionale Anforderung steht in PB1-1."
     },
     {
      "id": "PB1-12-1-2",
      "titel": "Ausfallrisiken, MTBF/AFR und Notfallkonzept",
-     "ziel": "Risiken für den Betrieb identifizieren, Ausfallwahrscheinlichkeiten mit MTBF und AFR berücksichtigen, Maßnahmen mit PDCA planen und ein Notfallkonzept aufstellen.",
+     "ziel": "Risiken für den Betrieb identifizieren, Ausfallwahrscheinlichkeiten mit MTBF und AFR berücksichtigen und ein Notfallkonzept aufstellen, das im PDCA-Zyklus aus AP1 verbessert wird.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -121,18 +121,11 @@
       },
       {
        "id": "PB1-12-1-2-K3",
-       "text": "Du kannst Maßnahmen für die Betriebssicherheit mit dem PDCA-Zyklus planen: Risiken erheben und Maßnahmen planen, umsetzen, Wirksamkeit prüfen, nachsteuern.",
+       "text": "Du kannst ein Notfallkonzept (Disaster Recovery) planen: wer nach einem schweren Ausfall was in welcher Reihenfolge tut, wie lange der Ausfall dauern und wie viele Daten verloren gehen dürfen, Ausweichsysteme, regelmäßige Übungen; Konzept und Maßnahmen werden wie jeder Verbesserungsprozess im PDCA-Zyklus (AP1) geprüft und nachgesteuert.",
        "stufe": 3,
        "herkunft": [
+        "katalog:AP2b.01.09.3",
         "katalog:AP2b.01.09.1"
-       ]
-      },
-      {
-       "id": "PB1-12-1-2-K4",
-       "text": "Du kannst ein Notfallkonzept (Disaster Recovery) planen: wer nach einem schweren Ausfall was in welcher Reihenfolge tut, wie lange der Ausfall dauern und wie viele Daten verloren gehen dürfen, Ausweichsysteme, regelmäßige Übungen.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.01.09.3"
        ]
       }
      ],
@@ -189,7 +182,7 @@
       },
       {
        "id": "PB1-12-1-3-K4",
-       "text": "Du kannst die nutzbare Kapazität eines RAID-Verbunds berechnen, zum Beispiel RAID 1 aus zwei 4-TB-Platten 4 TB, RAID 5 aus vier 2-TB-Platten 6 TB, RAID 10 aus vier 2-TB-Platten 4 TB.",
+       "text": "Du kannst die nutzbare Kapazität eines RAID-Verbunds berechnen, zum Beispiel RAID 1 aus zwei 4-TB-Platten 4 TB, RAID 5 aus vier 2-TB-Platten 6 TB, RAID 10 aus vier 2-TB-Platten 4 TB (Herstellerangaben dezimal in TB; als Datenmenge in TiB umrechnen wie in AP1).",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.10.2"
@@ -197,7 +190,7 @@
       },
       {
        "id": "PB1-12-1-3-K5",
-       "text": "Du kannst begründen, warum RAID kein Backup ersetzt, und softwaretechnische Maßnahmen wie Backup-Strategien, getrennte Aufbewahrung und Snapshots für einen Betrieb beurteilen.",
+       "text": "Du kannst über die Backup-Verfahren aus AP1 hinaus begründen, warum RAID kein Backup ersetzt (Löschen, Verschlüsseln durch Schadsoftware und Fehlbedienung werden sofort auf alle Platten übertragen), und den Einsatz von Snapshots beurteilen.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.10.2",
@@ -207,6 +200,15 @@
      ],
      "baut_auf": [
       "AP1-7-3-5"
+     ],
+     "kuer": [
+      {
+       "text": "RAID 6, JBOD und DAS.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur eine Hinweisquelle; der Katalog nennt RAID ohne Level (AP2b.01.10.2). Vom Katalog nicht ausgeschlossen."
+      }
      ]
     }
    ]
@@ -333,7 +335,7 @@
       },
       {
        "id": "PB1-12-2-2-K2",
-       "text": "Du kannst Monitoringergebnisse analysieren und korrektive Maßnahmen bestimmen, zum Beispiel bei steigenden S.M.A.R.T.-Fehlern die Platte tauschen, bei Speicherengpass erweitern oder aufräumen, bei Überlast die Last verteilen.",
+       "text": "Du kannst Monitoringergebnisse analysieren und korrektive Maßnahmen bestimmen, zum Beispiel bei Speicherengpass erweitern oder aufräumen, bei Überlast zu Stoßzeiten die Last verteilen oder Ressourcen erhöhen; vorbeugender Tausch nach Messwerten ist Predictive Maintenance.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12"
@@ -349,7 +351,7 @@
       },
       {
        "id": "PB1-12-2-2-K4",
-       "text": "Du kannst ein Service Level Agreement analysieren (zugesagte Verfügbarkeit, Reaktions- und Lösungszeiten je Service Level 1 bis 3) und bestimmen, ob eine Störung danach rechtzeitig bearbeitet wurde.",
+       "text": "Du kannst ein Service Level Agreement analysieren (zugesagte Verfügbarkeit, Reaktions- und Lösungszeiten je Service Level) und bestimmen, ob eine Störung danach rechtzeitig bearbeitet wurde; „Service Level 1 bis 3“ meint je nach Vertrag die vereinbarten Leistungsstufen oder die Support-Stufen First, Second, Third Level aus AP1.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12.2"
@@ -357,7 +359,7 @@
       },
       {
        "id": "PB1-12-2-2-K5",
-       "text": "Du kannst an einem Störungsverlauf analysieren, wann fachlich (an die nächste Support-Stufe) oder hierarchisch (an Vorgesetzte) eskaliert werden muss.",
+       "text": "Du kannst an einem Störungsverlauf analysieren, wann fachlich (an die nächste Support-Stufe, siehe AP1-1-3-1) oder hierarchisch (an Vorgesetzte) eskaliert werden muss.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12.4",
@@ -409,7 +411,7 @@
       },
       {
        "id": "PB1-12-2-3-K3",
-       "text": "Du kannst für einen beschriebenen Bedarf zwischen On-Premises und Cloud sowie zwischen IaaS, PaaS und SaaS auswählen und die Wahl mit Kosten, Skalierbarkeit, Datenschutz und Speicherort, Abhängigkeit vom Anbieter und eigenem Fachwissen begründen.",
+       "text": "Du kannst über die Wahl zwischen On-Premises und Cloud aus AP1 hinaus für einen beschriebenen Bedarf zwischen IaaS, PaaS und SaaS auswählen und die Wahl mit eigenem Fachwissen, Verantwortung für Betrieb und Updates sowie Kosten begründen.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.02.04.1",
@@ -423,7 +425,7 @@
      ],
      "kuer": [
       {
-       "text": "Weitere Modelle und Begriffe: Private, Public und Hybrid Cloud, Serverless und Function as a Service, DAS, RAID 6 und JBOD.",
+       "text": "Weitere Modelle und Begriffe: Private, Public und Hybrid Cloud, Serverless und Function as a Service.",
        "quellen": [
         "podcast:themen-ap2"
        ],
@@ -457,7 +459,7 @@
    {
     "alt": "AP2-6-4-1-K4",
     "status": "angepasst",
-    "neu": "PB1-12-1-2-K4",
+    "neu": "PB1-12-1-2-K3",
     "grund": "planen (Katalog)"
    },
    {
@@ -608,7 +610,7 @@
   "kerntest": {
    "stand": "2026-10-14",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Teilaufgaben 2022W-PB1-A1-a/-b und 2022S-PB1-A4-a gegen die Musterlösungen gelesen. Alle anderen Bausteine ohne Beleg mit der Katalogtiefe (beurteilen, analysieren: Stufe 4); Formulierung nach P-MUSTER. Tiefe für AE bleibt P10."
+   "ergebnis": "Teilaufgaben 2022W-PB1-A1-a/-b und 2022S-PB1-A4-a gegen die Musterlösungen gelesen. Alle anderen Bausteine ohne Beleg mit der Katalogtiefe (beurteilen, analysieren: Stufe 4); Formulierung nach P-MUSTER. Tiefe so entschieden mit P10; überarbeitet nach der unabhängigen Prüfung (P35)."
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
@@ -639,7 +641,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-12-1-2-K4",
+      "PB1-12-1-2-K3",
       "PB1-12-1-2-K2"
      ]
     },
