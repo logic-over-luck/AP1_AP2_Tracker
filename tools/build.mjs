@@ -11,6 +11,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as esbuild from 'esbuild';
 import { ladeDaten } from './daten.mjs';
+import { vorschauAp1 } from './vorschau-ap1.mjs';
+
+// Vorschau des neuen AP1-Lernplans (Branch vorschau-ap1). LERNSTUDIO_AP1=alt baut den alten Stand.
+const VORSCHAU_AP1 = process.env.LERNSTUDIO_AP1 !== 'alt';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const argumente = new Set(process.argv.slice(2));
@@ -35,7 +39,7 @@ function iconPlugin() {
           }
           return { contents: `export default ${JSON.stringify(auswahl)};`, loader: 'js' };
         }
-        const daten = ladeDaten(wurzel);
+        const daten = VORSCHAU_AP1 ? vorschauAp1(ladeDaten(wurzel), wurzel) : ladeDaten(wurzel);
         // JSON.parse ist für große Daten schneller als ein Objektliteral.
         return { contents: `export default JSON.parse(${JSON.stringify(JSON.stringify(daten))});`, loader: 'js' };
       });
@@ -111,6 +115,6 @@ if (argumente.has('--watch')) {
     clearTimeout(timer);
     timer = setTimeout(() => baue().catch((e) => console.error(e.message)), 120);
   };
-  for (const d of ['src', 'inhalte']) fs.watch(path.join(wurzel, d), { recursive: true }, neu);
+  for (const d of ['src', 'inhalte', 'umbau/lernplan']) fs.watch(path.join(wurzel, d), { recursive: true }, neu);
   console.log('Beobachte src/ und inhalte/ …');
 }

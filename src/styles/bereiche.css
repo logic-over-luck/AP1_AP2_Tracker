@@ -2187,3 +2187,90 @@ body {
     text-align: center;
   }
 }
+
+/* Vorschau neuer Lernplan (tools/vorschau-ap1.mjs) */
+.vorschau-hinweis {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 8%, transparent);
+  font-size: var(--t-m);
+  color: var(--text);
+  margin-bottom: var(--s-4);
+}
+.vorschau-hinweis > svg {
+  color: var(--warn);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.vorschau-hinweis .gedaempft {
+  font-size: var(--t-s);
+  margin-top: var(--s-1);
+}
+.sp__neu,
+.np-marke {
+  display: inline-block;
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  padding: 0 var(--s-1);
+  border-radius: var(--r-1, 4px);
+  border: 1px solid var(--linie);
+  color: var(--text-3);
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+.sp__neu {
+  color: var(--akzent);
+  border-color: var(--akzent);
+}
+.np-marke + .np-marke {
+  margin-left: var(--s-1);
+}
+.np-marke--warn {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.np-hinweis {
+  display: flex;
+  gap: var(--s-2);
+  align-items: flex-start;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.np-hinweis svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.np__kopf {
+  justify-content: space-between;
+}
+.np__details {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-size: var(--t-xs);
+  color: var(--akzent);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.np__meta {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+  margin-top: 2px;
+}
+.np__liste {
+  margin: 0;
+  padding-left: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.np__kuer {
+  border-top: 1px dashed var(--linie);
+  padding-top: var(--s-3);
+  color: var(--text-3);
+}

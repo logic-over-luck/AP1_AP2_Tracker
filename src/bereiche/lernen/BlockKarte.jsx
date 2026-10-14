@@ -149,6 +149,7 @@ function SpZeile({ sp, an, gewaehlt, onWahl, suche, treffer, stand }) {
           <Treffer text={sp.titel} suche={suche} />
         </span>
         <span class="sp__info">
+          {sp.neu?.istNeu && <span class="sp__neu" data-tip="Neuer Stichpunkt im Lernplan">neu</span>}
           {notiz && <Icon name="notebook-pen" groesse={13} />}
           {sp.art !== 'Wissen' && (
             <span class="sp__art" data-tip={sp.art}>
@@ -226,11 +227,20 @@ function SpDetail({ sp, stand, raum }) {
     <div class="sp-detail erscheinen">
       <div class="sp-detail__kopf">
         <div class="ueberschrift-klein block__spalte-titel">
-          <Icon name={ART_ICON[sp.art]} groesse={13} /> {sp.art === 'Wissen' ? 'Kurzfassung' : `Kurzfassung · ${sp.art}`}
+          <Icon name={ART_ICON[sp.art]} groesse={13} /> {sp.neu ? (sp.art === 'Wissen' ? 'Stichpunkt' : `Stichpunkt · ${sp.art}`) : sp.art === 'Wissen' ? 'Kurzfassung' : `Kurzfassung · ${sp.art}`}
         </div>
       </div>
       <h4 class="sp-detail__titel">{sp.titel}</h4>
-      {sp.kurz ? (
+      {sp.neu ? (
+        <div class="kurz">
+          <p class="kurz__ziel">{sp.neu.ziel}</p>
+          {sp.neu.hinweis && (
+            <p class="np-hinweis">
+              <Icon name="info" groesse={13} /> {sp.neu.hinweis}
+            </p>
+          )}
+        </div>
+      ) : sp.kurz ? (
         <div class="kurz">
           <p class="kurz__ziel">{sp.kurz.ziel}</p>
           <Rich text={sp.kurz.punkte.map((p) => `- ${p}`).join('\n')} />
@@ -274,6 +284,10 @@ function SpDetail({ sp, stand, raum }) {
 
       {notizOffen && <Notiz sp={sp} text={stand.notizen.get(sp.id) ?? ''} />}
 
+      {sp.neu ? (
+        <NeuerRahmen sp={sp} />
+      ) : (
+        <>
       <button class="alles-knopf" aria-expanded={alles} onClick={() => setAlles(!alles)}>
         <Icon name={alles ? 'eye-off' : 'eye'} groesse={14} />
         {alles ? 'Weniger anzeigen' : 'Alles anzeigen: Rahmen und alle Können-Aussagen'}
@@ -311,6 +325,8 @@ function SpDetail({ sp, stand, raum }) {
           </div>
         </div>
       </Aufklapp>
+        </>
+      )}
 
       {gegen.length > 0 && (
         <div class="gegen">
@@ -323,6 +339,88 @@ function SpDetail({ sp, stand, raum }) {
               <Icon name="arrow-right" groesse={13} />
             </a>
           ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Neuer Lernplan (Vorschau): Können-Aussagen, Grenzen und Kür sind immer sichtbar,
+// Stufe, Herkunft und Begründungen klein zum Aufklappen.
+const STUFE_NAME = { 1: 'Wiedergeben', 2: 'Verstehen', 3: 'Anwenden', 4: 'Beurteilen' };
+
+function herkunftText(h) {
+  const [art, wert] = h.split(':');
+  return art === 'katalog' ? `Katalog ${wert}` : art === 'beleg' ? `Prüfung ${wert}` : art === 'regel' ? `Puffer-Regel ${wert}` : h;
+}
+
+function KoennenMarken({ k }) {
+  return (
+    <>
+      {k.status === 'neu' && (k.karten ? <span class="np-marke">neu</span> : <span class="np-marke np-marke--warn" data-tip="Neue Können-Aussage – Lernkarten folgen später">neu · noch keine Karten</span>)}
+      {k.status === 'verschoben' && <span class="np-marke" data-tip={`Karten von ${k.von} hierher umgehängt`}>umgehängt</span>}
+      {k.status === 'angepasst' && <span class="np-marke" data-tip="Aussage neu gefasst – die Karten stammen noch von der alten Fassung">angepasst</span>}
+      {k.vorgegeben && <span class="np-marke" data-tip="Wird in der Prüfung als Material vorgegeben">vorgegeben: {k.vorgegeben}</span>}
+    </>
+  );
+}
+
+function NeuerRahmen({ sp }) {
+  const [details, setDetails] = useState(false);
+  const texte = new Map(sp.koennen);
+  const { koennen, grenzen, kuer } = sp.neu;
+  return (
+    <div class="voll np">
+      <div class="voll__abschnitt">
+        <div class="ueberschrift-klein np__kopf">
+          <span>Das musst du können</span>
+          <button class="np__details" aria-expanded={details} onClick={() => setDetails(!details)}>
+            <Icon name={details ? 'eye-off' : 'eye'} groesse={12} /> {details ? 'Stufe und Herkunft ausblenden' : 'Stufe und Herkunft'}
+          </button>
+        </div>
+        <ol class="koennen">
+          {koennen.map((k) => (
+            <li key={k.id}>
+              {texte.get(k.id)} <KoennenMarken k={k} />
+              {details && (
+                <div class="np__meta">
+                  <span class="mono">{k.id}</span> · Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')}
+                  {k.status === 'verschoben' && ` · vorher ${k.von}`}
+                  {k.grund && <div>Änderung: {k.grund}</div>}
+                </div>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+      {grenzen.length > 0 && (
+        <div class="voll__abschnitt">
+          <div class="ueberschrift-klein">
+            <Icon name="minus" groesse={12} /> Gehört nicht dazu
+          </div>
+          <ul class="np__liste">
+            {grenzen.map((g, i) => (
+              <li key={i}>
+                {g.text}
+                {details && g.begruendung && <div class="np__meta">Begründung: {g.begruendung}</div>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {kuer.length > 0 && (
+        <div class="voll__abschnitt np__kuer">
+          <div class="ueberschrift-klein">
+            <Icon name="sparkles" groesse={12} /> Kür – freiwillig, zählt nicht zum Fortschritt
+          </div>
+          <ul class="np__liste">
+            {kuer.map((k, i) => (
+              <li key={i}>
+                {k.text}
+                {details && k.grund && <div class="np__meta">Warum Kür: {k.grund}</div>}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

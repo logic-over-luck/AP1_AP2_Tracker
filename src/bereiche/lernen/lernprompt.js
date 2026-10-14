@@ -29,7 +29,10 @@ function spAbschnitt(sp, stand, ueberschrift) {
   const zeilen = [];
   if (ueberschrift) zeilen.push(`### ${ueberschrift}`);
   zeilen.push(`Art: ${sp.art}`);
-  zeilen.push('', 'Rahmen (wie tief das Thema geht):', sp.rahmen);
+  if (sp.neu) {
+    // neuer Lernplan (Vorschau): Ziel statt Rahmentext, Grenzen und Kür stehen unten
+    zeilen.push('', 'Ziel:', sp.neu.ziel);
+  } else zeilen.push('', 'Rahmen (wie tief das Thema geht):', sp.rahmen);
   if (sp.unklar) {
     zeilen.push('', 'Achtung, die Tiefe ist im Prüfungskatalog nicht eindeutig.');
     if (sp.unklar.hinweis) zeilen.push(sp.unklar.hinweis);
@@ -40,6 +43,14 @@ function spAbschnitt(sp, stand, ueberschrift) {
   }
   zeilen.push('', 'Das muss ich können:');
   sp.koennen.forEach(([, text], i) => zeilen.push(`${i + 1}. ${text}`));
+  if (sp.neu?.grenzen.length) {
+    zeilen.push('', 'Gehört nicht dazu (nicht vertiefen):');
+    for (const g of sp.neu.grenzen) zeilen.push(`- ${g.text}`);
+  }
+  if (sp.neu?.kuer.length) {
+    zeilen.push('', 'Freiwillig (Kür, nur wenn Zeit ist – nicht abfragen, bevor die Pflicht sitzt):');
+    for (const k of sp.neu.kuer) zeilen.push(`- ${k.text}`);
+  }
   const notiz = stand.notizen.get(sp.id);
   if (notiz) zeilen.push('', `Meine eigene Notiz dazu: ${notiz}`);
   return zeilen.join('\n');

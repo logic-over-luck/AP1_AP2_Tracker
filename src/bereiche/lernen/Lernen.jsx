@@ -21,7 +21,7 @@ function suchTreffer(block, suche) {
   const sp = new Set();
   for (const id of block.sp) {
     const x = inhalt.sp.get(id);
-    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1])];
+    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1]), x.neu?.ziel, ...(x.neu?.grenzen ?? []).map((g) => g.text), ...(x.neu?.kuer ?? []).map((k) => k.text)];
     if (texte.some((t) => normal(t).includes(s))) sp.add(id);
   }
   const passt = sp.size > 0 || normal(block.titel).includes(s) || normal(block.satz).includes(s);
@@ -117,6 +117,8 @@ export function Lernen({ raum, params }) {
         </div>
       </header>
 
+      {inhalt.daten.vorschau?.raum === raum && <VorschauHinweis v={inhalt.daten.vorschau} />}
+
       <div class="lernen__leiste">
         <Reiter
           label="Filter"
@@ -204,5 +206,22 @@ function OrdnerGruppe({ nummer, gruppe, stand, zustaende, offen, autoOffen, umsc
         ))}
       </div>
     </section>
+  );
+}
+
+// Vorschau des neuen Lernplans (tools/vorschau-ap1.mjs): was hier anders ist als später in der fertigen App
+function VorschauHinweis({ v }) {
+  return (
+    <div class="vorschau-hinweis">
+      <Icon name="triangle-alert" groesse={16} />
+      <div>
+        <strong>Vorschau: neuer Lernplan {v.raum}</strong>
+        {v.regelwerk ? ` (Regelwerk v${v.regelwerk})` : ''} – zur Abnahme, noch nicht endgültig.
+        <div class="gedaempft">
+          {v.stichpunkte} Stichpunkte, davon {v.neueStichpunkte} neu · {v.koennen} Können-Aussagen, davon {v.neueOhneKarten} neu und noch ohne Karten · {v.kuer} Kür-Einträge (freiwillig, zählen nicht zum
+          Fortschritt) · Karten: {v.karten.umgehaengt} umgehängt, {v.karten.gestrichen} weggefallen. Kurzfassungen sind noch nicht neu erzeugt.
+        </div>
+      </div>
+    </div>
   );
 }

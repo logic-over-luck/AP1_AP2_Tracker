@@ -446,6 +446,10 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         Katalogstellen in der Herkunft, 6 K1-Lücken geschlossen, 3 Aussagen gestrichen oder verschoben
         (AP1-1-4-2-K4 → AP1-3-3-2-K7, AP1-2-4-1-K5 und AP1-7-2-3-K3 gestrichen), Social Engineering und Zielkonflikte
         als Grenze (P21), Paketmanager als Kür. Alle Ordner- und Raum-Prüfungen grün.
+- [x] **Vorschau AP1 in der App (14.10.2026, Branch `vorschau-ap1`):** Der Raum AP1 zeigt die acht Lernpläne als
+      Lernraum (Abnahme M1/M2 aus Lernsicht). Umwandlung nur im Build (`tools/vorschau-ap1.mjs`, Test
+      `tests/vorschau-ap1.test.mjs`); `LERNSTUDIO_AP1=alt npm run build` baut den alten Stand. Karten über `alt_neu`:
+      1.016 bleiben (40 umgehängt), 11 entfallen; 192 neue Aussagen ohne Karten sind gekennzeichnet. Fragen: P27, P28.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
@@ -485,6 +489,8 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P24 | **Entschieden (Projektinhaber, 13.10.2026): Pflicht.** Was der Katalog-Anhang zeigt, gehört zu AP1; Prüfungen erweitern nur. Umgesetzt: EPK und BPMN (AP1-8-4-4) bleiben Kern, Aggregation und Komposition sind jetzt Kern (neue Aussage AP1-8-3-2-K6). | erledigt |
 | P25 | **Formoperatoren in Z3** (gefunden bei P16): Prüfungsoperatoren, die nur die Antwortform bezeichnen („eintragen“, „ausfüllen“, „vervollständigen“, „ergänzen“, „markieren“), bestimmen nach Z3 die Stufe der Teilaufgabe und damit die Mindesttiefe aller zugeordneten Bausteine. Beispiel: 2023H-A2-d „Tragen Sie Vor- und Nachteile von Homeoffice ein“ hebt AP1.07.02.3 von Stufe 1 auf 3, fachlich ist es „nennen“. Soll in solchen Fällen der fachliche Kern zählen? Verwandt mit P13. **Entschieden (Projektinhaber hat die Entscheidung übertragen, 13.10.2026): Regel Z3a, Regelwerk v1.3.** Formoperatoren zählen nur, wenn kein anderer Operator dasteht. Betroffen: 2023H-A4-ab, 2024F-A4-a, 2026F-A2-b, 2026F-A4-c; Mindesttiefe ändert sich nur bei AP1.06.04.1 (3 → 2). Reine Formaufgaben behalten ihre Stufe (mechanisch, goldene Regel „eher mehr lernen“), auch 2023H-A2-d. | erledigt |
 | P26 | **Ring für betriebliche Handlungen** (gefunden bei der Nachprüfung P16, AP1-2-2-1): Die „Beispiele für betriebliche Handlungen/Qualifikationen“ (z. B. AP1.02.H1 Marktbeobachtung) sind Bausteine im Fundament, aber nicht abdeckungspflichtig. 4.8 sagt „steht im Katalog (Baustein) → Kern“. Sind Themen, die nur in einer betrieblichen Handlung stehen, Kern, Puffer oder Kür? **Entschieden (Claude im Auftrag des Projektinhabers, 14.10.2026): Kür.** Die betrieblichen Handlungen sind im Katalog als „Beispiele“ überschrieben und nicht abdeckungspflichtig (T1); prüfungsrelevant sind laut Katalog die Überschriften mit Operatoren (PDF-S. 8). Ein Prüfungsbeleg macht ein solches Thema wie jedes andere zum Kern. Umgesetzt: AP1-2-2-1 (Marktbeobachtung). | erledigt |
+| P27 | **Art des Stichpunkts** (gefunden bei der Vorschau AP1): Die App nutzt eine Art je Stichpunkt (Wissen, Rechnen, Zeichnen, Schreiben) für Symbol und Lernprompt; der neue Lernplan hat dieses Feld nicht. Die Vorschau übernimmt die alte Art bei alter ID, die 18 neuen Stichpunkte gelten als „Wissen“. Soll der Lernplan ein Feld Art bekommen (z. B. abgeleitet aus Aufgabentyp der Teilaufgaben)? | offen |
+| P28 | **Wichtigkeit im neuen Lernplan** (gefunden bei der Vorschau AP1): Die Marke „Top-Thema/Häufig …“ rechnet die Vorschau aus den zugeordneten Teilaufgaben (je Prüfung einmal, aktueller Katalog 1, alter 0,6); der frühere Punkte-Zuschlag fehlt, weil der Lernplan keine Punkte enthält (Punkte stehen nur in den lokalen Abschriften). Soll die Wichtigkeit so bleiben, Punkte bekommen oder sich nach der Stufe richten? | offen |
 
 ---
 
