@@ -10,13 +10,13 @@
  "themenbloecke": [
   {
    "id": "PB1-5-1",
-   "titel": "Objektorientierte Konzepte",
-   "satz": "Kapselung, Vererbung, abstrakte Klassen, Interfaces, Polymorphie und Fehlerbehandlung anwenden. Klasse, Objekt, Attribut, Methode und Sichtbarkeit kennst du aus AP1.",
+   "titel": "Objektorientierter Entwurf",
+   "satz": "Kapselung, Vererbung, Interfaces, Polymorphie und Fehlerbehandlung anwenden, vom Fachproblem zum Entwurf kommen, bewährte Entwurfsmuster nutzen und Methoden in Pseudocode umsetzen. Klasse, Objekt, Attribut, Methode und Sichtbarkeit kennst du aus AP1.",
    "stichpunkte": [
     {
      "id": "PB1-5-1-1",
-     "titel": "Kapselung, Vererbung, abstrakte Klassen und Interfaces",
-     "ziel": "Kapselung und Vererbung im Entwurf anwenden und abstrakte Klassen, Interfaces und gewöhnliche Klassen unterscheiden.",
+     "titel": "Kapselung, Vererbung, Interfaces und Polymorphie",
+     "ziel": "Kapselung und Vererbung im Entwurf anwenden, abstrakte Klassen, Interfaces und gewöhnliche Klassen unterscheiden und einen Entwurf mit Fallunterscheidungen polymorph umbauen.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -32,15 +32,20 @@
       {
        "id": "AP2b.04.17.4",
        "anteil": "Interfaces"
+      },
+      {
+       "id": "AP2b.04.17.3"
       }
      ],
      "teilaufgaben": [
-      "2025S-PB1-A4-b"
+      "2025S-PB1-A4-b",
+      "2023S-PB1-A2-ba",
+      "2023S-PB1-A2-bb"
      ],
      "koennen": [
       {
        "id": "PB1-5-1-1-K1",
-       "text": "Du kannst Kapselung anwenden: Attribute privat deklarieren und nur über öffentliche Methoden lesen und ändern lassen, damit die Klasse ihre Daten selbst prüft und ihr Inneres ändern kann, ohne dass sich der aufrufende Code ändert.",
+       "text": "Du kannst Kapselung (private Attribute, Zugriff über Methoden, AP1) im Entwurf anwenden und begründen: Die Klasse prüft ihre Daten selbst, zum Beispiel im Setter, und ihre Umsetzung lässt sich austauschen, ohne dass sich der aufrufende Code ändert.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17.1"
@@ -56,8 +61,8 @@
       },
       {
        "id": "PB1-5-1-1-K3",
-       "text": "Du kannst Merkmale einer abstrakten Klasse im Vergleich zu Interfaces und gewöhnlichen Klassen erläutern: Von ihr lassen sich keine Objekte erzeugen; sie kann Attribute und fertige Methoden enthalten und abstrakte Methoden vorgeben, die Unterklassen implementieren müssen; eine Klasse erbt von nur einer Oberklasse, kann aber mehrere Interfaces implementieren.",
-       "stufe": 2,
+       "text": "Du kannst abstrakte Klasse, Interface und gewöhnliche Klasse unterscheiden und im Entwurf einsetzen: Von einer abstrakten Klasse lassen sich keine Objekte erzeugen, sie kann Attribute und fertige Methoden enthalten und abstrakte Methoden vorgeben; ein Interface legt klassisch nur Methodensignaturen fest (neuere Sprachversionen erlauben Standardimplementierungen), die jede implementierende Klasse bereitstellen muss. In Java oder C# erbt eine Klasse von nur einer Oberklasse, kann aber mehrere Interfaces implementieren.",
+       "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17.2",
         "katalog:AP2b.04.17.4",
@@ -66,50 +71,6 @@
       },
       {
        "id": "PB1-5-1-1-K4",
-       "text": "Du kannst ein Interface im Entwurf einsetzen: Es legt nur Methodensignaturen fest, die jede implementierende Klasse bereitstellen muss, sodass verschiedene Klassen über dieselbe Schnittstelle angesprochen werden können.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.17.4"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-8-1-2"
-     ]
-    },
-    {
-     "id": "PB1-5-1-2",
-     "titel": "Polymorphie",
-     "ziel": "Polymorphie erläutern, begründet einsetzen und einen Entwurf mit Fallunterscheidungen in einen polymorphen Entwurf umbauen.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
-      {
-       "id": "AP2b.04.17.3"
-      },
-      {
-       "id": "AP2b.04.17.4",
-       "anteil": "Realisierung eines Interface"
-      },
-      {
-       "id": "AP2b.04.17.2",
-       "anteil": "Überschreiben in Unterklassen"
-      },
-      {
-       "id": "AP1.04.07.1",
-       "anteil": "Pseudocode"
-      }
-     ],
-     "teilaufgaben": [
-      "2022S-PB1-A3-bc",
-      "2023S-PB1-A2-ba",
-      "2023S-PB1-A2-bb",
-      "2023S-PB1-A2-bd"
-     ],
-     "koennen": [
-      {
-       "id": "PB1-5-1-2-K1",
        "text": "Du kannst Polymorphie erläutern: Eine Methode mit gleicher Signatur wird in Unterklassen oder in Klassen, die ein Interface implementieren, unterschiedlich umgesetzt; welche Umsetzung läuft, entscheidet sich zur Laufzeit am tatsächlichen Objekt (dynamisches Binden).",
        "stufe": 2,
        "herkunft": [
@@ -118,56 +79,23 @@
        ]
       },
       {
-       "id": "PB1-5-1-2-K2",
-       "text": "Du kannst die Realisierung eines Interface erläutern und begründen, warum sie sinnvoll ist, zum Beispiel beim Observer: Jede Anzeige überschreibt update, und dank Polymorphie ruft das Subjekt für alle Beobachter dieselbe Methode auf.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2b.04.17.4",
-        "beleg:2022S-PB1-A3-bc"
-       ]
-      },
-      {
-       "id": "PB1-5-1-2-K3",
-       "text": "Du kannst einen Entwurf mit Fallunterscheidungen über ein Typ-Attribut in einen polymorphen Entwurf umbauen und als Klassendiagramm erstellen: abstrakte Oberklasse ohne Typ-Attribut, je Typ eine Unterklasse, die die abstrakten Methoden überschreibt.",
+       "id": "PB1-5-1-1-K5",
+       "text": "Du kannst einen Entwurf mit Fallunterscheidungen über ein Typ-Attribut in einen polymorphen Entwurf umbauen und als Klassendiagramm erstellen: abstrakte Oberklasse ohne Typ-Attribut, je Typ eine Unterklasse, die die abstrakten Methoden überschreibt; so lassen sich neue Unterklassen ergänzen, ohne den aufrufenden Code zu ändern.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17.3",
         "beleg:2023S-PB1-A2-bb"
        ]
-      },
-      {
-       "id": "PB1-5-1-2-K4",
-       "text": "Du kannst überschreibende Methoden einer Unterklasse in Pseudocode implementieren, zum Beispiel calculatePreis mit 5 % Rabatt für Premium-Besucher.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.17.3",
-        "beleg:2023S-PB1-A2-bd"
-       ]
-      },
-      {
-       "id": "PB1-5-1-2-K5",
-       "text": "Du kannst begründen, warum sich ein polymorpher Entwurf um neue Unterklassen erweitern lässt, ohne den aufrufenden Code zu ändern, und warum er redundante Fallunterscheidungen vermeidet.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2b.04.17.3"
-       ]
       }
      ],
      "baut_auf": [
-      "AP1-8-2-2"
+      "AP1-8-1-2",
+      "AP1-8-3-2"
      ],
-     "kuer": [
-      {
-       "text": "Datenstrukturen wie Queue, Stack, Baum und Graph sowie funktionale Elemente objektorientierter Sprachen (Lambda-Ausdrücke, Map, Filter, Reduce).",
-       "quellen": [
-        "podcast:themen-ap2"
-       ],
-       "grund": "Nur Hinweisquelle; der Katalog nennt die vier OOP-Konzepte und Fehlerbehandlung (AP2b.04.17). Vom Katalog nicht ausgeschlossen."
-      }
-     ]
+     "hinweis": "Die Notation abstrakter Klassen und Interfaces im Klassendiagramm steht in PB1-4-1-2."
     },
     {
-     "id": "PB1-5-1-3",
+     "id": "PB1-5-1-2",
      "titel": "Allgemeine Fehlerbehandlung in Programmen",
      "ziel": "Fehlerfälle erkennen und mit Ausnahmen oder festgelegten Rückgabewerten behandeln.",
      "gebiete": [
@@ -181,7 +109,7 @@
      "teilaufgaben": [],
      "koennen": [
       {
-       "id": "PB1-5-1-3-K1",
+       "id": "PB1-5-1-2-K1",
        "text": "Du kannst erklären, was eine Ausnahme (Exception) ist und wozu sie dient: einen Fehlerfall vom normalen Ablauf trennen und an eine Stelle weitergeben, die ihn behandeln kann.",
        "stufe": 2,
        "herkunft": [
@@ -189,7 +117,7 @@
        ]
       },
       {
-       "id": "PB1-5-1-3-K2",
+       "id": "PB1-5-1-2-K2",
        "text": "Du kannst Fehlerbehandlung mit try, catch und finally anwenden: den gefährdeten Code in try, die Behandlung je Ausnahmeart in catch, Aufräumarbeiten wie das Schließen einer Datei in finally.",
        "stufe": 3,
        "herkunft": [
@@ -197,16 +125,8 @@
        ]
       },
       {
-       "id": "PB1-5-1-3-K3",
-       "text": "Du kannst Fehlerfälle nennen, die ein Programm abfangen sollte: ungültige Eingaben, Zugriff auf ein nicht vorhandenes Objekt, Index außerhalb des Arrays, Division durch null, nicht erreichbare Datei oder Datenbank.",
-       "stufe": 1,
-       "herkunft": [
-        "katalog:AP2b.04.17.5"
-       ]
-      },
-      {
-       "id": "PB1-5-1-3-K4",
-       "text": "Du kannst für eine Methode festlegen, wie sie auf ungültige Eingaben reagiert: die Eingabe prüfen und eine Ausnahme auslösen oder einen festgelegten Rückgabe- bzw. Exit-Code liefern.",
+       "id": "PB1-5-1-2-K3",
+       "text": "Du kannst für eine Methode festlegen, wie sie auf Fehlerfälle (Laufzeitfehler aus AP1, z. B. ungültige Eingabe, nicht erreichbare Datei oder Datenbank) reagiert: die Eingabe prüfen und eine Ausnahme auslösen oder einen festgelegten Rückgabe- bzw. Exit-Code liefern.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17.5"
@@ -216,16 +136,9 @@
      "baut_auf": [
       "AP1-8-2-4"
      ]
-    }
-   ]
-  },
-  {
-   "id": "PB1-5-2",
-   "titel": "Entwurf und Entwurfsmuster",
-   "satz": "Vom Fachproblem zum Entwurf: strukturierte und objektorientierte Verfahren, bewährte Entwurfsmuster und die Umsetzung von Methoden in Pseudocode.",
-   "stichpunkte": [
+    },
     {
-     "id": "PB1-5-2-1",
+     "id": "PB1-5-1-3",
      "titel": "Strukturierte und objektorientierte Analyse und Design",
      "ziel": "Mit Top-down, Bottom-up und Modularisierung entwerfen und aus einer fachlichen Beschreibung Klassen ableiten und ihre Umsetzung festlegen.",
      "gebiete": [
@@ -251,23 +164,16 @@
      ],
      "koennen": [
       {
-       "id": "PB1-5-2-1-K1",
-       "text": "Du kannst den Top-down-Entwurf anwenden: eine Aufgabe schrittweise in Teilaufgaben zerlegen, bis jede überschaubar umgesetzt werden kann.",
+       "id": "PB1-5-1-3-K1",
+       "text": "Du kannst Top-down- und Bottom-up-Entwurf unterscheiden und anwenden: eine Aufgabe schrittweise in überschaubare Teilaufgaben zerlegen bzw. aus vorhandenen oder zuerst erstellten Bausteinen größere Einheiten zusammensetzen.",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2b.04.03.1"
-       ]
-      },
-      {
-       "id": "PB1-5-2-1-K2",
-       "text": "Du kannst den Bottom-up-Entwurf anwenden: aus vorhandenen oder zuerst erstellten Bausteinen größere Einheiten zusammensetzen.",
-       "stufe": 3,
-       "herkunft": [
+        "katalog:AP2b.04.03.1",
         "katalog:AP2b.04.03.2"
        ]
       },
       {
-       "id": "PB1-5-2-1-K3",
+       "id": "PB1-5-1-3-K2",
        "text": "Du kannst Modularisierung anwenden: ein Programm in Module mit klarer Aufgabe und Schnittstelle zerlegen, damit sie wiederverwendet, getrennt getestet, arbeitsteilig entwickelt und leichter gewartet werden können.",
        "stufe": 3,
        "herkunft": [
@@ -275,19 +181,22 @@
        ]
       },
       {
-       "id": "PB1-5-2-1-K4",
-       "text": "Du kannst objektorientierte Analyse und objektorientierten Entwurf anwenden: aus einer fachlichen Beschreibung die Klassen mit Attributen und Beziehungen ableiten (Analyse) und festlegen, mit welchen Methoden, Datentypen und Datenstrukturen sie umgesetzt werden (Entwurf).",
-       "stufe": 3,
+       "id": "PB1-5-1-3-K3",
+       "text": "Du kannst objektorientierte Analyse (was: Klassen, Attribute und Beziehungen aus der Fachsprache, vgl. AP1-8-3-2) und objektorientierten Entwurf (wie: Methoden, Datentypen, Datenstrukturen) unterscheiden.",
+       "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.04",
         "beleg:2024W-PB1-A3-a"
        ]
       }
      ],
-     "hinweis": "2024W-PB1-A3-a (Klassendiagramm aus einem Sachverhalt) zeichnet PB1-4-1-3; hier steht die Analyse dahinter."
+     "baut_auf": [
+      "AP1-8-3-2"
+     ],
+     "hinweis": "2024W-PB1-A3-a (Klassendiagramm aus einem Sachverhalt) zeichnet PB1-4-1-2; hier steht die Unterscheidung dahinter. Den Entwurf setzt der Stichpunkt Pseudocode um."
     },
     {
-     "id": "PB1-5-2-2",
+     "id": "PB1-5-1-4",
      "titel": "Entwurfsmuster: Observer, Factory, Singleton, MVC und Schichten",
      "ziel": "Vorteile und Kategorien von Entwurfsmustern kennen und Observer, Factory Method, Singleton, MVC und die Schichtenarchitektur anwenden und begründen.",
      "gebiete": [
@@ -312,11 +221,20 @@
       {
        "id": "AP2b.01.04.2",
        "anteil": "Datenabruf in der Schichtenarchitektur"
+      },
+      {
+       "id": "AP2b.04.17.4",
+       "anteil": "Interface im Observer"
+      },
+      {
+       "id": "AP2b.04.17.3",
+       "anteil": "Polymorphie im Observer"
       }
      ],
      "teilaufgaben": [
       "2022S-PB1-A3-ba",
       "2022S-PB1-A3-bb",
+      "2022S-PB1-A3-bc",
       "2024W-PB1-A4-ba",
       "2024W-PB1-A4-bb",
       "2024W-PB1-A4-bc",
@@ -328,7 +246,7 @@
      ],
      "koennen": [
       {
-       "id": "PB1-5-2-2-K1",
+       "id": "PB1-5-1-4-K1",
        "text": "Du kannst Vorteile von Entwurfsmustern beschreiben: bewährte Lösungen für wiederkehrende Probleme sparen Zeit und Kosten, verbessern Erweiterbarkeit und Wartbarkeit und geben dem Team eine gemeinsame Sprache.",
        "stufe": 2,
        "herkunft": [
@@ -337,7 +255,7 @@
        ]
       },
       {
-       "id": "PB1-5-2-2-K2",
+       "id": "PB1-5-1-4-K2",
        "text": "Du kannst Entwurfsmuster den Kategorien Erzeugungsmuster (Singleton, Factory), Strukturmuster (z. B. Facade) und Verhaltensmuster (Observer) zuordnen und ein weiteres Muster beschreiben.",
        "stufe": 2,
        "herkunft": [
@@ -347,38 +265,41 @@
        ]
       },
       {
-       "id": "PB1-5-2-2-K3",
-       "text": "Du kannst begründen, wann das Observer-Muster passt, und seinen Aufbau erläutern: Ein Subjekt hält eine Liste von Beobachtern (Aggregation zu einem Observer-Interface), meldet sie mit addObserver an und benachrichtigt bei jeder Änderung alle über update, zum Beispiel alle Anzeigen bei geändertem Auslastungszustand.",
+       "id": "PB1-5-1-4-K3",
+       "text": "Du kannst begründen, wann das Observer-Muster passt, und seinen Aufbau erläutern: Ein Subjekt hält eine Liste von Beobachtern (Aggregation zu einem Observer-Interface), meldet sie mit addObserver an und benachrichtigt bei jeder Änderung alle über update; jede Anzeige realisiert das Interface und überschreibt update, dank Polymorphie ruft das Subjekt für alle dieselbe Methode auf.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.04.12.1",
         "beleg:2022S-PB1-A3-ba",
         "beleg:2022S-PB1-A3-bb",
+        "beleg:2022S-PB1-A3-bc",
         "beleg:2024W-PB1-A4-bc"
        ]
       },
       {
-       "id": "PB1-5-2-2-K4",
-       "text": "Du kannst das Muster Factory Method anwenden: Das Erzeugen von Objekten wird in eine eigene Methode oder Erzeugerklasse ausgelagert, die je nach Parameter oder Unterklasse das passende Produkt liefert; ein Klassenmodell nach dem Muster um ein neues Produkt mit Erzeugerklasse ergänzen.",
+       "id": "PB1-5-1-4-K4",
+       "text": "Du kannst das Muster Factory Method anwenden: Jede konkrete Erzeugerklasse überschreibt die Fabrikmethode und liefert ihr Produkt; ein Klassenmodell nach dem Muster um ein neues Produkt mit Erzeugerklasse ergänzen. Davon zu unterscheiden ist die einfache statische Fabrikmethode, die je nach Parameter das passende Objekt liefert (Simple Factory, Stichpunkt Pseudocode).",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.12.3",
         "beleg:2025S-PB1-A4-aa",
         "beleg:2025S-PB1-A4-c"
-       ]
+       ],
+       "vorgegeben": "englischer Text zur Factory Method (2025S)"
       },
       {
-       "id": "PB1-5-2-2-K5",
+       "id": "PB1-5-1-4-K5",
        "text": "Du kannst eine Einschränkung der Factory Method erläutern: Alle Produkte brauchen eine gemeinsame Oberklasse oder Schnittstelle, und jedes neue Produkt braucht eine eigene Erzeugerklasse.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.12.3",
         "beleg:2025S-PB1-A4-ab"
-       ]
+       ],
+       "vorgegeben": "englischer Text zur Factory Method (2025S)"
       },
       {
-       "id": "PB1-5-2-2-K6",
-       "text": "Du kannst Singleton (von einer Klasse gibt es genau ein Objekt, erreichbar über eine statische Methode) und das Architekturmuster MVC (Model hält Daten und Fachlogik, View stellt dar, Controller nimmt Eingaben entgegen und steuert) in einem Entwurf anwenden.",
+       "id": "PB1-5-1-4-K6",
+       "text": "Du kannst Singleton (privater Konstruktor, Zugriff über eine statische Methode, die immer dasselbe Objekt liefert) und das Architekturmuster MVC (Model hält Daten und Fachlogik, View stellt dar, Controller nimmt Eingaben entgegen und steuert) in einem Entwurf anwenden.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.12.2",
@@ -386,7 +307,7 @@
        ]
       },
       {
-       "id": "PB1-5-2-2-K7",
+       "id": "PB1-5-1-4-K7",
        "text": "Du kannst die 3-Schichten-Architektur einer Webanwendung beschreiben: Darstellung im Webserver bzw. Browser, Logik im Backend-Server, Daten in der Datenbank; die Webanwendung fragt beim Backend an, das die Daten aus der Datenbank holt und zurückliefert.",
        "stufe": 2,
        "herkunft": [
@@ -397,7 +318,7 @@
      ]
     },
     {
-     "id": "PB1-5-2-3",
+     "id": "PB1-5-1-5",
      "titel": "Objektorientierte Methoden in Pseudocode umsetzen",
      "ziel": "Methoden aus einem Klassendiagramm in Pseudocode implementieren: Listen von Objekten durchlaufen, prüfen, Objekte erzeugen, Fabrikmethoden und Benachrichtigungen. Pseudocode an sich kennst du aus AP1.",
      "gebiete": [
@@ -421,6 +342,10 @@
        "anteil": "Benachrichtigung umsetzen"
       },
       {
+       "id": "AP2b.04.17.3",
+       "anteil": "Überschreiben im Code"
+      },
+      {
        "id": "AP1.04.07.1",
        "anteil": "Pseudocode"
       }
@@ -430,52 +355,41 @@
       "2024S-PB1-A3-bb",
       "2024S-PB1-A3-bc",
       "2023S-PB1-A2-bc",
-      "2022S-PB1-A3-cb"
+      "2022S-PB1-A3-cb",
+      "2023S-PB1-A2-bd"
      ],
      "koennen": [
       {
-       "id": "PB1-5-2-3-K1",
-       "text": "Du kannst eine Methode aus dem Klassendiagramm in Pseudocode implementieren, die eine Liste von Objekten durchläuft und je Objekt Methoden aufruft, zum Beispiel für jeden Aktionär eine Einladungsmail senden und ihn in die Liste der Eingeladenen aufnehmen.",
+       "id": "PB1-5-1-5-K1",
+       "text": "Du kannst eine Methode aus dem Klassendiagramm in Pseudocode implementieren, die eine Liste von Objekten durchläuft und je Objekt Methoden aufruft, zum Beispiel für jeden Aktionär eine Einladungsmail senden oder im Observer-Muster für jeden registrierten Beobachter update aufrufen.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17",
-        "beleg:2024S-PB1-A3-ba"
+        "katalog:AP2b.04.12.1",
+        "beleg:2024S-PB1-A3-ba",
+        "beleg:2022S-PB1-A3-cb"
        ]
       },
       {
-       "id": "PB1-5-2-3-K2",
-       "text": "Du kannst eine Prüfmethode implementieren, die eine Liste von Objekten durchsucht und true oder false zurückgibt.",
+       "id": "PB1-5-1-5-K2",
+       "text": "Du kannst Prüf- und Berechnungsmethoden implementieren, zum Beispiel eine Liste von Objekten durchsuchen und true oder false zurückgeben oder in einer Unterklasse eine Methode überschreiben (calculatePreis mit 5 % Rabatt für Premium-Besucher).",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17",
-        "beleg:2024S-PB1-A3-bb"
+        "katalog:AP2b.04.17.3",
+        "beleg:2024S-PB1-A3-bb",
+        "beleg:2023S-PB1-A2-bd"
        ]
       },
       {
-       "id": "PB1-5-2-3-K3",
-       "text": "Du kannst eine Methode implementieren, die andere Methoden derselben Klasse aufruft, mit einem überladenen Konstruktor ein neues Objekt erzeugt und es in eine Liste einfügt.",
+       "id": "PB1-5-1-5-K3",
+       "text": "Du kannst eine Methode implementieren, die Objekte erzeugt und in eine Liste einfügt: mit einem überladenen Konstruktor oder über eine statische Fabrikmethode, die je nach übergebenem Typ ein Objekt der passenden Unterklasse erzeugt (Mehrfachauswahl).",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.04",
-        "beleg:2024S-PB1-A3-bc"
-       ]
-      },
-      {
-       "id": "PB1-5-2-3-K4",
-       "text": "Du kannst eine Fabrikmethode in Pseudocode implementieren: je nach übergebenem Typ ein Objekt der passenden Unterklasse erzeugen und zurückgeben.",
-       "stufe": 3,
-       "herkunft": [
         "katalog:AP2b.04.12.3",
+        "beleg:2024S-PB1-A3-bc",
         "beleg:2023S-PB1-A2-bc"
-       ]
-      },
-      {
-       "id": "PB1-5-2-3-K5",
-       "text": "Du kannst die Benachrichtigung im Observer-Muster implementieren: alle registrierten Beobachter in einer Schleife durchlaufen und für jeden update aufrufen.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.12.1",
-        "beleg:2022S-PB1-A3-cb"
        ]
       }
      ],
@@ -503,90 +417,90 @@
    {
     "alt": "AP2-1-4-1-K1",
     "status": "verschoben",
-    "neu": "PB1-5-2-2-K1"
+    "neu": "PB1-5-1-4-K1"
    },
    {
     "alt": "AP2-1-4-1-K2",
     "status": "angepasst",
-    "neu": "PB1-5-2-2-K2",
+    "neu": "PB1-5-1-4-K2",
     "grund": "mit weiterem Muster beschreiben (2025S-PB1-A4-d)"
    },
    {
     "alt": "AP2-1-4-1-K3",
     "status": "angepasst",
-    "neu": "PB1-5-2-2-K3",
+    "neu": "PB1-5-1-4-K3",
     "grund": "anwenden und begründen (Belege Stufe 4)"
    },
    {
     "alt": "AP2-1-4-1-K4",
     "status": "angepasst",
-    "neu": "PB1-5-2-2-K6",
+    "neu": "PB1-5-1-4-K6",
     "grund": "Factory eigene Aussage (ma4); Singleton mit MVC anwenden"
    },
    {
     "alt": "AP2-1-4-1-K5",
     "status": "angepasst",
-    "neu": "PB1-5-2-2-K6",
+    "neu": "PB1-5-1-4-K6",
     "grund": "anwenden (Katalog)"
    },
    {
     "alt": "AP2-1-4-1-K6",
     "status": "angepasst",
-    "neu": "PB1-5-2-2-K3",
+    "neu": "PB1-5-1-4-K3",
     "grund": "in ma3 aufgenommen"
    },
    {
     "alt": "AP2-1-3-2-K1",
     "status": "angepasst",
-    "neu": "PB1-5-2-1-K1",
-    "grund": "Top-down und Bottom-up je anwenden (en1, en2)"
+    "neu": "PB1-5-1-3-K1",
+    "grund": "Top-down und Bottom-up unterscheiden und anwenden"
    },
    {
     "alt": "AP2-1-3-2-K2",
     "status": "angepasst",
-    "neu": "PB1-5-2-1-K3",
+    "neu": "PB1-5-1-3-K2",
     "grund": "anwenden (Katalog)"
    },
    {
     "alt": "AP2-1-3-2-K3",
     "status": "angepasst",
-    "neu": "PB1-5-2-1-K3",
+    "neu": "PB1-5-1-3-K2",
     "grund": "Vorteile in en3 aufgenommen"
    },
    {
     "alt": "AP2-1-3-2-K5",
     "status": "angepasst",
-    "neu": "PB1-5-2-1-K4",
-    "grund": "anwenden (Katalog)"
+    "neu": "PB1-5-1-3-K3",
+    "grund": "OOA/OOD unterscheiden; Klassen ableiten in AP1-8-3-2 und PB1-4"
    },
    {
     "alt": "AP2-3-3-1-K1",
     "status": "angepasst",
-    "neu": "PB1-5-2-3-K1",
+    "neu": "PB1-5-1-5-K1",
     "grund": "als Implementieren einer Methode (2024S-PB1-A3-ba)"
    },
    {
     "alt": "AP2-3-3-1-K2",
     "status": "angepasst",
-    "neu": "PB1-5-2-3-K3",
+    "neu": "PB1-5-1-5-K3",
     "grund": "mit überladenem Konstruktor (2024S-PB1-A3-bc)"
    },
    {
     "alt": "AP2-3-3-1-K3",
     "status": "angepasst",
-    "neu": "PB1-5-2-3-K1",
+    "neu": "PB1-5-1-5-K1",
     "grund": "Zugriff über Methoden in ps1 aufgenommen"
    },
    {
     "alt": "AP2-3-3-1-K4",
     "status": "angepasst",
-    "neu": "PB1-5-2-3-K1",
+    "neu": "PB1-5-1-5-K1",
     "grund": "in ps1 aufgenommen"
    },
    {
     "alt": "AP2-3-3-1-K5",
     "status": "verschoben",
-    "neu": "PB1-5-2-3-K2"
+    "neu": "PB1-5-1-5-K2"
    },
    {
     "alt": "AP2-3-3-1-K6",
@@ -608,14 +522,14 @@
    {
     "alt": "AP2-3-3-2-K3",
     "status": "angepasst",
-    "neu": "PB1-5-1-2-K1",
+    "neu": "PB1-5-1-1-K4",
     "grund": "mit dynamischem Binden laut 2023S-PB1-A2-ba"
    },
    {
     "alt": "AP2-3-3-2-K4",
     "status": "angepasst",
-    "neu": "PB1-5-1-1-K4",
-    "grund": "einsetzen (Katalog: anwenden)"
+    "neu": "PB1-5-1-1-K3",
+    "grund": "mit abstrakter Klasse in einer Aussage"
    },
    {
     "alt": "AP2-3-3-2-K5",
@@ -626,13 +540,13 @@
    {
     "alt": "AP2-3-3-2-K6",
     "status": "angepasst",
-    "neu": "PB1-5-1-2-K5",
-    "grund": "begründen (Belege Stufe 4)"
+    "neu": "PB1-5-1-1-K5",
+    "grund": "Erweiterbarkeit als Halbsatz; Begründung Stufe 4 im Observer (ma3)"
    },
    {
     "alt": "AP2-3-3-3-K1",
     "status": "verschoben",
-    "neu": "PB1-5-1-3-K1"
+    "neu": "PB1-5-1-2-K1"
    },
    {
     "alt": "AP2-3-3-3-K2",
@@ -642,20 +556,20 @@
    {
     "alt": "AP2-3-3-3-K3",
     "status": "angepasst",
-    "neu": "PB1-5-1-3-K4",
+    "neu": "PB1-5-1-2-K3",
     "grund": "festlegen (Katalog: anwenden)"
    },
    {
     "alt": "AP2-3-3-3-K4",
     "status": "angepasst",
-    "neu": "PB1-5-1-3-K2",
+    "neu": "PB1-5-1-2-K2",
     "grund": "anwenden statt erklären"
    },
    {
     "alt": "AP2-3-3-3-K5",
     "status": "angepasst",
-    "neu": "PB1-5-1-3-K3",
-    "grund": "um Datei und Datenbank ergänzt"
+    "neu": "PB1-5-1-2-K3",
+    "grund": "Fehlerfälle als Halbsatz; Grundlage AP1-8-2-4"
    },
    {
     "alt": "AP2-3-2-1-K1",
@@ -753,7 +667,7 @@
   "kerntest": {
    "stand": "2026-10-14",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Alle Teilaufgaben zu OOP und Entwurfsmustern gegen die Musterlösungen gelesen (2025S ohne Lösungshinweise, dort nur Aufgabe). Die Pseudocode-Teilaufgaben verlangen die Kontrollstrukturen aus AP1-8-2-2; neu ist der Umgang mit Objekten, Listen, Konstruktoren und Mustern."
+   "ergebnis": "Nach der unabhängigen Prüfung (umbau/berichte/PB1-5-pruefer.md) überarbeitet: Pseudocode je Fähigkeit statt je Teilaufgabe, Simple Factory und Factory Method getrennt. Alle Teilaufgaben zu OOP und Entwurfsmustern gegen die Musterlösungen gelesen (2025S ohne Lösungshinweise, dort nur Aufgabe). Die Pseudocode-Teilaufgaben verlangen die Kontrollstrukturen aus AP1-8-2-2; neu ist der Umgang mit Objekten, Listen, Konstruktoren und Mustern."
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
@@ -774,8 +688,8 @@
      "wo": [
       "PB1-5-1-1-K1",
       "PB1-5-1-1-K2",
-      "PB1-5-1-1-K4",
-      "PB1-5-1-2-K1"
+      "PB1-5-1-1-K3",
+      "PB1-5-1-1-K4"
      ]
     },
     {
@@ -785,9 +699,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-5-1-2-K1",
-      "PB1-5-1-2-K2",
-      "PB1-5-1-2-K3"
+      "PB1-5-1-1-K4",
+      "PB1-5-1-1-K5",
+      "PB1-5-1-4-K3"
      ]
     },
     {
@@ -798,10 +712,10 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-5-2-2-K1",
-      "PB1-5-2-2-K2",
-      "PB1-5-2-2-K3",
-      "PB1-5-2-2-K4"
+      "PB1-5-1-4-K1",
+      "PB1-5-1-4-K2",
+      "PB1-5-1-4-K3",
+      "PB1-5-1-4-K4"
      ]
     },
     {
@@ -811,7 +725,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-5-2-2-K7"
+      "PB1-5-1-4-K7"
      ]
     },
     {
@@ -821,9 +735,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-5-2-3-K1",
-      "PB1-5-2-3-K2",
-      "PB1-5-2-3-K3"
+      "PB1-5-1-5-K1",
+      "PB1-5-1-5-K2",
+      "PB1-5-1-5-K3"
      ]
     },
     {
@@ -833,8 +747,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-5-1-3-K1",
-      "PB1-5-1-3-K4"
+      "PB1-5-1-2-K1",
+      "PB1-5-1-2-K3"
      ]
     },
     {
@@ -844,7 +758,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-5-2-2-K6"
+      "PB1-5-1-4-K6"
      ],
      "notiz": "Singleton über statische Methode; Notation in PB1-4"
     },
@@ -864,10 +778,11 @@
      "quellen": [
       "podcast:themen-ap2"
      ],
-     "ring": "Kür",
+     "ring": "Ordner",
      "wo": [
-      "PB1-5-1-2"
-     ]
+      "PB2"
+     ],
+     "notiz": "Algorithmen und Datenstrukturen wohnen in PB2"
     }
    ]
   },
@@ -877,10 +792,10 @@
     "paar": "Top-down / Bottom-up",
     "abgedeckt": {
      "Top-down": [
-      "PB1-5-2-1-K1"
+      "PB1-5-1-3-K1"
      ],
      "Bottom-up": [
-      "PB1-5-2-1-K2"
+      "PB1-5-1-3-K1"
      ]
     }
    },
@@ -889,10 +804,10 @@
     "paar": "Analyse / Design",
     "abgedeckt": {
      "Analyse": [
-      "PB1-5-2-1-K4"
+      "PB1-5-1-3-K3"
      ],
      "Design": [
-      "PB1-5-2-1-K4"
+      "PB1-5-1-3-K3"
      ]
     }
    },
@@ -907,12 +822,12 @@
       "PB1-5-1-1-K2"
      ],
      "Polymorphie": [
-      "PB1-5-1-2-K1",
-      "PB1-5-1-2-K3"
+      "PB1-5-1-1-K4",
+      "PB1-5-1-1-K5"
      ],
      "Interfaces": [
-      "PB1-5-1-1-K4",
-      "PB1-5-1-2-K2"
+      "PB1-5-1-1-K3",
+      "PB1-5-1-4-K3"
      ]
     }
    },
@@ -921,18 +836,18 @@
     "paar": "Observer / Singleton / Factory / MVC",
     "abgedeckt": {
      "Observer": [
-      "PB1-5-2-2-K3",
-      "PB1-5-2-3-K5"
+      "PB1-5-1-4-K3",
+      "PB1-5-1-5-K1"
      ],
      "Singleton": [
-      "PB1-5-2-2-K6"
+      "PB1-5-1-4-K6"
      ],
      "Factory": [
-      "PB1-5-2-2-K4",
-      "PB1-5-2-3-K4"
+      "PB1-5-1-4-K4",
+      "PB1-5-1-5-K3"
      ],
      "MVC": [
-      "PB1-5-2-2-K6"
+      "PB1-5-1-4-K6"
      ]
     }
    }

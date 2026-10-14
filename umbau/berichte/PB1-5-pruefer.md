@@ -22,3 +22,24 @@
 | 14 | PB1-5-2-2-K6 | K1 fehlt (gering) | Beim Singleton fehlt das Merkmal, das ihn erst sichert: der private Konstruktor. Ohne ihn ist „genau ein Objekt“ nicht erklärbar. | „… privater Konstruktor, Zugriff über eine statische Methode, die immer dasselbe Objekt liefert“. | niedrig |
 
 **Bilanz PB1-5:** 14 Funde (davon 1 hoch). Lücken: 1 (Nr. 14, Halbsatz). Kann weg bzw. zusammengelegt: 10 Aussagen (Nr. 1, 2 [−3], 5, 6, 8, 10, 11, 12). Vorher 29 → nach Vorschlägen etwa 19.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: auf „OOA und OOD unterscheiden“ (Stufe 2) gekürzt; das Umsetzen trägt die Pseudocode-Aussage zum Erzeugen |
+| 2 | umgesetzt: sechs Pseudocode-Aussagen auf drei (Liste durchlaufen und Methoden aufrufen; prüfen, berechnen, überschreiben; Objekte erzeugen und einfügen) |
+| 3 | umgesetzt: Factory Method (2025S) und statische Fabrikmethode (2023S) getrennt |
+| 4 | umgesetzt: `vorgegeben` an beiden Factory-Aussagen |
+| 5 | umgesetzt: gestrichen, Beleg 2022S-A3-bc und „dank Polymorphie“ in der Observer-Aussage (trägt Stufe 4 für Polymorphie und Interface) |
+| 6 | umgesetzt: abstrakte Klasse und Interface in einer Aussage |
+| 7 | umgesetzt: auf Anwenden und Begründen gekürzt |
+| 8 | umgesetzt: gestrichen, Fehlerfälle als Halbsatz in der Festlegen-Aussage |
+| 9 | umgesetzt: „in Java oder C#“, Standardimplementierungen erwähnt |
+| 10 | umgesetzt: Erweiterbarkeit als Halbsatz in der Umbau-Aussage |
+| 11 | umgesetzt: Top-down und Bottom-up in einer Aussage |
+| 12 | nicht umgesetzt: sonst unterschreitet der Stichpunkt F3 |
+| 13 | umgesetzt: Kür gestrichen, Hinweis-Abgleich verweist auf PB2 |
+| 14 | umgesetzt: privater Konstruktor |
+
+Gliederung: Kapselung/Vererbung und Polymorphie in einem Stichpunkt, ein Themenblock statt zwei (F3/F4). Ergebnis: 29 → 21 Aussagen.
