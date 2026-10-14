@@ -549,6 +549,9 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-9 Qualität und Test (14.10.2026):** 2 Themenblöcke, 7 Stichpunkte, 28 Können-Aussagen. Alte AP2-Aussagen:
         24 angepasst, 4 verschoben, 5 gestrichen, 23 für PB2 (Testdaten, Überdeckung, Schreibtischtest an Code, Debugging, TDD).
         Weitere Testarten (Last-, Regressionstest, Test-Doubles) nach P-BEISPIELLISTE Kür: nur eine Hinweisquelle.
+  - [x] **PB1-10 IT-Sicherheit und Datenschutz in Anwendungen (14.10.2026):** 3 Themenblöcke, 10 Stichpunkte,
+        41 Können-Aussagen. Alte AP2-Aussagen: 47 angepasst, 2 verschoben, 7 gestrichen (Kryptografie-, Hash- und
+        Anmelde-Grundlagen wohnen in AP1-7-3). Die 15 TOM-Beispiele aus AP2a.04.06 verlangen „prüfen“ (Stufe 4).
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 
