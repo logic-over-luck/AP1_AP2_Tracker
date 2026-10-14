@@ -1,0 +1,2122 @@
+{
+  "ordner": "AP1-8",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md",
+  "grundlage": "umbau/lernplan/ap1/AP1-8.json",
+  "karten": [
+    {
+      "id": "AP1-8-1-1-K1-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K1",
+      "vorne": "Was macht ein Compiler mit dem Quelltext?",
+      "hinten": "Er übersetzt das ganze Programm vor der Ausführung, z. B. in Maschinencode. Ausgeführt wird danach das übersetzte Programm."
+    },
+    {
+      "id": "AP1-8-1-1-K1-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K1",
+      "vorne": "Was macht ein Interpreter mit dem Quelltext?",
+      "hinten": "Er führt den Quelltext zur Laufzeit schrittweise aus, Anweisung für Anweisung. Ein vorab übersetztes, eigenständiges Programm entsteht nicht."
+    },
+    {
+      "id": "AP1-8-1-1-K1-3",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K1",
+      "vorne": "Nenne je ein typisches Beispiel für eine kompilierte und für eine interpretierte Sprache.",
+      "hinten": "- kompiliert: z. B. C, C++\n- interpretiert: z. B. Python, PHP, JavaScript"
+    },
+    {
+      "id": "AP1-8-1-1-K2-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K2",
+      "vorne": "Welche Aufgabe hat der Linker?",
+      "hinten": "Er verbindet die übersetzten Programmteile und die benötigten Bibliotheken zu einem ausführbaren Programm."
+    },
+    {
+      "id": "AP1-8-1-1-K2-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K2",
+      "vorne": "In welcher Reihenfolge arbeiten Compiler und Linker, und was liefert jeder von beiden?",
+      "hinten": "1. Compiler: übersetzt den Quelltext in übersetzte Programmteile (Objektcode)\n2. Linker: verbindet diese Teile mit Bibliotheken zum ausführbaren Programm"
+    },
+    {
+      "id": "AP1-8-1-1-K4-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K4",
+      "vorne": "Was leistet die virtuelle Maschine bei Java?",
+      "hinten": "Sie führt den Zwischencode (Bytecode) aus, den der Compiler erzeugt hat. Weil es sie für verschiedene Betriebssysteme gibt, läuft derselbe Zwischencode auf all diesen Systemen."
+    },
+    {
+      "id": "AP1-8-1-1-K4-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K4",
+      "vorne": "Warum muss ein Java-Programm nicht für jedes Betriebssystem eigens übersetzt werden?",
+      "hinten": "Der Compiler erzeugt keinen Maschinencode, sondern Zwischencode. Diesen führt auf jedem Betriebssystem die dort installierte virtuelle Maschine aus."
+    },
+    {
+      "id": "AP1-8-1-1-K5-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K5",
+      "vorne": "Nenne einen Vorteil kompilierter Programme gegenüber interpretierten.",
+      "hinten": "Sie laufen schneller, weil die Übersetzung schon vor der Ausführung erledigt ist."
+    },
+    {
+      "id": "AP1-8-1-1-K5-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K5",
+      "vorne": "Nenne einen Vorteil interpretierter Programme gegenüber kompilierten.",
+      "hinten": "Sie lassen sich ohne Übersetzungsschritt sofort ausführen und testen."
+    },
+    {
+      "id": "AP1-8-1-1-K6-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K6",
+      "vorne": "Ein Administrator will jede Nacht alte Logdateien eines Servers löschen lassen. Reicht ein Skript in einer interpretierten Sprache, oder braucht es ein kompiliertes Programm? Begründe.",
+      "hinten": "Ein Skript, z. B. in PowerShell oder Python, reicht: Die Aufgabe ist klein, die Geschwindigkeit spielt keine Rolle, und das Skript lässt sich ohne Übersetzungsschritt schnell anpassen."
+    },
+    {
+      "id": "AP1-8-1-1-K6-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K6",
+      "vorne": "Eine Anwendung soll große Bilddateien in Echtzeit auswerten. Interpretierte Sprache oder kompiliertes Programm? Begründe.",
+      "hinten": "Ein kompiliertes Programm: Es läuft schneller, weil die Übersetzung vor der Ausführung erledigt ist, und Geschwindigkeit ist hier entscheidend."
+    },
+    {
+      "id": "AP1-8-1-1-K3-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K7",
+      "vorne": "Wofür dient ein Editor beim Programmieren?",
+      "hinten": "Zum Schreiben und Bearbeiten des Quelltexts, meist mit Hilfen wie farbiger Hervorhebung der Sprachelemente."
+    },
+    {
+      "id": "AP1-8-1-1-K3-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K7",
+      "vorne": "Was ist ein Debugger?",
+      "hinten": "Ein Werkzeug zur Fehlersuche: Es führt das Programm schrittweise aus, hält an Haltepunkten an und zeigt die aktuellen Werte der Variablen."
+    },
+    {
+      "id": "AP1-8-1-1-K3-3",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K7",
+      "vorne": "Was ist eine integrierte Entwicklungsumgebung (IDE)?",
+      "hinten": "Ein Programm, das die Werkzeuge zum Entwickeln unter einer Oberfläche vereint: Editor, Compiler bzw. Interpreter, Debugger und weitere Hilfen."
+    },
+    {
+      "id": "AP1-8-2-4-K4-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K7",
+      "vorne": "Was ist Debugging?",
+      "hinten": "Das systematische Suchen und Beheben von Fehlern in einem Programm, meist mit einem Debugger: Haltepunkte setzen, schrittweise ausführen, Variablenwerte beobachten."
+    },
+    {
+      "id": "AP1-8-2-4-K4-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K7",
+      "vorne": "Was ist ein Haltepunkt (Breakpoint) beim Debugging?",
+      "hinten": "Eine markierte Codezeile, an der der Debugger das Programm anhält, damit man den aktuellen Zustand, etwa die Variablenwerte, untersuchen kann."
+    },
+    {
+      "id": "AP1-8-1-1-K7-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K7",
+      "vorne": "Warum setzt ein Entwicklerteam eine IDE statt einzelner Werkzeuge ein? Begründe.",
+      "hinten": "Editor, Übersetzer und Debugger liegen in einer Oberfläche; Syntaxhervorhebung und Autovervollständigung vermeiden Tippfehler, Fehler werden direkt angezeigt. Das spart Zeit und vereinheitlicht die Arbeit im Team."
+    },
+    {
+      "id": "AP1-8-1-2-K1-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K1",
+      "vorne": "Wie ist ein prozedurales Programm aufgebaut?",
+      "hinten": "Als Folge von Anweisungen, gegliedert in Prozeduren und Funktionen. Daten und die Funktionen, die sie bearbeiten, sind voneinander getrennt."
+    },
+    {
+      "id": "AP1-8-1-2-K1-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K1",
+      "vorne": "Wie ist ein objektorientiertes Programm aufgebaut?",
+      "hinten": "Daten (Attribute) und die Funktionen, die mit ihnen arbeiten (Methoden), sind in Objekten zusammengefasst. Die Objekte entstehen nach Klassen und arbeiten zusammen."
+    },
+    {
+      "id": "AP1-8-1-2-K2-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K2",
+      "vorne": "Was ist der Unterschied zwischen Klasse und Objekt?",
+      "hinten": "- Klasse: Bauplan, der Attribute und Methoden festlegt\n- Objekt: konkretes Exemplar (Instanz) einer Klasse mit eigenen Attributwerten"
+    },
+    {
+      "id": "AP1-8-1-2-K2-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K2",
+      "vorne": "„Kunde“ und „Anna Schmidt, Kundennummer 4711“ – was davon ist Klasse, was Objekt?",
+      "hinten": "- Klasse: Kunde\n- Objekt: Anna Schmidt, Kundennummer 4711"
+    },
+    {
+      "id": "AP1-8-1-2-K3-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K3",
+      "vorne": "Was ist ein Attribut einer Klasse?",
+      "hinten": "Eine Eigenschaft, die die Klasse festlegt und für die jedes Objekt einen eigenen Wert hat, z. B. name oder kontostand."
+    },
+    {
+      "id": "AP1-8-1-2-K3-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K3",
+      "vorne": "Was ist eine Methode einer Klasse?",
+      "hinten": "Eine in der Klasse festgelegte Funktion, die beschreibt, was ein Objekt tun kann; sie arbeitet mit dessen Attributen, z. B. einzahlen()."
+    },
+    {
+      "id": "AP1-8-1-2-K4-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K4",
+      "vorne": "Was legt die Sichtbarkeit eines Attributs oder einer Methode fest?",
+      "hinten": "Von wo aus darauf zugegriffen werden darf."
+    },
+    {
+      "id": "AP1-8-1-2-K4-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K4",
+      "vorne": "Was ist der Unterschied zwischen public und private?",
+      "hinten": "- public: Zugriff von überall, auch aus anderen Klassen\n- private: Zugriff nur innerhalb der eigenen Klasse"
+    },
+    {
+      "id": "AP1-8-1-2-K5-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K5",
+      "vorne": "Warum sind Attribute meist private und werden nur über Methoden gelesen und geändert?",
+      "hinten": "Die Methoden können Werte prüfen und so ungültige Zustände verhindern (Datenkapselung). Die innere Umsetzung lässt sich ändern, ohne andere Klassen anzupassen."
+    },
+    {
+      "id": "AP1-8-1-2-K5-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K5",
+      "vorne": "Wie heißen die Methoden, die ein privates Attribut lesen bzw. ändern?",
+      "hinten": "- Getter: liest den Wert, z. B. getName()\n- Setter: ändert den Wert, z. B. setName(name)"
+    },
+    {
+      "id": "AP1-8-1-2-K6-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K6",
+      "vorne": "Nenne Vorteile der objektorientierten gegenüber der prozeduralen Programmierung.",
+      "hinten": "- Wiederverwendbarkeit von Klassen\n- bessere Wartbarkeit: Daten und Methoden stehen zusammen, Änderungen bleiben örtlich begrenzt\n- Nähe zur realen Welt: Objekte wie Kunde oder Rechnung"
+    },
+    {
+      "id": "AP1-8-1-3-K1-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K1",
+      "vorne": "Was ist eine Skriptsprache?",
+      "hinten": "Eine meist interpretierte Sprache für kurze Programme (Skripte), die ohne eigenen Übersetzungsschritt ausgeführt werden, oft um Abläufe zu automatisieren."
+    },
+    {
+      "id": "AP1-8-1-3-K1-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K1",
+      "vorne": "Nenne Beispiele für Skriptsprachen.",
+      "hinten": "Shell-Skript (z. B. Bash), PowerShell, Python, JavaScript, PHP"
+    },
+    {
+      "id": "AP1-8-1-3-K2-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K2",
+      "vorne": "Was ist eine Bibliothek beim Programmieren?",
+      "hinten": "Eine Sammlung fertiger Funktionen oder Klassen, die dein Programm bei Bedarf aufruft. Den Ablauf bestimmt weiter dein eigener Code."
+    },
+    {
+      "id": "AP1-8-1-3-K2-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K2",
+      "vorne": "Was ist ein Framework?",
+      "hinten": "Ein Programmgerüst, das Aufbau und Ablauf vorgibt. Du fügst deinen Code an vorgesehenen Stellen ein, und das Framework ruft ihn auf."
+    },
+    {
+      "id": "AP1-8-1-3-K2-3",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K2",
+      "vorne": "Bibliothek und Framework: Wer ruft jeweils wen auf?",
+      "hinten": "- Bibliothek: Dein Code ruft die Bibliothek auf.\n- Framework: Das Framework ruft deinen Code auf."
+    },
+    {
+      "id": "AP1-8-1-3-K3-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K3",
+      "vorne": "Was ist der Unterschied zwischen einer statischen und einer dynamischen Webseite?",
+      "hinten": "- statisch: fertiger Inhalt, wird bei jedem Aufruf unverändert ausgeliefert\n- dynamisch: Inhalt wird erst beim Aufruf erzeugt, z. B. aus Datenbankdaten oder Eingaben"
+    },
+    {
+      "id": "AP1-8-1-3-K3-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K3",
+      "vorne": "Statisch oder dynamisch? (a) Impressum als feste HTML-Datei, (b) Trefferliste einer Shop-Suche",
+      "hinten": "- (a) statisch: immer derselbe, fertige Inhalt\n- (b) dynamisch: wird beim Aufruf aus der Suchanfrage erzeugt"
+    },
+    {
+      "id": "AP1-8-1-3-K4-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K4",
+      "vorne": "Nenne drei Programmiersprachen für dynamische Webinhalte.",
+      "hinten": "z. B. JavaScript, PHP, Python (auch möglich: Java, C#)"
+    },
+    {
+      "id": "AP1-8-1-3-K4-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K4",
+      "vorne": "Warum zählen HTML und CSS nicht als Programmiersprachen?",
+      "hinten": "HTML beschreibt die Struktur, CSS die Gestaltung einer Seite. Beide haben keine Kontrollstrukturen wie Verzweigungen oder Schleifen."
+    },
+    {
+      "id": "AP1-8-1-3-K5-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K5",
+      "vorne": "Nenne drei Kriterien für die Wahl einer Programmiersprache.",
+      "hinten": "z. B.:\n- Eignung für die Aufgabe\n- Kenntnisse im Team\n- verfügbare Frameworks und Bibliotheken\n- ebenso: Zielplattform, Geschwindigkeit, Kosten/Lizenz, Verbreitung"
+    },
+    {
+      "id": "AP1-8-1-3-K5-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K5",
+      "vorne": "Warum spricht es für eine Programmiersprache, dass das Team sie schon kennt?",
+      "hinten": "Einarbeitung und Schulung entfallen; das Team arbeitet schneller und mit weniger Fehlern, und die spätere Wartung ist gesichert."
+    },
+    {
+      "id": "AP1-8-1-3-K5-3",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K5",
+      "vorne": "Drei Entwickler, die PHP beherrschen, sollen eine Webanwendung bauen; der Kunde schlägt eine Sprache vor, die niemand im Team kennt. Welche Sprache empfiehlst du? Begründe.",
+      "hinten": "PHP: Das Team kennt die Sprache, sie eignet sich für Webanwendungen, und es gibt passende Frameworks. Eine neue Sprache bräuchte Einarbeitung und gefährdet Termin und spätere Wartung."
+    },
+    {
+      "id": "AP1-8-2-1-K1-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K1",
+      "vorne": "Was ist eine Variable?",
+      "hinten": "Ein benannter Speicherplatz für einen Wert, der sich während des Programmlaufs ändern kann. Ihr Datentyp legt fest, welche Werte sie aufnehmen kann."
+    },
+    {
+      "id": "AP1-8-2-1-K1-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K1",
+      "vorne": "Wie heißen die Datentypen für Ganzzahl, Kommazahl, Wahrheitswert und Text?",
+      "hinten": "- Ganzzahl: Integer (`int`)\n- Kommazahl: Gleitkommazahl (`float`, `double`)\n- Wahrheitswert: Boolean (`bool`), Werte wahr/falsch\n- Text: String (Zeichenkette)"
+    },
+    {
+      "id": "AP1-8-2-1-K1-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K1",
+      "vorne": "Welcher Datentyp passt jeweils? Anzahl Mitarbeiter, Gewicht 72,5 kg, ist_aktiv, Nachname",
+      "hinten": "- Anzahl Mitarbeiter: Ganzzahl\n- Gewicht: Kommazahl\n- ist_aktiv: Wahrheitswert\n- Nachname: Text"
+    },
+    {
+      "id": "AP1-8-2-1-K2-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K2",
+      "vorne": "Was ist ein Array?",
+      "hinten": "Eine Datenstruktur, die mehrere Werte desselben Datentyps unter einem Namen speichert. Jedes Element wird über seinen Index angesprochen."
+    },
+    {
+      "id": "AP1-8-2-1-K2-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K2",
+      "vorne": "Der Index eines Arrays `zahlen` beginnt bei 0. Wie greifst du auf das dritte Element zu?",
+      "hinten": "`zahlen[2]`"
+    },
+    {
+      "id": "AP1-8-2-1-K2-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K2",
+      "vorne": "Ein Array hat n Elemente, der Index beginnt bei 0. Welchen Index hat das letzte Element?",
+      "hinten": "n − 1"
+    },
+    {
+      "id": "AP1-8-2-1-K3-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K3",
+      "vorne": "Was ist der Unterschied zwischen einer Verzweigung und einer Schleife?",
+      "hinten": "- Verzweigung: führt je nach Bedingung einen von mehreren Zweigen einmal aus\n- Schleife: führt einen Block wiederholt aus, solange eine Bedingung gilt oder eine feste Anzahl Mal"
+    },
+    {
+      "id": "AP1-8-2-1-K3-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K3",
+      "vorne": "An welchen Schlüsselwörtern erkennst du im Code eine Verzweigung, an welchen eine Schleife?",
+      "hinten": "- Verzweigung: `if`/`else`, `switch`, Wenn/Sonst\n- Schleife: `for`, `while`, `do … while`, Für, Solange, Wiederhole"
+    },
+    {
+      "id": "AP1-8-2-1-K5-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K5",
+      "vorne": "Was kennzeichnet eine zählergesteuerte Schleife?",
+      "hinten": "Die Anzahl der Durchläufe steht vorher fest: Eine Zählvariable läuft von einem Start- bis zu einem Endwert (`for`, Für)."
+    },
+    {
+      "id": "AP1-8-2-1-K5-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K5",
+      "vorne": "Was ist der Unterschied zwischen einer kopfgesteuerten und einer fußgesteuerten Schleife?",
+      "hinten": "- kopfgesteuert: Bedingung wird vor jedem Durchlauf geprüft, eventuell kein Durchlauf (`while`)\n- fußgesteuert: Bedingung wird nach jedem Durchlauf geprüft, mindestens ein Durchlauf (`do … while`)"
+    },
+    {
+      "id": "AP1-8-2-1-K5-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K5",
+      "vorne": "Welche Schleifenart wird in jedem Fall mindestens einmal durchlaufen?",
+      "hinten": "Die fußgesteuerte Schleife, weil die Bedingung erst nach dem Durchlauf geprüft wird."
+    },
+    {
+      "id": "AP1-8-2-1-K4-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K6",
+      "vorne": "Was ist eine Funktion?",
+      "hinten": "Ein benannter Codeblock, der über seinen Namen aufgerufen wird, Werte über Parameter erhält und ein Ergebnis als Rückgabewert liefert."
+    },
+    {
+      "id": "AP1-8-2-1-K4-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K6",
+      "vorne": "Was ist der Unterschied zwischen Parameter und Rückgabewert einer Funktion?",
+      "hinten": "- Parameter: Wert, der beim Aufruf an die Funktion übergeben wird (Eingabe)\n- Rückgabewert: Ergebnis, das die Funktion an den Aufrufer zurückgibt (Ausgabe)"
+    },
+    {
+      "id": "AP1-8-2-1-K6-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K6",
+      "vorne": "Was ist der Unterschied zwischen einer Prozedur und einer Funktion?",
+      "hinten": "- Prozedur: liefert keinen Rückgabewert (in C# und Java Rückgabetyp `void`)\n- Funktion: liefert einen Rückgabewert"
+    },
+    {
+      "id": "AP1-8-2-1-K7-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K7",
+      "vorne": "Was ergibt `17 % 5`, und wofür nutzt man den Modulo-Operator oft?",
+      "hinten": "2 (Rest von 17 ÷ 5). Oft, um zu prüfen, ob eine Zahl gerade ist: `x % 2 == 0`."
+    },
+    {
+      "id": "AP1-8-2-1-K7-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K7",
+      "vorne": "Ist die Bedingung `a > 5 UND NICHT (b == 0)` für a = 7 und b = 3 wahr?",
+      "hinten": "Ja: a > 5 ist wahr, b == 0 ist falsch, NICHT macht daraus wahr; wahr UND wahr ergibt wahr."
+    },
+    {
+      "id": "AP1-8-2-1-K7-3",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K7",
+      "vorne": "Ist die Bedingung `x < 0 ODER x != 10` für x = 10 wahr?",
+      "hinten": "Nein: x < 0 ist falsch und x != 10 (ungleich) ist ebenfalls falsch; ODER ist nur wahr, wenn mindestens ein Teil wahr ist."
+    },
+    {
+      "id": "AP1-8-2-2-K1-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K1",
+      "vorne": "Woran erkennst du in Pseudocode, welche Zeilen zu einem Wenn-Zweig oder einem Schleifenrumpf gehören?",
+      "hinten": "An der Einrückung: Alle darunter tiefer eingerückten Zeilen gehören dazu, bis wieder eine Zeile auf der Ebene von Wenn bzw. Für steht (oder ein Ende-Wort folgt)."
+    },
+    {
+      "id": "AP1-8-2-2-K1-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K1",
+      "vorne": "In verschachteltem Pseudocode stehen mehrere Wenn. Zu welchem Wenn gehört ein Sonst?",
+      "hinten": "Zum nächsten Wenn darüber, das auf derselben Einrückungsebene steht."
+    },
+    {
+      "id": "AP1-8-2-2-K1-3",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K1",
+      "vorne": "Was gibt dieser Pseudocode aus?\n`summe = 0`\n`Für i von 1 bis 4`\n`    Wenn i % 2 = 0 dann`\n`        summe = summe + i`\n`    Ende Wenn`\n`Ende Für`\n`Ausgabe summe`",
+      "hinten": "6: Nur die geraden Werte von i (2 und 4) werden addiert."
+    },
+    {
+      "id": "AP1-8-2-2-K3-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K3",
+      "vorne": "Eine Schleife soll alle Elemente eines Arrays mit n Elementen durchlaufen, der Index beginnt bei 0. Wie lautet der Schleifenkopf richtig?",
+      "hinten": "`Für i von 0 bis n − 1`. Mit `bis n` würde zuletzt auf ein Element hinter dem Ende des Arrays zugegriffen."
+    },
+    {
+      "id": "AP1-8-2-2-K3-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K3",
+      "vorne": "Gezählt werden sollen alle Personen ab 18 Jahren. Die Zeile lautet `Wenn alter > 18 dann`. Wie lautet sie richtig?",
+      "hinten": "`Wenn alter >= 18 dann` (alter ≥ 18). Mit `>` würden 18-Jährige nicht mitgezählt."
+    },
+    {
+      "id": "AP1-8-2-2-K2-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K4",
+      "vorne": "Wie ist eine Verzweigung mit Alternative in Pseudocode aufgebaut?",
+      "hinten": "`Wenn Bedingung dann`\n  Anweisungen, eingerückt\n`Sonst`\n  Anweisungen, eingerückt\n`Ende Wenn`\nPseudocode ist nicht genormt; entscheidend sind klare Schlüsselwörter und die Einrückung."
+    },
+    {
+      "id": "AP1-8-2-2-K2-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K4",
+      "vorne": "Wie schreibst du in Pseudocode eine zählergesteuerte und eine kopfgesteuerte Schleife?",
+      "hinten": "- `Für i von 1 bis 10` … Rumpf eingerückt … `Ende Für`\n- `Solange Bedingung` … Rumpf eingerückt … `Ende Solange`"
+    },
+    {
+      "id": "AP1-8-2-2-K2-3",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K4",
+      "vorne": "Warum wird Pseudocode eingerückt?",
+      "hinten": "Die Einrückung zeigt, welche Anweisungen zu welchem Zweig oder Schleifenrumpf gehören, und macht so die Struktur sichtbar."
+    },
+    {
+      "id": "AP1-8-2-2-K4-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K4",
+      "vorne": "Welche Kontrollstruktur setzt du für die Formulierungen „für jedes Element …“, „solange …“ und „falls …, sonst …“ ein?",
+      "hinten": "- „für jedes Element …“: zählergesteuerte Schleife (Für)\n- „solange …“: kopfgesteuerte Schleife (Solange)\n- „falls …, sonst …“: Verzweigung (Wenn … Sonst)"
+    },
+    {
+      "id": "AP1-8-2-2-K4-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K4",
+      "vorne": "Schreibe in Pseudocode: Für jede Bestellung in der Liste `bestellungen` wird bei einem Betrag über 100 ein Rabatt von 5 % abgezogen, sonst bleibt der Betrag.",
+      "hinten": "`Für jede bestellung in bestellungen`\n`    Wenn bestellung.betrag > 100 dann`\n`        bestellung.betrag = bestellung.betrag * 0,95`\n`    Ende Wenn`\n`Ende Für`"
+    },
+    {
+      "id": "AP1-8-2-2-K5-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K5",
+      "vorne": "Bilde in Pseudocode ab: Für jede Abteilung in `abteilungen` soll für jeden ihrer Mitarbeiter `drucke(mitarbeiter.name)` aufgerufen werden.",
+      "hinten": "`Für jede abteilung in abteilungen`\n`    Für jeden mitarbeiter in abteilung.mitarbeiter`\n`        drucke(mitarbeiter.name)`\n`    Ende Für`\n`Ende Für`\nDie innere Schleife steht eingerückt im Rumpf der äußeren."
+    },
+    {
+      "id": "AP1-8-2-2-K6-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K6",
+      "vorne": "Ergänze in Pseudocode: `fertigeTeil()` soll wiederholt werden, solange `anzahl` kleiner als `ziel` ist und `notausAktiv()` falsch liefert.",
+      "hinten": "`Solange anzahl < ziel UND NICHT notausAktiv()`\n`    fertigeTeil()`\n`    anzahl = anzahl + 1`\n`Ende Solange`"
+    },
+    {
+      "id": "AP1-8-2-3-K1-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K1",
+      "vorne": "Was ist ein Schreibtischtest?",
+      "hinten": "Einen gegebenen Code von Hand, ohne ihn auf dem Computer auszuführen, mit bestimmten Eingabewerten durchgehen und dabei die Variablenwerte mitführen, um das Ergebnis zu ermitteln."
+    },
+    {
+      "id": "AP1-8-2-3-K1-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K1",
+      "vorne": "Wie legst du die Tabelle für einen Schreibtischtest an und führst sie?",
+      "hinten": "- eine Spalte je Variable (ggf. auch für Bedingung und Ausgabe)\n- Startwerte in die erste Zeile\n- Code Zeile für Zeile ausführen\n- jede Wertänderung neu eintragen, Bedingungen mit den aktuellen Werten prüfen"
+    },
+    {
+      "id": "AP1-8-2-3-K1-3",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K1",
+      "vorne": "Führe einen Schreibtischtest durch. Was wird ausgegeben?\n`x = 3`\n`y = 0`\n`Solange x > 0`\n`    y = y + x`\n`    x = x - 1`\n`Ende Solange`\n`Ausgabe y`",
+      "hinten": "- Start: x = 3, y = 0\n- 1. Durchlauf: y = 3, x = 2\n- 2. Durchlauf: y = 5, x = 1\n- 3. Durchlauf: y = 6, x = 0\nx > 0 ist falsch, Ausgabe: 6"
+    },
+    {
+      "id": "AP1-8-2-3-K2-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K2",
+      "vorne": "Was ist der Unterschied zwischen dem Rückgabewert und der Ausgabe eines Programmteils?",
+      "hinten": "- Rückgabewert: Ergebnis, das eine Funktion mit Rückgabe/`return` an den Aufrufer zurückgibt\n- Ausgabe: Wert, der angezeigt wird, z. B. mit `print` oder Ausgabe"
+    },
+    {
+      "id": "AP1-8-2-3-K2-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K2",
+      "vorne": "Was passiert, wenn eine Funktion eine Rückgabe-Anweisung erreicht, etwa mitten in einer Schleife?",
+      "hinten": "Die Funktion endet sofort und gibt den Wert an den Aufrufer zurück. Folgende Zeilen und weitere Schleifendurchläufe werden nicht mehr ausgeführt."
+    },
+    {
+      "id": "AP1-8-2-3-K2-3",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K2",
+      "vorne": "Was liefert `finde([4, 7, 7, 2], 7)`? Begründe.\n`Funktion finde(zahlen, ziel)`\n`    Für i von 0 bis länge(zahlen) − 1`\n`        Wenn zahlen[i] = ziel dann`\n`            Rückgabe i`\n`        Ende Wenn`\n`    Ende Für`\n`    Rückgabe −1`",
+      "hinten": "1: Bei i = 1 ist die Bedingung erstmals wahr, die Rückgabe beendet die Funktion sofort. Die zweite 7 an Index 2 wird nicht mehr erreicht."
+    },
+    {
+      "id": "AP1-8-2-3-K3-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Was ergibt `7 / 2` in C#, wenn beide Werte Ganzzahlen (`int`) sind?",
+      "hinten": "3 – bei der Division ganzer Zahlen fällt der Rest weg."
+    },
+    {
+      "id": "AP1-8-2-3-K3-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Was ergeben in Python `7 / 2` und `7 // 2`?",
+      "hinten": "- `7 / 2` ergibt 3.5 (in Python liefert `/` immer eine Kommazahl)\n- `7 // 2` ergibt 3 (Division ganzer Zahlen ohne Rest)"
+    },
+    {
+      "id": "AP1-8-2-3-K3-3",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Was liefert der Operator `%` (bzw. mod) bei ganzen Zahlen, z. B. `7 % 2`?",
+      "hinten": "Den Rest der ganzzahligen Division: `7 % 2` ergibt 1."
+    },
+    {
+      "id": "AP1-8-2-3-K3-4",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "Mit welchem Faktor multiplizierst du einen Betrag, um ihn um 20 % zu erhöhen, und mit welchem, um ihn um 20 % zu senken?",
+      "hinten": "- erhöhen: × 1,2\n- senken: × 0,8"
+    },
+    {
+      "id": "AP1-8-2-3-K3-5",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K3",
+      "vorne": "In welcher Reihenfolge wird `a + b * c` ausgewertet?",
+      "hinten": "Erst `b * c`, dann wird `a` addiert: Punkt- vor Strichrechnung, Klammern zuerst."
+    },
+    {
+      "id": "AP1-8-2-3-K4-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K4",
+      "vorne": "Wie bestimmst du bei verschachtelten Verzweigungen den Zweig, der durchlaufen wird?",
+      "hinten": "Von außen nach innen: erst die äußere Bedingung mit den aktuellen Werten prüfen, dann nur im zutreffenden Zweig die innere. Bei einer Kette Wenn – Sonst wenn gilt der erste zutreffende Zweig."
+    },
+    {
+      "id": "AP1-8-2-3-K4-2",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K4",
+      "vorne": "Wann ist eine mit „und“ verknüpfte Bedingung wahr, wann eine mit „oder“ verknüpfte?",
+      "hinten": "- und: nur wenn beide Teilbedingungen wahr sind\n- oder: wenn mindestens eine Teilbedingung wahr ist"
+    },
+    {
+      "id": "AP1-8-2-3-K6-1",
+      "sp": "AP1-8-2-3",
+      "k": "AP1-8-2-3-K6",
+      "vorne": "Was liefert die Funktion für m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]?\n`Funktion summeDiagonale(m)`\n`    s = 0`\n`    Für i von 0 bis 2`\n`        Für j von 0 bis 2`\n`            Wenn i = j dann`\n`                s = s + m[i][j]`\n`            Ende Wenn`\n`        Ende Für`\n`    Ende Für`\n`    Rückgabe s`",
+      "hinten": "15: Addiert werden nur die Elemente mit i = j, also m[0][0] + m[1][1] + m[2][2] = 1 + 5 + 9."
+    },
+    {
+      "id": "AP1-8-2-4-K1-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Was ist ein formaler Fehler im Quellcode?",
+      "hinten": "Ein Verstoß gegen die Regeln der Programmiersprache (Syntaxfehler), z. B. ein fehlendes Semikolon. Das Programm lässt sich nicht übersetzen bzw. startet nicht."
+    },
+    {
+      "id": "AP1-8-2-4-K1-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Was ist ein inhaltlicher (logischer) Fehler im Quellcode?",
+      "hinten": "Das Programm läuft, liefert aber ein falsches Ergebnis, z. B. wegen einer falschen Formel oder Schleifengrenze."
+    },
+    {
+      "id": "AP1-8-2-4-K1-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Formal oder inhaltlich? (a) `Wenn` ohne Bedingung, (b) Durchschnitt wird durch die falsche Anzahl geteilt",
+      "hinten": "- (a) formaler Fehler: Regel der Sprache verletzt\n- (b) inhaltlicher Fehler: Programm läuft, Ergebnis ist falsch"
+    },
+    {
+      "id": "AP1-8-2-4-K1-4",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K1",
+      "vorne": "Was ist ein Laufzeitfehler? Nenne ein Beispiel.",
+      "hinten": "Das Programm startet, bricht aber bei bestimmten Daten während der Ausführung ab, z. B. bei einer Division durch null oder einem Zugriff über das Ende eines Arrays."
+    },
+    {
+      "id": "AP1-8-2-4-K2-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K2",
+      "vorne": "Wie gehst du vor, um in einem kurzen Code die fehlerhafte Stelle zu finden?",
+      "hinten": "Mit Testwerten einen Schreibtischtest machen, erwartete und tatsächliche Werte vergleichen und die Zeile suchen, ab der sie voneinander abweichen."
+    },
+    {
+      "id": "AP1-8-2-4-K2-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K2",
+      "vorne": "Ein Skript soll warnen, wenn der freie Speicher unter 10 % fällt: `if frei_prozent > 10: warnung()`. Korrigiere die Zeile.",
+      "hinten": "`if frei_prozent < 10: warnung()` – der Vergleichsoperator war vertauscht."
+    },
+    {
+      "id": "AP1-8-2-4-K2-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K2",
+      "vorne": "Der Nettopreis soll um 19 % Umsatzsteuer erhöht werden: `brutto = netto * 0.19`. Korrigiere die Zeile.",
+      "hinten": "`brutto = netto * 1.19` – mit 0.19 entstünde nur der Steuerbetrag."
+    },
+    {
+      "id": "AP1-8-2-4-K3-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K3",
+      "vorne": "Eine Funktion durchläuft zwei Arrays mit demselben Index bis zur Länge des ersten. Was passiert, wenn das zweite Array kürzer ist?",
+      "hinten": "Der Index läuft über das Ende des zweiten Arrays hinaus. Der Zugriff auf das nicht vorhandene Element führt in den meisten Sprachen zu einem Laufzeitfehler mit Programmabbruch."
+    },
+    {
+      "id": "AP1-8-2-4-K3-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K3",
+      "vorne": "Dieselbe Funktion: Was passiert, wenn das zweite Array länger ist als das erste?",
+      "hinten": "Das Programm läuft, aber die überzähligen Elemente des zweiten Arrays werden nicht berücksichtigt – das Ergebnis kann falsch sein."
+    },
+    {
+      "id": "AP1-8-2-4-K3-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K3",
+      "vorne": "Wie verhinderst du Probleme, wenn einer Funktion zwei Arrays übergeben werden, die gleich lang sein müssen?",
+      "hinten": "Vor der Verarbeitung prüfen, ob beide Arrays gleich lang sind, und sonst abbrechen bzw. einen Fehler melden."
+    },
+    {
+      "id": "AP1-8-2-4-K5-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K5",
+      "vorne": "Nenne vier typische Fehlerquellen im Quellcode.",
+      "hinten": "- falsche Schleifengrenze\n- vertauschter Vergleichsoperator\n- nicht initialisierte Variable\n- Division durch null"
+    },
+    {
+      "id": "AP1-8-2-4-K5-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K5",
+      "vorne": "Eine Summe wird in einer Schleife gebildet, die Variable `summe` bekommt vorher aber keinen Startwert. Welcher Fehler ist das, und wie behebst du ihn?",
+      "hinten": "Eine nicht initialisierte Variable. Behebung: vor der Schleife `summe = 0` setzen."
+    },
+    {
+      "id": "AP1-8-2-4-K5-3",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K5",
+      "vorne": "Ein Durchschnitt wird mit `summe / anzahl` berechnet. Welcher Fehler droht, und wie verhinderst du ihn?",
+      "hinten": "Division durch null, wenn `anzahl` 0 ist. Vor der Division prüfen, ob `anzahl` ungleich 0 ist."
+    },
+    {
+      "id": "AP1-8-3-1-K1-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K1",
+      "vorne": "Was ist im Anwendungsfalldiagramm ein Akteur, und wie wird er gezeichnet?",
+      "hinten": "Eine Person, Rolle oder ein externes System außerhalb des Systems, das mit dem System arbeitet. Gezeichnet als Strichmännchen mit Namen darunter."
+    },
+    {
+      "id": "AP1-8-3-1-K1-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K1",
+      "vorne": "Was ist im Anwendungsfalldiagramm ein Anwendungsfall, und wie wird er gezeichnet?",
+      "hinten": "Eine Tätigkeit, die ein Akteur mit dem System ausführt und die ihm ein Ergebnis liefert. Gezeichnet als Ellipse mit Namen, z. B. „Buch ausleihen“."
+    },
+    {
+      "id": "AP1-8-3-1-K1-3",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K1",
+      "vorne": "Woran erkennst du in einer Textbeschreibung Akteure und Anwendungsfälle?",
+      "hinten": "- Akteure: Personen, Rollen oder externe Systeme, die das System nutzen\n- Anwendungsfälle: die Tätigkeiten, die sie mit dem System ausführen (Verb mit Objekt)"
+    },
+    {
+      "id": "AP1-8-3-1-K2-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K2",
+      "vorne": "Wie verbindest du im Anwendungsfalldiagramm einen Akteur mit einem Anwendungsfall?",
+      "hinten": "Mit einer Assoziation: einer durchgezogenen Linie zwischen Akteur und Anwendungsfall."
+    },
+    {
+      "id": "AP1-8-3-1-K3-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K3",
+      "vorne": "Wie zeichnest du eine Generalisierung zwischen zwei Akteuren?",
+      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreiecksspitze, die vom spezielleren zum allgemeinen Akteur zeigt."
+    },
+    {
+      "id": "AP1-8-3-1-K3-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K3",
+      "vorne": "Was bedeutet eine Generalisierung zwischen den Akteuren „Mitarbeiter“ (allgemein) und „Teamleiter“ (speziell)?",
+      "hinten": "Der Teamleiter kann alle Anwendungsfälle nutzen, die der Mitarbeiter nutzen kann, und gegebenenfalls weitere."
+    },
+    {
+      "id": "AP1-8-3-1-K4-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K4",
+      "vorne": "Wann setzt du im Anwendungsfalldiagramm eine «include»-Beziehung ein?",
+      "hinten": "Wenn ein Anwendungsfall einen anderen bei jeder Ausführung einschließt."
+    },
+    {
+      "id": "AP1-8-3-1-K4-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K4",
+      "vorne": "Wie wird eine «include»-Beziehung gezeichnet, und wohin zeigt der Pfeil?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze, beschriftet «include». Er zeigt vom einschließenden Anwendungsfall zum eingeschlossenen."
+    },
+    {
+      "id": "AP1-8-3-1-K5-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K5",
+      "vorne": "Wann setzt du im Anwendungsfalldiagramm eine «extend»-Beziehung ein?",
+      "hinten": "Wenn ein Anwendungsfall einen anderen nur unter einer bestimmten Bedingung erweitert."
+    },
+    {
+      "id": "AP1-8-3-1-K5-2",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K5",
+      "vorne": "Wie wird eine «extend»-Beziehung gezeichnet, und wohin zeigt der Pfeil?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze, beschriftet «extend». Er zeigt vom erweiternden Anwendungsfall zum Basisanwendungsfall, der erweitert wird."
+    },
+    {
+      "id": "AP1-8-3-1-K5-3",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K5",
+      "vorne": "include oder extend? (a) „Geld abheben“ prüft jedes Mal die PIN; (b) „Bestellen“ wird nur bei Neukunden um „Kundenkonto anlegen“ ergänzt",
+      "hinten": "- (a) include: „Geld abheben“ → „PIN prüfen“\n- (b) extend: „Kundenkonto anlegen“ → „Bestellen“"
+    },
+    {
+      "id": "AP1-8-3-1-K6-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K6",
+      "vorne": "Was ist die Systemgrenze im Anwendungsfalldiagramm, und wie wird sie gezeichnet?",
+      "hinten": "Ein Rechteck mit dem Systemnamen, das alle Anwendungsfälle des Systems umschließt. Die Akteure stehen außerhalb."
+    },
+    {
+      "id": "AP1-8-3-2-K1-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K1",
+      "vorne": "Welche drei Bereiche hat eine Klasse im Klassendiagramm, von oben nach unten?",
+      "hinten": "1. Klassenname\n2. Attribute\n3. Methoden"
+    },
+    {
+      "id": "AP1-8-3-2-K2-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K2",
+      "vorne": "Wie wird ein Attribut im Klassendiagramm notiert?",
+      "hinten": "`Sichtbarkeit Name : Typ`, z. B. `- name : String`"
+    },
+    {
+      "id": "AP1-8-3-2-K2-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K2",
+      "vorne": "Wie wird eine Methode mit Parameter und Rückgabetyp im Klassendiagramm notiert?",
+      "hinten": "`Sichtbarkeit name(parameter : Typ) : Rückgabetyp`, z. B. `+ berechneZins(jahre : int) : double`"
+    },
+    {
+      "id": "AP1-8-3-2-K3-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K3",
+      "vorne": "Welche Zeichen stehen im Klassendiagramm für die Sichtbarkeiten public und private?",
+      "hinten": "- `+` public\n- `-` private"
+    },
+    {
+      "id": "AP1-8-3-2-K3-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K3",
+      "vorne": "Welche Zeichen stehen im Klassendiagramm für die Sichtbarkeiten protected und package?",
+      "hinten": "- `#` protected\n- `~` package"
+    },
+    {
+      "id": "AP1-8-3-2-K4-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Was bedeuten im Klassendiagramm die Multiplizitäten 1, *, 0..1 und 1..*?",
+      "hinten": "- 1: genau eins\n- *: beliebig viele (0 bis viele)\n- 0..1: keins oder eins\n- 1..*: mindestens eins"
+    },
+    {
+      "id": "AP1-8-3-2-K4-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Zwischen „Kunde“ und „Bestellung“ steht eine Assoziation, bei Kunde die 1, bei Bestellung der *. Wie liest du das?",
+      "hinten": "Ein Kunde hat beliebig viele Bestellungen; jede Bestellung gehört zu genau einem Kunden."
+    },
+    {
+      "id": "AP1-8-3-2-K4-3",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Wie zeichnest du eine Assoziation zwischen zwei Klassen, und wo trägst du die Multiplizität ein?",
+      "hinten": "Als durchgezogene Linie zwischen den Klassen. Die Multiplizität steht am Linienende bei der Klasse, deren Anzahl sie angibt."
+    },
+    {
+      "id": "AP1-8-3-2-K4-4",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K4",
+      "vorne": "Was zeigt eine Pfeilspitze an einer Assoziation (gerichtete Assoziation)?",
+      "hinten": "Die Navigierbarkeit: Die Klasse am Linienanfang kennt die Klasse an der Pfeilspitze und kann sie erreichen, nicht umgekehrt."
+    },
+    {
+      "id": "AP1-8-3-2-K5-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K5",
+      "vorne": "Wie leitest du aus einer Textbeschreibung Klassen, Attribute und Methoden ab?",
+      "hinten": "- Klassen: Substantive für eigenständige Dinge oder Personen\n- Attribute: deren Eigenschaften und Angaben\n- Methoden: Tätigkeiten (Verben), die diese Dinge ausführen"
+    },
+    {
+      "id": "AP1-8-3-2-K5-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K5",
+      "vorne": "Text: „Ein Fahrzeug hat ein Kennzeichen und einen Kilometerstand; es kann eine Strecke in Kilometern fahren.“ Leite die Klasse ab.",
+      "hinten": "Klasse Fahrzeug:\n- `- kennzeichen : String`\n- `- kilometerstand : int`\n- `+ fahren(km : int) : void`"
+    },
+    {
+      "id": "AP1-8-3-2-K6-1",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K6",
+      "vorne": "Wie unterscheiden sich Aggregation und Komposition, und wie werden sie gezeichnet?",
+      "hinten": "- Aggregation: Das Teil kann auch ohne das Ganze bestehen; leere Raute am Ganzen.\n- Komposition: Das Teil besteht nicht ohne das Ganze; ausgefüllte Raute am Ganzen."
+    },
+    {
+      "id": "AP1-8-3-2-K6-2",
+      "sp": "AP1-8-3-2",
+      "k": "AP1-8-3-2-K6",
+      "vorne": "Aggregation oder Komposition? (a) Gebäude – Raum, (b) Mannschaft – Spieler",
+      "hinten": "- (a) Komposition: Ein Raum besteht nicht ohne sein Gebäude.\n- (b) Aggregation: Ein Spieler besteht auch ohne die Mannschaft."
+    },
+    {
+      "id": "AP1-8-3-3-K1-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie werden im Aktivitätsdiagramm Startknoten und Endknoten gezeichnet?",
+      "hinten": "- Startknoten: ausgefüllter schwarzer Kreis\n- Endknoten: Kreis mit einem kleineren ausgefüllten Kreis darin"
+    },
+    {
+      "id": "AP1-8-3-3-K1-2",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie wird im Aktivitätsdiagramm eine Aktion gezeichnet?",
+      "hinten": "Als Rechteck mit abgerundeten Ecken, darin die Tätigkeit, z. B. „Bestellung prüfen“."
+    },
+    {
+      "id": "AP1-8-3-3-K1-3",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie werden im Aktivitätsdiagramm Entscheidung und Zusammenführung gezeichnet?",
+      "hinten": "Beide als Raute:\n- Entscheidung: ein Eingang, mehrere Ausgänge mit Bedingungen\n- Zusammenführung: mehrere Eingänge, ein Ausgang"
+    },
+    {
+      "id": "AP1-8-3-3-K1-4",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K1",
+      "vorne": "Wie und wo werden im Aktivitätsdiagramm die Bedingungen einer Entscheidung notiert?",
+      "hinten": "In eckigen Klammern an den ausgehenden Kanten, z. B. `[betrag > 100]` und `[sonst]` bzw. `[else]`. Sie müssen sich gegenseitig ausschließen."
+    },
+    {
+      "id": "AP1-8-3-3-K2-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K2",
+      "vorne": "Ablauf: Eine Bestellung wird geprüft. Ist sie vollständig, wird sie versendet, sonst wird der Kunde angerufen. Beschreibe das Aktivitätsdiagramm Element für Element.",
+      "hinten": "- Startknoten\n- Aktion „Bestellung prüfen“\n- Entscheidung: [vollständig] → Aktion „Bestellung versenden“, [sonst] → Aktion „Kunde anrufen“\n- Zusammenführung\n- Endknoten"
+    },
+    {
+      "id": "AP1-8-3-3-K3-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K3",
+      "vorne": "Wie stellst du im Aktivitätsdiagramm eine Wiederholung dar?",
+      "hinten": "Eine Entscheidung prüft die Bedingung: Eine ausgehende Kante führt zurück zu einer früheren Aktion (meist über eine Zusammenführung), die andere verlässt die Wiederholung."
+    },
+    {
+      "id": "AP1-8-3-3-K4-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K4",
+      "vorne": "Wie stellst du im Aktivitätsdiagramm parallele Abläufe dar?",
+      "hinten": "- Teilung: dicker Balken mit einem Eingang und mehreren Ausgängen; die Zweige laufen parallel\n- Synchronisation: dicker Balken mit mehreren Eingängen und einem Ausgang"
+    },
+    {
+      "id": "AP1-8-3-3-K4-2",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K4",
+      "vorne": "Wann geht es nach einer Synchronisation (Balken) weiter, wann nach einer Zusammenführung (Raute)?",
+      "hinten": "- Synchronisation: erst, wenn alle parallelen Zweige angekommen sind\n- Zusammenführung: sobald einer der alternativen Zweige ankommt"
+    },
+    {
+      "id": "AP1-8-3-3-K5-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K5",
+      "vorne": "Was sind Schwimmbahnen im Aktivitätsdiagramm?",
+      "hinten": "Spalten oder Zeilen, die das Diagramm nach Beteiligten aufteilen, z. B. Kunde, Vertrieb, Lager. Jede Aktion steht in der Bahn dessen, der sie ausführt."
+    },
+    {
+      "id": "AP1-8-3-3-K6-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K6",
+      "vorne": "Was unterscheidet Endknoten und Ablaufende im Aktivitätsdiagramm?",
+      "hinten": "- Endknoten (Kreis mit Punkt): beendet alle Abläufe der Aktivität\n- Ablaufende (Kreis mit X): beendet nur den eigenen Zweig, parallele Zweige laufen weiter"
+    },
+    {
+      "id": "AP1-8-4-1-K1-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K1",
+      "vorne": "Mit welchen Symbolen werden im ER-Diagramm Entität, Beziehung und Attribut gezeichnet?",
+      "hinten": "- Entität: Rechteck\n- Beziehung: Raute\n- Attribut: Ellipse, mit einer Linie verbunden"
+    },
+    {
+      "id": "AP1-8-4-1-K1-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K1",
+      "vorne": "Was ist im ER-Modell eine Entität?",
+      "hinten": "Ein unterscheidbares Objekt der realen Welt – Person, Gegenstand oder Vorgang –, über das Daten gespeichert werden, z. B. Kunde, Artikel oder Bestellung."
+    },
+    {
+      "id": "AP1-8-4-1-K2-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K2",
+      "vorne": "Wie leitest du aus einer Textbeschreibung Entitäten, Attribute und Beziehungen ab?",
+      "hinten": "- Entitäten: Substantive für Dinge oder Personen, über die Daten gespeichert werden\n- Attribute: deren Eigenschaften\n- Beziehungen: Verben, die Entitäten verbinden, z. B. „bestellt“"
+    },
+    {
+      "id": "AP1-8-4-1-K3-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K3",
+      "vorne": "Was ist ein Primärschlüssel?",
+      "hinten": "Ein Attribut (oder eine Kombination von Attributen), das jeden Datensatz einer Entität eindeutig kennzeichnet, z. B. Kundennummer. Sein Wert darf weder fehlen noch sich wiederholen."
+    },
+    {
+      "id": "AP1-8-4-1-K3-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K3",
+      "vorne": "Wie wird der Primärschlüssel im ER-Diagramm gekennzeichnet?",
+      "hinten": "Der Name des Schlüsselattributs in der Ellipse wird unterstrichen."
+    },
+    {
+      "id": "AP1-8-4-1-K4-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K4",
+      "vorne": "Wie bestimmst du aus einem Text die Kardinalität einer Beziehung zwischen A und B?",
+      "hinten": "In beide Richtungen fragen: Mit wie vielen B ist ein A verbunden, mit wie vielen A ein B? Je Seite: höchstens eins → 1, mehrere → n bzw. m."
+    },
+    {
+      "id": "AP1-8-4-1-K4-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K4",
+      "vorne": "Welche Kardinalität haben diese Beziehungen? (a) Kunde – Bestellung, (b) Schüler – Kurs, (c) Mitarbeiter – persönlicher Dienstausweis",
+      "hinten": "- (a) 1:n – ein Kunde, viele Bestellungen\n- (b) m:n – ein Schüler, viele Kurse; ein Kurs, viele Schüler\n- (c) 1:1 – je Mitarbeiter ein Ausweis, je Ausweis ein Mitarbeiter"
+    },
+    {
+      "id": "AP1-8-4-1-K4-3",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K4",
+      "vorne": "In der Chen-Notation (Rechteck, Raute, Ellipse) ist Kunde – bestellt – Bestellung eine 1:n-Beziehung. Wo steht die 1, wo das n?",
+      "hinten": "Die 1 steht an der Linie zur Entität Kunde, das n an der Linie zur Entität Bestellung."
+    },
+    {
+      "id": "AP1-8-4-1-K5-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K5",
+      "vorne": "Warum gehört der Kundenname zur Entität Kunde und nicht zur Entität Bestellung?",
+      "hinten": "Er ist eine Eigenschaft des Kunden. Stünde er bei der Bestellung, würde er bei jeder Bestellung erneut gespeichert – die Angabe wäre doppelt vorhanden."
+    },
+    {
+      "id": "AP1-8-4-1-K5-3",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K5",
+      "vorne": "Kunde – bestellt – Bestellung ist eine 1:n-Beziehung. Bei welcher Entität steht der Fremdschlüssel Kundennummer?",
+      "hinten": "Bei Bestellung, also auf der n-Seite: Jede Bestellung verweist auf genau einen Kunden."
+    },
+    {
+      "id": "AP1-8-4-1-K6-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K6",
+      "vorne": "Ein ER-Modell enthält Kunde – bestellt – Bestellung. Künftig bearbeitet jede Bestellung genau ein Mitarbeiter, ein Mitarbeiter bearbeitet viele Bestellungen. Wie erweiterst du das Modell?",
+      "hinten": "- neue Entität Mitarbeiter (Rechteck) mit Primärschlüssel Personalnummer und z. B. Name\n- Beziehung „bearbeitet“ (Raute) zwischen Mitarbeiter und Bestellung\n- Kardinalität: 1 bei Mitarbeiter, n bei Bestellung"
+    },
+    {
+      "id": "AP1-8-4-1-K5-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K7",
+      "vorne": "Bestellung – enthält – Artikel ist eine m:n-Beziehung. Wohin gehört das Attribut Menge?",
+      "hinten": "An die Beziehung „enthält“: Die Menge beschreibt weder die Bestellung allein noch den Artikel allein, sondern den Artikel in dieser Bestellung."
+    },
+    {
+      "id": "AP1-8-4-1-K7-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K7",
+      "vorne": "Zwischen Artikel und LKW besteht die m:n-Beziehung „wird verladen auf“. Wo zeichnest du die Attribute Menge und Verladezeit ein?",
+      "hinten": "An der Beziehung (Raute): Beide entstehen erst, wenn ein bestimmter Artikel auf einen bestimmten LKW verladen wird."
+    },
+    {
+      "id": "AP1-8-4-2-K1-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K2",
+      "vorne": "Was bedeutet Redundanz bei gespeicherten Daten?",
+      "hinten": "Dieselbe Information ist mehrfach gespeichert."
+    },
+    {
+      "id": "AP1-8-4-2-K2-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K2",
+      "vorne": "Welches Problem entsteht durch Redundanz?",
+      "hinten": "Wird bei einer Änderung eine der Stellen vergessen, widersprechen sich die Daten (Inkonsistenz). Außerdem wird unnötig Speicher belegt."
+    },
+    {
+      "id": "AP1-8-4-2-K2-2",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K2",
+      "vorne": "Die Adresse eines Kunden ist bei jeder seiner Bestellungen gespeichert. Der Kunde zieht um. Was kann passieren?",
+      "hinten": "Wird die Adresse nicht bei allen Bestellungen geändert, gibt es für denselben Kunden verschiedene, widersprüchliche Adressen."
+    },
+    {
+      "id": "AP1-8-4-2-K3-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Welcher Datentyp passt jeweils? Geburtsdatum, Anzahl Kinder, Nachname",
+      "hinten": "- Geburtsdatum: Datum\n- Anzahl Kinder: Ganzzahl\n- Nachname: Text"
+    },
+    {
+      "id": "AP1-8-4-2-K3-2",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Warum speicherst du ein Geburtsdatum als Datum und nicht als Text?",
+      "hinten": "Nur gültige Datumswerte sind möglich, man kann damit rechnen (z. B. Alter, Fristen), und die Sortierung nach Datum ist richtig."
+    },
+    {
+      "id": "AP1-8-4-2-K3-3",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Welchen Datentyp wählst du für eine Telefonnummer, und warum?",
+      "hinten": "Text: Die führende 0 bleibt erhalten, Zeichen wie + oder Leerzeichen sind möglich, und gerechnet wird damit nicht."
+    },
+    {
+      "id": "AP1-8-4-2-K4-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K3",
+      "vorne": "Warum wird eine Postleitzahl als Text und nicht als Ganzzahl gespeichert?",
+      "hinten": "Führende Nullen bleiben erhalten (z. B. 01067), und mit Postleitzahlen wird nicht gerechnet."
+    },
+    {
+      "id": "AP1-8-4-2-K5-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K5",
+      "vorne": "Unterscheide Einfüge-, Änderungs- und Löschanomalie.",
+      "hinten": "- Einfügeanomalie: Ein Datensatz lässt sich nicht anlegen, weil andere Angaben fehlen.\n- Änderungsanomalie: Eine mehrfach gespeicherte Angabe wird nicht überall geändert, die Daten widersprechen sich.\n- Löschanomalie: Beim Löschen gehen ungewollt andere Informationen verloren."
+    },
+    {
+      "id": "AP1-8-4-2-K5-2",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K5",
+      "vorne": "Welche Anomalie liegt vor? Wird die einzige Bestellung eines Kunden gelöscht, sind auch seine Adressdaten verloren.",
+      "hinten": "Löschanomalie."
+    },
+    {
+      "id": "AP1-8-4-5-K1-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K1",
+      "vorne": "Welche Funktion hat ein Primärschlüssel in einer Tabelle?",
+      "hinten": "Er kennzeichnet jeden Datensatz eindeutig; sein Wert kommt nur einmal vor und ist nie leer."
+    },
+    {
+      "id": "AP1-8-4-5-K2-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K2",
+      "vorne": "Welchen Zweck hat ein Fremdschlüssel?",
+      "hinten": "Er verweist auf den Primärschlüssel einer anderen Tabelle und verbindet so die Tabellen, z. B. die Kundennummer in der Tabelle Bestellung."
+    },
+    {
+      "id": "AP1-8-4-5-K3-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K3",
+      "vorne": "Welchen Vorteil haben verknüpfte Tabellen gegenüber einer einzigen großen Tabelle?",
+      "hinten": "Jede Information wird nur einmal gespeichert. Es gibt keine Redundanz, Änderungen erfolgen an einer Stelle, und die Daten bleiben widerspruchsfrei."
+    },
+    {
+      "id": "AP1-8-4-5-K4-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K4",
+      "vorne": "Bringe die Phasen des Datenbankentwurfs in die richtige Reihenfolge: Test, logischer Entwurf, Anforderungsanalyse, physischer Entwurf, konzeptioneller Entwurf, Anwendung und Wartung, Verteilung im Netz.",
+      "hinten": "1. Anforderungsanalyse\n2. konzeptioneller Entwurf\n3. logischer Entwurf\n4. Verteilung im Netz\n5. physischer Entwurf\n6. Test\n7. Anwendung und Wartung"
+    },
+    {
+      "id": "AP1-8-4-5-K5-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K5",
+      "vorne": "Unterscheide Tabelle, Datensatz und Attribut einer relationalen Datenbank.",
+      "hinten": "- Tabelle: Sammlung gleichartiger Daten, z. B. Kunden\n- Datensatz: eine Zeile, z. B. ein Kunde\n- Attribut: eine Spalte, z. B. Name"
+    },
+    {
+      "id": "AP1-8-4-3-K1-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K1",
+      "vorne": "Welche Bedienelemente hat eine einfache Eingabemaske, und wofür dienen sie?",
+      "hinten": "- Beschriftung: sagt, was einzugeben ist\n- Eingabefeld: freie Eingabe\n- Auswahlfeld: Auswahl aus festen Werten\n- Schaltfläche: löst eine Aktion aus, z. B. Speichern"
+    },
+    {
+      "id": "AP1-8-4-3-K1-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K1",
+      "vorne": "Wann verwendest du in einer Maske ein Auswahlfeld statt eines Eingabefelds?",
+      "hinten": "Wenn nur bestimmte, feste Werte zulässig sind, z. B. Anrede oder Land. Das verhindert Tippfehler und ungültige Eingaben."
+    },
+    {
+      "id": "AP1-8-4-3-K2-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K2",
+      "vorne": "Nenne vier Regeln der Softwareergonomie für eine Bildschirmmaske.",
+      "hinten": "- Zusammengehöriges gruppieren\n- einheitliche Anordnung\n- verständliche Beschriftung\n- klare Fehlermeldungen"
+    },
+    {
+      "id": "AP1-8-4-3-K2-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K2",
+      "vorne": "Was macht eine klare Fehlermeldung aus?",
+      "hinten": "Sie sagt verständlich, was falsch ist und wie man es behebt, und steht beim betroffenen Feld – z. B. „Bitte eine fünfstellige PLZ eingeben“ statt „Fehler 17“."
+    },
+    {
+      "id": "AP1-8-4-3-K3-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K3",
+      "vorne": "Was bedeutet Corporate Identity für eine Bildschirmmaske?",
+      "hinten": "Logo, Farben und Schrift des Unternehmens werden einheitlich verwendet (das Corporate Design als sichtbarer Teil der CI), sodass die Anwendung zum Erscheinungsbild passt und wiedererkannt wird."
+    },
+    {
+      "id": "AP1-8-4-3-K4-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K4",
+      "vorne": "Nenne vier Anforderungen der Barrierefreiheit an eine Bildschirmmaske.",
+      "hinten": "- ausreichender Kontrast\n- skalierbare Schrift\n- Bedienung mit der Tastatur\n- Information nicht allein über Farbe"
+    },
+    {
+      "id": "AP1-8-4-3-K4-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K4",
+      "vorne": "Warum darf eine Maske Informationen, z. B. Pflichtfelder, nicht allein über Farbe kennzeichnen?",
+      "hinten": "Menschen mit Farbsehschwäche erkennen den Unterschied nicht. Zusätzlich Text oder ein Zeichen verwenden, z. B. * bei Pflichtfeldern."
+    },
+    {
+      "id": "AP1-8-4-3-K4-3",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K4",
+      "vorne": "Warum muss eine Maske vollständig mit der Tastatur bedienbar sein?",
+      "hinten": "Menschen, die keine Maus nutzen können, z. B. wegen motorischer Einschränkungen oder weil sie mit einem Screenreader arbeiten, müssen alle Funktionen erreichen."
+    },
+    {
+      "id": "AP1-8-4-4-K1-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K1",
+      "vorne": "Wie sehen in der EPK die Sinnbilder für Ereignis und Funktion aus?",
+      "hinten": "- Ereignis: Sechseck, beschreibt einen Zustand, z. B. „Bestellung ist eingegangen“\n- Funktion: Rechteck mit abgerundeten Ecken, beschreibt eine Tätigkeit, z. B. „Bestellung prüfen“"
+    },
+    {
+      "id": "AP1-8-4-4-K1-2",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K1",
+      "vorne": "Wie sehen in der EPK die Sinnbilder für Organisationseinheit und Objekt aus?",
+      "hinten": "- Organisationseinheit: Ellipse mit senkrechtem Strich am linken Rand\n- (Informations-)Objekt: Rechteck"
+    },
+    {
+      "id": "AP1-8-4-4-K1-3",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K1",
+      "vorne": "Welche Konnektoren gibt es in der EPK, und was bedeuten sie?",
+      "hinten": "- Und (∧): alle Zweige\n- Exklusives Oder (XOR): genau ein Zweig\n- Offenes Oder (∨): mindestens ein Zweig, auch mehrere"
+    },
+    {
+      "id": "AP1-8-4-4-K2-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K2",
+      "vorne": "Welche Grundregel gilt für die Abfolge in einer EPK?",
+      "hinten": "Ereignisse und Funktionen wechseln sich ab; der Ablauf beginnt und endet mit einem Ereignis."
+    },
+    {
+      "id": "AP1-8-4-4-K3-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Wie werden in BPMN eine Aufgabe sowie Start-, Zwischen- und Endereignis gezeichnet?",
+      "hinten": "- Aufgabe: Rechteck mit abgerundeten Ecken\n- Startereignis: Kreis mit dünnem Rand\n- Zwischenereignis: Kreis mit doppeltem Rand\n- Endereignis: Kreis mit dickem Rand"
+    },
+    {
+      "id": "AP1-8-4-4-K3-2",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Wie unterscheiden sich in BPMN Sequenzfluss und Nachrichtenfluss?",
+      "hinten": "- Sequenzfluss: durchgezogene Linie mit ausgefüllter Spitze; Reihenfolge innerhalb eines Pools\n- Nachrichtenfluss: gestrichelte Linie mit offener Spitze; Nachricht zwischen verschiedenen Pools"
+    },
+    {
+      "id": "AP1-8-4-4-K3-3",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Welche Gateways gibt es in BPMN, wie sind sie gekennzeichnet, und was bedeuten sie?",
+      "hinten": "Raute mit Zeichen:\n- exklusiv (× oder leer): genau ein Weg\n- inklusiv (○): ein oder mehrere Wege\n- parallel (+): alle Wege gleichzeitig"
+    },
+    {
+      "id": "AP1-8-4-4-K3-4",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K3",
+      "vorne": "Was ist in BPMN ein Pool, was eine Lane?",
+      "hinten": "- Pool: großer Rahmen für einen Beteiligten am Prozess, z. B. ein Unternehmen\n- Lane: Bahn innerhalb des Pools für eine Rolle oder Abteilung"
+    },
+    {
+      "id": "AP1-8-4-4-K4-1",
+      "sp": "AP1-8-4-4",
+      "k": "AP1-8-4-4-K4",
+      "vorne": "Woran erkennst du in einer EPK und in einem BPMN-Diagramm, wer einen Schritt ausführt?",
+      "hinten": "- EPK: an der Organisationseinheit, die mit der Funktion verbunden ist\n- BPMN: an der Lane (bzw. dem Pool), in der die Aufgabe liegt"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [
+    {
+      "id": "AP1-8-4-4-K1-1",
+      "frage": "Aus dem alten Stand: Die Formen entsprechen der üblichen EPK-Notation (ARIS) bzw. BPMN 2.0. Ein Abgleich mit den Sinnbildern im Katalog-Anhang (z. B. Zeichen im exklusiven Gateway, Objekt-Symbol der EPK) war nicht möglich."
+    }
+  ],
+  "protokoll": [
+    {
+      "id": "AP1-8-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-1-1-K3 → AP1-8-1-1-K7)"
+    },
+    {
+      "id": "AP1-8-1-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-1-1-K3 → AP1-8-1-1-K7)"
+    },
+    {
+      "id": "AP1-8-1-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-1-1-K3 → AP1-8-1-1-K7)"
+    },
+    {
+      "id": "AP1-8-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-3-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-1-K4 → AP1-8-2-1-K6)"
+    },
+    {
+      "id": "AP1-8-2-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-1-K4 → AP1-8-2-1-K6)"
+    },
+    {
+      "id": "AP1-8-2-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-2-K2 → AP1-8-2-2-K4)"
+    },
+    {
+      "id": "AP1-8-2-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-2-K2 → AP1-8-2-2-K4)"
+    },
+    {
+      "id": "AP1-8-2-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-2-K2 → AP1-8-2-2-K4)"
+    },
+    {
+      "id": "AP1-8-2-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K3-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-3-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "Aussage gestrichen: Runden auf zwei Nachkommastellen ist Prüfungstechnik (P32)"
+    },
+    {
+      "id": "AP1-8-2-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-4-K4 → AP1-8-1-1-K7)"
+    },
+    {
+      "id": "AP1-8-2-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-2-4-K4 → AP1-8-1-1-K7)"
+    },
+    {
+      "id": "AP1-8-2-4-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-2-4-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-3-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "Attribut an der m:n-Beziehung ist jetzt eigene Aussage K7; damit ist auch die alte Unsicherheit zu dieser Karte erledigt"
+    },
+    {
+      "id": "AP1-8-4-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-4-2-K1 → AP1-8-4-2-K2)"
+    },
+    {
+      "id": "AP1-8-4-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-8-4-2-K4 → AP1-8-4-2-K3)"
+    },
+    {
+      "id": "AP1-8-4-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-3-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-4-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-8-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-1-3-K5-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-2-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-1-K7-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-2-K1-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-2-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-2-3-K1-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-3-K2-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-2-4-K1-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-4-K2-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-2-4-K2-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-3-2-K3-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-3-2-K4-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-3-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-3-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-3-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-3-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-3-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-1-K5-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-4-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-4-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-8-4-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-4-5-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    }
+  ]
+}
