@@ -102,11 +102,18 @@
   --schatten-3: 0 24px 64px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
-html[data-raum='AP2'] {
+html[data-raum='AP2'],
+html[data-raum='PB1'] {
   --akzent: #7ea6ff;
   --akzent-stark: #a3c0ff;
   --akzent-text: #0a1020;
   --akzent-rgb: 126, 166, 255;
+}
+html[data-raum='PB2'] {
+  --akzent: #f2b36b;
+  --akzent-stark: #f7cb94;
+  --akzent-text: #1f1206;
+  --akzent-rgb: 242, 179, 107;
 }
 html[data-raum='WISO'] {
   --akzent: #c39bff;

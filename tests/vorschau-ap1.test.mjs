@@ -181,15 +181,19 @@ describe('Vorschau PB1', () => {
   const cfg = RAEUME_VORSCHAU.PB1;
   const plaeneP = ladeLernplanAp1(wurzel, cfg);
   const alle = vorschauAlle(alt, wurzel);
-  const raum = alle.raeume.find((r) => r.id === 'AP2');
-  test('Raum AP2 zeigt die Gliederung von PB1, AP1 bleibt', { skip: !plaeneP.length && 'kein PB1' }, () => {
+  const raum = alle.raeume.find((r) => r.id === 'PB1');
+  test('Raum PB1 zeigt die Gliederung von PB1, AP1 bleibt, AP2 gibt es nicht mehr, PB2 als Platzhalter', { skip: !plaeneP.length && 'kein PB1' }, () => {
     assert.deepEqual(raum.ordner.map((o) => o.id), plaeneP.map((p) => p.oberblock.id));
     assert.deepEqual(alle.raeume.find((r) => r.id === 'AP1').ordner.map((o) => o.id), plaene.map((p) => p.oberblock.id));
-    assert.equal(alle.vorschauRaeume.AP2.raum, 'PB1');
+    assert.equal(alle.vorschauRaeume.PB1.raum, 'PB1');
+    assert.deepEqual(alle.raeume.map((r) => r.id), ['AP1', 'PB1', 'PB2', 'WISO']);
+    assert.ok(alle.vorschauRaeume.PB2.alt && alle.vorschauRaeume.PB2.stichpunkte > 0);
     assert.equal(alle.vorschauRaeume.AP1.raum, 'AP1');
   });
   test('keine alten AP2-Stichpunkte mehr, jede Karte hängt an einem vorhandenen Stichpunkt und einer Aussage', { skip: !plaeneP.length && 'kein PB1' }, () => {
-    assert.equal(Object.values(alle.sp).filter((s) => s.raum === 'AP2' && !s.id.startsWith('PB1-')).length, 0);
+    assert.equal(Object.values(alle.sp).filter((s) => s.raum === 'AP2').length, 0);
+    for (const s of Object.values(alle.sp).filter((s) => s.raum === 'PB2')) assert.ok(s.id.startsWith('AP2-') && s.koennen.length, s.id);
+    for (const [a, n] of Object.entries(alle.umzug.sp)) assert.ok(alle.sp[n]?.raum === 'PB1' && !alle.sp[a], `Umzug ${a} → ${n}`);
     const kIds = new Set(Object.values(alle.sp).flatMap((s) => s.koennen.map(([id]) => id)));
     for (const k of alle.karten) {
       assert.ok(alle.sp[k.sp], `${k.id}: Stichpunkt ${k.sp} fehlt`);
@@ -220,8 +224,8 @@ test('PB1: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs', a
   }
   const alle = vorschauAlle(alt, wurzel);
   const { teaser, erklaerung } = ladeKurzAp1(wurzel, cfg);
-  assert.equal(alle.vorschauRaeume.AP2.kurz, teaser.size);
-  assert.equal(alle.vorschauRaeume.AP2.erklaerungen, erklaerung.size);
+  assert.equal(alle.vorschauRaeume.PB1.kurz, teaser.size);
+  assert.equal(alle.vorschauRaeume.PB1.erklaerungen, erklaerung.size);
 });
 
 // Neue Karten PB1 (umbau/karten/pb1/), Regeln wie AP1 (umbau/auftraege/AP1-karten.md)
@@ -279,4 +283,27 @@ describe('Neue Lernkarten PB1', () => {
       }
     });
   }
+});
+
+test('P6: alter AP2-Lernstand wandert beim Ableiten in PB1, PB2-Karten behalten ihren Stand', async () => {
+  const { baueIndex } = await import('../src/daten/index.js');
+  const { ableiten } = await import('../src/lernstand/ableiten.js');
+  const alle = vorschauAlle(alt, wurzel);
+  const index = baueIndex(alle);
+  const [altSp, neuSp] = Object.entries(alle.umzug.sp)[0];
+  const pb2Karte = alle.karten.find((k) => alle.sp[k.sp]?.raum === 'PB2');
+  const t = Date.now();
+  const stand = ableiten(
+    [
+      { e: 'sp', id: altSp, an: true, t },
+      { e: 'karte', id: pb2Karte.id, n: 3, t: t + 1 },
+      { e: 'termin', r: 'AP2', d: '2027-05-01', t: t + 2 },
+    ],
+    index,
+  );
+  assert.ok(stand.spErledigt.has(neuSp), `${altSp} → ${neuSp} nicht übernommen`);
+  assert.ok(stand.karten.has(pb2Karte.id));
+  assert.equal(stand.termine.PB1, '2027-05-01');
+  assert.equal(index.raumVon(altSp), 'PB1');
+  assert.equal(index.raumVon(pb2Karte.id), 'PB2');
 });

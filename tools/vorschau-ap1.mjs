@@ -27,13 +27,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { BELEG_GEWICHT, stufeFuer } from './daten.mjs';
 
-// Räume mit neuem Lernplan in der Vorschau. appRaum: Raum der App, den der neue Lernplan ersetzt (Lernstand-IDs der
-// App bleiben); altPrefix: Präfix der alten Stichpunkte und Karten dieses App-Raums; ersteAktuelle: erster Termin
-// mit aktuellem Katalog (UMBAU.md 6). PB1 ersetzt in der Vorschau den alten Raum AP2 (Fachprüfungen); Aussagen, die
-// nach PB2 gehören, fehlen dort, bis PB2 gebaut ist.
+// Räume mit neuem Lernplan in der Vorschau. appRaum: Raum der App, der den neuen Lernplan zeigt; ersetzt: alter
+// App-Raum, an dessen Stelle er tritt (sonst appRaum selbst); altPrefix: Präfix der alten Stichpunkte und Karten;
+// ersteAktuelle: erster Termin mit aktuellem Katalog (UMBAU.md 6). Aus dem alten Raum AP2 (Fachprüfungen) werden
+// die Räume PB1 (neuer Lernplan) und PB2 (bis zum Umbau: die alten Stichpunkte mit Aussagen für PB2, pb2Platzhalter).
 export const RAEUME_VORSCHAU = {
   AP1: { teil: 'AP1', dir: 'ap1', appRaum: 'AP1', altPrefix: 'AP1', ersteAktuelle: '2025F', titel: null },
-  PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes (PB1)' },
+  PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'PB1', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes' },
 };
 const AP1 = RAEUME_VORSCHAU.AP1;
 const dateiMuster = (cfg) => new RegExp(`^${cfg.teil}-\\d+\\.json$`);
@@ -120,7 +120,58 @@ export function vorschauAp1(daten, wurzel) {
 export function vorschauAlle(daten, wurzel) {
   let d = daten;
   for (const cfg of Object.values(RAEUME_VORSCHAU)) if (ladeLernplanAp1(wurzel, cfg).length) d = vorschauRaum(d, wurzel, cfg);
+  if (ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB1).length) d = pb2Platzhalter(daten, d, wurzel);
   return d;
+}
+
+// Raum PB2, bis sein Lernplan gebaut ist: die alten AP2-Stichpunkte, deren Aussagen laut alt_neu von PB1 nach PB2
+// gehören, mit genau diesen Aussagen und ihren alten Karten (IDs unverändert, Lernstand bleibt). Dazu der
+// Lernstand-Umzug (P6) aus umbau/umzug.json als daten.umzug: alte Stichpunkt- und Block-IDs, die jetzt in PB1
+// wohnen, zeigen auf die neuen; Termine für AP2 gelten für PB1.
+export function pb2Platzhalter(original, d, wurzel) {
+  const plaene = ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB1);
+  const pb2 = new Set(plaene.flatMap((p) => p.alt_neu.koennen.filter((a) => a.status === 'PB2').map((a) => a.alt)));
+  const sp = { ...d.sp };
+  const behalten = new Set();
+  for (const s of Object.values(original.sp)) {
+    if (s.raum !== 'AP2') continue;
+    const koennen = s.koennen.filter(([id]) => pb2.has(id));
+    if (!koennen.length) continue;
+    sp[s.id] = { ...s, raum: 'PB2', koennen };
+    behalten.add(s.id);
+  }
+  const alt = original.raeume.find((r) => r.id === 'AP2');
+  const ordner = alt.ordner
+    .map((o) => ({ ...o, bloecke: o.bloecke.map((b) => ({ ...b, sp: b.sp.filter((id) => behalten.has(id)) })).filter((b) => b.sp.length) }))
+    .filter((o) => o.bloecke.length);
+  const bloeckePb2 = new Set(ordner.flatMap((o) => o.bloecke.map((b) => b.id)));
+  const karten = [...d.karten, ...original.karten.filter((k) => k.k && pb2.has(k.k) && behalten.has(k.sp))];
+  const raeume = [];
+  for (const r of d.raeume) {
+    raeume.push(r);
+    if (r.id === 'PB1') raeume.push({ id: 'PB2', name: 'PB2', titel: 'Entwicklung und Umsetzung von Algorithmen', ordner });
+  }
+  const umzugDatei = path.join(wurzel, 'umbau', 'umzug.json');
+  const u = fs.existsSync(umzugDatei) ? JSON.parse(fs.readFileSync(umzugDatei, 'utf8')) : { stichpunkte: {}, bloecke: {} };
+  const ziel = (n) => typeof n === 'string' && n !== 'offen' && n.startsWith('PB1');
+  const umzug = {
+    sp: Object.fromEntries(Object.entries(u.stichpunkte).filter(([a, n]) => a.startsWith('AP2') && ziel(n) && !behalten.has(a))),
+    bloecke: Object.fromEntries(Object.entries(u.bloecke).filter(([a, n]) => a.startsWith('AP2') && ziel(n) && !bloeckePb2.has(a))),
+    raeume: { AP2: 'PB1' },
+  };
+  const spPb2 = Object.values(sp).filter((s) => s.raum === 'PB2');
+  return {
+    ...d,
+    raeume,
+    sp,
+    karten,
+    umzug,
+    glossar: d.glossar.map((g) => ({ ...g, sp: [...new Set([...g.sp, ...(original.glossar.find((x) => x.b === g.b)?.sp ?? []).filter((id) => behalten.has(id))])] })),
+    vorschauRaeume: {
+      ...d.vorschauRaeume,
+      PB2: { raum: 'PB2', alt: true, stichpunkte: spPb2.length, koennen: spPb2.reduce((n, s) => n + s.koennen.length, 0), karten: karten.filter((k) => behalten.has(k.sp)).length },
+    },
+  };
 }
 
 export function vorschauRaum(daten, wurzel, cfg) {
@@ -198,7 +249,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
 
   const kurzTexte = ladeKurzAp1(wurzel, cfg);
   const typen = ladeTypenAp1(wurzel, cfg);
-  const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== R));
+  const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== (cfg.ersetzt ?? R)));
   // Neue Räume (PB1): Vorgänger eines Stichpunkts über die Umzugstabelle (P6), für Art und Gegenstücke
   const altVon = new Map();
   if (cfg.teil !== 'AP1' && fs.existsSync(path.join(wurzel, 'umbau', 'umzug.json'))) {
@@ -269,7 +320,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
     })),
   }));
 
-  const raeume = daten.raeume.map((r) => (r.id === R ? { ...r, ...(cfg.titel ? { titel: cfg.titel } : {}), ordner } : r));
+  const raeume = daten.raeume.map((r) => (r.id === (cfg.ersetzt ?? R) ? { ...r, id: R, name: R === 'AP1' ? r.name : R, ...(cfg.titel ? { titel: cfg.titel } : {}), ordner } : r));
   const spAp1 = Object.values(sp).filter((s) => s.raum === R);
 
   const v = {

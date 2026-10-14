@@ -211,6 +211,18 @@ function OrdnerGruppe({ nummer, gruppe, stand, zustaende, offen, autoOffen, umsc
 
 // Vorschau des neuen Lernplans (tools/vorschau-ap1.mjs): was hier anders ist als später in der fertigen App
 function VorschauHinweis({ v }) {
+  if (v.alt)
+    return (
+      <div class="vorschau-hinweis">
+        <Icon name="triangle-alert" groesse={16} />
+        <div>
+          <strong>PB2: noch der alte Stand</strong> – der neue Lernplan für PB2 wird als Nächstes gebaut.
+          <div class="gedaempft">
+            Hier stehen bis dahin die alten AP2-Stichpunkte mit den Aussagen, die zu PB2 gehören (Algorithmen, SQL, Testdaten, Debugging): {v.stichpunkte} Stichpunkte, {v.koennen} Aussagen, {v.karten} Karten. Dein Lernstand dazu bleibt erhalten.
+          </div>
+        </div>
+      </div>
+    );
   return (
     <div class="vorschau-hinweis">
       <Icon name="triangle-alert" groesse={16} />

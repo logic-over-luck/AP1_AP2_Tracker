@@ -11,6 +11,7 @@ import { Icon, Knopf, Rich, Reiter, Haken, Marke, Aufklapp, Leer } from '../../.
 import { erfasse, useLernstand } from '../../../lernstand/store.js';
 import { Diagramm } from './diagramm.jsx';
 import { AUFGABEN, NOTATION, SPICKZETTEL, NOTATION_AP1, SPICKZETTEL_AP1 } from './aufgaben/index.js';
+import { passtRaum } from '../rahmen/raum.js';
 
 export function ModellierenTrainer({ raum, trainer, modi, params }) {
   return (
@@ -20,7 +21,7 @@ export function ModellierenTrainer({ raum, trainer, modi, params }) {
   );
 }
 
-const fuerRaum = (liste, raum) => (liste ?? []).filter((a) => !a.raum || a.raum.includes(raum));
+const fuerRaum = (liste, raum) => (liste ?? []).filter((a) => passtRaum(a.raum, raum));
 
 function Modus({ raum, modus, params }) {
   const alle = useMemo(() => fuerRaum(AUFGABEN[modus.id], raum), [modus.id, raum]);

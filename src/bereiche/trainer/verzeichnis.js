@@ -141,7 +141,14 @@ export const TRAINER = [
   },
 ];
 
-const raumVon = (id) => (id.startsWith('WISO') ? 'WISO' : id.slice(0, 3));
+// Raum eines Stichpunkts. Ohne Inhalt (Tests) aus dem ID-Präfix; die App setzt beim Start die Auflösung über den
+// Inhalt (src/daten/inhalt.js), damit alte IDs nach dem Umbau im richtigen Raum landen (PB1/PB2, Umzug P6).
+let raumVon = (id) => (id.startsWith('WISO') ? 'WISO' : id.slice(0, 3));
+let spNeu = (id) => id;
+export function setzeAufloesung({ raum, sp }) {
+  if (raum) raumVon = raum;
+  if (sp) spNeu = sp;
+}
 
 export function trainerById(id) {
   return TRAINER.find((t) => t.id === id) ?? null;
@@ -159,7 +166,7 @@ export function trainerIn(raum) {
 // Für einen Stichpunkt: [{ trainer, modus }] – wo er geübt werden kann
 export function uebungenFuer(spId) {
   const ergebnis = [];
-  for (const t of TRAINER) for (const m of t.modi) if (m.sp.includes(spId)) ergebnis.push({ trainer: t, modus: m });
+  for (const t of TRAINER) for (const m of t.modi) if (m.sp.some((id) => id === spId || spNeu(id) === spId)) ergebnis.push({ trainer: t, modus: m });
   return ergebnis;
 }
 

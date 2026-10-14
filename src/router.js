@@ -3,8 +3,8 @@
 
 import { useEffect, useState } from 'preact/hooks';
 
-const RAUM_AUS_PFAD = { ap1: 'AP1', ap2: 'AP2', wiso: 'WISO' };
-const PFAD_AUS_RAUM = { AP1: 'ap1', AP2: 'ap2', WISO: 'wiso' };
+const RAUM_AUS_PFAD = { ap1: 'AP1', pb1: 'PB1', pb2: 'PB2', ap2: 'AP2', wiso: 'WISO' };
+const PFAD_AUS_RAUM = { AP1: 'ap1', PB1: 'pb1', PB2: 'pb2', AP2: 'ap2', WISO: 'wiso' };
 
 export function leseRoute(hash = location.hash) {
   const [pfad, abfrage = ''] = hash.replace(/^#\/?/, '').split('?');
