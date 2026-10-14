@@ -546,6 +546,9 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         eRechnung hier; damit ist die eRechnung, in AP1 Kür (P30), in PB1 Kern.
   - [x] **PB1-8 Benutzeroberflächen (14.10.2026):** 1 Themenblock, 4 Stichpunkte, 19 Können-Aussagen. Alte AP2-Aussagen:
         8 angepasst, 3 verschoben. Grundsätze der Dialoggestaltung in der aktuellen Fassung (mit Erlernbarkeit, Benutzerbindung).
+  - [x] **PB1-9 Qualität und Test (14.10.2026):** 2 Themenblöcke, 7 Stichpunkte, 28 Können-Aussagen. Alte AP2-Aussagen:
+        24 angepasst, 4 verschoben, 5 gestrichen, 23 für PB2 (Testdaten, Überdeckung, Schreibtischtest an Code, Debugging, TDD).
+        Weitere Testarten (Last-, Regressionstest, Test-Doubles) nach P-BEISPIELLISTE Kür: nur eine Hinweisquelle.
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 

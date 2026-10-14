@@ -1,0 +1,1004 @@
+{
+ "oberblock": {
+  "id": "PB1-9",
+  "titel": "Qualität und Test",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.04"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-9-1",
+   "titel": "Qualitätssicherung und Qualitätsmanagement",
+   "satz": "Maßnahmen zur Qualitätskontrolle planen und durchführen: qualitätssichernde Maßnahmen, PDCA, Kennzahlen, Soll-Ist-Vergleich und Prüfverfahren. QM-Grundlagen und PDCA für den Arbeitsplatz kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-9-1-1",
+     "titel": "Qualitätssichernde Maßnahmen in der Softwareentwicklung",
+     "ziel": "Qualitätssichernde Maßnahmen für ein Softwareprojekt beschreiben, Methoden der Qualitätslenkung anwenden und zu Vorschlägen begründet Stellung nehmen.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.01.2",
+       "anteil": "Qualitätslenkung durch Tests und Reviews"
+      },
+      {
+       "id": "AP2a.02.01.2",
+       "anteil": "Reviews und Tests"
+      },
+      {
+       "id": "AP2b.05.03.1",
+       "anteil": "Code-Reviews und Unit-Tests"
+      },
+      {
+       "id": "AP2b.04.07",
+       "anteil": "Werkzeuge als QS-Maßnahme"
+      }
+     ],
+     "teilaufgaben": [
+      "2023S-PB1-A1-e",
+      "2024S-PB1-A1-b",
+      "2021W-PB1-A4-cb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-1-1-K1",
+       "text": "Du kannst qualitätssichernde Maßnahmen für ein Softwareprojekt beschreiben: standardisiertes Vorgehensmodell, übliche Entwicklungswerkzeuge (IDE, CI/CD), festgelegte Testumgebungen, -verfahren und -daten, Code-Reviews, Vorgaben zur Dokumentation, qualifizierte und zertifizierte Mitarbeiter.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.01.2",
+        "beleg:2023S-PB1-A1-e",
+        "beleg:2024S-PB1-A1-b"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K2",
+       "text": "Du kannst Stellung nehmen, ob ausschließlich automatische Code-Reviews und Unit-Tests zur Qualitätssicherung reichen: Sie decken nicht alle Fälle ab (Bedienung, Zusammenspiel der Komponenten, Erfüllung der Anforderungen), deshalb sind weitere, auch manuelle Tests nötig.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.03.01.2",
+        "beleg:2021W-PB1-A4-cb"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K3",
+       "text": "Du kannst Methoden der Qualitätslenkung in einem Softwareprojekt anwenden: Reviews und Tests nach Plan durchführen, gefundene Fehler erfassen und ihre Behebung nachverfolgen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.2"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-5-2"
+     ]
+    },
+    {
+     "id": "PB1-9-1-2",
+     "titel": "PDCA, KVP, Kennzahlen und Soll-Ist-Vergleich",
+     "ziel": "Die Zielerreichung im QM-Prozess mit PDCA, KVP, Kennzahlen und Soll-Ist-Vergleich messen und verbessern.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.02.1"
+      },
+      {
+       "id": "AP2a.03.02.2"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-9-1-2-K1",
+       "text": "Du kannst den PDCA-Zyklus auf ein Vorhaben der Softwareentwicklung anwenden, zum Beispiel: Senkung der Fehlerquote planen (Plan), Code-Reviews einführen (Do), Fehlerzahlen der nächsten Releases prüfen (Check), das Vorgehen als Standard festschreiben (Act).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-2-K2",
+       "text": "Du kannst den kontinuierlichen Verbesserungsprozess (KVP) erklären: ständige Verbesserung in kleinen Schritten, an der alle Beteiligten mitwirken.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.02.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-2-K3",
+       "text": "Du kannst Kennzahlen zur Messung der Zielerreichung festlegen und anwenden, zum Beispiel gefundene Fehler je Release, Anteil bestandener Testfälle, Bearbeitungszeit von Störungen, Verfügbarkeit.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-2-K4",
+       "text": "Du kannst in einem Soll-Ist-Vergleich Abweichungen erkennen und berechnen, als Differenz und in Prozent des Sollwerts.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.2"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-5-2",
+      "AP1-1-4-3"
+     ]
+    },
+    {
+     "id": "PB1-9-1-3",
+     "titel": "Prüfverfahren: Parität und Redundanz",
+     "ziel": "Paritätsbits bestimmen und deuten und Redundanz als Prüfverfahren anwenden.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.01.1"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-9-1-3-K1",
+       "text": "Du kannst ein Paritätsbit bestimmen: bei gerader Parität so ergänzen, dass die Anzahl der Einsen gerade ist, bei ungerader Parität so, dass sie ungerade ist.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K2",
+       "text": "Du kannst erklären, dass ein Paritätsbit einen einzelnen Bitfehler erkennt, ihn aber nicht findet oder berichtigt, und zwei gleichzeitig gekippte Bits nicht bemerkt.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.01.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K3",
+       "text": "Du kannst Redundanz als Prüfverfahren anwenden: zusätzliche Prüfinformation mitspeichern oder mitsenden, zum Beispiel eine Prüfsumme oder Prüfziffer, die der Empfänger neu berechnet und vergleicht.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.1"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-2",
+   "titel": "Testen",
+   "satz": "Software systematisch testen: Testverfahren, Teststufen, Testkonzept und Protokolle, dazu die Dokumentation für Benutzer und Betreuer.",
+   "stichpunkte": [
+    {
+     "id": "PB1-9-2-1",
+     "titel": "Testverfahren: statisch und dynamisch, Black-Box und White-Box",
+     "ziel": "Statische und dynamische Testverfahren sowie Black-Box- und White-Box-Test beschreiben, vergleichen und für eine Situation beurteilen.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.01.2",
+       "anteil": "Testverfahren"
+      },
+      {
+       "id": "AP2a.03.01.2",
+       "anteil": "Testverfahren"
+      },
+      {
+       "id": "AP2b.03.08.1"
+      },
+      {
+       "id": "AP2b.05.03.1",
+       "anteil": "Testverfahren"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A4-d"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-2-1-K1",
+       "text": "Du kannst statische Testverfahren (ohne Ausführung: Review, Schreibtischtest, Codeanalyse) und dynamische Testverfahren (Ausführen mit Testdaten) unterscheiden und je Beispiele nennen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.2",
+        "katalog:AP2b.05.03.1"
+       ]
+      },
+      {
+       "id": "PB1-9-2-1-K2",
+       "text": "Du kannst Black-Box-Test (Funktionstest gegen die Anforderungen ohne Kenntnis des Codes, oft von Personen außerhalb der Entwicklung) und White-Box-Test (Testfälle aus dem inneren Aufbau des Codes, durch das Entwicklungsteam) beschreiben.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.1",
+        "beleg:2021W-PB1-A4-d"
+       ]
+      },
+      {
+       "id": "PB1-9-2-1-K3",
+       "text": "Du kannst Vor- und Nachteile von Black-Box- und White-Box-Test beschreiben: Der Black-Box-Test prüft aus Sicht der Anforderungen und findet fehlende Funktionen, zeigt aber nicht, welcher Code ungetestet bleibt; der White-Box-Test deckt den Code systematisch ab, bemerkt aber keine fehlenden Anforderungen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.1"
+       ]
+      },
+      {
+       "id": "PB1-9-2-1-K4",
+       "text": "Du kannst den Extremwertetest erklären: mit den kleinsten und größten zulässigen Werten sowie knapp darüber und darunter testen, weil an Grenzen besonders oft Fehler stecken.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.2"
+       ]
+      },
+      {
+       "id": "PB1-9-2-1-K5",
+       "text": "Du kannst beurteilen, welche Testverfahren für eine Situation passen, und das begründen, zum Beispiel Review des Entwurfs vor der Umsetzung, Unit-Tests für jede Komponente, Black-Box- und White-Box-Test vor jedem Release.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.02.01.2",
+        "katalog:AP2b.05.03.1",
+        "katalog:AP2a.03.01.2",
+        "katalog:AP2b.03.08.1"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-2-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Testszenarien und Testdaten auswählen und generieren, Überdeckungsmaße (Anweisungs-, Zweig-, Pfadüberdeckung), Unit-Tests schreiben, TDD und Debugging gehören zu PB2.",
+       "begruendung": "P3: AP2a.02.01.3, AP2a.03.02.3, AP2b.03.08.2, AP2b.05.03.2.1–3 und AP2a.03.01.3 wohnen in PB2 (Gebiete G.PB2.01, G.PB2.03).",
+       "katalog": [
+        "AP2a.02.01.3",
+        "AP2a.03.02.3",
+        "AP2b.03.08.2",
+        "AP2b.05.03.2.1",
+        "AP2b.05.03.2.3",
+        "AP2a.03.01.3"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-2-2",
+     "titel": "Teststufen: vom Unit-Test bis zur Abnahme",
+     "ziel": "Komponenten-, Integrations-, System- und Abnahmetest unterscheiden, Unit-Test und End-to-End-Test einordnen und die Teststufen eines Konzepts beurteilen.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.01.4"
+      },
+      {
+       "id": "AP2b.05.03.1",
+       "anteil": "Modultest, End-to-End-Test"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-9-2-2-K1",
+       "text": "Du kannst Komponententest (auch Modul- oder Unit-Test), Integrationstest, Systemtest und Abnahmetest unterscheiden und in die richtige Reihenfolge bringen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.4"
+       ]
+      },
+      {
+       "id": "PB1-9-2-2-K2",
+       "text": "Du kannst den Zweck eines Unit-Tests beschreiben: Ein einzelner Baustein wird getrennt vom Rest automatisch und beliebig oft wiederholbar geprüft.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.1",
+        "katalog:AP2a.02.01.4"
+       ]
+      },
+      {
+       "id": "PB1-9-2-2-K3",
+       "text": "Du kannst den End-to-End-Test erklären: Ein vollständiger Ablauf wird aus Sicht des Benutzers durch das ganze System geprüft, von der Oberfläche bis zur Datenbank.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.1"
+       ]
+      },
+      {
+       "id": "PB1-9-2-2-K4",
+       "text": "Du kannst beurteilen, welche Teststufen ein Testkonzept für eine Anwendung vorsehen muss, und begründen, warum keine Stufe eine andere ersetzt.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.02.01.4"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Weitere Testarten wie Last-, Performance-, Smoke- und Regressionstest, die Testpyramide sowie Test-Doubles (Stubs, Mocks).",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Offene „z. B.“-Liste in AP2b.05.03.1; nur eine Hinweisquelle (Podcast), daher nach P-BEISPIELLISTE Kür. Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-2-3",
+     "titel": "Testkonzept, Testprozess, Test- und Abnahmeprotokoll",
+     "ziel": "Inhalte eines Testkonzepts beschreiben, den Testprozess durchlaufen, Test- und Abnahmeprotokolle erstellen und Testergebnisse analysieren.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.05.03.2"
+      },
+      {
+       "id": "AP2b.05.03.2.4"
+      },
+      {
+       "id": "AP2a.03.02.4"
+      },
+      {
+       "id": "AP2a.03.02.5",
+       "anteil": "Abnahmeprotokoll einer Software"
+      }
+     ],
+     "teilaufgaben": [
+      "2023W-PB1-A1-d"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-2-3-K1",
+       "text": "Du kannst Inhalte eines Testkonzepts beschreiben: Teststrategie mit Testzielen und Testmethoden, Teststufen und ihr Zusammenspiel, Testumgebung und Automatisierung, Umfang der Testdokumentation, Testplan (wer testet was wann), Auswertung der Ergebnisse, Schätzung von Aufwand und Kosten.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.2",
+        "beleg:2023W-PB1-A1-d"
+       ]
+      },
+      {
+       "id": "PB1-9-2-3-K2",
+       "text": "Du kannst den Ablauf des Testprozesses beschreiben: Tests planen, Testfälle und Testdaten vorbereiten, durchführen, protokollieren, auswerten, Fehler beheben lassen und erneut testen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.2"
+       ]
+      },
+      {
+       "id": "PB1-9-2-3-K3",
+       "text": "Du kannst ein Testprotokoll für eine Software erstellen: Testfall, Eingabedaten, erwartetes und tatsächliches Ergebnis, Bewertung, Tester und Datum.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.4",
+        "katalog:AP2b.05.03.2.4"
+       ]
+      },
+      {
+       "id": "PB1-9-2-3-K4",
+       "text": "Du kannst Testprotokolle analysieren: Häufungen von Fehlern erkennen, Ursachen eingrenzen und entscheiden, ob die Software freigegeben werden kann.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.05.03.2.4",
+        "katalog:AP2b.05.03.2"
+       ]
+      },
+      {
+       "id": "PB1-9-2-3-K5",
+       "text": "Du kannst ein Abnahmeprotokoll für eine Software erstellen: Vertragspartner, abgenommene Leistung und Version, Ergebnis der Abnahmetests, festgestellte Mängel mit Frist zur Behebung, Unterschriften.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.5"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-5-3",
+      "AP1-1-4-2"
+     ],
+     "grenzen": [
+      {
+       "text": "Daten und Sachverhalte aus Tests multimedial aufbereiten und präsentieren gehört in den Raum PROJEKT.",
+       "begruendung": "G5/P9: AP2b.05.05 „kann Bestandteil der praktischen Prüfung sein“.",
+       "katalog": [
+        "AP2b.05.05"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-2-4",
+     "titel": "Handbücher und Dokumentation",
+     "ziel": "Handbücher für Benutzer und Systembetreuer, Programm- und Konfigurationsdokumentation sowie Checklisten erstellen und erweitern.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.13"
+      },
+      {
+       "id": "AP2b.01.13.1",
+       "anteil": "Programm- und Konfigurationsdokumentation"
+      },
+      {
+       "id": "AP2b.01.13.2"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A1-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-2-4-K1",
+       "text": "Du kannst Benutzerhandbuch (Bedienung aus Sicht der Anwender) und Handbuch für Systembetreuer (Installation, Konfiguration, Betrieb, Fehlerbehebung) nach Zielgruppe und Inhalt unterscheiden.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.13"
+       ]
+      },
+      {
+       "id": "PB1-9-2-4-K2",
+       "text": "Du kannst eine Programmdokumentation erstellen und erweitern: Aufbau und Module, Schnittstellen, Datenmodell, je Klasse und Methode Zweck, Parameter, Rückgabewert und Voraussetzungen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.13.1",
+        "beleg:2021W-PB1-A1-bb"
+       ]
+      },
+      {
+       "id": "PB1-9-2-4-K3",
+       "text": "Du kannst eine Konfigurationsdokumentation erstellen: Einstellungen, Versionen, Abhängigkeiten und Zugänge so festhalten, dass sich die Umgebung wiederherstellen lässt.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.13.1"
+       ]
+      },
+      {
+       "id": "PB1-9-2-4-K4",
+       "text": "Du kannst für einen wiederkehrenden Vorgang eine Checkliste erstellen, zum Beispiel für die Auslieferung eines Releases oder die Einrichtung einer Testumgebung.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.13.2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-5-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-2-1-K1",
+    "grund": "Schreibtischtest als statisches Verfahren (AP2b.05.03.1)"
+   },
+   {
+    "alt": "AP2-5-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-2-1-K2",
+    "grund": "laut Musterlösung 2021W-PB1-A4-d"
+   },
+   {
+    "alt": "AP2-5-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-2-1-K2",
+    "grund": "in tv2 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-1-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-2-1-K3",
+    "grund": "Vor- und Nachteile beider Verfahren"
+   },
+   {
+    "alt": "AP2-5-1-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-2-1-K5",
+    "grund": "beurteilen (Katalog: analysieren, Stufe 4)"
+   },
+   {
+    "alt": "AP2-5-1-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-2-2-K1",
+    "grund": "mit Abnahmetest"
+   },
+   {
+    "alt": "AP2-5-1-2-K2",
+    "status": "verschoben",
+    "neu": "PB1-9-2-2-K2"
+   },
+   {
+    "alt": "AP2-5-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-2-2-K3",
+    "grund": "bis zur Datenbank ergänzt"
+   },
+   {
+    "alt": "AP2-5-1-2-K4",
+    "status": "gestrichen",
+    "grund": "P-BEISPIELLISTE: Last- und Performancetest nur in einer Hinweisquelle, daher Kür (PB1-9-2-2)"
+   },
+   {
+    "alt": "AP2-5-1-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-2-2-K1",
+    "grund": "in ts1 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-2-1-K1",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K2",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K3",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K4",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K5",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K6",
+    "status": "verschoben",
+    "neu": "PB1-7-2-3-K4"
+   },
+   {
+    "alt": "AP2-5-2-2-K1",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K2",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K3",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K4",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K5",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K6",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K1",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K2",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K3",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K4",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K5",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-4-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-2-3-K2",
+    "grund": "Ablauf mit erneutem Testen"
+   },
+   {
+    "alt": "AP2-5-2-4-K2",
+    "status": "PB2",
+    "grund": "Kriterien für Testergebnisse definieren: AP2b.05.03.2.2 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-4-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-2-3-K3",
+    "grund": "erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-5-2-4-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-2-3-K3",
+    "grund": "in tk3 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-2-4-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-2-3-K5",
+    "grund": "Abnahmeprotokoll erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-5-2-4-K6",
+    "status": "gestrichen",
+    "grund": "P9: Testergebnisse präsentieren (AP2b.05.05) wohnt im Raum PROJEKT"
+   },
+   {
+    "alt": "AP2-5-3-1-K1",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K2",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K3",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K4",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K5",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-5-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K1",
+    "grund": "Beispiel aus der Softwareentwicklung"
+   },
+   {
+    "alt": "AP2-5-5-1-K2",
+    "status": "verschoben",
+    "neu": "PB1-9-1-2-K2"
+   },
+   {
+    "alt": "AP2-5-5-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K3",
+    "grund": "festlegen und anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-5-5-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K3",
+    "grund": "Beispiele in pd3 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-5-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-1-1-K1",
+    "grund": "Maßnahmen laut 2023S-PB1-A1-e, 2024S-PB1-A1-b"
+   },
+   {
+    "alt": "AP2-5-5-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K4",
+    "grund": "Differenz und Prozent zusammen"
+   },
+   {
+    "alt": "AP2-5-5-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K4",
+    "grund": "in pd4 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-5-2-K3",
+    "status": "gestrichen",
+    "grund": "E2: Abweichungen bewerten steht in AP1-1-4-3-K2 (Stufe 4); AP2a.03.02.2 verlangt erkennen und berechnen"
+   },
+   {
+    "alt": "AP2-5-5-2-K4",
+    "status": "gestrichen",
+    "grund": "E2: Ursachen von Abweichungen nennen steht in AP1-1-4-3-K5"
+   },
+   {
+    "alt": "AP2-5-5-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K1",
+    "grund": "bestimmen (Katalog: anwenden)"
+   },
+   {
+    "alt": "AP2-5-5-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K2",
+    "grund": "um zwei gekippte Bits ergänzt"
+   },
+   {
+    "alt": "AP2-5-5-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K3",
+    "grund": "anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-3-K1",
+    "status": "verschoben",
+    "neu": "PB1-9-2-4-K1"
+   },
+   {
+    "alt": "AP2-6-5-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-2-4-K2",
+    "grund": "erstellen und erweitern (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-2-4-K3",
+    "grund": "Konfigurationsdokumentation erstellen"
+   },
+   {
+    "alt": "AP2-6-5-3-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-2-4-K4",
+    "grund": "erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-3-K5",
+    "status": "gestrichen",
+    "grund": "allgemeine Anforderungen an Dokumentation: weder Katalog noch PB1-Beleg; in do2–do4 enthalten"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Teilaufgaben 2021W-PB1-A4-cb/-d, 2023S-PB1-A1-e, 2023W-PB1-A1-d, 2024S-PB1-A1-b und 2021W-PB1-A1-bb gegen die Musterlösungen gelesen. Testdaten, Überdeckung, Schreibtischtest an Code und Debugging sind nach P3 PB2 und hier nur als Grenze ausgewiesen."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Qualitätssicherung, Code-Reviews",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-1-K1",
+      "PB1-9-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Unit-Tests",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-2-K2",
+      "PB1-9-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Black-Box-Test, White-Box-Test",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-1-K2",
+      "PB1-9-2-1-K3"
+     ]
+    },
+    {
+     "thema": "Testverfahren statisch/dynamisch, Extremwertetest, Review, Schreibtischtest",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-1-K1",
+      "PB1-9-2-1-K4"
+     ]
+    },
+    {
+     "thema": "Komponenten-, Integrations-, System-, Abnahme-, End-to-End-Test",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-2-K1",
+      "PB1-9-2-2-K3"
+     ]
+    },
+    {
+     "thema": "Lasttest, Smoketest, Regressionstest, Testpyramide, Test-Doubles",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-2-2"
+     ]
+    },
+    {
+     "thema": "Testkonzept",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-3-K1"
+     ]
+    },
+    {
+     "thema": "Testprotokoll",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-3-K3",
+      "PB1-9-2-3-K4"
+     ]
+    },
+    {
+     "thema": "Äquivalenzklassen, Grenzwertanalyse, Testdaten, Testdatengeneratoren, Überdeckung",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2"
+     ],
+     "notiz": "P3"
+    },
+    {
+     "thema": "Dokumentation",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-2-4-K2"
+     ]
+    },
+    {
+     "thema": "Problemlösungsprozess, PDCA",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-2-K1"
+     ]
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2a.02.01.2",
+    "paar": "statisch / dynamisch",
+    "abgedeckt": {
+     "statisch": [
+      "PB1-9-2-1-K1"
+     ],
+     "dynamisch": [
+      "PB1-9-2-1-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.03.08.1",
+    "paar": "Black-Box / White-Box",
+    "abgedeckt": {
+     "Black-Box": [
+      "PB1-9-2-1-K2",
+      "PB1-9-2-1-K3"
+     ],
+     "White-Box": [
+      "PB1-9-2-1-K2",
+      "PB1-9-2-1-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.03.01.1",
+    "paar": "Parität / Redundanz",
+    "abgedeckt": {
+     "Parität": [
+      "PB1-9-1-3-K1",
+      "PB1-9-1-3-K2"
+     ],
+     "Redundanz": [
+      "PB1-9-1-3-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.03.02",
+    "paar": "Testprotokoll / Abnahmeprotokoll",
+    "abgedeckt": {
+     "Test": [
+      "PB1-9-2-3-K3"
+     ],
+     "Abnahme": [
+      "PB1-9-2-3-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.13",
+    "paar": "Benutzer / Systembetreuer",
+    "abgedeckt": {
+     "Benutzer": [
+      "PB1-9-2-4-K1"
+     ],
+     "Systembetreuer": [
+      "PB1-9-2-4-K1",
+      "PB1-9-2-4-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.13.1",
+    "paar": "Programm- / Konfigurationsdokumentation",
+    "abgedeckt": {
+     "Programm": [
+      "PB1-9-2-4-K2"
+     ],
+     "Konfiguration": [
+      "PB1-9-2-4-K3"
+     ]
+    }
+   }
+  ]
+ }
+}
