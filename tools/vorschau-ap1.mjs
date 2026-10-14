@@ -19,8 +19,9 @@
 //   umbau/karten/ap1/AP1-<n>.json vor, ersetzen deren Karten alle umgehängten alten Karten, deren Stichpunkt
 //   in diesem Ordner liegt. Maßgeblich ist der Zielordner: Eine alte Karte, deren Aussage in einen anderen
 //   Ordner verschoben wurde, wird in der Datei dieses anderen Ordners entschieden.
-// – Kurzfassungen (Schicht 5): Liegt für einen Ordner umbau/kurz/ap1/AP1-<n>.json vor, bekommt jeder Stichpunkt
-//   seine Kurzfassung als Text mit einfacher Auszeichnung (neu.kurz), angezeigt unter dem Ziel.
+// – Kurzfassung und Erklärungen (Schicht 5): Liegt für einen Ordner umbau/kurz/ap1/AP1-<n>.json vor, bekommt jeder
+//   Stichpunkt einen Teaser (neu.kurz, unter dem Ziel) und jede Können-Aussage ihre Erklärung (neu.koennen[].erklaerung,
+//   in der App aufklappbar an der Aussage). Text mit einfacher Auszeichnung wie bei Lernkarten.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -48,16 +49,19 @@ export function ladeKartenAp1(wurzel) {
   return dateien;
 }
 
-// Kurzfassungen je Ordner: Map Stichpunkt-ID → Text
+// Teaser je Stichpunkt und Erklärung je Können-Aussage aus umbau/kurz/ap1/
 export function ladeKurzAp1(wurzel) {
   const ordner = path.join(wurzel, 'umbau', 'kurz', 'ap1');
-  const kurz = new Map();
-  if (!fs.existsSync(ordner)) return kurz;
-  for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
-    const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
-    for (const [id, text] of Object.entries(d.kurz)) kurz.set(id, text);
+  const teaser = new Map();
+  const erklaerung = new Map();
+  if (fs.existsSync(ordner)) {
+    for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
+      const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
+      for (const [id, text] of Object.entries(d.teaser ?? d.kurz ?? {})) teaser.set(id, text); // kurz: alte Form (Übergang)
+      for (const [id, text] of Object.entries(d.erklaerung ?? {})) erklaerung.set(id, text);
+    }
   }
-  return kurz;
+  return { teaser, erklaerung };
 }
 
 export const ordnerVon = (id) => id.split('-').slice(0, 2).join('-');
@@ -167,6 +171,7 @@ export function vorschauAp1(daten, wurzel) {
             stufe: k.stufe,
             herkunft: k.herkunft,
             vorgegeben: k.vorgegeben ?? null,
+            erklaerung: kurzTexte.erklaerung.get(k.id) ?? null,
             status,
             von: status === 'verschoben' ? v.alt : null,
             grund: v && status !== 'übernommen' ? v.grund : null,
@@ -194,7 +199,7 @@ export function vorschauAp1(daten, wurzel) {
           neu: {
             ziel: s.ziel,
             hinweis: s.hinweis ?? null,
-            kurz: kurzTexte.get(s.id) ?? null,
+            kurz: kurzTexte.teaser.get(s.id) ?? null,
             istNeu: !alt,
             koennen,
             grenzen: (s.grenzen ?? []).map((g) => ({ text: g.text, begruendung: g.begruendung ?? null, katalog: g.katalog ?? [] })),
@@ -225,6 +230,7 @@ export function vorschauAp1(daten, wurzel) {
       stichpunkte: spAp1.length,
       neueStichpunkte: spAp1.filter((s) => s.neu.istNeu).length,
       kurz: spAp1.filter((s) => s.neu.kurz).length,
+      erklaerungen: spAp1.reduce((n, s) => n + s.neu.koennen.filter((k) => k.erklaerung).length, 0),
       koennen: anzahlK,
       neueOhneKarten,
       kuer,

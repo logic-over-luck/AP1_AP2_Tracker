@@ -382,7 +382,18 @@ function NeuerRahmen({ sp }) {
         <ol class="koennen">
           {koennen.map((k) => (
             <li key={k.id}>
-              {texte.get(k.id)} <KoennenMarken k={k} />
+              {k.erklaerung ? (
+                <details class="np-erkl">
+                  <summary>
+                    {texte.get(k.id)} <KoennenMarken k={k} />
+                  </summary>
+                  <Rich class="np-erkl__text" text={k.erklaerung} />
+                </details>
+              ) : (
+                <>
+                  {texte.get(k.id)} <KoennenMarken k={k} />
+                </>
+              )}
               {details && (
                 <div class="np__meta">
                   <span class="mono">{k.id}</span> · Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')}

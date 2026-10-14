@@ -143,20 +143,27 @@ describe('Neue Lernkarten AP1', () => {
   }
 });
 
-// Kurzfassungen (umbau/kurz/ap1/AP1-<n>.json): je Stichpunkt des Ordners genau ein Text, keine fremden IDs
-test('Kurzfassungen: vollständig je Ordner und an einem Stichpunkt', async () => {
+// Teaser und Erklärungen (umbau/kurz/ap1/AP1-<n>.json): je Stichpunkt ein Teaser, je Können-Aussage eine Erklärung
+test('Teaser und Erklärungen: vollständig je Ordner, keine fremden IDs', async () => {
   const fs = await import('node:fs');
   const ordner = path.join(wurzel, 'umbau', 'kurz', 'ap1');
   if (!fs.existsSync(ordner)) return;
   for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f))) {
     const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
+    if (!d.teaser) continue; // alte Form (nur kurz), Übergang
     const plan = plaene.find((p) => p.oberblock.id === d.ordner);
     assert.ok(plan, `${f}: kein Lernplan für ${d.ordner}`);
-    const spIds = plan.themenbloecke.flatMap((t) => t.stichpunkte.map((s) => s.id));
-    for (const id of spIds) assert.ok(typeof d.kurz[id] === 'string' && d.kurz[id].trim(), `${d.ordner}: Kurzfassung für ${id} fehlt`);
-    for (const id of Object.keys(d.kurz)) assert.ok(spIds.includes(id), `${d.ordner}: ${id} ist kein Stichpunkt des Ordners`);
+    const sps = plan.themenbloecke.flatMap((t) => t.stichpunkte);
+    const spIds = sps.map((s) => s.id);
+    const kIds = sps.flatMap((s) => s.koennen.map((k) => k.id));
+    for (const id of spIds) assert.ok(typeof d.teaser?.[id] === 'string' && d.teaser[id].trim(), `${d.ordner}: Teaser für ${id} fehlt`);
+    for (const id of kIds) assert.ok(typeof d.erklaerung?.[id] === 'string' && d.erklaerung[id].trim(), `${d.ordner}: Erklärung für ${id} fehlt`);
+    for (const id of Object.keys(d.teaser ?? {})) assert.ok(spIds.includes(id), `${d.ordner}: ${id} ist kein Stichpunkt des Ordners`);
+    for (const id of Object.keys(d.erklaerung ?? {})) assert.ok(kIds.includes(id), `${d.ordner}: ${id} ist keine Können-Aussage des Ordners`);
   }
-  const kurz = ladeKurzAp1(wurzel);
-  for (const [id, text] of kurz) assert.equal(neu.sp[id].neu.kurz, text);
-  assert.equal(neu.vorschau.kurz, kurz.size);
+  const { teaser, erklaerung } = ladeKurzAp1(wurzel);
+  for (const [id, text] of teaser) assert.equal(neu.sp[id].neu.kurz, text);
+  for (const s of Object.values(neu.sp).filter((s) => s.raum === 'AP1')) for (const k of s.neu.koennen) assert.equal(k.erklaerung, erklaerung.get(k.id) ?? null);
+  assert.equal(neu.vorschau.kurz, teaser.size);
+  assert.equal(neu.vorschau.erklaerungen, erklaerung.size);
 });

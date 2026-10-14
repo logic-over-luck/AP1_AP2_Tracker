@@ -2274,3 +2274,35 @@ body {
   padding-top: var(--s-3);
   color: var(--text-3);
 }
+
+/* Erklärung je Können-Aussage (Langfassung), aufklappbar */
+.np-erkl summary {
+  cursor: pointer;
+  list-style: none;
+}
+.np-erkl summary::-webkit-details-marker {
+  display: none;
+}
+.np-erkl summary::after {
+  content: 'Erklärung';
+  display: inline-block;
+  margin-left: var(--s-2);
+  font-size: var(--t-xs);
+  color: var(--akzent);
+  white-space: nowrap;
+}
+.np-erkl[open] summary::after {
+  content: 'Erklärung ausblenden';
+}
+.np-erkl summary:hover {
+  color: var(--text);
+}
+.np-erkl__text {
+  margin: var(--s-2) 0 var(--s-1);
+  padding: var(--s-2) var(--s-3);
+  border-left: 2px solid var(--akzent-linie);
+  background: var(--flaeche-2);
+  border-radius: var(--r-1);
+  color: var(--text-2);
+  font-size: var(--t-s);
+}
