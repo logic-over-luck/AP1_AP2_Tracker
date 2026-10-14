@@ -591,7 +591,27 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         ihre alte ID. Trainer und Probeprüfungen: Inhalte für „AP2“ gelten in PB1 und PB2 (`trainer/rahmen/raum.js`), welcher
         Trainer wo erscheint, entscheiden seine Stichpunkte über den Umzug; Prüfungsteil PB1 im Raum PB1, PB2 im Raum PB2.
         Tests in `tests/vorschau-ap1.test.mjs` (Räume, Umzug beim Ableiten). Der alte Stand (`LERNSTUDIO_AP1=alt`) baut weiter.
-  - [ ] **PB1 offen:** Abnahme durch den Projektinhaber, danach Export PB1 (E3).
+  - [ ] **PB1 offen:** Abnahme durch den Projektinhaber, danach Export PB1 (E3). Für den Bau von PB2 ist ein
+        **vorläufiger Export** `umbau/export/PB1.json` erzeugt (Claude im Auftrag des Projektinhabers, 14.10.2026);
+        ändert sich PB1 bei der Abnahme, wird er neu erzeugt und PB2 erneut geprüft (T7/T8).
+  - [x] **PB2 Zuordnung (14.10.2026):** `umbau/zuordnung/pb2/*.json`, 107 Teilaufgaben, 34 Pflichtbausteine (32 mit Beleg).
+        Regelwerk 1.7: Operatoren der PB2-Aufgaben (anlegen, anzeigen, erhöhen, … Stufe 3; überprüfen, argumentieren 4;
+        aufzeigen 2; notieren 1). Zusatzbausteine ZB.prozedur-trigger, ZB.rekursion, ZB.generik-funktionsobjekte (Raum PB2).
+        SQL-Teilaufgaben belegen immer auch AP2a.02.03.6 und AP2b.03.03.2 (Datenbankabfrage, SQL nutzen) und die passenden
+        AP2a.02.03.8–10. 2025W-PB2 ohne Aufgabensatz belegt nur das Thema (P34). Test „Zuordnung PB2 besteht T2 …“.
+  - [x] **PB2 Ordner 1–6 (14.10.2026):** IDs nach P33 (`PB2-1-1-1-K1`). Importe aus AP1 und PB1 über `baut_auf` (E2):
+        Datenmodell, ERM/Normalisierung und UML wohnen in PB1, PB2 ergänzt nur, was tiefer ist.
+        | Ordner | Titel | SP | Können | alte Aussagen |
+        |---|---|---|---|---|
+        | PB2-1 | Programmlogik und Pseudocode | 4 | 17 | 12 angepasst, 1 gestrichen |
+        | PB2-2 | Suchen, Sortieren, Rekursion und Generik | 4 | 12 | 6 angepasst |
+        | PB2-3 | Fehler finden, Debugging und Unit-Tests | 3 | 12 | 10 angepasst, 1 gestrichen |
+        | PB2-4 | Testszenarien und Testdaten | 3 | 14 | 13 angepasst, 1 gestrichen |
+        | PB2-5 | SQL: Tabellen, Datenpflege und Rechte | 5 | 20 | 18 angepasst, 7 gestrichen (Datentypen in PB1-7) |
+        | PB2-6 | SQL: Daten abfragen | 4 | 17 | 23 angepasst |
+        Raum-Prüfung `node tools/umbau/raum-pruefen.mjs PB2` grün (T1, T2b, T8, ALT: alle 92 in PB1 für PB2 vermerkten
+        Aussagen genau einmal einsortiert, 82 angepasst, 10 gestrichen). Gesamt: 6 Ordner, 23 Stichpunkte, 92 Können-Aussagen.
+        Umzugstabelle hat kein „offen“ mehr. Test „Raum PB2 …“ in `tests/umbau-fundament.test.mjs`.
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).

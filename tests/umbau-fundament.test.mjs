@@ -231,6 +231,17 @@ test('Raum PB1: alle Ordner und die Raum-Prüfung (T1, T2b, T8, ALT) bestehen', 
   assert.equal(r.status, 0, r.stdout);
 });
 
+// ---------- Raum PB2 (Schritt 6) ----------
+const pb2Da = vorhanden && existsSync('umbau/fundament/pruefungen-pb2.json') && existsSync('umbau/lernplan/pb2');
+test('Raum PB2: alle Ordner und die Raum-Prüfung (T1, T2b, T8, ALT) bestehen', { skip: !pb2Da && 'Quellen fehlen' }, () => {
+  for (const f of readdirSync('umbau/lernplan/pb2').filter((x) => x.endsWith('.json'))) {
+    const r = spawnSync(process.execPath, ['tools/umbau/lernplan-pruefen.mjs', f.replace('.json', '')], { encoding: 'utf8', env: { ...process.env, LERNPLAN_DATEI: `umbau/lernplan/pb2/${f}` } });
+    assert.equal(r.status, 0, `${f}: ${r.stdout}`);
+  }
+  const r = spawnSync(process.execPath, ['tools/umbau/raum-pruefen.mjs', 'PB2'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});
+
 // ---------- Lernstand-Umzug (P6) ----------
 test('P6: Umzugstabelle ist vollständig und aktuell', () => {
   const r = spawnSync(process.execPath, ['tools/umbau/umzug-erzeugen.mjs', '--pruefen'], { encoding: 'utf8' });

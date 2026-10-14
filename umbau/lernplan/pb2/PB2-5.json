@@ -1,0 +1,698 @@
+{
+ "oberblock": {
+  "id": "PB2-5",
+  "titel": "SQL: Tabellen, Datenpflege und Rechte",
+  "raum": "PB2",
+  "gebiete": [
+   "G.PB2.04"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB2-5-1",
+   "titel": "Datenbank aufbauen, pflegen und absichern",
+   "satz": "Tabellen und Indizes anlegen und ändern, Daten einfügen, ändern, löschen und archivieren, Benutzer und Rechte verwalten, Datenbankobjekte wie Prozeduren und Trigger einordnen und Daten vor einem Import prüfen. Datenmodell, Normalisierung und Datentypen kennst du aus PB1-6.",
+   "stichpunkte": [
+    {
+     "id": "PB2-5-1-1",
+     "titel": "Tabellenstruktur und Index: CREATE TABLE, ALTER TABLE, CREATE INDEX",
+     "ziel": "Tabellen nach einem Datenmodell mit Datentypen und Schlüsseln anlegen, nachträglich ändern und Indizes begründet anlegen.",
+     "gebiete": [
+      "G.PB2.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.22.1"
+      },
+      {
+       "id": "AP2b.04.22.2"
+      },
+      {
+       "id": "AP2b.04.22.3",
+       "anteil": "UPDATE vor NOT NULL; Datenpflege in PB2-5-1-2"
+      },
+      {
+       "id": "AP2a.02.03.7",
+       "anteil": "Tabellenstruktur und Index"
+      },
+      {
+       "id": "AP2b.03.03.2",
+       "anteil": "SQL festlegen"
+      },
+      {
+       "id": "AP2a.02.03.6",
+       "anteil": "Datenpflege: Struktur"
+      },
+      {
+       "id": "ANH.sql-syntax-auszug"
+      },
+      {
+       "id": "AP2b.04.10.2",
+       "anteil": "relationales Modell aus PB1-6"
+      },
+      {
+       "id": "AP2a.02.03.4",
+       "anteil": "Normalisierung aus PB1-6"
+      },
+      {
+       "id": "AP2a.02.03.5",
+       "anteil": "ER-Modell aus PB1-6"
+      },
+      {
+       "id": "AP2b.04.10.1",
+       "anteil": "ER-Modell aus PB1-6"
+      },
+      {
+       "id": "AP2a.02.03.2",
+       "anteil": "Datentypen aus PB1-6"
+      },
+      {
+       "id": "AP1.03.03.4.1",
+       "anteil": "Speicherbedarf aus AP1-4-2-2"
+      },
+      {
+       "id": "ZB.datendarstellung",
+       "anteil": "aus AP1-4-2"
+      },
+      {
+       "id": "ANH.praefixe"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB2-A4-a",
+      "2022S-PB2-A4-ac",
+      "2022S-PB2-A4-ba",
+      "2025S-PB2-A4-d",
+      "2025W-PB2-A4-d",
+      "2021W-PB2-A3",
+      "2022S-PB2-A3",
+      "2022W-PB2-A3-a",
+      "2022W-PB2-A3-b",
+      "2022W-PB2-A3-c",
+      "2023W-PB2-A3-a",
+      "2024W-PB2-A3-a",
+      "2025S-PB2-A3",
+      "2023W-PB2-A3-b"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-5-1-1-K1",
+       "text": "Du kannst mit CREATE TABLE eine Tabelle nach dem relationalen Modell anlegen: Spalten mit passenden Datentypen aus der SQL-Syntax (z. B. INT, DECIMAL(8,2), VARCHAR(30), DATE, BOOLEAN), Primärschlüssel und Fremdschlüssel mit REFERENCES.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.1",
+        "beleg:2021W-PB2-A4-a"
+       ]
+      },
+      {
+       "id": "PB2-5-1-1-K2",
+       "text": "Du kannst mit ALTER TABLE Spalten hinzufügen, ändern oder entfernen und einen Fremdschlüssel ergänzen, auch in der richtigen Reihenfolge: neue Spalten anlegen, Daten übertragen (UPDATE), alte Spalte löschen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.1",
+        "beleg:2025W-PB2-A4-d"
+       ]
+      },
+      {
+       "id": "PB2-5-1-1-K3",
+       "text": "Du kannst eine Spalte einer gefüllten Tabelle nachträglich zum Pflichtfeld machen: zuerst fehlende Werte mit UPDATE … WHERE … IS NULL füllen, dann die Spalte mit ALTER TABLE auf NOT NULL setzen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.1",
+        "katalog:AP2b.04.22.3",
+        "beleg:2025S-PB2-A4-d"
+       ]
+      },
+      {
+       "id": "PB2-5-1-1-K4",
+       "text": "Du kannst erklären, wozu ein Index dient (schnelleres Suchen und Sortieren in großen Tabellen) und welchen Nachteil er hat (zusätzlicher Speicher, langsameres Einfügen und Ändern).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.22.2",
+        "beleg:2022S-PB2-A4-ac"
+       ]
+      },
+      {
+       "id": "PB2-5-1-1-K5",
+       "text": "Du kannst mit CREATE INDEX einen benannten Index auf eine Spalte anlegen, zum Beispiel CREATE INDEX Idx_Datum ON Zaehlerstand (ZSt_Datum).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.2",
+        "beleg:2022S-PB2-A4-ba"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-6-1-1",
+      "PB1-6-1-2",
+      "PB1-6-1-3",
+      "AP1-8-4-5",
+      "AP1-4-2-2"
+     ],
+     "hinweis": "PB2 verlangt in jeder Prüfung auch ein Datenmodell (ER-Modell, relationales Modell, 3. Normalform, Datentypen). Gelernt wird es in PB1-6, geübt mit diesen Aufgaben. Den Speicherbedarf von Bildern (2023W-PB2-A3-b) berechnen steht in AP1-4-2-2. Die SQL-Syntax (Auszug) steht im Belegsatz; Befehle und Funktionen musst du anwenden, nicht auswendig kennen."
+    },
+    {
+     "id": "PB2-5-1-2",
+     "titel": "Datenpflege: INSERT, UPDATE, DELETE und Archivieren",
+     "ziel": "Datensätze einfügen, ändern und löschen, auch mit Unterabfragen und über mehrere Tabellen, und Daten in ein Archiv verschieben.",
+     "gebiete": [
+      "G.PB2.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.22.3"
+      },
+      {
+       "id": "AP2a.02.03.6",
+       "anteil": "Datenpflege"
+      },
+      {
+       "id": "AP2a.02.03.7",
+       "anteil": "Manipulation"
+      },
+      {
+       "id": "AP2b.03.03.2",
+       "anteil": "SQL nutzen"
+      },
+      {
+       "id": "AP2b.05.02.3",
+       "anteil": "Transaktion beim Verschieben, aus PB1-6"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB2-A4-c",
+      "2022S-PB2-A4-bb",
+      "2022W-PB2-A4-b",
+      "2023W-PB2-A4-c",
+      "2024S-PB2-A4-a",
+      "2024S-PB2-A4-c",
+      "2025S-PB2-A4-a",
+      "2025W-PB2-A4-a",
+      "2021W-PB2-A1-b"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-5-1-2-K1",
+       "text": "Du kannst mit INSERT INTO … (Spaltenliste) VALUES … einen Datensatz einfügen und mit INSERT INTO … SELECT … Datensätze aus einer Abfrage übernehmen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.3",
+        "beleg:2025S-PB2-A4-a",
+        "beleg:2022W-PB2-A4-b"
+       ]
+      },
+      {
+       "id": "PB2-5-1-2-K2",
+       "text": "Du kannst mit UPDATE … SET … WHERE Werte ändern, auch berechnet aus der Spalte selbst (Preis = Preis * 1.05) und mit einer Unterabfrage oder Bedingung über eine verknüpfte Tabelle.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.3",
+        "beleg:2021W-PB2-A4-c",
+        "beleg:2023W-PB2-A4-c"
+       ]
+      },
+      {
+       "id": "PB2-5-1-2-K3",
+       "text": "Du kannst mit DELETE FROM … WHERE Datensätze löschen, auch mit einer Unterabfrage (z. B. Haushalte ohne Zähler: WHERE HaushaltID NOT IN (SELECT …)), und weißt, dass ohne WHERE alle Zeilen gelöscht werden.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.3",
+        "beleg:2022S-PB2-A4-bb",
+        "beleg:2024S-PB2-A4-a"
+       ]
+      },
+      {
+       "id": "PB2-5-1-2-K4",
+       "text": "Du kannst abhängige Datensätze in der richtigen Reihenfolge löschen: erst die Zeilen mit dem Fremdschlüssel, dann die Zeile, auf die sie verweisen (sonst verletzt das Löschen die referenzielle Integrität).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.3"
+       ]
+      },
+      {
+       "id": "PB2-5-1-2-K5",
+       "text": "Du kannst Datensätze in eine gleich aufgebaute Archivtabelle verschieben: mit INSERT INTO Archiv SELECT … WHERE … kopieren und mit DELETE … WHERE mit derselben Bedingung löschen, beides in einer Transaktion.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.22.3",
+        "beleg:2022W-PB2-A4-b",
+        "beleg:2024S-PB2-A4-c"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-6-1-5",
+      "PB1-6-1-2"
+     ],
+     "hinweis": "Gleichzeitige Zugriffe und Transaktionen (2021W-PB2-A1-b) stehen in PB1-6-1-5. Die SQL-Syntax (Auszug) steht im Belegsatz; Befehle und Funktionen musst du anwenden, nicht auswendig kennen."
+    },
+    {
+     "id": "PB2-5-1-3",
+     "titel": "Benutzer und Rechte: CREATE USER, GRANT, REVOKE",
+     "ziel": "Benutzer anlegen und ihnen gezielt Rechte auf Tabellen geben und wieder entziehen.",
+     "gebiete": [
+      "G.PB2.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.03.7",
+       "anteil": "Benutzer und Rechte laut SQL-Anhang"
+      },
+      {
+       "id": "ANH.sql-syntax-auszug"
+      },
+      {
+       "id": "AP2a.04.04.9",
+       "anteil": "Sicherheitsrisiken aus PB1-10"
+      },
+      {
+       "id": "AP2a.04.02.3",
+       "anteil": "aus PB1-10"
+      },
+      {
+       "id": "AP2b.05.01.2",
+       "anteil": "aus PB1-10"
+      }
+     ],
+     "teilaufgaben": [
+      "2023S-PB2-A4-d",
+      "2025S-PB2-A4-b",
+      "2025S-PB2-A4-c",
+      "2024S-PB2-A1-ba",
+      "2024S-PB2-A1-bb",
+      "2024S-PB2-A1-ca",
+      "2024S-PB2-A1-cb"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-5-1-3-K1",
+       "text": "Du kannst mit CREATE USER einen Benutzer mit Passwort anlegen (CREATE USER Name IDENTIFIED BY 'Passwort').",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.7",
+        "beleg:2023S-PB2-A4-d"
+       ]
+      },
+      {
+       "id": "PB2-5-1-3-K2",
+       "text": "Du kannst mit GRANT Recht ON Datenbank.Tabelle TO Benutzer ein Recht wie SELECT, INSERT oder UPDATE gezielt vergeben, sodass ein Benutzer nur bekommt, was er braucht.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.7",
+        "beleg:2023S-PB2-A4-d",
+        "beleg:2025S-PB2-A4-b"
+       ]
+      },
+      {
+       "id": "PB2-5-1-3-K3",
+       "text": "Du kannst mit REVOKE Recht ON Datenbank.Tabelle FROM Benutzer ein Recht wieder entziehen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.7",
+        "beleg:2025S-PB2-A4-c"
+       ]
+      },
+      {
+       "id": "PB2-5-1-3-K4",
+       "text": "Du kannst erklären, was WITH GRANT OPTION bewirkt: Der Benutzer darf das erhaltene Recht an andere weitergeben.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.03.7"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-10-1-2",
+      "PB1-10-2-1"
+     ],
+     "hinweis": "Sicherheitsrisiken von Dokumenten aus fremden Quellen und von Links per E-Mail (2024S-PB2-A1-b/-c) stehen in PB1-10-1-2. Die SQL-Syntax (Auszug) steht im Belegsatz; Befehle und Funktionen musst du anwenden, nicht auswendig kennen."
+    },
+    {
+     "id": "PB2-5-1-4",
+     "titel": "Stored Procedure und Trigger",
+     "ziel": "Gespeicherte Prozeduren und Trigger als Datenbankobjekte beschreiben und unterscheiden.",
+     "gebiete": [
+      "G.PB2.04"
+     ],
+     "bausteine": [
+      {
+       "id": "ZB.prozedur-trigger"
+      }
+     ],
+     "teilaufgaben": [
+      "2022S-PB2-A4-aa",
+      "2022S-PB2-A4-ab"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-5-1-4-K1",
+       "text": "Du kannst beschreiben, was eine Stored Procedure ist: eine in der Datenbank gespeicherte Folge von SQL-Anweisungen mit Namen und Parametern, die von Anwendungen aufgerufen wird.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022S-PB2-A4-aa"
+       ]
+      },
+      {
+       "id": "PB2-5-1-4-K2",
+       "text": "Du kannst beschreiben, was ein Trigger ist: SQL-Anweisungen, die die Datenbank automatisch ausführt, wenn in einer Tabelle ein bestimmtes Ereignis eintritt (INSERT, UPDATE oder DELETE), zum Beispiel um Änderungen zu protokollieren.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022S-PB2-A4-ab"
+       ]
+      },
+      {
+       "id": "PB2-5-1-4-K3",
+       "text": "Du kannst Stored Procedure und Trigger unterscheiden: Die Prozedur wird ausdrücklich aufgerufen, der Trigger löst bei einem Ereignis selbst aus; beide verlagern Logik in die Datenbank.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022S-PB2-A4-aa",
+        "beleg:2022S-PB2-A4-ab"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB2-5-1-5",
+     "titel": "Datenqualität vor einem Import prüfen",
+     "ziel": "Einen gelieferten Datenbestand auf Qualitätsmängel prüfen, Folgen eines Imports benennen, einen Weg zur Bereinigung aufzeigen und den Import beurteilen. Daten heterogener Quellen zusammenführen kennst du aus PB1-7.",
+     "gebiete": [
+      "G.PB2.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.02.05.2",
+       "anteil": "Datenqualität beim Import"
+      },
+      {
+       "id": "AP2b.05.02.2",
+       "anteil": "Validierung vor dem Import"
+      }
+     ],
+     "teilaufgaben": [
+      "2024W-PB2-A3-ba",
+      "2024W-PB2-A3-bb",
+      "2024W-PB2-A3-bc"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-5-1-5-K1",
+       "text": "Du kannst Qualitätsmängel in einem Datenbestand beschreiben und je eine Folge des Imports nennen, zum Beispiel uneinheitliche Formate (Datum), mehrere Werte in einem Feld, fehlende oder ungültige Werte, Dubletten, unterschiedliche Schreibweisen → falsche Auswertungen, abgelehnte Datensätze, verletzte Schlüssel.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2024W-PB2-A3-ba"
+       ]
+      },
+      {
+       "id": "PB2-5-1-5-K2",
+       "text": "Du kannst einen Weg aufzeigen, die Daten dennoch zu importieren: zuerst in eine Zwischentabelle laden, dann mit Skript oder SQL bereinigen und vereinheitlichen, prüfen und erst danach in die Zieltabellen übernehmen.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2024W-PB2-A3-bb"
+       ]
+      },
+      {
+       "id": "PB2-5-1-5-K3",
+       "text": "Du kannst beurteilen, ob ein Datenbestand ohne Nacharbeit importiert werden kann, und für oder gegen den Import argumentieren, etwa mit Aufwand der Bereinigung gegen Nutzen der Daten.",
+       "stufe": 4,
+       "herkunft": [
+        "beleg:2024W-PB2-A3-bc"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-7-1-3",
+      "PB1-7-1-1",
+      "PB1-6-1-5"
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-4-1-1-K4",
+    "status": "angepasst",
+    "neu": "PB2-5-1-1-K1",
+    "grund": "Datentyp aus der SQL-Syntax beim Anlegen der Tabelle"
+   },
+   {
+    "alt": "AP2-4-1-2-K5",
+    "status": "angepasst",
+    "neu": "PB2-5-1-5-K1",
+    "grund": "mit Folge des Imports"
+   },
+   {
+    "alt": "AP2-4-4-3-K2",
+    "status": "angepasst",
+    "neu": "PB2-5-1-5-K3",
+    "grund": "beurteilen und argumentieren (2024W)"
+   },
+   {
+    "alt": "AP2-4-3-1-K1",
+    "status": "angepasst",
+    "neu": "PB2-5-1-2-K1",
+    "grund": "mit INSERT … SELECT zusammengefasst"
+   },
+   {
+    "alt": "AP2-4-3-1-K2",
+    "status": "angepasst",
+    "neu": "PB2-5-1-2-K1",
+    "grund": "in dm1 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-3-1-K3",
+    "status": "angepasst",
+    "neu": "PB2-5-1-2-K2",
+    "grund": "mit Unterabfrage"
+   },
+   {
+    "alt": "AP2-4-3-1-K4",
+    "status": "angepasst",
+    "neu": "PB2-5-1-2-K3",
+    "grund": "mit Unterabfrage"
+   },
+   {
+    "alt": "AP2-4-3-1-K5",
+    "status": "angepasst",
+    "neu": "PB2-5-1-2-K4",
+    "grund": "mit Begründung (referenzielle Integrität)"
+   },
+   {
+    "alt": "AP2-4-3-1-K6",
+    "status": "angepasst",
+    "neu": "PB2-5-1-2-K5",
+    "grund": "in einer Transaktion"
+   },
+   {
+    "alt": "AP2-4-3-2-K1",
+    "status": "angepasst",
+    "neu": "PB2-5-1-1-K1",
+    "grund": "mit REFERENCES"
+   },
+   {
+    "alt": "AP2-4-3-2-K2",
+    "status": "angepasst",
+    "neu": "PB2-5-1-1-K2",
+    "grund": "mit Reihenfolge beim Umbau"
+   },
+   {
+    "alt": "AP2-4-3-2-K3",
+    "status": "gestrichen",
+    "grund": "DROP TABLE kam in keiner PB2-Prüfung vor und steht im SQL-Auszug; Spalten entfernen in dd2"
+   },
+   {
+    "alt": "AP2-4-3-2-K4",
+    "status": "gestrichen",
+    "grund": "Befehlsgruppen zuordnen wurde in keiner Prüfung verlangt; ergibt sich aus den Aussagen dd1–dm5"
+   },
+   {
+    "alt": "AP2-4-3-2-K5",
+    "status": "angepasst",
+    "neu": "PB2-5-1-1-K5",
+    "grund": "Anlegen; Zweck in dd4"
+   },
+   {
+    "alt": "AP2-4-3-2-K6",
+    "status": "angepasst",
+    "neu": "PB2-5-1-1-K4",
+    "grund": "Zweck und Nachteil zusammen"
+   },
+   {
+    "alt": "AP2-4-3-3-K1",
+    "status": "angepasst",
+    "neu": "PB2-5-1-3-K2",
+    "grund": "gezielt vergeben"
+   },
+   {
+    "alt": "AP2-4-3-3-K2",
+    "status": "angepasst",
+    "neu": "PB2-5-1-3-K3",
+    "grund": "REVOKE"
+   },
+   {
+    "alt": "AP2-4-3-3-K3",
+    "status": "angepasst",
+    "neu": "PB2-5-1-3-K1",
+    "grund": "mit Passwort"
+   },
+   {
+    "alt": "AP2-4-3-3-K4",
+    "status": "angepasst",
+    "neu": "PB2-5-1-3-K2",
+    "grund": "in dc2 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-3-3-K5",
+    "status": "angepasst",
+    "neu": "PB2-5-1-3-K4",
+    "grund": "erklären"
+   },
+   {
+    "alt": "AP2-6-6-3-K1",
+    "status": "gestrichen",
+    "grund": "E2: Datenmengen und Übertragungszeiten berechnen stehen in AP1-4-2-2 und AP1-4-2-4 (Beleg 2023W-PB2-A3-b dort geübt); P32: Rechenweg und Runden sind Prüfungstechnik"
+   },
+   {
+    "alt": "AP2-6-6-3-K2",
+    "status": "gestrichen",
+    "grund": "E2: Datenmengen und Übertragungszeiten berechnen stehen in AP1-4-2-2 und AP1-4-2-4 (Beleg 2023W-PB2-A3-b dort geübt); P32: Rechenweg und Runden sind Prüfungstechnik"
+   },
+   {
+    "alt": "AP2-6-6-3-K3",
+    "status": "gestrichen",
+    "grund": "E2: Datenmengen und Übertragungszeiten berechnen stehen in AP1-4-2-2 und AP1-4-2-4 (Beleg 2023W-PB2-A3-b dort geübt); P32: Rechenweg und Runden sind Prüfungstechnik"
+   },
+   {
+    "alt": "AP2-6-6-3-K4",
+    "status": "gestrichen",
+    "grund": "E2: Datenmengen und Übertragungszeiten berechnen stehen in AP1-4-2-2 und AP1-4-2-4 (Beleg 2023W-PB2-A3-b dort geübt); P32: Rechenweg und Runden sind Prüfungstechnik"
+   },
+   {
+    "alt": "AP2-6-6-3-K5",
+    "status": "gestrichen",
+    "grund": "E2: Datenmengen und Übertragungszeiten berechnen stehen in AP1-4-2-2 und AP1-4-2-4 (Beleg 2023W-PB2-A3-b dort geübt); P32: Rechenweg und Runden sind Prüfungstechnik"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB2-Ordner (P33). Stored Procedure und Trigger sind Zusatzbaustein (Beleg 2022S-PB2).",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "SQL-Datenpflege und Rechte aus allen PB2-Prüfungen sowie 2024W-PB2-A3-b (Datenimport) gegen die Musterlösungen gelesen."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "CREATE TABLE, CREATE INDEX, Index",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-5-1-1-K1",
+      "PB2-5-1-1-K4",
+      "PB2-5-1-1-K5"
+     ]
+    },
+    {
+     "thema": "UPDATE, DELETE, INSERT",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-5-1-2-K1",
+      "PB2-5-1-2-K2",
+      "PB2-5-1-2-K3"
+     ]
+    },
+    {
+     "thema": "GRANT, REVOKE",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-5-1-3-K2",
+      "PB2-5-1-3-K3"
+     ]
+    },
+    {
+     "thema": "Stored Procedures, Trigger",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-5-1-4-K1",
+      "PB2-5-1-4-K2"
+     ]
+    },
+    {
+     "thema": "Datenimport, Datenqualität",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-5-1-5-K1",
+      "PB2-5-1-5-K3"
+     ]
+    },
+    {
+     "thema": "Relationales Datenmodell, ERM, Datentypen",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-6"
+     ]
+    },
+    {
+     "thema": "E-Mail-Sicherheit",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-10"
+     ]
+    },
+    {
+     "thema": "Dateigrößen berechnen",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "AP1"
+     ],
+     "notiz": "AP1-4-2-2"
+    },
+    {
+     "thema": "SELECT, SQL, UNION",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2-6"
+     ]
+    }
+   ]
+  }
+ }
+}
