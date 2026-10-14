@@ -138,7 +138,7 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ## 4. Regelwerk – v1.5 [fest]
 
-Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). v1.5 (14.10.2026, Projektinhaber): P-BEISPIELLISTE (P17), P-MUSTER als F6 (P18). Maßgeblich für die
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). v1.5 (14.10.2026, Projektinhaber): P-BEISPIELLISTE (P17), P-MUSTER als F6 (P18). v1.6 (14.10.2026, Entscheidung übertragen): Prüfungsoperatoren aus PB1 eingestuft (verdeutlichen 2, Stellung nehmen 4, einfügen 3 als Formoperator, implementieren, finden, vorschlagen, umwandeln, skizzieren, schreiben, bringen je 3). Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
 `tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
@@ -497,6 +497,14 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       (`2025W_AP2-PB1.md` ↔ Kopf-ID `2025W-PB1`), Termine S/W mit Katalogstand (aktuell ab 2025S) und Aufgaben ohne
       Teilaufgaben (yaml direkt unter `# …-An`); Kurzaufruf `node tools/umbau/pruefungen-pruefen.mjs pb1`. Alle 18
       Abschriften bestehen T-1; einziger Hinweis: 2025W-PB2 ohne Operatoren (Aufgabensatz fehlt). Tests ergänzt.
+- [x] **Schritt 6a – Prüfungen zugeordnet (PB1, 14.10.2026):** alle 152 Teilaufgaben der 9 PB1-Prüfungen in
+      `umbau/zuordnung/pb1/<Termin>-PB1.json`, keine außerhalb (B3 betrifft in AP2 nur die Darstellungsform Struktogramm:
+      2023S-PB1-A2-bc/bd mit Hinweis nach Z4). Gültige Bausteine je Raum regelt `tools/umbau/raum.mjs`: PB1 nutzt eigene
+      AP2-Bausteine (P3) und importiert AP1-Bausteine (E2), PB2-Bausteine lehnt der Prüfer ab (P3 Regel 3, Test).
+      Ergebnis `umbau/fundament/belege-pb1.json`: 231 Pflichtbausteine (230 Katalog + `ZB.erechnung`), 88 mit Beleg,
+      14 durch Belege angehoben (z. B. REST 1 → 3, Observer/Polymorphie/Interfaces 3 → 4, SAN und Netzausdehnung 2 → 4);
+      24 AP1-Bausteine werden aus PB1 belegt (Projektmanagement: Stakeholder, Risiko, Machbarkeit, Kosten; Veränderung;
+      Verschlüsselung; Open Source und Lizenzen). Zusatzbausteine haben jetzt ein Feld `raum`. Regelwerk v1.6.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)

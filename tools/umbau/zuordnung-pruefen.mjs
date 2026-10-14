@@ -1,7 +1,9 @@
 // Prüft die Zuordnung „Teilaufgabe → Baustein" (Schicht 3, Test T2) und berechnet daraus die belegte
 // Tiefe je Baustein.
 //
-// Aufruf:  node tools/umbau/zuordnung-pruefen.mjs [raum] [--teilweise]   (Standard: ap1; --teilweise: fehlende Prüfungen nur melden)
+// Aufruf:  node tools/umbau/zuordnung-pruefen.mjs [raum] [--teilweise]   (raum: ap1, pb1, pb2; Standard ap1;
+//          --teilweise: fehlende Prüfungen nur melden)
+// Gültige Bausteine je Raum: tools/umbau/raum.mjs (eigene, aus früheren Räumen importierte, Anhänge).
 // Liest:   umbau/fundament/katalog-bausteine.json, umbau/fundament/tiefe.json,
 //          umbau/fundament/pruefungen-<raum>.json (aus pruefungen-pruefen.mjs),
 //          umbau/regeln/regelwerk.json, umbau/regeln/zusatzbausteine.json,
@@ -21,10 +23,12 @@
 //   - „ausserhalb" nur mit Katalog-Begründung (B3) oder Raumgrenze, nie „kam nicht vor"
 
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs';
+import { raum as raumVon, wohnort } from './raum.mjs';
 
 const RAUM = (process.argv[2] ?? 'ap1').toLowerCase();
-const TEIL = { ap1: 'AP1' }[RAUM];
-if (!TEIL) { console.error(`Unbekannter Raum: ${RAUM}`); process.exit(2); }
+let R;
+try { R = raumVon(RAUM); } catch { console.error(`Unbekannter Raum: ${RAUM}`); process.exit(2); }
+const TEIL = R.TEIL;
 
 const b = JSON.parse(readFileSync('umbau/fundament/katalog-bausteine.json', 'utf8'));
 const tiefe = JSON.parse(readFileSync('umbau/fundament/tiefe.json', 'utf8'));
@@ -48,11 +52,9 @@ export const TYPEN = {
 
 const fehler = [];
 const warn = [];
-const katalogIds = new Set([
-  ...b.punkte.filter((p) => p.id.startsWith(`${TEIL}.`)).map((p) => p.id),
-  ...b.spiegelstriche.filter((s) => s.id.startsWith(`${TEIL}.`)).map((s) => s.id),
-]);
-const anhangIds = new Set(b.anhang.map((a) => a.id));
+const katalogIds = new Set([...R.gueltig].filter((id) => !id.startsWith('ZB.') && !id.startsWith('ANH.')));
+const alleKatalogIds = new Set([...b.punkte.map((p) => p.id), ...b.spiegelstriche.map((s) => s.id)]);
+const anhangIds = R.anhang;
 const opStufe = regeln.pruefungsoperatoren.stufen;
 const formOps = new Set(regeln.pruefungsoperatoren.formoperatoren ?? []);
 for (const op of formOps) if (!(op in opStufe)) fehler.push(`Formoperator ohne Stufe im Regelwerk: „${op}"`);
@@ -61,7 +63,8 @@ for (const op of formOps) if (!(op in opStufe)) fehler.push(`Formoperator ohne S
 for (const [id, z] of Object.entries(zusatz)) {
   if (!id.startsWith('ZB.')) fehler.push(`Zusatzbaustein-ID muss mit ZB. beginnen: ${id}`);
   if (!z.titel || !z.katalogbezug || !z.begruendung) fehler.push(`Zusatzbaustein ${id}: titel, katalogbezug und begruendung sind Pflicht`);
-  if (z.katalogbezug && !katalogIds.has(z.katalogbezug)) fehler.push(`Zusatzbaustein ${id}: Katalogbezug ${z.katalogbezug} unbekannt`);
+  if (z.katalogbezug && !alleKatalogIds.has(z.katalogbezug)) fehler.push(`Zusatzbaustein ${id}: Katalogbezug ${z.katalogbezug} unbekannt`);
+  if (z.raum && !['AP1', 'PB1', 'PB2'].includes(z.raum)) fehler.push(`Zusatzbaustein ${id}: unbekannter Raum ${z.raum}`);
 }
 
 // Prüfungsoperatoren vollständig und konsistent mit der Katalog-Tabelle?
@@ -114,8 +117,12 @@ for (const p of index.pruefungen) {
     const zaehlend = fachlich.length ? fachlich : ops;
     const stufe = zaehlend.length ? Math.max(...zaehlend.map((o) => opStufe[o] ?? 0)) : null;
     for (const bid of e.bausteine) {
-      const gueltig = katalogIds.has(bid) || anhangIds.has(bid) || bid in zusatz;
-      if (!gueltig) { fehler.push(`${t.id}: unbekannter Baustein ${bid}`); continue; }
+      const gueltig = R.gueltig.has(bid);
+      if (!gueltig) {
+        const w = wohnort(bid, zusatz);
+        fehler.push(w ? `${t.id}: Baustein ${bid} wohnt in ${w} – ${TEIL} kann ihn nicht verwenden (E3, P3 Regel 3)` : `${t.id}: unbekannter Baustein ${bid}`);
+        continue;
+      }
       if (!belege.has(bid)) belege.set(bid, []);
       belege.get(bid).push({ ta: t.id, stufe, katalog: p.katalog, amtlich: p.loesungshinweise_amtlich !== 'nein' && p.loesungshinweise === 'ja' });
     }
@@ -125,10 +132,7 @@ for (const p of index.pruefungen) {
 // ---------- Belegte Tiefe (goldene Regel) ----------
 const stufeKatalog = (id) => (tiefe.spiegelstriche[id] ?? tiefe.punkte[id])?.stufe ?? null;
 const ergebnis = {};
-const abdeckungspflichtig = [
-  ...b.abdeckungspflichtig.filter((id) => id.startsWith(`${TEIL}.`)),
-  ...Object.keys(zusatz),
-];
+const abdeckungspflichtig = R.pflicht;
 for (const id of abdeckungspflichtig) {
   const k = id.startsWith('ZB.') ? null : stufeKatalog(id);
   const bl = belege.get(id) ?? [];
@@ -144,12 +148,16 @@ for (const id of abdeckungspflichtig) {
   if (k !== null && (gesamt ?? 0) < k) fehler.push(`GOLDENE REGEL verletzt: ${id} läge unter der Katalogtiefe (${gesamt} < ${k})`);
 }
 // Kein Katalog-Baustein darf durch die Zuordnung verschwinden
-for (const id of b.abdeckungspflichtig.filter((x) => x.startsWith(`${TEIL}.`))) {
+for (const id of b.abdeckungspflichtig.filter(R.hier)) {
   if (!(id in ergebnis)) fehler.push(`GOLDENE REGEL verletzt: Katalog-Baustein ${id} ist nicht mehr abdeckungspflichtig`);
 }
 for (const [bid] of belege) if (!(bid in ergebnis) && !anhangIds.has(bid)) {
   // Beleg auf Katalogpunkt mit Spiegelstrichen (nicht selbst abdeckungspflichtig): erlaubt, zählt für den Punkt
-  ergebnis[bid] = { katalog_stufe: stufeKatalog(bid), beleg_stufe: Math.max(...belege.get(bid).map((x) => x.stufe ?? 0)) || null, nur_punkt: true,
+  // Importierter Baustein (wohnt in einem früheren Raum): Beleg aus diesem Raum, Tiefe gilt für den Import (E2)
+  // (stufe nur beim Import: dort gilt die belegte Tiefe für die Ergänzung im Lernplan; nur_punkt bleibt ohne stufe)
+  const bs = Math.max(...belege.get(bid).map((x) => x.stufe ?? 0)) || null;
+  const imp = R.importierbar(bid) ? { stufe: Math.max(stufeKatalog(bid) ?? 0, bs ?? 0) || null, import: wohnort(bid, zusatz) } : { nur_punkt: true };
+  ergebnis[bid] = { katalog_stufe: stufeKatalog(bid), beleg_stufe: bs, ...imp,
     belege_aktuell: belege.get(bid).filter((x) => x.katalog === 'aktuell').map((x) => x.ta), belege_alt: belege.get(bid).filter((x) => x.katalog === 'alt').map((x) => x.ta) };
 }
 
@@ -170,7 +178,7 @@ if (!process.env.ZUORDNUNG_ORDNER) writeFileSync(`umbau/fundament/belege-${RAUM}
 
 console.log(`Zuordnung ${TEIL}: ${zuordnung.size}/${index.pruefungen.length} Prüfungen, ${zugeordnet}/${blaetterGesamt} Teilaufgaben ` +
   `(davon ${ausserhalbZahl} außerhalb mit Katalog-Begründung)`);
-console.log(`Bausteine: ${abdeckungspflichtig.length} abdeckungspflichtig (davon ${Object.keys(zusatz).length} Zusatz), ` +
+console.log(`Bausteine: ${abdeckungspflichtig.length} abdeckungspflichtig (davon ${R.zusatzHier.length} Zusatz), ` +
   `${mitBeleg.length} mit Prüfungsbeleg, ${angehoben.length} durch Belege angehoben`);
 if (fehlendePruefungen.length) {
   const text = `Noch ohne Zuordnung: ${fehlendePruefungen.join(', ')}`;

@@ -160,6 +160,26 @@ for (const [name, f] of Object.entries(zuordnungFehler)) {
   });
 }
 
+// PB1 (P3): Bausteine mit Wohnort PB2 sind in PB1 nicht erlaubt, AP2-Bausteine nicht in AP1
+const zuordnungPb1Da = vorhanden && existsSync('umbau/fundament/pruefungen-pb1.json') && existsSync('umbau/zuordnung/pb1');
+function zuordnungPb1Mit(veraendern) {
+  const ordner = join(mkdtempSync(join(tmpdir(), 'zuo-')), 'pb1');
+  cpSync('umbau/zuordnung/pb1', ordner, { recursive: true });
+  veraendern(ordner);
+  return spawnSync(process.execPath, ['tools/umbau/zuordnung-pruefen.mjs', 'pb1'], { encoding: 'utf8', env: { ...process.env, ZUORDNUNG_ORDNER: ordner } });
+}
+test('Zuordnung PB1 besteht T2 und die goldene Regel', { skip: !zuordnungPb1Da && 'Quellen fehlen' }, () => {
+  assert.equal(zuordnungPb1Mit(() => {}).status, 0);
+});
+test('Zuordnungs-Prüfer PB1 lehnt Baustein mit Wohnort PB2 ab (P3)', { skip: !zuordnungPb1Da && 'Quellen fehlen' }, () => {
+  const r = zuordnungPb1Mit((o) => aendereJson(join(o, '2025W-PB1.json'), (j) => { j.teilaufgaben['2025W-PB1-A4-a'].bausteine = ['AP2b.04.22.4']; }));
+  assert.equal(r.status, 1);
+  assert.match(r.stdout, /wohnt in PB2/);
+});
+test('Zuordnungs-Prüfer AP1 lehnt AP2-Baustein ab', { skip: !zuordnungDa && 'Quellen fehlen' }, () => {
+  assert.equal(zuordnungMit((o) => aendereJson(join(o, '2024H.json'), (j) => { j.teilaufgaben['2024H-A1-a'].bausteine = ['AP2b.04.10.1']; })).status, 1);
+});
+
 // ---------- Lernplan (Schicht 3+4), Probelauf AP1-6 ----------
 const lernplanDa = zuordnungDa && existsSync('umbau/lernplan/ap1/AP1-6.json');
 function lernplanMit(veraendern) {
