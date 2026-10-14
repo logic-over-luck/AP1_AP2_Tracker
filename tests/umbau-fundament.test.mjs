@@ -209,3 +209,9 @@ for (const [name, f] of Object.entries(lernplanFehler)) {
     assert.equal(lernplanMit(f).status, 1);
   });
 }
+
+// ---------- Eingefrorene Räume (E3, Schritt 5) ----------
+test('Raum AP1 ist eingefroren: Export passt zum Lernplan', { skip: !existsSync('umbau/export/AP1.json') && 'kein Export' }, () => {
+  const r = spawnSync(process.execPath, ['tools/umbau/export-raum.mjs', 'AP1', '--pruefen'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});

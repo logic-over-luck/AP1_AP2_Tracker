@@ -8,13 +8,19 @@
 // Prüfungen (UMBAU.md Abschnitt 5, Raum-Ebene):
 //   T1   jeder abdeckungspflichtige Baustein des Teils und jeder Zusatzbaustein steckt in einem Stichpunkt
 //   T2b  jede Teilaufgabe (außer „ausserhalb") steckt in einem Stichpunkt – auch die, die nur geteilte Bausteine betreffen
-//   T8   je Baustein erreicht eine Können-Aussage irgendeines Ordners die belegte Tiefe (auch geteilte Bausteine)
+//   T8   je Baustein erreicht eine Können-Aussage irgendeines Ordners die belegte Tiefe (auch geteilte Bausteine);
+//        bei importierten Bausteinen (E2) zählt auch die im früheren Raum erreichte Stufe (umbau/export/<Raum>.json)
+//   ALT  (ab PB1, P33) jede alte AP2-Können-Aussage ist genau einmal in einem alt_neu des Raums einsortiert
 
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { raum } from './raum.mjs';
 
 const TEIL = process.argv[2];
 if (!TEIL) { console.error('Aufruf: node tools/umbau/raum-pruefen.mjs <Teil, z. B. AP1>'); process.exit(2); }
 const RAUM = TEIL.toLowerCase();
+const R = raum(TEIL);
+const exporte = Object.fromEntries(R.frueher.filter((r) => existsSync(`umbau/export/${r}.json`))
+  .map((r) => [r, JSON.parse(readFileSync(`umbau/export/${r}.json`, 'utf8'))]));
 
 const b = JSON.parse(readFileSync('umbau/fundament/katalog-bausteine.json', 'utf8'));
 const zusatz = JSON.parse(readFileSync('umbau/regeln/zusatzbausteine.json', 'utf8')).bausteine;
@@ -42,22 +48,43 @@ for (const f of ordner) {
 }
 
 const fehler = [];
-const pflicht = [...b.abdeckungspflichtig.filter((x) => x.startsWith(`${TEIL}.`)), ...Object.keys(zusatz)];
+const pflicht = R.pflicht;
 const t1 = pflicht.filter((x) => !wo.has(x));
 for (const x of t1) fehler.push(`T1: ${x} steckt in keinem Stichpunkt`);
 const aufgaben = Object.entries(zuordnung).filter(([, z]) => !z.ausserhalb);
 const t2b = aufgaben.filter(([ta]) => !inSP.has(ta)).map(([ta]) => ta);
 for (const ta of t2b) fehler.push(`T2b: Teilaufgabe ${ta} steckt in keinem Stichpunkt`);
-const t8 = Object.entries(belege).filter(([id, x]) => x.stufe && !id.startsWith('ANH.') && (ist.get(id) ?? 0) < x.stufe);
-for (const [id, x] of t8) fehler.push(`T8: ${id} braucht Stufe ${x.stufe}, erreicht im Raum ${ist.get(id) ?? 'keine'}`);
+// Import (E2): erreicht = max(Stufe in diesem Raum, Stufe im früheren Raum laut Export)
+const istGesamt = (id, x) => Math.max(ist.get(id) ?? 0, x.import ? (exporte[x.import]?.erreicht[id]?.stufe ?? 0) : 0);
+for (const r of new Set(Object.values(belege).filter((x) => x.import).map((x) => x.import))) {
+  if (!exporte[r]) fehler.push(`Export ${r} fehlt (node tools/umbau/export-raum.mjs ${r}) – Importe nicht prüfbar`);
+}
+const t8 = Object.entries(belege).filter(([id, x]) => x.stufe && !id.startsWith('ANH.') && istGesamt(id, x) < x.stufe);
+for (const [id, x] of t8) fehler.push(`T8: ${id} braucht Stufe ${x.stufe}, erreicht ${x.import ? `(mit Import aus ${x.import}) ` : 'im Raum '}${istGesamt(id, x) || 'keine'}`);
+
+// ALT (ab PB1, P33): jede alte AP2-Können-Aussage genau einmal einsortiert
+let altBilanz = null;
+if (TEIL === 'PB1') {
+  const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
+  const altK = alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id));
+  const eintraege = [];
+  for (const f of ordner) eintraege.push(...(JSON.parse(readFileSync(`umbau/lernplan/${RAUM}/${f}`, 'utf8')).alt_neu?.koennen ?? []));
+  for (const id of altK) {
+    const n = eintraege.filter((x) => x.alt === id).length;
+    if (n !== 1) fehler.push(`ALT: ${id} ist ${n}-mal einsortiert (soll genau 1, P33)`);
+  }
+  altBilanz = Object.fromEntries(['verschoben', 'angepasst', 'gestrichen', 'PB2'].map((st) => [st, eintraege.filter((x) => x.status === st).length]));
+  altBilanz.alt = altK.length;
+}
 
 const geteilt = [...wo].filter(([, s]) => s.size > 1).sort(([a], [c]) => a.localeCompare(c));
 const zeilen = [
   `# Raum ${TEIL} – Prüfung über alle Ordner`, '',
   `Ordner: ${ordner.map((f) => f.replace('.json', '')).join(', ')}.`, '',
-  `- T1: ${pflicht.length} abdeckungspflichtige Bausteine (davon ${Object.keys(zusatz).length} Zusatzbausteine), ${t1.length} fehlen.`,
+  `- T1: ${pflicht.length} abdeckungspflichtige Bausteine (davon ${R.zusatzHier.length} Zusatzbausteine), ${t1.length} fehlen.`,
   `- T2b: ${aufgaben.length} Teilaufgaben, ${t2b.length} ohne Stichpunkt.`,
-  `- T8: ${Object.values(belege).filter((x) => x.stufe).length} Bausteine mit belegter Tiefe, ${t8.length} nicht erreicht.`, '',
+  `- T8: ${Object.values(belege).filter((x) => x.stufe).length} Bausteine mit belegter Tiefe, ${t8.length} nicht erreicht.`,
+  ...(altBilanz ? [`- ALT (P33): ${altBilanz.alt} alte AP2-Können-Aussagen → ${altBilanz.verschoben} verschoben, ${altBilanz.angepasst} angepasst, ${altBilanz.gestrichen} gestrichen, ${altBilanz.PB2} für PB2 vermerkt.`] : []), '',
   '## Bausteine in mehreren Ordnern', '', '| Baustein | Ordner |', '|---|---|',
   ...geteilt.map(([id, s]) => `| ${id} | ${[...s].sort().join(', ')} |`), '',
   '## Fehler', '', ...(fehler.length ? fehler.map((x) => `- ${x}`) : ['keine']), '',

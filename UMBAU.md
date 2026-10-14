@@ -505,7 +505,12 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       14 durch Belege angehoben (z. B. REST 1 → 3, Observer/Polymorphie/Interfaces 3 → 4, SAN und Netzausdehnung 2 → 4);
       24 AP1-Bausteine werden aus PB1 belegt (Projektmanagement: Stakeholder, Risiko, Machbarkeit, Kosten; Veränderung;
       Verschlüsselung; Open Source und Lizenzen). Zusatzbausteine haben jetzt ein Feld `raum`. Regelwerk v1.6.
-- [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
+- [x] **Schritt 5 – AP1 einfrieren, Export erzeugen (14.10.2026):** `node tools/umbau/export-raum.mjs AP1` →
+      `umbau/export/AP1.json` (116 Stichpunkte, 604 Können-Aussagen in Kurzform mit Stufe, je Baustein die erreichte Stufe)
+      und `AP1.md` (eine Zeile je Stichpunkt). Der Export speichert Prüfsummen der acht Lernpläne; der Test
+      (`export-raum.mjs AP1 --pruefen`) schlägt fehl, sobald ein AP1-Lernplan geändert wird. **AP1 ist eingefroren:**
+      Änderungen nur über den Parkplatz, danach Export neu erzeugen. PB1 sieht von AP1 nur den Export; bei Importen
+      prüft `raum-pruefen.mjs` T8 mit der in AP1 erreichten Stufe (E2: ergänzt wird nur, was tiefer ist).
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
