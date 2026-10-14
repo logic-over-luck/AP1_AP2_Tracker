@@ -19,3 +19,20 @@
 Ordnerübergreifend: PB1-7-1-2-K3 (JSON einbetten) und PB1-6-1-4-K6 sind doppelt. Gezählt wird das in Bericht PB1-6, Nr. 4; dort wird die Streichung vorgeschlagen, K3 hier bleibt.
 
 **Bilanz PB1-7:** 9 Funde (davon 3 hoch). Lücken: 0 (Nr. 9 als Kür-Frage). Kann weg bzw. zusammengelegt: 6 Aussagen (Nr. 1, 2, 3, 5, 6, 7). Vorher 29 → nach Vorschlägen etwa 23.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: eRechnungs-Aussage gestrichen; die belegte Schemavalidierungs-Aussage ist jetzt „beurteilen“ (Stufe 4, Katalog AP2b.05.02.2) mit Plausibilitätsprüfung und Unit-Tests |
+| 2 | umgesetzt: gestrichen, Beleg 2024W-A2-c an der Umwandlungs-Aussage |
+| 3 | umgesetzt: gestrichen, Verweis auf PB1-4 im Ziel |
+| 4 | umgesetzt: digitale Rechnung und eRechnung getrennt, PDF seit 2025 keine eRechnung |
+| 5 | umgesetzt: „nach der Dokumentation einer vorhandenen API“ in der Anfrage-Aussage |
+| 6 | umgesetzt: Data-Lake-Aussagen zusammengelegt, Data Warehouse als Kür |
+| 7 | umgesetzt: API-Schlüssel als Halbsatz |
+| 8 | umgesetzt: `vorgegeben` auch an der JSON-Aufbau-Aussage |
+| 9 | umgesetzt als Kür (P35 Nr. 6) |
+| PB1-6 Nr. 4 | Begründung „einbetten statt verknüpfen“ hier ergänzt |
+
+Gliederung: REST und SOAP in einem Stichpunkt, ein Themenblock statt zwei (F3/F4). Ergebnis: 29 → 23 Aussagen.
