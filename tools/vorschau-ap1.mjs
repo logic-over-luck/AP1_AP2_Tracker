@@ -15,6 +15,10 @@
 //   nicht im Lernplan).
 // – Art (Symbol, Lernprompt-Zusatz) und Gegenstücke übernimmt ein Stichpunkt mit alter ID vom alten Stand;
 //   neue Stichpunkte gelten als „Wissen“. Die alten Kurzfassungen und Rahmentexte werden nicht gezeigt.
+// – Neue Karten (Schicht 5, umbau/auftraege/AP1-karten.md): Liegt für einen Ordner eine Datei
+//   umbau/karten/ap1/AP1-<n>.json vor, ersetzen deren Karten alle umgehängten alten Karten, deren Stichpunkt
+//   in diesem Ordner liegt. Maßgeblich ist der Zielordner: Eine alte Karte, deren Aussage in einen anderen
+//   Ordner verschoben wurde, wird in der Datei dieses anderen Ordners entschieden.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -30,6 +34,19 @@ export function ladeLernplanAp1(wurzel) {
     .sort((a, b) => Number(a.match(/\d+/g)[1]) - Number(b.match(/\d+/g)[1]))
     .map((f) => JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8')));
 }
+
+// Neue Kartendateien je Ordner: Map Ordner-ID → Inhalt
+export function ladeKartenAp1(wurzel) {
+  const ordner = path.join(wurzel, 'umbau', 'karten', 'ap1');
+  const dateien = new Map();
+  if (!fs.existsSync(ordner)) return dateien;
+  for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
+    dateien.set(f.replace(/\.json$/, ''), JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8')));
+  }
+  return dateien;
+}
+
+export const ordnerVon = (id) => id.split('-').slice(0, 2).join('-');
 
 function wichtigkeitAusTeilaufgaben(teilaufgaben) {
   const jePruefung = new Map();
@@ -81,6 +98,28 @@ export function vorschauAp1(daten, wurzel) {
     else zaehler.bleiben++;
     karten.push({ ...k, k: a.neu, sp });
   }
+
+  // Neue Karten je Ordner einsetzen (an der Stelle der ersten ersetzten Karte, sonst am Ende)
+  const kartenDateien = ladeKartenAp1(wurzel);
+  const kartenNeu = { ordner: [...kartenDateien.keys()], bleibt: 0, bearbeitet: 0, entfernt: 0, neu: 0 };
+  if (kartenDateien.size) {
+    const ersetzt = new Set();
+    const mitNeuen = [];
+    const einsetzen = (o) => {
+      ersetzt.add(o);
+      for (const k of kartenDateien.get(o).karten) mitNeuen.push({ id: k.id, sp: k.sp, k: k.k, v: k.vorne, h: k.hinten });
+    };
+    for (const k of karten) {
+      const o = k.sp.startsWith('AP1') ? ordnerVon(k.sp) : null;
+      if (!o || !kartenDateien.has(o)) mitNeuen.push(k);
+      else if (!ersetzt.has(o)) einsetzen(o);
+    }
+    for (const o of kartenDateien.keys()) if (!ersetzt.has(o)) einsetzen(o);
+    karten.length = 0;
+    karten.push(...mitNeuen);
+    for (const d of kartenDateien.values()) for (const p of d.protokoll ?? []) kartenNeu[p.entscheidung] = (kartenNeu[p.entscheidung] ?? 0) + 1;
+  }
+
   const kartenJeK = new Map();
   for (const k of karten) if (k.k) kartenJeK.set(k.k, (kartenJeK.get(k.k) ?? 0) + 1);
 
@@ -173,6 +212,7 @@ export function vorschauAp1(daten, wurzel) {
       neueOhneKarten,
       kuer,
       karten: zaehler,
+      kartenNeu,
     },
   };
 }
