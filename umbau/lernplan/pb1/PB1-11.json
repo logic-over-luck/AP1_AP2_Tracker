@@ -15,8 +15,8 @@
    "stichpunkte": [
     {
      "id": "PB1-11-1-1",
-     "titel": "Schichtenmodelle OSI und TCP/IP, Ethernet-Frame",
-     "ziel": "Das TCP/IP-Modell benennen und dem OSI-Modell zuordnen, Adressen und Protokolle den Schichten zuordnen und den Ethernet-Frame und die MAC-Adresse erläutern.",
+     "titel": "Schichtenmodelle, Ethernet-Frame und Netzwerkkomponenten",
+     "ziel": "Das TCP/IP-Modell benennen und dem OSI-Modell zuordnen, ARP, Routing und Switching einordnen, den Ethernet-Frame erläutern und Switch, Bridge, Router und Firewall vergleichen.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -25,7 +25,8 @@
        "id": "AP2b.01.01"
       },
       {
-       "id": "AP2b.01.01.1"
+       "id": "AP2b.01.01.1",
+       "anteil": "Schicht von IPv4 und IPv6; Hostbereich im Skript in PB1-3"
       },
       {
        "id": "AP2b.01.01.2"
@@ -37,88 +38,15 @@
        "id": "AP2b.01.01.6"
       },
       {
-       "id": "AP2b.01.01.3",
-       "anteil": "Schicht von Routing"
+       "id": "AP2b.01.01.3"
       },
       {
-       "id": "AP2b.01.01.4",
-       "anteil": "Schicht von Switching"
+       "id": "AP2b.01.01.4"
       },
       {
        "id": "AP2b.02.06.6",
        "anteil": "Ethernet"
-      }
-     ],
-     "teilaufgaben": [
-      "2024W-PB1-A2-ba",
-      "2024W-PB1-A2-bb",
-      "2024W-PB1-A2-c"
-     ],
-     "koennen": [
-      {
-       "id": "PB1-11-1-1-K1",
-       "text": "Du kannst die vier Schichten des TCP/IP-Modells (Netzzugang, Internet, Transport, Anwendung) benennen und den Schichten des OSI-Modells zuordnen.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.01.01"
-       ]
       },
-      {
-       "id": "PB1-11-1-1-K2",
-       "text": "Du kannst IPv4 und IPv6, MAC, ARP, Routing, Switching, TCP und UDP der richtigen Schicht im OSI- und im TCP/IP-Modell zuordnen.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.01.01.1",
-        "katalog:AP2b.01.01.2",
-        "katalog:AP2b.01.01.3",
-        "katalog:AP2b.01.01.4",
-        "katalog:AP2b.01.01.5",
-        "katalog:AP2b.01.01.6"
-       ]
-      },
-      {
-       "id": "PB1-11-1-1-K3",
-       "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte).",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.02.06.6",
-        "beleg:2024W-PB1-A2-ba"
-       ]
-      },
-      {
-       "id": "PB1-11-1-1-K4",
-       "text": "Du kannst den Aufbau einer MAC-Adresse erläutern: 6 Byte, hexadezimal geschrieben, die ersten 3 Byte kennzeichnen den Hersteller (OUI), die letzten 3 Byte das einzelne Gerät.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.01.01.2",
-        "beleg:2024W-PB1-A2-bb"
-       ]
-      },
-      {
-       "id": "PB1-11-1-1-K5",
-       "text": "Du kannst die Host-Adressen eines IPv4-Netzes wie 192.168.0.0/24 in einem Programm durchlaufen: von .1 bis .254, ohne Netz- und Broadcastadresse.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.01.01.1",
-        "beleg:2024W-PB1-A2-c"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-6-1-1",
-      "AP1-6-2-4",
-      "AP1-6-2-2"
-     ],
-     "hinweis": "Netzwerk ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; die Tiefe für AE ist offen (P10). Bis dahin gilt die Katalogtiefe."
-    },
-    {
-     "id": "PB1-11-1-2",
-     "titel": "Netzwerkkomponenten vergleichen: Switch, Bridge, Router, Firewall",
-     "ziel": "Switching und Routing beschreiben und Switch, Bridge, Router und Firewall nach Schicht, Adressen und Aufgabe vergleichen.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
       {
        "id": "AP2b.01.02"
       },
@@ -133,39 +61,51 @@
       },
       {
        "id": "AP2b.01.02.4"
-      },
-      {
-       "id": "AP2b.01.01.3",
-       "anteil": "Routing"
-      },
-      {
-       "id": "AP2b.01.01.4",
-       "anteil": "Switching"
       }
      ],
-     "teilaufgaben": [],
+     "teilaufgaben": [
+      "2024W-PB1-A2-ba",
+      "2024W-PB1-A2-bb"
+     ],
      "koennen": [
       {
-       "id": "PB1-11-1-2-K1",
-       "text": "Du kannst Switching (Weiterleiten innerhalb eines Netzes anhand der MAC-Adresse und einer MAC-Tabelle) und Routing (Weiterleiten zwischen Netzen anhand der IP-Adresse und einer Routingtabelle) beschreiben.",
+       "id": "PB1-11-1-1-K1",
+       "text": "Du kannst die vier Schichten des TCP/IP-Modells (Netzzugang, Internet, Transport, Anwendung) benennen, den Schichten des OSI-Modells zuordnen und dabei über AP1 hinaus auch ARP, Routing und Switching einordnen.",
        "stufe": 2,
        "herkunft": [
+        "katalog:AP2b.01.01",
+        "katalog:AP2b.01.01.1",
+        "katalog:AP2b.01.01.2",
         "katalog:AP2b.01.01.3",
-        "katalog:AP2b.01.01.4"
+        "katalog:AP2b.01.01.4",
+        "katalog:AP2b.01.01.5",
+        "katalog:AP2b.01.01.6"
        ]
       },
       {
-       "id": "PB1-11-1-2-K2",
-       "text": "Du kannst Switch, Bridge und Router vergleichen: Eine Bridge verbindet zwei Netzsegmente auf Schicht 2, ein Switch ist eine Bridge mit vielen Anschlüssen, ein Router verbindet Netze auf Schicht 3.",
+       "id": "PB1-11-1-1-K2",
+       "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte); in der MAC-Adresse kennzeichnen die ersten 3 Byte den Hersteller (OUI).",
        "stufe": 2,
        "herkunft": [
+        "katalog:AP2b.02.06.6",
+        "beleg:2024W-PB1-A2-ba",
+        "beleg:2024W-PB1-A2-bb"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K3",
+       "text": "Du kannst Switch, Bridge und Router vergleichen: Bridge und Switch leiten auf Schicht 2 anhand der MAC-Adresse und einer MAC-Tabelle innerhalb eines Netzes weiter (ein Switch ist eine Bridge mit vielen Anschlüssen), ein Router leitet auf Schicht 3 anhand der IP-Adresse und einer Routingtabelle zwischen Netzen weiter.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01.3",
+        "katalog:AP2b.01.01.4",
         "katalog:AP2b.01.02.1",
         "katalog:AP2b.01.02.2",
         "katalog:AP2b.01.02.3"
        ]
       },
       {
-       "id": "PB1-11-1-2-K3",
+       "id": "PB1-11-1-1-K4",
        "text": "Du kannst die Aufgabe einer Firewall beschreiben und Paketfilter (Regeln nach Adressen und Ports) von zustandsorientierter Prüfung (merkt sich bestehende Verbindungen und lässt nur die zugehörigen Antworten durch) unterscheiden.",
        "stufe": 2,
        "herkunft": [
@@ -174,13 +114,17 @@
       }
      ],
      "baut_auf": [
+      "AP1-6-1-1",
+      "AP1-6-2-4",
+      "AP1-6-2-2",
       "AP1-6-1-3"
-     ]
+     ],
+     "hinweis": "Netzwerk ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; es gilt die Katalogtiefe (P10). Der Aufbau der MAC-Adresse (2024W-PB1-A2-bb) steht in AP1-6-2-4, das Skript über die Host-Adressen (2024W-PB1-A2-c) in PB1-3."
     },
     {
-     "id": "PB1-11-1-3",
+     "id": "PB1-11-1-2",
      "titel": "Übertragungsprotokolle: TCP, UDP, HTTP, HTTPS",
-     "ziel": "Eigenschaften von TCP und UDP erläutern, Protokolle zielgerichtet einsetzen und Fehler im Web einordnen.",
+     "ziel": "Eigenschaften von TCP und UDP erläutern, Protokolle einschließlich HTTPS zielgerichtet einsetzen und Fehler im Web einordnen.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -205,7 +149,7 @@
      ],
      "koennen": [
       {
-       "id": "PB1-11-1-3-K1",
+       "id": "PB1-11-1-2-K1",
        "text": "Du kannst die Eigenschaften von TCP (verbindungsorientiert, Bestätigung, richtige Reihenfolge, erneutes Senden verlorener Pakete) und UDP (verbindungslos, ohne Zustellgarantie, wenig Aufwand, schnell) erläutern.",
        "stufe": 2,
        "herkunft": [
@@ -214,23 +158,16 @@
        ]
       },
       {
-       "id": "PB1-11-1-3-K2",
-       "text": "Du kannst für eine Anwendung das passende Transportprotokoll einsetzen und begründen, zum Beispiel TCP für Dateiübertragung und Webseiten, UDP für Sprache und Video in Echtzeit.",
+       "id": "PB1-11-1-2-K2",
+       "text": "Du kannst für eine Anwendung die passenden Protokolle einsetzen und begründen, zum Beispiel TCP für Dateiübertragung und Webseiten, UDP für Sprache und Video in Echtzeit, HTTPS statt HTTP, sobald Anmeldedaten oder personenbezogene Daten übertragen werden (was das TLS-Zertifikat bewirkt, steht in PB1-10).",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2b.01.05.1"
-       ]
-      },
-      {
-       "id": "PB1-11-1-3-K3",
-       "text": "Du kannst HTTPS für eine Anwendung einsetzen und von HTTP unterscheiden: verschlüsselte, authentifizierte Übertragung über TLS mit Zertifikat; Standardports 80 für HTTP und 443 für HTTPS.",
-       "stufe": 3,
-       "herkunft": [
+        "katalog:AP2b.01.05.1",
         "katalog:AP2b.01.05.2"
        ]
       },
       {
-       "id": "PB1-11-1-3-K4",
+       "id": "PB1-11-1-2-K3",
        "text": "Du kannst mögliche Ursachen einer Fehlermeldung wie HTTP 404 beschreiben: Seite oder Datei gelöscht oder verschoben, URL fehlerhaft angelegt, falsch verlinkt oder falsch eingegeben; davon abgrenzen, dass Server oder Namensauflösung nicht erreichbar sind.",
        "stufe": 2,
        "herkunft": [
@@ -244,9 +181,9 @@
      ]
     },
     {
-     "id": "PB1-11-1-4",
+     "id": "PB1-11-1-3",
      "titel": "Netzwerkdienste: DNS, DHCP und Proxy",
-     "ziel": "Aufgabe und Ablauf von DNS und DHCP sowie die Aufgabe eines Proxys beschreiben und die Folgen eines Ausfalls einschätzen.",
+     "ziel": "Aufgabe und Ablauf von DNS und DHCP sowie die Aufgabe eines Proxys beschreiben; Ausfälle erkennen kennst du aus AP1.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -264,12 +201,10 @@
        "id": "AP2b.01.07.3"
       }
      ],
-     "teilaufgaben": [
-      "2021W-PB1-A3-c"
-     ],
+     "teilaufgaben": [],
      "koennen": [
       {
-       "id": "PB1-11-1-4-K1",
+       "id": "PB1-11-1-3-K1",
        "text": "Du kannst die Aufgabe von DNS beschreiben: Namen in IP-Adressen auflösen, hierarchisch über Root-, Top-Level- und zuständige Nameserver, für lokale Domains über einen eigenen DNS-Server.",
        "stufe": 2,
        "herkunft": [
@@ -277,7 +212,7 @@
        ]
       },
       {
-       "id": "PB1-11-1-4-K2",
+       "id": "PB1-11-1-3-K2",
        "text": "Du kannst den Ablauf einer DHCP-Vergabe beschreiben: Discover, Offer, Request, Acknowledge; die Adresse gilt für eine begrenzte Zeit (Lease) und wird vorher verlängert.",
        "stufe": 2,
        "herkunft": [
@@ -285,27 +220,18 @@
        ]
       },
       {
-       "id": "PB1-11-1-4-K3",
+       "id": "PB1-11-1-3-K3",
        "text": "Du kannst die Aufgabe eines Proxys beschreiben: Er stellt Anfragen stellvertretend für die Clients und kann dabei filtern, zwischenspeichern und protokollieren.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.07.3"
        ]
-      },
-      {
-       "id": "PB1-11-1-4-K4",
-       "text": "Du kannst beschreiben, was im Netz nicht mehr funktioniert, wenn DNS oder DHCP ausfallen: Namen werden nicht mehr aufgelöst, obwohl Adressen erreichbar sind, bzw. neue Geräte erhalten keine Adresse.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.01.07.1",
-        "katalog:AP2b.01.07.2",
-        "beleg:2021W-PB1-A3-c"
-       ]
       }
      ],
      "baut_auf": [
       "AP1-6-2-4",
-      "AP1-6-1-2"
+      "AP1-6-1-2",
+      "AP1-6-3-2"
      ]
     }
    ]
@@ -317,8 +243,8 @@
    "stichpunkte": [
     {
      "id": "PB1-11-2-1",
-     "titel": "Netzausdehnung, Topologie, Verkabelung und Netzwerkplan",
-     "ziel": "Netzarten nach Ausdehnung und Anwendungsgebiet einordnen, Topologien und strukturierte Verkabelung charakterisieren, Übertragungsraten vergleichen und Netzwerkpläne lesen.",
+     "titel": "Netzausdehnung, Verkabelung und Netzwerkplan",
+     "ziel": "Netzarten nach Ausdehnung und Anwendungsgebiet einordnen, strukturierte Verkabelung charakterisieren, Übertragungsraten vergleichen und Netzwerkpläne lesen.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -334,9 +260,6 @@
       },
       {
        "id": "AP2b.01.03.5"
-      },
-      {
-       "id": "AP2b.01.03.11"
       },
       {
        "id": "AP2b.01.03.12"
@@ -373,14 +296,6 @@
       },
       {
        "id": "PB1-11-2-1-K3",
-       "text": "Du kannst Netzwerktopologien benennen und charakterisieren: Stern (zentraler Knoten, heute üblich), Bus, Ring und Masche (ausfallsicher durch mehrere Wege).",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.01.03.11"
-       ]
-      },
-      {
-       "id": "PB1-11-2-1-K4",
        "text": "Du kannst strukturierte Verkabelung charakterisieren: einheitlich und unabhängig von der späteren Nutzung geplante Verkabelung in Primärbereich (zwischen Gebäuden), Sekundärbereich (zwischen Stockwerken) und Tertiärbereich (bis zur Anschlussdose).",
        "stufe": 2,
        "herkunft": [
@@ -388,7 +303,7 @@
        ]
       },
       {
-       "id": "PB1-11-2-1-K5",
+       "id": "PB1-11-2-1-K4",
        "text": "Du kannst Datenübertragungsraten von Netzen einordnen und vergleichen, zum Beispiel 1 Gbit/s und mehr im LAN, Glasfaser im Primärbereich, wenige kbit/s im LPWAN.",
        "stufe": 2,
        "herkunft": [
@@ -396,7 +311,7 @@
        ]
       },
       {
-       "id": "PB1-11-2-1-K6",
+       "id": "PB1-11-2-1-K5",
        "text": "Du kannst einen Netzwerkplan mit den Symbolen des Anhangs deuten: welche Geräte in welchem Teilnetz liegen, wie sie verbunden sind und zwischen welchen Netzen eine Firewall trennt.",
        "stufe": 2,
        "herkunft": [
@@ -407,12 +322,21 @@
      "baut_auf": [
       "AP1-6-1-4",
       "AP1-6-1-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Netzwerktopologien (Stern, Bus, Ring, Masche) gehören nicht dazu.",
+       "begruendung": "E7, P35: Der Katalog beschränkt „Netzwerktopologie (FI DV/FI SI)“ auf die Fachrichtungen Daten- und Prozessanalyse und Systemintegration; für Anwendungsentwicklung kein Prüfungsstoff.",
+       "katalog": [
+        "AP2b.01.03.11"
+       ]
+      }
      ]
     },
     {
      "id": "PB1-11-2-2",
      "titel": "VLAN, Drahtlosnetze und Zugriffskontrolle im Netz",
-     "ziel": "VLAN, PAN, WLAN, Mesh und Bluetooth charakterisieren, Risiken und Schutz in Drahtlosnetzen benennen, RADIUS und Kerberos einordnen und Sicherheitsrisiken einer Infrastruktur beschreiben.",
+     "ziel": "VLAN, PAN, WLAN, Mesh und Bluetooth charakterisieren, Risiken und Schutz in Drahtlosnetzen benennen und Kerberos neben RADIUS einordnen.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -433,12 +357,11 @@
        "id": "AP2b.01.03.9"
       },
       {
-       "id": "AP2b.01.03.10"
+       "id": "AP2b.01.03.10",
+       "anteil": "Risiken in Drahtlosnetzen; Schwachstellen der Infrastruktur in PB1-12"
       }
      ],
-     "teilaufgaben": [
-      "2022W-PB1-A1-a"
-     ],
+     "teilaufgaben": [],
      "koennen": [
       {
        "id": "PB1-11-2-2-K1",
@@ -462,31 +385,24 @@
        "text": "Du kannst Risiken in Drahtlosnetzen und Maßnahmen dagegen beschreiben: Mithören, unbefugter Zugang und gefälschte Zugangspunkte; aktuelle Verschlüsselung, Anmeldung je Benutzer, getrenntes Gastnetz.",
        "stufe": 2,
        "herkunft": [
-        "katalog:AP2b.01.03.8"
+        "katalog:AP2b.01.03.8",
+        "katalog:AP2b.01.03.10"
        ]
       },
       {
        "id": "PB1-11-2-2-K4",
-       "text": "Du kannst Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: RADIUS (zentrale Prüfung von Benutzern und Geräten beim Netzzugang), Kerberos (einmalige Anmeldung, danach Tickets für die Dienste).",
+       "text": "Du kannst neben RADIUS (aus AP1) Kerberos als Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: einmalige Anmeldung bei einer zentralen Stelle, danach zeitlich begrenzte Tickets für die einzelnen Dienste.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.3"
-       ]
-      },
-      {
-       "id": "PB1-11-2-2-K5",
-       "text": "Du kannst Sicherheitsrisiken und Schwachstellen einer IT-Infrastruktur beschreiben, zum Beispiel veraltete Netzinfrastruktur der Standorte, Abhängigkeit von zwei Rechenzentren, Engpässe in der Bandbreite, uneinheitliche Hardware.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.01.03.10",
-        "beleg:2022W-PB1-A1-a"
        ]
       }
      ],
      "baut_auf": [
       "AP1-6-3-1",
       "AP1-6-1-5"
-     ]
+     ],
+     "hinweis": "Schwachstellen einer IT-Infrastruktur (2022W-PB1-A1-a) stehen bei Verfügbarkeit und Ausfällen in PB1-12."
     },
     {
      "id": "PB1-11-2-3",
@@ -560,7 +476,7 @@
       },
       {
        "id": "PB1-11-2-3-K4",
-       "text": "Du kannst NAS (Dateispeicher, der über das Netz Dateien bereitstellt) und SAN (eigenes Speichernetz, das Servern Speicher blockweise wie eine lokale Festplatte bereitstellt) beschreiben.",
+       "text": "Du kannst das NAS aus AP1 (dateibasiert, stellt Dateien über das Netz bereit) vom SAN unterscheiden: eigenes Speichernetz, das Servern Speicher blockbasiert wie eine lokale Festplatte bereitstellt.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.02.06.1",
@@ -628,7 +544,7 @@
       },
       {
        "id": "PB1-11-2-4-K3",
-       "text": "Du kannst Tunneling und Verschlüsselung auf Netzwerkebene erläutern: IPsec verschlüsselt und authentifiziert IP-Pakete; im Tunnelmodus wird das ganze Paket verschlüsselt in ein neues Paket verpackt.",
+       "text": "Du kannst über das Bild des Tunnels aus AP1 hinaus IPsec erläutern: verschlüsselt und authentifiziert IP-Pakete auf der Netzwerkebene; im Tunnelmodus wird das ganze ursprüngliche Paket samt Kopf geschützt, im Transportmodus nur die Nutzdaten.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.06.2",
@@ -674,14 +590,14 @@
    {
     "alt": "AP2-6-1-1-K2",
     "status": "angepasst",
-    "neu": "PB1-11-1-1-K2",
-    "grund": "mit Routing und Switching"
+    "neu": "PB1-11-1-1-K1",
+    "grund": "Zuordnung zu den Schichten in AP1-6-1-1; neu nur ARP, Routing, Switching in sm1"
    },
    {
     "alt": "AP2-6-1-1-K3",
     "status": "angepasst",
-    "neu": "PB1-11-1-1-K4",
-    "grund": "laut 2024W-PB1-A2-bb"
+    "neu": "PB1-11-1-1-K2",
+    "grund": "E2: Aufbau der MAC-Adresse in AP1-6-2-4-K1; nur OUI als Halbsatz in sm3"
    },
    {
     "alt": "AP2-6-1-1-K4",
@@ -691,7 +607,7 @@
    {
     "alt": "AP2-6-1-1-K5",
     "status": "angepasst",
-    "neu": "PB1-11-1-1-K3",
+    "neu": "PB1-11-1-1-K2",
     "grund": "mit Feldlängen laut 2024W-PB1-A2-ba"
    },
    {
@@ -702,7 +618,7 @@
    {
     "alt": "AP2-6-1-2-K1",
     "status": "angepasst",
-    "neu": "PB1-11-1-2-K1",
+    "neu": "PB1-11-1-1-K3",
     "grund": "mit MAC- und Routingtabelle"
    },
    {
@@ -713,7 +629,7 @@
    {
     "alt": "AP2-6-1-2-K3",
     "status": "angepasst",
-    "neu": "PB1-11-1-2-K3",
+    "neu": "PB1-11-1-1-K4",
     "grund": "mit Paketfilter"
    },
    {
@@ -724,32 +640,32 @@
    {
     "alt": "AP2-6-1-2-K5",
     "status": "angepasst",
-    "neu": "PB1-11-1-2-K2",
+    "neu": "PB1-11-1-1-K3",
     "grund": "Bridge mit Switch und Router vergleichen"
    },
    {
     "alt": "AP2-6-1-2-K6",
     "status": "angepasst",
-    "neu": "PB1-11-1-2-K3",
+    "neu": "PB1-11-1-1-K4",
     "grund": "in kp3 aufgenommen"
    },
    {
     "alt": "AP2-6-1-3-K1",
     "status": "angepasst",
-    "neu": "PB1-11-1-3-K1",
+    "neu": "PB1-11-1-2-K1",
     "grund": "erläutern (Katalog)"
    },
    {
     "alt": "AP2-6-1-3-K2",
     "status": "angepasst",
-    "neu": "PB1-11-1-3-K2",
+    "neu": "PB1-11-1-2-K2",
     "grund": "einsetzen (Katalog)"
    },
    {
     "alt": "AP2-6-1-3-K3",
     "status": "angepasst",
-    "neu": "PB1-11-1-3-K3",
-    "grund": "einsetzen mit Zertifikat und Ports"
+    "neu": "PB1-11-1-2-K2",
+    "grund": "HTTPS einsetzen in pr2; Zertifikat in PB1-10, Ports in AP1-6-1-2"
    },
    {
     "alt": "AP2-6-1-3-K4",
@@ -759,8 +675,8 @@
    {
     "alt": "AP2-6-1-3-K5",
     "status": "angepasst",
-    "neu": "PB1-11-1-3-K3",
-    "grund": "in pr3 aufgenommen"
+    "neu": "PB1-11-1-2-K2",
+    "grund": "in pr2 aufgenommen"
    },
    {
     "alt": "AP2-6-2-1-K1",
@@ -777,13 +693,13 @@
    {
     "alt": "AP2-6-2-1-K3",
     "status": "angepasst",
-    "neu": "PB1-11-2-1-K4",
+    "neu": "PB1-11-2-1-K3",
     "grund": "mit den drei Bereichen zusammengefasst"
    },
    {
     "alt": "AP2-6-2-1-K4",
     "status": "angepasst",
-    "neu": "PB1-11-2-1-K4",
+    "neu": "PB1-11-2-1-K3",
     "grund": "in nk4 aufgenommen"
    },
    {
@@ -837,26 +753,25 @@
    {
     "alt": "AP2-6-2-3-K1",
     "status": "angepasst",
-    "neu": "PB1-11-2-1-K6",
+    "neu": "PB1-11-2-1-K5",
     "grund": "lesen mit Symbolen des Anhangs"
    },
    {
     "alt": "AP2-6-2-3-K2",
     "status": "angepasst",
-    "neu": "PB1-11-2-1-K6",
+    "neu": "PB1-11-2-1-K5",
     "grund": "in nk6 aufgenommen"
    },
    {
     "alt": "AP2-6-2-3-K3",
     "status": "angepasst",
-    "neu": "PB1-11-2-1-K6",
+    "neu": "PB1-11-2-1-K5",
     "grund": "in nk6 aufgenommen"
    },
    {
     "alt": "AP2-6-2-3-K4",
-    "status": "angepasst",
-    "neu": "PB1-11-2-1-K3",
-    "grund": "charakterisieren (Katalog)"
+    "status": "gestrichen",
+    "grund": "E7, P35: Netzwerktopologie ist im Katalog auf FI DV/FI SI beschränkt"
    },
    {
     "alt": "AP2-6-2-4-K1",
@@ -897,25 +812,24 @@
    {
     "alt": "AP2-6-3-1-K1",
     "status": "angepasst",
-    "neu": "PB1-11-1-4-K1",
+    "neu": "PB1-11-1-3-K1",
     "grund": "Hierarchie und lokale Domains"
    },
    {
     "alt": "AP2-6-3-1-K2",
     "status": "angepasst",
-    "neu": "PB1-11-1-4-K2",
+    "neu": "PB1-11-1-3-K2",
     "grund": "Ablauf der Vergabe (AP1-Grenze verweist hierher)"
    },
    {
     "alt": "AP2-6-3-1-K3",
     "status": "verschoben",
-    "neu": "PB1-11-1-4-K3"
+    "neu": "PB1-11-1-3-K3"
    },
    {
     "alt": "AP2-6-3-1-K4",
-    "status": "angepasst",
-    "neu": "PB1-11-1-4-K4",
-    "grund": "Folgen konkretisiert"
+    "status": "gestrichen",
+    "grund": "E2: Ausfall von DNS und DHCP erkennen in AP1-6-3-2-K4 und AP1-6-2-4-K5; importiert"
    },
    {
     "alt": "AP2-6-3-2-K1",
@@ -1005,7 +919,7 @@
   "kerntest": {
    "stand": "2026-10-14",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Teilaufgaben 2024W-PB1-A2 (Netzkonzepte, Ethernet-Frame, MAC, Skript), 2021W-PB1-A3-c (HTTP 404) und 2022W-PB1-A1-a (Schwachstellen) gegen die Musterlösungen gelesen. Alle übrigen Bausteine ohne Beleg mit der Katalogtiefe (meist Stufe 2); Tiefe für AE bleibt P10."
+   "ergebnis": "Teilaufgaben 2024W-PB1-A2 (Netzkonzepte, Ethernet-Frame, MAC, Skript), 2021W-PB1-A3-c (HTTP 404) und 2022W-PB1-A1-a (Schwachstellen) gegen die Musterlösungen gelesen. Alle übrigen Bausteine ohne Beleg mit der Katalogtiefe (meist Stufe 2); Tiefe so entschieden mit P10. Überarbeitet nach der unabhängigen Prüfung (P35)."
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
@@ -1024,8 +938,7 @@
      "ring": "Kern",
      "wo": [
       "PB1-11-1-1-K1",
-      "PB1-11-1-1-K2",
-      "PB1-11-1-1-K4"
+      "PB1-11-1-1-K2"
      ]
     },
     {
@@ -1035,8 +948,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-11-1-1-K3",
-      "PB1-11-1-1-K4"
+      "PB1-11-1-1-K2"
      ]
     },
     {
@@ -1046,9 +958,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-11-1-2-K1",
-      "PB1-11-1-2-K2",
-      "PB1-11-1-2-K3"
+      "PB1-11-1-1-K3",
+      "PB1-11-1-1-K4"
      ]
     },
     {
@@ -1058,9 +969,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-11-1-3-K1",
-      "PB1-11-1-3-K2",
-      "PB1-11-1-3-K3"
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2"
      ]
     },
     {
@@ -1070,7 +980,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-11-1-3-K4"
+      "PB1-11-1-2-K3"
      ]
     },
     {
@@ -1080,9 +990,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-11-1-4-K1",
-      "PB1-11-1-4-K2",
-      "PB1-11-1-4-K3"
+      "PB1-11-1-3-K1",
+      "PB1-11-1-3-K2",
+      "PB1-11-1-3-K3"
      ]
     },
     {
@@ -1098,7 +1008,7 @@
      ]
     },
     {
-     "thema": "Strukturierte Verkabelung, Netzwerktopologie, Netzwerkplan, Datenübertragungsrate",
+     "thema": "Strukturierte Verkabelung, Netzwerkplan, Datenübertragungsrate",
      "quellen": [
       "podcast:themen-ap2"
      ],
@@ -1106,9 +1016,19 @@
      "wo": [
       "PB1-11-2-1-K3",
       "PB1-11-2-1-K4",
-      "PB1-11-2-1-K5",
-      "PB1-11-2-1-K6"
+      "PB1-11-2-1-K5"
      ]
+    },
+    {
+     "thema": "Netzwerktopologie",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Außen",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Katalog: nur FI DV/FI SI (AP2b.01.03.11), Grenze in sp_nk"
     },
     {
      "thema": "VLAN, PAN, WLAN, Mesh, Bluetooth, RADIUS, Kerberos",
@@ -1195,12 +1115,10 @@
     "paar": "OSI / TCP/IP",
     "abgedeckt": {
      "OSI": [
-      "PB1-11-1-1-K1",
-      "PB1-11-1-1-K2"
+      "PB1-11-1-1-K1"
      ],
      "TCP/IP": [
-      "PB1-11-1-1-K1",
-      "PB1-11-1-1-K2"
+      "PB1-11-1-1-K1"
      ]
     }
    },
@@ -1209,11 +1127,10 @@
     "paar": "IPv4 / IPv6",
     "abgedeckt": {
      "IPv4": [
-      "PB1-11-1-1-K2",
-      "PB1-11-1-1-K5"
+      "PB1-11-1-1-K1"
      ],
      "IPv6": [
-      "PB1-11-1-1-K2"
+      "PB1-11-1-1-K1"
      ]
     }
    },
@@ -1222,12 +1139,12 @@
     "paar": "TCP / UDP",
     "abgedeckt": {
      "TCP": [
-      "PB1-11-1-3-K1",
-      "PB1-11-1-3-K2"
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2"
      ],
      "UDP": [
-      "PB1-11-1-3-K1",
-      "PB1-11-1-3-K2"
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2"
      ]
     }
    },
@@ -1236,11 +1153,11 @@
     "paar": "HTTP / HTTPS",
     "abgedeckt": {
      "HTTP": [
-      "PB1-11-1-3-K3",
-      "PB1-11-1-3-K4"
+      "PB1-11-1-2-K2",
+      "PB1-11-1-2-K3"
      ],
      "HTTPS": [
-      "PB1-11-1-3-K3"
+      "PB1-11-1-2-K2"
      ]
     }
    },
@@ -1274,7 +1191,7 @@
     "paar": "Ethernet / Fibre Channel",
     "abgedeckt": {
      "Ethernet": [
-      "PB1-11-1-1-K3",
+      "PB1-11-1-1-K2",
       "PB1-11-2-3-K5"
      ],
      "Fibre Channel": [

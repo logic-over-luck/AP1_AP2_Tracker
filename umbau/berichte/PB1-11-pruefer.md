@@ -21,3 +21,23 @@
 | 13 | PB1-11 gesamt | Frage (P10, E6) | 36 Aussagen zu Netzwerk bei nur 6 Belegteilaufgaben in 9 FIAE-Prüfungen, davon 4 aus einer einzigen Aufgabe (2024W-A2). Die Tiefe für AE ist laut Hinweis offen (P10). Nach E6 darf deshalb nichts gestrichen werden, aber jede Aussage kostet Lernzeit. | Den Projektinhaber bitten, P10 zu entscheiden (z. B. Netzwerk für AE höchstens Stufe 2 außer Belegtem). | niedrig |
 
 **Bilanz PB1-11:** 13 Funde (davon 6 hoch). Lücken: 0. Kann weg bzw. zusammengelegt: 8 Aussagen (Nr. 1, 2, 3, 4, 5, 6, 7, 9). Vorher 36 → nach Vorschlägen etwa 28.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: Topologie-Aussage gestrichen, Grenze mit Katalogstelle AP2b.01.03.11 (E7); im Raster `raeume-ap2.json` als Ausnahme „keiner“ |
+| 2 | umgesetzt: in der TCP/IP-Aussage aufgegangen (neu nur ARP, Routing, Switching) |
+| 3 | umgesetzt: gestrichen, OUI als Halbsatz beim Ethernet-Frame; Beleg 2024W-A2-bb hängt dort |
+| 4 | umgesetzt: gestrichen; 2024W-A2-c steht nur in PB1-3, der Baustein AP2b.01.01.1 ist hier als Anteil markiert |
+| 5 | umgesetzt: gestrichen, `baut_auf` AP1-6-3-2; Beleg 2021W-A3-c nur noch bei der 404-Aussage |
+| 6 | umgesetzt: gestrichen; 2022W-A1-a wohnt in PB1-12, AP2b.01.03.10 hier als Anteil (Drahtlosrisiken) |
+| 7 | umgesetzt: Switch, Bridge und Router in einer Aussage mit Schicht, Adresse und Tabelle |
+| 8 | umgesetzt: Paketfilter bleibt hier; PB1-10 auf den Webfilter gekürzt |
+| 9 | teilweise: eigene HTTPS-Aussage gestrichen, HTTPS einsetzen steht als Halbsatz in der Protokoll-Aussage, weil nur sie AP2b.01.05.2 in Stufe 3 erreicht (P35 Nr. 4) |
+| 10 | umgesetzt: auf IPsec und Tunnel-/Transportmodus gekürzt |
+| 11 | umgesetzt: auf Kerberos gekürzt, RADIUS aus AP1 |
+| 12 | umgesetzt: auf den Unterschied NAS/SAN gekürzt |
+| 13 | entschieden mit P10/P35: keine pauschale Obergrenze; der Ordner ist durch die Funde 1–12 von 36 auf 28 Aussagen geschrumpft |
+
+Gliederung: Schichtenmodelle und Komponenten in einem Stichpunkt (F3). Ergebnis: 36 → 28 Aussagen.
