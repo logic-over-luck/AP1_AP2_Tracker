@@ -450,6 +450,12 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       Lernraum (Abnahme M1/M2 aus Lernsicht). Umwandlung nur im Build (`tools/vorschau-ap1.mjs`, Test
       `tests/vorschau-ap1.test.mjs`); `LERNSTUDIO_AP1=alt npm run build` baut den alten Stand. Karten über `alt_neu`:
       1.016 bleiben (40 umgehängt), 11 entfallen; 192 neue Aussagen ohne Karten sind gekennzeichnet. Fragen: P27, P28.
+- [ ] **Schritt 3d – Kritische Gegenprüfung AP1 (Entscheidung Projektinhaber, 14.10.2026):** eine unabhängige
+      Sitzung, die frühere Berichte nicht liest, prüft die Lernpläne fachlich und aus Lernsicht. Auftrag:
+      `umbau/auftraege/AP1-gegenpruefung.md`. Danach Abnahme durch den Projektinhaber (3b).
+- [ ] **Schritt 3e – Lernkarten AP1 neu (Entscheidung Projektinhaber, 14.10.2026):** nach der Abnahme. Die KI
+      entscheidet je alter Karte bleibt / bearbeitet / entfernt und ergänzt neue; IDs bleiben erhalten. Auftrag:
+      `umbau/auftraege/AP1-karten.md`, Ergebnis in `umbau/karten/ap1/`.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
