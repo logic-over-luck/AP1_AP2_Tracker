@@ -226,3 +226,9 @@ test('Raum PB1: alle Ordner und die Raum-Prüfung (T1, T2b, T8, ALT) bestehen', 
   const r = spawnSync(process.execPath, ['tools/umbau/raum-pruefen.mjs', 'PB1'], { encoding: 'utf8' });
   assert.equal(r.status, 0, r.stdout);
 });
+
+// ---------- Lernstand-Umzug (P6) ----------
+test('P6: Umzugstabelle ist vollständig und aktuell', () => {
+  const r = spawnSync(process.execPath, ['tools/umbau/umzug-erzeugen.mjs', '--pruefen'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});

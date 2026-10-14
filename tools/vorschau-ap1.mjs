@@ -14,7 +14,7 @@
 //   aktueller Katalog (ab 2025F) 1, alter Katalog 0,6 – wie bisher, aber ohne Punkte-Zuschlag (Punkte stehen
 //   nicht im Lernplan).
 // – Art (Symbol, Lernprompt-Zusatz) und Gegenstücke übernimmt ein Stichpunkt mit alter ID vom alten Stand;
-//   neue Stichpunkte gelten als „Wissen“. Die alten Kurzfassungen und Rahmentexte werden nicht gezeigt.
+//   neue Stichpunkte leiten die Art aus den Aufgabentypen ihrer Teilaufgaben ab (P27, artAusTypen). Die alten Kurzfassungen und Rahmentexte werden nicht gezeigt.
 // – Neue Karten (Schicht 5, umbau/auftraege/AP1-karten.md): Liegt für einen Ordner eine Datei
 //   umbau/karten/ap1/AP1-<n>.json vor, ersetzen deren Karten alle umgehängten alten Karten, deren Stichpunkt
 //   in diesem Ordner liegt. Maßgeblich ist der Zielordner: Eine alte Karte, deren Aussage in einen anderen
@@ -65,6 +65,31 @@ export function ladeKurzAp1(wurzel) {
 }
 
 export const ordnerVon = (id) => id.split('-').slice(0, 2).join('-');
+
+// P27: Art eines Stichpunkts aus den Aufgabentypen seiner Teilaufgaben (umbau/zuordnung). Zeichnen (diagramm),
+// Rechnen (berechnen) oder Schreiben (code_schreiben, text), wenn mindestens die Hälfte der Teilaufgaben diese
+// Art hat; bei Gleichstand in dieser Reihenfolge; sonst und ohne Teilaufgaben „Wissen“.
+export function artAusTypen(typen) {
+  const n = typen.length;
+  if (!n) return 'Wissen';
+  const zahl = {
+    Zeichnen: typen.filter((t) => t === 'diagramm').length,
+    Rechnen: typen.filter((t) => t === 'berechnen').length,
+    Schreiben: typen.filter((t) => t === 'code_schreiben' || t === 'text').length,
+  };
+  const [art, anzahl] = Object.entries(zahl).reduce((a, b) => (b[1] > a[1] ? b : a));
+  return anzahl * 2 >= n ? art : 'Wissen';
+}
+
+export function ladeTypenAp1(wurzel) {
+  const ordner = path.join(wurzel, 'umbau', 'zuordnung', 'ap1');
+  const typ = new Map();
+  if (!fs.existsSync(ordner)) return typ;
+  for (const f of fs.readdirSync(ordner).filter((f) => f.endsWith('.json'))) {
+    for (const [id, t] of Object.entries(JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8')).teilaufgaben)) typ.set(id, t.typ);
+  }
+  return typ;
+}
 
 function wichtigkeitAusTeilaufgaben(teilaufgaben) {
   const jePruefung = new Map();
@@ -146,6 +171,7 @@ export function vorschauAp1(daten, wurzel) {
   for (const a of altNeu.values()) if (a.neu) vorgaenger.set(a.neu, a);
 
   const kurzTexte = ladeKurzAp1(wurzel);
+  const typen = ladeTypenAp1(wurzel);
   const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== 'AP1'));
   let anzahlK = 0;
   let neueOhneKarten = 0;
@@ -186,7 +212,7 @@ export function vorschauAp1(daten, wurzel) {
           block: t.id,
           pos: i + 1,
           titel: s.titel,
-          art: alt?.art ?? 'Wissen',
+          art: alt?.art ?? artAusTypen((s.teilaufgaben ?? []).map((t) => typen.get(t)).filter(Boolean)),
           rahmen: null,
           unklar: null,
           koennen: s.koennen.map((k) => [k.id, k.text]),

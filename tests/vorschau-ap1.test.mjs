@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ladeDaten } from '../tools/daten.mjs';
-import { vorschauAp1, ladeLernplanAp1, ladeKartenAp1, ladeKurzAp1, ordnerVon } from '../tools/vorschau-ap1.mjs';
+import { vorschauAp1, ladeLernplanAp1, ladeKartenAp1, ladeKurzAp1, ordnerVon, artAusTypen } from '../tools/vorschau-ap1.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const alt = ladeDaten(wurzel);
@@ -166,4 +166,12 @@ test('Teaser und Erklärungen: vollständig je Ordner, keine fremden IDs', async
   for (const s of Object.values(neu.sp).filter((s) => s.raum === 'AP1')) for (const k of s.neu.koennen) assert.equal(k.erklaerung, erklaerung.get(k.id) ?? null);
   assert.equal(neu.vorschau.kurz, teaser.size);
   assert.equal(neu.vorschau.erklaerungen, erklaerung.size);
+});
+
+test('P27: Art neuer Stichpunkte aus den Aufgabentypen', () => {
+  assert.equal(artAusTypen([]), 'Wissen');
+  assert.equal(artAusTypen(['diagramm', 'diagramm', 'erklaeren']), 'Zeichnen');
+  assert.equal(artAusTypen(['berechnen', 'erklaeren']), 'Rechnen');
+  assert.equal(artAusTypen(['code_schreiben', 'text', 'aufzaehlen', 'erklaeren']), 'Schreiben');
+  assert.equal(artAusTypen(['diagramm', 'erklaeren', 'aufzaehlen']), 'Wissen');
 });
