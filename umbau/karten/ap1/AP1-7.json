@@ -1,0 +1,2228 @@
+{
+  "ordner": "AP1-7",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md",
+  "grundlage": "umbau/lernplan/ap1/AP1-7.json",
+  "karten": [
+    {
+      "id": "AP1-7-1-1-K1-1",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K1",
+      "vorne": "Welche drei klassischen Schutzziele hat die Informationssicherheit?",
+      "hinten": "- Vertraulichkeit\n- Integrität\n- Verfügbarkeit"
+    },
+    {
+      "id": "AP1-7-1-1-K1-2",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K1",
+      "vorne": "Was bedeutet das Schutzziel **Vertraulichkeit**?",
+      "hinten": "Nur Befugte können die Informationen einsehen; Unbefugte erhalten keinen Zugriff."
+    },
+    {
+      "id": "AP1-7-1-1-K1-3",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K1",
+      "vorne": "Was bedeutet das Schutzziel **Integrität**?",
+      "hinten": "Daten sind vollständig und unverändert; nur Befugte dürfen sie ändern, und unerlaubte Änderungen sind erkennbar."
+    },
+    {
+      "id": "AP1-7-1-1-K1-4",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K1",
+      "vorne": "Was bedeutet das Schutzziel **Verfügbarkeit**?",
+      "hinten": "Daten und Systeme stehen den Berechtigten zur Verfügung, wenn sie gebraucht werden."
+    },
+    {
+      "id": "AP1-7-1-1-K2-1",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K2",
+      "vorne": "Ein Server fällt wegen eines Festplattendefekts aus; niemand kann mehr auf die Kundendaten zugreifen. Welches Schutzziel ist verletzt?",
+      "hinten": "Verfügbarkeit"
+    },
+    {
+      "id": "AP1-7-1-1-K2-2",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K2",
+      "vorne": "Ein Mitarbeiter liest Gehaltsdaten, für die er keine Berechtigung hat. Welches Schutzziel ist verletzt?",
+      "hinten": "Vertraulichkeit"
+    },
+    {
+      "id": "AP1-7-1-1-K2-3",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K2",
+      "vorne": "Ein Angreifer ändert unbemerkt die Bankverbindung in ausgehenden Rechnungen. Welches Schutzziel ist verletzt?",
+      "hinten": "Integrität"
+    },
+    {
+      "id": "AP1-7-1-1-K3-1",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K5",
+      "vorne": "Welches Schutzziel sichert jeweils diese Maßnahme?\n- Verschlüsselung\n- Hashwert\n- Datensicherung",
+      "hinten": "- Verschlüsselung → Vertraulichkeit\n- Hashwert → Integrität (Veränderungen werden erkennbar)\n- Datensicherung → Verfügbarkeit"
+    },
+    {
+      "id": "AP1-7-1-1-K5-1",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K5",
+      "vorne": "Dokumente werden nur noch zentral auf dem Server bearbeitet, statt Kopien per Mail zu verschicken. Welches Schutzziel stärkt das? Begründe.",
+      "hinten": "Integrität: Es gibt nur einen gültigen Stand, keine voneinander abweichenden Kopien, und Änderungen lassen sich nachvollziehen."
+    },
+    {
+      "id": "AP1-7-1-1-K6-1",
+      "sp": "AP1-7-1-1",
+      "k": "AP1-7-1-1-K6",
+      "vorne": "Was bedeuten Vertraulichkeit und Integrität für verschlüsselt gespeicherte Daten?",
+      "hinten": "- Vertraulichkeit: Nur wer den Schlüssel hat, kann die Daten lesen.\n- Integrität: Veränderungen an den Daten werden bemerkt, z. B. über einen Prüfwert."
+    },
+    {
+      "id": "AP1-7-1-2-K1-1",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K1",
+      "vorne": "Wofür steht die Abkürzung TOM in der Informationssicherheit?",
+      "hinten": "Technische und organisatorische Maßnahmen (auch „technisch-organisatorische Maßnahmen“) zum Schutz von Daten und Systemen."
+    },
+    {
+      "id": "AP1-7-1-2-K1-2",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K1",
+      "vorne": "Woran unterscheiden sich technische, organisatorische und personelle Schutzmaßnahmen? Nenne je ein Beispiel.",
+      "hinten": "- technisch: mit Hard- oder Software umgesetzt, z. B. Virenschutz\n- organisatorisch: durch Regeln und Abläufe, z. B. Besucherregelung\n- personell: setzen beim Menschen an, z. B. Schulung"
+    },
+    {
+      "id": "AP1-7-1-2-K1-3",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K1",
+      "vorne": "Zu welcher Art von Schutzmaßnahme gehört jeweils:\na) Festplattenverschlüsselung\nb) Besucherregelung\nc) Verpflichtung auf Vertraulichkeit",
+      "hinten": "- a) technisch\n- b) organisatorisch\n- c) personell (im Datenschutzrecht oft zu den organisatorischen gezählt)"
+    },
+    {
+      "id": "AP1-7-1-2-K2-1",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K2",
+      "vorne": "Welche drei technischen Maßnahmen schützen einen Arbeitsplatzrechner vor Schadsoftware, vor unerwünschten Netzwerkverbindungen und vor dem Auslesen gespeicherter Daten?",
+      "hinten": "- Virenschutz (gegen Schadsoftware)\n- Personal Firewall (gegen unerwünschte Verbindungen)\n- Verschlüsselung (gegen Auslesen der Daten)"
+    },
+    {
+      "id": "AP1-7-1-2-K3-1",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K3",
+      "vorne": "Ein Arbeitsplatz steht in einem Büro mit Publikumsverkehr. Welche Schutzmaßnahmen schlägst du vor?",
+      "hinten": "- Bildschirm beim Verlassen sperren, zusätzlich automatische Sperre\n- Bildschirm vom Publikum abwenden oder Blickschutzfilter\n- Unterlagen und Datenträger wegschließen\n- Besucher nicht unbeaufsichtigt lassen"
+    },
+    {
+      "id": "AP1-7-1-2-K3-2",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K3",
+      "vorne": "Nenne für einen Büroarbeitsplatz je eine technische, organisatorische und personelle Schutzmaßnahme.",
+      "hinten": "Zum Beispiel:\n- technisch: Virenschutz, Personal Firewall, Festplattenverschlüsselung\n- organisatorisch: Berechtigungskonzept, Passwort-Richtlinie\n- personell: Schulung zur Informationssicherheit"
+    },
+    {
+      "id": "AP1-7-1-2-K3-3",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K3",
+      "vorne": "Ein Notebook steht tagsüber in einem Baucontainer. Lege Schutzmaßnahmen fest.",
+      "hinten": "- Container abschließen\n- Notebook mit Kabelschloss sichern\n- Festplatte verschlüsseln\n- Daten regelmäßig sichern"
+    },
+    {
+      "id": "AP1-7-1-2-K4-1",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K4",
+      "vorne": "Welches Sicherheitsrisiko entsteht, wenn sich fremde Personen unbeaufsichtigt im Büro aufhalten?",
+      "hinten": "Sie können Bildschirme und Unterlagen einsehen, Geräte oder Datenträger mitnehmen und an ungesperrten Rechnern Daten abrufen oder Schadsoftware einspielen, z. B. per USB-Stick."
+    },
+    {
+      "id": "AP1-7-1-2-K4-2",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K4",
+      "vorne": "Welches Sicherheitsrisiko entsteht, wenn Mitarbeiter private Geräte ins Firmennetz einbinden?",
+      "hinten": "Die Geräte werden nicht von der Firma verwaltet und sind oft schlecht geschützt (fehlende Updates, kein Virenschutz). Schadsoftware kann ins Firmennetz gelangen, Firmendaten können auf das private Gerät abfließen."
+    },
+    {
+      "id": "AP1-7-1-2-K4-3",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K4",
+      "vorne": "Welches Sicherheitsrisiko entsteht, wenn Geräte aus einer unsicheren Lieferkette stammen?",
+      "hinten": "Die Geräte können manipuliert sein, z. B. mit vorinstallierter Schadsoftware oder einer Hintertür; Daten können unbemerkt abfließen."
+    },
+    {
+      "id": "AP1-7-1-2-K5-1",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K5",
+      "vorne": "Nenne Beispiele für organisatorische Schutzmaßnahmen.",
+      "hinten": "- Regelungen und Richtlinien, z. B. Passwort-Richtlinie\n- Berechtigungskonzept\n- Besucherregelung"
+    },
+    {
+      "id": "AP1-7-1-2-K5-2",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K5",
+      "vorne": "Nenne Beispiele für personelle Schutzmaßnahmen.",
+      "hinten": "- Schulungen der Mitarbeiter\n- Verpflichtung auf Vertraulichkeit"
+    },
+    {
+      "id": "AP1-7-1-2-K6-1",
+      "sp": "AP1-7-1-2",
+      "k": "AP1-7-1-2-K6",
+      "vorne": "Auf einem Notebook liegen Personaldaten, die Vertraulichkeit ist mit „hoch“ eingestuft. Geschützt ist es mit Virenschutz und Anmeldepasswort. Passen die Maßnahmen zum Schutzbedarf?",
+      "hinten": "Nein. Bei Verlust oder Diebstahl lässt sich die Festplatte ausbauen und auslesen; es fehlt eine Festplattenverschlüsselung. Für „hoch“ zusätzlich Zwei-Faktor-Anmeldung und automatische Sperre."
+    },
+    {
+      "id": "AP1-7-1-3-K1-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K1",
+      "vorne": "Was ist eine IT-Sicherheitsrichtlinie?",
+      "hinten": "Eine verbindliche Vorgabe des Unternehmens, die regelt, wie Mitarbeiter sicher mit IT und Informationen umgehen, z. B. eine Passwort-Policy."
+    },
+    {
+      "id": "AP1-7-1-3-K1-2",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K1",
+      "vorne": "Was regelt eine Passwort-Policy typischerweise?",
+      "hinten": "- Mindestlänge\n- Zeichenvielfalt (Groß-, Kleinbuchstaben, Ziffern, Sonderzeichen)\n- keine Wiederverwendung alter Passwörter\n- Sperre nach Fehlversuchen\n- Passwort geheim halten und nicht weitergeben"
+    },
+    {
+      "id": "AP1-7-1-3-K2-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K3",
+      "vorne": "Eine Passwort-Policy erlaubt Passwörter aus 6 Kleinbuchstaben und beliebig viele Anmeldeversuche. Wie bewertest du sie?",
+      "hinten": "Unsicher: viel zu kurz, daher leicht durchzuprobieren; ohne Sperre sind unbegrenzt viele Versuche möglich. Besser: deutlich größere Mindestlänge (Länge zählt mehr als Komplexität), Sperre nach Fehlversuchen, für wichtige Zugänge ein zweiter Faktor."
+    },
+    {
+      "id": "AP1-7-1-3-K2-2",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K3",
+      "vorne": "Warum sollte eine Passwort-Policy verbieten, alte Passwörter wiederzuverwenden?",
+      "hinten": "Ein altes Passwort könnte bereits bekannt geworden sein; wer es wieder verwendet, macht den Wechsel wirkungslos."
+    },
+    {
+      "id": "AP1-7-1-3-K3-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K3",
+      "vorne": "Nenne vier Kriterien, nach denen du eine Passwort-Policy bewertest.",
+      "hinten": "- ausreichende Länge (wichtiger als Komplexität)\n- keine Wörterbuchbegriffe oder bekannten Muster\n- für jeden Zugang ein eigenes Passwort, Passwortmanager erlaubt\n- Sperre nach Fehlversuchen\n- zweiter Faktor für wichtige Zugänge"
+    },
+    {
+      "id": "AP1-7-1-3-K3-2",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K3",
+      "vorne": "Warum erhöhen Mindestlänge und Zeichenvielfalt die Sicherheit eines Passworts?",
+      "hinten": "Es gibt viel mehr mögliche Kombinationen; das Passwort ist schwerer zu erraten und durch Ausprobieren kaum zu knacken."
+    },
+    {
+      "id": "AP1-7-1-3-K3-3",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K3",
+      "vorne": "Wogegen schützt eine Sperre nach mehreren Fehlversuchen?",
+      "hinten": "Gegen das massenhafte Durchprobieren von Passwörtern (Brute-Force-Angriff)."
+    },
+    {
+      "id": "AP1-7-1-3-K3-4",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K3",
+      "vorne": "Eine Passwort-Policy verlangt, dass alle Passwörter alle 30 Tage gewechselt werden. Wie bewertest du das?",
+      "hinten": "BSI und NIST empfehlen einen Wechsel ohne Anlass nicht mehr: Nutzer wählen sonst schwache, nur leicht abgewandelte Passwörter. Gewechselt wird bei Verdacht, dass ein Passwort bekannt ist. Ältere Richtlinien verlangen den Zwangswechsel noch."
+    },
+    {
+      "id": "AP1-7-1-3-K4-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K4",
+      "vorne": "Was bedeutet **Security by Design**?",
+      "hinten": "Sicherheit wird von Anfang an in Planung und Entwicklung eines Systems eingeplant und nicht erst nachträglich ergänzt."
+    },
+    {
+      "id": "AP1-7-1-3-K4-2",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K4",
+      "vorne": "Was bedeutet **Security by Default**?",
+      "hinten": "Die Voreinstellungen eines Systems sind die sicheren; wer nichts ändert, ist bereits geschützt – z. B. Firewall ab Werk eingeschaltet, kein Standardpasswort."
+    },
+    {
+      "id": "AP1-7-1-3-K5-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K5",
+      "vorne": "Warum sollten nicht alle Benutzer Administratorrechte bekommen?",
+      "hinten": "- Schadsoftware läuft mit den Rechten des Benutzers und könnte sonst das ganze System verändern\n- Fehlbedienungen richten weniger Schaden an\n- Benutzer können keine unerlaubte Software installieren oder Schutz abschalten"
+    },
+    {
+      "id": "AP1-7-1-3-K5-2",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K5",
+      "vorne": "Wie heißt der Grundsatz, dass Benutzer nur die Rechte erhalten, die sie für ihre Arbeit brauchen?",
+      "hinten": "Prinzip der minimalen Rechte (englisch: Least Privilege)"
+    },
+    {
+      "id": "AP1-7-1-3-K6-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K6",
+      "vorne": "Mit welchen Maßnahmen förderst du das Sicherheitsbewusstsein der Mitarbeiter?",
+      "hinten": "- Schulungen\n- simulierte Phishing-Mails\n- klare Meldewege für Vorfälle"
+    },
+    {
+      "id": "AP1-7-1-3-K6-2",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K6",
+      "vorne": "Wozu verschickt ein Unternehmen simulierte Phishing-Mails an die eigenen Mitarbeiter?",
+      "hinten": "Die Mitarbeiter üben, Phishing zu erkennen; das Unternehmen sieht, wo noch Schulungsbedarf besteht."
+    },
+    {
+      "id": "AP1-7-1-3-K6-3",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K6",
+      "vorne": "Warum braucht ein Unternehmen klare Meldewege für Sicherheitsvorfälle?",
+      "hinten": "Jeder weiß sofort, wem er einen Verdacht meldet; so kann schnell reagiert und der Schaden begrenzt werden."
+    },
+    {
+      "id": "AP1-7-1-3-K6-4",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K6",
+      "vorne": "Ein Betrieb hat vor drei Jahren einmal eine Sicherheitsschulung gemacht. Genügt das für das Sicherheitsbewusstsein?",
+      "hinten": "Nein. Wissen verblasst, und Angreifer nutzen neue Maschen. Nötig sind regelmäßige Auffrischungen, Übungen mit simulierten Phishing-Mails und klare Meldewege."
+    },
+    {
+      "id": "AP1-7-1-3-K7-1",
+      "sp": "AP1-7-1-3",
+      "k": "AP1-7-1-3-K7",
+      "vorne": "Was bedeutet die Angabe „no default passwords“ bei einem Gerät?",
+      "hinten": "Es gibt kein voreingestelltes Kennwort; bei der Einrichtung muss ein eigenes vergeben werden."
+    },
+    {
+      "id": "AP1-7-1-4-K2-1",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K2",
+      "vorne": "Wofür steht ISMS?",
+      "hinten": "Informationssicherheitsmanagementsystem"
+    },
+    {
+      "id": "AP1-7-1-4-K2-2",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K2",
+      "vorne": "Was ist ein ISMS?",
+      "hinten": "Festgelegte Regeln, Zuständigkeiten und Abläufe, mit denen ein Betrieb seine Informationssicherheit dauerhaft steuert und verbessert."
+    },
+    {
+      "id": "AP1-7-1-4-K3-1",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K3",
+      "vorne": "Wie unterstützt du als Mitarbeiter das ISMS in deinem Arbeitsbereich?",
+      "hinten": "- Sicherheitsrichtlinien einhalten\n- Sicherheitsvorfälle und Auffälligkeiten melden\n- an Schulungen teilnehmen\n- Schwachstellen und Verbesserungen ansprechen"
+    },
+    {
+      "id": "AP1-7-1-4-K4-1",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K4",
+      "vorne": "Warum ist IT-Sicherheitsmanagement keine einmalige Aufgabe?",
+      "hinten": "Bedrohungen, Technik und Abläufe ändern sich laufend; Sicherheit muss deshalb fortlaufend geplant, umgesetzt, überprüft und verbessert werden (PDCA-Zyklus)."
+    },
+    {
+      "id": "AP1-7-1-4-K4-2",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K4",
+      "vorne": "Wofür stehen die vier Phasen des PDCA-Zyklus im Sicherheitsmanagement?",
+      "hinten": "- Plan: Ziele und Maßnahmen planen\n- Do: Maßnahmen umsetzen\n- Check: Wirksamkeit überprüfen\n- Act: Mängel beheben und verbessern"
+    },
+    {
+      "id": "AP1-7-1-4-K1-1",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K5",
+      "vorne": "Wofür ist der IT-Sicherheitsbeauftragte zuständig?",
+      "hinten": "Für die Sicherheit aller Informationen und IT-Systeme des Betriebs, z. B. Sicherheitskonzept, Umgang mit Sicherheitsvorfällen, Sensibilisierung der Mitarbeiter."
+    },
+    {
+      "id": "AP1-7-1-4-K1-2",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K5",
+      "vorne": "Wofür ist der Datenschutzbeauftragte zuständig?",
+      "hinten": "Für den Schutz personenbezogener Daten: Er berät den Betrieb, überwacht die Einhaltung des Datenschutzrechts und ist Ansprechpartner für Betroffene und Aufsichtsbehörde."
+    },
+    {
+      "id": "AP1-7-1-4-K5-1",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K5",
+      "vorne": "Ein Mitarbeiter fragt, ob Kundendaten an einen neuen Dienstleister weitergegeben werden dürfen. Wer ist zuständig?",
+      "hinten": "Der Datenschutzbeauftragte: Es geht um personenbezogene Daten."
+    },
+    {
+      "id": "AP1-7-1-4-K5-2",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K5",
+      "vorne": "Auf einem Server gibt es Anzeichen eines Angriffs, betroffen sind Konstruktionsdaten. Wer ist zuständig?",
+      "hinten": "Der IT-Sicherheitsbeauftragte: Es geht um die Sicherheit von Informationen und Systemen, nicht um personenbezogene Daten."
+    },
+    {
+      "id": "AP1-7-1-4-K6-1",
+      "sp": "AP1-7-1-4",
+      "k": "AP1-7-1-4-K6",
+      "vorne": "Wie trägt Protokollierung (Logging) zur IT-Sicherheit bei?",
+      "hinten": "Ereignisse werden mit Zeit und Benutzer aufgezeichnet. So werden Fehler und unerlaubte Aktivitäten, z. B. viele fehlgeschlagene Anmeldungen, erkennbar und nachvollziehbar."
+    },
+    {
+      "id": "AP1-7-2-1-K1-1",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K1",
+      "vorne": "Was ist das BSI?",
+      "hinten": "Das Bundesamt für Sicherheit in der Informationstechnik, die Cyber-Sicherheitsbehörde des Bundes. Es erarbeitet Standards und Empfehlungen zur Informationssicherheit und ist Anlaufstelle für Sicherheitsfragen von Unternehmen, Behörden und Bürgern."
+    },
+    {
+      "id": "AP1-7-2-1-K1-2",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K1",
+      "vorne": "Wozu dient das IT-Grundschutz-Kompendium des BSI?",
+      "hinten": "Es sammelt typische Gefährdungen und bewährte Sicherheitsanforderungen, geordnet in Bausteinen. Damit erreicht ein Betrieb mit vertretbarem Aufwand ein angemessenes Sicherheitsniveau."
+    },
+    {
+      "id": "AP1-7-2-1-K2-1",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K2",
+      "vorne": "Was ist ein Baustein im IT-Grundschutz-Kompendium?",
+      "hinten": "Eine Sammlung typischer Gefährdungen und Anforderungen für einen bestimmten Gegenstand, z. B. einen Client, einen Server oder einen Raum."
+    },
+    {
+      "id": "AP1-7-2-1-K3-1",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K3",
+      "vorne": "Begründe die Empfehlung: Der Bildschirm wird gesperrt, wenn der Benutzer den Arbeitsplatz verlässt.",
+      "hinten": "An einem ungesperrten Rechner können Unbefugte unter dem Konto des Benutzers Daten einsehen oder ändern; das gefährdet Vertraulichkeit und Integrität."
+    },
+    {
+      "id": "AP1-7-2-1-K3-2",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K3",
+      "vorne": "Begründe die Empfehlung: Wechseldatenträger wie USB-Sticks nur kontrolliert zulassen.",
+      "hinten": "Über fremde Datenträger kann Schadsoftware eingeschleppt werden, und Daten können unbemerkt kopiert und mitgenommen werden."
+    },
+    {
+      "id": "AP1-7-2-1-K3-3",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K3",
+      "vorne": "Begründe die Empfehlung: Sicherheitsupdates zeitnah einspielen.",
+      "hinten": "Updates schließen bekannte Sicherheitslücken; ohne sie können Angreifer diese Lücken gezielt ausnutzen."
+    },
+    {
+      "id": "AP1-7-2-1-K3-4",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K3",
+      "vorne": "Begründe die Empfehlung: Ein Präsentationsrechner für Besucher erhält eine Minimalkonfiguration und hängt in einem vom Firmennetz getrennten Netz.",
+      "hinten": "Besucher schließen fremde Datenträger an; wenige Programme bieten wenige Schwachstellen. Wird der Rechner trotzdem infiziert, erreicht die Schadsoftware das Firmennetz nicht."
+    },
+    {
+      "id": "AP1-7-2-1-K4-1",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K4",
+      "vorne": "Nenne die groben Schritte des Vorgehens nach IT-Grundschutz in der richtigen Reihenfolge.",
+      "hinten": "1. Bestand erfassen\n2. Schutzbedarf feststellen\n3. Bausteine zuordnen\n4. Maßnahmen umsetzen und prüfen"
+    },
+    {
+      "id": "AP1-7-2-1-K4-2",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K4",
+      "vorne": "Welcher Schritt folgt im Vorgehen nach IT-Grundschutz auf die Schutzbedarfsfeststellung?",
+      "hinten": "Die Bausteine des Kompendiums werden den erfassten Objekten zugeordnet."
+    },
+    {
+      "id": "AP1-7-2-1-K5-1",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K5",
+      "vorne": "Nenne zu den Anforderungen „Software aktuell halten“ und „Benutzer- und Administratorrechte trennen“ je eine Maßnahme.",
+      "hinten": "- automatische Updates aktivieren\n- getrennte Konten: ein normales Konto für die Arbeit, ein Administratorkonto nur für die Verwaltung"
+    },
+    {
+      "id": "AP1-7-2-1-K6-1",
+      "sp": "AP1-7-2-1",
+      "k": "AP1-7-2-1-K6",
+      "vorne": "Ein Mitarbeiter arbeitet mit einem Windows-Notebook im Büro und zeitweise unterwegs. Welche Bausteine des Grundschutz-Kompendiums weist du zu?",
+      "hinten": "- Client (allgemeiner Client bzw. Windows-Client)\n- Büroarbeitsplatz\n- mobiles Arbeiten"
+    },
+    {
+      "id": "AP1-7-2-2-K1-1",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K1",
+      "vorne": "Welche drei Schutzbedarfskategorien gibt es nach IT-Grundschutz?",
+      "hinten": "- normal\n- hoch\n- sehr hoch"
+    },
+    {
+      "id": "AP1-7-2-2-K1-2",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K1",
+      "vorne": "Wie unterscheiden sich die Schutzbedarfskategorien nach der Schwere des möglichen Schadens?",
+      "hinten": "- normal: Schaden begrenzt und überschaubar\n- hoch: Schaden beträchtlich\n- sehr hoch: Schaden kann existenzbedrohend, katastrophal sein"
+    },
+    {
+      "id": "AP1-7-2-2-K1-3",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K1",
+      "vorne": "Ein Ausfall würde den Betrieb in seiner Existenz bedrohen. Welche Schutzbedarfskategorie liegt vor?",
+      "hinten": "sehr hoch"
+    },
+    {
+      "id": "AP1-7-2-2-K2-1",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K2",
+      "vorne": "Für welche Arten von Objekten legst du in der Schutzbedarfsanalyse den Schutzbedarf fest?",
+      "hinten": "- Anwendungen\n- IT-Systeme\n- Räume\n- Kommunikationsverbindungen"
+    },
+    {
+      "id": "AP1-7-2-2-K2-2",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K2",
+      "vorne": "Wie wird der Schutzbedarf eines Objekts festgelegt?",
+      "hinten": "Für jedes Schutzziel (Vertraulichkeit, Integrität, Verfügbarkeit) einzeln, nach dem schwersten Schaden, der bei einer Verletzung entstehen kann."
+    },
+    {
+      "id": "AP1-7-2-2-K3-1",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K3",
+      "vorne": "Mit welchen möglichen Schäden begründest du typischerweise die Einstufung des Schutzbedarfs? Nenne drei.",
+      "hinten": "- Verletzung des Schutzes personenbezogener Daten\n- wirtschaftlicher (finanzieller) Schaden\n- Imageschaden"
+    },
+    {
+      "id": "AP1-7-2-2-K3-2",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K3",
+      "vorne": "Eine Anwendung verwaltet Gesundheitsdaten der Mitarbeiter. Wie stufst du die Vertraulichkeit mindestens ein, und warum?",
+      "hinten": "Mindestens hoch: Es sind besonders schutzwürdige personenbezogene Daten; ein Bekanntwerden schadet den Betroffenen erheblich und kann dem Betrieb Bußgelder und Imageschaden einbringen."
+    },
+    {
+      "id": "AP1-7-2-2-K4-1",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K4",
+      "vorne": "Wie gehst du vor, wenn du eine teilweise ausgefüllte Schutzbedarfstabelle ergänzt?",
+      "hinten": "Für jedes Objekt und jedes Schutzziel den möglichen Schaden abschätzen, normal, hoch oder sehr hoch eintragen und kurz begründen; IT-Systeme übernehmen den höchsten Bedarf ihrer Anwendungen."
+    },
+    {
+      "id": "AP1-7-2-2-K4-2",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K4",
+      "vorne": "Schutzbedarfstabelle, Anwendung Lohnbuchhaltung, Begründung: „Bekanntwerden der Gehälter schadet den Mitarbeitern erheblich.“ Welches Schutzziel und welche Kategorie trägst du ein?",
+      "hinten": "Vertraulichkeit, Kategorie hoch."
+    },
+    {
+      "id": "AP1-7-2-2-K5-1",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K5",
+      "vorne": "Wonach richtet sich der Schutzbedarf eines IT-Systems?",
+      "hinten": "In der Regel nach der Anwendung mit dem höchsten Schutzbedarf, die darauf läuft – für jedes Schutzziel einzeln (Maximumprinzip)."
+    },
+    {
+      "id": "AP1-7-2-2-K5-2",
+      "sp": "AP1-7-2-2",
+      "k": "AP1-7-2-2-K5",
+      "vorne": "Auf einem Server laufen zwei Anwendungen: eine mit Verfügbarkeit normal, eine mit Verfügbarkeit hoch. Welchen Schutzbedarf hat der Server bei der Verfügbarkeit?",
+      "hinten": "hoch"
+    },
+    {
+      "id": "AP1-7-2-3-K1-1",
+      "sp": "AP1-7-2-3",
+      "k": "AP1-7-2-3-K1",
+      "vorne": "Wie ist eine Risikomatrix aufgebaut?",
+      "hinten": "Auf einer Achse die Eintrittswahrscheinlichkeit, auf der anderen die Schadenshöhe; jedes Feld gehört zu einer Risikoklasse, z. B. gering, mittel, hoch."
+    },
+    {
+      "id": "AP1-7-2-3-K1-2",
+      "sp": "AP1-7-2-3",
+      "k": "AP1-7-2-3-K1",
+      "vorne": "Aus welchen beiden Größen ergibt sich die Höhe eines Risikos?",
+      "hinten": "Aus der Eintrittswahrscheinlichkeit und der Schadenshöhe."
+    },
+    {
+      "id": "AP1-7-2-3-K2-1",
+      "sp": "AP1-7-2-3",
+      "k": "AP1-7-2-3-K2",
+      "vorne": "Ein Risiko tritt wahrscheinlich ein und verursacht einen großen Schaden. Wo liegt es in der Risikomatrix, und was folgt daraus?",
+      "hinten": "In dem Feld, in dem beide Achsen ihren höchsten Wert haben: höchste Risikoklasse, es muss sofort gehandelt werden."
+    },
+    {
+      "id": "AP1-7-2-3-K2-2",
+      "sp": "AP1-7-2-3",
+      "k": "AP1-7-2-3-K2",
+      "vorne": "Ein Risiko ist sehr unwahrscheinlich und hätte nur geringe Folgen. In welche Risikoklasse fällt es, und wie geht man meist damit um?",
+      "hinten": "Niedrigste Risikoklasse (gering); es kann oft bewusst getragen werden."
+    },
+    {
+      "id": "AP1-7-2-3-K4-1",
+      "sp": "AP1-7-2-3",
+      "k": "AP1-7-2-3-K4",
+      "vorne": "Welche Risiken werden zuerst behandelt, und warum?",
+      "hinten": "Die mit hoher Eintrittswahrscheinlichkeit und hohem Schaden (höchste Risikoklasse), weil von ihnen die größte Gefahr ausgeht; geringe Risiken können später behandelt oder getragen werden."
+    },
+    {
+      "id": "AP1-7-2-3-K4-2",
+      "sp": "AP1-7-2-3",
+      "k": "AP1-7-2-3-K4",
+      "vorne": "Drei Risiken: A wahrscheinlich mit geringem Schaden, B unwahrscheinlich mit hohem Schaden, C wahrscheinlich mit hohem Schaden. In welcher Reihenfolge behandelst du sie?",
+      "hinten": "Zuerst C (höchste Risikoklasse). A und B liegen meist in einer mittleren Klasse und folgen danach."
+    },
+    {
+      "id": "AP1-7-3-1-K1-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K1",
+      "vorne": "Wie funktioniert symmetrische Verschlüsselung?",
+      "hinten": "Sender und Empfänger verwenden denselben geheimen Schlüssel zum Ver- und Entschlüsseln."
+    },
+    {
+      "id": "AP1-7-3-1-K2-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K2",
+      "vorne": "Mit welchem Schlüssel wird bei asymmetrischer Verschlüsselung eine E-Mail verschlüsselt, mit welchem entschlüsselt?",
+      "hinten": "Verschlüsselt mit dem öffentlichen Schlüssel des Empfängers, entschlüsselt mit dem privaten Schlüssel des Empfängers."
+    },
+    {
+      "id": "AP1-7-3-1-K2-2",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K2",
+      "vorne": "Welche zwei Schlüssel hat jeder Teilnehmer bei asymmetrischer Verschlüsselung, und wer darf sie kennen?",
+      "hinten": "- öffentlicher Schlüssel: darf jeder kennen, wird weitergegeben\n- privater Schlüssel: kennt nur der Inhaber, bleibt geheim"
+    },
+    {
+      "id": "AP1-7-3-1-K3-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K3",
+      "vorne": "Nenne einen Vorteil und einen Nachteil der asymmetrischen gegenüber der symmetrischen Verschlüsselung.",
+      "hinten": "- Vorteil: kein sicherer Schlüsseltausch nötig, der öffentliche Schlüssel darf bekannt sein\n- Nachteil: rechenaufwendiger, also langsamer"
+    },
+    {
+      "id": "AP1-7-3-1-K3-2",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K3",
+      "vorne": "Welches Problem der symmetrischen Verschlüsselung löst das asymmetrische Verfahren?",
+      "hinten": "Der gemeinsame geheime Schlüssel muss vorher auf sicherem Weg ausgetauscht werden."
+    },
+    {
+      "id": "AP1-7-3-1-K4-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K4",
+      "vorne": "Wie funktioniert hybride Verschlüsselung?",
+      "hinten": "Die Daten werden mit einem symmetrischen Sitzungsschlüssel verschlüsselt; dieser Sitzungsschlüssel wird asymmetrisch (mit dem öffentlichen Schlüssel des Empfängers) geschützt übertragen."
+    },
+    {
+      "id": "AP1-7-3-1-K4-2",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K4",
+      "vorne": "Warum kombiniert die hybride Verschlüsselung beide Verfahren?",
+      "hinten": "Sie nutzt die Vorteile beider: schnelle symmetrische Verschlüsselung der Daten und asymmetrische Übertragung des Schlüssels, sodass kein sicherer Schlüsseltausch vorab nötig ist."
+    },
+    {
+      "id": "AP1-7-3-1-K6-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K6",
+      "vorne": "Ein ausgeschalteter Laptop mit Festplattenverschlüsselung wird gestohlen. Sind die Daten geschützt?",
+      "hinten": "Ja: Ohne Kennwort oder Schlüssel sind die Daten nicht lesbar, auch nicht nach Ausbau der Festplatte. Das gilt nicht, wenn der Laptop eingeschaltet und entsperrt gestohlen wird oder der Schlüssel beim Gerät liegt."
+    },
+    {
+      "id": "AP1-7-3-1-K7-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K7",
+      "vorne": "Beurteile Aufbewahrungsorte für den Wiederherstellungsschlüssel einer Festplattenverschlüsselung: Datei auf dem PC, Cloud-Speicher, USB-Stick, Ausdruck.",
+      "hinten": "- Datei auf dem PC: bequem / im Ernstfall nicht erreichbar, weil der PC gesperrt ist\n- Cloud-Speicher: von überall erreichbar / gefährdet, wenn das Konto übernommen wird\n- USB-Stick: offline / kann verloren gehen, darf nicht beim Gerät liegen\n- Ausdruck: offline, im Tresor sicher / kann verloren gehen, mühsam abzutippen"
+    },
+    {
+      "id": "AP1-7-3-1-K8-1",
+      "sp": "AP1-7-3-1",
+      "k": "AP1-7-3-1-K8",
+      "vorne": "Ein Administrator will die Konfiguration eines Switches per Telnet über das Firmennetz ändern. Was rätst du? Begründe.",
+      "hinten": "SSH statt Telnet: Telnet überträgt Anmeldedaten und Befehle im Klartext, die im Netz mitgelesen werden können; SSH verschlüsselt die Verbindung."
+    },
+    {
+      "id": "AP1-7-3-2-K1-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K1",
+      "vorne": "Was ist ein Hashwert?",
+      "hinten": "Ein aus Daten berechneter Prüfwert fester Länge; er ändert sich schon bei kleinster Änderung der Daten und lässt sich nicht zu den Daten zurückrechnen."
+    },
+    {
+      "id": "AP1-7-3-2-K1-2",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K1",
+      "vorne": "Hängt die Länge eines Hashwerts von der Größe der Daten ab?",
+      "hinten": "Nein, ein Hashverfahren liefert immer einen Wert fester Länge, egal wie groß die Daten sind."
+    },
+    {
+      "id": "AP1-7-3-2-K2-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K2",
+      "vorne": "Wie prüfst du mit einem angegebenen Hashwert, ob ein Download unversehrt ist?",
+      "hinten": "Den Hashwert der heruntergeladenen Datei mit demselben Verfahren selbst berechnen und mit dem angegebenen vergleichen. Stimmen beide überein, ist die Datei unverändert."
+    },
+    {
+      "id": "AP1-7-3-2-K2-2",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K2",
+      "vorne": "Welchen Zweck hat ein Hashwert, der neben einer Installationsdatei zum Download angeboten wird?",
+      "hinten": "Man kann prüfen, ob die Datei vollständig und unverändert angekommen ist, also weder beschädigt noch manipuliert wurde (Integrität) – sofern der angegebene Hashwert selbst aus vertrauenswürdiger Quelle stammt."
+    },
+    {
+      "id": "AP1-7-3-2-K3-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K3",
+      "vorne": "Was belegt eine digitale Signatur?",
+      "hinten": "- von wem die Nachricht stammt (Authentizität)\n- dass sie nicht verändert wurde (Integrität)"
+    },
+    {
+      "id": "AP1-7-3-2-K4-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K4",
+      "vorne": "Wie erstellt der Absender eine digitale Signatur?",
+      "hinten": "Er bildet den Hashwert der Nachricht und verschlüsselt ihn mit seinem privaten Schlüssel."
+    },
+    {
+      "id": "AP1-7-3-2-K4-2",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K4",
+      "vorne": "Wie prüft der Empfänger eine digitale Signatur?",
+      "hinten": "Er entschlüsselt die Signatur mit dem öffentlichen Schlüssel des Absenders, berechnet selbst den Hashwert der Nachricht und vergleicht beide. Stimmen sie überein, ist die Signatur gültig."
+    },
+    {
+      "id": "AP1-7-3-2-K4-3",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K4",
+      "vorne": "Warum signiert der Absender mit seinem privaten und nicht mit seinem öffentlichen Schlüssel?",
+      "hinten": "Nur er besitzt seinen privaten Schlüssel, also kann nur er die Signatur erzeugen; prüfen kann sie jeder mit dem öffentlichen Schlüssel."
+    },
+    {
+      "id": "AP1-7-3-2-K5-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K5",
+      "vorne": "Wozu dient ein digitales Zertifikat?",
+      "hinten": "Es bestätigt, dass ein öffentlicher Schlüssel zu einer bestimmten Person, Organisation oder Website gehört."
+    },
+    {
+      "id": "AP1-7-3-2-K5-2",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K5",
+      "vorne": "Wie kann ein Zertifikat einen Mitarbeiter gegenüber dem Firmenserver ausweisen?",
+      "hinten": "Das Zertifikat bestätigt, dass ein öffentlicher Schlüssel zu diesem Mitarbeiter gehört. Der Server prüft das Zertifikat und dass der Mitarbeiter den passenden privaten Schlüssel besitzt."
+    },
+    {
+      "id": "AP1-7-3-2-K6-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K6",
+      "vorne": "Wer stellt ein digitales Zertifikat aus?",
+      "hinten": "Eine Zertifizierungsstelle (englisch: Certificate Authority, CA)."
+    },
+    {
+      "id": "AP1-7-3-2-K7-1",
+      "sp": "AP1-7-3-2",
+      "k": "AP1-7-3-2-K7",
+      "vorne": "Welches Mittel setzt du ein? (a) prüfen, ob eine heruntergeladene Datei unverändert ist, (b) nachweisen, dass ein Dokument von dir stammt und nicht verändert wurde, (c) belegen, dass ein öffentlicher Schlüssel zum Webserver einer Bank gehört.",
+      "hinten": "- a: Hashwert\n- b: digitale Signatur\n- c: Zertifikat"
+    },
+    {
+      "id": "AP1-7-3-3-K2-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K2",
+      "vorne": "Was ist Authentifizierung?",
+      "hinten": "Die Prüfung, ob jemand wirklich der ist, für den er sich ausgibt, z. B. durch ein Passwort bei der Anmeldung."
+    },
+    {
+      "id": "AP1-7-3-3-K2-2",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K2",
+      "vorne": "Welche drei Arten von Faktoren gibt es bei der Authentifizierung?",
+      "hinten": "- Wissen, z. B. Passwort, PIN\n- Besitz, z. B. Chipkarte, Smartphone\n- biometrisches Merkmal, z. B. Fingerabdruck"
+    },
+    {
+      "id": "AP1-7-3-3-K2-3",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K2",
+      "vorne": "Zu welcher Faktorart gehört jeweils:\na) PIN\nb) Hardware-Token\nc) Gesichtserkennung",
+      "hinten": "- a) Wissen\n- b) Besitz\n- c) biometrisches Merkmal"
+    },
+    {
+      "id": "AP1-7-3-3-K3-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K3",
+      "vorne": "Was ist Zwei-Faktor-Authentifizierung? Nenne ein Beispiel.",
+      "hinten": "Anmeldung mit zwei Faktoren aus verschiedenen Arten (Wissen, Besitz, Biometrie), z. B. Passwort und Code aus einer Authenticator-App."
+    },
+    {
+      "id": "AP1-7-3-3-K3-2",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K3",
+      "vorne": "Ist eine Anmeldung mit Passwort und zusätzlicher Sicherheitsfrage eine Zwei-Faktor-Authentifizierung?",
+      "hinten": "Nein. Beides ist Wissen, also nur eine Faktorart."
+    },
+    {
+      "id": "AP1-7-3-3-K3-3",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K3",
+      "vorne": "Warum ist Zwei-Faktor-Authentifizierung sicherer als ein Passwort allein?",
+      "hinten": "Wer nur das Passwort erbeutet hat, z. B. durch Phishing, kommt ohne den zweiten Faktor trotzdem nicht hinein."
+    },
+    {
+      "id": "AP1-7-3-3-K4-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K4",
+      "vorne": "Nenne drei technische Möglichkeiten, den Zutritt zu einem Raum automatisch zu kontrollieren.",
+      "hinten": "- Chipkarte oder Transponder\n- Zahlencode (PIN-Tastatur)\n- Fingerabdruck oder anderes biometrisches Merkmal"
+    },
+    {
+      "id": "AP1-7-3-3-K1-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K5",
+      "vorne": "Worin unterscheiden sich Zugangskontrolle und Zugriffskontrolle?",
+      "hinten": "- Zugangskontrolle: wer ein System überhaupt benutzen darf, z. B. Anmeldung\n- Zugriffskontrolle: was ein Benutzer dort sehen und ändern darf, z. B. Leserechte"
+    },
+    {
+      "id": "AP1-7-3-3-K5-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K5",
+      "vorne": "Was unterscheidet Zutritt, Zugang und Zugriff?",
+      "hinten": "- Zutritt: Betreten von Räumen\n- Zugang: Benutzen eines IT-Systems\n- Zugriff: Lesen oder Ändern von Daten"
+    },
+    {
+      "id": "AP1-7-3-3-K5-2",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K5",
+      "vorne": "Zutritt, Zugang oder Zugriff?\na) Anmeldung am PC mit Passwort\nb) Chipkarte an der Tür zum Serverraum\nc) Leserecht auf einen Ordner",
+      "hinten": "- a) Zugang\n- b) Zutritt\n- c) Zugriff"
+    },
+    {
+      "id": "AP1-7-3-3-K6-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K6",
+      "vorne": "Ergänze für Fingerabdruck, Passwort und Chipkarte je die Methode, einen Vorteil und ein Sicherheitsrisiko.",
+      "hinten": "- Fingerabdruck: Biometrie / kann nicht vergessen werden / lässt sich nicht ändern, wenn er nachgebildet wird\n- Passwort: Wissen / ohne Zusatzgerät, leicht zu ändern / kann erraten oder ausgespäht werden\n- Chipkarte: Besitz / schwer zu kopieren / kann verloren gehen oder gestohlen werden"
+    },
+    {
+      "id": "AP1-7-3-3-K7-1",
+      "sp": "AP1-7-3-3",
+      "k": "AP1-7-3-3-K7",
+      "vorne": "Der Zugang zur Lohnbuchhaltung (Schutzbedarf hoch) ist nur mit Passwort geschützt, alle Mitarbeiter der Verwaltung haben Zugriff. Passt das? Was schlägst du vor?",
+      "hinten": "Nein. Zwei-Faktor-Anmeldung einführen und Zugriff nur für die Lohnbuchhaltung vergeben (Rechte nur nach Bedarf), zentral über Berechtigungen und Gruppenrichtlinien durchgesetzt."
+    },
+    {
+      "id": "AP1-7-3-4-K1-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K1",
+      "vorne": "Was bedeutet es, ein Betriebssystem zu härten?",
+      "hinten": "Die Angriffsfläche verkleinern und Schwachstellen schließen, damit das System unempfindlicher gegen Angriffe wird."
+    },
+    {
+      "id": "AP1-7-3-4-K2-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K2",
+      "vorne": "Nenne Maßnahmen zur Härtung eines Arbeitsplatzrechners.",
+      "hinten": "- Updates einspielen\n- nicht benötigte Dienste und Programme entfernen\n- nicht benötigte Konten löschen und Ports schließen\n- Rechte auf das Nötige beschränken"
+    },
+    {
+      "id": "AP1-7-3-4-K2-2",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K2",
+      "vorne": "Warum gehört das Einspielen von Updates zur Härtung?",
+      "hinten": "Updates schließen bekannte Sicherheitslücken, die Angreifer sonst ausnutzen können."
+    },
+    {
+      "id": "AP1-7-3-4-K3-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K3",
+      "vorne": "Was ist eine Minimalkonfiguration?",
+      "hinten": "Es sind nur die Programme, Dienste und Funktionen installiert und aktiviert, die für die Aufgabe tatsächlich gebraucht werden."
+    },
+    {
+      "id": "AP1-7-3-4-K3-2",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K3",
+      "vorne": "Warum ist eine Minimalkonfiguration sicherer und leichter zu pflegen?",
+      "hinten": "- sicherer: weniger Programme und Dienste bedeuten weniger mögliche Schwachstellen und Angriffspunkte\n- leichter zu pflegen: weniger muss aktualisiert, überwacht und konfiguriert werden"
+    },
+    {
+      "id": "AP1-7-3-4-K4-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K4",
+      "vorne": "Was tut eine Personal Firewall?",
+      "hinten": "Sie läuft auf dem einzelnen Rechner und erlaubt oder blockiert anhand von Regeln ein- und ausgehende Netzwerkverbindungen, auch für einzelne Programme."
+    },
+    {
+      "id": "AP1-7-3-4-K4-2",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K4",
+      "vorne": "Wie sperrst du mit der Personal Firewall einem Programm den Zugriff auf das Internet?",
+      "hinten": "In den Firewall-Einstellungen eine Regel für ausgehende Verbindungen anlegen, die für dieses Programm die Verbindung blockiert."
+    },
+    {
+      "id": "AP1-7-3-4-K5-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K5",
+      "vorne": "Wozu dient ein Virenschutzprogramm?",
+      "hinten": "Es erkennt Schadsoftware, z. B. an bekannten Signaturen oder verdächtigem Verhalten, blockiert sie und entfernt sie oder verschiebt sie in Quarantäne."
+    },
+    {
+      "id": "AP1-7-3-4-K5-2",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K5",
+      "vorne": "Warum muss ein Virenschutzprogramm regelmäßig aktualisiert werden?",
+      "hinten": "Neue Schadsoftware erkennt es nur mit aktuellen Signaturen und Erkennungsregeln."
+    },
+    {
+      "id": "AP1-7-3-4-K6-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K6",
+      "vorne": "Nenne Bordmittel des Betriebssystems, die die Sicherheit erhöhen.",
+      "hinten": "- Firewall\n- Virenschutz\n- Datensicherung\n- Benutzerverwaltung"
+    },
+    {
+      "id": "AP1-7-3-4-K7-1",
+      "sp": "AP1-7-3-4",
+      "k": "AP1-7-3-4-K7",
+      "vorne": "Ein neues NAS soll direkt nach dem Auspacken in Betrieb gehen. Warum spielst du vorher ein Softwareupdate ein?",
+      "hinten": "Die Software ab Werk ist oft Monate alt und hat bekannte Sicherheitslücken. Das Update schließt sie, bevor das Gerät im Netz angreifbar ist."
+    },
+    {
+      "id": "AP1-7-3-5-K1-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K1",
+      "vorne": "Was wird bei einer Vollsicherung gesichert?",
+      "hinten": "Alle ausgewählten Daten vollständig, egal ob sie sich seit der letzten Sicherung geändert haben."
+    },
+    {
+      "id": "AP1-7-3-5-K1-2",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K1",
+      "vorne": "Was wird bei einer differenziellen Sicherung gesichert?",
+      "hinten": "Alle Daten, die seit der letzten **Vollsicherung** neu sind oder sich geändert haben."
+    },
+    {
+      "id": "AP1-7-3-5-K1-3",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K1",
+      "vorne": "Was wird bei einer inkrementellen Sicherung gesichert?",
+      "hinten": "Nur die Daten, die seit der letzten Sicherung – gleich welcher Art – neu sind oder sich geändert haben."
+    },
+    {
+      "id": "AP1-7-3-5-K1-4",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K1",
+      "vorne": "Welche Sicherungen brauchst du zur vollständigen Wiederherstellung bei differenzieller und bei inkrementeller Sicherung?",
+      "hinten": "- differenziell: letzte Vollsicherung + letzte differenzielle Sicherung\n- inkrementell: letzte Vollsicherung + alle inkrementellen Sicherungen seitdem, in der richtigen Reihenfolge"
+    },
+    {
+      "id": "AP1-7-3-5-K1-5",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K1",
+      "vorne": "Welches Sicherungsverfahren braucht je Sicherungslauf am wenigsten Zeit und Speicherplatz, und was ist sein Nachteil?",
+      "hinten": "Die inkrementelle Sicherung; dafür ist die Wiederherstellung am aufwendigsten, weil alle Teilsicherungen seit der Vollsicherung nötig sind."
+    },
+    {
+      "id": "AP1-7-3-5-K2-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K2",
+      "vorne": "Was macht eine Datensicherung zuverlässig?",
+      "hinten": "- regelmäßig sichern\n- Sicherung getrennt vom Rechner lagern\n- Datenträger verschlüsseln\n- Wiederherstellung testen"
+    },
+    {
+      "id": "AP1-7-3-5-K2-2",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K2",
+      "vorne": "Warum lagert man die Sicherung getrennt vom gesicherten Rechner?",
+      "hinten": "Sonst können Brand, Diebstahl, Überspannung oder Schadsoftware Original und Sicherung zugleich zerstören."
+    },
+    {
+      "id": "AP1-7-3-5-K2-3",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K2",
+      "vorne": "Warum verschlüsselt man externe Sicherungsdatenträger?",
+      "hinten": "Geht der Datenträger verloren oder wird gestohlen, kann niemand die gesicherten Daten lesen."
+    },
+    {
+      "id": "AP1-7-3-5-K2-4",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K2",
+      "vorne": "Warum testet man die Wiederherstellung einer Datensicherung?",
+      "hinten": "Nur so ist sicher, dass die Sicherung vollständig und lesbar ist und sich im Ernstfall tatsächlich zurückspielen lässt."
+    },
+    {
+      "id": "AP1-7-3-5-K3-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K3",
+      "vorne": "Nenne zwei Lösungen, mit denen Daten auch bei einem Ausfall verfügbar bleiben.",
+      "hinten": "- Datensicherung (Backup)\n- mehrfache Speicherung (Redundanz), z. B. an einem zweiten Speicherort"
+    },
+    {
+      "id": "AP1-7-3-5-K3-2",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K3",
+      "vorne": "Warum ersetzt eine mehrfache (redundante) Speicherung keine Datensicherung?",
+      "hinten": "Versehentliches Löschen oder Verschlüsselung durch Schadsoftware wirkt sofort auf alle Kopien; nur eine getrennte Sicherung erlaubt die Rückkehr zu einem älteren Stand."
+    },
+    {
+      "id": "AP1-7-3-5-K4-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K4",
+      "vorne": "Was ist ein NAS?",
+      "hinten": "Network Attached Storage: ein Speichergerät im Netzwerk, auf das mehrere Geräte zugreifen, z. B. für gemeinsame Dateien oder Datensicherungen."
+    },
+    {
+      "id": "AP1-7-3-5-K5-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K5",
+      "vorne": "Was besagt die 3-2-1-Regel der Datensicherung?",
+      "hinten": "- mindestens 3 Kopien der Daten (meist Original + 2 Sicherungen)\n- auf 2 verschiedenen Medien\n- davon 1 Kopie außer Haus"
+    },
+    {
+      "id": "AP1-7-3-5-K6-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K6",
+      "vorne": "Ein Betrieb sichert einmal im Monat auf eine externe Festplatte, die dauerhaft am Server angeschlossen bleibt. Beurteile die Datensicherung.",
+      "hinten": "- zu selten: bis zu einem Monat Daten können verloren gehen\n- nicht räumlich getrennt: Brand oder Diebstahl trifft Server und Sicherung\n- dauerhaft angeschlossen: Ransomware verschlüsselt auch die Sicherung\nBesser: täglich sichern, Datenträger danach trennen und eine Kopie außer Haus lagern."
+    },
+    {
+      "id": "AP1-7-3-5-K7-1",
+      "sp": "AP1-7-3-5",
+      "k": "AP1-7-3-5-K7",
+      "vorne": "Was ist das Generationenprinzip bei der Datensicherung?",
+      "hinten": "Mehrere nummerierte Datenträger werden reihum genutzt. So bleiben ältere Sicherungsstände erhalten, und man kann auch zu einem Stand vor einem unbemerkten Fehler zurück."
+    },
+    {
+      "id": "AP1-7-4-1-K1-1",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K1",
+      "vorne": "Was macht **Ransomware**?",
+      "hinten": "Sie verschlüsselt Daten oder sperrt das System und fordert Lösegeld für die Freigabe."
+    },
+    {
+      "id": "AP1-7-4-1-K1-2",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K1",
+      "vorne": "Was macht **Spyware**?",
+      "hinten": "Sie späht unbemerkt Daten aus, z. B. Eingaben, Passwörter oder Surfverhalten, und übermittelt sie an den Angreifer."
+    },
+    {
+      "id": "AP1-7-4-1-K1-3",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K1",
+      "vorne": "Was macht **Scareware**?",
+      "hinten": "Sie täuscht eine Bedrohung vor, z. B. angebliche Virenfunde, um den Benutzer zu verunsichern und zum Kauf oder zur Installation einer (schädlichen) Software zu bewegen."
+    },
+    {
+      "id": "AP1-7-4-1-K6-1",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K7",
+      "vorne": "Was ist ein Computervirus?",
+      "hinten": "Ein Schadprogramm, das sich an andere Dateien oder Programme anhängt und sich verbreitet, wenn diese ausgeführt werden."
+    },
+    {
+      "id": "AP1-7-4-1-K6-2",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K7",
+      "vorne": "Was ist ein Wurm, und worin unterscheidet er sich vom Virus?",
+      "hinten": "Ein Schadprogramm, das sich selbstständig über Netzwerke verbreitet; anders als ein Virus braucht er keine Wirtsdatei und kein Zutun des Benutzers."
+    },
+    {
+      "id": "AP1-7-4-1-K6-3",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K7",
+      "vorne": "Was ist ein Trojaner?",
+      "hinten": "Ein Programm, das sich als nützlich tarnt und im Hintergrund unbemerkt schädliche Funktionen ausführt, z. B. eine Hintertür für Angreifer öffnet."
+    },
+    {
+      "id": "AP1-7-4-1-K8-1",
+      "sp": "AP1-7-4-1",
+      "k": "AP1-7-4-1-K8",
+      "vorne": "Erläutere Empfehlungen zum Schutz vor Schadsoftware am Arbeitsplatz.",
+      "hinten": "- keine unbekannten Datenträger anschließen: sie können Schadsoftware enthalten\n- keine Downloads aus unsicheren Quellen\n- keine Makros oder Anhänge unbekannter Herkunft ausführen\n- Updates einspielen: sie schließen Lücken, die Schadsoftware ausnutzt"
+    },
+    {
+      "id": "AP1-7-4-1-K4-2",
+      "sp": "AP1-7-4-2",
+      "k": "AP1-7-4-2-K1",
+      "vorne": "Woran erkennst du eine Phishing-Mail?",
+      "hinten": "- unpersönliche Anrede\n- Zeitdruck oder Drohung\n- Fehler im Text\n- Aufforderung, Zugangsdaten einzugeben"
+    },
+    {
+      "id": "AP1-7-4-1-K5-1",
+      "sp": "AP1-7-4-2",
+      "k": "AP1-7-4-2-K2",
+      "vorne": "Welche Schutzmaßnahmen gegen Phishing richtet das Unternehmen ein?",
+      "hinten": "- Spam- und Mailfilter\n- simulierte Phishing-Angriffe\n- Schulungen der Mitarbeiter"
+    },
+    {
+      "id": "AP1-7-4-1-K5-2",
+      "sp": "AP1-7-4-2",
+      "k": "AP1-7-4-2-K2",
+      "vorne": "Was beachtet jeder Mitarbeiter zum Schutz vor Phishing?",
+      "hinten": "- keine Links oder Anhänge aus verdächtigen Mails öffnen\n- Absender und Linkziel prüfen\n- Zugangsdaten nie per Mail oder über Links aus Mails eingeben\n- Verdacht sofort melden"
+    },
+    {
+      "id": "AP1-7-4-1-K4-1",
+      "sp": "AP1-7-4-2",
+      "k": "AP1-7-4-2-K3",
+      "vorne": "Was ist Phishing?",
+      "hinten": "Ein Betrugsversuch, bei dem Angreifer mit gefälschten Nachrichten oder Webseiten an Zugangsdaten oder andere vertrauliche Daten gelangen wollen."
+    },
+    {
+      "id": "AP1-7-4-1-K2-1",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K1",
+      "vorne": "Nenne Maßnahmen für sicheres Arbeiten außerhalb des Büros.",
+      "hinten": "- Blickschutzfolie am Bildschirm\n- Gerät beim Verlassen sperren\n- VPN statt direkter Nutzung offener WLANs\n- verschlüsselter Datenträger"
+    },
+    {
+      "id": "AP1-7-4-1-K2-2",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K1",
+      "vorne": "Warum nutzt man unterwegs ein VPN, statt sich direkt über ein offenes WLAN zu verbinden?",
+      "hinten": "Im offenen WLAN können Dritte den Datenverkehr mitlesen oder manipulieren; das VPN verschlüsselt die Verbindung ins Firmennetz."
+    },
+    {
+      "id": "AP1-7-4-1-K2-3",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K1",
+      "vorne": "Wozu dient eine Blickschutzfolie am Notebook?",
+      "hinten": "Der Bildschirm ist nur von vorn lesbar; Personen daneben, z. B. im Zug, können nicht mitlesen."
+    },
+    {
+      "id": "AP1-7-4-1-K3-1",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K2",
+      "vorne": "Welche Folge droht, wenn das Notebook unterwegs kurz unbeaufsichtigt und ungesperrt bleibt?",
+      "hinten": "Fremde können Daten einsehen, kopieren oder ändern oder Schadsoftware aufspielen."
+    },
+    {
+      "id": "AP1-7-4-1-K3-2",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K2",
+      "vorne": "Welche Folge droht, wenn ein Notebook mit unverschlüsselter Festplatte gestohlen wird?",
+      "hinten": "Der Dieb kann alle gespeicherten Daten auslesen; sind personenbezogene Daten betroffen, liegt zudem eine Datenschutzverletzung vor."
+    },
+    {
+      "id": "AP1-7-4-1-K3-3",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K2",
+      "vorne": "Welche Folge droht, wenn man unterwegs ohne Blickschutzfolie mit vertraulichen Daten arbeitet?",
+      "hinten": "Umstehende können vertrauliche Daten vom Bildschirm ablesen – die Vertraulichkeit ist verletzt."
+    },
+    {
+      "id": "AP1-7-4-3-K3-1",
+      "sp": "AP1-7-4-3",
+      "k": "AP1-7-4-3-K3",
+      "vorne": "Nenne technisch-organisatorische Maßnahmen für Telearbeit.",
+      "hinten": "- Arbeitsraum und Schrank abschließen\n- sichere Anmeldung mit zwei Faktoren\n- VPN ins Firmennetz\n- Datenträger sicher transportieren, z. B. verschlüsselt"
+    },
+    {
+      "id": "AP1-7-5-1-K1-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K1",
+      "vorne": "Welche zwei zentralen Rechtsgrundlagen regeln in Deutschland den Datenschutz in Unternehmen, und welchen Zweck haben sie?",
+      "hinten": "DSGVO (Datenschutz-Grundverordnung der EU) und BDSG (Bundesdatenschutzgesetz). Zweck: Schutz der Menschen bei der Verarbeitung ihrer personenbezogenen Daten."
+    },
+    {
+      "id": "AP1-7-5-1-K1-2",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K1",
+      "vorne": "Wie verhalten sich DSGVO und BDSG zueinander?",
+      "hinten": "Die DSGVO gilt als EU-Verordnung unmittelbar in allen EU-Staaten und hat Vorrang; das BDSG ergänzt sie in Deutschland dort, wo die DSGVO den Staaten Spielraum lässt."
+    },
+    {
+      "id": "AP1-7-5-1-K2-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K2",
+      "vorne": "Was sind personenbezogene Daten?",
+      "hinten": "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+    },
+    {
+      "id": "AP1-7-5-1-K2-2",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K2",
+      "vorne": "Nenne Beispiele für personenbezogene Daten.",
+      "hinten": "z. B. Name, Anschrift, Geburtsdatum, E-Mail-Adresse, Kontonummer, Personal- oder Kundennummer"
+    },
+    {
+      "id": "AP1-7-5-1-K2-3",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K2",
+      "vorne": "Sind Daten über ein Unternehmen, z. B. Firmenname und Umsatz einer GmbH, personenbezogene Daten?",
+      "hinten": "Nein. Personenbezogen sind nur Daten über natürliche Personen (Menschen) – außer die Unternehmensdaten lassen auf eine bestimmte Person schließen."
+    },
+    {
+      "id": "AP1-7-5-1-K2-4",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K2",
+      "vorne": "Nenne Beispiele für besonders geschützte personenbezogene Daten.",
+      "hinten": "- Gesundheitsdaten, z. B. Patientendaten\n- ethnische Herkunft\n- religiöse oder politische Überzeugung\n- biometrische und genetische Daten"
+    },
+    {
+      "id": "AP1-7-5-1-K3-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K3",
+      "vorne": "Nenne die wichtigsten Rechte der Betroffenen nach der DSGVO.",
+      "hinten": "- Auskunft\n- Berichtigung\n- Löschung\n- Einschränkung der Verarbeitung\n- Datenübertragbarkeit\n- Widerspruch"
+    },
+    {
+      "id": "AP1-7-5-1-K3-2",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K3",
+      "vorne": "Was kann ein Betroffener mit dem Auskunftsrecht verlangen?",
+      "hinten": "Die Bestätigung, ob Daten über ihn verarbeitet werden, und wenn ja eine Kopie der Daten sowie Angaben z. B. zu Zweck, Empfängern, Speicherdauer und Herkunft."
+    },
+    {
+      "id": "AP1-7-5-1-K3-3",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K3",
+      "vorne": "Eine ehemalige Kundin verlangt, dass ihre Daten gelöscht werden. Aus welchem typischen Grund darf das Unternehmen bestimmte Daten trotzdem noch aufbewahren?",
+      "hinten": "Wenn eine gesetzliche Aufbewahrungspflicht besteht, z. B. für Rechnungen; diese Daten werden dann nur noch dafür aufbewahrt und nach Fristablauf gelöscht."
+    },
+    {
+      "id": "AP1-7-5-1-K4-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K4",
+      "vorne": "Was bewirkt eine Einwilligung im Datenschutz?",
+      "hinten": "Sie erlaubt die Verarbeitung der personenbezogenen Daten für den angegebenen Zweck. Sie muss freiwillig, für den bestimmten Fall, informiert und unmissverständlich erteilt werden."
+    },
+    {
+      "id": "AP1-7-5-1-K4-2",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K4",
+      "vorne": "Was gilt, wenn jemand seine Einwilligung widerruft?",
+      "hinten": "Der Widerruf ist jederzeit möglich. Ab dann dürfen die Daten auf dieser Grundlage nicht mehr verarbeitet werden; die Verarbeitung bis zum Widerruf bleibt rechtmäßig."
+    },
+    {
+      "id": "AP1-7-5-1-K4-3",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K4",
+      "vorne": "Darf ein Unternehmen personenbezogene Daten nur mit Einwilligung verarbeiten?",
+      "hinten": "Nein. Es braucht eine Rechtsgrundlage; neben der Einwilligung z. B. die Erfüllung eines Vertrags, eine gesetzliche Pflicht oder ein berechtigtes Interesse."
+    },
+    {
+      "id": "AP1-7-5-1-K5-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K5",
+      "vorne": "Was unterscheidet Datenschutz von Datensicherheit?",
+      "hinten": "- Datenschutz: schützt die Person vor Missbrauch ihrer personenbezogenen Daten\n- Datensicherheit: schützt Daten aller Art vor Verlust, Veränderung und unbefugtem Zugriff"
+    },
+    {
+      "id": "AP1-7-5-1-K5-2",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K5",
+      "vorne": "Datenschutz oder Datensicherheit?\na) Ein Kunde erhält Auskunft über seine gespeicherten Daten.\nb) Der Server wird täglich gesichert.",
+      "hinten": "- a) Datenschutz\n- b) Datensicherheit"
+    },
+    {
+      "id": "AP1-7-5-1-K6-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K6",
+      "vorne": "Was bedeutet der Grundsatz der **Zweckbindung**?",
+      "hinten": "Personenbezogene Daten dürfen nur für festgelegte, eindeutige Zwecke erhoben und nicht für damit unvereinbare Zwecke weiterverarbeitet werden."
+    },
+    {
+      "id": "AP1-7-5-1-K6-2",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K6",
+      "vorne": "Was bedeutet der Grundsatz der **Datenminimierung**?",
+      "hinten": "Es werden nur so viele personenbezogene Daten erhoben und verarbeitet, wie für den Zweck nötig sind."
+    },
+    {
+      "id": "AP1-7-5-1-K6-3",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K6",
+      "vorne": "Was bedeutet der Grundsatz der **Speicherbegrenzung**?",
+      "hinten": "Personenbezogene Daten werden nur so lange gespeichert, wie es für den Zweck nötig ist; danach werden sie gelöscht oder anonymisiert."
+    },
+    {
+      "id": "AP1-7-5-1-K7-1",
+      "sp": "AP1-7-5-1",
+      "k": "AP1-7-5-1-K7",
+      "vorne": "Ein Onlineshop fragt bei jeder Bestellung auch Geburtsdatum und Familienstand ab und gibt die Adressen später ohne Einwilligung für Werbung an einen Partner weiter. Prüfe die Grundsätze der DSGVO.",
+      "hinten": "- Datenminimierung verletzt: Geburtsdatum und Familienstand sind für die Bestellung nicht nötig\n- Zweckbindung verletzt: Die Adressen wurden für die Bestellung erhoben, nicht für fremde Werbung"
+    },
+    {
+      "id": "AP1-7-5-2-K1-1",
+      "sp": "AP1-7-5-2",
+      "k": "AP1-7-5-2-K1",
+      "vorne": "Was ist Anonymisierung?",
+      "hinten": "Der Bezug zur Person wird so entfernt, dass er nicht wiederhergestellt werden kann."
+    },
+    {
+      "id": "AP1-7-5-2-K2-1",
+      "sp": "AP1-7-5-2",
+      "k": "AP1-7-5-2-K2",
+      "vorne": "Was ist Pseudonymisierung?",
+      "hinten": "Der Name und andere direkt identifizierende Merkmale werden durch ein Kennzeichen ersetzt; mit einer getrennt aufbewahrten Zuordnung lässt sich der Personenbezug wiederherstellen."
+    },
+    {
+      "id": "AP1-7-5-2-K2-2",
+      "sp": "AP1-7-5-2",
+      "k": "AP1-7-5-2-K2",
+      "vorne": "Was muss bei der Pseudonymisierung besonders geschützt werden?",
+      "hinten": "Die Zuordnung von Kennzeichen zu Personen; sie wird getrennt von den Daten und geschützt aufbewahrt."
+    },
+    {
+      "id": "AP1-7-5-2-K3-1",
+      "sp": "AP1-7-5-2",
+      "k": "AP1-7-5-2-K3",
+      "vorne": "Gelten pseudonymisierte und anonymisierte Daten als personenbezogen?",
+      "hinten": "- pseudonymisiert: ja, das Datenschutzrecht gilt weiter\n- anonymisiert: nein, das Datenschutzrecht gilt nicht mehr"
+    },
+    {
+      "id": "AP1-7-5-2-K4-1",
+      "sp": "AP1-7-5-2",
+      "k": "AP1-7-5-2-K4",
+      "vorne": "Für eine Statistik über das Alter der Kunden ist kein Rückschluss auf einzelne Personen nötig. Anonymisieren oder pseudonymisieren?",
+      "hinten": "Anonymisieren: Der Personenbezug wird nicht gebraucht, und anonyme Daten fallen nicht mehr unter das Datenschutzrecht."
+    },
+    {
+      "id": "AP1-7-5-2-K4-2",
+      "sp": "AP1-7-5-2",
+      "k": "AP1-7-5-2-K4",
+      "vorne": "Bei einer Auswertung von Kundendaten sollen Rückfragen bei einzelnen Kunden möglich bleiben. Anonymisieren oder pseudonymisieren?",
+      "hinten": "Pseudonymisieren: Über die getrennt aufbewahrte Zuordnung lässt sich der Bezug zur Person bei Bedarf wiederherstellen."
+    },
+    {
+      "id": "AP1-7-5-3-K1-1",
+      "sp": "AP1-7-5-3",
+      "k": "AP1-7-5-3-K1",
+      "vorne": "Welche Datenschutz-Anforderungen gelten für die Protokollierung von Benutzeraktivitäten?",
+      "hinten": "- nur die nötigen Daten protokollieren\n- nur so lange speichern wie nötig\n- nur für den festgelegten Zweck und nur durch Befugte auswerten"
+    },
+    {
+      "id": "AP1-7-5-3-K2-1",
+      "sp": "AP1-7-5-3",
+      "k": "AP1-7-5-3-K2",
+      "vorne": "Warum unterliegen Gesundheitsdaten nach der DSGVO erhöhten Schutzanforderungen? Begründe.",
+      "hinten": "Sie gehören zu den besonderen Kategorien personenbezogener Daten: Ihr Bekanntwerden kann den Betroffenen schwer schaden, z. B. durch Benachteiligung bei Arbeitgeber oder Versicherung. Ihre Verarbeitung ist deshalb nur ausnahmsweise erlaubt und braucht stärkere Schutzmaßnahmen."
+    },
+    {
+      "id": "AP1-7-5-3-K3-1",
+      "sp": "AP1-7-5-3",
+      "k": "AP1-7-5-3-K3",
+      "vorne": "Beschreibe Pflichten beim Einsatz von Videokameras auf dem Firmengelände.",
+      "hinten": "- vor dem Erfassungsbereich auf die Aufnahme hinweisen\n- nur für einen festgelegten Zweck aufnehmen, z. B. Diebstahlschutz\n- Aufnahmen fristgerecht löschen"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP1-7-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-1-1-K3 → AP1-7-1-1-K5)"
+    },
+    {
+      "id": "AP1-7-1-1-K4-1",
+      "entscheidung": "entfernt",
+      "grund": "Aussage gestrichen: Authentizität als viertes Schutzziel ist Kür"
+    },
+    {
+      "id": "AP1-7-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K2-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Empfehlung an die neue Aussage angepasst: Länge vor Komplexität, zweiter Faktor"
+    },
+    {
+      "id": "AP1-7-1-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-1-3-K2 → AP1-7-1-3-K3)"
+    },
+    {
+      "id": "AP1-7-1-3-K3-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Kriterien an die neue Aussage angepasst (Länge vor Komplexität, eigenes Passwort je Zugang, Passwortmanager, zweiter Faktor)"
+    },
+    {
+      "id": "AP1-7-1-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-3-K6-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-1-4-K1 → AP1-7-1-4-K5)"
+    },
+    {
+      "id": "AP1-7-1-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-1-4-K1 → AP1-7-1-4-K5)"
+    },
+    {
+      "id": "AP1-7-1-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K1-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Aufgabe „Anlaufstelle für Sicherheitsfragen“ aus der neuen Aussage ergänzt"
+    },
+    {
+      "id": "AP1-7-2-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-2-3-K3-1",
+      "entscheidung": "entfernt",
+      "grund": "Aussage gestrichen: Risikobehandlung verlangt der Katalog nicht (nur Klassifikation)"
+    },
+    {
+      "id": "AP1-7-2-3-K3-2",
+      "entscheidung": "entfernt",
+      "grund": "Aussage gestrichen: Risikobehandlung verlangt der Katalog nicht (nur Klassifikation)"
+    },
+    {
+      "id": "AP1-7-2-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-1-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "Aussage gestrichen: Verfahrensnamen AES, RSA und TLS sind Kür"
+    },
+    {
+      "id": "AP1-7-3-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-3-3-K1 → AP1-7-3-3-K5)"
+    },
+    {
+      "id": "AP1-7-3-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-3-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K2-1",
+      "entscheidung": "bearbeitet",
+      "grund": "an die Härtungsmaßnahmen der Aussage angepasst (Konten, Ports, Rechte)"
+    },
+    {
+      "id": "AP1-7-3-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-4-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K1-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K3-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Spiegelung von Festplatten liegt hinter der Grenze (RAID) und ist Kür; Beispiel ersetzt"
+    },
+    {
+      "id": "AP1-7-3-5-K3-2",
+      "entscheidung": "bearbeitet",
+      "grund": "Kern bleibt; „gespiegelt“ durch „redundant“ ersetzt, weil Spiegelung Kür ist"
+    },
+    {
+      "id": "AP1-7-3-5-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-3-5-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-4-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-4-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-4-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-4-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K6 → AP1-7-4-1-K7)"
+    },
+    {
+      "id": "AP1-7-4-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K6 → AP1-7-4-1-K7)"
+    },
+    {
+      "id": "AP1-7-4-1-K6-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K6 → AP1-7-4-1-K7)"
+    },
+    {
+      "id": "AP1-7-4-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K2 → AP1-7-4-3-K1)"
+    },
+    {
+      "id": "AP1-7-4-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K2 → AP1-7-4-3-K1)"
+    },
+    {
+      "id": "AP1-7-4-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K2 → AP1-7-4-3-K1)"
+    },
+    {
+      "id": "AP1-7-4-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K3 → AP1-7-4-3-K2)"
+    },
+    {
+      "id": "AP1-7-4-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K3 → AP1-7-4-3-K2)"
+    },
+    {
+      "id": "AP1-7-4-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K3 → AP1-7-4-3-K2)"
+    },
+    {
+      "id": "AP1-7-4-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "Was Phishing ist und wonach Angreifer suchen, beschreibt die Gefahr (neue Aussage K3)"
+    },
+    {
+      "id": "AP1-7-4-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-7-4-1-K4 → AP1-7-4-2-K1)"
+    },
+    {
+      "id": "AP1-7-4-1-K5-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Stichpunkt behandelt jetzt nur Phishing; Maßnahmen gegen Schadsoftware stehen in AP1-7-4-1"
+    },
+    {
+      "id": "AP1-7-4-1-K5-2",
+      "entscheidung": "bearbeitet",
+      "grund": "Stichpunkt behandelt jetzt nur Phishing; USB-Sticks gehören zur Schadsoftware in AP1-7-4-1"
+    },
+    {
+      "id": "AP1-7-5-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-1-K6-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-5-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-7-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-1-2-K3-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-2-K4-3",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-1-3-K3-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-3-K6-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-2-1-K3-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-2-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-2-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-2-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-2-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-3-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-3-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-3-5-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-4-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-4-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-5-1-K2-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-7-5-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-5-3-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-5-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-7-5-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    }
+  ]
+}
