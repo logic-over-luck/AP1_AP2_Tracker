@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ladeDaten } from '../tools/daten.mjs';
-import { vorschauAp1, ladeLernplanAp1, ladeKartenAp1, ladeKurzAp1, ordnerVon, artAusTypen } from '../tools/vorschau-ap1.mjs';
+import { vorschauAp1, vorschauAlle, RAEUME_VORSCHAU, ladeLernplanAp1, ladeKartenAp1, ladeKurzAp1, ordnerVon, artAusTypen } from '../tools/vorschau-ap1.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const alt = ladeDaten(wurzel);
@@ -174,4 +174,28 @@ test('P27: Art neuer Stichpunkte aus den Aufgabentypen', () => {
   assert.equal(artAusTypen(['berechnen', 'erklaeren']), 'Rechnen');
   assert.equal(artAusTypen(['code_schreiben', 'text', 'aufzaehlen', 'erklaeren']), 'Schreiben');
   assert.equal(artAusTypen(['diagramm', 'erklaeren', 'aufzaehlen']), 'Wissen');
+});
+
+// ---------- Vorschau PB1 (ersetzt in der App den Raum AP2) ----------
+describe('Vorschau PB1', () => {
+  const cfg = RAEUME_VORSCHAU.PB1;
+  const plaeneP = ladeLernplanAp1(wurzel, cfg);
+  const alle = vorschauAlle(alt, wurzel);
+  const raum = alle.raeume.find((r) => r.id === 'AP2');
+  test('Raum AP2 zeigt die Gliederung von PB1, AP1 bleibt', { skip: !plaeneP.length && 'kein PB1' }, () => {
+    assert.deepEqual(raum.ordner.map((o) => o.id), plaeneP.map((p) => p.oberblock.id));
+    assert.deepEqual(alle.raeume.find((r) => r.id === 'AP1').ordner.map((o) => o.id), plaene.map((p) => p.oberblock.id));
+    assert.equal(alle.vorschauRaeume.AP2.raum, 'PB1');
+    assert.equal(alle.vorschauRaeume.AP1.raum, 'AP1');
+  });
+  test('keine alten AP2-Stichpunkte mehr, jede Karte hängt an einem vorhandenen Stichpunkt und einer Aussage', { skip: !plaeneP.length && 'kein PB1' }, () => {
+    assert.equal(Object.values(alle.sp).filter((s) => s.raum === 'AP2' && !s.id.startsWith('PB1-')).length, 0);
+    const kIds = new Set(Object.values(alle.sp).flatMap((s) => s.koennen.map(([id]) => id)));
+    for (const k of alle.karten) {
+      assert.ok(alle.sp[k.sp], `${k.id}: Stichpunkt ${k.sp} fehlt`);
+      if (k.k) assert.ok(kIds.has(k.k), `${k.id}: Aussage ${k.k} fehlt`);
+    }
+    const ids = alle.karten.map((k) => k.id);
+    assert.equal(new Set(ids).size, ids.length, 'Karten-ID doppelt');
+  });
 });

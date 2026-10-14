@@ -117,7 +117,7 @@ export function Lernen({ raum, params }) {
         </div>
       </header>
 
-      {inhalt.daten.vorschau?.raum === raum && <VorschauHinweis v={inhalt.daten.vorschau} />}
+      {inhalt.daten.vorschauRaeume?.[raum] ? <VorschauHinweis v={inhalt.daten.vorschauRaeume[raum]} /> : inhalt.daten.vorschau?.raum === raum && <VorschauHinweis v={inhalt.daten.vorschau} />}
 
       <div class="lernen__leiste">
         <Reiter

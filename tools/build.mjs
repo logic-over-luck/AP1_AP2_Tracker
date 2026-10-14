@@ -11,9 +11,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as esbuild from 'esbuild';
 import { ladeDaten } from './daten.mjs';
-import { vorschauAp1 } from './vorschau-ap1.mjs';
+import { vorschauAlle } from './vorschau-ap1.mjs';
 
-// Vorschau des neuen AP1-Lernplans (Branch vorschau-ap1). LERNSTUDIO_AP1=alt baut den alten Stand.
+// Vorschau der neuen Lernpläne AP1 und PB1 (Branch vorschau-ap1). LERNSTUDIO_AP1=alt baut den alten Stand.
 const VORSCHAU_AP1 = process.env.LERNSTUDIO_AP1 !== 'alt';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -39,7 +39,7 @@ function iconPlugin() {
           }
           return { contents: `export default ${JSON.stringify(auswahl)};`, loader: 'js' };
         }
-        const daten = VORSCHAU_AP1 ? vorschauAp1(ladeDaten(wurzel), wurzel) : ladeDaten(wurzel);
+        const daten = VORSCHAU_AP1 ? vorschauAlle(ladeDaten(wurzel), wurzel) : ladeDaten(wurzel);
         // JSON.parse ist für große Daten schneller als ein Objektliteral.
         return { contents: `export default JSON.parse(${JSON.stringify(JSON.stringify(daten))});`, loader: 'js' };
       });

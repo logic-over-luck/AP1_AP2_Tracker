@@ -27,35 +27,45 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { BELEG_GEWICHT, stufeFuer } from './daten.mjs';
 
-const ERSTE_AKTUELLE_PRUEFUNG = '2025F'; // Katalog gilt ab AP1 Frühjahr 2025 (UMBAU.md 6)
+// Räume mit neuem Lernplan in der Vorschau. appRaum: Raum der App, den der neue Lernplan ersetzt (Lernstand-IDs der
+// App bleiben); altPrefix: Präfix der alten Stichpunkte und Karten dieses App-Raums; ersteAktuelle: erster Termin
+// mit aktuellem Katalog (UMBAU.md 6). PB1 ersetzt in der Vorschau den alten Raum AP2 (Fachprüfungen); Aussagen, die
+// nach PB2 gehören, fehlen dort, bis PB2 gebaut ist.
+export const RAEUME_VORSCHAU = {
+  AP1: { teil: 'AP1', dir: 'ap1', appRaum: 'AP1', altPrefix: 'AP1', ersteAktuelle: '2025F', titel: null },
+  PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes (PB1)' },
+};
+const AP1 = RAEUME_VORSCHAU.AP1;
+const dateiMuster = (cfg) => new RegExp(`^${cfg.teil}-\\d+\\.json$`);
 
-export function ladeLernplanAp1(wurzel) {
-  const ordner = path.join(wurzel, 'umbau', 'lernplan', 'ap1');
+export function ladeLernplanAp1(wurzel, cfg = AP1) {
+  const ordner = path.join(wurzel, 'umbau', 'lernplan', cfg.dir);
+  if (!fs.existsSync(ordner)) return [];
   return fs
     .readdirSync(ordner)
-    .filter((f) => /^AP1-\d+\.json$/.test(f))
+    .filter((f) => dateiMuster(cfg).test(f))
     .sort((a, b) => Number(a.match(/\d+/g)[1]) - Number(b.match(/\d+/g)[1]))
     .map((f) => JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8')));
 }
 
 // Neue Kartendateien je Ordner: Map Ordner-ID → Inhalt
-export function ladeKartenAp1(wurzel) {
-  const ordner = path.join(wurzel, 'umbau', 'karten', 'ap1');
+export function ladeKartenAp1(wurzel, cfg = AP1) {
+  const ordner = path.join(wurzel, 'umbau', 'karten', cfg.dir);
   const dateien = new Map();
   if (!fs.existsSync(ordner)) return dateien;
-  for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
+  for (const f of fs.readdirSync(ordner).filter((f) => dateiMuster(cfg).test(f)).sort()) {
     dateien.set(f.replace(/\.json$/, ''), JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8')));
   }
   return dateien;
 }
 
 // Teaser je Stichpunkt und Erklärung je Können-Aussage aus umbau/kurz/ap1/
-export function ladeKurzAp1(wurzel) {
-  const ordner = path.join(wurzel, 'umbau', 'kurz', 'ap1');
+export function ladeKurzAp1(wurzel, cfg = AP1) {
+  const ordner = path.join(wurzel, 'umbau', 'kurz', cfg.dir);
   const teaser = new Map();
   const erklaerung = new Map();
   if (fs.existsSync(ordner)) {
-    for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
+    for (const f of fs.readdirSync(ordner).filter((f) => dateiMuster(cfg).test(f)).sort()) {
       const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
       for (const [id, text] of Object.entries(d.teaser ?? {})) teaser.set(id, text);
       for (const [id, text] of Object.entries(d.erklaerung ?? {})) erklaerung.set(id, text);
@@ -81,8 +91,8 @@ export function artAusTypen(typen) {
   return anzahl * 2 >= n ? art : 'Wissen';
 }
 
-export function ladeTypenAp1(wurzel) {
-  const ordner = path.join(wurzel, 'umbau', 'zuordnung', 'ap1');
+export function ladeTypenAp1(wurzel, cfg = AP1) {
+  const ordner = path.join(wurzel, 'umbau', 'zuordnung', cfg.dir);
   const typ = new Map();
   if (!fs.existsSync(ordner)) return typ;
   for (const f of fs.readdirSync(ordner).filter((f) => f.endsWith('.json'))) {
@@ -91,11 +101,11 @@ export function ladeTypenAp1(wurzel) {
   return typ;
 }
 
-function wichtigkeitAusTeilaufgaben(teilaufgaben) {
+function wichtigkeitAusTeilaufgaben(teilaufgaben, ersteAktuelle) {
   const jePruefung = new Map();
   for (const t of teilaufgaben ?? []) {
     const p = t.split('-')[0];
-    const g = p >= ERSTE_AKTUELLE_PRUEFUNG ? BELEG_GEWICHT.original.aktuell : BELEG_GEWICHT.original.alt;
+    const g = p >= ersteAktuelle ? BELEG_GEWICHT.original.aktuell : BELEG_GEWICHT.original.alt;
     jePruefung.set(p, Math.max(jePruefung.get(p) ?? 0, g));
   }
   const wert = [...jePruefung.values()].reduce((a, b) => a + b, 0);
@@ -103,7 +113,19 @@ function wichtigkeitAusTeilaufgaben(teilaufgaben) {
 }
 
 export function vorschauAp1(daten, wurzel) {
-  const plaene = ladeLernplanAp1(wurzel);
+  return vorschauRaum(daten, wurzel, AP1);
+}
+
+// Vorschau aller Räume, für die ein Lernplan vorliegt (AP1, dann PB1)
+export function vorschauAlle(daten, wurzel) {
+  let d = daten;
+  for (const cfg of Object.values(RAEUME_VORSCHAU)) if (ladeLernplanAp1(wurzel, cfg).length) d = vorschauRaum(d, wurzel, cfg);
+  return d;
+}
+
+export function vorschauRaum(daten, wurzel, cfg) {
+  const plaene = ladeLernplanAp1(wurzel, cfg);
+  const R = cfg.appRaum;
   const altSp = daten.sp;
 
   // alte Können-ID → Eintrag aus alt_neu; neue Können-ID → Stichpunkt
@@ -113,10 +135,10 @@ export function vorschauAp1(daten, wurzel) {
   for (const p of plaene) for (const t of p.themenbloecke) for (const s of t.stichpunkte) for (const k of s.koennen) kNachSp.set(k.id, s.id);
 
   // Karten umhängen
-  const zaehler = { bleiben: 0, angepasst: 0, umgehaengt: 0, gestrichen: 0, ohneAussage: 0 };
+  const zaehler = { bleiben: 0, angepasst: 0, umgehaengt: 0, gestrichen: 0, ohneAussage: 0, spaeter: 0 };
   const karten = [];
   for (const k of daten.karten) {
-    if (!k.sp.startsWith('AP1')) {
+    if (!k.sp.startsWith(cfg.altPrefix)) {
       karten.push(k);
       continue;
     }
@@ -129,13 +151,17 @@ export function vorschauAp1(daten, wurzel) {
       continue;
     }
     const a = altNeu.get(k.k);
-    if (!a) throw new Error(`Vorschau AP1: Karte ${k.id} hängt an ${k.k}, das in keinem alt_neu steht`);
+    if (!a) throw new Error(`Vorschau ${cfg.teil}: Karte ${k.id} hängt an ${k.k}, das in keinem alt_neu steht`);
+    if (a.status === 'PB2') {
+      zaehler.spaeter++; // gehört nach PB2, dort später einsortiert
+      continue;
+    }
     if (a.status === 'gestrichen' || !a.neu) {
       zaehler.gestrichen++;
       continue;
     }
     const sp = kNachSp.get(a.neu);
-    if (!sp) throw new Error(`Vorschau AP1: ${a.alt} → ${a.neu}, die neue Aussage gibt es im Lernplan nicht`);
+    if (!sp) throw new Error(`Vorschau ${cfg.teil}: ${a.alt} → ${a.neu}, die neue Aussage gibt es im Lernplan nicht`);
     if (a.status === 'verschoben') zaehler.umgehaengt++;
     else if (a.status === 'angepasst') zaehler.angepasst++;
     else zaehler.bleiben++;
@@ -143,7 +169,7 @@ export function vorschauAp1(daten, wurzel) {
   }
 
   // Neue Karten je Ordner einsetzen (an der Stelle der ersten ersetzten Karte, sonst am Ende)
-  const kartenDateien = ladeKartenAp1(wurzel);
+  const kartenDateien = ladeKartenAp1(wurzel, cfg);
   const kartenNeu = { ordner: [...kartenDateien.keys()], bleibt: 0, bearbeitet: 0, entfernt: 0, neu: 0 };
   if (kartenDateien.size) {
     const ersetzt = new Set();
@@ -153,7 +179,7 @@ export function vorschauAp1(daten, wurzel) {
       for (const k of kartenDateien.get(o).karten) mitNeuen.push({ id: k.id, sp: k.sp, k: k.k, v: k.vorne, h: k.hinten });
     };
     for (const k of karten) {
-      const o = k.sp.startsWith('AP1') ? ordnerVon(k.sp) : null;
+      const o = k.sp.startsWith(cfg.teil) ? ordnerVon(k.sp) : null;
       if (!o || !kartenDateien.has(o)) mitNeuen.push(k);
       else if (!ersetzt.has(o)) einsetzen(o);
     }
@@ -170,9 +196,15 @@ export function vorschauAp1(daten, wurzel) {
   const vorgaenger = new Map();
   for (const a of altNeu.values()) if (a.neu) vorgaenger.set(a.neu, a);
 
-  const kurzTexte = ladeKurzAp1(wurzel);
-  const typen = ladeTypenAp1(wurzel);
-  const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== 'AP1'));
+  const kurzTexte = ladeKurzAp1(wurzel, cfg);
+  const typen = ladeTypenAp1(wurzel, cfg);
+  const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== R));
+  // Neue Räume (PB1): Vorgänger eines Stichpunkts über die Umzugstabelle (P6), für Art und Gegenstücke
+  const altVon = new Map();
+  if (cfg.teil !== 'AP1' && fs.existsSync(path.join(wurzel, 'umbau', 'umzug.json'))) {
+    const u = JSON.parse(fs.readFileSync(path.join(wurzel, 'umbau', 'umzug.json'), 'utf8'));
+    for (const [a, n] of Object.entries(u.stichpunkte)) if (n && n !== 'offen' && !altVon.has(n)) altVon.set(n, a);
+  }
   let anzahlK = 0;
   let neueOhneKarten = 0;
   let kuer = 0;
@@ -184,8 +216,8 @@ export function vorschauAp1(daten, wurzel) {
       titel: t.titel,
       satz: t.satz ?? null,
       sp: t.stichpunkte.map((s, i) => {
-        const alt = altSp[s.id];
-        const w = wichtigkeitAusTeilaufgaben(s.teilaufgaben);
+        const alt = altSp[s.id] ?? altSp[altVon.get(s.id)];
+        const w = wichtigkeitAusTeilaufgaben(s.teilaufgaben, cfg.ersteAktuelle);
         const koennen = s.koennen.map((k) => {
           const v = vorgaenger.get(k.id);
           const status = !v ? 'neu' : v.status === 'verschoben' ? 'verschoben' : v.status;
@@ -207,7 +239,7 @@ export function vorschauAp1(daten, wurzel) {
         kuer += (s.kuer ?? []).length;
         sp[s.id] = {
           id: s.id,
-          raum: 'AP1',
+          raum: R,
           ordner: p.oberblock.id,
           block: t.id,
           pos: i + 1,
@@ -237,9 +269,25 @@ export function vorschauAp1(daten, wurzel) {
     })),
   }));
 
-  const raeume = daten.raeume.map((r) => (r.id === 'AP1' ? { ...r, ordner } : r));
-  const spAp1 = Object.values(sp).filter((s) => s.raum === 'AP1');
+  const raeume = daten.raeume.map((r) => (r.id === R ? { ...r, ...(cfg.titel ? { titel: cfg.titel } : {}), ordner } : r));
+  const spAp1 = Object.values(sp).filter((s) => s.raum === R);
 
+  const v = {
+    raum: cfg.teil,
+    regelwerk: plaene[0]?.meta?.regelwerk_version ?? null,
+    stand: plaene.map((p) => p.meta?.stand).filter(Boolean).sort().at(-1) ?? null,
+    ordner: plaene.length,
+    bloecke: plaene.reduce((a, p) => a + p.themenbloecke.length, 0),
+    stichpunkte: spAp1.length,
+    neueStichpunkte: spAp1.filter((s) => s.neu.istNeu).length,
+    kurz: spAp1.filter((s) => s.neu.kurz).length,
+    erklaerungen: spAp1.reduce((n, s) => n + s.neu.koennen.filter((k) => k.erklaerung).length, 0),
+    koennen: anzahlK,
+    neueOhneKarten,
+    kuer,
+    karten: zaehler,
+    kartenNeu,
+  };
   return {
     ...daten,
     raeume,
@@ -247,21 +295,7 @@ export function vorschauAp1(daten, wurzel) {
     karten,
     // Glossar-Verweise auf Stichpunkte, die es nicht mehr gibt, fallen weg (wie in ladeDaten)
     glossar: daten.glossar.map((g) => ({ ...g, sp: g.sp.filter((id) => sp[id]) })),
-    vorschau: {
-      raum: 'AP1',
-      regelwerk: plaene[0]?.meta?.regelwerk_version ?? null,
-      stand: plaene.map((p) => p.meta?.stand).filter(Boolean).sort().at(-1) ?? null,
-      ordner: plaene.length,
-      bloecke: plaene.reduce((a, p) => a + p.themenbloecke.length, 0),
-      stichpunkte: spAp1.length,
-      neueStichpunkte: spAp1.filter((s) => s.neu.istNeu).length,
-      kurz: spAp1.filter((s) => s.neu.kurz).length,
-      erklaerungen: spAp1.reduce((n, s) => n + s.neu.koennen.filter((k) => k.erklaerung).length, 0),
-      koennen: anzahlK,
-      neueOhneKarten,
-      kuer,
-      karten: zaehler,
-      kartenNeu,
-    },
+    vorschau: cfg.teil === 'AP1' ? v : daten.vorschau,
+    vorschauRaeume: { ...(daten.vorschauRaeume ?? {}), [R]: v },
   };
 }
