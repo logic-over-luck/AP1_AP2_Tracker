@@ -20,3 +20,22 @@
 | 12 | PB1-6-1-1 / PB1-6-1-2 | K2 Herkunft (B4) | 2024S lag die ER-Notation im Belegsatz bei (Symbol und Bezeichnung). Die Chen-Notation muss also nicht auswendig gekonnt werden. | Vermerk `vorgegeben: ER-Notation im Belegsatz (2024S)` bei K1. | niedrig |
 
 **Bilanz PB1-6:** 12 Funde (davon 4 hoch). Lücken: 1 (Nr. 1, Erweiterung von K3). Kann weg bzw. zusammengelegt: 8 Aussagen (Nr. 2, 3, 4, 5, 6, 7, 10, 11). Vorher 25 → nach Vorschlägen etwa 17.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: BLOB und Geokoordinaten in der Datentyp-Aussage (Kern), aus der Kür entfernt |
+| 2 | umgesetzt: gestrichen; Erweitern steht in AP1-8-4-1, Beleg 2024S-A4-a trägt die Aussage „Anforderungen in Attribute übertragen“ |
+| 3 | umgesetzt: Redundanz und Anomalien in einer Aussage |
+| 4 | umgesetzt: gestrichen, Einbetten wohnt in PB1-7 (die Teilaufgabe bleibt dem Stichpunkt zugeordnet) |
+| 5 | umgesetzt: gestrichen, Beleg 2023S-A4-cb an der Normalisierungs-Zeichenaufgabe |
+| 6 | umgesetzt: zur Kür (CAP), Formulierung auf Netzpartition korrigiert |
+| 7 | umgesetzt: eine Aussage in Transaktionen und Datenintegrität mit den Constraint-Arten |
+| 8 | umgesetzt: auf das Neue gekürzt (umfangreich, ohne Vorlage, Attribute an m:n) |
+| 9 | umgesetzt: Verweis auf AP1-8-4-2 für die Begründung |
+| 10 | umgesetzt: referenzielle Integrität und Weitergabe in einer Aussage |
+| 11 | umgesetzt: 1. bis 3. NF in einer Aussage |
+| 12 | umgesetzt: `vorgegeben` an der ER-Aussage |
+
+Ergebnis: 25 → 17 Aussagen.
