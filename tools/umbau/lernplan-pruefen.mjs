@@ -17,7 +17,8 @@
 //             PB1 (P33): neue IDs; alt_neu sortiert alte AP2-Aussagen ein (verschoben, angepasst, gestrichen, PB2),
 //             Vollständigkeit über alle Ordner prüft raum-pruefen.mjs
 //   E2/T7     (ab PB1) Bausteine früherer Räume nur mit baut_auf auf einen Stichpunkt des Exports; eine Können-Aussage,
-//             die nur importierte Bausteine betrifft, muss tiefer gehen als der frühere Raum (nicht doppelt)
+//             die nur importierte Bausteine betrifft, muss tiefer gehen als der frühere Raum (nicht doppelt) –
+//             außer eine Teilaufgabe dieses Raums belegt sie (neue Seite des Themas, E2 „neu oder tiefer“)
 //   R3        Hinweis-Abgleich: jedes Thema hat einen Ring, Hinweisquellen beschrieben, Verweis passt zum Ring
 //             (Ring „Ordner“: Thema wohnt in einem anderen AP1-Ordner oder einem späteren Raum)
 //   R4        Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage
@@ -123,7 +124,9 @@ for (const tb of lp.themenbloecke) {
           if (h.startsWith('beleg:')) for (const x of zuordnung[h.slice(6)]?.bausteine ?? []) ids.add(x);
         }
         const fach = [...ids].filter((x) => !x.startsWith('ANH.'));
-        if (fach.length && fach.every((x) => R.importierbar(x))) {
+        // Ausnahme: Eine Teilaufgabe dieses Raums belegt die Aussage – dann ist sie neu (andere Seite des Themas), nicht doppelt
+        const belegHier = (k.herkunft ?? []).some((h) => h.startsWith('beleg:'));
+        if (fach.length && !belegHier && fach.every((x) => R.importierbar(x))) {
           const dort = Math.min(...fach.map(erreichtFrueher)); // neu, sobald ein Baustein dort noch nicht so tief erreicht ist
           if (k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
         }

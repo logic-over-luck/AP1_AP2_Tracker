@@ -512,6 +512,16 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       Änderungen nur über den Parkplatz, danach Export neu erzeugen. PB1 sieht von AP1 nur den Export; bei Importen
       prüft `raum-pruefen.mjs` T8 mit der in AP1 erreichten Stufe (E2: ergänzt wird nur, was tiefer ist).
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
+  - Gliederung PB1 (E8, P33): zwölf Ordner, alle im Gebiet ihres Inhalts verankert: PB1-1 Projekt, Vorgehen und
+    Anforderungen · PB1-2 Kunde, Recht und Präsentation · PB1-3 Entwicklungsumgebung und Werkzeuge · PB1-4 UML ·
+    PB1-5 Objektorientierter Entwurf und Entwurfsmuster · PB1-6 Datenmodellierung · PB1-7 Schnittstellen und
+    Datenaustausch · PB1-8 Benutzeroberflächen · PB1-9 Qualität und Test · PB1-10 IT-Sicherheit und Datenschutz ·
+    PB1-11 Netzwerk · PB1-12 Betrieb, Verfügbarkeit und Cloud. Prüfer: `lernplan-pruefen.mjs PB1-<n>` prüft zusätzlich
+    E2 (Bausteine aus AP1 nur mit `baut_auf` auf einen Stichpunkt des Exports) und T7 (eine Aussage nur zu
+    AP1-Bausteinen muss tiefer gehen als AP1 oder von einer PB1-Teilaufgabe belegt sein).
+  - [x] **PB1-1 Projekt, Vorgehen und Anforderungen (14.10.2026):** 3 Themenblöcke, 9 Stichpunkte, 36 Können-Aussagen.
+        Alte AP2-Aussagen: 16 angepasst, 4 verschoben, 6 gestrichen (Netzplan wohnt in AP1; begründete Modellwahl G3).
+        Projektumfeld (Stakeholder, Risiko, Veränderung, Fremdvergabe) aus AP1 importiert, neu nur, was PB1 verlangt.
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 
