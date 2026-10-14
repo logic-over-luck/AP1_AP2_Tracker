@@ -1,0 +1,1945 @@
+{
+  "ordner": "AP1-6",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md",
+  "grundlage": "umbau/lernplan/ap1/AP1-6.json",
+  "karten": [
+    {
+      "id": "AP1-6-1-1-K1-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K1",
+      "vorne": "Wie heißen die sieben Schichten des OSI-Modells auf Deutsch, von Schicht 1 bis Schicht 7?",
+      "hinten": "1 Bitübertragungsschicht – 2 Sicherungsschicht – 3 Vermittlungsschicht (auch Netzwerkschicht) – 4 Transportschicht – 5 Sitzungsschicht (auch Kommunikationssteuerungsschicht) – 6 Darstellungsschicht – 7 Anwendungsschicht"
+    },
+    {
+      "id": "AP1-6-1-1-K1-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K1",
+      "vorne": "Wie heißen die sieben Schichten des OSI-Modells auf Englisch, von Schicht 1 bis Schicht 7?",
+      "hinten": "1 Physical – 2 Data Link – 3 Network – 4 Transport – 5 Session – 6 Presentation – 7 Application"
+    },
+    {
+      "id": "AP1-6-1-1-K1-3",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K1",
+      "vorne": "Welche Nummer haben im OSI-Modell die Sicherungsschicht, die Vermittlungsschicht und die Transportschicht?",
+      "hinten": "- Sicherungsschicht (Data Link): 2\n- Vermittlungsschicht (Network): 3\n- Transportschicht (Transport): 4"
+    },
+    {
+      "id": "AP1-6-1-1-K2-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man Kabel und Buchse zu, welcher die MAC-Adresse und Ethernet?",
+      "hinten": "- Kabel, Buchse: Schicht 1 (Bitübertragungsschicht)\n- MAC-Adresse, Ethernet: Schicht 2 (Sicherungsschicht); Ethernet legt zusätzlich Kabel und Signale der Schicht 1 fest"
+    },
+    {
+      "id": "AP1-6-1-1-K2-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man die IP-Adresse zu, welcher TCP?",
+      "hinten": "- IP-Adresse: Schicht 3 (Vermittlungsschicht)\n- TCP: Schicht 4 (Transportschicht)"
+    },
+    {
+      "id": "AP1-6-1-1-K2-3",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man DNS, DHCP und HTTPS zu?",
+      "hinten": "Alle drei der Schicht 7 (Anwendungsschicht)."
+    },
+    {
+      "id": "AP1-6-1-1-K2-4",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K2",
+      "vorne": "Welcher OSI-Schicht ordnet man einen Switch zu, welcher einen Router?",
+      "hinten": "- Switch: Schicht 2, arbeitet mit MAC-Adressen\n- Router: Schicht 3, arbeitet mit IP-Adressen"
+    },
+    {
+      "id": "AP1-6-1-1-K3-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Welche Schicht prüft man mit einer Sichtprüfung von Kabel, Stecker und LED?",
+      "hinten": "Schicht 1, die Bitübertragungsschicht."
+    },
+    {
+      "id": "AP1-6-1-1-K3-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Mit welchem Befehl testet man typischerweise die Schicht 3, und was prüft er?",
+      "hinten": "`ping` auf eine IP-Adresse: prüft, ob das Ziel über IP erreichbar ist (den Weg dorthin zeigt `traceroute`)."
+    },
+    {
+      "id": "AP1-6-1-1-K3-3",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Mit welchem Befehl prüft man die Namensauflösung, und zu welcher Schicht gehört das Protokoll?",
+      "hinten": "`nslookup` prüft DNS; DNS gehört zur Schicht 7 (Anwendungsschicht)."
+    },
+    {
+      "id": "AP1-6-1-1-K3-4",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K3",
+      "vorne": "Bei einer Fehlersuche entlang der OSI-Schichten: Welche Schicht und welches Protokoll testet der Aufruf einer Webseite im Browser?",
+      "hinten": "Schicht 7 (Anwendungsschicht), Protokoll HTTP bzw. HTTPS."
+    },
+    {
+      "id": "AP1-6-1-1-K4-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K4",
+      "vorne": "Wozu dient ein Schichtenmodell wie das OSI-Modell?",
+      "hinten": "- Aufgaben trennen: Jede Schicht hat eine abgegrenzte Aufgabe\n- Fehler eingrenzen: Schicht für Schicht prüfen\n- Geräte verschiedener Hersteller verbinden: gemeinsame Standards je Schicht"
+    },
+    {
+      "id": "AP1-6-1-1-K4-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K4",
+      "vorne": "Warum können Geräte verschiedener Hersteller dank eines Schichtenmodells zusammenarbeiten?",
+      "hinten": "Für jede Schicht sind Aufgaben und Schnittstellen einheitlich festgelegt; hält sich jeder Hersteller daran, passen die Geräte zusammen."
+    },
+    {
+      "id": "AP1-6-1-1-K5-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K5",
+      "vorne": "Ein Diagnosefenster zeigt: Medienstatus verbunden, Signalqualität sehr gut, Übertragungsrate 1 Gbit/s. Trotzdem lädt keine Webseite. Was folgt daraus?",
+      "hinten": "Diese Werte gehören zu Schicht 1, und die ist in Ordnung. Der Fehler liegt in einer höheren Schicht, z. B. in der IP-Konfiguration oder bei der Namensauflösung."
+    },
+    {
+      "id": "AP1-6-1-2-K2-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K2",
+      "vorne": "Was unterscheidet IMAP von POP3?",
+      "hinten": "- IMAP: Mails bleiben auf dem Server, Ordner und Lesestatus sind auf allen Geräten gleich\n- POP3: Mails werden auf ein Gerät heruntergeladen und in der Regel vom Server gelöscht"
+    },
+    {
+      "id": "AP1-6-1-2-K2-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K2",
+      "vorne": "Eine Mitarbeiterin liest ihre E-Mails auf Notebook, Smartphone und Büro-PC. Welches Abrufprotokoll passt, und warum?",
+      "hinten": "IMAP: Die Nachrichten bleiben auf dem Server und sind von allen Geräten aus mit demselben Stand erreichbar."
+    },
+    {
+      "id": "AP1-6-1-2-K2-3",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K2",
+      "vorne": "Welchen Vorteil kann POP3 gegenüber IMAP haben?",
+      "hinten": "Die Mails liegen lokal auf dem Gerät und sind ohne Verbindung lesbar; der Speicher auf dem Server wird entlastet."
+    },
+    {
+      "id": "AP1-6-1-2-K3-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K3",
+      "vorne": "Warum wählt man für einen Fernzugriff auf einen Server SSH statt Telnet oder einer seriellen Verbindung?",
+      "hinten": "SSH verschlüsselt die gesamte Verbindung einschließlich der Anmeldedaten. Telnet und eine serielle Verbindung übertragen unverschlüsselt, auch das Passwort."
+    },
+    {
+      "id": "AP1-6-1-2-K3-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K3",
+      "vorne": "Welche dieser Protokolle übertragen verschlüsselt: HTTP, HTTPS, SSH, Telnet?",
+      "hinten": "HTTPS und SSH. HTTP und Telnet übertragen im Klartext."
+    },
+    {
+      "id": "AP1-6-1-2-K4-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K4",
+      "vorne": "Porttabelle: 21 FTP, 22 SSH, 23 Telnet, 80 HTTP, 443 HTTPS. Welche Verbindungsart und welchen Port nutzt du für eine sichere Fernwartung eines Servers?",
+      "hinten": "SSH über Port 22."
+    },
+    {
+      "id": "AP1-6-1-2-K4-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K4",
+      "vorne": "Was gibt ein Port bei einer Netzwerkverbindung an?",
+      "hinten": "Die Nummer, über die ein Rechner eine eingehende Verbindung dem richtigen Dienst bzw. Programm zuordnet, z. B. Port 22 für SSH."
+    },
+    {
+      "id": "AP1-6-1-2-K1-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Welche Aufgabe hat Ethernet?",
+      "hinten": "Datenübertragung im kabelgebundenen lokalen Netz: legt Kabel, Signale und Datenrahmen fest und adressiert die Geräte über ihre MAC-Adressen."
+    },
+    {
+      "id": "AP1-6-1-2-K1-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Welche Aufgabe hat IP (Internet Protocol)?",
+      "hinten": "Adressiert Geräte mit IP-Adressen und leitet Datenpakete über Router netzübergreifend vom Absender zum Ziel (Routing)."
+    },
+    {
+      "id": "AP1-6-1-2-K1-3",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Welche Aufgabe hat DNS?",
+      "hinten": "Namensauflösung: übersetzt einen Namen wie www.example.com in die zugehörige IP-Adresse."
+    },
+    {
+      "id": "AP1-6-1-2-X1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Wozu dient SMTP, wozu dienen IMAP und POP3?",
+      "hinten": "- SMTP: E-Mails versenden\n- IMAP und POP3: E-Mails vom Server abrufen"
+    },
+    {
+      "id": "AP1-6-1-2-X2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Was unterscheidet HTTPS von HTTP?",
+      "hinten": "HTTPS überträgt Webseiten verschlüsselt (über TLS), HTTP im Klartext."
+    },
+    {
+      "id": "AP1-6-1-2-K5-4",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K5",
+      "vorne": "Wozu dienen DHCP und SSH?",
+      "hinten": "- DHCP: verteilt Netzwerkeinstellungen wie IP-Adresse automatisch an die Clients\n- SSH: verschlüsselter Fernzugriff auf einen Rechner"
+    },
+    {
+      "id": "AP1-6-1-2-K6-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K6",
+      "vorne": "Ordne den Zweck zu: FTP, SFTP, NTP, LDAP.",
+      "hinten": "- FTP: Dateiübertragung (unverschlüsselt)\n- SFTP: verschlüsselte Dateiübertragung über SSH\n- NTP: Uhrzeit synchronisieren\n- LDAP: Zugriff auf Verzeichnisdienste, z. B. Benutzerverzeichnisse"
+    },
+    {
+      "id": "AP1-6-1-3-K1-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K1",
+      "vorne": "Welche Aufgabe hat ein Switch?",
+      "hinten": "Er verbindet Geräte innerhalb eines Netzes und leitet Daten anhand der MAC-Adresse gezielt an den Anschluss des Empfängers weiter."
+    },
+    {
+      "id": "AP1-6-1-3-K2-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K2",
+      "vorne": "Welche Aufgabe hat ein Router?",
+      "hinten": "Er verbindet verschiedene Netze miteinander, z. B. das lokale Netz mit dem Internet, und leitet Pakete anhand der IP-Adresse ins richtige Netz weiter."
+    },
+    {
+      "id": "AP1-6-1-3-K2-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K2",
+      "vorne": "Was ist ein Gateway?",
+      "hinten": "Der Übergang von einem Netz in ein anderes; im lokalen Netz meist der Router, über den die Geräte fremde Netze und das Internet erreichen."
+    },
+    {
+      "id": "AP1-6-1-3-K2-3",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K2",
+      "vorne": "Was unterscheidet einen Switch von einem Router?",
+      "hinten": "- Switch: verbindet Geräte innerhalb eines Netzes (MAC-Adressen, Schicht 2)\n- Router: verbindet verschiedene Netze (IP-Adressen, Schicht 3)"
+    },
+    {
+      "id": "AP1-6-1-3-K3-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K3",
+      "vorne": "Welche Aufgabe hat ein Access Point?",
+      "hinten": "Er stellt ein WLAN bereit und bindet die WLAN-Geräte an das kabelgebundene Netz an."
+    },
+    {
+      "id": "AP1-6-1-3-K4-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K4",
+      "vorne": "Im Büro sollen weitere PCs per Kabel ins vorhandene Netz, aber alle Anschlüsse sind belegt. Welches Gerät ergänzt man?",
+      "hinten": "Einen Switch: Er stellt zusätzliche Anschlüsse bereit und verbindet die PCs im selben Netz."
+    },
+    {
+      "id": "AP1-6-1-3-K4-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K4",
+      "vorne": "Ein Besprechungsraum hat eine Netzwerkdose und soll WLAN für Notebooks bekommen. Welches Gerät passt?",
+      "hinten": "Ein Access Point: an die Netzwerkdose angeschlossen, bindet er die WLAN-Geräte an das kabelgebundene Netz an."
+    },
+    {
+      "id": "AP1-6-1-3-K4-3",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K4",
+      "vorne": "Das lokale Netz eines kleinen Büros soll mit dem Internet verbunden werden. Welches Gerät wird gebraucht?",
+      "hinten": "Ein Router (Gateway): Er verbindet zwei verschiedene Netze, das lokale Netz und das Netz des Internetanbieters."
+    },
+    {
+      "id": "AP1-6-1-3-K6-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K6",
+      "vorne": "Laut Patchplan führt Dose 2.07 über Patchfeld-Port 7 auf einen Switch-Port im Verwaltungsnetz, Dose 2.08 über Port 8 auf den Switch des Gästenetzes. Ein Verwaltungs-PC soll angeschlossen werden. Welche Dose wählst du? Begründe.",
+      "hinten": "Dose 2.07: Sie führt über Patchfeld und Switch ins Verwaltungsnetz. An 2.08 landete der PC im Gästenetz und erreichte die Server der Verwaltung nicht."
+    },
+    {
+      "id": "AP1-6-1-3-K3-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K7",
+      "vorne": "Was unterscheidet einen WLAN-Router von einem Access Point?",
+      "hinten": "Ein WLAN-Router vereint Router (Verbindung zum Internet), meist einen Switch, einen Access Point und oft eine Firewall in einem Gerät. Ein Access Point stellt nur das WLAN bereit."
+    },
+    {
+      "id": "AP1-6-1-4-K1-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K1",
+      "vorne": "Wie unterscheiden sich Twisted-Pair-Kupferkabel und Lichtwellenleiter in Geschwindigkeit, Reichweite und Störanfälligkeit?",
+      "hinten": "- Twisted Pair: im LAN meist 1 oder 10 Gbit/s, höchstens 100 m je Strecke, anfällig für elektromagnetische Störungen\n- Lichtwellenleiter: sehr hohe Datenraten, je nach Faser Hunderte Meter bis viele Kilometer, unempfindlich gegen elektromagnetische Störungen"
+    },
+    {
+      "id": "AP1-6-1-4-K1-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K1",
+      "vorne": "Welche Vor- und Nachteile hat WLAN gegenüber einer Kabelverbindung?",
+      "hinten": "- Vorteil: mobil, keine Verkabelung nötig\n- Nachteile: meist geringere und schwankende Datenrate, begrenzte Reichweite, störanfällig (Wände, andere Funknetze), muss gegen Mithören gesichert werden"
+    },
+    {
+      "id": "AP1-6-1-4-K1-3",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K1",
+      "vorne": "Zwei Gebäude 300 m voneinander entfernt sollen per Kabel verbunden werden. Welches Medium wählt man, und warum?",
+      "hinten": "Lichtwellenleiter: Twisted Pair reicht nur 100 m; LWL überbrückt die Strecke und ist unempfindlich gegen elektromagnetische Störungen."
+    },
+    {
+      "id": "AP1-6-1-4-K2-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K2",
+      "vorne": "Wofür stehen bei Netzwerkkabeln die Kürzel U, S, F und TP?",
+      "hinten": "- U: ungeschirmt\n- S: Geflechtschirm\n- F: Folienschirm\n- TP: Twisted Pair (paarweise verdrillte Adern)"
+    },
+    {
+      "id": "AP1-6-1-4-K2-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K2",
+      "vorne": "Wie liest man eine Bezeichnung wie S/FTP?",
+      "hinten": "Vor dem Schrägstrich die Gesamtschirmung, danach die Schirmung der Adernpaare: S/FTP = Geflechtschirm um das ganze Kabel, Folienschirm um jedes Paar, verdrillte Paare."
+    },
+    {
+      "id": "AP1-6-1-4-K2-3",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K2",
+      "vorne": "Was bedeuten U/UTP und F/UTP?",
+      "hinten": "- U/UTP: ganz ungeschirmt, weder Gesamt- noch Paarschirm\n- F/UTP: Folienschirm um alle Paare, die Paare selbst ungeschirmt"
+    },
+    {
+      "id": "AP1-6-1-4-K3-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K3",
+      "vorne": "Wie wählt man aus mehreren angebotenen Patchkabeln das günstigste geeignete aus?",
+      "hinten": "Zuerst alle aussortieren, die die geforderte Datenrate (Kategorie) oder Schirmung nicht erfüllen; von den übrigen das billigste wählen."
+    },
+    {
+      "id": "AP1-6-1-4-K3-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K3",
+      "vorne": "Gefordert: 1 Gbit/s, geschirmt. Angebot: U/UTP Cat 6a für 3 €, S/FTP Cat 5e für 4 €, S/FTP Cat 7 für 7 €. Welches Kabel wählt man?",
+      "hinten": "S/FTP Cat 5e für 4 €: schafft 1 Gbit/s und ist geschirmt. U/UTP ist ungeschirmt, Cat 7 erfüllt die Anforderung auch, ist aber teurer."
+    },
+    {
+      "id": "AP1-6-1-4-K4-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K4",
+      "vorne": "Ein PC verliert immer wieder die Netzwerkverbindung; am Stecker des Patchkabels ist die Rastnase abgebrochen. Was ist die wahrscheinliche Ursache?",
+      "hinten": "Der Stecker rastet nicht ein, rutscht leicht heraus und verliert den Kontakt zur Buchse. Abhilfe: Kabel tauschen."
+    },
+    {
+      "id": "AP1-6-1-4-K4-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K4",
+      "vorne": "Welche sichtbaren Schäden an Kabel oder Stecker können Verbindungsabbrüche verursachen?",
+      "hinten": "- abgebrochene Rastnase am Stecker\n- geknicktes oder gequetschtes Kabel\n- beschädigter Mantel, freiliegende Adern\n- verbogene Kontakte in Stecker oder Buchse"
+    },
+    {
+      "id": "AP1-6-1-4-K5-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K5",
+      "vorne": "Wie kommt man an einem Ort ohne Festnetzanschluss ins Internet?",
+      "hinten": "- mobiler Router mit SIM-Karte (Mobilfunk)\n- Tethering: die Internetverbindung des Smartphones mit anderen Geräten teilen"
+    },
+    {
+      "id": "AP1-6-1-4-K6-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K6",
+      "vorne": "Welche Datenrate unterstützen Cat 5e, Cat 6a und Cat 7?",
+      "hinten": "- Cat 5e: 1 Gbit/s\n- Cat 6a: 10 Gbit/s\n- Cat 7: 10 Gbit/s, stets geschirmt"
+    },
+    {
+      "id": "AP1-6-1-4-K6-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K6",
+      "vorne": "Welche Kabelkategorie braucht man mindestens für 10 Gbit/s auf 100 m?",
+      "hinten": "Cat 6a (Cat 7 geht auch)."
+    },
+    {
+      "id": "AP1-6-1-5-K1-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K1",
+      "vorne": "Ordne Wi-Fi 4, Wi-Fi 5, Wi-Fi 6 und Wi-Fi 7 den IEEE-Standards zu.",
+      "hinten": "- Wi-Fi 4: 802.11n\n- Wi-Fi 5: 802.11ac\n- Wi-Fi 6: 802.11ax\n- Wi-Fi 7: 802.11be\nJede Generation ist schneller als die vorige."
+    },
+    {
+      "id": "AP1-6-1-5-K1-2",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K1",
+      "vorne": "Was unterscheidet Wi-Fi 6E von Wi-Fi 6?",
+      "hinten": "Wi-Fi 6E nutzt zusätzlich das Frequenzband 6 GHz."
+    },
+    {
+      "id": "AP1-6-1-5-K2-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K2",
+      "vorne": "Ordne die Datenrate zu: Fast Ethernet, Gigabit-Ethernet, 10-Gigabit-Ethernet.",
+      "hinten": "- Fast Ethernet: 100 Mbit/s\n- Gigabit-Ethernet: 1 Gbit/s\n- 10-Gigabit-Ethernet: 10 Gbit/s"
+    },
+    {
+      "id": "AP1-6-1-5-K3-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K3",
+      "vorne": "Ein Arbeitsplatz lädt täglich große Dateien vom Server; gefordert ist Gigabit-LAN. Das Datenblatt eines PCs nennt „Ethernet 10/100 Mbit/s, Wi-Fi 6“. Erfüllt er die Anforderung?",
+      "hinten": "Nein. Die Netzwerkkarte schafft nur Fast Ethernet (100 Mbit/s), und WLAN ersetzt die geforderte Kabelanbindung nicht. Eine Gigabit-Netzwerkkarte nachrüsten oder ein anderes Gerät wählen."
+    },
+    {
+      "id": "AP1-6-1-5-K4-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K4",
+      "vorne": "Was ist Power over Ethernet (PoE)?",
+      "hinten": "Ein Switch versorgt Geräte wie Kameras, Access Points oder IP-Telefone über das Netzwerkkabel mit Strom; ein eigenes Netzteil und eine Steckdose am Gerät entfallen."
+    },
+    {
+      "id": "AP1-6-1-5-K5-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K5",
+      "vorne": "PoE-Tabelle (Leistung am Gerät): 802.3af bis 12,95 W, 802.3at bis 25,5 W, 802.3bt bis 71 W. Eine Außenkamera mit Heizung braucht 20 W. Welchen Standard muss der Switch-Port mindestens bieten?",
+      "hinten": "802.3at: 20 W liegen über 12,95 W (802.3af reicht nicht) und unter 25,5 W."
+    },
+    {
+      "id": "AP1-6-1-5-K6-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K6",
+      "vorne": "Vergleiche die WLAN-Frequenzbänder 2,4 GHz und 5 GHz.",
+      "hinten": "- 2,4 GHz: größere Reichweite, durchdringt Wände besser, aber langsamer und störanfälliger\n- 5 GHz (und 6 GHz): höhere Datenraten, weniger Störungen, aber geringere Reichweite"
+    },
+    {
+      "id": "AP1-6-2-1-K1-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Welche Werte trägt man bei einer statischen IPv4-Konfiguration eines Clients ein?",
+      "hinten": "- IP-Adresse\n- Subnetzmaske\n- Standardgateway\n- DNS-Server"
+    },
+    {
+      "id": "AP1-6-2-1-K1-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Wozu braucht ein Client die Angabe des Standardgateways?",
+      "hinten": "Pakete an Ziele außerhalb des eigenen Netzes schickt er an das Standardgateway (meist den Router), das sie weiterleitet."
+    },
+    {
+      "id": "AP1-6-2-1-K1-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Welche Bedingung muss die Adresse des Standardgateways in der Konfiguration eines Clients erfüllen?",
+      "hinten": "Sie muss im selben Netz liegen wie die Adresse des Clients."
+    },
+    {
+      "id": "AP1-6-2-1-K1-4",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K1",
+      "vorne": "Wozu dient die Subnetzmaske?",
+      "hinten": "Sie legt fest, welcher Teil der IP-Adresse das Netz und welcher das Gerät (Host) bezeichnet; daran erkennt der Rechner, ob ein Ziel im eigenen Netz liegt."
+    },
+    {
+      "id": "AP1-6-2-1-K2-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K2",
+      "vorne": "Welche Bedingungen muss eine statische IPv4-Adresse für einen Client erfüllen?",
+      "hinten": "- liegt im richtigen Netz\n- ist noch nicht vergeben\n- liegt außerhalb des DHCP-Bereichs\n- ist weder Netz- noch Broadcastadresse"
+    },
+    {
+      "id": "AP1-6-2-1-K2-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K2",
+      "vorne": "Netz 192.168.10.0/24, der DHCP-Server vergibt .100 bis .200. Ist 192.168.10.150 als statische Adresse geeignet?",
+      "hinten": "Nein: Sie liegt im DHCP-Bereich und könnte zusätzlich einem anderen Gerät zugeteilt werden. Geeignet wäre eine freie Adresse außerhalb, z. B. 192.168.10.20."
+    },
+    {
+      "id": "AP1-6-2-1-K2-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K2",
+      "vorne": "Warum darf eine statische Adresse nicht im DHCP-Bereich liegen?",
+      "hinten": "Der DHCP-Server könnte dieselbe Adresse einem anderen Gerät zuteilen; es käme zu einem Adresskonflikt."
+    },
+    {
+      "id": "AP1-6-2-1-K4-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K4",
+      "vorne": "Was unterscheidet statische von automatischer IPv4-Adressvergabe?",
+      "hinten": "- statisch: Adresse und Einstellungen werden von Hand fest eingetragen\n- automatisch: Ein DHCP-Server teilt sie dem Client zu"
+    },
+    {
+      "id": "AP1-6-2-1-K4-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K4",
+      "vorne": "Für welche Geräte ist eine feste IP-Adresse sinnvoll, und warum?",
+      "hinten": "Für Geräte, die immer unter derselben Adresse erreichbar sein müssen, z. B. Server, Netzwerkdrucker, Router und Access Points."
+    },
+    {
+      "id": "AP1-6-2-1-K4-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K4",
+      "vorne": "Welchen Vorteil hat die automatische Adressvergabe per DHCP für Arbeitsplatzrechner?",
+      "hinten": "Weniger Aufwand, keine Tippfehler und keine doppelt vergebenen Adressen; Änderungen wie ein neuer DNS-Server werden zentral für alle Clients gesetzt."
+    },
+    {
+      "id": "AP1-6-2-1-K5-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K5",
+      "vorne": "Welche IPv4-Adressbereiche sind privat?",
+      "hinten": "- 10.0.0.0/8\n- 172.16.0.0/12 (172.16.0.0 bis 172.31.255.255)\n- 192.168.0.0/16"
+    },
+    {
+      "id": "AP1-6-2-1-K5-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K5",
+      "vorne": "Welche dieser Adressen sind privat: 172.20.5.1, 172.40.1.1, 192.168.1.10, 11.0.0.1?",
+      "hinten": "- 172.20.5.1: privat (172.16 bis 172.31)\n- 172.40.1.1: nicht privat\n- 192.168.1.10: privat\n- 11.0.0.1: nicht privat"
+    },
+    {
+      "id": "AP1-6-2-1-K5-3",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K5",
+      "vorne": "Was gilt für private IPv4-Adressen?",
+      "hinten": "Sie sind für lokale Netze vorgesehen, dürfen dort von jedem frei verwendet werden und werden im Internet nicht weitergeleitet."
+    },
+    {
+      "id": "AP1-6-2-1-K6-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K6",
+      "vorne": "Welche Angaben gehören in die Dokumentation der Netzwerkeinstellungen eines Arbeitsplatzes?",
+      "hinten": "- IP-Adresse (bzw. Vergabe per DHCP)\n- Subnetzmaske\n- Standardgateway\n- DNS-Server\n- Anschluss, z. B. Netzwerkdose oder Switch-Port"
+    },
+    {
+      "id": "AP1-6-2-1-K7-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K7",
+      "vorne": "Wozu setzt ein Router NAT bzw. PAT ein?",
+      "hinten": "Er setzt die privaten Adressen des lokalen Netzes für den Internetzugang auf seine öffentliche Adresse um. Bei PAT unterscheidet er die Verbindungen über Portnummern, sodass viele Geräte eine öffentliche Adresse teilen."
+    },
+    {
+      "id": "AP1-6-2-2-K1-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Wie berechnet man aus der Präfixlänge n die Zahl der Adressen und der nutzbaren Hosts eines IPv4-Netzes?",
+      "hinten": "Adressen: `2^(32 − n)`\nNutzbare Hosts: `2^(32 − n) − 2`"
+    },
+    {
+      "id": "AP1-6-2-2-K1-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Wie viele Adressen und nutzbare Hosts hat ein /26-Netz?",
+      "hinten": "64 Adressen (`2^6`), davon 62 nutzbare Hosts."
+    },
+    {
+      "id": "AP1-6-2-2-K1-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Warum zieht man bei der Zahl der nutzbaren Hosts 2 ab?",
+      "hinten": "Die erste Adresse ist die Netzadresse, die letzte die Broadcastadresse; beide kann man keinem Gerät zuweisen."
+    },
+    {
+      "id": "AP1-6-2-2-K1-4",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K1",
+      "vorne": "Wie viele Adressen und nutzbare Hosts haben Netze mit /24, /25, /27 und /28?",
+      "hinten": "- /24: 256 Adressen, 254 Hosts\n- /25: 128 Adressen, 126 Hosts\n- /27: 32 Adressen, 30 Hosts\n- /28: 16 Adressen, 14 Hosts"
+    },
+    {
+      "id": "AP1-6-2-2-K2-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K2",
+      "vorne": "Wie bestimmt man zu einer IPv4-Adresse mit Präfix die Netzadresse und die Broadcastadresse?",
+      "hinten": "- Netzadresse: alle Hostbits auf 0 setzen\n- Broadcastadresse: alle Hostbits auf 1 setzen (= nächste Netzadresse − 1)"
+    },
+    {
+      "id": "AP1-6-2-2-K2-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K2",
+      "vorne": "Wie findet man die Netzadresse schnell über die Blockgröße, z. B. bei /26?",
+      "hinten": "Blockgröße = 256 − Maskenwert im betroffenen Oktett (bei /26: 256 − 192 = 64). Die Netze beginnen bei Vielfachen davon: 0, 64, 128, 192."
+    },
+    {
+      "id": "AP1-6-2-2-K2-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K2",
+      "vorne": "Welche Netzadresse und welche Broadcastadresse hat 192.168.1.100/26?",
+      "hinten": "- Netzadresse: 192.168.1.64\n- Broadcastadresse: 192.168.1.127"
+    },
+    {
+      "id": "AP1-6-2-2-K3-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K3",
+      "vorne": "Wie ergeben sich die erste, die letzte und die vorletzte nutzbare Hostadresse eines Netzes?",
+      "hinten": "- erste: Netzadresse + 1\n- letzte: Broadcastadresse − 1\n- vorletzte: Broadcastadresse − 2"
+    },
+    {
+      "id": "AP1-6-2-2-K3-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K3",
+      "vorne": "Welche sind die erste, die letzte und die vorletzte nutzbare Adresse im Netz 192.168.1.64/26?",
+      "hinten": "- erste: 192.168.1.65\n- letzte: 192.168.1.126\n- vorletzte: 192.168.1.125"
+    },
+    {
+      "id": "AP1-6-2-2-K4-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K4",
+      "vorne": "Eine Netzskizze zeigt das Netz 10.0.0.0/26. Welche Adressen kommen für einen neuen Drucker in Frage?",
+      "hinten": "Jede noch freie Adresse von 10.0.0.1 bis 10.0.0.62; nicht die Netzadresse .0, nicht die Broadcastadresse .63 und keine Adresse, die schon ein Gerät oder das Gateway hat."
+    },
+    {
+      "id": "AP1-6-2-1-K3-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Welche Subnetzmaske entspricht der Präfixlänge /24?",
+      "hinten": "255.255.255.0"
+    },
+    {
+      "id": "AP1-6-2-1-K3-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Welche Subnetzmasken entsprechen den Präfixlängen /8 und /16?",
+      "hinten": "- /8: 255.0.0.0\n- /16: 255.255.0.0"
+    },
+    {
+      "id": "AP1-6-2-1-K3-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Was gibt die Präfixlänge, z. B. /24, an?",
+      "hinten": "Wie viele Bits von links den Netzanteil der Adresse bilden; genau diese Bits sind in der Subnetzmaske 1."
+    },
+    {
+      "id": "AP1-6-2-2-K5-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Wie rechnet man eine Präfixlänge in eine Subnetzmaske um?",
+      "hinten": "Von links so viele Bits auf 1 setzen, wie die Präfixlänge angibt, den Rest auf 0, und je 8 Bit dezimal schreiben. /26: 11111111.11111111.11111111.11000000 = 255.255.255.192"
+    },
+    {
+      "id": "AP1-6-2-2-K5-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Welche Dezimalwerte kann ein Oktett einer Subnetzmaske haben, und wie viele Einsen stehen dafür?",
+      "hinten": "0 (0), 128 (1), 192 (2), 224 (3), 240 (4), 248 (5), 252 (6), 254 (7), 255 (8)"
+    },
+    {
+      "id": "AP1-6-2-2-K5-3",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K5",
+      "vorne": "Welche Präfixlänge gehört zur Subnetzmaske 255.255.255.224?",
+      "hinten": "/27 (24 Einsen in den ersten drei Oktetten + 3 Einsen in 224)."
+    },
+    {
+      "id": "AP1-6-2-2-K6-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K6",
+      "vorne": "Wie prüft man, ob zwei IPv4-Adressen im selben Subnetz liegen?",
+      "hinten": "Für beide mit derselben Subnetzmaske die Netzadresse bestimmen. Sind die Netzadressen gleich, liegen beide im selben Subnetz."
+    },
+    {
+      "id": "AP1-6-2-2-K6-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K6",
+      "vorne": "Liegen 192.168.1.60/26 und 192.168.1.70/26 im selben Subnetz?",
+      "hinten": "Nein: 192.168.1.60 gehört zum Netz 192.168.1.0 (bis .63), 192.168.1.70 zum Netz 192.168.1.64."
+    },
+    {
+      "id": "AP1-6-2-2-K7-1",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K7",
+      "vorne": "Teile 192.168.10.0/24 in vier gleich große Teilnetze. Nenne für jedes Netz- und Broadcastadresse.",
+      "hinten": "Präfix /26, je 64 Adressen:\n- 192.168.10.0 bis .63\n- 192.168.10.64 bis .127\n- 192.168.10.128 bis .191\n- 192.168.10.192 bis .255"
+    },
+    {
+      "id": "AP1-6-2-2-K7-2",
+      "sp": "AP1-6-2-2",
+      "k": "AP1-6-2-2-K7",
+      "vorne": "Ein /24-Netz soll in 8 gleich große Teilnetze aufgeteilt werden. Wie viele Bits brauchst du dafür, und welches Präfix ergibt sich?",
+      "hinten": "3 Bit (2³ = 8), also /27 mit je 32 Adressen und 30 nutzbaren Hosts."
+    },
+    {
+      "id": "AP1-6-2-3-K1-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K1",
+      "vorne": "Wie lang ist eine IPv6-Adresse, und wie wird sie geschrieben?",
+      "hinten": "128 Bit; acht Blöcke zu je vier Hexadezimalziffern, durch Doppelpunkte getrennt."
+    },
+    {
+      "id": "AP1-6-2-3-K1-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K1",
+      "vorne": "Wie viele Bit stellen eine Hexadezimalziffer und ein Block einer IPv6-Adresse dar?",
+      "hinten": "Eine Hexadezimalziffer 4 Bit, ein Block aus vier Ziffern 16 Bit; 8 Blöcke × 16 Bit = 128 Bit."
+    },
+    {
+      "id": "AP1-6-2-3-K2-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Nach welchen Regeln kürzt man eine IPv6-Adresse?",
+      "hinten": "- führende Nullen in jedem Block weglassen (0db8 → db8, 0000 → 0)\n- eine zusammenhängende Folge von Nullblöcken einmal durch `::` ersetzen"
+    },
+    {
+      "id": "AP1-6-2-3-K2-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Warum darf `::` in einer IPv6-Adresse nur einmal vorkommen?",
+      "hinten": "Sonst ist nicht eindeutig, wie viele Nullblöcke jede Lücke ersetzt."
+    },
+    {
+      "id": "AP1-6-2-3-K2-3",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Darf man beim Kürzen einer IPv6-Adresse auch Nullen am Ende eines Blocks weglassen?",
+      "hinten": "Nein, nur führende Nullen. Aus 0db0 wird db0, nicht db."
+    },
+    {
+      "id": "AP1-6-2-3-K2-4",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Wie lautet fe80::1 vollständig ausgeschrieben?",
+      "hinten": "fe80:0000:0000:0000:0000:0000:0000:0001"
+    },
+    {
+      "id": "AP1-6-2-3-K2-5",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K2",
+      "vorne": "Wie lautet 2001:0db8:0000:0000:0000:0000:0000:0001 gekürzt?",
+      "hinten": "2001:db8::1"
+    },
+    {
+      "id": "AP1-6-2-3-K3-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K3",
+      "vorne": "Was gibt /64 hinter einer IPv6-Adresse an?",
+      "hinten": "Die Präfixlänge: Die ersten 64 Bit (vier Blöcke) bilden das Präfix, die übrigen 64 Bit den Interface-Identifier."
+    },
+    {
+      "id": "AP1-6-2-3-K3-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K3",
+      "vorne": "Welches sind Präfix und Interface-Identifier von fe80::1a2b:3cff:fe4d:5e6f/64?",
+      "hinten": "- Präfix: fe80:0000:0000:0000 (fe80::/64)\n- Interface-Identifier: 1a2b:3cff:fe4d:5e6f"
+    },
+    {
+      "id": "AP1-6-2-3-K3-3",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K3",
+      "vorne": "Was bezeichnen Präfix und Interface-Identifier einer IPv6-Adresse?",
+      "hinten": "- Präfix: das Netz\n- Interface-Identifier: die Netzwerkschnittstelle des Geräts in diesem Netz"
+    },
+    {
+      "id": "AP1-6-2-3-K4-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K4",
+      "vorne": "Woran erkennt man eine verbindungslokale IPv6-Adresse, und wo gilt sie?",
+      "hinten": "Sie beginnt mit fe80. Sie gilt nur im lokalen Netzabschnitt und wird von Routern nicht weitergeleitet."
+    },
+    {
+      "id": "AP1-6-2-3-K4-2",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K4",
+      "vorne": "Warum hat jede IPv6-Schnittstelle eine Adresse mit fe80, auch ohne Router und ohne DHCP?",
+      "hinten": "Sie bildet diese verbindungslokale Adresse automatisch selbst aus dem Präfix fe80:: und ihrem Interface-Identifier. So kann sie sofort im lokalen Abschnitt kommunizieren."
+    },
+    {
+      "id": "AP1-6-2-3-K5-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K5",
+      "vorne": "Nenne Vorteile von IPv6 gegenüber IPv4.",
+      "hinten": "- viel größerer Adressraum (128 statt 32 Bit)\n- jedes Gerät ist weltweit direkt adressierbar, ohne Adressumsetzung\n- automatische Konfiguration"
+    },
+    {
+      "id": "AP1-6-2-3-K6-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K6",
+      "vorne": "Beschreibe Unterschiede zwischen IPv4- und IPv6-Adressen.",
+      "hinten": "- Länge: 32 gegen 128 Bit\n- Schreibweise: dezimal mit Punkten gegen hexadezimal mit Doppelpunkten\n- Vergabe: bei IPv6 zusätzlich automatische Selbstkonfiguration"
+    },
+    {
+      "id": "AP1-6-2-3-K7-1",
+      "sp": "AP1-6-2-3",
+      "k": "AP1-6-2-3-K7",
+      "vorne": "Nenne die IPv6-Gegenstücke zu 127.0.0.1, 169.254.0.0/16, den privaten Bereichen und öffentlichen IPv4-Adressen.",
+      "hinten": "- Loopback: ::1\n- verbindungslokal: fe80::/10\n- Unique Local: fc00::/7\n- Global Unicast: 2000::/3"
+    },
+    {
+      "id": "AP1-6-2-5-K1-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K1",
+      "vorne": "Zerlege 2001:db8:abcd:12::1/64 in Standortpräfix, Teilnetz-ID und Interface-Identifier.",
+      "hinten": "- Standortpräfix (48 Bit): 2001:db8:abcd\n- Teilnetz-ID (16 Bit): 0012\n- Interface-Identifier (64 Bit): 0000:0000:0000:0001"
+    },
+    {
+      "id": "AP1-6-2-5-K2-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K2",
+      "vorne": "Wie viele /64-Teilnetze lassen sich aus einem /48-Präfix bilden?",
+      "hinten": "2^(64 − 48) = 2¹⁶ = 65.536 Teilnetze."
+    },
+    {
+      "id": "AP1-6-2-5-K2-2",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K2",
+      "vorne": "Wie viele /64-Teilnetze lassen sich aus einem /56-Präfix bilden?",
+      "hinten": "2^(64 − 56) = 2⁸ = 256 Teilnetze."
+    },
+    {
+      "id": "AP1-6-2-5-K3-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K3",
+      "vorne": "Der Standort hat 2001:db8:abcd::/48. Bilde das Teilnetz 1 als /64 und vergib dem Router und einem PC eine Adresse sowie dem PC das Gateway.",
+      "hinten": "- Teilnetz: 2001:db8:abcd:1::/64\n- Router: 2001:db8:abcd:1::1\n- PC: z. B. 2001:db8:abcd:1::10/64, Gateway 2001:db8:abcd:1::1"
+    },
+    {
+      "id": "AP1-6-2-5-K4-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K4",
+      "vorne": "Mit welchen Befehlen prüfst du per ping die eigene IPv6-Loopback-Adresse und das Gateway 2001:db8:abcd:1::1?",
+      "hinten": "- `ping ::1`\n- `ping 2001:db8:abcd:1::1`\n(bei Bedarf mit `-6`, um IPv6 zu erzwingen)"
+    },
+    {
+      "id": "AP1-6-2-5-K5-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K5",
+      "vorne": "Wie werden IPv4 und IPv6 gemeinsam betrieben?",
+      "hinten": "- Dual Stack: Das Gerät hat Adressen beider Protokolle und nutzt beide parallel.\n- Tunnel: Pakete des einen Protokolls werden in Pakete des anderen verpackt, um ein Netz zu durchqueren, das nur das andere kann."
+    },
+    {
+      "id": "AP1-6-2-5-K6-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K6",
+      "vorne": "Bestimme aus 2001:db8:abcd::/48 das Teilnetz Nummer 5 und Nummer 26 als /64.",
+      "hinten": "- Nummer 5: 2001:db8:abcd:5::/64\n- Nummer 26: 26 = hexadezimal 1a → 2001:db8:abcd:1a::/64"
+    },
+    {
+      "id": "AP1-6-2-5-K7-1",
+      "sp": "AP1-6-2-5",
+      "k": "AP1-6-2-5-K7",
+      "vorne": "Unterscheide die Arten der IPv6-Adressvergabe.",
+      "hinten": "- statisch: von Hand eingetragen\n- SLAAC: das Gerät bildet seine Adresse selbst aus dem Präfix, das der Router mitteilt\n- DHCPv6: ein Server teilt die Adressen zu"
+    },
+    {
+      "id": "AP1-6-2-4-K1-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K1",
+      "vorne": "Wie ist eine MAC-Adresse aufgebaut?",
+      "hinten": "48 Bit, sechs Bytes in Hexadezimalschreibweise, z. B. 00:1A:2B:3C:4D:5E. Die vordere Hälfte ist die Herstellerkennung, die hintere vergibt der Hersteller."
+    },
+    {
+      "id": "AP1-6-2-4-K1-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K1",
+      "vorne": "Was gibt die vordere Hälfte einer MAC-Adresse an?",
+      "hinten": "Die Herstellerkennung: welcher Hersteller die Netzwerkschnittstelle gebaut hat."
+    },
+    {
+      "id": "AP1-6-2-4-K2-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K2",
+      "vorne": "Welche Aufgabe hat ARP?",
+      "hinten": "ARP ermittelt zu einer bekannten IP-Adresse im lokalen Netz die zugehörige MAC-Adresse."
+    },
+    {
+      "id": "AP1-6-2-4-K2-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K2",
+      "vorne": "Warum braucht ein PC ARP, bevor er Daten an einen Rechner im selben lokalen Netz schickt?",
+      "hinten": "Im lokalen Netz werden die Daten an die MAC-Adresse zugestellt. Der PC kennt nur die IP-Adresse des Ziels und muss die MAC-Adresse erst erfragen."
+    },
+    {
+      "id": "AP1-6-2-4-K2-3",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K2",
+      "vorne": "Wie läuft eine ARP-Anfrage ab?",
+      "hinten": "Der PC fragt per Broadcast alle im lokalen Netz: „Wer hat IP-Adresse X?“ Das Gerät mit dieser Adresse antwortet mit seiner MAC-Adresse; der PC merkt sich die Zuordnung im ARP-Cache."
+    },
+    {
+      "id": "AP1-6-2-4-K3-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K3",
+      "vorne": "Was zeigt der Befehl `arp -a`?",
+      "hinten": "Den ARP-Cache: welche IP-Adresse zu welcher physischen Adresse (MAC-Adresse) gehört, mit dem Typ dynamisch oder statisch."
+    },
+    {
+      "id": "AP1-6-2-4-K3-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K3",
+      "vorne": "`arp -a` zeigt die Zeile „192.168.0.1   00-1a-2b-3c-4d-5e   dynamisch“. Was bedeutet sie?",
+      "hinten": "Das Gerät mit der IP-Adresse 192.168.0.1 hat die MAC-Adresse 00-1a-2b-3c-4d-5e; der Eintrag wurde automatisch per ARP gelernt."
+    },
+    {
+      "id": "AP1-6-2-4-K4-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K4",
+      "vorne": "Welche Einstellungen teilt ein DHCP-Server einem Client zu?",
+      "hinten": "- IP-Adresse\n- Subnetzmaske\n- Standardgateway\n- DNS-Server"
+    },
+    {
+      "id": "AP1-6-2-4-K4-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K4",
+      "vorne": "Welche Aufgabe hat DHCP?",
+      "hinten": "DHCP verteilt die Netzwerkeinstellungen automatisch an die Clients, sodass man sie nicht an jedem Gerät von Hand eintragen muss."
+    },
+    {
+      "id": "AP1-6-2-4-K5-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K5",
+      "vorne": "Ein PC hat die Adresse 169.254.12.34. Was bedeutet das?",
+      "hinten": "Er hat keinen DHCP-Server erreicht und sich selbst eine Adresse aus 169.254.x.x gegeben. Damit erreicht er höchstens Geräte im selben Netzabschnitt, nicht das Internet."
+    },
+    {
+      "id": "AP1-6-2-4-K5-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K5",
+      "vorne": "Ein Client hat eine 169.254.x.x-Adresse. Was prüft man?",
+      "hinten": "- Kabel bzw. WLAN-Verbindung des Clients\n- ob der DHCP-Server läuft und erreichbar ist\n- ob der DHCP-Server noch freie Adressen hat"
+    },
+    {
+      "id": "AP1-6-3-2-K2-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K6",
+      "vorne": "Wie ermittelt man die MAC-Adresse des eigenen PCs?",
+      "hinten": "Windows: `ipconfig /all`, Eintrag „Physische Adresse“. Linux: `ip link` bzw. `ifconfig`."
+    },
+    {
+      "id": "AP1-6-2-4-K6-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K6",
+      "vorne": "Welche Schreibweise einer MAC-Adresse ist richtig: (a) 00:1A:2B:3C:4D:5E, (b) 00:1G:2B:3C:4D, (c) 00:1A:2B:3C:4D:5E:7F?",
+      "hinten": "(a): sechs Bytes in Hexadezimal. (b) enthält G, keine Hexadezimalziffer, und hat nur fünf Bytes; (c) hat sieben Bytes (56 statt 48 Bit). Unter Windows zeigt auch `getmac` die MAC-Adresse."
+    },
+    {
+      "id": "AP1-6-2-4-K7-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K7",
+      "vorne": "Was nutzt IPv6 statt ARP und Broadcast?",
+      "hinten": "Das Neighbor Discovery Protocol (NDP) und Multicast."
+    },
+    {
+      "id": "AP1-6-3-1-K1-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K1",
+      "vorne": "Wie meldet man sich an einem WLAN mit Pre-shared Key an?",
+      "hinten": "Mit einem gemeinsamen Kennwort, das für alle Benutzer und Geräte dieses WLANs gleich ist."
+    },
+    {
+      "id": "AP1-6-3-1-K1-2",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K1",
+      "vorne": "Wie meldet man sich an einem WLAN mit Enterprise-Verfahren an?",
+      "hinten": "Jeder Benutzer meldet sich mit eigenen Zugangsdaten an (z. B. Benutzername und Kennwort), die zentral geprüft werden."
+    },
+    {
+      "id": "AP1-6-3-1-K2-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K2",
+      "vorne": "Warum eignet sich für Unternehmen das Enterprise-Verfahren besser als ein Pre-shared Key?",
+      "hinten": "Jeder hat eigene Zugangsdaten. Verlässt jemand das Unternehmen, sperrt man nur seinen Zugang, statt das Kennwort für alle zu ändern."
+    },
+    {
+      "id": "AP1-6-3-1-K2-2",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K2",
+      "vorne": "Ein Mitarbeiter verlässt das Unternehmen; das WLAN nutzt einen Pre-shared Key. Welches Problem entsteht?",
+      "hinten": "Er kennt weiter das gemeinsame Kennwort. Um ihn auszusperren, muss man es ändern und auf allen Geräten neu eintragen."
+    },
+    {
+      "id": "AP1-6-3-1-K6-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K6",
+      "vorne": "Welche Angaben brauchst du, um ein Gerät an einem WLAN mit WPA-PSK anzumelden?",
+      "hinten": "- SSID (Name des WLANs)\n- Schlüssel (gemeinsames Kennwort)"
+    },
+    {
+      "id": "AP1-6-3-1-K7-1",
+      "sp": "AP1-6-3-1",
+      "k": "AP1-6-3-1-K7",
+      "vorne": "Wozu dient beim WLAN-Enterprise-Verfahren ein RADIUS-Server?",
+      "hinten": "Er prüft zentral die Zugangsdaten jedes einzelnen Benutzers und erlaubt oder verweigert den Zugang."
+    },
+    {
+      "id": "AP1-6-3-1-K3-1",
+      "sp": "AP1-6-3-3",
+      "k": "AP1-6-3-3-K1",
+      "vorne": "Was ist ein VPN?",
+      "hinten": "Ein Virtual Private Network: eine verschlüsselte Verbindung durch ein unsicheres Netz wie das Internet in ein privates Netz, z. B. das Firmennetz."
+    },
+    {
+      "id": "AP1-6-3-1-K3-2",
+      "sp": "AP1-6-3-3",
+      "k": "AP1-6-3-3-K1",
+      "vorne": "Wie nennt man eine verschlüsselte Verbindung durch ein unsicheres Netz in ein privates Netz?",
+      "hinten": "VPN (Virtual Private Network)."
+    },
+    {
+      "id": "AP1-6-3-1-K4-1",
+      "sp": "AP1-6-3-3",
+      "k": "AP1-6-3-3-K2",
+      "vorne": "Nenne einen typischen Einsatzfall für ein VPN.",
+      "hinten": "Zugriff auf das Firmennetz von unterwegs oder aus dem Homeoffice, z. B. auf Dateiserver und Anwendungen der Firma."
+    },
+    {
+      "id": "AP1-6-3-1-K5-1",
+      "sp": "AP1-6-3-3",
+      "k": "AP1-6-3-3-K3",
+      "vorne": "Was beschreibt das Bild des Tunnels beim VPN?",
+      "hinten": "Die Datenpakete werden verschlüsselt und in andere Pakete verpackt übertragen; von außen sieht man nur die äußeren Pakete, nicht den Inhalt."
+    },
+    {
+      "id": "AP1-6-3-1-K5-2",
+      "sp": "AP1-6-3-3",
+      "k": "AP1-6-3-3-K3",
+      "vorne": "Warum sind Daten im VPN-Tunnel auch in einem öffentlichen WLAN geschützt?",
+      "hinten": "Sie werden verschlüsselt übertragen. Wer mitliest, sieht nur die äußeren Pakete zum VPN-Endpunkt, nicht Inhalt und eigentliches Ziel."
+    },
+    {
+      "id": "AP1-6-3-3-K5-1",
+      "sp": "AP1-6-3-3",
+      "k": "AP1-6-3-3-K5",
+      "vorne": "Welche Angaben richtest du für eine VPN-Verbindung am Arbeitsplatz ein?",
+      "hinten": "- Adresse des VPN-Servers\n- Zugangsdaten oder Zertifikat\n- einen VPN-Client"
+    },
+    {
+      "id": "AP1-6-3-2-K1-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `ipconfig` (Linux: `ifconfig` bzw. `ip`)?",
+      "hinten": "Zeigt die eigene Netzwerkkonfiguration: IP-Adresse, Subnetzmaske, Standardgateway; `ipconfig /all` zusätzlich u. a. DNS-Server und MAC-Adresse. Unter Linux zeigt `ip addr` die Adressen, `ip route` das Gateway."
+    },
+    {
+      "id": "AP1-6-3-2-K1-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `ping`?",
+      "hinten": "Prüft, ob ein Ziel (IP-Adresse oder Name) erreichbar ist, und zeigt die Antwortzeit."
+    },
+    {
+      "id": "AP1-6-3-2-K1-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `traceroute` (Windows: `tracert`)?",
+      "hinten": "Zeigt den Weg der Pakete zum Ziel: alle Router auf der Strecke mit Antwortzeit. So sieht man, bis wohin die Verbindung funktioniert."
+    },
+    {
+      "id": "AP1-6-3-2-K1-4",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K1",
+      "vorne": "Wozu dient `nslookup`?",
+      "hinten": "Prüft die Namensauflösung: fragt einen DNS-Server nach der IP-Adresse zu einem Namen."
+    },
+    {
+      "id": "AP1-6-3-2-K2-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Mit welchem Befehl prüft man, ob das Standardgateway erreichbar ist?",
+      "hinten": "`ping` auf die IP-Adresse des Gateways, z. B. `ping 192.168.1.1`."
+    },
+    {
+      "id": "AP1-6-3-2-K2-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Mit welchem Befehl findet man heraus, an welchem Router auf dem Weg zum Ziel die Verbindung abbricht?",
+      "hinten": "`traceroute` (Windows: `tracert`)."
+    },
+    {
+      "id": "AP1-6-3-2-K2-4",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K2",
+      "vorne": "Mit welchem Befehl prüft man, ob ein Name wie www.example.com in eine IP-Adresse aufgelöst wird?",
+      "hinten": "`nslookup www.example.com`"
+    },
+    {
+      "id": "AP1-6-3-2-K3-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K3",
+      "vorne": "In welcher Reihenfolge geht man bei einer systematischen Fehlersuche im Netzwerk vor, beginnend bei der Hardware?",
+      "hinten": "- Kabel und LED prüfen\n- eigene Konfiguration (`ipconfig`)\n- Gateway anpingen\n- Namensauflösung prüfen (`nslookup`)\n- Zielserver prüfen"
+    },
+    {
+      "id": "AP1-6-3-2-K3-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K3",
+      "vorne": "Warum prüft man bei der Fehlersuche Kabel und LED früh?",
+      "hinten": "Ohne physische Verbindung kann kein weiterer Test gelingen; die Sichtprüfung ist zudem schnell und einfach."
+    },
+    {
+      "id": "AP1-6-3-2-K3-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K3",
+      "vorne": "Wie geht man bei einer Fehlersuche Schicht für Schicht vor, wenn man beim Browser beginnt?",
+      "hinten": "- Webseite im Browser aufrufen (Schicht 7)\n- Namensauflösung mit `nslookup` prüfen\n- Erreichbarkeit mit `ping` prüfen (Schicht 3)\n- Sichtprüfung von LED und Kabel (Schicht 1)"
+    },
+    {
+      "id": "AP1-6-3-2-K4-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "`ping` auf die IP-Adresse eines Webservers gelingt, der Aufruf über den Namen scheitert. Wo liegt der Fehler?",
+      "hinten": "Bei der Namensauflösung (DNS), z. B. falscher oder nicht erreichbarer DNS-Server. Prüfen mit `nslookup`."
+    },
+    {
+      "id": "AP1-6-3-2-K4-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "`ipconfig` zeigt eine passende Adresse, aber `ping` auf das Standardgateway scheitert. Wo sucht man weiter?",
+      "hinten": "Zwischen PC und Gateway: Kabel und Switch, falsch eingetragene Gateway-Adresse oder Subnetzmaske, Gateway selbst gestört."
+    },
+    {
+      "id": "AP1-6-3-2-K4-3",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "Das Gateway antwortet auf `ping`, eine IP-Adresse im Internet nicht. Wo liegt der Fehler?",
+      "hinten": "Hinter dem Gateway: Router, Internetanschluss oder Weg zum Ziel; mit `traceroute` eingrenzen. Möglich ist auch, dass das Ziel keine pings beantwortet."
+    },
+    {
+      "id": "AP1-6-3-2-K4-4",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K4",
+      "vorne": "Eine ping-Ausgabe zeigt 30 % Paketverlust und Antwortzeiten zwischen 5 und 900 ms. Was schließt du daraus?",
+      "hinten": "Das Ziel ist grundsätzlich erreichbar, aber die Verbindung ist instabil oder überlastet, z. B. schlechtes WLAN-Signal, beschädigtes Kabel oder ausgelastete Leitung. Mit traceroute und Kabeltausch weiter eingrenzen."
+    },
+    {
+      "id": "AP1-6-3-2-K5-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K5",
+      "vorne": "Was zeigen die LEDs an einer Netzwerkbuchse an?",
+      "hinten": "- Dauerlicht: Verbindung besteht\n- Blinken: Daten werden übertragen\n- aus: keine Verbindung"
+    },
+    {
+      "id": "AP1-6-3-2-K6-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K6",
+      "vorne": "Wie findest du mit Patchkabel und ping heraus, zu welchem Netz eine Netzwerkdose gehört?",
+      "hinten": "Ein Notebook per Patchkabel an die Dose anschließen, mit ipconfig die erhaltene Adresse ansehen und das Gateway oder einen bekannten Rechner dieses Netzes anpingen. Antwortet er, gehört die Dose zu diesem Netz."
+    },
+    {
+      "id": "AP1-6-3-2-K7-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K7",
+      "vorne": "Nenne zu den Fehlerursachen „falscher DNS-Server“ und „falsches Standardgateway“ je eine Überprüfung und eine Behebung.",
+      "hinten": "- falscher DNS-Server: mit `nslookup` bzw. `ipconfig /all` prüfen; richtigen DNS-Server eintragen\n- falsches Gateway: mit `ipconfig` und ping auf das Gateway prüfen; richtige Gateway-Adresse eintragen"
+    }
+  ],
+  "nicht_abgefragt": [
+    {
+      "k": "AP1-6-1-3-K5",
+      "grund": "Das Erkennen von Symbolen braucht Abbildungen; eine Textkarte kann sie nicht zeigen (wie im alten Stand)."
+    }
+  ],
+  "unsicher": [
+    {
+      "id": "AP1-6-1-3-K5",
+      "frage": "Aus dem alten Stand: Die Symbole des Katalog-Anhangs (Switch, Router, Firewall, Access Point, Server) liegen nicht vor; eine Textkarte kann sie nicht zeigen. Soll dafür ein Bildtrainer oder eine Karte mit Abbildung ergänzt werden?"
+    }
+  ],
+  "protokoll": [
+    {
+      "id": "AP1-6-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-1-2-K1 → AP1-6-1-2-K5)"
+    },
+    {
+      "id": "AP1-6-1-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-1-2-K1 → AP1-6-1-2-K5)"
+    },
+    {
+      "id": "AP1-6-1-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-1-2-K1 → AP1-6-1-2-K5)"
+    },
+    {
+      "id": "AP1-6-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-2-K3-1",
+      "entscheidung": "bearbeitet",
+      "grund": "serielle Verbindung aus der neuen Aussage ergänzt"
+    },
+    {
+      "id": "AP1-6-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-2-K4-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Die Aussage gibt die Porttabelle vor und die Grenze schließt Auswendiglernen aus; die Tabelle steht jetzt in der Frage"
+    },
+    {
+      "id": "AP1-6-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-2-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "fragt Portnummern auswendig ab; laut Grenze von AP1-6-1-2 musst du Portnummern nicht auswendig können"
+    },
+    {
+      "id": "AP1-6-1-2-K5-2",
+      "entscheidung": "entfernt",
+      "grund": "fragt Portnummern auswendig ab; laut Grenze von AP1-6-1-2 musst du Portnummern nicht auswendig können"
+    },
+    {
+      "id": "AP1-6-1-2-K5-3",
+      "entscheidung": "entfernt",
+      "grund": "fragt Portnummern auswendig ab; laut Grenze von AP1-6-1-2 musst du Portnummern nicht auswendig können"
+    },
+    {
+      "id": "AP1-6-1-2-X1",
+      "entscheidung": "bleibt",
+      "grund": "Karte ohne Aussage: SMTP, IMAP und POP3 ihrem Zweck zuordnen ist Teil von K5"
+    },
+    {
+      "id": "AP1-6-1-2-X2",
+      "entscheidung": "bleibt",
+      "grund": "Karte ohne Aussage: HTTP und HTTPS ihrem Zweck zuordnen ist Teil von K5"
+    },
+    {
+      "id": "AP1-6-1-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K3-2",
+      "entscheidung": "bearbeitet",
+      "grund": "Kombigerät ist jetzt eigene Aussage K7; Firewall wie in der Aussage ergänzt"
+    },
+    {
+      "id": "AP1-6-1-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-3-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K5-1",
+      "entscheidung": "bearbeitet",
+      "grund": "an die Aussage angepasst; LTE und 5G liegen hinter der Grenze und sind nach B3 aus AP1 gestrichen"
+    },
+    {
+      "id": "AP1-6-1-4-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-4-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-2-1-K3 → AP1-6-2-2-K5)"
+    },
+    {
+      "id": "AP1-6-2-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-2-1-K3 → AP1-6-2-2-K5)"
+    },
+    {
+      "id": "AP1-6-2-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-2-1-K3 → AP1-6-2-2-K5)"
+    },
+    {
+      "id": "AP1-6-2-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-2-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K2-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-3-K5-1",
+      "entscheidung": "bearbeitet",
+      "grund": "statt nur des Grundes für IPv6 jetzt die drei Vorteile der neuen Aussage"
+    },
+    {
+      "id": "AP1-6-2-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-2-4-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-3-1-K3 → AP1-6-3-3-K1)"
+    },
+    {
+      "id": "AP1-6-3-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-3-1-K3 → AP1-6-3-3-K1)"
+    },
+    {
+      "id": "AP1-6-3-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-3-1-K4 → AP1-6-3-3-K2)"
+    },
+    {
+      "id": "AP1-6-3-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-3-1-K5 → AP1-6-3-3-K3)"
+    },
+    {
+      "id": "AP1-6-3-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; mit der Aussage umgehängt (AP1-6-3-1-K5 → AP1-6-3-3-K3)"
+    },
+    {
+      "id": "AP1-6-3-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "Befehl zum Ermitteln der eigenen MAC-Adresse ist jetzt eigene Aussage AP1-6-2-4-K6"
+    },
+    {
+      "id": "AP1-6-3-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-3-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP1-6-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-2-K5-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-5-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-2-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-2-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-2-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-5-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-2-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-2-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-3-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-3-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-3-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-3-2-K4-4",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-6-3-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-3-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    }
+  ]
+}
