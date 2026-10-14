@@ -51,20 +51,13 @@
               ]
             },
             {
-              "id": "AP1-7-1-1-K3",
-              "text": "Du kannst zu einer Maßnahme das Schutzziel nennen, das sie sichert, zum Beispiel Verschlüsselung für Vertraulichkeit, Hashwert für Integrität, Datensicherung für Verfügbarkeit.",
-              "stufe": 1,
-              "herkunft": [
-                "beleg:2025F-A2-bb",
-                "katalog:AP1.06.01.1"
-              ]
-            },
-            {
               "id": "AP1-7-1-1-K5",
-              "text": "Du kannst Sicherheitsmaßnahmen den Schutzzielen zuordnen und die Zuordnung begründen, zum Beispiel zentrale Bearbeitung auf dem Server für Integrität.",
+              "text": "Du kannst Sicherheitsmaßnahmen den Schutzzielen zuordnen und die Zuordnung begründen, zum Beispiel Verschlüsselung für Vertraulichkeit, Hashwert für Integrität, Datensicherung für Verfügbarkeit, zentrale Bearbeitung auf dem Server für Integrität.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2021H-A4-a"
+                "beleg:2021H-A4-a",
+                "beleg:2025F-A2-bb",
+                "katalog:AP1.06.01.1"
               ]
             },
             {
@@ -218,16 +211,8 @@
               ]
             },
             {
-              "id": "AP1-7-1-3-K2",
-              "text": "Du kannst eine gegebene Passwort-Policy bewerten.",
-              "stufe": 4,
-              "herkunft": [
-                "katalog:AP1.06.04.10"
-              ]
-            },
-            {
               "id": "AP1-7-1-3-K3",
-              "text": "Du kannst Kriterien für sichere Passwörter begründen: Länge und Zeichenvielfalt erschweren das Erraten, keine Wörterbuchbegriffe, für jeden Zugang ein eigenes Passwort.",
+              "text": "Du kannst eine Passwort-Policy bewerten und Kriterien für sichere Passwörter begründen: Länge vor Komplexität, keine Wörterbuchbegriffe, für jeden Zugang ein eigenes Passwort, Passwortmanager und zweiter Faktor; einen regelmäßigen Zwangswechsel ohne Anlass empfehlen BSI und NIST heute nicht mehr, ältere Richtlinien verlangen ihn noch.",
               "stufe": 4,
               "herkunft": [
                 "beleg:2021H-A4-e",
@@ -296,14 +281,6 @@
           ],
           "koennen": [
             {
-              "id": "AP1-7-1-4-K1",
-              "text": "Du kannst IT-Sicherheitsbeauftragten und Datenschutzbeauftragten unterscheiden: Der eine kümmert sich um die Sicherheit aller Informationen und Systeme, der andere um den Schutz personenbezogener Daten.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.06.01.2.2"
-              ]
-            },
-            {
               "id": "AP1-7-1-4-K2",
               "text": "Du kannst erklären, was ein ISMS ist: festgelegte Regeln, Zuständigkeiten und Abläufe, mit denen ein Betrieb seine Informationssicherheit dauerhaft steuert und verbessert.",
               "stufe": 2,
@@ -329,7 +306,7 @@
             },
             {
               "id": "AP1-7-1-4-K5",
-              "text": "Du kannst für eine Frage im Betrieb beurteilen, ob der IT-Sicherheitsbeauftragte oder der Datenschutzbeauftragte zuständig ist.",
+              "text": "Du kannst IT-Sicherheitsbeauftragten (Sicherheit aller Informationen und Systeme) und Datenschutzbeauftragten (Schutz personenbezogener Daten) unterscheiden und für eine Frage im Betrieb beurteilen, wer zuständig ist.",
               "stufe": 4,
               "herkunft": [
                 "katalog:AP1.06.01.2.2"
@@ -783,14 +760,6 @@
           ],
           "koennen": [
             {
-              "id": "AP1-7-3-3-K1",
-              "text": "Du kannst Zugangskontrolle (wer darf ein System benutzen) und Zugriffskontrolle (was darf er dort sehen und ändern) unterscheiden.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.06.04.7"
-              ]
-            },
-            {
               "id": "AP1-7-3-3-K2",
               "text": "Du kannst erklären, was Authentifizierung ist: Nachweis der Identität über Wissen, Besitz oder ein biometrisches Merkmal.",
               "stufe": 2,
@@ -816,7 +785,7 @@
             },
             {
               "id": "AP1-7-3-3-K5",
-              "text": "Du kannst Zutritt (Raum), Zugang (System) und Zugriff (Daten) unterscheiden.",
+              "text": "Du kannst Zutritt (wer darf einen Raum betreten), Zugang (wer darf ein System benutzen) und Zugriff (was darf er dort sehen und ändern) unterscheiden.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.06.04.7"
@@ -966,8 +935,8 @@
           "koennen": [
             {
               "id": "AP1-7-3-5-K1",
-              "text": "Du kannst Vollsicherung, differenzielle und inkrementelle Sicherung unterscheiden.",
-              "stufe": 2,
+              "text": "Du kannst Vollsicherung, differenzielle und inkrementelle Sicherung unterscheiden und bestimmen, welche Sicherungen du zum Wiederherstellen brauchst: bei differenzieller die letzte Vollsicherung und die letzte differenzielle, bei inkrementeller die Vollsicherung und alle Inkremente seitdem; inkrementell spart Speicher und Zeit beim Sichern, dauert aber beim Wiederherstellen länger.",
+              "stufe": 3,
               "herkunft": [
                 "katalog:AP1.06.04.5"
               ]
@@ -1081,19 +1050,12 @@
               ]
             },
             {
-              "id": "AP1-7-4-1-K6",
-              "text": "Du kannst Arten von Malware nennen: Virus, Wurm, Trojaner, Spyware, Ransomware, Scareware.",
-              "stufe": 1,
-              "herkunft": [
-                "beleg:2024F-A4-da"
-              ]
-            },
-            {
               "id": "AP1-7-4-1-K7",
-              "text": "Du kannst Arten von Malware ihr Merkmal zuweisen, zum Beispiel Wurm verbreitet sich selbst, Trojaner versteckt sich in nützlicher Software.",
-              "stufe": 3,
+              "text": "Du kannst Arten von Malware nennen und ihr Merkmal zuordnen: Virus, Wurm (verbreitet sich selbst), Trojaner (versteckt sich in nützlicher Software), Spyware, Ransomware, Scareware.",
+              "stufe": 2,
               "herkunft": [
-                "beleg:2024F-A4-db"
+                "beleg:2024F-A4-db",
+                "beleg:2024F-A4-da"
               ]
             },
             {
@@ -1413,7 +1375,16 @@
               ]
             }
           ],
-          "grenzen": []
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Laut EuGH (Urteil vom 4.9.2025) können pseudonymisierte Daten für einen Empfänger, der die Zuordnung nicht kennt und nicht beschaffen kann, als nicht personenbezogen gelten.",
+              "quellen": [
+                "gegenpruefung:2026-10"
+              ],
+              "grund": "Aktueller Rechtsstand (P30)"
+            }
+          ]
         },
         {
           "id": "AP1-7-5-3",
@@ -1486,9 +1457,9 @@
       },
       {
         "alt": "AP1-7-1-1-K3",
-        "status": "übernommen",
-        "neu": "AP1-7-1-1-K3",
-        "grund": "Beleg 2025F-A2-bb"
+        "status": "verschoben",
+        "neu": "AP1-7-1-1-K5",
+        "grund": "Beleg 2025F-A2-bb; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-7-1-1-K5 (Schutzziel zu Maßnahme nennen steckt in zuordnen und begründen)"
       },
       {
         "alt": "AP1-7-1-1-K4",
@@ -1534,9 +1505,9 @@
       },
       {
         "alt": "AP1-7-1-3-K2",
-        "status": "übernommen",
-        "neu": "AP1-7-1-3-K2",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-7-1-3-K3",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-7-1-3-K3 (Passwort-Policy bewerten und Kriterien begründen; aktueller Stand)"
       },
       {
         "alt": "AP1-7-1-3-K3",
@@ -1564,9 +1535,9 @@
       },
       {
         "alt": "AP1-7-1-4-K1",
-        "status": "übernommen",
-        "neu": "AP1-7-1-4-K1",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-7-1-4-K5",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-7-1-4-K5 (Beauftragte unterscheiden steckt in Zuständigkeit beurteilen)"
       },
       {
         "alt": "AP1-7-1-4-K2",
@@ -1732,9 +1703,9 @@
       },
       {
         "alt": "AP1-7-3-3-K1",
-        "status": "übernommen",
-        "neu": "AP1-7-3-3-K1",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-7-3-3-K5",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-7-3-3-K5 (Zugang und Zugriff stecken in Zutritt, Zugang, Zugriff)"
       },
       {
         "alt": "AP1-7-3-3-K2",
@@ -1792,9 +1763,9 @@
       },
       {
         "alt": "AP1-7-3-5-K1",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-7-3-5-K1",
-        "grund": ""
+        "grund": "Gegenprüfung 2026-10-14: fehlte: welche Sicherungen man zum Wiederherstellen braucht"
       },
       {
         "alt": "AP1-7-3-5-K2",
@@ -1852,9 +1823,9 @@
       },
       {
         "alt": "AP1-7-4-1-K6",
-        "status": "angepasst",
-        "neu": "AP1-7-4-1-K6",
-        "grund": "„Du kannst … nennen“ statt „Du kennst“, Beleg 2024F-A4-da"
+        "status": "verschoben",
+        "neu": "AP1-7-4-1-K7",
+        "grund": "„Du kannst … nennen“ statt „Du kennst“, Beleg 2024F-A4-da; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-7-4-1-K7 (Malware-Arten nennen steckt in zuordnen)"
       },
       {
         "alt": "AP1-7-5-1-K1",
@@ -1959,7 +1930,7 @@
   "meta": {
     "schicht": "3+4",
     "regelwerk_version": "1.5",
-    "stand": "2026-10-13",
+    "stand": "2026-10-14",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-7-4-2, AP1-7-4-3 (Block Bedrohungen hatte nur einen Stichpunkt, F4) und AP1-7-5-3 (Block Datenschutz, F4).",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1970,7 +1941,8 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitte IT-Sicherheit und Datenschutz",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 11.1–11.24",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Datenschutz, Gefährdung der IT-Sicherheit, Maßnahmen, IT-Grundschutz, IT-Sicherheitsgesetz, Verschlüsselungsverfahren, Datensicherungskonzept, TOM"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Datenschutz, Gefährdung der IT-Sicherheit, Maßnahmen, IT-Grundschutz, IT-Sicherheitsgesetz, Verschlüsselungsverfahren, Datensicherungskonzept, TOM",
+      "gegenpruefung:2026-10": "Unabhängige Gegenprüfung AP1 vom 14.10.2026 (Bericht umbau/berichte/AP1-gegenpruefung.md): aktueller Rechts- und Technikstand; Kür nach Entscheidung des Projektinhabers (P30)."
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -2024,7 +1996,7 @@
           ],
           "ring": "Kern",
           "wo": [
-            "AP1-7-1-3-K2",
+            "AP1-7-1-3-K3",
             "AP1-7-1-3-K3"
           ]
         },
@@ -2045,7 +2017,7 @@
           ],
           "ring": "Kern",
           "wo": [
-            "AP1-7-1-4-K1",
+            "AP1-7-1-4-K5",
             "AP1-7-1-4-K2"
           ]
         },
@@ -2172,7 +2144,7 @@
           ],
           "ring": "Kern",
           "wo": [
-            "AP1-7-3-3-K1",
+            "AP1-7-3-3-K5",
             "AP1-7-3-3-K2",
             "AP1-7-3-3-K3",
             "AP1-7-3-3-K5"
@@ -2250,7 +2222,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-7-4-1-K1",
-            "AP1-7-4-1-K6",
+            "AP1-7-4-1-K7",
             "AP1-7-4-1-K7"
           ]
         },
@@ -2360,6 +2332,17 @@
           "wo": [
             "AP1-7-5-1"
           ]
+        },
+        {
+          "thema": "EuGH 2025 zu pseudonymisierten Daten",
+          "quellen": [
+            "gegenpruefung:2026-10"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-5-2"
+          ],
+          "notiz": "Gegenprüfung 2026-10-14"
         }
       ]
     },
@@ -2407,7 +2390,6 @@
         "paar": "IT-Sicherheitsbeauftragter, Datenschutzbeauftragter",
         "abgedeckt": {
           "beide": [
-            "AP1-7-1-4-K1",
             "AP1-7-1-4-K5"
           ]
         }
@@ -2465,10 +2447,10 @@
         "paar": "Zugangs- und Zugriffskontrolle",
         "abgedeckt": {
           "Zugang": [
-            "AP1-7-3-3-K1"
+            "AP1-7-3-3-K5"
           ],
           "Zugriff": [
-            "AP1-7-3-3-K1"
+            "AP1-7-3-3-K5"
           ]
         }
       },
@@ -2508,6 +2490,52 @@
           ]
         }
       }
-    ]
+    ],
+    "gegenpruefung": {
+      "stand": "2026-10-14",
+      "bericht": "umbau/berichte/AP1-gegenpruefung.md",
+      "aenderungen": [
+        {
+          "id": "AP1-7-3-3-K1",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-7-3-3-K5",
+          "grund": "Zugang und Zugriff stecken in Zutritt, Zugang, Zugriff"
+        },
+        {
+          "id": "AP1-7-4-1-K6",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-7-4-1-K7",
+          "grund": "Malware-Arten nennen steckt in zuordnen"
+        },
+        {
+          "id": "AP1-7-1-3-K2",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-7-1-3-K3",
+          "grund": "Passwort-Policy bewerten und Kriterien begründen; aktueller Stand"
+        },
+        {
+          "id": "AP1-7-1-4-K1",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-7-1-4-K5",
+          "grund": "Beauftragte unterscheiden steckt in Zuständigkeit beurteilen"
+        },
+        {
+          "id": "AP1-7-1-1-K3",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-7-1-1-K5",
+          "grund": "Schutzziel zu Maßnahme nennen steckt in zuordnen und begründen"
+        },
+        {
+          "id": "AP1-7-3-5-K1",
+          "aenderung": "geändert",
+          "grund": "fehlte: welche Sicherungen man zum Wiederherstellen braucht"
+        },
+        {
+          "id": "AP1-7-5-2",
+          "aenderung": "Kür neu",
+          "grund": "Aktueller Rechtsstand (P30)"
+        }
+      ]
+    }
   }
 }

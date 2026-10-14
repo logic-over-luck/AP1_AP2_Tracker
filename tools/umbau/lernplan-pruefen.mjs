@@ -156,13 +156,19 @@ const altK = altSP.flatMap((s) => s.koennen.map((k) => k.id));
 const an = lp.alt_neu?.koennen ?? [];
 const STATUS = new Set(['übernommen', 'angepasst', 'verschoben', 'gestrichen']);
 const neuK = new Set(kIds);
+const kRaum = new Set();
+for (const f of readdirSync(`umbau/lernplan/${RAUM}`).filter((x) => x.endsWith('.json'))) {
+  const l = f === `${ORDNER}.json` ? lp : JSON.parse(readFileSync(`umbau/lernplan/${RAUM}/${f}`, 'utf8'));
+  for (const tb of l.themenbloecke) for (const s of tb.stichpunkte) for (const k of s.koennen) kRaum.add(k.id);
+}
 for (const id of altK) {
   const e = an.filter((x) => x.alt === id);
   if (e.length !== 1) { F(`ALT: ${id} ist ${e.length}-mal einsortiert (soll genau 1)`); continue; }
   const x = e[0];
   if (!STATUS.has(x.status)) F(`ALT: ${id}: unbekannter Status ${x.status}`);
   if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${id}: gestrichen ohne Grund`);
-  if (x.status !== 'gestrichen' && !neuK.has(x.neu)) F(`ALT: ${id}: Ziel ${x.neu} gibt es im neuen Plan nicht`);
+  // Verschoben darf auch in einen anderen Ordner desselben Raums (z. B. Doppelung zusammengelegt)
+  if (x.status !== 'gestrichen' && !neuK.has(x.neu) && !(x.status === 'verschoben' && kRaum.has(x.neu))) F(`ALT: ${id}: Ziel ${x.neu} gibt es im neuen Plan nicht`);
   if ((x.status === 'übernommen' || x.status === 'angepasst') && x.neu !== id) F(`ALT: ${id}: übernommen/angepasst muss die ID behalten (Lernstand, Karten)`);
 }
 for (const x of an) if (!altK.includes(x.alt)) F(`ALT: ${x.alt} ist keine alte Können-Aussage dieses Ordners`);

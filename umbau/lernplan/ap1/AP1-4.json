@@ -176,22 +176,6 @@
               ]
             },
             {
-              "id": "AP1-4-1-2-K4",
-              "text": "Du kannst Wege nennen, die Größe des verbauten Arbeitsspeichers zu prüfen: UEFI/BIOS, Task-Manager, Systeminformationen.",
-              "stufe": 1,
-              "herkunft": [
-                "beleg:2026H-A2-ba"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K5",
-              "text": "Du kannst beschreiben, wie du einen defekten Speicherriegel eingrenzt: Riegel einzeln einsetzen und testen, Gegenprobe im selben Steckplatz.",
-              "stufe": 2,
-              "herkunft": [
-                "beleg:2026H-A2-bb"
-              ]
-            },
-            {
               "id": "AP1-4-1-2-K6",
               "text": "Du kannst logische Prozessoren und Cache erklären: Ein Kern führt mit Hyper-Threading zwei Threads aus; der Cache ist ein schneller Zwischenspeicher, der Zugriffe auf langsameren Speicher spart.",
               "stufe": 2,
@@ -269,7 +253,7 @@
             },
             {
               "id": "AP1-4-1-3-K5",
-              "text": "Du kannst je einen Vor- und Nachteil einer M.2-SSD gegenüber einer SATA-SSD nennen: schneller und kompakter gegenüber teurer und wenigen Steckplätzen.",
+              "text": "Du kannst je einen Vor- und Nachteil einer M.2-SSD mit NVMe gegenüber einer SATA-SSD nennen: deutlich schneller und kompakter gegenüber teurer und wenigen Steckplätzen; eine M.2-SSD mit SATA ist nicht schneller.",
               "stufe": 1,
               "herkunft": [
                 "beleg:2022F-A2-d"
@@ -957,14 +941,6 @@
           ],
           "koennen": [
             {
-              "id": "AP1-4-3-1-K1",
-              "text": "Du kannst ergonomische Anforderungen an einen Bildschirmarbeitsplatz nennen.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.03.01.1"
-              ]
-            },
-            {
               "id": "AP1-4-3-1-K2",
               "text": "Du kannst Maßnahmen nennen, um einen Bildschirmarbeitsplatz ergonomischer zu gestalten: höhenverstellbarer Tisch und Stuhl, externer Monitor mit Oberkante auf Augenhöhe, getrennte Tastatur und Maus, blendfreie Aufstellung, gute Beleuchtung, Kabel sicher verlegen.",
               "stufe": 1,
@@ -1038,14 +1014,6 @@
               ]
             },
             {
-              "id": "AP1-4-3-2-K2",
-              "text": "Du kannst Einstellungen nennen, die den Zugriff auf Webseiten erleichtern.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.03.03.2"
-              ]
-            },
-            {
               "id": "AP1-4-3-2-K3",
               "text": "Du kannst Einstellungsmöglichkeiten für barrierefreien Zugriff erklären: Schriftgröße und Zoom, hoher Kontrast, Vorlesefunktion, Bedienung allein mit der Tastatur.",
               "stufe": 2,
@@ -1071,6 +1039,13 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Barrierefreiheitsstärkungsgesetz (BFSG): Seit 28.6.2025 müssen viele Produkte und Dienste für Verbraucher barrierefrei sein; Maßstab für Webseiten sind die WCAG 2.1/2.2.",
+              "quellen": [
+                "gegenpruefung:2026-10"
+              ],
+              "grund": "Aktueller Rechtsstand (P30), neben der BITV 2.0"
             }
           ],
           "hinweis": "Barrierefreie Bildschirmmasken (AP1.04.07.3) stehen im Ordner Programmieren und Modellieren."
@@ -1198,15 +1173,15 @@
       },
       {
         "alt": "AP1-4-1-2-K4",
-        "status": "angepasst",
-        "neu": "AP1-4-1-2-K4",
-        "grund": "ein Operator (F1): nennen; Eingrenzen jetzt in K5"
+        "status": "verschoben",
+        "neu": "AP1-1-5-3-K3",
+        "grund": "ein Operator (F1): nennen; Eingrenzen jetzt in K5; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-1-5-3-K3 (RAM-Größe prüfen (2026H-A2-ba) stand zweimal)"
       },
       {
         "alt": "AP1-4-1-2-K5",
-        "status": "angepasst",
-        "neu": "AP1-4-1-2-K5",
-        "grund": "„beschreiben“ wie in 2026H-A2-bb statt „Du kennst“"
+        "status": "verschoben",
+        "neu": "AP1-1-5-3-K6",
+        "grund": "„beschreiben“ wie in 2026H-A2-bb statt „Du kennst“; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-1-5-3-K6 (Speicherriegel tauschen (2026H-A2-bb) stand zweimal)"
       },
       {
         "alt": "AP1-4-1-3-K1",
@@ -1360,9 +1335,9 @@
       },
       {
         "alt": "AP1-4-3-1-K1",
-        "status": "übernommen",
-        "neu": "AP1-4-3-1-K1",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-4-3-1-K2",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-4-3-1-K2 (Ergonomie-Anforderungen und Maßnahmen nennen fragten dasselbe)"
       },
       {
         "alt": "AP1-4-3-1-K2",
@@ -1390,9 +1365,9 @@
       },
       {
         "alt": "AP1-4-3-2-K2",
-        "status": "übernommen",
-        "neu": "AP1-4-3-2-K2",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-4-3-2-K3",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-4-3-2-K3 („Einstellungen nennen“ steckt in „erklären“)"
       },
       {
         "alt": "AP1-4-3-2-K3",
@@ -1455,7 +1430,7 @@
   "meta": {
     "schicht": "3+4",
     "regelwerk_version": "1.5",
-    "stand": "2026-10-13",
+    "stand": "2026-10-14",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-4-1-5 (Hardware einbauen), AP1-4-1-6 (Kennzeichnung, Sensoren) und AP1-4-2-4 (Übertragungsraten), weil Stichpunkte sonst über 7 Aussagen gekommen wären (F3). AP1.03.01.2 und AP1.03.03.1 sind mit AP1-5 und AP1-6 geteilt.",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1466,7 +1441,8 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitte Hardware (inkl. Arbeitsplatz) und Multimedia",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 1.2, 1.3, 2.1–2.3, 2.5, 2.8–2.11, 4.1",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Installation von Hardware, IT-Grundkenntnisse (Rechnen), Schnittstellen, Prozessoren und Speicher, USV, Barrierefreiheit, Nachhaltigkeit"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Installation von Hardware, IT-Grundkenntnisse (Rechnen), Schnittstellen, Prozessoren und Speicher, USV, Barrierefreiheit, Nachhaltigkeit",
+      "gegenpruefung:2026-10": "Unabhängige Gegenprüfung AP1 vom 14.10.2026 (Bericht umbau/berichte/AP1-gegenpruefung.md): aktueller Rechts- und Technikstand; Kür nach Entscheidung des Projektinhabers (P30)."
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1763,7 +1739,7 @@
           ],
           "ring": "Kern",
           "wo": [
-            "AP1-4-3-1-K1",
+            "AP1-4-3-1-K2",
             "AP1-4-3-1-K2",
             "AP1-4-3-1-K3"
           ]
@@ -1826,6 +1802,17 @@
             "AP1-5"
           ],
           "notiz": "KI-Software (AP1.03.01.5)"
+        },
+        {
+          "thema": "Barrierefreiheitsstärkungsgesetz (BFSG), WCAG",
+          "quellen": [
+            "gegenpruefung:2026-10"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-2"
+          ],
+          "notiz": "Gegenprüfung 2026-10-14"
         }
       ]
     },
@@ -1936,6 +1923,64 @@
           ]
         }
       }
-    ]
+    ],
+    "gegenpruefung": {
+      "stand": "2026-10-14",
+      "bericht": "umbau/berichte/AP1-gegenpruefung.md",
+      "aenderungen": [
+        {
+          "id": "AP1-4-2-1-K4",
+          "aenderung": "aufgenommen",
+          "von": "AP1-1-5-3-K2",
+          "grund": "931 GiB (2026H-A2-a) stand zweimal"
+        },
+        {
+          "id": "AP1-4-3-3-K4",
+          "aenderung": "aufgenommen",
+          "von": "AP1-2-4-1-K4",
+          "grund": "ökologische Aspekte (2024H-A4-e) standen zweimal"
+        },
+        {
+          "id": "AP1-4-1-2-K4",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-1-5-3-K3",
+          "grund": "RAM-Größe prüfen (2026H-A2-ba) stand zweimal"
+        },
+        {
+          "id": "AP1-4-1-2-K5",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-1-5-3-K6",
+          "grund": "Speicherriegel tauschen (2026H-A2-bb) stand zweimal"
+        },
+        {
+          "id": "AP1-4-3-2-K2",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-4-3-2-K3",
+          "grund": "„Einstellungen nennen“ steckt in „erklären“"
+        },
+        {
+          "id": "AP1-4-3-1-K1",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-4-3-1-K2",
+          "grund": "Ergonomie-Anforderungen und Maßnahmen nennen fragten dasselbe"
+        },
+        {
+          "id": "AP1-4-1-3-K5",
+          "aenderung": "geändert",
+          "grund": "nur M.2 mit NVMe ist schneller als SATA"
+        },
+        {
+          "id": "AP1-4-3-2",
+          "aenderung": "Kür neu",
+          "grund": "Aktueller Rechtsstand (P30), neben der BITV 2.0"
+        },
+        {
+          "id": "AP1-4-1-4-K3",
+          "aenderung": "aufgenommen",
+          "von": "AP1-6-1-4-K7",
+          "grund": "WLAN- und Bluetooth-Symbol (2025F-A1-c) stand zweimal"
+        }
+      ]
+    }
   }
 }

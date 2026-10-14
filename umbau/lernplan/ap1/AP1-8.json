@@ -55,15 +55,6 @@
               ]
             },
             {
-              "id": "AP1-8-1-1-K3",
-              "text": "Du kannst Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.03.01.3.4",
-                "katalog:AP1.04.03.3"
-              ]
-            },
-            {
               "id": "AP1-8-1-1-K4",
               "text": "Du kannst erklären, was eine virtuelle Maschine bei Sprachen wie Java leistet: Sie führt Zwischencode auf verschiedenen Betriebssystemen aus.",
               "stufe": 2,
@@ -89,10 +80,11 @@
             },
             {
               "id": "AP1-8-1-1-K7",
-              "text": "Du kannst die Wahl einer IDE begründen: Editor, Übersetzer und Debugger in einer Oberfläche, dazu Hilfen wie Syntaxhervorhebung und Autovervollständigung.",
+              "text": "Du kannst Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären, auch was Debugging ist (Programm schrittweise ausführen und Variablen beobachten, um Fehler zu finden), und die Wahl einer IDE begründen: Editor, Übersetzer und Debugger in einer Oberfläche, dazu Hilfen wie Syntaxhervorhebung und Autovervollständigung.",
               "stufe": 4,
               "herkunft": [
-                "katalog:AP1.04.03.3"
+                "katalog:AP1.04.03.3",
+                "katalog:AP1.03.01.3.4"
               ]
             }
           ],
@@ -257,7 +249,8 @@
               "text": "Du kannst ein Kriterium für die Wahl einer Programmiersprache begründen, zum Beispiel Eignung für die Aufgabe, Kenntnisse im Team, verfügbare Frameworks.",
               "stufe": 4,
               "herkunft": [
-                "beleg:2024H-A2-b"
+                "beleg:2024H-A2-b",
+                "katalog:AP1.04.03.7"
               ]
             }
           ],
@@ -324,14 +317,6 @@
               ]
             },
             {
-              "id": "AP1-8-2-1-K4",
-              "text": "Du kannst erklären, was eine Funktion ist: ein benannter Codeblock mit Parametern und Rückgabewert.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.04.06.5"
-              ]
-            },
-            {
               "id": "AP1-8-2-1-K5",
               "text": "Du kannst zählergesteuerte, kopfgesteuerte und fußgesteuerte Schleifen unterscheiden.",
               "stufe": 2,
@@ -341,10 +326,18 @@
             },
             {
               "id": "AP1-8-2-1-K6",
-              "text": "Du kannst Prozedur (ohne Rückgabewert) und Funktion (mit Rückgabewert) unterscheiden.",
+              "text": "Du kannst erklären, was eine Funktion ist (ein benannter Codeblock mit Parametern und Rückgabewert), und sie von einer Prozedur ohne Rückgabewert unterscheiden.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.5"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K7",
+              "text": "Du kannst Bedingungen und Rechnungen mit Vergleichsoperatoren (gleich, ungleich, kleiner, größer), logischen Operatoren (UND, ODER, NICHT) und dem Modulo-Operator (Rest einer ganzzahligen Division) interpretieren.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.06.4"
               ]
             }
           ],
@@ -401,14 +394,6 @@
               ]
             },
             {
-              "id": "AP1-8-2-2-K2",
-              "text": "Du kannst eine einfache Verzweigung und eine Schleife in Pseudocode abbilden und die Struktur durch Einrücken sichtbar machen.",
-              "stufe": 3,
-              "herkunft": [
-                "katalog:AP1.04.07.1"
-              ]
-            },
-            {
               "id": "AP1-8-2-2-K3",
               "text": "Du kannst eine fehlerhafte Zeile in Pseudocode korrigieren.",
               "stufe": 3,
@@ -418,7 +403,7 @@
             },
             {
               "id": "AP1-8-2-2-K4",
-              "text": "Du kannst einen kurzen, in Worten beschriebenen Ablauf in Pseudocode abbilden.",
+              "text": "Du kannst einen kurzen, in Worten beschriebenen Ablauf mit Verzweigungen und Schleifen in Pseudocode abbilden und die Struktur durch Einrücken sichtbar machen.",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.1"
@@ -525,14 +510,6 @@
               ]
             },
             {
-              "id": "AP1-8-2-3-K5",
-              "text": "Du kannst ein Ergebnis wie verlangt angeben, zum Beispiel mit zwei Nachkommastellen.",
-              "stufe": 1,
-              "herkunft": [
-                "beleg:2025F-A3-d"
-              ]
-            },
-            {
               "id": "AP1-8-2-3-K6",
               "text": "Du kannst den Rückgabewert einer Funktion mit verschachtelten Schleifen über ein zweidimensionales Array ermitteln.",
               "stufe": 3,
@@ -572,7 +549,7 @@
           "koennen": [
             {
               "id": "AP1-8-2-4-K1",
-              "text": "Du kannst formale Fehler (Verstoß gegen die Regeln der Sprache, das Programm startet nicht) und inhaltliche Fehler (das Programm läuft, liefert aber ein falsches Ergebnis) unterscheiden.",
+              "text": "Du kannst formale Fehler (Verstoß gegen die Regeln der Sprache, das Programm startet nicht), Laufzeitfehler (das Programm bricht bei bestimmten Daten ab, zum Beispiel Division durch null oder Zugriff über das Array-Ende) und inhaltliche Fehler (das Programm läuft, liefert aber ein falsches Ergebnis) unterscheiden.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.9"
@@ -593,14 +570,6 @@
               "stufe": 2,
               "herkunft": [
                 "beleg:2026H-A3-bb"
-              ]
-            },
-            {
-              "id": "AP1-8-2-4-K4",
-              "text": "Du kannst erklären, was Debugging ist.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.04.06.9"
               ]
             },
             {
@@ -662,11 +631,12 @@
             },
             {
               "id": "AP1-8-3-1-K3",
-              "text": "Du kannst eine Generalisierung zwischen Akteuren darstellen: Der speziellere Akteur kann alles, was der allgemeine kann.",
+              "text": "Du kannst eine Generalisierung zwischen Akteuren und zwischen Anwendungsfällen darstellen: Das Speziellere kann alles, was das Allgemeine kann, und mehr.",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024H-A2-d",
-                "beleg:2026H-A1-a"
+                "beleg:2026H-A1-a",
+                "katalog:ANH.uml-anwendungsfalldiagramm"
               ]
             },
             {
@@ -738,15 +708,16 @@
             },
             {
               "id": "AP1-8-3-2-K3",
-              "text": "Du kannst die Sichtbarkeitszeichen + für public und - für private verwenden.",
+              "text": "Du kannst die Sichtbarkeitszeichen + für public, - für private, # für protected und ~ für package verwenden.",
               "stufe": 3,
               "herkunft": [
-                "beleg:2026F-A4-ba"
+                "beleg:2026F-A4-ba",
+                "katalog:ANH.uml-klassendiagramm"
               ]
             },
             {
               "id": "AP1-8-3-2-K4",
-              "text": "Du kannst eine Assoziation zwischen zwei Klassen mit Multiplizitäten wie 1 und * interpretieren.",
+              "text": "Du kannst eine Assoziation zwischen zwei Klassen mit Multiplizitäten wie 1 und * interpretieren, auch eine gerichtete Assoziation, bei der ein Pfeil die Navigierbarkeit zeigt.",
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.uml-klassendiagramm"
@@ -997,33 +968,17 @@
           ],
           "koennen": [
             {
-              "id": "AP1-8-4-2-K1",
-              "text": "Du kannst Redundanz erklären: Dieselbe Information ist mehrfach gespeichert.",
+              "id": "AP1-8-4-2-K2",
+              "text": "Du kannst erklären, was Redundanz ist, und ein Problem beschreiben, das dadurch entsteht: Dieselbe Information ist mehrfach gespeichert; wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten.",
               "stufe": 2,
               "herkunft": [
+                "beleg:2025F-A4-fb",
                 "beleg:2025F-A4-fa"
               ]
             },
             {
-              "id": "AP1-8-4-2-K2",
-              "text": "Du kannst ein Problem beschreiben, das durch Redundanz entsteht: Wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten.",
-              "stufe": 2,
-              "herkunft": [
-                "beleg:2025F-A4-fb"
-              ]
-            },
-            {
               "id": "AP1-8-4-2-K3",
-              "text": "Du kannst für ein Attribut einen passenden Datentyp begründen, zum Beispiel Datum, Ganzzahl oder Text.",
-              "stufe": 4,
-              "herkunft": [
-                "beleg:2026H-A3-cb",
-                "katalog:AP1.04.06.3"
-              ]
-            },
-            {
-              "id": "AP1-8-4-2-K4",
-              "text": "Du kannst begründen, warum eine Postleitzahl als Text gespeichert wird: Führende Nullen bleiben erhalten, und gerechnet wird damit nicht.",
+              "text": "Du kannst für ein Attribut einen passenden Datentyp begründen, zum Beispiel Datum, Ganzzahl oder Text, auch warum eine Postleitzahl als Text gespeichert wird: Führende Nullen bleiben erhalten, und gerechnet wird damit nicht.",
               "stufe": 4,
               "herkunft": [
                 "beleg:2026H-A3-cb",
@@ -1102,7 +1057,8 @@
               "stufe": 2,
               "herkunft": [
                 "beleg:2023H-A4-ab"
-              ]
+              ],
+              "vorgegeben": "Phasen des Datenbankentwurfs"
             },
             {
               "id": "AP1-8-4-5-K5",
@@ -1266,9 +1222,9 @@
       },
       {
         "alt": "AP1-8-1-1-K3",
-        "status": "übernommen",
-        "neu": "AP1-8-1-1-K3",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-8-1-1-K7",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-8-1-1-K7 (Editor, Debugger und IDE standen doppelt)"
       },
       {
         "alt": "AP1-8-1-1-K4",
@@ -1362,9 +1318,9 @@
       },
       {
         "alt": "AP1-8-2-1-K4",
-        "status": "übernommen",
-        "neu": "AP1-8-2-1-K4",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-8-2-1-K6",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-8-2-1-K6 (Funktion erklären steckt in Prozedur und Funktion unterscheiden)"
       },
       {
         "alt": "AP1-8-2-1-K5",
@@ -1374,9 +1330,9 @@
       },
       {
         "alt": "AP1-8-2-1-K6",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-8-2-1-K6",
-        "grund": ""
+        "grund": "Gegenprüfung 2026-10-14: mit AP1-8-2-1-K4 zusammengelegt"
       },
       {
         "alt": "AP1-8-2-2-K1",
@@ -1386,9 +1342,9 @@
       },
       {
         "alt": "AP1-8-2-2-K2",
-        "status": "angepasst",
-        "neu": "AP1-8-2-2-K2",
-        "grund": "P16 (K2): Operator „abbilden“"
+        "status": "verschoben",
+        "neu": "AP1-8-2-2-K4",
+        "grund": "P16 (K2): Operator „abbilden“; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-8-2-2-K4 (Verzweigung und Schleife abbilden steckt in Ablauf abbilden)"
       },
       {
         "alt": "AP1-8-2-2-K3",
@@ -1428,15 +1384,15 @@
       },
       {
         "alt": "AP1-8-2-3-K5",
-        "status": "übernommen",
-        "neu": "AP1-8-2-3-K5",
-        "grund": ""
+        "status": "gestrichen",
+        "neu": null,
+        "grund": "Gegenprüfung 2026-10-14: Ergebnis mit zwei Nachkommastellen angeben ist Prüfungstechnik (P32)"
       },
       {
         "alt": "AP1-8-2-4-K1",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-8-2-4-K1",
-        "grund": ""
+        "grund": "Gegenprüfung 2026-10-14: Laufzeitfehler als eigene Fehlerart"
       },
       {
         "alt": "AP1-8-2-4-K2",
@@ -1452,9 +1408,9 @@
       },
       {
         "alt": "AP1-8-2-4-K4",
-        "status": "übernommen",
-        "neu": "AP1-8-2-4-K4",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-8-1-1-K7",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-8-1-1-K7 (Debugging erklären stand doppelt)"
       },
       {
         "alt": "AP1-8-2-4-K5",
@@ -1512,9 +1468,9 @@
       },
       {
         "alt": "AP1-8-3-2-K3",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-8-3-2-K3",
-        "grund": "jetzt belegt (2026F-A4-ba)"
+        "grund": "jetzt belegt (2026F-A4-ba); Gegenprüfung 2026-10-14: Katalog-Anhang ist Pflicht (P24): # und ~"
       },
       {
         "alt": "AP1-8-3-2-K4",
@@ -1590,15 +1546,15 @@
       },
       {
         "alt": "AP1-8-4-2-K1",
-        "status": "übernommen",
-        "neu": "AP1-8-4-2-K1",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-8-4-2-K2",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-8-4-2-K2 (Redundanz erklären steckt in Problem beschreiben)"
       },
       {
         "alt": "AP1-8-4-2-K2",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-8-4-2-K2",
-        "grund": ""
+        "grund": "Gegenprüfung 2026-10-14: mit AP1-8-4-2-K1 zusammengelegt"
       },
       {
         "alt": "AP1-8-4-2-K3",
@@ -1608,9 +1564,9 @@
       },
       {
         "alt": "AP1-8-4-2-K4",
-        "status": "übernommen",
-        "neu": "AP1-8-4-2-K4",
-        "grund": "jetzt belegt (Musterlösung 2026H-A3-cb)"
+        "status": "verschoben",
+        "neu": "AP1-8-4-2-K3",
+        "grund": "jetzt belegt (Musterlösung 2026H-A3-cb); Gegenprüfung 2026-10-14: zusammengelegt mit AP1-8-4-2-K3 (Postleitzahl als Text ist ein Fall von „Datentyp begründen“)"
       },
       {
         "alt": "AP1-8-4-3-K1",
@@ -1721,7 +1677,7 @@
   "meta": {
     "schicht": "3+4",
     "regelwerk_version": "1.5",
-    "stand": "2026-10-13",
+    "stand": "2026-10-14",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neuer Stichpunkt AP1-8-4-5 (Primär- und Fremdschlüssel, Belege 2025H-A4-a und 2023H-A4-ab). Anhang-Notationen (EPK, BPMN, Aggregation, Komposition) sind Pflicht (P24 entschieden).",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1870,7 +1826,7 @@
           ],
           "ring": "Kern",
           "wo": [
-            "AP1-8-2-1-K4",
+            "AP1-8-2-1-K6",
             "AP1-8-2-1-K6"
           ]
         },
@@ -1894,7 +1850,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-8-2-2-K1",
-            "AP1-8-2-2-K2"
+            "AP1-8-2-2-K4"
           ]
         },
         {
@@ -1918,7 +1874,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-8-2-4-K1",
-            "AP1-8-2-4-K4"
+            "AP1-8-1-1-K7"
           ]
         },
         {
@@ -2036,7 +1992,7 @@
           ],
           "ring": "Kern",
           "wo": [
-            "AP1-8-4-2-K1",
+            "AP1-8-4-2-K2",
             "AP1-8-4-2-K2",
             "AP1-8-4-2-K5"
           ]
@@ -2154,10 +2110,10 @@
             "AP1-8-1-1-K1"
           ],
           "Editoren": [
-            "AP1-8-1-1-K3"
+            "AP1-8-1-1-K7"
           ],
           "Debugger": [
-            "AP1-8-1-1-K3"
+            "AP1-8-1-1-K7"
           ]
         }
       },
@@ -2228,7 +2184,7 @@
             "AP1-8-2-1-K6"
           ],
           "Funktionen": [
-            "AP1-8-2-1-K4"
+            "AP1-8-2-1-K6"
           ]
         }
       },
@@ -2237,7 +2193,7 @@
         "paar": "Debugging, formale und inhaltliche Fehler",
         "abgedeckt": {
           "Debugging": [
-            "AP1-8-2-4-K4"
+            "AP1-8-1-1-K7"
           ],
           "formale und inhaltliche Fehler": [
             "AP1-8-2-4-K1"
@@ -2274,6 +2230,95 @@
           ]
         }
       }
-    ]
+    ],
+    "gegenpruefung": {
+      "stand": "2026-10-14",
+      "bericht": "umbau/berichte/AP1-gegenpruefung.md",
+      "aenderungen": [
+        {
+          "id": "AP1-8-1-3-K5",
+          "aenderung": "aufgenommen",
+          "von": "AP1-5-1-2-K5",
+          "grund": "Wahl der Programmiersprache (2024H-A2-b) stand zweimal"
+        },
+        {
+          "id": "AP1-8-1-3-K3",
+          "aenderung": "aufgenommen",
+          "von": "AP1-5-2-5-K6",
+          "grund": "statische und dynamische Webseite (2025F-A3-b) stand zweimal"
+        },
+        {
+          "id": "AP1-8-4-2-K4",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-4-2-K3",
+          "grund": "Postleitzahl als Text ist ein Fall von „Datentyp begründen“"
+        },
+        {
+          "id": "AP1-8-4-2-K1",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-4-2-K2",
+          "grund": "Redundanz erklären steckt in Problem beschreiben"
+        },
+        {
+          "id": "AP1-8-1-1-K3",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-1-1-K7",
+          "grund": "Editor, Debugger und IDE standen doppelt"
+        },
+        {
+          "id": "AP1-8-2-4-K4",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-1-1-K7",
+          "grund": "Debugging erklären stand doppelt"
+        },
+        {
+          "id": "AP1-8-2-1-K4",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-2-1-K6",
+          "grund": "Funktion erklären steckt in Prozedur und Funktion unterscheiden"
+        },
+        {
+          "id": "AP1-8-2-2-K2",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-2-2-K4",
+          "grund": "Verzweigung und Schleife abbilden steckt in Ablauf abbilden"
+        },
+        {
+          "id": "AP1-8-2-3-K5",
+          "aenderung": "gestrichen",
+          "grund": "Ergebnis mit zwei Nachkommastellen angeben ist Prüfungstechnik (P32)"
+        },
+        {
+          "id": "AP1-8-4-5-K4",
+          "aenderung": "geändert",
+          "grund": "Phasen waren in 2023H-A4-ab vorgegeben, nur zu ordnen"
+        },
+        {
+          "id": "AP1-8-2-1-K7",
+          "aenderung": "neu",
+          "grund": "fehlte: Grundlage für Schreibtischtests und Pseudocode-Aufgaben (2022H-A4-b, 2021H-A2-e)"
+        },
+        {
+          "id": "AP1-8-2-4-K1",
+          "aenderung": "geändert",
+          "grund": "Laufzeitfehler als eigene Fehlerart"
+        },
+        {
+          "id": "AP1-8-3-2-K3",
+          "aenderung": "geändert",
+          "grund": "Katalog-Anhang ist Pflicht (P24): # und ~"
+        },
+        {
+          "id": "AP1-8-3-2-K4",
+          "aenderung": "geändert",
+          "grund": "Katalog-Anhang ist Pflicht (P24): gerichtete Assoziation"
+        },
+        {
+          "id": "AP1-8-3-1-K3",
+          "aenderung": "geändert",
+          "grund": "Katalog-Anhang ist Pflicht (P24): Generalisierung von Anwendungsfällen"
+        }
+      ]
+    }
   }
 }

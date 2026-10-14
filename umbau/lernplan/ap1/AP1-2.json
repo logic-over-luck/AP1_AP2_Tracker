@@ -248,14 +248,6 @@
               ]
             },
             {
-              "id": "AP1-2-2-1-K3",
-              "text": "Du kannst aus einer Situationsbeschreibung den Bedarf eines Kunden ermitteln.",
-              "stufe": 3,
-              "herkunft": [
-                "katalog:AP1.04.01.1"
-              ]
-            },
-            {
               "id": "AP1-2-2-1-K4",
               "text": "Du kannst für eine Kundenbefragung offene und geschlossene Fragen passend einsetzen.",
               "stufe": 3,
@@ -668,14 +660,13 @@
               ]
             }
           ],
-          "grenzen": [],
-          "kuer": [
+          "grenzen": [
             {
-              "text": "Suchoperatoren für Suchmaschinen.",
-              "quellen": [
-                "podcast:themen-ap1"
-              ],
-              "grund": "Laut IT-Berufe-Podcast #190 aus dem AP1-Katalog gestrichen; kein Beleg nach aktuellem Katalog, keine Katalogstelle eines anderen Raums."
+              "text": "Suchoperatoren für Suchmaschinen gehören nicht dazu.",
+              "begruendung": "B3: Laut Änderungsliste alter → neuer AP1-Katalog nicht mehr Teil des AP1-Katalogs; AP1.02.04.1 verlangt, Quellen zu beschaffen und einzuschätzen, nicht Suchtechnik.",
+              "katalog": [
+                "AP1.02.04.1"
+              ]
             }
           ]
         },
@@ -810,14 +801,6 @@
                 "katalog:AP1.07.02.1",
                 "katalog:AP1.07.02.2",
                 "katalog:AP1.07.02.3"
-              ]
-            },
-            {
-              "id": "AP1-2-4-1-K4",
-              "text": "Du kannst ökologische Gesichtspunkte einer Anschaffung beschreiben, zum Beispiel Energieverbrauch, Materialeinsatz, Emissionen, Ressourcen für die Herstellung, Entsorgung des Altgeräts.",
-              "stufe": 2,
-              "herkunft": [
-                "beleg:2024H-A4-e"
               ]
             },
             {
@@ -1025,28 +1008,12 @@
               ]
             },
             {
-              "id": "AP1-2-5-1-K3",
-              "text": "Du kannst Maßnahmen nennen, mit denen Mitarbeiter einbezogen werden: früh informieren, beteiligen, Rückmeldungen aufnehmen.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.07.05.3"
-              ]
-            },
-            {
               "id": "AP1-2-5-1-K4",
-              "text": "Du kannst Wege der Mitarbeiterqualifizierung nennen: Schulung am Arbeitsplatz, Webinar, Video-Tutorial, Blended Learning, Multiplikatoren.",
-              "stufe": 1,
+              "text": "Du kannst Wege der Mitarbeiterqualifizierung beschreiben: Schulung am Arbeitsplatz, Webinar, Video-Tutorial, Blended Learning (Präsenzschulung und Online-Lernen verbunden) und Multiplikatoren, die ihr Wissen an Kollegen weitergeben.",
+              "stufe": 2,
               "herkunft": [
                 "katalog:AP1.07.05.3.1",
                 "beleg:2021H-A3-d"
-              ]
-            },
-            {
-              "id": "AP1-2-5-1-K5",
-              "text": "Du kannst erklären, dass Blended Learning Präsenzschulung und Online-Lernen verbindet und Multiplikatoren ihr Wissen an Kollegen weitergeben.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.07.05.3.1"
               ]
             },
             {
@@ -1054,7 +1021,8 @@
               "text": "Du kannst Maßnahmen beschreiben, mit denen du Bedenken der Beschäftigten gegen eine Veränderung entgegenwirkst, zum Beispiel informieren, beteiligen, schulen, Ansprechpartner benennen.",
               "stufe": 2,
               "herkunft": [
-                "beleg:2025H-A1-eb"
+                "beleg:2025H-A1-eb",
+                "katalog:AP1.07.05.3"
               ]
             }
           ],
@@ -1100,15 +1068,6 @@
               ]
             },
             {
-              "id": "AP1-2-5-2-K2",
-              "text": "Du kannst Ursachen von Widerständen nennen: Angst vor Kompetenzverlust, Wissenslücken, persönliche Historie.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.07.05.4",
-                "beleg:2025H-A1-ea"
-              ]
-            },
-            {
               "id": "AP1-2-5-2-K3",
               "text": "Du kannst zu einer Ursache von Widerstand eine passende Maßnahme beschreiben, zum Beispiel Schulung bei Wissenslücken.",
               "stufe": 2,
@@ -1133,7 +1092,8 @@
                 "katalog:AP1.07.05.4",
                 "katalog:AP1.07.05.4.1",
                 "katalog:AP1.07.05.4.2",
-                "katalog:AP1.07.05.4.3"
+                "katalog:AP1.07.05.4.3",
+                "beleg:2025H-A1-ea"
               ]
             }
           ],
@@ -1274,9 +1234,9 @@
       },
       {
         "alt": "AP1-2-2-1-K3",
-        "status": "angepasst",
-        "neu": "AP1-2-2-1-K3",
-        "grund": "ein Operator (F1): ermitteln; das Angebot steht jetzt in AP1-2-2-4"
+        "status": "verschoben",
+        "neu": "AP1-2-2-1-K6",
+        "grund": "ein Operator (F1): ermitteln; das Angebot steht jetzt in AP1-2-2-4; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-2-2-1-K6 („Bedarf ermitteln“ steckt in „Bedarfsanalyse durchführen“)"
       },
       {
         "alt": "AP1-2-2-1-K4",
@@ -1418,9 +1378,9 @@
       },
       {
         "alt": "AP1-2-4-1-K4",
-        "status": "übernommen",
-        "neu": "AP1-2-4-1-K4",
-        "grund": "Beispiele aus Musterlösung 2024H-A4-e ergänzt"
+        "status": "verschoben",
+        "neu": "AP1-4-3-3-K4",
+        "grund": "Beispiele aus Musterlösung 2024H-A4-e ergänzt; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-4-3-3-K4 (ökologische Aspekte (2024H-A4-e) standen zweimal)"
       },
       {
         "alt": "AP1-2-4-1-K5",
@@ -1472,9 +1432,9 @@
       },
       {
         "alt": "AP1-2-5-1-K3",
-        "status": "übernommen",
-        "neu": "AP1-2-5-1-K3",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-2-5-1-K6",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-2-5-1-K6 (Mitarbeiter einbeziehen und Bedenken begegnen fragten fast dasselbe)"
       },
       {
         "alt": "AP1-2-5-1-K4",
@@ -1484,9 +1444,9 @@
       },
       {
         "alt": "AP1-2-5-1-K5",
-        "status": "übernommen",
-        "neu": "AP1-2-5-1-K5",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-2-5-1-K4",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-2-5-1-K4 (Schulungswege standen mehrfach)"
       },
       {
         "alt": "AP1-2-5-2-K1",
@@ -1496,9 +1456,9 @@
       },
       {
         "alt": "AP1-2-5-2-K2",
-        "status": "übernommen",
-        "neu": "AP1-2-5-2-K2",
-        "grund": "jetzt mit Beleg 2025H-A1-ea"
+        "status": "verschoben",
+        "neu": "AP1-2-5-2-K5",
+        "grund": "jetzt mit Beleg 2025H-A1-ea; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-2-5-2-K5 („Ursachen nennen“ steckt in „Ursachen erklären“)"
       },
       {
         "alt": "AP1-2-5-2-K3",
@@ -1549,7 +1509,7 @@
   "meta": {
     "schicht": "3+4",
     "regelwerk_version": "1.5",
-    "stand": "2026-10-13",
+    "stand": "2026-10-14",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-2-1-3, -2-4, -3-3, -4-3, -5-3, weil alte Themenblöcke nur 2 Stichpunkte hatten (F4) oder ein Stichpunkt über 7 Aussagen gekommen wäre (F3).",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1800,11 +1760,11 @@
           "quellen": [
             "podcast:themen-ap1"
           ],
-          "ring": "Kür",
+          "ring": "Außen",
           "wo": [
             "AP1-2-3-2"
           ],
-          "notiz": "laut Podcast #190 aus dem AP1-Katalog gestrichen"
+          "notiz": "laut Podcast #190 aus dem AP1-Katalog gestrichen Gegenprüfung 2026-10-14: Kür entfernt, jetzt Außen (B3)."
         },
         {
           "thema": "Präsentation gestalten, Argumentations- und Präsentationstechniken",
@@ -1860,11 +1820,11 @@
             "podcast:themen-ap1",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Kern",
+          "ring": "Ordner",
           "wo": [
-            "AP1-2-4-1-K4"
+            "AP1-4"
           ],
-          "notiz": "Energieverbrauch und Recycling von Geräten: Ordner AP1-4"
+          "notiz": "Energieverbrauch und Recycling von Geräten: Ordner AP1-4 Gegenprüfung 2026-10-14: AP1-2-4-1-K4 → AP1-4-3-3-K4."
         },
         {
           "thema": "Wirtschaftssektoren, betriebliche Grundfunktionen, Rechtsformen",
@@ -1948,7 +1908,7 @@
           "wo": [
             "AP1-2-5-1-K1",
             "AP1-2-5-1-K2",
-            "AP1-2-5-1-K3"
+            "AP1-2-5-1-K6"
           ]
         },
         {
@@ -1959,7 +1919,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-2-5-1-K4",
-            "AP1-2-5-1-K5"
+            "AP1-2-5-1-K4"
           ]
         },
         {
@@ -1970,7 +1930,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-2-5-2-K1",
-            "AP1-2-5-2-K2"
+            "AP1-2-5-2-K5"
           ]
         },
         {
@@ -2113,7 +2073,8 @@
             "AP1-2-4-1-K7"
           ],
           "ökologisch": [
-            "AP1-2-4-1-K4"
+            "AP1-2-4-1-K2",
+            "AP1-2-4-1-K3"
           ],
           "sozial": [
             "AP1-2-4-1-K6"
@@ -2136,10 +2097,10 @@
         "paar": "Blended Learning, Multiplikatoren",
         "abgedeckt": {
           "Blended Learning": [
-            "AP1-2-5-1-K5"
+            "AP1-2-5-1-K4"
           ],
           "Multiplikatoren": [
-            "AP1-2-5-1-K5"
+            "AP1-2-5-1-K4"
           ]
         }
       },
@@ -2157,7 +2118,6 @@
         "paar": "Kompetenzverlust, Wissenslücken, Historie",
         "abgedeckt": {
           "alle drei": [
-            "AP1-2-5-2-K2",
             "AP1-2-5-2-K5"
           ]
         }
@@ -2174,6 +2134,71 @@
           ]
         }
       }
-    ]
+    ],
+    "gegenpruefung": {
+      "stand": "2026-10-14",
+      "bericht": "umbau/berichte/AP1-gegenpruefung.md",
+      "aenderungen": [
+        {
+          "id": "AP1-2-2-3-K6",
+          "aenderung": "aufgenommen",
+          "von": "AP1-1-3-2-K3",
+          "grund": "Kunden-E-Mail (2023H-A2-f) stand zweimal"
+        },
+        {
+          "id": "AP1-2-4-1-K6",
+          "aenderung": "aufgenommen",
+          "von": "AP1-1-4-1-K6",
+          "grund": "Homeoffice Vor- und Nachteile (2023H-A2-d) stand zweimal"
+        },
+        {
+          "id": "AP1-2-5-1-K2",
+          "aenderung": "aufgenommen",
+          "von": "AP1-1-3-3-K2",
+          "grund": "Vorteil der KI-Unterstützung (2025F-A4-b) stand doppelt"
+        },
+        {
+          "id": "AP1-2-5-1-K5",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-2-5-1-K4",
+          "grund": "Schulungswege standen mehrfach"
+        },
+        {
+          "id": "AP1-2-5-1-K4",
+          "aenderung": "aufgenommen",
+          "von": "AP1-1-4-2-K5",
+          "grund": "Schulungswege (2021H-A3-d) standen in zwei Ordnern"
+        },
+        {
+          "id": "AP1-2-5-1-K3",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-2-5-1-K6",
+          "grund": "Mitarbeiter einbeziehen und Bedenken begegnen fragten fast dasselbe"
+        },
+        {
+          "id": "AP1-2-5-2-K2",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-2-5-2-K5",
+          "grund": "„Ursachen nennen“ steckt in „Ursachen erklären“"
+        },
+        {
+          "id": "AP1-2-4-1-K4",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-4-3-3-K4",
+          "grund": "ökologische Aspekte (2024H-A4-e) standen zweimal"
+        },
+        {
+          "id": "AP1-2-2-1-K3",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-2-2-1-K6",
+          "grund": "„Bedarf ermitteln“ steckt in „Bedarfsanalyse durchführen“"
+        },
+        {
+          "id": "AP1-2-3-2",
+          "aenderung": "Kür entfernt",
+          "grund": "laut Katalog-Änderung (B3) aus dem AP1-Katalog gestrichen"
+        }
+      ]
+    }
   }
 }

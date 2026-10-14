@@ -450,9 +450,12 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       Lernraum (Abnahme M1/M2 aus Lernsicht). Umwandlung nur im Build (`tools/vorschau-ap1.mjs`, Test
       `tests/vorschau-ap1.test.mjs`); `LERNSTUDIO_AP1=alt npm run build` baut den alten Stand. Karten über `alt_neu`:
       1.016 bleiben (40 umgehängt), 11 entfallen; 192 neue Aussagen ohne Karten sind gekennzeichnet. Fragen: P27, P28.
-- [ ] **Schritt 3d – Kritische Gegenprüfung AP1 (Entscheidung Projektinhaber, 14.10.2026):** eine unabhängige
-      Sitzung, die frühere Berichte nicht liest, prüft die Lernpläne fachlich und aus Lernsicht. Auftrag:
-      `umbau/auftraege/AP1-gegenpruefung.md`. Danach Abnahme durch den Projektinhaber (3b).
+- [x] **Schritt 3d – Kritische Gegenprüfung AP1 (14.10.2026):** unabhängige Sitzung ohne frühere Berichte, mit
+      Katalog und 11 Abschriften. Ergebnis: aus den Prüfungen fehlt nichts; vor allem Doppelungen über Ordnergrenzen.
+      Bericht mit Nachtrag zur Umsetzung: `umbau/berichte/AP1-gegenpruefung.md`. Eingebaut (Freigabe Projektinhaber):
+      652 → 604 Können-Aussagen, Protokoll je Ordner in `meta.gegenpruefung`; alle Ordner- und Raum-Prüfungen grün.
+      `lernplan-pruefen.mjs` erlaubt jetzt „verschoben“ in einen anderen Ordner desselben Raums. Entscheidungen P30–P32.
+      Danach Abnahme durch den Projektinhaber (3b).
 - [ ] **Schritt 3e – Lernkarten AP1 neu (Entscheidung Projektinhaber, 14.10.2026):** nach der Abnahme. Die KI
       entscheidet je alter Karte bleibt / bearbeitet / entfernt und ergänzt neue; IDs bleiben erhalten. Auftrag:
       `umbau/auftraege/AP1-karten.md`, Ergebnis in `umbau/karten/ap1/`.
@@ -498,6 +501,9 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P27 | **Art des Stichpunkts** (gefunden bei der Vorschau AP1): Die App nutzt eine Art je Stichpunkt (Wissen, Rechnen, Zeichnen, Schreiben) für Symbol und Lernprompt; der neue Lernplan hat dieses Feld nicht. Die Vorschau übernimmt die alte Art bei alter ID, die 18 neuen Stichpunkte gelten als „Wissen“. Soll der Lernplan ein Feld Art bekommen (z. B. abgeleitet aus Aufgabentyp der Teilaufgaben)? | offen |
 | P28 | **Wichtigkeit im neuen Lernplan** (gefunden bei der Vorschau AP1): Die Marke „Top-Thema/Häufig …“ rechnet die Vorschau aus den zugeordneten Teilaufgaben (je Prüfung einmal, aktueller Katalog 1, alter 0,6); der frühere Punkte-Zuschlag fehlt, weil der Lernplan keine Punkte enthält (Punkte stehen nur in den lokalen Abschriften). Soll die Wichtigkeit so bleiben, Punkte bekommen oder sich nach der Stufe richten? | offen |
 | P29 | **Idee aus der Vorschau (Projektinhaber, 14.10.2026), noch nicht umgesetzt:** „Das musst du können“ im Stichpunkt-Detail einklappbar machen, schön gestaltet (z. B. zugeklappt mit Anzahl der Aussagen und Hinweis auf neue ohne Karten), weil die Liste sonst viel Platz im Block einnimmt. Bei der endgültigen Übernahme (Schritt 7) mitbauen. | offen |
+| P30 | **Aktueller Rechts- und Technikstand als Kür** (aus der Gegenprüfung): R2 erlaubt Kür nur aus festgelegten Hinweisquellen. **Entschieden (Projektinhaber, 14.10.2026): ja**, die Gegenprüfung zählt als Hinweisquelle (`gegenpruefung:2026-10`). Umgesetzt: E-Rechnung (AP1-3-1-6), BFSG (AP1-4-3-2), EuGH 2025 zu Pseudonymen (AP1-7-5-2). | erledigt |
+| P31 | **Eine Teilaufgabe, eine Aussage** (aus der Gegenprüfung): Dieselbe Teilaufgabe soll nicht zweimal als eigene Können-Aussage in verschiedenen Stichpunkten stehen. **Entschieden (Projektinhaber, 14.10.2026): ja.** Ausnahme: Beide Stellen bleiben, wenn sonst die Tiefe eines Bausteins im Ordner (T8) oder eine Geschwister-Seite (R4) fehlt. | erledigt |
+| P32 | **Prüfungstechnik ist keine Können-Aussage** (aus der Gegenprüfung): „Rechenweg aufschreiben“, „runden“, „zwei Nachkommastellen“. **Entschieden (Projektinhaber, 14.10.2026): ja**, gestrichen (AP1-3-1-2-K5, AP1-8-2-3-K5); als Prüfungstipp später in Lernprompt oder Hilfe. | erledigt |
 
 ---
 

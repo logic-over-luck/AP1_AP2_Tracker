@@ -63,16 +63,8 @@
               ]
             },
             {
-              "id": "AP1-5-1-1-K3",
-              "text": "Du kannst Branchensoftware nennen: ERP-Systeme, Supply Chain Management, Customer Relationship Management.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.03.01.3.2"
-              ]
-            },
-            {
               "id": "AP1-5-1-1-K4",
-              "text": "Du kannst erklären: ERP plant die Ressourcen des ganzen Unternehmens, SCM steuert die Lieferkette, CRM verwaltet die Kundenbeziehungen.",
+              "text": "Du kannst Branchensoftware nennen und erklären: ERP plant die Ressourcen des ganzen Unternehmens, SCM steuert die Lieferkette, CRM verwaltet die Kundenbeziehungen.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.03.01.3.2"
@@ -184,15 +176,6 @@
               "herkunft": [
                 "katalog:AP1.04.03.4",
                 "katalog:AP1.04.03"
-              ]
-            },
-            {
-              "id": "AP1-5-1-2-K5",
-              "text": "Du kannst ein Kriterium für die Auswahl einer Programmiersprache begründen, zum Beispiel Anforderungen des Projekts, Erfahrung der Entwickler, verfügbare Werkzeuge oder Zukunftssicherheit.",
-              "stufe": 4,
-              "herkunft": [
-                "beleg:2024H-A2-b",
-                "katalog:AP1.04.03.7"
               ]
             }
           ],
@@ -522,16 +505,8 @@
               ]
             },
             {
-              "id": "AP1-5-2-2-K4",
-              "text": "Du kannst einen Vorteil und einen Nachteil von FAT32 nennen.",
-              "stufe": 1,
-              "herkunft": [
-                "beleg:2026H-A4-ba"
-              ]
-            },
-            {
               "id": "AP1-5-2-2-K5",
-              "text": "Du kannst die Eigenschaften von FAT32 erklären: Es wird von fast allen Systemen gelesen, erlaubt aber nur Dateien bis 4 GiB und kennt keine Zugriffsrechte.",
+              "text": "Du kannst die Eigenschaften von FAT32 erklären und daraus Vor- und Nachteile ableiten: Es wird von fast allen Systemen gelesen, erlaubt aber nur Dateien bis 4 GiB und kennt keine Zugriffsrechte.",
               "stufe": 2,
               "herkunft": [
                 "beleg:2026H-A4-ba",
@@ -548,11 +523,19 @@
             },
             {
               "id": "AP1-5-2-2-K7",
-              "text": "Du kannst beurteilen, welches Dateisystem für einen Datenträger passt, zum Beispiel FAT32 für einen USB-Stick an vielen Geräten, NTFS für ein Windows-Systemlaufwerk.",
+              "text": "Du kannst beurteilen, welches Dateisystem für einen Datenträger passt, zum Beispiel für einen USB-Stick an vielen Geräten FAT32 (überall lesbar, aber Dateien nur bis 4 GiB) oder heute meist exFAT, NTFS für ein Windows-Systemlaufwerk.",
               "stufe": 4,
               "herkunft": [
                 "katalog:AP1.04.05.2",
                 "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-5-2-2-K8",
+              "text": "Du kannst die Partitionstabellen MBR und GPT unterscheiden: MBR erlaubt höchstens vier primäre Partitionen und Datenträger bis 2 TiB, GPT bis zu 128 Partitionen und sehr große Datenträger und wird mit UEFI genutzt.",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.04.01.3"
               ]
             }
           ],
@@ -594,14 +577,6 @@
               ]
             },
             {
-              "id": "AP1-5-2-3-K3",
-              "text": "Du kannst erklären, was chmod bewirkt: die Zugriffsrechte einer Datei unter Linux ändern.",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.04.05.6"
-              ]
-            },
-            {
               "id": "AP1-5-2-3-K4",
               "text": "Du kannst erklären, wozu alias dient: einen eigenen Kurznamen für einen Befehl festlegen.",
               "stufe": 2,
@@ -611,7 +586,7 @@
             },
             {
               "id": "AP1-5-2-3-K5",
-              "text": "Du kannst die Rechte Lesen, Schreiben und Ausführen für Besitzer, Gruppe und andere interpretieren, zum Beispiel bei chmod 754.",
+              "text": "Du kannst erklären, dass chmod die Zugriffsrechte einer Datei unter Linux ändert, und die Rechte Lesen, Schreiben und Ausführen für Besitzer, Gruppe und andere interpretieren, zum Beispiel bei chmod 754.",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.05.6"
@@ -653,14 +628,6 @@
           "teilaufgaben": [],
           "koennen": [
             {
-              "id": "AP1-5-2-4-K1",
-              "text": "Du kannst Beispiele nennen, wie installierte Software an einen Arbeitsplatz angepasst wird: Sprache, Standardspeicherorte, Vorlagen, Benutzerprofile.",
-              "stufe": 1,
-              "herkunft": [
-                "katalog:AP1.04.05.4"
-              ]
-            },
-            {
               "id": "AP1-5-2-4-K2",
               "text": "Du kannst erklären, was Customizing bedeutet: Standardsoftware über Einstellungen oder Erweiterungen an betriebliche Abläufe anpassen, ohne sie neu zu programmieren.",
               "stufe": 2,
@@ -678,7 +645,7 @@
             },
             {
               "id": "AP1-5-2-4-K4",
-              "text": "Du kannst Wege nennen, Software anzupassen: Einstellungen in der Oberfläche, Konfigurationsdateien, Erweiterungen.",
+              "text": "Du kannst Wege nennen, installierte Software an einen Arbeitsplatz anzupassen: Einstellungen in der Oberfläche (zum Beispiel Sprache, Standardspeicherorte, Vorlagen, Benutzerprofile), Konfigurationsdateien, Erweiterungen.",
               "stufe": 1,
               "herkunft": [
                 "katalog:AP1.04.05.4"
@@ -764,14 +731,6 @@
               ]
             },
             {
-              "id": "AP1-5-2-5-K6",
-              "text": "Du kannst den Unterschied zwischen statischer und dynamischer Website erläutern: fertige Seiten gegenüber Inhalten, die der Server bei jedem Aufruf erzeugt.",
-              "stufe": 2,
-              "herkunft": [
-                "beleg:2025F-A3-b"
-              ]
-            },
-            {
               "id": "AP1-5-2-5-K7",
               "text": "Du kannst einem Einsatzbereich ein passendes IT-System zuordnen und seinen Nutzen erläutern, zum Beispiel eine Videoerfassung für An- und Ablieferungen.",
               "stufe": 2,
@@ -821,15 +780,15 @@
       },
       {
         "alt": "AP1-5-1-1-K3",
-        "status": "übernommen",
-        "neu": "AP1-5-1-1-K3",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-5-1-1-K4",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-5-1-1-K4 (Branchensoftware nennen steckt in erklären)"
       },
       {
         "alt": "AP1-5-1-1-K4",
-        "status": "übernommen",
+        "status": "angepasst",
         "neu": "AP1-5-1-1-K4",
-        "grund": ""
+        "grund": "Gegenprüfung 2026-10-14: mit AP1-5-1-1-K3 zusammengelegt"
       },
       {
         "alt": "AP1-5-1-1-K5",
@@ -959,9 +918,9 @@
       },
       {
         "alt": "AP1-5-2-2-K4",
-        "status": "übernommen",
-        "neu": "AP1-5-2-2-K4",
-        "grund": "Beleg 2026H-A4-ba"
+        "status": "verschoben",
+        "neu": "AP1-5-2-2-K5",
+        "grund": "Beleg 2026H-A4-ba; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-5-2-2-K5 (FAT32 stand zweimal)"
       },
       {
         "alt": "AP1-5-2-2-K5",
@@ -989,9 +948,9 @@
       },
       {
         "alt": "AP1-5-2-3-K3",
-        "status": "übernommen",
-        "neu": "AP1-5-2-3-K3",
-        "grund": ""
+        "status": "verschoben",
+        "neu": "AP1-5-2-3-K5",
+        "grund": "Gegenprüfung 2026-10-14: zusammengelegt mit AP1-5-2-3-K5 (chmod erklären steckt in Rechte interpretieren)"
       },
       {
         "alt": "AP1-5-2-3-K4",
@@ -1007,9 +966,9 @@
       },
       {
         "alt": "AP1-5-2-4-K1",
-        "status": "übernommen",
-        "neu": "AP1-5-2-4-K1",
-        "grund": "Herkunft katalog:AP1.04.05.4"
+        "status": "verschoben",
+        "neu": "AP1-5-2-4-K4",
+        "grund": "Herkunft katalog:AP1.04.05.4; Gegenprüfung 2026-10-14: zusammengelegt mit AP1-5-2-4-K4 (Beispiele und Wege der Anpassung fragten dasselbe)"
       },
       {
         "alt": "AP1-5-2-4-K2",
@@ -1096,7 +1055,7 @@
   "meta": {
     "schicht": "3+4",
     "regelwerk_version": "1.5",
-    "stand": "2026-10-13",
+    "stand": "2026-10-14",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). AP1.04.01.3 und AP1.04.05.6 sind mit AP1-6 geteilt, AP1.03.03.1 mit AP1-4 und AP1-6.",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1124,7 +1083,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-5-1-1-K1",
-            "AP1-5-1-1-K3",
+            "AP1-5-1-1-K4",
             "AP1-5-1-1-K4"
           ]
         },
@@ -1333,7 +1292,7 @@
           "ring": "Kern",
           "wo": [
             "AP1-5-2-3-K1",
-            "AP1-5-2-3-K3",
+            "AP1-5-2-3-K5",
             "AP1-5-2-3-K5"
           ]
         },
@@ -1420,10 +1379,11 @@
           "quellen": [
             "podcast:pruefungsthemen"
           ],
-          "ring": "Kern",
+          "ring": "Ordner",
           "wo": [
-            "AP1-5-2-5-K6"
-          ]
+            "AP1-8"
+          ],
+          "notiz": "Gegenprüfung 2026-10-14: AP1-5-2-5-K6 → AP1-8-1-3-K3."
         },
         {
           "thema": "URL-Aufbau, HTML, CSS, JavaScript, PHP, CMS, Webserver",
@@ -1552,7 +1512,7 @@
           ],
           "Linux": [
             "AP1-5-2-3-K2",
-            "AP1-5-2-3-K3"
+            "AP1-5-2-3-K5"
           ]
         }
       },
@@ -1568,6 +1528,58 @@
           ]
         }
       }
-    ]
+    ],
+    "gegenpruefung": {
+      "stand": "2026-10-14",
+      "bericht": "umbau/berichte/AP1-gegenpruefung.md",
+      "aenderungen": [
+        {
+          "id": "AP1-5-1-2-K5",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-1-3-K5",
+          "grund": "Wahl der Programmiersprache (2024H-A2-b) stand zweimal"
+        },
+        {
+          "id": "AP1-5-2-5-K6",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-8-1-3-K3",
+          "grund": "statische und dynamische Webseite (2025F-A3-b) stand zweimal"
+        },
+        {
+          "id": "AP1-5-2-2-K4",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-5-2-2-K5",
+          "grund": "FAT32 stand zweimal"
+        },
+        {
+          "id": "AP1-5-2-2-K7",
+          "aenderung": "geändert",
+          "grund": "exFAT ist heute üblich für Wechseldatenträger"
+        },
+        {
+          "id": "AP1-5-2-2-K8",
+          "aenderung": "neu",
+          "grund": "fehlte: Katalog „Partitionierungen“"
+        },
+        {
+          "id": "AP1-5-2-3-K3",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-5-2-3-K5",
+          "grund": "chmod erklären steckt in Rechte interpretieren"
+        },
+        {
+          "id": "AP1-5-2-4-K1",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-5-2-4-K4",
+          "grund": "Beispiele und Wege der Anpassung fragten dasselbe"
+        },
+        {
+          "id": "AP1-5-1-1-K3",
+          "aenderung": "zusammengelegt",
+          "mit": "AP1-5-1-1-K4",
+          "grund": "Branchensoftware nennen steckt in erklären"
+        }
+      ]
+    }
   }
 }
