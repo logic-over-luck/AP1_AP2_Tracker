@@ -1,0 +1,1037 @@
+{
+ "oberblock": {
+  "id": "PB1-3",
+  "titel": "Entwicklungsumgebung und Werkzeuge",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.01"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-3-1",
+   "titel": "Programmiersprachen und Werkzeuge",
+   "satz": "Womit Software entsteht: Sprachkonzepte, die begründete Wahl einer Sprache, Werkzeuge vom Editor bis zur Versionsverwaltung. Compiler, Interpreter, Linker und IDE an sich kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-3-1-1",
+     "titel": "Konzepte und Einsatz von Programmiersprachen",
+     "ziel": "Die Konzepte strukturiert, prozedural, funktional und objektorientiert kennen, Beispielsprachen nennen und Einsatzgebiete zuordnen.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.06"
+      },
+      {
+       "id": "AP2b.04.08"
+      },
+      {
+       "id": "AP2b.04.07.5",
+       "anteil": "Compilersprachen"
+      },
+      {
+       "id": "AP2b.04.07.6",
+       "anteil": "Interpretersprachen"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A1-aa"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-3-1-1-K1",
+       "text": "Du kannst die Konzepte strukturiert, prozedural, funktional und objektorientiert nennen und je eine Programmiersprache als Beispiel angeben: C (prozedural, strukturiert), Java oder C# (objektorientiert), Haskell (funktional); Python verbindet mehrere Konzepte.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.04.06"
+       ]
+      },
+      {
+       "id": "PB1-3-1-1-K2",
+       "text": "Du kannst nennen, was funktionale Programmierung ausmacht: Programme aus Funktionen ohne Seiteneffekte, die Werte entgegennehmen und neue Werte zurückgeben, statt Variablen zu verändern.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.04.06"
+       ]
+      },
+      {
+       "id": "PB1-3-1-1-K3",
+       "text": "Du kannst je eine Programmiersprache für Compilersprachen (C, C++; in Bytecode übersetzt auch Java, C#) und für Interpretersprachen (PHP, Python) nennen.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.04.06",
+        "katalog:AP2b.04.07.5",
+        "katalog:AP2b.04.07.6",
+        "beleg:2021W-PB1-A1-aa"
+       ]
+      },
+      {
+       "id": "PB1-3-1-1-K4",
+       "text": "Du kannst Einsatzmöglichkeiten von Programmiersprachen nennen, zum Beispiel JavaScript für Webanwendungen, Kotlin oder Swift für mobile Apps, C für hardwarenahe Programmierung, Python für Datenauswertung und Automatisierung, SQL für Datenbankabfragen.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.04.08"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-1-2",
+      "AP1-8-1-3"
+     ],
+     "kuer": [
+      {
+       "text": "Statische und dynamische, starke und schwache Typisierung; Sprachgenerationen (1GL bis 4GL); General-Purpose- und domänenspezifische Sprachen; Low-Code und No-Code; synchrone, asynchrone und parallele Programmierung.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur Hinweisquelle; der Katalog nennt nur die Konzepte strukturiert, prozedural, funktional, objektorientiert (AP2b.04.06). Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    },
+    {
+     "id": "PB1-3-1-2",
+     "titel": "Programmiersprache begründet auswählen",
+     "ziel": "Für ein Projekt eine Programmiersprache nach Performance, Speicherverbrauch, Portabilität, Frameworks, Entwicklungsumgebung und Know-how auswählen und die Wahl begründen.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.04.1"
+      },
+      {
+       "id": "AP2b.03.04.2"
+      },
+      {
+       "id": "AP2b.03.04.3",
+       "anteil": "Kriterium bei der Sprachwahl"
+      },
+      {
+       "id": "AP2b.03.04.4"
+      },
+      {
+       "id": "AP2b.03.04.5"
+      },
+      {
+       "id": "AP2b.04.05",
+       "anteil": "geeignete Programmiersprache auswählen"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-3-1-2-K1",
+       "text": "Du kannst die Kriterien für die Wahl einer Programmiersprache nennen: Performance und Speicherverbrauch, Portabilität, verfügbare Frameworks und Bibliotheken, Unterstützung durch integrierte Entwicklungsumgebungen, vorhandenes Know-how im Team.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.03.04.1",
+        "katalog:AP2b.03.04.2",
+        "katalog:AP2b.03.04.3",
+        "katalog:AP2b.03.04.4",
+        "katalog:AP2b.03.04.5"
+       ]
+      },
+      {
+       "id": "PB1-3-1-2-K2",
+       "text": "Du kannst erklären, was Portabilität bedeutet: Das Programm läuft ohne oder mit geringer Anpassung auf verschiedenen Plattformen, zum Beispiel über eine virtuelle Maschine oder einen Interpreter.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.04.2"
+       ]
+      },
+      {
+       "id": "PB1-3-1-2-K3",
+       "text": "Du kannst für ein beschriebenes Projekt eine Programmiersprache auswählen und die Wahl mit mehreren Kriterien begründen, auch wenn sie gegeneinander stehen, zum Beispiel höchste Ausführungsgeschwindigkeit gegen kurze Entwicklungszeit mit dem vorhandenen Know-how.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.03.04.1",
+        "katalog:AP2b.03.04.2",
+        "katalog:AP2b.03.04.3",
+        "katalog:AP2b.03.04.4",
+        "katalog:AP2b.03.04.5",
+        "katalog:AP2b.04.05"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-1-3"
+     ],
+     "kuer": [
+      {
+       "text": "Native, hybride und plattformübergreifende Apps sowie Progressive Web Apps als Entscheidung bei der Wahl der Technik.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur Hinweisquelle; vom Katalog nicht ausgeschlossen (Portabilität, AP2b.03.04.2)."
+      }
+     ]
+    },
+    {
+     "id": "PB1-3-1-3",
+     "titel": "Entwicklungswerkzeuge aufgabenbezogen auswählen und anwenden",
+     "ziel": "Die Aufgaben aller Entwicklungswerkzeuge kennen, für einen Arbeitsschritt das passende Werkzeug auswählen und Werkzeugeinstellungen anwenden, etwa das Signieren beim Kompilieren.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.07.1"
+      },
+      {
+       "id": "AP2b.04.07.2"
+      },
+      {
+       "id": "AP2b.04.07.3"
+      },
+      {
+       "id": "AP2b.04.07.4"
+      },
+      {
+       "id": "AP2b.04.07.5"
+      },
+      {
+       "id": "AP2b.04.07.6"
+      },
+      {
+       "id": "AP2b.04.07.7"
+      },
+      {
+       "id": "AP2b.04.07.8"
+      },
+      {
+       "id": "AP2b.04.07.9",
+       "anteil": "Versionsverwaltung als Werkzeug"
+      },
+      {
+       "id": "AP1.04.06.1"
+      },
+      {
+       "id": "AP2b.05.01.1",
+       "anteil": "Code-Signatur"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A1-ab",
+      "2021W-PB1-A1-ac",
+      "2021W-PB1-A4-ba",
+      "2021W-PB1-A4-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-3-1-3-K1",
+       "text": "Du kannst die Aufgaben von Programmgenerator (erzeugt Quellcode aus einem Modell oder einer Beschreibung), Testsoftware (führt Tests automatisch aus und wertet sie aus) und Versionsverwaltung (verwaltet die Änderungen am Quellcode) erklären.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.07.3",
+        "katalog:AP2b.04.07.8",
+        "katalog:AP2b.04.07.9"
+       ]
+      },
+      {
+       "id": "PB1-3-1-3-K2",
+       "text": "Du kannst für einen Arbeitsschritt der Entwicklung das passende Werkzeug aus Editor, IDE, Programmgenerator, Compiler, Linker, Interpreter, Debugger, Testsoftware und Versionsverwaltung auswählen und die Wahl begründen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.04.07.1",
+        "katalog:AP2b.04.07.2",
+        "katalog:AP2b.04.07.3",
+        "katalog:AP2b.04.07.4",
+        "katalog:AP2b.04.07.5",
+        "katalog:AP2b.04.07.6",
+        "katalog:AP2b.04.07.7",
+        "katalog:AP2b.04.07.8",
+        "katalog:AP2b.04.07.9"
+       ]
+      },
+      {
+       "id": "PB1-3-1-3-K3",
+       "text": "Du kannst Werkzeuge aufgabenbezogen anwenden, zum Beispiel im Debugger einen Haltepunkt setzen, um einen Variablenwert zu prüfen, oder in den Kompilierungseinstellungen festlegen, dass das Programm mit einem Zertifikat signiert wird.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.07.2",
+        "katalog:AP2b.04.07.5",
+        "katalog:AP2b.04.07.7",
+        "beleg:2021W-PB1-A4-bb"
+       ]
+      },
+      {
+       "id": "PB1-3-1-3-K4",
+       "text": "Du kannst die Meldung deuten, ein Programm sei nicht signiert: Es wurde beim Kompilieren nicht mit einem Zertifikat signiert, deshalb kann das Betriebssystem den Hersteller nicht prüfen und warnt vor der Ausführung.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.01.1",
+        "beleg:2021W-PB1-A4-ba"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-1-1"
+     ],
+     "hinweis": "Unterschied Compiler/Interpreter sowie Vor- und Nachteile (2021W-PB1-A1-ab, -ac) sind in AP1-8-1-1 abgedeckt und werden importiert."
+    },
+    {
+     "id": "PB1-3-1-4",
+     "titel": "Versionsverwaltung im Entwicklungsteam",
+     "ziel": "Zweck der Versionsverwaltung erklären, ihren Einsatz im Team begründen und sie zum Beheben von Fehlern nutzen.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.07.9",
+       "anteil": "Versionsverwaltung im Team"
+      },
+      {
+       "id": "AP2a.02.01.5"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A1-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-3-1-4-K1",
+       "text": "Du kannst erklären, wozu eine Versionsverwaltung dient: Änderungen am Quellcode nachvollziehen, frühere Stände wiederherstellen und mit mehreren Entwicklern parallel am selben Code arbeiten.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.07.9",
+        "katalog:AP2a.02.01.5"
+       ]
+      },
+      {
+       "id": "PB1-3-1-4-K2",
+       "text": "Du kannst begründet entscheiden, ob ein Entwicklungsteam eine Versionsverwaltung einsetzen soll: Bei mehreren Entwicklern reichen Absprachen nicht aus, parallele Änderungen können sich widersprechen und wären ohne Versionsverwaltung nicht rückgängig zu machen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.02.01.5",
+        "beleg:2021W-PB1-A1-c"
+       ]
+      },
+      {
+       "id": "PB1-3-1-4-K3",
+       "text": "Du kannst das Versionsmanagement des Quellcodes nutzen, um einen Fehler zu beheben: den letzten fehlerfreien Stand finden, die Änderungen seitdem vergleichen und die fehlerhafte Änderung zurücknehmen oder berichtigen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.01.5"
+       ]
+      }
+     ],
+     "grenzen": [
+      {
+       "text": "Die Grundfunktionen einer Versionsverwaltung anwenden (Branch, Commit, Pull, Push, Merge, Konflikte lösen) gehört in den Raum PROJEKT.",
+       "begruendung": "G5/P9: AP2b.05.04 „Anwendungen können Bestandteil der praktischen Prüfung sein“; wohnt im Raum PROJEKT.",
+       "katalog": [
+        "AP2b.05.04"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-2",
+   "titel": "Bibliotheken, Automatisierung und cyber-physische Systeme",
+   "satz": "Fremden Code sinnvoll einsetzen, wiederkehrende Abläufe mit Skripten und Pipelines automatisieren und Software mit Sensoren und Aktoren verbinden.",
+   "stichpunkte": [
+    {
+     "id": "PB1-3-2-1",
+     "titel": "Bibliotheken, Frameworks und Open Source einsetzen",
+     "ziel": "Vor- und Nachteile von Bibliotheken und Open-Source-Bibliotheken beschreiben, eine Erweiterung dokumentieren und den Einsatz begründet entscheiden.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.04.3",
+       "anteil": "Einsatz von Bibliotheken"
+      },
+      {
+       "id": "AP2b.01.13.1",
+       "anteil": "Programmdokumentation einer Bibliothek"
+      },
+      {
+       "id": "AP1.04.03.5"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A1-ba",
+      "2021W-PB1-A1-bb",
+      "2022W-PB1-A2-ca",
+      "2022W-PB1-A2-cc"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-3-2-1-K1",
+       "text": "Du kannst Vor- und Nachteile beim Einsatz einer Bibliothek beschreiben: fertige, getestete Funktionen müssen nicht neu entwickelt werden gegenüber Einarbeitungszeit, Abhängigkeit vom Anbieter und möglichem Mehraufwand zur Laufzeit.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.04.3",
+        "beleg:2021W-PB1-A1-ba"
+       ]
+      },
+      {
+       "id": "PB1-3-2-1-K2",
+       "text": "Du kannst beschreiben, was die Dokumentation einer eigenen Erweiterung einer Bibliothek enthält: Beschreibung der Klasse, Konstruktoren und Methoden, geerbte Methoden, implementierte Interfaces, je Methode Parameter, Rückgabewert, Wirkung und Voraussetzungen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.13.1",
+        "beleg:2021W-PB1-A1-bb"
+       ]
+      },
+      {
+       "id": "PB1-3-2-1-K3",
+       "text": "Du kannst Open-Source-Bibliotheken erläutern: Ihr Quelltext ist öffentlich einsehbar; daraus folgt als Vorteil, dass jeder nachvollziehen kann, was sie tun, und als Nachteil, dass auch Angreifer Schwachstellen im Quelltext finden können.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022W-PB1-A2-ca",
+        "beleg:2022W-PB1-A2-cc"
+       ]
+      },
+      {
+       "id": "PB1-3-2-1-K4",
+       "text": "Du kannst begründet entscheiden, ob ein Projekt eine bestimmte Bibliothek oder ein Framework einsetzt: Funktionsumfang, Lizenz, Pflege und Verbreitung, Einarbeitungsaufwand, Abhängigkeit.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.03.04.3"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-1-3",
+      "AP1-3-4-2"
+     ]
+    },
+    {
+     "id": "PB1-3-2-2",
+     "titel": "Abläufe automatisieren: Skripte und CI/CD",
+     "ziel": "Wiederkehrende Abläufe mit Shell- und Skriptsprachen automatisieren und überwachen und automatisierte Bereitstellung mit CI/CD beschreiben.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.07"
+      },
+      {
+       "id": "AP2b.03.07.1"
+      },
+      {
+       "id": "AP2b.03.07.2"
+      },
+      {
+       "id": "AP2b.04.07",
+       "anteil": "Werkzeuge für CI/CD"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A1-ca",
+      "2022W-PB1-A1-cb",
+      "2024W-PB1-A2-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-3-2-2-K1",
+       "text": "Du kannst beschreiben, wie Kompilieren, Testen und Bereitstellen mit einer CI/CD-Pipeline automatisiert werden: Ein Ereignis wie ein Commit oder Pull Request startet die Pipeline, die den Code übersetzt, die Unit-Tests ausführt und auf Test- und Produktivumgebung ausliefert.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.07",
+        "beleg:2022W-PB1-A1-ca"
+       ]
+      },
+      {
+       "id": "PB1-3-2-2-K2",
+       "text": "Du kannst Vorteile automatisierter Bereitstellung nennen: Tests laufen vor jeder Auslieferung in gleicher Umgebung, die Bereitstellung ist auf allen Umgebungen einheitlich, Entwickler brauchen keinen direkten Zugang zu den Produktivsystemen, ein alter Stand lässt sich leicht wiederherstellen.",
+       "stufe": 1,
+       "herkunft": [
+        "beleg:2022W-PB1-A1-cb"
+       ]
+      },
+      {
+       "id": "PB1-3-2-2-K3",
+       "text": "Du kannst ein kurzes Skript schreiben, das einen Ablauf automatisiert, zum Beispiel alle Adressen eines /24-Netzes durchläuft, je Adresse eine vorgegebene Funktion aufruft, leere Ergebnisse (NULL) überspringt und die Treffer als JSON-Array ausgibt.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.07.2",
+        "beleg:2024W-PB1-A2-c"
+       ],
+       "vorgegeben": "Funktion getMacAddress und Aufbau des JSON-Arrays"
+      },
+      {
+       "id": "PB1-3-2-2-K4",
+       "text": "Du kannst Shell- und Skriptsprachen ihrem Einsatz zuordnen: Bash und PowerShell für Abläufe im Betriebssystem, Python für allgemeine Automatisierung und Auswertung.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.07.1",
+        "katalog:AP2b.03.07.2"
+       ]
+      },
+      {
+       "id": "PB1-3-2-2-K5",
+       "text": "Du kannst einen Systemablauf mit einem Shellskript automatisieren und überwachen: festlegen, was regelmäßig geprüft oder erledigt wird (z. B. Datensicherung, freier Speicher, Erreichbarkeit eines Dienstes), wann gewarnt wird und wohin protokolliert wird.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.07",
+        "katalog:AP2b.03.07.1"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-1-3"
+     ]
+    },
+    {
+     "id": "PB1-3-2-3",
+     "titel": "Cyber-physische Systeme: Sensoren, Aktoren, Abfragerhythmus",
+     "ziel": "Cyber-physische Systeme beschreiben und um Sensoren, Aktoren und Regeln erweitern, den Zugriff über Bibliotheken kennen und einen Abfragerhythmus planen.",
+     "gebiete": [
+      "G.PB1.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.06.1"
+      },
+      {
+       "id": "AP2b.03.06.2"
+      },
+      {
+       "id": "AP2b.03.06.3"
+      },
+      {
+       "id": "AP2b.03.06.4"
+      },
+      {
+       "id": "AP2b.03.06.5"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-3-2-3-K1",
+       "text": "Du kannst beschreiben, was ein cyber-physisches System ist: Software, die über Sensoren Messwerte aus der physischen Welt erfasst, verarbeitet und über Aktoren auf sie einwirkt, meist vernetzt.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.06.1"
+       ]
+      },
+      {
+       "id": "PB1-3-2-3-K2",
+       "text": "Du kannst ein cyber-physisches System um geeignete Sensoren und Aktoren erweitern, zum Beispiel Bodenfeuchtesensor und Ventil für eine Bewässerung oder Temperatursensor und Lüfter für eine Klimasteuerung.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.06.2"
+       ]
+      },
+      {
+       "id": "PB1-3-2-3-K3",
+       "text": "Du kannst beschreiben, wie Software auf Sensoren und Aktoren zugreift: über Schnittstellen und Bibliotheken, die Messwerte lesen und Stellbefehle senden, ohne dass die Hardware selbst programmiert werden muss.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.06.3",
+        "katalog:AP2b.03.06.5"
+       ]
+      },
+      {
+       "id": "PB1-3-2-3-K4",
+       "text": "Du kannst einen Abfragerhythmus planen: so oft, wie sich der Messwert bedeutsam ändert, abgewogen gegen Energiebedarf, Datenmenge und Übertragungskosten, zum Beispiel Bodenfeuchte alle 15 Minuten statt jede Sekunde.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.06.4"
+       ]
+      },
+      {
+       "id": "PB1-3-2-3-K5",
+       "text": "Du kannst eine CPS-Software mit einer vorhandenen Bibliothek erweitern, zum Beispiel um einen weiteren Sensor oder eine Regel, die bei Überschreiten eines Schwellwerts einen Aktor schaltet.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.06.1",
+        "katalog:AP2b.03.06.3",
+        "katalog:AP2b.03.06.5"
+       ]
+      },
+      {
+       "id": "PB1-3-2-3-K6",
+       "text": "Du kannst Anforderungen an die Datenübertragung von Sensoren beschreiben: große Reichweite, geringer Energiebedarf bei Batteriebetrieb, kleine Datenmengen; deshalb werden energiesparende Funknetze und wenig rechenaufwendige Verfahren eingesetzt.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.06.5"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-3-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-3-1-1-K1",
+    "grund": "Katalog: kennen und Beispiele nennen (Stufe 1)"
+   },
+   {
+    "alt": "AP2-3-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-3-1-1-K1",
+    "grund": "in ko1 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-3-1-1-K1",
+    "grund": "Beispiele in ko1 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-1-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-3-1-1-K4",
+    "grund": "um SQL ergänzt"
+   },
+   {
+    "alt": "AP2-3-1-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-3-1-1-K2",
+    "grund": "nennen statt erklären (Katalog: kennen)"
+   },
+   {
+    "alt": "AP2-3-1-2-K1",
+    "status": "verschoben",
+    "neu": "PB1-3-1-2-K1"
+   },
+   {
+    "alt": "AP2-3-1-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-3-1-2-K3",
+    "grund": "mit Abwägung zusammengeführt"
+   },
+   {
+    "alt": "AP2-3-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-3-1-2-K2",
+    "grund": "Beispiel ergänzt"
+   },
+   {
+    "alt": "AP2-3-1-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-3-1-2-K3",
+    "grund": "in wa3 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-1-3-K1",
+    "status": "gestrichen",
+    "grund": "E2: Editor, IDE, Compiler, Linker, Interpreter, Debugger erklärt AP1-8-1-1 (K1, K2, K7); importiert"
+   },
+   {
+    "alt": "AP2-3-1-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-3-1-3-K1",
+    "grund": "mit Testsoftware und Versionsverwaltung zusammengefasst"
+   },
+   {
+    "alt": "AP2-3-1-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-3-1-3-K1",
+    "grund": "in wz1 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-1-3-K4",
+    "status": "angepasst",
+    "neu": "PB1-3-1-3-K2",
+    "grund": "auswählen und begründen (Katalog: auswählen, Stufe 4)"
+   },
+   {
+    "alt": "AP2-3-1-3-K5",
+    "status": "gestrichen",
+    "grund": "E2: IDE gegenüber Editor begründet AP1-8-1-1-K7; importiert"
+   },
+   {
+    "alt": "AP2-3-4-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-3-2-2-K3",
+    "grund": "Beispiel aus 2024W-PB1-A2-c"
+   },
+   {
+    "alt": "AP2-3-4-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-3-2-2-K3",
+    "grund": "in au3 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-4-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-3-2-2-K3",
+    "grund": "in au3 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-4-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-3-2-2-K4",
+    "grund": "zuordnen statt einordnen"
+   },
+   {
+    "alt": "AP2-3-4-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-3-2-2-K5",
+    "grund": "automatisieren und überwachen (Katalog)"
+   },
+   {
+    "alt": "AP2-3-4-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-3-2-3-K1",
+    "grund": "Sensoren und Aktoren in die Beschreibung aufgenommen"
+   },
+   {
+    "alt": "AP2-3-4-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-3-2-3-K2",
+    "grund": "Katalog: erweitern (Stufe 3)"
+   },
+   {
+    "alt": "AP2-3-4-2-K3",
+    "status": "verschoben",
+    "neu": "PB1-3-2-3-K3"
+   },
+   {
+    "alt": "AP2-3-4-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-3-2-3-K4",
+    "grund": "mit Gesichtspunkten zusammengeführt"
+   },
+   {
+    "alt": "AP2-3-4-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-3-2-3-K4",
+    "grund": "in cp4 aufgenommen"
+   },
+   {
+    "alt": "AP2-3-4-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-3-2-3-K6",
+    "grund": "Gründe ergänzt"
+   },
+   {
+    "alt": "AP2-5-4-1-K1",
+    "status": "verschoben",
+    "neu": "PB1-3-1-4-K1"
+   },
+   {
+    "alt": "AP2-5-4-1-K2",
+    "status": "gestrichen",
+    "grund": "P9: Grundfunktionen der Versionsverwaltung (AP2b.05.04) wohnen im Raum PROJEKT"
+   },
+   {
+    "alt": "AP2-5-4-1-K3",
+    "status": "gestrichen",
+    "grund": "P9: Grundfunktionen der Versionsverwaltung (AP2b.05.04) wohnen im Raum PROJEKT"
+   },
+   {
+    "alt": "AP2-5-4-1-K4",
+    "status": "gestrichen",
+    "grund": "P9: Grundfunktionen der Versionsverwaltung (AP2b.05.04) wohnen im Raum PROJEKT"
+   },
+   {
+    "alt": "AP2-5-4-1-K5",
+    "status": "gestrichen",
+    "grund": "P9: Grundfunktionen der Versionsverwaltung (AP2b.05.04) wohnen im Raum PROJEKT"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Teilaufgaben 2021W-PB1-A1, 2021W-PB1-A4-b, 2022W-PB1-A1-c, 2022W-PB1-A2-c, 2024W-PB1-A2-c gegen die Musterlösungen gelesen. Compiler/Interpreter (2021W-PB1-A1-ab, -ac) beantwortet AP1-8-1-1 vollständig. Das Skript 2024W-PB1-A2-c braucht zusätzlich die Pseudocode-Grundlagen aus AP1-8-2-2 und JSON aus PB1-7."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Compiler, Interpreter",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "AP1-8-1-1"
+     ],
+     "notiz": "Grundlagen in AP1; Beispielsprachen in ko3"
+    },
+    {
+     "thema": "Programmierparadigmen (strukturiert, prozedural, funktional, objektorientiert)",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-1-1-K1",
+      "PB1-3-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Programmiersprache auswählen (Performance, Portabilität, Speicherbedarf)",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-1-2-K1",
+      "PB1-3-1-2-K2",
+      "PB1-3-1-2-K3"
+     ]
+    },
+    {
+     "thema": "IDE, Framework, Bibliothek",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-1-3-K2",
+      "PB1-3-2-1-K1",
+      "PB1-3-2-1-K4"
+     ]
+    },
+    {
+     "thema": "Klassenbibliothek, Dokumentation",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-2-1-K1",
+      "PB1-3-2-1-K2"
+     ]
+    },
+    {
+     "thema": "Open Source",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-2-1-K3"
+     ]
+    },
+    {
+     "thema": "Versionsverwaltung",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-1-4-K1",
+      "PB1-3-1-4-K2"
+     ]
+    },
+    {
+     "thema": "Git-Funktionen, VCS/DVCS, Pull Requests",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PROJEKT"
+     ],
+     "notiz": "P9"
+    },
+    {
+     "thema": "CI/CD",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-2-2-K1",
+      "PB1-3-2-2-K2"
+     ]
+    },
+    {
+     "thema": "Skript-/Shellprogrammierung (Python, Bash, PowerShell)",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-2-2-K3",
+      "PB1-3-2-2-K4",
+      "PB1-3-2-2-K5"
+     ]
+    },
+    {
+     "thema": "Cyber-physische Systeme, Sensor, Aktor, Abfragerhythmus",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-2-3-K1",
+      "PB1-3-2-3-K2",
+      "PB1-3-2-3-K4"
+     ]
+    },
+    {
+     "thema": "IoT",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-11"
+     ],
+     "notiz": "Netzwerkkonzepte für IoT (2024W-PB1-A2-a)"
+    },
+    {
+     "thema": "Statische und dynamische, starke und schwache Typisierung",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-3-1-1"
+     ]
+    },
+    {
+     "thema": "Sprachgenerationen 1GL bis 4GL, General Purpose und Domain Specific, Low-Code/No-Code",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-3-1-1"
+     ]
+    },
+    {
+     "thema": "Native, hybride und Cross-Platform-Apps, PWA",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-3-1-2"
+     ]
+    },
+    {
+     "thema": "Synchrone, asynchrone und parallele Programmierung",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-3-1-1"
+     ]
+    },
+    {
+     "thema": "Exception, Return-/Exit-Code",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-5"
+     ],
+     "notiz": "Fehlerbehandlung AP2b.04.17.5"
+    },
+    {
+     "thema": "Debugging, Breakpoint",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-3-1-3-K3"
+     ]
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2b.04.06",
+    "paar": "strukturiert / prozedural / funktional / objektorientiert",
+    "abgedeckt": {
+     "strukturiert": [
+      "PB1-3-1-1-K1"
+     ],
+     "prozedural": [
+      "PB1-3-1-1-K1"
+     ],
+     "funktional": [
+      "PB1-3-1-1-K1",
+      "PB1-3-1-1-K2"
+     ],
+     "objektorientiert": [
+      "PB1-3-1-1-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.04.07",
+    "paar": "Compiler / Interpreter",
+    "abgedeckt": {
+     "Compiler": [
+      "PB1-3-1-1-K3",
+      "PB1-3-1-3-K2"
+     ],
+     "Interpreter": [
+      "PB1-3-1-1-K3",
+      "PB1-3-1-3-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.03.07",
+    "paar": "Shellprogrammierung / Skriptprogrammierung",
+    "abgedeckt": {
+     "Shell": [
+      "PB1-3-2-2-K4",
+      "PB1-3-2-2-K5"
+     ],
+     "Skript": [
+      "PB1-3-2-2-K3",
+      "PB1-3-2-2-K4"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.03.06.2",
+    "paar": "Sensoren / Aktoren",
+    "abgedeckt": {
+     "Sensoren": [
+      "PB1-3-2-3-K2",
+      "PB1-3-2-3-K3"
+     ],
+     "Aktoren": [
+      "PB1-3-2-3-K2",
+      "PB1-3-2-3-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.03.07",
+    "paar": "automatisieren / überwachen",
+    "abgedeckt": {
+     "automatisieren": [
+      "PB1-3-2-2-K3",
+      "PB1-3-2-2-K5"
+     ],
+     "überwachen": [
+      "PB1-3-2-2-K5"
+     ]
+    }
+   }
+  ]
+ }
+}

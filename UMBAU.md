@@ -525,6 +525,9 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-2 Kunde, Recht und Präsentation (14.10.2026):** 1 Themenblock, 4 Stichpunkte, 22 Können-Aussagen, 3 Kür.
         Alte AP2-Aussagen: 10 angepasst, 1 verschoben, 4 gestrichen (Englisch wohnt in AP1), 1 für PB2.
         Recht und Präsentation ohne Prüfungsbeleg nach P-MUSTER mit dem Katalogoperator (gestalten, aufbereiten).
+  - [x] **PB1-3 Entwicklungsumgebung und Werkzeuge (14.10.2026):** 2 Themenblöcke, 7 Stichpunkte, 29 Können-Aussagen.
+        Alte AP2-Aussagen: 21 angepasst, 3 verschoben, 6 gestrichen (Werkzeug-Grundlagen in AP1-8-1-1; Git-Grundfunktionen
+        in PROJEKT nach P9). Zuordnung 2023S-PB1-A4-a korrigiert: Verschlüsselung für Sensoren, nicht Sensorauswahl.
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 
