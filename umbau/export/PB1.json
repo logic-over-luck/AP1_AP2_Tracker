@@ -1,0 +1,4320 @@
+{
+ "meta": {
+  "raum": "PB1",
+  "erzeugt_mit": "node tools/umbau/export-raum.mjs PB1",
+  "regelwerk_version": "1.6",
+  "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
+  "stichpunkte": 67,
+  "koennen": 266,
+  "quellen": {
+   "PB1-1.json": "d82d1edeaf2582a0",
+   "PB1-10.json": "7b735d9d2e3ee342",
+   "PB1-11.json": "8660fb0992316982",
+   "PB1-12.json": "85a344f34e42dbe1",
+   "PB1-2.json": "7c6bf28060486264",
+   "PB1-3.json": "dae1b8d965cf83c0",
+   "PB1-4.json": "4c7c6e6c1c6b5a61",
+   "PB1-5.json": "a6fd7a5ec396642a",
+   "PB1-6.json": "ef2f9b5092d30cba",
+   "PB1-7.json": "a5b9bce36f83227e",
+   "PB1-8.json": "8e8391b5532dea85",
+   "PB1-9.json": "3bfe1709492958fe"
+  }
+ },
+ "stichpunkte": [
+  {
+   "id": "PB1-1-1-1",
+   "ordner": "PB1-1",
+   "block": "PB1-1-1",
+   "titel": "Klassisch oder agil: Kategorien von Vorgehensmodellen vergleichen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.02",
+    "AP2b.04.02.1",
+    "AP2b.04.02.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-1-1-K1",
+     "stufe": 2,
+     "kurz": "klassische und agile Vorgehensmodelle als zwei Kategorien beschreiben und je ein Beispiel nennen: klassisch das Wasserfall-, Spiral- oder V-Modell, agil Scrum oder Kanban"
+    },
+    {
+     "id": "PB1-1-1-1-K2",
+     "stufe": 2,
+     "kurz": "klassisches und agiles Vorgehen nach Planung und Umgang mit Änderungen unterscheiden: Anforderungen und Plan werden zu Beginn vollständig festgelegt, Änderungen kosten Zeit und Geld – gegenüber schrittweiser Planung in kurzen Iterationen, in die geänderte Anforderungen laufend einfließen"
+    },
+    {
+     "id": "PB1-1-1-1-K3",
+     "stufe": 2,
+     "kurz": "die Mitwirkung des Auftraggebers in beiden Kategorien unterscheiden: im klassischen Vorgehen vor allem beim Festlegen der Anforderungen und bei der Abnahme, im agilen Vorgehen laufend, zum Beispiel bei der Durchsicht der Ergebnisse jedes Sprints"
+    }
+   ]
+  },
+  {
+   "id": "PB1-1-1-2",
+   "ordner": "PB1-1",
+   "block": "PB1-1-1",
+   "titel": "Wasserfall-, V- und Spiralmodell",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.02.1.1",
+    "AP2b.04.02.1.2",
+    "AP2b.04.02.1.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-1-2-K1",
+     "stufe": 2,
+     "kurz": "das V-Modell beschreiben: Die Phasen laufen nacheinander ab wie beim Wasserfallmodell, aber jeder Entwurfsstufe steht eine Teststufe gegenüber: Anforderungsdefinition ↔ Abnahmetest, funktionaler Systementwurf ↔ Systemtest, Architektur- bzw. Grobentwurf ↔ Integrationstest, Komponenten- bzw. Feinentwurf ↔ Komponententest"
+    },
+    {
+     "id": "PB1-1-1-2-K2",
+     "stufe": 2,
+     "kurz": "das Spiralmodell beschreiben: Das Projekt durchläuft die Phasen mehrfach in Runden; jede Runde beginnt mit Zielen und einer Risikoanalyse und endet mit einem Prototyp oder Teilergebnis, auf dem die nächste Runde aufbaut"
+    },
+    {
+     "id": "PB1-1-1-2-K3",
+     "stufe": 2,
+     "kurz": "ein klassisches Modell wie das Wasserfallmodell beschreiben (jede Phase wird abgeschlossen, bevor die nächste beginnt) und zu Wasserfall-, V- und Spiralmodell je einen typischen Einsatzfall nennen: feste, gut bekannte Anforderungen; hohe Anforderungen an nachweisbare Tests; große, neuartige Vorhaben mit hohem Risiko"
+    }
+   ]
+  },
+  {
+   "id": "PB1-1-1-3",
+   "ordner": "PB1-1",
+   "block": "PB1-1-1",
+   "titel": "Scrum: Elemente, Rollen und User Stories",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.02.2.1",
+    "AP2b.03.01"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-1-3-K1",
+     "stufe": 2,
+     "kurz": "über den Sprint-Ablauf aus AP1 hinaus die Artefakte und Zeitrahmen von Scrum beschreiben: Product Backlog mit den Anforderungen als User Stories, Sprint Backlog, Inkrement; Sprint höchstens ein Monat (meist zwei bis vier Wochen), Daily Scrum etwa 15 Minuten"
+    },
+    {
+     "id": "PB1-1-1-3-K2",
+     "stufe": 2,
+     "kurz": "die Aufgaben der Scrum-Rollen beschreiben: Der Product Owner pflegt und ordnet das Product Backlog, der Scrum Master sorgt dafür, dass das Team ungestört und nach den Regeln arbeiten kann, die Entwickler (Developers, früher „Entwicklungsteam“) setzen die Anforderungen im Sprint um"
+    },
+    {
+     "id": "PB1-1-1-3-K3",
+     "stufe": 2,
+     "kurz": "den Aufbau einer User Story erläutern: Rolle, gewünschte Funktion und Nutzen nach dem Muster „Als <Rolle> möchte ich <Funktion>, damit <Nutzen>“"
+    },
+    {
+     "id": "PB1-1-1-3-K4",
+     "stufe": 2,
+     "kurz": "die INVEST-Kriterien einer User Story erläutern: unabhängig (Independent), verhandelbar (Negotiable), wertvoll (Valuable), schätzbar (Estimable), klein (Small), testbar (Testable)"
+    },
+    {
+     "id": "PB1-1-1-3-K5",
+     "stufe": 3,
+     "kurz": "zu Anwendungsfällen eines Anwendungsfalldiagramms User Stories erstellen und dabei Bedingungen aus include- oder extend-Beziehungen aufnehmen, zum Beispiel „Falls der Standort nicht eingestellt ist, muss ich ihn vorher erfassen“"
+    }
+   ]
+  },
+  {
+   "id": "PB1-1-2-1",
+   "ordner": "PB1-1",
+   "block": "PB1-1-2",
+   "titel": "Machbarkeit, Risiken, Änderungen und Kosten",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP1.01.02.1",
+    "AP1.01.02.4",
+    "AP2a.01.02.5",
+    "AP1.04.03.4",
+    "AP1.03.01.1",
+    "AP1.07.02.2",
+    "ZB.change-request",
+    "AP1.01.01.2.6",
+    "AP1.07.07.3",
+    "AP1.01.02.2",
+    "AP1.03.04.1",
+    "AP1.07.06.1",
+    "AP1.07.07.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-2-1-K1",
+     "stufe": 2,
+     "kurz": "Kriterien einer Machbarkeitsanalyse für ein Softwareprojekt benennen und erläutern: technische, organisatorische (verfügbare Ressourcen), rechtliche und wirtschaftliche Machbarkeit sowie Markt-, Konkurrenz- und Preisanalyse"
+    },
+    {
+     "id": "PB1-1-2-1-K2",
+     "stufe": 2,
+     "kurz": "für eine Umfeldanalyse je einen Aspekt des technischen Umfelds (vorhandene IT-Infrastruktur, Schnittstellen zu bestehenden Systemen) und des rechtlichen Umfelds (Datenschutz, Aufbewahrungspflichten, Vorschriften der Branche) erläutern"
+    },
+    {
+     "id": "PB1-1-2-1-K3",
+     "stufe": 3,
+     "kurz": "zu einem Projektrisiko oder einem beschriebenen Problem Ursache, Auswirkung und Gegenmaßnahme in eine Risikotabelle eintragen, zum Beispiel unterschätzter Aufwand wegen fehlender Erfahrung mit den Abläufen des Kunden → Verzögerung und Mehrkosten; sich ändernde Anforderungen → agiles Vorgehen mit regelmäßigen Reviews"
+    },
+    {
+     "id": "PB1-1-2-1-K4",
+     "stufe": 2,
+     "kurz": "beschreiben, was unter Green IT zu verstehen ist: Informationstechnik über den ganzen Lebenszyklus umweltschonend herstellen, betreiben und entsorgen; Ziele sind Energieeffizienz, Ressourcenschonung und Klimaschutz (Energieeffizienz am Arbeitsplatz: AP1-4-3-3)"
+    },
+    {
+     "id": "PB1-1-2-1-K5",
+     "stufe": 2,
+     "kurz": "Change-Request-Management erläutern: Änderungswünsche während des Projekts werden schriftlich erfasst, nach Aufwand, Kosten und Folgen für Termine bewertet, entschieden und erst dann umgesetzt und dokumentiert"
+    },
+    {
+     "id": "PB1-1-2-1-K6",
+     "stufe": 1,
+     "kurz": "Kostenarten eines Softwareprojekts mit je einem Beispiel nennen: Personalkosten (eigene und externe Entwickler), Software- und Lizenzkosten, Hardwarekosten, Kommunikationskosten, Qualifizierungskosten"
+    }
+   ]
+  },
+  {
+   "id": "PB1-1-2-2",
+   "ordner": "PB1-1",
+   "block": "PB1-1-2",
+   "titel": "Stakeholder und Akzeptanz im Softwareprojekt",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP1.01.02.3",
+    "AP1.07.05.3",
+    "AP1.07.05.4",
+    "AP1.07.05.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-2-2-K1",
+     "stufe": 2,
+     "kurz": "zu Stakeholdern eines Softwareprojekts ihr Interesse sowie je eine Erwartung und eine Befürchtung beschreiben, zum Beispiel Geschäftsführung des Kunden: Kostensenkung / Budget wird überschritten; Mitarbeiter: Arbeitserleichterung / Verlust des Arbeitsplatzes; Behörde: Kontrolle der Vorgaben"
+    },
+    {
+     "id": "PB1-1-2-2-K2",
+     "stufe": 2,
+     "kurz": "Befürchtungen von Stakeholdern passende Gegenmaßnahmen zuordnen, zum Beispiel Kostenangst → laufendes Kosten-Controlling; Überforderung → Schulungen; Angst um den Arbeitsplatz → Beschäftigungszusage; Termindruck → Pufferzeiten und enges Termincontrolling; bei Konflikten wie der Angst vor Arbeitsplatzverlust Betroffene früh einbinden und Entscheider wie Geschäftsführung oder Personalrat beteiligen"
+    },
+    {
+     "id": "PB1-1-2-2-K3",
+     "stufe": 2,
+     "kurz": "Ziele eines Workshops zur Einführung eines neuen (z. B. KI-gestützten) Systems erläutern; neu gegenüber AP1 (Chancen vermitteln, Promotoren und Bremser erkennen) ist vor allem, die Folgen des Ist-Zustands bewusst zu machen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-1-2-3",
+   "ordner": "PB1-1",
+   "block": "PB1-1-2",
+   "titel": "Anforderungen ableiten, Lasten- und Pflichtenheft",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.01",
+    "AP2b.04.05",
+    "AP2b.03.01.4",
+    "AP2b.03.01.6",
+    "AP2b.03.01.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-2-3-K1",
+     "stufe": 3,
+     "kurz": "für ein beschriebenes Softwareprojekt ein Lastenheft in Grundzügen erstellen: Ausgangslage und Ziel, Produkteinsatz und Zielgruppen, funktionale Anforderungen, nichtfunktionale Anforderungen, Rahmenbedingungen, Abnahmekriterien"
+    },
+    {
+     "id": "PB1-1-2-3-K2",
+     "stufe": 3,
+     "kurz": "aus einem Lastenheft die Gliederung eines Pflichtenhefts ableiten: zu jeder Anforderung die geplante Lösung, die technische Umsetzung (Architektur, Datenmodell, Schnittstellen, Programmiersprache) und wie die Erfüllung bei der Abnahme geprüft wird"
+    },
+    {
+     "id": "PB1-1-2-3-K3",
+     "stufe": 2,
+     "kurz": "funktionale Anforderungen (was die Software tun soll, z. B. Preise berechnen, Benutzer authentifizieren, Push-Benachrichtigungen senden) und nichtfunktionale Anforderungen (wie gut sie es tun soll, z. B. Verfügbarkeit, Zuverlässigkeit, Usability, Fehlertoleranz, Performance) unterscheiden"
+    },
+    {
+     "id": "PB1-1-2-3-K4",
+     "stufe": 3,
+     "kurz": "aus einer Situationsbeschreibung funktionale und nichtfunktionale Anforderungen an eine Anwendung oder eine IT-Infrastruktur ableiten und so beschreiben, dass ihre Erfüllung geprüft werden kann, zum Beispiel „Suchergebnisse erscheinen nach höchstens zwei Sekunden“ statt „die Suche ist schnell“"
+    },
+    {
+     "id": "PB1-1-2-3-K5",
+     "stufe": 2,
+     "kurz": "Probleme eines bestehenden, papiergestützten Ablaufs benennen und erläutern, wie eine Digitalisierung sie löst, zum Beispiel Medienbrüche, doppelte Erfassung, schlecht lesbare Notizen, fehlender Zugriff auf aktuelle Informationen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-1-2-4",
+   "ordner": "PB1-1",
+   "block": "PB1-1-2",
+   "titel": "Qualitätsmerkmale von Software (ISO/IEC 9126 / 25010)",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.03.01.1",
+    "AP2b.03.01.2",
+    "AP2b.03.01.3",
+    "AP2b.03.01.4",
+    "AP2b.03.01.5",
+    "AP2b.03.01.6",
+    "AP2b.03.01.7",
+    "AP2b.03.01.8",
+    "AP1.02.03.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-1-2-4-K1",
+     "stufe": 2,
+     "kurz": "die Qualitätsmerkmale Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit bzw. Erweiterbarkeit, Übertragbarkeit und Wartbarkeit nennen und erläutern, zum Beispiel Effizienz: das Ergebnis mit möglichst wenig Rechenzeit und Speicher; Änderbarkeit: Anpassungen mit geringem Aufwand. Änderbarkeit (Name in ISO 9126) und Wartbarkeit (ISO 25010) meinen dasselbe Merkmal"
+    },
+    {
+     "id": "PB1-1-2-4-K2",
+     "stufe": 2,
+     "kurz": "eine beschriebene Anforderung dem passenden Qualitätsmerkmal zuordnen, zum Beispiel „läuft unter Android und iOS“ der Übertragbarkeit"
+    },
+    {
+     "id": "PB1-1-2-4-K3",
+     "stufe": 3,
+     "kurz": "die Norm als Grundlage anwenden und Anforderungen an eine geplante Anwendung nach den Qualitätsmerkmalen gliedern, zum Beispiel Antwortzeit (Effizienz) oder neue Zahlungsarten ohne Umbau ergänzbar (Erweiterbarkeit)"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-1-1",
+   "ordner": "PB1-10",
+   "block": "PB1-10-1",
+   "titel": "Schäden einschätzen und Sicherheitsanforderungen festlegen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.04.01",
+    "AP2a.04.01.1",
+    "AP2a.04.01.2",
+    "AP2a.04.01.3",
+    "AP2a.04.03",
+    "AP2a.04.03.1",
+    "AP2a.04.03.2",
+    "AP2a.04.03.3",
+    "AP2a.04.04.4",
+    "AP2a.04.04.5",
+    "AP2b.05.01.2",
+    "AP2a.04.02.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-1-1-K1",
+     "stufe": 4,
+     "kurz": "für einen beschriebenen Sicherheitsvorfall die möglichen Schäden einschätzen: Imageschaden (Vertrauensverlust bei Kunden und Partnern), wirtschaftlicher Schaden (Stillstand, Wiederherstellung, Vertragsstrafen, Bußgelder), Datenverlust; die Zuordnung zum verletzten Schutzziel kennst du aus AP1"
+    },
+    {
+     "id": "PB1-10-1-1-K2",
+     "stufe": 3,
+     "kurz": "Maßnahmen festlegen, mit denen ein eingeschätzter Schaden verhindert oder begrenzt wird, zum Beispiel getrennte Datensicherung gegen Datenverlust, Notfallplan und geplante Kommunikation gegen Imageschaden, Verschlüsselung gegen Bußgelder nach Datenabfluss"
+    },
+    {
+     "id": "PB1-10-1-1-K3",
+     "stufe": 3,
+     "kurz": "für eine geplante Anwendung sicherheitstechnische Anforderungen festlegen, als funktionale Anforderungen (z. B. sichere Datenübertragung, sichere Speicherung personenbezogener Daten, Anmeldung mit zwei Faktoren, Rollen und Rechte, Protokollierung, automatische Abmeldung bei Untätigkeit) und als Qualitätsanforderungen (z. B. Verfügbarkeit, Wiederherstellungszeit)"
+    },
+    {
+     "id": "PB1-10-1-1-K4",
+     "stufe": 2,
+     "kurz": "Ziele von IT-Sicherheitskriterien definieren: Richtschnur für Entwickler (Sicherheit von Beginn an), objektive Bewertung von Systemen (z. B. nach IT-Grundschutz), Unterstützung der Anwender bei der Auswahl eines geeigneten Sicherheitsprodukts"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-1-2",
+   "ordner": "PB1-10",
+   "block": "PB1-10-1",
+   "titel": "Bedrohungsszenarien und präventive Maßnahmen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.04.02",
+    "AP2a.04.02.1",
+    "AP2a.04.02.2",
+    "AP2a.04.02.3",
+    "AP2a.04.04.9"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-1-2-K1",
+     "stufe": 3,
+     "kurz": "präventive Maßnahmen gegen Datendiebstahl planen und umsetzen: Zugriffe nach dem Prinzip der geringsten Rechte, Verschlüsselung gespeicherter und übertragener Daten, Weitergabe an fremde Dienste nur geprüft und vertraglich geregelt"
+    },
+    {
+     "id": "PB1-10-1-2-K2",
+     "stufe": 3,
+     "kurz": "über die Grundmaßnahmen aus AP1 (getrennte Sicherung, Updates, Rechte) hinaus präventive Maßnahmen gegen digitale Erpressung durch Ransomware planen: Sicherungen offline oder unveränderbar aufbewahren, Netze trennen"
+    },
+    {
+     "id": "PB1-10-1-2-K3",
+     "stufe": 3,
+     "kurz": "präventive Maßnahmen gegen Identitätsdiebstahl durch Phishing in einer Anwendung umsetzen: Zwei-Faktor-Anmeldung, Zurücksetzen von Passwörtern nur über einen zweiten, unabhängigen Weg, Warnung bei Anmeldung von neuen Geräten"
+    },
+    {
+     "id": "PB1-10-1-2-K4",
+     "stufe": 3,
+     "kurz": "einen Kunden zu Bedrohungsszenarien beraten und für seine Anwendung Gegenmaßnahmen empfehlen: Man-in-the-Middle (verschlüsselte Verbindung mit Zertifikatsprüfung), SQL-Injection über Eingabefelder (vorbereitete Anweisungen mit Parametern, Eingaben prüfen), DDoS (Filterung, Lastverteilung, Schutzdienste)"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-1-3",
+   "ordner": "PB1-10",
+   "block": "PB1-10-1",
+   "titel": "Verschlüsselungsverfahren in Anwendungen wählen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.05.01.1",
+    "AP2b.05.01.2",
+    "AP1.06.04.8"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-1-3-K1",
+     "stufe": 4,
+     "kurz": "ein Verschlüsselungsverfahren für eine Anwendung vorschlagen und begründen, zum Beispiel symmetrisch mit vorab verteiltem Schlüssel für batteriebetriebene Sensoren mit wenig Rechenleistung, deren Teilnehmer alle bekannt sind"
+    },
+    {
+     "id": "PB1-10-1-3-K2",
+     "stufe": 2,
+     "kurz": "die Art der Transportverschlüsselung bei TLS und bei der E-Mail-Übertragung nennen und erläutern: hybrid, also Sitzungsschlüssel asymmetrisch ausgehandelt (bei TLS 1.3 per Diffie-Hellman), Server per Zertifikat geprüft, Daten symmetrisch mit dem Sitzungsschlüssel verschlüsselt"
+    },
+    {
+     "id": "PB1-10-1-3-K3",
+     "stufe": 3,
+     "kurz": "Transportverschlüsselung (nur der Übertragungsweg ist geschützt) und Ende-zu-Ende-Verschlüsselung (nur Absender und Empfänger können lesen) unterscheiden und für eine Anwendung festlegen, welche nötig ist"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-1-4",
+   "ordner": "PB1-10",
+   "block": "PB1-10-1",
+   "titel": "Integrität, Authentizität, Zertifikate und Passwortspeicherung",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.05.01.1",
+    "AP2b.05.01.2",
+    "AP1.06.04.9",
+    "AP2b.01.05.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-1-4-K1",
+     "stufe": 2,
+     "kurz": "die Sicherheitsmechanismen erläutern, die ein SSL/TLS-Zertifikat für einen Webserver bewirkt: Der Server wird authentifiziert, die Übertragung wird verschlüsselt, die Integrität der Daten wird gesichert"
+    },
+    {
+     "id": "PB1-10-1-4-K2",
+     "stufe": 2,
+     "kurz": "erläutern, wie eine Software die Echtheit von Diensten prüft, ohne jeden öffentlichen Schlüssel vorab zu kennen: Die Zertifikate der Dienste werden von einer (auch firmeneigenen) Zertifizierungsstelle signiert; die Software prüft diese Signatur und ob das Zertifikat widerrufen wurde"
+    },
+    {
+     "id": "PB1-10-1-4-K3",
+     "stufe": 4,
+     "kurz": "zu dem Vorschlag, Daten zu signieren statt zu verschlüsseln, begründet Stellung nehmen: Eine Signatur sichert Authentizität und Integrität, schützt aber nicht die Vertraulichkeit; ein Hash bzw. MAC ist günstig zu berechnen, eine echte Signatur ist asymmetrisch und aufwendiger; ob das reicht, hängt von der Art der Daten ab"
+    },
+    {
+     "id": "PB1-10-1-4-K4",
+     "stufe": 2,
+     "kurz": "eine geeignete Speicherung von Passwörtern in einer Datenbank nennen und beschreiben: nicht im Klartext, sondern als Hashwert mit einem zufälligen Salt je Benutzer und einem bewusst langsamen Verfahren; bei der Anmeldung wird der Hash der Eingabe verglichen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-2-1",
+   "ordner": "PB1-10",
+   "block": "PB1-10-2",
+   "titel": "Authentifizierung, Autorisierung und Identity & Access Management",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.05.01.2",
+    "AP2a.04.05.3",
+    "AP2b.02.03.1",
+    "AP2b.02.01",
+    "AP2b.02.01.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-2-1-K1",
+     "stufe": 2,
+     "kurz": "Identity & Access Management und ein Berechtigungskonzept erläutern: Benutzer, Rollen und Rechte werden zentral verwaltet, die Anmeldung kann an einen Identity Provider abgegeben werden; Zutritt, Zugang und Zugriff werden nach der Organisationsstruktur geregelt, Rechte an Rollen, nur die nötigen Rechte (AP1)"
+    },
+    {
+     "id": "PB1-10-2-1-K2",
+     "stufe": 3,
+     "kurz": "Authentifizierung (Wer bist du?) und Autorisierung (Was darfst du?) mit Benutzer- und Rollenverwaltung in einer Anwendung umsetzen: Anmeldung sicher prüfen, Konten anlegen, Rollen zuweisen, Rechte bei jedem Zugriff prüfen, Konten bei Austritt sofort sperren, Änderungen protokollieren"
+    },
+    {
+     "id": "PB1-10-2-1-K3",
+     "stufe": 2,
+     "kurz": "den Ablauf der Autorisierung mit OAuth2 nachvollziehen (für die Anmeldung erweitert durch OpenID Connect) und die Begriffe zuordnen: Der Client erhält vom Autorisierungsserver einen Autorisierungscode, tauscht ihn gegen ein Access Token und greift damit beim Resource Server auf die geschützte Ressource zu"
+    },
+    {
+     "id": "PB1-10-2-1-K4",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile von Single-Sign-On unter dem Sicherheitsaspekt erläutern: zentrale Rechteverwaltung, weniger Passwörter und schnelle Sperrung bei Vorfällen gegenüber Zugriff auf alle Systeme mit einem gestohlenen Zugang und Abhängigkeit vom Identity Provider"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-2-2",
+   "ordner": "PB1-10",
+   "block": "PB1-10-2",
+   "titel": "Datenschutz beim Entwurf von Anwendungen und Archivierung",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.05.01.1",
+    "AP2b.05.01"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-2-2-K1",
+     "stufe": 3,
+     "kurz": "Privacy by Design und Privacy by Default (Art. 25 DSGVO) beim Erstellen einer Anwendung umsetzen, mit den Grundsätzen aus AP1, zum Beispiel Pflichtfelder auf das Nötige beschränken, Löschung nach Wegfall des Zwecks automatisch vorsehen, Profile standardmäßig nicht öffentlich, wo möglich pseudonymisieren"
+    },
+    {
+     "id": "PB1-10-2-2-K2",
+     "stufe": 2,
+     "kurz": "beschreiben, was bei der Weitergabe personenbezogener Daten an einen fremden Dienst zu beachten ist: Vertraulichkeit, Speicherort, Vertrauenswürdigkeit des Anbieters, vertragliche Regelung der Auftragsverarbeitung"
+    },
+    {
+     "id": "PB1-10-2-2-K3",
+     "stufe": 2,
+     "kurz": "Archivierung von Datensicherung unterscheiden: langfristige, unveränderbare Aufbewahrung in revisionssicheren Archivsystemen (GoBD) nach gesetzlichen Fristen – Handelsbücher und Jahresabschlüsse 10 Jahre, Buchungsbelege 8 Jahre (seit 2025), Handels- und Geschäftsbriefe 6 Jahre – gegenüber Wiederherstellung nach Verlust; nach Ablauf der Fristen und Wegfall des Zwecks werden personenbezogene Daten gelöscht"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-2-3",
+   "ordner": "PB1-10",
+   "block": "PB1-10-2",
+   "titel": "TOM prüfen und softwaretechnisch absichern",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.04.06",
+    "AP2a.04.06.1",
+    "AP2a.04.06.1.1",
+    "AP2a.04.06.1.2",
+    "AP2a.04.06.1.3",
+    "AP2a.04.06.2",
+    "AP2a.04.06.2.1",
+    "AP2a.04.06.2.2",
+    "AP2a.04.06.2.3",
+    "AP2a.04.06.3",
+    "AP2a.04.06.3.1",
+    "AP2a.04.06.3.2",
+    "AP2a.04.06.3.3",
+    "AP2a.04.06.4",
+    "AP2a.04.06.5",
+    "AP2b.02.02",
+    "AP2b.02.02.1",
+    "AP2b.02.02.2",
+    "AP2b.02.03",
+    "AP2b.02.03.2",
+    "AP2b.02.03.3",
+    "AP2b.02.03.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-2-3-K1",
+     "stufe": 2,
+     "kurz": "die Katalogbeispiele den Kontrollarten zuordnen (Unterscheidung aus AP1): Zutrittskontrolle (Alarmanlage, Videoüberwachung, Besucherausweise), Zugangskontrolle (Bildschirmsperre mit Passwort, biometrische Verfahren, Magnet- oder Chipkarte), Zugriffskontrolle (Datenträgerverschlüsselung, sichere Löschung, Rollenkonzept)"
+    },
+    {
+     "id": "PB1-10-2-3-K2",
+     "stufe": 4,
+     "kurz": "die Wirksamkeit einer Maßnahme der Zutritts-, Zugangs- oder Zugriffskontrolle prüfen und eine Schwäche benennen, zum Beispiel Videoüberwachung ohne Auswertung, Bildschirmsperre erst nach langer Zeit, nicht zurückgegebene Besucherausweise, Rollenkonzept mit veralteten Rechten, Löschung ohne Überschreiben, Datenträgerverschlüsselung ohne sicher hinterlegten Wiederherstellungsschlüssel"
+    },
+    {
+     "id": "PB1-10-2-3-K3",
+     "stufe": 4,
+     "kurz": "die Effizienz technisch-organisatorischer Maßnahmen prüfen: ob Aufwand und Kosten im Verhältnis zum Schutzbedarf stehen und ob eine einfachere Maßnahme denselben Schutz bietet"
+    },
+    {
+     "id": "PB1-10-2-3-K4",
+     "stufe": 1,
+     "kurz": "Möglichkeiten der physischen Absicherung benennen: Zugangskontrollen für Gebäude, Serverraum und Schrank, Schutz vor Elementarrisiken wie Feuer und Hochwasser (Brandmeldeanlage, Serverraum nicht im Keller, Sicherung an einem anderen Ort)"
+    },
+    {
+     "id": "PB1-10-2-3-K5",
+     "stufe": 4,
+     "kurz": "mit Log Management und Compliance Reports prüfen, ob TOM wirken: Ereignisse zentral sammeln und auswerten, um Vorfälle zu erkennen und nachzuweisen; Berichte zeigen, ob Vorgaben eingehalten werden"
+    },
+    {
+     "id": "PB1-10-2-3-K6",
+     "stufe": 3,
+     "kurz": "einen Webfilter einrichten, der Inhalte und Webseiten nach Kategorien oder Listen sperrt, und ihn von der Firewall abgrenzen, die Verbindungen nach Adressen, Ports und Protokollen erlaubt oder sperrt"
+    },
+    {
+     "id": "PB1-10-2-3-K7",
+     "stufe": 3,
+     "kurz": "Portsecurity an einem Switch umsetzen: An einem Anschluss werden nur bekannte Geräte (MAC-Adressen) zugelassen, unbekannte werden gesperrt"
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-2-4",
+   "ordner": "PB1-10",
+   "block": "PB1-10-2",
+   "titel": "Sicherheitsprüfung und Beratung",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.04.05",
+    "AP2a.04.05.1",
+    "AP2a.04.05.2",
+    "AP2a.04.05.4",
+    "AP2a.04.04",
+    "AP2a.04.04.1",
+    "AP2a.04.04.2",
+    "AP2a.04.04.3",
+    "AP2a.04.04.6",
+    "AP2a.04.04.7",
+    "AP2a.04.04.7.1",
+    "AP2a.04.04.7.2",
+    "AP2a.04.04.7.3",
+    "AP2a.04.04.7.4",
+    "AP2a.04.04.8"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-10-2-4-K1",
+     "stufe": 2,
+     "kurz": "Werkzeuge zur Überprüfung von IT-Sicherheitsmaßnahmen erläutern: Penetrationstest (beauftragter Angriff mit den Mitteln eines Angreifers), Schwachstellenanalyse (systematische Suche nach bekannten Lücken, z. B. mit einem Scanner), Device Security Check (prüft, ob ein Gerät die Vorgaben erfüllt: Updates, Virenschutz, Verschlüsselung)"
+    },
+    {
+     "id": "PB1-10-2-4-K2",
+     "stufe": 3,
+     "kurz": "Kunden zielgruppengerecht zur IT-Sicherheit beraten: private Haushalte (Updates, Passwortmanager, Sicherung), Unternehmen intern und extern (Richtlinien, Schulung, TOM), öffentliche Hand (Grundschutz, Vorgaben zu Vergabe und Datenschutz)"
+    },
+    {
+     "id": "PB1-10-2-4-K3",
+     "stufe": 3,
+     "kurz": "bei einer Beratung technologische, organisatorische, rechtliche und ethische Rahmenbedingungen sowie die Risiken des Kunden (bewertet wie in AP1-7-2-3) berücksichtigen, zum Beispiel vorhandene Systeme, Zuständigkeiten, DSGVO, keine heimliche Überwachung von Beschäftigten"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-1-1",
+   "ordner": "PB1-11",
+   "block": "PB1-11-1",
+   "titel": "Schichtenmodelle, Ethernet-Frame und Netzwerkkomponenten",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.01",
+    "AP2b.01.01.1",
+    "AP2b.01.01.2",
+    "AP2b.01.01.5",
+    "AP2b.01.01.6",
+    "AP2b.01.01.3",
+    "AP2b.01.01.4",
+    "AP2b.02.06.6",
+    "AP2b.01.02",
+    "AP2b.01.02.1",
+    "AP2b.01.02.2",
+    "AP2b.01.02.3",
+    "AP2b.01.02.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-1-1-K1",
+     "stufe": 2,
+     "kurz": "die vier Schichten des TCP/IP-Modells (Netzzugang, Internet, Transport, Anwendung) benennen, den Schichten des OSI-Modells zuordnen und dabei über AP1 hinaus auch ARP, Routing und Switching einordnen"
+    },
+    {
+     "id": "PB1-11-1-1-K2",
+     "stufe": 2,
+     "kurz": "die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte); in der MAC-Adresse kennzeichnen die ersten 3 Byte den Hersteller (OUI)"
+    },
+    {
+     "id": "PB1-11-1-1-K3",
+     "stufe": 2,
+     "kurz": "Switch, Bridge und Router vergleichen: Bridge und Switch leiten auf Schicht 2 anhand der MAC-Adresse und einer MAC-Tabelle innerhalb eines Netzes weiter (ein Switch ist eine Bridge mit vielen Anschlüssen), ein Router leitet auf Schicht 3 anhand der IP-Adresse und einer Routingtabelle zwischen Netzen weiter"
+    },
+    {
+     "id": "PB1-11-1-1-K4",
+     "stufe": 2,
+     "kurz": "die Aufgabe einer Firewall beschreiben und Paketfilter (Regeln nach Adressen und Ports) von zustandsorientierter Prüfung (merkt sich bestehende Verbindungen und lässt nur die zugehörigen Antworten durch) unterscheiden"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-1-2",
+   "ordner": "PB1-11",
+   "block": "PB1-11-1",
+   "titel": "Übertragungsprotokolle: TCP, UDP, HTTP, HTTPS",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.05",
+    "AP2b.01.05.1",
+    "AP2b.01.05.2",
+    "AP2b.01.01.6"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-1-2-K1",
+     "stufe": 2,
+     "kurz": "die Eigenschaften von TCP (verbindungsorientiert, Bestätigung, richtige Reihenfolge, erneutes Senden verlorener Pakete) und UDP (verbindungslos, ohne Zustellgarantie, wenig Aufwand, schnell) erläutern"
+    },
+    {
+     "id": "PB1-11-1-2-K2",
+     "stufe": 3,
+     "kurz": "für eine Anwendung die passenden Protokolle einsetzen und begründen, zum Beispiel TCP für Dateiübertragung und Webseiten, UDP für Sprache und Video in Echtzeit, HTTPS statt HTTP, sobald Anmeldedaten oder personenbezogene Daten übertragen werden (was das TLS-Zertifikat bewirkt, steht in PB1-10)"
+    },
+    {
+     "id": "PB1-11-1-2-K3",
+     "stufe": 2,
+     "kurz": "mögliche Ursachen einer Fehlermeldung wie HTTP 404 beschreiben: Seite oder Datei gelöscht oder verschoben, URL fehlerhaft angelegt, falsch verlinkt oder falsch eingegeben; davon abgrenzen, dass Server oder Namensauflösung nicht erreichbar sind"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-1-3",
+   "ordner": "PB1-11",
+   "block": "PB1-11-1",
+   "titel": "Netzwerkdienste: DNS, DHCP und Proxy",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.07",
+    "AP2b.01.07.1",
+    "AP2b.01.07.2",
+    "AP2b.01.07.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-1-3-K1",
+     "stufe": 2,
+     "kurz": "die Aufgabe von DNS beschreiben: Namen in IP-Adressen auflösen, hierarchisch über Root-, Top-Level- und zuständige Nameserver, für lokale Domains über einen eigenen DNS-Server"
+    },
+    {
+     "id": "PB1-11-1-3-K2",
+     "stufe": 2,
+     "kurz": "den Ablauf einer DHCP-Vergabe beschreiben: Discover, Offer, Request, Acknowledge; die Adresse gilt für eine begrenzte Zeit (Lease) und wird vorher verlängert"
+    },
+    {
+     "id": "PB1-11-1-3-K3",
+     "stufe": 2,
+     "kurz": "die Aufgabe eines Proxys beschreiben: Er stellt Anfragen stellvertretend für die Clients und kann dabei filtern, zwischenspeichern und protokollieren"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2-1",
+   "ordner": "PB1-11",
+   "block": "PB1-11-2",
+   "titel": "Netzausdehnung, Verkabelung und Netzwerkplan",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.03",
+    "AP2b.01.03.1",
+    "AP2b.01.03.2",
+    "AP2b.01.03.5",
+    "AP2b.01.03.12",
+    "AP2b.02.06.2",
+    "ANH.it-netzwerk-diagramm-netzwerkplan"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-2-1-K1",
+     "stufe": 2,
+     "kurz": "Netzarten nach ihrer Ausdehnung benennen und charakterisieren: PAN (Nahbereich einer Person), LAN (Gebäude, Gelände), MAN (Stadt), WAN (Länder), GAN (weltweit)"
+    },
+    {
+     "id": "PB1-11-2-1-K2",
+     "stufe": 4,
+     "kurz": "Netzwerkkonzepte ihrem Anwendungsgebiet zuordnen und die Zuordnung begründen: LPWAN für das Internet der Dinge (große Reichweite, geringer Energiebedarf, kostengünstig), LAN für das Unternehmensnetz (hohe Bandbreite, geringe Latenz), SAN im Rechenzentrum (schneller, skalierbarer Speicherzugriff der Server)"
+    },
+    {
+     "id": "PB1-11-2-1-K3",
+     "stufe": 2,
+     "kurz": "strukturierte Verkabelung charakterisieren: einheitlich und unabhängig von der späteren Nutzung geplante Verkabelung in Primärbereich (zwischen Gebäuden), Sekundärbereich (zwischen Stockwerken) und Tertiärbereich (bis zur Anschlussdose)"
+    },
+    {
+     "id": "PB1-11-2-1-K4",
+     "stufe": 2,
+     "kurz": "Datenübertragungsraten von Netzen einordnen und vergleichen, zum Beispiel 1 Gbit/s und mehr im LAN, Glasfaser im Primärbereich, wenige kbit/s im LPWAN"
+    },
+    {
+     "id": "PB1-11-2-1-K5",
+     "stufe": 2,
+     "kurz": "einen Netzwerkplan mit den Symbolen des Anhangs deuten: welche Geräte in welchem Teilnetz liegen, wie sie verbunden sind und zwischen welchen Netzen eine Firewall trennt"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2-2",
+   "ordner": "PB1-11",
+   "block": "PB1-11-2",
+   "titel": "VLAN, Drahtlosnetze und Zugriffskontrolle im Netz",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.03.3",
+    "AP2b.01.03.6",
+    "AP2b.01.03.7",
+    "AP2b.01.03.8",
+    "AP2b.01.03.9",
+    "AP2b.01.03.10"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-2-2-K1",
+     "stufe": 2,
+     "kurz": "ein VLAN charakterisieren: ein logisch abgetrenntes Netz auf derselben Switch-Infrastruktur, eingesetzt, um Abteilungen oder Gäste zu trennen, die Sicherheit zu erhöhen und Broadcast-Verkehr zu begrenzen"
+    },
+    {
+     "id": "PB1-11-2-2-K2",
+     "stufe": 2,
+     "kurz": "Drahtlosnetze charakterisieren: PAN mit Bluetooth für kurze Entfernungen, WLAN im Gebäude, Mesh-WLAN mit mehreren zusammenarbeitenden Zugangspunkten für große Flächen"
+    },
+    {
+     "id": "PB1-11-2-2-K3",
+     "stufe": 2,
+     "kurz": "Risiken in Drahtlosnetzen und Maßnahmen dagegen beschreiben: Mithören, unbefugter Zugang und gefälschte Zugangspunkte; aktuelle Verschlüsselung, Anmeldung je Benutzer, getrenntes Gastnetz"
+    },
+    {
+     "id": "PB1-11-2-2-K4",
+     "stufe": 2,
+     "kurz": "neben RADIUS (aus AP1) Kerberos als Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: einmalige Anmeldung bei einer zentralen Stelle, danach zeitlich begrenzte Tickets für die einzelnen Dienste"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2-3",
+   "ordner": "PB1-11",
+   "block": "PB1-11-2",
+   "titel": "Client-Server, Peer-to-Peer und Speicher im Netz",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.04",
+    "AP2b.01.04.1",
+    "AP2b.01.04.2",
+    "AP2b.02.06",
+    "AP2b.02.06.1",
+    "AP2b.02.06.2",
+    "AP2b.02.06.3",
+    "AP2b.02.06.4",
+    "AP2b.02.06.5",
+    "AP2b.02.06.6"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-2-3-K1",
+     "stufe": 4,
+     "kurz": "Peer-to-Peer (gleichberechtigte Rechner ohne zentralen Server) und Client-Server (zentraler Dienst, der sich gemeinsam verwalten und sichern lässt) vergleichen und für einen Einsatz bewerten, welches Konzept passt"
+    },
+    {
+     "id": "PB1-11-2-3-K2",
+     "stufe": 4,
+     "kurz": "Dateifreigaben über SMB/CIFS (vor allem Windows) und NFS (vor allem Unix und Linux) beschreiben und für einen Einsatz bewerten, welche passt"
+    },
+    {
+     "id": "PB1-11-2-3-K3",
+     "stufe": 4,
+     "kurz": "Wege des Datenabrufs vergleichen und bewerten: HTTP für Webdienste und Schnittstellen, ODBC als einheitliche Schnittstelle von Anwendungen zu verschiedenen Datenbanken"
+    },
+    {
+     "id": "PB1-11-2-3-K4",
+     "stufe": 2,
+     "kurz": "das NAS aus AP1 (dateibasiert, stellt Dateien über das Netz bereit) vom SAN unterscheiden: eigenes Speichernetz, das Servern Speicher blockbasiert wie eine lokale Festplatte bereitstellt"
+    },
+    {
+     "id": "PB1-11-2-3-K5",
+     "stufe": 2,
+     "kurz": "die Anbindung von Blockspeicher beschreiben: iSCSI über das normale Ethernet, Fibre Channel über ein eigenes, schnelles Speichernetz"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2-4",
+   "ordner": "PB1-11",
+   "block": "PB1-11-2",
+   "titel": "Standortübergreifende Kommunikation: VPN-Modelle, Tunneling, IPsec",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.06",
+    "AP2b.01.06.1",
+    "AP2b.01.06.2",
+    "AP2b.01.06.3",
+    "AP2b.01.03.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-2-4-K1",
+     "stufe": 2,
+     "kurz": "VPN-Modelle unterscheiden: Site-to-Site (zwei Standortnetze werden verbunden), End-to-Site (ein einzelnes Gerät wählt sich ins Firmennetz ein), End-to-End (zwei Geräte direkt)"
+    },
+    {
+     "id": "PB1-11-2-4-K2",
+     "stufe": 4,
+     "kurz": "für eine Situation ein VPN-Modell und das Verfahren auswählen und die Wahl begründen, zum Beispiel Site-to-Site mit IPsec im Tunnelmodus für die Filialen, End-to-Site für Beschäftigte im Homeoffice"
+    },
+    {
+     "id": "PB1-11-2-4-K3",
+     "stufe": 2,
+     "kurz": "über das Bild des Tunnels aus AP1 hinaus IPsec erläutern: verschlüsselt und authentifiziert IP-Pakete auf der Netzwerkebene; im Tunnelmodus wird das ganze ursprüngliche Paket samt Kopf geschützt, im Transportmodus nur die Nutzdaten"
+    },
+    {
+     "id": "PB1-11-2-4-K4",
+     "stufe": 3,
+     "kurz": "eine VPN-Verbindung zwischen zwei Standorten einrichten: Gateways und ihre Adressen, zu verbindende Netze, Authentifizierung mit Pre-Shared Key oder Zertifikat, Verschlüsselungsverfahren festlegen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-1-1",
+   "ordner": "PB1-12",
+   "block": "PB1-12-1",
+   "titel": "Verfügbarkeit von Anwendungsdiensten beurteilen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.08",
+    "AP2b.01.08.1",
+    "AP2b.01.08.2",
+    "AP2b.01.08.3",
+    "AP2b.01.08.4",
+    "AP2b.01.08.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-12-1-1-K1",
+     "stufe": 3,
+     "kurz": "Verfügbarkeit als Anteil der Betriebszeit an der Gesamtzeit erklären und berechnen, zum Beispiel entsprechen 99,9 % im Jahr knapp 9 Stunden Ausfall"
+    },
+    {
+     "id": "PB1-12-1-1-K2",
+     "stufe": 4,
+     "kurz": "die Verfügbarkeitsanforderungen von Anwendungsdiensten beurteilen: Echtzeitkommunikation (Ausfall sofort spürbar), Mailserver (kurze Ausfälle durch Zwischenspeicherung beim Absender überbrückbar), Webserver (Kunden und Umsatz), Groupware (Zusammenarbeit), Datenbanken (alle abhängigen Anwendungen stehen still)"
+    },
+    {
+     "id": "PB1-12-1-1-K3",
+     "stufe": 4,
+     "kurz": "für einen Dienst eine angemessene Verfügbarkeit festlegen und begründen, welche Maßnahmen dafür nötig sind"
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-1-2",
+   "ordner": "PB1-12",
+   "block": "PB1-12-1",
+   "titel": "Ausfallrisiken, MTBF/AFR und Notfallkonzept",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.09",
+    "AP2b.01.09.1",
+    "AP2b.01.09.2",
+    "AP2b.01.09.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-12-1-2-K1",
+     "stufe": 2,
+     "kurz": "Risiken für den Betrieb identifizieren, zum Beispiel einzelne Fehlerquellen ohne Ersatz, Abhängigkeit von einem Rechenzentrum oder einer Leitung, Engpässe in der Bandbreite, veraltete Hardware"
+    },
+    {
+     "id": "PB1-12-1-2-K2",
+     "stufe": 3,
+     "kurz": "MTBF (mittlere Betriebsdauer zwischen zwei Ausfällen) und AFR (Anteil der Geräte, die in einem Jahr ausfallen) erklären und beim Planen von Ersatzteilen und Redundanz berücksichtigen"
+    },
+    {
+     "id": "PB1-12-1-2-K3",
+     "stufe": 3,
+     "kurz": "ein Notfallkonzept (Disaster Recovery) planen: wer nach einem schweren Ausfall was in welcher Reihenfolge tut, wie lange der Ausfall dauern und wie viele Daten verloren gehen dürfen, Ausweichsysteme, regelmäßige Übungen; Konzept und Maßnahmen werden wie jeder Verbesserungsprozess im PDCA-Zyklus (AP1) geprüft und nachgesteuert"
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-1-3",
+   "ordner": "PB1-12",
+   "block": "PB1-12-1",
+   "titel": "Betrieb sicherstellen: USV, Redundanz, RAID und Backup",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.10",
+    "AP2b.01.10.1",
+    "AP2b.01.10.2",
+    "AP2b.01.10.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-12-1-3-K1",
+     "stufe": 4,
+     "kurz": "den Einsatz einer USV beurteilen: Sie überbrückt Stromausfälle und Spannungsschwankungen, bis Systeme geordnet herunterfahren oder ein Notstromaggregat übernimmt; Leistung und Überbrückungszeit müssen zum Bedarf passen"
+    },
+    {
+     "id": "PB1-12-1-3-K2",
+     "stufe": 4,
+     "kurz": "hardwaretechnische Redundanz beurteilen: doppelte Netzteile, Server im Verbund (Cluster), zweite Leitung, zweites Rechenzentrum; der Ausfall eines Teils beendet den Betrieb nicht"
+    },
+    {
+     "id": "PB1-12-1-3-K3",
+     "stufe": 4,
+     "kurz": "die RAID-Level 0, 1, 5 und 10 nach Ausfallsicherheit, nutzbarer Kapazität und Geschwindigkeit unterscheiden und für einen Einsatz beurteilen, welcher passt"
+    },
+    {
+     "id": "PB1-12-1-3-K4",
+     "stufe": 3,
+     "kurz": "die nutzbare Kapazität eines RAID-Verbunds berechnen, zum Beispiel RAID 1 aus zwei 4-TB-Platten 4 TB, RAID 5 aus vier 2-TB-Platten 6 TB, RAID 10 aus vier 2-TB-Platten 4 TB (Herstellerangaben dezimal in TB; als Datenmenge in TiB umrechnen wie in AP1)"
+    },
+    {
+     "id": "PB1-12-1-3-K5",
+     "stufe": 4,
+     "kurz": "über die Backup-Verfahren aus AP1 hinaus begründen, warum RAID kein Backup ersetzt (Löschen, Verschlüsseln durch Schadsoftware und Fehlbedienung werden sofort auf alle Platten übertragen), und den Einsatz von Snapshots beurteilen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-2-1",
+   "ordner": "PB1-12",
+   "block": "PB1-12-2",
+   "titel": "Monitoring: Messdaten, Schwellwerte, SNMP, S.M.A.R.T., Systemlast",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2b.01.11",
+    "AP2b.01.11.1",
+    "AP2b.01.11.2",
+    "AP2b.01.11.3",
+    "AP2b.01.11.4",
+    "AP2b.01.11.5",
+    "AP2b.01.11.6"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-12-2-1-K1",
+     "stufe": 3,
+     "kurz": "festlegen, welche Monitoringdaten erfasst werden: Auslastung von Prozessor, Arbeitsspeicher und Datenträgern, Netzlast, Antwortzeiten, Erreichbarkeit von Diensten, Fehlermeldungen in Protokollen"
+    },
+    {
+     "id": "PB1-12-2-1-K2",
+     "stufe": 3,
+     "kurz": "Schwellwerte für Warnung und Alarm festlegen, zum Beispiel Warnung ab 80 % und Alarm ab 95 % Speicherbelegung"
+    },
+    {
+     "id": "PB1-12-2-1-K3",
+     "stufe": 3,
+     "kurz": "SNMP (Zustandswerte von Netzwerkgeräten abfragen und Meldungen empfangen) und S.M.A.R.T. (Selbstüberwachung von Festplatten und SSDs) im Monitoring anwenden"
+    },
+    {
+     "id": "PB1-12-2-1-K4",
+     "stufe": 3,
+     "kurz": "eine Systemlastanalyse durchführen und daraus Ressourcenengpässe interpretieren, zum Beispiel dauerhaft volle Prozessorlast zu Stoßzeiten oder knapper Arbeitsspeicher mit viel Auslagerung"
+    },
+    {
+     "id": "PB1-12-2-1-K5",
+     "stufe": 3,
+     "kurz": "Predictive Maintenance anwenden: aus Messwerten wie S.M.A.R.T.-Werten oder Temperaturen vorhersagen, wann ein Teil ausfällt, und es vorher tauschen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-2-2",
+   "ordner": "PB1-12",
+   "block": "PB1-12-2",
+   "titel": "Störungen bearbeiten: Incident Management, SLA, SOP, Eskalation",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2b.01.12",
+    "AP2b.01.12.1",
+    "AP2b.01.12.2",
+    "AP2b.01.12.3",
+    "AP2b.01.12.4",
+    "AP1.07.03.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-12-2-2-K1",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile eines Ticketsystems im Incident Management erläutern: Zeitersparnis durch strukturierte Abläufe, Echtzeit-Übersicht mit Auswertungen und Wissensdatenbank, zugesicherte Reaktionszeiten für Kunden gegenüber Aufwand und Kosten für Einführung und Pflege"
+    },
+    {
+     "id": "PB1-12-2-2-K2",
+     "stufe": 4,
+     "kurz": "Monitoringergebnisse analysieren und korrektive Maßnahmen bestimmen, zum Beispiel bei Speicherengpass erweitern oder aufräumen, bei Überlast zu Stoßzeiten die Last verteilen oder Ressourcen erhöhen; vorbeugender Tausch nach Messwerten ist Predictive Maintenance"
+    },
+    {
+     "id": "PB1-12-2-2-K3",
+     "stufe": 4,
+     "kurz": "analysieren, für welche wiederkehrenden Störungen eine Standard Operation Procedure sinnvoll ist, und sie als festgelegte Schritt-für-Schritt-Anweisung bestimmen"
+    },
+    {
+     "id": "PB1-12-2-2-K4",
+     "stufe": 4,
+     "kurz": "ein Service Level Agreement analysieren (zugesagte Verfügbarkeit, Reaktions- und Lösungszeiten je Service Level) und bestimmen, ob eine Störung danach rechtzeitig bearbeitet wurde; „Service Level 1 bis 3“ meint je nach Vertrag die vereinbarten Leistungsstufen oder die Support-Stufen First, Second, Third Level aus AP1"
+    },
+    {
+     "id": "PB1-12-2-2-K5",
+     "stufe": 4,
+     "kurz": "an einem Störungsverlauf analysieren, wann fachlich (an die nächste Support-Stufe, siehe AP1-1-3-1) oder hierarchisch (an Vorgesetzte) eskaliert werden muss"
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-2-3",
+   "ordner": "PB1-12",
+   "block": "PB1-12-2",
+   "titel": "Service- und Liefermodelle: On-Premises, Cloud, IaaS, PaaS, SaaS",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.02.04",
+    "AP2b.02.04.1",
+    "AP2b.02.04.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-12-2-3-K1",
+     "stufe": 1,
+     "kurz": "IaaS (gemietete Infrastruktur wie virtuelle Server und Speicher), PaaS (Plattform, auf der eigene Anwendungen laufen) und SaaS (fertige Anwendung über das Netz) benennen"
+    },
+    {
+     "id": "PB1-12-2-3-K2",
+     "stufe": 2,
+     "kurz": "für IaaS, PaaS und SaaS einordnen, wofür der Anbieter und wofür der Kunde verantwortlich ist, zum Beispiel bei IaaS der Kunde für Betriebssystem und Anwendung, bei SaaS nur für Daten und Benutzer"
+    },
+    {
+     "id": "PB1-12-2-3-K3",
+     "stufe": 4,
+     "kurz": "über die Wahl zwischen On-Premises und Cloud aus AP1 hinaus für einen beschriebenen Bedarf zwischen IaaS, PaaS und SaaS auswählen und die Wahl mit eigenem Fachwissen, Verantwortung für Betrieb und Updates sowie Kosten begründen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-2-1-1",
+   "ordner": "PB1-2",
+   "block": "PB1-2-1",
+   "titel": "Rechtlicher Rahmen: BGB, HGB, UWG und AGB",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.01.02.1",
+    "AP2a.01.02.2",
+    "AP2a.01.02.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-2-1-1-K1",
+     "stufe": 3,
+     "kurz": "eine Kundenbeziehung nach BGB und HGB gestalten: Das BGB gilt für Verträge aller Personen, das HGB zusätzlich für Geschäfte unter Kaufleuten, zum Beispiel mit der Pflicht, gelieferte Ware unverzüglich zu prüfen und Mängel unverzüglich zu rügen. Für die Erstellung von Software ist meist der Werkvertrag einschlägig (AP1-3-3-2)"
+    },
+    {
+     "id": "PB1-2-1-1-K2",
+     "stufe": 3,
+     "kurz": "Werbung und Kundenansprache so gestalten, dass sie nicht gegen das Gesetz gegen den unlauteren Wettbewerb verstößt: keine irreführenden Angaben, keine unzumutbare Belästigung wie Werbe-E-Mails ohne Einwilligung, keine aggressive Beeinflussung, kein Herabsetzen von Mitbewerbern"
+    },
+    {
+     "id": "PB1-2-1-1-K3",
+     "stufe": 3,
+     "kurz": "Allgemeine Geschäftsbedingungen (vorformulierte Vertragsbedingungen, Regeln heute im BGB) so gestalten, dass sie gelten: wirksam in den Vertrag einbeziehen (Hinweis, zumutbare Kenntnisnahme und Einverständnis des Kunden) und auf überraschende oder unangemessen benachteiligende Klauseln verzichten, weil diese unwirksam sind"
+    }
+   ]
+  },
+  {
+   "id": "PB1-2-1-2",
+   "ordner": "PB1-2",
+   "block": "PB1-2-1",
+   "titel": "Compliance, Regelkonformität und Kundenbindung (CRM)",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.01.02.4",
+    "AP2a.01.02.5",
+    "AP2a.01.02.6",
+    "AP1.06.01.3.2",
+    "AP1.04.04.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-2-1-2-K1",
+     "stufe": 3,
+     "kurz": "Compliance als das Einhalten von Gesetzen, Verträgen und unternehmensinternen Regeln erklären und Maßnahmen gestalten, mit denen ein Softwareprojekt regelkonform bleibt: Lizenzen prüfen, Datenschutz von Beginn an einplanen, interne Vorgaben dokumentieren und schulen"
+    },
+    {
+     "id": "PB1-2-1-2-K2",
+     "stufe": 4,
+     "kurz": "für ein Softwareprodukt begründen, ob eine Open-Source-Bibliothek ohne Einschränkung eingesetzt werden darf, indem du die Lizenzarten aus AP1 (Copyleft, freizügige Lizenzen) auf den Fall anwendest"
+    },
+    {
+     "id": "PB1-2-1-2-K3",
+     "stufe": 2,
+     "kurz": "beschreiben, wozu eine App, die Benutzerdaten speichert, Datenschutzerklärung und gegebenenfalls Einwilligung braucht: Die Datenschutzerklärung erfüllt die Informationspflicht (Art, Zweck, Rechte); die Einwilligung ist eine von sechs möglichen Rechtsgrundlagen der DSGVO und nötig, wenn keine andere wie die Vertragserfüllung greift"
+    },
+    {
+     "id": "PB1-2-1-2-K4",
+     "stufe": 2,
+     "kurz": "Vorteile eines digitalen Kundenportals (Self-Service) beschreiben: schnelle und sichere Kommunikation, Einsparung von Druck- und Portokosten, Zugriff über mobile Geräte, kurzfristige Zusatzinformationen, zusätzliche Marketingmöglichkeit"
+    },
+    {
+     "id": "PB1-2-1-2-K5",
+     "stufe": 3,
+     "kurz": "ein CRM-System (alle Kontakte, Anfragen und Käufe eines Kunden an einer Stelle) nutzen und für eine Kundenbeziehung Maßnahmen gestalten, zum Beispiel Kundenhistorie auswerten, passende Angebote zum richtigen Zeitpunkt, Rückmeldungen erfassen und Beschwerden nachverfolgen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-2-1-3",
+   "ordner": "PB1-2",
+   "block": "PB1-2-1",
+   "titel": "Tabellenkalkulation: Formeln, Verweise und Grenzen",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2a.01.03.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-2-1-3-K1",
+     "stufe": 3,
+     "kurz": "in einer Tabellenkalkulation Formeln mit Zellbezügen erstellen, zum Beispiel das Datum der nächsten Zeile als Wert der Zelle darüber plus eins; absolute Bezüge ($B$3) verwenden, wenn die Formel kopiert wird"
+    },
+    {
+     "id": "PB1-2-1-3-K2",
+     "stufe": 3,
+     "kurz": "mit SVERWEIS (VLOOKUP) einen Wert aus einer Tabelle auf einem anderen Blatt holen: Suchwert, Bereich, Nummer der Ergebnisspalte, genaue Übereinstimmung (FALSCH)"
+    },
+    {
+     "id": "PB1-2-1-3-K3",
+     "stufe": 3,
+     "kurz": "WENN mit Datumsfunktionen wie WOCHENTAG verknüpfen, zum Beispiel einen Grundpreis nur von Montag bis Freitag um 10 % senken; die Nummerierung der Wochentage steht in der Funktionsbeschreibung"
+    },
+    {
+     "id": "PB1-2-1-3-K4",
+     "stufe": 2,
+     "kurz": "Einsatzmöglichkeiten einer Tabellenkalkulation beschreiben, zum Beispiel Arbeitszeiten oder Kosten berechnen, Messwerte auswerten und als Diagramm darstellen"
+    },
+    {
+     "id": "PB1-2-1-3-K5",
+     "stufe": 2,
+     "kurz": "Probleme beim Einsatz von Tabellenkalkulationen beschreiben: Bei großen Datenmengen und vielen Abhängigkeiten zwischen Formeln wird die Mappe unübersichtlich, schwer wartbar und fehleranfällig; dann passt eine Datenbankanwendung besser"
+    }
+   ]
+  },
+  {
+   "id": "PB1-2-1-4",
+   "ordner": "PB1-2",
+   "block": "PB1-2-1",
+   "titel": "Daten interpretieren, visualisieren und präsentieren",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2a.01.03.1",
+    "AP2a.01.03.2",
+    "AP2a.01.03.3",
+    "AP2a.01.03.5",
+    "AP2a.01.03.6",
+    "AP2a.01.03.7"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-2-1-4-K1",
+     "stufe": 3,
+     "kurz": "für einen Datenbestand eine passende Diagrammart wählen und die Daten damit aufbereiten: Säulen oder Balken für Vergleiche, Linie für Verläufe über die Zeit, Kreis für Anteile an einem Ganzen"
+    },
+    {
+     "id": "PB1-2-1-4-K2",
+     "stufe": 2,
+     "kurz": "ein Diagramm oder eine Auswertung interpretieren: die wichtigste Aussage formulieren und auffällige Werte oder Trends benennen"
+    },
+    {
+     "id": "PB1-2-1-4-K3",
+     "stufe": 3,
+     "kurz": "Regeln der Visualisierung anwenden: eine Aussage je Darstellung, Achsen und Einheiten beschriften, Farben sparsam und einheitlich einsetzen, nichts durch die Darstellung verzerren"
+    },
+    {
+     "id": "PB1-2-1-4-K4",
+     "stufe": 3,
+     "kurz": "Ergebnisse eines Softwareprojekts mit digitalen Werkzeugen aufbereiten und präsentieren: Berechnung und Diagramm in der Tabellenkalkulation, Folien im Präsentationsprogramm nach den Vorgaben der Corporate Identity (Logo, Farben, Schriften, Vorlagen), Bild- oder Videobearbeitung für multimediale Inhalte. Regeln für Aufbau und Medienwahl kennst du aus AP1-2-3-3"
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-1-1",
+   "ordner": "PB1-3",
+   "block": "PB1-3-1",
+   "titel": "Programmiersprachen: Konzepte, Einsatz und Auswahl",
+   "gebiete": [
+    "G.PB1.01"
+   ],
+   "bausteine": [
+    "AP2b.04.06",
+    "AP2b.04.08",
+    "AP2b.04.07.5",
+    "AP2b.04.07.6",
+    "AP2b.03.04.1",
+    "AP2b.03.04.2",
+    "AP2b.03.04.3",
+    "AP2b.03.04.4",
+    "AP2b.03.04.5",
+    "AP2b.04.05"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-3-1-1-K1",
+     "stufe": 1,
+     "kurz": "die Konzepte strukturiert, prozedural, funktional und objektorientiert nennen und je eine Programmiersprache als Beispiel angeben: C (prozedural, strukturiert), Java oder C# (objektorientiert), Haskell (funktional); Python verbindet mehrere Konzepte"
+    },
+    {
+     "id": "PB1-3-1-1-K2",
+     "stufe": 1,
+     "kurz": "je ein Merkmal der Konzepte nennen: strukturiert – Kontrollstrukturen (Sequenz, Verzweigung, Schleife) statt Sprüngen; prozedural – Gliederung in Prozeduren und Funktionen; funktional – Funktionen ohne Seiteneffekte, die Werte entgegennehmen und neue zurückgeben, statt Variablen zu verändern"
+    },
+    {
+     "id": "PB1-3-1-1-K3",
+     "stufe": 1,
+     "kurz": "je eine Programmiersprache für Compilersprachen (C, C++; in Bytecode übersetzt auch Java, C#) und für Interpretersprachen (PHP, Python) nennen"
+    },
+    {
+     "id": "PB1-3-1-1-K4",
+     "stufe": 1,
+     "kurz": "Einsatzmöglichkeiten von Programmiersprachen nennen, zum Beispiel JavaScript für Webanwendungen, Kotlin oder Swift für mobile Apps, C für hardwarenahe Programmierung, Python für Datenauswertung und Automatisierung, SQL für Datenbankabfragen"
+    },
+    {
+     "id": "PB1-3-1-1-K5",
+     "stufe": 1,
+     "kurz": "die Kriterien für die Wahl einer Programmiersprache nennen: Performance und Speicherverbrauch, Portabilität, verfügbare Frameworks und Bibliotheken, Unterstützung durch integrierte Entwicklungsumgebungen, vorhandenes Know-how im Team; Portabilität heißt, das Programm läuft ohne große Anpassung auf verschiedenen Plattformen (Qualitätsmerkmal Übertragbarkeit, PB1-1)"
+    },
+    {
+     "id": "PB1-3-1-1-K6",
+     "stufe": 4,
+     "kurz": "für ein beschriebenes Projekt eine Programmiersprache auswählen und die Wahl mit mehreren Kriterien begründen, auch wenn sie gegeneinander stehen, zum Beispiel höchste Ausführungsgeschwindigkeit gegen kurze Entwicklungszeit mit dem vorhandenen Know-how"
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-1-2",
+   "ordner": "PB1-3",
+   "block": "PB1-3-1",
+   "titel": "Entwicklungswerkzeuge aufgabenbezogen auswählen und anwenden",
+   "gebiete": [
+    "G.PB1.01"
+   ],
+   "bausteine": [
+    "AP2b.04.07.1",
+    "AP2b.04.07.2",
+    "AP2b.04.07.3",
+    "AP2b.04.07.4",
+    "AP2b.04.07.5",
+    "AP2b.04.07.6",
+    "AP2b.04.07.7",
+    "AP2b.04.07.8",
+    "AP2b.04.07.9",
+    "AP1.04.06.1",
+    "AP2b.05.01.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-3-1-2-K1",
+     "stufe": 2,
+     "kurz": "die Aufgaben von Programmgenerator (erzeugt Quellcode aus einem Modell oder einer Beschreibung) und Testsoftware (führt Tests automatisch aus und wertet sie aus) erklären"
+    },
+    {
+     "id": "PB1-3-1-2-K2",
+     "stufe": 4,
+     "kurz": "für einen Arbeitsschritt der Entwicklung das passende Werkzeug aus Editor, IDE, Programmgenerator, Compiler, Linker, Interpreter, Debugger, Testsoftware und Versionsverwaltung auswählen und die Wahl begründen"
+    },
+    {
+     "id": "PB1-3-1-2-K3",
+     "stufe": 3,
+     "kurz": "Werkzeugeinstellungen aufgabenbezogen anwenden, zum Beispiel in den Kompilierungseinstellungen festlegen, dass das Programm mit einem Code-Signing-Zertifikat einer vertrauenswürdigen Zertifizierungsstelle signiert wird"
+    },
+    {
+     "id": "PB1-3-1-2-K4",
+     "stufe": 2,
+     "kurz": "die Meldung deuten, ein Programm sei nicht signiert: Es wurde beim Kompilieren nicht mit einem Zertifikat signiert, deshalb kann das Betriebssystem den Hersteller nicht prüfen und warnt vor der Ausführung"
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-1-3",
+   "ordner": "PB1-3",
+   "block": "PB1-3-1",
+   "titel": "Versionsverwaltung im Entwicklungsteam",
+   "gebiete": [
+    "G.PB1.01"
+   ],
+   "bausteine": [
+    "AP2b.04.07.9",
+    "AP2a.02.01.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-3-1-3-K1",
+     "stufe": 2,
+     "kurz": "erklären, wozu eine Versionsverwaltung dient (Änderungen nachvollziehen, frühere Stände wiederherstellen, parallel am selben Code arbeiten), und ihre Grundfunktionen in ihrem Einsatz beschreiben: Commit (Änderung mit Beschreibung festhalten), Branch (Entwicklungszweig), Merge (Zweige zusammenführen), Pull und Push (Abgleich mit dem zentralen Repository)"
+    },
+    {
+     "id": "PB1-3-1-3-K2",
+     "stufe": 4,
+     "kurz": "begründet entscheiden, ob ein Entwicklungsteam eine Versionsverwaltung einsetzen soll: Bei mehreren Entwicklern reichen Absprachen nicht aus, parallele Änderungen können sich widersprechen und wären ohne Versionsverwaltung nicht rückgängig zu machen"
+    },
+    {
+     "id": "PB1-3-1-3-K3",
+     "stufe": 3,
+     "kurz": "das Versionsmanagement des Quellcodes nutzen, um einen Fehler zu beheben: den letzten fehlerfreien Stand finden, die Änderungen seitdem vergleichen und die fehlerhafte Änderung zurücknehmen oder berichtigen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-2-1",
+   "ordner": "PB1-3",
+   "block": "PB1-3-2",
+   "titel": "Bibliotheken, Frameworks und Open Source einsetzen",
+   "gebiete": [
+    "G.PB1.01"
+   ],
+   "bausteine": [
+    "AP2b.03.04.3",
+    "AP1.04.03.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-3-2-1-K1",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile beim Einsatz einer Bibliothek beschreiben: fertige, getestete Funktionen müssen nicht neu entwickelt werden gegenüber Einarbeitungszeit, Abhängigkeit vom Anbieter und möglichem Mehraufwand zur Laufzeit"
+    },
+    {
+     "id": "PB1-3-2-1-K2",
+     "stufe": 2,
+     "kurz": "über die Vorteile aus AP1 hinaus die Sicherheit von Open-Source-Bibliotheken erläutern: Weil der Quelltext öffentlich ist, können auch Angreifer Schwachstellen finden (so die IHK-Lösung); dagegen steht, dass viele Prüfer Lücken oft schneller finden und schließen"
+    },
+    {
+     "id": "PB1-3-2-1-K3",
+     "stufe": 4,
+     "kurz": "begründet entscheiden, ob ein Projekt eine bestimmte Bibliothek oder ein Framework einsetzt: Funktionsumfang, Lizenz (PB1-2), Pflege und Verbreitung, Einarbeitungsaufwand, Abhängigkeit"
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-2-2",
+   "ordner": "PB1-3",
+   "block": "PB1-3-2",
+   "titel": "Abläufe automatisieren: Skripte und CI/CD",
+   "gebiete": [
+    "G.PB1.01"
+   ],
+   "bausteine": [
+    "AP2b.03.07",
+    "AP2b.03.07.1",
+    "AP2b.03.07.2",
+    "AP2b.04.07"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-3-2-2-K1",
+     "stufe": 2,
+     "kurz": "beschreiben, wie Kompilieren, Testen und Bereitstellen mit einer CI/CD-Pipeline automatisiert werden: Ein Ereignis wie ein Commit oder Pull Request startet die Pipeline, die den Code übersetzt, die Unit-Tests ausführt und auf Test- und Produktivumgebung ausliefert"
+    },
+    {
+     "id": "PB1-3-2-2-K2",
+     "stufe": 1,
+     "kurz": "Vorteile automatisierter Bereitstellung nennen: Tests laufen vor jeder Auslieferung in gleicher Umgebung, die Bereitstellung ist auf allen Umgebungen einheitlich, Entwickler brauchen keinen direkten Zugang zu den Produktivsystemen, ein alter Stand lässt sich leicht wiederherstellen"
+    },
+    {
+     "id": "PB1-3-2-2-K3",
+     "stufe": 3,
+     "kurz": "mit einem kurzen Shell- oder Skriptprogramm (Bash oder PowerShell im Betriebssystem, Python allgemein; vgl. AP1-8-1-3) einen Ablauf automatisieren und überwachen, zum Beispiel alle Adressen eines /24-Netzes durchlaufen, je Adresse eine vorgegebene Funktion aufrufen, leere Ergebnisse (NULL) überspringen und die Treffer als JSON-Array ausgeben, oder eine Datensicherung starten, ihr Ergebnis protokollieren und bei Fehlern warnen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-3-2-3",
+   "ordner": "PB1-3",
+   "block": "PB1-3-2",
+   "titel": "Cyber-physische Systeme: Sensoren, Aktoren, Abfragerhythmus",
+   "gebiete": [
+    "G.PB1.01"
+   ],
+   "bausteine": [
+    "AP2b.03.06.1",
+    "AP2b.03.06.2",
+    "AP2b.03.06.3",
+    "AP2b.03.06.4",
+    "AP2b.03.06.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-3-2-3-K1",
+     "stufe": 2,
+     "kurz": "beschreiben, was ein cyber-physisches System ist: Software, die über Sensoren Messwerte aus der physischen Welt erfasst, verarbeitet und über Aktoren auf sie einwirkt, meist vernetzt"
+    },
+    {
+     "id": "PB1-3-2-3-K2",
+     "stufe": 3,
+     "kurz": "ein cyber-physisches System um geeignete Sensoren, Aktoren und eine Regel erweitern, zum Beispiel Bodenfeuchtesensor und Ventil für eine Bewässerung, das bei Unterschreiten eines Schwellwerts öffnet; der Zugriff erfolgt über die Schnittstelle bzw. Bibliothek des Herstellers, die Messwerte liest und Stellbefehle sendet"
+    },
+    {
+     "id": "PB1-3-2-3-K3",
+     "stufe": 3,
+     "kurz": "einen Abfragerhythmus planen: so oft, wie sich der Messwert bedeutsam ändert, abgewogen gegen Energiebedarf, Datenmenge und Übertragungskosten, zum Beispiel Bodenfeuchte alle 15 Minuten statt jede Sekunde"
+    }
+   ]
+  },
+  {
+   "id": "PB1-4-1-1",
+   "ordner": "PB1-4",
+   "block": "PB1-4-1",
+   "titel": "UML-Überblick und Anwendungsfalldiagramm",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.02.02.2",
+    "ANH.notationen",
+    "AP2b.04.09.2",
+    "AP2b.03.02.6",
+    "ANH.uml-anwendungsfalldiagramm"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-4-1-1-K1",
+     "stufe": 2,
+     "kurz": "die UML-Diagramme des Katalog-Anhangs ihrem Zweck zuordnen: Anwendungsfalldiagramm (was das System für wen leistet), Klassendiagramm (Aufbau aus Klassen und Beziehungen), Sequenzdiagramm (Nachrichten zwischen Objekten in zeitlicher Folge), Zustandsdiagramm (Zustände eines Objekts und ihre Übergänge), Aktivitätsdiagramm (Ablauf); das Klassendiagramm ist ein Struktur-, die übrigen sind Verhaltensdiagramme"
+    },
+    {
+     "id": "PB1-4-1-1-K2",
+     "stufe": 3,
+     "kurz": "aus einer umfangreichen Anforderungsbeschreibung ein vollständiges Anwendungsfalldiagramm erstellen: Systemgrenze mit Namen, alle Akteure, Anwendungsfälle aus Sicht des Akteurs mit Gegenstand und Tätigkeit benannt, Assoziationen, include für Teilabläufe, die immer dazugehören (z. B. Login), und Generalisierung zwischen Akteuren (z. B. Firmenkunde und Kunde) wie in AP1"
+    },
+    {
+     "id": "PB1-4-1-1-K3",
+     "stufe": 3,
+     "kurz": "bedingte Teilabläufe mit extend modellieren und die Bedingung als Notiz an die Beziehung schreiben, zum Beispiel „Ressourcen planen“ erweitert „Terminanfrage abschließen“ mit der Notiz „wenn Spezialtermin“"
+    }
+   ]
+  },
+  {
+   "id": "PB1-4-1-2",
+   "ordner": "PB1-4",
+   "block": "PB1-4-1",
+   "titel": "Klassendiagramm in der Tiefe",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.09.1",
+    "AP2b.03.02.3",
+    "ANH.uml-klassendiagramm"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-4-1-2-K1",
+     "stufe": 3,
+     "kurz": "eine Klasse über die Notation aus AP1 hinaus vollständig modellieren: mit Konstruktor, Get- und Set-Methoden und sinnvollen Datentypen, zum Beispiel validatePassword(String) : Boolean"
+    },
+    {
+     "id": "PB1-4-1-2-K2",
+     "stufe": 3,
+     "kurz": "aus einer Beschreibung mehrere Klassen mit ihren Assoziationen und Multiplizitäten erstellen und deren Bedeutung erläutern (z. B. 1..* mindestens eins, * beliebig viele), auch Attribute, die auf Objekte oder Listen anderer Klassen verweisen (streckenliste : List<Strecke>); eine Aggregation wird so als Liste im Ganzen umgesetzt, eine Komposition passt nur, wenn das Teil ohne das Ganze nicht existiert (AP1)"
+    },
+    {
+     "id": "PB1-4-1-2-K3",
+     "stufe": 3,
+     "kurz": "abstrakte Klassen und Methoden ({abstract} oder kursiv), Interfaces mit ihrer Realisierung (gestrichelte Linie mit hohlem Dreieck), Vererbung (durchgezogene Linie mit hohlem Dreieck) und statische Methoden ({static} oder unterstrichen) im Klassendiagramm darstellen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-4-1-3",
+   "ordner": "PB1-4",
+   "block": "PB1-4-1",
+   "titel": "Sequenzdiagramm",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.09.5",
+    "AP2b.03.02.7",
+    "ANH.uml-sequenzdiagramm"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-4-1-3-K1",
+     "stufe": 3,
+     "kurz": "synchrone und asynchrone Nachrichten, Antworten (mit dem Rückgabewert beschriftet), Selbstaufrufe mit versetztem Aktivierungsbalken sowie das Erzeugen (create) und Zerstören (X) von Objekten darstellen"
+    },
+    {
+     "id": "PB1-4-1-3-K2",
+     "stufe": 3,
+     "kurz": "Aktivierungsbalken richtig setzen: Sie beginnen mit dem Aufruf und enden mit der Antwort; ein Aufruf innerhalb einer laufenden Methode erzeugt einen weiteren Balken"
+    },
+    {
+     "id": "PB1-4-1-3-K3",
+     "stufe": 3,
+     "kurz": "Alternativen mit dem kombinierten Fragment alt und Bedingungen in eckigen Klammern darstellen, zum Beispiel [Daten im Cache] und [Daten nicht im Cache], sowie optionale (opt) und wiederholte (loop) Abläufe"
+    },
+    {
+     "id": "PB1-4-1-3-K4",
+     "stufe": 3,
+     "kurz": "Teilnehmer mit Lebenslinien darstellen und ein (begonnenes) Sequenzdiagramm nach einer Ablaufbeschreibung erstellen oder ergänzen: Nachrichten von oben nach unten in zeitlicher Folge mit Methodenname und Parametern, auch für einen Webservice-Aufruf mit Request (z. B. GET /shareholders?city=Köln) und Response mit Statuscode"
+    }
+   ]
+  },
+  {
+   "id": "PB1-4-1-4",
+   "ordner": "PB1-4",
+   "block": "PB1-4-1",
+   "titel": "Zustandsdiagramm",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.09.3",
+    "AP2b.03.02.8",
+    "ANH.uml-zustandsdiagramm"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-4-1-4-K1",
+     "stufe": 3,
+     "kurz": "aus einer Beschreibung die Zustände eines Objekts herauslesen und mit Startzustand, Zuständen, Übergängen und gegebenenfalls Endzustand als Zustandsdiagramm erstellen"
+    },
+    {
+     "id": "PB1-4-1-4-K2",
+     "stufe": 3,
+     "kurz": "Übergänge in der Form „Ereignis [Bedingung] / Aktion“ beschriften, zum Beispiel „Abfahrt [Auslastung >= 70 %]“ oder „[Veranstaltung beendet] / freigeben“"
+    },
+    {
+     "id": "PB1-4-1-4-K3",
+     "stufe": 3,
+     "kurz": "Bedingungen mit Grenzwerten so setzen, dass sich die Fälle nicht überschneiden und keiner fehlt (z. B. unter 50 %, 50 bis 80 %, über 80 %), und Übergänge in beide Richtungen sowie die Rückkehr in einen früheren Zustand darstellen"
+    },
+    {
+     "id": "PB1-4-1-4-K4",
+     "stufe": 3,
+     "kurz": "Aktionen innerhalb eines Zustands mit entry, do und exit sowie zeitgesteuerte Übergänge mit after angeben"
+    }
+   ]
+  },
+  {
+   "id": "PB1-4-1-5",
+   "ordner": "PB1-4",
+   "block": "PB1-4-1",
+   "titel": "Aktivitätsdiagramm für umfangreiche Abläufe",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.09.4",
+    "AP2b.03.02.5",
+    "ANH.uml-aktivitaetsdiagramm"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-4-1-5-K1",
+     "stufe": 3,
+     "kurz": "mit den Elementen aus AP1 (Schwimmbahnen, Verzweigungen, Zusammenführungen, Rücksprünge) einen umfangreichen Geschäftsablauf oder den Ablauf eines Anwendungsfalls vollständig als Aktivitätsdiagramm erstellen, zum Beispiel „Messergebnisse speichern“ mit Prüfung der Verbindung, Zwischenspeichern und Ergebnismeldung"
+    },
+    {
+     "id": "PB1-4-1-5-K2",
+     "stufe": 3,
+     "kurz": "parallele Zweige mit Teilung und Synchronisation darstellen und in jedem Zweig eigene Verzweigungen einsetzen, die vor der Synchronisation wieder zusammengeführt werden"
+    },
+    {
+     "id": "PB1-4-1-5-K3",
+     "stufe": 3,
+     "kurz": "ein begonnenes Aktivitätsdiagramm nach Notizen zu einem Arbeitsablauf erweitern, auch mit gleichzeitig ausgeführten Tätigkeiten verschiedener Personen und einem nur unter Bedingung ausgeführten Schritt"
+    }
+   ]
+  },
+  {
+   "id": "PB1-5-1-1",
+   "ordner": "PB1-5",
+   "block": "PB1-5-1",
+   "titel": "Kapselung, Vererbung, Interfaces und Polymorphie",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.17.1",
+    "AP2b.04.17.2",
+    "AP2b.04.17.4",
+    "AP2b.04.17.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-5-1-1-K1",
+     "stufe": 3,
+     "kurz": "Kapselung (private Attribute, Zugriff über Methoden, AP1) im Entwurf anwenden und begründen: Die Klasse prüft ihre Daten selbst, zum Beispiel im Setter, und ihre Umsetzung lässt sich austauschen, ohne dass sich der aufrufende Code ändert"
+    },
+    {
+     "id": "PB1-5-1-1-K2",
+     "stufe": 3,
+     "kurz": "Vererbung anwenden: gemeinsame Attribute und Methoden in eine Oberklasse legen; Unterklassen erben sie und ergänzen oder überschreiben Methoden"
+    },
+    {
+     "id": "PB1-5-1-1-K3",
+     "stufe": 3,
+     "kurz": "abstrakte Klasse, Interface und gewöhnliche Klasse unterscheiden und im Entwurf einsetzen: Von einer abstrakten Klasse lassen sich keine Objekte erzeugen, sie kann Attribute und fertige Methoden enthalten und abstrakte Methoden vorgeben; ein Interface legt klassisch nur Methodensignaturen fest (neuere Sprachversionen erlauben Standardimplementierungen), die jede implementierende Klasse bereitstellen muss. In Java oder C# erbt eine Klasse von nur einer Oberklasse, kann aber mehrere Interfaces implementieren"
+    },
+    {
+     "id": "PB1-5-1-1-K4",
+     "stufe": 2,
+     "kurz": "Polymorphie erläutern: Eine Methode mit gleicher Signatur wird in Unterklassen oder in Klassen, die ein Interface implementieren, unterschiedlich umgesetzt; welche Umsetzung läuft, entscheidet sich zur Laufzeit am tatsächlichen Objekt (dynamisches Binden)"
+    },
+    {
+     "id": "PB1-5-1-1-K5",
+     "stufe": 3,
+     "kurz": "einen Entwurf mit Fallunterscheidungen über ein Typ-Attribut in einen polymorphen Entwurf umbauen und als Klassendiagramm erstellen: abstrakte Oberklasse ohne Typ-Attribut, je Typ eine Unterklasse, die die abstrakten Methoden überschreibt; so lassen sich neue Unterklassen ergänzen, ohne den aufrufenden Code zu ändern"
+    }
+   ]
+  },
+  {
+   "id": "PB1-5-1-2",
+   "ordner": "PB1-5",
+   "block": "PB1-5-1",
+   "titel": "Allgemeine Fehlerbehandlung in Programmen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.17.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-5-1-2-K1",
+     "stufe": 2,
+     "kurz": "erklären, was eine Ausnahme (Exception) ist und wozu sie dient: einen Fehlerfall vom normalen Ablauf trennen und an eine Stelle weitergeben, die ihn behandeln kann"
+    },
+    {
+     "id": "PB1-5-1-2-K2",
+     "stufe": 3,
+     "kurz": "Fehlerbehandlung mit try, catch und finally anwenden: den gefährdeten Code in try, die Behandlung je Ausnahmeart in catch, Aufräumarbeiten wie das Schließen einer Datei in finally"
+    },
+    {
+     "id": "PB1-5-1-2-K3",
+     "stufe": 3,
+     "kurz": "für eine Methode festlegen, wie sie auf Fehlerfälle (Laufzeitfehler aus AP1, z. B. ungültige Eingabe, nicht erreichbare Datei oder Datenbank) reagiert: die Eingabe prüfen und eine Ausnahme auslösen oder einen festgelegten Rückgabe- bzw. Exit-Code liefern"
+    }
+   ]
+  },
+  {
+   "id": "PB1-5-1-3",
+   "ordner": "PB1-5",
+   "block": "PB1-5-1",
+   "titel": "Strukturierte und objektorientierte Analyse und Design",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.03.1",
+    "AP2b.04.03.2",
+    "AP2b.04.03.3",
+    "AP2b.04.04"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-5-1-3-K1",
+     "stufe": 3,
+     "kurz": "Top-down- und Bottom-up-Entwurf unterscheiden und anwenden: eine Aufgabe schrittweise in überschaubare Teilaufgaben zerlegen bzw. aus vorhandenen oder zuerst erstellten Bausteinen größere Einheiten zusammensetzen"
+    },
+    {
+     "id": "PB1-5-1-3-K2",
+     "stufe": 3,
+     "kurz": "Modularisierung anwenden: ein Programm in Module mit klarer Aufgabe und Schnittstelle zerlegen, damit sie wiederverwendet, getrennt getestet, arbeitsteilig entwickelt und leichter gewartet werden können"
+    },
+    {
+     "id": "PB1-5-1-3-K3",
+     "stufe": 2,
+     "kurz": "objektorientierte Analyse (was: Klassen, Attribute und Beziehungen aus der Fachsprache, vgl. AP1-8-3-2) und objektorientierten Entwurf (wie: Methoden, Datentypen, Datenstrukturen) unterscheiden"
+    }
+   ]
+  },
+  {
+   "id": "PB1-5-1-4",
+   "ordner": "PB1-5",
+   "block": "PB1-5-1",
+   "titel": "Entwurfsmuster: Observer, Factory, Singleton, MVC und Schichten",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.12",
+    "AP2b.04.12.1",
+    "AP2b.04.12.2",
+    "AP2b.04.12.3",
+    "AP2b.04.12.4",
+    "AP2b.01.04.2",
+    "AP2b.04.17.4",
+    "AP2b.04.17.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-5-1-4-K1",
+     "stufe": 2,
+     "kurz": "Vorteile von Entwurfsmustern beschreiben: bewährte Lösungen für wiederkehrende Probleme sparen Zeit und Kosten, verbessern Erweiterbarkeit und Wartbarkeit und geben dem Team eine gemeinsame Sprache"
+    },
+    {
+     "id": "PB1-5-1-4-K2",
+     "stufe": 2,
+     "kurz": "Entwurfsmuster den Kategorien Erzeugungsmuster (Singleton, Factory), Strukturmuster (z. B. Facade) und Verhaltensmuster (Observer) zuordnen und ein weiteres Muster beschreiben"
+    },
+    {
+     "id": "PB1-5-1-4-K3",
+     "stufe": 4,
+     "kurz": "begründen, wann das Observer-Muster passt, und seinen Aufbau erläutern: Ein Subjekt hält eine Liste von Beobachtern (Aggregation zu einem Observer-Interface), meldet sie mit addObserver an und benachrichtigt bei jeder Änderung alle über update; jede Anzeige realisiert das Interface und überschreibt update, dank Polymorphie ruft das Subjekt für alle dieselbe Methode auf"
+    },
+    {
+     "id": "PB1-5-1-4-K4",
+     "stufe": 3,
+     "kurz": "das Muster Factory Method anwenden: Jede konkrete Erzeugerklasse überschreibt die Fabrikmethode und liefert ihr Produkt; ein Klassenmodell nach dem Muster um ein neues Produkt mit Erzeugerklasse ergänzen. Davon zu unterscheiden ist die einfache statische Fabrikmethode, die je nach Parameter das passende Objekt liefert (Simple Factory, Stichpunkt Pseudocode)"
+    },
+    {
+     "id": "PB1-5-1-4-K5",
+     "stufe": 2,
+     "kurz": "eine Einschränkung der Factory Method erläutern: Alle Produkte brauchen eine gemeinsame Oberklasse oder Schnittstelle, und jedes neue Produkt braucht eine eigene Erzeugerklasse"
+    },
+    {
+     "id": "PB1-5-1-4-K6",
+     "stufe": 3,
+     "kurz": "Singleton (privater Konstruktor, Zugriff über eine statische Methode, die immer dasselbe Objekt liefert) und das Architekturmuster MVC (Model hält Daten und Fachlogik, View stellt dar, Controller nimmt Eingaben entgegen und steuert) in einem Entwurf anwenden"
+    },
+    {
+     "id": "PB1-5-1-4-K7",
+     "stufe": 2,
+     "kurz": "die 3-Schichten-Architektur einer Webanwendung beschreiben: Darstellung im Webserver bzw. Browser, Logik im Backend-Server, Daten in der Datenbank; die Webanwendung fragt beim Backend an, das die Daten aus der Datenbank holt und zurückliefert"
+    }
+   ]
+  },
+  {
+   "id": "PB1-5-1-5",
+   "ordner": "PB1-5",
+   "block": "PB1-5-1",
+   "titel": "Objektorientierte Methoden in Pseudocode umsetzen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.17",
+    "AP2b.04.04",
+    "AP2b.04.12.3",
+    "AP2b.04.12.1",
+    "AP2b.04.17.3",
+    "AP1.04.07.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-5-1-5-K1",
+     "stufe": 3,
+     "kurz": "eine Methode aus dem Klassendiagramm in Pseudocode implementieren, die eine Liste von Objekten durchläuft und je Objekt Methoden aufruft, zum Beispiel für jeden Aktionär eine Einladungsmail senden oder im Observer-Muster für jeden registrierten Beobachter update aufrufen"
+    },
+    {
+     "id": "PB1-5-1-5-K2",
+     "stufe": 3,
+     "kurz": "Prüf- und Berechnungsmethoden implementieren, zum Beispiel eine Liste von Objekten durchsuchen und true oder false zurückgeben oder in einer Unterklasse eine Methode überschreiben (calculatePreis mit 5 % Rabatt für Premium-Besucher)"
+    },
+    {
+     "id": "PB1-5-1-5-K3",
+     "stufe": 3,
+     "kurz": "eine Methode implementieren, die Objekte erzeugt und in eine Liste einfügt: mit einem überladenen Konstruktor oder über eine statische Fabrikmethode, die je nach übergebenem Typ ein Objekt der passenden Unterklasse erzeugt (Mehrfachauswahl)"
+    }
+   ]
+  },
+  {
+   "id": "PB1-6-1-1",
+   "ordner": "PB1-6",
+   "block": "PB1-6-1",
+   "titel": "ER-Modell aus Anforderungen erstellen und erweitern",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.10.1",
+    "AP2b.03.02.1",
+    "AP2a.02.03.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-6-1-1-K1",
+     "stufe": 3,
+     "kurz": "mit den Elementen aus AP1 (Entitätstypen, Attribute, Kardinalitäten, Primärschlüssel) aus einer umfangreichen Situationsbeschreibung ohne Vorlage ein vollständiges ER-Modell erstellen, auch mit Attributen an m:n-Beziehungen"
+    },
+    {
+     "id": "PB1-6-1-1-K2",
+     "stufe": 3,
+     "kurz": "rekursive Beziehungen einer Entität zu sich selbst modellieren, zum Beispiel „Arzt vertritt Arzt“ als m:n-Beziehung mit Start- und Enddatum als Beziehungsattributen"
+    },
+    {
+     "id": "PB1-6-1-1-K3",
+     "stufe": 3,
+     "kurz": "Anforderungen aus Sicht der Beteiligten in eine passende Datenstruktur übertragen, zum Beispiel die Reihenfolge von Fragen über einen Erstellzeitpunkt und ein Zurückziehen ohne Löschen über ein Attribut istZurückgezogen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-6-1-2",
+   "ordner": "PB1-6",
+   "block": "PB1-6-1",
+   "titel": "Relationales Modell: Tabellen, Schlüssel, Datentypen, Integrität",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.10.2",
+    "AP2b.03.02.2",
+    "AP2a.02.03.5",
+    "AP2a.02.03.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-6-1-2-K1",
+     "stufe": 3,
+     "kurz": "ein ER-Modell in ein relationales Modell überführen: jede Entität eine Tabelle, bei 1:n der Fremdschlüssel auf der n-Seite, eine m:n-Beziehung als Zwischentabelle mit beiden Fremdschlüsseln als zusammengesetztem Primärschlüssel"
+    },
+    {
+     "id": "PB1-6-1-2-K2",
+     "stufe": 3,
+     "kurz": "den Attributen eines Datenmodells Datentypen aus der Katalogliste zuweisen (Begründung wie in AP1-8-4-2): Boolescher Wert, Ganzzahl, Gleitkommawert, Währung als Festkommazahl, Datum, Text fester und variabler Länge, BLOB für Binärdaten wie Bilder oder Dokumente, Geokoordinaten (Breiten- und Längengrad oder eigener Geodatentyp)"
+    },
+    {
+     "id": "PB1-6-1-2-K3",
+     "stufe": 3,
+     "kurz": "referenzielle Integrität sichern (ein Fremdschlüsselwert muss auf einen vorhandenen Primärschlüssel verweisen) und für eine Beziehung festlegen, was beim Löschen oder Ändern des referenzierten Datensatzes geschieht: Löschweitergabe bzw. Aktualisierungsweitergabe (abhängige Datensätze werden mitgelöscht bzw. angepasst) oder Verbot der Änderung, solange abhängige Datensätze bestehen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-6-1-3",
+   "ordner": "PB1-6",
+   "block": "PB1-6-1",
+   "titel": "Redundanz, Anomalien und Normalisierung bis zur 3. Normalform",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.02.03.3",
+    "AP2a.02.03.4",
+    "AP2b.04.11",
+    "AP2b.04.10.2",
+    "AP2b.03.02.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-6-1-3-K1",
+     "stufe": 2,
+     "kurz": "Redundanz und die drei Anomalien (Änderung, Einfügen, Löschen) je an einem konkreten Beispiel aus einer gegebenen Tabelle erläutern, zum Beispiel die vollständigen Kontaktdaten eines Gastes bei jedem seiner Besuche"
+    },
+    {
+     "id": "PB1-6-1-3-K2",
+     "stufe": 3,
+     "kurz": "die Regeln der 1. bis 3. Normalform anwenden: Jede Zelle enthält genau einen Wert (1. NF), jedes Nichtschlüsselattribut hängt vom ganzen Primärschlüssel ab (2. NF) und von keinem anderen Nichtschlüsselattribut (3. NF)"
+    },
+    {
+     "id": "PB1-6-1-3-K3",
+     "stufe": 3,
+     "kurz": "eine nicht normalisierte Tabelle in die 3. Normalform bringen und das Ergebnis als relationales Modell mit allen Primär- und Fremdschlüsseln und Beziehungen zeichnen, auch mit einem aus mehreren Attributen zusammengesetzten Schlüssel oder erweitert um neue Anforderungen (z. B. mehrere Sensoren je Beet mit ihren Messwerten)"
+    },
+    {
+     "id": "PB1-6-1-3-K4",
+     "stufe": 3,
+     "kurz": "bestimmen, welche Normalform eine Tabelle erfüllt, und die Verletzung der nächsten Normalform benennen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-6-1-4",
+   "ordner": "PB1-6",
+   "block": "PB1-6-1",
+   "titel": "Relationale und NoSQL-Datenbanken",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2a.02.03.1",
+    "AP1.02.03.4",
+    "AP2b.05.02.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-6-1-4-K1",
+     "stufe": 2,
+     "kurz": "relationale Datenbanken (Tabellen mit festem Schema, Beziehungen über Schlüssel, Transaktionssicherheit) von NoSQL-Datenbanken (flexibles Schema) unterscheiden und Arten von NoSQL-Datenbanken nennen: dokumentenorientiert, Schlüssel-Wert, spaltenorientiert, Graph"
+    },
+    {
+     "id": "PB1-6-1-4-K2",
+     "stufe": 2,
+     "kurz": "Begriffe relationaler und dokumentenorientierter Datenbanken einander zuordnen: Tabelle – Collection, Datensatz – Dokument, Spalte – Feld, Datenbank – Datenbank"
+    },
+    {
+     "id": "PB1-6-1-4-K3",
+     "stufe": 2,
+     "kurz": "Vorteile einer NoSQL-Datenbank wie MongoDB gegenüber relationalen Datenbanken aus einem englischen Text erläutern: flexibles Datenmodell für neue Funktionen, schnellere Abfragen ohne Joins, Datenstrukturen passend zum Programm"
+    },
+    {
+     "id": "PB1-6-1-4-K4",
+     "stufe": 4,
+     "kurz": "für eine Anwendung ein dokumentenorientiertes oder ein relationales DBMS vorschlagen und die Wahl begründen, zum Beispiel flexible Ausstattungsmerkmale und große Datenmengen für NoSQL, Transaktionssicherheit und Konsistenz für relational"
+    }
+   ]
+  },
+  {
+   "id": "PB1-6-1-5",
+   "ordner": "PB1-6",
+   "block": "PB1-6-1",
+   "titel": "Transaktionen und Datenintegrität",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.05.02",
+    "AP2b.05.02.3",
+    "AP2b.05.02.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-6-1-5-K1",
+     "stufe": 2,
+     "kurz": "die ACID-Eigenschaften einer Transaktion beschreiben: Atomarität (ganz oder gar nicht), Konsistenz (die Regeln gelten vor und nach der Transaktion), Isolation (gleichzeitige Transaktionen beeinflussen sich nicht), Dauerhaftigkeit (bestätigte Änderungen bleiben erhalten)"
+    },
+    {
+     "id": "PB1-6-1-5-K2",
+     "stufe": 2,
+     "kurz": "erklären, wann eine Transaktion nötig ist: wenn mehrere Änderungen nur zusammen sinnvoll sind, zum Beispiel eine Umbuchung zwischen zwei Konten oder das Verschieben von Datensätzen in ein Archiv (kopieren und löschen)"
+    },
+    {
+     "id": "PB1-6-1-5-K3",
+     "stufe": 4,
+     "kurz": "beurteilen, mit welchen technischen Maßnahmen die Datenintegrität einer Anwendung sichergestellt wird, und sie festlegen: Constraints in der Datenbank (Primärschlüssel, Fremdschlüssel, NOT NULL, UNIQUE, CHECK), Validierung der Eingaben in der Anwendung, Transaktionen für zusammengehörige Änderungen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-7-1-1",
+   "ordner": "PB1-7",
+   "block": "PB1-7-1",
+   "titel": "XML: wohlgeformt, gültig, DTD und Schema",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.20.2",
+    "AP2b.03.03.1",
+    "AP2b.05.02.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-7-1-1-K1",
+     "stufe": 3,
+     "kurz": "ein XML-Dokument nach vorgegebener Struktur erstellen und lesen: Prolog, genau ein Wurzelelement, Elemente mit öffnendem und schließendem Tag, Attribute im öffnenden Tag, korrekte Verschachtelung"
+    },
+    {
+     "id": "PB1-7-1-1-K2",
+     "stufe": 2,
+     "kurz": "erläutern, wofür eine DTD oder ein XML-Schema (XSD) benötigt wird: Sie legt verbindlich fest, welche Elemente und Attribute in welcher Reihenfolge und Schachtelung vorkommen dürfen, sodass alle Dokumente einer Art gleich aufgebaut sind"
+    },
+    {
+     "id": "PB1-7-1-1-K3",
+     "stufe": 2,
+     "kurz": "wohlgeformt (die XML-Regeln sind eingehalten: jedes Element geschlossen, richtig verschachtelt) und gültig (zusätzlich entspricht das Dokument der DTD bzw. dem Schema) erläutern"
+    },
+    {
+     "id": "PB1-7-1-1-K4",
+     "stufe": 3,
+     "kurz": "in einem XML-Dokument mit gegebener DTD Fehler finden und mit Zeilennummer, Fehler und verletzter Eigenschaft angeben, zum Beispiel ein fehlendes schließendes Tag (Wohlgeformtheit) oder ein Element an falscher Stelle (Gültigkeit)"
+    },
+    {
+     "id": "PB1-7-1-1-K5",
+     "stufe": 4,
+     "kurz": "beurteilen, ob eine Schemavalidierung für Daten aus einer Schnittstelle ausreicht: Sie prüft nur Aufbau, Pflichtfelder und Datentypen, aber keine logischen Fehler wie einen aus Bruttowerten berechneten Nettobetrag; dafür sind zusätzlich inhaltliche Plausibilitätsprüfungen und Unit-Tests nötig"
+    }
+   ]
+  },
+  {
+   "id": "PB1-7-1-2",
+   "ordner": "PB1-7",
+   "block": "PB1-7-1",
+   "titel": "JSON und CSV",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.20.1",
+    "AP2b.04.20.3",
+    "AP2b.04.20.2",
+    "AP2b.02.05.1",
+    "AP2b.03.03.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-7-1-2-K1",
+     "stufe": 3,
+     "kurz": "den Aufbau von JSON anwenden: Objekte in geschweiften Klammern mit Paaren aus Name und Wert, Arrays in eckigen Klammern, Werte als Zeichenkette, Zahl, Wahrheitswert, null, Objekt oder Array"
+    },
+    {
+     "id": "PB1-7-1-2-K2",
+     "stufe": 3,
+     "kurz": "Datensätze aus Tabellen oder Ergebnisse eines Programms in JSON umwandeln: ein Objekt je Datensatz mit den Spalten als Namen, mehrere Datensätze als Array in vorgegebener Struktur"
+    },
+    {
+     "id": "PB1-7-1-2-K3",
+     "stufe": 3,
+     "kurz": "zusammengehörige Dokumente in JSON als Array in ein übergeordnetes Dokument einfügen, zum Beispiel die Verkaufsstellen in das Dokument des Weinguts; eingebettet wird, worauf meist gemeinsam zugegriffen wird, statt es wie in Tabellen über Schlüssel zu verknüpfen"
+    },
+    {
+     "id": "PB1-7-1-2-K4",
+     "stufe": 3,
+     "kurz": "den Aufbau einer CSV-Datei anwenden: eine Zeile je Datensatz, Werte durch ein Trennzeichen (Komma oder Semikolon) getrennt, meist mit Kopfzeile; Werte, die das Trennzeichen enthalten, stehen in Anführungszeichen"
+    },
+    {
+     "id": "PB1-7-1-2-K5",
+     "stufe": 2,
+     "kurz": "Austauschformate ihrem Einsatzbereich zuordnen: CSV für einfache Tabellen und den Austausch mit Tabellenkalkulationen, JSON für Webschnittstellen und Dokumentdatenbanken, XML für Dokumente mit strenger Struktur und Schemaprüfung"
+    }
+   ]
+  },
+  {
+   "id": "PB1-7-1-3",
+   "ordner": "PB1-7",
+   "block": "PB1-7-1",
+   "titel": "Daten heterogener Quellen zusammenführen: Data Lake, Open Data",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.02.05.1",
+    "AP2b.02.05.2",
+    "AP2a.02.03.11"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-7-1-3-K1",
+     "stufe": 3,
+     "kurz": "Daten heterogener Quellen zusammenführen: auslesen, bereinigen und vereinheitlichen (Formate, Schreibweisen, Einheiten), in die Zielstruktur umformen und einspielen"
+    },
+    {
+     "id": "PB1-7-1-3-K2",
+     "stufe": 3,
+     "kurz": "einen Data Lake (Speicher, der Daten aus vielen Quellen im Rohformat aufnimmt) für eine Auswertung einsetzen: festlegen, ob Daten zunächst roh gesammelt oder vor dem Speichern aufbereitet werden"
+    },
+    {
+     "id": "PB1-7-1-3-K3",
+     "stufe": 3,
+     "kurz": "Open Data nutzen: frei zugängliche Daten über eine API-Schnittstelle oder als Datei abrufen und in die eigene Anwendung einbinden, zum Beispiel Wetter- oder Fahrplandaten"
+    }
+   ]
+  },
+  {
+   "id": "PB1-7-1-4",
+   "ordner": "PB1-7",
+   "block": "PB1-7-1",
+   "titel": "REST, SOAP und Schnittstellen festlegen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.21.1",
+    "AP2b.03.03.3",
+    "AP2b.01.05.2",
+    "AP2b.04.21.2",
+    "AP2b.03.03.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-7-1-4-K1",
+     "stufe": 2,
+     "kurz": "das Konzept einer REST-API beschreiben: Ressourcen sind über einen Webserver verfügbar und eindeutig über eine URL ansprechbar, Client und Server tauschen nur Daten aus und sind lose gekoppelt, jede Anfrage steht für sich (zustandslos)"
+    },
+    {
+     "id": "PB1-7-1-4-K2",
+     "stufe": 2,
+     "kurz": "die CRUD-Operationen erläutern und ihnen HTTP-Methoden zuordnen: Create – POST (oder PUT), Read – GET, Update – PUT oder PATCH, Delete – DELETE"
+    },
+    {
+     "id": "PB1-7-1-4-K3",
+     "stufe": 3,
+     "kurz": "nach der Dokumentation einer vorhandenen API eine HTTP-Anfrage zusammenstellen und ihre Bestandteile ergänzen: Endpoint-URL mit Pfad und Abfrageparametern, HTTP-Methode, Kopfzeilen für Metainformationen wie Inhaltstyp und Autorisierung (API-Schlüssel oder Token weisen den Aufrufer aus), Body mit den Daten, oft als JSON"
+    },
+    {
+     "id": "PB1-7-1-4-K4",
+     "stufe": 1,
+     "kurz": "die Bedeutung der HTTP-Statuscode-Klassen nennen: 2xx Anfrage erfolgreich bearbeitet, 4xx Fehler durch die Anfrage des Clients (z. B. 404 nicht gefunden), 5xx Fehler auf der Serverseite"
+    },
+    {
+     "id": "PB1-7-1-4-K5",
+     "stufe": 1,
+     "kurz": "SOAP als weitere Möglichkeit zur Nutzung von Diensten nennen: ein Protokoll mit Nachrichten in XML und einer festen Schnittstellenbeschreibung, im Unterschied zum Architekturstil REST auf Grundlage von HTTP"
+    },
+    {
+     "id": "PB1-7-1-4-K6",
+     "stufe": 3,
+     "kurz": "eine Schnittstelle zwischen zwei Anwendungen festlegen: Austauschformat (z. B. JSON oder XML mit Schema), Endpunkte mit Methoden, Fehler- und Statusrückmeldungen, Authentifizierung"
+    }
+   ]
+  },
+  {
+   "id": "PB1-7-1-5",
+   "ordner": "PB1-7",
+   "block": "PB1-7-1",
+   "titel": "eRechnung: strukturierte Daten prüfen und validieren",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "ZB.erechnung"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-7-1-5-K1",
+     "stufe": 2,
+     "kurz": "das Hauptziel einer eRechnung erläutern: Sie wird automatisch verarbeitet; eine für Menschen lesbare Darstellung ist zweitrangig"
+    },
+    {
+     "id": "PB1-7-1-5-K2",
+     "stufe": 2,
+     "kurz": "Aspekte einer digitalen Rechnung erläutern: Sie liegt digital vor (z. B. als PDF) und hat einen visuellen Aspekt (für Menschen lesbar) und einen Datenaspekt (maschinell verarbeitbar); bei der eRechnung ist der Datenaspekt strukturiert (z. B. XRechnung, ZUGFeRD), ein reines PDF gilt seit 2025 nicht als eRechnung"
+    },
+    {
+     "id": "PB1-7-1-5-K3",
+     "stufe": 1,
+     "kurz": "Möglichkeiten nennen, mit denen eine Implementierung der Protokoll-Spezifikation entspricht: Test-Rechnungen bei einem zertifizierten Validator prüfen, Unit-Tests, eine zertifizierte Bibliothek nutzen, formale Validierung mit Schemadateien (XSD)"
+    },
+    {
+     "id": "PB1-7-1-5-K4",
+     "stufe": 2,
+     "kurz": "erläutern, was beim Nutzen eines Online-Validators zu beachten ist: keine echten Firmen- oder Kundendaten hochladen, nur Testdaten; die Ergebnisse können fehlerhaft sein, wenn das Werkzeug nicht geprüft und zertifiziert ist"
+    }
+   ]
+  },
+  {
+   "id": "PB1-8-1-1",
+   "ordner": "PB1-8",
+   "block": "PB1-8-1",
+   "titel": "Softwareergonomie, Usability und User Experience",
+   "gebiete": [
+    "G.PB1.03"
+   ],
+   "bausteine": [
+    "AP2b.04.13",
+    "AP2b.04.14.1",
+    "AP2b.04.14.2",
+    "AP2a.02.02.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-8-1-1-K1",
+     "stufe": 2,
+     "kurz": "Usability (wie wirksam, effizient und zufriedenstellend sich eine Software bedienen lässt) und User Experience (das gesamte Erleben vor, während und nach der Nutzung) unterscheiden"
+    },
+    {
+     "id": "PB1-8-1-1-K2",
+     "stufe": 2,
+     "kurz": "an Punkten erläutern, was eine benutzerfreundliche Anwendung ausmacht: effiziente, übersichtliche Navigation, erkennbar anklickbare Elemente, schnell verständliche Funktionsweise, Hilfen wie Autovervollständigung, gute Nutzbarkeit auf verschiedenen Endgeräten (Responsive Design), kurze Ladezeiten, ansprechendes Erscheinungsbild"
+    },
+    {
+     "id": "PB1-8-1-1-K3",
+     "stufe": 1,
+     "kurz": "Grundsätze der Dialoggestaltung als Anforderungen an die Softwareergonomie benennen: Aufgabenangemessenheit, Selbstbeschreibungsfähigkeit, Erwartungskonformität, Erlernbarkeit, Steuerbarkeit, Robustheit gegen Benutzungsfehler, Benutzerbindung"
+    },
+    {
+     "id": "PB1-8-1-1-K4",
+     "stufe": 4,
+     "kurz": "die Softwareergonomie einer Oberfläche anhand dieser Anforderungen beurteilen, zum Beispiel Mängel eines Entwurfs aus UI/UX-Sicht wie uneinheitliche Ausrichtung, platzraubend untereinander gesetzte Links, Links, die unnötig neue Fenster öffnen, doppelte oder missverständliche Elemente"
+    },
+    {
+     "id": "PB1-8-1-1-K5",
+     "stufe": 2,
+     "kurz": "Möglichkeiten beschreiben, die Usability während der Entwicklung zu testen: Befragung von Testbenutzern, Beobachtung mit Aufzeichnung von Klicks und Wegen, Blickverlaufsmessung (Eye-Tracking), lautes Denken, Auswertung von Logdateien"
+    }
+   ]
+  },
+  {
+   "id": "PB1-8-1-2",
+   "ordner": "PB1-8",
+   "block": "PB1-8-1",
+   "titel": "Barrierefreiheit und inklusives Design",
+   "gebiete": [
+    "G.PB1.03"
+   ],
+   "bausteine": [
+    "AP2a.02.02.3",
+    "AP2b.04.13"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-8-1-2-K1",
+     "stufe": 2,
+     "kurz": "Barrierefreiheit erläutern: Menschen mit Behinderungen können Inhalte wahrnehmen, verstehen, bedienen und selbst beitragen; Anwendungen werden so gestaltet, dass alle Menschen sie möglichst einfach nutzen können"
+    },
+    {
+     "id": "PB1-8-1-2-K2",
+     "stufe": 1,
+     "kurz": "Beispiele für inklusives Design bei Schrift und Farbe nennen: ausreichende Schriftgröße (im Fließtext etwa 16 Pixel und mehr), gut lesbare Schriftarten, begrenzte Zeilenlänge, großzügiger Zeilenabstand; keine problematischen Farbkombinationen wie Rot-Grün, Farbauswahl zusätzlich beschriften (Kontraste und „nie nur über Farbe“ aus AP1)"
+    },
+    {
+     "id": "PB1-8-1-2-K3",
+     "stufe": 3,
+     "kurz": "eine Bildschirmmaske über die Grundregeln aus AP1 (Tastaturbedienung, skalierbare Schrift) hinaus barrierefrei entwerfen: Alternativtexte für Bilder, Beschriftungen für alle Eingabefelder, verständliche Fehlermeldungen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-8-1-3",
+   "ordner": "PB1-8",
+   "block": "PB1-8-1",
+   "titel": "Oberflächen gestalten: Elemente, Darstellungsformen, Mock-ups und Prototypen",
+   "gebiete": [
+    "G.PB1.03"
+   ],
+   "bausteine": [
+    "AP2b.04.14",
+    "AP2b.04.14.1",
+    "AP2b.04.14.2",
+    "AP2b.04.13",
+    "AP2b.04.15",
+    "AP2b.03.02.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-8-1-3-K1",
+     "stufe": 1,
+     "kurz": "gängige Gestaltungselemente von Benutzeroberflächen nennen und ihren Zweck angeben: Brotkrumennavigation (Breadcrumb), Suchfeld mit Autovervollständigung, Anzeige der noch verbleibenden Schritte, späte Registrierung (erst beim Bezahlen anmelden)"
+    },
+    {
+     "id": "PB1-8-1-3-K2",
+     "stufe": 4,
+     "kurz": "Darstellungsformen für eine Übersicht von Datensätzen benennen (Liste oder Tabelle, Kacheln, Karte), dich für eine entscheiden und die Wahl begründen: Liste für eine einfache, schnelle Übersicht, Kacheln für eine moderne Darstellung auf kleinen Bildschirmen, Karte für die geografische Einordnung"
+    },
+    {
+     "id": "PB1-8-1-3-K3",
+     "stufe": 3,
+     "kurz": "eine Benutzeroberfläche über die Gestaltungsregeln aus AP1 (gruppieren, einheitlich anordnen) hinaus nach Anforderungen gestalten: passende Eingabeelemente wählen (Auswahlliste für vorgegebene Werte, Datumsauswahl), Pflichtfelder und Aktionen klar kennzeichnen, damit Bedienung (Usability) und Gesamteindruck (User Experience) stimmen"
+    },
+    {
+     "id": "PB1-8-1-3-K4",
+     "stufe": 3,
+     "kurz": "ein Mock-up einer Bildschirmseite skizzieren, das alle verlangten Elemente enthält, auch für eine gewählte Darstellungsform mit Beispieldatensätzen oder als Verbesserung eines mangelhaften Entwurfs, zum Beispiel eine Eingabemaske für Patientendaten mit Auswahlliste für die hinterlegten Krankenkassen"
+    },
+    {
+     "id": "PB1-8-1-3-K5",
+     "stufe": 2,
+     "kurz": "erklären, was Prototyping ist und wann es in der Konzeption sinnvoll ist: Eine vereinfachte Version eines Lösungsansatzes wird umgesetzt, um Aufwand, Machbarkeit oder Bedienung früh zu prüfen, besonders bei komplexen Aufgaben ohne Erfahrungswerte; Vorteile von Mock-ups und Prototypen sind frühe Rückmeldung des Kunden, sichtbare Missverständnisse vor der Programmierung und noch billige Änderungen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-1-1",
+   "ordner": "PB1-9",
+   "block": "PB1-9-1",
+   "titel": "Qualitätssicherung, KVP und Kennzahlen",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2a.03.01.2",
+    "AP2a.02.01.2",
+    "AP2b.05.03.1",
+    "AP2b.04.07",
+    "AP2a.03.02.1",
+    "AP2a.03.02.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-9-1-1-K1",
+     "stufe": 2,
+     "kurz": "qualitätssichernde Maßnahmen für ein Softwareprojekt beschreiben: standardisiertes Vorgehensmodell, übliche Entwicklungswerkzeuge (IDE, CI/CD), festgelegte Testumgebungen, -verfahren und -daten, Code-Reviews, Vorgaben zur Dokumentation, qualifizierte und zertifizierte Mitarbeiter"
+    },
+    {
+     "id": "PB1-9-1-1-K2",
+     "stufe": 4,
+     "kurz": "Stellung nehmen, ob ausschließlich automatische Code-Reviews und Unit-Tests zur Qualitätssicherung reichen: Sie decken nicht alle Fälle ab (Bedienung, Zusammenspiel der Komponenten, Erfüllung der Anforderungen), deshalb sind weitere, auch manuelle Tests nötig"
+    },
+    {
+     "id": "PB1-9-1-1-K3",
+     "stufe": 2,
+     "kurz": "den kontinuierlichen Verbesserungsprozess (KVP) erklären: ständige Verbesserung in kleinen Schritten, an der alle Beteiligten mitwirken"
+    },
+    {
+     "id": "PB1-9-1-1-K4",
+     "stufe": 3,
+     "kurz": "Kennzahlen zur Messung der Zielerreichung in der Softwareentwicklung festlegen und im Soll-Ist-Vergleich (Berechnung wie in AP1) anwenden, zum Beispiel gefundene Fehler je Release, Anteil bestandener Testfälle, Bearbeitungszeit von Störungen, Verfügbarkeit"
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-1-2",
+   "ordner": "PB1-9",
+   "block": "PB1-9-1",
+   "titel": "Prüfverfahren: Parität und Redundanz",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2a.03.01.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-9-1-2-K1",
+     "stufe": 3,
+     "kurz": "ein Paritätsbit bestimmen: bei gerader Parität so ergänzen, dass die Anzahl der Einsen gerade ist, bei ungerader Parität so, dass sie ungerade ist"
+    },
+    {
+     "id": "PB1-9-1-2-K2",
+     "stufe": 2,
+     "kurz": "erklären, dass ein Paritätsbit einen einzelnen Bitfehler erkennt, ihn aber nicht findet oder berichtigt, und zwei gleichzeitig gekippte Bits nicht bemerkt"
+    },
+    {
+     "id": "PB1-9-1-2-K3",
+     "stufe": 3,
+     "kurz": "Redundanz als Prüfverfahren anwenden: zusätzliche Prüfinformation mitspeichern oder mitsenden, zum Beispiel eine Prüfsumme oder Prüfziffer, die der Empfänger neu berechnet und vergleicht, etwa die Frame Check Sequence (CRC) im Ethernet-Frame"
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-1-3",
+   "ordner": "PB1-9",
+   "block": "PB1-9-1",
+   "titel": "Testverfahren: statisch und dynamisch, Black-Box und White-Box",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2a.02.01.2",
+    "AP2a.03.01.2",
+    "AP2b.03.08.1",
+    "AP2b.05.03.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-9-1-3-K1",
+     "stufe": 2,
+     "kurz": "statische Testverfahren (ohne Ausführung: Review, Schreibtischtest, Codeanalyse) und dynamische Testverfahren (Ausführen mit Testdaten) unterscheiden und je Beispiele nennen"
+    },
+    {
+     "id": "PB1-9-1-3-K2",
+     "stufe": 2,
+     "kurz": "Black-Box-Test (Funktionstest gegen die Anforderungen ohne Kenntnis des Codes, oft von Personen außerhalb der Entwicklung) und White-Box-Test (Testfälle aus dem inneren Aufbau des Codes, durch das Entwicklungsteam) beschreiben"
+    },
+    {
+     "id": "PB1-9-1-3-K3",
+     "stufe": 3,
+     "kurz": "Black-Box- und White-Box-Test mit ihren Stärken und Grenzen einsetzen: Der Black-Box-Test prüft aus Sicht der Anforderungen und findet fehlende Funktionen, zeigt aber nicht, welcher Code ungetestet bleibt; der White-Box-Test deckt den Code systematisch ab, bemerkt aber keine fehlenden Anforderungen"
+    },
+    {
+     "id": "PB1-9-1-3-K4",
+     "stufe": 2,
+     "kurz": "den Extremwertetest erklären: mit den kleinsten und größten zulässigen Werten sowie knapp darüber und darunter testen, weil an Grenzen besonders oft Fehler stecken"
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-1-4",
+   "ordner": "PB1-9",
+   "block": "PB1-9-1",
+   "titel": "Teststufen: vom Unit-Test bis zur Abnahme",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2a.02.01.4",
+    "AP2b.05.03.1",
+    "AP2a.03.01.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-9-1-4-K1",
+     "stufe": 2,
+     "kurz": "Komponententest (auch Modul- oder Unit-Test: ein Baustein wird getrennt vom Rest automatisch und beliebig oft wiederholbar geprüft), Integrationstest, Systemtest und Abnahmetest unterscheiden und in die richtige Reihenfolge bringen"
+    },
+    {
+     "id": "PB1-9-1-4-K2",
+     "stufe": 2,
+     "kurz": "Last- bzw. Belastungstest und Performancetest erklären: Verhalten, Antwortzeiten und Ressourcenverbrauch werden bei erwarteter Last und bei Spitzenlast gemessen, um Engpässe vor dem Betrieb zu finden"
+    },
+    {
+     "id": "PB1-9-1-4-K3",
+     "stufe": 2,
+     "kurz": "den End-to-End-Test erklären: Ein vollständiger Ablauf wird aus Sicht des Benutzers durch das ganze System geprüft, von der Oberfläche bis zur Datenbank"
+    },
+    {
+     "id": "PB1-9-1-4-K4",
+     "stufe": 4,
+     "kurz": "beurteilen, welche Teststufen ein Testkonzept für eine Anwendung vorsehen muss, und begründen, warum keine Stufe eine andere ersetzt"
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-1-5",
+   "ordner": "PB1-9",
+   "block": "PB1-9-1",
+   "titel": "Testkonzept, Testprozess, Test- und Abnahmeprotokoll",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2b.05.03.2",
+    "AP2b.05.03.2.4",
+    "AP2a.03.02.4",
+    "AP2a.03.02.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-9-1-5-K1",
+     "stufe": 2,
+     "kurz": "Inhalte eines Testkonzepts beschreiben: Teststrategie mit Testzielen und Testmethoden, Teststufen und ihr Zusammenspiel, Testumgebung und Automatisierung, Umfang der Testdokumentation, Testplan (wer testet was wann), Auswertung der Ergebnisse, Schätzung von Aufwand und Kosten"
+    },
+    {
+     "id": "PB1-9-1-5-K2",
+     "stufe": 2,
+     "kurz": "den Ablauf des Testprozesses beschreiben: Tests planen, Testfälle und Testdaten vorbereiten, durchführen, protokollieren, auswerten, Fehler beheben lassen und erneut testen"
+    },
+    {
+     "id": "PB1-9-1-5-K3",
+     "stufe": 3,
+     "kurz": "ein Testprotokoll für eine Software erstellen (Aufbau wie in AP1-1-5-3), zusätzlich mit Eingabedaten, Softwareversion und Tester"
+    },
+    {
+     "id": "PB1-9-1-5-K4",
+     "stufe": 4,
+     "kurz": "Testprotokolle analysieren: Häufungen von Fehlern erkennen, Ursachen eingrenzen und entscheiden, ob die Software freigegeben werden kann"
+    },
+    {
+     "id": "PB1-9-1-5-K5",
+     "stufe": 3,
+     "kurz": "ein Abnahmeprotokoll für eine Software erstellen (Inhalte wie in AP1-1-4-2), zusätzlich mit Softwareversion und Ergebnis der Abnahmetests, und es im Abschlussprotokoll mit Soll-Ist-Vergleich und Erfahrungen zusammenführen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-9-1-6",
+   "ordner": "PB1-9",
+   "block": "PB1-9-1",
+   "titel": "Handbücher und Dokumentation",
+   "gebiete": [
+    "G.PB1.04"
+   ],
+   "bausteine": [
+    "AP2b.01.13",
+    "AP2b.01.13.1",
+    "AP2b.01.13.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-9-1-6-K1",
+     "stufe": 2,
+     "kurz": "Benutzerhandbuch (Bedienung aus Sicht der Anwender) und Handbuch für Systembetreuer (Installation, Konfiguration, Betrieb, Fehlerbehebung) nach Zielgruppe und Inhalt unterscheiden"
+    },
+    {
+     "id": "PB1-9-1-6-K2",
+     "stufe": 3,
+     "kurz": "eine Programmdokumentation erstellen und erweitern: Aufbau und Module, Schnittstellen, Datenmodell, je Klasse und Methode Zweck, Parameter, Rückgabewert und Voraussetzungen; bei der Erweiterung einer Bibliothek auch Konstruktoren, geerbte Methoden und implementierte Interfaces"
+    },
+    {
+     "id": "PB1-9-1-6-K3",
+     "stufe": 3,
+     "kurz": "eine Konfigurationsdokumentation erstellen: Einstellungen, Versionen, Abhängigkeiten und Zugänge so festhalten, dass sich die Umgebung wiederherstellen lässt"
+    },
+    {
+     "id": "PB1-9-1-6-K4",
+     "stufe": 3,
+     "kurz": "für einen wiederkehrenden Vorgang eine Checkliste erstellen, zum Beispiel für die Auslieferung eines Releases oder die Einrichtung einer Testumgebung"
+    }
+   ]
+  }
+ ],
+ "erreicht": {
+  "ANH.uml-aktivitaetsdiagramm": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-5"
+   ]
+  },
+  "ANH.uml-anwendungsfalldiagramm": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-1"
+   ]
+  },
+  "ANH.uml-klassendiagramm": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-2",
+    "PB1-5-1-3"
+   ]
+  },
+  "ANH.uml-sequenzdiagramm": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-3"
+   ]
+  },
+  "ANH.uml-zustandsdiagramm": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-4"
+   ]
+  },
+  "AP1.01.01.2.6": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "AP1.01.02.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1",
+    "PB1-1-2-3"
+   ]
+  },
+  "AP1.01.02.2": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "AP1.01.02.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1",
+    "PB1-1-2-2"
+   ]
+  },
+  "AP1.01.02.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-1",
+    "PB1-1-2-2"
+   ]
+  },
+  "AP1.02.03.4": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-4",
+    "PB1-6-1-4"
+   ]
+  },
+  "AP1.03.01.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "AP1.03.04.1": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "AP1.04.03.5": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-3-2-1"
+   ]
+  },
+  "AP1.04.04.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-2-1-2"
+   ]
+  },
+  "AP1.04.07.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-5"
+   ]
+  },
+  "AP1.06.01.3.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-2-1-2"
+   ]
+  },
+  "AP1.06.04.8": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-3"
+   ]
+  },
+  "AP1.06.04.9": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-4"
+   ]
+  },
+  "AP1.07.02.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "AP1.07.03.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-12-2-2"
+   ]
+  },
+  "AP1.07.05.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-2"
+   ]
+  },
+  "AP1.07.05.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-2"
+   ]
+  },
+  "AP1.07.05.4": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-2"
+   ]
+  },
+  "AP1.07.06.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-5"
+   ]
+  },
+  "AP1.07.07.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-5"
+   ]
+  },
+  "AP1.07.07.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "AP2a.01.02.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-1"
+   ]
+  },
+  "AP2a.01.02.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-1"
+   ]
+  },
+  "AP2a.01.02.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-1"
+   ]
+  },
+  "AP2a.01.02.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-2"
+   ]
+  },
+  "AP2a.01.02.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-1-2-1",
+    "PB1-2-1-2"
+   ]
+  },
+  "AP2a.01.02.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-2"
+   ]
+  },
+  "AP2a.01.03.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-4"
+   ]
+  },
+  "AP2a.01.03.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-4"
+   ]
+  },
+  "AP2a.01.03.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-4"
+   ]
+  },
+  "AP2a.01.03.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-3"
+   ]
+  },
+  "AP2a.01.03.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-4"
+   ]
+  },
+  "AP2a.01.03.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-4"
+   ]
+  },
+  "AP2a.01.03.7": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-2-1-4"
+   ]
+  },
+  "AP2a.02.01.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-9-1-1",
+    "PB1-9-1-3"
+   ]
+  },
+  "AP2a.02.01.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-9-1-4",
+    "PB1-9-1-5"
+   ]
+  },
+  "AP2a.02.01.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-3"
+   ]
+  },
+  "AP2a.02.02.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-1"
+   ]
+  },
+  "AP2a.02.02.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-8-1-2"
+   ]
+  },
+  "AP2a.02.03.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-6-1-4",
+    "PB1-7-1-2"
+   ]
+  },
+  "AP2a.02.03.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-2"
+   ]
+  },
+  "AP2a.02.03.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-6-1-3"
+   ]
+  },
+  "AP2a.02.03.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-3"
+   ]
+  },
+  "AP2a.02.03.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-1",
+    "PB1-6-1-2",
+    "PB1-6-1-3"
+   ]
+  },
+  "AP2a.02.03.11": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-7-1-3"
+   ]
+  },
+  "AP2a.03.01.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-2"
+   ]
+  },
+  "AP2a.03.01.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-9-1-1",
+    "PB1-9-1-4"
+   ]
+  },
+  "AP2a.03.02.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-1"
+   ]
+  },
+  "AP2a.03.02.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-1"
+   ]
+  },
+  "AP2a.03.02.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-5"
+   ]
+  },
+  "AP2a.03.02.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-5"
+   ]
+  },
+  "AP2a.04.01": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.01.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.01.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.01.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.02.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-1",
+    "PB1-10-1-2",
+    "PB1-7-1-5"
+   ]
+  },
+  "AP2a.04.02.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-2"
+   ]
+  },
+  "AP2a.04.02.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-2"
+   ]
+  },
+  "AP2a.04.03.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.03.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.03.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.04.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.04.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-1"
+   ]
+  },
+  "AP2a.04.04.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.7": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.7.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.7.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.7.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.7.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.8": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.04.9": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-2"
+   ]
+  },
+  "AP2a.04.05.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.05.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.05.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-2-1"
+   ]
+  },
+  "AP2a.04.05.4": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-2-4"
+   ]
+  },
+  "AP2a.04.06": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.1.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.1.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.1.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.2.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.2.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.2.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.3.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.3.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.3.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2a.04.06.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2b.01.01": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.01.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-11-1-1",
+    "PB1-3-2-2",
+    "PB1-7-1-2"
+   ]
+  },
+  "AP2b.01.01.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.01.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.01.4": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.01.5": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.01.6": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1",
+    "PB1-11-1-2"
+   ]
+  },
+  "AP2b.01.02.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.02.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.02.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.02.4": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1"
+   ]
+  },
+  "AP2b.01.03": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-1"
+   ]
+  },
+  "AP2b.01.03.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-1"
+   ]
+  },
+  "AP2b.01.03.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-1"
+   ]
+  },
+  "AP2b.01.03.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-2"
+   ]
+  },
+  "AP2b.01.03.4": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-4"
+   ]
+  },
+  "AP2b.01.03.5": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-1"
+   ]
+  },
+  "AP2b.01.03.6": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-2"
+   ]
+  },
+  "AP2b.01.03.7": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-2"
+   ]
+  },
+  "AP2b.01.03.8": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-2"
+   ]
+  },
+  "AP2b.01.03.9": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-2"
+   ]
+  },
+  "AP2b.01.03.10": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-2",
+    "PB1-12-1-2"
+   ]
+  },
+  "AP2b.01.03.12": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-1"
+   ]
+  },
+  "AP2b.01.04": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.01.04.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.01.04.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-3",
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.01.05.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-11-1-2"
+   ]
+  },
+  "AP2b.01.05.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-3",
+    "PB1-10-1-4",
+    "PB1-11-1-2",
+    "PB1-7-1-4"
+   ]
+  },
+  "AP2b.01.06": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-4"
+   ]
+  },
+  "AP2b.01.06.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-4"
+   ]
+  },
+  "AP2b.01.06.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-4"
+   ]
+  },
+  "AP2b.01.06.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-4"
+   ]
+  },
+  "AP2b.01.07.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-2",
+    "PB1-11-1-3"
+   ]
+  },
+  "AP2b.01.07.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-3"
+   ]
+  },
+  "AP2b.01.07.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-3"
+   ]
+  },
+  "AP2b.01.08": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.01.08.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.01.08.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.01.08.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.01.08.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.01.08.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.01.09": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-12-1-2"
+   ]
+  },
+  "AP2b.01.09.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-1-2"
+   ]
+  },
+  "AP2b.01.09.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-1-2"
+   ]
+  },
+  "AP2b.01.09.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-1-2"
+   ]
+  },
+  "AP2b.01.10.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-3"
+   ]
+  },
+  "AP2b.01.10.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-3"
+   ]
+  },
+  "AP2b.01.10.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-1-3"
+   ]
+  },
+  "AP2b.01.11.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-2-1"
+   ]
+  },
+  "AP2b.01.11.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-2-1"
+   ]
+  },
+  "AP2b.01.11.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-2-1"
+   ]
+  },
+  "AP2b.01.11.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-2-1"
+   ]
+  },
+  "AP2b.01.11.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-2-1"
+   ]
+  },
+  "AP2b.01.11.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-12-2-1"
+   ]
+  },
+  "AP2b.01.12": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-2"
+   ]
+  },
+  "AP2b.01.12.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-2"
+   ]
+  },
+  "AP2b.01.12.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-2"
+   ]
+  },
+  "AP2b.01.12.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-2"
+   ]
+  },
+  "AP2b.01.12.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-2"
+   ]
+  },
+  "AP2b.01.13": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ]
+  },
+  "AP2b.01.13.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ]
+  },
+  "AP2b.01.13.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ]
+  },
+  "AP2b.02.01.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-10-2-1"
+   ]
+  },
+  "AP2b.02.02.1": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2b.02.02.2": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2b.02.03.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-1"
+   ]
+  },
+  "AP2b.02.03.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2b.02.03.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2b.02.03.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-2-3"
+   ]
+  },
+  "AP2b.02.04": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-3"
+   ]
+  },
+  "AP2b.02.04.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-3"
+   ]
+  },
+  "AP2b.02.04.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-12-2-3"
+   ]
+  },
+  "AP2b.02.05.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-7-1-2",
+    "PB1-7-1-3"
+   ]
+  },
+  "AP2b.02.05.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-7-1-3"
+   ]
+  },
+  "AP2b.02.06.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.02.06.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-1",
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.02.06.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.02.06.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.02.06.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.02.06.6": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-11-1-1",
+    "PB1-11-2-3"
+   ]
+  },
+  "AP2b.03.01": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-1-3"
+   ]
+  },
+  "AP2b.03.01.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.01.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.01.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.01.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-1-2-4",
+    "PB1-12-1-1"
+   ]
+  },
+  "AP2b.03.01.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.01.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.01.7": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.01.8": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-4"
+   ]
+  },
+  "AP2b.03.02.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-1"
+   ]
+  },
+  "AP2b.03.02.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-2",
+    "PB1-6-1-3"
+   ]
+  },
+  "AP2b.03.02.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-2",
+    "PB1-5-1-3"
+   ]
+  },
+  "AP2b.03.02.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-8-1-3"
+   ]
+  },
+  "AP2b.03.02.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-5"
+   ]
+  },
+  "AP2b.03.02.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-1"
+   ]
+  },
+  "AP2b.03.02.7": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-3"
+   ]
+  },
+  "AP2b.03.02.8": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-4"
+   ]
+  },
+  "AP2b.03.03.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-7-1-1",
+    "PB1-7-1-2",
+    "PB1-7-1-4"
+   ]
+  },
+  "AP2b.03.03.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-7-1-4"
+   ]
+  },
+  "AP2b.03.04.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.03.04.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.03.04.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1",
+    "PB1-3-2-1",
+    "PB1-9-1-6"
+   ]
+  },
+  "AP2b.03.04.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.03.04.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.03.06.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ]
+  },
+  "AP2b.03.06.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ]
+  },
+  "AP2b.03.06.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ]
+  },
+  "AP2b.03.06.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ]
+  },
+  "AP2b.03.06.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ]
+  },
+  "AP2b.03.07": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-2"
+   ]
+  },
+  "AP2b.03.07.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-2"
+   ]
+  },
+  "AP2b.03.07.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-2",
+    "PB1-7-1-2"
+   ]
+  },
+  "AP2b.03.08.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-9-1-3"
+   ]
+  },
+  "AP2b.04.01": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-2-3"
+   ]
+  },
+  "AP2b.04.02": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-1-1"
+   ]
+  },
+  "AP2b.04.02.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-1-1"
+   ]
+  },
+  "AP2b.04.02.1.1": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-1-2",
+    "PB1-1-1-3"
+   ]
+  },
+  "AP2b.04.02.1.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-1-2"
+   ]
+  },
+  "AP2b.04.02.1.3": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-1-2"
+   ]
+  },
+  "AP2b.04.02.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-1-1"
+   ]
+  },
+  "AP2b.04.02.2.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-1-2",
+    "PB1-1-1-3"
+   ]
+  },
+  "AP2b.04.03.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-3"
+   ]
+  },
+  "AP2b.04.03.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-3"
+   ]
+  },
+  "AP2b.04.03.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-3"
+   ]
+  },
+  "AP2b.04.04": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-2",
+    "PB1-5-1-3",
+    "PB1-5-1-5"
+   ]
+  },
+  "AP2b.04.05": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.04.06": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.04.07": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-3-2-2",
+    "PB1-9-1-1"
+   ]
+  },
+  "AP2b.04.07.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.5": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1",
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.6": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-1",
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.7": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.8": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2"
+   ]
+  },
+  "AP2b.04.07.9": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-3-1-2",
+    "PB1-3-1-3"
+   ]
+  },
+  "AP2b.04.08": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ]
+  },
+  "AP2b.04.09.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-4-1-2",
+    "PB1-5-1-1",
+    "PB1-5-1-3",
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.04.09.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-1-1-3",
+    "PB1-4-1-1"
+   ]
+  },
+  "AP2b.04.09.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-4"
+   ]
+  },
+  "AP2b.04.09.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-5"
+   ]
+  },
+  "AP2b.04.09.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-3"
+   ]
+  },
+  "AP2b.04.10.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-1"
+   ]
+  },
+  "AP2b.04.10.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-2",
+    "PB1-6-1-3"
+   ]
+  },
+  "AP2b.04.11": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-6-1-3"
+   ]
+  },
+  "AP2b.04.12": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.04.12.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-5-1-4",
+    "PB1-5-1-5"
+   ]
+  },
+  "AP2b.04.12.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.04.12.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-1",
+    "PB1-5-1-4",
+    "PB1-5-1-5"
+   ]
+  },
+  "AP2b.04.12.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.04.13": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-8-1-1",
+    "PB1-8-1-2",
+    "PB1-8-1-3"
+   ]
+  },
+  "AP2b.04.14": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-8-1-3"
+   ]
+  },
+  "AP2b.04.14.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-8-1-1",
+    "PB1-8-1-3"
+   ]
+  },
+  "AP2b.04.14.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-8-1-1",
+    "PB1-8-1-3"
+   ]
+  },
+  "AP2b.04.15": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-8-1-3"
+   ]
+  },
+  "AP2b.04.17": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-5"
+   ]
+  },
+  "AP2b.04.17.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-2",
+    "PB1-5-1-1"
+   ]
+  },
+  "AP2b.04.17.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-1",
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.04.17.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-5-1-1",
+    "PB1-5-1-4",
+    "PB1-5-1-5"
+   ]
+  },
+  "AP2b.04.17.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-5-1-1",
+    "PB1-5-1-4"
+   ]
+  },
+  "AP2b.04.17.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-5-1-2"
+   ]
+  },
+  "AP2b.04.20.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-7-1-2"
+   ]
+  },
+  "AP2b.04.20.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-7-1-1",
+    "PB1-7-1-2"
+   ]
+  },
+  "AP2b.04.20.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-3-2-2",
+    "PB1-7-1-2"
+   ]
+  },
+  "AP2b.04.21.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-4-1-3",
+    "PB1-7-1-4"
+   ]
+  },
+  "AP2b.04.21.2": {
+   "stufe": 1,
+   "stichpunkte": [
+    "PB1-7-1-4"
+   ]
+  },
+  "AP2b.05.01": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-2-2"
+   ]
+  },
+  "AP2b.05.01.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-10-1-3",
+    "PB1-10-1-4",
+    "PB1-10-2-2",
+    "PB1-2-1-2",
+    "PB1-3-1-2",
+    "PB1-7-1-5"
+   ]
+  },
+  "AP2b.05.01.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB1-10-1-1",
+    "PB1-10-1-3",
+    "PB1-10-1-4",
+    "PB1-10-2-1"
+   ]
+  },
+  "AP2b.05.02": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-6-1-5"
+   ]
+  },
+  "AP2b.05.02.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-6-1-5"
+   ]
+  },
+  "AP2b.05.02.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-7-1-1",
+    "PB1-7-1-5"
+   ]
+  },
+  "AP2b.05.02.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-6-1-4",
+    "PB1-6-1-5"
+   ]
+  },
+  "AP2b.05.03.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-7-1-5",
+    "PB1-9-1-1",
+    "PB1-9-1-3",
+    "PB1-9-1-4"
+   ]
+  },
+  "AP2b.05.03.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-9-1-5"
+   ]
+  },
+  "AP2b.05.03.2.4": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB1-9-1-5"
+   ]
+  },
+  "ZB.change-request": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-1-2-1"
+   ]
+  },
+  "ZB.erechnung": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB1-7-1-5"
+   ]
+  }
+ }
+}

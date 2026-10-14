@@ -176,6 +176,10 @@ test('Zuordnungs-Prüfer PB1 lehnt Baustein mit Wohnort PB2 ab (P3)', { skip: !z
   assert.equal(r.status, 1);
   assert.match(r.stdout, /wohnt in PB2/);
 });
+test('Zuordnung PB2 besteht T2 und die goldene Regel (Importe aus AP1 und PB1 erlaubt)', { skip: !(vorhanden && existsSync('umbau/fundament/pruefungen-pb2.json') && existsSync('umbau/zuordnung/pb2')) && 'Quellen fehlen' }, () => {
+  const r = spawnSync(process.execPath, ['tools/umbau/zuordnung-pruefen.mjs', 'pb2'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});
 test('Zuordnungs-Prüfer AP1 lehnt AP2-Baustein ab', { skip: !zuordnungDa && 'Quellen fehlen' }, () => {
   assert.equal(zuordnungMit((o) => aendereJson(join(o, '2024H.json'), (j) => { j.teilaufgaben['2024H-A1-a'].bausteine = ['AP2b.04.10.1']; })).status, 1);
 });
