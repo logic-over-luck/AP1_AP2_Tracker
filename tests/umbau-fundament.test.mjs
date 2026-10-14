@@ -3,7 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, writeFileSync, mkdtempSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdtempSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -213,5 +213,16 @@ for (const [name, f] of Object.entries(lernplanFehler)) {
 // ---------- Eingefrorene Räume (E3, Schritt 5) ----------
 test('Raum AP1 ist eingefroren: Export passt zum Lernplan', { skip: !existsSync('umbau/export/AP1.json') && 'kein Export' }, () => {
   const r = spawnSync(process.execPath, ['tools/umbau/export-raum.mjs', 'AP1', '--pruefen'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});
+
+// ---------- Raum PB1 (Schritt 6) ----------
+const pb1Da = vorhanden && existsSync('umbau/fundament/pruefungen-pb1.json') && existsSync('umbau/lernplan/pb1');
+test('Raum PB1: alle Ordner und die Raum-Prüfung (T1, T2b, T8, ALT) bestehen', { skip: !pb1Da && 'Quellen fehlen' }, () => {
+  for (const f of readdirSync('umbau/lernplan/pb1').filter((x) => x.endsWith('.json'))) {
+    const r = spawnSync(process.execPath, ['tools/umbau/lernplan-pruefen.mjs', f.replace('.json', '')], { encoding: 'utf8', env: { ...process.env, LERNPLAN_DATEI: `umbau/lernplan/pb1/${f}` } });
+    assert.equal(r.status, 0, `${f}: ${r.stdout}`);
+  }
+  const r = spawnSync(process.execPath, ['tools/umbau/raum-pruefen.mjs', 'PB1'], { encoding: 'utf8' });
   assert.equal(r.status, 0, r.stdout);
 });

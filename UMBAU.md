@@ -556,6 +556,16 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         44 angepasst, 3 verschoben, 5 gestrichen (Grundlagen in AP1-6), 5 für PB2 (Datenmengen berechnen). Deckt die
         Grenzen von AP1-6 ab, die auf AP2 verweisen (TCP/UDP, DHCP-Ablauf, Topologien, Netzausdehnung, VPN-Modelle, IPsec).
         Tiefe ohne Beleg = Katalogtiefe (meist Stufe 2); P10 bleibt offen.
+  - [x] **PB1-12 Betrieb, Verfügbarkeit und Cloud (14.10.2026):** 2 Themenblöcke, 6 Stichpunkte, 25 Können-Aussagen.
+        Alte AP2-Aussagen: 26 angepasst, 1 gestrichen (Backup-Arten in AP1-7-3-5). RAID ist hier Kern (in AP1 nach B3 außen).
+  - [x] **Raum-Prüfung PB1 (14.10.2026):** `node tools/umbau/raum-pruefen.mjs PB1`, Bericht `umbau/berichte/PB1-raum.md`:
+        T1 (232 Pflichtbausteine inkl. 2 Zusatzbausteine), T2b (152 Teilaufgaben), T8 (256 Bausteine mit belegter Tiefe,
+        auch Importe aus AP1) und ALT grün. Alle 445 alten AP2-Können-Aussagen einsortiert: 34 verschoben, 278 angepasst,
+        42 gestrichen, 91 für PB2 vermerkt (Algorithmen, SQL, Testdaten, Überdeckung, Debugging, Datenmengen).
+        Gesamt PB1: 12 Ordner, 23 Themenblöcke, 78 Stichpunkte, 343 Können-Aussagen, 15 Kür-Einträge. Test in
+        `tests/umbau-fundament.test.mjs` prüft alle PB1-Ordner und den Raum.
+  - [ ] **PB1 offen:** unabhängige Prüfung K1–K3 (wie P16), Lernkarten (wie 3e; die alten AP2-Karten hängen über `alt_neu`
+        an den neuen IDs), Kurzfassungen und Vorschau in der App, Abnahme durch den Projektinhaber, danach Export PB1 (E3).
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 

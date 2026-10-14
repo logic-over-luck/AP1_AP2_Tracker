@@ -1,0 +1,828 @@
+{
+ "oberblock": {
+  "id": "PB1-12",
+  "titel": "Betrieb, Verfügbarkeit und Cloud",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.02",
+   "G.PB1.04"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-12-1",
+   "titel": "Verfügbarkeit und Betriebssicherheit",
+   "satz": "Wie sicher muss ein Dienst laufen und womit wird das erreicht: Verfügbarkeit beurteilen, Ausfallrisiken planen, USV, Redundanz, RAID und Backup. Backup-Verfahren an sich kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-12-1-1",
+     "titel": "Verfügbarkeit von Anwendungsdiensten beurteilen",
+     "ziel": "Verfügbarkeit erklären und berechnen und die Verfügbarkeitsanforderungen von Echtzeitkommunikation, Mail-, Web-, Groupware- und Datenbankdiensten beurteilen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.08"
+      },
+      {
+       "id": "AP2b.01.08.1"
+      },
+      {
+       "id": "AP2b.01.08.2"
+      },
+      {
+       "id": "AP2b.01.08.3"
+      },
+      {
+       "id": "AP2b.01.08.4"
+      },
+      {
+       "id": "AP2b.01.08.5"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A1-b"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-12-1-1-K1",
+       "text": "Du kannst Verfügbarkeit als Anteil der Betriebszeit an der Gesamtzeit erklären und berechnen, zum Beispiel entsprechen 99,9 % im Jahr knapp 9 Stunden Ausfall.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.08"
+       ]
+      },
+      {
+       "id": "PB1-12-1-1-K2",
+       "text": "Du kannst die Verfügbarkeitsanforderungen von Anwendungsdiensten beurteilen: Echtzeitkommunikation (Ausfall sofort spürbar), Mailserver (kurze Ausfälle durch Zwischenspeicherung beim Absender überbrückbar), Webserver (Kunden und Umsatz), Groupware (Zusammenarbeit), Datenbanken (alle abhängigen Anwendungen stehen still).",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.08.1",
+        "katalog:AP2b.01.08.2",
+        "katalog:AP2b.01.08.3",
+        "katalog:AP2b.01.08.4",
+        "katalog:AP2b.01.08.5"
+       ]
+      },
+      {
+       "id": "PB1-12-1-1-K3",
+       "text": "Du kannst für einen Dienst eine angemessene Verfügbarkeit festlegen und begründen, welche Maßnahmen dafür nötig sind, auch als nichtfunktionale Anforderung an eine IT-Infrastruktur.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.08",
+        "beleg:2022W-PB1-A1-b"
+       ]
+      }
+     ],
+     "hinweis": "Betreiben von IT-Systemen ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; Tiefe für AE offen (P10). Bis dahin gilt die Katalogtiefe."
+    },
+    {
+     "id": "PB1-12-1-2",
+     "titel": "Ausfallrisiken, MTBF/AFR und Notfallkonzept",
+     "ziel": "Risiken für den Betrieb identifizieren, Ausfallwahrscheinlichkeiten mit MTBF und AFR berücksichtigen, Maßnahmen mit PDCA planen und ein Notfallkonzept aufstellen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.09"
+      },
+      {
+       "id": "AP2b.01.09.1"
+      },
+      {
+       "id": "AP2b.01.09.2"
+      },
+      {
+       "id": "AP2b.01.09.3"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A1-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-12-1-2-K1",
+       "text": "Du kannst Risiken für den Betrieb identifizieren, zum Beispiel einzelne Fehlerquellen ohne Ersatz, Abhängigkeit von einem Rechenzentrum oder einer Leitung, Engpässe in der Bandbreite, veraltete Hardware.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.09",
+        "beleg:2022W-PB1-A1-a"
+       ]
+      },
+      {
+       "id": "PB1-12-1-2-K2",
+       "text": "Du kannst MTBF (mittlere Betriebsdauer zwischen zwei Ausfällen) und AFR (Anteil der Geräte, die in einem Jahr ausfallen) erklären und beim Planen von Ersatzteilen und Redundanz berücksichtigen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.09.2"
+       ]
+      },
+      {
+       "id": "PB1-12-1-2-K3",
+       "text": "Du kannst Maßnahmen für die Betriebssicherheit mit dem PDCA-Zyklus planen: Risiken erheben und Maßnahmen planen, umsetzen, Wirksamkeit prüfen, nachsteuern.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.09.1"
+       ]
+      },
+      {
+       "id": "PB1-12-1-2-K4",
+       "text": "Du kannst ein Notfallkonzept (Disaster Recovery) planen: wer nach einem schweren Ausfall was in welcher Reihenfolge tut, wie lange der Ausfall dauern und wie viele Daten verloren gehen dürfen, Ausweichsysteme, regelmäßige Übungen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.09.3"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-5-2"
+     ]
+    },
+    {
+     "id": "PB1-12-1-3",
+     "titel": "Betrieb sicherstellen: USV, Redundanz, RAID und Backup",
+     "ziel": "Elektrotechnische, hardwaretechnische und softwaretechnische Maßnahmen zur Sicherstellung des Betriebs beurteilen, RAID-Level unterscheiden und Kapazitäten berechnen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.10"
+      },
+      {
+       "id": "AP2b.01.10.1"
+      },
+      {
+       "id": "AP2b.01.10.2"
+      },
+      {
+       "id": "AP2b.01.10.3"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-1-3-K1",
+       "text": "Du kannst den Einsatz einer USV beurteilen: Sie überbrückt Stromausfälle und Spannungsschwankungen, bis Systeme geordnet herunterfahren oder ein Notstromaggregat übernimmt; Leistung und Überbrückungszeit müssen zum Bedarf passen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.10.1"
+       ]
+      },
+      {
+       "id": "PB1-12-1-3-K2",
+       "text": "Du kannst hardwaretechnische Redundanz beurteilen: doppelte Netzteile, Server im Verbund (Cluster), zweite Leitung, zweites Rechenzentrum; der Ausfall eines Teils beendet den Betrieb nicht.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.10.2"
+       ]
+      },
+      {
+       "id": "PB1-12-1-3-K3",
+       "text": "Du kannst die RAID-Level 0, 1, 5 und 10 nach Ausfallsicherheit, nutzbarer Kapazität und Geschwindigkeit unterscheiden und für einen Einsatz beurteilen, welcher passt.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.10.2"
+       ]
+      },
+      {
+       "id": "PB1-12-1-3-K4",
+       "text": "Du kannst die nutzbare Kapazität eines RAID-Verbunds berechnen, zum Beispiel RAID 1 aus zwei 4-TB-Platten 4 TB, RAID 5 aus vier 2-TB-Platten 6 TB, RAID 10 aus vier 2-TB-Platten 4 TB.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.10.2"
+       ]
+      },
+      {
+       "id": "PB1-12-1-3-K5",
+       "text": "Du kannst begründen, warum RAID kein Backup ersetzt, und softwaretechnische Maßnahmen wie Backup-Strategien, getrennte Aufbewahrung und Snapshots für einen Betrieb beurteilen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.10.2",
+        "katalog:AP2b.01.10.3"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-7-3-5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PB1-12-2",
+   "titel": "Monitoring, Störungen und Cloud-Modelle",
+   "satz": "Systeme überwachen, aus Messwerten Maßnahmen ableiten, Störungen nach Vereinbarung bearbeiten und das passende Service- und Liefermodell wählen.",
+   "stichpunkte": [
+    {
+     "id": "PB1-12-2-1",
+     "titel": "Monitoring: Messdaten, Schwellwerte, SNMP, S.M.A.R.T., Systemlast",
+     "ziel": "Monitoringdaten und Schwellwerte festlegen, SNMP und S.M.A.R.T. anwenden, eine Systemlastanalyse durchführen und Predictive Maintenance anwenden.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.11"
+      },
+      {
+       "id": "AP2b.01.11.1"
+      },
+      {
+       "id": "AP2b.01.11.2"
+      },
+      {
+       "id": "AP2b.01.11.3"
+      },
+      {
+       "id": "AP2b.01.11.4"
+      },
+      {
+       "id": "AP2b.01.11.5"
+      },
+      {
+       "id": "AP2b.01.11.6"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-2-1-K1",
+       "text": "Du kannst festlegen, welche Monitoringdaten erfasst werden: Auslastung von Prozessor, Arbeitsspeicher und Datenträgern, Netzlast, Antwortzeiten, Erreichbarkeit von Diensten, Fehlermeldungen in Protokollen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.11.1"
+       ]
+      },
+      {
+       "id": "PB1-12-2-1-K2",
+       "text": "Du kannst Schwellwerte für Warnung und Alarm festlegen, zum Beispiel Warnung ab 80 % und Alarm ab 95 % Speicherbelegung.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.11.6"
+       ]
+      },
+      {
+       "id": "PB1-12-2-1-K3",
+       "text": "Du kannst SNMP (Zustandswerte von Netzwerkgeräten abfragen und Meldungen empfangen) und S.M.A.R.T. (Selbstüberwachung von Festplatten und SSDs) im Monitoring anwenden.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.11.2"
+       ]
+      },
+      {
+       "id": "PB1-12-2-1-K4",
+       "text": "Du kannst eine Systemlastanalyse durchführen und daraus Ressourcenengpässe interpretieren, zum Beispiel dauerhaft volle Prozessorlast zu Stoßzeiten oder knapper Arbeitsspeicher mit viel Auslagerung.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.11.3",
+        "katalog:AP2b.01.11.5"
+       ]
+      },
+      {
+       "id": "PB1-12-2-1-K5",
+       "text": "Du kannst Predictive Maintenance anwenden: aus Messwerten wie S.M.A.R.T.-Werten oder Temperaturen vorhersagen, wann ein Teil ausfällt, und es vorher tauschen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.11.4"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-12-2-2",
+     "titel": "Störungen bearbeiten: Incident Management, SLA, SOP, Eskalation",
+     "ziel": "Monitoringergebnisse analysieren und Maßnahmen bestimmen, Störungen nach SLA im Ticketsystem bearbeiten, SOPs festlegen und Eskalationen bestimmen.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.12"
+      },
+      {
+       "id": "AP2b.01.12.1"
+      },
+      {
+       "id": "AP2b.01.12.2"
+      },
+      {
+       "id": "AP2b.01.12.3"
+      },
+      {
+       "id": "AP2b.01.12.4"
+      },
+      {
+       "id": "AP1.07.03.2"
+      }
+     ],
+     "teilaufgaben": [
+      "2022S-PB1-A4-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-12-2-2-K1",
+       "text": "Du kannst Vor- und Nachteile eines Ticketsystems im Incident Management erläutern: Zeitersparnis durch strukturierte Abläufe, Echtzeit-Übersicht mit Auswertungen und Wissensdatenbank, zugesicherte Reaktionszeiten für Kunden gegenüber Aufwand und Kosten für Einführung und Pflege.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.12.3",
+        "beleg:2022S-PB1-A4-a"
+       ]
+      },
+      {
+       "id": "PB1-12-2-2-K2",
+       "text": "Du kannst Monitoringergebnisse analysieren und korrektive Maßnahmen bestimmen, zum Beispiel bei steigenden S.M.A.R.T.-Fehlern die Platte tauschen, bei Speicherengpass erweitern oder aufräumen, bei Überlast die Last verteilen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.12"
+       ]
+      },
+      {
+       "id": "PB1-12-2-2-K3",
+       "text": "Du kannst analysieren, für welche wiederkehrenden Störungen eine Standard Operation Procedure sinnvoll ist, und sie als festgelegte Schritt-für-Schritt-Anweisung bestimmen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.12.1"
+       ]
+      },
+      {
+       "id": "PB1-12-2-2-K4",
+       "text": "Du kannst ein Service Level Agreement analysieren (zugesagte Verfügbarkeit, Reaktions- und Lösungszeiten je Service Level 1 bis 3) und bestimmen, ob eine Störung danach rechtzeitig bearbeitet wurde.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.12.2"
+       ]
+      },
+      {
+       "id": "PB1-12-2-2-K5",
+       "text": "Du kannst an einem Störungsverlauf analysieren, wann fachlich (an die nächste Support-Stufe) oder hierarchisch (an Vorgesetzte) eskaliert werden muss.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.12.4",
+        "katalog:AP2b.01.12.3"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-3-1",
+      "AP1-1-3-2",
+      "AP1-3-3-2"
+     ]
+    },
+    {
+     "id": "PB1-12-2-3",
+     "titel": "Service- und Liefermodelle: On-Premises, Cloud, IaaS, PaaS, SaaS",
+     "ziel": "Service- und Liefermodelle benennen, die Verantwortung zwischen Anbieter und Kunde einordnen und für einen Bedarf ein Modell auswählen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.02.04"
+      },
+      {
+       "id": "AP2b.02.04.1"
+      },
+      {
+       "id": "AP2b.02.04.2"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-2-3-K1",
+       "text": "Du kannst IaaS (gemietete Infrastruktur wie virtuelle Server und Speicher), PaaS (Plattform, auf der eigene Anwendungen laufen) und SaaS (fertige Anwendung über das Netz) benennen.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.02.04.2"
+       ]
+      },
+      {
+       "id": "PB1-12-2-3-K2",
+       "text": "Du kannst für IaaS, PaaS und SaaS einordnen, wofür der Anbieter und wofür der Kunde verantwortlich ist, zum Beispiel bei IaaS der Kunde für Betriebssystem und Anwendung, bei SaaS nur für Daten und Benutzer.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.04.2"
+       ]
+      },
+      {
+       "id": "PB1-12-2-3-K3",
+       "text": "Du kannst für einen beschriebenen Bedarf zwischen On-Premises und Cloud sowie zwischen IaaS, PaaS und SaaS auswählen und die Wahl mit Kosten, Skalierbarkeit, Datenschutz und Speicherort, Abhängigkeit vom Anbieter und eigenem Fachwissen begründen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.02.04.1",
+        "katalog:AP2b.02.04.2",
+        "katalog:AP2b.02.04"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-5-1-3"
+     ],
+     "kuer": [
+      {
+       "text": "Weitere Modelle und Begriffe: Private, Public und Hybrid Cloud, Serverless und Function as a Service, DAS, RAID 6 und JBOD.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Offene „z. B.“-Liste (AP2b.02.04.1, AP2b.02.04.2); nur eine Hinweisquelle, daher nach P-BEISPIELLISTE Kür. Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-6-4-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-12-1-1-K2",
+    "grund": "beurteilen mit Begründung je Dienst"
+   },
+   {
+    "alt": "AP2-6-4-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-12-1-2-K2",
+    "grund": "berücksichtigen (Katalog: planen)"
+   },
+   {
+    "alt": "AP2-6-4-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-12-1-2-K2",
+    "grund": "in ri2 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-4-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-12-1-2-K4",
+    "grund": "planen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-4-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-12-1-1-K1",
+    "grund": "erklären und berechnen"
+   },
+   {
+    "alt": "AP2-6-4-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-12-1-3-K1",
+    "grund": "beurteilen (Katalog, Stufe 4)"
+   },
+   {
+    "alt": "AP2-6-4-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-12-1-3-K2",
+    "grund": "beurteilen mit Beispielen"
+   },
+   {
+    "alt": "AP2-6-4-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-12-1-3-K3",
+    "grund": "RAID-Level zusammen mit Grundbegriff"
+   },
+   {
+    "alt": "AP2-6-4-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-12-1-3-K3",
+    "grund": "beurteilen, welcher Level passt"
+   },
+   {
+    "alt": "AP2-6-4-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-12-1-3-K5",
+    "grund": "mit Backup-Strategien beurteilen"
+   },
+   {
+    "alt": "AP2-6-4-2-K6",
+    "status": "gestrichen",
+    "grund": "E2: Vollsicherung, differenzielle und inkrementelle Sicherung in AP1-7-3-5-K1; importiert"
+   },
+   {
+    "alt": "AP2-6-5-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-12-2-1-K1",
+    "grund": "festlegen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-12-2-1-K2",
+    "grund": "festlegen mit Beispiel"
+   },
+   {
+    "alt": "AP2-6-5-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-12-2-1-K3",
+    "grund": "anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-12-2-1-K4",
+    "grund": "durchführen und interpretieren"
+   },
+   {
+    "alt": "AP2-6-5-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-12-2-1-K5",
+    "grund": "anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-12-2-2-K3",
+    "grund": "analysieren und bestimmen (Katalog, Stufe 4)"
+   },
+   {
+    "alt": "AP2-6-5-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-12-2-2-K4",
+    "grund": "analysieren (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-12-2-2-K4",
+    "grund": "Service Level in st4; Support-Stufen in AP1-1-3-1-K1"
+   },
+   {
+    "alt": "AP2-6-5-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-12-2-2-K1",
+    "grund": "Ticketsystem laut 2022S-PB1-A4-a; Ablauf in AP1-1-3-2-K2"
+   },
+   {
+    "alt": "AP2-6-5-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-12-2-2-K5",
+    "grund": "analysieren, wann eskaliert wird"
+   },
+   {
+    "alt": "AP2-6-5-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-12-2-2-K5",
+    "grund": "in st5 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-6-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-12-2-3-K3",
+    "grund": "On-Premises und Cloud in der Auswahl; Gegenüberstellung in AP1-5-1-3-K4"
+   },
+   {
+    "alt": "AP2-6-6-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-12-2-3-K1",
+    "grund": "benennen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-6-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-12-2-3-K3",
+    "grund": "auswählen und begründen"
+   },
+   {
+    "alt": "AP2-6-6-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-12-2-3-K2",
+    "grund": "einordnen"
+   },
+   {
+    "alt": "AP2-6-6-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-12-2-3-K3",
+    "grund": "Gesichtspunkte in cl3 aufgenommen"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Teilaufgaben 2022W-PB1-A1-a/-b und 2022S-PB1-A4-a gegen die Musterlösungen gelesen. Alle anderen Bausteine ohne Beleg mit der Katalogtiefe (beurteilen, analysieren: Stufe 4); Formulierung nach P-MUSTER. Tiefe für AE bleibt P10."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Verfügbarkeit, Ausfallwahrscheinlichkeit, präventive Wartung",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-12-1-1-K1",
+      "PB1-12-1-1-K2",
+      "PB1-12-1-2-K2",
+      "PB1-12-2-1-K5"
+     ]
+    },
+    {
+     "thema": "Disaster Recovery, MTBF",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-12-1-2-K4",
+      "PB1-12-1-2-K2"
+     ]
+    },
+    {
+     "thema": "USV, RAID, Backup",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-12-1-3-K1",
+      "PB1-12-1-3-K3",
+      "PB1-12-1-3-K5"
+     ]
+    },
+    {
+     "thema": "RAID 6, RAID 01, JBOD, Nested RAID, DAS",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ]
+    },
+    {
+     "thema": "SNMP, S.M.A.R.T., Systemlastanalyse, Monitoring, Schwellwert",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-12-2-1-K1",
+      "PB1-12-2-1-K2",
+      "PB1-12-2-1-K3",
+      "PB1-12-2-1-K4"
+     ]
+    },
+    {
+     "thema": "Störungsmeldung, Ticketsystem",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-12-2-2-K1",
+      "PB1-12-2-2-K2"
+     ]
+    },
+    {
+     "thema": "SaaS, IaaS, PaaS, Cloud vs. On-Premises",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-12-2-3-K1",
+      "PB1-12-2-3-K3"
+     ]
+    },
+    {
+     "thema": "Serverless, Function as a Service",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ]
+    },
+    {
+     "thema": "Technische Dokumentation",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-9"
+     ],
+     "notiz": "Handbücher und Dokumentation AP2b.01.13"
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2b.01.10",
+    "paar": "elektrotechnisch / hardwaretechnisch / softwaretechnisch",
+    "abgedeckt": {
+     "elektro": [
+      "PB1-12-1-3-K1"
+     ],
+     "hardware": [
+      "PB1-12-1-3-K2",
+      "PB1-12-1-3-K3"
+     ],
+     "software": [
+      "PB1-12-1-3-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.09.2",
+    "paar": "MTBF / AFR",
+    "abgedeckt": {
+     "MTBF": [
+      "PB1-12-1-2-K2"
+     ],
+     "AFR": [
+      "PB1-12-1-2-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.11.2",
+    "paar": "SNMP / S.M.A.R.T.",
+    "abgedeckt": {
+     "SNMP": [
+      "PB1-12-2-1-K3"
+     ],
+     "S.M.A.R.T.": [
+      "PB1-12-2-1-K3",
+      "PB1-12-2-1-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.02.04.1",
+    "paar": "On-Premises / Cloud",
+    "abgedeckt": {
+     "On-Premises": [
+      "PB1-12-2-3-K3"
+     ],
+     "Cloud": [
+      "PB1-12-2-3-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.02.04.2",
+    "paar": "SaaS / IaaS / PaaS",
+    "abgedeckt": {
+     "SaaS": [
+      "PB1-12-2-3-K1",
+      "PB1-12-2-3-K2"
+     ],
+     "IaaS": [
+      "PB1-12-2-3-K1",
+      "PB1-12-2-3-K2"
+     ],
+     "PaaS": [
+      "PB1-12-2-3-K1",
+      "PB1-12-2-3-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.11",
+    "paar": "anwenden / interpretieren",
+    "abgedeckt": {
+     "anwenden": [
+      "PB1-12-2-1-K3",
+      "PB1-12-2-1-K5"
+     ],
+     "interpretieren": [
+      "PB1-12-2-1-K4"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.12",
+    "paar": "analysieren / bestimmen",
+    "abgedeckt": {
+     "analysieren": [
+      "PB1-12-2-2-K2",
+      "PB1-12-2-2-K4"
+     ],
+     "bestimmen": [
+      "PB1-12-2-2-K2",
+      "PB1-12-2-2-K3"
+     ]
+    }
+   }
+  ]
+ }
+}
