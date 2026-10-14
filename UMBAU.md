@@ -541,6 +541,9 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-6 Datenmodellierung und Datenhaltung (14.10.2026):** 1 Themenblock, 5 Stichpunkte, 25 Können-Aussagen.
         Alte AP2-Aussagen: 26 angepasst, 3 verschoben, 2 für PB2 (SQL-Datentypen, Datenqualität beim Import); zwei weitere
         Aussagen aus AP2-4-1-2 (Validierung, Schemaprüfung) sortiert PB1-7 ein.
+  - [x] **PB1-7 Schnittstellen und Datenaustausch (14.10.2026):** 2 Themenblöcke, 6 Stichpunkte, 29 Können-Aussagen.
+        Alte AP2-Aussagen: 14 angepasst, 4 verschoben, 1 für PB2 (Importfähigkeit eines Datenbestands). Zusatzbaustein
+        eRechnung hier; damit ist die eRechnung, in AP1 Kür (P30), in PB1 Kern.
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 

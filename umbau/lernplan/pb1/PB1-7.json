@@ -1,0 +1,747 @@
+{
+ "oberblock": {
+  "id": "PB1-7",
+  "titel": "Schnittstellen und Datenaustausch",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-7-1",
+   "titel": "Datenaustauschformate",
+   "satz": "Daten zwischen Anwendungen austauschen: XML mit DTD und Schema, JSON und CSV, Daten aus mehreren Quellen zusammenführen.",
+   "stichpunkte": [
+    {
+     "id": "PB1-7-1-1",
+     "titel": "XML: wohlgeformt, gültig, DTD und Schema",
+     "ziel": "XML-Dokumente erstellen und lesen, Zweck von DTD und Schema erläutern, Fehler finden und einordnen und die Grenzen der Schemavalidierung erklären.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.20.2"
+      },
+      {
+       "id": "AP2b.03.03.1",
+       "anteil": "XML als Austauschformat"
+      },
+      {
+       "id": "AP2b.05.02.2",
+       "anteil": "Schemavalidierung"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A3-ca",
+      "2022W-PB1-A3-cb",
+      "2022W-PB1-A3-cc",
+      "2025W-PB1-A3-bc"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-7-1-1-K1",
+       "text": "Du kannst ein XML-Dokument nach vorgegebener Struktur erstellen und lesen: Prolog, genau ein Wurzelelement, Elemente mit öffnendem und schließendem Tag, Attribute im öffnenden Tag, korrekte Verschachtelung.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.2"
+       ]
+      },
+      {
+       "id": "PB1-7-1-1-K2",
+       "text": "Du kannst erläutern, wofür eine DTD oder ein XML-Schema (XSD) benötigt wird: Sie legt verbindlich fest, welche Elemente und Attribute in welcher Reihenfolge und Schachtelung vorkommen dürfen, sodass alle Dokumente einer Art gleich aufgebaut sind.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.20.2",
+        "beleg:2022W-PB1-A3-ca"
+       ]
+      },
+      {
+       "id": "PB1-7-1-1-K3",
+       "text": "Du kannst wohlgeformt (die XML-Regeln sind eingehalten: jedes Element geschlossen, richtig verschachtelt) und gültig (zusätzlich entspricht das Dokument der DTD bzw. dem Schema) erläutern.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.20.2",
+        "beleg:2022W-PB1-A3-cb"
+       ]
+      },
+      {
+       "id": "PB1-7-1-1-K4",
+       "text": "Du kannst in einem XML-Dokument mit gegebener DTD Fehler finden und mit Zeilennummer, Fehler und verletzter Eigenschaft angeben, zum Beispiel ein fehlendes schließendes Tag (Wohlgeformtheit) oder ein Element an falscher Stelle (Gültigkeit).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.2",
+        "beleg:2022W-PB1-A3-cc"
+       ],
+       "vorgegeben": "DTD und XML-Dokument mit Zeilennummern"
+      },
+      {
+       "id": "PB1-7-1-1-K5",
+       "text": "Du kannst an einem Beispiel erklären, warum eine Schemavalidierung allein nicht ausreicht: Sie prüft nur Struktur und Datentypen, aber keine logischen Fehler wie einen aus Bruttowerten berechneten Nettobetrag; dafür sind weitere Tests nötig.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.02.2",
+        "beleg:2025W-PB1-A3-bc"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-7-1-2",
+     "titel": "JSON und CSV",
+     "ziel": "JSON und CSV aufbauen, Tabellendaten in JSON umwandeln und die Einsatzbereiche der Austauschformate zuordnen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.20.1"
+      },
+      {
+       "id": "AP2b.04.20.3"
+      },
+      {
+       "id": "AP2b.04.20.2",
+       "anteil": "Einsatzbereich von XML"
+      },
+      {
+       "id": "AP2b.02.05.1",
+       "anteil": "Austauschformate"
+      },
+      {
+       "id": "AP2b.03.03.1",
+       "anteil": "JSON als Austauschformat"
+      }
+     ],
+     "teilaufgaben": [
+      "2023W-PB1-A3-ca",
+      "2023W-PB1-A3-cb",
+      "2024W-PB1-A2-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-7-1-2-K1",
+       "text": "Du kannst den Aufbau von JSON anwenden: Objekte in geschweiften Klammern mit Paaren aus Name und Wert, Arrays in eckigen Klammern, Werte als Zeichenkette, Zahl, Wahrheitswert, null, Objekt oder Array.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.3"
+       ]
+      },
+      {
+       "id": "PB1-7-1-2-K2",
+       "text": "Du kannst Datensätze aus Tabellen in JSON umwandeln: ein Objekt je Datensatz mit den Spalten als Namen, mehrere Datensätze als Array.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.3",
+        "katalog:AP2b.02.05.1",
+        "beleg:2023W-PB1-A3-ca"
+       ],
+       "vorgegeben": "JSON-Syntax"
+      },
+      {
+       "id": "PB1-7-1-2-K3",
+       "text": "Du kannst zusammengehörige Dokumente in JSON als Array in ein übergeordnetes Dokument einfügen, zum Beispiel die Verkaufsstellen in das Dokument des Weinguts.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.3",
+        "beleg:2023W-PB1-A3-cb"
+       ]
+      },
+      {
+       "id": "PB1-7-1-2-K4",
+       "text": "Du kannst Ergebnisse eines Programms als JSON-Array in einer vorgegebenen Struktur ausgeben.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.3",
+        "beleg:2024W-PB1-A2-c"
+       ]
+      },
+      {
+       "id": "PB1-7-1-2-K5",
+       "text": "Du kannst den Aufbau einer CSV-Datei anwenden: eine Zeile je Datensatz, Werte durch ein Trennzeichen (Komma oder Semikolon) getrennt, meist mit Kopfzeile; Werte, die das Trennzeichen enthalten, stehen in Anführungszeichen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.20.1"
+       ]
+      },
+      {
+       "id": "PB1-7-1-2-K6",
+       "text": "Du kannst Austauschformate ihrem Einsatzbereich zuordnen: CSV für einfache Tabellen und den Austausch mit Tabellenkalkulationen, JSON für Webschnittstellen und Dokumentdatenbanken, XML für Dokumente mit strenger Struktur und Schemaprüfung.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.20.1",
+        "katalog:AP2b.04.20.2",
+        "katalog:AP2b.04.20.3",
+        "katalog:AP2b.03.03.1"
+       ]
+      }
+     ],
+     "hinweis": "Das Skript aus 2024W-PB1-A2-c steht in PB1-3-2-2; hier zählt die JSON-Ausgabe."
+    },
+    {
+     "id": "PB1-7-1-3",
+     "titel": "Daten heterogener Quellen zusammenführen: Data Lake, Open Data",
+     "ziel": "Daten aus verschiedenen Quellen bereinigen, vereinheitlichen und zusammenführen, Data Lake und Data Warehouse unterscheiden und Open Data über Schnittstellen nutzen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.02.05.1",
+       "anteil": "Zusammenführen über Austauschformate"
+      },
+      {
+       "id": "AP2b.02.05.2"
+      },
+      {
+       "id": "AP2a.02.03.11"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-7-1-3-K1",
+       "text": "Du kannst Daten heterogener Quellen zusammenführen: auslesen, bereinigen und vereinheitlichen (Formate, Schreibweisen, Einheiten), in die Zielstruktur umformen und einspielen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.02.05.1",
+        "katalog:AP2b.02.05.2"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K2",
+       "text": "Du kannst erklären, was ein Data Lake ist (ein Speicher, der Daten aus vielen Quellen im Rohformat aufnimmt), und ihn vom Data Warehouse unterscheiden (dort liegen die Daten bereits aufbereitet und strukturiert vor).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.05.2"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K3",
+       "text": "Du kannst für eine Auswertung festlegen, ob Daten aus mehreren Quellen zunächst roh in einem Data Lake gesammelt oder vor dem Speichern aufbereitet werden.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.02.05.2"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K4",
+       "text": "Du kannst Open Data nutzen: frei zugängliche Daten über eine API-Schnittstelle oder als Datei abrufen und in die eigene Anwendung einbinden, zum Beispiel Wetter- oder Fahrplandaten.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.03.11"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PB1-7-2",
+   "titel": "Schnittstellen zu Diensten",
+   "satz": "Dienste über Schnittstellen nutzen und Schnittstellen festlegen: REST mit HTTP, SOAP, und als Anwendungsfall die eRechnung mit Validierung.",
+   "stichpunkte": [
+    {
+     "id": "PB1-7-2-1",
+     "titel": "REST-API und HTTP",
+     "ziel": "Das Konzept einer REST-API beschreiben, CRUD auf HTTP-Methoden abbilden, Anfragen zusammenstellen, Statuscodes deuten und eine REST-Abfrage nachvollziehen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.21.1"
+      },
+      {
+       "id": "AP2b.03.03.3",
+       "anteil": "REST"
+      },
+      {
+       "id": "AP2b.01.05.2",
+       "anteil": "HTTP in Webschnittstellen"
+      }
+     ],
+     "teilaufgaben": [
+      "2024S-PB1-A2-a",
+      "2024S-PB1-A2-b",
+      "2024S-PB1-A2-c",
+      "2024S-PB1-A2-d",
+      "2024S-PB1-A2-e"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-7-2-1-K1",
+       "text": "Du kannst das Konzept einer REST-API beschreiben: Ressourcen sind über einen Webserver verfügbar und eindeutig über eine URL ansprechbar, Client und Server tauschen nur Daten aus und sind lose gekoppelt, jede Anfrage steht für sich (zustandslos).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.21.1",
+        "beleg:2024S-PB1-A2-a"
+       ]
+      },
+      {
+       "id": "PB1-7-2-1-K2",
+       "text": "Du kannst die CRUD-Operationen erläutern und ihnen HTTP-Methoden zuordnen: Create – POST (oder PUT), Read – GET, Update – PUT oder PATCH, Delete – DELETE.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.21.1",
+        "beleg:2024S-PB1-A2-b"
+       ]
+      },
+      {
+       "id": "PB1-7-2-1-K3",
+       "text": "Du kannst eine HTTP-Anfrage an eine REST-API zusammenstellen und ihre Bestandteile ergänzen: Endpoint-URL mit Pfad und Abfrageparametern, HTTP-Methode, Kopfzeilen für Metainformationen wie Inhaltstyp und Autorisierung, Body mit den Daten, oft als JSON.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.21.1",
+        "beleg:2024S-PB1-A2-c"
+       ]
+      },
+      {
+       "id": "PB1-7-2-1-K4",
+       "text": "Du kannst die Bedeutung der HTTP-Statuscode-Klassen nennen: 2xx Anfrage erfolgreich bearbeitet, 4xx Fehler durch die Anfrage des Clients (z. B. 404 nicht gefunden), 5xx Fehler auf der Serverseite.",
+       "stufe": 1,
+       "herkunft": [
+        "beleg:2024S-PB1-A2-d"
+       ]
+      },
+      {
+       "id": "PB1-7-2-1-K5",
+       "text": "Du kannst den Ablauf einer REST-Abfrage nachvollziehen und darstellen, zum Beispiel GET /shareholders?city=Köln, Antwort aus dem Cache oder der Datenbank, Response 200 mit den Daten im Body.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.03.3",
+        "beleg:2024S-PB1-A2-e"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-7-2-2",
+     "titel": "Schnittstellen festlegen und nutzen; SOAP",
+     "ziel": "Eine Schnittstelle zwischen Anwendungen festlegen, eine vorhandene Schnittstelle nach ihrer Dokumentation nutzen und SOAP als Alternative zu REST kennen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.21.2"
+      },
+      {
+       "id": "AP2b.03.03.1",
+       "anteil": "Schnittstelle festlegen"
+      },
+      {
+       "id": "AP2b.03.03.3",
+       "anteil": "Schnittstelle nutzen"
+      },
+      {
+       "id": "AP2b.04.21.1",
+       "anteil": "API-Schlüssel"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-7-2-2-K1",
+       "text": "Du kannst SOAP als weitere Möglichkeit zur Nutzung von Diensten nennen: ein Protokoll mit Nachrichten in XML und einer festen Schnittstellenbeschreibung, im Unterschied zum Architekturstil REST auf Grundlage von HTTP.",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.04.21.2"
+       ]
+      },
+      {
+       "id": "PB1-7-2-2-K2",
+       "text": "Du kannst eine Schnittstelle zwischen zwei Anwendungen festlegen: Austauschformat (z. B. JSON oder XML mit Schema), Endpunkte mit Methoden, Fehler- und Statusrückmeldungen, Authentifizierung.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.03.1",
+        "katalog:AP2b.03.03.3"
+       ]
+      },
+      {
+       "id": "PB1-7-2-2-K3",
+       "text": "Du kannst eine vorhandene Schnittstelle nutzen: aus der Dokumentation einer API Endpunkt, Methode, Parameter und Antwortformat entnehmen und die Anfrage richtig aufbauen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.03.3"
+       ]
+      },
+      {
+       "id": "PB1-7-2-2-K4",
+       "text": "Du kannst erklären, wozu ein API-Schlüssel oder Token im Header einer Anfrage dient: Er weist den Aufrufer gegenüber der Schnittstelle aus und ermöglicht Zugriffsrechte und Abrechnung.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.21.1"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-7-2-3",
+     "titel": "eRechnung: strukturierte Daten prüfen und validieren",
+     "ziel": "Ziel und Aspekte der eRechnung erläutern und Wege beurteilen, mit denen eine Implementierung der Spezifikation entspricht.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "ZB.erechnung"
+      },
+      {
+       "id": "AP2b.05.02.2",
+       "anteil": "Validierungen beurteilen"
+      }
+     ],
+     "teilaufgaben": [
+      "2025W-PB1-A2-ba",
+      "2025W-PB1-A2-bb",
+      "2025W-PB1-A3-ba",
+      "2025W-PB1-A3-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-7-2-3-K1",
+       "text": "Du kannst das Hauptziel einer eRechnung erläutern: Sie wird automatisch verarbeitet; eine für Menschen lesbare Darstellung ist zweitrangig.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:ZB.erechnung",
+        "beleg:2025W-PB1-A2-ba"
+       ]
+      },
+      {
+       "id": "PB1-7-2-3-K2",
+       "text": "Du kannst Aspekte einer digitalen Rechnung erläutern: Sie liegt in einem strukturierten digitalen Format vor, mit einem Datenaspekt (maschinell verarbeitbar) und einem visuellen Aspekt (für Menschen lesbar).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:ZB.erechnung",
+        "beleg:2025W-PB1-A2-bb"
+       ]
+      },
+      {
+       "id": "PB1-7-2-3-K3",
+       "text": "Du kannst Möglichkeiten nennen, mit denen eine Implementierung der Protokoll-Spezifikation entspricht: Test-Rechnungen bei einem zertifizierten Validator prüfen, Unit-Tests, eine zertifizierte Bibliothek nutzen, formale Validierung mit Schemadateien (XSD).",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:ZB.erechnung",
+        "beleg:2025W-PB1-A3-ba"
+       ]
+      },
+      {
+       "id": "PB1-7-2-3-K4",
+       "text": "Du kannst erläutern, was beim Nutzen eines Online-Validators zu beachten ist: keine echten Firmen- oder Kundendaten hochladen, nur Testdaten; die Ergebnisse können fehlerhaft sein, wenn das Werkzeug nicht geprüft und zertifiziert ist.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:ZB.erechnung",
+        "beleg:2025W-PB1-A3-bb"
+       ]
+      },
+      {
+       "id": "PB1-7-2-3-K5",
+       "text": "Du kannst beurteilen, wie Daten aus einer Schnittstelle validiert werden müssen: formale Prüfung gegen ein Schema (Aufbau, Pflichtfelder, Datentypen) und zusätzlich inhaltliche Plausibilitätsprüfung in der Anwendung (z. B. Summen, Datumsbereiche).",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.05.02.2"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Weitere Begriffe rund um XML und REST: XSLT, Parser (SAX, DOM), YAML, HATEOAS, WSDL, Webservices und SOA.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur Hinweisquelle; der Katalog nennt CSV, XML, JSON, REST und SOAP. Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-4-4-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-7-1-2-K6",
+    "grund": "zuordnen nach Einsatzbereich"
+   },
+   {
+    "alt": "AP2-4-4-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-7-1-2-K1",
+    "grund": "anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-4-4-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-7-1-1-K1",
+    "grund": "erstellen und lesen (anwenden)"
+   },
+   {
+    "alt": "AP2-4-4-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-7-1-1-K5",
+    "grund": "mit Beispiel laut 2025W-PB1-A3-bc"
+   },
+   {
+    "alt": "AP2-4-4-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-7-1-2-K6",
+    "grund": "in js5 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-4-1-K6",
+    "status": "verschoben",
+    "neu": "PB1-7-1-1-K3"
+   },
+   {
+    "alt": "AP2-4-4-2-K1",
+    "status": "verschoben",
+    "neu": "PB1-7-2-1-K1"
+   },
+   {
+    "alt": "AP2-4-4-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-7-2-1-K2",
+    "grund": "CRUD laut 2024S-PB1-A2-b"
+   },
+   {
+    "alt": "AP2-4-4-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-7-2-1-K3",
+    "grund": "zusammenstellen und ergänzen (2024S-PB1-A2-c)"
+   },
+   {
+    "alt": "AP2-4-4-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-7-2-1-K4",
+    "grund": "nennen laut 2024S-PB1-A2-d"
+   },
+   {
+    "alt": "AP2-4-4-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-7-2-2-K1",
+    "grund": "nennen (Katalog: kennen)"
+   },
+   {
+    "alt": "AP2-4-4-2-K6",
+    "status": "verschoben",
+    "neu": "PB1-7-2-2-K4"
+   },
+   {
+    "alt": "AP2-4-4-3-K1",
+    "status": "verschoben",
+    "neu": "PB1-7-1-3-K1"
+   },
+   {
+    "alt": "AP2-4-4-3-K2",
+    "status": "PB2",
+    "grund": "beurteilen, ob ein Datenbestand importiert werden kann: 2024W-PB2-A3-b"
+   },
+   {
+    "alt": "AP2-4-4-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-7-1-3-K2",
+    "grund": "mit Data Warehouse zusammengefasst"
+   },
+   {
+    "alt": "AP2-4-4-3-K4",
+    "status": "angepasst",
+    "neu": "PB1-7-1-3-K4",
+    "grund": "nutzen (Katalog: modellieren und erstellen)"
+   },
+   {
+    "alt": "AP2-4-4-3-K5",
+    "status": "angepasst",
+    "neu": "PB1-7-1-3-K2",
+    "grund": "in zu2 aufgenommen"
+   },
+   {
+    "alt": "AP2-4-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-7-2-3-K5",
+    "grund": "beurteilen (Katalog AP2b.05.02)"
+   },
+   {
+    "alt": "AP2-4-1-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-7-1-1-K5",
+    "grund": "in xm5 aufgenommen"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Teilaufgaben 2022W-PB1-A3-c (XML/DTD), 2023W-PB1-A3-c (JSON), 2024S-PB1-A2 (REST) und 2025W-PB1-A2-b/-A3-b (eRechnung) gegen die Musterlösungen gelesen. 2024S-PB1-A2-e verlangt zusätzlich die Notation des Sequenzdiagramms (PB1-4-2-1)."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "XML, DTD, XML-Schema, Wohlgeformtheit, Validität",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-1-1-K1",
+      "PB1-7-1-1-K2",
+      "PB1-7-1-1-K3",
+      "PB1-7-1-1-K4"
+     ]
+    },
+    {
+     "thema": "JSON",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-1-2-K1",
+      "PB1-7-1-2-K2"
+     ]
+    },
+    {
+     "thema": "CSV",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-1-2-K5"
+     ]
+    },
+    {
+     "thema": "REST, CRUD, HTTP-Methoden, HTTP-Request, HTTP-Statuscodes",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-2-1-K1",
+      "PB1-7-2-1-K2",
+      "PB1-7-2-1-K3",
+      "PB1-7-2-1-K4"
+     ]
+    },
+    {
+     "thema": "SOAP",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-2-2-K1"
+     ]
+    },
+    {
+     "thema": "XSLT, Parser (SAX, DOM), YAML, HATEOAS, WSDL, SOA",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-2-3"
+     ]
+    },
+    {
+     "thema": "Data Lake, OpenData, API-Schnittstellen",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-1-3-K2",
+      "PB1-7-1-3-K4"
+     ]
+    },
+    {
+     "thema": "eRechnung (2025W)",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-7-2-3-K1",
+      "PB1-7-2-3-K2"
+     ]
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2b.04.20",
+    "paar": "CSV / XML / JSON",
+    "abgedeckt": {
+     "CSV": [
+      "PB1-7-1-2-K5",
+      "PB1-7-1-2-K6"
+     ],
+     "XML": [
+      "PB1-7-1-1-K1",
+      "PB1-7-1-2-K6"
+     ],
+     "JSON": [
+      "PB1-7-1-2-K1",
+      "PB1-7-1-2-K6"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.04.21",
+    "paar": "REST / SOAP",
+    "abgedeckt": {
+     "REST": [
+      "PB1-7-2-1-K1"
+     ],
+     "SOAP": [
+      "PB1-7-2-2-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.03.03",
+    "paar": "Schnittstellen festlegen / nutzen",
+    "abgedeckt": {
+     "festlegen": [
+      "PB1-7-2-2-K2"
+     ],
+     "nutzen": [
+      "PB1-7-2-2-K3",
+      "PB1-7-2-1-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.02.03.11",
+    "paar": "OpenData / API-Schnittstellen",
+    "abgedeckt": {
+     "OpenData": [
+      "PB1-7-1-3-K4"
+     ],
+     "API": [
+      "PB1-7-1-3-K4",
+      "PB1-7-2-2-K3"
+     ]
+    }
+   }
+  ]
+ }
+}
