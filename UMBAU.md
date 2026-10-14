@@ -612,6 +612,19 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         Raum-Prüfung `node tools/umbau/raum-pruefen.mjs PB2` grün (T1, T2b, T8, ALT: alle 92 in PB1 für PB2 vermerkten
         Aussagen genau einmal einsortiert, 82 angepasst, 10 gestrichen). Gesamt: 6 Ordner, 23 Stichpunkte, 92 Können-Aussagen.
         Umzugstabelle hat kein „offen“ mehr. Test „Raum PB2 …“ in `tests/umbau-fundament.test.mjs`.
+  - [x] **Vorschau PB2 (14.10.2026):** `vorschauPb2` in `tools/vorschau-ap1.mjs` ersetzt den Platzhalter, sobald
+        `umbau/lernplan/pb2` vorliegt: Raum PB2 zeigt 6 Ordner, 23 Stichpunkte, 92 Aussagen; die 209 alten PB2-Karten laufen
+        über das `alt_neu` von PB2 (186 an neuen Aussagen, 23 gestrichen). Lernstand-Umzug für alle alten AP2-Stichpunkte
+        nach PB1 oder PB2. Tests in `tests/vorschau-ap1.test.mjs` gelten für PB1 und PB2. 26 Aussagen haben noch keine Karte.
+  - [ ] **PB2 offen (Stand 14.10.2026, 20:30, Pause wegen Nutzungslimit):**
+        1. Unabhängige Prüfung PB2 nach `umbau/auftraege/PB2-pruefung.md` – gestartet, Berichte noch nicht da. Bei
+           Fortsetzung neu starten (Berichte `umbau/berichte/PB2-<n>-pruefer.md`, Bilanz `PB2-pruefer-bilanz.md`).
+        2. Funde einbauen (je Bericht Abschnitt „Umsetzung“), Raum-Prüfung PB2 und Tests grün, Umzug neu erzeugen.
+        3. Kurzfassungen `umbau/kurz/pb2/PB2-<n>.json` (Teaser je Stichpunkt, Erklärung je Aussage, wie PB1).
+        4. Karten `umbau/karten/pb2/PB2-<n>.json` + Berichte `PB2-<n>-karten.md` (186 alte Karten entscheiden, jede
+           Aussage mindestens eine Karte).
+        5. Build, Browser-Check `#/pb2`, Abnahme PB1 und PB2 durch den Projektinhaber.
+        Bau-Skripte gesichert in `tools/umbau/gen-pb2/` (siehe LIESMICH dort). Regelwerk der PB2-Ordner: 1.7.
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).
