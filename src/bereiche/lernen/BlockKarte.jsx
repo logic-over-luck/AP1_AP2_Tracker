@@ -234,6 +234,7 @@ function SpDetail({ sp, stand, raum }) {
       {sp.neu ? (
         <div class="kurz">
           <p class="kurz__ziel">{sp.neu.ziel}</p>
+          {sp.neu.kurz && <Rich text={sp.neu.kurz} />}
           {sp.neu.hinweis && (
             <p class="np-hinweis">
               <Icon name="info" groesse={13} /> {sp.neu.hinweis}

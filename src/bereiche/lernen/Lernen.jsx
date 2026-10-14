@@ -21,7 +21,7 @@ function suchTreffer(block, suche) {
   const sp = new Set();
   for (const id of block.sp) {
     const x = inhalt.sp.get(id);
-    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1]), x.neu?.ziel, ...(x.neu?.grenzen ?? []).map((g) => g.text), ...(x.neu?.kuer ?? []).map((k) => k.text)];
+    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1]), x.neu?.ziel, x.neu?.kurz, ...(x.neu?.grenzen ?? []).map((g) => g.text), ...(x.neu?.kuer ?? []).map((k) => k.text)];
     if (texte.some((t) => normal(t).includes(s))) sp.add(id);
   }
   const passt = sp.size > 0 || normal(block.titel).includes(s) || normal(block.satz).includes(s);
@@ -219,7 +219,7 @@ function VorschauHinweis({ v }) {
         {v.regelwerk ? ` (Regelwerk v${v.regelwerk})` : ''} – zur Abnahme, noch nicht endgültig.
         <div class="gedaempft">
           {v.stichpunkte} Stichpunkte, davon {v.neueStichpunkte} neu · {v.koennen} Können-Aussagen, davon {v.neueOhneKarten} neu und noch ohne Karten · {v.kuer} Kür-Einträge (freiwillig, zählen nicht zum
-          Fortschritt) · Karten: {v.karten.umgehaengt} umgehängt, {v.karten.gestrichen} weggefallen. Kurzfassungen sind noch nicht neu erzeugt.
+          Fortschritt) · Karten: {v.karten.umgehaengt} umgehängt, {v.karten.gestrichen} weggefallen. Kurzfassungen: {v.kurz ?? 0} von {v.stichpunkte} neu.
         </div>
       </div>
     </div>

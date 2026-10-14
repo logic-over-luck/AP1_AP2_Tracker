@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ladeDaten } from '../tools/daten.mjs';
-import { vorschauAp1, ladeLernplanAp1, ladeKartenAp1, ordnerVon } from '../tools/vorschau-ap1.mjs';
+import { vorschauAp1, ladeLernplanAp1, ladeKartenAp1, ladeKurzAp1, ordnerVon } from '../tools/vorschau-ap1.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const alt = ladeDaten(wurzel);
@@ -141,4 +141,22 @@ describe('Neue Lernkarten AP1', () => {
       for (const c of d.karten) assert.ok(prot.has(c.id) && prot.get(c.id).entscheidung !== 'entfernt', `${c.id}: nicht im Protokoll`);
     });
   }
+});
+
+// Kurzfassungen (umbau/kurz/ap1/AP1-<n>.json): je Stichpunkt des Ordners genau ein Text, keine fremden IDs
+test('Kurzfassungen: vollständig je Ordner und an einem Stichpunkt', async () => {
+  const fs = await import('node:fs');
+  const ordner = path.join(wurzel, 'umbau', 'kurz', 'ap1');
+  if (!fs.existsSync(ordner)) return;
+  for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f))) {
+    const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
+    const plan = plaene.find((p) => p.oberblock.id === d.ordner);
+    assert.ok(plan, `${f}: kein Lernplan für ${d.ordner}`);
+    const spIds = plan.themenbloecke.flatMap((t) => t.stichpunkte.map((s) => s.id));
+    for (const id of spIds) assert.ok(typeof d.kurz[id] === 'string' && d.kurz[id].trim(), `${d.ordner}: Kurzfassung für ${id} fehlt`);
+    for (const id of Object.keys(d.kurz)) assert.ok(spIds.includes(id), `${d.ordner}: ${id} ist kein Stichpunkt des Ordners`);
+  }
+  const kurz = ladeKurzAp1(wurzel);
+  for (const [id, text] of kurz) assert.equal(neu.sp[id].neu.kurz, text);
+  assert.equal(neu.vorschau.kurz, kurz.size);
 });

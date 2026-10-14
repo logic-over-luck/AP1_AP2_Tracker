@@ -19,6 +19,8 @@
 //   umbau/karten/ap1/AP1-<n>.json vor, ersetzen deren Karten alle umgehängten alten Karten, deren Stichpunkt
 //   in diesem Ordner liegt. Maßgeblich ist der Zielordner: Eine alte Karte, deren Aussage in einen anderen
 //   Ordner verschoben wurde, wird in der Datei dieses anderen Ordners entschieden.
+// – Kurzfassungen (Schicht 5): Liegt für einen Ordner umbau/kurz/ap1/AP1-<n>.json vor, bekommt jeder Stichpunkt
+//   seine Kurzfassung als Text mit einfacher Auszeichnung (neu.kurz), angezeigt unter dem Ziel.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -44,6 +46,18 @@ export function ladeKartenAp1(wurzel) {
     dateien.set(f.replace(/\.json$/, ''), JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8')));
   }
   return dateien;
+}
+
+// Kurzfassungen je Ordner: Map Stichpunkt-ID → Text
+export function ladeKurzAp1(wurzel) {
+  const ordner = path.join(wurzel, 'umbau', 'kurz', 'ap1');
+  const kurz = new Map();
+  if (!fs.existsSync(ordner)) return kurz;
+  for (const f of fs.readdirSync(ordner).filter((f) => /^AP1-\d+\.json$/.test(f)).sort()) {
+    const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
+    for (const [id, text] of Object.entries(d.kurz)) kurz.set(id, text);
+  }
+  return kurz;
 }
 
 export const ordnerVon = (id) => id.split('-').slice(0, 2).join('-');
@@ -127,6 +141,7 @@ export function vorschauAp1(daten, wurzel) {
   const vorgaenger = new Map();
   for (const a of altNeu.values()) if (a.neu) vorgaenger.set(a.neu, a);
 
+  const kurzTexte = ladeKurzAp1(wurzel);
   const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== 'AP1'));
   let anzahlK = 0;
   let neueOhneKarten = 0;
@@ -179,6 +194,7 @@ export function vorschauAp1(daten, wurzel) {
           neu: {
             ziel: s.ziel,
             hinweis: s.hinweis ?? null,
+            kurz: kurzTexte.get(s.id) ?? null,
             istNeu: !alt,
             koennen,
             grenzen: (s.grenzen ?? []).map((g) => ({ text: g.text, begruendung: g.begruendung ?? null, katalog: g.katalog ?? [] })),
@@ -208,6 +224,7 @@ export function vorschauAp1(daten, wurzel) {
       bloecke: plaene.reduce((a, p) => a + p.themenbloecke.length, 0),
       stichpunkte: spAp1.length,
       neueStichpunkte: spAp1.filter((s) => s.neu.istNeu).length,
+      kurz: spAp1.filter((s) => s.neu.kurz).length,
       koennen: anzahlK,
       neueOhneKarten,
       kuer,
