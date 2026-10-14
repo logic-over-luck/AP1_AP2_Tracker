@@ -2,6 +2,9 @@
 // erzeugt ein Verzeichnis aller Teilaufgaben (nur IDs, Punkte, Operatoren – kein Aufgabentext).
 //
 // Aufruf:  node tools/umbau/pruefungen-pruefen.mjs [quellen/pruefungen/ap1] [umbau/fundament/pruefungen-ap1.json]
+//          node tools/umbau/pruefungen-pruefen.mjs pb1        (Kurzform: quellen/pruefungen/pb1 → umbau/fundament/pruefungen-pb1.json)
+//
+// Dateinamen: AP1 „2024H_AP1.md“ (Kopf-ID 2024H), AP2 „2025W_AP2-PB1.md“ (Kopf-ID 2025W-PB1).
 //
 // Erwartetes Format: wie 2024H_AP1.md – YAML-Kopf, „# <ID>-A1 · 25 Punkte", „## <ID>-A1-a · 3 Punkte",
 // „### <ID>-A1-da · 2 Punkte", je Teilaufgabe ein ```yaml-Block mit operator: […].
@@ -12,8 +15,9 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 
-const ORDNER = process.argv[2] ?? 'quellen/pruefungen/ap1';
-const ZIEL = process.argv[3] ?? 'umbau/fundament/pruefungen-ap1.json';
+const KURZ = /^(ap1|pb1|pb2|wiso)$/i.test(process.argv[2] ?? '') ? process.argv[2].toLowerCase() : null;
+const ORDNER = KURZ ? `quellen/pruefungen/${KURZ}` : (process.argv[2] ?? 'quellen/pruefungen/ap1');
+const ZIEL = KURZ ? `umbau/fundament/pruefungen-${KURZ}.json` : (process.argv[3] ?? 'umbau/fundament/pruefungen-ap1.json');
 
 const zahl = (s) => Number(String(s).replace(',', '.'));
 
@@ -32,11 +36,14 @@ export function lies(datei, md) {
   const k = kopf(md);
   const fehler = [], hinweise = [];
   const id = k.id;
-  const erwartetId = datei.split('_')[0];
+  const [termin, art = ''] = datei.replace(/\.md$/, '').split('_');
+  const pb = art.match(/^AP2-(PB[12])$/);
+  const erwartetId = pb ? `${termin}-${pb[1]}` : termin;
   if (id !== erwartetId) fehler.push(`Kopf-ID „${id}" passt nicht zum Dateinamen (${erwartetId})`);
 
   const aufgaben = [];
   const teil = [];
+  const ganz = []; // Kandidaten: Aufgaben, die selbst bewertete Einheit sind
   let aktuell = null; // aktuelle Teilaufgabe (für yaml / Musterlösung)
   const zeilen = md.split('\n');
   for (let i = 0; i < zeilen.length; i++) {
@@ -44,7 +51,12 @@ export function lies(datei, md) {
     const a = z.match(/^# (\S+-A\d) · ([\d,.]+) Punkte?/);
     if (a) {
       aufgaben.push({ id: a[1], punkte: zahl(a[2]) });
-      aktuell = null;
+      // Aufgabe ohne Teilaufgaben (z. B. AP2-PB2: ganze Aufgabe Pseudocode): yaml-Block direkt unter „# …-An“
+      aktuell = {
+        id: a[1], ebene: 1, punkte: zahl(a[2]), summe: false, aufgabe: a[1], operator: null, material: [],
+        loesung_art: null, anzahl: null, hat_musterloesung: false, zeile: i + 1, yaml: false,
+      };
+      ganz.push(aktuell);
       continue;
     }
     const t = z.match(/^(#{2,3}) (\S+-A\d-[a-z]+) · ([\d,.]+) Punkte?(.*)$/);
@@ -59,6 +71,7 @@ export function lies(datei, md) {
     }
     if (!aktuell) continue;
     if (z.startsWith('```yaml')) {
+      aktuell.yaml = true;
       for (let j = i + 1; j < zeilen.length && !zeilen[j].startsWith('```'); j++) {
         const y = zeilen[j];
         const op = y.match(/^operator:\s*\[(.*)\]/);
@@ -74,8 +87,14 @@ export function lies(datei, md) {
     if (/^\*\*Musterlösung:\*\*/.test(z)) aktuell.hat_musterloesung = true;
   }
 
+  // Aufgaben ohne Teilaufgaben, aber mit eigenem yaml-Block, sind selbst ein Blatt
+  for (const g of ganz) {
+    if (g.yaml && !teil.some((t) => t.aufgabe === g.id)) teil.push(g);
+  }
+  for (const t of teil) delete t.yaml;
+
   // IDs
-  const alle = [...aufgaben.map((x) => x.id), ...teil.map((x) => x.id)];
+  const alle = [...aufgaben.map((x) => x.id), ...teil.filter((x) => x.ebene > 1).map((x) => x.id)];
   for (const x of alle) if (!x.startsWith(`${id}-`)) fehler.push(`ID ${x} passt nicht zur Prüfung ${id}`);
   const doppelt = alle.filter((x, i) => alle.indexOf(x) !== i);
   for (const x of doppelt) fehler.push(`doppelte ID ${x}`);
@@ -95,7 +114,7 @@ export function lies(datei, md) {
   const sollAufgaben = (k.aufgaben_punkte ?? '').replace(/[[\]]/g, '').split(',').map(zahl).filter((n) => !Number.isNaN(n));
   aufgaben.forEach((a, n) => {
     if (sollAufgaben[n] !== undefined && sollAufgaben[n] !== a.punkte) fehler.push(`${a.id}: Kopf sagt ${sollAufgaben[n]}, Überschrift ${a.punkte} Punkte`);
-    const s = teil.filter((t) => t.aufgabe === a.id && t.ebene === 2).reduce((x, t) => x + t.punkte, 0);
+    const s = teil.filter((t) => t.aufgabe === a.id && t.ebene <= 2).reduce((x, t) => x + t.punkte, 0);
     if (Math.abs(s - a.punkte) > 0.001) {
       const text = `${a.id}: Teilaufgaben ergeben ${s} statt ${a.punkte} Punkte`;
       if (unvollstaendig) hinweise.push(`${text} (Datei als unvollständig gekennzeichnet: ${k.fehlt})`); else fehler.push(text);
@@ -125,12 +144,13 @@ export function lies(datei, md) {
   };
 }
 
-// Aktueller Katalog gilt ab AP1 Frühjahr 2025 (Katalog, PDF-S. 5).
-function katalogFuer(id) {
-  const m = id.match(/^(\d{4})([FH])$/);
+// Aktueller Katalog gilt ab AP1 Frühjahr 2025 und AP2 Sommer 2025 (Katalog, PDF-S. 5).
+// AP1: F = Frühjahr, H = Herbst; AP2: S = Sommer, W = Winter (2025W = Winter 2025/26).
+export function katalogFuer(id) {
+  const m = String(id).match(/^(\d{4})([FHSW])(-PB[12])?$/);
   if (!m) return null;
-  const jahr = Number(m[1]);
-  return jahr > 2025 || (jahr === 2025) ? 'aktuell' : 'alt';
+  if (/[FH]/.test(m[2]) === Boolean(m[3])) return null; // AP1 nur F/H, AP2 nur S/W
+  return Number(m[1]) >= 2025 ? 'aktuell' : 'alt';
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

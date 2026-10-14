@@ -111,6 +111,27 @@ for (const [name, aendern] of Object.entries(abschriftFehler)) {
   });
 }
 
+test('Abschriften-Prüfer: AP2-Dateinamen und Katalogstand', async () => {
+  const { katalogFuer } = await import('../tools/umbau/pruefungen-pruefen.mjs');
+  const pb = MUSTER.replaceAll('2099F', '2099W-PB1');
+  assert.deepEqual(lies('2099W_AP2-PB1.md', pb).fehler, []);
+  assert.ok(lies('2099W_AP2-PB2.md', pb).fehler.length > 0);
+  assert.equal(katalogFuer('2024W-PB1'), 'alt');
+  assert.equal(katalogFuer('2025S-PB2'), 'aktuell');
+  assert.equal(katalogFuer('2024H'), 'alt');
+  assert.equal(katalogFuer('2025F'), 'aktuell');
+  assert.equal(katalogFuer('2025W'), null);
+});
+
+test('Abschriften-Prüfer: Aufgabe ohne Teilaufgaben ist selbst ein Blatt', () => {
+  const ganz = MUSTER.replace('# 2099F-A2 · 25 Punkte\n## 2099F-A2-a · 25 Punkte\n', '# 2099F-A2 · 25 Punkte\n```yaml\noperator: [entwickeln]\n```\n**Musterlösung:** x\n');
+  const r = lies('2099F_AP1.md', ganz);
+  assert.deepEqual(r.fehler, []);
+  assert.ok(r.pruefung.teilaufgaben.some((t) => t.id === '2099F-A2' && t.blatt && t.operator[0] === 'entwickeln'));
+  const ohneYaml = MUSTER.replace('## 2099F-A2-a · 25 Punkte\n', '');
+  assert.ok(lies('2099F_AP1.md', ohneYaml).fehler.length > 0);
+});
+
 // ---------- Zuordnung Teilaufgabe → Baustein (T2, goldene Regel) ----------
 import { cpSync, rmSync } from 'node:fs';
 const zuordnungDa = vorhanden && existsSync('umbau/fundament/pruefungen-ap1.json') && existsSync('umbau/zuordnung/ap1');

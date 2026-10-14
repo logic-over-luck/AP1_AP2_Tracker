@@ -351,7 +351,28 @@ Regel B3. Spalte „.md" = Abschrift im Format wie `2024H_AP1.md` (Teilaufgaben-
 | 2026H (30.09.2026) | AP1 | aktuell | ✓ | nicht amtlich | 27 | vollständig |
 
 Summe AP1: 11 Prüfungen, 301 Teilaufgaben (kleinste bewertete Einheiten), davon 4 Prüfungen nach aktuellem
-Katalog. Alle Abschriften bestehen T-1. PB1, PB2, WiSo: noch keine Abschriften.
+Katalog. Alle Abschriften bestehen T-1. WiSo: noch keine Abschriften.
+
+**AP2 (PB1 und PB2)**, Dateien `quellen/pruefungen/pb1/<Termin>_AP2-PB1.md` (Kopf-ID `2025W-PB1`), ebenso pb2.
+Termine S = Sommer, W = Winter (2025W = Winter 2025/26). Aktueller AP2-Katalog ab Sommer 2025 → 2025S und 2025W
+aktuell, Rest B3. Belegsatz (gemeinsames Heft) steht als Material M1. Eigener Prüfbericht der Abschriften:
+`quellen/pruefungen/PRUEFBERICHT_AP2.md` (lokal).
+
+| Termin | PB1 Teilaufg. | PB2 Teilaufg. | Lösungshinweise | Bemerkung |
+|---|---|---|---|---|
+| 2021W (24.11.2021) | 20 | 10 | amtlich | vollständig |
+| 2022S (04.05.2022) | 14 | 14 | amtlich | vollständig |
+| 2022W (23.11.2022) | 21 | 15 | amtlich | vollständig |
+| 2023S (26.04.2023) | 20 | 11 | amtlich | PB2: S. 8 fehlt (keine Teilaufgabe betroffen) |
+| 2023W (29.11.2023) | 17 | 8 | amtlich | vollständig |
+| 2024S (24.04.2024) | 16 | 15 | amtlich | vollständig |
+| 2024W (27.11.2024) | 16 | 10 | amtlich | Deckblatt, Belegsatz fehlen; PB1 Zeichenseite 4a |
+| 2025S (07.05.2025) | 13 | 12 | – | aktueller Katalog |
+| 2025W (26.11.2025) | 15 | 12 | amtlich | aktueller Katalog; Belegsatz fehlt; PB1 Zeichenseite 4c; PB2 nur Lösungshinweise, kein Aufgabensatz (keine Operatoren) |
+
+Summe: PB1 9 Prüfungen, 152 Teilaufgaben; PB2 9 Prüfungen, 107 Teilaufgaben; je 2 nach aktuellem Katalog.
+Alle 18 Abschriften bestehen T-1 (14.10.2026). PB2 hat Aufgaben ohne Teilaufgaben (z. B. 2021W-PB2-A2,
+25 Punkte Pseudocode); dort ist die Aufgabe selbst die Teilaufgabe (ID `2021W-PB2-A2`).
 
 Zuordnung Teilaufgabe → Baustein und Aufgabentyp kommt **nicht** in die Abschriften, sondern in eine
 eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die Abschriften reine Quellen.
@@ -472,6 +493,10 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       11 AP1-Abschriften (T-1), Zuordnung (T2, goldene Regel), alle 8 Ordner, Raum-Prüfung (T1, T2b, T8) und alle
       185 Tests grün; keine Datei hat sich dabei geändert. `Lernstudio.html` jetzt echt mit `npm run build` gebaut
       (gleiche Funktionen, nur andere Minifizierung) und im Browser ohne Konsolenfehler geöffnet.
+- [x] **Schritt 5a – Abschriften PB1/PB2 geprüft (14.10.2026):** `pruefungen-pruefen.mjs` kennt jetzt AP2-Dateinamen
+      (`2025W_AP2-PB1.md` ↔ Kopf-ID `2025W-PB1`), Termine S/W mit Katalogstand (aktuell ab 2025S) und Aufgaben ohne
+      Teilaufgaben (yaml direkt unter `# …-An`); Kurzaufruf `node tools/umbau/pruefungen-pruefen.mjs pb1`. Alle 18
+      Abschriften bestehen T-1; einziger Hinweis: 2025W-PB2 ohne Operatoren (Aufgabensatz fehlt). Tests ergänzt.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
@@ -527,6 +552,7 @@ Lokale Quellen (nicht im Repo, werden der Sitzung angehängt):
 ```
 quellen/katalog.md                  aus der Word-Fassung (pandoc, siehe unten)
 quellen/pruefungen/ap1/<ID>_AP1.md  Prüfungsabschriften, z. B. 2024H_AP1.md
+quellen/pruefungen/pb1/<Termin>_AP2-PB1.md   z. B. 2025W_AP2-PB1.md (pb2 entsprechend)
 quellen/lernzettel/*.pdf            Community-Lernzettel (nur Material)
 ```
 
@@ -543,6 +569,7 @@ npm run umbau:katalog     # zerlegt quellen/katalog.md → umbau/fundament/katal
 npm run umbau:pruefen     # prüft die Bausteine unabhängig gegen den Katalog
 npm run umbau:tiefe       # berechnet die Mindesttiefe je Baustein und prüft das Regelwerk
 npm run umbau:pruefungen  # prüft die Prüfungsabschriften, erzeugt das Teilaufgaben-Verzeichnis
+node tools/umbau/pruefungen-pruefen.mjs pb1   # dasselbe für PB1 (pb2 entsprechend) → umbau/fundament/pruefungen-pb1.json
 npm run umbau:zuordnung   # T2 + goldene Regel, berechnet die belegte Tiefe (belege-ap1.json)
 node tools/umbau/lernplan-pruefen.mjs AP1-6   # prüft einen Ordner des neuen Lernplans (auch R3, R4), schreibt umbau/berichte/AP1-6.md
 node tools/umbau/lernplan-pruefen.mjs AP1-1
