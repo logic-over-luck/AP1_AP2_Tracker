@@ -156,7 +156,8 @@ for (const [bid] of belege) if (!(bid in ergebnis) && !anhangIds.has(bid)) {
   // Importierter Baustein (wohnt in einem früheren Raum): Beleg aus diesem Raum, Tiefe gilt für den Import (E2)
   // (stufe nur beim Import: dort gilt die belegte Tiefe für die Ergänzung im Lernplan; nur_punkt bleibt ohne stufe)
   const bs = Math.max(...belege.get(bid).map((x) => x.stufe ?? 0)) || null;
-  const imp = R.importierbar(bid) ? { stufe: Math.max(stufeKatalog(bid) ?? 0, bs ?? 0) || null, import: wohnort(bid, zusatz) } : { nur_punkt: true };
+  // Import: Soll ist die in diesem Raum belegte Stufe; die Katalogtiefe hat der frühere Raum schon erreicht
+  const imp = R.importierbar(bid) ? { stufe: bs, import: wohnort(bid, zusatz) } : { nur_punkt: true };
   ergebnis[bid] = { katalog_stufe: stufeKatalog(bid), beleg_stufe: bs, ...imp,
     belege_aktuell: belege.get(bid).filter((x) => x.katalog === 'aktuell').map((x) => x.ta), belege_alt: belege.get(bid).filter((x) => x.katalog === 'alt').map((x) => x.ta) };
 }

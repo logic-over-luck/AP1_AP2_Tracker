@@ -124,7 +124,7 @@ for (const tb of lp.themenbloecke) {
         }
         const fach = [...ids].filter((x) => !x.startsWith('ANH.'));
         if (fach.length && fach.every((x) => R.importierbar(x))) {
-          const dort = Math.max(...fach.map(erreichtFrueher));
+          const dort = Math.min(...fach.map(erreichtFrueher)); // neu, sobald ein Baustein dort noch nicht so tief erreicht ist
           if (k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
         }
       }
