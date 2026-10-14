@@ -1,0 +1,376 @@
+{
+ "oberblock": {
+  "id": "PB2-3",
+  "titel": "Fehler finden, Debugging und Unit-Tests",
+  "raum": "PB2",
+  "gebiete": [
+   "G.PB2.01",
+   "G.PB2.03"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB2-3-1",
+   "titel": "Code prüfen und Fehler beheben",
+   "satz": "Fremden Code mit Testdaten von Hand durchgehen, Fehler lokalisieren und berichtigen, Debugging-Techniken einsetzen und Code mit Unit-Tests absichern. Schreibtischtest und Fehlerarten kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB2-3-1-1",
+     "titel": "Schreibtischtest und Fehler im Algorithmus lokalisieren",
+     "ziel": "Einen gegebenen Algorithmus mit Testdaten von Hand ausführen, erwartetes und tatsächliches Ergebnis vergleichen, den Fehler mit Zeilennummer benennen und berichtigen.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.01.3"
+      },
+      {
+       "id": "AP2a.02.01.1",
+       "anteil": "Fehler finden und beheben"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB2-A1-c",
+      "2022W-PB2-A2-aa",
+      "2022W-PB2-A2-ab",
+      "2023S-PB2-A3-aa",
+      "2023S-PB2-A3-ab",
+      "2025W-PB2-A3-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-3-1-1-K1",
+       "text": "Du kannst über den Schreibtischtest aus AP1 hinaus auch verschachtelte Schleifen und rekursive Aufrufe Schritt für Schritt verfolgen und die Werte der Variablen je Durchlauf festhalten.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.3",
+        "beleg:2022W-PB2-A2-aa"
+       ]
+      },
+      {
+       "id": "PB2-3-1-1-K2",
+       "text": "Du kannst aus der Beschreibung einer Funktion das erwartete Ergebnis ableiten, es dem tatsächlichen gegenüberstellen und aus den Abweichungen die fehlerhafte Zeile mit Zeilennummer bestimmen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.3",
+        "beleg:2025W-PB2-A3-bb",
+        "beleg:2023S-PB2-A3-aa"
+       ]
+      },
+      {
+       "id": "PB2-3-1-1-K3",
+       "text": "Du kannst die fehlerhafte Stelle berichtigt aufschreiben oder den Code so ändern bzw. erweitern, dass die erwartete Ausgabe entsteht.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.01.1",
+        "beleg:2023S-PB2-A3-ab",
+        "beleg:2022W-PB2-A2-ab"
+       ]
+      },
+      {
+       "id": "PB2-3-1-1-K4",
+       "text": "Du kannst typische inhaltliche Fehler in Algorithmen erkennen: falscher Startwert (z. B. 0 statt des ersten Elements beim Minimum), Schleife eine Stelle zu kurz oder zu lang, falscher Vergleichsoperator (< statt <=), fehlender Monat oder Fall.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.01.1",
+        "beleg:2021W-PB2-A1-c",
+        "beleg:2025W-PB2-A3-bb"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-2-3",
+      "AP1-8-2-4"
+     ],
+     "hinweis": "Fehlersuche in einem Struktogramm (2021W-PB2-A1-c) zählt nach Z4 für die Fehlersuche im Algorithmus."
+    },
+    {
+     "id": "PB2-3-1-2",
+     "titel": "Debugging, Ablaufverfolgung und Fehlerbehandlung",
+     "ziel": "Debugging-Techniken einordnen und einsetzen und festlegen, wie ein Programm auf unerwartete Eingaben reagiert.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.01.1",
+       "anteil": "Debugging, Breakpoint"
+      },
+      {
+       "id": "AP2a.03.01.3",
+       "anteil": "Ablaufverfolgung"
+      },
+      {
+       "id": "AP2b.03.08.2",
+       "anteil": "print-Debugging, TDD"
+      },
+      {
+       "id": "AP2b.04.17.5",
+       "anteil": "Fehlerbehandlung bei unerwarteten Eingaben"
+      }
+     ],
+     "teilaufgaben": [
+      "2025S-PB2-A2-bc"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-3-1-2-K1",
+       "text": "Du kannst erklären, was ein Breakpoint bewirkt (das Programm hält an dieser Stelle, du kannst Variablen ansehen und Schritt für Schritt weitergehen) und wann Debugging mit dem Debugger sinnvoll ist.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.1"
+       ]
+      },
+      {
+       "id": "PB2-3-1-2-K2",
+       "text": "Du kannst Ablaufverfolgung und print-Debugging erklären: den Weg des Programms und die Werte der Variablen Schritt für Schritt nachvollziehen bzw. Zwischenwerte gezielt ausgeben lassen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.01.3",
+        "katalog:AP2b.03.08.2"
+       ]
+      },
+      {
+       "id": "PB2-3-1-2-K3",
+       "text": "Du kannst Test Driven Development erklären: erst einen fehlschlagenden Test schreiben, dann gerade so viel Code, dass er besteht, dann aufräumen (Red, Green, Refactor).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.2"
+       ]
+      },
+      {
+       "id": "PB2-3-1-2-K4",
+       "text": "Du kannst für eine unerwartete Eingabe (z. B. leer, nur Leerzeichen, null) eine geeignete Reaktion festlegen: Eingabe bereinigen und prüfen, dem Benutzer eine verständliche Meldung geben oder eine Ausnahme auslösen, und in gegebenem Code erkennen, bei welchen Eingaben eine Ausnahme ausgelöst wird.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.17.5",
+        "beleg:2025S-PB2-A2-bc"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-5-1-2",
+      "AP1-8-2-4"
+     ],
+     "hinweis": "Die Ausnahmebehandlung mit try/catch steht in PB1-5-1-2."
+    },
+    {
+     "id": "PB2-3-1-3",
+     "titel": "Unit-Tests und Regressionstests",
+     "ziel": "Zweck und Eigenschaften von Unit-Tests kennen, einen Unit-Test gegen den Code prüfen und Regressionstests einordnen.",
+     "gebiete": [
+      "G.PB2.03"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.08.2",
+       "anteil": "Unit-Test, Regressionstest"
+      },
+      {
+       "id": "AP2a.02.01.1",
+       "anteil": "Code anpassen, bis der Test besteht"
+      }
+     ],
+     "teilaufgaben": [
+      "2022S-PB2-A2-aa",
+      "2022S-PB2-A2-ab",
+      "2022S-PB2-A2-ba",
+      "2022S-PB2-A2-bb",
+      "2024S-PB2-A3-ab",
+      "2025W-PB2-A3-aa"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-3-1-3-K1",
+       "text": "Du kannst beschreiben, was ein Unit-Test ist und wozu er dient: eine einzelne Einheit (Methode, Klasse) wird automatisch mit festgelegten Eingaben und erwarteten Ergebnissen geprüft (assertEquals), damit Fehler früh auffallen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "beleg:2022S-PB2-A2-aa"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K2",
+       "text": "Du kannst Eigenschaften guter Unit-Tests beschreiben: unabhängig von anderen Tests und äußeren Systemen, wiederholbar mit gleichem Ergebnis, schnell, automatisch und mit eindeutigem Ergebnis.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "beleg:2022S-PB2-A2-ab"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K3",
+       "text": "Du kannst einen gegebenen Unit-Test gegen den Code überprüfen: je Testfall das tatsächliche Ergebnis bestimmen, eintragen, ob er besteht, und den Code so anpassen, dass alle Testfälle bestehen.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "katalog:AP2a.02.01.1",
+        "beleg:2022S-PB2-A2-ba",
+        "beleg:2022S-PB2-A2-bb"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K4",
+       "text": "Du kannst den Zweck von Regressionstests erläutern: Nach jeder Änderung werden die vorhandenen Tests erneut ausgeführt, damit bereits funktionierende Teile nicht unbemerkt kaputtgehen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "beleg:2024S-PB2-A3-ab"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-9-1-4"
+     ],
+     "hinweis": "Was ein Unit-Test im Rahmen der Teststufen ist, steht in PB1-9-1-4; hier geht es um das Schreiben und Prüfen."
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-3-3-3-K2",
+    "status": "angepasst",
+    "neu": "PB2-3-1-2-K4",
+    "grund": "mit geeigneter Reaktion auf unerwartete Eingaben"
+   },
+   {
+    "alt": "AP2-5-2-3-K1",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K1",
+    "grund": "über AP1 hinaus: Verschachtelung und Rekursion"
+   },
+   {
+    "alt": "AP2-5-2-3-K2",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K2",
+    "grund": "mit Zeilennummer"
+   },
+   {
+    "alt": "AP2-5-2-3-K3",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K2",
+    "grund": "in st2 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-2-3-K4",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K3",
+    "grund": "berichtigen oder ergänzen"
+   },
+   {
+    "alt": "AP2-5-2-3-K5",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K4",
+    "grund": "mit Beispielen aus den Prüfungen"
+   },
+   {
+    "alt": "AP2-5-3-1-K1",
+    "status": "angepasst",
+    "neu": "PB2-3-1-2-K1",
+    "grund": "erklären (Katalog)"
+   },
+   {
+    "alt": "AP2-5-3-1-K2",
+    "status": "angepasst",
+    "neu": "PB2-3-1-2-K2",
+    "grund": "mit print-Debugging zusammengefasst"
+   },
+   {
+    "alt": "AP2-5-3-1-K3",
+    "status": "angepasst",
+    "neu": "PB2-3-1-2-K2",
+    "grund": "in db2 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-3-1-K4",
+    "status": "angepasst",
+    "neu": "PB2-3-1-2-K3",
+    "grund": "Red, Green, Refactor"
+   },
+   {
+    "alt": "AP2-5-3-1-K5",
+    "status": "gestrichen",
+    "grund": "E2: formale und inhaltliche Fehler unterscheiden steht in AP1-8-2-4"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB2-Ordner (P33).",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Schreibtischtests und Fehlersuche (2021W-A1-c, 2022W-A2-a, 2023S-A3-a, 2025W-A3-b), Unit-Tests (2022S-A2, 2024S-A3-ab, 2025W-A3-aa) und 2025S-A2-bc gegen die Musterlösungen gelesen."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Fehler finden, Schreibtischtest",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-1-K1",
+      "PB2-3-1-1-K2",
+      "PB2-3-1-1-K3"
+     ]
+    },
+    {
+     "thema": "Unit-Tests",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-3-K1",
+      "PB2-3-1-3-K2",
+      "PB2-3-1-3-K3"
+     ]
+    },
+    {
+     "thema": "Regressionstests",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-3-K4"
+     ]
+    },
+    {
+     "thema": "Fehlerbehandlung",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-2-K4"
+     ]
+    },
+    {
+     "thema": "Code Coverage, Äquivalenzklassen, Testverfahren, Black-Box-Test, White-Box-Test",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2-4"
+     ]
+    }
+   ]
+  }
+ }
+}

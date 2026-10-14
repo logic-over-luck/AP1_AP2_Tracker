@@ -1,0 +1,338 @@
+{
+ "oberblock": {
+  "id": "PB2-2",
+  "titel": "Suchen, Sortieren, Rekursion und Generik",
+  "raum": "PB2",
+  "gebiete": [
+   "G.PB2.01",
+   "G.PB2.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB2-2-1",
+   "titel": "Suchen, Sortieren und weiterführende Techniken",
+   "satz": "Die klassischen Such- und Sortierverfahren kennen und schreiben, Rekursion und Iteration vergleichen und Algorithmen mit generischen Klassen und übergebenen Vergleichsfunktionen flexibel machen.",
+   "stichpunkte": [
+    {
+     "id": "PB2-2-1-1",
+     "titel": "Suchen: lineare und binäre Suche",
+     "ziel": "Die lineare Suche schreiben und die binäre Suche erklären, einschließlich ihrer Voraussetzung.",
+     "gebiete": [
+      "G.PB2.01",
+      "G.PB2.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.18"
+      },
+      {
+       "id": "AP2b.04.18.1"
+      },
+      {
+       "id": "AP2b.04.18.2"
+      }
+     ],
+     "teilaufgaben": [
+      "2025W-PB2-A1-b"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-2-1-1-K1",
+       "text": "Du kannst die lineare Suche schreiben: die Elemente der Reihe nach mit dem Gesuchten vergleichen und beim ersten Treffer das Element oder seinen Index zurückgeben, sonst einen festgelegten Wert wie −1 oder null.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.18.1",
+        "beleg:2025W-PB2-A1-b"
+       ]
+      },
+      {
+       "id": "PB2-2-1-1-K2",
+       "text": "Du kannst die binäre Suche beschreiben: in einer sortierten Folge das mittlere Element prüfen und die Hälfte verwerfen, in der das Gesuchte nicht liegen kann, bis es gefunden ist oder der Bereich leer ist.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.18.2"
+       ]
+      },
+      {
+       "id": "PB2-2-1-1-K3",
+       "text": "Du kannst lineare und binäre Suche vergleichen: Die binäre Suche funktioniert nur auf sortierten Daten, braucht dafür aber bei n Elementen höchstens etwa log₂(n) Vergleiche statt bis zu n.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.18",
+        "katalog:AP2b.04.18.1",
+        "katalog:AP2b.04.18.2"
+       ]
+      }
+     ],
+     "hinweis": "Die Minimumsuche aus 2025W-PB2-A1-b ist eine lineare Suche (Muster in PB2-1-1-2)."
+    },
+    {
+     "id": "PB2-2-1-2",
+     "titel": "Sortieren: Bubble Sort, Selection Sort, Insertion Sort",
+     "ziel": "Einen elementaren Sortieralgorithmus in Pseudocode schreiben, auch für Objekte nach einem Attribut, und die drei Verfahren am Vorgehen unterscheiden.",
+     "gebiete": [
+      "G.PB2.01",
+      "G.PB2.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.18.3"
+      },
+      {
+       "id": "AP2b.04.16.1",
+       "anteil": "Sortieren in Pseudocode"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB2-A1-a",
+      "2024S-PB2-A2-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-2-1-2-K1",
+       "text": "Du kannst einen Sortieralgorithmus deiner Wahl in Pseudocode schreiben und benennen, zum Beispiel Bubble Sort mit zwei verschachtelten Schleifen, auch für ein Array von Objekten, die nach einem Attribut sortiert werden.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.18.3",
+        "beleg:2022W-PB2-A1-a"
+       ]
+      },
+      {
+       "id": "PB2-2-1-2-K2",
+       "text": "Du kannst Bubble Sort (benachbarte Elemente vertauschen, bis nichts mehr getauscht wird), Selection Sort (jeweils das kleinste restliche Element nach vorn holen) und Insertion Sort (jedes Element in den bereits sortierten Teil einfügen) am Vorgehen unterscheiden.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.18.3"
+       ]
+      },
+      {
+       "id": "PB2-2-1-2-K3",
+       "text": "Du kannst zwei Elemente über eine Hilfsvariable tauschen und statt eines festen Vergleichs eine vorgegebene Vergleichsfunktion einsetzen, die einen negativen Wert, null oder einen positiven Wert liefert.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.18.3",
+        "beleg:2024S-PB2-A2-a"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB2-2-1-3",
+     "titel": "Rekursion und Iteration",
+     "ziel": "Rekursive Algorithmen nachvollziehen, mit iterativen vergleichen und in eine iterative Lösung umschreiben.",
+     "gebiete": [
+      "G.PB2.01",
+      "G.PB2.02"
+     ],
+     "bausteine": [
+      {
+       "id": "ZB.rekursion"
+      },
+      {
+       "id": "AP2b.04.16.1",
+       "anteil": "rekursiv und iterativ"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB2-A2-b",
+      "2022W-PB2-A2-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-2-1-3-K1",
+       "text": "Du kannst Rekursion erklären: Eine Funktion ruft sich selbst mit einem kleineren Teilproblem auf, bis eine Abbruchbedingung erreicht ist; ohne Abbruchbedingung läuft sie endlos bis zum Speicherüberlauf.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022W-PB2-A2-b"
+       ]
+      },
+      {
+       "id": "PB2-2-1-3-K2",
+       "text": "Du kannst je einen Vor- und Nachteil der rekursiven gegenüber einer iterativen Lösung beschreiben: oft kürzer und näher an der Problembeschreibung, aber mehr Speicher für die Aufrufe und langsamer.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022W-PB2-A2-b"
+       ]
+      },
+      {
+       "id": "PB2-2-1-3-K3",
+       "text": "Du kannst einen rekursiven Algorithmus iterativ umsetzen: die Selbstaufrufe durch eine Schleife ersetzen und Zwischenergebnisse in Variablen oder einer Liste halten.",
+       "stufe": 3,
+       "herkunft": [
+        "beleg:2022W-PB2-A2-c"
+       ]
+      }
+     ],
+     "hinweis": "Den Schreibtischtest eines rekursiven Algorithmus (2022W-PB2-A2-aa) übst du in PB2-3."
+    },
+    {
+     "id": "PB2-2-1-4",
+     "titel": "Generische Klassen und Funktionsobjekte",
+     "ziel": "Generische Klassen erklären und Algorithmen flexibel machen, indem eine Vergleichsfunktion als Parameter übergeben wird.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "ZB.generik-funktionsobjekte"
+      },
+      {
+       "id": "AP2b.04.19",
+       "anteil": "Sortierfunktion mit Funktionsobjekt"
+      },
+      {
+       "id": "AP2b.04.16.1",
+       "anteil": "Vergleichsfunktion"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB2-A1-b",
+      "2022W-PB2-A1-c",
+      "2022W-PB2-A1-d",
+      "2024S-PB2-A2-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-2-1-4-K1",
+       "text": "Du kannst den Begriff generische Klasse erläutern: Die Klasse wird mit einem Typparameter geschrieben (z. B. List<T>) und erst bei der Verwendung für einen bestimmten Typ festgelegt, sodass derselbe Code für verschiedene Datentypen typsicher funktioniert.",
+       "stufe": 2,
+       "herkunft": [
+        "beleg:2022W-PB2-A1-c"
+       ]
+      },
+      {
+       "id": "PB2-2-1-4-K2",
+       "text": "Du kannst eine Vergleichsfunktion für zwei Objekte schreiben, die 0 bei Gleichheit, einen positiven Wert, wenn das erste größer ist, und sonst einen negativen Wert liefert.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16.1",
+        "beleg:2022W-PB2-A1-b"
+       ]
+      },
+      {
+       "id": "PB2-2-1-4-K3",
+       "text": "Du kannst einen Sortieralgorithmus so umschreiben, dass er ein übergebenes Funktionsobjekt zum Vergleichen aufruft, und damit dieselbe Sortierfunktion für verschiedene Kriterien nutzen (z. B. Kurs, Datum).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.19",
+        "beleg:2022W-PB2-A1-d",
+        "beleg:2024S-PB2-A2-a"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-5-1-1"
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-3-2-3-K1",
+    "status": "angepasst",
+    "neu": "PB2-2-1-1-K1",
+    "grund": "mit Rückgabewert bei Misserfolg"
+   },
+   {
+    "alt": "AP2-3-2-3-K2",
+    "status": "angepasst",
+    "neu": "PB2-2-1-1-K2",
+    "grund": "beschreiben (Katalog: kennen); schreiben ist keine Pflicht"
+   },
+   {
+    "alt": "AP2-3-2-3-K3",
+    "status": "angepasst",
+    "neu": "PB2-2-1-2-K1",
+    "grund": "auch für Objekte"
+   },
+   {
+    "alt": "AP2-3-2-3-K4",
+    "status": "angepasst",
+    "neu": "PB2-2-1-2-K2",
+    "grund": "mit Vorgehen je Verfahren"
+   },
+   {
+    "alt": "AP2-3-2-3-K5",
+    "status": "angepasst",
+    "neu": "PB2-2-1-2-K3",
+    "grund": "Vergleichsfunktion mit Vorzeichen"
+   },
+   {
+    "alt": "AP2-3-2-3-K6",
+    "status": "angepasst",
+    "neu": "PB2-2-1-1-K3",
+    "grund": "mit Vergleich der Laufzeit"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB2-Ordner (P33). Rekursion und Generik sind Zusatzbausteine (Belege 2022W-PB2, 2024S-PB2).",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "2022W-PB2-A1 (Sortieren, Vergleichsfunktion, Generik), 2022W-PB2-A2-b/-c (Rekursion), 2024S-PB2-A2-a, 2025W-PB2-A1-b gegen die Musterlösungen gelesen."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Sortieralgorithmen",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-2-1-2-K1",
+      "PB2-2-1-2-K2"
+     ]
+    },
+    {
+     "thema": "Rekursion",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-2-1-3-K1",
+      "PB2-2-1-3-K2",
+      "PB2-2-1-3-K3"
+     ]
+    },
+    {
+     "thema": "Generische Klassen, Funktionale Programmierung",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-2-1-4-K1",
+      "PB2-2-1-4-K3"
+     ],
+     "notiz": "„Funktionale Programmierung“ meint in 2022W die übergebene Vergleichsfunktion"
+    },
+    {
+     "thema": "Pseudocode",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2-1"
+     ]
+    }
+   ]
+  }
+ }
+}
