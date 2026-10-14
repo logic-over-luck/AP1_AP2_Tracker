@@ -28,3 +28,30 @@
 | 20 | PB1-1-1-2-K4 | zur Kür (Frage) | Die typischen Einsatzfälle der drei Modelle sind nur mit dem Katalog belegt („unterscheiden“, Stufe 2). Die Aussage ist nützlich, steht aber knapp an der Grenze zu der begründeten Auswahl, die die Grenze von PB1-1-1-1 ausschließt. | Belassen, aber Formulierung „nennen“ (Stufe 1) beibehalten. Widerspruch zur Grenze prüfen (siehe Nr. 16). | niedrig |
 
 **Bilanz PB1-1:** 20 Funde (davon 5 hoch). Lücken: 1 (Nr. 19, gering; keine neue Aussage nötig). Kann weg bzw. zusammengelegt: 10 Aussagen (Nr. 2, 3, 4, 6, 7, 8, 9, 10, 11, 15). Vorher 36 → nach Vorschlägen etwa 26.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: K1 auf Artefakte und Zeitrahmen gekürzt, Sprint-Ablauf über `baut_auf` AP1-1-1-2 |
+| 2 | umgesetzt: eine Aussage (Stufe 3) mit Ursache, Auswirkung und Gegenmaßnahme |
+| 3 | umgesetzt: gestrichen, Personalrat/Geschäftsführung als Beispiel in der Gegenmaßnahmen-Aussage |
+| 4 | umgesetzt: Lastenheft-Aussage gestrichen, „prüfbar“ steht nur noch in der Ableitungs-Aussage |
+| 5 | umgesetzt: vier Paare Entwurf ↔ Test |
+| 6 | umgesetzt: gestrichen; Wasserfall-Beschreibung mit Wortlaut AP1 in die Einsatzfall-Aussage |
+| 7 | teilweise: K2 und K3 zusammengelegt; K1 bleibt (Beispiele je Kategorie, Beleg 2022S/2024W) |
+| 8 | umgesetzt: auf das Neue gekürzt (Folgen des Ist-Zustands) |
+| 9 | umgesetzt: gestrichen, Import AP1-1-4-2/-3; Abnahmeprotokoll wohnt in PB1-9 |
+| 10 | umgesetzt: gestrichen, Programmspezifikation steckt im Pflichtenheft |
+| 11 | umgesetzt: gestrichen, „Normtext vorgegeben“ (B4) an der Merkmals-Aussage, „Norm anwenden“ in der Gliederungs-Aussage |
+| 12 | umgesetzt: Titel 9126/25010, Änderbarkeit = Wartbarkeit, Kür auf ISO/IEC 25010:2023 aktualisiert |
+| 13 | umgesetzt: `vorgegeben` gesetzt, Ersteller gestrichen |
+| 14 | umgesetzt: Developers, Sprint höchstens ein Monat |
+| 15 | nicht umgesetzt: zwei Aussagen bleiben, sonst unterschreitet der Stichpunkt F3 (3 Aussagen) |
+| 16 | umgesetzt: Grenze umformuliert, Kür ergänzt (P26) |
+| 17 | umgesetzt: gekürzt mit Verweis auf AP1-4-3-3 |
+| 18 | umgesetzt: Hinweis am Stichpunkt (P35 Nr. 7) |
+| 19 | umgesetzt: Vorteile der Fremdvergabe im Hinweis |
+| 20 | belassen |
+
+Gliederung: Die Themenblöcke „Projektumfeld“ und „Anforderungen“ sind zusammengelegt, Change Request und Kostenarten stehen bei Machbarkeit und Risiken, Lasten-/Pflichtenheft und Anforderungen in einem Stichpunkt (F3/F4). Ergebnis: 36 → 28 Aussagen.

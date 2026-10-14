@@ -50,7 +50,7 @@
       },
       {
        "id": "PB1-1-1-1-K2",
-       "text": "Du kannst klassisches und agiles Vorgehen nach Projektplanung und Anforderungen unterscheiden: Anforderungen und Plan werden zu Beginn vollständig festgelegt gegenüber schrittweiser Planung in kleinen Einheiten mit Anforderungen, die laufend angepasst werden.",
+       "text": "Du kannst klassisches und agiles Vorgehen nach Planung und Umgang mit Änderungen unterscheiden: Anforderungen und Plan werden zu Beginn vollständig festgelegt, Änderungen kosten Zeit und Geld – gegenüber schrittweiser Planung in kurzen Iterationen, in die geänderte Anforderungen laufend einfließen.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.02",
@@ -59,14 +59,6 @@
       },
       {
        "id": "PB1-1-1-1-K3",
-       "text": "Du kannst klassisches und agiles Vorgehen nach der Flexibilität bei Änderungen unterscheiden: Im klassischen Vorgehen erfordern Änderungen Planänderungen und führen oft zu Verzögerung und Mehrkosten; im agilen Vorgehen gehören sie zum Prozess und fließen in den nächsten Sprint ein.",
-       "stufe": 2,
-       "herkunft": [
-        "beleg:2025W-PB1-A1-b"
-       ]
-      },
-      {
-       "id": "PB1-1-1-1-K4",
        "text": "Du kannst die Mitwirkung des Auftraggebers in beiden Kategorien unterscheiden: im klassischen Vorgehen vor allem beim Festlegen der Anforderungen und bei der Abnahme, im agilen Vorgehen laufend, zum Beispiel bei der Durchsicht der Ergebnisse jedes Sprints.",
        "stufe": 2,
        "herkunft": [
@@ -79,11 +71,20 @@
      ],
      "grenzen": [
       {
-       "text": "Für ein beschriebenes Projekt ein Vorgehensmodell begründet auswählen und empfehlen gehört nicht dazu.",
-       "begruendung": "G3: AP2b.04.02 verlangt „unterscheiden“ (Stufe 2); eine begründete Auswahl (Stufe 4) nennt der Katalog nicht. Agiles Vorgehen als Gegenmaßnahme zu einem Projektrisiko beschreiben gehört zur Risikoanalyse (PB1-1-2-1).",
+       "text": "Für ein beschriebenes Projekt ein Vorgehensmodell begründet auswählen und empfehlen ist keine Pflicht.",
+       "begruendung": "G3: AP2b.04.02 verlangt „unterscheiden“ (Stufe 2). Die Auswahl steht nur als betriebliche Handlung im Katalog und ist deshalb Kür (P26, P35). Agiles Vorgehen als Gegenmaßnahme zu einem Projektrisiko gehört zur Risikoanalyse (PB1-1-2-1).",
        "katalog": [
         "AP2b.04.02"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Für ein beschriebenes Projekt ein Vorgehensmodell begründet auswählen (z. B. sich oft ändernde Anforderungen → agil).",
+       "quellen": [
+        "podcast:themen-pb1"
+       ],
+       "grund": "Katalog nennt „Vorgehensmodelle … auswählen und einsetzen“ nur als betriebliche Handlung (P26)."
       }
      ]
     },
@@ -111,7 +112,7 @@
      "koennen": [
       {
        "id": "PB1-1-1-2-K1",
-       "text": "Du kannst das V-Modell beschreiben: Die Phasen laufen nacheinander ab wie beim Wasserfallmodell, aber jeder Entwurfsstufe (Anforderungen, Systementwurf, Komponentenentwurf) steht eine Teststufe gegenüber (Abnahme-, System-, Integrations-, Komponententest).",
+       "text": "Du kannst das V-Modell beschreiben: Die Phasen laufen nacheinander ab wie beim Wasserfallmodell, aber jeder Entwurfsstufe steht eine Teststufe gegenüber: Anforderungsdefinition ↔ Abnahmetest, funktionaler Systementwurf ↔ Systemtest, Architektur- bzw. Grobentwurf ↔ Integrationstest, Komponenten- bzw. Feinentwurf ↔ Komponententest.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.02.1.3"
@@ -127,23 +128,13 @@
       },
       {
        "id": "PB1-1-1-2-K3",
-       "text": "Du kannst Wasserfall-, V- und Spiralmodell unterscheiden: streng nacheinander ohne Rückschritt, nacheinander mit gegenübergestellten Teststufen, wiederholte Runden mit Risikobewertung.",
+       "text": "Du kannst ein klassisches Modell wie das Wasserfallmodell beschreiben (jede Phase wird abgeschlossen, bevor die nächste beginnt) und zu Wasserfall-, V- und Spiralmodell je einen typischen Einsatzfall nennen: feste, gut bekannte Anforderungen; hohe Anforderungen an nachweisbare Tests; große, neuartige Vorhaben mit hohem Risiko.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.02.1.1",
         "katalog:AP2b.04.02.1.2",
         "katalog:AP2b.04.02.1.3",
         "beleg:2024W-PB1-A1-b"
-       ]
-      },
-      {
-       "id": "PB1-1-1-2-K4",
-       "text": "Du kannst zu Wasserfall-, V- und Spiralmodell je einen typischen Einsatzfall nennen: feste, gut bekannte Anforderungen; hohe Anforderungen an nachweisbare Tests; große, neuartige Vorhaben mit hohem Risiko.",
-       "stufe": 1,
-       "herkunft": [
-        "katalog:AP2b.04.02.1.1",
-        "katalog:AP2b.04.02.1.2",
-        "katalog:AP2b.04.02.1.3"
        ]
       }
      ],
@@ -179,7 +170,7 @@
      "koennen": [
       {
        "id": "PB1-1-1-3-K1",
-       "text": "Du kannst Elemente von Scrum beschreiben: Product Backlog mit den Anforderungen als User Stories, Sprint Backlog, Sprint von zwei bis vier Wochen, Daily Scrum von etwa 15 Minuten, Sprint Review mit dem Kunden und Retrospektive.",
+       "text": "Du kannst über den Sprint-Ablauf aus AP1 hinaus die Artefakte und Zeitrahmen von Scrum beschreiben: Product Backlog mit den Anforderungen als User Stories, Sprint Backlog, Inkrement; Sprint höchstens ein Monat (meist zwei bis vier Wochen), Daily Scrum etwa 15 Minuten.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.02.2.1",
@@ -190,7 +181,7 @@
       },
       {
        "id": "PB1-1-1-3-K2",
-       "text": "Du kannst die Aufgaben der Scrum-Rollen beschreiben: Der Product Owner pflegt und ordnet das Product Backlog, der Scrum Master sorgt dafür, dass das Team ungestört und nach den Regeln arbeiten kann, das Entwicklungsteam setzt die Anforderungen im Sprint um.",
+       "text": "Du kannst die Aufgaben der Scrum-Rollen beschreiben: Der Product Owner pflegt und ordnet das Product Backlog, der Scrum Master sorgt dafür, dass das Team ungestört und nach den Regeln arbeiten kann, die Entwickler (Developers, früher „Entwicklungsteam“) setzen die Anforderungen im Sprint um.",
        "stufe": 2,
        "herkunft": [
         "beleg:2022W-PB1-A2-bb"
@@ -198,12 +189,13 @@
       },
       {
        "id": "PB1-1-1-3-K3",
-       "text": "Du kannst den Aufbau einer User Story erläutern: Rolle, gewünschte Funktion und Nutzen nach dem Muster „Als <Rolle> möchte ich <Funktion>, damit <Nutzen>“; erstellt wird sie vom Produktverantwortlichen oder einem Teammitglied.",
+       "text": "Du kannst den Aufbau einer User Story erläutern: Rolle, gewünschte Funktion und Nutzen nach dem Muster „Als <Rolle> möchte ich <Funktion>, damit <Nutzen>“.",
        "stufe": 2,
        "herkunft": [
         "beleg:2023W-PB1-A2-aa",
         "beleg:2023W-PB1-A2-ab"
-       ]
+       ],
+       "vorgegeben": "englischer Text mit Muster (2023W)"
       },
       {
        "id": "PB1-1-1-3-K4",
@@ -211,7 +203,8 @@
        "stufe": 2,
        "herkunft": [
         "beleg:2023W-PB1-A2-ac"
-       ]
+       ],
+       "vorgegeben": "englischer Text mit den INVEST-Begriffen (2023W)"
       },
       {
        "id": "PB1-1-1-3-K5",
@@ -231,13 +224,13 @@
   },
   {
    "id": "PB1-1-2",
-   "titel": "Projektumfeld eines Softwareprojekts",
-   "satz": "Machbarkeit, Risiken und Menschen im Projekt. Die Grundlagen (Stakeholder, Risikobewertung, Veränderungsprozesse, Kalkulation) kommen aus AP1; hier steht, was PB1 darüber hinaus fragt.",
+   "titel": "Projektumfeld und Anforderungen",
+   "satz": "Machbarkeit, Risiken und Menschen im Projekt, dann vom Wunsch des Kunden zur prüfbaren Anforderung. Die Grundlagen (Stakeholder, Risikobewertung, Veränderungsprozesse, Kalkulation, Lasten- und Pflichtenheft) kommen aus AP1; hier steht, was PB1 darüber hinaus fragt.",
    "stichpunkte": [
     {
      "id": "PB1-1-2-1",
-     "titel": "Machbarkeit, Umfeld und Projektrisiken",
-     "ziel": "Machbarkeit und Umfeld eines Softwareprojekts anhand von Kriterien prüfen und Projektrisiken mit Ursache, Auswirkung und Gegenmaßnahme beschreiben.",
+     "titel": "Machbarkeit, Risiken, Änderungen und Kosten",
+     "ziel": "Machbarkeit und Umfeld eines Softwareprojekts anhand von Kriterien prüfen, Projektrisiken mit Ursache, Auswirkung und Gegenmaßnahme beschreiben, Änderungswünsche geordnet behandeln und die Kostenarten kennen. Den Projektabschluss (Abnahme, Soll-Ist-Vergleich, Lessons Learned) kennst du aus AP1.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -260,6 +253,27 @@
       },
       {
        "id": "AP1.07.02.2"
+      },
+      {
+       "id": "ZB.change-request"
+      },
+      {
+       "id": "AP1.01.01.2.6"
+      },
+      {
+       "id": "AP1.07.07.3"
+      },
+      {
+       "id": "AP1.01.02.2"
+      },
+      {
+       "id": "AP1.03.04.1"
+      },
+      {
+       "id": "AP1.07.06.1"
+      },
+      {
+       "id": "AP1.07.07.1"
       }
      ],
      "teilaufgaben": [
@@ -268,7 +282,10 @@
       "2023S-PB1-A1-b",
       "2025W-PB1-A1-c",
       "2022S-PB1-A2-a",
-      "2023W-PB1-A1-c"
+      "2023W-PB1-A1-c",
+      "2024W-PB1-A1-c",
+      "2023S-PB1-A1-d",
+      "2025S-PB1-A1-c"
      ],
      "koennen": [
       {
@@ -290,26 +307,36 @@
       },
       {
        "id": "PB1-1-2-1-K3",
-       "text": "Du kannst zu einem Projektrisiko Ursache und Auswirkung bestimmen und in eine Risikotabelle eintragen, zum Beispiel unterschätzter Entwicklungsaufwand wegen fehlender Erfahrung mit den Abläufen des Kunden → Verzögerung und Mehrkosten.",
+       "text": "Du kannst zu einem Projektrisiko oder einem beschriebenen Problem Ursache, Auswirkung und Gegenmaßnahme in eine Risikotabelle eintragen, zum Beispiel unterschätzter Aufwand wegen fehlender Erfahrung mit den Abläufen des Kunden → Verzögerung und Mehrkosten; sich ändernde Anforderungen → agiles Vorgehen mit regelmäßigen Reviews.",
        "stufe": 3,
        "herkunft": [
-        "beleg:2023S-PB1-A1-b"
-       ]
-      },
-      {
-       "id": "PB1-1-2-1-K4",
-       "text": "Du kannst zu einem beschriebenen Problem das Projektrisiko und eine Gegenmaßnahme beschreiben, zum Beispiel sich ändernde Anforderungen → agiles Vorgehen mit regelmäßigen Reviews; mangelhafte Kommunikation → feste Abstimmungstermine und gemeinsame Dokumentation.",
-       "stufe": 2,
-       "herkunft": [
+        "beleg:2023S-PB1-A1-b",
         "beleg:2025W-PB1-A1-c"
        ]
       },
       {
-       "id": "PB1-1-2-1-K5",
-       "text": "Du kannst beschreiben, was unter Green IT zu verstehen ist, und Ziele nennen: Informationstechnik über den ganzen Lebenszyklus umweltschonend herstellen, betreiben und entsorgen, um Energie effizienter zu nutzen, Ressourcen zu schonen und das Klima zu schützen.",
+       "id": "PB1-1-2-1-K4",
+       "text": "Du kannst beschreiben, was unter Green IT zu verstehen ist: Informationstechnik über den ganzen Lebenszyklus umweltschonend herstellen, betreiben und entsorgen; Ziele sind Energieeffizienz, Ressourcenschonung und Klimaschutz (Energieeffizienz am Arbeitsplatz: AP1-4-3-3).",
        "stufe": 2,
        "herkunft": [
         "beleg:2023W-PB1-A1-c"
+       ]
+      },
+      {
+       "id": "PB1-1-2-1-K5",
+       "text": "Du kannst Change-Request-Management erläutern: Änderungswünsche während des Projekts werden schriftlich erfasst, nach Aufwand, Kosten und Folgen für Termine bewertet, entschieden und erst dann umgesetzt und dokumentiert.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:ZB.change-request",
+        "beleg:2024W-PB1-A1-c"
+       ]
+      },
+      {
+       "id": "PB1-1-2-1-K6",
+       "text": "Du kannst Kostenarten eines Softwareprojekts mit je einem Beispiel nennen: Personalkosten (eigene und externe Entwickler), Software- und Lizenzkosten, Hardwarekosten, Kommunikationskosten, Qualifizierungskosten.",
+       "stufe": 1,
+       "herkunft": [
+        "beleg:2023S-PB1-A1-d"
        ]
       }
      ],
@@ -318,9 +345,13 @@
       "AP1-1-1-3",
       "AP1-3-2-4",
       "AP1-4-3-3",
-      "AP1-2-4-1"
+      "AP1-2-4-1",
+      "AP1-1-2-3",
+      "AP1-1-4-3",
+      "AP1-3-1-1",
+      "AP1-1-4-2"
      ],
-     "hinweis": "Fremdvergabe (2022S-PB1-A2-a) ist vollständig in AP1-3-2-4 abgedeckt und wird nur importiert."
+     "hinweis": "Fremdvergabe (2022S-PB1-A2-a) ist in AP1-3-2-4 abgedeckt und wird importiert; als Vorteile zusätzlich Festpreis und Kostenkontrolle, Know-how des Dienstleisters. Meilenstein, Stakeholder und Lessons Learned aus 2024W-PB1-A1-c sind in AP1 erklärt (AP1-1-2-3, AP1-1-1-3, AP1-1-4-3). Das Abnahmeprotokoll steht in PB1-9."
     },
     {
      "id": "PB1-1-2-2",
@@ -364,24 +395,17 @@
       },
       {
        "id": "PB1-1-2-2-K2",
-       "text": "Du kannst Befürchtungen von Stakeholdern passende Gegenmaßnahmen zuordnen, zum Beispiel Kostenangst → laufendes Kosten-Controlling; Überforderung → Schulungen; Angst um den Arbeitsplatz → Beschäftigungszusage; Termindruck → Pufferzeiten und enges Termincontrolling.",
+       "text": "Du kannst Befürchtungen von Stakeholdern passende Gegenmaßnahmen zuordnen, zum Beispiel Kostenangst → laufendes Kosten-Controlling; Überforderung → Schulungen; Angst um den Arbeitsplatz → Beschäftigungszusage; Termindruck → Pufferzeiten und enges Termincontrolling; bei Konflikten wie der Angst vor Arbeitsplatzverlust Betroffene früh einbinden und Entscheider wie Geschäftsführung oder Personalrat beteiligen.",
        "stufe": 2,
        "herkunft": [
         "beleg:2022S-PB1-A1-b",
-        "beleg:2024S-PB1-A1-d"
-       ]
-      },
-      {
-       "id": "PB1-1-2-2-K3",
-       "text": "Du kannst Schritte beschreiben, mit denen ein Konflikt wie die Angst vor Arbeitsplatzverlust im Projekt bewältigt wird: Betroffene früh einbinden, ihre Befürchtungen erfragen, gemeinsam Lösungen suchen, Entscheider wie Geschäftsführung oder Personalrat beteiligen.",
-       "stufe": 2,
-       "herkunft": [
+        "beleg:2024S-PB1-A1-d",
         "beleg:2023S-PB1-A1-a"
        ]
       },
       {
-       "id": "PB1-1-2-2-K4",
-       "text": "Du kannst Ziele eines Workshops zur Einführung eines neuen (z. B. KI-gestützten) Systems erläutern: Ziele und Vorteile vermitteln, Folgen des Ist-Zustands bewusst machen, Befürworter, Gegner und Unentschlossene erkennen, Befürworter bestärken.",
+       "id": "PB1-1-2-2-K3",
+       "text": "Du kannst Ziele eines Workshops zur Einführung eines neuen (z. B. KI-gestützten) Systems erläutern; neu gegenüber AP1 (Chancen vermitteln, Promotoren und Bremser erkennen) ist vor allem, die Folgen des Ist-Zustands bewusst zu machen.",
        "stufe": 2,
        "herkunft": [
         "beleg:2023W-PB1-A1-b"
@@ -396,91 +420,8 @@
     },
     {
      "id": "PB1-1-2-3",
-     "titel": "Änderungen, Kosten und Abschluss im Softwareprojekt",
-     "ziel": "Mit Änderungswünschen geordnet umgehen, die Kostenarten eines Softwareprojekts kennen und den Projektabschluss vorbereiten.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
-      {
-       "id": "ZB.change-request"
-      },
-      {
-       "id": "AP1.01.01.2.6"
-      },
-      {
-       "id": "AP1.07.07.3"
-      },
-      {
-       "id": "AP1.01.02.2"
-      },
-      {
-       "id": "AP1.03.04.1"
-      },
-      {
-       "id": "AP1.07.06.1"
-      },
-      {
-       "id": "AP1.07.07.1"
-      },
-      {
-       "id": "AP2a.03.02.5",
-       "anteil": "Abschlussprotokoll"
-      }
-     ],
-     "teilaufgaben": [
-      "2024W-PB1-A1-c",
-      "2023S-PB1-A1-d",
-      "2025S-PB1-A1-c"
-     ],
-     "koennen": [
-      {
-       "id": "PB1-1-2-3-K1",
-       "text": "Du kannst Change-Request-Management erläutern: Änderungswünsche während des Projekts werden schriftlich erfasst, nach Aufwand, Kosten und Folgen für Termine bewertet, entschieden und erst dann umgesetzt und dokumentiert.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:ZB.change-request",
-        "beleg:2024W-PB1-A1-c"
-       ]
-      },
-      {
-       "id": "PB1-1-2-3-K2",
-       "text": "Du kannst Kostenarten eines Softwareprojekts mit je einem Beispiel nennen: Personalkosten (eigene und externe Entwickler), Software- und Lizenzkosten, Hardwarekosten, Kommunikationskosten, Qualifizierungskosten.",
-       "stufe": 1,
-       "herkunft": [
-        "beleg:2023S-PB1-A1-d"
-       ]
-      },
-      {
-       "id": "PB1-1-2-3-K3",
-       "text": "Du kannst Aufgaben zur Vorbereitung eines Abschlussprotokolls beschreiben: Ergebnisse mit den Projektzielen vergleichen (Leistung, Termine, Kosten), offene Punkte und Mängel sammeln, Abnahme und Übergabe festhalten, Erfahrungen für künftige Projekte dokumentieren.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2a.03.02.5",
-        "beleg:2025S-PB1-A1-c"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-1-2-3",
-      "AP1-1-4-3",
-      "AP1-3-1-3",
-      "AP1-3-1-1",
-      "AP1-1-4-2"
-     ],
-     "hinweis": "Meilenstein, Stakeholder und Lessons Learned aus 2024W-PB1-A1-c sind in AP1 erklärt (AP1-1-2-3, AP1-1-1-3, AP1-1-4-3) und werden importiert."
-    }
-   ]
-  },
-  {
-   "id": "PB1-1-3",
-   "titel": "Anforderungen und Spezifikation",
-   "satz": "Vom Wunsch des Kunden zur prüfbaren Anforderung: Lasten- und Pflichtenheft, funktionale und nichtfunktionale Anforderungen, Qualitätsmerkmale nach ISO/IEC 25010.",
-   "stichpunkte": [
-    {
-     "id": "PB1-1-3-1",
-     "titel": "Lasten- und Pflichtenheft erstellen",
-     "ziel": "Für ein Softwareprojekt ein Lastenheft in Grundzügen erstellen und daraus die Gliederung des Pflichtenhefts ableiten. Zweck und Urheber beider Dokumente kennst du aus AP1.",
+     "titel": "Anforderungen ableiten, Lasten- und Pflichtenheft",
+     "ziel": "Anforderungen aus einer Situationsbeschreibung oder einem bestehenden Ablauf herausarbeiten, nach funktional und nichtfunktional ordnen und prüfbar in Lasten- und Pflichtenheft festhalten. Zweck und Urheber beider Dokumente kennst du aus AP1.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -490,52 +431,7 @@
       },
       {
        "id": "AP2b.04.05",
-       "anteil": "Programmspezifikation festlegen"
-      }
-     ],
-     "teilaufgaben": [],
-     "koennen": [
-      {
-       "id": "PB1-1-3-1-K1",
-       "text": "Du kannst für ein beschriebenes Softwareprojekt ein Lastenheft in Grundzügen erstellen: Ausgangslage und Ziel, Produkteinsatz und Zielgruppen, funktionale Anforderungen, nichtfunktionale Anforderungen, Rahmenbedingungen, Abnahmekriterien.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.01"
-       ]
-      },
-      {
-       "id": "PB1-1-3-1-K2",
-       "text": "Du kannst aus einem Lastenheft die Gliederung eines Pflichtenhefts ableiten: zu jeder Anforderung die geplante Lösung, die technische Umsetzung (Architektur, Datenmodell, Schnittstellen, Programmiersprache) und wie die Erfüllung bei der Abnahme geprüft wird.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.01",
-        "katalog:AP2b.04.05"
-       ]
-      },
-      {
-       "id": "PB1-1-3-1-K3",
-       "text": "Du kannst Anforderungen im Lasten- oder Pflichtenheft prüfbar formulieren, zum Beispiel „Suchergebnisse erscheinen nach höchstens zwei Sekunden“ statt „die Suche ist schnell“.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.01"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-2-2-2"
-     ]
-    },
-    {
-     "id": "PB1-1-3-2",
-     "titel": "Funktionale und nichtfunktionale Anforderungen ableiten",
-     "ziel": "Anforderungen aus einer Situationsbeschreibung oder einem bestehenden Ablauf herausarbeiten, nach funktional und nichtfunktional ordnen und daraus die Programmspezifikation festlegen.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
-      {
-       "id": "AP2b.04.05",
-       "anteil": "Anforderungen ableiten"
+       "anteil": "Anforderungen ableiten, Programmspezifikation im Pflichtenheft"
       },
       {
        "id": "AP2b.03.01.4",
@@ -558,7 +454,24 @@
      ],
      "koennen": [
       {
-       "id": "PB1-1-3-2-K1",
+       "id": "PB1-1-2-3-K1",
+       "text": "Du kannst für ein beschriebenes Softwareprojekt ein Lastenheft in Grundzügen erstellen: Ausgangslage und Ziel, Produkteinsatz und Zielgruppen, funktionale Anforderungen, nichtfunktionale Anforderungen, Rahmenbedingungen, Abnahmekriterien.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.01"
+       ]
+      },
+      {
+       "id": "PB1-1-2-3-K2",
+       "text": "Du kannst aus einem Lastenheft die Gliederung eines Pflichtenhefts ableiten: zu jeder Anforderung die geplante Lösung, die technische Umsetzung (Architektur, Datenmodell, Schnittstellen, Programmiersprache) und wie die Erfüllung bei der Abnahme geprüft wird.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.01",
+        "katalog:AP2b.04.05"
+       ]
+      },
+      {
+       "id": "PB1-1-2-3-K3",
        "text": "Du kannst funktionale Anforderungen (was die Software tun soll, z. B. Preise berechnen, Benutzer authentifizieren, Push-Benachrichtigungen senden) und nichtfunktionale Anforderungen (wie gut sie es tun soll, z. B. Verfügbarkeit, Zuverlässigkeit, Usability, Fehlertoleranz, Performance) unterscheiden.",
        "stufe": 2,
        "herkunft": [
@@ -571,8 +484,8 @@
        ]
       },
       {
-       "id": "PB1-1-3-2-K2",
-       "text": "Du kannst aus einer Situationsbeschreibung funktionale und nichtfunktionale Anforderungen an eine Anwendung oder eine IT-Infrastruktur ableiten und so beschreiben, dass ihre Erfüllung geprüft werden kann.",
+       "id": "PB1-1-2-3-K4",
+       "text": "Du kannst aus einer Situationsbeschreibung funktionale und nichtfunktionale Anforderungen an eine Anwendung oder eine IT-Infrastruktur ableiten und so beschreiben, dass ihre Erfüllung geprüft werden kann, zum Beispiel „Suchergebnisse erscheinen nach höchstens zwei Sekunden“ statt „die Suche ist schnell“.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.05",
@@ -582,27 +495,23 @@
        ]
       },
       {
-       "id": "PB1-1-3-2-K3",
+       "id": "PB1-1-2-3-K5",
        "text": "Du kannst Probleme eines bestehenden, papiergestützten Ablaufs benennen und erläutern, wie eine Digitalisierung sie löst, zum Beispiel Medienbrüche, doppelte Erfassung, schlecht lesbare Notizen, fehlender Zugriff auf aktuelle Informationen.",
        "stufe": 2,
        "herkunft": [
         "beleg:2025S-PB1-A3-b"
        ]
-      },
-      {
-       "id": "PB1-1-3-2-K4",
-       "text": "Du kannst aus einer fachlichen Beschreibung ableiten, welche Daten, Funktionen und Schnittstellen eine Lösung braucht, und damit die Programmspezifikation festlegen.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.04.05"
-       ]
       }
-     ]
+     ],
+     "baut_auf": [
+      "AP1-2-2-2"
+     ],
+     "hinweis": "Die IHK-Lösungen 2022S-PB1-A2-b und 2023S-PB1-A1-c zählen „läuft auf gängigen mobilen Systemen“ zu den funktionalen Anforderungen; fachlich ist es Übertragbarkeit, also nichtfunktional. In der Prüfung beides mit Begründung akzeptabel."
     },
     {
-     "id": "PB1-1-3-3",
-     "titel": "Qualitätsmerkmale von Software (ISO/IEC 25010)",
-     "ziel": "Die Qualitätsmerkmale von Software kennen, Anforderungen nach ihnen erfassen und die Norm als Grundlage anwenden.",
+     "id": "PB1-1-2-4",
+     "titel": "Qualitätsmerkmale von Software (ISO/IEC 9126 / 25010)",
+     "ziel": "Die Qualitätsmerkmale von Software kennen, Anforderungen nach ihnen gliedern und die Norm als Grundlage anwenden.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -645,8 +554,8 @@
      ],
      "koennen": [
       {
-       "id": "PB1-1-3-3-K1",
-       "text": "Du kannst die Qualitätsmerkmale Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit bzw. Erweiterbarkeit, Übertragbarkeit und Wartbarkeit nennen und erläutern, zum Beispiel Effizienz: das Ergebnis mit möglichst wenig Rechenzeit und Speicher; Änderbarkeit: Anpassungen mit geringem Aufwand.",
+       "id": "PB1-1-2-4-K1",
+       "text": "Du kannst die Qualitätsmerkmale Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit bzw. Erweiterbarkeit, Übertragbarkeit und Wartbarkeit nennen und erläutern, zum Beispiel Effizienz: das Ergebnis mit möglichst wenig Rechenzeit und Speicher; Änderbarkeit: Anpassungen mit geringem Aufwand. Änderbarkeit (Name in ISO 9126) und Wartbarkeit (ISO 25010) meinen dasselbe Merkmal.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.03.01.1",
@@ -658,10 +567,11 @@
         "katalog:AP2b.03.01.7",
         "beleg:2021W-PB1-A4-ca",
         "beleg:2023S-PB1-A2-a"
-       ]
+       ],
+       "vorgegeben": "Normtext, auch englisch"
       },
       {
-       "id": "PB1-1-3-3-K2",
+       "id": "PB1-1-2-4-K2",
        "text": "Du kannst eine beschriebene Anforderung dem passenden Qualitätsmerkmal zuordnen, zum Beispiel „läuft unter Android und iOS“ der Übertragbarkeit.",
        "stufe": 2,
        "herkunft": [
@@ -671,10 +581,11 @@
        ]
       },
       {
-       "id": "PB1-1-3-3-K3",
-       "text": "Du kannst Anforderungen an eine geplante Anwendung nach den Qualitätsmerkmalen erfassen: zu jedem Merkmal eine prüfbare Anforderung formulieren, zum Beispiel Antwortzeit unter zwei Sekunden (Effizienz) oder neue Zahlungsarten ohne Umbau ergänzbar (Erweiterbarkeit).",
+       "id": "PB1-1-2-4-K3",
+       "text": "Du kannst die Norm als Grundlage anwenden und Anforderungen an eine geplante Anwendung nach den Qualitätsmerkmalen gliedern, zum Beispiel Antwortzeit (Effizienz) oder neue Zahlungsarten ohne Umbau ergänzbar (Erweiterbarkeit).",
        "stufe": 3,
        "herkunft": [
+        "katalog:AP2b.03.01.8",
         "katalog:AP2b.03.01.1",
         "katalog:AP2b.03.01.2",
         "katalog:AP2b.03.01.3",
@@ -683,16 +594,6 @@
         "katalog:AP2b.03.01.6",
         "katalog:AP2b.03.01.7"
        ]
-      },
-      {
-       "id": "PB1-1-3-3-K4",
-       "text": "Du kannst die Norm ISO/IEC 25010 (Nachfolgerin von ISO/IEC 9126) als Grundlage anwenden: Merkmale und ihre Bedeutung aus einem auch englischen Normtext entnehmen und auf Deutsch erläutern.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.03.01.8",
-        "beleg:2023S-PB1-A2-a"
-       ],
-       "vorgegeben": "englischer Normtext"
       }
      ],
      "baut_auf": [
@@ -709,11 +610,11 @@
      ],
      "kuer": [
       {
-       "text": "Weitere Merkmale der ISO/IEC 25010 wie Sicherheit und Kompatibilität.",
+       "text": "Die aktuelle ISO/IEC 25010:2023 mit neun Hauptmerkmalen, u. a. Sicherheit (Security), Kompatibilität, Interaktionsfähigkeit (statt Benutzbarkeit), Flexibilität (statt Übertragbarkeit) und Safety.",
        "quellen": [
         "podcast:themen-ap2"
        ],
-       "grund": "Nur Hinweisquelle; der Katalog zählt sie nicht auf. Vom Katalog nicht ausgeschlossen."
+       "grund": "Nur Hinweisquelle; der Katalog zählt die Merkmale der älteren Fassung auf. Vom Katalog nicht ausgeschlossen."
       }
      ]
     }
@@ -738,7 +639,7 @@
     "alt": "AP2-1-1-1-K3",
     "status": "angepasst",
     "neu": "PB1-1-1-2-K3",
-    "grund": "als Unterscheidung (Katalog: unterscheiden); Beschreibung Wasserfall in AP1-1-1-2"
+    "grund": "Wasserfall beschreiben und Einsatzfälle unterscheiden (Katalog: unterscheiden); Grundlagen in AP1-1-1-2"
    },
    {
     "alt": "AP2-1-1-1-K4",
@@ -760,24 +661,24 @@
    {
     "alt": "AP2-1-1-2-K1",
     "status": "angepasst",
-    "neu": "PB1-1-3-2-K2",
+    "neu": "PB1-1-2-3-K4",
     "grund": "auf funktionale und nichtfunktionale Anforderungen nach 2022S-PB1-A2-b zugespitzt"
    },
    {
     "alt": "AP2-1-1-2-K2",
     "status": "verschoben",
-    "neu": "PB1-1-3-2-K1"
+    "neu": "PB1-1-2-3-K3"
    },
    {
     "alt": "AP2-1-1-2-K3",
     "status": "angepasst",
-    "neu": "PB1-1-3-1-K1",
+    "neu": "PB1-1-2-3-K1",
     "grund": "Katalog: Lastenheft erstellen (Stufe 3) statt Gliederung nennen"
    },
    {
     "alt": "AP2-1-1-2-K4",
     "status": "angepasst",
-    "neu": "PB1-1-3-1-K2",
+    "neu": "PB1-1-2-3-K2",
     "grund": "als Ableiten des Pflichtenhefts; der Zweck steht in AP1-2-2-2"
    },
    {
@@ -788,14 +689,14 @@
    },
    {
     "alt": "AP2-1-1-3-K2",
-    "status": "verschoben",
-    "neu": "PB1-1-2-1-K4"
+    "status": "angepasst",
+    "neu": "PB1-1-2-1-K3",
+    "grund": "mit Ursache und Auswirkung in einer Risikotabelle (Prüferfund PB1-1 Nr. 2)"
    },
    {
     "alt": "AP2-1-1-3-K3",
-    "status": "angepasst",
-    "neu": "PB1-1-2-3-K3",
-    "grund": "als Vorbereitung des Abschlussprotokolls (2025S-PB1-A1-c); Soll-Ist-Vergleich selbst in AP1-1-4-3"
+    "status": "gestrichen",
+    "grund": "E2: Abschluss, Soll-Ist-Vergleich und Lessons Learned stehen in AP1-1-4-2/-3; Abnahmeprotokoll in PB1-9"
    },
    {
     "alt": "AP2-1-1-3-K4",
@@ -806,7 +707,7 @@
    {
     "alt": "AP2-1-1-3-K5",
     "status": "angepasst",
-    "neu": "PB1-1-2-3-K1",
+    "neu": "PB1-1-2-1-K5",
     "grund": "nur Change Request neu; Meilenstein, Stakeholder, Lessons Learned werden aus AP1 importiert"
    },
    {
@@ -832,25 +733,25 @@
    {
     "alt": "AP2-1-3-1-K1",
     "status": "angepasst",
-    "neu": "PB1-1-3-3-K1",
+    "neu": "PB1-1-2-4-K1",
     "grund": "Beispiele laut 2021W-PB1-A4-ca"
    },
    {
     "alt": "AP2-1-3-1-K2",
     "status": "verschoben",
-    "neu": "PB1-1-3-3-K2"
+    "neu": "PB1-1-2-4-K2"
    },
    {
     "alt": "AP2-1-3-1-K3",
     "status": "angepasst",
-    "neu": "PB1-1-3-3-K1",
+    "neu": "PB1-1-2-4-K1",
     "grund": "in die Erläuterung aller Merkmale aufgenommen"
    },
    {
     "alt": "AP2-1-3-1-K4",
     "status": "angepasst",
-    "neu": "PB1-1-3-3-K4",
-    "grund": "Katalog: Normen anwenden (AP2b.03.01.8)"
+    "neu": "PB1-1-2-4-K3",
+    "grund": "Katalog: Normen anwenden (AP2b.03.01.8); Normtext vorgegeben (B4)"
    },
    {
     "alt": "AP2-1-3-1-K5",
@@ -860,13 +761,14 @@
    {
     "alt": "AP2-1-3-1-K6",
     "status": "angepasst",
-    "neu": "PB1-1-3-3-K3",
+    "neu": "PB1-1-2-4-K3",
     "grund": "Katalog: Anforderungen erfassen (Stufe 3)"
    },
    {
     "alt": "AP2-1-3-2-K4",
-    "status": "verschoben",
-    "neu": "PB1-1-3-2-K4"
+    "status": "angepasst",
+    "neu": "PB1-1-2-3-K2",
+    "grund": "Programmspezifikation = technische Umsetzung im Pflichtenheft"
    }
   ],
   "rahmen": []
@@ -879,7 +781,7 @@
   "kerntest": {
    "stand": "2026-10-14",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Alle Teilaufgaben des Ordners gegen ihre Musterlösung gelesen (2025S ohne Lösungshinweise: nur Aufgabe). Teilaufgaben, die nur AP1-Inhalte verlangen (Fremdvergabe, Meilenstein, Lessons Learned), sind über baut_auf importiert; neu geschrieben wurde nur, was die PB1-Lösung darüber hinaus erwartet (Kriterien der Machbarkeit, Umfeld, Workshop-Ziele, Change Request, Kostenarten eines Softwareprojekts)."
+   "ergebnis": "Nach der unabhängigen Prüfung (umbau/berichte/PB1-1-pruefer.md) überarbeitet: Doppelungen zu AP1 und innerhalb PB1 entfernt. Alle Teilaufgaben des Ordners gegen ihre Musterlösung gelesen (2025S ohne Lösungshinweise: nur Aufgabe). Teilaufgaben, die nur AP1-Inhalte verlangen (Fremdvergabe, Meilenstein, Lessons Learned), sind über baut_auf importiert; neu geschrieben wurde nur, was die PB1-Lösung darüber hinaus erwartet (Kriterien der Machbarkeit, Umfeld, Workshop-Ziele, Change Request, Kostenarten eines Softwareprojekts)."
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
@@ -899,8 +801,7 @@
      "ring": "Kern",
      "wo": [
       "PB1-1-1-1-K1",
-      "PB1-1-1-1-K2",
-      "PB1-1-1-1-K3"
+      "PB1-1-1-1-K2"
      ]
     },
     {
@@ -937,8 +838,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-3-2-K1",
-      "PB1-1-3-2-K2"
+      "PB1-1-2-3-K3",
+      "PB1-1-2-3-K4"
      ]
     },
     {
@@ -948,7 +849,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-3-2-K3"
+      "PB1-1-2-3-K5"
      ]
     },
     {
@@ -958,8 +859,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-3-2-K4",
-      "PB1-1-3-1-K2"
+      "PB1-1-2-3-K2"
      ]
     },
     {
@@ -969,9 +869,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-3-3-K1",
-      "PB1-1-3-3-K3",
-      "PB1-1-3-3-K4"
+      "PB1-1-2-4-K1",
+      "PB1-1-2-4-K3"
      ]
     },
     {
@@ -1001,8 +900,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-2-1-K3",
-      "PB1-1-2-1-K4"
+      "PB1-1-2-1-K3"
      ]
     },
     {
@@ -1012,7 +910,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-2-1-K5"
+      "PB1-1-2-1-K4"
      ]
     },
     {
@@ -1033,8 +931,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-2-2-K3",
-      "PB1-1-2-2-K4"
+      "PB1-1-2-2-K2",
+      "PB1-1-2-2-K3"
      ]
     },
     {
@@ -1044,7 +942,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-2-2-K4"
+      "PB1-1-2-2-K3"
      ]
     },
     {
@@ -1054,7 +952,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-2-3-K2"
+      "PB1-1-2-1-K6"
      ]
     },
     {
@@ -1064,7 +962,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-2-3-K1"
+      "PB1-1-2-1-K5"
      ],
      "notiz": "Meilenstein und Lessons Learned aus AP1 importiert"
     },
@@ -1073,10 +971,11 @@
      "quellen": [
       "podcast:themen-pb1"
      ],
-     "ring": "Kern",
+     "ring": "Ordner",
      "wo": [
-      "PB1-1-2-3-K3"
-     ]
+      "PB1-9"
+     ],
+     "notiz": "Abnahmeprotokoll in PB1-9, Abschluss in AP1-1-4-3"
     },
     {
      "thema": "Fremdvergabe",
@@ -1096,7 +995,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-1-3-3-K4"
+      "PB1-1-2-4-K1"
      ]
     },
     {
@@ -1106,8 +1005,19 @@
      ],
      "ring": "Kür",
      "wo": [
-      "PB1-1-3-3"
+      "PB1-1-2-4"
      ]
+    },
+    {
+     "thema": "Vorgehensmodell begründet auswählen",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-1-1"
+     ],
+     "notiz": "betriebliche Handlung (P26)"
     }
    ]
   },
@@ -1118,13 +1028,11 @@
     "abgedeckt": {
      "klassisch": [
       "PB1-1-1-1-K1",
-      "PB1-1-1-1-K2",
-      "PB1-1-1-1-K3"
+      "PB1-1-1-1-K2"
      ],
      "agil": [
       "PB1-1-1-1-K1",
       "PB1-1-1-1-K2",
-      "PB1-1-1-1-K3",
       "PB1-1-1-3-K1"
      ]
     }
@@ -1151,10 +1059,10 @@
     "paar": "Lastenheft / Pflichtenheft",
     "abgedeckt": {
      "Lastenheft": [
-      "PB1-1-3-1-K1"
+      "PB1-1-2-3-K1"
      ],
      "Pflichtenheft": [
-      "PB1-1-3-1-K2"
+      "PB1-1-2-3-K2"
      ]
     }
    }
