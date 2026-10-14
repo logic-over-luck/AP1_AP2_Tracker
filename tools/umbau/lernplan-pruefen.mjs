@@ -213,11 +213,17 @@ if (!NEU_IDS) {
   for (const s of altSP) if (!spIds.includes(s.id)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
 } else {
   // P33: alte AP2-Aussagen werden mit neuer ID verschoben/angepasst, gestrichen oder für PB2 vermerkt
-  const altAP2 = new Set(alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id)));
-  const STATUS = new Set(['verschoben', 'angepasst', 'gestrichen', 'PB2']);
+  // PB1: alle alten AP2-Aussagen; PB2: nur die in PB1 als „PB2“ vermerkten, Status ohne „PB2“
+  let altAP2 = new Set(alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id)));
+  if (TEIL === 'PB2') {
+    altAP2 = new Set();
+    for (const f of readdirSync('umbau/lernplan/pb1').filter((x) => x.endsWith('.json')))
+      for (const x of JSON.parse(readFileSync(`umbau/lernplan/pb1/${f}`, 'utf8')).alt_neu?.koennen ?? []) if (x.status === 'PB2') altAP2.add(x.alt);
+  }
+  const STATUS = new Set(TEIL === 'PB2' ? ['verschoben', 'angepasst', 'gestrichen'] : ['verschoben', 'angepasst', 'gestrichen', 'PB2']);
   altK = an.map((x) => x.alt);
   for (const x of an) {
-    if (!altAP2.has(x.alt)) F(`ALT: ${x.alt} ist keine alte AP2-Können-Aussage`);
+    if (!altAP2.has(x.alt)) F(`ALT: ${x.alt} ist keine alte AP2-Können-Aussage${TEIL === 'PB2' ? ', die PB1 für PB2 vermerkt hat' : ''}`);
     if (!STATUS.has(x.status)) F(`ALT: ${x.alt}: unbekannter Status ${x.status} (P33: verschoben, angepasst, gestrichen, PB2)`);
     if ((x.status === 'verschoben' || x.status === 'angepasst') && !kRaum.has(x.neu)) F(`ALT: ${x.alt}: Ziel ${x.neu} gibt es in ${TEIL} nicht`);
     if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${x.alt}: gestrichen ohne Grund`);
@@ -243,7 +249,7 @@ for (const t of abgleich) {
     if (t.ring === 'Kern' || t.ring === 'Puffer') { if (!kMap.has(w)) F(`${name}: Können-Aussage ${w} gibt es nicht`); }
     else if (t.ring === 'Kür') { if (!spMap.get(w)?.kuer?.length) F(`${name}: Stichpunkt ${w} hat keinen Kür-Eintrag`); }
     else if (t.ring === 'Außen') { if (!spMap.get(w)?.grenzen?.length) F(`${name}: Stichpunkt ${w} hat keine Grenze`); }
-    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+(-\d+)*|PB1-\d+(-\d+)*|AP1|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
+    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+(-\d+)*|PB1-\d+(-\d+)*|PB2-\d+(-\d+)*|AP1|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
   }
   if (t.ring === 'Puffer' && !t.wo.some((w) => kMap.get(w)?.herkunft.some((h) => h.startsWith('regel:')))) F(`${name}: Puffer, aber keine der Aussagen hat Herkunft regel:`);
 }

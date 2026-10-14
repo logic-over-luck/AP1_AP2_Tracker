@@ -62,11 +62,18 @@ for (const r of new Set(Object.values(belege).filter((x) => x.import).map((x) =>
 const t8 = Object.entries(belege).filter(([id, x]) => x.stufe && !id.startsWith('ANH.') && istGesamt(id, x) < x.stufe);
 for (const [id, x] of t8) fehler.push(`T8: ${id} braucht Stufe ${x.stufe}, erreicht ${x.import ? `(mit Import aus ${x.import}) ` : 'im Raum '}${istGesamt(id, x) || 'keine'}`);
 
-// ALT (ab PB1, P33): jede alte AP2-Können-Aussage genau einmal einsortiert
+// ALT (ab PB1, P33): jede alte AP2-Können-Aussage genau einmal einsortiert (PB2: die in PB1 für PB2 vermerkten)
+function altFuerPb2() {
+  const ids = new Set();
+  for (const f of readdirSync('umbau/lernplan/pb1').filter((x) => x.endsWith('.json')))
+    for (const x of JSON.parse(readFileSync(`umbau/lernplan/pb1/${f}`, 'utf8')).alt_neu?.koennen ?? []) if (x.status === 'PB2') ids.add(x.alt);
+  return ids;
+}
 let altBilanz = null;
-if (TEIL === 'PB1') {
+if (TEIL === 'PB1' || TEIL === 'PB2') {
   const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
-  const altK = alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id));
+  // PB1: alle alten AP2-Aussagen; PB2: die in PB1 als „PB2“ vermerkten
+  const altK = TEIL === 'PB1' ? alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id)) : [...altFuerPb2()];
   const eintraege = [];
   for (const f of ordner) eintraege.push(...(JSON.parse(readFileSync(`umbau/lernplan/${RAUM}/${f}`, 'utf8')).alt_neu?.koennen ?? []));
   for (const id of altK) {
@@ -84,7 +91,7 @@ const zeilen = [
   `- T1: ${pflicht.length} abdeckungspflichtige Bausteine (davon ${R.zusatzHier.length} Zusatzbausteine), ${t1.length} fehlen.`,
   `- T2b: ${aufgaben.length} Teilaufgaben, ${t2b.length} ohne Stichpunkt.`,
   `- T8: ${Object.values(belege).filter((x) => x.stufe).length} Bausteine mit belegter Tiefe, ${t8.length} nicht erreicht.`,
-  ...(altBilanz ? [`- ALT (P33): ${altBilanz.alt} alte AP2-Können-Aussagen → ${altBilanz.verschoben} verschoben, ${altBilanz.angepasst} angepasst, ${altBilanz.gestrichen} gestrichen, ${altBilanz.PB2} für PB2 vermerkt.`] : []), '',
+  ...(altBilanz ? [`- ALT (P33): ${altBilanz.alt} alte AP2-Können-Aussagen → ${altBilanz.verschoben} verschoben, ${altBilanz.angepasst} angepasst, ${altBilanz.gestrichen} gestrichen${TEIL === 'PB1' ? `, ${altBilanz.PB2} für PB2 vermerkt` : ''}.`] : []), '',
   '## Bausteine in mehreren Ordnern', '', '| Baustein | Ordner |', '|---|---|',
   ...geteilt.map(([id, s]) => `| ${id} | ${[...s].sort().join(', ')} |`), '',
   '## Fehler', '', ...(fehler.length ? fehler.map((x) => `- ${x}`) : ['keine']), '',
