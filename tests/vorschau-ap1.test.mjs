@@ -177,23 +177,29 @@ test('P27: Art neuer Stichpunkte aus den Aufgabentypen', () => {
 });
 
 // ---------- Vorschau PB1 (ersetzt in der App den Raum AP2) ----------
-describe('Vorschau PB1', () => {
+describe('Vorschau PB1 und PB2', () => {
   const cfg = RAEUME_VORSCHAU.PB1;
   const plaeneP = ladeLernplanAp1(wurzel, cfg);
+  const plaene2 = ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB2);
   const alle = vorschauAlle(alt, wurzel);
   const raum = alle.raeume.find((r) => r.id === 'PB1');
-  test('Raum PB1 zeigt die Gliederung von PB1, AP1 bleibt, AP2 gibt es nicht mehr, PB2 als Platzhalter', { skip: !plaeneP.length && 'kein PB1' }, () => {
+  test('Raum PB1 zeigt die Gliederung von PB1, AP1 bleibt, AP2 gibt es nicht mehr, PB2 neu oder als Platzhalter', { skip: !plaeneP.length && 'kein PB1' }, () => {
     assert.deepEqual(raum.ordner.map((o) => o.id), plaeneP.map((p) => p.oberblock.id));
     assert.deepEqual(alle.raeume.find((r) => r.id === 'AP1').ordner.map((o) => o.id), plaene.map((p) => p.oberblock.id));
     assert.equal(alle.vorschauRaeume.PB1.raum, 'PB1');
     assert.deepEqual(alle.raeume.map((r) => r.id), ['AP1', 'PB1', 'PB2', 'WISO']);
-    assert.ok(alle.vorschauRaeume.PB2.alt && alle.vorschauRaeume.PB2.stichpunkte > 0);
+    if (plaene2.length) {
+      assert.deepEqual(alle.raeume.find((r) => r.id === 'PB2').ordner.map((o) => o.id), plaene2.map((p) => p.oberblock.id));
+      assert.equal(alle.raeume.find((r) => r.id === 'PB2').name, 'PB2');
+      assert.equal(alle.vorschauRaeume.PB2.raum, 'PB2');
+      assert.equal(alle.vorschauRaeume.PB2.koennen, plaene2.reduce((n, p) => n + p.themenbloecke.flatMap((t) => t.stichpunkte).reduce((m, s) => m + s.koennen.length, 0), 0));
+    } else assert.ok(alle.vorschauRaeume.PB2.alt && alle.vorschauRaeume.PB2.stichpunkte > 0);
     assert.equal(alle.vorschauRaeume.AP1.raum, 'AP1');
   });
   test('keine alten AP2-Stichpunkte mehr, jede Karte hängt an einem vorhandenen Stichpunkt und einer Aussage', { skip: !plaeneP.length && 'kein PB1' }, () => {
     assert.equal(Object.values(alle.sp).filter((s) => s.raum === 'AP2').length, 0);
-    for (const s of Object.values(alle.sp).filter((s) => s.raum === 'PB2')) assert.ok(s.id.startsWith('AP2-') && s.koennen.length, s.id);
-    for (const [a, n] of Object.entries(alle.umzug.sp)) assert.ok(alle.sp[n]?.raum === 'PB1' && !alle.sp[a], `Umzug ${a} → ${n}`);
+    for (const s of Object.values(alle.sp).filter((s) => s.raum === 'PB2')) assert.ok(s.id.startsWith(plaene2.length ? 'PB2-' : 'AP2-') && s.koennen.length, s.id);
+    for (const [a, n] of Object.entries(alle.umzug.sp)) assert.ok(['PB1', 'PB2'].includes(alle.sp[n]?.raum) && !alle.sp[a], `Umzug ${a} → ${n}`);
     const kIds = new Set(Object.values(alle.sp).flatMap((s) => s.koennen.map(([id]) => id)));
     for (const k of alle.karten) {
       assert.ok(alle.sp[k.sp], `${k.id}: Stichpunkt ${k.sp} fehlt`);
@@ -202,15 +208,29 @@ describe('Vorschau PB1', () => {
     const ids = alle.karten.map((k) => k.id);
     assert.equal(new Set(ids).size, ids.length, 'Karten-ID doppelt');
   });
+  test('PB2: jede alte Karte mit Aussage für PB2 ist in PB2 angekommen oder gestrichen', { skip: !plaene2.length && 'kein PB2' }, () => {
+    const pb2 = new Set(plaeneP.flatMap((p) => p.alt_neu.koennen.filter((a) => a.status === 'PB2').map((a) => a.alt)));
+    const altNeu = new Map(plaene2.flatMap((p) => p.alt_neu.koennen.map((a) => [a.alt, a])));
+    const da = new Map(alle.karten.map((k) => [k.id, k]));
+    const ersetzt = new Set(ladeKartenAp1(wurzel, RAEUME_VORSCHAU.PB2).keys());
+    for (const k of alt.karten.filter((k) => k.k && pb2.has(k.k))) {
+      const a = altNeu.get(k.k);
+      assert.ok(a, `${k.k} fehlt im alt_neu von PB2`);
+      if (a.status === 'gestrichen') continue;
+      if (ersetzt.has(ordnerVon(a.neu))) continue; // entscheidet die Kartendatei des Ordners
+      assert.equal(da.get(k.id)?.k, a.neu, `${k.id} → ${a.neu}`);
+    }
+  });
 });
 
-test('PB1: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs', async () => {
+for (const R of ['PB1', 'PB2']) {
+test(`${R}: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs`, async () => {
   const fs = await import('node:fs');
-  const cfg = RAEUME_VORSCHAU.PB1;
-  const ordner = path.join(wurzel, 'umbau', 'kurz', 'pb1');
+  const cfg = RAEUME_VORSCHAU[R];
+  const ordner = path.join(wurzel, 'umbau', 'kurz', cfg.dir);
   if (!fs.existsSync(ordner)) return;
   const plaeneP = ladeLernplanAp1(wurzel, cfg);
-  for (const f of fs.readdirSync(ordner).filter((f) => /^PB1-\d+\.json$/.test(f))) {
+  for (const f of fs.readdirSync(ordner).filter((f) => new RegExp(`^${R}-\\d+\\.json$`).test(f))) {
     const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
     const plan = plaeneP.find((p) => p.oberblock.id === d.ordner);
     assert.ok(plan, `${f}: kein Lernplan für ${d.ordner}`);
@@ -224,13 +244,13 @@ test('PB1: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs', a
   }
   const alle = vorschauAlle(alt, wurzel);
   const { teaser, erklaerung } = ladeKurzAp1(wurzel, cfg);
-  assert.equal(alle.vorschauRaeume.PB1.kurz, teaser.size);
-  assert.equal(alle.vorschauRaeume.PB1.erklaerungen, erklaerung.size);
+  assert.equal(alle.vorschauRaeume[R].kurz, teaser.size);
+  assert.equal(alle.vorschauRaeume[R].erklaerungen, erklaerung.size);
 });
 
 // Neue Karten PB1 (umbau/karten/pb1/), Regeln wie AP1 (umbau/auftraege/AP1-karten.md)
-describe('Neue Lernkarten PB1', () => {
-  const cfg = RAEUME_VORSCHAU.PB1;
+describe(`Neue Lernkarten ${R}`, () => {
+  const cfg = RAEUME_VORSCHAU[R];
   const plaeneP = ladeLernplanAp1(wurzel, cfg);
   const dateien = ladeKartenAp1(wurzel, cfg);
   const alle = vorschauAlle(alt, wurzel);
@@ -242,7 +262,7 @@ describe('Neue Lernkarten PB1', () => {
     const a = k.k ? altNeu.get(k.k) : null;
     return a?.neu && a.status !== 'PB2' && a.status !== 'gestrichen' ? ordnerVon(kNachSp.get(a.neu)) : ordnerVon(k.sp);
   };
-  test('keine Karten-ID doppelt, keine entfernte ID wieder da, Vorschau nutzt die neuen Karten', { skip: !dateien.size && 'keine PB1-Karten' }, () => {
+  test('keine Karten-ID doppelt, keine entfernte ID wieder da, Vorschau nutzt die neuen Karten', { skip: !dateien.size && `keine ${R}-Karten` }, () => {
     const ids = alle.karten.map((k) => k.id);
     assert.equal(new Set(ids).size, ids.length);
     const da = new Set(ids);
@@ -284,6 +304,7 @@ describe('Neue Lernkarten PB1', () => {
     });
   }
 });
+}
 
 test('P6: alter AP2-Lernstand wandert beim Ableiten in PB1, PB2-Karten behalten ihren Stand', async () => {
   const { baueIndex } = await import('../src/daten/index.js');
