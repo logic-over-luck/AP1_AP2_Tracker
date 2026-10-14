@@ -1,0 +1,1299 @@
+{
+ "oberblock": {
+  "id": "PB1-11",
+  "titel": "Netzwerk",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-11-1",
+   "titel": "Schichten, Komponenten, Protokolle und Dienste",
+   "satz": "Wie Daten durchs Netz kommen: Schichtenmodelle, Komponenten, Transportprotokolle und Netzwerkdienste. OSI-Modell, Switch, Router, MAC, ARP und DHCP an sich kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-11-1-1",
+     "titel": "Schichtenmodelle OSI und TCP/IP, Ethernet-Frame",
+     "ziel": "Das TCP/IP-Modell benennen und dem OSI-Modell zuordnen, Adressen und Protokolle den Schichten zuordnen und den Ethernet-Frame und die MAC-Adresse erläutern.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.01"
+      },
+      {
+       "id": "AP2b.01.01.1"
+      },
+      {
+       "id": "AP2b.01.01.2"
+      },
+      {
+       "id": "AP2b.01.01.5"
+      },
+      {
+       "id": "AP2b.01.01.6"
+      },
+      {
+       "id": "AP2b.01.01.3",
+       "anteil": "Schicht von Routing"
+      },
+      {
+       "id": "AP2b.01.01.4",
+       "anteil": "Schicht von Switching"
+      },
+      {
+       "id": "AP2b.02.06.6",
+       "anteil": "Ethernet"
+      }
+     ],
+     "teilaufgaben": [
+      "2024W-PB1-A2-ba",
+      "2024W-PB1-A2-bb",
+      "2024W-PB1-A2-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-1-1-K1",
+       "text": "Du kannst die vier Schichten des TCP/IP-Modells (Netzzugang, Internet, Transport, Anwendung) benennen und den Schichten des OSI-Modells zuordnen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K2",
+       "text": "Du kannst IPv4 und IPv6, MAC, ARP, Routing, Switching, TCP und UDP der richtigen Schicht im OSI- und im TCP/IP-Modell zuordnen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01.1",
+        "katalog:AP2b.01.01.2",
+        "katalog:AP2b.01.01.3",
+        "katalog:AP2b.01.01.4",
+        "katalog:AP2b.01.01.5",
+        "katalog:AP2b.01.01.6"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K3",
+       "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.06.6",
+        "beleg:2024W-PB1-A2-ba"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K4",
+       "text": "Du kannst den Aufbau einer MAC-Adresse erläutern: 6 Byte, hexadezimal geschrieben, die ersten 3 Byte kennzeichnen den Hersteller (OUI), die letzten 3 Byte das einzelne Gerät.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01.2",
+        "beleg:2024W-PB1-A2-bb"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K5",
+       "text": "Du kannst die Host-Adressen eines IPv4-Netzes wie 192.168.0.0/24 in einem Programm durchlaufen: von .1 bis .254, ohne Netz- und Broadcastadresse.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.01.1",
+        "beleg:2024W-PB1-A2-c"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-1",
+      "AP1-6-2-4",
+      "AP1-6-2-2"
+     ],
+     "hinweis": "Netzwerk ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; die Tiefe für AE ist offen (P10). Bis dahin gilt die Katalogtiefe."
+    },
+    {
+     "id": "PB1-11-1-2",
+     "titel": "Netzwerkkomponenten vergleichen: Switch, Bridge, Router, Firewall",
+     "ziel": "Switching und Routing beschreiben und Switch, Bridge, Router und Firewall nach Schicht, Adressen und Aufgabe vergleichen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.02"
+      },
+      {
+       "id": "AP2b.01.02.1"
+      },
+      {
+       "id": "AP2b.01.02.2"
+      },
+      {
+       "id": "AP2b.01.02.3"
+      },
+      {
+       "id": "AP2b.01.02.4"
+      },
+      {
+       "id": "AP2b.01.01.3",
+       "anteil": "Routing"
+      },
+      {
+       "id": "AP2b.01.01.4",
+       "anteil": "Switching"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-1-2-K1",
+       "text": "Du kannst Switching (Weiterleiten innerhalb eines Netzes anhand der MAC-Adresse und einer MAC-Tabelle) und Routing (Weiterleiten zwischen Netzen anhand der IP-Adresse und einer Routingtabelle) beschreiben.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01.3",
+        "katalog:AP2b.01.01.4"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K2",
+       "text": "Du kannst Switch, Bridge und Router vergleichen: Eine Bridge verbindet zwei Netzsegmente auf Schicht 2, ein Switch ist eine Bridge mit vielen Anschlüssen, ein Router verbindet Netze auf Schicht 3.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.02.1",
+        "katalog:AP2b.01.02.2",
+        "katalog:AP2b.01.02.3"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K3",
+       "text": "Du kannst die Aufgabe einer Firewall beschreiben und Paketfilter (Regeln nach Adressen und Ports) von zustandsorientierter Prüfung (merkt sich bestehende Verbindungen und lässt nur die zugehörigen Antworten durch) unterscheiden.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.02.4"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-3"
+     ]
+    },
+    {
+     "id": "PB1-11-1-3",
+     "titel": "Übertragungsprotokolle: TCP, UDP, HTTP, HTTPS",
+     "ziel": "Eigenschaften von TCP und UDP erläutern, Protokolle zielgerichtet einsetzen und Fehler im Web einordnen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.05"
+      },
+      {
+       "id": "AP2b.01.05.1"
+      },
+      {
+       "id": "AP2b.01.05.2",
+       "anteil": "HTTP und HTTPS"
+      },
+      {
+       "id": "AP2b.01.01.6",
+       "anteil": "Eigenschaften von TCP und UDP"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A3-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-1-3-K1",
+       "text": "Du kannst die Eigenschaften von TCP (verbindungsorientiert, Bestätigung, richtige Reihenfolge, erneutes Senden verlorener Pakete) und UDP (verbindungslos, ohne Zustellgarantie, wenig Aufwand, schnell) erläutern.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.05.1",
+        "katalog:AP2b.01.01.6"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K2",
+       "text": "Du kannst für eine Anwendung das passende Transportprotokoll einsetzen und begründen, zum Beispiel TCP für Dateiübertragung und Webseiten, UDP für Sprache und Video in Echtzeit.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.05.1"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K3",
+       "text": "Du kannst HTTPS für eine Anwendung einsetzen und von HTTP unterscheiden: verschlüsselte, authentifizierte Übertragung über TLS mit Zertifikat; Standardports 80 für HTTP und 443 für HTTPS.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.05.2"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K4",
+       "text": "Du kannst mögliche Ursachen einer Fehlermeldung wie HTTP 404 beschreiben: Seite oder Datei gelöscht oder verschoben, URL fehlerhaft angelegt, falsch verlinkt oder falsch eingegeben; davon abgrenzen, dass Server oder Namensauflösung nicht erreichbar sind.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.05.2",
+        "beleg:2021W-PB1-A3-c"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-2"
+     ]
+    },
+    {
+     "id": "PB1-11-1-4",
+     "titel": "Netzwerkdienste: DNS, DHCP und Proxy",
+     "ziel": "Aufgabe und Ablauf von DNS und DHCP sowie die Aufgabe eines Proxys beschreiben und die Folgen eines Ausfalls einschätzen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.07"
+      },
+      {
+       "id": "AP2b.01.07.1"
+      },
+      {
+       "id": "AP2b.01.07.2"
+      },
+      {
+       "id": "AP2b.01.07.3"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A3-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-1-4-K1",
+       "text": "Du kannst die Aufgabe von DNS beschreiben: Namen in IP-Adressen auflösen, hierarchisch über Root-, Top-Level- und zuständige Nameserver, für lokale Domains über einen eigenen DNS-Server.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.1"
+       ]
+      },
+      {
+       "id": "PB1-11-1-4-K2",
+       "text": "Du kannst den Ablauf einer DHCP-Vergabe beschreiben: Discover, Offer, Request, Acknowledge; die Adresse gilt für eine begrenzte Zeit (Lease) und wird vorher verlängert.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.2"
+       ]
+      },
+      {
+       "id": "PB1-11-1-4-K3",
+       "text": "Du kannst die Aufgabe eines Proxys beschreiben: Er stellt Anfragen stellvertretend für die Clients und kann dabei filtern, zwischenspeichern und protokollieren.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.3"
+       ]
+      },
+      {
+       "id": "PB1-11-1-4-K4",
+       "text": "Du kannst beschreiben, was im Netz nicht mehr funktioniert, wenn DNS oder DHCP ausfallen: Namen werden nicht mehr aufgelöst, obwohl Adressen erreichbar sind, bzw. neue Geräte erhalten keine Adresse.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.1",
+        "katalog:AP2b.01.07.2",
+        "beleg:2021W-PB1-A3-c"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-2-4",
+      "AP1-6-1-2"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2",
+   "titel": "Netzwerkkonzepte, Speichernetze und Standortvernetzung",
+   "satz": "Netze planen und einordnen: Ausdehnung, Topologie, Verkabelung, VLAN, Drahtlosnetze, Client-Server und Speichernetze, Verbindung von Standorten über VPN.",
+   "stichpunkte": [
+    {
+     "id": "PB1-11-2-1",
+     "titel": "Netzausdehnung, Topologie, Verkabelung und Netzwerkplan",
+     "ziel": "Netzarten nach Ausdehnung und Anwendungsgebiet einordnen, Topologien und strukturierte Verkabelung charakterisieren, Übertragungsraten vergleichen und Netzwerkpläne lesen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.03"
+      },
+      {
+       "id": "AP2b.01.03.1"
+      },
+      {
+       "id": "AP2b.01.03.2"
+      },
+      {
+       "id": "AP2b.01.03.5"
+      },
+      {
+       "id": "AP2b.01.03.11"
+      },
+      {
+       "id": "AP2b.01.03.12"
+      },
+      {
+       "id": "AP2b.02.06.2",
+       "anteil": "SAN als Netzkonzept"
+      },
+      {
+       "id": "ANH.it-netzwerk-diagramm-netzwerkplan"
+      }
+     ],
+     "teilaufgaben": [
+      "2024W-PB1-A2-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-2-1-K1",
+       "text": "Du kannst Netzarten nach ihrer Ausdehnung benennen und charakterisieren: PAN (Nahbereich einer Person), LAN (Gebäude, Gelände), MAN (Stadt), WAN (Länder), GAN (weltweit).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.1"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K2",
+       "text": "Du kannst Netzwerkkonzepte ihrem Anwendungsgebiet zuordnen und die Zuordnung begründen: LPWAN für das Internet der Dinge (große Reichweite, geringer Energiebedarf, kostengünstig), LAN für das Unternehmensnetz (hohe Bandbreite, geringe Latenz), SAN im Rechenzentrum (schneller, skalierbarer Speicherzugriff der Server).",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.03.1",
+        "katalog:AP2b.02.06.2",
+        "beleg:2024W-PB1-A2-a"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K3",
+       "text": "Du kannst Netzwerktopologien benennen und charakterisieren: Stern (zentraler Knoten, heute üblich), Bus, Ring und Masche (ausfallsicher durch mehrere Wege).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.11"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K4",
+       "text": "Du kannst strukturierte Verkabelung charakterisieren: einheitlich und unabhängig von der späteren Nutzung geplante Verkabelung in Primärbereich (zwischen Gebäuden), Sekundärbereich (zwischen Stockwerken) und Tertiärbereich (bis zur Anschlussdose).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.5"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K5",
+       "text": "Du kannst Datenübertragungsraten von Netzen einordnen und vergleichen, zum Beispiel 1 Gbit/s und mehr im LAN, Glasfaser im Primärbereich, wenige kbit/s im LPWAN.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.2"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K6",
+       "text": "Du kannst einen Netzwerkplan mit den Symbolen des Anhangs deuten: welche Geräte in welchem Teilnetz liegen, wie sie verbunden sind und zwischen welchen Netzen eine Firewall trennt.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.12"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-4",
+      "AP1-6-1-3"
+     ]
+    },
+    {
+     "id": "PB1-11-2-2",
+     "titel": "VLAN, Drahtlosnetze und Zugriffskontrolle im Netz",
+     "ziel": "VLAN, PAN, WLAN, Mesh und Bluetooth charakterisieren, Risiken und Schutz in Drahtlosnetzen benennen, RADIUS und Kerberos einordnen und Sicherheitsrisiken einer Infrastruktur beschreiben.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.03.3"
+      },
+      {
+       "id": "AP2b.01.03.6"
+      },
+      {
+       "id": "AP2b.01.03.7"
+      },
+      {
+       "id": "AP2b.01.03.8"
+      },
+      {
+       "id": "AP2b.01.03.9"
+      },
+      {
+       "id": "AP2b.01.03.10"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A1-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-2-2-K1",
+       "text": "Du kannst ein VLAN charakterisieren: ein logisch abgetrenntes Netz auf derselben Switch-Infrastruktur, eingesetzt, um Abteilungen oder Gäste zu trennen, die Sicherheit zu erhöhen und Broadcast-Verkehr zu begrenzen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.6"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K2",
+       "text": "Du kannst Drahtlosnetze charakterisieren: PAN mit Bluetooth für kurze Entfernungen, WLAN im Gebäude, Mesh-WLAN mit mehreren zusammenarbeitenden Zugangspunkten für große Flächen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.7",
+        "katalog:AP2b.01.03.9"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K3",
+       "text": "Du kannst Risiken in Drahtlosnetzen und Maßnahmen dagegen beschreiben: Mithören, unbefugter Zugang und gefälschte Zugangspunkte; aktuelle Verschlüsselung, Anmeldung je Benutzer, getrenntes Gastnetz.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.8"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K4",
+       "text": "Du kannst Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: RADIUS (zentrale Prüfung von Benutzern und Geräten beim Netzzugang), Kerberos (einmalige Anmeldung, danach Tickets für die Dienste).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.3"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K5",
+       "text": "Du kannst Sicherheitsrisiken und Schwachstellen einer IT-Infrastruktur beschreiben, zum Beispiel veraltete Netzinfrastruktur der Standorte, Abhängigkeit von zwei Rechenzentren, Engpässe in der Bandbreite, uneinheitliche Hardware.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.10",
+        "beleg:2022W-PB1-A1-a"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-3-1",
+      "AP1-6-1-5"
+     ]
+    },
+    {
+     "id": "PB1-11-2-3",
+     "titel": "Client-Server, Peer-to-Peer und Speicher im Netz",
+     "ziel": "Client-Server und Peer-to-Peer vergleichen und bewerten, Dateifreigabe und Datenabruf einordnen und NAS, SAN, iSCSI und Fibre Channel beschreiben.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.04"
+      },
+      {
+       "id": "AP2b.01.04.1"
+      },
+      {
+       "id": "AP2b.01.04.2",
+       "anteil": "Datenabruf"
+      },
+      {
+       "id": "AP2b.02.06"
+      },
+      {
+       "id": "AP2b.02.06.1"
+      },
+      {
+       "id": "AP2b.02.06.2",
+       "anteil": "SAN"
+      },
+      {
+       "id": "AP2b.02.06.3"
+      },
+      {
+       "id": "AP2b.02.06.4"
+      },
+      {
+       "id": "AP2b.02.06.5"
+      },
+      {
+       "id": "AP2b.02.06.6",
+       "anteil": "Fibre Channel"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-2-3-K1",
+       "text": "Du kannst Peer-to-Peer (gleichberechtigte Rechner ohne zentralen Server) und Client-Server (zentraler Dienst, der sich gemeinsam verwalten und sichern lässt) vergleichen und für einen Einsatz bewerten, welches Konzept passt.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.04"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K2",
+       "text": "Du kannst Dateifreigaben über SMB/CIFS (vor allem Windows) und NFS (vor allem Unix und Linux) beschreiben und für einen Einsatz bewerten, welche passt.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.04.1",
+        "katalog:AP2b.02.06.4",
+        "katalog:AP2b.02.06.5"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K3",
+       "text": "Du kannst Wege des Datenabrufs vergleichen und bewerten: HTTP für Webdienste und Schnittstellen, ODBC als einheitliche Schnittstelle von Anwendungen zu verschiedenen Datenbanken.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.04.2"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K4",
+       "text": "Du kannst NAS (Dateispeicher, der über das Netz Dateien bereitstellt) und SAN (eigenes Speichernetz, das Servern Speicher blockweise wie eine lokale Festplatte bereitstellt) beschreiben.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.06.1",
+        "katalog:AP2b.02.06.2"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K5",
+       "text": "Du kannst die Anbindung von Blockspeicher beschreiben: iSCSI über das normale Ethernet, Fibre Channel über ein eigenes, schnelles Speichernetz.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.06.3",
+        "katalog:AP2b.02.06.6"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-7-3-5"
+     ]
+    },
+    {
+     "id": "PB1-11-2-4",
+     "titel": "Standortübergreifende Kommunikation: VPN-Modelle, Tunneling, IPsec",
+     "ziel": "VPN-Modelle unterscheiden, für eine Situation auswählen und eine Standortverbindung einrichten; Tunneling und IPsec erläutern.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.06"
+      },
+      {
+       "id": "AP2b.01.06.1"
+      },
+      {
+       "id": "AP2b.01.06.2"
+      },
+      {
+       "id": "AP2b.01.06.3"
+      },
+      {
+       "id": "AP2b.01.03.4"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-2-4-K1",
+       "text": "Du kannst VPN-Modelle unterscheiden: Site-to-Site (zwei Standortnetze werden verbunden), End-to-Site (ein einzelnes Gerät wählt sich ins Firmennetz ein), End-to-End (zwei Geräte direkt).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.06.1"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K2",
+       "text": "Du kannst für eine Situation ein VPN-Modell und das Verfahren auswählen und die Wahl begründen, zum Beispiel Site-to-Site mit IPsec im Tunnelmodus für die Filialen, End-to-Site für Beschäftigte im Homeoffice.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.06.1",
+        "katalog:AP2b.01.06.2",
+        "katalog:AP2b.01.06.3",
+        "katalog:AP2b.01.06"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K3",
+       "text": "Du kannst Tunneling und Verschlüsselung auf Netzwerkebene erläutern: IPsec verschlüsselt und authentifiziert IP-Pakete; im Tunnelmodus wird das ganze Paket verschlüsselt in ein neues Paket verpackt.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.06.2",
+        "katalog:AP2b.01.06.3",
+        "katalog:AP2b.01.03.4"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K4",
+       "text": "Du kannst eine VPN-Verbindung zwischen zwei Standorten einrichten: Gateways und ihre Adressen, zu verbindende Netze, Authentifizierung mit Pre-Shared Key oder Zertifikat, Verschlüsselungsverfahren festlegen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.06",
+        "katalog:AP2b.01.06.2",
+        "katalog:AP2b.01.06.3"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-3-3"
+     ],
+     "kuer": [
+      {
+       "text": "Weitere VPN-Protokolle wie L2TP und PPTP; Kabeltypen und Normen der Verkabelung (Twisted Pair, CAT-Klassen, Lichtwellenleiter, DIN EN 50173); Simplex, Halbduplex, Vollduplex; WEP und WPA im Vergleich.",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur Hinweisquelle; der Katalog nennt VPN-Modelle, Tunneling, IPsec und strukturierte Verkabelung ohne diese Einzelheiten. Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-6-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K1",
+    "grund": "TCP/IP-Modell neu; OSI-Schichten in AP1-6-1-1"
+   },
+   {
+    "alt": "AP2-6-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K2",
+    "grund": "mit Routing und Switching"
+   },
+   {
+    "alt": "AP2-6-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K4",
+    "grund": "laut 2024W-PB1-A2-bb"
+   },
+   {
+    "alt": "AP2-6-1-1-K4",
+    "status": "gestrichen",
+    "grund": "E2: Aufgabe von ARP in AP1-6-2-4-K2; importiert"
+   },
+   {
+    "alt": "AP2-6-1-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K3",
+    "grund": "mit Feldlängen laut 2024W-PB1-A2-ba"
+   },
+   {
+    "alt": "AP2-6-1-1-K6",
+    "status": "gestrichen",
+    "grund": "E2: IPv4 und IPv6 an der Schreibweise unterscheiden in AP1-6-2-3; importiert"
+   },
+   {
+    "alt": "AP2-6-1-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K1",
+    "grund": "mit MAC- und Routingtabelle"
+   },
+   {
+    "alt": "AP2-6-1-2-K2",
+    "status": "gestrichen",
+    "grund": "E2: Switch und Router mit Schicht und Aufgabe in AP1-6-1-3-K1/K2; importiert"
+   },
+   {
+    "alt": "AP2-6-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K3",
+    "grund": "mit Paketfilter"
+   },
+   {
+    "alt": "AP2-6-1-2-K4",
+    "status": "gestrichen",
+    "grund": "E2: Symbole des Netzwerkplans erkennen in AP1-6-1-3-K5; Plan lesen in nk6"
+   },
+   {
+    "alt": "AP2-6-1-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K2",
+    "grund": "Bridge mit Switch und Router vergleichen"
+   },
+   {
+    "alt": "AP2-6-1-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K3",
+    "grund": "in kp3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-1-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-3-K1",
+    "grund": "erläutern (Katalog)"
+   },
+   {
+    "alt": "AP2-6-1-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-1-3-K2",
+    "grund": "einsetzen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-1-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-1-3-K3",
+    "grund": "einsetzen mit Zertifikat und Ports"
+   },
+   {
+    "alt": "AP2-6-1-3-K4",
+    "status": "verschoben",
+    "neu": "PB1-10-2-1-K3"
+   },
+   {
+    "alt": "AP2-6-1-3-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-1-3-K3",
+    "grund": "in pr3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K1",
+    "grund": "mit PAN und Beispielen"
+   },
+   {
+    "alt": "AP2-6-2-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K2",
+    "grund": "mit LPWAN und SAN laut 2024W-PB1-A2-a"
+   },
+   {
+    "alt": "AP2-6-2-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K4",
+    "grund": "mit den drei Bereichen zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-2-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K4",
+    "grund": "in nk4 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K1",
+    "grund": "mit Gründen zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-2-1-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K1",
+    "grund": "in wl1 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K2",
+    "grund": "charakterisieren (Katalog)"
+   },
+   {
+    "alt": "AP2-6-2-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K3",
+    "grund": "mit Risiken zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-2-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K3",
+    "grund": "in wl3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K4",
+    "grund": "RADIUS und Kerberos zusammen"
+   },
+   {
+    "alt": "AP2-6-2-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K4",
+    "grund": "in wl4 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K2",
+    "grund": "Reichweite und Energiebedarf als Begründung in nk2"
+   },
+   {
+    "alt": "AP2-6-2-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K6",
+    "grund": "lesen mit Symbolen des Anhangs"
+   },
+   {
+    "alt": "AP2-6-2-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K6",
+    "grund": "in nk6 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K6",
+    "grund": "in nk6 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-3-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K3",
+    "grund": "charakterisieren (Katalog)"
+   },
+   {
+    "alt": "AP2-6-2-4-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K1",
+    "grund": "vergleichen und bewerten (Katalog, Stufe 4)"
+   },
+   {
+    "alt": "AP2-6-2-4-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K1",
+    "grund": "in cs1 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-4-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K1",
+    "grund": "in cs1 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-4-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K2",
+    "grund": "mit NFS, bewerten"
+   },
+   {
+    "alt": "AP2-6-2-4-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K3",
+    "grund": "bewerten (Katalog)"
+   },
+   {
+    "alt": "AP2-6-2-4-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K3",
+    "grund": "in cs3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-3-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-4-K1",
+    "grund": "Hierarchie und lokale Domains"
+   },
+   {
+    "alt": "AP2-6-3-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-1-4-K2",
+    "grund": "Ablauf der Vergabe (AP1-Grenze verweist hierher)"
+   },
+   {
+    "alt": "AP2-6-3-1-K3",
+    "status": "verschoben",
+    "neu": "PB1-11-1-4-K3"
+   },
+   {
+    "alt": "AP2-6-3-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-1-4-K4",
+    "grund": "Folgen konkretisiert"
+   },
+   {
+    "alt": "AP2-6-3-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K2",
+    "grund": "auswählen und begründen"
+   },
+   {
+    "alt": "AP2-6-3-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K1",
+    "grund": "Site-to-Site, End-to-Site, End-to-End"
+   },
+   {
+    "alt": "AP2-6-3-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K3",
+    "grund": "mit IPsec zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-3-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K3",
+    "grund": "in vp3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-6-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K4",
+    "grund": "beschreiben (Katalog)"
+   },
+   {
+    "alt": "AP2-6-6-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K2",
+    "grund": "SAN dem Rechenzentrum zuordnen in nk2"
+   },
+   {
+    "alt": "AP2-6-6-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K2",
+    "grund": "SMB und NFS als Dateifreigaben"
+   },
+   {
+    "alt": "AP2-6-6-1-K4",
+    "status": "verschoben",
+    "neu": "PB1-11-2-3-K5"
+   },
+   {
+    "alt": "AP2-6-6-1-K5",
+    "status": "gestrichen",
+    "grund": "Vorteile NAS gegenüber SAN: weder Katalog (beschreiben) noch Beleg; Unterschied in cs4"
+   },
+   {
+    "alt": "AP2-6-6-3-K1",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K2",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K3",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K4",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K5",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "1.6",
+  "stand": "2026-10-14",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Teilaufgaben 2024W-PB1-A2 (Netzkonzepte, Ethernet-Frame, MAC, Skript), 2021W-PB1-A3-c (HTTP 404) und 2022W-PB1-A1-a (Schwachstellen) gegen die Musterlösungen gelesen. Alle übrigen Bausteine ohne Beleg mit der Katalogtiefe (meist Stufe 2); Tiefe für AE bleibt P10."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "OSI, TCP/IP, Adressierung, IPv4, IPv6, MAC, ARP",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-1-K1",
+      "PB1-11-1-1-K2",
+      "PB1-11-1-1-K4"
+     ]
+    },
+    {
+     "thema": "Ethernet, MAC",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-1-K3",
+      "PB1-11-1-1-K4"
+     ]
+    },
+    {
+     "thema": "Routing, Switching, Switch, Bridge, Router, Firewall, Paketfilter, Stateful Inspection",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2",
+      "PB1-11-1-2-K3"
+     ]
+    },
+    {
+     "thema": "TCP, UDP, HTTP, HTTPS, TLS",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-3-K1",
+      "PB1-11-1-3-K2",
+      "PB1-11-1-3-K3"
+     ]
+    },
+    {
+     "thema": "HTTP-Statuscodes",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-3-K4"
+     ]
+    },
+    {
+     "thema": "DNS, DHCP, Proxy",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-4-K1",
+      "PB1-11-1-4-K2",
+      "PB1-11-1-4-K3"
+     ]
+    },
+    {
+     "thema": "LAN, MAN, WAN, GAN, IoT, SAN",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-1-K1",
+      "PB1-11-2-1-K2"
+     ]
+    },
+    {
+     "thema": "Strukturierte Verkabelung, Netzwerktopologie, Netzwerkplan, Datenübertragungsrate",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-1-K3",
+      "PB1-11-2-1-K4",
+      "PB1-11-2-1-K5",
+      "PB1-11-2-1-K6"
+     ]
+    },
+    {
+     "thema": "VLAN, PAN, WLAN, Mesh, Bluetooth, RADIUS, Kerberos",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-2-K1",
+      "PB1-11-2-2-K2",
+      "PB1-11-2-2-K4"
+     ]
+    },
+    {
+     "thema": "VPN, VPN-Modelle, Tunneling, IPsec",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-4-K1",
+      "PB1-11-2-4-K2",
+      "PB1-11-2-4-K3"
+     ]
+    },
+    {
+     "thema": "SMB, NFS, ODBC, Fibre Channel",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-3-K2",
+      "PB1-11-2-3-K3",
+      "PB1-11-2-3-K5"
+     ]
+    },
+    {
+     "thema": "L2TP, PPTP, Kabeltypen, CAT-Klassen, Simplex/Duplex, WEP/WPA",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-4"
+     ]
+    },
+    {
+     "thema": "Port-Forwarding, Portsecurity, Pre-shared Key",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-10"
+     ],
+     "notiz": "Portsecurity in PB1-10; Pre-shared Key in AP1-6-3-1 und vp4"
+    },
+    {
+     "thema": "Verfügbarkeit, Ausfallwahrscheinlichkeit, Monitoring, USV, RAID, Backup",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-12"
+     ]
+    },
+    {
+     "thema": "Cyber-physische Systeme, Sensor, Aktor",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-3"
+     ]
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2b.01.01",
+    "paar": "OSI / TCP/IP",
+    "abgedeckt": {
+     "OSI": [
+      "PB1-11-1-1-K1",
+      "PB1-11-1-1-K2"
+     ],
+     "TCP/IP": [
+      "PB1-11-1-1-K1",
+      "PB1-11-1-1-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.01.1",
+    "paar": "IPv4 / IPv6",
+    "abgedeckt": {
+     "IPv4": [
+      "PB1-11-1-1-K2",
+      "PB1-11-1-1-K5"
+     ],
+     "IPv6": [
+      "PB1-11-1-1-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.01.6",
+    "paar": "TCP / UDP",
+    "abgedeckt": {
+     "TCP": [
+      "PB1-11-1-3-K1",
+      "PB1-11-1-3-K2"
+     ],
+     "UDP": [
+      "PB1-11-1-3-K1",
+      "PB1-11-1-3-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.05.2",
+    "paar": "HTTP / HTTPS",
+    "abgedeckt": {
+     "HTTP": [
+      "PB1-11-1-3-K3",
+      "PB1-11-1-3-K4"
+     ],
+     "HTTPS": [
+      "PB1-11-1-3-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.04",
+    "paar": "Peer-to-Peer / Client-Server",
+    "abgedeckt": {
+     "P2P": [
+      "PB1-11-2-3-K1"
+     ],
+     "Client-Server": [
+      "PB1-11-2-3-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.02.06",
+    "paar": "NAS / SAN",
+    "abgedeckt": {
+     "NAS": [
+      "PB1-11-2-3-K4"
+     ],
+     "SAN": [
+      "PB1-11-2-3-K4",
+      "PB1-11-2-1-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.02.06.6",
+    "paar": "Ethernet / Fibre Channel",
+    "abgedeckt": {
+     "Ethernet": [
+      "PB1-11-1-1-K3",
+      "PB1-11-2-3-K5"
+     ],
+     "Fibre Channel": [
+      "PB1-11-2-3-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.06",
+    "paar": "auswählen / einrichten",
+    "abgedeckt": {
+     "auswählen": [
+      "PB1-11-2-4-K2"
+     ],
+     "einrichten": [
+      "PB1-11-2-4-K4"
+     ]
+    }
+   }
+  ]
+ }
+}

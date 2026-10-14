@@ -552,6 +552,10 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-10 IT-Sicherheit und Datenschutz in Anwendungen (14.10.2026):** 3 Themenblöcke, 10 Stichpunkte,
         41 Können-Aussagen. Alte AP2-Aussagen: 47 angepasst, 2 verschoben, 7 gestrichen (Kryptografie-, Hash- und
         Anmelde-Grundlagen wohnen in AP1-7-3). Die 15 TOM-Beispiele aus AP2a.04.06 verlangen „prüfen“ (Stufe 4).
+  - [x] **PB1-11 Netzwerk (14.10.2026):** 2 Themenblöcke, 8 Stichpunkte, 36 Können-Aussagen. Alte AP2-Aussagen:
+        44 angepasst, 3 verschoben, 5 gestrichen (Grundlagen in AP1-6), 5 für PB2 (Datenmengen berechnen). Deckt die
+        Grenzen von AP1-6 ab, die auf AP2 verweisen (TCP/UDP, DHCP-Ablauf, Topologien, Netzausdehnung, VPN-Modelle, IPsec).
+        Tiefe ohne Beleg = Katalogtiefe (meist Stufe 2); P10 bleibt offen.
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 
