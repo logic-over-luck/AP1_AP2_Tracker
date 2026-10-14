@@ -22,3 +22,24 @@
 | 14 | PB1-3-2-1-K4 | doppelt PB1 (gering) | „Bibliothek oder Framework begründet auswählen: Funktionsumfang, Lizenz, Pflege, Einarbeitung, Abhängigkeit“ überschneidet sich mit PB1-3-1-2-K3 (Sprachwahl mit dem Kriterium Frameworks) und AP1-3-4-2-K5 (OSS oder proprietär begründen). | Belassen (Katalog Stufe 4); in K1 auf die Kriterien „Lizenz“ (PB1-2) und „Abhängigkeit“ verweisen statt sie zu wiederholen. | niedrig |
 
 **Bilanz PB1-3:** 14 Funde (davon 4 hoch). Lücken: 2 (Nr. 5 mit 1 neuen Aussage; Nr. 12 ohne neue Aussage). Kann weg bzw. zusammengelegt: 8 Aussagen (Nr. 1, 2, 6 [−2], 8, 9, 10, 11). Vorher 29 → nach Vorschlägen etwa 22.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: gestrichen, Verweis im Ziel auf PB1-11 und PB1-10 |
+| 2 | umgesetzt: gestrichen, Beleg 2021W-A1-bb wohnt nur noch in PB1-9 |
+| 3 | umgesetzt: Versionsverwaltung aus der Werkzeug-Aussage gestrichen |
+| 4 | umgesetzt: Debugger-Beispiel gestrichen (PB2), Aussage auf das Signieren beschränkt |
+| 5 | umgesetzt (P35 Nr. 2): Grundfunktionen beschreiben in der Zweck-Aussage, Grenze nur noch für das Anwenden |
+| 6 | umgesetzt: drei Aussagen zu einer |
+| 7 | umgesetzt: auf den Nachteil gekürzt, als IHK-Sicht mit Gegenargument |
+| 8 | umgesetzt: Portabilität als Halbsatz bei den Kriterien; dafür die Stichpunkte „Konzepte“ und „Sprachwahl“ zusammengelegt (F3) |
+| 9 | umgesetzt: Überwachen in der Skript-Aussage, Schwellwerte nur in PB1-12 |
+| 10 | umgesetzt: als Halbsatz mit Verweis auf AP1-8-1-3 |
+| 11 | nicht umgesetzt: Zweck und Begründen bleiben getrennt, weil die Zweck-Aussage jetzt die Grundfunktionen trägt (Nr. 5) |
+| 12 | umgesetzt: Merkmale strukturiert, prozedural, funktional |
+| 13 | umgesetzt: Zertifizierungsstelle; Hinweis zur IHK-Lösung am Stichpunkt |
+| 14 | umgesetzt: Verweis auf PB1-2 statt Wiederholung |
+
+Ergebnis: 29 → 22 Aussagen.
