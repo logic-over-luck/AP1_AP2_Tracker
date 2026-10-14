@@ -20,3 +20,21 @@
 Ordnerübergreifend: PB1-9-2-4-K2 (Programmdokumentation) und PB1-3-2-1-K2 sind doppelt. Gezählt wird das in Bericht PB1-3, Nr. 2; K2 hier bleibt der Wohnort.
 
 **Bilanz PB1-9:** 10 Funde (davon 5 hoch). Lücken: 1 (Nr. 1, 1 neue Aussage). Kann weg bzw. zusammengelegt: 7 Aussagen (Nr. 2, 3, 4, 5, 6, 7, 9). Vorher 28 → nach Vorschlägen etwa 22.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: neue Aussage Last-/Belastungs- und Performancetest (Kern), aus der Kür entfernt |
+| 2 | umgesetzt: gestrichen, PDCA über `baut_auf` AP1-1-5-2 |
+| 3 | umgesetzt: gestrichen; der Soll-Ist-Vergleich hängt als Anwendung an der Kennzahlen-Aussage (sonst wäre AP2a.03.02.2 in PB1 ohne Aussage) |
+| 4 | teilweise: auf das Neue gekürzt (Version, Abnahmetests, Zusammenführen im Abschlussprotokoll); bleibt, weil nur sie AP2a.03.02.5 (Stufe 3, Beleg 2025S-A1-c) erreicht (P35 Nr. 4). Der Beleg 2025S-A1-c hängt jetzt hier statt in PB1-1 |
+| 5 | umgesetzt: auf das Neue gekürzt, `baut_auf` AP1-1-5-3 |
+| 6 | umgesetzt: gestrichen (PB2); alte Aussage als „PB2“ vermerkt |
+| 7 | umgesetzt: gestrichen |
+| 8 | umgesetzt: Querverweis auf das V-Modell im Ziel |
+| 9 | umgesetzt: Unit-Test als Halbsatz beim Komponententest |
+| 10 | umgesetzt: Klarstellung im Ziel, Frame Check Sequence als Beispiel |
+| PB1-3 Nr. 2 | Bibliotheks-Erweiterung in der Programmdokumentation ergänzt |
+
+Für T8 trägt die Black-/White-Box-Aussage jetzt „einsetzen“ (Stufe 3, Katalog AP2b.03.08.1), weil die gestrichene Auswahl-Aussage diese Tiefe lieferte. Gliederung: ein Themenblock mit sechs Stichpunkten, Qualitätssicherung und Kennzahlen in einem Stichpunkt (F3/F4). Ergebnis: 28 → 24 Aussagen.
