@@ -10,13 +10,13 @@
  "themenbloecke": [
   {
    "id": "PB1-10-1",
-   "titel": "Bedrohungen, Schäden und Sicherheitsanforderungen",
-   "satz": "Was einer Anwendung droht, was ein Vorfall kostet und welche Sicherheitsanforderungen daraus folgen. Schutzziele, Schadsoftware und Phishing kennst du aus AP1.",
+   "titel": "Bedrohungen, Anforderungen und Kryptografie",
+   "satz": "Was einer Anwendung droht, was ein Vorfall kostet, welche Sicherheitsanforderungen daraus folgen und wie Verschlüsselung, Signaturen und Zertifikate in Anwendungen eingesetzt werden. Schutzziele, Schadsoftware, Phishing und die Verfahren an sich kennst du aus AP1.",
    "stichpunkte": [
     {
      "id": "PB1-10-1-1",
-     "titel": "Schadenspotenziale einschätzen und Schäden verhindern",
-     "ziel": "Die möglichen Schäden eines Sicherheitsvorfalls einschätzen, Schutzzielen zuordnen und Maßnahmen festlegen, die sie verhindern oder begrenzen.",
+     "titel": "Schäden einschätzen und Sicherheitsanforderungen festlegen",
+     "ziel": "Die möglichen Schäden eines Sicherheitsvorfalls einschätzen, Maßnahmen dagegen festlegen, Ziele von Sicherheitskriterien kennen und Sicherheitsanforderungen an eine Anwendung festlegen.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -32,117 +32,7 @@
       },
       {
        "id": "AP2a.04.01.3"
-      }
-     ],
-     "teilaufgaben": [],
-     "koennen": [
-      {
-       "id": "PB1-10-1-1-K1",
-       "text": "Du kannst für einen beschriebenen Sicherheitsvorfall die möglichen Schäden einschätzen: Imageschaden (Vertrauensverlust bei Kunden und Partnern), wirtschaftlicher Schaden (Stillstand, Wiederherstellung, Vertragsstrafen, Bußgelder), Datenverlust.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2a.04.01.1",
-        "katalog:AP2a.04.01.2",
-        "katalog:AP2a.04.01.3"
-       ]
       },
-      {
-       "id": "PB1-10-1-1-K2",
-       "text": "Du kannst einen Schaden dem verletzten Schutzziel (Vertraulichkeit, Integrität, Verfügbarkeit) zuordnen und begründet einschätzen, wie schwer er für das betroffene Unternehmen wiegt.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2a.04.01"
-       ]
-      },
-      {
-       "id": "PB1-10-1-1-K3",
-       "text": "Du kannst Maßnahmen festlegen, mit denen ein eingeschätzter Schaden verhindert oder begrenzt wird, zum Beispiel getrennte Datensicherung gegen Datenverlust, Notfallplan und geplante Kommunikation gegen Imageschaden, Verschlüsselung gegen Bußgelder nach Datenabfluss.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2a.04.01"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-7-1-1"
-     ]
-    },
-    {
-     "id": "PB1-10-1-2",
-     "titel": "Bedrohungsszenarien und präventive Maßnahmen",
-     "ziel": "Gegen Datendiebstahl, Ransomware und Phishing vorbeugende Maßnahmen planen und umsetzen und Angriffe wie Man-in-the-Middle, SQL-Injection und DDoS mit ihren Gegenmaßnahmen erklären.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
-      {
-       "id": "AP2a.04.02"
-      },
-      {
-       "id": "AP2a.04.02.1"
-      },
-      {
-       "id": "AP2a.04.02.2"
-      },
-      {
-       "id": "AP2a.04.02.3"
-      },
-      {
-       "id": "AP2a.04.04.9",
-       "anteil": "Bedrohungsszenarien"
-      }
-     ],
-     "teilaufgaben": [
-      "2025W-PB1-A3-bb"
-     ],
-     "koennen": [
-      {
-       "id": "PB1-10-1-2-K1",
-       "text": "Du kannst präventive Maßnahmen gegen Datendiebstahl planen und umsetzen: Zugriffe nach dem Prinzip der geringsten Rechte, Verschlüsselung gespeicherter und übertragener Daten, keine echten Kunden- oder Firmendaten an fremde Dienste oder in Testsysteme geben.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2a.04.02.1",
-        "beleg:2025W-PB1-A3-bb"
-       ]
-      },
-      {
-       "id": "PB1-10-1-2-K2",
-       "text": "Du kannst präventive Maßnahmen gegen digitale Erpressung durch Ransomware planen: Sicherungen getrennt und offline aufbewahren, Updates zeitnah einspielen, Rechte begrenzen, Netze trennen, die Wiederherstellung üben.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2a.04.02.2"
-       ]
-      },
-      {
-       "id": "PB1-10-1-2-K3",
-       "text": "Du kannst präventive Maßnahmen gegen Identitätsdiebstahl durch Phishing in einer Anwendung umsetzen: Zwei-Faktor-Anmeldung, Zurücksetzen von Passwörtern nur über einen zweiten, unabhängigen Weg, Warnung bei Anmeldung von neuen Geräten.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2a.04.02.3"
-       ]
-      },
-      {
-       "id": "PB1-10-1-2-K4",
-       "text": "Du kannst Bedrohungsszenarien erklären und ihre Gegenmaßnahmen nennen: Man-in-the-Middle (verschlüsselte Verbindung mit Zertifikatsprüfung), SQL-Injection über Eingabefelder (vorbereitete Anweisungen mit Parametern, Eingaben prüfen), DDoS (Filterung, Lastverteilung, Schutzdienste).",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2a.04.04.9"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-7-4-1",
-      "AP1-7-4-2"
-     ]
-    },
-    {
-     "id": "PB1-10-1-3",
-     "titel": "Sicherheitsanforderungen und IT-Sicherheitskriterien",
-     "ziel": "Sicherheitstechnische Anforderungen an eine Anwendung beschreiben, Ziele von Sicherheitskriterien definieren und funktionale und qualitative Sicherheitsanforderungen festlegen.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
       {
        "id": "AP2a.04.03"
       },
@@ -175,16 +65,36 @@
      ],
      "koennen": [
       {
-       "id": "PB1-10-1-3-K1",
-       "text": "Du kannst sicherheitstechnische Anforderungen an eine geplante Anwendung beschreiben: sichere Datenübertragung, sichere Speicherung personenbezogener Daten, sichere Authentifizierung, automatische Abmeldung bei Untätigkeit oder Verbindungsabbruch.",
-       "stufe": 2,
+       "id": "PB1-10-1-1-K1",
+       "text": "Du kannst für einen beschriebenen Sicherheitsvorfall die möglichen Schäden einschätzen: Imageschaden (Vertrauensverlust bei Kunden und Partnern), wirtschaftlicher Schaden (Stillstand, Wiederherstellung, Vertragsstrafen, Bußgelder), Datenverlust; die Zuordnung zum verletzten Schutzziel kennst du aus AP1.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.04.01",
+        "katalog:AP2a.04.01.1",
+        "katalog:AP2a.04.01.2",
+        "katalog:AP2a.04.01.3"
+       ]
+      },
+      {
+       "id": "PB1-10-1-1-K2",
+       "text": "Du kannst Maßnahmen festlegen, mit denen ein eingeschätzter Schaden verhindert oder begrenzt wird, zum Beispiel getrennte Datensicherung gegen Datenverlust, Notfallplan und geplante Kommunikation gegen Imageschaden, Verschlüsselung gegen Bußgelder nach Datenabfluss.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.04.01"
+       ]
+      },
+      {
+       "id": "PB1-10-1-1-K3",
+       "text": "Du kannst für eine geplante Anwendung sicherheitstechnische Anforderungen festlegen, als funktionale Anforderungen (z. B. sichere Datenübertragung, sichere Speicherung personenbezogener Daten, Anmeldung mit zwei Faktoren, Rollen und Rechte, Protokollierung, automatische Abmeldung bei Untätigkeit) und als Qualitätsanforderungen (z. B. Verfügbarkeit, Wiederherstellungszeit).",
+       "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.04.4",
+        "katalog:AP2a.04.04.5",
         "beleg:2024S-PB1-A1-c"
        ]
       },
       {
-       "id": "PB1-10-1-3-K2",
+       "id": "PB1-10-1-1-K4",
        "text": "Du kannst Ziele von IT-Sicherheitskriterien definieren: Richtschnur für Entwickler (Sicherheit von Beginn an), objektive Bewertung von Systemen (z. B. nach IT-Grundschutz), Unterstützung der Anwender bei der Auswahl eines geeigneten Sicherheitsprodukts.",
        "stufe": 2,
        "herkunft": [
@@ -192,31 +102,85 @@
         "katalog:AP2a.04.03.2",
         "katalog:AP2a.04.03.3"
        ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-7-1-1",
+      "AP1-7-2-2",
+      "AP1-7-1-3",
+      "AP1-7-2-1"
+     ]
+    },
+    {
+     "id": "PB1-10-1-2",
+     "titel": "Bedrohungsszenarien und präventive Maßnahmen",
+     "ziel": "Gegen Datendiebstahl, Ransomware und Phishing vorbeugende Maßnahmen planen und umsetzen und Kunden zu Angriffen wie Man-in-the-Middle, SQL-Injection und DDoS beraten.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.04.02"
       },
       {
-       "id": "PB1-10-1-3-K3",
-       "text": "Du kannst für einen Kunden funktionale Sicherheitsanforderungen (z. B. Anmeldung mit zwei Faktoren, Rollen und Rechte, Protokollierung) und Qualitätsanforderungen an die Sicherheit (z. B. Verfügbarkeit, Wiederherstellungszeit, Antwortzeit unter Last) festlegen.",
+       "id": "AP2a.04.02.1"
+      },
+      {
+       "id": "AP2a.04.02.2"
+      },
+      {
+       "id": "AP2a.04.02.3"
+      },
+      {
+       "id": "AP2a.04.04.9"
+      }
+     ],
+     "teilaufgaben": [
+      "2025W-PB1-A3-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-10-1-2-K1",
+       "text": "Du kannst präventive Maßnahmen gegen Datendiebstahl planen und umsetzen: Zugriffe nach dem Prinzip der geringsten Rechte, Verschlüsselung gespeicherter und übertragener Daten, Weitergabe an fremde Dienste nur geprüft und vertraglich geregelt.",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2a.04.04.4",
-        "katalog:AP2a.04.04.5"
+        "katalog:AP2a.04.02.1"
+       ]
+      },
+      {
+       "id": "PB1-10-1-2-K2",
+       "text": "Du kannst über die Grundmaßnahmen aus AP1 (getrennte Sicherung, Updates, Rechte) hinaus präventive Maßnahmen gegen digitale Erpressung durch Ransomware planen: Sicherungen offline oder unveränderbar aufbewahren, Netze trennen.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.04.02.2"
+       ]
+      },
+      {
+       "id": "PB1-10-1-2-K3",
+       "text": "Du kannst präventive Maßnahmen gegen Identitätsdiebstahl durch Phishing in einer Anwendung umsetzen: Zwei-Faktor-Anmeldung, Zurücksetzen von Passwörtern nur über einen zweiten, unabhängigen Weg, Warnung bei Anmeldung von neuen Geräten.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.04.02.3"
+       ]
+      },
+      {
+       "id": "PB1-10-1-2-K4",
+       "text": "Du kannst einen Kunden zu Bedrohungsszenarien beraten und für seine Anwendung Gegenmaßnahmen empfehlen: Man-in-the-Middle (verschlüsselte Verbindung mit Zertifikatsprüfung), SQL-Injection über Eingabefelder (vorbereitete Anweisungen mit Parametern, Eingaben prüfen), DDoS (Filterung, Lastverteilung, Schutzdienste).",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.04.04.9"
        ]
       }
      ],
      "baut_auf": [
-      "AP1-7-1-3",
-      "AP1-7-2-1"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "PB1-10-2",
-   "titel": "Kryptografie, Anmeldung und Datenschutz in Anwendungen",
-   "satz": "Verschlüsselung, Signaturen und Zertifikate in Anwendungen einsetzen, Benutzer sicher anmelden und berechtigen und Datenschutz beim Entwurf berücksichtigen. Die Verfahren an sich kennst du aus AP1.",
-   "stichpunkte": [
+      "AP1-7-4-1",
+      "AP1-7-4-2",
+      "AP1-7-3-5"
+     ],
+     "hinweis": "Nur Testdaten an fremde Dienste geben (2025W-PB1-A3-bb) steht bei der eRechnung in PB1-7."
+    },
     {
-     "id": "PB1-10-2-1",
+     "id": "PB1-10-1-3",
      "titel": "Verschlüsselungsverfahren in Anwendungen wählen",
      "ziel": "Für eine Anwendung ein Verschlüsselungsverfahren vorschlagen und begründen, die hybride Transportverschlüsselung erläutern und Transport- von Ende-zu-Ende-Verschlüsselung unterscheiden.",
      "gebiete": [
@@ -245,26 +209,18 @@
      ],
      "koennen": [
       {
-       "id": "PB1-10-2-1-K1",
-       "text": "Du kannst für ein beschriebenes Problem ein alternatives Verschlüsselungsverfahren mit Vor- und Nachteil beschreiben, zum Beispiel asymmetrisch oder hybrid statt symmetrisch, wenn der gemeinsame Schlüssel nicht sicher verteilt werden kann.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.05.01.1",
-        "beleg:2021W-PB1-A4-ab"
-       ]
-      },
-      {
-       "id": "PB1-10-2-1-K2",
+       "id": "PB1-10-1-3-K1",
        "text": "Du kannst ein Verschlüsselungsverfahren für eine Anwendung vorschlagen und begründen, zum Beispiel symmetrisch mit vorab verteiltem Schlüssel für batteriebetriebene Sensoren mit wenig Rechenleistung, deren Teilnehmer alle bekannt sind.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.01.1",
-        "beleg:2023S-PB1-A4-a"
+        "beleg:2023S-PB1-A4-a",
+        "beleg:2021W-PB1-A4-ab"
        ]
       },
       {
-       "id": "PB1-10-2-1-K3",
-       "text": "Du kannst die Art der Transportverschlüsselung bei TLS und bei der E-Mail-Übertragung nennen und erläutern: hybrid, also Schlüsselaustausch und Echtheitsprüfung asymmetrisch über Zertifikate, die Daten symmetrisch mit dem ausgehandelten Sitzungsschlüssel.",
+       "id": "PB1-10-1-3-K2",
+       "text": "Du kannst die Art der Transportverschlüsselung bei TLS und bei der E-Mail-Übertragung nennen und erläutern: hybrid, also Sitzungsschlüssel asymmetrisch ausgehandelt (bei TLS 1.3 per Diffie-Hellman), Server per Zertifikat geprüft, Daten symmetrisch mit dem Sitzungsschlüssel verschlüsselt.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -274,7 +230,7 @@
        ]
       },
       {
-       "id": "PB1-10-2-1-K4",
+       "id": "PB1-10-1-3-K3",
        "text": "Du kannst Transportverschlüsselung (nur der Übertragungsweg ist geschützt) und Ende-zu-Ende-Verschlüsselung (nur Absender und Empfänger können lesen) unterscheiden und für eine Anwendung festlegen, welche nötig ist.",
        "stufe": 3,
        "herkunft": [
@@ -286,12 +242,12 @@
      "baut_auf": [
       "AP1-7-3-1"
      ],
-     "hinweis": "Symmetrische Verschlüsselung beschreiben (2021W-PB1-A4-aa) und den Vorteil asymmetrischer Verfahren (2025W-PB1-A3-ab) erklärt AP1-7-3-1."
+     "hinweis": "Symmetrische Verschlüsselung beschreiben (2021W-PB1-A4-aa), ein alternatives Verfahren mit Vor- und Nachteil (2021W-PB1-A4-ab) und den Vorteil asymmetrischer Verfahren (2025W-PB1-A3-ab) erklärt AP1-7-3-1. Bei TLS und E-Mail gibt die Antwort „asymmetrisch“ laut Lösung 2025W-PB1-A3-aa keine Punkte; erwartet ist „hybrid“."
     },
     {
-     "id": "PB1-10-2-2",
+     "id": "PB1-10-1-4",
      "titel": "Integrität, Authentizität, Zertifikate und Passwortspeicherung",
-     "ziel": "Zertifikate, Signaturen und Hashwerte in Anwendungen einsetzen: Server prüfen, Signieren statt Verschlüsseln beurteilen, Passwörter sicher speichern.",
+     "ziel": "Zertifikate, Signaturen und Hashwerte in Anwendungen einsetzen: Server prüfen, Signieren statt Verschlüsseln beurteilen, Passwörter sicher speichern. Hashwert, Signatur und Zertifikat für einen Zweck auswählen kennst du aus AP1-7-3-2.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -320,7 +276,7 @@
      ],
      "koennen": [
       {
-       "id": "PB1-10-2-2-K1",
+       "id": "PB1-10-1-4-K1",
        "text": "Du kannst die Sicherheitsmechanismen erläutern, die ein SSL/TLS-Zertifikat für einen Webserver bewirkt: Der Server wird authentifiziert, die Übertragung wird verschlüsselt, die Integrität der Daten wird gesichert.",
        "stufe": 2,
        "herkunft": [
@@ -329,7 +285,7 @@
        ]
       },
       {
-       "id": "PB1-10-2-2-K2",
+       "id": "PB1-10-1-4-K2",
        "text": "Du kannst erläutern, wie eine Software die Echtheit von Diensten prüft, ohne jeden öffentlichen Schlüssel vorab zu kennen: Die Zertifikate der Dienste werden von einer (auch firmeneigenen) Zertifizierungsstelle signiert; die Software prüft diese Signatur und ob das Zertifikat widerrufen wurde.",
        "stufe": 2,
        "herkunft": [
@@ -338,8 +294,8 @@
        ]
       },
       {
-       "id": "PB1-10-2-2-K3",
-       "text": "Du kannst zu dem Vorschlag, Daten zu signieren statt zu verschlüsseln, begründet Stellung nehmen: Eine Signatur sichert Authentizität und Integrität bei geringem Rechenaufwand, schützt aber nicht die Vertraulichkeit; ob das reicht, hängt von der Art der Daten ab.",
+       "id": "PB1-10-1-4-K3",
+       "text": "Du kannst zu dem Vorschlag, Daten zu signieren statt zu verschlüsseln, begründet Stellung nehmen: Eine Signatur sichert Authentizität und Integrität, schützt aber nicht die Vertraulichkeit; ein Hash bzw. MAC ist günstig zu berechnen, eine echte Signatur ist asymmetrisch und aufwendiger; ob das reicht, hängt von der Art der Daten ab.",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -347,29 +303,28 @@
        ]
       },
       {
-       "id": "PB1-10-2-2-K4",
+       "id": "PB1-10-1-4-K4",
        "text": "Du kannst eine geeignete Speicherung von Passwörtern in einer Datenbank nennen und beschreiben: nicht im Klartext, sondern als Hashwert mit einem zufälligen Salt je Benutzer und einem bewusst langsamen Verfahren; bei der Anmeldung wird der Hash der Eingabe verglichen.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.2",
         "beleg:2025S-PB1-A2-c"
        ]
-      },
-      {
-       "id": "PB1-10-2-2-K5",
-       "text": "Du kannst eine Anwendung so erstellen, dass Integrität und Authentizität der Daten gesichert sind: Hashwerte zur Prüfung auf Veränderung, digitale Signaturen für Herkunft und Unversehrtheit, Archivierung mit unveränderbarer Aufbewahrung.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.05.01.1"
-       ]
       }
      ],
      "baut_auf": [
       "AP1-7-3-2"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "PB1-10-2",
+   "titel": "Zugriff, Datenschutz, Prüfung und Beratung",
+   "satz": "Benutzer sicher anmelden und berechtigen, Datenschutz beim Entwurf berücksichtigen, technisch-organisatorische Maßnahmen prüfen und absichern, Werkzeuge zur Sicherheitsprüfung kennen und Kunden beraten.",
+   "stichpunkte": [
     {
-     "id": "PB1-10-2-3",
+     "id": "PB1-10-2-1",
      "titel": "Authentifizierung, Autorisierung und Identity & Access Management",
      "ziel": "Anmeldung und Berechtigungen in Anwendungen umsetzen, OAuth2 und Single-Sign-On verstehen und Benutzer, Rollen und Rechte zentral verwalten.",
      "gebiete": [
@@ -399,16 +354,26 @@
      ],
      "koennen": [
       {
-       "id": "PB1-10-2-3-K1",
-       "text": "Du kannst Authentifizierung (Wer bist du?) und Autorisierung (Was darfst du?) in einer Anwendung umsetzen: Anmeldung sicher prüfen, Rechte über Rollen vergeben und bei jedem Zugriff prüfen.",
-       "stufe": 3,
+       "id": "PB1-10-2-1-K1",
+       "text": "Du kannst Identity & Access Management und ein Berechtigungskonzept erläutern: Benutzer, Rollen und Rechte werden zentral verwaltet, die Anmeldung kann an einen Identity Provider abgegeben werden; Zutritt, Zugang und Zugriff werden nach der Organisationsstruktur geregelt, Rechte an Rollen, nur die nötigen Rechte (AP1).",
+       "stufe": 2,
        "herkunft": [
-        "katalog:AP2b.05.01.2"
+        "katalog:AP2a.04.05.3",
+        "katalog:AP2b.02.01.1"
        ]
       },
       {
-       "id": "PB1-10-2-3-K2",
-       "text": "Du kannst den Ablauf einer Anmeldung mit OAuth2 nachvollziehen und die Begriffe zuordnen: Der Client erhält vom Autorisierungsserver einen Autorisierungscode, tauscht ihn gegen ein Access Token und greift damit beim Resource Server auf die geschützte Ressource zu.",
+       "id": "PB1-10-2-1-K2",
+       "text": "Du kannst Authentifizierung (Wer bist du?) und Autorisierung (Was darfst du?) mit Benutzer- und Rollenverwaltung in einer Anwendung umsetzen: Anmeldung sicher prüfen, Konten anlegen, Rollen zuweisen, Rechte bei jedem Zugriff prüfen, Konten bei Austritt sofort sperren, Änderungen protokollieren.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.05.01.2",
+        "katalog:AP2b.02.03.1"
+       ]
+      },
+      {
+       "id": "PB1-10-2-1-K3",
+       "text": "Du kannst den Ablauf der Autorisierung mit OAuth2 nachvollziehen (für die Anmeldung erweitert durch OpenID Connect) und die Begriffe zuordnen: Der Client erhält vom Autorisierungsserver einen Autorisierungscode, tauscht ihn gegen ein Access Token und greift damit beim Resource Server auf die geschützte Ressource zu.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.3",
@@ -416,48 +381,25 @@
        ]
       },
       {
-       "id": "PB1-10-2-3-K3",
+       "id": "PB1-10-2-1-K4",
        "text": "Du kannst Vor- und Nachteile von Single-Sign-On unter dem Sicherheitsaspekt erläutern: zentrale Rechteverwaltung, weniger Passwörter und schnelle Sperrung bei Vorfällen gegenüber Zugriff auf alle Systeme mit einem gestohlenen Zugang und Abhängigkeit vom Identity Provider.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.3",
         "beleg:2022W-PB1-A1-f"
        ]
-      },
-      {
-       "id": "PB1-10-2-3-K4",
-       "text": "Du kannst Identity & Access Management erläutern: Benutzer, Rollen und Rechte werden zentral verwaltet, Konten angelegt, geändert und gesperrt, die Anmeldung kann an einen Identity Provider abgegeben werden.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2a.04.05.3"
-       ]
-      },
-      {
-       "id": "PB1-10-2-3-K5",
-       "text": "Du kannst ein Berechtigungskonzept beschreiben, das Zugang, Zutritt und Zugriff nach Organisationsstruktur regelt: Rechte an Rollen, Benutzer an Rollen, nur die nötigen Rechte.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2b.02.01.1"
-       ]
-      },
-      {
-       "id": "PB1-10-2-3-K6",
-       "text": "Du kannst User- und Zugriffsmanagement in einer Anwendung implementieren: Konten anlegen, Rollen zuweisen, Rechte prüfen, Konten bei Austritt sofort sperren, Änderungen protokollieren.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.02.03.1"
-       ]
       }
      ],
      "baut_auf": [
       "AP1-7-3-3",
-      "AP1-7-1-3"
+      "AP1-7-1-3",
+      "AP1-7-1-2"
      ]
     },
     {
-     "id": "PB1-10-2-4",
+     "id": "PB1-10-2-2",
      "titel": "Datenschutz beim Entwurf von Anwendungen und Archivierung",
-     "ziel": "Datenschutz von Beginn an in eine Anwendung einplanen, Daten an fremde Dienste nur mit Bedacht weitergeben und Archivierung von Datensicherung unterscheiden.",
+     "ziel": "Datenschutz von Beginn an in eine Anwendung einplanen, Daten an fremde Dienste nur mit Bedacht weitergeben und Archivierung mit ihren Fristen von Datensicherung unterscheiden.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -473,8 +415,8 @@
      "teilaufgaben": [],
      "koennen": [
       {
-       "id": "PB1-10-2-4-K1",
-       "text": "Du kannst eine Anwendung unter Berücksichtigung des Datenschutzes erstellen: nur nötige Daten erheben, den Zweck festlegen, Löschung nach Wegfall des Zwecks vorsehen, datenschutzfreundliche Voreinstellungen wählen, wo möglich pseudonymisieren.",
+       "id": "PB1-10-2-2-K1",
+       "text": "Du kannst Privacy by Design und Privacy by Default (Art. 25 DSGVO) beim Erstellen einer Anwendung umsetzen, mit den Grundsätzen aus AP1, zum Beispiel Pflichtfelder auf das Nötige beschränken, Löschung nach Wegfall des Zwecks automatisch vorsehen, Profile standardmäßig nicht öffentlich, wo möglich pseudonymisieren.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -482,16 +424,16 @@
        ]
       },
       {
-       "id": "PB1-10-2-4-K2",
-       "text": "Du kannst beschreiben, was bei der Weitergabe personenbezogener Daten an einen fremden Dienst zu beachten ist: Vertraulichkeit, Speicherort, Vertrauenswürdigkeit des Anbieters, vertragliche Regelung der Auftragsverarbeitung, für Tests nur Testdaten.",
+       "id": "PB1-10-2-2-K2",
+       "text": "Du kannst beschreiben, was bei der Weitergabe personenbezogener Daten an einen fremden Dienst zu beachten ist: Vertraulichkeit, Speicherort, Vertrauenswürdigkeit des Anbieters, vertragliche Regelung der Auftragsverarbeitung.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1"
        ]
       },
       {
-       "id": "PB1-10-2-4-K3",
-       "text": "Du kannst Archivierung von Datensicherung unterscheiden: langfristige, unveränderbare Aufbewahrung nach gesetzlichen Fristen gegenüber Wiederherstellung nach Verlust; nach Ablauf der Fristen und Wegfall des Zwecks werden personenbezogene Daten gelöscht.",
+       "id": "PB1-10-2-2-K3",
+       "text": "Du kannst Archivierung von Datensicherung unterscheiden: langfristige, unveränderbare Aufbewahrung in revisionssicheren Archivsystemen (GoBD) nach gesetzlichen Fristen – Handelsbücher und Jahresabschlüsse 10 Jahre, Buchungsbelege 8 Jahre (seit 2025), Handels- und Geschäftsbriefe 6 Jahre – gegenüber Wiederherstellung nach Verlust; nach Ablauf der Fristen und Wegfall des Zwecks werden personenbezogene Daten gelöscht.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1"
@@ -500,7 +442,17 @@
      ],
      "baut_auf": [
       "AP1-7-5-1",
-      "AP1-7-5-2"
+      "AP1-7-5-2",
+      "AP1-7-1-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Paragrafennummern der Aufbewahrungspflichten (HGB, AO) und die Einzelregeln der GoBD gehören nicht dazu.",
+       "begruendung": "G4: ohne Gesetzestext nicht sinnvoll abfragbar; der Katalog nennt Systeme, Fristen und Pflichten der Archivierung (AP2b.05.01.1).",
+       "katalog": [
+        "AP2b.05.01.1"
+       ]
+      }
      ],
      "kuer": [
       {
@@ -511,18 +463,11 @@
        "grund": "Nur Hinweisquelle; Grundlagen der DSGVO stehen in AP1 (AP1-7-5-1). Vom Katalog nicht ausgeschlossen."
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "PB1-10-3",
-   "titel": "Maßnahmen prüfen, absichern und beraten",
-   "satz": "Technisch-organisatorische Maßnahmen auf Wirksamkeit und Effizienz prüfen, Systeme physisch und softwaretechnisch absichern, Werkzeuge zur Sicherheitsprüfung kennen und Kunden beraten.",
-   "stichpunkte": [
+    },
     {
-     "id": "PB1-10-3-1",
-     "titel": "TOM prüfen: Zutritt, Zugang, Zugriff, Protokolle",
-     "ziel": "Maßnahmen der Zutritts-, Zugangs- und Zugriffskontrolle zuordnen und ihre Wirksamkeit und Effizienz prüfen, auch mit Log Management und Compliance Reports; physische Absicherung benennen.",
+     "id": "PB1-10-2-3",
+     "titel": "TOM prüfen und softwaretechnisch absichern",
+     "ziel": "Maßnahmen der Zutritts-, Zugangs- und Zugriffskontrolle zuordnen und ihre Wirksamkeit und Effizienz prüfen, auch mit Log Management und Compliance Reports; physische Absicherung benennen; Webfilter und Portsecurity einrichten.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -580,79 +525,7 @@
       },
       {
        "id": "AP2b.02.02.2"
-      }
-     ],
-     "teilaufgaben": [],
-     "koennen": [
-      {
-       "id": "PB1-10-3-1-K1",
-       "text": "Du kannst Maßnahmen der Zutrittskontrolle (Alarmanlage, Videoüberwachung, Besucherausweise), der Zugangskontrolle (Bildschirmsperre mit Passwort, biometrische Verfahren, Magnet- oder Chipkarte) und der Zugriffskontrolle (Datenträgerverschlüsselung, sichere Löschung, Rollenkonzept) zuordnen.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2a.04.06.1",
-        "katalog:AP2a.04.06.2",
-        "katalog:AP2a.04.06.3"
-       ]
       },
-      {
-       "id": "PB1-10-3-1-K2",
-       "text": "Du kannst die Wirksamkeit einer Maßnahme der Zutritts-, Zugangs- oder Zugriffskontrolle prüfen und eine Schwäche benennen, zum Beispiel Videoüberwachung ohne Auswertung, Bildschirmsperre erst nach langer Zeit, nicht beglichene Besucherausweise, Rollenkonzept mit veralteten Rechten, Löschung ohne Überschreiben.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2a.04.06.1",
-        "katalog:AP2a.04.06.2",
-        "katalog:AP2a.04.06.3",
-        "katalog:AP2a.04.06.1.1",
-        "katalog:AP2a.04.06.1.2",
-        "katalog:AP2a.04.06.1.3",
-        "katalog:AP2a.04.06.2.1",
-        "katalog:AP2a.04.06.2.2",
-        "katalog:AP2a.04.06.2.3",
-        "katalog:AP2a.04.06.3.1",
-        "katalog:AP2a.04.06.3.2",
-        "katalog:AP2a.04.06.3.3"
-       ]
-      },
-      {
-       "id": "PB1-10-3-1-K3",
-       "text": "Du kannst die Effizienz technisch-organisatorischer Maßnahmen prüfen: ob Aufwand und Kosten im Verhältnis zum Schutzbedarf stehen und ob eine einfachere Maßnahme denselben Schutz bietet.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2a.04.06"
-       ]
-      },
-      {
-       "id": "PB1-10-3-1-K4",
-       "text": "Du kannst Möglichkeiten der physischen Absicherung benennen: Zugangskontrollen für Gebäude, Serverraum und Schrank, Schutz vor Elementarrisiken wie Feuer und Hochwasser (Brandmeldeanlage, Serverraum nicht im Keller, Sicherung an einem anderen Ort).",
-       "stufe": 1,
-       "herkunft": [
-        "katalog:AP2b.02.02.1",
-        "katalog:AP2b.02.02.2"
-       ]
-      },
-      {
-       "id": "PB1-10-3-1-K5",
-       "text": "Du kannst mit Log Management und Compliance Reports prüfen, ob TOM wirken: Ereignisse zentral sammeln und auswerten, um Vorfälle zu erkennen und nachzuweisen; Berichte zeigen, ob Vorgaben eingehalten werden.",
-       "stufe": 4,
-       "herkunft": [
-        "katalog:AP2a.04.06.4",
-        "katalog:AP2a.04.06.5"
-       ]
-      }
-     ],
-     "baut_auf": [
-      "AP1-7-1-2",
-      "AP1-7-3-3"
-     ]
-    },
-    {
-     "id": "PB1-10-3-2",
-     "titel": "Softwaretechnische Absicherung implementieren",
-     "ziel": "Firewall und Webfilter, Portsecurity und Datenträgerverschlüsselung einrichten.",
-     "gebiete": [
-      "G.PB1.02"
-     ],
-     "bausteine": [
       {
        "id": "AP2b.02.03"
       },
@@ -669,39 +542,90 @@
      "teilaufgaben": [],
      "koennen": [
       {
-       "id": "PB1-10-3-2-K1",
-       "text": "Du kannst Firewall und Webfilter unterscheiden und Regeln einrichten: Die Firewall erlaubt oder sperrt Verbindungen nach Adressen, Ports und Protokollen, der Webfilter sperrt Inhalte und Webseiten nach Kategorien oder Listen.",
+       "id": "PB1-10-2-3-K1",
+       "text": "Du kannst die Katalogbeispiele den Kontrollarten zuordnen (Unterscheidung aus AP1): Zutrittskontrolle (Alarmanlage, Videoüberwachung, Besucherausweise), Zugangskontrolle (Bildschirmsperre mit Passwort, biometrische Verfahren, Magnet- oder Chipkarte), Zugriffskontrolle (Datenträgerverschlüsselung, sichere Löschung, Rollenkonzept).",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.04.06.1",
+        "katalog:AP2a.04.06.2",
+        "katalog:AP2a.04.06.3"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K2",
+       "text": "Du kannst die Wirksamkeit einer Maßnahme der Zutritts-, Zugangs- oder Zugriffskontrolle prüfen und eine Schwäche benennen, zum Beispiel Videoüberwachung ohne Auswertung, Bildschirmsperre erst nach langer Zeit, nicht zurückgegebene Besucherausweise, Rollenkonzept mit veralteten Rechten, Löschung ohne Überschreiben, Datenträgerverschlüsselung ohne sicher hinterlegten Wiederherstellungsschlüssel.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.04.06.1",
+        "katalog:AP2a.04.06.2",
+        "katalog:AP2a.04.06.3",
+        "katalog:AP2a.04.06.1.1",
+        "katalog:AP2a.04.06.1.2",
+        "katalog:AP2a.04.06.1.3",
+        "katalog:AP2a.04.06.2.1",
+        "katalog:AP2a.04.06.2.2",
+        "katalog:AP2a.04.06.2.3",
+        "katalog:AP2a.04.06.3.1",
+        "katalog:AP2a.04.06.3.2",
+        "katalog:AP2a.04.06.3.3",
+        "katalog:AP2b.02.03.4"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K3",
+       "text": "Du kannst die Effizienz technisch-organisatorischer Maßnahmen prüfen: ob Aufwand und Kosten im Verhältnis zum Schutzbedarf stehen und ob eine einfachere Maßnahme denselben Schutz bietet.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.04.06"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K4",
+       "text": "Du kannst Möglichkeiten der physischen Absicherung benennen: Zugangskontrollen für Gebäude, Serverraum und Schrank, Schutz vor Elementarrisiken wie Feuer und Hochwasser (Brandmeldeanlage, Serverraum nicht im Keller, Sicherung an einem anderen Ort).",
+       "stufe": 1,
+       "herkunft": [
+        "katalog:AP2b.02.02.1",
+        "katalog:AP2b.02.02.2"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K5",
+       "text": "Du kannst mit Log Management und Compliance Reports prüfen, ob TOM wirken: Ereignisse zentral sammeln und auswerten, um Vorfälle zu erkennen und nachzuweisen; Berichte zeigen, ob Vorgaben eingehalten werden.",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.04.06.4",
+        "katalog:AP2a.04.06.5"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K6",
+       "text": "Du kannst einen Webfilter einrichten, der Inhalte und Webseiten nach Kategorien oder Listen sperrt, und ihn von der Firewall abgrenzen, die Verbindungen nach Adressen, Ports und Protokollen erlaubt oder sperrt.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.03.2"
        ]
       },
       {
-       "id": "PB1-10-3-2-K2",
+       "id": "PB1-10-2-3-K7",
        "text": "Du kannst Portsecurity an einem Switch umsetzen: An einem Anschluss werden nur bekannte Geräte (MAC-Adressen) zugelassen, unbekannte werden gesperrt.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.03.3"
        ]
-      },
-      {
-       "id": "PB1-10-3-2-K3",
-       "text": "Du kannst Datenträger mit einer Lösung wie BitLocker verschlüsseln und den Wiederherstellungsschlüssel sicher hinterlegen, damit Daten bei Verlust oder Diebstahl unlesbar bleiben.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2b.02.03.4"
-       ]
       }
      ],
      "baut_auf": [
+      "AP1-7-1-2",
+      "AP1-7-3-3",
       "AP1-7-3-4",
       "AP1-7-3-1"
-     ]
+     ],
+     "hinweis": "Datenträger verschlüsseln und den Wiederherstellungsschlüssel aufbewahren steht in AP1-7-3-1; die Firewall als Paketfilter in PB1-11."
     },
     {
-     "id": "PB1-10-3-3",
+     "id": "PB1-10-2-4",
      "titel": "Sicherheitsprüfung und Beratung",
-     "ziel": "Werkzeuge zur Überprüfung von IT-Sicherheit erläutern und Kunden zielgruppengerecht unter Berücksichtigung von Rahmenbedingungen, Risiken und Bedrohungen beraten.",
+     "ziel": "Werkzeuge zur Überprüfung von IT-Sicherheit erläutern und Kunden zielgruppengerecht unter Berücksichtigung von Rahmenbedingungen und Risiken beraten. Risikobewertung und Risikomatrix kennst du aus AP1.",
      "gebiete": [
       "G.PB1.02"
      ],
@@ -750,16 +674,12 @@
       },
       {
        "id": "AP2a.04.04.8"
-      },
-      {
-       "id": "AP2a.04.04.9",
-       "anteil": "Beratung zu Bedrohungen"
       }
      ],
      "teilaufgaben": [],
      "koennen": [
       {
-       "id": "PB1-10-3-3-K1",
+       "id": "PB1-10-2-4-K1",
        "text": "Du kannst Werkzeuge zur Überprüfung von IT-Sicherheitsmaßnahmen erläutern: Penetrationstest (beauftragter Angriff mit den Mitteln eines Angreifers), Schwachstellenanalyse (systematische Suche nach bekannten Lücken, z. B. mit einem Scanner), Device Security Check (prüft, ob ein Gerät die Vorgaben erfüllt: Updates, Virenschutz, Verschlüsselung).",
        "stufe": 2,
        "herkunft": [
@@ -769,7 +689,7 @@
        ]
       },
       {
-       "id": "PB1-10-3-3-K2",
+       "id": "PB1-10-2-4-K2",
        "text": "Du kannst Kunden zielgruppengerecht zur IT-Sicherheit beraten: private Haushalte (Updates, Passwortmanager, Sicherung), Unternehmen intern und extern (Richtlinien, Schulung, TOM), öffentliche Hand (Grundschutz, Vorgaben zu Vergabe und Datenschutz).",
        "stufe": 3,
        "herkunft": [
@@ -780,38 +700,24 @@
        ]
       },
       {
-       "id": "PB1-10-3-3-K3",
-       "text": "Du kannst bei einer Beratung technologische, organisatorische, rechtliche und ethische Rahmenbedingungen berücksichtigen, zum Beispiel vorhandene Systeme, Zuständigkeiten, DSGVO, keine heimliche Überwachung von Beschäftigten.",
+       "id": "PB1-10-2-4-K3",
+       "text": "Du kannst bei einer Beratung technologische, organisatorische, rechtliche und ethische Rahmenbedingungen sowie die Risiken des Kunden (bewertet wie in AP1-7-2-3) berücksichtigen, zum Beispiel vorhandene Systeme, Zuständigkeiten, DSGVO, keine heimliche Überwachung von Beschäftigten.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.04.7",
         "katalog:AP2a.04.04.7.1",
         "katalog:AP2a.04.04.7.2",
         "katalog:AP2a.04.04.7.3",
-        "katalog:AP2a.04.04.7.4"
-       ]
-      },
-      {
-       "id": "PB1-10-3-3-K4",
-       "text": "Du kannst für eine Beratung eine Risikoanalyse durchführen: Bedrohungen nach Eintrittswahrscheinlichkeit und Schadenshöhe einordnen und daraus technisch-organisatorische Maßnahmen ableiten.",
-       "stufe": 3,
-       "herkunft": [
+        "katalog:AP2a.04.04.7.4",
         "katalog:AP2a.04.04.8",
         "katalog:AP2a.04.04.6"
-       ]
-      },
-      {
-       "id": "PB1-10-3-3-K5",
-       "text": "Du kannst einen Kunden zu Bedrohungsszenarien wie Man-in-the-Middle, SQL-Injection und DDoS beraten und die passenden Gegenmaßnahmen für seine Anwendung empfehlen.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:AP2a.04.04.9"
        ]
       }
      ],
      "baut_auf": [
       "AP1-7-2-3",
-      "AP1-7-2-2"
+      "AP1-7-2-2",
+      "AP1-1-1-3"
      ],
      "kuer": [
       {
@@ -837,14 +743,14 @@
    {
     "alt": "AP2-7-1-1-K2",
     "status": "angepasst",
-    "neu": "PB1-10-1-1-K2",
-    "grund": "mit Gewichtung zusammengefasst"
+    "neu": "PB1-10-1-1-K1",
+    "grund": "Zuordnung zum Schutzziel in AP1-7-1-1; Einschätzen in sd1"
    },
    {
     "alt": "AP2-7-1-1-K3",
     "status": "angepasst",
-    "neu": "PB1-10-1-1-K2",
-    "grund": "in sd2 aufgenommen"
+    "neu": "PB1-10-1-1-K1",
+    "grund": "in sd1 aufgenommen"
    },
    {
     "alt": "AP2-7-1-1-K4",
@@ -890,146 +796,146 @@
    },
    {
     "alt": "AP2-7-2-1-K1",
-    "status": "verschoben",
-    "neu": "PB1-10-1-3-K1"
+    "status": "angepasst",
+    "neu": "PB1-10-1-1-K3",
+    "grund": "mit funktionalen und Qualitätsanforderungen in einer Aussage"
    },
    {
     "alt": "AP2-7-2-1-K2",
     "status": "angepasst",
-    "neu": "PB1-10-1-3-K2",
+    "neu": "PB1-10-1-1-K4",
     "grund": "definieren (Katalog), mit drei Zielen"
    },
    {
     "alt": "AP2-7-2-1-K3",
     "status": "angepasst",
-    "neu": "PB1-10-1-3-K2",
+    "neu": "PB1-10-1-1-K4",
     "grund": "Security by Design ist Ziel der Richtschnur; Erklärung in AP1-7-1-3-K4"
    },
    {
     "alt": "AP2-7-2-1-K4",
     "status": "angepasst",
-    "neu": "PB1-10-3-3-K2",
+    "neu": "PB1-10-2-4-K2",
     "grund": "beraten (Katalog)"
    },
    {
     "alt": "AP2-7-2-1-K5",
     "status": "angepasst",
-    "neu": "PB1-10-3-3-K3",
+    "neu": "PB1-10-2-4-K3",
     "grund": "berücksichtigen (beraten)"
    },
    {
     "alt": "AP2-7-2-1-K6",
     "status": "angepasst",
-    "neu": "PB1-10-3-3-K4",
-    "grund": "durchführen und Maßnahmen ableiten"
+    "neu": "PB1-10-2-4-K3",
+    "grund": "Risiken in der Beratung berücksichtigen; Risikoanalyse selbst in AP1-7-2-3"
    },
    {
     "alt": "AP2-7-2-2-K1",
     "status": "angepasst",
-    "neu": "PB1-10-3-3-K1",
+    "neu": "PB1-10-2-4-K1",
     "grund": "drei Werkzeuge in einer Aussage"
    },
    {
     "alt": "AP2-7-2-2-K2",
     "status": "angepasst",
-    "neu": "PB1-10-3-3-K1",
+    "neu": "PB1-10-2-4-K1",
     "grund": "in pt1 aufgenommen"
    },
    {
     "alt": "AP2-7-2-2-K3",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K4",
+    "neu": "PB1-10-2-1-K1",
     "grund": "um Identity Provider ergänzt"
    },
    {
     "alt": "AP2-7-2-2-K4",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K5",
+    "neu": "PB1-10-2-3-K5",
     "grund": "prüfen (Katalog AP2a.04.06, Stufe 4)"
    },
    {
     "alt": "AP2-7-2-2-K5",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K5",
+    "neu": "PB1-10-2-3-K5",
     "grund": "in tom5 aufgenommen"
    },
    {
     "alt": "AP2-7-2-2-K6",
     "status": "angepasst",
-    "neu": "PB1-10-3-3-K1",
+    "neu": "PB1-10-2-4-K1",
     "grund": "in pt1 aufgenommen"
    },
    {
     "alt": "AP2-7-3-1-K1",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K1",
+    "neu": "PB1-10-2-3-K1",
     "grund": "zuordnen; Unterscheidung selbst in AP1-7-3-3-K5"
    },
    {
     "alt": "AP2-7-3-1-K2",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K1",
+    "neu": "PB1-10-2-3-K1",
     "grund": "in tom1 aufgenommen"
    },
    {
     "alt": "AP2-7-3-1-K3",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K5",
-    "grund": "mit Organisationsstruktur (AP2b.02.01.1)"
+    "neu": "PB1-10-2-1-K1",
+    "grund": "Berechtigungskonzept mit IAM in einer Aussage"
    },
    {
     "alt": "AP2-7-3-1-K4",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K6",
-    "grund": "implementieren (Katalog AP2b.02.03.1)"
+    "neu": "PB1-10-2-1-K2",
+    "grund": "implementieren (Katalog AP2b.02.03.1) mit Authentifizierung und Autorisierung"
    },
    {
     "alt": "AP2-7-3-1-K5",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K2",
+    "neu": "PB1-10-2-3-K2",
     "grund": "prüfen (Katalog, Stufe 4)"
    },
    {
     "alt": "AP2-7-3-1-K6",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K5",
-    "grund": "geringste Rechte in am5; Begründung in AP1-7-1-3-K5"
+    "neu": "PB1-10-2-1-K1",
+    "grund": "geringste Rechte in am4; Begründung in AP1-7-1-3-K5"
    },
    {
     "alt": "AP2-7-3-2-K1",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K4",
+    "neu": "PB1-10-2-3-K4",
     "grund": "physische Absicherung und Elementarrisiken zusammen"
    },
    {
     "alt": "AP2-7-3-2-K2",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K4",
+    "neu": "PB1-10-2-3-K4",
     "grund": "in tom4 aufgenommen"
    },
    {
     "alt": "AP2-7-3-2-K3",
     "status": "angepasst",
-    "neu": "PB1-10-3-1-K4",
+    "neu": "PB1-10-2-3-K4",
     "grund": "in tom4 aufgenommen"
    },
    {
     "alt": "AP2-7-3-2-K4",
     "status": "angepasst",
-    "neu": "PB1-10-3-2-K1",
+    "neu": "PB1-10-2-3-K6",
     "grund": "einrichten (Katalog: implementieren)"
    },
    {
     "alt": "AP2-7-3-2-K5",
     "status": "angepasst",
-    "neu": "PB1-10-3-2-K2",
+    "neu": "PB1-10-2-3-K7",
     "grund": "umsetzen (Katalog: implementieren)"
    },
    {
     "alt": "AP2-7-3-2-K6",
-    "status": "angepasst",
-    "neu": "PB1-10-3-2-K3",
-    "grund": "einrichten mit Wiederherstellungsschlüssel"
+    "status": "gestrichen",
+    "grund": "E2: Datenträgerverschlüsselung und Wiederherstellungsschlüssel in AP1-7-3-1-K6/K7; Prüfung der Wirksamkeit in tom2"
    },
    {
     "alt": "AP2-7-4-1-K1",
@@ -1044,19 +950,19 @@
    {
     "alt": "AP2-7-4-1-K3",
     "status": "angepasst",
-    "neu": "PB1-10-2-1-K2",
+    "neu": "PB1-10-1-3-K1",
     "grund": "vorschlagen und begründen (2023S-PB1-A4-a)"
    },
    {
     "alt": "AP2-7-4-1-K4",
     "status": "angepasst",
-    "neu": "PB1-10-2-1-K3",
+    "neu": "PB1-10-1-3-K2",
     "grund": "für TLS und E-Mail (2022W-PB1-A1-d, 2025W-PB1-A3-aa)"
    },
    {
     "alt": "AP2-7-4-1-K5",
     "status": "angepasst",
-    "neu": "PB1-10-2-1-K4",
+    "neu": "PB1-10-1-3-K3",
     "grund": "festlegen, welche nötig ist"
    },
    {
@@ -1071,9 +977,8 @@
    },
    {
     "alt": "AP2-7-4-2-K3",
-    "status": "angepasst",
-    "neu": "PB1-10-2-2-K5",
-    "grund": "in einer Anwendung erstellen (Katalog AP2b.05.01)"
+    "status": "gestrichen",
+    "grund": "E2: Hash und Signatur für einen Zweck einsetzen steht in AP1-7-3-2-K7"
    },
    {
     "alt": "AP2-7-4-2-K4",
@@ -1088,13 +993,13 @@
    {
     "alt": "AP2-7-4-2-K6",
     "status": "angepasst",
-    "neu": "PB1-10-2-2-K4",
+    "neu": "PB1-10-1-4-K4",
     "grund": "mit Salt und langsamem Verfahren (2025S-PB1-A2-c)"
    },
    {
     "alt": "AP2-7-4-3-K1",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K1",
+    "neu": "PB1-10-2-1-K2",
     "grund": "umsetzen (Katalog: erstellen)"
    },
    {
@@ -1105,19 +1010,19 @@
    {
     "alt": "AP2-7-4-3-K3",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K1",
+    "neu": "PB1-10-2-1-K2",
     "grund": "in am1 aufgenommen"
    },
    {
     "alt": "AP2-7-4-3-K4",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K1",
+    "neu": "PB1-10-2-1-K2",
     "grund": "in am1 aufgenommen"
    },
    {
     "alt": "AP2-7-4-3-K5",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K3",
+    "neu": "PB1-10-2-1-K4",
     "grund": "Vor- und Nachteile laut 2022W-PB1-A1-f"
    },
    {
@@ -1128,31 +1033,31 @@
    {
     "alt": "AP2-7-5-1-K2",
     "status": "angepasst",
-    "neu": "PB1-10-2-4-K2",
+    "neu": "PB1-10-2-2-K2",
     "grund": "mit Auftragsverarbeitung"
    },
    {
     "alt": "AP2-7-5-1-K3",
     "status": "angepasst",
-    "neu": "PB1-10-2-4-K2",
+    "neu": "PB1-10-2-2-K2",
     "grund": "in ds2 aufgenommen"
    },
    {
     "alt": "AP2-7-5-1-K4",
     "status": "angepasst",
-    "neu": "PB1-10-2-4-K3",
+    "neu": "PB1-10-2-2-K3",
     "grund": "mit Löschfristen zusammengefasst"
    },
    {
     "alt": "AP2-7-5-1-K5",
     "status": "angepasst",
-    "neu": "PB1-10-2-4-K3",
+    "neu": "PB1-10-2-2-K3",
     "grund": "in ds3 aufgenommen"
    },
    {
     "alt": "AP2-7-5-1-K6",
     "status": "angepasst",
-    "neu": "PB1-10-2-4-K1",
+    "neu": "PB1-10-2-2-K1",
     "grund": "erstellen (Katalog AP2b.05.01)"
    }
   ],
@@ -1166,7 +1071,7 @@
   "kerntest": {
    "stand": "2026-10-14",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Teilaufgaben 2021W-PB1-A4-a, 2022S-PB1-A4-b/-c, 2022W-PB1-A1-d/-e/-f, 2023S-PB1-A4-a/-b, 2024S-PB1-A1-c, 2025S-PB1-A2-c, 2025W-PB1-A3-a/-bb gegen die Musterlösungen gelesen (2025S ohne Lösungshinweise). Grundlagen der Kryptografie, Hashwerte und Authentifizierung beantwortet AP1-7-3; neu sind Verfahrenswahl, Zertifikatsprüfung, OAuth2/SSO und die Prüfung von TOM."
+   "ergebnis": "Nach der unabhängigen Prüfung (umbau/berichte/PB1-10-pruefer.md) überarbeitet: Doppelungen zu AP1-7 und im Ordner entfernt, Signatur, OAuth2 und TLS korrigiert, Archivierungsfristen ergänzt. Teilaufgaben 2021W-PB1-A4-a, 2022S-PB1-A4-b/-c, 2022W-PB1-A1-d/-e/-f, 2023S-PB1-A4-a/-b, 2024S-PB1-A1-c, 2025S-PB1-A2-c, 2025W-PB1-A3-a/-bb gegen die Musterlösungen gelesen (2025S ohne Lösungshinweise). Grundlagen der Kryptografie, Hashwerte und Authentifizierung beantwortet AP1-7-3; neu sind Verfahrenswahl, Zertifikatsprüfung, OAuth2/SSO und die Prüfung von TOM."
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
@@ -1185,9 +1090,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-1-K1",
-      "PB1-10-2-1-K2",
-      "PB1-10-2-1-K3"
+      "PB1-10-1-3-K1",
+      "PB1-10-1-3-K2"
      ]
     },
     {
@@ -1198,8 +1102,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-2-K1",
-      "PB1-10-2-2-K2"
+      "PB1-10-1-4-K1",
+      "PB1-10-1-4-K2"
      ]
     },
     {
@@ -1209,7 +1113,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-2-K3"
+      "PB1-10-1-4-K3"
      ]
     },
     {
@@ -1219,7 +1123,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-2-K4"
+      "PB1-10-1-4-K4"
      ]
     },
     {
@@ -1230,9 +1134,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-3-K2",
-      "PB1-10-2-3-K3",
-      "PB1-10-2-3-K1"
+      "PB1-10-2-1-K3",
+      "PB1-10-2-1-K4",
+      "PB1-10-2-1-K2"
      ]
     },
     {
@@ -1242,8 +1146,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-1-3-K1",
-      "PB1-10-1-3-K3"
+      "PB1-10-1-1-K3"
      ]
     },
     {
@@ -1254,8 +1157,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-3-3-K1",
-      "PB1-10-2-3-K4"
+      "PB1-10-2-4-K1",
+      "PB1-10-2-1-K1"
      ]
     },
     {
@@ -1265,7 +1168,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-3-3-K1"
+      "PB1-10-2-4-K1"
      ],
      "notiz": "Device Security Check (2021W, Podcast-Schlagwort)"
     },
@@ -1299,8 +1202,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-1-2-K4",
-      "PB1-10-3-3-K5"
+      "PB1-10-1-2-K4"
      ]
     },
     {
@@ -1310,9 +1212,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-3-1-K1",
-      "PB1-10-3-1-K2",
-      "PB1-10-3-1-K5"
+      "PB1-10-2-3-K1",
+      "PB1-10-2-3-K2",
+      "PB1-10-2-3-K5"
      ]
     },
     {
@@ -1322,11 +1224,12 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-3-1-K4",
-      "PB1-10-3-2-K1",
-      "PB1-10-3-2-K2",
-      "PB1-10-3-2-K3"
-     ]
+      "PB1-10-2-3-K4",
+      "PB1-10-2-3-K6",
+      "PB1-10-2-3-K7",
+      "PB1-10-2-3-K2"
+     ],
+     "notiz": "BitLocker selbst in AP1-7-3-1"
     },
     {
      "thema": "Sicherheitskriterien, Security by Design, Rahmenbedingungen, Risikoanalyse",
@@ -1335,9 +1238,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-1-3-K2",
-      "PB1-10-3-3-K3",
-      "PB1-10-3-3-K4"
+      "PB1-10-1-1-K4",
+      "PB1-10-2-4-K3",
+      "PB1-10-2-2-K1"
      ]
     },
     {
@@ -1347,7 +1250,7 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-1-K4"
+      "PB1-10-1-3-K3"
      ]
     },
     {
@@ -1357,7 +1260,7 @@
      ],
      "ring": "Kür",
      "wo": [
-      "PB1-10-3-3"
+      "PB1-10-2-4"
      ]
     },
     {
@@ -1368,8 +1271,8 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-4-K1",
-      "PB1-10-2-4-K3"
+      "PB1-10-2-2-K1",
+      "PB1-10-2-2-K3"
      ],
      "notiz": "Grundsätze im Einzelnen Kür; DSGVO-Grundlagen in AP1-7-5-1"
     },
@@ -1380,7 +1283,7 @@
      ],
      "ring": "Kür",
      "wo": [
-      "PB1-10-2-4"
+      "PB1-10-2-2"
      ]
     },
     {
@@ -1413,16 +1316,16 @@
     "paar": "Zutritt / Zugang / Zugriff",
     "abgedeckt": {
      "Zutritt": [
-      "PB1-10-3-1-K1",
-      "PB1-10-3-1-K2"
+      "PB1-10-2-3-K1",
+      "PB1-10-2-3-K2"
      ],
      "Zugang": [
-      "PB1-10-3-1-K1",
-      "PB1-10-3-1-K2"
+      "PB1-10-2-3-K1",
+      "PB1-10-2-3-K2"
      ],
      "Zugriff": [
-      "PB1-10-3-1-K1",
-      "PB1-10-3-1-K2"
+      "PB1-10-2-3-K1",
+      "PB1-10-2-3-K2"
      ]
     }
    },
@@ -1431,11 +1334,11 @@
     "paar": "Wirksamkeit / Effizienz",
     "abgedeckt": {
      "Wirksamkeit": [
-      "PB1-10-3-1-K2",
-      "PB1-10-3-1-K5"
+      "PB1-10-2-3-K2",
+      "PB1-10-2-3-K5"
      ],
      "Effizienz": [
-      "PB1-10-3-1-K3"
+      "PB1-10-2-3-K3"
      ]
     }
    },
@@ -1444,12 +1347,12 @@
     "paar": "Datenschutz / Datensicherheit",
     "abgedeckt": {
      "Datenschutz": [
-      "PB1-10-2-4-K1",
-      "PB1-10-2-2-K5"
+      "PB1-10-2-2-K1",
+      "PB1-10-2-2-K3"
      ],
      "Datensicherheit": [
-      "PB1-10-2-3-K1",
-      "PB1-10-2-1-K4"
+      "PB1-10-2-1-K2",
+      "PB1-10-1-3-K3"
      ]
     }
    },
@@ -1458,11 +1361,11 @@
     "paar": "Authentifizierung / Autorisierung",
     "abgedeckt": {
      "Authentifizierung": [
-      "PB1-10-2-3-K1",
-      "PB1-10-2-2-K4"
+      "PB1-10-2-1-K2",
+      "PB1-10-1-4-K4"
      ],
      "Autorisierung": [
-      "PB1-10-2-3-K1"
+      "PB1-10-2-1-K2"
      ]
     }
    },
@@ -1471,10 +1374,10 @@
     "paar": "Firewall / Webfilter",
     "abgedeckt": {
      "Firewall": [
-      "PB1-10-3-2-K1"
+      "PB1-10-2-3-K6"
      ],
      "Webfilter": [
-      "PB1-10-3-2-K1"
+      "PB1-10-2-3-K6"
      ]
     }
    },
@@ -1483,13 +1386,13 @@
     "paar": "private Haushalte / Unternehmen / öffentliche Hand",
     "abgedeckt": {
      "privat": [
-      "PB1-10-3-3-K2"
+      "PB1-10-2-4-K2"
      ],
      "Unternehmen": [
-      "PB1-10-3-3-K2"
+      "PB1-10-2-4-K2"
      ],
      "öffentlich": [
-      "PB1-10-3-3-K2"
+      "PB1-10-2-4-K2"
      ]
     }
    },
@@ -1498,16 +1401,16 @@
     "paar": "technologisch / organisatorisch / rechtlich / ethisch",
     "abgedeckt": {
      "technologisch": [
-      "PB1-10-3-3-K3"
+      "PB1-10-2-4-K3"
      ],
      "organisatorisch": [
-      "PB1-10-3-3-K3"
+      "PB1-10-2-4-K3"
      ],
      "rechtlich": [
-      "PB1-10-3-3-K3"
+      "PB1-10-2-4-K3"
      ],
      "ethisch": [
-      "PB1-10-3-3-K3"
+      "PB1-10-2-4-K3"
      ]
     }
    },
@@ -1516,11 +1419,10 @@
     "paar": "einschätzen / verhindern",
     "abgedeckt": {
      "einschätzen": [
-      "PB1-10-1-1-K1",
-      "PB1-10-1-1-K2"
+      "PB1-10-1-1-K1"
      ],
      "verhindern": [
-      "PB1-10-1-1-K3"
+      "PB1-10-1-1-K2"
      ]
     }
    }

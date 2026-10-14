@@ -27,3 +27,28 @@
 Ordnerübergreifend: PB1-10-3-2-K1 (Firewall) überschneidet sich mit PB1-11-1-2-K3 (Paketfilter). Gezählt wird das in Bericht PB1-11, Nr. 8; hier nur auf den Webfilter kürzen. PB1-10-2-1-K2 (Sensoren symmetrisch) hat ein Duplikat in PB1-3-2-3-K6, gezählt in Bericht PB1-3, Nr. 1.
 
 **Bilanz PB1-10:** 17 Funde (davon 6 hoch). Lücken: 1 (Nr. 12, Erweiterung von K3). Kann weg bzw. zusammengelegt: 10 Aussagen (Nr. 1, 2, 3, 4 [−2], 5, 6, 8, 11). Vorher 41 → nach Vorschlägen etwa 31.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | umgesetzt: Beratungs-Aussage gestrichen, die Bedrohungs-Aussage berät jetzt den Kunden (Stufe 3) mit Gegenmaßnahmen |
+| 2 | umgesetzt: gestrichen; 2021W-A4-ab steht als „über AP1-7-3-1 abgedeckt“ im Hinweis und belegt die Vorschlags-Aussage |
+| 3 | umgesetzt: gestrichen |
+| 4 | umgesetzt: vier Aussagen auf zwei gekürzt (IAM und Berechtigungskonzept erläutern, Stufe 2; Authentifizierung und Autorisierung mit Benutzer- und Rollenverwaltung umsetzen, Stufe 3) |
+| 5 | umgesetzt: gestrichen, Hinweis auf AP1-7-3-1; der fehlende Wiederherstellungsschlüssel ist als Schwäche in der Prüf-Aussage |
+| 6 | umgesetzt: gestrichen, `baut_auf` AP1-7-2-3; Risiken stehen in der Beratungs-Aussage mit Verweis |
+| 7 | umgesetzt: Hash bzw. MAC günstig, echte Signatur asymmetrisch und aufwendiger |
+| 8 | umgesetzt: gestrichen, Zuordnung zum Schutzziel als Verweis auf AP1 in der Schadens-Aussage |
+| 9 | umgesetzt: auf das Neue gekürzt (offline bzw. unveränderbar, Netztrennung) |
+| 10 | umgesetzt: in beiden PB1-10-Stellen gestrichen, Hinweis auf PB1-7 |
+| 11 | umgesetzt: zu einer Aussage (Stufe 3, Beleg 2024S-A1-c) zusammengefasst, „Antwortzeit unter Last“ gestrichen |
+| 12 | umgesetzt: Fristen 10/8/6 Jahre und revisionssichere Archivsysteme (GoBD), Grenze G4 für Paragrafen |
+| 13 | umgesetzt: auf Privacy by Design und by Default mit Beispielen gekürzt, Grundsätze über `baut_auf` |
+| 14 | umgesetzt: Autorisierung mit OAuth2, Anmeldung über OpenID Connect |
+| 15 | umgesetzt: „nicht zurückgegebene Besucherausweise“ |
+| 16 | umgesetzt: auf das Zuordnen der Katalogbeispiele gekürzt |
+| 17 | umgesetzt: Ablauf bei TLS 1.3 korrigiert, Hinweis „asymmetrisch“ gibt keine Punkte |
+| ordnerübergreifend | Firewall-Aussage auf den Webfilter mit Abgrenzung gekürzt; Sensor-Beispiel bleibt hier (Wohnort), Duplikat in PB1-3 entfernt |
+
+Gliederung: zwei Themenblöcke, die Kryptografie-Stichpunkte im ersten Block. Ergebnis: 41 → 32 Aussagen.
