@@ -22,3 +22,24 @@
 | 14 | PB1-2-1-3 | K1 fehlt (Puffer, optional) | Absolute und relative Zellbezüge ($) fehlen. Sie sind die übliche nächste Stufe, sobald eine Formel nach unten kopiert wird (z. B. Bereich `Wetterdaten!$B$3:$C$17`). Für 2023S-A3 nicht zwingend, aber in IHK-Tabellenaufgaben typisch. | Optional als Puffer (P-NÄCHSTE-STUFE) in K1: „… auch mit absoluten Bezügen, wenn die Formel kopiert wird“. | niedrig |
 
 **Bilanz PB1-2:** 14 Funde (davon 2 hoch). Lücken: 1 (Nr. 14, optional als Halbsatz, keine neue Aussage). Kann weg bzw. zusammengelegt: 7 Aussagen (Nr. 1, 2, 4, 5, 6, 8, 11). Vorher 22 → nach Vorschlägen etwa 15.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | teilweise: auf das Neue gekürzt (Lizenzarten aus AP1 auf den Fall anwenden); bleibt, weil nur sie die belegte Stufe 4 von AP2a.01.02.5 erreicht (T8, P35 Nr. 4) |
+| 2 | umgesetzt: gestrichen; Präsentationstechnik, Präsentationsprogramm, CI und Werkzeuge in einer Aussage (AP2a.01.03.1/.5/.6/.7 bleiben abgedeckt) |
+| 3 | umgesetzt: Einwilligung als eine von sechs Rechtsgrundlagen; Hinweis zur IHK-Lösung am Stichpunkt |
+| 4 | umgesetzt: CI in der Präsentations-Aussage |
+| 5 | umgesetzt: mit K1 zu einer Aussage „gestalten“ (Stufe 3, Katalog) zusammengelegt, Werkvertrag über `baut_auf` AP1-3-3-2 |
+| 6 | umgesetzt: CRM in einer Aussage, `baut_auf` AP1-5-1-1 |
+| 7 | umgesetzt: Montag bis Freitag, Nummerierung aus der Funktionsbeschreibung |
+| 8 | umgesetzt: AGB erklären und gestalten zusammengelegt |
+| 9 | umgesetzt: „unverzüglich“ |
+| 10 | umgesetzt: Einverständnis ergänzt |
+| 11 | umgesetzt: Werkzeugwahl in der Präsentations-Aussage |
+| 12 | umgesetzt: Kür gestrichen (Informationsquellen in AP1-2-3-2) |
+| 13 | umgesetzt: Kür gestrichen, Vortragstechnik als Grenze nach PROJEKT |
+| 14 | umgesetzt: absolute Bezüge als Halbsatz (P-NÄCHSTE-STUFE) |
+
+Ergebnis: 22 → 17 Aussagen.
