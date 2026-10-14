@@ -544,6 +544,8 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-7 Schnittstellen und Datenaustausch (14.10.2026):** 2 Themenblöcke, 6 Stichpunkte, 29 Können-Aussagen.
         Alte AP2-Aussagen: 14 angepasst, 4 verschoben, 1 für PB2 (Importfähigkeit eines Datenbestands). Zusatzbaustein
         eRechnung hier; damit ist die eRechnung, in AP1 Kür (P30), in PB1 Kern.
+  - [x] **PB1-8 Benutzeroberflächen (14.10.2026):** 1 Themenblock, 4 Stichpunkte, 19 Können-Aussagen. Alte AP2-Aussagen:
+        8 angepasst, 3 verschoben. Grundsätze der Dialoggestaltung in der aktuellen Fassung (mit Erlernbarkeit, Benutzerbindung).
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 
