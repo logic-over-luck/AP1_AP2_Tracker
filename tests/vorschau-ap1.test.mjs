@@ -223,3 +223,60 @@ test('PB1: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs', a
   assert.equal(alle.vorschauRaeume.AP2.kurz, teaser.size);
   assert.equal(alle.vorschauRaeume.AP2.erklaerungen, erklaerung.size);
 });
+
+// Neue Karten PB1 (umbau/karten/pb1/), Regeln wie AP1 (umbau/auftraege/AP1-karten.md)
+describe('Neue Lernkarten PB1', () => {
+  const cfg = RAEUME_VORSCHAU.PB1;
+  const plaeneP = ladeLernplanAp1(wurzel, cfg);
+  const dateien = ladeKartenAp1(wurzel, cfg);
+  const alle = vorschauAlle(alt, wurzel);
+  const altKarten = new Map(alt.karten.filter((k) => k.sp.startsWith('AP2')).map((k) => [k.id, k]));
+  const altNeu = new Map(plaeneP.flatMap((p) => p.alt_neu.koennen.map((a) => [a.alt, a])));
+  const kNachSp = new Map();
+  for (const p of plaeneP) for (const t of p.themenbloecke) for (const s of t.stichpunkte) for (const k of s.koennen) kNachSp.set(k.id, s.id);
+  const zielordner = (k) => {
+    const a = k.k ? altNeu.get(k.k) : null;
+    return a?.neu && a.status !== 'PB2' && a.status !== 'gestrichen' ? ordnerVon(kNachSp.get(a.neu)) : ordnerVon(k.sp);
+  };
+  test('keine Karten-ID doppelt, keine entfernte ID wieder da, Vorschau nutzt die neuen Karten', { skip: !dateien.size && 'keine PB1-Karten' }, () => {
+    const ids = alle.karten.map((k) => k.id);
+    assert.equal(new Set(ids).size, ids.length);
+    const da = new Set(ids);
+    for (const d of dateien.values()) for (const p of d.protokoll) if (p.entscheidung === 'entfernt') assert.ok(!da.has(p.id), `${p.id} ist wieder da`);
+    for (const [o, d] of dateien) for (const c of d.karten) assert.ok(da.has(c.id), `${o}: ${c.id} fehlt in der Vorschau`);
+  });
+  for (const [ordner, d] of dateien) {
+    const plan = plaeneP.find((p) => p.oberblock.id === ordner);
+    test(`${ordner}: jede Aussage hat eine Karte, Karten vollständig, Protokoll deckt alle alten Karten`, () => {
+      assert.ok(plan, `${ordner}: kein Lernplan`);
+      const nicht = new Set(d.nicht_abgefragt.map((n) => n.k));
+      for (const t of plan.themenbloecke) for (const s of t.stichpunkte) for (const k of s.koennen) assert.ok(d.karten.some((c) => c.k === k.id) || nicht.has(k.id), `${k.id} ohne Karte`);
+      for (const c of d.karten) {
+        for (const f of ['id', 'sp', 'k', 'vorne', 'hinten']) assert.ok(typeof c[f] === 'string' && c[f].trim(), `${c.id}: ${f} fehlt`);
+        assert.equal(kNachSp.get(c.k), c.sp, `${c.id}: ${c.k} gehört nicht zu ${c.sp}`);
+        assert.equal(ordnerVon(c.sp), ordner);
+      }
+      const prot = new Map(d.protokoll.map((p) => [p.id, p]));
+      assert.equal(prot.size, d.protokoll.length, 'doppelt im Protokoll');
+      for (const k of altKarten.values()) if (zielordner(k) === ordner) assert.ok(prot.has(k.id), `alte Karte ${k.id} nicht entschieden`);
+      const inDatei = new Map(d.karten.map((c) => [c.id, c]));
+      for (const p of prot.values()) {
+        assert.ok(p.grund?.trim(), `${p.id}: ohne Grund`);
+        const vorher = altKarten.get(p.id);
+        if (p.entscheidung === 'neu') {
+          assert.ok(!vorher && inDatei.has(p.id), `${p.id}: neu, aber ID vergeben oder fehlt`);
+          assert.equal(p.id.replace(/-\d+$/, ''), inDatei.get(p.id).k);
+          continue;
+        }
+        assert.ok(vorher, `${p.id}: keine alte Karte`);
+        assert.equal(zielordner(vorher), ordner, `${p.id}: gehört nach ${zielordner(vorher)}`);
+        if (p.entscheidung === 'entfernt') assert.ok(!inDatei.has(p.id));
+        else {
+          const c = inDatei.get(p.id);
+          const gleich = c.vorne === vorher.v && c.hinten === vorher.h;
+          assert.ok(p.entscheidung === 'bleibt' ? gleich : !gleich, `${p.id}: ${p.entscheidung} passt nicht zum Text`);
+        }
+      }
+    });
+  }
+});

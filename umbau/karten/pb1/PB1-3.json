@@ -1,0 +1,706 @@
+{
+  "ordner": "PB1-3",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-3.json",
+  "karten": [
+    {
+      "id": "AP2-3-1-1-K2-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K1",
+      "vorne": "Welchem Programmierkonzept ordnest du Haskell zu?",
+      "hinten": "Funktional."
+    },
+    {
+      "id": "AP2-3-1-1-K2-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K1",
+      "vorne": "Welchem Programmierkonzept ordnest du C# zu?",
+      "hinten": "Objektorientiert."
+    },
+    {
+      "id": "AP2-3-1-1-K2-3",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K1",
+      "vorne": "Nenne eine Beispielsprache für strukturierte Programmierung.",
+      "hinten": "Z. B. Pascal oder C."
+    },
+    {
+      "id": "AP2-3-1-1-K3-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K1",
+      "vorne": "Nenne je eine Beispielsprache für prozedurale, objektorientierte und funktionale Programmierung.",
+      "hinten": "- prozedural: C\n- objektorientiert: Java oder C#\n- funktional: Haskell"
+    },
+    {
+      "id": "AP2-3-1-1-K3-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K1",
+      "vorne": "Wie ordnest du Python den Programmierkonzepten zu?",
+      "hinten": "Mehreren: Python vereint prozedurale, objektorientierte und funktionale Elemente (Multiparadigmensprache)."
+    },
+    {
+      "id": "AP2-3-1-1-K1-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K2",
+      "vorne": "Was kennzeichnet strukturierte Programmierung?",
+      "hinten": "Der Ablauf wird nur aus den Kontrollstrukturen Folge (Sequenz), Verzweigung und Schleife aufgebaut; auf beliebige Sprünge (goto) wird verzichtet."
+    },
+    {
+      "id": "AP2-3-1-1-K1-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K2",
+      "vorne": "Was kennzeichnet prozedurale Programmierung?",
+      "hinten": "Das Programm wird in Prozeduren bzw. Funktionen zerlegt, die nacheinander aufgerufen werden und Daten verarbeiten; Daten und Funktionen sind voneinander getrennt."
+    },
+    {
+      "id": "AP2-3-1-1-K1-3",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K2",
+      "vorne": "Was kennzeichnet objektorientierte Programmierung?",
+      "hinten": "Daten (Attribute) und die zugehörigen Funktionen (Methoden) werden in Objekten zusammengefasst, die aus Klassen erzeugt werden. Kernkonzepte: Kapselung, Vererbung, Polymorphie."
+    },
+    {
+      "id": "AP2-3-1-1-K1-4",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K2",
+      "vorne": "Worin unterscheiden sich strukturierte und prozedurale Programmierung?",
+      "hinten": "- strukturiert: betrifft den Ablauf, nur Folge, Verzweigung und Schleife, kein goto\n- prozedural: betrifft die Gliederung des Programms in Prozeduren bzw. Funktionen\nBeides ergänzt sich; C ist strukturiert und prozedural."
+    },
+    {
+      "id": "AP2-3-1-1-K5-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K2",
+      "vorne": "Was macht funktionale Programmierung aus?",
+      "hinten": "Das Programm besteht aus Funktionen ohne Seiteneffekte: Sie nehmen Werte entgegen und geben Werte zurück, ohne einen Zustand außerhalb der Funktion zu ändern."
+    },
+    {
+      "id": "AP2-3-1-1-K5-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K2",
+      "vorne": "Was ist ein Seiteneffekt einer Funktion?",
+      "hinten": "Eine Wirkung über den Rückgabewert hinaus, z. B. eine globale Variable oder ein Attribut ändern, in eine Datei schreiben oder etwas ausgeben."
+    },
+    {
+      "id": "PB1-3-1-1-K3-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K3",
+      "vorne": "Nenne je zwei Compiler- und Interpretersprachen.",
+      "hinten": "- Compiler: C, C++ (in Bytecode übersetzt auch Java, C#)\n- Interpreter: PHP, Python"
+    },
+    {
+      "id": "AP2-3-1-1-K4-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K4",
+      "vorne": "Nenne Einsatzgebiete von Programmiersprachen.",
+      "hinten": "- Webanwendungen\n- mobile Apps\n- hardwarenahe Programmierung\n- Datenauswertung\n- Automatisierung"
+    },
+    {
+      "id": "AP2-3-1-1-K4-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K4",
+      "vorne": "Für welches Einsatzgebiet ist C besonders verbreitet, und warum?",
+      "hinten": "Hardwarenahe Programmierung (z. B. Treiber, Mikrocontroller): C erzeugt schnellen, speichersparenden Code und erlaubt direkten Zugriff auf Speicher und Hardware."
+    },
+    {
+      "id": "AP2-3-1-2-K1-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K5",
+      "vorne": "Nach welchen Kriterien wählt man eine Programmiersprache für ein Projekt aus?",
+      "hinten": "- Performance und Speicherverbrauch\n- Portabilität\n- verfügbare Frameworks und Bibliotheken\n- Unterstützung durch Entwicklungsumgebungen (IDE)\n- vorhandenes Know-how"
+    },
+    {
+      "id": "AP2-3-1-2-K1-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K5",
+      "vorne": "Warum ist vorhandenes Know-how ein Kriterium bei der Wahl der Programmiersprache?",
+      "hinten": "Ein Team, das die Sprache beherrscht, entwickelt schneller und mit weniger Fehlern; Einarbeitung und Schulung in eine neue Sprache kosten Zeit und Geld."
+    },
+    {
+      "id": "AP2-3-1-2-K1-3",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K5",
+      "vorne": "Warum spielen verfügbare Frameworks und Bibliotheken bei der Wahl der Programmiersprache eine Rolle?",
+      "hinten": "Fertige, erprobte Bausteine (z. B. für Weboberflächen oder Datenbankzugriff) müssen nicht selbst entwickelt werden; das spart Entwicklungszeit und vermeidet Fehler."
+    },
+    {
+      "id": "AP2-3-1-2-K3-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K5",
+      "vorne": "Was bedeutet Portabilität eines Programms?",
+      "hinten": "Das Programm läuft ohne oder mit geringer Anpassung auf verschiedenen Plattformen (z. B. Betriebssystemen oder Hardware)."
+    },
+    {
+      "id": "AP2-3-1-2-K3-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K5",
+      "vorne": "Warum gelten Java-Programme als gut portabel?",
+      "hinten": "Der Compiler erzeugt plattformunabhängigen Bytecode, den die Java Virtual Machine (JVM) ausführt. Das Programm läuft auf jeder Plattform, für die es eine JVM gibt."
+    },
+    {
+      "id": "AP2-3-1-2-K2-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K6",
+      "vorne": "Ein Programm soll auf einem Mikrocontroller mit wenig Speicher Messwerte verarbeiten. Welche Sprache schlägst du vor, und mit welchen Kriterien begründest du das?",
+      "hinten": "Z. B. C: hohe Performance, geringer Speicherverbrauch, hardwarenaher Zugriff, Bibliotheken für Mikrocontroller verfügbar. Portabilität auf andere Plattformen ist hier nachrangig."
+    },
+    {
+      "id": "AP2-3-1-2-K2-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K6",
+      "vorne": "Ein Team, das seit Jahren in C# entwickelt, soll eine Windows-Desktopanwendung bauen. Welche Sprache liegt nahe, und warum?",
+      "hinten": "C#: Know-how ist vorhanden, gute IDE-Unterstützung (z. B. Visual Studio), passende Frameworks für Desktopoberflächen; Portabilität auf andere Systeme ist nicht gefordert."
+    },
+    {
+      "id": "AP2-3-1-2-K4-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K6",
+      "vorne": "Ein Programm soll sehr schnell rechnen, aber auch in kurzer Zeit fertig werden. Wie wägst du bei der Sprachwahl ab?",
+      "hinten": "Höchste Performance spricht für eine kompilierte, hardwarenahe Sprache wie C oder C++, kurze Entwicklungszeit für eine Sprache mit vielen Bibliotheken wie Python. Entscheidend ist, welche Anforderung im Szenario Vorrang hat."
+    },
+    {
+      "id": "AP2-3-1-3-K2-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K1",
+      "vorne": "Was ist ein Programmgenerator?",
+      "hinten": "Ein Werkzeug, das aus einer Beschreibung oder einem Modell Quellcode erzeugt."
+    },
+    {
+      "id": "AP2-3-1-3-K2-2",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K1",
+      "vorne": "Nenne ein Beispiel für einen Programmgenerator.",
+      "hinten": "Z. B. ein Werkzeug, das aus einem UML-Klassendiagramm Klassengerüste erzeugt, oder ein Oberflächen-Designer, der aus einer gezeichneten Oberfläche Code erzeugt."
+    },
+    {
+      "id": "AP2-3-1-3-K3-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K1",
+      "vorne": "Wozu dient Testsoftware in der Entwicklung?",
+      "hinten": "Tests automatisiert ausführen und auswerten (z. B. Unit-Tests), damit Fehler früh auffallen und Änderungen nichts Bestehendes beschädigen."
+    },
+    {
+      "id": "AP2-3-1-3-K4-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K2",
+      "vorne": "Ein Programm liefert falsche Ergebnisse. Du willst es an einer Stelle anhalten und Schritt für Schritt die Variablenwerte verfolgen. Welches Werkzeug nimmst du?",
+      "hinten": "Einen Debugger."
+    },
+    {
+      "id": "AP2-3-1-3-K4-2",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K2",
+      "vorne": "Mehrere Entwickler arbeiten am selben Quellcode, und jeder frühere Stand soll wiederherstellbar sein. Welches Werkzeug brauchst du?",
+      "hinten": "Eine Versionsverwaltung, z. B. Git."
+    },
+    {
+      "id": "AP2-3-1-3-K4-3",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K2",
+      "vorne": "Nach jeder Änderung sollen automatisch alle Unit-Tests laufen und ausgewertet werden. Welches Werkzeug brauchst du?",
+      "hinten": "Testsoftware (ein Testframework, z. B. JUnit)."
+    },
+    {
+      "id": "PB1-3-1-2-K3-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K3",
+      "vorne": "Wie sorgst du dafür, dass ein Programm beim Erstellen digital signiert wird, und wer stellt das Zertifikat aus?",
+      "hinten": "In den Build- bzw. Kompilierungseinstellungen das Code-Signing-Zertifikat hinterlegen, sodass beim Kompilieren signiert wird. Ausgestellt wird es von einer vertrauenswürdigen Zertifizierungsstelle."
+    },
+    {
+      "id": "PB1-3-1-2-K4-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K4",
+      "vorne": "Beim Start meldet das Betriebssystem, das Programm sei nicht signiert. Was bedeutet das?",
+      "hinten": "Es wurde beim Erstellen nicht mit einem Zertifikat signiert. Das Betriebssystem kann den Hersteller und die Unverändertheit nicht prüfen und warnt deshalb vor der Ausführung."
+    },
+    {
+      "id": "AP2-3-1-3-K3-2",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K1",
+      "vorne": "Wozu dient eine Versionsverwaltung wie Git?",
+      "hinten": "Änderungen am Quellcode nachvollziehbar speichern: frühere Stände wiederherstellen, sehen, wer was geändert hat, und im Team parallel arbeiten (z. B. in Branches)."
+    },
+    {
+      "id": "AP2-5-4-1-K1-1",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K1",
+      "vorne": "Wozu dient eine Versionsverwaltung?",
+      "hinten": "- Änderungen nachvollziehen (wer, wann, was)\n- alte Stände wiederherstellen\n- gemeinsam am selben Code arbeiten"
+    },
+    {
+      "id": "PB1-3-1-3-K1-1",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K1",
+      "vorne": "Erkläre Commit, Branch, Merge sowie Pull und Push.",
+      "hinten": "- Commit: Änderung mit Beschreibung festhalten\n- Branch: eigener Entwicklungszweig\n- Merge: Zweige zusammenführen\n- Pull / Push: Stand aus dem zentralen Repository holen / dorthin senden"
+    },
+    {
+      "id": "PB1-3-1-3-K2-1",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K2",
+      "vorne": "Ein Team aus vier Entwicklern will ohne Versionsverwaltung arbeiten und sich nur absprechen. Nimm Stellung.",
+      "hinten": "Nicht ratsam: Parallele Änderungen überschreiben sich oder widersprechen sich unbemerkt, und ohne Historie lässt sich ein Fehler nicht gezielt zurücknehmen. Absprachen ersetzen das nicht; eine Versionsverwaltung sollte eingesetzt werden."
+    },
+    {
+      "id": "PB1-3-1-3-K3-1",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K3",
+      "vorne": "Seit dem letzten Update ist ein Fehler da. Wie hilft dir die Versionsverwaltung?",
+      "hinten": "- letzten fehlerfreien Stand (Commit) finden\n- Änderungen seitdem vergleichen (Diff)\n- fehlerhafte Änderung zurücknehmen (revert) oder berichtigen und neu committen"
+    },
+    {
+      "id": "PB1-3-2-1-K1-1",
+      "sp": "PB1-3-2-1",
+      "k": "PB1-3-2-1-K1",
+      "vorne": "Nenne Vor- und Nachteile beim Einsatz einer Bibliothek.",
+      "hinten": "- Vorteile: fertige, getestete Funktionen, schneller fertig\n- Nachteile: Einarbeitungszeit, Abhängigkeit vom Anbieter, evtl. Mehraufwand zur Laufzeit"
+    },
+    {
+      "id": "PB1-3-2-1-K2-1",
+      "sp": "PB1-3-2-1",
+      "k": "PB1-3-2-1-K2",
+      "vorne": "Ist eine Open-Source-Bibliothek wegen des offenen Quelltexts unsicher? Erläutere beide Sichten.",
+      "hinten": "- Risiko: Auch Angreifer können den Code lesen und Schwachstellen suchen (so die IHK-Lösung).\n- Chance: Viele Prüfer finden Lücken oft schneller, sie werden schnell geschlossen.\nEntscheidend ist, ob das Projekt aktiv gepflegt und aktualisiert wird."
+    },
+    {
+      "id": "PB1-3-2-1-K3-1",
+      "sp": "PB1-3-2-1",
+      "k": "PB1-3-2-1-K3",
+      "vorne": "Nach welchen Kriterien entscheidest du, ob ein Projekt ein bestimmtes Framework einsetzt?",
+      "hinten": "- Funktionsumfang\n- Lizenz passt zum Produkt\n- Pflege und Verbreitung (Community, Updates)\n- Einarbeitungsaufwand\n- Abhängigkeit, falls es eingestellt wird"
+    },
+    {
+      "id": "PB1-3-2-2-K1-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K1",
+      "vorne": "Was passiert in einer CI/CD-Pipeline nach einem Commit?",
+      "hinten": "Der Commit (oder Pull Request) startet die Pipeline: Code wird übersetzt, Unit-Tests laufen automatisch, danach wird auf die Test- und dann die Produktivumgebung ausgeliefert."
+    },
+    {
+      "id": "PB1-3-2-2-K2-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K2",
+      "vorne": "Nenne Vorteile automatisierter Bereitstellung.",
+      "hinten": "- Tests laufen vor jeder Auslieferung in gleicher Umgebung\n- Bereitstellung auf allen Umgebungen einheitlich\n- kein direkter Zugang der Entwickler zur Produktion nötig\n- alter Stand leicht wiederherstellbar"
+    },
+    {
+      "id": "AP2-3-4-1-K1-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Wie ist ein Skript aufgebaut, das eine Folge von Werten durchläuft und je Wert eine vorgegebene Funktion aufruft?",
+      "hinten": "- Ergebnisliste anlegen\n- Schleife über die Werte\n- Funktion mit dem Wert aufrufen, Ergebnis in einer Variablen merken\n- gültiges Ergebnis sammeln\n- nach der Schleife ausgeben"
+    },
+    {
+      "id": "AP2-3-4-1-K1-2",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Wie durchläuft ein Skript alle Hostadressen des Netzes 192.168.1.0/24?",
+      "hinten": "Zählschleife über das letzte Oktett von 1 bis 254 (0 ist die Netzadresse, 255 die Broadcastadresse); die Adresse wird je Durchlauf aus 192.168.1. und dem Zähler zusammengesetzt."
+    },
+    {
+      "id": "AP2-3-4-1-K2-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Eine vorgegebene Funktion liefert manchmal kein Ergebnis. Wie verarbeitet das Skript nur gültige Werte weiter?",
+      "hinten": "Das Ergebnis nach dem Aufruf prüfen (z. B. `if ergebnis != null`) und nur dann in die Ergebnisliste übernehmen; sonst mit dem nächsten Wert weitermachen."
+    },
+    {
+      "id": "AP2-3-4-1-K3-2",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Warum gibt man Skriptergebnisse oft als JSON aus?",
+      "hinten": "JSON ist ein textbasiertes Standardformat für strukturierte Daten, das andere Programme und Skripte einfach maschinell einlesen können."
+    },
+    {
+      "id": "AP2-3-4-1-K4-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Ordne PowerShell, Bash und Python ein.",
+      "hinten": "- PowerShell: Shell und Skriptsprache von Microsoft, vor allem für Windows-Administration\n- Bash: Standard-Shell unter Linux/Unix für Shellskripte\n- Python: plattformunabhängige Allzweck-Skriptsprache, auch für Automatisierung"
+    },
+    {
+      "id": "AP2-3-4-1-K4-2",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Was haben PowerShell, Bash und Python bei der Ausführung gemeinsam?",
+      "hinten": "Sie werden von einem Interpreter ausgeführt: Ein Skript läuft ohne separaten Kompilier- und Linkschritt direkt aus dem Quelltext."
+    },
+    {
+      "id": "AP2-3-4-1-K5-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K3",
+      "vorne": "Nenne Abläufe, die sich mit Skripten automatisieren lassen.",
+      "hinten": "- Datensicherung\n- Benutzer anlegen\n- Protokolle (Logs) auswerten\n- Dienste überwachen"
+    },
+    {
+      "id": "AP2-3-4-2-K1-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K1",
+      "vorne": "Was ist ein cyber-physisches System?",
+      "hinten": "Ein System, das Software über Sensoren und Aktoren mit der physischen Welt verbindet, meist vernetzt, z. B. eine automatische Gewächshaus- oder Anlagensteuerung."
+    },
+    {
+      "id": "AP2-3-4-2-K1-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K1",
+      "vorne": "Worin unterscheiden sich Sensor und Aktor?",
+      "hinten": "- Sensor: erfasst eine physikalische Größe als Messwert, z. B. Temperatur\n- Aktor: setzt ein Steuersignal in eine Wirkung um, z. B. Motor, Ventil, Relais"
+    },
+    {
+      "id": "AP2-3-4-2-K1-3",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K1",
+      "vorne": "Ordne zu, Sensor oder Aktor: Bewegungsmelder, Stellmotor, Feuchtigkeitsfühler, Relais, Lautsprecher.",
+      "hinten": "- Sensor: Bewegungsmelder, Feuchtigkeitsfühler\n- Aktor: Stellmotor, Relais, Lautsprecher"
+    },
+    {
+      "id": "AP2-3-4-2-K2-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K2",
+      "vorne": "Ein Gewächshaus soll automatisch bewässert werden, wenn der Boden zu trocken ist. Welchen Sensor und welchen Aktor brauchst du?",
+      "hinten": "- Sensor: Bodenfeuchtesensor, misst die Feuchte\n- Aktor: Pumpe oder Magnetventil, gibt Wasser frei\nDie Software vergleicht den Messwert mit einem Grenzwert und schaltet den Aktor."
+    },
+    {
+      "id": "AP2-3-4-2-K2-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K2",
+      "vorne": "Nach welchen Gesichtspunkten wählst du einen Sensor für eine Aufgabe aus?",
+      "hinten": "- Messgröße und Messbereich\n- Genauigkeit\n- Energiebedarf\n- Umgebungsbedingungen (z. B. Feuchte, Temperatur)\n- Anschluss und verfügbare Bibliothek"
+    },
+    {
+      "id": "AP2-3-4-2-K3-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K2",
+      "vorne": "Wie greift Software auf einen Sensor oder Aktor zu?",
+      "hinten": "Über eine Hardwareschnittstelle des Rechners oder Mikrocontrollers (z. B. digitale Ein-/Ausgänge, serielle Bussysteme). Meist ruft das Programm dafür Funktionen einer Bibliothek auf, z. B. `leseTemperatur()`."
+    },
+    {
+      "id": "AP2-3-4-2-K3-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K2",
+      "vorne": "Wozu dienen Bibliotheken beim Zugriff auf Sensoren und Aktoren?",
+      "hinten": "Sie stellen fertige, getestete Funktionen bereit und verbergen die Details von Hardware und Übertragungsprotokoll. Das spart Entwicklungszeit und vermeidet Fehler."
+    },
+    {
+      "id": "AP2-3-4-2-K4-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K3",
+      "vorne": "Nach welchem Grundsatz legt man den Abfragerhythmus eines Sensors fest?",
+      "hinten": "So oft, dass relevante Änderungen rechtzeitig erkannt werden, aber nicht öfter als nötig, um Energie und Datenmenge zu sparen."
+    },
+    {
+      "id": "AP2-3-4-2-K4-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K3",
+      "vorne": "Welcher Abfragerhythmus passt eher: Raumtemperatur in einem Büro oder Erschütterungen einer laufenden Maschine?",
+      "hinten": "- Raumtemperatur ändert sich langsam: Abfrage im Minutenabstand genügt\n- Erschütterungen ändern sich sehr schnell: viele Messungen pro Sekunde nötig"
+    },
+    {
+      "id": "AP2-3-4-2-K5-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K3",
+      "vorne": "Warum verlängert ein größerer Abfrageabstand die Laufzeit eines batteriebetriebenen Funksensors?",
+      "hinten": "Zwischen den Messungen kann das Gerät in einen Stromsparmodus gehen. Messen und vor allem Senden verbrauchen Energie; seltener messen und senden spart Batterie."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-3-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-3-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-3-1-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-3-1-1-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-3-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-3-1-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-1-3-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K3-1",
+      "entscheidung": "entfernt",
+      "grund": "doppelt – Aufbau von JSON wohnt in PB1-7-1-2"
+    },
+    {
+      "id": "AP2-3-4-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-4-2-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "doppelt zu AP2-3-4-2-K4-1 (Grundsatz des Abfragerhythmus)"
+    },
+    {
+      "id": "AP2-3-4-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-4-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB1-3-1-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-1-3-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-1-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-1-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-2-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-2-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-2-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-2-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-2-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    }
+  ]
+}

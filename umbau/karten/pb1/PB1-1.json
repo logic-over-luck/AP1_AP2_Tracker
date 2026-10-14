@@ -1,0 +1,789 @@
+{
+  "ordner": "PB1-1",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-1.json",
+  "karten": [
+    {
+      "id": "AP2-1-1-1-K1-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K1",
+      "vorne": "Welche zwei Kategorien von Vorgehensmodellen unterscheidet man, und welche Modelle gehören beispielhaft dazu?",
+      "hinten": "- klassische (plangetriebene) Modelle, z. B. Wasserfallmodell, V-Modell\n- agile Modelle, z. B. Scrum"
+    },
+    {
+      "id": "AP2-1-1-1-K1-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K1",
+      "vorne": "Was kennzeichnet ein klassisches, was ein agiles Vorgehensmodell?",
+      "hinten": "- klassisch: Das Projekt wird zu Beginn vollständig geplant und in festen, aufeinanderfolgenden Phasen durchgeführt\n- agil: Das Projekt wird in kurzen Zyklen schrittweise geplant, umgesetzt und laufend angepasst"
+    },
+    {
+      "id": "AP2-1-1-1-K2-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K2",
+      "vorne": "Wie unterscheiden sich klassisches und agiles Vorgehen bei Planung und Anforderungen?",
+      "hinten": "- klassisch: feste Planung, Anforderungen werden früh festgelegt\n- agil: schrittweise Planung, Anforderungen werden laufend an Änderungen angepasst"
+    },
+    {
+      "id": "AP2-1-1-1-K2-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K2",
+      "vorne": "Welcher Nachteil des klassischen Vorgehens zeigt sich, wenn sich Anforderungen spät im Projekt ändern?",
+      "hinten": "Die Anforderungen sind früh festgelegt; späte Änderungen erfordern Umplanung und das Überarbeiten bereits abgeschlossener Phasen und sind deshalb aufwendig und teuer."
+    },
+    {
+      "id": "PB1-1-1-1-K3-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K3",
+      "vorne": "Wann wirkt der Auftraggeber im klassischen, wann im agilen Vorgehen mit?",
+      "hinten": "- klassisch: vor allem beim Festlegen der Anforderungen (Lastenheft) und bei der Abnahme\n- agil: laufend, z. B. im Sprint Review bei jedem Inkrement; der Product Owner vertritt seine Interessen täglich"
+    },
+    {
+      "id": "AP2-1-1-1-K3-2",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K1",
+      "vorne": "Wie ist das V-Modell aufgebaut?",
+      "hinten": "- linker Ast: Entwurfsstufen vom Groben zum Feinen (Anforderungen bis Komponentenentwurf)\n- unten: Implementierung\n- rechter Ast: Teststufen vom Komponententest bis zum Abnahmetest\nJede Teststufe prüft das Ergebnis der gegenüberliegenden Entwurfsstufe."
+    },
+    {
+      "id": "AP2-1-1-1-K4-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K1",
+      "vorne": "Welches Vorgehensmodell stellt jeder Entwurfsstufe eine eigene Teststufe gegenüber?",
+      "hinten": "Das V-Modell."
+    },
+    {
+      "id": "AP2-1-1-1-K4-3",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K1",
+      "vorne": "Welche Teststufe steht im V-Modell der Anforderungsdefinition gegenüber?",
+      "hinten": "Der Abnahmetest: Er prüft, ob das fertige System die Anforderungen des Auftraggebers erfüllt."
+    },
+    {
+      "id": "PB1-1-1-2-K1-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K1",
+      "vorne": "Ordne im V-Modell jeder Entwurfsstufe ihre Teststufe zu.",
+      "hinten": "- Anforderungsdefinition ↔ Abnahmetest\n- funktionaler Systementwurf ↔ Systemtest\n- Architektur- bzw. Grobentwurf ↔ Integrationstest\n- Komponenten- bzw. Feinentwurf ↔ Komponententest"
+    },
+    {
+      "id": "AP2-1-1-1-K3-3",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K2",
+      "vorne": "Wie läuft das Spiralmodell grundsätzlich ab?",
+      "hinten": "Das Projekt durchläuft die Phasen in mehreren Runden. In jeder Runde: Ziele festlegen, Risiken bewerten und verringern (z. B. mit Prototypen), entwickeln und prüfen, nächste Runde planen. Das Produkt wächst von Runde zu Runde."
+    },
+    {
+      "id": "AP2-1-1-1-K4-2",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K2",
+      "vorne": "Welches Vorgehensmodell durchläuft die Phasen mehrfach und bewertet in jeder Runde die Risiken?",
+      "hinten": "Das Spiralmodell."
+    },
+    {
+      "id": "AP2-1-1-1-K3-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K3",
+      "vorne": "Wie läuft das Wasserfallmodell ab?",
+      "hinten": "Die Phasen (z. B. Analyse, Entwurf, Implementierung, Test, Einführung) werden nacheinander durchlaufen. Eine Phase beginnt erst, wenn die vorige abgeschlossen ist; ihr Ergebnis ist die Grundlage der nächsten."
+    },
+    {
+      "id": "PB1-1-1-2-K3-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K3",
+      "vorne": "Für welchen Projekttyp passt jeweils Wasserfall-, V- und Spiralmodell?",
+      "hinten": "- Wasserfall: feste, gut bekannte Anforderungen\n- V-Modell: hohe Anforderungen an nachweisbare Tests (z. B. Medizin, Behörden)\n- Spirale: große, neuartige Vorhaben mit hohem Risiko"
+    },
+    {
+      "id": "AP2-1-1-1-K5-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K1",
+      "vorne": "Was ist ein Sprint in Scrum?",
+      "hinten": "Ein fester, kurzer Zeitabschnitt (höchstens ein Monat, oft 2–4 Wochen), in dem das Team ein nutzbares Zwischenergebnis (Inkrement) fertigstellt."
+    },
+    {
+      "id": "PB1-1-1-3-K1-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K1",
+      "vorne": "Nenne die drei Artefakte von Scrum und ihren Inhalt.",
+      "hinten": "- Product Backlog: geordnete Liste aller Anforderungen, meist als User Stories\n- Sprint Backlog: was im laufenden Sprint umgesetzt wird, mit Plan\n- Inkrement: das fertige, nutzbare Ergebnis eines Sprints"
+    },
+    {
+      "id": "PB1-1-1-3-K1-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K1",
+      "vorne": "Wie lange dauern Sprint und Daily Scrum höchstens?",
+      "hinten": "- Sprint: höchstens ein Monat, meist zwei bis vier Wochen\n- Daily Scrum: etwa 15 Minuten"
+    },
+    {
+      "id": "AP2-1-1-1-K5-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K2",
+      "vorne": "Welche Rollen gibt es in Scrum, und was ist jeweils ihre Aufgabe?",
+      "hinten": "- Product Owner: verantwortet das Product Backlog und priorisiert die Anforderungen\n- Scrum Master: sorgt dafür, dass Scrum eingehalten wird, beseitigt Hindernisse\n- Developers (Entwickler): setzen die Anforderungen im Sprint in ein Inkrement um"
+    },
+    {
+      "id": "PB1-1-1-3-K3-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K3",
+      "vorne": "Nach welchem Muster wird eine User Story formuliert? Gib ein Beispiel.",
+      "hinten": "„Als <Rolle> möchte ich <Funktion>, damit <Nutzen>.“\nBeispiel: Als Kundin möchte ich meine Bestellung verfolgen, damit ich weiß, wann das Paket kommt."
+    },
+    {
+      "id": "PB1-1-1-3-K4-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K4",
+      "vorne": "Wofür stehen die INVEST-Kriterien einer User Story?",
+      "hinten": "- Independent: unabhängig\n- Negotiable: verhandelbar\n- Valuable: wertvoll für den Nutzer\n- Estimable: schätzbar\n- Small: klein, passt in einen Sprint\n- Testable: testbar"
+    },
+    {
+      "id": "PB1-1-1-3-K5-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K5",
+      "vorne": "Anwendungsfall „Wetter abrufen“ wird von „Standort erfassen“ per extend erweitert (Bedingung: Standort nicht eingestellt). Formuliere die User Story.",
+      "hinten": "Als Nutzer möchte ich das Wetter abrufen, damit ich passend planen kann. Falls der Standort nicht eingestellt ist, muss ich ihn vorher erfassen."
+    },
+    {
+      "id": "PB1-1-1-3-K5-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K5",
+      "vorne": "Wie übernimmst du include- und extend-Beziehungen in User Stories?",
+      "hinten": "- include (immer dabei): als feste Bedingung bzw. festen Teilschritt\n- extend (nur unter einer Bedingung): als „Falls …“-Satz mit der Bedingung aus der Notiz"
+    },
+    {
+      "id": "AP2-1-1-3-K1-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K1",
+      "vorne": "Nenne vier Kriterien einer Machbarkeitsanalyse für ein Softwareprojekt.",
+      "hinten": "- technische Machbarkeit\n- organisatorische Machbarkeit (verfügbare Ressourcen)\n- rechtliche Machbarkeit\n- wirtschaftliche Machbarkeit\nergänzt um Markt-, Konkurrenz- und Preisanalyse"
+    },
+    {
+      "id": "AP2-1-1-3-K1-2",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K1",
+      "vorne": "Was wird bei der technischen Machbarkeit geprüft?",
+      "hinten": "Ob sich das Vorhaben mit vorhandener oder beschaffbarer Technik (Hardware, Software, Schnittstellen) und dem verfügbaren Fachwissen umsetzen lässt."
+    },
+    {
+      "id": "AP2-1-1-3-K1-3",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K1",
+      "vorne": "Was wird bei der wirtschaftlichen Machbarkeit geprüft?",
+      "hinten": "Ob sich das Projekt lohnt: Die Kosten werden dem erwarteten Nutzen gegenübergestellt, und es wird geprüft, ob das Budget reicht."
+    },
+    {
+      "id": "AP2-1-1-3-K1-4",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K1",
+      "vorne": "Was prüfen die rechtliche und die organisatorische Machbarkeit?",
+      "hinten": "- rechtlich: ob Gesetze, Lizenzen und Vorschriften (z. B. Datenschutz) die Umsetzung erlauben\n- organisatorisch: ob Personal, Zuständigkeiten und Abläufe im Unternehmen die Umsetzung und Einführung zulassen"
+    },
+    {
+      "id": "PB1-1-2-1-K2-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K2",
+      "vorne": "Nenne je einen Aspekt des technischen und des rechtlichen Umfelds eines Softwareprojekts.",
+      "hinten": "- technisch: vorhandene IT-Infrastruktur, Schnittstellen zu bestehenden Systemen (z. B. ERP)\n- rechtlich: Datenschutz (DSGVO), Aufbewahrungspflichten, Vorschriften der Branche"
+    },
+    {
+      "id": "AP2-1-1-3-K2-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K3",
+      "vorne": "Wie beschreibt man zu einem Problem im Projekt das Risiko und die Gegenmaßnahme?",
+      "hinten": "- Risiko: was durch das Problem eintreten kann und welche Folge das für das Projekt hat (z. B. Verzug, Mehrkosten)\n- Gegenmaßnahme: was man tut, um den Eintritt oder die Folgen zu verringern"
+    },
+    {
+      "id": "AP2-1-1-3-K2-2",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K3",
+      "vorne": "Problem: Nur ein Entwickler kennt die eingesetzte Schnittstelle. Welches Risiko besteht, und welche Gegenmaßnahme passt?",
+      "hinten": "Risiko: Fällt er aus (Krankheit, Kündigung), geht das Wissen verloren und das Projekt verzögert sich. Gegenmaßnahme: Wissen dokumentieren und auf weitere Teammitglieder verteilen, z. B. durch Einarbeitung oder Pair Programming."
+    },
+    {
+      "id": "AP2-1-1-3-K2-3",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K3",
+      "vorne": "Problem: Der Kunde ändert während des Projekts häufig seine Anforderungen. Welches Risiko besteht, und welche Gegenmaßnahme passt?",
+      "hinten": "Risiko: Termine und Budget werden überschritten. Gegenmaßnahme: Änderungen nur über ein geregeltes Verfahren (Change Requests) bewerten und freigeben oder agil vorgehen."
+    },
+    {
+      "id": "PB1-1-2-1-K4-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K4",
+      "vorne": "Was versteht man unter Green IT?",
+      "hinten": "IT über den ganzen Lebenszyklus umweltschonend herstellen, betreiben und entsorgen. Ziele: Energieeffizienz, Ressourcenschonung, Klimaschutz."
+    },
+    {
+      "id": "AP2-1-1-3-K5-4",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K5",
+      "vorne": "Was ist ein Change Request?",
+      "hinten": "Ein formaler Antrag, bereits vereinbarte Anforderungen oder Projektinhalte zu ändern. Er wird auf Aufwand, Kosten und Termine geprüft und erst nach Freigabe umgesetzt."
+    },
+    {
+      "id": "PB1-1-2-1-K6-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K6",
+      "vorne": "Nenne Kostenarten eines Softwareprojekts mit je einem Beispiel.",
+      "hinten": "- Personalkosten: eigene und externe Entwickler\n- Software-/Lizenzkosten: Entwicklungsumgebung, Datenbank\n- Hardwarekosten: Server, Testgeräte\n- Kommunikationskosten: Internet, Reisen\n- Qualifizierungskosten: Schulungen"
+    },
+    {
+      "id": "AP2-1-1-3-K4-1",
+      "sp": "PB1-1-2-2",
+      "k": "PB1-1-2-2-K1",
+      "vorne": "Nenne typische Stakeholder eines Softwareprojekts.",
+      "hinten": "- Auftraggeber bzw. Kunde und Geschäftsführung\n- spätere Nutzer (Mitarbeiter)\n- Projektleitung und Entwicklerteam\n- Betriebsrat\n- Datenschutzbeauftragter, IT-Betrieb\n- ggf. Lieferanten, Behörden"
+    },
+    {
+      "id": "AP2-1-1-3-K4-2",
+      "sp": "PB1-1-2-2",
+      "k": "PB1-1-2-2-K2",
+      "vorne": "Stakeholder: die Mitarbeiter, die die neue Software nutzen sollen. Nenne eine typische Befürchtung und eine passende Maßnahme.",
+      "hinten": "Befürchtung: z. B. Überforderung durch das neue System oder Mehrarbeit. Maßnahme: früh informieren und einbeziehen (z. B. bei Tests und Rückmeldungen) und Schulungen anbieten."
+    },
+    {
+      "id": "AP2-1-1-3-K4-3",
+      "sp": "PB1-1-2-2",
+      "k": "PB1-1-2-2-K2",
+      "vorne": "Stakeholder: der Betriebsrat. Nenne eine typische Befürchtung und eine passende Maßnahme.",
+      "hinten": "Befürchtung: Die Software ermöglicht eine Leistungs- oder Verhaltenskontrolle der Mitarbeiter. Maßnahme: den Betriebsrat früh einbeziehen, Auswertungen begrenzen und eine Betriebsvereinbarung abschließen."
+    },
+    {
+      "id": "PB1-1-2-2-K2-1",
+      "sp": "PB1-1-2-2",
+      "k": "PB1-1-2-2-K2",
+      "vorne": "Ordne passende Gegenmaßnahmen zu: Kostenangst, Angst um den Arbeitsplatz, Termindruck.",
+      "hinten": "- Kostenangst → laufendes Kosten-Controlling\n- Angst um den Arbeitsplatz → Beschäftigungszusage, Betroffene früh einbinden, Personal- bzw. Betriebsrat beteiligen\n- Termindruck → Pufferzeiten, enges Termincontrolling"
+    },
+    {
+      "id": "PB1-1-2-2-K3-1",
+      "sp": "PB1-1-2-2",
+      "k": "PB1-1-2-2-K3",
+      "vorne": "Welches Ziel eines Einführungs-Workshops kommt zu „Chancen zeigen“ und „Promotoren und Bremser erkennen“ hinzu?",
+      "hinten": "Die Folgen des Ist-Zustands bewusst machen: Was passiert, wenn alles bleibt wie es ist (Fehler, Mehrarbeit, Wettbewerbsnachteil)? So entsteht Bereitschaft zur Veränderung."
+    },
+    {
+      "id": "AP2-1-1-2-K3-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K1",
+      "vorne": "Nenne typische Gliederungspunkte eines Lasten- bzw. Pflichtenhefts.",
+      "hinten": "- Ausgangslage und Ziel\n- Produkteinsatz\n- funktionale Anforderungen\n- Qualitätsanforderungen\n- Rahmenbedingungen\n- Abnahmekriterien"
+    },
+    {
+      "id": "AP2-1-1-2-K3-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K1",
+      "vorne": "In welchem Gliederungspunkt eines Lasten- bzw. Pflichtenhefts steht, woran geprüft wird, ob das gelieferte Produkt die Anforderungen erfüllt?",
+      "hinten": "In den Abnahmekriterien."
+    },
+    {
+      "id": "AP2-1-1-2-K3-3",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K1",
+      "vorne": "Was gehört in den Gliederungspunkt „Rahmenbedingungen“?",
+      "hinten": "Vorgaben, die die Lösung einschränken, z. B. vorhandene Hard- und Software, Schnittstellen zu bestehenden Systemen, gesetzliche Vorgaben, Termine und Budget."
+    },
+    {
+      "id": "AP2-1-1-2-K4-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K2",
+      "vorne": "Wie setzt das Pflichtenheft die Anforderungen des Lastenhefts um?",
+      "hinten": "Es greift jede Anforderung des Lastenhefts auf und beschreibt, wie sie technisch gelöst wird. Nach Zustimmung des Auftraggebers ist es meist Grundlage des Vertrags und der Abnahme."
+    },
+    {
+      "id": "PB1-1-2-3-K2-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K2",
+      "vorne": "Was enthält ein Pflichtenheft zu jeder Anforderung des Lastenhefts?",
+      "hinten": "- die geplante Lösung\n- die technische Umsetzung: Architektur, Datenmodell, Schnittstellen, Programmiersprache\n- wie die Erfüllung bei der Abnahme geprüft wird"
+    },
+    {
+      "id": "AP2-1-1-2-K2-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K3",
+      "vorne": "Worin unterscheiden sich funktionale und nicht funktionale Anforderungen?",
+      "hinten": "- funktional: was das System tun soll (Funktionen, Daten, Verhalten)\n- nicht funktional: wie gut bzw. unter welchen Bedingungen es das tun soll (z. B. Antwortzeit, Sicherheit, Bedienbarkeit, Rahmenbedingungen)"
+    },
+    {
+      "id": "AP2-1-1-2-K2-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K3",
+      "vorne": "„Kunden können ihre bisherigen Bestellungen in einer Liste einsehen.“ – Funktionale oder nicht funktionale Anforderung?",
+      "hinten": "Funktional: Sie beschreibt eine Funktion des Systems."
+    },
+    {
+      "id": "AP2-1-1-2-K2-3",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K3",
+      "vorne": "„Die Bestellübersicht wird in höchstens 2 Sekunden angezeigt.“ – Funktionale oder nicht funktionale Anforderung?",
+      "hinten": "Nicht funktional: Sie beschreibt eine Qualitätseigenschaft (Antwortzeit, Effizienz), keine Funktion."
+    },
+    {
+      "id": "AP2-1-1-2-K1-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K4",
+      "vorne": "Welche Eigenschaften soll eine aus einem Szenario formulierte Anforderung haben?",
+      "hinten": "- eindeutig: nur eine Deutung möglich\n- prüfbar: messbare Angaben statt „schnell“ oder „einfach“\n- eine Anforderung je Satz\n- beschreibt, was gefordert ist, nicht wie es technisch umgesetzt wird"
+    },
+    {
+      "id": "AP2-1-1-2-K1-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K4",
+      "vorne": "Wie formuliert man eine Anforderung knapp und verbindlich?",
+      "hinten": "Als vollständiger Satz mit Subjekt und Verpflichtung, z. B. „Das System muss …“ bzw. „Der Nutzer muss … können“, ergänzt um messbare Angaben, wo nötig."
+    },
+    {
+      "id": "PB1-1-2-3-K5-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K5",
+      "vorne": "Nenne Probleme eines papiergestützten Ablaufs, die eine Digitalisierung löst.",
+      "hinten": "- Medienbrüche und doppelte Erfassung\n- schlecht lesbare Notizen, Übertragungsfehler\n- kein Zugriff auf aktuelle Informationen unterwegs\n- langes Suchen, verlorene Unterlagen"
+    },
+    {
+      "id": "AP2-1-3-1-K1-1",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Nenne die klassischen Qualitätsmerkmale von Software (angelehnt an ISO/IEC 9126).",
+      "hinten": "- Funktionalität\n- Zuverlässigkeit\n- Benutzbarkeit\n- Effizienz\n- Wartbarkeit, Änderbarkeit bzw. Erweiterbarkeit\n- Übertragbarkeit"
+    },
+    {
+      "id": "AP2-1-3-1-K1-2",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Was beschreibt das Qualitätsmerkmal Funktionalität?",
+      "hinten": "Ob die Software die geforderten Funktionen vollständig und korrekt bereitstellt."
+    },
+    {
+      "id": "AP2-1-3-1-K1-3",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Was beschreibt das Qualitätsmerkmal Benutzbarkeit?",
+      "hinten": "Wie leicht Nutzer die Software verstehen, erlernen und bedienen können, um ihre Aufgaben zu erledigen."
+    },
+    {
+      "id": "AP2-1-3-1-K1-4",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Was beschreibt das Qualitätsmerkmal Effizienz?",
+      "hinten": "Das Zeit- und Verbrauchsverhalten: Antwortzeiten und Durchsatz im Verhältnis zu den eingesetzten Ressourcen wie Rechenzeit und Speicher."
+    },
+    {
+      "id": "AP2-1-3-1-K1-5",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Was beschreiben Wartbarkeit und Änderbarkeit bzw. Erweiterbarkeit?",
+      "hinten": "- Wartbarkeit: wie leicht sich die Software analysieren, korrigieren, ändern und testen lässt\n- Änderbarkeit bzw. Erweiterbarkeit: wie leicht sie sich anpassen oder um Funktionen ergänzen lässt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-6",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Was beschreibt das Qualitätsmerkmal Übertragbarkeit?",
+      "hinten": "Wie leicht sich die Software in eine andere Umgebung (Hardware, Betriebssystem, Plattform) übertragen, dort installieren und anpassen lässt. Auch Portabilität genannt."
+    },
+    {
+      "id": "AP2-1-3-1-K3-1",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K1",
+      "vorne": "Wie beschreibt man das Qualitätsmerkmal Zuverlässigkeit?",
+      "hinten": "Die Software erbringt ihre Leistung unter festgelegten Bedingungen über einen festgelegten Zeitraum, auch wenn Fehler auftreten."
+    },
+    {
+      "id": "AP2-1-3-1-K2-1",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K2",
+      "vorne": "„Die Software soll ohne Anpassung auch unter Linux laufen.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+      "hinten": "Übertragbarkeit (Portabilität)."
+    },
+    {
+      "id": "AP2-1-3-1-K2-2",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K2",
+      "vorne": "„Neue Mitarbeiter sollen die Hauptfunktionen ohne Schulung nutzen können.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+      "hinten": "Benutzbarkeit."
+    },
+    {
+      "id": "AP2-1-3-1-K2-3",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K2",
+      "vorne": "„Fällt ein Server aus, arbeitet das System ohne Datenverlust weiter.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+      "hinten": "Zuverlässigkeit (Fehlertoleranz)."
+    },
+    {
+      "id": "AP2-1-3-1-K2-4",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K2",
+      "vorne": "„Ein weiteres Zahlungsverfahren soll sich später mit geringem Aufwand ergänzen lassen.“ Welchem Qualitätsmerkmal ordnest du das zu?",
+      "hinten": "Änderbarkeit bzw. Erweiterbarkeit (Teil der Wartbarkeit)."
+    },
+    {
+      "id": "AP2-1-3-1-K4-1",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K3",
+      "vorne": "In welcher Norm sind die Qualitätsmerkmale von Software heute festgelegt?",
+      "hinten": "In ISO/IEC 25010 (Qualitätsmodell für Softwareprodukte)."
+    },
+    {
+      "id": "AP2-1-3-1-K6-2",
+      "sp": "PB1-1-2-4",
+      "k": "PB1-1-2-4-K3",
+      "vorne": "Formuliere eine prüfbare Anforderung zur Zuverlässigkeit.",
+      "hinten": "Zum Beispiel: „Das System ist montags bis freitags von 7 bis 19 Uhr zu mindestens 99,5 % verfügbar.“"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-1-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-1-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-1-K5-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Scrum-Ereignisse stehen in AP1-1-1-2; Daily Scrum mit Zeitrahmen fragt die neue Karte zu K1"
+    },
+    {
+      "id": "AP2-1-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-2-K4-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Urheber und Zweck von Lasten- und Pflichtenheft stehen in AP1-2-2-2"
+    },
+    {
+      "id": "AP2-1-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-3-K1-1",
+      "entscheidung": "bearbeitet",
+      "grund": "an die Aussage angepasst: rechtlich statt zeitlich, Marktanalyse ergänzt"
+    },
+    {
+      "id": "AP2-1-1-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-3-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-3-K1-4",
+      "entscheidung": "bearbeitet",
+      "grund": "an die Kriterien der Aussage angepasst (rechtlich statt zeitlich)"
+    },
+    {
+      "id": "AP2-1-1-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-1-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-3-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-1-3-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – steht in AP1 und wird importiert, PB1 wiederholt es nicht"
+    },
+    {
+      "id": "AP2-1-1-3-K5-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – steht in AP1 und wird importiert, PB1 wiederholt es nicht"
+    },
+    {
+      "id": "AP2-1-1-3-K5-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – steht in AP1 und wird importiert, PB1 wiederholt es nicht"
+    },
+    {
+      "id": "AP2-1-1-3-K5-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K1-6",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K3-2",
+      "entscheidung": "entfernt",
+      "grund": "hinter der Grenze: Untermerkmale der ISO/IEC 25010 gehören nicht dazu"
+    },
+    {
+      "id": "AP2-1-3-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-1-K6-1",
+      "entscheidung": "entfernt",
+      "grund": "doppelt zu AP2-1-1-2-K1-1 (prüfbare Anforderungen, PB1-1-2-3-K4)"
+    },
+    {
+      "id": "AP2-1-3-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K4-1",
+      "entscheidung": "entfernt",
+      "grund": "objektorientierte Analyse gehört zu PB1-5-1-3; dort neue Karte"
+    },
+    {
+      "id": "AP2-1-3-2-K4-2",
+      "entscheidung": "entfernt",
+      "grund": "gehört zum Entwurf (PB1-5) bzw. Datenmodell (PB1-6), nicht zum Pflichtenheft"
+    },
+    {
+      "id": "PB1-1-1-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-3-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-3-K1-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    }
+  ]
+}

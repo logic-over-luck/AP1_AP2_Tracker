@@ -1,0 +1,694 @@
+{
+  "ordner": "PB1-4",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-4.json",
+  "karten": [
+    {
+      "id": "PB1-4-1-1-K1-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K1",
+      "vorne": "Ordne zu: Welches UML-Diagramm zeigt was? Anwendungsfall-, Klassen-, Sequenz-, Zustands-, Aktivitätsdiagramm.",
+      "hinten": "- Anwendungsfall: was das System für wen leistet\n- Klasse: Aufbau aus Klassen und Beziehungen (Strukturdiagramm)\n- Sequenz: Nachrichten zwischen Objekten in zeitlicher Folge\n- Zustand: Zustände eines Objekts und Übergänge\n- Aktivität: Ablauf von Tätigkeiten"
+    },
+    {
+      "id": "AP2-2-1-2-K1-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Welche Grundelemente hat ein Anwendungsfalldiagramm, und wie werden sie gezeichnet?",
+      "hinten": "- Akteur: Strichmännchen außerhalb der Systemgrenze\n- Anwendungsfall: Ellipse innerhalb der Systemgrenze\n- Systemgrenze: Rechteck mit dem Systemnamen\n- Assoziation: Linie zwischen Akteur und Anwendungsfall"
+    },
+    {
+      "id": "AP2-2-1-2-K2-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Wann setzt man im Anwendungsfalldiagramm eine Generalisierung zwischen zwei Akteuren ein?",
+      "hinten": "Wenn ein Akteur alle Anwendungsfälle (Rechte) eines anderen Akteurs hat und darüber hinaus weitere, z. B. Administrator und Benutzer."
+    },
+    {
+      "id": "AP2-2-1-2-K2-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Wie wird die Generalisierung zwischen Akteuren gezeichnet?",
+      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreieckspitze vom spezielleren Akteur (z. B. Administrator) zum allgemeineren (z. B. Benutzer)."
+    },
+    {
+      "id": "AP2-2-1-2-K3-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Wann verwendet man im Anwendungsfalldiagramm «include», wann «extend»?",
+      "hinten": "- «include»: Der Teilablauf wird immer ausgeführt (verpflichtend)\n- «extend»: Der Teilablauf wird nur optional oder unter einer Bedingung ausgeführt"
+    },
+    {
+      "id": "AP2-2-1-2-K3-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Wie sieht der «include»-Pfeil aus, und in welche Richtung zeigt er?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze und «include», vom einbindenden Basis-Anwendungsfall zum eingebundenen Anwendungsfall."
+    },
+    {
+      "id": "AP2-2-1-2-K3-4",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "„Geld abheben“ prüft immer die PIN; einen Beleg druckt es nur auf Wunsch. Welche Beziehungen zeichnest du, und wohin zeigen die Pfeile?",
+      "hinten": "- «include» von „Geld abheben“ zu „PIN prüfen“\n- «extend» von „Beleg drucken“ zu „Geld abheben“"
+    },
+    {
+      "id": "AP2-2-1-2-K6-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Wie benennt man einen Anwendungsfall?",
+      "hinten": "Aus Sicht des Akteurs mit Gegenstand und Tätigkeit, z. B. „Buch ausleihen“ oder „Rechnung erstellen“."
+    },
+    {
+      "id": "AP2-2-1-2-K6-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K2",
+      "vorne": "Ist „Datenbankabfrage ausführen“ ein guter Name für einen Anwendungsfall eines Bibliothekskunden?",
+      "hinten": "Nein: Das beschreibt einen internen Systemvorgang, nicht das Anliegen des Akteurs. Besser z. B. „Buch suchen“."
+    },
+    {
+      "id": "AP2-2-1-2-K3-3",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K3",
+      "vorne": "Wie sieht der «extend»-Pfeil aus, und in welche Richtung zeigt er?",
+      "hinten": "Gestrichelter Pfeil mit offener Spitze und «extend», vom erweiternden Anwendungsfall zum Basis-Anwendungsfall, der erweitert wird."
+    },
+    {
+      "id": "AP2-2-1-2-K4-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K3",
+      "vorne": "Welche zwei Angaben gehören zu einer «extend»-Beziehung?",
+      "hinten": "- die Bedingung, unter der erweitert wird, z. B. `{Kunde wünscht Beleg}`\n- der Erweiterungspunkt: die Stelle im Basis-Anwendungsfall, an der die Erweiterung eingreift"
+    },
+    {
+      "id": "AP2-2-1-2-K4-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K3",
+      "vorne": "Wo werden Erweiterungspunkt und Bedingung einer «extend»-Beziehung notiert?",
+      "hinten": "- Erweiterungspunkt: im Basis-Anwendungsfall unter „extension points“\n- Bedingung: in einer Notiz an der «extend»-Beziehung, z. B. `condition: {Kunde wünscht Beleg}`; verkürzt auch in geschweiften Klammern direkt am Pfeil"
+    },
+    {
+      "id": "PB1-4-1-2-K1-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K1",
+      "vorne": "Modelliere eine Klasse Benutzer vollständig: Attribute name und passwort, Konstruktor, Getter/Setter für name, Methode zur Passwortprüfung.",
+      "hinten": "- `- name : String`\n- `- passwort : String`\n- `+ Benutzer(name : String, passwort : String)`\n- `+ getName() : String`\n- `+ setName(name : String)`\n- `+ validatePassword(eingabe : String) : Boolean`"
+    },
+    {
+      "id": "AP2-2-1-1-K3-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K2",
+      "vorne": "Wie werden Assoziation und gerichtete Assoziation im Klassendiagramm gezeichnet?",
+      "hinten": "- Assoziation: einfache durchgezogene Linie\n- gerichtete Assoziation: durchgezogene Linie mit offener Pfeilspitze; navigierbar in Pfeilrichtung, die Klasse am Linienanfang kennt die an der Spitze"
+    },
+    {
+      "id": "AP2-2-1-1-K4-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K2",
+      "vorne": "Was bedeuten die Multiplizitäten 1, 0..1, 1..* und *?",
+      "hinten": "- `1`: genau eins\n- `0..1`: keins oder eins\n- `1..*`: mindestens eins\n- `*`: beliebig viele, auch keins (wie `0..*`)"
+    },
+    {
+      "id": "AP2-2-1-1-K4-2",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K2",
+      "vorne": "`Kunde 1 —— * Bestellung`: Wie liest man diese Multiplizitäten in Worten?",
+      "hinten": "Ein Kunde hat beliebig viele (auch keine) Bestellungen; jede Bestellung gehört zu genau einem Kunden."
+    },
+    {
+      "id": "AP2-2-1-1-K4-3",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K2",
+      "vorne": "Zwischen Kunde und Bestellung: An welches Linienende schreibt man die Multiplizität, die angibt, wie viele Bestellungen ein Kunde hat?",
+      "hinten": "An das Ende bei der Klasse Bestellung, also gegenüber von Kunde."
+    },
+    {
+      "id": "AP2-2-1-1-K5-4",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K2",
+      "vorne": "Welche Multiplizität ist bei einer Komposition am Ganzen höchstens möglich, und warum?",
+      "hinten": "Höchstens 1 (also 1 oder 0..1): Ein Teil gehört zu genau einem Ganzen und kann nicht auf mehrere aufgeteilt sein."
+    },
+    {
+      "id": "PB1-4-1-2-K2-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K2",
+      "vorne": "Eine Route besteht aus mehreren Strecken. Wie setzt du das im Klassendiagramm und als Attribut um?",
+      "hinten": "Assoziation Route 1 —— 1..* Strecke (als Aggregation mit Raute an Route, wenn Strecken auch allein bestehen). In Route ein Attribut `- streckenliste : List<Strecke>`."
+    },
+    {
+      "id": "AP2-2-1-1-K2-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K3",
+      "vorne": "Wie wird Vererbung im Klassendiagramm gezeichnet?",
+      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreieckspitze, die von der Unterklasse zur Oberklasse zeigt."
+    },
+    {
+      "id": "AP2-2-1-1-K2-2",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K3",
+      "vorne": "Wie kennzeichnet man im Klassendiagramm eine abstrakte Klasse oder eine abstrakte Methode?",
+      "hinten": "Den Namen kursiv schreiben oder mit `{abstract}` ergänzen; verbreitet ist auch «abstract» über dem Namen. Eine abstrakte Methode hat keine Implementierung; nicht abstrakte Unterklassen müssen sie implementieren."
+    },
+    {
+      "id": "AP2-2-1-1-K2-3",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K3",
+      "vorne": "Wie wird ein Interface im Klassendiagramm dargestellt und wie seine Implementierung durch eine Klasse?",
+      "hinten": "- Interface: Klassenrechteck mit «interface» über dem Namen\n- Implementierung: gestrichelte Linie mit nicht ausgefüllter Dreieckspitze von der Klasse zum Interface"
+    },
+    {
+      "id": "AP2-2-1-1-K2-4",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K3",
+      "vorne": "Worin unterscheiden sich die Pfeile für Vererbung und für die Implementierung eines Interfaces?",
+      "hinten": "Beide haben eine nicht ausgefüllte Dreieckspitze. Vererbung: durchgezogene Linie. Implementierung: gestrichelte Linie."
+    },
+    {
+      "id": "PB1-4-1-2-K3-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K3",
+      "vorne": "Wie kennzeichnest du eine statische Methode im Klassendiagramm?",
+      "hinten": "Unterstrichen oder mit `{static}`, z. B. `+ getInstance() : Konfiguration` unterstrichen."
+    },
+    {
+      "id": "AP2-2-1-4-K2-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K1",
+      "vorne": "Wie werden synchrone Nachricht, asynchrone Nachricht und Rückgabe im Sequenzdiagramm gezeichnet?",
+      "hinten": "- synchron: durchgezogene Linie, gefüllte Pfeilspitze\n- asynchron: durchgezogene Linie, offene Pfeilspitze\n- Rückgabe: gestrichelte Linie, offene Pfeilspitze"
+    },
+    {
+      "id": "AP2-2-1-4-K2-2",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K1",
+      "vorne": "Was unterscheidet eine synchrone von einer asynchronen Nachricht in der Bedeutung?",
+      "hinten": "Synchron: Der Sender wartet, bis die Antwort kommt. Asynchron: Der Sender arbeitet sofort weiter, ohne auf eine Antwort zu warten."
+    },
+    {
+      "id": "AP2-2-1-4-K5-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K1",
+      "vorne": "Wie stellt man einen Selbstaufruf im Sequenzdiagramm dar?",
+      "hinten": "Mit einem Nachrichtenpfeil, der von der eigenen Lebenslinie ausgeht und auf sie zurückführt, z. B. `berechneSumme()`."
+    },
+    {
+      "id": "AP2-2-1-4-K5-2",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K1",
+      "vorne": "Wie stellt man im Sequenzdiagramm das Erzeugen und das Zerstören eines Objekts dar?",
+      "hinten": "- Erzeugen: Die Nachricht (z. B. «create» oder `new`) zeigt direkt auf das Rechteck des neuen Teilnehmers, das erst auf dieser Höhe beginnt\n- Zerstören: ein X am Ende seiner Lebenslinie"
+    },
+    {
+      "id": "PB1-4-1-3-K2-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K2",
+      "vorne": "Wann beginnt und endet ein Aktivierungsbalken im Sequenzdiagramm, und was passiert bei einem Aufruf innerhalb der Methode?",
+      "hinten": "Er beginnt mit dem eingehenden Aufruf und endet mit der Antwort. Ruft die Methode etwas auf, bleibt ihr Balken stehen; beim Aufgerufenen beginnt ein neuer Balken (beim Selbstaufruf leicht versetzt)."
+    },
+    {
+      "id": "AP2-2-1-4-K4-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K3",
+      "vorne": "Was bedeuten die kombinierten Fragmente alt, opt und loop im Sequenzdiagramm?",
+      "hinten": "- alt: Alternativen; nur der Bereich, dessen Bedingung zutrifft, wird ausgeführt\n- opt: Der Bereich wird nur ausgeführt, wenn die Bedingung zutrifft\n- loop: Der Bereich wird wiederholt, solange die Bedingung gilt"
+    },
+    {
+      "id": "AP2-2-1-4-K4-2",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K3",
+      "vorne": "Wie wird ein alt-Fragment im Sequenzdiagramm gezeichnet?",
+      "hinten": "Rahmen mit „alt“ in der linken oberen Ecke, durch gestrichelte Linien in Bereiche geteilt; jeder Bereich hat eine Bedingung in eckigen Klammern, z. B. `[bestand > 0]` und `[else]`."
+    },
+    {
+      "id": "AP2-2-1-4-K4-3",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K3",
+      "vorne": "Ein Rabatt wird nur berechnet, wenn ein Gutscheincode vorliegt; sonst geschieht an dieser Stelle nichts. Welches Fragment setzt du ein?",
+      "hinten": "opt: ein einziger Bereich mit Bedingung, ohne Alternativzweig."
+    },
+    {
+      "id": "AP2-2-1-4-K1-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K4",
+      "vorne": "Wie wird ein Teilnehmer im Sequenzdiagramm dargestellt?",
+      "hinten": "Oben ein Rechteck mit dem Namen, z. B. `k:Kunde`, darunter eine senkrechte gestrichelte Lebenslinie."
+    },
+    {
+      "id": "AP2-2-1-4-K1-2",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K4",
+      "vorne": "Wie wird im Sequenzdiagramm die zeitliche Reihenfolge der Nachrichten dargestellt?",
+      "hinten": "Die Zeit läuft von oben nach unten: Eine weiter unten eingetragene Nachricht wird später gesendet."
+    },
+    {
+      "id": "AP2-2-1-4-K3-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K4",
+      "vorne": "Wie beschriftet man im Sequenzdiagramm eine Nachricht und ihre Rückgabe?",
+      "hinten": "- Nachricht: Methodenname mit Parametern, z. B. `pruefeBestand(artikelNr)`\n- Rückgabe: der zurückgegebene Wert, z. B. `bestand`"
+    },
+    {
+      "id": "PB1-4-1-3-K4-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K4",
+      "vorne": "Wie stellst du einen Webservice-Aufruf im Sequenzdiagramm dar?",
+      "hinten": "Nachricht vom Client zum Server mit dem Request, z. B. `GET /shareholders?city=Köln`; gestrichelte Antwort zurück mit Statuscode und Daten, z. B. `200 OK, Liste`."
+    },
+    {
+      "id": "AP2-2-1-5-K1-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K1",
+      "vorne": "Wie werden Zustand, Startknoten und Endknoten im Zustandsdiagramm gezeichnet?",
+      "hinten": "- Zustand: Rechteck mit abgerundeten Ecken und Namen\n- Startknoten: ausgefüllter Kreis\n- Endknoten: ausgefüllter Kreis mit äußerem Ring"
+    },
+    {
+      "id": "AP2-2-1-5-K1-2",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K1",
+      "vorne": "Woran erkennst du in einer Textbeschreibung einen Zustand?",
+      "hinten": "An einer Situation, in der das Objekt verweilt, bis ein Ereignis eintritt, z. B. „bestellt“, „bezahlt“, „versandt“. Das Ereignis selbst ist kein Zustand, sondern Auslöser eines Übergangs."
+    },
+    {
+      "id": "AP2-2-1-5-K2-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K2",
+      "vorne": "In welcher Form wird ein Übergang im Zustandsdiagramm beschriftet?",
+      "hinten": "`Auslöser [Bedingung] / Aktion`\nBeispiel: `PIN eingegeben [PIN korrekt] / Konto anzeigen`"
+    },
+    {
+      "id": "AP2-2-1-5-K2-2",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K2",
+      "vorne": "Was bedeuten die drei Teile einer Übergangsbeschriftung im Zustandsdiagramm?",
+      "hinten": "- Auslöser: Ereignis, das den Übergang anstößt\n- [Bedingung]: muss wahr sein, damit der Übergang stattfindet\n- / Aktion: wird beim Übergang ausgeführt"
+    },
+    {
+      "id": "AP2-2-1-5-K4-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K3",
+      "vorne": "Mehrere Übergänge mit demselben Auslöser verlassen einen Zustand. Welche Regel gilt für ihre Bedingungen?",
+      "hinten": "Sie dürfen sich nicht überschneiden und müssen zusammen alle Fälle abdecken; sonst ist das Verhalten mehrdeutig oder ein Fall bleibt offen."
+    },
+    {
+      "id": "AP2-2-1-5-K4-2",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K3",
+      "vorne": "Unter 20 °C soll die Heizung einschalten, ab 20 °C nicht. Wie lauten die beiden Bedingungen?",
+      "hinten": "`[t < 20]` und `[t >= 20]` – der Grenzwert 20 gehört genau zu einem der beiden Fälle."
+    },
+    {
+      "id": "AP2-2-1-5-K5-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K3",
+      "vorne": "Wie stellt man im Zustandsdiagramm dar, dass ein Objekt in einen früheren Zustand zurückkehrt?",
+      "hinten": "Mit einem beschrifteten Übergangspfeil vom aktuellen Zustand zurück zum früheren, z. B. von „gesperrt“ nach „aktiv“ mit dem Auslöser `entsperren`."
+    },
+    {
+      "id": "AP2-2-1-5-K3-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K4",
+      "vorne": "Was bedeuten entry, do und exit in einem Zustand?",
+      "hinten": "- `entry /`: Aktion beim Betreten des Zustands\n- `do /`: Aktivität, solange das Objekt im Zustand ist\n- `exit /`: Aktion beim Verlassen des Zustands"
+    },
+    {
+      "id": "AP2-2-1-5-K3-2",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K4",
+      "vorne": "Wo werden entry-, do- und exit-Aktionen im Zustandsdiagramm notiert?",
+      "hinten": "Im Zustandssymbol unter dem Zustandsnamen, durch eine Linie abgetrennt, z. B. `entry / Lampe einschalten`."
+    },
+    {
+      "id": "AP2-2-1-5-K6-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K4",
+      "vorne": "Wie stellt man im Zustandsdiagramm einen Übergang dar, der nach Ablauf einer Zeit erfolgt?",
+      "hinten": "Mit dem Zeitereignis `after(Dauer)` als Auslöser, z. B. `after(30 s)`. Die Zeit zählt ab dem Betreten des Zustands."
+    },
+    {
+      "id": "PB1-4-1-5-K1-1",
+      "sp": "PB1-4-1-5",
+      "k": "PB1-4-1-5-K1",
+      "vorne": "Wie gehst du vor, um einen Anwendungsfall vollständig als Aktivitätsdiagramm darzustellen?",
+      "hinten": "- Schwimmbahn je Beteiligtem\n- Start, dann Aktionen in Reihenfolge\n- jede Prüfung als Verzweigung mit Bedingungen, danach Zusammenführung\n- Wiederholungen als Rücksprung\n- Ende(n)\nBeispiel „Messergebnisse speichern“: Verbindung prüfen → [nicht verbunden] zwischenspeichern → [verbunden] senden → Ergebnis melden."
+    },
+    {
+      "id": "AP2-2-1-3-K2-1",
+      "sp": "PB1-4-1-5",
+      "k": "PB1-4-1-5-K2",
+      "vorne": "Wie stellt man im Aktivitätsdiagramm dar, dass Aktionen parallel ablaufen?",
+      "hinten": "- Teilung: Balken mit einem eingehenden und mehreren ausgehenden Flüssen\n- Synchronisation: Balken mit mehreren eingehenden und einem ausgehenden Fluss"
+    },
+    {
+      "id": "AP2-2-1-3-K2-2",
+      "sp": "PB1-4-1-5",
+      "k": "PB1-4-1-5-K2",
+      "vorne": "Wann geht es nach einem Synchronisationsbalken weiter?",
+      "hinten": "Erst, wenn alle eingehenden parallelen Flüsse dort angekommen sind."
+    },
+    {
+      "id": "AP2-2-1-3-K2-3",
+      "sp": "PB1-4-1-5",
+      "k": "PB1-4-1-5-K2",
+      "vorne": "Worin unterscheiden sich Synchronisation (Balken) und Zusammenführung (Raute) im Aktivitätsdiagramm?",
+      "hinten": "Die Synchronisation wartet, bis alle eingehenden Flüsse da sind. Die Zusammenführung leitet weiter, sobald ein Fluss ankommt."
+    },
+    {
+      "id": "PB1-4-1-5-K3-1",
+      "sp": "PB1-4-1-5",
+      "k": "PB1-4-1-5-K3",
+      "vorne": "In einem Arbeitsablauf bereitet A die Ware vor, während B gleichzeitig die Rechnung schreibt; nur bei Expressversand ruft A den Kurier. Wie erweiterst du das Aktivitätsdiagramm?",
+      "hinten": "Teilungsbalken, dann in A's Bahn „Ware vorbereiten“ und in B's Bahn „Rechnung schreiben“; in A's Zweig Verzweigung [Express] „Kurier rufen“ / [sonst], Zusammenführung; dann Synchronisationsbalken."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-2-1-1-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K1-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K1-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K3-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-1-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K5-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K5-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-1-K5-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K1-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-2-K1-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-2-1-2-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-2-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-3-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-3-K1-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-3-K1-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-3-K1-4",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-3-K3-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundnotation steht in AP1 und wird importiert, PB1 wiederholt sie nicht"
+    },
+    {
+      "id": "AP2-2-1-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-4-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-1-5-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB1-4-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    }
+  ]
+}

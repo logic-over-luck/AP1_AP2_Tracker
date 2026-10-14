@@ -1,0 +1,726 @@
+{
+  "ordner": "PB1-5",
+  "stand": "2026-10-14",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-5.json",
+  "karten": [
+    {
+      "id": "AP2-3-3-2-K1-2",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K1",
+      "vorne": "Welche Vorteile bringt Kapselung?",
+      "hinten": "- die Klasse kann neue Werte prüfen und so ungültige Zustände verhindern\n- die innere Umsetzung lässt sich ändern, ohne den Code der Nutzer der Klasse anzupassen"
+    },
+    {
+      "id": "AP2-3-3-2-K2-1",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K2",
+      "vorne": "Was versteht man unter Vererbung?",
+      "hinten": "Eine Unterklasse übernimmt die Attribute und Methoden ihrer Oberklasse und kann sie ergänzen oder Methoden überschreiben."
+    },
+    {
+      "id": "AP2-3-3-2-K2-2",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K2",
+      "vorne": "Was bedeutet es, eine Methode zu überschreiben?",
+      "hinten": "Die Unterklasse definiert eine geerbte Methode mit gleichem Namen und gleichen Parametern neu. Für Objekte der Unterklasse wird dann diese Fassung ausgeführt."
+    },
+    {
+      "id": "AP2-3-3-2-K4-1",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K3",
+      "vorne": "Was ist ein Interface?",
+      "hinten": "Eine Festlegung von Methoden (Name, Parameter, Rückgabetyp), die jede Klasse bereitstellen muss, die das Interface implementiert."
+    },
+    {
+      "id": "AP2-3-3-2-K5-1",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K3",
+      "vorne": "Worin unterscheiden sich abstrakte Klasse und Interface?",
+      "hinten": "- abstrakte Klasse: kann schon Attribute und fertige Methoden enthalten; wird vererbt\n- Interface: legt Methoden fest, die implementierende Klassen bereitstellen müssen; eine Klasse kann mehrere Interfaces implementieren"
+    },
+    {
+      "id": "AP2-3-3-2-K5-2",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K3",
+      "vorne": "Kann man von einer abstrakten Klasse direkt ein Objekt erzeugen?",
+      "hinten": "Nein. Objekte entstehen nur aus nicht abstrakten Unterklassen, die alle abstrakten Methoden implementieren."
+    },
+    {
+      "id": "AP2-3-3-2-K3-1",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K4",
+      "vorne": "Was versteht man unter Polymorphie?",
+      "hinten": "Derselbe Methodenaufruf führt je nach tatsächlicher Klasse des Objekts unterschiedlichen Code aus; welche Methode läuft, wird erst zur Laufzeit entschieden."
+    },
+    {
+      "id": "AP2-3-3-2-K3-2",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K4",
+      "vorne": "Wie heißt der Mechanismus, der zur Laufzeit die passende überschriebene Methode einer Unterklasse auswählt?",
+      "hinten": "Polymorphie, technisch umgesetzt durch dynamische (späte) Bindung: Erst zur Laufzeit wird anhand der tatsächlichen Klasse des Objekts entschieden, welche Methode ausgeführt wird."
+    },
+    {
+      "id": "AP2-3-3-2-K3-3",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K4",
+      "vorne": "Eine Liste vom Typ Fahrzeug enthält ein Auto und ein Fahrrad; beide überschreiben `beschreibung()`. Was passiert beim Aufruf `f.beschreibung()` in einer Schleife über die Liste?",
+      "hinten": "Für das Auto läuft die Methode der Klasse Auto, für das Fahrrad die der Klasse Fahrrad. Entscheidend ist die tatsächliche Klasse des Objekts, nicht der Typ der Variablen."
+    },
+    {
+      "id": "AP2-3-3-2-K6-1",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K5",
+      "vorne": "Warum lässt sich ein Programm dank Polymorphie um neue Unterklassen erweitern, ohne den aufrufenden Code zu ändern?",
+      "hinten": "Der aufrufende Code arbeitet nur mit dem Typ der Oberklasse bzw. des Interfaces. Eine neue Unterklasse bringt ihre eigene Fassung der Methode mit, die zur Laufzeit automatisch ausgeführt wird."
+    },
+    {
+      "id": "PB1-5-1-1-K5-1",
+      "sp": "PB1-5-1-1",
+      "k": "PB1-5-1-1-K5",
+      "vorne": "Eine Klasse Besucher hat ein Attribut typ und berechnet den Preis mit wenn typ == \"Premium\" … sonst …. Wie baust du das polymorph um?",
+      "hinten": "Abstrakte Oberklasse Besucher ohne typ mit abstrakter Methode berechnePreis(); Unterklassen StandardBesucher und PremiumBesucher überschreiben sie. Der Aufrufer ruft nur besucher.berechnePreis() auf; ein neuer Typ ist eine neue Unterklasse, ohne bestehenden Code zu ändern."
+    },
+    {
+      "id": "AP2-3-3-3-K1-1",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K1",
+      "vorne": "Was ist eine Ausnahme (Exception)?",
+      "hinten": "Ein zur Laufzeit gemeldeter Fehlerfall: Der normale Ablauf bricht an dieser Stelle ab und wird in einer passenden Fehlerbehandlung fortgesetzt."
+    },
+    {
+      "id": "AP2-3-3-3-K1-2",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K1",
+      "vorne": "Wozu dienen Ausnahmen?",
+      "hinten": "Sie trennen den Fehlerfall vom normalen Ablauf: Der Code für den Normalfall bleibt übersichtlich, die Fehlerbehandlung steht an einer Stelle, und ein Fehler wird nicht stillschweigend übergangen."
+    },
+    {
+      "id": "AP2-3-3-3-K1-3",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K1",
+      "vorne": "Was passiert mit einer Ausnahme, die in einer Methode nicht abgefangen wird?",
+      "hinten": "Sie wird an die aufrufende Methode weitergereicht. Fängt sie dort und weiter oben niemand ab, bricht das Programm mit einer Fehlermeldung ab."
+    },
+    {
+      "id": "AP2-3-3-3-K4-1",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K2",
+      "vorne": "Welche Aufgabe haben die Blöcke try, catch und finally?",
+      "hinten": "- try: Code, der eine Ausnahme auslösen kann\n- catch: behandelt eine bestimmte Ausnahme; läuft nur im Fehlerfall\n- finally: läuft immer, z. B. um Dateien oder Verbindungen zu schließen"
+    },
+    {
+      "id": "AP2-3-3-3-K4-2",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K2",
+      "vorne": "Was geschieht mit den restlichen Anweisungen im try-Block, wenn darin eine Ausnahme auftritt?",
+      "hinten": "Sie werden übersprungen. Es geht im passenden catch-Block weiter, danach im finally-Block (falls vorhanden)."
+    },
+    {
+      "id": "AP2-3-3-3-K3-1",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K3",
+      "vorne": "Wie kann eine Funktion auf eine ungültige Eingabe reagieren?",
+      "hinten": "Sie prüft die Eingabe mit einer Bedingung und\n- löst im Fehlerfall eine Ausnahme aus oder\n- liefert einen besonderen Rückgabewert, z. B. −1, null oder false"
+    },
+    {
+      "id": "AP2-3-3-3-K3-2",
+      "sp": "PB1-5-1-2",
+      "k": "PB1-5-1-2-K3",
+      "vorne": "Welchen Nachteil hat ein besonderer Rückgabewert als Fehlersignal gegenüber einer Ausnahme?",
+      "hinten": "Der Aufrufer muss ihn selbst prüfen und kann das vergessen. Außerdem kann der Kennwert mit einem gültigen Ergebnis verwechselt werden."
+    },
+    {
+      "id": "AP2-1-3-2-K1-1",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K1",
+      "vorne": "Was versteht man unter Top-down-Entwurf?",
+      "hinten": "Man beginnt beim Gesamtsystem und zerlegt es schrittweise in immer kleinere Teile (schrittweise Verfeinerung), bis diese direkt umsetzbar sind."
+    },
+    {
+      "id": "AP2-1-3-2-K1-2",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K1",
+      "vorne": "Was versteht man unter Bottom-up-Entwurf?",
+      "hinten": "Man beginnt bei vorhandenen oder einzeln entwickelten Bausteinen und setzt sie schrittweise zum Gesamtsystem zusammen."
+    },
+    {
+      "id": "AP2-1-3-2-K1-3",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K1",
+      "vorne": "Ein Team baut einen Webshop, indem es vorhandene Bausteine für Zahlung, Versand und Anmeldung zusammensetzt. Welcher Entwurfsansatz ist das?",
+      "hinten": "Bottom-up: Aus fertigen Bausteinen wird das Ganze zusammengesetzt."
+    },
+    {
+      "id": "AP2-1-3-2-K2-1",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K2",
+      "vorne": "Was ist Modularisierung?",
+      "hinten": "Die Zerlegung eines Programms in abgeschlossene Teile (Module) mit klar festgelegter Aufgabe und Schnittstelle; wie ein Modul innen arbeitet, ist nach außen verborgen."
+    },
+    {
+      "id": "AP2-1-3-2-K3-1",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K2",
+      "vorne": "Nenne Vorteile der Modularisierung.",
+      "hinten": "- Wiederverwendung von Modulen\n- Module lassen sich getrennt testen\n- Arbeitsteilung im Team\n- leichtere Wartung"
+    },
+    {
+      "id": "AP2-1-3-2-K3-2",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K2",
+      "vorne": "Warum erleichtert Modularisierung die Arbeitsteilung?",
+      "hinten": "Module mit festgelegten Schnittstellen können von verschiedenen Entwicklern gleichzeitig und unabhängig voneinander entwickelt und getestet werden."
+    },
+    {
+      "id": "AP2-1-3-2-K5-1",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K3",
+      "vorne": "Worin unterscheiden sich objektorientierte Analyse (OOA) und objektorientiertes Design (OOD)?",
+      "hinten": "- OOA: was das System fachlich leisten soll, unabhängig von der Technik\n- OOD: wie das technisch mit Klassen, Methoden und Schnittstellen umgesetzt wird"
+    },
+    {
+      "id": "AP2-1-3-2-K5-2",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K3",
+      "vorne": "In welcher Reihenfolge folgen OOA, OOD und objektorientierte Programmierung (OOP) aufeinander?",
+      "hinten": "Erst OOA (fachlich analysieren), dann OOD (technisch entwerfen), dann OOP (programmieren)."
+    },
+    {
+      "id": "PB1-5-1-3-K3-1",
+      "sp": "PB1-5-1-3",
+      "k": "PB1-5-1-3-K3",
+      "vorne": "Wie findest du in einer fachlichen Beschreibung Kandidaten für Klassen, Attribute und Methoden (objektorientierte Analyse)?",
+      "hinten": "Substantive sind Kandidaten für Klassen oder Attribute, Verben für Methoden oder Beziehungen. Danach Doppeltes und für das System Unwichtiges streichen. Datentypen und Methodensignaturen legt erst der Entwurf (OOD) fest."
+    },
+    {
+      "id": "AP2-1-4-1-K1-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K1",
+      "vorne": "Was ist ein Entwurfsmuster?",
+      "hinten": "Eine bewährte, allgemeine Lösungsschablone für ein wiederkehrendes Entwurfsproblem. Es beschreibt beteiligte Klassen und ihr Zusammenspiel, keinen fertigen Code."
+    },
+    {
+      "id": "AP2-1-4-1-K1-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K1",
+      "vorne": "Nenne Vorteile von Entwurfsmustern.",
+      "hinten": "- bewährte, erprobte Lösungen für wiederkehrende Probleme\n- gemeinsame Sprache im Team: ein Name steht für die ganze Lösung\n- verständlicherer, besser wartbarer und erweiterbarer Code"
+    },
+    {
+      "id": "AP2-1-4-1-K2-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K2",
+      "vorne": "Welche drei Kategorien von Entwurfsmustern unterscheidet man, und worum geht es jeweils?",
+      "hinten": "- Erzeugungsmuster: das Erzeugen von Objekten\n- Strukturmuster: das Zusammensetzen von Klassen und Objekten zu größeren Strukturen\n- Verhaltensmuster: die Zusammenarbeit und Aufgabenverteilung zwischen Objekten"
+    },
+    {
+      "id": "AP2-1-4-1-K2-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K2",
+      "vorne": "Ordne Singleton, Factory und Observer den Kategorien der Entwurfsmuster zu.",
+      "hinten": "- Singleton: Erzeugungsmuster\n- Factory: Erzeugungsmuster\n- Observer: Verhaltensmuster"
+    },
+    {
+      "id": "AP2-1-4-1-K2-3",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K2",
+      "vorne": "Nenne Beispiele für Strukturmuster.",
+      "hinten": "Zum Beispiel Adapter, Fassade, Kompositum, Dekorierer, Proxy."
+    },
+    {
+      "id": "AP2-1-4-1-K2-4",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K2",
+      "vorne": "Gehört MVC zu den Erzeugungs-, Struktur- oder Verhaltensmustern?",
+      "hinten": "Zu keiner dieser Kategorien: MVC ist ein Architekturmuster und beschreibt die Aufteilung einer ganzen Anwendung. Intern nutzt es Entwurfsmuster, z. B. Observer."
+    },
+    {
+      "id": "AP2-1-4-1-K3-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K3",
+      "vorne": "Wozu dient das Observer-Muster?",
+      "hinten": "Mehrere Objekte (Beobachter) werden automatisch benachrichtigt, wenn sich der Zustand eines anderen Objekts (Subjekt) ändert. Das Subjekt muss die konkreten Beobachter dabei nicht kennen."
+    },
+    {
+      "id": "AP2-1-4-1-K3-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K3",
+      "vorne": "Eine Wetterstation misst die Temperatur; Anzeige, Statistik und Warnsystem sollen bei jedem neuen Messwert sofort aktualisiert werden. Welches Muster passt, und warum?",
+      "hinten": "Observer: Die drei Komponenten melden sich als Beobachter bei der Station an und werden bei jeder Änderung automatisch benachrichtigt. Weitere Beobachter lassen sich ohne Änderung der Station ergänzen."
+    },
+    {
+      "id": "AP2-1-4-1-K6-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K3",
+      "vorne": "Welche Beteiligten zeigt ein Klassendiagramm des Observer-Musters?",
+      "hinten": "- Subjekt: hält eine Liste der Beobachter, Methoden zum An- und Abmelden und zum Benachrichtigen\n- Beobachter-Schnittstelle mit einer Methode zum Aktualisieren, z. B. `update()`\n- konkrete Beobachter, die diese Schnittstelle implementieren"
+    },
+    {
+      "id": "AP2-1-4-1-K6-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K3",
+      "vorne": "Woran erkennst du im Klassendiagramm die Beobachter-Schnittstelle des Observer-Musters?",
+      "hinten": "Am Stereotyp «interface» mit einer Methode zum Aktualisieren (z. B. `update()`). Die konkreten Beobachter implementieren sie (gestrichelte Linie mit hohlem Dreieck), das Subjekt kennt sie über eine Liste bzw. Assoziation mit Multiplizität `*`."
+    },
+    {
+      "id": "AP2-1-4-1-K4-3",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K4",
+      "vorne": "Was ist die Idee des Factory-Musters?",
+      "hinten": "Das Erzeugen von Objekten wird an eine eigene Stelle (Fabrikklasse oder Fabrikmethode) ausgelagert. Der aufrufende Code fordert ein Objekt an, ohne die konkrete Klasse selbst mit `new` zu erzeugen."
+    },
+    {
+      "id": "AP2-1-4-1-K4-4",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K4",
+      "vorne": "Wann passt das Factory-Muster?",
+      "hinten": "Wenn erst zur Laufzeit feststeht, welche konkrete Klasse erzeugt wird (z. B. PDF- oder CSV-Export je nach Auswahl), oder wenn die Erzeugung aufwendig ist und an einer Stelle gebündelt werden soll."
+    },
+    {
+      "id": "PB1-5-1-4-K4-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K4",
+      "vorne": "Wie ist das Muster Factory Method aufgebaut, und was ergänzt du für ein neues Produkt?",
+      "hinten": "Ein abstrakter Erzeuger deklariert die Fabrikmethode; jede konkrete Erzeugerklasse überschreibt sie und liefert ihr konkretes Produkt (alle Produkte mit gemeinsamer Oberklasse/Schnittstelle). Neues Produkt = neue Produktklasse + neue Erzeugerklasse."
+    },
+    {
+      "id": "PB1-5-1-4-K4-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K4",
+      "vorne": "Worin unterscheidet sich eine Simple Factory von der Factory Method?",
+      "hinten": "Simple Factory: eine (meist statische) Methode liefert je nach Parameter das passende Objekt, z. B. per Mehrfachauswahl. Factory Method: die Erzeugung steckt in einer Methode, die jede Unterklasse des Erzeugers überschreibt."
+    },
+    {
+      "id": "PB1-5-1-4-K5-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K5",
+      "vorne": "Nenne eine Einschränkung der Factory Method.",
+      "hinten": "Alle Produkte brauchen eine gemeinsame Oberklasse oder Schnittstelle, und jedes neue Produkt braucht eine eigene Erzeugerklasse – die Zahl der Klassen wächst."
+    },
+    {
+      "id": "AP2-1-4-1-K4-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K6",
+      "vorne": "Was stellt das Singleton-Muster sicher, und wie wird es typischerweise umgesetzt?",
+      "hinten": "Von einer Klasse gibt es genau ein Objekt. Umsetzung: privater Konstruktor, statisches Attribut für die Instanz und statische Methode (z. B. `getInstance()`), die beim ersten Aufruf das Objekt erzeugt und danach immer dasselbe zurückgibt."
+    },
+    {
+      "id": "AP2-1-4-1-K4-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K6",
+      "vorne": "Wann passt das Singleton-Muster? Nenne Beispiele.",
+      "hinten": "Wenn es von einer Klasse genau ein gemeinsames Objekt geben darf, z. B. für die Konfiguration, einen Logger oder die Verwaltung der Datenbankverbindungen."
+    },
+    {
+      "id": "AP2-1-4-1-K5-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K6",
+      "vorne": "Welche Aufgaben haben Model, View und Controller im MVC-Muster?",
+      "hinten": "- Model: hält die Daten und die Fachlogik\n- View: stellt die Daten dar\n- Controller: nimmt Eingaben entgegen und steuert Model und View"
+    },
+    {
+      "id": "AP2-1-4-1-K5-2",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K6",
+      "vorne": "Welche Vorteile bietet das MVC-Muster?",
+      "hinten": "- Daten und Fachlogik sind von der Darstellung getrennt\n- mehrere Ansichten auf dieselben Daten möglich\n- Oberfläche austauschbar, ohne die Fachlogik zu ändern\n- Teile getrennt test- und wartbar, Arbeitsteilung"
+    },
+    {
+      "id": "PB1-5-1-4-K7-1",
+      "sp": "PB1-5-1-4",
+      "k": "PB1-5-1-4-K7",
+      "vorne": "Beschreibe die 3-Schichten-Architektur einer Webanwendung und den Ablauf einer Anfrage.",
+      "hinten": "- Darstellung: Browser bzw. Webserver\n- Logik: Backend-Server\n- Daten: Datenbank\nDie Oberfläche fragt beim Backend an, das Backend holt die Daten aus der Datenbank und liefert sie zurück."
+    },
+    {
+      "id": "AP2-3-3-1-K3-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K1",
+      "vorne": "Wozu dienen Getter und Setter?",
+      "hinten": "- Getter liefert den Wert eines Attributs, z. B. `getName()`\n- Setter setzt einen neuen Wert, z. B. `setName(n)`, und kann ihn vorher prüfen"
+    },
+    {
+      "id": "AP2-3-3-1-K3-2",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K1",
+      "vorne": "Du schreibst eine Methode der Klasse Bestellung und brauchst das private Attribut preis eines Artikel-Objekts a. Wie greifst du darauf zu?",
+      "hinten": "Über den Getter: `a.getPreis()`. Ein direkter Zugriff `a.preis` ist von außerhalb der Klasse Artikel nicht erlaubt."
+    },
+    {
+      "id": "AP2-3-3-1-K4-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K1",
+      "vorne": "Wie rufst du für jedes Objekt einer Liste eine Methode auf?",
+      "hinten": "Die Liste mit einer Schleife durchlaufen und die Methode am jeweiligen Objekt aufrufen, z. B.\n`for i = 0 to liste.size() - 1`\n`    liste.get(i).aktualisieren()`"
+    },
+    {
+      "id": "PB1-5-1-5-K1-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K1",
+      "vorne": "Schreibe in Pseudocode die Methode benachrichtigen() eines Subjekts im Observer-Muster (Attribut beobachter : List<Observer>).",
+      "hinten": "`für jedes o in beobachter:`\n`    o.update()`"
+    },
+    {
+      "id": "AP2-3-3-1-K5-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K2",
+      "vorne": "Wie ist eine Methode aufgebaut, die prüft, ob ein Objekt schon in einer Liste enthalten ist?",
+      "hinten": "Liste durchlaufen und jedes Element mit dem Objekt vergleichen (z. B. über eine ID). Bei einem Treffer sofort `true` zurückgeben, nach der Schleife `false`."
+    },
+    {
+      "id": "AP2-3-3-1-K5-2",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K2",
+      "vorne": "Warum steht bei der Enthalten-Prüfung `return false` nach der Schleife und nicht im else-Zweig innerhalb der Schleife?",
+      "hinten": "Sonst gäbe die Methode schon beim ersten nicht passenden Element false zurück, obwohl das gesuchte Objekt weiter hinten stehen kann."
+    },
+    {
+      "id": "PB1-5-1-5-K2-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K2",
+      "vorne": "PremiumBesucher erbt von Besucher und soll 5 % Rabatt bekommen. Wie überschreibst du calculatePreis() in Pseudocode?",
+      "hinten": "`methode calculatePreis() : double`\n`    return super.calculatePreis() * 0.95`"
+    },
+    {
+      "id": "AP2-3-3-1-K2-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K3",
+      "vorne": "Wie erzeugst du ein Objekt der Klasse Kunde und fügst es in eine Liste ein?",
+      "hinten": "Den Konstruktor mit den Parametern aus dem Klassendiagramm aufrufen und das Objekt anhängen:\n`k = new Kunde(name, nummer)`\n`kunden.add(k)`"
+    },
+    {
+      "id": "AP2-3-3-1-K2-2",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K3",
+      "vorne": "Woran erkennst du den Konstruktor in einem Klassendiagramm?",
+      "hinten": "Er trägt den Namen der Klasse und hat keinen Rückgabetyp, z. B. `+ Kunde(name: String)`."
+    },
+    {
+      "id": "PB1-5-1-5-K3-1",
+      "sp": "PB1-5-1-5",
+      "k": "PB1-5-1-5-K3",
+      "vorne": "Schreibe eine statische Fabrikmethode erzeuge(typ, name), die je nach typ ein PremiumBesucher- oder Besucher-Objekt liefert.",
+      "hinten": "`static erzeuge(typ : String, name : String) : Besucher`\n`    wenn typ == \"Premium\": return new PremiumBesucher(name)`\n`    sonst: return new Besucher(name)`"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-1-3-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-3-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-4-1-K4-4",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-1-4-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-1-4-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "doppelt – die Notation im Klassendiagramm wohnt in PB1-4-1-2"
+    },
+    {
+      "id": "AP2-3-3-1-K1-2",
+      "entscheidung": "entfernt",
+      "grund": "doppelt – die Notation im Klassendiagramm wohnt in PB1-4-1-2"
+    },
+    {
+      "id": "AP2-3-3-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Grundbegriff steht in AP1 und wird importiert"
+    },
+    {
+      "id": "AP2-3-3-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K2-3",
+      "entscheidung": "entfernt",
+      "grund": "doppelt – die Notation im Klassendiagramm wohnt in PB1-4-1-2"
+    },
+    {
+      "id": "AP2-3-3-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K4-2",
+      "entscheidung": "entfernt",
+      "grund": "doppelt – die Notation im Klassendiagramm wohnt in PB1-4-1-2"
+    },
+    {
+      "id": "AP2-3-3-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-3-3-3-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – typische Laufzeitfehler stehen in AP1-8-2-4"
+    },
+    {
+      "id": "PB1-5-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-4-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-4-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-5-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    }
+  ]
+}

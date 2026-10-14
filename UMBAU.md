@@ -573,8 +573,16 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         Danach: **12 Ordner, 17 Themenblöcke, 67 Stichpunkte, 266 Können-Aussagen (vorher 343), 17 Kür-Einträge**; alle
         Ordner, Raum-Prüfung und Tests grün; ALT: 445 alte Aussagen → 20 verschoben, 285 angepasst, 48 gestrichen, 92 PB2.
         Umzugstabelle neu erzeugt.
-  - [ ] **PB1 offen:** Lernkarten (wie 3e; die alten AP2-Karten hängen über `umbau/umzug.json` an den neuen IDs),
-        Kurzfassungen und Vorschau in der App, Abnahme durch den Projektinhaber, danach Export PB1 (E3).
+  - [x] **Vorschau, Kurzfassungen und Karten PB1 (14.10.2026, Wunsch Projektinhaber):**
+        - Vorschau: `tools/vorschau-ap1.mjs` verallgemeinert (`vorschauRaum`, `RAEUME_VORSCHAU`); in der App zeigt der Raum
+          AP2 jetzt den PB1-Lernplan („Planen eines Softwareproduktes (PB1)“). Alte AP2-Aussagen, die nach PB2 gehören, fehlen
+          dort, bis PB2 gebaut ist (209 alte Karten warten). Hinweis je Raum über `vorschauRaeume`.
+        - Kurzfassungen wie AP1 (3f): `umbau/kurz/pb1/PB1-<n>.json`, 67 Teaser und 266 Erklärungen.
+        - Karten wie AP1 (3e): `umbau/karten/pb1/PB1-<n>.json`, Berichte `umbau/berichte/PB1-<n>-karten.md`. Von 676 alten
+          AP2-Karten mit Ziel in PB1: 586 bleiben, 7 bearbeitet (zusammen 28 an eine andere Aussage im Ordner gehängt),
+          83 entfernt (meist E2: Grundlagen stehen in AP1), 105 neu → 698 Karten, jede der 266 Aussagen hat mindestens eine.
+        - Tests in `tests/vorschau-ap1.test.mjs` (Gliederung, Kurzfassungen, Karten-Regeln wie AP1).
+  - [ ] **PB1 offen:** Abnahme durch den Projektinhaber, danach Export PB1 (E3).
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).
