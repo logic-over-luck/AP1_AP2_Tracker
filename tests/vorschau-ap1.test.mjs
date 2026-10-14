@@ -199,3 +199,27 @@ describe('Vorschau PB1', () => {
     assert.equal(new Set(ids).size, ids.length, 'Karten-ID doppelt');
   });
 });
+
+test('PB1: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs', async () => {
+  const fs = await import('node:fs');
+  const cfg = RAEUME_VORSCHAU.PB1;
+  const ordner = path.join(wurzel, 'umbau', 'kurz', 'pb1');
+  if (!fs.existsSync(ordner)) return;
+  const plaeneP = ladeLernplanAp1(wurzel, cfg);
+  for (const f of fs.readdirSync(ordner).filter((f) => /^PB1-\d+\.json$/.test(f))) {
+    const d = JSON.parse(fs.readFileSync(path.join(ordner, f), 'utf8'));
+    const plan = plaeneP.find((p) => p.oberblock.id === d.ordner);
+    assert.ok(plan, `${f}: kein Lernplan für ${d.ordner}`);
+    const sps = plan.themenbloecke.flatMap((t) => t.stichpunkte);
+    const spIds = new Set(sps.map((s) => s.id));
+    const kIds = new Set(sps.flatMap((s) => s.koennen.map((k) => k.id)));
+    for (const id of spIds) assert.ok(d.teaser?.[id]?.trim(), `${d.ordner}: Teaser für ${id} fehlt`);
+    for (const id of kIds) assert.ok(d.erklaerung?.[id]?.trim(), `${d.ordner}: Erklärung für ${id} fehlt`);
+    for (const id of Object.keys(d.teaser)) assert.ok(spIds.has(id), `${d.ordner}: ${id} ist kein Stichpunkt des Ordners`);
+    for (const id of Object.keys(d.erklaerung)) assert.ok(kIds.has(id), `${d.ordner}: ${id} ist keine Aussage des Ordners`);
+  }
+  const alle = vorschauAlle(alt, wurzel);
+  const { teaser, erklaerung } = ladeKurzAp1(wurzel, cfg);
+  assert.equal(alle.vorschauRaeume.AP2.kurz, teaser.size);
+  assert.equal(alle.vorschauRaeume.AP2.erklaerungen, erklaerung.size);
+});
