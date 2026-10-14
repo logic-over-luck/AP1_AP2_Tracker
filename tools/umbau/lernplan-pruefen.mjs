@@ -13,17 +13,28 @@
 //   T2b       jede Teilaufgabe, die nur Bausteine dieses Ordners betrifft, steckt in einem Stichpunkt
 //   T8        Tiefe erreicht: je Baustein erreicht mindestens eine Können-Aussage die belegte Tiefe
 //             (bei geteilten Bausteinen mit „anteil" nur Hinweis – der Rest wird in anderen Ordnern erreicht)
-//   ALT       jede alte Können-Aussage des Ordners ist einsortiert; alte IDs bleiben erhalten, keine ID wird neu vergeben
+//   ALT       AP1: jede alte Können-Aussage des Ordners ist einsortiert; alte IDs bleiben erhalten, keine ID wird neu vergeben
+//             PB1 (P33): neue IDs; alt_neu sortiert alte AP2-Aussagen ein (verschoben, angepasst, gestrichen, PB2),
+//             Vollständigkeit über alle Ordner prüft raum-pruefen.mjs
+//   E2/T7     (ab PB1) Bausteine früherer Räume nur mit baut_auf auf einen Stichpunkt des Exports; eine Können-Aussage,
+//             die nur importierte Bausteine betrifft, muss tiefer gehen als der frühere Raum (nicht doppelt)
 //   R3        Hinweis-Abgleich: jedes Thema hat einen Ring, Hinweisquellen beschrieben, Verweis passt zum Ring
 //             (Ring „Ordner“: Thema wohnt in einem anderen AP1-Ordner oder einem späteren Raum)
 //   R4        Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
+import { raum } from './raum.mjs';
 
 const ORDNER = process.argv[2];
 if (!ORDNER) { console.error('Aufruf: node tools/umbau/lernplan-pruefen.mjs <Ordner-ID, z. B. AP1-6>'); process.exit(2); }
 const TEIL = ORDNER.split('-')[0];
 const RAUM = TEIL.toLowerCase();
+const R = raum(TEIL);
+const NEU_IDS = TEIL !== 'AP1'; // P33: ab PB1 neue IDs, Umzugstabelle statt ID-Erhalt
+const exporte = Object.fromEntries(R.frueher.filter((r) => existsSync(`umbau/export/${r}.json`))
+  .map((r) => [r, JSON.parse(readFileSync(`umbau/export/${r}.json`, 'utf8'))]));
+const exportSP = new Map(Object.values(exporte).flatMap((e) => e.stichpunkte.map((s) => [s.id, s])));
+const erreichtFrueher = (id) => Math.max(0, ...Object.values(exporte).map((e) => e.erreicht[id]?.stufe ?? 0));
 
 const lp = JSON.parse(readFileSync(process.env.LERNPLAN_DATEI ?? `umbau/lernplan/${RAUM}/${ORDNER}.json`, 'utf8'));
 const b = JSON.parse(readFileSync('umbau/fundament/katalog-bausteine.json', 'utf8'));
@@ -32,7 +43,9 @@ const belege = JSON.parse(readFileSync(`umbau/fundament/belege-${RAUM}.json`, 'u
 const regeln = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
 const index = JSON.parse(readFileSync(`umbau/fundament/pruefungen-${RAUM}.json`, 'utf8'));
 const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
-const altPaket = JSON.parse(readFileSync(`inhalte/lernen/${ORDNER}.json`, 'utf8'));
+const altPaket = NEU_IDS
+  ? { karten: readdirSync('inhalte/lernen').filter((f) => /^AP2-\d+\.json$/.test(f)).flatMap((f) => JSON.parse(readFileSync(`inhalte/lernen/${f}`, 'utf8')).karten) }
+  : JSON.parse(readFileSync(`inhalte/lernen/${ORDNER}.json`, 'utf8'));
 
 const zuordnung = {};
 for (const d of readdirSync(`umbau/zuordnung/${RAUM}`)) {
@@ -47,14 +60,12 @@ const alleIds = new Set([
   ...b.fragenkomplexe.map((x) => x.id), ...b.punkte.map((x) => x.id), ...b.spiegelstriche.map((x) => x.id),
   ...b.anhang.map((x) => x.id), ...Object.keys(zusatz), ...b.pruefungsbereiche.flatMap((p) => p.gebiete.map((g) => g.id)),
 ]);
-const raumBausteine = new Set([
-  ...b.punkte.filter((x) => x.id.startsWith(`${TEIL}.`)).map((x) => x.id),
-  ...b.spiegelstriche.filter((x) => x.id.startsWith(`${TEIL}.`)).map((x) => x.id),
-  ...b.anhang.map((x) => x.id), ...Object.keys(zusatz),
-]);
-const gebieteRaum = new Set(b.pruefungsbereiche.find((p) => p.id === TEIL).gebiete.map((g) => g.id));
+const raumBausteine = R.gueltig; // eigene, aus früheren Räumen importierbare, Anhänge (tools/umbau/raum.mjs)
+const gebieteRaum = R.gebiete;
 const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-BEISPIELLISTE']);
 const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
+// Alltagswörter, die als Prüfungsoperator nur in fester Wendung vorkommen (v1.6): nicht für die F1-Heuristik
+for (const w of ['bringen', 'finden', 'schreiben', 'einfügen']) delete opStufe[w];
 
 // ---------- Struktur ----------
 const ob = lp.oberblock;
@@ -74,6 +85,12 @@ for (const tb of lp.themenbloecke) {
     for (const g of sp.gebiete ?? []) if (!gebieteRaum.has(g)) F(`T6: ${sp.id}: Gebiet ${g} gehört nicht zum Raum ${TEIL}`);
     const spB = new Set(sp.bausteine.map((x) => x.id));
     for (const x of sp.bausteine) if (!raumBausteine.has(x.id)) F(`${sp.id}: Baustein ${x.id} gehört nicht zum Raum ${TEIL}`);
+    // E2: Bausteine früherer Räume nur über baut_auf auf einen Stichpunkt, der sie dort abdeckt
+    for (const ba of sp.baut_auf ?? []) if (!exportSP.has(ba)) F(`E2: ${sp.id}: baut_auf ${ba} steht in keinem Export (${R.frueher.join(', ') || '–'})`);
+    for (const x of sp.bausteine.filter((y) => R.importierbar(y.id))) {
+      const dort = Object.values(exporte).flatMap((e) => e.erreicht[x.id]?.stichpunkte ?? []);
+      if (!(sp.baut_auf ?? []).some((ba) => dort.includes(ba))) F(`E2: ${sp.id}: importierter Baustein ${x.id} ohne baut_auf auf einen Stichpunkt, der ihn abdeckt (${dort.join(', ') || 'keiner im Export'})`);
+    }
     for (const ta of sp.teilaufgaben) {
       if (!teilaufgabe.has(ta)) { F(`${sp.id}: Teilaufgabe ${ta} unbekannt`); continue; }
       const z = zuordnung[ta];
@@ -97,6 +114,19 @@ for (const tb of lp.themenbloecke) {
         } else if (art === 'regel') {
           if (!REGELN.has(wert)) F(`T3: ${k.id}: unbekannte Regel ${wert}`);
         } else F(`T3: ${k.id}: unbekannte Herkunftsart „${h}"`);
+      }
+      // T7 (E2): betrifft die Aussage nur importierte Bausteine, muss sie tiefer gehen als der frühere Raum
+      if (R.frueher.length) {
+        const ids = new Set();
+        for (const h of k.herkunft ?? []) {
+          if (h.startsWith('katalog:')) ids.add(h.slice(8));
+          if (h.startsWith('beleg:')) for (const x of zuordnung[h.slice(6)]?.bausteine ?? []) ids.add(x);
+        }
+        const fach = [...ids].filter((x) => !x.startsWith('ANH.'));
+        if (fach.length && fach.every((x) => R.importierbar(x))) {
+          const dort = Math.max(...fach.map(erreichtFrueher));
+          if (k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
+        }
       }
       // F1-Heuristik: passt die Stufe zu einem Verb im Text?
       const verben = Object.keys(opStufe).filter((op) => new RegExp(`(^|[^A-Za-zÄÖÜäöüß])${op}([^A-Za-zÄÖÜäöüß]|$)`).test(k.text));
@@ -143,6 +173,7 @@ for (const id of ordnerBausteine) {
     const trifft = k.herkunft.some((h) => h === `katalog:${id}` || (h.startsWith('beleg:') && zuordnung[h.slice(6)]?.bausteine.includes(id)));
     if (trifft) ist = Math.max(ist, k.stufe);
   }
+  if (R.importierbar(id)) ist = Math.max(ist, erreichtFrueher(id)); // E2: im früheren Raum erreicht
   tiefe.push({ id, soll, ist, geteilt: geteilt.has(id) });
   if (soll && ist < soll) {
     const text = `T8: ${id} braucht Stufe ${soll}, erreicht in ${ORDNER} ${ist || 'keine'}`;
@@ -150,31 +181,48 @@ for (const id of ordnerBausteine) {
   }
 }
 
-// ---------- ALT: alte Inhalte einsortiert, IDs erhalten ----------
-const altSP = alt.stichpunkte.filter((s) => s.ordner_id === ORDNER);
-const altK = altSP.flatMap((s) => s.koennen.map((k) => k.id));
+// ---------- ALT: alte Inhalte einsortiert ----------
+const altSP = NEU_IDS ? [] : alt.stichpunkte.filter((s) => s.ordner_id === ORDNER);
 const an = lp.alt_neu?.koennen ?? [];
-const STATUS = new Set(['übernommen', 'angepasst', 'verschoben', 'gestrichen']);
 const neuK = new Set(kIds);
 const kRaum = new Set();
 for (const f of readdirSync(`umbau/lernplan/${RAUM}`).filter((x) => x.endsWith('.json'))) {
   const l = f === `${ORDNER}.json` ? lp : JSON.parse(readFileSync(`umbau/lernplan/${RAUM}/${f}`, 'utf8'));
   for (const tb of l.themenbloecke) for (const s of tb.stichpunkte) for (const k of s.koennen) kRaum.add(k.id);
 }
-for (const id of altK) {
-  const e = an.filter((x) => x.alt === id);
-  if (e.length !== 1) { F(`ALT: ${id} ist ${e.length}-mal einsortiert (soll genau 1)`); continue; }
-  const x = e[0];
-  if (!STATUS.has(x.status)) F(`ALT: ${id}: unbekannter Status ${x.status}`);
-  if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${id}: gestrichen ohne Grund`);
-  // Verschoben darf auch in einen anderen Ordner desselben Raums (z. B. Doppelung zusammengelegt)
-  if (x.status !== 'gestrichen' && !neuK.has(x.neu) && !(x.status === 'verschoben' && kRaum.has(x.neu))) F(`ALT: ${id}: Ziel ${x.neu} gibt es im neuen Plan nicht`);
-  if ((x.status === 'übernommen' || x.status === 'angepasst') && x.neu !== id) F(`ALT: ${id}: übernommen/angepasst muss die ID behalten (Lernstand, Karten)`);
+let altK;
+if (!NEU_IDS) {
+  altK = altSP.flatMap((s) => s.koennen.map((k) => k.id));
+  const STATUS = new Set(['übernommen', 'angepasst', 'verschoben', 'gestrichen']);
+  for (const id of altK) {
+    const e = an.filter((x) => x.alt === id);
+    if (e.length !== 1) { F(`ALT: ${id} ist ${e.length}-mal einsortiert (soll genau 1)`); continue; }
+    const x = e[0];
+    if (!STATUS.has(x.status)) F(`ALT: ${id}: unbekannter Status ${x.status}`);
+    if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${id}: gestrichen ohne Grund`);
+    // Verschoben darf auch in einen anderen Ordner desselben Raums (z. B. Doppelung zusammengelegt)
+    if (x.status !== 'gestrichen' && !neuK.has(x.neu) && !(x.status === 'verschoben' && kRaum.has(x.neu))) F(`ALT: ${id}: Ziel ${x.neu} gibt es im neuen Plan nicht`);
+    if ((x.status === 'übernommen' || x.status === 'angepasst') && x.neu !== id) F(`ALT: ${id}: übernommen/angepasst muss die ID behalten (Lernstand, Karten)`);
+  }
+  for (const x of an) if (!altK.includes(x.alt)) F(`ALT: ${x.alt} ist keine alte Können-Aussage dieses Ordners`);
+  const freigewordene = new Set(an.filter((x) => x.status === 'verschoben' || x.status === 'gestrichen').map((x) => x.alt));
+  for (const id of kIds) if (freigewordene.has(id)) F(`ALT: ID ${id} wird neu vergeben, obwohl sie verschoben/gestrichen wurde`);
+  for (const s of altSP) if (!spIds.includes(s.id)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
+} else {
+  // P33: alte AP2-Aussagen werden mit neuer ID verschoben/angepasst, gestrichen oder für PB2 vermerkt
+  const altAP2 = new Set(alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id)));
+  const STATUS = new Set(['verschoben', 'angepasst', 'gestrichen', 'PB2']);
+  altK = an.map((x) => x.alt);
+  for (const x of an) {
+    if (!altAP2.has(x.alt)) F(`ALT: ${x.alt} ist keine alte AP2-Können-Aussage`);
+    if (!STATUS.has(x.status)) F(`ALT: ${x.alt}: unbekannter Status ${x.status} (P33: verschoben, angepasst, gestrichen, PB2)`);
+    if ((x.status === 'verschoben' || x.status === 'angepasst') && !kRaum.has(x.neu)) F(`ALT: ${x.alt}: Ziel ${x.neu} gibt es in ${TEIL} nicht`);
+    if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${x.alt}: gestrichen ohne Grund`);
+  }
+  const d = altK.filter((x, i) => altK.indexOf(x) !== i);
+  for (const x of d) F(`ALT: ${x} ist in ${ORDNER} mehrfach einsortiert`);
+  for (const id of [...spIds, ...kIds]) if (id.startsWith('AP2-')) F(`P33: ${id} – alte AP2-IDs werden nicht weiterverwendet`);
 }
-for (const x of an) if (!altK.includes(x.alt)) F(`ALT: ${x.alt} ist keine alte Können-Aussage dieses Ordners`);
-const freigewordene = new Set(an.filter((x) => x.status === 'verschoben' || x.status === 'gestrichen').map((x) => x.alt));
-for (const id of kIds) if (freigewordene.has(id)) F(`ALT: ID ${id} wird neu vergeben, obwohl sie verschoben/gestrichen wurde`);
-for (const s of altSP) if (!spIds.includes(s.id)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
 
 // ---------- R3: Hinweis-Abgleich, R4: Geschwister-Prüfung (UMBAU.md 4.8) ----------
 const kMap = new Map(stichpunkte.flatMap((sp) => sp.koennen.map((k) => [k.id, k])));
@@ -192,7 +240,7 @@ for (const t of abgleich) {
     if (t.ring === 'Kern' || t.ring === 'Puffer') { if (!kMap.has(w)) F(`${name}: Können-Aussage ${w} gibt es nicht`); }
     else if (t.ring === 'Kür') { if (!spMap.get(w)?.kuer?.length) F(`${name}: Stichpunkt ${w} hat keinen Kür-Eintrag`); }
     else if (t.ring === 'Außen') { if (!spMap.get(w)?.grenzen?.length) F(`${name}: Stichpunkt ${w} hat keine Grenze`); }
-    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
+    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+(-\d+)*|PB1-\d+(-\d+)*|AP1|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
   }
   if (t.ring === 'Puffer' && !t.wo.some((w) => kMap.get(w)?.herkunft.some((h) => h.startsWith('regel:')))) F(`${name}: Puffer, aber keine der Aussagen hat Herkunft regel:`);
 }
@@ -208,13 +256,14 @@ for (const g of geschwister) {
 
 // Karten-Bilanz
 const statusVon = Object.fromEntries(an.map((x) => [x.alt, x]));
-const karten = { bleiben: 0, pruefen: 0, umhaengen: 0, entfallen: 0, ohne_koennen: 0 };
-for (const k of altPaket.karten) {
+const karten = { bleiben: 0, pruefen: 0, umhaengen: 0, entfallen: 0, ohne_koennen: 0, pb2: 0 };
+for (const k of (NEU_IDS ? altPaket.karten.filter((c) => statusVon[c.k]) : altPaket.karten)) {
   const x = statusVon[k.k];
   if (!x) karten.ohne_koennen++;
   else if (x.status === 'übernommen') karten.bleiben++;
   else if (x.status === 'angepasst') karten.pruefen++;
   else if (x.status === 'verschoben') karten.umhaengen++;
+  else if (x.status === 'PB2') karten.pb2++;
   else karten.entfallen++;
 }
 const altSet = new Set(altK);
@@ -222,6 +271,9 @@ const neueKoennen = kIds.filter((id) => !altSet.has(id) && !an.some((x) => x.neu
 
 // ---------- Bericht ----------
 const zaehl = (s) => an.filter((x) => x.status === s).length;
+const altText = NEU_IDS
+  ? `Alte AP2-Können-Aussagen: ${an.length} einsortiert → ${zaehl('verschoben')} verschoben, ${zaehl('angepasst')} angepasst, ${zaehl('gestrichen')} gestrichen, ${zaehl('PB2')} für PB2 vermerkt; ${neueKoennen.length} neue Aussagen ohne alte Vorlage.`
+  : `Können-Aussagen: ${altK.length} alt → ${zaehl('übernommen')} übernommen, ${zaehl('angepasst')} angepasst, ${zaehl('verschoben')} verschoben, ${zaehl('gestrichen')} gestrichen; ${neueKoennen.length} neu.`;
 const zeilen = [];
 zeilen.push(`# Lernplan ${ORDNER} – ${ob.titel}`, '', `Erzeugt mit \`node tools/umbau/lernplan-pruefen.mjs ${ORDNER}\`. Nicht von Hand bearbeiten.`, '');
 zeilen.push(`**Ergebnis:** ${fehler.length ? `${fehler.length} Fehler` : 'alle Prüfungen bestanden'}, ${hinweise.length} Hinweise.`, '');
@@ -229,9 +281,9 @@ zeilen.push('## Struktur', '');
 for (const tb of lp.themenbloecke) {
   zeilen.push(`### ${tb.id} ${tb.titel}`, '', `_${tb.satz}_`, '');
   for (const sp of tb.stichpunkte) {
-    const neu = !altSP.some((s) => s.id === sp.id);
+    const neu = !NEU_IDS && !altSP.some((s) => s.id === sp.id);
     zeilen.push(`#### ${sp.id} ${sp.titel}${neu ? ' (neu)' : ''}`, '', sp.ziel, '');
-    zeilen.push(`Bausteine: ${sp.bausteine.map((x) => x.id + (x.anteil ? ` (${x.anteil})` : '')).join('; ')} · Gebiete: ${sp.gebiete.join(', ')}`, '');
+    zeilen.push(`Bausteine: ${sp.bausteine.map((x) => x.id + (x.anteil ? ` (${x.anteil})` : '')).join('; ')} · Gebiete: ${sp.gebiete.join(', ')}${sp.baut_auf?.length ? ` · baut auf: ${sp.baut_auf.join(', ')}` : ''}`, '');
     zeilen.push(`Teilaufgaben: ${sp.teilaufgaben.join(', ')}`, '');
     zeilen.push('| ID | Können | Stufe | Herkunft |', '|---|---|---|---|');
     for (const k of sp.koennen) zeilen.push(`| ${k.id.replace(sp.id + '-', '')} | ${k.text}${k.vorgegeben ? ` _(vorgegeben: ${k.vorgegeben})_` : ''} | ${k.stufe} | ${k.herkunft.join(', ')} |`);
@@ -248,9 +300,12 @@ for (const tb of lp.themenbloecke) {
 zeilen.push('## Tiefe je Baustein (T8)', '', '| Baustein | belegte Tiefe | erreicht | geteilt |', '|---|---|---|---|');
 for (const t of tiefe.sort((x, y) => x.id.localeCompare(y.id))) zeilen.push(`| ${t.id} | ${t.soll ?? '–'} | ${t.ist || '–'} | ${t.geteilt ? 'ja' : ''} |`);
 zeilen.push('', '## Alt → neu', '');
-zeilen.push(`Können-Aussagen: ${altK.length} alt → ${zaehl('übernommen')} übernommen, ${zaehl('angepasst')} angepasst, ${zaehl('verschoben')} verschoben, ${zaehl('gestrichen')} gestrichen; ${neueKoennen.length} neu.`, '');
-zeilen.push(`Stichpunkte: ${altSP.length} alt, ${spIds.length} neu (${spIds.filter((id) => !altSP.some((s) => s.id === id)).join(', ') || 'keine neuen'}).`, '');
-zeilen.push(`Karten (${altPaket.karten.length}): ${karten.bleiben} bleiben, ${karten.pruefen} prüfen (Aussage angepasst), ${karten.umhaengen} umhängen (Aussage verschoben), ${karten.entfallen} entfallen, ${karten.ohne_koennen} ohne Können-Bezug. Neue Aussagen ohne Karten: ${neueKoennen.join(', ') || 'keine'}.`, '');
+zeilen.push(altText, '');
+if (!NEU_IDS) zeilen.push(`Stichpunkte: ${altSP.length} alt, ${spIds.length} neu (${spIds.filter((id) => !altSP.some((s) => s.id === id)).join(', ') || 'keine neuen'}).`, '');
+if (NEU_IDS) {
+  const n = altPaket.karten.filter((k) => statusVon[k.k]).length;
+  zeilen.push(`Alte AP2-Karten zu den einsortierten Aussagen (${n}): ${karten.pruefen + karten.umhaengen} umhängen auf die neue ID (davon ${karten.pruefen} prüfen, Aussage angepasst), ${karten.entfallen} entfallen, ${karten.pb2} warten auf PB2. Neue Aussagen ohne Karten: ${neueKoennen.length}.`, '');
+} else zeilen.push(`Karten (${altPaket.karten.length}): ${karten.bleiben} bleiben, ${karten.pruefen} prüfen (Aussage angepasst), ${karten.umhaengen} umhängen (Aussage verschoben), ${karten.entfallen} entfallen, ${karten.ohne_koennen} ohne Können-Bezug. Neue Aussagen ohne Karten: ${neueKoennen.join(', ') || 'keine'}.`, '');
 zeilen.push('| alt | Status | neu | Grund |', '|---|---|---|---|');
 for (const x of an) zeilen.push(`| ${x.alt} | ${x.status} | ${x.neu ?? '–'} | ${x.grund || ''} |`);
 zeilen.push('', '### Sätze aus alten Rahmentexten', '', '| alt | Satz | Status | Grund |', '|---|---|---|---|');
