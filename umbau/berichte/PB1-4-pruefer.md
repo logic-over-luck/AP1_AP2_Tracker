@@ -19,3 +19,21 @@
 | 11 | PB1-4-1-3-K5 ↔ PB1-5-1-2-K3 / PB1-5-1-1 | doppelt PB1 (gering) | Abstrakte Klasse, Vererbung und Interface im Klassendiagramm darstellen (hier) und eine abstrakte Oberklasse mit Unterklassen als Klassendiagramm erstellen (PB1-5-1-2-K3) überschneiden sich. | Belassen, aber in PB1-5-1-2-K3 auf PB1-4-1-3-K5 verweisen statt die Notation zu wiederholen. | niedrig |
 
 **Bilanz PB1-4:** 11 Funde (davon 3 hoch). Lücken: 1 (Nr. 6, Erweiterung von K2). Kann weg bzw. zusammengelegt: 8 Aussagen (Nr. 1 [−2], 2, 3, 5, 8, 9, 10). Vorher 24 → nach Vorschlägen etwa 16.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | teilweise: Anwendungsfall-Ablauf (K3) in K1 aufgenommen, K1 verweist auf die AP1-Elemente; K4 (begonnenes Diagramm nach Notizen erweitern) bleibt als eigenes Aufgabenformat, sonst unterschreitet der Stichpunkt F3 |
+| 2 | umgesetzt: gestrichen, „Aggregation als Liste“ als Halbsatz in der Assoziations-Aussage |
+| 3 | umgesetzt: gestrichen, include und Generalisierung als Halbsatz in K1 mit Verweis auf AP1 |
+| 4 | umgesetzt: auf Konstruktor, Get-/Set-Methoden und Datentypen gekürzt |
+| 5 | umgesetzt: gestrichen; die Katalogstelle AP2a.02.02.2 trägt jetzt die Anwendungsfall-Aussage |
+| 6 | umgesetzt: asynchrone Nachricht, create und X ergänzt |
+| 7 | umgesetzt (P35 Nr. 8): `vorgegeben` an den Notations-Aussagen; ein Themenblock mit Hinweis „Notation liegt bei“ |
+| 8 | umgesetzt: als Halbsatz in der Überblicks-Aussage |
+| 9 | umgesetzt: Lebenslinien-Aussage in der Erstellen-Aussage aufgegangen |
+| 10 | umgesetzt: Multiplizitäten in der Assoziations-Aussage |
+| 11 | belassen; Verweis wird in PB1-5 gesetzt |
+
+Gliederung: Überblick und Anwendungsfalldiagramm in einem Stichpunkt, ein Themenblock statt zwei (F3/F4). Ergebnis: 24 → 17 Aussagen.
