@@ -241,7 +241,7 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
 - **W1** Wohnort und Import wie E2.
 - **W2** Katalogpunkte aus AP2 (Teile `AP2a` und `AP2b` im Fundament) trennt der Katalog nicht nach PB1 und
   PB2. Zuordnung über die Gebiete im Raster; Inhalte, die beide brauchen, wohnen in PB1 (früher gebaut).
-  Offene Fälle → Parkplatz P3.
+  Festgelegt in `umbau/regeln/raeume-ap2.json` (P3).
 
 ### 4.7 Zusatzbausteine und Zuordnung (seit v1.1)
 
@@ -512,7 +512,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 |---|---|---|
 | P1 | Repo ist öffentlich, Quellen urheberrechtlich geschützt. **Entschieden:** Quellen bleiben lokal und werden der Sitzung bei Bedarf angehängt (E10). | erledigt |
 | P2 | Nachgeprüft: § 10 Abs. 2 FIAusbV, Wortlaut „nur insoweit einbezogen werden, als es für die Feststellung der beruflichen Handlungsfähigkeit erforderlich ist". Bei E2 eingetragen. | erledigt |
-| P3 | Zuordnung der AP2-Katalogpunkte zu PB1/PB2 (W2): Liste erstellen und vom Projektinhaber bestätigen lassen. | offen |
+| P3 | Zuordnung der AP2-Katalogpunkte zu PB1/PB2 (W2). **Entschieden (Claude im Auftrag des Projektinhabers, 14.10.2026):** Datei `umbau/regeln/raeume-ap2.json`, Prüfung `node tools/umbau/raeume-ap2.mjs`. Regeln: (1) das Gebiet im Raster entscheidet; (2) passt ein Baustein zu Gebieten beider Räume, zu keinem, oder brauchen ihn Prüfungen beider Räume → PB1 (W2); (3) was eine PB1-Teilaufgabe braucht, muss in AP1 oder PB1 wohnen (E3); (4) je Katalogpunkt, Spiegelstriche erben, Ausnahmen einzeln; (5) Katalog-Zusätze → keiner (G5) bzw. PROJEKT (P9). Ergebnis: 263 Bausteine → **PB1 230, PB2 31, PROJEKT 2**. PB2 wohnen: Algorithmen und Pseudocode (AP2b.03.05, .04.16, .04.18, .04.19, AP2a.02.02.1), SQL (AP2b.04.22, AP2a.02.03.6–10, AP2b.03.03.2), Debugging/Ablaufverfolgung (AP2a.02.01.1, AP2a.03.01.3), Testdaten und Testszenarien (AP2a.02.01.3, AP2a.03.02.3, AP2b.03.08.2, AP2b.05.03.2.1–3). Alles andere wohnt in PB1, auch Datenmodellierung (ERM, relationales Modell, Normalisierung), Testverfahren, OOP-Konzepte, UML einschließlich Aktivitätsdiagramm, weil beide Prüfungen sie verlangen; PB2 importiert sie und ergänzt, was dort tiefer ist. Netzwerk, Betrieb, Speicher und IT-Sicherheit (AP2b.01, AP2b.02, AP2a.04) wohnen in PB1, weil kein Gebiet sie nennt und die Belege nur aus PB1 kommen; Tiefe dafür bleibt P10. | erledigt |
 | P4 | 41 Katalogpunkte ohne Operator: im Regelwerk v1.0 festgelegt (Abschnitt 4.1, `ohne_operator`). | erledigt |
 | P5 | Rahmenlehrplan (KMK, 13.12.2019): LF1–LF5 im 1., LF6 im 2. Ausbildungsjahr; laut Rahmenlehrplan sind „aufgrund ihrer Prüfungsrelevanz“ LF1–6 vor Teil 1 zu unterrichten. Die Lernfelder sind als Kompetenzen formuliert (z. B. LF3: Netzwerkinfrastruktur analysieren, Clients konfigurieren und einbinden); Adressierungsdetails (IPv4/IPv6) wurden in der NRW-Fassung nicht gefunden [unbestätigt, Wortlaut nicht vollständig gelesen]. Für die Tiefe weniger genau als der Katalog → nicht eingebunden. Wieder aufnehmen, wenn das Original-PDF vorliegt. | zurückgestellt |
 | P6 | Lernstand-Umzug: Tabelle alte ID → neue ID für Stichpunkte und Karten; bisherige Sicherungen müssen lesbar bleiben. | offen |
@@ -542,6 +542,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P30 | **Aktueller Rechts- und Technikstand als Kür** (aus der Gegenprüfung): R2 erlaubt Kür nur aus festgelegten Hinweisquellen. **Entschieden (Projektinhaber, 14.10.2026): ja**, die Gegenprüfung zählt als Hinweisquelle (`gegenpruefung:2026-10`). Umgesetzt: E-Rechnung (AP1-3-1-6), BFSG (AP1-4-3-2), EuGH 2025 zu Pseudonymen (AP1-7-5-2). | erledigt |
 | P31 | **Eine Teilaufgabe, eine Aussage** (aus der Gegenprüfung): Dieselbe Teilaufgabe soll nicht zweimal als eigene Können-Aussage in verschiedenen Stichpunkten stehen. **Entschieden (Projektinhaber, 14.10.2026): ja.** Ausnahme: Beide Stellen bleiben, wenn sonst die Tiefe eines Bausteins im Ordner (T8) oder eine Geschwister-Seite (R4) fehlt. | erledigt |
 | P32 | **Prüfungstechnik ist keine Können-Aussage** (aus der Gegenprüfung): „Rechenweg aufschreiben“, „runden“, „zwei Nachkommastellen“. **Entschieden (Projektinhaber, 14.10.2026): ja**, gestrichen (AP1-3-1-2-K5, AP1-8-2-3-K5); als Prüfungstipp später in Lernprompt oder Hilfe. | erledigt |
+| P33 | **ID-Schema PB1 (Entscheidung Projektinhaber, 14.10.2026):** Neue IDs nach dem AP1-Muster mit PB1 vorne: Ordner `PB1-1`, Themenblock `PB1-1-1`, Stichpunkt `PB1-1-1-1`, Können-Aussage `PB1-1-1-1-K1`. Ordner nach E8 so, wie es sich gut lernen lässt, verankert in den Gebieten `G.PB1.*`. Die alten AP2-IDs (`AP2-x-…`) werden nicht weiterverwendet und nie neu vergeben. In `alt_neu` wird jede alte AP2-Können-Aussage einsortiert, die PB1 betrifft: verschoben (neue PB1-ID), angepasst oder gestrichen; was nach PB2 gehört, wird als „PB2“ vermerkt und dort später einsortiert. Die Umzugstabelle ist zugleich der Lernstand-Umzug (P6) für AP2. | erledigt |
 
 ---
 
@@ -591,6 +592,7 @@ ID-Schema:
 | Spiegelstrich | `AP1.04.05.5`, eingerückt `AP1.01.01.2.4` |
 | Betriebliche Handlung | `AP1.04.H2` |
 | Gebiet | `G.AP1.03`, `G.PB1.02`, `G.PB2.04`, `G.WISO.01` |
+| Lernplan PB1 (P33) | Ordner `PB1-1`, Themenblock `PB1-1-1`, Stichpunkt `PB1-1-1-1`, Können `PB1-1-1-1-K1` |
 | Anhang | `ANH.sql-syntax-auszug` |
 
 Die IDs ändern sich nur, wenn sich der Katalog ändert. Die Bausteindatei wird nie von Hand bearbeitet.

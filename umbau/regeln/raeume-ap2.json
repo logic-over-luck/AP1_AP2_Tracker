@@ -1,0 +1,452 @@
+{
+  "meta": {
+    "parkplatz": "P3",
+    "entschieden": "14.10.2026, Claude im Auftrag des Projektinhabers",
+    "regeln": [
+      "R-P3-1 Gebiet: Ein Baustein wohnt in dem Raum, dessen Gebiet (Raster, Katalog PDF-S. 7) ihn nennt oder eindeutig umfasst.",
+      "R-P3-2 W2: Passt er zu Gebieten beider Räume, zu keinem Gebiet, oder brauchen ihn Prüfungen beider Räume, wohnt er in PB1 (früher gebaut); PB2 importiert und ergänzt, was dort neu oder tiefer ist (E2).",
+      "R-P3-3 Bau-Reihenfolge: Was eine PB1-Teilaufgabe braucht, muss in AP1 oder PB1 wohnen (E3: PB1 kann aus PB2 nichts importieren).",
+      "R-P3-4 Festgelegt je Katalogpunkt; Spiegelstriche erben, außer unter „ausnahmen“ genannt.",
+      "R-P3-5 Katalog-Zusätze: „nicht Bestandteil der schriftlichen Prüfung“ → keiner; „kann Bestandteil der praktischen Prüfung sein“ → PROJEKT (P9)."
+    ],
+    "hinweis": "Geprüft von tools/umbau/raeume-ap2.mjs: jeder abdeckungspflichtige AP2-Baustein hat genau einen Raum."
+  },
+  "punkte": {
+    "AP2a.01.01": {
+      "raum": "keiner",
+      "gebiet": null,
+      "grund": "G5: laut Katalog „nicht Bestandteil der schriftlichen Prüfung“."
+    },
+    "AP2a.01.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Kein Gebiet nennt Recht und Kundenbeziehung; nach W2 in PB1. Rechtliche Rahmenbedingungen gehören zur Planung eines Softwareprodukts für einen Kunden (Belege PB1: Open-Source-Lizenzen 2022W, Datenschutz-Einwilligung 2024W, eRechnung 2025W)."
+    },
+    "AP2a.01.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Daten interpretieren, aufbereiten, präsentieren passt zu keinem PB2-Gebiet; nach W2 in PB1 (Beleg Tabellenkalkulation 2023S-PB1-A3). Anders als AP2b.05.05 ohne Zusatz „praktische Prüfung“, daher nicht PROJEKT."
+    },
+    "AP2a.02.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "„Fehler erkennen, analysieren und beheben“ als Qualitätskontrolle (G.PB1.04); Testverfahren und Teststufen brauchen beide Räume → W2: PB1.",
+      "ausnahmen": {
+        "AP2a.02.01.1": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.01",
+          "grund": "Debugging und Breakpoints setzen voraus, Programmcode zu interpretieren (G.PB2.01)."
+        },
+        "AP2a.02.01.3": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.03",
+          "grund": "Testdaten: Wortlaut G.PB2.03 „Testdaten generieren“."
+        }
+      }
+    },
+    "AP2a.02.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "UML (Anhang) und Bildschirmmasken spezifizieren ein Programm (G.PB1.02, G.PB1.03); UML wird in beiden Räumen gebraucht → W2: PB1.",
+      "ausnahmen": {
+        "AP2a.02.02.1": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.02",
+          "grund": "Kontrollstrukturen als Aktivitätsdiagramm oder Pseudocode: Wortlaut G.PB2.02 „Algorithmen in eine Programmierlogik übertragen und grafisch darstellen“."
+        },
+        "AP2a.02.02.3": {
+          "raum": "PB1",
+          "gebiet": "G.PB1.03",
+          "grund": "Bildschirmmasken, Softwareergonomie, Barrierefreiheit: Wortlaut G.PB1.03 „Bedienoberflächen … ergonomisch konzipieren“."
+        }
+      }
+    },
+    "AP2a.02.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Datenmodelle aus fachlichen Anforderungen ableiten gehört zur Programmspezifikation (G.PB1.02, vgl. AP2b.04.05). Modellieren wird in beiden Räumen geprüft (PB1 und PB2 je mehrfach relationales Modell) → W2: PB1.",
+      "ausnahmen": {
+        "AP2a.02.03.6": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.04",
+          "grund": "Abfrage und Datenpflege mit SQL: Wortlaut G.PB2.04 „Abfragen zur Gewinnung und Manipulation von Daten erstellen“."
+        },
+        "AP2a.02.03.7": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.04",
+          "grund": "Abfrage und Datenpflege mit SQL: Wortlaut G.PB2.04 „Abfragen zur Gewinnung und Manipulation von Daten erstellen“."
+        },
+        "AP2a.02.03.8": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.04",
+          "grund": "Abfrage und Datenpflege mit SQL: Wortlaut G.PB2.04 „Abfragen zur Gewinnung und Manipulation von Daten erstellen“."
+        },
+        "AP2a.02.03.9": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.04",
+          "grund": "Abfrage und Datenpflege mit SQL: Wortlaut G.PB2.04 „Abfragen zur Gewinnung und Manipulation von Daten erstellen“."
+        },
+        "AP2a.02.03.10": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.04",
+          "grund": "Abfrage und Datenpflege mit SQL: Wortlaut G.PB2.04 „Abfragen zur Gewinnung und Manipulation von Daten erstellen“."
+        }
+      }
+    },
+    "AP2a.03.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Methoden der Qualitätslenkung: Wortlaut G.PB1.04 „Maßnahmen zur Qualitätskontrolle planen und durchführen“.",
+      "ausnahmen": {
+        "AP2a.03.01.3": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.01",
+          "grund": "Debugging und Ablaufverfolgung (Schreibtischtest) setzen voraus, Programmcode zu interpretieren (G.PB2.01)."
+        }
+      }
+    },
+    "AP2a.03.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Zielerreichung im QM-Prozess messen (PDCA, Soll-Ist, Protokolle): G.PB1.04.",
+      "ausnahmen": {
+        "AP2a.03.02.3": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.03",
+          "grund": "Testdatengeneratoren: Wortlaut G.PB2.03 „Testdaten generieren“."
+        }
+      }
+    },
+    "AP2a.04.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "IT-Sicherheit und Datenschutz: kein Gebiet nennt sie; nach W2 in PB1. Sicherheitsanforderungen sind Teil der Programmspezifikation; Belege PB1 2021W-A4, 2022S-A4, 2022W-A1, 2023S-A4, 2024S-A1, 2025W-A3 (PB2 nur 2021W-A1-c, 2024S-A1 → Import)."
+    },
+    "AP2a.04.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "IT-Sicherheit und Datenschutz: kein Gebiet nennt sie; nach W2 in PB1. Sicherheitsanforderungen sind Teil der Programmspezifikation; Belege PB1 2021W-A4, 2022S-A4, 2022W-A1, 2023S-A4, 2024S-A1, 2025W-A3 (PB2 nur 2021W-A1-c, 2024S-A1 → Import)."
+    },
+    "AP2a.04.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "IT-Sicherheit und Datenschutz: kein Gebiet nennt sie; nach W2 in PB1. Sicherheitsanforderungen sind Teil der Programmspezifikation; Belege PB1 2021W-A4, 2022S-A4, 2022W-A1, 2023S-A4, 2024S-A1, 2025W-A3 (PB2 nur 2021W-A1-c, 2024S-A1 → Import)."
+    },
+    "AP2a.04.04": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "IT-Sicherheit und Datenschutz: kein Gebiet nennt sie; nach W2 in PB1. Sicherheitsanforderungen sind Teil der Programmspezifikation; Belege PB1 2021W-A4, 2022S-A4, 2022W-A1, 2023S-A4, 2024S-A1, 2025W-A3 (PB2 nur 2021W-A1-c, 2024S-A1 → Import)."
+    },
+    "AP2a.04.05": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "IT-Sicherheit und Datenschutz: kein Gebiet nennt sie; nach W2 in PB1. Sicherheitsanforderungen sind Teil der Programmspezifikation; Belege PB1 2021W-A4, 2022S-A4, 2022W-A1, 2023S-A4, 2024S-A1, 2025W-A3 (PB2 nur 2021W-A1-c, 2024S-A1 → Import)."
+    },
+    "AP2a.04.06": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "IT-Sicherheit und Datenschutz: kein Gebiet nennt sie; nach W2 in PB1. Sicherheitsanforderungen sind Teil der Programmspezifikation; Belege PB1 2021W-A4, 2022S-A4, 2022W-A1, 2023S-A4, 2024S-A1, 2025W-A3 (PB2 nur 2021W-A1-c, 2024S-A1 → Import)."
+    },
+    "AP2b.01.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.04": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.05": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.06": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.07": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.08": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.09": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.10": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.11": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.12": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Betreiben von IT-Systemen (laut Katalog gemeinsam für alle Fachinformatiker): kein PB1/PB2-Gebiet ist ein Netzwerk-Gebiet; nach W2 in PB1. Belege nur in PB1 (2022W-A1, 2024W-A2). Tiefe für AE offen (P10)."
+    },
+    "AP2b.01.13": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Handbücher und Checklisten erstellen: Dokumentation als Maßnahme der Qualitätskontrolle (G.PB1.04)."
+    },
+    "AP2b.02.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Inbetriebnehmen von Speicherlösungen: kein PB1/PB2-Gebiet; nach W2 in PB1 (Belege PB1: Datenbanklösung wählen 2022W-A4-c, JSON/Dokumentdatenbank 2023W-A3)."
+    },
+    "AP2b.02.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Inbetriebnehmen von Speicherlösungen: kein PB1/PB2-Gebiet; nach W2 in PB1 (Belege PB1: Datenbanklösung wählen 2022W-A4-c, JSON/Dokumentdatenbank 2023W-A3)."
+    },
+    "AP2b.02.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Inbetriebnehmen von Speicherlösungen: kein PB1/PB2-Gebiet; nach W2 in PB1 (Belege PB1: Datenbanklösung wählen 2022W-A4-c, JSON/Dokumentdatenbank 2023W-A3)."
+    },
+    "AP2b.02.04": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Inbetriebnehmen von Speicherlösungen: kein PB1/PB2-Gebiet; nach W2 in PB1 (Belege PB1: Datenbanklösung wählen 2022W-A4-c, JSON/Dokumentdatenbank 2023W-A3)."
+    },
+    "AP2b.02.05": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Inbetriebnehmen von Speicherlösungen: kein PB1/PB2-Gebiet; nach W2 in PB1 (Belege PB1: Datenbanklösung wählen 2022W-A4-c, JSON/Dokumentdatenbank 2023W-A3)."
+    },
+    "AP2b.02.06": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Inbetriebnehmen von Speicherlösungen: kein PB1/PB2-Gebiet; nach W2 in PB1 (Belege PB1: Datenbanklösung wählen 2022W-A4-c, JSON/Dokumentdatenbank 2023W-A3)."
+    },
+    "AP2b.03.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Softwareanforderungen erfassen: Programmspezifikation (G.PB1.02); Belege PB1 (funktionale/nichtfunktionale Anforderungen, ISO 25010)."
+    },
+    "AP2b.03.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Planen mit Modellen (ERM, relationales Modell, UML, Mock-up) = Programmspezifikation festlegen (G.PB1.02); das Aktivitätsdiagramm brauchen beide Räume → W2: PB1."
+    },
+    "AP2b.03.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Schnittstellen festlegen: Wortlaut AP2b.04.05 „Schnittstellen festlegen“ (G.PB1.02).",
+      "ausnahmen": {
+        "AP2b.03.03.2": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.04",
+          "grund": "SQL als Schnittstelle: G.PB2.04 „Abfragen … erstellen“."
+        }
+      }
+    },
+    "AP2b.03.04": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.01",
+      "grund": "Programmiersprache, Frameworks, IDE auswählen: Wortlaut G.PB1.01 „Entwicklungsumgebungen und -bibliotheken auswählen und einsetzen“."
+    },
+    "AP2b.03.05": {
+      "raum": "PB2",
+      "gebiet": "G.PB2.01",
+      "grund": "Algorithmen in einer Programmiersprache darstellen: Wortlaut G.PB2.01 „eine Lösung in einer Programmiersprache erstellen“. Die Implementierungsaufgaben in PB1 (OO-Methoden in Pseudocode) laufen über AP2b.04.12 und AP2b.04.17; Pseudocode-Grundlagen kommen aus AP1."
+    },
+    "AP2b.03.06": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.01",
+      "grund": "Cyber-physische Systeme: Sensoren/Aktoren und Bibliotheken auswählen (G.PB1.01); Beleg PB1 2023S-A4-a."
+    },
+    "AP2b.03.07": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.01",
+      "grund": "Abläufe mit Skripten automatisieren: Werkzeuge der Entwicklungsumgebung einsetzen (G.PB1.01); Belege nur PB1 (2022W-A1-c automatisierte Bereitstellung, 2024W-A2-c Skript)."
+    },
+    "AP2b.03.08": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Black-/White-Box-Tests brauchen beide Räume (PB1 2021W-A4-d, PB2 2024S-A3) → W2: PB1.",
+      "ausnahmen": {
+        "AP2b.03.08.2": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.03",
+          "grund": "Grundsätzliches Vorgehen beim Testen (print-Debugging, TDD, Unit-Test, E2E) = Testszenarien umsetzen (G.PB2.03); Unit-Tests schreiben und anpassen nur in PB2 (2022S-A2). Begründung der Stufe in regelwerk.json → ohne_operator."
+        }
+      }
+    },
+    "AP2b.04.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Lasten-/Pflichtenheft = Programmspezifikation (G.PB1.02)."
+    },
+    "AP2b.04.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Vorgehensmodelle: Planen eines Softwareprodukts (Name PB1, G2); Belege PB1 2022W-A2-b, 2024W-A1."
+    },
+    "AP2b.04.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Strukturierte Analyse- und Designverfahren: Programmspezifikation (G.PB1.02)."
+    },
+    "AP2b.04.04": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Objektorientierte Analyse und Design: Programmspezifikation (G.PB1.02)."
+    },
+    "AP2b.04.05": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Wortlaut G.PB1.02 „Programmspezifikationen … festlegen“."
+    },
+    "AP2b.04.06": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.01",
+      "grund": "Konzepte und Beispiele von Programmiersprachen kennen: Grundlage für die Auswahl (G.PB1.01); Beleg 2021W-PB1-A1-a."
+    },
+    "AP2b.04.07": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.01",
+      "grund": "Software-Entwicklungswerkzeuge auswählen und anwenden: Wortlaut G.PB1.01."
+    },
+    "AP2b.04.08": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.01",
+      "grund": "Einsatzmöglichkeiten von Programmiersprachen: Auswahl (G.PB1.01)."
+    },
+    "AP2b.04.09": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "UML-Diagramme erstellen: Programmspezifikation (G.PB1.02); Klassen-, Anwendungsfall-, Sequenz-, Zustandsdiagramm nur in PB1 belegt, Aktivitätsdiagramm in beiden → W2: PB1."
+    },
+    "AP2b.04.10": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Datenmodelle erstellen: Wortlaut AP2b.04.05 „Datenmodelle … aus fachlichen Anforderungen ableiten“ (G.PB1.02); in beiden Räumen geprüft → W2: PB1."
+    },
+    "AP2b.04.11": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Normalisierung gehört zum Datenmodell (G.PB1.02); in beiden Räumen geprüft → W2: PB1."
+    },
+    "AP2b.04.12": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Architektur- und Design-Pattern: Entwurf (G.PB1.02); Belege nur PB1 (2022S-A3, 2023S-A2, 2024W-A4, 2025S-A4)."
+    },
+    "AP2b.04.13": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.03",
+      "grund": "Softwareergonomie: Wortlaut G.PB1.03 „ergonomisch konzipieren“."
+    },
+    "AP2b.04.14": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.03",
+      "grund": "Benutzeroberfläche gestalten: G.PB1.03."
+    },
+    "AP2b.04.15": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.03",
+      "grund": "Prototypen (Mockups): Bedienoberflächen konzipieren (G.PB1.03)."
+    },
+    "AP2b.04.16": {
+      "raum": "PB2",
+      "gebiet": "G.PB2.02",
+      "grund": "Algorithmen erstellen, Pseudocode: Wortlaut G.PB2.02 „Algorithmen in eine Programmierlogik übertragen“."
+    },
+    "AP2b.04.17": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "OO-Konzepte (Kapselung, Vererbung, Polymorphie, Interfaces, Fehlerbehandlung) brauchen beide Räume; PB1 prüft sie im Klassenentwurf (2023S-A2, 2025S-A4-b) → W2: PB1."
+    },
+    "AP2b.04.18": {
+      "raum": "PB2",
+      "gebiet": "G.PB2.02",
+      "grund": "Such- und Sortieralgorithmen: G.PB2.02; Belege nur PB2 (2022W-A1, 2024S-A2)."
+    },
+    "AP2b.04.19": {
+      "raum": "PB2",
+      "gebiet": "G.PB2.01",
+      "grund": "Bestehende Funktionen/Klassen in Programm- oder Pseudocode erweitern: G.PB2.01 „Lösung in einer Programmiersprache erstellen“."
+    },
+    "AP2b.04.20": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Dateiformate zum Datenaustausch: Schnittstellen festlegen (G.PB1.02); Belege PB1 (XML 2022W-A3-c, JSON 2023W-A3-c)."
+    },
+    "AP2b.04.21": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "REST/SOAP: Schnittstellen festlegen (G.PB1.02); Beleg PB1 2024S-A2."
+    },
+    "AP2b.04.22": {
+      "raum": "PB2",
+      "gebiet": "G.PB2.04",
+      "grund": "SQL: Wortlaut G.PB2.04 „Abfragen zur Gewinnung und Manipulation von Daten erstellen“."
+    },
+    "AP2b.05.01": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.02",
+      "grund": "Anwendungen mit Datenschutz und Datensicherheit erstellen: Sicherheitsanforderungen der Spezifikation (G.PB1.02); Belege PB1 (Verschlüsselung, Signatur, OAuth2)."
+    },
+    "AP2b.05.02": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Datenintegrität sicherstellen: Qualitätskontrolle (G.PB1.04); Beleg PB1 2023W-A3 (ACID), in PB2 über SQL-Constraints → W2: PB1."
+    },
+    "AP2b.05.03": {
+      "raum": "PB1",
+      "gebiet": "G.PB1.04",
+      "grund": "Softwaretests erstellen, durchführen, analysieren: G.PB1.04; Testverfahren brauchen beide Räume → W2: PB1.",
+      "ausnahmen": {
+        "AP2b.05.03.2.1": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.03",
+          "grund": "Auswahl des Testverfahrens: Wortlaut G.PB2.03 „Testszenarien auswählen“."
+        },
+        "AP2b.05.03.2.2": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.03",
+          "grund": "Kriterien für Testergebnisse (erwartete Ergebnisse) gehören zum Testszenario (G.PB2.03)."
+        },
+        "AP2b.05.03.2.3": {
+          "raum": "PB2",
+          "gebiet": "G.PB2.03",
+          "grund": "Testdaten generieren und auswählen: Wortlaut G.PB2.03."
+        }
+      }
+    },
+    "AP2b.05.04": {
+      "raum": "PROJEKT",
+      "gebiet": null,
+      "grund": "P9: „Anwendungen können Bestandteil der praktischen Prüfung sein“; wohnt im Raum PROJEKT, in PB1 nur Grenze (G5)."
+    },
+    "AP2b.05.05": {
+      "raum": "PROJEKT",
+      "gebiet": null,
+      "grund": "P9: „Kann Bestandteil der praktischen Prüfung sein“; wohnt im Raum PROJEKT, in PB1 nur Grenze (G5)."
+    }
+  }
+}
