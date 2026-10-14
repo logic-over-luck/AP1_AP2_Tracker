@@ -14,6 +14,9 @@ Teil 1 „Einrichten eines IT-gestützten Arbeitsplatzes“) **kritisch und unab
 schon von anderen KI-Sitzungen gebaut und geprüft. Du sollst **nicht** bestätigen, was da ist, sondern
 Fehler finden. Ein Bericht ohne Funde ist nur glaubwürdig, wenn du begründest, was du geprüft hast.
 
+Du prüfst in **beide Richtungen** und beide sind gleich wichtig: **Was fehlt?** und **Was kann weg?**
+Der Lernplan soll vollständig, aber nicht aufgebläht sein – jede Aussage kostet Lernzeit.
+
 **Zu prüfen:** `umbau/lernplan/ap1/AP1-<n>.json` – Ordner: _____ (z. B. AP1-1 bis AP1-3)
 
 **Unabhängigkeit:** Lies **nicht** `umbau/berichte/` (frühere Prüfberichte), nicht die Felder `meta`
@@ -28,7 +31,18 @@ und `alt_neu` der Lernpläne und nicht die alten Inhalte in `inhalte/`. Du darfs
 2. **Vollständig für die Prüfung?** Fehlt etwas, das in einer AP1-Prüfung zu diesem Thema typisch
    abgefragt wird? (Mit Abschriften: jede zugeordnete Teilaufgabe aus `teilaufgaben` gegen die Aussagen
    lesen – könnte man sie mit genau diesen Aussagen voll lösen?)
-3. **Zu viel?** Steht etwas als Pflicht drin, das für AP1 zu tief oder fremd ist (gehört nach AP2/WiSo)?
+3. **Was kann weg?** Geh **jede** Können-Aussage und jeden Kür-Eintrag einzeln durch und frage: Brauche
+   ich das für die AP1? Mögliche Befunde:
+   - **streichen** – gehört nicht zur AP1 (z. B. steht nur im AP2- oder WiSo-Katalog) oder bringt für die
+     Prüfung nichts;
+   - **zur Kür** – nützlich, aber keine Pflicht;
+   - **zusammenlegen** – zwei Aussagen fragen im Kern dasselbe, auch über Stichpunkte und Ordner hinweg;
+   - **flacher** – die verlangte Tiefe (Stufe, Operator wie „beurteilen“) geht über das hinaus, was die
+     Prüfung braucht;
+   - **Kür entfernen** – ein Kür-Eintrag ist so randständig, dass er nur ablenkt.
+   Begründe mit Katalog, Stufe oder AP1-Bezug. Hinweis: Nach Regel E6 reicht „kam in keiner Prüfung vor“
+   allein nicht, um eine Pflicht-Aussage zu streichen, wenn der Katalog sie verlangt. Melde solche Fälle
+   trotzdem, aber als Frage an den Projektinhaber (Sicherheit „niedrig“), nicht als Fehler.
 4. **Grenzen sinnvoll?** Schneidet eine Grenze etwas weg, das man für die Prüfung doch braucht?
 5. **Verständlich?** Versteht ein Umschüler ohne Vorwissen jede Aussage? Ist klar, was man am Ende
    *tun* können muss? Wirkt der Stichpunkt wie etwa eine Stunde Lernen?
@@ -38,8 +52,10 @@ und `alt_neu` der Lernpläne und nicht die alten Inhalte in `inhalte/`. Du darfs
 
 Schreibe je Ordner `umbau/berichte/AP1-<n>-gegenpruefung.md`:
 
-| Nr | Stelle (ID) | Art (falsch / fehlt / zu viel / Grenze / unklar / Gliederung) | Befund | Vorschlag | Sicherheit (hoch/mittel/niedrig) |
+| Nr | Stelle (ID) | Art (falsch / fehlt / streichen / zur Kür / zusammenlegen / flacher / Grenze / unklar / Gliederung) | Befund | Vorschlag | Sicherheit (hoch/mittel/niedrig) |
 
-Danach drei Sätze Gesamturteil. **Ändere die Lernpläne nicht** – nur der Bericht. Fragen, die der
+Danach eine kurze Bilanz: Anzahl Aussagen vorher, Vorschläge „fehlt“ und Vorschläge „weg“ (streichen,
+zur Kür, zusammenlegen) – also wie viele Aussagen es nach deinen Vorschlägen wären. Dann drei Sätze
+Gesamturteil. **Ändere die Lernpläne nicht** – nur der Bericht. Fragen, die der
 Projektinhaber entscheiden muss, als Liste am Ende. Committen und auf `vorschau-ap1` pushen.
-Am Ende nur eine Zeile melden: „AP1-x geprüft: N Funde (davon M hoch)“.
+Am Ende nur eine Zeile melden: „AP1-x geprüft: N Funde (davon M hoch), +F fehlt / −W kann weg“.
