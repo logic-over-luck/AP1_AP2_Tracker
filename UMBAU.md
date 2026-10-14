@@ -463,6 +463,11 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       außer AP1-6-1-3-K5 (Symbole, `nicht_abgefragt`). Vorschau und Test (`tests/vorschau-ap1.test.mjs`) nehmen die
       neuen Dateien. Berichte `umbau/berichte/AP1-<n>-karten.md`. Hinweis: npm-Registry war gesperrt, `Lernstudio.html`
       wurde durch Austausch des Datenliterals erzeugt (Code unverändert); `tests/sql.test.mjs` braucht sql.js.
+- [x] **Schritt 3f – Kurzfassungen AP1 (Wunsch Projektinhaber, 14.10.2026):** je Stichpunkt das Wissen zu den
+      Können-Aussagen, kompakt mit allen Details, in `umbau/kurz/ap1/AP1-<n>.json` (117 Stichpunkte). Die Vorschau
+      zeigt sie unter dem Ziel (`neu.kurz`, `BlockKarte.jsx`); Test in `tests/vorschau-ap1.test.mjs`. Die Änderung am
+      App-Code ist in `Lernstudio.html` von Hand nachgezogen, weil kein Build möglich war – beim nächsten
+      `npm run build` entsteht derselbe Stand aus dem Quellcode.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
