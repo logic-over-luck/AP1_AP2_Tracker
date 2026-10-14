@@ -522,6 +522,9 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **PB1-1 Projekt, Vorgehen und Anforderungen (14.10.2026):** 3 Themenblöcke, 9 Stichpunkte, 36 Können-Aussagen.
         Alte AP2-Aussagen: 16 angepasst, 4 verschoben, 6 gestrichen (Netzplan wohnt in AP1; begründete Modellwahl G3).
         Projektumfeld (Stakeholder, Risiko, Veränderung, Fremdvergabe) aus AP1 importiert, neu nur, was PB1 verlangt.
+  - [x] **PB1-2 Kunde, Recht und Präsentation (14.10.2026):** 1 Themenblock, 4 Stichpunkte, 22 Können-Aussagen, 3 Kür.
+        Alte AP2-Aussagen: 10 angepasst, 1 verschoben, 4 gestrichen (Englisch wohnt in AP1), 1 für PB2.
+        Recht und Präsentation ohne Prüfungsbeleg nach P-MUSTER mit dem Katalogoperator (gestalten, aufbereiten).
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
 - [ ] **Schritt 8 – PROJEKT**
 
