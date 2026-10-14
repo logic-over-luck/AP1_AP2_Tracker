@@ -456,9 +456,13 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       652 → 604 Können-Aussagen, Protokoll je Ordner in `meta.gegenpruefung`; alle Ordner- und Raum-Prüfungen grün.
       `lernplan-pruefen.mjs` erlaubt jetzt „verschoben“ in einen anderen Ordner desselben Raums. Entscheidungen P30–P32.
       Danach Abnahme durch den Projektinhaber (3b).
-- [ ] **Schritt 3e – Lernkarten AP1 neu (Entscheidung Projektinhaber, 14.10.2026):** nach der Abnahme. Die KI
+- [x] **Schritt 3e – Lernkarten AP1 neu (Entscheidung Projektinhaber, 14.10.2026):** nach der Abnahme. Die KI
       entscheidet je alter Karte bleibt / bearbeitet / entfernt und ergänzt neue; IDs bleiben erhalten. Auftrag:
-      `umbau/auftraege/AP1-karten.md`, Ergebnis in `umbau/karten/ap1/`.
+      `umbau/auftraege/AP1-karten.md`, Ergebnis in `umbau/karten/ap1/`. Erledigt 14.10.2026 für alle 8 Ordner:
+      1.027 alte Karten (966 bleiben, 36 bearbeitet, 25 entfernt), 291 neu, 1.293 Karten; jede Aussage hat eine Karte
+      außer AP1-6-1-3-K5 (Symbole, `nicht_abgefragt`). Vorschau und Test (`tests/vorschau-ap1.test.mjs`) nehmen die
+      neuen Dateien. Berichte `umbau/berichte/AP1-<n>-karten.md`. Hinweis: npm-Registry war gesperrt, `Lernstudio.html`
+      wurde durch Austausch des Datenliterals erzeugt (Code unverändert); `tests/sql.test.mjs` braucht sql.js.
 - [ ] **Schritt 5 – AP1 einfrieren, Export erzeugen**
 - [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
 - [ ] **Schritt 7 – App:** Raum-Umschalter auf fünf Räume, Importe anzeigen, Lernstand-Umzug (P6)
