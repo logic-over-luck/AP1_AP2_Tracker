@@ -1,5 +1,7 @@
 // Neutrale Fassung der Lerninhalte für eine externe Durchsicht (ohne Regelwerk, Herkunft, Stufen, IDs der Quellen).
 // Aufruf: node tools/extern/neutral-export.mjs   → build/extern/<RAUM>.md (Lernplan) und <RAUM>-lang.md (+ Erklärungen, Karten)
+// Die kurzen Fassungen liegen zusätzlich eingecheckt in umbau/extern/ (für externe Durchsichten über GitHub); nach
+// Änderungen an den Lernplänen neu erzeugen und dorthin kopieren.
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'node:fs';
 
 const RAEUME = [

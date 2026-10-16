@@ -1,8 +1,27 @@
 # Prompt für eine Zweitmeinung (P54)
 
-Zum Kopieren in eine andere KI (am besten nicht Claude, z. B. ChatGPT oder Gemini). Optional anhängen:
-`umbau/berichte/P54-analyse.md`, `umbau/berichte/P54-lehrbuch-abgleich.md` und eine Datei aus `build/extern/`
-(z. B. `AP1.md`, erzeugt mit `node tools/extern/neutral-export.mjs`).
+Zum Kopieren in eine andere KI (am besten nicht Claude, z. B. ChatGPT oder Gemini). Alles unter der Linie einfügen.
+Die KI fragt zuerst, welche Dateien sie braucht; die Links stehen im Prompt. Kann sie keine Links öffnen, die genannten
+Dateien aus dem Repo herunterladen und anhängen.
+
+---
+
+**Schritt 1, bevor du antwortest:** Lies diesen Text und sag mir dann, **welche der Dateien unten du sehen möchtest**
+(und warum). Analysiere erst, wenn du sie hast. Wenn du Links öffnen kannst, nimm sie direkt.
+
+| Datei | Inhalt |
+|---|---|
+| [STAND.md](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/STAND.md) | Gedächtnis des Projekts: was die App kann, Entscheidungen, Unsicherheiten |
+| [UMBAU.md](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/UMBAU.md) | Bauplan des Umbaus: Regelwerk, Tests, Parkplatz der offenen Fragen (P54 ist das Thema hier) |
+| [umbau/berichte/P54-analyse.md](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/umbau/berichte/P54-analyse.md) | Analyse: wie stark die Altprüfungen den Tracker prägen |
+| [umbau/berichte/P54-lehrbuch-abgleich.md](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/umbau/berichte/P54-lehrbuch-abgleich.md) | Abgleich mit den drei Lehrbüchern, Zahlen, Korrekturen |
+| [umbau/berichte/P54-stufe3/](https://github.com/logic-over-luck/AP1_AP2_Tracker/tree/umbau/umbau/berichte/P54-stufe3) | je Lehrbuchkapitel: was fehlt, was bewusst weggelassen wird |
+| [umbau/extern/AP1.md](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/umbau/extern/AP1.md) (ebenso PB1.md, PB2.md, WISO.md) | die Lerninhalte selbst, neutral (ohne Regel-Fachsprache) |
+| [umbau/lernplan/ap1/AP1-4.json](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/umbau/lernplan/ap1/AP1-4.json) | Beispiel eines Lernplan-Ordners im Rohformat (Herkunft, Stufen, Grenzen) |
+| [umbau/regeln/regelwerk.json](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/umbau/regeln/regelwerk.json) | das Regelwerk als Datendatei |
+| [src/bereiche/lernen/lernprompt.js](https://github.com/logic-over-luck/AP1_AP2_Tracker/blob/umbau/src/bereiche/lernen/lernprompt.js) | wie der Lernprompt gebaut wird |
+
+Nicht im Repo (urheberrechtlich geschützt, nur bei mir): Prüfungskatalog, Altprüfungen, Lehrbücher, Unterrichtsunterlagen.
 
 ---
 
