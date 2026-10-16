@@ -6,8 +6,9 @@
 // Schreibt: umbau/berichte/<Ordner>.md
 //
 // Prüfungen (UMBAU.md Abschnitt 5):
-//   Struktur  IDs eindeutig und richtig aufgebaut; F3 (3–7 Können je Stichpunkt), F4 (3–6 Stichpunkte je Block)
-//   T3        jede Können-Aussage hat eine gültige Herkunft, passend zu Bausteinen und Teilaufgaben des Stichpunkts
+//   Struktur  IDs eindeutig und richtig aufgebaut; F3 (seit v2.0, D5: 3–10 Können je Stichpunkt), F4 (3–6 Stichpunkte je Block)
+//   T3        jede Können-Aussage hat eine gültige Herkunft, passend zu Bausteinen und Teilaufgaben des Stichpunkts;
+//             seit v2.0 (D4) auch buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>] (Format laut regelwerk.json → buch.herkunft)
 //   T4        jede Grenze nennt Katalogstellen und eine Begründung
 //   T6        jeder Stichpunkt hat ein Gebiet seines Raums
 //   T2b       jede Teilaufgabe, die nur Bausteine dieses Ordners betrifft, steckt in einem Stichpunkt
@@ -77,6 +78,9 @@ const alleIds = new Set([
 const raumBausteine = R.gueltig; // eigene, aus früheren Räumen importierbare, Anhänge (tools/umbau/raum.mjs)
 const gebieteRaum = R.gebiete;
 const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-BEISPIELLISTE']);
+// v2.0 (D4, D5): Buch-Herkunft und Größe eines Stichpunkts aus dem Regelwerk
+const BUCH = new RegExp(regeln.buch?.herkunft?.regex ?? '^$');
+const [F3_MIN, F3_MAX] = [regeln.buch?.form?.f3_min ?? 3, regeln.buch?.form?.f3_max ?? 7];
 const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
 // Alltagswörter, die als Prüfungsoperator nur in fester Wendung vorkommen (v1.6): nicht für die F1-Heuristik
 for (const w of ['bringen', 'finden', 'schreiben', 'einfügen']) delete opStufe[w];
@@ -104,7 +108,7 @@ for (const tb of lp.themenbloecke) {
     stichpunkte.push({ ...sp, block: tb.id });
     spIds.push(sp.id);
     if (!sp.id.startsWith(`${tb.id}-`)) F(`Stichpunkt ${sp.id} liegt nicht unter ${tb.id}`);
-    if (sp.koennen.length < 3 || sp.koennen.length > 7) F(`F3: ${sp.id} hat ${sp.koennen.length} Können-Aussagen (erlaubt 3–7)`);
+    if (sp.koennen.length < F3_MIN || sp.koennen.length > F3_MAX) F(`F3: ${sp.id} hat ${sp.koennen.length} Können-Aussagen (erlaubt ${F3_MIN}–${F3_MAX})`);
     if (!sp.gebiete?.length) F(`T6: ${sp.id} hat kein Gebiet`);
     for (const g of sp.gebiete ?? []) if (!gebieteRaum.has(g)) F(`T6: ${sp.id}: Gebiet ${g} gehört nicht zum Raum ${TEIL}`);
     const spB = new Set(sp.bausteine.map((x) => x.id));
@@ -140,6 +144,8 @@ for (const tb of lp.themenbloecke) {
           else if (!sp.teilaufgaben.includes(wert)) F(`T3: ${k.id}: Beleg ${wert} steht nicht in den Teilaufgaben von ${sp.id}`);
         } else if (art === 'regel') {
           if (!REGELN.has(wert)) F(`T3: ${k.id}: unbekannte Regel ${wert}`);
+        } else if (art === 'buch') {
+          if (!BUCH.test(wert)) F(`T3: ${k.id}: Buch-Herkunft „${h}“ hat nicht das Format buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>] (D4)`);
         } else F(`T3: ${k.id}: unbekannte Herkunftsart „${h}"`);
       }
       // T7 (E2, P36): Betrifft die Aussage nur importierte Bausteine, wiederholt sie womöglich einen früheren Raum.
@@ -165,6 +171,7 @@ for (const tb of lp.themenbloecke) {
       if (!ku.text || !ku.grund) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Text oder Grund`);
       if (!ku.quellen?.length) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Hinweisquelle: „${(ku.text ?? '').slice(0, 50)}…"`);
       for (const q of ku.quellen ?? []) if (!(q in (lp.meta?.hinweisquellen ?? {}))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} nicht in meta.hinweisquellen beschrieben`);
+      for (const q of (ku.quellen ?? []).filter((x) => x.startsWith('buch:'))) if (!BUCH.test(q.slice(5))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} hat nicht das Format buch:<Band>-<Kapitel> (D8)`);
     }
     for (const g of sp.grenzen ?? []) {
       if (!g.katalog?.length) F(`T4: ${sp.id}: Grenze ohne Katalogstelle: „${g.text.slice(0, 60)}…"`);

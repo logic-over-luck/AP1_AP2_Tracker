@@ -3,7 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, writeFileSync, mkdtempSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdtempSync, readdirSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -363,3 +363,65 @@ test('Deckung P47: jeder gedeckte Baustein ist ein WISO-Baustein und zeigt auf S
     for (const s of sp) assert.ok(exp.has(s), `${id}: ${s} nicht im Export`);
   }
 });
+
+// ---------- Regelwerk v2.0: Lehrbuch als Tiefe (D1–D10, UMBAU.md 4.0) ----------
+test('Regelwerk 2.0: Abschnitt buch mit Regel K, Herkunftsformat, Band-Kürzeln und F3 3–10', () => {
+  const r = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
+  assert.equal(r.version, '2.0');
+  assert.deepEqual(Object.keys(r.buch.baende), ['GS', 'FS', 'FS2']);
+  const re = new RegExp(r.buch.herkunft.regex);
+  for (const ok of ['GS-2.4.3', 'GS-2.4.3-S119', 'FS2-1.4', 'FS-3.7.5-S281']) assert.match(ok, re);
+  for (const nein of ['GS-2', 'XY-1.2', 'GS-2.4.3-119', 'gs-2.4.3', 'GS-2.4.3.1.2']) assert.doesNotMatch(nein, re);
+  assert.equal(r.buch.form.f3_min, 3);
+  assert.equal(r.buch.form.f3_max, 10);
+  assert.ok(r.buch.regel_k.dazu.length === 4 && r.buch.regel_k.nicht_dazu.length === 6);
+});
+const kopieK = (sp, n) => { for (let i = 0; i < n; i++) sp.koennen.push({ ...sp.koennen[0], id: `${sp.id}-K${90 + i}` }); };
+test('Lernplan-Prüfer v2.0: Herkunft buch: im richtigen Format ist gültig', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+  const r = lernplanMit((lp) => { sp0(lp).koennen[0].herkunft.push('buch:GS-3.4.5-S331'); sp0(lp).koennen[1].herkunft = ['buch:GS-3.4.5']; });
+  assert.equal(r.status, 0, r.stdout);
+});
+test('Lernplan-Prüfer v2.0 erkennt: Buch-Herkunft im falschen Format', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+  assert.equal(lernplanMit((lp) => { sp0(lp).koennen[0].herkunft = ['buch:Grundstufe 3.4.5']; }).status, 1);
+});
+test('Lernplan-Prüfer v2.0: F3 erlaubt bis 10 Aussagen, 11 nicht', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+  const lp = JSON.parse(readFileSync('umbau/lernplan/ap1/AP1-6.json', 'utf8'));
+  const n = sp0(lp).koennen.length;
+  assert.equal(lernplanMit((x) => kopieK(sp0(x), 10 - n)).status, 0);
+  assert.equal(lernplanMit((x) => kopieK(sp0(x), 11 - n)).status, 1);
+});
+
+// T10 mit einer kleinen Beispiel-Zuordnung und einer Kernpunkt-Datei (die echten liegen nur lokal, D9)
+function buchMit(veraendern) {
+  const dir = mkdtempSync(join(tmpdir(), 'buch-'));
+  const zu = { meta: { erwartet: { GS: 1 } }, kapitel: { 'GS-3.4.5': { seiten: [330, 338], stichpunkte: ['AP1-6-2-1'] } } };
+  const kern = { band: 'GS', kapitel: '3.4.5', seiten: [330, 338], stichpunkte: ['AP1-6-2-1'], kernpunkte: [
+    { stichwort: 'MAC-Adresse als Hardware-Adresse', seite: 331, aussage: 'AP1-6-2-1-K1' },
+    { stichwort: 'Adressklassen (veraltet)', seite: 333, filter: 'historie' },
+  ] };
+  veraendern(zu, kern);
+  writeFileSync(join(dir, 'buch.json'), JSON.stringify(zu));
+  const kd = join(dir, 'kern', 'GS');
+  mkdirSync(kd, { recursive: true });
+  writeFileSync(join(kd, '3.4.5.json'), JSON.stringify(kern));
+  return spawnSync(process.execPath, ['tools/umbau/buch-pruefen.mjs'], { encoding: 'utf8', env: { ...process.env, BUCH_DATEI: join(dir, 'buch.json'), BUCH_KERN: join(dir, 'kern') } });
+}
+test('T10: stimmige Beispiel-Zuordnung besteht', () => {
+  const r = buchMit(() => {});
+  assert.equal(r.status, 0, r.stdout);
+});
+const buchFehler = {
+  'Kernpunkt noch neu': (zu, k) => { k.kernpunkte.push({ stichwort: 'Ports', seite: 335, neu: true, stichpunkt: 'AP1-6-2-1' }); },
+  'unbekannte Aussage': (zu, k) => { k.kernpunkte[0].aussage = 'AP1-6-2-1-K99'; },
+  'Kernpunkt ohne Status': (zu, k) => { delete k.kernpunkte[0].aussage; },
+  'unbekannter Filter-Grund': (zu, k) => { k.kernpunkte[1].filter = 'zu schwer'; },
+  'Seite außerhalb des Kapitels': (zu, k) => { k.kernpunkte[0].seite = 400; },
+  'Kapitel fehlt in buch.json': (zu) => { zu.meta.erwartet.GS = 2; },
+  'unbekannter Stichpunkt': (zu, k) => { zu.kapitel['GS-3.4.5'].stichpunkte = ['AP1-6-9-9']; k.stichpunkte = ['AP1-6-9-9']; },
+  'Stichpunkte in Datei und buch.json verschieden': (zu, k) => { k.stichpunkte = ['AP1-6-2-2']; },
+};
+for (const [name, f] of Object.entries(buchFehler)) {
+  test(`T10 erkennt: ${name}`, () => {
+    assert.equal(buchMit(f).status, 1);
+  });
+}

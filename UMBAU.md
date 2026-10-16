@@ -5,6 +5,7 @@ arbeitet, liest zuerst diese Datei** und hält sich an die Entscheidungen und Re
 
 - Was hier nicht geregelt ist, wird **nicht** in der Sitzung entschieden, sondern kommt auf den
   **Parkplatz** (Abschnitt 8). Entschieden wird es vom Projektinhaber.
+- Regelwerk v2.0 (Lehrbuch als Tiefe) wird auf dem Branch `regelwerk-v2` gebaut (abgezweigt von `umbau`, 16.10.2026).
 - Gearbeitet wird auf dem Branch `umbau` (seit 16.10.2026 enthält er auch den früheren Branch `vorschau-ap1`, der gelöscht ist). Der bisherige Stand bleibt unverändert und benutzbar.
 - Die App (Trainer, Lernkarten-System, Lernstand, Oberfläche, Glossar) bleibt. Neu gebaut werden die
   **Lerninhalte**: Gliederung, Rahmen, Können-Aussagen, Grenzen.
@@ -78,7 +79,7 @@ von früheren Räumen nur den Export.
 Siehe Abschnitt 3. Jede Schicht wird nur aus den Schichten darunter erzeugt. Ist etwas falsch, wird es
 **an der Ursache** korrigiert (Quelle oder Regel) und ab dort neu gebaut – nie direkt im Ergebnis.
 
-**E5 – Rollen der Quellen** [fest]
+**E5 – Rollen der Quellen** [fest] – **seit v2.0 geändert (D1, Abschnitt 4.0):** Lehrbuch = Tiefe.
 
 | Quelle | Rolle |
 |---|---|
@@ -86,6 +87,7 @@ Siehe Abschnitt 3. Jede Schicht wird nur aus den Schichten darunter erzeugt. Ist
 | **Raster (Gebiete)** | Gerüst je Prüfungsbereich: Jeder Stichpunkt hängt an mindestens einem Gebiet seines Raums. |
 | **Altprüfungen** | Stichprobe, kein Fundament. Rollen: (1) Mindesttiefe belegen, (2) IHK-Stil zeigen (Operatoren, Antwortformate, Situationen), (3) Prioritäten (Häufigkeit, Punkte), (4) Gruppierung (was zusammen abgefragt wird), (5) katalogfremde Themen aufdecken, (6) zeigen, was als Material vorgegeben wird und nicht auswendig gelernt werden muss, (7) zeigen, wie bewertet wird. **Nicht:** zeigen, was fehlt; Obergrenzen setzen. |
 | **Rahmenlehrplan, Ausbildungsrahmenplan** | Offizielle Ordnungsmittel, auf die der Katalog verweist (Lernfelder). Der Katalog „schränkt die zugrundeliegenden Ordnungsmittel nicht ein" (PDF-S. 4). Rahmenlehrplan (KMK 13.12.2019) abgeglichen: beschreibt Handlungen, nicht Tiefe; jedes Lernfeld-Thema hat einen Wohnort (P5). |
+| **Lehrbuch** (Westermann „IT-Berufe“, GS/FS/FS2; seit v2.0) | **Tiefe:** Kernabschnitt (Regel K) jedes zugeordneten Kapitels durch Können-Aussagen abgedeckt (T10). Text nie übernehmen (D9). Bis v1.8 ausgeschlossen. |
 | **Forum, Gedächtnisprotokolle** | Nur Hinweis auf ein Thema, nie Beleg für Tiefe. |
 | **IT-Berufe-Podcast** (it-berufe-podcast.de, Stefan Macke) | Hinweisquelle (Ring Kür, Abgleich nach R3). (a) Themen-Schlagworte je Prüfungstermin (AP1 Herbst 2021 bis Frühjahr 2026) – zum Gegenprüfen der eigenen Zuordnung; (b) Änderungsliste alter → neuer AP1-Katalog (Folge #190) – Grundlage für B3, gegen den neuen Katalog mechanisch nachgeprüft. Nie Beleg für Tiefe. |
 | **Community-Lernzettel** (Hinweisquelle; fachinformatiker.de: Obsidian-Lernzettel 03/2025 nach aktuellem Katalog, 125 S.; Word-Lernzettel 02/2024 nach altem Katalog, 56 S.) | Material und Lückenhinweis. Nutzen: (1) Abgleich „Thema im Lernzettel, aber keinem Baustein zugeordnet?“ → prüfen, nicht automatisch übernehmen; (2) Anregung für Erklärungen. Nie Beleg, nie Tiefe, Fakten nicht ungeprüft übernehmen, keinen Text übernehmen (fremdes Werk) – Inhalte in eigenen Worten. |
@@ -136,7 +138,64 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v1.8 [fest]
+## 4. Regelwerk – v2.0 [fest]
+
+Freigegeben am 16.10.2026 (Projektinhaber, Entscheidungen D1–D10 im Auftrag „Regelwerk v2.0“, Branch `regelwerk-v2`).
+Anlass: P54 (zu prüfungsnah, dünne Stichpunkte bei offenen Sachthemen; `umbau/berichte/P54-analyse.md`,
+`P54-lehrbuch-abgleich.md`). Ziel: Der Tracker reicht für jemanden, der die IHK-Prüfungen **ohne Umschulung und ohne
+Dozenten** ablegt. Es wird nichts neu gebaut: Räume, Ordner, IDs, Aussagen, Karten, Lernstand und Tests bleiben; es
+kommt hinzu. Abschnitt 4.0 sagt, was sich ändert; die Fassung bis v1.8 (4.1–4.8) gilt weiter, soweit 4.0 nichts
+anderes bestimmt. Maßgeblich als Daten: `umbau/regeln/regelwerk.json` (Version 2.0, Abschnitt `buch`).
+
+### 4.0 Neu in v2.0
+
+- **D1 / E5 neu – Rollen der Quellen.** Katalog = **Breite** (T1 unverändert). Lehrbuch (Westermann „IT-Berufe“,
+  Grundstufe LF1–5 = `GS`, Fachstufe Technische IT-Berufe LF6–9 = `FS`, Fachstufe II Anwendungsentwicklung LF10–12 =
+  `FS2`) = **Tiefe**: Der Kernabschnitt (Regel K) jedes zugeordneten Buchkapitels muss durch Können-Aussagen abgedeckt
+  sein (T10). Altprüfungen = **Mindesttiefe und Form** (B1–B4 unverändert). Bis v1.8 war das Lehrbuch ausgeschlossen.
+- **D2 Regel K – Kernabschnitt eines Buchkapitels.** Dazu gehören: Begriffe und Definitionen; Aufbau und
+  Funktionsweise (das Prinzip); Vor- und Nachteile, Auswahlkriterien; typische Größenordnungen, wenn das Buch sie
+  nennt. Nicht dazu: Historie; Herstellernamen und Produkte; Bedienschritte und Bildschirmanleitungen; Exkurse und
+  Infokästen; Übungsaufgaben; Inhalte, die das Buch ausdrücklich Systemintegration oder digitaler Vernetzung zuordnet.
+  Prüffrage je Kernpunkt: „Braucht ein Anwendungsentwickler das, um einen Katalog-Baustein zu erklären oder eine
+  Entscheidung zu begründen?“ Bei Zweifel: dazu (Richtung „eher mehr lernen“, wie die goldene Regel).
+- **D3 / G3 neu – Stufe ist Untergrenze.** Die Operator-Stufe (4.1, 4.2) bestimmt weiter die **Form** einer Aussage,
+  begrenzt aber nicht mehr den **Inhalt**. Grenzen (G1) bleiben nur gegen Themen, die der Katalog einem anderen Raum
+  zuweist oder ausschließt. Grenzen, die sich allein auf Tiefe berufen („nur Grundform“, „keine Details“), werden
+  gestrichen, wenn das Buch das Thema im Kernabschnitt behandelt; Vermerk im Bericht je Grenze.
+- **D4 / F2 neu – Herkunft `buch:`.** Neue Herkunftsart `buch:<GS|FS|FS2>-<Kapitel>` (z. B. `buch:GS-2.4.3`); lässt
+  der OCR-Text die Seite erkennen, zusätzlich `-S<Seite>` (`buch:GS-2.4.3-S119`, Seite = gedruckte Seitenzahl). Eine
+  Aussage nur mit Buch-Herkunft ist **Pflicht**, bekommt Karten und zählt zum Fortschritt. In der App trägt sie eine
+  kleine graue Marke „Buch“ (wie „neu gegenüber“), nichts weiter. Kein Schalter, keine zweite Ebene.
+- **D5 / F3 neu – Größe.** Ein Stichpunkt hat **3–10** Können-Aussagen. Wird er größer, wird er geteilt (neuer
+  Stichpunkt mit der nächsten nie vergebenen Nummer, P15/P48), nicht gestutzt. F1 (ein Operator, prüfbar) und F2
+  gelten auch für Buch-Aussagen; Operator nach dem Katalog-Baustein des Stichpunkts, bei reinem Gerüstwissen
+  „erklären“ (Stufe 2).
+- **D6 Bestehende Aussagen** werden nicht umformuliert und nicht gestrichen (E4). Ausnahme: Ist eine neue
+  Buch-Aussage doppelt mit einer bestehenden, entfällt die Buch-Aussage, und die bestehende bekommt die Buch-Herkunft
+  zusätzlich.
+- **D7 Wichtigkeit** bleibt prüfungsbasiert (P28). Neu: Stichpunkte ohne jeden Prüfungsbeleg bekommen als Ersatz das
+  Gewicht aus dem Zeitrichtwert ihres Lernfelds im Rahmenlehrplan (Zuordnung Stichpunkt → Lernfeld nach
+  `umbau/berichte/rahmenlehrplan-abgleich.md`, festgehalten in `umbau/regeln/lernfelder.json`; Skala relativ wie
+  bisher). Umsetzung in `tools/vorschau-ap1.mjs`, getestet.
+- **D8 Themen ohne Katalogbezug** (z. B. Clean Code, Dateizugriff, Oberflächen programmieren, MQTT) werden **Kür** am
+  nächstpassenden Stichpunkt mit Hinweisquelle `buch:<Band>-<Kapitel>` (R2: in `meta.hinweisquellen` beschreiben).
+  Keine neuen Stichpunkte ohne Katalog-Baustein. Ausnahme: Nennt das Buch das Thema als Lernfeld-Kern und hat der
+  Katalog einen Baustein in der Nähe, dann neuer Stichpunkt mit diesem Baustein und Vermerk im Bericht.
+- **D9 Urheberrecht.** Buchtext wird nie übernommen, auch nicht umgestellt; alles in eigenen Worten. Die
+  Kernpunkt-Listen sind eigene Stichworte und liegen nur lokal unter `quellen/lehrbuch/kern/`. Im Repo stehen nur
+  Kapitelnummern, Seiten, Zählungen und eigene Aussagen (`umbau/zuordnung/buch.json`).
+- **D10 Lernprompt.** „Halte dich an den Rahmen: nicht tiefer als nötig, aber vollständig“ wird zu „Erkläre zuerst das
+  Prinzip und das Warum, dann die Einzelheiten; Zusammenhänge zu Nachbarthemen und eigene Beispiele sind erwünscht“.
+  „Gehört nicht dazu (nicht vertiefen)“ wird zu „Für die Prüfung nicht nötig (gehört in einen anderen Prüfungsteil)“.
+  Kür: „Freiwillig, wenn Zeit ist“ ohne „nicht abfragen“. Prüfungsfragen weiter zu jeder Aussage, aber erst nach der
+  Erklärung des ganzen Stichpunkts.
+- **D11 Offene Fragen** aus dem Bau kommen als P55 ff. auf den Parkplatz (Abschnitt 8), mit Vorschlag.
+
+Ring (4.8) einer Buch-Aussage: **Kern** (Pflicht, Herkunft `buch:`); Buch-Themen ohne Katalogbezug: **Kür** (D8).
+Prüfungen dazu: T10 (`tools/umbau/buch-pruefen.mjs`), K4 und K5 (Abschnitt 5).
+
+### Fassung bis v1.8 (gilt weiter, soweit 4.0 nichts anderes bestimmt)
 
 Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). v1.5 (14.10.2026, Projektinhaber): P-BEISPIELLISTE (P17), P-MUSTER als F6 (P18). v1.6 (14.10.2026, Entscheidung übertragen): Prüfungsoperatoren aus PB1 eingestuft (verdeutlichen 2, Stellung nehmen 4, einfügen 3 als Formoperator, implementieren, finden, vorschlagen, umwandeln, skizzieren, schreiben, bringen je 3). v1.7 (14.10.2026): Operatoren der PB2-Aufgaben (Schritt 6). v1.8 (16.10.2026, Projektinhaber, P46): Z3b – Stufe der WiSo-Aufgaben aus dem Aufgabentyp (4.7); „ordnen“ Stufe 2. Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
@@ -205,14 +264,16 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   Weitere übliche Mitglieder derselben Gruppe werden Puffer, wenn mindestens **zwei unabhängige Hinweisquellen** sie
   nennen, sonst Kür. Unabhängig heißt: verschiedene Quellenarten (Podcast, Lernzettel, Unterricht); die beiden
   Lernzettel von fachinformatiker.de zählen zusammen als eine. Stufe der Puffer-Aussage: die Stufe der Katalogstelle.
-  Lehrbücher sind optional (nur die betroffene Stelle, nie ganze Bücher, nie eigene Themen, nie Tiefe).
+  Lehrbücher sind optional (nur die betroffene Stelle, nie ganze Bücher, nie eigene Themen, nie Tiefe). **Seit v2.0 (D1)
+  aufgehoben:** Das Lehrbuch ist Quelle der Tiefe (4.0).
 
 ### 4.4 Grenzen
 
 - **G1** Jede Grenze nennt eine Katalogstelle (E7). Fehlende Prüfungsbelege sind keine Begründung.
 - **G2** Perspektive des Prüfungsbereichs: AP1 = „Einrichten eines IT-gestützten Arbeitsplatzes"
   (Sicht des Arbeitsplatzes, nicht der Server-Infrastruktur), PB1/PB2 = die vier Gebiete aus dem Raster.
-- **G3** Was über die Stufe aus 4.1/4.2 hinausgeht, gehört nicht dazu – außer über eine Puffer-Regel.
+- **G3** (bis v1.8) Was über die Stufe aus 4.1/4.2 hinausgeht, gehört nicht dazu – außer über eine Puffer-Regel.
+  **Seit v2.0 (D3):** Die Stufe ist Untergrenze und bestimmt nur die Form; Tiefe aus dem Buchkapitel (Regel K) gehört dazu.
 - **G4** Prüfungsformat: Eine Teilaufgabe bringt meist 2–8 Punkte und wird ohne Hilfsmittel gelöst.
   Was so nicht abfragbar ist (Herleitungen, Herstellerdetails, Normnummern), gehört nicht dazu.
 - **G6** Bei **Zusatzbausteinen** (nicht im Katalog) reicht der Umfang so weit wie die Belege plus Puffer
@@ -227,8 +288,8 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   (z. B. 2023H-A4-ba „erstellen, einzeichnen“); Stufe = höchste. Maßstab ist die Teilaufgabe, nicht die Aufgabe (wie Z3).
   Operatoren aus verschiedenen Teilaufgaben kommen in getrennte Aussagen oder werden unter einem Operator zusammengefasst.
 - **F2** Jede Können-Aussage hat eine Herkunft: `katalog:<Baustein-ID>` · `beleg:<Teilaufgaben-ID>` ·
-  `regel:<P-…>`.
-- **F3** Stichpunkt: 3–7 Können-Aussagen, eine Lerneinheit von etwa 30–90 Minuten.
+  `regel:<P-…>` · seit v2.0 (D4) `buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>]`.
+- **F3** Stichpunkt: 3–7 Können-Aussagen, eine Lerneinheit von etwa 30–90 Minuten. **Seit v2.0 (D5): 3–10**; größer → teilen.
 - **F4** Themenblock: 3–6 Stichpunkte mit gemeinsamer Grundlage.
 - **F5** Gruppierung: Was in Prüfungen in derselben Aufgabe zusammen abgefragt wird, gehört in denselben
   Stichpunkt oder Themenblock. Grundlagen stehen vor ihrer Anwendung.
@@ -320,6 +381,7 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | P47 | WiSo-Deckung (Z5): jeder Eintrag in `wiso-deckung.json` ist ein WiSo-Pflichtbaustein mit Grund, seine Stichpunkte stehen im Export eines früheren Raums; gedeckte Bausteine gelten in T1/T7/T8 als Import | ✓ `tools/umbau/raum-pruefen.mjs`, `tools/umbau/lernplan-pruefen.mjs`, Test |
 | R3 | Hinweis-Abgleich: jedes Thema aus den Hinweisquellen hat einen Ring (Kern, Puffer, Kür, Außen; „Ordner“ = wohnt in anderem Ordner oder Raum, P23), Hinweisquelle beschrieben, Verweis passt zum Ring | ✓ je Ordner (`meta.hinweisabgleich`) |
 | R4 | Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage | ✓ je Ordner (`meta.geschwister`) |
+| T10 | Buch-Abdeckung (v2.0, D1/D2): je Buchkapitel (298) eine Kernpunkt-Datei (lokal, `quellen/lehrbuch/kern/`) und ein Eintrag in `umbau/zuordnung/buch.json`; jede `aussage:`-ID existiert; jedes einem Stichpunkt zugeordnete Kapitel hat eine Datei; kein Kernpunkt mehr `neu: true`; jede `buch:`-Herkunft nennt ein Kapitel, das ihrem Stichpunkt zugeordnet ist | `tools/umbau/buch-pruefen.mjs` (seit v2.0) |
 | T9 | Rückblick-Test: Punkte je Prüfung auf Themen, die vorher weder im Katalog noch in einer früheren Prüfung standen; bei jeder neuen Prüfung neu berechnen | einmal von Hand gerechnet (6.1), als Skript geplant |
 
 **KI-Prüfer (Inhalt; eigene Sitzung, sieht nur einen Stichpunkt mit seinen Quellen)**
@@ -327,7 +389,9 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 - K1 **Kerntest:** Kann jemand, der genau diese Können-Aussagen beherrscht, jede zugeordnete Teilaufgabe
   mit voller Punktzahl lösen? Wenn nein: Welche Aussage fehlt?
 - K2 Passt jede Können-Aussage zu ihrer Herkunft und zur Stufe aus 4.1?
-- K3 Steht etwas drin, das weder aus Katalog noch Beleg noch Regel kommt?
+- K3 Steht etwas drin, das weder aus Katalog noch Beleg noch Regel noch Buch-Kernabschnitt kommt?
+- K4 (seit v2.0) Steht etwas drin, das Regel K ausschließt (Historie, Hersteller, Bedienschritte, Exkurse, Übungen, Systemintegration)?
+- K5 (seit v2.0) Ist eine Buch-Aussage wörtlich oder nur umgestellt aus dem Buch übernommen (Stichprobe am OCR-Text)?
 
 **Mensch**
 
@@ -715,6 +779,12 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         Räume ohne Abnahme (seit P52 keiner, auch WiSo nicht). `LERNSTUDIO_AP1=alt npm run build` baut weiter den alten Stand.
       - Tests in `tests/vorschau-ap1.test.mjs` („Schritt 7: baut_auf, neu und Abnahme“), Build, Browser-Check und eigene
         Prüfung mit Playwright (PB1, PB2 auf 1400 px und 390 px, Sprung, Einklappen, kein waagerechtes Scrollen).
+- [ ] **Regelwerk v2.0 – Lehrbuch als Tiefe (Branch `regelwerk-v2`, ab 16.10.2026, Auftrag D1–D11):** Bericht
+      `umbau/berichte/V2-bericht.md`.
+  - [x] **V2 Schritt 1 – Regelwerk v2.0:** Abschnitt 4.0, `regelwerk.json` 2.0 (Abschnitt `buch`), `lernplan-pruefen.mjs`
+        (Herkunft `buch:`, F3 3–10), neues Skript `tools/umbau/buch-pruefen.mjs` (T10), Tests in `tests/umbau-fundament.test.mjs`.
+  - [ ] V2 Schritt 2 – Kernpunkt-Listen (298 Kapitel) · [ ] Schritt 3 – Räume erweitern · [ ] Schritt 4 – Karten und
+        Erklärungen · [ ] Schritt 5 – App · [ ] Schritt 6 – unabhängige Prüfung · [ ] Schritt 7 – Abschluss
 - [ ] **Schritt 8 – PROJEKT** – **bewusst zurückgestellt** (Projektinhaber, 16.10.2026, P53): wird später gebaut, näher an der
       Projektphase. Bis dahin nicht anfangen.
 
@@ -819,6 +889,7 @@ node tools/umbau/zuordnung-pruefen.mjs wiso   # T2 + Z3b, schreibt umbau/fundame
 node tools/umbau/export-raum.mjs WISO --pruefen  # WISO ist eingefroren (P52); Generatoren gen-wiso/ stillgelegt
 node tools/umbau/raum-pruefen.mjs WISO        # T1, T2b, T8, ALT, Deckung P47
 node tools/umbau/umzug-erzeugen.mjs           # Lernstand-Umzug aller gebauten Räume
+node tools/umbau/buch-pruefen.mjs [Ordner|Raum]  # T10 Buch-Abdeckung (v2.0); --schreiben überträgt Zählungen nach umbau/zuordnung/buch.json
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 
