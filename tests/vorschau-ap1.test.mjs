@@ -199,7 +199,7 @@ describe('Vorschau PB1 und PB2', () => {
   test('keine alten AP2-Stichpunkte mehr, jede Karte hängt an einem vorhandenen Stichpunkt und einer Aussage', { skip: !plaeneP.length && 'kein PB1' }, () => {
     assert.equal(Object.values(alle.sp).filter((s) => s.raum === 'AP2').length, 0);
     for (const s of Object.values(alle.sp).filter((s) => s.raum === 'PB2')) assert.ok(s.id.startsWith(plaene2.length ? 'PB2-' : 'AP2-') && s.koennen.length, s.id);
-    for (const [a, n] of Object.entries(alle.umzug.sp)) assert.ok(['PB1', 'PB2'].includes(alle.sp[n]?.raum) && !alle.sp[a], `Umzug ${a} → ${n}`);
+    for (const [a, n] of Object.entries(alle.umzug.sp)) assert.ok((a.startsWith('WISO') ? ['WISO'] : ['PB1', 'PB2']).includes(alle.sp[n]?.raum) && !alle.sp[a], `Umzug ${a} → ${n}`);
     const kIds = new Set(Object.values(alle.sp).flatMap((s) => s.koennen.map(([id]) => id)));
     for (const k of alle.karten) {
       assert.ok(alle.sp[k.sp], `${k.id}: Stichpunkt ${k.sp} fehlt`);
@@ -223,7 +223,7 @@ describe('Vorschau PB1 und PB2', () => {
   });
 });
 
-for (const R of ['PB1', 'PB2']) {
+for (const R of ['PB1', 'PB2', 'WISO']) {
 test(`${R}: Teaser und Erklärungen vollständig je Ordner, keine fremden IDs`, async () => {
   const fs = await import('node:fs');
   const cfg = RAEUME_VORSCHAU[R];
@@ -254,7 +254,7 @@ describe(`Neue Lernkarten ${R}`, () => {
   const plaeneP = ladeLernplanAp1(wurzel, cfg);
   const dateien = ladeKartenAp1(wurzel, cfg);
   const alle = vorschauAlle(alt, wurzel);
-  const altKarten = new Map(alt.karten.filter((k) => k.sp.startsWith('AP2')).map((k) => [k.id, k]));
+  const altKarten = new Map(alt.karten.filter((k) => k.sp.startsWith(cfg.altPrefix)).map((k) => [k.id, k]));
   const altNeu = new Map(plaeneP.flatMap((p) => p.alt_neu.koennen.map((a) => [a.alt, a])));
   const kNachSp = new Map();
   for (const p of plaeneP) for (const t of p.themenbloecke) for (const s of t.stichpunkte) for (const k of s.koennen) kNachSp.set(k.id, s.id);
@@ -332,8 +332,8 @@ test('P6: alter AP2-Lernstand wandert beim Ableiten in PB1, PB2-Karten behalten 
 // ---------- Schritt 7: Importe anzeigen (E2/P36) und abgenommene Räume (P45) ----------
 describe('Schritt 7: baut_auf, neu und Abnahme', () => {
   const alle = vorschauAlle(alt, wurzel);
-  const raeumeMitPlan = ['AP1', 'PB1', 'PB2'].filter((R) => ladeLernplanAp1(wurzel, RAEUME_VORSCHAU[R]).length);
-  const frueher = { PB1: ['AP1'], PB2: ['AP1', 'PB1'] };
+  const raeumeMitPlan = ['AP1', 'PB1', 'PB2', 'WISO'].filter((R) => ladeLernplanAp1(wurzel, RAEUME_VORSCHAU[R]).length);
+  const frueher = { PB1: ['AP1'], PB2: ['AP1', 'PB1'], WISO: ['AP1', 'PB1', 'PB2'] };
 
   for (const R of raeumeMitPlan) {
     const plaeneR = ladeLernplanAp1(wurzel, RAEUME_VORSCHAU[R]);
@@ -368,9 +368,9 @@ describe('Schritt 7: baut_auf, neu und Abnahme', () => {
       }
     });
 
-    test(`${R}: abgenommen, also kein Hinweis „noch nicht endgültig“`, () => {
-      assert.equal(RAEUME_VORSCHAU[R].abgenommen, true);
-      assert.equal(alle.vorschauRaeume[R].abgenommen, true);
+    test(`${R}: Abnahme (P45) kommt in der App an – ohne Abnahme zeigt sie den Hinweis „noch nicht endgültig“`, () => {
+      assert.equal(alle.vorschauRaeume[R].abgenommen, RAEUME_VORSCHAU[R].abgenommen);
+      if (R !== 'WISO') assert.equal(RAEUME_VORSCHAU[R].abgenommen, true);
     });
   }
 
@@ -382,8 +382,51 @@ describe('Schritt 7: baut_auf, neu und Abnahme', () => {
     }
   });
 
-  test('WiSo bleibt beim alten Inhalt, ohne Hinweis', () => {
-    assert.equal(alle.vorschauRaeume.WISO, undefined);
-    assert.deepEqual(alle.raeume.find((r) => r.id === 'WISO'), alt.raeume.find((r) => r.id === 'WISO'));
+});
+
+// ---------- WISO (Schritt 6): neuer Lernplan an der Stelle des alten Raums, IDs bleiben (P48) ----------
+describe('Vorschau WISO', () => {
+  const plaeneW = ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.WISO);
+  const alle = vorschauAlle(alt, wurzel);
+  const wiso = alle.raeume.find((r) => r.id === 'WISO');
+  test('Raum WISO zeigt die Gliederung des Lernplans, Name „WiSo“ bleibt, an letzter Stelle', { skip: !plaeneW.length && 'kein WISO-Lernplan' }, () => {
+    assert.equal(alle.raeume.at(-1).id, 'WISO');
+    assert.equal(wiso.name, alt.raeume.find((r) => r.id === 'WISO').name);
+    assert.deepEqual(wiso.ordner.map((o) => o.id), plaeneW.map((p) => p.oberblock.id));
+    const spPlan = plaeneW.flatMap((p) => p.themenbloecke.flatMap((t) => t.stichpunkte));
+    assert.deepEqual(wiso.ordner.flatMap((o) => o.bloecke.flatMap((b) => b.sp)), spPlan.map((s) => s.id));
+    for (const s of spPlan) assert.deepEqual(alle.sp[s.id].koennen.map(([id]) => id), s.koennen.map((k) => k.id), s.id);
+    assert.equal(Object.values(alle.sp).filter((s) => s.raum === 'WISO').length, spPlan.length);
+    assert.equal(alle.vorschauRaeume.WISO.raum, 'WISO');
+  });
+  test('jede alte WiSo-Karte ist an ihrer neuen Aussage oder mit ihr gestrichen; Umzug nur für entfallene IDs', { skip: !plaeneW.length && 'kein WISO-Lernplan' }, () => {
+    const altNeu = new Map(plaeneW.flatMap((p) => p.alt_neu.koennen.map((a) => [a.alt, a])));
+    const da = new Map(alle.karten.map((k) => [k.id, k]));
+    const ersetzt = new Set(ladeKartenAp1(wurzel, RAEUME_VORSCHAU.WISO).keys());
+    for (const k of alt.karten.filter((k) => k.sp.startsWith('WISO') && k.k)) {
+      const a = altNeu.get(k.k);
+      assert.ok(a, `${k.k} fehlt im alt_neu`);
+      if (a.status === 'gestrichen') continue;
+      if (ersetzt.has(ordnerVon(a.neu))) continue; // entscheidet die Kartendatei des Ordners
+      assert.equal(da.get(k.id)?.k, a.neu, `${k.id} → ${a.neu}`);
+    }
+    const wisoUmzug = Object.entries(alle.umzug.sp).filter(([a]) => a.startsWith('WISO'));
+    assert.ok(wisoUmzug.length > 0);
+    for (const [a, n] of wisoUmzug) assert.ok(!alle.sp[a] && alle.sp[n]?.raum === 'WISO', `${a} → ${n}`);
+    // AP2-Umzug bleibt erhalten
+    assert.ok(Object.keys(alle.umzug.sp).some((a) => a.startsWith('AP2')));
+    assert.equal(alle.umzug.raeume.AP2, 'PB1');
+  });
+  test('P6: Haken an einem entfallenen WiSo-Stichpunkt landet beim neuen, ein weiterbestehender bleibt bei sich', { skip: !plaeneW.length && 'kein WISO-Lernplan' }, async () => {
+    const { baueIndex } = await import('../src/daten/index.js');
+    const { ableiten } = await import('../src/lernstand/ableiten.js');
+    const index = baueIndex(alle);
+    const [altSp, neuSp] = Object.entries(alle.umzug.sp).find(([a]) => a.startsWith('WISO'));
+    const bleibt = 'WISO-3-4-2';
+    const t = Date.now();
+    const stand = ableiten([{ e: 'sp', id: altSp, an: true, t }, { e: 'sp', id: bleibt, an: true, t: t + 1 }], index);
+    assert.ok(stand.spErledigt.has(neuSp), `${altSp} → ${neuSp}`);
+    assert.ok(stand.spErledigt.has(bleibt), `${bleibt} umgeleitet`);
+    assert.equal(index.raumVon(altSp), 'WISO');
   });
 });

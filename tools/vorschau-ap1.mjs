@@ -24,6 +24,8 @@
 //   in der App aufklappbar an der Aussage). Text mit einfacher Auszeichnung wie bei Lernkarten.
 // – Importe (E2/P36): baut_auf eines Stichpunkts als neu.bautAuf (Sprung in den früheren Raum), das Feld neu einer
 //   Können-Aussage ({ gegenueber, was }) an der Aussage. Abgenommene Räume (abgenommen) zeigen keinen Hinweis mehr.
+// – WISO (Schritt 6): ersetzt den alten Raum WISO an seiner Stelle, Name „WiSo“ bleibt. IDs bleiben erhalten (P48);
+//   alte Stichpunkt- und Block-IDs, die es nicht mehr gibt, ziehen über umbau/umzug.json um (vorschauWiso).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,6 +41,7 @@ export const RAEUME_VORSCHAU = {
   AP1: { teil: 'AP1', dir: 'ap1', appRaum: 'AP1', altPrefix: 'AP1', ersteAktuelle: '2025F', titel: null, abgenommen: true },
   PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'PB1', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes', abgenommen: true },
   PB2: { teil: 'PB2', dir: 'pb2', appRaum: 'PB2', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Entwicklung und Umsetzung von Algorithmen', abgenommen: true },
+  WISO: { teil: 'WISO', dir: 'wiso', appRaum: 'WISO', altPrefix: 'WISO', ersteAktuelle: '2025S', titel: null, abgenommen: false },
 };
 const AP1 = RAEUME_VORSCHAU.AP1;
 const dateiMuster = (cfg) => new RegExp(`^${cfg.teil}-\\d+\\.json$`);
@@ -121,13 +124,31 @@ export function vorschauAp1(daten, wurzel) {
   return vorschauRaum(daten, wurzel, AP1);
 }
 
-// Vorschau aller Räume, für die ein Lernplan vorliegt (AP1, PB1, dann PB2 bzw. sein Platzhalter)
+// Vorschau aller Räume, für die ein Lernplan vorliegt (AP1, PB1, dann PB2 bzw. sein Platzhalter, dann WISO)
 export function vorschauAlle(daten, wurzel) {
   let d = daten;
   for (const cfg of [RAEUME_VORSCHAU.AP1, RAEUME_VORSCHAU.PB1]) if (ladeLernplanAp1(wurzel, cfg).length) d = vorschauRaum(d, wurzel, cfg);
-  if (!ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB1).length) return d;
-  if (ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB2).length) return vorschauPb2(daten, d, wurzel);
-  return pb2Platzhalter(daten, d, wurzel);
+  if (ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB1).length) {
+    d = ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.PB2).length ? vorschauPb2(daten, d, wurzel) : pb2Platzhalter(daten, d, wurzel);
+  }
+  if (ladeLernplanAp1(wurzel, RAEUME_VORSCHAU.WISO).length) d = vorschauWiso(d, wurzel);
+  return d;
+}
+
+// Raum WISO mit neuem Lernplan an der Stelle des alten. Die IDs bleiben erhalten (P48); alte Stichpunkte und Blöcke,
+// die es im neuen Plan nicht mehr gibt, ziehen laut umbau/umzug.json um (P6) – zusätzlich zum Umzug von AP2.
+export function vorschauWiso(d, wurzel) {
+  const aus = vorschauRaum(d, wurzel, RAEUME_VORSCHAU.WISO);
+  const umzugDatei = path.join(wurzel, 'umbau', 'umzug.json');
+  const u = fs.existsSync(umzugDatei) ? JSON.parse(fs.readFileSync(umzugDatei, 'utf8')) : { stichpunkte: {}, bloecke: {} };
+  const blockDa = new Set(aus.raeume.flatMap((r) => r.ordner.flatMap((o) => o.bloecke.map((b) => b.id))));
+  const wiso = ([a, n]) => a.startsWith('WISO') && a !== n && typeof n === 'string';
+  aus.umzug = {
+    sp: { ...(d.umzug?.sp ?? {}), ...Object.fromEntries(Object.entries(u.stichpunkte).filter((e) => wiso(e) && !aus.sp[e[0]] && aus.sp[e[1]])) },
+    bloecke: { ...(d.umzug?.bloecke ?? {}), ...Object.fromEntries(Object.entries(u.bloecke).filter((e) => wiso(e) && !blockDa.has(e[0]) && blockDa.has(e[1]))) },
+    raeume: { ...(d.umzug?.raeume ?? {}) },
+  };
+  return aus;
 }
 
 // Raum PB2 mit neuem Lernplan. Der Lauf für PB1 hat den alten Raum AP2 schon ersetzt und die alten Karten, deren
@@ -370,7 +391,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
     })),
   }));
 
-  const raeume = daten.raeume.map((r) => (r.id === (cfg.ersetzt ?? R) ? { ...r, id: R, name: R === 'AP1' ? r.name : R, ...(cfg.titel ? { titel: cfg.titel } : {}), ordner } : r));
+  const raeume = daten.raeume.map((r) => (r.id === (cfg.ersetzt ?? R) ? { ...r, id: R, name: cfg.ersetzt ? R : r.name, ...(cfg.titel ? { titel: cfg.titel } : {}), ordner } : r));
   const spAp1 = Object.values(sp).filter((s) => s.raum === R);
 
   const v = {
