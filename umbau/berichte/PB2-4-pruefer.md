@@ -22,3 +22,24 @@ Unabhängige Prüfung nach `umbau/auftraege/PB2-pruefung.md` (Prüfer, 16.10.202
 **Fachlich geprüft ohne Fund:** Anweisungs-/Zweig-/Pfadüberdeckung und ihre Einschlussbeziehung (deckt sich mit 2024S-A3-b), „ein Testfall genügt“ für 2022W-A2-ac nachvollzogen, Äquivalenzklassen-Beispiel zu 2022S-A2-bc (alt negativ, neu negativ, alt > neu) korrekt, Zweigüberdeckung prüft leere Else-Zweige (richtig), Testdatengeneratoren statt echter personenbezogener Daten (DSGVO-konform, Katalog AP2a.03.02.3 Stufe 3 passt). Keine Aussage ohne Herkunft (K3 ohne Fund). Bedingungs- oder MC/DC-Überdeckung stehen weder im Katalog noch in einer Prüfung und fehlen zu Recht. Felder `grenzen` und `kuer` fehlen; nach Katalog nicht nötig.
 
 **Bilanz PB2-4:** 14 Aussagen vorher → 11 nach den Vorschlägen (−1 PB2-4-1-3-K5 in PB2-4-1-2-K3, −1 PB2-4-1-3-K4 in PB2-4-1-1-K5, −1 PB2-4-1-1-K3 in K2; optional −1 PB2-4-1-1-K1 → 10).
+
+## Umsetzung
+
+Bauende Sitzung, 16.10.2026, nach den Entscheidungen P36 und P44 und den Vorgaben des Projektinhabers. Jeder Fund wurde an der Abschrift nachgeprüft (2022S-A2-b, 2022W-A2-ac, 2023S-A3, 2024S-A3, 2025S-A2-b, 2025W-A3).
+
+| Nr | Status | was genau (IDs) |
+|---|---|---|
+| 1 | umgesetzt | PB2-4-1-3-K5 gestrichen und in PB2-4-1-2-K3 aufgenommen: Kriterien festlegen, Testfalltabelle (Testdaten, erwartetes, tatsächliches Ergebnis), bestanden nur bei genauer Übereinstimmung, auch bei erwarteter Ausnahme; Stufe 3 („festlegen“), `vorgegeben`: Testdaten 2025W-A3-ba (P44). Das ist jetzt die einzige Stelle für „erwartet gegen tatsächlich“; PB2-3-1-1-K2 und PB2-3-1-3-K3 wiederholen den Abgleich nicht mehr. |
+| 2 | umgesetzt | `baut_auf` PB1-9-1-5 an PB2-4-1-2, Hinweis auf den Aufbau des Testprotokolls. |
+| 3 | umgesetzt | PB2-4-1-3-K4 nach PB2-4-1-1 verschoben (neue ID PB2-4-1-1-K6, Stufe 4), 2023S-A3-bc mit nach PB2-4-1-1 (F5: eine Aufgabe mit -bb). Nicht in eine Aussage mit K5 zusammengelegt, weil die Operatoren aus zwei Teilaufgaben stammen (2024S-A3-c Pfade angeben; 2023S-A3-bc anpassen und begründen, F1); beide stehen jetzt nebeneinander im selben Stichpunkt. |
+| 4 | umgesetzt | PB2-4-1-1-K5 neu gefasst: alle Pfade für eine vollständige Pfadüberdeckung ermitteln und als Folge von Bedingungen und Anweisungen aufschreiben; unabhängige, hintereinanderliegende Verzweigungen multiplizieren die Pfade (2024S-A3-c: 1 + 2 · 2 = 5). „Eingaben“ entfernt. |
+| 5 | umgesetzt | PB2-4-1-3-K2: „den Grenzwert selbst sowie die Werte knapp darunter und darüber“, mit dem Fehlerbild aus 2022S-A2-ba (Testfälle 120/120 und 0/0). Weil 2023S-A3-bc mit Nr. 3 nach PB2-4-1-1 ging, stützt sich K2 auf Katalog AP2b.05.03.2.3 und AP2a.02.01.3 (beide Stufe 4). |
+| 6 | umgesetzt | PB2-4-1-2-K1 ohne Überdeckungsbeispiel, nur noch die Wahl zwischen Black-Box (Äquivalenzklassen, Grenzwerte), White-Box und statischem Test; Beleg 2025S-A2-ba bei K1 entfernt. |
+| 7 | umgesetzt | PB2-4-1-2-K1 beginnt mit „über PB1-9-1-3 hinaus“, `neu` gegenüber PB1-9-1-3 (Auswahl für eine Situation, Stufe 4). |
+| 8 | umgesetzt | PB2-4-1-1-K3 gestrichen und in PB2-4-1-1-K2 aufgenommen (Einschlussbeziehung der Maße). Alt → neu: AP2-5-2-2-K5 → PB2-4-1-1-K2. |
+| 9 | umgesetzt | PB2-4-1-1-K2: Halbsatz, dass Schleifen die Zahl der Pfade ohne feste Obergrenze unbegrenzt machen und volle Pfadüberdeckung dann praktisch nicht erreichbar ist. |
+| 10 | umgesetzt | PB2-4-1-3-K3: „nur positive bzw. nur negative Werte (je nach Startwert)“. Nach P44 sind die Testdaten in 2025W-A3-ba vorgegeben; die Teilaufgabe belegt deshalb nicht das Auswählen von Sonderfall-Testdaten und steht nur noch in PB2-4-1-2 (P31). K3 hat die Herkunft katalog:AP2a.02.01.3 und ist auf die eigene Seite gekürzt: Testdaten aus Sonderfällen ableiten. Das Abfangen der Sonderfälle wohnt in PB2-1-1-1-K5. |
+| 11 | umgesetzt | AP2a.02.01.2 aus PB2-4-1-1 und PB2-4-1-2 entfernt, AP2b.03.08.1 aus PB2-4-1-2 (P36, T7). 2024S-A3-aa und 2025S-A2-bb bleiben in PB2-4-1-2 gelistet (T2b auf Raum-Ebene) und werden über PB1-9-1-3 gelöst (Hinweis am Stichpunkt). |
+| 12 | abgelehnt | PB2-4-1-1-K1 bleibt: Die eigene Teilaufgabe 2025W-A3-ab fragt den Oberbegriff Testabdeckung. K2 wäre nach Nr. 8 und Nr. 9 sonst überladen; der Prüfer sieht beim Beibehalten keinen Schaden. |
+
+**Ergebnis:** 14 → 12 Aussagen. Gestrichen: PB2-4-1-1-K3, PB2-4-1-3-K5; verschoben: PB2-4-1-3-K4 → PB2-4-1-1-K6. Gestrichene IDs werden nicht wieder vergeben. Teilaufgaben: 2023S-A3-bc von PB2-4-1-3 nach PB2-4-1-1, 2025W-A3-ba aus PB2-4-1-3 entfernt (bleibt in PB2-4-1-2). `node tools/umbau/lernplan-pruefen.mjs PB2-4`: OK (T7 gelöst; zwei Hinweise zu 2024S-A3-aa und 2025S-A2-bb, gewollt).

@@ -27,3 +27,29 @@ Unabhängige Prüfung nach `umbau/auftraege/PB2-pruefung.md` (Prüfer, 16.10.202
 **Fachlich geprüft ohne Fund:** TDD-Zyklus Red/Green/Refactor, assertEquals(erwartet, tatsächlich), Regressionstest-Zweck (deckt sich mit 2024S-A3-ab), Off-by-one- und Startwert-Fehler (deckt sich mit 2025W-A3-bb), Struktogramm-Hinweis nach Z4 korrekt. Keine Aussage ohne Herkunft (K3 ohne Fund). Felder `grenzen` und `kuer` fehlen; nach Katalog nicht nötig.
 
 **Bilanz PB2-3:** 12 Aussagen vorher → 10 nach den Vorschlägen (−1 PB2-3-1-2-K2, −1 PB2-3-1-3-K1 in K2, TDD verschoben und zu „Unit-Test schreiben“ erweitert; bei Auflösung von PB2-3-1-2 zwei statt drei Stichpunkte).
+
+## Umsetzung
+
+Bauende Sitzung, 16.10.2026, nach den Entscheidungen P36, P37, P43, P44 und den Vorgaben des Projektinhabers. Jeder Fund wurde an der Abschrift nachgeprüft (2021W-A1-c, 2022S-A2, 2022W-A2, 2023S-A3, 2025S-A2-bc, 2025W-A3).
+
+| Nr | Status | was genau (IDs) |
+|---|---|---|
+| 1 | umgesetzt | PB2-3-1-1-K4: „die letzte Gruppe wird nach der Schleife nicht mehr ausgewertet“ und „falsche Variable im Ausdruck (Monats- statt Jahreszähler)“; PB2-3-1-1-K3: den vergessenen Verarbeitungsblock nach der Schleife einfügen. Das Gruppenwechsel-Muster selbst wohnt in PB2-1 (P37), hier nur die Fehlersuche; Hinweis am Stichpunkt beschreibt die IHK-Lösung 2023S-A3-ab. |
+| 2 | umgesetzt | PB2-3-1-1-K1 auf das Neue gekürzt (rekursive Aufrufe, längerer Code mit vorgegebener Datenverlaufstabelle), `neu` gegenüber AP1-8-2-3. |
+| 3 | teilweise | Nur die Fehlersuche-Seite: PB2-3-1-1-K4 nennt „Ausgabe vor statt nach dem rekursiven Aufruf (umgekehrte Reihenfolge)“ als Fehlerbild. Wie die Stellung zum Selbstaufruf die Reihenfolge bestimmt, wohnt in PB2-2-1-3 (Vorgabe Projektinhaber). |
+| 4 | umgesetzt | PB2-3-1-1-K4: überflüssige Anweisung, die ein Flag wieder zurücksetzt, und fehlende Rückgabe (return) ergänzt (Musterlösung 2021W-A1-c, Fehler 3 und 4). |
+| 5 | umgesetzt | PB2-3-1-1-K4 beginnt mit „über die Fehlerquellen aus AP1-8-2-4 hinaus“; falsche Schleifengrenze und vertauschter Vergleichsoperator gestrichen (AP1-8-2-4-K5, PB2-1-1-1-K2), `neu` gegenüber AP1-8-2-4. Operator jetzt „finden“ (2021W-A1-c), Stufe 3. |
+| 6 | umgesetzt | PB2-3-1-1-K3 auf „über AP1 hinaus mehrere Fehler zusammenhängend korrigieren und fehlende Code-Teile ergänzen“ zugespitzt, `baut_auf` AP1-8-2-2 ergänzt, `neu` gegenüber AP1-8-2-2 und AP1-8-2-4. |
+| 7 | umgesetzt | PB2-3-1-1-K2 Stufe 4 („analysieren“, Katalog AP2a.02.01). Der Abgleich „erwartet gegen tatsächlich“ selbst steht jetzt nur in PB2-4-1-2-K3 (gebündelt); K2 beschreibt das Schließen von der Abweichung auf die Zeile. |
+| 8 | umgesetzt | PB2-3-1-2-K2 gestrichen. Ablaufverfolgung in PB2-3-1-1-K1 aufgenommen, print-Debugging in PB2-3-1-2-K5; AP2a.03.01.3 aus den Bausteinen von PB2-3-1-2 entfernt. Alt → neu: AP2-5-3-1-K2 → PB2-3-1-1-K1, AP2-5-3-1-K3 → PB2-3-1-2-K5 (verschoben). |
+| 9 | umgesetzt | PB2-3-1-2-K1 Stufe 3 („einsetzen“): Breakpoint, Step over/Step into, Variablen beobachten. „Wann print-Debugging genügt“ als eigene Aussage PB2-3-1-2-K5 (Stufe 4, siehe Nr. 16). |
+| 10 | umgesetzt | PB2-3-1-2-K3 (TDD) nach PB2-3-1-3 verschoben und mit Nr. 13 zusammengeführt: neue ID PB2-3-1-3-K5, Stufe 3. Alt → neu: AP2-5-3-1-K4 → PB2-3-1-3-K5. |
+| 11 | umgesetzt | PB2-3-1-2-K4 auf den Zuwachs gegenüber PB1-5-1-2 gekürzt: Eingabe bereinigen (trim), leere wie fehlende Eingabe behandeln, Ersatzregel (Standardmedikation, passend zu 2025S-A2-a/-bc); `neu` gegenüber PB1-5-1-2. „In gegebenem Code erkennen, bei welchen Eingaben eine Ausnahme entsteht“ gestrichen (AP1-8-2-4-K3, PB1-5-1-2); Alt → neu AP2-3-3-3-K2 = gestrichen. |
+| 12 | umgesetzt | AP2b.04.17.5 bleibt nur in `bausteine` von PB2-3-1-2, weil K4 mit `neu` ihn betrifft (P36, T7 grün). F1: der zweite Operator (Ausnahme erkennen) ist gestrichen, statt 2025W-A3-ba als Herkunft anzuhängen. |
+| 13 | umgesetzt | Neu PB2-3-1-3-K5: zu einer Anforderung einen Unit-Test mit assertEquals schreiben, auch testgetrieben (Red, Green, Refactor), Stufe 3, Herkunft katalog:AP2b.03.08.2. |
+| 14 | umgesetzt | PB2-3-1-3-K1 gestrichen und in PB2-3-1-3-K2 aufgegangen (Aufbau mit assertEquals, F.I.R.S.T.), `neu` gegenüber PB1-9-1-4; Belege 2022S-A2-aa und 2025W-A3-aa hängen an K2. |
+| 15 | umgesetzt | Korrektur-Teil aus PB2-3-1-3-K3 entfernt (nur noch Unit-Test überprüfen, Stufe 4). 2022S-A2-bb liegt jetzt in PB2-3-1-1 und belegt K3 (eine Teilaufgabe, eine Aussage, P31). Baustein AP2a.02.01.1 aus PB2-3-1-3 entfernt. |
+| 16 | abgelehnt | PB2-3-1-2 nicht aufgelöst: Der Themenblock PB2-3-1 hätte dann nur zwei Stichpunkte (F4 verlangt 3–6), und Ordner zusammenlegen ist nicht erlaubt. Stattdessen mit echtem Katalog-Inhalt auf 3 Aussagen gebracht: neu PB2-3-1-2-K5 (Debugger oder print-Debugging begründet auswählen, Stufe 4; Katalog AP2b.03.08.2 nennt print-Debugging, AP2a.02.01 „analysieren“ Stufe 4; Form nach F6). Ohne K5 hätte print-Debugging nach Nr. 8 nur einen Halbsatz. |
+| 17 | abgelehnt | 2025W-A3-ba nicht zusätzlich in PB2-3-1-1: Nach P44 sind die Testdaten vorgegeben, die Teilaufgabe ist eine Testfalltabelle mit erwartetem und tatsächlichem Ergebnis. Sie steht einmal in PB2-4-1-2-K3 (P31), und diese Aussage nennt das Ermitteln des tatsächlichen Ergebnisses per Schreibtischtest ausdrücklich. |
+
+**Ergebnis:** 12 → 11 Aussagen. Gestrichen: PB2-3-1-2-K2, PB2-3-1-3-K1; verschoben: PB2-3-1-2-K3 → PB2-3-1-3-K5; neu: PB2-3-1-2-K5, PB2-3-1-3-K5. Gestrichene IDs werden nicht wieder vergeben. Teilaufgabe 2022S-A2-bb von PB2-3-1-3 nach PB2-3-1-1. `node tools/umbau/lernplan-pruefen.mjs PB2-3`: OK (T7 gelöst). Zum Abgleich mit PB2-1: 2023S-A3-ab steht auch in PB2-1-1-3 (P31 prüfen); in PB2-3 belegt sie die Fehlersuche-Seite (K3).
