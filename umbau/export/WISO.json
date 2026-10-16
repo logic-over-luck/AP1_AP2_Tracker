@@ -5,12 +5,12 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 70,
-  "koennen": 384,
+  "koennen": 388,
   "quellen": {
-   "WISO-1.json": "a099ff0f5ef3d2cc",
-   "WISO-2.json": "dc0b929d4317c06c",
-   "WISO-3.json": "c43ac0632afa809c",
-   "WISO-4.json": "ad92d75ebe8cdecc",
+   "WISO-1.json": "2562c576037e161f",
+   "WISO-2.json": "ebad1fb67cab10f3",
+   "WISO-3.json": "eb68367f18bd1543",
+   "WISO-4.json": "0800e20482bf27cd",
    "WISO-5.json": "7f31b66aa5464f46"
   }
  },
@@ -61,7 +61,12 @@
     {
      "id": "WISO-1-1-1-K7",
      "stufe": 2,
-     "kurz": "in einem Vertragsentwurf unterscheiden, welche weiteren Angaben in die Niederschrift gehören – Name und Anschrift der Vertragspartner, Ausbildungsmaßnahmen außerhalb der Ausbildungsstätte, ein Hinweis auf geltende Tarifverträge und Betriebsvereinbarungen und die Form des Ausbildungsnachweises (schriftlich oder elektronisch) – und welche nicht vorgeschrieben sind, etwa eine ärztliche Bescheinigung oder kalkulierte Ausbildungskosten"
+     "kurz": "in einem Vertragsentwurf unterscheiden, welche weiteren Angaben in die Niederschrift gehören – Name und Anschrift der Vertragspartner, Ausbildungsmaßnahmen außerhalb der Ausbildungsstätte, ein Hinweis auf geltende Tarifverträge und Betriebsvereinbarungen und die Form des Ausbildungsnachweises (schriftlich oder elektronisch) – und welche nicht vorgeschrieben sind, etwa Angaben zum Schulabschluss oder zur Kleiderordnung"
+    },
+    {
+     "id": "WISO-1-1-1-K8",
+     "stufe": 2,
+     "kurz": "die Teilzeitberufsausbildung erklären: Betrieb und Auszubildende können ohne besonderen Grund im Vertrag vereinbaren, dass die tägliche oder wöchentliche Ausbildungszeit um höchstens die Hälfte gekürzt wird; die Ausbildungsdauer verlängert sich dann entsprechend, höchstens auf das Eineinhalbfache der regulären Dauer"
     }
    ]
   },
@@ -146,7 +151,12 @@
     {
      "id": "WISO-1-1-3-K6",
      "stufe": 2,
-     "kurz": "die drei Zeugnisse am Ende der Ausbildung unterscheiden: das Prüfungszeugnis der Kammer über die bestandene Abschlussprüfung, das Abschlusszeugnis der Berufsschule, das sich ohne eigene Prüfung aus den Unterrichtsleistungen ergibt, und das Ausbildungszeugnis, das der Betrieb ausstellen muss"
+     "kurz": "die drei Zeugnisse am Ende der Ausbildung unterscheiden: das Prüfungszeugnis der Kammer über die bestandene Abschlussprüfung, das Abschlusszeugnis der Berufsschule, das in den meisten Ländern aus den Unterrichtsleistungen gebildet wird (einige Länder prüfen zusätzlich selbst), und das Ausbildungszeugnis, das der Betrieb ausstellen muss"
+    },
+    {
+     "id": "WISO-1-1-3-K7",
+     "stufe": 2,
+     "kurz": "erklären, wann die gestreckte Abschlussprüfung bestanden ist: Das Gesamtergebnis aus Teil 1 und Teil 2 und das Ergebnis von Teil 2 müssen mindestens ausreichend sein, beim Fachinformatiker außerdem mindestens drei der vier Prüfungsbereiche von Teil 2, und keiner darf ungenügend sein; ist ein schriftlicher Bereich von Teil 2 schlechter als ausreichend, kann auf Antrag eine etwa viertelstündige mündliche Ergänzungsprüfung den Ausschlag geben, wobei das schriftliche Ergebnis doppelt so viel zählt wie das mündliche"
     }
    ]
   },
@@ -204,6 +214,11 @@
      "id": "WISO-1-1-4-K9",
      "stufe": 2,
      "kurz": "die Benachrichtigungspflicht bei Fehlzeiten erklären: Wer im Betrieb, in der Berufsschule oder bei einer anderen Ausbildungsmaßnahme fehlt, meldet das unverzüglich mit Grund; dauert eine Arbeitsunfähigkeit länger als drei Kalendertage, muss sie spätestens am darauffolgenden Arbeitstag ärztlich festgestellt sein (der Betrieb darf das früher verlangen), und die Bescheinigung ruft der Betrieb heute meist elektronisch bei der Krankenkasse ab"
+    },
+    {
+     "id": "WISO-1-1-4-K10",
+     "stufe": 2,
+     "kurz": "weitere Pflichten von Auszubildenden erklären: sich an die im Betrieb geltende Ordnung halten (zum Beispiel Hausordnung, Sicherheits- und IT-Nutzungsregeln), Werkzeuge, Geräte und andere Ausbildungsmittel pfleglich behandeln und übertragene Aufgaben sorgfältig ausführen"
     }
    ]
   },
@@ -605,7 +620,7 @@
     {
      "id": "WISO-1-3-5-K9",
      "stufe": 2,
-     "kurz": "Elternzeit und Elterngeld erklären: Jeder Elternteil kann bis zum dritten Geburtstag des Kindes Elternzeit nehmen, in der Arbeits- und Vergütungspflicht ruhen, das Arbeitsverhältnis aber bestehen bleibt und die Rückkehr gesichert ist; den Einkommensausfall ersetzt der Staat teilweise durch Elterngeld, als ElterngeldPlus (niedriger, dafür länger) und mit dem Partnerschaftsbonus, wenn beide Eltern gleichzeitig in Teilzeit arbeiten"
+     "kurz": "Elternzeit und Elterngeld erklären: Jeder Elternteil kann für jedes Kind bis zu drei Jahre Elternzeit verlangen, davon bis zu 24 Monate auch zwischen dem dritten und dem achten Geburtstag; Arbeits- und Vergütungspflicht ruhen, das Arbeitsverhältnis bleibt mit Kündigungsschutz und Rückkehrrecht bestehen. Den Einkommensausfall ersetzt der Staat teilweise durch Elterngeld, als ElterngeldPlus (halber Betrag, doppelt so lange) und mit dem Partnerschaftsbonus, wenn beide Eltern gleichzeitig in Teilzeit arbeiten"
     },
     {
      "id": "WISO-1-3-5-K10",
@@ -809,7 +824,7 @@
     {
      "id": "WISO-1-4-3-K6",
      "stufe": 2,
-     "kurz": "das Aussetzungsrecht der JAV erklären: Hält die Mehrheit der Jugend- und Auszubildendenvertreter einen Beschluss des Betriebsrats für eine erhebliche Beeinträchtigung wichtiger Interessen der Jugendlichen und Auszubildenden, wird der Beschluss auf ihren Antrag für eine Woche ausgesetzt, damit in dieser Zeit eine Verständigung gesucht werden kann"
+     "kurz": "das Aussetzungsrecht der JAV erklären: Sieht die Mehrheit der Jugend- und Auszubildendenvertreter in einem Betriebsratsbeschluss einen schweren Nachteil für Jugendliche und Auszubildende, kann sie verlangen, dass der Beschluss eine Woche lang nicht umgesetzt wird; die Zeit dient dazu, sich zu einigen, danach entscheidet der Betriebsrat erneut"
     }
    ]
   },
@@ -1199,14 +1214,14 @@
      "kurz": "Merkmale agiler Arbeit von hierarchischer Vorgabe unterscheiden: selbstorganisierte, eigenverantwortliche Teams, offene Weitergabe von Wissen, transparente Darstellung des Fortschritts auf Boards und adaptives Planen – nicht aber, dass Vorgesetzte Lösung und Weg vorgeben"
     },
     {
-     "id": "WISO-1-7-2-K9",
-     "stufe": 3,
-     "kurz": "das Eisenhower-Prinzip auf eine Aufgabenliste anwenden: Jede Aufgabe wird nach wichtig und dringend eingeordnet und dann behandelt – wichtig und dringend sofort selbst erledigen, wichtig und nicht dringend fest einplanen, dringend und unwichtig delegieren, weder wichtig noch dringend streichen"
+     "id": "WISO-1-7-2-K10",
+     "stufe": 2,
+     "kurz": "das Pareto-Prinzip erklären: Oft bringt ein kleiner Teil der Aufgaben (Faustregel 20 %) den größten Teil des Ergebnisses (rund 80 %); deshalb kommen die wirkungsvollsten Aufgaben zuerst, und für die übrigen wird geprüft, ob sie entfallen oder warten können"
     },
     {
-     "id": "WISO-1-7-2-K10",
-     "stufe": 3,
-     "kurz": "das Pareto-Prinzip auf deine Aufgabenplanung anwenden: Oft bringt ein kleiner Teil der Aufgaben (Faustregel 20 %) den größten Teil des Ergebnisses (rund 80 %), deshalb erledigst du die wirkungsvollsten Aufgaben zuerst und prüfst, welche übrigen entfallen oder warten können"
+     "id": "WISO-1-7-2-K11",
+     "stufe": 2,
+     "kurz": "die vollständige Handlung erklären: Ein Arbeitsauftrag wird in sechs Schritten bearbeitet – sich informieren, planen, zwischen Lösungswegen entscheiden, umsetzen, das Ergebnis vor der Übergabe prüfen und es mit dem Auftraggeber auswerten; die beiden letzten Schritte sichern die Qualität und liefern Erfahrung für den nächsten Auftrag"
     }
    ]
   },
@@ -1359,7 +1374,7 @@
     {
      "id": "WISO-1-8-2-K5",
      "stufe": 2,
-     "kurz": "die Bereiche der beruflichen Handlungskompetenz unterscheiden und ein beschriebenes Verhalten zuordnen: Fachkompetenz (Aufgaben fachlich richtig lösen), Selbstkompetenz (sich selbst organisieren, zuverlässig und sorgfältig arbeiten) und Sozialkompetenz (mit Kunden und Kollegen gut umgehen); Methoden-, Kommunikations- und Lernkompetenz sind Teil dieser drei Bereiche"
+     "kurz": "einem beschriebenen Verhalten den passenden Bereich der beruflichen Handlungskompetenz zuordnen: Fachkompetenz (Aufgaben fachlich richtig lösen), Selbstkompetenz (sich selbst organisieren, zuverlässig und sorgfältig arbeiten) oder Sozialkompetenz (mit Kunden und Kollegen gut umgehen); Methoden-, Kommunikations- und Lernkompetenz stecken in allen drei Bereichen"
     }
    ]
   },
@@ -1482,6 +1497,11 @@
      "id": "WISO-2-1-1-K9",
      "stufe": 2,
      "kurz": "Angebotsbreite und Angebotstiefe einer Produktpalette unterscheiden: Die Breite ist die Zahl verschiedener Produktgruppen, zum Beispiel Notebooks, Monitore, Netzwerktechnik und Wartungsverträge, die Tiefe die Zahl der Varianten innerhalb einer Gruppe, zum Beispiel zwölf Notebookmodelle mit unterschiedlicher Ausstattung"
+    },
+    {
+     "id": "WISO-2-1-1-K10",
+     "stufe": 2,
+     "kurz": "den Wirtschaftskreislauf erklären: Haushalte stellen den Unternehmen Arbeit und andere Produktionsfaktoren zur Verfügung und erhalten dafür Einkommen, mit dem sie deren Güter kaufen, sodass Güter und Leistungen in die eine und Geld in die andere Richtung fließen; im erweiterten Modell kommen Banken (Sparen und Kredite), der Staat (Steuern, Transferleistungen, Subventionen) und das Ausland (Export und Import) hinzu"
     }
    ]
   },
@@ -1706,6 +1726,16 @@
      "id": "WISO-2-2-2-K9",
      "stufe": 2,
      "kurz": "die Besteuerung des Gewinns nach Rechtsform unterscheiden: Beim Einzelunternehmen und bei Personengesellschaften versteuert jeder Inhaber seinen Gewinnanteil mit seiner persönlichen Einkommensteuer, eine GmbH oder AG ist als juristische Person selbst steuerpflichtig und zahlt Körperschaftsteuer, und ausgeschüttete Gewinne versteuern die Gesellschafter zusätzlich"
+    },
+    {
+     "id": "WISO-2-2-2-K10",
+     "stufe": 2,
+     "kurz": "erklären, nach welchen Kriterien Gründer eine Rechtsform wählen: Risiko und Einfluss (wer haftet, wer leitet und entscheidet mit, wer wie am Gewinn und Verlust beteiligt ist), Geld (wie leicht sich Eigen- und Fremdkapital beschaffen lassen, wie hoch die Steuern sind, was Gründung, Buchführung und die Offenlegung des Jahresabschlusses kosten) und Beweglichkeit (wie einfach Gesellschafter ein- und austreten und das Unternehmen verkauft oder übergeben werden kann)"
+    },
+    {
+     "id": "WISO-2-2-2-K11",
+     "stufe": 2,
+     "kurz": "die Unternehmergesellschaft (haftungsbeschränkt) als Sonderform der GmbH erklären: Sie kann schon mit einem Euro Stammkapital gegründet werden, das nur in Geld und vollständig einzuzahlen ist; von jedem Jahresüberschuss muss sie ein Viertel zurücklegen, bis das Stammkapital auf 25.000 Euro erhöht ist, und der Zusatz „UG (haftungsbeschränkt)“ im Namen zeigt Geschäftspartnern die geringe Kapitalausstattung"
     }
    ]
   },
@@ -1778,7 +1808,7 @@
     {
      "id": "WISO-2-2-4-K6",
      "stufe": 2,
-     "kurz": "die Grundsätze der Firmenbildung erklären: Firmenwahrheit (die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen), Firmenausschließlichkeit (sie muss sich von allen Firmen am selben Ort deutlich unterscheiden) und Firmenbeständigkeit (bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden)"
+     "kurz": "die Grundsätze der Firmenwahrheit und der Firmenbeständigkeit erklären: Die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen, und bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden"
     }
    ]
   },
@@ -1819,12 +1849,7 @@
     {
      "id": "WISO-2-2-5-K5",
      "stufe": 2,
-     "kurz": "die funktionale von der divisionalen Organisation unterscheiden: In der funktionalen ist die zweite Ebene unter der Leitung nach Tätigkeiten gegliedert (Beschaffung, Entwicklung, Vertrieb, Verwaltung), in der divisionalen nach Sparten (Produktgruppen, Kundengruppen oder Regionen), die jeweils eigene Funktionsbereiche haben und weitgehend selbstständig arbeiten"
-    },
-    {
-     "id": "WISO-2-2-5-K6",
-     "stufe": 2,
-     "kurz": "Profitcenter und Costcenter unterscheiden: Ein Profitcenter ist ein Unternehmensbereich mit eigenen Zielen, der für seinen Gewinn verantwortlich ist, weil er Erlöse und Kosten selbst beeinflusst, ein Costcenter hat ebenfalls eigene Ziele, ist aber nur für seine Kosten verantwortlich, weil er keine eigenen Erlöse am Markt erzielt, zum Beispiel die interne IT"
+     "kurz": "die funktionale Organisation erklären: Die Ebene direkt unter der Leitung ist nach Tätigkeiten wie Beschaffung, Entwicklung, Vertrieb und Verwaltung gegliedert, jede Abteilung arbeitet für alle Produkte, und zusätzlich kann ein Produktmanagement für einzelne Produkte zuständig sein; sie ist das Gegenstück zur Spartenorganisation"
     }
    ]
   },
@@ -2593,11 +2618,6 @@
      "id": "WISO-3-4-3-K6",
      "stufe": 2,
      "kurz": "erklären, warum Brandschutztüren geschlossen bleiben und nicht verkeilt werden dürfen"
-    },
-    {
-     "id": "WISO-3-4-3-K7",
-     "stufe": 2,
-     "kurz": "erklären, wie Brände in Serverräumen technisch verhindert oder schon im Entstehen gelöscht werden: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der Raumluft durch zugeführten Stickstoff dauerhaft so niedrig, dass sich kein Feuer entwickeln kann, und kompakte Löschanlagen im Serverschrank erkennen Rauch früh und fluten nur den Schrank mit Löschgas"
     }
    ]
   },
@@ -2843,7 +2863,7 @@
     {
      "id": "WISO-4-2-2-K5",
      "stufe": 2,
-     "kurz": "Verkaufsverpackung (umhüllt die Ware als Verkaufseinheit beim Endverbraucher), Umverpackung (fasst mehrere Verkaufseinheiten zusammen, etwa für das Regal) und Versandverpackung (ermöglicht den Versand an den Endverbraucher, z. B. der Karton im Onlinehandel) unterscheiden und erklären, dass sie systembeteiligungspflichtig sind, wenn sie typischerweise bei privaten Endverbrauchern anfallen – Verpackungen von Lieferungen an andere Unternehmen, etwa Teile an einen Hersteller, dagegen nicht"
+     "kurz": "Verkaufsverpackung (umhüllt die Ware als Verkaufseinheit beim Endverbraucher), Umverpackung (fasst mehrere Verkaufseinheiten zusammen, etwa für das Regal) und Versandverpackung (ermöglicht den Versand an den Endverbraucher, z. B. der Karton im Onlinehandel) unterscheiden; beteiligungspflichtig im dualen System sind sie nur, wenn sie typischerweise bei privaten Endverbrauchern anfallen, Verpackungen von Lieferungen an andere Unternehmen, etwa Teile an einen Hersteller, dagegen nicht"
     }
    ]
   },

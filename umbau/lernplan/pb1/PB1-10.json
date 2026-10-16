@@ -244,6 +244,15 @@
        "herkunft": [
         "buch:GS-4.1.5-S432"
        ]
+      },
+      {
+       "id": "PB1-10-1-2-K8",
+       "text": "Du kannst Social Engineering erklären: Angreifer nutzen menschliche Eigenschaften wie Hilfsbereitschaft, Neugier, Respekt vor Vorgesetzten oder Angst aus, oft in mehreren Schritten über Telefon, E-Mail oder soziale Netzwerke, um an Zugangsdaten oder interne Informationen zu kommen, Schadsoftware einzuschleusen oder eine Überweisung auszulösen, etwa mit einer gefälschten Anweisung der Geschäftsleitung (CEO-Fraud); Phishing ist eine verbreitete Form davon.",
+       "kurz": "Social Engineering: Prinzip und Formen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-4.1.5-S431"
+       ]
       }
      ],
      "baut_auf": [
@@ -334,7 +343,7 @@
       },
       {
        "id": "PB1-10-1-3-K5",
-       "text": "Du kannst begründen, warum eine Anwendung nur anerkannte, aktuell empfohlene Kryptoverfahren aus gepflegten Bibliotheken einsetzt (Orientierung gibt die Technische Richtlinie TR-02102 des BSI) und keine selbst erfundenen, selbst programmierten oder veralteten: Eigenentwicklungen enthalten fast immer Schwachstellen, und auch in bewährten Verfahren und ihren Umsetzungen werden Lücken gefunden, die eine gepflegte Bibliothek per Update schließt.",
+       "text": "Du kannst begründen, warum eine Anwendung nur anerkannte, aktuell empfohlene Kryptoverfahren aus gepflegten Bibliotheken einsetzt (Orientierung gibt eine Technische Richtlinie des BSI) und keine selbst erfundenen, selbst programmierten oder veralteten: Eigenentwicklungen enthalten fast immer Schwachstellen, und auch in bewährten Verfahren und ihren Umsetzungen werden Lücken gefunden, die eine gepflegte Bibliothek per Update schließt.",
        "kurz": "Nur anerkannte Kryptoverfahren und Bibliotheken",
        "stufe": 4,
        "herkunft": [
@@ -445,20 +454,11 @@
       },
       {
        "id": "PB1-10-1-4-K5",
-       "text": "Du kannst begründen, warum gebrochene Hashverfahren wie MD5 nicht mehr für Sicherheitszwecke eingesetzt werden und stattdessen ein Verfahren der SHA-2-Familie wie SHA-256: Bei MD5 lassen sich gezielt zwei verschiedene Eingaben mit gleichem Hashwert erzeugen, sodass eine Fälschung bei Prüfsumme oder Signatur nicht mehr auffällt.",
-       "kurz": "MD5 gebrochen, SHA-256 verwenden",
+       "text": "Du kannst begründen, warum gebrochene Hashverfahren wie MD5 für Prüfsummen und Signaturen nicht mehr eingesetzt werden, sondern ein Verfahren der SHA-2-Familie wie SHA-256: Bei MD5 lassen sich gezielt zwei Eingaben mit gleichem Hashwert erzeugen, sodass eine Fälschung nicht auffällt; Passwörter werden dagegen mit Salt und einem bewusst langsamen Verfahren gespeichert (K4).",
+       "kurz": "Gebrochene Hashverfahren wie MD5",
        "stufe": 4,
        "herkunft": [
         "buch:FS2-2.3.6-S183"
-       ]
-      },
-      {
-       "id": "PB1-10-1-4-K6",
-       "text": "Du kannst erläutern, warum dieselbe Eingabe in jeder Programmiersprache und auf jedem System denselben Hashwert ergibt, sofern sie gleich in Bytes kodiert wird (z. B. UTF-8): Hashfunktionen arbeiten auf Bytes, nicht auf Zeichen; deshalb lässt sich ein Hash, den ein Programm gespeichert hat, in einem anderen prüfen, während eine abweichende Kodierung einen völlig anderen Wert ergibt.",
-       "kurz": "Hashwert und Bytekodierung",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS2-2.3.6-S185"
        ]
       }
      ],
@@ -473,9 +473,17 @@
         "buch:GS-4.1.5"
        ],
        "grund": "RK2: Unterarten von Zertifikaten"
+      },
+      {
+       "text": "Dieselbe Eingabe ergibt in jeder Programmiersprache und auf jedem System denselben Hashwert, wenn sie gleich in Bytes kodiert wird (z. B. UTF-8): Hashfunktionen arbeiten auf Bytes, nicht auf Zeichen. So lässt sich ein gespeicherter Hash in einem anderen Programm prüfen; eine abweichende Kodierung ergibt einen völlig anderen Wert.",
+       "kurz": "Hashwert und Bytekodierung",
+       "quellen": [
+        "buch:FS2-2.3.6"
+       ],
+       "grund": "RK1: aus einem Programmierbeispiel abgeleitetes, sprachnahes Detail (V2-Prüfung PB1-b Nr. 28)"
       }
      ],
-     "hinweis": "Das Lehrbuch begründet die Schwäche von MD5 damit, dass sich aus dem Hash die Originaldaten berechnen ließen; richtig ist: MD5 gilt als gebrochen, weil sich Kollisionen gezielt erzeugen lassen. Das Lehrbuch füllt im Java-Beispiel den SHA-256-Hash auf 32 Hexadezimalstellen auf; richtig sind 64 Stellen (32 Byte). Die Bezeichnungen der Zertifikatsarten sind im Lehrbuch verstümmelt; richtig ist: DV = Domain Validation, OV = Organization Validation, EV = Extended Validation."
+     "hinweis": "Das Lehrbuch begründet die Schwäche von MD5 damit, dass sich aus dem Hash die Originaldaten berechnen ließen; richtig ist: MD5 gilt als gebrochen, weil sich Kollisionen gezielt erzeugen lassen. Das Lehrbuch füllt im Java-Beispiel den SHA-256-Hash auf 32 Hexadezimalstellen auf; richtig sind 64 Stellen (32 Byte). Die Bezeichnungen der Zertifikatsarten sind im Lehrbuch verstümmelt; richtig ist: DV = Domain Validation, OV = Organization Validation, EV = Extended Validation. Das Lehrbuch speichert Passwörter im Beispiel als einfachen SHA-256-Hash; richtig ist ein bewusst langsames Verfahren mit Salt wie bcrypt, scrypt oder Argon2."
     }
    ]
   },
@@ -1305,7 +1313,8 @@
    "buch:FS2-2.3.5": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
    "buch:GS-4.1.5": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
    "buch:FS-1.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-   "buch:FS-2.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 2.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+   "buch:FS-2.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 2.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.3.6": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -1624,6 +1633,17 @@
       "PB1-10-2-2"
      ],
      "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Dieselbe Eingabe ergibt in jeder Programmiersprache und auf jedem System denselben Hashwert, wenn sie gleich in Bytes ko",
+     "quellen": [
+      "buch:FS2-2.3.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -1755,11 +1775,11 @@
      "PB1-10-1-3-K5",
      "PB1-10-1-3-K6",
      "PB1-10-1-4-K5",
-     "PB1-10-1-4-K6",
      "PB1-10-2-2-K4",
      "PB1-10-2-3-K8",
      "PB1-10-2-3-K9",
-     "PB1-10-2-3-K10"
+     "PB1-10-2-3-K10",
+     "PB1-10-1-2-K8"
     ],
     "neue_stichpunkte": [],
     "d6": [
@@ -1773,7 +1793,8 @@
      "PB1-10-1-3",
      "PB1-10-1-4",
      "PB1-10-2-1",
-     "PB1-10-2-2"
+     "PB1-10-2-2",
+     "PB1-10-1-4"
     ],
     "grenzen_gestrichen": [],
     "filter": [],
@@ -1790,7 +1811,8 @@
      "PB1-10-1-4",
      "PB1-10-1-4",
      "PB1-10-1-4",
-     "PB1-10-1-2"
+     "PB1-10-1-2",
+     "PB1-10-1-4"
     ]
    }
   ]

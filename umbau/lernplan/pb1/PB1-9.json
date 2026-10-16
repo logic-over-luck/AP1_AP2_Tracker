@@ -270,7 +270,7 @@
       },
       {
        "id": "PB1-9-1-3-K7",
-       "text": "Du kannst Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, decken bei lückenhafter Spezifikation aber wenig ab und zeigen nicht, wo der Fehler sitzt; White-Box-Testfälle lokalisieren Fehler im Code und prüfen auch nicht spezifizierte Teile und komplexe Algorithmen gründlich, hängen aber am Code, sind erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden.",
+       "text": "Du kannst Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, zeigen aber nur, dass ein Fehler auftritt, nicht wo er im Code sitzt; White-Box-Testfälle grenzen den Fehler im Code ein, sind aber erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden.",
        "kurz": "Black- und White-Box: Zeitpunkt, Pflege, Fehlerort",
        "stufe": 2,
        "herkunft": [
@@ -383,6 +383,18 @@
        "stufe": 2,
        "herkunft": [
         "buch:GS-5.9.1-S630"
+       ]
+      },
+      {
+       "id": "PB1-9-1-4-K6",
+       "text": "Du kannst Testverfahren (wie getestet wird, z. B. statisch oder dynamisch), Testarten (was geprüft wird, z. B. Funktion oder Performance) und Teststufen (in welchem Entwicklungsstand getestet wird, vom Komponenten- bis zum Abnahmetest) unterscheiden; dazu gehört der Grundsatz, dass ein Testobjekt möglichst nicht von seinem Entwickler, sondern von unabhängigen Personen getestet wird, weil der Entwickler eigene Denkfehler leicht übersieht.",
+       "kurz": "Testverfahren, Testarten und Teststufen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S626",
+        "buch:GS-5.9.1-S627",
+        "buch:GS-5.9.1-S629",
+        "buch:GS-5.9.1-S631"
        ]
       }
      ],
@@ -619,9 +631,9 @@
       },
       {
        "id": "PB1-9-1-6-K7",
-       "text": "Du kannst ein Benutzerhandbuch nach Qualitätskriterien beurteilen: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig.",
+       "text": "Du kannst beim Erstellen und Erweitern eines Benutzerhandbuchs Qualitätskriterien anwenden: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig.",
        "kurz": "Qualitätskriterien eines Benutzerhandbuchs",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:FS2-1.6-S106",
         "buch:FS2-1.6-S107",
@@ -1388,7 +1400,8 @@
      "PB1-9-1-6-K7",
      "PB1-9-1-6-K8",
      "PB1-9-1-6-K9",
-     "PB1-9-1-6-K10"
+     "PB1-9-1-6-K10",
+     "PB1-9-1-4-K6"
     ],
     "neue_stichpunkte": [],
     "d6": [

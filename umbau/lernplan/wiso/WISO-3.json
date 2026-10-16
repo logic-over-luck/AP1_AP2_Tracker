@@ -1012,18 +1012,19 @@
        "herkunft": [
         "katalog:WISO.03.07.2"
        ]
-      },
-      {
-       "id": "WISO-3-4-3-K7",
-       "text": "Du kannst erklären, wie Brände in Serverräumen technisch verhindert oder schon im Entstehen gelöscht werden: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der Raumluft durch zugeführten Stickstoff dauerhaft so niedrig, dass sich kein Feuer entwickeln kann, und kompakte Löschanlagen im Serverschrank erkennen Rauch früh und fluten nur den Schrank mit Löschgas.",
-       "kurz": "Brandvermeidung im Serverraum und Serverschrank",
-       "stufe": 2,
-       "herkunft": [
-        "buch:GS-2.10.2-S272"
-       ]
       }
      ],
-     "hinweis": "Früher Stichpunkt WISO-3-5-1. Das Lehrbuch beschreibt den Sauerstoffentzug so, als geschehe er erst bei einem Brand; richtig ist: Sauerstoffreduzierungsanlagen halten den Sauerstoffanteil dauerhaft abgesenkt (vorbeugend), Gaslöschanlagen fluten erst im Brandfall."
+     "hinweis": "Früher Stichpunkt WISO-3-5-1. Das Lehrbuch beschreibt den Sauerstoffentzug so, als geschehe er erst bei einem Brand; richtig ist: Sauerstoffreduzierungsanlagen halten den Sauerstoffanteil dauerhaft abgesenkt (vorbeugend), Gaslöschanlagen fluten erst im Brandfall.",
+     "kuer": [
+      {
+       "text": "Serverräume lassen sich zusätzlich technisch schützen: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der Raumluft mit zugeführtem Stickstoff dauerhaft so niedrig (etwa 15 statt 21 %), dass sich kein Feuer entwickeln kann; kompakte Löschanlagen im Serverschrank erkennen Rauch früh und fluten nur diesen Schrank mit Löschgas.",
+       "kurz": "Brandvermeidung im Serverraum und Serverschrank",
+       "quellen": [
+        "buch:GS-2.10.2"
+       ],
+       "grund": "RK2: Rechenzentrumstechnik ist ein Unterthema von WISO.03.07.1 (Brandursachen); ein Oberbegriff trägt nur eine Ebene (V2-Prüfung WISO Nr. 26)"
+      }
+     ]
     },
     {
      "id": "WISO-3-4-4",
@@ -1737,6 +1738,17 @@
       "WISO-3-3-2"
      ],
      "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Serverräume lassen sich zusätzlich technisch schützen: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der R",
+     "quellen": [
+      "buch:GS-2.10.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-3-4-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung WISO"
     }
    ]
   },
@@ -1809,8 +1821,7 @@
     "neue_aussagen": [
      "WISO-3-1-1-K9",
      "WISO-3-1-1-K10",
-     "WISO-3-1-1-K11",
-     "WISO-3-4-3-K7"
+     "WISO-3-1-1-K11"
     ],
     "neue_stichpunkte": [],
     "d6": [
@@ -1820,7 +1831,8 @@
      "WISO-3-2-2",
      "WISO-3-2-2",
      "WISO-3-2-3",
-     "WISO-3-3-2"
+     "WISO-3-3-2",
+     "WISO-3-4-3"
     ],
     "grenzen_gestrichen": [],
     "filter": [],

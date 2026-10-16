@@ -85,7 +85,8 @@
        "kurz": "AGB: Vor- und Nachteile, Vorrang der Einzelabrede",
        "stufe": 2,
        "herkunft": [
-        "buch:GS-2.9.4-S264"
+        "buch:GS-2.9.4-S264",
+        "buch:GS-2.9.4-S265"
        ]
       }
      ],
@@ -200,8 +201,8 @@
       },
       {
        "id": "PB1-2-1-2-K6",
-       "text": "Du kannst Governance und Compliance unterscheiden: Governance ist das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance ist das tatsächliche Einhalten dieser Regeln und der Gesetze durch die Beschäftigten.",
-       "kurz": "Governance und Compliance",
+       "text": "Du kannst Governance erklären: das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance (K1) ist das tatsächliche Einhalten dieser Regeln und der Gesetze.",
+       "kurz": "Governance als Rahmen der Compliance",
        "stufe": 2,
        "herkunft": [
         "buch:FS-1.1.4-S25"
@@ -358,8 +359,7 @@
        "kurz": "Regeln der Visualisierung",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2a.01.03.3",
-        "buch:FS2-4.2.5-S281"
+        "katalog:AP2a.01.03.3"
        ]
       },
       {
@@ -376,20 +376,12 @@
       },
       {
        "id": "PB1-2-1-4-K5",
-       "text": "Du kannst über Säule, Linie und Kreis hinaus die passende Diagrammart auswählen: Netzdiagramm, um mehrere Objekte über viele Kriterien zu vergleichen, Streudiagramm, um den Zusammenhang zweier Merkmale je Datensatz zu zeigen, Blasendiagramm, wenn als dritte Größe die Blasengröße hinzukommt, und Wortwolke, um die Häufigkeit von Wörtern in Freitexten sichtbar zu machen.",
+       "text": "Du kannst über Säule, Linie und Kreis hinaus weitere Diagrammarten passend einsetzen: Netzdiagramm, um mehrere Objekte über viele Kriterien zu vergleichen, Streudiagramm, um den Zusammenhang zweier Merkmale je Datensatz zu zeigen, Blasendiagramm, wenn als dritte Größe die Blasengröße hinzukommt, und Wortwolke, um die Häufigkeit von Wörtern in Freitexten sichtbar zu machen.",
        "kurz": "Netz-, Streu-, Blasendiagramm und Wortwolke",
-       "stufe": 4,
-       "herkunft": [
-        "buch:FS2-3.2.2-S229"
-       ]
-      },
-      {
-       "id": "PB1-2-1-4-K6",
-       "text": "Du kannst Mittelwert (Summe durch Anzahl), Median (mittlerer Wert der sortierten Reihe) und Spannweite (größter minus kleinster Wert) einer Messreihe berechnen und daraus ablesen, warum der Median bei Ausreißern die typische Lage besser beschreibt als der Mittelwert.",
-       "kurz": "Mittelwert, Median und Spannweite",
        "stufe": 3,
        "herkunft": [
-        "buch:FS2-3.2.2-S230"
+        "katalog:AP2a.01.03.2",
+        "buch:FS2-3.2.2-S229"
        ]
       },
       {
@@ -398,7 +390,8 @@
        "kurz": "Präsentation planen: Ziel, Zielgruppe, Rahmen",
        "stufe": 3,
        "herkunft": [
-        "buch:GS-1.5.2-S112"
+        "buch:GS-1.5.2-S112",
+        "buch:GS-1.5.2-S113"
        ]
       }
      ],
@@ -415,6 +408,14 @@
       }
      ],
      "kuer": [
+      {
+       "text": "Mittelwert (Summe durch Anzahl), Median (mittlerer Wert der sortierten Reihe) und Spannweite (größter minus kleinster Wert) fassen eine Messreihe in wenigen Zahlen zusammen; bei Ausreißern beschreibt der Median die typische Lage besser als der Mittelwert, weil ein einzelner extremer Wert ihn kaum verschiebt.",
+       "kurz": "Mittelwert, Median und Spannweite",
+       "quellen": [
+        "buch:FS2-3.2.2"
+       ],
+       "grund": "RK4: Kapitel 3 des Bands FS2 gehört zu Lernfeld 10c (Daten- und Prozessanalyse); Lagemaße nennt kein Katalog-Baustein (D8). Bis zur V2-Prüfung Pflicht als PB1-2-1-4-K6."
+      },
       {
        "text": "Varianz und Standardabweichung messen, wie stark Werte um den Mittelwert streuen: Die Varianz mittelt die quadrierten Abweichungen vom Mittelwert, die Standardabweichung ist ihre Wurzel und hat dieselbe Einheit wie die Werte. Eine kleine Standardabweichung heißt, dass die Werte eng beieinanderliegen.",
        "kurz": "Varianz und Standardabweichung",
@@ -715,6 +716,17 @@
      "notiz": "Regelwerk v2.x, D8/RK1"
     },
     {
+     "thema": "Mittelwert (Summe durch Anzahl), Median (mittlerer Wert der sortierten Reihe) und Spannweite (größter minus kleinster We",
+     "quellen": [
+      "buch:FS2-3.2.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-2-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, RK4/D8; V2-Prüfung PB1-a Nr. 2: bisher Pflicht PB1-2-1-4-K6"
+    },
+    {
      "thema": "Varianz und Standardabweichung messen, wie stark Werte um den Mittelwert streuen: Die Varianz mittelt die quadrierten Ab",
      "quellen": [
       "buch:FS2-3.2.2"
@@ -764,16 +776,14 @@
      "PB1-2-1-1-K6",
      "PB1-2-1-2-K6",
      "PB1-2-1-4-K5",
-     "PB1-2-1-4-K6",
      "PB1-2-1-4-K7"
     ],
     "neue_stichpunkte": [],
-    "d6": [
-     "PB1-2-1-4-K3"
-    ],
+    "d6": [],
     "kuer": [
      "PB1-2-1-1",
      "PB1-2-1-2",
+     "PB1-2-1-4",
      "PB1-2-1-4"
     ],
     "grenzen_gestrichen": [],
@@ -792,6 +802,12 @@
     ],
     "hinweise": [
      "PB1-2-1-1"
+    ],
+    "aussagen_gestrichen": [
+     {
+      "id": "PB1-2-1-4-K6",
+      "grund": "V2-Prüfung PB1-a Nr. 2: zur Kür (RK4 fachrichtung, D8); ID nicht wiederverwenden"
+     }
     ]
    }
   ]

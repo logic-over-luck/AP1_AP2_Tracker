@@ -27,16 +27,16 @@ Teilaufgaben: 2022S-WISO-A17, 2023S-WISO-A27, 2025S-WISO-A1, 2024S-WISO-A9, 2023
 | K7 | Du kannst Unternehmen und Betrieb unterscheiden: Das Unternehmen ist die rechtlich-wirtschaftliche Einheit, die Gewinn anstrebt, Verträge schließt, Bücher führt und Steuern zahlt; der Betrieb ist die organisatorisch-technische Einheit, in der die Leistung tatsächlich erstellt wird, und ein Unternehmen kann mehrere Betriebe haben. | 2 | buch:GS-1.3.2-S46 |
 | K8 | Du kannst Marktarten unterscheiden: Gütermärkte für Konsum- und Investitionsgüter gegenüber Faktormärkten für Arbeit, Boden und Kapital, freie Märkte (jeder darf teilnehmen) gegenüber geschlossenen mit beschränktem Zugang sowie den vollkommenen Markt als Modell (gleichartige Güter, volle Markttransparenz, keine Vorlieben für bestimmte Anbieter, sofortige Reaktion aller Teilnehmer) gegenüber dem unvollkommenen Markt der Wirklichkeit. | 2 | buch:GS-1.4.2-S96 |
 | K9 | Du kannst Angebotsbreite und Angebotstiefe einer Produktpalette unterscheiden: Die Breite ist die Zahl verschiedener Produktgruppen, zum Beispiel Notebooks, Monitore, Netzwerktechnik und Wartungsverträge, die Tiefe die Zahl der Varianten innerhalb einer Gruppe, zum Beispiel zwölf Notebookmodelle mit unterschiedlicher Ausstattung. | 2 | buch:GS-1.4.2-S104 |
+| K10 | Du kannst den Wirtschaftskreislauf erklären: Haushalte stellen den Unternehmen Arbeit und andere Produktionsfaktoren zur Verfügung und erhalten dafür Einkommen, mit dem sie deren Güter kaufen, sodass Güter und Leistungen in die eine und Geld in die andere Richtung fließen; im erweiterten Modell kommen Banken (Sparen und Kredite), der Staat (Steuern, Transferleistungen, Subventionen) und das Ausland (Export und Import) hinzu. | 2 | buch:GS-1.4.1-S93, buch:GS-1.4.1-S94 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Ein IT-Systemhaus steht zwischen Herstellern und Kunden: Es nimmt den Bedarf beim Kunden auf, beschafft und installiert passende Hard- und Software und betreut sie danach vor Ort oder per Fernwartung, oft bis zur Übernahme der gesamten ausgelagerten IT. _(buch:GS-1.3.1)_
-- Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und höchstens 50 Mio. Euro Jahresumsatz; sie stellen in Deutschland über 99 % der Unternehmen, gut die Hälfte der Beschäftigten und den größten Teil der Ausbildungsplätze. _(buch:GS-1.3.2)_
+- Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und entweder höchstens 50 Mio. Euro Jahresumsatz oder höchstens 43 Mio. Euro Bilanzsumme; sie stellen in Deutschland über 99 % der Unternehmen, gut die Hälfte der Beschäftigten und den größten Teil der Ausbildungsplätze. _(buch:GS-1.3.2)_
 - Güter unterscheidet man in materielle und immaterielle (Dienstleistungen, Rechte, Lizenzen), Konsum- und Investitionsgüter, komplementäre (Drucker und Toner) und substitutive (Laser- statt Tintenstrahldrucker), freie und knappe wirtschaftliche sowie private und öffentliche Güter, von deren Nutzung niemand ausgeschlossen wird. _(buch:GS-1.3.6)_
-- Im einfachen Wirtschaftskreislauf stellen Haushalte den Unternehmen Arbeit, Boden und Kapital zur Verfügung und kaufen mit dem erhaltenen Einkommen deren Konsumgüter – Güter- und Geldstrom laufen gegeneinander. Der erweiterte Kreislauf ergänzt Banken (Ersparnisse, Kredite), den Staat (Steuern, Transferleistungen, Subventionen) und das Ausland (Export, Import). _(buch:GS-1.4.1)_
 - Im IT-Markt liefert ein Erstausrüster (OEM) Komponenten, die andere Hersteller in ihre Produkte einbauen, ein Auftragsfertiger (ODM) entwickelt und fertigt Geräte in großen Stückzahlen für andere Unternehmen, und ein Systemintegrator passt Produkte verschiedener Hersteller an und bindet sie in die IT-Landschaft des Kunden ein. _(buch:GS-2.1.4)_
 
-_Hinweis:_ Marktformen (Monopol, Oligopol, Polypol; 2025S-WISO-A2) stehen in AP1-2-1-1.
+_Hinweis:_ Marktformen (Monopol, Oligopol, Polypol; 2025S-WISO-A2) stehen in AP1-2-1-1. Das Lehrbuch nennt für KMU nur die Umsatzgrenze; nach der EU-Definition genügt statt des Umsatzes bis 50 Mio. Euro auch eine Bilanzsumme bis 43 Mio. Euro.
 
 #### WISO-2-1-2 Betriebliche und gesamtwirtschaftliche Arbeitsteilung, Globalisierung
 
@@ -137,12 +137,14 @@ Teilaufgaben: 2021W-WISO-A12, 2022W-WISO-A2, 2023S-WISO-A15, 2023W-WISO-A19, 202
 | K7 | Du kannst die eingetragene Genossenschaft (eG) erklären: Sie braucht mindestens drei Mitglieder, fördert vor allem den Erwerb oder die Wirtschaft ihrer Mitglieder, haftet für ihre Schulden nur mit dem Genossenschaftsvermögen und wird ins Genossenschaftsregister eingetragen. | 2 | katalog:WISO.02.02, beleg:2023S-WISO-A23, beleg:2023W-WISO-A15 |
 | K8 | Du kannst einer Gründung mit Vorgaben zu Zahl der Gründer, Geschäftsführung, Haftung und Kapital die passende Rechtsform zuordnen und die übrigen an je einem Merkmal ausschließen, zum Beispiel zwei Gründer, beide Geschäftsführer, beschränkte Haftung, 40.000 Euro Kapital: GmbH (nicht AG mit Vorstand und Börse, nicht KG oder GbR mit persönlicher Haftung, nicht eG mit mindestens drei Mitgliedern). | 2 | katalog:WISO.02.02, katalog:WISO.02.02.3, beleg:2023W-WISO-A15 |
 | K9 | Du kannst die Besteuerung des Gewinns nach Rechtsform unterscheiden: Beim Einzelunternehmen und bei Personengesellschaften versteuert jeder Inhaber seinen Gewinnanteil mit seiner persönlichen Einkommensteuer, eine GmbH oder AG ist als juristische Person selbst steuerpflichtig und zahlt Körperschaftsteuer, und ausgeschüttete Gewinne versteuern die Gesellschafter zusätzlich. | 2 | buch:GS-1.3.4-S77 |
+| K10 | Du kannst erklären, nach welchen Kriterien Gründer eine Rechtsform wählen: Risiko und Einfluss (wer haftet, wer leitet und entscheidet mit, wer wie am Gewinn und Verlust beteiligt ist), Geld (wie leicht sich Eigen- und Fremdkapital beschaffen lassen, wie hoch die Steuern sind, was Gründung, Buchführung und die Offenlegung des Jahresabschlusses kosten) und Beweglichkeit (wie einfach Gesellschafter ein- und austreten und das Unternehmen verkauft oder übergeben werden kann). | 2 | buch:GS-1.3.4-S77 |
+| K11 | Du kannst die Unternehmergesellschaft (haftungsbeschränkt) als Sonderform der GmbH erklären: Sie kann schon mit einem Euro Stammkapital gegründet werden, das nur in Geld und vollständig einzuzahlen ist; von jedem Jahresüberschuss muss sie ein Viertel zurücklegen, bis das Stammkapital auf 25.000 Euro erhöht ist, und der Zusatz „UG (haftungsbeschränkt)“ im Namen zeigt Geschäftspartnern die geringe Kapitalausstattung. | 2 | buch:GS-1.3.4-S80 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
-- Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG zusätzlich die Handelsregistereintragung, GmbH und AG Notar, Register und laufend mehr Verwaltung. Die Unternehmergesellschaft (haftungsbeschränkt) ist eine GmbH-Variante ab 1 Euro Stammkapital, nur mit Bareinlage, die ein Viertel ihres Jahresgewinns zurücklegen muss, bis 25.000 Euro erreicht sind, und den Zusatz „UG (haftungsbeschränkt)“ führen muss. _(buch:GS-1.3.4)_
+- Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG zusätzlich die Handelsregistereintragung, GmbH und AG Notar, Register und laufend mehr Verwaltung. _(buch:GS-1.3.4)_
 
-**Grenze:** Unternehmergesellschaft (haftungsbeschränkt), KGaA und SE gehören nicht dazu. — _Der Katalog nennt als Kapitalgesellschaften GmbH und AG als Beispiele (WISO.02.02.3); weitere Formen wären nach P-BEISPIELLISTE nur mit zwei unabhängigen Hinweisquellen Puffer, sonst Kür (G3)._ (WISO.02.02.3)
+**Grenze:** KGaA und SE gehören nicht dazu. — _Der Katalog nennt als Kapitalgesellschaften GmbH und AG als Beispiele (WISO.02.02.3); weitere Formen wären nach P-BEISPIELLISTE nur mit zwei unabhängigen Hinweisquellen Puffer, sonst Kür. Das Lehrbuch behandelt KGaA und SE nicht._ (WISO.02.02.3)
 
 _Hinweis:_ Personengesellschaften (Haftung, Geschäftsführung) stehen in WISO-2-2-1; K8 setzt sie voraus.
 
@@ -175,7 +177,7 @@ Teilaufgaben: 2023W-WISO-A5, 2022W-WISO-A24, 2025W-WISO-A18, 2024S-WISO-A15, 202
 | K3 | Du kannst einen Auszug aus dem Handelsregister von anderen Registern wie Grundbuch oder Vereinsregister unterscheiden und ihm Firma, Sitz, Stamm- oder Grundkapital, Gesellschafter und Prokura entnehmen. _(vorgegeben: Registerauszug im Aufgabentext)_ | 2 | katalog:ZB.wiso-kaufmann, beleg:2024S-WISO-A15 |
 | K4 | Du kannst die Firma erklären: der Name, unter dem ein Kaufmann seine Geschäfte betreibt; sie muss die Rechtsform nennen (also „EcoTech Services GmbH“, nicht nur „EcoTech Services“) und sich von anderen Firmen am selben Ort deutlich unterscheiden. | 2 | katalog:ZB.wiso-kaufmann, beleg:2025S-WISO-A21, beleg:2025W-WISO-A19 |
 | K5 | Du kannst Personen-, Sach- und Fantasiefirma unterscheiden: Die Personenfirma enthält den Namen eines Inhabers oder Gesellschafters, die Sachfirma den Gegenstand des Unternehmens, die Fantasiefirma einen frei erfundenen Namen; Mischformen sind üblich, und ein nicht eingetragener Kleingewerbetreibender führt keine Firma, sondern tritt mit Vor- und Nachnamen auf, höchstens ergänzt um eine Geschäftsbezeichnung. | 2 | buch:GS-1.3.4-S75 |
-| K6 | Du kannst die Grundsätze der Firmenbildung erklären: Firmenwahrheit (die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen), Firmenausschließlichkeit (sie muss sich von allen Firmen am selben Ort deutlich unterscheiden) und Firmenbeständigkeit (bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden). | 2 | buch:GS-1.3.4-S75 |
+| K6 | Du kannst die Grundsätze der Firmenwahrheit und der Firmenbeständigkeit erklären: Die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen, und bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden. | 2 | buch:GS-1.3.4-S75 |
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Kaufmann und Handelsregister stehen nicht im Katalog, kamen aber in fünf Prüfungen vor. Prokura und ihre Eintragung ins Handelsregister stehen in AP1-2-4-3.
 
@@ -190,15 +192,15 @@ Teilaufgaben: 2021W-WISO-A13, 2022S-WISO-A21, 2023W-WISO-A21, 2024S-WISO-A21, 20
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
 | K1 | Du kannst an einem Organigramm das Stabliniensystem (Stabsstellen seitlich an einer Instanz) und die Spartenorganisation (Gliederung nach Produkten, Kunden oder Regionen) von Einlinien-, Mehrlinien- und Matrixsystem unterscheiden. | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, beleg:2021W-WISO-A13, beleg:2025W-WISO-A23 |
-| K2 | Du kannst das Stabliniensystem erklären: ein Liniensystem mit Stabsstellen, die die Leitung beraten und Entscheidungen vorbereiten, aber keine Weisungsbefugnis haben, zum Beispiel eine Rechtsabteilung. | 2 | katalog:WISO.02.03.1, beleg:2025W-WISO-A24, beleg:2021W-WISO-A13, buch:GS-1.3.4-S68 |
-| K3 | Du kannst die Spartenorganisation erklären: Das Unternehmen ist nach Produkten, Kundengruppen oder Regionen gegliedert, und jede Sparte hat ihre eigenen Funktionsbereiche. | 2 | katalog:WISO.02.03.2 |
+| K2 | Du kannst das Stabliniensystem erklären: ein Liniensystem mit Stabsstellen, die die Leitung beraten und Entscheidungen vorbereiten, aber keine Weisungsbefugnis haben, zum Beispiel eine Rechtsabteilung. | 2 | katalog:WISO.02.03.1, beleg:2025W-WISO-A24, beleg:2021W-WISO-A13, buch:GS-1.3.4-S73 |
+| K3 | Du kannst die Spartenorganisation erklären: Das Unternehmen ist nach Produkten, Kundengruppen oder Regionen gegliedert, und jede Sparte hat ihre eigenen Funktionsbereiche. | 2 | katalog:WISO.02.03.2, buch:GS-1.3.4-S72 |
 | K4 | Du kannst den Leitungssystemen ihre Vor- und Nachteile zuordnen: Stabliniensystem (Entlastung der Leitung durch das Spezialwissen der Stäbe gegenüber Konflikten zwischen Stab und Linie), Spartenorganisation (Marktnähe der Sparten gegenüber Doppelarbeit in den Funktionsbereichen), Mehrliniensystem (kurze Wege und Fachwissen der Vorgesetzten gegenüber uneinheitlicher Führung und Kompetenzkonflikten), Matrixorganisation (hoher Abstimmungs- und Kommunikationsbedarf, verlangt Teamfähigkeit). | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, katalog:WISO.02.03.3, beleg:2021W-WISO-A13 |
-| K5 | Du kannst die funktionale von der divisionalen Organisation unterscheiden: In der funktionalen ist die zweite Ebene unter der Leitung nach Tätigkeiten gegliedert (Beschaffung, Entwicklung, Vertrieb, Verwaltung), in der divisionalen nach Sparten (Produktgruppen, Kundengruppen oder Regionen), die jeweils eigene Funktionsbereiche haben und weitgehend selbstständig arbeiten. | 2 | buch:GS-1.3.4-S71 |
-| K6 | Du kannst Profitcenter und Costcenter unterscheiden: Ein Profitcenter ist ein Unternehmensbereich mit eigenen Zielen, der für seinen Gewinn verantwortlich ist, weil er Erlöse und Kosten selbst beeinflusst, ein Costcenter hat ebenfalls eigene Ziele, ist aber nur für seine Kosten verantwortlich, weil er keine eigenen Erlöse am Markt erzielt, zum Beispiel die interne IT. | 2 | buch:GS-1.3.4-S72 |
+| K5 | Du kannst die funktionale Organisation erklären: Die Ebene direkt unter der Leitung ist nach Tätigkeiten wie Beschaffung, Entwicklung, Vertrieb und Verwaltung gegliedert, jede Abteilung arbeitet für alle Produkte, und zusätzlich kann ein Produktmanagement für einzelne Produkte zuständig sein; sie ist das Gegenstück zur Spartenorganisation. | 2 | buch:GS-1.3.4-S71 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Je weniger Managementebenen zwischen Geschäftsleitung und ausführender Ebene liegen, desto kürzer sind Entscheidungs- und Informationswege: Flache Hierarchien (Lean Management) stärken Eigenverantwortung und Innovation, steile Hierarchien mit vielen Ebenen verlängern die Wege und bremsen Entscheidungen. _(buch:GS-1.3.4)_
+- Innerhalb von Sparten oder anderen Bereichen kann ein Unternehmen Profitcenter bilden, die eigene Ziele haben und für ihren Gewinn verantwortlich sind, weil sie Erlöse und Kosten selbst beeinflussen, und Costcenter wie die interne IT, die nur ein Kostenbudget verantworten, weil sie keine eigenen Erlöse am Markt erzielen. _(buch:GS-1.3.4)_
 
 _Hinweis:_ Einlinien-, Mehrlinien- und Matrixorganisation (Erkennen am Organigramm, Unterschiede, je einen Vor- und Nachteil nennen) stehen in AP1-2-4-2; damit lösen sich 2022S-WISO-A21, 2023W-WISO-A21 und 2024S-WISO-A21. Das Zuordnen von Vor- und Nachteilen zu Mehrlinien- und Matrixsystem (2021W-WISO-A13) geht darüber hinaus und steht in K4. Früher Stichpunkt WISO-2-3-1.
 
@@ -324,7 +326,7 @@ Teilaufgaben: 2022S-WISO-A20, 2023W-WISO-A23, 2024S-WISO-A22, 2025W-WISO-A28
 - Ein Konsortium ist ein befristeter Zusammenschluss selbstständiger Unternehmen für ein Großvorhaben oder einen gemeinsamen Standard, eine strategische Allianz eine dauerhafte Partnerschaft für gemeinsame Ziele, etwa als zertifizierter Partner eines Softwareherstellers. Beim Franchising überlässt der Franchisegeber selbstständigen Franchisenehmern gegen Gebühr Geschäftskonzept, Marke und Marketing und macht ihnen dafür verbindliche Vorgaben. _(buch:GS-1.3.2)_
 - Marktbeherrschend ist ein Unternehmen ohne wesentlichen Wettbewerb oder mit überragender Marktstellung, vermutet ab 40 % Marktanteil; verboten ist nicht die Marktmacht selbst, sondern ihr Missbrauch, etwa überhöhte Preise oder das Behindern von Wettbewerbern, den das Bundeskartellamt verfolgt. _(buch:GS-1.4.2)_
 
-**Grenze:** Einzelheiten des Kartellrechts (GWB) und der Fusionskontrolle, etwa Schwellenwerte, Fristen oder Ausnahmetatbestände, gehören nicht dazu. — _Der Katalog nennt Kartell und Fusion ohne Operator (WISO.02.04.2, WISO.02.04.3: Stufe 2, erkennen und erklären); Rechtsdetails gehen darüber hinaus (G3) und sind in Auswahlaufgaben ohne Hilfsmittel kaum abfragbar (G4)._ (WISO.02.04.2, WISO.02.04.3)
+**Grenze:** Einzelheiten des Kartellrechts (GWB) und der Fusionskontrolle, etwa Schwellenwerte, Fristen oder Ausnahmetatbestände, gehören nicht dazu. — _Der Katalog nennt Kartell und Fusion ohne Operator (WISO.02.04.2, WISO.02.04.3: Stufe 2, erkennen und erklären); Schwellenwerte, Fristen und Ausnahmetatbestände sind in Auswahlaufgaben ohne Hilfsmittel kaum abfragbar (G4). Was das Lehrbuch dazu bringt (Marktbeherrschung), steht als Kür._ (WISO.02.04.2, WISO.02.04.3)
 
 _Hinweis:_ 2024S-WISO-A22 fragt nach einem „anmeldepflichtigen“ Kartell; die IHK-Lösung (Normen- und Typenkartell) gibt die Rechtslage vor 2005 wieder. Seitdem gibt es keine Anmeldepflicht mehr; Unternehmen prüfen selbst, ob eine Absprache ausnahmsweise erlaubt ist (P35 Nr. 7 sinngemäß).
 
@@ -399,11 +401,11 @@ _Hinweis:_ Handelsregister beim Amtsgericht: WISO-2-2-4-K1; Gewerbeaufsicht und 
 
 ## Alt → neu
 
-Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 30 neu.
+Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 32 neu.
 
 Stichpunkte: 14 alt, 16 neu (WISO-2-1-4, WISO-2-2-4, WISO-2-2-5, WISO-2-2-6, WISO-2-4-3).
 
-Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-1-K7, WISO-2-1-1-K8, WISO-2-1-1-K9, WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-1-4-K5, WISO-2-2-1-K7, WISO-2-2-1-K8, WISO-2-2-1-K9, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-2-K9, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-2-4-K5, WISO-2-2-4-K6, WISO-2-2-5-K5, WISO-2-2-5-K6, WISO-2-2-6-K5, WISO-2-2-6-K6, WISO-2-4-1-K7, WISO-2-4-2-K6, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3, WISO-2-4-3-K4, WISO-2-5-1-K7, WISO-2-5-1-K8.
+Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-1-K7, WISO-2-1-1-K8, WISO-2-1-1-K9, WISO-2-1-1-K10, WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-1-4-K5, WISO-2-2-1-K7, WISO-2-2-1-K8, WISO-2-2-1-K9, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-2-K9, WISO-2-2-2-K10, WISO-2-2-2-K11, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-2-4-K5, WISO-2-2-4-K6, WISO-2-2-5-K5, WISO-2-2-6-K5, WISO-2-2-6-K6, WISO-2-4-1-K7, WISO-2-4-2-K6, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3, WISO-2-4-3-K4, WISO-2-5-1-K7, WISO-2-5-1-K8.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -497,15 +499,15 @@ Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage 
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 19, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 2, Puffer 0, Kür 19, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
 | MoPeG: eingetragene GbR (eGbR) | pruefer:wiso-2026-10 | Kür | WISO-2-2-1 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 | Ein IT-Systemhaus steht zwischen Herstellern und Kunden: Es nimmt den Bedarf beim Kunden auf, beschafft und installiert  | buch:GS-1.3.1 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
-| Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und hö | buch:GS-1.3.2 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und en | buch:GS-1.3.2 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
 | Güter unterscheidet man in materielle und immaterielle (Dienstleistungen, Rechte, Lizenzen), Konsum- und Investitionsgüt | buch:GS-1.3.6 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
-| Im einfachen Wirtschaftskreislauf stellen Haushalte den Unternehmen Arbeit, Boden und Kapital zur Verfügung und kaufen m | buch:GS-1.4.1 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| Wirtschaftskreislauf | buch:GS-1.4.1, podcast:themen-wiso | Kern | WISO-2-1-1-K10 | V2-Prüfung WISO Nr. 22: Kür wird Pflicht (RK1 a/c, Oberbegriff WISO.02.01.2 Gesamtwirtschaft); der IT-Berufe-Podcast nennt das Thema als WiSo-Schlagwort (Winter 2015/16) |
 | Im IT-Markt liefert ein Erstausrüster (OEM) Komponenten, die andere Hersteller in ihre Produkte einbauen, ein Auftragsfe | buch:GS-2.1.4 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
 | In der stillen Gesellschaft beteiligt sich jemand mit einer Einlage am Handelsgewerbe eines anderen, ohne nach außen auf | buch:GS-1.3.4 | Kür | WISO-2-2-1 | Regelwerk v2.x, D8/RK1 |
 | Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG  | buch:GS-1.3.4 | Kür | WISO-2-2-2 | Regelwerk v2.x, D8/RK1 |
@@ -520,6 +522,8 @@ Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 19, Auße
 | Neben dem Gewinn muss ein Unternehmen jederzeit zahlungsfähig bleiben (Liquidität), denn Zahlungsunfähigkeit führt zur I | buch:GS-1.3.3 | Kür | WISO-2-4-2 | Regelwerk v2.x, D8/RK1 |
 | Ein Konsortium ist ein befristeter Zusammenschluss selbstständiger Unternehmen für ein Großvorhaben oder einen gemeinsam | buch:GS-1.3.2 | Kür | WISO-2-5-1 | Regelwerk v2.x, D8/RK1 |
 | Marktbeherrschend ist ein Unternehmen ohne wesentlichen Wettbewerb oder mit überragender Marktstellung, vermutet ab 40 % | buch:GS-1.4.2 | Kür | WISO-2-5-1 | Regelwerk v2.x, D8/RK1 |
+| Unternehmergesellschaft (haftungsbeschränkt) | buch:GS-1.3.4 | Kern | WISO-2-2-2-K11 | V2-Prüfung WISO Nr. 19: GmbH-Variante, Grenze gekürzt (D3) |
+| Innerhalb von Sparten oder anderen Bereichen kann ein Unternehmen Profitcenter bilden, die eigene Ziele haben und für ih | buch:GS-1.3.4 | Kür | WISO-2-2-5 | Regelwerk v2.x, D8/RK1; V2-Prüfung WISO |
 
 ## Geschwister-Prüfung (R4)
 

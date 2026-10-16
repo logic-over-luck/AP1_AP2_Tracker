@@ -242,7 +242,10 @@ Teilaufgaben:
 | K2 | Du kannst typischen Brandursachen in Büro und Serverraum die passende Vorbeugung zuordnen: Wärmegeräte → nach Gebrauch ausschalten, nichts Brennbares daneben lagern; überlastete Mehrfachsteckdosen → nicht hintereinanderstecken; beschädigte Akkus, Geräte und Kabel → aus dem Betrieb nehmen; verstellte Lüftungsöffnungen → freihalten. | 2 | katalog:WISO.03.07.1, katalog:WISO.03.07.1.1 |
 | K3 | Du kannst erklären, was die Brandschutzordnung ist: die betrieblichen Regeln zur Verhütung von Bränden und zum Verhalten im Brandfall. | 2 | katalog:WISO.03.07.2 |
 | K6 | Du kannst erklären, warum Brandschutztüren geschlossen bleiben und nicht verkeilt werden dürfen. | 2 | katalog:WISO.03.07.2 |
-| K7 | Du kannst erklären, wie Brände in Serverräumen technisch verhindert oder schon im Entstehen gelöscht werden: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der Raumluft durch zugeführten Stickstoff dauerhaft so niedrig, dass sich kein Feuer entwickeln kann, und kompakte Löschanlagen im Serverschrank erkennen Rauch früh und fluten nur den Schrank mit Löschgas. | 2 | buch:GS-2.10.2-S272 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Serverräume lassen sich zusätzlich technisch schützen: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der Raumluft mit zugeführtem Stickstoff dauerhaft so niedrig (etwa 15 statt 21 %), dass sich kein Feuer entwickeln kann; kompakte Löschanlagen im Serverschrank erkennen Rauch früh und fluten nur diesen Schrank mit Löschgas. _(buch:GS-2.10.2)_
 
 _Hinweis:_ Früher Stichpunkt WISO-3-5-1. Das Lehrbuch beschreibt den Sauerstoffentzug so, als geschehe er erst bei einem Brand; richtig ist: Sauerstoffreduzierungsanlagen halten den Sauerstoffanteil dauerhaft abgesenkt (vorbeugend), Gaslöschanlagen fluten erst im Brandfall.
 
@@ -326,11 +329,11 @@ _Hinweis:_ Früher Stichpunkt WISO-3-5-2.
 
 ## Alt → neu
 
-Können-Aussagen: 71 alt → 5 übernommen, 33 angepasst, 21 verschoben, 12 gestrichen; 13 neu.
+Können-Aussagen: 71 alt → 5 übernommen, 33 angepasst, 21 verschoben, 12 gestrichen; 12 neu.
 
 Stichpunkte: 13 alt, 13 neu (WISO-3-1-3, WISO-3-2-3, WISO-3-4-3, WISO-3-4-4).
 
-Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage verschoben), 29 entfallen, 0 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-3-1-1-K7, WISO-3-1-1-K8, WISO-3-1-1-K9, WISO-3-1-1-K10, WISO-3-1-1-K11, WISO-3-1-3-K2, WISO-3-1-3-K3, WISO-3-2-1-K6, WISO-3-2-3-K3, WISO-3-2-3-K4, WISO-3-2-3-K5, WISO-3-4-3-K7, WISO-3-4-4-K7.
+Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage verschoben), 29 entfallen, 0 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-3-1-1-K7, WISO-3-1-1-K8, WISO-3-1-1-K9, WISO-3-1-1-K10, WISO-3-1-1-K11, WISO-3-1-3-K2, WISO-3-1-3-K3, WISO-3-2-1-K6, WISO-3-2-3-K3, WISO-3-2-3-K4, WISO-3-2-3-K5, WISO-3-4-4-K7.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -419,7 +422,7 @@ Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage 
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 9, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 10, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
@@ -432,6 +435,7 @@ Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 9, Außen
 | Lärm wird als Schalldruckpegel in dB(A) gemessen, also auf das menschliche Gehör bezogen; für konzentrierte Büroarbeit s | buch:GS-2.2.1 | Kür | WISO-3-2-2 | Regelwerk v2.x, D8/RK1 |
 | Laserdrucker und Kopierer können Ozon und Feinstaub aus dem Toner abgeben, meist in geringen Mengen. Vorbeugen lässt sic | buch:GS-2.4.10 | Kür | WISO-3-2-3 | Regelwerk v2.x, D8/RK1 |
 | Das Produktsicherheitsgesetz legt fest, welche Sicherheitsanforderungen Geräte erfüllen müssen, bevor sie auf dem Markt  | buch:GS-2.10.2 | Kür | WISO-3-3-2 | Regelwerk v2.x, D8/RK1 |
+| Serverräume lassen sich zusätzlich technisch schützen: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der R | buch:GS-2.10.2 | Kür | WISO-3-4-3 | Regelwerk v2.x, D8/RK1; V2-Prüfung WISO |
 
 ## Geschwister-Prüfung (R4)
 

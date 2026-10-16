@@ -69,7 +69,8 @@
        "stufe": 1,
        "herkunft": [
         "katalog:AP2b.04.13",
-        "buch:FS-3.4.1-S209"
+        "buch:FS2-1.3.2-S33",
+        "buch:FS2-1.3.2-S34"
        ]
       },
       {
@@ -221,11 +222,20 @@
       },
       {
        "id": "PB1-8-1-4-K3",
-       "text": "Du kannst die Grundsätze Robustheit gegen Benutzungsfehler, Erlernbarkeit und Benutzerbindung an einem Beispiel erläutern: Robust ist ein Dialog, der Fehleingaben durch die Gestaltung verhindert (Auswahlliste statt Freitext), erkannte Fehler selbst korrigiert oder verständlich zur Behebung führt; erlernbar, wenn er auf unbekannte Funktionen hinweist und gefahrloses Ausprobieren erlaubt; Benutzerbindung entsteht durch eine ansprechende, vertrauenswürdige Bedienung, die zur Nutzung motiviert und Rückmeldungen der Nutzer aufnimmt.",
+       "text": "Du kannst die Grundsätze Robustheit gegen Benutzungsfehler, Erlernbarkeit und Benutzerbindung an einem Beispiel erläutern: Robust ist ein Dialog, der Fehleingaben durch die Gestaltung verhindert (Auswahlliste statt Freitext), erkannte Fehler selbst korrigiert oder verständlich zur Behebung führt; erlernbar, wenn er auf unbekannte Funktionen hinweist, gefahrloses Ausprobieren erlaubt und selten genutzte Funktionen ohne neue Einarbeitung wiedererkennen lässt; Benutzerbindung entsteht durch eine ansprechende, vertrauenswürdige Bedienung, die zur Nutzung motiviert und Rückmeldungen der Nutzer aufnimmt.",
        "kurz": "Robustheit, Erlernbarkeit, Benutzerbindung",
        "stufe": 2,
        "herkunft": [
         "buch:FS2-1.3.2-S34"
+       ]
+      },
+      {
+       "id": "PB1-8-1-4-K4",
+       "text": "Du kannst begründen, warum eine Oberfläche den Nutzer nicht viele Angaben gleichzeitig im Kopf behalten lässt: Das Kurzzeitgedächtnis fasst nur etwa fünf bis sieben Einheiten; was für den nächsten Schritt gebraucht wird, bleibt deshalb sichtbar.",
+       "kurz": "Keine Informationsflut für den Nutzer",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-1.3.2-S36"
        ]
       }
      ],
@@ -453,15 +463,6 @@
        "herkunft": [
         "buch:FS-2.5.1-S132"
        ]
-      },
-      {
-       "id": "PB1-8-1-3-K9",
-       "text": "Du kannst begründen, warum man Bedienelemente meist mit Layouts (untereinander, nebeneinander, im Raster, als Formular aus Beschriftung und Feld) statt mit festen Koordinaten anordnet: Layouts ordnen die Elemente bei anderer Fenstergröße, Bildschirmauflösung oder Textlänge, etwa nach einer Übersetzung, selbst neu an, während feste Positionen dann Inhalte abschneiden oder Lücken lassen.",
-       "kurz": "Layouts statt fester Koordinaten",
-       "stufe": 4,
-       "herkunft": [
-        "buch:FS2-1.4.2-S52"
-       ]
       }
      ],
      "baut_auf": [
@@ -516,6 +517,14 @@
         "buch:FS2-1.4.4"
        ],
        "grund": "RK1: Strukturtypen ohne Pflichtbezug im Katalog"
+      },
+      {
+       "text": "Bedienelemente werden meist über Layouts (untereinander, nebeneinander, Raster, Formular) angeordnet statt über feste Koordinaten, weil sich die Anordnung dann bei anderer Fenstergröße, Auflösung oder Textlänge selbst anpasst.",
+       "kurz": "Layouts statt fester Koordinaten",
+       "quellen": [
+        "buch:FS2-1.4.2"
+       ],
+       "grund": "D8: GUI-Programmierung ohne Katalog-Baustein; die Begründung steht so nicht im Lehrbuch (V2-Prüfung PB1-b Nr. 2)"
       }
      ],
      "hinweis": "Das Lehrbuch beschreibt den evolutionären Prototyp nur als Mittel, die Akzeptanz der Anwender zu testen und fehlende Funktionen zu finden; kennzeichnend ist, dass er schrittweise zum fertigen Produkt weiterentwickelt wird."
@@ -846,6 +855,17 @@
       "PB1-8-1-3"
      ],
      "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Bedienelemente werden meist über Layouts (untereinander, nebeneinander, Raster, Formular) angeordnet statt über feste Ko",
+     "quellen": [
+      "buch:FS2-1.4.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -908,7 +928,7 @@
      "PB1-8-1-3-K6",
      "PB1-8-1-3-K7",
      "PB1-8-1-3-K8",
-     "PB1-8-1-3-K9"
+     "PB1-8-1-4-K4"
     ],
     "neue_stichpunkte": [
      {
@@ -931,6 +951,7 @@
      "PB1-8-1-1",
      "PB1-8-1-4",
      "PB1-8-1-2",
+     "PB1-8-1-3",
      "PB1-8-1-3",
      "PB1-8-1-3",
      "PB1-8-1-3",

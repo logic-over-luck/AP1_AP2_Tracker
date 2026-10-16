@@ -133,9 +133,9 @@
       },
       {
        "id": "PB1-5-1-1-K10",
-       "text": "Du kannst das Prinzip „Komposition vor Vererbung“ begründen: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet.",
+       "text": "Du kannst das Prinzip „Komposition vor Vererbung“ erklären: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet.",
        "kurz": "Komposition vor Vererbung",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:FS2-2.1.4-S133"
        ]
@@ -315,9 +315,9 @@
       },
       {
        "id": "PB1-5-1-3-K5",
-       "text": "Du kannst begründen, warum ein gutes Modul eine hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und eine geringe Kopplung (wenig Abhängigkeit von anderen Modulen) hat: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul.",
+       "text": "Du kannst hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und geringe Kopplung (wenig Abhängigkeit von anderen Modulen) beim Zerlegen eines Programms in Module anwenden – mit dem Grund dahinter: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul.",
        "kurz": "Hohe Bindung, geringe Kopplung",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:FS2-2.1.1-S113",
         "buch:FS2-1.2.1-S21"
@@ -325,7 +325,7 @@
       },
       {
        "id": "PB1-5-1-3-K6",
-       "text": "Du kannst aus einer Anforderungsbeschreibung die Merkmale bestimmen, nach denen eine Datenstruktur gewählt wird: ob die Anzahl der Daten feststeht oder sich laufend ändert, wie viele Daten es sind, ob über eine Position, einen Schlüssel oder in der Reihenfolge des Eingangs zugegriffen wird und welche Operation besonders schnell sein muss.",
+       "text": "Du kannst aus einer Anforderungsbeschreibung die Merkmale bestimmen, nach denen eine Datenstruktur gewählt wird (woran man ihre Eignung misst: AP1-8-2-5): ob die Anzahl der Daten feststeht oder sich laufend ändert, wie viele Daten es sind, ob über eine Position, einen Schlüssel oder in der Reihenfolge des Eingangs zugegriffen wird und welche Operation besonders schnell sein muss.",
        "kurz": "Merkmale für die Wahl einer Datenstruktur",
        "stufe": 3,
        "herkunft": [
@@ -334,9 +334,9 @@
       },
       {
        "id": "PB1-5-1-3-K7",
-       "text": "Du kannst begründen, welche Datenstruktur zu einer Anforderung passt: ein zweidimensionales Array bei fester, bekannter Anzahl und Zugriff über zwei Koordinaten, eine Warteschlange (oder doppelt verkettete Liste) bei wechselnder Anzahl und Abarbeitung in Eingangsreihenfolge, eine Hashtabelle bei vielen, selten geänderten Datensätzen, die schnell über einen eindeutigen Schlüssel gefunden werden sollen.",
-       "kurz": "Begründete Wahl der Datenstruktur",
-       "stufe": 4,
+       "text": "Du kannst aus einer Anforderung die passende Datenstruktur ableiten: ein zweidimensionales Array bei fester, bekannter Anzahl und Zugriff über zwei Koordinaten, eine Warteschlange (oder doppelt verkettete Liste) bei wechselnder Anzahl und Abarbeitung in Eingangsreihenfolge, eine Hashtabelle bei vielen, selten geänderten Datensätzen, die schnell über einen eindeutigen Schlüssel gefunden werden sollen.",
+       "kurz": "Datenstruktur aus einer Anforderung ableiten",
+       "stufe": 3,
        "herkunft": [
         "buch:FS2-2.2.2-S144",
         "buch:FS2-2.2.2-S145",
@@ -611,7 +611,7 @@
       },
       {
        "id": "PB1-5-1-6-K2",
-       "text": "Du kannst Vor- und Nachteile einer Schichtenarchitektur erläutern: Jede Schicht spricht nur über eine festgelegte Schnittstelle mit der darunterliegenden, deshalb gibt es wenige Abhängigkeiten, Änderungen bleiben meist in einer Schicht und eine Schicht lässt sich austauschen; dafür ist sie langsamer, weil Daten durch mehrere Schichten gereicht und umgewandelt werden.",
+       "text": "Du kannst Vor- und Nachteile einer Schichtenarchitektur (Aufbau: PB1-5-1-4-K7) erläutern: Jede Schicht spricht nur über eine festgelegte Schnittstelle mit der darunterliegenden, deshalb gibt es wenige Abhängigkeiten, Änderungen bleiben meist in einer Schicht und eine Schicht lässt sich austauschen; dafür ist sie langsamer, weil Daten durch mehrere Schichten gereicht und umgewandelt werden.",
        "kurz": "Schichtenarchitektur: Vor- und Nachteile",
        "stufe": 2,
        "herkunft": [
@@ -620,7 +620,7 @@
       },
       {
        "id": "PB1-5-1-6-K3",
-       "text": "Du kannst Vor- und Nachteile von MVC erläutern: Mehrere Views zeigen dieselben Daten und bleiben automatisch auf demselben Stand, und Views lassen sich austauschen oder hinzufügen, ohne Model und Fachlogik anzufassen; dafür ist der Aufbau komplexer als eine einfache Oberfläche, und MVC sitzt meist innerhalb der Präsentationsschicht einer Schichtenarchitektur.",
+       "text": "Du kannst Vor- und Nachteile von MVC (Aufbau: PB1-5-1-4-K6) erläutern: Mehrere Views zeigen dieselben Daten und bleiben automatisch auf demselben Stand, und Views lassen sich austauschen oder hinzufügen, ohne Model und Fachlogik anzufassen; dafür ist der Aufbau komplexer als eine einfache Oberfläche, und MVC sitzt meist innerhalb der Präsentationsschicht einer Schichtenarchitektur.",
        "kurz": "MVC: Vor- und Nachteile",
        "stufe": 2,
        "herkunft": [

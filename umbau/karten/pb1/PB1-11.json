@@ -834,22 +834,8 @@
       "id": "PB1-11-1-3-K4-1",
       "sp": "PB1-11-1-3",
       "k": "PB1-11-1-3-K4",
-      "vorne": "Welcher DNS-Eintrag nennt den Mailserver einer Domain, welcher die IPv6-Adresse eines Namens?",
-      "hinten": "MX für den zuständigen Mailserver, AAAA für die IPv6-Adresse (A für IPv4)."
-    },
-    {
-      "id": "PB1-11-1-3-K4-2",
-      "sp": "PB1-11-1-3",
-      "k": "PB1-11-1-3-K4",
-      "vorne": "Was ist ein PTR-Eintrag, und wozu dient er?",
-      "hinten": "Der Eintrag für die Rückwärtsauflösung (Reverse DNS): Er ordnet einer IP-Adresse einen Namen zu. Mailserver prüfen damit z. B., ob ein einliefernder Server plausibel ist."
-    },
-    {
-      "id": "PB1-11-1-3-K4-3",
-      "sp": "PB1-11-1-3",
-      "k": "PB1-11-1-3-K4",
-      "vorne": "Wozu dient ein CNAME-Eintrag?",
-      "hinten": "Er macht einen Namen zum Alias eines anderen Namens, z. B. verweist www.example.de auf example.de; die Adresse steht dann nur einmal beim Zielnamen."
+      "vorne": "Welche Adresse liefert ein A-Eintrag im DNS, welche ein AAAA-Eintrag?",
+      "hinten": "A: die IPv4-Adresse eines Namens; AAAA: die IPv6-Adresse. Ein Dual-Stack-Rechner fragt beide ab."
     },
     {
       "id": "PB1-11-1-3-K5-1",
@@ -905,7 +891,7 @@
       "sp": "PB1-11-2-2",
       "k": "PB1-11-2-2-K5",
       "vorne": "Was ist ein Trunk, und warum braucht er getaggte Frames?",
-      "hinten": "Eine Verbindung, über die Frames mehrerer VLANs laufen, meist zwischen zwei Switches. Das Tag mit der VLAN-ID (IEEE 802.1Q) zeigt dem anderen Switch, zu welchem VLAN jeder Frame gehört."
+      "hinten": "Eine Verbindung, über die Frames mehrerer VLANs laufen, meist zwischen zwei Switches. Das Tag mit der VLAN-ID zeigt dem anderen Switch, zu welchem VLAN jeder Frame gehört."
     },
     {
       "id": "PB1-11-2-2-K5-2",
@@ -1024,7 +1010,7 @@
       "sp": "PB1-11-2-3",
       "k": "PB1-11-2-3-K7",
       "vorne": "Nenne die Schritte eines Datenbankzugriffs aus einem Programm.",
-      "hinten": "- Verbindung öffnen (Adresse, Port, Datenbank, Benutzer, Passwort)\n- SQL-Anweisung schicken\n- Ergebnis verarbeiten\n- Änderungen bestätigen (Commit)\n- Verbindung schließen"
+      "hinten": "- Verbindung öffnen (Adresse, Port, Datenbank, Benutzer, Passwort)\n- SQL-Anweisung schicken\n- Ergebnis verarbeiten\n- Verbindung schließen"
     },
     {
       "id": "PB1-11-2-3-K7-2",
@@ -1736,16 +1722,6 @@
     },
     {
       "id": "PB1-11-1-3-K4-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S349, buch:FS-4.3.4-S353, buch:GS-3.4.4-S327)"
-    },
-    {
-      "id": "PB1-11-1-3-K4-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S349, buch:FS-4.3.4-S353, buch:GS-3.4.4-S327)"
-    },
-    {
-      "id": "PB1-11-1-3-K4-3",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S349, buch:FS-4.3.4-S353, buch:GS-3.4.4-S327)"
     },

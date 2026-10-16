@@ -5,20 +5,20 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 76,
-  "koennen": 464,
+  "koennen": 465,
   "quellen": {
-   "PB1-1.json": "82c56b9a048ab3d1",
-   "PB1-10.json": "2c0c631a89d08af3",
-   "PB1-11.json": "7a0fd68f11aa2567",
-   "PB1-12.json": "58f25f36beedec97",
-   "PB1-2.json": "a5e68b3ca80496d7",
-   "PB1-3.json": "dc16591c5dcfb68d",
-   "PB1-4.json": "801be06df873120a",
-   "PB1-5.json": "bc8be0a1e845aa03",
-   "PB1-6.json": "1a9097d9183d0f2a",
-   "PB1-7.json": "d80ca30c195dabb1",
-   "PB1-8.json": "838db19ad18d13f4",
-   "PB1-9.json": "e95e786c2f1500db"
+   "PB1-1.json": "92db207a123319bc",
+   "PB1-10.json": "57e49bd59117b283",
+   "PB1-11.json": "a6d66c904aa28d8e",
+   "PB1-12.json": "e6487373167c2ab7",
+   "PB1-2.json": "46f2556e480b72a7",
+   "PB1-3.json": "79720510e1213a27",
+   "PB1-4.json": "14a58175665d141e",
+   "PB1-5.json": "a4700b8d39058e0f",
+   "PB1-6.json": "d8b70824d2592fe8",
+   "PB1-7.json": "04ce4db0893334ed",
+   "PB1-8.json": "4bab0d65fe4674b4",
+   "PB1-9.json": "11519187da35eb8e"
   }
  },
  "stichpunkte": [
@@ -80,6 +80,11 @@
      "id": "PB1-1-1-1-K9",
      "stufe": 2,
      "kurz": "Extreme Programming beschreiben: sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen"
+    },
+    {
+     "id": "PB1-1-1-1-K10",
+     "stufe": 2,
+     "kurz": "den DevOps-Ansatz erklären: Entwicklung und Betrieb arbeiten als ein Team mit gemeinsamer Verantwortung und stark automatisierten Abläufen (CI/CD, PB1-3-2-2), um häufiger, schneller und mit weniger Fehlern auszuliefern; der Preis ist ein Umdenken in Organisation und Zusammenarbeit, das nicht zu jeder bestehenden Unternehmensstruktur passt"
     }
    ]
   },
@@ -115,7 +120,7 @@
     {
      "id": "PB1-1-1-2-K4",
      "stufe": 2,
-     "kurz": "Stärken und Schwächen des Wasserfallmodells erklären: Weil alles vorab festgelegt wird, sind Termine, Kosten und Dokumentation gut planbar; weil der Auftraggeber erst bei der Abnahme ein Ergebnis sieht und erst nach der Umsetzung getestet wird, fallen Fehler aus Analyse und Entwurf spät und teuer auf, und bei langen Projekten kann die Lösung bei Einführung schon veraltet sein"
+     "kurz": "Stärken und Schwächen des Wasserfallmodells aus seinem Ablauf erklären (je einen Vor- und Nachteil kennst du aus AP1-1-1-2): Weil alles vorab festgelegt wird, sind Termine, Kosten und Dokumentation gut planbar; weil der Auftraggeber erst bei der Abnahme ein Ergebnis sieht und erst nach der Umsetzung getestet wird, fallen Fehler aus Analyse und Entwurf spät und teuer auf, und bei langen Projekten kann die Lösung bei Einführung schon veraltet sein"
     },
     {
      "id": "PB1-1-1-2-K5",
@@ -251,7 +256,7 @@
     {
      "id": "PB1-1-2-1-K9",
      "stufe": 2,
-     "kurz": "erklären, wie Software den Energiebedarf beeinflusst: Ineffiziente Programme halten Prozessor, Speicher und Netz länger beschäftigt und verbrauchen dadurch mehr Strom; effiziente Algorithmen, das Vermeiden unnötiger Abfragen, Schleifen und Datenübertragungen und geringe Anforderungen an die Hardware sparen Energie und verlängern die Nutzungsdauer der Geräte"
+     "kurz": "erklären, warum ineffizient programmierte Software mehr Energie verbraucht als sparsam programmierte: Der Strombedarf eines Rechners steigt mit der beanspruchten Rechenleistung, und ineffizienter Code hält Prozessor, Speicher und Netz länger als nötig beschäftigt"
     }
    ]
   },
@@ -331,17 +336,17 @@
     {
      "id": "PB1-1-2-3-K6",
      "stufe": 2,
-     "kurz": "die Tätigkeiten der Anforderungsspezifikation erklären – Anforderungen ermitteln (z. B. im Kundengespräch, im Workshop, durch Beobachtung), analysieren, eindeutig festschreiben, mit dem Auftraggeber validieren und später Änderungen nachvollziehbar verwalten – und warum sie nötig ist: Kunden äußern ihre Wünsche oft unklar oder setzen sie stillschweigend voraus, und die Schritte laufen mit Rücksprüngen statt streng nacheinander"
+     "kurz": "erklären, warum die Anforderungsspezifikation bei Software nicht einmalig und streng nacheinander abläuft: Kunden äußern ihre Wünsche oft unklar oder setzen sie stillschweigend voraus; deshalb wird mit Rücksprüngen ermittelt (z. B. im Kundengespräch, im Workshop, durch Beobachtung), analysiert, festgeschrieben und mit dem Auftraggeber validiert, und jede spätere Änderung wird nachvollziehbar verwaltet. Das Erheben und Abstimmen von Anforderungen an sich kennst du aus AP1-2-2-1"
     },
     {
      "id": "PB1-1-2-3-K7",
-     "stufe": 4,
-     "kurz": "beurteilen, ob sich ein Arbeitsablauf für eine (Teil-)Automatisierung durch Software eignet: Er muss sich klar in Regeln fassen lassen und häufig in gleicher Form wiederkehren; einmalige, seltene oder ständig wechselnde Abläufe erledigt ein Mensch meist günstiger, weil sich der Entwicklungsaufwand nicht lohnt"
+     "stufe": 2,
+     "kurz": "erklären, welche Arbeitsabläufe sich für eine (Teil-)Automatisierung durch Software eignen: solche, die sich klar in Regeln fassen lassen und häufig in gleicher Form wiederkehren; einmalige, seltene oder ständig wechselnde Abläufe erledigt ein Mensch meist günstiger, weil sich der Entwicklungsaufwand nicht lohnt"
     },
     {
      "id": "PB1-1-2-3-K8",
      "stufe": 3,
-     "kurz": "die Zielbestimmung eines Lasten- oder Pflichtenhefts erstellen und dabei Musskriterien (unverzichtbar für die Abnahme), Wunsch- bzw. Kannkriterien (werden umgesetzt, wenn Zeit und Budget reichen) und Abgrenzungskriterien (was das Produkt ausdrücklich nicht leisten soll) unterscheiden"
+     "kurz": "die Zielbestimmung eines Lasten- oder Pflichtenhefts erstellen: Zu den Muss- und Kann- bzw. Wunschkriterien (AP1-2-2-1) kommen Abgrenzungskriterien, die ausdrücklich festhalten, was das Produkt nicht leisten soll"
     },
     {
      "id": "PB1-1-2-3-K9",
@@ -383,6 +388,11 @@
      "id": "PB1-1-2-4-K3",
      "stufe": 3,
      "kurz": "die Norm als Grundlage anwenden und Anforderungen an eine geplante Anwendung nach den Qualitätsmerkmalen gliedern, zum Beispiel Antwortzeit (Effizienz) oder neue Zahlungsarten ohne Umbau ergänzbar (Erweiterbarkeit)"
+    },
+    {
+     "id": "PB1-1-2-4-K4",
+     "stufe": 2,
+     "kurz": "erklären, wie sich die ISO/IEC 25010 von der älteren ISO/IEC 9126 unterscheidet: Kompatibilität (Zusammenarbeit und Datenaustausch mit anderen Systemen) und Sicherheit sind eigene Hauptmerkmale geworden, Funktionalität heißt funktionale Eignung und Effizienz Leistungseffizienz; so kommt die Norm auf acht statt sechs Hauptmerkmale"
     }
    ]
   },
@@ -491,6 +501,11 @@
      "id": "PB1-10-1-2-K7",
      "stufe": 2,
      "kurz": "Identitätsdiebstahl erklären: Ein Angreifer verschafft sich fremde Zugangs- oder Personendaten, um im Namen des Opfers zu handeln, etwa über gefälschte Anmeldeseiten (Phishing), Keylogger, offen einsehbare Profile in sozialen Netzwerken oder schlecht geschützte Cloudablagen"
+    },
+    {
+     "id": "PB1-10-1-2-K8",
+     "stufe": 2,
+     "kurz": "Social Engineering erklären: Angreifer nutzen menschliche Eigenschaften wie Hilfsbereitschaft, Neugier, Respekt vor Vorgesetzten oder Angst aus, oft in mehreren Schritten über Telefon, E-Mail oder soziale Netzwerke, um an Zugangsdaten oder interne Informationen zu kommen, Schadsoftware einzuschleusen oder eine Überweisung auszulösen, etwa mit einer gefälschten Anweisung der Geschäftsleitung (CEO-Fraud); Phishing ist eine verbreitete Form davon"
     }
    ]
   },
@@ -530,7 +545,7 @@
     {
      "id": "PB1-10-1-3-K5",
      "stufe": 4,
-     "kurz": "begründen, warum eine Anwendung nur anerkannte, aktuell empfohlene Kryptoverfahren aus gepflegten Bibliotheken einsetzt (Orientierung gibt die Technische Richtlinie TR-02102 des BSI) und keine selbst erfundenen, selbst programmierten oder veralteten: Eigenentwicklungen enthalten fast immer Schwachstellen, und auch in bewährten Verfahren und ihren Umsetzungen werden Lücken gefunden, die eine gepflegte Bibliothek per Update schließt"
+     "kurz": "begründen, warum eine Anwendung nur anerkannte, aktuell empfohlene Kryptoverfahren aus gepflegten Bibliotheken einsetzt (Orientierung gibt eine Technische Richtlinie des BSI) und keine selbst erfundenen, selbst programmierten oder veralteten: Eigenentwicklungen enthalten fast immer Schwachstellen, und auch in bewährten Verfahren und ihren Umsetzungen werden Lücken gefunden, die eine gepflegte Bibliothek per Update schließt"
     },
     {
      "id": "PB1-10-1-3-K6",
@@ -576,12 +591,7 @@
     {
      "id": "PB1-10-1-4-K5",
      "stufe": 4,
-     "kurz": "begründen, warum gebrochene Hashverfahren wie MD5 nicht mehr für Sicherheitszwecke eingesetzt werden und stattdessen ein Verfahren der SHA-2-Familie wie SHA-256: Bei MD5 lassen sich gezielt zwei verschiedene Eingaben mit gleichem Hashwert erzeugen, sodass eine Fälschung bei Prüfsumme oder Signatur nicht mehr auffällt"
-    },
-    {
-     "id": "PB1-10-1-4-K6",
-     "stufe": 2,
-     "kurz": "erläutern, warum dieselbe Eingabe in jeder Programmiersprache und auf jedem System denselben Hashwert ergibt, sofern sie gleich in Bytes kodiert wird (z. B. UTF-8): Hashfunktionen arbeiten auf Bytes, nicht auf Zeichen; deshalb lässt sich ein Hash, den ein Programm gespeichert hat, in einem anderen prüfen, während eine abweichende Kodierung einen völlig anderen Wert ergibt"
+     "kurz": "begründen, warum gebrochene Hashverfahren wie MD5 für Prüfsummen und Signaturen nicht mehr eingesetzt werden, sondern ein Verfahren der SHA-2-Familie wie SHA-256: Bei MD5 lassen sich gezielt zwei Eingaben mit gleichem Hashwert erzeugen, sodass eine Fälschung nicht auffällt; Passwörter werden dagegen mit Salt und einem bewusst langsamen Verfahren gespeichert (K4)"
     }
    ]
   },
@@ -838,7 +848,7 @@
     {
      "id": "PB1-11-1-1-K7",
      "stufe": 2,
-     "kurz": "Netzwerkkomponenten nach der Schicht vergleichen, auf der sie arbeiten: Repeater und Hub auf Schicht 1 reichen Signale ungeprüft an alle Anschlüsse weiter, Bridge und Switch auf Schicht 2 trennen Kollisionsdomänen, weil sie gezielt nach MAC-Adresse weiterleiten, ein Router auf Schicht 3 verbindet Netze und begrenzt die Broadcast-Domäne, Proxy und Application Layer Gateway arbeiten auf der Anwendungsschicht"
+     "kurz": "über Switch und Router hinaus Netzwerkkomponenten nach ihrer Schicht einordnen: Repeater und Hub (Schicht 1) reichen Signale ungeprüft an alle Anschlüsse weiter, Switch und Bridge trennen Kollisionsdomänen, ein Router begrenzt die Broadcast-Domäne, Proxy und Application Layer Gateway arbeiten auf der Anwendungsschicht"
     },
     {
      "id": "PB1-11-1-1-K8",
@@ -873,12 +883,12 @@
     {
      "id": "PB1-11-1-4-K1",
      "stufe": 2,
-     "kurz": "beschreiben, wie eine Firewall ihr Regelwerk abarbeitet: Jedes Paket wird der Reihe nach mit den Regeln (Quelle, Ziel, Port, Protokoll, Richtung) verglichen, die erste passende Regel entscheidet über Durchlassen (ACCEPT), stilles Verwerfen (DROP) oder Ablehnen mit Rückmeldung (REJECT), und am Ende steht eine Standardregel, die alles nicht ausdrücklich Erlaubte sperrt"
+     "kurz": "beschreiben, wie eine Firewall ihr Regelwerk abarbeitet: Jedes Paket wird der Reihe nach mit den Regeln (Quelle, Ziel, Port, Protokoll, Richtung) verglichen, die erste passende Regel entscheidet über Durchlassen (ACCEPT), stilles Verwerfen (DROP) oder Ablehnen mit Rückmeldung (REJECT); am Ende steht eine Standardregel (Grundsatz siehe PB1-10-2-3-K10)"
     },
     {
      "id": "PB1-11-1-4-K2",
      "stufe": 2,
-     "kurz": "Firewalls nach ihrer Prüftiefe unterscheiden: Der Paketfilter liest nur Adressen und Ports (Schicht 3 und 4), die zustandsorientierte Firewall zusätzlich den Verbindungszustand, eine Next-Generation-Firewall prüft per Deep Packet Inspection auch die Nutzdaten bis zur Anwendungsschicht (verschlüsselten Verkehr nur, wenn sie ihn aufbricht und neu verschlüsselt), kennt die Anwendungen und bringt Angriffserkennung mit, wobei ein IDS Angriffsmuster nur meldet und ein IPS sie zusätzlich blockiert"
+     "kurz": "über Paketfilter und zustandsorientierte Prüfung hinaus die Next-Generation-Firewall beschreiben: Sie prüft per Deep Packet Inspection auch die Nutzdaten bis zur Anwendungsschicht (verschlüsselten Verkehr nur, wenn sie ihn aufbricht und neu verschlüsselt), erkennt Anwendungen und bringt Angriffserkennung mit; ein IDS meldet Angriffsmuster, ein IPS blockiert sie zusätzlich"
     },
     {
      "id": "PB1-11-1-4-K3",
@@ -920,7 +930,7 @@
     {
      "id": "PB1-11-1-2-K4",
      "stufe": 2,
-     "kurz": "die Eigenschaften von IP erläutern: Es adressiert Netze und Rechner, jedes Paket wird einzeln anhand der Ziel-IP-Adresse weitergeleitet, es arbeitet unabhängig von der Übertragungstechnik darunter (Ethernet, WLAN, Glasfaser), ist verbindungslos und ohne Empfangsbestätigung, sodass verlorene oder vertauschte Pakete erst eine höhere Schicht wie TCP bemerkt und ausgleicht"
+     "kurz": "über die Paketvermittlung aus AP1 hinaus die Eigenschaften von IP erläutern: unabhängig von der Übertragungstechnik darunter (Ethernet, WLAN, Glasfaser), verbindungslos und ohne Empfangsbestätigung, sodass verlorene oder vertauschte Pakete erst eine höhere Schicht wie TCP bemerkt und ausgleicht"
     },
     {
      "id": "PB1-11-1-2-K5",
@@ -944,8 +954,8 @@
     },
     {
      "id": "PB1-11-1-2-K9",
-     "stufe": 4,
-     "kurz": "für ein Formular die HTTP-Methode begründet auswählen: GET hängt die Daten als Parameter an die URL (sichtbar, landet in Verlauf, Lesezeichen und Server-Logs, in der Länge begrenzt, passend zum Suchen und Filtern), POST überträgt sie im Rumpf der Anfrage (auch große Datenmengen und Dateien, passend für Daten, die gespeichert oder verarbeitet werden, etwa Anmeldung oder Bestellung)"
+     "stufe": 3,
+     "kurz": "für ein Formular die passende HTTP-Methode einsetzen: GET hängt die Daten als Parameter an die URL (sichtbar, landet in Verlauf, Lesezeichen und Server-Logs, in der Länge begrenzt, passend zum Suchen und Filtern), POST überträgt sie im Rumpf der Anfrage (auch große Datenmengen und Dateien, passend für Daten, die gespeichert oder verarbeitet werden, etwa Anmeldung oder Bestellung)"
     }
    ]
   },
@@ -982,7 +992,7 @@
     {
      "id": "PB1-11-1-3-K4",
      "stufe": 2,
-     "kurz": "gängige DNS-Einträge ihrer Aufgabe zuordnen: A (Name zu IPv4-Adresse), AAAA (Name zu IPv6-Adresse, ein Dual-Stack-Rechner fragt beide ab), CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domain), NS (zuständiger Nameserver), TXT (freier Text, z. B. Nachweis des Domainbesitzes oder Absicherung des Mailversands) und PTR (Rückwärtsauflösung von der Adresse zum Namen, Reverse DNS)"
+     "kurz": "DNS-Einträge der Typen A und AAAA unterscheiden: Ein Nameserver hält zu einem Namen Einträge verschiedener Typen, ein A-Eintrag liefert die IPv4-Adresse, ein AAAA-Eintrag die IPv6-Adresse, und ein Dual-Stack-Rechner fragt beide ab"
     },
     {
      "id": "PB1-11-1-3-K5",
@@ -1036,8 +1046,8 @@
     },
     {
      "id": "PB1-11-2-1-K6",
-     "stufe": 4,
-     "kurz": "begründen, welches Übertragungsmedium in welchem Bereich der strukturierten Verkabelung üblich ist: Glasfaser im Primärbereich, weil sie große Entfernungen mit hoher Datenrate überbrückt und Gebäude ohne elektrische Verbindung koppelt, Glasfaser oder Kupfer im Sekundärbereich je nach Länge und Bedarf, Kupfer (Twisted Pair) im Tertiärbereich bis zur Dose, weil die Strecken kurz sind, Kupfer günstiger ist und die Endgeräte Kupferanschlüsse haben"
+     "stufe": 2,
+     "kurz": "erläutern, welches Übertragungsmedium in welchem Bereich der strukturierten Verkabelung üblich ist und warum: Glasfaser im Primärbereich, weil sie große Entfernungen mit hoher Datenrate überbrückt und Gebäude ohne elektrische Verbindung koppelt, Glasfaser oder Kupfer im Sekundärbereich je nach Länge und Bedarf, Kupfer (Twisted Pair) im Tertiärbereich bis zur Dose, weil die Strecken kurz sind, Kupfer günstiger ist und die Endgeräte Kupferanschlüsse haben"
     },
     {
      "id": "PB1-11-2-1-K7",
@@ -1086,12 +1096,12 @@
     {
      "id": "PB1-11-2-2-K5",
      "stufe": 2,
-     "kurz": "über die Aufgabe eines VLANs hinaus erklären, wie ein Switch den Verkehr einem VLAN zuordnet: Ein Port gehört entweder fest zu einem VLAN (das Endgerät sendet ungetaggt), oder die Frames tragen eine Markierung mit der VLAN-ID nach IEEE 802.1Q (Tag), mit der auf der Verbindung zwischen Switches (Trunk) Frames mehrerer VLANs über eine Leitung laufen; Verkehr zwischen zwei VLANs ist nur über einen Router oder Layer-3-Switch möglich (Inter-VLAN-Routing)"
+     "kurz": "über die Aufgabe eines VLANs hinaus erklären, wie ein Switch den Verkehr einem VLAN zuordnet: Ein Port gehört entweder fest zu einem VLAN (das Endgerät sendet ungetaggt), oder die Frames tragen eine Markierung mit der VLAN-ID (Tag), mit der auf der Verbindung zwischen Switches (Trunk) Frames mehrerer VLANs über eine Leitung laufen; Verkehr zwischen zwei VLANs ist nur über einen Router oder Layer-3-Switch möglich (Inter-VLAN-Routing)"
     },
     {
      "id": "PB1-11-2-2-K6",
-     "stufe": 4,
-     "kurz": "beurteilen, welche WLAN-Verschlüsselung eingesetzt wird: WEP und WPA gelten als gebrochen und scheiden aus, WPA2 mit AES ist verbreitet und mit langem Passwort noch ausreichend, WPA3 ist der aktuelle Standard und schützt mit für jede Sitzung neu ausgehandelten Schlüsseln auch mitgeschnittenen Verkehr, wenn das Passwort später bekannt wird; beide gibt es als Personal mit gemeinsamem Schlüssel (PSK) und als Enterprise mit Anmeldung je Benutzer über RADIUS, und ein Mischbetrieb WPA2/WPA3 bindet ältere Geräte an"
+     "stufe": 2,
+     "kurz": "die WLAN-Verschlüsselungen WEP, WPA, WPA2 und WPA3 charakterisieren: WEP und WPA gelten als gebrochen und scheiden aus, WPA2 mit AES ist verbreitet und mit langem Passwort noch ausreichend, WPA3 ist der aktuelle Standard und schützt mit für jede Sitzung neu ausgehandelten Schlüsseln auch mitgeschnittenen Verkehr, wenn das Passwort später bekannt wird; beide gibt es als Personal mit gemeinsamem Schlüssel (PSK) und als Enterprise mit Anmeldung je Benutzer über RADIUS, und ein Mischbetrieb WPA2/WPA3 bindet ältere Geräte an"
     },
     {
      "id": "PB1-11-2-2-K7",
@@ -1101,12 +1111,12 @@
     {
      "id": "PB1-11-2-2-K8",
      "stufe": 2,
-     "kurz": "das AAA-Prinzip eines RADIUS-Servers erklären: Authentifizierung stellt fest, wer sich anmeldet (Benutzername und Kennwort oder Zertifikat), Autorisierung legt fest, worauf der Benutzer danach zugreifen darf (z. B. welches VLAN er bekommt), Accounting zeichnet die Nutzung für Protokoll und Abrechnung auf; Access Points, Switches oder VPN-Gateways fragen dafür als RADIUS-Clients zentral beim Server an, etwa bei der WLAN-Anmeldung nach 802.1X"
+     "kurz": "das AAA-Prinzip eines RADIUS-Servers erklären: Authentifizierung stellt fest, wer sich anmeldet (Benutzername und Kennwort oder Zertifikat), Autorisierung legt fest, worauf der Benutzer danach zugreifen darf (z. B. welches VLAN er bekommt), Accounting zeichnet die Nutzung für Protokoll und Abrechnung auf; Access Points, Switches oder VPN-Gateways fragen dafür als RADIUS-Clients zentral beim Server an, etwa bei der portbasierten Anmeldung am WLAN oder Switch"
     },
     {
      "id": "PB1-11-2-2-K9",
-     "stufe": 4,
-     "kurz": "die Sicherheit bequemer WLAN-Anmeldeverfahren beurteilen: Ein QR-Code enthält SSID und Schlüssel im Klartext und ist nur so sicher wie der Ort, an dem er hängt; WPS koppelt ein Gerät per Tastendruck am Router oder per PIN, wobei sich die PIN durch Ausprobieren in kurzer Zeit knacken lässt, weshalb WPS meist abgeschaltet wird"
+     "stufe": 2,
+     "kurz": "die Sicherheit der Anmeldung per QR-Code und per WPS charakterisieren: Ein QR-Code enthält SSID und Schlüssel im Klartext und ist nur so sicher wie der Ort, an dem er hängt; WPS koppelt ein Gerät per Tastendruck am Router oder per PIN, wobei sich die PIN durch Ausprobieren in kurzer Zeit knacken lässt, weshalb WPS meist abgeschaltet wird"
     }
    ]
   },
@@ -1193,12 +1203,12 @@
     {
      "id": "PB1-11-2-3-K7",
      "stufe": 2,
-     "kurz": "den Ablauf eines Datenbankzugriffs aus einem Programm beschreiben: Verbindung mit Adresse, Port, Datenbankname, Benutzer und Passwort öffnen, die SQL-Anweisung an die Datenbank schicken (Benutzereingaben als Parameter einer vorbereiteten Anweisung), das Ergebnis verarbeiten, Änderungen mit Commit bestätigen und die Verbindung in jedem Fall wieder schließen, auch wenn ein Fehler aufgetreten ist"
+     "kurz": "den Ablauf eines Datenbankzugriffs aus einem Programm beschreiben: Verbindung mit Adresse, Port, Datenbankname, Benutzer und Passwort öffnen, die SQL-Anweisung an die Datenbank schicken (Benutzereingaben als Parameter einer vorbereiteten Anweisung), das Ergebnis verarbeiten und die Verbindung in jedem Fall wieder schließen, auch nach einem Fehler (Transaktion und Commit siehe PB1-6-1-5-K4)"
     },
     {
      "id": "PB1-11-2-3-K8",
-     "stufe": 4,
-     "kurz": "ein NAS für einen Einsatz nach Kriterien auswählen: Kapazität und Zahl der Laufwerkschächte, RAID mit Tausch defekter Platten im laufenden Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (mehrere Ports, per Link-Aggregation gebündelt), Verschlüsselung, Snapshots im Dateisystem und ein redundantes Netzteil"
+     "stufe": 2,
+     "kurz": "Kriterien für die Auswahl eines NAS beschreiben: Kapazität und Zahl der Laufwerkschächte, RAID mit Tausch defekter Platten im laufenden Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (mehrere Ports, per Link-Aggregation gebündelt), Verschlüsselung, Snapshots im Dateisystem und ein redundantes Netzteil"
     },
     {
      "id": "PB1-11-2-3-K9",
@@ -1533,8 +1543,8 @@
     },
     {
      "id": "PB1-12-2-4-K2",
-     "stufe": 4,
-     "kurz": "Log-Dateien zur Störungsanalyse auswerten: Jeder Eintrag enthält Zeitpunkt, Schweregrad (etwa kritisch, Fehler, Warnung, Information, Debug), Quelle und Meldungstext; du filterst nach Schweregrad, Zeitraum und Quelle und verfolgst die Einträge rund um den Zeitpunkt der Störung bis zur Ursache"
+     "stufe": 3,
+     "kurz": "Log-Dateien zur Störungsanalyse nutzen: Jeder Eintrag enthält Zeitpunkt, Schweregrad (etwa kritisch, Fehler, Warnung, Information, Debug), Quelle und Meldungstext; du filterst nach Schweregrad, Zeitraum und Quelle und verfolgst die Einträge rund um den Zeitpunkt der Störung bis zur Ursache"
     },
     {
      "id": "PB1-12-2-4-K3",
@@ -1597,12 +1607,12 @@
     {
      "id": "PB1-12-2-2-K7",
      "stufe": 2,
-     "kurz": "beschreiben, wer bei einer Eskalation für das Ticket verantwortlich bleibt: Die abgebende Stufe verfolgt den Fall weiter, bis eine Rückmeldung kommt, prüft die Lösung und informiert die Beteiligten; abgeschlossen wird das Ticket über den First Level, der dem Nutzer die Lösung mitteilt und sich bestätigen lässt, dass alles wieder funktioniert"
+     "kurz": "beschreiben, wie eine abgebende Support-Stufe nach einer Eskalation verantwortlich bleibt: Sie verfolgt den Fall bis zur Rückmeldung, prüft die Lösung und informiert die Beteiligten; den Abschluss beim Nutzer kennst du aus AP1-1-3-1-K8"
     },
     {
      "id": "PB1-12-2-2-K8",
      "stufe": 3,
-     "kurz": "bei einem Leistungsengpass bestimmen, ob vertikal skaliert wird (einen Server mit mehr Prozessorkernen, Arbeitsspeicher oder Speicher aufrüsten; einfach, aber durch die Hardware begrenzt und meist mit Ausfallzeit) oder horizontal (weitere Server hinzufügen und die Last verteilen; im laufenden Betrieb und nahezu unbegrenzt, wenn die Anwendung dafür ausgelegt ist)"
+     "kurz": "bei einem Leistungsengpass bestimmen, ob vertikal oder horizontal skaliert wird (Begriffe aus PB1-6-1-4-K5): vertikal einfach, aber durch die Hardware begrenzt und meist mit Ausfallzeit; horizontal im laufenden Betrieb und nahezu unbegrenzt, wenn die Anwendung mehrere Instanzen verträgt"
     }
    ]
   },
@@ -1653,12 +1663,7 @@
     {
      "id": "PB1-12-2-3-K7",
      "stufe": 2,
-     "kurz": "Public Cloud (Dienste eines Anbieters, die sich viele Kunden über das Internet teilen), Private Cloud (Cloud-Infrastruktur nur für eine Organisation, im eigenen Rechenzentrum oder bei einem Dienstleister, mit mehr Kontrolle und Anpassung) und Hybrid Cloud (Kombination beider, z. B. vertrauliche Daten privat, Lastspitzen in der Public Cloud) unterscheiden"
-    },
-    {
-     "id": "PB1-12-2-3-K8",
-     "stufe": 4,
-     "kurz": "für einen Kunden begründet zwischen Betrieb im eigenen Netz (eigene Server, eigene Wartung), Cloud (Dienste beim Anbieter über das Netz) und hybrider Infrastruktur auswählen: Im Haus bleiben Anwendungen mit sensiblen Daten, auf vorhandener Hardware oder solche, die ohne Internetleitung weiterlaufen müssen, in die Cloud gehen die übrigen; abzuwägen sind Aufwand, Kosten, benötigte Fachkräfte und Risiken"
+     "kurz": "Public Cloud (Dienste eines Anbieters, die sich viele Kunden über das Internet teilen), Private Cloud (Cloud-Infrastruktur nur für eine Organisation, im eigenen Rechenzentrum oder bei einem Dienstleister, mit mehr Kontrolle und Anpassung) und Hybrid Cloud (Kombination beider, z. B. vertrauliche Daten und Anwendungen, die ohne Internetverbindung weiterlaufen müssen, im eigenen Netz, Lastspitzen in der Public Cloud) unterscheiden"
     }
    ]
   },
@@ -1688,12 +1693,12 @@
     {
      "id": "PB1-12-2-5-K3",
      "stufe": 2,
-     "kurz": "Managed Services erklären: Ein Dienstleister erbringt wiederkehrende IT-Betriebsaufgaben wie Server- und Netzwerkbetreuung, Backup, Updates oder Helpdesk dauerhaft nach SLA bzw. Rahmenvertrag, und zwar auf drei Ebenen: Management der Infrastruktur (Betrieb des gesamten Rechenzentrums), Server-Management (Updates, Backups, Snapshots und Rollback einzelner Server) und Anwendungsmanagement (Betreuung einzelner Anwendungen wie Groupware, Telefonanlage oder CRM)"
+     "kurz": "Managed Services erklären: Ein Dienstleister übernimmt wiederkehrende Betriebsaufgaben wie Updates, Datensicherung, Überwachung oder Helpdesk dauerhaft nach SLA; der Umfang kann von einzelnen Anwendungen über einzelne Server bis zum Betrieb eines ganzen Rechenzentrums reichen"
     },
     {
      "id": "PB1-12-2-5-K4",
      "stufe": 4,
-     "kurz": "für einen Kunden nach seinem IT-Know-how begründet auswählen, welche Betriebsaufgaben er als Managed Service einkauft und welche er selbst übernimmt: ohne eigene IT-Fachkraft fast alles einkaufen, mit etwas Erfahrung einzelne Server- oder Anwendungsaufgaben selbst erledigen, mit eigener IT-Abteilung den Betrieb weitgehend selbst führen und nur Spezialaufgaben vergeben"
+     "kurz": "begründen, welche Betriebsaufgaben ein Kunde als Managed Service einkauft: Was er mangels eigenem Fachpersonal oder Know-how nicht sicher selbst leisten kann, vergibt er; was seine eigene IT beherrscht, behält er"
     }
    ]
   },
@@ -1785,7 +1790,7 @@
     {
      "id": "PB1-2-1-2-K6",
      "stufe": 2,
-     "kurz": "Governance und Compliance unterscheiden: Governance ist das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance ist das tatsächliche Einhalten dieser Regeln und der Gesetze durch die Beschäftigten"
+     "kurz": "Governance erklären: das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance (K1) ist das tatsächliche Einhalten dieser Regeln und der Gesetze"
     }
    ]
   },
@@ -1867,13 +1872,8 @@
     },
     {
      "id": "PB1-2-1-4-K5",
-     "stufe": 4,
-     "kurz": "über Säule, Linie und Kreis hinaus die passende Diagrammart auswählen: Netzdiagramm, um mehrere Objekte über viele Kriterien zu vergleichen, Streudiagramm, um den Zusammenhang zweier Merkmale je Datensatz zu zeigen, Blasendiagramm, wenn als dritte Größe die Blasengröße hinzukommt, und Wortwolke, um die Häufigkeit von Wörtern in Freitexten sichtbar zu machen"
-    },
-    {
-     "id": "PB1-2-1-4-K6",
      "stufe": 3,
-     "kurz": "Mittelwert (Summe durch Anzahl), Median (mittlerer Wert der sortierten Reihe) und Spannweite (größter minus kleinster Wert) einer Messreihe berechnen und daraus ablesen, warum der Median bei Ausreißern die typische Lage besser beschreibt als der Mittelwert"
+     "kurz": "über Säule, Linie und Kreis hinaus weitere Diagrammarten passend einsetzen: Netzdiagramm, um mehrere Objekte über viele Kriterien zu vergleichen, Streudiagramm, um den Zusammenhang zweier Merkmale je Datensatz zu zeigen, Blasendiagramm, wenn als dritte Größe die Blasengröße hinzukommt, und Wortwolke, um die Häufigkeit von Wörtern in Freitexten sichtbar zu machen"
     },
     {
      "id": "PB1-2-1-4-K7",
@@ -1946,7 +1946,7 @@
     {
      "id": "PB1-3-1-1-K9",
      "stufe": 4,
-     "kurz": "begründen, wann Java für ein Projekt eine gute Wahl ist: Der Code wird in Bytecode übersetzt und läuft in einer virtuellen Maschine auf jedem Betriebssystem, die Sprache ist durchgängig objektorientiert und bringt eine große Standardbibliothek und freie Entwicklungswerkzeuge mit; dafür läuft sie meist langsamer und braucht mehr Speicher als direkt in Maschinencode übersetzte Sprachen wie C"
+     "kurz": "begründen, wann eine Sprache, die in Zwischencode (Bytecode) übersetzt und in einer virtuellen Maschine ausgeführt wird (z. B. Java, C#; virtuelle Maschine: AP1-8-1-1), für ein Projekt passt: Das Programm läuft ohne Neuübersetzung auf jedem Betriebssystem mit passender virtueller Maschine, und solche Sprachen bringen meist eine große Standardbibliothek und freie Entwicklungswerkzeuge mit; dafür laufen sie meist langsamer und brauchen mehr Speicher als direkt in Maschinencode übersetzte Sprachen wie C"
     }
    ]
   },
@@ -2152,13 +2152,13 @@
     },
     {
      "id": "PB1-3-2-3-K6",
-     "stufe": 4,
-     "kurz": "für eine Messaufgabe einen geeigneten Sensor begründet auswählen, zum Beispiel Ultraschall für Füllstand oder Abstand (misst die Laufzeit des Echos, unabhängig von Farbe und Material), Infrarot-Bewegungsmelder für Anwesenheit, CO2-Sensor für die Luftqualität, Vibrationssensor für die Laufruhe einer Maschine"
+     "stufe": 3,
+     "kurz": "für eine Messaufgabe einen geeigneten Sensor festlegen, zum Beispiel Ultraschall für Füllstand oder Abstand (misst die Laufzeit des Echos, unabhängig von Farbe und Material), Infrarot-Bewegungsmelder für Anwesenheit, CO2-Sensor für die Luftqualität, Vibrationssensor für die Laufruhe einer Maschine"
     },
     {
      "id": "PB1-3-2-3-K7",
-     "stufe": 4,
-     "kurz": "Sensoren und Bauform eines cyber-physischen Systems passend zu den Einsatzbedingungen begründet auswählen: robust gegen Hitze, Kälte, Schmutz, Öl, Vibration oder Feuchte in der Industrie, unauffällig gestaltet im Wohn- und Bürobereich, mit Funk und Batterie dort, wo es weder Netz- noch Stromanschluss gibt"
+     "stufe": 3,
+     "kurz": "Sensoren und Bauform eines cyber-physischen Systems passend zu den Einsatzbedingungen festlegen: robust gegen Hitze, Kälte, Schmutz, Öl, Vibration oder Feuchte in der Industrie, unauffällig gestaltet im Wohn- und Bürobereich, mit Funk und Batterie dort, wo es weder Netz- noch Stromanschluss gibt"
     },
     {
      "id": "PB1-3-2-3-K8",
@@ -2216,7 +2216,7 @@
     {
      "id": "PB1-4-1-1-K5",
      "stufe": 2,
-     "kurz": "Struktur- und Verhaltensdiagramme der UML unterscheiden: Strukturdiagramme zeigen statisch, woraus ein System besteht und wie seine Teile zusammenhängen (z. B. das Klassendiagramm), Verhaltensdiagramme zeigen dynamisch, was das System tut und was über die Zeit geschieht – Abläufe, Nachrichten und Zustandswechsel (Anwendungsfall-, Aktivitäts-, Sequenz- und Zustandsdiagramm)"
+     "kurz": "erklären, was Struktur- und Verhaltensdiagramme der UML unterscheidet (welches Diagramm wohin gehört: K1): Strukturdiagramme zeigen statisch, woraus ein System besteht und wie seine Teile zusammenhängen, Verhaltensdiagramme zeigen dynamisch, was das System tut und was über die Zeit geschieht – Abläufe, Nachrichten und Zustandswechsel"
     },
     {
      "id": "PB1-4-1-1-K6",
@@ -2343,8 +2343,8 @@
     },
     {
      "id": "PB1-4-1-4-K5",
-     "stufe": 4,
-     "kurz": "begründen, wann ein Zustandsdiagramm statt eines Aktivitätsdiagramms passt: Es zeigt, welche Zustände ein einzelnes Objekt annimmt und durch welche Ereignisse es wechselt, und eignet sich deshalb für Objekte mit einem Statusattribut (z. B. eine Bestellung: offen, bezahlt, versandt) oder für das Verhalten einer Oberfläche; ein Aktivitätsdiagramm zeigt dagegen die Abfolge der Schritte eines Ablaufs"
+     "stufe": 2,
+     "kurz": "Zustandsdiagramm und Aktivitätsdiagramm nach ihrem Zweck unterscheiden: Ein Zustandsdiagramm zeigt, welche Zustände ein einzelnes Objekt annimmt und durch welche Ereignisse es wechselt, und passt deshalb zu Objekten mit einem Statusattribut (z. B. eine Bestellung: offen, bezahlt, versandt) oder zum Verhalten einer Oberfläche; ein Aktivitätsdiagramm zeigt dagegen die Abfolge der Schritte eines Ablaufs"
     },
     {
      "id": "PB1-4-1-4-K6",
@@ -2446,8 +2446,8 @@
     },
     {
      "id": "PB1-5-1-1-K10",
-     "stufe": 4,
-     "kurz": "das Prinzip „Komposition vor Vererbung“ begründen: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet"
+     "stufe": 2,
+     "kurz": "das Prinzip „Komposition vor Vererbung“ erklären: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet"
     }
    ]
   },
@@ -2527,18 +2527,18 @@
     },
     {
      "id": "PB1-5-1-3-K5",
-     "stufe": 4,
-     "kurz": "begründen, warum ein gutes Modul eine hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und eine geringe Kopplung (wenig Abhängigkeit von anderen Modulen) hat: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul"
+     "stufe": 3,
+     "kurz": "hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und geringe Kopplung (wenig Abhängigkeit von anderen Modulen) beim Zerlegen eines Programms in Module anwenden – mit dem Grund dahinter: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul"
     },
     {
      "id": "PB1-5-1-3-K6",
      "stufe": 3,
-     "kurz": "aus einer Anforderungsbeschreibung die Merkmale bestimmen, nach denen eine Datenstruktur gewählt wird: ob die Anzahl der Daten feststeht oder sich laufend ändert, wie viele Daten es sind, ob über eine Position, einen Schlüssel oder in der Reihenfolge des Eingangs zugegriffen wird und welche Operation besonders schnell sein muss"
+     "kurz": "aus einer Anforderungsbeschreibung die Merkmale bestimmen, nach denen eine Datenstruktur gewählt wird (woran man ihre Eignung misst: AP1-8-2-5): ob die Anzahl der Daten feststeht oder sich laufend ändert, wie viele Daten es sind, ob über eine Position, einen Schlüssel oder in der Reihenfolge des Eingangs zugegriffen wird und welche Operation besonders schnell sein muss"
     },
     {
      "id": "PB1-5-1-3-K7",
-     "stufe": 4,
-     "kurz": "begründen, welche Datenstruktur zu einer Anforderung passt: ein zweidimensionales Array bei fester, bekannter Anzahl und Zugriff über zwei Koordinaten, eine Warteschlange (oder doppelt verkettete Liste) bei wechselnder Anzahl und Abarbeitung in Eingangsreihenfolge, eine Hashtabelle bei vielen, selten geänderten Datensätzen, die schnell über einen eindeutigen Schlüssel gefunden werden sollen"
+     "stufe": 3,
+     "kurz": "aus einer Anforderung die passende Datenstruktur ableiten: ein zweidimensionales Array bei fester, bekannter Anzahl und Zugriff über zwei Koordinaten, eine Warteschlange (oder doppelt verkettete Liste) bei wechselnder Anzahl und Abarbeitung in Eingangsreihenfolge, eine Hashtabelle bei vielen, selten geänderten Datensätzen, die schnell über einen eindeutigen Schlüssel gefunden werden sollen"
     }
    ]
   },
@@ -2635,12 +2635,12 @@
     {
      "id": "PB1-5-1-6-K2",
      "stufe": 2,
-     "kurz": "Vor- und Nachteile einer Schichtenarchitektur erläutern: Jede Schicht spricht nur über eine festgelegte Schnittstelle mit der darunterliegenden, deshalb gibt es wenige Abhängigkeiten, Änderungen bleiben meist in einer Schicht und eine Schicht lässt sich austauschen; dafür ist sie langsamer, weil Daten durch mehrere Schichten gereicht und umgewandelt werden"
+     "kurz": "Vor- und Nachteile einer Schichtenarchitektur (Aufbau: PB1-5-1-4-K7) erläutern: Jede Schicht spricht nur über eine festgelegte Schnittstelle mit der darunterliegenden, deshalb gibt es wenige Abhängigkeiten, Änderungen bleiben meist in einer Schicht und eine Schicht lässt sich austauschen; dafür ist sie langsamer, weil Daten durch mehrere Schichten gereicht und umgewandelt werden"
     },
     {
      "id": "PB1-5-1-6-K3",
      "stufe": 2,
-     "kurz": "Vor- und Nachteile von MVC erläutern: Mehrere Views zeigen dieselben Daten und bleiben automatisch auf demselben Stand, und Views lassen sich austauschen oder hinzufügen, ohne Model und Fachlogik anzufassen; dafür ist der Aufbau komplexer als eine einfache Oberfläche, und MVC sitzt meist innerhalb der Präsentationsschicht einer Schichtenarchitektur"
+     "kurz": "Vor- und Nachteile von MVC (Aufbau: PB1-5-1-4-K6) erläutern: Mehrere Views zeigen dieselben Daten und bleiben automatisch auf demselben Stand, und Views lassen sich austauschen oder hinzufügen, ohne Model und Fachlogik anzufassen; dafür ist der Aufbau komplexer als eine einfache Oberfläche, und MVC sitzt meist innerhalb der Präsentationsschicht einer Schichtenarchitektur"
     },
     {
      "id": "PB1-5-1-6-K4",
@@ -2750,13 +2750,13 @@
     },
     {
      "id": "PB1-6-1-2-K5",
-     "stufe": 4,
-     "kurz": "begründen, wann zwei Tabellen in einer 1:1-Beziehung besser sind als eine gemeinsame Tabelle: wenn ein Teil der Daten eigene Zugriffsrechte braucht, etwa vertrauliche Gehaltsdaten, oder wenn viele selten gebrauchte Attribute ausgelagert werden; sonst gehören Daten, die 1:1 zusammengehören, in eine Tabelle"
+     "stufe": 3,
+     "kurz": "festlegen, wann eine 1:1-Beziehung als zwei Tabellen statt als eine gemeinsame Tabelle umgesetzt wird: wenn ein Teil der Daten eigene Zugriffsrechte braucht, etwa vertrauliche Gehaltsdaten, oder wenn viele selten gebrauchte Attribute ausgelagert werden; sonst gehören Daten, die 1:1 zusammengehören, in eine Tabelle"
     },
     {
      "id": "PB1-6-1-2-K6",
-     "stufe": 4,
-     "kurz": "beurteilen, ob eine m:n-Beziehung eine Zwischentabelle braucht: Ist die Zahl der Beteiligten je Datensatz fest und klein und hat jeder eine eigene Rolle, etwa genau eine Heim- und eine Gastmannschaft je Spiel, genügen zwei Fremdschlüsselspalten; ist die Zahl offen, etwa beliebig viele Teilnehmer je Kurs, ist die Zwischentabelle nötig"
+     "stufe": 3,
+     "kurz": "festlegen, ob eine m:n-Beziehung eine Zwischentabelle braucht: Ist die Zahl der Beteiligten je Datensatz fest und klein und hat jeder eine eigene Rolle, etwa genau eine Heim- und eine Gastmannschaft je Spiel, genügen zwei Fremdschlüsselspalten; ist die Zahl offen, etwa beliebig viele Teilnehmer je Kurs, ist die Zwischentabelle nötig"
     }
    ]
   },
@@ -2804,12 +2804,12 @@
     {
      "id": "PB1-6-1-3-K6",
      "stufe": 2,
-     "kurz": "erklären, warum ein berechenbares Attribut wie der Bruttopreis, der sich aus dem Nettopreis und einem festen Steuersatz ergibt, die 3. NF verletzt: Es hängt über ein anderes Nichtschlüsselattribut transitiv vom Schlüssel ab und wird deshalb nicht gespeichert, sondern bei Bedarf berechnet"
+     "kurz": "erklären, warum ein berechenbares Attribut wie der Bruttopreis, der sich aus dem Nettopreis und einem festen Steuersatz ergibt, die 3. NF verletzt: Es hängt nicht direkt vom Schlüssel ab, sondern über das Nichtschlüsselattribut Nettopreis, also transitiv. Dass ein berechenbarer Wert als versteckte Redundanz nicht gespeichert wird, kennst du aus AP1-8-4-2"
     },
     {
      "id": "PB1-6-1-3-K7",
-     "stufe": 4,
-     "kurz": "beurteilen, wie weit ein Datenmodell normalisiert wird: Jede weitere Zerlegung bringt mehr Tabellen, Schlüssel und Joins und damit längere Antwortzeiten und mehr Komplexität; deshalb wird nur ungewollte Redundanz entfernt, und bewusst in Kauf genommene Redundanz wird begründet"
+     "stufe": 2,
+     "kurz": "erklären, warum ein Datenmodell nicht weiter als nötig normalisiert wird: Jede weitere Zerlegung bringt mehr Tabellen, Schlüssel und Joins und damit längere Antwortzeiten und mehr Komplexität; deshalb entfernt man nur ungewollte Redundanz, und Redundanz, die man bewusst in Kauf nimmt, wird begründet"
     }
    ]
   },
@@ -2849,7 +2849,7 @@
     {
      "id": "PB1-6-1-4-K5",
      "stufe": 4,
-     "kurz": "begründen, warum relationale Datenbanken meist vertikal (ein leistungsstärkerer Server) und NoSQL-Datenbanken meist horizontal (weitere Server im Verbund) skaliert werden: Joins und sofortige Konsistenz über alle Tabellen lassen sich schwer auf viele Rechner verteilen, während NoSQL-Daten ohne feste Verknüpfungen auf viele Server aufgeteilt werden können"
+     "kurz": "begründen, warum relationale Datenbanken meist vertikal (ein leistungsstärkerer Server) und NoSQL-Datenbanken meist horizontal (weitere Server im Verbund) skaliert werden (Skalierungsarten: PB1-12-2-2): Joins und sofortige Konsistenz über alle Tabellen lassen sich schwer auf viele Rechner verteilen, während NoSQL-Daten ohne feste Verknüpfungen auf viele Server aufgeteilt werden können"
     },
     {
      "id": "PB1-6-1-4-K6",
@@ -2905,7 +2905,7 @@
     {
      "id": "PB1-6-1-5-K4",
      "stufe": 2,
-     "kurz": "erklären, warum Änderungen, die ein Programm über eine Datenbankverbindung schreibt, erst nach dem Commit dauerhaft gespeichert sind: Bis dahin gehören sie zu einer offenen Transaktion, die bei einem Fehler oder beim Schließen der Verbindung ohne Commit zurückgerollt wird"
+     "kurz": "erklären, warum Änderungen, die ein Programm über eine Datenbankverbindung ohne Autocommit schreibt, erst mit dem Commit dauerhaft gespeichert sind: Bis dahin gehören sie zu einer offenen Transaktion, die bei einem Fehler zurückgerollt wird und beim Schließen der Verbindung ohne Commit in der Regel verloren geht; im Autocommit-Modus, den viele Treiber voreinstellen, ist dagegen jede einzelne Anweisung sofort eine abgeschlossene Transaktion"
     }
    ]
   },
@@ -3035,7 +3035,7 @@
     {
      "id": "PB1-7-1-3-K4",
      "stufe": 2,
-     "kurz": "Open Data und Closed Data an vier Merkmalen unterscheiden – Zugang (für alle oder nur für Berechtigte), maschinelle Verarbeitbarkeit, Kosten und Nutzungsrechte – und Zwischenformen einordnen, etwa frei zugängliche Daten, die nur auf Papier vorliegen, oder offene Daten mit Pflicht zur Namensnennung; deshalb ist vor der Nutzung fremder Daten immer die Lizenz zu klären"
+     "kurz": "Open Data und Closed Data an vier Merkmalen unterscheiden – Zugang (für alle oder nur für Berechtigte), maschinelle Verarbeitbarkeit, Kosten und Nutzungsrechte –, auch bei Zwischenformen wie frei zugänglichen Daten, die nur auf Papier vorliegen, oder offenen Daten mit Pflicht zur Namensnennung; deshalb ist vor der Nutzung fremder Daten immer die Lizenz zu klären"
     },
     {
      "id": "PB1-7-1-3-K5",
@@ -3147,8 +3147,8 @@
     },
     {
      "id": "PB1-7-1-6-K3",
-     "stufe": 4,
-     "kurz": "für eine Anbindung begründet zwischen SOAP und REST auswählen: SOAP, wenn ein streng beschriebener Vertrag, eingebaute Standards für Sicherheit und verlässliche Transaktionen gefordert sind oder ein bestehendes System nur SOAP anbietet; REST für schlanke Web-, Mobil- und IoT-Anwendungen, die mit den HTTP-Methoden auskommen, wenig Overhead haben sollen und Antworten in JSON verarbeiten"
+     "stufe": 2,
+     "kurz": "erläutern, wann SOAP und wann REST eingesetzt wird: SOAP, wenn ein streng beschriebener Vertrag, eingebaute Standards für Sicherheit und verlässliche Transaktionen gefordert sind oder ein bestehendes System nur SOAP anbietet; REST für schlanke Web-, Mobil- und IoT-Anwendungen, die mit den HTTP-Methoden auskommen, wenig Overhead haben sollen und Antworten in JSON verarbeiten"
     }
    ]
   },
@@ -3274,7 +3274,12 @@
     {
      "id": "PB1-8-1-4-K3",
      "stufe": 2,
-     "kurz": "die Grundsätze Robustheit gegen Benutzungsfehler, Erlernbarkeit und Benutzerbindung an einem Beispiel erläutern: Robust ist ein Dialog, der Fehleingaben durch die Gestaltung verhindert (Auswahlliste statt Freitext), erkannte Fehler selbst korrigiert oder verständlich zur Behebung führt; erlernbar, wenn er auf unbekannte Funktionen hinweist und gefahrloses Ausprobieren erlaubt; Benutzerbindung entsteht durch eine ansprechende, vertrauenswürdige Bedienung, die zur Nutzung motiviert und Rückmeldungen der Nutzer aufnimmt"
+     "kurz": "die Grundsätze Robustheit gegen Benutzungsfehler, Erlernbarkeit und Benutzerbindung an einem Beispiel erläutern: Robust ist ein Dialog, der Fehleingaben durch die Gestaltung verhindert (Auswahlliste statt Freitext), erkannte Fehler selbst korrigiert oder verständlich zur Behebung führt; erlernbar, wenn er auf unbekannte Funktionen hinweist, gefahrloses Ausprobieren erlaubt und selten genutzte Funktionen ohne neue Einarbeitung wiedererkennen lässt; Benutzerbindung entsteht durch eine ansprechende, vertrauenswürdige Bedienung, die zur Nutzung motiviert und Rückmeldungen der Nutzer aufnimmt"
+    },
+    {
+     "id": "PB1-8-1-4-K4",
+     "stufe": 4,
+     "kurz": "begründen, warum eine Oberfläche den Nutzer nicht viele Angaben gleichzeitig im Kopf behalten lässt: Das Kurzzeitgedächtnis fasst nur etwa fünf bis sieben Einheiten; was für den nächsten Schritt gebraucht wird, bleibt deshalb sichtbar"
     }
    ]
   },
@@ -3369,11 +3374,6 @@
      "id": "PB1-8-1-3-K8",
      "stufe": 2,
      "kurz": "exploratives, experimentelles und evolutionäres Prototyping unterscheiden: Ein explorativer Prototyp klärt mit dem Kunden Anforderungen und Lösungsideen, ein experimenteller erprobt, ob ein technischer Lösungsweg trägt – beide werden danach meist verworfen –, ein evolutionärer wird schrittweise zum fertigen Produkt weiterentwickelt"
-    },
-    {
-     "id": "PB1-8-1-3-K9",
-     "stufe": 4,
-     "kurz": "begründen, warum man Bedienelemente meist mit Layouts (untereinander, nebeneinander, im Raster, als Formular aus Beschriftung und Feld) statt mit festen Koordinaten anordnet: Layouts ordnen die Elemente bei anderer Fenstergröße, Bildschirmauflösung oder Textlänge, etwa nach einer Übersetzung, selbst neu an, während feste Positionen dann Inhalte abschneiden oder Lücken lassen"
     }
    ]
   },
@@ -3503,7 +3503,7 @@
     {
      "id": "PB1-9-1-3-K7",
      "stufe": 2,
-     "kurz": "Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, decken bei lückenhafter Spezifikation aber wenig ab und zeigen nicht, wo der Fehler sitzt; White-Box-Testfälle lokalisieren Fehler im Code und prüfen auch nicht spezifizierte Teile und komplexe Algorithmen gründlich, hängen aber am Code, sind erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden"
+     "kurz": "Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, zeigen aber nur, dass ein Fehler auftritt, nicht wo er im Code sitzt; White-Box-Testfälle grenzen den Fehler im Code ein, sind aber erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden"
     },
     {
      "id": "PB1-9-1-3-K8",
@@ -3550,6 +3550,11 @@
      "id": "PB1-9-1-4-K5",
      "stufe": 2,
      "kurz": "Testarten dem Qualitätsmerkmal zuordnen, das sie prüfen: Funktionstest der Funktionalität, Robustheits-, Recovery- und Stresstest der Zuverlässigkeit, Usability-Test der Benutzbarkeit, Performance- und Lasttest der Effizienz, Review und statische Codeanalyse der Wartbarkeit, Portabilitätstest der Übertragbarkeit"
+    },
+    {
+     "id": "PB1-9-1-4-K6",
+     "stufe": 2,
+     "kurz": "Testverfahren (wie getestet wird, z. B. statisch oder dynamisch), Testarten (was geprüft wird, z. B. Funktion oder Performance) und Teststufen (in welchem Entwicklungsstand getestet wird, vom Komponenten- bis zum Abnahmetest) unterscheiden; dazu gehört der Grundsatz, dass ein Testobjekt möglichst nicht von seinem Entwickler, sondern von unabhängigen Personen getestet wird, weil der Entwickler eigene Denkfehler leicht übersieht"
     }
    ]
   },
@@ -3656,8 +3661,8 @@
     },
     {
      "id": "PB1-9-1-6-K7",
-     "stufe": 4,
-     "kurz": "ein Benutzerhandbuch nach Qualitätskriterien beurteilen: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig"
+     "stufe": 3,
+     "kurz": "beim Erstellen und Erweitern eines Benutzerhandbuchs Qualitätskriterien anwenden: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig"
     },
     {
      "id": "PB1-9-1-6-K8",

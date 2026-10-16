@@ -121,6 +121,16 @@
        "herkunft": [
         "buch:FS-3.1.2-S162"
        ]
+      },
+      {
+       "id": "PB1-1-1-1-K10",
+       "text": "Du kannst den DevOps-Ansatz erklären: Entwicklung und Betrieb arbeiten als ein Team mit gemeinsamer Verantwortung und stark automatisierten Abläufen (CI/CD, PB1-3-2-2), um häufiger, schneller und mit weniger Fehlern auszuliefern; der Preis ist ein Umdenken in Organisation und Zusammenarbeit, das nicht zu jeder bestehenden Unternehmensstruktur passt.",
+       "kurz": "DevOps: Entwicklung und Betrieb als ein Team",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.4.2-S518",
+        "buch:GS-5.4.2-S519"
+       ]
       }
      ],
      "baut_auf": [
@@ -224,7 +234,7 @@
       },
       {
        "id": "PB1-1-1-2-K4",
-       "text": "Du kannst Stärken und Schwächen des Wasserfallmodells erklären: Weil alles vorab festgelegt wird, sind Termine, Kosten und Dokumentation gut planbar; weil der Auftraggeber erst bei der Abnahme ein Ergebnis sieht und erst nach der Umsetzung getestet wird, fallen Fehler aus Analyse und Entwurf spät und teuer auf, und bei langen Projekten kann die Lösung bei Einführung schon veraltet sein.",
+       "text": "Du kannst Stärken und Schwächen des Wasserfallmodells aus seinem Ablauf erklären (je einen Vor- und Nachteil kennst du aus AP1-1-1-2): Weil alles vorab festgelegt wird, sind Termine, Kosten und Dokumentation gut planbar; weil der Auftraggeber erst bei der Abnahme ein Ergebnis sieht und erst nach der Umsetzung getestet wird, fallen Fehler aus Analyse und Entwurf spät und teuer auf, und bei langen Projekten kann die Lösung bei Einführung schon veraltet sein.",
        "kurz": "Wasserfallmodell: Stärken und Schwächen begründet",
        "stufe": 2,
        "herkunft": [
@@ -550,7 +560,7 @@
       },
       {
        "id": "PB1-1-2-1-K9",
-       "text": "Du kannst erklären, wie Software den Energiebedarf beeinflusst: Ineffiziente Programme halten Prozessor, Speicher und Netz länger beschäftigt und verbrauchen dadurch mehr Strom; effiziente Algorithmen, das Vermeiden unnötiger Abfragen, Schleifen und Datenübertragungen und geringe Anforderungen an die Hardware sparen Energie und verlängern die Nutzungsdauer der Geräte.",
+       "text": "Du kannst erklären, warum ineffizient programmierte Software mehr Energie verbraucht als sparsam programmierte: Der Strombedarf eines Rechners steigt mit der beanspruchten Rechenleistung, und ineffizienter Code hält Prozessor, Speicher und Netz länger als nötig beschäftigt.",
        "kurz": "Energiebedarf durch Software",
        "stufe": 2,
        "herkunft": [
@@ -770,8 +780,8 @@
       },
       {
        "id": "PB1-1-2-3-K6",
-       "text": "Du kannst die Tätigkeiten der Anforderungsspezifikation erklären – Anforderungen ermitteln (z. B. im Kundengespräch, im Workshop, durch Beobachtung), analysieren, eindeutig festschreiben, mit dem Auftraggeber validieren und später Änderungen nachvollziehbar verwalten – und warum sie nötig ist: Kunden äußern ihre Wünsche oft unklar oder setzen sie stillschweigend voraus, und die Schritte laufen mit Rücksprüngen statt streng nacheinander.",
-       "kurz": "Tätigkeiten der Anforderungsspezifikation",
+       "text": "Du kannst erklären, warum die Anforderungsspezifikation bei Software nicht einmalig und streng nacheinander abläuft: Kunden äußern ihre Wünsche oft unklar oder setzen sie stillschweigend voraus; deshalb wird mit Rücksprüngen ermittelt (z. B. im Kundengespräch, im Workshop, durch Beobachtung), analysiert, festgeschrieben und mit dem Auftraggeber validiert, und jede spätere Änderung wird nachvollziehbar verwaltet. Das Erheben und Abstimmen von Anforderungen an sich kennst du aus AP1-2-2-1.",
+       "kurz": "Anforderungsspezifikation mit Rücksprüngen",
        "stufe": 2,
        "herkunft": [
         "buch:FS2-1.1.1-S10",
@@ -781,17 +791,17 @@
       },
       {
        "id": "PB1-1-2-3-K7",
-       "text": "Du kannst beurteilen, ob sich ein Arbeitsablauf für eine (Teil-)Automatisierung durch Software eignet: Er muss sich klar in Regeln fassen lassen und häufig in gleicher Form wiederkehren; einmalige, seltene oder ständig wechselnde Abläufe erledigt ein Mensch meist günstiger, weil sich der Entwicklungsaufwand nicht lohnt.",
+       "text": "Du kannst erklären, welche Arbeitsabläufe sich für eine (Teil-)Automatisierung durch Software eignen: solche, die sich klar in Regeln fassen lassen und häufig in gleicher Form wiederkehren; einmalige, seltene oder ständig wechselnde Abläufe erledigt ein Mensch meist günstiger, weil sich der Entwicklungsaufwand nicht lohnt.",
        "kurz": "Eignung eines Ablaufs für Automatisierung",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:FS2-1.1.2-S13"
        ]
       },
       {
        "id": "PB1-1-2-3-K8",
-       "text": "Du kannst die Zielbestimmung eines Lasten- oder Pflichtenhefts erstellen und dabei Musskriterien (unverzichtbar für die Abnahme), Wunsch- bzw. Kannkriterien (werden umgesetzt, wenn Zeit und Budget reichen) und Abgrenzungskriterien (was das Produkt ausdrücklich nicht leisten soll) unterscheiden.",
-       "kurz": "Zielbestimmung: Muss-, Wunsch- und Abgrenzungskriterien",
+       "text": "Du kannst die Zielbestimmung eines Lasten- oder Pflichtenhefts erstellen: Zu den Muss- und Kann- bzw. Wunschkriterien (AP1-2-2-1) kommen Abgrenzungskriterien, die ausdrücklich festhalten, was das Produkt nicht leisten soll.",
+       "kurz": "Zielbestimmung mit Abgrenzungskriterien",
        "stufe": 3,
        "herkunft": [
         "buch:GS-2.6.2-S225",
@@ -950,6 +960,15 @@
         "katalog:AP2b.03.01.6",
         "katalog:AP2b.03.01.7"
        ]
+      },
+      {
+       "id": "PB1-1-2-4-K4",
+       "text": "Du kannst erklären, wie sich die ISO/IEC 25010 von der älteren ISO/IEC 9126 unterscheidet: Kompatibilität (Zusammenarbeit und Datenaustausch mit anderen Systemen) und Sicherheit sind eigene Hauptmerkmale geworden, Funktionalität heißt funktionale Eignung und Effizienz Leistungseffizienz; so kommt die Norm auf acht statt sechs Hauptmerkmale.",
+       "kurz": "ISO/IEC 25010 gegenüber ISO/IEC 9126",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-2.3.1-S143"
+       ]
       }
      ],
      "baut_auf": [
@@ -989,14 +1008,6 @@
         "buch:FS2-4.2.1"
        ],
        "grund": "RK2: Unterscheidung intern/extern nennt kein Baustein"
-      },
-      {
-       "text": "Die ISO/IEC 25010 in der Fassung von 2011 nennt acht Hauptmerkmale: funktionale Eignung, Leistungseffizienz, Kompatibilität, Benutzbarkeit, Zuverlässigkeit, Sicherheit, Wartbarkeit und Übertragbarkeit; gegenüber der ISO/IEC 9126 sind Kompatibilität und Sicherheit eigene Merkmale geworden.",
-       "kurz": "ISO/IEC 25010:2011 mit acht Hauptmerkmalen",
-       "quellen": [
-        "buch:GS-2.3.1"
-       ],
-       "grund": "D8: kein Katalog-Baustein (katalog: false); Katalog zählt die Merkmale der älteren Fassung auf"
       }
      ],
      "hinweis": "Das Lehrbuch ordnet die Untermerkmale noch nach ISO/IEC 9126 (Sicherheit unter Funktionalität); in der ISO/IEC 25010 ist Sicherheit ein eigenes Hauptmerkmal."
@@ -1587,11 +1598,11 @@
      "quellen": [
       "buch:GS-2.3.1"
      ],
-     "ring": "Kür",
+     "ring": "Kern",
      "wo": [
-      "PB1-1-2-4"
+      "PB1-1-2-4-K4"
      ],
-     "notiz": "Regelwerk v2.x, D8/RK1"
+     "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung PB1-a Nr. 31: bisher Kür, jetzt Pflicht"
     }
    ]
   },
@@ -1652,6 +1663,7 @@
      "PB1-1-1-1-K7",
      "PB1-1-1-1-K8",
      "PB1-1-1-1-K9",
+     "PB1-1-1-1-K10",
      "PB1-1-1-2-K4",
      "PB1-1-1-2-K5",
      "PB1-1-1-2-K6",
@@ -1665,7 +1677,8 @@
      "PB1-1-2-3-K6",
      "PB1-1-2-3-K7",
      "PB1-1-2-3-K8",
-     "PB1-1-2-3-K9"
+     "PB1-1-2-3-K9",
+     "PB1-1-2-4-K4"
     ],
     "neue_stichpunkte": [],
     "d6": [
@@ -1705,6 +1718,13 @@
      "PB1-1-1-3",
      "PB1-1-2-3",
      "PB1-1-2-4"
+    ],
+    "kuer_gestrichen": [
+     {
+      "sp": "PB1-1-2-4",
+      "text": "Die ISO/IEC 25010 in der Fassung von 2011 nennt acht Hauptmerkmale: funktionale Eignung, Leistungseffizienz, Kompatibilität, Benutzbarkeit, Zuverlässigkeit, Sicherheit, Wartbarkeit und Übertragbarkeit; gegenüber der ISO/IEC 9126 sind Kompatibilität und Sicherheit eigene Merkmale geworden.",
+      "grund": "jetzt Pflicht: PB1-1-2-4-K4, V2-Prüfung PB1-a Nr. 31"
+     }
     ]
    }
   ]

@@ -45,7 +45,7 @@ Teilaufgaben: 2023W-WISO-A29, 2024S-WISO-A29, 2023W-WISO-A30
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
-- Mit einem Umweltmanagementsystem nach ISO 14001 legt ein Unternehmen Umweltziele fest, plant Maßnahmen, misst die Ergebnisse und verbessert sich laufend; es kann sich danach zertifizieren lassen, und ISO 14004 gibt Leitlinien zur Umsetzung. Viele Unternehmen legen ihre Fortschritte zusätzlich in Nachhaltigkeitsberichten offen. _(buch:FS-4.4.3)_
+- Ein Umweltmanagementsystem arbeitet als Kreislauf: Das Unternehmen setzt sich Umweltziele, plant Maßnahmen, misst ihre Wirkung und verbessert sich laufend; viele Unternehmen berichten ihre Fortschritte zusätzlich in Nachhaltigkeitsberichten. Dass es sich zum Beispiel nach ISO 14001 zertifizieren lässt, steht als Kür an AP1-1-5-1. _(buch:FS-4.4.3)_
 
 _Hinweis:_ Die drei Seiten der Nachhaltigkeit (ökonomische, ökologische und soziale Ziele) stehen in AP1-2-4-1, Green IT (umweltschonend herstellen, betreiben, entsorgen) in PB1-1-2-1. Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume wohnen hier; WISO-5-3-1 verweist hierher und behält nur den Zeithorizont bei IT-Lösungen.
 
@@ -102,7 +102,7 @@ Teilaufgaben: 2022S-WISO-A28, 2023S-WISO-A24
 | K1 | Du kannst das Duale System erklären: ein privatwirtschaftlich organisiertes System mehrerer Betreiber, das gebrauchte Verkaufsverpackungen von privaten Endverbrauchern (Haushalte und vergleichbare Stellen wie Büros) neben der öffentlichen Müllabfuhr sammelt, sortiert und verwertet. | 2 | katalog:WISO.04.03.1, beleg:2022S-WISO-A28 |
 | K3 | Du kannst Grundsätze für Verpackungen erklären: unnötige Verpackung vermeiden statt entsorgen, Mehrweg vor Einweg, sortenreine und recycelbare Materialien; Papier oder recyceltes Plastik ist nicht automatisch umweltfreundlich. | 2 | katalog:WISO.04.06, beleg:2023S-WISO-A24 |
 | K4 | Du kannst die Pflicht zur Teilnahme am Dualen System erklären: Wer mit Ware befüllte Verpackungen, die typischerweise bei privaten Endverbrauchern anfallen, als Erster in Verkehr bringt (Hersteller, auch Online-Händler), muss sich nach dem Verpackungsgesetz an einem dualen System beteiligen und im Verpackungsregister registrieren. | 2 | katalog:WISO.04.03.1 |
-| K5 | Du kannst Verkaufsverpackung (umhüllt die Ware als Verkaufseinheit beim Endverbraucher), Umverpackung (fasst mehrere Verkaufseinheiten zusammen, etwa für das Regal) und Versandverpackung (ermöglicht den Versand an den Endverbraucher, z. B. der Karton im Onlinehandel) unterscheiden und erklären, dass sie systembeteiligungspflichtig sind, wenn sie typischerweise bei privaten Endverbrauchern anfallen – Verpackungen von Lieferungen an andere Unternehmen, etwa Teile an einen Hersteller, dagegen nicht. | 2 | buch:GS-2.10.4-S275 |
+| K5 | Du kannst Verkaufsverpackung (umhüllt die Ware als Verkaufseinheit beim Endverbraucher), Umverpackung (fasst mehrere Verkaufseinheiten zusammen, etwa für das Regal) und Versandverpackung (ermöglicht den Versand an den Endverbraucher, z. B. der Karton im Onlinehandel) unterscheiden; beteiligungspflichtig im dualen System sind sie nur, wenn sie typischerweise bei privaten Endverbrauchern anfallen, Verpackungen von Lieferungen an andere Unternehmen, etwa Teile an einen Hersteller, dagegen nicht. | 2 | buch:GS-2.10.4-S275 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
@@ -210,7 +210,7 @@ Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 3, Außen
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
 | Grüner Punkt | pruefer:wiso-2026-10 | Kür | WISO-4-2-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
-| Mit einem Umweltmanagementsystem nach ISO 14001 legt ein Unternehmen Umweltziele fest, plant Maßnahmen, misst die Ergebn | buch:FS-4.4.3 | Kür | WISO-4-1-2 | Regelwerk v2.x, D8/RK1 |
+| Ein Umweltmanagementsystem arbeitet als Kreislauf: Das Unternehmen setzt sich Umweltziele, plant Maßnahmen, misst ihre W | buch:FS-4.4.3 | Kür | WISO-4-1-2 | Regelwerk v2.x, D8/RK1 |
 | Ein CO2-Zertifikat berechtigt, in einem bestimmten Zeitraum eine bestimmte Menge CO2 auszustoßen. Wer mehr ausstößt, mus | buch:FS-4.4.3 | Kür | WISO-4-2-3 | Regelwerk v2.x, D8/RK1 |
 
 ## Geschwister-Prüfung (R4)

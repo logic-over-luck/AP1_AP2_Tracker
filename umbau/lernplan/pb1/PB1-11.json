@@ -136,7 +136,7 @@
       },
       {
        "id": "PB1-11-1-1-K7",
-       "text": "Du kannst Netzwerkkomponenten nach der Schicht vergleichen, auf der sie arbeiten: Repeater und Hub auf Schicht 1 reichen Signale ungeprüft an alle Anschlüsse weiter, Bridge und Switch auf Schicht 2 trennen Kollisionsdomänen, weil sie gezielt nach MAC-Adresse weiterleiten, ein Router auf Schicht 3 verbindet Netze und begrenzt die Broadcast-Domäne, Proxy und Application Layer Gateway arbeiten auf der Anwendungsschicht.",
+       "text": "Du kannst über Switch und Router hinaus Netzwerkkomponenten nach ihrer Schicht einordnen: Repeater und Hub (Schicht 1) reichen Signale ungeprüft an alle Anschlüsse weiter, Switch und Bridge trennen Kollisionsdomänen, ein Router begrenzt die Broadcast-Domäne, Proxy und Application Layer Gateway arbeiten auf der Anwendungsschicht.",
        "kurz": "Netzwerkkomponenten nach Schicht: Hub bis Proxy",
        "stufe": 2,
        "herkunft": [
@@ -247,7 +247,7 @@
      "koennen": [
       {
        "id": "PB1-11-1-4-K1",
-       "text": "Du kannst beschreiben, wie eine Firewall ihr Regelwerk abarbeitet: Jedes Paket wird der Reihe nach mit den Regeln (Quelle, Ziel, Port, Protokoll, Richtung) verglichen, die erste passende Regel entscheidet über Durchlassen (ACCEPT), stilles Verwerfen (DROP) oder Ablehnen mit Rückmeldung (REJECT), und am Ende steht eine Standardregel, die alles nicht ausdrücklich Erlaubte sperrt.",
+       "text": "Du kannst beschreiben, wie eine Firewall ihr Regelwerk abarbeitet: Jedes Paket wird der Reihe nach mit den Regeln (Quelle, Ziel, Port, Protokoll, Richtung) verglichen, die erste passende Regel entscheidet über Durchlassen (ACCEPT), stilles Verwerfen (DROP) oder Ablehnen mit Rückmeldung (REJECT); am Ende steht eine Standardregel (Grundsatz siehe PB1-10-2-3-K10).",
        "kurz": "Firewall-Regelwerk: Reihenfolge, ACCEPT, DROP, REJECT",
        "stufe": 2,
        "herkunft": [
@@ -257,8 +257,8 @@
       },
       {
        "id": "PB1-11-1-4-K2",
-       "text": "Du kannst Firewalls nach ihrer Prüftiefe unterscheiden: Der Paketfilter liest nur Adressen und Ports (Schicht 3 und 4), die zustandsorientierte Firewall zusätzlich den Verbindungszustand, eine Next-Generation-Firewall prüft per Deep Packet Inspection auch die Nutzdaten bis zur Anwendungsschicht (verschlüsselten Verkehr nur, wenn sie ihn aufbricht und neu verschlüsselt), kennt die Anwendungen und bringt Angriffserkennung mit, wobei ein IDS Angriffsmuster nur meldet und ein IPS sie zusätzlich blockiert.",
-       "kurz": "Prüftiefe bis Next-Generation-Firewall, IDS und IPS",
+       "text": "Du kannst über Paketfilter und zustandsorientierte Prüfung hinaus die Next-Generation-Firewall beschreiben: Sie prüft per Deep Packet Inspection auch die Nutzdaten bis zur Anwendungsschicht (verschlüsselten Verkehr nur, wenn sie ihn aufbricht und neu verschlüsselt), erkennt Anwendungen und bringt Angriffserkennung mit; ein IDS meldet Angriffsmuster, ein IPS blockiert sie zusätzlich.",
+       "kurz": "Next-Generation-Firewall, IDS und IPS",
        "stufe": 2,
        "herkunft": [
         "buch:FS-4.3.2-S336",
@@ -349,7 +349,7 @@
       },
       {
        "id": "PB1-11-1-2-K4",
-       "text": "Du kannst die Eigenschaften von IP erläutern: Es adressiert Netze und Rechner, jedes Paket wird einzeln anhand der Ziel-IP-Adresse weitergeleitet, es arbeitet unabhängig von der Übertragungstechnik darunter (Ethernet, WLAN, Glasfaser), ist verbindungslos und ohne Empfangsbestätigung, sodass verlorene oder vertauschte Pakete erst eine höhere Schicht wie TCP bemerkt und ausgleicht.",
+       "text": "Du kannst über die Paketvermittlung aus AP1 hinaus die Eigenschaften von IP erläutern: unabhängig von der Übertragungstechnik darunter (Ethernet, WLAN, Glasfaser), verbindungslos und ohne Empfangsbestätigung, sodass verlorene oder vertauschte Pakete erst eine höhere Schicht wie TCP bemerkt und ausgleicht.",
        "kurz": "Eigenschaften von IP: verbindungslos, ohne Quittung",
        "stufe": 2,
        "herkunft": [
@@ -362,6 +362,7 @@
        "kurz": "TCP-Verbindungsaufbau und -abbau: Drei-Wege-Handshake",
        "stufe": 2,
        "herkunft": [
+        "katalog:AP2b.01.05.1",
         "buch:FS-1.3.2-S54"
        ]
       },
@@ -395,9 +396,9 @@
       },
       {
        "id": "PB1-11-1-2-K9",
-       "text": "Du kannst für ein Formular die HTTP-Methode begründet auswählen: GET hängt die Daten als Parameter an die URL (sichtbar, landet in Verlauf, Lesezeichen und Server-Logs, in der Länge begrenzt, passend zum Suchen und Filtern), POST überträgt sie im Rumpf der Anfrage (auch große Datenmengen und Dateien, passend für Daten, die gespeichert oder verarbeitet werden, etwa Anmeldung oder Bestellung).",
+       "text": "Du kannst für ein Formular die passende HTTP-Methode einsetzen: GET hängt die Daten als Parameter an die URL (sichtbar, landet in Verlauf, Lesezeichen und Server-Logs, in der Länge begrenzt, passend zum Suchen und Filtern), POST überträgt sie im Rumpf der Anfrage (auch große Datenmengen und Dateien, passend für Daten, die gespeichert oder verarbeitet werden, etwa Anmeldung oder Bestellung).",
        "kurz": "GET oder POST für Formulardaten",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:FS2-1.4.4-S92"
        ]
@@ -432,7 +433,7 @@
        "grund": "RK2: QUIC und HTTP/3 nennt der Katalog nicht"
       }
      ],
-     "hinweis": "Das Lehrbuch ordnet Port 443 „dynamischen Webseiten“ zu; richtig ist: 443 ist der Standardport von HTTPS, unabhängig vom Seiteninhalt. POST-Daten kommen laut Lehrbuch über den Standardeingabekanal; das gilt nur für CGI-Programme, allgemein stehen sie im Rumpf der Anfrage. Bei der Latenz schreibt es, eine geringe Latenz wirke sich negativ aus; richtig ist: Eine hohe Latenz wirkt negativ."
+     "hinweis": "Das Lehrbuch ordnet Port 443 „dynamischen Webseiten“ zu; richtig ist: 443 ist der Standardport von HTTPS, unabhängig vom Seiteninhalt. POST-Daten kommen laut Lehrbuch über den Standardeingabekanal; das gilt nur für CGI-Programme, allgemein stehen sie im Rumpf der Anfrage. Bei der Latenz schreibt es, eine geringe Latenz wirke sich negativ aus; richtig ist: Eine hohe Latenz wirkt negativ. Das Lehrbuch nennt UDP einen Datenstrom; richtig ist: UDP sendet einzelne, voneinander unabhängige Datagramme, einen Bytestrom bietet TCP."
     },
     {
      "id": "PB1-11-1-3",
@@ -486,12 +487,10 @@
       },
       {
        "id": "PB1-11-1-3-K4",
-       "text": "Du kannst gängige DNS-Einträge ihrer Aufgabe zuordnen: A (Name zu IPv4-Adresse), AAAA (Name zu IPv6-Adresse, ein Dual-Stack-Rechner fragt beide ab), CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domain), NS (zuständiger Nameserver), TXT (freier Text, z. B. Nachweis des Domainbesitzes oder Absicherung des Mailversands) und PTR (Rückwärtsauflösung von der Adresse zum Namen, Reverse DNS).",
-       "kurz": "DNS-Eintragstypen A bis PTR",
+       "text": "Du kannst DNS-Einträge der Typen A und AAAA unterscheiden: Ein Nameserver hält zu einem Namen Einträge verschiedener Typen, ein A-Eintrag liefert die IPv4-Adresse, ein AAAA-Eintrag die IPv6-Adresse, und ein Dual-Stack-Rechner fragt beide ab.",
+       "kurz": "DNS-Einträge A und AAAA",
        "stufe": 2,
        "herkunft": [
-        "buch:FS-4.3.3-S349",
-        "buch:FS-4.3.4-S353",
         "buch:GS-3.4.4-S327"
        ]
       },
@@ -529,6 +528,15 @@
         "buch:GS-3.7.3"
        ],
        "grund": "RK2: DynDNS nennt der Katalog nicht; Unterthema von DNS"
+      },
+      {
+       "text": "Weitere DNS-Eintragstypen: CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domain), NS (zuständiger Nameserver), TXT (freier Text, z. B. Nachweis des Domainbesitzes oder Absicherung des Mailversands) und PTR (Rückwärtsauflösung von der Adresse zum Namen, Reverse DNS).",
+       "kurz": "Weitere DNS-Eintragstypen: CNAME bis PTR",
+       "quellen": [
+        "buch:FS-4.3.3",
+        "buch:FS-4.3.4"
+       ],
+       "grund": "RK2: Eintragstypen sind ein Unterthema von DNS; das Lehrbuch nennt sie nur in einer Tabelle, ohne sie zu erklären (V2-Prüfung PB1-b Nr. 4)"
       }
      ],
      "hinweis": "Das Lehrbuch nennt DNSSEC abhörsicher; richtig ist: DNSSEC signiert die Einträge (Echtheit), verschlüsselt aber nicht. Reverse-DNS-Einträge verortet es beim Reverse Proxy; richtig ist: Es sind PTR-Einträge im DNS (Adresse zu Name). Beim Proxy beschreibt es das Austauschen von Absender- und Zieladressen; das ist NAT, ein Proxy baut auf der Anwendungsebene eine eigene Verbindung auf."
@@ -624,9 +632,9 @@
       },
       {
        "id": "PB1-11-2-1-K6",
-       "text": "Du kannst begründen, welches Übertragungsmedium in welchem Bereich der strukturierten Verkabelung üblich ist: Glasfaser im Primärbereich, weil sie große Entfernungen mit hoher Datenrate überbrückt und Gebäude ohne elektrische Verbindung koppelt, Glasfaser oder Kupfer im Sekundärbereich je nach Länge und Bedarf, Kupfer (Twisted Pair) im Tertiärbereich bis zur Dose, weil die Strecken kurz sind, Kupfer günstiger ist und die Endgeräte Kupferanschlüsse haben.",
+       "text": "Du kannst erläutern, welches Übertragungsmedium in welchem Bereich der strukturierten Verkabelung üblich ist und warum: Glasfaser im Primärbereich, weil sie große Entfernungen mit hoher Datenrate überbrückt und Gebäude ohne elektrische Verbindung koppelt, Glasfaser oder Kupfer im Sekundärbereich je nach Länge und Bedarf, Kupfer (Twisted Pair) im Tertiärbereich bis zur Dose, weil die Strecken kurz sind, Kupfer günstiger ist und die Endgeräte Kupferanschlüsse haben.",
        "kurz": "Übertragungsmedium je Verkabelungsbereich",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:GS-3.4.2-S312"
        ]
@@ -790,7 +798,7 @@
       },
       {
        "id": "PB1-11-2-2-K5",
-       "text": "Du kannst über die Aufgabe eines VLANs hinaus erklären, wie ein Switch den Verkehr einem VLAN zuordnet: Ein Port gehört entweder fest zu einem VLAN (das Endgerät sendet ungetaggt), oder die Frames tragen eine Markierung mit der VLAN-ID nach IEEE 802.1Q (Tag), mit der auf der Verbindung zwischen Switches (Trunk) Frames mehrerer VLANs über eine Leitung laufen; Verkehr zwischen zwei VLANs ist nur über einen Router oder Layer-3-Switch möglich (Inter-VLAN-Routing).",
+       "text": "Du kannst über die Aufgabe eines VLANs hinaus erklären, wie ein Switch den Verkehr einem VLAN zuordnet: Ein Port gehört entweder fest zu einem VLAN (das Endgerät sendet ungetaggt), oder die Frames tragen eine Markierung mit der VLAN-ID (Tag), mit der auf der Verbindung zwischen Switches (Trunk) Frames mehrerer VLANs über eine Leitung laufen; Verkehr zwischen zwei VLANs ist nur über einen Router oder Layer-3-Switch möglich (Inter-VLAN-Routing).",
        "kurz": "VLAN-Zuordnung: Port, Tag, Trunk, Inter-VLAN-Routing",
        "stufe": 2,
        "herkunft": [
@@ -800,9 +808,9 @@
       },
       {
        "id": "PB1-11-2-2-K6",
-       "text": "Du kannst beurteilen, welche WLAN-Verschlüsselung eingesetzt wird: WEP und WPA gelten als gebrochen und scheiden aus, WPA2 mit AES ist verbreitet und mit langem Passwort noch ausreichend, WPA3 ist der aktuelle Standard und schützt mit für jede Sitzung neu ausgehandelten Schlüsseln auch mitgeschnittenen Verkehr, wenn das Passwort später bekannt wird; beide gibt es als Personal mit gemeinsamem Schlüssel (PSK) und als Enterprise mit Anmeldung je Benutzer über RADIUS, und ein Mischbetrieb WPA2/WPA3 bindet ältere Geräte an.",
+       "text": "Du kannst die WLAN-Verschlüsselungen WEP, WPA, WPA2 und WPA3 charakterisieren: WEP und WPA gelten als gebrochen und scheiden aus, WPA2 mit AES ist verbreitet und mit langem Passwort noch ausreichend, WPA3 ist der aktuelle Standard und schützt mit für jede Sitzung neu ausgehandelten Schlüsseln auch mitgeschnittenen Verkehr, wenn das Passwort später bekannt wird; beide gibt es als Personal mit gemeinsamem Schlüssel (PSK) und als Enterprise mit Anmeldung je Benutzer über RADIUS, und ein Mischbetrieb WPA2/WPA3 bindet ältere Geräte an.",
        "kurz": "WLAN-Verschlüsselung: WEP bis WPA3",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:FS-4.5.2-S398",
         "buch:GS-3.7.3-S376"
@@ -819,7 +827,7 @@
       },
       {
        "id": "PB1-11-2-2-K8",
-       "text": "Du kannst das AAA-Prinzip eines RADIUS-Servers erklären: Authentifizierung stellt fest, wer sich anmeldet (Benutzername und Kennwort oder Zertifikat), Autorisierung legt fest, worauf der Benutzer danach zugreifen darf (z. B. welches VLAN er bekommt), Accounting zeichnet die Nutzung für Protokoll und Abrechnung auf; Access Points, Switches oder VPN-Gateways fragen dafür als RADIUS-Clients zentral beim Server an, etwa bei der WLAN-Anmeldung nach 802.1X.",
+       "text": "Du kannst das AAA-Prinzip eines RADIUS-Servers erklären: Authentifizierung stellt fest, wer sich anmeldet (Benutzername und Kennwort oder Zertifikat), Autorisierung legt fest, worauf der Benutzer danach zugreifen darf (z. B. welches VLAN er bekommt), Accounting zeichnet die Nutzung für Protokoll und Abrechnung auf; Access Points, Switches oder VPN-Gateways fragen dafür als RADIUS-Clients zentral beim Server an, etwa bei der portbasierten Anmeldung am WLAN oder Switch.",
        "kurz": "RADIUS: Authentifizierung, Autorisierung, Accounting",
        "stufe": 2,
        "herkunft": [
@@ -828,9 +836,9 @@
       },
       {
        "id": "PB1-11-2-2-K9",
-       "text": "Du kannst die Sicherheit bequemer WLAN-Anmeldeverfahren beurteilen: Ein QR-Code enthält SSID und Schlüssel im Klartext und ist nur so sicher wie der Ort, an dem er hängt; WPS koppelt ein Gerät per Tastendruck am Router oder per PIN, wobei sich die PIN durch Ausprobieren in kurzer Zeit knacken lässt, weshalb WPS meist abgeschaltet wird.",
+       "text": "Du kannst die Sicherheit der Anmeldung per QR-Code und per WPS charakterisieren: Ein QR-Code enthält SSID und Schlüssel im Klartext und ist nur so sicher wie der Ort, an dem er hängt; WPS koppelt ein Gerät per Tastendruck am Router oder per PIN, wobei sich die PIN durch Ausprobieren in kurzer Zeit knacken lässt, weshalb WPS meist abgeschaltet wird.",
        "kurz": "Komfortanmeldung per QR-Code und WPS",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:GS-3.7.3-S375"
        ]
@@ -1026,7 +1034,7 @@
       },
       {
        "id": "PB1-11-2-3-K7",
-       "text": "Du kannst den Ablauf eines Datenbankzugriffs aus einem Programm beschreiben: Verbindung mit Adresse, Port, Datenbankname, Benutzer und Passwort öffnen, die SQL-Anweisung an die Datenbank schicken (Benutzereingaben als Parameter einer vorbereiteten Anweisung), das Ergebnis verarbeiten, Änderungen mit Commit bestätigen und die Verbindung in jedem Fall wieder schließen, auch wenn ein Fehler aufgetreten ist.",
+       "text": "Du kannst den Ablauf eines Datenbankzugriffs aus einem Programm beschreiben: Verbindung mit Adresse, Port, Datenbankname, Benutzer und Passwort öffnen, die SQL-Anweisung an die Datenbank schicken (Benutzereingaben als Parameter einer vorbereiteten Anweisung), das Ergebnis verarbeiten und die Verbindung in jedem Fall wieder schließen, auch nach einem Fehler (Transaktion und Commit siehe PB1-6-1-5-K4).",
        "kurz": "Ablauf eines Datenbankzugriffs aus dem Programm",
        "stufe": 2,
        "herkunft": [
@@ -1037,9 +1045,9 @@
       },
       {
        "id": "PB1-11-2-3-K8",
-       "text": "Du kannst ein NAS für einen Einsatz nach Kriterien auswählen: Kapazität und Zahl der Laufwerkschächte, RAID mit Tausch defekter Platten im laufenden Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (mehrere Ports, per Link-Aggregation gebündelt), Verschlüsselung, Snapshots im Dateisystem und ein redundantes Netzteil.",
+       "text": "Du kannst Kriterien für die Auswahl eines NAS beschreiben: Kapazität und Zahl der Laufwerkschächte, RAID mit Tausch defekter Platten im laufenden Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (mehrere Ports, per Link-Aggregation gebündelt), Verschlüsselung, Snapshots im Dateisystem und ein redundantes Netzteil.",
        "kurz": "Auswahlkriterien für ein NAS",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:FS-4.3.4-S355"
        ]
@@ -1566,7 +1574,8 @@
    "buch:GS-5.8.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.8.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
    "buch:FS2-2.3.8": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.8 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
    "buch:GS-3.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-   "buch:GS-5.2.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+   "buch:GS-5.2.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.4": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -2036,6 +2045,18 @@
       "PB1-11-2-3"
      ],
      "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Weitere DNS-Eintragstypen: CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domai",
+     "quellen": [
+      "buch:FS-4.3.3",
+      "buch:FS-4.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -2220,7 +2241,8 @@
      "PB1-11-2-3",
      "PB1-11-2-3",
      "PB1-11-2-3",
-     "PB1-11-2-3"
+     "PB1-11-2-3",
+     "PB1-11-1-3"
     ],
     "grenzen_gestrichen": [],
     "filter": [],
@@ -2240,7 +2262,8 @@
      "PB1-11-2-1",
      "PB1-11-2-2",
      "PB1-11-2-5",
-     "PB1-11-2-3"
+     "PB1-11-2-3",
+     "PB1-11-1-2"
     ]
    }
   ]

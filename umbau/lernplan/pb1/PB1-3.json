@@ -148,8 +148,8 @@
       },
       {
        "id": "PB1-3-1-1-K9",
-       "text": "Du kannst begründen, wann Java für ein Projekt eine gute Wahl ist: Der Code wird in Bytecode übersetzt und läuft in einer virtuellen Maschine auf jedem Betriebssystem, die Sprache ist durchgängig objektorientiert und bringt eine große Standardbibliothek und freie Entwicklungswerkzeuge mit; dafür läuft sie meist langsamer und braucht mehr Speicher als direkt in Maschinencode übersetzte Sprachen wie C.",
-       "kurz": "Java als Kandidat bei der Sprachwahl",
+       "text": "Du kannst begründen, wann eine Sprache, die in Zwischencode (Bytecode) übersetzt und in einer virtuellen Maschine ausgeführt wird (z. B. Java, C#; virtuelle Maschine: AP1-8-1-1), für ein Projekt passt: Das Programm läuft ohne Neuübersetzung auf jedem Betriebssystem mit passender virtueller Maschine, und solche Sprachen bringen meist eine große Standardbibliothek und freie Entwicklungswerkzeuge mit; dafür laufen sie meist langsamer und brauchen mehr Speicher als direkt in Maschinencode übersetzte Sprachen wie C.",
+       "kurz": "Sprachen mit virtueller Maschine wählen",
        "stufe": 4,
        "herkunft": [
         "buch:FS-3.5.1-S215"
@@ -334,7 +334,7 @@
        "kurz": "Generierten Oberflächencode nicht ändern",
        "stufe": 2,
        "herkunft": [
-        "buch:FS2-1.4.2-S54",
+        "buch:FS2-1.4.2-S55",
         "buch:FS2-1.4.3-S69"
        ]
       }
@@ -588,16 +588,6 @@
      ],
      "kuer": [
       {
-       "text": "DevOps bringt Entwicklung, Qualitätssicherung und Betrieb in ein Team mit gemeinsamer Verantwortung über den ganzen Lebenszyklus und stark automatisierten Abläufen, um häufiger, schneller und mit weniger Fehlern auszuliefern; der Preis ist ein Umdenken in Organisation und Zusammenarbeit.",
-       "kurz": "DevOps: Ziel und Preis",
-       "quellen": [
-        "buch:FS-2.4.2",
-        "buch:FS-4.1.2",
-        "buch:GS-5.4.2"
-       ],
-       "grund": "D8/RK2: DevOps nennt kein Baustein und ist kein Vorgehensmodell des Katalogs"
-      },
-      {
        "text": "Die Merkhilfe CALMS nennt die Säulen von DevOps: Kultur der Zusammenarbeit, Automatisierung, schlanke Abläufe (Lean), Messen und Teilen von Wissen. Den Ablauf zeichnet man als Endlosschleife – planen, programmieren, bauen, testen, freigeben, bereitstellen, betreiben, überwachen –, deren Rückmeldungen in die nächste Planung fließen.",
        "kurz": "CALMS und DevOps-Kreislauf",
        "quellen": [
@@ -685,18 +675,18 @@
       },
       {
        "id": "PB1-3-2-3-K6",
-       "text": "Du kannst für eine Messaufgabe einen geeigneten Sensor begründet auswählen, zum Beispiel Ultraschall für Füllstand oder Abstand (misst die Laufzeit des Echos, unabhängig von Farbe und Material), Infrarot-Bewegungsmelder für Anwesenheit, CO2-Sensor für die Luftqualität, Vibrationssensor für die Laufruhe einer Maschine.",
+       "text": "Du kannst für eine Messaufgabe einen geeigneten Sensor festlegen, zum Beispiel Ultraschall für Füllstand oder Abstand (misst die Laufzeit des Echos, unabhängig von Farbe und Material), Infrarot-Bewegungsmelder für Anwesenheit, CO2-Sensor für die Luftqualität, Vibrationssensor für die Laufruhe einer Maschine.",
        "kurz": "Sensor passend zur Messaufgabe",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:FS-2.1.4-S95"
        ]
       },
       {
        "id": "PB1-3-2-3-K7",
-       "text": "Du kannst Sensoren und Bauform eines cyber-physischen Systems passend zu den Einsatzbedingungen begründet auswählen: robust gegen Hitze, Kälte, Schmutz, Öl, Vibration oder Feuchte in der Industrie, unauffällig gestaltet im Wohn- und Bürobereich, mit Funk und Batterie dort, wo es weder Netz- noch Stromanschluss gibt.",
+       "text": "Du kannst Sensoren und Bauform eines cyber-physischen Systems passend zu den Einsatzbedingungen festlegen: robust gegen Hitze, Kälte, Schmutz, Öl, Vibration oder Feuchte in der Industrie, unauffällig gestaltet im Wohn- und Bürobereich, mit Funk und Batterie dort, wo es weder Netz- noch Stromanschluss gibt.",
        "kurz": "Bauform nach Einsatzbedingungen",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:FS-2.3.1-S117"
        ]
@@ -827,7 +817,7 @@
        "quellen": [
         "buch:FS-2.3.1"
        ],
-       "grund": "RK2: Abgrenzung im Detail; Kern in K1 und A9"
+       "grund": "RK2: Abgrenzung im Detail; Kern in PB1-3-2-3-K1 und K4"
       },
       {
        "text": "In einem CPS-Netz erfassen Sensoren die Daten, ein IoT-Gateway in der Edge (im lokalen Netz nahe der Maschine) verarbeitet und zeigt sie in Echtzeit an, die Cloud übernimmt große Auswertungen; Sensoren werden über einen MQTT-Broker, ein solches Gateway oder eine SPS mit OPC-UA-Server angebunden.",
@@ -1385,11 +1375,11 @@
       "buch:FS-4.1.2",
       "buch:GS-5.4.2"
      ],
-     "ring": "Kür",
+     "ring": "Ordner",
      "wo": [
-      "PB1-3-2-2"
+      "PB1-1-1-1"
      ],
-     "notiz": "Regelwerk v2.x, D8/RK1"
+     "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung PB1-a Nr. 30: bisher Kür, jetzt Pflicht PB1-1-1-1-K10"
     },
     {
      "thema": "Die Merkhilfe CALMS nennt die Säulen von DevOps: Kultur der Zusammenarbeit, Automatisierung, schlanke Abläufe (Lean), Me",
@@ -1715,6 +1705,13 @@
      "PB1-3-1-3",
      "PB1-3-1-1",
      "PB1-3-2-3"
+    ],
+    "kuer_gestrichen": [
+     {
+      "sp": "PB1-3-2-2",
+      "text": "DevOps bringt Entwicklung, Qualitätssicherung und Betrieb in ein Team mit gemeinsamer Verantwortung über den ganzen Lebenszyklus und stark automatisierten Abläufen, um häufiger, schneller und mit weniger Fehlern auszuliefern; der Preis ist ein Umdenken in Organisation und Zusammenarbeit.",
+      "grund": "jetzt Pflicht: PB1-1-1-1-K10 (Ordner PB1-1), V2-Prüfung PB1-a Nr. 30"
+     }
     ]
    }
   ]
