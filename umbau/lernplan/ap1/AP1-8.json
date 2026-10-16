@@ -396,6 +396,14 @@
                 "buch:GS-5.7.3"
               ],
               "grund": "RK2: sprachspezifisch (Module importieren)"
+            },
+            {
+              "text": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Überschriften, Absätze, Listen, Tabellen, Links, Bilder mit Alternativtext, Formulare), aus CSS für das Aussehen – am besten in einer externen Datei, die viele Seiten teilen – und aus JavaScript, einer eigenständigen, im Browser laufenden Sprache, die auf Ereignisse wie Klicks reagiert und Eingaben sofort prüfen kann. Diese Prüfung ersetzt die auf dem Server nicht, weil sich der Browser umgehen lässt, und weil Browser HTML und CSS unterschiedlich umsetzen, testet man eine Seite in mehreren Browsern.",
+              "kurz": "HTML, CSS und JavaScript im Zusammenspiel",
+              "quellen": [
+                "buch:FS2-1.4.4"
+              ],
+              "grund": "D8: Webgrundlagen ohne Katalog-Baustein; nächstpassender Stichpunkt (statische und dynamische Webseiten, Skripte im Browser oder auf dem Server: K3, K4, K7), aus AP1-5-2-5 verschoben (V2-Prüfung AP1-b Nr. 27)."
             }
           ]
         }
@@ -618,11 +626,12 @@
             },
             {
               "id": "AP1-8-2-6-K7",
-              "text": "Du kannst den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, dann Punkt- vor Strichrechnung, danach Vergleiche und zuletzt die logischen Verknüpfungen, wobei NICHT vor UND und UND vor ODER gilt.",
+              "text": "Du kannst den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, Punkt- vor Strichrechnung, Vergleiche vor UND, UND vor ODER; wie stark NICHT bindet, ist je nach Sprache verschieden, deshalb setzt man dort Klammern.",
               "kurz": "Rangfolge der Operatoren",
               "stufe": 3,
               "herkunft": [
-                "buch:FS-3.5.2-S222"
+                "buch:FS-3.5.2-S222",
+                "buch:GS-5.7.4-S560"
               ]
             },
             {
@@ -642,6 +651,16 @@
               "herkunft": [
                 "buch:GS-5.7.4-S557"
               ]
+            },
+            {
+              "id": "AP1-8-2-6-K10",
+              "text": "Du kannst die Regeln für Bezeichner anwenden: nur Buchstaben, Ziffern und Unterstrich, keine Ziffer am Anfang, kein Schlüsselwort, und in vielen Sprachen zählt die Groß- und Kleinschreibung.",
+              "kurz": "Regeln für gültige Bezeichner",
+              "stufe": 3,
+              "herkunft": [
+                "regel:P-GRUNDLAGE",
+                "buch:GS-5.7.3-S551"
+              ]
             }
           ],
           "grenzen": [],
@@ -655,13 +674,13 @@
               "grund": "RK1: sprachspezifische Wertebereiche und Bytegrößen"
             },
             {
-              "text": "Bezeichner bestehen aus Buchstaben, Ziffern und Unterstrich, beginnen nicht mit einer Ziffer, dürfen kein Schlüsselwort sein und unterscheiden in vielen Sprachen Groß- und Kleinschreibung. Literale sind direkt notierte Werte wie 42, 0x2A (hexadezimal), 0b101010 (binär), 6.645E2 (Gleitkomma mit Exponent, = 664,5), \"Text\" oder True.",
-              "kurz": "Regeln für Bezeichner und Literale",
+              "text": "Literale sind direkt notierte Werte wie 42, 0x2A (hexadezimal), 0b101010 (binär), 6.645E2 (Gleitkomma mit Exponent, = 664,5), \"Text\" oder True.",
+              "kurz": "Schreibweisen von Literalen",
               "quellen": [
                 "buch:GS-5.7.3",
                 "buch:FS-3.5.2"
               ],
-              "grund": "RK2: Bezeichnerregeln, Schlüsselwörter und Literal-Schreibweisen sind Sprachdetail"
+              "grund": "RK2: Literal-Schreibweisen sind Sprachdetail; die Bezeichnerregeln sind jetzt Pflicht (AP1-8-2-6-K10, V2-Prüfung AP1-b Nr. 25)."
             },
             {
               "text": "Gleichheit und Identität: Der Vergleich auf Gleichheit prüft den Inhalt, der Vergleich auf Identität, ob zwei Variablen auf dasselbe Objekt verweisen; nach y = x ist eine Änderung an einer Liste über y auch über x sichtbar.",
@@ -756,7 +775,7 @@
             },
             {
               "id": "AP1-8-2-5-K8",
-              "text": "Du kannst das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen, ohne alle Daten zu durchlaufen.",
+              "text": "Du kannst das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen; ergeben zwei Schlüssel dieselbe Position (Kollision), muss das gesondert behandelt werden und der Zugriff wird langsamer.",
               "kurz": "Prinzip einer Hashtabelle",
               "stufe": 2,
               "herkunft": [
@@ -767,7 +786,7 @@
           "grenzen": [],
           "kuer": [
             {
-              "text": "Weitere Datenstrukturen: doppelt verkettete Liste (zusätzlich Verweis auf den Vorgänger, in beide Richtungen durchlaufbar, mehr Speicher), Baum und binärer Suchbaum, Graph (gespeichert als Adjazenzmatrix oder Adjazenzliste) und Menge (jedes Element nur einmal); bei der Hashtabelle entsteht eine Kollision, wenn zwei Schlüssel dieselbe Position ergeben. In der Praxis nimmt man diese Strukturen aus der Standardbibliothek der Sprache, statt sie selbst zu programmieren.",
+              "text": "Weitere Datenstrukturen: doppelt verkettete Liste (zusätzlich Verweis auf den Vorgänger, in beide Richtungen durchlaufbar, mehr Speicher), Baum und binärer Suchbaum, Graph (gespeichert als Adjazenzmatrix oder Adjazenzliste) und Menge (jedes Element nur einmal). In der Praxis nimmt man diese Strukturen aus der Standardbibliothek der Sprache, statt sie selbst zu programmieren.",
               "kurz": "Weitere Datenstrukturen: Baum, Graph, Menge",
               "quellen": [
                 "buch:FS2-2.2.1"
@@ -1548,9 +1567,9 @@
             },
             {
               "id": "AP1-8-4-2-K6",
-              "text": "Du kannst begründen, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem.",
+              "text": "Du kannst erklären, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem.",
               "kurz": "Errechenbare Werte nicht speichern",
-              "stufe": 4,
+              "stufe": 2,
               "herkunft": [
                 "buch:GS-5.8.3-S605"
               ]
@@ -1665,18 +1684,18 @@
             },
             {
               "id": "AP1-8-4-5-K8",
-              "text": "Du kannst begründen, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern.",
+              "text": "Du kannst erklären, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern.",
               "kurz": "Künstlicher statt natürlicher Primärschlüssel",
-              "stufe": 4,
+              "stufe": 2,
               "herkunft": [
                 "buch:GS-5.8.3-S600"
               ]
             },
             {
               "id": "AP1-8-4-5-K9",
-              "text": "Du kannst begründen, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
+              "text": "Du kannst erklären, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
               "kurz": "Sorgfältiger Datenbankentwurf auch bei Kleinprojekten",
-              "stufe": 4,
+              "stufe": 2,
               "herkunft": [
                 "buch:FS-3.7.2-S268"
               ]
@@ -1756,11 +1775,20 @@
             },
             {
               "id": "AP1-8-4-3-K5",
-              "text": "Du kannst für eine Auswahl in einer Bildschirmmaske das passende Steuerelement auswählen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen.",
+              "text": "Du kannst in einer Bildschirmmaske für eine Auswahl das passende Steuerelement einsetzen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen.",
               "kurz": "Passendes Steuerelement für eine Auswahl",
-              "stufe": 4,
+              "stufe": 3,
               "herkunft": [
                 "buch:FS2-1.3.4-S42"
+              ]
+            },
+            {
+              "id": "AP1-8-4-3-K6",
+              "text": "Du kannst Anforderungen der Barrierefreiheit wie ausreichenden Kontrast oder die Bedienung per Tastatur den vier Grundprinzipien barrierefreier Oberflächen zuordnen: wahrnehmbar, bedienbar, verständlich und robust.",
+              "kurz": "Vier Grundprinzipien der Barrierefreiheit",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.12-S188"
               ]
             }
           ],
@@ -1783,14 +1811,6 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Die WCAG fassen barrierefreie Informationstechnik in vier Prinzipien: wahrnehmbar, bedienbar (z. B. vollständig per Tastatur), verständlich und robust (zuverlässig mit verschiedenen Geräten und Hilfsmitteln wie Screenreadern nutzbar).",
-              "kurz": "Vier Prinzipien der WCAG",
-              "quellen": [
-                "buch:GS-2.4.12"
-              ],
-              "grund": "RK2: WCAG ohne Katalog-Baustein (im Tracker Kür)"
             }
           ]
         },
@@ -2355,7 +2375,8 @@
       "buch:FS-3.3.5": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:GS-2.4.13": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.13 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:FS-3.7.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-      "buch:GS-2.4.12": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.12 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+      "buch:GS-2.4.12": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.12 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS2-1.4.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -2854,11 +2875,11 @@
             "buch:GS-5.7.3",
             "buch:FS-3.5.2"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-8-2-6"
+            "AP1-8-2-6-K10"
           ],
-          "notiz": "Regelwerk v2.x, D8/RK1"
+          "notiz": "Regelwerk v2.x, D8/RK1; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 25): bisher Kür, jetzt Pflicht (AP1-8-2-6-K10)"
         },
         {
           "thema": "Gleichheit und Identität: Der Vergleich auf Gleichheit prüft den Inhalt, der Vergleich auf Identität, ob zwei Variablen ",
@@ -2953,11 +2974,34 @@
           "quellen": [
             "buch:GS-2.4.12"
           ],
+          "ring": "Kern",
+          "wo": [
+            "AP1-8-4-3-K6"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 28): bisher Kür, jetzt Pflicht (AP1-8-4-3-K6)"
+        },
+        {
+          "thema": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Übersch",
+          "quellen": [
+            "buch:FS2-1.4.4"
+          ],
           "ring": "Kür",
           "wo": [
-            "AP1-8-4-3"
+            "AP1-8-1-3"
           ],
-          "notiz": "Regelwerk v2.x, D8/RK1"
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 27)"
+        },
+        {
+          "thema": "Literale sind direkt notierte Werte wie 42, 0x2A (hexadezimal), 0b101010 (binär), 6.645E2 (Gleitkomma mit Exponent, = 66",
+          "quellen": [
+            "buch:GS-5.7.3",
+            "buch:FS-3.5.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-6"
+          ],
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 25)"
         }
       ]
     },
@@ -3244,7 +3288,9 @@
           "AP1-8-4-5-K7",
           "AP1-8-4-5-K8",
           "AP1-8-4-5-K9",
-          "AP1-8-4-3-K5"
+          "AP1-8-4-3-K5",
+          "AP1-8-2-6-K10",
+          "AP1-8-4-3-K6"
         ],
         "neue_stichpunkte": [
           {
@@ -3280,7 +3326,7 @@
           "AP1-8-3-2",
           "AP1-8-4-2",
           "AP1-8-4-5",
-          "AP1-8-4-3"
+          "AP1-8-1-3"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
@@ -3294,8 +3340,65 @@
             "sp": "AP1-8-2-1",
             "text": "Weitere Datenstrukturen: Liste, Stapel, Warteschlange, Hash-Tabelle",
             "grund": "jetzt Pflicht in AP1-8-2-5 (RK1c)"
+          },
+          {
+            "sp": "AP1-8-2-6",
+            "text": "Bezeichner bestehen aus Buchstaben, Ziffern und Unterstrich, beginnen nicht mit einer Ziffer, dürfen kein Schlüsselwort sein und unterscheiden in vielen Sprachen Groß- und Kleinschreibung. Literale sind direkt notierte Werte wie 42, 0x2A (hexadezimal), 0b101010 (binär), 6.645E2 (Gleitkomma mit Exponent, = 664,5), \"Text\" oder True.",
+            "grund": "gekürzt: Bezeichnerregeln jetzt Pflicht in AP1-8-2-6-K10 (V2-Prüfung AP1-b Nr. 25); Literale bleiben Kür"
+          },
+          {
+            "sp": "AP1-8-4-3",
+            "text": "Die WCAG fassen barrierefreie Informationstechnik in vier Prinzipien: wahrnehmbar, bedienbar (z. B. vollständig per Tastatur), verständlich und robust (zuverlässig mit verschiedenen Geräten und Hilfsmitteln wie Screenreadern nutzbar).",
+            "grund": "jetzt Pflicht: AP1-8-4-3-K6 (V2-Prüfung AP1-b Nr. 28); der Name der Richtlinie bleibt in der Kür „Richtlinien wie WCAG und BITV 2.0“"
+          },
+          {
+            "sp": "AP1-8-2-5",
+            "text": "Weitere Datenstrukturen: doppelt verkettete Liste (zusätzlich Verweis auf den Vorgänger, in beide Richtungen durchlaufbar, mehr Speicher), Baum und binärer Suchbaum, Graph (gespeichert als Adjazenzmatrix oder Adjazenzliste) und Menge (jedes Element nur einmal); bei der Hashtabelle entsteht eine Kollision, wenn zwei Schlüssel dieselbe Position ergeben. In der Praxis nimmt man diese Strukturen aus der Standardbibliothek der Sprache, statt sie selbst zu programmieren.",
+            "grund": "gekürzt: Kollision der Hashtabelle jetzt Pflicht in AP1-8-2-5-K8 (V2-Prüfung AP1-b Nr. 29)"
           }
-        ]
+        ],
+        "pruefung_umsetzung": {
+          "stand": "2026-10-16",
+          "bericht": "V2-Prüfung AP1-b (unabhängiger Prüfer), Umsetzung Schritt 6",
+          "aenderungen": [
+            {
+              "nr": 27,
+              "was": "Buch-Kür „HTML, CSS und JavaScript im Zusammenspiel“ aus AP1-5-2-5 übernommen (buch:FS2-1.4.4)"
+            },
+            {
+              "nr": 20,
+              "was": "AP1-8-4-2-K6: „begründen“ (4) → „erklären“ (2)"
+            },
+            {
+              "nr": 21,
+              "was": "AP1-8-4-5-K8: „begründen“ (4) → „erklären“ (2)"
+            },
+            {
+              "nr": 22,
+              "was": "AP1-8-4-5-K9: „begründen“ (4) → „erklären“ (2)"
+            },
+            {
+              "nr": 23,
+              "was": "AP1-8-4-3-K5: „auswählen“ (4) → „einsetzen“ (3)"
+            },
+            {
+              "nr": 24,
+              "was": "AP1-8-2-6-K7: keine feste Rangstufe für NICHT mehr (je nach Sprache verschieden), Herkunft um buch:GS-5.7.4-S560 ergänzt; Erklärung und Karte K7-1 angepasst"
+            },
+            {
+              "nr": 25,
+              "was": "Neue Aussage AP1-8-2-6-K10 (Bezeichnerregeln, regel:P-GRUNDLAGE für AP1-8-2-4-K6, buch:GS-5.7.3-S551) mit Erklärung und 2 Karten; Kür auf Literale gekürzt"
+            },
+            {
+              "nr": 28,
+              "was": "Kür „Vier Prinzipien der WCAG“ wird Pflicht AP1-8-4-3-K6 (buch:GS-2.4.12-S188) mit Erklärung und 2 Karten; Kür gestrichen, Hinweis-Abgleich auf Kern"
+            },
+            {
+              "nr": 29,
+              "was": "AP1-8-2-5-K8 um die Kollision als Nachteil ergänzt (Text, Erklärung, Karte K8-2); Kollision aus der Kür „Weitere Datenstrukturen“ gestrichen"
+            }
+          ]
+        }
       }
     ]
   }

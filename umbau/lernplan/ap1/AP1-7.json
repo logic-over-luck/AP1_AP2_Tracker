@@ -173,7 +173,6 @@
                 "beleg:2026H-A2-db",
                 "beleg:2026H-A4-bb",
                 "katalog:AP1.06.01.2",
-                "buch:GS-2.4.10-S184",
                 "buch:GS-4.2-S438"
               ]
             },
@@ -233,7 +232,7 @@
               "kurz": "Kriterien für die Auswahl einer Schutzmaßnahme",
               "stufe": 4,
               "herkunft": [
-                "buch:GS-4.2-S439"
+                "buch:GS-4.2-S440"
               ]
             }
           ],
@@ -247,6 +246,14 @@
                 "buch:GS-4.4.1"
               ],
               "grund": "Einzelmaßnahme ohne Katalogbegriff"
+            },
+            {
+              "text": "Bei Netzwerkdruckern schützt man vertrauliche Ausdrucke und Druckdaten: Gerät nicht frei zugänglich aufstellen, Ausdruck erst nach Anmeldung per PIN oder Karte, gespeicherte Druckdaten verschlüsseln und regelmäßig löschen.",
+              "kurz": "Ausdrucke und Druckdaten schützen",
+              "quellen": [
+                "buch:GS-2.4.10"
+              ],
+              "grund": "Einzelmaßnahmen für ein Gerät; von AP1-7-1-2-K3 nicht abgedeckt, D6 greift nicht (V2-Prüfung AP1-b Nr. 15)."
             }
           ]
         },
@@ -1081,9 +1088,9 @@
             },
             {
               "id": "AP1-7-3-2-K8",
-              "text": "Du kannst begründen, warum man ein heruntergeladenes Installationsabbild in zwei Stufen prüft: Die selbst berechnete Prüfsumme zeigt nur, dass die Datei zur angegebenen Prüfsumme passt; erst die gültige Signatur des Herausgebers über die Prüfsummendatei zeigt, dass beides wirklich von ihm stammt und nicht von einem Angreifer ausgetauscht wurde.",
+              "text": "Du kannst Prüfsumme und Signatur einsetzen, um ein heruntergeladenes Installationsabbild in zwei Stufen abzusichern: Die selbst berechnete Prüfsumme zeigt nur, dass die Datei zur angegebenen Prüfsumme passt; erst die gültige Signatur des Herausgebers über die Prüfsummendatei zeigt, dass beides wirklich von ihm stammt und nicht von einem Angreifer ausgetauscht wurde.",
               "kurz": "Zweistufige Prüfung eines Installationsabbilds",
-              "stufe": 4,
+              "stufe": 3,
               "herkunft": [
                 "buch:FS-4.6.3-S409"
               ]
@@ -1948,12 +1955,12 @@
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
             },
             {
-              "text": "Weitere Grundsätze der DSGVO sind Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz, Richtigkeit sowie Integrität und Vertraulichkeit. Intern führt der Verantwortliche ein Verzeichnis der Verarbeitungstätigkeiten und benennt, wenn nötig, einen Datenschutzbeauftragten.",
-              "kurz": "Weitere Grundsätze und Verarbeitungsverzeichnis",
+              "text": "Intern führt der Verantwortliche ein Verzeichnis der Verarbeitungstätigkeiten und benennt, wenn nötig, einen Datenschutzbeauftragten.",
+              "kurz": "Verzeichnis der Verarbeitungstätigkeiten",
               "quellen": [
                 "buch:GS-4.1.2"
               ],
-              "grund": "Weitere Grundsätze und interne Pflichten; AP1-7-5-1-K6 nennt die Kerngrundsätze"
+              "grund": "Interne Pflichten ohne Baustein-Nennung; die weiteren Grundsätze sind jetzt Pflicht in AP1-7-5-3-K4 (V2-Prüfung AP1-b Nr. 17)."
             },
             {
               "text": "Beschäftigte dürfen personenbezogene Daten nur auf Weisung des Verantwortlichen verarbeiten; das Unternehmen stellt das durch Regeln und Verpflichtung der Beschäftigten sicher.",
@@ -2078,6 +2085,15 @@
               "stufe": 2,
               "herkunft": [
                 "beleg:2026F-A3-a"
+              ]
+            },
+            {
+              "id": "AP1-7-5-3-K4",
+              "text": "Du kannst die weiteren Grundsätze der DSGVO erklären: nur mit Rechtsgrundlage und fair verarbeiten (Rechtmäßigkeit, Treu und Glauben), für die betroffene Person nachvollziehbar (Transparenz), mit sachlich richtigen, aktuellen Daten (Richtigkeit) und gegen unbefugten Zugriff und Verlust gesichert (Integrität und Vertraulichkeit).",
+              "kurz": "Weitere Grundsätze der DSGVO",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.06.01.3"
               ]
             }
           ],
@@ -2603,7 +2619,8 @@
       "buch:GS-4.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:GS-2.7.3": "Lehrbuch Westermann „IT-Berufe“ GS 2.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:FS-2.6.1": "Lehrbuch Westermann „IT-Berufe“ FS 2.6.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-      "buch:GS-4.4.3": "Lehrbuch Westermann „IT-Berufe“ GS 4.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+      "buch:GS-4.4.3": "Lehrbuch Westermann „IT-Berufe“ GS 4.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.10": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.10 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -3253,11 +3270,11 @@
           "quellen": [
             "buch:GS-4.1.2"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-7-5-1"
+            "AP1-7-5-3-K4"
           ],
-          "notiz": "Regelwerk v2.x, D8/RK1"
+          "notiz": "Regelwerk v2.x, D8/RK1; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 17): bisher Kür, jetzt Pflicht (AP1-7-5-3-K4)"
         },
         {
           "thema": "Beschäftigte dürfen personenbezogene Daten nur auf Weisung des Verantwortlichen verarbeiten; das Unternehmen stellt das ",
@@ -3269,6 +3286,28 @@
             "AP1-7-5-1"
           ],
           "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Bei Netzwerkdruckern schützt man vertrauliche Ausdrucke und Druckdaten: Gerät nicht frei zugänglich aufstellen, Ausdruck",
+          "quellen": [
+            "buch:GS-2.4.10"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-1-2"
+          ],
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 15)"
+        },
+        {
+          "thema": "Intern führt der Verantwortliche ein Verzeichnis der Verarbeitungstätigkeiten und benennt, wenn nötig, einen Datenschutz",
+          "quellen": [
+            "buch:GS-4.1.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-7-5-1"
+          ],
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 17)"
         }
       ]
     },
@@ -3502,11 +3541,11 @@
           "AP1-7-4-3-K5",
           "AP1-7-5-1-K8",
           "AP1-7-5-1-K9",
-          "AP1-7-5-1-K10"
+          "AP1-7-5-1-K10",
+          "AP1-7-5-3-K4"
         ],
         "neue_stichpunkte": [],
         "d6": [
-          "AP1-7-1-2-K3",
           "AP1-7-1-2-K3",
           "AP1-7-3-5-K2"
         ],
@@ -3534,7 +3573,8 @@
           "AP1-7-4-3",
           "AP1-7-4-3",
           "AP1-7-5-1",
-          "AP1-7-5-1"
+          "AP1-7-5-1",
+          "AP1-7-1-2"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
@@ -3547,6 +3587,35 @@
           "AP1-7-3-5",
           "AP1-7-4-2",
           "AP1-7-5-1"
+        ],
+        "pruefung_umsetzung": {
+          "stand": "2026-10-16",
+          "bericht": "V2-Prüfung AP1-b (unabhängiger Prüfer), Umsetzung Schritt 6",
+          "aenderungen": [
+            {
+              "nr": 14,
+              "was": "AP1-7-1-2-K9: Herkunft buch:GS-4.2-S439 → buch:GS-4.2-S440"
+            },
+            {
+              "nr": 15,
+              "was": "AP1-7-1-2-K3: Zusatz-Herkunft buch:GS-2.4.10-S184 entfernt, einer der beiden D6-Einträge gestrichen (offene Frage 3); Drucker-Sicherheit als Kür an AP1-7-1-2"
+            },
+            {
+              "nr": 17,
+              "was": "Neue Aussage AP1-7-5-3-K4 (weitere DSGVO-Grundsätze, katalog:AP1.06.01.3; AP1-7-5-1 hat schon 10) mit Erklärung und 2 Karten; Kür an AP1-7-5-1 auf das Verarbeitungsverzeichnis gekürzt"
+            },
+            {
+              "nr": 19,
+              "was": "AP1-7-3-2-K8: „begründen“ (4) → „einsetzen“ (3), Baustein AP1.06.04.9 „verwenden“"
+            }
+          ]
+        },
+        "kuer_gestrichen": [
+          {
+            "sp": "AP1-7-5-1",
+            "text": "Weitere Grundsätze der DSGVO sind Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz, Richtigkeit sowie Integrität und Vertraulichkeit. Intern führt der Verantwortliche ein Verzeichnis der Verarbeitungstätigkeiten und benennt, wenn nötig, einen Datenschutzbeauftragten.",
+            "grund": "gekürzt: weitere Grundsätze jetzt Pflicht in AP1-7-5-3-K4 (V2-Prüfung AP1-b Nr. 17); Verarbeitungsverzeichnis bleibt Kür"
+          }
         ]
       }
     ]

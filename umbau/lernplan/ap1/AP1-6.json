@@ -194,27 +194,16 @@
           ],
           "grenzen": [
             {
-              "text": "Aufbau der Protokolle (Header, Verbindungsaufbau wie der Drei-Wege-Handshake), die Eigenschaften von TCP und UDP und Dateifreigabe-Protokolle wie SMB oder NFS gehören nicht dazu; Portnummern musst du nicht auswendig können.",
-              "begruendung": "G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle und ihre Eigenschaften erläutern, z. B. TCP/UDP“ (AP2b.01.05) und „Dateifreigaben, z. B. SMB/CIFS“ (AP2b.01.04.1) stehen im AP2-Katalog.",
+              "text": "Eigenschaften und Ablauf von TCP und UDP (z. B. der Verbindungsaufbau mit dem Drei-Wege-Handshake) und Dateifreigabe-Protokolle wie SMB oder NFS gehören nicht dazu; Portnummern musst du nicht auswendig können.",
+              "begruendung": "„Übertragungsprotokolle und ihre Eigenschaften erläutern, z. B. TCP/UDP“ (AP2b.01.05, AP2b.01.05.1) und „Dateifreigaben, z. B. SMB/CIFS“ (AP2b.01.04.1) stehen im AP2-Katalog; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea).",
               "katalog": [
-                "AP1.03.02",
                 "AP2b.01.05",
                 "AP2b.01.05.1",
                 "AP2b.01.04.1"
               ]
             }
           ],
-          "kuer": [
-            {
-              "text": "ICMP als Protokoll hinter ping: Echo Request und Echo Reply auf Schicht 3.",
-              "kurz": "ICMP als Protokoll hinter ping",
-              "quellen": [
-                "lernzettel:fi-de-2024",
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "ping selbst ist Kern (AP1.04.05.6); das Protokoll dahinter nennt weder Katalog noch Prüfung. Nach P-BEISPIELLISTE (P17) Kür: Die beiden Lernzettel von fachinformatiker.de zählen zusammen als eine Hinweisquelle."
-            }
-          ]
+          "kuer": []
         },
         {
           "id": "AP1-6-1-3",
@@ -483,6 +472,15 @@
               "herkunft": [
                 "buch:GS-3.4.3-S318"
               ]
+            },
+            {
+              "id": "AP1-6-1-4-K10",
+              "text": "Du kannst beurteilen, ob PowerLAN einen Arbeitsplatz ausreichend anbindet: Es nutzt die vorhandene Stromleitung und spart neue Kabel, erreicht aber je nach Leitungslänge, Zahl der Verteiler und Störungen im Stromnetz meist deutlich weniger Datenrate als ein Netzwerkkabel.",
+              "kurz": "PowerLAN als Anbindung eines Arbeitsplatzes",
+              "stufe": 4,
+              "herkunft": [
+                "buch:FS-4.3.2-S344"
+              ]
             }
           ],
           "grenzen": [
@@ -521,14 +519,6 @@
                 "buch:GS-3.4.3"
               ],
               "grund": "RK2: Single- und Multimode sind ein Unterthema von LWL; ergänzt die Kür zu den LWL-Arten um die Begründung."
-            },
-            {
-              "text": "PowerLAN überträgt Daten über die vorhandene Stromleitung: Mindestens zwei Adapter in Steckdosen bilden das Netz, und die tatsächliche Datenrate sinkt mit Leitungslänge, Zahl der Verteiler und Störern im Stromnetz – meist deutlich unter der eines Netzwerkkabels.",
-              "kurz": "PowerLAN über die Stromleitung",
-              "quellen": [
-                "buch:FS-4.3.2"
-              ],
-              "grund": "D8: PowerLAN nennt kein Katalog-Baustein."
             },
             {
               "text": "Glasfaseranschlüsse unterscheiden sich darin, wie weit die Faser reicht: FTTC bis zum Verteilerkasten an der Straße, FTTB bis ins Gebäude, FTTH bis in die Wohnung bzw. Büroeinheit, FTTD bis zur Dose am Arbeitsplatz; den Rest überbrückt Kupfer.",
@@ -754,6 +744,15 @@
               "herkunft": [
                 "buch:GS-3.7.2-S372"
               ]
+            },
+            {
+              "id": "AP1-6-1-6-K5",
+              "text": "Du kannst begründet zwischen einem managebaren und einem nicht managebaren Switch auswählen: Den managebaren richtet man über eine Weboberfläche oder per SSH ein und kann ihn überwachen, etwa Datenrate und Duplex je Port festlegen oder einen Port zur Fehlersuche spiegeln; wer das nicht braucht, nimmt den günstigeren nicht managebaren, der ohne Einrichtung sofort arbeitet.",
+              "kurz": "Managebarer oder nicht managebarer Switch",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-3.7.2-S372"
+              ]
             }
           ],
           "grenzen": [],
@@ -851,17 +850,6 @@
               ]
             },
             {
-              "id": "AP1-6-2-1-K8",
-              "text": "Du kannst beurteilen, ob ein Internetanschluss für einen selbst betriebenen, aus dem Internet erreichbaren Server taugt: Er braucht eine feste öffentliche IP-Adresse statt einer vom Provider regelmäßig neu vergebenen oder einer geteilten IPv4-Adresse hinter dem NAT des Providers, eine ausreichende Upload-Rate (am besten symmetrisch) und keine Zwangstrennung.",
-              "kurz": "Internetanschluss für eigenen öffentlichen Server",
-              "stufe": 4,
-              "herkunft": [
-                "buch:FS-4.5.2-S390",
-                "buch:FS-4.2.1-S320",
-                "buch:FS-4.2.3-S322"
-              ]
-            },
-            {
               "id": "AP1-6-2-1-K9",
               "text": "Du kannst erklären, was eine Netzwerkdokumentation enthält (Lage-, Netzwerk- und Patchpläne, IP-Bereiche und Teilnetze, fest vergebene Adressen, DHCP-Einstellungen, Messprotokolle) und warum jede Änderung am Netz sofort von dem eingetragen wird, der sie vornimmt.",
               "kurz": "Inhalt einer Netzwerkdokumentation",
@@ -891,12 +879,13 @@
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
             },
             {
-              "text": "Portweiterleitung (Destination NAT), um einen Dienst im lokalen Netz aus dem Internet erreichbar zu machen.",
-              "kurz": "Portweiterleitung (Destination NAT)",
+              "text": "Wer einen Server im eigenen Netz aus dem Internet erreichbar machen will, braucht eine feste öffentliche IP-Adresse (keine wechselnde und keine mit anderen Kunden hinter dem NAT des Providers geteilte), genug Upload, am besten symmetrisch, und am Router eine Portweiterleitung (Destination NAT), die Anfragen an den Dienst im lokalen Netz weiterreicht.",
+              "kurz": "Eigener Server im Internet: Anschluss und Portweiterleitung",
               "quellen": [
-                "lernzettel:fi-de-2025"
+                "lernzettel:fi-de-2025",
+                "buch:FS-4.5.2"
               ],
-              "grund": "Der Katalog-Anhang nennt NAT/PAT als mögliche Router-Funktion (Kern, AP1-6-2-1-K7), nicht die Portweiterleitung; kein Beleg, keine Puffer-Regel."
+              "grund": "G2: Einen eigenen Server aus dem Internet erreichbar zu machen ist Server-Infrastruktur, nicht Arbeitsplatz (On-Premises: AP2b.02.04.1); die Portweiterleitung nennt der Katalog-Anhang nicht (NAT/PAT ist Kern in AP1-6-2-1-K7). Mit der früheren Pflicht-Aussage AP1-6-2-1-K8 zusammengelegt (V2-Prüfung AP1-b Nr. 7)."
             },
             {
               "text": "Weitere besondere IPv4-Adressen: 0.0.0.0 steht für eine noch unbekannte eigene Adresse und als 0.0.0.0/0 für die Standardroute, 224.0.0.0/4 ist der Multicast-Bereich, 240.0.0.0/4 ist reserviert.",
@@ -1756,7 +1745,7 @@
           "koennen": [
             {
               "id": "AP1-6-3-4-K1",
-              "text": "Du kannst erklären, wie ping arbeitet: Er schickt eine ICMP-Echo-Anfrage an das Ziel, das sofort mit einer Echo-Antwort reagiert, und zeigt die Round Trip Time (RTT), also die Zeit für Hin- und Rückweg über alle Leitungen und Geräte; je größer sie ist, desto langsamer ist die Verbindung.",
+              "text": "Du kannst erklären, wie ping arbeitet: Er schickt eine ICMP-Echo-Anfrage an das Ziel, das sofort mit einer Echo-Antwort reagiert, und misst die Round Trip Time (RTT), die Zeit für Hin- und Rückweg; eine hohe RTT bedeutet große Verzögerung, über die erreichbare Datenrate sagt sie dagegen wenig aus.",
               "kurz": "Funktionsweise von ping und RTT",
               "stufe": 2,
               "herkunft": [
@@ -1795,8 +1784,8 @@
             },
             {
               "id": "AP1-6-3-4-K5",
-              "text": "Du kannst eine nslookup-Ausgabe interpretieren: oben der befragte DNS-Server, darunter die Adressen zum Namen (oft mehrere), und der Vermerk „nicht autorisierende Antwort“ bedeutet, dass sie aus dem Zwischenspeicher eines Servers stammt, der für den Namen nicht zuständig ist.",
-              "kurz": "nslookup-Ausgabe und nicht autorisierende Antwort",
+              "text": "Du kannst eine nslookup-Ausgabe interpretieren: oben der befragte DNS-Server, darunter die zum Namen gefundenen Adressen (oft mehrere).",
+              "kurz": "nslookup-Ausgabe: befragter Server und Adressen",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-3.6.2-S368"
@@ -1804,7 +1793,16 @@
             }
           ],
           "grenzen": [],
-          "kuer": []
+          "kuer": [
+            {
+              "text": "Der Vermerk „Nicht autorisierende Antwort“ in einer nslookup-Ausgabe heißt: Der befragte Server ist für den Namen nicht zuständig und gibt eine Antwort aus seinem Zwischenspeicher weiter; nach Änderungen kann sie veraltet sein.",
+              "kurz": "Nicht autorisierende Antwort bei nslookup",
+              "quellen": [
+                "buch:GS-3.6.2"
+              ],
+              "grund": "K3: Das Buch zeigt den Vermerk nur; seine Deutung gehört zur Arbeitsweise von DNS (AP2b.01.07.1, Grenze in AP1-6-2-4) (V2-Prüfung AP1-b Nr. 10)."
+            }
+          ]
         }
       ]
     }
@@ -2180,7 +2178,8 @@
       "buch:GS-3.3.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:FS-4.3.1": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:GS-3.6.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.6.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-      "buch:FS-4.7.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+      "buch:FS-4.7.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-3.6.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.6.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -2296,11 +2295,11 @@
             "lernzettel:fi-de-2025",
             "lernzettel:fi-de-2024"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-6-1-2"
+            "AP1-6-3-4-K1"
           ],
-          "notiz": "P-BEISPIELLISTE: nur eine Hinweisquelle, Kür"
+          "notiz": "P-BEISPIELLISTE: nur eine Hinweisquelle, Kür; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 6): bisher Kür, jetzt Pflicht (AP1-6-3-4-K1)"
         },
         {
           "thema": "RDP, VNC, Clientless Remote Access (Fernwartung)",
@@ -2993,11 +2992,11 @@
           "quellen": [
             "buch:FS-4.3.2"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-6-1-4"
+            "AP1-6-1-4-K10"
           ],
-          "notiz": "Regelwerk v2.x, D8/RK1"
+          "notiz": "Regelwerk v2.x, D8/RK1; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 12): bisher Kür, jetzt Pflicht (AP1-6-1-4-K10)"
         },
         {
           "thema": "Glasfaseranschlüsse unterscheiden sich darin, wie weit die Faser reicht: FTTC bis zum Verteilerkasten an der Straße, FTT",
@@ -3143,6 +3142,28 @@
             "AP1-6-3-2"
           ],
           "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Wer einen Server im eigenen Netz aus dem Internet erreichbar machen will, braucht eine feste öffentliche IP-Adresse (kei",
+          "quellen": [
+            "buch:FS-4.5.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-2-1"
+          ],
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 7)"
+        },
+        {
+          "thema": "Der Vermerk „Nicht autorisierende Antwort“ in einer nslookup-Ausgabe heißt: Der befragte Server ist für den Namen nicht ",
+          "quellen": [
+            "buch:GS-3.6.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-6-3-4"
+          ],
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 10)"
         }
       ]
     },
@@ -3412,7 +3433,6 @@
           "AP1-6-1-6-K2",
           "AP1-6-1-6-K3",
           "AP1-6-1-6-K4",
-          "AP1-6-2-1-K8",
           "AP1-6-2-1-K9",
           "AP1-6-2-1-K10",
           "AP1-6-2-4-K8",
@@ -3422,7 +3442,9 @@
           "AP1-6-3-4-K2",
           "AP1-6-3-4-K3",
           "AP1-6-3-4-K4",
-          "AP1-6-3-4-K5"
+          "AP1-6-3-4-K5",
+          "AP1-6-1-6-K5",
+          "AP1-6-1-4-K10"
         ],
         "neue_stichpunkte": [
           {
@@ -3448,7 +3470,6 @@
           "AP1-6-1-4",
           "AP1-6-1-4",
           "AP1-6-1-4",
-          "AP1-6-1-4",
           "AP1-6-1-5",
           "AP1-6-1-5",
           "AP1-6-1-5",
@@ -3459,7 +3480,9 @@
           "AP1-6-2-3",
           "AP1-6-2-4",
           "AP1-6-2-5",
-          "AP1-6-3-2"
+          "AP1-6-3-2",
+          "AP1-6-2-1",
+          "AP1-6-3-4"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
@@ -3472,6 +3495,66 @@
           "AP1-6-1-6",
           "AP1-6-2-3",
           "AP1-6-3-2"
+        ],
+        "kuer_gestrichen": [
+          {
+            "sp": "AP1-6-1-2",
+            "text": "ICMP als Protokoll hinter ping: Echo Request und Echo Reply auf Schicht 3.",
+            "grund": "jetzt Pflicht: AP1-6-3-4-K1 (V2-Prüfung AP1-b Nr. 6)"
+          },
+          {
+            "sp": "AP1-6-1-4",
+            "text": "PowerLAN überträgt Daten über die vorhandene Stromleitung: Mindestens zwei Adapter in Steckdosen bilden das Netz, und die tatsächliche Datenrate sinkt mit Leitungslänge, Zahl der Verteiler und Störern im Stromnetz – meist deutlich unter der eines Netzwerkkabels.",
+            "grund": "jetzt Pflicht: AP1-6-1-4-K10 (V2-Prüfung AP1-b Nr. 12)"
+          }
+        ],
+        "pruefung_umsetzung": {
+          "stand": "2026-10-16",
+          "bericht": "V2-Prüfung AP1-b (unabhängiger Prüfer), Umsetzung Schritt 6",
+          "aenderungen": [
+            {
+              "nr": 6,
+              "was": "Kür „ICMP als Protokoll hinter ping“ an AP1-6-1-2 gestrichen (Pflicht in AP1-6-3-4-K1), Hinweis-Abgleich auf Kern"
+            },
+            {
+              "nr": 7,
+              "was": "AP1-6-2-1-K8 entfernt (Erklärung, 2 Karten); Inhalt mit der Kür zur Portweiterleitung zu einem Kür-Eintrag zusammengelegt (lernzettel:fi-de-2025, buch:FS-4.5.2)"
+            },
+            {
+              "nr": 8,
+              "was": "Grenze AP1-6-1-2 ohne „Aufbau der Protokolle (Header …)“ und ohne die G3-Tiefenbegründung neu gefasst; alter Wortlaut in grenzen_geaendert"
+            },
+            {
+              "nr": 9,
+              "was": "AP1-6-3-4-K1: RTT als Verzögerung, nicht als Datenrate (Text, Erklärung, Karte K1-2)"
+            },
+            {
+              "nr": 10,
+              "was": "AP1-6-3-4-K5 auf befragten Server und Adressen gekürzt (Text, kurz, Erklärung, Karte K5-1); Deutung des Vermerks als Kür an AP1-6-3-4"
+            },
+            {
+              "nr": 11,
+              "was": "Neue Aussage AP1-6-1-6-K5 (managebarer gegen nicht managebaren Switch, buch:GS-3.7.2-S372) mit Erklärung und 2 Karten"
+            },
+            {
+              "nr": 12,
+              "was": "Kür PowerLAN an AP1-6-1-4 wird Pflicht AP1-6-1-4-K10 (buch:FS-4.3.2-S344) mit Erklärung und 2 Karten; Kür gestrichen, Hinweis-Abgleich auf Kern"
+            }
+          ]
+        },
+        "grenzen_geaendert": [
+          {
+            "sp": "AP1-6-1-2",
+            "text_vorher": "Aufbau der Protokolle (Header, Verbindungsaufbau wie der Drei-Wege-Handshake), die Eigenschaften von TCP und UDP und Dateifreigabe-Protokolle wie SMB oder NFS gehören nicht dazu; Portnummern musst du nicht auswendig können.",
+            "begruendung_vorher": "G3: AP1.03.02 verlangt „identifizieren und zuordnen“; B4: die Porttabelle war in der Prüfung vorgegeben (2025F-A4-ea); „Übertragungsprotokolle und ihre Eigenschaften erläutern, z. B. TCP/UDP“ (AP2b.01.05) und „Dateifreigaben, z. B. SMB/CIFS“ (AP2b.01.04.1) stehen im AP2-Katalog.",
+            "katalog_vorher": [
+              "AP1.03.02",
+              "AP2b.01.05",
+              "AP2b.01.05.1",
+              "AP2b.01.04.1"
+            ],
+            "grund": "D3/G3: „Aufbau der Protokolle (Header)“ war reine Tiefenbegründung und widersprach AP1-6-1-2-K7 (Paketkopf) und AP1-6-3-4-K2 (TTL im IP-Kopf); V2-Prüfung AP1-b Nr. 8"
+          }
         ]
       }
     ]

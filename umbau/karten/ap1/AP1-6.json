@@ -1209,6 +1209,20 @@
       "hinten": "- geringe Dämpfung: große Entfernungen möglich\n- Licht wird von elektromagnetischen Störungen nicht beeinflusst"
     },
     {
+      "id": "AP1-6-1-4-K10-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K10",
+      "vorne": "Welchen Vorteil und welchen Nachteil hat PowerLAN für die Anbindung eines Arbeitsplatzes?",
+      "hinten": "- Vorteil: nutzt die vorhandene Stromleitung, keine neuen Kabel nötig\n- Nachteil: meist deutlich weniger Datenrate als ein Netzwerkkabel"
+    },
+    {
+      "id": "AP1-6-1-4-K10-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K10",
+      "vorne": "Wovon hängt die tatsächliche Datenrate bei PowerLAN ab?",
+      "hinten": "Von der Länge der Stromleitung, der Zahl der Verteiler zwischen den Adaptern und von Störungen im Stromnetz."
+    },
+    {
       "id": "AP1-6-1-5-K7-1",
       "sp": "AP1-6-1-5",
       "k": "AP1-6-1-5-K7",
@@ -1307,18 +1321,18 @@
       "hinten": "Nein: 16 × 7 W + 4 × 20 W = 192 W, das übersteigt das Budget von 150 W."
     },
     {
-      "id": "AP1-6-2-1-K8-1",
-      "sp": "AP1-6-2-1",
-      "k": "AP1-6-2-1-K8",
-      "vorne": "Warum braucht ein selbst betriebener, aus dem Internet erreichbarer Server eine feste öffentliche IP-Adresse?",
-      "hinten": "Er muss immer unter derselben Adresse erreichbar sein. Eine vom Provider regelmäßig neu vergebene Adresse oder eine geteilte Adresse hinter dem Provider-NAT macht ihn von außen unerreichbar (Notlösung bei wechselnder Adresse: dynamisches DNS)."
+      "id": "AP1-6-1-6-K5-1",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K5",
+      "vorne": "Was kann ein managebarer Switch, was ein nicht managebarer nicht kann?",
+      "hinten": "- über Weboberfläche oder SSH eingerichtet und überwacht werden\n- z. B. Datenrate und Duplex je Port festlegen, Port-Statistiken anzeigen, einen Port zur Fehlersuche spiegeln\nDer nicht managebare arbeitet nur mit festen Einstellungen, ist dafür günstiger."
     },
     {
-      "id": "AP1-6-2-1-K8-2",
-      "sp": "AP1-6-2-1",
-      "k": "AP1-6-2-1-K8",
-      "vorne": "Warum ist für einen Server am eigenen Internetanschluss die Upload-Rate entscheidend?",
-      "hinten": "Der Server sendet seine Daten an die Nutzer – aus Sicht des Anschlusses ist das Upload. Bei asymmetrischen Anschlüssen ist der Upload oft viel kleiner; ein Geschäftsanschluss ist meist symmetrisch."
+      "id": "AP1-6-1-6-K5-2",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K5",
+      "vorne": "Ein Büro mit sechs Arbeitsplätzen braucht einen Switch; überwacht wird das Netz nicht. Managebar oder nicht managebar?",
+      "hinten": "Nicht managebar: Die Zusatzfunktionen würden nicht genutzt, der einfache Switch ist günstiger und arbeitet ohne Einrichtung."
     },
     {
       "id": "AP1-6-2-1-K9-1",
@@ -1402,7 +1416,7 @@
       "sp": "AP1-6-3-4",
       "k": "AP1-6-3-4-K1",
       "vorne": "Was gibt die Round Trip Time (RTT) bei ping an?",
-      "hinten": "Die Zeit für Hin- und Rückweg zusammen über alle Leitungen und Geräte; je größer, desto langsamer die Verbindung."
+      "hinten": "Die Zeit für Hin- und Rückweg zusammen über alle Leitungen und Geräte. Sie zeigt die Verzögerung (Latenz), nicht die Datenrate der Verbindung."
     },
     {
       "id": "AP1-6-3-4-K2-1",
@@ -1457,8 +1471,8 @@
       "id": "AP1-6-3-4-K5-1",
       "sp": "AP1-6-3-4",
       "k": "AP1-6-3-4-K5",
-      "vorne": "Was bedeutet in einer nslookup-Ausgabe „Nicht autorisierende Antwort“?",
-      "hinten": "Der befragte DNS-Server ist für den Namen nicht zuständig und liefert die Antwort aus seinem Zwischenspeicher (Cache)."
+      "vorne": "Welche zwei Teile zeigt eine nslookup-Ausgabe?",
+      "hinten": "- oben den befragten DNS-Server (Server/Address)\n- darunter den Namen und die gefundenen Adressen, oft mehrere IPv4- und IPv6-Adressen"
     },
     {
       "id": "AP1-6-3-4-K5-2",
@@ -2427,16 +2441,6 @@
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.2-S372)"
     },
     {
-      "id": "AP1-6-2-1-K8-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S390, buch:FS-4.2.1-S320, buch:FS-4.2.3-S322)"
-    },
-    {
-      "id": "AP1-6-2-1-K8-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S390, buch:FS-4.2.1-S320, buch:FS-4.2.3-S322)"
-    },
-    {
       "id": "AP1-6-2-1-K9-1",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.1-S351)"
@@ -2494,7 +2498,7 @@
     {
       "id": "AP1-6-3-4-K1-2",
       "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S365, buch:GS-3.4.4-S326)"
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S365, buch:GS-3.4.4-S326); V2-Prüfung AP1-b Nr. 9: RTT nicht mehr mit der Datenrate gleichgesetzt"
     },
     {
       "id": "AP1-6-3-4-K2-1",
@@ -2534,12 +2538,32 @@
     {
       "id": "AP1-6-3-4-K5-1",
       "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368)"
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368); V2-Prüfung AP1-b Nr. 10: Deutung von „nicht autorisierende Antwort“ ist jetzt Kür; Karte fragt die Teile der Ausgabe ab"
     },
     {
       "id": "AP1-6-3-4-K5-2",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368)"
+    },
+    {
+      "id": "AP1-6-1-6-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 11): neue Aussage (buch:GS-3.7.2-S372)"
+    },
+    {
+      "id": "AP1-6-1-6-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 11): neue Aussage (buch:GS-3.7.2-S372)"
+    },
+    {
+      "id": "AP1-6-1-4-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 12): neue Aussage (buch:FS-4.3.2-S344)"
+    },
+    {
+      "id": "AP1-6-1-4-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 12): neue Aussage (buch:FS-4.3.2-S344)"
     }
   ]
 }

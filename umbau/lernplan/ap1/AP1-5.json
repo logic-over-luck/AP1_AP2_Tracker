@@ -129,7 +129,7 @@
               "kurz": "Firmware: fest im Gerät gespeichert",
               "stufe": 2,
               "herkunft": [
-                "buch:GS-2.2.2-S136"
+                "regel:P-GRUNDLAGE"
               ]
             },
             {
@@ -170,12 +170,12 @@
               "grund": "RK2: ERP-Module und weitere Unternehmenssysteme sind Unterthema (SCM und CRM stehen schon in AP1-5-1-1-K4), WMS/SRM/BPM/DMS ohne Katalog-Baustein."
             },
             {
-              "text": "Business Intelligence wertet Unternehmensdaten automatisch aus – gestützt auf ein Data Warehouse, das Daten aus vielen Systemen zusammenführt, und auf Data Mining, das darin Muster sucht; daneben gibt es integrierte Systeme für Produktionsplanung (PPS), Beschaffung, Lieferanten (SRM), Dokumente (DMS) und Geschäftsprozesse (BPM).",
+              "text": "Business Intelligence wertet Unternehmensdaten automatisch aus – gestützt auf ein Data Warehouse, das Daten aus vielen Systemen zusammenführt, und auf Data Mining, das darin Muster sucht.",
               "kurz": "Business Intelligence, Data Warehouse, Data Mining",
               "quellen": [
                 "buch:GS-1.3.5"
               ],
-              "grund": "D8: weitere integrierte Unternehmenssysteme ohne Katalog-Baustein."
+              "grund": "D8: Business Intelligence ohne Katalog-Baustein; die weiteren integrierten Systeme stehen in der Kür davor (V2-Prüfung AP1-b Nr. 26)."
             },
             {
               "text": "Beim E-Procurement wird elektronisch beschafft – über Shops der Lieferanten, eigene Beschaffungsplattformen oder Marktplätze –, und die Bestelldaten gelangen über Austauschformate wie EDI oder XML ohne Abtippen ins ERP-System.",
@@ -715,15 +715,6 @@
               "herkunft": [
                 "beleg:2023F-A3-be"
               ]
-            },
-            {
-              "id": "AP1-5-2-1-K7",
-              "text": "Du kannst beurteilen, ob für einen Einsatz eine geschlossene Plattform (Hardware und Betriebssystem aus einer Hand: gut abgestimmt, stabil, weniger Schadsoftware, aber teurer, kleinere Auswahl und starke Bindung an den Hersteller) oder eine offene Plattform (große Auswahl an Geräten, Software und Preisen, aber mehr Aufwand für Abstimmung und Sicherheit) besser passt.",
-              "kurz": "Geschlossene gegen offene Plattform",
-              "stufe": 4,
-              "herkunft": [
-                "buch:GS-2.1.4-S125"
-              ]
             }
           ],
           "grenzen": [],
@@ -735,6 +726,14 @@
                 "podcast:themen-ap1"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Manche Hersteller liefern Hardware und Betriebssystem aus einer Hand: Das ist gut aufeinander abgestimmt, aber teurer, die Auswahl ist kleiner und man bindet sich an den Hersteller; offene Plattformen bieten mehr Auswahl, verlangen aber mehr Abstimmung.",
+              "kurz": "Geschlossene gegen offene Plattform",
+              "quellen": [
+                "buch:GS-2.1.4"
+              ],
+              "grund": "Regel K: Die Quelle ist ein Steckbrief zu Herstellern und Produkten; der allgemeine Plattformvergleich ist daraus abgeleitet (V2-Prüfung AP1-b Nr. 4)."
             }
           ]
         },
@@ -807,8 +806,7 @@
               "kurz": "Reihenfolge einer Betriebssysteminstallation",
               "stufe": 2,
               "herkunft": [
-                "katalog:AP1.04.05.2",
-                "buch:FS-4.6.3-S408"
+                "katalog:AP1.04.05.2"
               ]
             },
             {
@@ -1085,7 +1083,7 @@
             },
             {
               "id": "AP1-5-2-5-K9",
-              "text": "Du kannst Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und dauerhaft ohne Ausfall zu laufen, zum Beispiel mit doppelten Netzteilen, Fehlerkorrektur im Arbeitsspeicher, vielen im Betrieb tauschbaren Festplatten und starker Kühlung.",
+              "text": "Du kannst Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und rund um die Uhr zuverlässig zu laufen, und steckt meist in einem 19-Zoll-Gehäuse im Serverschrank.",
               "kurz": "Serverhardware gegen Arbeitsplatzrechner",
               "stufe": 2,
               "herkunft": [
@@ -1121,14 +1119,6 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Überschriften, Absätze, Listen, Tabellen, Links, Bilder mit Alternativtext, Formulare), aus CSS für das Aussehen – am besten in einer externen Datei, die viele Seiten teilen – und aus JavaScript, einer eigenständigen, im Browser laufenden Sprache, die auf Ereignisse wie Klicks reagiert und Eingaben sofort prüfen kann. Diese Prüfung ersetzt die auf dem Server nicht, weil sich der Browser umgehen lässt, und weil Browser HTML und CSS unterschiedlich umsetzen, testet man eine Seite in mehreren Browsern.",
-              "kurz": "HTML, CSS und JavaScript im Zusammenspiel",
-              "quellen": [
-                "buch:FS2-1.4.4"
-              ],
-              "grund": "D8: Webgrundlagen ohne Katalog-Baustein; stehen schon als Kür am Stichpunkt."
             },
             {
               "text": "Mit einem Content-Management-System pflegen Redakteure die Inhalte einer Website ohne Programmierkenntnisse; Vorlagen (Templates) sorgen für ein einheitliches Aussehen, das sich an das Endgerät anpasst (responsives Design).",
@@ -1458,7 +1448,8 @@
       "buch:FS2-3.1.2": "Lehrbuch Westermann „IT-Berufe“ FS2 3.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
       "buch:FS2-3.3.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
       "buch:FS2-3.4.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
-      "buch:FS2-1.4.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
+      "buch:FS2-1.4.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-2.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 2.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1947,11 +1938,11 @@
           "quellen": [
             "buch:FS2-1.4.4"
           ],
-          "ring": "Kür",
+          "ring": "Ordner",
           "wo": [
-            "AP1-5-2-5"
+            "AP1-8"
           ],
-          "notiz": "Regelwerk v2.0, D8"
+          "notiz": "Regelwerk v2.0, D8; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 27): Kür nach AP1-8-1-3 verschoben"
         },
         {
           "thema": "Mit einem Content-Management-System pflegen Redakteure die Inhalte einer Website ohne Programmierkenntnisse; Vorlagen (T",
@@ -1963,6 +1954,17 @@
             "AP1-5-2-5"
           ],
           "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Manche Hersteller liefern Hardware und Betriebssystem aus einer Hand: Das ist gut aufeinander abgestimmt, aber teurer, d",
+          "quellen": [
+            "buch:GS-2.1.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-2-1"
+          ],
+          "notiz": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 4)"
         }
       ]
     },
@@ -2156,7 +2158,6 @@
           "AP1-5-1-4-K7",
           "AP1-5-1-4-K8",
           "AP1-5-1-4-K9",
-          "AP1-5-2-1-K7",
           "AP1-5-2-2-K9",
           "AP1-5-2-4-K5",
           "AP1-5-2-4-K6",
@@ -2172,7 +2173,6 @@
           }
         ],
         "d6": [
-          "AP1-5-2-2-K6",
           "AP1-5-1-4-K1",
           "AP1-5-1-4-K5",
           "AP1-5-2-1-K3"
@@ -2192,13 +2192,50 @@
           "AP1-5-1-4",
           "AP1-5-1-4",
           "AP1-5-2-5",
-          "AP1-5-2-5"
+          "AP1-5-2-1"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
         "umgehaengt": [],
         "hinweise": [
           "AP1-5-1-5"
+        ],
+        "pruefung_umsetzung": {
+          "stand": "2026-10-16",
+          "bericht": "V2-Prüfung AP1-b (unabhängiger Prüfer), Umsetzung Schritt 6",
+          "aenderungen": [
+            {
+              "nr": 1,
+              "was": "AP1-5-1-1-K10: Herkunft buch:GS-2.2.2-S136 entfernt (Seite trägt den Inhalt nicht), jetzt regel:P-GRUNDLAGE (Grundlage für AP1-5-1-1-K6 und AP1-5-2-2-K1)"
+            },
+            {
+              "nr": 4,
+              "was": "AP1-5-2-1-K7 entfernt (Erklärung, 2 Karten), Inhalt als Kür an AP1-5-2-1 (buch:GS-2.1.4)"
+            },
+            {
+              "nr": 5,
+              "was": "AP1-5-2-5-K9: Redundanzmerkmale (doppelte Netzteile, ECC, Hot-Swap) aus Text, Erklärung und Karten entfernt; Bauform 19 Zoll ergänzt"
+            },
+            {
+              "nr": 16,
+              "was": "AP1-5-2-2-K6: Zusatz-Herkunft buch:FS-4.6.3-S408 entfernt (Seite beschreibt Serverinstallation, nicht die Schritte der Aussage); D6-Eintrag gestrichen"
+            },
+            {
+              "nr": 26,
+              "was": "Kür „Business Intelligence …“ an AP1-5-1-1 auf BI, Data Warehouse und Data Mining gekürzt (Rest doppelte die ERP-Kür)"
+            },
+            {
+              "nr": 27,
+              "was": "Buch-Kür „HTML, CSS und JavaScript im Zusammenspiel“ nach AP1-8-1-3 verschoben; ältere Kür „Webgrundlagen … Fernwartung mit VNC“ bleibt (enthält auch Fernwartung)"
+            }
+          ]
+        },
+        "kuer_gestrichen": [
+          {
+            "sp": "AP1-5-2-5",
+            "text": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Überschriften, Absätze, Listen, Tabellen, Links, Bilder mit Alternativtext, Formulare), aus CSS für das Aussehen – am besten in einer externen Datei, die viele Seiten teilen – und aus JavaScript, einer eigenständigen, im Browser laufenden Sprache, die auf Ereignisse wie Klicks reagiert und Eingaben sofort prüfen kann. Diese Prüfung ersetzt die auf dem Server nicht, weil sich der Browser umgehen lässt, und weil Browser HTML und CSS unterschiedlich umsetzen, testet man eine Seite in mehreren Browsern.",
+            "grund": "verschoben nach AP1-8-1-3 (D8: nächstpassender Stichpunkt, V2-Prüfung AP1-b Nr. 27)"
+          }
         ]
       }
     ]

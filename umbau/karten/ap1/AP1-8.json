@@ -1444,7 +1444,7 @@
       "sp": "AP1-8-2-6",
       "k": "AP1-8-2-6-K7",
       "vorne": "In welcher Reihenfolge werden Rechen-, Vergleichs- und logische Operatoren ohne Klammern ausgewertet?",
-      "hinten": "Klammern → Punkt- vor Strichrechnung → Vergleiche → logische Operatoren (NICHT vor UND vor ODER)."
+      "hinten": "Klammern → Punkt- vor Strichrechnung → Vergleiche → UND → ODER. Wie stark NICHT bindet, hängt von der Sprache ab; deshalb klammert man dort."
     },
     {
       "id": "AP1-8-2-6-K7-2",
@@ -1480,6 +1480,20 @@
       "k": "AP1-8-2-6-K9",
       "vorne": "Welche Fehlerart entsteht, wenn ein Nutzer „zwölf“ eingibt und das Programm die Eingabe in eine Ganzzahl umwandelt?",
       "hinten": "Ein Laufzeitfehler: Der Code ist formal korrekt, scheitert aber bei diesen Daten."
+    },
+    {
+      "id": "AP1-8-2-6-K10-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K10",
+      "vorne": "Welche Namen sind gültige Bezeichner: summe_netto, 3fach, preis-alt, while, wert2?",
+      "hinten": "Gültig: summe_netto, wert2.\nUngültig: 3fach (Ziffer am Anfang), preis-alt (Bindestrich), while (Schlüsselwort)."
+    },
+    {
+      "id": "AP1-8-2-6-K10-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K10",
+      "vorne": "Nenne die Regeln für gültige Bezeichner.",
+      "hinten": "- nur Buchstaben, Ziffern und Unterstrich\n- keine Ziffer am Anfang\n- kein Schlüsselwort\n- in vielen Sprachen zählt Groß- und Kleinschreibung"
     },
     {
       "id": "AP1-8-2-5-K1-1",
@@ -1598,7 +1612,7 @@
       "sp": "AP1-8-2-5",
       "k": "AP1-8-2-5-K8",
       "vorne": "Nenne einen Vorteil und einen Nachteil der Hashtabelle gegenüber einem Array.",
-      "hinten": "- Vorteil: schnelle Suche über den Schlüssel, auch bei sehr vielen Einträgen\n- Nachteil: mehr Speicherbedarf"
+      "hinten": "- Vorteil: schnelle Suche über den Schlüssel, auch bei sehr vielen Einträgen\n- Nachteile: mehr Speicherbedarf; Kollisionen (zwei Schlüssel, gleiche Position) müssen behandelt werden und verlangsamen den Zugriff"
     },
     {
       "id": "AP1-8-2-2-K7-1",
@@ -1760,6 +1774,20 @@
       "k": "AP1-8-4-3-K5",
       "vorne": "Radiobuttons oder Checkboxen: Welches Element passt für „Zahlungsart“, welches für „Gewünschte Extras“?",
       "hinten": "- Zahlungsart: Radiobuttons (genau eine)\n- Extras: Checkboxen (mehrere möglich)"
+    },
+    {
+      "id": "AP1-8-4-3-K6-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K6",
+      "vorne": "Nenne die vier Grundprinzipien barrierefreier Oberflächen.",
+      "hinten": "Wahrnehmbar, bedienbar, verständlich, robust."
+    },
+    {
+      "id": "AP1-8-4-3-K6-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K6",
+      "vorne": "Welchem Grundprinzip der Barrierefreiheit gehört „vollständig per Tastatur bedienbar“ an, welchem „ausreichender Kontrast“?",
+      "hinten": "- Tastatur: bedienbar\n- Kontrast: wahrnehmbar"
     }
   ],
   "nicht_abgefragt": [],
@@ -2803,7 +2831,7 @@
     {
       "id": "AP1-8-2-6-K7-1",
       "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S222)"
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S222); V2-Prüfung AP1-b Nr. 24: feste Stellung von NICHT entfernt (je nach Sprache verschieden)"
     },
     {
       "id": "AP1-8-2-6-K7-2",
@@ -2913,7 +2941,7 @@
     {
       "id": "AP1-8-2-5-K8-2",
       "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142)"
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142); V2-Prüfung AP1-b Nr. 29: Kollision als Nachteil ergänzt"
     },
     {
       "id": "AP1-8-2-2-K7-1",
@@ -3029,6 +3057,26 @@
       "id": "AP1-8-4-3-K5-2",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.4-S42)"
+    },
+    {
+      "id": "AP1-8-2-6-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 25): neue Aussage (regel:P-GRUNDLAGE, buch:GS-5.7.3-S551)"
+    },
+    {
+      "id": "AP1-8-2-6-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 25): neue Aussage (regel:P-GRUNDLAGE, buch:GS-5.7.3-S551)"
+    },
+    {
+      "id": "AP1-8-4-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 28): neue Aussage (buch:GS-2.4.12-S188)"
+    },
+    {
+      "id": "AP1-8-4-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 28): neue Aussage (buch:GS-2.4.12-S188)"
     }
   ]
 }
