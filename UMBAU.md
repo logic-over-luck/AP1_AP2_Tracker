@@ -591,7 +591,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         ihre alte ID. Trainer und Probeprüfungen: Inhalte für „AP2“ gelten in PB1 und PB2 (`trainer/rahmen/raum.js`), welcher
         Trainer wo erscheint, entscheiden seine Stichpunkte über den Umzug; Prüfungsteil PB1 im Raum PB1, PB2 im Raum PB2.
         Tests in `tests/vorschau-ap1.test.mjs` (Räume, Umzug beim Ableiten). Der alte Stand (`LERNSTUDIO_AP1=alt`) baut weiter.
-  - [ ] **PB1 offen:** Abnahme durch den Projektinhaber, danach Export PB1 (E3). Für den Bau von PB2 ist ein
+  - [x] **PB1 abgenommen (16.10.2026, Projektinhaber, siehe P45)**, Export PB1 endgültig (E3). Früher: Für den Bau von PB2 ist ein
         **vorläufiger Export** `umbau/export/PB1.json` erzeugt (Claude im Auftrag des Projektinhabers, 14.10.2026);
         ändert sich PB1 bei der Abnahme, wird er neu erzeugt und PB2 erneut geprüft (T7/T8).
   - [x] **PB2 Zuordnung (14.10.2026):** `umbau/zuordnung/pb2/*.json`, 107 Teilaufgaben, 34 Pflichtbausteine (32 mit Beleg).
@@ -616,7 +616,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         `umbau/lernplan/pb2` vorliegt: Raum PB2 zeigt 6 Ordner, 23 Stichpunkte, 92 Aussagen; die 209 alten PB2-Karten laufen
         über das `alt_neu` von PB2 (186 an neuen Aussagen, 23 gestrichen). Lernstand-Umzug für alle alten AP2-Stichpunkte
         nach PB1 oder PB2. Tests in `tests/vorschau-ap1.test.mjs` gelten für PB1 und PB2. 26 Aussagen haben noch keine Karte.
-  - [ ] **PB2 offen (Stand 14.10.2026, 20:30, Pause wegen Nutzungslimit):**
+  - [x] **PB2 fertig und abgenommen (16.10.2026):** (vorher: Stand 14.10.2026, 20:30, Pause wegen Nutzungslimit)
         1. ~~Unabhängige Prüfung PB2~~ **erledigt 16.10.2026:** 89 Funde in 6 Berichten, Bilanz
            `umbau/berichte/PB2-pruefer-bilanz.md` (92 → 85 Aussagen vorgeschlagen, 9 offene Fragen an den Projektinhaber). Alt: Bei
            Fortsetzung neu starten (Berichte `umbau/berichte/PB2-<n>-pruefer.md`, Bilanz `PB2-pruefer-bilanz.md`).
@@ -631,7 +631,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
            entschieden (Karten zu im alt_neu gestrichenen Aussagen entfallen ohne Protokoll, wie in PB1). SQL-Beispiele an
            PostgreSQL 16 bzw. am SQL-Auszug des Anhangs geprüft (P41).
         5. Build und Browser-Check `#/pb2` **erledigt 16.10.2026** (ohne Fehler). **Offen: Abnahme PB1 und PB2 durch den
-           Projektinhaber** (M1 Altprüfungs-Test, M2 Verständlichkeit), danach Export PB2 (E3).
+           Projektinhaber** – **erledigt 16.10.2026 (P45)**; Export PB2 erzeugt: `umbau/export/PB2.json` (E3, eingefroren).
         6. **PB1 nach P36 bereinigt (16.10.2026):** 32 T7-Fehler behoben (14 AP1-Bausteine nur noch per `baut_auf`,
            7 Aussagen mit `neu`, 11 auf das Neue gekürzt, PB1-10-2-3-K1 gestrichen), 20 Karten entfernt, 3 neu; Export PB1 neu
            erzeugt, PB2 dagegen grün. Abschnitte „Doppelungen zu AP1“ in `umbau/berichte/PB1-<n>-pruefer.md`.
@@ -696,6 +696,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P42 | **STDDEV, VARIANCE, CORR** (SQL-Auszug im Anhang, in keiner Prüfung): Vorschlag war Kür; wegen P24/P35 („was der Katalog-Anhang zeigt, ist Pflicht“) als **kurze Kern-Aussage auf niedriger Stufe** (erkennen und mit dem Auszug anwenden, B4). Entschieden (Projektinhaber, 16.10.2026, Angleichung an P24 durch Claude). | erledigt |
 | P43 | **Kleine Stichpunkte** (unter 3 Aussagen nach den Prüfer-Vorschlägen, z. B. PB2-1-1-4, PB2-3-1-2): auflösen und in den passenden Nachbar-Stichpunkt einbauen (F3). Entschieden (Projektinhaber, 16.10.2026). | erledigt |
 | P44 | **2025W-PB2-A3-ba** (Aufgabentext fehlt, P34): Die Testdaten gelten als **vorgegeben** (B4, „anwenden, nicht auswendig“). Entschieden (Projektinhaber, 16.10.2026). | erledigt |
+| P45 | **Abnahme PB1 und PB2 (Projektinhaber, 16.10.2026):** Freigabe im Vertrauen auf Skripte und unabhängige KI-Prüfer; eine fachliche Stichprobe (M1/M2) kann der Projektinhaber als Lernender noch nicht leisten. Funde beim späteren Lernen werden wie Prüfer-Funde behandelt: an der Ursache korrigieren (E4), Raum neu prüfen, Export neu erzeugen und spätere Räume gegenprüfen. PB1 und PB2 sind damit eingefroren (E3). | erledigt |
 ---
 
 ## 9. Fundament erzeugen und prüfen
