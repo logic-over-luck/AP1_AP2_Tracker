@@ -136,9 +136,9 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v1.5 [fest]
+## 4. Regelwerk – v1.8 [fest]
 
-Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). v1.5 (14.10.2026, Projektinhaber): P-BEISPIELLISTE (P17), P-MUSTER als F6 (P18). v1.6 (14.10.2026, Entscheidung übertragen): Prüfungsoperatoren aus PB1 eingestuft (verdeutlichen 2, Stellung nehmen 4, einfügen 3 als Formoperator, implementieren, finden, vorschlagen, umwandeln, skizzieren, schreiben, bringen je 3). Maßgeblich für die
+Freigegeben am 13.10.2026 (der Projektinhaber hat die Entscheidung übertragen). v1.1: Prüfungsoperatoren, Zusatzbausteine (4.7). v1.2: vier Ringe (4.8). v1.3: Formoperatoren (Z3a, P25). v1.4 (14.10.2026, Entscheidung übertragen): B3 auch für neue Prüfungen, F1 mehrere Operatoren aus einer Teilaufgabe, Ring für betriebliche Handlungen (P26). v1.5 (14.10.2026, Projektinhaber): P-BEISPIELLISTE (P17), P-MUSTER als F6 (P18). v1.6 (14.10.2026, Entscheidung übertragen): Prüfungsoperatoren aus PB1 eingestuft (verdeutlichen 2, Stellung nehmen 4, einfügen 3 als Formoperator, implementieren, finden, vorschlagen, umwandeln, skizzieren, schreiben, bringen je 3). v1.7 (14.10.2026): Operatoren der PB2-Aufgaben (Schritt 6). v1.8 (16.10.2026, Projektinhaber, P46): Z3b – Stufe der WiSo-Aufgaben aus dem Aufgabentyp (4.7); „ordnen“ Stufe 2. Maßgeblich für die
 Tiefe ist `umbau/regeln/regelwerk.json`; die Tabelle unten muss damit übereinstimmen (prüft
 `tools/umbau/tiefe-berechnen.mjs`). Änderungen nur bewusst, mit neuer Versionsnummer.
 
@@ -257,6 +257,16 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   „vervollständigen“, „ergänzen“, „markieren“; Liste `pruefungsoperatoren.formoperatoren`). Sie zählen in Z3
   nur, wenn die Teilaufgabe keinen anderen Operator hat. Beispiel: 2026F-A2-b „ausfüllen, angeben“ → Stufe 1.
   Steht nur ein Formoperator da (Netzplan, ERD, Diagramm ergänzen), bleibt seine Stufe.
+- **Z3b** (seit v1.8, P46, nur Raum WISO) In WiSo-Aufgaben ist „eintragen“ fast immer nur die Antwortform (Ziffer ins
+  Kästchen). Die Stufe kommt deshalb aus dem **Aufgabentyp** der Abschrift: Einfach- und Mehrfachauswahl, Zuordnung und
+  Reihenfolge 2, Eintrag 1, Rechnen 3; hat die Zuordnung den Typ `berechnen`, zählt die Teilaufgabe als Rechnen (3).
+  Fachliche Operatoren in der Aufgabe gehen vor. Die Katalogstufe bleibt Untergrenze je Baustein (T8). Festgelegt in
+  `regelwerk.json` → `pruefungsoperatoren.z3b`, geprüft von `tools/umbau/zuordnung-pruefen.mjs`.
+- **Z5** (seit 16.10.2026, P47, nur Raum WISO) **Deckung:** Ein WiSo-Baustein, den ein früherer Raum **vollständig**
+  lehrt, wird nicht neu formuliert. Er steht in `umbau/regeln/wiso-deckung.json` mit den deckenden Stichpunkten des
+  Exports und einem Grund und gilt als abgedeckt (T1), wenn ein WiSo-Stichpunkt per `baut_auf` auf einen davon verweist;
+  T7/T8 behandeln ihn wie einen Import. Teilweise gedeckte Bausteine stehen nicht in der Tabelle; der WiSo-Plan schreibt
+  dort nur das Neue mit `neu`.
 - **Z4** Teilaufgaben zu gestrichenen Themen: Ist nur die **Darstellungsform** gestrichen (Struktogramm)
   oder nur ein **Teil** (Vererbung in einer Klassenaufgabe), bleibt die Teilaufgabe den verbliebenen
   Bausteinen zugeordnet, mit `hinweis`. Ist das **ganze Thema** gestrichen (RAID, SAN, SQL), steht sie unter
@@ -307,6 +317,7 @@ Ein Raum ist fertig, wenn alle Tests grün sind und der Projektinhaber die Stich
 | T5 | Größen stimmen (F3, F4) | ✓ je Ordner |
 | T6 | Jeder Stichpunkt hat ein Gebiet seines Raums | ✓ je Ordner |
 | T7 | Inhalte früherer Räume sind importiert, nicht doppelt (E2): Aussagen nur zu importierten Bausteinen brauchen `neu`, importierte Bausteine in `bausteine` nur mit einer solchen Aussage (P36) | ✓ je Ordner `tools/umbau/lernplan-pruefen.mjs` (seit 16.10.2026) |
+| P47 | WiSo-Deckung (Z5): jeder Eintrag in `wiso-deckung.json` ist ein WiSo-Pflichtbaustein mit Grund, seine Stichpunkte stehen im Export eines früheren Raums; gedeckte Bausteine gelten in T1/T7/T8 als Import | ✓ `tools/umbau/raum-pruefen.mjs`, `tools/umbau/lernplan-pruefen.mjs`, Test |
 | R3 | Hinweis-Abgleich: jedes Thema aus den Hinweisquellen hat einen Ring (Kern, Puffer, Kür, Außen; „Ordner“ = wohnt in anderem Ordner oder Raum, P23), Hinweisquelle beschrieben, Verweis passt zum Ring | ✓ je Ordner (`meta.hinweisabgleich`) |
 | R4 | Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage | ✓ je Ordner (`meta.geschwister`) |
 | T9 | Rückblick-Test: Punkte je Prüfung auf Themen, die vorher weder im Katalog noch in einer früheren Prüfung standen; bei jeder neuen Prüfung neu berechnen | einmal von Hand gerechnet (6.1), als Skript geplant |
@@ -351,7 +362,7 @@ Regel B3. Spalte „.md" = Abschrift im Format wie `2024H_AP1.md` (Teilaufgaben-
 | 2026H (30.09.2026) | AP1 | aktuell | ✓ | nicht amtlich | 27 | vollständig |
 
 Summe AP1: 11 Prüfungen, 301 Teilaufgaben (kleinste bewertete Einheiten), davon 4 Prüfungen nach aktuellem
-Katalog. Alle Abschriften bestehen T-1. WiSo: noch keine Abschriften.
+Katalog. Alle Abschriften bestehen T-1.
 
 **AP2 (PB1 und PB2)**, Dateien `quellen/pruefungen/pb1/<Termin>_AP2-PB1.md` (Kopf-ID `2025W-PB1`), ebenso pb2.
 Termine S = Sommer, W = Winter (2025W = Winter 2025/26). Aktueller AP2-Katalog ab Sommer 2025 → 2025S und 2025W
@@ -373,6 +384,24 @@ aktuell, Rest B3. Belegsatz (gemeinsames Heft) steht als Material M1. Eigener Pr
 Summe: PB1 9 Prüfungen, 152 Teilaufgaben; PB2 9 Prüfungen, 107 Teilaufgaben; je 2 nach aktuellem Katalog.
 Alle 18 Abschriften bestehen T-1 (14.10.2026). PB2 hat Aufgaben ohne Teilaufgaben (z. B. 2021W-PB2-A2,
 25 Punkte Pseudocode); dort ist die Aufgabe selbst die Teilaufgabe (ID `2021W-PB2-A2`).
+
+**WiSo**, Dateien `quellen/pruefungen/wiso/<Termin>_WISO.md` (Kopf-ID `2025W-WISO`, Aufgaben `2025W-WISO-A1` … `-A30`,
+je Aufgabe Feld `aufgabentyp`). Aktueller Katalog ab Sommer 2025 → 2025S und 2025W aktuell, Rest B3.
+
+| Termin | Aufgaben | Lösungshinweise | Bemerkung |
+|---|---|---|---|
+| 2021W | 30 | amtlich | vollständig |
+| 2022S | 30 | amtlich | vollständig |
+| 2022W | 30 | amtlich | vollständig |
+| 2023S | 30 | amtlich | vollständig |
+| 2023W | 30 | amtlich | vollständig |
+| 2024S | 30 | amtlich | vollständig |
+| 2025S | 30 | eigene, nicht amtlich | aktueller Katalog |
+| 2025W | 30 | amtlich | aktueller Katalog |
+
+Summe WiSo: 8 Prüfungen, 240 Aufgaben (jede Aufgabe ist eine Teilaufgabe). Alle Abschriften bestehen T-1
+(`node tools/umbau/pruefungen-pruefen.mjs wiso`, 16.10.2026). Für WiSo nennt der IT-Berufe-Podcast keine Schlagworte
+der Termine 2021–2026; die Community-Lernzettel lagen nicht vor (P49).
 
 Zuordnung Teilaufgabe → Baustein und Aufgabentyp kommt **nicht** in die Abschriften, sondern in eine
 eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die Abschriften reine Quellen.
@@ -636,11 +665,38 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
            7 Aussagen mit `neu`, 11 auf das Neue gekürzt, PB1-10-2-3-K1 gestrichen), 20 Karten entfernt, 3 neu; Export PB1 neu
            erzeugt, PB2 dagegen grün. Abschnitte „Doppelungen zu AP1“ in `umbau/berichte/PB1-<n>-pruefer.md`.
         Bau-Skripte gesichert in `tools/umbau/gen-pb2/` (siehe LIESMICH dort). Regelwerk der PB2-Ordner: 1.7.
+- [x] **Raum WISO (16.10.2026, Schritt 6, letzter Teil):** nach dem Muster von PB1/PB2. Regelwerk 1.8.
+  - **Quellen:** Katalog (pandoc) und 8 WiSo-Abschriften lokal unter `quellen/` (E10), T-1 grün (Prüfer kann jetzt WiSo:
+    30 Aufgaben je Prüfung, „je X Punkte“, Musterlösung mit Zusatz). Fundament unverändert.
+  - **Werkzeuge:** `raum.mjs` kennt WISO (frühere Räume AP1, PB1, PB2; Wohnort `WISO.`; Deckungstabelle),
+    `zuordnung-pruefen.mjs` (Z3b, Zusatzbausteine Raum WISO), `lernplan-pruefen.mjs` (ID-Erhalt wie AP1, alte Karten aus
+    allen `inhalte/lernen/WISO-*.json`, Deckung in T7/T8), `raum-pruefen.mjs` (P47, ALT über alle alten WiSo-Aussagen),
+    `umzug-erzeugen.mjs` (WISO). **Werkzeugfehler behoben:** Der Umzug leitete einen weiterbestehenden Stichpunkt auf einen
+    anderen um, wenn er die Mehrheit seiner Aussagen abgab (AP1-6-3-1 → AP1-6-3-3, WISO-3-4-2 → WISO-3-1-3); jetzt zeigt
+    eine alte ID, die es im neuen Plan noch gibt, auf sich selbst (Test). Für AP1 ändert das nur diesen einen Eintrag.
+  - **Zuordnung:** `umbau/zuordnung/wiso/<Termin>-WISO.json`, 240 Aufgaben, 242 Pflichtbausteine (237 Katalog + 5 Zusatz:
+    ZB.wiso-konjunktur, -oekonomisches-prinzip, -gerichtsbarkeit, -kaufmann, -verursacherprinzip), 101 mit Beleg,
+    14 durch Belege angehoben. Importe aus AP1/PB1 nur in Zuordnungen, deren Aufgabe ein früherer Raum löst.
+  - **Lernplan:** `umbau/lernplan/wiso/WISO-1.json` … `WISO-5.json`, erzeugt mit `tools/umbau/gen-wiso/wiso_<n>.py`
+    (Bibliothek `lpw.py`; laufen dürfen sie, solange WISO nicht abgenommen ist). IDs bleiben (P48).
+  - **Unabhängige Prüfung K1–K3 (16.10.2026):** Auftrag `umbau/auftraege/WISO-pruefung.md`, 6 Prüfer, 197 Funde, Berichte
+    `umbau/berichte/WISO-<n>-pruefer.md` mit Abschnitt „Umsetzung“, Bilanz `WISO-pruefer-bilanz.md` (Entscheidungen D1–D12
+    aus dem Regelwerk abgeleitet). 155 umgesetzt, 15 teilweise, 12 abgelehnt mit Grund, 8 Kür-Vorschläge → P49.
+    Deckungstabelle danach: 10 Bausteine (WISO.03.08.2, .03.08.4, WISO.02.03.3 herausgenommen, nur teilweise gedeckt).
+  - **Stand:** 5 Ordner, 20 Themenblöcke, 70 Stichpunkte, 325 Können-Aussagen (WISO-1 143, WISO-2 69, WISO-3 60,
+    WISO-4 25, WISO-5 28). Alle Ordner, Raum-Prüfung (T1, T2b, T8, ALT, P47), Zuordnung, Umzug und `npm test` grün.
+  - **Kurzfassung und Karten:** Auftrag `umbau/auftraege/WISO-karten.md`; `umbau/kurz/wiso/WISO-<n>.json`,
+    `umbau/karten/wiso/WISO-<n>.json`, Berichte `umbau/berichte/WISO-<n>-karten.md`. Karten gestrichener Aussagen stehen nur
+    in `alt_gestrichen` (Test angepasst: bei WiSo haben alte und neue IDs dasselbe Präfix).
+  - **Vorschau:** `RAEUME_VORSCHAU.WISO` (`vorschauWiso`): Der Raum WiSo zeigt den neuen Lernplan, Name „WiSo“ bleibt,
+    Umzug für entfallene WiSo-IDs; **nicht abgenommen** → gelber Hinweis. Tests in `tests/vorschau-ap1.test.mjs`
+    („Vorschau WISO“), Raum- und Deckungstests in `tests/umbau-fundament.test.mjs`. Build und Browser-Check `#/wiso`.
+  - **Offen:** Abnahme durch den Projektinhaber (P52), danach Export `umbau/export/WISO.json` (E3).
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).
-- [x] **Schritt 7 – App (16.10.2026):** AP1, PB1 und PB2 zeigen den neuen Lernplan als fertigen Stand, WiSo bleibt beim
-      alten Inhalt. Weiter **vier Räume** (AP1 | PB1 | PB2 | WiSo); der Raum PROJEKT kommt mit Schritt 8. Lernstand-Umzug (P6)
+- [x] **Schritt 7 – App (16.10.2026):** AP1, PB1 und PB2 zeigen den neuen Lernplan als fertigen Stand; WiSo zeigt seit
+      dem Bau von WISO den neuen Lernplan mit Hinweis „noch nicht abgenommen“. Weiter **vier Räume** (AP1 | PB1 | PB2 | WiSo); der Raum PROJEKT kommt mit Schritt 8. Lernstand-Umzug (P6)
       war schon vorgezogen (siehe „Eigene Räume PB1 und PB2“).
       - **Importe anzeigen (E2/P36):** `baut_auf` kommt als `neu.bautAuf` in die Daten (`tools/vorschau-ap1.mjs`). Im
         Stichpunkt-Detail steht oben im Rahmen „Baut auf“ mit dem Satz „Das kennst du schon – hier kommt nur das Neue dazu.“,
@@ -710,6 +766,13 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P43 | **Kleine Stichpunkte** (unter 3 Aussagen nach den Prüfer-Vorschlägen, z. B. PB2-1-1-4, PB2-3-1-2): auflösen und in den passenden Nachbar-Stichpunkt einbauen (F3). Entschieden (Projektinhaber, 16.10.2026). | erledigt |
 | P44 | **2025W-PB2-A3-ba** (Aufgabentext fehlt, P34): Die Testdaten gelten als **vorgegeben** (B4, „anwenden, nicht auswendig“). Entschieden (Projektinhaber, 16.10.2026). | erledigt |
 | P45 | **Abnahme PB1 und PB2 (Projektinhaber, 16.10.2026):** Freigabe im Vertrauen auf Skripte und unabhängige KI-Prüfer; eine fachliche Stichprobe (M1/M2) kann der Projektinhaber als Lernender noch nicht leisten. Funde beim späteren Lernen werden wie Prüfer-Funde behandelt: an der Ursache korrigieren (E4), Raum neu prüfen, Export neu erzeugen und spätere Räume gegenprüfen. PB1 und PB2 sind damit eingefroren (E3). | erledigt |
+| P46 | **Stufe der WiSo-Aufgaben** (Bau WISO): „eintragen“ ist in WiSo fast immer nur die Antwortform; nach Z3a hätte jede Auswahlaufgabe Stufe 3. **Entschieden (Projektinhaber, 16.10.2026): Stufe aus dem Aufgabentyp** (Z3b, Regelwerk v1.8): Auswahl, Zuordnung, Reihenfolge 2, Eintrag 1, Rechnen 3 (auch Zuordnungstyp `berechnen`). Die Stufe bestimmt nur die Form der Aussage, nicht wie viel gelernt wird. | erledigt |
+| P47 | **WiSo-Bausteine, die ein früherer Raum schon lehrt** (IT-Sicherheit WISO.03.08, Ergonomie, Matrix, Planungstechniken …). **Entschieden (Projektinhaber, 16.10.2026): Deckungstabelle** `umbau/regeln/wiso-deckung.json` (Z5). Nach der unabhängigen Prüfung (Claude, Regel der Tabelle): nur vollständig gedeckte Bausteine; WISO.03.08.2, WISO.03.08.4 und WISO.02.03.3 herausgenommen und als WiSo-Bausteine mit `neu` gegenüber AP1 gelehrt; WISO.03.08.6 um AP1-7-1-4 ergänzt. Stand: 10 Bausteine. | erledigt |
+| P48 | **IDs in WiSo.** **Entschieden (Projektinhaber, 16.10.2026): ID-Erhalt wie AP1 (P15).** Übernommene und angepasste Stichpunkte und Aussagen behalten ihre alte ID, neue bekommen die nächste nie vergebene Nummer; eine Lücke in der Nummerierung (z. B. kein Themenblock WISO-5-1) ist gewollt. | erledigt |
+| P49 | **R3 ohne Hinweisquellen für WiSo** (Bau WISO). Der IT-Berufe-Podcast nennt für die WiSo-Termine 2021–2026 keine Schlagworte, die Community-Lernzettel lagen nicht vor; `meta.hinweisabgleich` ist deshalb leer, es gibt keine Kür. Die Prüfer schlugen Kür vor, die ohne Hinweisquelle nicht zulässig ist (R2): MoPeG/eGbR (WISO-2-2-1), Pflichtangaben in geschäftlichen E-Mails (WISO-5-2-2), GS-Zeichen-Details, Sicherheitsbeauftragte ab 20 Beschäftigten, CO2 in kleinen Räumen, Löschmittel-Tabelle und Brandklasse F, Ergonomie-Maße (WISO-3), Grüner Punkt (WISO-4), Steuerklasse VI, Pflege-Abschlag für Eltern, elektronisches Ausbildungszeugnis (WISO-1). **Vorschlag:** wie P30 die unabhängige Prüfung als Hinweisquelle zulassen (`pruefer:wiso-2026-10`) und diese Punkte als Kür eintragen; die Lernzettel bei Gelegenheit nachreichen und R3 nachholen. | offen |
+| P50 | **Amtliche Lösungen, die durch eine Rechtsänderung falsch geworden sind** (Bau WISO): 2022W-WISO-A14 wertet „Auszubildende bis 27 dürfen die JAV wählen“ als falsch – seit dem Betriebsrätemodernisierungsgesetz (2021) gibt es für Auszubildende keine Altersgrenze mehr; 2024S-WISO-A22 (anmeldepflichtiges Kartell, Rechtslage vor 2005); 2022S-WISO-A24 (UVV „aushängen“, seit DGUV Vorschrift 1 auch elektronisch); 2022S-WISO-A13 (Tarifvorrang). Umgesetzt wie P35 Nr. 7: Aussage nach Rechtsstand, `hinweis` mit der IHK-Erwartung. **Vorschlag:** P35 Nr. 7 ausdrücklich auch für Rechtsänderungen nach der Prüfung festschreiben. | offen |
+| P51 | **Quellen früherer Räume fehlten beim Bau von WISO.** Angehängt waren nur Katalog und WiSo-Abschriften; die Prüfskripte für AP1, PB1 und PB2 (Abschriften, Zuordnung) liefen deshalb nicht, 24 Tests wurden übersprungen. Geprüft wurde gegen die eingefrorenen Exporte (`umbau/export/`), was für E2/T7 genügt. Geändert wurde an früheren Räumen nur `umbau/umzug.json` (Werkzeugfehler, Schritt 6 WISO). **Vorschlag:** keine Maßnahme; eine Sitzung, die frühere Räume ändert, bekommt deren Abschriften. | offen |
+| P52 | **Abnahme WISO** (wie P45). Der Lernplan ist gebaut, unabhängig geprüft und eingebaut; die App zeigt ihn mit Hinweis „noch nicht abgenommen“. Nach der Abnahme: `abgenommen: true` in `RAEUME_VORSCHAU.WISO`, Export `umbau/export/WISO.json` (E3), Generatoren `tools/umbau/gen-wiso/` nicht mehr laufen lassen. | offen |
 ---
 
 ## 9. Fundament erzeugen und prüfen
@@ -720,6 +783,7 @@ Lokale Quellen (nicht im Repo, werden der Sitzung angehängt):
 quellen/katalog.md                  aus der Word-Fassung (pandoc, siehe unten)
 quellen/pruefungen/ap1/<ID>_AP1.md  Prüfungsabschriften, z. B. 2024H_AP1.md
 quellen/pruefungen/pb1/<Termin>_AP2-PB1.md   z. B. 2025W_AP2-PB1.md (pb2 entsprechend)
+quellen/pruefungen/wiso/<Termin>_WISO.md     z. B. 2025W_WISO.md
 quellen/lernzettel/*.pdf            Community-Lernzettel (nur Material)
 ```
 
@@ -741,6 +805,11 @@ npm run umbau:zuordnung   # T2 + goldene Regel, berechnet die belegte Tiefe (bel
 node tools/umbau/lernplan-pruefen.mjs AP1-6   # prüft einen Ordner des neuen Lernplans (auch R3, R4), schreibt umbau/berichte/AP1-6.md
 node tools/umbau/lernplan-pruefen.mjs AP1-1
 node tools/umbau/raum-pruefen.mjs AP1         # prüft T1, T2b, T8 über alle Ordner des Raums, schreibt umbau/berichte/AP1-raum.md
+node tools/umbau/pruefungen-pruefen.mjs wiso  # WiSo-Abschriften → umbau/fundament/pruefungen-wiso.json
+node tools/umbau/zuordnung-pruefen.mjs wiso   # T2 + Z3b, schreibt umbau/fundament/belege-wiso.json
+python3 tools/umbau/gen-wiso/wiso_1.py        # erzeugt umbau/lernplan/wiso/WISO-1.json (bis zur Abnahme, P52)
+node tools/umbau/raum-pruefen.mjs WISO        # T1, T2b, T8, ALT, Deckung P47
+node tools/umbau/umzug-erzeugen.mjs           # Lernstand-Umzug aller gebauten Räume
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```
 

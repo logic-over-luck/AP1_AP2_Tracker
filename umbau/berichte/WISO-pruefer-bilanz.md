@@ -85,4 +85,32 @@ regelt, steht unter „Offen (Parkplatz)“.
 
 ## Umsetzung
 
-(folgt nach dem Einbau)
+Eingebaut von je einem Agenten pro Ordner (nur der eigene Generator `tools/umbau/gen-wiso/wiso_<n>.py`), ordnerübergreifende
+Punkte nach D1–D12 abgestimmt. Die Entscheidung zu jedem Fund steht im Abschnitt „Umsetzung“ des jeweiligen Berichts.
+
+| Ordner | umgesetzt | teilweise | abgelehnt | P49 (Kür) | ohne Änderung | Aussagen vorher → nachher |
+|---|---|---|---|---|---|---|
+| WISO-1 | 67 | 7 | 3 | 3 | 1 | 150 → 143 |
+| WISO-2 | 25 | 1 | 4 | 1 | – | 72 → 69 |
+| WISO-3 | 26 | 3 | 3 | 3 | – | 64 → 60 |
+| WISO-4 | 16 | 4 | – | – | 1 | 27 → 25 |
+| WISO-5 | 21 | – | 2 | 1 | 5 | 33 → 28 |
+| **Summe** | **155** | **15** | **12** | **8** | **7** | **346 → 325** |
+
+Struktur: WISO-5-2-3 ist in WISO-5-2-2 aufgegangen (D7), sonst unverändert: 70 Stichpunkte in 20 Themenblöcken.
+
+Nacharbeiten des Hauptbearbeiters:
+
+- **Deckungstabelle (P47):** WISO.03.08.2, WISO.03.08.4 und WISO.02.03.3 herausgenommen, weil AP1 sie nach den Funden nur
+  teilweise lehrt; sie sind jetzt WiSo-Bausteine in WISO-5-2-1 bzw. WISO-2-2-5 (mit `neu` gegenüber AP1). WISO.03.08.6 um
+  AP1-7-1-4 ergänzt. Die Tabelle führt jetzt 10 Bausteine.
+- **Zuordnung:** 2025W-WISO-A19 zusätzlich ZB.wiso-kaufmann (Distraktor „Firma ohne Rechtsformzusatz“).
+- **Abgelehnte Vorschläge mit Regelbezug:** Stufe 2 für WISO-4-1-1-K1 (Katalog WISO.04.01 hat den Operator „wahrnehmen“,
+  Stufe 1, kein Beleg); Stufe 2 für WISO-5-2-3 (tiefe.json: WISO.05.02.4 Stufe 3, T8); Teilen von WISO-1-3-5 (D7).
+- **Rechtsstand, von den Umsetzern ergänzt:** JAV – seit dem Betriebsrätemodernisierungsgesetz (2021) keine Altersgrenze
+  mehr für Auszubildende (Wahlrecht und Wählbarkeit); die IHK-Lösung 2022W-A14 wertet „Auszubildende bis 27 dürfen
+  wählen“ als falsch → P35 Nr. 7 (Hinweis am Stichpunkt). Geschäftsführung GbR/OHG nach MoPeG (§ 715 BGB, § 116 HGB).
+  EU-Verpackungsverordnung (seit 12.8.2026) nur allgemein (Beteiligung, Registrierung).
+
+Alle Prüfskripte grün (lernplan-pruefen WISO-1 bis WISO-5, raum-pruefen WISO, zuordnung-pruefen wiso, Umzug), `npm test`
+229 bestanden.
