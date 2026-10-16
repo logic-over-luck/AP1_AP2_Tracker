@@ -133,3 +133,11 @@ K5-Treffer in AP1 (6 Wörter) sind Gesetzeswortlaut (Art. 5/32 DSGVO, § 38 BDSG
 
 **Fortsetzung:** `offen/PB1-*.json` aus den lokalen Kernpunkt-Listen erzeugen und je PB1-Ordner (Reihenfolge PB1-6, -5, -8,
 -9, -10, -1, -3, -7, -2, -4, -11, -12) bauen; dann PB2-1…6, WISO-1…5. Danach Schritt 5 (Build, Browser-Check), 6, 7.
+
+## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, in Arbeit)
+
+Vorgabe des Projektinhabers vor PB1: jede Können-Aussage und jeder Kür-Eintrag bekommt ein Stichwort `kurz`
+(3–8 Wörter, höchstens 60 Zeichen, Substantivstil, nicht mit „Du“); die App zeigt im Stichpunkt nur noch das
+Stichwort und klappt beim Antippen Satz, Erklärung, Stufe und Herkunft auf. Neue Buch-Aussagen ab PB1 höchstens
+200 Zeichen. Stand: Regelwerk 2.2, Prüfung, Einbau-Skripte und Anzeige sind gebaut; die Stichworte werden gerade
+erzeugt und sind noch nicht eingetragen – bis dahin meldet `lernplan-pruefen` KURZ-Fehler. Danach Pause vor PB1.

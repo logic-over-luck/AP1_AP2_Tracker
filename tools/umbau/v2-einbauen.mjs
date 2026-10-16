@@ -8,11 +8,11 @@
 //   "neue_stichpunkte": [{ "ref": "S1", "block": "AP1-4-1", "nach": "AP1-4-1-2", "titel": "…", "ziel": "…",
 //                          "bausteine": [{ "id": "AP1.03.03.1", "anteil": "…" }], "gebiete": ["G.AP1.02"],
 //                          "teaser": "…", "begruendung": "…" }],
-//   "neue_aussagen": [{ "ref": "A1", "sp": "AP1-4-1-2" | "S1", "text": "Du kannst …", "stufe": 2,
+//   "neue_aussagen": [{ "ref": "A1", "sp": "AP1-4-1-2" | "S1", "text": "Du kannst …", "kurz": "Cache-Stufen", "stufe": 2,
 //                       "herkunft": ["buch:GS-2.4.3-S157"], "kernpunkte": ["GS-2.4.3#3"],
 //                       "erklaerung": "…", "karten": [{ "vorne": "…", "hinten": "…" }] }],
 //   "d6": [{ "aussage": "AP1-4-1-2-K1", "herkunft": "buch:GS-2.4.3-S157", "kernpunkte": ["GS-2.4.3#1"] }],
-//   "kuer": [{ "sp": "AP1-4-1-2", "text": "…", "quelle": "buch:FS2-2.1.4", "grund": "…", "kernpunkte": ["…#2"] }],
+//   "kuer": [{ "sp": "AP1-4-1-2", "text": "…", "kurz": "…", "quelle": "buch:FS2-2.1.4", "grund": "…", "kernpunkte": ["…#2"] }],
 //   "grenzen_gestrichen": [{ "sp": "AP1-4-1-2", "text_beginnt": "…", "grund": "D3: …" }],
 //   "filter": [{ "kernpunkt": "GS-2.4.3#7", "filter": "hersteller", "grund": "…" }],
 //   "umgehaengt": [{ "kernpunkt": "GS-2.4.3#8", "stichpunkt": "PB1-11-1-2", "grund": "…" }]
@@ -150,9 +150,13 @@ for (const na of patch.neue_aussagen ?? []) {
   if (![1, 2, 3, 4].includes(na.stufe)) F(`Aussage ${na.ref}: Stufe ${na.stufe}`);
   if (!na.herkunft?.length || !na.herkunft.every((h) => h.startsWith('buch:') ? BUCH.test(h.slice(5)) : /^(katalog|beleg|regel):/.test(h))) F(`Aussage ${na.ref}: Herkunft ungültig (${na.herkunft})`);
   if (!na.erklaerung?.trim()) F(`Aussage ${na.ref}: Erklärung fehlt`);
+  // v2.2: Stichwort kurz (Prüfung der Form in lernplan-pruefen) und höchstens 200 Zeichen je Buch-Aussage ab PB1
+  if (!na.kurz?.trim()) F(`Aussage ${na.ref}: kurz fehlt (v2.2)`);
+  const max = !ORDNER.startsWith('AP1-') ? regeln.buch?.form?.buch_aussage_max : null;
+  if (max && na.text?.length > max) F(`Aussage ${na.ref}: ${na.text.length} Zeichen (höchstens ${max}; Begründung und Beispiel in die Erklärung)`);
   if (!na.karten?.length || na.karten.some((c) => !c.vorne?.trim() || !c.hinten?.trim())) F(`Aussage ${na.ref}: Karte fehlt oder unvollständig`);
   const id = naechste(sp.id, '-K');
-  const k = { id, text: na.text, stufe: na.stufe, herkunft: na.herkunft };
+  const k = { id, text: na.text, ...(na.kurz ? { kurz: na.kurz } : {}), stufe: na.stufe, herkunft: na.herkunft };
   sp.koennen.push(k);
   refK.set(na.ref, id);
   kurz.erklaerung[id] = na.erklaerung;
@@ -206,7 +210,8 @@ for (const ku of patch.kuer ?? []) {
   const kapitel = [...new Set([q.slice(5).replace(/-S\d+$/, ''), ...(ku.kernpunkte ?? []).map((r) => r.split('#')[0])])];
   for (const kap of kapitel) lp.meta.hinweisquellen[`buch:${kap}`] ??= `Lehrbuch Westermann „IT-Berufe“ ${kap.replace('-', ' ')} (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür`;
   sp.kuer ??= [];
-  sp.kuer.push({ text: ku.text, quellen: kapitel.map((k) => `buch:${k}`), grund: ku.grund ?? 'D8: Thema aus dem Lehrbuch ohne Katalog-Baustein; vom Katalog nicht ausgeschlossen.' });
+  if (!ku.kurz?.trim()) F(`Kür ${sp.id}: kurz fehlt (v2.2)`);
+  sp.kuer.push({ text: ku.text, ...(ku.kurz ? { kurz: ku.kurz } : {}), quellen: kapitel.map((k) => `buch:${k}`), grund: ku.grund ?? 'D8: Thema aus dem Lehrbuch ohne Katalog-Baustein; vom Katalog nicht ausgeschlossen.' });
   lp.meta.hinweisabgleich.themen.push({ thema: ku.text.slice(0, 120), quellen: kapitel.map((k) => `buch:${k}`), ring: 'Kür', wo: [sp.id], notiz: 'Regelwerk v2.x, D8/RK1' });
   for (const ref of ku.kernpunkte ?? []) { const x = kernpunkt(ref); if (x) setzeStatus(x.kp, 'kuer', sp.id); }
   protokoll.kuer.push(sp.id);

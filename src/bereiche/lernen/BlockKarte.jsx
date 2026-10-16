@@ -459,7 +459,22 @@ function NeuText({ neu }) {
   );
 }
 
-function KoennenZeile({ k, text, details }) {
+// v2.2: eine Zeile je Aussage mit dem Stichwort `kurz`; antippen klappt Satz, Erklärung, Stufe und Herkunft auf
+function Zeile({ kurz, offen, onUmschalten, marken, children }) {
+  return (
+    <li class={`np-zeile ${offen ? 'np-zeile--offen' : ''}`}>
+      <div class="np-zeile__kopf">
+        <button type="button" class="np-zeile__knopf" aria-expanded={offen} onClick={onUmschalten}>
+          <span class="np-zeile__kurz">{kurz}</span>
+        </button>
+        {marken && <span class="np-zeile__marken">{marken}</span>}
+      </div>
+      {offen && <div class="np-zeile__auf">{children}</div>}
+    </li>
+  );
+}
+
+function KoennenZeile({ k, text, offen, onUmschalten }) {
   const [neuOffen, setNeuOffen] = useState(false);
   const marken = (
     <>
@@ -469,34 +484,33 @@ function KoennenZeile({ k, text, details }) {
     </>
   );
   return (
-    <li>
-      {k.erklaerung ? (
-        <details class="np-erkl">
-          <summary>
-            {text} {marken}
-          </summary>
-          <Rich class="np-erkl__text" text={k.erklaerung} />
-        </details>
-      ) : (
-        <>
-          {text} {marken}
-        </>
-      )}
-      {neuOffen && <NeuText neu={k.neu} />}
-      {details && (
+    <>
+      <Zeile kurz={k.kurz ?? text} offen={offen} onUmschalten={onUmschalten} marken={marken}>
+        <p class="np-zeile__satz">{text}</p>
+        {k.erklaerung && <Rich class="np-erkl__text" text={k.erklaerung} />}
         <div class="np__meta">
-          <span class="mono">{k.id}</span> · Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')}
+          Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')} · <span class="mono">{k.id}</span>
           {k.status === 'verschoben' && ` · vorher ${k.von}`}
           {k.grund && <div>Änderung: {k.grund}</div>}
         </div>
-      )}
-    </li>
+      </Zeile>
+      {neuOffen && <NeuText neu={k.neu} />}
+    </>
   );
 }
 
+const KUER_QUELLE = { podcast: 'IT-Berufe-Podcast', lernzettel: 'Lernzettel', gegenpruefung: 'Gegenprüfung', pruefer: 'Prüfer-Hinweis' };
+function kuerQuelle(q) {
+  if (q.startsWith('buch:')) return `Lehrbuch ${buchText(q.slice(5))}`;
+  return KUER_QUELLE[q.split(':')[0]] ?? q;
+}
+
 function NeuerRahmen({ sp, stand }) {
-  const [details, setDetails] = useState(false);
   const [offen, setOffen] = useEinstellung('lernen.koennenOffen', true);
+  // nur eine Zeile zugleich offen, nicht gespeichert; Kür standardmäßig zu
+  const [auf, setAuf] = useState(null);
+  const [kuerOffen, setKuerOffen] = useState(false);
+  const umschalten = (schluessel) => () => setAuf(auf === schluessel ? null : schluessel);
   const texte = new Map(sp.koennen);
   const { koennen, grenzen, kuer } = sp.neu;
   const ohneKarten = koennen.filter((k) => k.status === 'neu' && !k.karten).length;
@@ -517,16 +531,11 @@ function NeuerRahmen({ sp, stand }) {
               </span>
             )}
           </button>
-          {offen && (
-            <button class="np__details" aria-expanded={details} onClick={() => setDetails(!details)}>
-              <Icon name={details ? 'eye-off' : 'eye'} groesse={12} /> {details ? 'Stufe und Herkunft ausblenden' : 'Stufe und Herkunft'}
-            </button>
-          )}
         </div>
         <Aufklapp offen={offen}>
-          <ol class="koennen">
+          <ol class="koennen np-zeilen">
             {koennen.map((k) => (
-              <KoennenZeile key={k.id} k={k} text={texte.get(k.id)} details={details} />
+              <KoennenZeile key={k.id} k={k} text={texte.get(k.id)} offen={auf === k.id} onUmschalten={umschalten(k.id)} />
             ))}
           </ol>
         </Aufklapp>
@@ -538,9 +547,8 @@ function NeuerRahmen({ sp, stand }) {
           </div>
           <ul class="np__liste">
             {grenzen.map((g, i) => (
-              <li key={i}>
+              <li key={i} data-tip={g.begruendung ?? undefined}>
                 {g.text}
-                {details && g.begruendung && <div class="np__meta">Begründung: {g.begruendung}</div>}
               </li>
             ))}
           </ul>
@@ -548,17 +556,28 @@ function NeuerRahmen({ sp, stand }) {
       )}
       {kuer.length > 0 && (
         <div class="voll__abschnitt np__kuer">
-          <div class="ueberschrift-klein">
-            <Icon name="sparkles" groesse={12} /> Kür – freiwillig, zählt nicht zum Fortschritt
+          <div class="ueberschrift-klein np__kopf">
+            <button class="np__klapp" aria-expanded={kuerOffen} onClick={() => setKuerOffen(!kuerOffen)}>
+              <span class="np__klapp-titel">
+                <Icon name="chevron-right" groesse={12} class="np__klapp-pfeil" />
+                <Icon name="sparkles" groesse={12} /> Kür ({kuer.length})
+              </span>
+            </button>
           </div>
-          <ul class="np__liste">
-            {kuer.map((k, i) => (
-              <li key={i}>
-                {k.text}
-                {details && k.grund && <div class="np__meta">Warum Kür: {k.grund}</div>}
-              </li>
-            ))}
-          </ul>
+          <Aufklapp offen={kuerOffen}>
+            <p class="np__kuer-satz">Freiwillig, zählt nicht zum Fortschritt.</p>
+            <ul class="np-zeilen np-zeilen--kuer">
+              {kuer.map((k, i) => (
+                <Zeile key={i} kurz={k.kurz ?? k.text} offen={auf === `kuer#${i}`} onUmschalten={umschalten(`kuer#${i}`)}>
+                  <p class="np-zeile__satz">{k.text}</p>
+                  <div class="np__meta">
+                    {k.grund && <div>Warum Kür: {k.grund}</div>}
+                    {k.quellen?.length > 0 && <div>Quelle: {k.quellen.map(kuerQuelle).join(', ')}</div>}
+                  </div>
+                </Zeile>
+              ))}
+            </ul>
+          </Aufklapp>
         </div>
       )}
     </div>

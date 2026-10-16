@@ -2453,3 +2453,64 @@ body {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* v2.2: eine Zeile je Können-Aussage (Stichwort), antippen klappt Satz, Erklärung, Stufe und Herkunft auf */
+.np-zeilen {
+  gap: var(--s-1);
+}
+.np-zeilen--kuer {
+  margin: 0;
+  padding-left: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.np-zeile__kopf {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  min-width: 0;
+}
+.np-zeile__knopf {
+  flex: 0 1 auto;
+  min-width: 4em;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.np-zeile__kurz {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.np-zeile__knopf:hover .np-zeile__kurz,
+.np-zeile--offen .np-zeile__kurz {
+  color: var(--akzent);
+}
+.np-zeile__marken {
+  flex: 0 3 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.np-zeile__auf {
+  margin: var(--s-1) 0 var(--s-2);
+}
+.np-zeile__satz {
+  margin: 0;
+  color: var(--text-2);
+}
+.np-zeile__auf .np-erkl__text {
+  margin-top: var(--s-2);
+}
+.np__kuer-satz {
+  margin: var(--s-2) 0;
+  font-size: var(--t-s);
+}

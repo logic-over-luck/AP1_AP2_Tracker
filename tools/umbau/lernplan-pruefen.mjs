@@ -82,6 +82,21 @@ const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-B
 const BUCH = new RegExp(regeln.buch?.herkunft?.regex ?? '^$');
 const [F3_MIN, F3_MAX] = [regeln.buch?.form?.f3_min ?? 3, regeln.buch?.form?.f3_max ?? 7];
 const [F4_MIN, F4_MAX] = [regeln.buch?.form?.f4_min ?? 3, regeln.buch?.form?.f4_max ?? 6]; // v2.1: 3–8 (P55)
+// v2.2: Feld kurz (Stichwort zur Aussage bzw. zum Kür-Eintrag) und Länge neuer Buch-Aussagen (ab PB1)
+const KURZ = regeln.kurz ?? null;
+const BUCH_MAX = TEIL !== 'AP1' ? regeln.buch?.form?.buch_aussage_max ?? null : null;
+function pruefeKurz(wo, kurz, gesehen) {
+  if (!KURZ) return;
+  if (typeof kurz !== 'string' || !kurz.trim()) return F(`KURZ: ${wo} hat kein Feld kurz`);
+  const w = kurz.trim().split(/\s+/).length;
+  if (kurz.length > KURZ.max_zeichen) F(`KURZ: ${wo}: kurz hat ${kurz.length} Zeichen (höchstens ${KURZ.max_zeichen}): „${kurz}“`);
+  if (w < KURZ.woerter_min || w > KURZ.woerter_max) F(`KURZ: ${wo}: kurz hat ${w} Wörter (erlaubt ${KURZ.woerter_min}–${KURZ.woerter_max}): „${kurz}“`);
+  if (/^du\b/i.test(kurz.trim())) F(`KURZ: ${wo}: kurz beginnt mit „Du“: „${kurz}“`);
+  if (/\.$/.test(kurz.trim())) F(`KURZ: ${wo}: kurz endet mit Punkt (kein Satz): „${kurz}“`);
+  const n = kurz.trim().toLowerCase();
+  if (gesehen.has(n)) F(`KURZ: ${wo}: kurz „${kurz}“ steht im Stichpunkt schon bei ${gesehen.get(n)}`);
+  else gesehen.set(n, wo);
+}
 const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
 // Alltagswörter, die als Prüfungsoperator nur in fester Wendung vorkommen (v1.6): nicht für die F1-Heuristik
 for (const w of ['bringen', 'finden', 'schreiben', 'einfügen']) delete opStufe[w];
@@ -129,8 +144,11 @@ for (const tb of lp.themenbloecke) {
       if (z.ausserhalb) F(`${sp.id}: Teilaufgabe ${ta} ist „ausserhalb" (${z.ausserhalb})`);
       else if (!z.bausteine.some((x) => spB.has(x))) H(`${sp.id}: Teilaufgabe ${ta} betrifft keinen Baustein des Stichpunkts (${z.bausteine.join(', ')})`);
     }
+    const kurzK = new Map(), kurzKuer = new Map();
     for (const k of sp.koennen) {
       kIds.push(k.id);
+      pruefeKurz(k.id, k.kurz, kurzK);
+      if (BUCH_MAX && k.herkunft?.length && k.herkunft.every((h) => h.startsWith('buch:')) && k.text.length > BUCH_MAX) F(`FORM: ${k.id}: Buch-Aussage hat ${k.text.length} Zeichen (höchstens ${BUCH_MAX}; Begründung und Beispiel gehören in die Erklärung)`);
       if (!new RegExp(`^${sp.id}-K\\d+$`).test(k.id)) F(`${k.id}: ID passt nicht zum Stichpunkt ${sp.id}`);
       if (!k.text.startsWith('Du kannst ')) F(`F1: ${k.id} beginnt nicht mit „Du kannst“`);
       if (![1, 2, 3, 4].includes(k.stufe)) F(`${k.id}: ungültige Stufe ${k.stufe}`);
@@ -170,6 +188,7 @@ for (const tb of lp.themenbloecke) {
     // Kür (K-Regeln): nur aus Hinweisquellen, nicht abdeckungspflichtig, zählt nicht zu F3
     for (const ku of sp.kuer ?? []) {
       if (!ku.text || !ku.grund) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Text oder Grund`);
+      pruefeKurz(`${sp.id} Kür „${(ku.text ?? '').slice(0, 40)}…“`, ku.kurz, kurzKuer);
       if (!ku.quellen?.length) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Hinweisquelle: „${(ku.text ?? '').slice(0, 50)}…"`);
       for (const q of ku.quellen ?? []) if (!(q in (lp.meta?.hinweisquellen ?? {}))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} nicht in meta.hinweisquellen beschrieben`);
       for (const q of (ku.quellen ?? []).filter((x) => x.startsWith('buch:'))) if (!BUCH.test(q.slice(5))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} hat nicht das Format buch:<Band>-<Kapitel> (D8)`);

@@ -364,6 +364,8 @@ export function vorschauRaum(daten, wurzel, cfg) {
           anzahlK++;
           return {
             id: k.id,
+            // v2.2: Stichwort für die einzeilige Anzeige (aufklappbar zum vollen Satz); ohne Feld der Satz selbst
+            kurz: k.kurz ?? null,
             stufe: k.stufe,
             herkunft: k.herkunft,
             // Regelwerk v2.0 (D4): Arten der Herkunft (katalog, beleg, regel, buch) – die App zeigt bei „buch“ die Marke „Buch“
@@ -407,7 +409,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
             bautAuf: s.baut_auf ?? [],
             koennen,
             grenzen: (s.grenzen ?? []).map((g) => ({ text: g.text, begruendung: g.begruendung ?? null, katalog: g.katalog ?? [] })),
-            kuer: (s.kuer ?? []).map((k) => ({ text: k.text, grund: k.grund ?? null })),
+            kuer: (s.kuer ?? []).map((k) => ({ text: k.text, kurz: k.kurz ?? null, grund: k.grund ?? null, quellen: k.quellen ?? [] })),
           },
         };
         return s.id;

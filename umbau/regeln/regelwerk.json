@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "stand": "2026-10-16",
   "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen. v2.0 (16.10.2026, D1–D10): Lehrbuch als Tiefenquelle, Abschnitt buch. v2.1 (16.10.2026, Projektinhaber nach dem Überblick zu Schritt 2): Regel K nachgeschärft (RK1–RK6), F4 3–8.",
   "stufen": {
@@ -374,10 +374,26 @@
       "operator_ohne_baustein": "erklären",
       "stufe_ohne_baustein": 2,
       "f4_min": 3,
-      "f4_max": 8
+      "f4_max": 8,
+      "buch_aussage_max": 200,
+      "buch_aussage_max_ab": "PB1"
     },
     "g3": "Stufe ist Untergrenze (D3): bestimmt die Form, nicht den Inhalt. Grenzen nur gegen Themen anderer Räume oder vom Katalog ausgeschlossene; reine Tiefen-Grenzen entfallen, wenn das Buch das Thema im Kernabschnitt behandelt.",
     "doppelt": "D6: Doppelt mit bestehender Aussage → Buch-Aussage entfällt, die bestehende bekommt die Buch-Herkunft zusätzlich.",
     "kuer": "D8: Buch-Themen ohne Katalogbezug → Kür mit Hinweisquelle buch:<Band>-<Kapitel> (in meta.hinweisquellen beschrieben)."
+  },
+  "kurz": {
+    "version": "2.2",
+    "stand": "2026-10-16",
+    "regel": "Jede Können-Aussage und jeder Kür-Eintrag hat neben dem vollen Satz (text) ein Feld kurz: 3–8 Wörter, Substantivstil, kein „Du kannst“, kein Satz, nennt nur das Thema. Die App zeigt im Stichpunkt-Detail nur kurz (aufklappbar zu text, Erklärung, Stufe und Herkunft); Lernprompt, Karten und Erklärung nutzen weiter text.",
+    "beispiele": [
+      "Array und Index",
+      "Sequenz als dritte Grundstruktur",
+      "ECC-Speicher: wann er sich lohnt"
+    ],
+    "max_zeichen": 60,
+    "woerter_min": 3,
+    "woerter_max": 8,
+    "pruefung": "lernplan-pruefen: kurz vorhanden, höchstens 60 Zeichen, 3–8 Wörter, beginnt nicht mit „Du“, ohne Schlusspunkt, im Stichpunkt eindeutig (Aussagen untereinander, Kür untereinander)"
   }
 }
