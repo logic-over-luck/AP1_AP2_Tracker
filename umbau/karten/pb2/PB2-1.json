@@ -353,6 +353,27 @@
    "k": "PB2-1-1-3-K3",
    "vorne": "Eine private Hilfsmethode soll aus einer nach Zeit sortierten Liste höchstens `max` Einträge ab einem Zeitpunkt übernehmen. Wie groß legst du das Ergebnisarray an, und wann endet die Schleife?",
    "hinten": "- Ergebnisarray mit `max` Stellen, dazu ein Zähler `anzahl = 0`\n- Schleife `while i < liste.size() and anzahl < max do`\n- passt ein Eintrag (Zeit nicht vor dem Zeitpunkt): an Stelle `anzahl` speichern, `anzahl = anzahl + 1`\n- sie endet, wenn die Liste durchlaufen oder die Höchstzahl erreicht ist"
+  },
+  {
+   "id": "PB2-1-1-1-K8-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K8",
+   "vorne": "Wann lohnt es sich, einen Algorithmus vor dem Programmieren als Pseudocode oder Aktivitätsdiagramm zu modellieren, und warum?",
+   "hinten": "- bei komplexen Abläufen (mehrere Schleifen, Sonderfälle)\n- Fehler im Lösungsweg fallen auf, bevor Code entsteht\n- sprachunabhängig: im Team besprechbar und als Dokumentation nutzbar\nEinfache Abläufe wie eine Addition schreibt man direkt in Code."
+  },
+  {
+   "id": "PB2-1-1-1-K9-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K9",
+   "vorne": "Das Modell enthält die Zählschleife `for i = 0 to n - 1`, die Zielsprache kennt aber nur Solange-Schleifen. Wie setzt du sie um?",
+   "hinten": "`i = 0`, `while i < n`, Rumpf, `i = i + 1`, `end while` – Startwert, Bedingung und Schrittweite werden einzeln ausgeschrieben, der Ablauf bleibt derselbe."
+  },
+  {
+   "id": "PB2-1-1-1-K9-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K9",
+   "vorne": "Was darfst du beim Übertragen eines modellierten Algorithmus in eine Programmiersprache anpassen, was nicht?",
+   "hinten": "- anpassen: Kontrollstrukturen, die die Sprache nicht hat (nachbilden), Datentypen, Datenstrukturen, Ein- und Ausgabe\n- nicht ändern: den Grundablauf, also Schritte, Reihenfolge und Bedingungen des Modells"
   }
  ],
  "nicht_abgefragt": [],
@@ -642,6 +663,21 @@
    "id": "PB2-1-1-3-K3-1",
    "entscheidung": "neu",
    "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-1-1-1-K8-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.1-S159)"
+  },
+  {
+   "id": "PB2-1-1-1-K9-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.1-S163)"
+  },
+  {
+   "id": "PB2-1-1-1-K9-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.1-S163)"
   }
  ],
  "alt_gestrichen": [

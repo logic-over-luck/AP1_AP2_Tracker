@@ -5,9 +5,9 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 22,
-  "koennen": 107,
+  "koennen": 109,
   "quellen": {
-   "PB2-1.json": "38b8a981ae51f3c4",
+   "PB2-1.json": "6c16ea6764dd06fb",
    "PB2-2.json": "26e890ba833e48b1",
    "PB2-3.json": "5fd9e56bbcf1cd1d",
    "PB2-4.json": "68840c2be9b4bac8",
@@ -64,6 +64,16 @@
      "id": "PB2-1-1-1-K7",
      "stufe": 3,
      "kurz": "die Kontrollstrukturen eines Algorithmus statt in Pseudocode als Aktivitätsdiagramm abbilden und zwischen beiden Formen übertragen: eine Zählschleife mit Initialisierung, Prüfung und Schrittweite als eigene Aktionen, geschachtelte Schleifen und Verzweigungen, ohne dass Bedingungen fehlen oder sich überschneiden"
+    },
+    {
+     "id": "PB2-1-1-1-K8",
+     "stufe": 4,
+     "kurz": "begründen, wann ein Algorithmus vor dem Programmieren sprachunabhängig als Pseudocode oder Aktivitätsdiagramm modelliert wird: bei komplexen Abläufen, weil das Modell den Lösungsweg vorab plant, im Team besprechbar macht und dokumentiert, während ein einfacher Ablauf wie die Summe zweier Werte direkt in Code geschrieben werden kann"
+    },
+    {
+     "id": "PB2-1-1-1-K9",
+     "stufe": 3,
+     "kurz": "einen in Pseudocode oder als Aktivitätsdiagramm modellierten Algorithmus in einer Programmiersprache umsetzen und ihn nur dort anpassen, wo die Sprache abweicht – eine fehlende Von-bis-Zählschleife durch eine Solange-Schleife mit Zähler nachbilden, Datentypen, Datenstrukturen sowie Ein- und Ausgabe anpassen –, ohne den Grundablauf des Modells zu ändern"
     }
    ]
   },

@@ -129,6 +129,24 @@
         "katalog:AP2a.02.02.1",
         "beleg:2021W-PB2-A1-a"
        ]
+      },
+      {
+       "id": "PB2-1-1-1-K8",
+       "text": "Du kannst begründen, wann ein Algorithmus vor dem Programmieren sprachunabhängig als Pseudocode oder Aktivitätsdiagramm modelliert wird: bei komplexen Abläufen, weil das Modell den Lösungsweg vorab plant, im Team besprechbar macht und dokumentiert, während ein einfacher Ablauf wie die Summe zweier Werte direkt in Code geschrieben werden kann.",
+       "kurz": "Algorithmus erst modellieren oder direkt codieren",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.3.1-S159"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K9",
+       "text": "Du kannst einen in Pseudocode oder als Aktivitätsdiagramm modellierten Algorithmus in einer Programmiersprache umsetzen und ihn nur dort anpassen, wo die Sprache abweicht – eine fehlende Von-bis-Zählschleife durch eine Solange-Schleife mit Zähler nachbilden, Datentypen, Datenstrukturen sowie Ein- und Ausgabe anpassen –, ohne den Grundablauf des Modells zu ändern.",
+       "kurz": "Modell in eine Programmiersprache übertragen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.3.1-S163"
+       ]
       }
      ],
      "baut_auf": [
@@ -142,7 +160,7 @@
       "PB1-4-1-4",
       "PB1-4-1-5"
      ],
-     "hinweis": "Die Darstellung soll laut Katalog in allgemein verständlichem Programm- oder Pseudocode erfolgen; eine bestimmte Sprache wird nicht verlangt (AP2b.03.05, AP2b.04.19). Die Signatur ist in den Aufgaben meist vorgedruckt. Ganzzahldivision rechnen kannst du aus AP1-8-2-3, Laufzeitfehler wie Division durch null kennst du aus AP1-8-2-4, Fehlerreaktion festlegen aus PB1-5-1-2; hier geht es darum, den Sonderfall im eigenen Algorithmus abzufangen. Die Notation des Aktivitätsdiagramms (Schwimmbahnen, Rücksprünge) steht in AP1-8-3-3. Auch PB2 verlangt Diagramme, deren Notation in PB1 steht – gelernt wird sie dort, geübt mit diesen Aufgaben: Geschäftsprozess als Aktivitätsdiagramm (2023S-PB2-A1, 2024S-PB2-A1-a; PB1-4-1-5, parallele Zweige mit Teilung und Synchronisation werden fast immer bepunktet: PB1-4-1-5-K2), Sequenzdiagramm (2023W-PB2-A1, 2025S-PB2-A2-a; PB1-4-1-3), Zustandsdiagramm (2025W-PB2-A2; PB1-4-1-4).",
+     "hinweis": "Die Darstellung soll laut Katalog in allgemein verständlichem Programm- oder Pseudocode erfolgen; eine bestimmte Sprache wird nicht verlangt (AP2b.03.05, AP2b.04.19). Die Signatur ist in den Aufgaben meist vorgedruckt. Ganzzahldivision rechnen kannst du aus AP1-8-2-3, Laufzeitfehler wie Division durch null kennst du aus AP1-8-2-4, Fehlerreaktion festlegen aus PB1-5-1-2; hier geht es darum, den Sonderfall im eigenen Algorithmus abzufangen. Die Notation des Aktivitätsdiagramms (Schwimmbahnen, Rücksprünge) steht in AP1-8-3-3. Auch PB2 verlangt Diagramme, deren Notation in PB1 steht – gelernt wird sie dort, geübt mit diesen Aufgaben: Geschäftsprozess als Aktivitätsdiagramm (2023S-PB2-A1, 2024S-PB2-A1-a; PB1-4-1-5, parallele Zweige mit Teilung und Synchronisation werden fast immer bepunktet: PB1-4-1-5-K2), Sequenzdiagramm (2023W-PB2-A1, 2025S-PB2-A2-a; PB1-4-1-3), Zustandsdiagramm (2025W-PB2-A2; PB1-4-1-4). Das Lehrbuch (FS2 2.3.1) rechnet im Java-Beispiel (100 * anzahlBelegt) / anzahlGesamt und speichert das Ergebnis in einer double-Variablen, als entstünde so ein Prozentwert mit Nachkommastellen; richtig ist: Beide Operanden sind Ganzzahlen, es wird ganzzahlig geteilt (1 von 3 ergibt 33 statt 33,33) – nötig ist 100.0 * anzahlBelegt / anzahlGesamt.",
      "grenzen": [
       {
        "text": "Struktogramm und Programmablaufplan als eigene Darstellungsformen gehören nicht dazu.",
@@ -150,6 +168,24 @@
        "katalog": [
         "AP2a.02.02.1"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Soll ein Wert am Ende eines Bereichs vorn weiterzählen, etwa bei der Cäsar-Verschiebung über das Alphabet, rechnet man mit Modulo: neuer Index = (Index + Verschiebung) mod Bereichsgröße. Beginnt der Bereich nicht bei 0 (druckbare Zeichen ab Code 32), zieht man den Startwert vorher ab und addiert ihn danach wieder.",
+       "kurz": "Modulo für den Rundlauf im Wertebereich",
+       "quellen": [
+        "buch:FS2-2.3.5"
+       ],
+       "grund": "RK2: Übungsbeispiel Cäsar ohne eigenes Prinzip über K1–K7 hinaus; das Verfahren selbst steht in AP1-7-3-1-K9"
+      },
+      {
+       "text": "Ein kleiner Entscheidungsbaum lässt sich direkt als verschachtelte Verzweigungen programmieren: Jeder innere Knoten ist eine Bedingung, jeder Zweig führt zur nächsten Abfrage, jedes Blatt gibt das Ergebnis zurück. Größere Bäume legt man als Knotentabelle ab und wertet sie mit einer Funktion aus, die von der Wurzel bis zu einem Blatt läuft.",
+       "kurz": "Entscheidungsbaum als verschachtelte Verzweigungen",
+       "quellen": [
+        "buch:FS2-3.3.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein nennt Entscheidungsbäume"
       }
      ]
     },
@@ -252,11 +288,22 @@
         "katalog:AP2b.04.16",
         "beleg:2024W-PB2-A1",
         "beleg:2022S-PB2-A1",
-        "beleg:2023S-PB2-A3-ab"
+        "beleg:2023S-PB2-A3-ab",
+        "buch:FS2-2.3.4-S173"
        ]
       }
      ],
-     "hinweis": "Die Minimumsuche (2025W-PB2-A1-b) durchläuft die Liste wie die lineare Suche (PB2-2-1-1), sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Den Fehler „letzte Gruppe fehlt“ im vorgegebenen Code zu finden (2023S-PB2-A3-aa) übst du in PB2-3; das Muster selbst steht hier."
+     "hinweis": "Die Minimumsuche (2025W-PB2-A1-b) durchläuft die Liste wie die lineare Suche (PB2-2-1-1), sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Den Fehler „letzte Gruppe fehlt“ im vorgegebenen Code zu finden (2023S-PB2-A3-aa) übst du in PB2-3; das Muster selbst steht hier.",
+     "kuer": [
+      {
+       "text": "Die Lauflängenkodierung ersetzt jede Folge gleicher Zeichen durch Anzahl und Zeichen (aus „aaabcc“ wird „3a1b2c“) – algorithmisch ein Gruppenwechsel über benachbarte Zeichen. Enthält der Text selbst Ziffern, wird das Ergebnis mehrdeutig, weil sich beim Entpacken eine Ziffer aus dem Text nicht von einer Anzahl unterscheiden lässt; abhelfen kann ein Trennzeichen oder eine feste Stellenzahl für die Anzahl.",
+       "kurz": "Lauflängenkodierung und Ziffern im Text",
+       "quellen": [
+        "buch:FS2-2.3.4"
+       ],
+       "grund": "RK2: Detail der Lauflängenkodierung; Komprimierung steht nicht im AP2-Katalog, das Zählmuster selbst trägt PB2-1-1-2-K7"
+      }
+     ]
     },
     {
      "id": "PB2-1-1-3",
@@ -404,7 +451,7 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.7",
+  "regelwerk_version": "2.2",
   "stand": "2026-10-16",
   "hinweis": "PB2-Ordner nach dem Muster von PB1 (P33): neue IDs PB2-…, alte AP2-Aussagen, die PB1 für PB2 vermerkt hat, stehen in alt_neu. Inhalte aus AP1 und PB1 werden mit baut_auf importiert (E2).",
   "kerntest": {
@@ -413,7 +460,10 @@
    "ergebnis": "Alle Algorithmus-Aufgaben der PB2-Prüfungen gegen die Musterlösungen gelesen (2021W-A2, 2022S-A1, 2023S-A2, 2023W-A2, 2024S-A2-b, 2024W-A1, 2024W-A2, 2025S-A1, 2025W-A1); 2025W ohne Aufgabensatz nur über die Lösung (P34)."
   },
   "hinweisquellen": {
-   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.3.4": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.3.5": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-3.3.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-16",
@@ -505,6 +555,39 @@
       "AP1"
      ],
      "notiz": "AP1-4-2-2"
+    },
+    {
+     "thema": "Die Lauflängenkodierung ersetzt jede Folge gleicher Zeichen durch Anzahl und Zeichen (aus „aaabcc“ wird „3a1b2c“) – algo",
+     "quellen": [
+      "buch:FS2-2.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-1-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Soll ein Wert am Ende eines Bereichs vorn weiterzählen, etwa bei der Cäsar-Verschiebung über das Alphabet, rechnet man m",
+     "quellen": [
+      "buch:FS2-2.3.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein kleiner Entscheidungsbaum lässt sich direkt als verschachtelte Verzweigungen programmieren: Jeder innere Knoten ist ",
+     "quellen": [
+      "buch:FS2-3.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -512,6 +595,38 @@
    "stand": "2026-10-16",
    "bericht": "umbau/berichte/PB2-1-pruefer.md",
    "umsetzung": "Funde der unabhängigen Prüfung vom 16.10.2026 eingebaut (Abschnitt „Umsetzung“ im Bericht): PB2-1-1-4 aufgelöst (P43), Gruppenwechsel, Index aus Fachwert, Zeitraum und Datentypen ergänzt (P37), Herkunft der Sonderfälle korrigiert. Gestrichene IDs, nie wieder zu vergeben: PB2-1-1-1-K4, PB2-1-1-2-K6, PB2-1-1-4 mit K1–K3."
-  }
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-1-1-1-K8",
+     "PB2-1-1-1-K9"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB2-1-1-2-K7"
+    ],
+    "kuer": [
+     "PB2-1-1-2",
+     "PB2-1-1-1",
+     "PB2-1-1-1"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS2-2.3.1#2",
+      "aussage": "AP1-8-2-2-K7",
+      "grund": "E2: Algorithmus als endliche, eindeutige Schrittfolge und seine Abgrenzung zum Programm stehen in AP1-8-2-2-K7"
+     }
+    ],
+    "hinweise": [
+     "PB2-1-1-1"
+    ]
+   }
+  ]
  }
 }
