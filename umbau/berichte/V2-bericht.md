@@ -134,10 +134,32 @@ K5-Treffer in AP1 (6 Wörter) sind Gesetzeswortlaut (Art. 5/32 DSGVO, § 38 BDSG
 **Fortsetzung:** `offen/PB1-*.json` aus den lokalen Kernpunkt-Listen erzeugen und je PB1-Ordner (Reihenfolge PB1-6, -5, -8,
 -9, -10, -1, -3, -7, -2, -4, -11, -12) bauen; dann PB2-1…6, WISO-1…5. Danach Schritt 5 (Build, Browser-Check), 6, 7.
 
-## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, in Arbeit)
+## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, fertig)
 
-Vorgabe des Projektinhabers vor PB1: jede Können-Aussage und jeder Kür-Eintrag bekommt ein Stichwort `kurz`
-(3–8 Wörter, höchstens 60 Zeichen, Substantivstil, nicht mit „Du“); die App zeigt im Stichpunkt nur noch das
-Stichwort und klappt beim Antippen Satz, Erklärung, Stufe und Herkunft auf. Neue Buch-Aussagen ab PB1 höchstens
-200 Zeichen. Stand: Regelwerk 2.2, Prüfung, Einbau-Skripte und Anzeige sind gebaut; die Stichworte werden gerade
-erzeugt und sind noch nicht eingetragen – bis dahin meldet `lernplan-pruefen` KURZ-Fehler. Danach Pause vor PB1.
+Vorgabe des Projektinhabers vor PB1: Jede Können-Aussage und jeder Kür-Eintrag bekommt ein Stichwort `kurz`
+(3–8 Wörter, höchstens 60 Zeichen, Substantivstil, beginnt nicht mit „Du“). Die App zeigt im Stichpunkt nur noch das
+Stichwort und klappt beim Antippen Satz, Erklärung, Stufe und Herkunft auf. Neue Buch-Aussagen dürfen ab PB1
+höchstens 200 Zeichen haben.
+
+| Raum | Aussagen mit `kurz` | Kür mit `kurz` |
+|---|---|---|
+| AP1 | 838 | 262 |
+| PB1 | 265 | 17 |
+| PB2 | 93 | 0 |
+| WISO | 325 | 13 |
+| **gesamt** | **1.521** | **292** |
+
+- **Erzeugung:** Subagenten je Ordner (AP1 einzeln, PB1 in drei Gruppen, PB2, WISO), eigene Worte aus dem vollen Satz.
+  Eingetragen mit `tools/umbau/kurz-einbauen.mjs`. Formfehler maschinell: 1 (9 Wörter, AP1-4-2-3-K3), korrigiert.
+- **Gegenprüfung** (vier Prüfer, Eindeutigkeit im Stichpunkt, Thema, Stil): 69 Funde (56 verwechselbar, 2 falsches
+  Thema, 11 Stil), alle übernommen. Darunter zwei sachliche Korrekturen: Arbeitsschutzausschuss und
+  Sicherheitsbeauftragte „bei mehr als 20 Beschäftigten“ statt „ab 20“ (WISO-3-1-1-K2, WISO-3-1-2 Kür).
+- **Nachtrag AP1:** Kernpunkt GS-2.7.4#3 (Rollout-Ablauf) war nach dem Einbau von AP1-2 dorthin umgehängt worden und
+  stand noch auf `neu`. Er liegt jetzt als Kür am vorhandenen Eintrag „Planung eines Rollouts“ in AP1-2-5-3. T10 für
+  AP1 ist wieder vollständig grün.
+- **Anzeige:** Browser-Check auf 1400 px und 390 px ohne Konsolenfehler und ohne waagerechtes Scrollen. Immer nur eine
+  Zeile offen, Kür zugeklappt. Auf dem Handy werden lange Stichworte im schmalen Detailbereich mit „…“ gekürzt;
+  aufgeklappt stehen sie vollständig, die Marken stehen dort ebenfalls.
+- **Offen (P56):** In AP1 sind 229 der 234 Buch-Aussagen länger als 200 Zeichen. Die Grenze gilt erst ab PB1;
+  Vorschlag: so lassen.
+- **Danach Pause vor PB1** (Projektinhaber).
