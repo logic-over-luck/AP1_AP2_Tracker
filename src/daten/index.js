@@ -84,7 +84,9 @@ export function baueIndex(daten) {
         const jePruefung = new Map();
         for (const s of spListe) for (const [p, g] of s.pruef ?? []) jePruefung.set(p, Math.max(jePruefung.get(p) ?? 0, g));
         const punkte = Math.max(0, ...spListe.map((s) => s.punkte ?? 0)) || null;
-        const wert = [...jePruefung.values()].reduce((a, g) => a + g, 0) + (punkte >= 15 ? 1 : punkte >= 10 ? 0.5 : 0);
+        let wert = [...jePruefung.values()].reduce((a, g) => a + g, 0) + (punkte >= 15 ? 1 : punkte >= 10 ? 0.5 : 0);
+        // Regelwerk v2.0 (D7): Block ganz ohne Prüfungsbeleg – Ersatzgewicht aus dem Lernfeld seiner Stichpunkte
+        if (!jePruefung.size && !punkte) wert = Math.max(0, ...spListe.filter((s) => s.gewichtLernfeld).map((s) => s.gewicht));
         const pruefungen = jePruefung.size;
         const block = {
           ...b,

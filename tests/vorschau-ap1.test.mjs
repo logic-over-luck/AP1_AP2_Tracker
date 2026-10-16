@@ -434,3 +434,52 @@ describe('Vorschau WISO', () => {
     assert.equal(index.raumVon(altSp), 'WISO');
   });
 });
+
+// ---------- Regelwerk v2.0: Marke „Buch“ (D4) und Wichtigkeit aus dem Lernfeld (D7) ----------
+describe('Regelwerk v2.0 in der Vorschau', async () => {
+  const { ersatzGewicht, ladeLernfelder } = await import('../tools/vorschau-ap1.mjs');
+  const { baueIndex } = await import('../src/daten/index.js');
+  const alle = vorschauAlle(alt, wurzel);
+  const lf = ladeLernfelder(wurzel);
+  test('D4: jede Aussage trägt herkunftArten; buch-Herkunft wird erkannt', () => {
+    let n = 0;
+    for (const s of Object.values(alle.sp)) for (const k of s.neu?.koennen ?? []) {
+      n++;
+      assert.deepEqual(k.herkunftArten, [...new Set(k.herkunft.map((h) => h.split(':')[0]))], k.id);
+      assert.equal(k.herkunftArten.includes('buch'), k.herkunft.some((h) => h.startsWith('buch:')), k.id);
+    }
+    assert.ok(n > 1000);
+  });
+  test('D7: jeder Ordner hat ein Lernfeld mit Zeitrichtwert', () => {
+    for (const r of Object.values(RAEUME_VORSCHAU)) for (const p of ladeLernplanAp1(wurzel, r)) {
+      const e = lf.ordner[p.oberblock.id];
+      assert.ok(e?.lernfelder?.length, p.oberblock.id);
+      for (const x of e.lernfelder) assert.ok(lf.zeitrichtwerte[x] > 0, `${p.oberblock.id}: ${x}`);
+    }
+  });
+  test('D7: Ersatzgewicht 0,5 × Zeitrichtwert / 80, höchstens „mittel“', () => {
+    assert.equal(ersatzGewicht('AP1-7', lf).wert, 0.25); // LF4, 40 Stunden
+    assert.equal(ersatzGewicht('AP1-4', lf).wert, 0.5); // LF2, 80 Stunden
+    assert.equal(ersatzGewicht('AP1-1', lf).wert, 0.75); // LF12a, 120 Stunden
+    assert.equal(ersatzGewicht('AP1-6', lf).wert, 0.5); // LF3 und LF9
+    assert.equal(ersatzGewicht('XYZ-1', lf), null);
+    for (const o of Object.keys(lf.ordner)) assert.ok(['normal', 'mittel'].includes(ersatzGewicht(o, lf).stufe), o);
+  });
+  test('D7: Stichpunkte ohne Beleg tragen das Lernfeld-Gewicht, mit Beleg bleibt es prüfungsbasiert', () => {
+    let ohne = 0;
+    for (const s of Object.values(alle.sp).filter((x) => x.neu)) {
+      if (s.pruef.length) assert.equal(s.gewichtLernfeld, null, s.id);
+      else {
+        ohne++;
+        assert.ok(s.gewichtLernfeld?.length, s.id);
+        assert.equal(s.gewicht, ersatzGewicht(s.ordner, lf).wert, s.id);
+      }
+    }
+    assert.ok(ohne > 0);
+    const index = baueIndex(alle);
+    for (const b of index.bloecke.values()) {
+      const sps = b.sp.map((id) => index.sp.get(id));
+      if (sps.every((s) => s.gewichtLernfeld)) assert.ok(b.gewicht >= Math.min(...sps.map((s) => s.gewicht)), b.id);
+    }
+  });
+});

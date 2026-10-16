@@ -44,11 +44,12 @@ function spAbschnitt(sp, stand, ueberschrift) {
   zeilen.push('', 'Das muss ich können:');
   sp.koennen.forEach(([, text], i) => zeilen.push(`${i + 1}. ${text}`));
   if (sp.neu?.grenzen.length) {
-    zeilen.push('', 'Gehört nicht dazu (nicht vertiefen):');
+    // Regelwerk v2.0 (D10): Grenzen trennen nur Prüfungsteile, sie begrenzen nicht das Verstehen
+    zeilen.push('', 'Für die Prüfung nicht nötig (gehört in einen anderen Prüfungsteil):');
     for (const g of sp.neu.grenzen) zeilen.push(`- ${g.text}`);
   }
   if (sp.neu?.kuer.length) {
-    zeilen.push('', 'Freiwillig (Kür, nur wenn Zeit ist – nicht abfragen, bevor die Pflicht sitzt):');
+    zeilen.push('', 'Freiwillig, wenn Zeit ist (Kür):');
     for (const k of sp.neu.kuer) zeilen.push(`- ${k.text}`);
   }
   const notiz = stand.notizen.get(sp.id);
@@ -64,8 +65,8 @@ function ablaufJeStichpunkt(arten, mehrere) {
   return [
     `So gehst du mit ${was} vor:`,
     '1. Frag mich zuerst kurz, was ich schon darüber weiß, und bau darauf auf.',
-    '2. Erkläre ihn Schritt für Schritt, verständlich und mit einem Beispiel aus dem IT-Alltag. Halte dich an den Rahmen: nicht tiefer als nötig, aber vollständig.',
-    '3. Prüfe danach jede „Das muss ich können“-Aussage mit einer Prüfungsfrage. Immer nur eine Frage pro Nachricht: Warte auf meine Antwort, korrigiere sie und erkläre Fehler.',
+    '2. Erkläre ihn Schritt für Schritt, verständlich und mit einem Beispiel aus dem IT-Alltag. Erkläre zuerst das Prinzip und das Warum, dann die Einzelheiten; Zusammenhänge zu Nachbarthemen und eigene Beispiele sind erwünscht.',
+    '3. Erst wenn du den ganzen Stichpunkt erklärt hast: Prüfe jede „Das muss ich können“-Aussage mit einer Prüfungsfrage. Immer nur eine Frage pro Nachricht: Warte auf meine Antwort, korrigiere sie und erkläre Fehler.',
     ...zusatz,
     '5. Entscheide dann ehrlich, ob der Stichpunkt sitzt:',
     '   - Habe ich alle Aussagen sicher beantwortet, schreib: „✅ Kannst du abhaken: <Titel des Stichpunkts>“. Dann hake ich ihn in meinem Lernplan ab.',

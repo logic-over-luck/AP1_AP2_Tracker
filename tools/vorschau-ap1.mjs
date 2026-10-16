@@ -120,6 +120,23 @@ function wichtigkeitAusTeilaufgaben(teilaufgaben, ersteAktuelle) {
   return { wert: Math.round(wert * 100) / 100, pruefungen: [...jePruefung.entries()].sort(), stufe: stufeFuer(wert) };
 }
 
+// Regelwerk v2.0 (D7): Stichpunkte ohne jeden Prüfungsbeleg bekommen als Ersatz das Gewicht aus dem Zeitrichtwert
+// ihres Lernfelds (umbau/regeln/lernfelder.json): 0,5 × Zeitrichtwert / 80, bei mehreren Lernfeldern der Mittelwert.
+// So liegt ein Stichpunkt ohne Beleg höchstens bei „mittel“ (wie eine Prüfung nach altem Katalog); die Wichtigkeit
+// bleibt prüfungsbasiert (P28), sobald es einen Beleg gibt.
+export function ladeLernfelder(wurzel) {
+  const datei = path.join(wurzel, 'umbau', 'regeln', 'lernfelder.json');
+  return fs.existsSync(datei) ? JSON.parse(fs.readFileSync(datei, 'utf8')) : null;
+}
+export function ersatzGewicht(ordnerId, lf) {
+  const e = lf?.ordner?.[ordnerId];
+  if (!e?.lernfelder?.length) return null;
+  const stunden = e.lernfelder.map((x) => lf.zeitrichtwerte[x]).filter((x) => x > 0);
+  if (!stunden.length) return null;
+  const wert = Math.round(((0.5 * stunden.reduce((a, b) => a + b, 0)) / stunden.length / 80) * 100) / 100;
+  return { wert, pruefungen: [], stufe: stufeFuer(wert), lernfelder: e.lernfelder };
+}
+
 export function vorschauAp1(daten, wurzel) {
   return vorschauRaum(daten, wurzel, AP1);
 }
@@ -316,6 +333,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
 
   const kurzTexte = ladeKurzAp1(wurzel, cfg);
   const typen = ladeTypenAp1(wurzel, cfg);
+  const lernfelder = ladeLernfelder(wurzel);
   const sp = Object.fromEntries(Object.entries(altSp).filter(([, s]) => s.raum !== (cfg.ersetzt ?? R)));
   // Neue Räume (PB1): Vorgänger eines Stichpunkts über die Umzugstabelle (P6), für Art und Gegenstücke
   const altVon = new Map();
@@ -335,7 +353,9 @@ export function vorschauRaum(daten, wurzel, cfg) {
       satz: t.satz ?? null,
       sp: t.stichpunkte.map((s, i) => {
         const alt = altSp[s.id] ?? altSp[altVon.get(s.id)];
-        const w = wichtigkeitAusTeilaufgaben(s.teilaufgaben, cfg.ersteAktuelle);
+        const wBeleg = wichtigkeitAusTeilaufgaben(s.teilaufgaben, cfg.ersteAktuelle);
+        const wErsatz = wBeleg.pruefungen.length ? null : ersatzGewicht(p.oberblock.id, lernfelder);
+        const w = wErsatz ?? wBeleg;
         const koennen = s.koennen.map((k) => {
           const v = vorgaenger.get(k.id);
           const status = !v ? 'neu' : v.status === 'verschoben' ? 'verschoben' : v.status;
@@ -346,6 +366,8 @@ export function vorschauRaum(daten, wurzel, cfg) {
             id: k.id,
             stufe: k.stufe,
             herkunft: k.herkunft,
+            // Regelwerk v2.0 (D4): Arten der Herkunft (katalog, beleg, regel, buch) – die App zeigt bei „buch“ die Marke „Buch“
+            herkunftArten: [...new Set(k.herkunft.map((h) => h.slice(0, h.indexOf(':'))))],
             vorgegeben: k.vorgegeben ?? null,
             erklaerung: kurzTexte.erklaerung.get(k.id) ?? null,
             status,
@@ -371,6 +393,8 @@ export function vorschauRaum(daten, wurzel, cfg) {
           prio: w.stufe,
           gewicht: w.wert,
           pruef: w.pruefungen,
+          // D7: Gewicht aus dem Lernfeld statt aus Prüfungen (nur ohne jeden Beleg)
+          gewichtLernfeld: wErsatz ? wErsatz.lernfelder : null,
           punkte: null,
           gegen: alt?.gegen ?? [],
           kurz: null,

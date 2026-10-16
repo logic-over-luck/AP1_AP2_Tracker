@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { ladeDaten } from '../tools/daten.mjs';
 import { baueIndex } from '../src/daten/index.js';
 import { lernpromptBlock, lernpromptStichpunkt, blockAuswahl } from '../src/bereiche/lernen/lernprompt.js';
+import { vorschauAlle } from '../tools/vorschau-ap1.mjs';
 
 const wurzel = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const index = baueIndex(ladeDaten(wurzel));
@@ -70,4 +71,15 @@ test('Stichpunkt-Prompt mit unklarer Tiefe und eigener Notiz', () => {
   assert.ok(text.includes('Kannst du abhaken'));
   const wdh = lernpromptStichpunkt(sp, index, stand([sp.id]));
   assert.ok(wdh.includes('schon abgehakt') && wdh.includes('So möchte ich wiederholen'));
+});
+
+test('Regelwerk v2.0 (D10): erst Prinzip und Warum, Prüfungsfragen erst nach der Erklärung, Grenzen und Kür ohne Bremse', () => {
+  const neu = baueIndex(vorschauAlle(ladeDaten(wurzel), wurzel));
+  const sp = [...neu.sp.values()].find((s) => s.neu?.grenzen.length && s.neu?.kuer.length);
+  const text = lernpromptStichpunkt(sp, neu);
+  assert.ok(text.includes('Erkläre zuerst das Prinzip und das Warum, dann die Einzelheiten; Zusammenhänge zu Nachbarthemen und eigene Beispiele sind erwünscht.'));
+  assert.ok(text.includes('Erst wenn du den ganzen Stichpunkt erklärt hast: Prüfe jede'));
+  assert.ok(text.includes('Für die Prüfung nicht nötig (gehört in einen anderen Prüfungsteil):'));
+  assert.ok(text.includes('Freiwillig, wenn Zeit ist (Kür):'));
+  for (const alt of ['nicht tiefer als nötig', 'nicht vertiefen', 'nicht abfragen']) assert.ok(!text.includes(alt), alt);
 });

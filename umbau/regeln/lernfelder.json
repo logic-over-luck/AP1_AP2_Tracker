@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "stand": "2026-10-16",
+    "hinweis": "Regelwerk v2.0, D7: Ersatzgewicht für Stichpunkte ohne jeden Prüfungsbeleg aus dem Zeitrichtwert ihres Lernfelds (Rahmenlehrplan KMK 13.12.2019, Fachrichtung Anwendungsentwicklung). Zuordnung Ordner → Lernfeld nach umbau/berichte/rahmenlehrplan-abgleich.md (Tabelle „Wohnort“); Ordner, die dort fehlen, nach dem Lernfeld ihres Inhalts (Vermerk). Mehrere Lernfelder: Mittelwert der Zeitrichtwerte. Formel und Skala: tools/vorschau-ap1.mjs (ersatzGewicht).",
+    "formel": "wert = 0,5 × Zeitrichtwert / 80 (80 Stunden ≙ 0,5 = untere Grenze „mittel“, wie eine Prüfung nach altem Katalog; 40 Stunden 0,25 „normal“; 120 Stunden 0,75 „mittel“). Ein Stichpunkt ohne Prüfungsbeleg erreicht so höchstens „mittel“."
+  },
+  "zeitrichtwerte": { "LF1": 40, "LF2": 80, "LF3": 80, "LF4": 40, "LF5": 80, "LF6": 40, "LF7": 80, "LF8": 80, "LF9": 80, "LF10a": 80, "LF11a": 80, "LF12a": 120 },
+  "ordner": {
+    "AP1-1": { "lernfelder": ["LF12a"] },
+    "AP1-2": { "lernfelder": ["LF1", "LF6"] },
+    "AP1-3": { "lernfelder": ["LF2", "LF12a"] },
+    "AP1-4": { "lernfelder": ["LF2"] },
+    "AP1-5": { "lernfelder": ["LF2"], "vermerk": "nicht in der Tabelle; Software am Arbeitsplatz gehört zu LF2 „Arbeitsplätze nach Kundenwunsch ausstatten“" },
+    "AP1-6": { "lernfelder": ["LF3", "LF9"] },
+    "AP1-7": { "lernfelder": ["LF4"] },
+    "AP1-8": { "lernfelder": ["LF5", "LF10a"], "vermerk": "Tabelle: LF10a (Geschäftsprozesse modellieren); Programmieren gehört zu LF5 „Software zur Verwaltung von Daten anpassen“" },
+    "PB1-1": { "lernfelder": ["LF10a", "LF12a"] },
+    "PB1-2": { "lernfelder": ["LF12a"] },
+    "PB1-3": { "lernfelder": ["LF8"] },
+    "PB1-4": { "lernfelder": ["LF11a"] },
+    "PB1-5": { "lernfelder": ["LF11a"] },
+    "PB1-6": { "lernfelder": ["LF5"] },
+    "PB1-7": { "lernfelder": ["LF5", "LF8"] },
+    "PB1-8": { "lernfelder": ["LF10a"] },
+    "PB1-9": { "lernfelder": ["LF11a", "LF12a"] },
+    "PB1-10": { "lernfelder": ["LF10a"] },
+    "PB1-11": { "lernfelder": ["LF9"] },
+    "PB1-12": { "lernfelder": ["LF6"] },
+    "PB2-1": { "lernfelder": ["LF11a"] },
+    "PB2-2": { "lernfelder": ["LF11a"] },
+    "PB2-3": { "lernfelder": ["LF11a"] },
+    "PB2-4": { "lernfelder": ["LF5", "LF11a"] },
+    "PB2-5": { "lernfelder": ["LF11a"] },
+    "PB2-6": { "lernfelder": ["LF11a"] },
+    "WISO-1": { "lernfelder": ["LF1"] },
+    "WISO-2": { "lernfelder": ["LF1"] },
+    "WISO-3": { "lernfelder": ["LF2"], "vermerk": "Arbeitssicherheit und Gesundheitsschutz (Tabelle: LF2 Ergonomie)" },
+    "WISO-4": { "lernfelder": ["LF2"], "vermerk": "Recycling (Tabelle: LF2)" },
+    "WISO-5": { "lernfelder": ["LF1"], "vermerk": "nicht in der Tabelle; Zusammenarbeit im Betrieb gehört zu LF1" }
+  }
+}

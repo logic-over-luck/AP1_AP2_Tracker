@@ -351,9 +351,26 @@ function SpDetail({ sp, stand, raum }) {
 // Stufe, Herkunft und Begründungen klein zum Aufklappen.
 const STUFE_NAME = { 1: 'Wiedergeben', 2: 'Verstehen', 3: 'Anwenden', 4: 'Beurteilen' };
 
+// Regelwerk v2.0 (D4): buch:GS-2.4.3-S119 → „GS 2.4.3, S. 119“
+function buchText(wert) {
+  const m = wert.match(/^(GS|FS2|FS)-([\d.]+?)(?:-S(\d+))?$/);
+  return m ? `${m[1]} ${m[2]}${m[3] ? `, S. ${m[3]}` : ''}` : wert;
+}
+
 function herkunftText(h) {
   const [art, wert] = h.split(':');
-  return art === 'katalog' ? `Katalog ${wert}` : art === 'beleg' ? `Prüfung ${wert}` : art === 'regel' ? `Puffer-Regel ${wert}` : h;
+  return art === 'katalog' ? `Katalog ${wert}` : art === 'beleg' ? `Prüfung ${wert}` : art === 'regel' ? `Puffer-Regel ${wert}` : art === 'buch' ? `Lehrbuch ${buchText(wert)}` : h;
+}
+
+// Kleine graue Marke „Buch“ an Aussagen mit Buch-Herkunft (Regelwerk v2.0, D4)
+function BuchMarke({ k }) {
+  const buch = (k.herkunft ?? []).filter((h) => h.startsWith('buch:')).map((h) => buchText(h.slice(5)));
+  if (!buch.length) return null;
+  return (
+    <span class="np-marke" data-tip={`Aus dem Lehrbuch, Kapitel ${buch.join('; ')}`}>
+      Buch
+    </span>
+  );
 }
 
 function KoennenMarken({ k }) {
@@ -447,6 +464,7 @@ function KoennenZeile({ k, text, details }) {
   const marken = (
     <>
       <KoennenMarken k={k} />
+      <BuchMarke k={k} />
       {k.neu && <NeuMarke neu={k.neu} offen={neuOffen} onUmschalten={() => setNeuOffen(!neuOffen)} />}
     </>
   );
