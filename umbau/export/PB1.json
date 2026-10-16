@@ -5,13 +5,13 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 69,
-  "koennen": 372,
+  "koennen": 379,
   "quellen": {
    "PB1-1.json": "82c56b9a048ab3d1",
    "PB1-10.json": "2c0c631a89d08af3",
    "PB1-11.json": "dda29aefbf56c507",
    "PB1-12.json": "fde12335a2b0504d",
-   "PB1-2.json": "33581c2942a81e43",
+   "PB1-2.json": "a5e68b3ca80496d7",
    "PB1-3.json": "dc16591c5dcfb68d",
    "PB1-4.json": "ce10adeef9791ebe",
    "PB1-5.json": "f7e2641aa44f017e",
@@ -1316,6 +1316,21 @@
      "id": "PB1-2-1-1-K3",
      "stufe": 3,
      "kurz": "Allgemeine Geschäftsbedingungen (vorformulierte Vertragsbedingungen, Regeln heute im BGB) so gestalten, dass sie gelten: wirksam in den Vertrag einbeziehen (Hinweis, zumutbare Kenntnisnahme und Einverständnis des Kunden) und auf überraschende oder unangemessen benachteiligende Klauseln verzichten, weil diese unwirksam sind"
+    },
+    {
+     "id": "PB1-2-1-1-K4",
+     "stufe": 2,
+     "kurz": "Verbrauchsgüterkauf und Fernabsatzvertrag erklären: Beim Verbrauchsgüterkauf verkauft ein Unternehmer eine bewegliche Sache an einen Verbraucher, und zeigt sich im ersten Jahr nach der Übergabe ein Mangel, wird vermutet, dass er schon bei der Übergabe bestand (Beweislastumkehr); ein Fernabsatzvertrag kommt zwischen Unternehmer und Verbraucher ausschließlich über Fernkommunikation wie Webshop, E-Mail oder Telefon zustande und gibt dem Verbraucher ein befristetes Widerrufsrecht ohne Begründung"
+    },
+    {
+     "id": "PB1-2-1-1-K5",
+     "stufe": 2,
+     "kurz": "nichtige und anfechtbare Verträge unterscheiden: Ein nichtiger Vertrag ist von Anfang an unwirksam, zum Beispiel mit einem Geschäftsunfähigen, als Schein- oder Scherzgeschäft, bei Verstoß gegen ein Gesetz oder die guten Sitten wie Wucher oder ohne vorgeschriebene Form; ein anfechtbarer Vertrag gilt zunächst und wird erst unwirksam, wenn ihn eine Partei wegen Irrtum, arglistiger Täuschung oder widerrechtlicher Drohung anficht"
+    },
+    {
+     "id": "PB1-2-1-1-K6",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile von AGB erklären: Der Verwender spart Zeit und Kosten, weil er die Bedingungen nur einmal rechtssicher formuliert und für viele Verträge nutzt, und der Kunde bekommt schnell einen Überblick; dafür verlagern AGB Risiken auf den Kunden, der sie meist nur annehmen oder ablehnen kann. Eine im Einzelfall ausgehandelte Vereinbarung geht den AGB immer vor"
     }
    ]
   },
@@ -1357,6 +1372,11 @@
      "id": "PB1-2-1-2-K5",
      "stufe": 3,
      "kurz": "ein CRM-System (alle Kontakte, Anfragen und Käufe eines Kunden an einer Stelle) nutzen und für eine Kundenbeziehung Maßnahmen gestalten, zum Beispiel Kundenhistorie auswerten, passende Angebote zum richtigen Zeitpunkt, Rückmeldungen erfassen und Beschwerden nachverfolgen"
+    },
+    {
+     "id": "PB1-2-1-2-K6",
+     "stufe": 2,
+     "kurz": "Governance und Compliance unterscheiden: Governance ist das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance ist das tatsächliche Einhalten dieser Regeln und der Gesetze durch die Beschäftigten"
     }
    ]
   },
@@ -1435,6 +1455,21 @@
      "id": "PB1-2-1-4-K4",
      "stufe": 3,
      "kurz": "Ergebnisse eines Softwareprojekts mit digitalen Werkzeugen aufbereiten und präsentieren: Berechnung und Diagramm in der Tabellenkalkulation, Folien im Präsentationsprogramm nach den Vorgaben der Corporate Identity (Logo, Farben, Schriften, Vorlagen), Bild- oder Videobearbeitung für multimediale Inhalte. Regeln für Aufbau und Medienwahl kennst du aus AP1-2-3-3"
+    },
+    {
+     "id": "PB1-2-1-4-K5",
+     "stufe": 4,
+     "kurz": "über Säule, Linie und Kreis hinaus die passende Diagrammart auswählen: Netzdiagramm, um mehrere Objekte über viele Kriterien zu vergleichen, Streudiagramm, um den Zusammenhang zweier Merkmale je Datensatz zu zeigen, Blasendiagramm, wenn als dritte Größe die Blasengröße hinzukommt, und Wortwolke, um die Häufigkeit von Wörtern in Freitexten sichtbar zu machen"
+    },
+    {
+     "id": "PB1-2-1-4-K6",
+     "stufe": 3,
+     "kurz": "Mittelwert (Summe durch Anzahl), Median (mittlerer Wert der sortierten Reihe) und Spannweite (größter minus kleinster Wert) einer Messreihe berechnen und daraus ablesen, warum der Median bei Ausreißern die typische Lage besser beschreibt als der Mittelwert"
+    },
+    {
+     "id": "PB1-2-1-4-K7",
+     "stufe": 3,
+     "kurz": "eine Präsentation planen, indem du vorab Ziel, Zielgruppe und Rahmenbedingungen klärst: was die Zuhörer danach wissen oder entscheiden sollen, welche Vorkenntnisse und Erwartungen sie mitbringen und wie viel Zeit samt Fragen, welcher Raum, welche Technik und Medien, welches Budget und welche Unterlagen wie Handout oder Teilnehmerliste zur Verfügung stehen"
     }
    ]
   },

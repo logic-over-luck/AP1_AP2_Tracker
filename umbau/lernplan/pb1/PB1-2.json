@@ -60,6 +60,33 @@
        "herkunft": [
         "katalog:AP2a.01.02.3"
        ]
+      },
+      {
+       "id": "PB1-2-1-1-K4",
+       "text": "Du kannst Verbrauchsgüterkauf und Fernabsatzvertrag erklären: Beim Verbrauchsgüterkauf verkauft ein Unternehmer eine bewegliche Sache an einen Verbraucher, und zeigt sich im ersten Jahr nach der Übergabe ein Mangel, wird vermutet, dass er schon bei der Übergabe bestand (Beweislastumkehr); ein Fernabsatzvertrag kommt zwischen Unternehmer und Verbraucher ausschließlich über Fernkommunikation wie Webshop, E-Mail oder Telefon zustande und gibt dem Verbraucher ein befristetes Widerrufsrecht ohne Begründung.",
+       "kurz": "Verbrauchsgüterkauf und Fernabsatzvertrag",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-2.9.4-S263"
+       ]
+      },
+      {
+       "id": "PB1-2-1-1-K5",
+       "text": "Du kannst nichtige und anfechtbare Verträge unterscheiden: Ein nichtiger Vertrag ist von Anfang an unwirksam, zum Beispiel mit einem Geschäftsunfähigen, als Schein- oder Scherzgeschäft, bei Verstoß gegen ein Gesetz oder die guten Sitten wie Wucher oder ohne vorgeschriebene Form; ein anfechtbarer Vertrag gilt zunächst und wird erst unwirksam, wenn ihn eine Partei wegen Irrtum, arglistiger Täuschung oder widerrechtlicher Drohung anficht.",
+       "kurz": "Nichtige und anfechtbare Verträge",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-2.9.4-S264"
+       ]
+      },
+      {
+       "id": "PB1-2-1-1-K6",
+       "text": "Du kannst Vor- und Nachteile von AGB erklären: Der Verwender spart Zeit und Kosten, weil er die Bedingungen nur einmal rechtssicher formuliert und für viele Verträge nutzt, und der Kunde bekommt schnell einen Überblick; dafür verlagern AGB Risiken auf den Kunden, der sie meist nur annehmen oder ablehnen kann. Eine im Einzelfall ausgehandelte Vereinbarung geht den AGB immer vor.",
+       "kurz": "AGB: Vor- und Nachteile, Vorrang der Einzelabrede",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-2.9.4-S264"
+       ]
       }
      ],
      "baut_auf": [
@@ -83,7 +110,19 @@
         "AP2a.01.02.3"
        ]
       }
-     ]
+     ],
+     "kuer": [
+      {
+       "text": "Rund um IT-Dienste gelten auch Strafvorschriften, etwa gegen das Ausspähen von Daten, Computerbetrug, Datenveränderung und Computersabotage. Wer geschäftsmäßig eine Website oder App anbietet, muss außerdem leicht auffindbar ein Impressum mit Name, Anschrift und Kontaktweg bereithalten; das regelt heute das Digitale-Dienste-Gesetz (früher das Telemediengesetz).",
+       "kurz": "Strafrecht und Impressumspflicht bei IT-Diensten",
+       "quellen": [
+        "buch:FS-1.1.4",
+        "buch:GS-4.1.2"
+       ],
+       "grund": "D8: kein Katalog-Baustein für StGB und Impressumspflicht; die Datenschutzinformation aus FS-1.1.4#4 trägt schon PB1-2-1-2-K3."
+      }
+     ],
+     "hinweis": "Das Lehrbuch nennt beim Fernabsatzvertrag und bei der Impressumspflicht noch das Telemediengesetz (TMG); seit Mai 2024 gilt stattdessen das Digitale-Dienste-Gesetz (DDG), die Impressumspflicht steht in § 5 DDG. Die Regeln zum Fernabsatz selbst stehen im BGB."
     },
     {
      "id": "PB1-2-1-2",
@@ -158,6 +197,15 @@
        "herkunft": [
         "katalog:AP2a.01.02.6"
        ]
+      },
+      {
+       "id": "PB1-2-1-2-K6",
+       "text": "Du kannst Governance und Compliance unterscheiden: Governance ist das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance ist das tatsächliche Einhalten dieser Regeln und der Gesetze durch die Beschäftigten.",
+       "kurz": "Governance und Compliance",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.1.4-S25"
+       ]
       }
      ],
      "baut_auf": [
@@ -175,6 +223,14 @@
         "podcast:themen-ap2"
        ],
        "grund": "Nur Hinweisquelle; der Katalog nennt CRM (AP2a.01.02.6), nicht das Marketingkonzept. Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Business-Relationship-Management überträgt den Gedanken des CRM auf alle Geschäftspartner: Auch die Beziehungen zu Lieferanten, Dienstleistern und Subunternehmern werden bewusst gepflegt und gesteuert.",
+       "kurz": "Business-Relationship-Management über CRM hinaus",
+       "quellen": [
+        "buch:FS-1.1.2"
+       ],
+       "grund": "RK2: Nachbarthema des CRM (AP2a.01.02.6); der Katalog nennt nur die Kundenbeziehung."
       }
      ]
     },
@@ -302,7 +358,8 @@
        "kurz": "Regeln der Visualisierung",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2a.01.03.3"
+        "katalog:AP2a.01.03.3",
+        "buch:FS2-4.2.5-S281"
        ]
       },
       {
@@ -316,6 +373,33 @@
         "katalog:AP2a.01.03.6",
         "katalog:AP2a.01.03.7"
        ]
+      },
+      {
+       "id": "PB1-2-1-4-K5",
+       "text": "Du kannst über Säule, Linie und Kreis hinaus die passende Diagrammart auswählen: Netzdiagramm, um mehrere Objekte über viele Kriterien zu vergleichen, Streudiagramm, um den Zusammenhang zweier Merkmale je Datensatz zu zeigen, Blasendiagramm, wenn als dritte Größe die Blasengröße hinzukommt, und Wortwolke, um die Häufigkeit von Wörtern in Freitexten sichtbar zu machen.",
+       "kurz": "Netz-, Streu-, Blasendiagramm und Wortwolke",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-3.2.2-S229"
+       ]
+      },
+      {
+       "id": "PB1-2-1-4-K6",
+       "text": "Du kannst Mittelwert (Summe durch Anzahl), Median (mittlerer Wert der sortierten Reihe) und Spannweite (größter minus kleinster Wert) einer Messreihe berechnen und daraus ablesen, warum der Median bei Ausreißern die typische Lage besser beschreibt als der Mittelwert.",
+       "kurz": "Mittelwert, Median und Spannweite",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-3.2.2-S230"
+       ]
+      },
+      {
+       "id": "PB1-2-1-4-K7",
+       "text": "Du kannst eine Präsentation planen, indem du vorab Ziel, Zielgruppe und Rahmenbedingungen klärst: was die Zuhörer danach wissen oder entscheiden sollen, welche Vorkenntnisse und Erwartungen sie mitbringen und wie viel Zeit samt Fragen, welcher Raum, welche Technik und Medien, welches Budget und welche Unterlagen wie Handout oder Teilnehmerliste zur Verfügung stehen.",
+       "kurz": "Präsentation planen: Ziel, Zielgruppe, Rahmen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-1.5.2-S112"
+       ]
       }
      ],
      "baut_auf": [
@@ -328,6 +412,16 @@
        "katalog": [
         "AP2b.05.05"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Varianz und Standardabweichung messen, wie stark Werte um den Mittelwert streuen: Die Varianz mittelt die quadrierten Abweichungen vom Mittelwert, die Standardabweichung ist ihre Wurzel und hat dieselbe Einheit wie die Werte. Eine kleine Standardabweichung heißt, dass die Werte eng beieinanderliegen.",
+       "kurz": "Varianz und Standardabweichung",
+       "quellen": [
+        "buch:FS2-3.2.2"
+       ],
+       "grund": "RK2: Streuungsmaße über das Interpretieren von Daten (AP2a.01.03) hinaus."
       }
      ]
     }
@@ -432,8 +526,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -442,7 +536,11 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-1.1.4": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-4.1.2": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.1.2": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-3.2.2": "Lehrbuch Westermann „IT-Berufe“ FS2 3.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -592,6 +690,40 @@
       "AP1-2-3-1"
      ],
      "notiz": "Grundlage in AP1; Anwendung in PB1-1 und PB1-6"
+    },
+    {
+     "thema": "Rund um IT-Dienste gelten auch Strafvorschriften, etwa gegen das Ausspähen von Daten, Computerbetrug, Datenveränderung u",
+     "quellen": [
+      "buch:FS-1.1.4",
+      "buch:GS-4.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Business-Relationship-Management überträgt den Gedanken des CRM auf alle Geschäftspartner: Auch die Beziehungen zu Liefe",
+     "quellen": [
+      "buch:FS-1.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-2-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Varianz und Standardabweichung messen, wie stark Werte um den Mittelwert streuen: Die Varianz mittelt die quadrierten Ab",
+     "quellen": [
+      "buch:FS2-3.2.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-2-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -620,6 +752,47 @@
       "PB1-2-1-2-K2"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-2-1-1-K4",
+     "PB1-2-1-1-K5",
+     "PB1-2-1-1-K6",
+     "PB1-2-1-2-K6",
+     "PB1-2-1-4-K5",
+     "PB1-2-1-4-K6",
+     "PB1-2-1-4-K7"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB1-2-1-4-K3"
+    ],
+    "kuer": [
+     "PB1-2-1-1",
+     "PB1-2-1-2",
+     "PB1-2-1-4"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [
+     "FS2-4.2.5#2",
+     "FS2-4.2.5#5",
+     "GS-1.5.2#7"
+    ],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "GS-1.5.2#3",
+      "aussage": "AP1-2-3-3-K3",
+      "grund": "E2: Inhalte nach Ziel und Zielgruppe auswählen steht in AP1-2-3-3-K3, der Aufbau in AP1-2-3-3-K1; die Ordnungsprinzipien (vom Bekannten zum Unbekannten, vom Problem zur Lösung) nennt die Erklärung der neuen Planungs-Aussage in PB1-2-1-4."
+     }
+    ],
+    "hinweise": [
+     "PB1-2-1-1"
+    ]
    }
   ]
  }
