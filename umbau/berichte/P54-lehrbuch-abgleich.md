@@ -43,3 +43,25 @@ Dicht: Netzwerk-Bausteine, IT-Sicherheit, Testen, SQL, UML, Normalisierung, Proj
    zum echten Programmieren braucht, kam deshalb nie als Beleg vor. Für Beruf und Projektarbeit ist das zentral.
 3. Größenordnung: rund 80 Unterkapitel (🟡, 🔴, 🔵), verteilt auf etwa 12 Tracker-Ordner. Ein Umbau ist das nicht: Die
    Gliederung trägt, es fehlt Gerüst in vorhandenen Stichpunkten, an wenigen Stellen ein neuer Stichpunkt.
+
+## Nachprüfung am Buchtext (Stufe 1 und 2, 16.10.2026)
+
+OCR-Text aller drei Bände lokal (`quellen/lehrbuch/`, E10), nur per Skript ausgewertet und vier Kapitel gelesen.
+
+**Stufe 1 (Skript):** Bücher an den Unterkapiteln aufgeschnitten (276 von 298 gefunden), je Kapitel die 15 kennzeichnenden
+Fachbegriffe (tf-idf) im Tracker gesucht. Anteil der Begriffe in Pflicht-Aussagen: 🟢 60 %, 🟡 48 %, 🔵 49 %. Die
+Richtung stimmt, für ein einzelnes Kapitel ist das Maß zu grob (Allerweltswörter wie „Datenbank“ treffen immer;
+ob ein Prinzip gelehrt wird, misst eine Wortzählung nicht).
+
+**Stufe 2 (gelesen):**
+
+| Kapitel | Ampel | Befund am Buchtext |
+|---|---|---|
+| Grundstufe 2.4.3 Prozessoren | 🟡 bestätigt | Buch: Bestandteile (ALU, Steuerwerk, MMU, Cache), Chipsatz als Verbindung, Taktgrenze und Parallelisierung (Multithreading, Pipelining), Desktop- gegen Server-CPU (ECC, TDP, PCIe-Lanes). Tracker: Aufgaben, Kerne/Takt, Hyper-Threading, Cache in einem Satz. Buch enthält auch Rabbit Holes (Codenamen, Nanometer, Moore). |
+| Grundstufe 5.8.6 Datenbank mit Python | 🟡 bestätigt | Buch: Ablauf Verbindung → Cursor → execute → commit → close mit Fehlerbehandlung. Fehlt im Tracker. Parametrisierte Anweisungen (vom Prüfer erwartet) stehen **nicht** im Kapitel. |
+| Fachstufe II 2.2.1 Datenstrukturen | 🟡 bestätigt | Buch: Array, Liste, verkettete Liste, Stack, Queue (LIFO/FIFO), Baum, Graph, Hashing, Zeiger, Effizienz der Grundoperationen. Tracker: Array und Liste Pflicht, Stack/Queue nur Zusatz. O-Notation (vom Prüfer erwartet) steht **nicht** im Kapitel. |
+| Grundstufe 3.4.5 Adressen im Netzwerk (Gegenprobe) | 🟢 bestätigt | Buch: MAC, IPv4/IPv6, Subnetz, Broadcast, CIDR, Unicast/Multicast, Ports, Adressklassen. Tracker gleich oder tiefer (Subnetting-Lernweg); Adressklassen sind veraltet. |
+
+**Kalibrierung:** Die Ampeln stimmen in 4 von 4 Fällen. Die Stichworte „was fehlt“ der Prüfer gehen teils über das Buch
+hinaus (Prepared Statements, O-Notation) und stammen aus deren eigenem Fachwissen. Beim Nachbessern ist deshalb das
+**Buchkapitel** der Maßstab für Tiefe und Ende, nicht die Stichwortliste.
