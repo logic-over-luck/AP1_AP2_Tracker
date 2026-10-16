@@ -65,3 +65,62 @@ ob ein Prinzip gelehrt wird, misst eine Wortzählung nicht).
 **Kalibrierung:** Die Ampeln stimmen in 4 von 4 Fällen. Die Stichworte „was fehlt“ der Prüfer gehen teils über das Buch
 hinaus (Prepared Statements, O-Notation) und stammen aus deren eigenem Fachwissen. Beim Nachbessern ist deshalb das
 **Buchkapitel** der Maßstab für Tiefe und Ende, nicht die Stichwortliste.
+
+## Stufe 3: alle markierten Kapitel gelesen (16.10.2026, Freigabe Projektinhaber)
+
+Fünf Prüfer haben die 82 Kapitel mit 🟡/🔴/🔵 am OCR-Text gelesen (eines, „IoT-Protokolle“, fehlt im OCR-Text) und mit
+Pflicht, Erklärungen und Karten des Trackers verglichen. Maßstab war das Buchkapitel, gefiltert für AE (keine Historie,
+Hersteller, Bedienschritte, Systemintegration). Auftrag und Ergebnisse je Gruppe: `umbau/berichte/P54-stufe3/`
+(nur eigene Stichworte, keine Buchauszüge).
+
+| Gruppe | Kapitel | ✅ reicht | ➕ kleine Ergänzung | 🧱 Gerüst fehlt | ⚪ nicht nötig |
+|---|---|---|---|---|---|
+| A Grundstufe LF1–2 | 18 | 1 | 11 | 3 | 3 |
+| B Grundstufe LF3–5 | 20 | 2 | 12 | 5 | 1 |
+| C Fachstufe LF6–7 | 12 | 1 | 6 | 2 | 3 |
+| D Fachstufe LF8–9 | 11 | 0 | 7 | 3 | 1 |
+| E Fachstufe II LF10–12 | 21 | 1 | 15 | 4 | 1 |
+| **Summe** | **82** | **5** | **51** | **17** | **9** |
+
+**Gesamtbild über alle relevanten Kapitel** (152 grün aus dem Inhaltsverzeichnis + 82 gelesen − 9 nicht nötig = 225):
+**reicht 157 (70 %) · kleine Ergänzung 51 (23 %) · Gerüst fehlt 17 (8 %).**
+
+### Wo das Gerüst fehlt (17 Kapitel, 13 Themen)
+
+Im Katalog, also prüfungsrelevant:
+
+| Thema | Kapitel | Tracker |
+|---|---|---|
+| Datenbank aus dem Programm (Verbindung → Anweisung → Ergebnis → commit → schließen, Fehler) | Grundstufe 5.8.6, dazu ➕ in Fachstufe 3.7.5 und Fachstufe II 2.3.8 – **in allen drei Büchern** | PB1-6, PB1-11-2-3 |
+| Was ein Datenbanksystem ist (Datenbasis + DBMS, Aufgaben, Drei-Ebenen-Architektur) | Grundstufe 5.8.1 | PB1-6 |
+| Datenstrukturen (Array, verkettete Liste, Stack, Queue, Hashtabelle, Set, Baum, Graph; Auswahl) | Fachstufe II 2.2.1, 2.2.2 | AP1-8-2, PB2-2 |
+| Darstellung von Daten (Zweierkomplement, Gleitkomma, ASCII/Unicode/UTF-8, Datum/Zeit) | Grundstufe 5.2.4 | AP1-4-2 |
+| Quellcode kommentieren, sprechende Namen | Grundstufe 5.10.3 | AP1-8, PB1-9 |
+| Wie eine CPU arbeitet und was ihre Leistung begrenzt | Grundstufe 2.4.3 | AP1-4-1-2 |
+| Geschäftsprozesse (Kern-/Supportprozess, Workflow, Flüsse) | Grundstufe 1.3.5 | AP1-3-1-5, AP1-8-4-4 |
+| Beschaffungsprozess als Ganzes | Grundstufe 2.9.1 | AP1-3-2 |
+| Ursachenanalyse bei Störungen (5-Why als Pflicht, Ishikawa) | Fachstufe 1.3.1 | AP1-1-3-2 |
+| Datenqualität (Kriterien, Messung, Bereinigung) | Fachstufe 3.2.1 | PB1-7-1-3, PB2-6-1-5 |
+| Sicherheit im Softwareentwurf (Schichten, sicherer Zustand, Eingaben prüfen, Framework statt Eigenbau) | Fachstufe 3.3.7 | PB1-10-1 |
+
+Nicht im Katalog, für den Beruf wichtig:
+
+| Thema | Kapitel |
+|---|---|
+| Clean Code (Refactoring, KISS, DRY, YAGNI, SRP/SOLID, Praxisregeln) | Fachstufe II 2.1.4 |
+| Oberflächen programmieren (ereignisgesteuert, Listener; Web: HTML/CSS/JS, Formular GET/POST) | Fachstufe 3.5.4, Fachstufe II 1.4.4 |
+| Dateizugriff aus Programmen | Grundstufe 5.7.7 |
+| MQTT | Fachstufe 2.2.2 |
+
+### Kalibrierung
+
+In allen fünf Gruppen nannten die Vorbefunde (nur nach Titel) Inhalte, die im Kapitel gar nicht stehen (z. B. O-Notation,
+Prepared Statements, Story Points, CAP/BASE, Typisierung, Gültigkeitsbereich, Container). Diese sind nicht gezählt; die
+Urteile sind deshalb milder als die Ampeln. Das Buch hat selbst Fehler (2^64 als 512 GB, DDR3 als Standard) und
+abweichende Lesarten (MVC: Logik im Controller); beim Nachbessern gilt fachliche Richtigkeit vor Buchtext.
+
+### Folgerung
+
+Für die schriftliche Prüfung reicht der Tracker in 70 % der Kapitel ganz, in 23 % fehlen ein bis drei Punkte, in 8 %
+fehlt das Gerüst. Größenordnung einer Nachbesserung: etwa 13 neue oder erweiterte Stichpunkte und die Ergänzungen der
+51 Kapitel in bestehenden Stichpunkten. Kein Umbau: Gliederung, IDs, Karten und Lernstand bleiben.
