@@ -4,8 +4,8 @@
   "erzeugt_mit": "node tools/umbau/export-raum.mjs PB1",
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
-  "stichpunkte": 68,
-  "koennen": 305,
+  "stichpunkte": 69,
+  "koennen": 323,
   "quellen": {
    "PB1-1.json": "dbef348b14b3f97e",
    "PB1-10.json": "7f9fe6aff5e200c8",
@@ -14,7 +14,7 @@
    "PB1-2.json": "33581c2942a81e43",
    "PB1-3.json": "3062763099e67395",
    "PB1-4.json": "ce10adeef9791ebe",
-   "PB1-5.json": "efc577233587ccf3",
+   "PB1-5.json": "f7e2641aa44f017e",
    "PB1-6.json": "1a9097d9183d0f2a",
    "PB1-7.json": "d0afd5bf94583232",
    "PB1-8.json": "15d44923fde3b1c0",
@@ -1694,6 +1694,31 @@
      "id": "PB1-5-1-1-K5",
      "stufe": 3,
      "kurz": "einen Entwurf mit Fallunterscheidungen über ein Typ-Attribut in einen polymorphen Entwurf umbauen und als Klassendiagramm erstellen: abstrakte Oberklasse ohne Typ-Attribut, je Typ eine Unterklasse, die die abstrakten Methoden überschreibt; so lassen sich neue Unterklassen ergänzen, ohne den aufrufenden Code zu ändern"
+    },
+    {
+     "id": "PB1-5-1-1-K6",
+     "stufe": 2,
+     "kurz": "erklären, welche geerbten Elemente eine Unterklasse direkt benutzen darf: public-Elemente überall, protected-Elemente auch in Unterklassen, private-Elemente nur in der eigenen Klasse – deshalb macht man Elemente, die Unterklassen brauchen, protected oder greift über öffentliche Getter und Setter zu"
+    },
+    {
+     "id": "PB1-5-1-1-K7",
+     "stufe": 2,
+     "kurz": "Einfach- und Mehrfachvererbung unterscheiden: Eine Klasse hat eine bzw. mindestens zwei direkte Oberklassen; weil bei gleichnamigen geerbten Methoden oder Attributen unklar wird, welche gilt, erlauben Sprachen wie Java und C# Mehrfachvererbung nur über mehrere Interfaces, andere wie C++ oder Python auch direkt"
+    },
+    {
+     "id": "PB1-5-1-1-K8",
+     "stufe": 2,
+     "kurz": "Überladen und Überschreiben unterscheiden: Beim Überladen hat eine Klasse mehrere Methoden gleichen Namens, die sich in Anzahl oder Datentyp der Parameter unterscheiden (ein anderer Rückgabetyp allein reicht nicht); beim Überschreiben setzt eine Unterklasse eine geerbte Methode mit gleicher Signatur neu um"
+    },
+    {
+     "id": "PB1-5-1-1-K9",
+     "stufe": 3,
+     "kurz": "den Konstruktor einer Unterklasse erstellen, der zuerst den Konstruktor der Oberklasse aufruft (z. B. mit super), damit die geerbten Attribute belegt werden, und danach die eigenen Attribute setzt"
+    },
+    {
+     "id": "PB1-5-1-1-K10",
+     "stufe": 4,
+     "kurz": "das Prinzip „Komposition vor Vererbung“ begründen: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet"
     }
    ]
   },
@@ -1723,6 +1748,16 @@
      "id": "PB1-5-1-2-K3",
      "stufe": 3,
      "kurz": "für eine Methode festlegen, wie sie auf Fehlerfälle (Laufzeitfehler aus AP1, z. B. ungültige Eingabe, nicht erreichbare Datei oder Datenbank) reagiert: die Eingabe prüfen und eine Ausnahme auslösen oder einen festgelegten Rückgabe- bzw. Exit-Code liefern"
+    },
+    {
+     "id": "PB1-5-1-2-K4",
+     "stufe": 3,
+     "kurz": "festlegen, wie ein Programm Eingaben aus Textfeldern verarbeitet: den Text vor dem Rechnen in eine Zahl umwandeln, eine fehlschlagende Umwandlung (Buchstaben, leeres Feld, Komma statt Punkt) als Ausnahme abfangen und dem Benutzer verständlich melden, statt das Programm abbrechen zu lassen"
+    },
+    {
+     "id": "PB1-5-1-2-K5",
+     "stufe": 2,
+     "kurz": "Fehlercodes als Rückgabewert und Ausnahmen vergleichen: Ein Fehlercode trägt wenig Information und muss nach jedem Aufruf abgefragt werden, sonst bleibt der Fehler unbemerkt; eine Ausnahme liefert Art und Meldung des Fehlers, wird bis zu einer behandelnden Stelle weitergereicht und hält den Normalablauf frei von Prüfabfragen"
     }
    ]
   },
@@ -1755,6 +1790,26 @@
      "id": "PB1-5-1-3-K3",
      "stufe": 2,
      "kurz": "objektorientierte Analyse (was: Klassen, Attribute und Beziehungen aus der Fachsprache, vgl. AP1-8-3-2) und objektorientierten Entwurf (wie: Methoden, Datentypen, Datenstrukturen) unterscheiden"
+    },
+    {
+     "id": "PB1-5-1-3-K4",
+     "stufe": 2,
+     "kurz": "das Prinzip der Modulgeschlossenheit erklären: Ein Modul erfüllt eine abgegrenzte Aufgabe und wird nur über seine Schnittstelle benutzt; solange die Schnittstelle gleich bleibt, lässt sich sein Inneres überarbeiten oder das ganze Modul austauschen, ohne dass der übrige Code davon berührt wird"
+    },
+    {
+     "id": "PB1-5-1-3-K5",
+     "stufe": 4,
+     "kurz": "begründen, warum ein gutes Modul eine hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und eine geringe Kopplung (wenig Abhängigkeit von anderen Modulen) hat: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul"
+    },
+    {
+     "id": "PB1-5-1-3-K6",
+     "stufe": 3,
+     "kurz": "aus einer Anforderungsbeschreibung die Merkmale bestimmen, nach denen eine Datenstruktur gewählt wird: ob die Anzahl der Daten feststeht oder sich laufend ändert, wie viele Daten es sind, ob über eine Position, einen Schlüssel oder in der Reihenfolge des Eingangs zugegriffen wird und welche Operation besonders schnell sein muss"
+    },
+    {
+     "id": "PB1-5-1-3-K7",
+     "stufe": 4,
+     "kurz": "begründen, welche Datenstruktur zu einer Anforderung passt: ein zweidimensionales Array bei fester, bekannter Anzahl und Zugriff über zwei Koordinaten, eine Warteschlange (oder doppelt verkettete Liste) bei wechselnder Anzahl und Abarbeitung in Eingangsreihenfolge, eine Hashtabelle bei vielen, selten geänderten Datensätzen, die schnell über einen eindeutigen Schlüssel gefunden werden sollen"
     }
    ]
   },
@@ -1811,6 +1866,57 @@
      "id": "PB1-5-1-4-K7",
      "stufe": 2,
      "kurz": "die 3-Schichten-Architektur einer Webanwendung beschreiben: Darstellung im Webserver bzw. Browser, Logik im Backend-Server, Daten in der Datenbank; die Webanwendung fragt beim Backend an, das die Daten aus der Datenbank holt und zurückliefert"
+    },
+    {
+     "id": "PB1-5-1-4-K8",
+     "stufe": 4,
+     "kurz": "den Einsatz eines Singletons beurteilen: sinnvoll, wenn eine Klasse nur ein einziges Objekt haben darf, etwa für eine zentrale Konfiguration oder eine aufwendig aufzubauende Ressource, die erst beim ersten Zugriff entsteht; nachteilig ist, dass es wie eine globale Variable wirkt, bei parallelen Threads eigens abgesichert werden muss und Klassen, die es benutzen, schwer isoliert zu testen sind"
+    },
+    {
+     "id": "PB1-5-1-4-K9",
+     "stufe": 4,
+     "kurz": "begründen, wann eine Factory Method passt: wenn der aufrufende Code Objekte benutzen soll, deren konkrete Klasse er nicht kennen muss oder die erst später hinzukommen, etwa in einem Framework; weil er nur mit den abstrakten Erzeuger- und Produktklassen arbeitet, bleibt er entkoppelt, und neue Produkte kommen ohne Eingriff in ihn hinzu"
+    },
+    {
+     "id": "PB1-5-1-4-K10",
+     "stufe": 4,
+     "kurz": "Vor- und Nachteile des Observer-Musters beurteilen: Subjekt und Beobachter sind lose gekoppelt, sodass sich beide unabhängig weiterentwickeln und neue Beobachter einfach anmelden lassen; dafür können Ketten von Aktualisierungen entstehen, nicht mehr gebrauchte Beobachter müssen abgemeldet werden, und jeder Beobachter erhält auch Änderungen, die ihn nicht betreffen"
+    }
+   ]
+  },
+  {
+   "id": "PB1-5-1-6",
+   "ordner": "PB1-5",
+   "block": "PB1-5-1",
+   "titel": "Architekturmuster: Schichten, MVC und ereignisgesteuerte Oberflächen",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.04.12",
+    "AP2b.04.12.4",
+    "AP2b.04.12.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-5-1-6-K1",
+     "stufe": 2,
+     "kurz": "Architekturmuster, Entwurfsmuster und Algorithmus unterscheiden: Ein Architekturmuster legt den Aufbau der ganzen Anwendung fest (z. B. Schichten, MVC), ein Entwurfsmuster löst ein wiederkehrendes Teilproblem im Detailentwurf (z. B. Observer), und ein Algorithmus ist eine eindeutige Handlungsvorschrift, während ein Muster nur ein anpassbarer Lösungsplan ist"
+    },
+    {
+     "id": "PB1-5-1-6-K2",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile einer Schichtenarchitektur erläutern: Jede Schicht spricht nur über eine festgelegte Schnittstelle mit der darunterliegenden, deshalb gibt es wenige Abhängigkeiten, Änderungen bleiben meist in einer Schicht und eine Schicht lässt sich austauschen; dafür ist sie langsamer, weil Daten durch mehrere Schichten gereicht und umgewandelt werden"
+    },
+    {
+     "id": "PB1-5-1-6-K3",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile von MVC erläutern: Mehrere Views zeigen dieselben Daten und bleiben automatisch auf demselben Stand, und Views lassen sich austauschen oder hinzufügen, ohne Model und Fachlogik anzufassen; dafür ist der Aufbau komplexer als eine einfache Oberfläche, und MVC sitzt meist innerhalb der Präsentationsschicht einer Schichtenarchitektur"
+    },
+    {
+     "id": "PB1-5-1-6-K4",
+     "stufe": 2,
+     "kurz": "erklären, wie eine grafische Oberfläche auf Benutzeraktionen reagiert: Ein Ereignisbehandler (Listener-Objekt oder Callback-Funktion) wird beim Bedienelement angemeldet, und die GUI-Bibliothek ruft ihn erst auf, wenn das Ereignis eintritt, etwa ein Klick; das ist eine Anwendung des Observer-Musters mit dem Bedienelement als Subjekt"
     }
    ]
   },

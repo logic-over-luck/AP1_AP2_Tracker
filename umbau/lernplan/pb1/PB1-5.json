@@ -91,13 +91,97 @@
         "katalog:AP2b.04.17.3",
         "beleg:2023S-PB1-A2-bb"
        ]
+      },
+      {
+       "id": "PB1-5-1-1-K6",
+       "text": "Du kannst erklären, welche geerbten Elemente eine Unterklasse direkt benutzen darf: public-Elemente überall, protected-Elemente auch in Unterklassen, private-Elemente nur in der eigenen Klasse – deshalb macht man Elemente, die Unterklassen brauchen, protected oder greift über öffentliche Getter und Setter zu.",
+       "kurz": "Sichtbarkeit geerbter Elemente",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.2-S186",
+        "buch:FS-3.5.3-S233"
+       ]
+      },
+      {
+       "id": "PB1-5-1-1-K7",
+       "text": "Du kannst Einfach- und Mehrfachvererbung unterscheiden: Eine Klasse hat eine bzw. mindestens zwei direkte Oberklassen; weil bei gleichnamigen geerbten Methoden oder Attributen unklar wird, welche gilt, erlauben Sprachen wie Java und C# Mehrfachvererbung nur über mehrere Interfaces, andere wie C++ oder Python auch direkt.",
+       "kurz": "Einfach- und Mehrfachvererbung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.2-S186",
+        "buch:FS-3.6.1-S253"
+       ]
+      },
+      {
+       "id": "PB1-5-1-1-K8",
+       "text": "Du kannst Überladen und Überschreiben unterscheiden: Beim Überladen hat eine Klasse mehrere Methoden gleichen Namens, die sich in Anzahl oder Datentyp der Parameter unterscheiden (ein anderer Rückgabetyp allein reicht nicht); beim Überschreiben setzt eine Unterklasse eine geerbte Methode mit gleicher Signatur neu um.",
+       "kurz": "Überladen gegen Überschreiben",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.2-S187",
+        "buch:FS-3.5.3-S234"
+       ]
+      },
+      {
+       "id": "PB1-5-1-1-K9",
+       "text": "Du kannst den Konstruktor einer Unterklasse erstellen, der zuerst den Konstruktor der Oberklasse aufruft (z. B. mit super), damit die geerbten Attribute belegt werden, und danach die eigenen Attribute setzt.",
+       "kurz": "Konstruktor der Unterklasse mit super",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-3.6.1-S254"
+       ]
+      },
+      {
+       "id": "PB1-5-1-1-K10",
+       "text": "Du kannst das Prinzip „Komposition vor Vererbung“ begründen: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet.",
+       "kurz": "Komposition vor Vererbung",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.1.4-S133"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-8-1-2",
       "AP1-8-3-2"
      ],
-     "hinweis": "Die Notation abstrakter Klassen und Interfaces im Klassendiagramm steht in PB1-4-1-2."
+     "hinweis": "Die Notation abstrakter Klassen und Interfaces im Klassendiagramm steht in PB1-4-1-2. Das Lehrbuch (FS 3.5.3) nennt noch, ein Element ohne Zugriffsmodifizierer sei automatisch private; richtig ist: In Java ist es dann im ganzen Paket sichtbar (package-private, im Klassendiagramm ~).",
+     "kuer": [
+      {
+       "text": "Beim Überschreiben bleiben Name und Parameterliste gleich und der Rückgabetyp passt zu dem der Oberklasse; die Sichtbarkeit darf gleich bleiben oder weiter werden (etwa protected → public), aber nie enger. Private Methoden der Oberklasse sieht die Unterklasse nicht und kann sie deshalb nicht überschreiben; über super kann die neue Fassung die alte mitbenutzen.",
+       "kurz": "Regeln beim Überschreiben",
+       "quellen": [
+        "buch:FS-3.3.2",
+        "buch:FS-3.5.3"
+       ],
+       "grund": "RK2: Regeln zum Überschreiben sind sprachspezifisch; der Kern steht in der Aussage Überladen gegen Überschreiben"
+      },
+      {
+       "text": "Ein Destruktor ist das Gegenstück zum Konstruktor: Er läuft als Letztes, bevor ein Objekt entfernt wird, etwa um eine Datei zu schließen oder Daten zu sichern. In Sprachen mit Garbage Collector (z. B. Java, C#, Python) wird der Speicher nicht mehr erreichbarer Objekte automatisch freigegeben, deshalb braucht man Destruktoren dort kaum und schließt Ressourcen besser ausdrücklich, etwa im finally-Block.",
+       "kurz": "Destruktor und Garbage Collector",
+       "quellen": [
+        "buch:FS-3.5.3",
+        "buch:FS-3.6.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Destruktor, Garbage Collector)"
+      },
+      {
+       "text": "SOLID fasst fünf Entwurfsprinzipien zusammen: Single Responsibility (jede Klasse eine Aufgabe), Open-Closed (offen für Erweiterung, geschlossen für Änderung – Neues kommt über neue Unterklassen oder Implementierungen), Liskov Substitution (ein Objekt der Unterklasse muss überall statt eines Objekts der Oberklasse funktionieren und darf deren Verhalten nicht einschränken), Interface Segregation (lieber mehrere kleine Interfaces als ein großes) und Dependency Inversion (Fachlogik und Technik hängen beide von Abstraktionen wie Interfaces ab statt direkt voneinander). Alle fünf zielen auf lose gekoppelte Klassen, die sich ohne Eingriff in getesteten Code erweitern lassen.",
+       "kurz": "Die fünf SOLID-Prinzipien",
+       "quellen": [
+        "buch:FS2-2.1.4"
+       ],
+       "grund": "RK2: SOLID-Prinzipien sind Unterthema von Vererbung, Interfaces und Polymorphie; das Akronym selbst hat keinen Katalog-Baustein (D8)"
+      },
+      {
+       "text": "Standardbibliotheken liefern fertige Datenstrukturen als Collections: Interfaces wie List, Set oder Map legen fest, welche Operationen es gibt, und mehrere Klassen setzen sie unterschiedlich um, etwa eine Map als Hashtabelle oder als sortierter Baum. Wer im eigenen Code nur das Interface als Typ verwendet, kann die Umsetzung später austauschen.",
+       "kurz": "Collection-Bibliotheken: Interfaces und Klassen",
+       "quellen": [
+        "buch:FS2-2.2.4"
+       ],
+       "grund": "RK2: Aufbau einer Collection-Bibliothek ist bibliotheksspezifisch"
+      }
+     ]
     },
     {
      "id": "PB1-5-1-2",
@@ -138,6 +222,25 @@
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17.5"
+       ]
+      },
+      {
+       "id": "PB1-5-1-2-K4",
+       "text": "Du kannst festlegen, wie ein Programm Eingaben aus Textfeldern verarbeitet: den Text vor dem Rechnen in eine Zahl umwandeln, eine fehlschlagende Umwandlung (Buchstaben, leeres Feld, Komma statt Punkt) als Ausnahme abfangen und dem Benutzer verständlich melden, statt das Programm abbrechen zu lassen.",
+       "kurz": "Eingaben umwandeln und Fehler abfangen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-3.5.4-S247",
+        "buch:FS-3.6.2-S261"
+       ]
+      },
+      {
+       "id": "PB1-5-1-2-K5",
+       "text": "Du kannst Fehlercodes als Rückgabewert und Ausnahmen vergleichen: Ein Fehlercode trägt wenig Information und muss nach jedem Aufruf abgefragt werden, sonst bleibt der Fehler unbemerkt; eine Ausnahme liefert Art und Meldung des Fehlers, wird bis zu einer behandelnden Stelle weitergereicht und hält den Normalablauf frei von Prüfabfragen.",
+       "kurz": "Fehlercode gegen Ausnahme",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.7.4-S563"
        ]
       }
      ],
@@ -187,7 +290,8 @@
        "kurz": "Modularisierung: Module mit klarer Schnittstelle",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2b.04.03.3"
+        "katalog:AP2b.04.03.3",
+        "buch:FS2-2.1.4-S133"
        ]
       },
       {
@@ -199,12 +303,95 @@
         "katalog:AP2b.04.04",
         "beleg:2024W-PB1-A3-a"
        ]
+      },
+      {
+       "id": "PB1-5-1-3-K4",
+       "text": "Du kannst das Prinzip der Modulgeschlossenheit erklären: Ein Modul erfüllt eine abgegrenzte Aufgabe und wird nur über seine Schnittstelle benutzt; solange die Schnittstelle gleich bleibt, lässt sich sein Inneres überarbeiten oder das ganze Modul austauschen, ohne dass der übrige Code davon berührt wird.",
+       "kurz": "Modulgeschlossenheit und Austauschbarkeit",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.1-S112"
+       ]
+      },
+      {
+       "id": "PB1-5-1-3-K5",
+       "text": "Du kannst begründen, warum ein gutes Modul eine hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und eine geringe Kopplung (wenig Abhängigkeit von anderen Modulen) hat: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul.",
+       "kurz": "Hohe Bindung, geringe Kopplung",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.1.1-S113",
+        "buch:FS2-1.2.1-S21"
+       ]
+      },
+      {
+       "id": "PB1-5-1-3-K6",
+       "text": "Du kannst aus einer Anforderungsbeschreibung die Merkmale bestimmen, nach denen eine Datenstruktur gewählt wird: ob die Anzahl der Daten feststeht oder sich laufend ändert, wie viele Daten es sind, ob über eine Position, einen Schlüssel oder in der Reihenfolge des Eingangs zugegriffen wird und welche Operation besonders schnell sein muss.",
+       "kurz": "Merkmale für die Wahl einer Datenstruktur",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.2.2-S144"
+       ]
+      },
+      {
+       "id": "PB1-5-1-3-K7",
+       "text": "Du kannst begründen, welche Datenstruktur zu einer Anforderung passt: ein zweidimensionales Array bei fester, bekannter Anzahl und Zugriff über zwei Koordinaten, eine Warteschlange (oder doppelt verkettete Liste) bei wechselnder Anzahl und Abarbeitung in Eingangsreihenfolge, eine Hashtabelle bei vielen, selten geänderten Datensätzen, die schnell über einen eindeutigen Schlüssel gefunden werden sollen.",
+       "kurz": "Begründete Wahl der Datenstruktur",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.2.2-S144",
+        "buch:FS2-2.2.2-S145",
+        "buch:FS2-2.2.2-S146"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-8-3-2"
      ],
-     "hinweis": "2024W-PB1-A3-a (Klassendiagramm aus einem Sachverhalt) zeichnet PB1-4-1-2; hier steht die Unterscheidung dahinter. Den Entwurf setzt der Stichpunkt Pseudocode um."
+     "hinweis": "2024W-PB1-A3-a (Klassendiagramm aus einem Sachverhalt) zeichnet PB1-4-1-2; hier steht die Unterscheidung dahinter. Den Entwurf setzt der Stichpunkt Pseudocode um.",
+     "kuer": [
+      {
+       "text": "Der Softwareentwurf baut auf den Anforderungen auf und ist unabhängig von der Programmiersprache: Erst legt der Architekturentwurf den Grobaufbau aus Subsystemen, Modulen bzw. Klassen und ihren Schnittstellen fest, dann der Detailentwurf je Modul Datenstrukturen, Datenmodell und Algorithmen (im Wasserfallmodell einmal, agil in jeder Iteration). Ergebnisse sind Modelle wie Klassendiagramm und ER-Modell, die Wahl des Datenbanksystems, die Schnittstellen zu vorhandenen Systemen und schon die Planung der Tests.",
+       "kurz": "Architektur- und Detailentwurf",
+       "quellen": [
+        "buch:FS2-1.2.1",
+        "buch:GS-5.5.3",
+        "buch:GS-5.4.1"
+       ],
+       "grund": "RK2: Architektur- und Detailentwurf sowie die Entwurfsergebnisse nennt kein Baustein; der Kern (Analyse gegen Entwurf) steht in PB1-5-1-3-K3"
+      },
+      {
+       "text": "Die Softwarearchitektur ist der Bauplan aus Komponenten und ihren Verbindungen; sie wird vor allem von Qualitätsanforderungen wie Wartbarkeit, Sicherheit und Performance bestimmt und lässt sich später nur mit großem Aufwand ändern. Merkmale einer guten Architektur sind neben Modularität und geringer Kopplung auch Einfachheit (je Aufgabe ein Modul), Vollständigkeit gegenüber den Anforderungen und die Möglichkeit, Teile parallel auszuführen.",
+       "kurz": "Softwarearchitektur und ihre Merkmale",
+       "quellen": [
+        "buch:FS2-1.2.1"
+       ],
+       "grund": "RK2: Architekturbegriff und Merkmalsliste ohne eigenen Katalog-Baustein"
+      },
+      {
+       "text": "Modularisierung wirkt auf mehreren Ebenen: Methode oder Funktion (genau eine Aufgabe), Klasse (das typische Modul der Objektorientierung) und Softwarekomponente (bündelt mehrere Klassen zu einem fachlichen Dienst). Eine Schnittstelle bietet nur so viel nach außen an wie nötig, weil das die Kopplung gering hält und weniger Testfälle erfordert.",
+       "kurz": "Modulebenen und schlanke Schnittstelle",
+       "quellen": [
+        "buch:FS2-2.1.1"
+       ],
+       "grund": "RK2: Begriffsdetail zur Modularisierung"
+      },
+      {
+       "text": "Clean Code heißt, Code so zu schreiben, dass andere ihn schnell verstehen und ändern können – mit Team-Konventionen, sprechenden Namen, benannten Konstanten statt „magischer Zahlen“, kleinen Funktionen mit wenigen Parametern und nur nötigen Kommentaren –, weil der größte Teil der Arbeit Änderungen an bestehendem Code sind. Refactoring verbessert die innere Struktur von Code (Namen, Aufteilung, doppelten Code), ohne sein Verhalten zu ändern; Tests sichern dabei ab, dass alles weiter funktioniert.",
+       "kurz": "Clean Code und Refactoring",
+       "quellen": [
+        "buch:FS2-2.1.4"
+       ],
+       "grund": "RK2: Clean Code und Refactoring sind Mittel zur Wartbarkeit, nicht das Merkmal selbst; die Praxisregeln haben keinen Katalog-Baustein (D8)"
+      },
+      {
+       "text": "Bekannte Faustregeln sind KISS (so einfach wie möglich), DRY (jede Information und Logik nur an einer Stelle, mehrfach gebrauchter Code in eine Funktion) und YAGNI (nur bauen, was jetzt verlangt ist, auch keine Optimierung auf Vorrat). Das Gesetz von Demeter (nur mit direkt bekannten Objekten zusammenarbeiten) und „Tell, don’t ask“ (einem Objekt sagen, was es tun soll, statt seine Daten abzufragen und außerhalb zu verarbeiten) halten die Kopplung gering.",
+       "kurz": "KISS, DRY, YAGNI und Demeter",
+       "quellen": [
+        "buch:FS2-2.1.4"
+       ],
+       "grund": "D8: KISS, DRY und YAGNI ohne Katalog-Baustein; Demeter und Tell, don’t ask sind Unterthema der Kopplung (RK2)"
+      }
+     ]
     },
     {
      "id": "PB1-5-1-4",
@@ -320,7 +507,8 @@
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.12.2",
-        "katalog:AP2b.04.12.4"
+        "katalog:AP2b.04.12.4",
+        "buch:FS2-1.4.3-S68"
        ]
       },
       {
@@ -332,6 +520,158 @@
         "katalog:AP2b.04.12",
         "beleg:2022W-PB1-A2-a"
        ]
+      },
+      {
+       "id": "PB1-5-1-4-K8",
+       "text": "Du kannst den Einsatz eines Singletons beurteilen: sinnvoll, wenn eine Klasse nur ein einziges Objekt haben darf, etwa für eine zentrale Konfiguration oder eine aufwendig aufzubauende Ressource, die erst beim ersten Zugriff entsteht; nachteilig ist, dass es wie eine globale Variable wirkt, bei parallelen Threads eigens abgesichert werden muss und Klassen, die es benutzen, schwer isoliert zu testen sind.",
+       "kurz": "Singleton: Einsatz und Nachteile",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.1.3-S128"
+       ]
+      },
+      {
+       "id": "PB1-5-1-4-K9",
+       "text": "Du kannst begründen, wann eine Factory Method passt: wenn der aufrufende Code Objekte benutzen soll, deren konkrete Klasse er nicht kennen muss oder die erst später hinzukommen, etwa in einem Framework; weil er nur mit den abstrakten Erzeuger- und Produktklassen arbeitet, bleibt er entkoppelt, und neue Produkte kommen ohne Eingriff in ihn hinzu.",
+       "kurz": "Factory Method: wann sie passt",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.1.3-S128"
+       ]
+      },
+      {
+       "id": "PB1-5-1-4-K10",
+       "text": "Du kannst Vor- und Nachteile des Observer-Musters beurteilen: Subjekt und Beobachter sind lose gekoppelt, sodass sich beide unabhängig weiterentwickeln und neue Beobachter einfach anmelden lassen; dafür können Ketten von Aktualisierungen entstehen, nicht mehr gebrauchte Beobachter müssen abgemeldet werden, und jeder Beobachter erhält auch Änderungen, die ihn nicht betreffen.",
+       "kurz": "Observer: Vor- und Nachteile",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.1.3-S131"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Ein Entwurfsmuster lohnt sich nur für ein Problem, das wirklich vorliegt, denn jedes bringt zusätzliche Klassen und eigene Nachteile mit – ein ohne Not eingesetztes Singleton etwa erschwert Tests und Skalierung. Anti-Patterns sind verbreitete, aber schädliche Lösungen, zum Beispiel das Gottobjekt (eine Klasse erledigt fast alles), immer neuer Code um alten herum oder kopierter statt gemeinsam genutzter Code.",
+       "kurz": "Muster nur bei Bedarf, Anti-Pattern",
+       "quellen": [
+        "buch:FS2-2.1.3"
+       ],
+       "grund": "RK2: Abwägung im Einzelfall; Anti-Pattern ohne Katalog-Baustein (D8)"
+      },
+      {
+       "text": "Das Adapter-Muster (Strukturmuster) macht eine vorhandene, nicht änderbare Klasse – etwa aus einer fremden Bibliothek – unter der Schnittstelle nutzbar, die das eigene Programm erwartet: Die Adapterklasse implementiert diese Schnittstelle und leitet die Aufrufe weiter, entweder an ein gehaltenes Objekt (Objektadapter) oder über Vererbung (Klassenadapter).",
+       "kurz": "Adapter als Strukturmuster",
+       "quellen": [
+        "buch:FS2-2.1.3"
+       ],
+       "grund": "RK2: Adapter ist kein im Katalog genanntes Muster; PB1-5-1-4-K2 verlangt nur ein weiteres Muster"
+      },
+      {
+       "text": "Das Observer-Muster gibt es in Varianten: Das Subjekt meldet nur, dass sich etwas geändert hat, und die Beobachter holen sich die Daten selbst (Push-Notification), es schickt die geänderten Daten gleich mit (Push-Update), oder die Beobachter fragen den Zustand ohne Meldung selbst ab (Pull).",
+       "kurz": "Push- und Pull-Varianten des Observers",
+       "quellen": [
+        "buch:FS2-2.1.3"
+       ],
+       "grund": "RK2: Push/Pull-Varianten sind Unterthema des Observers"
+      }
+     ]
+    },
+    {
+     "id": "PB1-5-1-6",
+     "titel": "Architekturmuster: Schichten, MVC und ereignisgesteuerte Oberflächen",
+     "ziel": "Architekturmuster von Entwurfsmustern und Algorithmen abgrenzen, Schichtenarchitektur und MVC mit Vor- und Nachteilen erläutern und die Ereignisbehandlung einer Oberfläche als Observer erklären.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.12",
+       "anteil": "Architekturmuster abgrenzen, Schichtenarchitektur"
+      },
+      {
+       "id": "AP2b.04.12.4",
+       "anteil": "Vor- und Nachteile von MVC"
+      },
+      {
+       "id": "AP2b.04.12.1",
+       "anteil": "Observer in der Ereignisbehandlung von Oberflächen"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-5-1-6-K1",
+       "text": "Du kannst Architekturmuster, Entwurfsmuster und Algorithmus unterscheiden: Ein Architekturmuster legt den Aufbau der ganzen Anwendung fest (z. B. Schichten, MVC), ein Entwurfsmuster löst ein wiederkehrendes Teilproblem im Detailentwurf (z. B. Observer), und ein Algorithmus ist eine eindeutige Handlungsvorschrift, während ein Muster nur ein anpassbarer Lösungsplan ist.",
+       "kurz": "Architekturmuster, Entwurfsmuster, Algorithmus",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.3-S126",
+        "buch:FS2-1.2.2-S24"
+       ]
+      },
+      {
+       "id": "PB1-5-1-6-K2",
+       "text": "Du kannst Vor- und Nachteile einer Schichtenarchitektur erläutern: Jede Schicht spricht nur über eine festgelegte Schnittstelle mit der darunterliegenden, deshalb gibt es wenige Abhängigkeiten, Änderungen bleiben meist in einer Schicht und eine Schicht lässt sich austauschen; dafür ist sie langsamer, weil Daten durch mehrere Schichten gereicht und umgewandelt werden.",
+       "kurz": "Schichtenarchitektur: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.2.2-S26"
+       ]
+      },
+      {
+       "id": "PB1-5-1-6-K3",
+       "text": "Du kannst Vor- und Nachteile von MVC erläutern: Mehrere Views zeigen dieselben Daten und bleiben automatisch auf demselben Stand, und Views lassen sich austauschen oder hinzufügen, ohne Model und Fachlogik anzufassen; dafür ist der Aufbau komplexer als eine einfache Oberfläche, und MVC sitzt meist innerhalb der Präsentationsschicht einer Schichtenarchitektur.",
+       "kurz": "MVC: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.2.2-S27"
+       ]
+      },
+      {
+       "id": "PB1-5-1-6-K4",
+       "text": "Du kannst erklären, wie eine grafische Oberfläche auf Benutzeraktionen reagiert: Ein Ereignisbehandler (Listener-Objekt oder Callback-Funktion) wird beim Bedienelement angemeldet, und die GUI-Bibliothek ruft ihn erst auf, wenn das Ereignis eintritt, etwa ein Klick; das ist eine Anwendung des Observer-Musters mit dem Bedienelement als Subjekt.",
+       "kurz": "Ereignisbehandlung per Listener als Observer",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.5.4-S242",
+        "buch:FS-3.6.2-S260",
+        "buch:FS2-1.4.2-S56"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "Architekturmuster lassen sich nach ihrem Einsatz ordnen: Strukturierung großer Systeme (Schichten), verteilte Systeme (Client-Server, Peer-to-Peer), interaktive Systeme (MVC, MVP) und anpassbare Systeme (z. B. Dependency Injection). Verteilt man die Schichten auf Client, Anwendungs- und Datenbankserver, skaliert die Anwendung besser, steht aber still, wenn ein Server ausfällt – deshalb plant man Redundanz ein.",
+       "kurz": "Musterbereiche und verteilte Schichten",
+       "quellen": [
+        "buch:FS2-1.2.2"
+       ],
+       "grund": "RK2: Musterbereiche und Verteilung der Schichten auf Server sind Unterthema"
+      },
+      {
+       "text": "Eine GUI-Anwendung läuft nicht wie ein Konsolenprogramm von oben nach unten durch: Das Hauptprogramm erzeugt Anwendungsobjekt und Fenster, zeigt es an und startet die Ereignisschleife, die bis zum Beenden auf Benutzerereignisse wartet und sie an die zuständigen Behandler weitergibt.",
+       "kurz": "Ereignisschleife einer GUI-Anwendung",
+       "quellen": [
+        "buch:FS2-1.4.2"
+       ],
+       "grund": "RK2: Ablauf einer GUI-Anwendung (Ereignisschleife) ist kein Muster"
+      },
+      {
+       "text": "In einer serviceorientierten Architektur (SOA) werden Geschäftsprozesse aus wiederverwendbaren, lose gekoppelten Diensten mit fest beschriebenen Schnittstellen zusammengesetzt, sodass neue Anwendungen schneller und günstiger aus vorhandenen Diensten entstehen.",
+       "kurz": "Serviceorientierte Architektur (SOA)",
+       "quellen": [
+        "buch:FS-1.1.1"
+       ],
+       "grund": "RK2: SOA ist Architekturstil ohne eigenen Baustein"
+      },
+      {
+       "text": "In Entwicklungsteams unterscheidet man Frontend-Entwicklung (Oberfläche im Browser oder in der App), Backend-Entwicklung (Fachlogik und Datenhaltung auf dem Server), Full-Stack-Entwicklung (beides) und DevOps (Entwicklung und Betrieb eng verzahnt); die Aufteilung folgt oft den Schichten der Anwendung.",
+       "kurz": "Entwicklerrollen von Frontend bis DevOps",
+       "quellen": [
+        "buch:GS-5.1.2"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Entwicklerrollen)"
       }
      ]
     },
@@ -678,8 +1018,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -688,7 +1028,21 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-3.3.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.5.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.5.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.6.1": "Lehrbuch Westermann „IT-Berufe“ FS 3.6.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.1.4": "Lehrbuch Westermann „IT-Berufe“ FS2 2.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.2.4": "Lehrbuch Westermann „IT-Berufe“ FS2 2.2.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.2.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.5.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.5.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.4.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.1.1": "Lehrbuch Westermann „IT-Berufe“ FS2 2.1.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.1.3": "Lehrbuch Westermann „IT-Berufe“ FS2 2.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.2.2": "Lehrbuch Westermann „IT-Berufe“ FS2 1.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.4.2": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.1.1": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.1.2": "Lehrbuch Westermann „IT-Berufe“ GS 5.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -800,6 +1154,186 @@
       "PB2"
      ],
      "notiz": "Algorithmen und Datenstrukturen wohnen in PB2"
+    },
+    {
+     "thema": "Beim Überschreiben bleiben Name und Parameterliste gleich und der Rückgabetyp passt zu dem der Oberklasse; die Sichtbark",
+     "quellen": [
+      "buch:FS-3.3.2",
+      "buch:FS-3.5.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Destruktor ist das Gegenstück zum Konstruktor: Er läuft als Letztes, bevor ein Objekt entfernt wird, etwa um eine Da",
+     "quellen": [
+      "buch:FS-3.5.3",
+      "buch:FS-3.6.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "SOLID fasst fünf Entwurfsprinzipien zusammen: Single Responsibility (jede Klasse eine Aufgabe), Open-Closed (offen für E",
+     "quellen": [
+      "buch:FS2-2.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Standardbibliotheken liefern fertige Datenstrukturen als Collections: Interfaces wie List, Set oder Map legen fest, welc",
+     "quellen": [
+      "buch:FS2-2.2.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Der Softwareentwurf baut auf den Anforderungen auf und ist unabhängig von der Programmiersprache: Erst legt der Architek",
+     "quellen": [
+      "buch:FS2-1.2.1",
+      "buch:GS-5.5.3",
+      "buch:GS-5.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Softwarearchitektur ist der Bauplan aus Komponenten und ihren Verbindungen; sie wird vor allem von Qualitätsanforder",
+     "quellen": [
+      "buch:FS2-1.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Modularisierung wirkt auf mehreren Ebenen: Methode oder Funktion (genau eine Aufgabe), Klasse (das typische Modul der Ob",
+     "quellen": [
+      "buch:FS2-2.1.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Clean Code heißt, Code so zu schreiben, dass andere ihn schnell verstehen und ändern können – mit Team-Konventionen, spr",
+     "quellen": [
+      "buch:FS2-2.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Bekannte Faustregeln sind KISS (so einfach wie möglich), DRY (jede Information und Logik nur an einer Stelle, mehrfach g",
+     "quellen": [
+      "buch:FS2-2.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Entwurfsmuster lohnt sich nur für ein Problem, das wirklich vorliegt, denn jedes bringt zusätzliche Klassen und eige",
+     "quellen": [
+      "buch:FS2-2.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Das Adapter-Muster (Strukturmuster) macht eine vorhandene, nicht änderbare Klasse – etwa aus einer fremden Bibliothek – ",
+     "quellen": [
+      "buch:FS2-2.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Das Observer-Muster gibt es in Varianten: Das Subjekt meldet nur, dass sich etwas geändert hat, und die Beobachter holen",
+     "quellen": [
+      "buch:FS2-2.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Architekturmuster lassen sich nach ihrem Einsatz ordnen: Strukturierung großer Systeme (Schichten), verteilte Systeme (C",
+     "quellen": [
+      "buch:FS2-1.2.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine GUI-Anwendung läuft nicht wie ein Konsolenprogramm von oben nach unten durch: Das Hauptprogramm erzeugt Anwendungso",
+     "quellen": [
+      "buch:FS2-1.4.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "In einer serviceorientierten Architektur (SOA) werden Geschäftsprozesse aus wiederverwendbaren, lose gekoppelten Dienste",
+     "quellen": [
+      "buch:FS-1.1.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "In Entwicklungsteams unterscheidet man Frontend-Entwicklung (Oberfläche im Browser oder in der App), Backend-Entwicklung",
+     "quellen": [
+      "buch:GS-5.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-5-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -867,6 +1401,67 @@
       "PB1-5-1-4-K6"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-5-1-1-K6",
+     "PB1-5-1-1-K7",
+     "PB1-5-1-1-K8",
+     "PB1-5-1-1-K9",
+     "PB1-5-1-1-K10",
+     "PB1-5-1-2-K4",
+     "PB1-5-1-2-K5",
+     "PB1-5-1-3-K4",
+     "PB1-5-1-3-K5",
+     "PB1-5-1-3-K6",
+     "PB1-5-1-3-K7",
+     "PB1-5-1-4-K8",
+     "PB1-5-1-4-K9",
+     "PB1-5-1-4-K10",
+     "PB1-5-1-6-K1",
+     "PB1-5-1-6-K2",
+     "PB1-5-1-6-K3",
+     "PB1-5-1-6-K4"
+    ],
+    "neue_stichpunkte": [
+     {
+      "id": "PB1-5-1-6",
+      "nach": "PB1-5-1-4",
+      "begruendung": "D5: PB1-5-1-4 hätte sonst 14 Aussagen (7 bestehende + 7 neue); die vier Architektur-Aussagen kommen hierher, die drei Muster-Beurteilungen bleiben in PB1-5-1-4 (10)."
+     }
+    ],
+    "d6": [
+     "PB1-5-1-3-K2",
+     "PB1-5-1-4-K6"
+    ],
+    "kuer": [
+     "PB1-5-1-1",
+     "PB1-5-1-1",
+     "PB1-5-1-1",
+     "PB1-5-1-1",
+     "PB1-5-1-3",
+     "PB1-5-1-3",
+     "PB1-5-1-3",
+     "PB1-5-1-3",
+     "PB1-5-1-3",
+     "PB1-5-1-4",
+     "PB1-5-1-4",
+     "PB1-5-1-4",
+     "PB1-5-1-6",
+     "PB1-5-1-6",
+     "PB1-5-1-6",
+     "PB1-5-1-6"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB1-5-1-1"
+    ]
    }
   ]
  }
