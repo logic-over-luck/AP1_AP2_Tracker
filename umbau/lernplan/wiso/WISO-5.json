@@ -141,7 +141,17 @@
       "AP1-7-1-4",
       "AP1-7-3-2"
      ],
-     "hinweis": "Schutzziele, technische und organisatorische Maßnahmen, BSI und IT-Grundschutz, Datenschutz (DSGVO), Schadsoftware, Phishing und sicheres mobiles Arbeiten kennst du aus AP1-7 (WISO.03.08 bis auf drei Punkte gedeckt, P47); hier steht nur, was WiSo darüber hinaus verlangt (Authentizität, zweites Ziel der DSGVO, BSI-Abgrenzung). Damit lösen sich 2021W-WISO-A25 bis A28 (Phishing erkennen und richtig reagieren: AP1-7-4-2; offenes WLAN nur mit VPN: AP1-7-4-3). Bildschirm sperren, eigene Passwörter, Updates und Vorfälle melden stehen in AP1-7-1-3, AP1-7-1-4 und AP1-7-4-3."
+     "hinweis": "Schutzziele, technische und organisatorische Maßnahmen, BSI und IT-Grundschutz, Datenschutz (DSGVO), Schadsoftware, Phishing und sicheres mobiles Arbeiten kennst du aus AP1-7 (WISO.03.08 bis auf drei Punkte gedeckt, P47); hier steht nur, was WiSo darüber hinaus verlangt (Authentizität, zweites Ziel der DSGVO, BSI-Abgrenzung). Damit lösen sich 2021W-WISO-A25 bis A28 (Phishing erkennen und richtig reagieren: AP1-7-4-2; offenes WLAN nur mit VPN: AP1-7-4-3). Bildschirm sperren, eigene Passwörter, Updates und Vorfälle melden stehen in AP1-7-1-3, AP1-7-1-4 und AP1-7-4-3.",
+     "kuer": [
+      {
+       "text": "Beim Nicknapping tritt ein Angreifer unter dem Namen, Nutzernamen oder Pseudonym einer bekannten Person auf, etwa eines Kollegen im Firmenchat, damit andere ihm vertrauen und Daten, Zugänge oder Geld herausgeben.",
+       "kurz": "Nicknapping als Masche",
+       "quellen": [
+        "buch:GS-4.1.4"
+       ],
+       "grund": "RK2: Einzelvariante des Social Engineering; das Prinzip steht in WISO-5-2-1-K3"
+      }
+     ]
     },
     {
      "id": "WISO-5-2-4",
@@ -191,7 +201,17 @@
        ]
       }
      ],
-     "hinweis": "Neuer Stichpunkt; die Aussagen standen vorher in WISO-5-2-1, der dadurch zu groß wurde (F3). Pflichtverletzungen und ihre arbeitsrechtlichen Folgen allgemein (Abmahnung, Kündigung, Verschwiegenheit) stehen in WISO-1-1-4; hier nur das Besondere sozialer Netzwerke."
+     "hinweis": "Neuer Stichpunkt; die Aussagen standen vorher in WISO-5-2-1, der dadurch zu groß wurde (F3). Pflichtverletzungen und ihre arbeitsrechtlichen Folgen allgemein (Abmahnung, Kündigung, Verschwiegenheit) stehen in WISO-1-1-4; hier nur das Besondere sozialer Netzwerke.",
+     "kuer": [
+      {
+       "text": "Beim Angler-Phishing geben sich Betrüger in sozialen Netzwerken als Kundenservice einer bekannten Marke aus, fangen Beschwerden ab und lenken Kunden auf gefälschte Konten oder Webseiten. Doxing heißt, gezielt personenbezogene Daten über eine Person oder Organisation zusammenzutragen und zu veröffentlichen, um sie bloßzustellen oder unter Druck zu setzen.",
+       "kurz": "Angler-Phishing und Doxing",
+       "quellen": [
+        "buch:GS-4.1.5"
+       ],
+       "grund": "RK2: Einzelvarianten; Social Engineering steht in WISO-5-2-1-K3, Phishing in AP1-7-4-2, Gefahren sozialer Netzwerke in WISO-5-2-4-K1"
+      }
+     ]
     },
     {
      "id": "WISO-5-2-2",
@@ -439,7 +459,17 @@
        ]
       }
      ],
-     "hinweis": "Die Merkmale des Allgemeinen Gleichbehandlungsgesetzes und die Benachteiligung nach dem AGG stehen in WISO-1-3-5; hier nur, was die Charta der Vielfalt anders macht. Die Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume (WISO.05.03.4 wiederholt WISO.04.04.1) stehen in WISO-4-1-2; hier nur der Zeithorizont bei IT-Lösungen."
+     "hinweis": "Die Merkmale des Allgemeinen Gleichbehandlungsgesetzes und die Benachteiligung nach dem AGG stehen in WISO-1-3-5; hier nur, was die Charta der Vielfalt anders macht. Die Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume (WISO.05.03.4 wiederholt WISO.04.04.1) stehen in WISO-4-1-2; hier nur der Zeithorizont bei IT-Lösungen.",
+     "kuer": [
+      {
+       "text": "Für den Einsatz von KI lassen sich ethische Grenzen aus den Menschenrechten ableiten: Ein KI-System darf Menschen nicht diskriminieren, ihre Freiheit und Sicherheit nicht durch Überwachung oder Fehlentscheidungen gefährden, niemanden allein aufgrund einer Prognose wie einen Schuldigen behandeln und die Meinungs- und Informationsfreiheit nicht einschränken, etwa durch heimliches Filtern von Inhalten.",
+       "kurz": "Ethische Grenzen beim KI-Einsatz",
+       "quellen": [
+        "buch:FS2-3.1.3"
+       ],
+       "grund": "RK2: ethische Fragen bei IT-Lösungen stehen in WISO-5-3-1-K3; Zusatz ist die KI-spezifische Ableitung aus den Menschenrechten"
+      }
+     ]
     },
     {
      "id": "WISO-5-3-2",
@@ -721,7 +751,7 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.8",
+  "regelwerk_version": "2.2",
   "stand": "2026-10-16",
   "hinweis": "WiSo-Ordner (UMBAU.md Schritt 6). ID-Erhalt wie AP1 (P15, P48). Inhalte früherer Räume werden mit baut_auf importiert (E2); WiSo-Bausteine, die ein früherer Raum schon lehrt, stehen in umbau/regeln/wiso-deckung.json (P47). Stufe der WiSo-Aufgaben nach Z3b (P46).",
   "kerntest": {
@@ -731,7 +761,10 @@
   },
   "hinweisquellen": {
    "pruefer:wiso-2026-10": "Unabhängige Prüfung WiSo vom 16.10.2026 (Berichte umbau/berichte/WISO-<n>-pruefer.md, Bilanz WISO-pruefer-bilanz.md): Kür-Vorschläge zum aktuellen Rechtsstand und zu üblichen Detailfragen; als Hinweisquelle zugelassen nach Entscheidung des Projektinhabers (P49, wie P30).",
-   "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte."
+   "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte.",
+   "buch:FS2-3.1.3": "Lehrbuch Westermann „IT-Berufe“ FS2 3.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-4.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-4.1.5": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-16",
@@ -748,6 +781,39 @@
       "WISO-5-2-2"
      ],
      "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "Für den Einsatz von KI lassen sich ethische Grenzen aus den Menschenrechten ableiten: Ein KI-System darf Menschen nicht ",
+     "quellen": [
+      "buch:FS2-3.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-5-3-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Beim Nicknapping tritt ein Angreifer unter dem Namen, Nutzernamen oder Pseudonym einer bekannten Person auf, etwa eines ",
+     "quellen": [
+      "buch:GS-4.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-5-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Beim Angler-Phishing geben sich Betrüger in sozialen Netzwerken als Kundenservice einer bekannten Marke aus, fangen Besc",
+     "quellen": [
+      "buch:GS-4.1.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-5-2-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -799,6 +865,23 @@
       "WISO-5-3-2-K3"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [],
+    "neue_stichpunkte": [],
+    "d6": [],
+    "kuer": [
+     "WISO-5-3-1",
+     "WISO-5-2-1",
+     "WISO-5-2-4"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": []
    }
   ]
  }

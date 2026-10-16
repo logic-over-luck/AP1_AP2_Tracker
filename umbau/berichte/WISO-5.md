@@ -27,6 +27,10 @@ Teilaufgaben: 2021W-WISO-A25, 2021W-WISO-A26, 2021W-WISO-A27, 2021W-WISO-A28, 20
 | K9 | Du kannst die beiden Ziele der DSGVO unterscheiden: den Schutz natürlicher Personen und ihrer Grundrechte bei der Verarbeitung personenbezogener Daten und den freien Verkehr dieser Daten im EU-Binnenmarkt durch ein einheitliches Recht, das in allen Mitgliedstaaten unmittelbar gilt; das BDSG ergänzt es nur. | 2 | katalog:WISO.03.08.2 |
 | K10 | Du kannst Aufgaben des BSI von denen anderer Stellen unterscheiden: Das BSI als Cybersicherheitsbehörde des Bundes warnt vor Sicherheitslücken, berät, setzt Standards, zertifiziert und schützt die Netze des Bundes; Bußgelder wegen Datenschutzverstößen verhängt die Datenschutzaufsicht (Landesdatenschutzbehörde, für Bundesbehörden der BfDI), Straftaten wie Erpressung durch Ransomware verfolgen Polizei und Staatsanwaltschaft. | 2 | katalog:WISO.03.08.4 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Beim Nicknapping tritt ein Angreifer unter dem Namen, Nutzernamen oder Pseudonym einer bekannten Person auf, etwa eines Kollegen im Firmenchat, damit andere ihm vertrauen und Daten, Zugänge oder Geld herausgeben. _(buch:GS-4.1.4)_
+
 _Hinweis:_ Schutzziele, technische und organisatorische Maßnahmen, BSI und IT-Grundschutz, Datenschutz (DSGVO), Schadsoftware, Phishing und sicheres mobiles Arbeiten kennst du aus AP1-7 (WISO.03.08 bis auf drei Punkte gedeckt, P47); hier steht nur, was WiSo darüber hinaus verlangt (Authentizität, zweites Ziel der DSGVO, BSI-Abgrenzung). Damit lösen sich 2021W-WISO-A25 bis A28 (Phishing erkennen und richtig reagieren: AP1-7-4-2; offenes WLAN nur mit VPN: AP1-7-4-3). Bildschirm sperren, eigene Passwörter, Updates und Vorfälle melden stehen in AP1-7-1-3, AP1-7-1-4 und AP1-7-4-3.
 
 #### WISO-5-2-4 Social Media und virtuelle Räume: Gefahren, Äußerungen über den Arbeitgeber, Kommunikation ohne direkten Kontakt (neu)
@@ -42,6 +46,10 @@ Teilaufgaben:
 | K1 | Du kannst Gefahren von Social Media für die IT-Sicherheit nennen: preisgegebene Informationen über Personen und Betrieb, gefälschte Profile, schädliche Links, übernommene Konten. | 1 | katalog:WISO.05.02.3 |
 | K2 | Du kannst die möglichen Folgen von Äußerungen über den eigenen Arbeitgeber in sozialen Netzwerken berücksichtigen, bevor du etwas veröffentlichst: Sachliche Kritik ist grundsätzlich von der Meinungsfreiheit gedeckt; Beleidigung, Geschäftsschädigung durch unwahre Behauptungen oder verratene Geschäftsgeheimnisse können Abmahnung, Kündigung, Schadensersatz oder eine Strafanzeige nach sich ziehen, auch bei Beiträgen in privaten Profilen oder geschlossenen Gruppen. | 3 | katalog:WISO.05.02.8 |
 | K3 | Du kannst Erfahrungen aus Chats, Foren oder Videokonferenzen reflektieren und beim eigenen Schreiben berücksichtigen, was dort anders ist als im direkten Gespräch: fehlende Mimik, dauerhaft gespeicherte Inhalte, unklare Identität des Gegenübers. | 3 | katalog:WISO.05.02.2 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Beim Angler-Phishing geben sich Betrüger in sozialen Netzwerken als Kundenservice einer bekannten Marke aus, fangen Beschwerden ab und lenken Kunden auf gefälschte Konten oder Webseiten. Doxing heißt, gezielt personenbezogene Daten über eine Person oder Organisation zusammenzutragen und zu veröffentlichen, um sie bloßzustellen oder unter Druck zu setzen. _(buch:GS-4.1.5)_
 
 _Hinweis:_ Neuer Stichpunkt; die Aussagen standen vorher in WISO-5-2-1, der dadurch zu groß wurde (F3). Pflichtverletzungen und ihre arbeitsrechtlichen Folgen allgemein (Abmahnung, Kündigung, Verschwiegenheit) stehen in WISO-1-1-4; hier nur das Besondere sozialer Netzwerke.
 
@@ -104,6 +112,10 @@ Teilaufgaben: 2022S-WISO-A29, 2022S-WISO-A30
 | K2 | Du kannst Gender-Neutralität erklären und ein Beispiel nennen: Sprache, Formulare und Software so gestalten, dass kein Geschlecht ausgeschlossen wird, etwa die Auswahl „divers“ und „keine Angabe“ neben männlich und weiblich oder „(m/w/d)“ in Stellenanzeigen. | 2 | katalog:WISO.05.03.2 |
 | K3 | Du kannst ethische Fragen bei IT-Lösungen an Beispielen erklären: Die Würde und Integrität aller direkt und indirekt Betroffenen, auch der Menschen, deren Daten nur verarbeitet werden, ist kurz-, mittel- und langfristig zu wahren, zum Beispiel keine heimliche Überwachung von Beschäftigten, keine Benachteiligung durch automatische Entscheidungen, barrierefreier Zugang und auf lange Sicht Energiebedarf und Elektroschrott der Lösung. | 2 | katalog:WISO.05.03.3, katalog:WISO.05.03.4 |
 | K6 | Du kannst die Charta der Vielfalt vom AGG unterscheiden: Sie ist eine freiwillige Selbstverpflichtung von Unternehmen für ein vorurteilsfreies Arbeitsumfeld (das AGG ist ein Gesetz) und nennt sieben Dimensionen: Alter, ethnische Herkunft und Nationalität, Geschlecht und geschlechtliche Identität, körperliche und geistige Fähigkeiten, Religion und Weltanschauung, sexuelle Orientierung und soziale Herkunft – nicht den Ausbildungsstand oder die Art des Abschlusses. | 2 | katalog:WISO.05.03.1, beleg:2022S-WISO-A29 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Für den Einsatz von KI lassen sich ethische Grenzen aus den Menschenrechten ableiten: Ein KI-System darf Menschen nicht diskriminieren, ihre Freiheit und Sicherheit nicht durch Überwachung oder Fehlentscheidungen gefährden, niemanden allein aufgrund einer Prognose wie einen Schuldigen behandeln und die Meinungs- und Informationsfreiheit nicht einschränken, etwa durch heimliches Filtern von Inhalten. _(buch:FS2-3.1.3)_
 
 _Hinweis:_ Die Merkmale des Allgemeinen Gleichbehandlungsgesetzes und die Benachteiligung nach dem AGG stehen in WISO-1-3-5; hier nur, was die Charta der Vielfalt anders macht. Die Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume (WISO.05.03.4 wiederholt WISO.04.04.1) stehen in WISO-4-1-2; hier nur der Zeithorizont bei IT-Lösungen.
 
@@ -203,11 +215,14 @@ Karten (49): 2 bleiben, 21 prüfen (Aussage angepasst), 23 umhängen (Aussage ve
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 1, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 4, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
 | Pflichtangaben in geschäftlichen E-Mails | pruefer:wiso-2026-10 | Kür | WISO-5-2-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Für den Einsatz von KI lassen sich ethische Grenzen aus den Menschenrechten ableiten: Ein KI-System darf Menschen nicht  | buch:FS2-3.1.3 | Kür | WISO-5-3-1 | Regelwerk v2.x, D8/RK1 |
+| Beim Nicknapping tritt ein Angreifer unter dem Namen, Nutzernamen oder Pseudonym einer bekannten Person auf, etwa eines  | buch:GS-4.1.4 | Kür | WISO-5-2-1 | Regelwerk v2.x, D8/RK1 |
+| Beim Angler-Phishing geben sich Betrüger in sozialen Netzwerken als Kundenservice einer bekannten Marke aus, fangen Besc | buch:GS-4.1.5 | Kür | WISO-5-2-4 | Regelwerk v2.x, D8/RK1 |
 
 ## Geschwister-Prüfung (R4)
 
