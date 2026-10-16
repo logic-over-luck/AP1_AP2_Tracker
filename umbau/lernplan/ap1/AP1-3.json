@@ -337,20 +337,13 @@
           "grenzen": [],
           "kuer": [
             {
-              "text": "Handelskalkulation vom Einkaufs- zum Verkaufspreis.",
-              "kurz": "Handelskalkulation vom Einkaufs- zum Verkaufspreis",
-              "quellen": [
-                "podcast:themen-ap1"
-              ],
-              "grund": "Belegt ist nur der Bezugspreis (AP1-3-2-2-K4); die Kalkulation bis zum Verkaufspreis steht weder im Katalog noch in einer Prüfung."
-            },
-            {
               "text": "Vollständige Handelskalkulation: vom Barverkaufspreis mit Kundenskonto zum Zielverkaufspreis und mit Kundenrabatt zum Listenverkaufspreis; Skonto und Rabatt rechnet man dabei vom höheren Endpreis aus (im Hundert).",
               "kurz": "Vom Barverkaufspreis zum Listenverkaufspreis",
               "quellen": [
+                "podcast:themen-ap1",
                 "buch:FS-4.4.1"
               ],
-              "grund": "D8: Thema aus dem Lehrbuch ohne Katalog-Baustein; vom Katalog nicht ausgeschlossen."
+              "grund": "D8: Pflicht ist die Kalkulation bis zum Barverkaufspreis (K9, Vorkalkulation); Kundenskonto und Kundenrabatt nennt kein Katalog-Baustein."
             },
             {
               "text": "Den Zuschlagssatz für Handlungskosten ermittelt ein Händler aus seinen Handlungskosten (alle Kosten außer dem Wareneinsatz) geteilt durch den Wareneinsatz, mal 100.",
@@ -479,9 +472,9 @@
             },
             {
               "id": "AP1-3-1-4-K8",
-              "text": "Du kannst begründen, warum sich das Ausnutzen von Skonto fast immer lohnt: Der Nachlass von meist 2 bis 3 % für eine nur wenige Tage oder Wochen frühere Zahlung entspricht auf das Jahr umgerechnet einem Zinssatz, der weit über den Zinsen eines Kredits liegt.",
+              "text": "Du kannst erklären, warum sich das Ausnutzen von Skonto fast immer lohnt: Der Nachlass von meist 2 bis 3 % für eine nur wenige Tage oder Wochen frühere Zahlung entspricht auf das Jahr umgerechnet einem Zinssatz, der weit über den Zinsen eines Kredits liegt.",
               "kurz": "Skontoausnutzung gegen Kreditzinsen",
-              "stufe": 4,
+              "stufe": 2,
               "herkunft": [
                 "buch:GS-2.8.2-S248"
               ]
@@ -542,8 +535,8 @@
             },
             {
               "id": "AP1-3-1-5-K5",
-              "text": "Du kannst die Wertschöpfung eines Unternehmens berechnen: Umsatz (netto), plus Bestandszunahme bzw. minus Bestandsabnahme an eigenen Erzeugnissen, minus zugekaufte Vorleistungen wie Material und Fremdleistungen, minus Abschreibungen.",
-              "kurz": "Wertschöpfung mit Bestandsänderung und Abschreibungen",
+              "text": "Du kannst die Nettowertschöpfung eines Unternehmens berechnen: Umsatz (netto) plus Bestandszunahme bzw. minus Bestandsabnahme an eigenen Erzeugnissen, minus zugekaufte Vorleistungen ergibt die Bruttowertschöpfung; zieht man davon die Abschreibungen ab, erhält man die Nettowertschöpfung.",
+              "kurz": "Brutto- und Nettowertschöpfung berechnen",
               "stufe": 3,
               "herkunft": [
                 "buch:GS-1.3.5-S82"
@@ -774,12 +767,22 @@
               "herkunft": [
                 "buch:GS-2.7.4-S243"
               ]
+            },
+            {
+              "id": "AP1-3-2-1-K9",
+              "text": "Du kannst Fälligkeits-, Raten- und Annuitätendarlehen unterscheiden: Beim Fälligkeitsdarlehen zahlt man laufend nur Zinsen und tilgt am Ende alles, beim Ratendarlehen bleibt die Tilgung gleich und die Rate sinkt, beim Annuitätendarlehen bleibt die Rate gleich und der Tilgungsanteil wächst; je später getilgt wird, desto mehr Zinsen fallen insgesamt an.",
+              "kurz": "Fälligkeits-, Raten- und Annuitätendarlehen",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.7.4-S243",
+                "buch:GS-2.7.4-S244"
+              ]
             }
           ],
           "grenzen": [
             {
-              "text": "Annuitätendarlehen und Effektivzins gehören nicht dazu.",
-              "begruendung": "G1: AP1.03.04.6 nennt einen „einfachen Kostenvergleich“; belegt ist das Ratendarlehen mit gleichbleibender Tilgung (2024H-A3-a), Puffer-Regeln greifen nicht.",
+              "text": "Der Effektivzins und Zinsrechnungen über das Ratendarlehen hinaus gehören nicht dazu.",
+              "begruendung": "G1: AP1.03.04.6 nennt einen „einfachen Kostenvergleich“; gerechnet wird das Ratendarlehen mit gleichbleibender Tilgung (2024H-A3-a), Puffer-Regeln greifen nicht. Die Darlehensarten selbst unterscheidest du in K9.",
               "katalog": [
                 "AP1.03.04.6",
                 "AP1.03.04.5"
@@ -794,15 +797,6 @@
                 "podcast:themen-ap1"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
-              "text": "Beim Fälligkeitsdarlehen zahlt man laufend nur Zinsen und tilgt am Ende alles, beim Ratendarlehen gleich hohe Tilgung mit sinkender Rate, beim Annuitätendarlehen gleich hohe Rate mit steigendem Tilgungsanteil. Je später getilgt wird, desto mehr Zinsen fallen insgesamt an.",
-              "kurz": "Fälligkeits-, Raten- und Annuitätendarlehen",
-              "quellen": [
-                "buch:GS-2.7.4",
-                "buch:FS-4.4.1"
-              ],
-              "grund": "D8/Grenze G1: Darlehensarten über das Ratendarlehen hinaus gehören nicht zum AP1-Kern."
             }
           ]
         },
@@ -1380,9 +1374,9 @@
             },
             {
               "id": "AP1-3-3-2-K8",
-              "text": "Du kannst begründen, welche Regelungen ein Vertrag über einen SaaS- oder anderen IT-Service über Leistung und Preis hinaus braucht: Leistungsgüte mit Verweis auf ein SLA, Haftung, Mitwirkungspflichten des Kunden, Datensicherung und Datenschutz mit Auftragsverarbeitung sowie Laufzeit und Kündigung mit Herausgabe und Löschung der Daten, weil die Daten des Kunden beim Anbieter liegen.",
+              "text": "Du kannst erklären, welche Regelungen ein Vertrag über einen SaaS- oder anderen IT-Service über Leistung und Preis hinaus braucht: Leistungsgüte mit Verweis auf ein SLA, Haftung, Mitwirkungspflichten des Kunden, Datensicherung und Datenschutz mit Auftragsverarbeitung sowie Laufzeit und Kündigung mit Herausgabe und Löschung der Daten, weil die Daten des Kunden beim Anbieter liegen.",
               "kurz": "IT-Service-Vertrag: Haftung, Datenschutz, Kündigung",
-              "stufe": 4,
+              "stufe": 2,
               "herkunft": [
                 "buch:FS-1.1.4-S28"
               ]
@@ -1562,11 +1556,12 @@
             },
             {
               "id": "AP1-3-3-3-K9",
-              "text": "Du kannst die Warenannahme in zwei Schritten beschreiben: Sofort in Anwesenheit des Überbringers wird äußerlich geprüft (Empfänger, Zahl der Packstücke, Schäden an der Verpackung) und ein Schaden vermerkt oder die Annahme verweigert; danach werden Art, Menge und Beschaffenheit mit Bestellung und Lieferschein verglichen und Mängel unverzüglich gemeldet.",
+              "text": "Du kannst die Warenannahme in zwei Schritten beschreiben: Sofort in Anwesenheit des Überbringers wird äußerlich geprüft (Empfänger, Zahl der Packstücke, Schäden an der Verpackung) und ein Schaden vermerkt oder die Annahme verweigert; danach werden Art, Menge und Beschaffenheit mit Bestellung und Lieferschein verglichen und Mängel unverzüglich gemeldet, weil die Ware unter Kaufleuten sonst als genehmigt gilt und der Lieferer spätere Mängelansprüche ablehnen kann.",
               "kurz": "Warenannahme in zwei Schritten",
               "stufe": 2,
               "herkunft": [
-                "buch:GS-2.10.1-S266"
+                "buch:GS-2.10.1-S266",
+                "buch:GS-2.10.1-S267"
               ]
             },
             {
@@ -2473,10 +2468,11 @@
             "podcast:pruefungsthemen",
             "podcast:themen-ap1"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-3-1-3"
-          ]
+            "AP1-3-1-3-K9"
+          ],
+          "notiz": "V2-Prüfung AP1-a Nr. 13: bis zum Barverkaufspreis Pflicht (K9); Kundenskonto und Kundenrabatt Kür"
         },
         {
           "thema": "Rabatt und Skonto, Rechnung prüfen, Preisnachlass",
@@ -2926,11 +2922,11 @@
             "buch:GS-2.7.4",
             "buch:FS-4.4.1"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-3-2-1"
+            "AP1-3-2-1-K9"
           ],
-          "notiz": "Regelwerk v2.x, D8/RK1"
+          "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung AP1-a Nr. 9: bisher Kür, jetzt Pflicht (AP1-3-2-1-K9)"
         },
         {
           "thema": "Eine Beschaffung wird nach was, wie viel, wann und wo geplant und läuft über Bezugsquellen ermitteln, Angebote einholen ",
@@ -3366,7 +3362,8 @@
           "AP1-3-4-1-K8",
           "AP1-3-4-2-K6",
           "AP1-3-4-3-K4",
-          "AP1-3-4-3-K5"
+          "AP1-3-4-3-K5",
+          "AP1-3-2-1-K9"
         ],
         "neue_stichpunkte": [],
         "d6": [
@@ -3389,7 +3386,6 @@
           "AP1-3-1-5",
           "AP1-3-1-5",
           "AP1-3-1-5",
-          "AP1-3-2-1",
           "AP1-3-2-2",
           "AP1-3-2-3",
           "AP1-3-2-4",
@@ -3409,7 +3405,17 @@
           "AP1-3-4-3",
           "AP1-3-4-3"
         ],
-        "grenzen_gestrichen": [],
+        "grenzen_gestrichen": [
+          {
+            "sp": "AP1-3-2-1",
+            "text": "Annuitätendarlehen und Effektivzins gehören nicht dazu.",
+            "katalog": [
+              "AP1.03.04.6",
+              "AP1.03.04.5"
+            ],
+            "grund": "D3: Teil „Annuitätendarlehen“ gestrichen (Tiefen-Grenze, GS-2.7.4 S. 243–244 im Kernabschnitt); Grenze gekürzt auf Effektivzins – V2-Prüfung AP1-a Nr. 9"
+          }
+        ],
         "filter": [],
         "umgehaengt": [],
         "hinweise": [
@@ -3424,6 +3430,16 @@
             "sp": "AP1-3-1-5",
             "text": "Kernprozesse und unterstützende Prozesse.",
             "grund": "jetzt Pflicht: AP1-3-1-5-K6"
+          },
+          {
+            "sp": "AP1-3-2-1",
+            "text": "Beim Fälligkeitsdarlehen zahlt man laufend nur Zinsen und tilgt am Ende alles, beim Ratendarlehen gleich hohe Tilgung mit sinkender Rate, beim Annuitätendarlehen gleich hohe Rate mit steigendem Tilgungsanteil. Je später getilgt wird, desto mehr Zinsen fallen insgesamt an.",
+            "grund": "jetzt Pflicht: AP1-3-2-1-K9 (V2-Prüfung AP1-a Nr. 9)"
+          },
+          {
+            "sp": "AP1-3-1-3",
+            "text": "Handelskalkulation vom Einkaufs- zum Verkaufspreis.",
+            "grund": "bis zum Barverkaufspreis jetzt Pflicht (AP1-3-1-3-K9); Rest mit der Buch-Kür „Vollständige Handelskalkulation“ zusammengeführt (V2-Prüfung AP1-a Nr. 13)"
           }
         ],
         "kuer_gekuerzt": [

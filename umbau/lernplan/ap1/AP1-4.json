@@ -130,7 +130,7 @@
             },
             {
               "id": "AP1-4-1-1-K10",
-              "text": "Du kannst Fat Client und Thin Client unterscheiden: Der Fat Client ist ein vollständiger Rechner, der vom eigenen Datenträger startet und Anwendungen lokal ausführt, der Thin Client hat oft keinen eigenen Massenspeicher und zeigt nur an, was auf dem Server läuft.",
+              "text": "Du kannst den Fat Client vom Thin Client unterscheiden: Er ist ein vollständiger Rechner mit eigenem Datenträger, führt Programme lokal aus und kann auch ohne Server weiterarbeiten.",
               "kurz": "Fat Client gegen Thin Client",
               "stufe": 2,
               "herkunft": [
@@ -200,147 +200,6 @@
             }
           ],
           "hinweis": "Das Lehrbuch nennt noch 4–8 GB Arbeitsspeicher für Desktop-PCs und mehr als 8 GB für Workstations; heute sind eher 8–16 GiB im Büro und 32–128 GiB und mehr in Workstations üblich."
-        },
-        {
-          "id": "AP1-4-1-2",
-          "titel": "Prozessor, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil",
-          "ziel": "Aufgaben und Kenngrößen der Komponenten kennen, Datenblätter vergleichen, die Verträglichkeit beurteilen und den Arbeitsspeicher prüfen.",
-          "gebiete": [
-            "G.AP1.02",
-            "G.AP1.03"
-          ],
-          "bausteine": [
-            {
-              "id": "AP1.03.01.2",
-              "anteil": "Hardwareprodukte am Arbeitsplatz (ohne Netzwerkkomponenten)"
-            },
-            {
-              "id": "AP1.03.03.1",
-              "anteil": "CPU, RAM, Grafikkarte"
-            },
-            {
-              "id": "AP1.04.05.1"
-            }
-          ],
-          "teilaufgaben": [
-            "2022F-A2-ga",
-            "2022F-A2-gb",
-            "2024H-A3-ba",
-            "2026H-A2-ba",
-            "2026H-A2-bb"
-          ],
-          "koennen": [
-            {
-              "id": "AP1-4-1-2-K1",
-              "text": "Du kannst die Aufgaben von CPU, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil erklären.",
-              "kurz": "Aufgaben der Hauptkomponenten im PC",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.03.01.2"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K2",
-              "text": "Du kannst Kenngrößen aus einem Datenblatt lesen und vergleichen, zum Beispiel Kernzahl und Taktfrequenz der CPU, Größe und Typ des Arbeitsspeichers.",
-              "kurz": "Kenngrößen aus dem Datenblatt",
-              "stufe": 2,
-              "herkunft": [
-                "katalog:AP1.03.03.1"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K3",
-              "text": "Du kannst beurteilen, ob ein Speicherriegel zu einem System passt: Die DDR-Generation muss gleich sein; bei unterschiedlichem Takt gilt der niedrigere.",
-              "kurz": "Speicherriegel: passt er zum System",
-              "stufe": 4,
-              "herkunft": [
-                "beleg:2024H-A3-ba",
-                "katalog:AP1.03.03.1"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K6",
-              "text": "Du kannst logische Prozessoren und Cache erklären: Ein Kern führt mit Hyper-Threading zwei Threads aus; der Cache ist ein schneller Zwischenspeicher, der Zugriffe auf langsameren Speicher spart.",
-              "kurz": "Logische Prozessoren und Cache",
-              "stufe": 2,
-              "herkunft": [
-                "beleg:2022F-A2-ga",
-                "beleg:2022F-A2-gb"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K7",
-              "text": "Du kannst die Aufgabe des Chipsatzes erklären: Er verbindet auf dem Mainboard den Prozessor mit Laufwerken, Steckplätzen und Anschlüssen und legt damit fest, wie viele USB-, SATA- und PCIe-Anschlüsse ein Mainboard bietet; was er nicht kann, lässt sich nur über Zusatzchips oder Erweiterungskarten nachrüsten.",
-              "kurz": "Chipsatz auf dem Mainboard",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.4.2-S152",
-                "buch:GS-2.4.3-S155"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K8",
-              "text": "Du kannst erklären, was ein Formfaktor festlegt und warum er für die Auswahl zählt: Er normt Größe, Befestigungspunkte und Lage der Anschlüsse, damit Mainboard, Gehäuse und Netzteil verschiedener Hersteller zusammenpassen; ein großes ATX-Board bietet viele Steckplätze, ein kompaktes Mini-ITX-Board passt in kleine Gehäuse, lässt sich aber kaum erweitern.",
-              "kurz": "Formfaktor: ATX gegen Mini-ITX",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.3.1-S142",
-                "buch:GS-2.4.2-S152",
-                "buch:GS-2.7.1-S231",
-                "buch:GS-2.4.6-S163"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K9",
-              "text": "Du kannst PCI Express erklären: Erweiterungskarten wie Grafik- oder Netzwerkkarten und NVMe-SSDs sind über eigene serielle Punkt-zu-Punkt-Leitungen angebunden; die Zahl der Lanes (x1, x4, x8, x16) bestimmt die Datenrate, eine kurze Karte passt auch in einen längeren Steckplatz, und der Steckplatz versorgt die Karte mit Strom.",
-              "kurz": "PCI Express und seine Lanes",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.4.5-S160",
-                "buch:GS-2.4.2-S153"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K10",
-              "text": "Du kannst die Auswahl eines Netzteils begründen: Leistung mit Reserve, weil der Wirkungsgrad bei mittlerer Last am höchsten ist und ein Netzteil an der Grenze heiß und laut wird; dazu passende Anschlüsse und Formfaktor, ein hoher Wirkungsgrad (80 PLUS), Schutzschaltungen gegen Überspannung, Überlast, Kurzschluss und Übertemperatur sowie aktive Kühlung mit Lüfter oder lautlose passive Kühlung für kleinere Leistungen.",
-              "kurz": "Netzteilauswahl: Leistung, Wirkungsgrad, Schutz",
-              "stufe": 4,
-              "herkunft": [
-                "buch:GS-2.4.6-S163",
-                "buch:GS-2.4.6-S164"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K11",
-              "text": "Du kannst integrierte und dedizierte Grafik unterscheiden: Die integrierte Grafik sitzt im Prozessor und teilt sich den Arbeitsspeicher, die dedizierte Grafikkarte hat eigenen Grafikspeicher (VRAM) und deutlich mehr Rechenleistung für 3D, Rendering, Videoschnitt und KI.",
-              "kurz": "Integrierte gegen dedizierte Grafik",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.7.1-S231"
-              ]
-            },
-            {
-              "id": "AP1-4-1-2-K12",
-              "text": "Du kannst Abwärts- und Aufwärtskompatibilität unterscheiden: Abwärtskompatibel ist Neues, das mit Älterem zusammenarbeitet (z. B. ein USB-3-Anschluss mit einem USB-2-Stick), aufwärtskompatibel ist Älteres, das mit Neuerem zurechtkommt (z. B. ein altes Programm, das Dateien einer neueren Version öffnet).",
-              "kurz": "Abwärts- gegen Aufwärtskompatibilität",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.1.4-S125"
-              ]
-            }
-          ],
-          "grenzen": [],
-          "kuer": [
-            {
-              "text": "Harvard-Architektur (getrennte Speicher für Befehle und Daten); Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
-              "kurz": "Harvard-Architektur, DDR-Datenrate und VRAM",
-              "quellen": [
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            }
-          ],
-          "hinweis": "Das Lehrbuch lässt den Arbeitsspeicher über den Chipsatz angebunden sein; in aktuellen PCs sitzt der Speichercontroller in der CPU, der Chipsatz bindet Laufwerke, weitere PCIe-Steckplätze und Anschlüsse an."
         },
         {
           "id": "AP1-4-1-8",
@@ -460,6 +319,147 @@
           "hinweis": "Das Lehrbuch gibt den Adressraum von 64 Bit zu klein an; richtig sind 2^64 Byte = 16 EiB (praktische Grenzen setzen Mainboard und Betriebssystem). Es beschreibt außerdem noch den Front Side Bus, den es in aktuellen PCs nicht mehr gibt, und bezieht das Mooresche Gesetz auf die Leistung mit 18 Monaten; gemeint ist die Transistorzahl je Chip, etwa alle zwei Jahre."
         },
         {
+          "id": "AP1-4-1-2",
+          "titel": "Prozessor, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil",
+          "ziel": "Aufgaben und Kenngrößen der Komponenten kennen, Datenblätter vergleichen, die Verträglichkeit beurteilen und den Arbeitsspeicher prüfen.",
+          "gebiete": [
+            "G.AP1.02",
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Hardwareprodukte am Arbeitsplatz (ohne Netzwerkkomponenten)"
+            },
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "CPU, RAM, Grafikkarte"
+            },
+            {
+              "id": "AP1.04.05.1"
+            }
+          ],
+          "teilaufgaben": [
+            "2022F-A2-ga",
+            "2022F-A2-gb",
+            "2024H-A3-ba",
+            "2026H-A2-ba",
+            "2026H-A2-bb"
+          ],
+          "koennen": [
+            {
+              "id": "AP1-4-1-2-K1",
+              "text": "Du kannst die Aufgaben von CPU, Mainboard, Arbeitsspeicher, Grafikkarte und Netzteil erklären.",
+              "kurz": "Aufgaben der Hauptkomponenten im PC",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.01.2"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K2",
+              "text": "Du kannst Kenngrößen aus einem Datenblatt lesen und vergleichen, zum Beispiel Kernzahl und Taktfrequenz der CPU, Größe und Typ des Arbeitsspeichers.",
+              "kurz": "Kenngrößen aus dem Datenblatt",
+              "stufe": 2,
+              "herkunft": [
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K3",
+              "text": "Du kannst beurteilen, ob ein Speicherriegel zu einem System passt: Die DDR-Generation muss gleich sein; bei unterschiedlichem Takt gilt der niedrigere.",
+              "kurz": "Speicherriegel: passt er zum System",
+              "stufe": 4,
+              "herkunft": [
+                "beleg:2024H-A3-ba",
+                "katalog:AP1.03.03.1"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K6",
+              "text": "Du kannst logische Prozessoren und Cache erklären: Ein Kern führt mit Hyper-Threading zwei Threads aus; der Cache ist ein schneller Zwischenspeicher, der Zugriffe auf langsameren Speicher spart.",
+              "kurz": "Logische Prozessoren und Cache",
+              "stufe": 2,
+              "herkunft": [
+                "beleg:2022F-A2-ga",
+                "beleg:2022F-A2-gb"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K7",
+              "text": "Du kannst die Aufgabe des Chipsatzes erklären: Er verbindet auf dem Mainboard den Prozessor mit Laufwerken, Steckplätzen und Anschlüssen und legt damit fest, wie viele USB-, SATA- und PCIe-Anschlüsse ein Mainboard bietet; was er nicht kann, lässt sich nur über Zusatzchips oder Erweiterungskarten nachrüsten.",
+              "kurz": "Chipsatz auf dem Mainboard",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.2-S152",
+                "buch:GS-2.4.3-S155"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K8",
+              "text": "Du kannst erklären, was ein Formfaktor festlegt und warum er für die Auswahl zählt: Er normt Größe, Befestigungspunkte und Lage der Anschlüsse, damit Mainboard, Gehäuse und Netzteil verschiedener Hersteller zusammenpassen; ein großes ATX-Board bietet viele Steckplätze, ein kompaktes Mini-ITX-Board passt in kleine Gehäuse, lässt sich aber kaum erweitern.",
+              "kurz": "Formfaktor: Normmaße und Auswahl",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.3.1-S142",
+                "buch:GS-2.4.2-S152",
+                "buch:GS-2.7.1-S231",
+                "buch:GS-2.4.6-S163"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K9",
+              "text": "Du kannst PCI Express erklären: Erweiterungskarten wie Grafik- oder Netzwerkkarten und NVMe-SSDs sind über eigene serielle Punkt-zu-Punkt-Leitungen angebunden; die Zahl der Lanes (x1, x4, x8, x16) bestimmt die Datenrate, eine kurze Karte passt auch in einen längeren Steckplatz, und der Steckplatz versorgt die Karte mit Strom.",
+              "kurz": "PCI Express und seine Lanes",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.5-S160",
+                "buch:GS-2.4.2-S153"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K10",
+              "text": "Du kannst die Auswahl eines Netzteils begründen: Leistung mit Reserve, weil der Wirkungsgrad bei mittlerer Last am höchsten ist und ein Netzteil an der Grenze heiß und laut wird; dazu passende Anschlüsse und Formfaktor, ein hoher Wirkungsgrad (80 PLUS), Schutzschaltungen gegen Überspannung, Überlast, Kurzschluss und Übertemperatur sowie aktive Kühlung mit Lüfter oder lautlose passive Kühlung für kleinere Leistungen.",
+              "kurz": "Netzteilauswahl: Leistung, Wirkungsgrad, Schutz",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.6-S163",
+                "buch:GS-2.4.6-S164"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K11",
+              "text": "Du kannst integrierte und dedizierte Grafik unterscheiden: Die integrierte Grafik sitzt im Prozessor und teilt sich den Arbeitsspeicher, die dedizierte Grafikkarte hat eigenen Grafikspeicher (VRAM) und deutlich mehr Rechenleistung für 3D, Rendering, Videoschnitt und KI.",
+              "kurz": "Integrierte gegen dedizierte Grafik",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.7.1-S231"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K12",
+              "text": "Du kannst Abwärts- und Aufwärtskompatibilität unterscheiden: Abwärtskompatibel ist Neues, das mit Älterem zusammenarbeitet (z. B. ein USB-3-Anschluss mit einem USB-2-Stick), aufwärtskompatibel ist Älteres, das mit Neuerem zurechtkommt (z. B. ein altes Programm, das Dateien einer neueren Version öffnet).",
+              "kurz": "Abwärts- gegen Aufwärtskompatibilität",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.1.4-S125"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Harvard-Architektur (getrennte Speicher für Befehle und Daten).",
+              "kurz": "Harvard-Architektur mit getrennten Speichern",
+              "quellen": [
+                "lernzettel:fi-de-2025"
+              ],
+              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ],
+          "hinweis": "Das Lehrbuch lässt den Arbeitsspeicher über den Chipsatz angebunden sein; in aktuellen PCs sitzt der Speichercontroller in der CPU, der Chipsatz bindet Laufwerke, weitere PCIe-Steckplätze und Anschlüsse an."
+        },
+        {
           "id": "AP1-4-1-7",
           "titel": "Leistung von Prozessor und Arbeitsspeicher beurteilen",
           "ziel": "Takt, Kerne, Turbo und TDP deuten, Engpässe begründen, Leistung über Benchmarks vergleichen und Arbeitsspeicher nach Menge, Bauform und ECC auswählen.",
@@ -569,9 +569,10 @@
               "text": "Die Datenrate von DDR-Speicher wird in MT/s angegeben (DDR überträgt zweimal je Takt, DDR5-4800 = 4.800 Millionen Transfers je Sekunde); die Latenz ist die Wartezeit bis zur Antwort, eine höhere Datenrate kann eine etwas höhere Latenz ausgleichen.",
               "kurz": "DDR-Datenrate in MT/s und Latenz",
               "quellen": [
-                "buch:GS-2.4.4"
+                "buch:GS-2.4.4",
+                "lernzettel:fi-de-2025"
               ],
-              "grund": "RK1: Datenblattdetails des Arbeitsspeichers (steht schon in der Kür an AP1-4-1-2)"
+              "grund": "RK1: Datenblattdetails des Arbeitsspeichers"
             }
           ]
         },
@@ -1185,7 +1186,7 @@
                 "podcast:themen-ap1",
                 "lernzettel:fi-de-2025"
               ],
-              "grund": "ZB.datendarstellung umfasst nur, was Prüfungen verlangt haben (G6: Belege plus Puffer); diese Themen sind weder belegt noch Puffer."
+              "grund": "D8/RK2: Oktalsystem und BCD nennt kein Katalog-Baustein; Fest- und Gleitkommazahlen sind Unterthemen der Datendarstellung (Gleitkomma nach IEEE 754 als Kür in AP1-4-2-5)."
             },
             {
               "text": "Dualzahlen mit Nachkommastellen: Die Stellen hinter dem Komma haben die Werte 2^-1 = 0,5, 2^-2 = 0,25 usw., z. B. 1011,11 (dual) = 11,75.",
@@ -1225,6 +1226,10 @@
             {
               "id": "ZB.datendarstellung",
               "anteil": "Zeichencodierung (ASCII, Unicode) und Ganzzahlen"
+            },
+            {
+              "id": "AP1.03.03.4.1",
+              "anteil": "Datenmengen digitalisierter Texte: Bytes je Zeichen und je Zahl"
             }
           ],
           "teilaufgaben": [],
@@ -2408,8 +2413,10 @@
           ],
           "ring": "Kür",
           "wo": [
-            "AP1-4-1-2"
-          ]
+            "AP1-4-1-2",
+            "AP1-4-1-7"
+          ],
+          "notiz": "V2-Prüfung AP1-a Nr. 26: VRAM Pflicht (AP1-4-1-2-K11), DDR-Datenrate Kür in AP1-4-1-7"
         },
         {
           "thema": "Wärmeleitpaste, CPU-Einbau",
@@ -3320,8 +3327,8 @@
           },
           {
             "id": "AP1-4-1-8",
-            "nach": "AP1-4-1-2",
-            "begruendung": "D5: AP1-4-1-2 hätte mit allen Buch-Aussagen 25 Aussagen; Rechnerprinzip als eigener Stichpunkt"
+            "nach": "AP1-4-1-1",
+            "begruendung": "D5: AP1-4-1-2 hätte mit allen Buch-Aussagen 25 Aussagen; Rechnerprinzip als eigener Stichpunkt; F5: Grundlagen vor AP1-4-1-2 (V2-Prüfung AP1-a Nr. 29)"
           },
           {
             "id": "AP1-4-2-5",
@@ -3408,6 +3415,12 @@
             "vorher": "Oktalsystem, BCD, Fest- und Gleitkommazahlen; Unicode und UTF-8 neben ASCII.",
             "nachher": "Oktalsystem, BCD, Fest- und Gleitkommazahlen.",
             "grund": "Unicode und UTF-8 jetzt Pflicht (AP1-4-2-5-K3)"
+          },
+          {
+            "sp": "AP1-4-1-2",
+            "vorher": "Harvard-Architektur (getrennte Speicher für Befehle und Daten); Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
+            "nachher": "Harvard-Architektur (getrennte Speicher für Befehle und Daten).",
+            "grund": "VRAM jetzt Pflicht (AP1-4-1-2-K11); DDR-Datenrate in der Kür von AP1-4-1-7 zusammengeführt (V2-Prüfung AP1-a Nr. 26)"
           }
         ]
       }

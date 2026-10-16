@@ -218,6 +218,7 @@
               "herkunft": [
                 "buch:FS-3.1.1-S151",
                 "buch:FS2-4.1.1-S255",
+                "buch:FS2-4.1.1-S256",
                 "buch:GS-5.3.1-S508"
               ]
             }
@@ -484,16 +485,7 @@
               ]
             }
           ],
-          "grenzen": [
-            {
-              "text": "Teamsituationen analysieren und Konflikte im Team lösen gehören nicht dazu.",
-              "begruendung": "G3: AP1.01.01.4 und AP1.01.01.5 verlangen nur „kennen“ (Stufe 1).",
-              "katalog": [
-                "AP1.01.01.4",
-                "AP1.01.01.5"
-              ]
-            }
-          ],
+          "grenzen": [],
           "kuer": [
             {
               "text": "Fehlerkultur, sachbezogenes Verhandeln (Harvard-Konzept) und Arbeitsformen wie Gruppenarbeit oder Pair Programming.",
@@ -517,7 +509,7 @@
               "quellen": [
                 "buch:GS-2.5.1"
               ],
-              "grund": "D8: kein Katalog-Baustein; Konflikte lösen laut Grenze nicht Pflicht"
+              "grund": "RK2: Konfliktlösung ist ein Unterthema der Teamentwicklung (AP1.01.01.4 nennt die Phasen der Teambildung); die frühere Grenze ist nach D3 gestrichen."
             }
           ]
         }
@@ -613,8 +605,8 @@
             },
             {
               "id": "AP1-1-2-1-K7",
-              "text": "Du kannst die Gliederungsarten eines Projektstrukturplans unterscheiden: funktionsorientiert nach Tätigkeiten oder Abteilungen, objektorientiert nach den Bestandteilen des Ergebnisses, phasenorientiert nach den Projektphasen.",
-              "kurz": "Gliederungsarten eines Projektstrukturplans",
+              "text": "Du kannst die Gliederungsarten eines Projektstrukturplans mit je einem Vorteil unterscheiden: funktionsorientiert nach Tätigkeiten oder Abteilungen (die Arbeitspakete lassen sich den Verantwortlichen leicht zuordnen), objektorientiert nach den Bestandteilen des Ergebnisses (klar abgegrenzte Verantwortungsbereiche), phasenorientiert nach den Projektphasen (systematisches Vorgehen Schritt für Schritt, besonders bei Entwicklungsprojekten).",
+              "kurz": "Gliederungsarten des PSP und ihre Vorteile",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-2.5.3-S218"
@@ -870,12 +862,12 @@
           "grenzen": [],
           "kuer": [
             {
-              "text": "Methoden der Ursachenanalyse wie die 5-Why-Methode.",
-              "kurz": "Ursachenanalyse mit der 5-Why-Methode",
+              "text": "Ein Meilenstein ist zugleich ein Entscheidungspunkt: Dort wird nicht nur das Zwischenergebnis geprüft, sondern auch, ob das Projekt noch Aussicht auf Erfolg hat – es kann fortgesetzt, angepasst oder abgebrochen werden.",
+              "kurz": "Meilenstein als Entscheidungspunkt",
               "quellen": [
-                "podcast:themen-ap1"
+                "buch:GS-2.5.3"
               ],
-              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+              "grund": "RK1/RK2: Vertiefung zu K1 ohne eigenen Katalog-Baustein, als Kür"
             }
           ]
         }
@@ -1173,17 +1165,10 @@
           "grenzen": [],
           "kuer": [
             {
-              "text": "Problem Management: wiederkehrende Störungen auf eine gemeinsame Ursache untersuchen (Problem, bekannter Fehler).",
-              "kurz": "Problem Management bei wiederkehrenden Störungen",
-              "quellen": [
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
-            {
               "text": "Methoden der Ursachenanalyse: 5-Why (so lange nach dem Warum fragen, bis statt des Symptoms die Ursache sichtbar ist), Ist/Ist-nicht-Analyse nach Kepner-Tregoe (für Was, Wo, Wann und Wie viel vergleichen, wo der Fehler auftritt und wo nicht – auch im Kundengespräch) und Ishikawa-Diagramm (mögliche Ursachen nach Kategorien wie Hardware, Software, Netzwerk und Mensch ordnen und einzeln prüfen). Nach dem Pareto-Prinzip erklärt ein kleiner Teil der Ursachen den Großteil der Fälle (etwa 20 zu 80), deshalb deckt eine Lösungsdatenbank zuerst die häufigsten Fehlerbilder ab.",
               "kurz": "Ursachenanalyse: 5-Why, Kepner-Tregoe, Ishikawa, Pareto",
               "quellen": [
+                "podcast:themen-ap1",
                 "buch:FS-1.3.1",
                 "buch:FS-1.4.3"
               ],
@@ -1254,15 +1239,6 @@
               "herkunft": [
                 "beleg:2025H-A2-bb"
               ]
-            },
-            {
-              "id": "AP1-1-3-3-K6",
-              "text": "Du kannst begründen, warum eine KI nur so gute Ergebnisse liefert wie ihre Trainingsdaten: Sind die Beispiele, aus denen sie gelernt hat, lückenhaft, veraltet oder einseitig, übernimmt sie diese Fehler und Verzerrungen in ihre Antworten.",
-              "kurz": "Abhängigkeit der KI von Trainingsdaten",
-              "stufe": 4,
-              "herkunft": [
-                "buch:FS2-3.4.1-S246"
-              ]
             }
           ],
           "grenzen": [],
@@ -1275,6 +1251,14 @@
                 "buch:GS-4.1.2"
               ],
               "grund": "D8: kein Katalog-Baustein (katalog false)"
+            },
+            {
+              "text": "Eine KI lernt aus Beispielen (Trainingsdaten) und übernimmt deren Lücken, veraltete Angaben und Einseitigkeiten (Bias) in ihre Ergebnisse; bei der Auswahl einer KI-Lösung zählt deshalb auch, mit welchen Daten sie trainiert wurde.",
+              "kurz": "Abhängigkeit der KI von Trainingsdaten",
+              "quellen": [
+                "buch:FS2-3.4.1"
+              ],
+              "grund": "RK4: Kapitel 3 des Bands FS2 gehört zu Lernfeld 10c (Daten- und Prozessanalyse); Grenzen und Risiken der KI stehen für die Prüfung in K3. Bis zur V2-Prüfung Pflicht als AP1-1-3-3-K6."
             }
           ]
         }
@@ -1426,7 +1410,7 @@
             },
             {
               "id": "AP1-1-4-2-K5",
-              "text": "Du kannst eine Einweisung oder Schulung wie ein kleines Projekt planen: Ziel und Zielgruppe, Inhalte, Termin und Ablauf, Verantwortliche sowie benötigte Räume, Geräte und Unterlagen.",
+              "text": "Du kannst eine Einweisung oder Schulung wie ein kleines Projekt planen: Ziel und Teilnehmerkreis klären, Inhalte und Ablauf festlegen, Termin und Zuständige bestimmen und die nötige Ausstattung wie Raum, Geräte und Unterlagen bereitstellen.",
               "kurz": "Einweisung oder Schulung als kleines Projekt",
               "stufe": 3,
               "herkunft": [
@@ -1435,9 +1419,9 @@
             },
             {
               "id": "AP1-1-4-2-K6",
-              "text": "Du kannst begründen, warum die Funktion eines eingerichteten Systems bei Inbetriebnahme und Abnahme mit Belegen wie Testergebnissen, Messwerten, Fotos oder Screenshots im Protokoll festgehalten wird: Von der Abnahme hängt meist die Zahlung ab, danach muss der Kunde Mängel nachweisen, und ab der Inbetriebnahme trägt der Betreiber die Verantwortung für den Betrieb.",
+              "text": "Du kannst erklären, warum die Funktion eines eingerichteten Systems bei Inbetriebnahme und Abnahme mit Belegen wie Testergebnissen, Messwerten, Fotos oder Screenshots im Protokoll festgehalten wird: Von der Abnahme hängt meist die Zahlung ab, das Protokoll belegt den Zustand bei der Übergabe, und ab der Inbetriebnahme trägt der Betreiber die Verantwortung für den Betrieb.",
               "kurz": "Belege im Abnahmeprotokoll: warum sie zählen",
-              "stufe": 4,
+              "stufe": 2,
               "herkunft": [
                 "buch:FS-2.5.4-S137",
                 "buch:GS-3.6.2-S369"
@@ -1675,8 +1659,8 @@
               "grund": "RK2/G4: Normnummern und integriertes Managementsystem höchstens Kür"
             },
             {
-              "text": "Bausteine des Total Quality Management: Null-Fehler-Prinzip (fehlerhafte Teile werden sofort aufgehalten und nicht weitergegeben), 5-Why-Methode, Kaizen (ständige Verbesserung in kleinen Schritten) und Qualitätszirkel (Beschäftigte untersuchen mit einem Moderator regelmäßig ihren Arbeitsbereich und setzen Verbesserungen selbst um).",
-              "kurz": "Null-Fehler-Prinzip, 5-Why und Kaizen",
+              "text": "Bausteine des Total Quality Management: Null-Fehler-Prinzip (fehlerhafte Teile werden sofort aufgehalten und nicht weitergegeben), Kaizen (ständige Verbesserung in kleinen Schritten) und Qualitätszirkel (Beschäftigte untersuchen mit einem Moderator regelmäßig ihren Arbeitsbereich und setzen Verbesserungen selbst um).",
+              "kurz": "Null-Fehler-Prinzip, Kaizen und Qualitätszirkel",
               "quellen": [
                 "buch:GS-1.3.3"
               ],
@@ -2379,7 +2363,8 @@
       "buch:GS-5.4.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:GS-1.3.3": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:GS-1.3.4": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-      "buch:GS-4.1.2": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+      "buch:GS-4.1.2": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS2-3.4.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -2676,8 +2661,9 @@
           ],
           "ring": "Kür",
           "wo": [
-            "AP1-1-2-3"
-          ]
+            "AP1-1-3-2"
+          ],
+          "notiz": "V2-Prüfung AP1-a Nr. 26: Kür mit der Buch-Kür in AP1-1-3-2 zusammengeführt"
         },
         {
           "thema": "EPK",
@@ -2775,10 +2761,12 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-1-3-2"
-          ]
+            "AP1-1-3-2-K8",
+            "AP1-1-3-2-K9"
+          ],
+          "notiz": "V2-Prüfung AP1-a Nr. 26: bisher Kür, jetzt Pflicht (AP1-1-3-2-K8, AP1-1-3-2-K9)"
         },
         {
           "thema": "Kommunikationsarten, Deeskalation, 4-Ohren-Modell, Eisbergmodell",
@@ -3327,7 +3315,7 @@
           "notiz": "Regelwerk v2.x, D8/RK1"
         },
         {
-          "thema": "Bausteine des Total Quality Management: Null-Fehler-Prinzip (fehlerhafte Teile werden sofort aufgehalten und nicht weitergegeben), 5-",
+          "thema": "Bausteine des Total Quality Management: Null-Fehler-Prinzip (fehlerhafte Teile werden sofort aufgehalten und nicht weite",
           "quellen": [
             "buch:GS-1.3.3"
           ],
@@ -3347,6 +3335,28 @@
             "AP1-1-3-3"
           ],
           "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Eine KI lernt aus Beispielen (Trainingsdaten) und übernimmt deren Lücken, veraltete Angaben und Einseitigkeiten (Bias) i",
+          "quellen": [
+            "buch:FS2-3.4.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-1-3-3"
+          ],
+          "notiz": "Regelwerk v2.x, RK4; V2-Prüfung AP1-a Nr. 4: bisher Pflicht AP1-1-3-3-K6"
+        },
+        {
+          "thema": "Ein Meilenstein ist zugleich ein Entscheidungspunkt: Dort wird nicht nur das Zwischenergebnis geprüft, sondern auch, ob ",
+          "quellen": [
+            "buch:GS-2.5.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-1-2-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung AP1-a Nr. 23"
         }
       ]
     },
@@ -3628,7 +3638,6 @@
           "AP1-1-4-2-K6",
           "AP1-1-4-3-K7",
           "AP1-1-1-2-K7",
-          "AP1-1-3-3-K6",
           "AP1-1-1-3-K7",
           "AP1-1-1-3-K8",
           "AP1-1-5-1-K7",
@@ -3678,9 +3687,21 @@
           "AP1-1-2-1",
           "AP1-1-5-1",
           "AP1-1-5-1",
-          "AP1-1-3-3"
+          "AP1-1-3-3",
+          "AP1-1-3-3",
+          "AP1-1-2-3"
         ],
-        "grenzen_gestrichen": [],
+        "grenzen_gestrichen": [
+          {
+            "sp": "AP1-1-1-4",
+            "text": "Teamsituationen analysieren und Konflikte im Team lösen gehören nicht dazu.",
+            "katalog": [
+              "AP1.01.01.4",
+              "AP1.01.01.5"
+            ],
+            "grund": "D3: reine Tiefen-Grenze (G3); das Buch behandelt Teamkonflikte im Kernabschnitt (GS-1.5.1 S. 109, GS-2.5.1 S. 210) – V2-Prüfung AP1-a Nr. 7"
+          }
+        ],
         "filter": [],
         "umgehaengt": [
           "GS-2.7.4#3"
@@ -3689,6 +3710,32 @@
           "AP1-1-3-2",
           "AP1-1-3-1",
           "AP1-1-3-3"
+        ],
+        "aussagen_gestrichen": [
+          {
+            "id": "AP1-1-3-3-K6",
+            "grund": "V2-Prüfung AP1-a Nr. 4: zur Kür (RK4 fachrichtung); ID nicht wiederverwenden"
+          }
+        ],
+        "kuer_gestrichen": [
+          {
+            "sp": "AP1-1-2-3",
+            "text": "Methoden der Ursachenanalyse wie die 5-Why-Methode.",
+            "grund": "doppelt: mit der Kür „Methoden der Ursachenanalyse“ in AP1-1-3-2 zusammengeführt (V2-Prüfung AP1-a Nr. 26)"
+          },
+          {
+            "sp": "AP1-1-3-2",
+            "text": "Problem Management: wiederkehrende Störungen auf eine gemeinsame Ursache untersuchen (Problem, bekannter Fehler).",
+            "grund": "jetzt Pflicht: AP1-1-3-2-K8, AP1-1-3-2-K9 (V2-Prüfung AP1-a Nr. 26)"
+          }
+        ],
+        "kuer_gekuerzt": [
+          {
+            "sp": "AP1-1-5-1",
+            "vorher": "Bausteine des Total Quality Management: Null-Fehler-Prinzip (fehlerhafte Teile werden sofort aufgehalten und nicht weitergegeben), 5-Why-Methode, Kaizen (ständige Verbesserung in kleinen Schritten) und Qualitätszirkel (Beschäftigte untersuchen mit einem Moderator regelmäßig ihren Arbeitsbereich und setzen Verbesserungen selbst um).",
+            "nachher": "Bausteine des Total Quality Management: Null-Fehler-Prinzip (fehlerhafte Teile werden sofort aufgehalten und nicht weitergegeben), Kaizen (ständige Verbesserung in kleinen Schritten) und Qualitätszirkel (Beschäftigte untersuchen mit einem Moderator regelmäßig ihren Arbeitsbereich und setzen Verbesserungen selbst um).",
+            "grund": "5-Why-Methode steht in der Kür von AP1-1-3-2 (V2-Prüfung AP1-a Nr. 26)"
+          }
         ]
       }
     ]

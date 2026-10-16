@@ -5,16 +5,16 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 124,
-  "koennen": 838,
+  "koennen": 842,
   "quellen": {
-   "AP1-1.json": "f44b738a0a186332",
-   "AP1-2.json": "f352c903bb991acd",
-   "AP1-3.json": "6e9d9a6ed6434e93",
-   "AP1-4.json": "f261112a6bf388f8",
-   "AP1-5.json": "b1d107e9a01312cb",
-   "AP1-6.json": "c95a037a7a176656",
-   "AP1-7.json": "e9decad1522248c2",
-   "AP1-8.json": "4738dff3a64a3dc0"
+   "AP1-1.json": "f7d43baa0712500e",
+   "AP1-2.json": "7ecf98f6145d2629",
+   "AP1-3.json": "f569819be5c340cd",
+   "AP1-4.json": "df392630d6723a5f",
+   "AP1-5.json": "eb8a22e05168a396",
+   "AP1-6.json": "0fd2ca06b8d15e89",
+   "AP1-7.json": "dc11126a3cb84397",
+   "AP1-8.json": "cef7ed8355ebd115"
   }
  },
  "stichpunkte": [
@@ -256,7 +256,7 @@
     {
      "id": "AP1-1-2-1-K7",
      "stufe": 2,
-     "kurz": "die Gliederungsarten eines Projektstrukturplans unterscheiden: funktionsorientiert nach Tätigkeiten oder Abteilungen, objektorientiert nach den Bestandteilen des Ergebnisses, phasenorientiert nach den Projektphasen"
+     "kurz": "die Gliederungsarten eines Projektstrukturplans mit je einem Vorteil unterscheiden: funktionsorientiert nach Tätigkeiten oder Abteilungen (die Arbeitspakete lassen sich den Verantwortlichen leicht zuordnen), objektorientiert nach den Bestandteilen des Ergebnisses (klar abgegrenzte Verantwortungsbereiche), phasenorientiert nach den Projektphasen (systematisches Vorgehen Schritt für Schritt, besonders bei Entwicklungsprojekten)"
     }
    ]
   },
@@ -520,11 +520,6 @@
      "id": "AP1-1-3-3-K5",
      "stufe": 2,
      "kurz": "Argumente für eine KI-gestützte Prüfung von Routineaufgaben beschreiben, zum Beispiel bei der Rechnungsprüfung: schneller, weniger Übertragungsfehler, Auffälligkeiten werden markiert"
-    },
-    {
-     "id": "AP1-1-3-3-K6",
-     "stufe": 4,
-     "kurz": "begründen, warum eine KI nur so gute Ergebnisse liefert wie ihre Trainingsdaten: Sind die Beispiele, aus denen sie gelernt hat, lückenhaft, veraltet oder einseitig, übernimmt sie diese Fehler und Verzerrungen in ihre Antworten"
     }
    ]
   },
@@ -598,12 +593,12 @@
     {
      "id": "AP1-1-4-2-K5",
      "stufe": 3,
-     "kurz": "eine Einweisung oder Schulung wie ein kleines Projekt planen: Ziel und Zielgruppe, Inhalte, Termin und Ablauf, Verantwortliche sowie benötigte Räume, Geräte und Unterlagen"
+     "kurz": "eine Einweisung oder Schulung wie ein kleines Projekt planen: Ziel und Teilnehmerkreis klären, Inhalte und Ablauf festlegen, Termin und Zuständige bestimmen und die nötige Ausstattung wie Raum, Geräte und Unterlagen bereitstellen"
     },
     {
      "id": "AP1-1-4-2-K6",
-     "stufe": 4,
-     "kurz": "begründen, warum die Funktion eines eingerichteten Systems bei Inbetriebnahme und Abnahme mit Belegen wie Testergebnissen, Messwerten, Fotos oder Screenshots im Protokoll festgehalten wird: Von der Abnahme hängt meist die Zahlung ab, danach muss der Kunde Mängel nachweisen, und ab der Inbetriebnahme trägt der Betreiber die Verantwortung für den Betrieb"
+     "stufe": 2,
+     "kurz": "erklären, warum die Funktion eines eingerichteten Systems bei Inbetriebnahme und Abnahme mit Belegen wie Testergebnissen, Messwerten, Fotos oder Screenshots im Protokoll festgehalten wird: Von der Abnahme hängt meist die Zahlung ab, das Protokoll belegt den Zustand bei der Übergabe, und ab der Inbetriebnahme trägt der Betreiber die Verantwortung für den Betrieb"
     }
    ]
   },
@@ -817,7 +812,7 @@
     {
      "id": "AP1-2-1-1-K6",
      "stufe": 2,
-     "kurz": "Marktformen nach der Zahl der Anbieter und der Nachfrager unterscheiden: Angebotsmonopol (ein Anbieter, viele Nachfrager), Nachfragemonopol (ein Nachfrager, viele Anbieter), Angebots- und Nachfrageoligopol (wenige auf einer Seite), zweiseitiges Monopol (je einer auf beiden Seiten) und Polypol (viele auf beiden Seiten); die Marktmacht liegt bei der Seite mit wenigen Teilnehmern"
+     "kurz": "Marktformen auch nach der Zahl der Nachfrager unterscheiden: Nachfragemonopol (ein Nachfrager, viele Anbieter), Nachfrageoligopol (wenige Nachfrager) und zweiseitiges Monopol (je ein Anbieter und ein Nachfrager); die Marktmacht liegt bei der Seite mit wenigen Teilnehmern"
     }
    ]
   },
@@ -1096,6 +1091,11 @@
      "id": "AP1-2-2-4-K6",
      "stufe": 2,
      "kurz": "erklären, wie lange ein Anbieter an sein Angebot gebunden ist: unter Anwesenden und am Telefon nur während des Gesprächs, unter Abwesenden so lange, wie unter gewöhnlichen Umständen mit einer Antwort zu rechnen ist, bei einer gesetzten Frist bis zu deren Ende; Klauseln wie „freibleibend“ heben die Bindung auf"
+    },
+    {
+     "id": "AP1-2-2-4-K7",
+     "stufe": 2,
+     "kurz": "den Ablauf eines Beratungsgesprächs beschreiben: vorbereiten, das Gespräch eröffnen, den Bedarf mit offenen Fragen und aktivem Zuhören ermitteln, wenige passende Lösungen mit ihrem Nutzen für den Kunden vorstellen, Einwände behandeln und abschließen und das Gespräch danach nachbereiten"
     }
    ]
   },
@@ -1276,8 +1276,8 @@
     },
     {
      "id": "AP1-2-4-1-K10",
-     "stufe": 3,
-     "kurz": "Umsatz und Gewinn als ökonomische Ziele berechnen: Der Umsatz ist der Absatz (verkaufte Menge oder abgerechnete Stunden) mal Nettopreis, also ohne Umsatzsteuer und nach Abzug von Rabatten; der Gewinn ist, was von den Erträgen nach Abzug aller Aufwendungen bleibt"
+     "stufe": 2,
+     "kurz": "erklären, wie Umsatz und Gewinn als ökonomische Ziele zustande kommen: Der Umsatz ist der Absatz (verkaufte Menge oder abgerechnete Stunden) mal Nettopreis, also ohne Umsatzsteuer und nach Abzug von Rabatten; der Gewinn ist, was von den Erträgen nach Abzug aller Aufwendungen bleibt"
     },
     {
      "id": "AP1-2-4-1-K11",
@@ -1321,7 +1321,7 @@
     {
      "id": "AP1-2-4-2-K7",
      "stufe": 2,
-     "kurz": "die Matrix-Projektorganisation beschreiben: Die Mitarbeiter bleiben in ihrer Abteilung und arbeiten mit einem Teil ihrer Zeit im Projekt, die Projektleitung gibt fachliche, die Abteilungsleitung disziplinarische Weisungen; das ist flexibel, führt aber leicht zu Konflikten um Arbeitszeit und Prioritäten"
+     "kurz": "das Prinzip der Matrixorganisation erklären: Eine Stelle hat zwei gleichberechtigte Weisungslinien, etwa fachlich von einer Projekt- oder Produktleitung und disziplinarisch von der Abteilungsleitung; das macht flexibel, führt aber leicht zu Konflikten um Arbeitszeit und Prioritäten"
     }
    ]
   },
@@ -1693,8 +1693,8 @@
     },
     {
      "id": "AP1-3-1-4-K8",
-     "stufe": 4,
-     "kurz": "begründen, warum sich das Ausnutzen von Skonto fast immer lohnt: Der Nachlass von meist 2 bis 3 % für eine nur wenige Tage oder Wochen frühere Zahlung entspricht auf das Jahr umgerechnet einem Zinssatz, der weit über den Zinsen eines Kredits liegt"
+     "stufe": 2,
+     "kurz": "erklären, warum sich das Ausnutzen von Skonto fast immer lohnt: Der Nachlass von meist 2 bis 3 % für eine nur wenige Tage oder Wochen frühere Zahlung entspricht auf das Jahr umgerechnet einem Zinssatz, der weit über den Zinsen eines Kredits liegt"
     },
     {
      "id": "AP1-3-1-4-K9",
@@ -1733,7 +1733,7 @@
     {
      "id": "AP1-3-1-5-K5",
      "stufe": 3,
-     "kurz": "die Wertschöpfung eines Unternehmens berechnen: Umsatz (netto), plus Bestandszunahme bzw. minus Bestandsabnahme an eigenen Erzeugnissen, minus zugekaufte Vorleistungen wie Material und Fremdleistungen, minus Abschreibungen"
+     "kurz": "die Nettowertschöpfung eines Unternehmens berechnen: Umsatz (netto) plus Bestandszunahme bzw. minus Bestandsabnahme an eigenen Erzeugnissen, minus zugekaufte Vorleistungen ergibt die Bruttowertschöpfung; zieht man davon die Abschreibungen ab, erhält man die Nettowertschöpfung"
     },
     {
      "id": "AP1-3-1-5-K6",
@@ -1820,6 +1820,11 @@
      "id": "AP1-3-2-1-K8",
      "stufe": 4,
      "kurz": "beurteilen, ob eine IT-Anschaffung besser auf Kredit gekauft oder geleast wird, auch über die Kosten hinaus: Beim Kreditkauf wird das Unternehmen Eigentümer, führt das Gerät in der Bilanz und muss meist Sicherheiten stellen; beim Leasing bleibt der Leasinggeber Eigentümer, zusätzliche Sicherheiten entfallen meist, die Raten sind fest planbar, und nach Vertragsende lässt sich leicht auf neue Geräte wechseln"
+    },
+    {
+     "id": "AP1-3-2-1-K9",
+     "stufe": 2,
+     "kurz": "Fälligkeits-, Raten- und Annuitätendarlehen unterscheiden: Beim Fälligkeitsdarlehen zahlt man laufend nur Zinsen und tilgt am Ende alles, beim Ratendarlehen bleibt die Tilgung gleich und die Rate sinkt, beim Annuitätendarlehen bleibt die Rate gleich und der Tilgungsanteil wächst; je später getilgt wird, desto mehr Zinsen fallen insgesamt an"
     }
    ]
   },
@@ -2090,8 +2095,8 @@
     },
     {
      "id": "AP1-3-3-2-K8",
-     "stufe": 4,
-     "kurz": "begründen, welche Regelungen ein Vertrag über einen SaaS- oder anderen IT-Service über Leistung und Preis hinaus braucht: Leistungsgüte mit Verweis auf ein SLA, Haftung, Mitwirkungspflichten des Kunden, Datensicherung und Datenschutz mit Auftragsverarbeitung sowie Laufzeit und Kündigung mit Herausgabe und Löschung der Daten, weil die Daten des Kunden beim Anbieter liegen"
+     "stufe": 2,
+     "kurz": "erklären, welche Regelungen ein Vertrag über einen SaaS- oder anderen IT-Service über Leistung und Preis hinaus braucht: Leistungsgüte mit Verweis auf ein SLA, Haftung, Mitwirkungspflichten des Kunden, Datensicherung und Datenschutz mit Auftragsverarbeitung sowie Laufzeit und Kündigung mit Herausgabe und Löschung der Daten, weil die Daten des Kunden beim Anbieter liegen"
     },
     {
      "id": "AP1-3-3-2-K9",
@@ -2159,7 +2164,7 @@
     {
      "id": "AP1-3-3-3-K9",
      "stufe": 2,
-     "kurz": "die Warenannahme in zwei Schritten beschreiben: Sofort in Anwesenheit des Überbringers wird äußerlich geprüft (Empfänger, Zahl der Packstücke, Schäden an der Verpackung) und ein Schaden vermerkt oder die Annahme verweigert; danach werden Art, Menge und Beschaffenheit mit Bestellung und Lieferschein verglichen und Mängel unverzüglich gemeldet"
+     "kurz": "die Warenannahme in zwei Schritten beschreiben: Sofort in Anwesenheit des Überbringers wird äußerlich geprüft (Empfänger, Zahl der Packstücke, Schäden an der Verpackung) und ein Schaden vermerkt oder die Annahme verweigert; danach werden Art, Menge und Beschaffenheit mit Bestellung und Lieferschein verglichen und Mängel unverzüglich gemeldet, weil die Ware unter Kaufleuten sonst als genehmigt gilt und der Lieferer spätere Mängelansprüche ablehnen kann"
     },
     {
      "id": "AP1-3-3-3-K10",
@@ -2357,7 +2362,57 @@
     {
      "id": "AP1-4-1-1-K10",
      "stufe": 2,
-     "kurz": "Fat Client und Thin Client unterscheiden: Der Fat Client ist ein vollständiger Rechner, der vom eigenen Datenträger startet und Anwendungen lokal ausführt, der Thin Client hat oft keinen eigenen Massenspeicher und zeigt nur an, was auf dem Server läuft"
+     "kurz": "den Fat Client vom Thin Client unterscheiden: Er ist ein vollständiger Rechner mit eigenem Datenträger, führt Programme lokal aus und kann auch ohne Server weiterarbeiten"
+    }
+   ]
+  },
+  {
+   "id": "AP1-4-1-8",
+   "ordner": "AP1-4",
+   "block": "AP1-4-1",
+   "titel": "Wie ein Computer arbeitet: EVA, von Neumann, Prozessor und Speicher",
+   "gebiete": [
+    "G.AP1.02"
+   ],
+   "bausteine": [
+    "AP1.03.01.2",
+    "AP1.03.03.1"
+   ],
+   "koennen": [
+    {
+     "id": "AP1-4-1-8-K1",
+     "stufe": 2,
+     "kurz": "das EVA-Prinzip erklären: Eingabegeräte erfassen Daten, die Zentraleinheit aus Prozessor und Arbeitsspeicher verarbeitet sie nach einem Programm, Ausgabegeräte geben das Ergebnis aus; alle Geräte außerhalb der Zentraleinheit sind Peripherie, externe Speicher wie USB-Stick oder externe SSD dienen der Ein- und Ausgabe zugleich"
+    },
+    {
+     "id": "AP1-4-1-8-K2",
+     "stufe": 2,
+     "kurz": "den Aufbau eines Rechners nach von Neumann erklären: Rechenwerk, Steuerwerk, ein gemeinsamer Speicher für Befehle und Daten, ein Bussystem und ein Ein-/Ausgabewerk; weil das Programm wie Daten im Speicher liegt, wird der Rechner durch Laden eines anderen Programms umprogrammiert, ohne die Hardware zu ändern"
+    },
+    {
+     "id": "AP1-4-1-8-K3",
+     "stufe": 2,
+     "kurz": "erklären, wie ein Prozessor ein Programm abarbeitet: Das Steuerwerk holt die Befehle nacheinander aus dem Speicher, entschlüsselt sie und lässt sie vom Rechenwerk (ALU) ausführen; die Speicherverwaltung (MMU) übersetzt Adressen für den Zugriff auf den Arbeitsspeicher, der Cache hält häufig gebrauchte Befehle und Daten bereit"
+    },
+    {
+     "id": "AP1-4-1-8-K4",
+     "stufe": 2,
+     "kurz": "erklären, warum Programme beim Start in den Arbeitsspeicher geladen und Daten auf einem Datenträger gespeichert werden: Der Prozessor arbeitet nur mit Befehlen und Daten im Arbeitsspeicher bzw. Cache, der Arbeitsspeicher ist aber flüchtig und verliert ohne Strom seinen Inhalt, während Flash-Speicher (z. B. für das UEFI), SSD und HDD ihn dauerhaft behalten"
+    },
+    {
+     "id": "AP1-4-1-8-K5",
+     "stufe": 2,
+     "kurz": "erklären, warum zwischen Prozessor und Arbeitsspeicher mehrere Cache-Stufen liegen: Je näher ein Speicher am Rechenkern ist, desto schneller, kleiner und teurer ist er – L1 im Kern fast so schnell wie der Prozessor, L2 größer und langsamer, L3 von allen Kernen geteilt –, und so überbrücken die Stufen den großen Geschwindigkeitsunterschied zum Arbeitsspeicher"
+    },
+    {
+     "id": "AP1-4-1-8-K6",
+     "stufe": 2,
+     "kurz": "erklären, warum ein 32-Bit-System höchstens 4 GiB Arbeitsspeicher adressieren kann (2^32 Byte) und für mehr Speicher ein 64-Bit-Betriebssystem mit 64-Bit-Treibern nötig ist"
+    },
+    {
+     "id": "AP1-4-1-8-K7",
+     "stufe": 2,
+     "kurz": "RISC-Prozessoren wie ARM von den x86-Prozessoren klassischer PCs unterscheiden: kleiner, einfacher Befehlssatz und geringe Leistungsaufnahme, daher in Smartphones, Tablets, eingebetteten Systemen und zunehmend in Notebooks und Servern; Betriebssystem, Programme und Treiber müssen für die Architektur übersetzt sein"
     }
    ]
   },
@@ -2425,56 +2480,6 @@
      "id": "AP1-4-1-2-K12",
      "stufe": 2,
      "kurz": "Abwärts- und Aufwärtskompatibilität unterscheiden: Abwärtskompatibel ist Neues, das mit Älterem zusammenarbeitet (z. B. ein USB-3-Anschluss mit einem USB-2-Stick), aufwärtskompatibel ist Älteres, das mit Neuerem zurechtkommt (z. B. ein altes Programm, das Dateien einer neueren Version öffnet)"
-    }
-   ]
-  },
-  {
-   "id": "AP1-4-1-8",
-   "ordner": "AP1-4",
-   "block": "AP1-4-1",
-   "titel": "Wie ein Computer arbeitet: EVA, von Neumann, Prozessor und Speicher",
-   "gebiete": [
-    "G.AP1.02"
-   ],
-   "bausteine": [
-    "AP1.03.01.2",
-    "AP1.03.03.1"
-   ],
-   "koennen": [
-    {
-     "id": "AP1-4-1-8-K1",
-     "stufe": 2,
-     "kurz": "das EVA-Prinzip erklären: Eingabegeräte erfassen Daten, die Zentraleinheit aus Prozessor und Arbeitsspeicher verarbeitet sie nach einem Programm, Ausgabegeräte geben das Ergebnis aus; alle Geräte außerhalb der Zentraleinheit sind Peripherie, externe Speicher wie USB-Stick oder externe SSD dienen der Ein- und Ausgabe zugleich"
-    },
-    {
-     "id": "AP1-4-1-8-K2",
-     "stufe": 2,
-     "kurz": "den Aufbau eines Rechners nach von Neumann erklären: Rechenwerk, Steuerwerk, ein gemeinsamer Speicher für Befehle und Daten, ein Bussystem und ein Ein-/Ausgabewerk; weil das Programm wie Daten im Speicher liegt, wird der Rechner durch Laden eines anderen Programms umprogrammiert, ohne die Hardware zu ändern"
-    },
-    {
-     "id": "AP1-4-1-8-K3",
-     "stufe": 2,
-     "kurz": "erklären, wie ein Prozessor ein Programm abarbeitet: Das Steuerwerk holt die Befehle nacheinander aus dem Speicher, entschlüsselt sie und lässt sie vom Rechenwerk (ALU) ausführen; die Speicherverwaltung (MMU) übersetzt Adressen für den Zugriff auf den Arbeitsspeicher, der Cache hält häufig gebrauchte Befehle und Daten bereit"
-    },
-    {
-     "id": "AP1-4-1-8-K4",
-     "stufe": 2,
-     "kurz": "erklären, warum Programme beim Start in den Arbeitsspeicher geladen und Daten auf einem Datenträger gespeichert werden: Der Prozessor arbeitet nur mit Befehlen und Daten im Arbeitsspeicher bzw. Cache, der Arbeitsspeicher ist aber flüchtig und verliert ohne Strom seinen Inhalt, während Flash-Speicher (z. B. für das UEFI), SSD und HDD ihn dauerhaft behalten"
-    },
-    {
-     "id": "AP1-4-1-8-K5",
-     "stufe": 2,
-     "kurz": "erklären, warum zwischen Prozessor und Arbeitsspeicher mehrere Cache-Stufen liegen: Je näher ein Speicher am Rechenkern ist, desto schneller, kleiner und teurer ist er – L1 im Kern fast so schnell wie der Prozessor, L2 größer und langsamer, L3 von allen Kernen geteilt –, und so überbrücken die Stufen den großen Geschwindigkeitsunterschied zum Arbeitsspeicher"
-    },
-    {
-     "id": "AP1-4-1-8-K6",
-     "stufe": 2,
-     "kurz": "erklären, warum ein 32-Bit-System höchstens 4 GiB Arbeitsspeicher adressieren kann (2^32 Byte) und für mehr Speicher ein 64-Bit-Betriebssystem mit 64-Bit-Treibern nötig ist"
-    },
-    {
-     "id": "AP1-4-1-8-K7",
-     "stufe": 2,
-     "kurz": "RISC-Prozessoren wie ARM von den x86-Prozessoren klassischer PCs unterscheiden: kleiner, einfacher Befehlssatz und geringe Leistungsaufnahme, daher in Smartphones, Tablets, eingebetteten Systemen und zunehmend in Notebooks und Servern; Betriebssystem, Programme und Treiber müssen für die Architektur übersetzt sein"
     }
    ]
   },
@@ -2810,7 +2815,8 @@
     "G.AP1.02"
    ],
    "bausteine": [
-    "ZB.datendarstellung"
+    "ZB.datendarstellung",
+    "AP1.03.03.4.1"
    ],
    "koennen": [
     {
@@ -3438,11 +3444,6 @@
      "id": "AP1-5-2-1-K6",
      "stufe": 2,
      "kurz": "beschreiben, wozu Gruppenrichtlinien eingesetzt werden: Einstellungen zentral für Rechner und Benutzer vorgeben, die Anwender nicht ändern können, zum Beispiel Passwortregeln"
-    },
-    {
-     "id": "AP1-5-2-1-K7",
-     "stufe": 4,
-     "kurz": "beurteilen, ob für einen Einsatz eine geschlossene Plattform (Hardware und Betriebssystem aus einer Hand: gut abgestimmt, stabil, weniger Schadsoftware, aber teurer, kleinere Auswahl und starke Bindung an den Hersteller) oder eine offene Plattform (große Auswahl an Geräten, Software und Preisen, aber mehr Aufwand für Abstimmung und Sicherheit) besser passt"
     }
    ]
   },
@@ -3639,7 +3640,7 @@
     {
      "id": "AP1-5-2-5-K9",
      "stufe": 2,
-     "kurz": "Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und dauerhaft ohne Ausfall zu laufen, zum Beispiel mit doppelten Netzteilen, Fehlerkorrektur im Arbeitsspeicher, vielen im Betrieb tauschbaren Festplatten und starker Kühlung"
+     "kurz": "Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und rund um die Uhr zuverlässig zu laufen, und steckt meist in einem 19-Zoll-Gehäuse im Serverschrank"
     },
     {
      "id": "AP1-5-2-5-K10",
@@ -3857,6 +3858,11 @@
      "id": "AP1-6-1-4-K9",
      "stufe": 2,
      "kurz": "das Prinzip des Lichtwellenleiters erklären: Das Licht läuft in einem Kern, der von einem Mantel mit geringerer Brechzahl umgeben ist, und wird an dieser Grenze vollständig zurückgeworfen (Totalreflexion); so wird es mit sehr geringer Dämpfung über große Entfernungen geführt und von elektrischen Störungen nicht beeinflusst"
+    },
+    {
+     "id": "AP1-6-1-4-K10",
+     "stufe": 4,
+     "kurz": "beurteilen, ob PowerLAN einen Arbeitsplatz ausreichend anbindet: Es nutzt die vorhandene Stromleitung und spart neue Kabel, erreicht aber je nach Leitungslänge, Zahl der Verteiler und Störungen im Stromnetz meist deutlich weniger Datenrate als ein Netzwerkkabel"
     }
    ]
   },
@@ -3958,6 +3964,11 @@
      "id": "AP1-6-1-6-K4",
      "stufe": 4,
      "kurz": "beurteilen, ob ein PoE-Switch für die geplanten Endgeräte reicht: Er braucht genug PoE-fähige Ports mit dem jeweils nötigen Standard, und die Summe der Leistungsaufnahmen aller versorgten Geräte darf das gesamte PoE-Budget des Switches nicht überschreiten"
+    },
+    {
+     "id": "AP1-6-1-6-K5",
+     "stufe": 4,
+     "kurz": "begründet zwischen einem managebaren und einem nicht managebaren Switch auswählen: Den managebaren richtet man über eine Weboberfläche oder per SSH ein und kann ihn überwachen, etwa Datenrate und Duplex je Port festlegen oder einen Port zur Fehlersuche spiegeln; wer das nicht braucht, nimmt den günstigeren nicht managebaren, der ohne Einrichtung sofort arbeitet"
     }
    ]
   },
@@ -4004,11 +4015,6 @@
      "id": "AP1-6-2-1-K7",
      "stufe": 2,
      "kurz": "erklären, dass ein Router per NAT bzw. PAT die privaten Adressen des lokalen Netzes für den Internetzugang auf seine öffentliche Adresse umsetzt"
-    },
-    {
-     "id": "AP1-6-2-1-K8",
-     "stufe": 4,
-     "kurz": "beurteilen, ob ein Internetanschluss für einen selbst betriebenen, aus dem Internet erreichbaren Server taugt: Er braucht eine feste öffentliche IP-Adresse statt einer vom Provider regelmäßig neu vergebenen oder einer geteilten IPv4-Adresse hinter dem NAT des Providers, eine ausreichende Upload-Rate (am besten symmetrisch) und keine Zwangstrennung"
     },
     {
      "id": "AP1-6-2-1-K9",
@@ -4371,7 +4377,7 @@
     {
      "id": "AP1-6-3-4-K1",
      "stufe": 2,
-     "kurz": "erklären, wie ping arbeitet: Er schickt eine ICMP-Echo-Anfrage an das Ziel, das sofort mit einer Echo-Antwort reagiert, und zeigt die Round Trip Time (RTT), also die Zeit für Hin- und Rückweg über alle Leitungen und Geräte; je größer sie ist, desto langsamer ist die Verbindung"
+     "kurz": "erklären, wie ping arbeitet: Er schickt eine ICMP-Echo-Anfrage an das Ziel, das sofort mit einer Echo-Antwort reagiert, und misst die Round Trip Time (RTT), die Zeit für Hin- und Rückweg; eine hohe RTT bedeutet große Verzögerung, über die erreichbare Datenrate sagt sie dagegen wenig aus"
     },
     {
      "id": "AP1-6-3-4-K2",
@@ -4391,7 +4397,7 @@
     {
      "id": "AP1-6-3-4-K5",
      "stufe": 2,
-     "kurz": "eine nslookup-Ausgabe interpretieren: oben der befragte DNS-Server, darunter die Adressen zum Namen (oft mehrere), und der Vermerk „nicht autorisierende Antwort“ bedeutet, dass sie aus dem Zwischenspeicher eines Servers stammt, der für den Namen nicht zuständig ist"
+     "kurz": "eine nslookup-Ausgabe interpretieren: oben der befragte DNS-Server, darunter die zum Namen gefundenen Adressen (oft mehrere)"
     }
    ]
   },
@@ -4881,8 +4887,8 @@
     },
     {
      "id": "AP1-7-3-2-K8",
-     "stufe": 4,
-     "kurz": "begründen, warum man ein heruntergeladenes Installationsabbild in zwei Stufen prüft: Die selbst berechnete Prüfsumme zeigt nur, dass die Datei zur angegebenen Prüfsumme passt; erst die gültige Signatur des Herausgebers über die Prüfsummendatei zeigt, dass beides wirklich von ihm stammt und nicht von einem Angreifer ausgetauscht wurde"
+     "stufe": 3,
+     "kurz": "Prüfsumme und Signatur einsetzen, um ein heruntergeladenes Installationsabbild in zwei Stufen abzusichern: Die selbst berechnete Prüfsumme zeigt nur, dass die Datei zur angegebenen Prüfsumme passt; erst die gültige Signatur des Herausgebers über die Prüfsummendatei zeigt, dass beides wirklich von ihm stammt und nicht von einem Angreifer ausgetauscht wurde"
     },
     {
      "id": "AP1-7-3-2-K9",
@@ -5318,6 +5324,11 @@
      "id": "AP1-7-5-3-K3",
      "stufe": 2,
      "kurz": "eine Pflicht beim Einsatz von Videokameras beschreiben, zum Beispiel auf die Aufnahme hinweisen, nur für einen festgelegten Zweck aufnehmen, Aufnahmen fristgerecht löschen"
+    },
+    {
+     "id": "AP1-7-5-3-K4",
+     "stufe": 2,
+     "kurz": "die weiteren Grundsätze der DSGVO erklären: nur mit Rechtsgrundlage und fair verarbeiten (Rechtmäßigkeit, Treu und Glauben), für die betroffene Person nachvollziehbar (Transparenz), mit sachlich richtigen, aktuellen Daten (Richtigkeit) und gegen unbefugten Zugriff und Verlust gesichert (Integrität und Vertraulichkeit)"
     }
    ]
   },
@@ -5599,7 +5610,7 @@
     {
      "id": "AP1-8-2-6-K7",
      "stufe": 3,
-     "kurz": "den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, dann Punkt- vor Strichrechnung, danach Vergleiche und zuletzt die logischen Verknüpfungen, wobei NICHT vor UND und UND vor ODER gilt"
+     "kurz": "den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, Punkt- vor Strichrechnung, Vergleiche vor UND, UND vor ODER; wie stark NICHT bindet, ist je nach Sprache verschieden, deshalb setzt man dort Klammern"
     },
     {
      "id": "AP1-8-2-6-K8",
@@ -5610,6 +5621,11 @@
      "id": "AP1-8-2-6-K9",
      "stufe": 2,
      "kurz": "erklären, warum eine Benutzereingabe zunächst als Text ankommt und vor dem Rechnen ausdrücklich in eine Ganz- oder Gleitkommazahl umgewandelt werden muss und dass diese Umwandlung zur Laufzeit scheitert, wenn der Text keine Zahl ist"
+    },
+    {
+     "id": "AP1-8-2-6-K10",
+     "stufe": 3,
+     "kurz": "die Regeln für Bezeichner anwenden: nur Buchstaben, Ziffern und Unterstrich, keine Ziffer am Anfang, kein Schlüsselwort, und in vielen Sprachen zählt die Groß- und Kleinschreibung"
     }
    ]
   },
@@ -5663,7 +5679,7 @@
     {
      "id": "AP1-8-2-5-K8",
      "stufe": 2,
-     "kurz": "das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen, ohne alle Daten zu durchlaufen"
+     "kurz": "das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen; ergeben zwei Schlüssel dieselbe Position (Kollision), muss das gesondert behandelt werden und der Zugriff wird langsamer"
     }
    ]
   },
@@ -6032,8 +6048,8 @@
     },
     {
      "id": "AP1-8-4-2-K6",
-     "stufe": 4,
-     "kurz": "begründen, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem"
+     "stufe": 2,
+     "kurz": "erklären, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem"
     }
    ]
   },
@@ -6087,13 +6103,13 @@
     },
     {
      "id": "AP1-8-4-5-K8",
-     "stufe": 4,
-     "kurz": "begründen, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern"
+     "stufe": 2,
+     "kurz": "erklären, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern"
     },
     {
      "id": "AP1-8-4-5-K9",
-     "stufe": 4,
-     "kurz": "begründen, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang"
+     "stufe": 2,
+     "kurz": "erklären, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang"
     }
    ]
   },
@@ -6131,8 +6147,13 @@
     },
     {
      "id": "AP1-8-4-3-K5",
-     "stufe": 4,
-     "kurz": "für eine Auswahl in einer Bildschirmmaske das passende Steuerelement auswählen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen"
+     "stufe": 3,
+     "kurz": "in einer Bildschirmmaske für eine Auswahl das passende Steuerelement einsetzen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen"
+    },
+    {
+     "id": "AP1-8-4-3-K6",
+     "stufe": 2,
+     "kurz": "Anforderungen der Barrierefreiheit wie ausreichenden Kontrast oder die Bedienung per Tastatur den vier Grundprinzipien barrierefreier Oberflächen zuordnen: wahrnehmbar, bedienbar, verständlich und robust"
     }
    ]
   },
