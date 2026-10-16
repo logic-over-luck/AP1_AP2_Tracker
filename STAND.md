@@ -4,8 +4,8 @@ Diese Datei ist das Gedächtnis des Projekts. Eine neue Sitzung liest sie und ma
 nächsten offenen Punkt weiter.
 
 > **Umbau der Lerninhalte (Branch `umbau`):** **AP1, PB1 und PB2** zeigen den neuen Lernplan und sind abgenommen
-> (Stand 16.10.2026, UMBAU.md P45 und Schritt 7). **WiSo** (noch alter Inhalt) und der Raum **PROJEKT** (Schritt 8)
-> folgen. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
+> (Stand 16.10.2026, UMBAU.md P45 und Schritt 7). **WiSo** ist neu gebaut, unabhängig geprüft und in der App sichtbar,
+> aber **noch nicht abgenommen** (UMBAU.md Schritt 6 „Raum WISO“, P52). Der Raum **PROJEKT** (Schritt 8) folgt. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
 > und hält sich an die Regeln dort. Die Inhaltsdatei und `inhalte/` werden nicht mehr inhaltlich nachgebessert.
 
 ---
@@ -113,9 +113,13 @@ nächsten offenen Punkt weiter.
   Sprung dorthin), Marke „neu gegenüber <ID>“ an Aussagen zu importierten Inhalten (antippen zeigt, was neu ist),
   „Das musst du können“ einklappbar mit Anzahl (gemerkt je Gerät: `lernen.koennenOffen`). Tests in
   `tests/vorschau-ap1.test.mjs`; auf Desktop und Handy (390 px) geprüft
+- Neuer Lernplan WiSo (Umbau Schritt 6, 16.10.2026): Raum WiSo aus `umbau/lernplan/wiso/` (5 Ordner, 70 Stichpunkte,
+  325 Können-Aussagen), Kurzfassungen und 685 Karten aus `umbau/kurz/wiso/` und `umbau/karten/wiso/`; alte WiSo-IDs
+  bleiben (P48), entfallene Stichpunkte ziehen über `umbau/umzug.json` um. Gelber Hinweis „noch nicht abgenommen“.
+  Build und Browser-Check (`#/wiso`, Stichpunkt-Detail mit „Baut auf“) ohne Fehler
 
 ### Offen / bewusst nicht umgesetzt
-- WiSo zeigt noch den alten Inhalt; der Raum PROJEKT folgt mit Umbau-Schritt 8.
+- WiSo wartet auf die Abnahme (UMBAU.md P52); offene Grundsatzfragen P49–P51. Der Raum PROJEKT folgt mit Umbau-Schritt 8.
 - Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
 - Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
 
@@ -244,11 +248,19 @@ Vor der Prüfung lohnt sich ein kurzer Abgleich mit Ausbilder, Lehrkraft oder de
 - **AP2-6-1-1-K2-2** ARP: OSI-Schicht 2 (so in der Karte, mit Hinweis auf die uneinheitliche Zuordnung).
 - **AP2-6-4-2-K4-3** RAID: Kapazität wird nur als Regel genannt, nicht gerechnet.
 
-### WiSo
-- **WISO-1-5-2-K2-1** Urabstimmung: Die üblichen 75 %/25 % stehen in Satzungen, nicht im Gesetz – keine eigene Karte.
-- **WISO-3-2-1-K3-1** „Schwere Geräte heben": mechanische Gefährdung (laut Können-Aussage) oder physische Belastung?
-- **WISO-3-4-1-K1-1** Rettungskette: Reihenfolge „sichern – Notruf – Erste Hilfe" nach Können-Aussage; lebensrettende Sofortmaßnahmen teils früher.
-- **WISO-5-2-3** „Abgrenzung von Zuständigkeiten": Die Karten decken alle drei Auslegungen ab.
+### WiSo (neuer Lernplan, 16.10.2026; Details im Feld `unsicher` von `umbau/karten/wiso/WISO-<n>.json`)
+- **Rechtsstand Oktober 2026, vor der Prüfung prüfen:** Arbeitszeitgesetz (WISO-1-3-4), Steuerklassen III/V
+  (WISO-1-6-1-K2), Bürgergeld bzw. Nachfolgeregelung (WISO-1-6-2-K8), EU-Verpackungsverordnung (WISO-4-2-2-K4),
+  JAV ohne Altersgrenze für Auszubildende seit 2021 – ältere IHK-Lösungen werten das anders (WISO-1-4-3, UMBAU.md P50).
+- **WISO-2-1-1-K1** Software herstellen als sekundärer Sektor: so die IHK-Lösung 2022S-A17; die amtliche Statistik zählt
+  Softwareentwicklung zu den Dienstleistungen.
+- **WISO-1-8-1-K7** Bildungsurlaub: „kein Anspruch in Bayern und Sachsen“, „meist fünf Arbeitstage“ nicht nachgeprüft.
+- **WISO-1-6-3-K3-3** Pflegeversicherung: in Sachsen nicht hälftig geteilt; die Karte geht vom Regelfall aus.
+- **WISO-3-1-3-K3-2** Verletztengeld zahlt die Berufsgenossenschaft, ausgezahlt oft über die Krankenkasse.
+- **WISO-3-4-4-K3-3** Feuerlöscher: Reihenfolge der Bedienschritte je nach Bauart verschieden.
+- **WISO-5-2-1-K10-2** BSI: hat eigene Bußgeldbefugnisse nach BSI-Gesetz; die Karte schließt nur Datenschutz-Bußgelder aus.
+- **WISO-5-2-4-K2-2** Kritik am Arbeitgeber: sachliche, wahre Kritik grundsätzlich erlaubt, Einzelfall offen.
+- **WISO-1-3-6-K6-2** Zeugnissprache: verbreitete Konvention, nicht einheitlich.
 
 ### Trainer
 - **Netzplan**: Knotenaufbau FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ mit Start bei 0. Manche Unterlagen

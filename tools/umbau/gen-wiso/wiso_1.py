@@ -337,7 +337,7 @@ L.k(2, "Du kannst erklären, wie die Lohnsteuer erhoben wird und einer Person ih
     [K("WISO.01.09.2"), K("WISO.01.05.2.12"), B("2021W-A11")])
 L.k(3, "Du kannst erklären, dass Kirchensteuer nur Mitglieder einer steuererhebenden Religionsgemeinschaft zahlen.", 2,
     [K("WISO.01.09.2")])
-L.k(4, "Du kannst vermögenswirksame Leistungen erklären: eine Zahlung des Arbeitgebers in einen Sparvertrag des Arbeitnehmers; staatlich gefördert (Arbeitnehmersparzulage, nur unterhalb von Einkommensgrenzen) werden zum Beispiel der Bausparvertrag und der VL-Sparplan bei Bank oder Fondsgesellschaft, nicht aber Sparlose, Unfall- oder Sterbegeldversicherungen.", 2,
+L.k(4, "Du kannst vermögenswirksame Leistungen erklären: eine Zahlung des Arbeitgebers in einen Sparvertrag des Arbeitnehmers; angelegt werden kann sie zum Beispiel in einen Bausparvertrag, einen Fondssparplan oder einen Banksparplan; die staatliche Arbeitnehmersparzulage gibt es nur für Bausparen und Beteiligungen wie Fonds und nur unterhalb von Einkommensgrenzen, nicht für Sparlose, Unfall- oder Sterbegeldversicherungen.", 2,
     [K("WISO.01.09.4"), B("2021W-A9")], alt=("angepasst", "Prüfer WISO-1 Nr. b17: Distraktoren aus 2021W-A9; Beteiligungen bewusst nicht pauschal ausgeschlossen; keine Beträge (B4)"))
 L.k(5, "Du kannst Zeitlohn, Leistungslohn (Akkord, Prämie) und Gehalt unterscheiden.", 2,
     [K("WISO.01.09")], alt=("angepasst", "Prüfer WISO-1 Nr. b19: Herkunft Katalogpunkt WISO.01.09 (Lohn- und Gehaltsformen)"))
