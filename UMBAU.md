@@ -701,7 +701,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).
 - [x] **Schritt 7 – App (16.10.2026):** AP1, PB1 und PB2 zeigen den neuen Lernplan als fertigen Stand; WiSo zeigt seit
-      dem Bau von WISO den neuen Lernplan (seit P52 ebenfalls abgenommen). Weiter **vier Räume** (AP1 | PB1 | PB2 | WiSo); der Raum PROJEKT kommt mit Schritt 8. Lernstand-Umzug (P6)
+      dem Bau von WISO den neuen Lernplan (seit P52 ebenfalls abgenommen). Weiter **vier Räume** (AP1 | PB1 | PB2 | WiSo); der Raum PROJEKT kommt mit Schritt 8 (zurückgestellt, P53). Lernstand-Umzug (P6)
       war schon vorgezogen (siehe „Eigene Räume PB1 und PB2“).
       - **Importe anzeigen (E2/P36):** `baut_auf` kommt als `neu.bautAuf` in die Daten (`tools/vorschau-ap1.mjs`). Im
         Stichpunkt-Detail steht oben im Rahmen „Baut auf“ mit dem Satz „Das kennst du schon – hier kommt nur das Neue dazu.“,
@@ -715,7 +715,8 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         Räume ohne Abnahme (seit P52 keiner, auch WiSo nicht). `LERNSTUDIO_AP1=alt npm run build` baut weiter den alten Stand.
       - Tests in `tests/vorschau-ap1.test.mjs` („Schritt 7: baut_auf, neu und Abnahme“), Build, Browser-Check und eigene
         Prüfung mit Playwright (PB1, PB2 auf 1400 px und 390 px, Sprung, Einklappen, kein waagerechtes Scrollen).
-- [ ] **Schritt 8 – PROJEKT**
+- [ ] **Schritt 8 – PROJEKT** – **bewusst zurückgestellt** (Projektinhaber, 16.10.2026, P53): wird später gebaut, näher an der
+      Projektphase. Bis dahin nicht anfangen.
 
 ---
 
@@ -778,6 +779,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P50 | **Amtliche Lösungen, die durch eine Rechtsänderung falsch geworden sind** (Bau WISO): 2022W-WISO-A14 wertet „Auszubildende bis 27 dürfen die JAV wählen“ als falsch – seit dem Betriebsrätemodernisierungsgesetz (2021) gibt es für Auszubildende keine Altersgrenze mehr; 2024S-WISO-A22 (anmeldepflichtiges Kartell, Rechtslage vor 2005); 2022S-WISO-A24 (UVV „aushängen“, seit DGUV Vorschrift 1 auch elektronisch); 2022S-WISO-A13 (Tarifvorrang). Umgesetzt wie P35 Nr. 7: Aussage nach Rechtsstand, `hinweis` mit der IHK-Erwartung. **Vorschlag:** P35 Nr. 7 ausdrücklich auch für Rechtsänderungen nach der Prüfung festschreiben. **Entschieden (Claude im Auftrag des Projektinhabers, 16.10.2026): ja.** P35 Nr. 7 gilt auch, wenn eine amtliche Lösung erst durch eine spätere Rechtsänderung falsch geworden ist (oder die Rechtslage schon zum Prüfungstermin anders war): Die Aussage folgt dem Rechtsstand, der `hinweis` am Stichpunkt nennt die IHK-Erwartung und den Grund. Begründung: Gelernt wird für die kommende Prüfung, und die IHK bewertet nach aktuellem Recht; ein `hinweis` verhindert, dass alte Lösungen verwirren. Die vier Fälle sind schon so umgesetzt. | erledigt |
 | P51 | **Quellen früherer Räume fehlten beim Bau von WISO.** Angehängt waren nur Katalog und WiSo-Abschriften; die Prüfskripte für AP1, PB1 und PB2 (Abschriften, Zuordnung) liefen deshalb nicht, 24 Tests wurden übersprungen. Geprüft wurde gegen die eingefrorenen Exporte (`umbau/export/`), was für E2/T7 genügt. Geändert wurde an früheren Räumen nur `umbau/umzug.json` (Werkzeugfehler, Schritt 6 WISO). **Vorschlag:** keine Maßnahme; eine Sitzung, die frühere Räume ändert, bekommt deren Abschriften. **Zur Kenntnis genommen (Projektinhaber, 16.10.2026):** keine Maßnahme. | erledigt |
 | P52 | **Abnahme WISO** (wie P45). Der Lernplan ist gebaut, unabhängig geprüft und eingebaut; die App zeigt ihn mit Hinweis „noch nicht abgenommen“. Nach der Abnahme: `abgenommen: true` in `RAEUME_VORSCHAU.WISO`, Export `umbau/export/WISO.json` (E3), Generatoren `tools/umbau/gen-wiso/` nicht mehr laufen lassen. **Entschieden (Claude im Auftrag des Projektinhabers, 16.10.2026): abgenommen**, wie P45 im Vertrauen auf Skripte und unabhängige KI-Prüfer, nachdem die Kür nach P49 eingetragen ist und alle Prüfungen erneut grün sind. Umgesetzt: `abgenommen: true` in `RAEUME_VORSCHAU.WISO`, Export `umbau/export/WISO.json` (E3), Generatoren `tools/umbau/gen-wiso/` stillgelegt. Funde beim Lernen wie P45. | erledigt |
+| P53 | **Raum PROJEKT (Schritt 8) zurückgestellt (Projektinhaber, 16.10.2026):** bewusst jetzt nicht bauen, weil die betriebliche Projektarbeit noch weit in der Zukunft liegt. Später wieder aufnehmen, zusammen mit P8 (Vorgaben der IHK Rheinhessen). Bis dahin beginnt keine Sitzung von sich aus mit Schritt 8. | zurückgestellt |
 ---
 
 ## 9. Fundament erzeugen und prüfen

@@ -5,7 +5,7 @@ nächsten offenen Punkt weiter.
 
 > **Umbau der Lerninhalte (Branch `umbau`):** **AP1, PB1, PB2 und WiSo** zeigen den neuen Lernplan und sind abgenommen
 > (Stand 16.10.2026, UMBAU.md P45, P52 und Schritt 7). Alle vier Räume sind eingefroren (Exporte in `umbau/export/`).
-> Der Raum **PROJEKT** (Schritt 8) folgt. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
+> Der Raum **PROJEKT** (Schritt 8) ist **bewusst zurückgestellt** (UMBAU.md P53): Er wird später gebaut, näher an der Projektphase. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
 > und hält sich an die Regeln dort. Die Inhaltsdatei und `inhalte/` werden nicht mehr inhaltlich nachgebessert.
 
 ---
@@ -121,7 +121,7 @@ nächsten offenen Punkt weiter.
   (`#/wiso`, Kür am Stichpunkt, Desktop und Handy 390 px) ohne Fehler
 
 ### Offen / bewusst nicht umgesetzt
-- Der Raum PROJEKT folgt mit Umbau-Schritt 8. WiSo-Kür kommt bisher nur aus der unabhängigen Prüfung; liegen die
+- Der Raum PROJEKT (Umbau-Schritt 8) ist bewusst zurückgestellt (UMBAU.md P53), weil die Projektarbeit noch weit weg ist. WiSo-Kür kommt bisher nur aus der unabhängigen Prüfung; liegen die
   Community-Lernzettel vor, wird der Hinweis-Abgleich (R3) nachgeholt (UMBAU.md P49).
 - Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
 - Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
