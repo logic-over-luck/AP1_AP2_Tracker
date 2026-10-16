@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-6",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-6.json",
   "karten": [
@@ -458,6 +458,167 @@
       "k": "PB1-6-1-5-K3",
       "vorne": "Mit welchen Maßnahmen sicherst du die Datenintegrität einer Anwendung, und wie ergänzen sie sich?",
       "hinten": "- Constraints in der Datenbank (PK, FK, NOT NULL, UNIQUE, CHECK) – greifen immer\n- Validierung der Eingaben in der Anwendung – gute Fehlermeldungen\n- Transaktionen für zusammengehörige Änderungen\nAm besten kombiniert."
+    },
+    {
+      "id": "PB1-6-1-2-K4-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K4",
+      "vorne": "Mitarbeiter arbeiten in mehreren Projekten, je Projekt mit einer eigenen Stundenzahl. In welche Tabelle kommt das Attribut Stunden?",
+      "hinten": "In die Zwischentabelle der m:n-Beziehung, z. B. `Mitarbeit(MitarbeiterNr, ProjektNr, Stunden)`. Die Stunden gehören zur Kombination aus Mitarbeiter und Projekt, nicht zu einem von beiden allein."
+    },
+    {
+      "id": "PB1-6-1-2-K4-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K4",
+      "vorne": "Warum kann ein Beziehungsattribut einer m:n-Beziehung weder in der einen noch in der anderen Entitätstabelle stehen?",
+      "hinten": "Jeder Datensatz dort ist mit vielen Partnern verbunden; der Wert gilt aber nur für ein bestimmtes Paar. Eindeutig zugeordnet ist er nur in der Zeile der Zwischentabelle."
+    },
+    {
+      "id": "PB1-6-1-2-K5-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K5",
+      "vorne": "Wann lohnt es sich, Daten mit einer 1:1-Beziehung auf zwei Tabellen zu verteilen?",
+      "hinten": "- wenn ein Teil eigene Zugriffsrechte braucht (z. B. vertrauliche Gehaltsdaten)\n- wenn viele selten gebrauchte oder große Attribute ausgelagert werden sollen\nSonst: eine Tabelle, weil die Daten dasselbe Objekt beschreiben."
+    },
+    {
+      "id": "PB1-6-1-2-K5-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K5",
+      "vorne": "Warum sind 1:1-Beziehungen zwischen Tabellen selten?",
+      "hinten": "Daten, die genau einem Datensatz zugeordnet sind, beschreiben meist dasselbe Objekt und können als Spalten in derselben Tabelle stehen; eine zweite Tabelle bringt ohne besonderen Grund nur einen zusätzlichen Join."
+    },
+    {
+      "id": "PB1-6-1-2-K6-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K6",
+      "vorne": "Ein Fußballspiel hat genau eine Heim- und eine Gastmannschaft. Brauchst du für die m:n-Beziehung Spiel – Mannschaft eine Zwischentabelle?",
+      "hinten": "Nein. Weil die Zahl fest (zwei) ist und jede Mannschaft eine eigene Rolle hat, genügen in Spiel zwei Fremdschlüssel: HeimMannschaftID und GastMannschaftID."
+    },
+    {
+      "id": "PB1-6-1-2-K6-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K6",
+      "vorne": "Wann ist bei einer m:n-Beziehung die Zwischentabelle unverzichtbar?",
+      "hinten": "Wenn die Zahl der Partner je Datensatz offen ist (z. B. Teilnehmer je Kurs). Feste Spalten wie Teilnehmer1, Teilnehmer2 würden irgendwann nicht reichen und Abfragen umständlich machen."
+    },
+    {
+      "id": "PB1-6-1-3-K5-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K5",
+      "vorne": "Eine Tabelle ist in der 1. NF und hat einen einspaltigen Primärschlüssel. Kann sie die 2. NF verletzen?",
+      "hinten": "Nein. Die 2. NF verbietet Abhängigkeiten von einem Teil des Schlüssels; einen solchen Teil gibt es nur bei einem zusammengesetzten Schlüssel."
+    },
+    {
+      "id": "PB1-6-1-3-K5-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K5",
+      "vorne": "Bei welchen Tabellen musst du die 2. NF überhaupt prüfen?",
+      "hinten": "Nur bei Tabellen mit zusammengesetztem Primärschlüssel, z. B. Bestellposition(BestellNr, ArtikelNr, …): Hängt ein Attribut nur von ArtikelNr ab, ist die 2. NF verletzt."
+    },
+    {
+      "id": "PB1-6-1-3-K6-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K6",
+      "vorne": "Eine Tabelle Artikel enthält ArtikelNr, Nettopreis und Bruttopreis (19 % USt). Welche Normalform ist verletzt und warum?",
+      "hinten": "Die 3. NF: Bruttopreis hängt vom Nichtschlüsselattribut Nettopreis ab (transitiv vom Schlüssel). Lösung: Bruttopreis nicht speichern, sondern bei Bedarf berechnen."
+    },
+    {
+      "id": "PB1-6-1-3-K7-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K7",
+      "vorne": "Warum normalisiert man ein Datenmodell nicht immer so weit wie möglich?",
+      "hinten": "Jede Zerlegung bringt mehr Tabellen, Schlüssel und Joins: Abfragen werden langsamer und komplexer. Man entfernt nur ungewollte Redundanz; gewollte Redundanz wird begründet in Kauf genommen."
+    },
+    {
+      "id": "PB1-6-1-3-K7-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K7",
+      "vorne": "Nenne ein Beispiel für gewollte Redundanz und ihre Begründung.",
+      "hinten": "Z. B. den Gesamtbetrag einer Rechnung speichern: Er muss auch nach späteren Preisänderungen unverändert bleiben. Oder den Ort neben der PLZ, weil eine PLZ-Tabelle mehr Joins als Nutzen bringt."
+    },
+    {
+      "id": "PB1-6-1-4-K5-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K5",
+      "vorne": "Was ist der Unterschied zwischen vertikaler und horizontaler Skalierung?",
+      "hinten": "Vertikal: ein Server wird leistungsstärker (mehr CPU, RAM). Horizontal: weitere Server kommen hinzu und teilen sich Daten und Last."
+    },
+    {
+      "id": "PB1-6-1-4-K5-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K5",
+      "vorne": "Warum lassen sich NoSQL-Datenbanken leichter horizontal skalieren als relationale?",
+      "hinten": "Ihre Datensätze (Dokumente, Schlüssel-Wert-Paare) sind ohne feste Verknüpfungen in sich abgeschlossen und lassen sich auf viele Server verteilen. Relationale Joins und sofortige Konsistenz über alle Tabellen sind über viele Rechner schwer umzusetzen."
+    },
+    {
+      "id": "PB1-6-1-4-K6-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K6",
+      "vorne": "Was bedeutet Eventual Consistency?",
+      "hinten": "Nach einer Änderung dürfen die Kopien der Daten auf verschiedenen Servern kurz voneinander abweichen; nach einer gewissen Zeit sind sie wieder überall gleich."
+    },
+    {
+      "id": "PB1-6-1-4-K6-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K6",
+      "vorne": "Worin unterscheidet sich BASE von ACID?",
+      "hinten": "ACID: sofortige Konsistenz nach jeder Transaktion. BASE: Verfügbarkeit hat Vorrang, die Daten werden erst nach einer Weile überall konsistent (Eventual Consistency)."
+    },
+    {
+      "id": "PB1-6-1-4-K7-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K7",
+      "vorne": "Nenne drei Nachteile von NoSQL-Datenbanken gegenüber relationalen.",
+      "hinten": "- keine einheitliche Abfragesprache wie SQL\n- Joins zwischen Datenbeständen kaum möglich\n- Integritätsprüfungen (z. B. Fremdschlüssel) muss die Anwendung selbst programmieren"
+    },
+    {
+      "id": "PB1-6-1-4-K7-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K7",
+      "vorne": "Wer sorgt in einer NoSQL-Datenbank meist dafür, dass ein Verweis auf einen Kunden nicht ins Leere zeigt?",
+      "hinten": "Die Anwendung: Sie muss die Prüfung selbst programmieren, weil das DBMS meist keine Fremdschlüssel-Constraints kennt."
+    },
+    {
+      "id": "PB1-6-1-4-K8-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K8",
+      "vorne": "Welche NoSQL-Art passt jeweils? a) Follower-Beziehungen eines sozialen Netzes b) Sitzungsdaten eines Webshops c) Produktkatalog mit unterschiedlichen Merkmalen d) Umsatzauswertung über Millionen Verkäufe",
+      "hinten": "a) Graph\nb) Schlüssel-Wert\nc) dokumentenorientiert\nd) spaltenorientiert"
+    },
+    {
+      "id": "PB1-6-1-4-K8-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K8",
+      "vorne": "Wofür ist eine Schlüssel-Wert-Datenbank besonders geeignet?",
+      "hinten": "Für sehr schnellen Zugriff auf Werte über einen bekannten Schlüssel, z. B. Sitzungsdaten oder als Cache – nicht für Abfragen über die Inhalte."
+    },
+    {
+      "id": "PB1-6-1-4-K9-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K9",
+      "vorne": "Worin unterscheiden sich das hierarchische und das Netzwerkdatenmodell?",
+      "hinten": "Hierarchisch: Baum, jeder Datensatz hat genau einen Vorgänger (m:n nur mit Redundanz). Netzwerkmodell: ein Datensatz kann mehrere Vorgänger haben, dadurch sind m:n-Beziehungen ohne Redundanz möglich."
+    },
+    {
+      "id": "PB1-6-1-4-K9-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K9",
+      "vorne": "Nenne die Datenmodelle, nach denen man Datenbanken einteilt.",
+      "hinten": "Hierarchisch, Netzwerk, relational, objektorientiert, objektrelational, NoSQL (dokumentenorientiert, Schlüssel-Wert, Graph, spaltenorientiert)."
+    },
+    {
+      "id": "PB1-6-1-5-K4-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K4",
+      "vorne": "Ein Programm fügt Datensätze ein und schließt dann die Verbindung ohne Commit. Was steht danach in der Datenbank?",
+      "hinten": "Nichts von den Änderungen: Ohne Commit bleibt die Transaktion offen und wird beim Schließen zurückgerollt."
+    },
+    {
+      "id": "PB1-6-1-5-K4-2",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K4",
+      "vorne": "Was bewirken Commit und Rollback?",
+      "hinten": "Commit macht alle Änderungen der Transaktion dauerhaft und für andere sichtbar. Rollback verwirft alle Änderungen seit dem letzten Commit."
     }
   ],
   "nicht_abgefragt": [],
@@ -862,6 +1023,121 @@
       "id": "PB1-6-1-1-K1-2",
       "entscheidung": "neu",
       "grund": "P36 – Modellierungsentscheidung aus 2021W-PB1-A2-b; die Elemente des ER-Modells fragt AP1-8-4-1"
+    },
+    {
+      "id": "PB1-6-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.4-S609)"
+    },
+    {
+      "id": "PB1-6-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.4-S609)"
+    },
+    {
+      "id": "PB1-6-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S602)"
+    },
+    {
+      "id": "PB1-6-1-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S602)"
+    },
+    {
+      "id": "PB1-6-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S605)"
+    },
+    {
+      "id": "PB1-6-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S605)"
+    },
+    {
+      "id": "PB1-6-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S272)"
+    },
+    {
+      "id": "PB1-6-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S272)"
+    },
+    {
+      "id": "PB1-6-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S272)"
+    },
+    {
+      "id": "PB1-6-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S274)"
+    },
+    {
+      "id": "PB1-6-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S274)"
+    },
+    {
+      "id": "PB1-6-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S265)"
+    },
+    {
+      "id": "PB1-6-1-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S265)"
+    },
+    {
+      "id": "PB1-6-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S592)"
+    },
+    {
+      "id": "PB1-6-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S592)"
+    },
+    {
+      "id": "PB1-6-1-4-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S591)"
+    },
+    {
+      "id": "PB1-6-1-4-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S591)"
+    },
+    {
+      "id": "PB1-6-1-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.6-S624)"
+    },
+    {
+      "id": "PB1-6-1-5-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.6-S624)"
     }
   ]
 }

@@ -5,7 +5,7 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 67,
-  "koennen": 265,
+  "koennen": 277,
   "quellen": {
    "PB1-1.json": "dbef348b14b3f97e",
    "PB1-10.json": "7f9fe6aff5e200c8",
@@ -15,7 +15,7 @@
    "PB1-3.json": "3062763099e67395",
    "PB1-4.json": "ce10adeef9791ebe",
    "PB1-5.json": "efc577233587ccf3",
-   "PB1-6.json": "17f68d4f91131e1b",
+   "PB1-6.json": "1a9097d9183d0f2a",
    "PB1-7.json": "d0afd5bf94583232",
    "PB1-8.json": "ac011febb597132d",
    "PB1-9.json": "68c84b8ace44d98e"
@@ -1907,6 +1907,21 @@
      "id": "PB1-6-1-2-K3",
      "stufe": 3,
      "kurz": "referenzielle Integrität sichern (ein Fremdschlüsselwert muss auf einen vorhandenen Primärschlüssel verweisen) und für eine Beziehung festlegen, was beim Löschen oder Ändern des referenzierten Datensatzes geschieht: Löschweitergabe bzw. Aktualisierungsweitergabe (abhängige Datensätze werden mitgelöscht bzw. angepasst) oder Verbot der Änderung, solange abhängige Datensätze bestehen"
+    },
+    {
+     "id": "PB1-6-1-2-K4",
+     "stufe": 3,
+     "kurz": "beim Überführen einer m:n-Beziehung ihre Beziehungsattribute in die Zwischentabelle übernehmen: Ein Wert wie die Arbeitsstunden eines Mitarbeiters in einem Projekt gehört weder zum Mitarbeiter noch zum Projekt allein, sondern zur Kombination aus beiden und steht deshalb in der Zeile der Zwischentabelle"
+    },
+    {
+     "id": "PB1-6-1-2-K5",
+     "stufe": 4,
+     "kurz": "begründen, wann zwei Tabellen in einer 1:1-Beziehung besser sind als eine gemeinsame Tabelle: wenn ein Teil der Daten eigene Zugriffsrechte braucht, etwa vertrauliche Gehaltsdaten, oder wenn viele selten gebrauchte Attribute ausgelagert werden; sonst gehören Daten, die 1:1 zusammengehören, in eine Tabelle"
+    },
+    {
+     "id": "PB1-6-1-2-K6",
+     "stufe": 4,
+     "kurz": "beurteilen, ob eine m:n-Beziehung eine Zwischentabelle braucht: Ist die Zahl der Beteiligten je Datensatz fest und klein und hat jeder eine eigene Rolle, etwa genau eine Heim- und eine Gastmannschaft je Spiel, genügen zwei Fremdschlüsselspalten; ist die Zahl offen, etwa beliebig viele Teilnehmer je Kurs, ist die Zwischentabelle nötig"
     }
    ]
   },
@@ -1945,6 +1960,21 @@
      "id": "PB1-6-1-3-K4",
      "stufe": 3,
      "kurz": "bestimmen, welche Normalform eine Tabelle erfüllt, und die Verletzung der nächsten Normalform benennen"
+    },
+    {
+     "id": "PB1-6-1-3-K5",
+     "stufe": 2,
+     "kurz": "erklären, warum eine Tabelle in der 1. NF mit einspaltigem Primärschlüssel automatisch in der 2. NF ist: Die 2. NF verbietet die Abhängigkeit eines Attributs von nur einem Teil des Schlüssels, und einen Teil gibt es nur bei einem zusammengesetzten Schlüssel"
+    },
+    {
+     "id": "PB1-6-1-3-K6",
+     "stufe": 2,
+     "kurz": "erklären, warum ein berechenbares Attribut wie der Bruttopreis, der sich aus dem Nettopreis und einem festen Steuersatz ergibt, die 3. NF verletzt: Es hängt über ein anderes Nichtschlüsselattribut transitiv vom Schlüssel ab und wird deshalb nicht gespeichert, sondern bei Bedarf berechnet"
+    },
+    {
+     "id": "PB1-6-1-3-K7",
+     "stufe": 4,
+     "kurz": "beurteilen, wie weit ein Datenmodell normalisiert wird: Jede weitere Zerlegung bringt mehr Tabellen, Schlüssel und Joins und damit längere Antwortzeiten und mehr Komplexität; deshalb wird nur ungewollte Redundanz entfernt, und bewusst in Kauf genommene Redundanz wird begründet"
     }
    ]
   },
@@ -1980,6 +2010,31 @@
      "id": "PB1-6-1-4-K4",
      "stufe": 4,
      "kurz": "für eine Anwendung ein dokumentenorientiertes oder ein relationales DBMS vorschlagen und die Wahl begründen, zum Beispiel flexible Ausstattungsmerkmale und große Datenmengen für NoSQL, Transaktionssicherheit und Konsistenz für relational"
+    },
+    {
+     "id": "PB1-6-1-4-K5",
+     "stufe": 4,
+     "kurz": "begründen, warum relationale Datenbanken meist vertikal (ein leistungsstärkerer Server) und NoSQL-Datenbanken meist horizontal (weitere Server im Verbund) skaliert werden: Joins und sofortige Konsistenz über alle Tabellen lassen sich schwer auf viele Rechner verteilen, während NoSQL-Daten ohne feste Verknüpfungen auf viele Server aufgeteilt werden können"
+    },
+    {
+     "id": "PB1-6-1-4-K6",
+     "stufe": 2,
+     "kurz": "das BASE-Prinzip vieler verteilter NoSQL-Datenbanken vom ACID-Prinzip relationaler Datenbanken unterscheiden: Bei BASE geht Verfügbarkeit vor sofortiger Konsistenz, Kopien der Daten dürfen kurz voneinander abweichen und gleichen sich erst nach einer Weile an (Eventual Consistency)"
+    },
+    {
+     "id": "PB1-6-1-4-K7",
+     "stufe": 2,
+     "kurz": "Nachteile von NoSQL-Datenbanken gegenüber relationalen beschreiben: Es gibt keine einheitliche Abfragesprache wie SQL, Verknüpfungen zwischen Datenbeständen (Joins) sind kaum möglich, und Integritätsprüfungen wie die eines Fremdschlüssels muss die Anwendung selbst programmieren"
+    },
+    {
+     "id": "PB1-6-1-4-K8",
+     "stufe": 2,
+     "kurz": "die vier NoSQL-Arten typischen Einsätzen zuordnen: Schlüssel-Wert für schnellen Zugriff über einen Schlüssel (Sitzungsdaten, Cache), dokumentenorientiert für Datensätze mit wechselndem Aufbau (Blog, CMS, Produktkatalog), Graph für stark vernetzte Daten (Follower, Empfehlungen) und spaltenorientiert für Auswertungen weniger Spalten über sehr viele Datensätze"
+    },
+    {
+     "id": "PB1-6-1-4-K9",
+     "stufe": 2,
+     "kurz": "Datenbanken nach ihrem Datenmodell unterscheiden: hierarchisch (Baum, jeder Datensatz hat genau einen Vorgänger), Netzwerkmodell (mehrere Vorgänger, dadurch auch m:n), relational (verknüpfte Tabellen), objektorientiert (Objekte samt Methoden), objektrelational (Tabellen mit komplexen, objektartigen Datentypen) und NoSQL"
     }
    ]
   },
@@ -2011,6 +2066,11 @@
      "id": "PB1-6-1-5-K3",
      "stufe": 4,
      "kurz": "beurteilen, mit welchen technischen Maßnahmen die Datenintegrität einer Anwendung sichergestellt wird, und sie festlegen: Constraints in der Datenbank (Primärschlüssel, Fremdschlüssel, NOT NULL, UNIQUE, CHECK), Validierung der Eingaben in der Anwendung, Transaktionen für zusammengehörige Änderungen"
+    },
+    {
+     "id": "PB1-6-1-5-K4",
+     "stufe": 2,
+     "kurz": "erklären, warum Änderungen, die ein Programm über eine Datenbankverbindung schreibt, erst nach dem Commit dauerhaft gespeichert sind: Bis dahin gehören sie zu einer offenen Transaktion, die bei einem Fehler oder beim Schließen der Verbindung ohne Commit zurückgerollt wird"
     }
    ]
   },

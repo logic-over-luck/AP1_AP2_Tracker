@@ -132,6 +132,33 @@
        "herkunft": [
         "katalog:AP2a.02.03.5"
        ]
+      },
+      {
+       "id": "PB1-6-1-2-K4",
+       "text": "Du kannst beim Überführen einer m:n-Beziehung ihre Beziehungsattribute in die Zwischentabelle übernehmen: Ein Wert wie die Arbeitsstunden eines Mitarbeiters in einem Projekt gehört weder zum Mitarbeiter noch zum Projekt allein, sondern zur Kombination aus beiden und steht deshalb in der Zeile der Zwischentabelle.",
+       "kurz": "Beziehungsattribute in der Zwischentabelle",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-5.8.4-S609"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K5",
+       "text": "Du kannst begründen, wann zwei Tabellen in einer 1:1-Beziehung besser sind als eine gemeinsame Tabelle: wenn ein Teil der Daten eigene Zugriffsrechte braucht, etwa vertrauliche Gehaltsdaten, oder wenn viele selten gebrauchte Attribute ausgelagert werden; sonst gehören Daten, die 1:1 zusammengehören, in eine Tabelle.",
+       "kurz": "1:1-Beziehung: wann zwei Tabellen",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.8.3-S602"
+       ]
+      },
+      {
+       "id": "PB1-6-1-2-K6",
+       "text": "Du kannst beurteilen, ob eine m:n-Beziehung eine Zwischentabelle braucht: Ist die Zahl der Beteiligten je Datensatz fest und klein und hat jeder eine eigene Rolle, etwa genau eine Heim- und eine Gastmannschaft je Spiel, genügen zwei Fremdschlüsselspalten; ist die Zahl offen, etwa beliebig viele Teilnehmer je Kurs, ist die Zwischentabelle nötig.",
+       "kurz": "m:n ohne Zwischentabelle: feste Rollen",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.8.3-S605"
+       ]
       }
      ],
      "baut_auf": [
@@ -215,10 +242,47 @@
        "herkunft": [
         "katalog:AP2a.02.03.4"
        ]
+      },
+      {
+       "id": "PB1-6-1-3-K5",
+       "text": "Du kannst erklären, warum eine Tabelle in der 1. NF mit einspaltigem Primärschlüssel automatisch in der 2. NF ist: Die 2. NF verbietet die Abhängigkeit eines Attributs von nur einem Teil des Schlüssels, und einen Teil gibt es nur bei einem zusammengesetzten Schlüssel.",
+       "kurz": "2. NF nur bei zusammengesetztem Schlüssel",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.7.3-S272"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K6",
+       "text": "Du kannst erklären, warum ein berechenbares Attribut wie der Bruttopreis, der sich aus dem Nettopreis und einem festen Steuersatz ergibt, die 3. NF verletzt: Es hängt über ein anderes Nichtschlüsselattribut transitiv vom Schlüssel ab und wird deshalb nicht gespeichert, sondern bei Bedarf berechnet.",
+       "kurz": "Berechenbare Attribute und die 3. NF",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.7.3-S272"
+       ]
+      },
+      {
+       "id": "PB1-6-1-3-K7",
+       "text": "Du kannst beurteilen, wie weit ein Datenmodell normalisiert wird: Jede weitere Zerlegung bringt mehr Tabellen, Schlüssel und Joins und damit längere Antwortzeiten und mehr Komplexität; deshalb wird nur ungewollte Redundanz entfernt, und bewusst in Kauf genommene Redundanz wird begründet.",
+       "kurz": "Übernormalisierung und gewollte Redundanz",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-3.7.3-S274"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-8-4-2"
+     ],
+     "kuer": [
+      {
+       "text": "Über der 3. NF gibt es weitere Normalformen – Boyce-Codd-NF, 4. und 5. NF –, die seltene Sonderfälle von Abhängigkeiten behandeln und in der Praxis kaum angewendet werden.",
+       "kurz": "Normalformen über der 3. NF",
+       "quellen": [
+        "buch:FS-3.7.3"
+       ],
+       "grund": "D8: Katalog verlangt nur 1. bis 3. NF"
+      }
      ]
     },
     {
@@ -283,6 +347,51 @@
         "katalog:AP2a.02.03.1",
         "beleg:2022W-PB1-A4-c"
        ]
+      },
+      {
+       "id": "PB1-6-1-4-K5",
+       "text": "Du kannst begründen, warum relationale Datenbanken meist vertikal (ein leistungsstärkerer Server) und NoSQL-Datenbanken meist horizontal (weitere Server im Verbund) skaliert werden: Joins und sofortige Konsistenz über alle Tabellen lassen sich schwer auf viele Rechner verteilen, während NoSQL-Daten ohne feste Verknüpfungen auf viele Server aufgeteilt werden können.",
+       "kurz": "Vertikale und horizontale Skalierung",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-3.7.1-S265"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K6",
+       "text": "Du kannst das BASE-Prinzip vieler verteilter NoSQL-Datenbanken vom ACID-Prinzip relationaler Datenbanken unterscheiden: Bei BASE geht Verfügbarkeit vor sofortiger Konsistenz, Kopien der Daten dürfen kurz voneinander abweichen und gleichen sich erst nach einer Weile an (Eventual Consistency).",
+       "kurz": "BASE und Eventual Consistency",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.7.1-S266"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K7",
+       "text": "Du kannst Nachteile von NoSQL-Datenbanken gegenüber relationalen beschreiben: Es gibt keine einheitliche Abfragesprache wie SQL, Verknüpfungen zwischen Datenbeständen (Joins) sind kaum möglich, und Integritätsprüfungen wie die eines Fremdschlüssels muss die Anwendung selbst programmieren.",
+       "kurz": "Nachteile von NoSQL-Datenbanken",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.7.1-S266"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K8",
+       "text": "Du kannst die vier NoSQL-Arten typischen Einsätzen zuordnen: Schlüssel-Wert für schnellen Zugriff über einen Schlüssel (Sitzungsdaten, Cache), dokumentenorientiert für Datensätze mit wechselndem Aufbau (Blog, CMS, Produktkatalog), Graph für stark vernetzte Daten (Follower, Empfehlungen) und spaltenorientiert für Auswertungen weniger Spalten über sehr viele Datensätze.",
+       "kurz": "NoSQL-Arten und ihr Einsatz",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.8.1-S592"
+       ]
+      },
+      {
+       "id": "PB1-6-1-4-K9",
+       "text": "Du kannst Datenbanken nach ihrem Datenmodell unterscheiden: hierarchisch (Baum, jeder Datensatz hat genau einen Vorgänger), Netzwerkmodell (mehrere Vorgänger, dadurch auch m:n), relational (verknüpfte Tabellen), objektorientiert (Objekte samt Methoden), objektrelational (Tabellen mit komplexen, objektartigen Datentypen) und NoSQL.",
+       "kurz": "Datenmodelle von Datenbanken",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.8.1-S591"
+       ]
       }
      ],
      "baut_auf": [
@@ -290,12 +399,52 @@
      ],
      "kuer": [
       {
-       "text": "CAP-Theorem (bei einer Netzpartition muss ein verteiltes System zwischen Konsistenz und Verfügbarkeit wählen) und BASE (Basically Available, Soft State, Eventual Consistency); Big Data mit dem 3V-/4V-Modell.",
-       "kurz": "CAP-Theorem, BASE und Big Data",
+       "text": "CAP-Theorem (bei einer Netzpartition muss ein verteiltes System zwischen Konsistenz und Verfügbarkeit wählen).",
+       "kurz": "CAP-Theorem bei verteilten Systemen",
        "quellen": [
         "podcast:themen-ap2"
        ],
        "grund": "Nur Hinweisquelle; 2023W-PB1-A3-b erwähnt den Zielkonflikt nur im Einleitungstext, ohne Operator. Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Big Data wird oft mit fünf V beschrieben: große Menge (Volume), viele Datenarten (Variety), hohe Geschwindigkeit beim Entstehen und Verarbeiten (Velocity), unsichere Qualität und Glaubwürdigkeit (Veracity) und der erhoffte Nutzen (Value).",
+       "kurz": "Big Data und die fünf V",
+       "quellen": [
+        "buch:FS-3.7.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein für Big Data"
+      },
+      {
+       "text": "Eine Graphdatenbank speichert Knoten und gerichtete, benannte Kanten, beide mit Eigenschaften, und folgt Verbindungen ohne Joins; eine Key-Value-Datenbank findet einen beliebigen Wert nur über seinen Schlüssel – sehr schnell und leicht verteilbar, aber ohne Abfragen über die Werte. Spaltenorientierte Speicherung legt die Werte einer Spalte hintereinander ab, sodass Auswertungen weniger Spalten über viele Zeilen schnell sind, das Lesen oder Einfügen ganzer Zeilen aber langsam (Data Warehouse, OLAP).",
+       "kurz": "Graph, Key-Value und spaltenorientiert im Detail",
+       "quellen": [
+        "buch:FS-3.7.6"
+       ],
+       "grund": "RK2: Einzelheiten der NoSQL-Arten; den Einsatz der Arten trägt die neue Pflicht-Aussage"
+      },
+      {
+       "text": "Eine Dokumentdatenbank fragt man statt mit SQL über ein Filterdokument ab, das Feldnamen und gesuchte Werte angibt; je nach Aufruf kommt das erste passende Dokument oder eine Treffermenge zurück, die das Programm in einer Schleife durchläuft.",
+       "kurz": "Abfrage per Filterdokument",
+       "quellen": [
+        "buch:FS-3.7.7"
+       ],
+       "grund": "RK2: Abfrageform einzelner Dokumentdatenbanken, kein eigener Baustein"
+      },
+      {
+       "text": "Die Drei-Ebenen-Architektur trennt die externen Sichten der Benutzergruppen, das konzeptionelle Gesamtschema und die interne Speicherung, damit Änderungen an der Speicherung die Anwendungen nicht berühren (Datenunabhängigkeit). Nach dem Betriebskonzept unterscheidet man Stand-alone-, File-Share- (Datenbankdatei im Netz, jeder Client wertet selbst aus, hohe Netzlast) und Client-Server-Datenbanken, bei denen ein Datenbankserver die Anfragen zentral bearbeitet.",
+       "kurz": "Drei-Ebenen-Architektur und Betriebskonzepte",
+       "quellen": [
+        "buch:GS-5.8.1"
+       ],
+       "grund": "RK2: kein eigener Katalog-Baustein"
+      },
+      {
+       "text": "Eine eingebettete Datenbank wie SQLite läuft ohne eigenen Server als Teil der Anwendung und hält alle Daten in einer Datei – praktisch für Apps auf Mobilgeräten oder Desktop-Programme, aber nicht für viele gleichzeitige Schreibzugriffe.",
+       "kurz": "Eingebettete Datenbank ohne Server",
+       "quellen": [
+        "buch:GS-5.8.6"
+       ],
+       "grund": "RK2: kein eigener Katalog-Baustein"
       }
      ]
     },
@@ -348,7 +497,17 @@
        "herkunft": [
         "katalog:AP2b.05.02",
         "katalog:AP2b.05.02.1",
-        "katalog:AP2b.05.02.3"
+        "katalog:AP2b.05.02.3",
+        "buch:FS-3.3.7-S207"
+       ]
+      },
+      {
+       "id": "PB1-6-1-5-K4",
+       "text": "Du kannst erklären, warum Änderungen, die ein Programm über eine Datenbankverbindung schreibt, erst nach dem Commit dauerhaft gespeichert sind: Bis dahin gehören sie zu einer offenen Transaktion, die bei einem Fehler oder beim Schließen der Verbindung ohne Commit zurückgerollt wird.",
+       "kurz": "Commit: Änderungen dauerhaft machen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.8.6-S624"
        ]
       }
      ],
@@ -757,8 +916,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -767,7 +926,13 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-3.7.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.7.1": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.7.6": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.7.7": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.8.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.8.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.8.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.8.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -919,6 +1084,72 @@
       "AP1-8-4-5"
      ],
      "notiz": "Phasen des Datenbankentwurfs in AP1-8-4-5-K4"
+    },
+    {
+     "thema": "Über der 3. NF gibt es weitere Normalformen – Boyce-Codd-NF, 4. und 5. NF –, die seltene Sonderfälle von Abhängigkeiten ",
+     "quellen": [
+      "buch:FS-3.7.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Big Data wird oft mit fünf V beschrieben: große Menge (Volume), viele Datenarten (Variety), hohe Geschwindigkeit beim En",
+     "quellen": [
+      "buch:FS-3.7.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Graphdatenbank speichert Knoten und gerichtete, benannte Kanten, beide mit Eigenschaften, und folgt Verbindungen oh",
+     "quellen": [
+      "buch:FS-3.7.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Dokumentdatenbank fragt man statt mit SQL über ein Filterdokument ab, das Feldnamen und gesuchte Werte angibt; je n",
+     "quellen": [
+      "buch:FS-3.7.7"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Drei-Ebenen-Architektur trennt die externen Sichten der Benutzergruppen, das konzeptionelle Gesamtschema und die int",
+     "quellen": [
+      "buch:GS-5.8.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine eingebettete Datenbank wie SQLite läuft ohne eigenen Server als Teil der Anwendung und hält alle Daten in einer Dat",
+     "quellen": [
+      "buch:GS-5.8.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-6-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -974,6 +1205,43 @@
       "PB1-6-1-3-K1"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-6-1-2-K4",
+     "PB1-6-1-2-K5",
+     "PB1-6-1-2-K6",
+     "PB1-6-1-3-K5",
+     "PB1-6-1-3-K6",
+     "PB1-6-1-3-K7",
+     "PB1-6-1-4-K5",
+     "PB1-6-1-4-K6",
+     "PB1-6-1-4-K7",
+     "PB1-6-1-4-K8",
+     "PB1-6-1-4-K9",
+     "PB1-6-1-5-K4"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB1-6-1-5-K3"
+    ],
+    "kuer": [
+     "PB1-6-1-3",
+     "PB1-6-1-4",
+     "PB1-6-1-4",
+     "PB1-6-1-4",
+     "PB1-6-1-4",
+     "PB1-6-1-4"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [
+     "FS-3.7.1#1"
+    ]
    }
   ]
  }
