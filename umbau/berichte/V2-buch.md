@@ -2,13 +2,13 @@
 
 Erzeugt mit `node tools/umbau/buch-pruefen.mjs`. Nicht von Hand bearbeiten.
 
-**Ergebnis:** bestanden (neu geprüft für PB1-10), 0 Hinweise.
+**Ergebnis:** bestanden (neu geprüft für PB1-1), 0 Hinweise.
 
 | Band | Kapitel | davon Filter (ganz) | Kernpunkte | abgedeckt | neu | Filter | Kür |
 |---|---|---|---|---|---|---|---|
-| GS | 150 | 3 | 1472 | 824 | 231 | 173 | 244 |
-| FS | 92 | 0 | 912 | 401 | 260 | 138 | 113 |
-| FS2 | 56 | 1 | 488 | 213 | 90 | 78 | 107 |
+| GS | 150 | 3 | 1472 | 833 | 218 | 173 | 248 |
+| FS | 92 | 0 | 912 | 415 | 234 | 138 | 125 |
+| FS2 | 56 | 1 | 488 | 219 | 68 | 78 | 123 |
 
-Buch-Herkunft in Können-Aussagen: 463; Kür-Quellen aus dem Buch: 286.
+Buch-Herkunft in Können-Aussagen: 491; Kür-Quellen aus dem Buch: 304.
 

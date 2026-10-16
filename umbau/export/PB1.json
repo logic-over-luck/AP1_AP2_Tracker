@@ -5,9 +5,9 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 69,
-  "koennen": 337,
+  "koennen": 357,
   "quellen": {
-   "PB1-1.json": "dbef348b14b3f97e",
+   "PB1-1.json": "82c56b9a048ab3d1",
    "PB1-10.json": "2c0c631a89d08af3",
    "PB1-11.json": "dda29aefbf56c507",
    "PB1-12.json": "fde12335a2b0504d",
@@ -50,6 +50,36 @@
      "id": "PB1-1-1-1-K3",
      "stufe": 2,
      "kurz": "die Mitwirkung des Auftraggebers in beiden Kategorien unterscheiden: im klassischen Vorgehen vor allem beim Festlegen der Anforderungen und bei der Abnahme, im agilen Vorgehen laufend, zum Beispiel bei der Durchsicht der Ergebnisse jedes Sprints"
+    },
+    {
+     "id": "PB1-1-1-1-K4",
+     "stufe": 2,
+     "kurz": "die vier Werte des Agilen Manifests erklären: Menschen und ihre Zusammenarbeit zählen mehr als Prozesse und Werkzeuge, funktionierende Software mehr als umfassende Dokumentation, Zusammenarbeit mit dem Kunden mehr als Vertragsverhandlung und Reagieren auf Veränderung mehr als das Befolgen eines Plans – das jeweils Zweitgenannte bleibt wichtig, wird aber nachrangig behandelt"
+    },
+    {
+     "id": "PB1-1-1-1-K5",
+     "stufe": 2,
+     "kurz": "Nachteile agilen Vorgehens erklären: Die regelmäßigen Abstimmungsrunden kosten Entwicklungszeit, häufiges Testen und Ausliefern verursacht laufend Kosten, Gesamtkosten und Endtermin lassen sich vorab schwer festlegen, und der Auftraggeber muss ständig erreichbar sein und mitarbeiten"
+    },
+    {
+     "id": "PB1-1-1-1-K6",
+     "stufe": 2,
+     "kurz": "klassisches und agiles Vorgehen nach der Organisation des Teams unterscheiden: klassisch auch große Teams mit klarer Hierarchie, Abstimmung über Dokumente und förmliche Besprechungen und eine Aufwandsschätzung durch Projektleitung oder Experten – agil eher kleine, selbstorganisierte Teams, kurze informelle Abstimmung und eine Aufwandsschätzung gemeinsam im Team"
+    },
+    {
+     "id": "PB1-1-1-1-K7",
+     "stufe": 2,
+     "kurz": "die Kanban-Methode beschreiben: Die Arbeit wird in einzelne Aufgaben zerlegt und auf einem Board in Spalten wie „zu erledigen“, „in Arbeit“ und „erledigt“ sichtbar gemacht; wer frei ist, zieht sich die nächste Aufgabe selbst (Pull-Prinzip), und staut sich die Arbeit in einer Spalte, fällt der Engpass sofort auf"
+    },
+    {
+     "id": "PB1-1-1-1-K8",
+     "stufe": 2,
+     "kurz": "Kanban und Scrum unterscheiden: Kanban kommt mit wenigen Regeln aus, ohne feste Rollen und ohne vorgeschriebene Iterationen, arbeitet in einem fortlaufenden Fluss und passt auch für Daueraufgaben wie Support oder Wartung; Scrum schreibt Rollen, Sprints mit festen Ereignissen und ein geordnetes Product Backlog vor. Gemeinsam ist beiden die Transparenz und das Ziehen der Aufgaben aus einer Liste"
+    },
+    {
+     "id": "PB1-1-1-1-K9",
+     "stufe": 2,
+     "kurz": "Extreme Programming beschreiben: sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen"
     }
    ]
   },
@@ -81,6 +111,21 @@
      "id": "PB1-1-1-2-K3",
      "stufe": 2,
      "kurz": "Wasserfall-, V- und Spiralmodell nach ihrem typischen Einsatzfall unterscheiden: feste, gut bekannte Anforderungen (Wasserfall); hohe Anforderungen an nachweisbare Tests (V-Modell); große, neuartige Vorhaben mit hohem Risiko (Spiralmodell). Den Ablauf des Wasserfallmodells kennst du aus AP1-1-1-2"
+    },
+    {
+     "id": "PB1-1-1-2-K4",
+     "stufe": 2,
+     "kurz": "Stärken und Schwächen des Wasserfallmodells erklären: Weil alles vorab festgelegt wird, sind Termine, Kosten und Dokumentation gut planbar; weil der Auftraggeber erst bei der Abnahme ein Ergebnis sieht und erst nach der Umsetzung getestet wird, fallen Fehler aus Analyse und Entwurf spät und teuer auf, und bei langen Projekten kann die Lösung bei Einführung schon veraltet sein"
+    },
+    {
+     "id": "PB1-1-1-2-K5",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile des Spiralmodells erklären: Es reagiert flexibel auf geänderte Anforderungen, jede Runde lässt sich einzeln planen und budgetieren, und Risiken und Qualität werden in jeder Runde geprüft; dafür ist der Managementaufwand hoch, die Risikobewertung verlangt viel Erfahrung, und weil die Runden aufeinander aufbauen, lässt sich kaum parallel arbeiten"
+    },
+    {
+     "id": "PB1-1-1-2-K6",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile des V-Modells erklären: Weil zu jeder Entwurfsstufe schon die passende Teststufe festgelegt und alles dokumentiert wird, ist die Qualität nachweisbar, was zu großen und öffentlichen Projekten passt (für IT-Projekte des Bundes ist das V-Modell XT vorgegeben); dafür ist es starr bei Änderungen und für kleine Projekte zu aufwendig"
     }
    ]
   },
@@ -121,6 +166,26 @@
      "id": "PB1-1-1-3-K5",
      "stufe": 3,
      "kurz": "zu Anwendungsfällen eines Anwendungsfalldiagramms User Stories erstellen und dabei Bedingungen aus include- oder extend-Beziehungen aufnehmen, zum Beispiel „Falls der Standort nicht eingestellt ist, muss ich ihn vorher erfassen“"
+    },
+    {
+     "id": "PB1-1-1-3-K6",
+     "stufe": 2,
+     "kurz": "das Product Backlog von Lasten- und Pflichtenheft unterscheiden: Es ist bis zum Projektende nie vollständig, der Product Owner ergänzt und ordnet es laufend, und jeder Eintrag trägt Beschreibung, Reihenfolge und Aufwandsschätzung; oben stehen kleine, umsetzbare User Stories, unten grobe Epics, die vor der Umsetzung in mehrere User Stories zerlegt werden"
+    },
+    {
+     "id": "PB1-1-1-3-K7",
+     "stufe": 2,
+     "kurz": "die Definition of Done erklären: eine vom Team gemeinsam festgelegte Liste von Bedingungen, wann ein Eintrag als fertig gilt (z. B. Code geprüft, Tests bestanden, Abnahmekriterien erfüllt, Dokumentation ergänzt), damit alle unter „fertig“ dasselbe verstehen; das Team schärft sie in den Retrospektiven nach"
+    },
+    {
+     "id": "PB1-1-1-3-K8",
+     "stufe": 2,
+     "kurz": "erklären, wie ein Burn-down-Chart den Fortschritt zeigt: Über der Zeit wird der verbleibende Aufwand aufgetragen und mit einer Ideallinie verglichen; liegt die Ist-Linie darüber, ist das Team im Verzug, ein Anstieg bedeutet neu hinzugekommene, ein Sprung nach unten gestrichene Aufgaben"
+    },
+    {
+     "id": "PB1-1-1-3-K9",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile von Scrum erklären: Kurze Sprints, Transparenz und ein selbstorganisiertes Team machen es flexibel bei wenig Verwaltungsaufwand; dafür fehlt zu Beginn ein Gesamtüberblick über Umfang, Kosten und Termin, die regelmäßige Abstimmung kostet Zeit, und mehrere Teams an einem großen Produkt zu koordinieren ist schwierig"
     }
    ]
   },
@@ -172,6 +237,21 @@
      "id": "PB1-1-2-1-K6",
      "stufe": 1,
      "kurz": "Kostenarten eines Softwareprojekts mit je einem Beispiel nennen: Personalkosten (eigene und externe Entwickler), Software- und Lizenzkosten, Hardwarekosten, Kommunikationskosten, Qualifizierungskosten"
+    },
+    {
+     "id": "PB1-1-2-1-K7",
+     "stufe": 2,
+     "kurz": "erklären, warum Hardware und Entwicklungssoftware in der Kalkulation eines Softwareprojekts meist nur anteilig angesetzt werden – Rechner und Lizenzen dienen auch anderen Projekten und werden über ihre Nutzungsdauer verteilt – und wann sie voll zählen: bei Spezialhardware, die eigens für dieses Projekt beschafft wird"
+    },
+    {
+     "id": "PB1-1-2-1-K8",
+     "stufe": 2,
+     "kurz": "Projektrisiken den Arten personell, zeitlich-finanziell, technologisch und organisatorisch zuordnen, zum Beispiel Ausfall des einzigen Datenbankexperten (personell), zu knapp geplanter Termin oder knappes Budget (zeitlich-finanziell), noch unerprobtes Framework (technologisch) und unklare Zuständigkeiten oder Missverständnisse mit dem Auftraggeber (organisatorisch)"
+    },
+    {
+     "id": "PB1-1-2-1-K9",
+     "stufe": 2,
+     "kurz": "erklären, wie Software den Energiebedarf beeinflusst: Ineffiziente Programme halten Prozessor, Speicher und Netz länger beschäftigt und verbrauchen dadurch mehr Strom; effiziente Algorithmen, das Vermeiden unnötiger Abfragen, Schleifen und Datenübertragungen und geringe Anforderungen an die Hardware sparen Energie und verlängern die Nutzungsdauer der Geräte"
     }
    ]
   },
@@ -247,6 +327,26 @@
      "id": "PB1-1-2-3-K5",
      "stufe": 2,
      "kurz": "Probleme eines bestehenden, papiergestützten Ablaufs benennen und erläutern, wie eine Digitalisierung sie löst, zum Beispiel Medienbrüche, doppelte Erfassung, schlecht lesbare Notizen, fehlender Zugriff auf aktuelle Informationen"
+    },
+    {
+     "id": "PB1-1-2-3-K6",
+     "stufe": 2,
+     "kurz": "die Tätigkeiten der Anforderungsspezifikation erklären – Anforderungen ermitteln (z. B. im Kundengespräch, im Workshop, durch Beobachtung), analysieren, eindeutig festschreiben, mit dem Auftraggeber validieren und später Änderungen nachvollziehbar verwalten – und warum sie nötig ist: Kunden äußern ihre Wünsche oft unklar oder setzen sie stillschweigend voraus, und die Schritte laufen mit Rücksprüngen statt streng nacheinander"
+    },
+    {
+     "id": "PB1-1-2-3-K7",
+     "stufe": 4,
+     "kurz": "beurteilen, ob sich ein Arbeitsablauf für eine (Teil-)Automatisierung durch Software eignet: Er muss sich klar in Regeln fassen lassen und häufig in gleicher Form wiederkehren; einmalige, seltene oder ständig wechselnde Abläufe erledigt ein Mensch meist günstiger, weil sich der Entwicklungsaufwand nicht lohnt"
+    },
+    {
+     "id": "PB1-1-2-3-K8",
+     "stufe": 3,
+     "kurz": "die Zielbestimmung eines Lasten- oder Pflichtenhefts erstellen und dabei Musskriterien (unverzichtbar für die Abnahme), Wunsch- bzw. Kannkriterien (werden umgesetzt, wenn Zeit und Budget reichen) und Abgrenzungskriterien (was das Produkt ausdrücklich nicht leisten soll) unterscheiden"
+    },
+    {
+     "id": "PB1-1-2-3-K9",
+     "stufe": 4,
+     "kurz": "eine formulierte Anforderung danach beurteilen, ob sie korrekt, vollständig, eindeutig (nur eine Deutung möglich), widerspruchsfrei zu anderen Anforderungen, verständlich, prüfbar und nachverfolgbar (Herkunft und Änderungen bekannt) ist, und sie gegebenenfalls verbessern"
     }
    ]
   },

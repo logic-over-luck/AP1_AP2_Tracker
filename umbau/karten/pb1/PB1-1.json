@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-1",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-1.json",
   "karten": [
@@ -416,6 +416,286 @@
       "k": "PB1-1-2-4-K3",
       "vorne": "Formuliere eine prüfbare Anforderung zur Zuverlässigkeit.",
       "hinten": "Zum Beispiel: „Das System ist montags bis freitags von 7 bis 19 Uhr zu mindestens 99,5 % verfügbar.“"
+    },
+    {
+      "id": "PB1-1-1-1-K4-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K4",
+      "vorne": "Nenne die vier Werte des Agilen Manifests.",
+      "hinten": "- Menschen und Zusammenarbeit vor Prozessen und Werkzeugen\n- funktionierende Software vor umfassender Dokumentation\n- Zusammenarbeit mit dem Kunden vor Vertragsverhandlung\n- Reagieren auf Veränderung vor Befolgen eines Plans"
+    },
+    {
+      "id": "PB1-1-1-1-K4-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K4",
+      "vorne": "Heißt „funktionierende Software vor umfassender Dokumentation“, dass agile Teams nicht dokumentieren?",
+      "hinten": "Nein. Das Zweitgenannte bleibt wichtig, wird aber nachrangig behandelt: so viel Dokumentation wie nötig, der Fortschritt wird an lauffähiger Software gemessen."
+    },
+    {
+      "id": "PB1-1-1-1-K5-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K5",
+      "vorne": "Nenne drei Nachteile agilen Vorgehens.",
+      "hinten": "- Meetings und Abstimmung kosten Entwicklungszeit\n- häufiges Testen und Ausliefern kostet Geld\n- Gesamtkosten und Endtermin sind vorab schwer kalkulierbar\n- der Auftraggeber muss laufend verfügbar sein und mitarbeiten"
+    },
+    {
+      "id": "PB1-1-1-1-K5-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K5",
+      "vorne": "Warum ist agiles Vorgehen schwierig, wenn der Auftraggeber einen Festpreis für einen fest umrissenen Umfang verlangt?",
+      "hinten": "Der Umfang ergibt sich agil erst schrittweise; Gesamtkosten und Endtermin lassen sich deshalb vorab kaum verbindlich kalkulieren."
+    },
+    {
+      "id": "PB1-1-1-1-K6-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K6",
+      "vorne": "Wie unterscheiden sich klassisches und agiles Vorgehen bei Führung und Aufwandsschätzung?",
+      "hinten": "- klassisch: Projektleitung führt hierarchisch und verteilt Aufgaben; Aufwand schätzen Projektleitung oder Experten\n- agil: Team organisiert sich selbst; Aufwand schätzt das Team gemeinsam"
+    },
+    {
+      "id": "PB1-1-1-1-K6-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K6",
+      "vorne": "Wie stimmen sich klassische und agile Teams typischerweise ab?",
+      "hinten": "Klassisch über Dokumente und förmliche, längere Besprechungen; agil kurz und informell, z. B. im täglichen Stand-up."
+    },
+    {
+      "id": "PB1-1-1-1-K7-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K7",
+      "vorne": "Wie funktioniert Kanban?",
+      "hinten": "- Arbeit in einzelne Aufgaben zerlegen\n- Aufgaben auf einem Board in Spalten (zu erledigen, in Arbeit, erledigt) sichtbar machen\n- jeder zieht sich die nächste Aufgabe selbst (Pull-Prinzip)\n- Staus in einer Spalte zeigen Engpässe"
+    },
+    {
+      "id": "PB1-1-1-1-K7-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K7",
+      "vorne": "Was bedeutet das Pull-Prinzip bei Kanban, und welchen Vorteil hat es?",
+      "hinten": "Aufgaben werden nicht zugeteilt, sondern vom Teammitglied selbst gezogen, sobald es frei ist. So arbeitet niemand über seiner Kapazität, und Engpässe werden sichtbar statt verdeckt."
+    },
+    {
+      "id": "PB1-1-1-1-K8-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K8",
+      "vorne": "Nenne zwei Unterschiede zwischen Kanban und Scrum.",
+      "hinten": "- Rollen: Scrum schreibt Product Owner, Scrum Master, Developers vor; Kanban keine\n- Takt: Scrum in Sprints mit festen Ereignissen; Kanban fortlaufender Fluss ohne Pflicht-Iterationen\n- Einsatz: Kanban auch für Daueraufgaben wie Support"
+    },
+    {
+      "id": "PB1-1-1-1-K8-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K8",
+      "vorne": "Warum passt Kanban besser als Scrum zu einem Support-Team?",
+      "hinten": "Support-Aufgaben kommen laufend und ohne Projektende; Kanban braucht keine Sprints, neue Tickets können jederzeit aufs Board, und Engpässe werden sofort sichtbar."
+    },
+    {
+      "id": "PB1-1-1-1-K9-1",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K9",
+      "vorne": "Was kennzeichnet Extreme Programming?",
+      "hinten": "- sehr kurze Iterationen, kein vollständiger Anforderungskatalog zu Beginn\n- Entwurf, Umsetzung und Test wechseln ständig\n- feste Praktiken: testgetriebene Entwicklung, Pair Programming, einfaches Design\n- für kleine Teams mit sich schnell ändernden Anforderungen"
+    },
+    {
+      "id": "PB1-1-1-1-K9-2",
+      "sp": "PB1-1-1-1",
+      "k": "PB1-1-1-1-K9",
+      "vorne": "Warum schreibt Extreme Programming Praktiken wie testgetriebene Entwicklung vor?",
+      "hinten": "Weil sich Anforderungen und Code ständig ändern; nur mit laufenden automatischen Tests und einfachem Code bleibt die Software dabei fehlerarm und änderbar."
+    },
+    {
+      "id": "PB1-1-1-2-K4-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K4",
+      "vorne": "Warum werden Fehler beim Wasserfallmodell oft spät entdeckt?",
+      "hinten": "Getestet wird erst nach der Umsetzung, und der Auftraggeber sieht erst bei der Abnahme ein Ergebnis; Fehler aus Analyse und Entwurf zeigen sich deshalb spät und sind dann teuer zu beheben."
+    },
+    {
+      "id": "PB1-1-1-2-K4-2",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K4",
+      "vorne": "Nenne zwei Vorteile und zwei Nachteile des Wasserfallmodells.",
+      "hinten": "Vorteile: gut planbar und kalkulierbar, gut dokumentiert.\nNachteile: unflexibel bei Änderungen, Fehler spät erkannt, Auftraggeber kaum eingebunden, Ergebnis bei langen Projekten womöglich veraltet."
+    },
+    {
+      "id": "PB1-1-1-2-K5-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K5",
+      "vorne": "Nenne je zwei Vor- und Nachteile des Spiralmodells.",
+      "hinten": "Vorteile: flexibel bei Änderungen, je Runde planbar und budgetierbar, Risiken und Qualität werden laufend geprüft.\nNachteile: hoher Managementaufwand, schwierige Risikobewertung, kaum parallelisierbar."
+    },
+    {
+      "id": "PB1-1-1-2-K5-2",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K5",
+      "vorne": "Warum lässt sich beim Spiralmodell kaum parallel arbeiten?",
+      "hinten": "Jede Runde baut auf dem Prototyp bzw. Teilergebnis und der Risikoanalyse der vorigen Runde auf; die nächste kann erst starten, wenn diese abgeschlossen ist."
+    },
+    {
+      "id": "PB1-1-1-2-K6-1",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K6",
+      "vorne": "Nenne je zwei Vor- und Nachteile des V-Modells.",
+      "hinten": "Vorteile: Tests schon beim Entwurf festgelegt, nachweisbare Qualität durch umfangreiche Dokumentation, passend für große und öffentliche Projekte.\nNachteile: starr bei Änderungen, für kleine Projekte zu aufwendig."
+    },
+    {
+      "id": "PB1-1-1-2-K6-2",
+      "sp": "PB1-1-1-2",
+      "k": "PB1-1-1-2-K6",
+      "vorne": "Warum ist das V-Modell bei Behörden verbreitet?",
+      "hinten": "Es macht die Qualität über festgelegte Teststufen und umfangreiche Dokumentation nachweisbar; für IT-Projekte des Bundes ist das V-Modell XT vorgegeben."
+    },
+    {
+      "id": "PB1-1-1-3-K6-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K6",
+      "vorne": "Wie unterscheidet sich das Product Backlog von einem Lastenheft?",
+      "hinten": "- nie vollständig, wird laufend ergänzt und umgeordnet\n- der Product Owner pflegt und ordnet es\n- Einträge mit Beschreibung, Reihenfolge und Schätzung\nDas Lastenheft hält die Anforderungen dagegen einmal vollständig fest."
+    },
+    {
+      "id": "PB1-1-1-3-K6-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K6",
+      "vorne": "Was ist ein Epic, und wo steht es im Product Backlog?",
+      "hinten": "Eine große, grobe Anforderung aus Nutzersicht, die vor der Umsetzung in mehrere User Stories zerlegt wird; es steht weiter unten, weil es noch nicht sprintreif ist."
+    },
+    {
+      "id": "PB1-1-1-3-K7-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K7",
+      "vorne": "Was ist die Definition of Done in Scrum?",
+      "hinten": "Die vom Team gemeinsam festgelegten Bedingungen, wann ein Eintrag als fertig gilt, z. B. Code geprüft, Tests bestanden, Abnahmekriterien erfüllt, dokumentiert."
+    },
+    {
+      "id": "PB1-1-1-3-K7-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K7",
+      "vorne": "Worin unterscheiden sich die Definition of Done und die Abnahmekriterien einer User Story?",
+      "hinten": "Die Definition of Done gilt für alle Einträge gleich (allgemeiner Qualitätsstandard); Abnahmekriterien beschreiben, was genau eine bestimmte User Story leisten muss."
+    },
+    {
+      "id": "PB1-1-1-3-K8-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K8",
+      "vorne": "Was wird in einem Burn-down-Chart auf den Achsen aufgetragen?",
+      "hinten": "x-Achse: Zeit (z. B. Sprinttage); y-Achse: verbleibender Aufwand (Stunden, Aufgaben oder Story Points)."
+    },
+    {
+      "id": "PB1-1-1-3-K8-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K8",
+      "vorne": "Die Ist-Linie eines Burn-down-Charts liegt über der Ideallinie und steigt am Tag 4 an. Was bedeutet das?",
+      "hinten": "Das Team ist im Verzug; am Tag 4 kamen neue Aufgaben hinzu (der Restaufwand wurde größer)."
+    },
+    {
+      "id": "PB1-1-1-3-K9-1",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K9",
+      "vorne": "Nenne je zwei Vor- und Nachteile von Scrum.",
+      "hinten": "Vorteile: flexibel durch kurze Sprints, transparent, selbstorganisiertes Team mit wenig Verwaltungsaufwand.\nNachteile: kein Gesamtüberblick über Umfang, Kosten und Termin zu Beginn, hoher Abstimmungsaufwand, Koordination mehrerer Teams schwierig."
+    },
+    {
+      "id": "PB1-1-1-3-K9-2",
+      "sp": "PB1-1-1-3",
+      "k": "PB1-1-1-3-K9",
+      "vorne": "Warum wird Scrum bei sehr großen Vorhaben schwierig?",
+      "hinten": "Ein Scrum-Team ist klein; braucht ein Produkt mehrere Teams, müssen deren Backlogs, Sprints und Ergebnisse zusätzlich koordiniert werden."
+    },
+    {
+      "id": "PB1-1-2-1-K7-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K7",
+      "vorne": "Warum wird ein Entwickler-Notebook in der Projektkalkulation nur anteilig angesetzt?",
+      "hinten": "Es wird auch nach dem Projekt für andere Projekte genutzt; dem Projekt wird nur der Anteil seiner Nutzungszeit an der Nutzungsdauer zugerechnet."
+    },
+    {
+      "id": "PB1-1-2-1-K7-2",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K7",
+      "vorne": "Wann setzt man Hardware in der Projektkalkulation voll an?",
+      "hinten": "Wenn sie eigens für dieses Projekt beschafft wird und danach nicht weiter genutzt wird, z. B. Spezialhardware für einen bestimmten Kunden."
+    },
+    {
+      "id": "PB1-1-2-1-K8-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K8",
+      "vorne": "Nenne vier Arten von Projektrisiken mit je einem Beispiel.",
+      "hinten": "- personell: Ausfall eines Experten\n- zeitlich-finanziell: unrealistischer Terminplan\n- technologisch: unerprobtes Framework\n- organisatorisch: unklare Zuständigkeiten, Missverständnisse mit dem Auftraggeber"
+    },
+    {
+      "id": "PB1-1-2-1-K8-2",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K8",
+      "vorne": "Welcher Risikoart ordnest du zu: „Die Schnittstelle zum Altsystem ist nicht dokumentiert, niemand weiß, ob sie die nötigen Daten liefert“?",
+      "hinten": "Technologisch – es betrifft die eingesetzte Technik und ihre Schnittstellen."
+    },
+    {
+      "id": "PB1-1-2-1-K9-1",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K9",
+      "vorne": "Warum verbraucht schlecht programmierte Software mehr Energie?",
+      "hinten": "Sie hält Prozessor, Speicher und Netz länger beschäftigt, z. B. durch ineffiziente Algorithmen, unnötige Abfragen oder Datenübertragungen; das kostet Strom."
+    },
+    {
+      "id": "PB1-1-2-1-K9-2",
+      "sp": "PB1-1-2-1",
+      "k": "PB1-1-2-1-K9",
+      "vorne": "Nenne drei Wege, wie du als Entwickler den Energiebedarf deiner Software senkst.",
+      "hinten": "- effiziente Algorithmen und Datenstrukturen\n- unnötige Abfragen, Schleifen und Übertragungen vermeiden (z. B. nur Änderungen laden)\n- geringe Hardwareanforderungen, damit ältere Geräte weiter genutzt werden können"
+    },
+    {
+      "id": "PB1-1-2-3-K6-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K6",
+      "vorne": "Welche Tätigkeiten umfasst die Anforderungsspezifikation?",
+      "hinten": "Anforderungen ermitteln, analysieren, spezifizieren (festschreiben) und validieren; danach Änderungen verwalten. Die Schritte laufen mit Rücksprüngen."
+    },
+    {
+      "id": "PB1-1-2-3-K6-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K6",
+      "vorne": "Warum braucht ein Softwareprojekt eine systematische Anforderungsspezifikation?",
+      "hinten": "Kunden äußern Wünsche oft unklar oder setzen Selbstverständliches stillschweigend voraus; ohne Ermitteln, Analysieren und Validieren wird leicht das Falsche gebaut."
+    },
+    {
+      "id": "PB1-1-2-3-K7-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K7",
+      "vorne": "Woran erkennst du, ob sich ein Ablauf für eine Automatisierung durch Software eignet?",
+      "hinten": "Er lässt sich klar in Regeln beschreiben und wiederholt sich häufig in gleicher Form; nur dann wiegt die Zeitersparnis den Entwicklungsaufwand auf."
+    },
+    {
+      "id": "PB1-1-2-3-K7-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K7",
+      "vorne": "Eine Firma will die jährliche Inventur ihres einzigen Lagers per Software automatisieren; die Abläufe ändern sich jedes Jahr. Sinnvoll?",
+      "hinten": "Eher nicht: Der Ablauf ist selten und nicht gleichförmig, der Entwicklungsaufwand würde sich kaum lohnen; ein Mensch erledigt ihn günstiger."
+    },
+    {
+      "id": "PB1-1-2-3-K8-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K8",
+      "vorne": "Was sind Muss-, Wunsch- und Abgrenzungskriterien in der Zielbestimmung?",
+      "hinten": "- Muss: unverzichtbar, Voraussetzung für die Abnahme\n- Wunsch (Kann): umsetzen, wenn Zeit und Budget reichen\n- Abgrenzung: was das Produkt ausdrücklich nicht leisten soll"
+    },
+    {
+      "id": "PB1-1-2-3-K8-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K8",
+      "vorne": "Wozu dienen Abgrenzungskriterien im Lastenheft?",
+      "hinten": "Sie halten fest, was ausdrücklich nicht zum Auftrag gehört, und verhindern so spätere Streitigkeiten, ob eine Funktion stillschweigend erwartet war."
+    },
+    {
+      "id": "PB1-1-2-3-K9-1",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K9",
+      "vorne": "Nenne fünf Kriterien, die eine gute Anforderung erfüllen soll.",
+      "hinten": "korrekt, vollständig, eindeutig, widerspruchsfrei, verständlich, prüfbar, nachverfolgbar"
+    },
+    {
+      "id": "PB1-1-2-3-K9-2",
+      "sp": "PB1-1-2-3",
+      "k": "PB1-1-2-3-K9",
+      "vorne": "Beurteile die Anforderung „Die Seite soll schnell laden“ und verbessere sie.",
+      "hinten": "Nicht eindeutig und nicht prüfbar („schnell“ ist Ansichtssache). Besser: „Die Startseite ist bei einer 50-Mbit/s-Verbindung nach höchstens 2 Sekunden vollständig geladen.“"
     }
   ],
   "nicht_abgefragt": [],
@@ -775,6 +1055,206 @@
       "id": "PB1-1-2-2-K1-1",
       "entscheidung": "neu",
       "grund": "P36 – Erwartung und Befürchtung je Stakeholder (2025S-PB1-A1-b, 2023W-PB1-A1-a) statt Stakeholder nennen (AP1-1-1-3-K1)"
+    },
+    {
+      "id": "PB1-1-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S153)"
+    },
+    {
+      "id": "PB1-1-1-1-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S153)"
+    },
+    {
+      "id": "PB1-1-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S153)"
+    },
+    {
+      "id": "PB1-1-1-1-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S153)"
+    },
+    {
+      "id": "PB1-1-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S153)"
+    },
+    {
+      "id": "PB1-1-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S153)"
+    },
+    {
+      "id": "PB1-1-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S160)"
+    },
+    {
+      "id": "PB1-1-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S160)"
+    },
+    {
+      "id": "PB1-1-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S162)"
+    },
+    {
+      "id": "PB1-1-1-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S162)"
+    },
+    {
+      "id": "PB1-1-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S162)"
+    },
+    {
+      "id": "PB1-1-1-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S162)"
+    },
+    {
+      "id": "PB1-1-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S515)"
+    },
+    {
+      "id": "PB1-1-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S515)"
+    },
+    {
+      "id": "PB1-1-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S516)"
+    },
+    {
+      "id": "PB1-1-1-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S516)"
+    },
+    {
+      "id": "PB1-1-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S517)"
+    },
+    {
+      "id": "PB1-1-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S517)"
+    },
+    {
+      "id": "PB1-1-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S158, buch:FS2-1.1.3-S17)"
+    },
+    {
+      "id": "PB1-1-1-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S158, buch:FS2-1.1.3-S17)"
+    },
+    {
+      "id": "PB1-1-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S158)"
+    },
+    {
+      "id": "PB1-1-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S158)"
+    },
+    {
+      "id": "PB1-1-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S159)"
+    },
+    {
+      "id": "PB1-1-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.2-S159)"
+    },
+    {
+      "id": "PB1-1-1-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S518)"
+    },
+    {
+      "id": "PB1-1-1-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.4.2-S518)"
+    },
+    {
+      "id": "PB1-1-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.2-S270)"
+    },
+    {
+      "id": "PB1-1-2-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.2-S270)"
+    },
+    {
+      "id": "PB1-1-2-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.2-S272)"
+    },
+    {
+      "id": "PB1-1-2-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.2-S272)"
+    },
+    {
+      "id": "PB1-1-2-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.2-S399)"
+    },
+    {
+      "id": "PB1-1-2-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.2-S399)"
+    },
+    {
+      "id": "PB1-1-2-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.1.1-S10, buch:FS-2.4.1-S123, buch:GS-5.5.1-S520)"
+    },
+    {
+      "id": "PB1-1-2-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.1.1-S10, buch:FS-2.4.1-S123, buch:GS-5.5.1-S520)"
+    },
+    {
+      "id": "PB1-1-2-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.1.2-S13)"
+    },
+    {
+      "id": "PB1-1-2-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.1.2-S13)"
+    },
+    {
+      "id": "PB1-1-2-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.6.2-S225, buch:GS-5.5.2-S522)"
+    },
+    {
+      "id": "PB1-1-2-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.6.2-S225, buch:GS-5.5.2-S522)"
+    },
+    {
+      "id": "PB1-1-2-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.5.1-S520, buch:FS-2.4.1-S125)"
+    },
+    {
+      "id": "PB1-1-2-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.5.1-S520, buch:FS-2.4.1-S125)"
     }
   ]
 }

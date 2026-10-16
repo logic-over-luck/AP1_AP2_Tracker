@@ -67,6 +67,60 @@
        "herkunft": [
         "beleg:2022S-PB1-A1-a"
        ]
+      },
+      {
+       "id": "PB1-1-1-1-K4",
+       "text": "Du kannst die vier Werte des Agilen Manifests erklären: Menschen und ihre Zusammenarbeit zählen mehr als Prozesse und Werkzeuge, funktionierende Software mehr als umfassende Dokumentation, Zusammenarbeit mit dem Kunden mehr als Vertragsverhandlung und Reagieren auf Veränderung mehr als das Befolgen eines Plans – das jeweils Zweitgenannte bleibt wichtig, wird aber nachrangig behandelt.",
+       "kurz": "Vier Werte des Agilen Manifests",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S153"
+       ]
+      },
+      {
+       "id": "PB1-1-1-1-K5",
+       "text": "Du kannst Nachteile agilen Vorgehens erklären: Die regelmäßigen Abstimmungsrunden kosten Entwicklungszeit, häufiges Testen und Ausliefern verursacht laufend Kosten, Gesamtkosten und Endtermin lassen sich vorab schwer festlegen, und der Auftraggeber muss ständig erreichbar sein und mitarbeiten.",
+       "kurz": "Nachteile agilen Vorgehens",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S153"
+       ]
+      },
+      {
+       "id": "PB1-1-1-1-K6",
+       "text": "Du kannst klassisches und agiles Vorgehen nach der Organisation des Teams unterscheiden: klassisch auch große Teams mit klarer Hierarchie, Abstimmung über Dokumente und förmliche Besprechungen und eine Aufwandsschätzung durch Projektleitung oder Experten – agil eher kleine, selbstorganisierte Teams, kurze informelle Abstimmung und eine Aufwandsschätzung gemeinsam im Team.",
+       "kurz": "Team, Führung und Schätzung: klassisch gegen agil",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S153"
+       ]
+      },
+      {
+       "id": "PB1-1-1-1-K7",
+       "text": "Du kannst die Kanban-Methode beschreiben: Die Arbeit wird in einzelne Aufgaben zerlegt und auf einem Board in Spalten wie „zu erledigen“, „in Arbeit“ und „erledigt“ sichtbar gemacht; wer frei ist, zieht sich die nächste Aufgabe selbst (Pull-Prinzip), und staut sich die Arbeit in einer Spalte, fällt der Engpass sofort auf.",
+       "kurz": "Kanban: Board und Pull-Prinzip",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S160"
+       ]
+      },
+      {
+       "id": "PB1-1-1-1-K8",
+       "text": "Du kannst Kanban und Scrum unterscheiden: Kanban kommt mit wenigen Regeln aus, ohne feste Rollen und ohne vorgeschriebene Iterationen, arbeitet in einem fortlaufenden Fluss und passt auch für Daueraufgaben wie Support oder Wartung; Scrum schreibt Rollen, Sprints mit festen Ereignissen und ein geordnetes Product Backlog vor. Gemeinsam ist beiden die Transparenz und das Ziehen der Aufgaben aus einer Liste.",
+       "kurz": "Kanban gegen Scrum",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S162"
+       ]
+      },
+      {
+       "id": "PB1-1-1-1-K9",
+       "text": "Du kannst Extreme Programming beschreiben: sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen.",
+       "kurz": "Extreme Programming und seine Praktiken",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S162"
+       ]
       }
      ],
      "baut_auf": [
@@ -89,6 +143,30 @@
         "podcast:themen-pb1"
        ],
        "grund": "Katalog nennt „Vorgehensmodelle … auswählen und einsetzen“ nur als betriebliche Handlung (P26)."
+      },
+      {
+       "text": "VUCA beschreibt ein Umfeld, das volatil, unsicher, komplex und mehrdeutig ist (Volatility, Uncertainty, Complexity, Ambiguity); darin lassen sich Anforderungen an neue Systeme kaum vorab vollständig festlegen, was für schrittweises, agiles Vorgehen spricht.",
+       "kurz": "VUCA-Umfeld als Grund für agiles Vorgehen",
+       "quellen": [
+        "buch:FS-2.4.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (katalog: false)"
+      },
+      {
+       "text": "Kanban verschafft schnell Überblick über Stand und Engpässe, braucht wenig Verwaltung, ist rasch eingeführt, lässt sich mit anderen Methoden kombinieren und passt auch für Wartung und Administration; es setzt aber breit aufgestellte Teammitglieder und klar trennbare Aufgaben voraus, unterstützt Terminplanung kaum und wird in großen Projekten unübersichtlich.",
+       "kurz": "Kanban: Vor- und Nachteile",
+       "quellen": [
+        "buch:FS-3.1.2"
+       ],
+       "grund": "RK2: Vor- und Nachteile von Kanban im Einzelnen gehen über das Unterscheiden hinaus"
+      },
+      {
+       "text": "Im Extreme Programming legt der Kunde Funktionen, Reihenfolge und Abnahmetests fest, die Entwickler schätzen den Aufwand und bestimmen das Tempo, ein Manager vermittelt; die Iterationen sind meist kürzer als Scrum-Sprints, und XP-Praktiken lassen sich in Scrum übernehmen. Vorteile sind kurze Entwicklungszeiten, ein eng eingebundener Kunde und gut wartbarer Code, Nachteile die hohen Anforderungen an Entwickler und Kunde und die Versuchung, unter Zeitdruck Tests wegzulassen.",
+       "kurz": "XP: Rollen, Vergleich mit Scrum, Bewertung",
+       "quellen": [
+        "buch:FS-3.1.2"
+       ],
+       "grund": "RK2: Einzelheiten zu XP eine Ebene unter AP2b.04.02.2; XP-Rollen ohne Katalogbezug"
       }
      ]
     },
@@ -143,10 +221,47 @@
         "katalog:AP2b.04.02.1.3",
         "beleg:2024W-PB1-A1-b"
        ]
+      },
+      {
+       "id": "PB1-1-1-2-K4",
+       "text": "Du kannst Stärken und Schwächen des Wasserfallmodells erklären: Weil alles vorab festgelegt wird, sind Termine, Kosten und Dokumentation gut planbar; weil der Auftraggeber erst bei der Abnahme ein Ergebnis sieht und erst nach der Umsetzung getestet wird, fallen Fehler aus Analyse und Entwurf spät und teuer auf, und bei langen Projekten kann die Lösung bei Einführung schon veraltet sein.",
+       "kurz": "Wasserfallmodell: Stärken und Schwächen begründet",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.4.2-S515"
+       ]
+      },
+      {
+       "id": "PB1-1-1-2-K5",
+       "text": "Du kannst Vor- und Nachteile des Spiralmodells erklären: Es reagiert flexibel auf geänderte Anforderungen, jede Runde lässt sich einzeln planen und budgetieren, und Risiken und Qualität werden in jeder Runde geprüft; dafür ist der Managementaufwand hoch, die Risikobewertung verlangt viel Erfahrung, und weil die Runden aufeinander aufbauen, lässt sich kaum parallel arbeiten.",
+       "kurz": "Spiralmodell: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.4.2-S516"
+       ]
+      },
+      {
+       "id": "PB1-1-1-2-K6",
+       "text": "Du kannst Vor- und Nachteile des V-Modells erklären: Weil zu jeder Entwurfsstufe schon die passende Teststufe festgelegt und alles dokumentiert wird, ist die Qualität nachweisbar, was zu großen und öffentlichen Projekten passt (für IT-Projekte des Bundes ist das V-Modell XT vorgegeben); dafür ist es starr bei Änderungen und für kleine Projekte zu aufwendig.",
+       "kurz": "V-Modell: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.4.2-S517"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-1-1-2"
+     ],
+     "kuer": [
+      {
+       "text": "Der Lebenszyklus einer Software reicht von der Idee über Entwicklung, Auslieferung und Betrieb bis zur Wartung; bei größeren Vorhaben wird er mehrfach durchlaufen, weil jede neue Version wieder mit Anforderungen beginnt – derselbe Gedanke steckt im Spiralmodell.",
+       "kurz": "Softwarelebenszyklus mehrfach durchlaufen",
+       "quellen": [
+        "buch:GS-5.4.1"
+       ],
+       "grund": "RK2: Lebenszyklus als Gerüst ohne eigenen Baustein"
+      }
      ]
     },
     {
@@ -193,7 +308,8 @@
        "kurz": "Aufgaben der Scrum-Rollen",
        "stufe": 2,
        "herkunft": [
-        "beleg:2022W-PB1-A2-bb"
+        "beleg:2022W-PB1-A2-bb",
+        "buch:FS-3.1.2-S154"
        ]
       },
       {
@@ -226,11 +342,59 @@
         "katalog:AP2b.03.01",
         "beleg:2023W-PB1-A2-b"
        ]
+      },
+      {
+       "id": "PB1-1-1-3-K6",
+       "text": "Du kannst das Product Backlog von Lasten- und Pflichtenheft unterscheiden: Es ist bis zum Projektende nie vollständig, der Product Owner ergänzt und ordnet es laufend, und jeder Eintrag trägt Beschreibung, Reihenfolge und Aufwandsschätzung; oben stehen kleine, umsetzbare User Stories, unten grobe Epics, die vor der Umsetzung in mehrere User Stories zerlegt werden.",
+       "kurz": "Product Backlog gegen Lasten- und Pflichtenheft",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S158",
+        "buch:FS2-1.1.3-S17"
+       ]
+      },
+      {
+       "id": "PB1-1-1-3-K7",
+       "text": "Du kannst die Definition of Done erklären: eine vom Team gemeinsam festgelegte Liste von Bedingungen, wann ein Eintrag als fertig gilt (z. B. Code geprüft, Tests bestanden, Abnahmekriterien erfüllt, Dokumentation ergänzt), damit alle unter „fertig“ dasselbe verstehen; das Team schärft sie in den Retrospektiven nach.",
+       "kurz": "Definition of Done",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S158"
+       ]
+      },
+      {
+       "id": "PB1-1-1-3-K8",
+       "text": "Du kannst erklären, wie ein Burn-down-Chart den Fortschritt zeigt: Über der Zeit wird der verbleibende Aufwand aufgetragen und mit einer Ideallinie verglichen; liegt die Ist-Linie darüber, ist das Team im Verzug, ein Anstieg bedeutet neu hinzugekommene, ein Sprung nach unten gestrichene Aufgaben.",
+       "kurz": "Burn-down-Chart: Ist- und Ideallinie",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.1.2-S159"
+       ]
+      },
+      {
+       "id": "PB1-1-1-3-K9",
+       "text": "Du kannst Vor- und Nachteile von Scrum erklären: Kurze Sprints, Transparenz und ein selbstorganisiertes Team machen es flexibel bei wenig Verwaltungsaufwand; dafür fehlt zu Beginn ein Gesamtüberblick über Umfang, Kosten und Termin, die regelmäßige Abstimmung kostet Zeit, und mehrere Teams an einem großen Produkt zu koordinieren ist schwierig.",
+       "kurz": "Scrum: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.4.2-S518"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-1-1-2"
-     ]
+     ],
+     "kuer": [
+      {
+       "text": "Ein Scrum-Projekt beginnt oft mit einem Kick-off, in dem Team und Auftraggeber eine gemeinsame Vision und erste Anforderungen auf Story Cards festhalten, aus denen das Product Backlog entsteht. Hindernisse sammelt der Scrum Master in einer Impediment List und räumt sie aus dem Weg; nach der Abnahme blickt ein Project Review auf das ganze Projekt zurück, damit künftige Projekte davon lernen.",
+       "kurz": "Kick-off, Impediment List und Project Review",
+       "quellen": [
+        "buch:FS-3.1.2"
+       ],
+       "grund": "RK2: Unterthemen von Scrum"
+      }
+     ],
+     "hinweis": "Das Lehrbuch nennt noch ein Entwicklungsteam von drei bis neun Personen; richtig ist nach dem Scrum Guide 2020 ein Scrum-Team (Product Owner, Scrum Master, Developers) von in der Regel höchstens zehn Personen."
     }
    ]
   },
@@ -365,6 +529,33 @@
         ],
         "was": "Kostenarten im Kostenplan eines Softwareprojekts (Personal-, Hardware-, Software-, Kommunikations- und Qualifizierungskosten); AP1 unterscheidet Anschaffungs-, Betriebs-, Lizenz- und Finanzierungskosten eines Angebots"
        }
+      },
+      {
+       "id": "PB1-1-2-1-K7",
+       "text": "Du kannst erklären, warum Hardware und Entwicklungssoftware in der Kalkulation eines Softwareprojekts meist nur anteilig angesetzt werden – Rechner und Lizenzen dienen auch anderen Projekten und werden über ihre Nutzungsdauer verteilt – und wann sie voll zählen: bei Spezialhardware, die eigens für dieses Projekt beschafft wird.",
+       "kurz": "Hardware und Lizenzen anteilig kalkulieren",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-4.2.2-S270"
+       ]
+      },
+      {
+       "id": "PB1-1-2-1-K8",
+       "text": "Du kannst Projektrisiken den Arten personell, zeitlich-finanziell, technologisch und organisatorisch zuordnen, zum Beispiel Ausfall des einzigen Datenbankexperten (personell), zu knapp geplanter Termin oder knappes Budget (zeitlich-finanziell), noch unerprobtes Framework (technologisch) und unklare Zuständigkeiten oder Missverständnisse mit dem Auftraggeber (organisatorisch).",
+       "kurz": "Risikoarten im Softwareprojekt",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-4.2.2-S272"
+       ]
+      },
+      {
+       "id": "PB1-1-2-1-K9",
+       "text": "Du kannst erklären, wie Software den Energiebedarf beeinflusst: Ineffiziente Programme halten Prozessor, Speicher und Netz länger beschäftigt und verbrauchen dadurch mehr Strom; effiziente Algorithmen, das Vermeiden unnötiger Abfragen, Schleifen und Datenübertragungen und geringe Anforderungen an die Hardware sparen Energie und verlängern die Nutzungsdauer der Geräte.",
+       "kurz": "Energiebedarf durch Software",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.9.2-S399"
+       ]
       }
      ],
      "baut_auf": [
@@ -378,7 +569,25 @@
       "AP1-3-1-1",
       "AP1-1-4-2"
      ],
-     "hinweis": "Fremdvergabe (2022S-PB1-A2-a) ist in AP1-3-2-4 abgedeckt und wird importiert; als Vorteile zusätzlich Festpreis und Kostenkontrolle, Know-how des Dienstleisters. Meilenstein, Stakeholder und Lessons Learned aus 2024W-PB1-A1-c sind in AP1 erklärt (AP1-1-2-3, AP1-1-1-3, AP1-1-4-3). Das Abnahmeprotokoll steht in PB1-9."
+     "hinweis": "Fremdvergabe (2022S-PB1-A2-a) ist in AP1-3-2-4 abgedeckt und wird importiert; als Vorteile zusätzlich Festpreis und Kostenkontrolle, Know-how des Dienstleisters. Meilenstein, Stakeholder und Lessons Learned aus 2024W-PB1-A1-c sind in AP1 erklärt (AP1-1-2-3, AP1-1-1-3, AP1-1-4-3). Das Abnahmeprotokoll steht in PB1-9.",
+     "kuer": [
+      {
+       "text": "Klassische Modelle binden das Risikomanagement als eigene Phase mit Risikoanalyse oder als parallele Aufgabe eines eigenen Teams ein. In Scrum führt der Product Owner Risiken im Backlog, Daily Scrum und Retrospektive decken Probleme im Team früh auf, riskante Einträge werden zuerst umgesetzt, und das Burn-down-Chart zeigt, ob der Termin hält.",
+       "kurz": "Risikomanagement im Vorgehensmodell",
+       "quellen": [
+        "buch:FS2-4.2.2"
+       ],
+       "grund": "RK2: Einbindung des Risikomanagements ins Vorgehensmodell ist Unterthema"
+      },
+      {
+       "text": "Edge- und Fog-Computing verarbeiten Daten nahe an ihrer Quelle vor, etwa im Gerät oder in einem Gateway vor Ort, sodass nur verdichtete Ergebnisse in die Cloud gehen; das spart Übertragung und damit Energie.",
+       "kurz": "Edge- und Fog-Computing als Green-IT-Beitrag",
+       "quellen": [
+        "buch:FS-4.4.3"
+       ],
+       "grund": "RK2: Unterthema; den Software-Anteil trägt die neue Pflicht-Aussage zum Energiebedarf (GS-3.9.2#10)"
+      }
+     ]
     },
     {
      "id": "PB1-1-2-2",
@@ -509,7 +718,8 @@
        "kurz": "Lastenheft in Grundzügen erstellen",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2b.04.01"
+        "katalog:AP2b.04.01",
+        "buch:FS2-4.2.1-S266"
        ]
       },
       {
@@ -545,7 +755,8 @@
         "katalog:AP2b.04.05",
         "beleg:2022S-PB1-A2-b",
         "beleg:2023S-PB1-A1-c",
-        "beleg:2022W-PB1-A1-b"
+        "beleg:2022W-PB1-A1-b",
+        "buch:FS-2.4.1-S125"
        ]
       },
       {
@@ -556,12 +767,103 @@
        "herkunft": [
         "beleg:2025S-PB1-A3-b"
        ]
+      },
+      {
+       "id": "PB1-1-2-3-K6",
+       "text": "Du kannst die Tätigkeiten der Anforderungsspezifikation erklären – Anforderungen ermitteln (z. B. im Kundengespräch, im Workshop, durch Beobachtung), analysieren, eindeutig festschreiben, mit dem Auftraggeber validieren und später Änderungen nachvollziehbar verwalten – und warum sie nötig ist: Kunden äußern ihre Wünsche oft unklar oder setzen sie stillschweigend voraus, und die Schritte laufen mit Rücksprüngen statt streng nacheinander.",
+       "kurz": "Tätigkeiten der Anforderungsspezifikation",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.1.1-S10",
+        "buch:FS-2.4.1-S123",
+        "buch:GS-5.5.1-S520"
+       ]
+      },
+      {
+       "id": "PB1-1-2-3-K7",
+       "text": "Du kannst beurteilen, ob sich ein Arbeitsablauf für eine (Teil-)Automatisierung durch Software eignet: Er muss sich klar in Regeln fassen lassen und häufig in gleicher Form wiederkehren; einmalige, seltene oder ständig wechselnde Abläufe erledigt ein Mensch meist günstiger, weil sich der Entwicklungsaufwand nicht lohnt.",
+       "kurz": "Eignung eines Ablaufs für Automatisierung",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-1.1.2-S13"
+       ]
+      },
+      {
+       "id": "PB1-1-2-3-K8",
+       "text": "Du kannst die Zielbestimmung eines Lasten- oder Pflichtenhefts erstellen und dabei Musskriterien (unverzichtbar für die Abnahme), Wunsch- bzw. Kannkriterien (werden umgesetzt, wenn Zeit und Budget reichen) und Abgrenzungskriterien (was das Produkt ausdrücklich nicht leisten soll) unterscheiden.",
+       "kurz": "Zielbestimmung: Muss-, Wunsch- und Abgrenzungskriterien",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-2.6.2-S225",
+        "buch:GS-5.5.2-S522"
+       ]
+      },
+      {
+       "id": "PB1-1-2-3-K9",
+       "text": "Du kannst eine formulierte Anforderung danach beurteilen, ob sie korrekt, vollständig, eindeutig (nur eine Deutung möglich), widerspruchsfrei zu anderen Anforderungen, verständlich, prüfbar und nachverfolgbar (Herkunft und Änderungen bekannt) ist, und sie gegebenenfalls verbessern.",
+       "kurz": "Kriterien einer guten Anforderung",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.5.1-S520",
+        "buch:FS-2.4.1-S125"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-2-2-2"
      ],
-     "hinweis": "Die IHK-Lösungen 2022S-PB1-A2-b und 2023S-PB1-A1-c zählen „läuft auf gängigen mobilen Systemen“ zu den funktionalen Anforderungen; fachlich ist es Übertragbarkeit, also nichtfunktional. In der Prüfung beides mit Begründung akzeptabel."
+     "hinweis": "Die IHK-Lösungen 2022S-PB1-A2-b und 2023S-PB1-A1-c zählen „läuft auf gängigen mobilen Systemen“ zu den funktionalen Anforderungen; fachlich ist es Übertragbarkeit, also nichtfunktional. In der Prüfung beides mit Begründung akzeptabel. Das Lehrbuch zählt Endgeräte, Betriebssysteme und Browser zu den funktionalen Anforderungen an die Oberfläche; fachlich sind Plattformvorgaben Übertragbarkeit bzw. Randbedingung, also nichtfunktional (vgl. Hinweis zu den IHK-Lösungen).",
+     "kuer": [
+      {
+       "text": "Im Requirements Engineering ordnet man Anforderungen oft vier Arten zu – Geschäftsanforderungen (Ziele des Unternehmens), Stakeholder-Anforderungen, Lösungsanforderungen (funktional und nichtfunktional) und Übergangsanforderungen für den Wechsel vom Ist zum Soll wie Datenübernahme oder Schulung – und legt den Systemkontext fest: was zum System gehört, wo seine Grenze liegt und welche Umgebung (Nutzer, Nachbarsysteme, Gesetze, Normen) es beeinflusst. Vom Anforderungskatalog des Kunden, der ins Lastenheft eingeht, wird die Anforderungsliste im Pflichtenheft unterschieden, mit der der Auftragnehmer Lösungsalternativen bewertet.",
+       "kurz": "Anforderungsarten, Systemkontext, Katalog und Liste",
+       "quellen": [
+        "buch:FS-2.4.1"
+       ],
+       "grund": "RK2: Begriffe des Requirements Engineering ohne eigenen Baustein"
+      },
+      {
+       "text": "Die Anforderungsspezifikation führt typischerweise von der Ist-Analyse über Sammeln, Definieren, Prüfen und Priorisieren der Anforderungen zum Anforderungskatalog, dem alle Beteiligten zustimmen. Die Ist-Analyse untersucht Aufgaben, Ablauforganisation, Kommunikation, verarbeitete Daten, Dokumentation und bekannte Schwachstellen, etwa mit Leitfragen wie: Welche Tätigkeiten fallen in welcher Reihenfolge an, welche Daten kommen wann und woher, wer entscheidet, welche Schnittstellen und Sicherheitsanforderungen gibt es?",
+       "kurz": "Schrittfolge und Ist-Analyse im Einzelnen",
+       "quellen": [
+        "buch:FS2-1.1.1"
+       ],
+       "grund": "RK2: Schrittfolge, Untersuchungspunkte und Leitfragen sind Unterthema; den Kern trägt PB1-1-2-3-K5"
+      },
+      {
+       "text": "Eine Prozessanalyse identifiziert einen Ablauf, nimmt ihn in Teilschritten mit Schnittstellen und Informationsfluss auf, stellt ihn grafisch dar und bewertet ihn auf Schwachstellen und automatisierbare Teile. Schnittstellen verbinden ihn mit anderen Prozessen (Eingang, Austausch und Ausgang von Informationen oder Material), der Informationsfluss zeigt den Weg der Daten bis zum Empfänger.",
+       "kurz": "Prozessanalyse und Prozessschnittstellen",
+       "quellen": [
+        "buch:FS2-1.1.2"
+       ],
+       "grund": "RK2: Schritte der Prozessanalyse nennt kein Baustein"
+      },
+      {
+       "text": "Nichtfunktionale Anforderungen gliedert man in Qualitätsanforderungen, die sich an Qualitätsmerkmalen wie Effizienz oder Wartbarkeit orientieren und oft unterschätzt werden, und Randbedingungen: technologisch (vorhandene Infrastruktur, Nachbarsysteme), organisatorisch (Abläufe, feste Termine) und normativ (Gesetze, Normen, Sprache).",
+       "kurz": "Qualitätsanforderungen und Randbedingungen",
+       "quellen": [
+        "buch:FS2-1.1.3",
+        "buch:GS-5.5.1"
+       ],
+       "grund": "RK2: Gliederung nichtfunktionaler Anforderungen ist Unterthema"
+      },
+      {
+       "text": "Anforderungen an eine Benutzeroberfläche lassen sich in fachliche (welche Daten eingegeben, geändert, angezeigt werden), bedienungsbezogene (Maus, Tastatur, Sprache, Zoomen) und technische (Endgeräte, Betriebssysteme, Browser) gliedern; dazu kommen nichtfunktionale wie Benutzbarkeit, Fehlertoleranz und Effizienz sowie Randbedingungen wie Rechte, Barrierefreiheit, Mehrsprachigkeit und Corporate Identity. Aus einem Anwendungsfalldiagramm folgt: Jeder Anwendungsfall eines Akteurs braucht in der Oberfläche eine Bedienmöglichkeit.",
+       "kurz": "Anforderungen an die Benutzeroberfläche",
+       "quellen": [
+        "buch:FS2-1.1.3"
+       ],
+       "grund": "RK2: Oberflächen-Anforderungen im Einzelnen sind Unterthema"
+      },
+      {
+       "text": "Auf Grundlage der festgelegten oder vorhandenen Softwarearchitektur stellt man Lösungsvarianten gegenüber, etwa Datenbankart, Oberflächentechnik oder Framework, und wählt eine anhand von Kriterien aus den Anforderungen begründet aus.",
+       "kurz": "Lösungsvarianten auf Basis der Architektur",
+       "quellen": [
+        "buch:FS2-4.2.3"
+       ],
+       "grund": "RK2: allgemeine Auswahl ohne eigenen Baustein"
+      }
+     ]
     },
     {
      "id": "PB1-1-2-4",
@@ -670,8 +972,34 @@
         "podcast:themen-ap2"
        ],
        "grund": "Nur Hinweisquelle; der Katalog zählt die Merkmale der älteren Fassung auf. Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Die ISO/IEC 9126 teilt die Merkmale in Untermerkmale, die oft als Testbereiche dienen: Funktionalität (Richtigkeit, Angemessenheit, Interoperabilität, Ordnungsmäßigkeit, Sicherheit), Zuverlässigkeit (Reife, Fehlertoleranz, Wiederherstellbarkeit), Benutzbarkeit (Verständlichkeit, Erlernbarkeit, Bedienbarkeit, Attraktivität), Effizienz (Zeit- und Verbrauchsverhalten), Wartbarkeit (Analysierbarkeit, Modifizierbarkeit, Stabilität, Prüfbarkeit) und Übertragbarkeit (Anpassbarkeit, Installierbarkeit, Austauschbarkeit).",
+       "kurz": "Untermerkmale nach ISO/IEC 9126",
+       "quellen": [
+        "buch:FS2-4.2.1",
+        "buch:GS-5.9.1"
+       ],
+       "grund": "Grenze/RK2: Untermerkmale liegen eine Ebene unter den Katalog-Merkmalen"
+      },
+      {
+       "text": "Interne Qualität beschreibt Software aus Sicht der Entwicklung (z. B. Änderbarkeit, Übertragbarkeit), externe Qualität aus Sicht der Nutzer (z. B. Benutzbarkeit, Effizienz); gute interne Qualität ist die Voraussetzung für gute externe Qualität und Nutzungsqualität.",
+       "kurz": "Interne und externe Softwarequalität",
+       "quellen": [
+        "buch:FS2-4.2.1"
+       ],
+       "grund": "RK2: Unterscheidung intern/extern nennt kein Baustein"
+      },
+      {
+       "text": "Die ISO/IEC 25010 in der Fassung von 2011 nennt acht Hauptmerkmale: funktionale Eignung, Leistungseffizienz, Kompatibilität, Benutzbarkeit, Zuverlässigkeit, Sicherheit, Wartbarkeit und Übertragbarkeit; gegenüber der ISO/IEC 9126 sind Kompatibilität und Sicherheit eigene Merkmale geworden.",
+       "kurz": "ISO/IEC 25010:2011 mit acht Hauptmerkmalen",
+       "quellen": [
+        "buch:GS-2.3.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (katalog: false); Katalog zählt die Merkmale der älteren Fassung auf"
       }
-     ]
+     ],
+     "hinweis": "Das Lehrbuch ordnet die Untermerkmale noch nach ISO/IEC 9126 (Sicherheit unter Funktionalität); in der ISO/IEC 25010 ist Sicherheit ein eigenes Hauptmerkmal."
     }
    ]
   }
@@ -830,8 +1158,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -840,7 +1168,20 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-2.4.1": "Lehrbuch Westermann „IT-Berufe“ FS 2.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.1.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.4.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-4.2.2": "Lehrbuch Westermann „IT-Berufe“ FS2 4.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.4.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.1.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.1.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.1.2": "Lehrbuch Westermann „IT-Berufe“ FS2 1.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.1.3": "Lehrbuch Westermann „IT-Berufe“ FS2 1.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.5.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-4.2.3": "Lehrbuch Westermann „IT-Berufe“ FS2 4.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-4.2.1": "Lehrbuch Westermann „IT-Berufe“ FS2 4.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.9.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.9.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-2.3.1": "Lehrbuch Westermann „IT-Berufe“ GS 2.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -1073,6 +1414,184 @@
       "PB1-1-1-1"
      ],
      "notiz": "betriebliche Handlung (P26)"
+    },
+    {
+     "thema": "VUCA beschreibt ein Umfeld, das volatil, unsicher, komplex und mehrdeutig ist (Volatility, Uncertainty, Complexity, Ambi",
+     "quellen": [
+      "buch:FS-2.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Kanban verschafft schnell Überblick über Stand und Engpässe, braucht wenig Verwaltung, ist rasch eingeführt, lässt sich ",
+     "quellen": [
+      "buch:FS-3.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im Extreme Programming legt der Kunde Funktionen, Reihenfolge und Abnahmetests fest, die Entwickler schätzen den Aufwand",
+     "quellen": [
+      "buch:FS-3.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Der Lebenszyklus einer Software reicht von der Idee über Entwicklung, Auslieferung und Betrieb bis zur Wartung; bei größ",
+     "quellen": [
+      "buch:GS-5.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Scrum-Projekt beginnt oft mit einem Kick-off, in dem Team und Auftraggeber eine gemeinsame Vision und erste Anforder",
+     "quellen": [
+      "buch:FS-3.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Klassische Modelle binden das Risikomanagement als eigene Phase mit Risikoanalyse oder als parallele Aufgabe eines eigen",
+     "quellen": [
+      "buch:FS2-4.2.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Edge- und Fog-Computing verarbeiten Daten nahe an ihrer Quelle vor, etwa im Gerät oder in einem Gateway vor Ort, sodass ",
+     "quellen": [
+      "buch:FS-4.4.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im Requirements Engineering ordnet man Anforderungen oft vier Arten zu – Geschäftsanforderungen (Ziele des Unternehmens)",
+     "quellen": [
+      "buch:FS-2.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Anforderungsspezifikation führt typischerweise von der Ist-Analyse über Sammeln, Definieren, Prüfen und Priorisieren",
+     "quellen": [
+      "buch:FS2-1.1.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Prozessanalyse identifiziert einen Ablauf, nimmt ihn in Teilschritten mit Schnittstellen und Informationsfluss auf,",
+     "quellen": [
+      "buch:FS2-1.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Nichtfunktionale Anforderungen gliedert man in Qualitätsanforderungen, die sich an Qualitätsmerkmalen wie Effizienz oder",
+     "quellen": [
+      "buch:FS2-1.1.3",
+      "buch:GS-5.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Anforderungen an eine Benutzeroberfläche lassen sich in fachliche (welche Daten eingegeben, geändert, angezeigt werden),",
+     "quellen": [
+      "buch:FS2-1.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Auf Grundlage der festgelegten oder vorhandenen Softwarearchitektur stellt man Lösungsvarianten gegenüber, etwa Datenban",
+     "quellen": [
+      "buch:FS2-4.2.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die ISO/IEC 9126 teilt die Merkmale in Untermerkmale, die oft als Testbereiche dienen: Funktionalität (Richtigkeit, Ange",
+     "quellen": [
+      "buch:FS2-4.2.1",
+      "buch:GS-5.9.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Interne Qualität beschreibt Software aus Sicht der Entwicklung (z. B. Änderbarkeit, Übertragbarkeit), externe Qualität a",
+     "quellen": [
+      "buch:FS2-4.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die ISO/IEC 25010 in der Fassung von 2011 nennt acht Hauptmerkmale: funktionale Eignung, Leistungseffizienz, Kompatibili",
+     "quellen": [
+      "buch:GS-2.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-1-2-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -1120,6 +1639,73 @@
       "PB1-1-2-3-K2"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-1-1-1-K4",
+     "PB1-1-1-1-K5",
+     "PB1-1-1-1-K6",
+     "PB1-1-1-1-K7",
+     "PB1-1-1-1-K8",
+     "PB1-1-1-1-K9",
+     "PB1-1-1-2-K4",
+     "PB1-1-1-2-K5",
+     "PB1-1-1-2-K6",
+     "PB1-1-1-3-K6",
+     "PB1-1-1-3-K7",
+     "PB1-1-1-3-K8",
+     "PB1-1-1-3-K9",
+     "PB1-1-2-1-K7",
+     "PB1-1-2-1-K8",
+     "PB1-1-2-1-K9",
+     "PB1-1-2-3-K6",
+     "PB1-1-2-3-K7",
+     "PB1-1-2-3-K8",
+     "PB1-1-2-3-K9"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB1-1-1-3-K2",
+     "PB1-1-2-3-K4",
+     "PB1-1-2-3-K1"
+    ],
+    "kuer": [
+     "PB1-1-1-1",
+     "PB1-1-1-1",
+     "PB1-1-1-1",
+     "PB1-1-1-2",
+     "PB1-1-1-3",
+     "PB1-1-2-1",
+     "PB1-1-2-1",
+     "PB1-1-2-3",
+     "PB1-1-2-3",
+     "PB1-1-2-3",
+     "PB1-1-2-3",
+     "PB1-1-2-3",
+     "PB1-1-2-3",
+     "PB1-1-2-4",
+     "PB1-1-2-4",
+     "PB1-1-2-4"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS-3.1.2#8",
+      "aussage": "AP1-1-1-2-K4",
+      "grund": "E2: Sprint Planning aus dem Product Backlog steht in AP1; das Sprint Backlog als Ergebnis in PB1-1-1-3-K1, die zwei Hälften des Plannings sind Detail"
+     }
+    ],
+    "hinweise": [
+     "PB1-1-1-3",
+     "PB1-1-2-3",
+     "PB1-1-2-4"
+    ]
    }
   ]
  }
