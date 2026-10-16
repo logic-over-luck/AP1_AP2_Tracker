@@ -87,7 +87,8 @@
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.02.2",
-        "beleg:2025W-PB1-A3-bc"
+        "beleg:2025W-PB1-A3-bc",
+        "buch:FS-3.3.7-S207"
        ]
       }
      ]
@@ -176,11 +177,58 @@
         "katalog:AP2b.04.20.1",
         "katalog:AP2b.04.20.2",
         "katalog:AP2b.04.20.3",
-        "katalog:AP2b.03.03.1"
+        "katalog:AP2b.03.03.1",
+        "buch:GS-5.2.6-S502"
+       ]
+      },
+      {
+       "id": "PB1-7-1-2-K6",
+       "text": "Du kannst erklären, was ein Datenformat festlegt – wie die Daten in einer Datei aufgebaut sind und wie ein Programm sie interpretieren muss – und warum offene Standardformate mit veröffentlichter Spezifikation wie CSV, XML oder JSON den Austausch zwischen sonst unverträglichen Programmen ermöglichen, während ein proprietäres Format meist nur die Software seines Herstellers zuverlässig verarbeitet.",
+       "kurz": "Datenformat: offen oder proprietär",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.2-S171",
+        "buch:GS-5.2.6-S502"
+       ]
+      },
+      {
+       "id": "PB1-7-1-2-K7",
+       "text": "Du kannst beschreiben, wie ein Programm Daten über JSON austauscht: Beim Export wird seine Datenstruktur (Liste, Objekt) in JSON-Text umgewandelt (serialisiert) und in eine Datei geschrieben; beim Import wird der Text eingelesen, wieder in verschachtelte Listen und Objekte umgewandelt (geparst) und ein einzelner Wert über Schlüssel und Index angesprochen, etwa der Mieter des ersten Vertrags.",
+       "kurz": "JSON serialisieren und parsen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.7-S187",
+        "buch:FS2-2.3.7-S189"
        ]
       }
      ],
-     "hinweis": "Das Skript aus 2024W-PB1-A2-c steht in PB1-3 (Automatisierung); hier zählt die JSON-Ausgabe."
+     "hinweis": "Das Skript aus 2024W-PB1-A2-c steht in PB1-3 (Automatisierung); hier zählt die JSON-Ausgabe.",
+     "kuer": [
+      {
+       "text": "Nach dem EVA-Prinzip erhält eine Softwarekomponente ihre Eingabedaten über eine Schnittstelle und gibt ihre Ergebnisse über eine Schnittstelle weiter; die einfachste Datenschnittstelle ist eine Datei in einem bekannten Standardformat wie CSV, XML oder JSON.",
+       "kurz": "EVA mit Datei als Schnittstelle",
+       "quellen": [
+        "buch:FS2-2.3.7"
+       ],
+       "grund": "RK2: allgemeines Prinzip ohne eigenen Baustein-Inhalt"
+      },
+      {
+       "text": "Weitere Formen, Daten zu strukturieren, sind das Datenbankschema (Struktur für ein bestimmtes DBMS), Dateien von Tabellenkalkulationen (meist proprietär, offen ist z. B. ods) und INI-Dateien aus Schlüssel-Wert-Paaren, etwa für Konfigurationen.",
+       "kurz": "Datenbankschema, Tabellendatei und INI",
+       "quellen": [
+        "buch:FS2-3.2.1"
+       ],
+       "grund": "RK2: keine Austauschformate des Katalogs"
+      },
+      {
+       "text": "Programme lesen und schreiben Dateien als Datenströme: als Text (Zeichen in einer Kodierung, für Menschen lesbar) oder binär (Bytes unverändert), bei Dateien mit frei wählbarer Position, bei Tastatur oder Netzwerkverbindung nur der Reihe nach. Jeder Zugriff folgt dem Ablauf öffnen – lesen oder schreiben – schließen, und der Öffnungsmodus legt fest, ob gelesen, überschrieben, angehängt oder nur neu angelegt wird.",
+       "kurz": "Datenströme und Dateizugriff",
+       "quellen": [
+        "buch:GS-5.7.7"
+       ],
+       "grund": "D8/RK2: Datenströme ohne Katalog-Baustein; Dateizugriff ist Programmiertechnik, nicht das Austauschformat selbst"
+      }
+     ]
     },
     {
      "id": "PB1-7-1-3",
@@ -210,7 +258,8 @@
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.05.1",
-        "katalog:AP2b.02.05.2"
+        "katalog:AP2b.02.05.2",
+        "buch:FS2-3.2.3-S232"
        ]
       },
       {
@@ -230,16 +279,83 @@
        "herkunft": [
         "katalog:AP2a.02.03.11"
        ]
+      },
+      {
+       "id": "PB1-7-1-3-K4",
+       "text": "Du kannst Open Data und Closed Data an vier Merkmalen unterscheiden – Zugang (für alle oder nur für Berechtigte), maschinelle Verarbeitbarkeit, Kosten und Nutzungsrechte – und Zwischenformen einordnen, etwa frei zugängliche Daten, die nur auf Papier vorliegen, oder offene Daten mit Pflicht zur Namensnennung; deshalb ist vor der Nutzung fremder Daten immer die Lizenz zu klären.",
+       "kurz": "Open Data gegen Closed Data",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.2-S170",
+        "buch:FS2-3.1.3-S221"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K5",
+       "text": "Du kannst Argumente für und gegen die Veröffentlichung von Daten als Open Data erläutern: dafür, dass mehr Menschen die Daten nutzen und daraus neue Anwendungen entstehen und dass mit öffentlichem Geld erhobene Daten der Allgemeinheit zustehen; dagegen Einnahmeverlust für den Urheber, Zweifel an Qualität und Pflege, Wettbewerbsverzerrung, leichterer Missbrauch, Datenschutzbedenken und ungeklärte Haftung bei fehlerhaften Daten.",
+       "kurz": "Open Data: Argumente dafür und dagegen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.2-S171"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K6",
+       "text": "Du kannst Formen der Heterogenität von Datenquellen an Beispielen unterscheiden: technisch (andere Zugriffsschnittstelle, etwa SQL gegenüber einer Web-API), syntaktisch (anderes Format desselben Werts, etwa 20.03.2026 gegenüber 2026-03-20), im Datenmodell (relational gegenüber dokumentenorientiert), strukturell (gleiches Modell, andere Aufteilung, etwa die Adresse in eigener Tabelle) und semantisch (andere Bedeutung oder Benennung, etwa „Ort“ gegenüber „Location“).",
+       "kurz": "Formen heterogener Datenquellen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.3-S177"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K7",
+       "text": "Du kannst materialisierte und virtuelle Informationsintegration unterscheiden: Beide überführen Daten heterogener Quellen in eine einheitliche Struktur und beseitigen dabei Doppeltes, das sich vorher zum Gegenprüfen nutzen lässt; bei der materialisierten werden die Daten vorab in eine zentrale Datenbasis kopiert (z. B. Data Warehouse) – schnelle Abfragen und meist bessere Qualität, aber nicht immer aktuell und aufwendig, wenn Quellen hinzukommen –, bei der virtuellen bleiben sie in den Quellen und werden erst bei jeder Anfrage zusammengeführt – stets aktuell und flexibel, aber langsamer und meist von geringerer Qualität.",
+       "kurz": "Materialisierte und virtuelle Integration",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.3-S177",
+        "buch:FS-3.2.3-S178"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K8",
+       "text": "Du kannst Data Warehouse und Data Lake unterscheiden: Ein Data Warehouse ist eine zentrale Datenbank, in die Daten mehrerer Quellen vor dem Laden aufbereitet und in ein festes, strukturiertes Modell übernommen werden, optimiert für Berichte und Analysen; ein Data Lake nimmt sehr große Mengen auch unstrukturierter Daten aus vielfältigen Quellen im Rohformat auf, und ihre Struktur wird erst bei der Auswertung festgelegt.",
+       "kurz": "Data Warehouse und Data Lake im Vergleich",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.3-S178"
+       ]
+      },
+      {
+       "id": "PB1-7-1-3-K9",
+       "text": "Du kannst strukturierte Daten (festes Format, etwa die Zeilen einer Datenbanktabelle), semistrukturierte Daten (nur teilweise feste Struktur, etwa eine E-Mail mit festem Kopf und freiem Text oder JSON- und XML-Dokumente ohne festes Schema) und unstrukturierte Daten (etwa Freitext, Bild, Video, Tonaufnahme) an Beispielen unterscheiden; unstrukturierte Daten sind am schwersten automatisch auszuwerten.",
+       "kurz": "Strukturierte, semi- und unstrukturierte Daten",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-3.2.1-S226",
+        "buch:GS-5.2.2-S478",
+        "buch:FS-3.7.1-S263"
+       ]
       }
      ],
      "kuer": [
       {
-       "text": "Data Warehouse als Gegenstück zum Data Lake: Daten liegen dort bereits aufbereitet und strukturiert vor.",
-       "kurz": "Data Warehouse gegen Data Lake",
+       "text": "Datenmanagement umfasst alle technischen, konzeptionellen und organisatorischen Maßnahmen, mit denen ein Unternehmen die Daten seiner Geschäftsprozesse gewinnt, speichert, pflegt und dort bereitstellt, wo sie gebraucht werden.",
+       "kurz": "Datenmanagement im Unternehmen",
        "quellen": [
-        "podcast:themen-ap2"
+        "buch:FS-1.1.2"
        ],
-       "grund": "Nur eine Hinweisquelle; der Katalog nennt „Data Lake o. a.“ (P-BEISPIELLISTE braucht zwei Quellen). Vom Katalog nicht ausgeschlossen."
+       "grund": "D8: kein Katalog-Baustein für Datenmanagement"
+      },
+      {
+       "text": "Eine Datenquelle ist primär, wenn die Daten dort entstehen (Sensor, Maschine, Benutzereingabe), und sekundär, wenn bereits erhobene Daten dort für die weitere Nutzung gespeichert sind (Datenbank, Datei, Datenportal).",
+       "kurz": "Primäre und sekundäre Datenquellen",
+       "quellen": [
+        "buch:FS-3.2.2",
+        "buch:FS2-3.2.1"
+       ],
+       "grund": "RK2: Einteilung der Datenquellen ist Unterthema; das Zusammenführen trägt PB1-7-1-3-K1"
       }
      ]
     },
@@ -334,8 +450,95 @@
         "katalog:AP2b.03.03.1",
         "katalog:AP2b.03.03.3"
        ]
+      },
+      {
+       "id": "PB1-7-1-4-K7",
+       "text": "Du kannst interne Schnittstellen (zwischen den Modulen oder Komponenten einer Software) von externen Schnittstellen (zu Benutzern, Geräten und anderen Systemen) unterscheiden: Externe Schnittstellen verbinden auch heterogene Systeme miteinander und vermeiden so Insellösungen, in denen Daten doppelt erfasst werden.",
+       "kurz": "Interne und externe Schnittstellen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.2.1-S22"
+       ]
+      },
+      {
+       "id": "PB1-7-1-4-K8",
+       "text": "Du kannst POST und PUT anhand der Idempotenz unterscheiden: Eine mehrfach gesendete PUT-Anfrage hinterlässt immer denselben Zustand, weil sie die Ressource unter einer bekannten URL ersetzt; jede wiederholte POST-Anfrage legt dagegen eine weitere Ressource an, sodass etwa eine doppelt abgeschickte Bestellung zweimal gespeichert wird.",
+       "kurz": "Idempotenz: PUT gegen POST",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.7-S190"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Nach außen hat eine Software vier Arten von Schnittstellen: zum Benutzer (Eingaben und Anzeige), zu anderer Software (API), zur Hardware (Geräte ansteuern, z. B. über USB) und für Daten (welche Formate sie importiert und exportiert, etwa für große Datenmengen).",
+       "kurz": "Arten externer Schnittstellen",
+       "quellen": [
+        "buch:FS2-1.2.1"
+       ],
+       "grund": "RK2: Einteilung der externen Schnittstellen ist Unterthema"
+      },
+      {
+       "text": "Neben 2xx, 4xx und 5xx gibt es die Klassen 1xx (Information) und 3xx (Umleitung); häufige Einzelcodes sind 200 OK, 201 Created (Ressource angelegt), 400 Bad Request, 404 Not Found, 415 Unsupported Media Type (falscher Inhaltstyp), 500 Internal Server Error und 501 Not Implemented. Ein Client prüft den Code, bevor er die Antwort weiterverarbeitet.",
+       "kurz": "HTTP-Statuscodes im Einzelnen",
+       "quellen": [
+        "buch:FS2-2.3.7"
+       ],
+       "grund": "RK2: einzelne Statuscodes; die Klassen 2xx, 4xx und 5xx trägt PB1-7-1-4-K4"
       }
      ]
+    },
+    {
+     "id": "PB1-7-1-6",
+     "titel": "REST und SOAP: Prinzipien, Nachrichtenaufbau und Auswahl",
+     "ziel": "Die Prinzipien eines REST-Dienstes erklären, den Aufbau einer SOAP-Nachricht mit WSDL beschreiben und für eine Anbindung begründet zwischen SOAP und REST auswählen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.21.1",
+       "anteil": "REST-Prinzipien und Auswahl gegenüber SOAP"
+      },
+      {
+       "id": "AP2b.04.21.2",
+       "anteil": "Aufbau der SOAP-Nachricht, WSDL und Auswahl gegenüber REST"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-7-1-6-K1",
+       "text": "Du kannst den Aufbau einer SOAP-Nachricht beschreiben: ein XML-Dokument mit dem Umschlag (Envelope) als Wurzel, einem optionalen Header für Zusatzangaben wie Sicherheitsinformationen und dem Body mit den Nutzdaten oder im Fehlerfall einem Fault-Element; übertragen meist über HTTP, aber auch über andere Protokolle wie SMTP, während die Operationen des Dienstes in einer WSDL-Datei beschrieben sind.",
+       "kurz": "Aufbau einer SOAP-Nachricht und WSDL",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.2-S174"
+       ]
+      },
+      {
+       "id": "PB1-7-1-6-K2",
+       "text": "Du kannst die Prinzipien eines REST-Dienstes erklären: Trennung von Client und Server, Zustandslosigkeit jeder Anfrage, als zwischenspeicherbar gekennzeichnete Antworten (Caching), eine einheitliche Schnittstelle aus Ressourcen-URLs und Standard-HTTP-Methoden, ein Schichtensystem, in dem Proxys oder Lastverteiler unbemerkt dazwischen sitzen können, und optional Code, den der Server dem Client zum Ausführen mitliefert (Code on Demand).",
+       "kurz": "Die sechs REST-Prinzipien",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.2-S175"
+       ]
+      },
+      {
+       "id": "PB1-7-1-6-K3",
+       "text": "Du kannst für eine Anbindung begründet zwischen SOAP und REST auswählen: SOAP, wenn ein streng beschriebener Vertrag, eingebaute Standards für Sicherheit und verlässliche Transaktionen gefordert sind oder ein bestehendes System nur SOAP anbietet; REST für schlanke Web-, Mobil- und IoT-Anwendungen, die mit den HTTP-Methoden auskommen, wenig Overhead haben sollen und Antworten in JSON verarbeiten.",
+       "kurz": "SOAP oder REST: begründete Auswahl",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-3.2.2-S175"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [],
+     "hinweis": "Das Lehrbuch schreibt „WDSL“ und nennt ACID als Eigenschaft von SOAP; richtig ist: Die Beschreibungssprache heißt WSDL, und ACID beschreibt Datenbanktransaktionen – SOAP unterstützt verlässliche Transaktionen nur über Zusatzstandards wie WS-AtomicTransaction."
     },
     {
      "id": "PB1-7-1-5",
@@ -407,14 +610,23 @@
        "grund": "Die Aufgabe 2025W setzt die Pflicht voraus, fragt sie aber nicht ab; der Zusatzbaustein reicht nur so weit wie die Belege (G6, P35)."
       },
       {
-       "text": "Weitere Begriffe rund um XML und REST: XSLT, Parser (SAX, DOM), YAML, HATEOAS, WSDL, Webservices und SOA.",
+       "text": "Weitere Begriffe rund um XML und REST: XSLT, Parser (SAX, DOM), YAML, HATEOAS, Webservices und SOA.",
        "kurz": "Weitere Begriffe zu XML und REST",
        "quellen": [
         "podcast:themen-ap2"
        ],
        "grund": "Nur Hinweisquelle; der Katalog nennt CSV, XML, JSON, REST und SOAP. Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Auch bei einer elektronischen Rechnung müssen die Echtheit der Herkunft (wer sie ausgestellt hat) und die Unversehrtheit des Inhalts (unterwegs nicht verändert) gewährleistet sein, etwa durch ein gesichertes Übertragungsverfahren, eine elektronische Signatur oder ein innerbetriebliches Kontrollverfahren, das Rechnung und Leistung abgleicht.",
+       "kurz": "eRechnung: Echtheit und Unversehrtheit",
+       "quellen": [
+        "buch:FS-1.1.4"
+       ],
+       "grund": "RK2: Rechtsrahmen der Rechnung, nicht Ziel, Format oder Prüfung der eRechnung"
       }
-     ]
+     ],
+     "hinweis": "Das Lehrbuch nennt für die elektronische Rechnung noch die Zustimmung des Empfängers; richtig ist: Seit 1.1.2025 müssen inländische Unternehmen E-Rechnungen empfangen können, eine Zustimmung ist dafür nicht mehr nötig."
     }
    ]
   }
@@ -536,8 +748,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -546,7 +758,14 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-1.1.2": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.2.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-3.2.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.3.7": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.7.7": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.2.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.1.4": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -666,6 +885,95 @@
      "wo": [
       "PB1-7-1-5"
      ]
+    },
+    {
+     "thema": "Datenmanagement umfasst alle technischen, konzeptionellen und organisatorischen Maßnahmen, mit denen ein Unternehmen die",
+     "quellen": [
+      "buch:FS-1.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Datenquelle ist primär, wenn die Daten dort entstehen (Sensor, Maschine, Benutzereingabe), und sekundär, wenn berei",
+     "quellen": [
+      "buch:FS-3.2.2",
+      "buch:FS2-3.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Nach dem EVA-Prinzip erhält eine Softwarekomponente ihre Eingabedaten über eine Schnittstelle und gibt ihre Ergebnisse ü",
+     "quellen": [
+      "buch:FS2-2.3.7"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Weitere Formen, Daten zu strukturieren, sind das Datenbankschema (Struktur für ein bestimmtes DBMS), Dateien von Tabelle",
+     "quellen": [
+      "buch:FS2-3.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Programme lesen und schreiben Dateien als Datenströme: als Text (Zeichen in einer Kodierung, für Menschen lesbar) oder b",
+     "quellen": [
+      "buch:GS-5.7.7"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Nach außen hat eine Software vier Arten von Schnittstellen: zum Benutzer (Eingaben und Anzeige), zu anderer Software (AP",
+     "quellen": [
+      "buch:FS2-1.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Neben 2xx, 4xx und 5xx gibt es die Klassen 1xx (Information) und 3xx (Umleitung); häufige Einzelcodes sind 200 OK, 201 C",
+     "quellen": [
+      "buch:FS2-2.3.7"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Auch bei einer elektronischen Rechnung müssen die Echtheit der Herkunft (wer sie ausgestellt hat) und die Unversehrtheit",
+     "quellen": [
+      "buch:FS-1.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-7-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -724,6 +1032,65 @@
       "PB1-7-1-4-K3"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-7-1-2-K6",
+     "PB1-7-1-2-K7",
+     "PB1-7-1-3-K4",
+     "PB1-7-1-3-K5",
+     "PB1-7-1-3-K6",
+     "PB1-7-1-3-K7",
+     "PB1-7-1-3-K8",
+     "PB1-7-1-3-K9",
+     "PB1-7-1-4-K7",
+     "PB1-7-1-4-K8",
+     "PB1-7-1-6-K1",
+     "PB1-7-1-6-K2",
+     "PB1-7-1-6-K3"
+    ],
+    "neue_stichpunkte": [
+     {
+      "id": "PB1-7-1-6",
+      "nach": "PB1-7-1-4",
+      "begruendung": "D5: PB1-7-1-4 hätte sonst 11 Aussagen"
+     }
+    ],
+    "d6": [
+     "PB1-7-1-1-K5",
+     "PB1-7-1-2-K5",
+     "PB1-7-1-3-K1"
+    ],
+    "kuer": [
+     "PB1-7-1-3",
+     "PB1-7-1-3",
+     "PB1-7-1-2",
+     "PB1-7-1-2",
+     "PB1-7-1-2",
+     "PB1-7-1-4",
+     "PB1-7-1-4",
+     "PB1-7-1-5"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [
+     "FS-4.1.2#5"
+    ],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS2-3.2.1#3",
+      "aussage": "AP1-2-2-1-K9",
+      "grund": "E2: interne und externe Datenquellen mit Beispielen stehen schon in AP1"
+     }
+    ],
+    "hinweise": [
+     "PB1-7-1-6",
+     "PB1-7-1-5"
+    ]
    }
   ]
  }

@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-7",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-7.json",
   "karten": [
@@ -360,6 +360,188 @@
       "k": "PB1-7-1-5-K4",
       "vorne": "Was beachtest du, wenn du einen Online-Validator für eRechnungen nutzt?",
       "hinten": "Keine echten Firmen- oder Kundendaten hochladen, nur Testdaten; die Ergebnisse können fehlerhaft sein, wenn das Werkzeug nicht geprüft und zertifiziert ist."
+    },
+    {
+      "id": "PB1-7-1-2-K6-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K6",
+      "vorne": "Was legt ein Datenformat fest?",
+      "hinten": "Wie die Daten in der Datei strukturiert abgelegt sind und wie ein Programm sie beim Verarbeiten interpretieren muss. Ohne Kenntnis des Formats sind die Daten für ein Programm nicht nutzbar."
+    },
+    {
+      "id": "PB1-7-1-2-K6-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K6",
+      "vorne": "Warum erleichtern offene Standardformate wie CSV oder JSON den Datenaustausch mehr als proprietäre Formate?",
+      "hinten": "Ihre Spezifikation ist öffentlich, also kann jedes Programm sie korrekt lesen und schreiben. Proprietäre Formate sind auf die Software eines Herstellers zugeschnitten, ihre Spezifikation ist oft nicht offen – andere Programme verarbeiten sie kaum oder fehlerhaft."
+    },
+    {
+      "id": "PB1-7-1-2-K7-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K7",
+      "vorne": "Was bedeuten Serialisieren und Parsen beim Datenaustausch mit JSON?",
+      "hinten": "- Serialisieren: die Datenstruktur des Programms (Objekt, Liste) in JSON-Text umwandeln, z. B. für eine Datei oder den Body einer HTTP-Anfrage\n- Parsen: JSON-Text einlesen und wieder in Objekte und Listen umwandeln, mit denen das Programm arbeiten kann"
+    },
+    {
+      "id": "PB1-7-1-2-K7-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K7",
+      "vorne": "Eine geparste JSON-Datei enthält ein Objekt mit dem Schlüssel `vertraege`, darin ein Array von Objekten mit dem Schlüssel `mieter`. Wie greifst du auf den Mieter des ersten Vertrags zu?",
+      "hinten": "`daten[\"vertraege\"][0][\"mieter\"]` – von außen nach innen: Schlüssel für das Objekt, Index 0 für das erste Array-Element, dann wieder ein Schlüssel."
+    },
+    {
+      "id": "PB1-7-1-3-K4-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K4",
+      "vorne": "An welchen vier Merkmalen unterscheidet man Open Data und Closed Data?",
+      "hinten": "Zugänglichkeit, maschinelle Verarbeitbarkeit, Kosten und Nutzungsrechte. Open Data: für alle, maschinenlesbar, kostenlos, frei weiterverwendbar; Closed Data ist in mindestens einem dieser Punkte eingeschränkt."
+    },
+    {
+      "id": "PB1-7-1-3-K4-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K4",
+      "vorne": "Eine Behörde stellt Messwerte frei ins Netz, aber nur als eingescannte PDF-Tabellen. Open oder Closed Data?",
+      "hinten": "Eine Zwischenform: frei zugänglich und kostenlos, aber kaum maschinell verarbeitbar. Der Übergang zwischen Open und Closed Data ist fließend."
+    },
+    {
+      "id": "PB1-7-1-3-K5-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K5",
+      "vorne": "Nenne zwei Argumente für Open Data.",
+      "hinten": "- Mehr Menschen können die Daten nutzen, dadurch entstehen neue Anwendungen und Erkenntnisse.\n- Mit öffentlichen Geldern erhobene Daten sollen der Allgemeinheit zugänglich sein."
+    },
+    {
+      "id": "PB1-7-1-3-K5-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K5",
+      "vorne": "Welche Bedenken sprechen gegen die Veröffentlichung von Daten als Open Data?",
+      "hinten": "Einnahmeverlust für den Urheber, Zweifel an der Qualität, Wettbewerbsverzerrung, leichterer Missbrauch, Datenschutz (Rückschluss auf Personen) und ungeklärte Haftung bei Schäden durch fehlerhafte Daten."
+    },
+    {
+      "id": "PB1-7-1-3-K6-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K6",
+      "vorne": "Welche fünf Formen der Heterogenität von Datenquellen gibt es?",
+      "hinten": "technisch (Zugriffsschnittstelle), syntaktisch (Format, Schreibweise), Datenmodell (z. B. relational oder dokumentenorientiert), strukturell (andere Aufteilung bei gleichem Modell), semantisch (Bedeutung, Benennung)."
+    },
+    {
+      "id": "PB1-7-1-3-K6-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K6",
+      "vorne": "Quelle A nennt das Feld `Ort`, Quelle B `Location` – gleicher Inhalt. Quelle C schreibt Datumswerte als `2026-03-20`, Quelle D als `20.03.2026`. Welche Formen der Heterogenität liegen vor?",
+      "hinten": "- `Ort`/`Location`: semantische Heterogenität (andere Benennung)\n- Datumsschreibweisen: syntaktische Heterogenität (anderes Format)"
+    },
+    {
+      "id": "PB1-7-1-3-K7-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K7",
+      "vorne": "Was unterscheidet materialisierte von virtueller Informationsintegration?",
+      "hinten": "- materialisiert: Daten vorab zentral zusammengeführt (z. B. Data Warehouse) – schnell, gute Qualität, aber nicht immer aktuell\n- virtuell: Daten bleiben in den Quellen, Zusammenführung erst bei der Anfrage – immer aktuell und flexibel, aber langsamer"
+    },
+    {
+      "id": "PB1-7-1-3-K7-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K7",
+      "vorne": "Warum sind doppelt vorhandene Daten aus mehreren Quellen bei der Integration nicht nur ein Problem?",
+      "hinten": "Für den einheitlichen Bestand müssen sie beseitigt werden, vorher lassen sie sich aber zur Verifikation nutzen: Stimmen die Werte in beiden Quellen überein, ist die Angabe wahrscheinlich richtig."
+    },
+    {
+      "id": "PB1-7-1-3-K8-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K8",
+      "vorne": "Was ist ein Data Warehouse?",
+      "hinten": "Eine zentrale Datenbank, in die Daten aus mehreren Quellen aufbereitet und in ein festes, strukturiertes Datenmodell übernommen werden; optimiert für Berichte und Analysen großer Datenmengen (Reporting, OLAP, Data Mining)."
+    },
+    {
+      "id": "PB1-7-1-3-K8-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K8",
+      "vorne": "Ein Unternehmen will Sensordaten, Logdateien und Bilder sammeln, ohne schon zu wissen, welche Auswertungen später kommen. Data Warehouse oder Data Lake?",
+      "hinten": "Data Lake: Er nimmt große Mengen unterschiedlicher, auch unstrukturierter Daten im Rohformat auf; die Struktur wird erst bei der Auswertung festgelegt. Ein Data Warehouse bräuchte vorab ein festes Schema."
+    },
+    {
+      "id": "PB1-7-1-3-K9-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K9",
+      "vorne": "Ordne zu: Kundentabelle, E-Mail, Sprachnachricht – strukturiert, semistrukturiert oder unstrukturiert?",
+      "hinten": "- Kundentabelle: strukturiert (festes Format)\n- E-Mail: semistrukturiert (Kopfzeilen fest, Text frei)\n- Sprachnachricht: unstrukturiert (kein vorgegebenes Format)"
+    },
+    {
+      "id": "PB1-7-1-3-K9-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K9",
+      "vorne": "Warum sind unstrukturierte Daten schwer automatisch auszuwerten?",
+      "hinten": "Es gibt keine festen Felder, über die ein Programm gezielt auf Werte zugreifen kann; Inhalte aus Text, Bild oder Ton müssen erst mit aufwendigen Verfahren (z. B. Texterkennung, KI) herausgeholt werden."
+    },
+    {
+      "id": "PB1-7-1-4-K7-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K7",
+      "vorne": "Was unterscheidet eine interne von einer externen Schnittstelle einer Software?",
+      "hinten": "- intern: verbindet Module oder Komponenten innerhalb derselben Software\n- extern: verbindet die Software mit Benutzern, Geräten oder anderen Systemen"
+    },
+    {
+      "id": "PB1-7-1-4-K7-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K7",
+      "vorne": "Warum braucht eine Unternehmenssoftware externe Schnittstellen?",
+      "hinten": "Damit sie mit anderen, oft heterogenen Systemen Daten austauschen kann. Ohne sie entstehen Insellösungen, in denen Daten doppelt erfasst oder von Hand übertragen werden."
+    },
+    {
+      "id": "PB1-7-1-4-K8-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K8",
+      "vorne": "Was bedeutet es, dass PUT idempotent ist, POST aber nicht?",
+      "hinten": "Eine mehrfach gesendete PUT-Anfrage führt immer zum gleichen Ergebnis (die Ressource hat denselben Stand). Jede wiederholte POST-Anfrage legt eine weitere Ressource an."
+    },
+    {
+      "id": "PB1-7-1-4-K8-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K8",
+      "vorne": "Ein Client schickt nach einem Zeitüberlauf dieselbe Anfrage zweimal. Wo entsteht ein doppelter Datensatz – bei `POST /bestellungen` oder bei `PUT /bestellungen/17`?",
+      "hinten": "Bei `POST /bestellungen`: Jede POST-Anfrage legt eine neue Bestellung an. `PUT /bestellungen/17` ersetzt beide Male dieselbe Bestellung, der Zustand bleibt gleich."
+    },
+    {
+      "id": "PB1-7-1-6-K1-1",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K1",
+      "vorne": "Aus welchen Teilen besteht eine SOAP-Nachricht?",
+      "hinten": "XML-Dokument mit Envelope (Umschlag, Wurzel), optionalem Header (Zusatzangaben wie Sicherheit) und Body (Nutzdaten); im Fehlerfall enthält der Body ein Fault-Element."
+    },
+    {
+      "id": "PB1-7-1-6-K1-2",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K1",
+      "vorne": "Wozu dient eine WSDL-Datei bei einem SOAP-Webservice?",
+      "hinten": "Sie beschreibt die Schnittstelle des Dienstes in XML: angebotene Operationen, Parameter und Datentypen sowie die Adresse. Clients können daraus automatisch Aufrufcode erzeugen."
+    },
+    {
+      "id": "PB1-7-1-6-K2-1",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K2",
+      "vorne": "Nenne die sechs Prinzipien (Constraints) von REST.",
+      "hinten": "Client-Server, Zustandslosigkeit, Caching, einheitliche Schnittstelle, Schichtensystem (Layered System), Code on Demand (optional)."
+    },
+    {
+      "id": "PB1-7-1-6-K2-2",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K2",
+      "vorne": "Warum erleichtert die Zustandslosigkeit eines REST-Dienstes die Lastverteilung?",
+      "hinten": "Jede Anfrage enthält alle nötigen Informationen, der Server speichert keine Sitzung. Deshalb kann jede Anfrage von einem beliebigen Server im Verbund beantwortet werden."
+    },
+    {
+      "id": "PB1-7-1-6-K3-1",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K3",
+      "vorne": "Wann spricht etwas für SOAP statt REST?",
+      "hinten": "Bei hohen Anforderungen an Sicherheit und Transaktionen, wenn ein fest beschriebener Vertrag (WSDL) gewünscht ist oder wenn ein bestehendes System nur SOAP anbietet."
+    },
+    {
+      "id": "PB1-7-1-6-K3-2",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K3",
+      "vorne": "Eine IoT-Wetterstation soll Messwerte an einen Cloud-Dienst senden. SOAP oder REST? Begründe.",
+      "hinten": "REST: schlank, wenig Overhead, einfache HTTP-Methoden und JSON – passend für Geräte mit wenig Rechenleistung und Bandbreite. SOAP wäre mit XML-Umschlag und Zusatzstandards unnötig schwer."
     }
   ],
   "nicht_abgefragt": [],
@@ -619,6 +801,136 @@
       "id": "PB1-7-1-5-K4-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S171, buch:GS-5.2.6-S502)"
+    },
+    {
+      "id": "PB1-7-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S171, buch:GS-5.2.6-S502)"
+    },
+    {
+      "id": "PB1-7-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S187, buch:FS2-2.3.7-S189)"
+    },
+    {
+      "id": "PB1-7-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S187, buch:FS2-2.3.7-S189)"
+    },
+    {
+      "id": "PB1-7-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S170, buch:FS2-3.1.3-S221)"
+    },
+    {
+      "id": "PB1-7-1-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S170, buch:FS2-3.1.3-S221)"
+    },
+    {
+      "id": "PB1-7-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S171)"
+    },
+    {
+      "id": "PB1-7-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S171)"
+    },
+    {
+      "id": "PB1-7-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S177)"
+    },
+    {
+      "id": "PB1-7-1-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S177)"
+    },
+    {
+      "id": "PB1-7-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S177, buch:FS-3.2.3-S178)"
+    },
+    {
+      "id": "PB1-7-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S177, buch:FS-3.2.3-S178)"
+    },
+    {
+      "id": "PB1-7-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S178)"
+    },
+    {
+      "id": "PB1-7-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S178)"
+    },
+    {
+      "id": "PB1-7-1-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.2.1-S226, buch:GS-5.2.2-S478, buch:FS-3.7.1-S263)"
+    },
+    {
+      "id": "PB1-7-1-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.2.1-S226, buch:GS-5.2.2-S478, buch:FS-3.7.1-S263)"
+    },
+    {
+      "id": "PB1-7-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.2.1-S22)"
+    },
+    {
+      "id": "PB1-7-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.2.1-S22)"
+    },
+    {
+      "id": "PB1-7-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S190)"
+    },
+    {
+      "id": "PB1-7-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S190)"
+    },
+    {
+      "id": "PB1-7-1-6-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S174)"
+    },
+    {
+      "id": "PB1-7-1-6-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S174)"
+    },
+    {
+      "id": "PB1-7-1-6-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    },
+    {
+      "id": "PB1-7-1-6-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    },
+    {
+      "id": "PB1-7-1-6-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    },
+    {
+      "id": "PB1-7-1-6-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
     }
   ]
 }
