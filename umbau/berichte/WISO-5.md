@@ -62,6 +62,10 @@ Teilaufgaben:
 | K7 | Du kannst dienstliche E-Mails sicher versenden und dabei dienstliche und private Kommunikation trennen: Empfänger vor dem Senden kontrollieren (Autovervollständigung), vertrauliche oder personenbezogene Inhalte nur verschlüsselt, keine Weiterleitung an private Postfächer oder Messenger, Abwesenheitsnotiz ohne interne Details. | 3 | katalog:WISO.05.02.5, katalog:WISO.05.02.1 |
 | K8 | Du kannst Zuständigkeiten in der Kommunikation in einer Situation anwenden: Auskünfte nach außen gibt nur, wer dazu befugt ist, damit sie richtig und abgestimmt sind; eine Anfrage außerhalb deiner Zuständigkeit leitest du an die zuständige Stelle weiter, zum Beispiel an Vorgesetzte, die Fachabteilung oder bei personenbezogenen Daten an den Datenschutzbeauftragten, statt selbst zu antworten. | 3 | katalog:WISO.05.02.4 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Geschäftliche E-Mails eines Kaufmanns oder einer Gesellschaft brauchen dieselben Pflichtangaben wie Geschäftsbriefe, bei einer GmbH zum Beispiel Firma, Rechtsform, Sitz, Registergericht, Handelsregisternummer und alle Geschäftsführer (§ 35a GmbHG, § 37a HGB). _(pruefer:wiso-2026-10)_
+
 _Hinweis:_ Kommunikationsmodelle und eine unbequeme Nachricht an Kunden formulieren stehen in AP1-2-2-3, verdächtige Absender und Links prüfen in AP1-7-4-2, Verschlüsselung in AP1-7-3. Wer im Betrieb für IT-Sicherheit und wer für Datenschutz zuständig ist, steht in AP1-7-1-4. Die Zuständigkeiten (früher Stichpunkt WISO-5-2-3) sind hier aufgegangen (D7).
 
 ### WISO-5-3 Zusammenarbeit, Ethik und Compliance
@@ -196,6 +200,14 @@ Karten (49): 2 bleiben, 21 prüfen (Aussage angepasst), 23 umhängen (Aussage ve
 | WISO-5-2-1 | Verlangt ist das Erkennen von Gefahren und das richtige Verhalten, keine technische Abwehr. | übernommen | G2: Perspektive WiSo (Verhalten am Arbeitsplatz); technische Abwehr steht in AP1-7 |
 | WISO-5-2-3 | Sicher ist nur der Kern: Es muss klar sein, wer welche Information an wen geben darf. | übernommen | Katalogwortlaut WISO.05.02.4 („Zuständigkeitsabgrenzung verdeutlichen“) |
 | WISO-5-3-2 | In den ausgewerteten Prüfungen gab es dazu keine Frage; es genügt, den Begriff zu erklären, Beispiele zu nennen und in einer Situation das regelgerechte Verhalten zu erkennen. | gestrichen | Überholt: 2021W-WISO-A30 und 2023S-WISO-A30 fragen Compliance ab; Tiefe aus Katalog und Z3b |
+
+## Hinweis-Abgleich (R3)
+
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 1, Außen 0, Ordner 0.
+
+| Thema | Hinweisquellen | Ring | wo | Anmerkung |
+|---|---|---|---|---|
+| Pflichtangaben in geschäftlichen E-Mails | pruefer:wiso-2026-10 | Kür | WISO-5-2-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 
 ## Geschwister-Prüfung (R4)
 

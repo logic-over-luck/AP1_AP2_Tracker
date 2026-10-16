@@ -57,6 +57,10 @@ Teilaufgaben: 2024S-WISO-A3, 2025S-WISO-A9, 2025W-WISO-A3, 2025W-WISO-A4, 2022S-
 | K3 | Du kannst erklären, welches Zeugnis der Betrieb am Ende ausstellen muss: immer ein einfaches Zeugnis über Art, Dauer und Ziel der Ausbildung; Angaben zu Verhalten und Leistung (qualifiziertes Zeugnis) nur auf Verlangen des Auszubildenden. | 2 | katalog:WISO.01.01.1.9, beleg:2022S-WISO-A9, beleg:2025S-WISO-A9, beleg:2025W-WISO-A3 |
 | K4 | Du kannst erklären, was bei nicht bestandener Abschlussprüfung gilt: Auf Verlangen des Auszubildenden verlängert sich das Ausbildungsverhältnis bis zur nächsten Wiederholungsprüfung, höchstens um ein Jahr. | 2 | katalog:WISO.01.01.1.10 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Seit 1.8.2024 darf der Betrieb das Ausbildungszeugnis mit Einwilligung des Auszubildenden auch elektronisch ausstellen (§ 16 BBiG in der Fassung des BVaDiG); ohne Einwilligung bleibt es beim schriftlichen Zeugnis. _(pruefer:wiso-2026-10)_
+
 #### WISO-1-1-4 Rechte und Pflichten von Auszubildenden und Ausbildenden
 
 Die Pflichten beider Seiten nennen, den Zweck einzelner Pflichten erklären und die Folgen von Pflichtverletzungen beschreiben.
@@ -222,6 +226,11 @@ Teilaufgaben: 2021W-WISO-A5, 2022W-WISO-A9, 2023W-WISO-A18, 2024S-WISO-A18, 2021
 | K6 | Du kannst Schutzregeln für schwerbehinderte Menschen nennen: fünf Arbeitstage Zusatzurlaub, Kündigung nur mit Zustimmung des Integrationsamts. | 1 | katalog:WISO.01.05.2.14 |
 | K7 | Du kannst im Einstellungsgespräch zulässige von unzulässigen Fragen unterscheiden: zulässig sind Fragen nach Qualifikation, bisherigen Tätigkeiten und Gehaltsvorstellung, unzulässig nach Heiratsplänen, Schwangerschaft, Partei-, Gewerkschafts- oder Religionszugehörigkeit, Krankheiten oder Vermögen. | 2 | katalog:WISO.01.05.2.4, beleg:2023S-WISO-A1, beleg:2023W-WISO-A2 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Die Schutzfrist nach der Entbindung verlängert sich auf Antrag auch dann auf zwölf Wochen, wenn beim Kind innerhalb der ersten acht Wochen eine Behinderung festgestellt wird. Seit 1.6.2025 gibt es nach einer Fehlgeburt ab der 13. Schwangerschaftswoche gestaffelte Schutzfristen (zwei, sechs oder acht Wochen); die Frau darf auf eigenen Wunsch früher wieder arbeiten. _(pruefer:wiso-2026-10)_
+- Das Integrationsamt heißt in einigen Bundesländern Inklusionsamt; die Aufgabe, etwa die Zustimmung zur Kündigung schwerbehinderter Menschen, ist dieselbe. _(pruefer:wiso-2026-10)_
+
 #### WISO-1-3-6 Arbeitsverhältnis: Einstellung, Probezeit, Befristung, Zeitarbeit, Urlaub und Zeugnis (neu)
 
 Den Weg von der Bewerbung bis zum laufenden Arbeitsverhältnis beschreiben und Regeln zu Probezeit, Befristung, Zeitarbeit, Urlaub und Arbeitszeugnis anwenden.
@@ -377,6 +386,10 @@ Teilaufgaben: 2021W-WISO-A11, 2021W-WISO-A9, 2023S-WISO-A9, 2023W-WISO-A4
 | K6 | Du kannst Nominal- und Realeinkommen unterscheiden: Steigen die Preise stärker als das Einkommen, sinkt das Realeinkommen (die Kaufkraft), auch wenn das Nominaleinkommen steigt. | 2 | katalog:WISO.01.09.1, katalog:ZB.wiso-konjunktur, beleg:2023S-WISO-A9 |
 | K7 | Du kannst aus Stundenlohn, Arbeitsstunden, Zuschlägen und Sonderzahlungen den Bruttolohn eines Monats berechnen. _(vorgegeben: Stundenlohn, Zuschlag und Sonderzahlung im Aufgabentext)_ | 3 | katalog:WISO.01.09.1, beleg:2023W-WISO-A4 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Für ein zweites und jedes weitere Arbeitsverhältnis gilt Steuerklasse VI; dort wird die Lohnsteuer ohne Grundfreibetrag berechnet. _(pruefer:wiso-2026-10)_
+
 _Hinweis:_ Welche Unterlagen der neue Arbeitgeber verlangen kann, zum Beispiel die steuerliche Identifikationsnummer (2023W-WISO-A3), steht in WISO-1-3-6.
 
 #### WISO-1-6-2 Sozialversicherung: Zweige, Träger, Finanzierung, Leistungen
@@ -396,6 +409,10 @@ Teilaufgaben: 2022S-WISO-A15, 2023S-WISO-A7, 2022W-WISO-A16, 2022W-WISO-A20, 202
 | K7 | Du kannst das Umlageverfahren der Rentenversicherung (Generationenvertrag) erklären: Die Beiträge der heute Erwerbstätigen bezahlen die laufenden Renten; weil durch den demografischen Wandel weniger Beitragszahler auf mehr Rentner kommen, wird die gesetzliche Rente voraussichtlich nicht allein zur Altersvorsorge reichen, private Vorsorge ist nötig. | 2 | katalog:WISO.01.05.2.11, beleg:2024S-WISO-A26, beleg:2021W-WISO-A8 |
 | K8 | Du kannst das Arbeitslosengeld als Versicherungsleistung erklären: Anspruch hat, wer arbeitslos gemeldet ist, der Vermittlung zur Verfügung steht und in den letzten 30 Monaten mindestens zwölf Monate versichert war; es gibt keine Bedürftigkeitsprüfung, und die Höhe richtet sich nach dem Bruttoentgelt der letzten zwölf Monate. | 2 | katalog:WISO.01.05.2.11, beleg:2022W-WISO-A19 |
 | K9 | Du kannst Leistungen der Kranken- und Pflegeversicherung zuordnen: ärztliche Behandlung, Krankenhaus und Krankengeld nach dem Ende der Entgeltfortzahlung; Pflege zu Hause durch Angehörige oder Pflegedienste und stationäre Pflege im Heim; versichert sind auch Rentner, Studierende und Bezieher von Arbeitslosengeld. | 2 | katalog:WISO.01.05.2.11, beleg:2022W-WISO-A20 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Seit 1.7.2023 zahlen Eltern mit mehreren Kindern unter 25 Jahren einen geringeren Beitrag zur Pflegeversicherung (Abschlag ab dem zweiten Kind); die Beitragssätze stehen in der Aufgabe. _(pruefer:wiso-2026-10)_
 
 _Hinweis:_ Träger und Beitrag der gesetzlichen Unfallversicherung stehen hier (D6); wer in der Unfallversicherung versichert ist, Versicherungsfälle und Leistungen stehen in WISO-3-1-3. Zu 2022W-WISO-A16: Die IHK wertete „Bei geringfügig Beschäftigten zahlt der Arbeitgeber in der Regel alle Beiträge“ als richtig; fachlich trägt der Minijobber einen kleinen Rentenversicherungsanteil, wenn er sich nicht befreien lässt.
 
@@ -823,6 +840,18 @@ Karten (245): 8 bleiben, 198 prüfen (Aussage angepasst), 25 umhängen (Aussage 
 | WISO-1-3-5 | Zu Elternzeit und Schwerbehindertenrecht gab es in den ausgewerteten Prüfungen keine Aufgabe. | gestrichen | Überholt: 2021W-WISO-A18 und mehrere Fragen zum besonderen Kündigungsschutz belegen beides |
 | WISO-1-7-1 | In den ausgewerteten Prüfungen gab es dazu keine Aufgabe. | gestrichen | E6 |
 | WISO-2-2-3 | Gewinnverteilungen anderer Rechtsformen kamen nicht vor. | gestrichen | E6; die gesetzliche Gewinnverteilung der Personengesellschaften ist keine Pflicht-Aussage, weil der Katalog nur Rechtsformen nennt (siehe WISO-2-2) |
+
+## Hinweis-Abgleich (R3)
+
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 5, Außen 0, Ordner 0.
+
+| Thema | Hinweisquellen | Ring | wo | Anmerkung |
+|---|---|---|---|---|
+| Elektronisches Ausbildungszeugnis | pruefer:wiso-2026-10 | Kür | WISO-1-1-3 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Mutterschutz in Sonderfällen (Kind mit Behinderung, Fehlgeburt) | pruefer:wiso-2026-10 | Kür | WISO-1-3-5 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Integrationsamt / Inklusionsamt | pruefer:wiso-2026-10 | Kür | WISO-1-3-5 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Steuerklasse VI | pruefer:wiso-2026-10 | Kür | WISO-1-6-1 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Kinderabschlag in der Pflegeversicherung | pruefer:wiso-2026-10 | Kür | WISO-1-6-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 
 ## Geschwister-Prüfung (R4)
 

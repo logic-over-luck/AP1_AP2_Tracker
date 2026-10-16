@@ -49,6 +49,10 @@ Teilaufgaben: 2023W-WISO-A6, 2025S-WISO-A27, 2021W-WISO-A17
 | K5 | Du kannst erklären, dass Sicherheitsbeauftragte ihr Amt neben ihrer eigentlichen Arbeit ausüben, keine Weisungen erteilen dürfen und die Verantwortung beim Arbeitgeber bleibt. | 2 | katalog:WISO.03.04 |
 | K6 | Du kannst Sicherheitsbeauftragte von der Fachkraft für Arbeitssicherheit unterscheiden: Die Fachkraft ist dafür eigens ausgebildet und berät den Arbeitgeber fachlich. | 2 | katalog:WISO.03.04, katalog:WISO.03.01.2 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Sicherheitsbeauftragte sind in Unternehmen mit regelmäßig mehr als 20 Beschäftigten zu bestellen (§ 22 SGB VII; der Unfallversicherungsträger kann die Zahl nach der Gefährdung abweichend regeln) – dieselbe Schwelle wie beim Arbeitsschutzausschuss. _(pruefer:wiso-2026-10)_
+
 #### WISO-3-1-3 Gesetzliche Unfallversicherung: versicherte Personen und Fälle, Leistungen (neu)
 
 Erklären, wer in der gesetzlichen Unfallversicherung versichert ist, welche Fälle sie abdeckt und welche Leistungen sie erbringt.
@@ -99,6 +103,10 @@ Teilaufgaben:
 | K4 | Du kannst erklären, dass die Gefährdungsbeurteilung auch psychische Belastungen erfassen muss, zum Beispiel Zeitdruck, Arbeitsmenge und häufige Störungen. | 2 | katalog:WISO.03.03.2, katalog:WISO.03.02.2 |
 | K5 | Du kannst geeignete von ungeeigneten Maßnahmen gegen psychische Belastung unterscheiden, zum Beispiel klare Prioritäten, störungsfreie Zeiten und realistische Termine gegenüber ständiger Erreichbarkeit. | 2 | katalog:WISO.03.02.2 |
 | K6 | Du kannst die Regeln für Bildschirmarbeit einordnen: Sie stehen heute in der Arbeitsstättenverordnung (die frühere Bildschirmarbeitsverordnung gibt es nicht mehr), und Bildschirmarbeit soll regelmäßig durch andere Tätigkeiten oder kurze Pausen unterbrochen werden. | 2 | katalog:WISO.03.01.8 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Übliche Maße am Bildschirmarbeitsplatz: Blickrichtung parallel zum Fenster, Sehabstand etwa 50 bis 80 Zentimeter, oberste Bildschirmzeile höchstens in Augenhöhe, Ober- und Unterarm sowie Ober- und Unterschenkel etwa im rechten Winkel. _(pruefer:wiso-2026-10)_
 
 _Hinweis:_ Wie ein Bildschirmarbeitsplatz ergonomisch gestaltet und beurteilt wird, steht in AP1-4-3-1 (WISO.03.01.7 und WISO.03.02.7 gedeckt, P47).
 
@@ -153,6 +161,10 @@ Teilaufgaben:
 | K1 | Du kannst die Schutzart erklären: Der IP-Code gibt mit der ersten Ziffer den Schutz gegen Berührung und Fremdkörper und mit der zweiten den Schutz gegen Wasser an, zum Beispiel IP 20: fingersicher, aber ohne Wasserschutz, nur für trockene Innenräume; IP 67: staubdicht und geschützt gegen zeitweiliges Untertauchen. | 2 | katalog:WISO.03.05.6 |
 | K2 | Du kannst die drei Schutzklassen unterscheiden: I mit Schutzleiter, II mit Schutzisolierung, III mit Schutzkleinspannung. | 2 | katalog:WISO.03.05.7 |
 | K3 | Du kannst das CE-Zeichen erklären: Der Hersteller erklärt damit selbst, dass sein Produkt die europäischen Vorschriften erfüllt; es ist kein Prüfsiegel einer unabhängigen Stelle und kein Umweltzeichen. | 2 | katalog:WISO.03.05.8 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Das GS-Zeichen („geprüfte Sicherheit“) ist freiwillig und wird von einer unabhängigen, staatlich anerkannten Prüfstelle vergeben – anders als das CE-Zeichen, das der Hersteller selbst anbringt. _(pruefer:wiso-2026-10)_
 
 #### WISO-3-3-3 Verhaltensregeln und sachgerechter Umgang mit Gefahrenpotenzialen
 
@@ -240,6 +252,11 @@ Teilaufgaben: 2024S-WISO-A14, 2022W-WISO-A25, 2022S-WISO-A25, 2022S-WISO-A26
 | K5 | Du kannst erklären, wofür eine Löschdecke dient: Sie erstickt kleine Brände, zum Beispiel an Kleidung oder in einem Papierkorb. | 2 | katalog:WISO.03.07.4.2 |
 | K6 | Du kannst erklären, warum für elektrische Geräte und Serverräume Kohlendioxid-Löscher geeignet sind: Sie leiten keinen Strom und hinterlassen keine Rückstände; das Löschmittel muss immer zum brennenden Stoff passen. | 2 | katalog:WISO.03.07.4, katalog:WISO.03.07.4.1 |
 | K7 | Du kannst richtige von falschen Löschregeln unterscheiden: mit dem Wind löschen, von vorn und von unten in die Glut, Tropf- und Fließbrände von oben nach unten, mehrere Löscher gleichzeitig statt nacheinander, Brandstelle danach beobachten. | 2 | katalog:WISO.03.07.4.1, beleg:2022S-WISO-A25 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Löschmittel und Brandklassen: Wasser für A, Schaum für A und B, ABC-Pulver für A, B und C, Kohlendioxid für B, Metallbrandpulver für D; zusätzlich gibt es die Brandklasse F für Speiseöle und -fette (Fettbrandlöscher, nie mit Wasser löschen). _(pruefer:wiso-2026-10)_
+- Kohlendioxid verdrängt den Sauerstoff: In kleinen, geschlossenen Räumen wie einem Serverraum besteht nach dem Löschen Erstickungsgefahr – den Raum verlassen und erst nach dem Lüften wieder betreten; löst eine CO2-Löschanlage aus, sofort hinaus. _(pruefer:wiso-2026-10)_
 
 _Hinweis:_ Früher Stichpunkt WISO-3-5-2.
 
@@ -388,6 +405,18 @@ Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage 
 | WISO-3-3-2 | Es genügt, die Angaben zu deuten; elektrotechnische Berechnungen gehören nicht dazu. | übernommen | G2: Perspektive WiSo (Sicherheit am Arbeitsplatz), Elektrotechnik ist nicht Gegenstand von WISO.03.05 |
 | WISO-3-4-1 | Medizinische Einzelheiten der Ersten Hilfe wurden nicht gefragt. | angepasst | Belegt ist richtiges Verhalten bei einer Verbrennung (2021W-WISO-A21); die Grenze folgt aus G4, nicht aus fehlenden Belegen |
 | WISO-3-6-2 | Verlangt ist das Wissen eines Anwenders, nicht das Erstellen eines Sicherheitskonzepts. | gestrichen | IT-Sicherheit ist in AP1-7 gelernt (P47); der WiSo-Teil ist dort gedeckt |
+
+## Hinweis-Abgleich (R3)
+
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 5, Außen 0, Ordner 0.
+
+| Thema | Hinweisquellen | Ring | wo | Anmerkung |
+|---|---|---|---|---|
+| Sicherheitsbeauftragte ab mehr als 20 Beschäftigten | pruefer:wiso-2026-10 | Kür | WISO-3-1-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Ergonomie-Maße am Bildschirmarbeitsplatz | pruefer:wiso-2026-10 | Kür | WISO-3-2-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| GS-Zeichen | pruefer:wiso-2026-10 | Kür | WISO-3-3-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Löschmittel je Brandklasse, Brandklasse F | pruefer:wiso-2026-10 | Kür | WISO-3-4-4 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Kohlendioxid in kleinen Räumen | pruefer:wiso-2026-10 | Kür | WISO-3-4-4 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 
 ## Geschwister-Prüfung (R4)
 

@@ -225,6 +225,15 @@
         "katalog:WISO.03.01.2"
        ]
       }
+     ],
+     "kuer": [
+      {
+       "text": "Sicherheitsbeauftragte sind in Unternehmen mit regelmäßig mehr als 20 Beschäftigten zu bestellen (§ 22 SGB VII; der Unfallversicherungsträger kann die Zahl nach der Gefährdung abweichend regeln) – dieselbe Schwelle wie beim Arbeitsschutzausschuss.",
+       "quellen": [
+        "pruefer:wiso-2026-10"
+       ],
+       "grund": "Kür-Vorschlag der unabhängigen Prüfung (P49): mögliche Verwechslung mit dem Arbeitsschutzausschuss (WISO-3-1-1-K2); keine Prüfung bietet die Schwelle an"
+      }
      ]
     },
     {
@@ -397,7 +406,16 @@
      "baut_auf": [
       "AP1-4-3-1"
      ],
-     "hinweis": "Wie ein Bildschirmarbeitsplatz ergonomisch gestaltet und beurteilt wird, steht in AP1-4-3-1 (WISO.03.01.7 und WISO.03.02.7 gedeckt, P47)."
+     "hinweis": "Wie ein Bildschirmarbeitsplatz ergonomisch gestaltet und beurteilt wird, steht in AP1-4-3-1 (WISO.03.01.7 und WISO.03.02.7 gedeckt, P47).",
+     "kuer": [
+      {
+       "text": "Übliche Maße am Bildschirmarbeitsplatz: Blickrichtung parallel zum Fenster, Sehabstand etwa 50 bis 80 Zentimeter, oberste Bildschirmzeile höchstens in Augenhöhe, Ober- und Unterarm sowie Ober- und Unterschenkel etwa im rechten Winkel.",
+       "quellen": [
+        "pruefer:wiso-2026-10"
+       ],
+       "grund": "Kür-Vorschlag der unabhängigen Prüfung (P49): Detailfragen zur Ergonomie; der Katalogbaustein ist durch AP1-4-3-1 gedeckt (P47), die Maße stehen weder im Katalog noch in einer Prüfung"
+      }
+     ]
     },
     {
      "id": "WISO-3-2-3",
@@ -629,6 +647,15 @@
        "herkunft": [
         "katalog:WISO.03.05.8"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Das GS-Zeichen („geprüfte Sicherheit“) ist freiwillig und wird von einer unabhängigen, staatlich anerkannten Prüfstelle vergeben – anders als das CE-Zeichen, das der Hersteller selbst anbringt.",
+       "quellen": [
+        "pruefer:wiso-2026-10"
+       ],
+       "grund": "Kür-Vorschlag der unabhängigen Prüfung (P49): weiteres Prüfzeichen zur offenen Liste „Prüfzeichen, z. B. CE-Zeichen“; nach P-BEISPIELLISTE mit nur einer Hinweisquelle Kür"
       }
      ]
     },
@@ -975,7 +1002,23 @@
        ]
       }
      ],
-     "hinweis": "Früher Stichpunkt WISO-3-5-2."
+     "hinweis": "Früher Stichpunkt WISO-3-5-2.",
+     "kuer": [
+      {
+       "text": "Löschmittel und Brandklassen: Wasser für A, Schaum für A und B, ABC-Pulver für A, B und C, Kohlendioxid für B, Metallbrandpulver für D; zusätzlich gibt es die Brandklasse F für Speiseöle und -fette (Fettbrandlöscher, nie mit Wasser löschen).",
+       "quellen": [
+        "pruefer:wiso-2026-10"
+       ],
+       "grund": "Kür-Vorschlag der unabhängigen Prüfung (P49): der Katalog nennt nur die Brandklassen A bis D (WISO-3-4-4-K4)"
+      },
+      {
+       "text": "Kohlendioxid verdrängt den Sauerstoff: In kleinen, geschlossenen Räumen wie einem Serverraum besteht nach dem Löschen Erstickungsgefahr – den Raum verlassen und erst nach dem Lüften wieder betreten; löst eine CO2-Löschanlage aus, sofort hinaus.",
+       "quellen": [
+        "pruefer:wiso-2026-10"
+       ],
+       "grund": "Kür-Vorschlag der unabhängigen Prüfung (P49): ergänzt WISO-3-4-4-K6 (CO2 für Serverräume)"
+      }
+     ]
     }
    ]
   }
@@ -1447,13 +1490,70 @@
    "ergebnis": "Alle 32 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen. Lücken geschlossen: Unterweisung (Zeitpunkt, Verantwortung), Unfallversicherung (versicherte Fälle, Leistungen; neuer Stichpunkt WISO-3-1-3), Meldepflicht, Erste Hilfe bei Verbrennung, Löschregeln und Bedienung des Feuerlöschers. IT-Sicherheit (WISO.03.08) ist durch AP1-7 gedeckt (P47), neu ist nur Authentizität (WISO-5-2-1). Die unabhängige Prüfung vom 16.10.2026 (umbau/berichte/WISO-3-pruefer.md, 35 Funde) ist eingearbeitet; Entscheidungen im Abschnitt „Umsetzung“ dort."
   },
   "hinweisquellen": {
+   "pruefer:wiso-2026-10": "Unabhängige Prüfung WiSo vom 16.10.2026 (Berichte umbau/berichte/WISO-<n>-pruefer.md, Bilanz WISO-pruefer-bilanz.md): Kür-Vorschläge zum aktuellen Rechtsstand und zu üblichen Detailfragen; als Hinweisquelle zugelassen nach Entscheidung des Projektinhabers (P49, wie P30).",
    "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte."
   },
   "hinweisabgleich": {
    "stand": "2026-10-16",
    "umfang": "ganzer Ordner",
-   "vorgehen": "Hinweisquellen nach R3 gesucht: Der IT-Berufe-Podcast nennt für die WiSo-Termine 2021–2026 keine Schlagworte; die Community-Lernzettel lagen dieser Sitzung nicht vor (Parkplatz P49). Kein Thema abzugleichen.",
-   "themen": []
+   "vorgehen": "Hinweisquellen nach R3 gesucht: Der IT-Berufe-Podcast nennt für die WiSo-Termine 2021–2026 keine Schlagworte; die Community-Lernzettel lagen nicht vor. Abgeglichen sind die Kür-Vorschläge der unabhängigen Prüfung (P49); liegen die Lernzettel vor, wird R3 nachgeholt.",
+   "themen": [
+    {
+     "thema": "Sicherheitsbeauftragte ab mehr als 20 Beschäftigten",
+     "quellen": [
+      "pruefer:wiso-2026-10"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-3-1-2"
+     ],
+     "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "Ergonomie-Maße am Bildschirmarbeitsplatz",
+     "quellen": [
+      "pruefer:wiso-2026-10"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-3-2-2"
+     ],
+     "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "GS-Zeichen",
+     "quellen": [
+      "pruefer:wiso-2026-10"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-3-3-2"
+     ],
+     "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "Löschmittel je Brandklasse, Brandklasse F",
+     "quellen": [
+      "pruefer:wiso-2026-10"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-3-4-4"
+     ],
+     "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "Kohlendioxid in kleinen Räumen",
+     "quellen": [
+      "pruefer:wiso-2026-10"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-3-4-4"
+     ],
+     "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    }
+   ]
   },
   "geschwister": [
    {

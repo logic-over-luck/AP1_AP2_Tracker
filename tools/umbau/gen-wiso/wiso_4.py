@@ -126,4 +126,7 @@ L.gesch("WISO.04.03.2", "Lärm, Luft, Abfall", {"Lärm": ["WISO-4-2-3-K2"], "Luf
 L.gesch("WISO.04.05.2", "Roh-, Hilfs- und Betriebsstoffe", {"Rohstoffe/Hilfsstoffe/Betriebsstoffe": ["WISO-4-1-1-K6"]})
 L.gesch("WISO.04.06", "Abfallvermeidung und -reduzierung", {"Vermeidung": ["WISO-4-2-1-K1"], "Reduzierung": ["WISO-4-2-1-K1"]})
 
+# Kür aus der unabhängigen Prüfung (P49, Hinweisquelle pruefer:wiso-2026-10)
+L.kuer_pruefer('WISO-4-2-2', 'Grüner Punkt', 'Der „Grüne Punkt“ ist die Marke eines Systembetreibers des Dualen Systems, kein vorgeschriebenes Zeichen; Pflicht ist die Systembeteiligung, nicht ein Aufdruck.', 'Kür-Vorschlag der unabhängigen Prüfung (P49): möglicher Distraktor bei Zeichenaufgaben; ergänzt WISO-4-2-2-K4')
+
 L.write(meta(kerntest="Alle 19 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen. Lücken geschlossen: Recycling-Symbol und Verpackungsgrundsätze (neuer Stichpunkt WISO-4-2-2), Emissionen vermeiden statt verringern, Blauer Engel bei Recyclingpapier. Unabhängige Prüfung (umbau/berichte/WISO-4-pruefer.md, 16.10.2026) eingearbeitet: Distraktoren zu Rohöl/nachwachsenden Rohstoffen, Blauem Engel und Recyclingpapier ergänzt, Zeichen und Folgen von Verstößen entdoppelt, Abfallhierarchie nach § 6 KrWG."))

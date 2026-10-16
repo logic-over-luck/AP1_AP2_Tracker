@@ -294,4 +294,7 @@ L.gesch("WISO.02.02", "Personen- und Kapitalgesellschaften", {"Personengesellsch
 L.gesch("WISO.02.03.1", "Einlinien- bzw. Mehrlinien-, Stabliniensystem", {"Stablinie": ["WISO-2-2-5-K2"], "Einlinie/Mehrlinie": ["WISO-2-2-5-K1"]})
 L.gesch("ZB.wiso-oekonomisches-prinzip", "Maximal- und Minimalprinzip", {"Maximalprinzip": ["WISO-2-4-3-K1"], "Minimalprinzip": ["WISO-2-4-3-K2"]})
 
+# Kür aus der unabhängigen Prüfung (P49, Hinweisquelle pruefer:wiso-2026-10)
+L.kuer_pruefer('WISO-2-2-1', 'MoPeG: eingetragene GbR (eGbR)', 'Seit 1.1.2024 (Personengesellschaftsrechtsmodernisierungsgesetz, MoPeG) kann sich eine GbR in das Gesellschaftsregister eintragen lassen und heißt dann eGbR; nötig ist die Eintragung zum Beispiel, wenn die GbR ein Grundstück erwerben will.', 'Kür-Vorschlag der unabhängigen Prüfung (P49): aktueller Rechtsstand; die Prüfungen 2021–2025 fragen es nicht ab')
+
 L.write(meta(kerntest="Alle 59 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen. Lücken geschlossen: Konjunktur (neu, Zusatzbaustein), Kaufmann und Handelsregister (neu, Zusatzbaustein), ökonomisches Prinzip (neu), KG und Rechtsformen-Merkmale, AG als Ziel Dividende, Globalisierung fördern. Organisation und Ziele bauen auf AP1-2-4-1 und AP1-2-4-2 auf. Unabhängige Prüfung vom 16.10.2026 (umbau/berichte/WISO-2-pruefer.md, 31 Funde) eingearbeitet: GmbH-Einzahlung berichtigt, juristische Person des Privatrechts, eG, Konjunkturphasen, Interessengemeinschaft, Vor- und Nachteile von Mehrlinien und Matrix (neu gegenüber AP1-2-4-2), Doppelungen zu WISO-1-5-3 gekürzt (D6)."))

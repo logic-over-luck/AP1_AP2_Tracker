@@ -98,6 +98,10 @@ Teilaufgaben: 2023S-WISO-A13
 | K4 | Du kannst die GmbH & Co. KG erklären: eine KG, deren unbeschränkt haftender Gesellschafter eine GmbH ist, sodass am Ende keine natürliche Person unbeschränkt haftet. | 2 | katalog:WISO.02.02.2 |
 | K5 | Du kannst erklären, dass eine Personengesellschaft wie GbR, OHG oder KG mindestens zwei Gesellschafter braucht, während ein Einzelunternehmen einer Person gehört. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Seit 1.1.2024 (Personengesellschaftsrechtsmodernisierungsgesetz, MoPeG) kann sich eine GbR in das Gesellschaftsregister eintragen lassen und heißt dann eGbR; nötig ist die Eintragung zum Beispiel, wenn die GbR ein Grundstück erwerben will. _(pruefer:wiso-2026-10)_
+
 _Hinweis:_ Die Rechtsform für eine Gründung wählen und die eG (2023S-WISO-A23, 2023W-WISO-A15) steht in WISO-2-2-2-K7 und -K8.
 
 #### WISO-2-2-2 Kapitalgesellschaften GmbH und AG, Genossenschaft, gemeinnützige Organisationen, Wahl der Rechtsform
@@ -431,6 +435,14 @@ Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage 
 | WISO-2-3-1 | Du musst die Formen am Bild erkennen und ihre Merkmale kennen; ein Organigramm selbst zeichnen musst du in dieser Prüfung nicht. | übernommen | Prüfungsformat G4: ca. 30 maschinell auswertbare Aufgaben, kein Zeichnen |
 | WISO-2-4-1 | Die Formeln stehen nicht in der Aufgabe, du musst sie auswendig können. | übernommen | In keiner der acht Prüfungen war eine Formel vorgegeben |
 | WISO-2-5-1 | Es genügt, die Formen danach zu unterscheiden, ob die Unternehmen rechtlich und wirtschaftlich selbstständig bleiben. | angepasst | Belegt sind zusätzlich Auswirkungen einer Fusion (2025W-WISO-A28) und Kartellarten (2024S-WISO-A22) |
+
+## Hinweis-Abgleich (R3)
+
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 1, Außen 0, Ordner 0.
+
+| Thema | Hinweisquellen | Ring | wo | Anmerkung |
+|---|---|---|---|---|
+| MoPeG: eingetragene GbR (eGbR) | pruefer:wiso-2026-10 | Kür | WISO-2-2-1 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 
 ## Geschwister-Prüfung (R4)
 

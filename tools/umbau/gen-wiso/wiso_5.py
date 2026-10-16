@@ -129,4 +129,7 @@ L.gesch("WISO.05.02.1", "privater und betrieblicher Bereich", {"privat": ["WISO-
 L.gesch("WISO.05.02.3", "Gefahren im privaten und betrieblichen Bereich (Social Media)", {"privat/betrieblich": ["WISO-5-2-4-K1"]})
 L.gesch("WISO.05.03.5", "allgemeine und betriebliche Compliance-Regelungen", {"allgemein": ["WISO-5-3-2-K2"], "betrieblich": ["WISO-5-3-2-K2", "WISO-5-3-2-K3"]})
 
+# Kür aus der unabhängigen Prüfung (P49, Hinweisquelle pruefer:wiso-2026-10)
+L.kuer_pruefer('WISO-5-2-2', 'Pflichtangaben in geschäftlichen E-Mails', 'Geschäftliche E-Mails eines Kaufmanns oder einer Gesellschaft brauchen dieselben Pflichtangaben wie Geschäftsbriefe, bei einer GmbH zum Beispiel Firma, Rechtsform, Sitz, Registergericht, Handelsregisternummer und alle Geschäftsführer (§ 35a GmbHG, § 37a HGB).', 'Kür-Vorschlag der unabhängigen Prüfung (P49): übliches WiSo-Thema, aber nicht im Katalog')
+
 L.write(meta(kerntest="Alle 10 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen; Phishing, sicheres Surfen und offenes WLAN lösen sich mit AP1-7-4-2 und AP1-7-4-3 (baut_auf), die Prüfsumme mit der Aussage zu Authentizität und Integrität. Charta der Vielfalt ergänzt. Unabhängige Prüfung (umbau/berichte/WISO-5-pruefer.md, 29 Funde) eingebaut: Doppelungen zu AP1-7 gestrichen oder auf das Neue gekürzt, zweites DSGVO-Ziel und BSI-Abgrenzung ergänzt, WISO-5-2-3 in WISO-5-2-2 aufgegangen."))

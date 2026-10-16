@@ -99,6 +99,10 @@ Teilaufgaben: 2022S-WISO-A28, 2023S-WISO-A24
 | K3 | Du kannst Grundsätze für Verpackungen erklären: unnötige Verpackung vermeiden statt entsorgen, Mehrweg vor Einweg, sortenreine und recycelbare Materialien; Papier oder recyceltes Plastik ist nicht automatisch umweltfreundlich. | 2 | katalog:WISO.04.06, beleg:2023S-WISO-A24 |
 | K4 | Du kannst die Pflicht zur Teilnahme am Dualen System erklären: Wer mit Ware befüllte Verpackungen, die typischerweise bei privaten Endverbrauchern anfallen, als Erster in Verkehr bringt (Hersteller, auch Online-Händler), muss sich nach dem Verpackungsgesetz an einem dualen System beteiligen und im Verpackungsregister registrieren. | 2 | katalog:WISO.04.03.1 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Der „Grüne Punkt“ ist die Marke eines Systembetreibers des Dualen Systems, kein vorgeschriebenes Zeichen; Pflicht ist die Systembeteiligung, nicht ein Aufdruck. _(pruefer:wiso-2026-10)_
+
 _Hinweis:_ Neuer Stichpunkt; das Duale System stand vorher in WISO-4-3-1. Das Recycling-Symbol steht in WISO-4-1-3, die Abfallhierarchie in WISO-4-2-1.
 
 #### WISO-4-2-3 Immissionsschutz, Verursacherprinzip und Rechtsfolgen (neu)
@@ -189,6 +193,14 @@ Karten (48): 1 bleiben, 23 prüfen (Aussage angepasst), 17 umhängen (Aussage ve
 | WISO-4-1-1 | Verlangt sind Beispiele und Maßnahmen, keine Verbrauchsrechnungen. | angepasst | Energie- und Kostenrechnungen stehen in AP1-4-2-3; WiSo verlangt nach Katalog (Stufe 1–2) Beispiele und Maßnahmen |
 | WISO-4-3-1 | Grenzwerte und Paragrafen waren nicht gefragt. | angepasst | Grenze aus G4 statt aus fehlenden Belegen (E6); jetzt als Grenze an WISO-4-2-3 |
 | WISO-4-3-2 | Der WiSo-Teil des Katalogs nennt kein Umweltzeichen. | angepasst | Der Blaue Engel ist belegt (2021W, 2023S, 2025W) und fällt unter WISO.04.05.1 (Nachhaltigkeit beim Einkauf berücksichtigen) |
+
+## Hinweis-Abgleich (R3)
+
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 1, Außen 0, Ordner 0.
+
+| Thema | Hinweisquellen | Ring | wo | Anmerkung |
+|---|---|---|---|---|
+| Grüner Punkt | pruefer:wiso-2026-10 | Kür | WISO-4-2-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 
 ## Geschwister-Prüfung (R4)
 

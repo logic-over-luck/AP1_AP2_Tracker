@@ -35,7 +35,7 @@ class LPW:
     def __init__(self, oid, titel, gebiete):
         self.oid = oid
         self.ob = {"id": oid, "titel": titel, "raum": "WISO", "gebiete": gebiete}
-        self.tbs, self.alt, self.rahmen, self.r4 = [], [], [], []
+        self.tbs, self.alt, self.rahmen, self.r4, self.r3 = [], [], [], [], []
         self.cur_tb = self.cur_sp = None
 
     def tb(self, tid, titel, satz):
@@ -75,6 +75,12 @@ class LPW:
     def kuer(self, text, quellen, grund):
         self.cur_sp.setdefault("kuer", []).append({"text": text, "quellen": quellen, "grund": grund})
 
+    def kuer_pruefer(self, sid, thema, text, grund):
+        """Kür aus der unabhängigen Prüfung (P49): Eintrag am Stichpunkt sid und Thema im Hinweis-Abgleich (R3)."""
+        sp = next(s for t in self.tbs for s in t["stichpunkte"] if s["id"] == sid)
+        sp.setdefault("kuer", []).append({"text": text, "quellen": [PRUEFER], "grund": grund})
+        self.r3.append({"thema": thema, "quellen": [PRUEFER], "ring": "Kür", "wo": [sid], "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"})
+
     def a(self, alt, status, ziel=None, grund=""):
         assert alt in ALT_K, f"keine alte Aussage {alt}"
         assert not any(x[0] == alt for x in self.alt), f"{alt} doppelt einsortiert"
@@ -98,6 +104,11 @@ class LPW:
             an.append(e)
         meta = dict(meta)
         if self.r4: meta["geschwister"] = self.r4
+        if self.r3:
+            ha = dict(meta["hinweisabgleich"])
+            ha["vorgehen"] = VORGEHEN_P49
+            ha["themen"] = self.r3
+            meta["hinweisabgleich"] = ha
         out = {"oberblock": self.ob, "themenbloecke": self.tbs, "alt_neu": {"koennen": an, "rahmen": self.rahmen}, "meta": meta}
         path = f"umbau/lernplan/wiso/{self.oid}.json"
         os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -106,9 +117,15 @@ class LPW:
         print(f"{self.oid}: {len(self.tbs)} Themenblöcke, {sum(len(t['stichpunkte']) for t in self.tbs)} Stichpunkte, {n} Können")
 
 
+PRUEFER = "pruefer:wiso-2026-10"
+
 QUELLEN = {
+    PRUEFER: "Unabhängige Prüfung WiSo vom 16.10.2026 (Berichte umbau/berichte/WISO-<n>-pruefer.md, Bilanz WISO-pruefer-bilanz.md): Kür-Vorschläge zum aktuellen Rechtsstand und zu üblichen Detailfragen; als Hinweisquelle zugelassen nach Entscheidung des Projektinhabers (P49, wie P30).",
     "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte.",
 }
+
+
+VORGEHEN_P49 = "Hinweisquellen nach R3 gesucht: Der IT-Berufe-Podcast nennt für die WiSo-Termine 2021–2026 keine Schlagworte; die Community-Lernzettel lagen nicht vor. Abgeglichen sind die Kür-Vorschläge der unabhängigen Prüfung (P49); liegen die Lernzettel vor, wird R3 nachgeholt."
 
 
 def meta(kerntest, hinweis=""):
