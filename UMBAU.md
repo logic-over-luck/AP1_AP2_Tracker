@@ -812,7 +812,10 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       `umbau/berichte/V2-bericht.md`.
   - [x] **V2 Schritt 1 – Regelwerk v2.0:** Abschnitt 4.0, `regelwerk.json` 2.0 (Abschnitt `buch`), `lernplan-pruefen.mjs`
         (Herkunft `buch:`, F3 3–10), neues Skript `tools/umbau/buch-pruefen.mjs` (T10), Tests in `tests/umbau-fundament.test.mjs`.
-  - [ ] V2 Schritt 2 – Kernpunkt-Listen (298 Kapitel) · [ ] Schritt 3 – Räume erweitern · [ ] Schritt 4 – Karten und
+  - [x] **V2 Schritt 2 – Kernpunkt-Listen (16.10.2026):** 298 Kapitel (GS 150, FS 92, FS2 56), Gegenprüfung je Abschnitt,
+        Regel K v2.1 (RK1–RK6) angewandt: 2.872 Kernpunkte, 949 abgedeckt, 662 neu Pflicht, 872 Kür, 389 gefiltert; Zuordnung im
+        Repo `umbau/zuordnung/buch.json`, Listen nur lokal (D9). Bericht `umbau/berichte/V2-bericht.md`.
+  - [ ] Schritt 3 – Räume erweitern · [ ] Schritt 4 – Karten und
         Erklärungen · [ ] Schritt 5 – App · [ ] Schritt 6 – unabhängige Prüfung · [ ] Schritt 7 – Abschluss
 - [ ] **Schritt 8 – PROJEKT** – **bewusst zurückgestellt** (Projektinhaber, 16.10.2026, P53): wird später gebaut, näher an der
       Projektphase. Bis dahin nicht anfangen.

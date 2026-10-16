@@ -2,515 +2,515 @@
 
 Erzeugt mit `node tools/umbau/buch-pruefen.mjs`. Nicht von Hand bearbeiten.
 
-**Ergebnis:** 596 Fehler, 0 Hinweise.
+**Ergebnis:** 1534 Fehler, 0 Hinweise.
 
 | Band | Kapitel | davon Filter (ganz) | Kernpunkte | abgedeckt | neu | Filter | Kür |
 |---|---|---|---|---|---|---|---|
-| GS | 150 | 0 | 0 | 0 | 0 | 0 | 0 |
-| FS | 92 | 0 | 0 | 0 | 0 | 0 | 0 |
-| FS2 | 56 | 0 | 0 | 0 | 0 | 0 | 0 |
+| GS | 150 | 3 | 1472 | 538 | 761 | 173 | 0 |
+| FS | 92 | 0 | 912 | 289 | 485 | 138 | 0 |
+| FS2 | 56 | 1 | 488 | 122 | 288 | 78 | 0 |
 
 Buch-Herkunft in Können-Aussagen: 0; Kür-Quellen aus dem Buch: 0.
 
 ## Fehler und Hinweise
 
-- ✗ T10a: GS-1.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.2.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.2.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.2.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.3.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.3.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.3.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.3.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.3.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.3.6: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.4.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.4.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.5.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.5.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-1.5.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.1.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.1.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.1.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.1.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.2.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.2.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.2.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.3.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.3.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.3.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.3.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.6: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.7: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.8: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.9: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.10: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.11: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.12: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.13: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.4.14: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.5.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.5.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.5.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.6.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.6.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.6.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.7.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.7.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.7.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.7.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.8.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.8.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.8.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.8.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.9.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.9.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.9.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.9.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.10.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.10.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.10.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.10.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.10.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-2.11: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.2.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.2.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.2.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.2.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.2.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.3.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.3.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.3.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.3.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.6: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.4.7: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.5.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.5.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.5.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.6.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.6.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.6.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.7.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.7.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.7.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.7.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.8.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.8.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.8.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.8.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.9.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-3.9.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.1.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.1.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.1.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.1.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.1.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.3.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.3.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.3.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.4.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.4.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-4.4.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.1.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.1.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.6: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.2.7: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.3.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.3.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.4.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.4.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.5.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.5.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.5.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.5.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.6.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.6.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.6.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.6.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.6: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.7.7: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.8.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.8.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.8.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.8.4: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.8.5: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.8.6: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.9.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.9.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.9.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.10.1: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.10.2: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.10.3: weder Stichpunkte noch filter
-- ✗ T10a: GS-5.11: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.1.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.1.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.3.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.4.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.4.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.5.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-1.5.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.1.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.1.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.5.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.5.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.5.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.5.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.5.5: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.6.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.6.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-2.6.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.5: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.6: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.3.7: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.5.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.5.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.5.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.5.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.6.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.6.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.5: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.6: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.7: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.7.8: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.8.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.8.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-3.8.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.3.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.3.4: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.3.5: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.3.6: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.4.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.5.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.5.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.5.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.6.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.6.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.6.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.7.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.7.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.8.1: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.8.2: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.8.3: weder Stichpunkte noch filter
-- ✗ T10a: FS-4.8.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.1.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.3.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.3.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.4.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.4.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.5.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.5.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-1.6: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.1.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.1.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.2.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.5: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.6: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.7: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.3.8: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.4.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-2.5: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.1.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.3.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.3.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.3.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.4.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.4.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-3.4.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.1.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.1.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.2.1: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.2.2: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.2.3: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.2.4: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.2.5: weder Stichpunkte noch filter
-- ✗ T10a: FS2-4.2.6: weder Stichpunkte noch filter
-- ✗ T10c: GS-1.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.1.json fehlt
-- ✗ T10c: GS-1.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.2.1.json fehlt
-- ✗ T10c: GS-1.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.2.2.json fehlt
-- ✗ T10c: GS-1.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.2.3.json fehlt
-- ✗ T10c: GS-1.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.3.1.json fehlt
-- ✗ T10c: GS-1.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.3.2.json fehlt
-- ✗ T10c: GS-1.3.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.3.3.json fehlt
-- ✗ T10c: GS-1.3.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.3.4.json fehlt
-- ✗ T10c: GS-1.3.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.3.5.json fehlt
-- ✗ T10c: GS-1.3.6: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.3.6.json fehlt
-- ✗ T10c: GS-1.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.4.1.json fehlt
-- ✗ T10c: GS-1.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.4.2.json fehlt
-- ✗ T10c: GS-1.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.5.1.json fehlt
-- ✗ T10c: GS-1.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.5.2.json fehlt
-- ✗ T10c: GS-1.5.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/1.5.3.json fehlt
-- ✗ T10c: GS-2.1.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.1.1.json fehlt
-- ✗ T10c: GS-2.1.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.1.2.json fehlt
-- ✗ T10c: GS-2.1.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.1.3.json fehlt
-- ✗ T10c: GS-2.1.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.1.4.json fehlt
-- ✗ T10c: GS-2.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.2.1.json fehlt
-- ✗ T10c: GS-2.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.2.2.json fehlt
-- ✗ T10c: GS-2.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.2.3.json fehlt
-- ✗ T10c: GS-2.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.3.1.json fehlt
-- ✗ T10c: GS-2.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.3.2.json fehlt
-- ✗ T10c: GS-2.3.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.3.3.json fehlt
-- ✗ T10c: GS-2.3.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.3.4.json fehlt
-- ✗ T10c: GS-2.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.1.json fehlt
-- ✗ T10c: GS-2.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.2.json fehlt
-- ✗ T10c: GS-2.4.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.3.json fehlt
-- ✗ T10c: GS-2.4.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.4.json fehlt
-- ✗ T10c: GS-2.4.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.5.json fehlt
-- ✗ T10c: GS-2.4.6: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.6.json fehlt
-- ✗ T10c: GS-2.4.7: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.7.json fehlt
-- ✗ T10c: GS-2.4.8: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.8.json fehlt
-- ✗ T10c: GS-2.4.9: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.9.json fehlt
-- ✗ T10c: GS-2.4.10: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.10.json fehlt
-- ✗ T10c: GS-2.4.11: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.11.json fehlt
-- ✗ T10c: GS-2.4.12: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.12.json fehlt
-- ✗ T10c: GS-2.4.13: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.13.json fehlt
-- ✗ T10c: GS-2.4.14: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.4.14.json fehlt
-- ✗ T10c: GS-2.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.5.1.json fehlt
-- ✗ T10c: GS-2.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.5.2.json fehlt
-- ✗ T10c: GS-2.5.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.5.3.json fehlt
-- ✗ T10c: GS-2.6.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.6.1.json fehlt
-- ✗ T10c: GS-2.6.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.6.2.json fehlt
-- ✗ T10c: GS-2.6.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.6.3.json fehlt
-- ✗ T10c: GS-2.7.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.7.1.json fehlt
-- ✗ T10c: GS-2.7.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.7.2.json fehlt
-- ✗ T10c: GS-2.7.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.7.3.json fehlt
-- ✗ T10c: GS-2.7.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.7.4.json fehlt
-- ✗ T10c: GS-2.8.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.8.1.json fehlt
-- ✗ T10c: GS-2.8.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.8.2.json fehlt
-- ✗ T10c: GS-2.8.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.8.3.json fehlt
-- ✗ T10c: GS-2.8.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.8.4.json fehlt
-- ✗ T10c: GS-2.9.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.9.1.json fehlt
-- ✗ T10c: GS-2.9.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.9.2.json fehlt
-- ✗ T10c: GS-2.9.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.9.3.json fehlt
-- ✗ T10c: GS-2.9.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.9.4.json fehlt
-- ✗ T10c: GS-2.10.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.10.1.json fehlt
-- ✗ T10c: GS-2.10.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.10.2.json fehlt
-- ✗ T10c: GS-2.10.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.10.3.json fehlt
-- ✗ T10c: GS-2.10.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.10.4.json fehlt
-- ✗ T10c: GS-2.10.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.10.5.json fehlt
-- ✗ T10c: GS-2.11: Kernpunkt-Datei quellen/lehrbuch/kern/GS/2.11.json fehlt
-- ✗ T10c: GS-3.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.1.json fehlt
-- ✗ T10c: GS-3.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.2.1.json fehlt
-- ✗ T10c: GS-3.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.2.2.json fehlt
-- ✗ T10c: GS-3.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.2.3.json fehlt
-- ✗ T10c: GS-3.2.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.2.4.json fehlt
-- ✗ T10c: GS-3.2.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.2.5.json fehlt
-- ✗ T10c: GS-3.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.3.1.json fehlt
-- ✗ T10c: GS-3.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.3.2.json fehlt
-- ✗ T10c: GS-3.3.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.3.3.json fehlt
-- ✗ T10c: GS-3.3.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.3.4.json fehlt
-- ✗ T10c: GS-3.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.1.json fehlt
-- ✗ T10c: GS-3.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.2.json fehlt
-- ✗ T10c: GS-3.4.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.3.json fehlt
-- ✗ T10c: GS-3.4.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.4.json fehlt
-- ✗ T10c: GS-3.4.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.5.json fehlt
-- ✗ T10c: GS-3.4.6: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.6.json fehlt
-- ✗ T10c: GS-3.4.7: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.4.7.json fehlt
-- ✗ T10c: GS-3.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.5.1.json fehlt
-- ✗ T10c: GS-3.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.5.2.json fehlt
-- ✗ T10c: GS-3.5.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.5.3.json fehlt
-- ✗ T10c: GS-3.6.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.6.1.json fehlt
-- ✗ T10c: GS-3.6.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.6.2.json fehlt
-- ✗ T10c: GS-3.6.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.6.3.json fehlt
-- ✗ T10c: GS-3.7.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.7.1.json fehlt
-- ✗ T10c: GS-3.7.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.7.2.json fehlt
-- ✗ T10c: GS-3.7.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.7.3.json fehlt
-- ✗ T10c: GS-3.7.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.7.4.json fehlt
-- ✗ T10c: GS-3.8.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.8.1.json fehlt
-- ✗ T10c: GS-3.8.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.8.2.json fehlt
-- ✗ T10c: GS-3.8.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.8.3.json fehlt
-- ✗ T10c: GS-3.8.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.8.4.json fehlt
-- ✗ T10c: GS-3.9.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.9.1.json fehlt
-- ✗ T10c: GS-3.9.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/3.9.2.json fehlt
-- ✗ T10c: GS-4.1.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.1.1.json fehlt
-- ✗ T10c: GS-4.1.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.1.2.json fehlt
-- ✗ T10c: GS-4.1.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.1.3.json fehlt
-- ✗ T10c: GS-4.1.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.1.4.json fehlt
-- ✗ T10c: GS-4.1.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.1.5.json fehlt
-- ✗ T10c: GS-4.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.2.json fehlt
-- ✗ T10c: GS-4.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.3.1.json fehlt
-- ✗ T10c: GS-4.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.3.2.json fehlt
-- ✗ T10c: GS-4.3.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.3.3.json fehlt
-- ✗ T10c: GS-4.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.4.1.json fehlt
-- ✗ T10c: GS-4.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.4.2.json fehlt
-- ✗ T10c: GS-4.4.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/4.4.3.json fehlt
-- ✗ T10c: GS-5.1.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.1.1.json fehlt
-- ✗ T10c: GS-5.1.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.1.2.json fehlt
-- ✗ T10c: GS-5.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.1.json fehlt
-- ✗ T10c: GS-5.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.2.json fehlt
-- ✗ T10c: GS-5.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.3.json fehlt
-- ✗ T10c: GS-5.2.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.4.json fehlt
-- ✗ T10c: GS-5.2.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.5.json fehlt
-- ✗ T10c: GS-5.2.6: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.6.json fehlt
-- ✗ T10c: GS-5.2.7: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.2.7.json fehlt
-- ✗ T10c: GS-5.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.3.1.json fehlt
-- ✗ T10c: GS-5.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.3.2.json fehlt
-- ✗ T10c: GS-5.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.4.1.json fehlt
-- ✗ T10c: GS-5.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.4.2.json fehlt
-- ✗ T10c: GS-5.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.5.1.json fehlt
-- ✗ T10c: GS-5.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.5.2.json fehlt
-- ✗ T10c: GS-5.5.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.5.3.json fehlt
-- ✗ T10c: GS-5.5.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.5.4.json fehlt
-- ✗ T10c: GS-5.6.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.6.1.json fehlt
-- ✗ T10c: GS-5.6.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.6.2.json fehlt
-- ✗ T10c: GS-5.6.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.6.3.json fehlt
-- ✗ T10c: GS-5.6.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.6.4.json fehlt
-- ✗ T10c: GS-5.7.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.1.json fehlt
-- ✗ T10c: GS-5.7.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.2.json fehlt
-- ✗ T10c: GS-5.7.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.3.json fehlt
-- ✗ T10c: GS-5.7.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.4.json fehlt
-- ✗ T10c: GS-5.7.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.5.json fehlt
-- ✗ T10c: GS-5.7.6: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.6.json fehlt
-- ✗ T10c: GS-5.7.7: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.7.7.json fehlt
-- ✗ T10c: GS-5.8.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.8.1.json fehlt
-- ✗ T10c: GS-5.8.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.8.2.json fehlt
-- ✗ T10c: GS-5.8.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.8.3.json fehlt
-- ✗ T10c: GS-5.8.4: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.8.4.json fehlt
-- ✗ T10c: GS-5.8.5: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.8.5.json fehlt
-- ✗ T10c: GS-5.8.6: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.8.6.json fehlt
-- ✗ T10c: GS-5.9.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.9.1.json fehlt
-- ✗ T10c: GS-5.9.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.9.2.json fehlt
-- ✗ T10c: GS-5.9.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.9.3.json fehlt
-- ✗ T10c: GS-5.10.1: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.10.1.json fehlt
-- ✗ T10c: GS-5.10.2: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.10.2.json fehlt
-- ✗ T10c: GS-5.10.3: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.10.3.json fehlt
-- ✗ T10c: GS-5.11: Kernpunkt-Datei quellen/lehrbuch/kern/GS/5.11.json fehlt
-- ✗ T10c: FS-1.1.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.1.1.json fehlt
-- ✗ T10c: FS-1.1.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.1.2.json fehlt
-- ✗ T10c: FS-1.1.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.1.3.json fehlt
-- ✗ T10c: FS-1.1.4: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.1.4.json fehlt
-- ✗ T10c: FS-1.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.2.1.json fehlt
-- ✗ T10c: FS-1.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.2.2.json fehlt
-- ✗ T10c: FS-1.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.2.3.json fehlt
-- ✗ T10c: FS-1.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.3.1.json fehlt
-- ✗ T10c: FS-1.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.3.2.json fehlt
-- ✗ T10c: FS-1.3.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.3.3.json fehlt
-- ✗ T10c: FS-1.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.4.1.json fehlt
-- ✗ T10c: FS-1.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.4.2.json fehlt
-- ✗ T10c: FS-1.4.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.4.3.json fehlt
-- ✗ T10c: FS-1.4.4: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.4.4.json fehlt
-- ✗ T10c: FS-1.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.5.1.json fehlt
-- ✗ T10c: FS-1.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/1.5.2.json fehlt
-- ✗ T10c: FS-2.1.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.1.1.json fehlt
-- ✗ T10c: FS-2.1.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.1.2.json fehlt
-- ✗ T10c: FS-2.1.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.1.3.json fehlt
-- ✗ T10c: FS-2.1.4: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.1.4.json fehlt
-- ✗ T10c: FS-2.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.2.1.json fehlt
-- ✗ T10c: FS-2.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.2.2.json fehlt
-- ✗ T10c: FS-2.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.2.3.json fehlt
-- ✗ T10c: FS-2.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.3.1.json fehlt
-- ✗ T10c: FS-2.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.3.2.json fehlt
-- ✗ T10c: FS-2.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.4.1.json fehlt
-- ✗ T10c: FS-2.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.4.2.json fehlt
-- ✗ T10c: FS-2.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.5.1.json fehlt
-- ✗ T10c: FS-2.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.5.2.json fehlt
-- ✗ T10c: FS-2.5.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.5.3.json fehlt
-- ✗ T10c: FS-2.5.4: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.5.4.json fehlt
-- ✗ T10c: FS-2.5.5: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.5.5.json fehlt
-- ✗ T10c: FS-2.6.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.6.1.json fehlt
-- ✗ T10c: FS-2.6.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.6.2.json fehlt
-- ✗ T10c: FS-2.6.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/2.6.3.json fehlt
-- ✗ T10c: FS-3.1.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.1.1.json fehlt
-- ✗ T10c: FS-3.1.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.1.2.json fehlt
-- ✗ T10c: FS-3.2.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.2.1.json fehlt
-- ✗ T10c: FS-3.2.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.2.2.json fehlt
-- ✗ T10c: FS-3.2.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.2.3.json fehlt
-- ✗ T10c: FS-3.3.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.1.json fehlt
-- ✗ T10c: FS-3.3.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.2.json fehlt
-- ✗ T10c: FS-3.3.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.3.json fehlt
-- ✗ T10c: FS-3.3.4: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.4.json fehlt
-- ✗ T10c: FS-3.3.5: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.5.json fehlt
-- ✗ T10c: FS-3.3.6: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.6.json fehlt
-- ✗ T10c: FS-3.3.7: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.3.7.json fehlt
-- ✗ T10c: FS-3.4.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.4.1.json fehlt
-- ✗ T10c: FS-3.4.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.4.2.json fehlt
-- ✗ T10c: FS-3.5.1: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.5.1.json fehlt
-- ✗ T10c: FS-3.5.2: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.5.2.json fehlt
-- ✗ T10c: FS-3.5.3: Kernpunkt-Datei quellen/lehrbuch/kern/FS/3.5.3.json fehlt
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 1 → WISO-1-2-2
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 4 → WISO-1-8-2
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 6 → WISO-1-2-3
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 7 → WISO-1-2-1
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 12 → WISO-1-3-1
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 14 → WISO-1-8-2
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 16 → WISO-1-1-3
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 17 → WISO-1-1-3
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 18 → WISO-1-1-3
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 19 → WISO-1-1-3
+- ✗ T10d: noch neu: GS-1.1 Kernpunkt 21 → WISO-1-1-3
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 2 → WISO-1-1-4
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 5 → WISO-1-1-4
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 6 → WISO-1-3-6
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 8 → WISO-1-1-4
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 12 → WISO-1-1-1
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 18 → WISO-1-3-4
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 19 → WISO-1-3-4
+- ✗ T10d: noch neu: GS-1.2.1 Kernpunkt 24 → WISO-1-1-1
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 4 → WISO-1-3-6
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 5 → WISO-1-3-3
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 8 → WISO-1-3-2
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 9 → WISO-1-3-2
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 10 → WISO-1-3-2
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 11 → WISO-1-3-6
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 13 → WISO-1-3-5
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 14 → WISO-1-3-5
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 15 → WISO-1-3-5
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 17 → WISO-1-6-2
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 18 → WISO-1-3-1
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 19 → WISO-3-1-1
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 20 → WISO-1-6-1
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 21 → WISO-1-4-1
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 26 → WISO-1-3-3
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 30 → WISO-1-5-1
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 32 → WISO-1-5-2
+- ✗ T10d: noch neu: GS-1.2.2 Kernpunkt 36 → WISO-1-4-3
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 1 → WISO-1-6-2
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 5 → WISO-1-6-2
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 6 → WISO-1-6-1
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 8 → WISO-1-6-2
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 10 → WISO-1-8-1
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 12 → WISO-2-2-6
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 13 → WISO-1-4-2
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 15 → WISO-1-6-2
+- ✗ T10d: noch neu: GS-1.2.3 Kernpunkt 17 → WISO-1-3-6
+- ✗ T10d: noch neu: GS-1.3.1 Kernpunkt 2 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.3.1 Kernpunkt 5 → AP1-3-2-4
+- ✗ T10d: noch neu: GS-1.3.1 Kernpunkt 6 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-1.3.1 Kernpunkt 12 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 1 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 4 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 6 → WISO-1-8-4
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 8 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 9 → WISO-2-5-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 11 → WISO-2-5-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 15 → WISO-2-5-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 16 → WISO-2-5-1
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 18 → AP1-1-1-3
+- ✗ T10d: noch neu: GS-1.3.2 Kernpunkt 22 → WISO-1-6-2
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 3 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 4 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 5 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 9 → AP1-1-1-3
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 10 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 12 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 13 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 14 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 17 → WISO-2-4-2
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 18 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 19 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 21 → PB1-9-1-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 22 → AP1-2-5-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 26 → AP1-7-3-5
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 28 → WISO-3-2-2
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 30 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 31 → WISO-2-4-2
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 32 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 33 → WISO-2-4-2
+- ✗ T10d: noch neu: GS-1.3.3 Kernpunkt 34 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 3 → WISO-2-2-6
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 4 → WISO-2-2-6
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 6 → WISO-2-2-6
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 7 → WISO-2-2-6
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 8 → WISO-2-2-5
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 9 → AP1-2-4-2
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 10 → WISO-2-2-5
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 11 → AP1-2-4-2
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 12 → AP1-2-4-2
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 13 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 14 → WISO-2-2-5
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 15 → WISO-2-2-5
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 20 → WISO-2-2-4
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 21 → AP1-2-4-3
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 22 → AP1-2-4-3
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 24 → WISO-2-2-2
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 27 → WISO-2-2-1
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 29 → WISO-2-2-1
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 33 → WISO-2-2-2
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 34 → WISO-2-2-2
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 35 → WISO-2-2-1
+- ✗ T10d: noch neu: GS-1.3.4 Kernpunkt 36 → WISO-2-2-4
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 2 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 3 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 4 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 7 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 8 → AP1-3-4-3
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 9 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 11 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 12 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 13 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 14 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-1.3.5 Kernpunkt 16 → AP1-5-1-1
+- ✗ T10d: noch neu: GS-1.3.6 Kernpunkt 1 → WISO-2-4-1
+- ✗ T10d: noch neu: GS-1.3.6 Kernpunkt 4 → WISO-2-4-3
+- ✗ T10d: noch neu: GS-1.3.6 Kernpunkt 5 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.3.6 Kernpunkt 6 → WISO-2-2-6
+- ✗ T10d: noch neu: GS-1.4.1 Kernpunkt 1 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.4.1 Kernpunkt 2 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.4.1 Kernpunkt 3 → WISO-1-6-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 1 → AP1-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 2 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 3 → AP1-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 5 → AP1-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 6 → WISO-2-5-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 7 → AP1-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 8 → AP1-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 11 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 12 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 13 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 14 → AP1-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 15 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-1.4.2 Kernpunkt 16 → WISO-2-1-4
+- ✗ T10d: noch neu: GS-1.5.1 Kernpunkt 2 → AP1-1-1-4
+- ✗ T10d: noch neu: GS-1.5.1 Kernpunkt 3 → WISO-1-7-2
+- ✗ T10d: noch neu: GS-1.5.1 Kernpunkt 4 → AP1-1-1-4
+- ✗ T10d: noch neu: GS-1.5.1 Kernpunkt 5 → AP1-1-1-4
+- ✗ T10d: noch neu: GS-1.5.2 Kernpunkt 2 → PB1-2-1-4
+- ✗ T10d: noch neu: GS-1.5.2 Kernpunkt 3 → PB1-2-1-4
+- ✗ T10d: noch neu: GS-1.5.2 Kernpunkt 6 → AP1-2-3-3
+- ✗ T10d: noch neu: GS-1.5.2 Kernpunkt 7 → PB1-2-1-4
+- ✗ T10d: noch neu: GS-1.5.3 Kernpunkt 1 → AP1-1-1-4
+- ✗ T10d: noch neu: GS-2.1.1 Kernpunkt 1 → AP1-3-1-5
+- ✗ T10d: noch neu: GS-2.1.1 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.1 Kernpunkt 3 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.1 Kernpunkt 4 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.1.1 Kernpunkt 6 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.1.2 Kernpunkt 1 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.2 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.2 Kernpunkt 3 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 1 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 3 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 4 → AP1-5-2-1
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 5 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 6 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 7 → AP1-3-4-3
+- ✗ T10d: noch neu: GS-2.1.4 Kernpunkt 11 → WISO-2-1-1
+- ✗ T10d: noch neu: GS-2.2.1 Kernpunkt 1 → PB1-3-2-3
+- ✗ T10d: noch neu: GS-2.2.1 Kernpunkt 3 → PB1-3-2-3
+- ✗ T10d: noch neu: GS-2.2.1 Kernpunkt 5 → WISO-3-1-1
+- ✗ T10d: noch neu: GS-2.2.1 Kernpunkt 7 → AP1-4-3-1
+- ✗ T10d: noch neu: GS-2.2.1 Kernpunkt 8 → AP1-4-3-1
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 1 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 2 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 4 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 5 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 6 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 7 → AP1-3-2-3
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 8 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 9 → AP1-5-1-1
+- ✗ T10d: noch neu: GS-2.2.2 Kernpunkt 13 → AP1-3-4-2
+- ✗ T10d: noch neu: GS-2.2.3 Kernpunkt 2 → AP1-2-2-4
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 1 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 2 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 3 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 4 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 6 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 7 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 8 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 9 → AP1-1-5-1
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 12 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 13 → AP1-3-4-1
+- ✗ T10d: noch neu: GS-2.3.1 Kernpunkt 14 → PB1-1-2-4
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 3 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 4 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 5 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 6 → AP1-7-1-2
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 7 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 9 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.3.2 Kernpunkt 10 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.3.3 Kernpunkt 3 → AP1-3-1-1
+- ✗ T10d: noch neu: GS-2.3.3 Kernpunkt 5 → AP1-3-1-1
+- ✗ T10d: noch neu: GS-2.3.4 Kernpunkt 2 → AP1-7-5-1
+- ✗ T10d: noch neu: GS-2.3.4 Kernpunkt 4 → AP1-7-1-1
+- ✗ T10d: noch neu: GS-2.3.4 Kernpunkt 9 → AP1-7-4-1
+- ✗ T10d: noch neu: GS-2.3.4 Kernpunkt 10 → PB1-10-1-2
+- ✗ T10d: noch neu: GS-2.4.1 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.1 Kernpunkt 4 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.1 Kernpunkt 6 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.4.2 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.2 Kernpunkt 3 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.2 Kernpunkt 6 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 1 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 3 → PB1-3-2-3
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 4 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 5 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 6 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 7 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 8 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 9 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 11 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 12 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 13 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 14 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 15 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.3 Kernpunkt 17 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 1 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 3 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 4 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 5 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 6 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 7 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 10 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 11 → AP1-4-1-3
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 12 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.4 Kernpunkt 13 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.5 Kernpunkt 3 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.5 Kernpunkt 9 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.5 Kernpunkt 11 → AP1-4-1-5
+- ✗ T10d: noch neu: GS-2.4.5 Kernpunkt 12 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.6 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.6 Kernpunkt 5 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.6 Kernpunkt 6 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.4.6 Kernpunkt 7 → AP1-4-2-3
+- ✗ T10d: noch neu: GS-2.4.6 Kernpunkt 8 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 1 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 2 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 5 → AP1-4-1-3
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 7 → AP1-4-1-3
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 8 → AP1-4-1-3
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 11 → AP1-4-1-3
+- ✗ T10d: noch neu: GS-2.4.7 Kernpunkt 14 → PB1-11-2-3
+- ✗ T10d: noch neu: GS-2.4.8 Kernpunkt 2 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.8 Kernpunkt 3 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.8 Kernpunkt 4 → AP1-4-3-1
+- ✗ T10d: noch neu: GS-2.4.9 Kernpunkt 2 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.9 Kernpunkt 4 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.9 Kernpunkt 5 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.9 Kernpunkt 6 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.9 Kernpunkt 7 → AP1-4-3-1
+- ✗ T10d: noch neu: GS-2.4.10 Kernpunkt 2 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.10 Kernpunkt 3 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.10 Kernpunkt 4 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.10 Kernpunkt 5 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.10 Kernpunkt 9 → WISO-3-2-3
+- ✗ T10d: noch neu: GS-2.4.10 Kernpunkt 11 → AP1-7-1-2
+- ✗ T10d: noch neu: GS-2.4.11 Kernpunkt 2 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.12 Kernpunkt 2 → AP1-4-3-1
+- ✗ T10d: noch neu: GS-2.4.12 Kernpunkt 5 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-2.4.12 Kernpunkt 7 → AP1-4-3-2
+- ✗ T10d: noch neu: GS-2.4.12 Kernpunkt 9 → AP1-8-4-3
+- ✗ T10d: noch neu: GS-2.4.12 Kernpunkt 10 → AP1-4-3-2
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 1 → AP1-8-4-2
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 3 → AP1-5-2-5
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 4 → AP1-5-1-1
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 5 → AP1-5-1-1
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 6 → AP1-5-1-1
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 7 → PB1-3-2-3
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 8 → PB1-3-2-3
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 10 → AP1-4-1-6
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 12 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 13 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.4.13 Kernpunkt 14 → PB1-12-2-3
+- ✗ T10d: noch neu: GS-2.4.14 Kernpunkt 2 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.4.14 Kernpunkt 4 → PB1-12-2-3
+- ✗ T10d: noch neu: GS-2.4.14 Kernpunkt 5 → AP1-3-2-4
+- ✗ T10d: noch neu: GS-2.4.14 Kernpunkt 6 → PB1-12-2-3
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 1 → AP1-3-3-1
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 2 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 4 → AP1-2-2-4
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 5 → AP1-2-2-4
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 6 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 7 → AP1-1-4-1
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 8 → AP1-2-1-2
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 9 → AP1-2-2-3
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 10 → AP1-2-2-4
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 12 → AP1-2-1-3
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 13 → AP1-2-2-3
+- ✗ T10d: noch neu: GS-2.5.1 Kernpunkt 14 → AP1-1-1-4
+- ✗ T10d: noch neu: GS-2.5.2 Kernpunkt 2 → AP1-2-1-3
+- ✗ T10d: noch neu: GS-2.5.2 Kernpunkt 3 → AP1-2-1-3
+- ✗ T10d: noch neu: GS-2.5.2 Kernpunkt 4 → AP1-2-1-3
+- ✗ T10d: noch neu: GS-2.5.2 Kernpunkt 5 → AP1-2-1-3
+- ✗ T10d: noch neu: GS-2.5.2 Kernpunkt 6 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 1 → AP1-1-2-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 3 → AP1-1-1-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 5 → AP1-1-1-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 6 → AP1-1-1-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 9 → AP1-1-2-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 10 → AP1-1-2-1
+- ✗ T10d: noch neu: GS-2.5.3 Kernpunkt 14 → AP1-1-2-2
+- ✗ T10d: noch neu: GS-2.6.1 Kernpunkt 1 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-2.6.1 Kernpunkt 2 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-2.6.2 Kernpunkt 1 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.6.2 Kernpunkt 3 → AP1-2-2-2
+- ✗ T10d: noch neu: GS-2.6.2 Kernpunkt 7 → PB1-1-2-3
+- ✗ T10d: noch neu: GS-2.6.3 Kernpunkt 1 → AP1-2-2-1
+- ✗ T10d: noch neu: GS-2.6.3 Kernpunkt 2 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.6.3 Kernpunkt 3 → AP1-4-3-3
+- ✗ T10d: noch neu: GS-2.7.1 Kernpunkt 2 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.1 Kernpunkt 3 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.1 Kernpunkt 4 → AP1-4-1-3
+- ✗ T10d: noch neu: GS-2.7.1 Kernpunkt 5 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.7.1 Kernpunkt 6 → AP1-4-1-2
+- ✗ T10d: noch neu: GS-2.7.1 Kernpunkt 7 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.2 Kernpunkt 2 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.2 Kernpunkt 3 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.2 Kernpunkt 5 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 2 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 4 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 5 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 7 → PB1-12-2-3
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 8 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 9 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-2.7.3 Kernpunkt 10 → AP1-7-4-3
+- ✗ T10d: noch neu: GS-2.7.4 Kernpunkt 3 → AP1-1-4-2
+- ✗ T10d: noch neu: GS-2.7.4 Kernpunkt 4 → AP1-3-2-1
+- ✗ T10d: noch neu: GS-2.7.4 Kernpunkt 6 → AP1-3-3-1
+- ✗ T10d: noch neu: GS-2.7.4 Kernpunkt 7 → AP1-3-2-1
+- ✗ T10d: noch neu: GS-2.8.1 Kernpunkt 1 → AP1-2-4-1
+- ✗ T10d: noch neu: GS-2.8.1 Kernpunkt 3 → WISO-2-4-1
+- ✗ T10d: noch neu: GS-2.8.1 Kernpunkt 4 → WISO-2-4-1
+- ✗ T10d: noch neu: GS-2.8.1 Kernpunkt 5 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.2 Kernpunkt 2 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.2 Kernpunkt 3 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.2 Kernpunkt 4 → AP1-3-1-4
+- ✗ T10d: noch neu: GS-2.8.2 Kernpunkt 6 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.2 Kernpunkt 7 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.2 Kernpunkt 8 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.3 Kernpunkt 1 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.3 Kernpunkt 3 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.3 Kernpunkt 4 → AP1-3-1-3
+- ✗ T10d: noch neu: GS-2.8.4 Kernpunkt 1 → AP1-3-1-1
+- ✗ T10d: noch neu: GS-2.8.4 Kernpunkt 2 → AP1-3-1-1
+- ✗ T10d: noch neu: GS-2.8.4 Kernpunkt 3 → AP1-3-1-2
+- ✗ T10d: noch neu: GS-2.9.1 Kernpunkt 1 → AP1-3-1-4
+- ✗ T10d: noch neu: GS-2.9.1 Kernpunkt 2 → AP1-3-2-2
+- ✗ T10d: noch neu: GS-2.9.1 Kernpunkt 3 → AP1-3-2-2
+- ✗ T10d: noch neu: GS-2.9.1 Kernpunkt 5 → AP1-5-1-1
+- ✗ T10d: noch neu: GS-2.9.1 Kernpunkt 6 → AP1-3-2-2
+- ✗ T10d: noch neu: GS-2.9.2 Kernpunkt 2 → AP1-3-2-2
+- ✗ T10d: noch neu: GS-2.9.3 Kernpunkt 3 → AP1-3-2-3
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 2 → AP1-3-3-1
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 4 → AP1-3-3-2
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 5 → PB1-2-1-1
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 6 → AP1-3-3-1
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 7 → PB1-2-1-1
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 8 → AP1-2-2-4
+- ✗ T10d: noch neu: GS-2.9.4 Kernpunkt 10 → PB1-2-1-1
+- ✗ T10d: noch neu: GS-2.10.1 Kernpunkt 1 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.10.1 Kernpunkt 4 → AP1-3-3-3
+- ✗ T10d: noch neu: GS-2.10.1 Kernpunkt 6 → AP1-3-3-2
+- ✗ T10d: noch neu: GS-2.10.1 Kernpunkt 8 → AP1-3-3-2
+- ✗ T10d: noch neu: GS-2.10.2 Kernpunkt 2 → WISO-3-1-1
+- ✗ T10d: noch neu: GS-2.10.2 Kernpunkt 9 → WISO-3-3-2
+- ✗ T10d: noch neu: GS-2.10.2 Kernpunkt 10 → WISO-3-1-1
+- ✗ T10d: noch neu: GS-2.10.2 Kernpunkt 15 → WISO-3-4-3
+- ✗ T10d: noch neu: GS-2.10.3 Kernpunkt 3 → AP1-7-2-3
+- ✗ T10d: noch neu: GS-2.10.4 Kernpunkt 2 → WISO-4-2-2
+- ✗ T10d: noch neu: GS-2.10.5 Kernpunkt 1 → AP1-4-1-5
+- ✗ T10d: noch neu: GS-2.10.5 Kernpunkt 2 → AP1-5-2-2
+- ✗ T10d: noch neu: GS-2.11 Kernpunkt 2 → AP1-1-1-4
+- ✗ T10d: noch neu: GS-3.1 Kernpunkt 1 → AP1-6-1-3
+- ✗ T10d: noch neu: GS-3.1 Kernpunkt 3 → PB1-11-2-3
+- ✗ T10d: noch neu: GS-3.1 Kernpunkt 4 → PB1-11-2-3
+- ✗ T10d: noch neu: GS-3.2.1 Kernpunkt 1 → AP1-6-1-2
+- ✗ T10d: noch neu: GS-3.2.1 Kernpunkt 2 → AP1-6-1-2
+- ✗ T10d: noch neu: GS-3.2.1 Kernpunkt 3 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.2.2 Kernpunkt 1 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.2.2 Kernpunkt 6 → AP1-6-1-4
+- ✗ T10d: noch neu: GS-3.2.2 Kernpunkt 8 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.2.3 Kernpunkt 3 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-3.2.3 Kernpunkt 4 → AP1-4-1-1
+- ✗ T10d: noch neu: GS-3.2.3 Kernpunkt 5 → AP1-7-4-3
+- ✗ T10d: noch neu: GS-3.2.3 Kernpunkt 7 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.2.4 Kernpunkt 1 → AP1-5-2-5
+- ✗ T10d: noch neu: GS-3.2.4 Kernpunkt 3 → AP1-5-2-5
+- ✗ T10d: noch neu: GS-3.2.4 Kernpunkt 4 → AP1-5-2-5
+- ✗ T10d: noch neu: GS-3.2.5 Kernpunkt 1 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.2.5 Kernpunkt 4 → PB1-12-2-3
+- ✗ T10d: noch neu: GS-3.3.1 Kernpunkt 3 → AP1-4-2-4
+- ✗ T10d: noch neu: GS-3.3.1 Kernpunkt 5 → AP1-4-2-4
+- ✗ T10d: noch neu: GS-3.3.1 Kernpunkt 7 → AP1-4-1-4
+- ✗ T10d: noch neu: GS-3.3.1 Kernpunkt 8 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.3.1 Kernpunkt 9 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.3.1 Kernpunkt 10 → AP1-6-2-2
+- ✗ T10d: noch neu: GS-3.3.2 Kernpunkt 2 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.3.2 Kernpunkt 3 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.3.2 Kernpunkt 4 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.3.2 Kernpunkt 5 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.3.3 Kernpunkt 4 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.3.3 Kernpunkt 5 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.3.4 Kernpunkt 2 → PB1-11-1-2
+- ✗ T10d: noch neu: GS-3.3.4 Kernpunkt 4 → PB1-11-1-2
+- ✗ T10d: noch neu: GS-3.3.4 Kernpunkt 5 → PB1-11-1-2
+- ✗ T10d: noch neu: GS-3.4.2 Kernpunkt 2 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.4.2 Kernpunkt 3 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.4.2 Kernpunkt 7 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.4.2 Kernpunkt 8 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.4.2 Kernpunkt 9 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.4.3 Kernpunkt 2 → AP1-6-1-4
+- ✗ T10d: noch neu: GS-3.4.3 Kernpunkt 3 → AP1-6-1-4
+- ✗ T10d: noch neu: GS-3.4.3 Kernpunkt 5 → AP1-6-1-4
+- ✗ T10d: noch neu: GS-3.4.3 Kernpunkt 6 → AP1-6-1-4
+- ✗ T10d: noch neu: GS-3.4.3 Kernpunkt 8 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.4.3 Kernpunkt 10 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 3 → AP1-6-1-1
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 6 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 7 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 8 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 10 → PB1-11-1-2
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 12 → PB1-11-1-2
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 13 → AP1-6-1-2
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 15 → AP1-6-2-4
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 17 → PB1-11-1-3
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 20 → PB1-10-1-3
+- ✗ T10d: noch neu: GS-3.4.4 Kernpunkt 22 → PB1-11-2-4
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 3 → AP1-6-2-4
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 9 → AP1-6-2-1
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 13 → AP1-6-2-5
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 15 → AP1-6-2-3
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 17 → AP1-6-2-3
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 18 → AP1-6-2-3
+- ✗ T10d: noch neu: GS-3.4.5 Kernpunkt 20 → AP1-6-2-3
+- ✗ T10d: noch neu: GS-3.4.6 Kernpunkt 1 → AP1-6-1-3
+- ✗ T10d: noch neu: GS-3.4.6 Kernpunkt 3 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.6 Kernpunkt 4 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.6 Kernpunkt 5 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.6 Kernpunkt 7 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.4.7 Kernpunkt 1 → AP1-6-1-1
+- ✗ T10d: noch neu: GS-3.4.7 Kernpunkt 2 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 1 → AP1-6-2-1
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 2 → AP1-4-2-4
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 3 → AP1-4-2-4
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 6 → AP1-6-2-1
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 7 → AP1-6-2-1
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 8 → PB1-11-2-1
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 9 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 11 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.5.1 Kernpunkt 16 → AP1-6-2-1
+- ✗ T10d: noch neu: GS-3.5.2 Kernpunkt 2 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-3.5.2 Kernpunkt 3 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-3.5.2 Kernpunkt 4 → AP1-5-1-3
+- ✗ T10d: noch neu: GS-3.5.3 Kernpunkt 3 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.6.1 Kernpunkt 2 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.6.1 Kernpunkt 4 → AP1-6-2-5
+- ✗ T10d: noch neu: GS-3.6.1 Kernpunkt 5 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.6.1 Kernpunkt 6 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.6.1 Kernpunkt 7 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.6.2 Kernpunkt 3 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.6.2 Kernpunkt 4 → AP1-6-3-2
+- ✗ T10d: noch neu: GS-3.6.2 Kernpunkt 5 → AP1-1-4-2
+- ✗ T10d: noch neu: GS-3.6.3 Kernpunkt 1 → PB1-12-2-1
+- ✗ T10d: noch neu: GS-3.6.3 Kernpunkt 3 → PB1-12-2-1
+- ✗ T10d: noch neu: GS-3.7.1 Kernpunkt 2 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.7.2 Kernpunkt 1 → AP1-6-1-3
+- ✗ T10d: noch neu: GS-3.7.2 Kernpunkt 2 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.7.2 Kernpunkt 3 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.7.2 Kernpunkt 4 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.7.2 Kernpunkt 5 → AP1-6-1-3
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 2 → PB1-11-1-3
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 4 → AP1-7-3-5
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 6 → AP1-6-1-5
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 7 → AP1-6-1-3
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 10 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 11 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.7.3 Kernpunkt 13 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.7.4 Kernpunkt 2 → PB1-3-2-2
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 3 → AP1-7-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 7 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 9 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 10 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 11 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 13 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 14 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.1 Kernpunkt 15 → PB1-12-1-3
+- ✗ T10d: noch neu: GS-3.8.2 Kernpunkt 4 → AP1-7-3-5
+- ✗ T10d: noch neu: GS-3.8.2 Kernpunkt 7 → AP1-7-3-5
+- ✗ T10d: noch neu: GS-3.8.2 Kernpunkt 10 → AP1-7-3-5
+- ✗ T10d: noch neu: GS-3.8.3 Kernpunkt 4 → PB1-11-1-3
+- ✗ T10d: noch neu: GS-3.8.3 Kernpunkt 6 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.8.3 Kernpunkt 7 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.8.3 Kernpunkt 8 → PB1-11-2-2
+- ✗ T10d: noch neu: GS-3.8.3 Kernpunkt 9 → PB1-11-1-1
+- ✗ T10d: noch neu: GS-3.8.4 Kernpunkt 3 → PB1-12-1-1
+- ✗ T10d: noch neu: GS-3.8.4 Kernpunkt 5 → PB1-12-1-2
+- ✗ T10d: noch neu: GS-3.8.4 Kernpunkt 6 → PB1-12-1-2
+- ✗ T10d: noch neu: GS-3.9.1 Kernpunkt 2 → PB1-12-1-3
