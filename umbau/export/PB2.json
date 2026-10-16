@@ -4,15 +4,15 @@
   "erzeugt_mit": "node tools/umbau/export-raum.mjs PB2",
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
-  "stichpunkte": 21,
-  "koennen": 98,
+  "stichpunkte": 22,
+  "koennen": 107,
   "quellen": {
    "PB2-1.json": "38b8a981ae51f3c4",
    "PB2-2.json": "26e890ba833e48b1",
    "PB2-3.json": "5fd9e56bbcf1cd1d",
    "PB2-4.json": "68840c2be9b4bac8",
    "PB2-5.json": "d2d317f1f6128fe3",
-   "PB2-6.json": "dfbf39ce1ee38c40"
+   "PB2-6.json": "c27aa71b7ad5f732"
   }
  },
  "stichpunkte": [
@@ -749,6 +749,43 @@
      "id": "PB2-6-1-1-K7",
      "stufe": 2,
      "kurz": "beschreiben, was ein Trigger ist: SQL-Anweisungen, die die Datenbank automatisch ausführt, wenn in einer Tabelle ein bestimmtes Ereignis eintritt (INSERT, UPDATE oder DELETE), zum Beispiel um Änderungen zu protokollieren – im Unterschied zur Stored Procedure, die ausdrücklich aufgerufen wird"
+    },
+    {
+     "id": "PB2-6-1-1-K8",
+     "stufe": 4,
+     "kurz": "die Vorteile einer Stored Procedure begründen: Sie kann neben SQL-Anweisungen auch Verzweigungen und Bedingungen enthalten und läuft direkt in der Datenbank, deshalb werden zusammengehörige Schritte schneller ausgeführt, und Anwendungen dürfen nur die Prozedur aufrufen statt beliebiges SQL abzusetzen, was die Sicherheit erhöht"
+    }
+   ]
+  },
+  {
+   "id": "PB2-6-1-6",
+   "ordner": "PB2-6",
+   "block": "PB2-6-1",
+   "titel": "SQL-Sprachteile, Spaltenoptionen und Indexwahl",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.1",
+    "AP2b.04.22.2",
+    "AP2b.03.03.2",
+    "AP2a.02.03.7"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-6-1-6-K1",
+     "stufe": 2,
+     "kurz": "SQL-Befehle ihren Sprachteilen zuordnen: DDL (Data Definition Language) legt Strukturen an und ändert sie (CREATE, ALTER, DROP), DML (Data Manipulation Language) liest und ändert Datensätze (SELECT, INSERT, UPDATE, DELETE), DCL (Data Control Language) vergibt und entzieht Rechte (GRANT, REVOKE), TCL (Transaction Control Language) steuert Transaktionen (COMMIT, ROLLBACK)"
+    },
+    {
+     "id": "PB2-6-1-6-K2",
+     "stufe": 3,
+     "kurz": "beim Anlegen einer Tabelle Spaltenoptionen einsetzen – NOT NULL (Pflichtfeld), UNIQUE (kein Wert doppelt), DEFAULT (Standardwert, wenn beim Einfügen nichts angegeben wird) und einen automatisch hochgezählten Primärschlüssel – und die Tabellen so nacheinander anlegen, dass jede Tabelle, auf die ein Fremdschlüssel verweist, schon existiert"
+    },
+    {
+     "id": "PB2-6-1-6-K3",
+     "stufe": 4,
+     "kurz": "begründen, für welche Spalten ein Index angelegt wird: in großen Tabellen für Spalten, nach denen häufig gesucht, verknüpft oder sortiert wird, aber nicht für alle Spalten, weil jeder Index Speicher kostet und Einfügen und Ändern verlangsamt; der Primärschlüssel ist bereits indiziert, und vor einem Massenimport wird der Index besser erst danach angelegt"
     }
    ]
   },
@@ -793,6 +830,11 @@
      "id": "PB2-6-1-2-K6",
      "stufe": 4,
      "kurz": "bei gleichzeitigen Zugriffen begründen, ob Datensätze früh und lange gesperrt werden (pessimistisch, z. B. alle freien Termine eines Monats schon beim Anzeigen blockieren) oder spät und kurz (optimistisch: erst beim Bestätigen sperren und prüfen, ob der Termin noch frei ist, bei Konflikt neu anbieten): Lange Sperren blockieren andere Nutzer unnötig, kurze Sperren brauchen eine Konfliktbehandlung"
+    },
+    {
+     "id": "PB2-6-1-2-K7",
+     "stufe": 3,
+     "kurz": "mehrere Änderungen zu einer Transaktion bündeln: in SQL mit START TRANSACTION (bzw. BEGIN), den Anweisungen und COMMIT, das sie dauerhaft macht, oder ROLLBACK, das alle Änderungen seit Beginn zurücknimmt; im Programm schaltest du dazu das standardmäßige Auto-Commit (jede Anweisung wird sofort festgeschrieben) ab, rufst nach der letzten Anweisung commit und bei einer Ausnahme im Fehlerzweig rollback auf"
     }
    ]
   },
@@ -858,6 +900,26 @@
      "id": "PB2-6-1-5-K3",
      "stufe": 4,
      "kurz": "beurteilen, ob ein Datenbestand ohne Nacharbeit importiert werden kann, und für oder gegen den Import argumentieren, etwa mit Aufwand der Bereinigung gegen Nutzen der Daten"
+    },
+    {
+     "id": "PB2-6-1-5-K4",
+     "stufe": 2,
+     "kurz": "erklären, was Datenqualität bedeutet: wie gut sich Daten für den Zweck einer Anwendung eignen; aus mangelhaften Daten lassen sich keine verlässlichen Informationen gewinnen, und Fehler wie doppelte Kundenadressen oder veraltete Anschriften verursachen unmittelbar Kosten"
+    },
+    {
+     "id": "PB2-6-1-5-K5",
+     "stufe": 2,
+     "kurz": "die Qualitätskriterien Vollständigkeit (alle geforderten Felder enthalten gültige Werte), Korrektheit (die Werte stimmen mit der Wirklichkeit überein, z. B. kein Platzhalter-Geburtsdatum 01.01.1900), Aktualität (die Werte bilden den heutigen Stand ab) und Genauigkeit (die Werte liegen in der geforderten Exaktheit vor, z. B. Preise auf den Cent) je an einem Beispiel erklären"
+    },
+    {
+     "id": "PB2-6-1-5-K6",
+     "stufe": 2,
+     "kurz": "die Qualitätskriterien Eindeutigkeit (jeder Datensatz lässt sich eindeutig zuordnen, keine Dubletten), Redundanzfreiheit (keine Information mehrfach gespeichert), Konsistenz (keine Widersprüche innerhalb eines Datensatzes, z. B. Menge × Einzelpreis ≠ Gesamtbetrag, und zu anderen Datensätzen oder Quellen) und Einheitlichkeit (gleiche Werte im gleichen Format, z. B. jedes Datum nach ISO 8601) je an einem Beispiel erklären"
+    },
+    {
+     "id": "PB2-6-1-5-K7",
+     "stufe": 2,
+     "kurz": "den Ablauf zur Verbesserung der Datenqualität beschreiben: Die Analyse (Data Profiling) findet Fehler, Lücken und Widersprüche, die Bereinigung (Data Cleaning) beseitigt sie, etwa durch Zusammenführen von Dubletten oder Ergänzen fehlender Werte, und ein regelmäßig wiederholtes Monitoring verhindert, dass die Qualität durch Datenalterung wieder sinkt; große Bestände werden dabei automatisiert geprüft"
     }
    ]
   }

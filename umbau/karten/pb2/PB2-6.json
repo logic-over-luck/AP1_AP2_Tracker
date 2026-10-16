@@ -423,6 +423,132 @@
    "k": "PB2-6-1-5-K3",
    "vorne": "Die Bereinigung einer fünf Jahre alten Interessentenliste würde mehrere Personentage dauern; gebraucht wird sie nur für eine einmalige Werbeaktion. Würdest du den Import empfehlen? Begründe.",
    "hinten": "Eher nicht: Der Aufwand der Bereinigung ist hoch, der Nutzen gering – die Daten sind veraltet (viele Adressen nicht mehr gültig) und werden nur einmal gebraucht. Günstiger ist, nur die automatisch verwertbaren Datensätze zu übernehmen oder aktuelle Daten neu zu erheben."
+  },
+  {
+   "id": "PB2-6-1-1-K8-1",
+   "sp": "PB2-6-1-1",
+   "k": "PB2-6-1-1-K8",
+   "vorne": "Nenne zwei Vorteile einer Stored Procedure und begründe sie.",
+   "hinten": "- **schneller:** läuft direkt in der Datenbank, ohne jede Anweisung einzeln über das Netz zu schicken\n- **sicherer:** Anwendungen dürfen nur die Prozedur aufrufen, nicht beliebiges SQL auf die Tabellen absetzen"
+  },
+  {
+   "id": "PB2-6-1-1-K8-2",
+   "sp": "PB2-6-1-1",
+   "k": "PB2-6-1-1-K8",
+   "vorne": "Was kann eine Stored Procedure außer SQL-Anweisungen noch enthalten?",
+   "hinten": "Ablaufsteuerung: Variablen, Verzweigungen und Bedingungen (auch Schleifen) – sie kann also abhängig von den Daten verschiedene Schritte ausführen."
+  },
+  {
+   "id": "PB2-6-1-6-K1-1",
+   "sp": "PB2-6-1-6",
+   "k": "PB2-6-1-6-K1",
+   "vorne": "Ordne zu: GRANT, ALTER TABLE, DELETE, ROLLBACK – zu DDL, DML, DCL oder TCL?",
+   "hinten": "- GRANT → DCL\n- ALTER TABLE → DDL\n- DELETE → DML\n- ROLLBACK → TCL"
+  },
+  {
+   "id": "PB2-6-1-6-K1-2",
+   "sp": "PB2-6-1-6",
+   "k": "PB2-6-1-6-K1",
+   "vorne": "Wofür stehen DDL und DML, und welche Befehle gehören dazu?",
+   "hinten": "- **DDL** (Data Definition Language): Strukturen – CREATE, ALTER, DROP\n- **DML** (Data Manipulation Language): Datensätze – SELECT, INSERT, UPDATE, DELETE"
+  },
+  {
+   "id": "PB2-6-1-6-K2-1",
+   "sp": "PB2-6-1-6",
+   "k": "PB2-6-1-6-K2",
+   "vorne": "Was bewirken NOT NULL, UNIQUE und DEFAULT an einer Spalte?",
+   "hinten": "- **NOT NULL:** Wert muss angegeben werden\n- **UNIQUE:** kein Wert darf doppelt vorkommen\n- **DEFAULT:** Standardwert, wenn beim Einfügen nichts angegeben ist"
+  },
+  {
+   "id": "PB2-6-1-6-K2-2",
+   "sp": "PB2-6-1-6",
+   "k": "PB2-6-1-6-K2",
+   "vorne": "Die Tabellen Bestellung (mit Fremdschlüssel auf Kunde) und Kunde sollen angelegt werden. In welcher Reihenfolge – und warum?",
+   "hinten": "Erst Kunde, dann Bestellung: Ein Fremdschlüssel kann nur auf eine Tabelle verweisen, die schon existiert."
+  },
+  {
+   "id": "PB2-6-1-6-K3-1",
+   "sp": "PB2-6-1-6",
+   "k": "PB2-6-1-6-K3",
+   "vorne": "Nach welchen Kriterien entscheidest du, ob eine Spalte einen Index bekommt?",
+   "hinten": "Große Tabelle und Spalte wird häufig in WHERE, JOIN oder ORDER BY genutzt → ja. Kleine Tabelle, selten abgefragte Spalte oder sehr viele Änderungen → eher nein."
+  },
+  {
+   "id": "PB2-6-1-6-K3-2",
+   "sp": "PB2-6-1-6",
+   "k": "PB2-6-1-6-K3",
+   "vorne": "Warum legt man bei einem Massenimport den Index besser erst nach dem Import an?",
+   "hinten": "Sonst muss der Index bei jedem eingefügten Datensatz nachgeführt werden; einmal am Ende aufbauen ist schneller."
+  },
+  {
+   "id": "PB2-6-1-2-K7-1",
+   "sp": "PB2-6-1-2",
+   "k": "PB2-6-1-2-K7",
+   "vorne": "Mit welchen SQL-Befehlen bündelst du Kopieren ins Archiv und Löschen zu einer Transaktion, und was bewirkt ROLLBACK?",
+   "hinten": "START TRANSACTION (bzw. BEGIN) → INSERT … SELECT → DELETE → COMMIT. ROLLBACK nimmt alle Änderungen seit Beginn der Transaktion zurück."
+  },
+  {
+   "id": "PB2-6-1-2-K7-2",
+   "sp": "PB2-6-1-2",
+   "k": "PB2-6-1-2-K7",
+   "vorne": "Ein Programm soll zwei Änderungen als Transaktion ausführen. Was muss es wegen Auto-Commit tun?",
+   "hinten": "Auto-Commit abschalten (sonst wird jede Anweisung sofort festgeschrieben), nach der letzten Anweisung commit aufrufen und bei einer Ausnahme im Fehlerzweig rollback."
+  },
+  {
+   "id": "PB2-6-1-5-K4-1",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K4",
+   "vorne": "Was versteht man unter Datenqualität?",
+   "hinten": "Wie gut sich Daten für den Zweck einer Anwendung eignen – sie ist also vom Verwendungszweck abhängig."
+  },
+  {
+   "id": "PB2-6-1-5-K4-2",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K4",
+   "vorne": "Nenne zwei Beispiele, wie schlechte Datenqualität direkt Kosten verursacht.",
+   "hinten": "- Post an veraltete Adressen kommt zurück\n- doppelte Kundendatensätze: Werbung wird doppelt verschickt\n(auch: falsche Auswertungen führen zu falschen Entscheidungen)"
+  },
+  {
+   "id": "PB2-6-1-5-K5-1",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K5",
+   "vorne": "Ein Datensatz enthält das Geburtsdatum 01.01.1900. Welches Qualitätskriterium ist verletzt – und warum findet eine Formatprüfung das nicht?",
+   "hinten": "Korrektheit: Der Wert ist ein gültiges Datum, stimmt aber vermutlich nicht mit der Wirklichkeit überein (Platzhalter)."
+  },
+  {
+   "id": "PB2-6-1-5-K5-2",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K5",
+   "vorne": "Worin unterscheiden sich Korrektheit und Aktualität?",
+   "hinten": "Korrekt: Der Wert stimmt(e) mit der Wirklichkeit überein. Aktuell: Er gibt den heutigen Stand wieder – eine einst richtige Adresse ist nach einem Umzug nicht mehr aktuell."
+  },
+  {
+   "id": "PB2-6-1-5-K6-1",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K6",
+   "vorne": "Eine Rechnung enthält 3 Stück à 10 € und den Gesamtbetrag 35 €. Welches Qualitätskriterium ist verletzt?",
+   "hinten": "Konsistenz: Die Werte innerhalb des Datensatzes widersprechen sich."
+  },
+  {
+   "id": "PB2-6-1-5-K6-2",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K6",
+   "vorne": "Unterscheide Eindeutigkeit und Einheitlichkeit an je einem Beispiel.",
+   "hinten": "- **Eindeutigkeit:** keine Dubletten – „Müller“ und „Mueller“ mit gleicher Adresse sind ein Kunde\n- **Einheitlichkeit:** gleiches Format – jedes Datum z. B. als 2026-05-03"
+  },
+  {
+   "id": "PB2-6-1-5-K7-1",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K7",
+   "vorne": "Nenne die drei Schritte zur Verbesserung der Datenqualität in der richtigen Reihenfolge.",
+   "hinten": "1. Data Profiling (Mängel finden)\n2. Data Cleaning (Mängel beseitigen)\n3. Monitoring (regelmäßig erneut prüfen)"
+  },
+  {
+   "id": "PB2-6-1-5-K7-2",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K7",
+   "vorne": "Warum reicht eine einmalige Bereinigung der Kundendaten nicht aus?",
+   "hinten": "Daten altern: Kunden ziehen um, heiraten, wechseln die Firma. Ohne regelmäßiges Monitoring sinkt die Qualität wieder."
   }
  ],
  "nicht_abgefragt": [],
@@ -737,6 +863,96 @@
    "id": "PB2-6-1-5-K3-1",
    "entscheidung": "neu",
    "grund": "Abwägen Aufwand gegen Nutzen (Stufe 4)"
+  },
+  {
+   "id": "PB2-6-1-1-K8-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S199)"
+  },
+  {
+   "id": "PB2-6-1-1-K8-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S199)"
+  },
+  {
+   "id": "PB2-6-1-6-K1-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S611)"
+  },
+  {
+   "id": "PB2-6-1-6-K1-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S611)"
+  },
+  {
+   "id": "PB2-6-1-6-K2-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S613)"
+  },
+  {
+   "id": "PB2-6-1-6-K2-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S613)"
+  },
+  {
+   "id": "PB2-6-1-6-K3-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S620)"
+  },
+  {
+   "id": "PB2-6-1-6-K3-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S620)"
+  },
+  {
+   "id": "PB2-6-1-2-K7-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S198, buch:FS2-2.3.8-S199)"
+  },
+  {
+   "id": "PB2-6-1-2-K7-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S198, buch:FS2-2.3.8-S199)"
+  },
+  {
+   "id": "PB2-6-1-5-K4-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S165)"
+  },
+  {
+   "id": "PB2-6-1-5-K4-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S165)"
+  },
+  {
+   "id": "PB2-6-1-5-K5-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166)"
+  },
+  {
+   "id": "PB2-6-1-5-K5-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166)"
+  },
+  {
+   "id": "PB2-6-1-5-K6-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S167, buch:FS2-3.2.1-S225)"
+  },
+  {
+   "id": "PB2-6-1-5-K6-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S167, buch:FS2-3.2.1-S225)"
+  },
+  {
+   "id": "PB2-6-1-5-K7-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S168)"
+  },
+  {
+   "id": "PB2-6-1-5-K7-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S168)"
   }
  ]
 }

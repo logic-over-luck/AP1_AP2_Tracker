@@ -134,6 +134,15 @@
         "katalog:ZB.prozedur-trigger",
         "beleg:2022S-PB2-A4-ab"
        ]
+      },
+      {
+       "id": "PB2-6-1-1-K8",
+       "text": "Du kannst die Vorteile einer Stored Procedure begründen: Sie kann neben SQL-Anweisungen auch Verzweigungen und Bedingungen enthalten und läuft direkt in der Datenbank, deshalb werden zusammengehörige Schritte schneller ausgeführt, und Anwendungen dürfen nur die Prozedur aufrufen statt beliebiges SQL abzusetzen, was die Sicherheit erhöht.",
+       "kurz": "Vorteile von Stored Procedures",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.3.8-S199"
+       ]
       }
      ],
      "baut_auf": [
@@ -143,6 +152,65 @@
       "AP1-4-2-2"
      ],
      "hinweis": "Das Datenmodell selbst (ER-Modell, relationales Modell, 3. Normalform, Datentypen) lernst du in PB1-6; die Modellaufgaben der PB2-Prüfungen übst du in PB2-5-1-5. Den Speicherbedarf von Bildern (2023W-PB2-A3-b) berechnen steht in AP1-4-2-2. Die SQL-Syntax (Auszug) steht im Belegsatz; Befehle und Funktionen musst du anwenden, nicht auswendig kennen. Die IHK-Lösung 2025W-PB2-A4-d zerlegt den Namen mit SUBSTRING(Name, ' ', 1) (wirkt wie SUBSTRING_INDEX in MySQL) und wurde so anerkannt; welche Textfunktion du nutzen darfst, steht im Belegsatz (siehe PB2-5-1-1)."
+    },
+    {
+     "id": "PB2-6-1-6",
+     "titel": "SQL-Sprachteile, Spaltenoptionen und Indexwahl",
+     "ziel": "SQL-Befehle den Sprachteilen zuordnen, Spalten beim Anlegen mit NOT NULL, UNIQUE, DEFAULT und automatisch hochgezähltem Schlüssel versehen, Tabellen in der richtigen Reihenfolge anlegen und begründen, für welche Spalten sich ein Index lohnt.",
+     "gebiete": [
+      "G.PB2.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.22.1",
+       "anteil": "Spaltenoptionen und Reihenfolge beim Anlegen"
+      },
+      {
+       "id": "AP2b.04.22.2",
+       "anteil": "wann sich ein Index lohnt"
+      },
+      {
+       "id": "AP2b.03.03.2",
+       "anteil": "Sprachteile von SQL"
+      },
+      {
+       "id": "AP2a.02.03.7",
+       "anteil": "Tabellenstruktur und Index"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB2-6-1-6-K1",
+       "text": "Du kannst SQL-Befehle ihren Sprachteilen zuordnen: DDL (Data Definition Language) legt Strukturen an und ändert sie (CREATE, ALTER, DROP), DML (Data Manipulation Language) liest und ändert Datensätze (SELECT, INSERT, UPDATE, DELETE), DCL (Data Control Language) vergibt und entzieht Rechte (GRANT, REVOKE), TCL (Transaction Control Language) steuert Transaktionen (COMMIT, ROLLBACK).",
+       "kurz": "Sprachteile DDL, DML, DCL und TCL",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.8.5-S611"
+       ]
+      },
+      {
+       "id": "PB2-6-1-6-K2",
+       "text": "Du kannst beim Anlegen einer Tabelle Spaltenoptionen einsetzen – NOT NULL (Pflichtfeld), UNIQUE (kein Wert doppelt), DEFAULT (Standardwert, wenn beim Einfügen nichts angegeben wird) und einen automatisch hochgezählten Primärschlüssel – und die Tabellen so nacheinander anlegen, dass jede Tabelle, auf die ein Fremdschlüssel verweist, schon existiert.",
+       "kurz": "Spaltenoptionen und Reihenfolge beim Anlegen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-5.8.5-S613"
+       ]
+      },
+      {
+       "id": "PB2-6-1-6-K3",
+       "text": "Du kannst begründen, für welche Spalten ein Index angelegt wird: in großen Tabellen für Spalten, nach denen häufig gesucht, verknüpft oder sortiert wird, aber nicht für alle Spalten, weil jeder Index Speicher kostet und Einfügen und Ändern verlangsamt; der Primärschlüssel ist bereits indiziert, und vor einem Massenimport wird der Index besser erst danach angelegt.",
+       "kurz": "Für welche Spalten sich ein Index lohnt",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.8.5-S620"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [],
+     "hinweis": "Das Lehrbuch stellt die Index-Regeln zu pauschal dar; richtig ist: Fremdschlüssel werden nicht in jedem Datenbanksystem automatisch indiziert (z. B. nicht in PostgreSQL oder SQL Server), und MIN/MAX können einen Index durchaus nutzen. Den automatisch hochgezählten Schlüssel schreibt das Buch in der SQLite-Form; der Name hängt vom System ab (AUTO_INCREMENT, AUTOINCREMENT, IDENTITY)."
     },
     {
      "id": "PB2-6-1-2",
@@ -246,13 +314,23 @@
         ],
         "was": "Sperren bei gleichzeitigen Zugriffen und ihre Dauer begründet wählen (pessimistisch oder optimistisch); PB1-6-1-5 beschreibt nur ACID mit Isolation und wann eine Transaktion nötig ist."
        }
+      },
+      {
+       "id": "PB2-6-1-2-K7",
+       "text": "Du kannst mehrere Änderungen zu einer Transaktion bündeln: in SQL mit START TRANSACTION (bzw. BEGIN), den Anweisungen und COMMIT, das sie dauerhaft macht, oder ROLLBACK, das alle Änderungen seit Beginn zurücknimmt; im Programm schaltest du dazu das standardmäßige Auto-Commit (jede Anweisung wird sofort festgeschrieben) ab, rufst nach der letzten Anweisung commit und bei einer Ausnahme im Fehlerzweig rollback auf.",
+       "kurz": "Transaktion mit COMMIT und ROLLBACK",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.3.8-S198",
+        "buch:FS2-2.3.8-S199"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-6-1-5",
       "PB1-6-1-2"
      ],
-     "hinweis": "Unterabfragen selbst (IN, NOT IN, EXISTS, korreliert) lernst du in PB2-5-1-4; hier setzt du sie in UPDATE und DELETE ein. Abhängige Datensätze löschst du in der Reihenfolge, die die referenzielle Integrität verlangt (PB1-6-1-2). Die IHK-Lösung 2022W-PB2-A4-b verschiebt mit SELECT … INTO Fehlzeit_Archiv, die Lösung 2023W-PB2-A4-c ändert mit UPDATE … FROM … INNER JOIN; beides wurde dort als Lösung anerkannt. Die SQL-Syntax (Auszug) steht im Belegsatz; Befehle und Funktionen musst du anwenden, nicht auswendig kennen.",
+     "hinweis": "Unterabfragen selbst (IN, NOT IN, EXISTS, korreliert) lernst du in PB2-5-1-4; hier setzt du sie in UPDATE und DELETE ein. Abhängige Datensätze löschst du in der Reihenfolge, die die referenzielle Integrität verlangt (PB1-6-1-2). Die IHK-Lösung 2022W-PB2-A4-b verschiebt mit SELECT … INTO Fehlzeit_Archiv, die Lösung 2023W-PB2-A4-c ändert mit UPDATE … FROM … INNER JOIN; beides wurde dort als Lösung anerkannt. Die SQL-Syntax (Auszug) steht im Belegsatz; Befehle und Funktionen musst du anwenden, nicht auswendig kennen. Das Lehrbuch schreibt im Transaktionsbeispiel Texte in doppelten Anführungszeichen; richtig ist nach Standard-SQL: Text in einfachen Anführungszeichen. Im Programmbeispiel zur Transaktion wird dieselbe Änderungsanweisung zweimal ausgeführt und das DELETE nie; richtig ist, jede der gebündelten Anweisungen einmal auszuführen und erst danach commit aufzurufen.",
      "grenzen": [
       {
        "text": "Herstellerspezifische Formen der Datenpflege aus IHK-Lösungen lernst du nicht als eigene Schreibweise: SELECT … INTO Tabelle zum Kopieren (SQL Server, legt eine neue Tabelle an) und UPDATE … SET … FROM … INNER JOIN (SQL Server). Du schreibst INSERT INTO … SELECT und UPDATE mit Unterabfrage in WHERE.",
@@ -261,6 +339,16 @@
         "ANH.sql-syntax-auszug",
         "AP2b.04.22.3"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Ein Programm schickt SQL über die Datenbankschnittstelle: Ändernde Anweisungen (INSERT, UPDATE, DELETE, CREATE) liefern nur die Zahl der betroffenen Zeilen, eine Abfrage liefert eine Ergebnismenge, die zeilenweise ausgelesen wird; Datenbankfehler werden als Ausnahme abgefangen, und Benutzereingaben gehören als Parameter in eine vorbereitete Anweisung statt in den SQL-Text.",
+       "kurz": "SQL aus dem Programm ausführen",
+       "quellen": [
+        "buch:FS2-2.3.8"
+       ],
+       "grund": "Ring Kür: Programmanbindung, Schnittstellendetail"
       }
      ]
     },
@@ -337,7 +425,17 @@
       "PB1-10-1-2",
       "AP1-7-4-1"
      ],
-     "hinweis": "Das Rollen- und Berechtigungskonzept selbst steht in PB1-10-2-1. Die Sicherheitsfragen aus 2024S-PB2-A1-b/-c gehören nicht zu SQL und werden mit früheren Räumen gelöst: Risiko von Word-Anhängen per E-Mail und die sicherere Anzeige im Browser auf der Plattform (2024S-PB2-A1-ba/-bb) mit AP1-7-4-1 (keine Makros und Anhänge unbekannter Herkunft), Passwort-Zurücksetzen über einen zweiten, unabhängigen Weg (2024S-PB2-A1-ca/-cb) mit PB1-10-1-2. Die SQL-Syntax (Auszug) steht im Belegsatz; CREATE ROLE ist die Standardform, der Auszug fasst Benutzer und Rolle in einer Zeile zusammen."
+     "hinweis": "Das Rollen- und Berechtigungskonzept selbst steht in PB1-10-2-1. Die Sicherheitsfragen aus 2024S-PB2-A1-b/-c gehören nicht zu SQL und werden mit früheren Räumen gelöst: Risiko von Word-Anhängen per E-Mail und die sicherere Anzeige im Browser auf der Plattform (2024S-PB2-A1-ba/-bb) mit AP1-7-4-1 (keine Makros und Anhänge unbekannter Herkunft), Passwort-Zurücksetzen über einen zweiten, unabhängigen Weg (2024S-PB2-A1-ca/-cb) mit PB1-10-1-2. Die SQL-Syntax (Auszug) steht im Belegsatz; CREATE ROLE ist die Standardform, der Auszug fasst Benutzer und Rolle in einer Zeile zusammen.",
+     "kuer": [
+      {
+       "text": "Mit DROP USER Name wird ein Datenbankbenutzer samt seinen Rechten wieder entfernt, etwa wenn ein Mitarbeiter ausscheidet.",
+       "kurz": "Benutzer löschen mit DROP USER",
+       "quellen": [
+        "buch:FS-3.7.4"
+       ],
+       "grund": "Ring Kür: DROP USER nicht im SQL-Auszug des Katalogs"
+      }
+     ]
     },
     {
      "id": "PB2-6-1-5",
@@ -407,12 +505,75 @@
         ],
         "was": "Abwägen, ob sich der Import eines konkreten Bestands lohnt (Aufwand der Bereinigung gegen Wert der Daten); PB1-7-1-3 führt Daten zusammen, ohne diese Entscheidung."
        }
+      },
+      {
+       "id": "PB2-6-1-5-K4",
+       "text": "Du kannst erklären, was Datenqualität bedeutet: wie gut sich Daten für den Zweck einer Anwendung eignen; aus mangelhaften Daten lassen sich keine verlässlichen Informationen gewinnen, und Fehler wie doppelte Kundenadressen oder veraltete Anschriften verursachen unmittelbar Kosten.",
+       "kurz": "Datenqualität als Eignung für den Zweck",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.1-S165"
+       ]
+      },
+      {
+       "id": "PB2-6-1-5-K5",
+       "text": "Du kannst die Qualitätskriterien Vollständigkeit (alle geforderten Felder enthalten gültige Werte), Korrektheit (die Werte stimmen mit der Wirklichkeit überein, z. B. kein Platzhalter-Geburtsdatum 01.01.1900), Aktualität (die Werte bilden den heutigen Stand ab) und Genauigkeit (die Werte liegen in der geforderten Exaktheit vor, z. B. Preise auf den Cent) je an einem Beispiel erklären.",
+       "kurz": "Vollständigkeit, Korrektheit, Aktualität, Genauigkeit",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.1-S166"
+       ]
+      },
+      {
+       "id": "PB2-6-1-5-K6",
+       "text": "Du kannst die Qualitätskriterien Eindeutigkeit (jeder Datensatz lässt sich eindeutig zuordnen, keine Dubletten), Redundanzfreiheit (keine Information mehrfach gespeichert), Konsistenz (keine Widersprüche innerhalb eines Datensatzes, z. B. Menge × Einzelpreis ≠ Gesamtbetrag, und zu anderen Datensätzen oder Quellen) und Einheitlichkeit (gleiche Werte im gleichen Format, z. B. jedes Datum nach ISO 8601) je an einem Beispiel erklären.",
+       "kurz": "Eindeutigkeit, Redundanz, Konsistenz, Einheitlichkeit",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.1-S167",
+        "buch:FS2-3.2.1-S225"
+       ]
+      },
+      {
+       "id": "PB2-6-1-5-K7",
+       "text": "Du kannst den Ablauf zur Verbesserung der Datenqualität beschreiben: Die Analyse (Data Profiling) findet Fehler, Lücken und Widersprüche, die Bereinigung (Data Cleaning) beseitigt sie, etwa durch Zusammenführen von Dubletten oder Ergänzen fehlender Werte, und ein regelmäßig wiederholtes Monitoring verhindert, dass die Qualität durch Datenalterung wieder sinkt; große Bestände werden dabei automatisiert geprüft.",
+       "kurz": "Data Profiling, Data Cleaning und Monitoring",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.1-S168"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-7-1-3",
       "PB1-7-1-1",
       "PB1-6-1-5"
+     ],
+     "kuer": [
+      {
+       "text": "Schlechte Datenqualität entsteht schon bei der Erfassung aus uneinheitlichen Quellen, durch Fehler beim Speichern und Pflegen und durch Datenalterung, weil sich die Wirklichkeit ändert, etwa nach einem Umzug oder einer Heirat.",
+       "kurz": "Ursachen schlechter Datenqualität",
+       "quellen": [
+        "buch:FS-3.2.1"
+       ],
+       "grund": "Ring Kür: Mängel und Folgen stehen schon in PB2-6-1-5-K1, Ursachen sind Zusatz"
+      },
+      {
+       "text": "Weitere Qualitätskriterien sind Relevanz (die Daten passen zum Informationsbedarf), Zuverlässigkeit (Herkunft und Entstehung sind nachvollziehbar), Verständlichkeit (Begriffe passen zur Vorstellung der Nutzer) und Zugänglichkeit bzw. Verfügbarkeit (technisch schnell abrufbar und rechtlich nutzbar).",
+       "kurz": "Weitere Kriterien der Datenqualität",
+       "quellen": [
+        "buch:FS-3.2.1"
+       ],
+       "grund": "Ring Kür: für den Import nachrangige Kriterien"
+      },
+      {
+       "text": "Jedes Kriterium lässt sich als Anteil der Datensätze messen, die es erfüllen (300 von 2 000 Adressen veraltet → Aktualität 85 %), auch vor und nach einer Korrektur; welche Kriterien zählen und wie stark, legt man mit dem Auftraggeber fest – anfangs wenige wichtige, bewertet durch Messung statt nach Gefühl.",
+       "kurz": "Datenqualität messen und gewichten",
+       "quellen": [
+        "buch:FS-3.2.1"
+       ],
+       "grund": "Ring Kür: Rechenbeispiel und Vorgehen ohne eigenen Katalogbezug"
+      }
      ]
     }
    ]
@@ -568,8 +729,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.7",
-  "stand": "2026-10-14; Prüfer-Funde umgesetzt am 2026-10-16 (umbau/berichte/PB2-6-pruefer.md, Abschnitt Umsetzung): PB2-6-1-4 in PB2-6-1-1 aufgelöst (K6, K7), PB2-6-1-2-K4 und PB2-6-1-4-K3 gestrichen, PB2-6-1-2-K6 (Sperren) neu, T7-Doppelungen nach P36 gelöst.",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB2-Ordner (P33). Stored Procedure und Trigger sind Zusatzbaustein (Beleg 2022S-PB2), seit 16.10.2026 in PB2-6-1-1 (P43). Gelernt wird Standard-SQL nach dem SQL-Auszug im Katalog-Anhang (P41).",
   "kerntest": {
    "stand": "2026-10-14",
@@ -577,7 +738,10 @@
    "ergebnis": "SQL-Datenpflege und Rechte aus allen PB2-Prüfungen sowie 2024W-PB2-A3-b (Datenimport) gegen die Musterlösungen gelesen."
   },
   "hinweisquellen": {
-   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.3.8": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.8 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.7.4": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.2.1": "Lehrbuch Westermann „IT-Berufe“ FS 3.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -683,8 +847,102 @@
      "wo": [
       "PB2-5"
      ]
+    },
+    {
+     "thema": "Ein Programm schickt SQL über die Datenbankschnittstelle: Ändernde Anweisungen (INSERT, UPDATE, DELETE, CREATE) liefern ",
+     "quellen": [
+      "buch:FS2-2.3.8"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-6-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Mit DROP USER Name wird ein Datenbankbenutzer samt seinen Rechten wieder entfernt, etwa wenn ein Mitarbeiter ausscheidet",
+     "quellen": [
+      "buch:FS-3.7.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-6-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Schlechte Datenqualität entsteht schon bei der Erfassung aus uneinheitlichen Quellen, durch Fehler beim Speichern und Pf",
+     "quellen": [
+      "buch:FS-3.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-6-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Weitere Qualitätskriterien sind Relevanz (die Daten passen zum Informationsbedarf), Zuverlässigkeit (Herkunft und Entste",
+     "quellen": [
+      "buch:FS-3.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-6-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Jedes Kriterium lässt sich als Anteil der Datensätze messen, die es erfüllen (300 von 2 000 Adressen veraltet → Aktualit",
+     "quellen": [
+      "buch:FS-3.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-6-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
-  }
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-6-1-1-K8",
+     "PB2-6-1-6-K1",
+     "PB2-6-1-6-K2",
+     "PB2-6-1-6-K3",
+     "PB2-6-1-2-K7",
+     "PB2-6-1-5-K4",
+     "PB2-6-1-5-K5",
+     "PB2-6-1-5-K6",
+     "PB2-6-1-5-K7"
+    ],
+    "neue_stichpunkte": [
+     {
+      "id": "PB2-6-1-6",
+      "nach": "PB2-6-1-1",
+      "begruendung": "D5: PB2-6-1-1 hätte sonst 11 Aussagen"
+     }
+    ],
+    "d6": [],
+    "kuer": [
+     "PB2-6-1-2",
+     "PB2-6-1-3",
+     "PB2-6-1-5",
+     "PB2-6-1-5",
+     "PB2-6-1-5"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB2-6-1-2",
+     "PB2-6-1-6"
+    ]
+   }
+  ]
  }
 }
