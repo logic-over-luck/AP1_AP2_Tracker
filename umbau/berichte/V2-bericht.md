@@ -1,4 +1,4 @@
-# Bericht Regelwerk v2.0/v2.1 – Lehrbuch als Tiefe (Branch `regelwerk-v2`)
+# Bericht Regelwerk v2.0–v2.2 – Lehrbuch als Tiefe (Branch `regelwerk-v2`)
 
 Auftrag des Projektinhabers vom 16.10.2026 (D1–D11), nachgeschärft nach dem Überblick zu Schritt 2 (RK1–RK6, Regelwerk v2.1). Dieser Bericht ist die Fortsetzungsstelle: Eine Folgesitzung liest ihn und macht beim nächsten offenen Schritt weiter.
 
@@ -8,11 +8,11 @@ Auftrag des Projektinhabers vom 16.10.2026 (D1–D11), nachgeschärft nach dem �
 |---|---|
 | 1 Regelwerk v2.0 | ✓ (Commit „V2 Schritt 1“) |
 | 2 Kernpunkt-Listen | ✓ 298 Kapitel, Gegenprüfung je Abschnitt, Regel K v2.1 angewandt |
-| 3 Räume erweitern | **AP1 fertig** (8 Ordner, 604 → 838 Aussagen, je Ordner Commit); **PB1 als Nächstes** (pausiert auf Wunsch des Projektinhabers), dann PB2, WISO |
-| 4 Karten und Erklärungen | wird je Ordner zusammen mit Schritt 3 gebaut (die Tests verlangen zu jeder Aussage Karte und Erklärung) |
-| 5 App | teilweise vorgezogen (Marke „Buch“, Lernprompt D10, Wichtigkeit D7); Build und Browser-Check offen |
-| 6 Unabhängige Prüfung | Auftrag `umbau/auftraege/V2-pruefung.md` liegt vor |
-| 7 Abschluss | offen |
+| 3 Räume erweitern | ✓ alle 37 Ordner (AP1 8, PB1 12, PB2 6, WISO 5), je Ordner Commit; T10: kein Kernpunkt offen |
+| 4 Karten und Erklärungen | ✓ je Ordner zusammen mit Schritt 3 (jede neue Aussage mit `kurz`, Erklärung und Karte) |
+| 5 App | ✓ Build, Browser-Check aller vier Räume auf 1400 px und 390 px |
+| 6 Unabhängige Prüfung | ✓ sechs Prüfer, 173 Funde, umgesetzt; Berichte `V2-<Raum>-pruefer.md` |
+| 7 Abschluss | ✓ UMBAU.md (Checkliste, Parkplatz P57–P71), dieser Bericht |
 
 **Wichtig für eine Folgesitzung:** Die Kernpunkt-Listen liegen nur lokal unter `quellen/lehrbuch/kern/` (D9). Im Repo stehen davon nur Kapitelnummern, Seiten, Stichpunkt-Zuordnung und Zählungen (`umbau/zuordnung/buch.json`). Geht der lokale Stand verloren, müssen die Listen mit `quellen.zip` neu erzeugt werden (Auftrag und Werkzeuge siehe „Vorgehen Schritt 2“).
 
@@ -107,7 +107,7 @@ Erwartung Schritt 3 mit Obergrenze (je Ordner min(Obergrenze RK3, eindeutige Pfl
 - PB1-3-1-3-K1 spricht vom „zentralen Repository“ (Git ist verteilt; zentral ist nur der gemeinsame Server-Stand).
 
 
-## Schritt 3 – Fortschritt (Stand: AP1 fertig, PB1 pausiert)
+## Schritt 3 – Räume erweitern (fertig)
 
 Ablauf je Ordner: Bau-Subagent schreibt einen Patch (Auftrag lokal `scratchpad/v2/auftrag-bau.md`; offene Kernpunkte je
 Ordner aus den lokalen Listen), Einbau mit `node tools/umbau/v2-einbauen.mjs <patch>`, danach `lernplan-pruefen`,
@@ -131,8 +131,66 @@ werden gestrichen oder gekürzt (`tools/umbau/v2-kuer-zu-pflicht.mjs`, Protokoll
 K5-Treffer in AP1 (6 Wörter) sind Gesetzeswortlaut (Art. 5/32 DSGVO, § 38 BDSG – amtliche Werke) oder feste Fachbegriffe
 („Round Trip Time“, „Drei-Phasen-Modell nach Lewin“); echte Übernahmen (AP1-2-2-4-K6, AP1-1-5-1 Kür) umformuliert.
 
-**Fortsetzung:** `offen/PB1-*.json` aus den lokalen Kernpunkt-Listen erzeugen und je PB1-Ordner (Reihenfolge PB1-6, -5, -8,
--9, -10, -1, -3, -7, -2, -4, -11, -12) bauen; dann PB2-1…6, WISO-1…5. Danach Schritt 5 (Build, Browser-Check), 6, 7.
+PB1, PB2 und WISO (nach v2.2, jede neue Aussage und Kür mit `kurz`; PB2 und WISO parallel zu PB1-11/-12 gebaut,
+beim Einbau gegen das fertige PB1 auf Doppelungen geprüft – keine):
+
+| Ordner | neue Aussagen | neue Stichpunkte | D6 | Kür |
+|---|---|---|---|---|
+| PB1-6 | 12 | 0 | 1 | 6 |
+| PB1-9 | 16 | 0 | 3 | 11 |
+| PB1-8 | 12 | Dialoggrundsätze an Beispielen | 4 | 13 |
+| PB1-5 | 18 | Architekturmuster: Schichten, MVC, Ereignisse | 2 | 16 |
+| PB1-10 | 14 | 0 | 1 | 8 |
+| PB1-1 | 20 | 0 | 3 | 16 |
+| PB1-3 | 15 | 0 | 2 | 25 |
+| PB1-7 | 13 | REST und SOAP | 3 | 8 |
+| PB1-2 | 7 | 0 | 1 | 3 |
+| PB1-4 | 8 | 0 | 0 | 3 |
+| PB1-11 | 32 | Firewall; Sicherheitskonzepte im Netz | 1 | 25 |
+| PB1-12 | 32 | USV; RAID vertieft; Messdaten und Alarmierung; Hosting und Managed Services | 2 | 18 |
+| **PB1** | **199** | **9** | **23** | **152** |
+| PB2-1 … PB2-6 | 2 · 4 · 2 · 4 · 1 · 9 = **22** | 1 (SQL-Sprachteile, Spaltenoptionen, Index) | 3 | 19 |
+| WISO-1 … WISO-5 | 36 · 18 · 4 · 1 · 0 = **59** | 0 | 2 | 37 |
+
+Kür gekürzt oder gestrichen, wo ihr Inhalt jetzt Pflicht ist (u. a. BASE, Botnetze, Typisierung, Data Warehouse, WSDL,
+UML-Diagramme, WEP/WPA, RAID 6/DAS, Cloud-Modelle). Kür in AP1, deren Inhalt in einem späteren Raum Pflicht wurde, bleibt als
+Ausblick (AP1 eingefroren) – Liste auf dem Parkplatz (P68). Zwei Kernpunkte, die nach dem Bau ihres Ordners umgehängt wurden,
+stehen als Quelle an bestehender Kür (GS-5.7.3 an AP1-8-2-1, FS2-1.4.3 an PB1-8-1-2; FS-4.1.2 SOI an der SOA-Kür PB1-5-1-6).
+
+## Schritt 5 – App
+
+Build `Lernstudio.html`; Browser-Check (`tools/browser-check.mjs`) für `#/ap1` `#/pb1` `#/pb2` `#/wiso` und das
+Stichpunkt-Detail je Raum auf 1400 px und 390 px: keine Konsolenfehler, kein waagerechtes Scrollen, eine Zeile zugleich offen,
+Marke „Buch“ an den neuen Aussagen, Kür eingeklappt.
+
+## Schritt 6 – Unabhängige Prüfung
+
+Sechs Prüfer ohne Kenntnis des Baus (AP1 und PB1 je in zwei Hälften), Auftrag `umbau/auftraege/V2-pruefung.md`; danach je Teil
+ein Umsetzer mit festen Regeln (bestehende Aussagen nie ändern, Doppelungen per D6, Grundsatzfragen auf den Parkplatz).
+
+| Raum | Funde | umgesetzt | teilweise | abgelehnt | Parkplatz |
+|---|---|---|---|---|---|
+| AP1 | 58 | 45 | 5 | 6 | 2 |
+| PB1 | 67 | 46 | 14 | 4 | 3 |
+| PB2 | 21 | 13 | 3 | 2 | 3 |
+| WISO | 27 | 22 | 1 | 0 | 1 |
+
+Häufigste Arten: Doppelungen (33, meist D6 an bestehende Aussage), Stufe/Operator (29, nach D5 an den Baustein angepasst),
+Herkunft (22), Kür statt Pflicht und umgekehrt (22). Wörtliche Übernahmen: 2 Treffer bei 173 Funden; K5 entfällt seit
+16.10.2026 als Prüfung (Projektinhaber, P71). Berichte mit Umsetzung: `umbau/berichte/V2-<Raum>-pruefer.md`.
+
+## Ergebnis
+
+| Raum | Stichpunkte | Aussagen vor v2 | Aussagen jetzt | davon mit Buch-Herkunft | Kür |
+|---|---|---|---|---|---|
+| AP1 | 124 | 604 | 842 | 264 | 257 |
+| PB1 | 76 | 265 | 465 | 221 | 167 |
+| PB2 | 22 | 93 | 117 | 27 | 19 |
+| WISO | 70 | 325 | 388 | 67 | 49 |
+| **gesamt** | **292** | **1.287** | **1.812** | **579** | **492** |
+
+Offene Grundsatzfragen: UMBAU.md Parkplatz P57–P70 (Operator über Bausteinstufe, LF10c/RK4, G6, RK2-Tiefe, Rechtsstand,
+AP1-Kür als Ausblick, mögliche Fehler in bestehenden Aussagen).
 
 ## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, fertig)
 

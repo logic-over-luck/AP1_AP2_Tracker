@@ -23,8 +23,8 @@ gestrichenen Grenzen (`meta.v2[].grenzen_gestrichen`). Erklärungen (`umbau/kurz
 (`umbau/karten/<raum>/`) zu diesen Aussagen stichprobenweise.
 
 **Darfst du lesen:** die Lernpläne, Kurzfassungen und Karten des Raums, `umbau/export/*.md` (andere Räume),
-`quellen/katalog.md`, `quellen/pruefungen/`, `quellen/lehrbuch/*.txt` (Seite N steht im OCR-Text im N+1-ten
-Abschnitt zwischen Form-Feeds; du kannst auch nach der Kapitelnummer suchen), `umbau/regeln/regelwerk.json` (Abschnitt
+`quellen/katalog.md`, `quellen/pruefungen/`, `quellen/lehrbuch/*.txt` (Seite N steht im OCR-Text im Abschnitt mit
+Index N+1 zwischen Form-Feeds, ab 0 gezählt; du kannst auch nach der Kapitelnummer suchen), `umbau/regeln/regelwerk.json` (Abschnitt
 `buch`), `UMBAU.md` Abschnitt 4.0 (Regelwerk v2.0) und 4.1–4.8.
 **Nicht lesen (Unabhängigkeit):** `umbau/berichte/`, `quellen/lehrbuch/kern/` (Kernpunkt-Listen der Bauenden),
 Patch- und Bau-Dateien.
