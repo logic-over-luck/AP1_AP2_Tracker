@@ -191,3 +191,135 @@ zu fein 2, zu grob 2, streichen 1, Grenze 1, veraltet 1, doppelt AP1 1 (Mischart
    keinen Prüfungsbeleg hat? Nach dem Wortlaut von 4.3 („Verfahren, das schon belegt ist“) nein.
 4. **Lerntypen (Nr. 32):** Der Katalog verlangt die vier Lerntechniken (E6, bleibt). Soll ein fachlicher Hinweis zum
    Lerntypen-Modell in den Plan, oder gilt das als Lehrmeinung außerhalb des Prüfungsbereichs?
+
+## Umsetzung (16.10.2026)
+
+Eingebaut in `tools/umbau/gen-wiso/wiso_1.py` nach den Entscheidungen D1–D12 aus `WISO-pruefer-bilanz.md`.
+`node tools/umbau/lernplan-pruefen.mjs WISO-1` meldet OK. Es bleiben drei Hinweise, die gewollt sind: 2025S-A9 und
+2025W-A3 in WISO-1-1-1 (nichtige Vereinbarungen; die Zuordnung führt nur WISO.01.01.1.6/.9/.10), 2021W-A23 in WISO-1-3-1
+(gelöst über AP1-3-4-1). Die Prüfungen für WISO-2 und WISO-3 laufen ebenfalls OK; die Verschiebeziele WISO-1-5-3-K5
+(aus WISO-2-5-2-K5) und WISO-1-6-2-K6 (aus WISO-3-4-2-K5) bestehen.
+
+### Teil a (WISO-1-1 bis WISO-1-4)
+
+| Nr | Entscheidung | Was geändert / Grund |
+|---|---|---|
+| a1 | teilweise | Nach D1 auf Stufe 2 gehoben, weil die Belege Auswahlaufgaben sind: WISO-1-2-3-K1, WISO-1-3-5-K3, WISO-1-4-1-K3 und WISO-1-4-1-K5 (jetzt „unterscheiden“, mit den Distraktoren). WISO-1-3-2-K4 und WISO-1-4-3-K5 entfallen (siehe a17, a18). Neun Aussagen bleiben auf Stufe 1, weil sie keinen Auswahlbeleg haben und ihr Baustein Stufe 2 anderswo erreicht (D1, T8): WISO-1-1-4-K2, WISO-1-3-1-K3, WISO-1-3-4-K1/K3/K4/K5 und WISO-1-3-5-K5/K6. Dazu kommt WISO-1-3-5-K1 mit Eintrag-Belegen (Z3b: Stufe 1). |
+| a2 | umgesetzt | WISO-1-3-1-K5 jetzt Stufe 2 mit „erklären“. Hier wohnt das Günstigkeitsprinzip (D3). WISO.01.05.1 erreicht Stufe 3 weiter über WISO-1-3-3-K1. |
+| a3 | umgesetzt | WISO-1-3-3-K6: Klagen kann der Arbeitnehmer. Neu steht dort, dass ein Widerspruch des Betriebsrats die Kündigung nicht verhindert. |
+| a4 | umgesetzt | Nach D6 ist WISO-1-4-3-K1 „verschoben“ nach WISO-1-3-2-K1. 2025S-A11 und 2025W-A8 sind aus den Teilaufgaben von WISO-1-4-3 entfernt; der Hinweis verweist auf WISO-1-3-2. |
+| a5 | teilweise | WISO-1-3-2-K5 ist auf die reine Zuordnung Gesetz → Thema gekürzt (ohne 24 Werktage und acht Stunden). Stehen bleibt „Elternzeit bis zu drei Jahren“: Nur daran lässt sich 2021W-A18 a („36 Monate“) von e unterscheiden. WISO-1-3-5-K6 bleibt, weil WISO-1-3-5 laut Titel der Wohnort für den Schutz Schwerbehinderter ist. WISO-1-3-3-K2 nennt die Gruppen nur für 2023W-A17 und 2024S-A23. |
+| a6 | umgesetzt | Nach D6 nennt WISO-1-3-2-K2 Berufsbildungs- und Betriebsverfassungsgesetz; Arbeitsschutzgesetz und Arbeitsstättenverordnung stehen nur noch zur Abgrenzung da, der Hinweis verweist auf WISO-3-1-1. Die Bausteine WISO.01.05.2.2 und .2.7 bleiben in WISO-1-3-2: WISO-3-1-1 führt sie nicht, ohne sie wären sie unabgedeckt (T1). |
+| a7 | umgesetzt | WISO-1-4-2-K3 (Tarifvorrang) ist in K1 aufgegangen, K3 „verschoben“ nach K1. |
+| a8 | umgesetzt | Nach D3 steht die IHK-Lösung 2022S-A13 im Hinweis an WISO-1-4-2 (P35 Nr. 7). Die Aussage ist fachlich richtig nach § 77 Abs. 3 BetrVG. |
+| a9 | umgesetzt | WISO-1-1-3-K2: Es gibt keine Übernahmepflicht (Belege 2025S-A9, 2025W-A3 ergänzt). WISO-1-4-3-K4: Mitglieder der JAV werden nicht automatisch übernommen, können die Übernahme aber verlangen (§ 78a BetrVG, 2022W-A14). |
+| a10 | umgesetzt | WISO-1-4-1-K3 grenzt jetzt unternehmerische Entscheidungen ab (Filiale, Rechtsform, leitende Angestellte, Umbau, Umweltschutz) und sagt, dass der Betriebsrat keine Rechtsgeschäfte abschließt. WISO-1-4-1-K5: Es gibt keine Pflicht, einen Betriebsrat zu wählen; das Geschlecht in der Minderheit ist nach seinem Anteil vertreten, eine Hälfte-Hälfte-Pflicht gibt es nicht. |
+| a11 | umgesetzt | WISO-1-3-3-K4: Ein einmaliges leichteres Fehlverhalten (ein Tag unentschuldigt gefehlt) rechtfertigt keine fristlose Kündigung; zuerst kommt in der Regel eine Abmahnung. |
+| a12 | umgesetzt | WISO-1-3-5-K2: Beim Beschäftigungsverbot gibt es den bisherigen Durchschnittsverdienst, Mutterschaftsgeld nur in den Schutzfristen. WISO-1-3-5-K4: Das AGG gilt auch für Auszubildende, für Arbeitsbedingungen und Aufstieg; Betroffene haben Anspruch auf Entschädigung oder Schadensersatz. |
+| a13 | umgesetzt (mit Abweichung) | WISO-1-4-3-K3 nennt jetzt die Mindestzahl fünf, die Amtszeit und als Wählbarkeitsgrenze, dass das 25. Lebensjahr noch nicht vollendet ist (D12). Abweichung vom Vorschlag: Seit dem Betriebsrätemodernisierungsgesetz (18.6.2021) gilt für Auszubildende keine Altersgrenze mehr, weder beim Wählen noch bei der Wählbarkeit (§§ 60, 61 BetrVG). Die Aussage lautet deshalb „Auszubildende“ ohne „unter 25“. Der Hinweis nennt die IHK-Lösung 2022W-A14, nach der „Auszubildende bis 27 dürfen wählen“ falsch ist (P35 Nr. 7). |
+| a14 | umgesetzt | WISO-1-1-4-K4: Gilt ein Tarifvertrag, ist dessen Vergütung maßgeblich; ohne Tarifbindung gilt mindestens die Mindestvergütung. Keine Beträge (B4). |
+| a15 | teilweise | WISO-1-1-1-K3: Die Vertragsniederschrift ist schriftlich oder in Textform möglich (BVaDiG, D12). Nicht übernommen: das elektronische Ausbildungszeugnis (nicht belegt, Rechtslage nicht sicher geprüft). Die Kündigung in WISO-1-1-2-K5 bleibt unverändert „schriftlich“. |
+| a16 | umgesetzt | WISO-1-2-1-K3: Die Berufsschulpflicht ist Landesrecht; Ältere sind teils nur berufsschulberechtigt. Die Freistellung gilt für alle Auszubildenden. |
+| a17 | umgesetzt | WISO-1-3-2-K4 ist „gestrichen“ (Lesehilfe); der Inhalt steht jetzt im Hinweis von WISO-1-3-2. |
+| a18 | umgesetzt | WISO-1-4-3-K5 ist „verschoben“ nach K3, WISO-1-1-1-K5 „verschoben“ nach K4. |
+| a19 | abgelehnt | D7: WISO-1-3-5 bleibt ein Stichpunkt (7 Aussagen, F3 erfüllt). |
+| a20 | umgesetzt | WISO-1-3-1-K2 nennt jetzt Betriebsvereinbarung und Überstundenregelung als Kollektivarbeitsrecht. Der Hinweis gibt die IHK-Wertung aus 2022W-A7 und die abweichende Lehrmeinung an. |
+| a21 | umgesetzt | Nach D6 steht die Anhörung nur noch in WISO-1-4-1-K4 (unwirksam ohne Anhörung, nachträgliche Anhörung heilt nicht, eine Zustimmung ist nicht nötig). WISO-1-3-3 verweist im Hinweis darauf. |
+| a22 | umgesetzt | Durch die Kürzung aus a5 erledigt. |
+| a23 | umgesetzt | „Ausbildungsplan wird Teil des Vertrags“ und der Beleg 2025S-A10 stehen nur noch in WISO-1-1-1-K2. WISO-1-2-2 hat jetzt einen Hinweis. |
+| a24 | umgesetzt | Die Freistellung ist aus WISO-1-1-4-K1 gestrichen; ihr Wohnort ist WISO-1-2-1-K3. |
+| a25 | umgesetzt | WISO-1-4-1-K6 ist auf die Rechnung mit abgedrucktem §§ 7/9 gekürzt; Auszubildende und befristet Beschäftigte zählen mit. |
+| a26 | umgesetzt | Nach D3 wohnt das Günstigkeitsprinzip in WISO-1-3-1-K5; WISO-1-5-1-K4 verweist nur noch im Hinweis darauf. |
+| a27 | umgesetzt | WISO-1-2-3-K3 nennt Berufsgenossenschaft, Gewerbeaufsicht, Berufsberatung und Gesundheitsamt nur als Abgrenzung; der Hinweis verweist auf WISO-3-1-1 (D6). |
+| a28 | teilweise | Beide Aussagen bleiben, weil zwei Gesetze (BBiG und GewO) und verschiedene Belege dahinterstehen. WISO-1-3-6 verweist im Hinweis auf WISO-1-1-3. |
+| a29 | abgelehnt | Zusatzbausteine sind nach Z1 abdeckungspflichtig wie Katalogbausteine und werden in allen Räumen als `katalog:ZB.…` geführt (AP1, PB1, PB2, WISO). T3 erkennt sie an. |
+| a30 | umgesetzt | WISO-1-4-1-K5: „mindestens fünf ständige wahlberechtigte Arbeitnehmer, von denen drei wählbar sind“. |
+| a31 | umgesetzt | Hinweis an WISO-1-3-4: Stand Oktober 2026 gilt die tägliche Höchstarbeitszeit, eine Reform ist geplant (unsicher, siehe unten). |
+| a32 | umgesetzt | WISO-1-3-6-K5: Übertragung nur aus dringenden Gründen bis Ende März; verfallen kann der Urlaub nur nach einem Hinweis des Arbeitgebers. |
+| a33 | abgelehnt | Kür ohne Hinweisquelle (D11): P49 (Kür, keine Hinweisquelle). |
+| a34 | umgesetzt | WISO-1-3-4-K2 nennt jetzt die erste Nachuntersuchung nach einem Jahr und das Feiertagsverbot mit Ausnahmen. |
+| a35 | kein Fund | – |
+
+### Teil b (WISO-1-5 bis WISO-1-8)
+
+| Nr | Entscheidung | Was geändert / Grund |
+|---|---|---|
+| b1 | umgesetzt | Nach D4 lehrt WISO-1-5-2-K3 die Reihenfolge der IHK: Scheitern → (Urabstimmung/Streik) → Schlichtung. Die „neue Verhandlung“ ist gestrichen. Der Hinweis nennt 2021W-A7 und 2023W-A26. |
+| b2 | umgesetzt | Nach D3 lautet WISO-1-5-1-K4 nicht mehr „günstigere Betriebsvereinbarung möglich“. Der Hinweis nennt die IHK-Lösung 2022S-A13 und verweist auf WISO-1-4-2. |
+| b3 | umgesetzt | WISO-1-5-1-K4: Der Tarifvertrag darf auch auf Nichtmitglieder angewendet werden; er setzt Mindestbedingungen, keine Höchstgrenzen. |
+| b4 | umgesetzt | Neue WISO-1-5-1-K7 zur Laufzeit: frei vereinbart, keine gesetzliche Höchstdauer, Nachwirkung (Beleg 2022S-A13). |
+| b5 | umgesetzt | WISO-1-5-1-K1 jetzt Stufe 2 mit „unterscheiden“ (D1) und den Distraktoren. |
+| b6 | umgesetzt | Siehe b2: Das Günstigkeitsprinzip steht nur noch im Hinweis (Wohnort WISO-1-3-1-K5). |
+| b7 | umgesetzt | WISO-1-5-1-K2 ordnet Ecklohn und Ausbildungsvergütung dem Lohn- und Gehaltstarif zu. Der Hinweis erklärt den Entgeltrahmentarif gegenüber der IHK-Lösung 2022S-A14. |
+| b8 | umgesetzt | WISO-1-5-1-K3: „im Rahmen der Gesetze“; der Staat schreibt keine Inhalte vor und genehmigt Tarifverträge nicht. |
+| b9 | umgesetzt | WISO-1-5-2-K2: Streik erst nach Ende der Friedenspflicht; die Urabstimmung folgt aus der Gewerkschaftssatzung. |
+| b10 | umgesetzt | WISO-1-5-2-K4 ist in K3 aufgegangen (K4 „verschoben“). |
+| b11 | umgesetzt | WISO-1-5-2-K5: Der unbefristete Streik ist das letzte Mittel und begleitet Verhandlungen nicht immer (Belege 2025S-A17, 2025W-A14). |
+| b12 | umgesetzt | Nach D6 nennt WISO-1-5-3-K4 Handwerkskammer und IHK als Körperschaften des öffentlichen Rechts mit Pflichtmitgliedschaft, keine Vereine (Beleg 2022W-A17). Baustein WISO.02.07.2 mit Anteil, Gebiet G.WISO.02 ergänzt. |
+| b13 | teilweise | WISO-1-Seite umgesetzt: Nach D6 wohnen Kammern und Wirtschaftsverbände in WISO-1-5-3. K5 nimmt den Inhalt von WISO-2-5-2-K5 auf (Verschiebeziel) und grenzt Kammern, Wirtschaftsverbände und Arbeitgeberverbände voneinander ab; der Hinweis ist angepasst. Die Kürzung in WISO-2-5-2 übernimmt WISO-2. |
+| b14 | teilweise | WISO-1-5-3-K3: Ausbildung nur noch kurz („Aufgaben in der Aus- und Weiterbildung“, die richtige Antwort in 2022W-A17), Wohnort ist WISO-1-2-3. Die Abgrenzungen bleiben. Das Handelsregister bleibt als Distraktor von 2023S-A16. |
+| b15 | umgesetzt | Nicht als Kür: Der DGB ist Distraktor in zwei Belegen (D11: was für einen Distraktor nötig ist, gehört in die Aussage). Ergänzt in WISO-1-5-3-K1 und WISO-1-5-2-K2. |
+| b16 | umgesetzt | WISO-1-6-1-K1: Solidaritätszuschlag nur bei höheren Einkommen (D12). |
+| b17 | umgesetzt | WISO-1-6-1-K4 schließt Sparlose, Unfall- und Sterbegeldversicherung aus; die Sparzulage gibt es nur unterhalb von Einkommensgrenzen. Aktien sind nicht pauschal ausgeschlossen. |
+| b18 | umgesetzt | 2023W-A3 ist aus WISO-1-6-1 entfernt und steht in WISO-1-3-6-K1; WISO-1-6-1 verweist im Hinweis darauf. |
+| b19 | umgesetzt | WISO-1-6-1-K5 hat die Herkunft `katalog:WISO.01.09`; der Baustein ist ergänzt. |
+| b20 | abgelehnt | Kür ohne Hinweisquelle (Steuerklasse VI, nicht belegt): P49 (Kür, keine Hinweisquelle). |
+| b21 | umgesetzt | WISO-1-6-2-K4: Über der Bemessungsgrenze bleibt man versichert; keine Versicherungspflichtgrenze in der Renten- und Arbeitslosenversicherung; Arbeitgeberzuschuss bei freiwilliger Versicherung. |
+| b22 | umgesetzt | Aufgeteilt in K4 (Bemessungs- und Versicherungspflichtgrenze), K7 (Generationenvertrag und private Vorsorge) und neu K8 (Arbeitslosengeld). Damit F3 gilt (höchstens 7), ist K5 (Träger) in K1 aufgegangen (K5 „verschoben“). |
+| b23 | umgesetzt | Neue WISO-1-6-2-K8: Arbeitslosengeld als Versicherungsleistung ohne Bedürftigkeitsprüfung, Anwartschaft, Bemessung (2022W-A19). |
+| b24 | umgesetzt | Neue WISO-1-6-2-K9: Leistungen der Kranken- und Pflegeversicherung, versicherte Gruppen (2022W-A20). Dass die Träger selbstverwaltete Körperschaften und keine Behörden sind, steht in K1. |
+| b25 | umgesetzt | WISO-1-6-2-K6: Minijob fachlich genau (Pauschalbeiträge, Eigenanteil zur Rentenversicherung mit Befreiung). Der Hinweis nennt die IHK-Lösung 2022W-A16. |
+| b26 | abgelehnt | Nach D6 wohnen Träger und Beitrag der Unfallversicherung in WISO-1-6-2 (K1, K6). Die Berufsgenossenschaften bleiben; K6 ist Verschiebeziel von WISO-3-4-2-K5. Der Hinweis ist angepasst: Versicherte, Fälle und Leistungen stehen in WISO-3-1-3. |
+| b27 | abgelehnt | Kür ohne Hinweisquelle (Kinderabschlag Pflege): P49 (Kür, keine Hinweisquelle). |
+| b28 | umgesetzt | WISO-1-6-3-K4 und K5 haben zusätzlich die Herkunft `regel:P-NAECHSTE-STUFE` (Weiterführung der belegten Beitragsrechnung). |
+| b29 | umgesetzt | Nach D2 ist WISO-1-7-1-K3 „gestrichen“. |
+| b30 | teilweise | K1 nicht gestrichen, weil WISO-1-7-1 sonst nur zwei Aussagen hätte (F3). Stattdessen ist K1 auf das Unterscheidungsmerkmal geschärft (Sehen, Hören, Sprechen, Handeln). |
+| b31 | umgesetzt | WISO-1-7-1-K2 enthält die Katalogbeispiele vollständig (Videos, Gruppenaktivitäten, Lerngruppen bei auditiv und kommunikativ). |
+| b32 | umgesetzt | Hinweis an WISO-1-7-1: Die Techniken sind Zugänge zum Stoff, keine Lerntypen. Damit ist auch die offene Frage 4 aus Teil b beantwortet. |
+| b33 | umgesetzt | WISO-1-7-2-K3 „gestrichen“. |
+| b34 | umgesetzt | WISO-1-7-2-K1 ist in K2 aufgegangen (K1 „verschoben“). |
+| b35 | umgesetzt | WISO-1-7-2-K2 jetzt Stufe 2 mit „erklären“ (D1: Katalog ohne Operator, kein Beleg). |
+| b36 | umgesetzt | Neue WISO-1-7-2-K8 (Merkmale agiler Arbeit, Beleg 2022W-A29) mit `neu` gegenüber PB1-1-1-1 und PB1-1-1-3. `baut_auf` ist um PB1-1-1-3 ergänzt. AP2b.04.02.2 und AP1.01.01.3 stehen mit Anteil in den Bausteinen (T7 erfüllt), damit entfallen die beiden Hinweise zu 2022W-A29 und A30. |
+| b37 | umgesetzt | WISO-1-7-3-K1 ist in K6 (nutzen) aufgegangen (K1 „verschoben“). |
+| b38 | umgesetzt | WISO-1-7-3 hat jetzt `baut_auf: AP1-7-4-3` und einen Hinweis; K5 ist auf das Lernen gekürzt (Datenschutz gestrichen). |
+| b39 | umgesetzt | WISO-1-8-1-K1 grenzt Umschulung von Ausbildungswechsel und Betriebswechsel ab, Fortbildung von Lehrgang in der Ausbildung, Schule, Studium und Freizeitkurs. |
+| b40 | umgesetzt | Nach D2 ist WISO-1-8-1-K6 jetzt Stufe 2 mit „erklären“ und Gründen, ohne P-NÄCHSTE-STUFE. |
+| b41 | umgesetzt | WISO-1-8-1-K3 behält nur die Lernorte; die neue K7 enthält die Regelungen (Betriebsvereinbarung, Tarif- und Arbeitsvertrag, Bildungsurlaub). |
+| b42 | umgesetzt | WISO-1-8-3-K3 ist in K2 aufgegangen (K3 „verschoben“); ergänzt ist die Regel „bis zu einem Viertel der Ausbildungsdauer“ (§ 2 Abs. 3 BBiG). |
+| b43 | umgesetzt | WISO-1-8-3-K1: Der Europass-Mobilität dokumentiert, beglaubigt aber nicht; Sprachkenntnisse werden selbst eingeschätzt. |
+| b44 | umgesetzt | WISO-1-8-4-K6: Der Gewerbesteuer-Hebesatz ist ein Standortfaktor, der Umsatzsteuersatz nicht (D12). |
+| b45 | umgesetzt | Nach D2 ist WISO-1-8-4-K1 jetzt Stufe 2 mit „unterscheiden“ und Herkunft `beleg:2022W-A23` statt P-NÄCHSTE-STUFE. |
+| b46 | umgesetzt | WISO-1-8-4-K3: Der Businessplan ist für jede Gründung sinnvoll, unabhängig von Rechtsform und Kredit, und dient zuerst der eigenen Planung. |
+
+### Zahlen
+
+- Entscheidungen: Teil a 27 umgesetzt, 4 teilweise, 3 abgelehnt, 1 kein Fund; Teil b 40 umgesetzt, 3 teilweise,
+  3 abgelehnt. Zusammen 67 umgesetzt, 7 teilweise, 6 abgelehnt (davon 3 als P49), 1 kein Fund, 0 Parkplatz.
+- Stichpunkte: 29 → 29 (keine neuen, D7). Können-Aussagen: 150 → 143 (Aussagen auf Stufe 1: 15 → 9; Stufe 4 über
+  P-NÄCHSTE-STUFE: 3 → 0).
+- Neue Aussagen (IDs über jeder je vergebenen Nummer): WISO-1-5-1-K7, WISO-1-6-2-K8, WISO-1-6-2-K9, WISO-1-7-2-K8,
+  WISO-1-8-1-K7.
+- „Verschoben“ in WISO-1 neu: WISO-1-1-1-K5, WISO-1-4-2-K3, WISO-1-4-3-K1, WISO-1-4-3-K5, WISO-1-5-2-K4, WISO-1-6-2-K5,
+  WISO-1-7-2-K1, WISO-1-7-3-K1, WISO-1-8-3-K3. „Gestrichen“ neu: WISO-1-3-2-K4, WISO-1-7-1-K3, WISO-1-7-2-K3.
+
+### Parkplatz-Fragen
+
+- **Rechtsänderung nach dem Prüfungstermin (a13):** 2022W-A14 wertet „Auszubildende bis 27 dürfen die JAV wählen“ als
+  falsch. Nach dem Betriebsrätemodernisierungsgesetz (in Kraft seit 18.6.2021, also vor dem Prüfungstermin) ist die
+  Aussage richtig. Umgesetzt wie P35 Nr. 7: Die Aussage ist fachlich richtig, der Hinweis nennt die IHK-Lösung. Vorschlag:
+  P35 Nr. 7 ausdrücklich auch auf Lösungen anwenden, die durch eine Rechtsänderung falsch geworden sind. D12 („JAV unter
+  25“) ist so umgesetzt, dass die Grenze „unter 25“ für Arbeitnehmer gilt, die keine Auszubildenden sind.
+- **P49 (Kür, keine Hinweisquelle):** a33 (Schutzfrist bei Behinderung des Kindes, Fehlgeburt, Inklusionsamt), b20
+  (Steuerklasse VI), b27 (Kinderabschlag in der Pflegeversicherung), dazu das elektronische Ausbildungszeugnis aus a15.
+
+### Unsichere Stellen
+
+- WISO-1-3-4 (Hinweis): Stand der Reform des Arbeitszeitgesetzes im Oktober 2026 nicht geprüft; der Hinweis ist
+  vorsichtig gefasst.
+- WISO-1-1-1-K3: Textform seit BVaDiG belegt (Info RP Gießen 11/2024). Ob eine Unterschrift entfallen kann, ist dort
+  offen; die Aussage nennt deshalb nur „schriftlich oder in Textform … mit Empfangsnachweis“.
+- WISO-1-2-1-K3: Die Altersgrenzen der Berufsschulpflicht unterscheiden sich je Land und sind bewusst nicht beziffert.
+- WISO-1-8-1-K7: „Die meisten Bundesländer“ haben ein Bildungsurlaubsgesetz (ohne Bayern und Sachsen); Stand nicht
+  einzeln geprüft.
+- WISO-1-6-2-K8: Anwartschaft „zwölf Monate in 30 Monaten“ nach Stand SGB III seit 2020. WISO-1-6-2-K6: Eigenanteil des
+  Minijobbers zur Rentenversicherung mit Befreiungsmöglichkeit.
