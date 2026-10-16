@@ -566,7 +566,7 @@ Teilaufgaben: 2023S-WISO-A4, 2025W-WISO-A12, 2022W-WISO-A15
 | K5 | Du kannst Förderungen ihren Stellen zuordnen: Arbeitsagentur (Bildungsgutschein) und Rentenversicherung (Umschulung aus gesundheitlichen Gründen), Aufstiegs-BAföG. | 2 | katalog:WISO.01.10.4, katalog:WISO.01.13.1, beleg:2022W-WISO-A15 |
 | K6 | Du kannst erklären, warum lebensbegleitendes Lernen in IT-Berufen nötig ist: kurze Innovationszyklen, neue Werkzeuge und Verfahren und wachsende Sicherheitsanforderungen. | 2 | katalog:WISO.01.10.1 |
 | K7 | Du kannst Regelungen zur Weiterbildung erklären: Freistellung und Kostenübernahme können in Betriebsvereinbarung, Tarif- oder Arbeitsvertrag geregelt sein, und die meisten Bundesländer geben Beschäftigten einen Anspruch auf Bildungsurlaub. | 2 | katalog:WISO.01.10.1, katalog:WISO.01.14.1 |
-| K8 | Du kannst Förderungen der Agentur für Arbeit während der Ausbildung zuordnen: die Assistierte Ausbildung als Unterstützung bei Lernschwierigkeiten oder persönlichen Problemen und die Berufsausbildungsbeihilfe als Zuschuss zum Lebensunterhalt, wenn Auszubildende nicht bei den Eltern wohnen können und die Vergütung nicht reicht. | 2 | buch:GS-1.2.3-S37 |
+| K8 | Du kannst Förderungen der Agentur für Arbeit während der Ausbildung zuordnen: die Assistierte Ausbildung als Unterstützung bei Lernschwierigkeiten oder persönlichen Problemen und die Berufsausbildungsbeihilfe als Zuschuss zum Lebensunterhalt, wenn Auszubildende nicht bei den Eltern wohnen können und die Vergütung nicht reicht. | 2 | buch:GS-1.2.3-S37, buch:GS-1.2.1-S27 |
 
 _Hinweis:_ Das Lehrbuch nennt noch die ausbildungsbegleitenden Hilfen (abH); seit 2021 sind sie in der Assistierten Ausbildung (AsA flex) der Agentur für Arbeit aufgegangen.
 
