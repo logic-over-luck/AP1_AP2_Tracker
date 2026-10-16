@@ -55,7 +55,8 @@
               "stufe": 4,
               "herkunft": [
                 "katalog:AP1.04.02.1",
-                "beleg:2023F-A1-c"
+                "beleg:2023F-A1-c",
+                "buch:GS-2.7.1-S230"
               ]
             },
             {
@@ -99,6 +100,32 @@
                 "beleg:2026H-A4-a",
                 "katalog:AP1.04.02.2"
               ]
+            },
+            {
+              "id": "AP1-4-1-1-K8",
+              "text": "Du kannst Desktop-PC und Workstation unterscheiden: Die Workstation hat für CAD, Video- und Bildbearbeitung viele hoch getaktete Kerne, viel Arbeitsspeicher (oft mit ECC) und eine leistungsstarke, für Fachprogramme zertifizierte Grafikkarte, der Desktop-PC eine Standardausstattung mit integrierter Grafik für Büroarbeit.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.2.2-S134"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K9",
+              "text": "Du kannst den Einsatz von Thin Clients beurteilen: Weil zum Server nur Tastatur- und Mauseingaben gehen und nur das Bild zurückkommt, sind Netzlast, Energiebedarf, Wartung und Angriffsfläche gering, die Daten liegen geschützt zentral und alte PCs lassen sich weiterverwenden; ohne Netz und Server ist aber kein Arbeiten möglich, und bei hoher Netzlast reagiert das System verzögert.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.2.2-S135",
+                "buch:GS-2.4.14-S199",
+                "buch:GS-3.2.3-S292"
+              ]
+            },
+            {
+              "id": "AP1-4-1-1-K10",
+              "text": "Du kannst Fat Client und Thin Client unterscheiden: Der Fat Client ist ein vollständiger Rechner, der vom eigenen Datenträger startet und Anwendungen lokal ausführt, der Thin Client hat oft keinen eigenen Massenspeicher und zeigt nur an, was auf dem Server läuft.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-3.2.3-S292"
+              ]
             }
           ],
           "grenzen": [
@@ -118,8 +145,45 @@
                 "podcast:themen-ap1"
               ],
               "grund": "AP1.04.02.1 nennt Geräteklassen als offene z. B.-Liste. Nach P-BEISPIELLISTE (P17) Kür: nur eine Hinweisquelle."
+            },
+            {
+              "text": "Konfiguration: die auf einen Einsatzzweck abgestimmte Zusammenstellung und Einstellung von Hardware, Betriebssystem und Anwendungen.",
+              "quellen": [
+                "buch:GS-2.1.1"
+              ],
+              "grund": "RK1: allgemeiner Begriff, kein Katalogbegriff der Geräteklassen"
+            },
+            {
+              "text": "Zero Client (ohne lokalen Speicher, ganz vom Server abhängig) und Cloud Client (bezieht den Desktop als Dienst, DaaS). Als Thin Client taugen auch Mini-PC, PC-Stick oder Einplatinenrechner, alte PCs lassen sich per Software zum Thin Client umrüsten.",
+              "quellen": [
+                "buch:GS-2.7.3",
+                "buch:GS-2.2.2"
+              ],
+              "grund": "D8/RK2: Zero und Cloud Client nicht im Katalog; Thin-Client-Geräte sind Gerätebeispiele"
+            },
+            {
+              "text": "Arbeitsplatztypen (Büro, Großraum, Workstation, Homeoffice, Außendienst, Empfang) gewichten Leistung, Robustheit, Gesundheitsschutz, Umwelt und Sicherheit unterschiedlich.",
+              "quellen": [
+                "buch:GS-2.6.2"
+              ],
+              "grund": "RK1: Aufzählung von Arbeitsplatztypen ohne Begründung"
+            },
+            {
+              "text": "Weitere stationäre Bauformen: Mini-PC und Barebone (ausbaufähiges Grundgerät). Business-Geräte bieten TPM-Chip als Schlüsselspeicher, Kensington-Schloss, Dockingstation und lange Garantie mit Vor-Ort-Service.",
+              "quellen": [
+                "buch:GS-2.7.1"
+              ],
+              "grund": "RK2: Bauformen und Ausstattungsdetails sind Unterthemen der Geräteklassen"
+            },
+            {
+              "text": "Notebook-Arten: Ultrabook (flach, lange Akkulaufzeit), Convertible und Detachable (Tablet-Modus), Chromebook, robustes Outdoor-Notebook, Workstation-Notebook. Beim Kauf zählen Gewicht, Akkulaufzeit, Display und ob der Speicher verlötet ist.",
+              "quellen": [
+                "buch:GS-2.7.2"
+              ],
+              "grund": "RK2: Notebook-Unterarten sind Unterthema der Geräteklasse Notebook"
             }
-          ]
+          ],
+          "hinweis": "Das Lehrbuch nennt noch 4–8 GB Arbeitsspeicher für Desktop-PCs und mehr als 8 GB für Workstations; heute sind eher 8–16 GiB im Büro und 32–128 GiB und mehr in Workstations üblich."
         },
         {
           "id": "AP1-4-1-2",
@@ -183,6 +247,60 @@
                 "beleg:2022F-A2-ga",
                 "beleg:2022F-A2-gb"
               ]
+            },
+            {
+              "id": "AP1-4-1-2-K7",
+              "text": "Du kannst die Aufgabe des Chipsatzes erklären: Er verbindet auf dem Mainboard den Prozessor mit Laufwerken, Steckplätzen und Anschlüssen und legt damit fest, wie viele USB-, SATA- und PCIe-Anschlüsse ein Mainboard bietet; was er nicht kann, lässt sich nur über Zusatzchips oder Erweiterungskarten nachrüsten.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.2-S152",
+                "buch:GS-2.4.3-S155"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K8",
+              "text": "Du kannst erklären, was ein Formfaktor festlegt und warum er für die Auswahl zählt: Er normt Größe, Befestigungspunkte und Lage der Anschlüsse, damit Mainboard, Gehäuse und Netzteil verschiedener Hersteller zusammenpassen; ein großes ATX-Board bietet viele Steckplätze, ein kompaktes Mini-ITX-Board passt in kleine Gehäuse, lässt sich aber kaum erweitern.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.3.1-S142",
+                "buch:GS-2.4.2-S152",
+                "buch:GS-2.7.1-S231",
+                "buch:GS-2.4.6-S163"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K9",
+              "text": "Du kannst PCI Express erklären: Erweiterungskarten wie Grafik- oder Netzwerkkarten und NVMe-SSDs sind über eigene serielle Punkt-zu-Punkt-Leitungen angebunden; die Zahl der Lanes (x1, x4, x8, x16) bestimmt die Datenrate, eine kurze Karte passt auch in einen längeren Steckplatz, und der Steckplatz versorgt die Karte mit Strom.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.5-S160",
+                "buch:GS-2.4.2-S153"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K10",
+              "text": "Du kannst die Auswahl eines Netzteils begründen: Leistung mit Reserve, weil der Wirkungsgrad bei mittlerer Last am höchsten ist und ein Netzteil an der Grenze heiß und laut wird; dazu passende Anschlüsse und Formfaktor, ein hoher Wirkungsgrad (80 PLUS), Schutzschaltungen gegen Überspannung, Überlast, Kurzschluss und Übertemperatur sowie aktive Kühlung mit Lüfter oder lautlose passive Kühlung für kleinere Leistungen.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.6-S163",
+                "buch:GS-2.4.6-S164"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K11",
+              "text": "Du kannst integrierte und dedizierte Grafik unterscheiden: Die integrierte Grafik sitzt im Prozessor und teilt sich den Arbeitsspeicher, die dedizierte Grafikkarte hat eigenen Grafikspeicher (VRAM) und deutlich mehr Rechenleistung für 3D, Rendering, Videoschnitt und KI.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.7.1-S231"
+              ]
+            },
+            {
+              "id": "AP1-4-1-2-K12",
+              "text": "Du kannst Abwärts- und Aufwärtskompatibilität unterscheiden: Abwärtskompatibel ist Neues, das mit Älterem zusammenarbeitet (z. B. ein USB-3-Anschluss mit einem USB-2-Stick), aufwärtskompatibel ist Älteres, das mit Neuerem zurechtkommt (z. B. ein altes Programm, das Dateien einer neueren Version öffnet).",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.1.4-S125"
+              ]
             }
           ],
           "grenzen": [],
@@ -193,6 +311,220 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            }
+          ],
+          "hinweis": "Das Lehrbuch lässt den Arbeitsspeicher über den Chipsatz angebunden sein; in aktuellen PCs sitzt der Speichercontroller in der CPU, der Chipsatz bindet Laufwerke, weitere PCIe-Steckplätze und Anschlüsse an."
+        },
+        {
+          "id": "AP1-4-1-8",
+          "titel": "Wie ein Computer arbeitet: EVA, von Neumann, Prozessor und Speicher",
+          "ziel": "Das EVA-Prinzip und den Aufbau nach von Neumann erklären, beschreiben, wie der Prozessor ein Programm aus dem Arbeitsspeicher abarbeitet, und Speicherstufen, Adressbreite und Prozessorarchitekturen einordnen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "Aufbau und Arbeitsweise von CPU und Speicher"
+            },
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "Kenngrößen CPU und RAM: Adressbreite, Architektur, Cache"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-4-1-8-K1",
+              "text": "Du kannst das EVA-Prinzip erklären: Eingabegeräte erfassen Daten, die Zentraleinheit aus Prozessor und Arbeitsspeicher verarbeitet sie nach einem Programm, Ausgabegeräte geben das Ergebnis aus; alle Geräte außerhalb der Zentraleinheit sind Peripherie, externe Speicher wie USB-Stick oder externe SSD dienen der Ein- und Ausgabe zugleich.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.1.1-S119",
+                "buch:GS-2.2.2-S134",
+                "buch:GS-5.2.1-S476"
+              ]
+            },
+            {
+              "id": "AP1-4-1-8-K2",
+              "text": "Du kannst den Aufbau eines Rechners nach von Neumann erklären: Rechenwerk, Steuerwerk, ein gemeinsamer Speicher für Befehle und Daten, ein Bussystem und ein Ein-/Ausgabewerk; weil das Programm wie Daten im Speicher liegt, wird der Rechner durch Laden eines anderen Programms umprogrammiert, ohne die Hardware zu ändern.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.1.2-S121"
+              ]
+            },
+            {
+              "id": "AP1-4-1-8-K3",
+              "text": "Du kannst erklären, wie ein Prozessor ein Programm abarbeitet: Das Steuerwerk holt die Befehle nacheinander aus dem Speicher, entschlüsselt sie und lässt sie vom Rechenwerk (ALU) ausführen; die Speicherverwaltung (MMU) übersetzt Adressen für den Zugriff auf den Arbeitsspeicher, der Cache hält häufig gebrauchte Befehle und Daten bereit.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.3-S154"
+              ]
+            },
+            {
+              "id": "AP1-4-1-8-K4",
+              "text": "Du kannst erklären, warum Programme beim Start in den Arbeitsspeicher geladen und Daten auf einem Datenträger gespeichert werden: Der Prozessor arbeitet nur mit Befehlen und Daten im Arbeitsspeicher bzw. Cache, der Arbeitsspeicher ist aber flüchtig und verliert ohne Strom seinen Inhalt, während Flash-Speicher (z. B. für das UEFI), SSD und HDD ihn dauerhaft behalten.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.1-S150",
+                "buch:GS-2.4.4-S157",
+                "buch:GS-2.4.7-S165",
+                "buch:GS-5.2.6-S500"
+              ]
+            },
+            {
+              "id": "AP1-4-1-8-K5",
+              "text": "Du kannst erklären, warum zwischen Prozessor und Arbeitsspeicher mehrere Cache-Stufen liegen: Je näher ein Speicher am Rechenkern ist, desto schneller, kleiner und teurer ist er – L1 im Kern fast so schnell wie der Prozessor, L2 größer und langsamer, L3 von allen Kernen geteilt –, und so überbrücken die Stufen den großen Geschwindigkeitsunterschied zum Arbeitsspeicher.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.4-S157"
+              ]
+            },
+            {
+              "id": "AP1-4-1-8-K6",
+              "text": "Du kannst erklären, warum ein 32-Bit-System höchstens 4 GiB Arbeitsspeicher adressieren kann (2^32 Byte) und für mehr Speicher ein 64-Bit-Betriebssystem mit 64-Bit-Treibern nötig ist.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.1.4-S126"
+              ]
+            },
+            {
+              "id": "AP1-4-1-8-K7",
+              "text": "Du kannst RISC-Prozessoren wie ARM von den x86-Prozessoren klassischer PCs unterscheiden: kleiner, einfacher Befehlssatz und geringe Leistungsaufnahme, daher in Smartphones, Tablets, eingebetteten Systemen und zunehmend in Notebooks und Servern; Betriebssystem, Programme und Treiber müssen für die Architektur übersetzt sein.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.1.4-S127"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Mooresches Gesetz: Die Zahl der Transistoren je Chip hat sich etwa alle zwei Jahre verdoppelt; heute stößt die Verkleinerung an physikalische Grenzen.",
+              "quellen": [
+                "buch:GS-2.1.2"
+              ],
+              "grund": "D8: kein Katalog-Baustein"
+            },
+            {
+              "text": "Pipelining: Die Phasen mehrerer Befehle (holen, entschlüsseln, ausführen) laufen überlappend in Stufen, sodass im Idealfall in jedem Takt ein Befehl fertig wird.",
+              "quellen": [
+                "buch:GS-2.4.3"
+              ],
+              "grund": "RK2: Pipelining ist Unterthema der CPU"
+            },
+            {
+              "text": "DRAM speichert jedes Bit als Ladung in einem winzigen Kondensator, der regelmäßig aufgefrischt werden muss; SDRAM arbeitet im Takt des Speicherbusses. Ein Bus ist ein gemeinsamer Übertragungsweg (Daten-, Adress-, Steuerbus); heute sind statt des früheren Front Side Bus Punkt-zu-Punkt-Verbindungen wie PCIe üblich, der Speichercontroller sitzt in der CPU.",
+              "quellen": [
+                "buch:GS-2.4.4"
+              ],
+              "grund": "D8/RK1: DRAM-Technik ohne Katalogbezug; Busbreite und FSB sind veraltete Datenblattdetails"
+            }
+          ],
+          "hinweis": "Das Lehrbuch gibt den Adressraum von 64 Bit zu klein an; richtig sind 2^64 Byte = 16 EiB (praktische Grenzen setzen Mainboard und Betriebssystem). Es beschreibt außerdem noch den Front Side Bus, den es in aktuellen PCs nicht mehr gibt, und bezieht das Mooresche Gesetz auf die Leistung mit 18 Monaten; gemeint ist die Transistorzahl je Chip, etwa alle zwei Jahre."
+        },
+        {
+          "id": "AP1-4-1-7",
+          "titel": "Leistung von Prozessor und Arbeitsspeicher beurteilen",
+          "ziel": "Takt, Kerne, Turbo und TDP deuten, Engpässe begründen, Leistung über Benchmarks vergleichen und Arbeitsspeicher nach Menge, Bauform und ECC auswählen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.03.1",
+              "anteil": "Leistungsdaten von CPU und RAM"
+            },
+            {
+              "id": "AP1.03.01.2",
+              "anteil": "CPU und Speicher beurteilen"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-4-1-7-K1",
+              "text": "Du kannst erklären, warum mehr Prozessorleistung heute über mehr Kerne statt über mehr Takt kommt: Der Takt gibt den Rhythmus vor, in dem Befehle abgearbeitet werden (3,5 GHz = 3,5 Milliarden Takte je Sekunde), doch ein höherer Takt treibt Energiebedarf, Wärme und Lüfterlärm stark nach oben, sodass er bei etwa 5 GHz an Grenzen stößt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.1-S150",
+                "buch:GS-2.4.3-S155"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K2",
+              "text": "Du kannst beurteilen, wie viele Kerne ein Arbeitsplatz braucht: Mehr Kerne und Threads beschleunigen nur Software, die ihre Arbeit parallel aufteilt; für Büro und Kommunikation reichen wenige Kerne, für Videoschnitt, 3D-Rendering oder CAD lohnen sich viele (etwa 8 und mehr).",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.3-S156",
+                "buch:GS-2.4.3-S153"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K3",
+              "text": "Du kannst den Zusammenhang von TDP und Turbo-Takt erklären: Die TDP gibt die Wärmeleistung an, für die die Kühlung ausgelegt sein muss (der Kühler braucht Reserve); solange Leistungsaufnahme und Temperatur darunter bleiben, takten einzelne Kerne automatisch höher, wenn eine Anwendung nicht alle Kerne braucht.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.3-S156"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K4",
+              "text": "Du kannst begründen, warum ein schneller Prozessor allein wenig bringt: Das langsamste angebundene Teil – etwa ein langsamer Datenträger, zu wenig Arbeitsspeicher oder ein schwacher Chipsatz – bremst das ganze System, deshalb müssen Prozessor, Chipsatz, Arbeitsspeicher und Datenträger zueinander passen.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.3-S153",
+                "buch:GS-2.4.7-S165"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K5",
+              "text": "Du kannst erklären, wie die Leistung von Systemen vergleichbar wird: Ein Benchmark ist ein standardisierter Test, dessen Ergebnis man mit gleichwertigen Produkten vergleicht; ein Lasttest zeigt das Verhalten unter hoher, ein Stresstest das Verhalten über der Belastungsgrenze, ein Worst-Case-Test unter den ungünstigsten Bedingungen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.2.2-S135"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K6",
+              "text": "Du kannst begründen, warum zu wenig Arbeitsspeicher ein System ausbremst und was dagegen hilft: Das Betriebssystem lagert Speicherinhalte auf den viel langsameren Datenträger aus; mehr Arbeitsspeicher beseitigt die Ursache, eine SSD statt HDD macht das Auslagern nur schneller.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.4-S159"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K7",
+              "text": "Du kannst Bauformen von Arbeitsspeicher unterscheiden: DIMM im Desktop-PC, kürzere SO-DIMM im Notebook und Mini-PC, registrierte Module (RDIMM) im Server und fest verlöteter Speicher, der sich nicht aufrüsten lässt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.4-S158"
+              ]
+            },
+            {
+              "id": "AP1-4-1-7-K8",
+              "text": "Du kannst beurteilen, wann sich ECC-Arbeitsspeicher lohnt: Er erkennt und korrigiert einzelne Bitfehler selbst während des Betriebs, ist aber teurer und braucht Unterstützung durch Prozessor und Mainboard – deshalb steckt er in Servern und Workstations, bei denen Rechenfehler oder Abstürze teuer wären.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.4-S159",
+                "buch:FS-4.3.4-S353"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Server-Prozessoren haben mehr Kerne, Cache, Speicherkanäle und PCIe-Lanes und unterstützen ECC und mehrere Prozessoren; Mehrprozessorsysteme und Coprozessoren (Grafik-, KI-Einheit) entlasten die CPU, per GPGPU rechnet die Grafikkarte gut parallelisierbare Aufgaben. Die Strukturgröße in Nanometern sagt etwas über Packungsdichte und Effizienz, ist zwischen Herstellern aber nicht direkt vergleichbar.",
+              "quellen": [
+                "buch:GS-2.4.3"
+              ],
+              "grund": "RK1/D8: Datenblattmerkmale und Unterthemen der CPU; GPGPU ohne Katalogbezug"
+            },
+            {
+              "text": "Die Datenrate von DDR-Speicher wird in MT/s angegeben (DDR überträgt zweimal je Takt, DDR5-4800 = 4.800 Millionen Transfers je Sekunde); die Latenz ist die Wartezeit bis zur Antwort, eine höhere Datenrate kann eine etwas höhere Latenz ausgleichen.",
+              "quellen": [
+                "buch:GS-2.4.4"
+              ],
+              "grund": "RK1: Datenblattdetails des Arbeitsspeichers (steht schon in der Kür an AP1-4-1-2)"
             }
           ]
         },
@@ -266,6 +598,14 @@
               "herkunft": [
                 "katalog:AP1.03.03.1"
               ]
+            },
+            {
+              "id": "AP1-4-1-3-K7",
+              "text": "Du kannst eMMC-Speicher von SSD und HDD unterscheiden: fest aufgelöteter, günstiger Flash-Speicher mit kleiner Kapazität und geringerer Datenrate, typisch für Einstiegsnotebooks und Tablets, der sich nicht tauschen oder aufrüsten lässt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.7.1-S230"
+              ]
             }
           ],
           "grenzen": [
@@ -279,7 +619,18 @@
                 "AP1.06.04.6"
               ]
             }
-          ]
+          ],
+          "kuer": [
+            {
+              "text": "HDD-Leistung hängt von Zugriffszeit (Kopfbewegung und Drehwartezeit), Drehzahl und Schnittstelle ab; Bauformen 3,5 Zoll (Desktop-HDD), 2,5 Zoll (Notebook-HDD, SATA-SSD), M.2; Hybridlaufwerke (SSHD) kombinieren HDD und Flash-Cache. Flash-Zellen speichern 1 bis 4 Bit (SLC, MLC, TLC, QLC): mehr Bit je Zelle heißt mehr Kapazität und günstiger, aber weniger Schreibzyklen und langsameres Schreiben.",
+              "quellen": [
+                "buch:GS-2.4.7",
+                "buch:GS-2.4.4"
+              ],
+              "grund": "RK1/RK2: Kennwerte, Bauformgrößen und Unterthemen von HDD und SSD"
+            }
+          ],
+          "hinweis": "Das Lehrbuch gibt 2,5 Zoll mit 8,9 cm an; richtig sind etwa 6,35 cm. QLC-Zellen vertragen weniger Schreibzyklen als TLC-Zellen, nicht gleich viele."
         },
         {
           "id": "AP1-4-1-4",
@@ -367,6 +718,31 @@
               "herkunft": [
                 "beleg:2026F-A1-cc"
               ]
+            },
+            {
+              "id": "AP1-4-1-4-K8",
+              "text": "Du kannst Bildanschlüsse unterscheiden: VGA überträgt analog und ist veraltet, DVI digital nur das Bild, HDMI und DisplayPort digital Bild und Ton; DisplayPort kann zusätzlich mehrere Monitore hintereinander ansteuern.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.5-S162"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K9",
+              "text": "Du kannst erklären, wie ein einziger USB-C-Anschluss ein Notebook mit Dockingstation zum vollwertigen Arbeitsplatz macht: USB-C überträgt je nach Ausführung Daten, das Bildsignal (DisplayPort-Modus) und Strom per Power Delivery, und Dock oder Hub verteilen das auf USB, HDMI, LAN und Kartenleser und laden das Notebook zugleich.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.5-S162",
+                "buch:GS-2.4.12-S186"
+              ]
+            },
+            {
+              "id": "AP1-4-1-4-K10",
+              "text": "Du kannst beurteilen, ob ein Rechner zwei oder mehr Monitore betreiben kann: Reichen die Bildausgänge an Grafikkarte oder Notebook nicht, helfen eine Dockingstation, das Verketten über DisplayPort oder USB-C oder ein USB-Grafikadapter.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.9-S171"
+              ]
             }
           ],
           "grenzen": [],
@@ -377,6 +753,41 @@
                 "podcast:themen-ap1"
               ],
               "grund": "AP1.03.01.2 nennt Peripheriegeräte als offene z. B.-Liste ohne Kenngrößen. Nach P-BEISPIELLISTE (P17) Kür: nur eine Hinweisquelle."
+            },
+            {
+              "text": "Drucker: Arbeitsplatz- und Multifunktionsgerät, Abteilungsdrucker mit Duplex, Hochleistungssystem mit Freigabe per Code oder Karte. Tintenstrahl ist günstig und farbstark, aber teuer je Seite und trocknet ein; Laser ist schnell und günstig je Seite, braucht aber Aufwärmzeit und erzeugt Feinstaub; Spezialdrucker sind Nadel- (Durchschläge), Thermotransfer- (Etiketten) und Großformatdrucker.",
+              "quellen": [
+                "buch:GS-2.4.10"
+              ],
+              "grund": "RK2: Druckerklassen und Druckverfahren sind Unterthemen von Peripheriegeräte"
+            },
+            {
+              "text": "Scanner: Flachbett für Einzelvorlagen, Dokumentenscanner mit Einzug und Duplex für große Mengen, mobile Scanner für den Außendienst; dazu Texterkennung und Netzwerkfähigkeit.",
+              "quellen": [
+                "buch:GS-2.4.11"
+              ],
+              "grund": "RK2: Scannerarten sind Unterthema"
+            },
+            {
+              "text": "Tastaturen nach Einsatz wählen (Nummernblock, Makrotasten; Kabel, Funk oder Bluetooth); Rubberdome-Tastaturen sind leise und günstig, mechanische haben je Taste einen Schalter und halten deutlich länger.",
+              "quellen": [
+                "buch:GS-2.4.8"
+              ],
+              "grund": "RK2: Tastaturauswahl und -technik sind Unterthemen"
+            },
+            {
+              "text": "Monitore: Bildwiederholrate (Büro 60 Hz, Spiele 120 Hz und mehr) und Reaktionszeit; Paneltypen TN (schnell, günstig, blickwinkelabhängig), VA (kontrastreich), IPS (farbtreu, weiter Blickwinkel), OLED (selbstleuchtend, echtes Schwarz). LCD-Pixel steuern das Licht einer LED-Hintergrundbeleuchtung, OLED-Pixel leuchten selbst.",
+              "quellen": [
+                "buch:GS-2.4.9"
+              ],
+              "grund": "RK1/RK2: Monitorkenngrößen und Paneltechnik"
+            },
+            {
+              "text": "Serielle Übertragung schickt die Bits nacheinander über eine Leitung (USB, SATA, PCIe), parallele mehrere Bits gleichzeitig über mehrere Leitungen (alte Druckerschnittstelle).",
+              "quellen": [
+                "buch:GS-3.3.1"
+              ],
+              "grund": "D8: kein Katalog-Baustein"
             }
           ],
           "hinweis": "Die Musterlösungen zu 2026F-A1-ca bis -cc fehlen; K5 und K7 folgen der Aufgabenstellung."
@@ -452,7 +863,8 @@
               "text": "Du kannst Schutzmaßnahmen beim Arbeiten im Gehäuse nennen: ausschalten, vom Stromnetz trennen, ESD-Schutz anlegen.",
               "stufe": 1,
               "herkunft": [
-                "beleg:2026H-A2-bb"
+                "beleg:2026H-A2-bb",
+                "buch:GS-3.9.1-S392"
               ]
             },
             {
@@ -462,9 +874,26 @@
               "herkunft": [
                 "katalog:AP1.04.05.1"
               ]
+            },
+            {
+              "id": "AP1-4-1-5-K8",
+              "text": "Du kannst den Austausch von Hardware beim Kunden planen: vorher die Kompatibilität klären und vorhandene Daten sichern, dann tauschen und anschließen, Stromversorgung und Netzanbindung kontrollieren und zuletzt die Daten übernehmen.",
+              "stufe": 3,
+              "herkunft": [
+                "buch:GS-2.10.5-S276"
+              ]
             }
           ],
-          "grenzen": []
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Stromanschlüsse am Mainboard: 24-poliger ATX-Hauptstecker, 8-poliger (älter 4-poliger) Zusatzstecker für die CPU, 3- oder 4-polige Lüfteranschlüsse (4-polig mit Drehzahlregelung).",
+              "quellen": [
+                "buch:GS-2.4.5"
+              ],
+              "grund": "RK1: Steckerbelegung ist Datenblattdetail"
+            }
+          ]
         },
         {
           "id": "AP1-4-1-6",
@@ -527,6 +956,14 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "NFC ist eine RFID-Variante mit sehr kurzer Reichweite (etwa 10 cm, 13,56 MHz) für bewusst nahen Austausch wie kontaktloses Bezahlen oder Koppeln; RFID-Tags lassen sich je nach Bauart über Zentimeter bis viele Meter lesen.",
+              "quellen": [
+                "buch:GS-2.4.13",
+                "buch:FS-2.2.1"
+              ],
+              "grund": "D8: NFC hat keinen Katalog-Baustein"
             }
           ],
           "hinweis": "Die Musterlösung zu 2026F-A1-ab fehlt; K2 folgt der Aufgabenstellung."
@@ -625,6 +1062,23 @@
                 "katalog:ANH.praefixe",
                 "katalog:AP1.03.03.1"
               ]
+            },
+            {
+              "id": "AP1-4-2-1-K8",
+              "text": "Du kannst das Prinzip eines Stellenwertsystems erklären: Die Basis legt fest, wie viele Ziffern es gibt, und jede Stelle hat als Wert eine Potenz der Basis (…, b², b¹, b⁰), sodass sich eine Zahl als Summe aus Ziffer mal Stellenwert ergibt – im Dezimal-, Dual- und Hexadezimalsystem gleich.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.3-S482"
+              ]
+            },
+            {
+              "id": "AP1-4-2-1-K9",
+              "text": "Du kannst erklären, warum die IT Hexadezimalzahlen verwendet und woran du sie erkennst: Eine Hex-Ziffer (0–9, A–F) steht für genau 4 Bit, so werden lange Dualzahlen kurz und lesbar, etwa bei Farbcodes (#FF8800), MAC- und Speicheradressen; im Quellcode kennzeichnet 0x eine Hex-, 0b eine Dualzahl.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.3-S483",
+                "buch:GS-5.2.3-S484"
+              ]
             }
           ],
           "grenzen": [],
@@ -636,8 +1090,93 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "ZB.datendarstellung umfasst nur, was Prüfungen verlangt haben (G6: Belege plus Puffer); diese Themen sind weder belegt noch Puffer."
+            },
+            {
+              "text": "Dualzahlen mit Nachkommastellen: Die Stellen hinter dem Komma haben die Werte 2^-1 = 0,5, 2^-2 = 0,25 usw., z. B. 1011,11 (dual) = 11,75.",
+              "quellen": [
+                "buch:GS-5.2.3"
+              ],
+              "grund": "RK2: Festkomma steht in der Kür"
+            },
+            {
+              "text": "Weitere Dateneinheiten: Nibble (4 Bit), Word (meist 16 Bit) und Double Word (meist 32 Bit); Word-Längen sind systemabhängig.",
+              "quellen": [
+                "buch:GS-5.2.5"
+              ],
+              "grund": "RK1: systemabhängige Einheiten"
+            },
+            {
+              "text": "Ein Dateiformat legt fest, welche Daten wie angeordnet sind und was sie bedeuten; die Dateiendung ist nur ein Hinweis darauf. Unformatierter Text (TXT) enthält nur Zeichen, formatierte Dokumente (RTF, DOCX, PDF) auch Layout.",
+              "quellen": [
+                "buch:GS-5.2.6"
+              ],
+              "grund": "RK2/D8: Dateiformate sind Randbegriff, K6 deckt Text gegen Binär"
             }
-          ]
+          ],
+          "hinweis": "Das Lehrbuch schreibt, die Hexadezimalschreibweise komprimiere Daten; richtig ist: Gespeichert werden dieselben Bits, nur die Darstellung für Menschen ist kürzer."
+        },
+        {
+          "id": "AP1-4-2-5",
+          "titel": "Zeichen und Zahlen binär kodieren: ASCII, Unicode, Dualzahlen",
+          "ziel": "Erklären, wie Zeichen und ganze Zahlen als Bitfolgen gespeichert werden, den Wertebereich aus der Bitzahl ableiten und Zeichenkodierungen unterscheiden.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "ZB.datendarstellung",
+              "anteil": "Zeichencodierung (ASCII, Unicode) und Ganzzahlen"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-4-2-5-K1",
+              "text": "Du kannst erklären, warum eine Bitfolge erst durch einen vereinbarten Code eine Bedeutung bekommt: Zahlen, Texte und Bilder werden als Bitfolgen kodiert, und dieselbe Folge 01000001 ist als Dualzahl 65, als ASCII-Zeichen aber ein „A“.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.1-S475",
+                "buch:GS-5.2.1-S476"
+              ]
+            },
+            {
+              "id": "AP1-4-2-5-K2",
+              "text": "Du kannst erklären, wie eine ganze Zahl zum Rechnen gespeichert wird: als Dualzahl, bei n Bit ohne Vorzeichen mit dem Wertebereich 0 bis 2^n − 1 (8 Bit: 0 bis 255), und nicht als Folge von Ziffernzeichen, mit der ein Prozessor nicht rechnen kann („42“ als Text sind zwei Zeichen).",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.4-S486",
+                "buch:GS-5.2.4-S487"
+              ]
+            },
+            {
+              "id": "AP1-4-2-5-K3",
+              "text": "Du kannst die Zeichenkodierungen ASCII, Unicode und UTF-8 unterscheiden: ASCII ordnet mit 7 Bit 128 Zeichen einen Code zu (z. B. A = 65), Unicode gibt den Zeichen aller Schriften einen eigenen Code, und UTF-8 speichert ein Unicode-Zeichen platzsparend in 1 bis 4 Byte, ASCII-Zeichen in einem Byte – UTF-16 braucht 2 oder 4, UTF-32 immer 4 Byte.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.4-S489",
+                "buch:GS-5.2.4-S490",
+                "buch:GS-5.2.4-S491"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Information ist übermitteltes Wissen, Daten sind ihre formalisierte, maschinell verarbeitbare Darstellung; eine Nachricht enthält zusätzlich Angaben für die Übertragung wie Absender und Empfänger. Information ist immateriell, an einen Träger gebunden und beliebig kopierbar.",
+              "quellen": [
+                "buch:GS-5.2.1"
+              ],
+              "grund": "D8: kein Katalog-Baustein"
+            },
+            {
+              "text": "Vorzeichenbehaftete Ganzzahlen im Zweierkomplement (8 Bit: −128 bis 127), Gleitkommazahlen nach IEEE 754 (Vorzeichen, Exponent, Mantisse) und 8-Bit-Zeichensätze wie ISO 8859-1. Zeitpunkte speichern Systeme als Ganzzahl (Unix-Zeit: Sekunden seit 1.1.1970 UTC, mit 32 Bit Überlauf im Jahr 2038), Datumsangaben schreibt man eindeutig und sortierbar nach ISO 8601 (JJJJ-MM-TT).",
+              "quellen": [
+                "buch:GS-5.2.4"
+              ],
+              "grund": "RK2/RK1: Unterthemen und Einzelwerte der Datendarstellung"
+            }
+          ],
+          "hinweis": "Das Lehrbuch trennt Zeitintervalle nach ISO 8601 falsch; richtig ist der Schrägstrich (2024-06-02/2025-02-21), eine Dauer beginnt mit P (z. B. P1Y2M)."
         },
         {
           "id": "AP1-4-2-2",
@@ -731,6 +1270,30 @@
                 "katalog:AP1.03.03.4.1",
                 "katalog:AP1.03.03.4"
               ]
+            },
+            {
+              "id": "AP1-4-2-2-K10",
+              "text": "Du kannst analoge und digitale Daten unterscheiden: Analoge Größen ändern sich stufenlos mit beliebig vielen Zwischenwerten (Zeigeruhr, Schall), digitale haben nur endlich viele Stufen; ein Computer verarbeitet nur digitale Daten, Analoges muss erst digitalisiert werden.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.2-S478"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K11",
+              "text": "Du kannst den Speicherbedarf einer unkomprimierten Audioaufnahme berechnen: Abtastrate mal Abtasttiefe mal Kanalzahl mal Dauer, zum Beispiel für CD-Qualität mit 44,1 kHz, 16 Bit und Stereo.",
+              "stufe": 3,
+              "herkunft": [
+                "buch:GS-5.2.4-S493"
+              ]
+            },
+            {
+              "id": "AP1-4-2-2-K12",
+              "text": "Du kannst Raster- und Vektorgrafik unterscheiden: Rastergrafiken speichern für jedes Pixel einen Farbwert und werden beim Vergrößern pixelig (PNG, JPEG, gut für Fotos), Vektorgrafiken speichern Formen mit ihren Maßen, sind meist kleiner und verlustfrei skalierbar (SVG, gut für Logos und Pläne).",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.4-S492"
+              ]
             }
           ],
           "grenzen": [],
@@ -741,8 +1304,37 @@
                 "podcast:themen-ap1"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Verlustfreie Komprimierung entfernt Redundanz (Original wiederherstellbar, z. B. ZIP, Lauflängenkodierung), verlustbehaftete verwirft nicht wahrnehmbare Anteile. Kein Verfahren verkleinert jede Datei, und schon komprimierte Dateien wie JPEG werden durch erneutes Packen kaum kleiner.",
+              "quellen": [
+                "buch:FS2-2.3.4"
+              ],
+              "grund": "D8/RK2: Kompressionsverfahren ohne eigenen Katalog-Baustein"
+            },
+            {
+              "text": "Formate: verlustfrei FLAC, PNG; verlustbehaftet MP3, JPEG; GIF für Grafiken mit wenigen Farben und Animation, TIFF für den Druck, Vektorformate für Logos und CAD. Container wie MP4 oder MKV bündeln Video-, Audio- und Untertitelspuren.",
+              "quellen": [
+                "buch:GS-5.2.6"
+              ],
+              "grund": "RK2/D8: Datei- und Medienformate"
+            },
+            {
+              "text": "Farbmodelle: RGB mischt Lichtfarben additiv (Bildschirm), CMYK Druckfarben subtraktiv (Druck).",
+              "quellen": [
+                "buch:GS-5.2.4"
+              ],
+              "grund": "D8: kein Katalog-Baustein"
+            },
+            {
+              "text": "Die Datenmenge sagt nichts über den Informationsgehalt: Sie hängt vom Umfang der Information und von der Kodierung ab, etwa Text in ASCII gegenüber UTF-32 oder ein Bild mit und ohne Kompression.",
+              "quellen": [
+                "buch:GS-5.2.5"
+              ],
+              "grund": "RK1: theoretischer Zusammenhang ohne Auswahlbezug"
             }
-          ]
+          ],
+          "hinweis": "Das Lehrbuch nennt 22,05 kHz als Abtastrate für Spiele; heute sind 44,1 oder 48 kHz üblich. WAV und AIFF stehen dort bei den verlustbehafteten Formaten, speichern aber meist unkomprimiertes Audio."
         },
         {
           "id": "AP1-4-2-3",
@@ -827,6 +1419,14 @@
                 "beleg:2025H-A3-eb",
                 "beleg:2025H-A3-ea"
               ]
+            },
+            {
+              "id": "AP1-4-2-3-K8",
+              "text": "Du kannst den Gesamtwirkungsgrad hintereinandergeschalteter Stufen berechnen: Die Einzelwirkungsgrade werden multipliziert (z. B. 0,9 · 0,9 = 0,81), und aus dem Gesamtwirkungsgrad ergibt sich die aufgenommene Leistung.",
+              "stufe": 3,
+              "herkunft": [
+                "buch:GS-3.9.1-S395"
+              ]
             }
           ],
           "grenzen": [
@@ -879,7 +1479,8 @@
               "stufe": 3,
               "herkunft": [
                 "beleg:2024F-A4-f",
-                "katalog:ANH.praefixe"
+                "katalog:ANH.praefixe",
+                "buch:GS-3.5.1-S347"
               ]
             },
             {
@@ -906,9 +1507,34 @@
               "herkunft": [
                 "katalog:AP1.03.03.4.1"
               ]
+            },
+            {
+              "id": "AP1-4-2-4-K6",
+              "text": "Du kannst Datenübertragungsrate und Signalgeschwindigkeit unterscheiden: Die Datenrate gibt an, wie viele Bit je Sekunde übertragen werden, die Signalgeschwindigkeit, wie schnell sich das Signal ausbreitet – in Kupfer wie in Glasfaser etwa zwei Drittel der Lichtgeschwindigkeit; Glasfaser ist also nicht „schneller“, sondern erlaubt höhere Datenraten.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-3.3.1-S301"
+              ]
+            },
+            {
+              "id": "AP1-4-2-4-K7",
+              "text": "Du kannst begründen, warum der tatsächliche Durchsatz unter der angegebenen Rate einer Schnittstelle liegt: Die Angabe ist eine Bruttorate, von der Protokoll-Overhead und Leitungscodierung abgehen; vor einem Vergleich musst du außerdem bit/s und Byte/s auf eine Einheit bringen.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-3.3.1-S302"
+              ]
             }
           ],
-          "grenzen": []
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Die Netzlast eines Arbeitsplatzes hängt vom Lastprofil ab: Anmelden mit servergespeichertem Profil, laufende Arbeit, Abmelden; eine CAD-Workstation mit Serverdaten erzeugt viel, ein Büro-PC wenig Last.",
+              "quellen": [
+                "buch:GS-3.5.1"
+              ],
+              "grund": "RK2: Lastprofile gehören zur Netzplanung, nicht zur Übertragungsrechnung"
+            }
+          ]
         }
       ]
     },
@@ -946,7 +1572,9 @@
               "stufe": 1,
               "herkunft": [
                 "beleg:2026F-A3-ec",
-                "katalog:AP1.03.01.1"
+                "katalog:AP1.03.01.1",
+                "buch:GS-2.2.1-S132",
+                "buch:GS-2.4.12-S186"
               ]
             },
             {
@@ -972,6 +1600,14 @@
               "herkunft": [
                 "beleg:2023H-A2-c"
               ]
+            },
+            {
+              "id": "AP1-4-3-1-K6",
+              "text": "Du kannst die ergonomische Aufstellung eines Monitors beurteilen: Er sollte höhenverstellbar, neigbar (Tilt), seitlich drehbar (Swivel) und ins Hochformat drehbar (Pivot) sein, sich über eine VESA-Halterung an einem Monitorarm befestigen lassen und mit einem Sehabstand passend zur Bildschirmgröße stehen.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.4.9-S173"
+              ]
             }
           ],
           "grenzen": [
@@ -985,7 +1621,16 @@
               ]
             }
           ],
-          "hinweis": "Die Musterlösung zu 2026F-A3-ec fehlt; K2 folgt der Aufgabenstellung und dem Foto."
+          "hinweis": "Die Musterlösung zu 2026F-A3-ec fehlt; K2 folgt der Aufgabenstellung und dem Foto. Das Lehrbuch vertauscht die Achsen der Monitorverstellung; richtig ist: Tilt = nach vorn/hinten neigen, Swivel = seitlich drehen, Pivot = ins Hochformat drehen.",
+          "kuer": [
+            {
+              "text": "Ergonomische Tastaturen: geteilte oder V-förmige Bauform, Handballenauflage und flache Neigung gegen Verspannungen in Händen, Schultern und Rücken.",
+              "quellen": [
+                "buch:GS-2.4.8"
+              ],
+              "grund": "RK2: ergonomische Tastaturen sind Unterthema"
+            }
+          ]
         },
         {
           "id": "AP1-4-3-2",
@@ -1029,6 +1674,14 @@
                 "katalog:AP1.04.02.3",
                 "katalog:AP1.03.03.2"
               ]
+            },
+            {
+              "id": "AP1-4-3-2-K5",
+              "text": "Du kannst Hilfsmittel für blinde und stark sehbehinderte Beschäftigte nennen: Braillezeile, die Bildschirmtext in Blindenschrift ertastbar macht, Screenreader mit Sprachausgabe, Braille-Tastatur und -Drucker sowie Vergrößerungssoftware.",
+              "stufe": 1,
+              "herkunft": [
+                "buch:GS-2.4.12-S186"
+              ]
             }
           ],
           "grenzen": [],
@@ -1046,9 +1699,16 @@
                 "gegenpruefung:2026-10"
               ],
               "grund": "Aktueller Rechtsstand (P30), neben der BITV 2.0"
+            },
+            {
+              "text": "Rechtsgrundlagen der Barrierefreiheit: Behindertengleichstellungsgesetz und BITV 2.0 für öffentliche Stellen, Arbeitsstättenverordnung für barrierefreie Arbeitsplätze, WCAG bzw. die europäische Norm als technischer Maßstab.",
+              "quellen": [
+                "buch:GS-2.4.12"
+              ],
+              "grund": "D8: Rechtsgrundlagen ohne Katalog-Baustein (BITV/BFSG stehen schon in der Kür)"
             }
           ],
-          "hinweis": "Barrierefreie Bildschirmmasken (AP1.04.07.3) stehen im Ordner Programmieren und Modellieren."
+          "hinweis": "Barrierefreie Bildschirmmasken (AP1.04.07.3) stehen im Ordner Programmieren und Modellieren. Das Lehrbuch zitiert § 81 SGB IX in alter Zählung; heute § 164 SGB IX."
         },
         {
           "id": "AP1-4-3-3",
@@ -1092,7 +1752,8 @@
               "text": "Du kannst Beispiele für Siegel nennen: EU-Energielabel, Energy Star, Blauer Engel, TCO Certified, 80 PLUS für Netzteile.",
               "stufe": 1,
               "herkunft": [
-                "katalog:AP1.03.03.3"
+                "katalog:AP1.03.03.3",
+                "buch:GS-2.4.6-S164"
               ]
             },
             {
@@ -1109,7 +1770,8 @@
               "text": "Du kannst Vorschläge machen, die Energiekosten eines Arbeitsplatzes zu senken: schaltbare Steckdosen gegen Standby, Geräte mit gutem Energielabel, Thin Clients, Energiesparmodus.",
               "stufe": 3,
               "herkunft": [
-                "beleg:2021H-A2-c"
+                "beleg:2021H-A2-c",
+                "buch:GS-2.3.2-S145"
               ]
             },
             {
@@ -1119,10 +1781,68 @@
               "herkunft": [
                 "katalog:AP1.03.03.3"
               ]
+            },
+            {
+              "id": "AP1-4-3-3-K7",
+              "text": "Du kannst den Rebound-Effekt an der IT erklären: Geräte werden einzeln sparsamer, doch weil immer mehr Geräte betrieben und stärker genutzt werden – etwa Milliarden vernetzter IoT-Geräte –, wird die Einsparung teilweise oder ganz aufgezehrt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-2.1.2-S83"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K8",
+              "text": "Du kannst Umweltzeichen für IT unterscheiden: TCO Certified prüft unabhängig soziale und ökologische Kriterien über den ganzen Lebenszyklus, das EU Ecolabel und der Blaue Engel stehen für umweltverträgliche Produkte mit geringer Gesundheitsbelastung, Energy Star bewertet nur die Energiesparfunktionen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.3.2-S144"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K9",
+              "text": "Du kannst für vorhandene Geräte beurteilen, ob Aufrüsten, Weiterverwenden, Weitergeben oder Neubeschaffen sinnvoller ist: Aufrüsten (z. B. RAM, SSD) und Weiterverwenden an einem anderen Platz verlängern die Nutzungsdauer und schonen Ressourcen, generalüberholte Geräte (Refurbishing) und Weiterverkauf (Remarketing) halten Geräte im Gebrauch, Recycling verwertet nur noch den Elektroschrott; abzuwägen sind Nutzen, Kosten, Kompatibilität und Akzeptanz.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.3.2-S145",
+                "buch:GS-2.6.3-S227",
+                "buch:GS-3.9.2-S398"
+              ]
+            },
+            {
+              "id": "AP1-4-3-3-K10",
+              "text": "Du kannst begründen, warum ein Notebook mit Dockingstation, externem Monitor, Tastatur und Maus einen Desktop-PC ersetzen kann: Es braucht weniger Strom, bietet am Schreibtisch einen vollwertigen Arbeitsplatz und bleibt für Besprechungen, Homeoffice und Dienstreisen mobil.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-3.9.2-S398"
+              ]
             }
           ],
           "grenzen": [],
-          "hinweis": "Ökologische Unternehmensziele (AP1.07.02.2) stehen im Ordner Kunde, Markt und Unternehmen."
+          "hinweis": "Ökologische Unternehmensziele (AP1.07.02.2) stehen im Ordner Kunde, Markt und Unternehmen. Das Lehrbuch zeigt eine alte Prognose mit bis zu 75 Mrd. IoT-Geräten für 2025; tatsächlich sind es rund 20 Mrd. Es nennt den Energy Star als Zeichen ohne externe Prüfung und als in Europa gültig; das Abkommen zwischen EU und USA ist 2018 ausgelaufen, in der EU zählt für viele Geräte das EU-Energielabel.",
+          "kuer": [
+            {
+              "text": "Rechenzentren sparen Energie durch Virtualisierung und Abschalten ungenutzter Server (im Leerlauf brauchen sie noch rund 40 % ihrer Lastleistung), Kalt-/Warmgang-Einhausung, höhere Betriebstemperaturen und Abwärmenutzung, die bei Flüssigkühlung besser gelingt. Die Kennzahl PUE (Gesamtenergie durch Energie der IT) zeigt die Effizienz, 1,0 wäre ideal.",
+              "quellen": [
+                "buch:FS-4.4.3",
+                "buch:FS-4.3.5"
+              ],
+              "grund": "RK2: Energiesparen im Rechenzentrum ist Unterthema von „ökologisch“"
+            },
+            {
+              "text": "Virtualisierung spart Energie, weil mehrere wenig ausgelastete Server als virtuelle Maschinen auf einem Gerät laufen. Nachhaltige Software stellt geringe Anforderungen an Hardware und Energie und läuft auch auf älteren Geräten.",
+              "quellen": [
+                "buch:GS-2.3.2"
+              ],
+              "grund": "RK2: Virtualisierung und nachhaltige Software sind Randthemen"
+            },
+            {
+              "text": "Netzwerkgeräte sparen Energie, indem sie ihre Leistung nach dem Datenaufkommen drosseln, ungenutzte Ports abschalten (das erhöht zugleich die Sicherheit) und die WLAN-Sendeleistung anpassen.",
+              "quellen": [
+                "buch:GS-3.9.2"
+              ],
+              "grund": "RK2: Netzwerk-Detail"
+            }
+          ]
         }
       ]
     }
@@ -1429,8 +2149,8 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.5",
-    "stand": "2026-10-14",
+    "regelwerk_version": "2.1",
+    "stand": "2026-10-16",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neue Stichpunkte AP1-4-1-5 (Hardware einbauen), AP1-4-1-6 (Kennzeichnung, Sensoren) und AP1-4-2-4 (Übertragungsraten), weil Stichpunkte sonst über 7 Aussagen gekommen wären (F3). AP1.03.01.2 und AP1.03.03.1 sind mit AP1-5 und AP1-6 geteilt.",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1442,7 +2162,37 @@
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 1.2, 1.3, 2.1–2.3, 2.5, 2.8–2.11, 4.1",
       "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Installation von Hardware, IT-Grundkenntnisse (Rechnen), Schnittstellen, Prozessoren und Speicher, USV, Barrierefreiheit, Nachhaltigkeit",
-      "gegenpruefung:2026-10": "Unabhängige Gegenprüfung AP1 vom 14.10.2026 (Bericht umbau/berichte/AP1-gegenpruefung.md): aktueller Rechts- und Technikstand; Kür nach Entscheidung des Projektinhabers (P30)."
+      "gegenpruefung:2026-10": "Unabhängige Gegenprüfung AP1 vom 14.10.2026 (Bericht umbau/berichte/AP1-gegenpruefung.md): aktueller Rechts- und Technikstand; Kür nach Entscheidung des Projektinhabers (P30).",
+      "buch:GS-2.1.1": "Lehrbuch Westermann „IT-Berufe“ GS 2.1.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.7.3": "Lehrbuch Westermann „IT-Berufe“ GS 2.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.2.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.6.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.6.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.7.1": "Lehrbuch Westermann „IT-Berufe“ GS 2.7.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.7.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.1.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.3": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.4": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.7": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.10": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.10 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.11": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.11 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.8": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.8 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.9": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.9 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-3.3.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.5": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.13": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.13 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-2.2.1": "Lehrbuch Westermann „IT-Berufe“ FS 2.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.2.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.2.5": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.2.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.2.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.2.4": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS2-2.3.4": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-3.5.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.12": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.12 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-4.4.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-4.3.5": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.3.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-3.9.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.9.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1813,6 +2563,373 @@
             "AP1-4-3-2"
           ],
           "notiz": "Gegenprüfung 2026-10-14"
+        },
+        {
+          "thema": "Konfiguration: die auf einen Einsatzzweck abgestimmte Zusammenstellung und Einstellung von Hardware, Betriebssystem und ",
+          "quellen": [
+            "buch:GS-2.1.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Zero Client (ohne lokalen Speicher, ganz vom Server abhängig) und Cloud Client (bezieht den Desktop als Dienst, DaaS). A",
+          "quellen": [
+            "buch:GS-2.7.3",
+            "buch:GS-2.2.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Arbeitsplatztypen (Büro, Großraum, Workstation, Homeoffice, Außendienst, Empfang) gewichten Leistung, Robustheit, Gesund",
+          "quellen": [
+            "buch:GS-2.6.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Weitere stationäre Bauformen: Mini-PC und Barebone (ausbaufähiges Grundgerät). Business-Geräte bieten TPM-Chip als Schlü",
+          "quellen": [
+            "buch:GS-2.7.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Notebook-Arten: Ultrabook (flach, lange Akkulaufzeit), Convertible und Detachable (Tablet-Modus), Chromebook, robustes O",
+          "quellen": [
+            "buch:GS-2.7.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Mooresches Gesetz: Die Zahl der Transistoren je Chip hat sich etwa alle zwei Jahre verdoppelt; heute stößt die Verkleine",
+          "quellen": [
+            "buch:GS-2.1.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-8"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Pipelining: Die Phasen mehrerer Befehle (holen, entschlüsseln, ausführen) laufen überlappend in Stufen, sodass im Idealf",
+          "quellen": [
+            "buch:GS-2.4.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-8"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "DRAM speichert jedes Bit als Ladung in einem winzigen Kondensator, der regelmäßig aufgefrischt werden muss; SDRAM arbeit",
+          "quellen": [
+            "buch:GS-2.4.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-8"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Server-Prozessoren haben mehr Kerne, Cache, Speicherkanäle und PCIe-Lanes und unterstützen ECC und mehrere Prozessoren; ",
+          "quellen": [
+            "buch:GS-2.4.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-7"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Die Datenrate von DDR-Speicher wird in MT/s angegeben (DDR überträgt zweimal je Takt, DDR5-4800 = 4.800 Millionen Transf",
+          "quellen": [
+            "buch:GS-2.4.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-7"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "HDD-Leistung hängt von Zugriffszeit (Kopfbewegung und Drehwartezeit), Drehzahl und Schnittstelle ab; Bauformen 3,5 Zoll ",
+          "quellen": [
+            "buch:GS-2.4.7",
+            "buch:GS-2.4.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Drucker: Arbeitsplatz- und Multifunktionsgerät, Abteilungsdrucker mit Duplex, Hochleistungssystem mit Freigabe per Code ",
+          "quellen": [
+            "buch:GS-2.4.10"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-4"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Scanner: Flachbett für Einzelvorlagen, Dokumentenscanner mit Einzug und Duplex für große Mengen, mobile Scanner für den ",
+          "quellen": [
+            "buch:GS-2.4.11"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-4"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Tastaturen nach Einsatz wählen (Nummernblock, Makrotasten; Kabel, Funk oder Bluetooth); Rubberdome-Tastaturen sind leise",
+          "quellen": [
+            "buch:GS-2.4.8"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-4"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Monitore: Bildwiederholrate (Büro 60 Hz, Spiele 120 Hz und mehr) und Reaktionszeit; Paneltypen TN (schnell, günstig, bli",
+          "quellen": [
+            "buch:GS-2.4.9"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-4"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Serielle Übertragung schickt die Bits nacheinander über eine Leitung (USB, SATA, PCIe), parallele mehrere Bits gleichzei",
+          "quellen": [
+            "buch:GS-3.3.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-4"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Stromanschlüsse am Mainboard: 24-poliger ATX-Hauptstecker, 8-poliger (älter 4-poliger) Zusatzstecker für die CPU, 3- ode",
+          "quellen": [
+            "buch:GS-2.4.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "NFC ist eine RFID-Variante mit sehr kurzer Reichweite (etwa 10 cm, 13,56 MHz) für bewusst nahen Austausch wie kontaktlos",
+          "quellen": [
+            "buch:GS-2.4.13",
+            "buch:FS-2.2.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-1-6"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Dualzahlen mit Nachkommastellen: Die Stellen hinter dem Komma haben die Werte 2^-1 = 0,5, 2^-2 = 0,25 usw., z. B. 1011,1",
+          "quellen": [
+            "buch:GS-5.2.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Weitere Dateneinheiten: Nibble (4 Bit), Word (meist 16 Bit) und Double Word (meist 32 Bit); Word-Längen sind systemabhän",
+          "quellen": [
+            "buch:GS-5.2.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Ein Dateiformat legt fest, welche Daten wie angeordnet sind und was sie bedeuten; die Dateiendung ist nur ein Hinweis da",
+          "quellen": [
+            "buch:GS-5.2.6"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Information ist übermitteltes Wissen, Daten sind ihre formalisierte, maschinell verarbeitbare Darstellung; eine Nachrich",
+          "quellen": [
+            "buch:GS-5.2.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Vorzeichenbehaftete Ganzzahlen im Zweierkomplement (8 Bit: −128 bis 127), Gleitkommazahlen nach IEEE 754 (Vorzeichen, Ex",
+          "quellen": [
+            "buch:GS-5.2.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Verlustfreie Komprimierung entfernt Redundanz (Original wiederherstellbar, z. B. ZIP, Lauflängenkodierung), verlustbehaf",
+          "quellen": [
+            "buch:FS2-2.3.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Formate: verlustfrei FLAC, PNG; verlustbehaftet MP3, JPEG; GIF für Grafiken mit wenigen Farben und Animation, TIFF für d",
+          "quellen": [
+            "buch:GS-5.2.6"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Farbmodelle: RGB mischt Lichtfarben additiv (Bildschirm), CMYK Druckfarben subtraktiv (Druck).",
+          "quellen": [
+            "buch:GS-5.2.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Die Datenmenge sagt nichts über den Informationsgehalt: Sie hängt vom Umfang der Information und von der Kodierung ab, e",
+          "quellen": [
+            "buch:GS-5.2.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Die Netzlast eines Arbeitsplatzes hängt vom Lastprofil ab: Anmelden mit servergespeichertem Profil, laufende Arbeit, Abm",
+          "quellen": [
+            "buch:GS-3.5.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-2-4"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Ergonomische Tastaturen: geteilte oder V-förmige Bauform, Handballenauflage und flache Neigung gegen Verspannungen in Hä",
+          "quellen": [
+            "buch:GS-2.4.8"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Rechtsgrundlagen der Barrierefreiheit: Behindertengleichstellungsgesetz und BITV 2.0 für öffentliche Stellen, Arbeitsstä",
+          "quellen": [
+            "buch:GS-2.4.12"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Rechenzentren sparen Energie durch Virtualisierung und Abschalten ungenutzter Server (im Leerlauf brauchen sie noch rund",
+          "quellen": [
+            "buch:FS-4.4.3",
+            "buch:FS-4.3.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Virtualisierung spart Energie, weil mehrere wenig ausgelastete Server als virtuelle Maschinen auf einem Gerät laufen. Na",
+          "quellen": [
+            "buch:GS-2.3.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Netzwerkgeräte sparen Energie, indem sie ihre Leistung nach dem Datenaufkommen drosseln, ungenutzte Ports abschalten (da",
+          "quellen": [
+            "buch:GS-3.9.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-4-3-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
         }
       ]
     },
@@ -1981,6 +3098,138 @@
           "grund": "WLAN- und Bluetooth-Symbol (2025F-A1-c) stand zweimal"
         }
       ]
-    }
+    },
+    "v2": [
+      {
+        "stand": "2026-10-16",
+        "regelwerk": "2.1",
+        "neue_aussagen": [
+          "AP1-4-1-1-K8",
+          "AP1-4-1-1-K9",
+          "AP1-4-1-1-K10",
+          "AP1-4-1-2-K7",
+          "AP1-4-1-2-K8",
+          "AP1-4-1-2-K9",
+          "AP1-4-1-2-K10",
+          "AP1-4-1-2-K11",
+          "AP1-4-1-2-K12",
+          "AP1-4-1-8-K1",
+          "AP1-4-1-8-K2",
+          "AP1-4-1-8-K3",
+          "AP1-4-1-8-K4",
+          "AP1-4-1-8-K5",
+          "AP1-4-1-8-K6",
+          "AP1-4-1-8-K7",
+          "AP1-4-1-7-K1",
+          "AP1-4-1-7-K2",
+          "AP1-4-1-7-K3",
+          "AP1-4-1-7-K4",
+          "AP1-4-1-7-K5",
+          "AP1-4-1-7-K6",
+          "AP1-4-1-7-K7",
+          "AP1-4-1-7-K8",
+          "AP1-4-1-3-K7",
+          "AP1-4-1-4-K8",
+          "AP1-4-1-4-K9",
+          "AP1-4-1-4-K10",
+          "AP1-4-1-5-K8",
+          "AP1-4-2-1-K8",
+          "AP1-4-2-1-K9",
+          "AP1-4-2-5-K1",
+          "AP1-4-2-5-K2",
+          "AP1-4-2-5-K3",
+          "AP1-4-2-2-K10",
+          "AP1-4-2-2-K11",
+          "AP1-4-2-2-K12",
+          "AP1-4-2-3-K8",
+          "AP1-4-2-4-K6",
+          "AP1-4-2-4-K7",
+          "AP1-4-3-1-K6",
+          "AP1-4-3-2-K5",
+          "AP1-4-3-3-K7",
+          "AP1-4-3-3-K8",
+          "AP1-4-3-3-K9",
+          "AP1-4-3-3-K10"
+        ],
+        "neue_stichpunkte": [
+          {
+            "id": "AP1-4-1-7",
+            "nach": "AP1-4-1-2",
+            "begruendung": "D5: AP1-4-1-2 hätte mit allen Buch-Aussagen 25 Aussagen; Leistungsbeurteilung als eigener Stichpunkt"
+          },
+          {
+            "id": "AP1-4-1-8",
+            "nach": "AP1-4-1-2",
+            "begruendung": "D5: AP1-4-1-2 hätte mit allen Buch-Aussagen 25 Aussagen; Rechnerprinzip als eigener Stichpunkt"
+          },
+          {
+            "id": "AP1-4-2-5",
+            "nach": "AP1-4-2-1",
+            "begruendung": "D5: AP1-4-2-1 hätte mit allen Buch-Aussagen 12 Aussagen; Kodierung von Zeichen und Zahlen als eigener Stichpunkt"
+          }
+        ],
+        "d6": [
+          "AP1-4-1-1-K2",
+          "AP1-4-1-5-K6",
+          "AP1-4-2-4-K2",
+          "AP1-4-3-1-K2",
+          "AP1-4-3-1-K2",
+          "AP1-4-3-3-K5",
+          "AP1-4-3-3-K3"
+        ],
+        "kuer": [
+          "AP1-4-1-1",
+          "AP1-4-1-1",
+          "AP1-4-1-1",
+          "AP1-4-1-1",
+          "AP1-4-1-1",
+          "AP1-4-1-8",
+          "AP1-4-1-8",
+          "AP1-4-1-8",
+          "AP1-4-1-7",
+          "AP1-4-1-7",
+          "AP1-4-1-3",
+          "AP1-4-1-4",
+          "AP1-4-1-4",
+          "AP1-4-1-4",
+          "AP1-4-1-4",
+          "AP1-4-1-4",
+          "AP1-4-1-5",
+          "AP1-4-1-6",
+          "AP1-4-2-1",
+          "AP1-4-2-1",
+          "AP1-4-2-1",
+          "AP1-4-2-5",
+          "AP1-4-2-5",
+          "AP1-4-2-2",
+          "AP1-4-2-2",
+          "AP1-4-2-2",
+          "AP1-4-2-2",
+          "AP1-4-2-4",
+          "AP1-4-3-1",
+          "AP1-4-3-2",
+          "AP1-4-3-3",
+          "AP1-4-3-3",
+          "AP1-4-3-3"
+        ],
+        "grenzen_gestrichen": [],
+        "filter": [],
+        "umgehaengt": [
+          "GS-2.2.1#8"
+        ],
+        "hinweise": [
+          "AP1-4-1-1",
+          "AP1-4-1-2",
+          "AP1-4-1-8",
+          "AP1-4-1-3",
+          "AP1-4-2-1",
+          "AP1-4-2-5",
+          "AP1-4-2-2",
+          "AP1-4-3-1",
+          "AP1-4-3-2",
+          "AP1-4-3-3"
+        ]
+      }
+    ]
   }
 }

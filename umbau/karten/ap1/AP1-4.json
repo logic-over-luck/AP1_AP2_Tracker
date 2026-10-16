@@ -1,6 +1,6 @@
 {
   "ordner": "AP1-4",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md",
   "grundlage": "umbau/lernplan/ap1/AP1-4.json",
   "karten": [
@@ -1060,6 +1060,552 @@
       "k": "AP1-4-3-3-K6",
       "vorne": "Zwei gleich große Monitore: A hat Energieeffizienzklasse F und 24 W Leistungsaufnahme, B Klasse D und 16 W. Welcher ist energieeffizienter, und was spart er bei 2.000 Betriebsstunden im Jahr?",
       "hinten": "B: bessere Klasse und 8 W weniger. Ersparnis: 8 W · 2.000 h = 16 kWh im Jahr."
+    },
+    {
+      "id": "AP1-4-1-1-K8-1",
+      "sp": "AP1-4-1-1",
+      "k": "AP1-4-1-1-K8",
+      "vorne": "Wodurch unterscheidet sich eine Workstation von einem Desktop-PC?",
+      "hinten": "Mehr Kerne mit hohem Takt, viel mehr Arbeitsspeicher (oft ECC) und eine starke, für Fachprogramme zertifizierte Grafikkarte – für CAD, Video- und Bildbearbeitung. Der Desktop-PC hat Standardausstattung mit integrierter Grafik für Büroarbeit."
+    },
+    {
+      "id": "AP1-4-1-1-K9-1",
+      "sp": "AP1-4-1-1",
+      "k": "AP1-4-1-1-K9",
+      "vorne": "Warum erzeugt ein Thin Client am Terminalserver wenig Netzlast?",
+      "hinten": "Die Anwendung läuft auf dem Server. Übertragen werden nur Tastatur- und Mauseingaben hin und das Bild zurück."
+    },
+    {
+      "id": "AP1-4-1-1-K9-2",
+      "sp": "AP1-4-1-1",
+      "k": "AP1-4-1-1-K9",
+      "vorne": "Nenne Vor- und Nachteile von Thin Clients mit Begründung.",
+      "hinten": "- Vorteile: Daten zentral (Datenschutz, Sicherung), wenig Energie und Wartung, kaum Angriffsfläche, Altgeräte weiter nutzbar\n- Nachteile: ohne Netz und Server kein Arbeiten, bei hoher Netzlast Verzögerungen"
+    },
+    {
+      "id": "AP1-4-1-1-K10-1",
+      "sp": "AP1-4-1-1",
+      "k": "AP1-4-1-1-K10",
+      "vorne": "Was unterscheidet einen Fat Client von einem Thin Client?",
+      "hinten": "Fat Client: vollständiger Rechner, startet vom eigenen Datenträger und führt Programme lokal aus. Thin Client: oft ohne Massenspeicher, die Programme laufen auf dem Server, er zeigt nur das Bild an."
+    },
+    {
+      "id": "AP1-4-1-2-K7-1",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K7",
+      "vorne": "Welche Aufgabe hat der Chipsatz auf dem Mainboard?",
+      "hinten": "Er verbindet den Prozessor mit Laufwerken, Steckplätzen und Anschlüssen und legt fest, welche Schnittstellen (USB, SATA, PCIe, Netzwerk) das Mainboard bietet."
+    },
+    {
+      "id": "AP1-4-1-2-K7-2",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K7",
+      "vorne": "Ein Mainboard bietet zu wenige Anschlüsse. Was kannst du tun?",
+      "hinten": "Nur nachrüsten: über eine Erweiterungskarte im PCIe-Steckplatz (oder einen Zusatzchip) – der Chipsatz selbst lässt sich nicht erweitern."
+    },
+    {
+      "id": "AP1-4-1-2-K8-1",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K8",
+      "vorne": "Was legt der Formfaktor eines Mainboards fest?",
+      "hinten": "Größe, Befestigungspunkte und Lage der Anschlüsse – damit Mainboard, Gehäuse und Netzteil verschiedener Hersteller zusammenpassen."
+    },
+    {
+      "id": "AP1-4-1-2-K8-2",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K8",
+      "vorne": "Was gewinnst und was verlierst du mit einem Mini-ITX-Board gegenüber ATX?",
+      "hinten": "Gewinn: kompakte Bauweise für kleine Gehäuse. Verlust: kaum Erweiterungsmöglichkeiten (wenige Steckplätze)."
+    },
+    {
+      "id": "AP1-4-1-2-K9-1",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K9",
+      "vorne": "Was bestimmt bei PCI Express die Datenrate einer Karte?",
+      "hinten": "Die Zahl der Lanes (x1, x4, x8, x16) – jede Lane ist eine eigene serielle Punkt-zu-Punkt-Leitung."
+    },
+    {
+      "id": "AP1-4-1-2-K9-2",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K9",
+      "vorne": "Passt eine PCIe-x1-Karte in einen x16-Steckplatz?",
+      "hinten": "Ja. Kürzere Karten passen in längere Steckplätze; der Steckplatz versorgt die Karte auch mit Strom."
+    },
+    {
+      "id": "AP1-4-1-2-K10-1",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K10",
+      "vorne": "Warum sollte ein Netzteil nicht dauerhaft an seiner Leistungsgrenze laufen?",
+      "hinten": "Der Wirkungsgrad ist bei mittlerer Last (um 50 %) am höchsten. An der Grenze sinkt er, das Netzteil wird heißer und lauter."
+    },
+    {
+      "id": "AP1-4-1-2-K10-2",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K10",
+      "vorne": "Nenne Auswahlkriterien für ein Netzteil.",
+      "hinten": "Leistung mit Reserve, passende Anschlüsse und Formfaktor, Wirkungsgrad (80 PLUS), Schutzschaltungen (Überspannung, Überlast, Kurzschluss, Übertemperatur), Lautstärke bzw. aktive oder passive Kühlung."
+    },
+    {
+      "id": "AP1-4-1-2-K11-1",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K11",
+      "vorne": "Was unterscheidet integrierte Grafik von einer dedizierten Grafikkarte?",
+      "hinten": "Integriert: im Prozessor, nutzt den Arbeitsspeicher, sparsam, für Büroarbeit. Dediziert: eigene Karte mit eigenem Grafikspeicher (VRAM) und viel mehr Leistung für 3D, Rendering, Video und KI."
+    },
+    {
+      "id": "AP1-4-1-2-K12-1",
+      "sp": "AP1-4-1-2",
+      "k": "AP1-4-1-2-K12",
+      "vorne": "Was bedeutet abwärtskompatibel, was aufwärtskompatibel?",
+      "hinten": "Abwärtskompatibel: Neues arbeitet mit Älterem zusammen (USB-3-Anschluss mit USB-2-Stick). Aufwärtskompatibel: Älteres kommt mit Neuerem zurecht (altes Programm öffnet Datei einer neueren Version)."
+    },
+    {
+      "id": "AP1-4-1-8-K1-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K1",
+      "vorne": "Erkläre das EVA-Prinzip an einem Beispiel.",
+      "hinten": "Eingabe: Daten erfassen (z. B. Barcode-Scanner). Verarbeitung: Zentraleinheit (Prozessor + Arbeitsspeicher) arbeitet nach Programm (Preis suchen). Ausgabe: Ergebnis ausgeben (Display, Bondrucker)."
+    },
+    {
+      "id": "AP1-4-1-8-K1-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K1",
+      "vorne": "Warum gehört ein USB-Stick zur Ein- und zur Ausgabe?",
+      "hinten": "Von ihm werden Daten eingelesen und auf ihn werden Daten geschrieben – als externer Speicher ist er Peripherie für beide Richtungen."
+    },
+    {
+      "id": "AP1-4-1-8-K2-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K2",
+      "vorne": "Welche Bausteine hat ein Rechner nach von Neumann?",
+      "hinten": "Rechenwerk, Steuerwerk, Speicher für Befehle und Daten, Bussystem, Ein-/Ausgabewerk."
+    },
+    {
+      "id": "AP1-4-1-8-K2-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K2",
+      "vorne": "Warum lässt sich ein Von-Neumann-Rechner ohne Hardwareänderung umprogrammieren?",
+      "hinten": "Befehle liegen wie Daten im selben Speicher. Wer ein anderes Programm lädt, gibt dem Rechner eine neue Aufgabe."
+    },
+    {
+      "id": "AP1-4-1-8-K3-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K3",
+      "vorne": "Beschreibe den Befehlszyklus eines Prozessors.",
+      "hinten": "Befehl aus dem Speicher holen – im Steuerwerk entschlüsseln – im Rechenwerk (ALU) ausführen und Ergebnis ablegen; dann der nächste Befehl."
+    },
+    {
+      "id": "AP1-4-1-8-K3-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K3",
+      "vorne": "Welche Aufgaben haben Steuerwerk, Rechenwerk, MMU und Cache?",
+      "hinten": "- Steuerwerk: Befehlsablauf steuern\n- Rechenwerk (ALU): Rechen- und Logikoperationen\n- MMU: Adressen übersetzen, Zugriff auf den Arbeitsspeicher\n- Cache: schneller Zwischenspeicher für häufig gebrauchte Befehle und Daten"
+    },
+    {
+      "id": "AP1-4-1-8-K4-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K4",
+      "vorne": "Warum wird ein Programm beim Start in den Arbeitsspeicher geladen?",
+      "hinten": "Der Prozessor greift direkt nur auf Arbeitsspeicher und Cache zu, nicht auf den Datenträger."
+    },
+    {
+      "id": "AP1-4-1-8-K4-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K4",
+      "vorne": "Was bedeutet „flüchtig“ beim Arbeitsspeicher, und was folgt daraus?",
+      "hinten": "Ohne Strom geht der Inhalt verloren. Daten müssen deshalb dauerhaft auf einem nichtflüchtigen Datenträger (SSD, HDD) gespeichert werden."
+    },
+    {
+      "id": "AP1-4-1-8-K5-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K5",
+      "vorne": "Warum hat ein Prozessor mehrere Cache-Stufen?",
+      "hinten": "Schneller Speicher ist klein und teuer. L1 (klein, sehr schnell, im Kern), L2 (größer, langsamer) und L3 (groß, von allen Kernen geteilt) überbrücken stufenweise den Tempounterschied zum Arbeitsspeicher."
+    },
+    {
+      "id": "AP1-4-1-8-K5-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K5",
+      "vorne": "Ordne nach Geschwindigkeit: Arbeitsspeicher, L1-Cache, SSD, L3-Cache, Register.",
+      "hinten": "Register – L1-Cache – L3-Cache – Arbeitsspeicher – SSD (vom schnellsten zum langsamsten; die Größe nimmt in dieser Richtung zu)."
+    },
+    {
+      "id": "AP1-4-1-8-K6-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K6",
+      "vorne": "Warum kann ein 32-Bit-System höchstens 4 GiB Arbeitsspeicher nutzen?",
+      "hinten": "Mit 32 Bit gibt es 2^32 Adressen, je Adresse ein Byte: 2^32 Byte = 4 GiB."
+    },
+    {
+      "id": "AP1-4-1-8-K6-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K6",
+      "vorne": "Was brauchst du, um 16 GiB Arbeitsspeicher zu nutzen?",
+      "hinten": "Ein 64-Bit-Betriebssystem (auf 64-Bit-Prozessor) und 64-Bit-Treiber für alle Geräte."
+    },
+    {
+      "id": "AP1-4-1-8-K7-1",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K7",
+      "vorne": "Warum stecken RISC-Prozessoren wie ARM in Smartphones und Tablets?",
+      "hinten": "Kleiner, einfacher Befehlssatz mit geringer Leistungsaufnahme – das schont den Akku und erzeugt wenig Wärme."
+    },
+    {
+      "id": "AP1-4-1-8-K7-2",
+      "sp": "AP1-4-1-8",
+      "k": "AP1-4-1-8-K7",
+      "vorne": "Worauf musst du achten, wenn ein Notebook einen ARM-Prozessor hat?",
+      "hinten": "Betriebssystem, Programme und Treiber müssen für ARM übersetzt sein; x86-Software läuft nur nach Neuübersetzung oder per Emulation."
+    },
+    {
+      "id": "AP1-4-1-7-K1-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K1",
+      "vorne": "Was gibt die Taktfrequenz eines Prozessors an?",
+      "hinten": "Den Rhythmus, in dem er Befehle abarbeitet – 3,5 GHz sind 3,5 Milliarden Takte je Sekunde. Sie allein sagt aber nicht, wie schnell ein Prozessor ist."
+    },
+    {
+      "id": "AP1-4-1-7-K1-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K1",
+      "vorne": "Warum steigt die Taktfrequenz kaum noch?",
+      "hinten": "Mehr Takt bedeutet viel mehr Energiebedarf, Wärme und Lüfterlärm. Leistung wird deshalb über mehr Kerne (Parallelisierung) gewonnen."
+    },
+    {
+      "id": "AP1-4-1-7-K2-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K2",
+      "vorne": "Wann bringt ein Prozessor mit mehr Kernen mehr Leistung?",
+      "hinten": "Nur wenn die Software ihre Arbeit in parallele Threads aufteilt. Ein Programm mit einem Thread nutzt nur einen Kern."
+    },
+    {
+      "id": "AP1-4-1-7-K2-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K2",
+      "vorne": "Ein Mitarbeiter schneidet täglich Videos, eine Kollegin schreibt Angebote. Wie viele Kerne braucht wer?",
+      "hinten": "Videoschnitt: viele Kerne (etwa 8 und mehr), weil die Software parallel rechnet. Angebote schreiben: wenige Kerne (etwa 4) reichen."
+    },
+    {
+      "id": "AP1-4-1-7-K3-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K3",
+      "vorne": "Was gibt die TDP eines Prozessors an?",
+      "hinten": "Die Wärmeleistung, für die die Kühlung ausgelegt sein muss. Der Kühler sollte mit deutlicher Reserve mehr abführen können."
+    },
+    {
+      "id": "AP1-4-1-7-K3-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K3",
+      "vorne": "Wann und warum taktet ein Prozessor einzelne Kerne im Turbo höher?",
+      "hinten": "Wenn eine Anwendung nicht alle Kerne nutzt: Dann ist Spielraum bei Leistungsaufnahme und Temperatur frei, und einzelne Kerne laufen schneller, bis eine Grenze erreicht ist."
+    },
+    {
+      "id": "AP1-4-1-7-K4-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K4",
+      "vorne": "Warum wird ein PC durch einen schnelleren Prozessor nicht unbedingt schneller?",
+      "hinten": "Das langsamste angebundene Teil bremst das System, z. B. eine HDD oder zu wenig Arbeitsspeicher. Prozessor, Chipsatz, Arbeitsspeicher und Datenträger müssen zueinander passen."
+    },
+    {
+      "id": "AP1-4-1-7-K5-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K5",
+      "vorne": "Was ist ein Benchmark?",
+      "hinten": "Ein standardisierter Leistungstest, dessen Ergebnis man mit dem gleichwertiger Produkte vergleicht."
+    },
+    {
+      "id": "AP1-4-1-7-K5-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K5",
+      "vorne": "Was unterscheidet Lasttest und Stresstest?",
+      "hinten": "Lasttest: Verhalten bei hoher, erwarteter Last. Stresstest: Verhalten über der Belastungsgrenze."
+    },
+    {
+      "id": "AP1-4-1-7-K6-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K6",
+      "vorne": "Warum wird ein PC mit zu wenig Arbeitsspeicher langsam?",
+      "hinten": "Das Betriebssystem lagert Inhalte auf den viel langsameren Datenträger aus und muss sie ständig zurückholen."
+    },
+    {
+      "id": "AP1-4-1-7-K6-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K6",
+      "vorne": "Mehr Arbeitsspeicher oder SSD – was hilft bei ständigem Auslagern?",
+      "hinten": "Mehr Arbeitsspeicher beseitigt die Ursache. Eine SSD statt HDD beschleunigt das Auslagern nur, das Auslagern bleibt."
+    },
+    {
+      "id": "AP1-4-1-7-K7-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K7",
+      "vorne": "Welche Bauform hat Arbeitsspeicher im Notebook, im Desktop-PC und im Server?",
+      "hinten": "Notebook: SO-DIMM (kurz) oder verlötet. Desktop: DIMM (ungepuffert). Server: registrierte Module (RDIMM), meist mit ECC."
+    },
+    {
+      "id": "AP1-4-1-7-K7-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K7",
+      "vorne": "Was bedeutet verlöteter Arbeitsspeicher für die Auswahl eines Notebooks?",
+      "hinten": "Er lässt sich nicht aufrüsten – die Größe muss beim Kauf schon reichen."
+    },
+    {
+      "id": "AP1-4-1-7-K8-1",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K8",
+      "vorne": "Was leistet ECC-Arbeitsspeicher?",
+      "hinten": "Er erkennt und korrigiert einzelne Bitfehler selbst während des Betriebs."
+    },
+    {
+      "id": "AP1-4-1-7-K8-2",
+      "sp": "AP1-4-1-7",
+      "k": "AP1-4-1-7-K8",
+      "vorne": "Für welchen Rechner wählst du ECC-Speicher und warum?",
+      "hinten": "Für Server und Workstations: Dort wären Rechenfehler, Datenfehler oder Abstürze teuer. Voraussetzung: Prozessor und Mainboard unterstützen ECC; dafür ist er teurer."
+    },
+    {
+      "id": "AP1-4-1-3-K7-1",
+      "sp": "AP1-4-1-3",
+      "k": "AP1-4-1-3-K7",
+      "vorne": "Was ist eMMC-Speicher, und wo liegt sein Nachteil gegenüber einer SSD?",
+      "hinten": "Fest aufgelöteter, günstiger Flash-Speicher in Einstiegsgeräten. Nachteile: kleine Kapazität, geringere Datenrate, nicht tausch- oder aufrüstbar."
+    },
+    {
+      "id": "AP1-4-1-4-K8-1",
+      "sp": "AP1-4-1-4",
+      "k": "AP1-4-1-4-K8",
+      "vorne": "Welche Bildanschlüsse übertragen auch Ton?",
+      "hinten": "HDMI und DisplayPort (beide digital). DVI überträgt digital nur das Bild, VGA analog nur das Bild."
+    },
+    {
+      "id": "AP1-4-1-4-K8-2",
+      "sp": "AP1-4-1-4",
+      "k": "AP1-4-1-4-K8",
+      "vorne": "Was unterscheidet VGA von DVI, HDMI und DisplayPort?",
+      "hinten": "VGA überträgt analog und ist veraltet; die anderen übertragen digital."
+    },
+    {
+      "id": "AP1-4-1-4-K9-1",
+      "sp": "AP1-4-1-4",
+      "k": "AP1-4-1-4-K9",
+      "vorne": "Was kann über einen USB-C-Anschluss außer Daten noch übertragen werden?",
+      "hinten": "Je nach Ausführung das Bildsignal (DisplayPort-Modus) und Strom per Power Delivery."
+    },
+    {
+      "id": "AP1-4-1-4-K9-2",
+      "sp": "AP1-4-1-4",
+      "k": "AP1-4-1-4-K9",
+      "vorne": "Wozu dient eine Dockingstation am Notebook?",
+      "hinten": "Über einen Anschluss (meist USB-C) stellt sie viele Ports bereit – USB, HDMI/DisplayPort, LAN, Kartenleser – und lädt das Notebook zugleich."
+    },
+    {
+      "id": "AP1-4-1-4-K10-1",
+      "sp": "AP1-4-1-4",
+      "k": "AP1-4-1-4-K10",
+      "vorne": "Ein Notebook hat nur einen Bildausgang, soll aber zwei externe Monitore betreiben. Welche Möglichkeiten gibt es?",
+      "hinten": "Dockingstation mit mehreren Bildausgängen, Verketten der Monitore über DisplayPort/USB-C (wenn unterstützt) oder ein USB-Grafikadapter."
+    },
+    {
+      "id": "AP1-4-1-5-K8-1",
+      "sp": "AP1-4-1-5",
+      "k": "AP1-4-1-5-K8",
+      "vorne": "In welcher Reihenfolge planst du einen Hardwaretausch beim Kunden?",
+      "hinten": "Kompatibilität klären – Daten sichern – Komponente tauschen und anschließen – Strom und Netzanbindung kontrollieren – Daten übernehmen."
+    },
+    {
+      "id": "AP1-4-1-5-K8-2",
+      "sp": "AP1-4-1-5",
+      "k": "AP1-4-1-5-K8",
+      "vorne": "Warum sicherst du vor einem Hardwaretausch die Daten?",
+      "hinten": "Beim Tausch können Daten verloren gehen; die Daten des Kunden sind meist wertvoller als die Hardware."
+    },
+    {
+      "id": "AP1-4-2-1-K8-1",
+      "sp": "AP1-4-2-1",
+      "k": "AP1-4-2-1-K8",
+      "vorne": "Wie ergibt sich der Wert einer Zahl in einem Stellenwertsystem?",
+      "hinten": "Jede Ziffer wird mit ihrem Stellenwert (Potenz der Basis) multipliziert, die Ergebnisse werden addiert. Beispiel: 1011 (dual) = 8 + 0 + 2 + 1 = 11."
+    },
+    {
+      "id": "AP1-4-2-1-K9-1",
+      "sp": "AP1-4-2-1",
+      "k": "AP1-4-2-1-K9",
+      "vorne": "Warum werden in der IT Hexadezimalzahlen verwendet?",
+      "hinten": "Eine Hex-Ziffer steht für genau 4 Bit. Lange Dualzahlen werden so kurz und lesbar (Farbcodes, MAC- und Speicheradressen). Die Daten selbst werden nicht kleiner."
+    },
+    {
+      "id": "AP1-4-2-1-K9-2",
+      "sp": "AP1-4-2-1",
+      "k": "AP1-4-2-1-K9",
+      "vorne": "Wie sind 0x1F, 0b1010 und #1F1F1F zu lesen?",
+      "hinten": "0x1F: Hexadezimalzahl (31). 0b1010: Dualzahl (10). #1F1F1F: Farbcode in Hex (je ein Byte für Rot, Grün, Blau)."
+    },
+    {
+      "id": "AP1-4-2-5-K1-1",
+      "sp": "AP1-4-2-5",
+      "k": "AP1-4-2-5-K1",
+      "vorne": "Was bedeutet die Bitfolge 01000001?",
+      "hinten": "Das hängt vom Code ab: als Dualzahl 65, als ASCII-Zeichen „A“. Erst der vereinbarte Code gibt ihr eine Bedeutung."
+    },
+    {
+      "id": "AP1-4-2-5-K2-1",
+      "sp": "AP1-4-2-5",
+      "k": "AP1-4-2-5-K2",
+      "vorne": "Welchen Wertebereich hat eine vorzeichenlose Ganzzahl mit 8 Bit, welchen mit n Bit?",
+      "hinten": "8 Bit: 0 bis 255. n Bit: 0 bis 2^n − 1."
+    },
+    {
+      "id": "AP1-4-2-5-K2-2",
+      "sp": "AP1-4-2-5",
+      "k": "AP1-4-2-5-K2",
+      "vorne": "Warum speichert man Zahlen zum Rechnen als Dualzahl und nicht als Text?",
+      "hinten": "Als Text ist jede Ziffer nur ein Zeichen aus dem Zeichensatz – damit kann der Prozessor nicht rechnen. Mit der Dualzahl rechnet er direkt."
+    },
+    {
+      "id": "AP1-4-2-5-K3-1",
+      "sp": "AP1-4-2-5",
+      "k": "AP1-4-2-5-K3",
+      "vorne": "Was ist ASCII?",
+      "hinten": "Ein Zeichensatz mit 7 Bit für 128 Zeichen: 32 Steuerzeichen, dann Leerzeichen, Ziffern, Buchstaben und Sonderzeichen (A = 65). Ohne Umlaute."
+    },
+    {
+      "id": "AP1-4-2-5-K3-2",
+      "sp": "AP1-4-2-5",
+      "k": "AP1-4-2-5-K3",
+      "vorne": "Welches Problem löst Unicode, und warum wird meist UTF-8 gewählt?",
+      "hinten": "Unicode gibt den Zeichen aller Schriften einen einheitlichen Code statt vieler Ländersätze. UTF-8 speichert ihn platzsparend in 1–4 Byte, ASCII-Zeichen in 1 Byte."
+    },
+    {
+      "id": "AP1-4-2-2-K10-1",
+      "sp": "AP1-4-2-2",
+      "k": "AP1-4-2-2-K10",
+      "vorne": "Was unterscheidet analoge von digitalen Daten?",
+      "hinten": "Analog: stufenlos, beliebig viele Zwischenwerte. Digital: nur endlich viele Stufen. Computer verarbeiten nur digitale Daten, Analoges wird vorher digitalisiert."
+    },
+    {
+      "id": "AP1-4-2-2-K11-1",
+      "sp": "AP1-4-2-2",
+      "k": "AP1-4-2-2-K11",
+      "vorne": "Wie berechnest du den Speicherbedarf einer unkomprimierten Audioaufnahme?",
+      "hinten": "Abtastrate × Abtasttiefe (Bit) × Kanäle × Dauer (s) = Bit; durch 8 = Byte, dann in KiB/MiB umrechnen."
+    },
+    {
+      "id": "AP1-4-2-2-K11-2",
+      "sp": "AP1-4-2-2",
+      "k": "AP1-4-2-2-K11",
+      "vorne": "Wie groß ist eine Minute Audio in CD-Qualität (44,1 kHz, 16 Bit, stereo) unkomprimiert?",
+      "hinten": "44.100 · 16 · 2 · 60 = 84.672.000 Bit = 10.584.000 Byte ≈ 10,09 MiB."
+    },
+    {
+      "id": "AP1-4-2-2-K12-1",
+      "sp": "AP1-4-2-2",
+      "k": "AP1-4-2-2-K12",
+      "vorne": "Was unterscheidet Raster- von Vektorgrafik?",
+      "hinten": "Raster: Pixel mit Farbwert, pixelig beim Vergrößern, für Fotos (PNG, JPEG). Vektor: Formen mit Maßen, verlustfrei skalierbar und meist kleiner, für Logos und Pläne (SVG)."
+    },
+    {
+      "id": "AP1-4-2-3-K8-1",
+      "sp": "AP1-4-2-3",
+      "k": "AP1-4-2-3-K8",
+      "vorne": "Wie berechnest du den Gesamtwirkungsgrad zweier hintereinandergeschalteter Stufen?",
+      "hinten": "Einzelwirkungsgrade multiplizieren: z. B. 0,9 · 0,9 = 0,81 (81 %)."
+    },
+    {
+      "id": "AP1-4-2-3-K8-2",
+      "sp": "AP1-4-2-3",
+      "k": "AP1-4-2-3-K8",
+      "vorne": "Eine Anlage mit zwei Stufen zu je 90 % gibt 810 W ab. Wie viel Leistung nimmt sie auf?",
+      "hinten": "Gesamtwirkungsgrad 0,81; aufgenommen: 810 W / 0,81 = 1.000 W."
+    },
+    {
+      "id": "AP1-4-2-4-K6-1",
+      "sp": "AP1-4-2-4",
+      "k": "AP1-4-2-4-K6",
+      "vorne": "Was unterscheidet Datenübertragungsrate und Signalgeschwindigkeit?",
+      "hinten": "Datenrate: Bit je Sekunde. Signalgeschwindigkeit: wie schnell sich das Signal ausbreitet (Kupfer und Glas etwa 2/3 der Lichtgeschwindigkeit)."
+    },
+    {
+      "id": "AP1-4-2-4-K6-2",
+      "sp": "AP1-4-2-4",
+      "k": "AP1-4-2-4-K6",
+      "vorne": "Ist Glasfaser „schneller“ als Kupfer?",
+      "hinten": "Nicht bei der Signalgeschwindigkeit – die ist ähnlich. Glasfaser erlaubt höhere Datenraten über größere Strecken."
+    },
+    {
+      "id": "AP1-4-2-4-K7-1",
+      "sp": "AP1-4-2-4",
+      "k": "AP1-4-2-4-K7",
+      "vorne": "Warum erreicht eine Datenübertragung nie die angegebene Schnittstellenrate?",
+      "hinten": "Die Angabe ist brutto. Protokoll-Overhead (Kopfdaten, Prüfsummen) und Leitungscodierung kosten Kapazität; nur der Rest sind Nutzdaten."
+    },
+    {
+      "id": "AP1-4-2-4-K7-2",
+      "sp": "AP1-4-2-4",
+      "k": "AP1-4-2-4-K7",
+      "vorne": "Eine Schnittstelle hat 1 Gbit/s, der Kopierdialog zeigt 115 MB/s. Ist das ein Fehler?",
+      "hinten": "Nein. 1 Gbit/s sind brutto 125 MB/s (÷ 8); abzüglich Overhead sind gut 110 MB/s normal."
+    },
+    {
+      "id": "AP1-4-3-1-K6-1",
+      "sp": "AP1-4-3-1",
+      "k": "AP1-4-3-1-K6",
+      "vorne": "Welche Verstellmöglichkeiten sollte ein ergonomischer Monitor haben?",
+      "hinten": "Höhenverstellung, Neigen (Tilt), seitliches Drehen (Swivel), Drehen ins Hochformat (Pivot) und eine VESA-Halterung für einen Monitorarm."
+    },
+    {
+      "id": "AP1-4-3-1-K6-2",
+      "sp": "AP1-4-3-1",
+      "k": "AP1-4-3-1-K6",
+      "vorne": "Was bedeuten Tilt, Swivel und Pivot?",
+      "hinten": "Tilt: nach vorn/hinten neigen. Swivel: zur Seite drehen. Pivot: ins Hochformat drehen."
+    },
+    {
+      "id": "AP1-4-3-2-K5-1",
+      "sp": "AP1-4-3-2",
+      "k": "AP1-4-3-2-K5",
+      "vorne": "Welche Hilfsmittel unterstützen blinde Beschäftigte am PC?",
+      "hinten": "Screenreader (Sprachausgabe), Braillezeile (Text in Blindenschrift ertastbar), Braille-Tastatur und Braille-Drucker."
+    },
+    {
+      "id": "AP1-4-3-2-K5-2",
+      "sp": "AP1-4-3-2",
+      "k": "AP1-4-3-2-K5",
+      "vorne": "Was ist eine Braillezeile?",
+      "hinten": "Eine Leiste mit beweglichen Stiften, die den Bildschirmtext in Blindenschrift ertastbar macht."
+    },
+    {
+      "id": "AP1-4-3-3-K7-1",
+      "sp": "AP1-4-3-3",
+      "k": "AP1-4-3-3-K7",
+      "vorne": "Was ist der Rebound-Effekt?",
+      "hinten": "Effizientere Geräte sparen einzeln Energie, aber weil mehr Geräte betrieben oder sie stärker genutzt werden, wird die Einsparung teilweise oder ganz aufgezehrt."
+    },
+    {
+      "id": "AP1-4-3-3-K8-1",
+      "sp": "AP1-4-3-3",
+      "k": "AP1-4-3-3-K8",
+      "vorne": "Was unterscheidet TCO Certified von Energy Star?",
+      "hinten": "TCO Certified prüft unabhängig soziale und ökologische Kriterien über den ganzen Lebenszyklus. Energy Star bewertet nur den Energieverbrauch bzw. die Sparfunktionen."
+    },
+    {
+      "id": "AP1-4-3-3-K9-1",
+      "sp": "AP1-4-3-3",
+      "k": "AP1-4-3-3-K9",
+      "vorne": "Ein Büro-PC ist langsam. Welche Alternativen zur Neubeschaffung gibt es?",
+      "hinten": "Aufrüsten (mehr RAM, SSD statt HDD), Weiterverwenden an einem Platz mit geringerem Bedarf, Ersatz durch ein generalüberholtes Gerät (Refurbished IT)."
+    },
+    {
+      "id": "AP1-4-3-3-K9-2",
+      "sp": "AP1-4-3-3",
+      "k": "AP1-4-3-3-K9",
+      "vorne": "Was bedeuten Refurbishing, Remarketing und Recycling?",
+      "hinten": "- Refurbishing: Gebrauchtgeräte generalüberholen und wieder einsetzen\n- Remarketing: gebrauchte Geräte weiterverkaufen\n- Recycling: Elektroschrott stofflich verwerten"
+    },
+    {
+      "id": "AP1-4-3-3-K10-1",
+      "sp": "AP1-4-3-3",
+      "k": "AP1-4-3-3-K10",
+      "vorne": "Warum kann ein Notebook mit Dockingstation einen Desktop-PC ersetzen?",
+      "hinten": "Weniger Stromverbrauch, mit Dock, Monitor, Tastatur und Maus ein vollwertiger Arbeitsplatz – und trotzdem mobil."
     }
   ],
   "nicht_abgefragt": [],
@@ -1842,6 +2388,396 @@
       "id": "AP1-4-3-3-K6-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-4-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S134)"
+    },
+    {
+      "id": "AP1-4-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S135, buch:GS-2.4.14-S199, buch:GS-3.2.3-S292)"
+    },
+    {
+      "id": "AP1-4-1-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S135, buch:GS-2.4.14-S199, buch:GS-3.2.3-S292)"
+    },
+    {
+      "id": "AP1-4-1-1-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.3-S292)"
+    },
+    {
+      "id": "AP1-4-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.2-S152, buch:GS-2.4.3-S155)"
+    },
+    {
+      "id": "AP1-4-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.2-S152, buch:GS-2.4.3-S155)"
+    },
+    {
+      "id": "AP1-4-1-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.1-S142, buch:GS-2.4.2-S152, buch:GS-2.7.1-S231, buch:GS-2.4.6-S163)"
+    },
+    {
+      "id": "AP1-4-1-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.1-S142, buch:GS-2.4.2-S152, buch:GS-2.7.1-S231, buch:GS-2.4.6-S163)"
+    },
+    {
+      "id": "AP1-4-1-2-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.5-S160, buch:GS-2.4.2-S153)"
+    },
+    {
+      "id": "AP1-4-1-2-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.5-S160, buch:GS-2.4.2-S153)"
+    },
+    {
+      "id": "AP1-4-1-2-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.6-S163, buch:GS-2.4.6-S164)"
+    },
+    {
+      "id": "AP1-4-1-2-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.6-S163, buch:GS-2.4.6-S164)"
+    },
+    {
+      "id": "AP1-4-1-2-K11-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.1-S231)"
+    },
+    {
+      "id": "AP1-4-1-2-K12-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S125)"
+    },
+    {
+      "id": "AP1-4-1-8-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.1-S119, buch:GS-2.2.2-S134, buch:GS-5.2.1-S476)"
+    },
+    {
+      "id": "AP1-4-1-8-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.1-S119, buch:GS-2.2.2-S134, buch:GS-5.2.1-S476)"
+    },
+    {
+      "id": "AP1-4-1-8-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.2-S121)"
+    },
+    {
+      "id": "AP1-4-1-8-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.2-S121)"
+    },
+    {
+      "id": "AP1-4-1-8-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S154)"
+    },
+    {
+      "id": "AP1-4-1-8-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S154)"
+    },
+    {
+      "id": "AP1-4-1-8-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.1-S150, buch:GS-2.4.4-S157, buch:GS-2.4.7-S165, buch:GS-5.2.6-S500)"
+    },
+    {
+      "id": "AP1-4-1-8-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.1-S150, buch:GS-2.4.4-S157, buch:GS-2.4.7-S165, buch:GS-5.2.6-S500)"
+    },
+    {
+      "id": "AP1-4-1-8-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S157)"
+    },
+    {
+      "id": "AP1-4-1-8-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S157)"
+    },
+    {
+      "id": "AP1-4-1-8-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S126)"
+    },
+    {
+      "id": "AP1-4-1-8-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S126)"
+    },
+    {
+      "id": "AP1-4-1-8-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S127)"
+    },
+    {
+      "id": "AP1-4-1-8-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S127)"
+    },
+    {
+      "id": "AP1-4-1-7-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.1-S150, buch:GS-2.4.3-S155)"
+    },
+    {
+      "id": "AP1-4-1-7-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.1-S150, buch:GS-2.4.3-S155)"
+    },
+    {
+      "id": "AP1-4-1-7-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S156, buch:GS-2.4.3-S153)"
+    },
+    {
+      "id": "AP1-4-1-7-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S156, buch:GS-2.4.3-S153)"
+    },
+    {
+      "id": "AP1-4-1-7-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S156)"
+    },
+    {
+      "id": "AP1-4-1-7-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S156)"
+    },
+    {
+      "id": "AP1-4-1-7-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.3-S153, buch:GS-2.4.7-S165)"
+    },
+    {
+      "id": "AP1-4-1-7-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S135)"
+    },
+    {
+      "id": "AP1-4-1-7-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S135)"
+    },
+    {
+      "id": "AP1-4-1-7-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S159)"
+    },
+    {
+      "id": "AP1-4-1-7-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S159)"
+    },
+    {
+      "id": "AP1-4-1-7-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S158)"
+    },
+    {
+      "id": "AP1-4-1-7-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S158)"
+    },
+    {
+      "id": "AP1-4-1-7-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S159, buch:FS-4.3.4-S353)"
+    },
+    {
+      "id": "AP1-4-1-7-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.4-S159, buch:FS-4.3.4-S353)"
+    },
+    {
+      "id": "AP1-4-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.1-S230)"
+    },
+    {
+      "id": "AP1-4-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.5-S162)"
+    },
+    {
+      "id": "AP1-4-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.5-S162)"
+    },
+    {
+      "id": "AP1-4-1-4-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.5-S162, buch:GS-2.4.12-S186)"
+    },
+    {
+      "id": "AP1-4-1-4-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.5-S162, buch:GS-2.4.12-S186)"
+    },
+    {
+      "id": "AP1-4-1-4-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.9-S171)"
+    },
+    {
+      "id": "AP1-4-1-5-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.10.5-S276)"
+    },
+    {
+      "id": "AP1-4-1-5-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.10.5-S276)"
+    },
+    {
+      "id": "AP1-4-2-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.3-S482)"
+    },
+    {
+      "id": "AP1-4-2-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.3-S483, buch:GS-5.2.3-S484)"
+    },
+    {
+      "id": "AP1-4-2-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.3-S483, buch:GS-5.2.3-S484)"
+    },
+    {
+      "id": "AP1-4-2-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.1-S475, buch:GS-5.2.1-S476)"
+    },
+    {
+      "id": "AP1-4-2-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S486, buch:GS-5.2.4-S487)"
+    },
+    {
+      "id": "AP1-4-2-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S486, buch:GS-5.2.4-S487)"
+    },
+    {
+      "id": "AP1-4-2-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S489, buch:GS-5.2.4-S490, buch:GS-5.2.4-S491)"
+    },
+    {
+      "id": "AP1-4-2-5-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S489, buch:GS-5.2.4-S490, buch:GS-5.2.4-S491)"
+    },
+    {
+      "id": "AP1-4-2-2-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.2-S478)"
+    },
+    {
+      "id": "AP1-4-2-2-K11-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S493)"
+    },
+    {
+      "id": "AP1-4-2-2-K11-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S493)"
+    },
+    {
+      "id": "AP1-4-2-2-K12-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S492)"
+    },
+    {
+      "id": "AP1-4-2-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S395)"
+    },
+    {
+      "id": "AP1-4-2-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S395)"
+    },
+    {
+      "id": "AP1-4-2-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.1-S301)"
+    },
+    {
+      "id": "AP1-4-2-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.1-S301)"
+    },
+    {
+      "id": "AP1-4-2-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.1-S302)"
+    },
+    {
+      "id": "AP1-4-2-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.1-S302)"
+    },
+    {
+      "id": "AP1-4-3-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.9-S173)"
+    },
+    {
+      "id": "AP1-4-3-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.9-S173)"
+    },
+    {
+      "id": "AP1-4-3-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.12-S186)"
+    },
+    {
+      "id": "AP1-4-3-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.12-S186)"
+    },
+    {
+      "id": "AP1-4-3-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.2-S83)"
+    },
+    {
+      "id": "AP1-4-3-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.2-S144)"
+    },
+    {
+      "id": "AP1-4-3-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.2-S145, buch:GS-2.6.3-S227, buch:GS-3.9.2-S398)"
+    },
+    {
+      "id": "AP1-4-3-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.2-S145, buch:GS-2.6.3-S227, buch:GS-3.9.2-S398)"
+    },
+    {
+      "id": "AP1-4-3-3-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.2-S398)"
     }
   ]
 }
