@@ -1,0 +1,492 @@
+{
+  "ordner": "PB2-4",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB2 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb2/PB2-4.json",
+  "karten": [
+    {
+      "id": "AP2-5-2-2-K1-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K1",
+      "vorne": "Was versteht man unter Testabdeckung?",
+      "hinten": "Den Anteil des Codes, der von den Tests ausgeführt wird, meist in Prozent angegeben."
+    },
+    {
+      "id": "PB2-4-1-1-K1-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K1",
+      "vorne": "Ein Code hat 20 Anweisungen; die Testfälle führen 15 davon aus. Wie hoch ist die Anweisungsüberdeckung, und was sagt der Wert aus?",
+      "hinten": "15 / 20 = **75 %**. Ein Viertel des Codes wurde nie ausgeführt; Fehler darin können die Tests nicht finden."
+    },
+    {
+      "id": "AP2-1-2-3-K4-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Welcher deutsche Begriff steht für **statement coverage**?",
+      "hinten": "Anweisungsüberdeckung (oft C0 genannt)."
+    },
+    {
+      "id": "AP2-1-2-3-K4-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Welcher deutsche Begriff steht für **branch coverage**?",
+      "hinten": "Zweigüberdeckung (oft C1 genannt)."
+    },
+    {
+      "id": "AP2-1-2-3-K4-3",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Welcher deutsche Begriff steht für **path coverage**?",
+      "hinten": "Pfadüberdeckung."
+    },
+    {
+      "id": "AP2-5-2-2-K2-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Wann ist Anweisungsüberdeckung erreicht?",
+      "hinten": "Wenn jede Anweisung des Codes mindestens einmal ausgeführt wurde."
+    },
+    {
+      "id": "AP2-5-2-2-K3-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Wann ist Zweigüberdeckung erreicht?",
+      "hinten": "Wenn jede Verzweigung in jede Richtung mindestens einmal durchlaufen wurde, also die Bedingung jeder Verzweigung einmal wahr und einmal falsch war."
+    },
+    {
+      "id": "AP2-5-2-2-K4-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Wann ist Pfadüberdeckung erreicht?",
+      "hinten": "Wenn jeder mögliche Weg vom Anfang bis zum Ende des Codes mindestens einmal durchlaufen wurde."
+    },
+    {
+      "id": "AP2-5-2-2-K5-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Wie bauen Anweisungs-, Zweig- und Pfadüberdeckung aufeinander auf?",
+      "hinten": "Vollständige Pfadüberdeckung schließt Zweigüberdeckung ein, Zweigüberdeckung schließt Anweisungsüberdeckung ein."
+    },
+    {
+      "id": "AP2-5-2-2-K5-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Ein Test erreicht 100 % Anweisungsüberdeckung. Ist damit auch Zweigüberdeckung erreicht?",
+      "hinten": "Nein, nicht unbedingt: Ein leerer Zweig (z. B. ein if ohne else) enthält keine Anweisung und kann unberücksichtigt bleiben. Umgekehrt gilt es: Zweigüberdeckung schließt Anweisungsüberdeckung ein."
+    },
+    {
+      "id": "PB2-4-1-1-K2-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K2",
+      "vorne": "Warum ist volle Pfadüberdeckung bei Code mit Schleifen praktisch nicht erreichbar?",
+      "hinten": "Jede mögliche Zahl von Schleifendurchläufen ergibt einen eigenen Pfad. Ohne feste Obergrenze wächst die Zahl der Pfade unbegrenzt; man kann nicht alle testen."
+    },
+    {
+      "id": "AP2-5-2-2-K3-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K4",
+      "vorne": "Code: `if x > 0 then y = 1 end if` (ohne else). Wie viele Testfälle braucht man mindestens für Anweisungs- und für Zweigüberdeckung?",
+      "hinten": "- Anweisungsüberdeckung: 1 (x > 0)\n- Zweigüberdeckung: 2 (x > 0 und x ≤ 0), weil auch der leere Nein-Zweig durchlaufen werden muss"
+    },
+    {
+      "id": "PB2-4-1-1-K4-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K4",
+      "vorne": "`1 ergebnis = \"normal\"`\n`2 if x < 0 then`\n`3   ergebnis = \"negativ\"`\n`4 end if`\n`5 if x > 100 then`\n`6   ergebnis = \"zu groß\"`\n`7 end if`\n`8 return ergebnis`\nGetestet wird mit x = 50 und x = −3. Welche Anweisung wird nicht durchlaufen?",
+      "hinten": "Zeile 6 (`ergebnis = \"zu groß\"`): Keiner der Werte ist größer als 100."
+    },
+    {
+      "id": "PB2-4-1-1-K4-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K4",
+      "vorne": "Zum Code der Vorkarte (`if x < 0` … `if x > 100` …): Wie viele Testfälle brauchst du mindestens für Anweisungs- und wie viele für Zweigüberdeckung?",
+      "hinten": "- Anweisungsüberdeckung: **2**, z. B. x = −3 und x = 150 (beide Bedingungen können nicht gleichzeitig wahr sein)\n- Zweigüberdeckung: **2**, dieselben Werte: −3 macht die erste Bedingung wahr und die zweite falsch, 150 umgekehrt"
+    },
+    {
+      "id": "AP2-5-2-2-K6-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K5",
+      "vorne": "Schreibe alle Pfade auf: `if a > 0 then (if b > 0 then x = 1 else x = 2) else x = 3`",
+      "hinten": "3 Pfade:\n- a > 0 und b > 0 → x = 1\n- a > 0 und b ≤ 0 → x = 2\n- a ≤ 0 → x = 3"
+    },
+    {
+      "id": "AP2-5-2-2-K6-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K5",
+      "vorne": "Ein Code enthält zwei unabhängige if-else-Verzweigungen hintereinander. Wie viele Pfade gibt es?",
+      "hinten": "4 Pfade (2 · 2): ja/ja, ja/nein, nein/ja, nein/nein."
+    },
+    {
+      "id": "PB2-4-1-1-K5-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K5",
+      "vorne": "Schreibe alle Pfade in der Form B…, A… auf:\n`B1: if a > 0 then A1 else A2`\n`B2: if b > 0 then A3`\n(B2 hat keinen else-Zweig.)",
+      "hinten": "4 Pfade (2 · 2):\n- B1, A1, B2, A3\n- B1, A1, B2\n- B1, A2, B2, A3\n- B1, A2, B2"
+    },
+    {
+      "id": "PB2-4-1-1-K6-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K6",
+      "vorne": "Minimum-Suche:\n`1 min = werte[0]`\n`2 for i = 1 to laenge(werte) - 1`\n`3   if werte[i] < min then`\n`4     min = werte[i]`\nMit den Testdaten [1, 4, 7] wird Zeile 4 nie ausgeführt. Passe die Testdaten für Anweisungsüberdeckung an und begründe.",
+      "hinten": "Z. B. [5, 4, 7]: Die 4 ist kleiner als der Startwert 5, also wird Zeile 4 ausgeführt. Vorher stand das kleinste Element schon an erster Stelle, daher war die Bedingung nie wahr."
+    },
+    {
+      "id": "PB2-4-1-1-K6-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K6",
+      "vorne": "Für dieselbe Minimum-Suche liefern die Testdaten [9, 3] volle Anweisungsüberdeckung. Reichen sie für Zweigüberdeckung? Passe sie gegebenenfalls an.",
+      "hinten": "Nein: Die Bedingung `werte[i] < min` ist nur einmal wahr, nie falsch – der leere Nein-Zweig fehlt. Anpassung z. B. [9, 3, 5]: Die 5 ist nicht kleiner als 3, die Bedingung wird auch falsch."
+    },
+    {
+      "id": "AP2-5-1-1-K5-1",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K1",
+      "vorne": "Die Fachabteilung soll prüfen, ob die Anwendung die Anforderungen erfüllt. Den Quellcode kennt sie nicht. Welches Testverfahren passt und warum?",
+      "hinten": "Black-Box-Test: Er prüft gegen die Anforderungen und setzt keine Kenntnis des Codes voraus."
+    },
+    {
+      "id": "AP2-5-1-1-K5-2",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K1",
+      "vorne": "Ein Entwickler will sicherstellen, dass jede Verzweigung seiner Funktion getestet wird. Welches Testverfahren passt und warum?",
+      "hinten": "White-Box-Test: Die Testfälle werden aus dem Code abgeleitet, so lässt sich jede Verzweigung gezielt durchlaufen."
+    },
+    {
+      "id": "AP2-5-1-1-K5-3",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K1",
+      "vorne": "Neuer Code soll geprüft werden, bevor er zum ersten Mal ausgeführt wird. Welche Art von Testverfahren passt?",
+      "hinten": "Ein statisches Verfahren, z. B. ein Review: Es prüft den Code ohne Ausführung."
+    },
+    {
+      "id": "PB2-4-1-2-K1-1",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K1",
+      "vorne": "Für eine Rabattfunktion liegt nur die Spezifikation der Rabattstufen vor, der Code ist noch nicht geschrieben. Die Testfälle sollen jetzt entstehen. Welches Verfahren wählst du? Begründe.",
+      "hinten": "Black-Box-Test mit Äquivalenzklassen und Grenzwerten: Die Testfälle lassen sich allein aus den Anforderungen ableiten; der Code wird dafür nicht gebraucht. Die Rabattstufen ergeben die Klassen, ihre Grenzen die Grenzwerte."
+    },
+    {
+      "id": "PB2-4-1-2-K2-1",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K2",
+      "vorne": "Der Projektleiter verlangt ein Überdeckungsmaß für die Unit-Tests. Welches schlägst du vor? Begründe gegenüber den anderen beiden.",
+      "hinten": "**Zweigüberdeckung:**\n- strenger als Anweisungsüberdeckung, weil auch leere Else-Zweige durchlaufen werden müssen\n- anders als Pfadüberdeckung noch bezahlbar, deren Testfallzahl bei Schleifen und vielen Verzweigungen explodiert"
+    },
+    {
+      "id": "PB2-4-1-2-K2-2",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K2",
+      "vorne": "Für eine Prüffunktion mit mehreren `if` ohne `else` reicht dem Team 100 % Anweisungsüberdeckung. Beurteile das.",
+      "hinten": "Reicht nicht: Anweisungsüberdeckung wird schon erreicht, wenn jede Bedingung nur wahr ist. Was passiert, wenn eine Bedingung falsch ist (leerer Zweig), bleibt ungetestet. Besser Zweigüberdeckung fordern."
+    },
+    {
+      "id": "AP2-5-2-4-K2-1",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K3",
+      "vorne": "Wann gilt ein einzelner Testfall als bestanden?",
+      "hinten": "Wenn das tatsächliche Ergebnis mit dem vorher festgelegten erwarteten Ergebnis übereinstimmt."
+    },
+    {
+      "id": "AP2-5-2-4-K2-2",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K3",
+      "vorne": "Warum legt man die Kriterien für das Bestehen vor der Testdurchführung fest?",
+      "hinten": "Damit die Bewertung objektiv und nachvollziehbar ist und nicht nachträglich an das tatsächliche Ergebnis angepasst wird."
+    },
+    {
+      "id": "PB2-4-1-2-K3-1",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K3",
+      "vorne": "Testfall: Eingabe −5, erwartet wird eine Fehlermeldung „ungültige Menge“. Die Methode liefert stattdessen 0. Bestanden oder nicht? Begründe.",
+      "hinten": "**Nicht bestanden:** Erwartetes und tatsächliches Ergebnis stimmen nicht genau überein. Auch eine erwartete Fehlermeldung oder Ausnahme ist ein Ergebnis, das exakt eintreten muss."
+    },
+    {
+      "id": "PB2-4-1-2-K3-2",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K3",
+      "vorne": "Welche Spalten braucht eine Testfalltabelle, um Testergebnisse zu bewerten?",
+      "hinten": "- Testfall-Nr. und Testdaten (Eingaben)\n- erwartetes Ergebnis (vorab festgelegt)\n- tatsächliches Ergebnis (ausgeführt oder per Schreibtischtest ermittelt)\n- Bewertung: bestanden / nicht bestanden"
+    },
+    {
+      "id": "AP2-5-2-1-K5-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K1",
+      "vorne": "Was ist eine Äquivalenzklasse?",
+      "hinten": "Eine Gruppe von Eingaben, die vom Programm gleich behandelt werden; getestet wird je Klasse mit einem Vertreter."
+    },
+    {
+      "id": "AP2-5-2-1-K5-2",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K1",
+      "vorne": "Ein Bestellwert (ganze Euro) ist ab 1 € gültig; ab 100 € gibt es Rabatt. Welche Äquivalenzklassen gibt es für den Bestellwert?",
+      "hinten": "- ungültig: 0 € und weniger\n- gültig ohne Rabatt: 1 bis 99 €\n- gültig mit Rabatt: ab 100 €\nJe Klasse ein Vertreter, z. B. −5, 50, 150."
+    },
+    {
+      "id": "AP2-5-2-1-K5-3",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K1",
+      "vorne": "Warum testet man je Äquivalenzklasse nur einen Vertreter?",
+      "hinten": "Alle Werte einer Klasse werden gleich behandelt; man geht davon aus, dass ein weiterer Wert derselben Klasse keinen neuen Fehler aufdeckt. So bleibt die Zahl der Testfälle klein."
+    },
+    {
+      "id": "PB2-4-1-3-K1-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K1",
+      "vorne": "Eine Funktion liefert für einen Prozentwert von 0 bis 100 einen Text, sonst −1. Bilde die Äquivalenzklassen und nenne je einen Vertreter.",
+      "hinten": "- gültig: 0 bis 100, Vertreter z. B. 40\n- ungültig zu klein: unter 0, z. B. −7 → erwartet −1\n- ungültig zu groß: über 100, z. B. 150 → erwartet −1"
+    },
+    {
+      "id": "AP2-5-2-1-K1-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K2",
+      "vorne": "Welche drei Arten von Fällen sollen die Testdaten für eine Funktion abdecken?",
+      "hinten": "- den Normalfall\n- die Grenzen\n- ungültige Eingaben"
+    },
+    {
+      "id": "AP2-5-2-1-K1-2",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K2",
+      "vorne": "Eine Funktion akzeptiert ganze Zahlen von 1 bis 100. Wähle Testdaten für Normalfall, Grenzen und ungültige Eingaben und begründe die Grenzwerte.",
+      "hinten": "- Normalfall: z. B. 50\n- untere Grenze: 0, 1, 2\n- obere Grenze: 99, 100, 101\n- ungültig: z. B. eine Eingabe, die keine Zahl ist\nBegründung: Fehler wie `<` statt `<=` fallen nur genau an der Grenze auf."
+    },
+    {
+      "id": "PB2-4-1-3-K2-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K2",
+      "vorne": "Ab 50 € Bestellwert entfallen die Versandkosten. Ein Kollege testet mit 20 € und 80 €. Beurteile die Auswahl und ergänze.",
+      "hinten": "Unzureichend: Beide Werte liegen weit weg von der Grenze. Ein Fehler wie `> 50` statt `>= 50` bliebe unentdeckt. Ergänzen: 49,99 €, 50 € und 50,01 €."
+    },
+    {
+      "id": "AP2-5-2-1-K3-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K3",
+      "vorne": "Nenne vier Sonderfälle, aus denen du Testdaten für eine Funktion über einem Array ableitest.",
+      "hinten": "- leeres Array oder `null`\n- nur ein Element\n- nur positive bzw. nur negative Werte (je nach Startwert)\n- gesuchtes Element an erster oder letzter Stelle"
+    },
+    {
+      "id": "PB2-4-1-3-K3-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K3",
+      "vorne": "Eine Maximum-Suche beginnt mit `max = 0`. Welche Testdaten decken diesen Fehler auf, und warum werden sie oft vergessen?",
+      "hinten": "Ein Array nur mit **negativen** Werten, z. B. [−4, −2, −9]: Erwartet −2, geliefert 0. Mit üblichen positiven Testdaten fällt der falsche Startwert nicht auf."
+    },
+    {
+      "id": "AP2-5-2-1-K4-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K6",
+      "vorne": "Wozu dient ein Testdatengenerator?",
+      "hinten": "Er erzeugt automatisch große Mengen passender Testdaten nach festgelegten Regeln (Wertebereich, Format, Verteilung), auch zufällige oder grenznahe Werte – statt echte personenbezogene Daten zu verwenden."
+    },
+    {
+      "id": "PB2-4-1-3-K6-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K6",
+      "vorne": "Für einen Lasttest werden 100.000 Kundendatensätze gebraucht. Ein Kollege will die echten Kundendaten kopieren. Was schlägst du vor?",
+      "hinten": "Einen Testdatengenerator: Er erzeugt beliebig viele Datensätze nach Regeln (z. B. Postleitzahl fünfstellig, Alter 18–99, gleichmäßig verteilt). Echte personenbezogene Daten im Test widersprechen dem Datenschutz (DSGVO)."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-1-2-3-K4-1",
+      "entscheidung": "bearbeitet",
+      "grund": "doppelt zu AP2-5-2-2-K2-1; jetzt nur Übersetzung des englischen Begriffs (2024S vorgegeben)"
+    },
+    {
+      "id": "AP2-1-2-3-K4-2",
+      "entscheidung": "bearbeitet",
+      "grund": "doppelt zu AP2-5-2-2-K3-1; jetzt nur Übersetzung des englischen Begriffs"
+    },
+    {
+      "id": "AP2-1-2-3-K4-3",
+      "entscheidung": "bearbeitet",
+      "grund": "doppelt zu AP2-5-2-2-K4-1; jetzt nur Übersetzung des englischen Begriffs (Schleifen in PB2-4-1-1-K2-1)"
+    },
+    {
+      "id": "AP2-5-2-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich; an PB2-4-1-1-K4 gehängt (Mindestzahl an Testfällen bestimmen)"
+    },
+    {
+      "id": "AP2-5-2-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-2-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt (Situation mit Begründung)"
+    },
+    {
+      "id": "AP2-5-1-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt (Situation mit Begründung)"
+    },
+    {
+      "id": "AP2-5-1-1-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt (Situation)"
+    },
+    {
+      "id": "AP2-5-2-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-1-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-1-K1-2",
+      "entscheidung": "bearbeitet",
+      "grund": "Aussage verlangt an jeder Grenze den Grenzwert und die Nachbarwerte, mit Begründung"
+    },
+    {
+      "id": "AP2-5-2-1-K3-1",
+      "entscheidung": "bearbeitet",
+      "grund": "an die Sonderfälle der neuen Aussage angepasst (null, ein Element, nur negative Werte, erste/letzte Stelle)"
+    },
+    {
+      "id": "AP2-5-2-1-K4-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Regeln für die Erzeugung und „statt echter personenbezogener Daten“ aus der Aussage ergänzt"
+    },
+    {
+      "id": "PB2-4-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "Testabdeckung an einem Zahlenbeispiel erläutern"
+    },
+    {
+      "id": "PB2-4-1-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Teil der Aussage (Schleifen), bisher nur nebenbei in einer Karte"
+    },
+    {
+      "id": "PB2-4-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage: nicht durchlaufene Anweisungen nennen"
+    },
+    {
+      "id": "PB2-4-1-1-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage: Mindestzahl an Testfällen bestimmen"
+    },
+    {
+      "id": "PB2-4-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage: Pfade mit Bedingungen und Anweisungen in Abarbeitungsreihenfolge (2024S-Form)"
+    },
+    {
+      "id": "PB2-4-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Testdaten für eine Überdeckung anpassen und begründen (2023S)"
+    },
+    {
+      "id": "PB2-4-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Anpassung für Zweigüberdeckung"
+    },
+    {
+      "id": "PB2-4-1-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: weitere Situation mit Begründung"
+    },
+    {
+      "id": "PB2-4-1-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage am Prüfungsfall (2025S)"
+    },
+    {
+      "id": "PB2-4-1-2-K2-2",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Überdeckungsmaß beurteilen"
+    },
+    {
+      "id": "PB2-4-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage: Bestehen nur bei genauer Übereinstimmung, auch bei erwarteter Fehlermeldung"
+    },
+    {
+      "id": "PB2-4-1-2-K3-2",
+      "entscheidung": "neu",
+      "grund": "Aussage: Testfalltabelle als Grundlage der Kriterien"
+    },
+    {
+      "id": "PB2-4-1-3-K1-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 3: Klassen an einem Fall bilden, mit ungültigen Klassen (2022S-Form)"
+    },
+    {
+      "id": "PB2-4-1-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Auswahl der Testdaten begründen"
+    },
+    {
+      "id": "PB2-4-1-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 3: Testdaten aus Sonderfall (Startwert) ableiten"
+    },
+    {
+      "id": "PB2-4-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 3: Generator an einem Fall einsetzen"
+    }
+  ]
+}
