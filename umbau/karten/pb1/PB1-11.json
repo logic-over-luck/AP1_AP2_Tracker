@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-11",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-11.json",
   "karten": [
@@ -598,6 +598,482 @@
       "k": "PB1-11-2-4-K4",
       "vorne": "Was legst du fest, um eine Site-to-Site-VPN-Verbindung einzurichten?",
       "hinten": "- Gateways und ihre öffentlichen Adressen\n- zu verbindende Netze\n- Authentifizierung: Pre-Shared Key oder Zertifikat\n- Verschlüsselungsverfahren (z. B. AES)"
+    },
+    {
+      "id": "PB1-11-1-1-K5-1",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K5",
+      "vorne": "Was passiert bei der Kapselung, wenn ein Rechner Daten sendet?",
+      "hinten": "Jede Schicht setzt ihren eigenen Kopf vor die Daten der Schicht darüber: Transport → Segment, Internet → Paket, Netzzugang → Frame (mit Prüfsumme am Ende), dann Bits auf dem Medium. Der Empfänger entfernt die Köpfe in umgekehrter Reihenfolge."
+    },
+    {
+      "id": "PB1-11-1-1-K5-2",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K5",
+      "vorne": "Nenne die Dateneinheiten von der Transportschicht bis zum Medium in der richtigen Reihenfolge.",
+      "hinten": "Segment (Transport) – Paket (Internet/Vermittlung) – Frame (Netzzugang/Sicherung) – Bits (Bitübertragung)"
+    },
+    {
+      "id": "PB1-11-1-1-K6-1",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K6",
+      "vorne": "Ein PC ruft eine Webseite auf einem Server im Internet auf. Welche Ziel-MAC-Adresse trägt er in den Ethernet-Frame ein?",
+      "hinten": "Die MAC-Adresse seines Standardgateways (Routers), weil der Server in einem anderen Netz liegt; MAC-Adressen gelten nur im lokalen Segment."
+    },
+    {
+      "id": "PB1-11-1-1-K6-2",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K6",
+      "vorne": "Bis zu welcher Schicht schauen Switch und Router in ein Datenpaket hinein?",
+      "hinten": "Switch: Schicht 2 (Ethernet-Kopf, MAC-Adresse). Router: Schicht 3 (IP-Kopf, IP-Adresse). Alle Schichten packt erst der Empfänger aus."
+    },
+    {
+      "id": "PB1-11-1-1-K6-3",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K6",
+      "vorne": "Welche Adressen stehen bei einem HTTPS-Aufruf auf Schicht 4 und auf Schicht 3?",
+      "hinten": "Schicht 4: zufälliger hoher Quellport des Browsers, Zielport 443. Schicht 3: IP-Adresse des PCs als Quelle, IP-Adresse des Servers als Ziel."
+    },
+    {
+      "id": "PB1-11-1-1-K7-1",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K7",
+      "vorne": "Ordne Hub, Switch, Router und Proxy ihrer OSI-Schicht zu.",
+      "hinten": "Hub (und Repeater): Schicht 1; Switch (und Bridge): Schicht 2; Router: Schicht 3; Proxy bzw. Application Layer Gateway: Schicht 7"
+    },
+    {
+      "id": "PB1-11-1-1-K7-2",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K7",
+      "vorne": "Welches Gerät trennt Kollisionsdomänen, welches begrenzt Broadcast-Domänen?",
+      "hinten": "Bridge und Switch trennen Kollisionsdomänen (jeder Port eine eigene). Erst ein Router begrenzt die Broadcast-Domäne, weil er Broadcasts nicht in andere Netze weiterleitet."
+    },
+    {
+      "id": "PB1-11-1-1-K8-1",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K8",
+      "vorne": "Was bedeutet MTU beim Ethernet, und welchen Wert hat sie?",
+      "hinten": "Maximum Transmission Unit: die größte Nutzlast eines Frames, bei Ethernet 1500 Byte. Größere IP-Pakete passen nicht in einen Frame."
+    },
+    {
+      "id": "PB1-11-1-1-K8-2",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K8",
+      "vorne": "Woher weiß der Empfänger eines Ethernet-Frames, an welches Protokoll er die Nutzdaten weitergeben muss?",
+      "hinten": "Aus dem Typfeld: Es kennzeichnet das transportierte Protokoll, z. B. IPv4, IPv6 oder ARP."
+    },
+    {
+      "id": "PB1-11-1-1-K9-1",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K9",
+      "vorne": "Welches Switching-Verfahren leitet auch fehlerhafte Frames weiter, und warum?",
+      "hinten": "Cut-Through: Es beginnt nach der Ziel-MAC-Adresse mit dem Weiterleiten, bevor die Prüfsumme am Ende des Frames angekommen ist."
+    },
+    {
+      "id": "PB1-11-1-1-K9-2",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K9",
+      "vorne": "Nenne Vor- und Nachteil von Store-and-Forward.",
+      "hinten": "Vorteil: Die Prüfsumme wird geprüft, fehlerhafte Frames werden verworfen; auch Ports mit unterschiedlicher Datenrate sind möglich. Nachteil: mehr Verzögerung und Pufferspeicher, weil erst der ganze Frame aufgenommen wird."
+    },
+    {
+      "id": "PB1-11-1-1-K9-3",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K9",
+      "vorne": "Warum wartet ein Fragment-Free-Switch genau 64 Byte ab?",
+      "hinten": "64 Byte ist die Mindestgröße eines Ethernet-Frames; kürzere Bruchstücke stammen aus Kollisionen und werden so ausgefiltert."
+    },
+    {
+      "id": "PB1-11-1-1-K10-1",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K10",
+      "vorne": "Ein Router findet für ein Zielnetz keinen Eintrag in seiner Routingtabelle. Was tut er?",
+      "hinten": "Er leitet das Paket über die Standardroute (0.0.0.0/0) weiter. Gibt es keine, verwirft er es und meldet dem Absender per ICMP, dass das Ziel nicht erreichbar ist."
+    },
+    {
+      "id": "PB1-11-1-1-K10-2",
+      "sp": "PB1-11-1-1",
+      "k": "PB1-11-1-1-K10",
+      "vorne": "Wann passt statisches, wann dynamisches Routing?",
+      "hinten": "Statisch: kleine, übersichtliche Netze mit wenigen festen Wegen (Routen von Hand, wenig Aufwand). Dynamisch: große Netze mit mehreren Wegen – die Router tauschen Routen per Routingprotokoll aus und weichen bei Ausfällen selbst aus."
+    },
+    {
+      "id": "PB1-11-1-4-K1-1",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K1",
+      "vorne": "Was ist der Unterschied zwischen DROP und REJECT in einer Firewall-Regel?",
+      "hinten": "DROP verwirft das Paket still, der Absender bekommt keine Antwort. REJECT lehnt ab und schickt dem Absender eine Rückmeldung."
+    },
+    {
+      "id": "PB1-11-1-4-K1-2",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K1",
+      "vorne": "Warum ist bei einem Firewall-Regelwerk die Reihenfolge der Regeln wichtig?",
+      "hinten": "Die Firewall vergleicht jedes Paket von oben nach unten und wendet die erste passende Regel an; eine zu allgemeine Regel weiter oben lässt speziellere Regeln darunter nie greifen."
+    },
+    {
+      "id": "PB1-11-1-4-K2-1",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K2",
+      "vorne": "Was prüft eine Next-Generation-Firewall zusätzlich zu einer zustandsorientierten Firewall?",
+      "hinten": "Den Inhalt der Pakete bis zur Anwendungsschicht (Deep Packet Inspection) und die verwendeten Anwendungen; mit einem eingebauten IPS blockiert sie erkannte Angriffe."
+    },
+    {
+      "id": "PB1-11-1-4-K2-2",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K2",
+      "vorne": "Was unterscheidet ein IDS von einem IPS?",
+      "hinten": "Ein IDS (Intrusion Detection System) erkennt Angriffsmuster und meldet sie. Ein IPS (Intrusion Prevention System) blockiert sie zusätzlich sofort."
+    },
+    {
+      "id": "PB1-11-1-4-K2-3",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K2",
+      "vorne": "Warum kann eine Firewall HTTPS-Verkehr nicht ohne Weiteres auf Schadcode prüfen?",
+      "hinten": "Die Nutzdaten sind per TLS verschlüsselt. Prüfen kann sie nur, wenn sie die Verbindung aufbricht, entschlüsselt und neu verschlüsselt – dafür müssen die Clients ihrem Zertifikat vertrauen."
+    },
+    {
+      "id": "PB1-11-1-4-K3-1",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K3",
+      "vorne": "Was kann eine Personal Firewall, was eine zentrale Netzwerk-Firewall nicht kann?",
+      "hinten": "Sie kennt das Programm, das eine Verbindung aufbaut (Regeln je Anwendung), und schützt das Gerät auch im eigenen Netz und unterwegs, etwa im Hotel-WLAN."
+    },
+    {
+      "id": "PB1-11-1-4-K3-2",
+      "sp": "PB1-11-1-4",
+      "k": "PB1-11-1-4-K3",
+      "vorne": "Welchen Vorteil hat eine zentrale Netzwerk-Firewall gegenüber Personal Firewalls?",
+      "hinten": "Der gesamte Verkehr zwischen Firmennetz und Internet läuft an einer Stelle durch; die Regeln werden zentral gepflegt und schützen alle Geräte, auch solche ohne eigene Firewall wie Drucker."
+    },
+    {
+      "id": "PB1-11-1-2-K4-1",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K4",
+      "vorne": "Warum heißt IP verbindungslos und unzuverlässig?",
+      "hinten": "Jedes Paket wird einzeln und ohne vorherigen Verbindungsaufbau weitergeleitet, und der Empfänger bestätigt nichts; verlorene oder vertauschte Pakete bemerkt IP nicht."
+    },
+    {
+      "id": "PB1-11-1-2-K4-2",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K4",
+      "vorne": "Welche Schicht sorgt dafür, dass über IP verlorene Daten nachgesendet werden?",
+      "hinten": "Die Transportschicht mit TCP (Bestätigungen, Nachsenden, Reihenfolge); IP selbst tut das nicht."
+    },
+    {
+      "id": "PB1-11-1-2-K5-1",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K5",
+      "vorne": "Nenne die drei Schritte des TCP-Drei-Wege-Handshakes.",
+      "hinten": "- SYN vom Client\n- SYN-ACK vom Server\n- ACK vom Client"
+    },
+    {
+      "id": "PB1-11-1-2-K5-2",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K5",
+      "vorne": "Das Monitoring zeigt viele SYN-Fehler zu einem Server. Was sagt das aus?",
+      "hinten": "Der Verbindungsaufbau scheitert: Der Dienst läuft nicht, eine Firewall sperrt den Port, der Server ist überlastet – oder ein SYN-Flood-Angriff läuft."
+    },
+    {
+      "id": "PB1-11-1-2-K6-1",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K6",
+      "vorne": "Was ist ein Socket?",
+      "hinten": "Die Kombination aus IP-Adresse und Portnummer, z. B. 192.168.1.5:51234; sie adressiert eine Anwendung auf einem Rechner. Eine Verbindung besteht aus zwei Sockets."
+    },
+    {
+      "id": "PB1-11-1-2-K6-2",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K6",
+      "vorne": "Wie kann ein Webserver auf Port 443 viele Clients gleichzeitig bedienen?",
+      "hinten": "Jede Verbindung ist durch beide Sockets bestimmt; die Clients unterscheiden sich in IP-Adresse oder zufällig gewähltem Quellport, deshalb bleiben die Verbindungen auseinanderzuhalten."
+    },
+    {
+      "id": "PB1-11-1-2-K7-1",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K7",
+      "vorne": "Was ist der Unterschied zwischen Flusssteuerung und Staukontrolle bei TCP?",
+      "hinten": "Flusssteuerung: Der Empfänger meldet, wie viel er aufnehmen kann – schützt den Empfänger. Staukontrolle: Der Sender drosselt bei Paketverlusten – schützt das Netz vor Überlast."
+    },
+    {
+      "id": "PB1-11-1-2-K7-2",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K7",
+      "vorne": "Warum eignet sich UDP, nicht TCP, für Multicast?",
+      "hinten": "TCP braucht eine Verbindung mit genau einem Partner und dessen Bestätigungen; UDP sendet verbindungslos ohne Bestätigung und kann deshalb ein Paket an eine ganze Empfängergruppe schicken."
+    },
+    {
+      "id": "PB1-11-1-2-K8-1",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K8",
+      "vorne": "Woraus bestehen eine HTTP-Anfrage und eine HTTP-Antwort?",
+      "hinten": "Anfrage: Methode, Pfad, Kopfzeilen, ggf. Rumpf mit Daten. Antwort: Statuscode, Kopfzeilen, Rumpf mit dem Inhalt (z. B. HTML oder JSON)."
+    },
+    {
+      "id": "PB1-11-1-2-K8-2",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K8",
+      "vorne": "Was unterscheidet HTTPS von HTTP?",
+      "hinten": "Nur die Verbindung: HTTPS schickt dieselben HTTP-Anfragen und -Antworten durch eine TLS-verschlüsselte Verbindung (Port 443), HTTP überträgt im Klartext (Port 80)."
+    },
+    {
+      "id": "PB1-11-1-2-K9-1",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K9",
+      "vorne": "Ein Anmeldeformular überträgt Benutzername und Passwort. GET oder POST? Begründe.",
+      "hinten": "POST: Die Daten stehen im Rumpf statt in der URL und landen so nicht in Verlauf, Lesezeichen und Server-Logs. Zusätzlich ist HTTPS nötig, denn POST verschlüsselt nicht."
+    },
+    {
+      "id": "PB1-11-1-2-K9-2",
+      "sp": "PB1-11-1-2",
+      "k": "PB1-11-1-2-K9",
+      "vorne": "Wann ist GET die passende Methode für ein Formular?",
+      "hinten": "Bei Abfragen, die nichts verändern, z. B. Suchen oder Filtern: Die Parameter stehen in der URL, die Ergebnisseite lässt sich als Lesezeichen speichern und teilen."
+    },
+    {
+      "id": "PB1-11-1-3-K4-1",
+      "sp": "PB1-11-1-3",
+      "k": "PB1-11-1-3-K4",
+      "vorne": "Welcher DNS-Eintrag nennt den Mailserver einer Domain, welcher die IPv6-Adresse eines Namens?",
+      "hinten": "MX für den zuständigen Mailserver, AAAA für die IPv6-Adresse (A für IPv4)."
+    },
+    {
+      "id": "PB1-11-1-3-K4-2",
+      "sp": "PB1-11-1-3",
+      "k": "PB1-11-1-3-K4",
+      "vorne": "Was ist ein PTR-Eintrag, und wozu dient er?",
+      "hinten": "Der Eintrag für die Rückwärtsauflösung (Reverse DNS): Er ordnet einer IP-Adresse einen Namen zu. Mailserver prüfen damit z. B., ob ein einliefernder Server plausibel ist."
+    },
+    {
+      "id": "PB1-11-1-3-K4-3",
+      "sp": "PB1-11-1-3",
+      "k": "PB1-11-1-3-K4",
+      "vorne": "Wozu dient ein CNAME-Eintrag?",
+      "hinten": "Er macht einen Namen zum Alias eines anderen Namens, z. B. verweist www.example.de auf example.de; die Adresse steht dann nur einmal beim Zielnamen."
+    },
+    {
+      "id": "PB1-11-1-3-K5-1",
+      "sp": "PB1-11-1-3",
+      "k": "PB1-11-1-3-K5",
+      "vorne": "Für wen arbeitet ein Forward-Proxy, für wen ein Reverse Proxy?",
+      "hinten": "Forward-Proxy: für die internen Clients, er stellt ihre Anfragen ins Internet. Reverse Proxy: für die eigenen Server, er nimmt Anfragen aus dem Internet entgegen."
+    },
+    {
+      "id": "PB1-11-1-3-K5-2",
+      "sp": "PB1-11-1-3",
+      "k": "PB1-11-1-3-K5",
+      "vorne": "Welche Aufgaben übernimmt ein Reverse Proxy vor mehreren Webservern?",
+      "hinten": "Anfragen verteilen (Lastverteilung, nach URL-Pfad), die Server verbergen, filtern und die TLS-Verschlüsselung übernehmen – das Zertifikat liegt zentral am Proxy, die Webserver werden entlastet."
+    },
+    {
+      "id": "PB1-11-1-3-K5-3",
+      "sp": "PB1-11-1-3",
+      "k": "PB1-11-1-3-K5",
+      "vorne": "Warum sieht ein Webserver bei Zugriffen über einen Forward-Proxy die internen Clients nicht?",
+      "hinten": "Der Proxy stellt die Anfrage in eigenem Namen über eine eigene Verbindung; beim Webserver kommt nur die Adresse des Proxys an, die Antwort ordnet der Proxy dem Client zu."
+    },
+    {
+      "id": "PB1-11-2-1-K6-1",
+      "sp": "PB1-11-2-1",
+      "k": "PB1-11-2-1-K6",
+      "vorne": "Welches Medium wird im Primärbereich der strukturierten Verkabelung üblicherweise verlegt, und warum?",
+      "hinten": "Glasfaser: große Entfernungen bei hoher Datenrate, unempfindlich gegen Störungen, und sie trennt die Gebäude elektrisch (keine Potenzialunterschiede oder Überspannung über die Leitung)."
+    },
+    {
+      "id": "PB1-11-2-1-K6-2",
+      "sp": "PB1-11-2-1",
+      "k": "PB1-11-2-1-K6",
+      "vorne": "Warum liegt im Tertiärbereich meist Kupfer statt Glasfaser?",
+      "hinten": "Die Strecken bis zur Dose sind kurz, Kupfer ist günstiger, und die Endgeräte haben Kupferanschlüsse (auch für PoE); Glasfaser bis zum Arbeitsplatz lohnt sich nur bei sehr hohem Bedarf."
+    },
+    {
+      "id": "PB1-11-2-1-K7-1",
+      "sp": "PB1-11-2-1",
+      "k": "PB1-11-2-1-K7",
+      "vorne": "Was gehört bei der strukturierten Verkabelung zur passiven, was zur aktiven Seite?",
+      "hinten": "Passiv: fest verlegte Leitungen, Dosen, Patchfelder. Aktiv: Netzwerkgeräte im Verteiler wie Switches und Router."
+    },
+    {
+      "id": "PB1-11-2-1-K7-2",
+      "sp": "PB1-11-2-1",
+      "k": "PB1-11-2-1-K7",
+      "vorne": "Wozu dienen Querverbindungen zwischen Verteilern?",
+      "hinten": "Sie schaffen einen zweiten Weg: Fällt eine Leitung oder ein Verteiler aus, läuft der Verkehr über die Querverbindung weiter – die Ausfallsicherheit steigt."
+    },
+    {
+      "id": "PB1-11-2-2-K5-1",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K5",
+      "vorne": "Was ist ein Trunk, und warum braucht er getaggte Frames?",
+      "hinten": "Eine Verbindung, über die Frames mehrerer VLANs laufen, meist zwischen zwei Switches. Das Tag mit der VLAN-ID (IEEE 802.1Q) zeigt dem anderen Switch, zu welchem VLAN jeder Frame gehört."
+    },
+    {
+      "id": "PB1-11-2-2-K5-2",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K5",
+      "vorne": "Zwei PCs hängen am selben Switch, aber in verschiedenen VLANs. Wie können sie miteinander kommunizieren?",
+      "hinten": "Nur über einen Router oder Layer-3-Switch (Inter-VLAN-Routing); auf Schicht 2 sind die VLANs vollständig getrennt."
+    },
+    {
+      "id": "PB1-11-2-2-K6-1",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K6",
+      "vorne": "Welche WLAN-Verschlüsselungsverfahren gelten als unsicher, welches ist aktuell?",
+      "hinten": "Unsicher: WEP und WPA. Noch vertretbar: WPA2 mit AES und langem Passwort. Aktuell: WPA3."
+    },
+    {
+      "id": "PB1-11-2-2-K6-2",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K6",
+      "vorne": "Welchen Vorteil bringt WPA3 gegenüber WPA2-Personal?",
+      "hinten": "Jede Sitzung bekommt per Schlüsselaustausch einen eigenen Schlüssel (Forward Secrecy): Mitgeschnittener Verkehr bleibt geschützt, auch wenn das Passwort später bekannt wird, und das Passwort lässt sich nicht mehr offline erraten."
+    },
+    {
+      "id": "PB1-11-2-2-K7-1",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K7",
+      "vorne": "Was unterscheidet den Ad-hoc-Modus vom Infrastrukturmodus im WLAN?",
+      "hinten": "Ad-hoc: Geräte verbinden sich direkt und gleichberechtigt, ohne zentrale Stelle. Infrastruktur: Alle Geräte melden sich an einem Access Point an, der den Verkehr vermittelt und ins kabelgebundene Netz weiterleitet."
+    },
+    {
+      "id": "PB1-11-2-2-K8-1",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K8",
+      "vorne": "Wofür stehen die drei A bei RADIUS?",
+      "hinten": "- Authentifizierung: Wer meldet sich an?\n- Autorisierung: Was darf er danach?\n- Accounting: Nutzung protokollieren bzw. abrechnen"
+    },
+    {
+      "id": "PB1-11-2-2-K8-2",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K8",
+      "vorne": "Warum fragen Access Points und VPN-Gateways bei einem RADIUS-Server an, statt Benutzer selbst zu verwalten?",
+      "hinten": "Die Benutzer werden an einer Stelle verwaltet: Ein gesperrtes Konto ist sofort an allen Zugängen gesperrt, und Rechte und Protokolle laufen zentral zusammen."
+    },
+    {
+      "id": "PB1-11-2-2-K9-1",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K9",
+      "vorne": "Warum wird empfohlen, WPS am WLAN-Router abzuschalten?",
+      "hinten": "Die WPS-PIN lässt sich durch Ausprobieren in kurzer Zeit erraten; danach erhält der Angreifer den WLAN-Schlüssel – unabhängig davon, wie stark das eigentliche Passwort ist."
+    },
+    {
+      "id": "PB1-11-2-2-K9-2",
+      "sp": "PB1-11-2-2",
+      "k": "PB1-11-2-2-K9",
+      "vorne": "Ein Café hängt den QR-Code für sein WLAN aus. Ist das vertretbar?",
+      "hinten": "Für ein vom internen Netz getrenntes Gastnetz ja. Der Code enthält SSID und Schlüssel, jeder mit einem Foto kommt hinein – für das Firmennetz wäre das nicht vertretbar."
+    },
+    {
+      "id": "PB1-11-2-5-K1-1",
+      "sp": "PB1-11-2-5",
+      "k": "PB1-11-2-5-K1",
+      "vorne": "Was ist eine DMZ, und welche Server stehen dort?",
+      "hinten": "Ein eigenes Netzsegment zwischen äußerer und innerer Firewall für Server, die aus dem Internet erreichbar sein müssen, z. B. Web-, Mail- oder Shopserver."
+    },
+    {
+      "id": "PB1-11-2-5-K1-2",
+      "sp": "PB1-11-2-5",
+      "k": "PB1-11-2-5-K1",
+      "vorne": "Warum schützt eine DMZ das interne Netz auch dann noch, wenn ein Webserver gehackt wurde?",
+      "hinten": "Zwischen DMZ und internem Netz steht die innere Firewall; sie lässt nur wenige festgelegte Verbindungen ins LAN zu, der Angreifer muss sie erst noch überwinden."
+    },
+    {
+      "id": "PB1-11-2-5-K2-1",
+      "sp": "PB1-11-2-5",
+      "k": "PB1-11-2-5-K2",
+      "vorne": "Nach welcher Regel richtet sich, wie streng eine Netzzone geschützt wird?",
+      "hinten": "Nach ihrem empfindlichsten System: Die ganze Zone bekommt den Schutz, den das System mit dem höchsten Schutzbedarf braucht."
+    },
+    {
+      "id": "PB1-11-2-5-K2-2",
+      "sp": "PB1-11-2-5",
+      "k": "PB1-11-2-5-K2",
+      "vorne": "Warum reicht eine Trennung per VLAN nicht, wenn sich zwei Firmen ein Gebäudenetz teilen?",
+      "hinten": "VLANs trennen nur logisch auf denselben Switches; ein Konfigurationsfehler oder ein Angriff auf den Switch kann die Netze verbinden. Netze fremder Organisationen werden deshalb physisch getrennt."
+    },
+    {
+      "id": "PB1-11-2-5-K3-1",
+      "sp": "PB1-11-2-5",
+      "k": "PB1-11-2-5-K3",
+      "vorne": "Was ist der Grundgedanke von Zero Trust im Gegensatz zum Perimeterschutz?",
+      "hinten": "Perimeterschutz vertraut allem im internen Netz. Zero Trust vertraut keinem Zugriff allein wegen seiner Herkunft, sondern prüft jeden Zugriff einzeln nach Identität, Gerät und Richtlinie."
+    },
+    {
+      "id": "PB1-11-2-5-K3-2",
+      "sp": "PB1-11-2-5",
+      "k": "PB1-11-2-5-K3",
+      "vorne": "Warum genügt eine starke Firewall am Internetübergang allein nicht mehr?",
+      "hinten": "Angreifer gelangen oft trotzdem hinein (Phishing, infizierte Geräte, Innentäter) und bewegen sich dann frei im Netz; Zero Trust prüft deshalb auch interne Zugriffe."
+    },
+    {
+      "id": "PB1-11-2-3-K6-1",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K6",
+      "vorne": "Welche Aufgabe hat ein Datenbanktreiber beim Zugriff über ODBC oder JDBC?",
+      "hinten": "Er übersetzt die einheitlichen Aufrufe der Schnittstelle in das Protokoll des jeweiligen Datenbanksystems."
+    },
+    {
+      "id": "PB1-11-2-3-K6-2",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K6",
+      "vorne": "Was muss sich ändern, wenn eine Anwendung mit ODBC oder JDBC von MySQL auf PostgreSQL umzieht?",
+      "hinten": "Vor allem der Treiber und die Verbindungsdaten; der Programmcode bleibt, solange er kein herstellerspezifisches SQL verwendet."
+    },
+    {
+      "id": "PB1-11-2-3-K7-1",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K7",
+      "vorne": "Nenne die Schritte eines Datenbankzugriffs aus einem Programm.",
+      "hinten": "- Verbindung öffnen (Adresse, Port, Datenbank, Benutzer, Passwort)\n- SQL-Anweisung schicken\n- Ergebnis verarbeiten\n- Änderungen bestätigen (Commit)\n- Verbindung schließen"
+    },
+    {
+      "id": "PB1-11-2-3-K7-2",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K7",
+      "vorne": "Warum muss eine Datenbankverbindung auch im Fehlerfall geschlossen werden?",
+      "hinten": "Sonst bleibt sie offen und belegt Ressourcen; sammeln sich offene Verbindungen, nimmt der Datenbankserver irgendwann keine neuen mehr an."
+    },
+    {
+      "id": "PB1-11-2-3-K8-1",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K8",
+      "vorne": "Nenne fünf Kriterien für die Auswahl eines NAS.",
+      "hinten": "z. B. Kapazität und Schächte, RAID mit Tausch im Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (Link-Aggregation), Verschlüsselung, Snapshots, redundantes Netzteil"
+    },
+    {
+      "id": "PB1-11-2-3-K8-2",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K8",
+      "vorne": "Wozu dient Link-Aggregation bei einem NAS?",
+      "hinten": "Mehrere Netzwerkports werden zu einer logischen Verbindung gebündelt: höherer Gesamtdurchsatz für viele gleichzeitige Nutzer und weiterer Betrieb, wenn ein Kabel oder Port ausfällt."
+    },
+    {
+      "id": "PB1-11-2-3-K9-1",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K9",
+      "vorne": "Welche Speicherlösung passt für ein Rechenzentrum, in dem viele Server schnellen Blockspeicher brauchen, und warum?",
+      "hinten": "Ein SAN: eigenes, schnelles Speichernetz, das allen Servern Blockspeicher bereitstellt, ohne das LAN zu belasten – dafür teuer und aufwendig."
+    },
+    {
+      "id": "PB1-11-2-3-K9-2",
+      "sp": "PB1-11-2-3",
+      "k": "PB1-11-2-3-K9",
+      "vorne": "Was ist ein DAS, und was ist sein Nachteil?",
+      "hinten": "Direct Attached Storage: Speicher direkt an einem Server angeschlossen (z. B. per SAS). Schnell und günstig, aber nur dieser Server hat Zugriff; andere Server können ihn nicht mitbenutzen."
+    },
+    {
+      "id": "PB1-11-2-4-K5-1",
+      "sp": "PB1-11-2-4",
+      "k": "PB1-11-2-4-K5",
+      "vorne": "Was unterscheidet bei IPsec AH von ESP?",
+      "hinten": "AH sichert Absender und Unversehrtheit, verschlüsselt aber nicht. ESP verschlüsselt zusätzlich die Nutzdaten (Vertraulichkeit)."
+    },
+    {
+      "id": "PB1-11-2-4-K5-2",
+      "sp": "PB1-11-2-4",
+      "k": "PB1-11-2-4-K5",
+      "vorne": "Welches IPsec-Protokoll in welchem Modus nimmt man typischerweise für ein Site-to-Site-VPN?",
+      "hinten": "ESP im Tunnelmodus: Das ganze ursprüngliche Paket wird verschlüsselt und in ein neues Paket zwischen den Gateways verpackt."
     }
   ],
   "nicht_abgefragt": [],
@@ -1092,6 +1568,346 @@
       "id": "PB1-11-2-4-K4-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-11-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S323)"
+    },
+    {
+      "id": "PB1-11-1-1-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S323)"
+    },
+    {
+      "id": "PB1-11-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S322, buch:GS-3.4.4-S324)"
+    },
+    {
+      "id": "PB1-11-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S322, buch:GS-3.4.4-S324)"
+    },
+    {
+      "id": "PB1-11-1-1-K6-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S322, buch:GS-3.4.4-S324)"
+    },
+    {
+      "id": "PB1-11-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S341)"
+    },
+    {
+      "id": "PB1-11-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S341)"
+    },
+    {
+      "id": "PB1-11-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.3-S307)"
+    },
+    {
+      "id": "PB1-11-1-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.3-S307)"
+    },
+    {
+      "id": "PB1-11-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.6-S342, buch:GS-3.7.2-S371)"
+    },
+    {
+      "id": "PB1-11-1-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.6-S342, buch:GS-3.7.2-S371)"
+    },
+    {
+      "id": "PB1-11-1-1-K9-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.6-S342, buch:GS-3.7.2-S371)"
+    },
+    {
+      "id": "PB1-11-1-1-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.6-S343, buch:FS-4.3.1-S331)"
+    },
+    {
+      "id": "PB1-11-1-1-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.6-S343, buch:FS-4.3.1-S331)"
+    },
+    {
+      "id": "PB1-11-1-4-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S337, buch:FS-4.4.2-S377)"
+    },
+    {
+      "id": "PB1-11-1-4-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S337, buch:FS-4.4.2-S377)"
+    },
+    {
+      "id": "PB1-11-1-4-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S336, buch:FS-4.4.2-S376, buch:GS-3.8.3-S386, buch:GS-4.2-S438)"
+    },
+    {
+      "id": "PB1-11-1-4-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S336, buch:FS-4.4.2-S376, buch:GS-3.8.3-S386, buch:GS-4.2-S438)"
+    },
+    {
+      "id": "PB1-11-1-4-K2-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.2-S336, buch:FS-4.4.2-S376, buch:GS-3.8.3-S386, buch:GS-4.2-S438)"
+    },
+    {
+      "id": "PB1-11-1-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-1-4-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.4-S308)"
+    },
+    {
+      "id": "PB1-11-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.4-S308)"
+    },
+    {
+      "id": "PB1-11-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S54)"
+    },
+    {
+      "id": "PB1-11-1-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S54)"
+    },
+    {
+      "id": "PB1-11-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S329, buch:GS-3.3.4-S308)"
+    },
+    {
+      "id": "PB1-11-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S329, buch:GS-3.3.4-S308)"
+    },
+    {
+      "id": "PB1-11-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.4-S308)"
+    },
+    {
+      "id": "PB1-11-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.3.4-S308)"
+    },
+    {
+      "id": "PB1-11-1-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S324)"
+    },
+    {
+      "id": "PB1-11-1-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S324)"
+    },
+    {
+      "id": "PB1-11-1-2-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.4.4-S92)"
+    },
+    {
+      "id": "PB1-11-1-2-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.4.4-S92)"
+    },
+    {
+      "id": "PB1-11-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S349, buch:FS-4.3.4-S353, buch:GS-3.4.4-S327)"
+    },
+    {
+      "id": "PB1-11-1-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S349, buch:FS-4.3.4-S353, buch:GS-3.4.4-S327)"
+    },
+    {
+      "id": "PB1-11-1-3-K4-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S349, buch:FS-4.3.4-S353, buch:GS-3.4.4-S327)"
+    },
+    {
+      "id": "PB1-11-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S332, buch:FS-4.4.2-S375, buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S332, buch:FS-4.4.2-S375, buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-1-3-K5-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S332, buch:FS-4.4.2-S375, buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-2-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S312)"
+    },
+    {
+      "id": "PB1-11-2-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S312)"
+    },
+    {
+      "id": "PB1-11-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S312)"
+    },
+    {
+      "id": "PB1-11-2-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S312)"
+    },
+    {
+      "id": "PB1-11-2-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S395, buch:GS-3.2.2-S288)"
+    },
+    {
+      "id": "PB1-11-2-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S395, buch:GS-3.2.2-S288)"
+    },
+    {
+      "id": "PB1-11-2-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S398, buch:GS-3.7.3-S376)"
+    },
+    {
+      "id": "PB1-11-2-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S398, buch:GS-3.7.3-S376)"
+    },
+    {
+      "id": "PB1-11-2-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.3-S320)"
+    },
+    {
+      "id": "PB1-11-2-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.3-S364)"
+    },
+    {
+      "id": "PB1-11-2-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.3-S364)"
+    },
+    {
+      "id": "PB1-11-2-2-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.3-S375)"
+    },
+    {
+      "id": "PB1-11-2-2-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.3-S375)"
+    },
+    {
+      "id": "PB1-11-2-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.2.3-S322, buch:FS-4.4.2-S375, buch:FS-4.5.2-S392, buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-2-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.2.3-S322, buch:FS-4.4.2-S375, buch:FS-4.5.2-S392, buch:GS-3.8.3-S386)"
+    },
+    {
+      "id": "PB1-11-2-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.4.2-S375)"
+    },
+    {
+      "id": "PB1-11-2-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.4.2-S375)"
+    },
+    {
+      "id": "PB1-11-2-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.4.2-S378, buch:FS-4.5.2-S392)"
+    },
+    {
+      "id": "PB1-11-2-5-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.4.2-S378, buch:FS-4.5.2-S392)"
+    },
+    {
+      "id": "PB1-11-2-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S193)"
+    },
+    {
+      "id": "PB1-11-2-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S193)"
+    },
+    {
+      "id": "PB1-11-2-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S194, buch:FS-3.7.5-S281, buch:GS-5.8.6-S623)"
+    },
+    {
+      "id": "PB1-11-2-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S194, buch:FS-3.7.5-S281, buch:GS-5.8.6-S623)"
+    },
+    {
+      "id": "PB1-11-2-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.4-S355)"
+    },
+    {
+      "id": "PB1-11-2-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.4-S355)"
+    },
+    {
+      "id": "PB1-11-2-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.5-S357, buch:GS-2.4.7-S168)"
+    },
+    {
+      "id": "PB1-11-2-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.5-S357, buch:GS-2.4.7-S168)"
+    },
+    {
+      "id": "PB1-11-2-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S330)"
+    },
+    {
+      "id": "PB1-11-2-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S330)"
     }
   ]
 }

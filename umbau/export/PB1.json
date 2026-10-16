@@ -4,12 +4,12 @@
   "erzeugt_mit": "node tools/umbau/export-raum.mjs PB1",
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
-  "stichpunkte": 70,
-  "koennen": 400,
+  "stichpunkte": 72,
+  "koennen": 432,
   "quellen": {
    "PB1-1.json": "82c56b9a048ab3d1",
    "PB1-10.json": "2c0c631a89d08af3",
-   "PB1-11.json": "dda29aefbf56c507",
+   "PB1-11.json": "7a0fd68f11aa2567",
    "PB1-12.json": "fde12335a2b0504d",
    "PB1-2.json": "a5e68b3ca80496d7",
    "PB1-3.json": "dc16591c5dcfb68d",
@@ -824,6 +824,66 @@
      "id": "PB1-11-1-1-K4",
      "stufe": 2,
      "kurz": "die Aufgabe einer Firewall beschreiben und Paketfilter (Regeln nach Adressen und Ports) von zustandsorientierter Prüfung (merkt sich bestehende Verbindungen und lässt nur die zugehörigen Antworten durch) unterscheiden"
+    },
+    {
+     "id": "PB1-11-1-1-K5",
+     "stufe": 2,
+     "kurz": "Kapselung und Entkapselung im Schichtenmodell beschreiben: Beim Senden setzt jede Schicht ihren eigenen Kopf vor die Daten der Schicht darüber (Segment, dann Paket, dann Frame, bei dem Ethernet zusätzlich die Prüfsumme anhängt, zuletzt Bits auf dem Medium), beim Empfang entfernt jede Schicht ihren Kopf wieder und reicht den Inhalt nach oben weiter"
+    },
+    {
+     "id": "PB1-11-1-1-K6",
+     "stufe": 2,
+     "kurz": "für einen Webseitenaufruf zuordnen, welche Adressen auf jeder Schicht im Datenpaket stehen und bis zu welcher Schicht die Geräte unterwegs hineinschauen: Ports (zufälliger Quellport des Browsers, Zielport 443 bzw. 80), IP-Adressen von PC und Server, als Ziel-MAC-Adresse die des Routers, wenn der Server in einem anderen Netz liegt; der Switch liest nur den Ethernet-Kopf (Schicht 2), der Router zusätzlich den IP-Kopf (Schicht 3), erst der Empfänger packt alle Schichten aus"
+    },
+    {
+     "id": "PB1-11-1-1-K7",
+     "stufe": 2,
+     "kurz": "Netzwerkkomponenten nach der Schicht vergleichen, auf der sie arbeiten: Repeater und Hub auf Schicht 1 reichen Signale ungeprüft an alle Anschlüsse weiter, Bridge und Switch auf Schicht 2 trennen Kollisionsdomänen, weil sie gezielt nach MAC-Adresse weiterleiten, ein Router auf Schicht 3 verbindet Netze und begrenzt die Broadcast-Domäne, Proxy und Application Layer Gateway arbeiten auf der Anwendungsschicht"
+    },
+    {
+     "id": "PB1-11-1-1-K8",
+     "stufe": 2,
+     "kurz": "die Aufgaben der Felder eines Ethernet-Frames beschreiben: Die Präambel synchronisiert den Empfänger, das Typfeld gibt an, welches Protokoll in den Nutzdaten steckt (z. B. IPv4, IPv6 oder ARP), die Nutzdaten sind höchstens 1500 Byte groß (MTU), sodass größere Pakete nicht in einen Frame passen, und mit der Prüfsumme bemerkt der Empfänger Übertragungsfehler und verwirft den Frame"
+    },
+    {
+     "id": "PB1-11-1-1-K9",
+     "stufe": 2,
+     "kurz": "die Switching-Verfahren Cut-Through, Fragment-Free und Store-and-Forward danach vergleichen, wie viel vom Frame vor dem Weiterleiten gelesen wird: Cut-Through leitet nach der Ziel-MAC-Adresse sofort weiter (geringste Verzögerung, aber auch fehlerhafte Frames), Fragment-Free wartet die ersten 64 Byte ab (filtert Reste von Kollisionen), Store-and-Forward liest den ganzen Frame und prüft die Prüfsumme (verwirft fehlerhafte Frames, braucht dafür mehr Zeit und Pufferspeicher)"
+    },
+    {
+     "id": "PB1-11-1-1-K10",
+     "stufe": 2,
+     "kurz": "beschreiben, wie ein Router mit seiner Routingtabelle arbeitet und wie sie gefüllt wird: Er sucht den Eintrag für das Zielnetz und leitet das Paket über den zugehörigen Anschluss bzw. an den nächsten Router weiter, sonst über die Standardroute, und ohne passende Route verwirft er es mit einer Fehlermeldung an den Absender; bei statischem Routing sind die Einträge von Hand eingetragen (kleine, übersichtliche Netze), bei dynamischem Routing tauschen die Router sie per Routingprotokoll aus und weichen bei Ausfällen auf andere Wege aus (große Netze, Internet)"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-1-4",
+   "ordner": "PB1-11",
+   "block": "PB1-11-1",
+   "titel": "Firewall: Regelwerk, Prüftiefe und Einsatzort",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.02",
+    "AP2b.01.02.4"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-1-4-K1",
+     "stufe": 2,
+     "kurz": "beschreiben, wie eine Firewall ihr Regelwerk abarbeitet: Jedes Paket wird der Reihe nach mit den Regeln (Quelle, Ziel, Port, Protokoll, Richtung) verglichen, die erste passende Regel entscheidet über Durchlassen (ACCEPT), stilles Verwerfen (DROP) oder Ablehnen mit Rückmeldung (REJECT), und am Ende steht eine Standardregel, die alles nicht ausdrücklich Erlaubte sperrt"
+    },
+    {
+     "id": "PB1-11-1-4-K2",
+     "stufe": 2,
+     "kurz": "Firewalls nach ihrer Prüftiefe unterscheiden: Der Paketfilter liest nur Adressen und Ports (Schicht 3 und 4), die zustandsorientierte Firewall zusätzlich den Verbindungszustand, eine Next-Generation-Firewall prüft per Deep Packet Inspection auch die Nutzdaten bis zur Anwendungsschicht (verschlüsselten Verkehr nur, wenn sie ihn aufbricht und neu verschlüsselt), kennt die Anwendungen und bringt Angriffserkennung mit, wobei ein IDS Angriffsmuster nur meldet und ein IPS sie zusätzlich blockiert"
+    },
+    {
+     "id": "PB1-11-1-4-K3",
+     "stufe": 2,
+     "kurz": "eine Personal Firewall auf dem einzelnen Rechner von einer zentralen Netzwerk-Firewall am Übergang ins Internet unterscheiden: Die Personal Firewall schützt nur ihr Gerät, kennt das Programm hinter jeder Verbindung und wirkt auch gegen Angriffe aus dem eigenen Netz, die zentrale Firewall kontrolliert an einer Stelle den gesamten Verkehr zwischen Firmennetz und Außenwelt für alle Geräte; im Unternehmen arbeiten beide zusammen"
     }
    ]
   },
@@ -856,6 +916,36 @@
      "id": "PB1-11-1-2-K3",
      "stufe": 2,
      "kurz": "mögliche Ursachen einer Fehlermeldung wie HTTP 404 beschreiben: Seite oder Datei gelöscht oder verschoben, URL fehlerhaft angelegt, falsch verlinkt oder falsch eingegeben; davon abgrenzen, dass Server oder Namensauflösung nicht erreichbar sind"
+    },
+    {
+     "id": "PB1-11-1-2-K4",
+     "stufe": 2,
+     "kurz": "die Eigenschaften von IP erläutern: Es adressiert Netze und Rechner, jedes Paket wird einzeln anhand der Ziel-IP-Adresse weitergeleitet, es arbeitet unabhängig von der Übertragungstechnik darunter (Ethernet, WLAN, Glasfaser), ist verbindungslos und ohne Empfangsbestätigung, sodass verlorene oder vertauschte Pakete erst eine höhere Schicht wie TCP bemerkt und ausgleicht"
+    },
+    {
+     "id": "PB1-11-1-2-K5",
+     "stufe": 2,
+     "kurz": "beschreiben, wie TCP eine Verbindung auf- und abbaut: Beim Drei-Wege-Handshake schickt der Client ein SYN, der Server antwortet mit SYN-ACK, der Client bestätigt mit ACK; beendet wird mit FIN und Bestätigung von beiden Seiten; häufen sich im Monitoring SYN-Fehler, scheitert schon der Aufbau (z. B. Dienst gestoppt, Port gesperrt, Server überlastet), FIN-Fehler zeigen Verbindungen, die nicht sauber beendet werden"
+    },
+    {
+     "id": "PB1-11-1-2-K6",
+     "stufe": 2,
+     "kurz": "die Aufgabe von Ports und Sockets erläutern: Die Portnummer (16 Bit, Transportschicht) adressiert auf einem Rechner die Anwendung bzw. den Dienst, Server-Dienste lauschen auf festen Standardports, Clients nehmen meist zufällige hohe Ports; IP-Adresse und Port zusammen bilden einen Socket, und jede Verbindung ist durch zwei Sockets eindeutig festgelegt, sodass ein Server viele Dienste und Verbindungen gleichzeitig bedient"
+    },
+    {
+     "id": "PB1-11-1-2-K7",
+     "stufe": 2,
+     "kurz": "über Bestätigung und Nachsenden hinaus erläutern, wie TCP den Datenfluss regelt: Mit der Flusssteuerung meldet der Empfänger, wie viele Daten er gerade aufnehmen kann, mit der Staukontrolle drosselt der Sender sein Tempo, sobald Pakete verloren gehen; UDP verzichtet auf beides, hat dafür einen kleineren Kopf und kann Daten per Multicast an viele Empfänger zugleich schicken"
+    },
+    {
+     "id": "PB1-11-1-2-K8",
+     "stufe": 2,
+     "kurz": "das Anfrage-Antwort-Prinzip von HTTP erläutern: Der Client schickt eine Anfrage (Request) mit Methode, Pfad und Kopfzeilen, der Server antwortet (Response) mit Statuscode, Kopfzeilen und Inhalt; HTTP überträgt alles im Klartext, HTTPS ist dasselbe Protokoll in einer TLS-verschlüsselten Verbindung"
+    },
+    {
+     "id": "PB1-11-1-2-K9",
+     "stufe": 4,
+     "kurz": "für ein Formular die HTTP-Methode begründet auswählen: GET hängt die Daten als Parameter an die URL (sichtbar, landet in Verlauf, Lesezeichen und Server-Logs, in der Länge begrenzt, passend zum Suchen und Filtern), POST überträgt sie im Rumpf der Anfrage (auch große Datenmengen und Dateien, passend für Daten, die gespeichert oder verarbeitet werden, etwa Anmeldung oder Bestellung)"
     }
    ]
   },
@@ -888,6 +978,16 @@
      "id": "PB1-11-1-3-K3",
      "stufe": 2,
      "kurz": "die Aufgabe eines Proxys beschreiben: Er stellt Anfragen stellvertretend für die Clients und kann dabei filtern, zwischenspeichern und protokollieren"
+    },
+    {
+     "id": "PB1-11-1-3-K4",
+     "stufe": 2,
+     "kurz": "gängige DNS-Einträge ihrer Aufgabe zuordnen: A (Name zu IPv4-Adresse), AAAA (Name zu IPv6-Adresse, ein Dual-Stack-Rechner fragt beide ab), CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domain), NS (zuständiger Nameserver), TXT (freier Text, z. B. Nachweis des Domainbesitzes oder Absicherung des Mailversands) und PTR (Rückwärtsauflösung von der Adresse zum Namen, Reverse DNS)"
+    },
+    {
+     "id": "PB1-11-1-3-K5",
+     "stufe": 2,
+     "kurz": "Forward-Proxy und Reverse Proxy unterscheiden: Ein Forward-Proxy stellt die Anfragen der internen Clients in eigenem Namen und ordnet die Antworten wieder zu, sodass nach außen nur er sichtbar ist; ein Reverse Proxy steht vor den eigenen Servern, nimmt die Anfragen aus dem Internet entgegen, verteilt sie auf mehrere Server, verbirgt diese, kann filtern und übernimmt oft die TLS-Verschlüsselung, sodass das Zertifikat zentral am Proxy liegt und die Webserver entlastet werden"
     }
    ]
   },
@@ -933,6 +1033,16 @@
      "id": "PB1-11-2-1-K5",
      "stufe": 2,
      "kurz": "einen Netzwerkplan mit den Symbolen des Anhangs deuten: welche Geräte in welchem Teilnetz liegen, wie sie verbunden sind und zwischen welchen Netzen eine Firewall trennt"
+    },
+    {
+     "id": "PB1-11-2-1-K6",
+     "stufe": 4,
+     "kurz": "begründen, welches Übertragungsmedium in welchem Bereich der strukturierten Verkabelung üblich ist: Glasfaser im Primärbereich, weil sie große Entfernungen mit hoher Datenrate überbrückt und Gebäude ohne elektrische Verbindung koppelt, Glasfaser oder Kupfer im Sekundärbereich je nach Länge und Bedarf, Kupfer (Twisted Pair) im Tertiärbereich bis zur Dose, weil die Strecken kurz sind, Kupfer günstiger ist und die Endgeräte Kupferanschlüsse haben"
+    },
+    {
+     "id": "PB1-11-2-1-K7",
+     "stufe": 2,
+     "kurz": "erklären, warum die strukturierte Verkabelung die passive Verkabelung (fest verlegte Leitungen, Dosen, Patchfelder) von den aktiven Geräten in den Verteilern (Switches, Router) trennt und warum Querverbindungen zwischen den Verteilern die Ausfallsicherheit steigern: Die Leitungen bleiben viele Jahre liegen, während die Geräte unabhängig davon getauscht werden, und fällt eine Verbindung aus, läuft der Verkehr über einen anderen Weg"
     }
    ]
   },
@@ -972,6 +1082,60 @@
      "id": "PB1-11-2-2-K4",
      "stufe": 2,
      "kurz": "neben RADIUS (aus AP1) Kerberos als Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: einmalige Anmeldung bei einer zentralen Stelle, danach zeitlich begrenzte Tickets für die einzelnen Dienste"
+    },
+    {
+     "id": "PB1-11-2-2-K5",
+     "stufe": 2,
+     "kurz": "über die Aufgabe eines VLANs hinaus erklären, wie ein Switch den Verkehr einem VLAN zuordnet: Ein Port gehört entweder fest zu einem VLAN (das Endgerät sendet ungetaggt), oder die Frames tragen eine Markierung mit der VLAN-ID nach IEEE 802.1Q (Tag), mit der auf der Verbindung zwischen Switches (Trunk) Frames mehrerer VLANs über eine Leitung laufen; Verkehr zwischen zwei VLANs ist nur über einen Router oder Layer-3-Switch möglich (Inter-VLAN-Routing)"
+    },
+    {
+     "id": "PB1-11-2-2-K6",
+     "stufe": 4,
+     "kurz": "beurteilen, welche WLAN-Verschlüsselung eingesetzt wird: WEP und WPA gelten als gebrochen und scheiden aus, WPA2 mit AES ist verbreitet und mit langem Passwort noch ausreichend, WPA3 ist der aktuelle Standard und schützt mit für jede Sitzung neu ausgehandelten Schlüsseln auch mitgeschnittenen Verkehr, wenn das Passwort später bekannt wird; beide gibt es als Personal mit gemeinsamem Schlüssel (PSK) und als Enterprise mit Anmeldung je Benutzer über RADIUS, und ein Mischbetrieb WPA2/WPA3 bindet ältere Geräte an"
+    },
+    {
+     "id": "PB1-11-2-2-K7",
+     "stufe": 2,
+     "kurz": "die WLAN-Betriebsarten charakterisieren: Im Ad-hoc-Modus funken gleichberechtigte Geräte direkt miteinander ohne zentrale Stelle, im Infrastrukturmodus melden sich alle Geräte an einem Access Point an, der den Verkehr vermittelt, das WLAN mit dem kabelgebundenen Netz verbindet und die Anmeldung zentral regelt"
+    },
+    {
+     "id": "PB1-11-2-2-K8",
+     "stufe": 2,
+     "kurz": "das AAA-Prinzip eines RADIUS-Servers erklären: Authentifizierung stellt fest, wer sich anmeldet (Benutzername und Kennwort oder Zertifikat), Autorisierung legt fest, worauf der Benutzer danach zugreifen darf (z. B. welches VLAN er bekommt), Accounting zeichnet die Nutzung für Protokoll und Abrechnung auf; Access Points, Switches oder VPN-Gateways fragen dafür als RADIUS-Clients zentral beim Server an, etwa bei der WLAN-Anmeldung nach 802.1X"
+    },
+    {
+     "id": "PB1-11-2-2-K9",
+     "stufe": 4,
+     "kurz": "die Sicherheit bequemer WLAN-Anmeldeverfahren beurteilen: Ein QR-Code enthält SSID und Schlüssel im Klartext und ist nur so sicher wie der Ort, an dem er hängt; WPS koppelt ein Gerät per Tastendruck am Router oder per PIN, wobei sich die PIN durch Ausprobieren in kurzer Zeit knacken lässt, weshalb WPS meist abgeschaltet wird"
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2-5",
+   "ordner": "PB1-11",
+   "block": "PB1-11-2",
+   "titel": "Sicherheitskonzepte im Netz: DMZ, Segmentierung und Zero Trust",
+   "gebiete": [
+    "G.PB1.02"
+   ],
+   "bausteine": [
+    "AP2b.01.03.10"
+   ],
+   "koennen": [
+    {
+     "id": "PB1-11-2-5-K1",
+     "stufe": 2,
+     "kurz": "eine DMZ charakterisieren: Server, die aus dem Internet erreichbar sein müssen (z. B. Webserver, Mailserver, Shop), stehen in einem eigenen Netzsegment zwischen äußerer und innerer Firewall, sodass ein Angreifer nach einem Einbruch in einen dieser Server noch nicht im internen Netz ist, sondern erst die zweite Firewall überwinden muss; Firewalls verschiedener Hersteller verringern das Risiko, dass beide dieselbe Lücke haben, und ein Extranet öffnet ausgewählte Dienste nur für bestimmte Partner"
+    },
+    {
+     "id": "PB1-11-2-5-K2",
+     "stufe": 2,
+     "kurz": "ein Segmentierungskonzept charakterisieren: Systeme werden nach ihrem Schutzbedarf auf getrennte Zonen verteilt, jede Zone wird so streng geschützt wie ihr empfindlichstes System, Verkehr zwischen den Zonen läuft nur über Firewalls ohne Umgehungswege, und je kleiner die Zonen, desto weniger erreicht ein Angreifer nach einem Einbruch; Netze verschiedener Organisationen werden physisch getrennt, weil eine Trennung per VLAN auf gemeinsamen Switches dafür nicht genügt"
+    },
+    {
+     "id": "PB1-11-2-5-K3",
+     "stufe": 2,
+     "kurz": "das Zero-Trust-Prinzip vom klassischen Perimeterschutz unterscheiden: Der Perimeterschutz vertraut allem innerhalb des Firmennetzes, bei Zero Trust gilt dagegen kein Zugriff allein wegen seiner Herkunft als vertrauenswürdig, sondern jeder Zugriff auf Daten, Anwendungen und Dienste wird einzeln nach Identität, Gerätezustand und Richtlinie geprüft, das Netz ist fein segmentiert, und alle Datenflüsse werden überwacht"
     }
    ]
   },
@@ -1020,6 +1184,26 @@
      "id": "PB1-11-2-3-K5",
      "stufe": 2,
      "kurz": "die Anbindung von Blockspeicher beschreiben: iSCSI über das normale Ethernet, Fibre Channel über ein eigenes, schnelles Speichernetz"
+    },
+    {
+     "id": "PB1-11-2-3-K6",
+     "stufe": 2,
+     "kurz": "beschreiben, wie eine Anwendung über eine standardisierte Datenbankschnittstelle wie ODBC (allgemein) oder JDBC (für Java) auf eine Datenbank zugreift: Das Programm ruft nur die einheitlichen Funktionen der Schnittstelle auf, ein Treiber des jeweiligen Datenbanksystems übersetzt sie in dessen eigenes Protokoll, sodass ein Wechsel des Datenbanksystems vor allem einen anderen Treiber und andere Verbindungsdaten erfordert"
+    },
+    {
+     "id": "PB1-11-2-3-K7",
+     "stufe": 2,
+     "kurz": "den Ablauf eines Datenbankzugriffs aus einem Programm beschreiben: Verbindung mit Adresse, Port, Datenbankname, Benutzer und Passwort öffnen, die SQL-Anweisung an die Datenbank schicken (Benutzereingaben als Parameter einer vorbereiteten Anweisung), das Ergebnis verarbeiten, Änderungen mit Commit bestätigen und die Verbindung in jedem Fall wieder schließen, auch wenn ein Fehler aufgetreten ist"
+    },
+    {
+     "id": "PB1-11-2-3-K8",
+     "stufe": 4,
+     "kurz": "ein NAS für einen Einsatz nach Kriterien auswählen: Kapazität und Zahl der Laufwerkschächte, RAID mit Tausch defekter Platten im laufenden Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (mehrere Ports, per Link-Aggregation gebündelt), Verschlüsselung, Snapshots im Dateisystem und ein redundantes Netzteil"
+    },
+    {
+     "id": "PB1-11-2-3-K9",
+     "stufe": 4,
+     "kurz": "beurteilen, ob für einen Einsatz NAS, SAN oder DAS passt: Das NAS stellt Dateien über das vorhandene Ethernet-LAN bereit (einfach und günstig, belastet aber das LAN), das SAN gibt den Servern über ein eigenes schnelles Speichernetz Blockspeicher (hohe Leistung für viele Server, aber teuer und aufwendig), das DAS hängt direkt an einem einzigen Server (schnell und günstig, aber nur dieser Server hat Zugriff)"
     }
    ]
   },
@@ -1058,6 +1242,11 @@
      "id": "PB1-11-2-4-K4",
      "stufe": 3,
      "kurz": "eine VPN-Verbindung zwischen zwei Standorten einrichten: Gateways und ihre Adressen, zu verbindende Netze, Authentifizierung mit Pre-Shared Key oder Zertifikat, Verschlüsselungsverfahren festlegen"
+    },
+    {
+     "id": "PB1-11-2-4-K5",
+     "stufe": 2,
+     "kurz": "bei IPsec die Protokolle AH und ESP unterscheiden: AH (Authentication Header) sichert die Echtheit des Absenders und die Unversehrtheit des Pakets, verschlüsselt aber nicht, ESP (Encapsulating Security Payload) verschlüsselt zusätzlich die Nutzdaten und sorgt so für Vertraulichkeit; für ein VPN wird deshalb ESP eingesetzt"
     }
    ]
   },
