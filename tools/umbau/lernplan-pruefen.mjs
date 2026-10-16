@@ -16,9 +16,11 @@
 //   ALT       AP1: jede alte Können-Aussage des Ordners ist einsortiert; alte IDs bleiben erhalten, keine ID wird neu vergeben
 //             PB1 (P33): neue IDs; alt_neu sortiert alte AP2-Aussagen ein (verschoben, angepasst, gestrichen, PB2),
 //             Vollständigkeit über alle Ordner prüft raum-pruefen.mjs
-//   E2/T7     (ab PB1) Bausteine früherer Räume nur mit baut_auf auf einen Stichpunkt des Exports; eine Können-Aussage,
-//             die nur importierte Bausteine betrifft, muss tiefer gehen als der frühere Raum (nicht doppelt) –
-//             außer eine Teilaufgabe dieses Raums belegt sie (neue Seite des Themas, E2 „neu oder tiefer“)
+//   E2/T7     (ab PB1) Bausteine früherer Räume nur mit baut_auf auf einen Stichpunkt des Exports (E2).
+//             P36 (16.10.2026): Eine Können-Aussage, die nur importierte Bausteine betrifft, braucht `neu`
+//             ({ gegenueber: [baut_auf-ID], was }) – sonst ist sie doppelt; ohne Beleg dieses Raums muss sie zudem
+//             tiefer gehen als der frühere Raum. Ein importierter Baustein steht nur in `bausteine`, wenn eine
+//             Aussage mit `neu` ihn betrifft; sonst genügt baut_auf.
 //   R3        Hinweis-Abgleich: jedes Thema hat einen Ring, Hinweisquellen beschrieben, Verweis passt zum Ring
 //             (Ring „Ordner“: Thema wohnt in einem anderen AP1-Ordner oder einem späteren Raum)
 //   R4        Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage
@@ -68,6 +70,16 @@ const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
 // Alltagswörter, die als Prüfungsoperator nur in fester Wendung vorkommen (v1.6): nicht für die F1-Heuristik
 for (const w of ['bringen', 'finden', 'schreiben', 'einfügen']) delete opStufe[w];
 
+/** Fach-Bausteine einer Können-Aussage: aus katalog-Herkunft und aus den Bausteinen ihrer Belege (ohne Anhänge) */
+const fachIds = (k) => {
+  const ids = new Set();
+  for (const h of k.herkunft ?? []) {
+    if (h.startsWith('katalog:')) ids.add(h.slice(8));
+    if (h.startsWith('beleg:')) for (const x of zuordnung[h.slice(6)]?.bausteine ?? []) ids.add(x);
+  }
+  return [...ids].filter((x) => !x.startsWith('ANH.'));
+};
+
 // ---------- Struktur ----------
 const ob = lp.oberblock;
 if (ob.id !== ORDNER) F(`Oberblock-ID ${ob.id} passt nicht zur Datei ${ORDNER}`);
@@ -91,6 +103,9 @@ for (const tb of lp.themenbloecke) {
     for (const x of sp.bausteine.filter((y) => R.importierbar(y.id))) {
       const dort = Object.values(exporte).flatMap((e) => e.erreicht[x.id]?.stichpunkte ?? []);
       if (!(sp.baut_auf ?? []).some((ba) => dort.includes(ba))) F(`E2: ${sp.id}: importierter Baustein ${x.id} ohne baut_auf auf einen Stichpunkt, der ihn abdeckt (${dort.join(', ') || 'keiner im Export'})`);
+      // T7 (P36): Ein importierter Baustein steht nur in `bausteine`, wenn eine Aussage hier zu ihm etwas Neues bringt
+      const neuHier = sp.koennen.some((k) => k.neu?.was && fachIds(k).includes(x.id));
+      if (!neuHier) F(`T7: ${sp.id}: importierter Baustein ${x.id} ohne Aussage mit „neu“ – aus bausteine entfernen, baut_auf genügt (P36)`);
     }
     for (const ta of sp.teilaufgaben) {
       if (!teilaufgabe.has(ta)) { F(`${sp.id}: Teilaufgabe ${ta} unbekannt`); continue; }
@@ -116,19 +131,18 @@ for (const tb of lp.themenbloecke) {
           if (!REGELN.has(wert)) F(`T3: ${k.id}: unbekannte Regel ${wert}`);
         } else F(`T3: ${k.id}: unbekannte Herkunftsart „${h}"`);
       }
-      // T7 (E2): betrifft die Aussage nur importierte Bausteine, muss sie tiefer gehen als der frühere Raum
+      // T7 (E2, P36): Betrifft die Aussage nur importierte Bausteine, wiederholt sie womöglich einen früheren Raum.
+      // Sie bleibt nur, wenn sie mit `neu` sagt, was gegenüber dem importierten Stichpunkt neu ist
+      // ({ gegenueber: [<baut_auf-ID>], was: "<das Neue>" }); sonst streichen und per baut_auf importieren.
+      // Ohne Beleg aus diesem Raum muss sie außerdem tiefer gehen als der frühere Raum.
       if (R.frueher.length) {
-        const ids = new Set();
-        for (const h of k.herkunft ?? []) {
-          if (h.startsWith('katalog:')) ids.add(h.slice(8));
-          if (h.startsWith('beleg:')) for (const x of zuordnung[h.slice(6)]?.bausteine ?? []) ids.add(x);
-        }
-        const fach = [...ids].filter((x) => !x.startsWith('ANH.'));
-        // Ausnahme: Eine Teilaufgabe dieses Raums belegt die Aussage – dann ist sie neu (andere Seite des Themas), nicht doppelt
-        const belegHier = (k.herkunft ?? []).some((h) => h.startsWith('beleg:'));
-        if (fach.length && !belegHier && fach.every((x) => R.importierbar(x))) {
-          const dort = Math.min(...fach.map(erreichtFrueher)); // neu, sobald ein Baustein dort noch nicht so tief erreicht ist
-          if (k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
+        const fach = fachIds(k);
+        if (fach.length && fach.every((x) => R.importierbar(x))) {
+          if (!k.neu?.was || !k.neu?.gegenueber?.length) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) ohne Angabe „neu“ – streichen und per baut_auf importieren oder mit neu.gegenueber/neu.was begründen (P36)`);
+          for (const g of k.neu?.gegenueber ?? []) if (!(sp.baut_auf ?? []).includes(g)) F(`T7: ${k.id}: neu.gegenueber ${g} steht nicht in baut_auf von ${sp.id}`);
+          const belegHier = (k.herkunft ?? []).some((h) => h.startsWith('beleg:'));
+          const dort = Math.min(...fach.map(erreichtFrueher));
+          if (!belegHier && k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
         }
       }
       // F1-Heuristik: passt die Stufe zu einem Verb im Text?
