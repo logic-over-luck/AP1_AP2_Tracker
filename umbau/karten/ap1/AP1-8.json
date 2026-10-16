@@ -1524,20 +1524,6 @@
       "hinten": "Eine Hashtabelle mit der Kundennummer als Schlüssel: schnelle Suche, dafür mehr Speicherbedarf."
     },
     {
-      "id": "AP1-8-2-5-K3-1",
-      "sp": "AP1-8-2-5",
-      "k": "AP1-8-2-5-K3",
-      "vorne": "Warum kann ein Array jedes Element über den Index gleich schnell erreichen?",
-      "hinten": "Die Elemente sind gleich groß und liegen lückenlos hintereinander. Die Adresse ergibt sich direkt: Startadresse + Index × Elementgröße."
-    },
-    {
-      "id": "AP1-8-2-5-K3-2",
-      "sp": "AP1-8-2-5",
-      "k": "AP1-8-2-5-K3",
-      "vorne": "Ein Array mit 4-Byte-Werten beginnt bei Adresse 2000. Wo liegt das Element mit Index 3?",
-      "hinten": "2000 + 3 × 4 = 2012."
-    },
-    {
       "id": "AP1-8-2-5-K4-1",
       "sp": "AP1-8-2-5",
       "k": "AP1-8-2-5-K4",
@@ -1564,20 +1550,6 @@
       "k": "AP1-8-2-5-K5",
       "vorne": "Warum sollte die innere Schleife über ein zweidimensionales Array bis zur Länge der jeweiligen Zeile laufen?",
       "hinten": "Jede Zeile hat ihre eigene Länge. Mit einer festen Grenze würde bei kürzeren Zeilen über das Ende hinaus zugegriffen."
-    },
-    {
-      "id": "AP1-8-2-5-K6-1",
-      "sp": "AP1-8-2-5",
-      "k": "AP1-8-2-5-K6",
-      "vorne": "Woraus besteht ein Knoten einer einfach verketteten Liste?",
-      "hinten": "Aus einem Wert und einem Verweis auf den nächsten Knoten; der letzte Knoten verweist auf null."
-    },
-    {
-      "id": "AP1-8-2-5-K6-2",
-      "sp": "AP1-8-2-5",
-      "k": "AP1-8-2-5-K6",
-      "vorne": "Warum ist bei einer verketteten Liste das Einfügen schnell, der Zugriff auf das 500. Element aber langsam?",
-      "hinten": "Einfügen: nur Verweise umhängen. Zugriff: Man muss vom Kopf aus 499 Knoten durchlaufen, eine Adressrechnung wie beim Array gibt es nicht."
     },
     {
       "id": "AP1-8-2-5-K7-1",
@@ -2879,16 +2851,6 @@
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S137)"
     },
     {
-      "id": "AP1-8-2-5-K3-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S139)"
-    },
-    {
-      "id": "AP1-8-2-5-K3-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S139)"
-    },
-    {
       "id": "AP1-8-2-5-K4-1",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140, buch:GS-5.7.6-S579, buch:FS2-2.2.4-S153)"
@@ -2907,16 +2869,6 @@
       "id": "AP1-8-2-5-K5-2",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.4-S154, buch:FS2-2.2.3-S149)"
-    },
-    {
-      "id": "AP1-8-2-5-K6-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140)"
-    },
-    {
-      "id": "AP1-8-2-5-K6-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140)"
     },
     {
       "id": "AP1-8-2-5-K7-1",

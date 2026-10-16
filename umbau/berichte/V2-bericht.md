@@ -12,7 +12,7 @@ Auftrag des Projektinhabers vom 16.10.2026 (D1–D11), nachgeschärft nach dem �
 | 4 Karten und Erklärungen | ✓ je Ordner zusammen mit Schritt 3 (jede neue Aussage mit `kurz`, Erklärung und Karte) |
 | 5 App | ✓ Build, Browser-Check aller vier Räume auf 1400 px und 390 px |
 | 6 Unabhängige Prüfung | ✓ sechs Prüfer, 173 Funde, umgesetzt; Berichte `V2-<Raum>-pruefer.md` |
-| 7 Abschluss | ✓ UMBAU.md (Checkliste, Parkplatz P57–P71), dieser Bericht |
+| 7 Abschluss | ✓ UMBAU.md (Checkliste, Parkplatz P57–P71 entschieden), dieser Bericht |
 
 **Wichtig für eine Folgesitzung:** Die Kernpunkt-Listen liegen nur lokal unter `quellen/lehrbuch/kern/` (D9). Im Repo stehen davon nur Kapitelnummern, Seiten, Stichpunkt-Zuordnung und Zählungen (`umbau/zuordnung/buch.json`). Geht der lokale Stand verloren, müssen die Listen mit `quellen.zip` neu erzeugt werden (Auftrag und Werkzeuge siehe „Vorgehen Schritt 2“).
 
@@ -189,8 +189,20 @@ Herkunft (22), Kür statt Pflicht und umgekehrt (22). Wörtliche Übernahmen: 2 
 | WISO | 70 | 325 | 388 | 67 | 49 |
 | **gesamt** | **292** | **1.287** | **1.812** | **579** | **492** |
 
-Offene Grundsatzfragen: UMBAU.md Parkplatz P58–P70 (entschieden: P57 Operator über Bausteinstufe, P68 AP1-Kür bleibt, P69 zwei Aussagen berichtigt; offen: LF10c/RK4, G6, RK2-Tiefe, Rechtsstand,
-Normnummern, Struktur PB1).
+Parkplatz P57–P70 ist entschieden (Projektinhaber, 16.10.2026; Einzelheiten UMBAU.md). Stand danach:
+
+| Raum | Aussagen | mit Buch-Herkunft | Kür |
+|---|---|---|---|
+| AP1 | 840 | 262 | 259 |
+| PB1 | 464 | 220 | 168 |
+| PB2 | 117 | 27 | 19 |
+| WISO | 384 | 63 | 53 |
+| **gesamt** | **1.805** | **572** | **499** |
+
+Sieben reine Buch-Aussagen wurden Kür (P59: WISO-2-1-4-K5, WISO-2-2-4-K5, -K6, WISO-2-4-3-K4; P61: AP1-8-2-5-K3, -K6;
+P64: PB1-1-2-4-K4), AP1-7-2-1-K10 beschreibt jetzt das Sicherheitskonzept (P66), zwei bestehende Aussagen sind berichtigt
+(P69), Rechtsstand-Hinweise in drei Erklärungen (P66, P67). Neue Prüfung P57 in `lernplan-pruefen.mjs`, Werkzeug
+`tools/umbau/v2-pflicht-zu-kuer.mjs`.
 
 ## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, fertig)
 

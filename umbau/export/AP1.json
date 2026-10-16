@@ -5,7 +5,7 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 124,
-  "koennen": 842,
+  "koennen": 840,
   "quellen": {
    "AP1-1.json": "f7d43baa0712500e",
    "AP1-2.json": "7ecf98f6145d2629",
@@ -13,8 +13,8 @@
    "AP1-4.json": "df392630d6723a5f",
    "AP1-5.json": "eb8a22e05168a396",
    "AP1-6.json": "0fd2ca06b8d15e89",
-   "AP1-7.json": "dc11126a3cb84397",
-   "AP1-8.json": "cef7ed8355ebd115"
+   "AP1-7.json": "b66365838d4b11b2",
+   "AP1-8.json": "007baaae359681ba"
   }
  },
  "stichpunkte": [
@@ -4675,7 +4675,7 @@
     {
      "id": "AP1-7-2-1-K10",
      "stufe": 2,
-     "kurz": "beschreiben, was in der Strukturanalyse erfasst wird: die Geschäftsprozesse, Anwendungen, IT-Systeme (auch virtuelle), Räume und Kommunikationsverbindungen des betrachteten Bereichs, dazu ein Netzplan und welche Anwendung auf welchem System läuft"
+     "kurz": "beschreiben, was ein Sicherheitskonzept nach IT-Grundschutz enthält: für einen abgegrenzten Bereich die in der Strukturanalyse erfassten Geschäftsprozesse, Anwendungen, IT-Systeme (auch virtuelle), Räume und Verbindungen samt Netzplan, ihren Schutzbedarf, die zugeordneten Bausteine und die daraus abgeleiteten Maßnahmen"
     }
    ]
   },
@@ -5652,11 +5652,6 @@
      "kurz": "erklären, woran man die Eignung einer Datenstruktur misst: am Speicherbedarf und an der Geschwindigkeit der Operationen, die das Programm oft braucht, weil keine Struktur alle Operationen gleich gut beherrscht"
     },
     {
-     "id": "AP1-8-2-5-K3",
-     "stufe": 2,
-     "kurz": "erklären, warum der Zugriff auf ein Array-Element über den Index so schnell ist: Alle Elemente haben denselben Datentyp und liegen lückenlos hintereinander, sodass sich die Adresse jedes Elements direkt aus Startadresse + Index × Elementgröße ergibt"
-    },
-    {
      "id": "AP1-8-2-5-K4",
      "stufe": 2,
      "kurz": "Stärken und Schwächen eines Arrays gegenüber einer dynamischen Liste beschreiben: Das Array bietet schnellen Zugriff über den Index, hat aber eine beim Anlegen festgelegte Größe, verschwendet zu groß angelegt Speicher und macht Einfügen und Löschen aufwendig; eine dynamische Liste wächst und schrumpft dagegen zur Laufzeit"
@@ -5665,11 +5660,6 @@
      "id": "AP1-8-2-5-K5",
      "stufe": 2,
      "kurz": "erklären, dass ein zweidimensionales Array ein Array von Zeilen ist: Die Länge des äußeren Arrays ist die Anzahl der Zeilen, jede Zeile hat ihre eigene Länge, die auch verschieden sein kann, deshalb läuft eine innere Schleife bis zur Länge der jeweiligen Zeile"
-    },
-    {
-     "id": "AP1-8-2-5-K6",
-     "stufe": 2,
-     "kurz": "den Aufbau einer einfach verketteten Liste erklären: Jeder Knoten enthält einen Wert und einen Verweis auf den nächsten Knoten, ein Kopfverweis zeigt auf den ersten und der letzte verweist auf nichts; Einfügen geht schnell durch Umhängen von Verweisen, der Zugriff auf eine bestimmte Position erfordert aber das Durchlaufen ab dem Anfang"
     },
     {
      "id": "AP1-8-2-5-K7",
@@ -7219,7 +7209,7 @@
    ]
   },
   "AP1.06.03": {
-   "stufe": 1,
+   "stufe": 2,
    "stichpunkte": [
     "AP1-7-2-1"
    ]

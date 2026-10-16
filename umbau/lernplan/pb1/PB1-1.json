@@ -960,15 +960,6 @@
         "katalog:AP2b.03.01.6",
         "katalog:AP2b.03.01.7"
        ]
-      },
-      {
-       "id": "PB1-1-2-4-K4",
-       "text": "Du kannst erklären, wie sich die ISO/IEC 25010 von der älteren ISO/IEC 9126 unterscheidet: Kompatibilität (Zusammenarbeit und Datenaustausch mit anderen Systemen) und Sicherheit sind eigene Hauptmerkmale geworden, Funktionalität heißt funktionale Eignung und Effizienz Leistungseffizienz; so kommt die Norm auf acht statt sechs Hauptmerkmale.",
-       "kurz": "ISO/IEC 25010 gegenüber ISO/IEC 9126",
-       "stufe": 2,
-       "herkunft": [
-        "buch:GS-2.3.1-S143"
-       ]
       }
      ],
      "baut_auf": [
@@ -1008,6 +999,14 @@
         "buch:FS2-4.2.1"
        ],
        "grund": "RK2: Unterscheidung intern/extern nennt kein Baustein"
+      },
+      {
+       "text": "Die ISO/IEC 25010 löst die ISO/IEC 9126 ab: Kompatibilität und Sicherheit sind eigene Hauptmerkmale, Funktionalität heißt funktionale Eignung, Effizienz Leistungseffizienz – acht statt sechs Merkmale.",
+       "kurz": "ISO/IEC 25010 gegenüber 9126",
+       "quellen": [
+        "buch:GS-2.3.1"
+       ],
+       "grund": "P64 (Projektinhaber, 16.10.2026): Vergleich zweier Normfassungen ist Normgeschichte, kein Prüfungsstoff (G4); der Katalog nennt die Merkmale nach 9126"
       }
      ],
      "hinweis": "Das Lehrbuch ordnet die Untermerkmale noch nach ISO/IEC 9126 (Sicherheit unter Funktionalität); in der ISO/IEC 25010 ist Sicherheit ein eigenes Hauptmerkmal."
@@ -1598,11 +1597,11 @@
      "quellen": [
       "buch:GS-2.3.1"
      ],
-     "ring": "Kern",
+     "ring": "Kür",
      "wo": [
-      "PB1-1-2-4-K4"
+      "PB1-1-2-4"
      ],
-     "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung PB1-a Nr. 31: bisher Kür, jetzt Pflicht"
+     "notiz": "Regelwerk v2.x, D8/RK1; V2-Prüfung PB1-a Nr. 31: bisher Kür, jetzt Pflicht; PB1-1-2-4-K4 ist Kür (P64 (Projektinhaber, 16.10.2026): Vergleich zweier Normfassungen ist Normgeschichte, kein Prüfungsstoff (G4); der Katalog nennt die Merkmale nach 9126)"
     }
    ]
   },
@@ -1677,8 +1676,7 @@
      "PB1-1-2-3-K6",
      "PB1-1-2-3-K7",
      "PB1-1-2-3-K8",
-     "PB1-1-2-3-K9",
-     "PB1-1-2-4-K4"
+     "PB1-1-2-3-K9"
     ],
     "neue_stichpunkte": [],
     "d6": [
@@ -1700,6 +1698,7 @@
      "PB1-1-2-3",
      "PB1-1-2-3",
      "PB1-1-2-3",
+     "PB1-1-2-4",
      "PB1-1-2-4",
      "PB1-1-2-4",
      "PB1-1-2-4"
@@ -1724,6 +1723,13 @@
       "sp": "PB1-1-2-4",
       "text": "Die ISO/IEC 25010 in der Fassung von 2011 nennt acht Hauptmerkmale: funktionale Eignung, Leistungseffizienz, Kompatibilität, Benutzbarkeit, Zuverlässigkeit, Sicherheit, Wartbarkeit und Übertragbarkeit; gegenüber der ISO/IEC 9126 sind Kompatibilität und Sicherheit eigene Merkmale geworden.",
       "grund": "jetzt Pflicht: PB1-1-2-4-K4, V2-Prüfung PB1-a Nr. 31"
+     }
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "PB1-1-2-4-K4",
+      "text": "Du kannst erklären, wie sich die ISO/IEC 25010 von der älteren ISO/IEC 9126 unterscheidet: Kompatibilität (Zusammenarbeit und Datenaustausch mit anderen Systemen) und Sicherheit sind eigene Hauptmerkmale geworden, Funktionalität heißt funktionale Eignung und Effizienz Leistungseffizienz; so kommt die Norm auf acht statt sechs Hauptmerkmale.",
+      "grund": "P64 (Projektinhaber, 16.10.2026): Vergleich zweier Normfassungen ist Normgeschichte, kein Prüfungsstoff (G4); der Katalog nennt die Merkmale nach 9126"
      }
     ]
    }

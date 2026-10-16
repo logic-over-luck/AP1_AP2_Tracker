@@ -85,7 +85,10 @@ Teilaufgaben: 2025S-WISO-A4, 2023S-WISO-A26, 2025S-WISO-A5, 2025S-WISO-A6, 2025W
 | K2 | Du kannst eine beschriebene wirtschaftliche Lage anhand von Wachstum des Bruttoinlandsprodukts, Arbeitslosenquote und Inflationsrate einer Konjunkturphase zuordnen, zum Beispiel schrumpfendes BIP und steigende Arbeitslosigkeit dem Abschwung, solange der Tiefpunkt noch nicht erreicht ist. _(vorgegeben: Kennzahlen in einer Tabelle im Aufgabentext)_ | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A4 |
 | K3 | Du kannst typische Merkmale einer Rezession erkennen und von denen eines Aufschwungs unterscheiden: Konsumnachfrage geht zurück, Lagerbestände steigen, Investitionen, Kapazitätsauslastung und Beschäftigung sinken. | 2 | katalog:ZB.wiso-konjunktur, beleg:2023S-WISO-A26, beleg:2025S-WISO-A5 |
 | K4 | Du kannst Maßnahmen unterscheiden, die die Konjunktur beleben (höhere staatliche Investitionen, Steuersenkungen; geldpolitisch niedrigere Leitzinsen, über die die Europäische Zentralbank entscheidet, nicht der Staat) oder dämpfen (Steuererhöhungen, Kürzung staatlicher Leistungen; höhere Leitzinsen). | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A6, beleg:2025W-WISO-A5 |
-| K5 | Du kannst saisonale Schwankungen (wiederkehrend im Jahreslauf, etwa mehr Notebookverkäufe vor Weihnachten und zum Schulbeginn), strukturelle Veränderungen (dauerhafte Verschiebungen durch neue Technik, Gesetze oder veränderte Gewohnheiten, etwa Cloud-Dienste statt eigener Server) und konjunkturelle Schwankungen (mehrjährige Wellen der gesamtwirtschaftlichen Auslastung) an Beispielen unterscheiden. | 2 | buch:GS-1.4.2-S105 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Neben konjunkturellen Wellen über mehrere Jahre gibt es saisonale Schwankungen im Jahreslauf (z. B. Notebooks vor Weihnachten) und strukturelle Veränderungen, die dauerhaft bleiben (z. B. Cloud statt eigener Server). _(buch:GS-1.4.2)_
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Konjunktur steht nicht im Katalog, kam aber in drei der acht Prüfungen vor. Real- und Nominaleinkommen bei steigenden Preisen (2023S-WISO-A9) stehen in WISO-1-6-1-K6.
 
@@ -176,8 +179,11 @@ Teilaufgaben: 2023W-WISO-A5, 2022W-WISO-A24, 2025W-WISO-A18, 2024S-WISO-A15, 202
 | K2 | Du kannst deklaratorische und konstitutive Eintragung unterscheiden: Der Ist-Kaufmann (Gewerbe, das eine kaufmännische Einrichtung braucht) ist schon vor der Eintragung Kaufmann, die Eintragung bestätigt das nur; eine GmbH oder AG entsteht erst mit der Eintragung. | 2 | katalog:ZB.wiso-kaufmann, beleg:2022W-WISO-A24, beleg:2025W-WISO-A18 |
 | K3 | Du kannst einen Auszug aus dem Handelsregister von anderen Registern wie Grundbuch oder Vereinsregister unterscheiden und ihm Firma, Sitz, Stamm- oder Grundkapital, Gesellschafter und Prokura entnehmen. _(vorgegeben: Registerauszug im Aufgabentext)_ | 2 | katalog:ZB.wiso-kaufmann, beleg:2024S-WISO-A15 |
 | K4 | Du kannst die Firma erklären: der Name, unter dem ein Kaufmann seine Geschäfte betreibt; sie muss die Rechtsform nennen (also „EcoTech Services GmbH“, nicht nur „EcoTech Services“) und sich von anderen Firmen am selben Ort deutlich unterscheiden. | 2 | katalog:ZB.wiso-kaufmann, beleg:2025S-WISO-A21, beleg:2025W-WISO-A19 |
-| K5 | Du kannst Personen-, Sach- und Fantasiefirma unterscheiden: Die Personenfirma enthält den Namen eines Inhabers oder Gesellschafters, die Sachfirma den Gegenstand des Unternehmens, die Fantasiefirma einen frei erfundenen Namen; Mischformen sind üblich, und ein nicht eingetragener Kleingewerbetreibender führt keine Firma, sondern tritt mit Vor- und Nachnamen auf, höchstens ergänzt um eine Geschäftsbezeichnung. | 2 | buch:GS-1.3.4-S75 |
-| K6 | Du kannst die Grundsätze der Firmenwahrheit und der Firmenbeständigkeit erklären: Die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen, und bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden. | 2 | buch:GS-1.3.4-S75 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Arten der Firma: Personenfirma (Name des Inhabers), Sachfirma (Gegenstand des Unternehmens), Fantasiefirma (erfundener Name), oft gemischt; ein nicht eingetragener Kleingewerbetreibender hat keine Firma. _(buch:GS-1.3.4)_
+- Firmenwahrheit: Die Firma darf nicht über das Geschäft täuschen. Firmenbeständigkeit: Bei einem Inhaberwechsel darf die alte Firma mit Zustimmung weitergeführt werden. _(buch:GS-1.3.4)_
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Kaufmann und Handelsregister stehen nicht im Katalog, kamen aber in fünf Prüfungen vor. Prokura und ihre Eintragung ins Handelsregister stehen in AP1-2-4-3.
 
@@ -294,7 +300,10 @@ Teilaufgaben: 2025S-WISO-A3
 | K1 | Du kannst das Maximalprinzip erklären: Mit gegebenen Mitteln einen möglichst großen Erfolg erzielen, zum Beispiel mit gleichem Personal mehr Umsatz. | 2 | katalog:ZB.wiso-oekonomisches-prinzip |
 | K2 | Du kannst das Minimalprinzip erklären: Einen vorgegebenen Erfolg mit möglichst geringen Mitteln erreichen, zum Beispiel gleiche Umschlagmenge mit weniger Beschäftigten. | 2 | katalog:ZB.wiso-oekonomisches-prinzip |
 | K3 | Du kannst an einem beschriebenen Fall unterscheiden, ob nach dem Maximal- oder dem Minimalprinzip gehandelt wurde oder nach keinem, wenn Mitteleinsatz und Ergebnis zugleich steigen. | 2 | katalog:ZB.wiso-oekonomisches-prinzip, beleg:2025S-WISO-A3 |
-| K4 | Du kannst das Optimumprinzip erklären: Sind Mitteleinsatz und Ergebnis beide veränderlich, wählt man die Kombination mit dem günstigsten Verhältnis von Ergebnis zu Einsatz, zum Beispiel beim Speicherkauf das Angebot mit den meisten Terabyte je Euro, auch wenn es weder das billigste noch das größte ist. | 2 | buch:GS-1.3.6-S91 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Optimumprinzip: Sind Einsatz und Ergebnis beide offen, wählt man das günstigste Verhältnis, etwa das Speicherangebot mit den meisten Terabyte je Euro. _(buch:GS-1.3.6)_
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Das ökonomische Prinzip steht nicht im Katalog, kam aber 2025S vor; es gehört zur Wirtschaftlichkeit (WISO.02.05.2). Das Lehrbuch nennt beim Optimumprinzip das Angebot mit dem niedrigeren Wert Output/Input als das bessere; richtig ist das Angebot mit dem höheren Wert Output/Input (also mit dem niedrigeren Einsatz je Leistungseinheit).
 
@@ -401,11 +410,11 @@ _Hinweis:_ Handelsregister beim Amtsgericht: WISO-2-2-4-K1; Gewerbeaufsicht und 
 
 ## Alt → neu
 
-Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 32 neu.
+Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 28 neu.
 
 Stichpunkte: 14 alt, 16 neu (WISO-2-1-4, WISO-2-2-4, WISO-2-2-5, WISO-2-2-6, WISO-2-4-3).
 
-Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-1-K7, WISO-2-1-1-K8, WISO-2-1-1-K9, WISO-2-1-1-K10, WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-1-4-K5, WISO-2-2-1-K7, WISO-2-2-1-K8, WISO-2-2-1-K9, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-2-K9, WISO-2-2-2-K10, WISO-2-2-2-K11, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-2-4-K5, WISO-2-2-4-K6, WISO-2-2-5-K5, WISO-2-2-6-K5, WISO-2-2-6-K6, WISO-2-4-1-K7, WISO-2-4-2-K6, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3, WISO-2-4-3-K4, WISO-2-5-1-K7, WISO-2-5-1-K8.
+Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-1-K7, WISO-2-1-1-K8, WISO-2-1-1-K9, WISO-2-1-1-K10, WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-2-1-K7, WISO-2-2-1-K8, WISO-2-2-1-K9, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-2-K9, WISO-2-2-2-K10, WISO-2-2-2-K11, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-2-5-K5, WISO-2-2-6-K5, WISO-2-2-6-K6, WISO-2-4-1-K7, WISO-2-4-2-K6, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3, WISO-2-5-1-K7, WISO-2-5-1-K8.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
