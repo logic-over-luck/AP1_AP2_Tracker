@@ -86,12 +86,40 @@
         "katalog:AP2b.04.18.3",
         "regel:P-NAECHSTE-STUFE"
        ]
+      },
+      {
+       "id": "PB2-2-1-1-K6",
+       "text": "Du kannst erklären, warum man bei der Laufzeit eines Sortierverfahrens Best, Average und Worst Case unterscheidet: Wie viele Vergleiche und Vertauschungen nötig sind, hängt vom Ausgangszustand der Daten ab – Bubble Sort mit Abbruchmerker braucht für bereits sortierte Daten einen einzigen Durchlauf, für umgekehrt sortierte die meisten.",
+       "kurz": "Best, Average und Worst Case beim Sortieren",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.3-S167"
+       ]
+      },
+      {
+       "id": "PB2-2-1-1-K7",
+       "text": "Du kannst einen optimierten Bubble Sort in Pseudocode schreiben: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte noch unsortierte Element bereits ans Ende gewandert ist, und ein Merker beendet das Sortieren, sobald ein Durchlauf ohne Tausch bleibt; so sind höchstens n − 1 Durchläufe nötig.",
+       "kurz": "Optimierter Bubble Sort mit Abbruchmerker",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.3.3-S168"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-5-1-5"
      ],
-     "hinweis": "Der Katalog verlangt die Such- und Sortierverfahren nur zu „kennen“; das Prinzip erklären gehört dazu (P38, P-NÄCHSTE-STUFE), selbst geschrieben wird in den Prüfungen nur das Sortieren. Eine Liste von Objekten durchsuchen und true oder false zurückgeben kannst du aus PB1-5-1-5. Die Minimumsuche (2025W-PB2-A1-b, Muster in PB2-1-1-2) durchläuft die Liste wie die lineare Suche, sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Sortieren mit übergebener Vergleichsfunktion: PB2-2-1-4."
+     "hinweis": "Der Katalog verlangt die Such- und Sortierverfahren nur zu „kennen“; das Prinzip erklären gehört dazu (P38, P-NÄCHSTE-STUFE), selbst geschrieben wird in den Prüfungen nur das Sortieren. Eine Liste von Objekten durchsuchen und true oder false zurückgeben kannst du aus PB1-5-1-5. Die Minimumsuche (2025W-PB2-A1-b, Muster in PB2-1-1-2) durchläuft die Liste wie die lineare Suche, sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Sortieren mit übergebener Vergleichsfunktion: PB2-2-1-4.",
+     "kuer": [
+      {
+       "text": "In echten Programmen sortiert man fast immer mit der fertigen, gut optimierten Sortierfunktion der Sprache oder Bibliothek und gibt die Richtung (absteigend) oder ein eigenes Kriterium als Parameter bzw. Vergleichsfunktion mit. Eigene Sortierverfahren schreibt man vor allem, um das Prinzip zu verstehen – und in der Prüfung, die einen selbst geschriebenen Algorithmus verlangt.",
+       "kurz": "Eingebaute Sortierfunktionen der Sprache",
+       "quellen": [
+        "buch:FS2-2.3.3"
+       ],
+       "grund": "RK2: Werkzeugwahl; die Prüfung verlangt einen eigenen Sortieralgorithmus in Pseudocode"
+      }
+     ]
     },
     {
      "id": "PB2-2-1-3",
@@ -152,9 +180,27 @@
        "herkunft": [
         "katalog:ZB.rekursion"
        ]
+      },
+      {
+       "id": "PB2-2-1-3-K5",
+       "text": "Du kannst für ein Problem prüfen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, in dem der Ablauf ohne weiteren Aufruf endet.",
+       "kurz": "Eignung eines Problems für Rekursion",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.3.2-S165"
+       ]
+      },
+      {
+       "id": "PB2-2-1-3-K6",
+       "text": "Du kannst einen einfachen rekursiven Algorithmus als Funktion mit Parameter und Rückgabewert schreiben: Im Abbruchfall gibt sie direkt einen Wert zurück, sonst ruft sie sich mit einem verkleinerten Parameter selbst auf und setzt das Ergebnis auf dem Rückweg zusammen, zum Beispiel bei der Umwandlung einer Dezimalzahl in eine Dualzahl (Aufruf mit zahl div 2, danach den Rest zahl mod 2 anhängen).",
+       "kurz": "Rekursive Funktion mit Rückgabewert schreiben",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.3.2-S166"
+       ]
       }
      ],
-     "hinweis": "Die Umrechnung dezimal → binär kennst du aus AP1-4-2-1, Modulo und ganzzahlige Division aus AP1-8-2-1. Den Schreibtischtest eines rekursiven Algorithmus (2022W-PB2-A2-aa) übst du in PB2-3; warum die Ziffern verkehrt herum erscheinen, erklärt K4.",
+     "hinweis": "Die Umrechnung dezimal → binär kennst du aus AP1-4-2-1, Modulo und ganzzahlige Division aus AP1-8-2-1. Den Schreibtischtest eines rekursiven Algorithmus (2022W-PB2-A2-aa) übst du in PB2-3; warum die Ziffern verkehrt herum erscheinen, erklärt K4. Das Lehrbuch (FS2 2.3.2) beschreibt Rekursion so, als werde der Rückgabewert eines Aufrufs als Parameter an den nächsten weitergereicht; richtig ist: Der Selbstaufruf erhält ein verkleinertes Teilproblem als Parameter (z. B. zahl div 2), die Rückgabewerte werden erst auf dem Rückweg zusammengesetzt.",
      "baut_auf": [
       "AP1-4-2-1",
       "AP1-8-2-1"
@@ -269,7 +315,7 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.7",
+  "regelwerk_version": "2.2",
   "stand": "2026-10-16",
   "hinweis": "PB2-Ordner (P33). Rekursion und Generik sind Zusatzbausteine (Belege 2022W-PB2, 2024S-PB2).",
   "kerntest": {
@@ -278,7 +324,8 @@
    "ergebnis": "2022W-PB2-A1 (Sortieren, Vergleichsfunktion, Generik), 2022W-PB2-A2-b/-c (Rekursion), 2024S-PB2-A2-a, 2025W-PB2-A1-b gegen die Musterlösungen gelesen."
   },
   "hinweisquellen": {
-   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.3.3": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-16",
@@ -330,6 +377,17 @@
      "wo": [
       "PB2-1"
      ]
+    },
+    {
+     "thema": "In echten Programmen sortiert man fast immer mit der fertigen, gut optimierten Sortierfunktion der Sprache oder Biblioth",
+     "quellen": [
+      "buch:FS2-2.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -337,6 +395,29 @@
    "stand": "2026-10-16",
    "bericht": "umbau/berichte/PB2-2-pruefer.md",
    "umsetzung": "Funde der unabhängigen Prüfung vom 16.10.2026 eingebaut (Abschnitt „Umsetzung“ im Bericht): Suchen und Sortieren in PB2-2-1-1 zusammengelegt, Stufe 2 bei „kennen“ über P-NÄCHSTE-STUFE (P38), Rekursion um die Stellung zum Selbstaufruf ergänzt. Gestrichene IDs, nie wieder zu vergeben: PB2-2-1-1-K3, PB2-2-1-2 mit K1–K3."
-  }
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-2-1-1-K6",
+     "PB2-2-1-1-K7",
+     "PB2-2-1-3-K5",
+     "PB2-2-1-3-K6"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [],
+    "kuer": [
+     "PB2-2-1-1"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB2-2-1-3"
+    ]
+   }
+  ]
  }
 }

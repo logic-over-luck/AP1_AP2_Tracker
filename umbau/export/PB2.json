@@ -5,10 +5,10 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 22,
-  "koennen": 109,
+  "koennen": 113,
   "quellen": {
    "PB2-1.json": "6c16ea6764dd06fb",
-   "PB2-2.json": "26e890ba833e48b1",
+   "PB2-2.json": "2dd20a63f12e0965",
    "PB2-3.json": "5fd9e56bbcf1cd1d",
    "PB2-4.json": "68840c2be9b4bac8",
    "PB2-5.json": "d2d317f1f6128fe3",
@@ -190,6 +190,16 @@
      "id": "PB2-2-1-1-K5",
      "stufe": 2,
      "kurz": "Bubble Sort (benachbarte Elemente vergleichen und bei falscher Reihenfolge tauschen, Durchläufe wiederholen, bis nichts mehr getauscht wird), Selection Sort (jeweils das kleinste restliche Element suchen und nach vorn tauschen) und Insertion Sort (jedes Element in den bereits sortierten Teil einfügen) am Vorgehen unterscheiden"
+    },
+    {
+     "id": "PB2-2-1-1-K6",
+     "stufe": 2,
+     "kurz": "erklären, warum man bei der Laufzeit eines Sortierverfahrens Best, Average und Worst Case unterscheidet: Wie viele Vergleiche und Vertauschungen nötig sind, hängt vom Ausgangszustand der Daten ab – Bubble Sort mit Abbruchmerker braucht für bereits sortierte Daten einen einzigen Durchlauf, für umgekehrt sortierte die meisten"
+    },
+    {
+     "id": "PB2-2-1-1-K7",
+     "stufe": 3,
+     "kurz": "einen optimierten Bubble Sort in Pseudocode schreiben: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte noch unsortierte Element bereits ans Ende gewandert ist, und ein Merker beendet das Sortieren, sobald ein Durchlauf ohne Tausch bleibt; so sind höchstens n − 1 Durchläufe nötig"
     }
    ]
   },
@@ -226,6 +236,16 @@
      "id": "PB2-2-1-3-K4",
      "stufe": 2,
      "kurz": "erklären, wie die Stellung einer Anweisung vor oder nach dem Selbstaufruf die Reihenfolge bestimmt: Anweisungen davor laufen beim Abstieg in Aufrufreihenfolge, Anweisungen danach beim Rückweg in umgekehrter Reihenfolge; so gibt die Umrechnung von 11 mit der Ausgabe vor dem Aufruf 1101 statt 1011 aus"
+    },
+    {
+     "id": "PB2-2-1-3-K5",
+     "stufe": 4,
+     "kurz": "für ein Problem prüfen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, in dem der Ablauf ohne weiteren Aufruf endet"
+    },
+    {
+     "id": "PB2-2-1-3-K6",
+     "stufe": 3,
+     "kurz": "einen einfachen rekursiven Algorithmus als Funktion mit Parameter und Rückgabewert schreiben: Im Abbruchfall gibt sie direkt einen Wert zurück, sonst ruft sie sich mit einem verkleinerten Parameter selbst auf und setzt das Ergebnis auf dem Rückweg zusammen, zum Beispiel bei der Umwandlung einer Dezimalzahl in eine Dualzahl (Aufruf mit zahl div 2, danach den Rest zahl mod 2 anhängen)"
     }
    ]
   },

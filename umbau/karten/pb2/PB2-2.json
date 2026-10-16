@@ -213,6 +213,62 @@
    "k": "PB2-2-1-4-K3",
    "vorne": "Welchen Vorteil hat es, der Sortierfunktion die Vergleichsfunktion als Parameter zu übergeben?",
    "hinten": "Dieselbe Sortierfunktion sortiert nach beliebigen Kriterien, z. B. nach Kurs oder nach Datum, auf- oder absteigend. Es wird nur eine andere Vergleichsfunktion übergeben, der Sortiercode bleibt unverändert."
+  },
+  {
+   "id": "PB2-2-1-1-K6-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K6",
+   "vorne": "Warum gibt man die Laufzeit eines Sortierverfahrens für Best, Average und Worst Case an?",
+   "hinten": "Weil die Zahl der Vergleiche und Vertauschungen vom Ausgangszustand der Daten abhängt: bereits sortiert (oft Best Case), zufällig gemischt (Average Case), umgekehrt sortiert (oft Worst Case)."
+  },
+  {
+   "id": "PB2-2-1-1-K6-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K6",
+   "vorne": "Welche Eingabe ist für Bubble Sort mit Abbruchmerker der Best Case, welche der Worst Case?",
+   "hinten": "- Best Case: bereits sortiert – ein Durchlauf ohne Tausch, dann Abbruch\n- Worst Case: umgekehrt sortiert – n − 1 Durchläufe, in jedem wird getauscht"
+  },
+  {
+   "id": "PB2-2-1-1-K7-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K7",
+   "vorne": "Warum darf die innere Schleife von Bubble Sort in jedem Durchlauf ein Element früher enden?",
+   "hinten": "Weil nach jedem Durchlauf das größte noch unsortierte Element ans Ende gewandert ist und dort endgültig richtig steht; es muss nicht mehr verglichen werden."
+  },
+  {
+   "id": "PB2-2-1-1-K7-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K7",
+   "vorne": "Wozu dient der Merker `getauscht` in einem Bubble Sort?",
+   "hinten": "Er wird zu Beginn jedes Durchlaufs auf false gesetzt und bei jedem Tausch auf true. Bleibt er false, ist das Array sortiert und das Verfahren endet vorzeitig – bei sortierten Daten schon nach dem ersten Durchlauf."
+  },
+  {
+   "id": "PB2-2-1-3-K5-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K5",
+   "vorne": "Mit welchen vier Fragen prüfst du, ob sich ein Problem rekursiv lösen lässt?",
+   "hinten": "- Wiederholt sich derselbe Ablauf?\n- Ändern (verkleinern) sich die Daten je Durchlauf?\n- Bleibt das Verfahren gleich?\n- Gibt es eine Abbruchbedingung (einfachster Fall)?"
+  },
+  {
+   "id": "PB2-2-1-3-K5-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K5",
+   "vorne": "Eignet sich die Berechnung der Fakultät n! für eine rekursive Lösung? Begründe.",
+   "hinten": "Ja: n! = n · (n − 1)!, also derselbe Ablauf mit kleinerem n, das Verfahren bleibt gleich, und für n ≤ 1 steht das Ergebnis 1 ohne weiteren Aufruf fest."
+  },
+  {
+   "id": "PB2-2-1-3-K6-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K6",
+   "vorne": "Aus welchen zwei Teilen besteht jede rekursive Funktion?",
+   "hinten": "- Abbruchfall: einfachster Wert, das Ergebnis wird direkt zurückgegeben\n- rekursiver Fall: Selbstaufruf mit kleinerem Parameter, dessen Rückgabe weiterverarbeitet wird"
+  },
+  {
+   "id": "PB2-2-1-3-K6-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K6",
+   "vorne": "Schreibe eine rekursive Funktion `dual(zahl)`, die eine nicht negative Ganzzahl als Dualzahl-Text zurückgibt.",
+   "hinten": "- `if zahl < 2 then return text(zahl) end if`\n- `return dual(zahl div 2) + text(zahl mod 2)`\nDer Rest wird nach dem Aufruf angehängt, damit das höchstwertige Bit vorn steht."
   }
  ],
  "nicht_abgefragt": [],
@@ -367,6 +423,46 @@
    "id": "PB2-2-1-4-K3-2",
    "entscheidung": "neu",
    "grund": "Nutzen des Funktionsobjekts"
+  },
+  {
+   "id": "PB2-2-1-1-K6-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S167)"
+  },
+  {
+   "id": "PB2-2-1-1-K6-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S167)"
+  },
+  {
+   "id": "PB2-2-1-1-K7-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S168)"
+  },
+  {
+   "id": "PB2-2-1-1-K7-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S168)"
+  },
+  {
+   "id": "PB2-2-1-3-K5-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S165)"
+  },
+  {
+   "id": "PB2-2-1-3-K5-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S165)"
+  },
+  {
+   "id": "PB2-2-1-3-K6-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S166)"
+  },
+  {
+   "id": "PB2-2-1-3-K6-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S166)"
   }
  ]
 }
