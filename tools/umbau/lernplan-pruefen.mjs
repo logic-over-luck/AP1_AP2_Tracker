@@ -82,9 +82,8 @@ const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-B
 const BUCH = new RegExp(regeln.buch?.herkunft?.regex ?? '^$');
 const [F3_MIN, F3_MAX] = [regeln.buch?.form?.f3_min ?? 3, regeln.buch?.form?.f3_max ?? 7];
 const [F4_MIN, F4_MAX] = [regeln.buch?.form?.f4_min ?? 3, regeln.buch?.form?.f4_max ?? 6]; // v2.1: 3–8 (P55)
-// v2.2: Feld kurz (Stichwort zur Aussage bzw. zum Kür-Eintrag) und Länge neuer Buch-Aussagen (ab PB1)
+// v2.2: Feld kurz (Stichwort zur Aussage bzw. zum Kür-Eintrag)
 const KURZ = regeln.kurz ?? null;
-const BUCH_MAX = TEIL !== 'AP1' ? regeln.buch?.form?.buch_aussage_max ?? null : null;
 function pruefeKurz(wo, kurz, gesehen) {
   if (!KURZ) return;
   if (typeof kurz !== 'string' || !kurz.trim()) return F(`KURZ: ${wo} hat kein Feld kurz`);
@@ -148,7 +147,6 @@ for (const tb of lp.themenbloecke) {
     for (const k of sp.koennen) {
       kIds.push(k.id);
       pruefeKurz(k.id, k.kurz, kurzK);
-      if (BUCH_MAX && k.herkunft?.length && k.herkunft.every((h) => h.startsWith('buch:')) && k.text.length > BUCH_MAX) F(`FORM: ${k.id}: Buch-Aussage hat ${k.text.length} Zeichen (höchstens ${BUCH_MAX}; Begründung und Beispiel gehören in die Erklärung)`);
       if (!new RegExp(`^${sp.id}-K\\d+$`).test(k.id)) F(`${k.id}: ID passt nicht zum Stichpunkt ${sp.id}`);
       if (!k.text.startsWith('Du kannst ')) F(`F1: ${k.id} beginnt nicht mit „Du kannst“`);
       if (![1, 2, 3, 4].includes(k.stufe)) F(`${k.id}: ungültige Stufe ${k.stufe}`);

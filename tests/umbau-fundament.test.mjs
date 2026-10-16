@@ -394,11 +394,11 @@ test('Lernplan-Prüfer v2.0: F3 erlaubt bis 10 Aussagen, 11 nicht', { skip: !ler
 });
 
 // ---------- Regelwerk v2.2: Stichwort kurz und Länge neuer Buch-Aussagen ----------
-test('Regelwerk 2.2: kurz mit 3–8 Wörtern und höchstens 60 Zeichen, Buch-Aussagen ab PB1 höchstens 200 Zeichen', () => {
+test('Regelwerk 2.2: kurz mit 3–8 Wörtern und höchstens 60 Zeichen, keine Längengrenze für Buch-Aussagen', () => {
   const r = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
   assert.equal(r.version, '2.2');
   assert.deepEqual([r.kurz.max_zeichen, r.kurz.woerter_min, r.kurz.woerter_max], [60, 3, 8]);
-  assert.equal(r.buch.form.buch_aussage_max, 200);
+  assert.equal(r.buch.form.buch_aussage_max, undefined); // 200-Zeichen-Grenze gestrichen (Projektinhaber, P56)
 });
 test('Lernplan-Prüfer v2.2: Stichwort kurz in Ordnung', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
   const r = lernplanMit((lp) => { sp0(lp).koennen[0].kurz = 'Durchsatz und Latenz'; });
@@ -419,13 +419,9 @@ for (const [name, f] of Object.entries(kurzFehler)) {
     assert.equal(lernplanMit(f).status, 1);
   });
 }
-test('Lernplan-Prüfer v2.2: Buch-Aussage über 200 Zeichen ist in AP1 erlaubt, ab PB1 nicht', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+test('Lernplan-Prüfer v2.2: lange Buch-Aussagen sind erlaubt (Satz ist aufklappbar)', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
   const lang = `Du kannst ${'erklären, warum das so ist, '.repeat(8)}und es begründen.`;
-  assert.ok(lang.length > 200);
   assert.equal(lernplanMit((lp) => Object.assign(sp0(lp).koennen[0], { text: lang, herkunft: ['buch:GS-3.4.5'] })).status, 0);
-  const r = pb2Mit((lp) => Object.assign(sp0(lp).koennen[0], { text: lang, herkunft: ['buch:FS2-2.1.4'] }));
-  assert.equal(r.status, 1);
-  assert.match(r.stdout, /FORM: .* Buch-Aussage hat \d+ Zeichen/);
 });
 
 // T10 mit einer kleinen Beispiel-Zuordnung und einer Kernpunkt-Datei (die echten liegen nur lokal, D9)

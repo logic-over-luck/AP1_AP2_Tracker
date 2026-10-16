@@ -138,8 +138,8 @@ K5-Treffer in AP1 (6 Wörter) sind Gesetzeswortlaut (Art. 5/32 DSGVO, § 38 BDSG
 
 Vorgabe des Projektinhabers vor PB1: Jede Können-Aussage und jeder Kür-Eintrag bekommt ein Stichwort `kurz`
 (3–8 Wörter, höchstens 60 Zeichen, Substantivstil, beginnt nicht mit „Du“). Die App zeigt im Stichpunkt nur noch das
-Stichwort und klappt beim Antippen Satz, Erklärung, Stufe und Herkunft auf. Neue Buch-Aussagen dürfen ab PB1
-höchstens 200 Zeichen haben.
+Stichwort und klappt beim Antippen Satz, Erklärung, Stufe und Herkunft auf. Eine kurz vorgesehene Grenze von
+200 Zeichen für Buch-Aussagen ist gestrichen (P56).
 
 | Raum | Aussagen mit `kurz` | Kür mit `kurz` |
 |---|---|---|
@@ -160,6 +160,5 @@ höchstens 200 Zeichen haben.
 - **Anzeige:** Browser-Check auf 1400 px und 390 px ohne Konsolenfehler und ohne waagerechtes Scrollen. Immer nur eine
   Zeile offen, Kür zugeklappt. Auf dem Handy werden lange Stichworte im schmalen Detailbereich mit „…“ gekürzt;
   aufgeklappt stehen sie vollständig, die Marken stehen dort ebenfalls.
-- **Offen (P56):** In AP1 sind 229 der 234 Buch-Aussagen länger als 200 Zeichen. Die Grenze gilt erst ab PB1;
-  Vorschlag: so lassen.
+- **P56 erledigt:** Die 200-Zeichen-Regel entfällt ganz (Projektinhaber: der Satz ist ohnehin einklappbar).
 - **Danach Pause vor PB1** (Projektinhaber).

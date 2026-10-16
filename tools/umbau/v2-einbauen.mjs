@@ -150,10 +150,8 @@ for (const na of patch.neue_aussagen ?? []) {
   if (![1, 2, 3, 4].includes(na.stufe)) F(`Aussage ${na.ref}: Stufe ${na.stufe}`);
   if (!na.herkunft?.length || !na.herkunft.every((h) => h.startsWith('buch:') ? BUCH.test(h.slice(5)) : /^(katalog|beleg|regel):/.test(h))) F(`Aussage ${na.ref}: Herkunft ungültig (${na.herkunft})`);
   if (!na.erklaerung?.trim()) F(`Aussage ${na.ref}: Erklärung fehlt`);
-  // v2.2: Stichwort kurz (Prüfung der Form in lernplan-pruefen) und höchstens 200 Zeichen je Buch-Aussage ab PB1
+  // v2.2: Stichwort kurz (Prüfung der Form in lernplan-pruefen)
   if (!na.kurz?.trim()) F(`Aussage ${na.ref}: kurz fehlt (v2.2)`);
-  const max = !ORDNER.startsWith('AP1-') ? regeln.buch?.form?.buch_aussage_max : null;
-  if (max && na.text?.length > max) F(`Aussage ${na.ref}: ${na.text.length} Zeichen (höchstens ${max}; Begründung und Beispiel in die Erklärung)`);
   if (!na.karten?.length || na.karten.some((c) => !c.vorne?.trim() || !c.hinten?.trim())) F(`Aussage ${na.ref}: Karte fehlt oder unvollständig`);
   const id = naechste(sp.id, '-K');
   const k = { id, text: na.text, ...(na.kurz ? { kurz: na.kurz } : {}), stufe: na.stufe, herkunft: na.herkunft };
