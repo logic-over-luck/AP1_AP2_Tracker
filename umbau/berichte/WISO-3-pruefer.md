@@ -102,3 +102,73 @@ WISO-5-2-1 und die übrigen WiSo-Ordner nach Überschneidungen (Unfallversicheru
    aber nur Auswahlaufgaben der Stufe 2. Soll bei WiSo die Katalog-Stufe 4 wirklich als Beurteilungs-Aussage
    ausformuliert werden, oder genügt ein Auswahl-Format (F6 P-MUSTER: „richtige von falschen Einschätzungen
    unterscheiden“)?
+
+## Umsetzung (16.10.2026)
+
+Geändert nur `tools/umbau/gen-wiso/wiso_3.py`, Lernplan neu erzeugt. Verbindlich waren die Entscheidungen D1–D12 aus
+`WISO-pruefer-bilanz.md`. Alle Gründe in `alt_neu` nennen den Fund („Prüfer WISO-3 Nr. x“).
+
+| Nr | Entscheidung | Was geändert / Grund |
+|---|---|---|
+| 1 | umgesetzt | WISO-3-4-4-K3 jetzt Stufe 2 mit dem Operator „ordnen“ (D1; Beleg 2022S-A26 ist eine Reihenfolgeaufgabe, Katalog ohne Operator). Standorte kennen und Bedienungsanleitung auf dem Gerät bleiben in der Aussage. T8 für WISO.03.07.4.1 ist weiter erfüllt. |
+| 2 | umgesetzt | WISO-3-4-3-K1 bleibt und enthält jetzt Stoff, Sauerstoff, Zündtemperatur und „Löschen heißt entziehen“. K5 entfällt (neue ID, ohne Eintrag); die alte WISO-3-5-1-K5 ist jetzt „verschoben“ auf WISO-3-4-3-K1. |
+| 3 | teilweise | K2 ist in K3 aufgegangen („einen beschriebenen Sachverhalt aus der IT-Arbeit … zuordnen, zum Beispiel …“); WISO-3-2-1-K2 ist „verschoben“ auf K3. Damit der Stichpunkt F3 erfüllt, kommt die neue K6 dazu: Warnzeichen am Arbeitsplatz **wahrnehmen** (Katalogoperator von WISO.03.02, Stufe 1 nach D1 erlaubt, weil die Bausteine anderswo Stufe 4 erreichen). Die Stichpunkte werden nicht zusammengelegt: Der Block WISO-3-2 hätte dann nur zwei Stichpunkte (F4, D7). |
+| 4 | umgesetzt | D6: WISO-3-1-3-K2 sagt nur noch, wer versichert ist: alle Beschäftigten einschließlich Auszubildender, automatisch über den Betrieb als Mitglied der Berufsgenossenschaft (bzw. Unfallkasse), Ersthelfer bei der Hilfeleistung, nicht nur leitende Angestellte. Träger und Beitrag stehen in WISO-1-6-2 (Hinweis am Stichpunkt). Titel und Ziel von WISO-3-1-3 sind angepasst. Die alte WISO-3-4-2-K5 (Kosten, Träger, Beitrag) ist „verschoben“ auf WISO-1-6-2-K6. |
+| 5 | umgesetzt | D5: WISO-3-1-1-K5 nennt beides: an geeigneter Stelle zugänglich machen, klassisch als Aushang (so erwartet in 2022S) oder heute auch elektronisch. Der `hinweis` an WISO-3-1-1 nennt die IHK-Lösung 2022S-A24 (Intranet galt als falsch), den Rechtsstand (DGUV Vorschrift 1 § 12) und den Tipp für die Prüfung (P35 Nr. 7). |
+| 6 | umgesetzt | Neue WISO-3-1-1-K8 (Stufe 2, `katalog:WISO.03.01.1`, `katalog:WISO.03.01.5`, `beleg:2024S-WISO-A10`): Arbeitsschutzvorschriften sind zwingendes Recht, der Betriebsrat bestimmt beim Gesundheitsschutz mit und sitzt im Arbeitsschutzausschuss, ergonomische Arbeitsplätze sind gesetzliche Pflicht (ArbSchG, ArbStättV) und keine freiwillige Leistung. Damit lassen sich die Distraktoren [1], [2] und [4] erkennen. Für F3 (höchstens 7) siehe Nr. 23. |
+| 7 | umgesetzt | `beleg:2025S-WISO-A26` aus WISO-3-2-3-K4 entfernt. Die Stufe 4 bleibt nach Katalog („einschätzen“, E6). Die Teilaufgabe steht weiter in WISO-3-1-1-K7. |
+| 8 | umgesetzt | `beleg:2021W-WISO-A17` aus WISO-3-2-3-K5 entfernt (Stufe 4 aus dem Katalog). `teilaufgaben` von WISO-3-2-3 ist jetzt leer, und der Hinweis sagt, woher die Stufe kommt. T2b bleibt erfüllt, weil beide Aufgaben in WISO-3-1-1 und WISO-3-1-2 stehen. |
+| 9 | umgesetzt | WISO-3-3-3-K3: Netzstecker ziehen, Netzteile nie öffnen; ein steckbares Netzteil zu tauschen ist übliche IT-Arbeit; an der elektrischen Anlage (Steckdosen, Verteiler, fest angeschlossene Leitungen) arbeiten nur Elektrofachkräfte. WISO-3-2-3-K3 sagt jetzt „steckbares Netzteil“. |
+| 10 | umgesetzt | D6: WISO-3-1-3-K4 (Durchgangsarzt) gestrichen (neue ID). Der Durchgangsarzt steht nur noch in WISO-3-4-2-K3; die alte WISO-3-4-2-K4 ist jetzt „verschoben“ auf WISO-3-4-2-K3. |
+| 11 | umgesetzt | WISO-3-4-2-K3 ohne feste Reihenfolge: Die verletzte Person geht zum Durchgangsarzt (zum Beispiel bei Arbeitsunfähigkeit über den Unfalltag hinaus), und unabhängig davon erstattet der Arbeitgeber die Unfallanzeige. Ziel des Stichpunkts angepasst. |
+| 12 | umgesetzt | WISO-3-1-3-K3: Verletztengeld zahlt die Berufsgenossenschaft, wenn die sechswöchige Entgeltfortzahlung endet (dauerhafte Rechtsregel, kein B4-Wert). Der Hinweis an WISO-3-4-2 nennt den Distraktor 2023S-A5 [4]. |
+| 13 | teilweise | Das Ziel von WISO-3-4-4 lautet jetzt „brennende Stoffe den Brandklassen zuordnen“. K4 ergänzt „flüssig werdende Stoffe“ und dass auf jedem Löscher die geeigneten Brandklassen stehen. Eine Tabelle Löschmittel → Klasse und die Brandklasse F gehen über den Katalog (A–D) hinaus: P49 (Kür, keine Hinweisquelle). |
+| 14 | umgesetzt | WISO-3-4-1-K6: Brandwunden keimfrei abdecken, nur kleinflächige Verbrennungen kurz mit handwarmem Wasser kühlen, nie mit Eis; kein Öl, keine Salben, Blasen nicht öffnen. |
+| 15 | Parkplatz | P49 (Kür, keine Hinweisquelle): GS-Zeichen als Gegensatz zum CE-Zeichen. P-BEISPIELLISTE verlangt zwei Hinweisquellen, und die frühere Aussage WISO-3-3-2-K5 (GS, VDE) wurde deshalb gestrichen. „Kein Prüfsiegel einer unabhängigen Stelle“ steht weiter in K3. |
+| 16 | umgesetzt | WISO-3-3-3-K2 ist auf das Neue gekürzt, die Betriebsanweisung: schriftlich und verbindlich, für eine Tätigkeit, ein Arbeitsmittel oder einen Gefahrstoff, mit Gefahren, Schutzmaßnahmen, Verhalten bei Störung und Notfall und Erster Hilfe. |
+| 17 | umgesetzt (WISO-3-Seite) | D6: WISO-3-1-1 ist der Wohnort der Arbeitsschutzgesetze, und der Hinweis sagt das. WISO-1-3-2-K2 zu kürzen ist Sache von WISO-1. |
+| 18 | teilweise | Das Wahrnehmen ist jetzt eine eigene Aussage (WISO-3-2-1-K6, siehe Nr. 3). Ein Zusammenlegen mit WISO-3-2-3 ist abgelehnt (F4, D7). |
+| 19 | umgesetzt | WISO-3-4-3-K2 ordnet jetzt Brandursache → Vorbeugung zu (Wärmegeräte, Mehrfachsteckdosen, Akkus und Kabel, Lüftung). K4 entfällt; die alte WISO-3-5-1-K4 ist jetzt „verschoben“ auf WISO-3-4-3-K2. |
+| 20 | umgesetzt | WISO-3-3-2-K1 und -K4 zusammengelegt (K1 bleibt, mit IP 20 und IP 67 als Beispiele). Die Regel „je höher, desto besser“ ist gestrichen. Die alte WISO-3-3-2-K4 ist „verschoben“ auf K1, und die R4-Zuordnung ist nachgeführt. |
+| 21 | Parkplatz | P49 (Kür, keine Hinweisquelle): Schwelle „mehr als 20 Beschäftigte“ für Sicherheitsbeauftragte (§ 22 SGB VII). Keine Prüfung bietet sie als Distraktor an (D11). |
+| 22 | umgesetzt | In Nr. 4 enthalten (versichert über den Betrieb, nicht direkt; Distraktor 2022W-A18 [3]). |
+| 23 | umgesetzt | WISO-3-1-1-K1 unterscheidet jetzt ArbSchG, ASiG, ArbZG und JArbSchG. K3 entfällt; die alte WISO-3-1-1-K3 ist „verschoben“ auf K1. Damit hat WISO-3-1-1 trotz der neuen K8 genau 7 Aussagen. |
+| 24 | umgesetzt (WISO-3-Seite) | D6: WISO-3-1-1-K6 ist die Wohnstelle und sagt zusätzlich, dass die Gewerbeaufsicht die Einhaltung überwacht. WISO-1-2-3 und WISO-2-5-3 nennen sie nur als Abgrenzung (Sache von WISO-1 und WISO-2). |
+| 25 | umgesetzt | D8: Der `hinweis` an WISO-3-1-1 sagt, dass IT-Sicherheit (WISO.03.08) zu diesem Gebiet gehört, in AP1-7 gelernt wird und die WiSo-Ergänzungen in WISO-5-2-1 stehen. Ein neuer Stichpunkt ist nicht angelegt (D8). |
+| 26 | umgesetzt (WISO-5) | D8: WISO-5-2-1-K9 (zwei Ziele der DSGVO). In WISO-3 ist nichts zu ändern. |
+| 27 | umgesetzt (WISO-5) | D8: WISO-5-2-1-K10 (BSI gegen andere Stellen abgegrenzt). In WISO-3 ist nichts zu ändern. |
+| 28 | umgesetzt (WISO-5/Deckung) | AP1-7-1-4 steht in `baut_auf` von WISO-5-2-1 und in `wiso-deckung.json` bei WISO.03.08.6. Geprüft, nicht von hier geändert. |
+| 29 | umgesetzt (WISO-5) | WISO-5-2-1-K8 ist auf Authentizität gekürzt. Folge für WISO-3: WISO-5-2-1-K7 gibt es nicht mehr, deshalb ist die alte WISO-3-6-2-K5 jetzt „gestrichen“ (E2/P47, steht in AP1-7-1-3, -1-4, -4-3) statt „verschoben“. |
+| 30 | abgelehnt | Bestätigung, keine Änderung nötig. Der Halbsatz zur Informationssicherheit wäre Sache von WISO-5. |
+| 31 | abgelehnt | Bestätigung, die Deckung bleibt. Die Lücke „Ergonomie ist Pflicht“ schließt Nr. 6. Die Ergonomie-Maße (Sehabstand, Blickrichtung) sind P49 (Kür, keine Hinweisquelle). |
+| 32 | umgesetzt | WISO-3-1-1-K2: „ein Betrieb (in der Prüfung: ein Unternehmen)“. |
+| 33 | abgelehnt | Belassen: Die Überschneidung ist klein, und der Zusammenhang ist ein anderer (Verhaltensregel statt Ergonomie). Das sagt der Prüfer selbst. |
+| 34 | Parkplatz | P49 (Kür, keine Hinweisquelle): Erstickungsgefahr durch CO2 in kleinen Räumen. Die Bilanz führt „CO2 im Serverraum“ ausdrücklich unter P49. |
+| 35 | umgesetzt | Der Hinweis an WISO-3-2-1 ist jetzt als Einordnung gekennzeichnet („am ehesten …“) und nennt die GDA-Bezeichnung „physische Belastung“. |
+
+**Zählung:** 26 umgesetzt (davon 6 nur auf der WISO-3-Seite oder in einem anderen Ordner bestätigt: 17, 24, 26–29),
+3 teilweise, 3 abgelehnt (2 Bestätigungen, 1 belassen), 3 Parkplatz P49.
+
+**Zahlen:** 4 Themenblöcke und 13 Stichpunkte (unverändert). Die Können-Aussagen sinken von **64 auf 60**: −1 in
+WISO-3-1-3 (K4), −1 in WISO-3-3-2 (K4), −2 in WISO-3-4-3 (K4, K5); WISO-3-1-1 hat −1 (K3) und +1 (K8), WISO-3-2-1 hat −1 (K2)
+und +1 (K6). Alt → neu: 5 übernommen, 33 angepasst, 21 verschoben, 12 gestrichen, 9 neu. `lernplan-pruefen WISO-3`: OK. Es
+bleibt nur der Hinweis T8 zu WISO.03.01.10 (geteilter Baustein, Stufe 3 in WISO-1-3-4), der schon vorher bestand.
+
+**Parkplatz / Abstimmung mit anderen Ordnern**
+- P49 sammelt: GS-Zeichen (Nr. 15), Sicherheitsbeauftragte ab 20 Beschäftigten (Nr. 21), CO2 in kleinen Räumen (Nr. 34),
+  Löschmittel-Tabelle und Brandklasse F (Nr. 13), Ergonomie-Maße (Nr. 31).
+- 2024S-WISO-A12 (reine Träger-Frage) bleibt Beleg von WISO-3-1-3-K2. Sie betrifft nur den geteilten Baustein
+  WISO.01.05.2.11, und kein anderer Stichpunkt führt sie. Nimmt WISO-1 sie nach D6 in WISO-1-6-2-K5 auf, muss sie hier
+  entfallen (P31).
+- Der `hinweis` an WISO-1-6-2 („Unfallversicherung (Träger, Leistungen, versicherte Fälle) steht gesammelt in WISO-3-1-3“)
+  ist nach D6 überholt: Träger und Beitrag wohnen in WISO-1-6-2. Das ist Sache von WISO-1.
+- Die alte WISO-3-4-2-K5 zeigt auf WISO-1-6-2-K6. Diese ID muss in WISO-1 bestehen bleiben.
+
+**Unsicher**
+- DGUV Vorschrift 1 § 12 („an geeigneter Stelle zugänglich machen“) ist nach der Fassung von 2014 zitiert. Eine
+  Neufassung der DGUV Vorschrift 1 war im Gespräch. Ob bis Oktober 2026 eine neue Fassung gilt, ist hier nicht geprüft.
+  Der Inhalt (auch elektronisch zulässig) dürfte gleich bleiben.
+- Erste Hilfe bei Verbrennungen: „nur kleinflächige kurz mit handwarmem Wasser kühlen“ folgt der heutigen DRK/DGUV-Lehre.
+  Wie lange gekühlt wird, ist bewusst nicht beziffert.
+- Durchgangsarzt: „zum Beispiel bei Arbeitsunfähigkeit über den Unfalltag hinaus“ ist eines von mehreren Kriterien für die
+  Vorstellung und bewusst als Beispiel formuliert.
