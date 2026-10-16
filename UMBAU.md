@@ -617,7 +617,8 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         über das `alt_neu` von PB2 (186 an neuen Aussagen, 23 gestrichen). Lernstand-Umzug für alle alten AP2-Stichpunkte
         nach PB1 oder PB2. Tests in `tests/vorschau-ap1.test.mjs` gelten für PB1 und PB2. 26 Aussagen haben noch keine Karte.
   - [ ] **PB2 offen (Stand 14.10.2026, 20:30, Pause wegen Nutzungslimit):**
-        1. Unabhängige Prüfung PB2 nach `umbau/auftraege/PB2-pruefung.md` – gestartet, Berichte noch nicht da. Bei
+        1. ~~Unabhängige Prüfung PB2~~ **erledigt 16.10.2026:** 89 Funde in 6 Berichten, Bilanz
+           `umbau/berichte/PB2-pruefer-bilanz.md` (92 → 85 Aussagen vorgeschlagen, 9 offene Fragen an den Projektinhaber). Alt: Bei
            Fortsetzung neu starten (Berichte `umbau/berichte/PB2-<n>-pruefer.md`, Bilanz `PB2-pruefer-bilanz.md`).
         2. Funde einbauen (je Bericht Abschnitt „Umsetzung“), Raum-Prüfung PB2 und Tests grün, Umzug neu erzeugen.
         3. Kurzfassungen `umbau/kurz/pb2/PB2-<n>.json` (Teaser je Stichpunkt, Erklärung je Aussage, wie PB1).
