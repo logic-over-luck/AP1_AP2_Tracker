@@ -258,9 +258,11 @@ describe(`Neue Lernkarten ${R}`, () => {
   const altNeu = new Map(plaeneP.flatMap((p) => p.alt_neu.koennen.map((a) => [a.alt, a])));
   const kNachSp = new Map();
   for (const p of plaeneP) for (const t of p.themenbloecke) for (const s of t.stichpunkte) for (const k of s.koennen) kNachSp.set(k.id, s.id);
+  // Ordner, dessen Kartendatei eine alte Karte entscheidet; null: Aussage gestrichen (dann nur in alt_gestrichen)
   const zielordner = (k) => {
     const a = k.k ? altNeu.get(k.k) : null;
-    return a?.neu && a.status !== 'PB2' && a.status !== 'gestrichen' ? ordnerVon(kNachSp.get(a.neu)) : ordnerVon(k.sp);
+    if (a?.status === 'gestrichen') return null;
+    return a?.neu && a.status !== 'PB2' ? ordnerVon(kNachSp.get(a.neu)) : ordnerVon(k.sp);
   };
   test('keine Karten-ID doppelt, keine entfernte ID wieder da, Vorschau nutzt die neuen Karten', { skip: !dateien.size && `keine ${R}-Karten` }, () => {
     const ids = alle.karten.map((k) => k.id);
@@ -283,6 +285,8 @@ describe(`Neue Lernkarten ${R}`, () => {
       const prot = new Map(d.protokoll.map((p) => [p.id, p]));
       assert.equal(prot.size, d.protokoll.length, 'doppelt im Protokoll');
       for (const k of altKarten.values()) if (zielordner(k) === ordner) assert.ok(prot.has(k.id), `alte Karte ${k.id} nicht entschieden`);
+      // Karten gestrichener Aussagen stehen in alt_gestrichen, nicht im Protokoll (WISO: gleiche ID-Präfixe wie die neuen)
+      for (const g of d.alt_gestrichen ?? []) assert.ok(altKarten.has(g.id) && zielordner(altKarten.get(g.id)) === null && !prot.has(g.id), `${g.id}: alt_gestrichen passt nicht`);
       const inDatei = new Map(d.karten.map((c) => [c.id, c]));
       for (const p of prot.values()) {
         assert.ok(p.grund?.trim(), `${p.id}: ohne Grund`);
