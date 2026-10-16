@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-12",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-12.json",
   "karten": [
@@ -416,6 +416,419 @@
       "k": "PB1-12-2-3-K3",
       "vorne": "Eine Firma will ihre Software auf selbst eingerichteten Betriebssystemen betreiben, aber keine Hardware kaufen. Welches Modell passt? Begründe.",
       "hinten": "IaaS: Sie mietet virtuelle Server und verwaltet Betriebssystem und alles darüber selbst."
+    },
+    {
+      "id": "PB1-12-1-1-K4-1",
+      "sp": "PB1-12-1-1",
+      "k": "PB1-12-1-1-K4",
+      "vorne": "Wie verändert sich die erlaubte Ausfallzeit, wenn eine Verfügbarkeitszusage von 99,9 % auf 99,99 % steigt – und was bedeutet das für den Aufwand?",
+      "hinten": "Sie sinkt auf ein Zehntel (von knapp 9 Stunden auf knapp 53 Minuten im Jahr). Jede weitere Neun verlangt deutlich mehr Redundanz, Überwachung und Bereitschaft und wird entsprechend teurer."
+    },
+    {
+      "id": "PB1-12-1-1-K4-2",
+      "sp": "PB1-12-1-1",
+      "k": "PB1-12-1-1-K4",
+      "vorne": "Worauf achtest du bei einer Verfügbarkeitszusage im SLA neben dem Prozentwert?",
+      "hinten": "Ob geplante Wartungsfenster (Updates, Upgrades) eingerechnet oder ausgenommen sind – sind sie ausgenommen, kann der Dienst insgesamt deutlich länger ausfallen, als der Prozentwert vermuten lässt."
+    },
+    {
+      "id": "PB1-12-1-2-K4-1",
+      "sp": "PB1-12-1-2",
+      "k": "PB1-12-1-2-K4",
+      "vorne": "Was misst die MTTR, und welche Schritte zählen dazu?",
+      "hinten": "Die mittlere Zeit von der Störungsmeldung bis zur erneuten Verfügbarkeit: Diagnose, Reparatur, Test und Freigabe."
+    },
+    {
+      "id": "PB1-12-1-2-K4-2",
+      "sp": "PB1-12-1-2",
+      "k": "PB1-12-1-2-K4",
+      "vorne": "Ein Server hat eine MTBF von 999 Stunden und eine MTTR von 1 Stunde. Wie hoch ist seine Verfügbarkeit?",
+      "hinten": "`999 ÷ (999 + 1)` = 0,999 = 99,9 %."
+    },
+    {
+      "id": "PB1-12-1-2-K5-1",
+      "sp": "PB1-12-1-2",
+      "k": "PB1-12-1-2-K5",
+      "vorne": "Zwei unabhängige Netzteile haben je eine Ausfallwahrscheinlichkeit von 0,001. Wie wahrscheinlich fallen beide gleichzeitig aus?",
+      "hinten": "0,001 · 0,001 = 0,000001 (0,0001 %) – tausendmal seltener als bei einem einzelnen Netzteil."
+    },
+    {
+      "id": "PB1-12-1-2-K5-2",
+      "sp": "PB1-12-1-2",
+      "k": "PB1-12-1-2-K5",
+      "vorne": "Warum muss bei einem redundant aufgebauten System öfter ein Teil getauscht werden, obwohl es seltener ganz ausfällt?",
+      "hinten": "Mit mehr Teilen steigt die Wahrscheinlichkeit, dass irgendeines ausfällt; für den Totalausfall müssen dagegen alle gleichzeitig ausfallen (Produkt der Einzelwahrscheinlichkeiten)."
+    },
+    {
+      "id": "PB1-12-1-3-K6-1",
+      "sp": "PB1-12-1-3",
+      "k": "PB1-12-1-3-K6",
+      "vorne": "Wogegen schützt räumliche Redundanz, wogegen diversitäre?",
+      "hinten": "Räumlich: gegen Schäden an einem Standort (Brand, Hochwasser, Stromausfall vor Ort) durch Systeme an getrennten Orten. Diversitär: gegen einen gemeinsamen Fehler gleicher Teile (z. B. Firmware-Fehler, Provider-Störung) durch verschiedene Hersteller oder Anbieter."
+    },
+    {
+      "id": "PB1-12-1-3-K6-2",
+      "sp": "PB1-12-1-3",
+      "k": "PB1-12-1-3-K6",
+      "vorne": "Was versteht man unter Redundanz im IT-Betrieb?",
+      "hinten": "Zusätzliche, gleichwertige Ressourcen, die im Normalbetrieb nicht nötig sind und beim Ausfall einer Komponente deren Aufgabe übernehmen."
+    },
+    {
+      "id": "PB1-12-1-3-K7-1",
+      "sp": "PB1-12-1-3",
+      "k": "PB1-12-1-3-K7",
+      "vorne": "Welche zwei Vorteile bringt ein Load Balancer vor mehreren Webservern?",
+      "hinten": "Skalierung (mehr Last durch zusätzliche Server) und Ausfallsicherheit (fällt ein Server aus, verteilt er die Anfragen auf die übrigen)."
+    },
+    {
+      "id": "PB1-12-1-3-K7-2",
+      "sp": "PB1-12-1-3",
+      "k": "PB1-12-1-3-K7",
+      "vorne": "Ein Webshop hält den Warenkorb im Arbeitsspeicher des jeweiligen Servers. Was muss beim Load Balancing beachtet werden?",
+      "hinten": "Die Anfragen eines Kunden müssen immer beim selben Server landen (Session-Affinität) – oder die Sitzungsdaten werden zentral gespeichert, damit jeder Server sie lesen kann."
+    },
+    {
+      "id": "PB1-12-1-3-K8-1",
+      "sp": "PB1-12-1-3",
+      "k": "PB1-12-1-3-K8",
+      "vorne": "Warum werden die zwei Netzteile eines Servers an verschiedene Stromkreise angeschlossen?",
+      "hinten": "Sonst legt eine ausgelöste Sicherung oder ein Ausfall dieses Kreises beide Netzteile zugleich still – die Redundanz schützt dann nur vor dem Defekt eines Netzteils, nicht vor dem Ausfall der Stromversorgung."
+    },
+    {
+      "id": "PB1-12-1-4-K1-1",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K1",
+      "vorne": "Wodurch unterscheidet sich eine VFI-USV (Online/Doppelwandler) von einer VFD-USV (Offline)?",
+      "hinten": "VFI versorgt die Last ständig über Gleich- und Wechselrichter – ohne Umschaltzeit und unabhängig von Spannungs- und Frequenzschwankungen. VFD leitet den Netzstrom durch und schaltet erst beim Ausfall auf Batterie um."
+    },
+    {
+      "id": "PB1-12-1-4-K1-2",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K1",
+      "vorne": "Welche USV-Klasse wählst du für ein Server-Rack, welche für einen einzelnen Büro-PC?",
+      "hinten": "Server-Rack: VFI (Online), weil sie dauerhaft vor allen Netzstörungen schützt und ohne Umschaltzeit arbeitet. Büro-PC: VFD (Offline) reicht, sie ist günstig und überbrückt Stromausfälle."
+    },
+    {
+      "id": "PB1-12-1-4-K2-1",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K2",
+      "vorne": "Eine USV hat 2000 VA und einen Leistungsfaktor von 0,8. Wie viel Wirkleistung kann sie liefern?",
+      "hinten": "`P = S · cos φ = 2000 VA · 0,8 = 1600 W`."
+    },
+    {
+      "id": "PB1-12-1-4-K2-2",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K2",
+      "vorne": "Warum darf man die VA-Angabe einer USV nicht einfach mit der Watt-Leistung der Server vergleichen?",
+      "hinten": "VA ist die Scheinleistung; nutzbar ist nur die Wirkleistung P = S · cos φ, die bei cos φ < 1 kleiner ist. Wer VA mit W gleichsetzt, überlastet die USV."
+    },
+    {
+      "id": "PB1-12-1-4-K3-1",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K3",
+      "vorne": "Eine USV speichert 600 Wh, der Wechselrichter hat 90 % Wirkungsgrad, die Last beträgt 450 W. Wie lange überbrückt sie?",
+      "hinten": "`t = 600 Wh · 0,9 ÷ 450 W = 1,2 h` (72 Minuten)."
+    },
+    {
+      "id": "PB1-12-1-4-K3-2",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K3",
+      "vorne": "Wozu muss die Überbrückungszeit einer USV mindestens reichen?",
+      "hinten": "Bis die Systeme geordnet heruntergefahren sind oder ein Notstromaggregat die Versorgung übernommen hat."
+    },
+    {
+      "id": "PB1-12-1-4-K4-1",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K4",
+      "vorne": "Welche laufenden Kosten verursacht eine USV über den Kaufpreis hinaus?",
+      "hinten": "Höheren Stromverbrauch durch Eigenverluste, Wartung und den regelmäßigen Austausch der Akkus."
+    },
+    {
+      "id": "PB1-12-1-4-K4-2",
+      "sp": "PB1-12-1-4",
+      "k": "PB1-12-1-4-K4",
+      "vorne": "Wann lohnt sich eine USV wirtschaftlich?",
+      "hinten": "Wenn der erwartete Schaden eines Stromausfalls ohne USV (Datenverlust, Hardwareschäden, Ausfallzeit) höher ist als ihre Gesamtkosten über die Nutzungsdauer – etwa bei zentralen Servern."
+    },
+    {
+      "id": "PB1-12-1-5-K1-1",
+      "sp": "PB1-12-1-5",
+      "k": "PB1-12-1-5-K1",
+      "vorne": "Wie viele Platten braucht RAID 6 mindestens, wie viele dürfen ausfallen und wie viel Kapazität ist nutzbar?",
+      "hinten": "Mindestens 4 Platten; 2 dürfen gleichzeitig ausfallen; nutzbar ist die Kapazität von n − 2 Platten."
+    },
+    {
+      "id": "PB1-12-1-5-K1-2",
+      "sp": "PB1-12-1-5",
+      "k": "PB1-12-1-5-K1",
+      "vorne": "Warum wird bei vielen großen Platten eher RAID 6 als RAID 5 gewählt?",
+      "hinten": "Der Rebuild nach einem Plattenausfall dauert lange und belastet die übrigen Platten; fällt währenddessen eine zweite aus, sind bei RAID 5 die Daten verloren – RAID 6 übersteht das."
+    },
+    {
+      "id": "PB1-12-1-5-K2-1",
+      "sp": "PB1-12-1-5",
+      "k": "PB1-12-1-5-K2",
+      "vorne": "Nenne je einen Vorteil und einen Nachteil von Hardware-RAID und Software-RAID.",
+      "hinten": "Hardware-RAID: schnell und entlastet die CPU (eigener Controller, Cache) – aber teurer und an den Controller gebunden. Software-RAID: keine Zusatzkosten – aber belastet die CPU."
+    },
+    {
+      "id": "PB1-12-1-5-K3-1",
+      "sp": "PB1-12-1-5",
+      "k": "PB1-12-1-5-K3",
+      "vorne": "Was ist eine Hot-Spare-Platte und welchen Vorteil bringt sie?",
+      "hinten": "Eine zusätzlich eingebaute Reserveplatte, die beim Ausfall einer RAID-Platte automatisch einspringt; der Neuaufbau beginnt sofort statt erst nach dem Tausch von Hand, sodass der Verbund kürzer ungeschützt ist."
+    },
+    {
+      "id": "PB1-12-2-1-K6-1",
+      "sp": "PB1-12-2-1",
+      "k": "PB1-12-2-1-K6",
+      "vorne": "Worin unterscheiden sich Anwendungsmonitoring und Systemmonitoring?",
+      "hinten": "Anwendungsmonitoring prüft den Dienst aus Nutzersicht (erreichbar, Antwortzeit, fehlerfreie Abläufe); Systemmonitoring prüft die Ressourcen aus Administratorsicht (CPU, RAM, Datenträger, Netz)."
+    },
+    {
+      "id": "PB1-12-2-1-K7-1",
+      "sp": "PB1-12-2-1",
+      "k": "PB1-12-2-1-K7",
+      "vorne": "Welche Umgebungswerte sollten in einem Serverraum überwacht werden?",
+      "hinten": "Temperatur, Luftfeuchtigkeit, Rauch, Wasser (z. B. im Doppelboden), Stromversorgung und USV sowie Zutritt."
+    },
+    {
+      "id": "PB1-12-2-1-K7-2",
+      "sp": "PB1-12-2-1",
+      "k": "PB1-12-2-1-K7",
+      "vorne": "Warum ist in einem Serverraum sowohl zu hohe als auch zu niedrige Luftfeuchtigkeit schädlich?",
+      "hinten": "Zu hohe Feuchte führt zu Kondenswasser und Korrosion, zu niedrige begünstigt elektrostatische Entladungen, die Bauteile zerstören können."
+    },
+    {
+      "id": "PB1-12-2-1-K8-1",
+      "sp": "PB1-12-2-1",
+      "k": "PB1-12-2-1-K8",
+      "vorne": "Ordne den Instandhaltungsstrategien zu: (a) USV-Akkus jedes Quartal testen, (b) nach Plattenausfall Daten aus dem Backup zurückspielen, (c) bei 85 % Plattenbelegung aufräumen, (d) aus S.M.A.R.T.-Trends den Ausfall einer Platte vorhersagen.",
+      "hinten": "(a) periodisch, (b) reaktiv, (c) präventiv/proaktiv, (d) prädiktiv."
+    },
+    {
+      "id": "PB1-12-2-1-K8-2",
+      "sp": "PB1-12-2-1",
+      "k": "PB1-12-2-1-K8",
+      "vorne": "Was ist der Nachteil reaktiver Instandhaltung gegenüber proaktiver?",
+      "hinten": "Gehandelt wird erst nach dem Ausfall – mit Ausfallzeit, möglichem Datenverlust und höheren Kosten; proaktiv wird durch laufende Überwachung vorher eingegriffen."
+    },
+    {
+      "id": "PB1-12-2-4-K1-1",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K1",
+      "vorne": "Welches Verfahren nutzt du, um herauszufinden, welcher Rechner die Internetleitung auslastet: SNMP, NetFlow oder Paketmitschnitt?",
+      "hinten": "NetFlow bzw. IPFIX: Flussdaten zeigen, wer mit wem wie viel überträgt. SNMP zeigt nur die Gesamtauslastung des Ports, ein Mitschnitt wäre zu detailliert."
+    },
+    {
+      "id": "PB1-12-2-4-K1-2",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K1",
+      "vorne": "Wofür eignet sich ein Paketmitschnitt, und warum setzt man ihn nur gezielt ein?",
+      "hinten": "Um den Datenverkehr Paket für Paket zu untersuchen, etwa bei fehlschlagenden Verbindungen. Er erzeugt große Datenmengen und erfasst auch Inhalte, ist also datenschutzrechtlich heikel."
+    },
+    {
+      "id": "PB1-12-2-4-K2-1",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K2",
+      "vorne": "Welche Angaben enthält ein typischer Log-Eintrag?",
+      "hinten": "Zeitpunkt, Schweregrad (z. B. kritisch, Fehler, Warnung, Information, Debug), Quelle (Dienst oder Komponente) und Meldungstext."
+    },
+    {
+      "id": "PB1-12-2-4-K2-2",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K2",
+      "vorne": "Wie gehst du vor, um in Log-Dateien die Ursache einer Störung zu finden?",
+      "hinten": "Zeitraum der Störung eingrenzen, nach Schweregrad (Fehler, Warnung) und Quelle filtern, den ersten auffälligen Eintrag suchen (spätere sind oft Folgefehler) und Logs mehrerer Systeme über den Zeitstempel vergleichen."
+    },
+    {
+      "id": "PB1-12-2-4-K3-1",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K3",
+      "vorne": "Was ist eine Baseline im Monitoring?",
+      "hinten": "Die Aufzeichnung der Normalwerte eines Systems im Regelbetrieb (z. B. CPU-Last, Speicher, Datenrate, Antwortzeiten) einschließlich typischer Schwankungen."
+    },
+    {
+      "id": "PB1-12-2-4-K3-2",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K3",
+      "vorne": "Warum legt man Schwellwerte auf Grundlage einer Baseline fest statt pauschal?",
+      "hinten": "Was normal ist, unterscheidet sich je System und Tageszeit; erst im Vergleich mit der Baseline erkennt man echte Abweichungen und vermeidet Fehlalarme."
+    },
+    {
+      "id": "PB1-12-2-4-K4-1",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K4",
+      "vorne": "Wie kann ein Monitoringsystem reagieren, wenn ein Schwellwert überschritten wird?",
+      "hinten": "Alarm an die zuständige Stelle melden (E-Mail, Bereitschaft, automatisches Ticket) und bei bekannten Störungen ein hinterlegtes Skript ausführen, z. B. einen Dienst neu starten."
+    },
+    {
+      "id": "PB1-12-2-4-K4-2",
+      "sp": "PB1-12-2-4",
+      "k": "PB1-12-2-4-K4",
+      "vorne": "Warum werden automatische Entstörungsskripte protokolliert und ausgewertet?",
+      "hinten": "Sie beheben nur das Symptom; häufen sich die Ausführungen, steckt eine Ursache dahinter, die dauerhaft beseitigt werden muss (Problem Management)."
+    },
+    {
+      "id": "PB1-12-2-2-K6-1",
+      "sp": "PB1-12-2-2",
+      "k": "PB1-12-2-2-K6",
+      "vorne": "Welche Aufgaben umfasst das Service-Level-Management?",
+      "hinten": "Serviceziele mit dem Kunden in SLAs vereinbaren, ihre Einhaltung über Kennzahlen messen, regelmäßig berichten und bei Abweichungen Verbesserungen veranlassen."
+    },
+    {
+      "id": "PB1-12-2-2-K6-2",
+      "sp": "PB1-12-2-2",
+      "k": "PB1-12-2-2-K6",
+      "vorne": "Nenne drei Kennzahlen, mit denen die Einhaltung eines SLA überwacht wird.",
+      "hinten": "Z. B. Anteil fristgerecht gelöster Tickets, Zahl der SLA-Verletzungen je Priorität, erreichte Verfügbarkeit, mittlere Reaktions- oder Reparaturzeit (MTTR)."
+    },
+    {
+      "id": "PB1-12-2-2-K7-1",
+      "sp": "PB1-12-2-2",
+      "k": "PB1-12-2-2-K7",
+      "vorne": "Wer schließt ein eskaliertes Ticket, und wann?",
+      "hinten": "Der First Level, nachdem er dem Nutzer die Lösung mitgeteilt und der Nutzer bestätigt hat, dass alles wieder funktioniert."
+    },
+    {
+      "id": "PB1-12-2-2-K7-2",
+      "sp": "PB1-12-2-2",
+      "k": "PB1-12-2-2-K7",
+      "vorne": "Welche Pflicht hat die Stufe, die ein Ticket eskaliert?",
+      "hinten": "Sie behält den Fall im Blick, bis eine Rückmeldung kommt, hakt nach und prüft die Lösung – das Ticket darf zwischen den Stufen nicht verloren gehen."
+    },
+    {
+      "id": "PB1-12-2-2-K8-1",
+      "sp": "PB1-12-2-2",
+      "k": "PB1-12-2-2-K8",
+      "vorne": "Was ist der Unterschied zwischen vertikaler und horizontaler Skalierung?",
+      "hinten": "Vertikal: einen Server aufrüsten (mehr CPU, RAM, Speicher) – begrenzt durch die Hardware, meist mit Ausfallzeit. Horizontal: weitere Server hinzufügen und die Last verteilen – im laufenden Betrieb, nahezu unbegrenzt, die Anwendung muss verteilbar sein."
+    },
+    {
+      "id": "PB1-12-2-2-K8-2",
+      "sp": "PB1-12-2-2",
+      "k": "PB1-12-2-2-K8",
+      "vorne": "Welche Voraussetzung muss eine Anwendung für horizontale Skalierung erfüllen?",
+      "hinten": "Sie muss auf mehreren Servern parallel laufen können, z. B. ohne Sitzungsdaten im lokalen Speicher eines einzelnen Servers (Sitzungen zentral ablegen)."
+    },
+    {
+      "id": "PB1-12-2-3-K4-1",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K4",
+      "vorne": "Was zeichnet Function as a Service aus?",
+      "hinten": "Der Kunde liefert nur einzelne Funktionen; der Anbieter führt sie ereignisgesteuert aus, skaliert automatisch und rechnet nach Aufrufen und Laufzeit ab – Server und Betriebssystem verwaltet allein der Anbieter."
+    },
+    {
+      "id": "PB1-12-2-3-K4-2",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K4",
+      "vorne": "Warum ist FaaS für selten genutzte Aufgaben oft günstig?",
+      "hinten": "Abgerechnet wird nur die tatsächliche Ausführung; ohne Aufrufe entstehen keine Kosten für laufende Server."
+    },
+    {
+      "id": "PB1-12-2-3-K5-1",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K5",
+      "vorne": "Was übernimmt bei Database as a Service der Anbieter, was der Kunde?",
+      "hinten": "Anbieter: Betrieb, Wartung, Patches, Datensicherung, Skalierung, Hochverfügbarkeit. Kunde: Datenmodell, Daten, Abfragen sowie Benutzer und Zugriffsrechte."
+    },
+    {
+      "id": "PB1-12-2-3-K6-1",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K6",
+      "vorne": "Bei welchem Lastprofil spricht viel für eine Cloud-Datenbank, bei welchem eher für einen eigenen Server?",
+      "hinten": "Cloud: stark schwankende Last mit kurzen Spitzen (bezahlt wird nur, was gebraucht wird). Eigener Server: gleichmäßig hohe Dauerlast, bei der laufende Cloud-Kosten auf Dauer teurer werden."
+    },
+    {
+      "id": "PB1-12-2-3-K6-2",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K6",
+      "vorne": "Nenne drei Vorteile einer Cloud-Datenbank gegenüber einem eigenen Datenbankserver.",
+      "hinten": "Schnell bereit ohne Serverkauf, Hochverfügbarkeit mit SLA des Anbieters, keine langfristige Kapazitätsplanung, Hochskalieren nur bei Bedarf."
+    },
+    {
+      "id": "PB1-12-2-3-K7-1",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K7",
+      "vorne": "Wodurch unterscheidet sich eine Private Cloud von einer Public Cloud?",
+      "hinten": "Die Private Cloud steht nur einer Organisation zur Verfügung (mehr Kontrolle und Anpassung, teurer); die Public Cloud teilen sich viele Kunden über das Internet (günstig, schnell skalierbar, weniger Kontrolle)."
+    },
+    {
+      "id": "PB1-12-2-3-K7-2",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K7",
+      "vorne": "Was ist eine Hybrid Cloud? Nenne ein Beispiel.",
+      "hinten": "Die Kombination aus Private und Public Cloud, z. B. vertrauliche Kundendaten in der privaten Cloud, Website und Lastspitzen in der Public Cloud."
+    },
+    {
+      "id": "PB1-12-2-3-K8-1",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K8",
+      "vorne": "Nach welchen Gesichtspunkten entscheidest du bei einer hybriden Infrastruktur, welche Anwendungen im Haus bleiben?",
+      "hinten": "Lokal bleiben Anwendungen mit sensiblen Daten, solche, die auch bei Ausfall der Internetleitung laufen müssen, und solche, für die geeignete Hardware vorhanden ist; schwankende Last und Dienste ohne eigenes Know-how gehen in die Cloud."
+    },
+    {
+      "id": "PB1-12-2-3-K8-2",
+      "sp": "PB1-12-2-3",
+      "k": "PB1-12-2-3-K8",
+      "vorne": "Welche Kriterien werden beim Vergleich von lokalem Betrieb und Cloud abgewogen?",
+      "hinten": "Aufwand für Betrieb und Wartung, einmalige und laufende Kosten, benötigte Fachkräfte sowie Risiken wie Abhängigkeit vom Anbieter und von der Internetleitung und der Datenschutz."
+    },
+    {
+      "id": "PB1-12-2-5-K1-1",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K1",
+      "vorne": "Worin unterscheiden sich VPS und VDS?",
+      "hinten": "Beide sind virtuelle Server. Beim VPS teilen sich mehrere Kunden die CPU-Kerne (oft überbucht, Leistung schwankt), beim VDS sind Kerne und Arbeitsspeicher fest zugesichert."
+    },
+    {
+      "id": "PB1-12-2-5-K1-2",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K1",
+      "vorne": "Wann reicht Shared Webhosting, wann brauchst du einen eigenen (virtuellen) Server?",
+      "hinten": "Shared Hosting reicht für einfache Websites mit Standardsoftware. Ein eigener Server ist nötig, wenn eigene Software, eine bestimmte Laufzeitumgebung, Administratorzugriff oder garantierte Leistung gebraucht werden."
+    },
+    {
+      "id": "PB1-12-2-5-K2-1",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K2",
+      "vorne": "Was stellt bei Colocation der Anbieter, was bleibt beim Kunden?",
+      "hinten": "Anbieter: Rack-Platz, redundante Stromversorgung, Kühlung, Zutritts- und Brandschutz, Internetanbindung. Kunde: eigene Server, Daten und deren Betrieb."
+    },
+    {
+      "id": "PB1-12-2-5-K2-2",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K2",
+      "vorne": "Für wen eignet sich Colocation besser als die Cloud?",
+      "hinten": "Für Unternehmen, die eigene Hardware und volle Kontrolle über Systeme und Daten behalten wollen, aber kein eigenes, gut abgesichertes Rechenzentrum aufbauen möchten."
+    },
+    {
+      "id": "PB1-12-2-5-K3-1",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K3",
+      "vorne": "Was sind Managed Services?",
+      "hinten": "Wiederkehrende IT-Betriebsaufgaben (z. B. Serverbetreuung, Backup, Updates, Helpdesk), die ein Dienstleister dauerhaft nach SLA bzw. Rahmenvertrag übernimmt."
+    },
+    {
+      "id": "PB1-12-2-5-K3-2",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K3",
+      "vorne": "Welche drei Ebenen von Managed Services werden unterschieden?",
+      "hinten": "Infrastruktur-Management (ganzes Rechenzentrum), Server-Management (Updates, Backups, Snapshots, Rollback) und Anwendungsmanagement (einzelne Anwendungen wie Groupware oder CRM)."
+    },
+    {
+      "id": "PB1-12-2-5-K4-1",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K4",
+      "vorne": "Ein Kunde hat keine eigene IT-Fachkraft. Welche Aufgaben sollte er als Managed Service einkaufen – und warum?",
+      "hinten": "Nahezu alles (Infrastruktur, Server, Anwendungen), weil ihm das Wissen für sicheren Betrieb, Updates und Backups fehlt und er sich sonst übernimmt."
+    },
+    {
+      "id": "PB1-12-2-5-K4-2",
+      "sp": "PB1-12-2-5",
+      "k": "PB1-12-2-5-K4",
+      "vorne": "Ein Kunde hat eine eigene IT-Abteilung. Was kauft er sinnvollerweise noch als Managed Service ein?",
+      "hinten": "Nur Spezialaufgaben, die er selbst nicht wirtschaftlich leisten kann, z. B. den Betrieb des Rechenzentrums oder eine Sicherheitsüberwachung rund um die Uhr."
     }
   ],
   "nicht_abgefragt": [],
@@ -740,6 +1153,301 @@
       "id": "PB1-12-2-2-K2-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-12-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.4-S388)"
+    },
+    {
+      "id": "PB1-12-1-1-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.4-S388)"
+    },
+    {
+      "id": "PB1-12-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.3-S46)"
+    },
+    {
+      "id": "PB1-12-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.3-S46)"
+    },
+    {
+      "id": "PB1-12-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.4-S388)"
+    },
+    {
+      "id": "PB1-12-1-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.4-S388)"
+    },
+    {
+      "id": "PB1-12-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.1.1-S315)"
+    },
+    {
+      "id": "PB1-12-1-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.1.1-S315)"
+    },
+    {
+      "id": "PB1-12-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S332)"
+    },
+    {
+      "id": "PB1-12-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.1-S332)"
+    },
+    {
+      "id": "PB1-12-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S394)"
+    },
+    {
+      "id": "PB1-12-1-4-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.5-S358, buch:GS-3.9.1-S390)"
+    },
+    {
+      "id": "PB1-12-1-4-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.5-S358, buch:GS-3.9.1-S390)"
+    },
+    {
+      "id": "PB1-12-1-4-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S391)"
+    },
+    {
+      "id": "PB1-12-1-4-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S391)"
+    },
+    {
+      "id": "PB1-12-1-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S395)"
+    },
+    {
+      "id": "PB1-12-1-4-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S395)"
+    },
+    {
+      "id": "PB1-12-1-4-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S395)"
+    },
+    {
+      "id": "PB1-12-1-4-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.9.1-S395)"
+    },
+    {
+      "id": "PB1-12-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.1-S380)"
+    },
+    {
+      "id": "PB1-12-1-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.1-S380)"
+    },
+    {
+      "id": "PB1-12-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.1-S381)"
+    },
+    {
+      "id": "PB1-12-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.8.1-S381)"
+    },
+    {
+      "id": "PB1-12-2-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.3-S402)"
+    },
+    {
+      "id": "PB1-12-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.3.1-S113)"
+    },
+    {
+      "id": "PB1-12-2-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.3.1-S113)"
+    },
+    {
+      "id": "PB1-12-2-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.5.1-S72, buch:GS-3.6.3-S369)"
+    },
+    {
+      "id": "PB1-12-2-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.5.1-S72, buch:GS-3.6.3-S369)"
+    },
+    {
+      "id": "PB1-12-2-4-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S53)"
+    },
+    {
+      "id": "PB1-12-2-4-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S53)"
+    },
+    {
+      "id": "PB1-12-2-4-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S54)"
+    },
+    {
+      "id": "PB1-12-2-4-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S54)"
+    },
+    {
+      "id": "PB1-12-2-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.3-S370)"
+    },
+    {
+      "id": "PB1-12-2-4-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.3-S370)"
+    },
+    {
+      "id": "PB1-12-2-4-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S51)"
+    },
+    {
+      "id": "PB1-12-2-4-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.3.2-S51)"
+    },
+    {
+      "id": "PB1-12-2-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.2-S17, buch:FS-1.2.2-S39)"
+    },
+    {
+      "id": "PB1-12-2-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.2-S17, buch:FS-1.2.2-S39)"
+    },
+    {
+      "id": "PB1-12-2-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S39)"
+    },
+    {
+      "id": "PB1-12-2-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S39)"
+    },
+    {
+      "id": "PB1-12-2-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.1.1-S305)"
+    },
+    {
+      "id": "PB1-12-2-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.1.1-S305)"
+    },
+    {
+      "id": "PB1-12-2-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.1-S14)"
+    },
+    {
+      "id": "PB1-12-2-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.1-S14)"
+    },
+    {
+      "id": "PB1-12-2-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.8-S289)"
+    },
+    {
+      "id": "PB1-12-2-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.8-S289)"
+    },
+    {
+      "id": "PB1-12-2-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.8-S289)"
+    },
+    {
+      "id": "PB1-12-2-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.13-S197)"
+    },
+    {
+      "id": "PB1-12-2-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.13-S197)"
+    },
+    {
+      "id": "PB1-12-2-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.1.1-S304, buch:FS-4.8.1-S420)"
+    },
+    {
+      "id": "PB1-12-2-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.1.1-S304, buch:FS-4.8.1-S420)"
+    },
+    {
+      "id": "PB1-12-2-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S348, buch:FS-4.3.4-S353)"
+    },
+    {
+      "id": "PB1-12-2-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.3.3-S348, buch:FS-4.3.4-S353)"
+    },
+    {
+      "id": "PB1-12-2-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.5-S296)"
+    },
+    {
+      "id": "PB1-12-2-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.5-S296)"
+    },
+    {
+      "id": "PB1-12-2-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.8.3-S424, buch:GS-2.4.14-S201)"
+    },
+    {
+      "id": "PB1-12-2-5-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.8.3-S424, buch:GS-2.4.14-S201)"
+    },
+    {
+      "id": "PB1-12-2-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.8.3-S426)"
+    },
+    {
+      "id": "PB1-12-2-5-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.8.3-S426)"
     }
   ]
 }

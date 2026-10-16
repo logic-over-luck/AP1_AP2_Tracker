@@ -51,7 +51,8 @@
        "kurz": "Verfügbarkeit: Definition und Berechnung",
        "stufe": 3,
        "herkunft": [
-        "katalog:AP2b.01.08"
+        "katalog:AP2b.01.08",
+        "buch:GS-5.2.7-S506"
        ]
       },
       {
@@ -64,7 +65,8 @@
         "katalog:AP2b.01.08.2",
         "katalog:AP2b.01.08.3",
         "katalog:AP2b.01.08.4",
-        "katalog:AP2b.01.08.5"
+        "katalog:AP2b.01.08.5",
+        "buch:FS-4.6.3-S409"
        ]
       },
       {
@@ -75,6 +77,15 @@
        "herkunft": [
         "katalog:AP2b.01.08",
         "beleg:2022W-PB1-A1-b"
+       ]
+      },
+      {
+       "id": "PB1-12-1-1-K4",
+       "text": "Du kannst eine Verfügbarkeitszusage beurteilen: Jede weitere Neun (etwa 99,99 % statt 99,9 %) erlaubt nur noch ein Zehntel der Ausfallzeit und verlangt deutlich mehr Aufwand für Redundanz, Überwachung und Bereitschaft; außerdem achtest du darauf, ob geplante Wartungsfenster für Updates mitgezählt oder aus der Berechnung ausgenommen sind.",
+       "kurz": "Verfügbarkeitszusagen: Neunen und Wartungsfenster",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-3.8.4-S388"
        ]
       }
      ],
@@ -133,11 +144,41 @@
         "katalog:AP2b.01.09.3",
         "katalog:AP2b.01.09.1"
        ]
+      },
+      {
+       "id": "PB1-12-1-2-K4",
+       "text": "Du kannst die MTTR erklären – die mittlere Zeit von der Störungsmeldung über Diagnose, Reparatur und Test, bis das System wieder verfügbar ist – und wie sie zusammen mit der MTBF die Verfügbarkeit bestimmt: Verfügbarkeit = MTBF ÷ (MTBF + MTTR).",
+       "kurz": "MTTR und Verfügbarkeit aus MTBF",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.2.3-S46"
+       ]
+      },
+      {
+       "id": "PB1-12-1-2-K5",
+       "text": "Du kannst berechnen, wie Redundanz die Ausfallwahrscheinlichkeit senkt: Voneinander unabhängige redundante Teile fallen nur gleichzeitig mit dem Produkt ihrer Einzelwahrscheinlichkeiten aus, zwei Netzteile mit je 0,1 % also mit 0,001 · 0,001 = 0,000001 (0,0001 %); zugleich fällt bei mehr Teilen öfter irgendeines aus und muss getauscht werden.",
+       "kurz": "Ausfallwahrscheinlichkeit redundanter Teile",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-3.8.4-S388"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-1-5-2"
-     ]
+     ],
+     "kuer": [
+      {
+       "text": "Die FMEA (Fehlermöglichkeits- und Einflussanalyse) sucht schon in Planung und Entwicklung im Team aus mehreren Bereichen je Funktion eines Systems mögliche Fehler mit Ursachen und Folgen und bewertet sie mit der Risikoprioritätszahl RPZ = Bedeutung × Auftreten × Entdeckung (je 1 bis 10, Ergebnis 1 bis 1000). Maßnahmen setzen zuerst an Ursache oder Folge an, dann am Auftreten, zuletzt an der Entdeckung, und werden danach neu bewertet.",
+       "kurz": "FMEA und Risikoprioritätszahl",
+       "quellen": [
+        "buch:FS-2.6.2",
+        "buch:FS-1.5.1"
+       ],
+       "grund": "RK2: FMEA nennt der Katalog nicht; als Methode zu „Risiken identifizieren“ (AP2b.01.09) ist sie Unterthema."
+      }
+     ],
+     "hinweis": "Das Lehrbuch rechnet bei zwei redundanten Netzteilen 0,001 · 0,001 = 0,0000001 (0,00001 %); richtig ist 0,000001 (0,0001 %). Der genannte Faktor 1000 stimmt."
     },
     {
      "id": "PB1-12-1-3",
@@ -207,6 +248,33 @@
         "katalog:AP2b.01.10.2",
         "katalog:AP2b.01.10.3"
        ]
+      },
+      {
+       "id": "PB1-12-1-3-K6",
+       "text": "Du kannst Formen der Redundanz für einen Betrieb beurteilen: funktionelle Redundanz (Komponenten wie Netzteile, Platten oder Server mehrfach parallel ausgelegt), redundante Datensicherung (Kopien auf getrennten Medien), räumliche Redundanz (Systeme an getrennten Standorten gegen Brand, Wasser oder Stromausfall vor Ort) und diversitäre Redundanz (verschiedene Hersteller, Systeme oder Provider, damit ein gemeinsamer Fehler nicht alle trifft).",
+       "kurz": "Redundanzformen: funktionell, räumlich, diversitär",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.1.1-S315"
+       ]
+      },
+      {
+       "id": "PB1-12-1-3-K7",
+       "text": "Du kannst den Einsatz eines Load Balancers beurteilen: Er nimmt als gemeinsamer Einstiegspunkt alle Anfragen an und verteilt sie auf mehrere gleichartige Server; so lässt sich durch weitere Server skalieren, und fällt einer aus, bedienen die übrigen den Dienst weiter; hält ein Server Sitzungsdaten, müssen die Anfragen eines Clients bei ihm landen (Session-Affinität), oder die Sitzung wird zentral gespeichert.",
+       "kurz": "Load Balancer vor mehreren Servern",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.3.1-S332"
+       ]
+      },
+      {
+       "id": "PB1-12-1-3-K8",
+       "text": "Du kannst begründen, warum die beiden Netzteile eines Servers oder Switches an getrennt abgesicherte Stromkreise, möglichst an verschiedene Phasen oder USVs, angeschlossen werden: Hängen beide am selben Kreis, legt eine ausgelöste Sicherung das Gerät trotz doppelter Netzteile still.",
+       "kurz": "Redundante Netzteile an getrennten Stromkreisen",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-3.9.1-S394"
+       ]
       }
      ],
      "baut_auf": [
@@ -214,14 +282,139 @@
      ],
      "kuer": [
       {
-       "text": "RAID 6, JBOD und DAS.",
-       "kurz": "RAID 6, JBOD und DAS",
+       "text": "In einem Virtualisierungscluster starten beim Ausfall eines Knotens die übrigen Knoten dessen virtuelle Maschinen automatisch neu; das setzt Speicher voraus, den alle Knoten erreichen (gemeinsam oder repliziert), und bedeutet eine kurze Unterbrechung. Für geplante Wartung lassen sich VMs per Live-Migration ohne Unterbrechung auf einen anderen Knoten verschieben.",
+       "kurz": "Hochverfügbarkeit im Virtualisierungscluster",
        "quellen": [
-        "podcast:themen-ap2"
+        "buch:FS-4.3.3",
+        "buch:FS-4.8.2"
        ],
-       "grund": "Nur eine Hinweisquelle; der Katalog nennt RAID ohne Level (AP2b.01.10.2). Vom Katalog nicht ausgeschlossen."
+       "grund": "RK2: Der AP2-Katalog hat keinen eigenen Baustein Virtualisierung; Hochverfügbarkeit im Virtualisierungscluster ist Unterthema der Redundanzen (AP2b.01.10.2)."
+      },
+      {
+       "text": "Ein eigener Serverraum braucht Zutrittsschutz, eine abgesicherte Stromversorgung, eine Klimatisierung, weil praktisch die gesamte aufgenommene elektrische Leistung als Wärme abgeführt werden muss, und eine schnelle Anbindung an LAN und Internet.",
+       "kurz": "Betriebsvoraussetzungen eines Serverraums",
+       "quellen": [
+        "buch:GS-3.2.5"
+       ],
+       "grund": "Serverraum-Voraussetzungen nennt kein Baustein des Stichpunkts; die physische Absicherung steht in PB1-10-2-3."
+      }
+     ],
+     "hinweis": "Das Lehrbuch stellt beim Load Balancing die Bindung eines Browsers an denselben Server als immer gegeben dar; richtig ist: Sie ist eine Einstellung (Session-Affinität), alternativ werden Sitzungen zentral gespeichert. Das Lehrbuch nennt ein RAID als Voraussetzung dafür, dass VMs eines ausgefallenen Clusterknotens auf anderen Knoten neu starten; richtig ist: Nötig ist Speicher, den alle Knoten erreichen (gemeinsam oder repliziert) – ein lokales RAID im ausgefallenen Knoten hilft nicht."
+    },
+    {
+     "id": "PB1-12-1-5",
+     "titel": "RAID vertieft: RAID 6, Hot-Spare, Hardware- oder Software-RAID",
+     "ziel": "Beurteilen, wann RAID 6 statt RAID 5 nötig ist, die Wirkung einer Hot-Spare-Platte erklären und zwischen Hardware- und Software-RAID abwägen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.10.2",
+       "anteil": "RAID über die Level 0, 1, 5 und 10 hinaus: RAID 6, Hot-Spare, Hardware- und Software-RAID"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-1-5-K1",
+       "text": "Du kannst beurteilen, wann RAID 6 statt RAID 5 sinnvoll ist: RAID 6 verteilt zwei unabhängige Paritätsinformationen über mindestens vier Platten, verkraftet den gleichzeitigen Ausfall von zwei Platten und bietet die Kapazität von n − 2 Platten; das lohnt sich bei vielen großen Platten, deren Wiederherstellung lange dauert, weil währenddessen eine zweite ausfallen kann.",
+       "kurz": "RAID 6 gegenüber RAID 5",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-3.8.1-S380"
+       ]
+      },
+      {
+       "id": "PB1-12-1-5-K2",
+       "text": "Du kannst für einen Einsatz beurteilen, ob Hardware-RAID (eigener Controller, oft mit gepuffertem Cache, schnell und entlastet die CPU, kostet aber extra und bindet an den Controller) oder Software-RAID (vom Betriebssystem verwaltet, ohne Zusatzkosten, belastet aber die CPU) passt.",
+       "kurz": "Hardware-RAID oder Software-RAID",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-3.8.1-S381"
+       ]
+      },
+      {
+       "id": "PB1-12-1-5-K3",
+       "text": "Du kannst erklären, wie eine Hot-Spare-Platte die Verfügbarkeit eines RAID erhöht: Die zusätzlich eingebaute, ungenutzte Reserveplatte wird beim Ausfall einer Platte automatisch in den Verbund aufgenommen, und die fehlenden Daten werden darauf neu aufgebaut, ohne auf einen Austausch zu warten; während des Neuaufbaus ist der Zugriff langsamer.",
+       "kurz": "Hot-Spare-Platte und automatischer Neuaufbau",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.8.1-S381"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "RAID 4 legt die Parität auf eine eigene Platte, die bei jedem Schreiben beansprucht wird und bremst; bei verschachtelten Leveln ist RAID 10 (Stripe über Spiegelpaare) robuster als RAID 01 (Spiegel zweier Stripes), und JBOD hängt Platten nur aneinander – ohne Ausfallschutz und ohne Geschwindigkeitsgewinn. Als idealisierte Faustwerte liest ein RAID aus n Platten, von denen m ausfallen dürfen, bis zu n-mal und schreibt bis zu (n − m)-mal so schnell wie eine Einzelplatte; die Paritätsberechnung bremst das Schreiben in der Praxis meist stärker.",
+       "kurz": "RAID 4, RAID 01, JBOD und Durchsatz",
+       "quellen": [
+        "buch:GS-3.8.1"
+       ],
+       "grund": "RAID 4, RAID 01, JBOD und Durchsatz-Faustwerte sind Einzelheiten über die Pflicht-Level 0, 1, 5, 6 und 10 hinaus."
       }
      ]
+    },
+    {
+     "id": "PB1-12-1-4",
+     "titel": "Stromversorgung absichern: USV-Klassen, Leistung und Überbrückungszeit",
+     "ziel": "USV-Klassen nach Schutzwirkung und Einsatz beurteilen, die Wirkleistung und die Überbrückungszeit einer USV berechnen und ihren Einsatz wirtschaftlich beurteilen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.10.1",
+       "anteil": "USV: Klassen, Leistung, Überbrückungszeit und Wirtschaftlichkeit"
+      },
+      {
+       "id": "AP2b.01.10",
+       "anteil": "elektrotechnische Maßnahmen zur Sicherstellung des Betriebes beurteilen"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-1-4-K1",
+       "text": "Du kannst die USV-Klassen nach Schutzwirkung und Einsatz beurteilen: VFD (Offline bzw. Standby, schaltet erst bei Ausfall mit kurzer Umschaltzeit auf Batterie, günstig, für einzelne Arbeitsplätze), VI (netzinteraktiv, gleicht zusätzlich Spannungsschwankungen aus, für kleinere Netze) und VFI (Online bzw. Doppelwandler, versorgt die Last ständig über Gleich- und Wechselrichter ohne Umschaltzeit und schützt auch vor Frequenzschwankungen und Spannungsspitzen, für Server und Rechenzentren).",
+       "kurz": "USV-Klassen VFD, VI und VFI",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.3.5-S358",
+        "buch:GS-3.9.1-S390"
+       ]
+      },
+      {
+       "id": "PB1-12-1-4-K2",
+       "text": "Du kannst aus der Scheinleistung einer USV in VA mit dem Leistungsfaktor die Wirkleistung in Watt berechnen (P = S · cos φ), um zu sehen, ob die USV die Last der angeschlossenen Geräte trägt, zum Beispiel liefert eine USV mit 1500 VA bei einem Leistungsfaktor von 0,9 höchstens 1350 W.",
+       "kurz": "USV-Leistung: Voltampere und Watt",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-3.9.1-S391"
+       ]
+      },
+      {
+       "id": "PB1-12-1-4-K3",
+       "text": "Du kannst die Überbrückungszeit einer USV aus der gespeicherten Energie der Akkus in Wh, dem Wirkungsgrad des Wechselrichters und der Last in W berechnen (t = E · η ÷ P), zum Beispiel versorgt eine USV mit 500 Wh bei 90 % Wirkungsgrad eine Last von 300 W rund 1,5 Stunden.",
+       "kurz": "Überbrückungszeit einer USV",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-3.9.1-S395"
+       ]
+      },
+      {
+       "id": "PB1-12-1-4-K4",
+       "text": "Du kannst den Einsatz einer USV wirtschaftlich beurteilen: Dem Schutz vor Datenverlust, Hardwareschäden und Ausfallzeit bei kurzen Stromausfällen und Netzstörungen stehen Anschaffungskosten, ein dauerhaft höherer Stromverbrauch durch die Eigenverluste, Wartung und der Tausch der Akkus alle paar Jahre gegenüber.",
+       "kurz": "USV: Nutzen gegen laufende Kosten",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-3.9.1-S395"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": []
     }
    ]
   },
@@ -307,6 +500,124 @@
        "herkunft": [
         "katalog:AP2b.01.11.4"
        ]
+      },
+      {
+       "id": "PB1-12-2-1-K6",
+       "text": "Du kannst Anwendungsmonitoring (Sicht des Nutzers: Ist der Dienst erreichbar, wie schnell antwortet er, laufen Vorgänge wie Anmeldung oder Bestellung fehlerfrei durch) von Systemmonitoring (Sicht des Administrators: Auslastung von Prozessor, Arbeitsspeicher, Datenträgern und Netz) unterscheiden.",
+       "kurz": "Anwendungsmonitoring und Systemmonitoring",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.5.3-S402"
+       ]
+      },
+      {
+       "id": "PB1-12-2-1-K7",
+       "text": "Du kannst für einen Serverraum festlegen, welche Umgebungswerte Sensoren überwachen und bei Abweichung melden: Temperatur, Luftfeuchtigkeit (zu hoch führt zu Kondenswasser und Korrosion, zu niedrig begünstigt elektrostatische Entladungen), Rauch, Wasser etwa im Doppelboden, Netzspannung und Zustand der USV sowie Zutritte.",
+       "kurz": "Umgebungswerte im Serverraum überwachen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-2.3.1-S113"
+       ]
+      },
+      {
+       "id": "PB1-12-2-1-K8",
+       "text": "Du kannst Maßnahmen den Instandhaltungsstrategien zuordnen: reaktiv (erst nach dem Ausfall reparieren, Daten retten, Ersatzsystem bereitstellen), periodisch (planmäßig in festen Abständen, etwa Backups prüfen, Updates einspielen, USV-Akkus testen), präventiv bzw. proaktiv (Messwerte laufend überwachen und bei Abweichung handeln, bevor etwas ausfällt) und prädiktiv (Ausfälle aus Messdaten vorhersagen und Teile vorher tauschen).",
+       "kurz": "Instandhaltungsstrategien von reaktiv bis prädiktiv",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.5.1-S72",
+        "buch:GS-3.6.3-S369"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Application Performance Monitoring überwacht eine Anwendung technisch nach den Vorgaben des Betriebs, End-User-Experience-Monitoring misst Verfügbarkeit und Antwortzeiten so, wie Nutzer sie erleben. Dafür simulieren Skripte typische Nutzeraktionen (synthetisches Monitoring), eingebundenes JavaScript misst im Browser, oder Real User Monitoring wertet die Zugriffe echter Nutzer aus.",
+       "kurz": "APM und Überwachung aus Nutzersicht",
+       "quellen": [
+        "buch:FS-1.5.1"
+       ],
+       "grund": "RK2: APM und die Arten der Nutzerüberwachung sind Unterthemen des Anwendungsmonitorings."
+      },
+      {
+       "text": "Über Server und Netz hinaus überwacht man Anwendungen in Cloud und Containern, die Sicht der Endanwender und die Sicherheit, etwa ob Virenschutz und Signaturen auf allen Geräten aktuell sind.",
+       "kurz": "Weitere Monitoringbereiche: Cloud und Sicherheit",
+       "quellen": [
+        "buch:FS-1.3.2"
+       ],
+       "grund": "Aufzählung weiterer Monitoringbereiche; Umgebungswerte und Anwendungsmonitoring stehen als Pflicht im Stichpunkt."
+      }
+     ]
+    },
+    {
+     "id": "PB1-12-2-4",
+     "titel": "Messdaten sammeln und auswerten: Baseline, Logs und Alarmierung",
+     "ziel": "Verfahren zum Sammeln von Messdaten unterscheiden, Log-Dateien auswerten, Messwerte mit einer Baseline vergleichen und festlegen, wie das Monitoring beim Überschreiten eines Schwellwerts reagiert.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.11",
+       "anteil": "Monitoringsysteme anwenden: Messdaten sammeln, Logs auswerten"
+      },
+      {
+       "id": "AP2b.01.11.2",
+       "anteil": "SNMP u. Ä.: SNMP/WMI, Flussdaten und Paketmitschnitt nach Zweck unterscheiden"
+      },
+      {
+       "id": "AP2b.01.11.6",
+       "anteil": "Baseline als Grundlage der Schwellwerte, Reaktion beim Überschreiten"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-2-4-K1",
+       "text": "Du kannst Verfahren zum Sammeln von Messdaten im Netz nach ihrem Zweck unterscheiden: SNMP oder WMI fragen Zustandswerte einzelner Geräte ab (Auslastung, Fehlerzähler, Temperatur), Flussprotokolle wie NetFlow oder IPFIX liefern Statistiken, wer mit wem wie viel überträgt, und ein Paketmitschnitt zeigt den Datenverkehr Paket für Paket.",
+       "kurz": "SNMP, Flussdaten und Paketmitschnitt",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.3.2-S53"
+       ]
+      },
+      {
+       "id": "PB1-12-2-4-K2",
+       "text": "Du kannst Log-Dateien zur Störungsanalyse auswerten: Jeder Eintrag enthält Zeitpunkt, Schweregrad (etwa kritisch, Fehler, Warnung, Information, Debug), Quelle und Meldungstext; du filterst nach Schweregrad, Zeitraum und Quelle und verfolgst die Einträge rund um den Zeitpunkt der Störung bis zur Ursache.",
+       "kurz": "Log-Dateien nach Schweregrad auswerten",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-1.3.2-S54"
+       ]
+      },
+      {
+       "id": "PB1-12-2-4-K3",
+       "text": "Du kannst erklären, was eine Baseline ist – die Normalwerte eines Systems im Regelbetrieb, etwa typische CPU-Last, Speicherbelegung, Datenrate und Antwortzeiten zu verschiedenen Tageszeiten – und warum Messwerte und Schwellwerte erst im Vergleich mit ihr aussagekräftig sind.",
+       "kurz": "Baseline als Maßstab für Messwerte",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.6.3-S370"
+       ]
+      },
+      {
+       "id": "PB1-12-2-4-K4",
+       "text": "Du kannst festlegen, wie ein Monitoringsystem reagiert, wenn ein Schwellwert überschritten wird: Es meldet den Alarm an die zuständige Stelle (E-Mail, Nachricht an den Bereitschaftsdienst, automatisch erzeugtes Ticket) und führt bei bekannten Störungen ein hinterlegtes Skript zur Entstörung aus, etwa einen hängenden Dienst neu starten oder alte Protokolldateien entfernen.",
+       "kurz": "Reaktion bei überschrittenem Schwellwert",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-1.3.2-S51"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "Mit einem Mitschnittwerkzeug wie tcpdump oder Wireshark sieht man den Verkehr einer Schnittstelle live und kann etwa ausbleibende Antworten, falsche Zieladressen oder unverschlüsselte Übertragungen nachweisen.",
+       "kurz": "Paketmitschnitt bei der Fehlersuche",
+       "quellen": [
+        "buch:FS-4.7.2"
+       ],
+       "grund": "Werkzeugwahl (RK1); das Prinzip des Paketmitschnitts steht in der Pflicht-Aussage zu den Messverfahren."
       }
      ]
     },
@@ -384,12 +695,68 @@
         "katalog:AP2b.01.12.4",
         "katalog:AP2b.01.12.3"
        ]
+      },
+      {
+       "id": "PB1-12-2-2-K6",
+       "text": "Du kannst Service-Level-Management erklären: Serviceziele werden mit dem Kunden in SLAs vereinbart, ihre Einhaltung wird laufend über Kennzahlen gemessen, etwa aus dem Ticketsystem (Anteil fristgerecht gelöster Tickets, Zahl der SLA-Verletzungen, erreichte Verfügbarkeit, MTTR), und in regelmäßigen Berichten mit dem Kunden ausgewertet, um Abweichungen abzustellen.",
+       "kurz": "Service-Level-Management und SLA-Berichte",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.1.2-S17",
+        "buch:FS-1.2.2-S39"
+       ]
+      },
+      {
+       "id": "PB1-12-2-2-K7",
+       "text": "Du kannst beschreiben, wer bei einer Eskalation für das Ticket verantwortlich bleibt: Die abgebende Stufe verfolgt den Fall weiter, bis eine Rückmeldung kommt, prüft die Lösung und informiert die Beteiligten; abgeschlossen wird das Ticket über den First Level, der dem Nutzer die Lösung mitteilt und sich bestätigen lässt, dass alles wieder funktioniert.",
+       "kurz": "Ticketverantwortung bei Eskalation und Abschluss",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.2.2-S39"
+       ]
+      },
+      {
+       "id": "PB1-12-2-2-K8",
+       "text": "Du kannst bei einem Leistungsengpass bestimmen, ob vertikal skaliert wird (einen Server mit mehr Prozessorkernen, Arbeitsspeicher oder Speicher aufrüsten; einfach, aber durch die Hardware begrenzt und meist mit Ausfallzeit) oder horizontal (weitere Server hinzufügen und die Last verteilen; im laufenden Betrieb und nahezu unbegrenzt, wenn die Anwendung dafür ausgelegt ist).",
+       "kurz": "Vertikal oder horizontal skalieren",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-4.1.1-S305"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-1-3-1",
       "AP1-1-3-2",
       "AP1-3-3-2"
+     ],
+     "kuer": [
+      {
+       "text": "Im Change Management wird jede Änderung am Betrieb als Request for Change beantragt, nach Auswirkung eingestuft, nach Nutzen, Risiko und Machbarkeit bewertet, genehmigt, umgesetzt und überprüft; wiederkehrende Routineänderungen gelten als vorab genehmigte Standard-Changes. Das Configuration Management führt alle Konfigurationselemente (Hardware, Software, Servicekomponenten) in einer Konfigurationsdatenbank, die bei Tickets und Changes abgefragt wird.",
+       "kurz": "Change und Configuration Management",
+       "quellen": [
+        "buch:FS-1.1.2",
+        "buch:FS-1.2.2",
+        "buch:FS-1.3.3"
+       ],
+       "grund": "RK2: Change Management im IT-Betrieb ist Unterthema (nicht der Change Request im Projekt, PB1-1-2-1); Configuration Management D8: kein Katalog-Baustein."
+      },
+      {
+       "text": "Im Level-Support gilt: das SLA kennen, eigene Möglichkeiten nutzen und doch rechtzeitig und begründet eskalieren, jedes Ticket so dokumentieren, dass der nächste Bearbeiter alles weiß, und Lösungen als Musterlösung in die Wissensdatenbank stellen. Gemessen wird die Arbeit etwa an Anrufen pro Tag, gelösten, eskalierten und wiedereröffneten Tickets, Lösungsquote, Bearbeitungsdauer und SLA-Verletzungen.",
+       "kurz": "Erfolgsfaktoren und Kennzahlen im Level-Support",
+       "quellen": [
+        "buch:FS-1.2.3"
+       ],
+       "grund": "Arbeitshinweise und Aufzählung von Kennzahlen; das Service-Level-Management ist Pflicht im Stichpunkt."
+      },
+      {
+       "text": "Ein Ticketsystem wählt man nach Bedienbarkeit, Rollen und Rechten, Kanälen, Self-Service-Portal, Schnittstellen zum Monitoring, Automatisierung und Berichten; welche Reaktionszeit zugesagt werden kann, hängt von Vertrag, Priorität, Ersatzteilen, Personal und Fernzugriff ab. Schwachstellen im Service-Management sind ungeklärte Rollen, fehlende Prozessbeschreibungen, fehlende Vereinbarungen mit Kunden (SLA), internen Bereichen (OLA) und Zulieferern (Underpinning Contracts) sowie fehlende Steuerung über Kennzahlen.",
+       "kurz": "Ticketsystem wählen und Service-Schwachstellen",
+       "quellen": [
+        "buch:FS-1.3.3"
+       ],
+       "grund": "Werkzeugwahl und Aufzählungen; Unterthemen von Incident Management und SLA."
+      }
      ]
     },
     {
@@ -440,6 +807,52 @@
         "katalog:AP2b.02.04.2",
         "katalog:AP2b.02.04"
        ]
+      },
+      {
+       "id": "PB1-12-2-3-K4",
+       "text": "Du kannst Function as a Service (Serverless) erklären: Der Kunde lädt nur einzelne selbst geschriebene Funktionen hoch, der Anbieter führt sie bei einem Ereignis (z. B. Aufruf über eine URL, neue Datei) aus, skaliert sie automatisch und rechnet nach Aufrufen und Laufzeit ab; Server und Betriebssystem verwaltet allein der Anbieter.",
+       "kurz": "Function as a Service (Serverless)",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.1.1-S14"
+       ]
+      },
+      {
+       "id": "PB1-12-2-3-K5",
+       "text": "Du kannst Database as a Service erklären: Die Datenbank läuft beim Cloud-Anbieter, der je nach Vertrag Betrieb, Wartung und Patches, Datensicherung, Skalierung und Hochverfügbarkeit übernimmt, während der Kunde über das Netz zugreift und sich um Datenmodell, Daten und Zugriffsrechte kümmert; angeboten werden relationale und NoSQL-Datenbanken.",
+       "kurz": "Database as a Service (DBaaS)",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.7.8-S289"
+       ]
+      },
+      {
+       "id": "PB1-12-2-3-K6",
+       "text": "Du kannst für einen Bedarf begründen, ob sich eine Cloud-Datenbank lohnt: Sie ist ohne Serverkauf schnell bereit, bietet Hochverfügbarkeit mit SLA, erspart eine Kapazitätsplanung auf Jahre und wird nur bei Lastspitzen hochskaliert und bezahlt – statt eigener Server, die nur an wenigen Tagen ausgelastet wären; dagegen stehen laufende Kosten bei gleichmäßiger Dauerlast, die Abhängigkeit vom Anbieter und Datenschutzfragen.",
+       "kurz": "Cloud-Datenbank: wann sie sich lohnt",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-3.7.8-S289"
+       ]
+      },
+      {
+       "id": "PB1-12-2-3-K7",
+       "text": "Du kannst Public Cloud (Dienste eines Anbieters, die sich viele Kunden über das Internet teilen), Private Cloud (Cloud-Infrastruktur nur für eine Organisation, im eigenen Rechenzentrum oder bei einem Dienstleister, mit mehr Kontrolle und Anpassung) und Hybrid Cloud (Kombination beider, z. B. vertrauliche Daten privat, Lastspitzen in der Public Cloud) unterscheiden.",
+       "kurz": "Public, Private und Hybrid Cloud",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-2.4.13-S197"
+       ]
+      },
+      {
+       "id": "PB1-12-2-3-K8",
+       "text": "Du kannst für einen Kunden begründet zwischen Betrieb im eigenen Netz (eigene Server, eigene Wartung), Cloud (Dienste beim Anbieter über das Netz) und hybrider Infrastruktur auswählen: Im Haus bleiben Anwendungen mit sensiblen Daten, auf vorhandener Hardware oder solche, die ohne Internetleitung weiterlaufen müssen, in die Cloud gehen die übrigen; abzuwägen sind Aufwand, Kosten, benötigte Fachkräfte und Risiken.",
+       "kurz": "Lokal, Cloud oder hybrid betreiben",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.1.1-S304",
+        "buch:FS-4.8.1-S420"
+       ]
       }
      ],
      "baut_auf": [
@@ -447,14 +860,139 @@
      ],
      "kuer": [
       {
-       "text": "Weitere Modelle und Begriffe: Private, Public und Hybrid Cloud, Serverless und Function as a Service.",
-       "kurz": "Private, Public und Hybrid Cloud, Serverless",
+       "text": "Eine virtuelle Maschine bringt ein eigenes Betriebssystem mit; der Hypervisor läuft als Typ 1 direkt auf der Hardware (Server), als Typ 2 als Programm auf einem Betriebssystem (Test- und Arbeitsplatzrechner), und bei der Paravirtualisierung nutzt der Gast angepasste Treiber zum Hypervisor statt emulierter Hardware. Ein Container teilt sich den Kernel des Wirts, startet schneller und braucht weniger Ressourcen, ist aber schwächer abgeschottet.",
+       "kurz": "VM, Container und Hypervisor-Typen",
        "quellen": [
-        "podcast:themen-ap2"
+        "buch:FS-4.3.3",
+        "buch:FS-4.8.4"
        ],
-       "grund": "Offene „z. B.“-Liste (AP2b.02.04.1, AP2b.02.04.2); nur eine Hinweisquelle, daher nach P-BEISPIELLISTE Kür. Vom Katalog nicht ausgeschlossen."
+       "grund": "RK2: Der AP2-Katalog hat keinen eigenen Baustein Virtualisierung; Virtualisierung und Container sind Unterthema von „Cloud“ (AP2b.02.04.1)."
+      },
+      {
+       "text": "Servervirtualisierung macht Server unabhängig von der Hardware, lastet sie besser aus, spart Geräte, Energie und Platz und erlaubt schnelles Bereitstellen, Anpassen der Ressourcen im Betrieb sowie einfaches Sichern und zentrales Überwachen über eine Plattform, in der jeder physische Server ein Knoten ist. Dafür braucht es Know-how, und ein ausfallender Host reißt alle seine VMs mit, weshalb man mehrere Knoten zu einem Cluster verbindet.",
+       "kurz": "Servervirtualisierung: Vor- und Nachteile",
+       "quellen": [
+        "buch:FS-4.3.3",
+        "buch:FS-4.5.2",
+        "buch:FS-4.8.1"
+       ],
+       "grund": "RK2: Der AP2-Katalog hat keinen eigenen Baustein Virtualisierung; Virtualisierung ist Unterthema von „Cloud“ (AP2b.02.04.1)."
+      },
+      {
+       "text": "Eine Serveranwendung lässt sich direkt als Paket, als Container aus einem fertigen Image oder in einer eigenen VM bereitstellen; Vorlagen (Templates, Images) erzeugen beliebig viele gleiche Container oder VMs. Images aus öffentlichen Marktplätzen nimmt man nur von verifizierten Herausgebern, in aktueller Version und mit geprüfter Prüfsumme oder Signatur, weil sie sonst veraltete Software oder Schadcode enthalten können.",
+       "kurz": "Bereitstellung über Pakete, Images und Vorlagen",
+       "quellen": [
+        "buch:FS-4.8.4",
+        "buch:FS-4.6.3"
+       ],
+       "grund": "RK2: Container und Images sind Unterthema von „Cloud“ (AP2b.02.04.1); kein eigener Baustein Virtualisierung."
+      },
+      {
+       "text": "Cloud-Datenbanken gibt es selbstverwaltet (nur Infrastruktur gemietet, eigener Datenbankadministrator, wie IaaS), automatisiert, verwaltet (kein Serverzugriff, wie PaaS) und autonom (Optimierung, Sicherung und Updates weitgehend automatisch). Bei der Anbieterwahl zählen die Breite des Angebots und Werkzeuge, die vorhandene Datenbanken samt Schema migrieren.",
+       "kurz": "Verwaltungsvarianten und Anbieter von Cloud-Datenbanken",
+       "quellen": [
+        "buch:FS-3.7.8"
+       ],
+       "grund": "Verwaltungsvarianten sind Unterthema von DBaaS; Anbieterwahl ist Produktwahl (RK1)."
+      },
+      {
+       "text": "Provisionierung stellt Server, Netze, Benutzerkonten mit Rechten und Dienste automatisiert bereit und entzieht sie wieder; Orchestrierung konfiguriert und koordiniert viele Systeme, VMs, Container und Dienste samt ihren Abhängigkeiten, etwa eine Container-Plattform, die Container auf Hosts verteilt und bei Last vervielfacht.",
+       "kurz": "Provisionierung und Orchestrierung",
+       "quellen": [
+        "buch:FS-4.1.2"
+       ],
+       "grund": "D8: kein Katalog-Baustein."
+      },
+      {
+       "text": "Bei hyperkonvergenter Infrastruktur stehen Rechenleistung, Speicher und Netz nicht als drei getrennte Hardwareschichten bereit, sondern werden auf gleichartigen Knoten gemeinsam virtualisiert und per Software verwaltet (Software-Defined Data Center); das Rechenzentrum wächst dann einfach um weitere Knoten.",
+       "kurz": "Hyperkonvergente Infrastruktur (HCI)",
+       "quellen": [
+        "buch:GS-2.7.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein."
       }
-     ]
+     ],
+     "hinweis": "Das Lehrbuch beschreibt Function as a Service als Bereitstellung fertiger, vielfach verwendeter Funktionen durch den Anbieter; richtig ist: Bei FaaS führt der Anbieter vom Kunden geschriebene Funktionen ereignisgesteuert aus. Das Lehrbuch nennt Proxmox VE als Beispiel für einen Typ-2-Hypervisor; richtig ist Typ 1 (KVM direkt auf der Hardware). Paravirtualisierung ist kein direkter Hardwarezugriff (das wäre Passthrough), sondern die Nutzung angepasster Treiber zum Hypervisor."
+    },
+    {
+     "id": "PB1-12-2-5",
+     "titel": "Hosting, Colocation und Managed Services auswählen",
+     "ziel": "Hosting-Varianten und Colocation unterscheiden und für einen Bedarf auswählen, Managed Services erklären und begründet auswählen, welche Betriebsaufgaben ein Kunde einkauft.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.02.04",
+       "anteil": "Liefermodelle Hosting, Colocation und Managed Services benennen und bedarfsorientiert auswählen"
+      },
+      {
+       "id": "AP2b.02.04.1",
+       "anteil": "zwischen On Premises und Cloud: gemietete Server, Colocation, Managed Services"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-12-2-5-K1",
+       "text": "Du kannst für einen Bedarf eine Hosting-Variante auswählen: Shared Webhosting (viele Kunden teilen sich Webserver, Datenbank und Dateisystem, Verwaltung über ein Control Panel, günstig, aber wenig Einfluss), VPS (virtueller Server mit geteilten, oft überbuchten CPU-Kernen), VDS (virtueller Server mit fest zugesicherten Ressourcen), Dedicated Server bzw. Bare Metal (eigene physische Hardware) und Managed Hosting (der Anbieter richtet den Server ein und wartet ihn).",
+       "kurz": "Hosting-Varianten von Shared bis Bare Metal",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.3.3-S348",
+        "buch:FS-4.3.4-S353"
+       ]
+      },
+      {
+       "id": "PB1-12-2-5-K2",
+       "text": "Du kannst beurteilen, wann Colocation passt: Eigene Server und Daten stehen auf gemieteten Rack-Plätzen im Rechenzentrum eines Anbieters, der redundante Stromversorgung, Kühlung, Zutritts- und Brandschutz sowie eine schnelle Internetanbindung stellt; anders als in der Cloud bleiben Hardware und Betrieb beim Kunden, anders als im eigenen Serverraum spart er den Aufbau dieser Infrastruktur.",
+       "kurz": "Colocation zwischen eigenem Rechenzentrum und Cloud",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-3.2.5-S296"
+       ]
+      },
+      {
+       "id": "PB1-12-2-5-K3",
+       "text": "Du kannst Managed Services erklären: Ein Dienstleister erbringt wiederkehrende IT-Betriebsaufgaben wie Server- und Netzwerkbetreuung, Backup, Updates oder Helpdesk dauerhaft nach SLA bzw. Rahmenvertrag, und zwar auf drei Ebenen: Management der Infrastruktur (Betrieb des gesamten Rechenzentrums), Server-Management (Updates, Backups, Snapshots und Rollback einzelner Server) und Anwendungsmanagement (Betreuung einzelner Anwendungen wie Groupware, Telefonanlage oder CRM).",
+       "kurz": "Managed Services und ihre drei Ebenen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.8.3-S424",
+        "buch:GS-2.4.14-S201"
+       ]
+      },
+      {
+       "id": "PB1-12-2-5-K4",
+       "text": "Du kannst für einen Kunden nach seinem IT-Know-how begründet auswählen, welche Betriebsaufgaben er als Managed Service einkauft und welche er selbst übernimmt: ohne eigene IT-Fachkraft fast alles einkaufen, mit etwas Erfahrung einzelne Server- oder Anwendungsaufgaben selbst erledigen, mit eigener IT-Abteilung den Betrieb weitgehend selbst führen und nur Spezialaufgaben vergeben.",
+       "kurz": "Managed Services nach Know-how des Kunden",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.8.3-S426"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "Beim Application Service Providing stellt ein Dienstleister eine Anwendung wie ein ERP-System zur Miete über eine Datenleitung bereit – ein Vorläufer von Software as a Service.",
+       "kurz": "Application Service Providing als SaaS-Vorläufer",
+       "quellen": [
+        "buch:GS-2.4.14"
+       ],
+       "grund": "D8: kein Katalog-Baustein."
+      },
+      {
+       "text": "Vor dem Vergleich von Hosting- oder Serverangeboten klärt man die Voraussetzungen der Anwendung (Laufzeitumgebung und Version, Datenbank, zeitgesteuerte Aufgaben, SSH-Zugang); verglichen werden dann CPU-Kerne, Arbeitsspeicher, SSD-Speicher, Bandbreite und Trafficgrenzen, Domains und Datenbanken, TLS-Zertifikate, Datensicherung (oft extra), Vertragslaufzeit und Kosten.",
+       "kurz": "Hosting- und Serverangebote vergleichen",
+       "quellen": [
+        "buch:FS-4.3.4",
+        "buch:FS-4.3.3"
+       ],
+       "grund": "Datenblattwerte und Produktwahl (RK1)."
+      }
+     ],
+     "hinweis": "Das Lehrbuch ordnet Webhosting den SaaS-Angeboten zu; fachlich ist Shared Webhosting eher ein Plattformangebot (nahe PaaS), weil der Kunde darauf eigene Inhalte und Anwendungen betreibt."
     }
    ]
   }
@@ -627,8 +1165,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -637,7 +1175,28 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-2.6.2": "Lehrbuch Westermann „IT-Berufe“ FS 2.6.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.5.1": "Lehrbuch Westermann „IT-Berufe“ FS 1.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.8.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.8.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.2.5": "Lehrbuch Westermann „IT-Berufe“ GS 3.2.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.8.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.8.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.3.2": "Lehrbuch Westermann „IT-Berufe“ FS 1.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.7.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.1.2": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.2.2": "Lehrbuch Westermann „IT-Berufe“ FS 1.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.3.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.2.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.8.4": "Lehrbuch Westermann „IT-Berufe“ FS 4.8.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.5.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.5.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.8.1": "Lehrbuch Westermann „IT-Berufe“ FS 4.8.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.6.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.6.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.7.8": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.8 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.1.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-2.7.3": "Lehrbuch Westermann „IT-Berufe“ GS 2.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-2.4.14": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.14 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.4": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -746,6 +1305,213 @@
       "PB1-9"
      ],
      "notiz": "Handbücher und Dokumentation AP2b.01.13"
+    },
+    {
+     "thema": "Die FMEA (Fehlermöglichkeits- und Einflussanalyse) sucht schon in Planung und Entwicklung im Team aus mehreren Bereichen",
+     "quellen": [
+      "buch:FS-2.6.2",
+      "buch:FS-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "In einem Virtualisierungscluster starten beim Ausfall eines Knotens die übrigen Knoten dessen virtuelle Maschinen automa",
+     "quellen": [
+      "buch:FS-4.3.3",
+      "buch:FS-4.8.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein eigener Serverraum braucht Zutrittsschutz, eine abgesicherte Stromversorgung, eine Klimatisierung, weil praktisch di",
+     "quellen": [
+      "buch:GS-3.2.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "RAID 4 legt die Parität auf eine eigene Platte, die bei jedem Schreiben beansprucht wird und bremst; bei verschachtelten",
+     "quellen": [
+      "buch:GS-3.8.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Application Performance Monitoring überwacht eine Anwendung technisch nach den Vorgaben des Betriebs, End-User-Experienc",
+     "quellen": [
+      "buch:FS-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Über Server und Netz hinaus überwacht man Anwendungen in Cloud und Containern, die Sicht der Endanwender und die Sicherh",
+     "quellen": [
+      "buch:FS-1.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Mit einem Mitschnittwerkzeug wie tcpdump oder Wireshark sieht man den Verkehr einer Schnittstelle live und kann etwa aus",
+     "quellen": [
+      "buch:FS-4.7.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im Change Management wird jede Änderung am Betrieb als Request for Change beantragt, nach Auswirkung eingestuft, nach Nu",
+     "quellen": [
+      "buch:FS-1.1.2",
+      "buch:FS-1.2.2",
+      "buch:FS-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im Level-Support gilt: das SLA kennen, eigene Möglichkeiten nutzen und doch rechtzeitig und begründet eskalieren, jedes ",
+     "quellen": [
+      "buch:FS-1.2.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Ticketsystem wählt man nach Bedienbarkeit, Rollen und Rechten, Kanälen, Self-Service-Portal, Schnittstellen zum Moni",
+     "quellen": [
+      "buch:FS-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine virtuelle Maschine bringt ein eigenes Betriebssystem mit; der Hypervisor läuft als Typ 1 direkt auf der Hardware (S",
+     "quellen": [
+      "buch:FS-4.3.3",
+      "buch:FS-4.8.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Servervirtualisierung macht Server unabhängig von der Hardware, lastet sie besser aus, spart Geräte, Energie und Platz u",
+     "quellen": [
+      "buch:FS-4.3.3",
+      "buch:FS-4.5.2",
+      "buch:FS-4.8.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Serveranwendung lässt sich direkt als Paket, als Container aus einem fertigen Image oder in einer eigenen VM bereit",
+     "quellen": [
+      "buch:FS-4.8.4",
+      "buch:FS-4.6.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Cloud-Datenbanken gibt es selbstverwaltet (nur Infrastruktur gemietet, eigener Datenbankadministrator, wie IaaS), automa",
+     "quellen": [
+      "buch:FS-3.7.8"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Provisionierung stellt Server, Netze, Benutzerkonten mit Rechten und Dienste automatisiert bereit und entzieht sie wiede",
+     "quellen": [
+      "buch:FS-4.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Bei hyperkonvergenter Infrastruktur stehen Rechenleistung, Speicher und Netz nicht als drei getrennte Hardwareschichten ",
+     "quellen": [
+      "buch:GS-2.7.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Beim Application Service Providing stellt ein Dienstleister eine Anwendung wie ein ERP-System zur Miete über eine Datenl",
+     "quellen": [
+      "buch:GS-2.4.14"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Vor dem Vergleich von Hosting- oder Serverangeboten klärt man die Voraussetzungen der Anwendung (Laufzeitumgebung und Ve",
+     "quellen": [
+      "buch:FS-4.3.4",
+      "buch:FS-4.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-12-2-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -847,6 +1613,103 @@
       "PB1-12-2-2-K3"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-12-1-1-K4",
+     "PB1-12-1-2-K4",
+     "PB1-12-1-2-K5",
+     "PB1-12-1-3-K6",
+     "PB1-12-1-3-K7",
+     "PB1-12-1-3-K8",
+     "PB1-12-1-4-K1",
+     "PB1-12-1-4-K2",
+     "PB1-12-1-4-K3",
+     "PB1-12-1-4-K4",
+     "PB1-12-1-5-K1",
+     "PB1-12-1-5-K2",
+     "PB1-12-1-5-K3",
+     "PB1-12-2-1-K6",
+     "PB1-12-2-1-K7",
+     "PB1-12-2-1-K8",
+     "PB1-12-2-4-K1",
+     "PB1-12-2-4-K2",
+     "PB1-12-2-4-K3",
+     "PB1-12-2-4-K4",
+     "PB1-12-2-2-K6",
+     "PB1-12-2-2-K7",
+     "PB1-12-2-2-K8",
+     "PB1-12-2-3-K4",
+     "PB1-12-2-3-K5",
+     "PB1-12-2-3-K6",
+     "PB1-12-2-3-K7",
+     "PB1-12-2-3-K8",
+     "PB1-12-2-5-K1",
+     "PB1-12-2-5-K2",
+     "PB1-12-2-5-K3",
+     "PB1-12-2-5-K4"
+    ],
+    "neue_stichpunkte": [
+     {
+      "id": "PB1-12-1-4",
+      "nach": "PB1-12-1-3",
+      "begruendung": "D5: PB1-12-1-3 hätte mit allen Buch-Aussagen 15 Aussagen (5 bestehende + 10 neue); die vier USV-Aussagen (Klassen, Leistung, Überbrückungszeit, Wirtschaftlichkeit) bilden einen eigenen Stichpunkt, die RAID-Vertiefung einen weiteren (S1), PB1-12-1-3 behält 8."
+     },
+     {
+      "id": "PB1-12-1-5",
+      "nach": "PB1-12-1-3",
+      "begruendung": "D5: PB1-12-1-3 hätte mit allen Buch-Aussagen 15 Aussagen; die RAID-Vertiefung (3 neue Aussagen) wird eigener Stichpunkt, die bestehenden RAID-Aussagen K3–K5 bleiben in PB1-12-1-3."
+     },
+     {
+      "id": "PB1-12-2-4",
+      "nach": "PB1-12-2-1",
+      "begruendung": "D5: PB1-12-2-1 hätte sonst 12 Aussagen (5 bestehende + 7 neue); Erfassung und Auswertung der Messdaten (4 neue Aussagen) als eigener Stichpunkt, Monitoringdaten, Serverraum und Instandhaltung bleiben in PB1-12-2-1 (8)."
+     },
+     {
+      "id": "PB1-12-2-5",
+      "nach": "PB1-12-2-3",
+      "begruendung": "D5: PB1-12-2-3 hätte sonst 12 Aussagen (3 bestehende + 9 neue); die Liefermodelle zwischen eigenem Betrieb und Cloud (Hosting, Colocation, Managed Services; 4 neue Aussagen) als eigener Stichpunkt, PB1-12-2-3 behält 8."
+     }
+    ],
+    "d6": [
+     "PB1-12-1-1-K1",
+     "PB1-12-1-1-K2"
+    ],
+    "kuer": [
+     "PB1-12-1-2",
+     "PB1-12-1-3",
+     "PB1-12-1-3",
+     "PB1-12-1-5",
+     "PB1-12-2-1",
+     "PB1-12-2-1",
+     "PB1-12-2-4",
+     "PB1-12-2-2",
+     "PB1-12-2-2",
+     "PB1-12-2-2",
+     "PB1-12-2-3",
+     "PB1-12-2-3",
+     "PB1-12-2-3",
+     "PB1-12-2-3",
+     "PB1-12-2-3",
+     "PB1-12-2-3",
+     "PB1-12-2-5",
+     "PB1-12-2-5"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB1-12-1-2",
+     "PB1-12-1-3",
+     "PB1-12-1-3",
+     "PB1-12-2-3",
+     "PB1-12-2-3",
+     "PB1-12-2-5"
+    ]
    }
   ]
  }
