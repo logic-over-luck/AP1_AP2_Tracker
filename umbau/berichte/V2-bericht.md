@@ -49,7 +49,7 @@ Danach (Überblick an den Projektinhaber) Regel K v2.1: alle neuen Kernpunkte vo
 
 Ganz gefilterte Kapitel: GS 2.1.3 (uebung: nur Umfrage und Rechercheauftrag), GS 3.4.1 (ausgeschlossen: Netzwerktopologie laut Katalog nur FI DV/SI), GS 5.7.2 (bedienung: erstes Programm in einer IDE), FS2 3.3.3 (nicht_ae: Wettermodelle, LF10c).
 
-Erwartung Schritt 3 (je Ordner min(Obergrenze RK3, eindeutige Pflicht-Kernpunkte × 0,7)): AP1 ≈ 214, PB1 ≈ 134, PB2 ≈ 18, WISO ≈ 42, zusammen ≈ 408 neue Pflicht-Aussagen. An der Obergrenze gekappt: AP1-4 (44), PB1-5 (13), PB1-8 (8), PB1-11 (17), PB1-12 (14).
+Erwartung Schritt 3 mit Obergrenze (je Ordner min(Obergrenze RK3, eindeutige Pflicht-Kernpunkte × 0,7)): AP1 ≈ 214, PB1 ≈ 134, PB2 ≈ 18, WISO ≈ 42, zusammen ≈ 408 neue Pflicht-Aussagen. An der Obergrenze gekappt: AP1-4 (44), PB1-5 (13), PB1-8 (8), PB1-11 (17), PB1-12 (14). **RK3 ist danach entfallen** (Projektinhaber bei der Freigabe von Schritt 3): ohne Obergrenze Erwartung etwa 460 neue Pflicht-Aussagen.
 
 ### RK6 – umgehängte Zuordnungen
 
