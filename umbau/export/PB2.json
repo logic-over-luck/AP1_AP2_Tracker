@@ -5,14 +5,14 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 22,
-  "koennen": 115,
+  "koennen": 117,
   "quellen": {
-   "PB2-1.json": "6c16ea6764dd06fb",
-   "PB2-2.json": "2dd20a63f12e0965",
-   "PB2-3.json": "00a87ce9d67a40ae",
+   "PB2-1.json": "c11db1474dce9a13",
+   "PB2-2.json": "84576dcccabe58fe",
+   "PB2-3.json": "e1a2ba1277a73e21",
    "PB2-4.json": "68840c2be9b4bac8",
-   "PB2-5.json": "d2d317f1f6128fe3",
-   "PB2-6.json": "c27aa71b7ad5f732"
+   "PB2-5.json": "29df53e0122566ed",
+   "PB2-6.json": "c7b760e97101b778"
   }
  },
  "stichpunkte": [
@@ -67,8 +67,8 @@
     },
     {
      "id": "PB2-1-1-1-K8",
-     "stufe": 4,
-     "kurz": "begründen, wann ein Algorithmus vor dem Programmieren sprachunabhängig als Pseudocode oder Aktivitätsdiagramm modelliert wird: bei komplexen Abläufen, weil das Modell den Lösungsweg vorab plant, im Team besprechbar macht und dokumentiert, während ein einfacher Ablauf wie die Summe zweier Werte direkt in Code geschrieben werden kann"
+     "stufe": 2,
+     "kurz": "erklären, wann ein Algorithmus vor dem Programmieren sprachunabhängig als Pseudocode oder Aktivitätsdiagramm modelliert wird: bei komplexen Abläufen, weil das Modell den Lösungsweg vorab plant, im Team besprechbar macht und dokumentiert, während ein einfacher Ablauf wie die Summe zweier Werte direkt programmiert wird"
     },
     {
      "id": "PB2-1-1-1-K9",
@@ -198,8 +198,8 @@
     },
     {
      "id": "PB2-2-1-1-K7",
-     "stufe": 3,
-     "kurz": "einen optimierten Bubble Sort in Pseudocode schreiben: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte noch unsortierte Element bereits ans Ende gewandert ist, und ein Merker beendet das Sortieren, sobald ein Durchlauf ohne Tausch bleibt; so sind höchstens n − 1 Durchläufe nötig"
+     "stufe": 2,
+     "kurz": "erklären, wie zwei Verbesserungen den Bubble Sort verkürzen: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte unsortierte Element schon am Ende steht, und ein Merker beendet das Verfahren nach einem Durchlauf ohne Tausch; so genügen höchstens n − 1 Durchläufe"
     }
    ]
   },
@@ -239,8 +239,8 @@
     },
     {
      "id": "PB2-2-1-3-K5",
-     "stufe": 4,
-     "kurz": "für ein Problem prüfen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, in dem der Ablauf ohne weiteren Aufruf endet"
+     "stufe": 3,
+     "kurz": "für ein Problem bestimmen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, der ohne weiteren Aufruf gelöst wird"
     },
     {
      "id": "PB2-2-1-3-K6",
@@ -792,8 +792,8 @@
     },
     {
      "id": "PB2-6-1-1-K8",
-     "stufe": 4,
-     "kurz": "die Vorteile einer Stored Procedure begründen: Sie kann neben SQL-Anweisungen auch Verzweigungen und Bedingungen enthalten und läuft direkt in der Datenbank, deshalb werden zusammengehörige Schritte schneller ausgeführt, und Anwendungen dürfen nur die Prozedur aufrufen statt beliebiges SQL abzusetzen, was die Sicherheit erhöht"
+     "stufe": 2,
+     "kurz": "die Vorteile einer Stored Procedure erklären: Sie kann außer SQL auch Ablaufsteuerung (Bedingungen, Verzweigungen) enthalten und läuft in der Datenbank, sodass zusammengehörige Schritte ohne einzelnes Hin und Her mit der Anwendung schneller ablaufen; und weil Anwendungen nur das Recht zum Aufruf der Prozedur brauchen statt Schreibrechte auf die Tabellen, wird der Zugriff sicherer"
     }
    ]
   },
@@ -824,8 +824,8 @@
     },
     {
      "id": "PB2-6-1-6-K3",
-     "stufe": 4,
-     "kurz": "begründen, für welche Spalten ein Index angelegt wird: in großen Tabellen für Spalten, nach denen häufig gesucht, verknüpft oder sortiert wird, aber nicht für alle Spalten, weil jeder Index Speicher kostet und Einfügen und Ändern verlangsamt; der Primärschlüssel ist bereits indiziert, und vor einem Massenimport wird der Index besser erst danach angelegt"
+     "stufe": 3,
+     "kurz": "bestimmen, auf welche Spalten einer großen Tabelle ein Index gelegt wird: auf Spalten, die häufig in WHERE-, JOIN- oder ORDER-BY-Teilen vorkommen, nicht auf jede Spalte und nicht zusätzlich auf den Primärschlüssel, der schon einen Index hat; vor einem Massenimport legst du den Index erst nach dem Import an (Nutzen und Kosten eines Index: PB2-6-1-1-K4)"
     }
    ]
   },
@@ -874,7 +874,12 @@
     {
      "id": "PB2-6-1-2-K7",
      "stufe": 3,
-     "kurz": "mehrere Änderungen zu einer Transaktion bündeln: in SQL mit START TRANSACTION (bzw. BEGIN), den Anweisungen und COMMIT, das sie dauerhaft macht, oder ROLLBACK, das alle Änderungen seit Beginn zurücknimmt; im Programm schaltest du dazu das standardmäßige Auto-Commit (jede Anweisung wird sofort festgeschrieben) ab, rufst nach der letzten Anweisung commit und bei einer Ausnahme im Fehlerzweig rollback auf"
+     "kurz": "Transaktionen in SQL anwenden: mehrere zusammengehörige Änderungen mit START TRANSACTION (bzw. BEGIN) einleiten, sie mit COMMIT gemeinsam dauerhaft machen oder bei einem Fehler mit ROLLBACK alle Änderungen seit dem Beginn zurücknehmen"
+    },
+    {
+     "id": "PB2-6-1-2-K8",
+     "stufe": 2,
+     "kurz": "erklären, warum ein UPDATE fast immer eine WHERE-Bedingung braucht: Ohne sie erhält jede Zeile der Tabelle den neuen Wert; soll nur ein einzelner Wert entfernt werden, setzt man ihn mit UPDATE … SET Spalte = NULL, und die übrigen Werte der Zeile bestehen weiter"
     }
    ]
   },
@@ -960,6 +965,11 @@
      "id": "PB2-6-1-5-K7",
      "stufe": 2,
      "kurz": "den Ablauf zur Verbesserung der Datenqualität beschreiben: Die Analyse (Data Profiling) findet Fehler, Lücken und Widersprüche, die Bereinigung (Data Cleaning) beseitigt sie, etwa durch Zusammenführen von Dubletten oder Ergänzen fehlender Werte, und ein regelmäßig wiederholtes Monitoring verhindert, dass die Qualität durch Datenalterung wieder sinkt; große Bestände werden dabei automatisiert geprüft"
+    },
+    {
+     "id": "PB2-6-1-5-K8",
+     "stufe": 2,
+     "kurz": "erklären, warum die Kriterien für die Datenqualität mit dem Auftraggeber ausgewählt und gewichtet werden: Welche zählen, hängt vom Zweck der Anwendung ab; man beginnt mit wenigen wichtigen, ergänzt später weitere und prüft die Daten gezielt an ihnen, statt ihre Qualität nach Gefühl zu beurteilen"
     }
    ]
   }

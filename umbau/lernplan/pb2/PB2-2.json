@@ -98,9 +98,9 @@
       },
       {
        "id": "PB2-2-1-1-K7",
-       "text": "Du kannst einen optimierten Bubble Sort in Pseudocode schreiben: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte noch unsortierte Element bereits ans Ende gewandert ist, und ein Merker beendet das Sortieren, sobald ein Durchlauf ohne Tausch bleibt; so sind höchstens n − 1 Durchläufe nötig.",
+       "text": "Du kannst erklären, wie zwei Verbesserungen den Bubble Sort verkürzen: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte unsortierte Element schon am Ende steht, und ein Merker beendet das Verfahren nach einem Durchlauf ohne Tausch; so genügen höchstens n − 1 Durchläufe.",
        "kurz": "Optimierter Bubble Sort mit Abbruchmerker",
-       "stufe": 3,
+       "stufe": 2,
        "herkunft": [
         "buch:FS2-2.3.3-S168"
        ]
@@ -183,9 +183,9 @@
       },
       {
        "id": "PB2-2-1-3-K5",
-       "text": "Du kannst für ein Problem prüfen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, in dem der Ablauf ohne weiteren Aufruf endet.",
+       "text": "Du kannst für ein Problem bestimmen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, der ohne weiteren Aufruf gelöst wird.",
        "kurz": "Eignung eines Problems für Rekursion",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:FS2-2.3.2-S165"
        ]

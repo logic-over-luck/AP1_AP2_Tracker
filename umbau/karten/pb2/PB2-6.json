@@ -428,7 +428,7 @@
    "id": "PB2-6-1-1-K8-1",
    "sp": "PB2-6-1-1",
    "k": "PB2-6-1-1-K8",
-   "vorne": "Nenne zwei Vorteile einer Stored Procedure und begründe sie.",
+   "vorne": "Erkläre zwei Vorteile einer Stored Procedure.",
    "hinten": "- **schneller:** läuft direkt in der Datenbank, ohne jede Anweisung einzeln über das Netz zu schicken\n- **sicherer:** Anwendungen dürfen nur die Prozedur aufrufen, nicht beliebiges SQL auf die Tabellen absetzen"
   },
   {
@@ -491,8 +491,22 @@
    "id": "PB2-6-1-2-K7-2",
    "sp": "PB2-6-1-2",
    "k": "PB2-6-1-2-K7",
-   "vorne": "Ein Programm soll zwei Änderungen als Transaktion ausführen. Was muss es wegen Auto-Commit tun?",
-   "hinten": "Auto-Commit abschalten (sonst wird jede Anweisung sofort festgeschrieben), nach der letzten Anweisung commit aufrufen und bei einer Ausnahme im Fehlerzweig rollback."
+   "vorne": "Zwischen START TRANSACTION und COMMIT schlägt die zweite von zwei Änderungen fehl, danach folgt ROLLBACK. Was geschieht mit der ersten Änderung?",
+   "hinten": "Sie wird ebenfalls zurückgenommen: ROLLBACK stellt den Stand vor START TRANSACTION her, die Änderungen gelten ganz oder gar nicht."
+  },
+  {
+   "id": "PB2-6-1-2-K8-1",
+   "sp": "PB2-6-1-2",
+   "k": "PB2-6-1-2-K8",
+   "vorne": "Was bewirkt `UPDATE Artikel SET Preis = 9.99;` ohne WHERE?",
+   "hinten": "Jeder Artikel der Tabelle bekommt den Preis 9,99 – ohne WHERE trifft ein UPDATE alle Zeilen."
+  },
+  {
+   "id": "PB2-6-1-2-K8-2",
+   "sp": "PB2-6-1-2",
+   "k": "PB2-6-1-2-K8",
+   "vorne": "Bei Kunde 17 soll nur die Telefonnummer entfernt werden. Wie geht das, und warum nicht mit DELETE?",
+   "hinten": "`UPDATE Kunde SET Telefon = NULL WHERE KundenNr = 17;` – nur dieser Wert wird zu NULL, alle übrigen Angaben zum Kunden bestehen weiter. DELETE löscht immer den ganzen Datensatz."
   },
   {
    "id": "PB2-6-1-5-K4-1",
@@ -549,6 +563,20 @@
    "k": "PB2-6-1-5-K7",
    "vorne": "Warum reicht eine einmalige Bereinigung der Kundendaten nicht aus?",
    "hinten": "Daten altern: Kunden ziehen um, heiraten, wechseln die Firma. Ohne regelmäßiges Monitoring sinkt die Qualität wieder."
+  },
+  {
+   "id": "PB2-6-1-5-K8-1",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K8",
+   "vorne": "Warum legt man die Kriterien für die Datenqualität mit dem Auftraggeber fest, statt immer alle zu prüfen?",
+   "hinten": "Welche Kriterien wichtig sind, hängt vom Zweck der Anwendung ab. Man wählt mit dem Auftraggeber wenige wichtige aus, gewichtet sie und prüft die Daten daran, statt nach Gefühl zu urteilen."
+  },
+  {
+   "id": "PB2-6-1-5-K8-2",
+   "sp": "PB2-6-1-5",
+   "k": "PB2-6-1-5-K8",
+   "vorne": "Ein Kundenbestand soll für einen Newsletter genutzt werden. Welche Qualitätskriterien gewichtest du hoch, welche kaum?",
+   "hinten": "Hoch: Korrektheit und Aktualität der E-Mail-Adressen, Eindeutigkeit (keine Dubletten, sonst Mehrfachversand). Kaum: z. B. Vollständigkeit des Geburtsdatums, weil es für den Versand nicht gebraucht wird."
   }
  ],
  "nicht_abgefragt": [],
@@ -887,12 +915,12 @@
   {
    "id": "PB2-6-1-6-K2-1",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S613)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S612, buch:GS-5.8.5-S613)"
   },
   {
    "id": "PB2-6-1-6-K2-2",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S613)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S612, buch:GS-5.8.5-S613)"
   },
   {
    "id": "PB2-6-1-6-K3-1",
@@ -907,12 +935,22 @@
   {
    "id": "PB2-6-1-2-K7-1",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S198, buch:FS2-2.3.8-S199)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S198)"
   },
   {
    "id": "PB2-6-1-2-K7-2",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S198, buch:FS2-2.3.8-S199)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.8-S198)"
+  },
+  {
+   "id": "PB2-6-1-2-K8-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S615)"
+  },
+  {
+   "id": "PB2-6-1-2-K8-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S615)"
   },
   {
    "id": "PB2-6-1-5-K4-1",
@@ -927,22 +965,22 @@
   {
    "id": "PB2-6-1-5-K5-1",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166, buch:FS-3.2.1-S167)"
   },
   {
    "id": "PB2-6-1-5-K5-2",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166, buch:FS-3.2.1-S167)"
   },
   {
    "id": "PB2-6-1-5-K6-1",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S167, buch:FS2-3.2.1-S225)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166, buch:FS-3.2.1-S167, buch:FS2-3.2.1-S225)"
   },
   {
    "id": "PB2-6-1-5-K6-2",
    "entscheidung": "neu",
-   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S167, buch:FS2-3.2.1-S225)"
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166, buch:FS-3.2.1-S167, buch:FS2-3.2.1-S225)"
   },
   {
    "id": "PB2-6-1-5-K7-1",
@@ -953,6 +991,16 @@
    "id": "PB2-6-1-5-K7-2",
    "entscheidung": "neu",
    "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S168)"
+  },
+  {
+   "id": "PB2-6-1-5-K8-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166, buch:FS-3.2.1-S168)"
+  },
+  {
+   "id": "PB2-6-1-5-K8-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.1-S166, buch:FS-3.2.1-S168)"
   }
  ]
 }

@@ -137,9 +137,9 @@
       },
       {
        "id": "PB2-6-1-1-K8",
-       "text": "Du kannst die Vorteile einer Stored Procedure begründen: Sie kann neben SQL-Anweisungen auch Verzweigungen und Bedingungen enthalten und läuft direkt in der Datenbank, deshalb werden zusammengehörige Schritte schneller ausgeführt, und Anwendungen dürfen nur die Prozedur aufrufen statt beliebiges SQL abzusetzen, was die Sicherheit erhöht.",
+       "text": "Du kannst die Vorteile einer Stored Procedure erklären: Sie kann außer SQL auch Ablaufsteuerung (Bedingungen, Verzweigungen) enthalten und läuft in der Datenbank, sodass zusammengehörige Schritte ohne einzelnes Hin und Her mit der Anwendung schneller ablaufen; und weil Anwendungen nur das Recht zum Aufruf der Prozedur brauchen statt Schreibrechte auf die Tabellen, wird der Zugriff sicherer.",
        "kurz": "Vorteile von Stored Procedures",
-       "stufe": 4,
+       "stufe": 2,
        "herkunft": [
         "buch:FS2-2.3.8-S199"
        ]
@@ -156,7 +156,7 @@
     {
      "id": "PB2-6-1-6",
      "titel": "SQL-Sprachteile, Spaltenoptionen und Indexwahl",
-     "ziel": "SQL-Befehle den Sprachteilen zuordnen, Spalten beim Anlegen mit NOT NULL, UNIQUE, DEFAULT und automatisch hochgezähltem Schlüssel versehen, Tabellen in der richtigen Reihenfolge anlegen und begründen, für welche Spalten sich ein Index lohnt.",
+     "ziel": "SQL-Befehle den Sprachteilen zuordnen, Spalten beim Anlegen mit NOT NULL, UNIQUE, DEFAULT und automatisch hochgezähltem Schlüssel versehen, Tabellen in der richtigen Reihenfolge anlegen und bestimmen, für welche Spalten sich ein Index lohnt.",
      "gebiete": [
       "G.PB2.04"
      ],
@@ -195,14 +195,15 @@
        "kurz": "Spaltenoptionen und Reihenfolge beim Anlegen",
        "stufe": 3,
        "herkunft": [
+        "buch:GS-5.8.5-S612",
         "buch:GS-5.8.5-S613"
        ]
       },
       {
        "id": "PB2-6-1-6-K3",
-       "text": "Du kannst begründen, für welche Spalten ein Index angelegt wird: in großen Tabellen für Spalten, nach denen häufig gesucht, verknüpft oder sortiert wird, aber nicht für alle Spalten, weil jeder Index Speicher kostet und Einfügen und Ändern verlangsamt; der Primärschlüssel ist bereits indiziert, und vor einem Massenimport wird der Index besser erst danach angelegt.",
+       "text": "Du kannst bestimmen, auf welche Spalten einer großen Tabelle ein Index gelegt wird: auf Spalten, die häufig in WHERE-, JOIN- oder ORDER-BY-Teilen vorkommen, nicht auf jede Spalte und nicht zusätzlich auf den Primärschlüssel, der schon einen Index hat; vor einem Massenimport legst du den Index erst nach dem Import an (Nutzen und Kosten eines Index: PB2-6-1-1-K4).",
        "kurz": "Für welche Spalten sich ein Index lohnt",
-       "stufe": 4,
+       "stufe": 3,
        "herkunft": [
         "buch:GS-5.8.5-S620"
        ]
@@ -317,12 +318,20 @@
       },
       {
        "id": "PB2-6-1-2-K7",
-       "text": "Du kannst mehrere Änderungen zu einer Transaktion bündeln: in SQL mit START TRANSACTION (bzw. BEGIN), den Anweisungen und COMMIT, das sie dauerhaft macht, oder ROLLBACK, das alle Änderungen seit Beginn zurücknimmt; im Programm schaltest du dazu das standardmäßige Auto-Commit (jede Anweisung wird sofort festgeschrieben) ab, rufst nach der letzten Anweisung commit und bei einer Ausnahme im Fehlerzweig rollback auf.",
+       "text": "Du kannst Transaktionen in SQL anwenden: mehrere zusammengehörige Änderungen mit START TRANSACTION (bzw. BEGIN) einleiten, sie mit COMMIT gemeinsam dauerhaft machen oder bei einem Fehler mit ROLLBACK alle Änderungen seit dem Beginn zurücknehmen.",
        "kurz": "Transaktion mit COMMIT und ROLLBACK",
        "stufe": 3,
        "herkunft": [
-        "buch:FS2-2.3.8-S198",
-        "buch:FS2-2.3.8-S199"
+        "buch:FS2-2.3.8-S198"
+       ]
+      },
+      {
+       "id": "PB2-6-1-2-K8",
+       "text": "Du kannst erklären, warum ein UPDATE fast immer eine WHERE-Bedingung braucht: Ohne sie erhält jede Zeile der Tabelle den neuen Wert; soll nur ein einzelner Wert entfernt werden, setzt man ihn mit UPDATE … SET Spalte = NULL, und die übrigen Werte der Zeile bestehen weiter.",
+       "kurz": "UPDATE ohne WHERE, Wert auf NULL",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.8.5-S615"
        ]
       }
      ],
@@ -343,12 +352,12 @@
      ],
      "kuer": [
       {
-       "text": "Ein Programm schickt SQL über die Datenbankschnittstelle: Ändernde Anweisungen (INSERT, UPDATE, DELETE, CREATE) liefern nur die Zahl der betroffenen Zeilen, eine Abfrage liefert eine Ergebnismenge, die zeilenweise ausgelesen wird; Datenbankfehler werden als Ausnahme abgefangen, und Benutzereingaben gehören als Parameter in eine vorbereitete Anweisung statt in den SQL-Text.",
-       "kurz": "SQL aus dem Programm ausführen",
+       "text": "Auf eine ändernde Anweisung (INSERT, UPDATE, DELETE) erhält ein Programm von der Datenbankschnittstelle nur die Zahl der betroffenen Zeilen zurück, auf eine Abfrage eine Ergebnismenge, die es Zeile für Zeile ausliest.",
+       "kurz": "Rückgabe ändernder Anweisungen und Abfragen",
        "quellen": [
         "buch:FS2-2.3.8"
        ],
-       "grund": "Ring Kür: Programmanbindung, Schnittstellendetail"
+       "grund": "Ring Kür: Schnittstellendetail; den Ablauf eines Datenbankzugriffs aus dem Programm lernst du in PB1-11-2-3-K7, den Verbindungspool als Kür in PB1-11-2-3"
       }
      ]
     },
@@ -521,15 +530,17 @@
        "kurz": "Vollständigkeit, Korrektheit, Aktualität, Genauigkeit",
        "stufe": 2,
        "herkunft": [
-        "buch:FS-3.2.1-S166"
+        "buch:FS-3.2.1-S166",
+        "buch:FS-3.2.1-S167"
        ]
       },
       {
        "id": "PB2-6-1-5-K6",
        "text": "Du kannst die Qualitätskriterien Eindeutigkeit (jeder Datensatz lässt sich eindeutig zuordnen, keine Dubletten), Redundanzfreiheit (keine Information mehrfach gespeichert), Konsistenz (keine Widersprüche innerhalb eines Datensatzes, z. B. Menge × Einzelpreis ≠ Gesamtbetrag, und zu anderen Datensätzen oder Quellen) und Einheitlichkeit (gleiche Werte im gleichen Format, z. B. jedes Datum nach ISO 8601) je an einem Beispiel erklären.",
-       "kurz": "Eindeutigkeit, Redundanz, Konsistenz, Einheitlichkeit",
+       "kurz": "Eindeutig, redundanzfrei, konsistent, einheitlich",
        "stufe": 2,
        "herkunft": [
+        "buch:FS-3.2.1-S166",
         "buch:FS-3.2.1-S167",
         "buch:FS2-3.2.1-S225"
        ]
@@ -540,6 +551,16 @@
        "kurz": "Data Profiling, Data Cleaning und Monitoring",
        "stufe": 2,
        "herkunft": [
+        "buch:FS-3.2.1-S168"
+       ]
+      },
+      {
+       "id": "PB2-6-1-5-K8",
+       "text": "Du kannst erklären, warum die Kriterien für die Datenqualität mit dem Auftraggeber ausgewählt und gewichtet werden: Welche zählen, hängt vom Zweck der Anwendung ab; man beginnt mit wenigen wichtigen, ergänzt später weitere und prüft die Daten gezielt an ihnen, statt ihre Qualität nach Gefühl zu beurteilen.",
+       "kurz": "Qualitätskriterien auswählen und gewichten",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.2.1-S166",
         "buch:FS-3.2.1-S168"
        ]
       }
@@ -567,12 +588,12 @@
        "grund": "Ring Kür: für den Import nachrangige Kriterien"
       },
       {
-       "text": "Jedes Kriterium lässt sich als Anteil der Datensätze messen, die es erfüllen (300 von 2 000 Adressen veraltet → Aktualität 85 %), auch vor und nach einer Korrektur; welche Kriterien zählen und wie stark, legt man mit dem Auftraggeber fest – anfangs wenige wichtige, bewertet durch Messung statt nach Gefühl.",
-       "kurz": "Datenqualität messen und gewichten",
+       "text": "Jedes Kriterium lässt sich als Anteil der Datensätze messen, die es erfüllen (300 von 2 000 Adressen veraltet → Aktualität 85 %), auch vor und nach einer Korrektur.",
+       "kurz": "Datenqualität in Prozent messen",
        "quellen": [
         "buch:FS-3.2.1"
        ],
-       "grund": "Ring Kür: Rechenbeispiel und Vorgehen ohne eigenen Katalogbezug"
+       "grund": "Ring Kür: Rechenbeispiel ohne eigenen Katalogbezug; Auswahl und Gewichtung der Kriterien stehen in PB2-6-1-5-K8"
       }
      ]
     }
@@ -849,7 +870,7 @@
      ]
     },
     {
-     "thema": "Ein Programm schickt SQL über die Datenbankschnittstelle: Ändernde Anweisungen (INSERT, UPDATE, DELETE, CREATE) liefern ",
+     "thema": "Auf eine ändernde Anweisung (INSERT, UPDATE, DELETE) erhält ein Programm von der Datenbankschnittstelle nur die Zahl der",
      "quellen": [
       "buch:FS2-2.3.8"
      ],
@@ -915,10 +936,12 @@
      "PB2-6-1-6-K2",
      "PB2-6-1-6-K3",
      "PB2-6-1-2-K7",
+     "PB2-6-1-2-K8",
      "PB2-6-1-5-K4",
      "PB2-6-1-5-K5",
      "PB2-6-1-5-K6",
-     "PB2-6-1-5-K7"
+     "PB2-6-1-5-K7",
+     "PB2-6-1-5-K8"
     ],
     "neue_stichpunkte": [
      {
