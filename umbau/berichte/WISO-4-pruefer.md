@@ -42,3 +42,39 @@ stehen mehrfach. Mit den Vorschlägen fallen etwa 4–5 Aussagen weg, ohne dass 
 1. Sollen die betrieblichen Handlungen WISO.04.H1–H4 als Bausteine geführt werden (Ring „betriebliche Handlungen“, v1.4)? Sie stehen in keinem Stichpunkt.
 2. Abfallhierarchie: Soll die fünfstufige KrWG-Fassung (Nr. 12) gelernt werden? Der Katalog sagt nur „Abfallvermeidung und -reduzierung“, die Aufgabe 2022S-A28 nennt aber das KrWG.
 3. Das Feld `grenzen` fehlt in allen sechs Stichpunkten. Ist das für WiSo gewollt?
+
+## Umsetzung (16.10.2026)
+
+| Nr | Entscheidung | Was geändert / Grund |
+|---|---|---|
+| 1 | teilweise | 4-1-1-K1 nennt die Risiken jetzt mit Ursache (USV: Blei-/Lithium-Akkus mit Schadstoffen, Brand- und Auslaufgefahr, Rücknahme statt Restmüll; Server und Kühlung: Strom; Altgeräte: Schadstoffe, seltene Rohstoffe). **Stufe bleibt 1:** WISO.04.01 hat den Operator „wahrnehmen“ (Stufe 1, `tiefe.json`), nicht „ohne Operator“; WISO.04.01.1 hat keinen Beleg. Nach D1 braucht eine Aussage über der Katalogstufe einen Beleg oder eine Puffer-Regel – beides fehlt. T8 ist mit Stufe 1 erfüllt. |
+| 2 | umgesetzt | 4-1-3-K1 neu gefasst: „über ihren Lebensweg umweltschonender als vergleichbare“; „bedeutet nicht ‚besonders haltbar‘, ‚besonders sicher‘, ‚preisgekrönt‘ oder ‚nur über das Duale System zu entsorgen‘“ (Distraktor Umweltpreise ergänzt, keine Aussage mehr, er sage nichts über Haltbarkeit). Ein Operator (unterscheiden). |
+| 3 | umgesetzt | 4-1-3-K2 gestrichen (neue ID, nie wieder vergeben); „freiwilliges Umweltzeichen der Bundesregierung“ in K1. „Preis“ entfällt. Alt-Eintrag WISO-4-3-2-K3 jetzt „verschoben“ → 4-1-3-K1. |
+| 4 | umgesetzt | D6: Eine Zeichen-Aussage 4-1-3-K3 (Blauer Engel, drei Pfeile im Kreis, Fairtrade) mit Beleg 2025S-A30; CE-Zeichen aus WISO-4 entfernt, Hinweis an 4-1-3 „CE-Zeichen steht in WISO-3-3-2“. 4-2-2-K2 gestrichen (neue ID), 2025S-A30 und Baustein-Anteil „Recycling-Symbol“ (WISO.04.01.3) von 4-2-2 nach 4-1-3. |
+| 5 | umgesetzt | Neue Aussage 4-1-3-K4: Recyclingpapier mit Blauem Engel spart Rohstoffe (Holz), Wasser und Energie bei der Papiererzeugung, nicht Papiermenge, Kosten oder Energie im eigenen Betrieb; Beleg 2023S-A25 nur noch hier (P31), WISO.04.05.2 als Anteil in den Bausteinen von 4-1-3 (zweiter Vorschlag des Prüfers, weil der Beleg zum Blauen Engel gehört). |
+| 6 | umgesetzt | 4-1-2-K2: Maßstab nachwachsend statt endlich, Energie sparen, Kreislauf; „auch schonend abgebautes Rohöl bleibt endlich“, „Herkunft allein (Ausland, Entwicklungsland) macht nichts nachhaltig“. |
+| 7 | teilweise | 4-1-1-K3 auf Speicher- und Printmedien beschränkt (ohne „Maßnahmen unterscheiden“, ohne Einwegbecher, ohne Beleg 2025S-A29); Unterscheiden gemischter Maßnahmen nur in 4-1-2-K2. **Nicht** umgezogen: 2021W-A19 und 2025S-A29 bleiben in 4-1-1 bzw. 4-2-1, weil sie WISO.04.01.2 und WISO.04.06 betreffen (Stufe 2 nur über diese Belege, D1/T8) und P31 eine zweite Beleg-Aussage in 4-1-2 ausschließt. 4-1-1-K5 bleibt (Katalogbeispiel plus LED/Transport aus 2025S-A29). |
+| 8 | umgesetzt | 4-1-2-K5 gestrichen (L.a „gestrichen“): Katalogbezug WISO.04.04.1 trägt nicht, und AP1-2-4-1-K2 lässt Ziele bereits als ökonomisch, ökologisch, sozial einordnen (Stufe 2) – nach E2/P35 Nr. 4 doppelt. `baut_auf: AP1-2-4-1` und Hinweis an 4-1-2. |
+| 9 | umgesetzt | `baut_auf: PB1-1-2-1` an 4-1-2, Hinweis „Green IT steht in PB1-1-2-1“. |
+| 10 | umgesetzt | 4-1-1-K4: welche (Gefahrstoffe wie Reinigungs- und Lösungsmittel, Druckluftsprays; Gefahrenpiktogramme) und warum (auslaufen, reagieren, entzünden). Toner und Lithium-Akkus aus dem Vorschlag nicht übernommen: Toner ist in der Regel kein eingestufter Gefahrstoff, Akkus stehen in 4-2-1-K6. |
+| 11 | umgesetzt | K6 steht vor K4 (IDs unverändert), „sparsam und effektiv einsetzen“ als Halbsatz in K6, K4 nur Kennzeichnung und Lagerung. |
+| 12 | umgesetzt | D12: 4-2-1-K1 „Maßnahmen den Stufen der Abfallhierarchie (§ 6 KrWG) zuordnen: Vermeidung (auch Menge und Schadstoffe verringern), Vorbereitung zur Wiederverwendung, Recycling, sonstige (z. B. energetische) Verwertung, Beseitigung; grundsätzlich hat die höhere Stufe Vorrang“. „Verringern“ ist Teil der Vermeidung (§ 3 Abs. 20 KrWG), so bleibt die Geschwister-Seite „Reduzierung“ (WISO.04.06) gedeckt. „Immer“ bewusst durch „grundsätzlich“ ersetzt (§ 6 Abs. 2 erlaubt Abweichungen). |
+| 13 | umgesetzt | 4-2-1-K3 in K4 aufgegangen (L.a „verschoben“ → 4-2-1-K4). |
+| 14 | umgesetzt | 4-2-1-K4: gewerbliche Altgeräte über Rücknahme durch Hersteller oder Händler oder zertifizierten Entsorgungsfachbetrieb; kommunale Sammelstellen in der Regel nur für private Geräte. |
+| 15 | umgesetzt | Grenze an 4-2-1: keine Sicherheitsstufen oder Normen der Datenträgervernichtung (G4, Katalog WISO.04.02.1.2). |
+| 16 | teilweise | Die Teilnahmepflicht ist Kern (Katalog WISO.04.03.1 „Teilnahme am Dualen System“): neue Aussage 4-2-2-K4 (Erstinverkehrbringer, Verpackungsgesetz, Systembeteiligung und Registrierung im Verpackungsregister); K1 nennt „mehrere Betreiber“. Der „Grüne Punkt“ als Marke ist Kür ohne Hinweisquelle → P49 (Kür, keine Hinweisquelle), schon in der Bilanz gesammelt. Die neue Aussage hält zugleich F3 in 4-2-2 (nach Nr. 4 sonst nur zwei Aussagen; Zusammenlegen ginge wegen F4 im Block 4-2 nicht). |
+| 17 | teilweise | 4-2-2-K3 hält das Verpackungsspezifische (Mehrweg vor Einweg, sortenrein; Papier oder recyceltes Plastik nicht automatisch umweltfreundlich) und behält „unnötige Verpackung vermeiden statt entsorgen“, weil das die Lösung von 2023S-A24 ist. Dafür steht 2023S-A24 nur noch hier (P31): aus 4-2-1-K1 und den Teilaufgaben von 4-2-1 entfernt; Hinweise an 4-2-1 und 4-2-2 verweisen gegenseitig. 4-2-3-K2 (Emissionen) bleibt wegen eigenem Beleg 2025W-A29. |
+| 18 | umgesetzt | Grenze an 4-2-3: keine Grenzwerte oder Inhalte der TA Lärm/TA Luft; TA Abfall seit 2009 aufgehoben (Deponieverordnung), Katalog WISO.04.03.2. |
+| 19 | umgesetzt | 4-2-3-K3: verantwortlich ist der Betreiber (gegebenenfalls mit Immissionsschutzbeauftragtem), überwacht von der Behörde, nicht die Sicherheitsbeauftragte. Kein `baut_auf` auf WISO-3 (nur frühere Räume). |
+| 20 | umgesetzt | D6: 4-2-3-K4 umweltspezifisch (Bußgeld, Strafe für Umweltstraftaten, behördliche Anordnungen bis zur Stilllegung, Pflicht zur Beseitigung oder zum Ersatz des Schadens); Hinweis nennt die Wohnorte der anderen Folgen (WISO-1-1-4, WISO-5-3-2). |
+| 21 | bestätigt | Keine Änderung nötig. |
+
+**Zahlen:** 6 Stichpunkte (unverändert), Können-Aussagen 27 → 25 (gestrichen: 4-1-2-K5, 4-1-3-K2, 4-2-2-K2; verschoben: 4-2-1-K3 → K4; neu: 4-1-3-K4, 4-2-2-K4). Grenzen 0 → 2. `lernplan-pruefen.mjs WISO-4`: OK ohne Fehler und ohne Hinweise; `raum-pruefen.mjs WISO`: OK.
+
+**Offene Fragen des Prüfers:** (1) Betriebliche Handlungen WISO.04.H1–H4 sind nach P26/P35 Nr. 5 Kür, keine Bausteine – ohne Hinweisquelle nicht aufgenommen. (2) Fünfstufige KrWG-Fassung: ja, nach D12. (3) Grenzen sind nach D10 nicht Pflicht; die beiden mit Katalogstelle sind übernommen.
+
+**Parkplatz:** keine neue Frage. „Grüner Punkt“ (Nr. 16) gehört zu P49.
+
+**Unsicher:**
+- 4-2-2-K4 Verpackungsgesetz: Seit 12.8.2026 gilt die EU-Verpackungsverordnung (PPWR); die deutsche Anpassung des Verpackungsgesetzes kann Begriffe und Einzelheiten ändern. Die Aussage nennt deshalb nur den Kern (Beteiligung an einem dualen System, Registrierung), keine Fristen, Mengen oder Vertriebsverbote. Bei einer Nachprüfung zuerst hier ansehen.
+- 4-1-1-K1 USV-Akkus: „gehören in die Rücknahme“ ist bewusst allgemein gehalten (Batterierecht seit der EU-Batterieverordnung im Umbruch).

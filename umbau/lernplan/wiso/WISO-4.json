@@ -45,7 +45,7 @@
      "koennen": [
       {
        "id": "WISO-4-1-1-K1",
-       "text": "Du kannst Umweltrisiken der IT nennen, zum Beispiel die Batterien von USV-Anlagen, den Stromverbrauch von Servern und Kühlung und die Schadstoffe in Altgeräten.",
+       "text": "Du kannst Umweltrisiken von IT-Prozessen mit ihrer Ursache nennen: USV-Anlagen (Blei- oder Lithium-Akkus mit Schadstoffen, Brand- und Auslaufgefahr, gehören in die Rücknahme statt in den Restmüll), Server und Kühlung (hoher Stromverbrauch), Altgeräte (Schadstoffe, seltene Rohstoffe).",
        "stufe": 1,
        "herkunft": [
         "katalog:WISO.04.01.1"
@@ -53,18 +53,25 @@
       },
       {
        "id": "WISO-4-1-1-K3",
-       "text": "Du kannst den sparsamen Umgang mit Speicher- und Printmedien beschreiben und Maßnahmen unterscheiden, die der Umwelt schaden oder nützen: nur drucken, was nötig ist, beidseitig drucken, Recyclingpapier verwenden, Datenträger weiterverwenden – nicht Hochglanzkataloge oder Einwegbecher.",
+       "text": "Du kannst den sparsamen Umgang mit Speicher- und Printmedien beschreiben: nur drucken, was nötig ist, beidseitig drucken, Recyclingpapier statt Hochglanzpapier verwenden, Datenträger weiterverwenden.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.01.2",
         "katalog:WISO.04.01.2.2",
-        "beleg:2021W-WISO-A19",
-        "beleg:2025S-WISO-A29"
+        "beleg:2021W-WISO-A19"
+       ]
+      },
+      {
+       "id": "WISO-4-1-1-K6",
+       "text": "Du kannst Roh-, Hilfs- und Betriebsstoffe unterscheiden: Rohstoff = Hauptbestandteil des Produkts, Hilfsstoff = Nebenbestandteil des Produkts, Betriebsstoff = wird bei der Herstellung verbraucht, ohne ins Produkt einzugehen (zum Beispiel Strom); alle drei sind sparsam und effektiv einzusetzen.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:WISO.04.05.2"
        ]
       },
       {
        "id": "WISO-4-1-1-K4",
-       "text": "Du kannst erklären, dass Roh-, Hilfs- und Betriebsstoffe sparsam einzusetzen sind und manche gekennzeichnet und getrennt gelagert werden müssen.",
+       "text": "Du kannst erklären, welche Betriebsstoffe gekennzeichnet und getrennt gelagert werden müssen und warum: Gefahrstoffe wie Reinigungs- und Lösungsmittel oder Druckluftsprays tragen Gefahrenpiktogramme und werden getrennt von anderen Stoffen gelagert, damit sie nicht auslaufen, miteinander reagieren oder sich entzünden.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.05.2"
@@ -78,20 +85,12 @@
         "katalog:WISO.04.05.3",
         "beleg:2025S-WISO-A29"
        ]
-      },
-      {
-       "id": "WISO-4-1-1-K6",
-       "text": "Du kannst Roh-, Hilfs- und Betriebsstoffe unterscheiden: Hauptbestandteil des Produkts, Nebenbestandteil des Produkts, Verbrauch bei der Herstellung ohne Eingang ins Produkt, zum Beispiel Strom.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.04.05.2"
-       ]
       }
      ],
      "baut_auf": [
       "AP1-4-3-3"
      ],
-     "hinweis": "Energie sparen am Arbeitsplatz (Standby vermeiden, Energielabel, Energiesparmodus) steht in AP1-4-3-3 (WISO.04.01.2.1 gedeckt, P47)."
+     "hinweis": "Energie sparen am Arbeitsplatz (Standby vermeiden, Energielabel, Energiesparmodus) steht in AP1-4-3-3 (WISO.04.01.2.1 gedeckt, P47). Gemischte Maßnahmen als nachhaltig oder nicht nachhaltig unterscheiden: WISO-4-1-2."
     },
     {
      "id": "WISO-4-1-2",
@@ -132,7 +131,7 @@
       },
       {
        "id": "WISO-4-1-2-K2",
-       "text": "Du kannst nachhaltige von nicht nachhaltigen Maßnahmen unterscheiden, zum Beispiel Ladesäulen, Behälter aus nachwachsenden Rohstoffen, Recycling von Verpackungsabfällen gegenüber Flugreisen statt Bahn oder dem billigsten Einkauf ohne Blick auf die Herkunft.",
+       "text": "Du kannst nachhaltige von nicht nachhaltigen Maßnahmen unterscheiden: Maßgeblich ist, ob nachwachsende statt endlicher Rohstoffe genutzt, Energie gespart und Stoffe im Kreislauf gehalten werden, zum Beispiel Behälter aus nachwachsenden Rohstoffen, Recycling von Verpackungsabfällen, Ladesäulen für Elektroautos; nicht nachhaltig sind Flugreisen statt Bahn oder der billigste Einkauf ohne Blick auf die Herkunft. Auch schonend abgebautes Rohöl bleibt ein endlicher Rohstoff, und die Herkunft allein (Ausland, Entwicklungsland) macht ein Produkt nicht nachhaltig.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.05.3",
@@ -157,21 +156,18 @@
        "herkunft": [
         "katalog:WISO.04.04.1"
        ]
-      },
-      {
-       "id": "WISO-4-1-2-K5",
-       "text": "Du kannst die drei Seiten der Nachhaltigkeit unterscheiden: ökonomisch, ökologisch und sozial.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.04.04.1"
-       ]
       }
-     ]
+     ],
+     "baut_auf": [
+      "AP1-2-4-1",
+      "PB1-1-2-1"
+     ],
+     "hinweis": "Die drei Seiten der Nachhaltigkeit (ökonomische, ökologische und soziale Ziele) stehen in AP1-2-4-1, Green IT (umweltschonend herstellen, betreiben, entsorgen) in PB1-1-2-1. Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume wohnen hier; WISO-5-3-1 verweist hierher und behält nur den Zeithorizont bei IT-Lösungen."
     },
     {
      "id": "WISO-4-1-3",
      "titel": "Umweltzeichen: Blauer Engel und andere Kennzeichnungen",
-     "ziel": "Erklären, wofür der Blaue Engel steht, und ihn von anderen Zeichen auf Produkten abgrenzen.",
+     "ziel": "Erklären, wofür der Blaue Engel steht, ihn von anderen Zeichen auf Produkten und Verpackungen abgrenzen und den Nutzen von Recyclingpapier erklären.",
      "gebiete": [
       "G.WISO.04"
      ],
@@ -179,46 +175,57 @@
       {
        "id": "WISO.04.05.1",
        "anteil": "Umweltzeichen beim Einkauf"
+      },
+      {
+       "id": "WISO.04.01.3",
+       "anteil": "Recycling-Symbol"
+      },
+      {
+       "id": "WISO.04.05.2",
+       "anteil": "Rohstoffe sparen mit Recyclingpapier"
       }
      ],
      "teilaufgaben": [
       "2021W-WISO-A20",
       "2023S-WISO-A25",
-      "2025W-WISO-A30"
+      "2025W-WISO-A30",
+      "2025S-WISO-A30"
      ],
      "koennen": [
       {
        "id": "WISO-4-1-3-K1",
-       "text": "Du kannst erklären, wofür der Blaue Engel steht, und zutreffende von unzutreffenden Aussagen unterscheiden: Er kennzeichnet Produkte, die umweltschonender hergestellt und genutzt werden als vergleichbare, zum Beispiel aus Altpapier und schadstoffarmen Rohstoffen; er sagt nichts über Haltbarkeit, Sicherheit oder Entsorgungsweg.",
+       "text": "Du kannst zutreffende von unzutreffenden Aussagen zum Blauen Engel unterscheiden: Er ist das freiwillige Umweltzeichen der Bundesregierung für Produkte, die über ihren Lebensweg umweltschonender sind als vergleichbare, zum Beispiel aus schadstoffarmen Rohstoffen umweltschonend hergestellt; er bedeutet nicht „besonders haltbar“, „besonders sicher“, „preisgekrönt“ oder „nur über das Duale System zu entsorgen“.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.05.1",
         "beleg:2021W-WISO-A20",
-        "beleg:2023S-WISO-A25",
         "beleg:2025W-WISO-A30"
        ]
       },
       {
-       "id": "WISO-4-1-3-K2",
-       "text": "Du kannst erklären, dass der Blaue Engel ein freiwilliges staatliches Umweltzeichen ist und nichts über Preis oder technische Sicherheit eines Produkts sagt.",
+       "id": "WISO-4-1-3-K3",
+       "text": "Du kannst Zeichen auf Produkten und Verpackungen unterscheiden: Blauer Engel (umweltschonenderes Produkt), drei Pfeile im Kreis (Recycling-Symbol: Material oder Verpackung ist wiederverwertbar), Fairtrade (fairer Handel).",
        "stufe": 2,
        "herkunft": [
-        "katalog:WISO.04.05.1"
+        "katalog:WISO.04.05.1",
+        "katalog:WISO.04.01.3",
+        "beleg:2025S-WISO-A30"
        ]
       },
       {
-       "id": "WISO-4-1-3-K3",
-       "text": "Du kannst den Blauen Engel von anderen Zeichen abgrenzen: Recycling-Symbol (drei Pfeile im Kreis: wiederverwertbar), Fairtrade (fairer Handel), CE (Herstellererklärung zu EU-Vorschriften, kein Umweltzeichen).",
+       "id": "WISO-4-1-3-K4",
+       "text": "Du kannst erklären, wie Recyclingpapier mit dem Blauen Engel der Umwelt nützt: Es wird aus Altpapier hergestellt und spart Rohstoffe (Holz) sowie Wasser und Energie bei der Papiererzeugung; es senkt nicht den Papierverbrauch, die Kosten oder den Energieverbrauch im eigenen Betrieb.",
        "stufe": 2,
        "herkunft": [
-        "katalog:WISO.04.05.1"
+        "katalog:WISO.04.05.2",
+        "beleg:2023S-WISO-A25"
        ]
       }
      ],
      "baut_auf": [
       "AP1-4-3-3"
      ],
-     "hinweis": "Dass es Gütesiegel für Energieeffizienz gibt (EU-Energielabel, Energy Star, Blauer Engel als Beispiel), steht in AP1-4-3-3. Früher Stichpunkt WISO-4-3-2."
+     "hinweis": "Dass es Gütesiegel für Energieeffizienz gibt (EU-Energielabel, Energy Star, Blauer Engel als Beispiel), steht in AP1-4-3-3. Das CE-Zeichen steht in WISO-3-3-2. Früher Stichpunkt WISO-4-3-2."
     }
    ]
   },
@@ -230,7 +237,7 @@
     {
      "id": "WISO-4-2-1",
      "titel": "Abfall vermeiden, verringern, trennen und verwerten; IT-typische Abfälle erfassen, lagern und entsorgen",
-     "ziel": "Die Rangfolge im Umgang mit Abfall anwenden, Recycling erklären und IT-typische Abfälle richtig erfassen, lagern und entsorgen.",
+     "ziel": "Die Abfallhierarchie des Kreislaufwirtschaftsgesetzes anwenden, Recycling erklären und IT-typische Abfälle richtig erfassen, lagern und entsorgen.",
      "gebiete": [
       "G.WISO.04"
      ],
@@ -256,19 +263,17 @@
       }
      ],
      "teilaufgaben": [
-      "2023S-WISO-A24",
       "2025S-WISO-A29",
       "2022S-WISO-A28"
      ],
      "koennen": [
       {
        "id": "WISO-4-2-1-K1",
-       "text": "Du kannst die Rangfolge im Umgang mit Abfall erklären und anwenden: zuerst vermeiden, dann verringern, dann verwerten und nur den Rest beseitigen; Vermeiden ist besser als Entsorgen.",
+       "text": "Du kannst Maßnahmen den Stufen der Abfallhierarchie des Kreislaufwirtschaftsgesetzes (§ 6 KrWG) zuordnen: Vermeidung (auch Abfallmenge und Schadstoffe verringern), Vorbereitung zur Wiederverwendung, Recycling, sonstige, zum Beispiel energetische Verwertung, Beseitigung; grundsätzlich hat die höhere Stufe Vorrang, Trennen und Entsorgen ersetzen kein Vermeiden.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.06",
         "katalog:WISO.04.01.4",
-        "beleg:2023S-WISO-A24",
         "beleg:2025S-WISO-A29"
        ]
       },
@@ -283,16 +288,8 @@
        ]
       },
       {
-       "id": "WISO-4-2-1-K3",
-       "text": "Du kannst Abfälle nennen, die für IT-Betriebe typisch sind: Altgeräte, Datenträger, Kabel, Batterien und Akkus, Tonerkartuschen, Verpackungen.",
-       "stufe": 1,
-       "herkunft": [
-        "katalog:WISO.04.02.1"
-       ]
-      },
-      {
        "id": "WISO-4-2-1-K4",
-       "text": "Du kannst erklären, dass solche Abfälle nach Art getrennt erfasst und gelagert und über geeignete Wege entsorgt werden, zum Beispiel über Sammelstellen oder die Rücknahme durch Hersteller und Händler.",
+       "text": "Du kannst erklären, wie IT-typische Abfälle (Altgeräte, Datenträger, Kabel, Batterien und Akkus, Tonerkartuschen, Verpackungen) nach Art getrennt erfasst, gelagert und entsorgt werden: gewerbliche Altgeräte über die Rücknahme durch Hersteller oder Händler oder einen zertifizierten Entsorgungsfachbetrieb; kommunale Sammelstellen nehmen in der Regel nur Geräte aus privaten Haushalten an.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.02.1",
@@ -316,12 +313,22 @@
         "katalog:WISO.04.02.1.2"
        ]
       }
+     ],
+     "hinweis": "Verpackungen vermeiden (2023S-A24) steht in WISO-4-2-2, Emissionen vermeiden in WISO-4-2-3.",
+     "grenzen": [
+      {
+       "text": "Keine Sicherheitsstufen oder Normen der Datenträgervernichtung.",
+       "begruendung": "G4: Normnummern und Sicherheitsstufen sind ohne Hilfsmittel nicht abfragbar; der Katalog verlangt nur Lagerung und Entsorgung von Datenträgern (Prüfer WISO-4 Nr. 15).",
+       "katalog": [
+        "WISO.04.02.1.2"
+       ]
+      }
      ]
     },
     {
      "id": "WISO-4-2-2",
-     "titel": "Verpackungen: Duales System und Recycling-Kennzeichnung",
-     "ziel": "Das Duale System erklären, Recycling-Kennzeichen auf Verpackungen erkennen und Grundsätze für umweltfreundliche Verpackung anwenden.",
+     "titel": "Verpackungen: Duales System, Teilnahmepflicht und Grundsätze",
+     "ziel": "Das Duale System und die Pflicht zur Teilnahme erklären und Grundsätze für umweltfreundliche Verpackung anwenden.",
      "gebiete": [
       "G.WISO.04"
      ],
@@ -332,21 +339,16 @@
       {
        "id": "WISO.04.06",
        "anteil": "Verpackung vermeiden"
-      },
-      {
-       "id": "WISO.04.01.3",
-       "anteil": "Recycling-Symbol"
       }
      ],
      "teilaufgaben": [
       "2022S-WISO-A28",
-      "2025S-WISO-A30",
       "2023S-WISO-A24"
      ],
      "koennen": [
       {
        "id": "WISO-4-2-2-K1",
-       "text": "Du kannst das Duale System erklären: ein von der Wirtschaft getragenes System, das gebrauchte Verkaufsverpackungen neben der öffentlichen Müllabfuhr sammelt und verwertet; wer Verpackungen in Verkehr bringt, muss sich daran beteiligen.",
+       "text": "Du kannst das Duale System erklären: ein privatwirtschaftlich organisiertes System mehrerer Betreiber, das gebrauchte Verkaufsverpackungen von privaten Endverbrauchern (Haushalte und vergleichbare Stellen wie Büros) neben der öffentlichen Müllabfuhr sammelt, sortiert und verwertet.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.03.1",
@@ -354,25 +356,24 @@
        ]
       },
       {
-       "id": "WISO-4-2-2-K2",
-       "text": "Du kannst das Recycling-Symbol (drei Pfeile im Kreis) auf Verpackungen von anderen Kennzeichnungen unterscheiden.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.04.01.3",
-        "beleg:2025S-WISO-A30"
-       ]
-      },
-      {
        "id": "WISO-4-2-2-K3",
-       "text": "Du kannst Grundsätze für Verpackungen erklären: unnötige Verpackung vermeiden, Mehrweg vor Einweg, sortenreine und recycelbare Materialien; Papier oder recyceltes Plastik ist nicht automatisch umweltfreundlich.",
+       "text": "Du kannst Grundsätze für Verpackungen erklären: unnötige Verpackung vermeiden statt entsorgen, Mehrweg vor Einweg, sortenreine und recycelbare Materialien; Papier oder recyceltes Plastik ist nicht automatisch umweltfreundlich.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.06",
         "beleg:2023S-WISO-A24"
        ]
+      },
+      {
+       "id": "WISO-4-2-2-K4",
+       "text": "Du kannst die Pflicht zur Teilnahme am Dualen System erklären: Wer mit Ware befüllte Verpackungen, die typischerweise bei privaten Endverbrauchern anfallen, als Erster in Verkehr bringt (Hersteller, auch Online-Händler), muss sich nach dem Verpackungsgesetz an einem dualen System beteiligen und im Verpackungsregister registrieren.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:WISO.04.03.1"
+       ]
       }
      ],
-     "hinweis": "Neuer Stichpunkt; das Duale System stand vorher in WISO-4-3-1."
+     "hinweis": "Neuer Stichpunkt; das Duale System stand vorher in WISO-4-3-1. Das Recycling-Symbol steht in WISO-4-1-3, die Abfallhierarchie in WISO-4-2-1."
     },
     {
      "id": "WISO-4-2-3",
@@ -417,7 +418,7 @@
       },
       {
        "id": "WISO-4-2-3-K3",
-       "text": "Du kannst erklären, dass das Bundes-Immissionsschutzgesetz vor schädlichen Umwelteinwirkungen schützt und technische Anleitungen, zum Beispiel zu Lärm und Luft, die Anforderungen im Einzelnen festlegen.",
+       "text": "Du kannst erklären, dass das Bundes-Immissionsschutzgesetz vor schädlichen Umwelteinwirkungen schützt, technische Anleitungen, zum Beispiel zu Lärm und Luft, die Anforderungen im Einzelnen festlegen und dafür der Betreiber der Anlage (gegebenenfalls mit einem Immissionsschutzbeauftragten) verantwortlich ist, überwacht von der Behörde, nicht die Sicherheitsbeauftragte.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.03.2"
@@ -425,7 +426,7 @@
       },
       {
        "id": "WISO-4-2-3-K4",
-       "text": "Du kannst Folgen von Verstößen gegen Umweltvorschriften erklären, zum Beispiel Bußgeld, Strafe, behördliche Auflagen oder Schadensersatz.",
+       "text": "Du kannst umweltspezifische Folgen von Verstößen gegen Umweltvorschriften erklären: Bußgeld, Strafe für Umweltstraftaten, behördliche Anordnungen bis zur Stilllegung einer Anlage und die Pflicht, den Schaden zu beseitigen oder zu ersetzen.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.04.07"
@@ -442,7 +443,16 @@
        ]
       }
      ],
-     "hinweis": "Früher Teil von WISO-4-3-1."
+     "hinweis": "Früher Teil von WISO-4-3-1. Vermeiden vor Verwerten und Beseitigen (Distraktoren in 2022S-A27 und 2024S-A30): WISO-4-2-1. Allgemeine Folgen von Pflichtverstößen stehen je Ordner nur spezifisch (Ausbildung WISO-1-1-4, Compliance WISO-5-3-2).",
+     "grenzen": [
+      {
+       "text": "Keine Grenzwerte oder Inhalte der TA Lärm und TA Luft; die im Katalog genannte TA Abfall ist seit 2009 aufgehoben (Deponieverordnung).",
+       "begruendung": "G4: Grenzwerte und Einzelinhalte technischer Anleitungen sind ohne Hilfsmittel nicht abfragbar; der Katalog nennt die technischen Anleitungen nur als Beispiele (Prüfer WISO-4 Nr. 18).",
+       "katalog": [
+        "WISO.04.03.2"
+       ]
+      }
+     ]
     }
    ]
   }
@@ -451,33 +461,33 @@
   "koennen": [
    {
     "alt": "WISO-4-1-1-K1",
-    "status": "übernommen",
+    "status": "angepasst",
     "neu": "WISO-4-1-1-K1",
-    "grund": ""
+    "grund": "Prüfer WISO-4 Nr. 1: Risiken mit Ursache konkretisiert; Stufe bleibt 1 (WISO.04.01 „wahrnehmen“, kein Beleg, D1)"
    },
    {
     "alt": "WISO-4-1-1-K3",
     "status": "angepasst",
     "neu": "WISO-4-1-1-K3",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
+    "grund": "Prüfer WISO-4 Nr. 7: auf Speicher- und Printmedien beschränkt; Maßnahmen unterscheiden nur noch in WISO-4-1-2-K2"
+   },
+   {
+    "alt": "WISO-4-1-1-K6",
+    "status": "angepasst",
+    "neu": "WISO-4-1-1-K6",
+    "grund": "Prüfer WISO-4 Nr. 11: Grundlage vor K4 gestellt, „sparsam einsetzen“ aus K4 übernommen"
    },
    {
     "alt": "WISO-4-1-1-K4",
     "status": "angepasst",
     "neu": "WISO-4-1-1-K4",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
+    "grund": "Prüfer WISO-4 Nr. 10/11: welche Stoffe und warum; nur noch Kennzeichnung und Lagerung"
    },
    {
     "alt": "WISO-4-1-1-K5",
     "status": "angepasst",
     "neu": "WISO-4-1-1-K5",
     "grund": "zeigen = erklären an Beispiel; Beispiele aus 2025S"
-   },
-   {
-    "alt": "WISO-4-1-1-K6",
-    "status": "übernommen",
-    "neu": "WISO-4-1-1-K6",
-    "grund": ""
    },
    {
     "alt": "WISO-4-1-2-K1",
@@ -489,7 +499,7 @@
     "alt": "WISO-4-1-2-K2",
     "status": "angepasst",
     "neu": "WISO-4-1-2-K2",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
+    "grund": "Prüfer WISO-4 Nr. 6: Prinzip nachwachsend statt endlich und Kreislauf ergänzt (Distraktoren 2024S-A29)"
    },
    {
     "alt": "WISO-4-1-2-K3",
@@ -504,16 +514,10 @@
     "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
    },
    {
-    "alt": "WISO-4-1-2-K5",
-    "status": "angepasst",
-    "neu": "WISO-4-1-2-K5",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
-   },
-   {
     "alt": "WISO-4-2-1-K1",
     "status": "angepasst",
     "neu": "WISO-4-2-1-K1",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
+    "grund": "Prüfer WISO-4 Nr. 12, D12: fünfstufige Abfallhierarchie § 6 KrWG statt vereinfachter Rangfolge"
    },
    {
     "alt": "WISO-4-2-1-K2",
@@ -522,16 +526,10 @@
     "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
    },
    {
-    "alt": "WISO-4-2-1-K3",
-    "status": "übernommen",
-    "neu": "WISO-4-2-1-K3",
-    "grund": ""
-   },
-   {
     "alt": "WISO-4-2-1-K4",
     "status": "angepasst",
     "neu": "WISO-4-2-1-K4",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
+    "grund": "Prüfer WISO-4 Nr. 13/14: Liste aus K3 aufgenommen; Entsorgungswege für gewerbliche Altgeräte"
    },
    {
     "alt": "WISO-4-2-1-K5",
@@ -551,9 +549,20 @@
     "grund": "E2/P47: unnötige Gerätelaufzeiten vermeiden steht in AP1-4-3-3-K5 (WISO.04.01.2.1 gedeckt)"
    },
    {
+    "alt": "WISO-4-1-2-K5",
+    "status": "gestrichen",
+    "grund": "Prüfer WISO-4 Nr. 8: drei Seiten der Nachhaltigkeit nicht in WISO.04.04.1, Ziele einordnen steht in AP1-2-4-1-K2 (E2, baut_auf)"
+   },
+   {
     "alt": "WISO-4-1-2-K6",
     "status": "gestrichen",
     "grund": "E2/P36: Kosten über die ganze Nutzungsdauer stehen in AP1-3-1-2"
+   },
+   {
+    "alt": "WISO-4-2-1-K3",
+    "status": "verschoben",
+    "neu": "WISO-4-2-1-K4",
+    "grund": "Prüfer WISO-4 Nr. 13: Liste IT-typischer Abfälle in K4 aufgegangen"
    },
    {
     "alt": "WISO-4-3-2-K1",
@@ -570,14 +579,14 @@
    {
     "alt": "WISO-4-3-2-K3",
     "status": "verschoben",
-    "neu": "WISO-4-1-3-K2",
-    "grund": "Stichpunkt verschoben (F4)"
+    "neu": "WISO-4-1-3-K1",
+    "grund": "Stichpunkt verschoben (F4); Prüfer WISO-4 Nr. 3: „freiwillig, staatlich“ in K1 aufgegangen, „Preis“ ohne Katalog- und Prüfungsbezug entfallen"
    },
    {
     "alt": "WISO-4-3-2-K4",
     "status": "verschoben",
     "neu": "WISO-4-1-3-K3",
-    "grund": "Stichpunkt verschoben (F4); Recycling-Symbol und Fairtrade aus 2025S ergänzt"
+    "grund": "Stichpunkt verschoben (F4); Recycling-Symbol und Fairtrade aus 2025S ergänzt; Prüfer WISO-4 Nr. 4, D6: CE-Zeichen nur noch in WISO-3-3-2"
    },
    {
     "alt": "WISO-4-3-1-K1",
@@ -627,7 +636,7 @@
     "alt": "WISO-4-3-1",
     "satz": "Grenzwerte und Paragrafen waren nicht gefragt.",
     "status": "angepasst",
-    "grund": "Grenze aus G4 statt aus fehlenden Belegen (E6)"
+    "grund": "Grenze aus G4 statt aus fehlenden Belegen (E6); jetzt als Grenze an WISO-4-2-3"
    },
    {
     "alt": "WISO-4-3-2",
@@ -645,7 +654,7 @@
   "kerntest": {
    "stand": "2026-10-16",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Alle 19 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen. Lücken geschlossen: Recycling-Symbol und Verpackungsgrundsätze (neuer Stichpunkt WISO-4-2-2), Emissionen vermeiden statt verringern, Blauer Engel bei Recyclingpapier."
+   "ergebnis": "Alle 19 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen. Lücken geschlossen: Recycling-Symbol und Verpackungsgrundsätze (neuer Stichpunkt WISO-4-2-2), Emissionen vermeiden statt verringern, Blauer Engel bei Recyclingpapier. Unabhängige Prüfung (umbau/berichte/WISO-4-pruefer.md, 16.10.2026) eingearbeitet: Distraktoren zu Rohöl/nachwachsenden Rohstoffen, Blauem Engel und Recyclingpapier ergänzt, Zeichen und Folgen von Verstößen entdoppelt, Abfallhierarchie nach § 6 KrWG."
   },
   "hinweisquellen": {
    "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte."
