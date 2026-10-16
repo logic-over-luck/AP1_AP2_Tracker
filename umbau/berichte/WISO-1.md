@@ -2,7 +2,7 @@
 
 Erzeugt mit `node tools/umbau/lernplan-pruefen.mjs WISO-1`. Nicht von Hand bearbeiten.
 
-**Ergebnis:** 1 Fehler, 5 Hinweise.
+**Ergebnis:** alle Prüfungen bestanden, 5 Hinweise.
 
 ## Struktur
 
@@ -334,20 +334,19 @@ Teilaufgaben: 2021W-WISO-A7, 2023W-WISO-A26, 2025S-WISO-A17, 2025W-WISO-A14
 
 Aufgaben der Arbeitnehmer- und Arbeitgeberorganisationen, der Kammern und der Wirtschaftsverbände unterscheiden.
 
-Bausteine: WISO.01.06.1; WISO.01.06.2 (IHK als Interessenvertretung); WISO.01.06.3; WISO.01.07.1; WISO.02.07.1; WISO.02.07.2; WISO.02.07.3; WISO.02.07.4 · Gebiete: G.WISO.01, G.WISO.02
+Bausteine: WISO.01.06.1; WISO.01.06.2 (IHK als Interessenvertretung); WISO.01.06.3; WISO.01.07.1 · Gebiete: G.WISO.01
 
 Teilaufgaben: 2022W-WISO-A17, 2023S-WISO-A16
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst Ziele und Aufgaben der Gewerkschaften erklären: bessere Löhne und Arbeitsbedingungen durchsetzen, Tarifverträge aushandeln, Mitglieder beraten und vor Gericht vertreten; sie sind nach Branchen organisiert. | 2 | katalog:WISO.01.07.1, katalog:WISO.02.07.1 |
-| K2 | Du kannst Aufgaben der Arbeitgeberverbände erklären: die Arbeitgeber einer Branche als Tarifpartner vertreten, ihre Mitglieder beraten und ihre Interessen gegenüber der Politik vertreten; auch sie sind nach Branchen organisiert. | 2 | katalog:WISO.01.06.1, katalog:WISO.02.07.1 |
+| K1 | Du kannst Ziele und Aufgaben der Gewerkschaften erklären: bessere Löhne und Arbeitsbedingungen durchsetzen, Tarifverträge aushandeln, Mitglieder beraten und vor Gericht vertreten. | 2 | katalog:WISO.01.07.1 |
+| K2 | Du kannst Aufgaben der Arbeitgeberverbände erklären: die Arbeitgeber einer Branche als Tarifpartner vertreten, ihre Mitglieder beraten und ihre Interessen gegenüber der Politik vertreten. | 2 | katalog:WISO.01.06.1 |
 | K3 | Du kannst die Aufgaben der Industrie- und Handelskammer von denen anderer Stellen unterscheiden: Sie vertritt die gewerbliche Wirtschaft, berät ihre Mitglieder (zum Beispiel bei der Suche nach Fachkräften) und ist zuständige Stelle für Aus- und Weiterbildung; sie führt nicht das Handelsregister, legt keine Steuern fest und schließt keine Tarifverträge. | 2 | katalog:WISO.01.06.2, beleg:2022W-WISO-A17, beleg:2023S-WISO-A16 |
 | K4 | Du kannst erklären, dass die Mitgliedschaft in Gewerkschaft und Arbeitgeberverband freiwillig ist, die in der Kammer für Gewerbebetriebe dagegen Pflicht. | 2 | katalog:WISO.01.06.1, katalog:WISO.01.06.2, katalog:WISO.01.07.1 |
-| K5 | Du kannst Wirtschaftsverbände und berufsständische Vertretungen einordnen: Wirtschaftsverbände vertreten eine Branche gegenüber Politik und Öffentlichkeit, berufsständische Kammern (zum Beispiel der Ärzte oder Rechtsanwälte) vertreten ihren Beruf und überwachen die Berufsausübung. | 2 | katalog:WISO.01.06.3, katalog:WISO.02.07.2, katalog:WISO.02.07.3 |
-| K6 | Du kannst ehrenamtliche Mitwirkung am Beispiel des Prüfungsausschusses der Kammer erklären: Arbeitgeber, Arbeitnehmer und Lehrkräfte nehmen dort ehrenamtlich die Prüfungen ab. | 2 | katalog:WISO.02.07.4 |
+| K5 | Du kannst Wirtschaftsverbände als Interessenvertretung einer Branche gegenüber Politik und Öffentlichkeit einordnen und von den Arbeitgeberverbänden als Tarifpartnern unterscheiden. | 2 | katalog:WISO.01.06.3 |
 
-_Hinweis:_ Die Verbände standen im alten Plan doppelt (hier und in WISO-2-5-2); beides ist jetzt hier zusammengeführt.
+_Hinweis:_ Branchenorganisation, berufsständische Vertretungen und Ehrenamt (Katalog WISO.02.07) stehen in WISO-2-5-2; Ziele und Aufgaben von Gewerkschaften und Arbeitgeberverbänden nur hier.
 
 ### WISO-1-6 Entgelt und Sozialversicherung
 
@@ -611,7 +610,7 @@ _Hinweis:_ Die Rechtsform der Gründung steht in WISO-2-2.
 | WISO.01.12.2 | 2 | 2 | ja |
 | WISO.01.12.4 | 2 | 3 |  |
 | WISO.01.12.5 | 2 | 2 |  |
-| WISO.01.12.6 | 2 | 2 | ja |
+| WISO.01.12.6 | 2 | 4 | ja |
 | WISO.01.12.7 | 4 | 4 |  |
 | WISO.01.12.7.1 | 2 | 2 |  |
 | WISO.01.12.7.2 | 2 | 2 |  |
@@ -647,10 +646,6 @@ _Hinweis:_ Die Rechtsform der Gründung steht in WISO-2-2.
 | WISO.01.14.7 | 2 | 2 |  |
 | WISO.01.14.8 | 2 | 2 |  |
 | WISO.01.14.9 | 2 | 2 |  |
-| WISO.02.07.1 | 2 | 2 |  |
-| WISO.02.07.2 | 2 | 2 |  |
-| WISO.02.07.3 | 2 | 2 |  |
-| WISO.02.07.4 | 2 | 2 |  |
 | WISO.02.09.1 | 2 | 2 | ja |
 | WISO.02.09.2 | 2 | 2 | ja |
 | WISO.02.09.3 | 2 | 2 | ja |
@@ -660,11 +655,11 @@ _Hinweis:_ Die Rechtsform der Gründung steht in WISO-2-2.
 
 ## Alt → neu
 
-Können-Aussagen: 135 alt → 10 übernommen, 114 angepasst, 8 verschoben, 3 gestrichen; 24 neu.
+Können-Aussagen: 135 alt → 10 übernommen, 114 angepasst, 8 verschoben, 3 gestrichen; 23 neu.
 
 Stichpunkte: 27 alt, 29 neu (WISO-1-2-3, WISO-1-3-6).
 
-Karten (245): 17 bleiben, 203 prüfen (Aussage angepasst), 14 umhängen (Aussage verschoben), 3 entfallen, 8 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-1-1-4-K6, WISO-1-1-4-K7, WISO-1-2-3-K3, WISO-1-3-2-K5, WISO-1-3-3-K6, WISO-1-3-3-K7, WISO-1-3-4-K7, WISO-1-3-5-K7, WISO-1-3-6-K1, WISO-1-3-6-K2, WISO-1-3-6-K4, WISO-1-3-6-K5, WISO-1-3-6-K6, WISO-1-4-1-K6, WISO-1-4-2-K6, WISO-1-5-3-K6, WISO-1-6-1-K6, WISO-1-6-1-K7, WISO-1-6-2-K7, WISO-1-7-1-K4, WISO-1-7-2-K7, WISO-1-7-3-K6, WISO-1-8-4-K5, WISO-1-8-4-K6.
+Karten (245): 17 bleiben, 203 prüfen (Aussage angepasst), 14 umhängen (Aussage verschoben), 3 entfallen, 8 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-1-1-4-K6, WISO-1-1-4-K7, WISO-1-2-3-K3, WISO-1-3-2-K5, WISO-1-3-3-K6, WISO-1-3-3-K7, WISO-1-3-4-K7, WISO-1-3-5-K7, WISO-1-3-6-K1, WISO-1-3-6-K2, WISO-1-3-6-K4, WISO-1-3-6-K5, WISO-1-3-6-K6, WISO-1-4-1-K6, WISO-1-4-2-K6, WISO-1-6-1-K6, WISO-1-6-1-K7, WISO-1-6-2-K7, WISO-1-7-1-K4, WISO-1-7-2-K7, WISO-1-7-3-K6, WISO-1-8-4-K5, WISO-1-8-4-K6.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -829,7 +824,6 @@ Karten (245): 17 bleiben, 203 prüfen (Aussage angepasst), 14 umhängen (Aussage
 
 ## Fehler und Hinweise
 
-- ✗ ALT: WISO-1-6-2-K2: Ziel WISO-3-1-3-K1 gibt es im neuen Plan nicht
 - · WISO-1-1-1: Teilaufgabe 2025S-WISO-A9 betrifft keinen Baustein des Stichpunkts (WISO.01.01.1.6, WISO.01.01.1.9, WISO.01.01.1.10)
 - · WISO-1-1-1: Teilaufgabe 2025W-WISO-A3 betrifft keinen Baustein des Stichpunkts (WISO.01.01.1.6, WISO.01.01.1.9, WISO.01.01.1.10)
 - · WISO-1-3-1: Teilaufgabe 2021W-WISO-A23 betrifft keinen Baustein des Stichpunkts (AP1.04.04.1)

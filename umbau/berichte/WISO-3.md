@@ -1,0 +1,408 @@
+# Lernplan WISO-3 – Sicherheit und Gesundheitsschutz bei der Arbeit
+
+Erzeugt mit `node tools/umbau/lernplan-pruefen.mjs WISO-3`. Nicht von Hand bearbeiten.
+
+**Ergebnis:** alle Prüfungen bestanden, 1 Hinweise.
+
+## Struktur
+
+### WISO-3-1 Arbeitsschutz: Vorschriften, Zuständige und Unfallversicherung
+
+_Welche Vorschriften den Arbeitsschutz regeln, wer im Betrieb und außerhalb dafür zuständig ist und wie die gesetzliche Unfallversicherung Beschäftigte absichert._
+
+#### WISO-3-1-1 Arbeitsschutzvorschriften im Überblick und Unterweisung
+
+Die Arbeitsschutzvorschriften ihrem Regelungsbereich zuordnen, wissen, wer ihre Einhaltung überwacht, und die Pflicht zur Unterweisung erklären.
+
+Bausteine: WISO.03.01.1; WISO.03.01.2; WISO.03.01.3 (Arbeitszeitgesetz im Arbeitsschutz); WISO.03.01.4; WISO.03.01.5; WISO.03.01.6; WISO.03.01.9; WISO.03.01.10 (Jugendarbeitsschutzgesetz im Arbeitsschutz) · Gebiete: G.WISO.03
+
+Teilaufgaben: 2024S-WISO-A10, 2022S-WISO-A24, 2021W-WISO-A17, 2025S-WISO-A26
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst Arbeitsschutzgesetz (Grundpflichten des Arbeitgebers: Gefährdungen beurteilen, Schutzmaßnahmen treffen, Beschäftigte unterweisen) und Arbeitssicherheitsgesetz (Betriebsärzte, Fachkräfte für Arbeitssicherheit, Arbeitsschutzausschuss) unterscheiden. | 2 | katalog:WISO.03.01.1, katalog:WISO.03.01.2 |
+| K2 | Du kannst erklären, dass ein Unternehmen mit mehr als 20 Beschäftigten einen Arbeitsschutzausschuss bilden muss, in dem die Themen des Arbeitsschutzes beraten werden. | 2 | katalog:WISO.03.01.2, beleg:2024S-WISO-A10 |
+| K3 | Du kannst Arbeitszeitgesetz (Höchstarbeitszeit, Ruhepausen, Ruhezeit für Erwachsene) und Jugendarbeitsschutzgesetz (strengere Regeln für Beschäftigte unter 18 Jahren) dem Arbeitsschutz zuordnen. | 2 | katalog:WISO.03.01.3, katalog:WISO.03.01.10 |
+| K4 | Du kannst Betriebssicherheitsverordnung (sichere Arbeitsmittel und ihre Prüfung) und Arbeitsstättenverordnung (Räume, Beleuchtung, Raumklima, Fluchtwege, Bildschirmarbeitsplätze) zuordnen. | 2 | katalog:WISO.03.01.4, katalog:WISO.03.01.5 |
+| K5 | Du kannst erklären, wer die Unfallverhütungsvorschriften erlässt und wie sie bekannt gemacht werden: die Berufsgenossenschaften; sie sind für Betrieb und Beschäftigte verbindlich und im Betrieb an gut sichtbarer Stelle auszuhängen oder auszulegen. | 2 | katalog:WISO.03.01.6, beleg:2022S-WISO-A24 |
+| K6 | Du kannst die Gewerbeaufsicht (Amt für Arbeitsschutz) als staatliche Aufsichtsbehörde von der Berufsgenossenschaft als Träger der Unfallversicherung unterscheiden. | 2 | katalog:WISO.03.01.9 |
+| K7 | Du kannst die Pflicht zur Unterweisung erklären: Der Arbeitgeber bzw. die Vorgesetzten unterweisen über Unfall- und Gesundheitsgefahren bei Beginn der Beschäftigung, bei neuen Aufgaben oder Arbeitsmitteln und danach regelmäßig (mindestens jährlich, Jugendliche halbjährlich). | 2 | katalog:WISO.03.01.1, katalog:WISO.03.01.6, beleg:2021W-WISO-A17, beleg:2025S-WISO-A26 |
+
+**Grenze:** Paragrafen und Normnummern der Arbeitsschutzvorschriften gehören nicht dazu. — _G4: Der Katalog nennt die Vorschriften nur mit Namen (WISO.03.01); Paragrafen sind ohne Hilfsmittel nicht sinnvoll abfragbar, nötige Gesetzestexte werden abgedruckt (B4)._ (WISO.03.01)
+
+_Hinweis:_ Die einzelnen Regeln des Arbeitszeit- und des Jugendarbeitsschutzgesetzes stehen in WISO-1-3-4; die Ergonomie des Arbeitsplatzes in AP1-4-3-1.
+
+#### WISO-3-1-2 Sicherheitsbeauftragte, Fachkraft für Arbeitssicherheit, Ersthelfer und Fürsorgepflicht
+
+Die Personen im betrieblichen Arbeitsschutz und ihre Aufgaben unterscheiden und die Fürsorgepflicht des Arbeitgebers und die Pflichten der Beschäftigten erklären.
+
+Bausteine: WISO.03.04; WISO.03.01.2 (Fachkraft für Arbeitssicherheit); WISO.03.02.5 (Fürsorgepflicht); WISO.03.02.6 (Ersthelfer); WISO.03.02.3 (Gefahren melden); WISO.03.02.4 (Anweisungen beachten) · Gebiete: G.WISO.03
+
+Teilaufgaben: 2023W-WISO-A6, 2025S-WISO-A27, 2021W-WISO-A17
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst die Aufgaben der Sicherheitsbeauftragten erklären: Sie unterstützen den Arbeitgeber dabei, Unfälle und Gesundheitsgefahren zu verhüten, und machen auf Mängel aufmerksam; Informationen und Ausbildung erhalten sie von der Berufsgenossenschaft. | 2 | katalog:WISO.03.04, beleg:2023W-WISO-A6, beleg:2025S-WISO-A27 |
+| K2 | Du kannst die Fürsorgepflicht des Arbeitgebers erklären: Er muss Arbeitsplatz, Arbeitsmittel und Abläufe so gestalten, dass Leben und Gesundheit der Beschäftigten geschützt sind, und bleibt für die Unterweisung verantwortlich. | 2 | katalog:WISO.03.02.5, beleg:2021W-WISO-A17 |
+| K3 | Du kannst die Pflichten der Beschäftigten erklären: Sicherheitshinweise, Vorschriften und Anweisungen beachten und festgestellte Gefahren oder Mängel sofort melden. | 2 | katalog:WISO.03.02.3, katalog:WISO.03.02.4 |
+| K4 | Du kannst erklären, wer Ersthelfer ist: Beschäftigte mit einer Ausbildung in Erster Hilfe; der Arbeitgeber muss dafür sorgen, dass genügend von ihnen anwesend sind. | 2 | katalog:WISO.03.02.6 |
+| K5 | Du kannst erklären, dass Sicherheitsbeauftragte ihr Amt neben ihrer eigentlichen Arbeit ausüben, keine Weisungen erteilen dürfen und die Verantwortung beim Arbeitgeber bleibt. | 2 | katalog:WISO.03.04 |
+| K6 | Du kannst Sicherheitsbeauftragte von der Fachkraft für Arbeitssicherheit unterscheiden: Die Fachkraft ist dafür eigens ausgebildet und berät den Arbeitgeber fachlich. | 2 | katalog:WISO.03.04, katalog:WISO.03.01.2 |
+
+#### WISO-3-1-3 Gesetzliche Unfallversicherung: versicherte Fälle, Träger, Leistungen (neu)
+
+Erklären, welche Fälle die gesetzliche Unfallversicherung abdeckt, wer sie trägt und bezahlt und welche Leistungen sie erbringt.
+
+Bausteine: WISO.01.05.2.11 (gesetzliche Unfallversicherung) · Gebiete: G.WISO.03, G.WISO.01
+
+Teilaufgaben: 2024S-WISO-A11, 2022W-WISO-A18, 2024S-WISO-A12, 2023W-WISO-A28
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst unterscheiden, welche Fälle die gesetzliche Unfallversicherung abdeckt: Arbeitsunfälle bei der versicherten Tätigkeit, Wegeunfälle auf dem direkten Weg zur Arbeit und zurück und Berufskrankheiten – nicht Unfälle in der Freizeit oder gewöhnliche Krankheiten. | 2 | katalog:WISO.01.05.2.11, beleg:2024S-WISO-A11, beleg:2022W-WISO-A18 |
+| K2 | Du kannst Träger und Finanzierung erklären: Träger sind die Berufsgenossenschaften (im öffentlichen Dienst die Unfallkassen), die Beiträge zahlt der Arbeitgeber allein, und versichert sind alle Beschäftigten, auch Auszubildende und Ersthelfer bei der Hilfeleistung. | 2 | katalog:WISO.01.05.2.11, beleg:2022W-WISO-A18, beleg:2024S-WISO-A12 |
+| K3 | Du kannst Beispiele den Leistungen der gesetzlichen Unfallversicherung zuordnen: Heilbehandlung und Rehabilitation, Verletztengeld bei Arbeitsunfähigkeit, Pflegegeld bei Pflegebedürftigkeit und Rente bei einer dauerhaft um mindestens 20 Prozent geminderten Erwerbsfähigkeit. | 2 | katalog:WISO.01.05.2.11, beleg:2023W-WISO-A28 |
+| K4 | Du kannst die Rolle des Durchgangsarztes erklären: ein von der Berufsgenossenschaft zugelassener Arzt, den Verletzte nach einem Arbeitsunfall aufsuchen und der die Behandlung übernimmt oder steuert. | 2 | katalog:WISO.01.05.2.11 |
+
+_Hinweis:_ Neuer Stichpunkt: Die Unfallversicherung stand vorher doppelt in WISO-1-6-2 und WISO-3-4-2 und kam in vier Prüfungen vor.
+
+### WISO-3-2 Gefährdungen und gesunder Arbeitsplatz
+
+_Welche Gefährdungen es an IT-Arbeitsplätzen gibt, wie man sie einschätzt und Schutzmaßnahmen ableitet und was für Bildschirmarbeit und psychische Belastung gilt._
+
+#### WISO-3-2-1 Gefährdungsarten: mechanisch, elektrisch, thermisch, chemisch, ergonomisch, akustisch, psychisch
+
+Die Gefährdungsarten unterscheiden und Sachverhalte aus der IT-Arbeit zuordnen.
+
+Bausteine: WISO.03.02.1 (Gefährdungsarten); WISO.03.02.2 (Gefährdungsarten) · Gebiete: G.WISO.03
+
+Teilaufgaben: 
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst die sieben Gefährdungsarten unterscheiden: mechanisch, elektrisch, thermisch, chemisch, ergonomisch, akustisch, psychisch. | 2 | katalog:WISO.03.02.1, katalog:WISO.03.02.2 |
+| K2 | Du kannst einen beschriebenen Sachverhalt der passenden Gefährdungsart zuordnen. | 2 | katalog:WISO.03.02.1, katalog:WISO.03.02.2 |
+| K3 | Du kannst Beispiele aus der IT-Arbeit zuordnen: Stolpern über Kabel (mechanisch), Arbeiten an geöffneten Geräten (elektrisch), heiße Bauteile (thermisch), Tonerstaub oder ausgelaufene Akkus (chemisch), langes Sitzen in starrer Haltung (ergonomisch), Lärm im Serverraum (akustisch), Zeitdruck und ständige Unterbrechungen (psychisch). | 2 | katalog:WISO.03.02.1, katalog:WISO.03.02.2 |
+
+_Hinweis:_ Schwere Geräte heben ordnet der Katalog nicht ausdrücklich zu; als Lastenhandhabung gilt es als mechanische Gefährdung (Verletzung durch die Last), die körperliche Belastung als ergonomische.
+
+#### WISO-3-2-2 Bildschirmarbeit, Vorsorgeuntersuchungen und psychische Belastung
+
+Die Vorschriften und Vorsorge für Bildschirmarbeit kennen und psychische Belastungen in der Gefährdungsbeurteilung berücksichtigen.
+
+Bausteine: WISO.03.01.8; WISO.03.03.1; WISO.03.03.2; WISO.03.02.2 (psychische Belastung) · Gebiete: G.WISO.03 · baut auf: AP1-4-3-1
+
+Teilaufgaben: 
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K3 | Du kannst erklären, dass der Arbeitgeber Beschäftigten an Bildschirmarbeitsplätzen eine Untersuchung der Augen anbieten muss (Angebotsvorsorge) und bei Bedarf eine Bildschirmbrille bezahlt. | 2 | katalog:WISO.03.03.1 |
+| K4 | Du kannst erklären, dass die Gefährdungsbeurteilung auch psychische Belastungen erfassen muss, zum Beispiel Zeitdruck, Arbeitsmenge und häufige Störungen. | 2 | katalog:WISO.03.03.2, katalog:WISO.03.02.2 |
+| K5 | Du kannst geeignete von ungeeigneten Maßnahmen gegen psychische Belastung unterscheiden, zum Beispiel klare Prioritäten, störungsfreie Zeiten und realistische Termine gegenüber ständiger Erreichbarkeit. | 2 | katalog:WISO.03.02.2 |
+| K6 | Du kannst die Regeln für Bildschirmarbeit einordnen: Sie stehen heute in der Arbeitsstättenverordnung (die frühere Bildschirmarbeitsverordnung gibt es nicht mehr), und Bildschirmarbeit soll regelmäßig durch andere Tätigkeiten oder kurze Pausen unterbrochen werden. | 2 | katalog:WISO.03.01.8 |
+
+_Hinweis:_ Wie ein Bildschirmarbeitsplatz ergonomisch gestaltet und beurteilt wird, steht in AP1-4-3-1 (WISO.03.01.7 und WISO.03.02.7 gedeckt, P47).
+
+#### WISO-3-2-3 Gefährdungen einschätzen und Schutzmaßnahmen ableiten (neu)
+
+Gefährdungen eines Arbeitsplatzes einschätzen, Schutzmaßnahmen in der richtigen Rangfolge ableiten und beurteilen, ob Beschäftigte und Arbeitgeber ihre Pflichten erfüllen.
+
+Bausteine: WISO.03.02.1; WISO.03.02.2; WISO.03.02.3; WISO.03.02.4; WISO.03.02.5; WISO.03.02.6; WISO.03.01.1 (Gefährdungsbeurteilung) · Gebiete: G.WISO.03
+
+Teilaufgaben: 2025S-WISO-A26, 2021W-WISO-A17
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst die Gefährdungsbeurteilung erklären: Der Arbeitgeber muss die Gefährdungen jedes Arbeitsplatzes ermitteln, bewerten, Maßnahmen festlegen, ihre Wirkung prüfen und das Ergebnis dokumentieren. | 2 | katalog:WISO.03.01.1 |
+| K2 | Du kannst die Rangfolge der Schutzmaßnahmen erklären: erst die Gefahr beseitigen (Substitution), dann technisch absichern, dann organisatorisch regeln, zuletzt persönliche Schutzausrüstung (STOP). | 2 | katalog:WISO.03.01.1, katalog:WISO.03.02.1 |
+| K3 | Du kannst die Gefährdungen eines beschriebenen Arbeitsplatzes oder Auftrags einschätzen (welche Art, wie wahrscheinlich, wie schwer) und begründen, welche Schutzmaßnahme nach der Rangfolge zuerst zu treffen ist, zum Beispiel beim Austausch eines Netzteils im Serverschrank. | 4 | katalog:WISO.03.02.1, katalog:WISO.03.02.2 |
+| K4 | Du kannst an einer Situation beurteilen, ob Beschäftigte Sicherheitshinweise und Anweisungen beachten und erkannte Gefahren melden, und begründen, was zu tun ist. | 4 | katalog:WISO.03.02.3, katalog:WISO.03.02.4, beleg:2025S-WISO-A26 |
+| K5 | Du kannst beurteilen, ob der Arbeitgeber seiner Fürsorgepflicht nachkommt, zum Beispiel bei Unterweisung, genügend Ersthelfern und sicheren Arbeitsmitteln. | 4 | katalog:WISO.03.02.5, katalog:WISO.03.02.6, beleg:2021W-WISO-A17 |
+
+_Hinweis:_ Neuer Stichpunkt: Der Katalog verlangt Gefährdungen „wahrnehmen und einschätzen“ (Stufe 4); die Gefährdungsbeurteilung und die Rangfolge der Maßnahmen standen vorher in WISO-3-2-1.
+
+### WISO-3-3 Sicherheitszeichen und sichere Arbeitsmittel
+
+_Woran man Sicherheitszeichen, Flucht- und Rettungswege erkennt, was Schutzarten, Schutzklassen und Prüfzeichen bedeuten und wie man mit Gefahrenquellen umgeht._
+
+#### WISO-3-3-1 Sicherheitszeichen, Flucht- und Rettungswege, Notausgänge und Sammelplätze
+
+Sicherheitszeichen nach Form und Farbe einordnen und ihre Bedeutung zuordnen sowie Flucht- und Rettungswege und Sammelplatz kennen.
+
+Bausteine: WISO.03.05.9; WISO.03.07.7 (Brandschutzzeichen); WISO.03.05.3; WISO.03.05.4; WISO.03.05.5; WISO.03.07.6; WISO.03.06.4 (Sammelplatz); WISO.03.07.5 · Gebiete: G.WISO.03
+
+Teilaufgaben: 2022S-WISO-A23, 2022W-WISO-A26, 2022W-WISO-A27, 2024S-WISO-A13, 2025S-WISO-A28, 2024S-WISO-A28
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst Sicherheitszeichen nach Form und Farbe einordnen: Verbotszeichen (rund, roter Rand mit Schrägbalken), Gebotszeichen (rund, blau), Warnzeichen (dreieckig, gelb mit schwarzem Rand), Rettungszeichen (rechteckig oder quadratisch, grün), Brandschutzzeichen (rechteckig oder quadratisch, rot); Gefahrstoff-Piktogramme sind rot umrandete Rauten. | 2 | katalog:WISO.03.05.9, katalog:WISO.03.07.7, beleg:2022W-WISO-A26, beleg:2025S-WISO-A28 |
+| K2 | Du kannst abgebildete Zeichen ihrer Bedeutung zuordnen, zum Beispiel Rettungsweg, Erste Hilfe, Sammelstelle, Feuerlöscher, Löschschlauch, Brandmelder, „Vor Öffnen Netzstecker ziehen“, Warnung vor Laserstrahl, Hochspannung oder feuergefährlichen Stoffen. | 2 | katalog:WISO.03.05.9, katalog:WISO.03.07.7, beleg:2022S-WISO-A23, beleg:2024S-WISO-A13, beleg:2024S-WISO-A28, beleg:2022W-WISO-A27 |
+| K3 | Du kannst erklären, dass du die Flucht- und Rettungswege und Notausgänge im Gebäude und am eigenen Arbeitsplatz kennen musst und dass sie gekennzeichnet, frei und unverschlossen sein müssen. | 2 | katalog:WISO.03.05.3, katalog:WISO.03.05.4, katalog:WISO.03.05.5, katalog:WISO.03.07.6 |
+| K4 | Du kannst erklären, wozu der Sammelplatz dient: Dort treffen sich nach einer Räumung alle, damit geprüft werden kann, ob jemand fehlt. | 2 | katalog:WISO.03.06.4, katalog:WISO.03.07.5, beleg:2022W-WISO-A27 |
+| K5 | Du kannst einen Flucht- und Rettungsplan lesen: eigener Standort, Fluchtwege, Feuerlöscher, Erste-Hilfe-Einrichtungen, Sammelplatz. | 2 | katalog:WISO.03.07.6, katalog:WISO.03.05.5 |
+
+#### WISO-3-3-2 Elektrische Betriebsmittel: Schutzarten (IP-Code), Schutzklassen und Prüfzeichen wie das CE-Zeichen
+
+Schutzarten, Schutzklassen und das CE-Zeichen an elektrischen Geräten erklären und einordnen.
+
+Bausteine: WISO.03.05.6; WISO.03.05.7; WISO.03.05.8 · Gebiete: G.WISO.03
+
+Teilaufgaben: 
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst die Schutzart erklären: Der IP-Code gibt mit der ersten Ziffer den Schutz gegen Berührung und Fremdkörper und mit der zweiten den Schutz gegen Wasser an. | 2 | katalog:WISO.03.05.6 |
+| K2 | Du kannst die drei Schutzklassen unterscheiden: I mit Schutzleiter, II mit Schutzisolierung, III mit Schutzkleinspannung. | 2 | katalog:WISO.03.05.7 |
+| K3 | Du kannst das CE-Zeichen erklären: Der Hersteller erklärt damit selbst, dass sein Produkt die europäischen Vorschriften erfüllt; es ist kein Prüfsiegel einer unabhängigen Stelle und kein Umweltzeichen. | 2 | katalog:WISO.03.05.8 |
+| K4 | Du kannst eine Angabe wie IP 20 oder IP 67 einordnen: Je höher die Ziffer, desto besser der Schutz; IP 20 eignet sich nur für trockene Innenräume. | 2 | katalog:WISO.03.05.6 |
+
+#### WISO-3-3-3 Verhaltensregeln und sachgerechter Umgang mit Gefahrenpotenzialen
+
+Allgemeine und betriebliche Verhaltensregeln kennen und mit typischen Gefahrenquellen in der IT sachgerecht umgehen.
+
+Bausteine: WISO.03.05.1; WISO.03.05.2 · Gebiete: G.WISO.03
+
+Teilaufgaben: 
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst allgemeine Verhaltensregeln erklären: Verkehrs- und Fluchtwege freihalten, Kabel stolperfrei verlegen, Schutzeinrichtungen nicht außer Kraft setzen, defekte Geräte nicht weiter benutzen und melden. | 2 | katalog:WISO.03.05.2 |
+| K2 | Du kannst erklären, dass betriebliche Regeln in Betriebsanweisungen und Unterweisungen festgelegt werden und für dich verbindlich sind. | 2 | katalog:WISO.03.05.2 |
+| K3 | Du kannst Regeln für den Umgang mit elektrischen Geräten erklären: vor dem Öffnen den Netzstecker ziehen, Arbeiten an Netzteilen und an der Stromversorgung nur durch Elektrofachkräfte. | 2 | katalog:WISO.03.05.1 |
+| K4 | Du kannst den richtigen Umgang mit weiteren IT-typischen Gefahren erklären: schwere Geräte zu zweit oder mit Hilfsmittel heben, beschädigte Akkus nicht weiterverwenden, Tonerstaub nicht einatmen. | 2 | katalog:WISO.03.05.1 |
+
+### WISO-3-4 Notfall: Unfall und Brand
+
+_Was bei einem Unfall zu tun ist, wie ein Arbeitsunfall gemeldet wird, wie Brände entstehen und verhütet werden und wie man sich im Brandfall verhält und löscht._
+
+#### WISO-3-4-1 Verhalten bei Unfällen: Erste Hilfe, Notruf, Meldekette, Evakuierung und Dokumentation
+
+Die ersten Schritte am Unfallort ordnen, einen Notruf absetzen, Erste-Hilfe-Maßnahmen kennen und Meldekette, Evakuierung und Dokumentation erklären.
+
+Bausteine: WISO.03.06.1; WISO.03.06.2; WISO.03.06.3; WISO.03.06.5 · Gebiete: G.WISO.03
+
+Teilaufgaben: 2021W-WISO-A21
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst die ersten Schritte am Unfallort ordnen: Unfallstelle sichern und auf die eigene Sicherheit achten, Notruf absetzen, Erste Hilfe leisten. | 2 | katalog:WISO.03.06.1 |
+| K2 | Du kannst einen Notruf über die 112 absetzen und seine Angaben erklären: Wo ist es passiert, was ist passiert, wie viele Verletzte, welche Verletzungen, auf Rückfragen warten. | 2 | katalog:WISO.03.06.2 |
+| K3 | Du kannst erklären, wo im Betrieb die Ersthelfer und die betrieblichen Notfallnummern verzeichnet sind: im Aushang zur Ersten Hilfe und in der Brandschutz- bzw. Alarmordnung. | 2 | katalog:WISO.03.06.2 |
+| K4 | Du kannst erklären, was eine Meldekette ist: die festgelegte Reihenfolge, in der nach einem Vorfall Personen und Stellen informiert werden. | 2 | katalog:WISO.03.06.3 |
+| K5 | Du kannst erklären, dass bei einer Evakuierung alle das Gebäude geordnet über die Fluchtwege verlassen und dass jede Erste-Hilfe-Leistung im Betrieb aufgezeichnet wird (Verbandbuch). | 2 | katalog:WISO.03.06.5 |
+| K6 | Du kannst richtige von falschen Erste-Hilfe-Maßnahmen unterscheiden, zum Beispiel Brandwunden kühlen und keimfrei abdecken statt Salben aufzutragen oder Blasen zu öffnen, stabile Seitenlage, Druckverband, bei einem Stromunfall zuerst den Strom abschalten. | 2 | katalog:WISO.03.06.1, beleg:2021W-WISO-A21 |
+
+#### WISO-3-4-2 Arbeitsunfall melden
+
+Erklären, wann und an wen der Arbeitgeber einen Arbeitsunfall meldet und welche Stationen nach einem Unfall folgen.
+
+Bausteine: WISO.03.06.6 · Gebiete: G.WISO.03
+
+Teilaufgaben: 2022W-WISO-A21, 2023S-WISO-A5
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst erklären, dass der Arbeitgeber einen Arbeitsunfall dem Träger der Unfallversicherung (Berufsgenossenschaft) melden muss, nicht der Krankenkasse, der Gewerbeaufsicht oder einer privaten Versicherung. | 2 | katalog:WISO.03.06.6, beleg:2022W-WISO-A21, beleg:2023S-WISO-A5 |
+| K3 | Du kannst die Stationen nach einem Arbeitsunfall ordnen: Erste Hilfe, ärztliche Behandlung (Durchgangsarzt), Unfallanzeige, Rückkehr an den Arbeitsplatz. | 2 | katalog:WISO.03.06.6 |
+| K6 | Du kannst erklären, wann ein Arbeitsunfall meldepflichtig ist: wenn er zu mehr als drei Kalendertagen Arbeitsunfähigkeit führt (oder tödlich ist); die Unfallanzeige ist dann innerhalb von drei Tagen zu erstatten. | 2 | katalog:WISO.03.06.6, beleg:2023S-WISO-A5 |
+
+_Hinweis:_ Versicherte Fälle, Träger und Leistungen der Unfallversicherung stehen in WISO-3-1-3.
+
+#### WISO-3-4-3 Vorbeugender Brandschutz: Brandursachen und Brandschutzordnung (neu)
+
+Erklären, wie Brände entstehen, Brandursachen in Büro und Serverraum vermeiden und die Brandschutzordnung einordnen.
+
+Bausteine: WISO.03.07.1; WISO.03.07.1.1; WISO.03.07.2 · Gebiete: G.WISO.03
+
+Teilaufgaben: 
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst erklären, wie ein Brand entsteht: Ein brennbarer Stoff trifft auf genügend Hitze, zum Beispiel bei einem Heißwasserkocher oder einer Kaffeemaschine, die nicht ausgeschaltet wurden. | 2 | katalog:WISO.03.07.1, katalog:WISO.03.07.1.1 |
+| K2 | Du kannst vorbeugende Maßnahmen erklären: Geräte nach Gebrauch ausschalten, nichts Brennbares neben Wärmequellen lagern, defekte Geräte und Kabel aus dem Betrieb nehmen. | 2 | katalog:WISO.03.07.1, katalog:WISO.03.07.1.1 |
+| K3 | Du kannst erklären, was die Brandschutzordnung ist: die betrieblichen Regeln zur Verhütung von Bränden und zum Verhalten im Brandfall. | 2 | katalog:WISO.03.07.2 |
+| K4 | Du kannst weitere Brandursachen im Büro und im Serverraum erklären: überlastete Mehrfachsteckdosen, beschädigte Akkus, verstellte Lüftungsöffnungen. | 2 | katalog:WISO.03.07.1 |
+| K5 | Du kannst erklären, dass für ein Feuer brennbarer Stoff, Sauerstoff und Zündtemperatur zusammenkommen müssen und Löschen bedeutet, eines davon zu entziehen. | 2 | katalog:WISO.03.07.1 |
+| K6 | Du kannst erklären, warum Brandschutztüren geschlossen bleiben und nicht verkeilt werden dürfen. | 2 | katalog:WISO.03.07.2 |
+
+_Hinweis:_ Früher Stichpunkt WISO-3-5-1.
+
+#### WISO-3-4-4 Verhalten im Brandfall und Brandschutzmittel: Brandmeldung, Feuerlöscher, Löschdecken, Brandklassen (neu)
+
+Die richtige Reihenfolge im Brandfall kennen, einen Feuerlöscher richtig bedienen und einsetzen und Löschmittel den Brandklassen zuordnen.
+
+Bausteine: WISO.03.07.3; WISO.03.07.3.1; WISO.03.07.3.2; WISO.03.07.4; WISO.03.07.4.1; WISO.03.07.4.2; WISO.03.07.8; WISO.03.07.9 · Gebiete: G.WISO.03
+
+Teilaufgaben: 2024S-WISO-A14, 2022W-WISO-A25, 2022S-WISO-A25, 2022S-WISO-A26
+
+| ID | Können | Stufe | Herkunft |
+|---|---|---|---|
+| K1 | Du kannst die Reihenfolge im Brandfall erklären: zuerst den Brand melden (Brandmelder, 112), Menschen warnen und in Sicherheit bringen, erst dann löschen, und nur ohne dich selbst zu gefährden. | 2 | katalog:WISO.03.07.9, katalog:WISO.03.07.3, beleg:2024S-WISO-A14 |
+| K2 | Du kannst richtiges von falschem Verhalten im Brandfall unterscheiden: keinen Aufzug benutzen, Türen und Fenster schließen (kein Fenster öffnen, das facht das Feuer an), den gekennzeichneten Fluchtwegen zum Sammelplatz folgen. | 2 | katalog:WISO.03.07.3, katalog:WISO.03.07.3.1, katalog:WISO.03.07.3.2, beleg:2022W-WISO-A25 |
+| K3 | Du kannst einen Feuerlöscher bedienen: zum Gerät gehen, aus der Halterung nehmen, Sicherung ziehen, Betätigungshebel ziehen und den Schlauch auf das Feuer richten; Standort und Bedienungsanleitung am Gerät gehören dazu. | 3 | katalog:WISO.03.07.4.1, beleg:2022S-WISO-A26 |
+| K4 | Du kannst die Brandklassen zuordnen: A feste Stoffe, B flüssige Stoffe, C Gase, D Metalle. | 2 | katalog:WISO.03.07.8 |
+| K5 | Du kannst erklären, wofür eine Löschdecke dient: Sie erstickt kleine Brände, zum Beispiel an Kleidung oder in einem Papierkorb. | 2 | katalog:WISO.03.07.4.2 |
+| K6 | Du kannst erklären, warum für elektrische Geräte und Serverräume Kohlendioxid-Löscher geeignet sind: Sie leiten keinen Strom und hinterlassen keine Rückstände; das Löschmittel muss immer zum brennenden Stoff passen. | 2 | katalog:WISO.03.07.4, katalog:WISO.03.07.4.1 |
+| K7 | Du kannst richtige von falschen Löschregeln unterscheiden: mit dem Wind löschen, von vorn und von unten in die Glut, Tropf- und Fließbrände von oben nach unten, mehrere Löscher gleichzeitig statt nacheinander, Brandstelle danach beobachten. | 2 | katalog:WISO.03.07.4.1, beleg:2022S-WISO-A25 |
+
+_Hinweis:_ Früher Stichpunkt WISO-3-5-2.
+
+## Tiefe je Baustein (T8)
+
+| Baustein | belegte Tiefe | erreicht | geteilt |
+|---|---|---|---|
+| WISO.01.05.2.11 | 2 | 2 | ja |
+| WISO.03.01.1 | 2 | 4 | ja |
+| WISO.03.01.10 | 3 | 2 | ja |
+| WISO.03.01.2 | 2 | 2 | ja |
+| WISO.03.01.3 | 2 | 2 | ja |
+| WISO.03.01.4 | 2 | 2 |  |
+| WISO.03.01.5 | 2 | 2 |  |
+| WISO.03.01.6 | 2 | 4 |  |
+| WISO.03.01.8 | 2 | 2 |  |
+| WISO.03.01.9 | 2 | 2 |  |
+| WISO.03.02.1 | 4 | 4 | ja |
+| WISO.03.02.2 | 4 | 4 | ja |
+| WISO.03.02.3 | 4 | 4 | ja |
+| WISO.03.02.4 | 4 | 4 | ja |
+| WISO.03.02.5 | 4 | 4 | ja |
+| WISO.03.02.6 | 4 | 4 | ja |
+| WISO.03.03.1 | 2 | 2 |  |
+| WISO.03.03.2 | 2 | 2 |  |
+| WISO.03.04 | 2 | 2 |  |
+| WISO.03.05.1 | 2 | 2 |  |
+| WISO.03.05.2 | 2 | 2 |  |
+| WISO.03.05.3 | 2 | 2 |  |
+| WISO.03.05.4 | 2 | 2 |  |
+| WISO.03.05.5 | 2 | 2 |  |
+| WISO.03.05.6 | 2 | 2 |  |
+| WISO.03.05.7 | 2 | 2 |  |
+| WISO.03.05.8 | 2 | 2 |  |
+| WISO.03.05.9 | 2 | 2 |  |
+| WISO.03.06.1 | 2 | 2 |  |
+| WISO.03.06.2 | 2 | 2 |  |
+| WISO.03.06.3 | 2 | 2 |  |
+| WISO.03.06.4 | 2 | 2 | ja |
+| WISO.03.06.5 | 2 | 2 |  |
+| WISO.03.06.6 | 2 | 2 |  |
+| WISO.03.07.1 | 2 | 2 |  |
+| WISO.03.07.1.1 | 2 | 2 |  |
+| WISO.03.07.2 | 2 | 2 |  |
+| WISO.03.07.3 | 2 | 2 |  |
+| WISO.03.07.3.1 | 2 | 2 |  |
+| WISO.03.07.3.2 | 2 | 2 |  |
+| WISO.03.07.4 | 2 | 2 |  |
+| WISO.03.07.4.1 | 2 | 3 |  |
+| WISO.03.07.4.2 | 2 | 2 |  |
+| WISO.03.07.5 | 2 | 2 |  |
+| WISO.03.07.6 | 2 | 2 |  |
+| WISO.03.07.7 | 2 | 2 | ja |
+| WISO.03.07.8 | 2 | 2 |  |
+| WISO.03.07.9 | 2 | 2 |  |
+
+## Alt → neu
+
+Können-Aussagen: 71 alt → 7 übernommen, 34 angepasst, 19 verschoben, 11 gestrichen; 6 neu.
+
+Stichpunkte: 13 alt, 13 neu (WISO-3-1-3, WISO-3-2-3, WISO-3-4-3, WISO-3-4-4).
+
+Karten (155): 18 bleiben, 71 prüfen (Aussage angepasst), 39 umhängen (Aussage verschoben), 27 entfallen, 0 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-3-1-1-K7, WISO-3-1-3-K3, WISO-3-2-3-K3, WISO-3-2-3-K4, WISO-3-2-3-K5, WISO-3-4-4-K7.
+
+| alt | Status | neu | Grund |
+|---|---|---|---|
+| WISO-3-1-1-K1 | übernommen | WISO-3-1-1-K1 |  |
+| WISO-3-1-1-K2 | angepasst | WISO-3-1-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-1-K3 | angepasst | WISO-3-1-1-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-1-K4 | übernommen | WISO-3-1-1-K4 |  |
+| WISO-3-1-1-K5 | angepasst | WISO-3-1-1-K5 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-1-K6 | angepasst | WISO-3-1-1-K6 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-2-K1 | angepasst | WISO-3-1-2-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-2-K2 | angepasst | WISO-3-1-2-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-2-K3 | angepasst | WISO-3-1-2-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-2-K4 | angepasst | WISO-3-1-2-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-2-K5 | angepasst | WISO-3-1-2-K5 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-1-2-K6 | angepasst | WISO-3-1-2-K6 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-1-K1 | angepasst | WISO-3-2-1-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-1-K2 | angepasst | WISO-3-2-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-1-K3 | angepasst | WISO-3-2-1-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-2-K3 | angepasst | WISO-3-2-2-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-2-K4 | angepasst | WISO-3-2-2-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-2-K5 | angepasst | WISO-3-2-2-K5 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-2-K6 | angepasst | WISO-3-2-2-K6 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-1-K1 | angepasst | WISO-3-3-1-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-1-K2 | angepasst | WISO-3-3-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-1-K3 | angepasst | WISO-3-3-1-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-1-K4 | angepasst | WISO-3-3-1-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-1-K5 | übernommen | WISO-3-3-1-K5 |  |
+| WISO-3-3-2-K1 | übernommen | WISO-3-3-2-K1 |  |
+| WISO-3-3-2-K2 | übernommen | WISO-3-3-2-K2 |  |
+| WISO-3-3-2-K3 | angepasst | WISO-3-3-2-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-2-K4 | angepasst | WISO-3-3-2-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-3-K1 | angepasst | WISO-3-3-3-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-3-K2 | angepasst | WISO-3-3-3-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-3-K3 | angepasst | WISO-3-3-3-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-3-3-K4 | angepasst | WISO-3-3-3-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-1-K1 | übernommen | WISO-3-4-1-K1 |  |
+| WISO-3-4-1-K2 | angepasst | WISO-3-4-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-1-K3 | angepasst | WISO-3-4-1-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-1-K4 | übernommen | WISO-3-4-1-K4 |  |
+| WISO-3-4-1-K5 | angepasst | WISO-3-4-1-K5 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-1-K6 | angepasst | WISO-3-4-1-K6 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-2-K1 | angepasst | WISO-3-4-2-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-2-K3 | angepasst | WISO-3-4-2-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-4-2-K6 | angepasst | WISO-3-4-2-K6 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
+| WISO-3-2-1-K4 | verschoben | WISO-3-2-3-K1 | Gefährdungsbeurteilung steht im neuen Stichpunkt Gefährdungen einschätzen |
+| WISO-3-2-1-K5 | verschoben | WISO-3-2-3-K2 | Rangfolge der Schutzmaßnahmen steht im neuen Stichpunkt Gefährdungen einschätzen |
+| WISO-3-2-2-K1 | gestrichen | – | E2/P47: ergonomische Anforderungen an einen Bildschirmarbeitsplatz stehen in AP1-4-3-1-K2 (WISO.03.01.7 und WISO.03.02.7 gedeckt) |
+| WISO-3-2-2-K2 | gestrichen | – | E2/P47: einen Arbeitsplatz ergonomisch beurteilen steht in AP1-4-3-1-K3 |
+| WISO-3-3-2-K5 | gestrichen | – | K3/P17: weitere Prüfzeichen (GS, VDE) stehen weder im Katalog noch in einer Prüfung; für P-BEISPIELLISTE fehlen zwei Hinweisquellen |
+| WISO-3-4-2-K2 | verschoben | WISO-3-1-3-K1 | versicherte Fälle der Unfallversicherung gesammelt in WISO-3-1-3 |
+| WISO-3-4-2-K4 | verschoben | WISO-3-1-3-K4 | Durchgangsarzt steht bei der Unfallversicherung |
+| WISO-3-4-2-K5 | verschoben | WISO-3-1-3-K2 | Träger und Finanzierung stehen bei der Unfallversicherung |
+| WISO-3-5-1-K1 | verschoben | WISO-3-4-3-K1 | Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte) |
+| WISO-3-5-2-K1 | verschoben | WISO-3-4-4-K1 | Stichpunkt in den Block Notfall verschoben (F4) |
+| WISO-3-5-1-K2 | verschoben | WISO-3-4-3-K2 | Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte) |
+| WISO-3-5-2-K2 | verschoben | WISO-3-4-4-K2 | Stichpunkt in den Block Notfall verschoben (F4) |
+| WISO-3-5-1-K3 | verschoben | WISO-3-4-3-K3 | Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte) |
+| WISO-3-5-2-K3 | verschoben | WISO-3-4-4-K3 | Stichpunkt in den Block Notfall verschoben (F4) |
+| WISO-3-5-1-K4 | verschoben | WISO-3-4-3-K4 | Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte) |
+| WISO-3-5-2-K4 | verschoben | WISO-3-4-4-K4 | Stichpunkt in den Block Notfall verschoben (F4) |
+| WISO-3-5-1-K5 | verschoben | WISO-3-4-3-K5 | Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte) |
+| WISO-3-5-2-K5 | verschoben | WISO-3-4-4-K5 | Stichpunkt in den Block Notfall verschoben (F4) |
+| WISO-3-5-1-K6 | verschoben | WISO-3-4-3-K6 | Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte) |
+| WISO-3-5-2-K6 | verschoben | WISO-3-4-4-K6 | Stichpunkt in den Block Notfall verschoben (F4) |
+| WISO-3-6-1-K1 | gestrichen | – | E2/P47: Informationssicherheit und Datenschutz unterscheiden steht in AP1-7-5-1-K5 (WISO.03.08.1 gedeckt) |
+| WISO-3-6-1-K2 | verschoben | WISO-5-2-1-K8 | Vertraulichkeit, Integrität, Verfügbarkeit stehen in AP1-7-1-1; neu für WiSo ist nur Authentizität (WISO.03.08.3), jetzt in WISO-5-2-1 |
+| WISO-3-6-1-K3 | gestrichen | – | E2/P47: einem Vorfall das Schutzziel zuordnen steht in AP1-7-1-1-K2 |
+| WISO-3-6-1-K4 | gestrichen | – | E2/P47: Ziele der DSGVO stehen in AP1-7-5-1-K1 (WISO.03.08.2 gedeckt) |
+| WISO-3-6-1-K5 | gestrichen | – | E2/P47: personenbezogene Daten und Grundsätze der Verarbeitung stehen in AP1-7-5-1-K2 und -K6 |
+| WISO-3-6-2-K1 | gestrichen | – | E2/P47: Aufgaben des BSI stehen in AP1-7-2-1-K1 (WISO.03.08.4 gedeckt) |
+| WISO-3-6-2-K2 | gestrichen | – | E2/P47: IT-Grundschutz-Empfehlungen begründen steht in AP1-7-2-1-K3 (WISO.03.08.5 gedeckt) |
+| WISO-3-6-2-K3 | gestrichen | – | E2/P47: Sicherheitskonzept, Schutzbedarf und Richtlinien stehen in AP1-7-2-1, AP1-7-2-2 und AP1-7-1-3 (WISO.03.08.6 gedeckt) |
+| WISO-3-6-2-K4 | gestrichen | – | E2/P47: technische und organisatorische Maßnahmen stehen in AP1-7-1-2 (WISO.03.08.7 gedeckt) |
+| WISO-3-6-2-K5 | verschoben | WISO-5-2-1-K7 | eigener Beitrag zur IT-Sicherheit gehört zum Sicherheitsbewusstsein (WISO.05.02.1) |
+
+### Sätze aus alten Rahmentexten
+
+| alt | Satz | Status | Grund |
+|---|---|---|---|
+| WISO-3-1-1 | Du sollst wissen, was jede regelt und wer die Einhaltung überwacht; Paragrafen musst du nicht kennen. | übernommen | G4: Paragrafen und Normnummern sind ohne Hilfsmittel nicht sinnvoll abfragbar |
+| WISO-3-2-1 | Messwerte und Grenzwerte sind nicht verlangt. | übernommen | G4; der Katalog verlangt Gefährdungen einschätzen, nicht messen |
+| WISO-3-3-1 | Die Normnummern der Zeichen sind nicht gefragt. | übernommen | G4 |
+| WISO-3-3-2 | Es genügt, die Angaben zu deuten; elektrotechnische Berechnungen gehören nicht dazu. | übernommen | G2: Perspektive WiSo (Sicherheit am Arbeitsplatz), Elektrotechnik ist nicht Gegenstand von WISO.03.05 |
+| WISO-3-4-1 | Medizinische Einzelheiten der Ersten Hilfe wurden nicht gefragt. | angepasst | Belegt ist richtiges Verhalten bei einer Verbrennung (2021W-WISO-A21); die Grenze folgt aus G4, nicht aus fehlenden Belegen |
+| WISO-3-6-2 | Verlangt ist das Wissen eines Anwenders, nicht das Erstellen eines Sicherheitskonzepts. | gestrichen | IT-Sicherheit ist in AP1-7 gelernt (P47); der WiSo-Teil ist dort gedeckt |
+
+## Geschwister-Prüfung (R4)
+
+| Katalogstelle | Paar | abgedeckt durch |
+|---|---|---|
+| WISO.03.05.6 | Schutzarten und Schutzklassen | Schutzarten: WISO-3-3-2-K1, WISO-3-3-2-K4 · Schutzklassen: WISO-3-3-2-K2 |
+| WISO.03.05.3 | Fluchtwege und Notausgänge | Fluchtwege: WISO-3-3-1-K3 · Notausgänge: WISO-3-3-1-K3 |
+| WISO.03.07.4 | Feuerlöscher und Löschdecken | Feuerlöscher: WISO-3-4-4-K3 · Löschdecken: WISO-3-4-4-K5 |
+| WISO.03.02.1 | mechanisch, elektrisch, thermisch, chemisch | Arten: WISO-3-2-1-K1, WISO-3-2-1-K3 |
+| WISO.03.02.2 | ergonomisch, akustisch, psychisch | ergonomisch/akustisch: WISO-3-2-1-K3 · psychisch: WISO-3-2-2-K4, WISO-3-2-2-K5 |
+
+## Fehler und Hinweise
+
+- · T8: WISO.03.01.10 braucht Stufe 3, erreicht in WISO-3 2 – geteilter Baustein, Rest muss ein anderer Ordner erreichen
