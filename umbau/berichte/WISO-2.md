@@ -2,7 +2,7 @@
 
 Erzeugt mit `node tools/umbau/lernplan-pruefen.mjs WISO-2`. Nicht von Hand bearbeiten.
 
-**Ergebnis:** alle Prüfungen bestanden, 3 Hinweise.
+**Ergebnis:** alle Prüfungen bestanden, 2 Hinweise.
 
 ## Struktur
 
@@ -446,5 +446,4 @@ Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage 
 ## Fehler und Hinweise
 
 - · WISO-2-1-1: Teilaufgabe 2025S-WISO-A2 betrifft keinen Baustein des Stichpunkts (AP1.02.01.1)
-- · WISO-2-2-4: Teilaufgabe 2025W-WISO-A19 betrifft keinen Baustein des Stichpunkts (WISO.02.02.3)
 - · WISO-2-4-2: Teilaufgabe 2025S-WISO-A7 betrifft keinen Baustein des Stichpunkts (AP1.07.02.1, AP1.07.02.2, AP1.07.02.3)
