@@ -4,7 +4,8 @@
 // Aufruf:  node tools/umbau/pruefungen-pruefen.mjs [quellen/pruefungen/ap1] [umbau/fundament/pruefungen-ap1.json]
 //          node tools/umbau/pruefungen-pruefen.mjs pb1        (Kurzform: quellen/pruefungen/pb1 → umbau/fundament/pruefungen-pb1.json)
 //
-// Dateinamen: AP1 „2024H_AP1.md“ (Kopf-ID 2024H), AP2 „2025W_AP2-PB1.md“ (Kopf-ID 2025W-PB1).
+// Dateinamen: AP1 „2024H_AP1.md“ (Kopf-ID 2024H), AP2 „2025W_AP2-PB1.md“ (Kopf-ID 2025W-PB1),
+// WiSo „2025W_WISO.md“ (Kopf-ID 2025W-WISO; 30 Aufgaben ohne Teilaufgaben, je 3,33333 Punkte).
 //
 // Erwartetes Format: wie 2024H_AP1.md – YAML-Kopf, „# <ID>-A1 · 25 Punkte", „## <ID>-A1-a · 3 Punkte",
 // „### <ID>-A1-da · 2 Punkte", je Teilaufgabe ein ```yaml-Block mit operator: […].
@@ -38,7 +39,8 @@ export function lies(datei, md) {
   const id = k.id;
   const [termin, art = ''] = datei.replace(/\.md$/, '').split('_');
   const pb = art.match(/^AP2-(PB[12])$/);
-  const erwartetId = pb ? `${termin}-${pb[1]}` : termin;
+  const wiso = art === 'WISO';
+  const erwartetId = pb ? `${termin}-${pb[1]}` : wiso ? `${termin}-WISO` : termin;
   if (id !== erwartetId) fehler.push(`Kopf-ID „${id}" passt nicht zum Dateinamen (${erwartetId})`);
 
   const aufgaben = [];
@@ -48,7 +50,7 @@ export function lies(datei, md) {
   const zeilen = md.split('\n');
   for (let i = 0; i < zeilen.length; i++) {
     const z = zeilen[i];
-    const a = z.match(/^# (\S+-A\d) · ([\d,.]+) Punkte?/);
+    const a = z.match(/^# (\S+-A\d+) · ([\d,.]+) Punkte?/);
     if (a) {
       aufgaben.push({ id: a[1], punkte: zahl(a[2]) });
       // Aufgabe ohne Teilaufgaben (z. B. AP2-PB2: ganze Aufgabe Pseudocode): yaml-Block direkt unter „# …-An“
@@ -59,7 +61,7 @@ export function lies(datei, md) {
       ganz.push(aktuell);
       continue;
     }
-    const t = z.match(/^(#{2,3}) (\S+-A\d-[a-z]+) · ([\d,.]+) Punkte?(.*)$/);
+    const t = z.match(/^(#{2,3}) (\S+-A\d+-[a-z]+) · ([\d,.]+) Punkte?(.*)$/);
     if (t) {
       aktuell = {
         id: t[2], ebene: t[1].length, punkte: zahl(t[3]), summe: /Summe aus/.test(t[4]),
@@ -82,9 +84,11 @@ export function lies(datei, md) {
         if (la) aktuell.loesung_art = la[1].trim() || null;
         const an = y.match(/^anzahl:\s*(.*)$/);
         if (an) aktuell.anzahl = an[1].trim() || null;
+        const at = y.match(/^aufgabentyp:\s*(.*)$/);
+        if (at) aktuell.aufgabentyp = at[1].trim() || null;
       }
     }
-    if (/^\*\*Musterlösung:\*\*/.test(z)) aktuell.hat_musterloesung = true;
+    if (/^\*\*Musterlösung( \([^)]*\))?:\*\*/.test(z)) aktuell.hat_musterloesung = true;
   }
 
   // Aufgaben ohne Teilaufgaben, aber mit eigenem yaml-Block, sind selbst ein Blatt
@@ -111,7 +115,10 @@ export function lies(datei, md) {
 
   // Punktsummen
   const unvollstaendig = k['vollständig'] === 'nein';
-  const sollAufgaben = (k.aufgaben_punkte ?? '').replace(/[[\]]/g, '').split(',').map(zahl).filter((n) => !Number.isNaN(n));
+  // „je 3,33333“ (WiSo): alle Aufgaben gleich; sonst Liste [25, 25, …]
+  const je = (k.aufgaben_punkte ?? '').match(/^je ([\d,.]+)/);
+  const sollAufgaben = je ? aufgaben.map(() => zahl(je[1]))
+    : (k.aufgaben_punkte ?? '').replace(/[[\]]/g, '').split(',').map(zahl).filter((n) => !Number.isNaN(n));
   aufgaben.forEach((a, n) => {
     if (sollAufgaben[n] !== undefined && sollAufgaben[n] !== a.punkte) fehler.push(`${a.id}: Kopf sagt ${sollAufgaben[n]}, Überschrift ${a.punkte} Punkte`);
     const s = teil.filter((t) => t.aufgabe === a.id && t.ebene <= 2).reduce((x, t) => x + t.punkte, 0);
@@ -121,8 +128,10 @@ export function lies(datei, md) {
     }
   });
   const gesamt = aufgaben.reduce((x, a) => x + a.punkte, 0);
-  if (gesamt !== zahl(k.punkte_gesamt)) fehler.push(`Aufgaben ergeben ${gesamt} statt ${k.punkte_gesamt} Punkte`);
-  if (aufgaben.length !== 4) fehler.push(`${aufgaben.length} statt 4 Aufgaben`);
+  // WiSo: 30 × 3,33333 = 99,9999 → Rundungstoleranz 0,01
+  if (Math.abs(gesamt - zahl(k.punkte_gesamt)) > (wiso ? 0.01 : 0)) fehler.push(`Aufgaben ergeben ${gesamt} statt ${k.punkte_gesamt} Punkte`);
+  const sollAnzahl = wiso ? zahl(k.aufgaben_anzahl ?? 30) : 4;
+  if (aufgaben.length !== sollAnzahl) fehler.push(`${aufgaben.length} statt ${sollAnzahl} Aufgaben`);
 
   // Hinweise je Blatt
   const loesung = k['lösungshinweise'] === 'ja';
@@ -145,9 +154,9 @@ export function lies(datei, md) {
 }
 
 // Aktueller Katalog gilt ab AP1 Frühjahr 2025 und AP2 Sommer 2025 (Katalog, PDF-S. 5).
-// AP1: F = Frühjahr, H = Herbst; AP2: S = Sommer, W = Winter (2025W = Winter 2025/26).
+// AP1: F = Frühjahr, H = Herbst; AP2 (PB1, PB2, WiSo): S = Sommer, W = Winter (2025W = Winter 2025/26).
 export function katalogFuer(id) {
-  const m = String(id).match(/^(\d{4})([FHSW])(-PB[12])?$/);
+  const m = String(id).match(/^(\d{4})([FHSW])(-PB[12]|-WISO)?$/);
   if (!m) return null;
   if (/[FH]/.test(m[2]) === Boolean(m[3])) return null; // AP1 nur F/H, AP2 nur S/W
   return Number(m[1]) >= 2025 ? 'aktuell' : 'alt';

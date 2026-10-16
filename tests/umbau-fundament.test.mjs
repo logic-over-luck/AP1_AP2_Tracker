@@ -132,6 +132,21 @@ test('Abschriften-Prüfer: Aufgabe ohne Teilaufgaben ist selbst ein Blatt', () =
   assert.ok(lies('2099F_AP1.md', ohneYaml).fehler.length > 0);
 });
 
+test('Abschriften-Prüfer: WiSo (30 Aufgaben ohne Teilaufgaben, je 3,33333 Punkte)', async () => {
+  const { katalogFuer } = await import('../tools/umbau/pruefungen-pruefen.mjs');
+  const aufgabe = (n) => `# 2099S-WISO-A${n} · 3,33333 Punkte\n\`\`\`yaml\noperator: [eintragen]\naufgabentyp: einfachauswahl\n\`\`\`\n**Musterlösung:** 1\n`;
+  const kopf = '---\nid: 2099S-WISO\npunkte_gesamt: 100\naufgaben_anzahl: 30\naufgaben_punkte: je 3,33333\nlösungshinweise: ja\nvollständig: ja\n---\n';
+  const wiso = kopf + Array.from({ length: 30 }, (_, i) => aufgabe(i + 1)).join('');
+  const r = lies('2099S_WISO.md', wiso);
+  assert.deepEqual(r.fehler, []);
+  assert.equal(r.pruefung.teilaufgaben.filter((t) => t.blatt).length, 30);
+  assert.equal(r.pruefung.teilaufgaben.find((t) => t.id === '2099S-WISO-A30').aufgabentyp, 'einfachauswahl');
+  assert.ok(lies('2099S_WISO.md', kopf + Array.from({ length: 29 }, (_, i) => aufgabe(i + 1)).join('')).fehler.length > 0, '29 Aufgaben');
+  assert.equal(katalogFuer('2024S-WISO'), 'alt');
+  assert.equal(katalogFuer('2025W-WISO'), 'aktuell');
+  assert.equal(katalogFuer('2025F-WISO'), null);
+});
+
 // ---------- Zuordnung Teilaufgabe → Baustein (T2, goldene Regel) ----------
 import { cpSync, rmSync } from 'node:fs';
 const zuordnungDa = vorhanden && existsSync('umbau/fundament/pruefungen-ap1.json') && existsSync('umbau/zuordnung/ap1');
