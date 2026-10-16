@@ -1,6 +1,6 @@
 {
   "ordner": "AP1-6",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md",
   "grundlage": "umbau/lernplan/ap1/AP1-6.json",
   "karten": [
@@ -1116,6 +1116,356 @@
       "k": "AP1-6-3-2-K7",
       "vorne": "Nenne zu den Fehlerursachen „falscher DNS-Server“ und „falsches Standardgateway“ je eine Überprüfung und eine Behebung.",
       "hinten": "- falscher DNS-Server: mit `nslookup` bzw. `ipconfig /all` prüfen; richtigen DNS-Server eintragen\n- falsches Gateway: mit `ipconfig` und ping auf das Gateway prüfen; richtige Gateway-Adresse eintragen"
+    },
+    {
+      "id": "AP1-6-1-1-K6-1",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K6",
+      "vorne": "Welche Aufgabe haben die OSI-Schichten 2, 3 und 4?",
+      "hinten": "- 2 Sicherung: Zustellung im lokalen Netzsegment an MAC-Adressen\n- 3 Vermittlung: Netze adressieren (IP) und Pakete über Router weiterleiten\n- 4 Transport: Daten zum richtigen Programm (Port), bei TCP gesichert"
+    },
+    {
+      "id": "AP1-6-1-1-K6-2",
+      "sp": "AP1-6-1-1",
+      "k": "AP1-6-1-1-K6",
+      "vorne": "Welche OSI-Schicht überträgt Bits als Signale, welche steuert die Sitzung, welche vereinheitlicht die Darstellung der Daten?",
+      "hinten": "- Bits als Signale: Schicht 1 (Bitübertragung)\n- Sitzung steuern: Schicht 5\n- Darstellung vereinheitlichen (z. B. Zeichenkodierung, Verschlüsselung): Schicht 6"
+    },
+    {
+      "id": "AP1-6-1-2-K7-1",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K7",
+      "vorne": "Wie überträgt ein paketvermitteltes Netz eine Datei?",
+      "hinten": "Zerlegt in Pakete mit Absender- und Zieladresse im Kopf; jedes Paket wird einzeln anhand der Zieladresse weitergeleitet; der Empfänger setzt sie wieder zusammen."
+    },
+    {
+      "id": "AP1-6-1-2-K7-2",
+      "sp": "AP1-6-1-2",
+      "k": "AP1-6-1-2-K7",
+      "vorne": "Was unterscheidet ein paketvermitteltes Netz (Internet) von einem leitungsvermittelten (klassisches Telefonnetz)?",
+      "hinten": "- Paketvermittelt: Die Pakete vieler Verbindungen teilen sich die Leitungen\n- Leitungsvermittelt: Für die Dauer der Verbindung ist ein fester Weg reserviert, auch in Pausen"
+    },
+    {
+      "id": "AP1-6-1-3-K8-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K8",
+      "vorne": "Wozu gibt es zwischen Netzwerkdose und Switch ein Patchfeld?",
+      "hinten": "Die Kabel von den Dosen sind fest verlegt und enden am Patchfeld; ein kurzes Patchkabel führt zum Switch. Um eine Dose einem anderen Port oder Netz zuzuordnen, steckt man nur das Patchkabel um, statt neu zu verlegen."
+    },
+    {
+      "id": "AP1-6-1-3-K8-2",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K8",
+      "vorne": "Aus welchen Teilstrecken besteht die Verbindung von einem PC am Arbeitsplatz zum Switch?",
+      "hinten": "- Patchkabel PC → Netzwerkdose\n- fest verlegtes Kabel Dose → Patchfeld\n- Patchkabel Patchfeld → Switch"
+    },
+    {
+      "id": "AP1-6-1-3-K9-1",
+      "sp": "AP1-6-1-3",
+      "k": "AP1-6-1-3-K9",
+      "vorne": "Was unterscheidet ein Endgerät (Host) von einem Netzwerkgerät? Nenne je zwei Beispiele.",
+      "hinten": "- Endgerät: erzeugt oder empfängt Daten, z. B. PC, Server, Drucker, IP-Telefon\n- Netzwerkgerät: leitet Daten nur weiter, z. B. Switch, Access Point, Router"
+    },
+    {
+      "id": "AP1-6-1-4-K7-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K7",
+      "vorne": "Welche zwei Seiten hat ein Router für den Internetzugang, und was hängt jeweils daran?",
+      "hinten": "- WAN-Seite: Anschluss zum Provider, Technik je nach Anschlussart (DSL, Kabel, Glasfaser, Mobilfunk)\n- LAN-Seite: Ethernet für das lokale Netz, bei Bedarf mit Switches erweitert"
+    },
+    {
+      "id": "AP1-6-1-4-K7-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K7",
+      "vorne": "Warum muss beim Wechsel von DSL auf Glasfaser meist der Router (oder sein Modem) getauscht werden, das LAN aber nicht?",
+      "hinten": "Die WAN-Seite muss zur Übertragungstechnik des Anschlusses passen; die LAN-Seite ist immer Ethernet und bleibt gleich."
+    },
+    {
+      "id": "AP1-6-1-4-K8-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K8",
+      "vorne": "Warum sind die Adern eines Netzwerkkabels paarweise verdrillt?",
+      "hinten": "Störungen treffen beide Adern eines Paares gleich; da nur die Differenz ausgewertet wird, heben sie sich auf. Auch die Abstrahlung des Paares hebt sich weitgehend auf (weniger Übersprechen auf Nachbarpaare)."
+    },
+    {
+      "id": "AP1-6-1-4-K8-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K8",
+      "vorne": "Wozu dient ein Schirm aus Folie oder Geflecht bei einem Twisted-Pair-Kabel?",
+      "hinten": "Er hält zusätzlich Störfelder von außen ab und verringert die Abstrahlung – wichtig in störreicher Umgebung, z. B. neben Stromleitungen oder Maschinen."
+    },
+    {
+      "id": "AP1-6-1-4-K9-1",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K9",
+      "vorne": "Warum bleibt das Licht in einem Lichtwellenleiter im Kern?",
+      "hinten": "Der Mantel hat eine geringere Brechzahl als der Kern; flach auftreffendes Licht wird an der Grenze vollständig zurückgeworfen (Totalreflexion)."
+    },
+    {
+      "id": "AP1-6-1-4-K9-2",
+      "sp": "AP1-6-1-4",
+      "k": "AP1-6-1-4-K9",
+      "vorne": "Welche zwei Vorteile des Lichtwellenleiters gegenüber Kupfer ergeben sich aus seinem Prinzip?",
+      "hinten": "- geringe Dämpfung: große Entfernungen möglich\n- Licht wird von elektromagnetischen Störungen nicht beeinflusst"
+    },
+    {
+      "id": "AP1-6-1-5-K7-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K7",
+      "vorne": "Warum sinkt im WLAN der Durchsatz je Gerät, wenn mehr Geräte aktiv sind?",
+      "hinten": "Alle Geräte einer Funkzelle teilen sich die Datenrate des Kanals, weil immer nur eines gleichzeitig senden kann."
+    },
+    {
+      "id": "AP1-6-1-5-K7-2",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K7",
+      "vorne": "Ein WLAN-Router wirbt mit 1,2 Gbit/s. Mit welcher Datenrate kannst du in der Praxis ungefähr rechnen?",
+      "hinten": "Mit deutlich weniger: oft nur etwa der Hälfte, und die teilen sich zudem alle aktiven Geräte; Abstand, Wände und Nachbarnetze senken sie weiter."
+    },
+    {
+      "id": "AP1-6-1-5-K8-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K8",
+      "vorne": "Was bedeuten die Teile der Bezeichnung 1000BASE-T?",
+      "hinten": "- 1000: 1000 Mbit/s = 1 Gbit/s\n- BASE: Basisbandübertragung\n- T: Twisted-Pair-Kupferkabel (bis 100 m)"
+    },
+    {
+      "id": "AP1-6-1-5-K8-2",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K8",
+      "vorne": "Ein Switch hat Ports mit 10GBASE-T und mit 10GBASE-SR. Was unterscheidet sie?",
+      "hinten": "Beide übertragen 10 Gbit/s; 10GBASE-T über Twisted-Pair-Kupfer (bis 100 m), 10GBASE-SR über Glasfaser für kurze Strecken."
+    },
+    {
+      "id": "AP1-6-1-5-K9-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K9",
+      "vorne": "Wofür stehen IEEE 802.3, 802.11 und 802.15?",
+      "hinten": "- 802.3: Ethernet über Kabel (einschließlich PoE wie 802.3at)\n- 802.11: WLAN\n- 802.15: Funk im Nahbereich (WPAN), z. B. Bluetooth"
+    },
+    {
+      "id": "AP1-6-1-5-K9-2",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K9",
+      "vorne": "Im Datenblatt einer IP-Kamera steht „IEEE 802.3af“. Was sagt das aus?",
+      "hinten": "Die Angabe gehört zur Ethernet-Familie 802.3; af ist ein PoE-Standard: Die Kamera kann über das Netzwerkkabel mit Strom versorgt werden."
+    },
+    {
+      "id": "AP1-6-1-5-K10-1",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K10",
+      "vorne": "Warum sollte ein WLAN nicht auf demselben oder einem überlappenden Kanal wie die Nachbar-WLANs funken?",
+      "hinten": "Netze auf demselben oder überlappenden Kanälen müssen sich die Funkzeit teilen bzw. stören sich – alle werden langsamer."
+    },
+    {
+      "id": "AP1-6-1-5-K10-2",
+      "sp": "AP1-6-1-5",
+      "k": "AP1-6-1-5-K10",
+      "vorne": "Warum ist die automatische Kanalwahl des Access Points meist die beste Lösung?",
+      "hinten": "Er misst die Belegung durch Nachbarnetze und wählt einen möglichst freien Kanal; ändert sich die Umgebung, passt er den Kanal an."
+    },
+    {
+      "id": "AP1-6-1-6-K1-1",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K1",
+      "vorne": "Nach welchen Leistungsdaten wählst du einen Switch aus?",
+      "hinten": "- Zahl und Datenrate der Ports (mit Reserve)\n- Bauform: 19-Zoll-Gerät für den Schrank oder Tischgerät\n- Pufferspeicher\n- Größe der MAC-Adresstabelle"
+    },
+    {
+      "id": "AP1-6-1-6-K1-2",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K1",
+      "vorne": "Was passiert, wenn die MAC-Adresstabelle eines Switches für die angeschlossenen Geräte zu klein ist?",
+      "hinten": "Er kann sich nicht alle Zuordnungen Port ↔ MAC merken und schickt Frames an unbekannte Ziele an alle Ports – das Netz wird unnötig belastet."
+    },
+    {
+      "id": "AP1-6-1-6-K2-1",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K2",
+      "vorne": "Nach welchen Kriterien wählst du einen Router für ein kleines Büro aus?",
+      "hinten": "- Anschlusstechnik passend zum Internetanschluss (DSL mit Vectoring, Kabel, Glasfaser)\n- Zahl der LAN-Ports (sonst Zusatz-Switch)\n- PoE, falls Geräte versorgt werden sollen\n- WLAN-Standard und Reichweite"
+    },
+    {
+      "id": "AP1-6-1-6-K3-1",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K3",
+      "vorne": "Was musst du bei einer zusätzlichen Netzwerkkarte außer Standard und Datenrate noch prüfen?",
+      "hinten": "- freier passender Steckplatz (PCIe)\n- Bauform/Bauhöhe passend zum Gehäuse (z. B. Low Profile)\n- Zahl der benötigten Anschlüsse"
+    },
+    {
+      "id": "AP1-6-1-6-K4-1",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K4",
+      "vorne": "Welche zwei Bedingungen muss ein PoE-Switch für die geplanten Geräte erfüllen?",
+      "hinten": "- Jeder benötigte Port liefert den nötigen PoE-Standard\n- Die Summe der Leistungsaufnahmen aller Geräte passt in das gesamte PoE-Budget des Switches"
+    },
+    {
+      "id": "AP1-6-1-6-K4-2",
+      "sp": "AP1-6-1-6",
+      "k": "AP1-6-1-6-K4",
+      "vorne": "Ein Switch hat 24 PoE-Ports und ein PoE-Budget von 150 W. Reicht er für 16 Kameras à 7 W und 4 Access Points à 20 W?",
+      "hinten": "Nein: 16 × 7 W + 4 × 20 W = 192 W, das übersteigt das Budget von 150 W."
+    },
+    {
+      "id": "AP1-6-2-1-K8-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K8",
+      "vorne": "Warum braucht ein selbst betriebener, aus dem Internet erreichbarer Server eine feste öffentliche IP-Adresse?",
+      "hinten": "Er muss immer unter derselben Adresse erreichbar sein. Eine vom Provider regelmäßig neu vergebene Adresse oder eine geteilte Adresse hinter dem Provider-NAT macht ihn von außen unerreichbar (Notlösung bei wechselnder Adresse: dynamisches DNS)."
+    },
+    {
+      "id": "AP1-6-2-1-K8-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K8",
+      "vorne": "Warum ist für einen Server am eigenen Internetanschluss die Upload-Rate entscheidend?",
+      "hinten": "Der Server sendet seine Daten an die Nutzer – aus Sicht des Anschlusses ist das Upload. Bei asymmetrischen Anschlüssen ist der Upload oft viel kleiner; ein Geschäftsanschluss ist meist symmetrisch."
+    },
+    {
+      "id": "AP1-6-2-1-K9-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K9",
+      "vorne": "Was gehört in eine Netzwerkdokumentation?",
+      "hinten": "Lage-, Netzwerk- und Patchpläne, IP-Bereiche und Teilnetze, fest vergebene Adressen, DHCP-Einstellungen und Messprotokolle der Verkabelung."
+    },
+    {
+      "id": "AP1-6-2-1-K9-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K9",
+      "vorne": "Warum trägt derjenige, der etwas am Netz ändert, die Änderung sofort in die Dokumentation ein?",
+      "hinten": "Sonst veraltet sie: Adressen werden doppelt vergeben, Fehlersuche und Erweiterungen gehen von falschen Annahmen aus."
+    },
+    {
+      "id": "AP1-6-2-1-K10-1",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K10",
+      "vorne": "Was ist eine DHCP-Reservierung?",
+      "hinten": "Der DHCP-Server verknüpft eine MAC-Adresse mit einer festen IP-Adresse und gibt diesem Gerät immer dieselbe Adresse; am Gerät bleibt „automatisch“ eingestellt."
+    },
+    {
+      "id": "AP1-6-2-1-K10-2",
+      "sp": "AP1-6-2-1",
+      "k": "AP1-6-2-1-K10",
+      "vorne": "Warum ist für einen Netzwerkdrucker eine DHCP-Reservierung oft besser als eine am Gerät eingetragene statische Adresse?",
+      "hinten": "Die Adresse bleibt fest, wird aber zentral verwaltet und dokumentiert; Änderungen wie ein neuer DNS-Server kommen automatisch an, Tippfehler am Gerät entfallen."
+    },
+    {
+      "id": "AP1-6-2-4-K8-1",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K8",
+      "vorne": "Ein PC will ein Paket an einen Server in einem anderen Netz schicken. Nach welcher MAC-Adresse fragt er per ARP?",
+      "hinten": "Nach der MAC-Adresse seines Standardgateways (Routers); die Ziel-IP im Paket bleibt die des Servers."
+    },
+    {
+      "id": "AP1-6-2-4-K8-2",
+      "sp": "AP1-6-2-4",
+      "k": "AP1-6-2-4-K8",
+      "vorne": "Warum haben die Einträge der ARP-Tabelle eine Ablaufzeit?",
+      "hinten": "Zuordnungen von IP- zu MAC-Adresse können sich ändern (Gerät getauscht, Adresse neu vergeben); nach Ablauf wird neu gefragt, damit keine veraltete MAC benutzt wird."
+    },
+    {
+      "id": "AP1-6-3-2-K8-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K8",
+      "vorne": "Woran erkennst du mit einem Kabeltester, dass ein Netzwerkkabel in Ordnung ist?",
+      "hinten": "Der Tester schaltet die acht Adern einzeln durch; jede Ader kommt auf beiden Seiten an derselben Position an (1 bis 8 in gleicher Reihenfolge)."
+    },
+    {
+      "id": "AP1-6-3-2-K8-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K8",
+      "vorne": "Wie prüfst du mit einem Kabeltester die fest verlegte Strecke von der Netzwerkdose zum Patchfeld?",
+      "hinten": "Mit zwei vorher geprüften Patchkabeln: Hauptgerät an die Dose, Gegenstück an den Patchfeld-Port, dann durchtesten."
+    },
+    {
+      "id": "AP1-6-3-2-K9-1",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K9",
+      "vorne": "Ein ping auf www.example.com gelingt. Welche drei Dinge sind damit bestätigt?",
+      "hinten": "- eigene IP-Konfiguration\n- DNS-Namensauflösung\n- Standardgateway (Weg ins Internet)"
+    },
+    {
+      "id": "AP1-6-3-2-K9-2",
+      "sp": "AP1-6-3-2",
+      "k": "AP1-6-3-2-K9",
+      "vorne": "Wann brauchst du die Einzeltests (eigene Konfiguration, Gateway, externe IP, Name)?",
+      "hinten": "Erst wenn der ping auf den externen Namen scheitert; dann grenzt du Schritt für Schritt ein, welcher Teil fehlt."
+    },
+    {
+      "id": "AP1-6-3-4-K1-1",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K1",
+      "vorne": "Wie arbeitet ping?",
+      "hinten": "Er sendet eine ICMP-Echo-Anfrage an das Ziel; das Ziel antwortet sofort mit einer Echo-Antwort. ping zeigt, ob Antworten kommen und wie lange sie brauchen."
+    },
+    {
+      "id": "AP1-6-3-4-K1-2",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K1",
+      "vorne": "Was gibt die Round Trip Time (RTT) bei ping an?",
+      "hinten": "Die Zeit für Hin- und Rückweg zusammen über alle Leitungen und Geräte; je größer, desto langsamer die Verbindung."
+    },
+    {
+      "id": "AP1-6-3-4-K2-1",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K2",
+      "vorne": "Wozu trägt ein IP-Paket eine TTL, und was macht ein Router damit?",
+      "hinten": "Damit unzustellbare Pakete nicht endlos kreisen: Jeder Router verringert die TTL um 1 und verwirft das Paket bei 0 mit einer Meldung an den Absender."
+    },
+    {
+      "id": "AP1-6-3-4-K2-2",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K2",
+      "vorne": "Wie nutzt traceroute die TTL, um den Weg zu ermitteln?",
+      "hinten": "Es sendet Pakete mit TTL 1, 2, 3 …; jedes Mal läuft die TTL am nächsten Router ab, der sich mit einer Meldung zurückmeldet. So entsteht die Liste aller Router (Hops)."
+    },
+    {
+      "id": "AP1-6-3-4-K2-3",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K2",
+      "vorne": "Eine traceroute-Ausgabe zeigt Hop 1 und 2 mit Antwortzeiten, danach nur noch * * *. Was folgt daraus?",
+      "hinten": "Bis zum zweiten Router funktioniert die Verbindung; dahinter geht es nicht weiter (oder die folgenden Router antworten nicht auf traceroute)."
+    },
+    {
+      "id": "AP1-6-3-4-K3-1",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K3",
+      "vorne": "Woran erkennst du in der Ausgabe von ip route das Standardgateway?",
+      "hinten": "An der Standardroute „default via <Adresse>“ (unter Windows Ziel 0.0.0.0 mit Gateway); die Adresse dahinter ist das Standardgateway."
+    },
+    {
+      "id": "AP1-6-3-4-K3-2",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K3",
+      "vorne": "Ein Notebook hat zwei Standardrouten: über LAN mit Metrik 100 und über WLAN mit Metrik 600. Welche nutzt es?",
+      "hinten": "Die über das LAN – bei mehreren passenden Routen gewinnt die kleinere Metrik."
+    },
+    {
+      "id": "AP1-6-3-4-K4-1",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K4",
+      "vorne": "Ein ping auf einen Server bekommt keine Antwort. Ist der Server damit sicher nicht erreichbar?",
+      "hinten": "Nein. Seine Firewall kann ICMP blockieren; prüfe den Dienst selbst, z. B. durch einen Aufruf im Browser."
+    },
+    {
+      "id": "AP1-6-3-4-K4-2",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K4",
+      "vorne": "Ein ping auf einen Webserver gelingt, die Webseite lädt aber nicht. Wie ist das möglich?",
+      "hinten": "ping prüft nur ICMP. Der Port des Webdienstes kann getrennt gefiltert sein, oder der Dienst selbst ist ausgefallen, obwohl der Rechner antwortet."
+    },
+    {
+      "id": "AP1-6-3-4-K5-1",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K5",
+      "vorne": "Was bedeutet in einer nslookup-Ausgabe „Nicht autorisierende Antwort“?",
+      "hinten": "Der befragte DNS-Server ist für den Namen nicht zuständig und liefert die Antwort aus seinem Zwischenspeicher (Cache)."
+    },
+    {
+      "id": "AP1-6-3-4-K5-2",
+      "sp": "AP1-6-3-4",
+      "k": "AP1-6-3-4-K5",
+      "vorne": "Wie findest du mit nslookup heraus, ob der eigene DNS-Server die Fehlerursache ist?",
+      "hinten": "Denselben Namen gezielt bei einem anderen DNS-Server abfragen: Antwortet dieser richtig, der eigene aber nicht, liegt der Fehler beim eigenen DNS-Server."
     }
   ],
   "nicht_abgefragt": [
@@ -1940,6 +2290,256 @@
       "id": "AP1-6-3-2-K7-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-6-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S322)"
+    },
+    {
+      "id": "AP1-6-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S322)"
+    },
+    {
+      "id": "AP1-6-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.1-S286)"
+    },
+    {
+      "id": "AP1-6-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.1-S286)"
+    },
+    {
+      "id": "AP1-6-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.6.1-S404)"
+    },
+    {
+      "id": "AP1-6-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.6.1-S404)"
+    },
+    {
+      "id": "AP1-6-1-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.1-S281)"
+    },
+    {
+      "id": "AP1-6-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.2-S287)"
+    },
+    {
+      "id": "AP1-6-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.2-S287)"
+    },
+    {
+      "id": "AP1-6-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.3-S318)"
+    },
+    {
+      "id": "AP1-6-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.3-S318)"
+    },
+    {
+      "id": "AP1-6-1-4-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.3-S318)"
+    },
+    {
+      "id": "AP1-6-1-4-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.3-S318)"
+    },
+    {
+      "id": "AP1-6-1-5-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S315, buch:FS-1.3.2-S53)"
+    },
+    {
+      "id": "AP1-6-1-5-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S315, buch:FS-1.3.2-S53)"
+    },
+    {
+      "id": "AP1-6-1-5-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S315)"
+    },
+    {
+      "id": "AP1-6-1-5-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.2-S315)"
+    },
+    {
+      "id": "AP1-6-1-5-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.7-S345)"
+    },
+    {
+      "id": "AP1-6-1-5-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.7-S345)"
+    },
+    {
+      "id": "AP1-6-1-5-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.3-S375)"
+    },
+    {
+      "id": "AP1-6-1-5-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.3-S375)"
+    },
+    {
+      "id": "AP1-6-1-6-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.2-S371, buch:GS-3.7.2-S372)"
+    },
+    {
+      "id": "AP1-6-1-6-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.2-S371, buch:GS-3.7.2-S372)"
+    },
+    {
+      "id": "AP1-6-1-6-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.3-S375)"
+    },
+    {
+      "id": "AP1-6-1-6-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.1-S371)"
+    },
+    {
+      "id": "AP1-6-1-6-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.2-S372)"
+    },
+    {
+      "id": "AP1-6-1-6-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.2-S372)"
+    },
+    {
+      "id": "AP1-6-2-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S390, buch:FS-4.2.1-S320, buch:FS-4.2.3-S322)"
+    },
+    {
+      "id": "AP1-6-2-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.5.2-S390, buch:FS-4.2.1-S320, buch:FS-4.2.3-S322)"
+    },
+    {
+      "id": "AP1-6-2-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.1-S351)"
+    },
+    {
+      "id": "AP1-6-2-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.1-S351)"
+    },
+    {
+      "id": "AP1-6-2-1-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.1-S360)"
+    },
+    {
+      "id": "AP1-6-2-1-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.1-S360)"
+    },
+    {
+      "id": "AP1-6-2-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S326)"
+    },
+    {
+      "id": "AP1-6-2-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.4.4-S326)"
+    },
+    {
+      "id": "AP1-6-3-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.7.1-S415)"
+    },
+    {
+      "id": "AP1-6-3-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.7.1-S415)"
+    },
+    {
+      "id": "AP1-6-3-2-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368)"
+    },
+    {
+      "id": "AP1-6-3-2-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368)"
+    },
+    {
+      "id": "AP1-6-3-4-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S365, buch:GS-3.4.4-S326)"
+    },
+    {
+      "id": "AP1-6-3-4-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S365, buch:GS-3.4.4-S326)"
+    },
+    {
+      "id": "AP1-6-3-4-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S367)"
+    },
+    {
+      "id": "AP1-6-3-4-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S367)"
+    },
+    {
+      "id": "AP1-6-3-4-K2-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.1-S367)"
+    },
+    {
+      "id": "AP1-6-3-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.7.2-S416, buch:GS-3.5.1-S351)"
+    },
+    {
+      "id": "AP1-6-3-4-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.7.2-S416, buch:GS-3.5.1-S351)"
+    },
+    {
+      "id": "AP1-6-3-4-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.7.2-S418, buch:GS-3.6.1-S367)"
+    },
+    {
+      "id": "AP1-6-3-4-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-4.7.2-S418, buch:GS-3.6.1-S367)"
+    },
+    {
+      "id": "AP1-6-3-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368)"
+    },
+    {
+      "id": "AP1-6-3-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.6.2-S368)"
     }
   ]
 }

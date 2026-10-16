@@ -4,15 +4,15 @@
   "erzeugt_mit": "node tools/umbau/export-raum.mjs AP1",
   "regelwerk_version": "2.1",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
-  "stichpunkte": 122,
-  "koennen": 812,
+  "stichpunkte": 124,
+  "koennen": 838,
   "quellen": {
    "AP1-1.json": "dd64465f3f866e04",
    "AP1-2.json": "67e3bceebd2dcf08",
    "AP1-3.json": "376bccaeb47a0418",
    "AP1-4.json": "1a7d5e4f7db71ba4",
    "AP1-5.json": "67032fce52c521e4",
-   "AP1-6.json": "e4aa59945ffda262",
+   "AP1-6.json": "cde2991ddd635c67",
    "AP1-7.json": "16caad6d3b28d93e",
    "AP1-8.json": "73c82538e63b0851"
   }
@@ -3684,6 +3684,11 @@
      "id": "AP1-6-1-1-K5",
      "stufe": 2,
      "kurz": "angezeigte Werte wie Medienstatus, Signalqualität oder Übertragungsrate der Schicht 1 zuordnen und daraus deuten, ob der Fehler in einer höheren Schicht liegt"
+    },
+    {
+     "id": "AP1-6-1-1-K6",
+     "stufe": 2,
+     "kurz": "jeder OSI-Schicht ihre Aufgabe zuordnen: 1 überträgt Bits als Signale, 2 stellt Daten im lokalen Netzsegment an MAC-Adressen zu, 3 adressiert Netze und leitet Pakete über Router weiter, 4 bringt die Daten zum richtigen Programm (Port) und sichert bei Bedarf die Übertragung, 5 steuert die Sitzung, 6 vereinheitlicht die Darstellung, 7 ist die Schnittstelle zur Anwendung"
     }
    ]
   },
@@ -3723,6 +3728,11 @@
      "id": "AP1-6-1-2-K6",
      "stufe": 2,
      "kurz": "weitere gängige Protokolle ihrem Zweck zuordnen: FTP und SFTP für Dateiübertragung, NTP für die Uhrzeit, LDAP für Verzeichnisdienste"
+    },
+    {
+     "id": "AP1-6-1-2-K7",
+     "stufe": 2,
+     "kurz": "erklären, wie ein paketvermitteltes Netz wie das Internet Daten überträgt: Sie werden in Pakete mit Absender- und Zieladresse im Kopf zerlegt, jedes Paket wird einzeln anhand der Zieladresse weitergeleitet und beim Empfänger wieder zusammengesetzt; anders als bei der Leitungsvermittlung des klassischen Telefonnetzes belegt keine Verbindung eine Leitung für sich allein"
     }
    ]
   },
@@ -3775,6 +3785,16 @@
      "id": "AP1-6-1-3-K7",
      "stufe": 2,
      "kurz": "erklären, dass ein WLAN-Router im kleinen Büro mehrere Geräte vereint: Router mit Internetzugang, Switch, Access Point und oft eine Firewall"
+    },
+    {
+     "id": "AP1-6-1-3-K8",
+     "stufe": 2,
+     "kurz": "den Weg von der Netzwerkdose zum Switch erklären: Jede Dose hat ein eigenes, fest verlegtes Kabel bis zu einem Port am Patchfeld im Verteilerschrank, von dort führt ein kurzes Patchkabel zum Switch; so lässt sich eine Dose durch Umstecken einem anderen Switch-Port oder Netz zuordnen, ohne neu zu verlegen"
+    },
+    {
+     "id": "AP1-6-1-3-K9",
+     "stufe": 2,
+     "kurz": "Endgeräte von Netzwerkgeräten unterscheiden: Endgeräte (Hosts) wie PC, Server, Drucker oder IP-Telefon erzeugen oder empfangen Daten, Netzwerkgeräte wie Switch, Access Point und Router leiten sie nur weiter"
     }
    ]
   },
@@ -3822,6 +3842,21 @@
      "id": "AP1-6-1-4-K6",
      "stufe": 2,
      "kurz": "Kabelkategorien wie Cat 5e, Cat 6a und Cat 7 nach ihrer Datenrate einordnen"
+    },
+    {
+     "id": "AP1-6-1-4-K7",
+     "stufe": 2,
+     "kurz": "erklären, dass ein Router für den Internetzugang eine WAN-Seite zum Provider und eine LAN-Seite zum lokalen Netz hat: Die WAN-Seite muss zur Anschlussart passen (DSL, Kabelnetz, Glasfaser oder Mobilfunk mit jeweils eigener Übertragungstechnik), an der LAN-Seite erweitern Switches das lokale Netz"
+    },
+    {
+     "id": "AP1-6-1-4-K8",
+     "stufe": 2,
+     "kurz": "erklären, warum ein Twisted-Pair-Kabel aus verdrillten Adernpaaren besteht und oft geschirmt ist: Durch das Verdrillen heben sich Störungen, die beide Adern eines Paares gleich treffen, und die Abstrahlung des Paares weitgehend auf; ein Schirm aus Folie oder Geflecht hält zusätzlich Störfelder ab"
+    },
+    {
+     "id": "AP1-6-1-4-K9",
+     "stufe": 2,
+     "kurz": "das Prinzip des Lichtwellenleiters erklären: Das Licht läuft in einem Kern, der von einem Mantel mit geringerer Brechzahl umgeben ist, und wird an dieser Grenze vollständig zurückgeworfen (Totalreflexion); so wird es mit sehr geringer Dämpfung über große Entfernungen geführt und von elektrischen Störungen nicht beeinflusst"
     }
    ]
   },
@@ -3867,6 +3902,62 @@
      "id": "AP1-6-1-5-K6",
      "stufe": 2,
      "kurz": "die WLAN-Frequenzbänder vergleichen: 2,4 GHz reicht weiter und durchdringt Wände besser, 5 GHz und 6 GHz bieten höhere Datenraten und weniger Störungen bei geringerer Reichweite"
+    },
+    {
+     "id": "AP1-6-1-5-K7",
+     "stufe": 4,
+     "kurz": "beurteilen, ob WLAN für einen Arbeitsplatz ausreicht, und dabei berücksichtigen, dass in der Praxis oft nur etwa die Hälfte der Nennrate erreicht wird und sich alle Geräte einer Funkzelle diese Datenrate teilen, der Durchsatz je Gerät also mit jedem weiteren aktiven Teilnehmer sinkt"
+    },
+    {
+     "id": "AP1-6-1-5-K8",
+     "stufe": 2,
+     "kurz": "Ethernet-Bezeichnungen wie 1000BASE-T oder 10GBASE-SR interpretieren: Die Zahl am Anfang ist die Datenrate (in Mbit/s, mit G in Gbit/s), BASE steht für Basisbandübertragung und das Kürzel am Ende für das Medium, etwa T für Twisted-Pair-Kupfer bis 100 m und S bzw. L für Glasfaser über kurze bzw. lange Strecken"
+    },
+    {
+     "id": "AP1-6-1-5-K9",
+     "stufe": 2,
+     "kurz": "Standards der Normenfamilie IEEE 802, die Schicht 1 und 2 lokaler Netze regelt, zuordnen: 802.3 für kabelgebundenes Ethernet einschließlich PoE, 802.11 für WLAN und 802.15 für Funknetze im Nahbereich wie Bluetooth"
+    },
+    {
+     "id": "AP1-6-1-5-K10",
+     "stufe": 2,
+     "kurz": "erklären, warum für ein WLAN ein Kanal gewählt wird: Die Frequenzbänder sind in Kanäle geteilt, die sich vor allem bei 2,4 GHz überlappen, und Netze auf demselben oder einem überlappenden Kanal stören sich; deshalb lässt man den Access Point den Kanal meist automatisch nach der Belegung durch Nachbarnetze wählen"
+    }
+   ]
+  },
+  {
+   "id": "AP1-6-1-6",
+   "ordner": "AP1-6",
+   "block": "AP1-6-1",
+   "titel": "Netzwerkgeräte nach Leistungsdaten auswählen: Switch, Router, Netzwerkkarte, PoE",
+   "gebiete": [
+    "G.AP1.02",
+    "G.AP1.03"
+   ],
+   "bausteine": [
+    "AP1.03.03.1",
+    "AP1.03.01.2"
+   ],
+   "koennen": [
+    {
+     "id": "AP1-6-1-6-K1",
+     "stufe": 4,
+     "kurz": "für einen Einsatz einen Switch nach seinen Leistungsdaten auswählen: Zahl und Datenrate der Ports, Bauform (19-Zoll-Gerät für den Verteilerschrank oder Tischgerät), ausreichend Pufferspeicher und eine MAC-Adresstabelle, die für die Zahl der angeschlossenen Geräte groß genug ist"
+    },
+    {
+     "id": "AP1-6-1-6-K2",
+     "stufe": 4,
+     "kurz": "einen Router für ein kleines Büro nach Kriterien auswählen: Anschlusstechnik passend zum Internetzugang (z. B. DSL mit Vectoring, Kabel oder Glasfaser), Zahl der LAN-Ports (sonst zusätzlicher Switch), PoE-Bedarf sowie aktueller WLAN-Standard und ausreichende Reichweite"
+    },
+    {
+     "id": "AP1-6-1-6-K3",
+     "stufe": 4,
+     "kurz": "für einen Rechner eine zusätzliche Netzwerkkarte auswählen und dabei neben Standard, Datenrate und Medium auch Bauform und Bauhöhe passend zum Gehäuse, einen freien passenden PCIe-Steckplatz und die Zahl der benötigten Anschlüsse berücksichtigen"
+    },
+    {
+     "id": "AP1-6-1-6-K4",
+     "stufe": 4,
+     "kurz": "beurteilen, ob ein PoE-Switch für die geplanten Endgeräte reicht: Er braucht genug PoE-fähige Ports mit dem jeweils nötigen Standard, und die Summe der Leistungsaufnahmen aller versorgten Geräte darf das gesamte PoE-Budget des Switches nicht überschreiten"
     }
    ]
   },
@@ -3913,6 +4004,21 @@
      "id": "AP1-6-2-1-K7",
      "stufe": 2,
      "kurz": "erklären, dass ein Router per NAT bzw. PAT die privaten Adressen des lokalen Netzes für den Internetzugang auf seine öffentliche Adresse umsetzt"
+    },
+    {
+     "id": "AP1-6-2-1-K8",
+     "stufe": 4,
+     "kurz": "beurteilen, ob ein Internetanschluss für einen selbst betriebenen, aus dem Internet erreichbaren Server taugt: Er braucht eine feste öffentliche IP-Adresse statt einer vom Provider regelmäßig neu vergebenen oder einer geteilten IPv4-Adresse hinter dem NAT des Providers, eine ausreichende Upload-Rate (am besten symmetrisch) und keine Zwangstrennung"
+    },
+    {
+     "id": "AP1-6-2-1-K9",
+     "stufe": 2,
+     "kurz": "erklären, was eine Netzwerkdokumentation enthält (Lage-, Netzwerk- und Patchpläne, IP-Bereiche und Teilnetze, fest vergebene Adressen, DHCP-Einstellungen, Messprotokolle) und warum jede Änderung am Netz sofort von dem eingetragen wird, der sie vornimmt"
+    },
+    {
+     "id": "AP1-6-2-1-K10",
+     "stufe": 4,
+     "kurz": "begründen, wann eine DHCP-Reservierung sinnvoll ist: Der DHCP-Server gibt einer bestimmten MAC-Adresse immer dieselbe IP-Adresse, das Gerät hat also eine feste Adresse, die aber zentral am Server verwaltet und dokumentiert wird statt von Hand am Gerät"
     }
    ]
   },
@@ -4113,6 +4219,11 @@
      "id": "AP1-6-2-4-K7",
      "stufe": 1,
      "kurz": "nennen, was IPv6 statt ARP und Broadcast nutzt: das Neighbor Discovery Protocol (NDP) und Multicast"
+    },
+    {
+     "id": "AP1-6-2-4-K8",
+     "stufe": 2,
+     "kurz": "erklären, wessen MAC-Adresse ein Rechner per ARP ermittelt: Liegt das Ziel im eigenen Netz, die des Ziels selbst, liegt es in einem anderen Netz, die des Standardgateways; der Gefragte antwortet direkt an den Fragenden, und der Eintrag bleibt nur eine begrenzte Zeit in der ARP-Tabelle"
     }
    ]
   },
@@ -4231,6 +4342,56 @@
      "id": "AP1-6-3-2-K7",
      "stufe": 1,
      "kurz": "für typische Fehlerursachen eine Überprüfung und eine Behebung angeben, zum Beispiel falsche DNS-Einstellung: mit nslookup prüfen, DNS-Server korrigieren"
+    },
+    {
+     "id": "AP1-6-3-2-K8",
+     "stufe": 2,
+     "kurz": "beschreiben, wie ein Kabeltester ein Netzwerkkabel prüft: Beide Enden werden angesteckt, der Tester schaltet die acht Adern einzeln nacheinander durch, und das Kabel ist in Ordnung, wenn jede Ader auf beiden Seiten an derselben Stelle ankommt; mit zwei geprüften Patchkabeln lässt sich so auch die fest verlegte Strecke von der Dose zum Patchfeld testen"
+    },
+    {
+     "id": "AP1-6-3-2-K9",
+     "stufe": 4,
+     "kurz": "begründen, warum ein erfolgreicher ping auf einen externen Namen als Schnelltest genügt: Er bestätigt auf einmal, dass eigene IP-Konfiguration, Standardgateway und DNS funktionieren; erst wenn er scheitert, sind die Einzeltests in sinnvoller Reihenfolge nötig"
+    }
+   ]
+  },
+  {
+   "id": "AP1-6-3-4",
+   "ordner": "AP1-6",
+   "block": "AP1-6-3",
+   "titel": "Was Testbefehle zeigen: ping, traceroute, Routingtabelle, nslookup",
+   "gebiete": [
+    "G.AP1.03"
+   ],
+   "bausteine": [
+    "AP1.04.05.6",
+    "AP1.04.05.5"
+   ],
+   "koennen": [
+    {
+     "id": "AP1-6-3-4-K1",
+     "stufe": 2,
+     "kurz": "erklären, wie ping arbeitet: Er schickt eine ICMP-Echo-Anfrage an das Ziel, das sofort mit einer Echo-Antwort reagiert, und zeigt die Round Trip Time (RTT), also die Zeit für Hin- und Rückweg über alle Leitungen und Geräte; je größer sie ist, desto langsamer ist die Verbindung"
+    },
+    {
+     "id": "AP1-6-3-4-K2",
+     "stufe": 2,
+     "kurz": "erklären, wie traceroute den Weg zu einem Ziel ermittelt: Jedes IP-Paket trägt eine Lebensdauer (TTL), die jeder Router um eins verringert und bei null das Paket mit einer Meldung an den Absender verwirft; traceroute sendet Pakete mit TTL 1, 2, 3 …, sodass sich die Router auf dem Weg der Reihe nach melden"
+    },
+    {
+     "id": "AP1-6-3-4-K3",
+     "stufe": 2,
+     "kurz": "eine Routingtabelle (Linux: ip route, Windows: route print) interpretieren: Die Standardroute („default via …“ bzw. 0.0.0.0) nennt das Standardgateway, weitere Einträge die direkt angeschlossenen Netze; gibt es mehrere Standardrouten, etwa über LAN und WLAN, nimmt der Rechner die mit der kleineren Metrik"
+    },
+    {
+     "id": "AP1-6-3-4-K4",
+     "stufe": 4,
+     "kurz": "beurteilen, was ein ping über die Erreichbarkeit eines Dienstes aussagt: Ein fehlgeschlagener ping beweist nicht, dass das Ziel unerreichbar ist, weil Firewalls ICMP oft sperren, und ein erfolgreicher ping beweist nicht, dass der Dienst läuft, weil sein Port getrennt gefiltert wird und der Dienst selbst ausgefallen sein kann"
+    },
+    {
+     "id": "AP1-6-3-4-K5",
+     "stufe": 2,
+     "kurz": "eine nslookup-Ausgabe interpretieren: oben der befragte DNS-Server, darunter die Adressen zum Namen (oft mehrere), und der Vermerk „nicht autorisierende Antwort“ bedeutet, dass sie aus dem Zwischenspeicher eines Servers stammt, der für den Namen nicht zuständig ist"
     }
    ]
   },
