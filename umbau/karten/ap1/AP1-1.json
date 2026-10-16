@@ -1,6 +1,6 @@
 {
   "ordner": "AP1-1",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md",
   "grundlage": "umbau/lernplan/ap1/AP1-1.json",
   "karten": [
@@ -1319,6 +1319,244 @@
       "k": "AP1-1-5-3-K6",
       "vorne": "Warum änderst du bei der Fehlersuche durch Austauschen immer nur eine Komponente, und wozu dient die Gegenprobe?",
       "hinten": "Nur so ist klar, welche Änderung den Fehler beseitigt hat. Die Gegenprobe bestätigt den Verdacht: Das verdächtige Teil wird z. B. in ein funktionierendes System eingesetzt; tritt der Fehler dort auf, ist es defekt."
+    },
+    {
+      "id": "AP1-1-3-2-K8-1",
+      "sp": "AP1-1-3-2",
+      "k": "AP1-1-3-2-K8",
+      "vorne": "Worin unterscheiden sich Incident und Problem?",
+      "hinten": "- **Incident:** einzelne Störung; Ziel: Betrieb schnell wiederherstellen (auch per Workaround).\n- **Problem:** Ursache hinter einem oder mehreren Incidents; Ziel: Ursache finden und dauerhaft beseitigen."
+    },
+    {
+      "id": "AP1-1-3-2-K8-2",
+      "sp": "AP1-1-3-2",
+      "k": "AP1-1-3-2-K8",
+      "vorne": "Seit einem Update stürzt auf 30 Rechnern dieselbe Anwendung ab. Incident oder Problem?",
+      "hinten": "Jeder Absturz ist ein Incident. Die gemeinsame Ursache (das Update) ist ein Problem: Sie wird einmal zentral untersucht und beseitigt."
+    },
+    {
+      "id": "AP1-1-5-1-K6-1",
+      "sp": "AP1-1-5-1",
+      "k": "AP1-1-5-1-K6",
+      "vorne": "Was unterscheidet eine Norm für IT-Service-Management von einem Rahmenwerk wie ITIL?",
+      "hinten": "- **Norm:** legt fest, **was** erfüllt sein muss; ein Unternehmen kann sich danach zertifizieren lassen.\n- **Rahmenwerk:** Best-Practice-Empfehlungen, **wie** man es umsetzt; unverbindlich."
+    },
+    {
+      "id": "AP1-1-3-1-K8-1",
+      "sp": "AP1-1-3-1",
+      "k": "AP1-1-3-1-K8",
+      "vorne": "Was bedeutet es, dass der Servicedesk ein Single Point of Contact ist?",
+      "hinten": "Er ist die einzige zentrale Anlaufstelle für alle Anliegen der Nutzer (Störung, Anfrage, Frage, Beschwerde). Er erfasst jedes Anliegen als Ticket und bleibt bis zum Abschluss Ansprechpartner."
+    },
+    {
+      "id": "AP1-1-3-1-K8-2",
+      "sp": "AP1-1-3-1",
+      "k": "AP1-1-3-1-K8",
+      "vorne": "Warum ist ein Single Point of Contact für Nutzer und IT sinnvoll?",
+      "hinten": "Nutzer müssen nicht wissen, wer zuständig ist. Die IT erfasst alle Anliegen an einer Stelle, nichts geht verloren, und die Anliegen lassen sich auswerten."
+    },
+    {
+      "id": "AP1-1-3-1-K9-1",
+      "sp": "AP1-1-3-1",
+      "k": "AP1-1-3-1-K9",
+      "vorne": "Mit welchen Daten ist ein Ticket im Ticketsystem verknüpft?",
+      "hinten": "- Kunde/Melder\n- Bearbeiter\n- betroffene Konfiguration (Gerät, Software)\n- Vertrag (z. B. zugesagte Reaktionszeit)\n- Klassifizierung\n- Wissensdatenbank\ndazu alle Bearbeitungsschritte mit Zeit und Bearbeiter."
+    },
+    {
+      "id": "AP1-1-3-2-K9-1",
+      "sp": "AP1-1-3-2",
+      "k": "AP1-1-3-2-K9",
+      "vorne": "Was ist ein Workaround, und warum reicht er allein nicht?",
+      "hinten": "Eine Behelfslösung, die den Betrieb schnell wiederherstellt, ohne die Ursache zu beseitigen. Ohne geplante Dauerlösung (Termin, Verantwortliche) tritt die Störung wieder auf."
+    },
+    {
+      "id": "AP1-1-3-2-K9-2",
+      "sp": "AP1-1-3-2",
+      "k": "AP1-1-3-2-K9",
+      "vorne": "Was ist ein bekannter Fehler (Known Error)?",
+      "hinten": "Ein Fehler, dessen Ursache bekannt, aber noch nicht beseitigt ist und für den ein Workaround dokumentiert ist, z. B. in der Wissensdatenbank."
+    },
+    {
+      "id": "AP1-1-3-2-K10-1",
+      "sp": "AP1-1-3-2",
+      "k": "AP1-1-3-2-K10",
+      "vorne": "Aus welchen zwei Größen ergibt sich die Priorität einer Störung?",
+      "hinten": "- **Dringlichkeit:** Wie schnell muss es gelöst werden?\n- **Auswirkung:** Wie viele Nutzer bzw. wie wichtige Geschäftsprozesse sind betroffen?\nBeide zusammen ergeben in der Prioritätsmatrix die Priorität."
+    },
+    {
+      "id": "AP1-1-3-2-K10-2",
+      "sp": "AP1-1-3-2",
+      "k": "AP1-1-3-2-K10",
+      "vorne": "Das Warenwirtschaftssystem fällt an allen Standorten aus. Welche Priorität bekommt die Störung?",
+      "hinten": "Die höchste: hohe Dringlichkeit und hohe Auswirkung. Ein Ausfall, der Geschäftsprozesse erheblich unterbricht, ist ein Major Incident."
+    },
+    {
+      "id": "AP1-1-4-2-K5-1",
+      "sp": "AP1-1-4-2",
+      "k": "AP1-1-4-2-K5",
+      "vorne": "Welche Punkte legst du bei der Planung einer Schulung für Anwender fest?",
+      "hinten": "- Ziel\n- Zielgruppe (Vorwissen)\n- Inhalte\n- Termin und Ablauf\n- Verantwortliche\n- Ressourcen: Raum/Plattform, Geräte, Zugänge, Unterlagen"
+    },
+    {
+      "id": "AP1-1-4-2-K6-1",
+      "sp": "AP1-1-4-2",
+      "k": "AP1-1-4-2-K6",
+      "vorne": "Warum wird die Funktion bei der Abnahme mit Belegen (Tests, Messwerte, Screenshots) im Protokoll festgehalten?",
+      "hinten": "- Von der Abnahme hängt meist die Zahlung ab.\n- Danach muss der Kunde Mängel nachweisen – das Protokoll belegt den Zustand bei der Übergabe.\n- Ab der Inbetriebnahme trägt der Betreiber die Verantwortung für den Betrieb."
+    },
+    {
+      "id": "AP1-1-4-2-K6-2",
+      "sp": "AP1-1-4-2",
+      "k": "AP1-1-4-2-K6",
+      "vorne": "Welche Belege eignen sich, um die Funktion eines eingerichteten Systems im Abnahme- oder Inbetriebnahmeprotokoll nachzuweisen?",
+      "hinten": "Testergebnisse (erwartet und tatsächlich), Messprotokolle, Fotos, Screenshots – bestätigt durch die Unterschriften beider Seiten."
+    },
+    {
+      "id": "AP1-1-4-3-K7-1",
+      "sp": "AP1-1-4-3",
+      "k": "AP1-1-4-3-K7",
+      "vorne": "Warum werden die Ergebnisse von Lessons Learned dokumentiert und über das eigene Team hinaus geteilt?",
+      "hinten": "Andere Teams und spätere Projekte profitieren von den fachlichen und organisatorischen Erkenntnissen; das Wissen bleibt im Unternehmen, und noch nicht umsetzbare Verbesserungsideen gehen nicht verloren."
+    },
+    {
+      "id": "AP1-1-1-2-K7-1",
+      "sp": "AP1-1-1-2",
+      "k": "AP1-1-1-2-K7",
+      "vorne": "Nenne die allgemeinen Phasen eines Projekts in der richtigen Reihenfolge.",
+      "hinten": "Initiierung → Definition → Planung → Durchführung → Abschluss; die Projektkontrolle begleitet alle Phasen."
+    },
+    {
+      "id": "AP1-1-1-2-K7-2",
+      "sp": "AP1-1-1-2",
+      "k": "AP1-1-1-2-K7",
+      "vorne": "Was ist die Aufgabe der Projektkontrolle, und wann findet sie statt?",
+      "hinten": "Sie läuft parallel zu allen Phasen: Termine, Budget und Fortschritt mit dem Plan vergleichen und bei Abweichungen nachsteuern (umplanen, Prioritäten setzen, Ressourcenkonflikte lösen)."
+    },
+    {
+      "id": "AP1-1-3-3-K6-1",
+      "sp": "AP1-1-3-3",
+      "k": "AP1-1-3-3-K6",
+      "vorne": "Warum können die Ergebnisse einer KI verzerrt sein?",
+      "hinten": "Eine KI lernt aus Trainingsdaten. Sind diese lückenhaft, veraltet oder einseitig, übernimmt sie die Fehler und Verzerrungen (Bias) in ihre Ergebnisse."
+    },
+    {
+      "id": "AP1-1-3-3-K6-2",
+      "sp": "AP1-1-3-3",
+      "k": "AP1-1-3-3-K6",
+      "vorne": "Ein KI-Werkzeug sortiert Support-Tickets vor. Trainiert wurde es nur mit Tickets zu Windows-Rechnern. Welches Problem ist zu erwarten?",
+      "hinten": "Tickets zu anderen Systemen (z. B. macOS, Smartphones) werden häufig falsch eingeordnet, weil solche Fälle in den Trainingsdaten fehlen."
+    },
+    {
+      "id": "AP1-1-1-3-K7-1",
+      "sp": "AP1-1-1-3",
+      "k": "AP1-1-1-3-K7",
+      "vorne": "Wie berechnest du eine Risikokennziffer, und wozu dient sie?",
+      "hinten": "Stufe der Eintrittswahrscheinlichkeit × Stufe des Schadenspotenzials. Die Risiken werden nach der Kennziffer geordnet: Die höchsten brauchen zuerst Gegenmaßnahmen."
+    },
+    {
+      "id": "AP1-1-1-3-K7-2",
+      "sp": "AP1-1-1-3",
+      "k": "AP1-1-1-3-K7",
+      "vorne": "Risiko A: Wahrscheinlichkeit 4, Schaden 2. Risiko B: Wahrscheinlichkeit 2, Schaden 5. Welches behandelst du zuerst?",
+      "hinten": "Risiko B: Kennziffer 2 × 5 = 10, bei A nur 4 × 2 = 8."
+    },
+    {
+      "id": "AP1-1-1-3-K8-1",
+      "sp": "AP1-1-1-3",
+      "k": "AP1-1-1-3-K8",
+      "vorne": "Welche Interessen haben Kapitalgeber, Mitarbeiter und Kunden an einem Unternehmen?",
+      "hinten": "- Kapitalgeber: Rendite, Sicherheit der Anlage\n- Mitarbeiter: Einkommen, sicherer Arbeitsplatz\n- Kunden: Qualität, Preis, Service"
+    },
+    {
+      "id": "AP1-1-1-3-K8-2",
+      "sp": "AP1-1-1-3",
+      "k": "AP1-1-1-3-K8",
+      "vorne": "Welche Interessen haben Lieferanten, Staat und Mitbewerber an einem Unternehmen?",
+      "hinten": "- Lieferanten: Absatz, zahlungsfähige Kunden\n- Staat/Kommune: Steuern, Arbeitsplätze\n- Mitbewerber: fairer Wettbewerb, ggf. Zusammenarbeit"
+    },
+    {
+      "id": "AP1-1-5-1-K7-1",
+      "sp": "AP1-1-5-1",
+      "k": "AP1-1-5-1-K7",
+      "vorne": "Was bedeutet Qualität im Sinne des Qualitätsmanagements?",
+      "hinten": "Der Grad, in dem ein Produkt, eine Dienstleistung oder ein Prozess die vereinbarten oder üblicherweise erwarteten Anforderungen erfüllt. Maßstab ist die Zufriedenheit der Kunden."
+    },
+    {
+      "id": "AP1-1-5-1-K7-2",
+      "sp": "AP1-1-5-1",
+      "k": "AP1-1-5-1-K7",
+      "vorne": "Worauf kann sich Qualität beziehen? Nenne je ein IT-Beispiel.",
+      "hinten": "- Produkt: der eingerichtete Arbeitsplatz\n- Dienstleistung: die Hotline des Supports\n- Prozess: der Ablauf, nach dem Arbeitsplätze eingerichtet werden"
+    },
+    {
+      "id": "AP1-1-1-4-K6-1",
+      "sp": "AP1-1-1-4",
+      "k": "AP1-1-1-4-K6",
+      "vorne": "Was ist der Unterschied zwischen Reflexion und Regulation?",
+      "hinten": "- **Reflexion:** die eigene Arbeit kritisch prüfen und bewerten (z. B. Blitzlicht, Punktabfrage, Lerntagebuch).\n- **Regulation:** daraus Konsequenzen ziehen (Korrekturen, Zielvereinbarungen, Lernlisten)."
+    },
+    {
+      "id": "AP1-1-1-4-K6-2",
+      "sp": "AP1-1-1-4",
+      "k": "AP1-1-1-4-K6",
+      "vorne": "Wie laufen ein Blitzlicht und eine Punktabfrage ab?",
+      "hinten": "- **Blitzlicht:** jeder sagt reihum kurz seine Einschätzung, ohne Diskussion.\n- **Punktabfrage:** jeder klebt Punkte auf eine Skala oder zu Aussagen; das Stimmungsbild ist sofort sichtbar."
+    },
+    {
+      "id": "AP1-1-1-4-K7-1",
+      "sp": "AP1-1-1-4",
+      "k": "AP1-1-1-4-K7",
+      "vorne": "Woran erkennt man eine gelebte Feedback-Kultur?",
+      "hinten": "Rückmeldungen werden regelmäßig und gegenseitig gegeben, auch über Hierarchien hinweg (Mitarbeiter → Leitung). Grundlage ist Vertrauen: Kritik bleibt sachlich und hat für den, der sie äußert, keine Nachteile."
+    },
+    {
+      "id": "AP1-1-1-4-K7-2",
+      "sp": "AP1-1-1-4",
+      "k": "AP1-1-1-4-K7",
+      "vorne": "Was ist ein 360-Grad-Feedback?",
+      "hinten": "Eine Person erhält Rückmeldung aus allen Richtungen – von Vorgesetzten, Kollegen, eigenen Mitarbeitern und ggf. Kunden – und vergleicht sie mit ihrer Selbsteinschätzung."
+    },
+    {
+      "id": "AP1-1-5-1-K8-1",
+      "sp": "AP1-1-5-1",
+      "k": "AP1-1-5-1-K8",
+      "vorne": "Wann ist eine Norm (z. B. DIN, ISO) verbindlich?",
+      "hinten": "Normen sind zunächst Empfehlungen. Verbindlich werden sie erst, wenn ein Vertrag, ein Gesetz oder eine Verordnung auf sie verweist."
+    },
+    {
+      "id": "AP1-1-5-1-K8-2",
+      "sp": "AP1-1-5-1",
+      "k": "AP1-1-5-1-K8",
+      "vorne": "Ordne zu: DIN, EN, ISO.",
+      "hinten": "- DIN: deutsche (nationale) Norm\n- EN: europäische Norm\n- ISO (und IEC): internationale Norm"
+    },
+    {
+      "id": "AP1-1-2-1-K7-1",
+      "sp": "AP1-1-2-1",
+      "k": "AP1-1-2-1-K7",
+      "vorne": "Nach welchen drei Gesichtspunkten kann ein Projektstrukturplan gegliedert werden?",
+      "hinten": "- funktionsorientiert: nach Tätigkeiten/Abteilungen\n- objektorientiert: nach Bestandteilen des Ergebnisses\n- phasenorientiert: nach Projektphasen"
+    },
+    {
+      "id": "AP1-1-2-1-K7-2",
+      "sp": "AP1-1-2-1",
+      "k": "AP1-1-2-1-K7",
+      "vorne": "Ein PSP gliedert die Filialausstattung in „Arbeitsplätze“, „Netzwerk“, „Drucker“ und „Server“. Welche Gliederungsart ist das?",
+      "hinten": "Objektorientiert: Gegliedert wird nach den Bestandteilen des Ergebnisses."
+    },
+    {
+      "id": "AP1-1-2-2-K8-1",
+      "sp": "AP1-1-2-2",
+      "k": "AP1-1-2-2-K8",
+      "vorne": "Wann sind Gesamtpuffer und freier Puffer eines Vorgangs gleich?",
+      "hinten": "Wenn sein Nachfolger auf dem kritischen Weg liegt: Jede Verzögerung über den Puffer hinaus verschiebt dann zugleich den Nachfolger und das Projektende."
+    },
+    {
+      "id": "AP1-1-2-2-K8-2",
+      "sp": "AP1-1-2-2",
+      "k": "AP1-1-2-2-K8",
+      "vorne": "A → B → C, C ist kritisch, B beginnt direkt nach A, A und B haben je 3 Tage Gesamtpuffer. Wie groß ist der freie Puffer von A und B?",
+      "hinten": "A: 0 Tage (jede Verzögerung verschiebt B). B: 3 Tage (bis zum kritischen Vorgang C). Beide teilen sich denselben Gesamtpuffer."
     }
   ],
   "nicht_abgefragt": [],
@@ -2298,6 +2536,176 @@
       "id": "AP1-1-5-3-K6-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig Karten"
+    },
+    {
+      "id": "AP1-1-3-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.2-S18, buch:FS-1.2.2-S42)"
+    },
+    {
+      "id": "AP1-1-3-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.2-S18, buch:FS-1.2.2-S42)"
+    },
+    {
+      "id": "AP1-1-5-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.1.3-S20)"
+    },
+    {
+      "id": "AP1-1-3-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.1-S35)"
+    },
+    {
+      "id": "AP1-1-3-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.1-S35)"
+    },
+    {
+      "id": "AP1-1-3-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S38)"
+    },
+    {
+      "id": "AP1-1-3-2-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S41, buch:FS-1.3.3-S60)"
+    },
+    {
+      "id": "AP1-1-3-2-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S41, buch:FS-1.3.3-S60)"
+    },
+    {
+      "id": "AP1-1-3-2-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S40)"
+    },
+    {
+      "id": "AP1-1-3-2-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.2.2-S40)"
+    },
+    {
+      "id": "AP1-1-4-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-1.5.2-S74)"
+    },
+    {
+      "id": "AP1-1-4-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.4-S137, buch:GS-3.6.2-S369)"
+    },
+    {
+      "id": "AP1-1-4-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.4-S137, buch:GS-3.6.2-S369)"
+    },
+    {
+      "id": "AP1-1-4-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.5-S139)"
+    },
+    {
+      "id": "AP1-1-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.1-S151, buch:FS2-4.1.1-S255, buch:GS-5.3.1-S508)"
+    },
+    {
+      "id": "AP1-1-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.1.1-S151, buch:FS2-4.1.1-S255, buch:GS-5.3.1-S508)"
+    },
+    {
+      "id": "AP1-1-3-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.4.1-S246)"
+    },
+    {
+      "id": "AP1-1-3-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.4.1-S246)"
+    },
+    {
+      "id": "AP1-1-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.2-S273)"
+    },
+    {
+      "id": "AP1-1-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.2-S273)"
+    },
+    {
+      "id": "AP1-1-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-1.3.2-S49, buch:GS-1.3.3-S54)"
+    },
+    {
+      "id": "AP1-1-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-1.3.2-S49, buch:GS-1.3.3-S54)"
+    },
+    {
+      "id": "AP1-1-5-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-1.3.3-S57, buch:GS-2.3.1-S140)"
+    },
+    {
+      "id": "AP1-1-5-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-1.3.3-S57, buch:GS-2.3.1-S140)"
+    },
+    {
+      "id": "AP1-1-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-1.5.3-S116)"
+    },
+    {
+      "id": "AP1-1-1-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-1.5.3-S116)"
+    },
+    {
+      "id": "AP1-1-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.11-S278, buch:FS-1.2.3-S44)"
+    },
+    {
+      "id": "AP1-1-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.11-S278, buch:FS-1.2.3-S44)"
+    },
+    {
+      "id": "AP1-1-5-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.1-S142)"
+    },
+    {
+      "id": "AP1-1-5-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.3.1-S142)"
+    },
+    {
+      "id": "AP1-1-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.5.3-S218)"
+    },
+    {
+      "id": "AP1-1-2-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.5.3-S218)"
+    },
+    {
+      "id": "AP1-1-2-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.5.3-S221)"
+    },
+    {
+      "id": "AP1-1-2-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.5.3-S221)"
     }
   ]
 }
