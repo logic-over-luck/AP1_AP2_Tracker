@@ -27,3 +27,25 @@ Stand: 16.10.2026 · Grundlage: Auftrag `umbau/auftraege/PB2-pruefung.md`, Lernp
 **Aussagen PB2-2:** vorher 12 · nach Vorschlägen **11** (+1 durch Nr. 1, −1 durch Nr. 5, −1 durch Nr. 8; die übrigen Funde ändern nur Text, Herkunft oder Struktur). Ergebnis je Stichpunkt: Such- und Sortierverfahren 4 (nach Nr. 9 zusammengelegt), Rekursion 4, Generik 3.
 
 **Funde nach Art (ohne Nr. 15):** K1 fehlt 4 (Nr. 1, 2, 11, 12) · K2 Herkunft 2 (Nr. 3, 6) · K2 Stufe 2 (Nr. 7, 10) · doppelt PB2 2 (Nr. 5, 8) · doppelt PB1 1 (Nr. 6) · zu fein 3 (Nr. 5, 8, 9) · falsch 1 (Nr. 4) · unklar 2 (Nr. 13, 14). 14 Funde insgesamt; manche haben zwei Arten.
+
+## Umsetzung
+
+Stand: 16.10.2026 · eingebaut in `umbau/lernplan/pb2/PB2-2.json` nach den Entscheidungen P36, P38 und P43; alle Funde an der Abschrift (2022W-PB2-A1/-A2, 2024S-PB2-A2, 2025W-PB2-A1-b) geprüft. Aussagen: vorher 12 · nachher **11** (PB2-2-1-1: 4, PB2-2-1-3: 4, PB2-2-1-4: 3; PB2-2-1-2 in PB2-2-1-1 aufgegangen). Neue IDs: PB2-2-1-1-K4, PB2-2-1-1-K5 (verschoben aus PB2-2-1-2-K1/-K2), PB2-2-1-3-K4. Gestrichen (nie wieder zu vergeben): PB2-2-1-1-K3, Stichpunkt PB2-2-1-2 mit K1–K3. `alt_neu`: AP2-3-2-3-K3 → PB2-2-1-1-K4, -K4 → PB2-2-1-1-K5, -K5 → PB2-2-1-4-K3, -K6 → PB2-2-1-1-K2 (alle weiter „angepasst“). Prüfskript: `lernplan-pruefen.mjs PB2-2` OK (1 Hinweis: 2022W-PB2-A2-ab betrifft nur den Debugging-Baustein aus PB2-3), `raum-pruefen.mjs PB2` OK.
+
+| Nr | Status | was genau (IDs) |
+|---|---|---|
+| 1 | umgesetzt | Neue Aussage PB2-2-1-3-K4 (Anweisung vor/nach dem Selbstaufruf: Abstieg vs. Rückweg, Umrechnung von 11 ergibt 1101 statt 1011), Herkunft katalog:ZB.rekursion, beleg:2022W-PB2-A2-ab; Teilaufgabe in `teilaufgaben` von PB2-2-1-3. Hinweis an die Hauptsitzung: PB2-3-1-1 nutzt 2022W-A2-ab weiter als Beleg für das Finden des Fehlers (P31 prüfen). |
+| 2 | umgesetzt | PB2-2-1-3-K3: Rückweg nachbilden – Reste in einer Liste sammeln und in umgekehrter Reihenfolge ausgeben (modulo 2, div 2); baut_auf AP1-4-2-1 und AP1-8-2-1. |
+| 3 | umgesetzt | PB2-2-1-3-K1: Herkunft katalog:ZB.rekursion, regel:P-GRUNDLAGE statt beleg:2022W-A2-b; „Stapelüberlauf (Stack Overflow)“, Begründung über den Aufrufstapel. |
+| 4 | umgesetzt | PB2-2-1-3-K2: „mehr Speicher auf dem Aufrufstapel und durch die vielen Aufrufe meist langsamer“. |
+| 5 | teilweise | PB2-2-1-2-K3 gestrichen; Tausch über Hilfsvariable in PB2-2-1-1-K4, Vergleichsfunktion bleibt in PB2-2-1-4-K2/-K3. Beleg 2024S-PB2-A2-a nicht an die Sortier-Aussage gehängt (P31: er trägt PB2-2-1-4-K3, dort steht jetzt auch „benennen“). |
+| 6 | teilweise | Beleg 2025W-PB2-A1-b gestrichen (Minimumsuche, an der Lösung geprüft) und aus `teilaufgaben` entfernt; baut_auf PB1-5-1-5. Abweichend vom Vorschlag Stufe 2 („beschreiben“) statt 3: Nach P38 gehört zu „kennen“ das Prinzip; das Schreiben einer Suche über eine Objektliste steht schon in PB1-5-1-5-K2 (P36). Herkunft katalog:AP2b.04.18.1, regel:P-NAECHSTE-STUFE. AP2b.04.18.1 hat jetzt `anteil` und steht auch in PB2-1-1-2 (Minimumsuche als Durchlauf), damit 2025W-A1-b dort sauber wohnt. |
+| 7 | umgesetzt | Durch P38 entschieden: PB2-2-1-1-K2 Stufe 2 mit regel:P-NAECHSTE-STUFE (statt P-GESCHWISTER). |
+| 8 | umgesetzt | PB2-2-1-1-K2 und -K3 zu PB2-2-1-1-K2 zusammengelegt (Prinzip, Voraussetzung sortiert, etwa log₂(n) Vergleiche, bei 1.000 Elementen höchstens 10). |
+| 9 | umgesetzt | PB2-2-1-1 „Such- und Sortierverfahren“ mit 4 Aussagen (K1, K2, K4, K5); PB2-2-1-2 entfällt. Themenblock hat 3 Stichpunkte (F4). |
+| 10 | umgesetzt | PB2-2-1-1-K5 (bisher PB2-2-1-2-K2): Herkunft zusätzlich regel:P-NAECHSTE-STUFE (P38); Bubble Sort genauer beschrieben (vergleichen, bei falscher Reihenfolge tauschen). |
+| 11 | umgesetzt | PB2-2-1-4-K2: bei Kommazahlen nicht die Differenz als Integer zurückgeben, sondern 1, 0, −1 (Lösungshinweis 2022W-A1-b). Allgemeine Datentyp-Falle in PB2-1-1-1-K6. |
+| 12 | umgesetzt | PB2-2-1-4-K3: auch auf einer generischen Liste mit get, set und size; Aufruf `f(a, b) > 0`. |
+| 13 | umgesetzt | baut_auf PB1-4-1-2 statt PB1-5-1-1 (Interfaces tragen hier nichts bei); Hinweis zu List<Strecke> und zum vorgegebenen Funktionsobjekt (B4). |
+| 14 | umgesetzt | Hinweis PB2-2-1-3: Schreibtischtest in PB2-3, Erklärung der verkehrten Reihenfolge in K4. |
+| 15 | – | kein Fund. |

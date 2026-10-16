@@ -31,3 +31,29 @@ Stand: 16.10.2026 · Grundlage: Auftrag `umbau/auftraege/PB2-pruefung.md`, Lernp
 **Aussagen PB2-1:** vorher 17 · nach Vorschlägen **15** (−1 durch Nr. 10, +1 durch Nr. 1, −1 durch Nr. 5, −1 durch Nr. 15; Nr. 2/3/4/6/7/8/9/11/12/13 ändern nur Text oder Herkunft). Ergebnis je Stichpunkt: PB2-1-1-1 4, PB2-1-1-2 6, PB2-1-1-3 3, PB2-1-1-4 2. Wird Nr. 9 nicht in K1/K5 eingearbeitet, sondern als eigene Aussage geführt, sind es 16.
 
 **Funde nach Art (ohne Nr. 19):** K1 fehlt 6 (Nr. 1, 2, 3, 4, 9, 16) · K2 Herkunft 4 (Nr. 6, 7, 11, 13; Nr. 11 zugleich doppelt AP1) · doppelt PB2 3 (Nr. 5, 12, 14) · doppelt AP1 2 (Nr. 11, 15) · doppelt PB1 2 (Nr. 8, 15) · zu fein 2 (Nr. 5, 10) · anderer Raum 1 (Nr. 17) · unklar 1 (Nr. 18). Doppelzählung, weil manche Funde zwei Arten haben; 18 Funde insgesamt.
+
+## Umsetzung
+
+Stand: 16.10.2026 · eingebaut in `umbau/lernplan/pb2/PB2-1.json` nach den Entscheidungen P36–P38 und P43; alle Funde an der Abschrift geprüft. Aussagen: vorher 17 · nachher **15** (PB2-1-1-1: 6, PB2-1-1-2: 6, PB2-1-1-3: 3; PB2-1-1-4 aufgelöst). Neue IDs: PB2-1-1-1-K6, PB2-1-1-1-K7, PB2-1-1-2-K7. Gestrichen (nie wieder zu vergeben): PB2-1-1-1-K4, PB2-1-1-2-K6, Stichpunkt PB2-1-1-4 mit K1–K3. `alt_neu`: AP2-3-2-1-K4 → PB2-1-1-1-K1, AP2-2-1-3-K5 → PB2-1-1-1-K7 (beide weiter „angepasst“). Prüfskript: `lernplan-pruefen.mjs PB2-1` OK, `raum-pruefen.mjs PB2` OK.
+
+| Nr | Status | was genau (IDs) |
+|---|---|---|
+| 1 | umgesetzt | Neue Aussage PB2-1-1-2-K7 (Nachbarelemente verrechnen, Gruppenwechsel mit letzter Gruppe nach der Schleife), Herkunft AP2b.04.16, 2024W-PB2-A1, 2022S-PB2-A1, 2023S-PB2-A3-ab (P37); 2022S-PB2-A1 und 2023S-PB2-A3-ab in `teilaufgaben` von PB2-1-1-2, AP2b.04.19 dort mit `anteil` (Code erweitern). |
+| 2 | umgesetzt | PB2-1-1-2-K5 neu gefasst: Ergebnisarray in passender Größe anlegen, Index aus Fachwert (Tag − 1, Stunde − 9, Haltestelle − 1). Der Spaltenversatz 2 + slot aus 2021W-PB2-A2 steht in PB2-1-1-1-K3 (2D-Arrays), weil die Aufgabe dort belegt ist. |
+| 3 | umgesetzt | PB2-1-1-2-K4: gleicher Tisch am gleichen **Datum** (2025W-A1-a, an der Lösung geprüft), Datumsbereich Tag für Tag (`date = date + 1`), Grenze `datumVon <= tag < datumBis` (Entlassungstag zählt nicht, Material M2 2025S-A1). 2025S-PB2-A1 in `teilaufgaben` von PB2-1-1-2. |
+| 4 | umgesetzt | PB2-1-1-2-K3: Start mit MAX_VALUE/MIN_VALUE, Index des besten Elements merken; Belege 2022S-PB2-A1, 2023W-PB2-A2 ergänzt. |
+| 5 | umgesetzt | PB2-1-1-2-K6 gestrichen, Inhalt (wiederholte Minimumsuche, entfernen) in PB2-1-1-2-K3. |
+| 6 | teilweise | PB2-1-1-1-K4 mit K1 zusammengelegt (Nr. 10); Herkunft jetzt 2021W-A2, 2023S-A2, 2025W-A1-a statt 2025S-A1. „set“ nicht in PB2-1-1-1, weil es nur 2022W-PB2-A1-d belegt; es steht in PB2-2-1-4-K3 („generische Liste mit get, set und size“). |
+| 7 | teilweise | PB2-1-1-1-K5: Herkunft 2025W-PB2-A1-b (leere Liste → null), 2021W-PB2-A2 (Sonderwert −1); 2025W-A1-b in `teilaufgaben` von PB2-1-1-1; baut_auf AP1-8-2-4 ergänzt. Nicht übernommen: „2022S-PB2-A2-b“ – die ID gibt es nur als -ba/-bb/-bc; die Methode mit Rückgabe −1 ist dort vorgegeben und wird getestet bzw. korrigiert (PB2-3-1-3, P31). „Division durch null“ bleibt (Auftrag Projektinhaber), mit Katalogherkunft AP2b.04.16. |
+| 8 | umgesetzt | PB2-1-1-1-K5 auf das Neue gekürzt (Sonderfall im Algorithmus vor dem Zugriff abfangen); baut_auf PB1-5-1-2, Abgrenzung im Hinweis. |
+| 9 | umgesetzt | Eigene Aussage PB2-1-1-1-K6 (Ganzzahldivision, Prozentschwelle ohne Abschneiden, Kommazahl nicht in Integer). An der Abschrift bestätigt: Lösung 2025W-A1-a „/2.0 // keine Integerdivision!“, Hinweis 2022W-A1-b zum Typkonflikt Double/Integer, Aufgabentext 2025S-A1 „mehr als 80 %“. Herkunft 2025W-A1-a, 2025S-A1; der Teil aus 2022W-A1-b steht bei der Vergleichsfunktion PB2-2-1-4-K2 (P31). |
+| 10 | umgesetzt | PB2-1-1-1-K1 = Signatur + vorgegebene Klassen/Methoden (bisher K1 und K4), −1 Aussage. |
+| 11 | umgesetzt | PB2-1-1-1-K2 auf das Neue gegenüber AP1-8-2-2/AP1-8-2-4 gekürzt: Schleifengrenzen beim Schreiben (auch Nachbarzugriff), vorzeitiger Abbruch mit Merker/Zähler. Belege 2025W-A1-a („… und frei“), 2024W-A1 (Schleife ab 1), 2022S-A1. 2024W-A2-b (Zähler) bleibt in PB2-1-1-3-K3. |
+| 12 | umgesetzt | PB2-1-1-3-K1 neu gefasst: Objekt über Attribut, statische Methode DateTime.now(), Rückgabe von compare() deuten; Beleg 2024W-PB2-A2-b. |
+| 13 | umgesetzt | 2025S-PB2-A1 aus PB2-1-1-3 (Beispiel und `teilaufgaben`) entfernt, steht in PB2-1-1-1/-1-2. |
+| 14 | umgesetzt | 2022W-PB2-A1-b nur noch in PB2-2-1-4 (Vergleichsfunktion gehört zur Kette A1-b → A1-d); 2023S-PB2-A3-ab aus PB2-1-1-3 nach PB2-1-1-2 (K7, P37). Hinweis an die Hauptsitzung: PB2-3-1-1 führt 2023S-A3-ab weiter als Beleg (Fehler finden und beheben). |
+| 15 | umgesetzt | P43: PB2-1-1-4 aufgelöst. K2 (Schwimmbahnen, Wiederholung) gestrichen – doppelt zu AP1-8-3-3-K3/K5 und PB1-4-1-5-K1. K1 und K3 zu PB2-1-1-1-K7 zusammengefasst (Kontrollstrukturen als Aktivitätsdiagramm, Zählschleife als eigene Aktionen, Übertragen Pseudocode ↔ Diagramm). AP2a.02.02.1, Grenze Struktogramm/PAP, Diagramm-Teilaufgaben, baut_auf (AP1-8-3-3, PB1-4-1-3/-4/-5) und Hinweis nach PB2-1-1-1; Themenblock hat jetzt 3 Stichpunkte (F4). |
+| 16 | umgesetzt | Hinweis in PB2-1-1-1: parallele Zweige werden fast immer bepunktet → PB1-4-1-5-K2. |
+| 17 | umgesetzt | Durch P36 entschieden: AP2b.04.21.1 (PB2-1-1-3) und AP2b.04.09.3/.4/.5 (ehemals PB2-1-1-4) aus `bausteine` entfernt, nur noch baut_auf (löst die vier T7-Fehler). Anhänge ANH.uml-* bleiben, weil sie in jedem Raum erlaubt und keine Importbausteine sind. |
+| 18 | umgesetzt | Hinweis PB2-1-1-2 neu (Minimumsuche ≠ lineare Suche, läuft immer ganz durch); gleichlautend in PB2-2-1-1. |
+| 19 | – | kein Fund. |
