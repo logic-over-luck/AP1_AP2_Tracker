@@ -1,7 +1,7 @@
 # Auftrag: Kritische Gegenprüfung AP1 (unabhängig)
 
 > So benutzen: Neue Sitzung öffnen (Opus, hohe Denkstufe), Repo `logic-over-luck/AP1_AP2_Tracker`,
-> Branch `vorschau-ap1`. Katalog (`quellen/katalog.md`) und Prüfungsabschriften
+> Branch `umbau`. Katalog (`quellen/katalog.md`) und Prüfungsabschriften
 > (`quellen/pruefungen/ap1/*.md`) anhängen, falls vorhanden. Dann den Text ab „Auftrag“ einfügen.
 > Am besten je Sitzung zwei bis drei Ordner, damit die Prüfung gründlich bleibt.
 

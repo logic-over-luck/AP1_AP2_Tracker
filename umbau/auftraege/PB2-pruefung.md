@@ -1,7 +1,7 @@
 # Auftrag: Unabhängige Prüfung PB2 (K1–K3, Doppeltes und Unnötiges)
 
 > So benutzen: von einem Prüf-Agenten oder einer neuen Sitzung ausführen lassen, Repo
-> `logic-over-luck/AP1_AP2_Tracker`, Branch `vorschau-ap1`. Katalog (`quellen/katalog.md`) und
+> `logic-over-luck/AP1_AP2_Tracker`, Branch `umbau`. Katalog (`quellen/katalog.md`) und
 > Abschriften (`quellen/pruefungen/pb2/*.md`) müssen lokal vorliegen (nicht im Repo, E10).
 
 ---

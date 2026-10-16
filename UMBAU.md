@@ -5,7 +5,7 @@ arbeitet, liest zuerst diese Datei** und hält sich an die Entscheidungen und Re
 
 - Was hier nicht geregelt ist, wird **nicht** in der Sitzung entschieden, sondern kommt auf den
   **Parkplatz** (Abschnitt 8). Entschieden wird es vom Projektinhaber.
-- Gearbeitet wird auf dem Branch `umbau`. Der bisherige Stand bleibt unverändert und benutzbar.
+- Gearbeitet wird auf dem Branch `umbau` (seit 16.10.2026 enthält er auch den früheren Branch `vorschau-ap1`, der gelöscht ist). Der bisherige Stand bleibt unverändert und benutzbar.
 - Die App (Trainer, Lernkarten-System, Lernstand, Oberfläche, Glossar) bleibt. Neu gebaut werden die
   **Lerninhalte**: Gliederung, Rahmen, Können-Aussagen, Grenzen.
 

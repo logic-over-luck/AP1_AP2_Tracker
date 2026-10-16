@@ -2,7 +2,7 @@
 
 > So benutzen: **Erst nach** Gegenprüfung und Abnahme des Lernplans (die Karten bauen auf den
 > endgültigen Aussagen auf). Neue Sitzung (Opus, hohe Denkstufe), Repo `logic-over-luck/AP1_AP2_Tracker`,
-> Branch `vorschau-ap1`. Je Sitzung ein bis zwei Ordner. Text ab „Auftrag“ einfügen.
+> Branch `umbau`. Je Sitzung ein bis zwei Ordner. Text ab „Auftrag“ einfügen.
 
 ---
 
