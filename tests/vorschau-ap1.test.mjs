@@ -374,7 +374,7 @@ describe('Schritt 7: baut_auf, neu und Abnahme', () => {
 
     test(`${R}: Abnahme (P45) kommt in der App an – ohne Abnahme zeigt sie den Hinweis „noch nicht endgültig“`, () => {
       assert.equal(alle.vorschauRaeume[R].abgenommen, RAEUME_VORSCHAU[R].abgenommen);
-      if (R !== 'WISO') assert.equal(RAEUME_VORSCHAU[R].abgenommen, true);
+      assert.equal(RAEUME_VORSCHAU[R].abgenommen, true, `${R} ist abgenommen (P45, P52)`);
     });
   }
 

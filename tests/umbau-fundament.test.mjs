@@ -230,10 +230,12 @@ for (const [name, f] of Object.entries(lernplanFehler)) {
 }
 
 // ---------- Eingefrorene Räume (E3, Schritt 5) ----------
-test('Raum AP1 ist eingefroren: Export passt zum Lernplan', { skip: !existsSync('umbau/export/AP1.json') && 'kein Export' }, () => {
-  const r = spawnSync(process.execPath, ['tools/umbau/export-raum.mjs', 'AP1', '--pruefen'], { encoding: 'utf8' });
-  assert.equal(r.status, 0, r.stdout);
-});
+for (const R of ['AP1', 'PB1', 'PB2', 'WISO']) {
+  test(`Raum ${R} ist eingefroren: Export passt zum Lernplan`, { skip: !existsSync(`umbau/export/${R}.json`) && 'kein Export' }, () => {
+    const r = spawnSync(process.execPath, ['tools/umbau/export-raum.mjs', R, '--pruefen'], { encoding: 'utf8' });
+    assert.equal(r.status, 0, r.stdout);
+  });
+}
 
 // ---------- Raum PB1 (Schritt 6) ----------
 const pb1Da = vorhanden && existsSync('umbau/fundament/pruefungen-pb1.json') && existsSync('umbau/lernplan/pb1');

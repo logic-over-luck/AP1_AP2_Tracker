@@ -93,6 +93,10 @@ class LPW:
         self.r4.append({"katalog": katalog, "paar": paar, "abgedeckt": abgedeckt})
 
     def write(self, meta):
+        # WISO ist abgenommen und eingefroren (UMBAU.md P52, E3): Änderungen nur noch über den Parkplatz, direkt im
+        # Lernplan, danach Export neu erzeugen. Die Generatoren bilden den Stand der Abnahme ab und schreiben nicht mehr.
+        if os.environ.get("WISO_GENERATOR_ENTSPERRT") != "ja":
+            raise SystemExit(f"{self.oid}: WISO ist abgenommen (P52) – Generator stillgelegt, siehe tools/umbau/gen-wiso/LIESMICH.md")
         ordner_alt = [kid for kid in ALT_K if kid.startswith(self.oid + "-")]
         fehlt = [x for x in ordner_alt if not any(a[0] == x for a in self.alt)]
         assert not fehlt, f"alte Aussagen nicht einsortiert: {fehlt}"

@@ -41,7 +41,7 @@ export const RAEUME_VORSCHAU = {
   AP1: { teil: 'AP1', dir: 'ap1', appRaum: 'AP1', altPrefix: 'AP1', ersteAktuelle: '2025F', titel: null, abgenommen: true },
   PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'PB1', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes', abgenommen: true },
   PB2: { teil: 'PB2', dir: 'pb2', appRaum: 'PB2', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Entwicklung und Umsetzung von Algorithmen', abgenommen: true },
-  WISO: { teil: 'WISO', dir: 'wiso', appRaum: 'WISO', altPrefix: 'WISO', ersteAktuelle: '2025S', titel: null, abgenommen: false },
+  WISO: { teil: 'WISO', dir: 'wiso', appRaum: 'WISO', altPrefix: 'WISO', ersteAktuelle: '2025S', titel: null, abgenommen: true },
 };
 const AP1 = RAEUME_VORSCHAU.AP1;
 const dateiMuster = (cfg) => new RegExp(`^${cfg.teil}-\\d+\\.json$`);
