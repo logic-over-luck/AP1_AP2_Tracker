@@ -210,7 +210,8 @@
         "katalog:AP2b.03.08.2",
         "beleg:2022S-PB2-A2-aa",
         "beleg:2022S-PB2-A2-ab",
-        "beleg:2025W-PB2-A3-aa"
+        "beleg:2025W-PB2-A3-aa",
+        "buch:FS2-2.4.3-S208"
        ],
        "neu": {
         "gegenueber": [
@@ -236,7 +237,8 @@
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.03.08.2",
-        "beleg:2024S-PB2-A3-ab"
+        "beleg:2024S-PB2-A3-ab",
+        "buch:FS2-2.4.1-S200"
        ]
       },
       {
@@ -247,12 +249,48 @@
        "herkunft": [
         "katalog:AP2b.03.08.2"
        ]
+      },
+      {
+       "id": "PB2-3-1-3-K6",
+       "text": "Du kannst erläutern, warum testgetriebene Entwicklung eher eine Entwurfs- als eine Teststrategie ist: Die Tests entstehen vor dem Code und legen fest, was er leisten muss, sie steuern so Schritt für Schritt die Entwicklung und geben sofort Rückmeldung – anders als Tests, die erst nach der Implementierung geschrieben werden.",
+       "kurz": "TDD als Entwurfsstrategie",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.3-S637"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K7",
+       "text": "Du kannst den Einsatz testgetriebener Entwicklung beurteilen: Vorteile sind hohe Codequalität, eine einfache Fehleranalyse dank gezielter Tests und kein überflüssiger Code; Nachteile sind, dass nur einzelne Units geprüft werden (Integrations- und Systemtest bleiben nötig), dass viele kleine Tests gepflegt werden müssen und veralten können und dass der Blick auf die Gesamtarchitektur fehlt.",
+       "kurz": "TDD: Vor- und Nachteile",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.9.3-S637"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-9-1-4"
      ],
-     "hinweis": "Was ein Unit-Test im Rahmen der Teststufen ist, steht in PB1-9-1-4; wann ein Testfall als bestanden gilt, in PB2-4-1-2-K3. Den Code nach einem fehlgeschlagenen Unit-Test korrigieren (2022S-PB2-A2-bb) steht in PB2-3-1-1-K3."
+     "hinweis": "Was ein Unit-Test im Rahmen der Teststufen ist, steht in PB1-9-1-4; wann ein Testfall als bestanden gilt, in PB2-4-1-2-K3. Den Code nach einem fehlgeschlagenen Unit-Test korrigieren (2022S-PB2-A2-bb) steht in PB2-3-1-1-K3. Das Lehrbuch (FS2 2.4.3) übergibt in einem JUnit-5-Beispiel die Fehlermeldung als ersten Parameter von assertEquals; das ist die Reihenfolge von JUnit 4 – richtig ist in JUnit 5 die Meldung als letzter Parameter: assertEquals(erwartet, tatsächlich, meldung).",
+     "kuer": [
+      {
+       "text": "Ein Testframework kennzeichnet Testmethoden, bietet gemeinsame Vorbereitung und Aufräumen vor bzw. nach jedem Test oder einmal für alle sowie Zeitlimits und stellt neben assertEquals weitere Zusicherungen bereit (assertTrue und assertFalse für Bedingungen, assertNotEquals, fail für einen Zweig, der nie erreicht werden darf), jeweils mit optionaler Fehlermeldung. Ein fehlgeschlagener Test ist ein Failure, wenn eine Zusicherung nicht stimmt (der Code rechnet falsch), oder ein Error, wenn eine unerwartete Ausnahme den Test schon vor der Prüfung abgebrochen hat.",
+       "kurz": "Testframework: Aufbau, Zusicherungen, Ergebnisse",
+       "quellen": [
+        "buch:FS2-2.4.3"
+       ],
+       "grund": "RK2: Werkzeugdetails eines Testframeworks (Kennzeichnung, Vorbereitung, Assert-Methoden, Failure/Error); die Prüfung nutzt assertEquals und bestanden/fehlgeschlagen (K2, K3)"
+      },
+      {
+       "text": "Refactoring heißt, Code umzubauen – Wiederholungen entfernen, Namen verbessern, lange Methoden aufteilen –, ohne sein Verhalten zu ändern. Dass das Verhalten gleich geblieben ist, zeigen die vorhandenen Tests, die danach weiter bestehen müssen; deshalb ist Refactoring im TDD-Zyklus der dritte Schritt nach Red und Green.",
+       "kurz": "Refactoring ohne Verhaltensänderung",
+       "quellen": [
+        "buch:GS-5.9.3"
+       ],
+       "grund": "RK2: Refactoring ist ein Teilschritt von TDD ohne eigenen Baustein; K5 nennt nur das Aufräumen, nicht die Verhaltensgleichheit"
+      }
+     ]
     }
    ]
   }
@@ -328,8 +366,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.7",
-  "stand": "2026-10-14; Prüfer-Funde (umbau/berichte/PB2-3-pruefer.md) am 16.10.2026 umgesetzt (P36, P37, P43, P44): gestrichen PB2-3-1-2-K2, PB2-3-1-3-K1, verschoben PB2-3-1-2-K3 → PB2-3-1-3-K5; neu PB2-3-1-2-K5, PB2-3-1-3-K5 (diese IDs werden nicht wieder vergeben).",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB2-Ordner (P33).",
   "kerntest": {
    "stand": "2026-10-14",
@@ -337,7 +375,9 @@
    "ergebnis": "Schreibtischtests und Fehlersuche (2021W-A1-c, 2022W-A2-a, 2023S-A3-a, 2025W-A3-b), Unit-Tests (2022S-A2, 2024S-A3-ab, 2025W-A3-aa) und 2025S-A2-bc gegen die Musterlösungen gelesen."
   },
   "hinweisquellen": {
-   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.4.3": "Lehrbuch Westermann „IT-Berufe“ FS2 2.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.9.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.9.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -398,8 +438,55 @@
      "wo": [
       "PB2-4"
      ]
+    },
+    {
+     "thema": "Ein Testframework kennzeichnet Testmethoden, bietet gemeinsame Vorbereitung und Aufräumen vor bzw. nach jedem Test oder ",
+     "quellen": [
+      "buch:FS2-2.4.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-3-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Refactoring heißt, Code umzubauen – Wiederholungen entfernen, Namen verbessern, lange Methoden aufteilen –, ohne sein Ve",
+     "quellen": [
+      "buch:GS-5.9.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-3-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
-  }
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-3-1-3-K6",
+     "PB2-3-1-3-K7"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB2-3-1-3-K4",
+     "PB2-3-1-3-K2"
+    ],
+    "kuer": [
+     "PB2-3-1-3",
+     "PB2-3-1-3"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB2-3-1-3"
+    ]
+   }
+  ]
  }
 }

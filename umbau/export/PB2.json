@@ -5,11 +5,11 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 22,
-  "koennen": 113,
+  "koennen": 115,
   "quellen": {
    "PB2-1.json": "6c16ea6764dd06fb",
    "PB2-2.json": "2dd20a63f12e0965",
-   "PB2-3.json": "5fd9e56bbcf1cd1d",
+   "PB2-3.json": "00a87ce9d67a40ae",
    "PB2-4.json": "68840c2be9b4bac8",
    "PB2-5.json": "d2d317f1f6128fe3",
    "PB2-6.json": "c27aa71b7ad5f732"
@@ -377,6 +377,16 @@
      "id": "PB2-3-1-3-K5",
      "stufe": 3,
      "kurz": "zu einer Anforderung einen Unit-Test schreiben: Testfälle für Normalfall, Grenzen und Fehlerfälle als assertEquals(erwartet, methode(...)) aufschreiben, auch bevor der Code existiert (Test Driven Development: erst ein fehlschlagender Test, dann gerade so viel Code, dass er besteht, dann aufräumen – Red, Green, Refactor)"
+    },
+    {
+     "id": "PB2-3-1-3-K6",
+     "stufe": 2,
+     "kurz": "erläutern, warum testgetriebene Entwicklung eher eine Entwurfs- als eine Teststrategie ist: Die Tests entstehen vor dem Code und legen fest, was er leisten muss, sie steuern so Schritt für Schritt die Entwicklung und geben sofort Rückmeldung – anders als Tests, die erst nach der Implementierung geschrieben werden"
+    },
+    {
+     "id": "PB2-3-1-3-K7",
+     "stufe": 4,
+     "kurz": "den Einsatz testgetriebener Entwicklung beurteilen: Vorteile sind hohe Codequalität, eine einfache Fehleranalyse dank gezielter Tests und kein überflüssiger Code; Nachteile sind, dass nur einzelne Units geprüft werden (Integrations- und Systemtest bleiben nötig), dass viele kleine Tests gepflegt werden müssen und veralten können und dass der Blick auf die Gesamtarchitektur fehlt"
     }
    ]
   },

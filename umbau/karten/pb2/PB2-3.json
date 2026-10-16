@@ -241,6 +241,27 @@
       "k": "PB2-3-1-3-K5",
       "vorne": "Anforderung: `gebuehr(alter)` liefert 0 für 0 bis 17 Jahre, 10 ab 18 Jahren und −1 für negative Werte. Schreibe passende Testfälle als `assertEquals`.",
       "hinten": "- Normalfall: `assertEquals(10, gebuehr(30))`\n- Grenze: `assertEquals(0, gebuehr(17))` und `assertEquals(10, gebuehr(18))`\n- untere Grenze: `assertEquals(0, gebuehr(0))`\n- Fehlerfall: `assertEquals(-1, gebuehr(-1))`"
+    },
+    {
+      "id": "PB2-3-1-3-K6-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K6",
+      "vorne": "Warum gilt testgetriebene Entwicklung eher als Entwurfs- denn als Teststrategie?",
+      "hinten": "Die Tests entstehen vor dem Code und legen fest, was er leisten muss (Schnittstelle, erwartetes Verhalten). Sie steuern so die Entwicklung und geben nach jedem kleinen Schritt sofort Rückmeldung; die fertige Testsammlung ist eher ein Nebeneffekt."
+    },
+    {
+      "id": "PB2-3-1-3-K7-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K7",
+      "vorne": "Nenne zwei Vorteile testgetriebener Entwicklung.",
+      "hinten": "- hohe Codequalität, Änderungen sind durch Tests abgesichert\n- einfache Fehleranalyse: der fehlschlagende Test zeigt die betroffene Einheit\n- kein überflüssiger Code: nur, was ein Test verlangt"
+    },
+    {
+      "id": "PB2-3-1-3-K7-2",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K7",
+      "vorne": "Nenne zwei Nachteile testgetriebener Entwicklung.",
+      "hinten": "- nur Unit-Ebene: Integrations- und Systemtests bleiben nötig\n- viele kleine Tests müssen gepflegt werden und veralten\n- kein Blick auf die Gesamtarchitektur"
     }
   ],
   "nicht_abgefragt": [],
@@ -440,6 +461,21 @@
       "id": "PB2-3-1-3-K5-1",
       "entscheidung": "neu",
       "grund": "Stufe 3: zu einer Anforderung Unit-Test schreiben (Normalfall, Grenzen, Fehlerfälle)"
+    },
+    {
+      "id": "PB2-3-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.3-S637)"
+    },
+    {
+      "id": "PB2-3-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.3-S637)"
+    },
+    {
+      "id": "PB2-3-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.3-S637)"
     }
   ]
 }
