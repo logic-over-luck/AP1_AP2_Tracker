@@ -68,7 +68,8 @@
        "kurz": "Grundsätze der Dialoggestaltung",
        "stufe": 1,
        "herkunft": [
-        "katalog:AP2b.04.13"
+        "katalog:AP2b.04.13",
+        "buch:FS-3.4.1-S209"
        ]
       },
       {
@@ -90,12 +91,154 @@
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.14.1",
-        "beleg:2021W-PB1-A3-ac"
+        "beleg:2021W-PB1-A3-ac",
+        "buch:FS2-1.5.2-S103"
+       ]
+      },
+      {
+       "id": "PB1-8-1-1-K6",
+       "text": "Du kannst begründen, warum eine ergonomische Benutzeroberfläche über die Akzeptanz einer Software entscheidet und sich ihre Gestaltung nach der Nutzergruppe richten muss: Was umständlich zu bedienen ist, wird gemieden, umgangen oder fehlerhaft genutzt, und ein Bürgerportal für Menschen jeden Alters braucht eine einfachere, stärker geführte Bedienung als eine Konfigurationsoberfläche für Administratoren.",
+       "kurz": "Ergonomie, Akzeptanz und Nutzergruppe",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-1.3.1-S28"
+       ]
+      },
+      {
+       "id": "PB1-8-1-1-K7",
+       "text": "Du kannst UX-Design und UI-Design unterscheiden: UI-Design gestaltet das sichtbare Erscheinungsbild der Oberfläche (Farben, Schriften, Symbole, Anordnung), UX-Design untersucht und verbessert das gesamte Nutzungserlebnis, damit das Produkt gut zu benutzen ist; gute UX bindet Kunden und senkt die Anfragen beim Support.",
+       "kurz": "UX-Design gegen UI-Design",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.3.2-S35"
+       ]
+      },
+      {
+       "id": "PB1-8-1-1-K8",
+       "text": "Du kannst UX-Test und Akzeptanztest unterscheiden: Der Akzeptanztest prüft, ob die vereinbarten Anforderungen erfüllt sind (die Suche liefert die richtigen Treffer), der UX-Test, ob die Bedienung benutzerfreundlich ist (Nutzer finden das Suchfeld sofort und verstehen die Trefferliste).",
+       "kurz": "UX-Test gegen Akzeptanztest",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.5.2-S102"
+       ]
+      },
+      {
+       "id": "PB1-8-1-1-K9",
+       "text": "Du kannst begründen, warum UX-Tests möglichst früh beginnen und während der Entwicklung wiederholt werden: Bedienprobleme, die schon an einem Entwurf oder Prototyp auffallen, lassen sich noch mit wenig Aufwand beheben, während Änderungen an einer fertig programmierten Oberfläche teuer werden.",
+       "kurz": "UX-Tests früh und wiederholt",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-1.5.2-S102"
        ]
       }
      ],
      "baut_auf": [
       "AP1-8-4-3"
+     ],
+     "kuer": [
+      {
+       "text": "Zur Benutzerschnittstelle gehören alle Teile eines interaktiven Systems, die dem Nutzer Informationen und Bedienelemente für seine Aufgabe bieten. Gute Usability zahlt sich aus: Nutzer arbeiten produktiver, mit weniger Stress und ermüden nicht so schnell.",
+       "kurz": "Benutzerschnittstelle und Nutzen guter Usability",
+       "quellen": [
+        "buch:FS2-1.3.1",
+        "buch:FS-3.4.1"
+       ],
+       "grund": "RK1/RK2: Normbegriff und Nutzenaufzählung ohne eigenes Prinzip"
+      },
+      {
+       "text": "UX-Design umfasst mehrere Bereiche: Informationsarchitektur (Inhalte und Navigation so ordnen, dass man sie findet), Interaktionsdesign (Bedienung auf Grundlage von Nutzerforschung), visuelles Design (Farben, Bilder, Symbole) sowie Usability und Zugänglichkeit.",
+       "kurz": "Bestandteile des UX-Designs",
+       "quellen": [
+        "buch:FS-3.4.1",
+        "buch:FS2-1.3.2"
+       ],
+       "grund": "RK2: Unterthema von User Experience (PB1-8-1-1-K1)"
+      },
+      {
+       "text": "Design Thinking stellt die Bedürfnisse der künftigen Nutzer in den Mittelpunkt und betrachtet das Problem aus ihrer Sicht. Der UX-Designprozess läuft deshalb in Runden: Zielgruppe, Anforderungen und Konkurrenz untersuchen, entwerfen und umsetzen, mit echten Nutzern testen, anpassen.",
+       "kurz": "Design Thinking und nutzerzentrierter Designprozess",
+       "quellen": [
+        "buch:FS2-1.3.3"
+       ],
+       "grund": "RK2: Methode und Vorgehen unterhalb von User Experience"
+      },
+      {
+       "text": "Je nach Zielgruppe wird eine Oberfläche auch emotional (positiver Gesamteindruck, etwa durch kleine Animationen), klanglich (dezente Signaltöne, Sprachausgabe) und sozial (Inhalte teilen, mit anderen kommunizieren) gestaltet.",
+       "kurz": "Emotionale, klangliche und soziale Gestaltung",
+       "quellen": [
+        "buch:FS2-1.3.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein für diese Gestaltungsebenen"
+      },
+      {
+       "text": "UX-Tests kosten Zeit und Geld für Testpersonen, Vorbereitung und Auswertung, sparen aber teure Nacharbeit; schon ein kleiner Test, bei dem Kollegen oder Kunden die Software nutzen und Auffälligkeiten notieren, hilft. Geprüft wird über die Dialoggrundsätze hinaus etwa Mehrwert, Ästhetik, Orientierung, Navigationsaufwand, Hilfen, Aktualität und Barrierefreiheit.",
+       "kurz": "UX-Tests in der Praxis",
+       "quellen": [
+        "buch:FS2-1.5.2"
+       ],
+       "grund": "RK1: Vor- und Nachteile, Praxistipp und Prüfpunkteliste ohne neues Prinzip"
+      }
+     ],
+     "hinweis": "Das Lehrbuch schreibt, die Usability berücksichtige die subjektive Wahrnehmung der Nutzer nicht; richtig ist nach DIN EN ISO 9241-11, dass die Zufriedenheit neben Effektivität und Effizienz zur Usability gehört."
+    },
+    {
+     "id": "PB1-8-1-4",
+     "titel": "Grundsätze der Dialoggestaltung an Beispielen",
+     "ziel": "Die Grundsätze der Dialoggestaltung nach DIN EN ISO 9241-110 jeweils mit ihrer Forderung und einem Beispiel aus einer Anwendung erläutern.",
+     "gebiete": [
+      "G.PB1.03"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.13",
+       "anteil": "Grundsätze der Dialoggestaltung als Anforderungen an die Softwareergonomie erläutern"
+      },
+      {
+       "id": "AP2a.02.02.3",
+       "anteil": "Softwareergonomie"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-8-1-4-K1",
+       "text": "Du kannst die Grundsätze Aufgabenangemessenheit und Selbstbeschreibungsfähigkeit an einem Beispiel erläutern: Ein aufgabenangemessener Dialog verlangt nur die nötigen Schritte und schlägt sinnvolle Vorgaben vor (etwa das heutige Datum); ein selbstbeschreibungsfähiger Dialog zeigt jederzeit, wo man ist, was gerade passiert und was als Nächstes erwartet wird (Fortschrittsanzeige, Hinweis auf ein fehlendes Pflichtfeld).",
+       "kurz": "Aufgabenangemessenheit und Selbstbeschreibung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.3.2-S33"
+       ]
+      },
+      {
+       "id": "PB1-8-1-4-K2",
+       "text": "Du kannst die Grundsätze Steuerbarkeit und Erwartungskonformität an einem Beispiel erläutern: Steuerbar ist ein Dialog, wenn der Nutzer Ablauf und Tempo bestimmt, also unterbrechen und später weitermachen, zwischen Wegen wählen und die Oberfläche anpassen kann; erwartungskonform, wenn er sich innerhalb der Anwendung einheitlich und wie gewohnte andere Programme verhält (Warenkorb oben rechts, Klick aufs Logo führt zur Startseite).",
+       "kurz": "Steuerbarkeit und Erwartungskonformität",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.3.2-S33",
+        "buch:FS2-1.3.2-S34"
+       ]
+      },
+      {
+       "id": "PB1-8-1-4-K3",
+       "text": "Du kannst die Grundsätze Robustheit gegen Benutzungsfehler, Erlernbarkeit und Benutzerbindung an einem Beispiel erläutern: Robust ist ein Dialog, der Fehleingaben durch die Gestaltung verhindert (Auswahlliste statt Freitext), erkannte Fehler selbst korrigiert oder verständlich zur Behebung führt; erlernbar, wenn er auf unbekannte Funktionen hinweist und gefahrloses Ausprobieren erlaubt; Benutzerbindung entsteht durch eine ansprechende, vertrauenswürdige Bedienung, die zur Nutzung motiviert und Rückmeldungen der Nutzer aufnimmt.",
+       "kurz": "Robustheit, Erlernbarkeit, Benutzerbindung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.3.2-S34"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "Ergänzende Designprinzipien für Dialoge: Das System meldet seinen Zustand informativ zurück, ein Dialog hat einen erkennbaren Anfang und Abschluss, Fehlermeldungen zeigen einen Ausweg, und Aktionen lassen sich rückgängig machen.",
+       "kurz": "Ergänzende Designprinzipien für Dialoge",
+       "quellen": [
+        "buch:FS2-1.3.2"
+       ],
+       "grund": "RK2: Gestaltungsregeln, die sich mit den Dialoggrundsätzen überschneiden"
+      }
      ]
     },
     {
@@ -147,6 +290,15 @@
        "herkunft": [
         "katalog:AP2a.02.02.3"
        ]
+      },
+      {
+       "id": "PB1-8-1-2-K4",
+       "text": "Du kannst erklären, wie Hilfstechniken wie Screenreader, Bildschirmlupe oder Spracherkennung eine Anwendung bedienen: Die GUI-Bibliothek stellt eine Zugänglichkeitsschnittstelle bereit, über die sie Art, Beschriftung und Zustand jedes Bedienelements auslesen und es auslösen können; deshalb brauchen Elemente aussagekräftige Namen, und selbst gezeichnete Elemente ohne diese Angaben bleiben für sie unsichtbar.",
+       "kurz": "Zugänglichkeitsschnittstelle für Hilfstechniken",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.5.4-S241"
+       ]
       }
      ],
      "baut_auf": [
@@ -161,6 +313,15 @@
         "podcast:themen-pb1"
        ],
        "grund": "Der Katalog nennt nur „Barrierefreiheit“; aktueller Rechtsstand als Kür (P30, P35)."
+      },
+      {
+       "text": "Sprachausgabe (Text-to-Speech) wandelt Text in Audio um und hilft Menschen mit Sehbehinderung. Eingebunden wird sie als lokale Bibliothek oder als Clouddienst, der oft bessere Stimmen bietet, aber Internetverbindung, laufende Kosten und Abhängigkeit vom Anbieter mitbringt.",
+       "kurz": "Sprachausgabe (Text-to-Speech) einbinden",
+       "quellen": [
+        "buch:FS2-1.3.4",
+        "buch:FS2-1.4.2"
+       ],
+       "grund": "D8: kein Katalog-Baustein"
       }
      ]
     },
@@ -235,7 +396,9 @@
        "herkunft": [
         "katalog:AP2b.04.14",
         "katalog:AP2b.04.14.1",
-        "katalog:AP2b.04.14.2"
+        "katalog:AP2b.04.14.2",
+        "buch:FS2-1.3.2-S36",
+        "buch:FS2-1.3.4-S43"
        ]
       },
       {
@@ -260,11 +423,101 @@
         "katalog:AP2b.04.15",
         "beleg:2025W-PB1-A3-c"
        ]
+      },
+      {
+       "id": "PB1-8-1-3-K6",
+       "text": "Du kannst die Entwurfsstufen einer Benutzeroberfläche nach Detailgrad unterscheiden: Sketch (schnelle, grobe Ideenskizze), Wireframe (schematische Anordnung der Elemente mit Platzhaltern, ohne Farben und Bilder), Mock-up (realistisches Aussehen mit Farben, Bildern und Blindtext, aber ohne Funktion) und Prototyp (bedienbare Vorabversion).",
+       "kurz": "Entwurfsstufen vom Sketch zum Prototyp",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.4.2-S212",
+        "buch:FS2-1.3.3-S38"
+       ]
+      },
+      {
+       "id": "PB1-8-1-3-K7",
+       "text": "Du kannst erklären, wozu Wireframe und Mock-up im Entwurf dienen: Das Wireframe legt Struktur, Lage und Größe der Elemente und die Benutzerführung fest und dient der Abstimmung im Team, als Einzelansicht oder mit verknüpften Ansichten; das darauf aufbauende Mock-up zeigt dem Kunden das spätere Erscheinungsbild, damit er es früh beurteilen kann und es ins Pflichtenheft einfließt, ist aber noch kein funktionierendes Produkt.",
+       "kurz": "Wireframe und Mock-up: Zweck",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.4.2-S213",
+        "buch:FS-3.4.2-S214"
+       ]
+      },
+      {
+       "id": "PB1-8-1-3-K8",
+       "text": "Du kannst exploratives, experimentelles und evolutionäres Prototyping unterscheiden: Ein explorativer Prototyp klärt mit dem Kunden Anforderungen und Lösungsideen, ein experimenteller erprobt, ob ein technischer Lösungsweg trägt – beide werden danach meist verworfen –, ein evolutionärer wird schrittweise zum fertigen Produkt weiterentwickelt.",
+       "kurz": "Explorativer, experimenteller, evolutionärer Prototyp",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-2.5.1-S132"
+       ]
+      },
+      {
+       "id": "PB1-8-1-3-K9",
+       "text": "Du kannst begründen, warum man Bedienelemente meist mit Layouts (untereinander, nebeneinander, im Raster, als Formular aus Beschriftung und Feld) statt mit festen Koordinaten anordnet: Layouts ordnen die Elemente bei anderer Fenstergröße, Bildschirmauflösung oder Textlänge, etwa nach einer Übersetzung, selbst neu an, während feste Positionen dann Inhalte abschneiden oder Lücken lassen.",
+       "kurz": "Layouts statt fester Koordinaten",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-1.4.2-S52"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-8-4-3"
-     ]
+     ],
+     "kuer": [
+      {
+       "text": "Ein Konsolenprogramm läuft der Reihe nach ab; ein GUI-Programm baut Fenster und Bedienelemente als Objekte auf und wartet dann in einer Ereignisschleife auf Klicks und Eingaben, die es an die zuständigen Behandler weitergibt (ereignisgesteuert). Eine GUI-Bibliothek liefert dafür Bedienelemente (Widgets), Ereignisverarbeitung und Zeichenfunktionen.",
+       "kurz": "Ereignisgesteuerte Programme mit grafischer Oberfläche",
+       "quellen": [
+        "buch:FS-3.5.4",
+        "buch:FS-3.6.2"
+       ],
+       "grund": "D8: GUI-Programmierung ohne Katalog-Baustein"
+      },
+      {
+       "text": "Neben der grafischen Oberfläche (GUI, Standard für Anwender, braucht am meisten Ressourcen) gibt es die Kommandozeile (CLI, sparsam, vor allem für Administration) und Textmenüs (TUI), dazu natürliche Schnittstellen mit Touch und Gesten (NUI) und Sprachschnittstellen (VUI), die sich lohnen, wenn die Hände nicht frei sind.",
+       "kurz": "Arten von Benutzerschnittstellen",
+       "quellen": [
+        "buch:FS2-1.3.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein"
+      },
+      {
+       "text": "Touchbedienung verhält sich technisch wie ein Mausklick, braucht aber größere Bedienelemente und gehört deshalb schon in die Anforderungen. Gestensteuerung verlangt einen Umbau der Oberfläche, Sprachsteuerung wird meist über einen Clouddienst mit Internetverbindung eingebunden.",
+       "kurz": "Touch, Gesten und Sprache in der Oberfläche",
+       "quellen": [
+        "buch:FS2-1.3.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein"
+      },
+      {
+       "text": "Grundelemente einer GUI sind Fenster (Formular, Dialog, Meldung), Tabs, Menüs, Icons und der Cursor; ihr Aussehen übernimmt man meist vom Framework (erwartungskonform, wenig Aufwand) und weicht nur für eine eigene Identität bewusst ab, etwa bei Spielen. Für Text und Farbe gilt: wenige Schriftarten und Farben, Unterstreichung nur für Links.",
+       "kurz": "GUI-Grundelemente und ihre Gestaltung",
+       "quellen": [
+        "buch:FS2-1.3.4"
+       ],
+       "grund": "RK1: Begriffsliste und Einzelregeln ohne eigenes Prinzip"
+      },
+      {
+       "text": "Eine mehrsprachige Oberfläche entsteht entweder als eigene Version je Sprache oder mit allen Sprachen in einer umschaltbaren Anwendung; übersetzt werden alle Beschriftungen und Hilfetexte, gegebenenfalls werden auch Währungen und Maßeinheiten angepasst.",
+       "kurz": "Wege zur mehrsprachigen Oberfläche",
+       "quellen": [
+        "buch:FS2-1.3.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein"
+      },
+      {
+       "text": "Ein Webauftritt gliedert sich in Start-, Haupt- und Unterseiten. Lineare Strukturen passen für feste Abfolgen wie Umfragen, Baumstrukturen sind der vertraute Normalfall, Netzstrukturen eignen sich nur für kleine Auftritte; meist werden sie gemischt.",
+       "kurz": "Navigationsstruktur eines Webauftritts",
+       "quellen": [
+        "buch:FS2-1.4.4"
+       ],
+       "grund": "RK1: Strukturtypen ohne Pflichtbezug im Katalog"
+      }
+     ],
+     "hinweis": "Das Lehrbuch beschreibt den evolutionären Prototyp nur als Mittel, die Akzeptanz der Anwender zu testen und fehlende Funktionen zu finden; kennzeichnend ist, dass er schrittweise zum fertigen Produkt weiterentwickelt wird."
     }
    ]
   }
@@ -341,8 +594,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -351,7 +604,17 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS2-1.3.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.4.1": "Lehrbuch Westermann „IT-Berufe“ FS 3.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.3.2": "Lehrbuch Westermann „IT-Berufe“ FS2 1.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.3.3": "Lehrbuch Westermann „IT-Berufe“ FS2 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.3.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.5.2": "Lehrbuch Westermann „IT-Berufe“ FS2 1.5.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.4.2": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.5.4": "Lehrbuch Westermann „IT-Berufe“ FS 3.5.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.6.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.6.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.4.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -434,6 +697,153 @@
      "wo": [
       "PB1-8-1-1-K2"
      ]
+    },
+    {
+     "thema": "Zur Benutzerschnittstelle gehören alle Teile eines interaktiven Systems, die dem Nutzer Informationen und Bedienelemente",
+     "quellen": [
+      "buch:FS2-1.3.1",
+      "buch:FS-3.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "UX-Design umfasst mehrere Bereiche: Informationsarchitektur (Inhalte und Navigation so ordnen, dass man sie findet), Int",
+     "quellen": [
+      "buch:FS-3.4.1",
+      "buch:FS2-1.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Design Thinking stellt die Bedürfnisse der künftigen Nutzer in den Mittelpunkt und betrachtet das Problem aus ihrer Sich",
+     "quellen": [
+      "buch:FS2-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Je nach Zielgruppe wird eine Oberfläche auch emotional (positiver Gesamteindruck, etwa durch kleine Animationen), klangl",
+     "quellen": [
+      "buch:FS2-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "UX-Tests kosten Zeit und Geld für Testpersonen, Vorbereitung und Auswertung, sparen aber teure Nacharbeit; schon ein kle",
+     "quellen": [
+      "buch:FS2-1.5.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ergänzende Designprinzipien für Dialoge: Das System meldet seinen Zustand informativ zurück, ein Dialog hat einen erkenn",
+     "quellen": [
+      "buch:FS2-1.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Sprachausgabe (Text-to-Speech) wandelt Text in Audio um und hilft Menschen mit Sehbehinderung. Eingebunden wird sie als ",
+     "quellen": [
+      "buch:FS2-1.3.4",
+      "buch:FS2-1.4.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Konsolenprogramm läuft der Reihe nach ab; ein GUI-Programm baut Fenster und Bedienelemente als Objekte auf und warte",
+     "quellen": [
+      "buch:FS-3.5.4",
+      "buch:FS-3.6.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Neben der grafischen Oberfläche (GUI, Standard für Anwender, braucht am meisten Ressourcen) gibt es die Kommandozeile (C",
+     "quellen": [
+      "buch:FS2-1.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Touchbedienung verhält sich technisch wie ein Mausklick, braucht aber größere Bedienelemente und gehört deshalb schon in",
+     "quellen": [
+      "buch:FS2-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Grundelemente einer GUI sind Fenster (Formular, Dialog, Meldung), Tabs, Menüs, Icons und der Cursor; ihr Aussehen überni",
+     "quellen": [
+      "buch:FS2-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine mehrsprachige Oberfläche entsteht entweder als eigene Version je Sprache oder mit allen Sprachen in einer umschaltb",
+     "quellen": [
+      "buch:FS2-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Webauftritt gliedert sich in Start-, Haupt- und Unterseiten. Lineare Strukturen passen für feste Abfolgen wie Umfrag",
+     "quellen": [
+      "buch:FS2-1.4.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-8-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -478,6 +888,78 @@
       "PB1-8-1-3-K2"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-8-1-1-K6",
+     "PB1-8-1-1-K7",
+     "PB1-8-1-1-K8",
+     "PB1-8-1-1-K9",
+     "PB1-8-1-4-K1",
+     "PB1-8-1-4-K2",
+     "PB1-8-1-4-K3",
+     "PB1-8-1-2-K4",
+     "PB1-8-1-3-K6",
+     "PB1-8-1-3-K7",
+     "PB1-8-1-3-K8",
+     "PB1-8-1-3-K9"
+    ],
+    "neue_stichpunkte": [
+     {
+      "id": "PB1-8-1-4",
+      "nach": "PB1-8-1-1",
+      "begruendung": "D5: PB1-8-1-1 hätte sonst 12 Aussagen (5 bestehende, 4 neue, 3 zu den Dialoggrundsätzen)"
+     }
+    ],
+    "d6": [
+     "PB1-8-1-1-K3",
+     "PB1-8-1-1-K5",
+     "PB1-8-1-3-K3",
+     "PB1-8-1-3-K3"
+    ],
+    "kuer": [
+     "PB1-8-1-1",
+     "PB1-8-1-1",
+     "PB1-8-1-1",
+     "PB1-8-1-1",
+     "PB1-8-1-1",
+     "PB1-8-1-4",
+     "PB1-8-1-2",
+     "PB1-8-1-3",
+     "PB1-8-1-3",
+     "PB1-8-1-3",
+     "PB1-8-1-3",
+     "PB1-8-1-3",
+     "PB1-8-1-3"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS-3.4.1#9",
+      "aussage": "AP1-4-3-2-K3",
+      "grund": "E2: Bedienhilfen des Betriebssystems (Kontrast, Vergrößerung, Vorlesen, Tastatur) stehen schon in AP1"
+     },
+     {
+      "kernpunkt": "FS2-1.3.4#1",
+      "aussage": "AP1-8-4-3-K3",
+      "grund": "E2: einheitliche Gestaltungsvorgaben (Corporate Identity) stehen schon in AP1"
+     },
+     {
+      "kernpunkt": "FS2-1.3.4#9",
+      "aussage": "AP1-8-4-3-K4",
+      "grund": "E2: vollständige Tastaturbedienung steht schon in AP1; Icon-Stil ohne eigenes Prinzip"
+     }
+    ],
+    "hinweise": [
+     "PB1-8-1-1",
+     "PB1-8-1-3"
+    ]
    }
   ]
  }

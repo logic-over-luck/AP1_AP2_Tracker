@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-8",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-8.json",
   "karten": [
@@ -227,6 +227,146 @@
       "k": "PB1-8-1-3-K5",
       "vorne": "Wann ist Prototyping in der Konzeption sinnvoll?",
       "hinten": "- wenn Anforderungen unklar sind oder der Kunde sie schwer beschreiben kann\n- bei neuen oder komplexen Benutzeroberflächen\n- wenn die technische Machbarkeit früh geprüft werden soll"
+    },
+    {
+      "id": "PB1-8-1-1-K6-1",
+      "sp": "PB1-8-1-1",
+      "k": "PB1-8-1-1-K6",
+      "vorne": "Warum entscheidet die Ergonomie einer Oberfläche über die Akzeptanz einer Software?",
+      "hinten": "Umständliche Bedienung kostet Zeit und führt zu Fehlern; Nutzer meiden oder umgehen die Software. Nur eine ergonomische Oberfläche wird angenommen und wirksam genutzt."
+    },
+    {
+      "id": "PB1-8-1-1-K6-2",
+      "sp": "PB1-8-1-1",
+      "k": "PB1-8-1-1-K6",
+      "vorne": "Warum sieht die Oberfläche eines Bürgerportals anders aus als die einer Admin-Konsole?",
+      "hinten": "Die Gestaltung richtet sich nach der Nutzergruppe: Bürger jeden Alters ohne Vorwissen brauchen eine einfache, geführte Bedienung; Administratoren arbeiten täglich damit und brauchen eher Übersicht, Tempo und Tastenkürzel."
+    },
+    {
+      "id": "PB1-8-1-1-K7-1",
+      "sp": "PB1-8-1-1",
+      "k": "PB1-8-1-1-K7",
+      "vorne": "Worin unterscheiden sich UI-Design und UX-Design?",
+      "hinten": "- UI-Design: sichtbares Erscheinungsbild (Farben, Schriften, Symbole, Anordnung)\n- UX-Design: das ganze Nutzungserlebnis untersuchen und verbessern, damit das Produkt gut zu benutzen ist; UI ist ein Teil davon"
+    },
+    {
+      "id": "PB1-8-1-1-K7-2",
+      "sp": "PB1-8-1-1",
+      "k": "PB1-8-1-1-K7",
+      "vorne": "Welchen Nutzen hat gute User Experience für ein Unternehmen?",
+      "hinten": "Zufriedene Kunden wechseln seltener und kaufen mehr; es kommen weniger Anfragen beim Support an."
+    },
+    {
+      "id": "PB1-8-1-1-K8-1",
+      "sp": "PB1-8-1-1",
+      "k": "PB1-8-1-1-K8",
+      "vorne": "Was prüft ein Akzeptanztest, was ein UX-Test?",
+      "hinten": "- Akzeptanztest: ob die vereinbarten Anforderungen erfüllt sind (Funktion tut, was sie soll)\n- UX-Test: ob die Bedienung benutzerfreundlich ist (Nutzer finden und verstehen die Funktion)"
+    },
+    {
+      "id": "PB1-8-1-1-K9-1",
+      "sp": "PB1-8-1-1",
+      "k": "PB1-8-1-1-K9",
+      "vorne": "Warum sollen UX-Tests früh und wiederholt stattfinden?",
+      "hinten": "Bedienprobleme lassen sich am Entwurf oder Prototyp noch billig beheben; an fertigem Code wird es teuer. Jede Änderung kann neue Probleme bringen, deshalb wird erneut getestet."
+    },
+    {
+      "id": "PB1-8-1-4-K1-1",
+      "sp": "PB1-8-1-4",
+      "k": "PB1-8-1-4-K1",
+      "vorne": "Ein Formular schlägt das heutige Datum vor und fragt Name und Abteilung nicht ab, weil sie aus der Anmeldung bekannt sind. Welcher Dialoggrundsatz ist umgesetzt?",
+      "hinten": "Aufgabenangemessenheit: nur die nötigen Eingaben, sinnvolle Voreinstellungen."
+    },
+    {
+      "id": "PB1-8-1-4-K1-2",
+      "sp": "PB1-8-1-4",
+      "k": "PB1-8-1-4-K1",
+      "vorne": "Was verlangt der Grundsatz Selbstbeschreibungsfähigkeit? Nenne ein Beispiel.",
+      "hinten": "Der Dialog zeigt jederzeit, wo man ist, was passiert und was erwartet wird – z. B. Fortschrittsanzeige beim Import oder ein Hinweis, welches Pflichtfeld noch fehlt."
+    },
+    {
+      "id": "PB1-8-1-4-K2-1",
+      "sp": "PB1-8-1-4",
+      "k": "PB1-8-1-4-K2",
+      "vorne": "Ein Nutzer kann eine lange Bestellung als Entwurf speichern und am nächsten Tag fortsetzen. Welcher Dialoggrundsatz ist umgesetzt?",
+      "hinten": "Steuerbarkeit: Der Nutzer bestimmt Ablauf und Tempo, kann unterbrechen und fortsetzen."
+    },
+    {
+      "id": "PB1-8-1-4-K2-2",
+      "sp": "PB1-8-1-4",
+      "k": "PB1-8-1-4-K2",
+      "vorne": "Was bedeutet Erwartungskonformität intern und extern?",
+      "hinten": "- intern: innerhalb der Anwendung gleiche Begriffe, Symbole und Positionen\n- extern: Verhalten wie in gewohnten anderen Programmen, z. B. Warenkorb oben rechts"
+    },
+    {
+      "id": "PB1-8-1-4-K3-1",
+      "sp": "PB1-8-1-4",
+      "k": "PB1-8-1-4-K3",
+      "vorne": "Mit welchen drei Mitteln wird ein Dialog robust gegen Benutzungsfehler?",
+      "hinten": "- Fehler durch Gestaltung verhindern (Auswahlliste statt Freitext)\n- erkannte Fehler selbst korrigieren\n- sonst verständlich bei der Behebung helfen"
+    },
+    {
+      "id": "PB1-8-1-4-K3-2",
+      "sp": "PB1-8-1-4",
+      "k": "PB1-8-1-4-K3",
+      "vorne": "Was verlangen die Grundsätze Erlernbarkeit und Benutzerbindung?",
+      "hinten": "- Erlernbarkeit: auf unbekannte Funktionen hinweisen, gefahrloses Ausprobieren erlauben, Seltenes wiedererkennbar gestalten\n- Benutzerbindung: ansprechende, vertrauenswürdige Bedienung, die motiviert und Rückmeldungen der Nutzer aufnimmt"
+    },
+    {
+      "id": "PB1-8-1-2-K4-1",
+      "sp": "PB1-8-1-2",
+      "k": "PB1-8-1-2-K4",
+      "vorne": "Wie kann ein Screenreader die Bedienelemente einer Anwendung vorlesen und bedienen?",
+      "hinten": "Über die Zugänglichkeitsschnittstelle der GUI-Bibliothek: Sie liefert Art, Beschriftung und Zustand jedes Elements und lässt es auslösen."
+    },
+    {
+      "id": "PB1-8-1-2-K4-2",
+      "sp": "PB1-8-1-2",
+      "k": "PB1-8-1-2-K4",
+      "vorne": "Warum braucht eine Schaltfläche, die nur ein Symbol zeigt, trotzdem einen Namen?",
+      "hinten": "Hilfstechniken wie Screenreader lesen den Namen über die Zugänglichkeitsschnittstelle; ohne ihn hört der Nutzer nur „Schaltfläche“ und weiß nicht, was sie tut."
+    },
+    {
+      "id": "PB1-8-1-3-K6-1",
+      "sp": "PB1-8-1-3",
+      "k": "PB1-8-1-3-K6",
+      "vorne": "Bringe in die Reihenfolge und nenne je das Merkmal: Mock-up, Sketch, Prototyp, Wireframe.",
+      "hinten": "1. Sketch – grobe Ideenskizze\n2. Wireframe – schematische Anordnung, keine Gestaltung\n3. Mock-up – realistisches Aussehen, ohne Funktion\n4. Prototyp – bedienbare Vorabversion"
+    },
+    {
+      "id": "PB1-8-1-3-K7-1",
+      "sp": "PB1-8-1-3",
+      "k": "PB1-8-1-3-K7",
+      "vorne": "Wofür setzt man ein Wireframe ein, wofür ein Mock-up?",
+      "hinten": "- Wireframe: Struktur und Benutzerführung im Team abstimmen, ohne Gestaltung\n- Mock-up: dem Kunden das spätere Erscheinungsbild zeigen, Grundlage für Abstimmung und Pflichtenheft"
+    },
+    {
+      "id": "PB1-8-1-3-K7-2",
+      "sp": "PB1-8-1-3",
+      "k": "PB1-8-1-3-K7",
+      "vorne": "Ein Kunde hält das Mock-up für fast fertige Software. Was stellst du klar?",
+      "hinten": "Das Mock-up zeigt nur das Aussehen; es hat keine Funktion. Programmiert wird erst nach der Abstimmung."
+    },
+    {
+      "id": "PB1-8-1-3-K8-1",
+      "sp": "PB1-8-1-3",
+      "k": "PB1-8-1-3-K8",
+      "vorne": "Was unterscheidet explorative, experimentelle und evolutionäre Prototypen?",
+      "hinten": "- explorativ: Anforderungen mit dem Kunden klären\n- experimentell: technischen Lösungsweg erproben\n- evolutionär: wird schrittweise zum fertigen Produkt ausgebaut"
+    },
+    {
+      "id": "PB1-8-1-3-K8-2",
+      "sp": "PB1-8-1-3",
+      "k": "PB1-8-1-3-K8",
+      "vorne": "Welche Prototypen werden meist weggeworfen, welcher nicht?",
+      "hinten": "Explorative und experimentelle Prototypen werden meist verworfen; der evolutionäre wird zum Produkt weiterentwickelt."
+    },
+    {
+      "id": "PB1-8-1-3-K9-1",
+      "sp": "PB1-8-1-3",
+      "k": "PB1-8-1-3-K9",
+      "vorne": "Warum ordnet man Bedienelemente besser mit Layouts als mit festen Koordinaten an?",
+      "hinten": "Layouts ordnen die Elemente bei anderer Fenstergröße, Auflösung oder Textlänge (z. B. nach Übersetzung) selbst neu an; feste Positionen schneiden dann ab oder lassen Lücken."
     }
   ],
   "nicht_abgefragt": [],
@@ -396,6 +536,106 @@
       "id": "PB1-8-1-3-K3-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-8-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.1-S28)"
+    },
+    {
+      "id": "PB1-8-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.1-S28)"
+    },
+    {
+      "id": "PB1-8-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S35)"
+    },
+    {
+      "id": "PB1-8-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S35)"
+    },
+    {
+      "id": "PB1-8-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.2-S102)"
+    },
+    {
+      "id": "PB1-8-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.2-S102)"
+    },
+    {
+      "id": "PB1-8-1-4-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S33)"
+    },
+    {
+      "id": "PB1-8-1-4-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S33)"
+    },
+    {
+      "id": "PB1-8-1-4-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S33, buch:FS2-1.3.2-S34)"
+    },
+    {
+      "id": "PB1-8-1-4-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S33, buch:FS2-1.3.2-S34)"
+    },
+    {
+      "id": "PB1-8-1-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S34)"
+    },
+    {
+      "id": "PB1-8-1-4-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.2-S34)"
+    },
+    {
+      "id": "PB1-8-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.4-S241)"
+    },
+    {
+      "id": "PB1-8-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.4-S241)"
+    },
+    {
+      "id": "PB1-8-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.4.2-S212, buch:FS2-1.3.3-S38)"
+    },
+    {
+      "id": "PB1-8-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.4.2-S213, buch:FS-3.4.2-S214)"
+    },
+    {
+      "id": "PB1-8-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.4.2-S213, buch:FS-3.4.2-S214)"
+    },
+    {
+      "id": "PB1-8-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.1-S132)"
+    },
+    {
+      "id": "PB1-8-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.1-S132)"
+    },
+    {
+      "id": "PB1-8-1-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.4.2-S52)"
     }
   ]
 }
