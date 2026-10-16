@@ -89,12 +89,56 @@
         "katalog:AP2a.03.02.1",
         "katalog:AP2a.03.02.2"
        ]
+      },
+      {
+       "id": "PB1-9-1-1-K5",
+       "text": "Du kannst begründen, warum Tests so früh wie möglich beginnen und das ganze Projekt begleiten: Je später ein Fehler entdeckt wird, desto mehr darauf aufbauende Arbeit muss geändert werden, deshalb steigen die Kosten seiner Behebung von Phase zu Phase und sind im laufenden Betrieb am höchsten.",
+       "kurz": "Frühes Testen und steigende Fehlerkosten",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.9.1-S625"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K6",
+       "text": "Du kannst erklären, warum Tests nur Stichproben sind: Sie zeigen, dass die geprüften Testfälle bestehen, beweisen aber nicht, dass die Software fehlerfrei ist; deshalb werden neben den funktionalen auch die nichtfunktionalen Anforderungen geprüft und Tests durch weitere Prüfverfahren wie Reviews ergänzt.",
+       "kurz": "Tests als Stichprobe ohne Beweis der Fehlerfreiheit",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S626"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-1-5-2",
       "AP1-1-4-3",
       "AP1-3-1-3"
+     ],
+     "kuer": [
+      {
+       "text": "Reifegradmodelle wie CMMI bewerten, wie ausgereift die Abläufe einer Organisation sind: von Stufe 1 (Ergebnisse hängen vom Einsatz Einzelner ab, kaum feste Prozesse) über geregelte, festgelegte und mit Kennzahlen gesteuerte Prozesse bis Stufe 5 (Prozesse werden laufend verbessert); SPICE bewertet Softwareprozesse nach einem ähnlichen Stufenmodell.",
+       "kurz": "Reifegradmodelle CMMI und SPICE",
+       "quellen": [
+        "buch:FS-1.1.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (CMMI/SPICE)"
+      },
+      {
+       "text": "Im betrieblichen Vorschlagswesen reichen Beschäftigte Verbesserungsideen bei einer zentralen Stelle ein, mit Namen oder anonym, und beschreiben Problem, Betroffene, Lösung sowie geschätzte Kosten und Nutzen; gute Vorschläge werden umgesetzt und anerkannt, etwa mit einer Prämie.",
+       "kurz": "Vorschlagswesen für Verbesserungsideen",
+       "quellen": [
+        "buch:FS-2.6.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Vorschlagswesen)"
+      },
+      {
+       "text": "Der KVP verbessert laufend in kleinen Schritten mit allen Beschäftigten; das Innovationsmanagement zielt dagegen auf sprunghafte Neuerungen bei Technik, Produkt, Prozess, Organisation oder Geschäftsmodell, getragen von Spezialisten, Innovationsworkshops oder dem Vorschlagswesen – größerer Nutzen, aber auch mehr Risiko.",
+       "kurz": "KVP gegen Innovationsmanagement",
+       "quellen": [
+        "buch:GS-1.3.3"
+       ],
+       "grund": "D8: Abgrenzung zum Innovationsmanagement ohne Katalog-Baustein (KVP selbst steht in K3)"
+      }
      ]
     },
     {
@@ -205,6 +249,43 @@
        "herkunft": [
         "katalog:AP2a.02.01.2"
        ]
+      },
+      {
+       "id": "PB1-9-1-3-K5",
+       "text": "Du kannst die statischen Prüfverfahren Inspektion, Review, Walkthrough und Audit sowie die werkzeuggestützte statische Codeanalyse unterscheiden: Die Inspektion folgt einem streng festgelegten Ablauf mit einem Gutachterteam, das Review ist weniger formal, beim Walkthrough stellt der Entwickler sein Programm vor und beantwortet spontane Fragen, beim Audit folgen die Fragen einem vorher festgelegten Prüfkatalog; Pair Programming wirkt als fortlaufendes Code-Review.",
+       "kurz": "Inspektion, Review, Walkthrough und Audit",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S628"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K6",
+       "text": "Du kannst statische und dynamische Testverfahren nach Vor- und Nachteilen vergleichen: Statische Prüfungen sind schon vor dem Ausführen möglich, finden einen Fehler direkt an seiner Ursache und prüfen auch Konventionen und Wartbarkeit, entdecken aber keine Laufzeitfehler; dynamische Tests finden Laufzeitfehler und prüfen Zusammenspiel und Zeitverhalten, brauchen aber lauffähigen Code mit Testumgebung und zeigen nur das Fehlverhalten, dessen Ursache erst das Debugging findet.",
+       "kurz": "Statisch gegen dynamisch: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S629"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K7",
+       "text": "Du kannst Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, decken bei lückenhafter Spezifikation aber wenig ab und zeigen nicht, wo der Fehler sitzt; White-Box-Testfälle lokalisieren Fehler im Code und prüfen auch nicht spezifizierte Teile und komplexe Algorithmen gründlich, hängen aber am Code, sind erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden.",
+       "kurz": "Black- und White-Box: Zeitpunkt, Pflege, Fehlerort",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.4.1-S201",
+        "buch:FS-3.8.1-S293"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K8",
+       "text": "Du kannst erklären, warum Black- und White-Box-Test sich nicht ausschließen, sondern meist kombiniert werden, und warum dieselbe Prüfung je nach Blickwinkel als White- oder Black-Box-Test gilt: Wer im Gesamtsystem mit Kenntnis des inneren Aufbaus gezielt eine Komponente ansteuert, testet aus Systemsicht White-Box, für die Komponente selbst ist es ein Black-Box-Test über ihre Schnittstelle.",
+       "kurz": "Black- und White-Box: Kombination und Blickwinkel",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.4.1-S202"
+       ]
       }
      ],
      "baut_auf": [
@@ -222,6 +303,16 @@
         "AP2b.05.03.2.3",
         "AP2a.03.01.3"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Oberflächen testet man manuell (aufwendig, geringe Abdeckung, abhängig vom Tester), per Aufnahme und Wiedergabe (ein Werkzeug zeichnet Bedienschritte auf und spielt sie, auch mit anderen Daten, erneut ab) oder modellbasiert (Testfälle aus einem Ereignis- oder Zustandsmodell, jedes Ereignis bzw. jeder Zustand mindestens einmal, hohe Abdeckung).",
+       "kurz": "Verfahren für GUI-Tests",
+       "quellen": [
+        "buch:FS2-1.5.1"
+       ],
+       "grund": "RK2: GUI-Testverfahren und Werkzeugwahl sind Unterthema der Testverfahren"
       }
      ]
     },
@@ -284,6 +375,15 @@
        "herkunft": [
         "katalog:AP2a.02.01.4"
        ]
+      },
+      {
+       "id": "PB1-9-1-4-K5",
+       "text": "Du kannst Testarten dem Qualitätsmerkmal zuordnen, das sie prüfen: Funktionstest der Funktionalität, Robustheits-, Recovery- und Stresstest der Zuverlässigkeit, Usability-Test der Benutzbarkeit, Performance- und Lasttest der Effizienz, Review und statische Codeanalyse der Wartbarkeit, Portabilitätstest der Übertragbarkeit.",
+       "kurz": "Testarten je Qualitätsmerkmal",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S630"
+       ]
       }
      ],
      "kuer": [
@@ -294,6 +394,22 @@
         "podcast:themen-ap2"
        ],
        "grund": "Offene „z. B.“-Liste in AP2b.05.03.1; nur eine Hinweisquelle (Podcast), daher nach P-BEISPIELLISTE Kür. Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Die Oberfläche wird eigens getestet, weil Benutzer eine Anwendung zuerst nach Aussehen und Verständlichkeit beurteilen; geprüft werden Darstellung (einheitliche Anordnung, Texte, Meldungen, verschiedene Auflösungen, Corporate Design) und Funktion (nur gültige Eingaben, Maus, Tastatur und Touch, Navigation, Hilfe). UI-Tests sind aufwendig, weil sich die Oberfläche oft ändert und kleine Bedienmängel oft größere Umbauten verlangen.",
+       "kurz": "GUI-Test: Zweck, Prüfpunkte, Schwierigkeiten",
+       "quellen": [
+        "buch:FS2-1.5.1"
+       ],
+       "grund": "RK2: GUI-Test ist Unterthema der Teststufen (Prüf-Checklisten)"
+      },
+      {
+       "text": "Vor der Veröffentlichung durchläuft Software oft Testversionen: Alpha (frühe Version mit den Kernfunktionen, intern und mit wenigen Testern), Beta (alle Funktionen, ein Teil der Zielgruppe testet unter realen Bedingungen) und Release Candidate (letzte Testversion, aus der ohne neue Fehler die endgültige Version wird).",
+       "kurz": "Alpha, Beta und Release Candidate",
+       "quellen": [
+        "buch:GS-5.9.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Alpha/Beta/Release Candidate)"
       }
      ]
     },
@@ -370,7 +486,36 @@
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.02.5",
-        "beleg:2025S-PB1-A1-c"
+        "beleg:2025S-PB1-A1-c",
+        "buch:FS-3.8.3-S299"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K6",
+       "text": "Du kannst beschreiben, woher die Testfälle kommen: Zuerst legt ein Testplan Umfang, Ressourcen und die vorrangig zu testenden Bereiche fest; dann werden die Testfälle aus der Anforderungsspezifikation abgeleitet, etwa aus User Stories und ihren Akzeptanzkriterien, und fehlt eine solche Vorgabe, gemeinsam mit Entwicklern und Kunde festgelegt.",
+       "kurz": "Testfälle aus Anforderungen ableiten",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.5.1-S100"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K7",
+       "text": "Du kannst die Dokumente eines Testprozesses drei Gruppen zuordnen: Testkonzept bzw. Testplanung (was, wie, wann und womit getestet wird), Testspezifikation (Testentwurf, Testfälle und Szenarien, Testablauf) und Testberichte (Testprotokoll, Abweichungsbericht, Review- und Audit-Protokolle, Testabschluss- und Abnahmebericht).",
+       "kurz": "Testdokumente: Konzept, Spezifikation, Berichte",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S632",
+        "buch:FS2-4.2.4-S279"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K8",
+       "text": "Du kannst beschreiben, wer bei der Abnahme einer Software was akzeptiert: vertraglich die Vollständigkeit und Qualität der vereinbarten Leistungen und die Einhaltung gesetzlicher Vorgaben, die Benutzer die funktionalen Anforderungen (etwa aus einem Testbetrieb) und nichtfunktionale wie verständliche Handbücher und ausreichende Performance, der künftige Betreiber die technischen Anforderungen, Daten-, Revisions- und IT-Sicherheit sowie vollständige Administrationshandbücher.",
+       "kurz": "Abnahme: vertraglich, Benutzer, Betreiber",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.8.3-S298"
        ]
       }
      ],
@@ -418,7 +563,8 @@
        "kurz": "Benutzerhandbuch gegen Handbuch für Systembetreuer",
        "stufe": 2,
        "herkunft": [
-        "katalog:AP2b.01.13"
+        "katalog:AP2b.01.13",
+        "buch:FS2-4.2.4-S279"
        ]
       },
       {
@@ -428,7 +574,8 @@
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.13.1",
-        "beleg:2021W-PB1-A1-bb"
+        "beleg:2021W-PB1-A1-bb",
+        "buch:FS2-2.5-S212"
        ]
       },
       {
@@ -448,6 +595,108 @@
        "herkunft": [
         "katalog:AP2b.01.13.2"
        ]
+      },
+      {
+       "id": "PB1-9-1-6-K5",
+       "text": "Du kannst Entwicklungsdokumentation und Benutzerdokumentation mit ihren Dokumenten unterscheiden: Zur Entwicklungsdokumentation gehören Projektdokumentation (Auftrag, Pläne, Statusberichte, Lasten- und Pflichtenheft, Abschlussbericht), Systemdokumentation (Anforderungen, Architektur und Schnittstellen, Datenmodelle, kommentierter Quellcode, Versionen) und Testdokumentation; zur Benutzerdokumentation gehören Benutzerhandbuch, Installationsanleitung sowie Schulungs- und Marketingunterlagen.",
+       "kurz": "Entwicklungs- gegen Benutzerdokumentation",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-4.2.4-S278",
+        "buch:GS-5.10.1-S639"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K6",
+       "text": "Du kannst die Gliederung eines Benutzerhandbuchs erstellen: Deckblatt und Inhaltsverzeichnis, Einleitung mit Zweck und Zielgruppe, Installation mit Systemvoraussetzungen, Bedienung der Funktionen und Bedienelemente mit Beispielen und Screenshots, Verhalten bei Fehlern mit Meldungen und Abhilfe, Support- und Kontaktangaben, FAQ und Glossar.",
+       "kurz": "Gliederung eines Benutzerhandbuchs",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-1.6-S105",
+        "buch:FS2-4.2.4-S279",
+        "buch:GS-5.10.1-S640"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K7",
+       "text": "Du kannst ein Benutzerhandbuch nach Qualitätskriterien beurteilen: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig.",
+       "kurz": "Qualitätskriterien eines Benutzerhandbuchs",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-1.6-S106",
+        "buch:FS2-1.6-S107",
+        "buch:GS-5.10.2-S642"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K8",
+       "text": "Du kannst ein gedrucktes Benutzerhandbuch und eine Online-Dokumentation vergleichen: Papier ist ohne Gerät lesbar, verursacht aber Druckkosten, kann verloren gehen, lässt sich nicht nachträglich aktualisieren und enthält keine Videos; die Online-Dokumentation ist schnell aktualisiert, durchsuchbar, multimedial und für alle gleichzeitig verfügbar, setzt aber ein Gerät und einen Zugang voraus.",
+       "kurz": "Gedrucktes Handbuch gegen Online-Dokumentation",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.6-S107"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K9",
+       "text": "Du kannst die Regel anwenden, im Quellcode nur zu kommentieren, was der Code selbst nicht zeigt – warum etwas so gelöst ist, nicht was die Zeile tut –, und einen überflüssigen Kommentar durch sprechende Namen und eine klare Struktur ersetzen, weil jeder Kommentar Zeit kostet und mit dem Code gepflegt werden muss.",
+       "kurz": "Kommentare: Warum statt Was",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-5.10.3-S644",
+        "buch:FS2-2.5-S211"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K10",
+       "text": "Du kannst beschreiben, wie eine Schnittstellendokumentation aus Dokumentationskommentaren im Quellcode erzeugt wird: Vor Klassen und Methoden steht ein besonders gekennzeichneter Kommentar mit Beschreibung und Angaben zu Parametern, Rückgabewert und Ausnahmen, aus dem ein Werkzeug zum Beispiel HTML-Seiten generiert; weil die Beschreibung direkt am Code steht, bleibt sie leichter aktuell.",
+       "kurz": "Dokumentation aus Doku-Kommentaren generieren",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.5-S212"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Wie umfangreich ein Handbuch sein muss, hängt von Software und Benutzern ab: Kleine, selbsterklärende Programme mit Hilfen in der Oberfläche brauchen höchstens eine Kurzanleitung, große Systeme mehrere Bände, etwa ein eigenes für die Administration; ein Handbuch ist ein Nachschlagewerk, keine Pflichtlektüre.",
+       "kurz": "Umfang eines Benutzerhandbuchs",
+       "quellen": [
+        "buch:FS2-1.6"
+       ],
+       "grund": "RK2: Umfang des Handbuchs, Ergänzung zu den Pflicht-Aussagen"
+      },
+      {
+       "text": "Eine Komponente lässt sich mit UML-Diagrammen (Klassen-, Anwendungsfall-, Aktivitätsdiagramm) oft verständlicher beschreiben als mit Quelltext, sofern sie bei Änderungen mitgepflegt werden; zu einer Schnittstelle gehören auch nichtfunktionale Angaben wie Antwortzeit und Durchsatz, Verschlüsselung und Authentifizierung sowie das Verhalten bei fehlerhaften Eingaben oder abgebrochener Übertragung.",
+       "kurz": "Diagramme und Qualitätsangaben in der Komponentendoku",
+       "quellen": [
+        "buch:FS2-2.5"
+       ],
+       "grund": "RK2: Ergänzungen zur Programmdokumentation (K2)"
+      },
+      {
+       "text": "Dokumentation macht Wissen auffindbar, auch wenn die ursprünglichen Entwickler später nicht mehr da sind; sie entsteht deshalb laufend während der Entwicklung und nicht erst am Ende, getrennt nach Zielgruppen.",
+       "kurz": "Dokumentation begleitet die Entwicklung",
+       "quellen": [
+        "buch:GS-5.10.1"
+       ],
+       "grund": "RK2: allgemeiner Zweck der Dokumentation"
+      },
+      {
+       "text": "Vor dem Schreiben legt man fest, welche Dokumente nötig sind (auch gesetzlich), welche Inhalte jede Zielgruppe braucht und in welcher Form sie erscheinen (Druck, PDF, Online-Hilfe); Benutzerdokumentation entsteht oft arbeitsteilig: Entwickler liefern das Fachwissen, technische Redakteure schreiben es für Benutzer verständlich auf. Gute Dokumentation ersetzt aber keine gut bedienbare Oberfläche.",
+       "kurz": "Dokumentation planen und arbeitsteilig erstellen",
+       "quellen": [
+        "buch:GS-5.10.2"
+       ],
+       "grund": "RK2/D8: Planung der Dokumentation, technische Redakteure ohne Katalog-Baustein"
+      },
+      {
+       "text": "Sinnvolle Kommentare sind Lizenzhinweise, Erklärungen schwer verständlicher Stellen, Warnungen, Schnittstellenkommentare für die API-Dokumentation und TODO-Markierungen; Kommentare, die nur den Code nacherzählen, gehören gelöscht. Am gefährlichsten sind veraltete Kommentare, weil sie in die Irre führen – falsche berichtigen oder löschen, auskommentierten Code nach der Fehlersuche entfernen (alte Stände hält die Versionsverwaltung).",
+       "kurz": "Sinnvolle und veraltete Kommentare",
+       "quellen": [
+        "buch:GS-5.10.3"
+       ],
+       "grund": "RK2: Kommentararten und Pflege, Detail zu „Kommentare: Warum statt Was“"
       }
      ]
     }
@@ -760,8 +1009,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -770,7 +1019,17 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-1.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-2.6.3": "Lehrbuch Westermann „IT-Berufe“ FS 2.6.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.3.3": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.5.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.9.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.9.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.6": "Lehrbuch Westermann „IT-Berufe“ FS2 1.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.5": "Lehrbuch Westermann „IT-Berufe“ FS2 2.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.10.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.10.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.10.2": "Lehrbuch Westermann „IT-Berufe“ GS 5.10.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.10.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.10.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -907,6 +1166,127 @@
       "AP1-1-5-2"
      ],
      "notiz": "PDCA anwenden wohnt in AP1; KVP und Kennzahlen in pd2, pd3"
+    },
+    {
+     "thema": "Reifegradmodelle wie CMMI bewerten, wie ausgereift die Abläufe einer Organisation sind: von Stufe 1 (Ergebnisse hängen v",
+     "quellen": [
+      "buch:FS-1.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im betrieblichen Vorschlagswesen reichen Beschäftigte Verbesserungsideen bei einer zentralen Stelle ein, mit Namen oder ",
+     "quellen": [
+      "buch:FS-2.6.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Der KVP verbessert laufend in kleinen Schritten mit allen Beschäftigten; das Innovationsmanagement zielt dagegen auf spr",
+     "quellen": [
+      "buch:GS-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Oberflächen testet man manuell (aufwendig, geringe Abdeckung, abhängig vom Tester), per Aufnahme und Wiedergabe (ein Wer",
+     "quellen": [
+      "buch:FS2-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Oberfläche wird eigens getestet, weil Benutzer eine Anwendung zuerst nach Aussehen und Verständlichkeit beurteilen; ",
+     "quellen": [
+      "buch:FS2-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Vor der Veröffentlichung durchläuft Software oft Testversionen: Alpha (frühe Version mit den Kernfunktionen, intern und ",
+     "quellen": [
+      "buch:GS-5.9.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Wie umfangreich ein Handbuch sein muss, hängt von Software und Benutzern ab: Kleine, selbsterklärende Programme mit Hilf",
+     "quellen": [
+      "buch:FS2-1.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Komponente lässt sich mit UML-Diagrammen (Klassen-, Anwendungsfall-, Aktivitätsdiagramm) oft verständlicher beschre",
+     "quellen": [
+      "buch:FS2-2.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Dokumentation macht Wissen auffindbar, auch wenn die ursprünglichen Entwickler später nicht mehr da sind; sie entsteht d",
+     "quellen": [
+      "buch:GS-5.10.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Vor dem Schreiben legt man fest, welche Dokumente nötig sind (auch gesetzlich), welche Inhalte jede Zielgruppe braucht u",
+     "quellen": [
+      "buch:GS-5.10.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Sinnvolle Kommentare sind Lizenzhinweise, Erklärungen schwer verständlicher Stellen, Warnungen, Schnittstellenkommentare",
+     "quellen": [
+      "buch:GS-5.10.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -986,6 +1366,54 @@
       "PB1-9-1-6-K3"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-9-1-1-K5",
+     "PB1-9-1-1-K6",
+     "PB1-9-1-3-K5",
+     "PB1-9-1-3-K6",
+     "PB1-9-1-3-K7",
+     "PB1-9-1-3-K8",
+     "PB1-9-1-4-K5",
+     "PB1-9-1-5-K6",
+     "PB1-9-1-5-K7",
+     "PB1-9-1-5-K8",
+     "PB1-9-1-6-K5",
+     "PB1-9-1-6-K6",
+     "PB1-9-1-6-K7",
+     "PB1-9-1-6-K8",
+     "PB1-9-1-6-K9",
+     "PB1-9-1-6-K10"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB1-9-1-5-K5",
+     "PB1-9-1-6-K2",
+     "PB1-9-1-6-K1"
+    ],
+    "kuer": [
+     "PB1-9-1-1",
+     "PB1-9-1-1",
+     "PB1-9-1-1",
+     "PB1-9-1-3",
+     "PB1-9-1-4",
+     "PB1-9-1-4",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-6"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [
+     "GS-5.7.3#8"
+    ]
    }
   ]
  }

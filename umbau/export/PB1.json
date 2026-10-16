@@ -5,7 +5,7 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 67,
-  "koennen": 277,
+  "koennen": 293,
   "quellen": {
    "PB1-1.json": "dbef348b14b3f97e",
    "PB1-10.json": "7f9fe6aff5e200c8",
@@ -18,7 +18,7 @@
    "PB1-6.json": "1a9097d9183d0f2a",
    "PB1-7.json": "d0afd5bf94583232",
    "PB1-8.json": "ac011febb597132d",
-   "PB1-9.json": "68c84b8ace44d98e"
+   "PB1-9.json": "e95e786c2f1500db"
   }
  },
  "stichpunkte": [
@@ -2423,6 +2423,16 @@
      "id": "PB1-9-1-1-K4",
      "stufe": 3,
      "kurz": "Kennzahlen zur Messung der Zielerreichung in der Softwareentwicklung festlegen und im Soll-Ist-Vergleich (Berechnung wie in AP1) anwenden, zum Beispiel gefundene Fehler je Release, Anteil bestandener Testfälle, Bearbeitungszeit von Störungen, Verfügbarkeit"
+    },
+    {
+     "id": "PB1-9-1-1-K5",
+     "stufe": 4,
+     "kurz": "begründen, warum Tests so früh wie möglich beginnen und das ganze Projekt begleiten: Je später ein Fehler entdeckt wird, desto mehr darauf aufbauende Arbeit muss geändert werden, deshalb steigen die Kosten seiner Behebung von Phase zu Phase und sind im laufenden Betrieb am höchsten"
+    },
+    {
+     "id": "PB1-9-1-1-K6",
+     "stufe": 2,
+     "kurz": "erklären, warum Tests nur Stichproben sind: Sie zeigen, dass die geprüften Testfälle bestehen, beweisen aber nicht, dass die Software fehlerfrei ist; deshalb werden neben den funktionalen auch die nichtfunktionalen Anforderungen geprüft und Tests durch weitere Prüfverfahren wie Reviews ergänzt"
     }
    ]
   },
@@ -2489,6 +2499,26 @@
      "id": "PB1-9-1-3-K4",
      "stufe": 2,
      "kurz": "den Extremwertetest erklären: mit den kleinsten und größten zulässigen Werten sowie knapp darüber und darunter testen, weil an Grenzen besonders oft Fehler stecken"
+    },
+    {
+     "id": "PB1-9-1-3-K5",
+     "stufe": 2,
+     "kurz": "die statischen Prüfverfahren Inspektion, Review, Walkthrough und Audit sowie die werkzeuggestützte statische Codeanalyse unterscheiden: Die Inspektion folgt einem streng festgelegten Ablauf mit einem Gutachterteam, das Review ist weniger formal, beim Walkthrough stellt der Entwickler sein Programm vor und beantwortet spontane Fragen, beim Audit folgen die Fragen einem vorher festgelegten Prüfkatalog; Pair Programming wirkt als fortlaufendes Code-Review"
+    },
+    {
+     "id": "PB1-9-1-3-K6",
+     "stufe": 2,
+     "kurz": "statische und dynamische Testverfahren nach Vor- und Nachteilen vergleichen: Statische Prüfungen sind schon vor dem Ausführen möglich, finden einen Fehler direkt an seiner Ursache und prüfen auch Konventionen und Wartbarkeit, entdecken aber keine Laufzeitfehler; dynamische Tests finden Laufzeitfehler und prüfen Zusammenspiel und Zeitverhalten, brauchen aber lauffähigen Code mit Testumgebung und zeigen nur das Fehlverhalten, dessen Ursache erst das Debugging findet"
+    },
+    {
+     "id": "PB1-9-1-3-K7",
+     "stufe": 2,
+     "kurz": "Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, decken bei lückenhafter Spezifikation aber wenig ab und zeigen nicht, wo der Fehler sitzt; White-Box-Testfälle lokalisieren Fehler im Code und prüfen auch nicht spezifizierte Teile und komplexe Algorithmen gründlich, hängen aber am Code, sind erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden"
+    },
+    {
+     "id": "PB1-9-1-3-K8",
+     "stufe": 2,
+     "kurz": "erklären, warum Black- und White-Box-Test sich nicht ausschließen, sondern meist kombiniert werden, und warum dieselbe Prüfung je nach Blickwinkel als White- oder Black-Box-Test gilt: Wer im Gesamtsystem mit Kenntnis des inneren Aufbaus gezielt eine Komponente ansteuert, testet aus Systemsicht White-Box, für die Komponente selbst ist es ein Black-Box-Test über ihre Schnittstelle"
     }
    ]
   },
@@ -2525,6 +2555,11 @@
      "id": "PB1-9-1-4-K4",
      "stufe": 4,
      "kurz": "beurteilen, welche Teststufen ein Testkonzept für eine Anwendung vorsehen muss, und begründen, warum keine Stufe eine andere ersetzt"
+    },
+    {
+     "id": "PB1-9-1-4-K5",
+     "stufe": 2,
+     "kurz": "Testarten dem Qualitätsmerkmal zuordnen, das sie prüfen: Funktionstest der Funktionalität, Robustheits-, Recovery- und Stresstest der Zuverlässigkeit, Usability-Test der Benutzbarkeit, Performance- und Lasttest der Effizienz, Review und statische Codeanalyse der Wartbarkeit, Portabilitätstest der Übertragbarkeit"
     }
    ]
   },
@@ -2567,6 +2602,21 @@
      "id": "PB1-9-1-5-K5",
      "stufe": 3,
      "kurz": "ein Abnahmeprotokoll für eine Software erstellen (Inhalte wie in AP1-1-4-2), zusätzlich mit Softwareversion und Ergebnis der Abnahmetests, und es im Abschlussprotokoll mit Soll-Ist-Vergleich und Erfahrungen zusammenführen"
+    },
+    {
+     "id": "PB1-9-1-5-K6",
+     "stufe": 2,
+     "kurz": "beschreiben, woher die Testfälle kommen: Zuerst legt ein Testplan Umfang, Ressourcen und die vorrangig zu testenden Bereiche fest; dann werden die Testfälle aus der Anforderungsspezifikation abgeleitet, etwa aus User Stories und ihren Akzeptanzkriterien, und fehlt eine solche Vorgabe, gemeinsam mit Entwicklern und Kunde festgelegt"
+    },
+    {
+     "id": "PB1-9-1-5-K7",
+     "stufe": 2,
+     "kurz": "die Dokumente eines Testprozesses drei Gruppen zuordnen: Testkonzept bzw. Testplanung (was, wie, wann und womit getestet wird), Testspezifikation (Testentwurf, Testfälle und Szenarien, Testablauf) und Testberichte (Testprotokoll, Abweichungsbericht, Review- und Audit-Protokolle, Testabschluss- und Abnahmebericht)"
+    },
+    {
+     "id": "PB1-9-1-5-K8",
+     "stufe": 2,
+     "kurz": "beschreiben, wer bei der Abnahme einer Software was akzeptiert: vertraglich die Vollständigkeit und Qualität der vereinbarten Leistungen und die Einhaltung gesetzlicher Vorgaben, die Benutzer die funktionalen Anforderungen (etwa aus einem Testbetrieb) und nichtfunktionale wie verständliche Handbücher und ausreichende Performance, der künftige Betreiber die technischen Anforderungen, Daten-, Revisions- und IT-Sicherheit sowie vollständige Administrationshandbücher"
     }
    ]
   },
@@ -2603,6 +2653,36 @@
      "id": "PB1-9-1-6-K4",
      "stufe": 3,
      "kurz": "für einen wiederkehrenden Vorgang eine Checkliste erstellen, zum Beispiel für die Auslieferung eines Releases oder die Einrichtung einer Testumgebung"
+    },
+    {
+     "id": "PB1-9-1-6-K5",
+     "stufe": 2,
+     "kurz": "Entwicklungsdokumentation und Benutzerdokumentation mit ihren Dokumenten unterscheiden: Zur Entwicklungsdokumentation gehören Projektdokumentation (Auftrag, Pläne, Statusberichte, Lasten- und Pflichtenheft, Abschlussbericht), Systemdokumentation (Anforderungen, Architektur und Schnittstellen, Datenmodelle, kommentierter Quellcode, Versionen) und Testdokumentation; zur Benutzerdokumentation gehören Benutzerhandbuch, Installationsanleitung sowie Schulungs- und Marketingunterlagen"
+    },
+    {
+     "id": "PB1-9-1-6-K6",
+     "stufe": 3,
+     "kurz": "die Gliederung eines Benutzerhandbuchs erstellen: Deckblatt und Inhaltsverzeichnis, Einleitung mit Zweck und Zielgruppe, Installation mit Systemvoraussetzungen, Bedienung der Funktionen und Bedienelemente mit Beispielen und Screenshots, Verhalten bei Fehlern mit Meldungen und Abhilfe, Support- und Kontaktangaben, FAQ und Glossar"
+    },
+    {
+     "id": "PB1-9-1-6-K7",
+     "stufe": 4,
+     "kurz": "ein Benutzerhandbuch nach Qualitätskriterien beurteilen: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig"
+    },
+    {
+     "id": "PB1-9-1-6-K8",
+     "stufe": 2,
+     "kurz": "ein gedrucktes Benutzerhandbuch und eine Online-Dokumentation vergleichen: Papier ist ohne Gerät lesbar, verursacht aber Druckkosten, kann verloren gehen, lässt sich nicht nachträglich aktualisieren und enthält keine Videos; die Online-Dokumentation ist schnell aktualisiert, durchsuchbar, multimedial und für alle gleichzeitig verfügbar, setzt aber ein Gerät und einen Zugang voraus"
+    },
+    {
+     "id": "PB1-9-1-6-K9",
+     "stufe": 3,
+     "kurz": "die Regel anwenden, im Quellcode nur zu kommentieren, was der Code selbst nicht zeigt – warum etwas so gelöst ist, nicht was die Zeile tut –, und einen überflüssigen Kommentar durch sprechende Namen und eine klare Struktur ersetzen, weil jeder Kommentar Zeit kostet und mit dem Code gepflegt werden muss"
+    },
+    {
+     "id": "PB1-9-1-6-K10",
+     "stufe": 2,
+     "kurz": "beschreiben, wie eine Schnittstellendokumentation aus Dokumentationskommentaren im Quellcode erzeugt wird: Vor Klassen und Methoden steht ein besonders gekennzeichneter Kommentar mit Beschreibung und Angaben zu Parametern, Rückgabewert und Ausnahmen, aus dem ein Werkzeug zum Beispiel HTML-Seiten generiert; weil die Beschreibung direkt am Code steht, bleibt sie leichter aktuell"
     }
    ]
   }

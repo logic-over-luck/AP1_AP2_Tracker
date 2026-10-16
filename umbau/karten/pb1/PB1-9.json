@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-9",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-9.json",
   "karten": [
@@ -325,6 +325,237 @@
       "k": "PB1-9-1-6-K4",
       "vorne": "Wozu dienen Checklisten?",
       "hinten": "Bei wiederkehrenden Vorgängen wird kein Schritt vergessen; der Ablauf ist einheitlich, und das Abhaken weist nach, was erledigt ist."
+    },
+    {
+      "id": "PB1-9-1-1-K5-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K5",
+      "vorne": "Warum sollen Tests schon zu Projektbeginn starten und nicht erst nach der Programmierung?",
+      "hinten": "Weil die Kosten der Fehlerbehebung steigen, je später ein Fehler gefunden wird: früh wird nur ein Dokument korrigiert, spät müssen Entwurf, Code und Tests geändert werden."
+    },
+    {
+      "id": "PB1-9-1-1-K5-2",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K5",
+      "vorne": "In welcher Phase ist die Behebung eines Fehlers am teuersten – und warum?",
+      "hinten": "Im laufenden Betrieb: Neben der Änderung von Entwurf, Code und Tests kommen Ausfälle beim Kunden, Support und ein Update für alle Installationen dazu."
+    },
+    {
+      "id": "PB1-9-1-1-K6-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K6",
+      "vorne": "Alle 120 Testfälle einer Anwendung sind bestanden. Ist die Software damit fehlerfrei?",
+      "hinten": "Nein. Tests sind Stichproben: Sie zeigen nur, dass diese 120 Fälle funktionieren. Fehler bei nicht getesteten Eingaben oder Abläufen bleiben möglich."
+    },
+    {
+      "id": "PB1-9-1-1-K6-2",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K6",
+      "vorne": "Welche zwei Folgerungen zieht man daraus, dass Tests keine Fehlerfreiheit beweisen?",
+      "hinten": "- auch nichtfunktionale Anforderungen prüfen (z. B. Antwortzeit, Bedienbarkeit)\n- Tests durch weitere Prüfverfahren wie Reviews ergänzen"
+    },
+    {
+      "id": "PB1-9-1-3-K5-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K5",
+      "vorne": "Worin unterscheiden sich Walkthrough und Audit?",
+      "hinten": "Bei beiden stellt der Entwickler sein Programm vor.\n- **Walkthrough:** Gutachter fragen spontan, kaum Struktur\n- **Audit:** Prüfer arbeiten eine feste Fragenliste ab"
+    },
+    {
+      "id": "PB1-9-1-3-K5-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K5",
+      "vorne": "Ordne nach Formalität (streng → locker): Review, Inspektion, Walkthrough.",
+      "hinten": "Inspektion (fester Ablauf, Gutachterteam) → Review (weniger formal) → Walkthrough (Vorstellung mit spontanen Fragen)."
+    },
+    {
+      "id": "PB1-9-1-3-K5-3",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K5",
+      "vorne": "Warum gilt Pair Programming als Form des Code-Reviews?",
+      "hinten": "Während einer programmiert, prüft der zweite den Code laufend mit – der Code wird also ständig von einer zweiten Person begutachtet."
+    },
+    {
+      "id": "PB1-9-1-3-K6-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K6",
+      "vorne": "Nenne je zwei Vorteile statischer und dynamischer Testverfahren.",
+      "hinten": "- **statisch:** früh möglich, Fehler direkt an der Ursache, prüft auch Konventionen und Wartbarkeit\n- **dynamisch:** findet Laufzeitfehler, prüft Zusammenspiel und Zeitverhalten"
+    },
+    {
+      "id": "PB1-9-1-3-K6-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K6",
+      "vorne": "Welche Fehler findet ein statisches Verfahren grundsätzlich nicht?",
+      "hinten": "Fehler, die erst beim Ausführen entstehen (Laufzeitfehler), z. B. ein Absturz durch fehlenden Speicher oder ein falsches Zeitverhalten."
+    },
+    {
+      "id": "PB1-9-1-3-K7-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K7",
+      "vorne": "Eine Methode wird intern umgebaut, die Anforderungen bleiben gleich. Welche Testfälle müssen überprüft werden – Black-Box oder White-Box?",
+      "hinten": "Die **White-Box**-Testfälle: Sie hängen am Code, die bisher erreichte Überdeckung ist nicht mehr gesichert. Black-Box-Testfälle bleiben gültig, solange die Spezifikation gleich bleibt."
+    },
+    {
+      "id": "PB1-9-1-3-K7-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K7",
+      "vorne": "Nenne je einen Nachteil von Black-Box- und White-Box-Test.",
+      "hinten": "- **Black-Box:** zeigt nicht, wo der Fehler im Code liegt; Lücken bei ungenauer Spezifikation\n- **White-Box:** an den Code gebunden, nach jeder Änderung anzupassen, erst mit fertigem Code vollständig"
+    },
+    {
+      "id": "PB1-9-1-3-K8-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K8",
+      "vorne": "Warum kann derselbe Test einmal als White-Box- und einmal als Black-Box-Test gelten?",
+      "hinten": "Es kommt auf den Blickwinkel an: Für das ganze System gesehen nutzt der Test Wissen über den inneren Aufbau (White-Box); für die angesprochene Komponente prüft er nur deren Schnittstelle (Black-Box)."
+    },
+    {
+      "id": "PB1-9-1-3-K8-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K8",
+      "vorne": "Warum setzt man Black- und White-Box-Test meist gemeinsam ein?",
+      "hinten": "Black-Box findet fehlende Funktionen gegenüber den Anforderungen, White-Box findet ungetesteten Code und lokalisiert Fehler – erst zusammen ergibt sich eine gute Abdeckung."
+    },
+    {
+      "id": "PB1-9-1-4-K5-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K5",
+      "vorne": "Welches Qualitätsmerkmal prüfen Robustheits-, Recovery- und Stresstest?",
+      "hinten": "Die **Zuverlässigkeit**: Verhalten bei Fehleingaben, Wiederanlauf nach Absturz, Verhalten über der Belastungsgrenze."
+    },
+    {
+      "id": "PB1-9-1-4-K5-2",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K5",
+      "vorne": "Mit welcher Testart prüfst du die Wartbarkeit, mit welcher die Übertragbarkeit?",
+      "hinten": "- **Wartbarkeit:** Review bzw. statische Codeanalyse\n- **Übertragbarkeit:** Portabilitätstest"
+    },
+    {
+      "id": "PB1-9-1-5-K6-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K6",
+      "vorne": "Woraus leitet man Testfälle ab, wenn agil mit User Stories gearbeitet wird?",
+      "hinten": "Aus den **Akzeptanzkriterien** der User Stories: Jedes Kriterium ergibt mindestens einen Testfall."
+    },
+    {
+      "id": "PB1-9-1-5-K6-2",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K6",
+      "vorne": "Was legt der Testplan fest, bevor Testfälle geschrieben werden?",
+      "hinten": "Umfang des Tests, benötigte Ressourcen (Personen, Umgebung, Zeit) und welche Bereiche vorrangig getestet werden."
+    },
+    {
+      "id": "PB1-9-1-5-K7-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K7",
+      "vorne": "Nenne die drei Gruppen von Testdokumenten mit je einem Beispiel.",
+      "hinten": "- **Testkonzept/Testplanung:** z. B. Testplan\n- **Testspezifikation:** z. B. Testfälle\n- **Testberichte:** z. B. Testprotokoll, Abweichungsbericht, Testabschlussbericht"
+    },
+    {
+      "id": "PB1-9-1-5-K7-2",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K7",
+      "vorne": "Zu welcher Gruppe gehört ein Abweichungsbericht, und was hält er fest?",
+      "hinten": "Zu den **Testberichten**: Er beschreibt eine beim Test gefundene Abweichung vom erwarteten Ergebnis, damit sie behoben und nachgetestet werden kann."
+    },
+    {
+      "id": "PB1-9-1-5-K8-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K8",
+      "vorne": "Welche drei Seiten akzeptieren bei der Abnahme einer Software – mit je einem Prüfpunkt?",
+      "hinten": "- **vertraglich:** Vollständigkeit der vereinbarten Leistungen\n- **Benutzer:** funktionale Anforderungen erfüllt (z. B. im Testbetrieb)\n- **Betreiber:** IT-Sicherheit, Administrationshandbücher"
+    },
+    {
+      "id": "PB1-9-1-5-K8-2",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K8",
+      "vorne": "Was prüft der künftige Betreiber bei der Abnahme einer Software?",
+      "hinten": "Technische Anforderungen, Daten- und Revisionssicherheit, IT-Sicherheit und die Vollständigkeit der Administrationshandbücher."
+    },
+    {
+      "id": "PB1-9-1-6-K5-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K5",
+      "vorne": "Ordne zu – Entwicklungs- oder Benutzerdokumentation: Pflichtenheft, Installationsanleitung, Datenmodell, Schulungsunterlagen.",
+      "hinten": "- **Entwicklung:** Pflichtenheft (Projektdoku), Datenmodell (Systemdoku)\n- **Benutzer:** Installationsanleitung, Schulungsunterlagen"
+    },
+    {
+      "id": "PB1-9-1-6-K5-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K5",
+      "vorne": "Aus welchen drei Teilen besteht die Entwicklungsdokumentation?",
+      "hinten": "Projektdokumentation, Systemdokumentation und Testdokumentation."
+    },
+    {
+      "id": "PB1-9-1-6-K6-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K6",
+      "vorne": "Nenne sechs Gliederungspunkte eines Benutzerhandbuchs.",
+      "hinten": "- Inhaltsverzeichnis\n- Einleitung (Zweck, Zielgruppe)\n- Installation mit Systemvoraussetzungen\n- Bedienung mit Beispielen und Screenshots\n- Fehlerbehandlung mit Meldungen und Abhilfe\n- Support/Kontakt, FAQ, Glossar"
+    },
+    {
+      "id": "PB1-9-1-6-K6-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K6",
+      "vorne": "Was gehört in den Abschnitt „Fehlerbehandlung“ eines Benutzerhandbuchs?",
+      "hinten": "Die möglichen Fehlermeldungen mit ihrer Bedeutung und was der Benutzer jeweils tun kann (Abhilfe), notfalls der Verweis auf den Support."
+    },
+    {
+      "id": "PB1-9-1-6-K7-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K7",
+      "vorne": "Warum ist ein schwer verständliches Handbuch für den Hersteller teuer?",
+      "hinten": "Benutzer finden die Antwort nicht und wenden sich an den Support – jede vermeidbare Anfrage kostet Zeit und Geld."
+    },
+    {
+      "id": "PB1-9-1-6-K7-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K7",
+      "vorne": "Nenne vier Kriterien, an denen du ein gutes Benutzerhandbuch erkennst.",
+      "hinten": "- verständlich für die Zielgruppe (Glossar)\n- übersichtlich, keine Textwüsten\n- an den Aufgaben der Benutzer ausgerichtet\n- aktuell, widerspruchsfrei und vollständig"
+    },
+    {
+      "id": "PB1-9-1-6-K8-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K8",
+      "vorne": "Nenne je zwei Vorteile eines gedruckten Handbuchs und einer Online-Dokumentation.",
+      "hinten": "- **gedruckt:** ohne Gerät lesbar, auch bei Netz- oder Systemausfall nutzbar\n- **online:** schnell aktualisierbar, durchsuchbar (auch multimedial, für viele gleichzeitig)"
+    },
+    {
+      "id": "PB1-9-1-6-K8-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K8",
+      "vorne": "Eine Software bekommt jeden Monat ein Update. Gedrucktes Handbuch oder Online-Dokumentation? Begründe.",
+      "hinten": "Online-Dokumentation: Sie lässt sich mit jedem Update sofort anpassen; ein gedrucktes Handbuch wäre nach kurzer Zeit veraltet."
+    },
+    {
+      "id": "PB1-9-1-6-K9-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K9",
+      "vorne": "Verbessere: `int t = 30; // Tage bis zur Mahnung`",
+      "hinten": "Sprechenden Namen statt Kommentar: `int tageBisMahnung = 30;` – der Kommentar wird überflüssig."
+    },
+    {
+      "id": "PB1-9-1-6-K9-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K9",
+      "vorne": "Was soll ein Kommentar im Quellcode erklären, was nicht?",
+      "hinten": "Erklären, **warum** etwas so gelöst ist (Gründe, Annahmen, Vorgaben). Nicht nacherzählen, **was** der Code tut – das sollen Namen und Struktur zeigen."
+    },
+    {
+      "id": "PB1-9-1-6-K10-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K10",
+      "vorne": "Wie entsteht eine generierte Schnittstellendokumentation?",
+      "hinten": "Über Klassen und Methoden stehen Dokumentationskommentare (Beschreibung, Parameter, Rückgabewert, Ausnahmen); ein Werkzeug liest sie aus dem Quellcode und erzeugt z. B. HTML-Seiten."
+    },
+    {
+      "id": "PB1-9-1-6-K10-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K10",
+      "vorne": "Welchen Vorteil hat es, die Dokumentation aus Kommentaren im Code zu generieren?",
+      "hinten": "Beschreibung und Code stehen beieinander – wer den Code ändert, passt den Kommentar gleich mit an, die Dokumentation bleibt aktuell."
     }
   ],
   "nicht_abgefragt": [],
@@ -584,6 +815,171 @@
       "id": "PB1-9-1-6-K2-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S625)"
+    },
+    {
+      "id": "PB1-9-1-1-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S625)"
+    },
+    {
+      "id": "PB1-9-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626)"
+    },
+    {
+      "id": "PB1-9-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626)"
+    },
+    {
+      "id": "PB1-9-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S628)"
+    },
+    {
+      "id": "PB1-9-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S628)"
+    },
+    {
+      "id": "PB1-9-1-3-K5-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S628)"
+    },
+    {
+      "id": "PB1-9-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S629)"
+    },
+    {
+      "id": "PB1-9-1-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S629)"
+    },
+    {
+      "id": "PB1-9-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S201, buch:FS-3.8.1-S293)"
+    },
+    {
+      "id": "PB1-9-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S201, buch:FS-3.8.1-S293)"
+    },
+    {
+      "id": "PB1-9-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S202)"
+    },
+    {
+      "id": "PB1-9-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S202)"
+    },
+    {
+      "id": "PB1-9-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S630)"
+    },
+    {
+      "id": "PB1-9-1-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S630)"
+    },
+    {
+      "id": "PB1-9-1-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.1-S100)"
+    },
+    {
+      "id": "PB1-9-1-5-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.1-S100)"
+    },
+    {
+      "id": "PB1-9-1-5-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S632, buch:FS2-4.2.4-S279)"
+    },
+    {
+      "id": "PB1-9-1-5-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S632, buch:FS2-4.2.4-S279)"
+    },
+    {
+      "id": "PB1-9-1-5-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.3-S298)"
+    },
+    {
+      "id": "PB1-9-1-5-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.3-S298)"
+    },
+    {
+      "id": "PB1-9-1-6-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.4-S278, buch:GS-5.10.1-S639)"
+    },
+    {
+      "id": "PB1-9-1-6-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.4-S278, buch:GS-5.10.1-S639)"
+    },
+    {
+      "id": "PB1-9-1-6-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S105, buch:FS2-4.2.4-S279, buch:GS-5.10.1-S640)"
+    },
+    {
+      "id": "PB1-9-1-6-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S105, buch:FS2-4.2.4-S279, buch:GS-5.10.1-S640)"
+    },
+    {
+      "id": "PB1-9-1-6-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S106, buch:FS2-1.6-S107, buch:GS-5.10.2-S642)"
+    },
+    {
+      "id": "PB1-9-1-6-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S106, buch:FS2-1.6-S107, buch:GS-5.10.2-S642)"
+    },
+    {
+      "id": "PB1-9-1-6-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S107)"
+    },
+    {
+      "id": "PB1-9-1-6-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S107)"
+    },
+    {
+      "id": "PB1-9-1-6-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.10.3-S644, buch:FS2-2.5-S211)"
+    },
+    {
+      "id": "PB1-9-1-6-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.10.3-S644, buch:FS2-2.5-S211)"
+    },
+    {
+      "id": "PB1-9-1-6-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.5-S212)"
+    },
+    {
+      "id": "PB1-9-1-6-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.5-S212)"
     }
   ]
 }
