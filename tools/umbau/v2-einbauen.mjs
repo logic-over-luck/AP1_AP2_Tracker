@@ -179,6 +179,20 @@ for (const d of patch.d6 ?? []) {
   protokoll.d6.push(d.aussage);
 }
 
+// ---------- schon in einem früheren Raum abgedeckt (E2): Kernpunkt → bestehende Aussage dort ----------
+const alleAussagen = new Set();
+for (const r of readdirSync('umbau/lernplan')) for (const f of readdirSync(`umbau/lernplan/${r}`).filter((x) => x.endsWith('.json'))) {
+  const l = f === `${ORDNER}.json` ? lp : JSON.parse(readFileSync(`umbau/lernplan/${r}/${f}`, 'utf8'));
+  for (const tb of l.themenbloecke) for (const s of tb.stichpunkte) for (const k of s.koennen) alleAussagen.add(k.id);
+}
+for (const a of patch.abgedeckt ?? []) {
+  if (!alleAussagen.has(a.aussage)) { F(`abgedeckt: Aussage ${a.aussage} gibt es nicht`); continue; }
+  const x = kernpunkt(a.kernpunkt);
+  if (x) setzeStatus(x.kp, 'aussage', a.aussage);
+  protokoll.abgedeckt ??= [];
+  protokoll.abgedeckt.push({ kernpunkt: a.kernpunkt, aussage: a.aussage, grund: a.grund ?? '' });
+}
+
 // ---------- Kür (D8) ----------
 lp.meta.hinweisquellen ??= {};
 lp.meta.hinweisabgleich ??= { stand: HEUTE, umfang: 'ganzer Ordner', themen: [] };
