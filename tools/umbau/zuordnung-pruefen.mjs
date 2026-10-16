@@ -120,8 +120,10 @@ for (const p of index.pruefungen) {
     const zaehlend = fachlich.length ? fachlich : ops;
     let stufe = zaehlend.length ? Math.max(...zaehlend.map((o) => opStufe[o] ?? 0)) : null;
     if (z3bStufe && ops.length && !fachlich.length) {
-      if (!(t.aufgabentyp in z3bStufe)) fehler.push(`${t.id}: Aufgabentyp „${t.aufgabentyp}“ hat keine Stufe in Z3b (regelwerk.json)`);
-      else stufe = z3bStufe[t.aufgabentyp];
+      // Rechnen = Stufe 3 (P46), auch wenn die Abschrift „eintrag“ sagt, die Zuordnung aber typ „berechnen“ (Datum, Frist, Anspruch)
+      const art = e.typ === 'berechnen' ? 'rechnen' : t.aufgabentyp;
+      if (!(art in z3bStufe)) fehler.push(`${t.id}: Aufgabentyp „${art}“ hat keine Stufe in Z3b (regelwerk.json)`);
+      else stufe = z3bStufe[art];
     }
     for (const bid of e.bausteine) {
       const gueltig = R.gueltig.has(bid);
