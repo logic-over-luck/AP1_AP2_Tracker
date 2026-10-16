@@ -86,6 +86,30 @@
                 "katalog:AP1.04.03.3",
                 "katalog:AP1.03.01.3.4"
               ]
+            },
+            {
+              "id": "AP1-8-1-1-K8",
+              "text": "Du kannst Entwicklungs- und Laufzeitumgebung unterscheiden: Zum Entwickeln brauchst du den Compiler und weitere Werkzeuge, zum Ausführen genügt auf dem Rechner des Anwenders die Laufzeitumgebung aus virtueller Maschine und Standardbibliothek.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.1-S215"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K9",
+              "text": "Du kannst die Wahl zwischen mehreren integrierten Entwicklungsumgebungen begründen: Lizenz und Kosten, unterstützte Betriebssysteme, Erweiterbarkeit durch Plug-ins (zum Beispiel für weitere Sprachen oder einen GUI-Designer) und ein Funktionsumfang, der zum Einsatzzweck passt.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:FS-3.5.1-S216"
+              ]
+            },
+            {
+              "id": "AP1-8-1-1-K10",
+              "text": "Du kannst kompilierte und interpretierte Programme bei der Weitergabe vergleichen: Ein kompiliertes Programm läuft ohne Compiler, aber nur auf der Plattform, für die es übersetzt wurde; ein interpretiertes läuft auf jeder Plattform, auf der ein passender Interpreter installiert ist, und wird dafür meist etwas langsamer ausgeführt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.6.4-S544"
+              ]
             }
           ],
           "grenzen": [],
@@ -96,6 +120,27 @@
                 "podcast:themen-ap1"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Eine Programmiersprache ist eine künstliche, formale Sprache mit festen Regeln (Syntax), festgelegtem Zeichensatz und reservierten Schlüsselwörtern wie if, while oder return, die man nicht als eigene Namen vergeben darf; der in ihr geschriebene, für Menschen lesbare Text heißt Quelltext.",
+              "quellen": [
+                "buch:GS-5.6.1"
+              ],
+              "grund": "RK2: Grundbegriff ohne eigenen Katalog-Baustein; Schlüsselwörter sind Sprachdetail"
+            },
+            {
+              "text": "Sprachgenerationen: Maschinensprache (1.), Assembler (2.), höhere prozedurale Sprachen (3.) und deklarative Sprachen wie SQL (4.); die Einteilung spielt heute kaum noch eine Rolle.",
+              "quellen": [
+                "buch:GS-5.6.2"
+              ],
+              "grund": "D8: kein Katalog-Baustein (Sprachgenerationen)"
+            },
+            {
+              "text": "Interpretierte Sprachen bieten oft einen interaktiven Modus: eine Anweisung eingeben und sofort das Ergebnis sehen – praktisch zum Ausprobieren; größere Programme speichert man als Datei und startet sie über die Konsole oder die IDE.",
+              "quellen": [
+                "buch:GS-5.7.1"
+              ],
+              "grund": "RK2: Ausführungsweg ohne Prinzip"
             }
           ]
         },
@@ -166,6 +211,23 @@
               "herkunft": [
                 "beleg:2026F-A4-a"
               ]
+            },
+            {
+              "id": "AP1-8-1-2-K7",
+              "text": "Du kannst Abstraktion beim Bilden einer Klasse erklären: In die Klasse kommen nur die gemeinsamen Eigenschaften und Methoden gleichartiger Objekte, die für den Zweck des Programms wichtig sind; welche das sind, hängt vom Einsatz ab.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.3.2-S184"
+              ]
+            },
+            {
+              "id": "AP1-8-1-2-K8",
+              "text": "Du kannst erklären, was ein Konstruktor ist: eine besondere Methode, die beim Erzeugen eines Objekts automatisch aufgerufen wird und seine Attribute mit Anfangswerten belegt, zum Beispiel mit den Werten, die beim Erzeugen übergeben werden.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.3-S231",
+                "buch:FS-3.6.1-S251"
+              ]
             }
           ],
           "grenzen": [
@@ -180,7 +242,23 @@
               ]
             }
           ],
-          "hinweis": "Die Musterlösung zu 2026F-A4-a fehlt; K6 folgt der Aufgabenstellung."
+          "hinweis": "Die Musterlösung zu 2026F-A4-a fehlt; K6 folgt der Aufgabenstellung. Das Lehrbuch (FS 3.6.1) stellt __init__ als private Methode dar; richtig ist: Namen mit doppeltem Unterstrich vorn und hinten sind Spezialmethoden, nicht privat.",
+          "kuer": [
+            {
+              "text": "Selbstreferenz: In einer Methode spricht man das eigene Objekt über einen Verweis wie this an, zum Beispiel um ein Attribut vom gleichnamigen Parameter zu unterscheiden (this.name = name).",
+              "quellen": [
+                "buch:FS-3.5.3"
+              ],
+              "grund": "RK2: sprachspezifisch (Selbstreferenz)"
+            },
+            {
+              "text": "In Python heißt die Selbstreferenz self und steht ausdrücklich als erster Parameter jeder Methode; Sichtbarkeit wird dort nicht über Schlüsselwörter festgelegt, sondern über Namenskonventionen (_name als Hinweis auf geschützt, __name privat).",
+              "quellen": [
+                "buch:FS-3.6.1"
+              ],
+              "grund": "RK2: sprachspezifisch (Python)"
+            }
+          ]
         },
         {
           "id": "AP1-8-1-3",
@@ -252,6 +330,22 @@
                 "beleg:2024H-A2-b",
                 "katalog:AP1.04.03.7"
               ]
+            },
+            {
+              "id": "AP1-8-1-3-K6",
+              "text": "Du kannst erklären, was eine Programmierschnittstelle (API) ist: die festgelegten Funktionen und Klassen, über die dein Programm eine Bibliothek, ein Framework oder einen Dienst nutzt, ohne dessen Inneres kennen zu müssen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-1.4.1-S49"
+              ]
+            },
+            {
+              "id": "AP1-8-1-3-K7",
+              "text": "Du kannst clientseitige und serverseitige Skripte unterscheiden: Ein clientseitiges Skript (zum Beispiel JavaScript) wird im Browser des Nutzers ausgeführt, ein serverseitiges (zum Beispiel PHP) auf dem Webserver, der nur das fertige Ergebnis, etwa eine HTML-Seite, an den Browser schickt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.6.3-S541"
+              ]
             }
           ],
           "grenzen": [
@@ -262,6 +356,15 @@
                 "AP1.04.06.8",
                 "AP2b.04.16"
               ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Funktionen aus Bibliotheksmodulen werden vor der Nutzung importiert, meist am Anfang der Datei, und dann über den Modulnamen aufgerufen (z. B. math.sin(x)); eingebaute Funktionen wie print oder len stehen ohne Import bereit.",
+              "quellen": [
+                "buch:GS-5.7.3"
+              ],
+              "grund": "RK2: sprachspezifisch (Module importieren)"
             }
           ]
         }
@@ -313,7 +416,8 @@
               "text": "Du kannst Verzweigung und Schleife im Code unterscheiden, auch eine Mehrfachauswahl.",
               "stufe": 2,
               "herkunft": [
-                "katalog:AP1.04.06.4"
+                "katalog:AP1.04.06.4",
+                "buch:FS-3.5.2-S224"
               ]
             },
             {
@@ -339,25 +443,288 @@
               "herkunft": [
                 "katalog:AP1.04.06.4"
               ]
+            },
+            {
+              "id": "AP1-8-2-1-K8",
+              "text": "Du kannst die Sequenz als dritte Grundstruktur neben Verzweigung und Schleife erklären: Anweisungen ohne Bedingung und ohne Wiederholung laufen von oben nach unten je genau einmal ab, und aus diesen drei Strukturen lässt sich jeder Ablauf zusammensetzen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.7.4-S555"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K9",
+              "text": "Du kannst erklären, wie Anweisungen zu Blöcken zusammengefasst werden – je nach Sprache durch Klammern, durch Anfangs- und Endwörter oder durch gleiche Einrückungstiefe – und an den Blöcken ablesen, welche Anweisungen zu einer Verzweigung oder Schleife gehören.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.7.3-S550"
+              ]
+            },
+            {
+              "id": "AP1-8-2-1-K10",
+              "text": "Du kannst eine Kette aus WENN, SONST WENN und SONST von mehreren unabhängigen WENN-Anweisungen unterscheiden: In der Kette werden die Bedingungen der Reihe nach geprüft und nur der erste zutreffende Zweig läuft, bei unabhängigen WENN-Anweisungen wird jede Bedingung geprüft, sodass mehrere Zweige laufen können.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.7.5-S567"
+              ]
             }
           ],
           "grenzen": [],
           "kuer": [
-            {
-              "text": "Weitere Datenstrukturen: Liste, Stapel (Stack), Warteschlange (Queue), Hash-Tabelle.",
-              "quellen": [
-                "lernzettel:fi-de-2025"
-              ],
-              "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
-            },
             {
               "text": "Parameterübergabe als Wert oder als Verweis (Call by Value, Call by Reference).",
               "quellen": [
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Ein Programm beginnt an einem festen Einstiegspunkt (in Java und C# die Methode main); Kommentare (einzeilig z. B. mit //, mehrzeilig zwischen /* und */) erläutern den Code und werden beim Übersetzen ignoriert. Konsolenprogramme geben Text und Variablenwerte verkettet aus und lesen Eingaben passend zum Datentyp, und eine ganze Zufallszahl von 0 bis n − 1 entsteht, indem man eine Zufallszahl aus dem Bereich 0 bis unter 1 mit n multipliziert und die Nachkommastellen abschneidet.",
+              "quellen": [
+                "buch:FS-3.5.2",
+                "buch:FS-2.5.2"
+              ],
+              "grund": "D8/RK2: Kommentare, Konsolen-Ein- und -Ausgabe und Zufallszahlen ohne Katalog-Baustein; Einstiegspunkt main ist sprachspezifisch"
+            },
+            {
+              "text": "Ausgaben lassen sich formatieren: Platzhalter mit einer Angabe der Nachkommastellen und Escape-Sequenzen wie \\n (Zeilenumbruch), \\t (Tabulator), \\\\ (Backslash) und \\\" (Anführungszeichen im Text).",
+              "quellen": [
+                "buch:GS-5.7.4"
+              ],
+              "grund": "D8: kein Katalog-Baustein (Ausgabeformatierung)"
             }
           ]
+        },
+        {
+          "id": "AP1-8-2-6",
+          "titel": "Variablen, Datentypen und Ausdrücke: Gültigkeit, Konstanten, Zuweisung, Rangfolge",
+          "ziel": "Gültigkeitsbereich, Datentypen, Konstanten und Typumwandlung erklären und Zuweisungen und Ausdrücke nach der Rangfolge der Operatoren auswerten.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.06.3",
+              "anteil": "Variablen und Datentypen: Deklaration, Gültigkeitsbereich, Konstanten, Gleitkomma, Zeichen, Typumwandlung"
+            },
+            {
+              "id": "AP1.04.06.4",
+              "anteil": "Ausdrücke in Bedingungen und Zuweisungen: Rangfolge der Operatoren"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-8-2-6-K1",
+              "text": "Du kannst den Gültigkeitsbereich einer Variablen erklären: Eine global, also außerhalb aller Funktionen angelegte Variable ist im ganzen Programm bekannt, eine lokal in einer Funktion oder einem Block angelegte nur dort, sodass gleiche Namen in verschiedenen Funktionen sich nicht stören.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-2.5.2-S134",
+                "buch:GS-5.7.3-S553"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K2",
+              "text": "Du kannst erklären, was der Datentyp einer Variablen festlegt: welche Werte sie aufnehmen kann (Wertebereich), wie viel Speicher sie belegt und welche Operationen mit ihr erlaubt sind, etwa Rechnen mit Zahlen oder Verketten von Text.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.2-S220",
+                "buch:GS-5.7.4-S559"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K3",
+              "text": "Du kannst erklären, warum Rechnungen mit Gleitkommazahlen kleine Rundungsabweichungen haben, Ganzzahlen dagegen exakt gespeichert werden: Viele Dezimalzahlen wie 0,1 lassen sich im Binärsystem nicht exakt speichern; deshalb prüft man Gleitkommawerte nicht auf exakte Gleichheit.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.2-S221",
+                "buch:GS-5.7.4-S559"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K4",
+              "text": "Du kannst den Datentyp Zeichen (genau ein Zeichen, in vielen Sprachen in einfachen Hochkommas wie 'A') von der Zeichenkette (Text beliebiger Länge, in Anführungszeichen wie \"Anna\") unterscheiden.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.2-S221"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K5",
+              "text": "Du kannst Deklaration und Initialisierung einer Variablen unterscheiden: Bei der Deklaration wird sie vor der ersten Verwendung mit Namen und Datentyp angelegt, bei der Initialisierung bekommt sie ihren ersten Wert; beides kann in einer Anweisung geschehen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.2-S221"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K6",
+              "text": "Du kannst Konstante und Variable unterscheiden: Der Wert einer Konstanten wird einmal festgelegt und darf danach nicht mehr geändert werden; feste Werte wie einen Steuersatz legt man als benannte Konstante (Name meist in Großbuchstaben) an, statt die Zahl mehrfach in den Code zu schreiben.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.5.2-S221",
+                "buch:GS-5.7.4-S559"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K7",
+              "text": "Du kannst den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, dann Punkt- vor Strichrechnung, danach Vergleiche und zuletzt die logischen Verknüpfungen, wobei NICHT vor UND und UND vor ODER gilt.",
+              "stufe": 3,
+              "herkunft": [
+                "buch:FS-3.5.2-S222"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K8",
+              "text": "Du kannst eine Zuweisung interpretieren: Erst wird der Ausdruck rechts vom Zuweisungszeichen ausgewertet, dann wird das Ergebnis in der Variablen links gespeichert; x = x + 1 ist deshalb keine Gleichung, sondern erhöht x um 1, und Kurzformen wie x += 5 stehen für x = x + 5.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.7.4-S561"
+              ]
+            },
+            {
+              "id": "AP1-8-2-6-K9",
+              "text": "Du kannst erklären, warum eine Benutzereingabe zunächst als Text ankommt und vor dem Rechnen ausdrücklich in eine Ganz- oder Gleitkommazahl umgewandelt werden muss und dass diese Umwandlung zur Laufzeit scheitert, wenn der Text keine Zahl ist.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.7.4-S557"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Ganzzahltypen unterscheiden sich in Speicherbedarf und Wertebereich: mit 1, 2, 4 oder 8 Byte reicht der Bereich bis etwa ±127, ±32 000, ±2,1 Milliarden bzw. ±9,2 · 10^18.",
+              "quellen": [
+                "buch:FS-3.5.2"
+              ],
+              "grund": "RK1: sprachspezifische Wertebereiche und Bytegrößen"
+            },
+            {
+              "text": "Bezeichner bestehen aus Buchstaben, Ziffern und Unterstrich, beginnen nicht mit einer Ziffer, dürfen kein Schlüsselwort sein und unterscheiden in vielen Sprachen Groß- und Kleinschreibung. Literale sind direkt notierte Werte wie 42, 0x2A (hexadezimal), 0b101010 (binär), 6.645E2 (Gleitkomma mit Exponent, = 664,5), \"Text\" oder True.",
+              "quellen": [
+                "buch:GS-5.7.3",
+                "buch:FS-3.5.2"
+              ],
+              "grund": "RK2: Bezeichnerregeln, Schlüsselwörter und Literal-Schreibweisen sind Sprachdetail"
+            },
+            {
+              "text": "Gleichheit und Identität: Der Vergleich auf Gleichheit prüft den Inhalt, der Vergleich auf Identität, ob zwei Variablen auf dasselbe Objekt verweisen; nach y = x ist eine Änderung an einer Liste über y auch über x sichtbar.",
+              "quellen": [
+                "buch:GS-5.7.5"
+              ],
+              "grund": "D8: kein Katalog-Baustein (Identität gegen Gleichheit)"
+            }
+          ]
+        },
+        {
+          "id": "AP1-8-2-5",
+          "titel": "Datenstrukturen: Array, verkettete Liste, Stapel, Warteschlange, Hashtabelle",
+          "ziel": "Datenstrukturen einordnen, ihren Aufbau erklären und sie nach Speicherbedarf und Geschwindigkeit der Operationen vergleichen.",
+          "gebiete": [
+            "G.AP1.03"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.04.06.3",
+              "anteil": "Datenstrukturen: Array, Liste, Stapel, Warteschlange, Hashtabelle"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-8-2-5-K1",
+              "text": "Du kannst erklären, was eine Datenstruktur ist: eine festgelegte Anordnung von Daten, die über Grundoperationen wie Lesen, Schreiben, Einfügen, Löschen und Suchen verwaltet wird; lineare Strukturen haben eine feste Größe (Array) oder wachsen zur Laufzeit (Liste, Stapel, Warteschlange), nicht lineare sind zum Beispiel Hashtabelle, Baum und Graph.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S137"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K2",
+              "text": "Du kannst erklären, woran man die Eignung einer Datenstruktur misst: am Speicherbedarf und an der Geschwindigkeit der Operationen, die das Programm oft braucht, weil keine Struktur alle Operationen gleich gut beherrscht.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S137"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K3",
+              "text": "Du kannst erklären, warum der Zugriff auf ein Array-Element über den Index so schnell ist: Alle Elemente haben denselben Datentyp und liegen lückenlos hintereinander, sodass sich die Adresse jedes Elements direkt aus Startadresse + Index × Elementgröße ergibt.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S139"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K4",
+              "text": "Du kannst Stärken und Schwächen eines Arrays gegenüber einer dynamischen Liste beschreiben: Das Array bietet schnellen Zugriff über den Index, hat aber eine beim Anlegen festgelegte Größe, verschwendet zu groß angelegt Speicher und macht Einfügen und Löschen aufwendig; eine dynamische Liste wächst und schrumpft dagegen zur Laufzeit.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S140",
+                "buch:GS-5.7.6-S579",
+                "buch:FS2-2.2.4-S153"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K5",
+              "text": "Du kannst erklären, dass ein zweidimensionales Array ein Array von Zeilen ist: Die Länge des äußeren Arrays ist die Anzahl der Zeilen, jede Zeile hat ihre eigene Länge, die auch verschieden sein kann, deshalb läuft eine innere Schleife bis zur Länge der jeweiligen Zeile.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.4-S154",
+                "buch:FS2-2.2.3-S149"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K6",
+              "text": "Du kannst den Aufbau einer einfach verketteten Liste erklären: Jeder Knoten enthält einen Wert und einen Verweis auf den nächsten Knoten, ein Kopfverweis zeigt auf den ersten und der letzte verweist auf nichts; Einfügen geht schnell durch Umhängen von Verweisen, der Zugriff auf eine bestimmte Position erfordert aber das Durchlaufen ab dem Anfang.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S140"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K7",
+              "text": "Du kannst Stapel (Stack) und Warteschlange (Queue) unterscheiden: Beim Stapel wird nur oben abgelegt und entnommen (LIFO, zum Beispiel der Aufrufstapel für Rücksprungadressen und lokale Variablen), bei der Warteschlange wird hinten angefügt und vorn entnommen (FIFO, zum Beispiel Druckaufträge oder Tastatur- und Mausereignisse).",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S142"
+              ]
+            },
+            {
+              "id": "AP1-8-2-5-K8",
+              "text": "Du kannst das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen, ohne alle Daten zu durchlaufen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-2.2.1-S142"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Weitere Datenstrukturen: doppelt verkettete Liste (zusätzlich Verweis auf den Vorgänger, in beide Richtungen durchlaufbar, mehr Speicher), Baum und binärer Suchbaum, Graph (gespeichert als Adjazenzmatrix oder Adjazenzliste) und Menge (jedes Element nur einmal); bei der Hashtabelle entsteht eine Kollision, wenn zwei Schlüssel dieselbe Position ergeben. In der Praxis nimmt man diese Strukturen aus der Standardbibliothek der Sprache, statt sie selbst zu programmieren.",
+              "quellen": [
+                "buch:FS2-2.2.1"
+              ],
+              "grund": "RK2/RK3: Unterthemen und weitere Datenstrukturen ohne AP1-Bezug im Code"
+            },
+            {
+              "text": "Python bringt Liste (geordnet, veränderbar), Tupel (unveränderlich), Set (ohne Duplikate) und Dictionary (Schlüssel-Wert-Paare) mit; eine Zuweisung an einen neuen Schlüssel fügt ein Paar hinzu, an einen vorhandenen überschreibt sie den Wert.",
+              "quellen": [
+                "buch:FS2-2.2.3"
+              ],
+              "grund": "RK2: sprachspezifisch (eingebaute Datenstrukturen von Python)"
+            },
+            {
+              "text": "Typische Operationen einer dynamischen Liste: am Ende anhängen, an einer Position einfügen, nach Index oder Wert entfernen (die folgenden Elemente rücken auf), umkehren und sortieren.",
+              "quellen": [
+                "buch:GS-5.7.6"
+              ],
+              "grund": "RK2: Listenmethoden sind sprachspezifisch"
+            }
+          ],
+          "hinweis": "Das Lehrbuch (FS2 2.2.1) nennt bei der verketteten Liste „geringen Speicherplatzbedarf“ und bei der Hashtabelle „weniger Speicher als Arrays“; richtig ist: Je Element braucht eine Liste mehr Speicher als ein Array (Wert plus Verweis), sparsamer ist sie nur, weil nichts auf Vorrat angelegt wird; eine Hashtabelle braucht in der Regel mehr Speicher als ein Array mit denselben Werten."
         },
         {
           "id": "AP1-8-2-2",
@@ -426,6 +793,14 @@
                 "beleg:2022H-A4-b"
               ],
               "vorgegeben": "Funktionen der Schnittstelle"
+            },
+            {
+              "id": "AP1-8-2-2-K7",
+              "text": "Du kannst Algorithmus und Programm unterscheiden: Ein Algorithmus ist eine endliche, eindeutige Folge von Schritten zur Lösung eines Problems und unabhängig von einer Programmiersprache; ein Programm setzt ihn in einer bestimmten Programmiersprache um.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.2.4-S497"
+              ]
             }
           ],
           "grenzen": [
@@ -446,7 +821,16 @@
               ]
             }
           ],
-          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird."
+          "hinweis": "2022F-A4-d und 2022H-A4-b waren als Struktogramm zu lösen; nach Z4 zählt die Logik, die heute in Pseudocode dargestellt wird.",
+          "kuer": [
+            {
+              "text": "Entscheidungstabelle: Bedingungen werden mit J/N, Aktionen mit X eingetragen, jede Spalte ist eine Regel; bei n Bedingungen hat die vollständige Tabelle 2^n Regeln.",
+              "quellen": [
+                "buch:GS-5.5.4"
+              ],
+              "grund": "D8: kein Katalog-Baustein (Entscheidungstabelle)"
+            }
+          ]
         },
         {
           "id": "AP1-8-2-3",
@@ -579,6 +963,15 @@
               "herkunft": [
                 "katalog:AP1.04.07.4"
               ]
+            },
+            {
+              "id": "AP1-8-2-4-K6",
+              "text": "Du kannst typische formale Fehler in gegebenem Code korrigieren: falsche Groß- und Kleinschreibung eines Namens in einer Sprache, die sie unterscheidet, ein fehlendes Anweisungsende wie das Semikolon, eine nicht geschlossene Blockklammer oder ein Schlüsselwort bzw. unzulässiges Zeichen in einem Variablennamen.",
+              "stufe": 3,
+              "herkunft": [
+                "buch:FS-3.5.2-S219",
+                "buch:GS-5.7.3-S550"
+              ]
             }
           ],
           "grenzen": []
@@ -662,6 +1055,15 @@
               "stufe": 3,
               "herkunft": [
                 "katalog:ANH.uml-anwendungsfalldiagramm"
+              ]
+            },
+            {
+              "id": "AP1-8-3-1-K7",
+              "text": "Du kannst ein externes System, mit dem das geplante System zusammenarbeitet, als Akteur darstellen, zum Beispiel einen Zahlungsdienst, der Kreditkartendaten prüft: als Rechteck mit dem Schlüsselwort «actor» statt als Strichmännchen und außerhalb der Systemgrenze.",
+              "stufe": 3,
+              "herkunft": [
+                "buch:FS-3.3.4-S193",
+                "buch:FS2-2.1.2-S114"
               ]
             }
           ],
@@ -750,7 +1152,16 @@
               ]
             }
           ],
-          "hinweis": "P24 entschieden: Aggregation und Komposition sind Pflicht, weil sie in der Notationsübersicht des Katalog-Anhangs stehen. 2023F-A4-c: der Vererbungsanteil zählt nach Z4 nicht, belegt ist das Ableiten der Klassen. Die Musterlösung zu 2026F-A4-ba fehlt; K1–K3 folgen der Aufgabenstellung."
+          "hinweis": "P24 entschieden: Aggregation und Komposition sind Pflicht, weil sie in der Notationsübersicht des Katalog-Anhangs stehen. 2023F-A4-c: der Vererbungsanteil zählt nach Z4 nicht, belegt ist das Ableiten der Klassen. Die Musterlösung zu 2026F-A4-ba fehlt; K1–K3 folgen der Aufgabenstellung.",
+          "kuer": [
+            {
+              "text": "Konventionen im Klassendiagramm: Klassennamen im Singular mit großem Anfangsbuchstaben; stehen die Beziehungen im Vordergrund, genügt die Kurzform nur mit dem Klassennamen, die Multiplizitäten werden trotzdem angegeben.",
+              "quellen": [
+                "buch:FS-3.3.5"
+              ],
+              "grund": "RK1: Darstellungskonvention ohne Prinzip"
+            }
+          ]
         },
         {
           "id": "AP1-8-3-3",
@@ -819,6 +1230,14 @@
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.uml-aktivitaetsdiagramm"
+              ]
+            },
+            {
+              "id": "AP1-8-3-3-K7",
+              "text": "Du kannst Zusammenführung und Synchronisation im Aktivitätsdiagramm unterscheiden: Nach einer Zusammenführung (Raute) geht der Ablauf weiter, sobald einer der alternativen Zweige ankommt; eine Synchronisation (Balken) wartet, bis alle parallelen Zweige angekommen sind.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS-3.3.6-S202"
               ]
             }
           ],
@@ -921,6 +1340,22 @@
               "herkunft": [
                 "beleg:2026F-A4-c"
               ]
+            },
+            {
+              "id": "AP1-8-4-1-K8",
+              "text": "Du kannst erklären, wozu ein ER-Modell dient: Es stellt die bei der Analyse erhobenen Daten und ihre Beziehungen grafisch und unabhängig von einer bestimmten Datenbanksoftware dar, damit sich Auftraggeber und Entwickler vor der Umsetzung auf das Datenmodell verständigen können.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.8.2-S593"
+              ]
+            },
+            {
+              "id": "AP1-8-4-1-K9",
+              "text": "Du kannst Entität und Entitätstyp unterscheiden: Eine Entität ist ein einzelnes, konkretes Objekt wie die Kundin mit der Kundennummer 4711, der Entitätstyp fasst gleichartige Entitäten mit denselben Attributen zusammen, zum Beispiel Kunde – ähnlich wie Objekt und Klasse.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.8.2-S594"
+              ]
             }
           ],
           "grenzen": [
@@ -992,6 +1427,14 @@
               "herkunft": [
                 "beleg:2025F-A4-fb"
               ]
+            },
+            {
+              "id": "AP1-8-4-2-K6",
+              "text": "Du kannst begründen, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-5.8.3-S605"
+              ]
             }
           ],
           "grenzen": [
@@ -1002,6 +1445,15 @@
                 "AP1.04.08",
                 "AP2b.04.22"
               ]
+            }
+          ],
+          "kuer": [
+            {
+              "text": "Stammdaten ändern sich selten (Kundenname, Artikelbezeichnung), Bewegungsdaten entstehen laufend mit jedem Vorgang (Bestellmenge), Rechendaten berechnet das Programm (Gesamtpreis) und speichert sie deshalb meist nicht.",
+              "quellen": [
+                "buch:GS-2.4.13"
+              ],
+              "grund": "D8: kein Katalog-Baustein (Daten nach Änderungshäufigkeit)"
             }
           ]
         },
@@ -1067,6 +1519,38 @@
               "herkunft": [
                 "katalog:AP1.04.08"
               ]
+            },
+            {
+              "id": "AP1-8-4-5-K6",
+              "text": "Du kannst den Aufbau eines Datenbanksystems erklären: Es besteht aus der Datenbasis und dem Datenbankmanagementsystem (DBMS), das die Daten speichert und nach dem Datenmodell verwaltet, mehreren Benutzern gleichzeitig Zugriff gibt und Datensicherheit und Datenschutz sicherstellt; Anwendungen greifen nur über seine Schnittstelle, meist SQL, auf die Daten zu.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.8.1-S587"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K7",
+              "text": "Du kannst die Anforderungen an einen Primärschlüssel erklären: Er ist für jeden Datensatz eindeutig, minimal, besteht also aus so wenigen Spalten wie nötig, und unveränderlich, und jede Tabelle hat genau einen Primärschlüssel.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.8.3-S600"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K8",
+              "text": "Du kannst begründen, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-5.8.3-S600"
+              ]
+            },
+            {
+              "id": "AP1-8-4-5-K9",
+              "text": "Du kannst begründen, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:FS-3.7.2-S268"
+              ]
             }
           ],
           "grenzen": [
@@ -1079,7 +1563,16 @@
               ]
             }
           ],
-          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen."
+          "hinweis": "Die Musterlösungen zu 2025H-A4-aa bis -ac fehlen; K1–K3 folgen den Aufgabenstellungen.",
+          "kuer": [
+            {
+              "text": "Ergebnisse der Entwurfsphasen: Anforderungsanalyse – informelle Beschreibung, konzeptioneller Entwurf – ER-Modell, logischer Entwurf – normalisiertes relationales Modell, physischer Entwurf – mit SQL angelegtes, noch leeres Datenbankschema.",
+              "quellen": [
+                "buch:FS-3.7.2"
+              ],
+              "grund": "RK2: Ergebnisse des logischen und physischen Entwurfs führen in Normalisierung und SQL (AP2)"
+            }
+          ]
         },
         {
           "id": "AP1-8-4-3",
@@ -1126,6 +1619,14 @@
               "herkunft": [
                 "katalog:AP1.04.07.3"
               ]
+            },
+            {
+              "id": "AP1-8-4-3-K5",
+              "text": "Du kannst für eine Auswahl in einer Bildschirmmaske das passende Steuerelement auswählen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:FS2-1.3.4-S42"
+              ]
             }
           ],
           "grenzen": [
@@ -1146,6 +1647,13 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Die WCAG fassen barrierefreie Informationstechnik in vier Prinzipien: wahrnehmbar, bedienbar (z. B. vollständig per Tastatur), verständlich und robust (zuverlässig mit verschiedenen Geräten und Hilfsmitteln wie Screenreadern nutzbar).",
+              "quellen": [
+                "buch:GS-2.4.12"
+              ],
+              "grund": "RK2: WCAG ohne Katalog-Baustein (im Tracker Kür)"
             }
           ]
         },
@@ -1676,8 +2184,8 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.5",
-    "stand": "2026-10-14",
+    "regelwerk_version": "2.1",
+    "stand": "2026-10-16",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). Neuer Stichpunkt AP1-8-4-5 (Primär- und Fremdschlüssel, Belege 2025H-A4-a und 2023H-A4-ab). Anhang-Notationen (EPK, BPMN, Aggregation, Komposition) sind Pflicht (P24 entschieden).",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1688,7 +2196,25 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitt Softwareentwicklung",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026), Schlagworte Pseudocode, Schreibtischtest, ERM (Herbst 2025), Aktivitätsdiagramm, Klassendiagramm, Prozessanalyse",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 3.4 und 8.1–8.12",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte Compiler/Interpreter, Barrierefreiheit, Programmierung, Normalisierung und Datenbankaspekte, Testarten",
+      "buch:GS-5.6.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.6.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.6.2": "Lehrbuch Westermann „IT-Berufe“ GS 5.6.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.7.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-3.5.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.5.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-3.6.1": "Lehrbuch Westermann „IT-Berufe“ FS 3.6.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.7.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-3.5.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.5.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-2.5.2": "Lehrbuch Westermann „IT-Berufe“ FS 2.5.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.7.4": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.7.5": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS2-2.2.1": "Lehrbuch Westermann „IT-Berufe“ FS2 2.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS2-2.2.3": "Lehrbuch Westermann „IT-Berufe“ FS2 2.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.7.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-5.5.4": "Lehrbuch Westermann „IT-Berufe“ GS 5.5.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-3.3.5": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.13": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.13 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-3.7.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.4.12": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.12 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1802,10 +2328,13 @@
           "quellen": [
             "lernzettel:fi-de-2025"
           ],
-          "ring": "Kür",
+          "ring": "Kern",
           "wo": [
-            "AP1-8-2-1"
-          ]
+            "AP1-8-2-5-K4",
+            "AP1-8-2-5-K7",
+            "AP1-8-2-5-K8"
+          ],
+          "notiz": "Regelwerk v2.1 (RK1c, Katalogbegriff „Datenstrukturen“): bisher Kür, jetzt Pflicht in AP1-8-2-5"
         },
         {
           "thema": "Kontrollstrukturen: Verzweigung, Mehrfachauswahl, Schleifenarten",
@@ -2077,6 +2606,217 @@
             "AP1-2"
           ],
           "notiz": "AP1.04.01.2"
+        },
+        {
+          "thema": "Eine Programmiersprache ist eine künstliche, formale Sprache mit festen Regeln (Syntax), festgelegtem Zeichensatz und re",
+          "quellen": [
+            "buch:GS-5.6.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Sprachgenerationen: Maschinensprache (1.), Assembler (2.), höhere prozedurale Sprachen (3.) und deklarative Sprachen wie",
+          "quellen": [
+            "buch:GS-5.6.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Interpretierte Sprachen bieten oft einen interaktiven Modus: eine Anweisung eingeben und sofort das Ergebnis sehen – pra",
+          "quellen": [
+            "buch:GS-5.7.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Selbstreferenz: In einer Methode spricht man das eigene Objekt über einen Verweis wie this an, zum Beispiel um ein Attri",
+          "quellen": [
+            "buch:FS-3.5.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "In Python heißt die Selbstreferenz self und steht ausdrücklich als erster Parameter jeder Methode; Sichtbarkeit wird dor",
+          "quellen": [
+            "buch:FS-3.6.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Funktionen aus Bibliotheksmodulen werden vor der Nutzung importiert, meist am Anfang der Datei, und dann über den Moduln",
+          "quellen": [
+            "buch:GS-5.7.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-1-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Ein Programm beginnt an einem festen Einstiegspunkt (in Java und C# die Methode main); Kommentare (einzeilig z. B. mit /",
+          "quellen": [
+            "buch:FS-3.5.2",
+            "buch:FS-2.5.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Ausgaben lassen sich formatieren: Platzhalter mit einer Angabe der Nachkommastellen und Escape-Sequenzen wie \\n (Zeilenu",
+          "quellen": [
+            "buch:GS-5.7.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-1"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Ganzzahltypen unterscheiden sich in Speicherbedarf und Wertebereich: mit 1, 2, 4 oder 8 Byte reicht der Bereich bis etwa",
+          "quellen": [
+            "buch:FS-3.5.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-6"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Bezeichner bestehen aus Buchstaben, Ziffern und Unterstrich, beginnen nicht mit einer Ziffer, dürfen kein Schlüsselwort ",
+          "quellen": [
+            "buch:GS-5.7.3",
+            "buch:FS-3.5.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-6"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Gleichheit und Identität: Der Vergleich auf Gleichheit prüft den Inhalt, der Vergleich auf Identität, ob zwei Variablen ",
+          "quellen": [
+            "buch:GS-5.7.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-6"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Weitere Datenstrukturen: doppelt verkettete Liste (zusätzlich Verweis auf den Vorgänger, in beide Richtungen durchlaufba",
+          "quellen": [
+            "buch:FS2-2.2.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Python bringt Liste (geordnet, veränderbar), Tupel (unveränderlich), Set (ohne Duplikate) und Dictionary (Schlüssel-Wert",
+          "quellen": [
+            "buch:FS2-2.2.3"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Typische Operationen einer dynamischen Liste: am Ende anhängen, an einer Position einfügen, nach Index oder Wert entfern",
+          "quellen": [
+            "buch:GS-5.7.6"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Entscheidungstabelle: Bedingungen werden mit J/N, Aktionen mit X eingetragen, jede Spalte ist eine Regel; bei n Bedingun",
+          "quellen": [
+            "buch:GS-5.5.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-2-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Konventionen im Klassendiagramm: Klassennamen im Singular mit großem Anfangsbuchstaben; stehen die Beziehungen im Vorder",
+          "quellen": [
+            "buch:FS-3.3.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-3-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Stammdaten ändern sich selten (Kundenname, Artikelbezeichnung), Bewegungsdaten entstehen laufend mit jedem Vorgang (Best",
+          "quellen": [
+            "buch:GS-2.4.13"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-4-2"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Ergebnisse der Entwurfsphasen: Anforderungsanalyse – informelle Beschreibung, konzeptioneller Entwurf – ER-Modell, logis",
+          "quellen": [
+            "buch:FS-3.7.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-4-5"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
+        },
+        {
+          "thema": "Die WCAG fassen barrierefreie Informationstechnik in vier Prinzipien: wahrnehmbar, bedienbar (z. B. vollständig per Tast",
+          "quellen": [
+            "buch:GS-2.4.12"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-8-4-3"
+          ],
+          "notiz": "Regelwerk v2.x, D8/RK1"
         }
       ]
     },
@@ -2319,6 +3059,103 @@
           "grund": "Katalog-Anhang ist Pflicht (P24): Generalisierung von Anwendungsfällen"
         }
       ]
-    }
+    },
+    "v2": [
+      {
+        "stand": "2026-10-16",
+        "regelwerk": "2.1",
+        "neue_aussagen": [
+          "AP1-8-1-1-K8",
+          "AP1-8-1-1-K9",
+          "AP1-8-1-1-K10",
+          "AP1-8-1-2-K7",
+          "AP1-8-1-2-K8",
+          "AP1-8-1-3-K6",
+          "AP1-8-1-3-K7",
+          "AP1-8-2-1-K8",
+          "AP1-8-2-1-K9",
+          "AP1-8-2-1-K10",
+          "AP1-8-2-6-K1",
+          "AP1-8-2-6-K2",
+          "AP1-8-2-6-K3",
+          "AP1-8-2-6-K4",
+          "AP1-8-2-6-K5",
+          "AP1-8-2-6-K6",
+          "AP1-8-2-6-K7",
+          "AP1-8-2-6-K8",
+          "AP1-8-2-6-K9",
+          "AP1-8-2-5-K1",
+          "AP1-8-2-5-K2",
+          "AP1-8-2-5-K3",
+          "AP1-8-2-5-K4",
+          "AP1-8-2-5-K5",
+          "AP1-8-2-5-K6",
+          "AP1-8-2-5-K7",
+          "AP1-8-2-5-K8",
+          "AP1-8-2-2-K7",
+          "AP1-8-2-4-K6",
+          "AP1-8-3-1-K7",
+          "AP1-8-3-3-K7",
+          "AP1-8-4-1-K8",
+          "AP1-8-4-1-K9",
+          "AP1-8-4-2-K6",
+          "AP1-8-4-5-K6",
+          "AP1-8-4-5-K7",
+          "AP1-8-4-5-K8",
+          "AP1-8-4-5-K9",
+          "AP1-8-4-3-K5"
+        ],
+        "neue_stichpunkte": [
+          {
+            "id": "AP1-8-2-5",
+            "nach": "AP1-8-2-1",
+            "begruendung": "D5: AP1-8-2-1 hätte mit den Buch-Aussagen 26 Aussagen; Datenstrukturen als eigener Stichpunkt (8 neue Aussagen)"
+          },
+          {
+            "id": "AP1-8-2-6",
+            "nach": "AP1-8-2-1",
+            "begruendung": "D5: AP1-8-2-1 hätte mit den Buch-Aussagen 26 Aussagen; Variablen und Ausdrücke als eigener Stichpunkt (9 neue Aussagen)"
+          }
+        ],
+        "d6": [
+          "AP1-8-2-1-K3"
+        ],
+        "kuer": [
+          "AP1-8-1-1",
+          "AP1-8-1-1",
+          "AP1-8-1-1",
+          "AP1-8-1-2",
+          "AP1-8-1-2",
+          "AP1-8-1-3",
+          "AP1-8-2-1",
+          "AP1-8-2-1",
+          "AP1-8-2-6",
+          "AP1-8-2-6",
+          "AP1-8-2-6",
+          "AP1-8-2-5",
+          "AP1-8-2-5",
+          "AP1-8-2-5",
+          "AP1-8-2-2",
+          "AP1-8-3-2",
+          "AP1-8-4-2",
+          "AP1-8-4-5",
+          "AP1-8-4-3"
+        ],
+        "grenzen_gestrichen": [],
+        "filter": [],
+        "umgehaengt": [],
+        "hinweise": [
+          "AP1-8-2-5",
+          "AP1-8-1-2"
+        ],
+        "kuer_gestrichen": [
+          {
+            "sp": "AP1-8-2-1",
+            "text": "Weitere Datenstrukturen: Liste, Stapel, Warteschlange, Hash-Tabelle",
+            "grund": "jetzt Pflicht in AP1-8-2-5 (RK1c)"
+          }
+        ]
+      }
+    ]
   }
 }

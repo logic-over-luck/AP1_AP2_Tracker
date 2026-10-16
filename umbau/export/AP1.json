@@ -4,8 +4,8 @@
   "erzeugt_mit": "node tools/umbau/export-raum.mjs AP1",
   "regelwerk_version": "2.1",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
-  "stichpunkte": 117,
-  "koennen": 623,
+  "stichpunkte": 119,
+  "koennen": 662,
   "quellen": {
    "AP1-1.json": "d9d5fb298b89d653",
    "AP1-2.json": "3b381f8db1d17c38",
@@ -14,7 +14,7 @@
    "AP1-5.json": "67032fce52c521e4",
    "AP1-6.json": "e4aa59945ffda262",
    "AP1-7.json": "daf2350c3c01fa03",
-   "AP1-8.json": "b8f571efbb008765"
+   "AP1-8.json": "73c82538e63b0851"
   }
  },
  "stichpunkte": [
@@ -4410,6 +4410,21 @@
      "id": "AP1-8-1-1-K7",
      "stufe": 4,
      "kurz": "Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären, auch was Debugging ist (Programm schrittweise ausführen und Variablen beobachten, um Fehler zu finden), und die Wahl einer IDE begründen: Editor, Übersetzer und Debugger in einer Oberfläche, dazu Hilfen wie Syntaxhervorhebung und Autovervollständigung"
+    },
+    {
+     "id": "AP1-8-1-1-K8",
+     "stufe": 2,
+     "kurz": "Entwicklungs- und Laufzeitumgebung unterscheiden: Zum Entwickeln brauchst du den Compiler und weitere Werkzeuge, zum Ausführen genügt auf dem Rechner des Anwenders die Laufzeitumgebung aus virtueller Maschine und Standardbibliothek"
+    },
+    {
+     "id": "AP1-8-1-1-K9",
+     "stufe": 4,
+     "kurz": "die Wahl zwischen mehreren integrierten Entwicklungsumgebungen begründen: Lizenz und Kosten, unterstützte Betriebssysteme, Erweiterbarkeit durch Plug-ins (zum Beispiel für weitere Sprachen oder einen GUI-Designer) und ein Funktionsumfang, der zum Einsatzzweck passt"
+    },
+    {
+     "id": "AP1-8-1-1-K10",
+     "stufe": 2,
+     "kurz": "kompilierte und interpretierte Programme bei der Weitergabe vergleichen: Ein kompiliertes Programm läuft ohne Compiler, aber nur auf der Plattform, für die es übersetzt wurde; ein interpretiertes läuft auf jeder Plattform, auf der ein passender Interpreter installiert ist, und wird dafür meist etwas langsamer ausgeführt"
     }
    ]
   },
@@ -4456,6 +4471,16 @@
      "id": "AP1-8-1-2-K6",
      "stufe": 1,
      "kurz": "Vorteile der objektorientierten gegenüber der prozeduralen Programmierung nennen, zum Beispiel Wiederverwendbarkeit, bessere Wartbarkeit und Nähe zu den Dingen der realen Welt"
+    },
+    {
+     "id": "AP1-8-1-2-K7",
+     "stufe": 2,
+     "kurz": "Abstraktion beim Bilden einer Klasse erklären: In die Klasse kommen nur die gemeinsamen Eigenschaften und Methoden gleichartiger Objekte, die für den Zweck des Programms wichtig sind; welche das sind, hängt vom Einsatz ab"
+    },
+    {
+     "id": "AP1-8-1-2-K8",
+     "stufe": 2,
+     "kurz": "erklären, was ein Konstruktor ist: eine besondere Methode, die beim Erzeugen eines Objekts automatisch aufgerufen wird und seine Attribute mit Anfangswerten belegt, zum Beispiel mit den Werten, die beim Erzeugen übergeben werden"
     }
    ]
   },
@@ -4499,6 +4524,16 @@
      "id": "AP1-8-1-3-K5",
      "stufe": 4,
      "kurz": "ein Kriterium für die Wahl einer Programmiersprache begründen, zum Beispiel Eignung für die Aufgabe, Kenntnisse im Team, verfügbare Frameworks"
+    },
+    {
+     "id": "AP1-8-1-3-K6",
+     "stufe": 2,
+     "kurz": "erklären, was eine Programmierschnittstelle (API) ist: die festgelegten Funktionen und Klassen, über die dein Programm eine Bibliothek, ein Framework oder einen Dienst nutzt, ohne dessen Inneres kennen zu müssen"
+    },
+    {
+     "id": "AP1-8-1-3-K7",
+     "stufe": 2,
+     "kurz": "clientseitige und serverseitige Skripte unterscheiden: Ein clientseitiges Skript (zum Beispiel JavaScript) wird im Browser des Nutzers ausgeführt, ein serverseitiges (zum Beispiel PHP) auf dem Webserver, der nur das fertige Ergebnis, etwa eine HTML-Seite, an den Browser schickt"
     }
    ]
   },
@@ -4545,6 +4580,135 @@
      "id": "AP1-8-2-1-K7",
      "stufe": 2,
      "kurz": "Bedingungen und Rechnungen mit Vergleichsoperatoren (gleich, ungleich, kleiner, größer), logischen Operatoren (UND, ODER, NICHT) und dem Modulo-Operator (Rest einer ganzzahligen Division) interpretieren"
+    },
+    {
+     "id": "AP1-8-2-1-K8",
+     "stufe": 2,
+     "kurz": "die Sequenz als dritte Grundstruktur neben Verzweigung und Schleife erklären: Anweisungen ohne Bedingung und ohne Wiederholung laufen von oben nach unten je genau einmal ab, und aus diesen drei Strukturen lässt sich jeder Ablauf zusammensetzen"
+    },
+    {
+     "id": "AP1-8-2-1-K9",
+     "stufe": 2,
+     "kurz": "erklären, wie Anweisungen zu Blöcken zusammengefasst werden – je nach Sprache durch Klammern, durch Anfangs- und Endwörter oder durch gleiche Einrückungstiefe – und an den Blöcken ablesen, welche Anweisungen zu einer Verzweigung oder Schleife gehören"
+    },
+    {
+     "id": "AP1-8-2-1-K10",
+     "stufe": 2,
+     "kurz": "eine Kette aus WENN, SONST WENN und SONST von mehreren unabhängigen WENN-Anweisungen unterscheiden: In der Kette werden die Bedingungen der Reihe nach geprüft und nur der erste zutreffende Zweig läuft, bei unabhängigen WENN-Anweisungen wird jede Bedingung geprüft, sodass mehrere Zweige laufen können"
+    }
+   ]
+  },
+  {
+   "id": "AP1-8-2-6",
+   "ordner": "AP1-8",
+   "block": "AP1-8-2",
+   "titel": "Variablen, Datentypen und Ausdrücke: Gültigkeit, Konstanten, Zuweisung, Rangfolge",
+   "gebiete": [
+    "G.AP1.03"
+   ],
+   "bausteine": [
+    "AP1.04.06.3",
+    "AP1.04.06.4"
+   ],
+   "koennen": [
+    {
+     "id": "AP1-8-2-6-K1",
+     "stufe": 2,
+     "kurz": "den Gültigkeitsbereich einer Variablen erklären: Eine global, also außerhalb aller Funktionen angelegte Variable ist im ganzen Programm bekannt, eine lokal in einer Funktion oder einem Block angelegte nur dort, sodass gleiche Namen in verschiedenen Funktionen sich nicht stören"
+    },
+    {
+     "id": "AP1-8-2-6-K2",
+     "stufe": 2,
+     "kurz": "erklären, was der Datentyp einer Variablen festlegt: welche Werte sie aufnehmen kann (Wertebereich), wie viel Speicher sie belegt und welche Operationen mit ihr erlaubt sind, etwa Rechnen mit Zahlen oder Verketten von Text"
+    },
+    {
+     "id": "AP1-8-2-6-K3",
+     "stufe": 2,
+     "kurz": "erklären, warum Rechnungen mit Gleitkommazahlen kleine Rundungsabweichungen haben, Ganzzahlen dagegen exakt gespeichert werden: Viele Dezimalzahlen wie 0,1 lassen sich im Binärsystem nicht exakt speichern; deshalb prüft man Gleitkommawerte nicht auf exakte Gleichheit"
+    },
+    {
+     "id": "AP1-8-2-6-K4",
+     "stufe": 2,
+     "kurz": "den Datentyp Zeichen (genau ein Zeichen, in vielen Sprachen in einfachen Hochkommas wie 'A') von der Zeichenkette (Text beliebiger Länge, in Anführungszeichen wie \"Anna\") unterscheiden"
+    },
+    {
+     "id": "AP1-8-2-6-K5",
+     "stufe": 2,
+     "kurz": "Deklaration und Initialisierung einer Variablen unterscheiden: Bei der Deklaration wird sie vor der ersten Verwendung mit Namen und Datentyp angelegt, bei der Initialisierung bekommt sie ihren ersten Wert; beides kann in einer Anweisung geschehen"
+    },
+    {
+     "id": "AP1-8-2-6-K6",
+     "stufe": 2,
+     "kurz": "Konstante und Variable unterscheiden: Der Wert einer Konstanten wird einmal festgelegt und darf danach nicht mehr geändert werden; feste Werte wie einen Steuersatz legt man als benannte Konstante (Name meist in Großbuchstaben) an, statt die Zahl mehrfach in den Code zu schreiben"
+    },
+    {
+     "id": "AP1-8-2-6-K7",
+     "stufe": 3,
+     "kurz": "den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, dann Punkt- vor Strichrechnung, danach Vergleiche und zuletzt die logischen Verknüpfungen, wobei NICHT vor UND und UND vor ODER gilt"
+    },
+    {
+     "id": "AP1-8-2-6-K8",
+     "stufe": 2,
+     "kurz": "eine Zuweisung interpretieren: Erst wird der Ausdruck rechts vom Zuweisungszeichen ausgewertet, dann wird das Ergebnis in der Variablen links gespeichert; x = x + 1 ist deshalb keine Gleichung, sondern erhöht x um 1, und Kurzformen wie x += 5 stehen für x = x + 5"
+    },
+    {
+     "id": "AP1-8-2-6-K9",
+     "stufe": 2,
+     "kurz": "erklären, warum eine Benutzereingabe zunächst als Text ankommt und vor dem Rechnen ausdrücklich in eine Ganz- oder Gleitkommazahl umgewandelt werden muss und dass diese Umwandlung zur Laufzeit scheitert, wenn der Text keine Zahl ist"
+    }
+   ]
+  },
+  {
+   "id": "AP1-8-2-5",
+   "ordner": "AP1-8",
+   "block": "AP1-8-2",
+   "titel": "Datenstrukturen: Array, verkettete Liste, Stapel, Warteschlange, Hashtabelle",
+   "gebiete": [
+    "G.AP1.03"
+   ],
+   "bausteine": [
+    "AP1.04.06.3"
+   ],
+   "koennen": [
+    {
+     "id": "AP1-8-2-5-K1",
+     "stufe": 2,
+     "kurz": "erklären, was eine Datenstruktur ist: eine festgelegte Anordnung von Daten, die über Grundoperationen wie Lesen, Schreiben, Einfügen, Löschen und Suchen verwaltet wird; lineare Strukturen haben eine feste Größe (Array) oder wachsen zur Laufzeit (Liste, Stapel, Warteschlange), nicht lineare sind zum Beispiel Hashtabelle, Baum und Graph"
+    },
+    {
+     "id": "AP1-8-2-5-K2",
+     "stufe": 2,
+     "kurz": "erklären, woran man die Eignung einer Datenstruktur misst: am Speicherbedarf und an der Geschwindigkeit der Operationen, die das Programm oft braucht, weil keine Struktur alle Operationen gleich gut beherrscht"
+    },
+    {
+     "id": "AP1-8-2-5-K3",
+     "stufe": 2,
+     "kurz": "erklären, warum der Zugriff auf ein Array-Element über den Index so schnell ist: Alle Elemente haben denselben Datentyp und liegen lückenlos hintereinander, sodass sich die Adresse jedes Elements direkt aus Startadresse + Index × Elementgröße ergibt"
+    },
+    {
+     "id": "AP1-8-2-5-K4",
+     "stufe": 2,
+     "kurz": "Stärken und Schwächen eines Arrays gegenüber einer dynamischen Liste beschreiben: Das Array bietet schnellen Zugriff über den Index, hat aber eine beim Anlegen festgelegte Größe, verschwendet zu groß angelegt Speicher und macht Einfügen und Löschen aufwendig; eine dynamische Liste wächst und schrumpft dagegen zur Laufzeit"
+    },
+    {
+     "id": "AP1-8-2-5-K5",
+     "stufe": 2,
+     "kurz": "erklären, dass ein zweidimensionales Array ein Array von Zeilen ist: Die Länge des äußeren Arrays ist die Anzahl der Zeilen, jede Zeile hat ihre eigene Länge, die auch verschieden sein kann, deshalb läuft eine innere Schleife bis zur Länge der jeweiligen Zeile"
+    },
+    {
+     "id": "AP1-8-2-5-K6",
+     "stufe": 2,
+     "kurz": "den Aufbau einer einfach verketteten Liste erklären: Jeder Knoten enthält einen Wert und einen Verweis auf den nächsten Knoten, ein Kopfverweis zeigt auf den ersten und der letzte verweist auf nichts; Einfügen geht schnell durch Umhängen von Verweisen, der Zugriff auf eine bestimmte Position erfordert aber das Durchlaufen ab dem Anfang"
+    },
+    {
+     "id": "AP1-8-2-5-K7",
+     "stufe": 2,
+     "kurz": "Stapel (Stack) und Warteschlange (Queue) unterscheiden: Beim Stapel wird nur oben abgelegt und entnommen (LIFO, zum Beispiel der Aufrufstapel für Rücksprungadressen und lokale Variablen), bei der Warteschlange wird hinten angefügt und vorn entnommen (FIFO, zum Beispiel Druckaufträge oder Tastatur- und Mausereignisse)"
+    },
+    {
+     "id": "AP1-8-2-5-K8",
+     "stufe": 2,
+     "kurz": "das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen, ohne alle Daten zu durchlaufen"
     }
    ]
   },
@@ -4587,6 +4751,11 @@
      "id": "AP1-8-2-2-K6",
      "stufe": 3,
      "kurz": "eine Funktion mit einer Schleife und einer zusammengesetzten Abbruchbedingung ergänzen, zum Beispiel wiederholen, solange die Stückzahl nicht erreicht und kein Notaus ausgelöst ist"
+    },
+    {
+     "id": "AP1-8-2-2-K7",
+     "stufe": 2,
+     "kurz": "Algorithmus und Programm unterscheiden: Ein Algorithmus ist eine endliche, eindeutige Folge von Schritten zur Lösung eines Problems und unabhängig von einer Programmiersprache; ein Programm setzt ihn in einer bestimmten Programmiersprache um"
     }
    ]
   },
@@ -4665,6 +4834,11 @@
      "id": "AP1-8-2-4-K5",
      "stufe": 1,
      "kurz": "typische Fehlerquellen nennen: falsche Schleifengrenze, vertauschter Vergleichsoperator, nicht initialisierte Variable, Division durch null"
+    },
+    {
+     "id": "AP1-8-2-4-K6",
+     "stufe": 3,
+     "kurz": "typische formale Fehler in gegebenem Code korrigieren: falsche Groß- und Kleinschreibung eines Namens in einer Sprache, die sie unterscheidet, ein fehlendes Anweisungsende wie das Semikolon, eine nicht geschlossene Blockklammer oder ein Schlüsselwort bzw. unzulässiges Zeichen in einem Variablennamen"
     }
    ]
   },
@@ -4710,6 +4884,11 @@
      "id": "AP1-8-3-1-K6",
      "stufe": 3,
      "kurz": "die Systemgrenze als Rahmen um die Anwendungsfälle einzeichnen"
+    },
+    {
+     "id": "AP1-8-3-1-K7",
+     "stufe": 3,
+     "kurz": "ein externes System, mit dem das geplante System zusammenarbeitet, als Akteur darstellen, zum Beispiel einen Zahlungsdienst, der Kreditkartendaten prüft: als Rechteck mit dem Schlüsselwort «actor» statt als Strichmännchen und außerhalb der Systemgrenze"
     }
    ]
   },
@@ -4801,6 +4980,11 @@
      "id": "AP1-8-3-3-K6",
      "stufe": 2,
      "kurz": "Endknoten (beendet alle Abläufe) und Ablaufende (beendet nur den eigenen Zweig) unterscheiden"
+    },
+    {
+     "id": "AP1-8-3-3-K7",
+     "stufe": 2,
+     "kurz": "Zusammenführung und Synchronisation im Aktivitätsdiagramm unterscheiden: Nach einer Zusammenführung (Raute) geht der Ablauf weiter, sobald einer der alternativen Zweige ankommt; eine Synchronisation (Balken) wartet, bis alle parallelen Zweige angekommen sind"
     }
    ]
   },
@@ -4850,6 +5034,16 @@
      "id": "AP1-8-4-1-K7",
      "stufe": 3,
      "kurz": "Attribute, die erst durch die Beziehung entstehen, an der Beziehung einzeichnen, zum Beispiel Menge und Verladezeit zwischen Artikel und LKW"
+    },
+    {
+     "id": "AP1-8-4-1-K8",
+     "stufe": 2,
+     "kurz": "erklären, wozu ein ER-Modell dient: Es stellt die bei der Analyse erhobenen Daten und ihre Beziehungen grafisch und unabhängig von einer bestimmten Datenbanksoftware dar, damit sich Auftraggeber und Entwickler vor der Umsetzung auf das Datenmodell verständigen können"
+    },
+    {
+     "id": "AP1-8-4-1-K9",
+     "stufe": 2,
+     "kurz": "Entität und Entitätstyp unterscheiden: Eine Entität ist ein einzelnes, konkretes Objekt wie die Kundin mit der Kundennummer 4711, der Entitätstyp fasst gleichartige Entitäten mit denselben Attributen zusammen, zum Beispiel Kunde – ähnlich wie Objekt und Klasse"
     }
    ]
   },
@@ -4880,6 +5074,11 @@
      "id": "AP1-8-4-2-K5",
      "stufe": 2,
      "kurz": "Einfüge-, Änderungs- und Löschanomalie unterscheiden"
+    },
+    {
+     "id": "AP1-8-4-2-K6",
+     "stufe": 4,
+     "kurz": "begründen, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem"
     }
    ]
   },
@@ -4920,6 +5119,26 @@
      "id": "AP1-8-4-5-K5",
      "stufe": 2,
      "kurz": "Tabelle, Datensatz und Attribut einer relationalen Datenbank unterscheiden"
+    },
+    {
+     "id": "AP1-8-4-5-K6",
+     "stufe": 2,
+     "kurz": "den Aufbau eines Datenbanksystems erklären: Es besteht aus der Datenbasis und dem Datenbankmanagementsystem (DBMS), das die Daten speichert und nach dem Datenmodell verwaltet, mehreren Benutzern gleichzeitig Zugriff gibt und Datensicherheit und Datenschutz sicherstellt; Anwendungen greifen nur über seine Schnittstelle, meist SQL, auf die Daten zu"
+    },
+    {
+     "id": "AP1-8-4-5-K7",
+     "stufe": 2,
+     "kurz": "die Anforderungen an einen Primärschlüssel erklären: Er ist für jeden Datensatz eindeutig, minimal, besteht also aus so wenigen Spalten wie nötig, und unveränderlich, und jede Tabelle hat genau einen Primärschlüssel"
+    },
+    {
+     "id": "AP1-8-4-5-K8",
+     "stufe": 4,
+     "kurz": "begründen, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern"
+    },
+    {
+     "id": "AP1-8-4-5-K9",
+     "stufe": 4,
+     "kurz": "begründen, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang"
     }
    ]
   },
@@ -4954,6 +5173,11 @@
      "id": "AP1-8-4-3-K4",
      "stufe": 1,
      "kurz": "Anforderungen der Barrierefreiheit nennen: ausreichender Kontrast, skalierbare Schrift, Bedienung mit der Tastatur, Information nicht allein über Farbe"
+    },
+    {
+     "id": "AP1-8-4-3-K5",
+     "stufe": 4,
+     "kurz": "für eine Auswahl in einer Bildschirmmaske das passende Steuerelement auswählen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen"
     }
    ]
   },

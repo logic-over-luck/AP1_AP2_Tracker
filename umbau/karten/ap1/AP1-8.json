@@ -1,6 +1,6 @@
 {
   "ordner": "AP1-8",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md",
   "grundlage": "umbau/lernplan/ap1/AP1-8.json",
   "karten": [
@@ -1228,6 +1228,538 @@
       "k": "AP1-8-4-4-K4",
       "vorne": "Woran erkennst du in einer EPK und in einem BPMN-Diagramm, wer einen Schritt ausführt?",
       "hinten": "- EPK: an der Organisationseinheit, die mit der Funktion verbunden ist\n- BPMN: an der Lane (bzw. dem Pool), in der die Aufgabe liegt"
+    },
+    {
+      "id": "AP1-8-1-1-K8-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K8",
+      "vorne": "Was enthält die Laufzeitumgebung einer Sprache mit virtueller Maschine?",
+      "hinten": "Die virtuelle Maschine, die den Zwischencode ausführt, und die Standardbibliothek. Zum Starten des Programms genügt sie."
+    },
+    {
+      "id": "AP1-8-1-1-K8-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K8",
+      "vorne": "Warum braucht der Rechner des Anwenders keinen Compiler, wenn er ein fertiges Java-Programm nutzt?",
+      "hinten": "Das Programm liegt schon übersetzt als Zwischencode vor. Ausgeführt wird es von der Laufzeitumgebung; Compiler und Entwicklungswerkzeuge braucht nur der Entwickler."
+    },
+    {
+      "id": "AP1-8-1-1-K9-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K9",
+      "vorne": "Nenne vier Kriterien für die Wahl einer IDE.",
+      "hinten": "- Lizenz und Kosten\n- unterstützte Betriebssysteme\n- Erweiterbarkeit durch Plug-ins\n- Funktionsumfang passend zum Einsatzzweck"
+    },
+    {
+      "id": "AP1-8-1-1-K9-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K9",
+      "vorne": "Ein Team arbeitet mit Windows und Linux. Welches IDE-Kriterium ist hier entscheidend, und warum?",
+      "hinten": "Die unterstützten Betriebssysteme: Alle sollen dieselbe IDE nutzen, also muss sie auf beiden Systemen laufen."
+    },
+    {
+      "id": "AP1-8-1-1-K10-1",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K10",
+      "vorne": "Was muss auf dem Zielrechner vorhanden sein: bei einem kompilierten und bei einem interpretierten Programm?",
+      "hinten": "- kompiliert: nichts weiter, aber die Plattform muss passen\n- interpretiert: der passende Interpreter"
+    },
+    {
+      "id": "AP1-8-1-1-K10-2",
+      "sp": "AP1-8-1-1",
+      "k": "AP1-8-1-1-K10",
+      "vorne": "Warum läuft ein für Windows kompiliertes Programm nicht unter Linux?",
+      "hinten": "Der Compiler hat Maschinencode für eine bestimmte Plattform (Prozessor und Betriebssystem) erzeugt. Für eine andere Plattform muss neu übersetzt werden."
+    },
+    {
+      "id": "AP1-8-1-2-K7-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K7",
+      "vorne": "Was bedeutet Abstraktion beim Bilden einer Klasse?",
+      "hinten": "Nur die gemeinsamen Eigenschaften und Methoden gleichartiger Objekte übernehmen, die für den Zweck des Programms wichtig sind; Unwichtiges weglassen."
+    },
+    {
+      "id": "AP1-8-1-2-K7-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K7",
+      "vorne": "Warum hat die Klasse Mitarbeiter in der Lohnabrechnung andere Attribute als im Kantinensystem?",
+      "hinten": "Welche Merkmale wichtig sind, hängt vom Einsatz ab: Die Lohnabrechnung braucht z. B. Steuerklasse und Bankverbindung, die Kantine nur Name und Guthaben."
+    },
+    {
+      "id": "AP1-8-1-2-K8-1",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K8",
+      "vorne": "Was ist ein Konstruktor?",
+      "hinten": "Eine besondere Methode, die beim Erzeugen eines Objekts automatisch aufgerufen wird und seine Attribute mit Anfangswerten belegt."
+    },
+    {
+      "id": "AP1-8-1-2-K8-2",
+      "sp": "AP1-8-1-2",
+      "k": "AP1-8-1-2-K8",
+      "vorne": "Woher bekommt der Konstruktor in `NEU Kunde(\"Anna Berg\", 4711)` die Anfangswerte?",
+      "hinten": "Aus den Parametern, die beim Erzeugen übergeben werden; er weist sie den Attributen name und kundennummer zu."
+    },
+    {
+      "id": "AP1-8-1-3-K6-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K6",
+      "vorne": "Was ist eine API (Programmierschnittstelle)?",
+      "hinten": "Die festgelegten Funktionen und Klassen, über die ein Programm eine Bibliothek, ein Framework oder einen Dienst nutzt, ohne dessen Inneres zu kennen."
+    },
+    {
+      "id": "AP1-8-1-3-K7-1",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K7",
+      "vorne": "Wo wird ein clientseitiges, wo ein serverseitiges Skript ausgeführt?",
+      "hinten": "- clientseitig: im Browser des Nutzers (z. B. JavaScript)\n- serverseitig: auf dem Webserver (z. B. PHP), der das fertige HTML schickt"
+    },
+    {
+      "id": "AP1-8-1-3-K7-2",
+      "sp": "AP1-8-1-3",
+      "k": "AP1-8-1-3-K7",
+      "vorne": "Warum sieht der Besucher einer Webseite den PHP-Code nicht?",
+      "hinten": "PHP läuft auf dem Webserver; an den Browser geht nur das erzeugte Ergebnis, z. B. HTML."
+    },
+    {
+      "id": "AP1-8-2-1-K8-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K8",
+      "vorne": "Was kennzeichnet die Sequenz als Kontrollstruktur?",
+      "hinten": "Die Anweisungen laufen von oben nach unten der Reihe nach, jede genau einmal, ohne Bedingung und ohne Wiederholung."
+    },
+    {
+      "id": "AP1-8-2-1-K8-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K8",
+      "vorne": "Nenne die drei Grundstrukturen, aus denen sich jeder Ablauf zusammensetzt.",
+      "hinten": "Sequenz, Verzweigung, Schleife."
+    },
+    {
+      "id": "AP1-8-2-1-K9-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K9",
+      "vorne": "Woran erkennst du, welche Anweisungen zu einer Schleife gehören?",
+      "hinten": "Am Block: je nach Sprache an Klammern, an Anfangs- und Endwörtern (z. B. SOLANGE … ENDE SOLANGE) oder an der gleichen Einrückungstiefe."
+    },
+    {
+      "id": "AP1-8-2-1-K9-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K9",
+      "vorne": "Welche Rolle spielt die Einrückung in einer Sprache mit geschweiften Klammern, welche in Python?",
+      "hinten": "Mit Klammern ist sie nur Lesehilfe, die Klammern begrenzen den Block. In Python legt die Einrückungstiefe den Block selbst fest."
+    },
+    {
+      "id": "AP1-8-2-1-K10-1",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K10",
+      "vorne": "Wie viele Zweige einer Kette aus WENN – SONST WENN – SONST laufen höchstens?",
+      "hinten": "Genau einer: der erste, dessen Bedingung zutrifft; trifft keine zu, der SONST-Zweig."
+    },
+    {
+      "id": "AP1-8-2-1-K10-2",
+      "sp": "AP1-8-2-1",
+      "k": "AP1-8-2-1-K10",
+      "vorne": "punkte = 95. Unabhängig nacheinander: WENN punkte >= 92 dann note = 1; WENN punkte >= 81 dann note = 2. Welche Note steht am Ende?",
+      "hinten": "2 – beide Bedingungen sind wahr, beide Zuweisungen laufen, die zweite überschreibt die erste. Mit SONST WENN wäre es 1."
+    },
+    {
+      "id": "AP1-8-2-6-K1-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K1",
+      "vorne": "Wo ist eine lokale, wo eine globale Variable bekannt?",
+      "hinten": "- lokal: nur in der Funktion bzw. dem Block, in dem sie angelegt wurde\n- global: im ganzen Programm"
+    },
+    {
+      "id": "AP1-8-2-6-K1-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K1",
+      "vorne": "Zwei Funktionen legen je eine Variable summe an. Stören sie sich?",
+      "hinten": "Nein. Beide sind lokal und gelten nur in ihrer eigenen Funktion."
+    },
+    {
+      "id": "AP1-8-2-6-K2-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K2",
+      "vorne": "Welche drei Dinge legt der Datentyp einer Variablen fest?",
+      "hinten": "- Wertebereich (welche Werte sie aufnehmen kann)\n- Speicherbedarf\n- erlaubte Operationen"
+    },
+    {
+      "id": "AP1-8-2-6-K2-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K2",
+      "vorne": "Warum ergibt \"3\" + \"4\" in vielen Sprachen \"34\"?",
+      "hinten": "Beide Werte sind Text. Für Text bedeutet + Verketten, nicht Addieren."
+    },
+    {
+      "id": "AP1-8-2-6-K3-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K3",
+      "vorne": "Warum kann 0.1 + 0.2 == 0.3 im Programm falsch ergeben?",
+      "hinten": "0,1 und 0,2 lassen sich binär nicht exakt speichern und werden gerundet. Die Summe weicht minimal von 0,3 ab."
+    },
+    {
+      "id": "AP1-8-2-6-K3-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K3",
+      "vorne": "Wie vergleicht man zwei Gleitkommawerte sicher?",
+      "hinten": "Nicht auf exakte Gleichheit, sondern ob ihr Abstand kleiner als eine kleine Toleranz ist, z. B. |a − b| < 0,000001."
+    },
+    {
+      "id": "AP1-8-2-6-K4-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K4",
+      "vorne": "Was unterscheidet den Datentyp Zeichen von einer Zeichenkette?",
+      "hinten": "Ein Zeichen speichert genau ein Zeichen (oft in einfachen Hochkommas, z. B. 'A'); eine Zeichenkette speichert Text beliebiger Länge (in Anführungszeichen, z. B. \"Anna\")."
+    },
+    {
+      "id": "AP1-8-2-6-K5-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K5",
+      "vorne": "Was passiert bei der Deklaration, was bei der Initialisierung einer Variablen?",
+      "hinten": "- Deklaration: Variable mit Namen und Datentyp anlegen\n- Initialisierung: ihr den ersten Wert zuweisen"
+    },
+    {
+      "id": "AP1-8-2-6-K5-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K5",
+      "vorne": "Warum muss eine Summenvariable vor der Schleife mit 0 initialisiert werden?",
+      "hinten": "Sonst hat sie keinen oder einen zufälligen Anfangswert, und die Summe wird falsch oder es kommt zu einem Fehler."
+    },
+    {
+      "id": "AP1-8-2-6-K6-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K6",
+      "vorne": "Was unterscheidet eine Konstante von einer Variablen?",
+      "hinten": "Der Wert einer Konstanten wird einmal festgelegt und darf danach nicht mehr geändert werden; eine Variable darf sich ändern."
+    },
+    {
+      "id": "AP1-8-2-6-K6-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K6",
+      "vorne": "Warum schreibt man MWST_SATZ statt 0.19 in den Code?",
+      "hinten": "Lesbarer, und bei einer Änderung des Satzes ändert man nur die eine Stelle, an der die Konstante festgelegt ist."
+    },
+    {
+      "id": "AP1-8-2-6-K7-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K7",
+      "vorne": "In welcher Reihenfolge werden Rechen-, Vergleichs- und logische Operatoren ohne Klammern ausgewertet?",
+      "hinten": "Klammern → Punkt- vor Strichrechnung → Vergleiche → logische Operatoren (NICHT vor UND vor ODER)."
+    },
+    {
+      "id": "AP1-8-2-6-K7-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K7",
+      "vorne": "x = 4. Welchen Wert hat x + 2 * 3 > 9 ODER x == 0?",
+      "hinten": "4 + 6 = 10, 10 > 9 ist wahr → wahr ODER falsch = wahr."
+    },
+    {
+      "id": "AP1-8-2-6-K8-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K8",
+      "vorne": "Was passiert bei der Zuweisung x = x + 1, wenn x vorher 4 ist?",
+      "hinten": "Rechts wird mit dem alten Wert gerechnet: 4 + 1 = 5. Das Ergebnis wird in x gespeichert, x ist jetzt 5."
+    },
+    {
+      "id": "AP1-8-2-6-K8-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K8",
+      "vorne": "Wofür steht die Kurzform x *= 3?",
+      "hinten": "Für x = x * 3."
+    },
+    {
+      "id": "AP1-8-2-6-K9-1",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K9",
+      "vorne": "Warum muss eine Eingabe wie 42 vor dem Rechnen umgewandelt werden?",
+      "hinten": "Eingaben kommen als Text an. Erst die Typumwandlung macht daraus eine Zahl, mit der gerechnet werden kann."
+    },
+    {
+      "id": "AP1-8-2-6-K9-2",
+      "sp": "AP1-8-2-6",
+      "k": "AP1-8-2-6-K9",
+      "vorne": "Welche Fehlerart entsteht, wenn ein Nutzer „zwölf“ eingibt und das Programm die Eingabe in eine Ganzzahl umwandelt?",
+      "hinten": "Ein Laufzeitfehler: Der Code ist formal korrekt, scheitert aber bei diesen Daten."
+    },
+    {
+      "id": "AP1-8-2-5-K1-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K1",
+      "vorne": "Was ist eine Datenstruktur, und welche Grundoperationen hat sie?",
+      "hinten": "Eine festgelegte Anordnung von Daten. Grundoperationen: lesen, schreiben, einfügen, löschen, suchen."
+    },
+    {
+      "id": "AP1-8-2-5-K1-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K1",
+      "vorne": "Ordne ein: Array, Warteschlange, Hashtabelle – linear statisch, linear dynamisch oder nicht linear?",
+      "hinten": "- Array: linear, statisch (feste Größe)\n- Warteschlange: linear, dynamisch\n- Hashtabelle: nicht linear"
+    },
+    {
+      "id": "AP1-8-2-5-K2-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K2",
+      "vorne": "An welchen zwei Größen misst man die Effizienz einer Datenstruktur?",
+      "hinten": "Speicherbedarf und Geschwindigkeit der einzelnen Operationen (Zugriff, Einfügen, Löschen, Suchen)."
+    },
+    {
+      "id": "AP1-8-2-5-K2-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K2",
+      "vorne": "Ein Programm sucht sehr oft Kunden über die Kundennummer. Welche Datenstruktur passt, und was ist der Preis dafür?",
+      "hinten": "Eine Hashtabelle mit der Kundennummer als Schlüssel: schnelle Suche, dafür mehr Speicherbedarf."
+    },
+    {
+      "id": "AP1-8-2-5-K3-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K3",
+      "vorne": "Warum kann ein Array jedes Element über den Index gleich schnell erreichen?",
+      "hinten": "Die Elemente sind gleich groß und liegen lückenlos hintereinander. Die Adresse ergibt sich direkt: Startadresse + Index × Elementgröße."
+    },
+    {
+      "id": "AP1-8-2-5-K3-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K3",
+      "vorne": "Ein Array mit 4-Byte-Werten beginnt bei Adresse 2000. Wo liegt das Element mit Index 3?",
+      "hinten": "2000 + 3 × 4 = 2012."
+    },
+    {
+      "id": "AP1-8-2-5-K4-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K4",
+      "vorne": "Nenne eine Stärke und zwei Schwächen eines Arrays.",
+      "hinten": "- Stärke: schneller Zugriff über den Index\n- Schwächen: feste Größe beim Anlegen; Einfügen und Löschen aufwendig (Elemente verschieben)"
+    },
+    {
+      "id": "AP1-8-2-5-K4-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K4",
+      "vorne": "Die Anzahl der Bestellpositionen ist vorher unbekannt. Array oder dynamische Liste – warum?",
+      "hinten": "Dynamische Liste: Sie wächst zur Laufzeit. Ein Array müsste vorab groß genug angelegt werden und verschwendete dann meist Speicher."
+    },
+    {
+      "id": "AP1-8-2-5-K5-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K5",
+      "vorne": "tabelle = [[4, 7, 1], [2, 9]]. Was liefern LÄNGE(tabelle), LÄNGE(tabelle[1]) und tabelle[1][0]?",
+      "hinten": "2 (Zeilen), 2 (Elemente in Zeile 1), 2 (Zeile 1, Spalte 0)."
+    },
+    {
+      "id": "AP1-8-2-5-K5-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K5",
+      "vorne": "Warum sollte die innere Schleife über ein zweidimensionales Array bis zur Länge der jeweiligen Zeile laufen?",
+      "hinten": "Jede Zeile hat ihre eigene Länge. Mit einer festen Grenze würde bei kürzeren Zeilen über das Ende hinaus zugegriffen."
+    },
+    {
+      "id": "AP1-8-2-5-K6-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K6",
+      "vorne": "Woraus besteht ein Knoten einer einfach verketteten Liste?",
+      "hinten": "Aus einem Wert und einem Verweis auf den nächsten Knoten; der letzte Knoten verweist auf null."
+    },
+    {
+      "id": "AP1-8-2-5-K6-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K6",
+      "vorne": "Warum ist bei einer verketteten Liste das Einfügen schnell, der Zugriff auf das 500. Element aber langsam?",
+      "hinten": "Einfügen: nur Verweise umhängen. Zugriff: Man muss vom Kopf aus 499 Knoten durchlaufen, eine Adressrechnung wie beim Array gibt es nicht."
+    },
+    {
+      "id": "AP1-8-2-5-K7-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K7",
+      "vorne": "Was bedeuten LIFO und FIFO, und welche Datenstruktur arbeitet jeweils so?",
+      "hinten": "- LIFO (Last In, First Out): Stapel – das zuletzt Abgelegte kommt zuerst heraus\n- FIFO (First In, First Out): Warteschlange – in der Reihenfolge des Eingangs"
+    },
+    {
+      "id": "AP1-8-2-5-K7-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K7",
+      "vorne": "Wofür nutzt das Programm beim Aufruf einer Funktion einen Stapel?",
+      "hinten": "Für den Aufrufstapel: Rücksprungadresse und lokale Variablen werden abgelegt und nach dem Ende der Funktion in umgekehrter Reihenfolge wieder entnommen."
+    },
+    {
+      "id": "AP1-8-2-5-K7-3",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K7",
+      "vorne": "Drei Druckaufträge kommen nacheinander an: A, B, C. In welcher Reihenfolge druckt eine Warteschlange?",
+      "hinten": "A, B, C – FIFO, in der Reihenfolge des Eingangs."
+    },
+    {
+      "id": "AP1-8-2-5-K8-1",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K8",
+      "vorne": "Wie findet eine Hashtabelle den Wert zu einem Schlüssel, ohne alle Einträge zu durchsuchen?",
+      "hinten": "Die Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition; dort liegt der Wert."
+    },
+    {
+      "id": "AP1-8-2-5-K8-2",
+      "sp": "AP1-8-2-5",
+      "k": "AP1-8-2-5-K8",
+      "vorne": "Nenne einen Vorteil und einen Nachteil der Hashtabelle gegenüber einem Array.",
+      "hinten": "- Vorteil: schnelle Suche über den Schlüssel, auch bei sehr vielen Einträgen\n- Nachteil: mehr Speicherbedarf"
+    },
+    {
+      "id": "AP1-8-2-2-K7-1",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K7",
+      "vorne": "Was unterscheidet einen Algorithmus von einem Programm?",
+      "hinten": "Der Algorithmus ist eine endliche, eindeutige Schrittfolge zur Lösung eines Problems, unabhängig von einer Sprache. Das Programm setzt ihn in einer bestimmten Programmiersprache um."
+    },
+    {
+      "id": "AP1-8-2-2-K7-2",
+      "sp": "AP1-8-2-2",
+      "k": "AP1-8-2-2-K7",
+      "vorne": "Warum wird ein Algorithmus in der Prüfung in Pseudocode verlangt?",
+      "hinten": "Er ist von der Sprache unabhängig; Pseudocode zeigt die Schritte, ohne an die Syntax einer bestimmten Sprache gebunden zu sein."
+    },
+    {
+      "id": "AP1-8-2-4-K6-1",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K6",
+      "vorne": "Nenne vier typische formale Fehler im Code.",
+      "hinten": "- falsche Groß-/Kleinschreibung eines Namens\n- fehlendes Anweisungsende (Semikolon)\n- nicht geschlossene Klammer\n- Schlüsselwort oder unzulässiges Zeichen als Variablenname"
+    },
+    {
+      "id": "AP1-8-2-4-K6-2",
+      "sp": "AP1-8-2-4",
+      "k": "AP1-8-2-4-K6",
+      "vorne": "Korrigiere: double netto preis = 100.0",
+      "hinten": "Leerzeichen im Namen ist nicht erlaubt, z. B. nettoPreis oder netto_preis (in Sprachen mit Semikolon zusätzlich ; am Ende)."
+    },
+    {
+      "id": "AP1-8-3-1-K7-1",
+      "sp": "AP1-8-3-1",
+      "k": "AP1-8-3-1-K7",
+      "vorne": "Wie stellt man im Anwendungsfalldiagramm ein externes System als Akteur dar?",
+      "hinten": "Als Rechteck mit dem Schlüsselwort «actor» und dem Namen, außerhalb der Systemgrenze, über eine Assoziation mit dem Anwendungsfall verbunden."
+    },
+    {
+      "id": "AP1-8-3-3-K7-1",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K7",
+      "vorne": "Wann geht der Ablauf nach einer Zusammenführung (Raute), wann nach einer Synchronisation (Balken) weiter?",
+      "hinten": "- Zusammenführung: sobald einer der alternativen Zweige ankommt\n- Synchronisation: erst, wenn alle parallelen Zweige angekommen sind"
+    },
+    {
+      "id": "AP1-8-3-3-K7-2",
+      "sp": "AP1-8-3-3",
+      "k": "AP1-8-3-3-K7",
+      "vorne": "Bezahlen und Archivieren laufen parallel; danach soll versandt werden. Welches Element steht vor „Versenden“?",
+      "hinten": "Ein Synchronisationsbalken, denn Versenden darf erst starten, wenn beide Zweige fertig sind."
+    },
+    {
+      "id": "AP1-8-4-1-K8-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K8",
+      "vorne": "Wozu dient ein ER-Modell?",
+      "hinten": "Es stellt die zu speichernden Daten und ihre Beziehungen grafisch und softwareunabhängig dar, damit Auftraggeber und Entwickler das Datenmodell vor der Umsetzung abgleichen können."
+    },
+    {
+      "id": "AP1-8-4-1-K8-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K8",
+      "vorne": "In welcher Phase des Datenbankentwurfs entsteht das ER-Modell?",
+      "hinten": "Im konzeptionellen Entwurf, nach der Anforderungsanalyse und vor dem logischen Entwurf."
+    },
+    {
+      "id": "AP1-8-4-1-K9-1",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K9",
+      "vorne": "Was ist der Unterschied zwischen Entität und Entitätstyp?",
+      "hinten": "Entität: ein konkretes Objekt (z. B. Kundin Anna Berg). Entitätstyp: die Zusammenfassung gleichartiger Entitäten mit denselben Attributen (z. B. Kunde)."
+    },
+    {
+      "id": "AP1-8-4-1-K9-2",
+      "sp": "AP1-8-4-1",
+      "k": "AP1-8-4-1-K9",
+      "vorne": "Was wird aus Entitätstyp und Entität in einer relationalen Tabelle?",
+      "hinten": "Der Entitätstyp wird zur Tabelle, jede Entität zu einem Datensatz."
+    },
+    {
+      "id": "AP1-8-4-2-K6-1",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K6",
+      "vorne": "Was ist versteckte Redundanz?",
+      "hinten": "Ein gespeicherter Wert, der sich aus anderen gespeicherten Werten berechnen lässt, z. B. Gesamtpreis aus Einzelpreis und Menge."
+    },
+    {
+      "id": "AP1-8-4-2-K6-2",
+      "sp": "AP1-8-4-2",
+      "k": "AP1-8-4-2-K6",
+      "vorne": "Warum speichert man den Gesamtpreis nicht zusätzlich zu Einzelpreis und Menge?",
+      "hinten": "Nach einer Änderung von Preis oder Menge kann er nicht mehr stimmen – die Daten widersprechen sich. Der Speicherplatz ist das kleinere Problem."
+    },
+    {
+      "id": "AP1-8-4-5-K6-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K6",
+      "vorne": "Woraus besteht ein Datenbanksystem?",
+      "hinten": "Aus der Datenbasis (den Daten) und dem Datenbankmanagementsystem (DBMS), das sie verwaltet."
+    },
+    {
+      "id": "AP1-8-4-5-K6-2",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K6",
+      "vorne": "Nenne vier Aufgaben eines DBMS.",
+      "hinten": "- Daten speichern und nach dem Datenmodell verwalten\n- Mehrbenutzerzugriff ermöglichen\n- schnellen Zugriff sicherstellen\n- Datensicherheit und Datenschutz gewährleisten"
+    },
+    {
+      "id": "AP1-8-4-5-K7-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K7",
+      "vorne": "Welche drei Anforderungen muss ein Primärschlüssel erfüllen?",
+      "hinten": "- eindeutig (nie doppelt, nie leer)\n- minimal (so wenige Spalten wie nötig)\n- unveränderlich"
+    },
+    {
+      "id": "AP1-8-4-5-K7-2",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K7",
+      "vorne": "Warum ist die E-Mail-Adresse eines Kunden kein guter Primärschlüssel?",
+      "hinten": "Sie kann sich ändern. Ein Primärschlüssel soll unveränderlich sein, weil andere Tabellen über Fremdschlüssel auf ihn verweisen."
+    },
+    {
+      "id": "AP1-8-4-5-K8-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K8",
+      "vorne": "Was ist ein künstlicher Schlüssel, und warum wird er meist gewählt?",
+      "hinten": "Eine laufende Nummer oder ID ohne weitere Bedeutung. Sie ist garantiert eindeutig und muss sich nie ändern."
+    },
+    {
+      "id": "AP1-8-4-5-K8-2",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K8",
+      "vorne": "Warum ist eine Kundennummer, die die Postleitzahl enthält, problematisch?",
+      "hinten": "Nach einem Umzug stimmt sie nicht mehr. Ändern lässt sie sich kaum, weil andere Tabellen über Fremdschlüssel auf sie verweisen."
+    },
+    {
+      "id": "AP1-8-4-5-K9-1",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K9",
+      "vorne": "Warum sind Fehler im Datenbankentwurf später teuer?",
+      "hinten": "Im Betrieb müssen vorhandene Daten umgebaut und alle Anwendungen und Abfragen angepasst werden."
+    },
+    {
+      "id": "AP1-8-4-5-K9-2",
+      "sp": "AP1-8-4-5",
+      "k": "AP1-8-4-5-K9",
+      "vorne": "Kann schnellere Hardware einen schwachen Datenbankentwurf ausgleichen?",
+      "hinten": "Nur eine Zeit lang. Wächst die Datenmenge weiter, wird das System wieder langsam; die Ursache im Entwurf bleibt."
+    },
+    {
+      "id": "AP1-8-4-3-K5-1",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K5",
+      "vorne": "Welches Steuerelement wählst du für genau eine aus vielen Möglichkeiten, wenn wenig Platz ist?",
+      "hinten": "Ein Kombinationsfeld (Combobox, Dropdown)."
+    },
+    {
+      "id": "AP1-8-4-3-K5-2",
+      "sp": "AP1-8-4-3",
+      "k": "AP1-8-4-3-K5",
+      "vorne": "Radiobuttons oder Checkboxen: Welches Element passt für „Zahlungsart“, welches für „Gewünschte Extras“?",
+      "hinten": "- Zahlungsart: Radiobuttons (genau eine)\n- Extras: Checkboxen (mehrere möglich)"
     }
   ],
   "nicht_abgefragt": [],
@@ -2117,6 +2649,386 @@
       "id": "AP1-8-4-5-K5-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-8-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.1-S215)"
+    },
+    {
+      "id": "AP1-8-1-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.1-S215)"
+    },
+    {
+      "id": "AP1-8-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.1-S216)"
+    },
+    {
+      "id": "AP1-8-1-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.1-S216)"
+    },
+    {
+      "id": "AP1-8-1-1-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.6.4-S544)"
+    },
+    {
+      "id": "AP1-8-1-1-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.6.4-S544)"
+    },
+    {
+      "id": "AP1-8-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.2-S184)"
+    },
+    {
+      "id": "AP1-8-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.2-S184)"
+    },
+    {
+      "id": "AP1-8-1-2-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.3-S231, buch:FS-3.6.1-S251)"
+    },
+    {
+      "id": "AP1-8-1-2-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.3-S231, buch:FS-3.6.1-S251)"
+    },
+    {
+      "id": "AP1-8-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.4.1-S49)"
+    },
+    {
+      "id": "AP1-8-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.6.3-S541)"
+    },
+    {
+      "id": "AP1-8-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.6.3-S541)"
+    },
+    {
+      "id": "AP1-8-2-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.4-S555)"
+    },
+    {
+      "id": "AP1-8-2-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.4-S555)"
+    },
+    {
+      "id": "AP1-8-2-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.3-S550)"
+    },
+    {
+      "id": "AP1-8-2-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.3-S550)"
+    },
+    {
+      "id": "AP1-8-2-1-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.5-S567)"
+    },
+    {
+      "id": "AP1-8-2-1-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.5-S567)"
+    },
+    {
+      "id": "AP1-8-2-6-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.2-S134, buch:GS-5.7.3-S553)"
+    },
+    {
+      "id": "AP1-8-2-6-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.2-S134, buch:GS-5.7.3-S553)"
+    },
+    {
+      "id": "AP1-8-2-6-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S220, buch:GS-5.7.4-S559)"
+    },
+    {
+      "id": "AP1-8-2-6-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S220, buch:GS-5.7.4-S559)"
+    },
+    {
+      "id": "AP1-8-2-6-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221, buch:GS-5.7.4-S559)"
+    },
+    {
+      "id": "AP1-8-2-6-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221, buch:GS-5.7.4-S559)"
+    },
+    {
+      "id": "AP1-8-2-6-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221)"
+    },
+    {
+      "id": "AP1-8-2-6-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221)"
+    },
+    {
+      "id": "AP1-8-2-6-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221)"
+    },
+    {
+      "id": "AP1-8-2-6-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221, buch:GS-5.7.4-S559)"
+    },
+    {
+      "id": "AP1-8-2-6-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S221, buch:GS-5.7.4-S559)"
+    },
+    {
+      "id": "AP1-8-2-6-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S222)"
+    },
+    {
+      "id": "AP1-8-2-6-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S222)"
+    },
+    {
+      "id": "AP1-8-2-6-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.4-S561)"
+    },
+    {
+      "id": "AP1-8-2-6-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.4-S561)"
+    },
+    {
+      "id": "AP1-8-2-6-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.4-S557)"
+    },
+    {
+      "id": "AP1-8-2-6-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.7.4-S557)"
+    },
+    {
+      "id": "AP1-8-2-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S137)"
+    },
+    {
+      "id": "AP1-8-2-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S137)"
+    },
+    {
+      "id": "AP1-8-2-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S137)"
+    },
+    {
+      "id": "AP1-8-2-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S137)"
+    },
+    {
+      "id": "AP1-8-2-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S139)"
+    },
+    {
+      "id": "AP1-8-2-5-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S139)"
+    },
+    {
+      "id": "AP1-8-2-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140, buch:GS-5.7.6-S579, buch:FS2-2.2.4-S153)"
+    },
+    {
+      "id": "AP1-8-2-5-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140, buch:GS-5.7.6-S579, buch:FS2-2.2.4-S153)"
+    },
+    {
+      "id": "AP1-8-2-5-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.4-S154, buch:FS2-2.2.3-S149)"
+    },
+    {
+      "id": "AP1-8-2-5-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.4-S154, buch:FS2-2.2.3-S149)"
+    },
+    {
+      "id": "AP1-8-2-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140)"
+    },
+    {
+      "id": "AP1-8-2-5-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S140)"
+    },
+    {
+      "id": "AP1-8-2-5-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142)"
+    },
+    {
+      "id": "AP1-8-2-5-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142)"
+    },
+    {
+      "id": "AP1-8-2-5-K7-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142)"
+    },
+    {
+      "id": "AP1-8-2-5-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142)"
+    },
+    {
+      "id": "AP1-8-2-5-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.2.1-S142)"
+    },
+    {
+      "id": "AP1-8-2-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S497)"
+    },
+    {
+      "id": "AP1-8-2-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.2.4-S497)"
+    },
+    {
+      "id": "AP1-8-2-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S219, buch:GS-5.7.3-S550)"
+    },
+    {
+      "id": "AP1-8-2-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.2-S219, buch:GS-5.7.3-S550)"
+    },
+    {
+      "id": "AP1-8-3-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.4-S193, buch:FS2-2.1.2-S114)"
+    },
+    {
+      "id": "AP1-8-3-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.6-S202)"
+    },
+    {
+      "id": "AP1-8-3-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.6-S202)"
+    },
+    {
+      "id": "AP1-8-4-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.2-S593)"
+    },
+    {
+      "id": "AP1-8-4-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.2-S593)"
+    },
+    {
+      "id": "AP1-8-4-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.2-S594)"
+    },
+    {
+      "id": "AP1-8-4-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.2-S594)"
+    },
+    {
+      "id": "AP1-8-4-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S605)"
+    },
+    {
+      "id": "AP1-8-4-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S605)"
+    },
+    {
+      "id": "AP1-8-4-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S587)"
+    },
+    {
+      "id": "AP1-8-4-5-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S587)"
+    },
+    {
+      "id": "AP1-8-4-5-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S600)"
+    },
+    {
+      "id": "AP1-8-4-5-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S600)"
+    },
+    {
+      "id": "AP1-8-4-5-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S600)"
+    },
+    {
+      "id": "AP1-8-4-5-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S600)"
+    },
+    {
+      "id": "AP1-8-4-5-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.2-S268)"
+    },
+    {
+      "id": "AP1-8-4-5-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.2-S268)"
+    },
+    {
+      "id": "AP1-8-4-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.4-S42)"
+    },
+    {
+      "id": "AP1-8-4-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.3.4-S42)"
     }
   ]
 }
