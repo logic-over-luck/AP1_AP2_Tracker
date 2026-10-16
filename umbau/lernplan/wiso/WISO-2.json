@@ -81,12 +81,81 @@
        "herkunft": [
         "katalog:WISO.02.01.3"
        ]
+      },
+      {
+       "id": "WISO-2-1-1-K7",
+       "text": "Du kannst Unternehmen und Betrieb unterscheiden: Das Unternehmen ist die rechtlich-wirtschaftliche Einheit, die Gewinn anstrebt, Verträge schließt, Bücher führt und Steuern zahlt; der Betrieb ist die organisatorisch-technische Einheit, in der die Leistung tatsächlich erstellt wird, und ein Unternehmen kann mehrere Betriebe haben.",
+       "kurz": "Unternehmen gegen Betrieb",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.2-S46"
+       ]
+      },
+      {
+       "id": "WISO-2-1-1-K8",
+       "text": "Du kannst Marktarten unterscheiden: Gütermärkte für Konsum- und Investitionsgüter gegenüber Faktormärkten für Arbeit, Boden und Kapital, freie Märkte (jeder darf teilnehmen) gegenüber geschlossenen mit beschränktem Zugang sowie den vollkommenen Markt als Modell (gleichartige Güter, volle Markttransparenz, keine Vorlieben für bestimmte Anbieter, sofortige Reaktion aller Teilnehmer) gegenüber dem unvollkommenen Markt der Wirklichkeit.",
+       "kurz": "Güter- und Faktormarkt, vollkommener Markt",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.4.2-S96"
+       ]
+      },
+      {
+       "id": "WISO-2-1-1-K9",
+       "text": "Du kannst Angebotsbreite und Angebotstiefe einer Produktpalette unterscheiden: Die Breite ist die Zahl verschiedener Produktgruppen, zum Beispiel Notebooks, Monitore, Netzwerktechnik und Wartungsverträge, die Tiefe die Zahl der Varianten innerhalb einer Gruppe, zum Beispiel zwölf Notebookmodelle mit unterschiedlicher Ausstattung.",
+       "kurz": "Angebotsbreite und Angebotstiefe",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.4.2-S104"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-2-1-1"
      ],
-     "hinweis": "Marktformen (Monopol, Oligopol, Polypol; 2025S-WISO-A2) stehen in AP1-2-1-1."
+     "hinweis": "Marktformen (Monopol, Oligopol, Polypol; 2025S-WISO-A2) stehen in AP1-2-1-1.",
+     "kuer": [
+      {
+       "text": "Ein IT-Systemhaus steht zwischen Herstellern und Kunden: Es nimmt den Bedarf beim Kunden auf, beschafft und installiert passende Hard- und Software und betreut sie danach vor Ort oder per Fernwartung, oft bis zur Übernahme der gesamten ausgelagerten IT.",
+       "kurz": "IT-Systemhaus als Betriebstyp",
+       "quellen": [
+        "buch:GS-1.3.1"
+       ],
+       "grund": "RK: Beschreibung eines Betriebstyps, kein Prinzip"
+      },
+      {
+       "text": "Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und höchstens 50 Mio. Euro Jahresumsatz; sie stellen in Deutschland über 99 % der Unternehmen, gut die Hälfte der Beschäftigten und den größten Teil der Ausbildungsplätze.",
+       "kurz": "Kleine und mittlere Unternehmen (KMU)",
+       "quellen": [
+        "buch:GS-1.3.2"
+       ],
+       "grund": "D8: kein Katalog-Baustein (KMU-Schwellen)"
+      },
+      {
+       "text": "Güter unterscheidet man in materielle und immaterielle (Dienstleistungen, Rechte, Lizenzen), Konsum- und Investitionsgüter, komplementäre (Drucker und Toner) und substitutive (Laser- statt Tintenstrahldrucker), freie und knappe wirtschaftliche sowie private und öffentliche Güter, von deren Nutzung niemand ausgeschlossen wird.",
+       "kurz": "Güterarten nach Kriterien",
+       "quellen": [
+        "buch:GS-1.3.6"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Güterarten)"
+      },
+      {
+       "text": "Im einfachen Wirtschaftskreislauf stellen Haushalte den Unternehmen Arbeit, Boden und Kapital zur Verfügung und kaufen mit dem erhaltenen Einkommen deren Konsumgüter – Güter- und Geldstrom laufen gegeneinander. Der erweiterte Kreislauf ergänzt Banken (Ersparnisse, Kredite), den Staat (Steuern, Transferleistungen, Subventionen) und das Ausland (Export, Import).",
+       "kurz": "Einfacher und erweiterter Wirtschaftskreislauf",
+       "quellen": [
+        "buch:GS-1.4.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Wirtschaftskreislauf)"
+      },
+      {
+       "text": "Im IT-Markt liefert ein Erstausrüster (OEM) Komponenten, die andere Hersteller in ihre Produkte einbauen, ein Auftragsfertiger (ODM) entwickelt und fertigt Geräte in großen Stückzahlen für andere Unternehmen, und ein Systemintegrator passt Produkte verschiedener Hersteller an und bindet sie in die IT-Landschaft des Kunden ein.",
+       "kurz": "OEM, ODM und Systemintegrator",
+       "quellen": [
+        "buch:GS-2.1.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Rollen im IT-Markt)"
+      }
+     ]
     },
     {
      "id": "WISO-2-1-2",
@@ -278,6 +347,15 @@
         "beleg:2025S-WISO-A6",
         "beleg:2025W-WISO-A5"
        ]
+      },
+      {
+       "id": "WISO-2-1-4-K5",
+       "text": "Du kannst saisonale Schwankungen (wiederkehrend im Jahreslauf, etwa mehr Notebookverkäufe vor Weihnachten und zum Schulbeginn), strukturelle Veränderungen (dauerhafte Verschiebungen durch neue Technik, Gesetze oder veränderte Gewohnheiten, etwa Cloud-Dienste statt eigener Server) und konjunkturelle Schwankungen (mehrjährige Wellen der gesamtwirtschaftlichen Auslastung) an Beispielen unterscheiden.",
+       "kurz": "Saisonale, strukturelle, konjunkturelle Schwankung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.4.2-S105"
+       ]
       }
      ],
      "hinweis": "Neuer Stichpunkt (Zusatzbaustein): Konjunktur steht nicht im Katalog, kam aber in drei der acht Prüfungen vor. Real- und Nominaleinkommen bei steigenden Preisen (2023S-WISO-A9) stehen in WISO-1-6-1-K6."
@@ -366,9 +444,27 @@
         "katalog:WISO.02.02.1",
         "katalog:WISO.02.02.2"
        ]
+      },
+      {
+       "id": "WISO-2-2-1-K8",
+       "text": "Du kannst erklären, wie Gewinn und Verlust einer GbR oder OHG verteilt werden, wenn der Gesellschaftsvertrag nichts regelt: seit 2024 nach den vereinbarten Beteiligungsverhältnissen, fehlen diese, nach dem Verhältnis der vereinbarten Beiträge, und ist auch dazu nichts vereinbart, zu gleichen Teilen.",
+       "kurz": "Gewinnverteilung in GbR und OHG ohne Vertrag",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S78"
+       ]
+      },
+      {
+       "id": "WISO-2-2-1-K9",
+       "text": "Du kannst die Rechte des Kommanditisten in der KG erklären: Er ist von der Geschäftsführung ausgeschlossen, darf aber eine Abschrift des Jahresabschlusses verlangen und ihn anhand der Bücher und Unterlagen prüfen (Kontrollrecht) und Geschäften widersprechen, die über den gewöhnlichen Betrieb hinausgehen (Widerspruchsrecht), zum Beispiel dem Kauf eines zweiten Firmengebäudes.",
+       "kurz": "Kontroll- und Widerspruchsrecht des Kommanditisten",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S79"
+       ]
       }
      ],
-     "hinweis": "Die Rechtsform für eine Gründung wählen und die eG (2023S-WISO-A23, 2023W-WISO-A15) steht in WISO-2-2-2-K7 und -K8.",
+     "hinweis": "Die Rechtsform für eine Gründung wählen und die eG (2023S-WISO-A23, 2023W-WISO-A15) steht in WISO-2-2-2-K7 und -K8. Das Lehrbuch nennt für GbR und OHG ohne Vertragsregel noch die Gewinnverteilung nach Köpfen bzw. 4 % auf die Einlage und den Rest nach Köpfen; richtig ist seit dem 1.1.2024 (MoPeG): nach den vereinbarten Beteiligungsverhältnissen, hilfsweise nach dem Wert der vereinbarten Beiträge, sonst zu gleichen Teilen.",
      "kuer": [
       {
        "text": "Seit 1.1.2024 (Personengesellschaftsrechtsmodernisierungsgesetz, MoPeG) kann sich eine GbR in das Gesellschaftsregister eintragen lassen und heißt dann eGbR; nötig ist die Eintragung zum Beispiel, wenn die GbR ein Grundstück erwerben will.",
@@ -377,6 +473,14 @@
         "pruefer:wiso-2026-10"
        ],
        "grund": "Kür-Vorschlag der unabhängigen Prüfung (P49): aktueller Rechtsstand; die Prüfungen 2021–2025 fragen es nicht ab"
+      },
+      {
+       "text": "In der stillen Gesellschaft beteiligt sich jemand mit einer Einlage am Handelsgewerbe eines anderen, ohne nach außen aufzutreten: Er führt keine Geschäfte, haftet höchstens mit seiner Einlage und erhält einen vereinbarten oder angemessenen Anteil am Gewinn.",
+       "kurz": "Stille Gesellschaft als verdeckte Beteiligung",
+       "quellen": [
+        "buch:GS-1.3.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein (stille Gesellschaft)"
       }
      ]
     },
@@ -493,6 +597,15 @@
         "katalog:WISO.02.02.3",
         "beleg:2023W-WISO-A15"
        ]
+      },
+      {
+       "id": "WISO-2-2-2-K9",
+       "text": "Du kannst die Besteuerung des Gewinns nach Rechtsform unterscheiden: Beim Einzelunternehmen und bei Personengesellschaften versteuert jeder Inhaber seinen Gewinnanteil mit seiner persönlichen Einkommensteuer, eine GmbH oder AG ist als juristische Person selbst steuerpflichtig und zahlt Körperschaftsteuer, und ausgeschüttete Gewinne versteuern die Gesellschafter zusätzlich.",
+       "kurz": "Einkommen- gegen Körperschaftsteuer nach Rechtsform",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S77"
+       ]
       }
      ],
      "hinweis": "Personengesellschaften (Haftung, Geschäftsführung) stehen in WISO-2-2-1; K8 setzt sie voraus.",
@@ -503,6 +616,16 @@
        "katalog": [
         "WISO.02.02.3"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG zusätzlich die Handelsregistereintragung, GmbH und AG Notar, Register und laufend mehr Verwaltung. Die Unternehmergesellschaft (haftungsbeschränkt) ist eine GmbH-Variante ab 1 Euro Stammkapital, nur mit Bareinlage, die ein Viertel ihres Jahresgewinns zurücklegen muss, bis 25.000 Euro erreicht sind, und den Zusatz „UG (haftungsbeschränkt)“ führen muss.",
+       "kurz": "Gründungsaufwand und Unternehmergesellschaft (UG)",
+       "quellen": [
+        "buch:GS-1.3.4"
+       ],
+       "grund": "D8/G3: UG laut Grenze an WISO-2-2-2 nur Kür; Gründungskosten sind Einzelwerte (RK1)"
       }
      ]
     },
@@ -623,6 +746,24 @@
         "beleg:2025S-WISO-A21",
         "beleg:2025W-WISO-A19"
        ]
+      },
+      {
+       "id": "WISO-2-2-4-K5",
+       "text": "Du kannst Personen-, Sach- und Fantasiefirma unterscheiden: Die Personenfirma enthält den Namen eines Inhabers oder Gesellschafters, die Sachfirma den Gegenstand des Unternehmens, die Fantasiefirma einen frei erfundenen Namen; Mischformen sind üblich, und ein nicht eingetragener Kleingewerbetreibender führt keine Firma, sondern tritt mit Vor- und Nachnamen auf, höchstens ergänzt um eine Geschäftsbezeichnung.",
+       "kurz": "Personen-, Sach- und Fantasiefirma",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S75"
+       ]
+      },
+      {
+       "id": "WISO-2-2-4-K6",
+       "text": "Du kannst die Grundsätze der Firmenbildung erklären: Firmenwahrheit (die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen), Firmenausschließlichkeit (sie muss sich von allen Firmen am selben Ort deutlich unterscheiden) und Firmenbeständigkeit (bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden).",
+       "kurz": "Grundsätze der Firmenbildung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S75"
+       ]
       }
      ],
      "baut_auf": [
@@ -679,7 +820,8 @@
        "herkunft": [
         "katalog:WISO.02.03.1",
         "beleg:2025W-WISO-A24",
-        "beleg:2021W-WISO-A13"
+        "beleg:2021W-WISO-A13",
+        "buch:GS-1.3.4-S68"
        ]
       },
       {
@@ -708,12 +850,40 @@
         ],
         "was": "Vor- und Nachteile von Mehrliniensystem und Matrixorganisation den Formen zuordnen (Stufe 2); AP1-2-4-2-K3 lässt nur je einen Vorteil und Nachteil nennen (Stufe 1, Beispiel Einliniensystem)."
        }
+      },
+      {
+       "id": "WISO-2-2-5-K5",
+       "text": "Du kannst die funktionale von der divisionalen Organisation unterscheiden: In der funktionalen ist die zweite Ebene unter der Leitung nach Tätigkeiten gegliedert (Beschaffung, Entwicklung, Vertrieb, Verwaltung), in der divisionalen nach Sparten (Produktgruppen, Kundengruppen oder Regionen), die jeweils eigene Funktionsbereiche haben und weitgehend selbstständig arbeiten.",
+       "kurz": "Funktionale gegen divisionale Organisation",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S71"
+       ]
+      },
+      {
+       "id": "WISO-2-2-5-K6",
+       "text": "Du kannst Profitcenter und Costcenter unterscheiden: Ein Profitcenter ist ein Unternehmensbereich mit eigenen Zielen, der für seinen Gewinn verantwortlich ist, weil er Erlöse und Kosten selbst beeinflusst, ein Costcenter hat ebenfalls eigene Ziele, ist aber nur für seine Kosten verantwortlich, weil er keine eigenen Erlöse am Markt erzielt, zum Beispiel die interne IT.",
+       "kurz": "Profitcenter gegen Costcenter",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S72"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-2-4-2"
      ],
-     "hinweis": "Einlinien-, Mehrlinien- und Matrixorganisation (Erkennen am Organigramm, Unterschiede, je einen Vor- und Nachteil nennen) stehen in AP1-2-4-2; damit lösen sich 2022S-WISO-A21, 2023W-WISO-A21 und 2024S-WISO-A21. Das Zuordnen von Vor- und Nachteilen zu Mehrlinien- und Matrixsystem (2021W-WISO-A13) geht darüber hinaus und steht in K4. Früher Stichpunkt WISO-2-3-1."
+     "hinweis": "Einlinien-, Mehrlinien- und Matrixorganisation (Erkennen am Organigramm, Unterschiede, je einen Vor- und Nachteil nennen) stehen in AP1-2-4-2; damit lösen sich 2022S-WISO-A21, 2023W-WISO-A21 und 2024S-WISO-A21. Das Zuordnen von Vor- und Nachteilen zu Mehrlinien- und Matrixsystem (2021W-WISO-A13) geht darüber hinaus und steht in K4. Früher Stichpunkt WISO-2-3-1.",
+     "kuer": [
+      {
+       "text": "Je weniger Managementebenen zwischen Geschäftsleitung und ausführender Ebene liegen, desto kürzer sind Entscheidungs- und Informationswege: Flache Hierarchien (Lean Management) stärken Eigenverantwortung und Innovation, steile Hierarchien mit vielen Ebenen verlängern die Wege und bremsen Entscheidungen.",
+       "kurz": "Flache Hierarchie und Lean Management",
+       "quellen": [
+        "buch:GS-1.3.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Hierarchietiefe)"
+      }
+     ]
     },
     {
      "id": "WISO-2-2-6",
@@ -767,9 +937,69 @@
        "herkunft": [
         "katalog:WISO.02.03.5"
        ]
+      },
+      {
+       "id": "WISO-2-2-6-K5",
+       "text": "Du kannst erklären, wie aus der Gesamtaufgabe eines Betriebs Stellen entstehen: In der Aufgabenanalyse wird die Gesamtaufgabe schrittweise in Haupt-, Teil- und Einzelaufgaben zerlegt und im Aufgabengliederungsplan dargestellt, in der Aufgabensynthese werden die Einzelaufgaben zu Stellen gebündelt, die eine Person mit passender Qualifikation bewältigen kann.",
+       "kurz": "Aufgabenanalyse und Stellenbildung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S66"
+       ]
+      },
+      {
+       "id": "WISO-2-2-6-K6",
+       "text": "Du kannst Stellenplan und Stellenbeschreibung erklären: Der Stellenplan verzeichnet alle genehmigten Stellen des Betriebs mit ihrer Einordnung, auch unbesetzte, die Stellenbeschreibung legt für eine einzelne Stelle unabhängig von der Person, die sie innehat, Ziel, Aufgaben, Befugnisse und Vollmachten, Über- und Unterstellung, Vertretung, Vergütungsgruppe und geforderte Qualifikation fest.",
+       "kurz": "Stellenplan und Stellenbeschreibung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.4-S67"
+       ]
       }
      ],
-     "hinweis": "Früher Stichpunkt WISO-2-3-2. Betriebliche Arbeitsteilung erkennen (2025W-WISO-A22) steht in WISO-2-1-2-K2."
+     "hinweis": "Früher Stichpunkt WISO-2-3-2. Betriebliche Arbeitsteilung erkennen (2025W-WISO-A22) steht in WISO-2-1-2-K2.",
+     "kuer": [
+      {
+       "text": "Organisation regelt Wiederkehrendes dauerhaft, Disposition entscheidet einen Einzelfall im Rahmen dieser Regeln, Improvisation schafft eine vorläufige Lösung für Unvorhergesehenes, etwa bei einem plötzlichen Serverausfall. Zu viele feste Regeln (Überorganisation) machen starr und demotivieren, zu wenige (Unterorganisation) führen zu Durcheinander und schwankender Leistung.",
+       "kurz": "Organisation, Disposition, Improvisation",
+       "quellen": [
+        "buch:GS-1.3.4"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Organisation/Disposition/Improvisation)"
+      },
+      {
+       "text": "Bevor eine Stelle gebildet wird, prüft der Betrieb, ob die Aufgabe intern oder besser durch Fremdvergabe erledigt wird; die Stelle soll überschaubar und der Leistungsfähigkeit eines Menschen angemessen sein, und ihre Ausschreibung muss nach dem Allgemeinen Gleichbehandlungsgesetz geschlechtsneutral formuliert sein.",
+       "kurz": "Grundsätze der Stellenbildung",
+       "quellen": [
+        "buch:GS-1.3.4"
+       ],
+       "grund": "RK: Zusatz zur Stellenbildung (Pflicht-Aussage zu GS-1.3.4#4)"
+      },
+      {
+       "text": "Die Position ist die formale Stelle im Organigramm, die Funktion die Arbeit, die auf ihr zu leisten ist, und die Rolle das Bündel an Erwartungen, die das Unternehmen an das Handeln einer Person richtet – etwa die Rolle Product Owner, die ein Entwickler zusätzlich zu seiner Stelle übernimmt.",
+       "kurz": "Position, Funktion und Rolle",
+       "quellen": [
+        "buch:FS-1.2.1"
+       ],
+       "grund": "RK: kein Baustein, nur lose an Aufgabenteilung"
+      },
+      {
+       "text": "Gegen Monotonie und für mehr Motivation gibt es drei Formen der Arbeitsgestaltung: Jobrotation (geplanter Wechsel zwischen Arbeitsplätzen), Job Enlargement (zusätzliche Aufgaben auf gleichem Niveau) und Job Enrichment (mehr Entscheidungs- und Kontrollbefugnis, also mehr Verantwortung).",
+       "kurz": "Jobrotation, Job Enlargement, Job Enrichment",
+       "quellen": [
+        "buch:GS-1.2.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Arbeitsgestaltung)"
+      },
+      {
+       "text": "Organisationsmittel sind Arbeitsmittel wie Computer und Büromaterial und Gestaltungsmittel wie Organigramm, Stellenbeschreibung, Arbeitsanweisungen und Formulare; im papierlosen Büro liegen sie digital vor und werden gemeinsam bearbeitet.",
+       "kurz": "Arbeits- und Gestaltungsmittel der Organisation",
+       "quellen": [
+        "buch:GS-1.3.6"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Organisationsmittel)"
+      }
+     ]
     }
    ]
   },
@@ -868,8 +1098,36 @@
         "katalog:WISO.02.05.3",
         "regel:P-GESCHWISTER"
        ]
+      },
+      {
+       "id": "WISO-2-4-1-K7",
+       "text": "Du kannst den Return on Investment (ROI) einer Investition berechnen: Rückflüsse minus Investition, geteilt durch die Investition, mal 100; ein Wert über 0 % zeigt, dass mehr zurückgeflossen ist als eingesetzt wurde, und von zwei Investitionen ist die mit dem höheren ROI rentabler.",
+       "kurz": "Return on Investment (ROI) berechnen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-4.4.1-S367"
+       ]
       }
-     ]
+     ],
+     "kuer": [
+      {
+       "text": "Die Leitung (dispositiver Faktor: planen, organisieren, kontrollieren) kombiniert die Elementarfaktoren Werkstoffe, Betriebsmittel wie Gebäude, Maschinen und IT sowie ausführende Arbeit; Information und Wissen gelten heute als weiterer Faktor, weil ohne sie weder Entscheidungen noch digitale Leistungen entstehen.",
+       "kurz": "Produktionsfaktoren im Betrieb",
+       "quellen": [
+        "buch:GS-1.3.6"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Produktionsfaktoren)"
+      },
+      {
+       "text": "Kleine Gewerbetreibende ermitteln ihren Gewinn mit der Einnahmen-Überschuss-Rechnung (Einnahmen minus Ausgaben), Kaufleute und größere Unternehmen mit der doppelten Buchführung. Deren Bilanz zeigt auf der Aktivseite, wofür das Kapital verwendet wird (Anlage- und Umlaufvermögen), auf der Passivseite, woher es stammt (Eigen- und Fremdkapital); die Gewinn- und Verlustrechnung ermittelt den Jahreserfolg aus Erträgen minus Aufwendungen.",
+       "kurz": "Einnahmen-Überschuss-Rechnung, Bilanz und GuV",
+       "quellen": [
+        "buch:GS-2.8.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Buchführung, Bilanz, GuV)"
+      }
+     ],
+     "hinweis": "Das Lehrbuch rechnet den ROI noch als Rückflüsse geteilt durch Investition (Gewinnschwelle bei 1 bzw. 100 %); üblich und hier gelernt ist (Rückflüsse − Investition) / Investition, bei der jeder Wert über 0 % einen Überschuss zeigt."
     },
     {
      "id": "WISO-2-4-2",
@@ -922,12 +1180,31 @@
         "regel:P-GRUNDLAGE",
         "beleg:2025W-WISO-A6"
        ]
+      },
+      {
+       "id": "WISO-2-4-2-K6",
+       "text": "Du kannst Formalziele und Sachziele unterscheiden: Formalziele beschreiben den angestrebten wirtschaftlichen Erfolg wie Umsatz, Gewinn, Rentabilität oder Marktanteil, Sachziele das konkrete Leistungsprogramm nach Art, Menge, Qualität, Ort und Zeit, zum Beispiel bis Jahresende 200 Cloud-Arbeitsplätze in Betrieb nehmen; die Sachziele sind das Mittel, um die Formalziele zu erreichen.",
+       "kurz": "Formalziele gegen Sachziele",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.3-S54"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-2-4-1"
      ],
-     "hinweis": "Ökonomische, ökologische und soziale Ziele einordnen (2025S-WISO-A7) steht in AP1-2-4-1. Früher Stichpunkt „Unternehmensziele“; das Einordnen der Ziele ist gestrichen (E2)."
+     "hinweis": "Ökonomische, ökologische und soziale Ziele einordnen (2025S-WISO-A7) steht in AP1-2-4-1. Früher Stichpunkt „Unternehmensziele“; das Einordnen der Ziele ist gestrichen (E2).",
+     "kuer": [
+      {
+       "text": "Neben dem Gewinn muss ein Unternehmen jederzeit zahlungsfähig bleiben (Liquidität), denn Zahlungsunfähigkeit führt zur Insolvenz, und große Risiken etwa durch Rücklagen absichern, damit das eingesetzte Kapital nicht verloren geht. Weil sich nicht alle Ziele zugleich verfolgen lassen, bringt die Leitung sie in eine Rangfolge: Vorrang hat, was am meisten zum Gesamtziel beiträgt.",
+       "kurz": "Liquidität, Risikoabsicherung und Zielrangfolge",
+       "quellen": [
+        "buch:GS-1.3.3"
+       ],
+       "grund": "D8: Liquidität und Risikoabsicherung ohne Katalog-Baustein; Rangfolge über Zielbeziehungen hinaus"
+      }
+     ]
     },
     {
      "id": "WISO-2-4-3",
@@ -972,9 +1249,18 @@
         "katalog:ZB.wiso-oekonomisches-prinzip",
         "beleg:2025S-WISO-A3"
        ]
+      },
+      {
+       "id": "WISO-2-4-3-K4",
+       "text": "Du kannst das Optimumprinzip erklären: Sind Mitteleinsatz und Ergebnis beide veränderlich, wählt man die Kombination mit dem günstigsten Verhältnis von Ergebnis zu Einsatz, zum Beispiel beim Speicherkauf das Angebot mit den meisten Terabyte je Euro, auch wenn es weder das billigste noch das größte ist.",
+       "kurz": "Optimumprinzip: bestes Verhältnis von Ergebnis zu Einsatz",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.6-S91"
+       ]
       }
      ],
-     "hinweis": "Neuer Stichpunkt (Zusatzbaustein): Das ökonomische Prinzip steht nicht im Katalog, kam aber 2025S vor; es gehört zur Wirtschaftlichkeit (WISO.02.05.2)."
+     "hinweis": "Neuer Stichpunkt (Zusatzbaustein): Das ökonomische Prinzip steht nicht im Katalog, kam aber 2025S vor; es gehört zur Wirtschaftlichkeit (WISO.02.05.2). Das Lehrbuch nennt beim Optimumprinzip das Angebot mit dem niedrigeren Wert Output/Input als das bessere; richtig ist das Angebot mit dem höheren Wert Output/Input (also mit dem niedrigeren Einsatz je Leistungseinheit)."
     }
    ]
   },
@@ -1066,6 +1352,24 @@
        "herkunft": [
         "katalog:WISO.02.04.2"
        ]
+      },
+      {
+       "id": "WISO-2-5-1-K7",
+       "text": "Du kannst Unternehmenszusammenschlüsse nach ihrer Richtung unterscheiden: horizontal (Unternehmen derselben Wirtschaftsstufe, zum Beispiel zwei Softwarehäuser), vertikal (vor- und nachgelagerte Stufen, zum Beispiel ein Chiphersteller und ein Notebookhersteller) und diagonal oder anorganisch (Unternehmen ohne Bezug zwischen ihren Leistungen, vor allem zur Streuung des Risikos).",
+       "kurz": "Horizontale, vertikale, diagonale Zusammenschlüsse",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.2-S48"
+       ]
+      },
+      {
+       "id": "WISO-2-5-1-K8",
+       "text": "Du kannst die Holding erklären: eine Dachgesellschaft, die die Anteile an rechtlich selbstständigen Tochterunternehmen hält und diese einheitlich leitet, meist ohne selbst Leistungen am Markt anzubieten; so entsteht ein Konzern, in dem die Töchter ihre eigene Firma und Rechtsform behalten.",
+       "kurz": "Holding als Dachgesellschaft im Konzern",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-1.3.2-S48"
+       ]
       }
      ],
      "hinweis": "2024S-WISO-A22 fragt nach einem „anmeldepflichtigen“ Kartell; die IHK-Lösung (Normen- und Typenkartell) gibt die Rechtslage vor 2005 wieder. Seitdem gibt es keine Anmeldepflicht mehr; Unternehmen prüfen selbst, ob eine Absprache ausnahmsweise erlaubt ist (P35 Nr. 7 sinngemäß).",
@@ -1077,6 +1381,24 @@
         "WISO.02.04.2",
         "WISO.02.04.3"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Ein Konsortium ist ein befristeter Zusammenschluss selbstständiger Unternehmen für ein Großvorhaben oder einen gemeinsamen Standard, eine strategische Allianz eine dauerhafte Partnerschaft für gemeinsame Ziele, etwa als zertifizierter Partner eines Softwareherstellers. Beim Franchising überlässt der Franchisegeber selbstständigen Franchisenehmern gegen Gebühr Geschäftskonzept, Marke und Marketing und macht ihnen dafür verbindliche Vorgaben.",
+       "kurz": "Konsortium, strategische Allianz, Franchising",
+       "quellen": [
+        "buch:GS-1.3.2"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Konsortium, Allianz, Franchising)"
+      },
+      {
+       "text": "Marktbeherrschend ist ein Unternehmen ohne wesentlichen Wettbewerb oder mit überragender Marktstellung, vermutet ab 40 % Marktanteil; verboten ist nicht die Marktmacht selbst, sondern ihr Missbrauch, etwa überhöhte Preise oder das Behindern von Wettbewerbern, den das Bundeskartellamt verfolgt.",
+       "kurz": "Marktbeherrschung und ihr Missbrauch",
+       "quellen": [
+        "buch:GS-1.4.2"
+       ],
+       "grund": "D8/G4: GWB-Einzelheiten laut Grenze an WISO-2-5-1 nur Kür"
       }
      ]
     },
@@ -1672,7 +1994,7 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.8",
+  "regelwerk_version": "2.2",
   "stand": "2026-10-16",
   "hinweis": "WiSo-Ordner (UMBAU.md Schritt 6). ID-Erhalt wie AP1 (P15, P48). Inhalte früherer Räume werden mit baut_auf importiert (E2); WiSo-Bausteine, die ein früherer Raum schon lehrt, stehen in umbau/regeln/wiso-deckung.json (P47). Stufe der WiSo-Aufgaben nach Z3b (P46).",
   "kerntest": {
@@ -1682,7 +2004,18 @@
   },
   "hinweisquellen": {
    "pruefer:wiso-2026-10": "Unabhängige Prüfung WiSo vom 16.10.2026 (Berichte umbau/berichte/WISO-<n>-pruefer.md, Bilanz WISO-pruefer-bilanz.md): Kür-Vorschläge zum aktuellen Rechtsstand und zu üblichen Detailfragen; als Hinweisquelle zugelassen nach Entscheidung des Projektinhabers (P49, wie P30).",
-   "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte."
+   "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte.",
+   "buch:GS-1.3.1": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.3.2": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.3.6": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.4.1": "Lehrbuch Westermann „IT-Berufe“ GS 1.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-2.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 2.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.3.4": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.2.1": "Lehrbuch Westermann „IT-Berufe“ FS 1.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.2.3": "Lehrbuch Westermann „IT-Berufe“ GS 1.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-2.8.1": "Lehrbuch Westermann „IT-Berufe“ GS 2.8.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.3.3": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.4.2": "Lehrbuch Westermann „IT-Berufe“ GS 1.4.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-16",
@@ -1699,6 +2032,204 @@
       "WISO-2-2-1"
      ],
      "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "Ein IT-Systemhaus steht zwischen Herstellern und Kunden: Es nimmt den Bedarf beim Kunden auf, beschafft und installiert ",
+     "quellen": [
+      "buch:GS-1.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und hö",
+     "quellen": [
+      "buch:GS-1.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Güter unterscheidet man in materielle und immaterielle (Dienstleistungen, Rechte, Lizenzen), Konsum- und Investitionsgüt",
+     "quellen": [
+      "buch:GS-1.3.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im einfachen Wirtschaftskreislauf stellen Haushalte den Unternehmen Arbeit, Boden und Kapital zur Verfügung und kaufen m",
+     "quellen": [
+      "buch:GS-1.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im IT-Markt liefert ein Erstausrüster (OEM) Komponenten, die andere Hersteller in ihre Produkte einbauen, ein Auftragsfe",
+     "quellen": [
+      "buch:GS-2.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "In der stillen Gesellschaft beteiligt sich jemand mit einer Einlage am Handelsgewerbe eines anderen, ohne nach außen auf",
+     "quellen": [
+      "buch:GS-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG ",
+     "quellen": [
+      "buch:GS-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Je weniger Managementebenen zwischen Geschäftsleitung und ausführender Ebene liegen, desto kürzer sind Entscheidungs- un",
+     "quellen": [
+      "buch:GS-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Organisation regelt Wiederkehrendes dauerhaft, Disposition entscheidet einen Einzelfall im Rahmen dieser Regeln, Improvi",
+     "quellen": [
+      "buch:GS-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Bevor eine Stelle gebildet wird, prüft der Betrieb, ob die Aufgabe intern oder besser durch Fremdvergabe erledigt wird; ",
+     "quellen": [
+      "buch:GS-1.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Position ist die formale Stelle im Organigramm, die Funktion die Arbeit, die auf ihr zu leisten ist, und die Rolle d",
+     "quellen": [
+      "buch:FS-1.2.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Gegen Monotonie und für mehr Motivation gibt es drei Formen der Arbeitsgestaltung: Jobrotation (geplanter Wechsel zwisch",
+     "quellen": [
+      "buch:GS-1.2.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Organisationsmittel sind Arbeitsmittel wie Computer und Büromaterial und Gestaltungsmittel wie Organigramm, Stellenbesch",
+     "quellen": [
+      "buch:GS-1.3.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-2-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Leitung (dispositiver Faktor: planen, organisieren, kontrollieren) kombiniert die Elementarfaktoren Werkstoffe, Betr",
+     "quellen": [
+      "buch:GS-1.3.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-4-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Kleine Gewerbetreibende ermitteln ihren Gewinn mit der Einnahmen-Überschuss-Rechnung (Einnahmen minus Ausgaben), Kaufleu",
+     "quellen": [
+      "buch:GS-2.8.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-4-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Neben dem Gewinn muss ein Unternehmen jederzeit zahlungsfähig bleiben (Liquidität), denn Zahlungsunfähigkeit führt zur I",
+     "quellen": [
+      "buch:GS-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-4-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Konsortium ist ein befristeter Zusammenschluss selbstständiger Unternehmen für ein Großvorhaben oder einen gemeinsam",
+     "quellen": [
+      "buch:GS-1.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-5-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Marktbeherrschend ist ein Unternehmen ohne wesentlichen Wettbewerb oder mit überragender Marktstellung, vermutet ab 40 %",
+     "quellen": [
+      "buch:GS-1.4.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-2-5-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -1778,6 +2309,64 @@
       "WISO-2-4-3-K2"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "WISO-2-1-1-K7",
+     "WISO-2-1-1-K8",
+     "WISO-2-1-1-K9",
+     "WISO-2-1-4-K5",
+     "WISO-2-2-1-K8",
+     "WISO-2-2-1-K9",
+     "WISO-2-2-2-K9",
+     "WISO-2-2-4-K5",
+     "WISO-2-2-4-K6",
+     "WISO-2-2-5-K5",
+     "WISO-2-2-5-K6",
+     "WISO-2-2-6-K5",
+     "WISO-2-2-6-K6",
+     "WISO-2-4-1-K7",
+     "WISO-2-4-2-K6",
+     "WISO-2-4-3-K4",
+     "WISO-2-5-1-K7",
+     "WISO-2-5-1-K8"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "WISO-2-2-5-K2"
+    ],
+    "kuer": [
+     "WISO-2-1-1",
+     "WISO-2-1-1",
+     "WISO-2-1-1",
+     "WISO-2-1-1",
+     "WISO-2-1-1",
+     "WISO-2-2-1",
+     "WISO-2-2-2",
+     "WISO-2-2-5",
+     "WISO-2-2-6",
+     "WISO-2-2-6",
+     "WISO-2-2-6",
+     "WISO-2-2-6",
+     "WISO-2-2-6",
+     "WISO-2-4-1",
+     "WISO-2-4-1",
+     "WISO-2-4-2",
+     "WISO-2-5-1",
+     "WISO-2-5-1"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "WISO-2-2-1",
+     "WISO-2-4-1",
+     "WISO-2-4-3"
+    ]
    }
   ]
  }

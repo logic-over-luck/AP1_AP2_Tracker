@@ -24,6 +24,17 @@ Teilaufgaben: 2022S-WISO-A17, 2023S-WISO-A27, 2025S-WISO-A1, 2024S-WISO-A9, 2023
 | K2 | Du kannst erwerbswirtschaftliche Betriebe (Ziel ist Gewinn) von gemeinwirtschaftlichen oder gemeinnützigen Betrieben (Ziel ist Bedarfsdeckung) unterscheiden, zum Beispiel ist ein IT-Dienstleister ein erwerbswirtschaftlicher Betrieb des tertiären Sektors. | 2 | katalog:WISO.02.01.2, beleg:2024S-WISO-A9, beleg:2023S-WISO-A21 |
 | K3 | Du kannst Branche, Produktpalette und Markt erklären: der Wirtschaftszweig, alle angebotenen Produkte und Dienstleistungen, das Zusammentreffen von Angebot und Nachfrage. | 2 | katalog:WISO.02.01.1, katalog:WISO.02.01.3 |
 | K5 | Du kannst Beschaffungsmarkt und Absatzmarkt unterscheiden. | 2 | katalog:WISO.02.01.3 |
+| K7 | Du kannst Unternehmen und Betrieb unterscheiden: Das Unternehmen ist die rechtlich-wirtschaftliche Einheit, die Gewinn anstrebt, Verträge schließt, Bücher führt und Steuern zahlt; der Betrieb ist die organisatorisch-technische Einheit, in der die Leistung tatsächlich erstellt wird, und ein Unternehmen kann mehrere Betriebe haben. | 2 | buch:GS-1.3.2-S46 |
+| K8 | Du kannst Marktarten unterscheiden: Gütermärkte für Konsum- und Investitionsgüter gegenüber Faktormärkten für Arbeit, Boden und Kapital, freie Märkte (jeder darf teilnehmen) gegenüber geschlossenen mit beschränktem Zugang sowie den vollkommenen Markt als Modell (gleichartige Güter, volle Markttransparenz, keine Vorlieben für bestimmte Anbieter, sofortige Reaktion aller Teilnehmer) gegenüber dem unvollkommenen Markt der Wirklichkeit. | 2 | buch:GS-1.4.2-S96 |
+| K9 | Du kannst Angebotsbreite und Angebotstiefe einer Produktpalette unterscheiden: Die Breite ist die Zahl verschiedener Produktgruppen, zum Beispiel Notebooks, Monitore, Netzwerktechnik und Wartungsverträge, die Tiefe die Zahl der Varianten innerhalb einer Gruppe, zum Beispiel zwölf Notebookmodelle mit unterschiedlicher Ausstattung. | 2 | buch:GS-1.4.2-S104 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Ein IT-Systemhaus steht zwischen Herstellern und Kunden: Es nimmt den Bedarf beim Kunden auf, beschafft und installiert passende Hard- und Software und betreut sie danach vor Ort oder per Fernwartung, oft bis zur Übernahme der gesamten ausgelagerten IT. _(buch:GS-1.3.1)_
+- Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und höchstens 50 Mio. Euro Jahresumsatz; sie stellen in Deutschland über 99 % der Unternehmen, gut die Hälfte der Beschäftigten und den größten Teil der Ausbildungsplätze. _(buch:GS-1.3.2)_
+- Güter unterscheidet man in materielle und immaterielle (Dienstleistungen, Rechte, Lizenzen), Konsum- und Investitionsgüter, komplementäre (Drucker und Toner) und substitutive (Laser- statt Tintenstrahldrucker), freie und knappe wirtschaftliche sowie private und öffentliche Güter, von deren Nutzung niemand ausgeschlossen wird. _(buch:GS-1.3.6)_
+- Im einfachen Wirtschaftskreislauf stellen Haushalte den Unternehmen Arbeit, Boden und Kapital zur Verfügung und kaufen mit dem erhaltenen Einkommen deren Konsumgüter – Güter- und Geldstrom laufen gegeneinander. Der erweiterte Kreislauf ergänzt Banken (Ersparnisse, Kredite), den Staat (Steuern, Transferleistungen, Subventionen) und das Ausland (Export, Import). _(buch:GS-1.4.1)_
+- Im IT-Markt liefert ein Erstausrüster (OEM) Komponenten, die andere Hersteller in ihre Produkte einbauen, ein Auftragsfertiger (ODM) entwickelt und fertigt Geräte in großen Stückzahlen für andere Unternehmen, und ein Systemintegrator passt Produkte verschiedener Hersteller an und bindet sie in die IT-Landschaft des Kunden ein. _(buch:GS-2.1.4)_
 
 _Hinweis:_ Marktformen (Monopol, Oligopol, Polypol; 2025S-WISO-A2) stehen in AP1-2-1-1.
 
@@ -74,6 +85,7 @@ Teilaufgaben: 2025S-WISO-A4, 2023S-WISO-A26, 2025S-WISO-A5, 2025S-WISO-A6, 2025W
 | K2 | Du kannst eine beschriebene wirtschaftliche Lage anhand von Wachstum des Bruttoinlandsprodukts, Arbeitslosenquote und Inflationsrate einer Konjunkturphase zuordnen, zum Beispiel schrumpfendes BIP und steigende Arbeitslosigkeit dem Abschwung, solange der Tiefpunkt noch nicht erreicht ist. _(vorgegeben: Kennzahlen in einer Tabelle im Aufgabentext)_ | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A4 |
 | K3 | Du kannst typische Merkmale einer Rezession erkennen und von denen eines Aufschwungs unterscheiden: Konsumnachfrage geht zurück, Lagerbestände steigen, Investitionen, Kapazitätsauslastung und Beschäftigung sinken. | 2 | katalog:ZB.wiso-konjunktur, beleg:2023S-WISO-A26, beleg:2025S-WISO-A5 |
 | K4 | Du kannst Maßnahmen unterscheiden, die die Konjunktur beleben (höhere staatliche Investitionen, Steuersenkungen; geldpolitisch niedrigere Leitzinsen, über die die Europäische Zentralbank entscheidet, nicht der Staat) oder dämpfen (Steuererhöhungen, Kürzung staatlicher Leistungen; höhere Leitzinsen). | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A6, beleg:2025W-WISO-A5 |
+| K5 | Du kannst saisonale Schwankungen (wiederkehrend im Jahreslauf, etwa mehr Notebookverkäufe vor Weihnachten und zum Schulbeginn), strukturelle Veränderungen (dauerhafte Verschiebungen durch neue Technik, Gesetze oder veränderte Gewohnheiten, etwa Cloud-Dienste statt eigener Server) und konjunkturelle Schwankungen (mehrjährige Wellen der gesamtwirtschaftlichen Auslastung) an Beispielen unterscheiden. | 2 | buch:GS-1.4.2-S105 |
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Konjunktur steht nicht im Katalog, kam aber in drei der acht Prüfungen vor. Real- und Nominaleinkommen bei steigenden Preisen (2023S-WISO-A9) stehen in WISO-1-6-1-K6.
 
@@ -97,12 +109,15 @@ Teilaufgaben: 2023S-WISO-A13
 | K3 | Du kannst die KG erklären: Der Komplementär haftet unbeschränkt und führt die Geschäfte, der Kommanditist haftet nur bis zur Höhe seiner Einlage und ist von der Geschäftsführung ausgeschlossen. | 2 | katalog:WISO.02.02.2, beleg:2023S-WISO-A13 |
 | K4 | Du kannst die GmbH & Co. KG erklären: eine KG, deren unbeschränkt haftender Gesellschafter eine GmbH ist, sodass am Ende keine natürliche Person unbeschränkt haftet. | 2 | katalog:WISO.02.02.2 |
 | K5 | Du kannst erklären, dass eine Personengesellschaft wie GbR, OHG oder KG mindestens zwei Gesellschafter braucht, während ein Einzelunternehmen einer Person gehört. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
+| K8 | Du kannst erklären, wie Gewinn und Verlust einer GbR oder OHG verteilt werden, wenn der Gesellschaftsvertrag nichts regelt: seit 2024 nach den vereinbarten Beteiligungsverhältnissen, fehlen diese, nach dem Verhältnis der vereinbarten Beiträge, und ist auch dazu nichts vereinbart, zu gleichen Teilen. | 2 | buch:GS-1.3.4-S78 |
+| K9 | Du kannst die Rechte des Kommanditisten in der KG erklären: Er ist von der Geschäftsführung ausgeschlossen, darf aber eine Abschrift des Jahresabschlusses verlangen und ihn anhand der Bücher und Unterlagen prüfen (Kontrollrecht) und Geschäften widersprechen, die über den gewöhnlichen Betrieb hinausgehen (Widerspruchsrecht), zum Beispiel dem Kauf eines zweiten Firmengebäudes. | 2 | buch:GS-1.3.4-S79 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Seit 1.1.2024 (Personengesellschaftsrechtsmodernisierungsgesetz, MoPeG) kann sich eine GbR in das Gesellschaftsregister eintragen lassen und heißt dann eGbR; nötig ist die Eintragung zum Beispiel, wenn die GbR ein Grundstück erwerben will. _(pruefer:wiso-2026-10)_
+- In der stillen Gesellschaft beteiligt sich jemand mit einer Einlage am Handelsgewerbe eines anderen, ohne nach außen aufzutreten: Er führt keine Geschäfte, haftet höchstens mit seiner Einlage und erhält einen vereinbarten oder angemessenen Anteil am Gewinn. _(buch:GS-1.3.4)_
 
-_Hinweis:_ Die Rechtsform für eine Gründung wählen und die eG (2023S-WISO-A23, 2023W-WISO-A15) steht in WISO-2-2-2-K7 und -K8.
+_Hinweis:_ Die Rechtsform für eine Gründung wählen und die eG (2023S-WISO-A23, 2023W-WISO-A15) steht in WISO-2-2-2-K7 und -K8. Das Lehrbuch nennt für GbR und OHG ohne Vertragsregel noch die Gewinnverteilung nach Köpfen bzw. 4 % auf die Einlage und den Rest nach Köpfen; richtig ist seit dem 1.1.2024 (MoPeG): nach den vereinbarten Beteiligungsverhältnissen, hilfsweise nach dem Wert der vereinbarten Beiträge, sonst zu gleichen Teilen.
 
 #### WISO-2-2-2 Kapitalgesellschaften GmbH und AG, Genossenschaft, gemeinnützige Organisationen, Wahl der Rechtsform
 
@@ -121,6 +136,11 @@ Teilaufgaben: 2021W-WISO-A12, 2022W-WISO-A2, 2023S-WISO-A15, 2023W-WISO-A19, 202
 | K6 | Du kannst gemeinnützige Organisationen erklären: Sie verfolgen einen Zweck für die Allgemeinheit, schütten keinen Gewinn an Eigentümer aus und sind steuerlich begünstigt, zum Beispiel als eingetragener Verein, Stiftung oder gemeinnützige GmbH. | 2 | katalog:WISO.02.02.4 |
 | K7 | Du kannst die eingetragene Genossenschaft (eG) erklären: Sie braucht mindestens drei Mitglieder, fördert vor allem den Erwerb oder die Wirtschaft ihrer Mitglieder, haftet für ihre Schulden nur mit dem Genossenschaftsvermögen und wird ins Genossenschaftsregister eingetragen. | 2 | katalog:WISO.02.02, beleg:2023S-WISO-A23, beleg:2023W-WISO-A15 |
 | K8 | Du kannst einer Gründung mit Vorgaben zu Zahl der Gründer, Geschäftsführung, Haftung und Kapital die passende Rechtsform zuordnen und die übrigen an je einem Merkmal ausschließen, zum Beispiel zwei Gründer, beide Geschäftsführer, beschränkte Haftung, 40.000 Euro Kapital: GmbH (nicht AG mit Vorstand und Börse, nicht KG oder GbR mit persönlicher Haftung, nicht eG mit mindestens drei Mitgliedern). | 2 | katalog:WISO.02.02, katalog:WISO.02.02.3, beleg:2023W-WISO-A15 |
+| K9 | Du kannst die Besteuerung des Gewinns nach Rechtsform unterscheiden: Beim Einzelunternehmen und bei Personengesellschaften versteuert jeder Inhaber seinen Gewinnanteil mit seiner persönlichen Einkommensteuer, eine GmbH oder AG ist als juristische Person selbst steuerpflichtig und zahlt Körperschaftsteuer, und ausgeschüttete Gewinne versteuern die Gesellschafter zusätzlich. | 2 | buch:GS-1.3.4-S77 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG zusätzlich die Handelsregistereintragung, GmbH und AG Notar, Register und laufend mehr Verwaltung. Die Unternehmergesellschaft (haftungsbeschränkt) ist eine GmbH-Variante ab 1 Euro Stammkapital, nur mit Bareinlage, die ein Viertel ihres Jahresgewinns zurücklegen muss, bis 25.000 Euro erreicht sind, und den Zusatz „UG (haftungsbeschränkt)“ führen muss. _(buch:GS-1.3.4)_
 
 **Grenze:** Unternehmergesellschaft (haftungsbeschränkt), KGaA und SE gehören nicht dazu. — _Der Katalog nennt als Kapitalgesellschaften GmbH und AG als Beispiele (WISO.02.02.3); weitere Formen wären nach P-BEISPIELLISTE nur mit zwei unabhängigen Hinweisquellen Puffer, sonst Kür (G3)._ (WISO.02.02.3)
 
@@ -154,6 +174,8 @@ Teilaufgaben: 2023W-WISO-A5, 2022W-WISO-A24, 2025W-WISO-A18, 2024S-WISO-A15, 202
 | K2 | Du kannst deklaratorische und konstitutive Eintragung unterscheiden: Der Ist-Kaufmann (Gewerbe, das eine kaufmännische Einrichtung braucht) ist schon vor der Eintragung Kaufmann, die Eintragung bestätigt das nur; eine GmbH oder AG entsteht erst mit der Eintragung. | 2 | katalog:ZB.wiso-kaufmann, beleg:2022W-WISO-A24, beleg:2025W-WISO-A18 |
 | K3 | Du kannst einen Auszug aus dem Handelsregister von anderen Registern wie Grundbuch oder Vereinsregister unterscheiden und ihm Firma, Sitz, Stamm- oder Grundkapital, Gesellschafter und Prokura entnehmen. _(vorgegeben: Registerauszug im Aufgabentext)_ | 2 | katalog:ZB.wiso-kaufmann, beleg:2024S-WISO-A15 |
 | K4 | Du kannst die Firma erklären: der Name, unter dem ein Kaufmann seine Geschäfte betreibt; sie muss die Rechtsform nennen (also „EcoTech Services GmbH“, nicht nur „EcoTech Services“) und sich von anderen Firmen am selben Ort deutlich unterscheiden. | 2 | katalog:ZB.wiso-kaufmann, beleg:2025S-WISO-A21, beleg:2025W-WISO-A19 |
+| K5 | Du kannst Personen-, Sach- und Fantasiefirma unterscheiden: Die Personenfirma enthält den Namen eines Inhabers oder Gesellschafters, die Sachfirma den Gegenstand des Unternehmens, die Fantasiefirma einen frei erfundenen Namen; Mischformen sind üblich, und ein nicht eingetragener Kleingewerbetreibender führt keine Firma, sondern tritt mit Vor- und Nachnamen auf, höchstens ergänzt um eine Geschäftsbezeichnung. | 2 | buch:GS-1.3.4-S75 |
+| K6 | Du kannst die Grundsätze der Firmenbildung erklären: Firmenwahrheit (die Firma darf nicht über Art, Umfang oder Verhältnisse des Geschäfts täuschen), Firmenausschließlichkeit (sie muss sich von allen Firmen am selben Ort deutlich unterscheiden) und Firmenbeständigkeit (bei einem Inhaberwechsel darf die bisherige Firma mit Zustimmung des alten Inhabers weitergeführt werden). | 2 | buch:GS-1.3.4-S75 |
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Kaufmann und Handelsregister stehen nicht im Katalog, kamen aber in fünf Prüfungen vor. Prokura und ihre Eintragung ins Handelsregister stehen in AP1-2-4-3.
 
@@ -168,9 +190,15 @@ Teilaufgaben: 2021W-WISO-A13, 2022S-WISO-A21, 2023W-WISO-A21, 2024S-WISO-A21, 20
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
 | K1 | Du kannst an einem Organigramm das Stabliniensystem (Stabsstellen seitlich an einer Instanz) und die Spartenorganisation (Gliederung nach Produkten, Kunden oder Regionen) von Einlinien-, Mehrlinien- und Matrixsystem unterscheiden. | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, beleg:2021W-WISO-A13, beleg:2025W-WISO-A23 |
-| K2 | Du kannst das Stabliniensystem erklären: ein Liniensystem mit Stabsstellen, die die Leitung beraten und Entscheidungen vorbereiten, aber keine Weisungsbefugnis haben, zum Beispiel eine Rechtsabteilung. | 2 | katalog:WISO.02.03.1, beleg:2025W-WISO-A24, beleg:2021W-WISO-A13 |
+| K2 | Du kannst das Stabliniensystem erklären: ein Liniensystem mit Stabsstellen, die die Leitung beraten und Entscheidungen vorbereiten, aber keine Weisungsbefugnis haben, zum Beispiel eine Rechtsabteilung. | 2 | katalog:WISO.02.03.1, beleg:2025W-WISO-A24, beleg:2021W-WISO-A13, buch:GS-1.3.4-S68 |
 | K3 | Du kannst die Spartenorganisation erklären: Das Unternehmen ist nach Produkten, Kundengruppen oder Regionen gegliedert, und jede Sparte hat ihre eigenen Funktionsbereiche. | 2 | katalog:WISO.02.03.2 |
 | K4 | Du kannst den Leitungssystemen ihre Vor- und Nachteile zuordnen: Stabliniensystem (Entlastung der Leitung durch das Spezialwissen der Stäbe gegenüber Konflikten zwischen Stab und Linie), Spartenorganisation (Marktnähe der Sparten gegenüber Doppelarbeit in den Funktionsbereichen), Mehrliniensystem (kurze Wege und Fachwissen der Vorgesetzten gegenüber uneinheitlicher Führung und Kompetenzkonflikten), Matrixorganisation (hoher Abstimmungs- und Kommunikationsbedarf, verlangt Teamfähigkeit). | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, katalog:WISO.02.03.3, beleg:2021W-WISO-A13 |
+| K5 | Du kannst die funktionale von der divisionalen Organisation unterscheiden: In der funktionalen ist die zweite Ebene unter der Leitung nach Tätigkeiten gegliedert (Beschaffung, Entwicklung, Vertrieb, Verwaltung), in der divisionalen nach Sparten (Produktgruppen, Kundengruppen oder Regionen), die jeweils eigene Funktionsbereiche haben und weitgehend selbstständig arbeiten. | 2 | buch:GS-1.3.4-S71 |
+| K6 | Du kannst Profitcenter und Costcenter unterscheiden: Ein Profitcenter ist ein Unternehmensbereich mit eigenen Zielen, der für seinen Gewinn verantwortlich ist, weil er Erlöse und Kosten selbst beeinflusst, ein Costcenter hat ebenfalls eigene Ziele, ist aber nur für seine Kosten verantwortlich, weil er keine eigenen Erlöse am Markt erzielt, zum Beispiel die interne IT. | 2 | buch:GS-1.3.4-S72 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Je weniger Managementebenen zwischen Geschäftsleitung und ausführender Ebene liegen, desto kürzer sind Entscheidungs- und Informationswege: Flache Hierarchien (Lean Management) stärken Eigenverantwortung und Innovation, steile Hierarchien mit vielen Ebenen verlängern die Wege und bremsen Entscheidungen. _(buch:GS-1.3.4)_
 
 _Hinweis:_ Einlinien-, Mehrlinien- und Matrixorganisation (Erkennen am Organigramm, Unterschiede, je einen Vor- und Nachteil nennen) stehen in AP1-2-4-2; damit lösen sich 2022S-WISO-A21, 2023W-WISO-A21 und 2024S-WISO-A21. Das Zuordnen von Vor- und Nachteilen zu Mehrlinien- und Matrixsystem (2021W-WISO-A13) geht darüber hinaus und steht in K4. Früher Stichpunkt WISO-2-3-1.
 
@@ -188,6 +216,16 @@ Teilaufgaben:
 | K2 | Du kannst die Schritte eines beschriebenen Arbeitsablaufs den beteiligten Stellen oder Abteilungen zuordnen. | 2 | katalog:WISO.02.03.4 |
 | K3 | Du kannst Stelle (kleinste Einheit mit festem Aufgabenbereich), Abteilung (mehrere Stellen unter einer Leitung) und Instanz (Stelle mit Weisungsbefugnis) erklären. | 2 | katalog:WISO.02.03.5 |
 | K4 | Du kannst zwei Arten der Aufgabenteilung unterscheiden: nach Tätigkeit (Verrichtung), zum Beispiel Einkauf, Entwicklung, Vertrieb, oder nach Gegenstand (Objekt), zum Beispiel Produkt oder Kundengruppe. | 2 | katalog:WISO.02.03.5 |
+| K5 | Du kannst erklären, wie aus der Gesamtaufgabe eines Betriebs Stellen entstehen: In der Aufgabenanalyse wird die Gesamtaufgabe schrittweise in Haupt-, Teil- und Einzelaufgaben zerlegt und im Aufgabengliederungsplan dargestellt, in der Aufgabensynthese werden die Einzelaufgaben zu Stellen gebündelt, die eine Person mit passender Qualifikation bewältigen kann. | 2 | buch:GS-1.3.4-S66 |
+| K6 | Du kannst Stellenplan und Stellenbeschreibung erklären: Der Stellenplan verzeichnet alle genehmigten Stellen des Betriebs mit ihrer Einordnung, auch unbesetzte, die Stellenbeschreibung legt für eine einzelne Stelle unabhängig von der Person, die sie innehat, Ziel, Aufgaben, Befugnisse und Vollmachten, Über- und Unterstellung, Vertretung, Vergütungsgruppe und geforderte Qualifikation fest. | 2 | buch:GS-1.3.4-S67 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Organisation regelt Wiederkehrendes dauerhaft, Disposition entscheidet einen Einzelfall im Rahmen dieser Regeln, Improvisation schafft eine vorläufige Lösung für Unvorhergesehenes, etwa bei einem plötzlichen Serverausfall. Zu viele feste Regeln (Überorganisation) machen starr und demotivieren, zu wenige (Unterorganisation) führen zu Durcheinander und schwankender Leistung. _(buch:GS-1.3.4)_
+- Bevor eine Stelle gebildet wird, prüft der Betrieb, ob die Aufgabe intern oder besser durch Fremdvergabe erledigt wird; die Stelle soll überschaubar und der Leistungsfähigkeit eines Menschen angemessen sein, und ihre Ausschreibung muss nach dem Allgemeinen Gleichbehandlungsgesetz geschlechtsneutral formuliert sein. _(buch:GS-1.3.4)_
+- Die Position ist die formale Stelle im Organigramm, die Funktion die Arbeit, die auf ihr zu leisten ist, und die Rolle das Bündel an Erwartungen, die das Unternehmen an das Handeln einer Person richtet – etwa die Rolle Product Owner, die ein Entwickler zusätzlich zu seiner Stelle übernimmt. _(buch:FS-1.2.1)_
+- Gegen Monotonie und für mehr Motivation gibt es drei Formen der Arbeitsgestaltung: Jobrotation (geplanter Wechsel zwischen Arbeitsplätzen), Job Enlargement (zusätzliche Aufgaben auf gleichem Niveau) und Job Enrichment (mehr Entscheidungs- und Kontrollbefugnis, also mehr Verantwortung). _(buch:GS-1.2.3)_
+- Organisationsmittel sind Arbeitsmittel wie Computer und Büromaterial und Gestaltungsmittel wie Organigramm, Stellenbeschreibung, Arbeitsanweisungen und Formulare; im papierlosen Büro liegen sie digital vor und werden gemeinsam bearbeitet. _(buch:GS-1.3.6)_
 
 _Hinweis:_ Früher Stichpunkt WISO-2-3-2. Betriebliche Arbeitsteilung erkennen (2025W-WISO-A22) steht in WISO-2-1-2-K2.
 
@@ -211,6 +249,14 @@ Teilaufgaben: 2023S-WISO-A17, 2022S-WISO-A19, 2023W-WISO-A20, 2024S-WISO-A20, 20
 | K4 | Du kannst die drei Kennzahlen unterscheiden: Produktivität setzt die Ausbringung ins Verhältnis zum Einsatz eines Faktors (meist mengenmäßig, zum Beispiel Stück je Stunde, als Umsatz je Mitarbeiter auch wertmäßig), Wirtschaftlichkeit setzt Ertrag und Aufwand in Euro ins Verhältnis, Rentabilität den Gewinn zum eingesetzten Kapital oder zum Umsatz. | 2 | katalog:WISO.02.05.1, katalog:WISO.02.05.2, katalog:WISO.02.05.3 |
 | K5 | Du kannst die Umsatzrentabilität berechnen: Gewinn mal 100 geteilt durch den Umsatz. | 3 | katalog:WISO.02.05.3, regel:P-GESCHWISTER |
 | K6 | Du kannst die Gesamtkapitalrentabilität berechnen: Gewinn plus Fremdkapitalzinsen, mal 100, geteilt durch das Gesamtkapital. | 3 | katalog:WISO.02.05.3, regel:P-GESCHWISTER |
+| K7 | Du kannst den Return on Investment (ROI) einer Investition berechnen: Rückflüsse minus Investition, geteilt durch die Investition, mal 100; ein Wert über 0 % zeigt, dass mehr zurückgeflossen ist als eingesetzt wurde, und von zwei Investitionen ist die mit dem höheren ROI rentabler. | 3 | buch:FS-4.4.1-S367 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Die Leitung (dispositiver Faktor: planen, organisieren, kontrollieren) kombiniert die Elementarfaktoren Werkstoffe, Betriebsmittel wie Gebäude, Maschinen und IT sowie ausführende Arbeit; Information und Wissen gelten heute als weiterer Faktor, weil ohne sie weder Entscheidungen noch digitale Leistungen entstehen. _(buch:GS-1.3.6)_
+- Kleine Gewerbetreibende ermitteln ihren Gewinn mit der Einnahmen-Überschuss-Rechnung (Einnahmen minus Ausgaben), Kaufleute und größere Unternehmen mit der doppelten Buchführung. Deren Bilanz zeigt auf der Aktivseite, wofür das Kapital verwendet wird (Anlage- und Umlaufvermögen), auf der Passivseite, woher es stammt (Eigen- und Fremdkapital); die Gewinn- und Verlustrechnung ermittelt den Jahreserfolg aus Erträgen minus Aufwendungen. _(buch:GS-2.8.1)_
+
+_Hinweis:_ Das Lehrbuch rechnet den ROI noch als Rückflüsse geteilt durch Investition (Gewinnschwelle bei 1 bzw. 100 %); üblich und hier gelernt ist (Rückflüsse − Investition) / Investition, bei der jeder Wert über 0 % einen Überschuss zeigt.
 
 #### WISO-2-4-2 Zielbeziehungen: Zielkonflikt, Zielharmonie, Zielneutralität
 
@@ -225,6 +271,11 @@ Teilaufgaben: 2025W-WISO-A6, 2025S-WISO-A7
 | K3 | Du kannst einen Zielkonflikt erklären und unter mehreren Zielpaaren erkennen: Das Erreichen des einen Ziels erschwert das andere, zum Beispiel Personalkosten senken und zugleich Arbeitsplätze sichern. | 2 | katalog:WISO.02.05.4, beleg:2025W-WISO-A6 |
 | K4 | Du kannst Zielharmonie erklären: Zwei Ziele fördern sich gegenseitig, zum Beispiel senkt Energiesparen die Kosten und schont die Umwelt. | 2 | katalog:WISO.02.05, regel:P-GRUNDLAGE, beleg:2025W-WISO-A6 |
 | K5 | Du kannst Zielneutralität erklären: Zwei Ziele beeinflussen sich nicht, zum Beispiel ein besseres Betriebsklima und weniger Papierverbrauch. | 2 | katalog:WISO.02.05, regel:P-GRUNDLAGE, beleg:2025W-WISO-A6 |
+| K6 | Du kannst Formalziele und Sachziele unterscheiden: Formalziele beschreiben den angestrebten wirtschaftlichen Erfolg wie Umsatz, Gewinn, Rentabilität oder Marktanteil, Sachziele das konkrete Leistungsprogramm nach Art, Menge, Qualität, Ort und Zeit, zum Beispiel bis Jahresende 200 Cloud-Arbeitsplätze in Betrieb nehmen; die Sachziele sind das Mittel, um die Formalziele zu erreichen. | 2 | buch:GS-1.3.3-S54 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Neben dem Gewinn muss ein Unternehmen jederzeit zahlungsfähig bleiben (Liquidität), denn Zahlungsunfähigkeit führt zur Insolvenz, und große Risiken etwa durch Rücklagen absichern, damit das eingesetzte Kapital nicht verloren geht. Weil sich nicht alle Ziele zugleich verfolgen lassen, bringt die Leitung sie in eine Rangfolge: Vorrang hat, was am meisten zum Gesamtziel beiträgt. _(buch:GS-1.3.3)_
 
 _Hinweis:_ Ökonomische, ökologische und soziale Ziele einordnen (2025S-WISO-A7) steht in AP1-2-4-1. Früher Stichpunkt „Unternehmensziele“; das Einordnen der Ziele ist gestrichen (E2).
 
@@ -241,8 +292,9 @@ Teilaufgaben: 2025S-WISO-A3
 | K1 | Du kannst das Maximalprinzip erklären: Mit gegebenen Mitteln einen möglichst großen Erfolg erzielen, zum Beispiel mit gleichem Personal mehr Umsatz. | 2 | katalog:ZB.wiso-oekonomisches-prinzip |
 | K2 | Du kannst das Minimalprinzip erklären: Einen vorgegebenen Erfolg mit möglichst geringen Mitteln erreichen, zum Beispiel gleiche Umschlagmenge mit weniger Beschäftigten. | 2 | katalog:ZB.wiso-oekonomisches-prinzip |
 | K3 | Du kannst an einem beschriebenen Fall unterscheiden, ob nach dem Maximal- oder dem Minimalprinzip gehandelt wurde oder nach keinem, wenn Mitteleinsatz und Ergebnis zugleich steigen. | 2 | katalog:ZB.wiso-oekonomisches-prinzip, beleg:2025S-WISO-A3 |
+| K4 | Du kannst das Optimumprinzip erklären: Sind Mitteleinsatz und Ergebnis beide veränderlich, wählt man die Kombination mit dem günstigsten Verhältnis von Ergebnis zu Einsatz, zum Beispiel beim Speicherkauf das Angebot mit den meisten Terabyte je Euro, auch wenn es weder das billigste noch das größte ist. | 2 | buch:GS-1.3.6-S91 |
 
-_Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Das ökonomische Prinzip steht nicht im Katalog, kam aber 2025S vor; es gehört zur Wirtschaftlichkeit (WISO.02.05.2).
+_Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Das ökonomische Prinzip steht nicht im Katalog, kam aber 2025S vor; es gehört zur Wirtschaftlichkeit (WISO.02.05.2). Das Lehrbuch nennt beim Optimumprinzip das Angebot mit dem niedrigeren Wert Output/Input als das bessere; richtig ist das Angebot mit dem höheren Wert Output/Input (also mit dem niedrigeren Einsatz je Leistungseinheit).
 
 ### WISO-2-5 Unternehmensverbindungen, Organisationen und Behörden
 
@@ -264,6 +316,13 @@ Teilaufgaben: 2022S-WISO-A20, 2023W-WISO-A23, 2024S-WISO-A22, 2025W-WISO-A28
 | K4 | Du kannst Auswirkungen einer Fusion erklären: Rationalisierung und Einsparungen, breitere Kapitalbasis und bessere Finanzierung, mehr Marktmacht; möglich ist auch der Abbau von Arbeitsplätzen. | 2 | katalog:WISO.02.04.3, beleg:2025W-WISO-A28 |
 | K5 | Du kannst Arbeitsgemeinschaft (Zusammenarbeit für einen bestimmten Auftrag auf Zeit) und Interessengemeinschaft (Zusammenarbeit auf Dauer für einen gemeinsamen Zweck, zum Beispiel Forschung) vom Konzern unterscheiden: In beiden bleiben die Unternehmen rechtlich selbstständig und arbeiten nur in einem Teilbereich zusammen, ohne unter eine einheitliche Leitung zu treten. | 2 | katalog:WISO.02.04.1, beleg:2022S-WISO-A20 |
 | K6 | Du kannst die Aufgabe des Bundeskartellamts erklären: Es prüft große Zusammenschlüsse und verfolgt verbotene Kartelle. | 2 | katalog:WISO.02.04.2 |
+| K7 | Du kannst Unternehmenszusammenschlüsse nach ihrer Richtung unterscheiden: horizontal (Unternehmen derselben Wirtschaftsstufe, zum Beispiel zwei Softwarehäuser), vertikal (vor- und nachgelagerte Stufen, zum Beispiel ein Chiphersteller und ein Notebookhersteller) und diagonal oder anorganisch (Unternehmen ohne Bezug zwischen ihren Leistungen, vor allem zur Streuung des Risikos). | 2 | buch:GS-1.3.2-S48 |
+| K8 | Du kannst die Holding erklären: eine Dachgesellschaft, die die Anteile an rechtlich selbstständigen Tochterunternehmen hält und diese einheitlich leitet, meist ohne selbst Leistungen am Markt anzubieten; so entsteht ein Konzern, in dem die Töchter ihre eigene Firma und Rechtsform behalten. | 2 | buch:GS-1.3.2-S48 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Ein Konsortium ist ein befristeter Zusammenschluss selbstständiger Unternehmen für ein Großvorhaben oder einen gemeinsamen Standard, eine strategische Allianz eine dauerhafte Partnerschaft für gemeinsame Ziele, etwa als zertifizierter Partner eines Softwareherstellers. Beim Franchising überlässt der Franchisegeber selbstständigen Franchisenehmern gegen Gebühr Geschäftskonzept, Marke und Marketing und macht ihnen dafür verbindliche Vorgaben. _(buch:GS-1.3.2)_
+- Marktbeherrschend ist ein Unternehmen ohne wesentlichen Wettbewerb oder mit überragender Marktstellung, vermutet ab 40 % Marktanteil; verboten ist nicht die Marktmacht selbst, sondern ihr Missbrauch, etwa überhöhte Preise oder das Behindern von Wettbewerbern, den das Bundeskartellamt verfolgt. _(buch:GS-1.4.2)_
 
 **Grenze:** Einzelheiten des Kartellrechts (GWB) und der Fusionskontrolle, etwa Schwellenwerte, Fristen oder Ausnahmetatbestände, gehören nicht dazu. — _Der Katalog nennt Kartell und Fusion ohne Operator (WISO.02.04.2, WISO.02.04.3: Stufe 2, erkennen und erklären); Rechtsdetails gehen darüber hinaus (G3) und sind in Auswahlaufgaben ohne Hilfsmittel kaum abfragbar (G4)._ (WISO.02.04.2, WISO.02.04.3)
 
@@ -340,11 +399,11 @@ _Hinweis:_ Handelsregister beim Amtsgericht: WISO-2-2-4-K1; Gewerbeaufsicht und 
 
 ## Alt → neu
 
-Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 12 neu.
+Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 30 neu.
 
 Stichpunkte: 14 alt, 16 neu (WISO-2-1-4, WISO-2-2-4, WISO-2-2-5, WISO-2-2-6, WISO-2-4-3).
 
-Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-2-1-K7, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3.
+Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-1-K7, WISO-2-1-1-K8, WISO-2-1-1-K9, WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-1-4-K5, WISO-2-2-1-K7, WISO-2-2-1-K8, WISO-2-2-1-K9, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-2-K9, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-2-4-K5, WISO-2-2-4-K6, WISO-2-2-5-K5, WISO-2-2-5-K6, WISO-2-2-6-K5, WISO-2-2-6-K6, WISO-2-4-1-K7, WISO-2-4-2-K6, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3, WISO-2-4-3-K4, WISO-2-5-1-K7, WISO-2-5-1-K8.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -438,11 +497,29 @@ Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage 
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 1, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 19, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
 | MoPeG: eingetragene GbR (eGbR) | pruefer:wiso-2026-10 | Kür | WISO-2-2-1 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Ein IT-Systemhaus steht zwischen Herstellern und Kunden: Es nimmt den Bedarf beim Kunden auf, beschafft und installiert  | buch:GS-1.3.1 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| Als kleine und mittlere Unternehmen (KMU) gelten nach EU-Definition Unternehmen mit weniger als 250 Beschäftigten und hö | buch:GS-1.3.2 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| Güter unterscheidet man in materielle und immaterielle (Dienstleistungen, Rechte, Lizenzen), Konsum- und Investitionsgüt | buch:GS-1.3.6 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| Im einfachen Wirtschaftskreislauf stellen Haushalte den Unternehmen Arbeit, Boden und Kapital zur Verfügung und kaufen m | buch:GS-1.4.1 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| Im IT-Markt liefert ein Erstausrüster (OEM) Komponenten, die andere Hersteller in ihre Produkte einbauen, ein Auftragsfe | buch:GS-2.1.4 | Kür | WISO-2-1-1 | Regelwerk v2.x, D8/RK1 |
+| In der stillen Gesellschaft beteiligt sich jemand mit einer Einlage am Handelsgewerbe eines anderen, ohne nach außen auf | buch:GS-1.3.4 | Kür | WISO-2-2-1 | Regelwerk v2.x, D8/RK1 |
+| Der Gründungsaufwand steigt mit der Rechtsform: Einzelunternehmen und GbR brauchen nur die Gewerbeanmeldung, OHG und KG  | buch:GS-1.3.4 | Kür | WISO-2-2-2 | Regelwerk v2.x, D8/RK1 |
+| Je weniger Managementebenen zwischen Geschäftsleitung und ausführender Ebene liegen, desto kürzer sind Entscheidungs- un | buch:GS-1.3.4 | Kür | WISO-2-2-5 | Regelwerk v2.x, D8/RK1 |
+| Organisation regelt Wiederkehrendes dauerhaft, Disposition entscheidet einen Einzelfall im Rahmen dieser Regeln, Improvi | buch:GS-1.3.4 | Kür | WISO-2-2-6 | Regelwerk v2.x, D8/RK1 |
+| Bevor eine Stelle gebildet wird, prüft der Betrieb, ob die Aufgabe intern oder besser durch Fremdvergabe erledigt wird;  | buch:GS-1.3.4 | Kür | WISO-2-2-6 | Regelwerk v2.x, D8/RK1 |
+| Die Position ist die formale Stelle im Organigramm, die Funktion die Arbeit, die auf ihr zu leisten ist, und die Rolle d | buch:FS-1.2.1 | Kür | WISO-2-2-6 | Regelwerk v2.x, D8/RK1 |
+| Gegen Monotonie und für mehr Motivation gibt es drei Formen der Arbeitsgestaltung: Jobrotation (geplanter Wechsel zwisch | buch:GS-1.2.3 | Kür | WISO-2-2-6 | Regelwerk v2.x, D8/RK1 |
+| Organisationsmittel sind Arbeitsmittel wie Computer und Büromaterial und Gestaltungsmittel wie Organigramm, Stellenbesch | buch:GS-1.3.6 | Kür | WISO-2-2-6 | Regelwerk v2.x, D8/RK1 |
+| Die Leitung (dispositiver Faktor: planen, organisieren, kontrollieren) kombiniert die Elementarfaktoren Werkstoffe, Betr | buch:GS-1.3.6 | Kür | WISO-2-4-1 | Regelwerk v2.x, D8/RK1 |
+| Kleine Gewerbetreibende ermitteln ihren Gewinn mit der Einnahmen-Überschuss-Rechnung (Einnahmen minus Ausgaben), Kaufleu | buch:GS-2.8.1 | Kür | WISO-2-4-1 | Regelwerk v2.x, D8/RK1 |
+| Neben dem Gewinn muss ein Unternehmen jederzeit zahlungsfähig bleiben (Liquidität), denn Zahlungsunfähigkeit führt zur I | buch:GS-1.3.3 | Kür | WISO-2-4-2 | Regelwerk v2.x, D8/RK1 |
+| Ein Konsortium ist ein befristeter Zusammenschluss selbstständiger Unternehmen für ein Großvorhaben oder einen gemeinsam | buch:GS-1.3.2 | Kür | WISO-2-5-1 | Regelwerk v2.x, D8/RK1 |
+| Marktbeherrschend ist ein Unternehmen ohne wesentlichen Wettbewerb oder mit überragender Marktstellung, vermutet ab 40 % | buch:GS-1.4.2 | Kür | WISO-2-5-1 | Regelwerk v2.x, D8/RK1 |
 
 ## Geschwister-Prüfung (R4)
 
