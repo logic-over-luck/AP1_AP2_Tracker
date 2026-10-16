@@ -5,10 +5,10 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 69,
-  "koennen": 323,
+  "koennen": 337,
   "quellen": {
    "PB1-1.json": "dbef348b14b3f97e",
-   "PB1-10.json": "7f9fe6aff5e200c8",
+   "PB1-10.json": "2c0c631a89d08af3",
    "PB1-11.json": "dda29aefbf56c507",
    "PB1-12.json": "fde12335a2b0504d",
    "PB1-2.json": "33581c2942a81e43",
@@ -328,6 +328,16 @@
      "id": "PB1-10-1-1-K4",
      "stufe": 2,
      "kurz": "Ziele von IT-Sicherheitskriterien definieren: Richtschnur für Entwickler (Sicherheit von Beginn an), objektive Bewertung von Systemen (z. B. nach IT-Grundschutz), Unterstützung der Anwender bei der Auswahl eines geeigneten Sicherheitsprodukts"
+    },
+    {
+     "id": "PB1-10-1-1-K5",
+     "stufe": 4,
+     "kurz": "das Schadenspotenzial eines Sicherheitsvorfalls bei einem cyber-physischen System einschätzen: Über Imageschaden, wirtschaftlichen Schaden und Datenverlust hinaus können manipulierte oder ausgefallene Steuerungen Menschen gefährden, Anlagen zerstören und Versorgungsinfrastruktur lahmlegen; deshalb werden dort Betriebssicherheit (Safety) und Informationssicherheit (Security) gemeinsam geplant"
+    },
+    {
+     "id": "PB1-10-1-1-K6",
+     "stufe": 2,
+     "kurz": "Entwurfsprinzipien sicherer Software erklären: Schutz in mehreren Schichten, sodass jede Schicht eigene Maßnahmen hat (Zugriffskontrolle, Authentifizierung, Prüfung der Ein- und Ausgaben, Fehlerbehandlung, Protokollierung, Verschlüsselung) und keine einzelne Schwachstelle alles öffnet; sicherer Ausfall, bei dem auch ein Fehler Vertraulichkeit und Integrität nicht preisgibt und die Software mit sicheren Voreinstellungen ausgeliefert wird; benutzerfreundliche Sicherheit, weil Nutzer lästige Schutzmaßnahmen sonst umgehen"
     }
    ]
   },
@@ -366,6 +376,21 @@
      "id": "PB1-10-1-2-K4",
      "stufe": 3,
      "kurz": "einen Kunden zu Bedrohungsszenarien beraten und für seine Anwendung Gegenmaßnahmen empfehlen: Man-in-the-Middle (verschlüsselte Verbindung mit Zertifikatsprüfung), SQL-Injection über Eingabefelder (vorbereitete Anweisungen mit Parametern, Eingaben prüfen), DDoS (Filterung, Lastverteilung, Schutzdienste)"
+    },
+    {
+     "id": "PB1-10-1-2-K5",
+     "stufe": 2,
+     "kurz": "DoS und DDoS unterscheiden: Beim Denial of Service überlastet ein Angreifer Rechenzeit, Speicher oder Bandbreite eines Dienstes, bis berechtigte Nutzer ihn nicht mehr erreichen; beim Distributed Denial of Service kommt die Last gleichzeitig von vielen Geräten eines Botnetzes, also von Rechnern und IoT-Geräten, die mit Schadsoftware befallen sind und zentral ferngesteuert werden"
+    },
+    {
+     "id": "PB1-10-1-2-K6",
+     "stufe": 2,
+     "kurz": "den Begriff Angriffsvektor erklären: der Weg samt Technik, über den ein Angreifer in ein System gelangt, zum Beispiel ein verseuchter E-Mail-Anhang, eine präparierte Webseite, ein offener Netzwerkdienst, ein USB-Stick, manipulierte Hardware, eine verwundbare Bibliothek oder ein getäuschter Mitarbeiter"
+    },
+    {
+     "id": "PB1-10-1-2-K7",
+     "stufe": 2,
+     "kurz": "Identitätsdiebstahl erklären: Ein Angreifer verschafft sich fremde Zugangs- oder Personendaten, um im Namen des Opfers zu handeln, etwa über gefälschte Anmeldeseiten (Phishing), Keylogger, offen einsehbare Profile in sozialen Netzwerken oder schlecht geschützte Cloudablagen"
     }
    ]
   },
@@ -396,6 +421,21 @@
      "id": "PB1-10-1-3-K3",
      "stufe": 3,
      "kurz": "Transportverschlüsselung (nur der Übertragungsweg ist geschützt) und Ende-zu-Ende-Verschlüsselung (nur Absender und Empfänger können lesen) unterscheiden und für eine Anwendung festlegen, welche nötig ist"
+    },
+    {
+     "id": "PB1-10-1-3-K4",
+     "stufe": 2,
+     "kurz": "das Prinzip des Diffie-Hellman-Schlüsselaustauschs erklären: Beide Seiten tauschen nur öffentliche Werte aus und berechnen daraus zusammen mit ihrem jeweils geheimen Wert denselben Sitzungsschlüssel, der selbst nie übertragen wird, sodass ein Mithörer ihn nicht kennt"
+    },
+    {
+     "id": "PB1-10-1-3-K5",
+     "stufe": 4,
+     "kurz": "begründen, warum eine Anwendung nur anerkannte, aktuell empfohlene Kryptoverfahren aus gepflegten Bibliotheken einsetzt (Orientierung gibt die Technische Richtlinie TR-02102 des BSI) und keine selbst erfundenen, selbst programmierten oder veralteten: Eigenentwicklungen enthalten fast immer Schwachstellen, und auch in bewährten Verfahren und ihren Umsetzungen werden Lücken gefunden, die eine gepflegte Bibliothek per Update schließt"
+    },
+    {
+     "id": "PB1-10-1-3-K6",
+     "stufe": 2,
+     "kurz": "OpenPGP und S/MIME als Verfahren der Ende-zu-Ende-Verschlüsselung von E-Mails vergleichen: Beide arbeiten mit Schlüsselpaaren und sind untereinander nicht kompatibel; bei OpenPGP bestätigen sich die Nutzer gegenseitig die Echtheit der Schlüssel (Web of Trust), bei S/MIME beglaubigt eine Zertifizierungsstelle das Zertifikat – das kostet meist etwas, wird aber von den meisten Mailprogrammen ohne Zusatzsoftware unterstützt"
     }
    ]
   },
@@ -432,6 +472,16 @@
      "id": "PB1-10-1-4-K4",
      "stufe": 2,
      "kurz": "eine geeignete Speicherung von Passwörtern in einer Datenbank nennen und beschreiben: nicht im Klartext, sondern als Hashwert mit einem zufälligen Salt je Benutzer und einem bewusst langsamen Verfahren; bei der Anmeldung wird der Hash der Eingabe verglichen"
+    },
+    {
+     "id": "PB1-10-1-4-K5",
+     "stufe": 4,
+     "kurz": "begründen, warum gebrochene Hashverfahren wie MD5 nicht mehr für Sicherheitszwecke eingesetzt werden und stattdessen ein Verfahren der SHA-2-Familie wie SHA-256: Bei MD5 lassen sich gezielt zwei verschiedene Eingaben mit gleichem Hashwert erzeugen, sodass eine Fälschung bei Prüfsumme oder Signatur nicht mehr auffällt"
+    },
+    {
+     "id": "PB1-10-1-4-K6",
+     "stufe": 2,
+     "kurz": "erläutern, warum dieselbe Eingabe in jeder Programmiersprache und auf jedem System denselben Hashwert ergibt, sofern sie gleich in Bytes kodiert wird (z. B. UTF-8): Hashfunktionen arbeiten auf Bytes, nicht auf Zeichen; deshalb lässt sich ein Hash, den ein Programm gespeichert hat, in einem anderen prüfen, während eine abweichende Kodierung einen völlig anderen Wert ergibt"
     }
    ]
   },
@@ -500,6 +550,11 @@
      "id": "PB1-10-2-2-K3",
      "stufe": 2,
      "kurz": "Archivierung von Datensicherung unterscheiden: langfristige, unveränderbare Aufbewahrung in revisionssicheren Archivsystemen (GoBD) nach gesetzlichen Fristen – Handelsbücher und Jahresabschlüsse 10 Jahre, Buchungsbelege 8 Jahre (seit 2025), Handels- und Geschäftsbriefe 6 Jahre – gegenüber Wiederherstellung nach Verlust; nach Ablauf der Fristen und Wegfall des Zwecks werden personenbezogene Daten gelöscht"
+    },
+    {
+     "id": "PB1-10-2-2-K4",
+     "stufe": 2,
+     "kurz": "erklären, wann ein Vertrag zur Auftragsverarbeitung nötig ist – ein Dienstleister verarbeitet personenbezogene Daten im Auftrag, etwa beim Hosting, im Cloudbetrieb oder bei der Fernwartung – und was er regelt: Gegenstand und Dauer, Verarbeitung nur nach Weisung des Auftraggebers, Pflichten beider Seiten, Einsatz von Unterauftragnehmern, Nachweise und Kontrollen sowie die technischen und organisatorischen Maßnahmen"
     }
    ]
   },
@@ -565,6 +620,21 @@
      "id": "PB1-10-2-3-K7",
      "stufe": 3,
      "kurz": "Portsecurity an einem Switch umsetzen: An einem Anschluss werden nur bekannte Geräte (MAC-Adressen) zugelassen, unbekannte werden gesperrt"
+    },
+    {
+     "id": "PB1-10-2-3-K8",
+     "stufe": 3,
+     "kurz": "festlegen, welche sicherheitsrelevanten Ereignisse eine Anwendung protokolliert – fehlgeschlagene Anmeldungen, Ausnahmen, Validierungsfehler, Änderungen an Rechten, Aktionen von Administratoren und schreibende Zugriffe auf wichtige Daten, jeweils mit Zeit und Benutzer – und dabei den Datenschutz wahren: keine Passwörter oder unnötigen Personendaten im Protokoll, Zugriff beschränkt, Speicherdauer begrenzt"
+    },
+    {
+     "id": "PB1-10-2-3-K9",
+     "stufe": 2,
+     "kurz": "Blacklisting und Whitelisting unterscheiden: Eine Negativliste sperrt bekannte schädliche Seiten oder Programme und erlaubt alles andere, verpasst aber neue Bedrohungen; eine Positivliste erlaubt nur ausdrücklich Vertrauenswürdiges und sperrt alles Unbekannte – sicherer, aber aufwendiger zu pflegen und für die Nutzer einschränkender"
+    },
+    {
+     "id": "PB1-10-2-3-K10",
+     "stufe": 3,
+     "kurz": "für einen Server Firewall-Regeln nach dem Grundsatz „alles gesperrt, was nicht ausdrücklich erlaubt ist“ festlegen: eingehende Verbindungen standardmäßig verweigern, nur die Ports der angebotenen Dienste freigeben, etwa 443 für HTTPS, und Verwaltungszugänge wie SSH nur aus dem Verwaltungsnetz zulassen"
     }
    ]
   },

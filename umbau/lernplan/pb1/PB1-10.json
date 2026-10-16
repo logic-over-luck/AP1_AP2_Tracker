@@ -106,6 +106,24 @@
         "katalog:AP2a.04.03.2",
         "katalog:AP2a.04.03.3"
        ]
+      },
+      {
+       "id": "PB1-10-1-1-K5",
+       "text": "Du kannst das Schadenspotenzial eines Sicherheitsvorfalls bei einem cyber-physischen System einschätzen: Über Imageschaden, wirtschaftlichen Schaden und Datenverlust hinaus können manipulierte oder ausgefallene Steuerungen Menschen gefährden, Anlagen zerstören und Versorgungsinfrastruktur lahmlegen; deshalb werden dort Betriebssicherheit (Safety) und Informationssicherheit (Security) gemeinsam geplant.",
+       "kurz": "Schadenspotenzial cyber-physischer Systeme",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-2.6.1-S140"
+       ]
+      },
+      {
+       "id": "PB1-10-1-1-K6",
+       "text": "Du kannst Entwurfsprinzipien sicherer Software erklären: Schutz in mehreren Schichten, sodass jede Schicht eigene Maßnahmen hat (Zugriffskontrolle, Authentifizierung, Prüfung der Ein- und Ausgaben, Fehlerbehandlung, Protokollierung, Verschlüsselung) und keine einzelne Schwachstelle alles öffnet; sicherer Ausfall, bei dem auch ein Fehler Vertraulichkeit und Integrität nicht preisgibt und die Software mit sicheren Voreinstellungen ausgeliefert wird; benutzerfreundliche Sicherheit, weil Nutzer lästige Schutzmaßnahmen sonst umgehen.",
+       "kurz": "Entwurfsprinzipien sicherer Software",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.7-S206"
+       ]
       }
      ],
      "baut_auf": [
@@ -113,6 +131,24 @@
       "AP1-7-2-2",
       "AP1-7-1-3",
       "AP1-7-2-1"
+     ],
+     "kuer": [
+      {
+       "text": "Vernetzte Geräte eines cyber-physischen Systems brauchen dieselben Grundschutzmaßnahmen wie Server: verschlüsselte Verbindungen, regelmäßige Firmware-Updates, Authentifizierung jedes Geräts und Benutzers, rollenbasierte Rechte und möglichst einfache, standardisierte Komponenten.",
+       "kurz": "Schutzmaßnahmen für vernetzte CPS-Geräte",
+       "quellen": [
+        "buch:FS-2.6.1"
+       ],
+       "grund": "RK2: Maßnahmen stehen im Kern schon in AP1-7 und PB1-10-1-2; Zusatz ist die Sicht auf CPS-Geräte"
+      },
+      {
+       "text": "In Scrum wird Sicherheit über die Artefakte eingeplant: Datenart und Risiken in den User Stories, Maßnahmen wie Verschlüsselung, Speicherfristen und Rollenkonzept im Product Backlog, Umsetzung im Sprint mit Testdaten statt Echtdaten, Prüfung über die Definition of Done und die Abnahme.",
+       "kurz": "Sicherheit in den Scrum-Artefakten",
+       "quellen": [
+        "buch:FS-3.3.7"
+       ],
+       "grund": "RK2: Sicherheit im Scrum-Ablauf ist Prozessdetail"
+      }
      ]
     },
     {
@@ -178,6 +214,36 @@
        "herkunft": [
         "katalog:AP2a.04.04.9"
        ]
+      },
+      {
+       "id": "PB1-10-1-2-K5",
+       "text": "Du kannst DoS und DDoS unterscheiden: Beim Denial of Service überlastet ein Angreifer Rechenzeit, Speicher oder Bandbreite eines Dienstes, bis berechtigte Nutzer ihn nicht mehr erreichen; beim Distributed Denial of Service kommt die Last gleichzeitig von vielen Geräten eines Botnetzes, also von Rechnern und IoT-Geräten, die mit Schadsoftware befallen sind und zentral ferngesteuert werden.",
+       "kurz": "DoS und DDoS aus dem Botnetz",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.4.2-S369",
+        "buch:GS-2.3.4-S148",
+        "buch:GS-4.1.4-S428",
+        "buch:GS-4.1.4-S429"
+       ]
+      },
+      {
+       "id": "PB1-10-1-2-K6",
+       "text": "Du kannst den Begriff Angriffsvektor erklären: der Weg samt Technik, über den ein Angreifer in ein System gelangt, zum Beispiel ein verseuchter E-Mail-Anhang, eine präparierte Webseite, ein offener Netzwerkdienst, ein USB-Stick, manipulierte Hardware, eine verwundbare Bibliothek oder ein getäuschter Mitarbeiter.",
+       "kurz": "Angriffsvektor: Weg und Technik eines Angriffs",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-4.1.4-S425"
+       ]
+      },
+      {
+       "id": "PB1-10-1-2-K7",
+       "text": "Du kannst Identitätsdiebstahl erklären: Ein Angreifer verschafft sich fremde Zugangs- oder Personendaten, um im Namen des Opfers zu handeln, etwa über gefälschte Anmeldeseiten (Phishing), Keylogger, offen einsehbare Profile in sozialen Netzwerken oder schlecht geschützte Cloudablagen.",
+       "kurz": "Identitätsdiebstahl: Begriff und Wege",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-4.1.5-S432"
+       ]
       }
      ],
      "baut_auf": [
@@ -185,7 +251,17 @@
       "AP1-7-4-2",
       "AP1-7-3-5"
      ],
-     "hinweis": "Nur Testdaten an fremde Dienste geben (2025W-PB1-A3-bb) steht bei der eRechnung in PB1-7."
+     "hinweis": "Nur Testdaten an fremde Dienste geben (2025W-PB1-A3-bb) steht bei der eRechnung in PB1-7. Das Lehrbuch erklärt den SYN-Flood über die gefälschte Absenderadresse; entscheidend ist, dass viele Verbindungsaufbauten nie abgeschlossen werden und die Verbindungstabelle des Servers füllen.",
+     "kuer": [
+      {
+       "text": "Beim Credential Stuffing probieren Angreifer geleakte Kombinationen aus Benutzername und Passwort automatisiert an vielen Diensten aus; dagegen helfen eigene Passwörter je Dienst, ein zweiter Faktor und begrenzte Fehlversuche. Ein Advanced Persistent Threat (APT) ist ein gezielter, aufwendiger Angriff auf eine bestimmte Organisation, bei dem sich die Angreifer lange unbemerkt im Netz festsetzen.",
+       "kurz": "Credential Stuffing und APT",
+       "quellen": [
+        "buch:GS-4.1.4"
+       ],
+       "grund": "RK2: Credential Stuffing ist Unterform des Identitätsdiebstahls; APT ohne Baustein"
+      }
+     ]
     },
     {
      "id": "PB1-10-1-3",
@@ -233,7 +309,8 @@
         "katalog:AP2b.05.01.1",
         "beleg:2022W-PB1-A1-d",
         "beleg:2025W-PB1-A3-aa",
-        "beleg:2025W-PB1-A3-ab"
+        "beleg:2025W-PB1-A3-ab",
+        "buch:GS-3.4.4-S328"
        ]
       },
       {
@@ -245,12 +322,58 @@
         "katalog:AP2b.05.01.1",
         "katalog:AP2b.05.01.2"
        ]
+      },
+      {
+       "id": "PB1-10-1-3-K4",
+       "text": "Du kannst das Prinzip des Diffie-Hellman-Schlüsselaustauschs erklären: Beide Seiten tauschen nur öffentliche Werte aus und berechnen daraus zusammen mit ihrem jeweils geheimen Wert denselben Sitzungsschlüssel, der selbst nie übertragen wird, sodass ein Mithörer ihn nicht kennt.",
+       "kurz": "Schlüsseltausch nach Diffie-Hellman",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.5.2-S397"
+       ]
+      },
+      {
+       "id": "PB1-10-1-3-K5",
+       "text": "Du kannst begründen, warum eine Anwendung nur anerkannte, aktuell empfohlene Kryptoverfahren aus gepflegten Bibliotheken einsetzt (Orientierung gibt die Technische Richtlinie TR-02102 des BSI) und keine selbst erfundenen, selbst programmierten oder veralteten: Eigenentwicklungen enthalten fast immer Schwachstellen, und auch in bewährten Verfahren und ihren Umsetzungen werden Lücken gefunden, die eine gepflegte Bibliothek per Update schließt.",
+       "kurz": "Nur anerkannte Kryptoverfahren und Bibliotheken",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.3.5-S180",
+        "buch:GS-4.1.5-S436"
+       ]
+      },
+      {
+       "id": "PB1-10-1-3-K6",
+       "text": "Du kannst OpenPGP und S/MIME als Verfahren der Ende-zu-Ende-Verschlüsselung von E-Mails vergleichen: Beide arbeiten mit Schlüsselpaaren und sind untereinander nicht kompatibel; bei OpenPGP bestätigen sich die Nutzer gegenseitig die Echtheit der Schlüssel (Web of Trust), bei S/MIME beglaubigt eine Zertifizierungsstelle das Zertifikat – das kostet meist etwas, wird aber von den meisten Mailprogrammen ohne Zusatzsoftware unterstützt.",
+       "kurz": "OpenPGP und S/MIME im Vergleich",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-4.1.5-S435"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-7-3-1"
      ],
-     "hinweis": "Symmetrische Verschlüsselung beschreiben (2021W-PB1-A4-aa), ein alternatives Verfahren mit Vor- und Nachteil (2021W-PB1-A4-ab) und den Vorteil asymmetrischer Verfahren (2025W-PB1-A3-ab) erklärt AP1-7-3-1. Bei TLS und E-Mail gibt die Antwort „asymmetrisch“ laut Lösung 2025W-PB1-A3-aa keine Punkte; erwartet ist „hybrid“."
+     "hinweis": "Symmetrische Verschlüsselung beschreiben (2021W-PB1-A4-aa), ein alternatives Verfahren mit Vor- und Nachteil (2021W-PB1-A4-ab) und den Vorteil asymmetrischer Verfahren (2025W-PB1-A3-ab) erklärt AP1-7-3-1. Bei TLS und E-Mail gibt die Antwort „asymmetrisch“ laut Lösung 2025W-PB1-A3-aa keine Punkte; erwartet ist „hybrid“. Das Lehrbuch beschreibt als Diffie-Hellman das Verschlüsseln mit dem öffentlichen Schlüssel des Partners; das ist asymmetrische Verschlüsselung. Richtig ist: Beim Diffie-Hellman-Verfahren berechnen beide Seiten aus ausgetauschten öffentlichen Werten denselben Schlüssel, ohne ihn zu übertragen.",
+     "kuer": [
+      {
+       "text": "Mit einer Bibliothek läuft symmetrisches Verschlüsseln immer ähnlich ab: Schlüssel erzeugen und sicher aufbewahren, Text in Bytes umwandeln, verschlüsseln, das Ergebnis zum Speichern oder Versenden als Text kodieren (z. B. Base64) und mit demselben Schlüssel entschlüsseln; Base64 selbst ist keine Verschlüsselung.",
+       "kurz": "Symmetrisch verschlüsseln mit einer Bibliothek",
+       "quellen": [
+        "buch:FS2-2.3.5"
+       ],
+       "grund": "RK1: Bibliotheksablauf ist sprachnah"
+      },
+      {
+       "text": "Bei der Domänen- oder Gateway-Verschlüsselung verschlüsseln die Mailserver zweier Organisationen den Verkehr untereinander, ohne dass die Nutzer etwas tun; innerhalb der Organisationen liegen die Mails aber unverschlüsselt vor, es ist also keine Ende-zu-Ende-Verschlüsselung.",
+       "kurz": "Gateway-Verschlüsselung von E-Mails",
+       "quellen": [
+        "buch:GS-4.1.5"
+       ],
+       "grund": "RK2: Detail neben Transport- und Ende-zu-Ende-Verschlüsselung"
+      }
+     ]
     },
     {
      "id": "PB1-10-1-4",
@@ -319,11 +442,40 @@
         "katalog:AP2b.05.01.2",
         "beleg:2025S-PB1-A2-c"
        ]
+      },
+      {
+       "id": "PB1-10-1-4-K5",
+       "text": "Du kannst begründen, warum gebrochene Hashverfahren wie MD5 nicht mehr für Sicherheitszwecke eingesetzt werden und stattdessen ein Verfahren der SHA-2-Familie wie SHA-256: Bei MD5 lassen sich gezielt zwei verschiedene Eingaben mit gleichem Hashwert erzeugen, sodass eine Fälschung bei Prüfsumme oder Signatur nicht mehr auffällt.",
+       "kurz": "MD5 gebrochen, SHA-256 verwenden",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.3.6-S183"
+       ]
+      },
+      {
+       "id": "PB1-10-1-4-K6",
+       "text": "Du kannst erläutern, warum dieselbe Eingabe in jeder Programmiersprache und auf jedem System denselben Hashwert ergibt, sofern sie gleich in Bytes kodiert wird (z. B. UTF-8): Hashfunktionen arbeiten auf Bytes, nicht auf Zeichen; deshalb lässt sich ein Hash, den ein Programm gespeichert hat, in einem anderen prüfen, während eine abweichende Kodierung einen völlig anderen Wert ergibt.",
+       "kurz": "Hashwert und Bytekodierung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.6-S185"
+       ]
       }
      ],
      "baut_auf": [
       "AP1-7-3-2"
-     ]
+     ],
+     "kuer": [
+      {
+       "text": "TLS-Zertifikate unterscheiden sich nach der Prüftiefe der Zertifizierungsstelle: Domain Validation (nur die Kontrolle über die Domain), Organization Validation (auch das Unternehmen) und Extended Validation (erweiterte Identitätsprüfung); verschlüsselt wird bei allen gleich stark.",
+       "kurz": "Zertifikatsarten DV, OV und EV",
+       "quellen": [
+        "buch:GS-4.1.5"
+       ],
+       "grund": "RK2: Unterarten von Zertifikaten"
+      }
+     ],
+     "hinweis": "Das Lehrbuch begründet die Schwäche von MD5 damit, dass sich aus dem Hash die Originaldaten berechnen ließen; richtig ist: MD5 gilt als gebrochen, weil sich Kollisionen gezielt erzeugen lassen. Das Lehrbuch füllt im Java-Beispiel den SHA-256-Hash auf 32 Hexadezimalstellen auf; richtig sind 64 Stellen (32 Byte). Die Bezeichnungen der Zertifikatsarten sind im Lehrbuch verstümmelt; richtig ist: DV = Domain Validation, OV = Organization Validation, EV = Extended Validation."
     }
    ]
   },
@@ -407,6 +559,16 @@
       "AP1-7-3-3",
       "AP1-7-1-3",
       "AP1-7-1-2"
+     ],
+     "kuer": [
+      {
+       "text": "Föderiert heißt: Eigenständige Systeme oder Anbieter arbeiten zusammen und bleiben dabei selbstständig, etwa bei der föderierten Anmeldung, bei der ein Dienst die Identität über den Identity Provider eines Partners prüfen lässt, zum Beispiel die Anmeldung mit dem Firmenkonto bei einem Clouddienst.",
+       "kurz": "Föderierte Systeme und Anmeldung",
+       "quellen": [
+        "buch:FS-1.1.3"
+       ],
+       "grund": "RK2: Unterthema von Identity & Access Management"
+      }
      ]
     },
     {
@@ -454,6 +616,15 @@
        "herkunft": [
         "katalog:AP2b.05.01.1"
        ]
+      },
+      {
+       "id": "PB1-10-2-2-K4",
+       "text": "Du kannst erklären, wann ein Vertrag zur Auftragsverarbeitung nötig ist – ein Dienstleister verarbeitet personenbezogene Daten im Auftrag, etwa beim Hosting, im Cloudbetrieb oder bei der Fernwartung – und was er regelt: Gegenstand und Dauer, Verarbeitung nur nach Weisung des Auftraggebers, Pflichten beider Seiten, Einsatz von Unterauftragnehmern, Nachweise und Kontrollen sowie die technischen und organisatorischen Maßnahmen.",
+       "kurz": "Vertrag zur Auftragsverarbeitung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-1.1.4-S29"
+       ]
       }
      ],
      "baut_auf": [
@@ -478,6 +649,14 @@
         "podcast:themen-ap2"
        ],
        "grund": "Nur Hinweisquelle; Grundlagen der DSGVO stehen in AP1 (AP1-7-5-1). Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Smart-City-Anwendungen mit flächendeckenden Sensoren und Kameras bergen besondere Datenschutzrisiken wie Bewegungsprofile und anlasslose Überwachung, etwa durch Gesichtserkennung; Gegenmittel sind Datensparsamkeit, frühe Anonymisierung und kurze Speicherfristen.",
+       "kurz": "Datenschutzrisiken in der Smart City",
+       "quellen": [
+        "buch:FS-2.1.3"
+       ],
+       "grund": "RK2: Anwendungsbeispiel ohne eigenen Baustein"
       }
      ]
     },
@@ -625,6 +804,33 @@
        "herkunft": [
         "katalog:AP2b.02.03.3"
        ]
+      },
+      {
+       "id": "PB1-10-2-3-K8",
+       "text": "Du kannst festlegen, welche sicherheitsrelevanten Ereignisse eine Anwendung protokolliert – fehlgeschlagene Anmeldungen, Ausnahmen, Validierungsfehler, Änderungen an Rechten, Aktionen von Administratoren und schreibende Zugriffe auf wichtige Daten, jeweils mit Zeit und Benutzer – und dabei den Datenschutz wahren: keine Passwörter oder unnötigen Personendaten im Protokoll, Zugriff beschränkt, Speicherdauer begrenzt.",
+       "kurz": "Sicherheitsrelevante Ereignisse protokollieren",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-3.3.7-S208"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K9",
+       "text": "Du kannst Blacklisting und Whitelisting unterscheiden: Eine Negativliste sperrt bekannte schädliche Seiten oder Programme und erlaubt alles andere, verpasst aber neue Bedrohungen; eine Positivliste erlaubt nur ausdrücklich Vertrauenswürdiges und sperrt alles Unbekannte – sicherer, aber aufwendiger zu pflegen und für die Nutzer einschränkender.",
+       "kurz": "Blacklisting gegen Whitelisting",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-4.1.5-S433"
+       ]
+      },
+      {
+       "id": "PB1-10-2-3-K10",
+       "text": "Du kannst für einen Server Firewall-Regeln nach dem Grundsatz „alles gesperrt, was nicht ausdrücklich erlaubt ist“ festlegen: eingehende Verbindungen standardmäßig verweigern, nur die Ports der angebotenen Dienste freigeben, etwa 443 für HTTPS, und Verwaltungszugänge wie SSH nur aus dem Verwaltungsnetz zulassen.",
+       "kurz": "Firewall-Regeln für einen Server",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-4.6.3-S414"
+       ]
       }
      ],
      "baut_auf": [
@@ -737,7 +943,7 @@
      ],
      "kuer": [
       {
-       "text": "Weitere Angriffe und Begriffe: XSS, CSRF, Session Hijacking, Spoofing, Sniffing, Botnetze, Rootkit, 0-Day-Exploit, Honeypot, OWASP Top 10, Social-Engineering-Penetrationstest, Werkzeuge wie Portscanner und Vulnerability Scanner (z. B. OpenVAS).",
+       "text": "Weitere Angriffe und Begriffe: XSS, CSRF, Session Hijacking, Spoofing, Sniffing, Rootkit, 0-Day-Exploit, Honeypot, OWASP Top 10, Social-Engineering-Penetrationstest, Werkzeuge wie Portscanner und Vulnerability Scanner (z. B. OpenVAS).",
        "kurz": "Weitere Angriffe, Begriffe und Prüfwerkzeuge",
        "quellen": [
         "podcast:themen-ap2"
@@ -1082,8 +1288,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -1092,7 +1298,14 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-2.6.1": "Lehrbuch Westermann „IT-Berufe“ FS 2.6.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.3.7": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-4.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.3.5": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-4.1.5": "Lehrbuch Westermann „IT-Berufe“ GS 4.1.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-2.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 2.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -1323,6 +1536,94 @@
       "PB1-12"
      ],
      "notiz": "Betriebssicherheit AP2b.01.10"
+    },
+    {
+     "thema": "Vernetzte Geräte eines cyber-physischen Systems brauchen dieselben Grundschutzmaßnahmen wie Server: verschlüsselte Verbi",
+     "quellen": [
+      "buch:FS-2.6.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "In Scrum wird Sicherheit über die Artefakte eingeplant: Datenart und Risiken in den User Stories, Maßnahmen wie Verschlü",
+     "quellen": [
+      "buch:FS-3.3.7"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Beim Credential Stuffing probieren Angreifer geleakte Kombinationen aus Benutzername und Passwort automatisiert an viele",
+     "quellen": [
+      "buch:GS-4.1.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Mit einer Bibliothek läuft symmetrisches Verschlüsseln immer ähnlich ab: Schlüssel erzeugen und sicher aufbewahren, Text",
+     "quellen": [
+      "buch:FS2-2.3.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Bei der Domänen- oder Gateway-Verschlüsselung verschlüsseln die Mailserver zweier Organisationen den Verkehr untereinand",
+     "quellen": [
+      "buch:GS-4.1.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "TLS-Zertifikate unterscheiden sich nach der Prüftiefe der Zertifizierungsstelle: Domain Validation (nur die Kontrolle üb",
+     "quellen": [
+      "buch:GS-4.1.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Föderiert heißt: Eigenständige Systeme oder Anbieter arbeiten zusammen und bleiben dabei selbstständig, etwa bei der föd",
+     "quellen": [
+      "buch:FS-1.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Smart-City-Anwendungen mit flächendeckenden Sensoren und Kameras bergen besondere Datenschutzrisiken wie Bewegungsprofil",
+     "quellen": [
+      "buch:FS-2.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-10-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -1438,6 +1739,59 @@
       "PB1-10-1-1-K2"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-10-1-1-K5",
+     "PB1-10-1-1-K6",
+     "PB1-10-1-2-K5",
+     "PB1-10-1-2-K6",
+     "PB1-10-1-2-K7",
+     "PB1-10-1-3-K4",
+     "PB1-10-1-3-K5",
+     "PB1-10-1-3-K6",
+     "PB1-10-1-4-K5",
+     "PB1-10-1-4-K6",
+     "PB1-10-2-2-K4",
+     "PB1-10-2-3-K8",
+     "PB1-10-2-3-K9",
+     "PB1-10-2-3-K10"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB1-10-1-3-K2"
+    ],
+    "kuer": [
+     "PB1-10-1-1",
+     "PB1-10-1-1",
+     "PB1-10-1-2",
+     "PB1-10-1-3",
+     "PB1-10-1-3",
+     "PB1-10-1-4",
+     "PB1-10-2-1",
+     "PB1-10-2-2"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS-4.4.2#7",
+      "aussage": "AP1-7-1-2-K8",
+      "grund": "E2: Die Kontrollziele der TOM (Zutritt, Zugang, Zugriff, Weitergabe/Transport, Eingabe, Auftrag, Verfügbarkeit, Trennung) stehen in AP1-7-1-2-K8; Prüfen ihrer Wirksamkeit in PB1-10-2-3-K2. Die Liste nach § 64 BDSG gilt nur für Behörden der Strafverfolgung, für Unternehmen ist Art. 32 DSGVO maßgeblich."
+     }
+    ],
+    "hinweise": [
+     "PB1-10-1-3",
+     "PB1-10-1-4",
+     "PB1-10-1-4",
+     "PB1-10-1-4",
+     "PB1-10-1-2"
+    ]
    }
   ]
  }
