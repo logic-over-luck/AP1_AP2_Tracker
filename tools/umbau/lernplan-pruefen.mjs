@@ -53,6 +53,14 @@ const b = JSON.parse(readFileSync('umbau/fundament/katalog-bausteine.json', 'utf
 const zusatz = JSON.parse(readFileSync('umbau/regeln/zusatzbausteine.json', 'utf8')).bausteine;
 const belege = JSON.parse(readFileSync(`umbau/fundament/belege-${RAUM}.json`, 'utf8')).bausteine;
 const regeln = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
+// P57: Stufe je Baustein über alle Räume (Katalogstufe, durch Belege angehoben)
+const bausteinStufe = {};
+for (const f of readdirSync('umbau/fundament').filter((x) => /^belege-.*\.json$/.test(x))) {
+  for (const [id, v] of Object.entries(JSON.parse(readFileSync(`umbau/fundament/${f}`, 'utf8')).bausteine)) {
+    const s = v.stufe ?? v.katalog_stufe;
+    if (s != null) bausteinStufe[id] = Math.max(s, bausteinStufe[id] ?? 0);
+  }
+}
 const index = JSON.parse(readFileSync(`umbau/fundament/pruefungen-${RAUM}.json`, 'utf8'));
 const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
 const altPaket = NEU_IDS
@@ -178,6 +186,14 @@ for (const tb of lp.themenbloecke) {
           const dort = Math.min(...fach.map(erreichtFrueher));
           if (!belegHier && k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
         }
+      }
+      // P57 (Projektinhaber, 16.10.2026): Eine reine Buch-Aussage liegt nie über der höchsten Stufe der Bausteine
+      // ihres Stichpunkts (Katalog, durch Belege angehoben). Höher nur mit Beleg; die höhere Stufe gehört sonst
+      // in den Raum, dessen Baustein sie verlangt.
+      if (k.herkunft?.length && k.herkunft.every((h) => h.startsWith('buch:'))) {
+        const st = [...spB].map((x) => bausteinStufe[x]).filter((x) => x != null);
+        const max = st.length ? Math.max(...st) : (regeln.buch?.form?.stufe_ohne_baustein ?? 2);
+        if (k.stufe > max) F(`P57: ${k.id}: Buch-Aussage mit Stufe ${k.stufe} über der Stufe der Bausteine von ${sp.id} (${max}) – Operator nach dem Baustein (D5)`);
       }
       // F1-Heuristik: passt die Stufe zu einem Verb im Text?
       const verben = Object.keys(opStufe).filter((op) => new RegExp(`(^|[^A-Za-zÄÖÜäöüß])${op}([^A-Za-zÄÖÜäöüß]|$)`).test(k.text));
