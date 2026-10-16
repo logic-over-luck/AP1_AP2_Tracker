@@ -25,6 +25,13 @@ Teilaufgaben: 2025S-WISO-A10, 2025S-WISO-A9, 2025W-WISO-A3
 | K3 | Du kannst erklären, wann und wie der Ausbildungsvertrag festgehalten wird: Der wesentliche Inhalt ist unverzüglich nach Abschluss, spätestens vor Beginn der Ausbildung niederzulegen – seit August 2024 schriftlich oder in Textform, zum Beispiel als PDF per E-Mail mit Empfangsnachweis –, und der Betrieb beantragt die Eintragung in das Verzeichnis der Berufsausbildungsverhältnisse bei der Kammer. | 2 | katalog:WISO.01.03.2, katalog:WISO.01.01.1 |
 | K4 | Du kannst in einem Vertragsentwurf zulässige von nichtigen Vereinbarungen unterscheiden: nichtig sind zum Beispiel die Pflicht, nach der Ausbildung im Betrieb zu bleiben (außer sie wird in den letzten sechs Monaten vereinbart), eine Vertragsstrafe, eine Zahlung des Auszubildenden für die Ausbildung oder der Ausschluss von Schadensersatz; unwirksam ist nur die nichtige Vereinbarung, der übrige Vertrag gilt weiter. | 2 | katalog:WISO.01.01.1, beleg:2025S-WISO-A9, beleg:2025W-WISO-A3 |
 | K6 | Du kannst den Geltungsbereich des Berufsbildungsgesetzes erklären: Es regelt die Berufsausbildung im Betrieb, nicht die Ausbildung an berufsbildenden Schulen. | 2 | katalog:WISO.01.01.1.8 |
+| K7 | Du kannst in einem Vertragsentwurf unterscheiden, welche weiteren Angaben in die Niederschrift gehören – Name und Anschrift der Vertragspartner, Ausbildungsmaßnahmen außerhalb der Ausbildungsstätte, ein Hinweis auf geltende Tarifverträge und Betriebsvereinbarungen und die Form des Ausbildungsnachweises (schriftlich oder elektronisch) – und welche nicht vorgeschrieben sind, etwa eine ärztliche Bescheinigung oder kalkulierte Ausbildungskosten. | 2 | buch:GS-1.2.1-S24 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Ausbildende und Auszubildende können eine Teilzeitausbildung im Vertrag vereinbaren (§ 7a BBiG): Die Ausbildungszeit wird um höchstens die Hälfte gekürzt, und die Ausbildungsdauer verlängert sich entsprechend, höchstens auf das Eineinhalbfache. Einen besonderen Grund wie Kinderbetreuung braucht es dafür seit 2020 nicht mehr. _(buch:GS-1.2.1)_
+
+_Hinweis:_ Das Lehrbuch nennt für die Teilzeitausbildung noch § 8 BBiG mit Begründungspflicht (z. B. Alleinerziehende); seit der BBiG-Novelle 2020 regelt § 7a BBiG die Teilzeitausbildung, die ohne besonderen Grund vereinbart werden kann.
 
 #### WISO-1-1-2 Probezeit und Kündigung des Ausbildungsverhältnisses
 
@@ -56,10 +63,15 @@ Teilaufgaben: 2024S-WISO-A3, 2025S-WISO-A9, 2025W-WISO-A3, 2025W-WISO-A4, 2022S-
 | K2 | Du kannst erklären, was nach bestandener Prüfung für die Weiterbeschäftigung gilt: Der Betrieb muss Auszubildende nicht übernehmen und ihnen keinen Arbeitsvertrag anbieten; arbeitet ein Auszubildender aber ohne ausdrückliche Vereinbarung weiter, entsteht ein unbefristetes Arbeitsverhältnis. | 2 | katalog:WISO.01.01.1.9, beleg:2025W-WISO-A4, beleg:2025S-WISO-A9, beleg:2025W-WISO-A3 |
 | K3 | Du kannst erklären, welches Zeugnis der Betrieb am Ende ausstellen muss: immer ein einfaches Zeugnis über Art, Dauer und Ziel der Ausbildung; Angaben zu Verhalten und Leistung (qualifiziertes Zeugnis) nur auf Verlangen des Auszubildenden. | 2 | katalog:WISO.01.01.1.9, beleg:2022S-WISO-A9, beleg:2025S-WISO-A9, beleg:2025W-WISO-A3 |
 | K4 | Du kannst erklären, was bei nicht bestandener Abschlussprüfung gilt: Auf Verlangen des Auszubildenden verlängert sich das Ausbildungsverhältnis bis zur nächsten Wiederholungsprüfung, höchstens um ein Jahr. | 2 | katalog:WISO.01.01.1.10 |
+| K5 | Du kannst den Aufbau der gestreckten Abschlussprüfung erklären: Teil 1 liegt etwa in der Mitte der Ausbildung (Einrichten eines IT-gestützten Arbeitsplatzes) und zählt anders als eine Zwischenprüfung schon zum Endergebnis; Teil 2 am Ende besteht aus der betrieblichen Projektarbeit mit Präsentation und Fachgespräch als größtem Anteil, zwei schriftlichen berufsspezifischen Prüfungsbereichen und Wirtschafts- und Sozialkunde. | 2 | buch:GS-1.1-S19 |
+| K6 | Du kannst die drei Zeugnisse am Ende der Ausbildung unterscheiden: das Prüfungszeugnis der Kammer über die bestandene Abschlussprüfung, das Abschlusszeugnis der Berufsschule, das sich ohne eigene Prüfung aus den Unterrichtsleistungen ergibt, und das Ausbildungszeugnis, das der Betrieb ausstellen muss. | 2 | buch:GS-1.1-S20 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Seit 1.8.2024 darf der Betrieb das Ausbildungszeugnis mit Einwilligung des Auszubildenden auch elektronisch ausstellen (§ 16 BBiG in der Fassung des BVaDiG); ohne Einwilligung bleibt es beim schriftlichen Zeugnis. _(pruefer:wiso-2026-10)_
+- Bestanden ist die Prüfung, wenn das Gesamtergebnis und Teil 2 mindestens ausreichend sind, beim Fachinformatiker mindestens drei der vier Prüfungsbereiche von Teil 2 mindestens ausreichend und keiner ungenügend; die Noten folgen dem Punkteschlüssel der Kammer (ausreichend ab 50 von 100 Punkten). Ist ein schriftlicher Bereich von Teil 2 mangelhaft, kann eine etwa viertelstündige mündliche Ergänzungsprüfung den Ausschlag geben; das schriftliche Ergebnis zählt dann doppelt so viel wie das mündliche. _(buch:GS-1.1)_
+
+_Hinweis:_ Das Lehrbuch spricht von einer Abschlussprüfung „in drei Teilen“ und nennt als Bestehensregel „mindestens zwei Prüfungsbereiche von Teil 2“; richtig ist: Die gestreckte Prüfung hat zwei Teile (die Projektarbeit gehört zu Teil 2), und Fachinformatiker müssen nach der Verordnung 2020 mindestens drei Prüfungsbereiche von Teil 2 mit mindestens ausreichend abschließen.
 
 #### WISO-1-1-4 Rechte und Pflichten von Auszubildenden und Ausbildenden
 
@@ -77,6 +89,10 @@ Teilaufgaben: 2021W-WISO-A2, 2025W-WISO-A2
 | K5 | Du kannst Folgen von Pflichtverletzungen beschreiben: Abmahnung, Kündigung aus wichtigem Grund und Schadensersatz. | 2 | katalog:WISO.01.01.1.7 |
 | K6 | Du kannst den Zweck des Ausbildungsnachweises (Berichtsheft) erklären: Er dokumentiert die vermittelten Ausbildungsinhalte und ist Voraussetzung für die Zulassung zur Abschlussprüfung, wird aber nicht benotet. | 2 | katalog:WISO.01.01, beleg:2021W-WISO-A2 |
 | K7 | Du kannst die Verschwiegenheitspflicht von Auszubildenden abgrenzen: Sie umfasst Betriebs- und Geschäftsgeheimnisse, nicht jedes Vorkommnis im Betrieb, und gilt gegenüber allen Dritten. | 2 | katalog:WISO.01.01, beleg:2025W-WISO-A2 |
+| K8 | Du kannst weitere Pflichten des Ausbildenden erklären: nur Aufgaben übertragen, die dem Ausbildungszweck dienen und den Kräften des Auszubildenden angemessen sind, bekannt geben, wer ihm Weisungen erteilen darf, Ausbildungsnachweise kostenlos bereitstellen und ihre Führung überwachen, zum Besuch der Berufsschule anhalten und Mehrarbeit besonders vergüten oder durch Freizeit ausgleichen. | 2 | buch:GS-1.2.1-S22, buch:GS-1.2.1-S26 |
+| K9 | Du kannst die Benachrichtigungspflicht bei Fehlzeiten erklären: Wer im Betrieb, in der Berufsschule oder bei einer anderen Ausbildungsmaßnahme fehlt, meldet das unverzüglich mit Grund; dauert eine Arbeitsunfähigkeit länger als drei Kalendertage, muss sie spätestens am darauffolgenden Arbeitstag ärztlich festgestellt sein (der Betrieb darf das früher verlangen), und die Bescheinigung ruft der Betrieb heute meist elektronisch bei der Krankenkasse ab. | 2 | buch:GS-1.2.1-S22 |
+
+_Hinweis:_ Das Lehrbuch nennt eine ärztliche Bescheinigung „spätestens am dritten Tag“; richtig ist (§ 5 EntgFG): Dauert die Arbeitsunfähigkeit länger als drei Kalendertage, ist sie spätestens am darauffolgenden Arbeitstag ärztlich festzustellen; seit 2023 ruft der Betrieb die elektronische AU bei der Krankenkasse ab.
 
 ### WISO-1-2 Duales System, Ausbildungsordnung und zuständige Stelle
 
@@ -96,6 +112,7 @@ Teilaufgaben:
 | K2 | Du kannst beschreiben, wie Betrieb und Berufsschule zusammenwirken: Absprachen, gemeinsame Arbeitskreise und die Abstimmung, wann welche Inhalte vermittelt werden. | 2 | katalog:WISO.01.02.2, katalog:WISO.01.02.2.1, katalog:WISO.01.02.2.2, katalog:WISO.01.02.2.3 |
 | K3 | Du kannst die Regeln zu Berufsschule und Prüfung erklären: Die Berufsschulpflicht regelt das Landesrecht – wer die Ausbildung jung beginnt, ist berufsschulpflichtig, Ältere sind je nach Bundesland nur berufsschulberechtigt –; der Betrieb muss Auszubildende für den Unterricht und für Prüfungen freistellen, und die Berufsschulzeit wird auf die Arbeitszeit angerechnet. | 2 | katalog:WISO.01.03.4, katalog:WISO.01.03.5, katalog:WISO.01.03.6 |
 | K5 | Du kannst Vorteile des dualen Systems beschreiben: Praxisnähe, Verbindung von Theorie und Anwendung, Einblick in den Betrieb und bundesweit anerkannte Abschlüsse. | 2 | katalog:WISO.01.02.1 |
+| K6 | Du kannst Teilzeitunterricht und Blockunterricht in der Berufsschule unterscheiden: Beim Teilzeitunterricht ist an ein bis zwei festen Tagen pro Woche Schule und an den übrigen Tagen Betrieb, beim Blockunterricht wechseln mehrere Wochen Schule am Stück mit längeren Phasen im Betrieb. | 2 | buch:GS-1.1-S13 |
 
 #### WISO-1-2-2 Ausbildungsordnung, Ausbildungsrahmenplan, Rahmenlehrplan und betrieblicher Ausbildungsplan
 
@@ -113,6 +130,10 @@ Teilaufgaben: 2021W-WISO-A10
 | K4 | Du kannst beschreiben, was die Ausbildungsordnung regelt: Berufsbezeichnung, Ausbildungsdauer, das Ausbildungsberufsbild mit den zu vermittelnden Kenntnissen, Fertigkeiten und Fähigkeiten, den Ausbildungsrahmenplan und die Prüfungsanforderungen – nicht aber Vergütung oder Urlaub. | 2 | katalog:WISO.01.03.1, beleg:2021W-WISO-A10 |
 | K5 | Du kannst die Zuständigkeiten zuordnen: Der Bund erlässt die Ausbildungsordnung, die Kultusministerkonferenz der Länder den Rahmenlehrplan. | 2 | katalog:WISO.01.03.1, katalog:WISO.01.04.1 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Seit der Neuordnung 2020 gibt es vier IT-Ausbildungsberufe: IT-System-Elektroniker, Kaufleute für IT-System-Management, Kaufleute für Digitalisierungsmanagement und Fachinformatiker mit den Fachrichtungen Anwendungsentwicklung, Systemintegration, Daten- und Prozessanalyse sowie Digitale Vernetzung. Alle lernen zuerst gemeinsame Kernqualifikationen und danach die Inhalte ihres Berufsprofils. _(buch:GS-1.1)_
+
 _Hinweis:_ Dass der betriebliche Ausbildungsplan Teil des Ausbildungsvertrags wird (2025S-WISO-A10), steht in WISO-1-1-1.
 
 #### WISO-1-2-3 Zuständige Stelle und Ausbilder: Aufgaben der Kammer, Eignung (neu)
@@ -128,6 +149,7 @@ Teilaufgaben: 2022S-WISO-A6, 2022W-WISO-A1, 2023W-WISO-A12, 2025W-WISO-A1, 2021W
 | K1 | Du kannst die Aufgaben der Kammer als zuständige Stelle in der Berufsausbildung von anderen Pflichten unterscheiden: Sie trägt Ausbildungsverträge ein, überwacht die Eignung von Betrieb und Ausbildern, berät Betriebe und Auszubildende (Ausbildungsberater), nimmt Prüfungen ab und genehmigt eine Verkürzung oder Verlängerung der Ausbildung – der Betrieb muss ihr aber nicht jede Fehlzeit melden und kann keinen späteren Prüfungstermin wegen der Auftragslage verlangen. | 2 | katalog:WISO.01.06.2, katalog:WISO.01.03.3, beleg:2021W-WISO-A14 |
 | K2 | Du kannst die gesetzlichen Voraussetzungen für Ausbilder erklären: Sie müssen persönlich und fachlich geeignet sein; zur fachlichen Eignung gehören berufliche sowie berufs- und arbeitspädagogische Kenntnisse (zum Beispiel die Ausbildereignungsprüfung). | 2 | katalog:WISO.01.03.3, beleg:2022S-WISO-A6, beleg:2022W-WISO-A1, beleg:2023W-WISO-A12, beleg:2025W-WISO-A1 |
 | K3 | Du kannst einer Frage aus der Ausbildung die zuständige Stelle zuordnen, zum Beispiel Abweichungen vom Ausbildungsplan oder eine Verkürzung der Ausbildung der Kammer (IHK) – nicht etwa der Berufsgenossenschaft, der Gewerbeaufsicht, der Berufsberatung oder dem Gesundheitsamt. | 2 | katalog:WISO.01.03.3, beleg:2023S-WISO-A28, beleg:2021W-WISO-A14 |
+| K4 | Du kannst das Ziel der Berufsausbildung nach dem Berufsbildungsgesetz erklären: In einem geordneten Ausbildungsgang soll die berufliche Handlungsfähigkeit entstehen, also die Fertigkeiten, Kenntnisse und Fähigkeiten, um einen qualifizierten Beruf auch in einer sich wandelnden Arbeitswelt auszuüben, und dazu die nötige Berufserfahrung. | 2 | buch:GS-1.1-S13 |
 
 _Hinweis:_ Neuer Stichpunkt: Die Aufgaben der Kammer standen vorher in WISO-1-2-1, die Eignung der Ausbilder in WISO-1-1-4; beide kamen in fast jeder Prüfung vor. Wer den Arbeitsschutz überwacht (Gewerbeaufsicht, Berufsgenossenschaft), steht in WISO-3-1-1; die IHK als Interessenvertretung der Wirtschaft in WISO-1-5-3.
 
@@ -150,8 +172,10 @@ Teilaufgaben: 2022W-WISO-A7, 2022W-WISO-A5, 2022S-WISO-A1, 2021W-WISO-A23
 | K3 | Du kannst die Hauptpflichten im Arbeitsverhältnis nennen: Arbeitsleistung auf der einen, Vergütung auf der anderen Seite. | 1 | katalog:WISO.01.05.1 |
 | K4 | Du kannst Nebenpflichten unterscheiden: Verschwiegenheit und Treue (keine Konkurrenztätigkeit) beim Arbeitnehmer, Fürsorge und Beschäftigung beim Arbeitgeber. | 2 | katalog:WISO.01.05.1, beleg:2022W-WISO-A5 |
 | K5 | Du kannst die Rangfolge der Regelungen erklären: Gesetz vor Tarifvertrag vor Betriebsvereinbarung vor Arbeitsvertrag; eine für den Arbeitnehmer günstigere Abmachung geht vor (Günstigkeitsprinzip), deshalb gilt zum Beispiel ein übertarifliches Gehalt im Arbeitsvertrag auch neben einem Tarifvertrag. | 2 | katalog:WISO.01.05.1, beleg:2022S-WISO-A1 |
+| K6 | Du kannst die Haftung bei Fehlern im Kundenauftrag erklären: Gegenüber dem Kunden haftet der Betrieb für das Verschulden seiner Beschäftigten und Auszubildenden (Erfüllungsgehilfen); ob er sich den Schaden vom Beschäftigten zurückholen kann, hängt vom Verschulden ab – bei leichter Fahrlässigkeit gar nicht, bei mittlerer anteilig, bei grober Fahrlässigkeit und Vorsatz in der Regel voll. | 2 | buch:GS-1.1-S15 |
+| K7 | Du kannst die Rechte von Beschäftigten an ihrer Personalakte erklären: Sie dürfen die vollständige Akte einschließlich aller Neben- und Sonderakten einsehen, die Entfernung oder Berichtigung unrichtiger Angaben verlangen und eigene Erklärungen beifügen lassen; der Arbeitgeber muss die Akte vertraulich führen und nur Berechtigten zugänglich machen. | 2 | buch:GS-1.2.2-S30 |
 
-_Hinweis:_ Wem die Rechte an Software gehören, die ein Angestellter im Rahmen seiner Arbeit schreibt (2021W-WISO-A23), steht in AP1-3-4-1. Zu 2022W-WISO-A7: Die IHK wertete nur die im Arbeitsvertrag vereinbarte Regel (übertarifliche Gehaltsvereinbarung) als Individualarbeitsrecht, nicht aber Urlaubsregelungen nach dem Bundesurlaubsgesetz oder Unfallverhütungsvorschriften; in der Fachliteratur wird das Arbeitnehmerschutzrecht teils dem Individualarbeitsrecht zugerechnet. Betriebsvereinbarung und Tarifvorrang stehen in WISO-1-4-2, Tarifbindung in WISO-1-5-1.
+_Hinweis:_ Wem die Rechte an Software gehören, die ein Angestellter im Rahmen seiner Arbeit schreibt (2021W-WISO-A23), steht in AP1-3-4-1. Zu 2022W-WISO-A7: Die IHK wertete nur die im Arbeitsvertrag vereinbarte Regel (übertarifliche Gehaltsvereinbarung) als Individualarbeitsrecht, nicht aber Urlaubsregelungen nach dem Bundesurlaubsgesetz oder Unfallverhütungsvorschriften; in der Fachliteratur wird das Arbeitnehmerschutzrecht teils dem Individualarbeitsrecht zugerechnet. Betriebsvereinbarung und Tarifvorrang stehen in WISO-1-4-2, Tarifbindung in WISO-1-5-1. Das Lehrbuch sagt vereinfacht, bei Fahrlässigkeit oder Vorsatz könne der Betrieb vom Mitarbeiter Schadensersatz fordern; richtig ist die nach Verschulden gestufte Arbeitnehmerhaftung: bei leichter Fahrlässigkeit keine, bei mittlerer anteilige, bei grober Fahrlässigkeit und Vorsatz in der Regel volle Haftung.
 
 #### WISO-1-3-2 Rechtsquellen zuordnen: welches Gesetz regelt was
 
@@ -166,8 +190,14 @@ Teilaufgaben: 2025S-WISO-A16, 2025W-WISO-A13, 2021W-WISO-A18, 2023S-WISO-A10, 20
 | K1 | Du kannst einem Sachverhalt die Rechtsquelle zuordnen, die ihn regelt, zum Beispiel Betriebsversammlung, Jugend- und Auszubildendenvertretung und die vertrauensvolle Zusammenarbeit mit dem Betriebsrat dem Betriebsverfassungsgesetz, den Urlaub Jugendlicher dem Jugendarbeitsschutzgesetz. | 2 | katalog:WISO.01.05.2, katalog:WISO.01.05.2.9, katalog:WISO.02.09.1, beleg:2025S-WISO-A16, beleg:2025W-WISO-A13, beleg:2023S-WISO-A10, beleg:2025S-WISO-A11, beleg:2025W-WISO-A8 |
 | K2 | Du kannst einer Frage zuordnen, ob sie das Berufsbildungsgesetz (Ausbildung), das Betriebsverfassungsgesetz (Mitbestimmung im Betrieb) oder eine Arbeitsschutzvorschrift wie Arbeitsschutzgesetz oder Arbeitsstättenverordnung regelt. | 2 | katalog:WISO.01.05.2.1, katalog:WISO.01.05.2.2, katalog:WISO.01.05.2.7, katalog:WISO.01.05.2.9 |
 | K5 | Du kannst weiteren Arbeitsgesetzen ihr Thema zuordnen: Bundesurlaubsgesetz – Mindesturlaub; Entgeltfortzahlungsgesetz – Lohn bei Krankheit und an Feiertagen; Elternzeitgesetz – Freistellung bis zu drei Jahren mit Kündigungsschutz; Arbeitszeitgesetz – tägliche Höchstarbeitszeit; Schwerbehindertenrecht – Zusatzurlaub und besonderer Kündigungsschutz. | 2 | katalog:WISO.01.05.1, beleg:2021W-WISO-A18 |
+| K6 | Du kannst den gesetzlichen Mindestlohn erklären: Er ist eine Lohnuntergrenze je Arbeitsstunde, die für fast alle volljährigen Arbeitnehmer gilt und auf Vorschlag einer Kommission aus Arbeitgeber- und Gewerkschaftsvertretern regelmäßig angepasst wird; für Auszubildende gilt stattdessen die Mindestausbildungsvergütung nach dem Berufsbildungsgesetz. | 2 | buch:GS-1.2.2-S29 |
+| K7 | Du kannst die Entgeltfortzahlung im Krankheitsfall erklären: Ist ein Beschäftigter ohne eigenes Verschulden arbeitsunfähig, zahlt der Arbeitgeber das Entgelt bis zu sechs Wochen weiter, sobald das Arbeitsverhältnis vier Wochen ununterbrochen besteht, danach zahlt die Krankenkasse Krankengeld; das gilt auch für Auszubildende und Minijobber, und an gesetzlichen Feiertagen wird das Entgelt ebenfalls fortgezahlt. | 2 | buch:GS-1.2.2-S29 |
 
-_Hinweis:_ Dass Allgemeine Geschäftsbedingungen im BGB geregelt sind (2025S-WISO-A16 b), steht in PB1-2-1-1. Was Arbeitsschutzgesetz und Arbeitsstättenverordnung im Einzelnen regeln und wer den Arbeitsschutz überwacht, steht in WISO-3-1-1; die Zahlen zu Urlaub, Arbeitszeit, Mutterschutz und Schwerbehinderung in WISO-1-3-4 bis WISO-1-3-6. Heutige Fundstellen der Katalognamen: Das Schwerbehindertenrecht steht im Neunten Buch Sozialgesetzbuch (SGB IX), mit „Bundeselterngesetz“ ist das Bundeselterngeld- und Elternzeitgesetz gemeint; die Prüfungen verwenden noch die alten Namen (2021W-WISO-A18).
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Ist jemand innerhalb von zwölf Monaten länger als sechs Wochen ununterbrochen oder wiederholt arbeitsunfähig, muss der Arbeitgeber ein betriebliches Eingliederungsmanagement anbieten (§ 167 Abs. 2 SGB IX): Gemeinsam wird geklärt, wie die Arbeitsunfähigkeit überwunden, neuer vorgebeugt und der Arbeitsplatz erhalten werden kann; die Teilnahme ist für den Beschäftigten freiwillig. _(buch:GS-1.2.2)_
+
+_Hinweis:_ Dass Allgemeine Geschäftsbedingungen im BGB geregelt sind (2025S-WISO-A16 b), steht in PB1-2-1-1. Was Arbeitsschutzgesetz und Arbeitsstättenverordnung im Einzelnen regeln und wer den Arbeitsschutz überwacht, steht in WISO-3-1-1; die Zahlen zu Urlaub, Arbeitszeit, Mutterschutz und Schwerbehinderung in WISO-1-3-4 bis WISO-1-3-6. Heutige Fundstellen der Katalognamen: Das Schwerbehindertenrecht steht im Neunten Buch Sozialgesetzbuch (SGB IX), mit „Bundeselterngesetz“ ist das Bundeselterngeld- und Elternzeitgesetz gemeint; die Prüfungen verwenden noch die alten Namen (2021W-WISO-A18). Das Lehrbuch nennt für die Entgeltfortzahlung eine Betriebszugehörigkeit von „mehr als fünf Wochen“; richtig ist: Der Anspruch entsteht nach vier Wochen ununterbrochenem Arbeitsverhältnis (§ 3 Abs. 3 EntgFG). Das betriebliche Eingliederungsmanagement steht heute in § 167 Abs. 2 SGB IX, nicht mehr in § 84.
 
 #### WISO-1-3-3 Kündigung, Kündigungsfristen und Kündigungsschutz
 
@@ -185,6 +215,8 @@ Teilaufgaben: 2023S-WISO-A18, 2023W-WISO-A27, 2025S-WISO-A18, 2025W-WISO-A15, 20
 | K5 | Du kannst Kündigungsgründe nach dem Kündigungsschutzgesetz zuordnen: personenbedingt (zum Beispiel lange Krankheit, fehlende Eignung), verhaltensbedingt (zum Beispiel wiederholte Verstöße trotz Abmahnung) und betriebsbedingt (zum Beispiel Schließung einer Abteilung, Auftragsmangel). | 2 | katalog:WISO.01.05.2.5, beleg:2021W-WISO-A3, beleg:2022W-WISO-A10, beleg:2023W-WISO-A14 |
 | K6 | Du kannst erklären, wie sich ein Arbeitnehmer gegen eine Kündigung wehrt: Er kann innerhalb von drei Wochen nach Zugang der Kündigung Kündigungsschutzklage beim Arbeitsgericht erheben; ein Widerspruch des Betriebsrats verhindert die Kündigung nicht. Das Arbeitsgericht ist auch für Streit um das Arbeitszeugnis zuständig. | 2 | katalog:WISO.01.05.2.5, katalog:ZB.wiso-gerichtsbarkeit, beleg:2023S-WISO-A19, beleg:2023S-WISO-A20 |
 | K7 | Du kannst bei einer betriebsbedingten Kündigung unterscheiden, wem am ehesten ordentlich gekündigt werden kann: dem Beschäftigten ohne besonderen Kündigungsschutz, der nach Betriebszugehörigkeit, Alter, Unterhaltspflichten und Schwerbehinderung am wenigsten schutzwürdig ist (Sozialauswahl). | 2 | katalog:WISO.01.05.2.5, beleg:2025S-WISO-A20, beleg:2025W-WISO-A17 |
+| K8 | Du kannst in einem Fall bestimmen, ob das Kündigungsschutzgesetz gilt: Das Arbeitsverhältnis besteht länger als sechs Monate, und im Betrieb arbeiten in der Regel mehr als zehn Arbeitnehmer (Auszubildende zählen nicht, Teilzeitkräfte anteilig); nur dann braucht eine ordentliche Kündigung einen personen-, verhaltens- oder betriebsbedingten Grund. | 3 | buch:GS-1.2.2-S28 |
+| K9 | Du kannst den besonderen Kündigungsschutz von Betriebsratsmitgliedern erklären: Während der Amtszeit und noch ein Jahr danach ist eine ordentliche Kündigung ausgeschlossen; eine außerordentliche Kündigung aus wichtigem Grund braucht die Zustimmung des Betriebsrats, die ersatzweise das Arbeitsgericht erteilen kann. | 2 | buch:GS-1.2.2-S32 |
 
 _Hinweis:_ Dass der Betriebsrat vor jeder Kündigung anzuhören ist (sonst ist sie unwirksam), steht in WISO-1-4-1.
 
@@ -205,8 +237,10 @@ Teilaufgaben: 2022S-WISO-A3, 2022S-WISO-A4, 2022S-WISO-A5, 2023S-WISO-A2, 2023W-
 | K5 | Du kannst die Grundregeln des Arbeitszeitgesetzes für Erwachsene nennen: werktäglich acht Stunden, verlängerbar auf zehn, wenn im Durchschnitt acht eingehalten werden, und elf Stunden Ruhezeit zwischen zwei Arbeitstagen. | 1 | katalog:WISO.01.05.2.8 |
 | K6 | Du kannst mit einem abgedruckten Auszug aus dem Jugendarbeitsschutzgesetz den Urlaubsanspruch eines Jugendlichen bestimmen: Maßgeblich ist das Alter zu Beginn des Kalenderjahres; gewährt ein Tarifvertrag mehr, gilt die günstigere Regelung. _(vorgegeben: § 19 JArbSchG und Auszug aus dem Tarifvertrag im Aufgabentext)_ | 3 | katalog:WISO.01.05.2.6, katalog:WISO.01.08.1, beleg:2022S-WISO-A5 |
 | K7 | Du kannst mit einem abgedruckten Auszug aus dem Jugendarbeitsschutzgesetz für einen Dienstplan bestimmen, ob Beginn und Pausen zulässig sind: Beschäftigung frühestens ab 6 Uhr, Pausen frühestens eine Stunde nach Beginn, nicht länger als viereinhalb Stunden ohne Pause. _(vorgegeben: § 11 und § 14 JArbSchG (Auszug) im Aufgabentext)_ | 3 | katalog:WISO.01.05.2.6, beleg:2022S-WISO-A3, beleg:2023W-WISO-A11 |
+| K8 | Du kannst weitere Arbeitszeitregeln für Jugendliche von falschen Angaben unterscheiden: Bis zu achteinhalb Stunden am Tag sind nur erlaubt, wenn an anderen Tagen derselben Woche entsprechend kürzer gearbeitet wird; Samstags-, Sonntags- und Nachtarbeit sind grundsätzlich verboten (Ausnahmen nur in bestimmten Branchen), und Mehrarbeit in einem Notfall ist innerhalb der folgenden drei Wochen durch Freizeit auszugleichen. | 2 | buch:GS-1.2.1-S25 |
+| K9 | Du kannst die Anrechnung eines langen Berufsschultags erklären: Hat ein Berufsschultag mehr als fünf Unterrichtsstunden von mindestens je 45 Minuten, wird der Auszubildende einmal in der Woche für den ganzen Tag freigestellt, und der Tag zählt mit der durchschnittlichen täglichen Ausbildungszeit; das gilt für jugendliche wie volljährige Auszubildende. | 2 | buch:GS-1.2.1-S25 |
 
-_Hinweis:_ Stand Oktober 2026 gilt die tägliche Höchstarbeitszeit (Achtstundentag). Eine Reform des Arbeitszeitgesetzes mit wöchentlicher statt täglicher Höchstarbeitszeit ist politisch geplant – vor der Prüfung den Stand prüfen.
+_Hinweis:_ Stand Oktober 2026 gilt die tägliche Höchstarbeitszeit (Achtstundentag). Eine Reform des Arbeitszeitgesetzes mit wöchentlicher statt täglicher Höchstarbeitszeit ist politisch geplant – vor der Prüfung den Stand prüfen. Das Lehrbuch nennt die ganztägige Freistellung am Berufsschultag mit mehr als fünf Unterrichtsstunden nur beim Jugendarbeitsschutz; seit der BBiG-Novelle 2020 gilt sie nach § 15 BBiG für alle Auszubildenden, auch volljährige.
 
 #### WISO-1-3-5 Mutterschutz, Elternzeit, Gleichbehandlung und Schutz schwerbehinderter Menschen
 
@@ -225,6 +259,9 @@ Teilaufgaben: 2021W-WISO-A5, 2022W-WISO-A9, 2023W-WISO-A18, 2024S-WISO-A18, 2021
 | K5 | Du kannst die Schutzfrist vor der Entbindung (sechs Wochen, auf eigenen Wunsch darf die Frau weiterarbeiten) und die Elternzeit nennen: bis zu drei Jahre je Kind, mit Kündigungsschutz. | 1 | katalog:WISO.01.05.2.13, katalog:WISO.01.05.2.3 |
 | K6 | Du kannst Schutzregeln für schwerbehinderte Menschen nennen: fünf Arbeitstage Zusatzurlaub, Kündigung nur mit Zustimmung des Integrationsamts. | 1 | katalog:WISO.01.05.2.14 |
 | K7 | Du kannst im Einstellungsgespräch zulässige von unzulässigen Fragen unterscheiden: zulässig sind Fragen nach Qualifikation, bisherigen Tätigkeiten und Gehaltsvorstellung, unzulässig nach Heiratsplänen, Schwangerschaft, Partei-, Gewerkschafts- oder Religionszugehörigkeit, Krankheiten oder Vermögen. | 2 | katalog:WISO.01.05.2.4, beleg:2023S-WISO-A1, beleg:2023W-WISO-A2 |
+| K8 | Du kannst erklären, wie eine Mutter während der Schutzfristen bezahlt wird: Die Krankenkasse zahlt Mutterschaftsgeld, und der Arbeitgeber zahlt einen Zuschuss bis zur Höhe des bisherigen durchschnittlichen Nettoentgelts. | 2 | buch:GS-1.2.2-S29 |
+| K9 | Du kannst Elternzeit und Elterngeld erklären: Jeder Elternteil kann bis zum dritten Geburtstag des Kindes Elternzeit nehmen, in der Arbeits- und Vergütungspflicht ruhen, das Arbeitsverhältnis aber bestehen bleibt und die Rückkehr gesichert ist; den Einkommensausfall ersetzt der Staat teilweise durch Elterngeld, als ElterngeldPlus (niedriger, dafür länger) und mit dem Partnerschaftsbonus, wenn beide Eltern gleichzeitig in Teilzeit arbeiten. | 2 | buch:GS-1.2.2-S29 |
+| K10 | Du kannst die Beschäftigungspflicht für schwerbehinderte Menschen erklären: Arbeitgeber mit jahresdurchschnittlich mindestens 20 Arbeitsplätzen müssen mindestens 5 % davon mit schwerbehinderten Menschen besetzen; erfüllen sie die Quote nicht, zahlen sie für jeden unbesetzten Pflichtplatz eine Ausgleichsabgabe, die die Pflicht aber nicht aufhebt. | 2 | buch:GS-1.2.2-S29 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
@@ -247,8 +284,15 @@ Teilaufgaben: 2023W-WISO-A1, 2023W-WISO-A3, 2022S-WISO-A2, 2022W-WISO-A4, 2024S-
 | K4 | Du kannst Arbeitnehmerüberlassung (Zeitarbeit) erklären: Der Verleiher stellt den Zeitarbeitnehmer ein und bezahlt ihn, der Entleiher setzt ihn in seinem Betrieb ein. | 2 | katalog:WISO.01.05.1, beleg:2022W-WISO-A6 |
 | K5 | Du kannst Regeln des Bundesurlaubsgesetzes von falschen Angaben unterscheiden: mindestens 24 Werktage im Jahr, der volle Anspruch entsteht erst nach sechs Monaten (Wartezeit), Krankheitstage im Urlaub werden mit ärztlichem Attest nicht angerechnet; Urlaub ist im laufenden Jahr zu nehmen und nur aus dringenden Gründen in die ersten drei Monate des Folgejahres übertragbar (verfallen kann er nur, wenn der Arbeitgeber rechtzeitig auf den Verfall hingewiesen hat). | 2 | katalog:WISO.01.05.1, beleg:2022W-WISO-A8 |
 | K6 | Du kannst einfaches und qualifiziertes Arbeitszeugnis unterscheiden und die Zeugnissprache deuten: Das einfache enthält Art und Dauer der Tätigkeit, das qualifizierte auf Verlangen des Arbeitnehmers zusätzlich Leistung und Verhalten; „stets zu unserer vollsten Zufriedenheit“ bedeutet sehr gut. | 2 | katalog:WISO.01.05.1, beleg:2022W-WISO-A11, beleg:2025S-WISO-A19, beleg:2025W-WISO-A16 |
+| K7 | Du kannst die Erholungspflicht im Urlaub erklären: Der Urlaub dient der Erholung, deshalb ist eine Erwerbstätigkeit, die diesem Zweck widerspricht, während des Urlaubs verboten, und der Urlaub soll möglichst zusammenhängend gewährt werden. | 2 | buch:GS-1.2.1-S22 |
+| K8 | Du kannst den gesetzlichen Mindesturlaub berechnen: Die 24 Werktage des Bundesurlaubsgesetzes beziehen sich auf eine Sechstagewoche und ergeben bei einer Fünftagewoche 20 Arbeitstage (24 : 6 × 5); beginnt das Arbeitsverhältnis so spät im Jahr, dass die Wartezeit nicht mehr erfüllt wird, oder endet es in der ersten Jahreshälfte, steht für jeden vollen Monat ein Zwölftel als Teilurlaub zu. | 3 | buch:GS-1.2.2-S29 |
+| K9 | Du kannst den Anspruch auf Teilzeit nach dem Teilzeit- und Befristungsgesetz erklären: Wer länger als sechs Monate beschäftigt ist, kann in einem Betrieb mit in der Regel mehr als 15 Arbeitnehmern verlangen, dass seine Arbeitszeit verringert wird; der Arbeitgeber kann das nur aus betrieblichen Gründen ablehnen. | 2 | buch:GS-1.2.2-S28 |
 
-_Hinweis:_ Neuer Stichpunkt: Fragen zum Arbeitsvertrag kamen in fast jeder Prüfung vor und standen vorher nur verstreut in WISO-1-3-1 und WISO-1-3-3. Das Ausbildungszeugnis nach dem Berufsbildungsgesetz steht in WISO-1-1-3; für das Arbeitszeugnis (Gewerbeordnung) gilt die Unterscheidung einfach/qualifiziert ebenso.
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Bewerben kann man sich auf interne oder externe Stellenanzeigen, über Jobportale oder initiativ ohne Anzeige. Unternehmen wählen meist mehrstufig aus: Sichtung der Unterlagen, Telefoninterview, Vorstellungsgespräch, manchmal ein Assessment-Center mit Übungen vor allem zu Soft Skills oder ein Probearbeiten. _(buch:GS-1.2.3)_
+
+_Hinweis:_ Neuer Stichpunkt: Fragen zum Arbeitsvertrag kamen in fast jeder Prüfung vor und standen vorher nur verstreut in WISO-1-3-1 und WISO-1-3-3. Das Ausbildungszeugnis nach dem Berufsbildungsgesetz steht in WISO-1-1-3; für das Arbeitszeugnis (Gewerbeordnung) gilt die Unterscheidung einfach/qualifiziert ebenso. Das Lehrbuch schreibt „bei 5 Arbeitstagen/Woche 20 Werktage“; gemeint sind 20 Arbeitstage (24 Werktage ÷ 6 × 5).
 
 ### WISO-1-4 Mitbestimmung im Betrieb
 
@@ -270,6 +314,7 @@ Teilaufgaben: 2024S-WISO-A6, 2021W-WISO-A15, 2025S-WISO-A13, 2025W-WISO-A10, 202
 | K4 | Du kannst Mitbestimmung (ohne Zustimmung des Betriebsrats geht es nicht) von Mitwirkung (Information, Anhörung, Beratung) am Beispiel der Kündigung unterscheiden: Der Betriebsrat muss vor jeder Kündigung angehört werden, sonst ist sie unwirksam, und eine nachträgliche Anhörung heilt das nicht; seine Zustimmung braucht der Arbeitgeber aber nicht. | 2 | katalog:WISO.01.07.2.2, katalog:WISO.01.05.2.9, beleg:2022S-WISO-A7 |
 | K5 | Du kannst Rahmenregeln des Betriebsrats von falschen Angaben unterscheiden: Gewählt werden kann er in Betrieben mit in der Regel mindestens fünf ständigen wahlberechtigten Arbeitnehmern, von denen drei wählbar sind – eine Pflicht zur Wahl gibt es nicht, auch nicht in großen Kapitalgesellschaften; er wird alle vier Jahre neu gewählt; das Geschlecht in der Minderheit muss mindestens entsprechend seinem Anteil vertreten sein (keine Hälfte-Hälfte-Pflicht); im öffentlichen Dienst tritt der Personalrat an seine Stelle. | 2 | katalog:WISO.01.07.2.1, katalog:WISO.02.09.4, beleg:2023W-WISO-A9, beleg:2022S-WISO-A10 |
 | K6 | Du kannst mit einem abgedruckten Auszug aus §§ 7 und 9 des Betriebsverfassungsgesetzes die Zahl der Wahlberechtigten und die Größe des Betriebsrats ermitteln; Auszubildende und befristet Beschäftigte zählen dabei mit. _(vorgegeben: §§ 7 und 9 BetrVG (Auszug) im Aufgabentext)_ | 3 | katalog:WISO.01.07.2.1, beleg:2022W-WISO-A12, beleg:2023W-WISO-A7 |
+| K7 | Du kannst betriebliche Mitbestimmung und Unternehmensmitbestimmung unterscheiden: Im Betrieb vertritt der Betriebsrat nach dem Betriebsverfassungsgesetz die Beschäftigten (im öffentlichen Dienst der Personalrat nach den Personalvertretungsgesetzen); in großen Kapitalgesellschaften sitzen zusätzlich Arbeitnehmervertreter im Aufsichtsrat und entscheiden über die Unternehmensführung mit. | 2 | buch:GS-1.2.2-S31 |
 
 #### WISO-1-4-2 Zusammenarbeit von Arbeitgeber und Betriebsrat: Betriebsvereinbarung, Betriebsversammlung, Einigungsstelle
 
@@ -286,6 +331,7 @@ Teilaufgaben: 2021W-WISO-A4, 2024S-WISO-A5, 2023S-WISO-A11, 2025S-WISO-A15, 2023
 | K4 | Du kannst die Betriebsversammlung erklären: die Versammlung aller Arbeitnehmer des Betriebs, einmal im Kalendervierteljahr, auf der der Betriebsrat berichtet; die Teilnahme gilt als Arbeitszeit und wird bezahlt. | 2 | katalog:WISO.01.07.2.3, beleg:2023S-WISO-A11, beleg:2025S-WISO-A15, beleg:2023S-WISO-A10 |
 | K5 | Du kannst erklären, wozu die Einigungsstelle dient: Sie entscheidet, wenn sich Arbeitgeber und Betriebsrat in einer mitbestimmungspflichtigen Frage nicht einigen; einen Arbeitskampf dürfen beide nicht gegeneinander führen. | 2 | katalog:WISO.01.07.2.4, katalog:WISO.02.09.1 |
 | K6 | Du kannst den Grundsatz der vertrauensvollen Zusammenarbeit aus dem Betriebsverfassungsgesetz erklären: Arbeitgeber und Betriebsrat arbeiten unter Beachtung der Tarifverträge zum Wohl der Arbeitnehmer und des Betriebs zusammen. | 2 | katalog:WISO.02.09.1 |
+| K7 | Du kannst flexible Arbeitszeitmodelle unterscheiden: Gleitzeit (Beginn und Ende um eine Kernzeit frei wählbar), Arbeitszeitkonto (Plus- und Minusstunden werden gesammelt und später ausgeglichen), Vertrauensarbeitszeit (der Arbeitgeber kontrolliert Lage und Dauer nicht, das Ergebnis zählt), Schichtarbeit, Teilzeit, Jobsharing (zwei Personen teilen sich eine Stelle) und Telearbeit oder mobiles Arbeiten. | 2 | buch:GS-1.2.3-S38 |
 
 _Hinweis:_ Der frühere Stichpunkt WISO-2-5-4 (vertrauensvolle Zusammenarbeit) ist hier aufgegangen; er wiederholte die Mitbestimmung aus diesem Themenblock. Tarifvorrang (§ 77 Abs. 3 BetrVG) und IHK-Lösung: 2022S-WISO-A13 wertete „Ein Tarifvertrag schließt günstigere Betriebsvereinbarungen nicht aus“ als richtig. Fachlich gilt das nur, wenn der Tarifvertrag es zulässt (Öffnungsklausel) oder für Themen, die er nicht regelt und die auch nicht tarifüblich sind; in dieser Aufgabe war die Aussage anzukreuzen. Das Günstigkeitsprinzip für den Arbeitsvertrag steht in WISO-1-3-1.
 
@@ -302,6 +348,7 @@ Teilaufgaben: 2022S-WISO-A11, 2022W-WISO-A14, 2025S-WISO-A12, 2025W-WISO-A9
 | K2 | Du kannst die Aufgaben der JAV erklären: beim Betriebsrat Maßnahmen beantragen, die Jugendlichen und Auszubildenden dienen, und darüber wachen, dass die Schutzvorschriften eingehalten werden. | 2 | katalog:WISO.01.07.2.5, katalog:WISO.02.09.3, beleg:2025S-WISO-A12, beleg:2025W-WISO-A9 |
 | K3 | Du kannst Voraussetzungen, Wahlrecht und Wählbarkeit der JAV erklären: Gewählt wird sie, wenn im Betrieb in der Regel mindestens fünf Arbeitnehmer unter 18 Jahren oder Auszubildende beschäftigt sind; wählen dürfen diese Arbeitnehmer unter 18 und die Auszubildenden, wählbar sind Arbeitnehmer, die das 25. Lebensjahr noch nicht vollendet haben, und Auszubildende; die Amtszeit beträgt zwei Jahre. | 2 | katalog:WISO.01.07.2.5, beleg:2022S-WISO-A11, beleg:2022W-WISO-A14 |
 | K4 | Du kannst erklären, wie die JAV mit Betriebsrat und Arbeitgeber zusammenarbeitet: Sie gibt es nur in Betrieben mit Betriebsrat, sie bringt ihre Anliegen über den Betriebsrat ein und kann an dessen Sitzungen teilnehmen; selbstständig gegenüber der Geschäftsleitung handelt sie nicht. Ihre Mitglieder werden nach der Ausbildung nicht automatisch übernommen, können die Übernahme aber verlangen. | 2 | katalog:WISO.01.07.2.5, katalog:WISO.02.09.3, beleg:2022W-WISO-A14, beleg:2025S-WISO-A12, beleg:2025W-WISO-A9 |
+| K6 | Du kannst das Aussetzungsrecht der JAV erklären: Hält die Mehrheit der Jugend- und Auszubildendenvertreter einen Beschluss des Betriebsrats für eine erhebliche Beeinträchtigung wichtiger Interessen der Jugendlichen und Auszubildenden, wird der Beschluss auf ihren Antrag für eine Woche ausgesetzt, damit in dieser Zeit eine Verständigung gesucht werden kann. | 2 | buch:GS-1.2.2-S34 |
 
 _Hinweis:_ Dass die JAV im Betriebsverfassungsgesetz geregelt ist (2025S-WISO-A11, 2025W-WISO-A8), steht in WISO-1-3-2. Rechtsstand: Seit dem Betriebsrätemodernisierungsgesetz (18.6.2021) gilt für Auszubildende keine Altersgrenze mehr, weder beim Wählen noch bei der Wählbarkeit. Ältere Prüfungsaufgaben gehen noch von „Auszubildende unter 25“ aus: 2022W-WISO-A14 wertete „Auszubildende bis zu einem Alter von 27 Jahren dürfen die JAV wählen“ als falsch (richtig war dort „Nur in einem Betrieb mit Betriebsrat …“); „Als Auszubildende/-r unter 25 sind Sie wahlberechtigt und auch wählbar“ (2022S-WISO-A11) ist nach beiden Fassungen richtig.
 
@@ -326,8 +373,9 @@ Teilaufgaben: 2023W-WISO-A24, 2024S-WISO-A25, 2022S-WISO-A14, 2024S-WISO-A24, 20
 | K5 | Du kannst den Geltungsbereich eines Tarifvertrags beschreiben: räumlich, fachlich (Branche) und persönlich; ein Haustarifvertrag gilt nur für das eine Unternehmen. | 2 | katalog:WISO.01.08.8, beleg:2021W-WISO-A6 |
 | K6 | Du kannst die Friedenspflicht erklären: Während der Laufzeit eines Tarifvertrags sind Streik und Aussperrung über die geregelten Punkte verboten (absolute Friedenspflicht: über alle Punkte). | 2 | katalog:WISO.01.08.9, beleg:2022S-WISO-A12 |
 | K7 | Du kannst die Laufzeit eines Tarifvertrags erklären: Die Tarifparteien vereinbaren sie frei, eine gesetzliche Höchstdauer gibt es nicht; nach Kündigung und Ablauf wirken seine Regeln nach, bis eine neue Abmachung gilt. | 2 | katalog:WISO.01.08.9, beleg:2022S-WISO-A13 |
+| K8 | Du kannst die Allgemeinverbindlicherklärung erklären: Das Bundesarbeitsministerium kann einen Tarifvertrag auf gemeinsamen Antrag der Tarifparteien und im Einvernehmen mit dem Tarifausschuss für allgemeinverbindlich erklären, wenn das im öffentlichen Interesse liegt; dann gilt er auch für nicht tarifgebundene Arbeitgeber und Beschäftigte seines Geltungsbereichs – das betrifft nur einen kleinen Teil der Tarifverträge. | 2 | buch:GS-1.2.2-S32 |
 
-_Hinweis:_ Das Günstigkeitsprinzip steht in WISO-1-3-1, Betriebsvereinbarung und Tarifvorrang in WISO-1-4-2. IHK-Lösungen: 2022S-WISO-A13 wertete „schließt günstigere Betriebsvereinbarungen nicht aus“ als richtig (fachlich nur bei Öffnungsklausel oder nicht tarifüblichen Themen, siehe WISO-1-4-2). 2022S-WISO-A14 wertete „Definition der jeweiligen Vergütungsgruppen“ nicht als Inhalt des Mantel- oder Rahmentarifvertrags; in der Praxis legt das oft ein eigener Entgeltrahmentarifvertrag fest.
+_Hinweis:_ Das Günstigkeitsprinzip steht in WISO-1-3-1, Betriebsvereinbarung und Tarifvorrang in WISO-1-4-2. IHK-Lösungen: 2022S-WISO-A13 wertete „schließt günstigere Betriebsvereinbarungen nicht aus“ als richtig (fachlich nur bei Öffnungsklausel oder nicht tarifüblichen Themen, siehe WISO-1-4-2). 2022S-WISO-A14 wertete „Definition der jeweiligen Vergütungsgruppen“ nicht als Inhalt des Mantel- oder Rahmentarifvertrags; in der Praxis legt das oft ein eigener Entgeltrahmentarifvertrag fest. Das Lehrbuch nennt für die Allgemeinverbindlicherklärung noch den Antrag „einer Tarifpartei“; seit 2014 verlangt § 5 TVG einen gemeinsamen Antrag der Tarifvertragsparteien und ein öffentliches Interesse.
 
 #### WISO-1-5-2 Tarifverhandlung, Schlichtung und Arbeitskampf: Streik und Aussperrung
 
@@ -343,6 +391,7 @@ Teilaufgaben: 2021W-WISO-A7, 2023W-WISO-A26, 2025S-WISO-A17, 2025W-WISO-A14
 | K2 | Du kannst erklären, wann ein Streik zulässig ist: Über die geregelten Punkte erst nach Ende der Friedenspflicht, also nach Ablauf des Tarifvertrags; vor einem unbefristeten Streik lässt die Gewerkschaft nach ihrer Satzung die Mitglieder abstimmen (Urabstimmung); eine Genehmigung durch Staat, Ministerium oder den Dachverband DGB braucht es nicht. | 2 | katalog:WISO.01.08.4, beleg:2025S-WISO-A17, beleg:2025W-WISO-A14 |
 | K3 | Du kannst den Ablauf einer Tarifrunde ordnen: Kündigung des Tarifvertrags, Verhandlungen, Erklärung des Scheiterns, Anrufung eines neutralen Schlichters, Schlichterspruch (ein Einigungsvorschlag, den die Tarifparteien annehmen oder ablehnen können), Annahme, Abschluss des neuen Tarifvertrags; kommt es zum Arbeitskampf, stehen Urabstimmung und Streik nach dem Scheitern und vor der Schlichtung. | 2 | katalog:WISO.01.08.3, katalog:WISO.01.08.5, beleg:2021W-WISO-A7, beleg:2023W-WISO-A26 |
 | K5 | Du kannst Warnstreik (kurz, während der Verhandlungen) und unbefristeten Streik unterscheiden: Der unbefristete Streik ist das letzte Mittel; viele Tarifrunden enden ohne ihn, und Arbeitskampfmaßnahmen müssen Verhandlungen nicht vorausgehen. | 2 | katalog:WISO.01.08.4, beleg:2025S-WISO-A17, beleg:2025W-WISO-A14 |
+| K6 | Du kannst rechtmäßige von unrechtmäßigen Streiks unterscheiden: Rechtmäßig ist ein Streik nur, wenn eine Gewerkschaft ihn trägt, er ein tariflich regelbares Ziel verfolgt (kein politischer Streik), die Friedenspflicht abgelaufen ist und er verhältnismäßig bleibt; Beamte dürfen nicht streiken. Streikende bekommen keinen Lohn, Gewerkschaftsmitglieder aber Streikgeld, und wer sich an einem wilden Streik beteiligt, riskiert Abmahnung, Kündigung und Schadensersatz. | 2 | buch:GS-1.2.2-S33 |
 
 _Hinweis:_ Reihenfolge der Tarifrunde nach den IHK-Lösungen (D4): 2021W-WISO-A7 ohne Arbeitskampf (Scheitern → Schlichtung), 2023W-WISO-A26 mit Arbeitskampf (Scheitern → Urabstimmung/Streik → Schlichtung). Gesetzlich ist die Reihenfolge nicht festgelegt; in manchen Branchen wird vor einem Streik geschlichtet. Wie Gewerkschaften und der DGB organisiert sind, steht in WISO-1-5-3.
 
@@ -385,12 +434,15 @@ Teilaufgaben: 2021W-WISO-A11, 2021W-WISO-A9, 2023S-WISO-A9, 2023W-WISO-A4
 | K5 | Du kannst Zeitlohn, Leistungslohn (Akkord, Prämie) und Gehalt unterscheiden. | 2 | katalog:WISO.01.09 |
 | K6 | Du kannst Nominal- und Realeinkommen unterscheiden: Steigen die Preise stärker als das Einkommen, sinkt das Realeinkommen (die Kaufkraft), auch wenn das Nominaleinkommen steigt. | 2 | katalog:WISO.01.09.1, katalog:ZB.wiso-konjunktur, beleg:2023S-WISO-A9 |
 | K7 | Du kannst aus Stundenlohn, Arbeitsstunden, Zuschlägen und Sonderzahlungen den Bruttolohn eines Monats berechnen. _(vorgegeben: Stundenlohn, Zuschlag und Sonderzahlung im Aufgabentext)_ | 3 | katalog:WISO.01.09.1, beleg:2023W-WISO-A4 |
+| K8 | Du kannst über Zeit- und Leistungslohn hinaus weitere Entgeltbestandteile unterscheiden: Provision (Anteil am vermittelten Umsatz), Zulagen für besondere Bedingungen oder Aufgaben (z. B. Nacht-, Erschwernis- oder Funktionszulage), Beteiligung am Gewinn oder Kapital des Unternehmens und Zusatzleistungen wie vermögenswirksame Leistungen, betriebliche Altersvorsorge oder Sachbezüge (Dienstwagen, Jobticket). | 2 | buch:GS-1.2.2-S31 |
+| K9 | Du kannst das Verhältnis von Lohnsteuer und Einkommensteuer erklären: Die Lohnsteuer ist die Einkommensteuer auf Arbeitslohn, die der Arbeitgeber vorab einbehält; der Tarif ist progressiv (mit steigendem Einkommen steigt der Steuersatz), ein Grundfreibetrag bleibt steuerfrei, und mit der Steuererklärung wird die tatsächliche Jahressteuer ermittelt und zu viel Gezahltes erstattet. | 2 | buch:GS-1.2.3-S36 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Für ein zweites und jedes weitere Arbeitsverhältnis gilt Steuerklasse VI; dort wird die Lohnsteuer ohne Grundfreibetrag berechnet. _(pruefer:wiso-2026-10)_
+- Direkte Steuern trägt derjenige, der sie zahlen muss, selbst, etwa Lohn- und Einkommensteuer, Kfz- oder Grundsteuer; indirekte Steuern wie Umsatz-, Energie- oder Tabaksteuer führen Unternehmen ab und geben sie über den Preis an die Verbraucher weiter. _(buch:GS-1.4.1)_
 
-_Hinweis:_ Welche Unterlagen der neue Arbeitgeber verlangen kann, zum Beispiel die steuerliche Identifikationsnummer (2023W-WISO-A3), steht in WISO-1-3-6.
+_Hinweis:_ Welche Unterlagen der neue Arbeitgeber verlangen kann, zum Beispiel die steuerliche Identifikationsnummer (2023W-WISO-A3), steht in WISO-1-3-6. Das Lehrbuch zählt Lohn- und Einkommensteuer zu den indirekten Steuern; richtig ist: Sie sind direkte Steuern, der Arbeitgeber behält die Lohnsteuer nur ein und führt sie ab.
 
 #### WISO-1-6-2 Sozialversicherung: Zweige, Träger, Finanzierung, Leistungen
 
@@ -409,10 +461,15 @@ Teilaufgaben: 2022S-WISO-A15, 2023S-WISO-A7, 2022W-WISO-A16, 2022W-WISO-A20, 202
 | K7 | Du kannst das Umlageverfahren der Rentenversicherung (Generationenvertrag) erklären: Die Beiträge der heute Erwerbstätigen bezahlen die laufenden Renten; weil durch den demografischen Wandel weniger Beitragszahler auf mehr Rentner kommen, wird die gesetzliche Rente voraussichtlich nicht allein zur Altersvorsorge reichen, private Vorsorge ist nötig. | 2 | katalog:WISO.01.05.2.11, beleg:2024S-WISO-A26, beleg:2021W-WISO-A8 |
 | K8 | Du kannst das Arbeitslosengeld als Versicherungsleistung erklären: Anspruch hat, wer arbeitslos gemeldet ist, der Vermittlung zur Verfügung steht und in den letzten 30 Monaten mindestens zwölf Monate versichert war; es gibt keine Bedürftigkeitsprüfung, und die Höhe richtet sich nach dem Bruttoentgelt der letzten zwölf Monate. | 2 | katalog:WISO.01.05.2.11, beleg:2022W-WISO-A19 |
 | K9 | Du kannst Leistungen der Kranken- und Pflegeversicherung zuordnen: ärztliche Behandlung, Krankenhaus und Krankengeld nach dem Ende der Entgeltfortzahlung; Pflege zu Hause durch Angehörige oder Pflegedienste und stationäre Pflege im Heim; versichert sind auch Rentner, Studierende und Bezieher von Arbeitslosengeld. | 2 | katalog:WISO.01.05.2.11, beleg:2022W-WISO-A20 |
+| K10 | Du kannst die Grundprinzipien der sozialen Sicherung erklären: Solidarität (die Versichertengemeinschaft trägt die Risiken gemeinsam, in der Krankenversicherung zum Beispiel richten sich die Beiträge nach dem Einkommen, die Leistungen nach dem Bedarf) und Subsidiarität (zuerst helfen sich der Einzelne und die kleinere Gemeinschaft selbst, die größere Gemeinschaft oder der Staat springt erst ein, wenn das nicht reicht). | 2 | buch:GS-1.2.3-S35 |
+| K11 | Du kannst den Rechtsweg bei Streit mit einem Sozialversicherungsträger erklären: Nach einem erfolglosen Widerspruch beim Träger klagt man beim Sozialgericht, die weiteren Instanzen sind Landessozialgericht und Bundessozialgericht; für Versicherte ist das Verfahren grundsätzlich gerichtskostenfrei. | 2 | buch:GS-1.2.3-S36 |
+| K12 | Du kannst erklären, wovon der Beitrag zur gesetzlichen Unfallversicherung abhängt, den der Arbeitgeber allein trägt: von der Lohnsumme des Betriebs, von der Gefahrklasse seines Gewerbezweigs und – über Zuschläge oder Nachlässe – vom Unfallgeschehen im Betrieb. | 2 | buch:GS-1.3.2-S50 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Seit 1.7.2023 zahlen Eltern mit mehreren Kindern unter 25 Jahren einen geringeren Beitrag zur Pflegeversicherung (Abschlag ab dem zweiten Kind); die Beitragssätze stehen in der Aufgabe. _(pruefer:wiso-2026-10)_
+- Bei vorübergehendem Arbeitsausfall kann Kurzarbeit eingeführt werden, aber nicht einseitig durch den Arbeitgeber: Nötig ist eine Grundlage in Tarifvertrag, Betriebsvereinbarung oder Arbeitsvertrag. Nach Anzeige bei der Agentur für Arbeit ersetzt das Kurzarbeitergeld aus der Arbeitslosenversicherung einen Teil des ausgefallenen Nettoentgelts (60 %, mit Kind 67 %). _(buch:GS-1.2.2)_
+- Die Altersvorsorge ruht auf drei Säulen: gesetzliche Rente, betriebliche Altersvorsorge und private Vorsorge wie Privatrente, Wertpapiere oder Immobilien. Daneben sichern private Versicherungen Risiken ab, die die Sozialversicherung nicht oder nur teilweise trägt, etwa Haftpflicht (Schäden bei anderen), Berufsunfähigkeit, Unfälle in der Freizeit oder den Todesfall (Risikolebensversicherung). _(buch:GS-1.2.3)_
 
 _Hinweis:_ Träger und Beitrag der gesetzlichen Unfallversicherung stehen hier (D6); wer in der Unfallversicherung versichert ist, Versicherungsfälle und Leistungen stehen in WISO-3-1-3. Zu 2022W-WISO-A16: Die IHK wertete „Bei geringfügig Beschäftigten zahlt der Arbeitgeber in der Regel alle Beiträge“ als richtig; fachlich trägt der Minijobber einen kleinen Rentenversicherungsanteil, wenn er sich nicht befreien lässt.
 
@@ -466,6 +523,12 @@ Teilaufgaben: 2022W-WISO-A22, 2022W-WISO-A29, 2022W-WISO-A30
 | K6 | Du kannst beschreiben, was einen lernförderlichen Arbeitsplatz ausmacht: Ruhe, Ordnung, gutes Licht, Unterlagen griffbereit, Lernzeiten in den Arbeitsalltag eingeplant. | 2 | katalog:WISO.01.12.5 |
 | K7 | Du kannst an einer Statistik oder Tabelle unterscheiden, welche Aussagen sich damit belegen lassen und welche nicht: absolute Zahlen und Veränderungen in Prozent getrennt lesen und auf die Bezugsgröße achten (zum Beispiel je 1.000 Beschäftigte). _(vorgegeben: Statistik im Aufgabentext)_ | 2 | katalog:WISO.01.12.6, beleg:2022W-WISO-A22 |
 | K8 | Du kannst Merkmale agiler Arbeit von hierarchischer Vorgabe unterscheiden: selbstorganisierte, eigenverantwortliche Teams, offene Weitergabe von Wissen, transparente Darstellung des Fortschritts auf Boards und adaptives Planen – nicht aber, dass Vorgesetzte Lösung und Weg vorgeben. | 2 | beleg:2022W-WISO-A29 |
+| K9 | Du kannst das Eisenhower-Prinzip auf eine Aufgabenliste anwenden: Jede Aufgabe wird nach wichtig und dringend eingeordnet und dann behandelt – wichtig und dringend sofort selbst erledigen, wichtig und nicht dringend fest einplanen, dringend und unwichtig delegieren, weder wichtig noch dringend streichen. | 3 | buch:FS-1.4.1-S64 |
+| K10 | Du kannst das Pareto-Prinzip auf deine Aufgabenplanung anwenden: Oft bringt ein kleiner Teil der Aufgaben (Faustregel 20 %) den größten Teil des Ergebnisses (rund 80 %), deshalb erledigst du die wirkungsvollsten Aufgaben zuerst und prüfst, welche übrigen entfallen oder warten können. | 3 | buch:FS-1.4.1-S65 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Die vollständige Handlung (IPERKA) gliedert einen Arbeitsauftrag in sechs Schritte: Informieren, Planen, Entscheiden, Realisieren, Kontrollieren und Auswerten. Gerade Kontrolle und Auswertung mit dem Auftraggeber werden oft ausgelassen, liefern aber die Erfahrung für den nächsten Auftrag. _(buch:GS-1.5.1)_
 
 _Hinweis:_ Fachinformationen beschaffen und auswerten (AP1-2-3-2), Präsentieren (AP1-2-3-3), Projektplanung (AP1-1-2-1) sowie Scrum und agiles Vorgehen (AP1-1-1-2, PB1-1-1-1, PB1-1-1-3) kennst du aus AP1 und PB1; 2022W-WISO-A30 (Vorteil agilen Projektmanagements) beantwortest du mit PB1-1-1-1, für 2022W-WISO-A29 ergänzt K8 die Merkmale agiler Arbeit.
 
@@ -506,6 +569,9 @@ Teilaufgaben: 2023S-WISO-A4, 2025W-WISO-A12, 2022W-WISO-A15
 | K5 | Du kannst Förderungen ihren Stellen zuordnen: Arbeitsagentur (Bildungsgutschein) und Rentenversicherung (Umschulung aus gesundheitlichen Gründen), Aufstiegs-BAföG. | 2 | katalog:WISO.01.10.4, katalog:WISO.01.13.1, beleg:2022W-WISO-A15 |
 | K6 | Du kannst erklären, warum lebensbegleitendes Lernen in IT-Berufen nötig ist: kurze Innovationszyklen, neue Werkzeuge und Verfahren und wachsende Sicherheitsanforderungen. | 2 | katalog:WISO.01.10.1 |
 | K7 | Du kannst Regelungen zur Weiterbildung erklären: Freistellung und Kostenübernahme können in Betriebsvereinbarung, Tarif- oder Arbeitsvertrag geregelt sein, und die meisten Bundesländer geben Beschäftigten einen Anspruch auf Bildungsurlaub. | 2 | katalog:WISO.01.10.1, katalog:WISO.01.14.1 |
+| K8 | Du kannst Förderungen der Agentur für Arbeit während der Ausbildung zuordnen: die Assistierte Ausbildung als Unterstützung bei Lernschwierigkeiten oder persönlichen Problemen und die Berufsausbildungsbeihilfe als Zuschuss zum Lebensunterhalt, wenn Auszubildende nicht bei den Eltern wohnen können und die Vergütung nicht reicht. | 2 | buch:GS-1.2.3-S37 |
+
+_Hinweis:_ Das Lehrbuch nennt noch die ausbildungsbegleitenden Hilfen (abH); seit 2021 sind sie in der Assistierten Ausbildung (AsA flex) der Agentur für Arbeit aufgegangen.
 
 #### WISO-1-8-2 Persönliche Weiterbildung, Kompetenzentwicklung und Karriereplanung
 
@@ -521,6 +587,11 @@ Teilaufgaben:
 | K2 | Du kannst Bereiche der persönlichen Entwicklung erklären: Eigenständigkeit, Verantwortung, Reflexivität, Lernkompetenz, Team- und Führungsfähigkeit, Mitgestaltung und Kommunikation. | 2 | katalog:WISO.01.14.5, katalog:WISO.01.14.5.1, katalog:WISO.01.14.5.2, katalog:WISO.01.14.5.3, katalog:WISO.01.14.5.4, katalog:WISO.01.14.5.5, katalog:WISO.01.14.5.6, katalog:WISO.01.14.5.7 |
 | K3 | Du kannst erklären, was eine Potenzialanalyse ist: Stärken, Schwächen und Entwicklungsmöglichkeiten einer Person werden ermittelt. | 2 | katalog:WISO.01.14.10 |
 | K4 | Du kannst erklären, was Karriereplanung bedeutet: berufliche Ziele festlegen und die Schritte dahin planen, zum Beispiel über Aufstiegsfortbildung oder Studium. | 2 | katalog:WISO.01.14.11 |
+| K5 | Du kannst die Bereiche der beruflichen Handlungskompetenz unterscheiden und ein beschriebenes Verhalten zuordnen: Fachkompetenz (Aufgaben fachlich richtig lösen), Selbstkompetenz (sich selbst organisieren, zuverlässig und sorgfältig arbeiten) und Sozialkompetenz (mit Kunden und Kollegen gut umgehen); Methoden-, Kommunikations- und Lernkompetenz sind Teil dieser drei Bereiche. | 2 | buch:GS-1.1-S17 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Ein duales Studium verbindet Hochschule oder Berufsakademie eng mit einem Betrieb: Im praxisintegrierenden Modell wechseln Studium und Praxisphasen im Unternehmen, im ausbildungsintegrierenden Modell kommt zusätzlich ein Berufsabschluss vor der Kammer hinzu, etwa als Fachinformatiker. _(buch:GS-1.1)_
 
 #### WISO-1-8-3 Lernen und Arbeiten in Europa: Europass, Mobilitätsprogramme, Auslandsaufenthalte, Europäische Sozialcharta
 
@@ -550,6 +621,7 @@ Teilaufgaben: 2022W-WISO-A23, 2023S-WISO-A14, 2023W-WISO-A22, 2024S-WISO-A19
 | K3 | Du kannst erklären, was ein Businessplan enthält und wozu er dient: Geschäftsidee, Markt- und Wettbewerbsanalyse, strategische Ziele und Finanzkonzept; er dient zuerst der eigenen Planung und ist für jede Gründung sinnvoll, unabhängig von Rechtsform und Kredit, überzeugt aber auch Kapitalgeber wie Banken; er wird nicht von der Kammer ausgestellt und nirgends eingetragen. | 2 | katalog:WISO.01.14.12, beleg:2023W-WISO-A22, beleg:2024S-WISO-A19 |
 | K5 | Du kannst Erfolgsfaktoren einer Gründung erklären: Kenntnis von Markt, Kunden und Wettbewerb, ausreichende Fachkenntnisse und Finanzierung. | 2 | katalog:WISO.01.14.12, beleg:2022W-WISO-A23 |
 | K6 | Du kannst Standortfaktoren für eine Gründung unterscheiden: Konkurrenz, Kundennähe und Verkehrsanbindung, Miete, behördliche Auflagen und der Gewerbesteuer-Hebesatz der Gemeinde – nicht aber der Umsatzsteuersatz, der bundesweit gleich ist. | 2 | katalog:WISO.01.14.12, beleg:2023S-WISO-A14 |
+| K7 | Du kannst bei einer Gründung Gewerbe und freien Beruf mit ihren Folgen unterscheiden: Freie Berufe sind selbstständige wissenschaftliche, künstlerische, lehrende oder beratende Tätigkeiten mit hoher eigener Fachleistung, etwa Ärztin, Anwalt oder Ingenieurin, in der IT je nach Einzelfall auch Softwareentwicklung; sie brauchen keine Gewerbeanmeldung, zahlen keine Gewerbesteuer und sind nicht Pflichtmitglied der IHK – andere selbstständige Tätigkeiten mit Gewinnabsicht sind Gewerbe. | 2 | buch:GS-1.3.2-S47 |
 
 _Hinweis:_ Die Rechtsform der Gründung steht in WISO-2-2.
 
@@ -687,11 +759,11 @@ _Hinweis:_ Die Rechtsform der Gründung steht in WISO-2-2.
 
 ## Alt → neu
 
-Können-Aussagen: 135 alt → 5 übernommen, 107 angepasst, 17 verschoben, 6 gestrichen; 27 neu.
+Können-Aussagen: 135 alt → 5 übernommen, 107 angepasst, 17 verschoben, 6 gestrichen; 63 neu.
 
 Stichpunkte: 27 alt, 29 neu (WISO-1-2-3, WISO-1-3-6).
 
-Karten (245): 8 bleiben, 198 prüfen (Aussage angepasst), 25 umhängen (Aussage verschoben), 6 entfallen, 8 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-1-1-4-K6, WISO-1-1-4-K7, WISO-1-2-3-K3, WISO-1-3-2-K5, WISO-1-3-3-K6, WISO-1-3-3-K7, WISO-1-3-4-K7, WISO-1-3-5-K7, WISO-1-3-6-K1, WISO-1-3-6-K2, WISO-1-3-6-K4, WISO-1-3-6-K5, WISO-1-3-6-K6, WISO-1-4-1-K6, WISO-1-4-2-K6, WISO-1-5-1-K7, WISO-1-6-1-K6, WISO-1-6-1-K7, WISO-1-6-2-K7, WISO-1-6-2-K8, WISO-1-6-2-K9, WISO-1-7-1-K4, WISO-1-7-2-K7, WISO-1-7-2-K8, WISO-1-8-1-K7, WISO-1-8-4-K5, WISO-1-8-4-K6.
+Karten (245): 8 bleiben, 198 prüfen (Aussage angepasst), 25 umhängen (Aussage verschoben), 6 entfallen, 8 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-1-1-1-K7, WISO-1-1-3-K5, WISO-1-1-3-K6, WISO-1-1-4-K6, WISO-1-1-4-K7, WISO-1-1-4-K8, WISO-1-1-4-K9, WISO-1-2-1-K6, WISO-1-2-3-K3, WISO-1-2-3-K4, WISO-1-3-1-K6, WISO-1-3-1-K7, WISO-1-3-2-K5, WISO-1-3-2-K6, WISO-1-3-2-K7, WISO-1-3-3-K6, WISO-1-3-3-K7, WISO-1-3-3-K8, WISO-1-3-3-K9, WISO-1-3-4-K7, WISO-1-3-4-K8, WISO-1-3-4-K9, WISO-1-3-5-K7, WISO-1-3-5-K8, WISO-1-3-5-K9, WISO-1-3-5-K10, WISO-1-3-6-K1, WISO-1-3-6-K2, WISO-1-3-6-K4, WISO-1-3-6-K5, WISO-1-3-6-K6, WISO-1-3-6-K7, WISO-1-3-6-K8, WISO-1-3-6-K9, WISO-1-4-1-K6, WISO-1-4-1-K7, WISO-1-4-2-K6, WISO-1-4-2-K7, WISO-1-4-3-K6, WISO-1-5-1-K7, WISO-1-5-1-K8, WISO-1-5-2-K6, WISO-1-6-1-K6, WISO-1-6-1-K7, WISO-1-6-1-K8, WISO-1-6-1-K9, WISO-1-6-2-K7, WISO-1-6-2-K8, WISO-1-6-2-K9, WISO-1-6-2-K10, WISO-1-6-2-K11, WISO-1-6-2-K12, WISO-1-7-1-K4, WISO-1-7-2-K7, WISO-1-7-2-K8, WISO-1-7-2-K9, WISO-1-7-2-K10, WISO-1-8-1-K7, WISO-1-8-1-K8, WISO-1-8-2-K5, WISO-1-8-4-K5, WISO-1-8-4-K6, WISO-1-8-4-K7.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -843,7 +915,7 @@ Karten (245): 8 bleiben, 198 prüfen (Aussage angepasst), 25 umhängen (Aussage 
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 5, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 15, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
@@ -852,6 +924,16 @@ Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 5, Außen
 | Integrationsamt / Inklusionsamt | pruefer:wiso-2026-10 | Kür | WISO-1-3-5 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 | Steuerklasse VI | pruefer:wiso-2026-10 | Kür | WISO-1-6-1 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 | Kinderabschlag in der Pflegeversicherung | pruefer:wiso-2026-10 | Kür | WISO-1-6-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Seit der Neuordnung 2020 gibt es vier IT-Ausbildungsberufe: IT-System-Elektroniker, Kaufleute für IT-System-Management,  | buch:GS-1.1 | Kür | WISO-1-2-2 | Regelwerk v2.x, D8/RK1 |
+| Ein duales Studium verbindet Hochschule oder Berufsakademie eng mit einem Betrieb: Im praxisintegrierenden Modell wechse | buch:GS-1.1 | Kür | WISO-1-8-2 | Regelwerk v2.x, D8/RK1 |
+| Bestanden ist die Prüfung, wenn das Gesamtergebnis und Teil 2 mindestens ausreichend sind, beim Fachinformatiker mindest | buch:GS-1.1 | Kür | WISO-1-1-3 | Regelwerk v2.x, D8/RK1 |
+| Ausbildende und Auszubildende können eine Teilzeitausbildung im Vertrag vereinbaren (§ 7a BBiG): Die Ausbildungszeit wir | buch:GS-1.2.1 | Kür | WISO-1-1-1 | Regelwerk v2.x, D8/RK1 |
+| Ist jemand innerhalb von zwölf Monaten länger als sechs Wochen ununterbrochen oder wiederholt arbeitsunfähig, muss der A | buch:GS-1.2.2 | Kür | WISO-1-3-2 | Regelwerk v2.x, D8/RK1 |
+| Bei vorübergehendem Arbeitsausfall kann Kurzarbeit eingeführt werden, aber nicht einseitig durch den Arbeitgeber: Nötig  | buch:GS-1.2.2 | Kür | WISO-1-6-2 | Regelwerk v2.x, D8/RK1 |
+| Die Altersvorsorge ruht auf drei Säulen: gesetzliche Rente, betriebliche Altersvorsorge und private Vorsorge wie Privatr | buch:GS-1.2.3 | Kür | WISO-1-6-2 | Regelwerk v2.x, D8/RK1 |
+| Bewerben kann man sich auf interne oder externe Stellenanzeigen, über Jobportale oder initiativ ohne Anzeige. Unternehme | buch:GS-1.2.3 | Kür | WISO-1-3-6 | Regelwerk v2.x, D8/RK1 |
+| Direkte Steuern trägt derjenige, der sie zahlen muss, selbst, etwa Lohn- und Einkommensteuer, Kfz- oder Grundsteuer; ind | buch:GS-1.4.1 | Kür | WISO-1-6-1 | Regelwerk v2.x, D8/RK1 |
+| Die vollständige Handlung (IPERKA) gliedert einen Arbeitsauftrag in sechs Schritte: Informieren, Planen, Entscheiden, Re | buch:GS-1.5.1 | Kür | WISO-1-7-2 | Regelwerk v2.x, D8/RK1 |
 
 ## Geschwister-Prüfung (R4)
 
