@@ -2,13 +2,13 @@
 
 Erzeugt mit `node tools/umbau/buch-pruefen.mjs`. Nicht von Hand bearbeiten.
 
-**Ergebnis:** bestanden (neu geprüft für AP1-4), 0 Hinweise.
+**Ergebnis:** bestanden (neu geprüft für AP1-7), 0 Hinweise.
 
 | Band | Kapitel | davon Filter (ganz) | Kernpunkte | abgedeckt | neu | Filter | Kür |
 |---|---|---|---|---|---|---|---|
-| GS | 150 | 3 | 1472 | 696 | 460 | 173 | 143 |
-| FS | 92 | 0 | 912 | 331 | 380 | 138 | 63 |
-| FS2 | 56 | 1 | 488 | 154 | 208 | 78 | 48 |
+| GS | 150 | 3 | 1472 | 744 | 378 | 173 | 177 |
+| FS | 92 | 0 | 912 | 336 | 374 | 138 | 64 |
+| FS2 | 56 | 1 | 488 | 157 | 202 | 78 | 51 |
 
-Buch-Herkunft in Können-Aussagen: 220; Kür-Quellen aus dem Buch: 146.
+Buch-Herkunft in Können-Aussagen: 275; Kür-Quellen aus dem Buch: 171.
 

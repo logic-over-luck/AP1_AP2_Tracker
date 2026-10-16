@@ -5,7 +5,7 @@
   "regelwerk_version": "2.1",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 122,
-  "koennen": 749,
+  "koennen": 784,
   "quellen": {
    "AP1-1.json": "dd64465f3f866e04",
    "AP1-2.json": "67e3bceebd2dcf08",
@@ -13,7 +13,7 @@
    "AP1-4.json": "1a7d5e4f7db71ba4",
    "AP1-5.json": "67032fce52c521e4",
    "AP1-6.json": "e4aa59945ffda262",
-   "AP1-7.json": "daf2350c3c01fa03",
+   "AP1-7.json": "16caad6d3b28d93e",
    "AP1-8.json": "73c82538e63b0851"
   }
  },
@@ -4126,6 +4126,11 @@
      "id": "AP1-7-1-1-K6",
      "stufe": 2,
      "kurz": "beschreiben, was Vertraulichkeit und Integrität für verschlüsselte Daten bedeuten: Nur Berechtigte können sie lesen; Veränderungen werden bemerkt"
+    },
+    {
+     "id": "AP1-7-1-1-K7",
+     "stufe": 2,
+     "kurz": "Informationssicherheit und IT-Sicherheit unterscheiden: Informationssicherheit schützt alle Informationen eines Betriebs, ob digital, auf Papier oder als Wissen der Mitarbeiter; IT-Sicherheit ist der Teil davon, der IT-Systeme und die darin verarbeiteten Daten betrifft"
     }
    ]
   },
@@ -4174,6 +4179,21 @@
      "id": "AP1-7-1-2-K6",
      "stufe": 4,
      "kurz": "beurteilen, ob die Maßnahmen für einen Arbeitsplatz zum festgestellten Schutzbedarf passen"
+    },
+    {
+     "id": "AP1-7-1-2-K7",
+     "stufe": 2,
+     "kurz": "erklären, wozu die DSGVO jeden Verantwortlichen verpflichtet: technische und organisatorische Maßnahmen, die dem Risiko für die betroffenen Personen angemessen sind (abgewogen nach Stand der Technik, Kosten und Art der Verarbeitung), zum Beispiel Pseudonymisierung und Verschlüsselung, dauerhaft gesicherte Vertraulichkeit, Integrität, Verfügbarkeit und Belastbarkeit der Systeme, rasche Wiederherstellung nach einem Zwischenfall und regelmäßige Prüfung der Wirksamkeit"
+    },
+    {
+     "id": "AP1-7-1-2-K8",
+     "stufe": 2,
+     "kurz": "Maßnahmen den Kontrollzielen zuordnen, nach denen technische und organisatorische Maßnahmen oft gegliedert werden: Zutritt (Schließanlage), Zugang (Anmeldung), Zugriff (Berechtigungen), Weitergabe und Transport (Verschlüsselung, VPN), Eingabe (Protokoll, wer was geändert hat), Auftrag (Vertrag und Weisungen an Dienstleister), Verfügbarkeit (Backup, USV, Brandschutz, Updates) und Trennung (Daten für verschiedene Zwecke getrennt verarbeiten)"
+    },
+    {
+     "id": "AP1-7-1-2-K9",
+     "stufe": 4,
+     "kurz": "eine Schutzmaßnahme nach Kriterien auswählen: Sie muss gegen die Gefährdung wirksam sein, zur Umgebung passen, im Alltag praktikabel sein, von den Mitarbeitern akzeptiert werden und mit ihren Kosten zum Schutzbedarf passen"
     }
    ]
   },
@@ -4222,6 +4242,16 @@
      "id": "AP1-7-1-3-K7",
      "stufe": 2,
      "kurz": "beschreiben, was die Vorgabe „no default passwords“ bei einem Gerät bedeutet: Es gibt kein voreingestelltes Kennwort, bei der Einrichtung muss ein eigenes vergeben werden"
+    },
+    {
+     "id": "AP1-7-1-3-K8",
+     "stufe": 4,
+     "kurz": "begründen, warum der Mensch als größte Schwachstelle der IT-Sicherheit gilt: Fehlbedienung, Unachtsamkeit und die Bereitschaft, einer geschickten Täuschung zu glauben, lassen sich durch Technik allein nicht abstellen; deshalb braucht es Schulung und Sicherheitsbewusstsein"
+    },
+    {
+     "id": "AP1-7-1-3-K9",
+     "stufe": 2,
+     "kurz": "die Sicherheitsleitlinie von einzelnen Sicherheitsrichtlinien unterscheiden: Die Leitlinie ist das Grundsatzdokument der Leitung mit dem Stellenwert der Sicherheit, ihren Zielen, dem angestrebten Sicherheitsniveau und den Verantwortlichkeiten; Richtlinien wie die Passwort-Policy regeln daraus abgeleitet einzelne Themen verbindlich"
     }
    ]
   },
@@ -4263,6 +4293,16 @@
      "id": "AP1-7-1-4-K6",
      "stufe": 2,
      "kurz": "beschreiben, wie Protokollierung (Logging) zur IT-Sicherheit beiträgt: Fehler und unerlaubte Aktivitäten werden mit Zeit und Benutzer erkennbar"
+    },
+    {
+     "id": "AP1-7-1-4-K7",
+     "stufe": 2,
+     "kurz": "erklären, warum die oberste Leitung die Gesamtverantwortung für die Informationssicherheit trägt: Sie entscheidet, welche Risiken der Betrieb trägt, stellt Geld und Personal bereit, beschließt die Leitlinie und stößt den Sicherheitsprozess an; Aufgaben kann sie übertragen, die Verantwortung nicht"
+    },
+    {
+     "id": "AP1-7-1-4-K8",
+     "stufe": 2,
+     "kurz": "die Phasen des Sicherheitsprozesses nach IT-Grundschutz beschreiben: Die Leitung stößt ihn an, beschließt eine Leitlinie und richtet eine Sicherheitsorganisation ein; dann wird das Sicherheitskonzept erstellt, umgesetzt und im laufenden Betrieb aufrechterhalten und verbessert"
     }
    ]
   },
@@ -4309,6 +4349,26 @@
      "id": "AP1-7-2-1-K6",
      "stufe": 3,
      "kurz": "einem Arbeitsplatz die passenden Bausteine des Grundschutz-Kompendiums zuweisen, zum Beispiel Client, Büroraum, mobiles Arbeiten"
+    },
+    {
+     "id": "AP1-7-2-1-K7",
+     "stufe": 4,
+     "kurz": "begründen, in welcher Reihenfolge die Anforderungen eines Grundschutz-Bausteins umgesetzt werden: zuerst die Basis-Anforderungen (MUSS), weil sie mit wenig Aufwand den wichtigsten Grundschutz bringen, dann die Standard-Anforderungen (SOLLTE) für angemessene Sicherheit, die Anforderungen für erhöhten Schutzbedarf nur dort, wo er festgestellt wurde"
+    },
+    {
+     "id": "AP1-7-2-1-K8",
+     "stufe": 2,
+     "kurz": "Bedrohung, Schwachstelle und Gefährdung unterscheiden: Eine Bedrohung (z. B. Schadsoftware) wird erst zur Gefährdung, wenn sie über eine Schwachstelle (z. B. eine nicht geschlossene Sicherheitslücke) auf ein Objekt einwirken und Vertraulichkeit, Integrität oder Verfügbarkeit beeinträchtigen kann"
+    },
+    {
+     "id": "AP1-7-2-1-K9",
+     "stufe": 2,
+     "kurz": "erklären, was bei der Modellierung nach IT-Grundschutz geschieht: Jedem Zielobjekt des Betriebs, also jeder konkreten Anwendung, jedem System, Raum und jeder Verbindung, werden die passenden Bausteine zugeordnet; daraus ergeben sich die umzusetzenden Anforderungen, und eine eigene Risikoanalyse folgt erst danach für Objekte mit hohem Schutzbedarf oder ohne passenden Baustein"
+    },
+    {
+     "id": "AP1-7-2-1-K10",
+     "stufe": 2,
+     "kurz": "beschreiben, was in der Strukturanalyse erfasst wird: die Geschäftsprozesse, Anwendungen, IT-Systeme (auch virtuelle), Räume und Kommunikationsverbindungen des betrachteten Bereichs, dazu ein Netzplan und welche Anwendung auf welchem System läuft"
     }
    ]
   },
@@ -4354,6 +4414,31 @@
      "id": "AP1-7-2-2-K5",
      "stufe": 2,
      "kurz": "erklären, dass sich der Schutzbedarf eines IT-Systems nach der Anwendung mit dem höchsten Bedarf richtet, die darauf läuft"
+    },
+    {
+     "id": "AP1-7-2-2-K6",
+     "stufe": 2,
+     "kurz": "erklären, wie ein Betrieb seine Schutzbedarfskategorien festlegt: Für normal, hoch und sehr hoch beschreibt er mit Schadensszenarien, wann welche Kategorie gilt, und unterscheidet dabei direkte, materielle Schäden (Umsatzausfall, Bußgeld, Stillstand) von indirekten, immateriellen (Imageverlust, Gesetzesverstoß, Verletzung des Persönlichkeitsrechts)"
+    },
+    {
+     "id": "AP1-7-2-2-K7",
+     "stufe": 2,
+     "kurz": "Kumulations- und Verteilungseffekt erklären: Laufen viele Anwendungen mit normalem Bedarf auf einem System, etwa einem Virtualisierungshost, können sich die Schäden bei dessen Ausfall zu einem höheren Schutzbedarf summieren; ist eine Anwendung auf mehrere redundante Systeme verteilt, kann der Bedarf des einzelnen Systems bei der Verfügbarkeit niedriger sein"
+    },
+    {
+     "id": "AP1-7-2-2-K8",
+     "stufe": 4,
+     "kurz": "begründen, warum der Schutzbedarf in der Reihenfolge Geschäftsprozesse und Anwendungen, dann IT-Systeme, dann Räume und Kommunikationsverbindungen festgestellt wird: Der Bedarf entsteht bei den Informationen und Anwendungen und wird auf die Systeme, Räume und Leitungen übertragen, die sie tragen"
+    },
+    {
+     "id": "AP1-7-2-2-K9",
+     "stufe": 4,
+     "kurz": "die Einstufung eines Systems bei der Verfügbarkeit mit der tolerierbaren Ausfallzeit begründen: Kann man längere Zeit darauf verzichten oder steht ein Ersatz bereit, ist der Bedarf normal; steht ohne das System schon nach kurzer Zeit das Geschäft still, ist er hoch oder sehr hoch"
+    },
+    {
+     "id": "AP1-7-2-2-K10",
+     "stufe": 2,
+     "kurz": "erklären, warum gleichartige Zielobjekte bei der Schutzbedarfsfeststellung zu Gruppen zusammengefasst werden: Gleich eingesetzte Clients oder gleich ausgestattete Büroräume haben denselben Bedarf und brauchen dieselben Maßnahmen; so bleibt die Analyse überschaubar, und nur abweichende Objekte werden einzeln betrachtet"
     }
    ]
   },
@@ -4383,6 +4468,11 @@
      "id": "AP1-7-2-3-K4",
      "stufe": 3,
      "kurz": "aus der Risikomatrix festlegen, welche Risiken zuerst behandelt werden"
+    },
+    {
+     "id": "AP1-7-2-3-K5",
+     "stufe": 3,
+     "kurz": "eine Risikotabelle erstellen: Zu jeder Bedrohung trägst du das betroffene Schutzziel und Objekt, die Schadenshöhe und die Eintrittshäufigkeit ein, liest daraus die Risikoklasse ab und ordnest eine Maßnahme zu"
     }
    ]
   },
@@ -4433,6 +4523,11 @@
      "id": "AP1-7-3-1-K8",
      "stufe": 4,
      "kurz": "begründen, warum unverschlüsselte Verbindungsarten wie Telnet oder eine serielle Verbindung für einen Fernzugriff ungeeignet sind und eine verschlüsselte wie SSH gewählt wird"
+    },
+    {
+     "id": "AP1-7-3-1-K9",
+     "stufe": 2,
+     "kurz": "am Beispiel der Cäsar-Verschlüsselung erklären, warum ein kleiner Schlüsselraum unsicher ist: Jeder Buchstabe wird um denselben Wert verschoben, der Schlüssel ist diese Verschiebung, und weil es nur 25 sinnvolle Schlüssel gibt, probiert ein Angreifer sie alle in kürzester Zeit durch"
     }
    ]
   },
@@ -4482,6 +4577,16 @@
      "id": "AP1-7-3-2-K7",
      "stufe": 3,
      "kurz": "für einen Zweck das passende Mittel einsetzen: Hashwert für die Unversehrtheit, Signatur für Herkunft und Unversehrtheit, Zertifikat für die Zugehörigkeit eines öffentlichen Schlüssels"
+    },
+    {
+     "id": "AP1-7-3-2-K8",
+     "stufe": 4,
+     "kurz": "begründen, warum man ein heruntergeladenes Installationsabbild in zwei Stufen prüft: Die selbst berechnete Prüfsumme zeigt nur, dass die Datei zur angegebenen Prüfsumme passt; erst die gültige Signatur des Herausgebers über die Prüfsummendatei zeigt, dass beides wirklich von ihm stammt und nicht von einem Angreifer ausgetauscht wurde"
+    },
+    {
+     "id": "AP1-7-3-2-K9",
+     "stufe": 2,
+     "kurz": "die Anforderungen an eine kryptografische Hashfunktion erklären: Sie ist leicht zu berechnen, aber nicht umkehrbar (Einwegfunktion), und sie ist kollisionsresistent – Kollisionen, also verschiedene Eingaben mit gleichem Hashwert, gibt es wegen der festen Länge zwangsläufig, man darf sie aber praktisch nicht finden können"
     }
    ]
   },
@@ -4578,6 +4683,21 @@
      "id": "AP1-7-3-4-K7",
      "stufe": 4,
      "kurz": "begründen, warum vor der Inbetriebnahme eines Geräts ein Softwareupdate eingespielt wird: Bekannte Sicherheitslücken werden geschlossen"
+    },
+    {
+     "id": "AP1-7-3-4-K8",
+     "stufe": 2,
+     "kurz": "erklären, wie ein Virenschutzprogramm Schadsoftware erkennt: Es vergleicht Dateien mit Signaturen bekannter Schädlinge und sucht mit Heuristik und Verhaltensüberwachung nach Merkmalen unbekannter Schadsoftware; deshalb müssen die Signaturen laufend aktualisiert werden, und bei ganz neuen Schädlingen bleibt trotzdem eine Lücke"
+    },
+    {
+     "id": "AP1-7-3-4-K9",
+     "stufe": 4,
+     "kurz": "begründen, warum aktive Inhalte wie Makros in Office-Dokumenten eingeschränkt werden: Ein Makro ist ausführbarer Code, der beim Öffnen eines harmlos wirkenden Dokuments Schadsoftware nachladen kann; deshalb wird mindestens das automatische Ausführen verhindert, und Dokumente unbekannter Herkunft werden wie Programme behandelt"
+    },
+    {
+     "id": "AP1-7-3-4-K10",
+     "stufe": 4,
+     "kurz": "begründen, warum ein Client gegen fremde Datenträger abgesichert wird: Lässt er sich von USB-Stick oder DVD starten, kann ein fremdes System Anmeldung und Virenschutz umgehen, deshalb wird nur der Start von der internen Platte erlaubt und die Firmware mit Passwort geschützt; an Systemen mit hohem Schutzbedarf werden die Anschlüsse für mobile Datenträger ganz gesperrt"
     }
    ]
   },
@@ -4629,6 +4749,21 @@
      "id": "AP1-7-3-5-K7",
      "stufe": 2,
      "kurz": "das Generationenprinzip erklären: Mehrere nummerierte Datenträger werden reihum genutzt, damit ältere Sicherungsstände erhalten bleiben"
+    },
+    {
+     "id": "AP1-7-3-5-K8",
+     "stufe": 4,
+     "kurz": "begründen, warum ein USB-Speicher am Router für einen Betrieb kein Ersatz für ein NAS ist: Er bietet kaum Rechteverwaltung und keine Redundanz, und der Router ist für viele gleichzeitige Zugriffe zu langsam – das genügt weder den Sicherheits- noch den Leistungsanforderungen, auch nicht im Kleinstbetrieb"
+    },
+    {
+     "id": "AP1-7-3-5-K9",
+     "stufe": 4,
+     "kurz": "ein Sicherungsziel passend zum Betrieb auswählen: ein weit entferntes zweites Rechenzentrum für große Betriebe mit mehreren Standorten, Bänder für einen Standort mit großen Datenmengen, Cloud-Backup für jede Größe – bei der Cloud geprüft nach Verfügbarkeit, Wiederherstellungsdauer, Datenstandort und geltendem Recht sowie Schutz vor fremdem Zugriff"
+    },
+    {
+     "id": "AP1-7-3-5-K10",
+     "stufe": 2,
+     "kurz": "Image-Sicherung und dateibasierte Sicherung unterscheiden: Das Image ist ein Abbild aller Datenblöcke eines Datenträgers samt Betriebssystem, Dateisystem und Resten gelöschter Dateien und eignet sich, um ein System komplett wiederherzustellen; die dateibasierte Sicherung kopiert ausgewählte Dateien und Ordner und eignet sich, um einzelne Dateien zurückzuholen"
     }
    ]
   },
@@ -4659,6 +4794,16 @@
      "id": "AP1-7-4-1-K8",
      "stufe": 2,
      "kurz": "Empfehlungen zum Schutz vor Malware erläutern: keine unbekannten Datenträger, keine Downloads aus unsicheren Quellen, keine Makros und Anhänge unbekannter Herkunft ausführen, Updates einspielen"
+    },
+    {
+     "id": "AP1-7-4-1-K9",
+     "stufe": 2,
+     "kurz": "erklären, was ein Keylogger ist und warum ein zweiter Faktor den Schaden begrenzt: Er zeichnet als Programm oder als Zwischenstecker heimlich Tastatureingaben auf und erbeutet so Passwörter; mit Zwei-Faktor-Anmeldung reicht das erbeutete Passwort allein nicht für den Zugang"
+    },
+    {
+     "id": "AP1-7-4-1-K10",
+     "stufe": 2,
+     "kurz": "Wege beschreiben, auf denen Schadsoftware auf einen Rechner gelangt: infizierte Mailanhänge, präparierte Webseiten, die schon beim bloßen Aufruf eine Lücke in Browser oder Betriebssystem ausnutzen (Drive-by-Download), Links in sozialen Netzwerken und gezielt auf eine Person zugeschnittene Mails"
     }
    ]
   },
@@ -4692,6 +4837,11 @@
      "id": "AP1-7-4-2-K3",
      "stufe": 2,
      "kurz": "eine Gefahr durch Phishing-Mails beschreiben: Zugangsdaten werden gestohlen, Angreifer gelangen an vertrauliche Informationen"
+    },
+    {
+     "id": "AP1-7-4-2-K4",
+     "stufe": 2,
+     "kurz": "erklären, woran man gefälschte Adressen in Links und Absendern erkennt: Entscheidend ist die eigentliche Domain direkt vor der Endung wie .de; Fälschungen hängen an einen bekannten Namen Zusätze an (Combosquatting, z. B. meinebank-login.de statt meinebank.de), nutzen Tippfehler oder setzen den echten Namen nur in eine Subdomain oder den Pfad einer fremden Domain"
     }
    ]
   },
@@ -4726,6 +4876,16 @@
      "id": "AP1-7-4-3-K3",
      "stufe": 1,
      "kurz": "für Telearbeit technisch-organisatorische Maßnahmen nennen: Arbeitsraum und Schrank abschließen, sichere Anmeldung mit zwei Faktoren, VPN, sicherer Transport von Datenträgern"
+    },
+    {
+     "id": "AP1-7-4-3-K4",
+     "stufe": 4,
+     "kurz": "begründen, warum private Geräte im Firmennetz (Bring Your Own Device) aus Sicht der Administration ein Sicherheitsrisiko sind und vom Betrieb gestellte Geräte oft die bessere Wahl: Private Geräte sind nicht zentral eingerichtet, ihr Updatestand und ihre Apps sind unbekannt, und Firmendaten mischen sich mit privaten; gestellte Geräte lassen sich sicher vorkonfigurieren und verwalten"
+    },
+    {
+     "id": "AP1-7-4-3-K5",
+     "stufe": 1,
+     "kurz": "technische Maßnahmen für den Austausch von Daten auf mobilen Datenträgern nennen: Daten verschlüsseln (Vertraulichkeit bei Verlust), eine Prüfsumme oder Signatur mitgeben (Integrität), vor und nach dem Austausch auf Schadsoftware prüfen, eine Sicherungskopie behalten und den Datenträger eindeutig kennzeichnen"
     }
    ]
   },
@@ -4777,6 +4937,21 @@
      "id": "AP1-7-5-1-K7",
      "stufe": 4,
      "kurz": "überprüfen, ob ein Vorgehen im Betrieb die Grundsätze der DSGVO einhält, zum Beispiel Zweckbindung und Datenminimierung"
+    },
+    {
+     "id": "AP1-7-5-1-K8",
+     "stufe": 2,
+     "kurz": "die Rechenschaftspflicht der DSGVO erklären: Der Verantwortliche muss jederzeit nachweisen können, dass er personenbezogene Daten nach den Grundsätzen der DSGVO verarbeitet; deshalb dokumentiert er seine Verarbeitungen, Rechtsgrundlagen und Schutzmaßnahmen"
+    },
+    {
+     "id": "AP1-7-5-1-K9",
+     "stufe": 2,
+     "kurz": "erklären, warum die Verarbeitung personenbezogener Daten eine Rechtsgrundlage braucht: Nach dem Recht auf informationelle Selbstbestimmung entscheidet jeder grundsätzlich selbst über seine Daten, deshalb ist die Verarbeitung nur erlaubt, wenn eine Rechtsgrundlage greift – Einwilligung, Erfüllung eines Vertrags, rechtliche Pflicht, Schutz lebenswichtiger Interessen, öffentliche Aufgabe oder ein überwiegendes berechtigtes Interesse"
+    },
+    {
+     "id": "AP1-7-5-1-K10",
+     "stufe": 2,
+     "kurz": "einem Anliegen einer betroffenen Person das passende Recht nach der DSGVO zuordnen: Information bei der Erhebung, Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch und das Recht, keiner rein automatisierten Entscheidung unterworfen zu werden"
     }
    ]
   },
