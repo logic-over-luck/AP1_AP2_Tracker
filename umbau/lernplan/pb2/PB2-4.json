@@ -92,12 +92,31 @@
         "katalog:AP2b.05.03.2.3",
         "beleg:2023S-PB2-A3-bc"
        ]
+      },
+      {
+       "id": "PB2-4-1-1-K7",
+       "text": "Du kannst Anweisungs- und Zweigüberdeckung nach ihrer Aussagekraft beurteilen: Die Anweisungsüberdeckung ist mit wenigen Testfällen erreicht und deckt nicht ausführbaren (toten) Code auf, findet aber wenige Fehler, weil leere Zweige wie ein fehlendes Else nie geprüft werden; die Zweigüberdeckung findet mehr Fehler und deckt unerreichbare Zweige auf, prüft aber Schleifen, zusammengesetzte Bedingungen (UND/ODER) und voneinander abhängige Bedingungen nur unzureichend.",
+       "kurz": "Anweisungs- und Zweigüberdeckung: Stärken und Lücken",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.4.2-S204"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-9-1-3"
      ],
-     "hinweis": "Was der White-Box-Test ist, steht in PB1-9-1-3. 2023S-PB2-A3-bb und -bc gehören zu einer Aufgabe (F5): erst die nicht durchlaufenen Anweisungen finden, dann die Testdaten anpassen."
+     "hinweis": "Was der White-Box-Test ist, steht in PB1-9-1-3. 2023S-PB2-A3-bb und -bc gehören zu einer Aufgabe (F5): erst die nicht durchlaufenen Anweisungen finden, dann die Testdaten anpassen.",
+     "kuer": [
+      {
+       "text": "Testabdeckung lässt sich nicht nur auf den Code beziehen, sondern auch auf Daten oder auf die funktionalen Anforderungen (wie viele davon mindestens ein Testfall prüft); viele Testfälle bedeuten noch keine hohe Abdeckung, wenn sie immer dieselben Teile prüfen.",
+       "kurz": "Testabdeckung über den Code hinaus",
+       "quellen": [
+        "buch:FS2-2.4.1"
+       ],
+       "grund": "Ring Kür: Code Coverage steht schon in PB2-4-1-1-K1, Daten- und Anforderungsabdeckung ist Zusatz"
+      }
+     ]
     },
     {
      "id": "PB2-4-1-2",
@@ -156,6 +175,15 @@
         "beleg:2025W-PB2-A3-ba"
        ],
        "vorgegeben": "Testdaten (2025W-PB2-A3-ba, Aufgabentext fehlt; P44)"
+      },
+      {
+       "id": "PB2-4-1-2-K4",
+       "text": "Du kannst für eine Situation beurteilen, ob manuell oder automatisiert getestet wird: Automatisierte Tests laufen schnell, zuverlässig und beliebig oft (z. B. als Regressionstests) und protokollieren sich selbst, kosten aber Aufwand beim Schreiben und bei jeder Änderung; deshalb automatisiert man wiederkehrende Routinefälle, testet manuell, wenn sich die Software noch ständig ändert, der Aufwand den Nutzen übersteigt oder das Verhalten erst erkundet werden soll, und prüft besonders kritische Bereiche zusätzlich von Hand.",
+       "kurz": "Manuell oder automatisiert testen",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.4.1-S202"
+       ]
       }
      ],
      "baut_auf": [
@@ -223,12 +251,56 @@
        "herkunft": [
         "katalog:AP2a.03.02.3"
        ]
+      },
+      {
+       "id": "PB2-4-1-3-K7",
+       "text": "Du kannst aus einer Entscheidungstabelle Testfälle ableiten: Jede Regel (Spalte) mit ihrer Kombination der Bedingungen und den erwarteten Aktionen wird ein Testfall; bei n Ja/Nein-Bedingungen gibt es 2^n Regeln, deshalb eignet sich das Verfahren vor allem für überschaubare Logik und wird bei vielen Bedingungen schnell unübersichtlich.",
+       "kurz": "Testfälle aus der Entscheidungstabelle",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-3.8.1-S294"
+       ]
+      },
+      {
+       "id": "PB2-4-1-3-K8",
+       "text": "Du kannst Testdatengeneratoren nach ihrer Grundlage unterscheiden: datenbankbasierte erzeugen Datenbestände aus dem Datenbankschema, codebasierte leiten Testdaten aus dem Quelltext ab (White-Box), schnittstellenbasierte aus den Wertebereichen der Parameter, etwa über Äquivalenzklassen und Grenzwerte (Black-Box), und spezifikationsbasierte erzeugen aus der Spezifikation Testdaten samt erwarteten Ergebnissen.",
+       "kurz": "Arten von Testdatengeneratoren",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.8.2-S295"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-9-1-3"
      ],
-     "hinweis": "Den Extremwertetest erklären steht in PB1-9-1-3; hier wird er beim Bilden der Testdaten angewendet. Sonderfälle im Code abfangen steht in PB2-1-1-1; hier geht es um die Testdaten dazu. Testdaten für eine Überdeckung anpassen steht in PB2-4-1-1-K6."
+     "hinweis": "Den Extremwertetest erklären steht in PB1-9-1-3; hier wird er beim Bilden der Testdaten angewendet. Sonderfälle im Code abfangen steht in PB2-1-1-1; hier geht es um die Testdaten dazu. Testdaten für eine Überdeckung anpassen steht in PB2-4-1-1-K6.",
+     "kuer": [
+      {
+       "text": "Einen Testdatengenerator wählt man danach aus, welche Datenbanken und Ausgabeformate (z. B. CSV, JSON, SQL) er unterstützt, wie er Werte erzeugt (zufällig, nach Regeln oder realistisch zusammenpassend wie Postleitzahl und Ort), auf welchen Betriebssystemen er läuft und was er kostet.",
+       "kurz": "Kriterien für die Wahl eines Testdatengenerators",
+       "quellen": [
+        "buch:FS-3.8.2"
+       ],
+       "grund": "Ring Kür: Werkzeugauswahl, kein eigener Katalogbegriff"
+      },
+      {
+       "text": "Eine ereignisgesteuerte Oberfläche erlaubt so viele Wege und Reihenfolgen (Maus, Tastatur, Menü, auch nicht vorgesehene Aktionen), dass man nicht alles testen kann und wichtige, riskante Abläufe zuerst prüft; GUI-Testfälle werden nummeriert den Elementen eines Dialogs zugeordnet (Beschriftung, leeres oder ungültiges Feld, Rückfrage bei ungespeicherten Änderungen, Tastaturbedienung). Bei Weboberflächen kommen die gängigen Browser, Zurück und Neu laden, der Aufruf über Lesezeichen oder Verlauf und mehrere offene Fenster hinzu.",
+       "kurz": "Testfälle für Dialoge und Weboberflächen",
+       "quellen": [
+        "buch:FS2-1.5.1"
+       ],
+       "grund": "Ring Kür: GUI-Testideen ohne eigenen Katalog-Baustein"
+      },
+      {
+       "text": "Zufallsgeneratoren liefern Pseudozufallszahlen, die aus einem Startwert (Seed) berechnet werden; mit einem festen Seed entsteht bei jedem Lauf dieselbe Folge, sodass zufällig erzeugte Testdaten reproduzierbar bleiben.",
+       "kurz": "Pseudozufallszahlen und Startwert",
+       "quellen": [
+        "buch:GS-5.7.6"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Pseudozufall, Seed)"
+      }
+     ]
     }
    ]
   }
@@ -323,8 +395,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.7",
-  "stand": "2026-10-14; Prüfer-Funde (umbau/berichte/PB2-4-pruefer.md) am 16.10.2026 umgesetzt (P36, P44): gestrichen PB2-4-1-1-K3, PB2-4-1-3-K5, verschoben PB2-4-1-3-K4 → PB2-4-1-1-K6 (diese IDs werden nicht wieder vergeben).",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB2-Ordner (P33). Überdeckungsmaße wohnen in PB2 (P3: AP2b.03.08.2, AP2b.05.03.2.1–3).",
   "kerntest": {
    "stand": "2026-10-14",
@@ -332,7 +404,11 @@
    "ergebnis": "2022W-A2-ac, 2023S-A3-b, 2024S-A3, 2025S-A2-b, 2022S-A2-bc, 2025W-A3 gegen die Musterlösungen gelesen."
   },
   "hinweisquellen": {
-   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)"
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.4.1": "Lehrbuch Westermann „IT-Berufe“ FS2 2.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.8.2": "Lehrbuch Westermann „IT-Berufe“ FS 3.8.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.5.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.7.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -392,8 +468,75 @@
      "wo": [
       "PB2-3"
      ]
+    },
+    {
+     "thema": "Testabdeckung lässt sich nicht nur auf den Code beziehen, sondern auch auf Daten oder auf die funktionalen Anforderungen",
+     "quellen": [
+      "buch:FS2-2.4.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-4-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Einen Testdatengenerator wählt man danach aus, welche Datenbanken und Ausgabeformate (z. B. CSV, JSON, SQL) er unterstüt",
+     "quellen": [
+      "buch:FS-3.8.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-4-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine ereignisgesteuerte Oberfläche erlaubt so viele Wege und Reihenfolgen (Maus, Tastatur, Menü, auch nicht vorgesehene ",
+     "quellen": [
+      "buch:FS2-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-4-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Zufallsgeneratoren liefern Pseudozufallszahlen, die aus einem Startwert (Seed) berechnet werden; mit einem festen Seed e",
+     "quellen": [
+      "buch:GS-5.7.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-4-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
-  }
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-4-1-1-K7",
+     "PB2-4-1-2-K4",
+     "PB2-4-1-3-K7",
+     "PB2-4-1-3-K8"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [],
+    "kuer": [
+     "PB2-4-1-1",
+     "PB2-4-1-3",
+     "PB2-4-1-3",
+     "PB2-4-1-3"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": []
+   }
+  ]
  }
 }

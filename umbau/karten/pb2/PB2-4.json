@@ -283,6 +283,62 @@
       "k": "PB2-4-1-3-K6",
       "vorne": "Für einen Lasttest werden 100.000 Kundendatensätze gebraucht. Ein Kollege will die echten Kundendaten kopieren. Was schlägst du vor?",
       "hinten": "Einen Testdatengenerator: Er erzeugt beliebig viele Datensätze nach Regeln (z. B. Postleitzahl fünfstellig, Alter 18–99, gleichmäßig verteilt). Echte personenbezogene Daten im Test widersprechen dem Datenschutz (DSGVO)."
+    },
+    {
+      "id": "PB2-4-1-1-K7-1",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K7",
+      "vorne": "Welchen Fehler übersieht die Anweisungsüberdeckung typischerweise – und was findet sie dafür gut?",
+      "hinten": "Sie prüft leere Zweige (fehlendes Else) nicht, weil dort keine Anweisung steht. Gut findet sie toten Code: Anweisungen, die kein Testfall erreicht."
+    },
+    {
+      "id": "PB2-4-1-1-K7-2",
+      "sp": "PB2-4-1-1",
+      "k": "PB2-4-1-1-K7",
+      "vorne": "Nenne zwei Schwächen der Zweigüberdeckung.",
+      "hinten": "- zusammengesetzte Bedingungen (UND/ODER) werden nur als Ganzes wahr/falsch geprüft\n- Schleifen werden nur mit „durchlaufen/nicht durchlaufen“ geprüft, nicht mit vielen Durchläufen\n(auch Abhängigkeiten zwischen Bedingungen bleiben ungeprüft)"
+    },
+    {
+      "id": "PB2-4-1-2-K4-1",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K4",
+      "vorne": "Nenne je zwei Vor- und Nachteile automatisierter Tests.",
+      "hinten": "- **Vorteile:** schnell und beliebig oft wiederholbar (Regressionstest), zuverlässig, protokollieren selbst\n- **Nachteile:** Aufwand beim Erstellen, Anpassen bei jeder Änderung der Software"
+    },
+    {
+      "id": "PB2-4-1-2-K4-2",
+      "sp": "PB2-4-1-2",
+      "k": "PB2-4-1-2-K4",
+      "vorne": "Wann ist Testautomatisierung unrentabel bzw. ungeeignet?",
+      "hinten": "Wenn sich die Software ständig ändert, der Aufwand größer ist als der Nutzen (Test läuft selten) oder das Verhalten erst erkundet werden soll. Kritische Bereiche werden zusätzlich manuell geprüft."
+    },
+    {
+      "id": "PB2-4-1-3-K7-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K7",
+      "vorne": "Wie gewinnt man aus einer Entscheidungstabelle Testfälle?",
+      "hinten": "Jede Regel (Spalte) wird ein Testfall: Die Bedingungen der Spalte liefern die Testdaten, die angekreuzten Aktionen das erwartete Ergebnis."
+    },
+    {
+      "id": "PB2-4-1-3-K7-2",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K7",
+      "vorne": "Eine Funktion hängt von 4 Ja/Nein-Bedingungen ab. Wie viele Testfälle liefert die vollständige Entscheidungstabelle – und was folgt daraus?",
+      "hinten": "2^4 = 16 Regeln, also 16 Testfälle. Mit jeder Bedingung verdoppelt sich die Zahl; das Verfahren passt daher vor allem für überschaubare Logik."
+    },
+    {
+      "id": "PB2-4-1-3-K8-1",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K8",
+      "vorne": "Welche Art Testdatengenerator liefert neben den Testdaten auch die erwarteten Ergebnisse – und warum?",
+      "hinten": "Der spezifikationsbasierte: Die Spezifikation beschreibt das Sollverhalten, daraus lassen sich die Sollwerte ableiten."
+    },
+    {
+      "id": "PB2-4-1-3-K8-2",
+      "sp": "PB2-4-1-3",
+      "k": "PB2-4-1-3-K8",
+      "vorne": "Ordne zu: Testdatengenerator arbeitet mit Äquivalenzklassen und Grenzwerten der Parameter / analysiert den Quelltext.",
+      "hinten": "- Äquivalenzklassen und Grenzwerte der Parameter: **schnittstellenbasiert** (Black-Box)\n- Quelltext: **codebasiert** (White-Box)"
     }
   ],
   "nicht_abgefragt": [],
@@ -487,6 +543,46 @@
       "id": "PB2-4-1-3-K6-1",
       "entscheidung": "neu",
       "grund": "Stufe 3: Generator an einem Fall einsetzen"
+    },
+    {
+      "id": "PB2-4-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.2-S204)"
+    },
+    {
+      "id": "PB2-4-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.2-S204)"
+    },
+    {
+      "id": "PB2-4-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S202)"
+    },
+    {
+      "id": "PB2-4-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S202)"
+    },
+    {
+      "id": "PB2-4-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.1-S294)"
+    },
+    {
+      "id": "PB2-4-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.1-S294)"
+    },
+    {
+      "id": "PB2-4-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.2-S295)"
+    },
+    {
+      "id": "PB2-4-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.2-S295)"
     }
   ]
 }

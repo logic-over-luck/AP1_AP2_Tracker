@@ -5,12 +5,12 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 21,
-  "koennen": 93,
+  "koennen": 97,
   "quellen": {
    "PB2-1.json": "38b8a981ae51f3c4",
    "PB2-2.json": "26e890ba833e48b1",
    "PB2-3.json": "5fd9e56bbcf1cd1d",
-   "PB2-4.json": "c709008e314506c2",
+   "PB2-4.json": "68840c2be9b4bac8",
    "PB2-5.json": "1a2f3e39b1e64da1",
    "PB2-6.json": "dfbf39ce1ee38c40"
   }
@@ -387,6 +387,11 @@
      "id": "PB2-4-1-1-K6",
      "stufe": 4,
      "kurz": "Testdaten so anpassen, dass eine verlangte Überdeckung erreicht wird, und die Änderung begründen, zum Beispiel einen Wert so wählen, dass auch die bisher nicht durchlaufene Anweisung zum Setzen des Minimums ausgeführt wird"
+    },
+    {
+     "id": "PB2-4-1-1-K7",
+     "stufe": 4,
+     "kurz": "Anweisungs- und Zweigüberdeckung nach ihrer Aussagekraft beurteilen: Die Anweisungsüberdeckung ist mit wenigen Testfällen erreicht und deckt nicht ausführbaren (toten) Code auf, findet aber wenige Fehler, weil leere Zweige wie ein fehlendes Else nie geprüft werden; die Zweigüberdeckung findet mehr Fehler und deckt unerreichbare Zweige auf, prüft aber Schleifen, zusammengesetzte Bedingungen (UND/ODER) und voneinander abhängige Bedingungen nur unzureichend"
     }
    ]
   },
@@ -417,6 +422,11 @@
      "id": "PB2-4-1-2-K3",
      "stufe": 3,
      "kurz": "Kriterien für Testergebnisse festlegen: zu jedem Testfall vorab das erwartete Ergebnis bestimmen, es in einer Testfalltabelle (Testdaten, erwartetes Ergebnis, tatsächliches Ergebnis) dem tatsächlichen Ergebnis gegenüberstellen – auch einem von Hand per Schreibtischtest ermittelten – und den Testfall nur als bestanden werten, wenn beide genau übereinstimmen, auch bei einer erwarteten Fehlermeldung oder Ausnahme"
+    },
+    {
+     "id": "PB2-4-1-2-K4",
+     "stufe": 4,
+     "kurz": "für eine Situation beurteilen, ob manuell oder automatisiert getestet wird: Automatisierte Tests laufen schnell, zuverlässig und beliebig oft (z. B. als Regressionstests) und protokollieren sich selbst, kosten aber Aufwand beim Schreiben und bei jeder Änderung; deshalb automatisiert man wiederkehrende Routinefälle, testet manuell, wenn sich die Software noch ständig ändert, der Aufwand den Nutzen übersteigt oder das Verhalten erst erkundet werden soll, und prüft besonders kritische Bereiche zusätzlich von Hand"
     }
    ]
   },
@@ -453,6 +463,16 @@
      "id": "PB2-4-1-3-K6",
      "stufe": 3,
      "kurz": "Testdatengeneratoren einsetzen: große Mengen passender, auch zufälliger oder grenznaher Testdaten nach festgelegten Regeln (Wertebereich, Format, Verteilung) automatisch erzeugen lassen, statt echte personenbezogene Daten zu verwenden"
+    },
+    {
+     "id": "PB2-4-1-3-K7",
+     "stufe": 3,
+     "kurz": "aus einer Entscheidungstabelle Testfälle ableiten: Jede Regel (Spalte) mit ihrer Kombination der Bedingungen und den erwarteten Aktionen wird ein Testfall; bei n Ja/Nein-Bedingungen gibt es 2^n Regeln, deshalb eignet sich das Verfahren vor allem für überschaubare Logik und wird bei vielen Bedingungen schnell unübersichtlich"
+    },
+    {
+     "id": "PB2-4-1-3-K8",
+     "stufe": 2,
+     "kurz": "Testdatengeneratoren nach ihrer Grundlage unterscheiden: datenbankbasierte erzeugen Datenbestände aus dem Datenbankschema, codebasierte leiten Testdaten aus dem Quelltext ab (White-Box), schnittstellenbasierte aus den Wertebereichen der Parameter, etwa über Äquivalenzklassen und Grenzwerte (Black-Box), und spezifikationsbasierte erzeugen aus der Spezifikation Testdaten samt erwarteten Ergebnissen"
     }
    ]
   },
