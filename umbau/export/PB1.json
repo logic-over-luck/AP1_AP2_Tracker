@@ -5,7 +5,7 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 70,
-  "koennen": 392,
+  "koennen": 400,
   "quellen": {
    "PB1-1.json": "82c56b9a048ab3d1",
    "PB1-10.json": "2c0c631a89d08af3",
@@ -13,7 +13,7 @@
    "PB1-12.json": "fde12335a2b0504d",
    "PB1-2.json": "a5e68b3ca80496d7",
    "PB1-3.json": "dc16591c5dcfb68d",
-   "PB1-4.json": "ce10adeef9791ebe",
+   "PB1-4.json": "801be06df873120a",
    "PB1-5.json": "bc8be0a1e845aa03",
    "PB1-6.json": "1a9097d9183d0f2a",
    "PB1-7.json": "d80ca30c195dabb1",
@@ -1798,6 +1798,26 @@
      "id": "PB1-4-1-1-K3",
      "stufe": 3,
      "kurz": "bei einer extend-Beziehung (aus AP1) die Bedingung als Notiz an die Beziehung schreiben und den Erweiterungspunkt im Basis-Anwendungsfall angeben, zum Beispiel „Ressourcen planen“ erweitert „Terminanfrage abschließen“ mit der Notiz „wenn Spezialtermin“"
+    },
+    {
+     "id": "PB1-4-1-1-K4",
+     "stufe": 2,
+     "kurz": "erläutern, wozu Software mit einer einheitlichen grafischen Sprache wie der UML modelliert wird: Ein Modell stellt den Entwurf kompakt und mit eindeutig festgelegten Symbolen dar, sodass Auftraggeber und Entwickler dasselbe darunter verstehen, Missverständnisse vor der Programmierung auffallen und die Diagramme später als Dokumentation dienen"
+    },
+    {
+     "id": "PB1-4-1-1-K5",
+     "stufe": 2,
+     "kurz": "Struktur- und Verhaltensdiagramme der UML unterscheiden: Strukturdiagramme zeigen statisch, woraus ein System besteht und wie seine Teile zusammenhängen (z. B. das Klassendiagramm), Verhaltensdiagramme zeigen dynamisch, was das System tut und was über die Zeit geschieht – Abläufe, Nachrichten und Zustandswechsel (Anwendungsfall-, Aktivitäts-, Sequenz- und Zustandsdiagramm)"
+    },
+    {
+     "id": "PB1-4-1-1-K6",
+     "stufe": 2,
+     "kurz": "erläutern, wie die UML-Diagramme eines Entwurfs zusammenhängen: Aus den Anwendungsfällen ergeben sich Methoden der Klassen, ein Aktivitäts- oder Sequenzdiagramm beschreibt den Ablauf eines einzelnen Anwendungsfalls genauer, und die Übergänge im Zustandsdiagramm eines Objekts werden durch Methoden seiner Klasse ausgelöst"
+    },
+    {
+     "id": "PB1-4-1-1-K7",
+     "stufe": 2,
+     "kurz": "erklären, was ein Anwendungsfalldiagramm für die Umsetzung bedeutet: Jede Verbindung zwischen einem Akteur und einem Anwendungsfall ist eine Schnittstelle, die gebaut werden muss – eine Benutzeroberfläche für einen Menschen oder eine technische Schnittstelle zu einem externen System; wird die Software umfangreich, teilt man sie auf mehrere Anwendungsfalldiagramme auf"
     }
    ]
   },
@@ -1829,6 +1849,11 @@
      "id": "PB1-4-1-2-K3",
      "stufe": 3,
      "kurz": "abstrakte Klassen und Methoden ({abstract} oder kursiv), Interfaces mit ihrer Realisierung (gestrichelte Linie mit hohlem Dreieck), Vererbung (durchgezogene Linie mit hohlem Dreieck) und statische Methoden ({static} oder unterstrichen) im Klassendiagramm darstellen"
+    },
+    {
+     "id": "PB1-4-1-2-K4",
+     "stufe": 3,
+     "kurz": "die fachlichen Methoden einer Klasse aus den Anwendungsfällen ableiten: Aus „Termin absagen“ wird die Methode absagen() der Klasse Termin; Get- und Set-Methoden lässt man im Entwurf oft weg, damit die fachlichen Methoden im Vordergrund stehen"
     }
    ]
   },
@@ -1865,6 +1890,11 @@
      "id": "PB1-4-1-3-K4",
      "stufe": 3,
      "kurz": "Teilnehmer mit Lebenslinien darstellen und ein (begonnenes) Sequenzdiagramm nach einer Ablaufbeschreibung erstellen oder ergänzen: Nachrichten von oben nach unten in zeitlicher Folge mit Methodenname und Parametern, auch für einen Webservice-Aufruf mit Request (z. B. GET /shareholders?city=Köln) und Response mit Statuscode"
+    },
+    {
+     "id": "PB1-4-1-3-K5",
+     "stufe": 2,
+     "kurz": "synchrone und asynchrone Nachrichten im Sequenzdiagramm unterscheiden: Bei einer synchronen Nachricht (gefüllte Pfeilspitze) wartet der Sender, bis der Empfänger fertig ist und antwortet; bei einer asynchronen (offene Pfeilspitze) arbeitet er sofort weiter, etwa nachdem er einen Druckauftrag in eine Warteschlange gestellt hat"
     }
    ]
   },
@@ -1901,6 +1931,16 @@
      "id": "PB1-4-1-4-K4",
      "stufe": 3,
      "kurz": "Aktionen innerhalb eines Zustands mit entry, do und exit sowie zeitgesteuerte Übergänge mit after angeben"
+    },
+    {
+     "id": "PB1-4-1-4-K5",
+     "stufe": 4,
+     "kurz": "begründen, wann ein Zustandsdiagramm statt eines Aktivitätsdiagramms passt: Es zeigt, welche Zustände ein einzelnes Objekt annimmt und durch welche Ereignisse es wechselt, und eignet sich deshalb für Objekte mit einem Statusattribut (z. B. eine Bestellung: offen, bezahlt, versandt) oder für das Verhalten einer Oberfläche; ein Aktivitätsdiagramm zeigt dagegen die Abfolge der Schritte eines Ablaufs"
+    },
+    {
+     "id": "PB1-4-1-4-K6",
+     "stufe": 3,
+     "kurz": "im Zustandsdiagramm einen Selbstübergang darstellen, der vom Zustand zurück in denselben Zustand führt (z. B. jeder weitere Artikel im Zustand „Warenkorb gefüllt“), und eine Verzweigung (Raute), an der ein Übergang je nach Bedingung in verschiedene Zielzustände führt"
     }
    ]
   },

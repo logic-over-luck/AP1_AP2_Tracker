@@ -78,6 +78,43 @@
         "beleg:2024S-PB1-A3-a",
         "beleg:2025W-PB1-A2-a"
        ]
+      },
+      {
+       "id": "PB1-4-1-1-K4",
+       "text": "Du kannst erläutern, wozu Software mit einer einheitlichen grafischen Sprache wie der UML modelliert wird: Ein Modell stellt den Entwurf kompakt und mit eindeutig festgelegten Symbolen dar, sodass Auftraggeber und Entwickler dasselbe darunter verstehen, Missverständnisse vor der Programmierung auffallen und die Diagramme später als Dokumentation dienen.",
+       "kurz": "Nutzen grafischer Modelle mit UML",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.5.4-S525",
+        "buch:FS-3.3.3-S189"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K5",
+       "text": "Du kannst Struktur- und Verhaltensdiagramme der UML unterscheiden: Strukturdiagramme zeigen statisch, woraus ein System besteht und wie seine Teile zusammenhängen (z. B. das Klassendiagramm), Verhaltensdiagramme zeigen dynamisch, was das System tut und was über die Zeit geschieht – Abläufe, Nachrichten und Zustandswechsel (Anwendungsfall-, Aktivitäts-, Sequenz- und Zustandsdiagramm).",
+       "kurz": "Struktur- gegen Verhaltensdiagramme",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.3-S190"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K6",
+       "text": "Du kannst erläutern, wie die UML-Diagramme eines Entwurfs zusammenhängen: Aus den Anwendungsfällen ergeben sich Methoden der Klassen, ein Aktivitäts- oder Sequenzdiagramm beschreibt den Ablauf eines einzelnen Anwendungsfalls genauer, und die Übergänge im Zustandsdiagramm eines Objekts werden durch Methoden seiner Klasse ausgelöst.",
+       "kurz": "Zusammenhang der Diagramme eines Entwurfs",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.2-S117"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K7",
+       "text": "Du kannst erklären, was ein Anwendungsfalldiagramm für die Umsetzung bedeutet: Jede Verbindung zwischen einem Akteur und einem Anwendungsfall ist eine Schnittstelle, die gebaut werden muss – eine Benutzeroberfläche für einen Menschen oder eine technische Schnittstelle zu einem externen System; wird die Software umfangreich, teilt man sie auf mehrere Anwendungsfalldiagramme auf.",
+       "kurz": "Assoziation als zu bauende Schnittstelle",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.4-S195"
+       ]
       }
      ],
      "baut_auf": [
@@ -88,12 +125,12 @@
      "hinweis": "2023W-PB1-A2-b (User Stories zu einem Use-Case-Diagramm) liest das Diagramm; die User Stories selbst stehen in PB1-1-1-3.",
      "kuer": [
       {
-       "text": "Weitere UML-Diagramme wie Komponenten- und Verteilungsdiagramm.",
-       "kurz": "Komponenten- und Verteilungsdiagramm",
+       "text": "Neben den fünf Prüfungsdiagrammen kennt die UML weitere Strukturdiagramme wie Objekt-, Komponenten-, Verteilungs- und Paketdiagramm (konkrete Objekte zur Laufzeit, Softwarebausteine, Software auf Geräten, Gruppen von Klassen) und weitere Verhaltensdiagramme wie Kommunikations-, Zeitverlaufs- und Interaktionsübersichtsdiagramm. Ein Modellelement darf in mehreren Diagrammen vorkommen, und Werkzeuge tauschen ganze Modelle über das XML-Format XMI aus.",
+       "kurz": "Weitere UML-Diagramme und XMI-Austausch",
        "quellen": [
-        "podcast:themen-ap2"
+        "buch:FS-3.3.3"
        ],
-       "grund": "Nur Hinweisquelle; der Katalog-Anhang nennt fünf Diagramme. Vom Katalog nicht ausgeschlossen."
+       "grund": "D8: kein Katalog-Baustein (der Katalog-Anhang nennt fünf Diagramme)"
       }
      ]
     },
@@ -161,6 +198,15 @@
         "katalog:AP2b.03.02.3"
        ],
        "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-2-K4",
+       "text": "Du kannst die fachlichen Methoden einer Klasse aus den Anwendungsfällen ableiten: Aus „Termin absagen“ wird die Methode absagen() der Klasse Termin; Get- und Set-Methoden lässt man im Entwurf oft weg, damit die fachlichen Methoden im Vordergrund stehen.",
+       "kurz": "Methoden aus Anwendungsfällen ableiten",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-3.3.5-S199"
+       ]
       }
      ],
      "baut_auf": [
@@ -233,6 +279,25 @@
         "beleg:2022S-PB1-A3-ca",
         "beleg:2024S-PB1-A2-e"
        ]
+      },
+      {
+       "id": "PB1-4-1-3-K5",
+       "text": "Du kannst synchrone und asynchrone Nachrichten im Sequenzdiagramm unterscheiden: Bei einer synchronen Nachricht (gefüllte Pfeilspitze) wartet der Sender, bis der Empfänger fertig ist und antwortet; bei einer asynchronen (offene Pfeilspitze) arbeitet er sofort weiter, etwa nachdem er einen Druckauftrag in eine Warteschlange gestellt hat.",
+       "kurz": "Synchrone gegen asynchrone Nachricht",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.2-S122"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Ein Sequenzdiagramm lässt sich in einen Interaktionsrahmen setzen, der links oben das Kürzel sd und den Namen des Ablaufs trägt. Das kombinierte Fragment par zeigt Nachrichtenfolgen, die gleichzeitig ablaufen, etwa das parallele Abfragen zweier Lager.",
+       "kurz": "Interaktionsrahmen und Fragment par",
+       "quellen": [
+        "buch:FS2-2.1.2"
+       ],
+       "grund": "RK1: Interaktionsrahmen und par stehen nicht im Katalog-Anhang"
       }
      ]
     },
@@ -306,8 +371,27 @@
         "katalog:AP2b.03.02.8"
        ],
        "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-4-K5",
+       "text": "Du kannst begründen, wann ein Zustandsdiagramm statt eines Aktivitätsdiagramms passt: Es zeigt, welche Zustände ein einzelnes Objekt annimmt und durch welche Ereignisse es wechselt, und eignet sich deshalb für Objekte mit einem Statusattribut (z. B. eine Bestellung: offen, bezahlt, versandt) oder für das Verhalten einer Oberfläche; ein Aktivitätsdiagramm zeigt dagegen die Abfolge der Schritte eines Ablaufs.",
+       "kurz": "Zustands- oder Aktivitätsdiagramm wählen",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS2-2.1.2-S119"
+       ]
+      },
+      {
+       "id": "PB1-4-1-4-K6",
+       "text": "Du kannst im Zustandsdiagramm einen Selbstübergang darstellen, der vom Zustand zurück in denselben Zustand führt (z. B. jeder weitere Artikel im Zustand „Warenkorb gefüllt“), und eine Verzweigung (Raute), an der ein Übergang je nach Bedingung in verschiedene Zielzustände führt.",
+       "kurz": "Selbstübergang und Verzweigung",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.1.2-S120"
+       ]
       }
-     ]
+     ],
+     "hinweis": "Das Lehrbuch (FS2 2.1.2) nennt die Übergänge im Zustandsdiagramm „Transaktionen“; richtig ist Transition bzw. Zustandsübergang – „Transaktion“ ist ein Begriff aus der Datenbanktechnik."
     },
     {
      "id": "PB1-4-1-5",
@@ -379,6 +463,17 @@
        "katalog": [
         "AP2a.02.02.1"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Aktivitätsdiagramme helfen in jeder Phase: in der Analyse für Geschäftsprozesse, im Entwurf für Programmabläufe, im Test als Vorlage für Testszenarien und als Dokumentation. Eine ganze Aktivität lässt sich als abgerundeter Rahmen mit ihrem Namen zeichnen, ihre Ein- und Ausgabeparameter als Rechtecke auf dem Rahmen.",
+       "kurz": "Einsatz in allen Phasen und Aktivitätsrahmen",
+       "quellen": [
+        "buch:FS-3.3.6",
+        "buch:FS2-2.1.2"
+       ],
+       "grund": "RK1: Überblick ohne Prinzip; Aktivitätsrahmen mit Parametern steht nicht im Katalog-Anhang"
       }
      ]
     }
@@ -578,8 +673,8 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.6",
-  "stand": "2026-10-14",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
   "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
   "kerntest": {
    "stand": "2026-10-14",
@@ -588,7 +683,10 @@
   },
   "hinweisquellen": {
    "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
-   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)"
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-3.3.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.1.2": "Lehrbuch Westermann „IT-Berufe“ FS2 2.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.3.6": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -700,6 +798,40 @@
      "wo": [
       "PB1-4-1-1"
      ]
+    },
+    {
+     "thema": "Neben den fünf Prüfungsdiagrammen kennt die UML weitere Strukturdiagramme wie Objekt-, Komponenten-, Verteilungs- und Pa",
+     "quellen": [
+      "buch:FS-3.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Sequenzdiagramm lässt sich in einen Interaktionsrahmen setzen, der links oben das Kürzel sd und den Namen des Ablauf",
+     "quellen": [
+      "buch:FS2-2.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Aktivitätsdiagramme helfen in jeder Phase: in der Analyse für Geschäftsprozesse, im Entwurf für Programmabläufe, im Test",
+     "quellen": [
+      "buch:FS-3.3.6",
+      "buch:FS2-2.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -749,6 +881,35 @@
       "PB1-4-1-2-K2"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-4-1-1-K4",
+     "PB1-4-1-1-K5",
+     "PB1-4-1-1-K6",
+     "PB1-4-1-1-K7",
+     "PB1-4-1-2-K4",
+     "PB1-4-1-3-K5",
+     "PB1-4-1-4-K5",
+     "PB1-4-1-4-K6"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [],
+    "kuer": [
+     "PB1-4-1-1",
+     "PB1-4-1-3",
+     "PB1-4-1-5"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB1-4-1-4"
+    ]
    }
   ]
  }

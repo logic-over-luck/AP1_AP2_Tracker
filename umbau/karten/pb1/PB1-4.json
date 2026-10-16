@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-4",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-4.json",
   "karten": [
@@ -297,6 +297,118 @@
       "k": "PB1-4-1-5-K3",
       "vorne": "In einem Arbeitsablauf bereitet A die Ware vor, während B gleichzeitig die Rechnung schreibt; nur bei Expressversand ruft A den Kurier. Wie erweiterst du das Aktivitätsdiagramm?",
       "hinten": "Teilungsbalken, dann in A's Bahn „Ware vorbereiten“ und in B's Bahn „Rechnung schreiben“; in A's Zweig Verzweigung [Express] „Kurier rufen“ / [sonst], Zusammenführung; dann Synchronisationsbalken."
+    },
+    {
+      "id": "PB1-4-1-1-K4-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K4",
+      "vorne": "Nenne drei Gründe, Software vor der Umsetzung grafisch (z. B. mit UML) zu modellieren.",
+      "hinten": "- kompakte Darstellung mit eindeutigen, standardisierten Symbolen\n- gemeinsame Grundlage für Auftraggeber und Entwickler, weniger Missverständnisse\n- Grundlage für Planung und spätere Dokumentation"
+    },
+    {
+      "id": "PB1-4-1-1-K4-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K4",
+      "vorne": "Warum lohnt es sich, einen Fehler schon im UML-Modell statt im fertigen Programm zu finden?",
+      "hinten": "Ein Diagramm ist schnell geändert; ein Fehler im fertigen Programm erfordert Umbau, erneutes Testen und erneutes Ausliefern."
+    },
+    {
+      "id": "PB1-4-1-1-K5-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K5",
+      "vorne": "Was unterscheidet Struktur- von Verhaltensdiagrammen der UML?",
+      "hinten": "Strukturdiagramme zeigen statisch den Aufbau (Teile und ihre Beziehungen zu einem Zeitpunkt), Verhaltensdiagramme dynamisch, was geschieht (Abläufe, Nachrichten, Zustandswechsel)."
+    },
+    {
+      "id": "PB1-4-1-1-K5-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K5",
+      "vorne": "Struktur oder Verhalten? Klassen-, Sequenz-, Zustands-, Aktivitäts-, Anwendungsfalldiagramm",
+      "hinten": "Struktur: Klassendiagramm. Verhalten: Sequenz-, Zustands-, Aktivitäts- und Anwendungsfalldiagramm."
+    },
+    {
+      "id": "PB1-4-1-1-K6-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K6",
+      "vorne": "Wie hängen das Zustandsdiagramm eines Objekts und seine Klasse zusammen?",
+      "hinten": "Der aktuelle Zustand steht in einem Attribut der Klasse (z. B. status); die Übergänge werden durch Methoden der Klasse ausgelöst (z. B. sperren(), freigeben())."
+    },
+    {
+      "id": "PB1-4-1-1-K6-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K6",
+      "vorne": "Mit welchen Diagrammen beschreibst du den Ablauf eines einzelnen Anwendungsfalls genauer?",
+      "hinten": "Mit einem Aktivitätsdiagramm (Schritte, Verzweigungen, Beteiligte) oder einem Sequenzdiagramm (Nachrichten zwischen den beteiligten Objekten in zeitlicher Folge)."
+    },
+    {
+      "id": "PB1-4-1-1-K7-1",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K7",
+      "vorne": "Was bedeutet eine Linie zwischen Akteur und Anwendungsfall für die Umsetzung?",
+      "hinten": "An dieser Stelle braucht das System eine Schnittstelle: für einen Menschen eine Benutzeroberfläche, für ein externes System eine technische Schnittstelle (z. B. eine API)."
+    },
+    {
+      "id": "PB1-4-1-1-K7-2",
+      "sp": "PB1-4-1-1",
+      "k": "PB1-4-1-1-K7",
+      "vorne": "Was tust du, wenn das Anwendungsfalldiagramm einer großen Software unübersichtlich wird?",
+      "hinten": "Es auf mehrere Anwendungsfalldiagramme aufteilen, z. B. nach Teilbereichen oder Akteuren."
+    },
+    {
+      "id": "PB1-4-1-2-K4-1",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K4",
+      "vorne": "Leite aus den Anwendungsfällen „Buch ausleihen“ und „Buch zurückgeben“ Methoden ab.",
+      "hinten": "In der Klasse Buch: ausleihen() und zurueckgeben(), ggf. mit Parametern wie dem Leser und einem Rückgabewert, ob es geklappt hat."
+    },
+    {
+      "id": "PB1-4-1-2-K4-2",
+      "sp": "PB1-4-1-2",
+      "k": "PB1-4-1-2-K4",
+      "vorne": "Warum fehlen Get- und Set-Methoden in Entwurfs-Klassendiagrammen oft?",
+      "hinten": "Sie ergeben sich aus den Attributen und sagen fachlich nichts Neues; ohne sie bleibt das Diagramm übersichtlich. Verlangt die Aufgabe sie, gehören sie dazu."
+    },
+    {
+      "id": "PB1-4-1-3-K5-1",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K5",
+      "vorne": "Woran erkennst du im Sequenzdiagramm eine synchrone und eine asynchrone Nachricht, und was bedeutet der Unterschied?",
+      "hinten": "Synchron: gefüllte Pfeilspitze, der Sender wartet auf die Antwort. Asynchron: offene Pfeilspitze, der Sender arbeitet sofort weiter."
+    },
+    {
+      "id": "PB1-4-1-3-K5-2",
+      "sp": "PB1-4-1-3",
+      "k": "PB1-4-1-3-K5",
+      "vorne": "Ein Webshop verschickt nach der Bestellung eine Bestätigungsmail. Synchron oder asynchron?",
+      "hinten": "Asynchron: Der Bestellablauf muss nicht warten, bis die Mail verschickt ist; der Versand wird nur angestoßen."
+    },
+    {
+      "id": "PB1-4-1-4-K5-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K5",
+      "vorne": "Ein Mietwagen kann verfügbar, reserviert, vermietet oder in Wartung sein. Welches Diagramm wählst du und warum?",
+      "hinten": "Ein Zustandsdiagramm: Es geht um die Zustände eines Objekts und die Ereignisse, die sie wechseln (z. B. reservieren, abholen, zurückgeben), nicht um eine Abfolge von Arbeitsschritten."
+    },
+    {
+      "id": "PB1-4-1-4-K5-2",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K5",
+      "vorne": "Welche Sicht hat ein Aktivitätsdiagramm, welche ein Zustandsdiagramm?",
+      "hinten": "Aktivitätsdiagramm: die Abfolge der Schritte eines Ablaufs (wer tut was, wo wird verzweigt). Zustandsdiagramm: die Zustände eines einzelnen Objekts und die Ereignisse, durch die es zwischen ihnen wechselt."
+    },
+    {
+      "id": "PB1-4-1-4-K6-1",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K6",
+      "vorne": "Was ist ein Selbstübergang im Zustandsdiagramm?",
+      "hinten": "Ein Übergang, der vom Zustand zurück in denselben Zustand führt: Das Ereignis wird verarbeitet, der Zustand ändert sich nicht (z. B. weiterer Artikel im gefüllten Warenkorb)."
+    },
+    {
+      "id": "PB1-4-1-4-K6-2",
+      "sp": "PB1-4-1-4",
+      "k": "PB1-4-1-4-K6",
+      "vorne": "Wie stellst du dar, dass dasselbe Ereignis je nach Bedingung in verschiedene Zustände führt?",
+      "hinten": "Mit einer Verzweigung (Raute): Der Übergang führt zur Raute, von dort je ein Pfeil mit Bedingung in eckigen Klammern zum Zielzustand, z. B. [Zahlung ok] → bezahlt, [Zahlung abgelehnt] → fehlgeschlagen."
     }
   ],
   "nicht_abgefragt": [],
@@ -626,6 +738,86 @@
       "id": "PB1-4-1-5-K3-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-4-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.5.4-S525, buch:FS-3.3.3-S189)"
+    },
+    {
+      "id": "PB1-4-1-1-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.5.4-S525, buch:FS-3.3.3-S189)"
+    },
+    {
+      "id": "PB1-4-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.3-S190)"
+    },
+    {
+      "id": "PB1-4-1-1-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.3-S190)"
+    },
+    {
+      "id": "PB1-4-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S117)"
+    },
+    {
+      "id": "PB1-4-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S117)"
+    },
+    {
+      "id": "PB1-4-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.4-S195)"
+    },
+    {
+      "id": "PB1-4-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.4-S195)"
+    },
+    {
+      "id": "PB1-4-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.5-S199)"
+    },
+    {
+      "id": "PB1-4-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.5-S199)"
+    },
+    {
+      "id": "PB1-4-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S122)"
+    },
+    {
+      "id": "PB1-4-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S122)"
+    },
+    {
+      "id": "PB1-4-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S119)"
+    },
+    {
+      "id": "PB1-4-1-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S119)"
+    },
+    {
+      "id": "PB1-4-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S120)"
+    },
+    {
+      "id": "PB1-4-1-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.1.2-S120)"
     }
   ]
 }
