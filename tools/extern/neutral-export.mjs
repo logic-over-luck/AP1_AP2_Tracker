@@ -3,10 +3,10 @@
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'node:fs';
 
 const RAEUME = [
-  ['AP1', 'ap1', 'AP1 – Einrichten eines IT-gestützten Arbeitsplatzes (Teil 1 der Abschlussprüfung, 90 min, 4 Aufgaben, 100 Punkte, 20 % der Gesamtnote; für alle IT-Berufe gleich)'],
-  ['PB1', 'pb1', 'AP2 Prüfungsbereich 1 – Planen eines Softwareproduktes (90 min, 4 Aufgaben, 100 Punkte, 10 %; Fachrichtung Anwendungsentwicklung)'],
-  ['PB2', 'pb2', 'AP2 Prüfungsbereich 2 – Entwicklung und Umsetzung von Algorithmen (90 min, 4 Aufgaben, 100 Punkte, 10 %; Fachrichtung Anwendungsentwicklung)'],
-  ['WISO', 'wiso', 'AP2 – Wirtschafts- und Sozialkunde (60 min, ca. 30 Auswahlaufgaben, 10 %)'],
+  ['AP1', 'ap1', 'Einrichten eines IT-gestützten Arbeitsplatzes – gemeinsame Grundlagen aller IT-Berufe (1. bis 2. Ausbildungsjahr)'],
+  ['PB1', 'pb1', 'Planen eines Softwareproduktes – Fachrichtung Anwendungsentwicklung (2. bis 3. Ausbildungsjahr)'],
+  ['PB2', 'pb2', 'Entwicklung und Umsetzung von Algorithmen – Fachrichtung Anwendungsentwicklung (2. bis 3. Ausbildungsjahr)'],
+  ['WISO', 'wiso', 'Wirtschafts- und Sozialkunde – Arbeitswelt, Betrieb, Recht, Arbeitsschutz, Umwelt'],
 ];
 const json = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const ohneCodes = (t) => t.replace(/\s*\((?:[A-Z]{1,2}\d+[a-z]?|P-[A-ZÄÖÜ-]+|E\d+)(?:[,;] ?(?:[A-Z]{1,2}\d+[a-z]?|P-[A-ZÄÖÜ-]+|E\d+))*\)/g, '');
@@ -28,9 +28,10 @@ for (const [R, d, kopf] of RAEUME) {
   }
   const zeilen = { kurz: [], lang: [] };
   const beide = (...z) => { zeilen.kurz.push(...z); zeilen.lang.push(...z); };
-  beide(`# Lerninhalte ${R}`, '', `**Prüfung:** ${kopf}`, '',
+  beide(`# Lerninhalte ${R}`, '', `**Themengebiet:** ${kopf}`, '',
     'Gliederung: Ordner → Themenblock → Stichpunkt (eine Lerneinheit von etwa 30–90 Minuten) → „Das musst du können“.',
-    '„Baut auf“ heißt: Das Thema wurde in einem früheren Teil schon gelernt; hier steht nur, was neu dazukommt.', '');
+    '„Baut auf“ heißt: Das Thema wurde in einem früheren Teil schon gelernt; hier steht nur, was neu dazukommt.',
+    '„Bewusst nicht enthalten“ sind gezogene Grenzen, „Zusatz“ ist freiwilliger Stoff.', '');
   let nSp = 0, nK = 0;
   for (const f of readdirSync(`umbau/lernplan/${d}`).sort((a, b) => a.localeCompare(b, 'de', { numeric: true }))) {
     const lp = json(`umbau/lernplan/${d}/${f}`);
@@ -54,8 +55,8 @@ for (const [R, d, kopf] of RAEUME) {
           for (const c of karten[k.id] ?? []) zeilen.lang.push(`   - Karte: **${c.vorne.replace(/\n/g, ' ')}** → ${c.hinten.replace(/\n/g, ' ')}`);
         });
         beide('');
-        if (sp.grenzen?.length) beide('**Nicht verlangt:**', '', ...sp.grenzen.map((g) => `- ${ohneCodes(g.text)}`), '');
-        if (sp.kuer?.length) beide('**Freiwillig (zählt nicht):**', '', ...sp.kuer.map((k) => `- ${ohneCodes(k.text)}`), '');
+        if (sp.grenzen?.length) beide('**Bewusst nicht enthalten:**', '', ...sp.grenzen.map((g) => `- ${ohneCodes(g.text)}`), '');
+        if (sp.kuer?.length) beide('**Zusatz (freiwillig):**', '', ...sp.kuer.map((k) => `- ${ohneCodes(k.text)}`), '');
       }
     }
   }
