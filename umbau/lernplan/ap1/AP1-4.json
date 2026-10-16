@@ -140,7 +140,7 @@
           ],
           "kuer": [
             {
-              "text": "Fat Client gegenüber Thin Client; Zero Client.",
+              "text": "Zero Client.",
               "quellen": [
                 "podcast:themen-ap1"
               ],
@@ -306,7 +306,7 @@
           "grenzen": [],
           "kuer": [
             {
-              "text": "Prozessorarchitekturen (von Neumann, Harvard, CISC/RISC), Rechenwerk, Steuerwerk und Busse; Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
+              "text": "Harvard-Architektur (getrennte Speicher für Befehle und Daten); Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
               "quellen": [
                 "lernzettel:fi-de-2025"
               ],
@@ -1084,7 +1084,7 @@
           "grenzen": [],
           "kuer": [
             {
-              "text": "Oktalsystem, BCD, Fest- und Gleitkommazahlen; Unicode und UTF-8 neben ASCII.",
+              "text": "Oktalsystem, BCD, Fest- und Gleitkommazahlen.",
               "quellen": [
                 "podcast:themen-ap1",
                 "lernzettel:fi-de-2025"
@@ -3228,6 +3228,26 @@
           "AP1-4-3-1",
           "AP1-4-3-2",
           "AP1-4-3-3"
+        ],
+        "kuer_gekuerzt": [
+          {
+            "sp": "AP1-4-1-1",
+            "vorher": "Fat Client gegenüber Thin Client; Zero Client.",
+            "nachher": "Zero Client.",
+            "grund": "Fat/Thin Client jetzt Pflicht (AP1-4-1-1-K10)"
+          },
+          {
+            "sp": "AP1-4-1-2",
+            "vorher": "Prozessorarchitekturen (von Neumann, Harvard, CISC/RISC), Rechenwerk, Steuerwerk und Busse; Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
+            "nachher": "Harvard-Architektur (getrennte Speicher für Befehle und Daten); Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
+            "grund": "von Neumann, Rechenwerk, Steuerwerk, CISC/RISC jetzt Pflicht (AP1-4-1-8-K2, -K3, -K7); Busse als Kür in AP1-4-1-8"
+          },
+          {
+            "sp": "AP1-4-2-1",
+            "vorher": "Oktalsystem, BCD, Fest- und Gleitkommazahlen; Unicode und UTF-8 neben ASCII.",
+            "nachher": "Oktalsystem, BCD, Fest- und Gleitkommazahlen.",
+            "grund": "Unicode und UTF-8 jetzt Pflicht (AP1-4-2-5-K3)"
+          }
         ]
       }
     ]
