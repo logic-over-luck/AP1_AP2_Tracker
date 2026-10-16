@@ -67,6 +67,7 @@
       {
        "id": "PB2-6-1-1-K1",
        "text": "Du kannst mit CREATE TABLE eine Tabelle nach dem relationalen Modell anlegen: Spalten mit Datentypen aus der SQL-Syntax (z. B. INTEGER, DECIMAL(8,2), DOUBLE, CHAR(5), VARCHAR(30), DATE; BOOLEAN, wenn die Aufgabe ihn vorgibt), den Primärschlüssel mit PRIMARY KEY (Spalte) und Fremdschlüssel mit FOREIGN KEY (Spalte) REFERENCES Tabelle (Primärschlüssel).",
+       "kurz": "CREATE TABLE mit Datentypen und Schlüsseln",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.1",
@@ -76,6 +77,7 @@
       {
        "id": "PB2-6-1-1-K2",
        "text": "Du kannst mit ALTER TABLE … ADD COLUMN, DROP COLUMN und MODIFY COLUMN Spalten hinzufügen, entfernen oder ändern und einen Fremdschlüssel ergänzen, bei einem Umbau in der richtigen Reihenfolge (neue Spalten anlegen, Daten mit UPDATE übertragen, z. B. mit Textfunktionen aus PB2-5-1-1, alte Spalte löschen), und eine ganze Tabelle mit DROP TABLE löschen.",
+       "kurz": "ALTER TABLE und DROP TABLE",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.1",
@@ -85,6 +87,7 @@
       {
        "id": "PB2-6-1-1-K3",
        "text": "Du kannst eine Spalte einer gefüllten Tabelle nachträglich zum Pflichtfeld machen: zuerst fehlende Werte füllen (UPDATE Aerzte SET Email = 'info@fit.de' WHERE Email IS NULL), dann die Spalte ändern (ALTER TABLE Aerzte MODIFY COLUMN Email VARCHAR(100) NOT NULL; in der Form des SQL-Auszugs wird der Datentyp mit angegeben).",
+       "kurz": "Nachträgliches Pflichtfeld: erst füllen, dann ändern",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.1",
@@ -95,6 +98,7 @@
       {
        "id": "PB2-6-1-1-K4",
        "text": "Du kannst erklären, wozu ein Index dient (schnelleres Suchen und Sortieren in großen Tabellen) und welchen Nachteil er hat (zusätzlicher Speicher, langsameres Einfügen und Ändern).",
+       "kurz": "Index: Nutzen und Nachteil",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.22.2",
@@ -104,6 +108,7 @@
       {
        "id": "PB2-6-1-1-K5",
        "text": "Du kannst mit CREATE INDEX einen benannten Index auf eine Spalte anlegen, zum Beispiel CREATE INDEX Idx_Datum ON Zaehlerstand (ZSt_Datum).",
+       "kurz": "CREATE INDEX mit eigenem Namen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.2",
@@ -113,6 +118,7 @@
       {
        "id": "PB2-6-1-1-K6",
        "text": "Du kannst beschreiben, was eine Stored Procedure ist: eine in der Datenbank gespeicherte Folge von SQL-Anweisungen mit Namen und Parametern, die von Anwendungen oder dem Datenbank-Client ausdrücklich aufgerufen wird.",
+       "kurz": "Stored Procedure als gespeicherte Anweisungsfolge",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.prozedur-trigger",
@@ -122,6 +128,7 @@
       {
        "id": "PB2-6-1-1-K7",
        "text": "Du kannst beschreiben, was ein Trigger ist: SQL-Anweisungen, die die Datenbank automatisch ausführt, wenn in einer Tabelle ein bestimmtes Ereignis eintritt (INSERT, UPDATE oder DELETE), zum Beispiel um Änderungen zu protokollieren – im Unterschied zur Stored Procedure, die ausdrücklich aufgerufen wird.",
+       "kurz": "Trigger gegen Stored Procedure",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.prozedur-trigger",
@@ -183,6 +190,7 @@
       {
        "id": "PB2-6-1-2-K1",
        "text": "Du kannst mit INSERT INTO … (Spaltenliste) VALUES … einen Datensatz einfügen und mit INSERT INTO … SELECT … Datensätze aus einer Abfrage übernehmen.",
+       "kurz": "INSERT INTO mit VALUES oder SELECT",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.3",
@@ -193,6 +201,7 @@
       {
        "id": "PB2-6-1-2-K2",
        "text": "Du kannst mit UPDATE … SET … WHERE Werte ändern, auch berechnet aus der Spalte selbst (Preis = Preis * 1.05), und die Zeilen über Bedingungen in verknüpften Tabellen auswählen, in Standard-SQL mit Unterabfragen in WHERE: … WHERE HerstellerID = (SELECT HerstellerID FROM Hersteller WHERE Bezeichnung = 'CCC') oder je Bedingung eine IN-Unterabfrage, z. B. … WHERE RgPos_ArtIdKey IN (SELECT a.Art_IdKey FROM Artikel a INNER JOIN WeinArt w ON w.WA_IdKey = a.Art_WAIdKey WHERE w.WA_Weinart = 'Rotwein') AND RgPos_RgIdKey IN (SELECT Rg_IdKey FROM Rechnung WHERE YEAR(Rg_Datum) = 2023 AND MONTH(Rg_Datum) = 5).",
+       "kurz": "UPDATE mit Unterabfragen über verknüpfte Tabellen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.3",
@@ -203,6 +212,7 @@
       {
        "id": "PB2-6-1-2-K3",
        "text": "Du kannst mit DELETE FROM … WHERE Datensätze löschen, auch mit einer Unterabfrage, z. B. Haushalte ohne Zähler: DELETE FROM Haushalte WHERE NOT EXISTS (SELECT * FROM Zaehler WHERE Zaehler.Z_HHID = Haushalte.HH_ID) oder WHERE HH_ID NOT IN (SELECT Z_HHID FROM Zaehler), solange Z_HHID nie NULL ist, und weißt, dass ohne WHERE alle Zeilen gelöscht werden.",
+       "kurz": "DELETE mit WHERE und Unterabfrage",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.3",
@@ -213,6 +223,7 @@
       {
        "id": "PB2-6-1-2-K5",
        "text": "Du kannst Datensätze in eine gleich aufgebaute Archivtabelle verschieben: mit INSERT INTO Archiv (Spaltenliste) SELECT … WHERE … kopieren (z. B. WHERE YEAR(AK_DatumZeit) < YEAR(NOW())) und mit DELETE … WHERE mit derselben Bedingung löschen, beides in einer Transaktion.",
+       "kurz": "Datensätze in Archivtabelle verschieben",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.22.3",
@@ -223,6 +234,7 @@
       {
        "id": "PB2-6-1-2-K6",
        "text": "Du kannst bei gleichzeitigen Zugriffen begründen, ob Datensätze früh und lange gesperrt werden (pessimistisch, z. B. alle freien Termine eines Monats schon beim Anzeigen blockieren) oder spät und kurz (optimistisch: erst beim Bestätigen sperren und prüfen, ob der Termin noch frei ist, bei Konflikt neu anbieten): Lange Sperren blockieren andere Nutzer unnötig, kurze Sperren brauchen eine Konfliktbehandlung.",
+       "kurz": "Pessimistisches gegen optimistisches Sperren",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.02.3",
@@ -281,6 +293,7 @@
       {
        "id": "PB2-6-1-3-K1",
        "text": "Du kannst mit CREATE USER einen Benutzer mit Passwort anlegen (CREATE USER Name IDENTIFIED BY 'Passwort').",
+       "kurz": "CREATE USER mit Passwort",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.03.7",
@@ -290,6 +303,7 @@
       {
        "id": "PB2-6-1-3-K2",
        "text": "Du kannst mit GRANT ein oder mehrere Rechte (durch Komma getrennt) gezielt vergeben, Leserecht = SELECT, Schreibrechte = INSERT, UPDATE, DELETE, auf eine Tabelle (Datenbank.Tabelle), alle Tabellen einer Datenbank (Datenbank.*) oder alles (*.*), zum Beispiel GRANT INSERT, UPDATE, DELETE ON NotaufnahmeManagement.Verschreibungen TO hhorner.",
+       "kurz": "GRANT: Lese- und Schreibrechte vergeben",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.03.7",
@@ -300,6 +314,7 @@
       {
        "id": "PB2-6-1-3-K3",
        "text": "Du kannst mit REVOKE ein oder mehrere Rechte wieder entziehen, zum Beispiel die Schreibrechte: REVOKE INSERT, UPDATE, DELETE ON NotaufnahmeManagement.Verschreibungen FROM sklinkel.",
+       "kurz": "REVOKE: Rechte wieder entziehen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.03.7",
@@ -309,6 +324,7 @@
       {
        "id": "PB2-6-1-3-K4",
        "text": "Du kannst Rechte über Rollen vergeben: eine Rolle anlegen (CREATE ROLE Sachbearbeitung), ihr Rechte geben (GRANT SELECT ON Klinik.* TO Sachbearbeitung), die Rolle einem Benutzer zuweisen (GRANT Sachbearbeitung TO hhorner) und wieder entziehen (REVOKE Sachbearbeitung FROM hhorner); WITH GRANT OPTION erlaubt dem Empfänger, ein Recht weiterzugeben.",
+       "kurz": "Rollen und WITH GRANT OPTION",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.03.7",
@@ -349,6 +365,7 @@
       {
        "id": "PB2-6-1-5-K1",
        "text": "Du kannst Qualitätsmängel in einem Datenbestand beschreiben und je eine Folge des Imports nennen, zum Beispiel uneinheitliche Formate (Datum), mehrere Werte in einem Feld, fehlende oder ungültige Werte, Dubletten, unterschiedliche Schreibweisen → falsche Auswertungen, abgelehnte Datensätze, verletzte Schlüssel.",
+       "kurz": "Qualitätsmängel im Datenbestand und Folgen",
        "stufe": 2,
        "herkunft": [
         "beleg:2024W-PB2-A3-ba"
@@ -364,6 +381,7 @@
       {
        "id": "PB2-6-1-5-K2",
        "text": "Du kannst Wege aufzeigen, mangelhafte Daten dennoch zu importieren: die Daten vorher von Hand verbessern oder ein Importprogramm mit allen nötigen Fehlerbehandlungen schreiben, das fehlerhafte Datensätze abweist und protokolliert; das Bereinigen und Vereinheitlichen selbst kennst du aus PB1-7-1-3.",
+       "kurz": "Import trotz mangelhafter Daten",
        "stufe": 2,
        "herkunft": [
         "beleg:2024W-PB2-A3-bb"
@@ -378,6 +396,7 @@
       {
        "id": "PB2-6-1-5-K3",
        "text": "Du kannst beurteilen, ob ein Datenbestand ohne Nacharbeit importiert werden kann, und für oder gegen den Import argumentieren, etwa mit Aufwand der Bereinigung gegen Nutzen der Daten.",
+       "kurz": "Importfähigkeit: für oder gegen den Import",
        "stufe": 4,
        "herkunft": [
         "beleg:2024W-PB2-A3-bc"

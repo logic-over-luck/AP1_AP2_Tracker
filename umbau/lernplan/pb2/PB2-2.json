@@ -48,6 +48,7 @@
       {
        "id": "PB2-2-1-1-K1",
        "text": "Du kannst die lineare Suche beschreiben: die Elemente der Reihe nach mit dem Gesuchten vergleichen, beim ersten Treffer abbrechen und das Element oder seinen Index zurückgeben, sonst einen festgelegten Wert wie −1 oder null; sie funktioniert auch auf unsortierten Daten.",
+       "kurz": "Lineare Suche: Ablauf und Rückgabe",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.18.1",
@@ -57,6 +58,7 @@
       {
        "id": "PB2-2-1-1-K2",
        "text": "Du kannst die binäre Suche beschreiben und mit der linearen vergleichen: In einer sortierten Folge das mittlere Element prüfen und die Hälfte verwerfen, in der das Gesuchte nicht liegen kann, bis es gefunden oder der Bereich leer ist; sie funktioniert nur auf sortierten Daten, braucht dafür aber nur etwa log₂(n) Vergleiche (bei 1.000 Elementen höchstens 10) statt bis zu n.",
+       "kurz": "Binäre Suche gegen lineare Suche",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.18",
@@ -68,6 +70,7 @@
       {
        "id": "PB2-2-1-1-K4",
        "text": "Du kannst einen Sortieralgorithmus deiner Wahl in Pseudocode schreiben, zum Beispiel Bubble Sort mit zwei verschachtelten Schleifen und dem Tausch zweier Elemente über eine Hilfsvariable, auch für ein Array von Objekten, die nach einem Attribut (über den Getter) sortiert werden.",
+       "kurz": "Sortieralgorithmus in Pseudocode, auch für Objekte",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.18.3",
@@ -77,6 +80,7 @@
       {
        "id": "PB2-2-1-1-K5",
        "text": "Du kannst Bubble Sort (benachbarte Elemente vergleichen und bei falscher Reihenfolge tauschen, Durchläufe wiederholen, bis nichts mehr getauscht wird), Selection Sort (jeweils das kleinste restliche Element suchen und nach vorn tauschen) und Insertion Sort (jedes Element in den bereits sortierten Teil einfügen) am Vorgehen unterscheiden.",
+       "kurz": "Bubble, Selection und Insertion Sort",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.18.3",
@@ -115,6 +119,7 @@
       {
        "id": "PB2-2-1-3-K1",
        "text": "Du kannst Rekursion erklären: Eine Funktion ruft sich selbst mit einem kleineren Teilproblem auf, bis eine Abbruchbedingung erreicht ist; jeder Aufruf belegt einen eigenen Rahmen auf dem Aufrufstapel, deshalb bricht das Programm ohne erreichbare Abbruchbedingung mit einem Stapelüberlauf (Stack Overflow) ab.",
+       "kurz": "Rekursion, Abbruchbedingung und Aufrufstapel",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.rekursion",
@@ -124,6 +129,7 @@
       {
        "id": "PB2-2-1-3-K2",
        "text": "Du kannst je einen Vor- und Nachteil der rekursiven gegenüber einer iterativen Lösung beschreiben: oft kürzer, eleganter und näher an der Problembeschreibung, aber mehr Speicher auf dem Aufrufstapel und durch die vielen Aufrufe meist langsamer.",
+       "kurz": "Rekursion gegen Iteration: Vor- und Nachteile",
        "stufe": 2,
        "herkunft": [
         "beleg:2022W-PB2-A2-b"
@@ -132,6 +138,7 @@
       {
        "id": "PB2-2-1-3-K3",
        "text": "Du kannst einen rekursiven Algorithmus iterativ umsetzen: die Selbstaufrufe durch eine Schleife mit derselben Bedingung ersetzen und das, was die Rekursion auf dem Rückweg erledigt, nachbilden, indem du die Zwischenergebnisse in einer Liste sammelst und danach in umgekehrter Reihenfolge ausgibst (z. B. die Reste aus modulo 2 und div 2 bei der Umrechnung dezimal → binär).",
+       "kurz": "Iterative Umsetzung eines rekursiven Algorithmus",
        "stufe": 3,
        "herkunft": [
         "beleg:2022W-PB2-A2-c"
@@ -140,6 +147,7 @@
       {
        "id": "PB2-2-1-3-K4",
        "text": "Du kannst erklären, wie die Stellung einer Anweisung vor oder nach dem Selbstaufruf die Reihenfolge bestimmt: Anweisungen davor laufen beim Abstieg in Aufrufreihenfolge, Anweisungen danach beim Rückweg in umgekehrter Reihenfolge; so gibt die Umrechnung von 11 mit der Ausgabe vor dem Aufruf 1101 statt 1011 aus.",
+       "kurz": "Anweisung vor oder nach dem Selbstaufruf",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.rekursion"
@@ -182,6 +190,7 @@
       {
        "id": "PB2-2-1-4-K1",
        "text": "Du kannst den Begriff generische Klasse erläutern: Die Klasse wird mit einem Typparameter geschrieben (z. B. List<T>) und erst bei der Verwendung für einen bestimmten Typ festgelegt, sodass derselbe Code für verschiedene Datentypen typsicher funktioniert.",
+       "kurz": "Generische Klasse mit Typparameter",
        "stufe": 2,
        "herkunft": [
         "beleg:2022W-PB2-A1-c"
@@ -190,6 +199,7 @@
       {
        "id": "PB2-2-1-4-K2",
        "text": "Du kannst eine Vergleichsfunktion für zwei Objekte schreiben, die 0 bei Gleichheit, einen positiven Wert, wenn das erste größer ist, und sonst einen negativen Wert liefert; vergleicht sie Kommazahlen (z. B. ein Gehalt als Double), gibst du nicht die Differenz als Integer zurück, sondern über Verzweigungen 1, 0 oder −1, weil das Abschneiden eine Differenz wie 0,5 zu 0 macht.",
+       "kurz": "Vergleichsfunktion mit 1, 0 oder −1",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16.1",
@@ -199,6 +209,7 @@
       {
        "id": "PB2-2-1-4-K3",
        "text": "Du kannst einen Sortieralgorithmus deiner Wahl so schreiben und benennen, dass er ein übergebenes Funktionsobjekt zum Vergleichen aufruft (ist f(a, b) > 0, wird getauscht), auch auf einer generischen Liste mit get, set und size statt auf einem Array, und damit dieselbe Sortierfunktion für verschiedene Kriterien nutzen (z. B. Kurs, Datum).",
+       "kurz": "Sortieren mit übergebenem Funktionsobjekt",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.19",

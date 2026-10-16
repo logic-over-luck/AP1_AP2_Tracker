@@ -40,6 +40,7 @@
             {
               "id": "AP1-8-1-1-K1",
               "text": "Du kannst den Unterschied zwischen Compiler und Interpreter erläutern: Übersetzung des ganzen Programms vor der Ausführung gegenüber schrittweiser Ausführung zur Laufzeit.",
+              "kurz": "Compiler gegenüber Interpreter",
               "stufe": 2,
               "herkunft": [
                 "beleg:2024H-A2-c",
@@ -49,6 +50,7 @@
             {
               "id": "AP1-8-1-1-K2",
               "text": "Du kannst die Aufgabe des Linkers erklären: übersetzte Programmteile und Bibliotheken zu einem ausführbaren Programm verbinden.",
+              "kurz": "Aufgabe des Linkers",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.1"
@@ -57,6 +59,7 @@
             {
               "id": "AP1-8-1-1-K4",
               "text": "Du kannst erklären, was eine virtuelle Maschine bei Sprachen wie Java leistet: Sie führt Zwischencode auf verschiedenen Betriebssystemen aus.",
+              "kurz": "Virtuelle Maschine bei Sprachen wie Java",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.03.01.3.4"
@@ -65,6 +68,7 @@
             {
               "id": "AP1-8-1-1-K5",
               "text": "Du kannst je einen Vorteil nennen: Kompilierte Programme laufen schneller; interpretierte lassen sich ohne Übersetzungsschritt testen.",
+              "kurz": "Vorteile kompilierter und interpretierter Programme",
               "stufe": 1,
               "herkunft": [
                 "katalog:AP1.04.06.1"
@@ -73,6 +77,7 @@
             {
               "id": "AP1-8-1-1-K6",
               "text": "Du kannst Entwicklungssysteme für einen Einsatz beurteilen, zum Beispiel ob für ein kleines Automatisierungsskript eine interpretierte Sprache genügt oder ein kompiliertes Programm nötig ist.",
+              "kurz": "Eignung eines Entwicklungssystems für den Einsatz",
               "stufe": 4,
               "herkunft": [
                 "katalog:AP1.03.01.3.4"
@@ -81,6 +86,7 @@
             {
               "id": "AP1-8-1-1-K7",
               "text": "Du kannst Editor, Debugger und integrierte Entwicklungsumgebung (IDE) erklären, auch was Debugging ist (Programm schrittweise ausführen und Variablen beobachten, um Fehler zu finden), und die Wahl einer IDE begründen: Editor, Übersetzer und Debugger in einer Oberfläche, dazu Hilfen wie Syntaxhervorhebung und Autovervollständigung.",
+              "kurz": "Editor, Debugger und IDE",
               "stufe": 4,
               "herkunft": [
                 "katalog:AP1.04.03.3",
@@ -90,6 +96,7 @@
             {
               "id": "AP1-8-1-1-K8",
               "text": "Du kannst Entwicklungs- und Laufzeitumgebung unterscheiden: Zum Entwickeln brauchst du den Compiler und weitere Werkzeuge, zum Ausführen genügt auf dem Rechner des Anwenders die Laufzeitumgebung aus virtueller Maschine und Standardbibliothek.",
+              "kurz": "Entwicklungs- und Laufzeitumgebung",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.1-S215"
@@ -98,6 +105,7 @@
             {
               "id": "AP1-8-1-1-K9",
               "text": "Du kannst die Wahl zwischen mehreren integrierten Entwicklungsumgebungen begründen: Lizenz und Kosten, unterstützte Betriebssysteme, Erweiterbarkeit durch Plug-ins (zum Beispiel für weitere Sprachen oder einen GUI-Designer) und ein Funktionsumfang, der zum Einsatzzweck passt.",
+              "kurz": "Auswahlkriterien für eine IDE",
               "stufe": 4,
               "herkunft": [
                 "buch:FS-3.5.1-S216"
@@ -106,6 +114,7 @@
             {
               "id": "AP1-8-1-1-K10",
               "text": "Du kannst kompilierte und interpretierte Programme bei der Weitergabe vergleichen: Ein kompiliertes Programm läuft ohne Compiler, aber nur auf der Plattform, für die es übersetzt wurde; ein interpretiertes läuft auf jeder Plattform, auf der ein passender Interpreter installiert ist, und wird dafür meist etwas langsamer ausgeführt.",
+              "kurz": "Weitergabe kompilierter und interpretierter Programme",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.6.4-S544"
@@ -116,6 +125,7 @@
           "kuer": [
             {
               "text": "Sprachhöhen: Maschinensprache, Assembler, Hochsprache.",
+              "kurz": "Sprachhöhen von Maschinensprache bis Hochsprache",
               "quellen": [
                 "podcast:themen-ap1"
               ],
@@ -123,6 +133,7 @@
             },
             {
               "text": "Eine Programmiersprache ist eine künstliche, formale Sprache mit festen Regeln (Syntax), festgelegtem Zeichensatz und reservierten Schlüsselwörtern wie if, while oder return, die man nicht als eigene Namen vergeben darf; der in ihr geschriebene, für Menschen lesbare Text heißt Quelltext.",
+              "kurz": "Programmiersprache: Syntax, Schlüsselwörter, Quelltext",
               "quellen": [
                 "buch:GS-5.6.1"
               ],
@@ -130,6 +141,7 @@
             },
             {
               "text": "Sprachgenerationen: Maschinensprache (1.), Assembler (2.), höhere prozedurale Sprachen (3.) und deklarative Sprachen wie SQL (4.); die Einteilung spielt heute kaum noch eine Rolle.",
+              "kurz": "Sprachgenerationen von Maschinensprache bis SQL",
               "quellen": [
                 "buch:GS-5.6.2"
               ],
@@ -137,6 +149,7 @@
             },
             {
               "text": "Interpretierte Sprachen bieten oft einen interaktiven Modus: eine Anweisung eingeben und sofort das Ergebnis sehen – praktisch zum Ausprobieren; größere Programme speichert man als Datei und startet sie über die Konsole oder die IDE.",
+              "kurz": "Interaktiver Modus interpretierter Sprachen",
               "quellen": [
                 "buch:GS-5.7.1"
               ],
@@ -167,6 +180,7 @@
             {
               "id": "AP1-8-1-2-K1",
               "text": "Du kannst prozedurale und objektorientierte Programmierung unterscheiden.",
+              "kurz": "Prozedurale gegenüber objektorientierter Programmierung",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.2"
@@ -175,6 +189,7 @@
             {
               "id": "AP1-8-1-2-K2",
               "text": "Du kannst Klasse und Objekt unterscheiden: Die Klasse ist der Bauplan, das Objekt ein konkretes Exemplar.",
+              "kurz": "Klasse und Objekt",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.6"
@@ -183,6 +198,7 @@
             {
               "id": "AP1-8-1-2-K3",
               "text": "Du kannst Attribute und Methoden erklären.",
+              "kurz": "Attribute und Methoden",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.6"
@@ -191,6 +207,7 @@
             {
               "id": "AP1-8-1-2-K4",
               "text": "Du kannst erklären, was Sichtbarkeit bedeutet, und public von private unterscheiden.",
+              "kurz": "Sichtbarkeit: public und private",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.6"
@@ -199,6 +216,7 @@
             {
               "id": "AP1-8-1-2-K5",
               "text": "Du kannst erklären, warum Attribute meist privat sind und über Methoden gelesen und geändert werden.",
+              "kurz": "Private Attribute, Zugriff über Methoden",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.6"
@@ -207,6 +225,7 @@
             {
               "id": "AP1-8-1-2-K6",
               "text": "Du kannst Vorteile der objektorientierten gegenüber der prozeduralen Programmierung nennen, zum Beispiel Wiederverwendbarkeit, bessere Wartbarkeit und Nähe zu den Dingen der realen Welt.",
+              "kurz": "Vorteile der Objektorientierung",
               "stufe": 1,
               "herkunft": [
                 "beleg:2026F-A4-a"
@@ -215,6 +234,7 @@
             {
               "id": "AP1-8-1-2-K7",
               "text": "Du kannst Abstraktion beim Bilden einer Klasse erklären: In die Klasse kommen nur die gemeinsamen Eigenschaften und Methoden gleichartiger Objekte, die für den Zweck des Programms wichtig sind; welche das sind, hängt vom Einsatz ab.",
+              "kurz": "Abstraktion beim Bilden einer Klasse",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.3.2-S184"
@@ -223,6 +243,7 @@
             {
               "id": "AP1-8-1-2-K8",
               "text": "Du kannst erklären, was ein Konstruktor ist: eine besondere Methode, die beim Erzeugen eines Objekts automatisch aufgerufen wird und seine Attribute mit Anfangswerten belegt, zum Beispiel mit den Werten, die beim Erzeugen übergeben werden.",
+              "kurz": "Konstruktor beim Erzeugen eines Objekts",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.3-S231",
@@ -246,6 +267,7 @@
           "kuer": [
             {
               "text": "Selbstreferenz: In einer Methode spricht man das eigene Objekt über einen Verweis wie this an, zum Beispiel um ein Attribut vom gleichnamigen Parameter zu unterscheiden (this.name = name).",
+              "kurz": "Selbstreferenz mit this",
               "quellen": [
                 "buch:FS-3.5.3"
               ],
@@ -253,6 +275,7 @@
             },
             {
               "text": "In Python heißt die Selbstreferenz self und steht ausdrücklich als erster Parameter jeder Methode; Sichtbarkeit wird dort nicht über Schlüsselwörter festgelegt, sondern über Namenskonventionen (_name als Hinweis auf geschützt, __name privat).",
+              "kurz": "Python: self und Sichtbarkeit per Namenskonvention",
               "quellen": [
                 "buch:FS-3.6.1"
               ],
@@ -293,6 +316,7 @@
             {
               "id": "AP1-8-1-3-K1",
               "text": "Du kannst erklären, was eine Skriptsprache ist, und Beispiele nennen, etwa Shell-Skript.",
+              "kurz": "Skriptsprachen und Beispiele",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.8"
@@ -301,6 +325,7 @@
             {
               "id": "AP1-8-1-3-K2",
               "text": "Du kannst Bibliothek und Framework unterscheiden: Eine Bibliothek rufst du auf; ein Framework gibt den Rahmen vor, in den du deinen Code einfügst.",
+              "kurz": "Bibliothek gegenüber Framework",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.7"
@@ -309,6 +334,7 @@
             {
               "id": "AP1-8-1-3-K3",
               "text": "Du kannst statische und dynamische Webseiten unterscheiden: fertige, unveränderte Inhalte gegenüber Inhalten, die beim Aufruf erzeugt werden.",
+              "kurz": "Statische und dynamische Webseiten",
               "stufe": 2,
               "herkunft": [
                 "beleg:2025F-A3-b"
@@ -317,6 +343,7 @@
             {
               "id": "AP1-8-1-3-K4",
               "text": "Du kannst Programmiersprachen für dynamische Webinhalte nennen, zum Beispiel JavaScript, PHP, Python; HTML und CSS zählen nicht als Programmiersprachen.",
+              "kurz": "Sprachen für dynamische Webinhalte",
               "stufe": 1,
               "herkunft": [
                 "beleg:2025F-A3-c"
@@ -325,6 +352,7 @@
             {
               "id": "AP1-8-1-3-K5",
               "text": "Du kannst ein Kriterium für die Wahl einer Programmiersprache begründen, zum Beispiel Eignung für die Aufgabe, Kenntnisse im Team, verfügbare Frameworks.",
+              "kurz": "Kriterien für die Wahl einer Programmiersprache",
               "stufe": 4,
               "herkunft": [
                 "beleg:2024H-A2-b",
@@ -334,6 +362,7 @@
             {
               "id": "AP1-8-1-3-K6",
               "text": "Du kannst erklären, was eine Programmierschnittstelle (API) ist: die festgelegten Funktionen und Klassen, über die dein Programm eine Bibliothek, ein Framework oder einen Dienst nutzt, ohne dessen Inneres kennen zu müssen.",
+              "kurz": "Programmierschnittstelle (API): Zweck und Nutzen",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-1.4.1-S49"
@@ -342,6 +371,7 @@
             {
               "id": "AP1-8-1-3-K7",
               "text": "Du kannst clientseitige und serverseitige Skripte unterscheiden: Ein clientseitiges Skript (zum Beispiel JavaScript) wird im Browser des Nutzers ausgeführt, ein serverseitiges (zum Beispiel PHP) auf dem Webserver, der nur das fertige Ergebnis, etwa eine HTML-Seite, an den Browser schickt.",
+              "kurz": "Clientseitige und serverseitige Skripte",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.6.3-S541"
@@ -361,6 +391,7 @@
           "kuer": [
             {
               "text": "Funktionen aus Bibliotheksmodulen werden vor der Nutzung importiert, meist am Anfang der Datei, und dann über den Modulnamen aufgerufen (z. B. math.sin(x)); eingebaute Funktionen wie print oder len stehen ohne Import bereit.",
+              "kurz": "Import von Bibliotheksmodulen",
               "quellen": [
                 "buch:GS-5.7.3"
               ],
@@ -398,6 +429,7 @@
             {
               "id": "AP1-8-2-1-K1",
               "text": "Du kannst erklären, was eine Variable ist, und die Datentypen für Ganzzahl, Kommazahl, Wahrheitswert und Text unterscheiden.",
+              "kurz": "Variable und grundlegende Datentypen",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.3"
@@ -406,6 +438,7 @@
             {
               "id": "AP1-8-2-1-K2",
               "text": "Du kannst erklären, was ein Array ist und wie über den Index auf ein Element zugegriffen wird.",
+              "kurz": "Array und Index",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.3"
@@ -414,6 +447,7 @@
             {
               "id": "AP1-8-2-1-K3",
               "text": "Du kannst Verzweigung und Schleife im Code unterscheiden, auch eine Mehrfachauswahl.",
+              "kurz": "Verzweigung, Schleife und Mehrfachauswahl",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.4",
@@ -423,6 +457,7 @@
             {
               "id": "AP1-8-2-1-K5",
               "text": "Du kannst zählergesteuerte, kopfgesteuerte und fußgesteuerte Schleifen unterscheiden.",
+              "kurz": "Zähler-, kopf- und fußgesteuerte Schleifen",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.4"
@@ -431,6 +466,7 @@
             {
               "id": "AP1-8-2-1-K6",
               "text": "Du kannst erklären, was eine Funktion ist (ein benannter Codeblock mit Parametern und Rückgabewert), und sie von einer Prozedur ohne Rückgabewert unterscheiden.",
+              "kurz": "Funktion und Prozedur",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.5"
@@ -439,6 +475,7 @@
             {
               "id": "AP1-8-2-1-K7",
               "text": "Du kannst Bedingungen und Rechnungen mit Vergleichsoperatoren (gleich, ungleich, kleiner, größer), logischen Operatoren (UND, ODER, NICHT) und dem Modulo-Operator (Rest einer ganzzahligen Division) interpretieren.",
+              "kurz": "Vergleichs-, logische und Modulo-Operatoren",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.4"
@@ -447,6 +484,7 @@
             {
               "id": "AP1-8-2-1-K8",
               "text": "Du kannst die Sequenz als dritte Grundstruktur neben Verzweigung und Schleife erklären: Anweisungen ohne Bedingung und ohne Wiederholung laufen von oben nach unten je genau einmal ab, und aus diesen drei Strukturen lässt sich jeder Ablauf zusammensetzen.",
+              "kurz": "Sequenz als dritte Grundstruktur",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.7.4-S555"
@@ -455,6 +493,7 @@
             {
               "id": "AP1-8-2-1-K9",
               "text": "Du kannst erklären, wie Anweisungen zu Blöcken zusammengefasst werden – je nach Sprache durch Klammern, durch Anfangs- und Endwörter oder durch gleiche Einrückungstiefe – und an den Blöcken ablesen, welche Anweisungen zu einer Verzweigung oder Schleife gehören.",
+              "kurz": "Blöcke durch Klammern, Wörter oder Einrückung",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.7.3-S550"
@@ -463,6 +502,7 @@
             {
               "id": "AP1-8-2-1-K10",
               "text": "Du kannst eine Kette aus WENN, SONST WENN und SONST von mehreren unabhängigen WENN-Anweisungen unterscheiden: In der Kette werden die Bedingungen der Reihe nach geprüft und nur der erste zutreffende Zweig läuft, bei unabhängigen WENN-Anweisungen wird jede Bedingung geprüft, sodass mehrere Zweige laufen können.",
+              "kurz": "WENN-Kette gegenüber unabhängigen WENN-Anweisungen",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.7.5-S567"
@@ -473,6 +513,7 @@
           "kuer": [
             {
               "text": "Parameterübergabe als Wert oder als Verweis (Call by Value, Call by Reference).",
+              "kurz": "Parameterübergabe als Wert oder Verweis",
               "quellen": [
                 "lernzettel:fi-de-2025"
               ],
@@ -480,6 +521,7 @@
             },
             {
               "text": "Ein Programm beginnt an einem festen Einstiegspunkt (in Java und C# die Methode main); Kommentare (einzeilig z. B. mit //, mehrzeilig zwischen /* und */) erläutern den Code und werden beim Übersetzen ignoriert. Konsolenprogramme geben Text und Variablenwerte verkettet aus und lesen Eingaben passend zum Datentyp, und eine ganze Zufallszahl von 0 bis n − 1 entsteht, indem man eine Zufallszahl aus dem Bereich 0 bis unter 1 mit n multipliziert und die Nachkommastellen abschneidet.",
+              "kurz": "Programmstart, Kommentare, Konsole und Zufallszahl",
               "quellen": [
                 "buch:FS-3.5.2",
                 "buch:FS-2.5.2"
@@ -488,6 +530,7 @@
             },
             {
               "text": "Ausgaben lassen sich formatieren: Platzhalter mit einer Angabe der Nachkommastellen und Escape-Sequenzen wie \\n (Zeilenumbruch), \\t (Tabulator), \\\\ (Backslash) und \\\" (Anführungszeichen im Text).",
+              "kurz": "Formatierte Ausgabe und Escape-Sequenzen",
               "quellen": [
                 "buch:GS-5.7.4"
               ],
@@ -517,6 +560,7 @@
             {
               "id": "AP1-8-2-6-K1",
               "text": "Du kannst den Gültigkeitsbereich einer Variablen erklären: Eine global, also außerhalb aller Funktionen angelegte Variable ist im ganzen Programm bekannt, eine lokal in einer Funktion oder einem Block angelegte nur dort, sodass gleiche Namen in verschiedenen Funktionen sich nicht stören.",
+              "kurz": "Gültigkeitsbereich: global und lokal",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-2.5.2-S134",
@@ -526,6 +570,7 @@
             {
               "id": "AP1-8-2-6-K2",
               "text": "Du kannst erklären, was der Datentyp einer Variablen festlegt: welche Werte sie aufnehmen kann (Wertebereich), wie viel Speicher sie belegt und welche Operationen mit ihr erlaubt sind, etwa Rechnen mit Zahlen oder Verketten von Text.",
+              "kurz": "Datentyp: Wertebereich, Speicher, Operationen",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.2-S220",
@@ -535,6 +580,7 @@
             {
               "id": "AP1-8-2-6-K3",
               "text": "Du kannst erklären, warum Rechnungen mit Gleitkommazahlen kleine Rundungsabweichungen haben, Ganzzahlen dagegen exakt gespeichert werden: Viele Dezimalzahlen wie 0,1 lassen sich im Binärsystem nicht exakt speichern; deshalb prüft man Gleitkommawerte nicht auf exakte Gleichheit.",
+              "kurz": "Rundungsabweichungen bei Gleitkommazahlen",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.2-S221",
@@ -544,6 +590,7 @@
             {
               "id": "AP1-8-2-6-K4",
               "text": "Du kannst den Datentyp Zeichen (genau ein Zeichen, in vielen Sprachen in einfachen Hochkommas wie 'A') von der Zeichenkette (Text beliebiger Länge, in Anführungszeichen wie \"Anna\") unterscheiden.",
+              "kurz": "Zeichen gegenüber Zeichenkette",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.2-S221"
@@ -552,6 +599,7 @@
             {
               "id": "AP1-8-2-6-K5",
               "text": "Du kannst Deklaration und Initialisierung einer Variablen unterscheiden: Bei der Deklaration wird sie vor der ersten Verwendung mit Namen und Datentyp angelegt, bei der Initialisierung bekommt sie ihren ersten Wert; beides kann in einer Anweisung geschehen.",
+              "kurz": "Deklaration und Initialisierung",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.2-S221"
@@ -560,6 +608,7 @@
             {
               "id": "AP1-8-2-6-K6",
               "text": "Du kannst Konstante und Variable unterscheiden: Der Wert einer Konstanten wird einmal festgelegt und darf danach nicht mehr geändert werden; feste Werte wie einen Steuersatz legt man als benannte Konstante (Name meist in Großbuchstaben) an, statt die Zahl mehrfach in den Code zu schreiben.",
+              "kurz": "Konstante gegenüber Variable",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.5.2-S221",
@@ -569,6 +618,7 @@
             {
               "id": "AP1-8-2-6-K7",
               "text": "Du kannst den Wert eines Ausdrucks nach der Rangfolge der Operatoren bestimmen: Klammern zuerst, dann Punkt- vor Strichrechnung, danach Vergleiche und zuletzt die logischen Verknüpfungen, wobei NICHT vor UND und UND vor ODER gilt.",
+              "kurz": "Rangfolge der Operatoren",
               "stufe": 3,
               "herkunft": [
                 "buch:FS-3.5.2-S222"
@@ -577,6 +627,7 @@
             {
               "id": "AP1-8-2-6-K8",
               "text": "Du kannst eine Zuweisung interpretieren: Erst wird der Ausdruck rechts vom Zuweisungszeichen ausgewertet, dann wird das Ergebnis in der Variablen links gespeichert; x = x + 1 ist deshalb keine Gleichung, sondern erhöht x um 1, und Kurzformen wie x += 5 stehen für x = x + 5.",
+              "kurz": "Zuweisung und Kurzformen wie +=",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.7.4-S561"
@@ -585,6 +636,7 @@
             {
               "id": "AP1-8-2-6-K9",
               "text": "Du kannst erklären, warum eine Benutzereingabe zunächst als Text ankommt und vor dem Rechnen ausdrücklich in eine Ganz- oder Gleitkommazahl umgewandelt werden muss und dass diese Umwandlung zur Laufzeit scheitert, wenn der Text keine Zahl ist.",
+              "kurz": "Benutzereingabe in Zahl umwandeln",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.7.4-S557"
@@ -595,6 +647,7 @@
           "kuer": [
             {
               "text": "Ganzzahltypen unterscheiden sich in Speicherbedarf und Wertebereich: mit 1, 2, 4 oder 8 Byte reicht der Bereich bis etwa ±127, ±32 000, ±2,1 Milliarden bzw. ±9,2 · 10^18.",
+              "kurz": "Ganzzahltypen: Speicherbedarf und Wertebereich",
               "quellen": [
                 "buch:FS-3.5.2"
               ],
@@ -602,6 +655,7 @@
             },
             {
               "text": "Bezeichner bestehen aus Buchstaben, Ziffern und Unterstrich, beginnen nicht mit einer Ziffer, dürfen kein Schlüsselwort sein und unterscheiden in vielen Sprachen Groß- und Kleinschreibung. Literale sind direkt notierte Werte wie 42, 0x2A (hexadezimal), 0b101010 (binär), 6.645E2 (Gleitkomma mit Exponent, = 664,5), \"Text\" oder True.",
+              "kurz": "Regeln für Bezeichner und Literale",
               "quellen": [
                 "buch:GS-5.7.3",
                 "buch:FS-3.5.2"
@@ -610,6 +664,7 @@
             },
             {
               "text": "Gleichheit und Identität: Der Vergleich auf Gleichheit prüft den Inhalt, der Vergleich auf Identität, ob zwei Variablen auf dasselbe Objekt verweisen; nach y = x ist eine Änderung an einer Liste über y auch über x sichtbar.",
+              "kurz": "Gleichheit gegenüber Identität",
               "quellen": [
                 "buch:GS-5.7.5"
               ],
@@ -635,6 +690,7 @@
             {
               "id": "AP1-8-2-5-K1",
               "text": "Du kannst erklären, was eine Datenstruktur ist: eine festgelegte Anordnung von Daten, die über Grundoperationen wie Lesen, Schreiben, Einfügen, Löschen und Suchen verwaltet wird; lineare Strukturen haben eine feste Größe (Array) oder wachsen zur Laufzeit (Liste, Stapel, Warteschlange), nicht lineare sind zum Beispiel Hashtabelle, Baum und Graph.",
+              "kurz": "Datenstruktur: Begriff und Einteilung",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S137"
@@ -643,6 +699,7 @@
             {
               "id": "AP1-8-2-5-K2",
               "text": "Du kannst erklären, woran man die Eignung einer Datenstruktur misst: am Speicherbedarf und an der Geschwindigkeit der Operationen, die das Programm oft braucht, weil keine Struktur alle Operationen gleich gut beherrscht.",
+              "kurz": "Eignung: Speicherbedarf und Geschwindigkeit",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S137"
@@ -651,6 +708,7 @@
             {
               "id": "AP1-8-2-5-K3",
               "text": "Du kannst erklären, warum der Zugriff auf ein Array-Element über den Index so schnell ist: Alle Elemente haben denselben Datentyp und liegen lückenlos hintereinander, sodass sich die Adresse jedes Elements direkt aus Startadresse + Index × Elementgröße ergibt.",
+              "kurz": "Schneller Array-Zugriff über den Index",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S139"
@@ -659,6 +717,7 @@
             {
               "id": "AP1-8-2-5-K4",
               "text": "Du kannst Stärken und Schwächen eines Arrays gegenüber einer dynamischen Liste beschreiben: Das Array bietet schnellen Zugriff über den Index, hat aber eine beim Anlegen festgelegte Größe, verschwendet zu groß angelegt Speicher und macht Einfügen und Löschen aufwendig; eine dynamische Liste wächst und schrumpft dagegen zur Laufzeit.",
+              "kurz": "Array gegenüber dynamischer Liste",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S140",
@@ -669,6 +728,7 @@
             {
               "id": "AP1-8-2-5-K5",
               "text": "Du kannst erklären, dass ein zweidimensionales Array ein Array von Zeilen ist: Die Länge des äußeren Arrays ist die Anzahl der Zeilen, jede Zeile hat ihre eigene Länge, die auch verschieden sein kann, deshalb läuft eine innere Schleife bis zur Länge der jeweiligen Zeile.",
+              "kurz": "Zweidimensionales Array als Array von Zeilen",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.4-S154",
@@ -678,6 +738,7 @@
             {
               "id": "AP1-8-2-5-K6",
               "text": "Du kannst den Aufbau einer einfach verketteten Liste erklären: Jeder Knoten enthält einen Wert und einen Verweis auf den nächsten Knoten, ein Kopfverweis zeigt auf den ersten und der letzte verweist auf nichts; Einfügen geht schnell durch Umhängen von Verweisen, der Zugriff auf eine bestimmte Position erfordert aber das Durchlaufen ab dem Anfang.",
+              "kurz": "Aufbau einer einfach verketteten Liste",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S140"
@@ -686,6 +747,7 @@
             {
               "id": "AP1-8-2-5-K7",
               "text": "Du kannst Stapel (Stack) und Warteschlange (Queue) unterscheiden: Beim Stapel wird nur oben abgelegt und entnommen (LIFO, zum Beispiel der Aufrufstapel für Rücksprungadressen und lokale Variablen), bei der Warteschlange wird hinten angefügt und vorn entnommen (FIFO, zum Beispiel Druckaufträge oder Tastatur- und Mausereignisse).",
+              "kurz": "Stapel (LIFO) und Warteschlange (FIFO)",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S142"
@@ -694,6 +756,7 @@
             {
               "id": "AP1-8-2-5-K8",
               "text": "Du kannst das Prinzip einer Hashtabelle erklären: Sie speichert Schlüssel-Wert-Paare, und eine Hashfunktion ermittelt aus dem Schlüssel direkt die Speicherposition, sodass Lesen und Suchen über den Schlüssel auch bei sehr vielen Einträgen schnell gehen, ohne alle Daten zu durchlaufen.",
+              "kurz": "Prinzip einer Hashtabelle",
               "stufe": 2,
               "herkunft": [
                 "buch:FS2-2.2.1-S142"
@@ -704,6 +767,7 @@
           "kuer": [
             {
               "text": "Weitere Datenstrukturen: doppelt verkettete Liste (zusätzlich Verweis auf den Vorgänger, in beide Richtungen durchlaufbar, mehr Speicher), Baum und binärer Suchbaum, Graph (gespeichert als Adjazenzmatrix oder Adjazenzliste) und Menge (jedes Element nur einmal); bei der Hashtabelle entsteht eine Kollision, wenn zwei Schlüssel dieselbe Position ergeben. In der Praxis nimmt man diese Strukturen aus der Standardbibliothek der Sprache, statt sie selbst zu programmieren.",
+              "kurz": "Weitere Datenstrukturen: Baum, Graph, Menge",
               "quellen": [
                 "buch:FS2-2.2.1"
               ],
@@ -711,6 +775,7 @@
             },
             {
               "text": "Python bringt Liste (geordnet, veränderbar), Tupel (unveränderlich), Set (ohne Duplikate) und Dictionary (Schlüssel-Wert-Paare) mit; eine Zuweisung an einen neuen Schlüssel fügt ein Paar hinzu, an einen vorhandenen überschreibt sie den Wert.",
+              "kurz": "Python: Liste, Tupel, Set, Dictionary",
               "quellen": [
                 "buch:FS2-2.2.3"
               ],
@@ -718,6 +783,7 @@
             },
             {
               "text": "Typische Operationen einer dynamischen Liste: am Ende anhängen, an einer Position einfügen, nach Index oder Wert entfernen (die folgenden Elemente rücken auf), umkehren und sortieren.",
+              "kurz": "Typische Operationen einer dynamischen Liste",
               "quellen": [
                 "buch:GS-5.7.6"
               ],
@@ -755,6 +821,7 @@
             {
               "id": "AP1-8-2-2-K1",
               "text": "Du kannst Pseudocode mit Verzweigungen und Schleifen interpretieren, auch wenn sie mehrfach verschachtelt sind.",
+              "kurz": "Pseudocode mit verschachtelten Kontrollstrukturen",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.07.1"
@@ -763,6 +830,7 @@
             {
               "id": "AP1-8-2-2-K3",
               "text": "Du kannst eine fehlerhafte Zeile in Pseudocode korrigieren.",
+              "kurz": "Fehlerhafte Zeile in Pseudocode",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.4"
@@ -771,6 +839,7 @@
             {
               "id": "AP1-8-2-2-K4",
               "text": "Du kannst einen kurzen, in Worten beschriebenen Ablauf mit Verzweigungen und Schleifen in Pseudocode abbilden und die Struktur durch Einrücken sichtbar machen.",
+              "kurz": "Pseudocode aus Beschreibung in Worten",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.1"
@@ -779,6 +848,7 @@
             {
               "id": "AP1-8-2-2-K5",
               "text": "Du kannst einen Ablauf aus vorgegebenen Anweisungen in richtiger Reihenfolge und Verschachtelung abbilden, zum Beispiel zwei ineinander geschachtelte Schleifen über Listen.",
+              "kurz": "Reihenfolge und Verschachtelung vorgegebener Anweisungen",
               "stufe": 3,
               "herkunft": [
                 "beleg:2022F-A4-d"
@@ -788,6 +858,7 @@
             {
               "id": "AP1-8-2-2-K6",
               "text": "Du kannst eine Funktion mit einer Schleife und einer zusammengesetzten Abbruchbedingung ergänzen, zum Beispiel wiederholen, solange die Stückzahl nicht erreicht und kein Notaus ausgelöst ist.",
+              "kurz": "Schleife mit zusammengesetzter Abbruchbedingung",
               "stufe": 3,
               "herkunft": [
                 "beleg:2022H-A4-b"
@@ -797,6 +868,7 @@
             {
               "id": "AP1-8-2-2-K7",
               "text": "Du kannst Algorithmus und Programm unterscheiden: Ein Algorithmus ist eine endliche, eindeutige Folge von Schritten zur Lösung eines Problems und unabhängig von einer Programmiersprache; ein Programm setzt ihn in einer bestimmten Programmiersprache um.",
+              "kurz": "Algorithmus gegenüber Programm",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.2.4-S497"
@@ -825,6 +897,7 @@
           "kuer": [
             {
               "text": "Entscheidungstabelle: Bedingungen werden mit J/N, Aktionen mit X eingetragen, jede Spalte ist eine Regel; bei n Bedingungen hat die vollständige Tabelle 2^n Regeln.",
+              "kurz": "Entscheidungstabelle mit Bedingungen und Regeln",
               "quellen": [
                 "buch:GS-5.5.4"
               ],
@@ -861,6 +934,7 @@
             {
               "id": "AP1-8-2-3-K1",
               "text": "Du kannst einen Schreibtischtest durchführen: den Code Zeile für Zeile mit gegebenen Werten abarbeiten und die Werte der Variablen in einer Tabelle mitführen.",
+              "kurz": "Schreibtischtest mit Variablentabelle",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.5",
@@ -870,6 +944,7 @@
             {
               "id": "AP1-8-2-3-K2",
               "text": "Du kannst das Ergebnis eines Schreibtischtests mit dem Durchlauf der Schleifen und Verzweigungen begründen.",
+              "kurz": "Begründung des Ergebnisses über den Durchlauf",
               "stufe": 4,
               "herkunft": [
                 "beleg:2024H-A2-e"
@@ -878,6 +953,7 @@
             {
               "id": "AP1-8-2-3-K3",
               "text": "Du kannst die Rechnungen im Code berechnen, auch Prozentwerte und die Division ganzer Zahlen ohne Rest.",
+              "kurz": "Prozentwerte und ganzzahlige Division",
               "stufe": 3,
               "herkunft": [
                 "beleg:2025F-A3-d",
@@ -887,6 +963,7 @@
             {
               "id": "AP1-8-2-3-K4",
               "text": "Du kannst bei verschachtelten Verzweigungen den Zweig bestimmen, der durchlaufen wird.",
+              "kurz": "Durchlaufener Zweig bei verschachtelten Verzweigungen",
               "stufe": 3,
               "herkunft": [
                 "beleg:2025F-A3-e",
@@ -896,6 +973,7 @@
             {
               "id": "AP1-8-2-3-K6",
               "text": "Du kannst den Rückgabewert einer Funktion mit verschachtelten Schleifen über ein zweidimensionales Array ermitteln.",
+              "kurz": "Rückgabewert bei zweidimensionalem Array",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024H-A2-e"
@@ -934,6 +1012,7 @@
             {
               "id": "AP1-8-2-4-K1",
               "text": "Du kannst formale Fehler (Verstoß gegen die Regeln der Sprache, das Programm startet nicht), Laufzeitfehler (das Programm bricht bei bestimmten Daten ab, zum Beispiel Division durch null oder Zugriff über das Array-Ende) und inhaltliche Fehler (das Programm läuft, liefert aber ein falsches Ergebnis) unterscheiden.",
+              "kurz": "Formale, Laufzeit- und inhaltliche Fehler",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.06.9"
@@ -942,6 +1021,7 @@
             {
               "id": "AP1-8-2-4-K2",
               "text": "Du kannst fehlerhafte Zeilen in einem kurzen Skript korrigieren, zum Beispiel einen vertauschten Vergleichsoperator oder einen falschen Faktor in einer Prozentrechnung.",
+              "kurz": "Fehlerhafte Zeilen in kurzem Skript",
               "stufe": 3,
               "herkunft": [
                 "beleg:2021H-A2-e"
@@ -951,6 +1031,7 @@
             {
               "id": "AP1-8-2-4-K3",
               "text": "Du kannst erläutern, welches Problem bestimmte Eingabedaten auslösen, zum Beispiel ein Zugriff über das Ende eines Arrays hinaus.",
+              "kurz": "Eingabedaten, die Fehler auslösen",
               "stufe": 2,
               "herkunft": [
                 "beleg:2026H-A3-bb"
@@ -959,6 +1040,7 @@
             {
               "id": "AP1-8-2-4-K5",
               "text": "Du kannst typische Fehlerquellen nennen: falsche Schleifengrenze, vertauschter Vergleichsoperator, nicht initialisierte Variable, Division durch null.",
+              "kurz": "Typische Fehlerquellen im Code",
               "stufe": 1,
               "herkunft": [
                 "katalog:AP1.04.07.4"
@@ -967,6 +1049,7 @@
             {
               "id": "AP1-8-2-4-K6",
               "text": "Du kannst typische formale Fehler in gegebenem Code korrigieren: falsche Groß- und Kleinschreibung eines Namens in einer Sprache, die sie unterscheidet, ein fehlendes Anweisungsende wie das Semikolon, eine nicht geschlossene Blockklammer oder ein Schlüsselwort bzw. unzulässiges Zeichen in einem Variablennamen.",
+              "kurz": "Typische formale Fehler wie fehlendes Semikolon",
               "stufe": 3,
               "herkunft": [
                 "buch:FS-3.5.2-S219",
@@ -1007,6 +1090,7 @@
             {
               "id": "AP1-8-3-1-K1",
               "text": "Du kannst Akteure und Anwendungsfälle aus einem Text in ein begonnenes Anwendungsfalldiagramm eintragen.",
+              "kurz": "Akteure und Anwendungsfälle aus Text",
               "stufe": 3,
               "herkunft": [
                 "beleg:2023H-A1-a",
@@ -1017,6 +1101,7 @@
             {
               "id": "AP1-8-3-1-K2",
               "text": "Du kannst einen Akteur mit einem Anwendungsfall durch eine Assoziation verbinden.",
+              "kurz": "Assoziation zwischen Akteur und Anwendungsfall",
               "stufe": 2,
               "herkunft": [
                 "beleg:2024H-A2-d"
@@ -1025,6 +1110,7 @@
             {
               "id": "AP1-8-3-1-K3",
               "text": "Du kannst eine Generalisierung zwischen Akteuren und zwischen Anwendungsfällen darstellen: Das Speziellere kann alles, was das Allgemeine kann, und mehr.",
+              "kurz": "Generalisierung von Akteuren und Anwendungsfällen",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024H-A2-d",
@@ -1035,6 +1121,7 @@
             {
               "id": "AP1-8-3-1-K4",
               "text": "Du kannst eine include-Beziehung einsetzen, wenn ein Anwendungsfall immer einen anderen einschließt.",
+              "kurz": "include-Beziehung: immer eingeschlossen",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024H-A2-d",
@@ -1044,6 +1131,7 @@
             {
               "id": "AP1-8-3-1-K5",
               "text": "Du kannst eine extend-Beziehung mit der richtigen Pfeilrichtung einsetzen, wenn ein Anwendungsfall einen anderen nur unter einer Bedingung erweitert.",
+              "kurz": "extend-Beziehung mit Bedingung und Pfeilrichtung",
               "stufe": 3,
               "herkunft": [
                 "katalog:ANH.uml-anwendungsfalldiagramm"
@@ -1052,6 +1140,7 @@
             {
               "id": "AP1-8-3-1-K6",
               "text": "Du kannst die Systemgrenze als Rahmen um die Anwendungsfälle einzeichnen.",
+              "kurz": "Systemgrenze als Rahmen",
               "stufe": 3,
               "herkunft": [
                 "katalog:ANH.uml-anwendungsfalldiagramm"
@@ -1060,6 +1149,7 @@
             {
               "id": "AP1-8-3-1-K7",
               "text": "Du kannst ein externes System, mit dem das geplante System zusammenarbeitet, als Akteur darstellen, zum Beispiel einen Zahlungsdienst, der Kreditkartendaten prüft: als Rechteck mit dem Schlüsselwort «actor» statt als Strichmännchen und außerhalb der Systemgrenze.",
+              "kurz": "Externes System als Akteur",
               "stufe": 3,
               "herkunft": [
                 "buch:FS-3.3.4-S193",
@@ -1095,6 +1185,7 @@
             {
               "id": "AP1-8-3-2-K1",
               "text": "Du kannst eine Klasse als Kasten mit drei Bereichen darstellen: Name, Attribute, Methoden.",
+              "kurz": "Klasse als Kasten mit drei Bereichen",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A4-ba"
@@ -1103,6 +1194,7 @@
             {
               "id": "AP1-8-3-2-K2",
               "text": "Du kannst Attribute in der Form „Sichtbarkeit Name : Typ“ und Methoden mit Parametern und Rückgabetyp darstellen.",
+              "kurz": "Schreibweise von Attributen und Methoden",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A4-ba"
@@ -1111,6 +1203,7 @@
             {
               "id": "AP1-8-3-2-K3",
               "text": "Du kannst die Sichtbarkeitszeichen + für public, - für private, # für protected und ~ für package verwenden.",
+              "kurz": "Sichtbarkeitszeichen +, -, # und ~",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A4-ba",
@@ -1120,6 +1213,7 @@
             {
               "id": "AP1-8-3-2-K4",
               "text": "Du kannst eine Assoziation zwischen zwei Klassen mit Multiplizitäten wie 1 und * interpretieren, auch eine gerichtete Assoziation, bei der ein Pfeil die Navigierbarkeit zeigt.",
+              "kurz": "Assoziation mit Multiplizitäten und Navigierbarkeit",
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.uml-klassendiagramm"
@@ -1128,6 +1222,7 @@
             {
               "id": "AP1-8-3-2-K5",
               "text": "Du kannst aus einer Textbeschreibung Klassen mit ihren Attributen und Methoden ableiten.",
+              "kurz": "Klassen aus einer Textbeschreibung",
               "stufe": 3,
               "herkunft": [
                 "beleg:2023F-A4-c"
@@ -1136,6 +1231,7 @@
             {
               "id": "AP1-8-3-2-K6",
               "text": "Du kannst Aggregation und Komposition im Klassendiagramm unterscheiden: Bei der Aggregation kann das Teil auch ohne das Ganze bestehen, bei der Komposition nicht.",
+              "kurz": "Aggregation gegenüber Komposition",
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.uml-klassendiagramm"
@@ -1156,6 +1252,7 @@
           "kuer": [
             {
               "text": "Konventionen im Klassendiagramm: Klassennamen im Singular mit großem Anfangsbuchstaben; stehen die Beziehungen im Vordergrund, genügt die Kurzform nur mit dem Klassennamen, die Multiplizitäten werden trotzdem angegeben.",
+              "kurz": "Konventionen für Klassennamen und Kurzform",
               "quellen": [
                 "buch:FS-3.3.5"
               ],
@@ -1185,6 +1282,7 @@
             {
               "id": "AP1-8-3-3-K1",
               "text": "Du kannst Startknoten, Aktion, Entscheidung mit Bedingungen in eckigen Klammern, Zusammenführung und Endknoten darstellen.",
+              "kurz": "Grundelemente des Aktivitätsdiagramms",
               "stufe": 3,
               "herkunft": [
                 "beleg:2025H-A2-ba"
@@ -1194,6 +1292,7 @@
             {
               "id": "AP1-8-3-3-K2",
               "text": "Du kannst einen in Worten beschriebenen Ablauf mit Verzweigung in einem Aktivitätsdiagramm abbilden.",
+              "kurz": "Ablauf mit Verzweigung als Aktivitätsdiagramm",
               "stufe": 3,
               "herkunft": [
                 "beleg:2025H-A2-ba"
@@ -1203,6 +1302,7 @@
             {
               "id": "AP1-8-3-3-K3",
               "text": "Du kannst eine Wiederholung als Rücksprung von einer Entscheidung darstellen.",
+              "kurz": "Wiederholung als Rücksprung",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.2"
@@ -1211,6 +1311,7 @@
             {
               "id": "AP1-8-3-3-K4",
               "text": "Du kannst parallele Abläufe mit Teilung und Synchronisation (Balken) darstellen.",
+              "kurz": "Parallele Abläufe mit Teilung und Synchronisation",
               "stufe": 3,
               "herkunft": [
                 "beleg:2025H-A2-ba"
@@ -1219,6 +1320,7 @@
             {
               "id": "AP1-8-3-3-K5",
               "text": "Du kannst Schwimmbahnen verwenden, um Aktionen verschiedenen Beteiligten zuzuordnen.",
+              "kurz": "Schwimmbahnen für Beteiligte",
               "stufe": 3,
               "herkunft": [
                 "katalog:ANH.uml-aktivitaetsdiagramm"
@@ -1227,6 +1329,7 @@
             {
               "id": "AP1-8-3-3-K6",
               "text": "Du kannst Endknoten (beendet alle Abläufe) und Ablaufende (beendet nur den eigenen Zweig) unterscheiden.",
+              "kurz": "Endknoten gegenüber Ablaufende",
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.uml-aktivitaetsdiagramm"
@@ -1235,6 +1338,7 @@
             {
               "id": "AP1-8-3-3-K7",
               "text": "Du kannst Zusammenführung und Synchronisation im Aktivitätsdiagramm unterscheiden: Nach einer Zusammenführung (Raute) geht der Ablauf weiter, sobald einer der alternativen Zweige ankommt; eine Synchronisation (Balken) wartet, bis alle parallelen Zweige angekommen sind.",
+              "kurz": "Zusammenführung gegenüber Synchronisation",
               "stufe": 2,
               "herkunft": [
                 "buch:FS-3.3.6-S202"
@@ -1284,6 +1388,7 @@
             {
               "id": "AP1-8-4-1-K1",
               "text": "Du kannst Entitäten als Rechtecke, Beziehungen als Rauten und Attribute als Ellipsen darstellen.",
+              "kurz": "ER-Sinnbilder: Rechteck, Raute, Ellipse",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026H-A3-ca"
@@ -1292,6 +1397,7 @@
             {
               "id": "AP1-8-4-1-K2",
               "text": "Du kannst aus einer Textbeschreibung Entitäten, ihre Attribute und die Beziehungen zwischen ihnen ableiten.",
+              "kurz": "Entitäten, Attribute und Beziehungen aus Text",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A4-c",
@@ -1301,6 +1407,7 @@
             {
               "id": "AP1-8-4-1-K3",
               "text": "Du kannst im ER-Diagramm für jede Entität den Primärschlüssel ergänzen.",
+              "kurz": "Primärschlüssel je Entität",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A4-c",
@@ -1310,6 +1417,7 @@
             {
               "id": "AP1-8-4-1-K4",
               "text": "Du kannst die Kardinalitäten 1:1, 1:n und m:n aus dem Text bestimmen.",
+              "kurz": "Kardinalitäten 1:1, 1:n und m:n",
               "stufe": 3,
               "herkunft": [
                 "beleg:2022H-A4-c",
@@ -1319,6 +1427,7 @@
             {
               "id": "AP1-8-4-1-K5",
               "text": "Du kannst ein ER-Modell so ergänzen, dass jedes Attribut bei der richtigen Entität steht, bei einer 1:n-Beziehung der Fremdschlüssel auf der n-Seite, und keine Angabe doppelt gespeichert wird.",
+              "kurz": "Attribute und Fremdschlüssel richtig zuordnen",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024H-A4-b",
@@ -1328,6 +1437,7 @@
             {
               "id": "AP1-8-4-1-K6",
               "text": "Du kannst ein bestehendes ER-Modell um eine Entität mit ihrer Beziehung erweitern.",
+              "kurz": "ER-Modell um Entität erweitern",
               "stufe": 3,
               "herkunft": [
                 "beleg:2024H-A4-b"
@@ -1336,6 +1446,7 @@
             {
               "id": "AP1-8-4-1-K7",
               "text": "Du kannst Attribute, die erst durch die Beziehung entstehen, an der Beziehung einzeichnen, zum Beispiel Menge und Verladezeit zwischen Artikel und LKW.",
+              "kurz": "Attribute an der Beziehung",
               "stufe": 3,
               "herkunft": [
                 "beleg:2026F-A4-c"
@@ -1344,6 +1455,7 @@
             {
               "id": "AP1-8-4-1-K8",
               "text": "Du kannst erklären, wozu ein ER-Modell dient: Es stellt die bei der Analyse erhobenen Daten und ihre Beziehungen grafisch und unabhängig von einer bestimmten Datenbanksoftware dar, damit sich Auftraggeber und Entwickler vor der Umsetzung auf das Datenmodell verständigen können.",
+              "kurz": "Zweck eines ER-Modells",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.8.2-S593"
@@ -1352,6 +1464,7 @@
             {
               "id": "AP1-8-4-1-K9",
               "text": "Du kannst Entität und Entitätstyp unterscheiden: Eine Entität ist ein einzelnes, konkretes Objekt wie die Kundin mit der Kundennummer 4711, der Entitätstyp fasst gleichartige Entitäten mit denselben Attributen zusammen, zum Beispiel Kunde – ähnlich wie Objekt und Klasse.",
+              "kurz": "Entität gegenüber Entitätstyp",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.8.2-S594"
@@ -1373,6 +1486,7 @@
           "kuer": [
             {
               "text": "Sonderformen der Chen-Notation: schwache Entität, mehrwertiges und abgeleitetes Attribut, Teilnahmegrad.",
+              "kurz": "Sonderformen der Chen-Notation",
               "quellen": [
                 "lernzettel:fi-de-2025"
               ],
@@ -1405,6 +1519,7 @@
             {
               "id": "AP1-8-4-2-K2",
               "text": "Du kannst erklären, was Redundanz ist, und ein Problem beschreiben, das dadurch entsteht: Dieselbe Information ist mehrfach gespeichert; wird beim Ändern eine Stelle vergessen, widersprechen sich die Daten.",
+              "kurz": "Redundanz und ihre Folgen",
               "stufe": 2,
               "herkunft": [
                 "beleg:2025F-A4-fb",
@@ -1414,6 +1529,7 @@
             {
               "id": "AP1-8-4-2-K3",
               "text": "Du kannst für ein Attribut einen passenden Datentyp begründen, zum Beispiel Datum, Ganzzahl oder Text, auch warum eine Postleitzahl als Text gespeichert wird: Führende Nullen bleiben erhalten, und gerechnet wird damit nicht.",
+              "kurz": "Datentyp für ein Attribut, etwa Postleitzahl",
               "stufe": 4,
               "herkunft": [
                 "beleg:2026H-A3-cb",
@@ -1423,6 +1539,7 @@
             {
               "id": "AP1-8-4-2-K5",
               "text": "Du kannst Einfüge-, Änderungs- und Löschanomalie unterscheiden.",
+              "kurz": "Einfüge-, Änderungs- und Löschanomalie",
               "stufe": 2,
               "herkunft": [
                 "beleg:2025F-A4-fb"
@@ -1431,6 +1548,7 @@
             {
               "id": "AP1-8-4-2-K6",
               "text": "Du kannst begründen, warum ein Wert, der sich aus anderen Spalten errechnen lässt, etwa der Gesamtpreis aus Einzelpreis und Menge, nicht zusätzlich gespeichert wird: Er ist versteckte Redundanz, und nach einer Änderung von Preis oder Menge kann er den übrigen Daten widersprechen; der Speicherplatz ist dabei das kleinere Problem.",
+              "kurz": "Errechenbare Werte nicht speichern",
               "stufe": 4,
               "herkunft": [
                 "buch:GS-5.8.3-S605"
@@ -1450,6 +1568,7 @@
           "kuer": [
             {
               "text": "Stammdaten ändern sich selten (Kundenname, Artikelbezeichnung), Bewegungsdaten entstehen laufend mit jedem Vorgang (Bestellmenge), Rechendaten berechnet das Programm (Gesamtpreis) und speichert sie deshalb meist nicht.",
+              "kurz": "Stammdaten, Bewegungsdaten und Rechendaten",
               "quellen": [
                 "buch:GS-2.4.13"
               ],
@@ -1482,6 +1601,7 @@
             {
               "id": "AP1-8-4-5-K1",
               "text": "Du kannst die Funktion eines Primärschlüssels beschreiben: Er kennzeichnet jeden Datensatz einer Tabelle eindeutig.",
+              "kurz": "Funktion des Primärschlüssels",
               "stufe": 2,
               "herkunft": [
                 "beleg:2025H-A4-aa"
@@ -1490,6 +1610,7 @@
             {
               "id": "AP1-8-4-5-K2",
               "text": "Du kannst den Zweck eines Fremdschlüssels beschreiben: Er verweist auf den Primärschlüssel einer anderen Tabelle und verbindet so die Tabellen.",
+              "kurz": "Zweck des Fremdschlüssels",
               "stufe": 2,
               "herkunft": [
                 "beleg:2025H-A4-ab"
@@ -1498,6 +1619,7 @@
             {
               "id": "AP1-8-4-5-K3",
               "text": "Du kannst den Vorteil verknüpfter Tabellen beschreiben: Jede Information wird nur einmal gespeichert und bleibt dadurch widerspruchsfrei.",
+              "kurz": "Vorteil verknüpfter Tabellen",
               "stufe": 2,
               "herkunft": [
                 "beleg:2025H-A4-ac"
@@ -1506,6 +1628,7 @@
             {
               "id": "AP1-8-4-5-K4",
               "text": "Du kannst die Phasen des Datenbankentwurfs in die richtige Reihenfolge bringen: Anforderungsanalyse, konzeptioneller Entwurf, logischer Entwurf, Verteilung im Netz, physischer Entwurf, Test, Anwendung und Wartung.",
+              "kurz": "Phasen des Datenbankentwurfs",
               "stufe": 2,
               "herkunft": [
                 "beleg:2023H-A4-ab"
@@ -1515,6 +1638,7 @@
             {
               "id": "AP1-8-4-5-K5",
               "text": "Du kannst Tabelle, Datensatz und Attribut einer relationalen Datenbank unterscheiden.",
+              "kurz": "Tabelle, Datensatz und Attribut",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.08"
@@ -1523,6 +1647,7 @@
             {
               "id": "AP1-8-4-5-K6",
               "text": "Du kannst den Aufbau eines Datenbanksystems erklären: Es besteht aus der Datenbasis und dem Datenbankmanagementsystem (DBMS), das die Daten speichert und nach dem Datenmodell verwaltet, mehreren Benutzern gleichzeitig Zugriff gibt und Datensicherheit und Datenschutz sicherstellt; Anwendungen greifen nur über seine Schnittstelle, meist SQL, auf die Daten zu.",
+              "kurz": "Aufbau eines Datenbanksystems mit DBMS",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.8.1-S587"
@@ -1531,6 +1656,7 @@
             {
               "id": "AP1-8-4-5-K7",
               "text": "Du kannst die Anforderungen an einen Primärschlüssel erklären: Er ist für jeden Datensatz eindeutig, minimal, besteht also aus so wenigen Spalten wie nötig, und unveränderlich, und jede Tabelle hat genau einen Primärschlüssel.",
+              "kurz": "Anforderungen an einen Primärschlüssel",
               "stufe": 2,
               "herkunft": [
                 "buch:GS-5.8.3-S600"
@@ -1539,6 +1665,7 @@
             {
               "id": "AP1-8-4-5-K8",
               "text": "Du kannst begründen, warum als Primärschlüssel meist ein künstlicher Schlüssel ohne weitere Bedeutung, etwa eine laufende Nummer, gewählt wird: Natürliche Merkmale wie Namen sind oft nicht eindeutig, und ein sprechender Schlüssel, der zum Beispiel die Postleitzahl enthält, wird beim Umzug falsch, lässt sich wegen der Verweise aus anderen Tabellen aber kaum ändern.",
+              "kurz": "Künstlicher statt natürlicher Primärschlüssel",
               "stufe": 4,
               "herkunft": [
                 "buch:GS-5.8.3-S600"
@@ -1547,6 +1674,7 @@
             {
               "id": "AP1-8-4-5-K9",
               "text": "Du kannst begründen, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
+              "kurz": "Sorgfältiger Datenbankentwurf auch bei Kleinprojekten",
               "stufe": 4,
               "herkunft": [
                 "buch:FS-3.7.2-S268"
@@ -1567,6 +1695,7 @@
           "kuer": [
             {
               "text": "Ergebnisse der Entwurfsphasen: Anforderungsanalyse – informelle Beschreibung, konzeptioneller Entwurf – ER-Modell, logischer Entwurf – normalisiertes relationales Modell, physischer Entwurf – mit SQL angelegtes, noch leeres Datenbankschema.",
+              "kurz": "Ergebnisse der Entwurfsphasen",
               "quellen": [
                 "buch:FS-3.7.2"
               ],
@@ -1591,6 +1720,7 @@
             {
               "id": "AP1-8-4-3-K1",
               "text": "Du kannst eine einfache Bildschirmmaske mit Beschriftungen, Eingabefeldern, Auswahlfeldern und Schaltflächen gestalten.",
+              "kurz": "Aufbau einer einfachen Bildschirmmaske",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.3"
@@ -1599,6 +1729,7 @@
             {
               "id": "AP1-8-4-3-K2",
               "text": "Du kannst Regeln der Softwareergonomie anwenden: Zusammengehöriges gruppieren, einheitliche Anordnung, verständliche Beschriftung, klare Fehlermeldungen.",
+              "kurz": "Regeln der Softwareergonomie",
               "stufe": 3,
               "herkunft": [
                 "katalog:AP1.04.07.3"
@@ -1607,6 +1738,7 @@
             {
               "id": "AP1-8-4-3-K3",
               "text": "Du kannst erklären, was Corporate Identity für eine Maske bedeutet: Logo, Farben und Schrift des Unternehmens einheitlich verwenden.",
+              "kurz": "Corporate Identity in der Maske",
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.07.3"
@@ -1615,6 +1747,7 @@
             {
               "id": "AP1-8-4-3-K4",
               "text": "Du kannst Anforderungen der Barrierefreiheit nennen: ausreichender Kontrast, skalierbare Schrift, Bedienung mit der Tastatur, Information nicht allein über Farbe.",
+              "kurz": "Anforderungen der Barrierefreiheit",
               "stufe": 1,
               "herkunft": [
                 "katalog:AP1.04.07.3"
@@ -1623,6 +1756,7 @@
             {
               "id": "AP1-8-4-3-K5",
               "text": "Du kannst für eine Auswahl in einer Bildschirmmaske das passende Steuerelement auswählen: Optionsfelder (Radiobuttons) oder ein aufklappbares Kombinationsfeld, wenn genau eine Möglichkeit gilt, Kontrollkästchen (Checkboxen) oder ein Listenfeld mit Mehrfachauswahl, wenn mehrere zugleich gelten dürfen.",
+              "kurz": "Passendes Steuerelement für eine Auswahl",
               "stufe": 4,
               "herkunft": [
                 "buch:FS2-1.3.4-S42"
@@ -1642,6 +1776,7 @@
           "kuer": [
             {
               "text": "Richtlinien zur Barrierefreiheit wie WCAG und BITV 2.0.",
+              "kurz": "Richtlinien wie WCAG und BITV 2.0",
               "quellen": [
                 "lernzettel:fi-de-2025",
                 "lernzettel:fi-de-2024"
@@ -1650,6 +1785,7 @@
             },
             {
               "text": "Die WCAG fassen barrierefreie Informationstechnik in vier Prinzipien: wahrnehmbar, bedienbar (z. B. vollständig per Tastatur), verständlich und robust (zuverlässig mit verschiedenen Geräten und Hilfsmitteln wie Screenreadern nutzbar).",
+              "kurz": "Vier Prinzipien der WCAG",
               "quellen": [
                 "buch:GS-2.4.12"
               ],
@@ -1677,6 +1813,7 @@
             {
               "id": "AP1-8-4-4-K1",
               "text": "Du kannst die Sinnbilder der EPK aus dem Anhang benennen: Ereignis, Funktion, Organisationseinheit, Objekt und die Konnektoren Und, Exklusives Oder, Offenes Oder.",
+              "kurz": "Sinnbilder der EPK",
               "stufe": 1,
               "herkunft": [
                 "katalog:ANH.notationen"
@@ -1685,6 +1822,7 @@
             {
               "id": "AP1-8-4-4-K2",
               "text": "Du kannst die Grundregel der EPK erklären: Ereignisse und Funktionen wechseln sich ab; der Ablauf beginnt und endet mit einem Ereignis.",
+              "kurz": "Grundregel der EPK",
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.notationen"
@@ -1693,6 +1831,7 @@
             {
               "id": "AP1-8-4-4-K3",
               "text": "Du kannst die Sinnbilder der BPM-Notation aus dem Anhang benennen: Aufgabe, Sequenzfluss, Nachrichtenfluss, Start-, Zwischen- und Endereignis, exklusives, inklusives und paralleles Gateway, Pool mit Lanes.",
+              "kurz": "Sinnbilder der BPM-Notation",
               "stufe": 1,
               "herkunft": [
                 "katalog:ANH.bpm-notation-business-process-modeling-notation"
@@ -1701,6 +1840,7 @@
             {
               "id": "AP1-8-4-4-K4",
               "text": "Du kannst einen dargestellten Ablauf beschreiben, auch wer welchen Schritt ausführt.",
+              "kurz": "Ablauf und Zuständigkeiten im Prozessdiagramm",
               "stufe": 2,
               "herkunft": [
                 "katalog:ANH.notationen",

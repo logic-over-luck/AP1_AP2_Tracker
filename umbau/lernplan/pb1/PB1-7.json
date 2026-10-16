@@ -43,6 +43,7 @@
       {
        "id": "PB1-7-1-1-K1",
        "text": "Du kannst ein XML-Dokument nach vorgegebener Struktur erstellen und lesen: Prolog, genau ein Wurzelelement, Elemente mit öffnendem und schließendem Tag, Attribute im öffnenden Tag, korrekte Verschachtelung.",
+       "kurz": "XML-Dokument: Aufbau und Regeln",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.20.2"
@@ -51,6 +52,7 @@
       {
        "id": "PB1-7-1-1-K2",
        "text": "Du kannst erläutern, wofür eine DTD oder ein XML-Schema (XSD) benötigt wird: Sie legt verbindlich fest, welche Elemente und Attribute in welcher Reihenfolge und Schachtelung vorkommen dürfen, sodass alle Dokumente einer Art gleich aufgebaut sind.",
+       "kurz": "Zweck von DTD und XML-Schema",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.20.2",
@@ -60,6 +62,7 @@
       {
        "id": "PB1-7-1-1-K3",
        "text": "Du kannst wohlgeformt (die XML-Regeln sind eingehalten: jedes Element geschlossen, richtig verschachtelt) und gültig (zusätzlich entspricht das Dokument der DTD bzw. dem Schema) erläutern.",
+       "kurz": "XML: wohlgeformt gegen gültig",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.20.2",
@@ -69,6 +72,7 @@
       {
        "id": "PB1-7-1-1-K4",
        "text": "Du kannst in einem XML-Dokument mit gegebener DTD Fehler finden und mit Zeilennummer, Fehler und verletzter Eigenschaft angeben, zum Beispiel ein fehlendes schließendes Tag (Wohlgeformtheit) oder ein Element an falscher Stelle (Gültigkeit).",
+       "kurz": "Fehler in XML mit DTD finden",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.20.2",
@@ -79,6 +83,7 @@
       {
        "id": "PB1-7-1-1-K5",
        "text": "Du kannst beurteilen, ob eine Schemavalidierung für Daten aus einer Schnittstelle ausreicht: Sie prüft nur Aufbau, Pflichtfelder und Datentypen, aber keine logischen Fehler wie einen aus Bruttowerten berechneten Nettobetrag; dafür sind zusätzlich inhaltliche Plausibilitätsprüfungen und Unit-Tests nötig.",
+       "kurz": "Grenzen der Schemavalidierung",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.02.2",
@@ -123,6 +128,7 @@
       {
        "id": "PB1-7-1-2-K1",
        "text": "Du kannst den Aufbau von JSON anwenden: Objekte in geschweiften Klammern mit Paaren aus Name und Wert, Arrays in eckigen Klammern, Werte als Zeichenkette, Zahl, Wahrheitswert, null, Objekt oder Array.",
+       "kurz": "Aufbau von JSON",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.20.3"
@@ -132,6 +138,7 @@
       {
        "id": "PB1-7-1-2-K2",
        "text": "Du kannst Datensätze aus Tabellen oder Ergebnisse eines Programms in JSON umwandeln: ein Objekt je Datensatz mit den Spalten als Namen, mehrere Datensätze als Array in vorgegebener Struktur.",
+       "kurz": "Tabellendaten in JSON umwandeln",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.20.3",
@@ -144,6 +151,7 @@
       {
        "id": "PB1-7-1-2-K3",
        "text": "Du kannst zusammengehörige Dokumente in JSON als Array in ein übergeordnetes Dokument einfügen, zum Beispiel die Verkaufsstellen in das Dokument des Weinguts; eingebettet wird, worauf meist gemeinsam zugegriffen wird, statt es wie in Tabellen über Schlüssel zu verknüpfen.",
+       "kurz": "Dokumente in JSON einbetten",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.20.3",
@@ -153,6 +161,7 @@
       {
        "id": "PB1-7-1-2-K4",
        "text": "Du kannst den Aufbau einer CSV-Datei anwenden: eine Zeile je Datensatz, Werte durch ein Trennzeichen (Komma oder Semikolon) getrennt, meist mit Kopfzeile; Werte, die das Trennzeichen enthalten, stehen in Anführungszeichen.",
+       "kurz": "Aufbau einer CSV-Datei",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.20.1"
@@ -161,6 +170,7 @@
       {
        "id": "PB1-7-1-2-K5",
        "text": "Du kannst Austauschformate ihrem Einsatzbereich zuordnen: CSV für einfache Tabellen und den Austausch mit Tabellenkalkulationen, JSON für Webschnittstellen und Dokumentdatenbanken, XML für Dokumente mit strenger Struktur und Schemaprüfung.",
+       "kurz": "Austauschformate und ihr Einsatzbereich",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.20.1",
@@ -196,6 +206,7 @@
       {
        "id": "PB1-7-1-3-K1",
        "text": "Du kannst Daten heterogener Quellen zusammenführen: auslesen, bereinigen und vereinheitlichen (Formate, Schreibweisen, Einheiten), in die Zielstruktur umformen und einspielen.",
+       "kurz": "Daten heterogener Quellen zusammenführen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.05.1",
@@ -205,6 +216,7 @@
       {
        "id": "PB1-7-1-3-K2",
        "text": "Du kannst einen Data Lake (Speicher, der Daten aus vielen Quellen im Rohformat aufnimmt) für eine Auswertung einsetzen: festlegen, ob Daten zunächst roh gesammelt oder vor dem Speichern aufbereitet werden.",
+       "kurz": "Data Lake für eine Auswertung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.05.2"
@@ -213,6 +225,7 @@
       {
        "id": "PB1-7-1-3-K3",
        "text": "Du kannst Open Data nutzen: frei zugängliche Daten über eine API-Schnittstelle oder als Datei abrufen und in die eigene Anwendung einbinden, zum Beispiel Wetter- oder Fahrplandaten.",
+       "kurz": "Open Data über API nutzen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.03.11"
@@ -222,6 +235,7 @@
      "kuer": [
       {
        "text": "Data Warehouse als Gegenstück zum Data Lake: Daten liegen dort bereits aufbereitet und strukturiert vor.",
+       "kurz": "Data Warehouse gegen Data Lake",
        "quellen": [
         "podcast:themen-ap2"
        ],
@@ -266,6 +280,7 @@
       {
        "id": "PB1-7-1-4-K1",
        "text": "Du kannst das Konzept einer REST-API beschreiben: Ressourcen sind über einen Webserver verfügbar und eindeutig über eine URL ansprechbar, Client und Server tauschen nur Daten aus und sind lose gekoppelt, jede Anfrage steht für sich (zustandslos).",
+       "kurz": "Konzept einer REST-API",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.21.1",
@@ -275,6 +290,7 @@
       {
        "id": "PB1-7-1-4-K2",
        "text": "Du kannst die CRUD-Operationen erläutern und ihnen HTTP-Methoden zuordnen: Create – POST (oder PUT), Read – GET, Update – PUT oder PATCH, Delete – DELETE.",
+       "kurz": "CRUD und HTTP-Methoden",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.04.21.1",
@@ -284,6 +300,7 @@
       {
        "id": "PB1-7-1-4-K3",
        "text": "Du kannst nach der Dokumentation einer vorhandenen API eine HTTP-Anfrage zusammenstellen und ihre Bestandteile ergänzen: Endpoint-URL mit Pfad und Abfrageparametern, HTTP-Methode, Kopfzeilen für Metainformationen wie Inhaltstyp und Autorisierung (API-Schlüssel oder Token weisen den Aufrufer aus), Body mit den Daten, oft als JSON.",
+       "kurz": "HTTP-Anfrage nach API-Dokumentation",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.21.1",
@@ -293,6 +310,7 @@
       {
        "id": "PB1-7-1-4-K4",
        "text": "Du kannst die Bedeutung der HTTP-Statuscode-Klassen nennen: 2xx Anfrage erfolgreich bearbeitet, 4xx Fehler durch die Anfrage des Clients (z. B. 404 nicht gefunden), 5xx Fehler auf der Serverseite.",
+       "kurz": "Klassen der HTTP-Statuscodes",
        "stufe": 1,
        "herkunft": [
         "beleg:2024S-PB1-A2-d"
@@ -301,6 +319,7 @@
       {
        "id": "PB1-7-1-4-K5",
        "text": "Du kannst SOAP als weitere Möglichkeit zur Nutzung von Diensten nennen: ein Protokoll mit Nachrichten in XML und einer festen Schnittstellenbeschreibung, im Unterschied zum Architekturstil REST auf Grundlage von HTTP.",
+       "kurz": "SOAP im Unterschied zu REST",
        "stufe": 1,
        "herkunft": [
         "katalog:AP2b.04.21.2"
@@ -309,6 +328,7 @@
       {
        "id": "PB1-7-1-4-K6",
        "text": "Du kannst eine Schnittstelle zwischen zwei Anwendungen festlegen: Austauschformat (z. B. JSON oder XML mit Schema), Endpunkte mit Methoden, Fehler- und Statusrückmeldungen, Authentifizierung.",
+       "kurz": "Schnittstelle zwischen zwei Anwendungen festlegen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.03.03.1",
@@ -339,6 +359,7 @@
       {
        "id": "PB1-7-1-5-K1",
        "text": "Du kannst das Hauptziel einer eRechnung erläutern: Sie wird automatisch verarbeitet; eine für Menschen lesbare Darstellung ist zweitrangig.",
+       "kurz": "Hauptziel der eRechnung",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.erechnung",
@@ -348,6 +369,7 @@
       {
        "id": "PB1-7-1-5-K2",
        "text": "Du kannst Aspekte einer digitalen Rechnung erläutern: Sie liegt digital vor (z. B. als PDF) und hat einen visuellen Aspekt (für Menschen lesbar) und einen Datenaspekt (maschinell verarbeitbar); bei der eRechnung ist der Datenaspekt strukturiert (z. B. XRechnung, ZUGFeRD), ein reines PDF gilt seit 2025 nicht als eRechnung.",
+       "kurz": "Aspekte einer digitalen Rechnung",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.erechnung",
@@ -357,6 +379,7 @@
       {
        "id": "PB1-7-1-5-K3",
        "text": "Du kannst Möglichkeiten nennen, mit denen eine Implementierung der Protokoll-Spezifikation entspricht: Test-Rechnungen bei einem zertifizierten Validator prüfen, Unit-Tests, eine zertifizierte Bibliothek nutzen, formale Validierung mit Schemadateien (XSD).",
+       "kurz": "Implementierung gegen die Spezifikation prüfen",
        "stufe": 1,
        "herkunft": [
         "katalog:ZB.erechnung",
@@ -366,6 +389,7 @@
       {
        "id": "PB1-7-1-5-K4",
        "text": "Du kannst erläutern, was beim Nutzen eines Online-Validators zu beachten ist: keine echten Firmen- oder Kundendaten hochladen, nur Testdaten; die Ergebnisse können fehlerhaft sein, wenn das Werkzeug nicht geprüft und zertifiziert ist.",
+       "kurz": "Online-Validator: was zu beachten ist",
        "stufe": 2,
        "herkunft": [
         "katalog:ZB.erechnung",
@@ -376,6 +400,7 @@
      "kuer": [
       {
        "text": "Rechtsrahmen der eRechnung in Deutschland: Empfangspflicht für Unternehmen seit 1.1.2025, Ausstellungspflicht gestaffelt ab 2027 (Umsatz über 800.000 Euro) und 2028 für alle; Formate nach EN 16931 wie XRechnung und ZUGFeRD.",
+       "kurz": "Rechtsrahmen der eRechnung in Deutschland",
        "quellen": [
         "podcast:themen-pb1"
        ],
@@ -383,6 +408,7 @@
       },
       {
        "text": "Weitere Begriffe rund um XML und REST: XSLT, Parser (SAX, DOM), YAML, HATEOAS, WSDL, Webservices und SOA.",
+       "kurz": "Weitere Begriffe zu XML und REST",
        "quellen": [
         "podcast:themen-ap2"
        ],

@@ -66,6 +66,7 @@
       {
        "id": "PB2-1-1-1-K1",
        "text": "Du kannst eine Funktion zur vorgegebenen Signatur (Name, Parameter mit Datentyp, Rückgabetyp) so in Pseudocode schreiben, dass ein Dritter sie ohne Kenntnis deiner Programmiersprache lesen kann, und dabei nur die vorgegebenen Klassen, Methoden und Datenstrukturen verwenden: Listen mit add, size und get, Getter von Objekten und vorgegebene Methoden wie getDay() oder getTimeTable(id), aber keine eigenen Hilfsfunktionen, die es nicht gibt.",
+       "kurz": "Pseudocode zur vorgegebenen Signatur",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.03.05",
@@ -77,6 +78,7 @@
       {
        "id": "PB2-1-1-1-K2",
        "text": "Du kannst über die Pseudocode-Grundlagen aus AP1 hinaus Schleifengrenzen beim Schreiben richtig setzen (Index von 0 bis Länge − 1; greifst du auf das Nachbarelement i − 1 oder i + 1 zu, beginnt die Schleife eine Stelle später oder endet eine Stelle früher) und eine Schleife mit einer zusätzlichen Bedingung (Merker oder Zähler) vorzeitig beenden, sobald das Ergebnis feststeht.",
+       "kurz": "Schleifengrenzen und vorzeitiger Schleifenabbruch",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16.1",
@@ -88,6 +90,7 @@
       {
        "id": "PB2-1-1-1-K3",
        "text": "Du kannst zweidimensionale Arrays verarbeiten: Zeile und Spalte über zwei Indizes ansprechen, eine Zeile anhand eines Schlüsselwerts (z. B. Monat und Tag) suchen und die Spalten dieser Zeile durchlaufen, auch wenn die Nutzdaten erst ab einer bestimmten Spalte beginnen (Zeitslot j steht in Spalte 2 + j).",
+       "kurz": "Zweidimensionale Arrays: Zeile suchen, Spalten durchlaufen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16.1",
@@ -98,6 +101,7 @@
       {
        "id": "PB2-1-1-1-K5",
        "text": "Du kannst im Pseudocode Sonderfälle vor dem ersten Zugriff abfangen und dafür den festgelegten Rückgabewert liefern, zum Beispiel eine leere Liste vor get(0) (Rückgabe null), einen Sonderwert als Parameter (Zeitslot −1 heißt „beliebiger Slot“), keinen passenden Eintrag (Rückgabe false) oder eine Division durch null, wenn nichts gezählt wurde.",
+       "kurz": "Sonderfälle vor dem ersten Zugriff",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -108,6 +112,7 @@
       {
        "id": "PB2-1-1-1-K6",
        "text": "Du kannst bei Rechnungen im Pseudocode die Datentypen beachten: eine ungewollte Ganzzahldivision vermeiden (getMaxPersonen() / 2.0 statt / 2), eine Prozentschwelle mit ganzen Zahlen ohne Abschneiden formulieren (belegt * 100 > 80 * anzahlBetten statt belegt / anzahlBetten > 0.8) und Kommazahlen nicht in einer Integer-Variablen speichern.",
+       "kurz": "Datentypen bei Rechnungen im Pseudocode",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16.1",
@@ -118,6 +123,7 @@
       {
        "id": "PB2-1-1-1-K7",
        "text": "Du kannst die Kontrollstrukturen eines Algorithmus statt in Pseudocode als Aktivitätsdiagramm abbilden und zwischen beiden Formen übertragen: eine Zählschleife mit Initialisierung, Prüfung und Schrittweite als eigene Aktionen, geschachtelte Schleifen und Verzweigungen, ohne dass Bedingungen fehlen oder sich überschneiden.",
+       "kurz": "Kontrollstrukturen als Aktivitätsdiagramm",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.02.1",
@@ -185,6 +191,7 @@
       {
        "id": "PB2-1-1-2-K1",
        "text": "Du kannst eine Liste oder ein Array durchlaufen und die Elemente, die eine oder mehrere Bedingungen erfüllen, in eine Ergebnisliste übernehmen und diese zurückgeben.",
+       "kurz": "Elemente nach Bedingungen filtern",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -194,6 +201,7 @@
       {
        "id": "PB2-1-1-2-K2",
        "text": "Du kannst zählen, summieren und einen Durchschnitt berechnen, auch nur für die Elemente, die eine Bedingung erfüllen, zum Beispiel die Tage, an denen ein Kurs besser als der Index war.",
+       "kurz": "Zählen, Summieren und Durchschnitt",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -204,6 +212,7 @@
       {
        "id": "PB2-1-1-2-K3",
        "text": "Du kannst das kleinste oder größte Element nach einem Kriterium bestimmen: mit dem ersten Element oder dem größten bzw. kleinsten möglichen Wert (z. B. Integer.MAX_VALUE, Double.MAX_VALUE) beginnen, jedes weitere vergleichen und neben dem bisher besten Wert auch seinen Index merken; auch das Element mit der kleinsten Abweichung von einem Zielwert und wiederholt, bis alle Elemente verbraucht sind (nächstgelegene Position wählen, übernehmen und aus der Liste entfernen).",
+       "kurz": "Kleinstes oder größtes Element mit Index",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -215,6 +224,7 @@
       {
        "id": "PB2-1-1-2-K4",
        "text": "Du kannst zwei Listen mit verschachtelten Schleifen abgleichen, zum Beispiel ob eine Reservierung denselben Tisch am selben Datum belegt, und über einen Datumsbereich Tag für Tag zählen (date = date + 1), wie viele Einträge einen Tag im Zeitraum von–bis enthalten; dabei setzt du die Grenzen genau (Aufnahmetag zählt, Entlassungstag nicht: datumVon <= tag < datumBis).",
+       "kurz": "Zwei Listen und Zeiträume abgleichen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -225,6 +235,7 @@
       {
        "id": "PB2-1-1-2-K5",
        "text": "Du kannst Häufigkeiten je Schlüssel zählen: das Ergebnisarray vorher in passender Größe anlegen (ein- oder zweidimensional, z. B. new Integer[15] oder Tage des Monats × 10 Öffnungsstunden), den Index aus dem Fachwert berechnen (Tag − 1, Stunde − 9, Haltestelle − 1) und den Zähler an dieser Stelle erhöhen.",
+       "kurz": "Häufigkeiten je Schlüssel im Ergebnisarray",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -235,6 +246,7 @@
       {
        "id": "PB2-1-1-2-K7",
        "text": "Du kannst aufeinanderfolgende Elemente miteinander verrechnen (Element i mit Element i − 1, wenn beide dasselbe Datum haben; Spalte m + 1 minus Spalte m) und auf nach einem Schlüssel sortierte Daten den Gruppenwechsel anwenden: bei Wechsel des Schlüssels das Ergebnis der Gruppe ausgeben oder übernehmen, die Gruppenwerte zurücksetzen und die letzte Gruppe nach der Schleife nicht vergessen.",
+       "kurz": "Nachbarelemente verrechnen und Gruppenwechsel",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.16",
@@ -271,6 +283,7 @@
       {
        "id": "PB2-1-1-3-K1",
        "text": "Du kannst in einer vorhandenen Klasse eine Methode ergänzen, die über ein Attribut ein anderes Objekt nutzt (this.fahrplanService.getAbfahrten(…)), statische Methoden wie DateTime.now() aufruft und die Rückgabewerte weiterverarbeitet, auch mit einer vorgegebenen Vergleichsmethode wie compare(), deren Rückgabe −1, 0 oder 1 du nach der Beschreibung richtig deutest.",
+       "kurz": "Methode mit fremdem Objekt und compare()",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.19",
@@ -280,6 +293,7 @@
       {
        "id": "PB2-1-1-3-K2",
        "text": "Du kannst eine Methode nach Vorgabe implementieren, die ein Objekt erzeugt, befüllt und zurückgibt, zum Beispiel eine HTTP-Antwort mit Statuscode, Kopfzeilen (Content-Type, Content-Length) und Body.",
+       "kurz": "Methode, die ein Objekt erzeugt und zurückgibt",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.19",
@@ -289,6 +303,7 @@
       {
        "id": "PB2-1-1-3-K3",
        "text": "Du kannst eine private Hilfsmethode schreiben, die aus einer sortierten Liste von Objekten nur die Einträge ab einem Zeitpunkt übernimmt, das Ergebnisarray in der Größe der Höchstzahl anlegt und aufhört, sobald diese erreicht ist.",
+       "kurz": "Hilfsmethode: Einträge ab Zeitpunkt bis Höchstzahl",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.19",

@@ -2458,6 +2458,9 @@ body {
 .np-zeilen {
   gap: var(--s-1);
 }
+.koennen.np-zeilen {
+  padding-left: calc(var(--s-5) + 0.5em);
+}
 .np-zeilen--kuer {
   margin: 0;
   padding-left: var(--s-5);
@@ -2473,7 +2476,8 @@ body {
 }
 .np-zeile__knopf {
   flex: 0 1 auto;
-  min-width: 4em;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   padding: 0;
   border: 0;
@@ -2494,7 +2498,7 @@ body {
   color: var(--akzent);
 }
 .np-zeile__marken {
-  flex: 0 3 auto;
+  flex: 1 1000 0;
   min-width: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -2502,6 +2506,15 @@ body {
 }
 .np-zeile__auf {
   margin: var(--s-1) 0 var(--s-2);
+}
+.np-zeile__marken-auf {
+  display: none;
+  margin-top: var(--s-1);
+}
+@media (max-width: 640px) {
+  .np-zeile__marken-auf {
+    display: block;
+  }
 }
 .np-zeile__satz {
   margin: 0;

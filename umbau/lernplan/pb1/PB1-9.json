@@ -53,6 +53,7 @@
       {
        "id": "PB1-9-1-1-K1",
        "text": "Du kannst qualitätssichernde Maßnahmen für ein Softwareprojekt beschreiben: standardisiertes Vorgehensmodell, übliche Entwicklungswerkzeuge (IDE, CI/CD), festgelegte Testumgebungen, -verfahren und -daten, Code-Reviews, Vorgaben zur Dokumentation, qualifizierte und zertifizierte Mitarbeiter.",
+       "kurz": "Qualitätssichernde Maßnahmen im Softwareprojekt",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.03.01.2",
@@ -63,6 +64,7 @@
       {
        "id": "PB1-9-1-1-K2",
        "text": "Du kannst Stellung nehmen, ob ausschließlich automatische Code-Reviews und Unit-Tests zur Qualitätssicherung reichen: Sie decken nicht alle Fälle ab (Bedienung, Zusammenspiel der Komponenten, Erfüllung der Anforderungen), deshalb sind weitere, auch manuelle Tests nötig.",
+       "kurz": "Grenzen automatischer Code-Reviews und Unit-Tests",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.03.01.2",
@@ -72,6 +74,7 @@
       {
        "id": "PB1-9-1-1-K3",
        "text": "Du kannst den kontinuierlichen Verbesserungsprozess (KVP) erklären: ständige Verbesserung in kleinen Schritten, an der alle Beteiligten mitwirken.",
+       "kurz": "Kontinuierlicher Verbesserungsprozess (KVP)",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.03.02.1"
@@ -80,6 +83,7 @@
       {
        "id": "PB1-9-1-1-K4",
        "text": "Du kannst Kennzahlen zur Messung der Zielerreichung in der Softwareentwicklung festlegen und im Soll-Ist-Vergleich (Berechnung wie in AP1) anwenden, zum Beispiel gefundene Fehler je Release, Anteil bestandener Testfälle, Bearbeitungszeit von Störungen, Verfügbarkeit.",
+       "kurz": "Kennzahlen zur Zielerreichung im Soll-Ist-Vergleich",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.02.1",
@@ -110,6 +114,7 @@
       {
        "id": "PB1-9-1-2-K1",
        "text": "Du kannst ein Paritätsbit bestimmen: bei gerader Parität so ergänzen, dass die Anzahl der Einsen gerade ist, bei ungerader Parität so, dass sie ungerade ist.",
+       "kurz": "Paritätsbit bei gerader und ungerader Parität",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.01.1"
@@ -118,6 +123,7 @@
       {
        "id": "PB1-9-1-2-K2",
        "text": "Du kannst erklären, dass ein Paritätsbit einen einzelnen Bitfehler erkennt, ihn aber nicht findet oder berichtigt, und zwei gleichzeitig gekippte Bits nicht bemerkt.",
+       "kurz": "Paritätsbit: was es erkennt und was nicht",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.03.01.1"
@@ -126,6 +132,7 @@
       {
        "id": "PB1-9-1-2-K3",
        "text": "Du kannst Redundanz als Prüfverfahren anwenden: zusätzliche Prüfinformation mitspeichern oder mitsenden, zum Beispiel eine Prüfsumme oder Prüfziffer, die der Empfänger neu berechnet und vergleicht, etwa die Frame Check Sequence (CRC) im Ethernet-Frame.",
+       "kurz": "Redundanz als Prüfverfahren: Prüfsumme, CRC",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.01.1"
@@ -164,6 +171,7 @@
       {
        "id": "PB1-9-1-3-K1",
        "text": "Du kannst statische Testverfahren (ohne Ausführung: Review, Schreibtischtest, Codeanalyse) und dynamische Testverfahren (Ausführen mit Testdaten) unterscheiden und je Beispiele nennen.",
+       "kurz": "Statische und dynamische Testverfahren",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.02.01.2",
@@ -173,6 +181,7 @@
       {
        "id": "PB1-9-1-3-K2",
        "text": "Du kannst Black-Box-Test (Funktionstest gegen die Anforderungen ohne Kenntnis des Codes, oft von Personen außerhalb der Entwicklung) und White-Box-Test (Testfälle aus dem inneren Aufbau des Codes, durch das Entwicklungsteam) beschreiben.",
+       "kurz": "Black-Box- und White-Box-Test: Unterschied",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.03.08.1",
@@ -182,6 +191,7 @@
       {
        "id": "PB1-9-1-3-K3",
        "text": "Du kannst Black-Box- und White-Box-Test mit ihren Stärken und Grenzen einsetzen: Der Black-Box-Test prüft aus Sicht der Anforderungen und findet fehlende Funktionen, zeigt aber nicht, welcher Code ungetestet bleibt; der White-Box-Test deckt den Code systematisch ab, bemerkt aber keine fehlenden Anforderungen.",
+       "kurz": "Black-Box- und White-Box-Test: Stärken und Grenzen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.03.08.1"
@@ -190,6 +200,7 @@
       {
        "id": "PB1-9-1-3-K4",
        "text": "Du kannst den Extremwertetest erklären: mit den kleinsten und größten zulässigen Werten sowie knapp darüber und darunter testen, weil an Grenzen besonders oft Fehler stecken.",
+       "kurz": "Extremwertetest an den Grenzen",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.02.01.2"
@@ -239,6 +250,7 @@
       {
        "id": "PB1-9-1-4-K1",
        "text": "Du kannst Komponententest (auch Modul- oder Unit-Test: ein Baustein wird getrennt vom Rest automatisch und beliebig oft wiederholbar geprüft), Integrationstest, Systemtest und Abnahmetest unterscheiden und in die richtige Reihenfolge bringen.",
+       "kurz": "Teststufen vom Komponenten- bis zum Abnahmetest",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.02.01.4",
@@ -248,6 +260,7 @@
       {
        "id": "PB1-9-1-4-K2",
        "text": "Du kannst Last- bzw. Belastungstest und Performancetest erklären: Verhalten, Antwortzeiten und Ressourcenverbrauch werden bei erwarteter Last und bei Spitzenlast gemessen, um Engpässe vor dem Betrieb zu finden.",
+       "kurz": "Last- und Performancetest",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.03.01.2",
@@ -257,6 +270,7 @@
       {
        "id": "PB1-9-1-4-K3",
        "text": "Du kannst den End-to-End-Test erklären: Ein vollständiger Ablauf wird aus Sicht des Benutzers durch das ganze System geprüft, von der Oberfläche bis zur Datenbank.",
+       "kurz": "End-to-End-Test aus Benutzersicht",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.03.1"
@@ -265,6 +279,7 @@
       {
        "id": "PB1-9-1-4-K4",
        "text": "Du kannst beurteilen, welche Teststufen ein Testkonzept für eine Anwendung vorsehen muss, und begründen, warum keine Stufe eine andere ersetzt.",
+       "kurz": "Nötige Teststufen eines Testkonzepts",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.02.01.4"
@@ -274,6 +289,7 @@
      "kuer": [
       {
        "text": "Weitere Testarten wie Smoke- und Regressionstest, die Testpyramide sowie Test-Doubles (Stubs, Mocks).",
+       "kurz": "Smoke-, Regressionstest, Testpyramide und Test-Doubles",
        "quellen": [
         "podcast:themen-ap2"
        ],
@@ -311,6 +327,7 @@
       {
        "id": "PB1-9-1-5-K1",
        "text": "Du kannst Inhalte eines Testkonzepts beschreiben: Teststrategie mit Testzielen und Testmethoden, Teststufen und ihr Zusammenspiel, Testumgebung und Automatisierung, Umfang der Testdokumentation, Testplan (wer testet was wann), Auswertung der Ergebnisse, Schätzung von Aufwand und Kosten.",
+       "kurz": "Inhalte eines Testkonzepts",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.03.2",
@@ -320,6 +337,7 @@
       {
        "id": "PB1-9-1-5-K2",
        "text": "Du kannst den Ablauf des Testprozesses beschreiben: Tests planen, Testfälle und Testdaten vorbereiten, durchführen, protokollieren, auswerten, Fehler beheben lassen und erneut testen.",
+       "kurz": "Ablauf des Testprozesses",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.03.2"
@@ -328,6 +346,7 @@
       {
        "id": "PB1-9-1-5-K3",
        "text": "Du kannst ein Testprotokoll für eine Software erstellen (Aufbau wie in AP1-1-5-3), zusätzlich mit Eingabedaten, Softwareversion und Tester.",
+       "kurz": "Testprotokoll für eine Software",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.02.4",
@@ -337,6 +356,7 @@
       {
        "id": "PB1-9-1-5-K4",
        "text": "Du kannst Testprotokolle analysieren: Häufungen von Fehlern erkennen, Ursachen eingrenzen und entscheiden, ob die Software freigegeben werden kann.",
+       "kurz": "Auswertung von Testprotokollen und Freigabe",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.03.2.4",
@@ -346,6 +366,7 @@
       {
        "id": "PB1-9-1-5-K5",
        "text": "Du kannst ein Abnahmeprotokoll für eine Software erstellen (Inhalte wie in AP1-1-4-2), zusätzlich mit Softwareversion und Ergebnis der Abnahmetests, und es im Abschlussprotokoll mit Soll-Ist-Vergleich und Erfahrungen zusammenführen.",
+       "kurz": "Abnahme- und Abschlussprotokoll für Software",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.02.5",
@@ -394,6 +415,7 @@
       {
        "id": "PB1-9-1-6-K1",
        "text": "Du kannst Benutzerhandbuch (Bedienung aus Sicht der Anwender) und Handbuch für Systembetreuer (Installation, Konfiguration, Betrieb, Fehlerbehebung) nach Zielgruppe und Inhalt unterscheiden.",
+       "kurz": "Benutzerhandbuch gegen Handbuch für Systembetreuer",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.13"
@@ -402,6 +424,7 @@
       {
        "id": "PB1-9-1-6-K2",
        "text": "Du kannst eine Programmdokumentation erstellen und erweitern: Aufbau und Module, Schnittstellen, Datenmodell, je Klasse und Methode Zweck, Parameter, Rückgabewert und Voraussetzungen; bei der Erweiterung einer Bibliothek auch Konstruktoren, geerbte Methoden und implementierte Interfaces.",
+       "kurz": "Programmdokumentation: Inhalt und Erweiterung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.13.1",
@@ -411,6 +434,7 @@
       {
        "id": "PB1-9-1-6-K3",
        "text": "Du kannst eine Konfigurationsdokumentation erstellen: Einstellungen, Versionen, Abhängigkeiten und Zugänge so festhalten, dass sich die Umgebung wiederherstellen lässt.",
+       "kurz": "Konfigurationsdokumentation für die Wiederherstellung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.13.1"
@@ -419,6 +443,7 @@
       {
        "id": "PB1-9-1-6-K4",
        "text": "Du kannst für einen wiederkehrenden Vorgang eine Checkliste erstellen, zum Beispiel für die Auslieferung eines Releases oder die Einrichtung einer Testumgebung.",
+       "kurz": "Checkliste für wiederkehrende Vorgänge",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.13.2"

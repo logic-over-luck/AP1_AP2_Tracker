@@ -48,6 +48,7 @@
       {
        "id": "PB1-12-1-1-K1",
        "text": "Du kannst Verfügbarkeit als Anteil der Betriebszeit an der Gesamtzeit erklären und berechnen, zum Beispiel entsprechen 99,9 % im Jahr knapp 9 Stunden Ausfall.",
+       "kurz": "Verfügbarkeit: Definition und Berechnung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.08"
@@ -56,6 +57,7 @@
       {
        "id": "PB1-12-1-1-K2",
        "text": "Du kannst die Verfügbarkeitsanforderungen von Anwendungsdiensten beurteilen: Echtzeitkommunikation (Ausfall sofort spürbar), Mailserver (kurze Ausfälle durch Zwischenspeicherung beim Absender überbrückbar), Webserver (Kunden und Umsatz), Groupware (Zusammenarbeit), Datenbanken (alle abhängigen Anwendungen stehen still).",
+       "kurz": "Verfügbarkeitsanforderungen verschiedener Anwendungsdienste",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.08.1",
@@ -68,6 +70,7 @@
       {
        "id": "PB1-12-1-1-K3",
        "text": "Du kannst für einen Dienst eine angemessene Verfügbarkeit festlegen und begründen, welche Maßnahmen dafür nötig sind.",
+       "kurz": "Angemessene Verfügbarkeit und nötige Maßnahmen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.08",
@@ -105,6 +108,7 @@
       {
        "id": "PB1-12-1-2-K1",
        "text": "Du kannst Risiken für den Betrieb identifizieren, zum Beispiel einzelne Fehlerquellen ohne Ersatz, Abhängigkeit von einem Rechenzentrum oder einer Leitung, Engpässe in der Bandbreite, veraltete Hardware.",
+       "kurz": "Risiken für den Betrieb",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.09",
@@ -114,6 +118,7 @@
       {
        "id": "PB1-12-1-2-K2",
        "text": "Du kannst MTBF (mittlere Betriebsdauer zwischen zwei Ausfällen) und AFR (Anteil der Geräte, die in einem Jahr ausfallen) erklären und beim Planen von Ersatzteilen und Redundanz berücksichtigen.",
+       "kurz": "MTBF und AFR bei der Ersatzteilplanung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.09.2"
@@ -122,6 +127,7 @@
       {
        "id": "PB1-12-1-2-K3",
        "text": "Du kannst ein Notfallkonzept (Disaster Recovery) planen: wer nach einem schweren Ausfall was in welcher Reihenfolge tut, wie lange der Ausfall dauern und wie viele Daten verloren gehen dürfen, Ausweichsysteme, regelmäßige Übungen; Konzept und Maßnahmen werden wie jeder Verbesserungsprozess im PDCA-Zyklus (AP1) geprüft und nachgesteuert.",
+       "kurz": "Notfallkonzept (Disaster Recovery) im PDCA-Zyklus",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.09.3",
@@ -159,6 +165,7 @@
       {
        "id": "PB1-12-1-3-K1",
        "text": "Du kannst den Einsatz einer USV beurteilen: Sie überbrückt Stromausfälle und Spannungsschwankungen, bis Systeme geordnet herunterfahren oder ein Notstromaggregat übernimmt; Leistung und Überbrückungszeit müssen zum Bedarf passen.",
+       "kurz": "Einsatz einer USV",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.10.1"
@@ -167,6 +174,7 @@
       {
        "id": "PB1-12-1-3-K2",
        "text": "Du kannst hardwaretechnische Redundanz beurteilen: doppelte Netzteile, Server im Verbund (Cluster), zweite Leitung, zweites Rechenzentrum; der Ausfall eines Teils beendet den Betrieb nicht.",
+       "kurz": "Hardwaretechnische Redundanz: Netzteile, Cluster, Leitungen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.10.2"
@@ -175,6 +183,7 @@
       {
        "id": "PB1-12-1-3-K3",
        "text": "Du kannst die RAID-Level 0, 1, 5 und 10 nach Ausfallsicherheit, nutzbarer Kapazität und Geschwindigkeit unterscheiden und für einen Einsatz beurteilen, welcher passt.",
+       "kurz": "RAID-Level 0, 1, 5 und 10",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.10.2"
@@ -183,6 +192,7 @@
       {
        "id": "PB1-12-1-3-K4",
        "text": "Du kannst die nutzbare Kapazität eines RAID-Verbunds berechnen, zum Beispiel RAID 1 aus zwei 4-TB-Platten 4 TB, RAID 5 aus vier 2-TB-Platten 6 TB, RAID 10 aus vier 2-TB-Platten 4 TB (Herstellerangaben dezimal in TB; als Datenmenge in TiB umrechnen wie in AP1).",
+       "kurz": "Nutzbare Kapazität eines RAID-Verbunds",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.10.2"
@@ -191,6 +201,7 @@
       {
        "id": "PB1-12-1-3-K5",
        "text": "Du kannst über die Backup-Verfahren aus AP1 hinaus begründen, warum RAID kein Backup ersetzt (Löschen, Verschlüsseln durch Schadsoftware und Fehlbedienung werden sofort auf alle Platten übertragen), und den Einsatz von Snapshots beurteilen.",
+       "kurz": "RAID ist kein Backup, dazu Snapshots",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.10.2",
@@ -204,6 +215,7 @@
      "kuer": [
       {
        "text": "RAID 6, JBOD und DAS.",
+       "kurz": "RAID 6, JBOD und DAS",
        "quellen": [
         "podcast:themen-ap2"
        ],
@@ -253,6 +265,7 @@
       {
        "id": "PB1-12-2-1-K1",
        "text": "Du kannst festlegen, welche Monitoringdaten erfasst werden: Auslastung von Prozessor, Arbeitsspeicher und Datenträgern, Netzlast, Antwortzeiten, Erreichbarkeit von Diensten, Fehlermeldungen in Protokollen.",
+       "kurz": "Zu erfassende Monitoringdaten",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.11.1"
@@ -261,6 +274,7 @@
       {
        "id": "PB1-12-2-1-K2",
        "text": "Du kannst Schwellwerte für Warnung und Alarm festlegen, zum Beispiel Warnung ab 80 % und Alarm ab 95 % Speicherbelegung.",
+       "kurz": "Schwellwerte für Warnung und Alarm",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.11.6"
@@ -269,6 +283,7 @@
       {
        "id": "PB1-12-2-1-K3",
        "text": "Du kannst SNMP (Zustandswerte von Netzwerkgeräten abfragen und Meldungen empfangen) und S.M.A.R.T. (Selbstüberwachung von Festplatten und SSDs) im Monitoring anwenden.",
+       "kurz": "SNMP und S.M.A.R.T. im Monitoring",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.11.2"
@@ -277,6 +292,7 @@
       {
        "id": "PB1-12-2-1-K4",
        "text": "Du kannst eine Systemlastanalyse durchführen und daraus Ressourcenengpässe interpretieren, zum Beispiel dauerhaft volle Prozessorlast zu Stoßzeiten oder knapper Arbeitsspeicher mit viel Auslagerung.",
+       "kurz": "Systemlastanalyse und Ressourcenengpässe",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.11.3",
@@ -286,6 +302,7 @@
       {
        "id": "PB1-12-2-1-K5",
        "text": "Du kannst Predictive Maintenance anwenden: aus Messwerten wie S.M.A.R.T.-Werten oder Temperaturen vorhersagen, wann ein Teil ausfällt, und es vorher tauschen.",
+       "kurz": "Predictive Maintenance aus Messwerten",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.11.4"
@@ -324,6 +341,7 @@
       {
        "id": "PB1-12-2-2-K1",
        "text": "Du kannst Vor- und Nachteile eines Ticketsystems im Incident Management erläutern: Zeitersparnis durch strukturierte Abläufe, Echtzeit-Übersicht mit Auswertungen und Wissensdatenbank, zugesicherte Reaktionszeiten für Kunden gegenüber Aufwand und Kosten für Einführung und Pflege.",
+       "kurz": "Ticketsystem im Incident Management: Vor- und Nachteile",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.12.3",
@@ -333,6 +351,7 @@
       {
        "id": "PB1-12-2-2-K2",
        "text": "Du kannst Monitoringergebnisse analysieren und korrektive Maßnahmen bestimmen, zum Beispiel bei Speicherengpass erweitern oder aufräumen, bei Überlast zu Stoßzeiten die Last verteilen oder Ressourcen erhöhen; vorbeugender Tausch nach Messwerten ist Predictive Maintenance.",
+       "kurz": "Korrektive Maßnahmen aus Monitoringergebnissen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12"
@@ -341,6 +360,7 @@
       {
        "id": "PB1-12-2-2-K3",
        "text": "Du kannst analysieren, für welche wiederkehrenden Störungen eine Standard Operation Procedure sinnvoll ist, und sie als festgelegte Schritt-für-Schritt-Anweisung bestimmen.",
+       "kurz": "Standard Operation Procedure für wiederkehrende Störungen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12.1"
@@ -349,6 +369,7 @@
       {
        "id": "PB1-12-2-2-K4",
        "text": "Du kannst ein Service Level Agreement analysieren (zugesagte Verfügbarkeit, Reaktions- und Lösungszeiten je Service Level) und bestimmen, ob eine Störung danach rechtzeitig bearbeitet wurde; „Service Level 1 bis 3“ meint je nach Vertrag die vereinbarten Leistungsstufen oder die Support-Stufen First, Second, Third Level aus AP1.",
+       "kurz": "Service Level Agreement: Reaktions- und Lösungszeiten",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12.2"
@@ -357,6 +378,7 @@
       {
        "id": "PB1-12-2-2-K5",
        "text": "Du kannst an einem Störungsverlauf analysieren, wann fachlich (an die nächste Support-Stufe, siehe AP1-1-3-1) oder hierarchisch (an Vorgesetzte) eskaliert werden muss.",
+       "kurz": "Fachliche und hierarchische Eskalation",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.12.4",
@@ -393,6 +415,7 @@
       {
        "id": "PB1-12-2-3-K1",
        "text": "Du kannst IaaS (gemietete Infrastruktur wie virtuelle Server und Speicher), PaaS (Plattform, auf der eigene Anwendungen laufen) und SaaS (fertige Anwendung über das Netz) benennen.",
+       "kurz": "IaaS, PaaS und SaaS",
        "stufe": 1,
        "herkunft": [
         "katalog:AP2b.02.04.2"
@@ -401,6 +424,7 @@
       {
        "id": "PB1-12-2-3-K2",
        "text": "Du kannst für IaaS, PaaS und SaaS einordnen, wofür der Anbieter und wofür der Kunde verantwortlich ist, zum Beispiel bei IaaS der Kunde für Betriebssystem und Anwendung, bei SaaS nur für Daten und Benutzer.",
+       "kurz": "Verantwortung von Anbieter und Kunde je Modell",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.02.04.2"
@@ -409,6 +433,7 @@
       {
        "id": "PB1-12-2-3-K3",
        "text": "Du kannst über die Wahl zwischen On-Premises und Cloud aus AP1 hinaus für einen beschriebenen Bedarf zwischen IaaS, PaaS und SaaS auswählen und die Wahl mit eigenem Fachwissen, Verantwortung für Betrieb und Updates sowie Kosten begründen.",
+       "kurz": "Auswahl zwischen IaaS, PaaS und SaaS",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.02.04.1",
@@ -423,6 +448,7 @@
      "kuer": [
       {
        "text": "Weitere Modelle und Begriffe: Private, Public und Hybrid Cloud, Serverless und Function as a Service.",
+       "kurz": "Private, Public und Hybrid Cloud, Serverless",
        "quellen": [
         "podcast:themen-ap2"
        ],

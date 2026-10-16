@@ -275,7 +275,7 @@ function dublette(lp, mitNeu) {
   sp.bausteine.push({ id });
   sp.baut_auf = [...(sp.baut_auf ?? []), x.stichpunkte[0]];
   sp.koennen = sp.koennen.slice(0, 6);
-  const k = { id: `${sp.id}-K99`, text: 'Du kannst das beurteilen.', stufe: x.stufe + 1, herkunft: [`katalog:${id}`] }; // tiefer als AP1, damit nur „neu“ entscheidet
+  const k = { id: `${sp.id}-K99`, text: 'Du kannst das beurteilen.', kurz: 'Testfall zum Beurteilen', stufe: x.stufe + 1, herkunft: [`katalog:${id}`] }; // tiefer als AP1, damit nur „neu“ entscheidet
   if (mitNeu) k.neu = { gegenueber: [x.stichpunkte[0]], was: 'Testfall: etwas wirklich Neues' };
   sp.koennen.push(k);
 }
@@ -367,7 +367,7 @@ test('Deckung P47: jeder gedeckte Baustein ist ein WISO-Baustein und zeigt auf S
 // ---------- Regelwerk v2.0: Lehrbuch als Tiefe (D1–D10, UMBAU.md 4.0) ----------
 test('Regelwerk 2.0: Abschnitt buch mit Regel K, Herkunftsformat, Band-Kürzeln und F3 3–10', () => {
   const r = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
-  assert.ok(['2.0', '2.1'].includes(r.version));
+  assert.ok(['2.0', '2.1', '2.2'].includes(r.version));
   assert.equal(r.buch.form.f4_max, 8);
   for (const x of ['RK1', 'RK2', 'RK3', 'RK4', 'RK5', 'RK6']) assert.ok(r.buch.regel_k.schaerfung[x], x);
   assert.deepEqual(Object.keys(r.buch.baende), ['GS', 'FS', 'FS2']);
@@ -378,7 +378,7 @@ test('Regelwerk 2.0: Abschnitt buch mit Regel K, Herkunftsformat, Band-Kürzeln 
   assert.equal(r.buch.form.f3_max, 10);
   assert.ok(r.buch.regel_k.dazu.length === 4 && r.buch.regel_k.nicht_dazu.length === 6);
 });
-const kopieK = (sp, n) => { for (let i = 0; i < n; i++) sp.koennen.push({ ...sp.koennen[0], id: `${sp.id}-K${90 + i}` }); };
+const kopieK = (sp, n) => { for (let i = 0; i < n; i++) sp.koennen.push({ ...sp.koennen[0], id: `${sp.id}-K${90 + i}`, kurz: `Kopie Nummer ${i + 1}` }); };
 test('Lernplan-Prüfer v2.0: Herkunft buch: im richtigen Format ist gültig', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
   const r = lernplanMit((lp) => { sp0(lp).koennen[0].herkunft.push('buch:GS-3.4.5-S331'); sp0(lp).koennen[1].herkunft = ['buch:GS-3.4.5']; });
   assert.equal(r.status, 0, r.stdout);
@@ -391,6 +391,41 @@ test('Lernplan-Prüfer v2.0: F3 erlaubt bis 10 Aussagen, 11 nicht', { skip: !ler
   const n = sp0(lp).koennen.length;
   assert.equal(lernplanMit((x) => kopieK(sp0(x), 10 - n)).status, 0);
   assert.equal(lernplanMit((x) => kopieK(sp0(x), 11 - n)).status, 1);
+});
+
+// ---------- Regelwerk v2.2: Stichwort kurz und Länge neuer Buch-Aussagen ----------
+test('Regelwerk 2.2: kurz mit 3–8 Wörtern und höchstens 60 Zeichen, Buch-Aussagen ab PB1 höchstens 200 Zeichen', () => {
+  const r = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
+  assert.equal(r.version, '2.2');
+  assert.deepEqual([r.kurz.max_zeichen, r.kurz.woerter_min, r.kurz.woerter_max], [60, 3, 8]);
+  assert.equal(r.buch.form.buch_aussage_max, 200);
+});
+test('Lernplan-Prüfer v2.2: Stichwort kurz in Ordnung', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+  const r = lernplanMit((lp) => { sp0(lp).koennen[0].kurz = 'Durchsatz und Latenz'; });
+  assert.equal(r.status, 0, r.stdout);
+});
+const kurzFehler = {
+  'kurz fehlt': (lp) => { delete sp0(lp).koennen[0].kurz; },
+  'kurz zu lang (über 60 Zeichen)': (lp) => { sp0(lp).koennen[0].kurz = 'Sehr lange Bezeichnungen überschreiten Grenze von sechzig Zeichen'; },
+  'kurz mit 9 Wörtern': (lp) => { sp0(lp).koennen[0].kurz = 'a b c d e f g h i'; },
+  'kurz mit 2 Wörtern': (lp) => { sp0(lp).koennen[0].kurz = 'Nur zwei'; },
+  'kurz beginnt mit „Du“': (lp) => { sp0(lp).koennen[0].kurz = 'Du kannst Arrays'; },
+  'kurz als Satz mit Punkt': (lp) => { sp0(lp).koennen[0].kurz = 'Arrays haben einen Index.'; },
+  'gleiches kurz zweimal im Stichpunkt': (lp) => { sp0(lp).koennen[1].kurz = sp0(lp).koennen[0].kurz; },
+  'Kür ohne kurz': (lp) => { sp0(lp).kuer = [{ text: 'Etwas Freiwilliges', grund: 'nützlich', quellen: ['buch:GS-3.4.5'] }]; lp.meta.hinweisquellen['buch:GS-3.4.5'] = 'Lehrbuch'; },
+};
+for (const [name, f] of Object.entries(kurzFehler)) {
+  test(`Lernplan-Prüfer v2.2 erkennt: ${name}`, { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+    assert.equal(lernplanMit(f).status, 1);
+  });
+}
+test('Lernplan-Prüfer v2.2: Buch-Aussage über 200 Zeichen ist in AP1 erlaubt, ab PB1 nicht', { skip: !lernplanDa && 'Quellen fehlen' }, () => {
+  const lang = `Du kannst ${'erklären, warum das so ist, '.repeat(8)}und es begründen.`;
+  assert.ok(lang.length > 200);
+  assert.equal(lernplanMit((lp) => Object.assign(sp0(lp).koennen[0], { text: lang, herkunft: ['buch:GS-3.4.5'] })).status, 0);
+  const r = pb2Mit((lp) => Object.assign(sp0(lp).koennen[0], { text: lang, herkunft: ['buch:FS2-2.1.4'] }));
+  assert.equal(r.status, 1);
+  assert.match(r.stdout, /FORM: .* Buch-Aussage hat \d+ Zeichen/);
 });
 
 // T10 mit einer kleinen Beispiel-Zuordnung und einer Kernpunkt-Datei (die echten liegen nur lokal, D9)

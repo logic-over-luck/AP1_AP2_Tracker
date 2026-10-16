@@ -138,7 +138,7 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v2.1 [fest]
+## 4. Regelwerk – v2.2 [fest]
 
 Freigegeben am 16.10.2026 (Projektinhaber, Entscheidungen D1–D10 im Auftrag „Regelwerk v2.0“, Branch `regelwerk-v2`).
 Anlass: P54 (zu prüfungsnah, dünne Stichpunkte bei offenen Sachthemen; `umbau/berichte/P54-analyse.md`,
@@ -222,6 +222,18 @@ Kernpunkte, die die Gegenprüfung gar nicht im Buch fand.
 
 Ring (4.8) einer Buch-Aussage: **Kern** (Pflicht, Herkunft `buch:`); Buch-Themen ohne Katalogbezug: **Kür** (D8).
 Prüfungen dazu: T10 (`tools/umbau/buch-pruefen.mjs`), K4 und K5 (Abschnitt 5).
+
+**Nachtrag v2.2 (16.10.2026, Projektinhaber vor PB1) – Form und Anzeige:**
+- **Stichwort `kurz`** (Pflichtfeld) an jeder Können-Aussage und jedem Kür-Eintrag: 3–8 Wörter, höchstens 60 Zeichen,
+  Substantivstil, kein Satz, beginnt nicht mit „Du“, nennt nur das Thema (z. B. „Array und Index“, „Sequenz als
+  dritte Grundstruktur“, „ECC-Speicher: wann er sich lohnt“); im Stichpunkt eindeutig. `text` (voller Satz) bleibt
+  unverändert und speist weiter Lernprompt, Karten und Erklärung. Prüfung: `lernplan-pruefen.mjs` (KURZ).
+- **Anzeige:** „Das musst du können“ zeigt je Aussage nur `kurz` (einzeilig, Marken dahinter); Antippen klappt Satz,
+  Erklärung, Stufe und Herkunft auf, nur eine Zeile zugleich, nicht gespeichert. Kür standardmäßig zu („Kür (n)“),
+  aufgeklappt ebenso Stichwort-Zeilen. Der Link „Erklärung“ und der Schalter „Stufe und Herkunft“ entfallen.
+- **Buch-Aussagen ab PB1 höchstens 200 Zeichen** (nur Aussagen mit ausschließlich `buch:`-Herkunft); Begründung und
+  Beispiel gehören in die Erklärung. AP1 bleibt wie gebaut (Parkplatz P56). Prüfung: `lernplan-pruefen.mjs` (FORM),
+  `v2-einbauen.mjs` beim Einbau. Ab PB1 bringt jeder Patch `kurz` für jede neue Aussage und jeden Kür-Eintrag mit.
 
 ### Fassung bis v1.8 (gilt weiter, soweit 4.0 nichts anderes bestimmt)
 
@@ -814,7 +826,10 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - [x] **V2 Schritt 2 – Kernpunkt-Listen (16.10.2026):** 298 Kapitel (GS 150, FS 92, FS2 56), Gegenprüfung je Abschnitt,
         Regel K v2.1 (RK1–RK6) angewandt: 2.872 Kernpunkte, 949 abgedeckt, 662 neu Pflicht, 872 Kür, 389 gefiltert; Zuordnung im
         Repo `umbau/zuordnung/buch.json`, Listen nur lokal (D9). Bericht `umbau/berichte/V2-bericht.md`.
-  - [ ] Schritt 3 – Räume erweitern · [ ] Schritt 4 – Karten und
+  - [x] **v2.2 – Stichwort `kurz` (16.10.2026):** 1.521 Aussagen und 292 Kür-Einträge aller vier Räume mit `kurz`
+        (Subagenten je Ordner, Gegenprüfung auf Eindeutigkeit), Anzeige einzeilig mit Aufklappen, Prüfung KURZ/FORM,
+        Skript `tools/umbau/kurz-einbauen.mjs`, Exporte neu.
+  - [ ] Schritt 3 – Räume erweitern (AP1 fertig, PB1 noch nicht begonnen) · [ ] Schritt 4 – Karten und
         Erklärungen · [ ] Schritt 5 – App · [ ] Schritt 6 – unabhängige Prüfung · [ ] Schritt 7 – Abschluss
 - [ ] **Schritt 8 – PROJEKT** – **bewusst zurückgestellt** (Projektinhaber, 16.10.2026, P53): wird später gebaut, näher an der
       Projektphase. Bis dahin nicht anfangen.
@@ -883,6 +898,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P53 | **Raum PROJEKT (Schritt 8) zurückgestellt (Projektinhaber, 16.10.2026):** bewusst jetzt nicht bauen, weil die betriebliche Projektarbeit noch weit in der Zukunft liegt. Später wieder aufnehmen, zusammen mit P8 (Vorgaben der IHK Rheinhessen). Bis dahin beginnt keine Sitzung von sich aus mit Schritt 8. | zurückgestellt |
 | P54 | **Zu prüfungsnah (Projektinhaber, 16.10.2026):** Beim Lernen entsteht der Eindruck, für Altprüfungen zu lernen statt das Fach breit und tief zu verstehen. Befund: Anteil der Können-Aussagen mit einer Prüfungsaufgabe als Herkunft AP1 50 %, PB1 44 %, PB2 81 %, WiSo 51 %; **nur** aus Prüfungen (ohne Katalogstelle) AP1 35 %, PB1 7 %, PB2 6 %, WiSo 0 %. Ursache in den Regeln: Belege heben die Tiefe und fügen Inhalte hinzu (B1, Z1), die Form folgt dem IHK-Aufgabentyp (F6 P-MUSTER), Prüfungsantworten mit Fallen gehen in die Aussage (D11 WiSo), die Wichtigkeit zählt Prüfungstermine (P28). Schritt 1: unabhängige Durchsicht mit dem Beruf als Maßstab, ohne Prüfungen und ohne Katalog (`node tools/extern/neutral-export.mjs` → `build/extern/`, Prompt `build/extern/PROMPT.md`). Danach Grundsatzentscheidung, z. B. (a) so lassen, (b) eine Verstehens-Schicht je Stichpunkt ergänzen (Warum, Prinzip, Zusammenhang), ohne die Aussagen zu ändern, (c) Regelwerk ändern: Form nach Fach statt nach Aufgabentyp, Aussagen nur aus Prüfungen auf das Prinzip verallgemeinern. Analyse: `umbau/berichte/P54-analyse.md` (stärkster Verstärker ist der Lernprompt; Empfehlung: Lernprompt mit Wahl Verstehen/Prüfung und Verstehens-Schicht, Regelwerk erst nach der Durchsicht). **Vergleich mit DAA-Unterricht (16.10.2026, zwei Dozenten, Unterlagen nur lokal):** LF2 Hardware – großer Abstand: EVA, von Neumann, Bus, Befehlszyklus, Chipsatz, Formfaktoren, Kühlung, ECC, SSD-Zelltypen, Green IT fehlen, von Neumann/Harvard/CISC-RISC/Busse stehen nur als Kür (AP1-4); der Katalog nennt dort nur Produkte. LF8 UML, VPN/VLAN, Softwarearten – kleiner Abstand, der Tracker ist teils tiefer; dort ist der Katalog genau (Anhang). Folgerung: Das Problem sitzt in Ordnern mit dünnem Katalog, kein allgemeiner Umbau; später gezielte Nachbesserung (zuerst AP1-4, prüfen AP1-5, AP1-7) mit DAA-Unterlagen als Maßstab. **Erkenntnisse (16.10.2026, Gespräch mit dem Projektinhaber):** (1) Ob der Katalog konkret oder nur Stichwort ist, erklärt den Abstand nicht (fast alles ist Stichwort: AP1 59 %, AP2b 84 %, WiSo 72 %; UML ist zu 90 % Stichwort und trotzdem gut). Entscheidend ist, ob das Thema **abgeschlossen** ist (Notation, Rechenverfahren, Gesetz: Katalog und Prüfungen ergeben die volle Tiefe) oder **offen** (Hardware, Betriebssysteme, Sicherheitskonzepte: Prüfungen picken Einzelfakten). (2) Die DAA nimmt ihre Grenze aus dem Lehrbuch (Westermann IT-Berufe: Grundstufe LF1–5, Fachstufe Technische IT-Berufe LF6–9, Fachstufe II Anwendungsentwicklung LF10–12; liegen dem Projektinhaber vor), aus dem Zeitrichtwert des Rahmenlehrplans, aus Prüfungen und Erfahrung. E5 hatte Lehrbücher als Tiefenquelle ausgeschlossen – das fehlende Stück. (3) Ein Lehrbuch ist für alle IT-Berufe zu breit; nötig sind Filter: Katalogstelle vorhanden, Fachrichtung AE, Kernabschnitt (Begriffe, Prinzip, Auswahlkriterien; keine Historie, Exkurse, Herstellerdetails), Prüffrage „brauche ich das, um eine Aussage zu begründen?“. Der DAA-Unterricht ist dieses gefilterte Lehrbuch. Mögliche Rangfolge: Katalog = Breite, Lehrbuchkapitel gefiltert durch die DAA-Auswahl = Tiefe und Ende, Prüfungen = Mindestmaß. (4) Vorgehen: nicht vorher nachbessern; Probelauf mit Grundstufe LF2 (Hardware) und den DAA-Unterlagen zu LF2, danach entscheiden; Bücher nur kapitelweise und nur lokal unter `quellen/` (E10). **Lehrbuch-Abgleich (16.10.2026):** Inhaltsverzeichnisse aller drei Bände (298 Unterkapitel) gegen den Tracker: 152 abgedeckt, 61 zu schmal, 22 fehlen (2 im Katalog, 20 nicht), 63 nicht relevant. Größte Lücke: Programmierpraxis (Datenbankzugriff aus dem Programm in allen drei Büchern, Datenstrukturen, Sprachgrundlagen, Clean Code, ereignisgesteuerte Oberflächen); dazu Gerüst bei Hardware, Netzwerk, Kaufmännischem, sicherer Softwareentwicklung, DevOps/Agil. Bericht `umbau/berichte/P54-lehrbuch-abgleich.md`. **Stufe 3 (alle 82 markierten Kapitel am Buchtext gelesen):** von 225 relevanten Kapiteln reicht der Tracker in 157 (70 %), in 51 (23 %) fehlen 1–3 Punkte, in 17 (8 %) das Gerüst (13 Themen, 11 davon im Katalog: Datenbankzugriff aus dem Programm, DBMS, Datenstrukturen, Datendarstellung, Kommentieren, CPU, Geschäftsprozesse, Beschaffungsprozess, Ursachenanalyse, Datenqualität, Sicherheit im Entwurf; nicht im Katalog: Clean Code, Oberflächen programmieren, Dateizugriff, MQTT). Ergebnisse je Kapitel in `umbau/berichte/P54-stufe3/`. Korrektur: gelesen 32 % des Buchtexts (nur die markierten Kapitel), grüne Kapitel ungeprüft; zusammen rund 180 fehlende Punkte (≈ 150–180 Können-Aussagen). Offen: Stichprobe grüner Kapitel. | offen |
 | P55 | **Themenblöcke mit mehr als 6 Stichpunkten** (V2 Schritt 3): Durch die Teilung großer Stichpunkte (D5) wachsen Themenblöcke. **Entschieden (Projektinhaber, 16.10.2026, v2.1):** F4 wird 3–8; wird ein Block größer, wird er geteilt (neuer Themenblock mit nächster freier Nummer). Umgesetzt in `lernplan-pruefen.mjs` (F4 aus `regelwerk.json` → `buch.form`). | erledigt |
+| P56 | **Lange Buch-Aussagen in AP1** (v2.2): Die Grenze von 200 Zeichen gilt ab PB1. In AP1 sind 229 der 234 neuen Buch-Aussagen länger (bis 480 Zeichen), weil Begründung und Beispiel im Satz stehen. In der App sieht man nur noch das Stichwort `kurz`, der Satz erscheint erst aufgeklappt; Lernprompt und Karten nutzen ihn weiter. **Vorschlag:** so lassen; falls gewünscht, kürzt ein eigener Durchgang die AP1-Buch-Aussagen auf höchstens 200 Zeichen und verschiebt Begründung und Beispiel in die Erklärung. Das wäre ein Umformulieren der Aussagen; D6 verbietet es nur für die alten Aussagen, nicht für die Buch-Aussagen aus V2. | offen |
 ---
 
 ## 9. Fundament erzeugen und prüfen
@@ -921,6 +937,7 @@ node tools/umbau/zuordnung-pruefen.mjs wiso   # T2 + Z3b, schreibt umbau/fundame
 node tools/umbau/export-raum.mjs WISO --pruefen  # WISO ist eingefroren (P52); Generatoren gen-wiso/ stillgelegt
 node tools/umbau/raum-pruefen.mjs WISO        # T1, T2b, T8, ALT, Deckung P47
 node tools/umbau/umzug-erzeugen.mjs           # Lernstand-Umzug aller gebauten Räume
+node tools/umbau/kurz-einbauen.mjs <kurz.json>  # v2.2: Stichwort kurz in Aussagen und Kür eines Ordners eintragen
 node tools/umbau/buch-pruefen.mjs [Ordner|Raum]  # T10 Buch-Abdeckung (v2.0); --schreiben überträgt Zählungen nach umbau/zuordnung/buch.json
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
 ```

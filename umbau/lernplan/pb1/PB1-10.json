@@ -67,6 +67,7 @@
       {
        "id": "PB1-10-1-1-K1",
        "text": "Du kannst für einen beschriebenen Sicherheitsvorfall die möglichen Schäden einschätzen: Imageschaden (Vertrauensverlust bei Kunden und Partnern), wirtschaftlicher Schaden (Stillstand, Wiederherstellung, Vertragsstrafen, Bußgelder), Datenverlust; die Zuordnung zum verletzten Schutzziel kennst du aus AP1.",
+       "kurz": "Mögliche Schäden eines Sicherheitsvorfalls",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.04.01",
@@ -78,6 +79,7 @@
       {
        "id": "PB1-10-1-1-K2",
        "text": "Du kannst Maßnahmen festlegen, mit denen ein eingeschätzter Schaden verhindert oder begrenzt wird, zum Beispiel getrennte Datensicherung gegen Datenverlust, Notfallplan und geplante Kommunikation gegen Imageschaden, Verschlüsselung gegen Bußgelder nach Datenabfluss.",
+       "kurz": "Maßnahmen gegen eingeschätzte Schäden",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.01"
@@ -86,6 +88,7 @@
       {
        "id": "PB1-10-1-1-K3",
        "text": "Du kannst für eine geplante Anwendung sicherheitstechnische Anforderungen festlegen, als funktionale Anforderungen (z. B. sichere Datenübertragung, sichere Speicherung personenbezogener Daten, Anmeldung mit zwei Faktoren, Rollen und Rechte, Protokollierung, automatische Abmeldung bei Untätigkeit) und als Qualitätsanforderungen (z. B. Verfügbarkeit, Wiederherstellungszeit).",
+       "kurz": "Sicherheitsanforderungen an eine geplante Anwendung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.04.4",
@@ -96,6 +99,7 @@
       {
        "id": "PB1-10-1-1-K4",
        "text": "Du kannst Ziele von IT-Sicherheitskriterien definieren: Richtschnur für Entwickler (Sicherheit von Beginn an), objektive Bewertung von Systemen (z. B. nach IT-Grundschutz), Unterstützung der Anwender bei der Auswahl eines geeigneten Sicherheitsprodukts.",
+       "kurz": "Ziele von IT-Sicherheitskriterien",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.03.1",
@@ -142,6 +146,7 @@
       {
        "id": "PB1-10-1-2-K1",
        "text": "Du kannst präventive Maßnahmen gegen Datendiebstahl planen und umsetzen: Zugriffe nach dem Prinzip der geringsten Rechte, Verschlüsselung gespeicherter und übertragener Daten, Weitergabe an fremde Dienste nur geprüft und vertraglich geregelt.",
+       "kurz": "Präventive Maßnahmen gegen Datendiebstahl",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.02.1"
@@ -150,6 +155,7 @@
       {
        "id": "PB1-10-1-2-K2",
        "text": "Du kannst über die Grundmaßnahmen aus AP1 (getrennte Sicherung, Updates, Rechte) hinaus präventive Maßnahmen gegen digitale Erpressung durch Ransomware planen: Sicherungen offline oder unveränderbar aufbewahren, Netze trennen.",
+       "kurz": "Ransomware: Sicherungen offline, Netze trennen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.02.2"
@@ -158,6 +164,7 @@
       {
        "id": "PB1-10-1-2-K3",
        "text": "Du kannst präventive Maßnahmen gegen Identitätsdiebstahl durch Phishing in einer Anwendung umsetzen: Zwei-Faktor-Anmeldung, Zurücksetzen von Passwörtern nur über einen zweiten, unabhängigen Weg, Warnung bei Anmeldung von neuen Geräten.",
+       "kurz": "Schutz vor Phishing in einer Anwendung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.02.3"
@@ -166,6 +173,7 @@
       {
        "id": "PB1-10-1-2-K4",
        "text": "Du kannst einen Kunden zu Bedrohungsszenarien beraten und für seine Anwendung Gegenmaßnahmen empfehlen: Man-in-the-Middle (verschlüsselte Verbindung mit Zertifikatsprüfung), SQL-Injection über Eingabefelder (vorbereitete Anweisungen mit Parametern, Eingaben prüfen), DDoS (Filterung, Lastverteilung, Schutzdienste).",
+       "kurz": "Beratung zu Man-in-the-Middle, SQL-Injection, DDoS",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.04.9"
@@ -208,6 +216,7 @@
       {
        "id": "PB1-10-1-3-K1",
        "text": "Du kannst ein Verschlüsselungsverfahren für eine Anwendung vorschlagen und begründen, zum Beispiel symmetrisch mit vorab verteiltem Schlüssel für batteriebetriebene Sensoren mit wenig Rechenleistung, deren Teilnehmer alle bekannt sind.",
+       "kurz": "Passendes Verschlüsselungsverfahren für eine Anwendung",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -218,6 +227,7 @@
       {
        "id": "PB1-10-1-3-K2",
        "text": "Du kannst die Art der Transportverschlüsselung bei TLS und bei der E-Mail-Übertragung nennen und erläutern: hybrid, also Sitzungsschlüssel asymmetrisch ausgehandelt (bei TLS 1.3 per Diffie-Hellman), Server per Zertifikat geprüft, Daten symmetrisch mit dem Sitzungsschlüssel verschlüsselt.",
+       "kurz": "Hybride Transportverschlüsselung bei TLS und E-Mail",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -229,6 +239,7 @@
       {
        "id": "PB1-10-1-3-K3",
        "text": "Du kannst Transportverschlüsselung (nur der Übertragungsweg ist geschützt) und Ende-zu-Ende-Verschlüsselung (nur Absender und Empfänger können lesen) unterscheiden und für eine Anwendung festlegen, welche nötig ist.",
+       "kurz": "Transport- gegen Ende-zu-Ende-Verschlüsselung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -272,6 +283,7 @@
       {
        "id": "PB1-10-1-4-K1",
        "text": "Du kannst die Sicherheitsmechanismen erläutern, die ein SSL/TLS-Zertifikat für einen Webserver bewirkt: Der Server wird authentifiziert, die Übertragung wird verschlüsselt, die Integrität der Daten wird gesichert.",
+       "kurz": "Was ein SSL/TLS-Zertifikat bewirkt",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -281,6 +293,7 @@
       {
        "id": "PB1-10-1-4-K2",
        "text": "Du kannst erläutern, wie eine Software die Echtheit von Diensten prüft, ohne jeden öffentlichen Schlüssel vorab zu kennen: Die Zertifikate der Dienste werden von einer (auch firmeneigenen) Zertifizierungsstelle signiert; die Software prüft diese Signatur und ob das Zertifikat widerrufen wurde.",
+       "kurz": "Echtheit von Diensten über eine Zertifizierungsstelle",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -290,6 +303,7 @@
       {
        "id": "PB1-10-1-4-K3",
        "text": "Du kannst zu dem Vorschlag, Daten zu signieren statt zu verschlüsseln, begründet Stellung nehmen: Eine Signatur sichert Authentizität und Integrität, schützt aber nicht die Vertraulichkeit; ein Hash bzw. MAC ist günstig zu berechnen, eine echte Signatur ist asymmetrisch und aufwendiger; ob das reicht, hängt von der Art der Daten ab.",
+       "kurz": "Signieren statt Verschlüsseln: reicht das",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -299,6 +313,7 @@
       {
        "id": "PB1-10-1-4-K4",
        "text": "Du kannst eine geeignete Speicherung von Passwörtern in einer Datenbank nennen und beschreiben: nicht im Klartext, sondern als Hashwert mit einem zufälligen Salt je Benutzer und einem bewusst langsamen Verfahren; bei der Anmeldung wird der Hash der Eingabe verglichen.",
+       "kurz": "Passwörter speichern: Hash mit Salt",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.2",
@@ -350,6 +365,7 @@
       {
        "id": "PB1-10-2-1-K1",
        "text": "Du kannst Identity & Access Management und ein Berechtigungskonzept erläutern: Benutzer, Rollen und Rechte werden zentral verwaltet, die Anmeldung kann an einen Identity Provider abgegeben werden; Zutritt, Zugang und Zugriff werden nach der Organisationsstruktur geregelt, indem Rechte an Rollen statt an einzelne Personen vergeben werden.",
+       "kurz": "Identity & Access Management und Berechtigungskonzept",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.3",
@@ -359,6 +375,7 @@
       {
        "id": "PB1-10-2-1-K2",
        "text": "Du kannst Authentifizierung (Wer bist du?) und Autorisierung (Was darfst du?) mit Benutzer- und Rollenverwaltung in einer Anwendung umsetzen: Anmeldung sicher prüfen, Konten anlegen, Rollen zuweisen, Rechte bei jedem Zugriff prüfen, Konten bei Austritt sofort sperren, Änderungen protokollieren.",
+       "kurz": "Authentifizierung und Autorisierung in der Anwendung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.05.01.2",
@@ -368,6 +385,7 @@
       {
        "id": "PB1-10-2-1-K3",
        "text": "Du kannst den Ablauf der Autorisierung mit OAuth2 nachvollziehen (für die Anmeldung erweitert durch OpenID Connect) und die Begriffe zuordnen: Der Client erhält vom Autorisierungsserver einen Autorisierungscode, tauscht ihn gegen ein Access Token und greift damit beim Resource Server auf die geschützte Ressource zu.",
+       "kurz": "Ablauf der Autorisierung mit OAuth2",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.3",
@@ -377,6 +395,7 @@
       {
        "id": "PB1-10-2-1-K4",
        "text": "Du kannst Vor- und Nachteile von Single-Sign-On unter dem Sicherheitsaspekt erläutern: zentrale Rechteverwaltung, weniger Passwörter und schnelle Sperrung bei Vorfällen gegenüber Zugriff auf alle Systeme mit einem gestohlenen Zugang und Abhängigkeit vom Identity Provider.",
+       "kurz": "Single-Sign-On: Vor- und Nachteile für Sicherheit",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.3",
@@ -411,6 +430,7 @@
       {
        "id": "PB1-10-2-2-K1",
        "text": "Du kannst Privacy by Design und Privacy by Default (Art. 25 DSGVO) beim Erstellen einer Anwendung umsetzen, mit den Grundsätzen aus AP1, zum Beispiel Pflichtfelder auf das Nötige beschränken, Löschung nach Wegfall des Zwecks automatisch vorsehen, Profile standardmäßig nicht öffentlich, wo möglich pseudonymisieren.",
+       "kurz": "Privacy by Design und by Default",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.05.01.1",
@@ -420,6 +440,7 @@
       {
        "id": "PB1-10-2-2-K2",
        "text": "Du kannst beschreiben, was bei der Weitergabe personenbezogener Daten an einen fremden Dienst zu beachten ist: Vertraulichkeit, Speicherort, Vertrauenswürdigkeit des Anbieters, vertragliche Regelung der Auftragsverarbeitung.",
+       "kurz": "Weitergabe personenbezogener Daten an fremde Dienste",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1"
@@ -428,6 +449,7 @@
       {
        "id": "PB1-10-2-2-K3",
        "text": "Du kannst Archivierung von Datensicherung unterscheiden: langfristige, unveränderbare Aufbewahrung in revisionssicheren Archivsystemen (GoBD) nach gesetzlichen Fristen – Handelsbücher und Jahresabschlüsse 10 Jahre, Buchungsbelege 8 Jahre (seit 2025), Handels- und Geschäftsbriefe 6 Jahre – gegenüber Wiederherstellung nach Verlust; nach Ablauf der Fristen und Wegfall des Zwecks werden personenbezogene Daten gelöscht.",
+       "kurz": "Archivierung gegen Datensicherung, Aufbewahrungsfristen",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.05.01.1"
@@ -451,6 +473,7 @@
      "kuer": [
       {
        "text": "Datenschutzgrundsätze im Einzelnen (Rechtmäßigkeit, Transparenz, Zweckbindung, Datenminimierung, Richtigkeit, Speicherbegrenzung, Integrität und Vertraulichkeit, Rechenschaftspflicht) und die Persönlichkeitsrechte (informationelle Selbstbestimmung, Recht am eigenen Bild).",
+       "kurz": "Datenschutzgrundsätze und Persönlichkeitsrechte im Einzelnen",
        "quellen": [
         "podcast:themen-ap2"
        ],
@@ -538,6 +561,7 @@
       {
        "id": "PB1-10-2-3-K2",
        "text": "Du kannst die Wirksamkeit einer Maßnahme der Zutritts-, Zugangs- oder Zugriffskontrolle prüfen und eine Schwäche benennen, zum Beispiel Videoüberwachung ohne Auswertung, Bildschirmsperre erst nach langer Zeit, nicht zurückgegebene Besucherausweise, Rollenkonzept mit veralteten Rechten, Löschung ohne Überschreiben, Datenträgerverschlüsselung ohne sicher hinterlegten Wiederherstellungsschlüssel.",
+       "kurz": "Wirksamkeit von Zutritts-, Zugangs-, Zugriffskontrolle",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.04.06.1",
@@ -558,6 +582,7 @@
       {
        "id": "PB1-10-2-3-K3",
        "text": "Du kannst die Effizienz technisch-organisatorischer Maßnahmen prüfen: ob Aufwand und Kosten im Verhältnis zum Schutzbedarf stehen und ob eine einfachere Maßnahme denselben Schutz bietet.",
+       "kurz": "Effizienz technisch-organisatorischer Maßnahmen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.04.06"
@@ -566,6 +591,7 @@
       {
        "id": "PB1-10-2-3-K4",
        "text": "Du kannst Möglichkeiten der physischen Absicherung benennen: Zugangskontrollen für Gebäude, Serverraum und Schrank, Schutz vor Elementarrisiken wie Feuer und Hochwasser (Brandmeldeanlage, Serverraum nicht im Keller, Sicherung an einem anderen Ort).",
+       "kurz": "Physische Absicherung und Elementarrisiken",
        "stufe": 1,
        "herkunft": [
         "katalog:AP2b.02.02.1",
@@ -575,6 +601,7 @@
       {
        "id": "PB1-10-2-3-K5",
        "text": "Du kannst mit Log Management und Compliance Reports prüfen, ob TOM wirken: Ereignisse zentral sammeln und auswerten, um Vorfälle zu erkennen und nachzuweisen; Berichte zeigen, ob Vorgaben eingehalten werden.",
+       "kurz": "Wirksamkeit der TOM: Log Management, Compliance Reports",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.04.06.4",
@@ -584,6 +611,7 @@
       {
        "id": "PB1-10-2-3-K6",
        "text": "Du kannst einen Webfilter einrichten, der Inhalte und Webseiten nach Kategorien oder Listen sperrt, und ihn von der Firewall abgrenzen, die Verbindungen nach Adressen, Ports und Protokollen erlaubt oder sperrt.",
+       "kurz": "Webfilter und Abgrenzung zur Firewall",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.03.2"
@@ -592,6 +620,7 @@
       {
        "id": "PB1-10-2-3-K7",
        "text": "Du kannst Portsecurity an einem Switch umsetzen: An einem Anschluss werden nur bekannte Geräte (MAC-Adressen) zugelassen, unbekannte werden gesperrt.",
+       "kurz": "Portsecurity an einem Switch",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.02.03.3"
@@ -665,6 +694,7 @@
       {
        "id": "PB1-10-2-4-K1",
        "text": "Du kannst Werkzeuge zur Überprüfung von IT-Sicherheitsmaßnahmen erläutern: Penetrationstest (beauftragter Angriff mit den Mitteln eines Angreifers), Schwachstellenanalyse (systematische Suche nach bekannten Lücken, z. B. mit einem Scanner), Device Security Check (prüft, ob ein Gerät die Vorgaben erfüllt: Updates, Virenschutz, Verschlüsselung).",
+       "kurz": "Werkzeuge zur Prüfung der IT-Sicherheit",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.1",
@@ -675,6 +705,7 @@
       {
        "id": "PB1-10-2-4-K2",
        "text": "Du kannst Kunden zielgruppengerecht zur IT-Sicherheit beraten: private Haushalte (Updates, Passwortmanager, Sicherung), Unternehmen intern und extern (Richtlinien, Schulung, TOM), öffentliche Hand (Grundschutz, Vorgaben zu Vergabe und Datenschutz).",
+       "kurz": "Zielgruppengerechte Beratung zur IT-Sicherheit",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.04.1",
@@ -686,6 +717,7 @@
       {
        "id": "PB1-10-2-4-K3",
        "text": "Du kannst bei einer Beratung technologische, organisatorische, rechtliche und ethische Rahmenbedingungen sowie die Risiken des Kunden (bewertet wie in AP1-7-2-3) berücksichtigen, zum Beispiel vorhandene Systeme, Zuständigkeiten, DSGVO, keine heimliche Überwachung von Beschäftigten.",
+       "kurz": "Rahmenbedingungen und Risiken in der Beratung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.04.04.7",
@@ -706,6 +738,7 @@
      "kuer": [
       {
        "text": "Weitere Angriffe und Begriffe: XSS, CSRF, Session Hijacking, Spoofing, Sniffing, Botnetze, Rootkit, 0-Day-Exploit, Honeypot, OWASP Top 10, Social-Engineering-Penetrationstest, Werkzeuge wie Portscanner und Vulnerability Scanner (z. B. OpenVAS).",
+       "kurz": "Weitere Angriffe, Begriffe und Prüfwerkzeuge",
        "quellen": [
         "podcast:themen-ap2"
        ],

@@ -44,6 +44,7 @@
       {
        "id": "PB2-3-1-1-K1",
        "text": "Du kannst über den Schreibtischtest aus AP1 hinaus eine Ablaufverfolgung für längeren Code mit einer vorgegebenen Datenverlaufstabelle durchführen und rekursive Aufrufe verfolgen: jeden Aufruf mit seinen eigenen Variablenwerten festhalten, bis zur Abbruchbedingung absteigen und die Rückkehr Aufruf für Aufruf nachvollziehen.",
+       "kurz": "Ablaufverfolgung bei längerem und rekursivem Code",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.03.01.3",
@@ -60,6 +61,7 @@
       {
        "id": "PB2-3-1-1-K2",
        "text": "Du kannst aus den Abweichungen zwischen erwartetem und tatsächlichem Ergebnis die Ursache im Code analysieren und die fehlerhafte Zeile mit Zeilennummer bestimmen, auch wenn zwei Fehler zusammenwirken.",
+       "kurz": "Fehlerursache und fehlerhafte Zeile bestimmen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2a.02.01.1",
@@ -71,6 +73,7 @@
       {
        "id": "PB2-3-1-1-K3",
        "text": "Du kannst über das Korrigieren einzelner Zeilen aus AP1 hinaus mehrere Fehler in einem längeren Code zusammenhängend korrigieren und fehlende Code-Teile ergänzen, zum Beispiel Vergleichsoperatoren so anpassen, dass ein gegebener Unit-Test besteht, oder den vergessenen Verarbeitungsblock für die letzte Gruppe nach der Schleife einfügen (Gruppenwechsel: PB2-1).",
+       "kurz": "Mehrere Fehler korrigieren, fehlende Teile ergänzen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.01.1",
@@ -87,6 +90,7 @@
       {
        "id": "PB2-3-1-1-K4",
        "text": "Du kannst in gegebenem Code typische inhaltliche Fehler finden, die über die Fehlerquellen aus AP1-8-2-4 hinausgehen: falscher Startwert (z. B. 0 statt des ersten Elements beim Minimum), die letzte Gruppe wird nach der Schleife nicht mehr ausgewertet, falsche Variable im Ausdruck (Monats- statt Jahreszähler), überflüssige Anweisung, die ein Flag wieder zurücksetzt, fehlende Rückgabe (return), Ausgabe vor statt nach dem rekursiven Aufruf (Ergebnis in umgekehrter Reihenfolge).",
+       "kurz": "Typische inhaltliche Fehler im Code",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.01.1",
@@ -137,6 +141,7 @@
       {
        "id": "PB2-3-1-2-K1",
        "text": "Du kannst den Debugger gezielt einsetzen, um einen gegebenen Fehler einzugrenzen: einen Breakpoint vor die verdächtige Stelle setzen, im Einzelschritt weitergehen (Step over führt einen Methodenaufruf als Ganzes aus, Step into springt in die Methode hinein) und die Werte der Variablen beobachten, bis einer vom erwarteten Wert abweicht.",
+       "kurz": "Debugger: Breakpoint, Step over, Step into",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.01.1"
@@ -145,6 +150,7 @@
       {
        "id": "PB2-3-1-2-K4",
        "text": "Du kannst über PB1-5-1-2 hinaus für unbrauchbare Texteingaben eine Vorgehensweise festlegen: die Eingabe zuerst bereinigen (z. B. mit trim führende und folgende Leerzeichen entfernen), eine danach leere Eingabe wie eine fehlende behandeln und eine festgelegte Ersatzregel anwenden, etwa ohne Vorgabe des Arztes die hinterlegte Standardmedikation verwenden, statt mit der unbrauchbaren Eingabe weiterzuarbeiten.",
+       "kurz": "Unbrauchbare Texteingaben: Bereinigung und Ersatzregel",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.17.5",
@@ -160,6 +166,7 @@
       {
        "id": "PB2-3-1-2-K5",
        "text": "Du kannst für eine Fehlersuche begründet auswählen, ob du den Debugger oder print-Debugging (Zwischenwerte und Zustände gezielt ausgeben oder protokollieren) einsetzt: print-Debugging oder Logging, wenn kein Debugger zur Verfügung steht, der Fehler nur im Betrieb auftritt oder das Anhalten am Breakpoint den Ablauf verändert (z. B. Zeitabläufe); den Debugger, wenn sich der Fehler in der Entwicklungsumgebung nachstellen lässt und du Schritt für Schritt nachsehen willst.",
+       "kurz": "Debugger oder print-Debugging: Auswahl",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.03.08.2",
@@ -197,6 +204,7 @@
       {
        "id": "PB2-3-1-3-K2",
        "text": "Du kannst über PB1-9-1-4 hinaus Aufbau und Eigenschaften guter Unit-Tests beschreiben: Eine Testmethode prüft eine einzelne Einheit (Methode, Klasse) mit assertEquals(erwartet, tatsächlich); gute Unit-Tests folgen F.I.R.S.T. – schnell (Fast), unabhängig voneinander (Independent), wiederholbar mit gleichem Ergebnis (Repeatable), selbstprüfend ohne manuelle Kontrolle (Self-Validating), rechtzeitig vor dem Produktivcode geschrieben (Timely).",
+       "kurz": "F.I.R.S.T.-Eigenschaften guter Unit-Tests",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.03.08.2",
@@ -214,6 +222,7 @@
       {
        "id": "PB2-3-1-3-K3",
        "text": "Du kannst einen gegebenen Unit-Test gegen den Code überprüfen: jeden assertEquals-Aufruf mit der Methode von Hand nachrechnen und je Testfall eintragen, ob er besteht (OK) oder fehlschlägt (Fehler).",
+       "kurz": "Gegebenen Unit-Test gegen Code prüfen",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.03.08.2",
@@ -223,6 +232,7 @@
       {
        "id": "PB2-3-1-3-K4",
        "text": "Du kannst den Zweck von Regressionstests erläutern: Nach jeder Änderung werden die vorhandenen Tests erneut ausgeführt, damit bereits funktionierende Teile nicht unbemerkt kaputtgehen.",
+       "kurz": "Zweck von Regressionstests",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.03.08.2",
@@ -232,6 +242,7 @@
       {
        "id": "PB2-3-1-3-K5",
        "text": "Du kannst zu einer Anforderung einen Unit-Test schreiben: Testfälle für Normalfall, Grenzen und Fehlerfälle als assertEquals(erwartet, methode(...)) aufschreiben, auch bevor der Code existiert (Test Driven Development: erst ein fehlschlagender Test, dann gerade so viel Code, dass er besteht, dann aufräumen – Red, Green, Refactor).",
+       "kurz": "Unit-Test zur Anforderung, auch testgetrieben",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.03.08.2"

@@ -47,6 +47,7 @@
       {
        "id": "PB1-4-1-1-K1",
        "text": "Du kannst die UML-Diagramme des Katalog-Anhangs ihrem Zweck zuordnen: Anwendungsfalldiagramm (was das System für wen leistet), Klassendiagramm (Aufbau aus Klassen und Beziehungen), Sequenzdiagramm (Nachrichten zwischen Objekten in zeitlicher Folge), Zustandsdiagramm (Zustände eines Objekts und ihre Übergänge), Aktivitätsdiagramm (Ablauf); das Klassendiagramm ist ein Struktur-, die übrigen sind Verhaltensdiagramme.",
+       "kurz": "UML-Diagramme und ihr Zweck",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.02.02.2"
@@ -55,6 +56,7 @@
       {
        "id": "PB1-4-1-1-K2",
        "text": "Du kannst aus einer umfangreichen Anforderungsbeschreibung ein vollständiges Anwendungsfalldiagramm selbst erstellen, nicht nur ein begonnenes ergänzen: alle Akteure und Anwendungsfälle finden und die Anwendungsfälle aus Sicht des Akteurs mit Gegenstand und Tätigkeit benennen (z. B. „Termin buchen“, nicht „Datenbank abfragen“); die Elemente (Systemgrenze, Assoziation, include, Generalisierung) kennst du aus AP1-8-3-1.",
+       "kurz": "Vollständiges Anwendungsfalldiagramm selbst erstellen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.02.2",
@@ -68,6 +70,7 @@
       {
        "id": "PB1-4-1-1-K3",
        "text": "Du kannst bei einer extend-Beziehung (aus AP1) die Bedingung als Notiz an die Beziehung schreiben und den Erweiterungspunkt im Basis-Anwendungsfall angeben, zum Beispiel „Ressourcen planen“ erweitert „Terminanfrage abschließen“ mit der Notiz „wenn Spezialtermin“.",
+       "kurz": "extend-Beziehung mit Bedingung und Erweiterungspunkt",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.2",
@@ -86,6 +89,7 @@
      "kuer": [
       {
        "text": "Weitere UML-Diagramme wie Komponenten- und Verteilungsdiagramm.",
+       "kurz": "Komponenten- und Verteilungsdiagramm",
        "quellen": [
         "podcast:themen-ap2"
        ],
@@ -124,6 +128,7 @@
       {
        "id": "PB1-4-1-2-K1",
        "text": "Du kannst eine Klasse über die Notation aus AP1 hinaus vollständig modellieren: mit Konstruktor, Get- und Set-Methoden und sinnvollen Datentypen, zum Beispiel validatePassword(String) : Boolean.",
+       "kurz": "Klasse mit Konstruktor, Methoden und Datentypen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.1",
@@ -135,6 +140,7 @@
       {
        "id": "PB1-4-1-2-K2",
        "text": "Du kannst aus einer Beschreibung mehrere Klassen mit ihren Assoziationen und Multiplizitäten erstellen und deren Bedeutung erläutern (z. B. 1..* mindestens eins, * beliebig viele), auch Attribute, die auf Objekte oder Listen anderer Klassen verweisen (streckenliste : List<Strecke>); eine Aggregation wird so als Liste im Ganzen umgesetzt.",
+       "kurz": "Assoziationen und Multiplizitäten zwischen Klassen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.1",
@@ -148,6 +154,7 @@
       {
        "id": "PB1-4-1-2-K3",
        "text": "Du kannst abstrakte Klassen und Methoden ({abstract} oder kursiv), Interfaces mit ihrer Realisierung (gestrichelte Linie mit hohlem Dreieck), Vererbung (durchgezogene Linie mit hohlem Dreieck) und statische Methoden ({static} oder unterstrichen) im Klassendiagramm darstellen.",
+       "kurz": "Abstrakte Klassen, Interfaces und statische Methoden",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.1",
@@ -186,6 +193,7 @@
       {
        "id": "PB1-4-1-3-K1",
        "text": "Du kannst synchrone und asynchrone Nachrichten, Antworten (mit dem Rückgabewert beschriftet), Selbstaufrufe mit versetztem Aktivierungsbalken sowie das Erzeugen (create) und Zerstören (X) von Objekten darstellen.",
+       "kurz": "Nachrichtenarten, Selbstaufrufe, Erzeugen und Zerstören",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.5",
@@ -196,6 +204,7 @@
       {
        "id": "PB1-4-1-3-K2",
        "text": "Du kannst Aktivierungsbalken richtig setzen: Sie beginnen mit dem Aufruf und enden mit der Antwort; ein Aufruf innerhalb einer laufenden Methode erzeugt einen weiteren Balken.",
+       "kurz": "Aktivierungsbalken richtig setzen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.5",
@@ -205,6 +214,7 @@
       {
        "id": "PB1-4-1-3-K3",
        "text": "Du kannst Alternativen mit dem kombinierten Fragment alt und Bedingungen in eckigen Klammern darstellen, zum Beispiel [Daten im Cache] und [Daten nicht im Cache], sowie optionale (opt) und wiederholte (loop) Abläufe.",
+       "kurz": "Kombinierte Fragmente alt, opt und loop",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.5",
@@ -215,6 +225,7 @@
       {
        "id": "PB1-4-1-3-K4",
        "text": "Du kannst Teilnehmer mit Lebenslinien darstellen und ein (begonnenes) Sequenzdiagramm nach einer Ablaufbeschreibung erstellen oder ergänzen: Nachrichten von oben nach unten in zeitlicher Folge mit Methodenname und Parametern, auch für einen Webservice-Aufruf mit Request (z. B. GET /shareholders?city=Köln) und Response mit Statuscode.",
+       "kurz": "Sequenzdiagramm nach Ablaufbeschreibung erstellen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.5",
@@ -252,6 +263,7 @@
       {
        "id": "PB1-4-1-4-K1",
        "text": "Du kannst aus einer Beschreibung die Zustände eines Objekts herauslesen und mit Startzustand, Zuständen, Übergängen und gegebenenfalls Endzustand als Zustandsdiagramm erstellen.",
+       "kurz": "Zustandsdiagramm aus einer Beschreibung erstellen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.3",
@@ -264,6 +276,7 @@
       {
        "id": "PB1-4-1-4-K2",
        "text": "Du kannst Übergänge in der Form „Ereignis [Bedingung] / Aktion“ beschriften, zum Beispiel „Abfahrt [Auslastung >= 70 %]“ oder „[Veranstaltung beendet] / freigeben“.",
+       "kurz": "Übergänge: Ereignis [Bedingung] / Aktion",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.3",
@@ -275,6 +288,7 @@
       {
        "id": "PB1-4-1-4-K3",
        "text": "Du kannst Bedingungen mit Grenzwerten so setzen, dass sich die Fälle nicht überschneiden und keiner fehlt (z. B. unter 50 %, 50 bis 80 %, über 80 %), und Übergänge in beide Richtungen sowie die Rückkehr in einen früheren Zustand darstellen.",
+       "kurz": "Lückenlose Bedingungen mit Grenzwerten",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.3",
@@ -285,6 +299,7 @@
       {
        "id": "PB1-4-1-4-K4",
        "text": "Du kannst Aktionen innerhalb eines Zustands mit entry, do und exit sowie zeitgesteuerte Übergänge mit after angeben.",
+       "kurz": "Zustandsaktionen entry, do, exit und after",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.3",
@@ -323,6 +338,7 @@
       {
        "id": "PB1-4-1-5-K1",
        "text": "Du kannst mit den Elementen aus AP1 (Schwimmbahnen, Verzweigungen, Zusammenführungen, Rücksprünge) einen umfangreichen Geschäftsablauf oder den Ablauf eines Anwendungsfalls vollständig als Aktivitätsdiagramm erstellen, zum Beispiel „Messergebnisse speichern“ mit Prüfung der Verbindung, Zwischenspeichern und Ergebnismeldung.",
+       "kurz": "Umfangreichen Ablauf als Aktivitätsdiagramm erstellen",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.4",
@@ -334,6 +350,7 @@
       {
        "id": "PB1-4-1-5-K2",
        "text": "Du kannst parallele Zweige mit Teilung und Synchronisation darstellen und in jedem Zweig eigene Verzweigungen einsetzen, die vor der Synchronisation wieder zusammengeführt werden.",
+       "kurz": "Parallele Zweige mit Teilung und Synchronisation",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.4",
@@ -344,6 +361,7 @@
       {
        "id": "PB1-4-1-5-K3",
        "text": "Du kannst ein begonnenes Aktivitätsdiagramm nach Notizen zu einem Arbeitsablauf erweitern, auch mit gleichzeitig ausgeführten Tätigkeiten verschiedener Personen und einem nur unter Bedingung ausgeführten Schritt.",
+       "kurz": "Begonnenes Aktivitätsdiagramm nach Notizen erweitern",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.4",

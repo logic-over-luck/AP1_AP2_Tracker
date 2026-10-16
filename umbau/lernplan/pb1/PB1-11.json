@@ -71,6 +71,7 @@
       {
        "id": "PB1-11-1-1-K1",
        "text": "Du kannst die vier Schichten des TCP/IP-Modells (Netzzugang, Internet, Transport, Anwendung) benennen, den Schichten des OSI-Modells zuordnen und dabei über AP1 hinaus auch ARP, Routing und Switching einordnen.",
+       "kurz": "TCP/IP-Modell und Zuordnung zum OSI-Modell",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.01",
@@ -85,6 +86,7 @@
       {
        "id": "PB1-11-1-1-K2",
        "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte); den Aufbau der MAC-Adresse kennst du aus AP1-6-2-4.",
+       "kurz": "Felder des Ethernet-Frames",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.02.06.6",
@@ -94,6 +96,7 @@
       {
        "id": "PB1-11-1-1-K3",
        "text": "Du kannst Bridge, Switch und Router nach ihrer Weiterleitung vergleichen: Bridge und Switch lernen MAC-Adressen in einer MAC-Tabelle und leiten Frames nur in das Segment bzw. an den Anschluss des Ziels (ein Switch ist eine Bridge mit vielen Anschlüssen), ein Router entscheidet anhand seiner Routingtabelle, in welches Netz er ein Paket weiterleitet; Schicht und Adressart von Switch und Router kennst du aus AP1-6-1-3.",
+       "kurz": "Bridge, Switch und Router: Weiterleitung",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.01.3",
@@ -106,6 +109,7 @@
       {
        "id": "PB1-11-1-1-K4",
        "text": "Du kannst die Aufgabe einer Firewall beschreiben und Paketfilter (Regeln nach Adressen und Ports) von zustandsorientierter Prüfung (merkt sich bestehende Verbindungen und lässt nur die zugehörigen Antworten durch) unterscheiden.",
+       "kurz": "Firewall: Paketfilter und zustandsorientierte Prüfung",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.02.4"
@@ -150,6 +154,7 @@
       {
        "id": "PB1-11-1-2-K1",
        "text": "Du kannst die Eigenschaften von TCP (verbindungsorientiert, Bestätigung, richtige Reihenfolge, erneutes Senden verlorener Pakete) und UDP (verbindungslos, ohne Zustellgarantie, wenig Aufwand, schnell) erläutern.",
+       "kurz": "Eigenschaften von TCP und UDP",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.05.1",
@@ -159,6 +164,7 @@
       {
        "id": "PB1-11-1-2-K2",
        "text": "Du kannst für eine Anwendung die passenden Protokolle einsetzen und begründen, zum Beispiel TCP für Dateiübertragung und Webseiten, UDP für Sprache und Video in Echtzeit, HTTPS statt HTTP, sobald Anmeldedaten oder personenbezogene Daten übertragen werden (was das TLS-Zertifikat bewirkt, steht in PB1-10).",
+       "kurz": "Passende Protokolle für eine Anwendung",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.05.1",
@@ -168,6 +174,7 @@
       {
        "id": "PB1-11-1-2-K3",
        "text": "Du kannst mögliche Ursachen einer Fehlermeldung wie HTTP 404 beschreiben: Seite oder Datei gelöscht oder verschoben, URL fehlerhaft angelegt, falsch verlinkt oder falsch eingegeben; davon abgrenzen, dass Server oder Namensauflösung nicht erreichbar sind.",
+       "kurz": "Ursachen der Fehlermeldung HTTP 404",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.05.2",
@@ -205,6 +212,7 @@
       {
        "id": "PB1-11-1-3-K1",
        "text": "Du kannst die Aufgabe von DNS beschreiben: Namen in IP-Adressen auflösen, hierarchisch über Root-, Top-Level- und zuständige Nameserver, für lokale Domains über einen eigenen DNS-Server.",
+       "kurz": "Aufgabe und Hierarchie von DNS",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.07.1"
@@ -213,6 +221,7 @@
       {
        "id": "PB1-11-1-3-K2",
        "text": "Du kannst den Ablauf einer DHCP-Vergabe beschreiben: Discover, Offer, Request, Acknowledge; die Adresse gilt für eine begrenzte Zeit (Lease) und wird vorher verlängert.",
+       "kurz": "Ablauf der DHCP-Vergabe mit Lease",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.07.2"
@@ -221,6 +230,7 @@
       {
        "id": "PB1-11-1-3-K3",
        "text": "Du kannst die Aufgabe eines Proxys beschreiben: Er stellt Anfragen stellvertretend für die Clients und kann dabei filtern, zwischenspeichern und protokollieren.",
+       "kurz": "Aufgabe eines Proxys",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.07.3"
@@ -278,6 +288,7 @@
       {
        "id": "PB1-11-2-1-K1",
        "text": "Du kannst Netzarten nach ihrer Ausdehnung benennen und charakterisieren: PAN (Nahbereich einer Person), LAN (Gebäude, Gelände), MAN (Stadt), WAN (Länder), GAN (weltweit).",
+       "kurz": "Netzarten nach Ausdehnung: PAN bis GAN",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.1"
@@ -286,6 +297,7 @@
       {
        "id": "PB1-11-2-1-K2",
        "text": "Du kannst Netzwerkkonzepte ihrem Anwendungsgebiet zuordnen und die Zuordnung begründen: LPWAN für das Internet der Dinge (große Reichweite, geringer Energiebedarf, kostengünstig), LAN für das Unternehmensnetz (hohe Bandbreite, geringe Latenz), SAN im Rechenzentrum (schneller, skalierbarer Speicherzugriff der Server).",
+       "kurz": "Netzwerkkonzepte nach Anwendungsgebiet: LPWAN, LAN, SAN",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.03.1",
@@ -296,6 +308,7 @@
       {
        "id": "PB1-11-2-1-K3",
        "text": "Du kannst strukturierte Verkabelung charakterisieren: einheitlich und unabhängig von der späteren Nutzung geplante Verkabelung in Primärbereich (zwischen Gebäuden), Sekundärbereich (zwischen Stockwerken) und Tertiärbereich (bis zur Anschlussdose).",
+       "kurz": "Strukturierte Verkabelung in drei Bereichen",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.5"
@@ -304,6 +317,7 @@
       {
        "id": "PB1-11-2-1-K4",
        "text": "Du kannst Datenübertragungsraten von Netzen einordnen und vergleichen, zum Beispiel 1 Gbit/s und mehr im LAN, Glasfaser im Primärbereich, wenige kbit/s im LPWAN.",
+       "kurz": "Übertragungsraten von Netzen im Vergleich",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.2"
@@ -312,6 +326,7 @@
       {
        "id": "PB1-11-2-1-K5",
        "text": "Du kannst einen Netzwerkplan mit den Symbolen des Anhangs deuten: welche Geräte in welchem Teilnetz liegen, wie sie verbunden sind und zwischen welchen Netzen eine Firewall trennt.",
+       "kurz": "Netzwerkplan: Geräte, Teilnetze und Firewalls",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.12"
@@ -365,6 +380,7 @@
       {
        "id": "PB1-11-2-2-K1",
        "text": "Du kannst ein VLAN charakterisieren: ein logisch abgetrenntes Netz auf derselben Switch-Infrastruktur, eingesetzt, um Abteilungen oder Gäste zu trennen, die Sicherheit zu erhöhen und Broadcast-Verkehr zu begrenzen.",
+       "kurz": "VLAN: logisch abgetrenntes Netz",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.6"
@@ -373,6 +389,7 @@
       {
        "id": "PB1-11-2-2-K2",
        "text": "Du kannst Drahtlosnetze charakterisieren: PAN mit Bluetooth für kurze Entfernungen, WLAN im Gebäude, Mesh-WLAN mit mehreren zusammenarbeitenden Zugangspunkten für große Flächen.",
+       "kurz": "Drahtlosnetze: Bluetooth, WLAN und Mesh",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.7",
@@ -382,6 +399,7 @@
       {
        "id": "PB1-11-2-2-K3",
        "text": "Du kannst Risiken in Drahtlosnetzen und Maßnahmen dagegen beschreiben: Mithören, unbefugter Zugang und gefälschte Zugangspunkte; aktuelle Verschlüsselung, Anmeldung je Benutzer, getrenntes Gastnetz.",
+       "kurz": "Risiken und Schutz in Drahtlosnetzen",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.8",
@@ -391,6 +409,7 @@
       {
        "id": "PB1-11-2-2-K4",
        "text": "Du kannst neben RADIUS (aus AP1) Kerberos als Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: einmalige Anmeldung bei einer zentralen Stelle, danach zeitlich begrenzte Tickets für die einzelnen Dienste.",
+       "kurz": "Kerberos neben RADIUS",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.03.3"
@@ -450,6 +469,7 @@
       {
        "id": "PB1-11-2-3-K1",
        "text": "Du kannst Peer-to-Peer (gleichberechtigte Rechner ohne zentralen Server) und Client-Server (zentraler Dienst, der sich gemeinsam verwalten und sichern lässt) vergleichen und für einen Einsatz bewerten, welches Konzept passt.",
+       "kurz": "Peer-to-Peer gegen Client-Server",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.04"
@@ -458,6 +478,7 @@
       {
        "id": "PB1-11-2-3-K2",
        "text": "Du kannst Dateifreigaben über SMB/CIFS (vor allem Windows) und NFS (vor allem Unix und Linux) beschreiben und für einen Einsatz bewerten, welche passt.",
+       "kurz": "Dateifreigaben über SMB/CIFS und NFS",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.04.1",
@@ -468,6 +489,7 @@
       {
        "id": "PB1-11-2-3-K3",
        "text": "Du kannst Wege des Datenabrufs vergleichen und bewerten: HTTP für Webdienste und Schnittstellen, ODBC als einheitliche Schnittstelle von Anwendungen zu verschiedenen Datenbanken.",
+       "kurz": "Datenabruf über HTTP und ODBC",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.04.2"
@@ -476,6 +498,7 @@
       {
        "id": "PB1-11-2-3-K4",
        "text": "Du kannst das NAS aus AP1 (dateibasiert, stellt Dateien über das Netz bereit) vom SAN unterscheiden: eigenes Speichernetz, das Servern Speicher blockbasiert wie eine lokale Festplatte bereitstellt.",
+       "kurz": "NAS gegen SAN",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.02.06.1",
@@ -485,6 +508,7 @@
       {
        "id": "PB1-11-2-3-K5",
        "text": "Du kannst die Anbindung von Blockspeicher beschreiben: iSCSI über das normale Ethernet, Fibre Channel über ein eigenes, schnelles Speichernetz.",
+       "kurz": "Blockspeicher über iSCSI und Fibre Channel",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.02.06.3",
@@ -525,6 +549,7 @@
       {
        "id": "PB1-11-2-4-K1",
        "text": "Du kannst VPN-Modelle unterscheiden: Site-to-Site (zwei Standortnetze werden verbunden), End-to-Site (ein einzelnes Gerät wählt sich ins Firmennetz ein), End-to-End (zwei Geräte direkt).",
+       "kurz": "VPN-Modelle Site-to-Site, End-to-Site, End-to-End",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.06.1"
@@ -533,6 +558,7 @@
       {
        "id": "PB1-11-2-4-K2",
        "text": "Du kannst für eine Situation ein VPN-Modell und das Verfahren auswählen und die Wahl begründen, zum Beispiel Site-to-Site mit IPsec im Tunnelmodus für die Filialen, End-to-Site für Beschäftigte im Homeoffice.",
+       "kurz": "Passendes VPN-Modell für eine Situation",
        "stufe": 4,
        "herkunft": [
         "katalog:AP2b.01.06.1",
@@ -544,6 +570,7 @@
       {
        "id": "PB1-11-2-4-K3",
        "text": "Du kannst über das Bild des Tunnels aus AP1 hinaus IPsec erläutern: verschlüsselt und authentifiziert IP-Pakete auf der Netzwerkebene; im Tunnelmodus wird das ganze ursprüngliche Paket samt Kopf geschützt, im Transportmodus nur die Nutzdaten.",
+       "kurz": "IPsec: Tunnel- und Transportmodus",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.06.2",
@@ -554,6 +581,7 @@
       {
        "id": "PB1-11-2-4-K4",
        "text": "Du kannst eine VPN-Verbindung zwischen zwei Standorten einrichten: Gateways und ihre Adressen, zu verbindende Netze, Authentifizierung mit Pre-Shared Key oder Zertifikat, Verschlüsselungsverfahren festlegen.",
+       "kurz": "VPN-Verbindung zwischen zwei Standorten einrichten",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.01.06",
@@ -568,6 +596,7 @@
      "kuer": [
       {
        "text": "Weitere VPN-Protokolle wie L2TP und PPTP; Kabeltypen und Normen der Verkabelung (Twisted Pair, CAT-Klassen, Lichtwellenleiter, DIN EN 50173); Simplex, Halbduplex, Vollduplex; WEP und WPA im Vergleich.",
+       "kurz": "Weitere VPN-Protokolle, Verkabelung, Duplex, WEP und WPA",
        "quellen": [
         "podcast:themen-ap2"
        ],

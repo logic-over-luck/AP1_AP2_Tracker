@@ -469,7 +469,13 @@ function Zeile({ kurz, offen, onUmschalten, marken, children }) {
         </button>
         {marken && <span class="np-zeile__marken">{marken}</span>}
       </div>
-      {offen && <div class="np-zeile__auf">{children}</div>}
+      {offen && (
+        <div class="np-zeile__auf">
+          {children}
+          {/* schmale Bildschirme: die Marken passen nicht immer hinter das Stichwort, hier stehen sie vollständig */}
+          {marken && <div class="np-zeile__marken-auf">{marken}</div>}
+        </div>
+      )}
     </li>
   );
 }

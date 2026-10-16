@@ -450,6 +450,30 @@ describe('Regelwerk v2.0 in der Vorschau', async () => {
     }
     assert.ok(n > 1000);
   });
+  test('v2.2: jede Aussage und jeder Kür-Eintrag bringt sein Stichwort kurz mit, der volle Satz bleibt daneben', () => {
+    let n = 0;
+    for (const s of Object.values(alle.sp)) {
+      if (!s.neu) continue;
+      const satz = new Map(s.koennen);
+      for (const k of s.neu.koennen) {
+        n++;
+        assert.ok(k.kurz && k.kurz.length <= 60 && !/^du\b/i.test(k.kurz), `${k.id}: kurz „${k.kurz}“`);
+        assert.ok(satz.get(k.id)?.startsWith('Du kannst '), `${k.id}: voller Satz fehlt`);
+        assert.notEqual(k.kurz, satz.get(k.id));
+      }
+      assert.equal(new Set(s.neu.koennen.map((k) => k.kurz.toLowerCase())).size, s.neu.koennen.length, `${s.id}: kurz doppelt`);
+      for (const k of s.neu.kuer) assert.ok(k.kurz && k.text && k.kurz !== k.text && Array.isArray(k.quellen), `${s.id}: Kür ohne kurz`);
+    }
+    assert.ok(n > 1400, `nur ${n} Aussagen`);
+  });
+  test('v2.2: der Lernprompt bekommt weiter den vollen Satz und den vollen Kür-Text, nicht das Stichwort', async () => {
+    const { lernpromptStichpunkt } = await import('../src/bereiche/lernen/lernprompt.js');
+    const idx = baueIndex(alle);
+    const sp = [...idx.sp.values()].find((x) => x.raum === 'AP1' && x.neu?.kuer?.length);
+    const p = lernpromptStichpunkt(sp, idx);
+    for (const [, satz] of sp.koennen) assert.ok(p.includes(satz), satz);
+    for (const k of sp.neu.kuer) assert.ok(p.includes(k.text), k.text);
+  });
   test('D7: jeder Ordner hat ein Lernfeld mit Zeitrichtwert', () => {
     for (const r of Object.values(RAEUME_VORSCHAU)) for (const p of ladeLernplanAp1(wurzel, r)) {
       const e = lf.ordner[p.oberblock.id];
