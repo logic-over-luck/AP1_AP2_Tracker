@@ -5,6 +5,9 @@
 //          node tools/umbau/buch-pruefen.mjs AP1             … nur für Stichpunkte dieses Raums
 //          node tools/umbau/buch-pruefen.mjs --schreiben     überträgt Zählungen und Aussage-IDs aus den lokalen
 //                                                            Kernpunkt-Dateien nach umbau/zuordnung/buch.json
+//          node tools/umbau/buch-pruefen.mjs --anlegen       wie --schreiben, setzt zusätzlich je Kapitel stichpunkte
+//                                                            (aus den Kernpunkten abgeleitet) und filter in buch.json
+//                                                            und in der Kernpunkt-Datei
 // Liest:   umbau/zuordnung/buch.json (im Repo: nur Kapitelnummern, Seiten, Stichpunkt-IDs, Zählungen – D9),
 //          quellen/lehrbuch/kern/<Band>/<Kapitel>.json (nur lokal: eigene Stichworte je Kernpunkt, E10/D9),
 //          alle Lernpläne umbau/lernplan/*/*.json
@@ -23,7 +26,8 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 
 const args = process.argv.slice(2);
-const SCHREIBEN = args.includes('--schreiben');
+const ANLEGEN = args.includes('--anlegen');
+const SCHREIBEN = args.includes('--schreiben') || ANLEGEN;
 const BEREICH = args.find((a) => !a.startsWith('--')) ?? null;
 const ZUORDNUNG = process.env.BUCH_DATEI ?? 'umbau/zuordnung/buch.json';
 const KERN = process.env.BUCH_KERN ?? 'quellen/lehrbuch/kern';
@@ -98,6 +102,19 @@ if (lokal) {
     if (!existsSync(datei)) { F(`T10c: ${id}: Kernpunkt-Datei ${datei} fehlt`); continue; }
     let d;
     try { d = JSON.parse(readFileSync(datei, 'utf8')); } catch (x) { F(`T10c: ${id}: ${datei} ist kein JSON (${x.message})`); continue; }
+    if (ANLEGEN) {
+      // stichpunkte = alle Stichpunkte, die in den Kernpunkten vorkommen; ganz gefilterte Kapitel ohne Stichpunkte
+      const abgeleitet = new Set();
+      for (const kp of d.kernpunkte ?? []) {
+        for (const a of [kp.aussage ?? []].flat()) if (aussage.has(a)) abgeleitet.add(aussage.get(a));
+        if (kp.neu && kp.stichpunkt) abgeleitet.add(kp.stichpunkt);
+        if (kp.kuer) abgeleitet.add(kp.kuer);
+      }
+      d.stichpunkte = d.filter ? [] : [...abgeleitet].sort((x, y) => x.localeCompare(y, 'de', { numeric: true }));
+      e.stichpunkte = d.stichpunkte;
+      if (d.filter) e.filter = d.filter; else delete e.filter;
+      writeFileSync(datei, JSON.stringify(d, null, 1) + '\n');
+    }
     if (d.band !== band || d.kapitel !== nr) F(`T10c: ${id}: band/kapitel in der Datei passen nicht (${d.band}-${d.kapitel})`);
     if (!Array.isArray(d.seiten) || d.seiten.length !== 2) F(`T10c: ${id}: seiten fehlt`);
     else if (e.seiten && (d.seiten[0] !== e.seiten[0] || d.seiten[1] !== e.seiten[1])) F(`T10c: ${id}: Seiten ${d.seiten.join('–')} ≠ buch.json ${e.seiten.join('–')}`);
