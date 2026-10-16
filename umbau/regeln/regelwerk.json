@@ -1,7 +1,7 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "stand": "2026-10-16",
-  "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen. v2.0 (16.10.2026, D1–D10): Lehrbuch als Tiefenquelle, Abschnitt buch.",
+  "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen. v2.0 (16.10.2026, D1–D10): Lehrbuch als Tiefenquelle, Abschnitt buch. v2.1 (16.10.2026, Projektinhaber nach dem Überblick zu Schritt 2): Regel K nachgeschärft (RK1–RK6), F4 3–8.",
   "stufen": {
     "1": {
       "name": "Wiedergeben",
@@ -298,7 +298,11 @@
         "fachrichtung",
         "nicht_ae",
         "ausgeschlossen",
-        "projekt"
+        "projekt",
+        "nicht_im_buch",
+        "k1",
+        "vorgegeben",
+        "ocr-luecke"
       ],
       "prueffrage": "Braucht ein Anwendungsentwickler das, um einen Katalog-Baustein zu erklären oder eine Entscheidung zu begründen? Bei Zweifel: dazu.",
       "nicht_ae": "ganzes Kapitel ohne AE-Relevanz nach Regel K (z. B. Lernsituation, Modellunternehmen, reine Systemintegration): Datei mit filter, ohne Kernpunkte",
@@ -308,17 +312,73 @@
         "bedienung": "Bedienschritte, Bildschirmanleitungen, Installationsschritte einzelner Programme",
         "exkurs": "Exkurse und Infokästen",
         "uebung": "Übungsaufgaben, Lernsituationen, Arbeitsaufträge",
-        "fachrichtung": "vom Buch ausdrücklich Systemintegration, digitaler Vernetzung oder anderen Berufen zugeordnet",
+        "fachrichtung": "vom Buch ausdrücklich Systemintegration, digitaler Vernetzung, Daten- und Prozessanalyse oder Kaufleuten zugeordnet (RK4)",
         "nicht_ae": "ohne AE-Relevanz nach der Prüffrage (z. B. Modellunternehmen, reine Elektrotechnik)",
         "ausgeschlossen": "Folge von D3/G1: Thema, das der Katalog ausschließt oder gestrichen hat (z. B. B3: Struktogramm, PAP)",
-        "projekt": "gehört nur zur betrieblichen Projektarbeit (Raum PROJEKT, zurückgestellt nach P53; P55)"
+        "projekt": "gehört nur zur betrieblichen Projektarbeit (Raum PROJEKT, zurückgestellt nach P53; P55)",
+        "nicht_im_buch": "Kernpunkt steht gar nicht im Buchkapitel (eigene Ergänzung der bauenden Sitzung, von der Gegenprüfung gefunden) – kein Kernabschnitt, keine Pflicht",
+        "k1": "RK1: weder Prinzip/Funktionsweise noch Auswahlkriterium/Vor-Nachteil mit Begründung noch Katalogbegriff – entfällt (oder Kür)",
+        "vorgegeben": "RK1/B4: Datenblatt-Tabellen, Einzelwerte, Größenordnungen ohne Auswahlbezug – in der Prüfung vorgegeben, nicht auswendig",
+        "ocr-luecke": "RK5: Inhalt fehlt im OCR-Text (Grafik, Kasten) – nicht raten, im Bericht aufgelistet"
+      },
+      "schaerfung": {
+        "version": "2.1",
+        "stand": "2026-10-16",
+        "RK1": {
+          "name": "Prinzip-Test (ersetzt „bei Zweifel dazu“)",
+          "pflicht_nur_wenn": {
+            "a": "Prinzip oder Funktionsweise (warum/wie etwas arbeitet)",
+            "b": "Auswahlkriterium oder Vor-/Nachteil mit Begründung",
+            "c": "Begriff, den ein Katalog-Baustein wörtlich oder als direkten Oberbegriff nennt"
+          },
+          "sonst": "Kür oder entfällt",
+          "ausdruecklich_kuer_oder_raus": [
+            "Datenblatt-Tabellen und Einzelwerte (USB-Generationen, cd/m², Kontrast, Datum 2038, Prozent- und Stückzahlen)",
+            "sprach- oder bibliotheksspezifische Details (Python-Konventionen, put/get/replace, Listenmethoden, MongoDB-Syntax) – die Prüfung nutzt Pseudocode",
+            "Bedienwege und Werkzeugwahl"
+          ],
+          "groessenordnungen": "nur, wenn sie eine Auswahl tragen (z. B. SSD gegen HDD, Binär- gegen Dezimalpräfix), sonst „vorgegeben“ nach B4"
+        },
+        "RK2": {
+          "name": "Katalogbezug",
+          "regel": "Ein Oberbegriff trägt genau eine Ebene: Der Kernpunkt muss das Thema erklären, das der Baustein nennt, nicht ein Unterthema davon.",
+          "beispiele_kuer": [
+            "Container über „Cloud“",
+            "GPIO über „Sensoren“",
+            "magisches Dreieck über „Merkmale des Projektmanagements“"
+          ],
+          "virtualisierung": "eigener Baustein im AP2-Katalog prüfen, sonst Kür"
+        },
+        "RK3": {
+          "name": "Obergrenze je Ordner",
+          "anteil": 0.6,
+          "regel": "neue Pflicht-Aussagen höchstens 60 % der bestehenden Aussagen des Ordners; reicht das nicht, bleiben RK1a (Prinzip) und RK1b (Begründung), der Rest wird Kür",
+          "ziel_gesamt": [
+            400,
+            500
+          ]
+        },
+        "RK4": {
+          "name": "Filter fachrichtung",
+          "regel": "gilt für Systemintegration, digitale Vernetzung, Daten- und Prozessanalyse und Kaufleute; weitere falsch gefilterte Prinzipien nach RK1"
+        },
+        "RK5": {
+          "name": "Buchfehler und veraltete Stände",
+          "regel": "fachliche Richtigkeit vor Buchtext; Aussage nach aktuellem Stand, am Stichpunkt ein hinweis, dass das Buch abweicht (wie P35 Nr. 7); OCR-Lücken nicht raten: filter ocr-luecke, im Bericht auflisten"
+        },
+        "RK6": {
+          "name": "Zuordnung prüfen",
+          "regel": "Passt das Kapitelthema nicht zum Ordnerthema, Zuordnung vor Schritt 3 korrigieren (z. B. Corporate Identity/Design → AP1-2, nicht AP1-8-4-3); Liste in den Bericht"
+        }
       }
     },
     "form": {
       "f3_min": 3,
       "f3_max": 10,
       "operator_ohne_baustein": "erklären",
-      "stufe_ohne_baustein": 2
+      "stufe_ohne_baustein": 2,
+      "f4_min": 3,
+      "f4_max": 8
     },
     "g3": "Stufe ist Untergrenze (D3): bestimmt die Form, nicht den Inhalt. Grenzen nur gegen Themen anderer Räume oder vom Katalog ausgeschlossene; reine Tiefen-Grenzen entfallen, wenn das Buch das Thema im Kernabschnitt behandelt.",
     "doppelt": "D6: Doppelt mit bestehender Aussage → Buch-Aussage entfällt, die bestehende bekommt die Buch-Herkunft zusätzlich.",

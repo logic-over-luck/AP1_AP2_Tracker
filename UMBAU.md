@@ -138,7 +138,7 @@ verbessern, ohne dass darunter etwas wackelt. Schicht 5 wird jederzeit neu erzeu
 
 ---
 
-## 4. Regelwerk – v2.0 [fest]
+## 4. Regelwerk – v2.1 [fest]
 
 Freigegeben am 16.10.2026 (Projektinhaber, Entscheidungen D1–D10 im Auftrag „Regelwerk v2.0“, Branch `regelwerk-v2`).
 Anlass: P54 (zu prüfungsnah, dünne Stichpunkte bei offenen Sachthemen; `umbau/berichte/P54-analyse.md`,
@@ -191,6 +191,35 @@ anderes bestimmt. Maßgeblich als Daten: `umbau/regeln/regelwerk.json` (Version 
   Kür: „Freiwillig, wenn Zeit ist“ ohne „nicht abfragen“. Prüfungsfragen weiter zu jeder Aussage, aber erst nach der
   Erklärung des ganzen Stichpunkts.
 - **D11 Offene Fragen** aus dem Bau kommen als P55 ff. auf den Parkplatz (Abschnitt 8), mit Vorschlag.
+
+**Nachschärfung v2.1 (16.10.2026, Projektinhaber nach dem Überblick zu Schritt 2) – Regel K, RK1–RK6** (gehen D2 vor;
+die Namen RK… unterscheiden sie von den KI-Prüffragen K1–K5 in Abschnitt 5):
+
+- **RK1 Prinzip-Test** (ersetzt „bei Zweifel dazu“). Ein neuer Kernpunkt wird nur Pflicht-Aussage, wenn er eines liefert:
+  (a) ein Prinzip oder eine Funktionsweise (warum/wie etwas arbeitet), (b) ein Auswahlkriterium oder einen
+  Vor-/Nachteil mit Begründung, (c) einen Begriff, den ein Katalog-Baustein wörtlich oder als direkten Oberbegriff nennt.
+  Alles andere wird Kür oder entfällt. Ausdrücklich Kür oder raus: Datenblatt-Tabellen und Einzelwerte
+  (USB-Generationen, cd/m², Kontrast, Datum 2038, Prozent- und Stückzahlen); sprach- oder bibliotheksspezifische Details
+  (Python-Konventionen, put/get/replace, Listenmethoden, MongoDB-Syntax), weil die Prüfung Pseudocode nutzt; Bedienwege
+  und Werkzeugwahl. Größenordnungen nur, wenn sie eine Auswahl tragen (SSD gegen HDD, Binär- gegen Dezimalpräfix),
+  sonst „vorgegeben“ nach B4.
+- **RK2 Katalogbezug:** Ein Oberbegriff trägt genau eine Ebene. Der Kernpunkt muss das Thema erklären, das der Baustein
+  nennt, nicht ein Unterthema davon (Container über „Cloud“, GPIO über „Sensoren“, magisches Dreieck über „Merkmale des
+  Projektmanagements“: Kür). Virtualisierung: eigenen Baustein im AP2-Katalog prüfen, sonst Kür.
+- **RK3 Obergrenze je Ordner:** neue Pflicht-Aussagen höchstens 60 % der bestehenden Aussagen des Ordners (AP1-4 mit 74
+  Aussagen: höchstens 44). Reicht das nicht, bleiben die Prinzip-Punkte (RK1a) und die Begründungen (RK1b), der Rest
+  wird Kür. Zielgröße gesamt 400–500 neue Pflicht-Aussagen. F3 bleibt 3–10; **F4 wird 3–8** Stichpunkte je Themenblock,
+  sonst teilen (P55).
+- **RK4 Filter:** „fachrichtung“ gilt für Systemintegration, digitale Vernetzung, Daten- und Prozessanalyse und
+  Kaufleute. Falsch gefilterte Prinzipien aus den Gegenprüfungen sind eingebaut; weitere nach RK1.
+- **RK5 Buchfehler und veraltete Stände:** fachliche Richtigkeit vor Buchtext. Aussage nach aktuellem Stand (DDG statt
+  TMG usw.), am Stichpunkt ein `hinweis`, dass das Buch abweicht (wie P35 Nr. 7). OCR-Lücken: Kernpunkt nicht raten,
+  `filter: ocr-luecke`, im Bericht auflisten.
+- **RK6 Zuordnung prüfen:** Passen Kapitelthema und Ordnerthema nicht zusammen, wird die Zuordnung vor Schritt 3
+  korrigiert (z. B. Corporate Identity/Design → AP1-2, nicht AP1-8-4-3); Liste im Bericht.
+
+Neue Filter-Gründe dafür: `k1` (RK1 nicht erfüllt), `vorgegeben` (B4), `ocr-luecke` (RK5); dazu `nicht_im_buch` für
+Kernpunkte, die die Gegenprüfung gar nicht im Buch fand.
 
 Ring (4.8) einer Buch-Aussage: **Kern** (Pflicht, Herkunft `buch:`); Buch-Themen ohne Katalogbezug: **Kür** (D8).
 Prüfungen dazu: T10 (`tools/umbau/buch-pruefen.mjs`), K4 und K5 (Abschnitt 5).
@@ -290,7 +319,7 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
 - **F2** Jede Können-Aussage hat eine Herkunft: `katalog:<Baustein-ID>` · `beleg:<Teilaufgaben-ID>` ·
   `regel:<P-…>` · seit v2.0 (D4) `buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>]`.
 - **F3** Stichpunkt: 3–7 Können-Aussagen, eine Lerneinheit von etwa 30–90 Minuten. **Seit v2.0 (D5): 3–10**; größer → teilen.
-- **F4** Themenblock: 3–6 Stichpunkte mit gemeinsamer Grundlage.
+- **F4** Themenblock: 3–6 Stichpunkte mit gemeinsamer Grundlage. **Seit v2.1 (RK3): 3–8**, sonst teilen (P55).
 - **F5** Gruppierung: Was in Prüfungen in derselben Aufgabe zusammen abgefragt wird, gehört in denselben
   Stichpunkt oder Themenblock. Grundlagen stehen vor ihrer Anwendung.
 - **F6 P-MUSTER** (seit v1.5, P18) Können-Aussagen zu Katalogthemen ohne Prüfungsbeleg werden nach dem Aufgabentyp
@@ -851,6 +880,7 @@ Offene Fragen und Ideen. Neue Punkte unten anhängen, nie still entscheiden.
 | P52 | **Abnahme WISO** (wie P45). Der Lernplan ist gebaut, unabhängig geprüft und eingebaut; die App zeigt ihn mit Hinweis „noch nicht abgenommen“. Nach der Abnahme: `abgenommen: true` in `RAEUME_VORSCHAU.WISO`, Export `umbau/export/WISO.json` (E3), Generatoren `tools/umbau/gen-wiso/` nicht mehr laufen lassen. **Entschieden (Claude im Auftrag des Projektinhabers, 16.10.2026): abgenommen**, wie P45 im Vertrauen auf Skripte und unabhängige KI-Prüfer, nachdem die Kür nach P49 eingetragen ist und alle Prüfungen erneut grün sind. Umgesetzt: `abgenommen: true` in `RAEUME_VORSCHAU.WISO`, Export `umbau/export/WISO.json` (E3), Generatoren `tools/umbau/gen-wiso/` stillgelegt. Funde beim Lernen wie P45. | erledigt |
 | P53 | **Raum PROJEKT (Schritt 8) zurückgestellt (Projektinhaber, 16.10.2026):** bewusst jetzt nicht bauen, weil die betriebliche Projektarbeit noch weit in der Zukunft liegt. Später wieder aufnehmen, zusammen mit P8 (Vorgaben der IHK Rheinhessen). Bis dahin beginnt keine Sitzung von sich aus mit Schritt 8. | zurückgestellt |
 | P54 | **Zu prüfungsnah (Projektinhaber, 16.10.2026):** Beim Lernen entsteht der Eindruck, für Altprüfungen zu lernen statt das Fach breit und tief zu verstehen. Befund: Anteil der Können-Aussagen mit einer Prüfungsaufgabe als Herkunft AP1 50 %, PB1 44 %, PB2 81 %, WiSo 51 %; **nur** aus Prüfungen (ohne Katalogstelle) AP1 35 %, PB1 7 %, PB2 6 %, WiSo 0 %. Ursache in den Regeln: Belege heben die Tiefe und fügen Inhalte hinzu (B1, Z1), die Form folgt dem IHK-Aufgabentyp (F6 P-MUSTER), Prüfungsantworten mit Fallen gehen in die Aussage (D11 WiSo), die Wichtigkeit zählt Prüfungstermine (P28). Schritt 1: unabhängige Durchsicht mit dem Beruf als Maßstab, ohne Prüfungen und ohne Katalog (`node tools/extern/neutral-export.mjs` → `build/extern/`, Prompt `build/extern/PROMPT.md`). Danach Grundsatzentscheidung, z. B. (a) so lassen, (b) eine Verstehens-Schicht je Stichpunkt ergänzen (Warum, Prinzip, Zusammenhang), ohne die Aussagen zu ändern, (c) Regelwerk ändern: Form nach Fach statt nach Aufgabentyp, Aussagen nur aus Prüfungen auf das Prinzip verallgemeinern. Analyse: `umbau/berichte/P54-analyse.md` (stärkster Verstärker ist der Lernprompt; Empfehlung: Lernprompt mit Wahl Verstehen/Prüfung und Verstehens-Schicht, Regelwerk erst nach der Durchsicht). **Vergleich mit DAA-Unterricht (16.10.2026, zwei Dozenten, Unterlagen nur lokal):** LF2 Hardware – großer Abstand: EVA, von Neumann, Bus, Befehlszyklus, Chipsatz, Formfaktoren, Kühlung, ECC, SSD-Zelltypen, Green IT fehlen, von Neumann/Harvard/CISC-RISC/Busse stehen nur als Kür (AP1-4); der Katalog nennt dort nur Produkte. LF8 UML, VPN/VLAN, Softwarearten – kleiner Abstand, der Tracker ist teils tiefer; dort ist der Katalog genau (Anhang). Folgerung: Das Problem sitzt in Ordnern mit dünnem Katalog, kein allgemeiner Umbau; später gezielte Nachbesserung (zuerst AP1-4, prüfen AP1-5, AP1-7) mit DAA-Unterlagen als Maßstab. **Erkenntnisse (16.10.2026, Gespräch mit dem Projektinhaber):** (1) Ob der Katalog konkret oder nur Stichwort ist, erklärt den Abstand nicht (fast alles ist Stichwort: AP1 59 %, AP2b 84 %, WiSo 72 %; UML ist zu 90 % Stichwort und trotzdem gut). Entscheidend ist, ob das Thema **abgeschlossen** ist (Notation, Rechenverfahren, Gesetz: Katalog und Prüfungen ergeben die volle Tiefe) oder **offen** (Hardware, Betriebssysteme, Sicherheitskonzepte: Prüfungen picken Einzelfakten). (2) Die DAA nimmt ihre Grenze aus dem Lehrbuch (Westermann IT-Berufe: Grundstufe LF1–5, Fachstufe Technische IT-Berufe LF6–9, Fachstufe II Anwendungsentwicklung LF10–12; liegen dem Projektinhaber vor), aus dem Zeitrichtwert des Rahmenlehrplans, aus Prüfungen und Erfahrung. E5 hatte Lehrbücher als Tiefenquelle ausgeschlossen – das fehlende Stück. (3) Ein Lehrbuch ist für alle IT-Berufe zu breit; nötig sind Filter: Katalogstelle vorhanden, Fachrichtung AE, Kernabschnitt (Begriffe, Prinzip, Auswahlkriterien; keine Historie, Exkurse, Herstellerdetails), Prüffrage „brauche ich das, um eine Aussage zu begründen?“. Der DAA-Unterricht ist dieses gefilterte Lehrbuch. Mögliche Rangfolge: Katalog = Breite, Lehrbuchkapitel gefiltert durch die DAA-Auswahl = Tiefe und Ende, Prüfungen = Mindestmaß. (4) Vorgehen: nicht vorher nachbessern; Probelauf mit Grundstufe LF2 (Hardware) und den DAA-Unterlagen zu LF2, danach entscheiden; Bücher nur kapitelweise und nur lokal unter `quellen/` (E10). **Lehrbuch-Abgleich (16.10.2026):** Inhaltsverzeichnisse aller drei Bände (298 Unterkapitel) gegen den Tracker: 152 abgedeckt, 61 zu schmal, 22 fehlen (2 im Katalog, 20 nicht), 63 nicht relevant. Größte Lücke: Programmierpraxis (Datenbankzugriff aus dem Programm in allen drei Büchern, Datenstrukturen, Sprachgrundlagen, Clean Code, ereignisgesteuerte Oberflächen); dazu Gerüst bei Hardware, Netzwerk, Kaufmännischem, sicherer Softwareentwicklung, DevOps/Agil. Bericht `umbau/berichte/P54-lehrbuch-abgleich.md`. **Stufe 3 (alle 82 markierten Kapitel am Buchtext gelesen):** von 225 relevanten Kapiteln reicht der Tracker in 157 (70 %), in 51 (23 %) fehlen 1–3 Punkte, in 17 (8 %) das Gerüst (13 Themen, 11 davon im Katalog: Datenbankzugriff aus dem Programm, DBMS, Datenstrukturen, Datendarstellung, Kommentieren, CPU, Geschäftsprozesse, Beschaffungsprozess, Ursachenanalyse, Datenqualität, Sicherheit im Entwurf; nicht im Katalog: Clean Code, Oberflächen programmieren, Dateizugriff, MQTT). Ergebnisse je Kapitel in `umbau/berichte/P54-stufe3/`. Korrektur: gelesen 32 % des Buchtexts (nur die markierten Kapitel), grüne Kapitel ungeprüft; zusammen rund 180 fehlende Punkte (≈ 150–180 Können-Aussagen). Offen: Stichprobe grüner Kapitel. | offen |
+| P55 | **Themenblöcke mit mehr als 6 Stichpunkten** (V2 Schritt 3): Durch die Teilung großer Stichpunkte (D5) wachsen Themenblöcke. **Entschieden (Projektinhaber, 16.10.2026, RK3):** F4 wird 3–8; wird ein Block größer, wird er geteilt (neuer Themenblock mit nächster freier Nummer). Umgesetzt in `lernplan-pruefen.mjs` (F4 aus `regelwerk.json` → `buch.form`). | erledigt |
 ---
 
 ## 9. Fundament erzeugen und prüfen

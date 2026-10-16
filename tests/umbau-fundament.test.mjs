@@ -367,7 +367,9 @@ test('Deckung P47: jeder gedeckte Baustein ist ein WISO-Baustein und zeigt auf S
 // ---------- Regelwerk v2.0: Lehrbuch als Tiefe (D1–D10, UMBAU.md 4.0) ----------
 test('Regelwerk 2.0: Abschnitt buch mit Regel K, Herkunftsformat, Band-Kürzeln und F3 3–10', () => {
   const r = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
-  assert.equal(r.version, '2.0');
+  assert.ok(['2.0', '2.1'].includes(r.version));
+  assert.equal(r.buch.form.f4_max, 8);
+  for (const x of ['RK1', 'RK2', 'RK3', 'RK4', 'RK5', 'RK6']) assert.ok(r.buch.regel_k.schaerfung[x], x);
   assert.deepEqual(Object.keys(r.buch.baende), ['GS', 'FS', 'FS2']);
   const re = new RegExp(r.buch.herkunft.regex);
   for (const ok of ['GS-2.4.3', 'GS-2.4.3-S119', 'FS2-1.4', 'FS-3.7.5-S281']) assert.match(ok, re);

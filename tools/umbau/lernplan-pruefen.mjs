@@ -6,7 +6,7 @@
 // Schreibt: umbau/berichte/<Ordner>.md
 //
 // Prüfungen (UMBAU.md Abschnitt 5):
-//   Struktur  IDs eindeutig und richtig aufgebaut; F3 (seit v2.0, D5: 3–10 Können je Stichpunkt), F4 (3–6 Stichpunkte je Block)
+//   Struktur  IDs eindeutig und richtig aufgebaut; F3 (seit v2.0, D5: 3–10 Können je Stichpunkt), F4 (seit v2.1: 3–8 Stichpunkte je Block)
 //   T3        jede Können-Aussage hat eine gültige Herkunft, passend zu Bausteinen und Teilaufgaben des Stichpunkts;
 //             seit v2.0 (D4) auch buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>] (Format laut regelwerk.json → buch.herkunft)
 //   T4        jede Grenze nennt Katalogstellen und eine Begründung
@@ -81,6 +81,7 @@ const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-B
 // v2.0 (D4, D5): Buch-Herkunft und Größe eines Stichpunkts aus dem Regelwerk
 const BUCH = new RegExp(regeln.buch?.herkunft?.regex ?? '^$');
 const [F3_MIN, F3_MAX] = [regeln.buch?.form?.f3_min ?? 3, regeln.buch?.form?.f3_max ?? 7];
+const [F4_MIN, F4_MAX] = [regeln.buch?.form?.f4_min ?? 3, regeln.buch?.form?.f4_max ?? 6]; // v2.1: 3–8 (P55)
 const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
 // Alltagswörter, die als Prüfungsoperator nur in fester Wendung vorkommen (v1.6): nicht für die F1-Heuristik
 for (const w of ['bringen', 'finden', 'schreiben', 'einfügen']) delete opStufe[w];
@@ -103,7 +104,7 @@ const spIds = [], kIds = [];
 const stichpunkte = [];
 for (const tb of lp.themenbloecke) {
   if (!tb.id.startsWith(`${ORDNER}-`)) F(`Themenblock ${tb.id} beginnt nicht mit ${ORDNER}-`);
-  if (tb.stichpunkte.length < 3 || tb.stichpunkte.length > 6) F(`F4: Themenblock ${tb.id} hat ${tb.stichpunkte.length} Stichpunkte (erlaubt 3–6)`);
+  if (tb.stichpunkte.length < F4_MIN || tb.stichpunkte.length > F4_MAX) F(`F4: Themenblock ${tb.id} hat ${tb.stichpunkte.length} Stichpunkte (erlaubt ${F4_MIN}–${F4_MAX})`);
   for (const sp of tb.stichpunkte) {
     stichpunkte.push({ ...sp, block: tb.id });
     spIds.push(sp.id);
