@@ -52,3 +52,13 @@ Ordnerübergreifend: PB1-10-3-2-K1 (Firewall) überschneidet sich mit PB1-11-1-2
 | ordnerübergreifend | Firewall-Aussage auf den Webfilter mit Abgrenzung gekürzt; Sensor-Beispiel bleibt hier (Wohnort), Duplikat in PB1-3 entfernt |
 
 Gliederung: zwei Themenblöcke, die Kryptografie-Stichpunkte im ersten Block. Ergebnis: 41 → 32 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-10-2-3-K1 | gestrichen | AP1-7-3-3-K4/K5 | Katalogbeispiele Zutritt/Zugang/Zugriff zuordnen ist die AP1-Unterscheidung in gleicher Stufe; die Beispiele prüft PB1-10-2-3-K2 (Stufe 4) auf Wirksamkeit. alt_neu AP2-7-3-1-K1/-K2 → PB1-10-2-3-K2; Karten AP2-7-3-1-K2-1..-3 entfernt; R3/R4 nachgeführt. |
+| PB1-10-2-1-K1 | gekürzt | AP1-7-1-3-K5 | „nur die nötigen Rechte“ gestrichen; Karte AP2-7-3-1-K6-2 (geringste Rechte) entfernt. |
+| PB1-10-1-3, PB1-10-1-4 (bausteine) | Bausteine entfernt | AP1-7-3-1, AP1-7-3-2 | AP1.06.04.8 und AP1.06.04.9 ohne Aussage mit `neu`; die Aussagen hängen an AP2b.05.01.x und sagen schon, was über AP1 hinausgeht (TLS hybrid, Zertifikatskette, Salt). |

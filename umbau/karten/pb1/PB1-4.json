@@ -12,48 +12,6 @@
       "hinten": "- Anwendungsfall: was das System für wen leistet\n- Klasse: Aufbau aus Klassen und Beziehungen (Strukturdiagramm)\n- Sequenz: Nachrichten zwischen Objekten in zeitlicher Folge\n- Zustand: Zustände eines Objekts und Übergänge\n- Aktivität: Ablauf von Tätigkeiten"
     },
     {
-      "id": "AP2-2-1-2-K1-1",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K2",
-      "vorne": "Welche Grundelemente hat ein Anwendungsfalldiagramm, und wie werden sie gezeichnet?",
-      "hinten": "- Akteur: Strichmännchen außerhalb der Systemgrenze\n- Anwendungsfall: Ellipse innerhalb der Systemgrenze\n- Systemgrenze: Rechteck mit dem Systemnamen\n- Assoziation: Linie zwischen Akteur und Anwendungsfall"
-    },
-    {
-      "id": "AP2-2-1-2-K2-1",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K2",
-      "vorne": "Wann setzt man im Anwendungsfalldiagramm eine Generalisierung zwischen zwei Akteuren ein?",
-      "hinten": "Wenn ein Akteur alle Anwendungsfälle (Rechte) eines anderen Akteurs hat und darüber hinaus weitere, z. B. Administrator und Benutzer."
-    },
-    {
-      "id": "AP2-2-1-2-K2-2",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K2",
-      "vorne": "Wie wird die Generalisierung zwischen Akteuren gezeichnet?",
-      "hinten": "Durchgezogene Linie mit nicht ausgefüllter Dreieckspitze vom spezielleren Akteur (z. B. Administrator) zum allgemeineren (z. B. Benutzer)."
-    },
-    {
-      "id": "AP2-2-1-2-K3-1",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K2",
-      "vorne": "Wann verwendet man im Anwendungsfalldiagramm «include», wann «extend»?",
-      "hinten": "- «include»: Der Teilablauf wird immer ausgeführt (verpflichtend)\n- «extend»: Der Teilablauf wird nur optional oder unter einer Bedingung ausgeführt"
-    },
-    {
-      "id": "AP2-2-1-2-K3-2",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K2",
-      "vorne": "Wie sieht der «include»-Pfeil aus, und in welche Richtung zeigt er?",
-      "hinten": "Gestrichelter Pfeil mit offener Spitze und «include», vom einbindenden Basis-Anwendungsfall zum eingebundenen Anwendungsfall."
-    },
-    {
-      "id": "AP2-2-1-2-K3-4",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K2",
-      "vorne": "„Geld abheben“ prüft immer die PIN; einen Beleg druckt es nur auf Wunsch. Welche Beziehungen zeichnest du, und wohin zeigen die Pfeile?",
-      "hinten": "- «include» von „Geld abheben“ zu „PIN prüfen“\n- «extend» von „Beleg drucken“ zu „Geld abheben“"
-    },
-    {
       "id": "AP2-2-1-2-K6-1",
       "sp": "PB1-4-1-1",
       "k": "PB1-4-1-1-K2",
@@ -66,13 +24,6 @@
       "k": "PB1-4-1-1-K2",
       "vorne": "Ist „Datenbankabfrage ausführen“ ein guter Name für einen Anwendungsfall eines Bibliothekskunden?",
       "hinten": "Nein: Das beschreibt einen internen Systemvorgang, nicht das Anliegen des Akteurs. Besser z. B. „Buch suchen“."
-    },
-    {
-      "id": "AP2-2-1-2-K3-3",
-      "sp": "PB1-4-1-1",
-      "k": "PB1-4-1-1-K3",
-      "vorne": "Wie sieht der «extend»-Pfeil aus, und in welche Richtung zeigt er?",
-      "hinten": "Gestrichelter Pfeil mit offener Spitze und «extend», vom erweiternden Anwendungsfall zum Basis-Anwendungsfall, der erweitert wird."
     },
     {
       "id": "AP2-2-1-2-K4-1",
@@ -96,25 +47,11 @@
       "hinten": "- `- name : String`\n- `- passwort : String`\n- `+ Benutzer(name : String, passwort : String)`\n- `+ getName() : String`\n- `+ setName(name : String)`\n- `+ validatePassword(eingabe : String) : Boolean`"
     },
     {
-      "id": "AP2-2-1-1-K3-1",
-      "sp": "PB1-4-1-2",
-      "k": "PB1-4-1-2-K2",
-      "vorne": "Wie werden Assoziation und gerichtete Assoziation im Klassendiagramm gezeichnet?",
-      "hinten": "- Assoziation: einfache durchgezogene Linie\n- gerichtete Assoziation: durchgezogene Linie mit offener Pfeilspitze; navigierbar in Pfeilrichtung, die Klasse am Linienanfang kennt die an der Spitze"
-    },
-    {
       "id": "AP2-2-1-1-K4-1",
       "sp": "PB1-4-1-2",
       "k": "PB1-4-1-2-K2",
       "vorne": "Was bedeuten die Multiplizitäten 1, 0..1, 1..* und *?",
       "hinten": "- `1`: genau eins\n- `0..1`: keins oder eins\n- `1..*`: mindestens eins\n- `*`: beliebig viele, auch keins (wie `0..*`)"
-    },
-    {
-      "id": "AP2-2-1-1-K4-2",
-      "sp": "PB1-4-1-2",
-      "k": "PB1-4-1-2-K2",
-      "vorne": "`Kunde 1 —— * Bestellung`: Wie liest man diese Multiplizitäten in Worten?",
-      "hinten": "Ein Kunde hat beliebig viele (auch keine) Bestellungen; jede Bestellung gehört zu genau einem Kunden."
     },
     {
       "id": "AP2-2-1-1-K4-3",
@@ -402,8 +339,8 @@
     },
     {
       "id": "AP2-2-1-1-K3-1",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Assoziation und gerichtete Assoziation stehen in AP1-8-3-2-K4"
     },
     {
       "id": "AP2-2-1-1-K3-2",
@@ -417,8 +354,8 @@
     },
     {
       "id": "AP2-2-1-1-K4-2",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Multiplizitäten 1 und * lesen steht in AP1-8-3-2-K4"
     },
     {
       "id": "AP2-2-1-1-K4-3",
@@ -447,8 +384,8 @@
     },
     {
       "id": "AP2-2-1-2-K1-1",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Grundelemente und ihre Zeichnung stehen in AP1-8-3-1 (K1, K2, K6); PB1-4-1-1-K2 auf das vollständige Erstellen und die Benennung gekürzt"
     },
     {
       "id": "AP2-2-1-2-K1-2",
@@ -462,33 +399,33 @@
     },
     {
       "id": "AP2-2-1-2-K2-1",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Generalisierung zwischen Akteuren steht in AP1-8-3-1-K3; PB1-4-1-1-K2 auf das vollständige Erstellen und die Benennung gekürzt"
     },
     {
       "id": "AP2-2-1-2-K2-2",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Generalisierung zwischen Akteuren steht in AP1-8-3-1-K3; PB1-4-1-1-K2 auf das vollständige Erstellen und die Benennung gekürzt"
     },
     {
       "id": "AP2-2-1-2-K3-1",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – include und extend unterscheiden steht in AP1-8-3-1-K4/K5; PB1-4-1-1-K2 auf das vollständige Erstellen und die Benennung gekürzt"
     },
     {
       "id": "AP2-2-1-2-K3-2",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – include-Beziehung steht in AP1-8-3-1-K4; PB1-4-1-1-K2 auf das vollständige Erstellen und die Benennung gekürzt"
     },
     {
       "id": "AP2-2-1-2-K3-3",
-      "entscheidung": "bleibt",
-      "grund": "passt besser zu dieser Aussage, Text unverändert"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – extend mit Pfeilrichtung steht in AP1-8-3-1-K5; PB1-4-1-1-K3 auf Bedingung und Erweiterungspunkt gekürzt"
     },
     {
       "id": "AP2-2-1-2-K3-4",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – include und extend mit Pfeilrichtung stehen in AP1-8-3-1-K4/K5; PB1-4-1-1-K2 auf das vollständige Erstellen und die Benennung gekürzt"
     },
     {
       "id": "AP2-2-1-2-K4-1",

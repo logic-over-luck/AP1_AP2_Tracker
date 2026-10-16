@@ -41,3 +41,12 @@
 | 13 | entschieden mit P10/P35: keine pauschale Obergrenze; der Ordner ist durch die Funde 1–12 von 36 auf 28 Aussagen geschrumpft |
 
 Gliederung: Schichtenmodelle und Komponenten in einem Stichpunkt (F3). Ergebnis: 36 → 28 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-11-1-1-K2 | gekürzt | AP1-6-2-4-K1 | Aufbau der MAC-Adresse (2024W-PB1-A2-bb) ist vollständig AP1; Beleg aus der Herkunft genommen, Karte AP2-6-1-1-K3-2 entfernt. Bleibt: Felder des Ethernet-Frames (2024W-PB1-A2-ba). |
+| PB1-11-1-1-K3 | gekürzt | AP1-6-1-3-K1/K2 | Schicht und Adressart von Switch und Router gestrichen; bleibt: Bridge, MAC-Tabelle, Routingtabelle. Karte AP2-6-1-2-K1-1 entfernt. |

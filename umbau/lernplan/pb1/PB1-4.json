@@ -54,7 +54,7 @@
       },
       {
        "id": "PB1-4-1-1-K2",
-       "text": "Du kannst aus einer umfangreichen Anforderungsbeschreibung ein vollständiges Anwendungsfalldiagramm erstellen: Systemgrenze mit Namen, alle Akteure, Anwendungsfälle aus Sicht des Akteurs mit Gegenstand und Tätigkeit benannt, Assoziationen, include für Teilabläufe, die immer dazugehören (z. B. Login), und Generalisierung zwischen Akteuren (z. B. Firmenkunde und Kunde) wie in AP1.",
+       "text": "Du kannst aus einer umfangreichen Anforderungsbeschreibung ein vollständiges Anwendungsfalldiagramm selbst erstellen, nicht nur ein begonnenes ergänzen: alle Akteure und Anwendungsfälle finden und die Anwendungsfälle aus Sicht des Akteurs mit Gegenstand und Tätigkeit benennen (z. B. „Termin buchen“, nicht „Datenbank abfragen“); die Elemente (Systemgrenze, Assoziation, include, Generalisierung) kennst du aus AP1-8-3-1.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2a.02.02.2",
@@ -67,7 +67,7 @@
       },
       {
        "id": "PB1-4-1-1-K3",
-       "text": "Du kannst bedingte Teilabläufe mit extend modellieren und die Bedingung als Notiz an die Beziehung schreiben, zum Beispiel „Ressourcen planen“ erweitert „Terminanfrage abschließen“ mit der Notiz „wenn Spezialtermin“.",
+       "text": "Du kannst bei einer extend-Beziehung (aus AP1) die Bedingung als Notiz an die Beziehung schreiben und den Erweiterungspunkt im Basis-Anwendungsfall angeben, zum Beispiel „Ressourcen planen“ erweitert „Terminanfrage abschließen“ mit der Notiz „wenn Spezialtermin“.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.2",
@@ -134,7 +134,7 @@
       },
       {
        "id": "PB1-4-1-2-K2",
-       "text": "Du kannst aus einer Beschreibung mehrere Klassen mit ihren Assoziationen und Multiplizitäten erstellen und deren Bedeutung erläutern (z. B. 1..* mindestens eins, * beliebig viele), auch Attribute, die auf Objekte oder Listen anderer Klassen verweisen (streckenliste : List<Strecke>); eine Aggregation wird so als Liste im Ganzen umgesetzt, eine Komposition passt nur, wenn das Teil ohne das Ganze nicht existiert (AP1).",
+       "text": "Du kannst aus einer Beschreibung mehrere Klassen mit ihren Assoziationen und Multiplizitäten erstellen und deren Bedeutung erläutern (z. B. 1..* mindestens eins, * beliebig viele), auch Attribute, die auf Objekte oder Listen anderer Klassen verweisen (streckenliste : List<Strecke>); eine Aggregation wird so als Liste im Ganzen umgesetzt.",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.09.1",

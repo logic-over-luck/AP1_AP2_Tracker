@@ -84,17 +84,16 @@
       },
       {
        "id": "PB1-11-1-1-K2",
-       "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte); in der MAC-Adresse kennzeichnen die ersten 3 Byte den Hersteller (OUI).",
+       "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte); den Aufbau der MAC-Adresse kennst du aus AP1-6-2-4.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.02.06.6",
-        "beleg:2024W-PB1-A2-ba",
-        "beleg:2024W-PB1-A2-bb"
+        "beleg:2024W-PB1-A2-ba"
        ]
       },
       {
        "id": "PB1-11-1-1-K3",
-       "text": "Du kannst Switch, Bridge und Router vergleichen: Bridge und Switch leiten auf Schicht 2 anhand der MAC-Adresse und einer MAC-Tabelle innerhalb eines Netzes weiter (ein Switch ist eine Bridge mit vielen Anschlüssen), ein Router leitet auf Schicht 3 anhand der IP-Adresse und einer Routingtabelle zwischen Netzen weiter.",
+       "text": "Du kannst Bridge, Switch und Router nach ihrer Weiterleitung vergleichen: Bridge und Switch lernen MAC-Adressen in einer MAC-Tabelle und leiten Frames nur in das Segment bzw. an den Anschluss des Ziels (ein Switch ist eine Bridge mit vielen Anschlüssen), ein Router entscheidet anhand seiner Routingtabelle, in welches Netz er ein Paket weiterleitet; Schicht und Adressart von Switch und Router kennst du aus AP1-6-1-3.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2b.01.01.3",

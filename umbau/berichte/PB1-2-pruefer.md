@@ -43,3 +43,11 @@
 | 14 | umgesetzt: absolute Bezüge als Halbsatz (P-NÄCHSTE-STUFE) |
 
 Ergebnis: 22 → 17 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-2-1-2 (bausteine) | Bausteine entfernt | AP1-7-5-1, AP1-3-4-1, AP1-3-4-2, AP1-5-1-1 | AP1.06.01.3.2 und AP1.04.04.2 ohne Aussage mit `neu`; die Aussagen K2/K3 tragen eigene PB1-Bausteine (AP2a.01.02.5), Inhalt geprüft: freizügige Lizenzen (in AP1 Kür), Informationspflicht und sechs Rechtsgrundlagen sind neu. |

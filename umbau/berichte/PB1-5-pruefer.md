@@ -43,3 +43,11 @@
 | 14 | umgesetzt: privater Konstruktor |
 
 Gliederung: Kapselung/Vererbung und Polymorphie in einem Stichpunkt, ein Themenblock statt zwei (F3/F4). Ergebnis: 29 → 21 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-5-1-5 (bausteine) | Baustein entfernt | AP1-8-2-2 | AP1.04.07.1 ohne Aussage mit `neu`; Pseudocode mit Objekten und Listen hängt an PB1-Bausteinen. |

@@ -43,3 +43,12 @@
 | 14 | umgesetzt: Verweis auf PB1-2 statt Wiederholung |
 
 Ergebnis: 29 → 22 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-3-1-2 (bausteine) | Baustein entfernt | AP1-8-1-1 | AP1.04.06.1 ohne Aussage mit `neu`; Code-Signing-Aussagen K3/K4 hängen an PB1-Bausteinen. |
+| PB1-3-2-1 (bausteine) | Baustein entfernt | AP1-3-4-2 | AP1.04.03.5 ohne Aussage mit `neu`; K2 sagt schon, was über AP1 hinausgeht. |

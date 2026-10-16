@@ -194,9 +194,6 @@
       {
        "id": "AP2b.05.01.2",
        "anteil": "Verschlüsselung"
-      },
-      {
-       "id": "AP1.06.04.8"
       }
      ],
      "teilaufgaben": [
@@ -259,9 +256,6 @@
       {
        "id": "AP2b.05.01.2",
        "anteil": "Authentifizierung"
-      },
-      {
-       "id": "AP1.06.04.9"
       },
       {
        "id": "AP2b.01.05.2",
@@ -355,7 +349,7 @@
      "koennen": [
       {
        "id": "PB1-10-2-1-K1",
-       "text": "Du kannst Identity & Access Management und ein Berechtigungskonzept erläutern: Benutzer, Rollen und Rechte werden zentral verwaltet, die Anmeldung kann an einen Identity Provider abgegeben werden; Zutritt, Zugang und Zugriff werden nach der Organisationsstruktur geregelt, Rechte an Rollen, nur die nötigen Rechte (AP1).",
+       "text": "Du kannst Identity & Access Management und ein Berechtigungskonzept erläutern: Benutzer, Rollen und Rechte werden zentral verwaltet, die Anmeldung kann an einen Identity Provider abgegeben werden; Zutritt, Zugang und Zugriff werden nach der Organisationsstruktur geregelt, indem Rechte an Rollen statt an einzelne Personen vergeben werden.",
        "stufe": 2,
        "herkunft": [
         "katalog:AP2a.04.05.3",
@@ -541,16 +535,6 @@
      ],
      "teilaufgaben": [],
      "koennen": [
-      {
-       "id": "PB1-10-2-3-K1",
-       "text": "Du kannst die Katalogbeispiele den Kontrollarten zuordnen (Unterscheidung aus AP1): Zutrittskontrolle (Alarmanlage, Videoüberwachung, Besucherausweise), Zugangskontrolle (Bildschirmsperre mit Passwort, biometrische Verfahren, Magnet- oder Chipkarte), Zugriffskontrolle (Datenträgerverschlüsselung, sichere Löschung, Rollenkonzept).",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:AP2a.04.06.1",
-        "katalog:AP2a.04.06.2",
-        "katalog:AP2a.04.06.3"
-       ]
-      },
       {
        "id": "PB1-10-2-3-K2",
        "text": "Du kannst die Wirksamkeit einer Maßnahme der Zutritts-, Zugangs- oder Zugriffskontrolle prüfen und eine Schwäche benennen, zum Beispiel Videoüberwachung ohne Auswertung, Bildschirmsperre erst nach langer Zeit, nicht zurückgegebene Besucherausweise, Rollenkonzept mit veralteten Rechten, Löschung ohne Überschreiben, Datenträgerverschlüsselung ohne sicher hinterlegten Wiederherstellungsschlüssel.",
@@ -869,14 +853,14 @@
    {
     "alt": "AP2-7-3-1-K1",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K1",
-    "grund": "zuordnen; Unterscheidung selbst in AP1-7-3-3-K5"
+    "neu": "PB1-10-2-3-K2",
+    "grund": "Unterscheidung in AP1-7-3-3-K5 (E2, P36); die Katalogbeispiele werden in PB1-10-2-3-K2 auf Wirksamkeit geprüft"
    },
    {
     "alt": "AP2-7-3-1-K2",
     "status": "angepasst",
-    "neu": "PB1-10-2-3-K1",
-    "grund": "in tom1 aufgenommen"
+    "neu": "PB1-10-2-3-K2",
+    "grund": "Zuordnung der Beispiele zu Zutritt, Zugang, Zugriff steht in AP1-7-3-3-K4/K5 (E2, P36); geprüft werden sie in PB1-10-2-3-K2"
    },
    {
     "alt": "AP2-7-3-1-K3",
@@ -1212,7 +1196,6 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-10-2-3-K1",
       "PB1-10-2-3-K2",
       "PB1-10-2-3-K5"
      ]
@@ -1316,15 +1299,12 @@
     "paar": "Zutritt / Zugang / Zugriff",
     "abgedeckt": {
      "Zutritt": [
-      "PB1-10-2-3-K1",
       "PB1-10-2-3-K2"
      ],
      "Zugang": [
-      "PB1-10-2-3-K1",
       "PB1-10-2-3-K2"
      ],
      "Zugriff": [
-      "PB1-10-2-3-K1",
       "PB1-10-2-3-K2"
      ]
     }

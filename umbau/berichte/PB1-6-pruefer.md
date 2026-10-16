@@ -39,3 +39,12 @@
 | 12 | umgesetzt: `vorgegeben` an der ER-Aussage |
 
 Ergebnis: 25 → 17 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-6-1-1-K1 | gekürzt | AP1-8-4-1-K2, -K4, -K7 | Elemente (Entitäten aus Text, Kardinalitäten, Beziehungsattribute) gestrichen; bleibt: ganzes Modell ohne Vorlage mit neuen Modellierungsentscheidungen (mehrere Beziehungen zwischen denselben Entitätstypen, Vorgang als Entitätstyp; 2021W-PB1-A2-b). Fünf Karten entfernt, zwei neue (PB1-6-1-1-K1-1, -K1-2). |
+| PB1-6-1-4 (bausteine) | Baustein entfernt | AP1-2-3-1 | AP1.02.03.4 ohne Aussage mit `neu`. |

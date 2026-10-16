@@ -55,3 +55,20 @@
 | 20 | belassen |
 
 Gliederung: Die Themenblöcke „Projektumfeld“ und „Anforderungen“ sind zusammengelegt, Change Request und Kostenarten stehen bei Machbarkeit und Risiken, Lasten-/Pflichtenheft und Anforderungen in einem Stichpunkt (F3/F4). Ergebnis: 36 → 28 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-1-1-2-K3 | gekürzt | AP1-1-1-2-K1 | Ablauf des Wasserfallmodells gestrichen, bleibt: Einsatzfälle von Wasserfall-, V- und Spiralmodell (2024W-PB1-A1-b, Katalog „unterscheiden“). Karte AP2-1-1-1-K3-1 entfernt. |
+| PB1-1-2-1-K1 | neu begründet | AP1-3-1-3 | Machbarkeit nach technischen, organisatorischen, rechtlichen Kriterien und Markt-/Konkurrenz-/Preisanalyse (2025W-PB1-A1-a); AP1 prüft nur die Budgetvorgabe. |
+| PB1-1-2-1-K3 | neu begründet | AP1-1-1-3 | Risiko in Ursache und Auswirkung zerlegen bzw. aus einem Problem ableiten, Risikotabelle (2023S-PB1-A1-b, 2025W-PB1-A1-c, je 8 P.); AP1 benennt, bewertet, legt Gegenmaßnahme fest. |
+| PB1-1-2-1-K4 | neu begründet | AP1-4-3-3 | Begriff Green IT über den Lebenszyklus mit Zielen (2023W-PB1-A1-c); AP1 nur ökologische Kriterien der Geräteauswahl. |
+| PB1-1-2-1-K6 | neu begründet | AP1-3-1-1 | Kostenarten eines Projekt-Kostenplans (Personal, Kommunikation, Qualifizierung; 2023S-PB1-A1-d); AP1 Anschaffungs-, Betriebs-, Lizenz-, Finanzierungskosten. |
+| PB1-1-2-1 (bausteine) | Bausteine entfernt | AP1-1-2-3, AP1-1-4-3, AP1-1-4-2, AP1-4-3-3 | AP1.04.03.4, AP1.01.01.2.6, AP1.07.07.3, AP1.07.06.1, AP1.07.07.1 ohne Aussage mit `neu`; baut_auf bleibt. |
+| PB1-1-2-2-K1 | neu begründet | AP1-1-1-3 | Erwartung und Befürchtung je Stakeholder (2023W-PB1-A1-a, 2025S-PB1-A1-b, 2024S-PB1-A1-d); Karte „Stakeholder nennen“ (AP2-1-1-3-K4-1) entfernt, neue Karte PB1-1-2-2-K1-1. |
+| PB1-1-2-2-K2 | gekürzt, neu begründet | AP1-2-5-1-K6, AP1-2-5-2-K3 | Informieren, Beteiligen, Schulen der Beschäftigten gestrichen; bleibt: Maßnahmen für Geschäftsführung, Betriebsrat, Termindruck, Beschäftigungszusage (2022S-PB1-A1-b, 2024S-PB1-A1-d, 2023S-PB1-A1-a). Karte AP2-1-1-3-K4-2 entfernt. |
+| PB1-1-2-2-K3 | gekürzt, neu begründet | AP1-2-5-1-K2, AP1-2-5-2-K1/K4 | Workshop-Ziele nur, was über AP1 hinausgeht: Folgen des Ist-Zustands, Befürworter bestärken (2023W-PB1-A1-b). |
+| PB1-1-2-4 (bausteine) | Baustein entfernt | AP1-2-3-1 | AP1.02.03.4 ohne Aussage mit `neu`; baut_auf bleibt. |

@@ -33,13 +33,6 @@
       "hinten": "- IP (IPv4/IPv6): Internetschicht\n- TCP und UDP: Transportschicht"
     },
     {
-      "id": "AP2-6-1-1-K3-2",
-      "sp": "PB1-11-1-1",
-      "k": "PB1-11-1-1-K2",
-      "vorne": "Was gibt die vordere Hälfte einer MAC-Adresse an?",
-      "hinten": "Den Hersteller der Netzwerkkarte (Herstellerkennung, OUI)."
-    },
-    {
       "id": "AP2-6-1-1-K5-1",
       "sp": "PB1-11-1-1",
       "k": "PB1-11-1-1-K2",
@@ -66,13 +59,6 @@
       "k": "PB1-11-1-1-K2",
       "vorne": "Wozu dient die Prüfsumme am Ende eines Ethernet-Frames?",
       "hinten": "Der Empfänger erkennt damit Übertragungsfehler; fehlerhafte Frames werden verworfen."
-    },
-    {
-      "id": "AP2-6-1-2-K1-1",
-      "sp": "PB1-11-1-1",
-      "k": "PB1-11-1-1-K3",
-      "vorne": "Worin unterscheiden sich Switching und Routing?",
-      "hinten": "- Switching: Weiterleiten innerhalb eines Netzes anhand der MAC-Adresse\n- Routing: Weiterleiten zwischen Netzen anhand der IP-Adresse"
     },
     {
       "id": "AP2-6-1-2-K5-1",
@@ -659,8 +645,8 @@
     },
     {
       "id": "AP2-6-1-1-K3-2",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Herstellerkennung der MAC-Adresse steht in AP1-6-2-4-K1"
     },
     {
       "id": "AP2-6-1-1-K3-3",
@@ -689,8 +675,8 @@
     },
     {
       "id": "AP2-6-1-2-K1-1",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Switch innerhalb eines Netzes mit MAC-Adressen, Router zwischen Netzen mit IP-Adressen steht in AP1-6-1-3-K1/K2"
     },
     {
       "id": "AP2-6-1-2-K1-2",

@@ -5,41 +5,6 @@
   "grundlage": "umbau/lernplan/pb1/PB1-6.json",
   "karten": [
     {
-      "id": "AP2-2-2-1-K1-3",
-      "sp": "PB1-6-1-1",
-      "k": "PB1-6-1-1-K1",
-      "vorne": "Wie findest du in einem Anforderungstext Entitäten, Attribute und Beziehungen?",
-      "hinten": "- Dinge, über die Daten gespeichert werden (meist Substantive): Entitäten\n- ihre Eigenschaften: Attribute\n- Verben, die Dinge verbinden: Beziehungen"
-    },
-    {
-      "id": "AP2-2-2-1-K2-2",
-      "sp": "PB1-6-1-1",
-      "k": "PB1-6-1-1-K1",
-      "vorne": "Jeder Mitarbeiter gehört zu genau einer Abteilung, eine Abteilung hat mehrere Mitarbeiter. Welche Kardinalität, und wo steht in der Chen-Schreibweise welche Zahl?",
-      "hinten": "1:n – die 1 steht bei Abteilung, das n bei Mitarbeiter."
-    },
-    {
-      "id": "AP2-2-2-1-K2-3",
-      "sp": "PB1-6-1-1",
-      "k": "PB1-6-1-1-K1",
-      "vorne": "Ein Schüler belegt mehrere Kurse, ein Kurs hat mehrere Schüler. Welche Kardinalität hat die Beziehung?",
-      "hinten": "m:n"
-    },
-    {
-      "id": "AP2-2-2-1-K5-1",
-      "sp": "PB1-6-1-1",
-      "k": "PB1-6-1-1-K1",
-      "vorne": "Wann hängt man im ER-Modell ein Attribut an eine Beziehung statt an eine Entität?",
-      "hinten": "Wenn es zu keiner der beiden Entitäten allein gehört, sondern erst durch ihre Verbindung entsteht – typisch bei m:n-Beziehungen."
-    },
-    {
-      "id": "AP2-2-2-1-K5-2",
-      "sp": "PB1-6-1-1",
-      "k": "PB1-6-1-1-K1",
-      "vorne": "Bestellung „enthält“ Artikel (m:n). Wohin gehört das Attribut Menge?",
-      "hinten": "An die Beziehung „enthält“: Die Menge gilt für einen Artikel in einer bestimmten Bestellung, nicht für die Bestellung oder den Artikel allein."
-    },
-    {
       "id": "PB1-6-1-1-K2-1",
       "sp": "PB1-6-1-1",
       "k": "PB1-6-1-1-K2",
@@ -52,6 +17,20 @@
       "k": "PB1-6-1-1-K3",
       "vorne": "Fragen in einem Forum sollen in Erstellreihenfolge angezeigt und zurückgezogen werden können, ohne sie zu löschen. Welche Attribute ergänzt du?",
       "hinten": "- `erstelltAm` (Zeitstempel) für die Reihenfolge\n- `istZurueckgezogen` (Boolean) statt Löschen"
+    },
+    {
+      "id": "PB1-6-1-1-K1-1",
+      "sp": "PB1-6-1-1",
+      "k": "PB1-6-1-1-K1",
+      "vorne": "In einer Praxis betreut jeder Arzt mehrere Patienten; außerdem wird jedem Termin eines Patienten ein Arzt zugewiesen. Wie modellierst du die Beziehungen des Arztes?",
+      "hinten": "Zwei getrennte Beziehungen mit eigener Bedeutung:\n- „betreut“: Arzt (1) – Patient (n)\n- „wird zugewiesen“: Arzt (1) – Termin (n)\nJe Bedeutung eine eigene Beziehung, auch wenn die Entitätstypen schon anders verbunden sind."
+    },
+    {
+      "id": "PB1-6-1-1-K1-2",
+      "sp": "PB1-6-1-1",
+      "k": "PB1-6-1-1-K1",
+      "vorne": "Wann modellierst du einen Vorgang wie einen Termin als eigenen Entitätstyp statt als Beziehung zwischen Patient und Arzt?",
+      "hinten": "Wenn der Vorgang selbst Beziehungen zu weiteren Entitätstypen hat (z. B. zur Terminart) oder einzeln angesprochen wird. Eine Beziehung verbindet nur die beteiligten Entitätstypen und trägt höchstens Attribute."
     },
     {
       "id": "AP2-2-2-2-K1-1",
@@ -496,8 +475,8 @@
     },
     {
       "id": "AP2-2-2-1-K1-3",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Entitäten, Attribute und Beziehungen aus einem Text ableiten steht in AP1-8-4-1-K2; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
     },
     {
       "id": "AP2-2-2-1-K2-1",
@@ -506,13 +485,13 @@
     },
     {
       "id": "AP2-2-2-1-K2-2",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Kardinalitäten bestimmen steht in AP1-8-4-1-K4; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
     },
     {
       "id": "AP2-2-2-1-K2-3",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Kardinalitäten bestimmen steht in AP1-8-4-1-K4; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
     },
     {
       "id": "AP2-2-2-1-K3-1",
@@ -541,13 +520,13 @@
     },
     {
       "id": "AP2-2-2-1-K5-1",
-      "entscheidung": "bleibt",
-      "grund": "passt besser zu dieser Aussage, Text unverändert"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Attribute an der Beziehung stehen in AP1-8-4-1-K7; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
     },
     {
       "id": "AP2-2-2-1-K5-2",
-      "entscheidung": "bleibt",
-      "grund": "passt besser zu dieser Aussage, Text unverändert"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Attribute an der Beziehung stehen in AP1-8-4-1-K7; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
     },
     {
       "id": "AP2-2-2-2-K1-1",
@@ -873,6 +852,16 @@
       "id": "PB1-6-1-5-K3-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "P36 – Modellierungsentscheidung aus 2021W-PB1-A2-b; die Elemente des ER-Modells fragt AP1-8-4-1"
+    },
+    {
+      "id": "PB1-6-1-1-K1-2",
+      "entscheidung": "neu",
+      "grund": "P36 – Modellierungsentscheidung aus 2021W-PB1-A2-b; die Elemente des ER-Modells fragt AP1-8-4-1"
     }
   ]
 }

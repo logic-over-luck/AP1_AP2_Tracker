@@ -11,7 +11,6 @@ Ordner: PB1-1, PB1-10, PB1-11, PB1-12, PB1-2, PB1-3, PB1-4, PB1-5, PB1-6, PB1-7,
 
 | Baustein | Ordner |
 |---|---|
-| AP1.02.03.4 | PB1-1, PB1-6 |
 | AP2a.01.02.5 | PB1-1, PB1-2 |
 | AP2b.01.04.2 | PB1-11, PB1-5 |
 | AP2b.01.05.2 | PB1-10, PB1-11, PB1-7 |

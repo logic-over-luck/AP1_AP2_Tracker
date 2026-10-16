@@ -41,7 +41,7 @@
      "koennen": [
       {
        "id": "PB1-6-1-1-K1",
-       "text": "Du kannst mit den Elementen aus AP1 (Entitätstypen, Attribute, Kardinalitäten, Primärschlüssel) aus einer umfangreichen Situationsbeschreibung ohne Vorlage ein vollständiges ER-Modell erstellen, auch mit Attributen an m:n-Beziehungen.",
+       "text": "Du kannst für ein ganzes Anwendungssystem ohne Vorlage ein ER-Modell erstellen und dabei Modellierungsentscheidungen treffen, die über die Elemente aus AP1-8-4-1 hinausgehen: mehrere Beziehungen mit unterschiedlicher Bedeutung zwischen denselben Entitätstypen (Arzt betreut Patient, Arzt wird ein Termin zugewiesen) und einen Vorgang mit eigenen Beziehungen als eigenen Entitätstyp statt als Beziehung (Termin mit Patient, Arzt und Terminart).",
        "stufe": 3,
        "herkunft": [
         "katalog:AP2b.04.10.1",
@@ -221,10 +221,6 @@
      "bausteine": [
       {
        "id": "AP2a.02.03.1"
-      },
-      {
-       "id": "AP1.02.03.4",
-       "anteil": "englischer Fachtext"
       },
       {
        "id": "AP2b.05.02.3",

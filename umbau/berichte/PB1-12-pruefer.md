@@ -35,3 +35,11 @@ Ordnerübergreifend: PB1-12-1-2-K1 bleibt Wohnort für 2022W-A1-a. Das Duplikat 
 | 9 | entschieden mit P10/P35: Die Stufe-4-Aussagen bleiben, weil der Katalog sie mit „beurteilen“ (AP2b.01.08, .10) und „analysieren, bestimmen“ (AP2b.01.12) verlangt |
 
 Ergebnis: 25 → 24 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-12-2-2 (bausteine) | Baustein entfernt | AP1-1-3-1, AP1-1-3-2 | AP1.07.03.2 ohne Aussage mit `neu`; K1 (Ticketsystem, 12 P. in 2022S-PB1-A4-a: Vor- und Nachteil, Auswertungen, Wissensdatenbank) geht über AP1-1-3-1-K2 hinaus und hängt an AP2b.01.12.3. |

@@ -37,3 +37,13 @@
 | 11 | belassen; Verweis wird in PB1-5 gesetzt |
 
 Gliederung: Überblick und Anwendungsfalldiagramm in einem Stichpunkt, ein Themenblock statt zwei (F3/F4). Ergebnis: 24 → 17 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-4-1-1-K2 | gekürzt | AP1-8-3-1-K1–K6 | Elemente (Systemgrenze, Assoziation, include, Generalisierung) gestrichen; bleibt: vollständiges Diagramm aus umfangreichem Text selbst erstellen, Benennung aus Sicht des Akteurs (2021W-PB1-A2-a, 2024S-PB1-A3-a, 2025W-PB1-A2-a). Karten AP2-2-1-2-K1-1, -K2-1, -K2-2, -K3-1, -K3-2, -K3-4 entfernt. |
+| PB1-4-1-1-K3 | gekürzt | AP1-8-3-1-K5 | extend mit Pfeilrichtung gestrichen; bleibt: Bedingung als Notiz, Erweiterungspunkt. Karte AP2-2-1-2-K3-3 entfernt. |
+| PB1-4-1-2-K2 | gekürzt | AP1-8-3-2-K4/K6 | Komposition als Abgrenzung gestrichen; Karten AP2-2-1-1-K3-1 (Assoziation/gerichtet) und -K4-2 (1 und * lesen) entfernt. Bleibt: Multiplizitäten selbst setzen, Listen-Attribute, Aggregation als Liste. |

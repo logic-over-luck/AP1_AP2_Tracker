@@ -82,13 +82,6 @@
       "hinten": "Das Spiralmodell."
     },
     {
-      "id": "AP2-1-1-1-K3-1",
-      "sp": "PB1-1-1-2",
-      "k": "PB1-1-1-2-K3",
-      "vorne": "Wie läuft das Wasserfallmodell ab?",
-      "hinten": "Die Phasen (z. B. Analyse, Entwurf, Implementierung, Test, Einführung) werden nacheinander durchlaufen. Eine Phase beginnt erst, wenn die vorige abgeschlossen ist; ihr Ergebnis ist die Grundlage der nächsten."
-    },
-    {
       "id": "PB1-1-1-2-K3-1",
       "sp": "PB1-1-1-2",
       "k": "PB1-1-1-2-K3",
@@ -229,20 +222,6 @@
       "hinten": "- Personalkosten: eigene und externe Entwickler\n- Software-/Lizenzkosten: Entwicklungsumgebung, Datenbank\n- Hardwarekosten: Server, Testgeräte\n- Kommunikationskosten: Internet, Reisen\n- Qualifizierungskosten: Schulungen"
     },
     {
-      "id": "AP2-1-1-3-K4-1",
-      "sp": "PB1-1-2-2",
-      "k": "PB1-1-2-2-K1",
-      "vorne": "Nenne typische Stakeholder eines Softwareprojekts.",
-      "hinten": "- Auftraggeber bzw. Kunde und Geschäftsführung\n- spätere Nutzer (Mitarbeiter)\n- Projektleitung und Entwicklerteam\n- Betriebsrat\n- Datenschutzbeauftragter, IT-Betrieb\n- ggf. Lieferanten, Behörden"
-    },
-    {
-      "id": "AP2-1-1-3-K4-2",
-      "sp": "PB1-1-2-2",
-      "k": "PB1-1-2-2-K2",
-      "vorne": "Stakeholder: die Mitarbeiter, die die neue Software nutzen sollen. Nenne eine typische Befürchtung und eine passende Maßnahme.",
-      "hinten": "Befürchtung: z. B. Überforderung durch das neue System oder Mehrarbeit. Maßnahme: früh informieren und einbeziehen (z. B. bei Tests und Rückmeldungen) und Schulungen anbieten."
-    },
-    {
       "id": "AP2-1-1-3-K4-3",
       "sp": "PB1-1-2-2",
       "k": "PB1-1-2-2-K2",
@@ -262,6 +241,13 @@
       "k": "PB1-1-2-2-K3",
       "vorne": "Welches Ziel eines Einführungs-Workshops kommt zu „Chancen zeigen“ und „Promotoren und Bremser erkennen“ hinzu?",
       "hinten": "Die Folgen des Ist-Zustands bewusst machen: Was passiert, wenn alles bleibt wie es ist (Fehler, Mehrarbeit, Wettbewerbsnachteil)? So entsteht Bereitschaft zur Veränderung."
+    },
+    {
+      "id": "PB1-1-2-2-K1-1",
+      "sp": "PB1-1-2-2",
+      "k": "PB1-1-2-2-K1",
+      "vorne": "Beschreibe für die Geschäftsführung des Kunden und für die Mitarbeiter, die eine neue Software nutzen sollen, je eine Erwartung und eine Befürchtung.",
+      "hinten": "- Geschäftsführung: Erwartung Kostensenkung und effizientere Abläufe; Befürchtung, dass Budget oder Termin überschritten werden\n- Mitarbeiter: Erwartung Arbeitserleichterung; Befürchtung Überforderung oder Verlust des Arbeitsplatzes"
     },
     {
       "id": "AP2-1-1-2-K3-1",
@@ -457,8 +443,8 @@
     },
     {
       "id": "AP2-1-1-1-K3-1",
-      "entscheidung": "bleibt",
-      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Ablauf des Wasserfallmodells steht in AP1-1-1-2-K1; PB1-1-1-2-K3 auf die Einsatzfälle gekürzt"
     },
     {
       "id": "AP2-1-1-1-K3-2",
@@ -587,13 +573,13 @@
     },
     {
       "id": "AP2-1-1-3-K4-1",
-      "entscheidung": "bleibt",
-      "grund": "passt besser zu dieser Aussage, Text unverändert"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Stakeholder nennen steht in AP1-1-1-3-K1; die neue Karte zu K1 fragt Erwartung und Befürchtung"
     },
     {
       "id": "AP2-1-1-3-K4-2",
-      "entscheidung": "bleibt",
-      "grund": "passt besser zu dieser Aussage, Text unverändert"
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Überforderung der Mitarbeiter → informieren, einbeziehen, schulen steht in AP1-2-5-1-K6 und AP1-2-5-2-K3"
     },
     {
       "id": "AP2-1-1-3-K4-3",
@@ -784,6 +770,11 @@
       "id": "PB1-1-2-3-K5-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-1-2-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "P36 – Erwartung und Befürchtung je Stakeholder (2025S-PB1-A1-b, 2023W-PB1-A1-a) statt Stakeholder nennen (AP1-1-1-3-K1)"
     }
   ]
 }
