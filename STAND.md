@@ -3,9 +3,9 @@
 Diese Datei ist das Gedächtnis des Projekts. Eine neue Sitzung liest sie und macht beim
 nächsten offenen Punkt weiter.
 
-> **Umbau der Lerninhalte (Branch `umbau`):** **AP1, PB1 und PB2** zeigen den neuen Lernplan und sind abgenommen
-> (Stand 16.10.2026, UMBAU.md P45 und Schritt 7). **WiSo** ist neu gebaut, unabhängig geprüft und in der App sichtbar,
-> aber **noch nicht abgenommen** (UMBAU.md Schritt 6 „Raum WISO“, P52). Der Raum **PROJEKT** (Schritt 8) folgt. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
+> **Umbau der Lerninhalte (Branch `umbau`):** **AP1, PB1, PB2 und WiSo** zeigen den neuen Lernplan und sind abgenommen
+> (Stand 16.10.2026, UMBAU.md P45, P52 und Schritt 7). Alle vier Räume sind eingefroren (Exporte in `umbau/export/`).
+> Der Raum **PROJEKT** (Schritt 8) folgt. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
 > und hält sich an die Regeln dort. Die Inhaltsdatei und `inhalte/` werden nicht mehr inhaltlich nachgebessert.
 
 ---
@@ -67,7 +67,7 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: 16.10.2026, Umbau Schritt 7 – neuer Lernplan für AP1, PB1, PB2 in der App)*
+*(zuletzt aktualisiert: 16.10.2026, Umbau Schritt 6 – WiSo abgenommen, Kür nach P49)*
 
 ### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
 - Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 3,1 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
@@ -115,11 +115,14 @@ nächsten offenen Punkt weiter.
   `tests/vorschau-ap1.test.mjs`; auf Desktop und Handy (390 px) geprüft
 - Neuer Lernplan WiSo (Umbau Schritt 6, 16.10.2026): Raum WiSo aus `umbau/lernplan/wiso/` (5 Ordner, 70 Stichpunkte,
   325 Können-Aussagen), Kurzfassungen und 685 Karten aus `umbau/kurz/wiso/` und `umbau/karten/wiso/`; alte WiSo-IDs
-  bleiben (P48), entfallene Stichpunkte ziehen über `umbau/umzug.json` um. Gelber Hinweis „noch nicht abgenommen“.
-  Build und Browser-Check (`#/wiso`, Stichpunkt-Detail mit „Baut auf“) ohne Fehler
+  bleiben (P48), entfallene Stichpunkte ziehen über `umbau/umzug.json` um. 14 Kür-Einträge aus der unabhängigen Prüfung
+  (P49, z. B. Steuerklasse VI, eGbR, GS-Zeichen, Brandklasse F). **Abgenommen** (P52): kein gelber Hinweis mehr, Export
+  `umbau/export/WISO.json` eingefroren, Generatoren `tools/umbau/gen-wiso/` stillgelegt. Build und Browser-Check
+  (`#/wiso`, Kür am Stichpunkt, Desktop und Handy 390 px) ohne Fehler
 
 ### Offen / bewusst nicht umgesetzt
-- WiSo wartet auf die Abnahme (UMBAU.md P52); offene Grundsatzfragen P49–P51. Der Raum PROJEKT folgt mit Umbau-Schritt 8.
+- Der Raum PROJEKT folgt mit Umbau-Schritt 8. WiSo-Kür kommt bisher nur aus der unabhängigen Prüfung; liegen die
+  Community-Lernzettel vor, wird der Hinweis-Abgleich (R3) nachgeholt (UMBAU.md P49).
 - Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
 - Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
 
@@ -251,7 +254,8 @@ Vor der Prüfung lohnt sich ein kurzer Abgleich mit Ausbilder, Lehrkraft oder de
 ### WiSo (neuer Lernplan, 16.10.2026; Details im Feld `unsicher` von `umbau/karten/wiso/WISO-<n>.json`)
 - **Rechtsstand Oktober 2026, vor der Prüfung prüfen:** Arbeitszeitgesetz (WISO-1-3-4), Steuerklassen III/V
   (WISO-1-6-1-K2), Bürgergeld bzw. Nachfolgeregelung (WISO-1-6-2-K8), EU-Verpackungsverordnung (WISO-4-2-2-K4),
-  JAV ohne Altersgrenze für Auszubildende seit 2021 – ältere IHK-Lösungen werten das anders (WISO-1-4-3, UMBAU.md P50).
+  JAV ohne Altersgrenze für Auszubildende seit 2021 – ältere IHK-Lösungen werten das anders (WISO-1-4-3). Regel (P50): Die
+  Aussage folgt dem Rechtsstand, der `hinweis` am Stichpunkt nennt, was die IHK-Lösung erwartet hat.
 - **WISO-2-1-1-K1** Software herstellen als sekundärer Sektor: so die IHK-Lösung 2022S-A17; die amtliche Statistik zählt
   Softwareentwicklung zu den Dienstleistungen.
 - **WISO-1-8-1-K7** Bildungsurlaub: „kein Anspruch in Bayern und Sachsen“, „meist fünf Arbeitstage“ nicht nachgeprüft.

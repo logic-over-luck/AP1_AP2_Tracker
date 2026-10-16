@@ -401,7 +401,7 @@ je Aufgabe Feld `aufgabentyp`). Aktueller Katalog ab Sommer 2025 → 2025S und 2
 
 Summe WiSo: 8 Prüfungen, 240 Aufgaben (jede Aufgabe ist eine Teilaufgabe). Alle Abschriften bestehen T-1
 (`node tools/umbau/pruefungen-pruefen.mjs wiso`, 16.10.2026). Für WiSo nennt der IT-Berufe-Podcast keine Schlagworte
-der Termine 2021–2026; die Community-Lernzettel lagen nicht vor (P49).
+der Termine 2021–2026; die Community-Lernzettel lagen nicht vor. Kür deshalb aus der unabhängigen Prüfung (P49).
 
 Zuordnung Teilaufgabe → Baustein und Aufgabentyp kommt **nicht** in die Abschriften, sondern in eine
 eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die Abschriften reine Quellen.
@@ -544,7 +544,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       (`export-raum.mjs AP1 --pruefen`) schlägt fehl, sobald ein AP1-Lernplan geändert wird. **AP1 ist eingefroren:**
       Änderungen nur über den Parkplatz, danach Export neu erzeugen. PB1 sieht von AP1 nur den Export; bei Importen
       prüft `raum-pruefen.mjs` T8 mit der in AP1 erreichten Stufe (E2: ergänzt wird nur, was tiefer ist).
-- [ ] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
+- [x] **Schritt 6 – PB1**, dann **PB2**, dann **WISO** (jeweils mit Export der früheren Räume)
   - Gliederung PB1 (E8, P33): zwölf Ordner, alle im Gebiet ihres Inhalts verankert: PB1-1 Projekt, Vorgehen und
     Anforderungen · PB1-2 Kunde, Recht und Präsentation · PB1-3 Entwicklungsumgebung und Werkzeuge · PB1-4 UML ·
     PB1-5 Objektorientierter Entwurf und Entwurfsmuster · PB1-6 Datenmodellierung · PB1-7 Schnittstellen und
@@ -678,7 +678,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
     ZB.wiso-konjunktur, -oekonomisches-prinzip, -gerichtsbarkeit, -kaufmann, -verursacherprinzip), 101 mit Beleg,
     14 durch Belege angehoben. Importe aus AP1/PB1 nur in Zuordnungen, deren Aufgabe ein früherer Raum löst.
   - **Lernplan:** `umbau/lernplan/wiso/WISO-1.json` … `WISO-5.json`, erzeugt mit `tools/umbau/gen-wiso/wiso_<n>.py`
-    (Bibliothek `lpw.py`; laufen dürfen sie, solange WISO nicht abgenommen ist). IDs bleiben (P48).
+    (Bibliothek `lpw.py`; seit der Abnahme stillgelegt, siehe `LIESMICH.md` dort). IDs bleiben (P48).
   - **Unabhängige Prüfung K1–K3 (16.10.2026):** Auftrag `umbau/auftraege/WISO-pruefung.md`, 6 Prüfer, 197 Funde, Berichte
     `umbau/berichte/WISO-<n>-pruefer.md` mit Abschnitt „Umsetzung“, Bilanz `WISO-pruefer-bilanz.md` (Entscheidungen D1–D12
     aus dem Regelwerk abgeleitet). 155 umgesetzt, 15 teilweise, 12 abgelehnt mit Grund, 8 Kür-Vorschläge → P49.
@@ -691,12 +691,17 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
   - **Vorschau:** `RAEUME_VORSCHAU.WISO` (`vorschauWiso`): Der Raum WiSo zeigt den neuen Lernplan, Name „WiSo“ bleibt,
     Umzug für entfallene WiSo-IDs; **nicht abgenommen** → gelber Hinweis. Tests in `tests/vorschau-ap1.test.mjs`
     („Vorschau WISO“), Raum- und Deckungstests in `tests/umbau-fundament.test.mjs`. Build und Browser-Check `#/wiso`.
-  - **Offen:** Abnahme durch den Projektinhaber (P52), danach Export `umbau/export/WISO.json` (E3).
+  - **Kür (P49, 16.10.2026):** Hinweisquelle `pruefer:wiso-2026-10`; 14 Kür-Einträge an 11 Stichpunkten (WISO-1 5, WISO-2 1,
+    WISO-3 5, WISO-4 1, WISO-5 1), je Ordner im Hinweis-Abgleich (R3, Ring Kür). Lernpläne sonst unverändert.
+  - **Abgenommen (P52, 16.10.2026):** `abgenommen: true` in `RAEUME_VORSCHAU.WISO`, Export `umbau/export/WISO.json` und
+    `WISO.md` (70 Stichpunkte, 325 Können-Aussagen, eingefroren; Test prüft alle vier Exporte), Generatoren stillgelegt
+    (`lpw.py` bricht beim Schreiben ab). Alle Ordner, Raum-Prüfung, Zuordnung, Umzug und `npm test` grün (233, 24 übersprungen
+    ohne AP1/PB-Quellen, P51); Build und Browser-Check `#/wiso` auf Desktop und Handy ohne Fehler.
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft
       Vollständigkeit und Aktualität). Art neuer Stichpunkte in der Vorschau aus den Aufgabentypen (P27).
 - [x] **Schritt 7 – App (16.10.2026):** AP1, PB1 und PB2 zeigen den neuen Lernplan als fertigen Stand; WiSo zeigt seit
-      dem Bau von WISO den neuen Lernplan mit Hinweis „noch nicht abgenommen“. Weiter **vier Räume** (AP1 | PB1 | PB2 | WiSo); der Raum PROJEKT kommt mit Schritt 8. Lernstand-Umzug (P6)
+      dem Bau von WISO den neuen Lernplan (seit P52 ebenfalls abgenommen). Weiter **vier Räume** (AP1 | PB1 | PB2 | WiSo); der Raum PROJEKT kommt mit Schritt 8. Lernstand-Umzug (P6)
       war schon vorgezogen (siehe „Eigene Räume PB1 und PB2“).
       - **Importe anzeigen (E2/P36):** `baut_auf` kommt als `neu.bautAuf` in die Daten (`tools/vorschau-ap1.mjs`). Im
         Stichpunkt-Detail steht oben im Rahmen „Baut auf“ mit dem Satz „Das kennst du schon – hier kommt nur das Neue dazu.“,
@@ -707,7 +712,7 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
       - **P29:** „Das musst du können“ einklappbar; zugeklappt mit Anzahl der Aussagen (und „n neu ohne Karten“, falls > 0),
         aufgeklappt wie bisher. Zustand je Gerät in den Ansichts-Einstellungen (`lernen.koennenOffen`, Standard offen).
       - **Abnahme sichtbar (P45):** `RAEUME_VORSCHAU` hat das Feld `abgenommen`; der gelbe Hinweis erscheint nur noch für
-        Räume ohne Abnahme (jetzt keiner). `LERNSTUDIO_AP1=alt npm run build` baut weiter den alten Stand.
+        Räume ohne Abnahme (seit P52 keiner, auch WiSo nicht). `LERNSTUDIO_AP1=alt npm run build` baut weiter den alten Stand.
       - Tests in `tests/vorschau-ap1.test.mjs` („Schritt 7: baut_auf, neu und Abnahme“), Build, Browser-Check und eigene
         Prüfung mit Playwright (PB1, PB2 auf 1400 px und 390 px, Sprung, Einklappen, kein waagerechtes Scrollen).
 - [ ] **Schritt 8 – PROJEKT**
@@ -807,7 +812,7 @@ node tools/umbau/lernplan-pruefen.mjs AP1-1
 node tools/umbau/raum-pruefen.mjs AP1         # prüft T1, T2b, T8 über alle Ordner des Raums, schreibt umbau/berichte/AP1-raum.md
 node tools/umbau/pruefungen-pruefen.mjs wiso  # WiSo-Abschriften → umbau/fundament/pruefungen-wiso.json
 node tools/umbau/zuordnung-pruefen.mjs wiso   # T2 + Z3b, schreibt umbau/fundament/belege-wiso.json
-python3 tools/umbau/gen-wiso/wiso_1.py        # erzeugt umbau/lernplan/wiso/WISO-1.json (bis zur Abnahme, P52)
+node tools/umbau/export-raum.mjs WISO --pruefen  # WISO ist eingefroren (P52); Generatoren gen-wiso/ stillgelegt
 node tools/umbau/raum-pruefen.mjs WISO        # T1, T2b, T8, ALT, Deckung P47
 node tools/umbau/umzug-erzeugen.mjs           # Lernstand-Umzug aller gebauten Räume
 node --test tests/umbau-fundament.test.mjs   # prüft, ob der Prüfer Fehler erkennt
