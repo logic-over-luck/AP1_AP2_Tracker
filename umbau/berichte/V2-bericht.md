@@ -189,8 +189,8 @@ Herkunft (22), Kür statt Pflicht und umgekehrt (22). Wörtliche Übernahmen: 2 
 | WISO | 70 | 325 | 388 | 67 | 49 |
 | **gesamt** | **292** | **1.287** | **1.812** | **579** | **492** |
 
-Offene Grundsatzfragen: UMBAU.md Parkplatz P58–P70 (entschieden: P57 Operator über Bausteinstufe, P68 AP1-Kür bleibt; offen: LF10c/RK4, G6, RK2-Tiefe, Rechtsstand,
-mögliche Fehler in bestehenden Aussagen).
+Offene Grundsatzfragen: UMBAU.md Parkplatz P58–P70 (entschieden: P57 Operator über Bausteinstufe, P68 AP1-Kür bleibt, P69 zwei Aussagen berichtigt; offen: LF10c/RK4, G6, RK2-Tiefe, Rechtsstand,
+Normnummern, Struktur PB1).
 
 ## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, fertig)
 
