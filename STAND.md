@@ -121,8 +121,8 @@ nächsten offenen Punkt weiter.
   (`#/wiso`, Kür am Stichpunkt, Desktop und Handy 390 px) ohne Fehler
 
 ### Offen / bewusst nicht umgesetzt
-- Der Raum PROJEKT (Umbau-Schritt 8) ist bewusst zurückgestellt (UMBAU.md P53), weil die Projektarbeit noch weit weg ist. WiSo-Kür kommt bisher nur aus der unabhängigen Prüfung; liegen die
-  Community-Lernzettel vor, wird der Hinweis-Abgleich (R3) nachgeholt (UMBAU.md P49).
+- Der Raum PROJEKT (Umbau-Schritt 8) ist bewusst zurückgestellt (UMBAU.md P53), weil die Projektarbeit noch weit weg ist. WiSo-Kür kommt aus der unabhängigen Prüfung; Community-Lernzettel
+  zu WiSo gibt es nicht, der Hinweis-Abgleich (R3) ist damit abgeschlossen (UMBAU.md P49).
 - Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
 - Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
 
