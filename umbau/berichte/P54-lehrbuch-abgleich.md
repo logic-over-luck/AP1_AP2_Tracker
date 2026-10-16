@@ -122,5 +122,11 @@ abweichende Lesarten (MVC: Logik im Controller); beim Nachbessern gilt fachliche
 ### Folgerung
 
 Für die schriftliche Prüfung reicht der Tracker in 70 % der Kapitel ganz, in 23 % fehlen ein bis drei Punkte, in 8 %
-fehlt das Gerüst. Größenordnung einer Nachbesserung: etwa 13 neue oder erweiterte Stichpunkte und die Ergänzungen der
-51 Kapitel in bestehenden Stichpunkten. Kein Umbau: Gliederung, IDs, Karten und Lernstand bleiben.
+fehlt das Gerüst. Kein Umbau: Gliederung, IDs, Karten und Lernstand bleiben.
+
+**Korrektur (nach Rückfrage des Projektinhabers):** (1) Gelesen wurden nur die 82 markierten Kapitel, **32 % des
+Buchtexts**; die 152 grünen Kapitel sind nur nach Titel beurteilt (am Text geprüft: 1 Gegenprobe). Die 70 % sind deshalb
+eine Obergrenze. (2) Die Ergebnisdateien nennen **rund 180 fehlende Punkte** (60 in 🧱, 119 in ➕), davon etwa zwei
+Drittel in Kapiteln mit Katalogbezug – Größenordnung einer Nachbesserung also 150–180 Können-Aussagen (heute rund 1.290),
+darunter etwa 13 neue oder erweiterte Stichpunkte. (3) Jedes Kapitel hat ein Prüfer gelesen; gegengeprüft nur
+stichprobenweise. Offen: Stichprobe aus den grünen Kapiteln am Text.
