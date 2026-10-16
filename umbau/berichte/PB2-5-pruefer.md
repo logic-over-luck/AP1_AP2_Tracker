@@ -25,3 +25,29 @@
 **Aussagen:** vorher 20, nach den Vorschlägen 19 (−1 PB2-5-1-2-K4, −1 PB2-5-1-4-K3, +1 Sperren bei gleichzeitigem Zugriff). Außerdem werden 6 Aussagen umformuliert oder erweitert (5-1-1-K1/K2/K3, 5-1-2-K2, 5-1-3-K2/K4, 5-1-5-K2) und der Stichpunkt PB2-5-1-4 geht in PB2-5-1-1 auf.
 
 **Ordnerübergreifend:** Die Unterabfrage in UPDATE/DELETE (5-1-2-K2/K3) überschneidet sich mit PB2-6-1-4-K1/K2, siehe dort, Fund 9. Die Textfunktionen (Fund 13) sollen in PB2-6-1-1 landen. Die Reihenfolge PB2-5 vor PB2-6 steht in Fund 3.
+
+## Umsetzung
+
+Stand 16.10.2026. Umgesetzt nach P36, P39–P43; IDs nach P15/P33 (gestrichene IDs werden nicht neu vergeben). Prüfskript: `node tools/umbau/lernplan-pruefen.mjs PB2-5` meldet „OK“ (vorher 16 T7-Fehler).
+
+| Nr | Status | was genau (IDs) |
+|---|---|---|
+| 1 | umgesetzt | Neu PB2-5-1-2-K6 (Stufe 4, `katalog:AP2b.05.02.3`, `beleg:2021W-PB2-A1-b`): früh und lange (pessimistisch) gegen spät und kurz sperren (optimistisch), mit `neu` gegenüber PB1-6-1-5. Hinweis berichtigt. |
+| 2 | umgesetzt | PB2-5-1-2-K2: Standardweg mit Unterabfragen in WHERE, Beispiel 2023W-A4-c vollständig mit zwei IN-Unterabfragen (Rotwein, Mai 2023). UPDATE … FROM … JOIN als Grenze an PB2-5-1-2 (ANH.sql-syntax-auszug, P41), Hinweis zur anerkannten IHK-Lösung. |
+| 3 | umgesetzt | P39: PB2-6 wird vor PB2-5 gelernt (Ordnertausch macht die Hauptsitzung). Block-Satz und Hinweis PB2-5-1-2 verweisen auf PB2-6-1-4; `baut_auf` auf PB2-Stichpunkte ist nicht möglich (nur Exporte früherer Räume). |
+| 4 | umgesetzt (anders) | PB2-5-1-2-K4 gestrichen (P36: bloße Anwendung von PB1-6-1-2-K3), kein Halbsatz in K3; Hinweis in PB2-5-1-2, `baut_auf` PB1-6-1-2 bleibt. alt_neu AP2-4-3-1-K5 → gestrichen. |
+| 5 | umgesetzt | SELECT … INTO in derselben Grenze wie Nr. 2 und im Hinweis (2022W-A4-b anerkannt). K5 ergänzt um Spaltenliste und YEAR(…) < YEAR(NOW()). |
+| 6 | umgesetzt | PB2-5-1-2-K3: NOT EXISTS als Beispiel, NOT IN nur „solange Z_HHID nie NULL ist“. Korrelierte Form selbst in PB2-6-1-4-K6. |
+| 7 | umgesetzt | PB2-5-1-3-K2 (mehrere Rechte, Lese-/Schreibrechte, Tabelle/Datenbank.*/*.*, Beispiel 2025S-A4-b), K3 entsprechend (Beispiel 2025S-A4-c). |
+| 8 | umgesetzt | PB2-5-1-3-K4 umformuliert (Stufe 3): Rolle anlegen, Rechte an Rolle, Rolle zuweisen und entziehen, WITH GRANT OPTION als Halbsatz. Herkunft `katalog:AP2a.02.03.7`, `katalog:ANH.sql-syntax-auszug`. |
+| 9 | umgesetzt | PB2-5-1-3: `baut_auf` um AP1-7-4-1 ergänzt, Hinweis berichtigt (ba/bb → AP1-7-4-1-K8, ca/cb → PB1-10-1-2-K3). Importierte Bausteine AP2a.04.04.9, AP2a.04.02.3, AP2b.05.01.2 aus `bausteine` entfernt (P36). Die Teilaufgaben bleiben im Stichpunkt (Raum-T2b); nur Hinweis „betrifft keinen Baustein“. |
+| 10 | umgesetzt | PB2-5-1-4-K3 gestrichen; Unterschied als Halbsatz in der Trigger-Aussage (jetzt PB2-5-1-1-K7). |
+| 11 | umgesetzt | P43: PB2-5-1-4 aufgelöst; PB2-5-1-4-K1 → PB2-5-1-1-K6, PB2-5-1-4-K2 → PB2-5-1-1-K7 (neue IDs am Ziel), ZB.prozedur-trigger und 2022S-A4-aa/-ab nach PB2-5-1-1. PB2-5-1-1 hat 7 Aussagen. Die ID PB2-5-1-4 wird nicht wieder vergeben. |
+| 12 | umgesetzt | PB2-5-1-1-K1: Datentypen wie im Anhang (INTEGER, DECIMAL, DOUBLE, CHAR, VARCHAR, DATE; BOOLEAN nur, wenn vorgegeben), PRIMARY KEY (…) und FOREIGN KEY (…) REFERENCES …. |
+| 13 | umgesetzt | Textfunktionen als PB2-6-1-1-K6 (`beleg:2025W-PB2-A4-d`); PB2-5-1-1-K2 verweist darauf und nennt ADD/DROP/MODIFY COLUMN und DROP TABLE. alt_neu AP2-4-3-2-K3 (DROP TABLE) von „gestrichen“ auf „angepasst → PB2-5-1-1-K2“ (die alte Begründung stützte sich auf fehlende Prüfungsbelege, E6). |
+| 14 | umgesetzt | PB2-5-1-1-K3 mit vollständigem Beispiel: UPDATE … WHERE Email IS NULL, dann ALTER TABLE Aerzte MODIFY COLUMN Email VARCHAR(100) NOT NULL (Form des SQL-Auszugs). |
+| 15 | umgesetzt | P40: neuer Übungs-Stichpunkt PB2-6-1-5 im Abfrage-Ordner; die Modellaufgaben (2021W-A3, 2022S-A3, 2022W-A3-a/-b/-c, 2023W-A3-a, 2024W-A3-a, 2025S-A3) sind dorthin umgezogen. Aus PB2-5-1-1 entfernt: die importierten Bausteine AP2b.04.10.1, AP2b.04.10.2, AP2a.02.03.2, AP2a.02.03.4, AP2a.02.03.5, AP1.03.03.4.1, ZB.datendarstellung (T7) sowie `baut_auf` PB1-6-1-1. |
+| 16 | umgesetzt | PB2-5-1-5-K2 auf das Neue gekürzt (von Hand verbessern oder Importprogramm mit Fehlerbehandlung, wie IHK-Lösung 2024W-A3-bb); K1, K2, K3 tragen `neu` gegenüber PB1-7-1-3 (K1 auch PB1-7-1-1). Damit dürfen AP2b.02.05.2 und AP2b.05.02.2 in `bausteine` bleiben. |
+| 17 | – | ohne Befund, unverändert. |
+
+**Aussagen:** vorher 20, nachher 19 (5-1-1: 7, 5-1-2: 5, 5-1-3: 4, 5-1-5: 3). Neue IDs: PB2-5-1-1-K6, PB2-5-1-1-K7 (verschoben aus 5-1-4-K1/K2), PB2-5-1-2-K6. Gestrichen: PB2-5-1-2-K4, PB2-5-1-4-K1, -K2 (verschoben), -K3; Stichpunkt PB2-5-1-4.

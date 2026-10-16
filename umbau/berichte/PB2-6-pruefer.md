@@ -21,3 +21,26 @@
 **Aussagen:** vorher 17, nach den Vorschlägen 19 (+1 korrelierte Unterabfrage in PB2-6-1-4, +1 Textfunktionen in PB2-6-1-1). Streichen ist nicht nötig. Umformuliert oder erweitert werden 7 Aussagen (6-1-1-K2, 6-1-2-K3/K4, 6-1-3-K1/K2, 6-1-4-K1/K4), dazu kommt eine Grenze.
 
 **Ordnerübergreifend:** Unterabfragen in UPDATE/DELETE sind mit PB2-5-1-2-K2/K3 doppelt (Fund 9). Die Textfunktionen kommen aus der PB2-5-Teilaufgabe 2025W-A4-d (PB2-5, Fund 13). Die Dialekt-Grenze (Fund 8) gilt auch für PB2-5 (SELECT … INTO, UPDATE … FROM … JOIN, PB2-5, Funde 2 und 5).
+
+## Umsetzung
+
+Stand 16.10.2026. Umgesetzt nach P36, P39–P42; IDs nach P15/P33. Prüfskript: `node tools/umbau/lernplan-pruefen.mjs PB2-6` meldet „OK“. PB2-6 ist nach P39 die Grundlage für PB2-5 (Ordnertausch durch die Hauptsitzung).
+
+| Nr | Status | was genau (IDs) |
+|---|---|---|
+| 1 | umgesetzt | Neu PB2-6-1-4-K5 (korreliert in der SELECT-Liste, `beleg:2023W-PB2-A4-d`, `beleg:2022S-PB2-A4-bd`, NULL bzw. bei COUNT 0) und PB2-6-1-4-K6 (korreliert in WHERE mit EXISTS/NOT EXISTS oder (SELECT COUNT(*) …) = 0; Form von 2022S-A4-bb als SELECT). 2022S-A4-bd und 2023W-A4-d in `teilaufgaben` von PB2-6-1-4. |
+| 2 | umgesetzt | PB2-6-1-2-K3: Bedingung für die rechte Tabelle in ON statt WHERE (Beispiel 2022W-A4-a), `beleg:2022W-PB2-A4-a`, `beleg:2022S-PB2-A4-bc`. COUNT 0 / SUM, AVG NULL steht in PB2-6-1-3-K1 (dort gehört COUNT hin), einschließlich: nach LEFT JOIN COUNT(Spalte der rechten Tabelle), nicht COUNT(*). |
+| 3 | umgesetzt | Neu PB2-6-1-1-K6: LEFT/RIGHT aus dem Auszug, Zerlegen am Leerzeichen mit der vorgegebenen Funktion (`beleg:2025W-PB2-A4-d`); SUBSTRING mit Trennzeichen als Dialekt in Grenze und Hinweis. K4 auf Datumsfunktionen (WEEKDAY, NOW(), DATEDIFF) präzisiert. |
+| 4 | umgesetzt | PB2-6-1-4-K4: UNION gegen UNION ALL, Spaltenzahl und Datentypen, Namen aus der ersten Abfrage, jede Teilabfrage gruppiert, ORDER BY einmal am Ende. |
+| 5 | umgesetzt | PB2-6-1-3-K2 als sichere Form formuliert, nicht als absolute Regel; Hinweis am Stichpunkt: 2025W-A4-b gruppiert nur nach b.BID, in manchen Systemen erlaubt und anerkannt (wie P35 Nr. 7). Ausdruck YEAR(…) mit `beleg:2024S-PB2-A4-d`. |
+| 6 | umgesetzt | PB2-6-1-2-K4: Self-Join mit LEFT JOIN und Jahresbedingung in ON, Müller-Fall (NULL), Alternative korrelierte Unterabfragen (PB2-6-1-4). |
+| 7 | umgesetzt (anders) | P42: eigene kurze Aussage PB2-6-1-3-K5 (Stufe 1 „erkennen“, Einsatz nach dem Auszug, B4) statt Halbsatz in K1, damit die Stufe niedrig bleibt; ANH.sql-syntax-auszug in `bausteine` von PB2-6-1-3. |
+| 8 | umgesetzt | P41: Grenze an PB2-6-1-1 ([Alias], "Text", typografische Anführungszeichen, YEAR(TODAY), SUBSTRING mit Trennzeichen; Katalogstelle ANH.sql-syntax-auszug, AP2b.04.22.9) und Hinweis, welche IHK-Lösung was zeigt und dass sie anerkannt wurde. SELECT … INTO und UPDATE … FROM … JOIN als Grenze an PB2-5-1-2. |
+| 9 | umgesetzt | Dublette aufgelöst: UPDATE/DELETE mit Unterabfrage nur noch in PB2-5-1-2 (K2/K3). PB2-6-1-4-K1 (IN/NOT IN, Kunden ohne Bestellung, NULL-Falle) und K2 (WHERE Preis = (SELECT MAX(Preis) …)) mit SELECT-Beispielen; 2021W-A4-c und 2022S-A4-bb aus PB2-6-1-4 entfernt, Herkunft dort jetzt Katalog. |
+| 10 | umgesetzt | EXISTS/NOT EXISTS als Anwenden in PB2-6-1-4-K6; alt_neu AP2-4-2-4-K4 → PB2-6-1-4-K6. |
+| 11 | umgesetzt | `beleg:2021W-PB2-A4-e` bei K2 und K5; K2 um Datumsbereich mit >= und <= (2023S-A4-b) und Spaltenvergleich (2024W-A4-c) ergänzt. |
+| 12 | teilweise | Teilaufgaben bleiben in PB2-6-1-1 (sie belegen dort Funktionen, Bedingungen und Sortieren); Hinweis, dass 2021W-A4-e, 2023S-A4-b, 2024W-A4-b/-c erst nach PB2-6-1-2 ganz geübt werden. Verschieben hätte die Belege von K2, K4, K5 entfernt. |
+| 13 | – | ohne Befund, unverändert. |
+| P40 | umgesetzt | Neuer Stichpunkt PB2-6-1-5 „Übung: Vorgegebenes Tabellenmodell lesen und den Weg der Abfrage finden“: K1 JOIN-Pfad aus Schlüsseln (mit `neu` gegenüber PB1-6-1-2), K2 richtige JOIN-Bedingung bei mehreren Fremdschlüsseln/Wegen (2023S-A4-c, 2024W-A4-c), K3 Datentyp in Bedingungen (mit `neu`, 2022W-A4-c, 2021W-A4-d, 2023W-A4-a), K4 INNER oder LEFT JOIN aus der Ergebnistabelle ableiten. `baut_auf` PB1-6-1-1, -2, -3, AP1-8-4-5; die Modellaufgaben A3 aus PB2-5-1-1 sind hier als Übung eingetragen. |
+
+**Aussagen:** vorher 17, nachher 25 (6-1-1: 6, 6-1-2: 4, 6-1-3: 5, 6-1-4: 6, 6-1-5: 4). Neue IDs: PB2-6-1-1-K6, PB2-6-1-3-K5, PB2-6-1-4-K5, PB2-6-1-4-K6, PB2-6-1-5 mit K1–K4. Gestrichen: keine.
