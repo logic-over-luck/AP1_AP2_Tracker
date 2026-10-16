@@ -16,7 +16,7 @@
     {
      "id": "WISO-5-2-1",
      "titel": "Sicherheitsbewusstsein, Social Engineering und IT-Sicherheit am Arbeitsplatz",
-     "ziel": "Begründen, warum Sicherheitsbewusstsein nötig ist, Social Engineering erkennen und abwehren und sich am eigenen Arbeitsplatz sicherheitsbewusst verhalten.",
+     "ziel": "Begründen, warum Sicherheitsbewusstsein nötig ist, Social Engineering erkennen und abwehren, Authentizität von Integrität abgrenzen und die Ziele der DSGVO sowie die Aufgaben des BSI kennen.",
      "gebiete": [
       "G.WISO.05",
       "G.WISO.03"
@@ -29,8 +29,16 @@
        "id": "WISO.05.02.9"
       },
       {
+       "id": "WISO.03.08.2",
+       "anteil": "zweites Ziel der DSGVO"
+      },
+      {
        "id": "WISO.03.08.3",
        "anteil": "Schutzziel Authentizität"
+      },
+      {
+       "id": "WISO.03.08.4",
+       "anteil": "BSI gegen Datenschutzaufsicht und Polizei"
       }
      ],
      "teilaufgaben": [
@@ -52,7 +60,7 @@
       },
       {
        "id": "WISO-5-2-1-K3",
-       "text": "Du kannst Social Engineering erklären: Angreifer nutzen Vertrauen, Hilfsbereitschaft, Respekt vor Vorgesetzten oder Zeitdruck aus, um an Informationen oder Zugang zu kommen, zum Beispiel per Phishing-Mail, Anruf als angeblicher Support oder vorgetäuschter Notlage.",
+       "text": "Du kannst Social Engineering erklären: Angreifer nutzen Vertrauen, Hilfsbereitschaft, Respekt vor Vorgesetzten oder Zeitdruck aus, um an Informationen oder Zugang zu kommen, zum Beispiel per Phishing-Mail mit gefälschtem Absender (Anzeigename passt nicht zur tatsächlichen Adresse), Anruf als angeblicher Support oder vorgetäuschter Notlage.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.02.9",
@@ -61,7 +69,7 @@
       },
       {
        "id": "WISO-5-2-1-K4",
-       "text": "Du kannst Verhalten unterscheiden, das Schäden durch Social Engineering vermeidet: die Identität des Gegenübers über einen bekannten Weg prüfen, keine Zugangsdaten weitergeben, verdächtige Nachrichten nicht weiterleiten, sondern löschen und der zuständigen Stelle melden.",
+       "text": "Du kannst Verhalten unterscheiden, das Schäden durch Social Engineering vermeidet: die Identität über einen bekannten zweiten Weg prüfen (Rückruf unter der bekannten Nummer, auch bei angeblichen Anweisungen von Vorgesetzten) und eine verdächtige Nachricht nicht weiterleiten, ausdrucken oder beantworten, sondern löschen und der zuständigen Stelle melden.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.02.9",
@@ -69,16 +77,8 @@
        ]
       },
       {
-       "id": "WISO-5-2-1-K7",
-       "text": "Du kannst sicherheitsbewusstes Verhalten am eigenen Arbeitsplatz anwenden: Bildschirm sperren, für jeden Zugang ein eigenes Passwort, Updates nicht aufschieben, Vorfälle sofort melden.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:WISO.05.02.1"
-       ]
-      },
-      {
        "id": "WISO-5-2-1-K8",
-       "text": "Du kannst über Vertraulichkeit, Integrität und Verfügbarkeit aus AP1 hinaus das Schutzziel Authentizität erklären (Daten und Absender sind echt und nachweisbar) und einem Verfahren das gesicherte Schutzziel zuordnen, zum Beispiel einer mitgesendeten und beim Empfänger verglichenen Prüfsumme die Integrität.",
+       "text": "Du kannst Authentizität als viertes Schutzziel neben Vertraulichkeit, Integrität und Verfügbarkeit erklären (Absender und Daten sind echt) und dabei von der Integrität abgrenzen: Eine mitgesendete und beim Empfänger verglichene Prüfsumme zeigt nur, dass die Daten unverändert sind, nicht, wer sie geschickt hat; das belegt erst eine digitale Signatur.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.03.08.3",
@@ -86,9 +86,38 @@
        ],
        "neu": {
         "gegenueber": [
-         "AP1-7-1-1"
+         "AP1-7-1-1",
+         "AP1-7-3-2"
         ],
-        "was": "Authentizität als viertes Schutzziel; Prüfsumme bei der Übertragung"
+        "was": "Authentizität als viertes Schutzziel benennen; Abgrenzung zur Integrität (Prüfsumme belegt keine Herkunft)"
+       }
+      },
+      {
+       "id": "WISO-5-2-1-K9",
+       "text": "Du kannst die beiden Ziele der DSGVO unterscheiden: den Schutz natürlicher Personen und ihrer Grundrechte bei der Verarbeitung personenbezogener Daten und den freien Verkehr dieser Daten im EU-Binnenmarkt durch ein einheitliches Recht, das in allen Mitgliedstaaten unmittelbar gilt; das BDSG ergänzt es nur.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:WISO.03.08.2"
+       ],
+       "neu": {
+        "gegenueber": [
+         "AP1-7-5-1"
+        ],
+        "was": "zweites Ziel der DSGVO (freier Datenverkehr in der EU, einheitliches, unmittelbar geltendes Recht)"
+       }
+      },
+      {
+       "id": "WISO-5-2-1-K10",
+       "text": "Du kannst Aufgaben des BSI von denen anderer Stellen unterscheiden: Das BSI als Cybersicherheitsbehörde des Bundes warnt vor Sicherheitslücken, berät, setzt Standards, zertifiziert und schützt die Netze des Bundes; Bußgelder wegen Datenschutzverstößen verhängt die Datenschutzaufsicht (Landesdatenschutzbehörde, für Bundesbehörden der BfDI), Straftaten wie Erpressung durch Ransomware verfolgen Polizei und Staatsanwaltschaft.",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:WISO.03.08.4"
+       ],
+       "neu": {
+        "gegenueber": [
+         "AP1-7-2-1"
+        ],
+        "was": "Aufgaben des BSI abgrenzen gegen Datenschutzaufsicht und Polizei"
        }
       }
      ],
@@ -102,9 +131,11 @@
       "AP1-7-4-2",
       "AP1-7-4-3",
       "AP1-7-5-1",
-      "PB1-10-1-4"
+      "PB1-10-1-4",
+      "AP1-7-1-4",
+      "AP1-7-3-2"
      ],
-     "hinweis": "Schutzziele, technische und organisatorische Maßnahmen, BSI und IT-Grundschutz, Datenschutz (DSGVO), Schadsoftware, Phishing und sicheres mobiles Arbeiten kennst du aus AP1-7 (WISO.03.08 gedeckt, P47). Damit lösen sich 2021W-WISO-A25 bis A28 (Phishing erkennen und richtig reagieren: AP1-7-4-2; offenes WLAN nur mit VPN: AP1-7-4-3)."
+     "hinweis": "Schutzziele, technische und organisatorische Maßnahmen, BSI und IT-Grundschutz, Datenschutz (DSGVO), Schadsoftware, Phishing und sicheres mobiles Arbeiten kennst du aus AP1-7 (WISO.03.08 bis auf drei Punkte gedeckt, P47); hier steht nur, was WiSo darüber hinaus verlangt (Authentizität, zweites Ziel der DSGVO, BSI-Abgrenzung). Damit lösen sich 2021W-WISO-A25 bis A28 (Phishing erkennen und richtig reagieren: AP1-7-4-2; offenes WLAN nur mit VPN: AP1-7-4-3). Bildschirm sperren, eigene Passwörter, Updates und Vorfälle melden stehen in AP1-7-1-3, AP1-7-1-4 und AP1-7-4-3."
     },
     {
      "id": "WISO-5-2-4",
@@ -136,7 +167,7 @@
       },
       {
        "id": "WISO-5-2-4-K2",
-       "text": "Du kannst die möglichen Folgen von Äußerungen über den eigenen Arbeitgeber in sozialen Netzwerken berücksichtigen, bevor du etwas veröffentlichst: Abmahnung, Kündigung oder Schadensersatz bei Beleidigung, Geschäftsschädigung oder verratenen Geschäftsgeheimnissen.",
+       "text": "Du kannst die möglichen Folgen von Äußerungen über den eigenen Arbeitgeber in sozialen Netzwerken berücksichtigen, bevor du etwas veröffentlichst: Sachliche Kritik ist grundsätzlich von der Meinungsfreiheit gedeckt; Beleidigung, Geschäftsschädigung durch unwahre Behauptungen oder verratene Geschäftsgeheimnisse können Abmahnung, Kündigung, Schadensersatz oder eine Strafanzeige nach sich ziehen, auch bei Beiträgen in privaten Profilen oder geschlossenen Gruppen.",
        "stufe": 3,
        "herkunft": [
         "katalog:WISO.05.02.8"
@@ -151,16 +182,23 @@
        ]
       }
      ],
-     "hinweis": "Neuer Stichpunkt; die Aussagen standen vorher in WISO-5-2-1, der dadurch zu groß wurde (F3)."
+     "hinweis": "Neuer Stichpunkt; die Aussagen standen vorher in WISO-5-2-1, der dadurch zu groß wurde (F3). Pflichtverletzungen und ihre arbeitsrechtlichen Folgen allgemein (Abmahnung, Kündigung, Verschwiegenheit) stehen in WISO-1-1-4; hier nur das Besondere sozialer Netzwerke."
     },
     {
      "id": "WISO-5-2-2",
-     "titel": "Dienstliche E-Mails, Netiquette, Empfängersicht und Adressatenlisten",
-     "ziel": "Dienstliche E-Mails kurz, höflich und korrekt formulieren, Nachrichten aus Sicht der Empfänger prüfen und Adressatenlisten sorgfältig verwenden.",
+     "titel": "Dienstlich kommunizieren: E-Mail, Netiquette, Empfängersicht, Adressatenlisten und Zuständigkeiten",
+     "ziel": "Dienstliche E-Mails kurz, höflich, korrekt und sicher versenden, Nachrichten aus Sicht der Empfänger prüfen, Adressatenlisten sorgfältig verwenden und Zuständigkeiten in der Kommunikation beachten.",
      "gebiete": [
       "G.WISO.05"
      ],
      "bausteine": [
+      {
+       "id": "WISO.05.02.1",
+       "anteil": "dienstliche und private Kommunikation trennen"
+      },
+      {
+       "id": "WISO.05.02.4"
+      },
       {
        "id": "WISO.05.02.5"
       },
@@ -183,7 +221,7 @@
       },
       {
        "id": "WISO-5-2-2-K3",
-       "text": "Du kannst erklären, was Netiquette ist: Regeln für einen respektvollen Umgang in der digitalen Kommunikation, zum Beispiel keine Großbuchstaben als Schreien, sachlich bleiben, nicht vorschnell an alle antworten.",
+       "text": "Du kannst erklären, was Netiquette ist: Regeln für einen respektvollen Umgang in der digitalen Kommunikation, zum Beispiel keine durchgehenden Großbuchstaben (gelten als Schreien), keine Kettenbriefe, angemessene Antwortzeiten.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.02.5"
@@ -199,18 +237,27 @@
       },
       {
        "id": "WISO-5-2-2-K5",
-       "text": "Du kannst Adressatenlisten sorgfältig einsetzen: nur an die schicken, die es betrifft, und Adressen nicht für alle Empfänger sichtbar machen.",
+       "text": "Du kannst Adressatenlisten sorgfältig einsetzen: nur Betroffene anschreiben, An, CC und BCC unterscheiden und bei externen oder großen Verteilern BCC nutzen, weil offen sichtbare E-Mail-Adressen meist personenbezogene Daten sind und ihre Preisgabe gegen die DSGVO verstoßen kann.",
        "stufe": 3,
        "herkunft": [
         "katalog:WISO.05.02.7"
        ]
       },
       {
-       "id": "WISO-5-2-2-K6",
-       "text": "Du kannst die Felder An, CC und BCC unterscheiden und erklären, dass BCC die Adressen vor den anderen Empfängern verbirgt.",
-       "stufe": 2,
+       "id": "WISO-5-2-2-K7",
+       "text": "Du kannst dienstliche E-Mails sicher versenden und dabei dienstliche und private Kommunikation trennen: Empfänger vor dem Senden kontrollieren (Autovervollständigung), vertrauliche oder personenbezogene Inhalte nur verschlüsselt, keine Weiterleitung an private Postfächer oder Messenger, Abwesenheitsnotiz ohne interne Details.",
+       "stufe": 3,
        "herkunft": [
-        "katalog:WISO.05.02.7"
+        "katalog:WISO.05.02.5",
+        "katalog:WISO.05.02.1"
+       ]
+      },
+      {
+       "id": "WISO-5-2-2-K8",
+       "text": "Du kannst Zuständigkeiten in der Kommunikation in einer Situation anwenden: Auskünfte nach außen gibt nur, wer dazu befugt ist, damit sie richtig und abgestimmt sind; eine Anfrage außerhalb deiner Zuständigkeit leitest du an die zuständige Stelle weiter, zum Beispiel an Vorgesetzte, die Fachabteilung oder bei personenbezogenen Daten an den Datenschutzbeauftragten, statt selbst zu antworten.",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:WISO.05.02.4"
        ]
       }
      ],
@@ -218,55 +265,7 @@
       "AP1-2-2-3",
       "AP1-7-4-2"
      ],
-     "hinweis": "Kommunikationsmodelle und eine unbequeme Nachricht an Kunden formulieren stehen in AP1-2-2-3, verdächtige Absender und Links prüfen in AP1-7-4-2."
-    },
-    {
-     "id": "WISO-5-2-3",
-     "titel": "Zuständigkeiten bei Kommunikation und Information abgrenzen",
-     "ziel": "Verdeutlichen, wer welche Information an wen geben darf, Anfragen richtig weiterleiten und dienstliche und private Kommunikation trennen.",
-     "gebiete": [
-      "G.WISO.05"
-     ],
-     "bausteine": [
-      {
-       "id": "WISO.05.02.4"
-      }
-     ],
-     "teilaufgaben": [],
-     "koennen": [
-      {
-       "id": "WISO-5-2-3-K1",
-       "text": "Du kannst verdeutlichen, warum bei Kommunikation und Information festgelegt sein muss, wer zuständig ist: damit Auskünfte richtig, abgestimmt und befugt sind.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.05.02.4"
-       ]
-      },
-      {
-       "id": "WISO-5-2-3-K2",
-       "text": "Du kannst Zuständigkeiten im Alltag anwenden: Auskünfte nach außen geben nur befugte Stellen, und Anfragen außerhalb deiner Zuständigkeit leitest du an die richtige Stelle weiter.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:WISO.05.02.4"
-       ]
-      },
-      {
-       "id": "WISO-5-2-3-K3",
-       "text": "Du kannst in einem Beispiel zuordnen, wer intern zu informieren ist, zum Beispiel Vorgesetzte, Fachabteilung oder Datenschutzbeauftragte.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.05.02.4"
-       ]
-      },
-      {
-       "id": "WISO-5-2-3-K4",
-       "text": "Du kannst die Trennung von dienstlicher und privater Kommunikation umsetzen, zum Beispiel getrennte Konten, Geräte und Kanäle.",
-       "stufe": 3,
-       "herkunft": [
-        "katalog:WISO.05.02.4"
-       ]
-      }
-     ]
+     "hinweis": "Kommunikationsmodelle und eine unbequeme Nachricht an Kunden formulieren stehen in AP1-2-2-3, verdächtige Absender und Links prüfen in AP1-7-4-2, Verschlüsselung in AP1-7-3. Wer im Betrieb für IT-Sicherheit und wer für Datenschutz zuständig ist, steht in AP1-7-1-4. Die Zuständigkeiten (früher Stichpunkt WISO-5-2-3) sind hier aufgegangen (D7)."
     }
    ]
   },
@@ -308,7 +307,7 @@
       },
       {
        "id": "WISO-5-3-3-K2",
-       "text": "Du kannst Verhalten erklären, das die Zusammenarbeit mit anderen Teams wirksam, integer und respektvoll macht: zuhören, Zusagen einhalten, sachlich bleiben, Informationen offen teilen.",
+       "text": "Du kannst Verhalten erklären, das die Zusammenarbeit mit anderen Teams wirksam, integer und respektvoll macht (zuhören, Zusagen einhalten, sachlich bleiben, Informationen offen teilen), und es in einer beschriebenen Situation von abwertendem Verhalten unterscheiden.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.01.2"
@@ -331,15 +330,6 @@
        ]
       },
       {
-       "id": "WISO-5-3-3-K5",
-       "text": "Du kannst in einer beschriebenen Situation wertschätzendes von abwertendem Verhalten unterscheiden.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.05.01.2",
-        "katalog:WISO.05.01.3"
-       ]
-      },
-      {
        "id": "WISO-5-3-3-K6",
        "text": "Du kannst Ursachen für Missverständnisse in gemischten Teams erklären: Fachsprache, unterschiedliche Sprachkenntnisse, Zeitzonen, andere Gewohnheiten im Umgang mit Kritik.",
        "stufe": 2,
@@ -356,7 +346,7 @@
     {
      "id": "WISO-5-3-1",
      "titel": "Diversity, Gender-Neutralität und ethische Verantwortung für IT-Lösungen",
-     "ziel": "Diversity und Gender-Neutralität erklären, das Ziel des Diversity Managements kennen und ethische Folgen von IT-Lösungen benennen.",
+     "ziel": "Diversity und Gender-Neutralität erklären, das Ziel des Diversity Managements und die Charta der Vielfalt kennen und ethische Folgen von IT-Lösungen benennen.",
      "gebiete": [
       "G.WISO.05"
      ],
@@ -390,7 +380,7 @@
       },
       {
        "id": "WISO-5-3-1-K2",
-       "text": "Du kannst Gender-Neutralität erklären und ein Beispiel nennen: Sprache, Formulare und Software so gestalten, dass kein Geschlecht ausgeschlossen wird, etwa durch eine dritte Auswahlmöglichkeit neben männlich und weiblich.",
+       "text": "Du kannst Gender-Neutralität erklären und ein Beispiel nennen: Sprache, Formulare und Software so gestalten, dass kein Geschlecht ausgeschlossen wird, etwa die Auswahl „divers“ und „keine Angabe“ neben männlich und weiblich oder „(m/w/d)“ in Stellenanzeigen.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.03.2"
@@ -398,31 +388,16 @@
       },
       {
        "id": "WISO-5-3-1-K3",
-       "text": "Du kannst erklären, dass eine IT-Lösung die Würde und Integrität aller Betroffenen wahren muss, auch der Menschen, die sie nicht selbst benutzen, deren Daten aber verarbeitet werden.",
+       "text": "Du kannst ethische Fragen bei IT-Lösungen an Beispielen erklären: Die Würde und Integrität aller direkt und indirekt Betroffenen, auch der Menschen, deren Daten nur verarbeitet werden, ist kurz-, mittel- und langfristig zu wahren, zum Beispiel keine heimliche Überwachung von Beschäftigten, keine Benachteiligung durch automatische Entscheidungen, barrierefreier Zugang und auf lange Sicht Energiebedarf und Elektroschrott der Lösung.",
        "stufe": 2,
        "herkunft": [
-        "katalog:WISO.05.03.3"
-       ]
-      },
-      {
-       "id": "WISO-5-3-1-K4",
-       "text": "Du kannst erklären, dass dabei auch die späteren Folgen zählen und die Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume.",
-       "stufe": 2,
-       "herkunft": [
+        "katalog:WISO.05.03.3",
         "katalog:WISO.05.03.4"
        ]
       },
       {
-       "id": "WISO-5-3-1-K5",
-       "text": "Du kannst ethische Fragen bei IT-Lösungen an Beispielen erklären: Überwachung von Beschäftigten, Benachteiligung durch automatische Entscheidungen, fehlende Barrierefreiheit.",
-       "stufe": 2,
-       "herkunft": [
-        "katalog:WISO.05.03.3"
-       ]
-      },
-      {
        "id": "WISO-5-3-1-K6",
-       "text": "Du kannst die Charta der Vielfalt einordnen: eine freiwillige Selbstverpflichtung von Unternehmen für ein vorurteilsfreies Arbeitsumfeld, die Merkmale wie Alter, Geschlecht, Nationalität und ethnische Herkunft, Religion, sexuelle Orientierung und Behinderung berücksichtigt – nicht den Ausbildungsstand.",
+       "text": "Du kannst die Charta der Vielfalt vom AGG unterscheiden: Sie ist eine freiwillige Selbstverpflichtung von Unternehmen für ein vorurteilsfreies Arbeitsumfeld (das AGG ist ein Gesetz) und nennt sieben Dimensionen: Alter, ethnische Herkunft und Nationalität, Geschlecht und geschlechtliche Identität, körperliche und geistige Fähigkeiten, Religion und Weltanschauung, sexuelle Orientierung und soziale Herkunft – nicht den Ausbildungsstand oder die Art des Abschlusses.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.03.1",
@@ -430,7 +405,7 @@
        ]
       }
      ],
-     "hinweis": "Die Merkmale des Allgemeinen Gleichbehandlungsgesetzes stehen in WISO-1-3-5."
+     "hinweis": "Die Merkmale des Allgemeinen Gleichbehandlungsgesetzes und die Benachteiligung nach dem AGG stehen in WISO-1-3-5; hier nur, was die Charta der Vielfalt anders macht. Die Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume (WISO.05.03.4 wiederholt WISO.04.04.1) stehen in WISO-4-1-2; hier nur der Zeithorizont bei IT-Lösungen."
     },
     {
      "id": "WISO-5-3-2",
@@ -459,7 +434,7 @@
       },
       {
        "id": "WISO-5-3-2-K3",
-       "text": "Du kannst in einer beschriebenen Situation regelgerechtes von regelwidrigem Verhalten unterscheiden, zum Beispiel eine Auswahl nach Qualifikation gegenüber einer Bevorzugung aus Verwandtschaft oder wegen Hautfarbe, Religion oder sexueller Orientierung.",
+       "text": "Du kannst in einer beschriebenen Situation regelgerechtes von regelwidrigem Verhalten unterscheiden: Entscheidungen nach sachlichen Gründen wie der Qualifikation gegenüber einer Bevorzugung aus sachfremden Gründen wie Verwandtschaft oder persönlichen Beziehungen (Vetternwirtschaft).",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.03.5",
@@ -468,7 +443,7 @@
       },
       {
        "id": "WISO-5-3-2-K4",
-       "text": "Du kannst Bereiche erklären, die Compliance-Regeln häufig betreffen: Bestechung und Annahme von Geschenken, Datenschutz, Lizenzen und Urheberrecht, Umgang mit vertraulichen Informationen; Einflussnahme durch persönliche Zuwendungen ist ein Compliance-Verstoß.",
+       "text": "Du kannst Bereiche erklären, die Compliance-Regeln über das Softwareprojekt hinaus betreffen: Bestechung und Annahme von Geschenken, Interessenkonflikte, Umgang mit vertraulichen Informationen; wer Geschäftspartner durch persönliche Zuwendungen beeinflussen will, verstößt gegen Compliance.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.03.5",
@@ -477,7 +452,7 @@
       },
       {
        "id": "WISO-5-3-2-K5",
-       "text": "Du kannst Folgen von Verstößen erklären: Abmahnung oder Kündigung, Bußgeld, Schadensersatz, Schaden für den Ruf des Betriebs.",
+       "text": "Du kannst Folgen von Compliance-Verstößen für den Betrieb erklären: Bußgelder und Haftung des Unternehmens, Schadensersatz, Ausschluss von Aufträgen und Schaden für den Ruf.",
        "stufe": 2,
        "herkunft": [
         "katalog:WISO.05.03.5"
@@ -487,7 +462,7 @@
      "baut_auf": [
       "PB1-2-1-2"
      ],
-     "hinweis": "Was Compliance ist und wie ein Softwareprojekt regelkonform bleibt, steht in PB1-2-1-2."
+     "hinweis": "Was Compliance ist und wie ein Softwareprojekt regelkonform bleibt (Lizenzen, Datenschutz), steht in PB1-2-1-2. Benachteiligung nach AGG-Merkmalen (Hautfarbe, Religion, sexuelle Identität) steht in WISO-1-3-5, persönliche arbeitsrechtliche Folgen von Pflichtverletzungen in WISO-1-1-4."
     }
    ]
   }
@@ -537,36 +512,6 @@
     "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
    },
    {
-    "alt": "WISO-5-2-2-K6",
-    "status": "angepasst",
-    "neu": "WISO-5-2-2-K6",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
-   },
-   {
-    "alt": "WISO-5-2-3-K1",
-    "status": "angepasst",
-    "neu": "WISO-5-2-3-K1",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
-   },
-   {
-    "alt": "WISO-5-2-3-K2",
-    "status": "angepasst",
-    "neu": "WISO-5-2-3-K2",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
-   },
-   {
-    "alt": "WISO-5-2-3-K3",
-    "status": "angepasst",
-    "neu": "WISO-5-2-3-K3",
-    "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
-   },
-   {
-    "alt": "WISO-5-2-3-K4",
-    "status": "angepasst",
-    "neu": "WISO-5-2-3-K4",
-    "grund": "Operator umsetzen; Stufe 3 nach Katalog (WISO.05.02 umsetzen)"
-   },
-   {
     "alt": "WISO-5-3-1-K1",
     "status": "angepasst",
     "neu": "WISO-5-3-1-K1",
@@ -574,26 +519,14 @@
    },
    {
     "alt": "WISO-5-3-1-K2",
-    "status": "übernommen",
-    "neu": "WISO-5-3-1-K2",
-    "grund": ""
-   },
-   {
-    "alt": "WISO-5-3-1-K3",
-    "status": "übernommen",
-    "neu": "WISO-5-3-1-K3",
-    "grund": ""
-   },
-   {
-    "alt": "WISO-5-3-1-K4",
     "status": "angepasst",
-    "neu": "WISO-5-3-1-K4",
+    "neu": "WISO-5-3-1-K2",
     "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
    },
    {
-    "alt": "WISO-5-3-1-K5",
+    "alt": "WISO-5-3-1-K3",
     "status": "angepasst",
-    "neu": "WISO-5-3-1-K5",
+    "neu": "WISO-5-3-1-K3",
     "grund": "Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8"
    },
    {
@@ -668,16 +601,58 @@
     "grund": "Stichpunkt in den Block Zusammenarbeit, Ethik und Compliance verschoben (F4: der Block Zusammenarbeit im Team hatte nur einen Stichpunkt)"
    },
    {
-    "alt": "WISO-5-1-1-K5",
-    "status": "verschoben",
-    "neu": "WISO-5-3-3-K5",
-    "grund": "Stichpunkt in den Block Zusammenarbeit, Ethik und Compliance verschoben (F4: der Block Zusammenarbeit im Team hatte nur einen Stichpunkt)"
-   },
-   {
     "alt": "WISO-5-1-1-K6",
     "status": "verschoben",
     "neu": "WISO-5-3-3-K6",
     "grund": "Stichpunkt in den Block Zusammenarbeit, Ethik und Compliance verschoben (F4: der Block Zusammenarbeit im Team hatte nur einen Stichpunkt)"
+   },
+   {
+    "alt": "WISO-5-1-1-K5",
+    "status": "verschoben",
+    "neu": "WISO-5-3-3-K2",
+    "grund": "Prüfer WISO-5 Nr. 27: wertschätzendes von abwertendem Verhalten unterscheiden ist die Anwendung von K2, dort zusammengefasst (Stichpunkt vorher von WISO-5-1-1 nach WISO-5-3-3 verschoben)"
+   },
+   {
+    "alt": "WISO-5-2-2-K6",
+    "status": "verschoben",
+    "neu": "WISO-5-2-2-K5",
+    "grund": "Prüfer WISO-5 Nr. 13: An/CC/BCC ist nur das Mittel zu K5; zusammengefasst mit dem Datenschutzgrund für BCC"
+   },
+   {
+    "alt": "WISO-5-2-3-K1",
+    "status": "verschoben",
+    "neu": "WISO-5-2-2-K8",
+    "grund": "Prüfer WISO-5 Nr. 12, D7: WISO-5-2-3 behielt nach den Kürzungen weniger als drei Aussagen und geht in WISO-5-2-2 auf; Begründung der Zuständigkeit in K8"
+   },
+   {
+    "alt": "WISO-5-2-3-K2",
+    "status": "verschoben",
+    "neu": "WISO-5-2-2-K8",
+    "grund": "Prüfer WISO-5 Nr. 10/12, D7: sagt dasselbe wie WISO-5-2-3-K1 als Anwendung; zusammen in WISO-5-2-2-K8"
+   },
+   {
+    "alt": "WISO-5-2-3-K3",
+    "status": "verschoben",
+    "neu": "WISO-5-2-2-K8",
+    "grund": "Prüfer WISO-5 Nr. 12, D7: wen intern informieren als Beispiel in WISO-5-2-2-K8; Zuständigkeit IT-Sicherheits- und Datenschutzbeauftragter steht in AP1-7-1-4"
+   },
+   {
+    "alt": "WISO-5-2-3-K4",
+    "status": "verschoben",
+    "neu": "WISO-5-2-2-K7",
+    "grund": "Prüfer WISO-5 Nr. 11: Trennung dienstlich/privat ist keine Zuständigkeitsabgrenzung; aufgegangen im sicheren Versand dienstlicher E-Mails (WISO.05.02.5)"
+   },
+   {
+    "alt": "WISO-5-3-1-K4",
+    "status": "verschoben",
+    "neu": "WISO-5-3-1-K3",
+    "grund": "Prüfer WISO-5 Nr. 19, D6: Umweltwirkungen stehen in WISO-4-1-2; nur der Zeithorizont bei IT-Lösungen bleibt, in K3"
+   },
+   {
+    "alt": "WISO-5-3-1-K5",
+    "status": "verschoben",
+    "neu": "WISO-5-3-1-K3",
+    "grund": "Prüfer WISO-5 Nr. 23: K5 lieferte nur Beispiele zu K3; zusammengefasst"
    },
    {
     "alt": "WISO-5-3-2-K1",
@@ -714,7 +689,7 @@
   "kerntest": {
    "stand": "2026-10-16",
    "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
-   "ergebnis": "Alle 10 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen; Phishing, sicheres Surfen und offenes WLAN lösen sich mit AP1-7-4-2 und AP1-7-4-3 (baut_auf), die Prüfsumme mit der neuen Aussage zu den Schutzzielen. Charta der Vielfalt ergänzt."
+   "ergebnis": "Alle 10 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen; Phishing, sicheres Surfen und offenes WLAN lösen sich mit AP1-7-4-2 und AP1-7-4-3 (baut_auf), die Prüfsumme mit der Aussage zu Authentizität und Integrität. Charta der Vielfalt ergänzt. Unabhängige Prüfung (umbau/berichte/WISO-5-pruefer.md, 29 Funde) eingebaut: Doppelungen zu AP1-7 gestrichen oder auf das Neue gekürzt, zweites DSGVO-Ziel und BSI-Abgrenzung ergänzt, WISO-5-2-3 in WISO-5-2-2 aufgegangen."
   },
   "hinweisquellen": {
    "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte."
@@ -748,7 +723,7 @@
      ],
      "betrieblich": [
       "WISO-5-2-1-K1",
-      "WISO-5-2-1-K7"
+      "WISO-5-2-2-K7"
      ]
     }
    },

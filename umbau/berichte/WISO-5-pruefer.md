@@ -63,3 +63,59 @@ E-Mail (Nr. 15) und der Datenschutzgrund für BCC (Nr. 13).
    (meta) gekannt. Ist eine neuere Fassung von UMBAU.md vorgesehen?
 3. Soll WISO-5-2-3 (Zuständigkeiten, ein Spiegelstrich, kein Beleg) eigenständig bleiben oder in WISO-5-2-2 aufgehen (Nr. 12)?
 4. Themenblock WISO-5-1 gibt es nicht (die Nummerierung beginnt bei WISO-5-2). Ist das Absicht (Umzugstabelle)?
+
+## Umsetzung (16.10.2026)
+
+Eingebaut in `tools/umbau/gen-wiso/wiso_5.py` nach den Entscheidungen D1–D12 (`WISO-pruefer-bilanz.md`).
+
+| Nr | Entscheidung | Was geändert / Grund |
+|---|---|---|
+| 1 | umgesetzt | WISO-5-2-1-K7 gestrichen (D8; neue ID, nicht in der alten Inhaltsdatei, daher ohne Alt→neu-Eintrag). Hinweis am Stichpunkt nennt AP1-7-1-3, AP1-7-1-4, AP1-7-4-3. |
+| 2 | umgesetzt | K8 auf Authentizität als viertes Schutzziel und Abgrenzung zur Integrität gekürzt (Prüfsumme belegt keine Herkunft, erst die Signatur). `neu` gegenüber AP1-7-1-1 und AP1-7-3-2; `baut_auf` um AP1-7-3-2 ergänzt. PB1-9-1-2 nicht ergänzt: die Prüfsumme lehrt schon AP1-7-3-2. Stufe 2 (Beleg 2021W-A29, Auswahl). |
+| 3 | umgesetzt | Neu WISO-5-2-1-K9: beide Ziele der DSGVO (Schutz natürlicher Personen; freier Datenverkehr im Binnenmarkt durch einheitliches, unmittelbar geltendes Recht; BDSG ergänzt), `neu` gegenüber AP1-7-5-1. WISO.03.08.2 steht in `bausteine` (mit Anteil). Herkunft zusätzlich `katalog:WISO.05.02.1`, weil T7 eine Aussage nur zu gedeckten Bausteinen ohne Beleg unter AP1-Stufe 4 ablehnt (getestet). Deckungstabelle führt der Hauptbearbeiter nach. |
+| 4 | umgesetzt | Neu WISO-5-2-1-K10: BSI (warnen, beraten, Standards, Zertifizierung, Schutz der Bundesnetze) gegen Datenschutzaufsicht (Bußgelder) und Polizei/Staatsanwaltschaft (Straftaten), `neu` gegenüber AP1-7-2-1 (D8). Herkunft WISO.03.08.4 und WISO.05.02.4 (Zuständigkeit, mit Anteil in `bausteine`), aus demselben T7-Grund wie Nr. 3. `baut_auf` um AP1-7-1-4 ergänzt (D8). |
+| 5 | umgesetzt | K4 auf das Neue gekürzt: Rückruf über bekannten zweiten Weg (auch bei angeblichen Vorgesetzten), nicht weiterleiten/ausdrucken/beantworten, löschen und melden. |
+| 6 | keine Änderung | Befund „ok“. |
+| 7 | umgesetzt | K3: Phishing-Mail mit gefälschtem Absender (Anzeigename passt nicht zur Adresse) – ein Halbsatz, damit der Distraktor aus 2021W-A25 sicher verworfen wird (D11). |
+| 8 | keine Änderung | Befund „ok“. |
+| 9 | abgelehnt | `tiefe.json`: WISO.03.08.3 Stufe 3 (von WISO.03.08), erreicht über die Deckung (AP1-7-1-1, Stufe 4). K8 bleibt Stufe 2, passend zur Auswahlaufgabe 2021W-A29 (D1). Antwort auf Frage 1. |
+| 10 | abgelehnt | `tiefe.json` weist WISO.05.02.4 Stufe 3 aus (von WISO.05.02 „kennen und umsetzen“); eine Stufe-2-Fassung würde T8 verletzen. Die Zuständigkeit steht jetzt als Anwendung (Stufe 3) in WISO-5-2-2-K8. |
+| 11 | umgesetzt | WISO-5-2-3-K4 (dienstlich/privat trennen) verschoben in die neue Aussage WISO-5-2-2-K7 (sicherer Versand), Herkunft WISO.05.02.5 und WISO.05.02.1 (privat und betrieblich, mit Anteil); K7 trägt damit die Katalogstufe 3 von WISO.05.02.1 (vorher über die gestrichene K7 in WISO-5-2-1). |
+| 12 | umgesetzt | D7: Nach Kürzung blieben in WISO-5-2-3 weniger als drei Aussagen; Stichpunkt in WISO-5-2-2 aufgegangen. K1–K3 → WISO-5-2-2-K8 (eine Aussage: befugte Auskunft, weiterleiten, intern zuständige Stelle), K4 → WISO-5-2-2-K7. WISO-5-2-2 heißt jetzt „Dienstlich kommunizieren: E-Mail, Netiquette, Empfängersicht, Adressatenlisten und Zuständigkeiten“; Hinweis auf AP1-7-1-4. Antwort auf Frage 3. |
+| 13 | umgesetzt | WISO-5-2-2-K5 und -K6 zusammengefasst (K6 → K5 verschoben): An/CC/BCC, BCC bei externen oder großen Verteilern, weil E-Mail-Adressen meist personenbezogene Daten sind (DSGVO). Stufe 3. |
+| 14 | umgesetzt | K3 Netiquette: Großbuchstaben, Kettenbriefe, Antwortzeiten; „sachlich bleiben“ und „nicht an alle antworten“ entfernt. |
+| 15 | umgesetzt | Neu WISO-5-2-2-K7 (Stufe 3): Empfänger kontrollieren (Autovervollständigung), vertrauliche Inhalte nur verschlüsselt, keine Weiterleitung an private Postfächer oder Messenger, Abwesenheitsnotiz ohne interne Details. |
+| 16 | Parkplatz | P49 (Kür, keine Hinweisquelle): Pflichtangaben in geschäftlichen E-Mails (§ 35a GmbHG, § 37a HGB). |
+| 17 | umgesetzt | WISO-5-2-4-K2: sachliche Kritik ist grundsätzlich von der Meinungsfreiheit gedeckt; Folgen auch bei privaten Profilen und geschlossenen Gruppen; Hinweis auf WISO-1-1-4 (D6). |
+| 18 | keine Änderung | Befund „ok“. |
+| 19 | umgesetzt | D6: WISO-5-3-1-K4 → K3 verschoben; K3 behält nur den Zeithorizont (kurz-, mittel-, langfristig, Energiebedarf und Elektroschrott), Herkunft WISO.05.03.3 und .4; Hinweis auf WISO-4-1-2. |
+| 20 | umgesetzt | WISO-5-3-1-K6: sieben Dimensionen der Charta einschließlich sozialer Herkunft (D6, D12). |
+| 21 | umgesetzt | K6 als Unterschied zum AGG (freiwillige Selbstverpflichtung gegenüber Gesetz); Verweis auf WISO-1-3-5 nur im `hinweis` (`baut_auf` nur auf frühere Räume). |
+| 22 | umgesetzt | K2: „divers“ und „keine Angabe“ neben männlich und weiblich, „(m/w/d)“ in Stellenanzeigen (D12). |
+| 23 | umgesetzt | WISO-5-3-1-K5 → K3 verschoben (Beispiele zusammen mit Würde und Integrität). |
+| 24 | umgesetzt | WISO-5-3-2-K3 nur noch sachliche Gründe gegenüber Vetternwirtschaft/persönlichen Beziehungen (D6); AGG-Merkmale im `hinweis` auf WISO-1-3-5. 2023S-A30 bleibt lösbar (Qualifikation = regelgerecht, alle anderen Optionen sachfremd). |
+| 25 | umgesetzt | K4 ohne Datenschutz/Lizenzen (PB1-2-1-2), dafür Interessenkonflikte; Kern von 2021W-A30 (Zuwendungen = Compliance) bleibt. |
+| 26 | umgesetzt | K5 auf Folgen für den Betrieb gekürzt (Bußgelder und Haftung, Schadensersatz, Ausschluss von Aufträgen, Rufschaden); persönliche Folgen im `hinweis` auf WISO-1-1-4. |
+| 27 | umgesetzt | WISO-5-3-3-K5 in K2 zusammengefasst; die alte WISO-5-1-1-K5 zeigt jetzt auf WISO-5-3-3-K2. |
+| 28 | keine Änderung | Befund „ok“. |
+| 29 | keine Änderung | Befund „ok“. |
+
+**Zählung:** 21 umgesetzt, 0 teilweise, 2 abgelehnt (Nr. 9, 10), 1 Parkplatz (Nr. 16, P49), 5 ohne Handlungsbedarf (Befund „ok“).
+
+**Neue Zahlen:** Stichpunkte 7 → 6 (WISO-5-2-3 aufgegangen), Können-Aussagen 33 → 28. WISO-5-2-1: 5 → 6 (K7 weg, K9, K10 neu), WISO-5-2-2: 5 → 6, WISO-5-2-3: 4 → 0, WISO-5-2-4: 3, WISO-5-3-1: 6 → 4, WISO-5-3-2: 4, WISO-5-3-3: 6 → 5. `lernplan-pruefen.mjs WISO-5`: OK ohne Fehler und ohne Hinweise.
+
+**Fragen des Prüfers:** (1) beantwortet mit Nr. 9/10 (`tiefe.json`). (2) P46–P48 betreffen UMBAU.md, nicht diesen Ordner. (3) D7, siehe Nr. 12. (4) Der Themenblock WISO-5-1 fehlt absichtlich: ID-Erhalt (P15/P48), der alte Stichpunkt WISO-5-1-1 ist nach WISO-5-3-3 umgezogen (F4); keine Änderung.
+
+**Deckungstabelle (für den Hauptbearbeiter):** Die neuen Aussagen nutzen WISO.03.08.2 (WISO-5-2-1-K9), WISO.03.08.3 (K8, wie bisher) und WISO.03.08.4 (K10) in Herkunft und `bausteine`; lernplan-pruefen akzeptiert das nur, weil K9 zusätzlich `katalog:WISO.05.02.1` und K10 `katalog:WISO.05.02.4` trägt (ohne diese meldet T7, die Aussagen gingen mit Stufe 2 nicht über AP1, Stufe 4, hinaus). `baut_auf` von WISO-5-2-1 enthält AP1-7-1-4 und AP1-7-3-2.
+
+**Unsicher:**
+- K9 Herkunft WISO.05.02.1 und K10 Herkunft WISO.05.02.4 sind inhaltlich vertretbar (Zuständigkeit bei Vorfällen; Datenschutzbewusstsein), dienen aber vor allem T7. Besser wäre eine T7-Ausnahme für `neu` mit „mehr Inhalt“ bei gedeckten WiSo-Bausteinen (Vorschlag für den Parkplatz).
+- K10: BSI-Aufgaben bewusst ohne die NIS2-Aufsicht (seit dem NIS2-Umsetzungsgesetz) – für die Prüfung genügt die Liste; Zuständigkeit der Datenschutzaufsicht vereinfacht (Länderbehörden für Unternehmen, BfDI für Bundesbehörden; Telekommunikation beim BfDI nicht erwähnt).
+- WISO-5-2-2-K5: Ein offener Verteiler ist nicht in jedem Fall ein DSGVO-Verstoß; deshalb „kann verstoßen“.
+- WISO-5-3-2-K5: „Ausschluss von Aufträgen“ meint öffentliche Vergaben (Wettbewerbsregister, GWB) – vereinfacht.
+
+**Nacharbeit Hauptbearbeiter (16.10.2026):** Die Zusatz-Herkünfte `katalog:WISO.05.02.1` (K9) und `katalog:WISO.05.02.4`
+(K10) waren nur nötig, weil WISO.03.08.2 und WISO.03.08.4 in der Deckungstabelle standen, obwohl AP1 sie nach Fund 3 und 4
+nur teilweise lehrt. Beide sind aus `umbau/regeln/wiso-deckung.json` herausgenommen (Regel der Tabelle: nur vollständig
+gedeckte Bausteine) und jetzt normale WiSo-Bausteine in WISO-5-2-1; die Zusatz-Herkünfte und der Anteil WISO.05.02.4 an
+WISO-5-2-1 sind entfernt. Der Vorschlag, T7 für gedeckte Bausteine zu lockern, entfällt damit.
