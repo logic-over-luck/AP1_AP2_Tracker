@@ -171,7 +171,17 @@
       "AP1-2-4-1",
       "PB1-1-2-1"
      ],
-     "hinweis": "Die drei Seiten der Nachhaltigkeit (ökonomische, ökologische und soziale Ziele) stehen in AP1-2-4-1, Green IT (umweltschonend herstellen, betreiben, entsorgen) in PB1-1-2-1. Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume wohnen hier; WISO-5-3-1 verweist hierher und behält nur den Zeithorizont bei IT-Lösungen."
+     "hinweis": "Die drei Seiten der Nachhaltigkeit (ökonomische, ökologische und soziale Ziele) stehen in AP1-2-4-1, Green IT (umweltschonend herstellen, betreiben, entsorgen) in PB1-1-2-1. Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume wohnen hier; WISO-5-3-1 verweist hierher und behält nur den Zeithorizont bei IT-Lösungen.",
+     "kuer": [
+      {
+       "text": "Mit einem Umweltmanagementsystem nach ISO 14001 legt ein Unternehmen Umweltziele fest, plant Maßnahmen, misst die Ergebnisse und verbessert sich laufend; es kann sich danach zertifizieren lassen, und ISO 14004 gibt Leitlinien zur Umsetzung. Viele Unternehmen legen ihre Fortschritte zusätzlich in Nachhaltigkeitsberichten offen.",
+       "kurz": "Umweltmanagement nach ISO 14001",
+       "quellen": [
+        "buch:FS-4.4.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (katalog: false)"
+      }
+     ]
     },
     {
      "id": "WISO-4-1-3",
@@ -391,6 +401,15 @@
        "herkunft": [
         "katalog:WISO.04.03.1"
        ]
+      },
+      {
+       "id": "WISO-4-2-2-K5",
+       "text": "Du kannst Verkaufsverpackung (umhüllt die Ware als Verkaufseinheit beim Endverbraucher), Umverpackung (fasst mehrere Verkaufseinheiten zusammen, etwa für das Regal) und Versandverpackung (ermöglicht den Versand an den Endverbraucher, z. B. der Karton im Onlinehandel) unterscheiden und erklären, dass sie systembeteiligungspflichtig sind, wenn sie typischerweise bei privaten Endverbrauchern anfallen – Verpackungen von Lieferungen an andere Unternehmen, etwa Teile an einen Hersteller, dagegen nicht.",
+       "kurz": "Verkaufs-, Um- und Versandverpackung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-2.10.4-S275"
+       ]
       }
      ],
      "hinweis": "Neuer Stichpunkt; das Duale System stand vorher in WISO-4-3-1. Das Recycling-Symbol steht in WISO-4-1-3, die Abfallhierarchie in WISO-4-2-1.",
@@ -486,6 +505,16 @@
        "katalog": [
         "WISO.04.03.2"
        ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Ein CO2-Zertifikat berechtigt, in einem bestimmten Zeitraum eine bestimmte Menge CO2 auszustoßen. Wer mehr ausstößt, muss Zertifikate zukaufen, wer einspart, kann überzählige verkaufen; so tragen die Verursacher die Kosten ihrer Emissionen, und Einsparen lohnt sich.",
+       "kurz": "CO2-Zertifikate und Emissionshandel",
+       "quellen": [
+        "buch:FS-4.4.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (katalog: false)"
       }
      ]
     }
@@ -683,7 +712,7 @@
  },
  "meta": {
   "schicht": "3+4",
-  "regelwerk_version": "1.8",
+  "regelwerk_version": "2.2",
   "stand": "2026-10-16",
   "hinweis": "WiSo-Ordner (UMBAU.md Schritt 6). ID-Erhalt wie AP1 (P15, P48). Inhalte früherer Räume werden mit baut_auf importiert (E2); WiSo-Bausteine, die ein früherer Raum schon lehrt, stehen in umbau/regeln/wiso-deckung.json (P47). Stufe der WiSo-Aufgaben nach Z3b (P46).",
   "kerntest": {
@@ -693,7 +722,8 @@
   },
   "hinweisquellen": {
    "pruefer:wiso-2026-10": "Unabhängige Prüfung WiSo vom 16.10.2026 (Berichte umbau/berichte/WISO-<n>-pruefer.md, Bilanz WISO-pruefer-bilanz.md): Kür-Vorschläge zum aktuellen Rechtsstand und zu üblichen Detailfragen; als Hinweisquelle zugelassen nach Entscheidung des Projektinhabers (P49, wie P30).",
-   "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte."
+   "podcast:themen-wiso": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“ (abgerufen 16.10.2026). Für WiSo stehen dort nur Schlagworte zu Winter 2015/16 (Elternzeit, Betriebsrat, Streik, Wirtschaftskreislauf, Schilder); für die Termine 2021–2026 gibt es keine WiSo-Schlagworte.",
+   "buch:FS-4.4.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-16",
@@ -710,6 +740,28 @@
       "WISO-4-2-2"
      ],
      "notiz": "Kür-Vorschlag der unabhängigen Prüfung (P49)"
+    },
+    {
+     "thema": "Mit einem Umweltmanagementsystem nach ISO 14001 legt ein Unternehmen Umweltziele fest, plant Maßnahmen, misst die Ergebn",
+     "quellen": [
+      "buch:FS-4.4.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-4-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein CO2-Zertifikat berechtigt, in einem bestimmten Zeitraum eine bestimmte Menge CO2 auszustoßen. Wer mehr ausstößt, mus",
+     "quellen": [
+      "buch:FS-4.4.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "WISO-4-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
     }
    ]
   },
@@ -758,6 +810,24 @@
       "WISO-4-2-1-K1"
      ]
     }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "WISO-4-2-2-K5"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [],
+    "kuer": [
+     "WISO-4-1-2",
+     "WISO-4-2-3"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": []
    }
   ]
  }

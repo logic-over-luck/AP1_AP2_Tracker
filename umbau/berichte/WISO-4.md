@@ -43,6 +43,10 @@ Teilaufgaben: 2023W-WISO-A29, 2024S-WISO-A29, 2023W-WISO-A30
 | K3 | Du kannst Kriterien für einen nachhaltigen Einkauf und die Lieferantenauswahl erklären: Energieverbrauch, Lebensdauer, Reparierbarkeit, Umweltzeichen, Rücknahme von Altgeräten, kurze Transportwege, zum Beispiel ein lokaler statt ein ferner Lieferant. | 2 | katalog:WISO.04.05.1, beleg:2023W-WISO-A30 |
 | K4 | Du kannst Auswirkungen eines Produkts oder einer Entscheidung auf Umwelt, Pflanzen, Tiere und Lebensräume erklären, zum Beispiel durch Rohstoffabbau, Flächenverbrauch, Emissionen und Abfall. | 2 | katalog:WISO.04.04.1 |
 
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Mit einem Umweltmanagementsystem nach ISO 14001 legt ein Unternehmen Umweltziele fest, plant Maßnahmen, misst die Ergebnisse und verbessert sich laufend; es kann sich danach zertifizieren lassen, und ISO 14004 gibt Leitlinien zur Umsetzung. Viele Unternehmen legen ihre Fortschritte zusätzlich in Nachhaltigkeitsberichten offen. _(buch:FS-4.4.3)_
+
 _Hinweis:_ Die drei Seiten der Nachhaltigkeit (ökonomische, ökologische und soziale Ziele) stehen in AP1-2-4-1, Green IT (umweltschonend herstellen, betreiben, entsorgen) in PB1-1-2-1. Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume wohnen hier; WISO-5-3-1 verweist hierher und behält nur den Zeithorizont bei IT-Lösungen.
 
 #### WISO-4-1-3 Umweltzeichen: Blauer Engel und andere Kennzeichnungen (neu)
@@ -98,6 +102,7 @@ Teilaufgaben: 2022S-WISO-A28, 2023S-WISO-A24
 | K1 | Du kannst das Duale System erklären: ein privatwirtschaftlich organisiertes System mehrerer Betreiber, das gebrauchte Verkaufsverpackungen von privaten Endverbrauchern (Haushalte und vergleichbare Stellen wie Büros) neben der öffentlichen Müllabfuhr sammelt, sortiert und verwertet. | 2 | katalog:WISO.04.03.1, beleg:2022S-WISO-A28 |
 | K3 | Du kannst Grundsätze für Verpackungen erklären: unnötige Verpackung vermeiden statt entsorgen, Mehrweg vor Einweg, sortenreine und recycelbare Materialien; Papier oder recyceltes Plastik ist nicht automatisch umweltfreundlich. | 2 | katalog:WISO.04.06, beleg:2023S-WISO-A24 |
 | K4 | Du kannst die Pflicht zur Teilnahme am Dualen System erklären: Wer mit Ware befüllte Verpackungen, die typischerweise bei privaten Endverbrauchern anfallen, als Erster in Verkehr bringt (Hersteller, auch Online-Händler), muss sich nach dem Verpackungsgesetz an einem dualen System beteiligen und im Verpackungsregister registrieren. | 2 | katalog:WISO.04.03.1 |
+| K5 | Du kannst Verkaufsverpackung (umhüllt die Ware als Verkaufseinheit beim Endverbraucher), Umverpackung (fasst mehrere Verkaufseinheiten zusammen, etwa für das Regal) und Versandverpackung (ermöglicht den Versand an den Endverbraucher, z. B. der Karton im Onlinehandel) unterscheiden und erklären, dass sie systembeteiligungspflichtig sind, wenn sie typischerweise bei privaten Endverbrauchern anfallen – Verpackungen von Lieferungen an andere Unternehmen, etwa Teile an einen Hersteller, dagegen nicht. | 2 | buch:GS-2.10.4-S275 |
 
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
@@ -120,6 +125,10 @@ Teilaufgaben: 2025W-WISO-A29, 2022S-WISO-A27, 2024S-WISO-A30
 | K3 | Du kannst erklären, dass das Bundes-Immissionsschutzgesetz vor schädlichen Umwelteinwirkungen schützt, technische Anleitungen, zum Beispiel zu Lärm und Luft, die Anforderungen im Einzelnen festlegen und dafür der Betreiber der Anlage (gegebenenfalls mit einem Immissionsschutzbeauftragten) verantwortlich ist, überwacht von der Behörde, nicht die Sicherheitsbeauftragte. | 2 | katalog:WISO.04.03.2 |
 | K4 | Du kannst umweltspezifische Folgen von Verstößen gegen Umweltvorschriften erklären: Bußgeld, Strafe für Umweltstraftaten, behördliche Anordnungen bis zur Stilllegung einer Anlage und die Pflicht, den Schaden zu beseitigen oder zu ersetzen. | 2 | katalog:WISO.04.07 |
 | K5 | Du kannst das Verursacherprinzip erklären und von anderen Aussagen unterscheiden: Wer einen Umweltschaden verursacht, trägt die Kosten für seine Vermeidung und Beseitigung, nicht die Allgemeinheit. | 2 | katalog:ZB.wiso-verursacherprinzip, beleg:2022S-WISO-A27, beleg:2024S-WISO-A30 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Ein CO2-Zertifikat berechtigt, in einem bestimmten Zeitraum eine bestimmte Menge CO2 auszustoßen. Wer mehr ausstößt, muss Zertifikate zukaufen, wer einspart, kann überzählige verkaufen; so tragen die Verursacher die Kosten ihrer Emissionen, und Einsparen lohnt sich. _(buch:FS-4.4.3)_
 
 **Grenze:** Keine Grenzwerte oder Inhalte der TA Lärm und TA Luft; die im Katalog genannte TA Abfall ist seit 2009 aufgehoben (Deponieverordnung). — _G4: Grenzwerte und Einzelinhalte technischer Anleitungen sind ohne Hilfsmittel nicht abfragbar; der Katalog nennt die technischen Anleitungen nur als Beispiele (Prüfer WISO-4 Nr. 18)._ (WISO.04.03.2)
 
@@ -149,11 +158,11 @@ _Hinweis:_ Früher Teil von WISO-4-3-1. Vermeiden vor Verwerten und Beseitigen (
 
 ## Alt → neu
 
-Können-Aussagen: 28 alt → 1 übernommen, 13 angepasst, 11 verschoben, 3 gestrichen; 3 neu.
+Können-Aussagen: 28 alt → 1 übernommen, 13 angepasst, 11 verschoben, 3 gestrichen; 4 neu.
 
 Stichpunkte: 5 alt, 6 neu (WISO-4-1-3, WISO-4-2-2, WISO-4-2-3).
 
-Karten (48): 1 bleiben, 23 prüfen (Aussage angepasst), 17 umhängen (Aussage verschoben), 6 entfallen, 1 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-4-1-3-K4, WISO-4-2-2-K3, WISO-4-2-2-K4.
+Karten (48): 1 bleiben, 23 prüfen (Aussage angepasst), 17 umhängen (Aussage verschoben), 6 entfallen, 1 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-4-1-3-K4, WISO-4-2-2-K3, WISO-4-2-2-K4, WISO-4-2-2-K5.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -196,11 +205,13 @@ Karten (48): 1 bleiben, 23 prüfen (Aussage angepasst), 17 umhängen (Aussage ve
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 1, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 3, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
 | Grüner Punkt | pruefer:wiso-2026-10 | Kür | WISO-4-2-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Mit einem Umweltmanagementsystem nach ISO 14001 legt ein Unternehmen Umweltziele fest, plant Maßnahmen, misst die Ergebn | buch:FS-4.4.3 | Kür | WISO-4-1-2 | Regelwerk v2.x, D8/RK1 |
+| Ein CO2-Zertifikat berechtigt, in einem bestimmten Zeitraum eine bestimmte Menge CO2 auszustoßen. Wer mehr ausstößt, mus | buch:FS-4.4.3 | Kür | WISO-4-2-3 | Regelwerk v2.x, D8/RK1 |
 
 ## Geschwister-Prüfung (R4)
 
