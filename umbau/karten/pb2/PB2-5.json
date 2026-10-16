@@ -633,6 +633,20 @@
    "k": "PB2-5-1-5-K4",
    "vorne": "Die verlangte Ergebnistabelle zeigt alle Kunden mit ihrer Rechnungsanzahl, einige mit 0. Welche JOIN-Art brauchst du, und warum?",
    "hinten": "LEFT JOIN von Kunde auf Rechnung und `COUNT(Spalte der Rechnung)`: Die 0 zeigt Kunden ohne Rechnung. Ein INNER JOIN würde sie weglassen."
+  },
+  {
+   "id": "PB2-5-1-1-K7-1",
+   "sp": "PB2-5-1-1",
+   "k": "PB2-5-1-1-K7",
+   "vorne": "Warum liefert SELECT * FROM Kunde WHERE Telefon = NULL keine Zeile, obwohl es Kunden ohne Telefonnummer gibt?",
+   "hinten": "Ein Vergleich mit NULL ergibt nie wahr, sondern „unbekannt“. Richtig ist WHERE Telefon IS NULL."
+  },
+  {
+   "id": "PB2-5-1-1-K7-2",
+   "sp": "PB2-5-1-1",
+   "k": "PB2-5-1-1-K7",
+   "vorne": "Ist NULL dasselbe wie 0 oder ein leerer Text?",
+   "hinten": "Nein. 0 und '' sind bekannte Werte; NULL bedeutet, dass gar kein Wert vorhanden oder er unbekannt ist."
   }
  ],
  "nicht_abgefragt": [],
@@ -1087,6 +1101,16 @@
    "id": "PB2-5-1-5-K4-1",
    "entscheidung": "neu",
    "grund": "Ableiten der JOIN-Art aus der Ergebnistabelle (Beleg 2023W)"
+  },
+  {
+   "id": "PB2-5-1-1-K7-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S612)"
+  },
+  {
+   "id": "PB2-5-1-1-K7-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.5-S612)"
   }
  ]
 }

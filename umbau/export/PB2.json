@@ -5,13 +5,13 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 21,
-  "koennen": 97,
+  "koennen": 98,
   "quellen": {
    "PB2-1.json": "38b8a981ae51f3c4",
    "PB2-2.json": "26e890ba833e48b1",
    "PB2-3.json": "5fd9e56bbcf1cd1d",
    "PB2-4.json": "68840c2be9b4bac8",
-   "PB2-5.json": "1a2f3e39b1e64da1",
+   "PB2-5.json": "d2d317f1f6128fe3",
    "PB2-6.json": "dfbf39ce1ee38c40"
   }
  },
@@ -525,6 +525,11 @@
      "id": "PB2-5-1-1-K6",
      "stufe": 3,
      "kurz": "Textfunktionen aus der SQL-Syntax einsetzen, LEFT(Text, n) und RIGHT(Text, n) für die ersten bzw. letzten n Zeichen (z. B. LEFT(PLZ, 2) für die Leitregion), und eine Zeichenkette mit der Funktion, die die Aufgabe vorgibt, am Leerzeichen in Vorname und Nachname zerlegen"
+    },
+    {
+     "id": "PB2-5-1-1-K7",
+     "stufe": 2,
+     "kurz": "erklären, warum NULL nur mit IS NULL bzw. IS NOT NULL geprüft werden kann: NULL steht für einen fehlenden oder unbekannten Wert und ist weder 0 noch ein leerer Text; jeder Vergleich mit NULL, auch Spalte = NULL, ergibt kein Wahr, deshalb liefert WHERE Telefon = NULL nie eine Zeile"
     }
    ]
   },
