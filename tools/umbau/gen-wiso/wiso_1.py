@@ -15,12 +15,11 @@ L.k(1, "Du kannst erklären, wer den Ausbildungsvertrag schließt: der Ausbilden
     [K("WISO.01.01.1.1")])
 L.k(2, "Du kannst erklären, welche Mindestinhalte die Vertragsniederschrift enthalten muss: Art und Ziel der Ausbildung, sachliche und zeitliche Gliederung (der betriebliche Ausbildungsplan wird Teil des Vertrags), Beginn und Dauer, tägliche Arbeitszeit, Dauer der Probezeit, Vergütung, Urlaub und Kündigungsvoraussetzungen.", 2,
     [K("WISO.01.01.1"), K("WISO.01.01.1.2"), K("WISO.01.01.1.3"), K("WISO.01.01.1.5"), B("2025S-A10")])
-L.k(3, "Du kannst erklären, wann und wo der Ausbildungsvertrag festgehalten wird: Der wesentliche Inhalt ist unverzüglich nach Abschluss, spätestens vor Beginn der Ausbildung niederzulegen, und der Betrieb beantragt die Eintragung in das Verzeichnis der Berufsausbildungsverhältnisse bei der Kammer.", 2,
-    [K("WISO.01.03.2"), K("WISO.01.01.1")])
-L.k(4, "Du kannst in einem Vertragsentwurf zulässige von nichtigen Vereinbarungen unterscheiden: nichtig sind zum Beispiel die Pflicht, nach der Ausbildung im Betrieb zu bleiben (außer sie wird in den letzten sechs Monaten vereinbart), eine Vertragsstrafe, eine Zahlung des Auszubildenden für die Ausbildung oder der Ausschluss von Schadensersatz.", 2,
-    [K("WISO.01.01.1"), B("2025S-A9"), B("2025W-A3")])
-L.k(5, "Du kannst erklären, dass bei einer nichtigen Vereinbarung nur diese unwirksam ist und der übrige Ausbildungsvertrag gilt.", 2,
-    [K("WISO.01.01.1")])
+L.k(3, "Du kannst erklären, wann und wie der Ausbildungsvertrag festgehalten wird: Der wesentliche Inhalt ist unverzüglich nach Abschluss, spätestens vor Beginn der Ausbildung niederzulegen – seit August 2024 schriftlich oder in Textform, zum Beispiel als PDF per E-Mail mit Empfangsnachweis –, und der Betrieb beantragt die Eintragung in das Verzeichnis der Berufsausbildungsverhältnisse bei der Kammer.", 2,
+    [K("WISO.01.03.2"), K("WISO.01.01.1")], alt=("angepasst", "Prüfer WISO-1 Nr. a15 (D12): Textform der Vertragsniederschrift nach dem BVaDiG (seit 1.8.2024)"))
+L.k(4, "Du kannst in einem Vertragsentwurf zulässige von nichtigen Vereinbarungen unterscheiden: nichtig sind zum Beispiel die Pflicht, nach der Ausbildung im Betrieb zu bleiben (außer sie wird in den letzten sechs Monaten vereinbart), eine Vertragsstrafe, eine Zahlung des Auszubildenden für die Ausbildung oder der Ausschluss von Schadensersatz; unwirksam ist nur die nichtige Vereinbarung, der übrige Vertrag gilt weiter.", 2,
+    [K("WISO.01.01.1"), B("2025S-A9"), B("2025W-A3")], alt=("angepasst", "Prüfer WISO-1 Nr. a18: Teilnichtigkeit aus K5 aufgenommen"))
+L.a("WISO-1-1-1-K5", "verschoben", "WISO-1-1-1-K4", "Prüfer WISO-1 Nr. a18: Ein-Fakt-Aussage (Teilnichtigkeit) in K4 aufgenommen")
 L.k(6, "Du kannst den Geltungsbereich des Berufsbildungsgesetzes erklären: Es regelt die Berufsausbildung im Betrieb, nicht die Ausbildung an berufsbildenden Schulen.", 2,
     [K("WISO.01.01.1.8")])
 
@@ -45,8 +44,8 @@ L.sp("WISO-1-1-3", "Ende der Ausbildung, Prüfung, Zeugnis und Weiterbeschäftig
      T("2024S-A3", "2025S-A9", "2025W-A3", "2025W-A4", "2022S-A9"))
 L.k(1, "Du kannst erklären, wann das Ausbildungsverhältnis endet: mit Ablauf der Ausbildungszeit, bei vorher bestandener Abschlussprüfung schon mit der Bekanntgabe des Ergebnisses; eine Kündigung ist dafür nicht nötig.", 2,
     [K("WISO.01.01.1.9"), B("2024S-A3"), B("2025S-A9")])
-L.k(2, "Du kannst die Folge erklären, wenn ein Auszubildender nach bestandener Prüfung ohne ausdrückliche Vereinbarung weiterarbeitet: Es entsteht ein unbefristetes Arbeitsverhältnis.", 2,
-    [K("WISO.01.01.1.9"), B("2025W-A4")])
+L.k(2, "Du kannst erklären, was nach bestandener Prüfung für die Weiterbeschäftigung gilt: Der Betrieb muss Auszubildende nicht übernehmen und ihnen keinen Arbeitsvertrag anbieten; arbeitet ein Auszubildender aber ohne ausdrückliche Vereinbarung weiter, entsteht ein unbefristetes Arbeitsverhältnis.", 2,
+    [K("WISO.01.01.1.9"), B("2025W-A4"), B("2025S-A9"), B("2025W-A3")], alt=("angepasst", "Prüfer WISO-1 Nr. a9: keine Übernahmepflicht ergänzt (Distraktoren 2025S-A9, 2025W-A3)"))
 L.k(3, "Du kannst erklären, welches Zeugnis der Betrieb am Ende ausstellen muss: immer ein einfaches Zeugnis über Art, Dauer und Ziel der Ausbildung; Angaben zu Verhalten und Leistung (qualifiziertes Zeugnis) nur auf Verlangen des Auszubildenden.", 2,
     [K("WISO.01.01.1.9"), B("2022S-A9"), B("2025S-A9"), B("2025W-A3")])
 L.k(4, "Du kannst erklären, was bei nicht bestandener Abschlussprüfung gilt: Auf Verlangen des Auszubildenden verlängert sich das Ausbildungsverhältnis bis zur nächsten Wiederholungsprüfung, höchstens um ein Jahr.", 2,
@@ -56,12 +55,12 @@ L.sp("WISO-1-1-4", "Rechte und Pflichten von Auszubildenden und Ausbildenden",
      "Die Pflichten beider Seiten nennen, den Zweck einzelner Pflichten erklären und die Folgen von Pflichtverletzungen beschreiben.",
      G1, ["WISO.01.01", "WISO.01.01.1.7", ("WISO.01.01.1.5", "Ausbildungsvergütung"), "WISO.01.03.7"],
      T("2021W-A2", "2025W-A2"))
-L.k(1, "Du kannst die Pflichten des Ausbildenden erklären: ausbilden (selbst oder durch geeignete Ausbilder), Ausbildungsmittel wie Werkzeuge und Fachliteratur kostenlos bereitstellen, für Berufsschule und Prüfungen freistellen, die Vergütung zahlen und ein Zeugnis ausstellen.", 2,
-    [K("WISO.01.01"), K("WISO.01.03.7")])
+L.k(1, "Du kannst die Pflichten des Ausbildenden erklären: ausbilden (selbst oder durch geeignete Ausbilder), Ausbildungsmittel wie Werkzeuge und Fachliteratur kostenlos bereitstellen, die Vergütung zahlen und ein Zeugnis ausstellen.", 2,
+    [K("WISO.01.01"), K("WISO.01.03.7")], alt=("angepasst", "Prüfer WISO-1 Nr. a24: Freistellung für Berufsschule und Prüfungen nur noch in WISO-1-2-1-K3"))
 L.k(2, "Du kannst Pflichten des Auszubildenden nennen: sich bemühen, das Ausbildungsziel zu erreichen, Weisungen befolgen, die Berufsschule besuchen, den Ausbildungsnachweis führen und Betriebs- und Geschäftsgeheimnisse wahren.", 1,
     [K("WISO.01.01")])
-L.k(4, "Du kannst die Regeln zur Ausbildungsvergütung erklären: Sie muss angemessen sein (mindestens die gesetzliche Mindestvergütung oder der Tarif), mit jedem Ausbildungsjahr steigen und spätestens am letzten Arbeitstag des Monats gezahlt werden.", 2,
-    [K("WISO.01.01.1.5")])
+L.k(4, "Du kannst die Regeln zur Ausbildungsvergütung erklären: Sie muss angemessen sein – gilt ein Tarifvertrag, ist dessen Vergütung maßgeblich, ohne Tarifbindung darf sie die gesetzliche Mindestvergütung nicht unterschreiten –, sie steigt mindestens mit jedem Ausbildungsjahr und ist spätestens am letzten Arbeitstag des Monats zu zahlen.", 2,
+    [K("WISO.01.01.1.5")], alt=("angepasst", "Prüfer WISO-1 Nr. a14: Vorrang des Tarifvertrags vor der Mindestvergütung (§ 17 BBiG); Beträge nicht genannt (B4)"))
 L.k(5, "Du kannst Folgen von Pflichtverletzungen beschreiben: Abmahnung, Kündigung aus wichtigem Grund und Schadensersatz.", 2,
     [K("WISO.01.01.1.7")])
 L.k(6, "Du kannst den Zweck des Ausbildungsnachweises (Berichtsheft) erklären: Er dokumentiert die vermittelten Ausbildungsinhalte und ist Voraussetzung für die Zulassung zur Abschlussprüfung, wird aber nicht benotet.", 2,
@@ -79,19 +78,20 @@ L.k(1, "Du kannst die Lernorte des dualen Systems und ihre Aufgaben unterscheide
     [K("WISO.01.02.1")])
 L.k(2, "Du kannst beschreiben, wie Betrieb und Berufsschule zusammenwirken: Absprachen, gemeinsame Arbeitskreise und die Abstimmung, wann welche Inhalte vermittelt werden.", 2,
     [K("WISO.01.02.2"), K("WISO.01.02.2.1"), K("WISO.01.02.2.2"), K("WISO.01.02.2.3")])
-L.k(3, "Du kannst die Regeln zu Berufsschule und Prüfung erklären: Auszubildende sind berufsschulpflichtig, der Betrieb muss sie für den Unterricht und für Prüfungen freistellen, und die Berufsschulzeit wird auf die Arbeitszeit angerechnet.", 2,
-    [K("WISO.01.03.4"), K("WISO.01.03.5"), K("WISO.01.03.6")])
+L.k(3, "Du kannst die Regeln zu Berufsschule und Prüfung erklären: Die Berufsschulpflicht regelt das Landesrecht – wer die Ausbildung jung beginnt, ist berufsschulpflichtig, Ältere sind je nach Bundesland nur berufsschulberechtigt –; der Betrieb muss Auszubildende für den Unterricht und für Prüfungen freistellen, und die Berufsschulzeit wird auf die Arbeitszeit angerechnet.", 2,
+    [K("WISO.01.03.4"), K("WISO.01.03.5"), K("WISO.01.03.6")], alt=("angepasst", "Prüfer WISO-1 Nr. a16: Berufsschulpflicht ist Landesrecht (Ältere teils nur berechtigt)"))
 L.k(5, "Du kannst Vorteile des dualen Systems beschreiben: Praxisnähe, Verbindung von Theorie und Anwendung, Einblick in den Betrieb und bundesweit anerkannte Abschlüsse.", 2,
     [K("WISO.01.02.1")])
 
 L.sp("WISO-1-2-2", "Ausbildungsordnung, Ausbildungsrahmenplan, Rahmenlehrplan und betrieblicher Ausbildungsplan",
      "Die Regelwerke der Ausbildung unterscheiden und erklären, wie der Betrieb daraus seinen Ausbildungsplan macht.",
      G1, ["WISO.01.03.1", "WISO.01.04.1", ("WISO.01.04.2", "Ausbildungsplan"), "WISO.01.04.3", "WISO.01.04.4", "WISO.01.04.5"],
-     T("2021W-A10", "2025S-A10"))
+     T("2021W-A10"),
+     hinweis="Dass der betriebliche Ausbildungsplan Teil des Ausbildungsvertrags wird (2025S-WISO-A10), steht in WISO-1-1-1.")
 L.k(1, "Du kannst Ausbildungsrahmenplan (sachliche und zeitliche Gliederung für den Betrieb) und Rahmenlehrplan (Lernfelder der Berufsschule) unterscheiden.", 2,
     [K("WISO.01.04.1"), K("WISO.01.04.5")])
-L.k(2, "Du kannst den betrieblichen Ausbildungsplan erklären: Der Betrieb ordnet die Lernziele des Ausbildungsrahmenplans seinen Abteilungen und Aufgaben zu und berücksichtigt dabei seine Besonderheiten; der Plan wird Teil des Ausbildungsvertrags.", 2,
-    [K("WISO.01.04.2"), K("WISO.01.04.3"), B("2025S-A10")])
+L.k(2, "Du kannst den betrieblichen Ausbildungsplan erklären: Der Betrieb ordnet die Lernziele des Ausbildungsrahmenplans seinen Abteilungen und Aufgaben zu und berücksichtigt dabei seine Besonderheiten.", 2,
+    [K("WISO.01.04.2"), K("WISO.01.04.3")], alt=("angepasst", "Prüfer WISO-1 Nr. a23: „wird Teil des Vertrags“ und Beleg 2025S-A10 nur noch in WISO-1-1-1-K2"))
 L.k(3, "Du kannst erklären, was ein Einsatz- und Versetzungsplan regelt: wann der Auszubildende in welcher Abteilung ist.", 2,
     [K("WISO.01.04.4")])
 L.k(4, "Du kannst beschreiben, was die Ausbildungsordnung regelt: Berufsbezeichnung, Ausbildungsdauer, das Ausbildungsberufsbild mit den zu vermittelnden Kenntnissen, Fertigkeiten und Fähigkeiten, den Ausbildungsrahmenplan und die Prüfungsanforderungen – nicht aber Vergütung oder Urlaub.", 2,
@@ -103,13 +103,13 @@ L.sp("WISO-1-2-3", "Zuständige Stelle und Ausbilder: Aufgaben der Kammer, Eignu
      "Die Aufgaben der Kammer als zuständige Stelle in der Ausbildung kennen, die Eignung von Ausbildern erklären und einer Frage die zuständige Stelle zuordnen.",
      G1, [("WISO.01.03.3", "Berufsbildungsgesetz: Eignung, zuständige Stelle"), ("WISO.01.06.2", "IHK als zuständige Stelle")],
      T("2022S-A6", "2022W-A1", "2023W-A12", "2025W-A1", "2021W-A14", "2023S-A28"),
-     hinweis="Neuer Stichpunkt: Die Aufgaben der Kammer standen vorher in WISO-1-2-1, die Eignung der Ausbilder in WISO-1-1-4; beide kamen in fast jeder Prüfung vor.")
-L.k(1, "Du kannst die Aufgaben der Kammer als zuständige Stelle in der Berufsausbildung nennen: Ausbildungsverträge eintragen, die Eignung von Betrieb und Ausbildern überwachen, Betriebe und Auszubildende beraten (Ausbildungsberater), Prüfungen abnehmen und eine Verkürzung oder Verlängerung der Ausbildung genehmigen.", 1,
-    [K("WISO.01.06.2"), K("WISO.01.03.3"), B("2021W-A14")])
+     hinweis="Neuer Stichpunkt: Die Aufgaben der Kammer standen vorher in WISO-1-2-1, die Eignung der Ausbilder in WISO-1-1-4; beide kamen in fast jeder Prüfung vor. Wer den Arbeitsschutz überwacht (Gewerbeaufsicht, Berufsgenossenschaft), steht in WISO-3-1-1; die IHK als Interessenvertretung der Wirtschaft in WISO-1-5-3.")
+L.k(1, "Du kannst die Aufgaben der Kammer als zuständige Stelle in der Berufsausbildung von anderen Pflichten unterscheiden: Sie trägt Ausbildungsverträge ein, überwacht die Eignung von Betrieb und Ausbildern, berät Betriebe und Auszubildende (Ausbildungsberater), nimmt Prüfungen ab und genehmigt eine Verkürzung oder Verlängerung der Ausbildung – der Betrieb muss ihr aber nicht jede Fehlzeit melden und kann keinen späteren Prüfungstermin wegen der Auftragslage verlangen.", 2,
+    [K("WISO.01.06.2"), K("WISO.01.03.3"), B("2021W-A14")], alt=("angepasst", "Prüfer WISO-1 Nr. a1 (D1): Auswahl-Beleg 2021W-A14, daher unterscheiden (Stufe 2) mit den Distraktoren"))
 L.k(2, "Du kannst die gesetzlichen Voraussetzungen für Ausbilder erklären: Sie müssen persönlich und fachlich geeignet sein; zur fachlichen Eignung gehören berufliche sowie berufs- und arbeitspädagogische Kenntnisse (zum Beispiel die Ausbildereignungsprüfung).", 2,
     [K("WISO.01.03.3"), B("2022S-A6"), B("2022W-A1"), B("2023W-A12"), B("2025W-A1")])
-L.k(3, "Du kannst einer Frage aus der Ausbildung die zuständige Stelle zuordnen, zum Beispiel Abweichungen vom Ausbildungsplan oder eine Verkürzung der Ausbildung der Kammer (IHK), eine Arbeitsschutzfrage der Gewerbeaufsicht oder der Berufsgenossenschaft.", 2,
-    [K("WISO.01.03.3"), B("2023S-A28"), B("2021W-A14")])
+L.k(3, "Du kannst einer Frage aus der Ausbildung die zuständige Stelle zuordnen, zum Beispiel Abweichungen vom Ausbildungsplan oder eine Verkürzung der Ausbildung der Kammer (IHK) – nicht etwa der Berufsgenossenschaft, der Gewerbeaufsicht, der Berufsberatung oder dem Gesundheitsamt.", 2,
+    [K("WISO.01.03.3"), B("2023S-A28"), B("2021W-A14")], alt=("angepasst", "Prüfer WISO-1 Nr. a27 (D6): Gewerbeaufsicht und Berufsgenossenschaft nur als Abgrenzung (Wohnort WISO-3-1-1)"))
 
 # ---------------------------------------------------------------- 1-3 Arbeitsrecht
 L.tb("WISO-1-3", "Arbeitsrecht", "Wie ein Arbeitsverhältnis zustande kommt und endet, welche Gesetze Arbeitnehmer schützen und welche Rechtsquelle was regelt.")
@@ -118,17 +118,17 @@ L.sp("WISO-1-3-1", "Individual- und Kollektivarbeitsrecht; Rechte und Pflichten 
      "Individual- und Kollektivarbeitsrecht unterscheiden, die Pflichten aus dem Arbeitsvertrag nennen und die Rangfolge der Regelungen anwenden.",
      G1, ["WISO.01.05", ("WISO.01.05.1", "Pflichten aus dem Arbeitsvertrag")],
      T("2022W-A7", "2022W-A5", "2022S-A1", "2021W-A23"), baut_auf=["AP1-3-4-1"],
-     hinweis="Wem die Rechte an Software gehören, die ein Angestellter im Rahmen seiner Arbeit schreibt (2021W-WISO-A23), steht in AP1-3-4-1.")
+     hinweis="Wem die Rechte an Software gehören, die ein Angestellter im Rahmen seiner Arbeit schreibt (2021W-WISO-A23), steht in AP1-3-4-1. Zu 2022W-WISO-A7: Die IHK wertete nur die im Arbeitsvertrag vereinbarte Regel (übertarifliche Gehaltsvereinbarung) als Individualarbeitsrecht, nicht aber Urlaubsregelungen nach dem Bundesurlaubsgesetz oder Unfallverhütungsvorschriften; in der Fachliteratur wird das Arbeitnehmerschutzrecht teils dem Individualarbeitsrecht zugerechnet. Betriebsvereinbarung und Tarifvorrang stehen in WISO-1-4-2, Tarifbindung in WISO-1-5-1.")
 L.k(1, "Du kannst Individualarbeitsrecht (Verhältnis zwischen einzelnem Arbeitnehmer und Arbeitgeber, zum Beispiel Arbeitsvertrag) und Kollektivarbeitsrecht (Regelungen für Gruppen, zum Beispiel Tarifvertrag und Betriebsvereinbarung) unterscheiden.", 2,
     [K("WISO.01.05")])
-L.k(2, "Du kannst eine Regelung dem Individual- oder dem Kollektivarbeitsrecht zuordnen, zum Beispiel eine übertarifliche Gehaltsvereinbarung im Arbeitsvertrag dem Individualarbeitsrecht.", 2,
-    [K("WISO.01.05"), B("2022W-A7")])
+L.k(2, "Du kannst eine Regelung dem Individual- oder dem Kollektivarbeitsrecht zuordnen, zum Beispiel eine übertarifliche Gehaltsvereinbarung im Arbeitsvertrag dem Individualarbeitsrecht, eine Betriebsvereinbarung oder betriebliche Überstundenregelung dem Kollektivarbeitsrecht.", 2,
+    [K("WISO.01.05"), B("2022W-A7")], alt=("angepasst", "Prüfer WISO-1 Nr. a20: Distraktoren aus 2022W-A7 ergänzt, IHK-Wertung im Hinweis"))
 L.k(3, "Du kannst die Hauptpflichten im Arbeitsverhältnis nennen: Arbeitsleistung auf der einen, Vergütung auf der anderen Seite.", 1,
     [K("WISO.01.05.1")])
 L.k(4, "Du kannst Nebenpflichten unterscheiden: Verschwiegenheit und Treue (keine Konkurrenztätigkeit) beim Arbeitnehmer, Fürsorge und Beschäftigung beim Arbeitgeber.", 2,
     [K("WISO.01.05.1"), B("2022W-A5")])
-L.k(5, "Du kannst die Rangfolge der Regelungen anwenden: Gesetz vor Tarifvertrag vor Betriebsvereinbarung vor Arbeitsvertrag; eine für den Arbeitnehmer günstigere Regelung im Arbeitsvertrag geht vor (Günstigkeitsprinzip), zum Beispiel ein übertarifliches Gehalt.", 3,
-    [K("WISO.01.05.1"), B("2022S-A1")])
+L.k(5, "Du kannst die Rangfolge der Regelungen erklären: Gesetz vor Tarifvertrag vor Betriebsvereinbarung vor Arbeitsvertrag; eine für den Arbeitnehmer günstigere Abmachung geht vor (Günstigkeitsprinzip), deshalb gilt zum Beispiel ein übertarifliches Gehalt im Arbeitsvertrag auch neben einem Tarifvertrag.", 2,
+    [K("WISO.01.05.1"), B("2022S-A1")], alt=("angepasst", "Prüfer WISO-1 Nr. a2: Stufe 3 → 2 (Beleg 2022S-A1 ist Einfachauswahl, Z3b); Wohnort des Günstigkeitsprinzips nach D3"))
 
 L.sp("WISO-1-3-2", "Rechtsquellen zuordnen: welches Gesetz regelt was",
      "Einem Sachverhalt aus dem Betrieb die Rechtsquelle zuordnen, die ihn regelt.",
