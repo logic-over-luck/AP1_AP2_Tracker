@@ -625,10 +625,16 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
            21 Stichpunkte, 93 Können-Aussagen (PB2-1 15, PB2-2 11, PB2-3 11, PB2-4 12, PB2-5 25, PB2-6 19); 31 Aussagen ohne Karte.
            Raum-Prüfung PB2, alle Ordner und `npm test` grün, Umzug neu erzeugt, Build und Browser-Check `#/pb2` ohne Fehler.
            Die Generatoren in `tools/umbau/gen-pb2/` bilden den Stand vor dem 16.10. ab und dürfen nicht mehr laufen.
-        3. Kurzfassungen `umbau/kurz/pb2/PB2-<n>.json` (Teaser je Stichpunkt, Erklärung je Aussage, wie PB1).
-        4. Karten `umbau/karten/pb2/PB2-<n>.json` + Berichte `PB2-<n>-karten.md` (186 alte Karten entscheiden, jede
-           Aussage mindestens eine Karte).
-        5. Build, Browser-Check `#/pb2`, Abnahme PB1 und PB2 durch den Projektinhaber.
+        3. ~~Kurzfassungen~~ **erledigt 16.10.2026:** `umbau/kurz/pb2/PB2-1.json` … `PB2-6.json`, 21 Teaser, 93 Erklärungen.
+        4. ~~Karten~~ **erledigt 16.10.2026:** `umbau/karten/pb2/PB2-<n>.json` + Berichte `PB2-<n>-karten.md`; 304 Karten
+           (PB2-1 50, PB2-2 30, PB2-3 34, PB2-4 40, PB2-5 90, PB2-6 60), jede Aussage mit Karte, alte Karten im Protokoll
+           entschieden (Karten zu im alt_neu gestrichenen Aussagen entfallen ohne Protokoll, wie in PB1). SQL-Beispiele an
+           PostgreSQL 16 bzw. am SQL-Auszug des Anhangs geprüft (P41).
+        5. Build und Browser-Check `#/pb2` **erledigt 16.10.2026** (ohne Fehler). **Offen: Abnahme PB1 und PB2 durch den
+           Projektinhaber** (M1 Altprüfungs-Test, M2 Verständlichkeit), danach Export PB2 (E3).
+        6. **PB1 nach P36 bereinigt (16.10.2026):** 32 T7-Fehler behoben (14 AP1-Bausteine nur noch per `baut_auf`,
+           7 Aussagen mit `neu`, 11 auf das Neue gekürzt, PB1-10-2-3-K1 gestrichen), 20 Karten entfernt, 3 neu; Export PB1 neu
+           erzeugt, PB2 dagegen grün. Abschnitte „Doppelungen zu AP1“ in `umbau/berichte/PB1-<n>-pruefer.md`.
         Bau-Skripte gesichert in `tools/umbau/gen-pb2/` (siehe LIESMICH dort). Regelwerk der PB2-Ordner: 1.7.
 - [x] **Entscheidungen P6, P10, P27, P28, P29 (14.10.2026, Claude im Auftrag des Projektinhabers):** siehe Parkplatz.
       Umzugstabelle `umbau/umzug.json` aus allen `alt_neu` (`node tools/umbau/umzug-erzeugen.mjs`, Test prüft

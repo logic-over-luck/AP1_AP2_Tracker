@@ -1,0 +1,1097 @@
+{
+  "ordner": "PB2-5",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB2 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb2/PB2-5.json",
+  "karten": [
+    {
+      "id": "AP2-4-2-1-K1-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K1",
+      "vorne": "Die Ergebnistabelle verlangt aus der Tabelle Kunde die Spalten Ort, Nachname und Vorname in dieser Reihenfolge. Wie lautet die Abfrage?",
+      "hinten": "`SELECT Ort, Nachname, Vorname FROM Kunde;`\nDie Reihenfolge der Spaltenliste bestimmt die Reihenfolge der Ausgabe; `SELECT *` wäre hier falsch."
+    },
+    {
+      "id": "AP2-4-2-1-K1-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K1",
+      "vorne": "Wie benennt man eine Spalte in der Ausgabe um, z. B. Nachname in Name?",
+      "hinten": "Mit `AS`: `SELECT Nachname AS Name FROM Kunde;`"
+    },
+    {
+      "id": "AP2-4-2-1-K1-3",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K1",
+      "vorne": "Was ist eine Projektion?",
+      "hinten": "Die Auswahl bestimmter Spalten; in SQL über die Spaltenliste hinter `SELECT`."
+    },
+    {
+      "id": "AP2-4-2-1-K5-3",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K1",
+      "vorne": "Was bewirkt `SELECT DISTINCT Ort FROM Kunde;`?",
+      "hinten": "Jeder Ort wird nur einmal ausgegeben; doppelte Ergebniszeilen werden entfernt."
+    },
+    {
+      "id": "PB2-5-1-1-K1-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K1",
+      "vorne": "Die Spalte HSt_Name soll in der Ausgabe „Name der Haltestelle“ heißen. Wie schreibst du den Aliasnamen in Standard-SQL?",
+      "hinten": "`SELECT HSt_Name AS \"Name der Haltestelle\" FROM Haltestelle;`\nNamen mit Leerzeichen stehen in doppelten Anführungszeichen; einfache Anführungszeichen stehen für Text."
+    },
+    {
+      "id": "AP2-4-2-1-K2-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Was ist eine Selektion?",
+      "hinten": "Die Auswahl bestimmter Zeilen über eine Bedingung; in SQL mit `WHERE`."
+    },
+    {
+      "id": "AP2-4-2-1-K2-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Was bewirken `AND`, `OR` und `NOT` in einer WHERE-Bedingung?",
+      "hinten": "- `AND`: beide Bedingungen müssen gelten\n- `OR`: mindestens eine muss gelten\n- `NOT`: kehrt eine Bedingung um"
+    },
+    {
+      "id": "AP2-4-2-1-K2-3",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Welche Zeilen liefert `WHERE Ort = 'Köln' OR Ort = 'Bonn' AND Umsatz > 1000`?",
+      "hinten": "`AND` bindet stärker als `OR`: alle Kölner und dazu die Bonner mit Umsatz über 1000. Sollen beide Orte gefiltert werden, braucht man Klammern: `(Ort = 'Köln' OR Ort = 'Bonn') AND Umsatz > 1000`."
+    },
+    {
+      "id": "AP2-4-2-1-K3-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Welche Vergleichsoperatoren gibt es in SQL?",
+      "hinten": "`=`, `<>` (ungleich, in vielen Systemen auch `!=`), `<`, `>`, `<=`, `>=`"
+    },
+    {
+      "id": "PB2-5-1-1-K2-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Wie wählst du mit IN alle Positionen mit der Menge 100 oder 200 aus, und wie lautet dieselbe Bedingung mit OR?",
+      "hinten": "- `WHERE Menge IN (100, 200)`\n- gleichwertig: `WHERE Menge = 100 OR Menge = 200`"
+    },
+    {
+      "id": "PB2-5-1-1-K2-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Wie gibst du alle Kunden mit einer PLZ von 50800 bis 51999 aus (beide Grenzen eingeschlossen, PLZ als Zahl gespeichert)?",
+      "hinten": "`SELECT * FROM Kunde WHERE PLZ BETWEEN 50800 AND 51999;`\nBETWEEN schließt beide Grenzen ein; gleichwertig `PLZ >= 50800 AND PLZ <= 51999`."
+    },
+    {
+      "id": "PB2-5-1-1-K2-3",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K2",
+      "vorne": "Wie findest du alle Fahrten, bei denen die Ist-Ankunft später lag als die Plan-Ankunft?",
+      "hinten": "Zwei Spalten derselben Zeile vergleichen:\n`SELECT * FROM Fahrt WHERE Plan_Ankunft < Ist_Ankunft;`"
+    },
+    {
+      "id": "AP2-4-2-1-K3-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K3",
+      "vorne": "Was bedeuten die Platzhalter `%` und `_` bei `LIKE`?",
+      "hinten": "- `%`: beliebig viele Zeichen, auch keins\n- `_`: genau ein Zeichen"
+    },
+    {
+      "id": "AP2-4-2-1-K3-3",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K3",
+      "vorne": "Wie findet man alle Kunden, deren Nachname mit M beginnt?",
+      "hinten": "`SELECT * FROM Kunde WHERE Nachname LIKE 'M%';`"
+    },
+    {
+      "id": "AP2-4-2-1-K3-4",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K3",
+      "vorne": "Warum schreibt man `WHERE Telefon IS NULL` und nicht `WHERE Telefon = NULL`?",
+      "hinten": "NULL bedeutet „kein Wert“. Ein Vergleich mit `=` ergibt dabei nie wahr; fehlende Werte prüft man nur mit `IS NULL` bzw. `IS NOT NULL`."
+    },
+    {
+      "id": "PB2-5-1-1-K3-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K3",
+      "vorne": "Die PLZ ist als Zeichenkette gespeichert. Wie findest du alle Kunden, deren PLZ an der vierten Stelle eine 3 hat?",
+      "hinten": "`SELECT * FROM Kunde WHERE PLZ LIKE '___3%';`\nDrei Unterstriche für genau drei beliebige Zeichen, dann die 3, danach `%` für den Rest."
+    },
+    {
+      "id": "AP2-4-2-1-K4-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K4",
+      "vorne": "Wie gibt man je Bestellposition den Positionswert aus Menge und Preis aus?",
+      "hinten": "`SELECT Menge * Preis AS Positionswert FROM Bestellposition;`"
+    },
+    {
+      "id": "AP2-4-2-1-K6-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K4",
+      "vorne": "Was liefern `YEAR(Datum)`, `MONTH(Datum)` und `NOW()`?",
+      "hinten": "- `YEAR`: die Jahreszahl\n- `MONTH`: die Monatszahl (1–12)\n- `NOW()`: das aktuelle Datum mit Uhrzeit"
+    },
+    {
+      "id": "AP2-4-2-1-K6-3",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K4",
+      "vorne": "Was liefert `DATEDIFF(MINUTE, Plan_Ankunft, Ist_Ankunft)`, und wofür dient `DATEADD`?",
+      "hinten": "- `DATEDIFF`: Ende minus Anfang in der angegebenen Einheit, hier die Verspätung in Minuten (negativ, wenn zu früh)\n- `DATEADD(DAY, 30, Datum)`: zählt ein Intervall zu einem Datum hinzu, hier 30 Tage"
+    },
+    {
+      "id": "AP2-4-2-1-K6-4",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K4",
+      "vorne": "Wie filtert man alle Bestellungen aus dem Jahr 2025?",
+      "hinten": "`SELECT * FROM Bestellung WHERE YEAR(Bestelldatum) = 2025;`"
+    },
+    {
+      "id": "PB2-5-1-1-K4-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K4",
+      "vorne": "Was liefert `WEEKDAY(Datum)` laut SQL-Auszug, und wie findest du damit alle Bestellungen an einem Samstag?",
+      "hinten": "Den Wochentag als Zahl, Montag = 0. Samstag ist also 5:\n`SELECT * FROM Bestellung WHERE WEEKDAY(Bestelldatum) = 5;`"
+    },
+    {
+      "id": "AP2-4-2-1-K5-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K5",
+      "vorne": "Wie sortiert man auf- und absteigend, und was gilt ohne Angabe?",
+      "hinten": "`ORDER BY Spalte ASC` aufsteigend, `ORDER BY Spalte DESC` absteigend; ohne Angabe wird aufsteigend sortiert."
+    },
+    {
+      "id": "AP2-4-2-1-K5-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K5",
+      "vorne": "Wie sortiert man nach Ort aufsteigend und innerhalb eines Orts nach Name absteigend?",
+      "hinten": "`ORDER BY Ort, Name DESC`"
+    },
+    {
+      "id": "AP2-4-2-1-K6-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K6",
+      "vorne": "Was liefern `LEFT(Text, n)` und `RIGHT(Text, n)`?",
+      "hinten": "Die ersten bzw. die letzten n Zeichen des Textes, z. B. ergibt `LEFT('Berlin', 3)` den Text `'Ber'`."
+    },
+    {
+      "id": "PB2-5-1-1-K6-1",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K6",
+      "vorne": "Die ersten zwei Ziffern der PLZ bilden die Leitregion. Wie gibst du sie je Kunde als Spalte Leitregion aus?",
+      "hinten": "`SELECT Name, LEFT(PLZ, 2) AS Leitregion FROM Kunde;`"
+    },
+    {
+      "id": "PB2-5-1-1-K6-2",
+      "sp": "PB2-5-1-1",
+      "k": "PB2-5-1-1-K6",
+      "vorne": "Die Spalte Name enthält „Vorname Nachname“. Die Aufgabe gibt `POSITION(' ' IN Name)` (Stelle des Leerzeichens) und `CHAR_LENGTH(Name)` (Länge) vor. Wie bildest du Vorname und Nachname?",
+      "hinten": "- Vorname: `LEFT(Name, POSITION(' ' IN Name) - 1)`\n- Nachname: `RIGHT(Name, CHAR_LENGTH(Name) - POSITION(' ' IN Name))`\nLinks vom Leerzeichen ohne das Leerzeichen, rechts davon der Rest."
+    },
+    {
+      "id": "AP2-4-2-2-K1-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K1",
+      "vorne": "Wie verbindet man die Tabellen Kunde und Bestellung über die Kundennummer?",
+      "hinten": "`SELECT … FROM Kunde INNER JOIN Bestellung ON Kunde.KundenNr = Bestellung.KundenNr`\nIn ON steht: Primärschlüssel der einen = Fremdschlüssel der anderen Tabelle."
+    },
+    {
+      "id": "AP2-4-2-2-K1-2",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K1",
+      "vorne": "Welche Zeilen liefert ein INNER JOIN?",
+      "hinten": "Nur Zeilen, zu denen es in beiden Tabellen einen passenden Partner gibt, für die also die ON-Bedingung erfüllt ist."
+    },
+    {
+      "id": "AP2-4-2-2-K1-3",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K1",
+      "vorne": "Was bedeutet `JOIN` ohne Zusatz?",
+      "hinten": "Einen INNER JOIN."
+    },
+    {
+      "id": "AP2-4-2-2-K1-4",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K1",
+      "vorne": "Woran erkennt man im Tabellenmodell die Spalten für die ON-Bedingung?",
+      "hinten": "Am Fremdschlüssel in der einen Tabelle und am Primärschlüssel der anderen Tabelle, auf den er verweist."
+    },
+    {
+      "id": "PB2-5-1-2-K1-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K1",
+      "vorne": "Wie schreibst du `FROM Kunde k INNER JOIN Bestellung b ON k.KundenNr = b.KundenNr` gleichwertig ohne das Wort JOIN?",
+      "hinten": "`FROM Kunde k, Bestellung b WHERE k.KundenNr = b.KundenNr`\nFehlt die WHERE-Bedingung, entsteht das Kreuzprodukt: jede Zeile mit jeder."
+    },
+    {
+      "id": "AP2-4-2-2-K2-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K2",
+      "vorne": "Wie verkettet man die Tabellen Kunde, Bestellung und Position in einer Abfrage?",
+      "hinten": "`FROM Kunde k JOIN Bestellung b ON k.KundenNr = b.KundenNr JOIN Position p ON b.BestellNr = p.BestellNr`\nJe weitere Tabelle ein weiterer JOIN mit eigener ON-Bedingung."
+    },
+    {
+      "id": "AP2-4-2-2-K2-2",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K2",
+      "vorne": "Wie viele JOIN-Bedingungen braucht man, um n Tabellen in einer Kette zu verbinden?",
+      "hinten": "n − 1: eine ON-Bedingung je Verbindung zweier Tabellen."
+    },
+    {
+      "id": "AP2-4-2-2-K5-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K2",
+      "vorne": "Wie vergibt man einen Aliasnamen für eine Tabelle, und wie spricht man dann ihre Spalten an?",
+      "hinten": "Hinter dem Tabellennamen, mit oder ohne AS: `FROM Kunde AS k` oder `FROM Kunde k`. Danach `k.Name`."
+    },
+    {
+      "id": "AP2-4-2-2-K5-2",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K2",
+      "vorne": "Warum muss man KundenNr in einer Abfrage über Kunde und Bestellung mit Tabellenname oder Alias schreiben?",
+      "hinten": "Die Spalte gibt es in beiden Tabellen. Ohne Präfix wie `k.KundenNr` ist sie mehrdeutig, und die Abfrage schlägt fehl."
+    },
+    {
+      "id": "PB2-5-1-2-K2-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K2",
+      "vorne": "Bestellung und Artikel stehen in einer m:n-Beziehung über die Tabelle Position. Wie verbindest du Bestellung und Artikel?",
+      "hinten": "Über die Zwischentabelle mit zwei JOINs:\n`FROM Bestellung b JOIN Position p ON b.BestellNr = p.BestellNr JOIN Artikel a ON p.ArtikelNr = a.ArtikelNr`"
+    },
+    {
+      "id": "AP2-4-2-2-K3-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K3",
+      "vorne": "Welche Zeilen liefert `A LEFT JOIN B`?",
+      "hinten": "Alle Zeilen von A. Gibt es in B keinen passenden Datensatz, stehen in den Spalten von B NULL-Werte."
+    },
+    {
+      "id": "AP2-4-2-2-K4-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K3",
+      "vorne": "Alle Kategorien sollen mit ihren Artikeln erscheinen, auch Kategorien ohne Artikel. Welcher JOIN ist nötig?",
+      "hinten": "`Kategorie LEFT JOIN Artikel`. Ein INNER JOIN würde Kategorien ohne Artikel weglassen. Die Tabelle, deren Zeilen alle erscheinen sollen, steht links."
+    },
+    {
+      "id": "AP2-4-2-2-K4-3",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K3",
+      "vorne": "Wie findet man mit einem LEFT JOIN alle Kunden ohne Bestellung?",
+      "hinten": "`SELECT k.* FROM Kunde k LEFT JOIN Bestellung b ON k.KundenNr = b.KundenNr WHERE b.BestellNr IS NULL;`"
+    },
+    {
+      "id": "AP2-4-2-2-K6-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K3",
+      "vorne": "Welche Zeilen liefert `A RIGHT JOIN B`?",
+      "hinten": "Alle Zeilen von B, auch ohne passenden Datensatz in A (dort NULL). Spiegelbild des LEFT JOIN: `A RIGHT JOIN B` entspricht `B LEFT JOIN A`."
+    },
+    {
+      "id": "PB2-5-1-2-K3-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K3",
+      "vorne": "Alle Mitarbeiter sollen erscheinen, dazu nur ihre Fehlzeiten der Art 2 aus dem Jahr 2022. Warum gehören diese Bedingungen beim LEFT JOIN in ON und nicht in WHERE?",
+      "hinten": "In WHERE wären sie für Mitarbeiter ohne passende Fehlzeit (NULL-Werte) nie wahr – diese Mitarbeiter fielen wieder heraus. In ON bestimmen sie nur, welche Fehlzeiten angehängt werden:\n`… FROM Mitarbeiter m LEFT JOIN Fehlzeit f ON m.Ma_ID = f.Ma_ID AND f.FzA_ID = 2 AND YEAR(f.VonDat) = 2022`"
+    },
+    {
+      "id": "PB2-5-1-2-K4-1",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K4",
+      "vorne": "Die Tabelle Zaehlerstand enthält je Zähler einen Stand pro Jahr. Wie stellst du die Stände 2021 und 2022 je Zähler in einer Zeile gegenüber und berechnest den Verbrauch?",
+      "hinten": "Die Tabelle zweimal mit verschiedenen Aliasnamen einbinden, die Jahresbedingung jeweils in ON:\n`SELECT z.Z_ID, s22.ZSt_Stand - s21.ZSt_Stand AS Verbrauch FROM Zaehler z LEFT JOIN Zaehlerstand s21 ON s21.ZSt_ZID = z.Z_ID AND YEAR(s21.ZSt_Datum) = 2021 LEFT JOIN Zaehlerstand s22 ON s22.ZSt_ZID = z.Z_ID AND YEAR(s22.ZSt_Datum) = 2022;`"
+    },
+    {
+      "id": "PB2-5-1-2-K4-2",
+      "sp": "PB2-5-1-2",
+      "k": "PB2-5-1-2-K4",
+      "vorne": "Ein Zähler hat für 2021 keinen Stand. Was gibt die Abfrage mit zwei LEFT JOINs auf Zaehlerstand für ihn aus, und was geschähe mit INNER JOINs?",
+      "hinten": "- LEFT JOIN: Der Zähler erscheint, der Verbrauch ist NULL (Rechnen mit NULL ergibt NULL).\n- INNER JOIN: Der Zähler fehlt ganz im Ergebnis."
+    },
+    {
+      "id": "AP2-4-2-3-K1-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K1",
+      "vorne": "Was berechnen COUNT, SUM, AVG, MIN und MAX?",
+      "hinten": "- `COUNT`: Anzahl\n- `SUM`: Summe\n- `AVG`: Durchschnitt\n- `MIN`: kleinster Wert\n- `MAX`: größter Wert"
+    },
+    {
+      "id": "AP2-4-2-3-K1-2",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K1",
+      "vorne": "Wie behandeln SUM, AVG, MIN und MAX NULL-Werte?",
+      "hinten": "Sie lassen NULL-Werte weg. AVG teilt deshalb nur durch die Anzahl der Werte, die nicht NULL sind."
+    },
+    {
+      "id": "AP2-4-2-3-K1-3",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K1",
+      "vorne": "Wie ermittelt man den Durchschnittspreis aller Artikel?",
+      "hinten": "`SELECT AVG(Preis) FROM Artikel;`"
+    },
+    {
+      "id": "AP2-4-2-3-K6-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K1",
+      "vorne": "Was ist der Unterschied zwischen `COUNT(*)` und `COUNT(Spalte)`?",
+      "hinten": "`COUNT(*)` zählt alle Zeilen, `COUNT(Spalte)` nur die Zeilen, in denen die Spalte nicht NULL ist."
+    },
+    {
+      "id": "AP2-4-2-3-K6-2",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K1",
+      "vorne": "Warum zählt man nach `Kategorie k LEFT JOIN Artikel a` die Artikel je Kategorie mit `COUNT(a.ArtikelNr)` statt `COUNT(*)`?",
+      "hinten": "Eine Kategorie ohne Artikel erscheint als eine Zeile mit NULL in den Artikelspalten. `COUNT(*)` zählt sie als 1, `COUNT(a.ArtikelNr)` ergibt richtig 0."
+    },
+    {
+      "id": "AP2-4-2-3-K2-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K2",
+      "vorne": "Was bewirkt GROUP BY?",
+      "hinten": "Es fasst alle Zeilen mit gleichen Werten in den Gruppierungsspalten zu einer Gruppe zusammen; Aggregatfunktionen rechnen dann je Gruppe."
+    },
+    {
+      "id": "AP2-4-2-3-K2-2",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K2",
+      "vorne": "Welche Regel gilt bei GROUP BY für die Spalten hinter SELECT?",
+      "hinten": "Jede ausgegebene Spalte, die nicht in einer Aggregatfunktion steht, muss in GROUP BY stehen."
+    },
+    {
+      "id": "AP2-4-2-3-K2-3",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K2",
+      "vorne": "Was ist an `SELECT Ort, Name, COUNT(*) FROM Kunde GROUP BY Ort;` falsch?",
+      "hinten": "Name steht weder in GROUP BY noch in einer Aggregatfunktion. Richtig wäre, Name wegzulassen oder `GROUP BY Ort, Name` zu schreiben."
+    },
+    {
+      "id": "PB2-5-1-3-K2-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K2",
+      "vorne": "Wie zählst du die Datensätze der Tabelle Aktion je Jahr der Spalte AK_DatumZeit?",
+      "hinten": "`SELECT YEAR(AK_DatumZeit) AS Jahr, COUNT(*) AS Anzahl FROM Aktion GROUP BY YEAR(AK_DatumZeit);`\nGruppiert wird nach demselben Ausdruck, der ausgegeben wird."
+    },
+    {
+      "id": "AP2-4-2-3-K3-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K3",
+      "vorne": "Was ist der Unterschied zwischen WHERE und HAVING?",
+      "hinten": "WHERE filtert einzelne Zeilen vor dem Gruppieren, HAVING filtert Gruppen nach dem Gruppieren, auch mit Bedingungen auf Aggregate."
+    },
+    {
+      "id": "AP2-4-2-3-K3-2",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K3",
+      "vorne": "Wie gibt man alle Kundennummern mit mindestens drei Bestellungen aus?",
+      "hinten": "`SELECT KundenNr, COUNT(*) FROM Bestellung GROUP BY KundenNr HAVING COUNT(*) >= 3;`"
+    },
+    {
+      "id": "AP2-4-2-3-K3-3",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K3",
+      "vorne": "Warum ist `WHERE COUNT(*) >= 3` falsch?",
+      "hinten": "WHERE wird vor dem Gruppieren ausgewertet, dort gibt es noch keine Aggregate. Bedingungen auf Aggregate gehören in HAVING."
+    },
+    {
+      "id": "AP2-4-2-3-K3-4",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K3",
+      "vorne": "In welcher Reihenfolge stehen die Klauseln einer SELECT-Anweisung?",
+      "hinten": "`SELECT` – `FROM` – `WHERE` – `GROUP BY` – `HAVING` – `ORDER BY`"
+    },
+    {
+      "id": "AP2-4-2-3-K4-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K4",
+      "vorne": "Wie sortiert man ein gruppiertes Ergebnis absteigend nach der Umsatzsumme?",
+      "hinten": "`ORDER BY SUM(Umsatz) DESC` oder über den Aliasnamen der Summe, z. B. `ORDER BY Gesamt DESC`."
+    },
+    {
+      "id": "AP2-4-2-3-K5-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K4",
+      "vorne": "Wie gibt man den Umsatz je Kunde mit Namen aus? (Kunde, Bestellung, Position mit Menge und Preis)",
+      "hinten": "`SELECT k.KundenNr, k.Name, SUM(p.Menge * p.Preis) AS Umsatz FROM Kunde k JOIN Bestellung b ON k.KundenNr = b.KundenNr JOIN Position p ON b.BestellNr = p.BestellNr GROUP BY k.KundenNr, k.Name;`"
+    },
+    {
+      "id": "AP2-4-2-3-K5-2",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K4",
+      "vorne": "Warum gruppiert man beim Umsatz je Kunde nach KundenNr und Name statt nur nach Name?",
+      "hinten": "Zwei Kunden können gleich heißen; die KundenNr hält sie getrennt. Name muss als ausgegebene Spalte trotzdem in GROUP BY stehen."
+    },
+    {
+      "id": "PB2-5-1-3-K4-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K4",
+      "vorne": "Wie gibst du je Kategorie die Summe der verkauften Mengen aus, größte zuerst? (Kategorie, Artikel, Position mit Menge)",
+      "hinten": "`SELECT k.Bezeichnung, SUM(p.Menge) AS Verkauft FROM Kategorie k JOIN Artikel a ON k.KategorieNr = a.KategorieNr JOIN Position p ON a.ArtikelNr = p.ArtikelNr GROUP BY k.KategorieNr, k.Bezeichnung ORDER BY Verkauft DESC;`"
+    },
+    {
+      "id": "PB2-5-1-3-K5-1",
+      "sp": "PB2-5-1-3",
+      "k": "PB2-5-1-3-K5",
+      "vorne": "Was ermitteln laut SQL-Auszug die Aggregatfunktionen STDDEV, VARIANCE und CORR?",
+      "hinten": "- `STDDEV(Spalte)`: Standardabweichung der Werte vom Mittelwert\n- `VARIANCE(Spalte)`: Varianz der Werte\n- `CORR(Spalte1, Spalte2)`: Korrelation zweier Merkmale (nahe 1 oder −1 starker Zusammenhang, nahe 0 keiner)"
+    },
+    {
+      "id": "AP2-4-2-4-K1-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K1",
+      "vorne": "Wie gibt man mit einer Unterabfrage alle Kunden aus, die schon bestellt haben?",
+      "hinten": "`SELECT * FROM Kunde WHERE KundenNr IN (SELECT KundenNr FROM Bestellung);`"
+    },
+    {
+      "id": "AP2-4-2-4-K1-2",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K1",
+      "vorne": "Wie gibt man mit einer Unterabfrage alle Artikel aus, die nie bestellt wurden?",
+      "hinten": "`SELECT * FROM Artikel WHERE ArtikelNr NOT IN (SELECT ArtikelNr FROM Position);`"
+    },
+    {
+      "id": "AP2-4-2-4-K1-3",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K1",
+      "vorne": "Was muss eine Unterabfrage hinter IN liefern?",
+      "hinten": "Genau eine Spalte; ihre Werte bilden die Liste, mit der verglichen wird."
+    },
+    {
+      "id": "PB2-5-1-4-K1-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K1",
+      "vorne": "`WHERE KundenNr NOT IN (SELECT KundenNr FROM Bestellung)` liefert keine einzige Zeile, obwohl es Kunden ohne Bestellung gibt. Woran liegt das, und wie behebst du es?",
+      "hinten": "Die Unterabfrage enthält einen NULL-Wert. Der Vergleich mit NULL ist nie wahr, daher ist NOT IN für keine Zeile erfüllt. Abhilfe:\n- in der Unterabfrage `WHERE KundenNr IS NOT NULL` ergänzen oder\n- `NOT EXISTS` mit korrelierter Unterabfrage verwenden"
+    },
+    {
+      "id": "AP2-4-2-4-K2-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K2",
+      "vorne": "Wie gibt man den teuersten Artikel aus?",
+      "hinten": "`SELECT * FROM Artikel WHERE Preis = (SELECT MAX(Preis) FROM Artikel);`"
+    },
+    {
+      "id": "AP2-4-2-4-K2-2",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K2",
+      "vorne": "Warum funktioniert `WHERE Preis = MAX(Preis)` nicht?",
+      "hinten": "Aggregatfunktionen sind in WHERE nicht erlaubt. Den Höchstwert muss eine Unterabfrage liefern."
+    },
+    {
+      "id": "AP2-4-2-4-K2-3",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K2",
+      "vorne": "Was muss eine Unterabfrage liefern, deren Ergebnis mit `=`, `<` oder `>` verglichen wird?",
+      "hinten": "Genau einen Wert: eine Zeile mit einer Spalte."
+    },
+    {
+      "id": "AP2-4-2-4-K2-4",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K2",
+      "vorne": "Wie gibt man alle Artikel aus, die teurer sind als der Durchschnitt?",
+      "hinten": "`SELECT * FROM Artikel WHERE Preis > (SELECT AVG(Preis) FROM Artikel);`"
+    },
+    {
+      "id": "AP2-4-2-4-K3-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K3",
+      "vorne": "Wie verwendet man eine Unterabfrage in FROM?",
+      "hinten": "Ihr Ergebnis dient als Tabelle und bekommt mit AS einen Namen: `SELECT … FROM (SELECT …) AS t`. Danach spricht man ihre Spalten mit `t.Spalte` an."
+    },
+    {
+      "id": "PB2-5-1-4-K3-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K3",
+      "vorne": "Wie ermittelst du die durchschnittliche Anzahl Behandlungen je Patient aus der Tabelle Behandlung (Spalte PatientID)?",
+      "hinten": "Erst je Patient zählen, dann den Durchschnitt bilden – mit einer Unterabfrage in FROM:\n`SELECT AVG(t.Anzahl) FROM (SELECT PatientID, COUNT(*) AS Anzahl FROM Behandlung GROUP BY PatientID) AS t;`"
+    },
+    {
+      "id": "AP2-4-2-4-K5-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K4",
+      "vorne": "Was setzt UNION voraus, und was geschieht mit doppelten Zeilen?",
+      "hinten": "Beide Abfragen liefern gleich viele Spalten mit passenden Datentypen in gleicher Reihenfolge. UNION entfernt doppelte Zeilen."
+    },
+    {
+      "id": "AP2-4-2-4-K5-2",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K4",
+      "vorne": "Wie sortiert man das Gesamtergebnis einer UNION?",
+      "hinten": "Mit einem einzigen ORDER BY ganz am Ende hinter der letzten Abfrage; es gilt für das ganze Ergebnis."
+    },
+    {
+      "id": "AP2-4-2-4-K5-3",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K4",
+      "vorne": "Wie gibt man Name und Ort aller Kunden und Lieferanten in einer gemeinsamen, nach Name sortierten Liste aus?",
+      "hinten": "`SELECT Name, Ort FROM Kunde UNION SELECT Name, Ort FROM Lieferant ORDER BY Name;`"
+    },
+    {
+      "id": "PB2-5-1-4-K4-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K4",
+      "vorne": "Was ist der Unterschied zwischen UNION und UNION ALL?",
+      "hinten": "- `UNION`: doppelte Zeilen werden entfernt\n- `UNION ALL`: alle Zeilen beider Abfragen bleiben, auch doppelte"
+    },
+    {
+      "id": "PB2-5-1-4-K4-2",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K4",
+      "vorne": "Die Anzahl der Datensätze je Jahr soll aus der Tabelle Aktion und ihrem gleich aufgebauten Archiv Aktion_Archiv in einer Liste ausgegeben werden. Wie gehst du vor?",
+      "hinten": "Jede Teilabfrage für sich gruppieren, mit UNION ALL verbinden, ORDER BY nur einmal am Ende:\n`SELECT YEAR(AK_DatumZeit) AS Jahr, COUNT(*) AS Anzahl FROM Aktion GROUP BY YEAR(AK_DatumZeit) UNION ALL SELECT YEAR(AK_DatumZeit), COUNT(*) FROM Aktion_Archiv GROUP BY YEAR(AK_DatumZeit) ORDER BY Jahr;`"
+    },
+    {
+      "id": "PB2-5-1-4-K5-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K5",
+      "vorne": "Was ist eine korrelierte Unterabfrage?",
+      "hinten": "Eine Unterabfrage, die sich auf eine Spalte der aktuellen Zeile der äußeren Abfrage bezieht und deshalb für jede Zeile der äußeren Abfrage neu ausgewertet wird."
+    },
+    {
+      "id": "PB2-5-1-4-K5-2",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K5",
+      "vorne": "Wie gibst du je Kunde den Namen und die Anzahl seiner Bestellungen mit einer Unterabfrage in der SELECT-Liste aus?",
+      "hinten": "`SELECT k.Name, (SELECT COUNT(*) FROM Bestellung b WHERE b.KundenNr = k.KundenNr) AS Anzahl FROM Kunde k;`\nKunden ohne Bestellung erhalten 0."
+    },
+    {
+      "id": "PB2-5-1-4-K5-3",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K5",
+      "vorne": "Was liefert eine korrelierte Unterabfrage in der SELECT-Liste für einen Kunden ohne Bestellung, wenn sie SUM bildet, und was, wenn sie COUNT bildet?",
+      "hinten": "- `SUM` (ebenso `AVG`): NULL\n- `COUNT`: 0"
+    },
+    {
+      "id": "AP2-4-2-4-K4-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K6",
+      "vorne": "Wann ist `EXISTS (Unterabfrage)` wahr, wann `NOT EXISTS (Unterabfrage)`?",
+      "hinten": "- `EXISTS`: wenn die Unterabfrage mindestens eine Zeile liefert\n- `NOT EXISTS`: wenn sie keine Zeile liefert"
+    },
+    {
+      "id": "AP2-4-2-4-K4-2",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K6",
+      "vorne": "Wie findet man mit NOT EXISTS alle Kunden ohne Bestellung?",
+      "hinten": "`SELECT * FROM Kunde k WHERE NOT EXISTS (SELECT * FROM Bestellung b WHERE b.KundenNr = k.KundenNr);`"
+    },
+    {
+      "id": "PB2-5-1-4-K6-1",
+      "sp": "PB2-5-1-4",
+      "k": "PB2-5-1-4-K6",
+      "vorne": "Wie findest du Haushalte ohne Zähler mit einer korrelierten Unterabfrage und einem Vergleich statt NOT EXISTS?",
+      "hinten": "`SELECT * FROM Haushalte h WHERE (SELECT COUNT(*) FROM Zaehler z WHERE z.Z_HHID = h.HH_ID) = 0;`"
+    },
+    {
+      "id": "PB2-5-1-5-K1-1",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K1",
+      "vorne": "Gesucht sind die Hersteller aller Arzneimittel mit einem bestimmten Wirkstoff. Modell: Wirkstoff – Arzneimittelwirkstoffe (WirkstoffID, ArzneimittelID) – Arzneimittel (HerstellerID) – Hersteller. Welche Tabellen verbindest du über welche Spalten?",
+      "hinten": "- Wirkstoff und Arzneimittelwirkstoffe über WirkstoffID\n- Arzneimittelwirkstoffe und Arzneimittel über ArzneimittelID\n- Arzneimittel und Hersteller über HerstellerID\nDie Zwischentabelle gehört in den Pfad, obwohl keine ihrer Spalten ausgegeben wird."
+    },
+    {
+      "id": "PB2-5-1-5-K1-2",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K1",
+      "vorne": "Wie gehst du vor, um in einem vorgegebenen Tabellenmodell den JOIN-Pfad für eine Abfrage zu finden?",
+      "hinten": "- Tabellen mit den Ausgabespalten und den Bedingungen bestimmen\n- zwischen ihnen einen Weg über Fremdschlüssel und Primärschlüssel suchen\n- jede Tabelle auf diesem Weg in den JOIN aufnehmen, auch Zwischentabellen"
+    },
+    {
+      "id": "PB2-5-1-5-K2-1",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K2",
+      "vorne": "Die Tabelle Pflegearbeit hat die Fremdschlüssel MID_Soll und MID_Ist auf Mitarbeiter. Wie gibst du je Pflegearbeit die Namen beider Mitarbeiter aus?",
+      "hinten": "Mitarbeiter zweimal mit verschiedenen Aliasnamen einbinden, je einmal über jeden Fremdschlüssel:\n`SELECT p.Datum, ms.Name AS Soll, mi.Name AS Ist FROM Pflegearbeit p JOIN Mitarbeiter ms ON p.MID_Soll = ms.MID LEFT JOIN Mitarbeiter mi ON p.MID_Ist = mi.MID;`\nLEFT JOIN beim Ist, falls MID_Ist noch leer sein kann."
+    },
+    {
+      "id": "PB2-5-1-5-K2-2",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K2",
+      "vorne": "Ist-Zeiten verweisen auf einen Plan-Eintrag (HStZ_HStPIdKey) und auf eine Haltestelle. Warum verbindest du sie über die Plan-ID und nicht nur über die Haltestelle?",
+      "hinten": "Über die Plan-ID gehört jede Ist-Zeit zu genau einem Plan-Eintrag. Nur über die Haltestelle würde jede Ist-Zeit mit allen Plan-Einträgen dieser Haltestelle kombiniert – es entstünden falsche Zeilen."
+    },
+    {
+      "id": "PB2-5-1-5-K3-1",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K3",
+      "vorne": "Die Spalte rezeptpflichtig ist als BOOLEAN angelegt. Wie wählst du alle nicht rezeptpflichtigen Arzneimittel aus?",
+      "hinten": "`SELECT * FROM Arzneimittel WHERE rezeptpflichtig = FALSE;`"
+    },
+    {
+      "id": "PB2-5-1-5-K3-2",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K3",
+      "vorne": "Die PLZ ist als CHAR(5) angelegt. Wie findest du alle Kunden, deren PLZ mit 508 beginnt, und warum schreibst du es so?",
+      "hinten": "`SELECT * FROM Kunde WHERE PLZ LIKE '508%';`\nDie PLZ ist Text: der Wert steht in einfachen Anführungszeichen, das Muster prüft LIKE mit `%` für den Rest."
+    },
+    {
+      "id": "AP2-4-2-2-K4-2",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K4",
+      "vorne": "Woran erkennt man in einer Aufgabe, dass ein LEFT JOIN nötig ist?",
+      "hinten": "Wenn auch Datensätze ohne zugehörige Einträge erscheinen sollen, z. B. „auch Kunden ohne Bestellung“ oder „Anzahl 0 anzeigen“."
+    },
+    {
+      "id": "PB2-5-1-5-K4-1",
+      "sp": "PB2-5-1-5",
+      "k": "PB2-5-1-5-K4",
+      "vorne": "Die verlangte Ergebnistabelle zeigt alle Kunden mit ihrer Rechnungsanzahl, einige mit 0. Welche JOIN-Art brauchst du, und warum?",
+      "hinten": "LEFT JOIN von Kunde auf Rechnung und `COUNT(Spalte der Rechnung)`: Die 0 zeigt Kunden ohne Rechnung. Ein INNER JOIN würde sie weglassen."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [
+    {
+      "id": "PB2-5-1-1-K6-2",
+      "frage": "Die Aufgabe 2025W gibt eine eigene Funktion vor; die Karte nimmt beispielhaft die Standardfunktionen POSITION(… IN …) und CHAR_LENGTH an. In der Prüfung gilt die vorgegebene Funktion."
+    }
+  ],
+  "protokoll": [
+    {
+      "id": "AP2-4-2-1-K1-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Aussage verlangt die Spalten in der Reihenfolge der Ergebnistabelle; SELECT * allein trifft das nicht"
+    },
+    {
+      "id": "AP2-4-2-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "Vergleichsoperatoren gehören zu den WHERE-Bedingungen (K2), nicht zu LIKE/IS NULL; an K2 gehängt"
+    },
+    {
+      "id": "AP2-4-2-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "DISTINCT steht seit dem Umbau in PB2-5-1-1-K1; an K1 gehängt"
+    },
+    {
+      "id": "AP2-4-2-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "LEFT/RIGHT sind Textfunktionen und gehören zur neuen Aussage PB2-5-1-1-K6; an K6 gehängt"
+    },
+    {
+      "id": "AP2-4-2-1-K6-3",
+      "entscheidung": "bearbeitet",
+      "grund": "Form des SQL-Auszugs mit Datumsteil und Beispiel Verspätung in Minuten (Aussage K4, Beleg 2024W)"
+    },
+    {
+      "id": "AP2-4-2-1-K6-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K1-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "aus der Aufgabe ableiten, dass ein LEFT JOIN nötig ist, ist genau PB2-5-1-5-K4; dorthin gehängt"
+    },
+    {
+      "id": "AP2-4-2-2-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-3-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-2-4-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB2-5-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "Alias mit Leerzeichen in Standardform (Grenze P41, Beleg 2024W)"
+    },
+    {
+      "id": "PB2-5-1-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "IN (Werteliste) neu in der Aussage"
+    },
+    {
+      "id": "PB2-5-1-1-K2-2",
+      "entscheidung": "neu",
+      "grund": "BETWEEN neu in der Aussage (Beleg 2023W)"
+    },
+    {
+      "id": "PB2-5-1-1-K2-3",
+      "entscheidung": "neu",
+      "grund": "Bedingung zwischen zwei Spalten (Beleg 2024W)"
+    },
+    {
+      "id": "PB2-5-1-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage (Beleg 2022W)"
+    },
+    {
+      "id": "PB2-5-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "WEEKDAY aus der Aussage war ohne Karte"
+    },
+    {
+      "id": "PB2-5-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage (LEFT(PLZ, 2))"
+    },
+    {
+      "id": "PB2-5-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Zerlegen am Leerzeichen mit vorgegebener Funktion (Beleg 2025W)"
+    },
+    {
+      "id": "PB2-5-1-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "FROM mit Komma und WHERE neu in der Aussage"
+    },
+    {
+      "id": "PB2-5-1-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "Zwischentabelle einer m:n-Beziehung neu in der Aussage"
+    },
+    {
+      "id": "PB2-5-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Bedingung in ON statt WHERE neu in der Aussage (Beleg 2022W)"
+    },
+    {
+      "id": "PB2-5-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte (Beleg 2022S)"
+    },
+    {
+      "id": "PB2-5-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte; Folge fehlender Stände"
+    },
+    {
+      "id": "PB2-5-1-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Gruppieren nach einem Ausdruck neu in der Aussage"
+    },
+    {
+      "id": "PB2-5-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage: Verkaufsanzahl je Kategorie absteigend"
+    },
+    {
+      "id": "PB2-5-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "neue Aussage (Stufe 1, erkennen)"
+    },
+    {
+      "id": "PB2-5-1-4-K1-1",
+      "entscheidung": "neu",
+      "grund": "NULL-Falle bei NOT IN neu in der Aussage"
+    },
+    {
+      "id": "PB2-5-1-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage (Beleg 2025S)"
+    },
+    {
+      "id": "PB2-5-1-4-K4-1",
+      "entscheidung": "neu",
+      "grund": "UNION ALL neu in der Aussage"
+    },
+    {
+      "id": "PB2-5-1-4-K4-2",
+      "entscheidung": "neu",
+      "grund": "Tabelle und Archiv mit gruppierten Teilabfragen (Beleg 2024S)"
+    },
+    {
+      "id": "PB2-5-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte"
+    },
+    {
+      "id": "PB2-5-1-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Beleg 2023W)"
+    },
+    {
+      "id": "PB2-5-1-4-K5-3",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte"
+    },
+    {
+      "id": "PB2-5-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "zweiter Weg aus der Aussage (korrelierter Vergleich)"
+    },
+    {
+      "id": "PB2-5-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Beleg 2021W)"
+    },
+    {
+      "id": "PB2-5-1-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte"
+    },
+    {
+      "id": "PB2-5-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Beleg 2023S)"
+    },
+    {
+      "id": "PB2-5-1-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Beleg 2024W)"
+    },
+    {
+      "id": "PB2-5-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Beleg 2021W)"
+    },
+    {
+      "id": "PB2-5-1-5-K3-2",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Beleg 2022W)"
+    },
+    {
+      "id": "PB2-5-1-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Ableiten der JOIN-Art aus der Ergebnistabelle (Beleg 2023W)"
+    }
+  ]
+}

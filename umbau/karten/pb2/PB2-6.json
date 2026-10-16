@@ -1,0 +1,747 @@
+{
+  "ordner": "PB2-6",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB2 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb2/PB2-6.json",
+  "karten": [
+    {
+      "id": "AP2-4-1-1-K4-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K1",
+      "vorne": "Welche SQL-Datentypen passen für: fortlaufende Kundennummer, Nachname, Geburtsdatum, Rechnungsbetrag?",
+      "hinten": "- Kundennummer: `INTEGER`\n- Nachname: `VARCHAR(n)`\n- Geburtsdatum: `DATE`\n- Rechnungsbetrag: `DECIMAL(p,s)`, z. B. `DECIMAL(10,2)`"
+    },
+    {
+      "id": "AP2-4-1-1-K4-2",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K1",
+      "vorne": "Was bedeuten p und s in `DECIMAL(p,s)`?",
+      "hinten": "p ist die Gesamtzahl der Stellen, s die Zahl der Nachkommastellen davon. `DECIMAL(10,2)` speichert bis zu 8 Stellen vor und 2 nach dem Komma."
+    },
+    {
+      "id": "AP2-4-3-2-K1-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K1",
+      "vorne": "Wie legt man die Tabelle Bestellung an mit Primärschlüssel BestellNr, Spalte Datum und Fremdschlüssel KundenNr auf Kunde?",
+      "hinten": "`CREATE TABLE Bestellung (BestellNr INTEGER PRIMARY KEY, Datum DATE, KundenNr INTEGER, FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr));`"
+    },
+    {
+      "id": "AP2-4-3-2-K1-2",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K1",
+      "vorne": "Wie notiert man einen Fremdschlüssel in CREATE TABLE?",
+      "hinten": "`FOREIGN KEY (Spalte) REFERENCES Tabelle(Spalte)`"
+    },
+    {
+      "id": "AP2-4-3-2-K1-3",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K1",
+      "vorne": "Wie legt man in CREATE TABLE einen Primärschlüssel aus zwei Spalten fest?",
+      "hinten": "Als eigene Angabe nach den Spalten: `PRIMARY KEY (BestellNr, PosNr)`."
+    },
+    {
+      "id": "PB2-6-1-1-K1-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K1",
+      "vorne": "Lege die Tabelle Arzt an: ArztID (Ganzzahl, Primärschlüssel), Name (höchstens 50 Zeichen, Pflichtfeld), PLZ (genau 5 Zeichen), Honorar (Festkomma mit 2 Nachkommastellen).",
+      "hinten": "`CREATE TABLE Arzt (ArztID INTEGER, Name VARCHAR(50) NOT NULL, PLZ CHAR(5), Honorar DECIMAL(8,2), PRIMARY KEY (ArztID));`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K2",
+      "vorne": "Wie fügst du der Tabelle Kunde eine Spalte Email hinzu?",
+      "hinten": "`ALTER TABLE Kunde ADD COLUMN Email VARCHAR(100);`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-2",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K2",
+      "vorne": "Wie entfernt man die Spalte Telefon aus der Tabelle Kunde?",
+      "hinten": "`ALTER TABLE Kunde DROP COLUMN Telefon;`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-3",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K2",
+      "vorne": "Wie ergänzt man in der Tabelle Bestellung nachträglich einen Fremdschlüssel KundenNr auf Kunde?",
+      "hinten": "`ALTER TABLE Bestellung ADD FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr);`"
+    },
+    {
+      "id": "AP2-4-3-2-K2-4",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K2",
+      "vorne": "Wie änderst du den Datentyp der Spalte Name in der Tabelle Kunde auf VARCHAR(200)?",
+      "hinten": "`ALTER TABLE Kunde MODIFY COLUMN Name VARCHAR(200);`\nSo steht es im SQL-Auszug; manche Systeme schreiben dafür `ALTER COLUMN`."
+    },
+    {
+      "id": "AP2-4-3-2-K2-5",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K2",
+      "vorne": "Die Spalte Name soll durch Vorname und Nachname ersetzt werden. Welche Schritte sind nötig?",
+      "hinten": "1. mit `ALTER TABLE … ADD` die beiden neuen Spalten anlegen\n2. sie mit `UPDATE … SET` füllen\n3. mit `ALTER TABLE … DROP COLUMN Name` die alte Spalte entfernen"
+    },
+    {
+      "id": "AP2-4-3-2-K3-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K2",
+      "vorne": "Was ist der Unterschied zwischen `DROP TABLE Kunde;` und `DELETE FROM Kunde;`?",
+      "hinten": "- `DROP TABLE`: löscht die Tabelle samt Struktur und Daten\n- `DELETE`: löscht nur die Zeilen, die Tabelle bleibt bestehen"
+    },
+    {
+      "id": "PB2-6-1-1-K3-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K3",
+      "vorne": "Die Spalte Email der gefüllten Tabelle Aerzte soll Pflichtfeld werden; einige Zeilen haben noch keine E-Mail. Welche Anweisungen brauchst du in welcher Reihenfolge?",
+      "hinten": "1. Lücken füllen: `UPDATE Aerzte SET Email = 'info@fit.de' WHERE Email IS NULL;`\n2. Spalte ändern: `ALTER TABLE Aerzte MODIFY COLUMN Email VARCHAR(100) NOT NULL;`\nUmgekehrt würde ALTER TABLE an den NULL-Werten scheitern."
+    },
+    {
+      "id": "AP2-4-3-2-K5-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K4",
+      "vorne": "Wozu dient ein Index?",
+      "hinten": "Er beschleunigt das Suchen, Sortieren und Verbinden über eine Spalte, ähnlich dem Register eines Buchs: Die Datenbank muss nicht alle Zeilen durchgehen."
+    },
+    {
+      "id": "AP2-4-3-2-K5-3",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K4",
+      "vorne": "Für welche Spalten lohnt sich ein Index?",
+      "hinten": "Für Spalten, nach denen oft gesucht, sortiert oder über die verbunden wird, z. B. Fremdschlüssel."
+    },
+    {
+      "id": "AP2-4-3-2-K6-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K4",
+      "vorne": "Welche Nachteile hat ein Index?",
+      "hinten": "Er braucht zusätzlichen Speicher und bremst Einfügen und Ändern, weil er dabei jedes Mal mit aktualisiert werden muss."
+    },
+    {
+      "id": "AP2-4-3-2-K5-2",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K5",
+      "vorne": "Wie legt man einen Index auf die Spalte Nachname der Tabelle Kunde an?",
+      "hinten": "`CREATE INDEX idx_nachname ON Kunde (Nachname);`"
+    },
+    {
+      "id": "PB2-6-1-1-K6-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K6",
+      "vorne": "Was ist eine Stored Procedure?",
+      "hinten": "Eine in der Datenbank gespeicherte Folge von SQL-Anweisungen mit Namen und gegebenenfalls Parametern, die von einer Anwendung oder im Datenbank-Client ausdrücklich aufgerufen wird."
+    },
+    {
+      "id": "PB2-6-1-1-K7-1",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K7",
+      "vorne": "Was ist ein Trigger?",
+      "hinten": "SQL-Anweisungen, die die Datenbank automatisch ausführt, wenn in einer bestimmten Tabelle ein Ereignis eintritt: INSERT, UPDATE oder DELETE."
+    },
+    {
+      "id": "PB2-6-1-1-K7-2",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K7",
+      "vorne": "Worin unterscheidet sich ein Trigger von einer Stored Procedure?",
+      "hinten": "- Trigger: wird automatisch durch ein Ereignis in einer Tabelle ausgelöst\n- Stored Procedure: wird ausdrücklich aufgerufen"
+    },
+    {
+      "id": "PB2-6-1-1-K7-3",
+      "sp": "PB2-6-1-1",
+      "k": "PB2-6-1-1-K7",
+      "vorne": "Jede Preisänderung in der Tabelle Artikel soll mit altem und neuem Preis protokolliert werden, egal welche Anwendung sie vornimmt. Eignet sich dafür ein Trigger oder eine Stored Procedure?",
+      "hinten": "Ein Trigger auf UPDATE der Tabelle Artikel: Er läuft bei jeder Änderung automatisch, auch wenn eine Anwendung nichts davon weiß. Eine Prozedur müsste jede Anwendung selbst aufrufen."
+    },
+    {
+      "id": "AP2-4-3-1-K1-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K1",
+      "vorne": "Wie fügt man einen Kunden mit Nummer 1001, Name Meier und Ort Köln ein?",
+      "hinten": "`INSERT INTO Kunde (KundenNr, Name, Ort) VALUES (1001, 'Meier', 'Köln');`"
+    },
+    {
+      "id": "AP2-4-3-1-K1-2",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K1",
+      "vorne": "Warum gibt man bei INSERT die Spaltenliste an?",
+      "hinten": "Die Werte werden eindeutig den Spalten zugeordnet, unabhängig von der Reihenfolge in der Tabelle. Nicht genannte Spalten erhalten ihren Standardwert, sonst NULL."
+    },
+    {
+      "id": "AP2-4-3-1-K1-3",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K1",
+      "vorne": "Wie schreibt man Text- und Datumswerte in einer SQL-Anweisung?",
+      "hinten": "In einfachen Anführungszeichen, z. B. `'Köln'` oder `'2025-03-31'`; Zahlen ohne Anführungszeichen."
+    },
+    {
+      "id": "AP2-4-3-1-K2-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K1",
+      "vorne": "Wie fügt man Datensätze aus einer Abfrage in eine Tabelle ein?",
+      "hinten": "`INSERT INTO Ziel (Sp1, Sp2) SELECT Sp1, Sp2 FROM Quelle WHERE …;`\nOhne VALUES; Spaltenzahl und Reihenfolge müssen zusammenpassen."
+    },
+    {
+      "id": "AP2-4-3-1-K3-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K2",
+      "vorne": "Wie erhöht man die Preise aller Artikel der Kategorie 3 um 5 %?",
+      "hinten": "`UPDATE Artikel SET Preis = Preis * 1.05 WHERE KategorieNr = 3;`"
+    },
+    {
+      "id": "AP2-4-3-1-K3-2",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K2",
+      "vorne": "Wie füllt man die Spalte Kuerzel mit den ersten drei Zeichen des Namens?",
+      "hinten": "`UPDATE Kunde SET Kuerzel = LEFT(Name, 3);`"
+    },
+    {
+      "id": "AP2-4-3-1-K3-3",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K2",
+      "vorne": "Wie ändert man mehrere Spalten in einer UPDATE-Anweisung?",
+      "hinten": "Die Zuweisungen in SET durch Komma trennen: `UPDATE Kunde SET Ort = 'Bonn', PLZ = '53111' WHERE KundenNr = 7;`"
+    },
+    {
+      "id": "AP2-4-3-1-K3-4",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K2",
+      "vorne": "Was passiert bei einer UPDATE-Anweisung ohne WHERE?",
+      "hinten": "Die Änderung wird auf alle Zeilen der Tabelle angewendet."
+    },
+    {
+      "id": "PB2-6-1-2-K2-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K2",
+      "vorne": "Die Preise aller Arzneimittel des Herstellers 'CCC' sollen um 10 % steigen. Der Herstellername steht nur in der Tabelle Hersteller. Wie lautet die Anweisung in Standard-SQL?",
+      "hinten": "`UPDATE Arzneimittel SET Preis = Preis * 1.1 WHERE HerstellerID = (SELECT HerstellerID FROM Hersteller WHERE Bezeichnung = 'CCC');`\nKann die Unterabfrage mehrere Werte liefern, steht `IN` statt `=`."
+    },
+    {
+      "id": "PB2-6-1-2-K2-2",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K2",
+      "vorne": "Ein UPDATE soll nur Rechnungspositionen treffen, die zu einem Rotwein gehören und auf einer Rechnung aus Mai 2023 stehen. Wie formulierst du diese Bedingungen aus verschiedenen Tabellen in Standard-SQL?",
+      "hinten": "Je Bedingung eine IN-Unterabfrage, verknüpft mit AND:\n`… WHERE RgPos_ArtIdKey IN (SELECT a.Art_IdKey FROM Artikel a INNER JOIN WeinArt w ON w.WA_IdKey = a.Art_WAIdKey WHERE w.WA_Weinart = 'Rotwein') AND RgPos_RgIdKey IN (SELECT Rg_IdKey FROM Rechnung WHERE YEAR(Rg_Datum) = 2023 AND MONTH(Rg_Datum) = 5)`"
+    },
+    {
+      "id": "AP2-4-3-1-K4-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K3",
+      "vorne": "Was passiert bei `DELETE FROM Kunde;` ohne WHERE?",
+      "hinten": "Alle Zeilen der Tabelle werden gelöscht; die Tabelle selbst bleibt bestehen."
+    },
+    {
+      "id": "AP2-4-3-1-K4-2",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K3",
+      "vorne": "Wie löscht man alle Bestellungen mit Bestelldatum vor dem 01.01.2020?",
+      "hinten": "`DELETE FROM Bestellung WHERE Bestelldatum < '2020-01-01';`"
+    },
+    {
+      "id": "PB2-6-1-2-K3-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K3",
+      "vorne": "Wie löschst du alle Haushalte, zu denen es keinen Zähler gibt? (Zaehler.Z_HHID verweist auf Haushalte.HH_ID)",
+      "hinten": "`DELETE FROM Haushalte WHERE NOT EXISTS (SELECT * FROM Zaehler WHERE Zaehler.Z_HHID = Haushalte.HH_ID);`\nAlternativ `WHERE HH_ID NOT IN (SELECT Z_HHID FROM Zaehler)`, solange Z_HHID nie NULL ist."
+    },
+    {
+      "id": "AP2-4-3-1-K6-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K5",
+      "vorne": "Wie verschiebt man alle Bestellungen vor 2020 in die gleich aufgebaute Tabelle Bestellung_Archiv?",
+      "hinten": "1. `INSERT INTO Bestellung_Archiv SELECT * FROM Bestellung WHERE Bestelldatum < '2020-01-01';`\n2. `DELETE FROM Bestellung WHERE Bestelldatum < '2020-01-01';`\nIn beiden Anweisungen dieselbe Bedingung."
+    },
+    {
+      "id": "AP2-4-3-1-K6-2",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K5",
+      "vorne": "Warum kopiert man beim Archivieren zuerst und löscht erst danach?",
+      "hinten": "Würde zuerst gelöscht, wären die Daten zum Kopieren nicht mehr vorhanden."
+    },
+    {
+      "id": "PB2-6-1-2-K5-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K5",
+      "vorne": "Warum gehören beim Archivieren INSERT … SELECT und DELETE in eine Transaktion?",
+      "hinten": "Scheitert einer der beiden Schritte, wird alles zurückgenommen. So fehlen keine Datensätze (gelöscht, aber nicht kopiert) und keine stehen doppelt (kopiert, aber nicht gelöscht)."
+    },
+    {
+      "id": "PB2-6-1-2-K6-1",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K6",
+      "vorne": "Was unterscheidet pessimistisches von optimistischem Sperren?",
+      "hinten": "- pessimistisch: früh und lange sperren, schon beim Lesen; andere müssen warten\n- optimistisch: erst beim Speichern kurz sperren und prüfen, ob der Datensatz inzwischen geändert wurde; bei einem Konflikt wird neu entschieden"
+    },
+    {
+      "id": "PB2-6-1-2-K6-2",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K6",
+      "vorne": "Eine Online-Terminbuchung soll beim Anzeigen alle freien Termine des Monats für den Nutzer sperren, bis er bucht. Beurteile den Vorschlag und nenne eine bessere Lösung.",
+      "hinten": "Ungünstig: Die Sperre kommt früh und dauert lange – alle anderen sehen keine freien Termine, obwohl der Nutzer nur einen braucht und vielleicht gar nicht bucht.\nBesser optimistisch: erst beim Bestätigen den gewählten Termin kurz sperren und prüfen, ob er noch frei ist; ist er vergeben, Meldung und andere Termine anbieten."
+    },
+    {
+      "id": "PB2-6-1-2-K6-3",
+      "sp": "PB2-6-1-2",
+      "k": "PB2-6-1-2-K6",
+      "vorne": "Wann ist pessimistisches Sperren trotz der Wartezeiten die bessere Wahl?",
+      "hinten": "Wenn Konflikte häufig sind und eine spätere Ablehnung teuer oder ärgerlich wäre, die Bearbeitung aber kurz ist – z. B. wenn viele gleichzeitig die letzten Plätze buchen wollen."
+    },
+    {
+      "id": "AP2-4-3-3-K3-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K1",
+      "vorne": "Wie legt man einen Benutzer lager mit Passwort an?",
+      "hinten": "`CREATE USER lager IDENTIFIED BY 'Geheim123';` – die Angabe des Passworts unterscheidet sich je nach Datenbanksystem."
+    },
+    {
+      "id": "AP2-4-3-3-K1-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K2",
+      "vorne": "Wie gibt man dem Benutzer lager das Leserecht auf die Tabelle Artikel?",
+      "hinten": "`GRANT SELECT ON Artikel TO lager;`"
+    },
+    {
+      "id": "AP2-4-3-3-K1-2",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K2",
+      "vorne": "Wie gibt man einem Benutzer mehrere Rechte in einer Anweisung?",
+      "hinten": "Die Rechte durch Komma getrennt aufzählen: `GRANT SELECT, INSERT ON Artikel TO lager;`"
+    },
+    {
+      "id": "AP2-4-3-3-K4-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K2",
+      "vorne": "Ein Benutzer auswertung soll Bestellungen nur lesen. Welche Anweisung gibt ihm genau das?",
+      "hinten": "`GRANT SELECT ON Bestellung TO auswertung;` – kein INSERT, UPDATE oder DELETE."
+    },
+    {
+      "id": "PB2-6-1-3-K2-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K2",
+      "vorne": "Wie gibst du dem Benutzer auswertung das Leserecht auf alle Tabellen der Datenbank Klinik?",
+      "hinten": "`GRANT SELECT ON Klinik.* TO auswertung;`\n- `Datenbank.Tabelle`: eine Tabelle\n- `Datenbank.*`: alle Tabellen der Datenbank\n- `*.*`: alles"
+    },
+    {
+      "id": "PB2-6-1-3-K2-2",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K2",
+      "vorne": "Der Benutzer hhorner soll in der Tabelle Verschreibungen der Datenbank NotaufnahmeManagement Datensätze anlegen, ändern und löschen dürfen. Wie lautet die Anweisung?",
+      "hinten": "`GRANT INSERT, UPDATE, DELETE ON NotaufnahmeManagement.Verschreibungen TO hhorner;`"
+    },
+    {
+      "id": "AP2-4-3-3-K2-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K3",
+      "vorne": "Wie entzieht man dem Benutzer lager das Recht, in Artikel zu löschen?",
+      "hinten": "`REVOKE DELETE ON Artikel FROM lager;`"
+    },
+    {
+      "id": "AP2-4-3-3-K2-2",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K3",
+      "vorne": "Wie sind GRANT und REVOKE aufgebaut?",
+      "hinten": "- `GRANT Recht ON Objekt TO Benutzer`\n- `REVOKE Recht ON Objekt FROM Benutzer`"
+    },
+    {
+      "id": "PB2-6-1-3-K3-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K3",
+      "vorne": "Dem Benutzer sklinkel sollen die Schreibrechte auf NotaufnahmeManagement.Verschreibungen entzogen werden; lesen darf er weiter. Wie lautet die Anweisung?",
+      "hinten": "`REVOKE INSERT, UPDATE, DELETE ON NotaufnahmeManagement.Verschreibungen FROM sklinkel;`\nSELECT bleibt, weil es nicht genannt ist."
+    },
+    {
+      "id": "AP2-4-3-3-K5-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K4",
+      "vorne": "Was bewirkt `WITH GRANT OPTION`?",
+      "hinten": "Der Benutzer darf das erhaltene Recht an andere Benutzer weitergeben, z. B. `GRANT SELECT ON Artikel TO lager WITH GRANT OPTION;`"
+    },
+    {
+      "id": "PB2-6-1-3-K4-1",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K4",
+      "vorne": "Alle Sachbearbeiter sollen die Tabellen der Datenbank Klinik lesen dürfen. Wie richtest du das über eine Rolle ein und weist sie dem Benutzer hhorner zu?",
+      "hinten": "- `CREATE ROLE Sachbearbeitung;`\n- `GRANT SELECT ON Klinik.* TO Sachbearbeitung;`\n- `GRANT Sachbearbeitung TO hhorner;`"
+    },
+    {
+      "id": "PB2-6-1-3-K4-2",
+      "sp": "PB2-6-1-3",
+      "k": "PB2-6-1-3-K4",
+      "vorne": "Wie entziehst du dem Benutzer hhorner die Rolle Sachbearbeitung?",
+      "hinten": "`REVOKE Sachbearbeitung FROM hhorner;`\nDamit fallen für ihn alle Rechte der Rolle weg; Rechte, die er einzeln erhalten hat, bleiben."
+    },
+    {
+      "id": "AP2-4-1-2-K5-1",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K1",
+      "vorne": "Welche typischen Qualitätsmängel treten in einem von Hand gepflegten Datenbestand auf?",
+      "hinten": "- uneinheitliche Formate (Datum mal 01.02.2025, mal 2025-02-01)\n- mehrere Werte in einem Feld\n- ungültige Werte\n- unterschiedliche Schreibweisen desselben Werts"
+    },
+    {
+      "id": "AP2-4-1-2-K5-2",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K1",
+      "vorne": "Im Feld Telefon steht „0221 123456, 0171 987654“. Welcher Mangel liegt vor, und welche Folge hat er?",
+      "hinten": "Mehrere Werte in einem Feld. Die Nummern lassen sich nicht einzeln suchen oder in eine Spalte mit einem Wert übernehmen; sie müssen vor dem Import aufgeteilt werden."
+    },
+    {
+      "id": "AP2-4-1-2-K5-3",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K1",
+      "vorne": "Welche Folge haben unterschiedliche Schreibweisen wie „Köln“ und „Koeln“ in einer Spalte?",
+      "hinten": "Dasselbe wird als Verschiedenes behandelt: Gruppierungen und Zählungen werden falsch, Dubletten bleiben unentdeckt."
+    },
+    {
+      "id": "AP2-4-4-3-K2-2",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K1",
+      "vorne": "Was kann passieren, wenn mangelhafte Daten ungeprüft importiert werden?",
+      "hinten": "- Der Import bricht ab, weil Datentypen oder Constraints verletzt werden.\n- Oder fehlerhafte Daten gelangen in den Bestand, z. B. Dubletten, die Auswertungen verfälschen."
+    },
+    {
+      "id": "PB2-6-1-5-K2-1",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K2",
+      "vorne": "Ein Datenbestand mit vielen Mängeln soll trotzdem importiert werden. Welche zwei Wege gibt es?",
+      "hinten": "- die Daten vorher von Hand verbessern\n- ein Importprogramm mit allen nötigen Fehlerbehandlungen schreiben, das fehlerhafte Datensätze abweist und protokolliert"
+    },
+    {
+      "id": "PB2-6-1-5-K2-2",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K2",
+      "vorne": "Warum soll ein Importprogramm fehlerhafte Datensätze protokollieren, statt sie still zu überspringen?",
+      "hinten": "Damit erkennbar ist, welche Datensätze fehlen, und sie gezielt nachbearbeitet und nachgeliefert werden können. Sonst ist der Bestand unbemerkt unvollständig."
+    },
+    {
+      "id": "AP2-4-4-3-K2-1",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K3",
+      "vorne": "Eine von Hand geführte Kundenliste mit 800 Einträgen hat uneinheitliche Datumsformate, teils zwei Telefonnummern in einem Feld und einige Dubletten. Kann sie ohne Nacharbeit importiert werden? Begründe.",
+      "hinten": "Nein:\n- uneinheitliche Datumsformate werden abgelehnt oder falsch gelesen\n- zwei Nummern passen nicht in eine Spalte mit einem Wert\n- Dubletten führen Kunden doppelt\nDie Liste muss vorher bereinigt oder über ein Importprogramm mit Fehlerbehandlung eingelesen werden."
+    },
+    {
+      "id": "PB2-6-1-5-K3-1",
+      "sp": "PB2-6-1-5",
+      "k": "PB2-6-1-5-K3",
+      "vorne": "Die Bereinigung einer fünf Jahre alten Interessentenliste würde mehrere Personentage dauern; gebraucht wird sie nur für eine einmalige Werbeaktion. Würdest du den Import empfehlen? Begründe.",
+      "hinten": "Eher nicht: Der Aufwand der Bereinigung ist hoch, der Nutzen gering – die Daten sind veraltet (viele Adressen nicht mehr gültig) und werden nur einmal gebraucht. Günstiger ist, nur die automatisch verwertbaren Datensätze zu übernehmen oder aktuelle Daten neu zu erheben."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [
+    {
+      "id": "PB2-6-1-2-K6-3",
+      "frage": "Kriterien für pessimistisches Sperren (häufige Konflikte, kurze Bearbeitung) aus allgemeiner Fachliteratur, nicht aus einem Beleg; der Beleg 2021W verlangt nur die Begründung für spätes und kurzes Sperren."
+    }
+  ],
+  "protokoll": [
+    {
+      "id": "AP2-4-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K4-3",
+      "entscheidung": "entfernt",
+      "grund": "P36/E2: PLZ als Text statt Zahl wählen ist Datentypwahl beim Entwurf (PB1-6-1-2-K2, dort CHAR(5) für PLZ); die Nutzung in Bedingungen fragt PB2-5-1-5-K3 ab"
+    },
+    {
+      "id": "AP2-4-1-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K2-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Form des SQL-Auszugs mit ADD COLUMN (P41)"
+    },
+    {
+      "id": "AP2-4-3-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K2-4",
+      "entscheidung": "bearbeitet",
+      "grund": "Standardform nach dem SQL-Auszug (MODIFY COLUMN) statt zweier gleichrangiger Dialekte (P41)"
+    },
+    {
+      "id": "AP2-4-3-2-K2-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "Zweck des Index steht in PB2-6-1-1-K4; dorthin gehängt"
+    },
+    {
+      "id": "AP2-4-3-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-2-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "begründen, wann sich ein Index lohnt, gehört zu Zweck und Nachteil (K4); dorthin gehängt"
+    },
+    {
+      "id": "AP2-4-3-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-3-3-K4-2",
+      "entscheidung": "entfernt",
+      "grund": "P36/E2: Prinzip der minimalen Rechte steht in AP1-7 und im Berechtigungskonzept PB1-10-2-1; hier nur die SQL-Umsetzung"
+    },
+    {
+      "id": "AP2-4-3-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K2-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Stufe 4: aus dem Erkennen der Mängel wird ein Mini-Fall mit Entscheidung und Begründung"
+    },
+    {
+      "id": "AP2-4-4-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "Folgen eines ungeprüften Imports sind Teil von PB2-6-1-5-K1 (Mangel und Folge); dorthin gehängt"
+    },
+    {
+      "id": "PB2-6-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "Tabelle aus Vorgaben anlegen (Stufe 3, Form des SQL-Auszugs)"
+    },
+    {
+      "id": "PB2-6-1-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte (Beleg 2025S)"
+    },
+    {
+      "id": "PB2-6-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte (Beleg 2022S)"
+    },
+    {
+      "id": "PB2-6-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte (Beleg 2022S)"
+    },
+    {
+      "id": "PB2-6-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Unterscheidung aus der Aussage"
+    },
+    {
+      "id": "PB2-6-1-1-K7-3",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage (Änderungen protokollieren)"
+    },
+    {
+      "id": "PB2-6-1-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "UPDATE mit Unterabfrage neu in der Aussage (Beleg 2021W)"
+    },
+    {
+      "id": "PB2-6-1-2-K2-2",
+      "entscheidung": "neu",
+      "grund": "mehrere Bedingungen per IN-Unterabfrage statt UPDATE … FROM … JOIN (Beleg 2023W, Grenze P41)"
+    },
+    {
+      "id": "PB2-6-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "DELETE mit Unterabfrage neu in der Aussage (Beleg 2022S)"
+    },
+    {
+      "id": "PB2-6-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Transaktion neu in der Aussage"
+    },
+    {
+      "id": "PB2-6-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte; Grundlage für die Entscheidung"
+    },
+    {
+      "id": "PB2-6-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "neue Aussage ohne Karte (Stufe 4, Beleg 2021W)"
+    },
+    {
+      "id": "PB2-6-1-2-K6-3",
+      "entscheidung": "neu",
+      "grund": "Gegenrichtung der Entscheidung (Stufe 4)"
+    },
+    {
+      "id": "PB2-6-1-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Objektangaben Datenbank.* und *.* neu in der Aussage"
+    },
+    {
+      "id": "PB2-6-1-3-K2-2",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage (Beleg 2023S/2025S)"
+    },
+    {
+      "id": "PB2-6-1-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Beispiel der Aussage (Beleg 2025S)"
+    },
+    {
+      "id": "PB2-6-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Rollen neu in der Aussage"
+    },
+    {
+      "id": "PB2-6-1-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Rolle entziehen neu in der Aussage"
+    },
+    {
+      "id": "PB2-6-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte (Beleg 2024W)"
+    },
+    {
+      "id": "PB2-6-1-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "PB2-6-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Abwägen Aufwand gegen Nutzen (Stufe 4)"
+    }
+  ]
+}
