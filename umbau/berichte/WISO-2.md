@@ -20,17 +20,16 @@ Teilaufgaben: 2022S-WISO-A17, 2023S-WISO-A27, 2025S-WISO-A1, 2024S-WISO-A9, 2023
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst Betriebe und Tätigkeiten den drei Wirtschaftssektoren zuordnen: primär (Urproduktion wie Landwirtschaft, Forstwirtschaft, Bergbau), sekundär (Be- und Verarbeitung in Industrie und Handwerk, auch das Herstellen von Software oder Geräten), tertiär (Dienstleistungen wie Handel, Banken, Beratung, IT-Dienstleister). | 2 | katalog:WISO.02.01.2, beleg:2022S-WISO-A17, beleg:2023S-WISO-A27, beleg:2025S-WISO-A1 |
-| K2 | Du kannst erwerbswirtschaftliche Betriebe (Ziel ist Gewinn) von gemeinwirtschaftlichen oder gemeinnützigen Betrieben (Ziel ist Bedarfsdeckung) unterscheiden. | 2 | katalog:WISO.02.01.2, beleg:2024S-WISO-A9, beleg:2023S-WISO-A21 |
+| K1 | Du kannst Betriebe und Tätigkeiten den drei Wirtschaftssektoren zuordnen: primär (Urproduktion wie Landwirtschaft, Forstwirtschaft, Bergbau), sekundär (Be- und Verarbeitung in Industrie und Handwerk, Energie und Bau, auch das Herstellen von Software oder Geräten), tertiär (Dienstleistungen wie Handel, Verkehr und Logistik, Banken, Beratung, IT-Dienstleister). | 2 | katalog:WISO.02.01.2, beleg:2022S-WISO-A17, beleg:2023S-WISO-A27, beleg:2025S-WISO-A1 |
+| K2 | Du kannst erwerbswirtschaftliche Betriebe (Ziel ist Gewinn) von gemeinwirtschaftlichen oder gemeinnützigen Betrieben (Ziel ist Bedarfsdeckung) unterscheiden, zum Beispiel ist ein IT-Dienstleister ein erwerbswirtschaftlicher Betrieb des tertiären Sektors. | 2 | katalog:WISO.02.01.2, beleg:2024S-WISO-A9, beleg:2023S-WISO-A21 |
 | K3 | Du kannst Branche, Produktpalette und Markt erklären: der Wirtschaftszweig, alle angebotenen Produkte und Dienstleistungen, das Zusammentreffen von Angebot und Nachfrage. | 2 | katalog:WISO.02.01.1, katalog:WISO.02.01.3 |
-| K4 | Du kannst ein beschriebenes Unternehmen zugleich seiner Branche, seinem Sektor und seiner Betriebsart zuordnen, zum Beispiel ein IT-Dienstleister als erwerbswirtschaftlicher Betrieb des tertiären Sektors. | 2 | katalog:WISO.02.01.1, katalog:WISO.02.01.2, beleg:2024S-WISO-A9 |
 | K5 | Du kannst Beschaffungsmarkt und Absatzmarkt unterscheiden. | 2 | katalog:WISO.02.01.3 |
 
 _Hinweis:_ Marktformen (Monopol, Oligopol, Polypol; 2025S-WISO-A2) stehen in AP1-2-1-1.
 
 #### WISO-2-1-2 Betriebliche und gesamtwirtschaftliche Arbeitsteilung, Globalisierung
 
-Arten der Arbeitsteilung unterscheiden, Globalisierung erklären und Maßnahmen und Folgen der weltweiten Arbeitsteilung beurteilen.
+Arten der Arbeitsteilung unterscheiden, Globalisierung erklären und Maßnahmen und Folgen der weltweiten Arbeitsteilung unterscheiden.
 
 Bausteine: WISO.02.06; WISO.02.06.1 · Gebiete: G.WISO.02
 
@@ -38,12 +37,13 @@ Teilaufgaben: 2025W-WISO-A22, 2025W-WISO-A26, 2022S-WISO-A22
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst betriebliche Arbeitsteilung erklären und an einem Beispiel erkennen: Eine Gesamtaufgabe wird im Betrieb in Teilaufgaben zerlegt und auf Stellen verteilt, zum Beispiel getrennte Stellen für Programmierung, Wartung und Kundenschulung. | 2 | katalog:WISO.02.06, beleg:2025W-WISO-A22 |
-| K2 | Du kannst betriebliche, gesamtwirtschaftliche (zwischen Berufen, Betrieben und Sektoren) und internationale Arbeitsteilung (zwischen Ländern) an einem Beispiel unterscheiden. | 2 | katalog:WISO.02.06, beleg:2025W-WISO-A22 |
+| K2 | Du kannst betriebliche (eine Gesamtaufgabe wird im Betrieb in Teilaufgaben zerlegt und auf Stellen verteilt), gesamtwirtschaftliche (zwischen Berufen, Betrieben und Sektoren) und internationale Arbeitsteilung (zwischen Ländern) an einem Beispiel unterscheiden, zum Beispiel getrennte Stellen für Programmierung, Wartung und Kundenschulung als betriebliche, den Bezug von Bildschirmen aus China als internationale. | 2 | katalog:WISO.02.06, beleg:2025W-WISO-A22 |
 | K3 | Du kannst Globalisierung erklären: die zunehmende weltweite Verflechtung von Handel, Produktion, Kapital und Kommunikation. | 2 | katalog:WISO.02.06.1 |
 | K4 | Du kannst Maßnahmen unterscheiden, die die Globalisierung fördern oder bremsen: Abbau von Zöllen und Handelsschranken und Offenheit für Investitionen aus dem und ins Ausland fördern sie, Importzölle und Beschränkung des Technologietransfers bremsen sie. | 2 | katalog:WISO.02.06.1, beleg:2025W-WISO-A26 |
 | K5 | Du kannst Vorteile und Nachteile der Arbeitsteilung erklären: höhere Produktivität durch Spezialisierung gegenüber einseitiger Arbeit und gegenseitiger Abhängigkeit. | 2 | katalog:WISO.02.06 |
 | K6 | Du kannst Auswirkungen der weltweiten Arbeitsteilung erklären: größere Märkte, günstigere Beschaffung und mehr transportierte Waren gegenüber stärkerem Wettbewerb, Abhängigkeit von Lieferketten und unterschiedlichen Sozial- und Umweltstandards. | 2 | katalog:WISO.02.06.1, beleg:2022S-WISO-A22 |
+
+_Hinweis:_ Wie ein Betrieb Aufgaben auf Stellen verteilt (nach Verrichtung oder Objekt), steht in WISO-2-2-6-K4.
 
 #### WISO-2-1-3 Soziale Marktwirtschaft: Merkmale, Möglichkeiten und Grenzen
 
@@ -56,10 +56,9 @@ Teilaufgaben: 2025W-WISO-A27
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
 | K1 | Du kannst die Merkmale der Sozialen Marktwirtschaft erklären: freier Wettbewerb, Privateigentum und freie Preisbildung, verbunden mit sozialem Ausgleich durch den Staat. | 2 | katalog:WISO.02.06.2 |
-| K2 | Du kannst zutreffende von unzutreffenden Aussagen über die Soziale Marktwirtschaft unterscheiden: Sie will Chancengleichheit durch sozialen Ausgleich und solidarische Hilfe; der Staat setzt keine Preise und Mengen fest, fördert keine Kartelle und rettet nicht jedes Unternehmen. | 2 | katalog:WISO.02.06.2, beleg:2025W-WISO-A27 |
-| K3 | Du kannst Aufgaben des Staates in der Sozialen Marktwirtschaft erklären: den Wettbewerb sichern, soziale Sicherung organisieren, Arbeitnehmer und Verbraucher schützen. | 2 | katalog:WISO.02.06.2 |
+| K2 | Du kannst zutreffende von unzutreffenden Aussagen über die Soziale Marktwirtschaft unterscheiden: Sie will Chancengleichheit durch sozialen Ausgleich und solidarische Hilfe; der Staat setzt nicht allgemein Preise und Angebotsmengen fest (einzelne Eingriffe wie der gesetzliche Mindestlohn sind die Ausnahme), fördert keine Kartelle und rettet nicht jedes Unternehmen. | 2 | katalog:WISO.02.06.2, beleg:2025W-WISO-A27 |
+| K3 | Du kannst Aufgaben des Staates in der Sozialen Marktwirtschaft erklären: den Wettbewerb sichern und, nach dem Sozialstaatsprinzip des Grundgesetzes, für soziale Sicherheit und sozialen Ausgleich sorgen sowie Arbeitnehmer und Verbraucher schützen. | 2 | katalog:WISO.02.06.2 |
 | K4 | Du kannst Grenzen der Sozialen Marktwirtschaft beschreiben: Sozialleistungen müssen finanziert werden, und der Staat kann Arbeitslosigkeit oder ungleiche Einkommen nicht vollständig verhindern. | 2 | katalog:WISO.02.06.2 |
-| K6 | Du kannst einem Sachverhalt das Sozialstaatsprinzip zuordnen: Der Staat ist verpflichtet, für soziale Sicherheit und sozialen Ausgleich zu sorgen. | 2 | katalog:WISO.02.06.2 |
 
 #### WISO-2-1-4 Konjunktur: Phasen, Merkmale und Maßnahmen (neu)
 
@@ -71,10 +70,10 @@ Teilaufgaben: 2025S-WISO-A4, 2023S-WISO-A26, 2025S-WISO-A5, 2025S-WISO-A6, 2025W
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst die Phasen des Konjunkturzyklus in ihrer Reihenfolge erklären: Aufschwung (Expansion), Hochkonjunktur (Boom), Abschwung (Rezession) und Tiefstand (Depression). | 2 | katalog:ZB.wiso-konjunktur |
-| K2 | Du kannst eine beschriebene wirtschaftliche Lage anhand von Wachstum des Bruttoinlandsprodukts, Arbeitslosenquote und Inflationsrate einer Konjunkturphase zuordnen, zum Beispiel schrumpfendes BIP und steigende Arbeitslosigkeit dem Abschwung. _(vorgegeben: Kennzahlen in einer Tabelle im Aufgabentext)_ | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A4 |
+| K1 | Du kannst die Phasen des Konjunkturzyklus in ihrer Reihenfolge und mit ihren Merkmalen erklären: Aufschwung (Expansion: Nachfrage, Produktion und Beschäftigung steigen), Hochkonjunktur (Boom: Kapazitäten ausgelastet, kaum Arbeitslosigkeit, stark steigende Preise), Abschwung (Rezession: die Wirtschaftsleistung schrumpft, die Arbeitslosigkeit steigt) und Tiefstand (Depression: Wirtschaftsleistung auf niedrigem Niveau, hohe Arbeitslosigkeit, der Tiefpunkt ist erreicht); Stagnation heißt, dass die Wirtschaft nicht wächst. | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A4 |
+| K2 | Du kannst eine beschriebene wirtschaftliche Lage anhand von Wachstum des Bruttoinlandsprodukts, Arbeitslosenquote und Inflationsrate einer Konjunkturphase zuordnen, zum Beispiel schrumpfendes BIP und steigende Arbeitslosigkeit dem Abschwung, solange der Tiefpunkt noch nicht erreicht ist. _(vorgegeben: Kennzahlen in einer Tabelle im Aufgabentext)_ | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A4 |
 | K3 | Du kannst typische Merkmale einer Rezession erkennen und von denen eines Aufschwungs unterscheiden: Konsumnachfrage geht zurück, Lagerbestände steigen, Investitionen, Kapazitätsauslastung und Beschäftigung sinken. | 2 | katalog:ZB.wiso-konjunktur, beleg:2023S-WISO-A26, beleg:2025S-WISO-A5 |
-| K4 | Du kannst Maßnahmen unterscheiden, die die Konjunktur beleben (höhere staatliche Investitionen, Steuersenkungen, niedrigere Leitzinsen) oder dämpfen (Steuer- und Zinserhöhungen, Kürzung staatlicher Leistungen). | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A6, beleg:2025W-WISO-A5 |
+| K4 | Du kannst Maßnahmen unterscheiden, die die Konjunktur beleben (höhere staatliche Investitionen, Steuersenkungen; geldpolitisch niedrigere Leitzinsen, über die die Europäische Zentralbank entscheidet, nicht der Staat) oder dämpfen (Steuererhöhungen, Kürzung staatlicher Leistungen; höhere Leitzinsen). | 2 | katalog:ZB.wiso-konjunktur, beleg:2025S-WISO-A6, beleg:2025W-WISO-A5 |
 
 _Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Konjunktur steht nicht im Katalog, kam aber in drei der acht Prüfungen vor. Real- und Nominaleinkommen bei steigenden Preisen (2023S-WISO-A9) stehen in WISO-1-6-1-K6.
 
@@ -84,36 +83,44 @@ _Welche Rechtsformen es gibt, wie GmbH und AG funktionieren und den Gewinn verte
 
 #### WISO-2-2-1 Einzelunternehmen, GbR und Personengesellschaften: OHG, KG, GmbH & Co. KG
 
-Personengesellschaften nach Gründerzahl, Haftung und Geschäftsführung unterscheiden und Rechtsformen an ihren Merkmalen erkennen.
+Einzelunternehmen und Personengesellschaften nach Gründerzahl, Haftung und Geschäftsführung unterscheiden.
 
-Bausteine: WISO.02.02; WISO.02.02.1; WISO.02.02.2 · Gebiete: G.WISO.02
+Bausteine: WISO.02.02.1; WISO.02.02.2 · Gebiete: G.WISO.02
 
-Teilaufgaben: 2023S-WISO-A13, 2023S-WISO-A23, 2023W-WISO-A15
+Teilaufgaben: 2023S-WISO-A13
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst Einzelunternehmen, GbR, OHG, KG und GmbH & Co. KG von den Kapitalgesellschaften abgrenzen: Bei ihnen stehen die Personen im Vordergrund, ein Mindestkapital ist nicht vorgeschrieben. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
-| K2 | Du kannst die Haftung erklären: Der Einzelunternehmer und die Gesellschafter von GbR und OHG haften unbeschränkt, auch mit ihrem Privatvermögen. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
+| K1 | Du kannst Einzelunternehmen, GbR, OHG, KG und GmbH & Co. KG von den Kapitalgesellschaften abgrenzen: Bei ihnen stehen die Personen im Vordergrund, ein Mindestkapital ist für die Gesellschaft selbst nicht vorgeschrieben (bei der GmbH & Co. KG braucht aber die Komplementär-GmbH ihr Stammkapital). | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
+| K2 | Du kannst die Haftung erklären: Der Einzelunternehmer haftet unbeschränkt; die Gesellschafter von GbR und OHG haften unbeschränkt, unmittelbar und gesamtschuldnerisch, also jeder auch mit seinem Privatvermögen für alle Schulden der Gesellschaft. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
+| K7 | Du kannst die Geschäftsführung in GbR und OHG erklären: Alle Gesellschafter sind zur Geschäftsführung berechtigt und verpflichtet, in der GbR grundsätzlich gemeinsam, in der OHG jeder allein, wenn der Gesellschaftsvertrag nichts anderes regelt. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
 | K3 | Du kannst die KG erklären: Der Komplementär haftet unbeschränkt und führt die Geschäfte, der Kommanditist haftet nur bis zur Höhe seiner Einlage und ist von der Geschäftsführung ausgeschlossen. | 2 | katalog:WISO.02.02.2, beleg:2023S-WISO-A13 |
 | K4 | Du kannst die GmbH & Co. KG erklären: eine KG, deren unbeschränkt haftender Gesellschafter eine GmbH ist, sodass am Ende keine natürliche Person unbeschränkt haftet. | 2 | katalog:WISO.02.02.2 |
 | K5 | Du kannst erklären, dass eine Personengesellschaft wie GbR, OHG oder KG mindestens zwei Gesellschafter braucht, während ein Einzelunternehmen einer Person gehört. | 2 | katalog:WISO.02.02.1, katalog:WISO.02.02.2 |
-| K6 | Du kannst Rechtsformen ihren Merkmalen zuordnen und für eine Gründung mit Vorgaben zu Geschäftsführung, Haftung und Kapital die passende Rechtsform zuordnen: alle haften persönlich (OHG), Anteile an der Börse (AG), Stammkapital mindestens 25.000 Euro und Gesellschafterversammlung (GmbH), Eintrag im Genossenschaftsregister (eG). | 2 | katalog:WISO.02.02, beleg:2023S-WISO-A23, beleg:2023W-WISO-A15 |
 
-#### WISO-2-2-2 Kapitalgesellschaften GmbH und AG, gemeinnützige Organisationen
+_Hinweis:_ Die Rechtsform für eine Gründung wählen und die eG (2023S-WISO-A23, 2023W-WISO-A15) steht in WISO-2-2-2-K7 und -K8.
 
-Gründung, Haftung, Geschäftsführung und Ziele von GmbH und AG erklären und gemeinnützige Organisationen einordnen.
+#### WISO-2-2-2 Kapitalgesellschaften GmbH und AG, Genossenschaft, gemeinnützige Organisationen, Wahl der Rechtsform
 
-Bausteine: WISO.02.02.3 (GmbH und AG); WISO.02.02.4 · Gebiete: G.WISO.02
+Gründung, Haftung, Geschäftsführung und Ziele von GmbH und AG erklären, Genossenschaft und gemeinnützige Organisationen einordnen und einer Gründung die passende Rechtsform zuordnen.
 
-Teilaufgaben: 2021W-WISO-A12, 2022W-WISO-A2, 2023S-WISO-A15, 2023W-WISO-A19, 2024S-WISO-A17, 2025S-WISO-A21, 2025S-WISO-A22, 2025W-WISO-A18, 2025W-WISO-A19, 2023S-WISO-A21, 2023S-WISO-A22
+Bausteine: WISO.02.02; WISO.02.02.3 (GmbH und AG); WISO.02.02.4 · Gebiete: G.WISO.02
+
+Teilaufgaben: 2021W-WISO-A12, 2022W-WISO-A2, 2023S-WISO-A15, 2023W-WISO-A19, 2024S-WISO-A17, 2025S-WISO-A21, 2025S-WISO-A22, 2025W-WISO-A18, 2025W-WISO-A19, 2023S-WISO-A21, 2023S-WISO-A22, 2023S-WISO-A23, 2023W-WISO-A15
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst die Gründung einer GmbH beschreiben: durch eine oder mehrere Personen, mit notariell beurkundetem Gesellschaftsvertrag, einem Stammkapital von mindestens 25.000 Euro (bei der Anmeldung mindestens die Hälfte eingezahlt) und der Eintragung ins Handelsregister, mit der die GmbH entsteht. | 2 | katalog:WISO.02.02.3, beleg:2021W-WISO-A12, beleg:2023W-WISO-A19, beleg:2024S-WISO-A17, beleg:2025S-WISO-A21, beleg:2025W-WISO-A18 |
-| K2 | Du kannst die Haftung der GmbH erklären: Sie ist eine Kapitalgesellschaft und juristische Person; für ihre Schulden haftet nur das Gesellschaftsvermögen, die Gesellschafter verlieren höchstens ihre Einlage. | 2 | katalog:WISO.02.02.3, beleg:2023S-WISO-A15, beleg:2022W-WISO-A2 |
+| K1 | Du kannst die Gründung einer GmbH beschreiben: durch eine oder mehrere Personen, mit notariell beurkundetem Gesellschaftsvertrag, einem Stammkapital von mindestens 25.000 Euro, auf das vor der Anmeldung auf jeden Geschäftsanteil mindestens ein Viertel und insgesamt mindestens 12.500 Euro eingezahlt sein müssen (Sacheinlagen vollständig), und der Eintragung ins Handelsregister, mit der die GmbH entsteht. | 2 | katalog:WISO.02.02.3, beleg:2021W-WISO-A12, beleg:2023W-WISO-A19, beleg:2024S-WISO-A17, beleg:2025S-WISO-A21, beleg:2025W-WISO-A18 |
+| K2 | Du kannst die Haftung der GmbH erklären: Sie ist eine Kapitalgesellschaft und juristische Person des Privatrechts (keine juristische Person oder Körperschaft des öffentlichen Rechts wie eine Kammer); für ihre Schulden haftet nur das Gesellschaftsvermögen, die Gesellschafter verlieren höchstens ihre Einlage. | 2 | katalog:WISO.02.02.3, beleg:2023S-WISO-A15, beleg:2022W-WISO-A2 |
 | K3 | Du kannst Geschäftsführung und Organe der GmbH erklären: Geschäftsführer leiten und vertreten die GmbH, Gesellschafter oder fremde Personen können es sein; die Gesellschafter entscheiden in der Gesellschafterversammlung und müssen nicht selbst mitarbeiten. | 2 | katalog:WISO.02.02.3, beleg:2025S-WISO-A22, beleg:2025W-WISO-A19 |
-| K5 | Du kannst die AG in Grundzügen beschreiben und von der GmbH unterscheiden: Grundkapital mindestens 50.000 Euro in Aktien, die an der Börse gehandelt werden können; Organe Vorstand, Aufsichtsrat und Hauptversammlung; vorrangiges Ziel ist Gewinn, aus dem die Aktionäre Dividende erhalten. | 2 | katalog:WISO.02.02.3, beleg:2023S-WISO-A21, beleg:2023S-WISO-A22 |
+| K5 | Du kannst die AG in Grundzügen beschreiben und von der GmbH unterscheiden: Grundkapital mindestens 50.000 Euro in Aktien, die an der Börse gehandelt werden können; Organe Vorstand, Aufsichtsrat und Hauptversammlung; vorrangiges Ziel ist Gewinn, aus dem die Aktionäre Dividende erhalten. | 2 | katalog:WISO.02.02.3, beleg:2023S-WISO-A21, beleg:2023S-WISO-A22, beleg:2023S-WISO-A23 |
 | K6 | Du kannst gemeinnützige Organisationen erklären: Sie verfolgen einen Zweck für die Allgemeinheit, schütten keinen Gewinn an Eigentümer aus und sind steuerlich begünstigt, zum Beispiel als eingetragener Verein, Stiftung oder gemeinnützige GmbH. | 2 | katalog:WISO.02.02.4 |
+| K7 | Du kannst die eingetragene Genossenschaft (eG) erklären: Sie braucht mindestens drei Mitglieder, fördert vor allem den Erwerb oder die Wirtschaft ihrer Mitglieder, haftet für ihre Schulden nur mit dem Genossenschaftsvermögen und wird ins Genossenschaftsregister eingetragen. | 2 | katalog:WISO.02.02, beleg:2023S-WISO-A23, beleg:2023W-WISO-A15 |
+| K8 | Du kannst einer Gründung mit Vorgaben zu Zahl der Gründer, Geschäftsführung, Haftung und Kapital die passende Rechtsform zuordnen und die übrigen an je einem Merkmal ausschließen, zum Beispiel zwei Gründer, beide Geschäftsführer, beschränkte Haftung, 40.000 Euro Kapital: GmbH (nicht AG mit Vorstand und Börse, nicht KG oder GbR mit persönlicher Haftung, nicht eG mit mindestens drei Mitgliedern). | 2 | katalog:WISO.02.02, katalog:WISO.02.02.3, beleg:2023W-WISO-A15 |
+
+**Grenze:** Unternehmergesellschaft (haftungsbeschränkt), KGaA und SE gehören nicht dazu. — _Der Katalog nennt als Kapitalgesellschaften GmbH und AG als Beispiele (WISO.02.02.3); weitere Formen wären nach P-BEISPIELLISTE nur mit zwei unabhängigen Hinweisquellen Puffer, sonst Kür (G3)._ (WISO.02.02.3)
+
+_Hinweis:_ Personengesellschaften (Haftung, Geschäftsführung) stehen in WISO-2-2-1; K8 setzt sie voraus.
 
 #### WISO-2-2-3 Gewinnverteilung in der GmbH berechnen
 
@@ -131,26 +138,26 @@ Teilaufgaben: 2022S-WISO-A18, 2024S-WISO-A16, 2025S-WISO-A23, 2025W-WISO-A20
 
 #### WISO-2-2-4 Kaufmann, Firma und Handelsregister (neu)
 
-Kaufmannsarten unterscheiden, das Handelsregister und seine Abteilungen erklären, einen Registerauszug lesen und die Firma erklären.
+Den Ist-Kaufmann und die Wirkung der Handelsregistereintragung erklären, die Abteilungen des Handelsregisters unterscheiden, einen Registerauszug lesen und die Firma erklären.
 
-Bausteine: ZB.wiso-kaufmann · Gebiete: G.WISO.02
+Bausteine: ZB.wiso-kaufmann · Gebiete: G.WISO.02 · baut auf: AP1-2-4-3
 
-Teilaufgaben: 2023W-WISO-A5, 2022W-WISO-A24, 2025W-WISO-A18, 2024S-WISO-A15, 2025S-WISO-A21
+Teilaufgaben: 2023W-WISO-A5, 2022W-WISO-A24, 2025W-WISO-A18, 2024S-WISO-A15, 2025S-WISO-A21, 2025W-WISO-A19
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
 | K1 | Du kannst das Handelsregister erklären: ein öffentliches Verzeichnis beim Amtsgericht, in Abteilung A mit Einzelkaufleuten und Personengesellschaften, in Abteilung B mit Kapitalgesellschaften; die Kammer führt es nicht. | 2 | katalog:ZB.wiso-kaufmann, beleg:2023W-WISO-A5 |
 | K2 | Du kannst deklaratorische und konstitutive Eintragung unterscheiden: Der Ist-Kaufmann (Gewerbe, das eine kaufmännische Einrichtung braucht) ist schon vor der Eintragung Kaufmann, die Eintragung bestätigt das nur; eine GmbH oder AG entsteht erst mit der Eintragung. | 2 | katalog:ZB.wiso-kaufmann, beleg:2022W-WISO-A24, beleg:2025W-WISO-A18 |
 | K3 | Du kannst einen Auszug aus dem Handelsregister von anderen Registern wie Grundbuch oder Vereinsregister unterscheiden und ihm Firma, Sitz, Stamm- oder Grundkapital, Gesellschafter und Prokura entnehmen. _(vorgegeben: Registerauszug im Aufgabentext)_ | 2 | katalog:ZB.wiso-kaufmann, beleg:2024S-WISO-A15 |
-| K4 | Du kannst die Firma erklären: der Name, unter dem ein Kaufmann seine Geschäfte betreibt; sie muss die Rechtsform nennen und sich von anderen Firmen am selben Ort deutlich unterscheiden. | 2 | katalog:ZB.wiso-kaufmann, beleg:2025S-WISO-A21 |
+| K4 | Du kannst die Firma erklären: der Name, unter dem ein Kaufmann seine Geschäfte betreibt; sie muss die Rechtsform nennen (also „EcoTech Services GmbH“, nicht nur „EcoTech Services“) und sich von anderen Firmen am selben Ort deutlich unterscheiden. | 2 | katalog:ZB.wiso-kaufmann, beleg:2025S-WISO-A21, beleg:2025W-WISO-A19 |
 
-_Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Kaufmann und Handelsregister stehen nicht im Katalog, kamen aber in fünf Prüfungen vor.
+_Hinweis:_ Neuer Stichpunkt (Zusatzbaustein): Kaufmann und Handelsregister stehen nicht im Katalog, kamen aber in fünf Prüfungen vor. Prokura und ihre Eintragung ins Handelsregister stehen in AP1-2-4-3.
 
 #### WISO-2-2-5 Leitungssysteme: Stabliniensystem und Spartenorganisation (neu)
 
-Über die Formen aus AP1 hinaus Stabliniensystem und Spartenorganisation am Organigramm erkennen und erklären.
+Über die Formen aus AP1 hinaus Stabliniensystem und Spartenorganisation am Organigramm erkennen und erklären und den Leitungssystemen ihre Vor- und Nachteile zuordnen.
 
-Bausteine: WISO.02.03.1 (Stabliniensystem); WISO.02.03.2 · Gebiete: G.WISO.02 · baut auf: AP1-2-4-2
+Bausteine: WISO.02.03.1 (Stabliniensystem; Vor- und Nachteile des Mehrliniensystems); WISO.02.03.2; WISO.02.03.3 (Vor- und Nachteile) · Gebiete: G.WISO.02 · baut auf: AP1-2-4-2
 
 Teilaufgaben: 2021W-WISO-A13, 2022S-WISO-A21, 2023W-WISO-A21, 2024S-WISO-A21, 2025W-WISO-A23, 2025W-WISO-A24
 
@@ -159,9 +166,9 @@ Teilaufgaben: 2021W-WISO-A13, 2022S-WISO-A21, 2023W-WISO-A21, 2024S-WISO-A21, 20
 | K1 | Du kannst an einem Organigramm das Stabliniensystem (Stabsstellen seitlich an einer Instanz) und die Spartenorganisation (Gliederung nach Produkten, Kunden oder Regionen) von Einlinien-, Mehrlinien- und Matrixsystem unterscheiden. | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, beleg:2021W-WISO-A13, beleg:2025W-WISO-A23 |
 | K2 | Du kannst das Stabliniensystem erklären: ein Liniensystem mit Stabsstellen, die die Leitung beraten und Entscheidungen vorbereiten, aber keine Weisungsbefugnis haben, zum Beispiel eine Rechtsabteilung. | 2 | katalog:WISO.02.03.1, beleg:2025W-WISO-A24, beleg:2021W-WISO-A13 |
 | K3 | Du kannst die Spartenorganisation erklären: Das Unternehmen ist nach Produkten, Kundengruppen oder Regionen gegliedert, und jede Sparte hat ihre eigenen Funktionsbereiche. | 2 | katalog:WISO.02.03.2 |
-| K4 | Du kannst Vor- und Nachteile von Stabliniensystem und Spartenorganisation erklären: Entlastung der Leitung durch Spezialwissen gegenüber Konflikten zwischen Stab und Linie; Marktnähe der Sparten gegenüber Doppelarbeit in den Funktionsbereichen. | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, beleg:2021W-WISO-A13 |
+| K4 | Du kannst den Leitungssystemen ihre Vor- und Nachteile zuordnen: Stabliniensystem (Entlastung der Leitung durch das Spezialwissen der Stäbe gegenüber Konflikten zwischen Stab und Linie), Spartenorganisation (Marktnähe der Sparten gegenüber Doppelarbeit in den Funktionsbereichen), Mehrliniensystem (kurze Wege und Fachwissen der Vorgesetzten gegenüber uneinheitlicher Führung und Kompetenzkonflikten), Matrixorganisation (hoher Abstimmungs- und Kommunikationsbedarf, verlangt Teamfähigkeit). | 2 | katalog:WISO.02.03.1, katalog:WISO.02.03.2, katalog:WISO.02.03.3, beleg:2021W-WISO-A13 |
 
-_Hinweis:_ Einlinien-, Mehrlinien- und Matrixorganisation (Erkennen am Organigramm, Unterschiede, Vor- und Nachteile) stehen in AP1-2-4-2; damit lösen sich 2022S-WISO-A21, 2023W-WISO-A21 und 2024S-WISO-A21. Früher Stichpunkt WISO-2-3-1.
+_Hinweis:_ Einlinien-, Mehrlinien- und Matrixorganisation (Erkennen am Organigramm, Unterschiede, je einen Vor- und Nachteil nennen) stehen in AP1-2-4-2; damit lösen sich 2022S-WISO-A21, 2023W-WISO-A21 und 2024S-WISO-A21. Das Zuordnen von Vor- und Nachteilen zu Mehrlinien- und Matrixsystem (2021W-WISO-A13) geht darüber hinaus und steht in K4. Früher Stichpunkt WISO-2-3-1.
 
 #### WISO-2-2-6 Arbeitsabläufe und Aufgabenteilung: Ablauforganisation, Stelle und Abteilung (neu)
 
@@ -169,17 +176,16 @@ Aufbau- und Ablauforganisation unterscheiden, Stelle, Abteilung und Instanz erkl
 
 Bausteine: WISO.02.03.4; WISO.02.03.5 · Gebiete: G.WISO.02
 
-Teilaufgaben: 2025W-WISO-A22
+Teilaufgaben: 
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
 | K1 | Du kannst Aufbauorganisation (wer ist wofür zuständig und wem unterstellt) und Ablauforganisation (in welcher Reihenfolge, wann und womit gearbeitet wird) unterscheiden. | 2 | katalog:WISO.02.03.4 |
 | K2 | Du kannst die Schritte eines beschriebenen Arbeitsablaufs den beteiligten Stellen oder Abteilungen zuordnen. | 2 | katalog:WISO.02.03.4 |
 | K3 | Du kannst Stelle (kleinste Einheit mit festem Aufgabenbereich), Abteilung (mehrere Stellen unter einer Leitung) und Instanz (Stelle mit Weisungsbefugnis) erklären. | 2 | katalog:WISO.02.03.5 |
-| K4 | Du kannst zwei Arten der Aufgabenteilung unterscheiden: nach Tätigkeit (Verrichtung), zum Beispiel Einkauf, Entwicklung, Vertrieb, oder nach Gegenstand (Objekt), zum Beispiel Produkt oder Kundengruppe. | 2 | katalog:WISO.02.03.5, beleg:2025W-WISO-A22 |
-| K5 | Du kannst Inhalte einer Stellenbeschreibung erklären: Aufgaben, Befugnisse, Über- und Unterstellung, Anforderungen. | 2 | katalog:WISO.02.03.5 |
+| K4 | Du kannst zwei Arten der Aufgabenteilung unterscheiden: nach Tätigkeit (Verrichtung), zum Beispiel Einkauf, Entwicklung, Vertrieb, oder nach Gegenstand (Objekt), zum Beispiel Produkt oder Kundengruppe. | 2 | katalog:WISO.02.03.5 |
 
-_Hinweis:_ Früher Stichpunkt WISO-2-3-2.
+_Hinweis:_ Früher Stichpunkt WISO-2-3-2. Betriebliche Arbeitsteilung erkennen (2025W-WISO-A22) steht in WISO-2-1-2-K2.
 
 ### WISO-2-4 Unternehmensziele, Kennzahlen und ökonomisches Prinzip
 
@@ -195,12 +201,12 @@ Teilaufgaben: 2023S-WISO-A17, 2022S-WISO-A19, 2023W-WISO-A20, 2024S-WISO-A20, 20
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K1 | Du kannst die Produktivität berechnen: Ausbringungsmenge geteilt durch Einsatzmenge, zum Beispiel Umsatz je Mitarbeiter, und ihre Veränderung in Prozent angeben. | 3 | katalog:WISO.02.05.1, beleg:2023S-WISO-A17 |
+| K1 | Du kannst die Produktivität berechnen: Ausbringung geteilt durch den Einsatz eines Faktors, zum Beispiel Stück je Arbeitsstunde oder Umsatz je Mitarbeiter, und ihre Veränderung in Prozent angeben. | 3 | katalog:WISO.02.05.1, beleg:2023S-WISO-A17 |
 | K2 | Du kannst die Wirtschaftlichkeit berechnen und mehrere Aufträge vergleichen: Ertrag geteilt durch Aufwand; der Auftrag mit dem höchsten Wert ist am wirtschaftlichsten, ein Wert über 1 bedeutet Gewinn. | 3 | katalog:WISO.02.05.2, beleg:2022S-WISO-A19, beleg:2023W-WISO-A20, beleg:2024S-WISO-A20 |
 | K3 | Du kannst die Eigenkapitalrentabilität berechnen: Gewinn mal 100 geteilt durch das Eigenkapital, auch für einen einzelnen Gesellschafter aus Gewinnanteil und Einlage. | 3 | katalog:WISO.02.05.3, beleg:2022W-WISO-A3, beleg:2023W-WISO-A16 |
-| K4 | Du kannst die drei Kennzahlen unterscheiden: Produktivität vergleicht Mengen, Wirtschaftlichkeit vergleicht Werte in Euro, Rentabilität setzt den Gewinn ins Verhältnis zum eingesetzten Kapital oder Umsatz. | 2 | katalog:WISO.02.05.1, katalog:WISO.02.05.2, katalog:WISO.02.05.3 |
-| K5 | Du kannst die Umsatzrentabilität berechnen: Gewinn mal 100 geteilt durch den Umsatz. | 3 | katalog:WISO.02.05.3 |
-| K6 | Du kannst die Gesamtkapitalrentabilität berechnen: Gewinn plus Fremdkapitalzinsen, mal 100, geteilt durch das Gesamtkapital. | 3 | katalog:WISO.02.05.3 |
+| K4 | Du kannst die drei Kennzahlen unterscheiden: Produktivität setzt die Ausbringung ins Verhältnis zum Einsatz eines Faktors (meist mengenmäßig, zum Beispiel Stück je Stunde, als Umsatz je Mitarbeiter auch wertmäßig), Wirtschaftlichkeit setzt Ertrag und Aufwand in Euro ins Verhältnis, Rentabilität den Gewinn zum eingesetzten Kapital oder zum Umsatz. | 2 | katalog:WISO.02.05.1, katalog:WISO.02.05.2, katalog:WISO.02.05.3 |
+| K5 | Du kannst die Umsatzrentabilität berechnen: Gewinn mal 100 geteilt durch den Umsatz. | 3 | katalog:WISO.02.05.3, regel:P-GESCHWISTER |
+| K6 | Du kannst die Gesamtkapitalrentabilität berechnen: Gewinn plus Fremdkapitalzinsen, mal 100, geteilt durch das Gesamtkapital. | 3 | katalog:WISO.02.05.3, regel:P-GESCHWISTER |
 
 #### WISO-2-4-2 Zielbeziehungen: Zielkonflikt, Zielharmonie, Zielneutralität
 
@@ -252,14 +258,16 @@ Teilaufgaben: 2022S-WISO-A20, 2023W-WISO-A23, 2024S-WISO-A22, 2025W-WISO-A28
 | K2 | Du kannst das Kartell erklären: Selbstständige Unternehmen derselben Stufe sprechen sich ab, zum Beispiel über Preise, Gebiete oder Quoten, um den Wettbewerb zu beschränken; solche Absprachen sind grundsätzlich verboten, harmlose wie gemeinsame Normen und Typen können erlaubt sein. | 2 | katalog:WISO.02.04.2, beleg:2023W-WISO-A23, beleg:2024S-WISO-A22 |
 | K3 | Du kannst die Fusion erklären: Unternehmen verschmelzen zu einem einzigen und verlieren ihre rechtliche und wirtschaftliche Selbstständigkeit. | 2 | katalog:WISO.02.04.3 |
 | K4 | Du kannst Auswirkungen einer Fusion erklären: Rationalisierung und Einsparungen, breitere Kapitalbasis und bessere Finanzierung, mehr Marktmacht; möglich ist auch der Abbau von Arbeitsplätzen. | 2 | katalog:WISO.02.04.3, beleg:2025W-WISO-A28 |
-| K5 | Du kannst die Arbeitsgemeinschaft erklären: Selbstständige Unternehmen arbeiten für einen bestimmten Auftrag auf Zeit zusammen. | 2 | katalog:WISO.02.04.1 |
+| K5 | Du kannst Arbeitsgemeinschaft (Zusammenarbeit für einen bestimmten Auftrag auf Zeit) und Interessengemeinschaft (Zusammenarbeit auf Dauer für einen gemeinsamen Zweck, zum Beispiel Forschung) vom Konzern unterscheiden: In beiden bleiben die Unternehmen rechtlich selbstständig und arbeiten nur in einem Teilbereich zusammen, ohne unter eine einheitliche Leitung zu treten. | 2 | katalog:WISO.02.04.1, beleg:2022S-WISO-A20 |
 | K6 | Du kannst die Aufgabe des Bundeskartellamts erklären: Es prüft große Zusammenschlüsse und verfolgt verbotene Kartelle. | 2 | katalog:WISO.02.04.2 |
+
+**Grenze:** Einzelheiten des Kartellrechts (GWB) und der Fusionskontrolle, etwa Schwellenwerte, Fristen oder Ausnahmetatbestände, gehören nicht dazu. — _Der Katalog nennt Kartell und Fusion ohne Operator (WISO.02.04.2, WISO.02.04.3: Stufe 2, erkennen und erklären); Rechtsdetails gehen darüber hinaus (G3) und sind in Auswahlaufgaben ohne Hilfsmittel kaum abfragbar (G4)._ (WISO.02.04.2, WISO.02.04.3)
 
 _Hinweis:_ 2024S-WISO-A22 fragt nach einem „anmeldepflichtigen“ Kartell; die IHK-Lösung (Normen- und Typenkartell) gibt die Rechtslage vor 2005 wieder. Seitdem gibt es keine Anmeldepflicht mehr; Unternehmen prüfen selbst, ob eine Absprache ausnahmsweise erlaubt ist (P35 Nr. 7 sinngemäß).
 
 #### WISO-2-5-2 Branchenorganisation, Wirtschaftsorganisationen, berufsständische Vertretungen und Ehrenamt
 
-Erklären, wie Gewerkschaften, Arbeitgeberverbände und Wirtschaftsorganisationen nach Branchen organisiert sind, berufsständische Vertretungen einordnen und ehrenamtliche Mitwirkung beschreiben.
+Einem Betrieb über seine Branche Tarifpartner und Branchenverband zuordnen, berufsständische Vertretungen einordnen und ehrenamtliche Mitwirkung beschreiben.
 
 Bausteine: WISO.02.07.1; WISO.02.07.2; WISO.02.07.3; WISO.02.07.4 · Gebiete: G.WISO.02
 
@@ -267,12 +275,11 @@ Teilaufgaben:
 
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
-| K3 | Du kannst erklären, dass Gewerkschaften und Arbeitgeberverbände nach Branchen organisiert sind, und daraus ableiten, wer für einen Betrieb Tarifpartner ist. | 2 | katalog:WISO.02.07.1 |
+| K3 | Du kannst einem Betrieb anhand seiner Branche seine Tarifpartner und seinen Branchenverband zuordnen, zum Beispiel in der Metall- und Elektroindustrie die IG Metall und den Arbeitgeberverband der Metall- und Elektroindustrie, für einen IT-Betrieb den Wirtschaftsverband Bitkom, der keine Tarifverträge abschließt. | 2 | katalog:WISO.02.07.1, katalog:WISO.02.07.2 |
 | K4 | Du kannst ehrenamtliche Mitwirkung am Beispiel des Prüfungsausschusses der Kammer erklären: Arbeitgeber, Arbeitnehmer und Lehrkräfte nehmen dort ehrenamtlich die Prüfungen ab. | 2 | katalog:WISO.02.07.4 |
-| K5 | Du kannst Wirtschaftsorganisationen einordnen: Kammern wie die Industrie- und Handelskammer oder die Handwerkskammer und Branchenverbände vertreten die Interessen der Betriebe. | 2 | katalog:WISO.02.07.2 |
 | K6 | Du kannst berufsständische Vertretungen erklären: Kammern bestimmter Berufe, zum Beispiel der Ärzte oder Rechtsanwälte, die ihre Mitglieder vertreten und die Berufsausübung überwachen. | 2 | katalog:WISO.02.07.3 |
 
-_Hinweis:_ Ziele und Aufgaben von Gewerkschaften und Arbeitgeberverbänden stehen in WISO-1-5-3.
+_Hinweis:_ Ziele und Aufgaben von Gewerkschaften, Arbeitgeberverbänden, Kammern (IHK, Handwerkskammer) und Wirtschaftsverbänden stehen in WISO-1-5-3; hier nur die Zuordnung über die Branche.
 
 #### WISO-2-5-3 Behörden und Verwaltungen: Ziele und Aufgaben
 
@@ -285,8 +292,10 @@ Teilaufgaben:
 | ID | Können | Stufe | Herkunft |
 |---|---|---|---|
 | K1 | Du kannst erklären, dass Behörden und Verwaltungen Gesetze ausführen und dem Gemeinwohl dienen, während erwerbswirtschaftliche Betriebe Gewinn anstreben. | 2 | katalog:WISO.02.08 |
-| K2 | Du kannst Behörden ihre Aufgabe zuordnen: Gewerbeamt (Anmeldung eines Gewerbes), Finanzamt (Steuern), Amtsgericht (Handelsregister), Agentur für Arbeit (Arbeitsvermittlung und Arbeitslosengeld), Gewerbeaufsicht (Arbeitsschutz). | 2 | katalog:WISO.02.08 |
-| K3 | Du kannst die drei Ebenen der Verwaltung unterscheiden: Bund, Länder und Gemeinden. | 2 | katalog:WISO.02.08 |
+| K2 | Du kannst Behörden ihre Aufgabe zuordnen: Gewerbeamt (Anmeldung eines Gewerbes, nicht zu verwechseln mit der Gewerbeaufsicht für den Arbeitsschutz), Finanzamt (Steuern), Agentur für Arbeit (Arbeitsvermittlung und Arbeitslosengeld). | 2 | katalog:WISO.02.08 |
+| K3 | Du kannst die drei Ebenen der öffentlichen Verwaltung unterscheiden: Bund (zum Beispiel die Bundesagentur für Arbeit mit den örtlichen Agenturen für Arbeit), Länder (zum Beispiel die Finanzämter) und Gemeinden und Städte (zum Beispiel das Gewerbeamt). | 2 | katalog:WISO.02.08 |
+
+_Hinweis:_ Handelsregister beim Amtsgericht: WISO-2-2-4-K1; Gewerbeaufsicht und Arbeitsschutz: WISO-3-1-1; Bundeskartellamt: WISO-2-5-1-K6.
 
 ## Tiefe je Baustein (T8)
 
@@ -302,6 +311,7 @@ Teilaufgaben:
 | WISO.02.02.4 | 2 | 2 |  |
 | WISO.02.03.1 | 2 | 2 | ja |
 | WISO.02.03.2 | 2 | 2 |  |
+| WISO.02.03.3 | 2 | 2 | ja |
 | WISO.02.03.4 | 2 | 2 |  |
 | WISO.02.03.5 | 2 | 2 |  |
 | WISO.02.04.1 | 2 | 2 |  |
@@ -326,21 +336,19 @@ Teilaufgaben:
 
 ## Alt → neu
 
-Können-Aussagen: 75 alt → 16 übernommen, 35 angepasst, 16 verschoben, 8 gestrichen; 10 neu.
+Können-Aussagen: 75 alt → 11 übernommen, 36 angepasst, 19 verschoben, 9 gestrichen; 12 neu.
 
 Stichpunkte: 14 alt, 16 neu (WISO-2-1-4, WISO-2-2-4, WISO-2-2-5, WISO-2-2-6, WISO-2-4-3).
 
-Karten (127): 29 bleiben, 54 prüfen (Aussage angepasst), 32 umhängen (Aussage verschoben), 10 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-2-1-K6, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3.
+Karten (127): 17 bleiben, 59 prüfen (Aussage angepasst), 38 umhängen (Aussage verschoben), 11 entfallen, 2 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-2-1-4-K1, WISO-2-1-4-K2, WISO-2-1-4-K3, WISO-2-2-1-K7, WISO-2-2-2-K7, WISO-2-2-2-K8, WISO-2-2-4-K2, WISO-2-2-4-K3, WISO-2-2-4-K4, WISO-2-4-3-K1, WISO-2-4-3-K2, WISO-2-4-3-K3.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
 | WISO-2-1-1-K1 | angepasst | WISO-2-1-1-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-1-K2 | angepasst | WISO-2-1-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-1-K3 | angepasst | WISO-2-1-1-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
-| WISO-2-1-1-K4 | angepasst | WISO-2-1-1-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-1-K5 | übernommen | WISO-2-1-1-K5 |  |
-| WISO-2-1-2-K1 | angepasst | WISO-2-1-2-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
-| WISO-2-1-2-K2 | übernommen | WISO-2-1-2-K2 |  |
+| WISO-2-1-2-K2 | angepasst | WISO-2-1-2-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-2-K3 | übernommen | WISO-2-1-2-K3 |  |
 | WISO-2-1-2-K4 | angepasst | WISO-2-1-2-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-2-K5 | angepasst | WISO-2-1-2-K5 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
@@ -349,7 +357,6 @@ Karten (127): 29 bleiben, 54 prüfen (Aussage angepasst), 32 umhängen (Aussage 
 | WISO-2-1-3-K2 | angepasst | WISO-2-1-3-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-3-K3 | angepasst | WISO-2-1-3-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-3-K4 | angepasst | WISO-2-1-3-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
-| WISO-2-1-3-K6 | übernommen | WISO-2-1-3-K6 |  |
 | WISO-2-2-1-K1 | angepasst | WISO-2-2-1-K1 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-2-1-K2 | angepasst | WISO-2-2-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-2-1-K3 | angepasst | WISO-2-2-1-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
@@ -376,16 +383,19 @@ Karten (127): 29 bleiben, 54 prüfen (Aussage angepasst), 32 umhängen (Aussage 
 | WISO-2-5-1-K2 | angepasst | WISO-2-5-1-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-5-1-K3 | übernommen | WISO-2-5-1-K3 |  |
 | WISO-2-5-1-K4 | angepasst | WISO-2-5-1-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
-| WISO-2-5-1-K5 | übernommen | WISO-2-5-1-K5 |  |
+| WISO-2-5-1-K5 | angepasst | WISO-2-5-1-K5 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-5-1-K6 | angepasst | WISO-2-5-1-K6 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-5-2-K3 | angepasst | WISO-2-5-2-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-5-2-K4 | angepasst | WISO-2-5-2-K4 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
-| WISO-2-5-2-K5 | übernommen | WISO-2-5-2-K5 |  |
 | WISO-2-5-2-K6 | übernommen | WISO-2-5-2-K6 |  |
 | WISO-2-5-3-K1 | übernommen | WISO-2-5-3-K1 |  |
-| WISO-2-5-3-K2 | übernommen | WISO-2-5-3-K2 |  |
+| WISO-2-5-3-K2 | angepasst | WISO-2-5-3-K2 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-5-3-K3 | angepasst | WISO-2-5-3-K3 | Wortlaut, Operator (F1) und Herkunft nach Regelwerk v1.8 |
 | WISO-2-1-1-K6 | gestrichen | – | K3: weder Katalog noch Beleg (Maßnahmen, die den Umsatz kurzfristig steigern) |
+| WISO-2-1-1-K4 | verschoben | WISO-2-1-1-K2 | Prüfer WISO-2 Nr. 10: Summe aus K1 und K2; Beispiel IT-Dienstleister und Beleg 2024S-WISO-A9 in K2 |
+| WISO-2-1-2-K1 | verschoben | WISO-2-1-2-K2 | Prüfer WISO-2 Nr. 11: betriebliche Arbeitsteilung steckt in K2 (mit Beispiel) |
+| WISO-2-1-3-K6 | verschoben | WISO-2-1-3-K3 | Prüfer WISO-2 Nr. 12: Sozialstaatsprinzip in die Aufgaben des Staates eingebaut |
+| WISO-2-5-2-K5 | verschoben | WISO-1-5-3-K5 | Prüfer WISO-2 Nr. 8, D6: Kammern und Wirtschaftsverbände wohnen in WISO-1-5-3; hier nur die Zuordnung über die Branche (K3) |
 | WISO-2-1-3-K5 | verschoben | WISO-2-1-4-K4 | Konjunkturbelebung steht im neuen Stichpunkt Konjunktur (Zusatzbaustein) |
 | WISO-2-2-2-K4 | verschoben | WISO-2-2-4-K1 | Handelsregister steht im neuen Stichpunkt Kaufmann, Firma und Handelsregister |
 | WISO-2-2-3-K4 | gestrichen | – | P32: Ergebnis kontrollieren ist Prüfungstechnik, keine Können-Aussage |
@@ -395,11 +405,11 @@ Karten (127): 29 bleiben, 54 prüfen (Aussage angepasst), 32 umhängen (Aussage 
 | WISO-2-3-1-K4 | verschoben | WISO-2-2-5-K3 | Stichpunkt verschoben (F4) |
 | WISO-2-3-1-K5 | gestrichen | – | E2/P47: Matrixorganisation steht in AP1-2-4-2 (WISO.02.03.3 gedeckt) |
 | WISO-2-3-1-K6 | verschoben | WISO-2-2-5-K4 | auf Stablinie und Sparte beschränkt; Vor- und Nachteile der übrigen Formen in AP1-2-4-2-K3 |
+| WISO-2-3-2-K5 | gestrichen | – | Prüfer WISO-2 Nr. 30: Stellenbeschreibung weder im Katalog (Aufgabenteilung) noch belegt; Kür nicht angelegt (D11) |
 | WISO-2-3-2-K1 | verschoben | WISO-2-2-6-K1 | Stichpunkt in den Block Rechtsform und Aufbau verschoben (F4: der Block Aufbau- und Ablauforganisation hatte nur zwei Stichpunkte) |
 | WISO-2-3-2-K2 | verschoben | WISO-2-2-6-K2 | Stichpunkt in den Block Rechtsform und Aufbau verschoben (F4: der Block Aufbau- und Ablauforganisation hatte nur zwei Stichpunkte) |
 | WISO-2-3-2-K3 | verschoben | WISO-2-2-6-K3 | Stichpunkt in den Block Rechtsform und Aufbau verschoben (F4: der Block Aufbau- und Ablauforganisation hatte nur zwei Stichpunkte) |
 | WISO-2-3-2-K4 | verschoben | WISO-2-2-6-K4 | Stichpunkt in den Block Rechtsform und Aufbau verschoben (F4: der Block Aufbau- und Ablauforganisation hatte nur zwei Stichpunkte) |
-| WISO-2-3-2-K5 | verschoben | WISO-2-2-6-K5 | Stichpunkt in den Block Rechtsform und Aufbau verschoben (F4: der Block Aufbau- und Ablauforganisation hatte nur zwei Stichpunkte) |
 | WISO-2-4-2-K1 | gestrichen | – | E2/P36: ökonomische, ökologische und soziale Ziele einteilen steht in AP1-2-4-1-K2 und -K3 |
 | WISO-2-4-2-K2 | gestrichen | – | E2/P36: das ökologische Ziel erkennen steht in AP1-2-4-1-K2 |
 | WISO-2-5-2-K1 | gestrichen | – | P31: Ziele und Aufgaben der Gewerkschaften stehen in WISO-1-5-3-K1 |
@@ -427,7 +437,7 @@ Karten (127): 29 bleiben, 54 prüfen (Aussage angepasst), 32 umhängen (Aussage 
 | Katalogstelle | Paar | abgedeckt durch |
 |---|---|---|
 | WISO.02.01.2 | primärer, sekundärer, tertiärer Sektor | primär: WISO-2-1-1-K1 · sekundär: WISO-2-1-1-K1 · tertiär: WISO-2-1-1-K1 |
-| WISO.02.06 | betriebliche und gesamtwirtschaftliche Arbeitsteilung | betrieblich: WISO-2-1-2-K1 · gesamtwirtschaftlich: WISO-2-1-2-K2 |
+| WISO.02.06 | betriebliche und gesamtwirtschaftliche Arbeitsteilung | betrieblich: WISO-2-1-2-K2 · gesamtwirtschaftlich: WISO-2-1-2-K2 |
 | WISO.02.06.2 | Möglichkeiten und Grenzen der Sozialen Marktwirtschaft | Möglichkeiten: WISO-2-1-3-K3 · Grenzen: WISO-2-1-3-K4 |
 | WISO.02.02 | Personen- und Kapitalgesellschaften | Personengesellschaften: WISO-2-2-1-K1 · Kapitalgesellschaften: WISO-2-2-2-K2, WISO-2-2-2-K5 |
 | WISO.02.03.1 | Einlinien- bzw. Mehrlinien-, Stabliniensystem | Stablinie: WISO-2-2-5-K2 · Einlinie/Mehrlinie: WISO-2-2-5-K1 |
@@ -436,5 +446,5 @@ Karten (127): 29 bleiben, 54 prüfen (Aussage angepasst), 32 umhängen (Aussage 
 ## Fehler und Hinweise
 
 - · WISO-2-1-1: Teilaufgabe 2025S-WISO-A2 betrifft keinen Baustein des Stichpunkts (AP1.02.01.1)
-- · WISO-2-2-5: Teilaufgabe 2022S-WISO-A21 betrifft keinen Baustein des Stichpunkts (WISO.02.03.3)
+- · WISO-2-2-4: Teilaufgabe 2025W-WISO-A19 betrifft keinen Baustein des Stichpunkts (WISO.02.02.3)
 - · WISO-2-4-2: Teilaufgabe 2025S-WISO-A7 betrifft keinen Baustein des Stichpunkts (AP1.07.02.1, AP1.07.02.2, AP1.07.02.3)

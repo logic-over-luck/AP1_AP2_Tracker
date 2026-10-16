@@ -55,3 +55,53 @@ Unabhängige Prüfung nach `umbau/auftraege/WISO-pruefung.md`. Nicht gelesen: `u
 1. Soll WISO-2-5-2 nach Fund 8 und 9 auf Ehrenamt (K4) und berufsständische Vertretungen (K6) schrumpfen? Mit dann zwei Aussagen wäre der Stichpunkt unter F3 und sollte mit WISO-1-5-3 zusammengelegt werden oder diesen per `baut_auf` erweitern.
 2. Die GmbH-Gründung wird in vier Prüfungen in fast gleicher Form abgefragt. Sollen GmbH (WISO-2-2-2) und Gewinnverteilung (WISO-2-2-3) ein Stichpunkt werden (P43)?
 3. Fund 6: Stehen die Vor- und Nachteile von Mehrlinien- und Matrixsystem in der vollen AP1-Aussage AP1-2-4-2-K3 (nicht nur im Export)? Wenn ja, reicht ein Satz im Hinweis von WISO-2-2-5. Wenn nein, sollte WiSo sie als `neu` ergänzen.
+
+## Umsetzung (16.10.2026)
+
+Grundlage: Entscheidungen D1–D12 in `WISO-pruefer-bilanz.md`. Geändert nur `tools/umbau/gen-wiso/wiso_2.py`, daraus neu erzeugt `umbau/lernplan/wiso/WISO-2.json`.
+
+| Nr | Entscheidung | Was geändert / Grund |
+|---|---|---|
+| 1 | umgesetzt | WISO-2-2-2-K1 (D12): mindestens 25.000 € Stammkapital, vor der Anmeldung auf jeden Geschäftsanteil mindestens ein Viertel und insgesamt mindestens 12.500 € eingezahlt (Sacheinlagen vollständig), § 7 Abs. 2 und 3 GmbHG. |
+| 2 | umgesetzt | WISO-2-2-2-K2: „juristische Person des Privatrechts (keine juristische Person oder Körperschaft des öffentlichen Rechts wie eine Kammer)“. |
+| 3 | umgesetzt | Neue Aussage WISO-2-2-2-K7 (eG: mindestens drei Mitglieder, Förderzweck, Haftung nur mit dem Genossenschaftsvermögen, Genossenschaftsregister); Herkunft katalog:WISO.02.02, beleg:2023S-WISO-A23, beleg:2023W-WISO-A15. Steht in 2-2-2 statt 2-2-1, zusammen mit der Wahl der Rechtsform (Nr. 15). |
+| 4 | umgesetzt | Merkmale aller Phasen in WISO-2-1-4-K1 statt in K3 (K1 nennt die Phasen; dort gehören die Merkmale hin), Beleg 2025S-WISO-A4 ergänzt; Stagnation erklärt. K2: „solange der Tiefpunkt noch nicht erreicht ist“. |
+| 5 | umgesetzt | WISO-2-5-1-K5: Arbeitsgemeinschaft und Interessengemeinschaft vom Konzern unterscheiden, Beleg 2022S-WISO-A20. Vorsichtig gefasst: „rechtlich selbstständig, nur in einem Teilbereich zusammen, ohne einheitliche Leitung“, weil Lehrbücher bei der IG zum Teil eine teilweise wirtschaftliche Bindung nennen. |
+| 6 | umgesetzt | D9 mit dem Hinweis des Hauptbearbeiters (WISO.02.03.3 nicht mehr in `wiso-deckung.json`): WISO-2-2-5-K4 ordnet die Vor- und Nachteile von Stablinie, Sparte, Mehrlinien- und Matrixsystem zu. Operator „zuordnen“ (Stufe 2) wie in 2021W-WISO-A13. Herkunft: katalog:WISO.02.03.1, .2, .3 und beleg:2021W-WISO-A13. Das Feld `neu` steht gegenüber AP1-2-4-2, denn die volle AP1-Aussage K3 lautet nur „je einen Vorteil und einen Nachteil nennen“ (Stufe 1). WISO.02.03.3 steht in `bausteine` mit dem Anteil „Vor- und Nachteile“. Damit entfällt der Hinweis zu 2022S-WISO-A21. Ziel und Hinweis sind angepasst; Antwort auf offene Frage 3: Die volle AP1-Aussage enthält die Vor- und Nachteile nicht. |
+| 7 | umgesetzt | WISO-2-4-1-K4 im Wortlaut des Prüfers (Produktivität meist mengenmäßig, als Umsatz je Mitarbeiter auch wertmäßig). K1 nennt jetzt „Stück je Arbeitsstunde oder Umsatz je Mitarbeiter“. |
+| 8 | umgesetzt | D6: WISO-2-5-2-K5 als „verschoben“ auf WISO-1-5-3-K5 eingetragen; der Hinweis verweist auf WISO-1-5-3. Die Handwerkskammer ergänzt WISO-1 (D6). |
+| 9 | umgesetzt | WISO-2-5-2-K3 gekürzt auf „Branche → Tarifpartner und Branchenverband zuordnen“ (IG Metall und der Arbeitgeberverband der Metall- und Elektroindustrie; Bitkom als Wirtschaftsverband ohne Tarifverträge). Herkunft WISO.02.07.1 und .2: Ohne Aussage zu WISO.02.07.2 schlägt T8 fehl, und WISO-1-5-3 führt den Baustein nicht. |
+| 10 | umgesetzt | WISO-2-1-1-K4 → verschoben auf K2 (Beispiel IT-Dienstleister, Beleg 2024S-WISO-A9 stand schon dort). |
+| 11 | umgesetzt | WISO-2-1-2-K1 → verschoben auf K2 (Beispiele betrieblich/international). 2025W-WISO-A22 nur noch in WISO-2-1-2 (P31); WISO-2-2-6 verweist im Hinweis. |
+| 12 | umgesetzt | WISO-2-1-3-K6 → verschoben auf K3 (Sozialstaatsprinzip in den Aufgaben des Staates). |
+| 13 | umgesetzt | WISO-2-1-3-K2: „setzt nicht allgemein Preise und Angebotsmengen fest (einzelne Eingriffe wie der gesetzliche Mindestlohn sind die Ausnahme)“. |
+| 14 | umgesetzt | Ziel WISO-2-1-2: „… Maßnahmen und Folgen der weltweiten Arbeitsteilung unterscheiden“. |
+| 15 | umgesetzt | WISO-2-2-1-K6 entfällt (neue ID, nicht in ALT_K). Die Entscheidungsregel steht neu als WISO-2-2-2-K8 (Rechtsform zuordnen, übrige an je einem Merkmal ausschließen, Beleg 2023W-WISO-A15). 2023S-WISO-A23 und 2023W-WISO-A15 sowie WISO.02.02 sind nach WISO-2-2-2 umgezogen; 2023S-A23 ist zusätzlich bei K5 (AG) belegt. |
+| 16 | umgesetzt | WISO-2-2-1-K2: unbeschränkt, unmittelbar, gesamtschuldnerisch. Neue Aussage WISO-2-2-1-K7: Geschäftsführung in GbR (grundsätzlich gemeinsam) und OHG (jeder allein), § 715 BGB und § 116 HGB in der Fassung des MoPeG. |
+| 17 | umgesetzt | 2025W-WISO-A19 in den teilaufgaben von WISO-2-2-4 und als Beleg an K4 („EcoTech Services“ ohne Rechtsformzusatz). Rest: Hinweis von lernplan-pruefen, weil die Zuordnung 2025W-A19 nur WISO.02.02.3 nennt (siehe Parkplatz). |
+| 18 | umgesetzt | WISO-2-2-4: `baut_auf: ["AP1-2-4-3"]` und Hinweis auf die Prokura. |
+| 19 | umgesetzt | Ziel WISO-2-2-4: „Den Ist-Kaufmann und die Wirkung der Handelsregistereintragung erklären, …“. |
+| 20 | umgesetzt | WISO-2-1-1-K1: sekundär mit Energie und Bau, tertiär mit Verkehr und Logistik. |
+| 21 | umgesetzt (Herkunft) | K5 und K6 in WISO-2-4-1 bekommen regel:P-GESCHWISTER (Geschwister der belegten EK-Rentabilität). Kür wird nach D11 nicht angelegt. |
+| 22 | abgelehnt | K2+K3 zusammengelegt hätte WISO-2-2-3 nur noch zwei Aussagen (F3). Aufgehen in WISO-2-2-2 geht nicht, weil der Stichpunkt mit eG und Rechtsformwahl schon 7 Aussagen hat (F3 max.). K2 ist außerdem ein eigener Schritt in 2024S-WISO-A16 (Anteil aus den Anteilen der anderen). Offene Frage 2 damit: nein. |
+| 23 | umgesetzt | WISO-2-5-3-K2 ohne Amtsgericht und ohne Gewerbeaufsicht als Aufgabe. Die Gewerbeaufsicht steht nur noch als Abgrenzung zum Gewerbeamt (D6). Kein Bundeskartellamt, das steht in WISO-2-5-1-K6. Der Hinweis verweist auf WISO-2-2-4-K1, WISO-3-1-1 und WISO-2-5-1-K6. |
+| 24 | teilweise | Streichen ließe WISO-2-5-3 auf zwei Aussagen fallen (F3, P35 Nr. 9: Stichpunkte ohne Beleg mindestens 3), und Kür entfällt (D11). Stattdessen ist K3 an den Katalog „Aufgaben von Behörden und Verwaltungen“ gebunden: Die Ebenen stehen jetzt mit Behörden aus K2 (Bund: Bundesagentur für Arbeit, Länder: Finanzämter, Gemeinden: Gewerbeamt). |
+| 25 | abgelehnt | Ohne 2023S-WISO-A9 meldet lernplan-pruefen den Fehler T2b, weil die Teilaufgabe ZB.wiso-konjunktur betrifft und den nur WISO-2-1-4 trägt. Der Hinweis auf WISO-1-6-1-K6 bleibt (siehe Parkplatz). |
+| 26 | umgesetzt | WISO-2-1-4-K4: „geldpolitisch niedrigere Leitzinsen, über die die Europäische Zentralbank entscheidet, nicht der Staat“. |
+| 27 | umgesetzt | WISO-2-2-1-K1: Mindestkapital „für die Gesellschaft selbst“ nicht vorgeschrieben, die Komplementär-GmbH braucht ihr Stammkapital. „Einzelunternehmen ist keine Gesellschaft“ steht schon in K5. |
+| 28 | P49 (Kür, keine Hinweisquelle) | MoPeG/eGbR nicht aufgenommen (D11). Die neue Aussage zur Geschäftsführung (Nr. 16) folgt dem Recht nach dem MoPeG. |
+| 29 | umgesetzt | Grenzen (D10, G1): WISO-2-2-2 „UG (haftungsbeschränkt), KGaA, SE“ (Katalog WISO.02.02.3, P-BEISPIELLISTE) und WISO-2-5-1 „Einzelheiten von GWB und Fusionskontrolle“ (WISO.02.04.2/.3, G3/G4). |
+| 30 | umgesetzt (gestrichen) | WISO-2-2-6-K5 (alt WISO-2-3-2-K5) als „gestrichen“ eingetragen: Die Aussage hat weder Katalogstelle noch Beleg, und Kür ist nach D11 ausgeschlossen. |
+| 31 | abgelehnt (bestätigt) | Keine Änderung: Die Spiegelstriche WISO.02.07.1–4 haben keinen Operator und damit nach dem Regelwerk Stufe 2. H2 ist eine betriebliche Handlung (P26). |
+
+**Zahlen:** 16 Stichpunkte (unverändert), Können-Aussagen 72 → 69. Neu sind WISO-2-2-1-K7, WISO-2-2-2-K7 und -K8. Gestrichen oder zusammengelegt sind WISO-2-1-1-K4, 2-1-2-K1, 2-1-3-K6, 2-2-1-K6 (neue ID), 2-2-6-K5 und 2-5-2-K5. Zählung: 25 umgesetzt (davon 2 über die Herkunft bzw. durch Streichen gelöst), 1 teilweise, 4 abgelehnt, 1 P49. lernplan-pruefen WISO-2: OK. Es bleiben drei Hinweise: 2025S-A2 und 2025S-A7 wie bisher, 2025W-A19 neu. raum-pruefen WISO: OK.
+
+**Parkplatz-Fragen (Vorschläge):**
+- Zuordnung 2025W-WISO-A19 um ZB.wiso-kaufmann ergänzen (Antwort [2] prüft die Firma). Dann entfällt der Hinweis in WISO-2-2-4.
+- Zuordnung 2023S-WISO-A9 ohne ZB.wiso-konjunktur führen (Realeinkommen gehört zu WISO.01.09.1). Dann kann die Teilaufgabe aus WISO-2-1-4 entfernt werden (Fund 25).
+- WISO.02.07.2 (Wirtschaftsorganisationen) wohnt nach D6 inhaltlich in WISO-1-5-3, steht dort aber nicht in `bausteine`. Wird es dort aufgenommen, kann WISO-2-5-2-K3 auf WISO.02.07.1 zurückgehen.
+
+**Unsicher:**
+- Interessengemeinschaft (Nr. 5): In den Lehrbüchern gibt es keine einheitliche Abgrenzung zur wirtschaftlichen Selbstständigkeit, darum ist die Aussage bewusst vorsichtig gefasst.
+- Geschäftsführung GbR/OHG (Nr. 16): § 715 Abs. 3 BGB n. F. (gemeinsam) und § 116 HGB n. F. (Einzelgeschäftsführung) aus dem Gedächtnis, nicht am Gesetzestext geprüft.
+- „alt WISO-2-5-2-K5 verschoben auf WISO-1-5-3-K5“ setzt voraus, dass WISO-1 diese ID behält.
