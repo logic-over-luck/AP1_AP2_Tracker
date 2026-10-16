@@ -242,6 +242,47 @@ test('Raum PB2: alle Ordner und die Raum-Prüfung (T1, T2b, T8, ALT) bestehen', 
   assert.equal(r.status, 0, r.stdout);
 });
 
+// ---------- T7 / P36: Doppelungen zu früheren Räumen werden erkannt ----------
+function pb2Mit(veraendern) {
+  const lp = JSON.parse(readFileSync('umbau/lernplan/pb2/PB2-1.json', 'utf8'));
+  veraendern(lp);
+  const datei = join(mkdtempSync(join(tmpdir(), 'lp-')), 'PB2-1.json');
+  writeFileSync(datei, JSON.stringify(lp));
+  return spawnSync(process.execPath, ['tools/umbau/lernplan-pruefen.mjs', 'PB2-1'], { encoding: 'utf8', env: { ...process.env, LERNPLAN_DATEI: datei } });
+}
+/** fügt dem ersten Stichpunkt eine Aussage hinzu, die nur einen AP1-Baustein betrifft (wie eine Dublette) */
+function dublette(lp, mitNeu) {
+  const ap1 = JSON.parse(readFileSync('umbau/export/AP1.json', 'utf8'));
+  const [id, x] = Object.entries(ap1.erreicht).find(([k, v]) => k.startsWith('AP1.') && v.stufe >= 2 && v.stufe <= 3);
+  const sp = lp.themenbloecke[0].stichpunkte[0];
+  sp.bausteine.push({ id });
+  sp.baut_auf = [...(sp.baut_auf ?? []), x.stichpunkte[0]];
+  sp.koennen = sp.koennen.slice(0, 6);
+  const k = { id: `${sp.id}-K99`, text: 'Du kannst das beurteilen.', stufe: x.stufe + 1, herkunft: [`katalog:${id}`] }; // tiefer als AP1, damit nur „neu“ entscheidet
+  if (mitNeu) k.neu = { gegenueber: [x.stichpunkte[0]], was: 'Testfall: etwas wirklich Neues' };
+  sp.koennen.push(k);
+}
+test('T7 (P36): Aussage nur zu importiertem Baustein ohne „neu“ wird als Dublette erkannt', { skip: !pb2Da && 'Quellen fehlen' }, () => {
+  const r = pb2Mit((lp) => dublette(lp, false));
+  assert.equal(r.status, 1);
+  assert.match(r.stdout, /T7: .* ohne Angabe „neu“/);
+});
+test('T7 (P36): mit „neu“ begründet ist dieselbe Aussage erlaubt', { skip: !pb2Da && 'Quellen fehlen' }, () => {
+  const r = pb2Mit((lp) => dublette(lp, true));
+  assert.doesNotMatch(r.stdout, /T7:/);
+});
+test('T7 (P36): importierter Baustein in „bausteine“ ohne neue Aussage wird erkannt', { skip: !pb2Da && 'Quellen fehlen' }, () => {
+  const r = pb2Mit((lp) => {
+    const ap1 = JSON.parse(readFileSync('umbau/export/AP1.json', 'utf8'));
+    const [id, x] = Object.entries(ap1.erreicht).find(([k]) => k.startsWith('AP1.'));
+    const sp = lp.themenbloecke[0].stichpunkte[0];
+    sp.bausteine.push({ id });
+    sp.baut_auf = [...(sp.baut_auf ?? []), x.stichpunkte[0]];
+  });
+  assert.equal(r.status, 1);
+  assert.match(r.stdout, /T7: .*importierter Baustein .* ohne Aussage mit „neu“/);
+});
+
 // ---------- Lernstand-Umzug (P6) ----------
 test('P6: Umzugstabelle ist vollständig und aktuell', () => {
   const r = spawnSync(process.execPath, ['tools/umbau/umzug-erzeugen.mjs', '--pruefen'], { encoding: 'utf8' });

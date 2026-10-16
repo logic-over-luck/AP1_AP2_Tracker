@@ -1,5 +1,7 @@
 # Bilanz: Unabhängige Prüfung PB2 (K1–K3, Doppeltes und Unnötiges)
 
+> **Hinweis (16.10.2026, P39):** Nach dieser Bilanz wurden die SQL-Ordner getauscht: alt PB2-5 (Datenpflege) = heute PB2-6, alt PB2-6 (Abfragen) = heute PB2-5. Die IDs unten sind die alten.
+
 Stand: 16.10.2026 · Branch `umbau` · Auftrag `umbau/auftraege/PB2-pruefung.md`
 Drei unabhängige Prüfer (PB2-1/2, PB2-3/4, PB2-5/6), ohne Kenntnis von `umbau/berichte/`, `meta`, `alt_neu` und den alten Inhalten.
 Quellen: `quellen/katalog.md`, `quellen/pruefungen/pb2/*.md` (9 Prüfungen), Exporte AP1 und PB1, `raeume-ap2.json`.

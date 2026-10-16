@@ -1,5 +1,7 @@
 # Generatoren PB2 (Arbeitsstand 14.10.2026)
 
+> **Achtung (16.10.2026):** Die Lernpläne PB2-1 bis PB2-6 wurden danach direkt geändert (Prüfer-Funde, P36–P44) und die Ordner PB2-5/PB2-6 getauscht (P39). Die Generatoren erzeugen den alten Stand – nicht mehr ausführen, sonst gehen die Änderungen verloren.
+
 Sicherung der Bau-Skripte aus der Sitzung, damit PB2 nach der Pause genauso weitergebaut werden kann.
 Pfade in den Skripten sind absolut (`/home/claude/AP1_AP2_Tracker`, Scratchpad); bei Bedarf anpassen.
 

@@ -620,7 +620,11 @@ eigene Datei je Prüfung (`umbau/zuordnung/ap1/<Prüfung>.json`). So bleiben die
         1. ~~Unabhängige Prüfung PB2~~ **erledigt 16.10.2026:** 89 Funde in 6 Berichten, Bilanz
            `umbau/berichte/PB2-pruefer-bilanz.md` (92 → 85 Aussagen vorgeschlagen, 9 offene Fragen an den Projektinhaber). Alt: Bei
            Fortsetzung neu starten (Berichte `umbau/berichte/PB2-<n>-pruefer.md`, Bilanz `PB2-pruefer-bilanz.md`).
-        2. Funde einbauen (je Bericht Abschnitt „Umsetzung“), Raum-Prüfung PB2 und Tests grün, Umzug neu erzeugen.
+        2. ~~Funde einbauen~~ **erledigt 16.10.2026:** je Bericht Abschnitt „Umsetzung“; T7 streng (P36), Entscheidungen P37–P44
+           umgesetzt, SQL-Ordner getauscht (P39: PB2-5 = Abfragen, PB2-6 = Tabellen/Datenpflege/Rechte). Stand: 6 Ordner,
+           21 Stichpunkte, 93 Können-Aussagen (PB2-1 15, PB2-2 11, PB2-3 11, PB2-4 12, PB2-5 25, PB2-6 19); 31 Aussagen ohne Karte.
+           Raum-Prüfung PB2, alle Ordner und `npm test` grün, Umzug neu erzeugt, Build und Browser-Check `#/pb2` ohne Fehler.
+           Die Generatoren in `tools/umbau/gen-pb2/` bilden den Stand vor dem 16.10. ab und dürfen nicht mehr laufen.
         3. Kurzfassungen `umbau/kurz/pb2/PB2-<n>.json` (Teaser je Stichpunkt, Erklärung je Aussage, wie PB1).
         4. Karten `umbau/karten/pb2/PB2-<n>.json` + Berichte `PB2-<n>-karten.md` (186 alte Karten entscheiden, jede
            Aussage mindestens eine Karte).
