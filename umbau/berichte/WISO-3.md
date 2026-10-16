@@ -27,10 +27,13 @@ Teilaufgaben: 2024S-WISO-A10, 2022S-WISO-A24, 2021W-WISO-A17, 2025S-WISO-A26
 | K6 | Du kannst die Gewerbeaufsicht (Amt für Arbeitsschutz) als staatliche Aufsichtsbehörde, die die Einhaltung der Arbeitsschutzvorschriften im Betrieb überwacht, von der Berufsgenossenschaft als Träger der Unfallversicherung unterscheiden. | 2 | katalog:WISO.03.01.9 |
 | K7 | Du kannst die Pflicht zur Unterweisung erklären: Der Arbeitgeber bzw. die Vorgesetzten unterweisen über Unfall- und Gesundheitsgefahren bei Beginn der Beschäftigung, bei neuen Aufgaben oder Arbeitsmitteln und danach regelmäßig (mindestens jährlich, Jugendliche halbjährlich). | 2 | katalog:WISO.03.01.1, katalog:WISO.03.01.6, beleg:2021W-WISO-A17, beleg:2025S-WISO-A26 |
 | K8 | Du kannst erklären, dass Arbeitsschutzvorschriften zwingendes Recht sind, das Arbeitgeber und Beschäftigte nicht abbedingen können, dass der Betriebsrat bei Regelungen zum Gesundheitsschutz mitbestimmt und im Arbeitsschutzausschuss vertreten ist und dass ergonomisch gestaltete Arbeitsplätze eine gesetzliche Pflicht des Arbeitgebers sind (Arbeitsschutzgesetz, Arbeitsstättenverordnung), keine freiwillige Leistung. | 2 | katalog:WISO.03.01.1, katalog:WISO.03.01.5, beleg:2024S-WISO-A10 |
+| K9 | Du kannst erklären, dass der Arbeitgeber bestimmte Schutzgesetze allen Beschäftigten jederzeit zugänglich machen muss – etwa Arbeitszeitgesetz, Jugendarbeitsschutzgesetz, Mutterschutzgesetz und Allgemeines Gleichbehandlungsgesetz, soweit sie im Betrieb gelten – und dass das als Aushang oder Auslage an geeigneter Stelle oder elektronisch geschehen darf, wenn alle Beschäftigten ungehindert Zugang zum Intranet haben. | 2 | buch:GS-1.2.2-S30 |
+| K10 | Du kannst erklären, wie der Arbeitsschutz geregelt ist, wenn Beschäftigte einer Fremdfirma im Betrieb eines Auftraggebers arbeiten, etwa ein IT-Dienstleister beim Kunden: Beide Arbeitgeber informieren sich gegenseitig über die Gefahren und stimmen die Schutzmaßnahmen ab, der Auftraggeber weist auf die Gefahren in seinem Betrieb hin, die Unterweisung der eigenen Beschäftigten bleibt aber Pflicht ihres Arbeitgebers. | 2 | buch:GS-2.10.2-S268 |
+| K11 | Du kannst Telearbeit und mobiles Arbeiten unterscheiden: Telearbeit ist nach der Arbeitsstättenverordnung ein vom Arbeitgeber fest eingerichteter Bildschirmarbeitsplatz im Privatbereich der Beschäftigten, für den er Mobiliar und Arbeitsmittel stellt, die Gefährdung beurteilt und unterweist; mobiles Arbeiten bzw. Homeoffice ohne fest eingerichteten Platz ist nicht eigens gesetzlich definiert, doch Arbeitsschutzgesetz (sichere Arbeitsmittel, Unterweisung) und Arbeitszeitgesetz gelten in beiden Formen. | 2 | buch:GS-2.2.1-S130, buch:GS-2.10.2-S270 |
 
 **Grenze:** Paragrafen und Normnummern der Arbeitsschutzvorschriften gehören nicht dazu. — _G4: Der Katalog nennt die Vorschriften nur mit Namen (WISO.03.01); Paragrafen sind ohne Hilfsmittel nicht sinnvoll abfragbar, nötige Gesetzestexte werden abgedruckt (B4)._ (WISO.03.01)
 
-_Hinweis:_ Hier wohnen die Arbeitsschutzgesetze und die Gewerbeaufsicht (WISO-1-3-2 und WISO-2-5-3 verweisen hierher). Die einzelnen Regeln des Arbeitszeit- und des Jugendarbeitsschutzgesetzes stehen in WISO-1-3-4; die Ergonomie des Arbeitsplatzes in AP1-4-3-1. IT-Sicherheit (WISO.03.08: Schutzziele, DSGVO, BSI, Sicherheitskonzept, TOM) gehört zum selben Prüfungsgebiet; du lernst sie in AP1-7, die WiSo-Ergänzungen stehen in WISO-5-2-1. Unfallverhütungsvorschriften bekannt machen (K5): Die IHK-Lösung zu 2022S-WISO-A24 erwartete „im Betrieb gut sichtbar aushängen“ und wertete „im Intranet bereitstellen“ als falsch. Nach heutigem Recht (DGUV Vorschrift 1, § 12) muss der Arbeitgeber sie „an geeigneter Stelle zugänglich machen“, das geht auch elektronisch. Wird „aushängen“ angeboten, wähle in der Prüfung diese Antwort.
+_Hinweis:_ Hier wohnen die Arbeitsschutzgesetze und die Gewerbeaufsicht (WISO-1-3-2 und WISO-2-5-3 verweisen hierher). Die einzelnen Regeln des Arbeitszeit- und des Jugendarbeitsschutzgesetzes stehen in WISO-1-3-4; die Ergonomie des Arbeitsplatzes in AP1-4-3-1. IT-Sicherheit (WISO.03.08: Schutzziele, DSGVO, BSI, Sicherheitskonzept, TOM) gehört zum selben Prüfungsgebiet; du lernst sie in AP1-7, die WiSo-Ergänzungen stehen in WISO-5-2-1. Unfallverhütungsvorschriften bekannt machen (K5): Die IHK-Lösung zu 2022S-WISO-A24 erwartete „im Betrieb gut sichtbar aushängen“ und wertete „im Intranet bereitstellen“ als falsch. Nach heutigem Recht (DGUV Vorschrift 1, § 12) muss der Arbeitgeber sie „an geeigneter Stelle zugänglich machen“, das geht auch elektronisch. Wird „aushängen“ angeboten, wähle in der Prüfung diese Antwort. Das Lehrbuch leitet die Aushangpflicht pauschal aus dem Arbeitsschutzgesetz ab; richtig ist: Die Pflicht zum Aushang bzw. zur Bekanntmachung steht jeweils im einzelnen Gesetz (z. B. Arbeitszeitgesetz, Jugendarbeitsschutzgesetz, Mutterschutzgesetz, Allgemeines Gleichbehandlungsgesetz). Das Lehrbuch nennt ein „Telearbeitsgesetz“; ein solches Gesetz gibt es nicht. Richtig ist: Telearbeitsplätze regelt die Arbeitsstättenverordnung, für mobiles Arbeiten gelten Arbeitsschutz- und Arbeitszeitgesetz.
 
 #### WISO-3-1-2 Sicherheitsbeauftragte, Fachkraft für Arbeitssicherheit, Ersthelfer und Fürsorgepflicht
 
@@ -107,6 +110,8 @@ Teilaufgaben:
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Übliche Maße am Bildschirmarbeitsplatz: Blickrichtung parallel zum Fenster, Sehabstand etwa 50 bis 80 Zentimeter, oberste Bildschirmzeile höchstens in Augenhöhe, Ober- und Unterarm sowie Ober- und Unterschenkel etwa im rechten Winkel. _(pruefer:wiso-2026-10)_
+- Viele Betriebe ergänzen den gesetzlichen Arbeitsschutz freiwillig durch ein betriebliches Gesundheitsmanagement, etwa mit Kursen zur Stressbewältigung, Bewegungs- und Fitnessangeboten, Kurzpausen und flexiblen Arbeitszeiten für eine bessere Work-Life-Balance. Das Unternehmen gewinnt durch weniger Krankheitstage und Kündigungen, höhere Produktivität und ein besseres Image, die Beschäftigten durch mehr Wohlbefinden und weniger Beschwerden. _(buch:GS-1.3.3)_
+- Lärm wird als Schalldruckpegel in dB(A) gemessen, also auf das menschliche Gehör bezogen; für konzentrierte Büroarbeit sollte er möglichst niedrig bleiben, als Obergrenze gelten etwa 55 dB(A). Abhilfe schaffen geräuscharme Geräte und gemeinsam genutzte laute Geräte wie Drucker und Kopierer in einem eigenen Raum. _(buch:GS-2.2.1)_
 
 _Hinweis:_ Wie ein Bildschirmarbeitsplatz ergonomisch gestaltet und beurteilt wird, steht in AP1-4-3-1 (WISO.03.01.7 und WISO.03.02.7 gedeckt, P47).
 
@@ -125,6 +130,10 @@ Teilaufgaben:
 | K3 | Du kannst die Gefährdungen eines beschriebenen Arbeitsplatzes oder Auftrags einschätzen (welche Art, wie wahrscheinlich, wie schwer) und begründen, welche Schutzmaßnahme nach der Rangfolge zuerst zu treffen ist, zum Beispiel beim Austausch eines steckbaren Netzteils im Serverschrank. | 4 | katalog:WISO.03.02.1, katalog:WISO.03.02.2 |
 | K4 | Du kannst an einer Situation beurteilen, ob Beschäftigte Sicherheitshinweise und Anweisungen beachten und erkannte Gefahren melden, und begründen, was zu tun ist. | 4 | katalog:WISO.03.02.3, katalog:WISO.03.02.4 |
 | K5 | Du kannst beurteilen, ob der Arbeitgeber seiner Fürsorgepflicht nachkommt, zum Beispiel bei Unterweisung, genügend Ersthelfern und sicheren Arbeitsmitteln. | 4 | katalog:WISO.03.02.5, katalog:WISO.03.02.6 |
+
+**Kür** (freiwillig, zählt nicht zum Fortschritt):
+
+- Laserdrucker und Kopierer können Ozon und Feinstaub aus dem Toner abgeben, meist in geringen Mengen. Vorbeugen lässt sich mit emissionsarmen, geprüften Geräten (z. B. mit Umweltzeichen) oder Filtern, guter Lüftung, Aufstellung in einem eigenen Raum und indem verschütteter Toner feucht aufgenommen statt aufgefegt wird. _(buch:GS-2.4.10)_
 
 _Hinweis:_ Neuer Stichpunkt: Der Katalog verlangt Gefährdungen „wahrnehmen und einschätzen“ (Stufe 4); die Gefährdungsbeurteilung und die Rangfolge der Maßnahmen standen vorher in WISO-3-2-1. Die Stufe 4 kommt allein aus dem Katalog (E6); die WiSo-Prüfungen fragten dazu bisher nur Auswahlaufgaben (Unterweisung: WISO-3-1-1-K7, Pflichten: WISO-3-1-2).
 
@@ -165,6 +174,7 @@ Teilaufgaben:
 **Kür** (freiwillig, zählt nicht zum Fortschritt):
 
 - Das GS-Zeichen („geprüfte Sicherheit“) ist freiwillig und wird von einer unabhängigen, staatlich anerkannten Prüfstelle vergeben – anders als das CE-Zeichen, das der Hersteller selbst anbringt. _(pruefer:wiso-2026-10)_
+- Das Produktsicherheitsgesetz legt fest, welche Sicherheitsanforderungen Geräte erfüllen müssen, bevor sie auf dem Markt bereitgestellt werden; es ist die Grundlage für das CE-Zeichen (Pflicht, vom Hersteller selbst angebracht) und das freiwillige GS-Zeichen. _(buch:GS-2.10.2)_
 
 #### WISO-3-3-3 Verhaltensregeln und sachgerechter Umgang mit Gefahrenpotenzialen
 
@@ -178,7 +188,7 @@ Teilaufgaben:
 |---|---|---|---|
 | K1 | Du kannst allgemeine Verhaltensregeln erklären: Verkehrs- und Fluchtwege freihalten, Kabel stolperfrei verlegen, Schutzeinrichtungen nicht außer Kraft setzen, defekte Geräte nicht weiter benutzen und melden. | 2 | katalog:WISO.03.05.2 |
 | K2 | Du kannst erklären, was eine Betriebsanweisung ist: die schriftliche, verbindliche Regel des Arbeitgebers für eine bestimmte Tätigkeit, ein Arbeitsmittel oder einen Gefahrstoff mit Gefahren, Schutzmaßnahmen, Verhalten bei Störungen und im Notfall und Erster Hilfe. | 2 | katalog:WISO.03.05.2 |
-| K3 | Du kannst Regeln für den Umgang mit elektrischen Geräten erklären: vor dem Öffnen eines Geräts den Netzstecker ziehen, Netzteile selbst nie öffnen (ein steckbares Netzteil zu tauschen ist dagegen übliche IT-Arbeit), Arbeiten an der elektrischen Anlage wie Steckdosen, Verteilern und fest angeschlossenen Leitungen nur durch Elektrofachkräfte. | 2 | katalog:WISO.03.05.1 |
+| K3 | Du kannst Regeln für den Umgang mit elektrischen Geräten erklären: vor dem Öffnen eines Geräts den Netzstecker ziehen, Netzteile selbst nie öffnen (ein steckbares Netzteil zu tauschen ist dagegen übliche IT-Arbeit), Arbeiten an der elektrischen Anlage wie Steckdosen, Verteilern und fest angeschlossenen Leitungen nur durch Elektrofachkräfte. | 2 | katalog:WISO.03.05.1, buch:GS-3.9.1-S392 |
 | K4 | Du kannst den richtigen Umgang mit weiteren IT-typischen Gefahren erklären: schwere Geräte zu zweit oder mit Hilfsmittel heben, beschädigte Akkus nicht weiterverwenden, Tonerstaub nicht einatmen. | 2 | katalog:WISO.03.05.1 |
 
 ### WISO-3-4 Notfall: Unfall und Brand
@@ -232,8 +242,9 @@ Teilaufgaben:
 | K2 | Du kannst typischen Brandursachen in Büro und Serverraum die passende Vorbeugung zuordnen: Wärmegeräte → nach Gebrauch ausschalten, nichts Brennbares daneben lagern; überlastete Mehrfachsteckdosen → nicht hintereinanderstecken; beschädigte Akkus, Geräte und Kabel → aus dem Betrieb nehmen; verstellte Lüftungsöffnungen → freihalten. | 2 | katalog:WISO.03.07.1, katalog:WISO.03.07.1.1 |
 | K3 | Du kannst erklären, was die Brandschutzordnung ist: die betrieblichen Regeln zur Verhütung von Bränden und zum Verhalten im Brandfall. | 2 | katalog:WISO.03.07.2 |
 | K6 | Du kannst erklären, warum Brandschutztüren geschlossen bleiben und nicht verkeilt werden dürfen. | 2 | katalog:WISO.03.07.2 |
+| K7 | Du kannst erklären, wie Brände in Serverräumen technisch verhindert oder schon im Entstehen gelöscht werden: Eine Sauerstoffreduzierungsanlage hält den Sauerstoffanteil der Raumluft durch zugeführten Stickstoff dauerhaft so niedrig, dass sich kein Feuer entwickeln kann, und kompakte Löschanlagen im Serverschrank erkennen Rauch früh und fluten nur den Schrank mit Löschgas. | 2 | buch:GS-2.10.2-S272 |
 
-_Hinweis:_ Früher Stichpunkt WISO-3-5-1.
+_Hinweis:_ Früher Stichpunkt WISO-3-5-1. Das Lehrbuch beschreibt den Sauerstoffentzug so, als geschehe er erst bei einem Brand; richtig ist: Sauerstoffreduzierungsanlagen halten den Sauerstoffanteil dauerhaft abgesenkt (vorbeugend), Gaslöschanlagen fluten erst im Brandfall.
 
 #### WISO-3-4-4 Verhalten im Brandfall und Brandschutzmittel: Brandmeldung, Feuerlöscher, Löschdecken, Brandklassen (neu)
 
@@ -315,11 +326,11 @@ _Hinweis:_ Früher Stichpunkt WISO-3-5-2.
 
 ## Alt → neu
 
-Können-Aussagen: 71 alt → 5 übernommen, 33 angepasst, 21 verschoben, 12 gestrichen; 9 neu.
+Können-Aussagen: 71 alt → 5 übernommen, 33 angepasst, 21 verschoben, 12 gestrichen; 13 neu.
 
 Stichpunkte: 13 alt, 13 neu (WISO-3-1-3, WISO-3-2-3, WISO-3-4-3, WISO-3-4-4).
 
-Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage verschoben), 29 entfallen, 0 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-3-1-1-K7, WISO-3-1-1-K8, WISO-3-1-3-K2, WISO-3-1-3-K3, WISO-3-2-1-K6, WISO-3-2-3-K3, WISO-3-2-3-K4, WISO-3-2-3-K5, WISO-3-4-4-K7.
+Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage verschoben), 29 entfallen, 0 ohne Können-Bezug. Neue Aussagen ohne Karten: WISO-3-1-1-K7, WISO-3-1-1-K8, WISO-3-1-1-K9, WISO-3-1-1-K10, WISO-3-1-1-K11, WISO-3-1-3-K2, WISO-3-1-3-K3, WISO-3-2-1-K6, WISO-3-2-3-K3, WISO-3-2-3-K4, WISO-3-2-3-K5, WISO-3-4-3-K7, WISO-3-4-4-K7.
 
 | alt | Status | neu | Grund |
 |---|---|---|---|
@@ -408,7 +419,7 @@ Karten (155): 12 bleiben, 65 prüfen (Aussage angepasst), 49 umhängen (Aussage 
 
 ## Hinweis-Abgleich (R3)
 
-Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 5, Außen 0, Ordner 0.
+Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 9, Außen 0, Ordner 0.
 
 | Thema | Hinweisquellen | Ring | wo | Anmerkung |
 |---|---|---|---|---|
@@ -417,6 +428,10 @@ Stand 2026-10-16, Umfang: ganzer Ordner. Ringe: Kern 0, Puffer 0, Kür 5, Außen
 | GS-Zeichen | pruefer:wiso-2026-10 | Kür | WISO-3-3-2 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 | Löschmittel je Brandklasse, Brandklasse F | pruefer:wiso-2026-10 | Kür | WISO-3-4-4 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
 | Kohlendioxid in kleinen Räumen | pruefer:wiso-2026-10 | Kür | WISO-3-4-4 | Kür-Vorschlag der unabhängigen Prüfung (P49) |
+| Viele Betriebe ergänzen den gesetzlichen Arbeitsschutz freiwillig durch ein betriebliches Gesundheitsmanagement, etwa mi | buch:GS-1.3.3 | Kür | WISO-3-2-2 | Regelwerk v2.x, D8/RK1 |
+| Lärm wird als Schalldruckpegel in dB(A) gemessen, also auf das menschliche Gehör bezogen; für konzentrierte Büroarbeit s | buch:GS-2.2.1 | Kür | WISO-3-2-2 | Regelwerk v2.x, D8/RK1 |
+| Laserdrucker und Kopierer können Ozon und Feinstaub aus dem Toner abgeben, meist in geringen Mengen. Vorbeugen lässt sic | buch:GS-2.4.10 | Kür | WISO-3-2-3 | Regelwerk v2.x, D8/RK1 |
+| Das Produktsicherheitsgesetz legt fest, welche Sicherheitsanforderungen Geräte erfüllen müssen, bevor sie auf dem Markt  | buch:GS-2.10.2 | Kür | WISO-3-3-2 | Regelwerk v2.x, D8/RK1 |
 
 ## Geschwister-Prüfung (R4)
 
