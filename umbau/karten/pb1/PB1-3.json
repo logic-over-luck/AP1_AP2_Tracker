@@ -1,6 +1,6 @@
 {
   "ordner": "PB1-3",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
   "grundlage": "umbau/lernplan/pb1/PB1-3.json",
   "karten": [
@@ -402,6 +402,174 @@
       "k": "PB1-3-2-3-K3",
       "vorne": "Warum verlängert ein größerer Abfrageabstand die Laufzeit eines batteriebetriebenen Funksensors?",
       "hinten": "Zwischen den Messungen kann das Gerät in einen Stromsparmodus gehen. Messen und vor allem Senden verbrauchen Energie; seltener messen und senden spart Batterie."
+    },
+    {
+      "id": "PB1-3-1-1-K7-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K7",
+      "vorne": "Was unterscheidet imperative von deklarativer Programmierung?",
+      "hinten": "- imperativ: Das Programm gibt Schritt für Schritt vor, **wie** gerechnet wird (Anweisungen, Schleifen, Variablen ändern).\n- deklarativ: Das Programm beschreibt nur, **was** herauskommen oder gelten soll; den Weg bestimmt das System."
+    },
+    {
+      "id": "PB1-3-1-1-K7-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K7",
+      "vorne": "Ordne zu: strukturiert, prozedural, objektorientiert, funktional, logisch – imperativ oder deklarativ?",
+      "hinten": "- imperativ: strukturiert, prozedural, objektorientiert\n- deklarativ: funktional, logisch (z. B. Prolog); auch SQL beschreibt nur das Ergebnis"
+    },
+    {
+      "id": "PB1-3-1-1-K8-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K8",
+      "vorne": "Nenne je einen Vor- und Nachteil imperativer und deklarativer Programmierung.",
+      "hinten": "- imperativ: + Ablauf Schritt für Schritt nachvollziehbar; – viel Code\n- deklarativ: + kurz und präzise, Ausführung übernimmt das System; – abstrakt, ungewohnt, Inneres schwer zu durchschauen"
+    },
+    {
+      "id": "PB1-3-1-1-K8-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K8",
+      "vorne": "Warum sind Mischformen aus imperativem und deklarativem Stil nicht nur ein Vorteil?",
+      "hinten": "Sie verbinden die Stärken beider Stile und sparen Code, doch wechselnde Schreibweisen im selben Programm machen es schwerer lesbar und damit fehleranfälliger."
+    },
+    {
+      "id": "PB1-3-1-1-K9-1",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K9",
+      "vorne": "Nenne zwei Argumente für und eines gegen Java bei der Sprachwahl.",
+      "hinten": "- dafür: plattformunabhängig durch Bytecode und virtuelle Maschine; durchgängig objektorientiert mit großer Standardbibliothek und freien IDEs\n- dagegen: meist langsamer und speicherhungriger als direkt in Maschinencode übersetzte Sprachen"
+    },
+    {
+      "id": "PB1-3-1-1-K9-2",
+      "sp": "PB1-3-1-1",
+      "k": "PB1-3-1-1-K9",
+      "vorne": "Warum laufen Java-Programme ohne Neuübersetzung auf verschiedenen Betriebssystemen?",
+      "hinten": "Der Compiler erzeugt Bytecode statt Maschinencode; diesen führt auf jedem Betriebssystem eine passende virtuelle Maschine aus."
+    },
+    {
+      "id": "PB1-3-1-2-K5-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K5",
+      "vorne": "Wann lohnt sich ein GUI-Builder, und warum?",
+      "hinten": "Bei Oberflächen mit vielen Masken oder häufigen Layout-Änderungen: Elemente werden per Drag and Drop angeordnet und eingestellt, der Code dafür entsteht automatisch, man schreibt nur die Ereignislogik. Von Hand wäre jede Position im Code festzulegen – zeitaufwendig und schwer zu variieren."
+    },
+    {
+      "id": "PB1-3-1-2-K6-1",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K6",
+      "vorne": "Warum ändert man vom GUI-Designer erzeugten Code nicht von Hand?",
+      "hinten": "Der Designer erzeugt den Code bei jeder Änderung neu aus seiner Beschreibung; Handänderungen würden überschrieben."
+    },
+    {
+      "id": "PB1-3-1-2-K6-2",
+      "sp": "PB1-3-1-2",
+      "k": "PB1-3-1-2-K6",
+      "vorne": "Wohin gehört die eigene Logik, wenn die Oberfläche mit einem GUI-Designer erzeugt wird?",
+      "hinten": "In eine eigene Klasse (eigene Datei), die den erzeugten Oberflächenteil einbindet oder von ihm erbt – getrennt vom generierten Code."
+    },
+    {
+      "id": "PB1-3-1-3-K4-1",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K4",
+      "vorne": "Was unterscheidet eine verteilte Versionsverwaltung wie Git von einer zentralen?",
+      "hinten": "Jeder Klon enthält das ganze Repository mit Historie; Commits, Vergleiche und Zweige gehen lokal ohne Server. Ein gemeinsames Remote-Repository dient nur dem Abgleich (Push/Pull). Bei zentraler Versionsverwaltung liegt die Historie nur auf dem Server."
+    },
+    {
+      "id": "PB1-3-1-3-K4-2",
+      "sp": "PB1-3-1-3",
+      "k": "PB1-3-1-3-K4",
+      "vorne": "Wozu dient bei Git das Vormerken (Staging) vor dem Commit?",
+      "hinten": "Man wählt gezielt aus, welche Änderungen in den nächsten Commit kommen – so entstehen kleine, in sich stimmige Commits."
+    },
+    {
+      "id": "PB1-3-2-1-K4-1",
+      "sp": "PB1-3-2-1",
+      "k": "PB1-3-2-1-K4",
+      "vorne": "Warum programmiert man Verschlüsselung oder Anmeldung nicht selbst?",
+      "hinten": "Eigenbauten haben leicht unentdeckte Lücken. Bewährte Bibliotheken und Frameworks sind vielfach geprüft und werden bei neuen Angriffen per Update verbessert."
+    },
+    {
+      "id": "PB1-3-2-1-K4-2",
+      "sp": "PB1-3-2-1",
+      "k": "PB1-3-2-1-K4",
+      "vorne": "Warum ist die Sicherheitsunterstützung ein Kriterium bei der Wahl eines Frameworks?",
+      "hinten": "Bringt es Verschlüsselung, Anmeldung, Eingabefilter und Schutz vor SQL-Injection gepflegt mit, muss das Team diese heiklen Teile nicht selbst bauen – weniger Aufwand und weniger Risiko."
+    },
+    {
+      "id": "PB1-3-2-2-K4-1",
+      "sp": "PB1-3-2-2",
+      "k": "PB1-3-2-2-K4",
+      "vorne": "Warum konfiguriert man viele gleichartige Netzwerkgeräte per Skript über die Kommandozeile?",
+      "hinten": "Die Befehlsfolge wird einmal geschrieben und getestet und läuft dann auf allen Geräten schnell, gleich und ohne Tippfehler. Das Skript dokumentiert die Einstellungen und ist jederzeit wiederholbar."
+    },
+    {
+      "id": "PB1-3-2-3-K4-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K4",
+      "vorne": "Nenne vier Merkmale eines cyber-physischen Systems über Sensor, Verarbeitung und Aktor hinaus.",
+      "hinten": "- eindeutige Identifikation im Netz\n- dezentrale Entscheidung (steuern oder regeln vor Ort)\n- Vernetzung mit Maschinen, IT-Systemen, Partnern und Menschen\n- Adaption: passt sein Verhalten an, z. B. das Messintervall"
+    },
+    {
+      "id": "PB1-3-2-3-K5-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K5",
+      "vorne": "Was unterscheidet eine Steuerung von einer Regelung?",
+      "hinten": "Steuerung: wirkt nach festen Vorgaben, ohne das Ergebnis zu messen (offene Wirkungskette). Regelung: misst den Istwert laufend, vergleicht ihn mit dem Sollwert und stellt nach, bis beide übereinstimmen (Rückkopplung)."
+    },
+    {
+      "id": "PB1-3-2-3-K5-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K5",
+      "vorne": "Nenne die Elemente eines Regelkreises am Beispiel Raumtemperatur.",
+      "hinten": "- Sollwert: gewünschte Temperatur\n- Sensor: misst den Istwert\n- Vergleich: bildet die Abweichung\n- Stellglied: heizt oder kühlt\n- Rückkopplung: der neue Istwert geht wieder in den Vergleich"
+    },
+    {
+      "id": "PB1-3-2-3-K6-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K6",
+      "vorne": "Welchen Sensor wählst du für den Füllstand eines Behälters, und warum?",
+      "hinten": "Einen Ultraschallsensor: Er misst die Laufzeit des Echos und damit den Abstand zur Oberfläche – unabhängig von Farbe und Material des Inhalts."
+    },
+    {
+      "id": "PB1-3-2-3-K6-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K6",
+      "vorne": "Ordne je einen Sensor zu: Anwesenheit im Raum, Luftqualität, Laufruhe einer Maschine.",
+      "hinten": "- Anwesenheit: Infrarot-Bewegungsmelder\n- Luftqualität: CO2-Sensor\n- Laufruhe: Vibrationssensor"
+    },
+    {
+      "id": "PB1-3-2-3-K7-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K7",
+      "vorne": "Worauf achtest du bei einem Sensor für eine Werkhalle mit Öl und Vibration, worauf bei einem Messpunkt ohne Strom- und Netzanschluss?",
+      "hinten": "- Werkhalle: robustes, dichtes Gehäuse, unempfindlich gegen Öl, Schmutz, Vibration und Temperatur\n- ohne Anschlüsse: Funkübertragung und Batterie, sparsamer Betrieb (seltener messen und senden)"
+    },
+    {
+      "id": "PB1-3-2-3-K8-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K8",
+      "vorne": "Beschreibe den Datenweg eines einfachen vernetzten CPS.",
+      "hinten": "Sensor → Mikrocontroller → Funk (WLAN oder Bluetooth) über TCP/IP → zentraler Server (speichert, bereitet auf) → Dashboard auf PC oder Mobilgerät"
+    },
+    {
+      "id": "PB1-3-2-3-K9-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K9",
+      "vorne": "Aus welchen drei Teilen besteht ein typisches Mikrocontroller-Programm?",
+      "hinten": "- globaler Teil: Bibliotheken, Konstanten, Variablen, Sensorobjekte\n- Einrichtungsteil: läuft einmal, legt Anschlüsse als Ein- oder Ausgang fest\n- Endlosschleife: lesen – prüfen – ausgeben – warten"
+    },
+    {
+      "id": "PB1-3-2-3-K9-2",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K9",
+      "vorne": "Wo setzt du im Mikrocontroller-Programm den Abfragerhythmus um?",
+      "hinten": "In der Wartezeit der Endlosschleife: Sie bestimmt, wie oft gemessen wird."
+    },
+    {
+      "id": "PB1-3-2-3-K10-1",
+      "sp": "PB1-3-2-3",
+      "k": "PB1-3-2-3-K10",
+      "vorne": "Wie gehst du in einem CPS-Programm mit dem Messwert NaN um?",
+      "hinten": "Wert verwerfen (nicht schalten, nicht speichern), Fehler melden und im nächsten Durchlauf neu messen; zusätzlich unmögliche Werte über Grenzen abfangen."
     }
   ],
   "nicht_abgefragt": [],
@@ -701,6 +869,126 @@
       "id": "PB1-3-2-2-K2-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-3-1-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.1-S181, buch:FS2-3.3.2-S239, buch:GS-5.6.2-S537)"
+    },
+    {
+      "id": "PB1-3-1-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.1-S181, buch:FS2-3.3.2-S239, buch:GS-5.6.2-S537)"
+    },
+    {
+      "id": "PB1-3-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.1-S182)"
+    },
+    {
+      "id": "PB1-3-1-1-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.1-S182)"
+    },
+    {
+      "id": "PB1-3-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.1-S215)"
+    },
+    {
+      "id": "PB1-3-1-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.1-S215)"
+    },
+    {
+      "id": "PB1-3-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.5.4-S242, buch:GS-5.6.4-S543)"
+    },
+    {
+      "id": "PB1-3-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.4.2-S54, buch:FS2-1.4.3-S69)"
+    },
+    {
+      "id": "PB1-3-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.4.2-S54, buch:FS2-1.4.3-S69)"
+    },
+    {
+      "id": "PB1-3-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.4.2-S129)"
+    },
+    {
+      "id": "PB1-3-1-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.4.2-S129)"
+    },
+    {
+      "id": "PB1-3-2-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.7-S206)"
+    },
+    {
+      "id": "PB1-3-2-1-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.3.7-S206)"
+    },
+    {
+      "id": "PB1-3-2-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.7.4-S376)"
+    },
+    {
+      "id": "PB1-3-2-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.4-S93)"
+    },
+    {
+      "id": "PB1-3-2-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.4-S93, buch:FS-2.1.4-S96)"
+    },
+    {
+      "id": "PB1-3-2-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.4-S93, buch:FS-2.1.4-S96)"
+    },
+    {
+      "id": "PB1-3-2-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.4-S95)"
+    },
+    {
+      "id": "PB1-3-2-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.4-S95)"
+    },
+    {
+      "id": "PB1-3-2-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.3.1-S117)"
+    },
+    {
+      "id": "PB1-3-2-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.1.4-S100)"
+    },
+    {
+      "id": "PB1-3-2-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.2-S134)"
+    },
+    {
+      "id": "PB1-3-2-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.2-S134)"
+    },
+    {
+      "id": "PB1-3-2-3-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-2.5.2-S134)"
     }
   ]
 }
