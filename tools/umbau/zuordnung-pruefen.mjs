@@ -1,7 +1,7 @@
 // Prüft die Zuordnung „Teilaufgabe → Baustein" (Schicht 3, Test T2) und berechnet daraus die belegte
 // Tiefe je Baustein.
 //
-// Aufruf:  node tools/umbau/zuordnung-pruefen.mjs [raum] [--teilweise]   (raum: ap1, pb1, pb2; Standard ap1;
+// Aufruf:  node tools/umbau/zuordnung-pruefen.mjs [raum] [--teilweise]   (raum: ap1, pb1, pb2, wiso; Standard ap1;
 //          --teilweise: fehlende Prüfungen nur melden)
 // Gültige Bausteine je Raum: tools/umbau/raum.mjs (eigene, aus früheren Räumen importierte, Anhänge).
 // Liest:   umbau/fundament/katalog-bausteine.json, umbau/fundament/tiefe.json,
@@ -57,6 +57,9 @@ const alleKatalogIds = new Set([...b.punkte.map((p) => p.id), ...b.spiegelstrich
 const anhangIds = R.anhang;
 const opStufe = regeln.pruefungsoperatoren.stufen;
 const formOps = new Set(regeln.pruefungsoperatoren.formoperatoren ?? []);
+// Z3b (v1.8, P46): in maschinell auswertbaren Aufgaben (WiSo) bestimmt der Aufgabentyp die Stufe, wenn nur ein Formoperator dasteht
+const z3b = regeln.pruefungsoperatoren.z3b ?? {};
+const z3bStufe = (z3b.raeume ?? []).includes(TEIL) ? z3b.stufe_nach_aufgabentyp : null;
 for (const op of formOps) if (!(op in opStufe)) fehler.push(`Formoperator ohne Stufe im Regelwerk: „${op}"`);
 
 // Zusatzbausteine gültig?
@@ -64,7 +67,7 @@ for (const [id, z] of Object.entries(zusatz)) {
   if (!id.startsWith('ZB.')) fehler.push(`Zusatzbaustein-ID muss mit ZB. beginnen: ${id}`);
   if (!z.titel || !z.katalogbezug || !z.begruendung) fehler.push(`Zusatzbaustein ${id}: titel, katalogbezug und begruendung sind Pflicht`);
   if (z.katalogbezug && !alleKatalogIds.has(z.katalogbezug)) fehler.push(`Zusatzbaustein ${id}: Katalogbezug ${z.katalogbezug} unbekannt`);
-  if (z.raum && !['AP1', 'PB1', 'PB2'].includes(z.raum)) fehler.push(`Zusatzbaustein ${id}: unbekannter Raum ${z.raum}`);
+  if (z.raum && !['AP1', 'PB1', 'PB2', 'WISO'].includes(z.raum)) fehler.push(`Zusatzbaustein ${id}: unbekannter Raum ${z.raum}`);
 }
 
 // Prüfungsoperatoren vollständig und konsistent mit der Katalog-Tabelle?
@@ -115,7 +118,11 @@ for (const p of index.pruefungen) {
     const ops = t.operator ?? [];
     const fachlich = ops.filter((o) => !formOps.has(o));
     const zaehlend = fachlich.length ? fachlich : ops;
-    const stufe = zaehlend.length ? Math.max(...zaehlend.map((o) => opStufe[o] ?? 0)) : null;
+    let stufe = zaehlend.length ? Math.max(...zaehlend.map((o) => opStufe[o] ?? 0)) : null;
+    if (z3bStufe && ops.length && !fachlich.length) {
+      if (!(t.aufgabentyp in z3bStufe)) fehler.push(`${t.id}: Aufgabentyp „${t.aufgabentyp}“ hat keine Stufe in Z3b (regelwerk.json)`);
+      else stufe = z3bStufe[t.aufgabentyp];
+    }
     for (const bid of e.bausteine) {
       const gueltig = R.gueltig.has(bid);
       if (!gueltig) {

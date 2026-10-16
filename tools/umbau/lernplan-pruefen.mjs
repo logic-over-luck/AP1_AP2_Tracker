@@ -33,11 +33,19 @@ if (!ORDNER) { console.error('Aufruf: node tools/umbau/lernplan-pruefen.mjs <Ord
 const TEIL = ORDNER.split('-')[0];
 const RAUM = TEIL.toLowerCase();
 const R = raum(TEIL);
-const NEU_IDS = TEIL !== 'AP1'; // P33: ab PB1 neue IDs, Umzugstabelle statt ID-Erhalt
+const NEU_IDS = !['AP1', 'WISO'].includes(TEIL); // P33: PB1/PB2 neue IDs, Umzugstabelle statt ID-Erhalt; WISO wie AP1 (P48)
 const exporte = Object.fromEntries(R.frueher.filter((r) => existsSync(`umbau/export/${r}.json`))
   .map((r) => [r, JSON.parse(readFileSync(`umbau/export/${r}.json`, 'utf8'))]));
 const exportSP = new Map(Object.values(exporte).flatMap((e) => e.stichpunkte.map((s) => [s.id, s])));
-const erreichtFrueher = (id) => Math.max(0, ...Object.values(exporte).map((e) => e.erreicht[id]?.stufe ?? 0));
+// P47: WiSo-Bausteine, deren Inhalt ein früherer Raum lehrt (umbau/regeln/wiso-deckung.json), zählen wie Importe:
+// erreicht = höchste Stufe einer Können-Aussage in den deckenden Stichpunkten des Exports
+const deckung = R.deckung ?? {};
+const gedeckt = (id) => id in deckung;
+const stufeSP = (spId) => Math.max(0, ...(exportSP.get(spId)?.koennen ?? []).map((k) => k.stufe));
+const erreichtFrueher = (id) => gedeckt(id)
+  ? Math.max(0, ...deckung[id].stichpunkte.map(stufeSP))
+  : Math.max(0, ...Object.values(exporte).map((e) => e.erreicht[id]?.stufe ?? 0));
+const wieImport = (id) => R.importierbar(id) || gedeckt(id);
 
 const lp = JSON.parse(readFileSync(process.env.LERNPLAN_DATEI ?? `umbau/lernplan/${RAUM}/${ORDNER}.json`, 'utf8'));
 const b = JSON.parse(readFileSync('umbau/fundament/katalog-bausteine.json', 'utf8'));
@@ -48,7 +56,10 @@ const index = JSON.parse(readFileSync(`umbau/fundament/pruefungen-${RAUM}.json`,
 const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
 const altPaket = NEU_IDS
   ? { karten: readdirSync('inhalte/lernen').filter((f) => /^AP2-\d+\.json$/.test(f)).flatMap((f) => JSON.parse(readFileSync(`inhalte/lernen/${f}`, 'utf8')).karten) }
-  : JSON.parse(readFileSync(`inhalte/lernen/${ORDNER}.json`, 'utf8'));
+  : TEIL === 'WISO'
+    // alte WiSo-Pakete: WISO-1a, WISO-1b, WISO-2, WISO-3, WISO-4-5 → Karten des Ordners über die Können-ID
+    ? { karten: readdirSync('inhalte/lernen').filter((f) => /^WISO-.*\.json$/.test(f)).flatMap((f) => JSON.parse(readFileSync(`inhalte/lernen/${f}`, 'utf8')).karten).filter((c) => (c.k ?? c.sp ?? '').startsWith(`${ORDNER}-`)) }
+    : JSON.parse(readFileSync(`inhalte/lernen/${ORDNER}.json`, 'utf8'));
 
 const zuordnung = {};
 for (const d of readdirSync(`umbau/zuordnung/${RAUM}`)) {
@@ -100,8 +111,8 @@ for (const tb of lp.themenbloecke) {
     for (const x of sp.bausteine) if (!raumBausteine.has(x.id)) F(`${sp.id}: Baustein ${x.id} gehört nicht zum Raum ${TEIL}`);
     // E2: Bausteine früherer Räume nur über baut_auf auf einen Stichpunkt, der sie dort abdeckt
     for (const ba of sp.baut_auf ?? []) if (!exportSP.has(ba)) F(`E2: ${sp.id}: baut_auf ${ba} steht in keinem Export (${R.frueher.join(', ') || '–'})`);
-    for (const x of sp.bausteine.filter((y) => R.importierbar(y.id))) {
-      const dort = Object.values(exporte).flatMap((e) => e.erreicht[x.id]?.stichpunkte ?? []);
+    for (const x of sp.bausteine.filter((y) => wieImport(y.id))) {
+      const dort = gedeckt(x.id) ? deckung[x.id].stichpunkte : Object.values(exporte).flatMap((e) => e.erreicht[x.id]?.stichpunkte ?? []);
       if (!(sp.baut_auf ?? []).some((ba) => dort.includes(ba))) F(`E2: ${sp.id}: importierter Baustein ${x.id} ohne baut_auf auf einen Stichpunkt, der ihn abdeckt (${dort.join(', ') || 'keiner im Export'})`);
       // T7 (P36): Ein importierter Baustein steht nur in `bausteine`, wenn eine Aussage hier zu ihm etwas Neues bringt
       const neuHier = sp.koennen.some((k) => k.neu?.was && fachIds(k).includes(x.id));
@@ -137,8 +148,8 @@ for (const tb of lp.themenbloecke) {
       // Ohne Beleg aus diesem Raum muss sie außerdem tiefer gehen als der frühere Raum.
       if (R.frueher.length) {
         const fach = fachIds(k);
-        if (fach.length && fach.every((x) => R.importierbar(x))) {
-          if (!k.neu?.was || !k.neu?.gegenueber?.length) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) ohne Angabe „neu“ – streichen und per baut_auf importieren oder mit neu.gegenueber/neu.was begründen (P36)`);
+        if (fach.length && fach.every((x) => wieImport(x))) {
+          if (!k.neu?.was || !k.neu?.gegenueber?.length) F(`T7: ${k.id} betrifft nur importierte oder gedeckte Bausteine (${fach.join(', ')}) ohne Angabe „neu“ – streichen und per baut_auf importieren oder mit neu.gegenueber/neu.was begründen (P36)`);
           for (const g of k.neu?.gegenueber ?? []) if (!(sp.baut_auf ?? []).includes(g)) F(`T7: ${k.id}: neu.gegenueber ${g} steht nicht in baut_auf von ${sp.id}`);
           const belegHier = (k.herkunft ?? []).some((h) => h.startsWith('beleg:'));
           const dort = Math.min(...fach.map(erreichtFrueher));
@@ -190,7 +201,7 @@ for (const id of ordnerBausteine) {
     const trifft = k.herkunft.some((h) => h === `katalog:${id}` || (h.startsWith('beleg:') && zuordnung[h.slice(6)]?.bausteine.includes(id)));
     if (trifft) ist = Math.max(ist, k.stufe);
   }
-  if (R.importierbar(id)) ist = Math.max(ist, erreichtFrueher(id)); // E2: im früheren Raum erreicht
+  if (wieImport(id)) ist = Math.max(ist, erreichtFrueher(id)); // E2/P47: im früheren Raum erreicht
   tiefe.push({ id, soll, ist, geteilt: geteilt.has(id) });
   if (soll && ist < soll) {
     const text = `T8: ${id} braucht Stufe ${soll}, erreicht in ${ORDNER} ${ist || 'keine'}`;
@@ -224,7 +235,10 @@ if (!NEU_IDS) {
   for (const x of an) if (!altK.includes(x.alt)) F(`ALT: ${x.alt} ist keine alte Können-Aussage dieses Ordners`);
   const freigewordene = new Set(an.filter((x) => x.status === 'verschoben' || x.status === 'gestrichen').map((x) => x.alt));
   for (const id of kIds) if (freigewordene.has(id)) F(`ALT: ID ${id} wird neu vergeben, obwohl sie verschoben/gestrichen wurde`);
-  for (const s of altSP) if (!spIds.includes(s.id)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
+  // WISO (P47): ein alter Stichpunkt darf entfallen, wenn alle seine Aussagen gestrichen oder verschoben sind
+  // (z. B. weil sein Inhalt in einem früheren Raum wohnt); sonst gilt ID-Erhalt
+  const weg = (s) => TEIL === 'WISO' && s.koennen.every((k) => an.some((x) => x.alt === k.id && (x.status === 'gestrichen' || x.status === 'verschoben')));
+  for (const s of altSP) if (!spIds.includes(s.id) && !weg(s)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
 } else {
   // P33: alte AP2-Aussagen werden mit neuer ID verschoben/angepasst, gestrichen oder für PB2 vermerkt
   // PB1: alle alten AP2-Aussagen; PB2: nur die in PB1 als „PB2“ vermerkten, Status ohne „PB2“
@@ -263,7 +277,7 @@ for (const t of abgleich) {
     if (t.ring === 'Kern' || t.ring === 'Puffer') { if (!kMap.has(w)) F(`${name}: Können-Aussage ${w} gibt es nicht`); }
     else if (t.ring === 'Kür') { if (!spMap.get(w)?.kuer?.length) F(`${name}: Stichpunkt ${w} hat keinen Kür-Eintrag`); }
     else if (t.ring === 'Außen') { if (!spMap.get(w)?.grenzen?.length) F(`${name}: Stichpunkt ${w} hat keine Grenze`); }
-    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+(-\d+)*|PB1-\d+(-\d+)*|PB2-\d+(-\d+)*|AP1|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
+    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+(-\d+)*|PB1-\d+(-\d+)*|PB2-\d+(-\d+)*|WISO-\d+(-\d+)*|AP1|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
   }
   if (t.ring === 'Puffer' && !t.wo.some((w) => kMap.get(w)?.herkunft.some((h) => h.startsWith('regel:')))) F(`${name}: Puffer, aber keine der Aussagen hat Herkunft regel:`);
 }

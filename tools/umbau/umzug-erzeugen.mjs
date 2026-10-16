@@ -18,7 +18,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 
 const PRUEFEN = process.argv.includes('--pruefen');
-const RAEUME = ['ap1', 'pb1', 'pb2'].filter((r) => existsSync(`umbau/lernplan/${r}`));
+const RAEUME = ['ap1', 'pb1', 'pb2', 'wiso'].filter((r) => existsSync(`umbau/lernplan/${r}`));
 
 const koennen = {};
 const reihenfolge = []; // neue Stichpunkt-IDs in Lernplan-Reihenfolge
@@ -64,7 +64,7 @@ const bloecke = mehrheit(proBlock);
 
 // Vollständigkeit: jede alte Können-Aussage der gebauten Räume steht in der Tabelle
 const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
-const teile = { ap1: 'AP1', pb1: 'AP2', pb2: 'AP2' };
+const teile = { ap1: 'AP1', pb1: 'AP2', pb2: 'AP2', wiso: 'WISO' };
 const pflichtTeile = new Set(RAEUME.map((r) => teile[r]));
 const fehlend = alt.stichpunkte.filter((s) => pflichtTeile.has(s.teil)).flatMap((s) => (s.koennen ?? []).map((k) => k.id)).filter((id) => !koennen[id]);
 

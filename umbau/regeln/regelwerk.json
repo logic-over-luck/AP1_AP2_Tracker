@@ -1,6 +1,6 @@
 {
-  "version": "1.7",
-  "stand": "2026-10-14",
+  "version": "1.8",
+  "stand": "2026-10-16",
   "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen.",
   "stufen": {
     "1": {
@@ -203,10 +203,25 @@
       "erhalten": 3,
       "aufzeigen": 2,
       "argumentieren": 4,
-      "herstellen": 3
+      "herstellen": 3,
+      "ordnen": 2
     },
     "abweichungen": {
       "nachweisen": "Katalog: „Grundverständnis nachweisen“ (Stufe 2); in Prüfungen: „durch eine Rechnung nachweisen“ (Stufe 3)."
+    },
+    "z3b": {
+      "regel": "Z3b (v1.8, P46, Projektinhaber 16.10.2026): In maschinell auswertbaren Aufgaben (WiSo) ist „eintragen“ nur die Antwortform (Ziffer ins Lösungskästchen). Steht nur ein Formoperator da, bestimmt der Aufgabentyp der Abschrift die Stufe statt des Formoperators. Fachliche Operatoren (zuordnen, ordnen, ermitteln, berechnen …) zählen wie immer; die Katalogstufe bleibt Untergrenze (goldene Regel).",
+      "raeume": [
+        "WISO"
+      ],
+      "stufe_nach_aufgabentyp": {
+        "einfachauswahl": 2,
+        "mehrfachauswahl": 2,
+        "zuordnung": 2,
+        "reihenfolge": 2,
+        "eintrag": 1,
+        "rechnen": 3
+      }
     }
   },
   "ringe": {
