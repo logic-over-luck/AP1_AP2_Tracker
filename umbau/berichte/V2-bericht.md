@@ -8,7 +8,7 @@ Auftrag des Projektinhabers vom 16.10.2026 (D1–D11), nachgeschärft nach dem �
 |---|---|
 | 1 Regelwerk v2.0 | ✓ (Commit „V2 Schritt 1“) |
 | 2 Kernpunkt-Listen | ✓ 298 Kapitel, Gegenprüfung je Abschnitt, Regel K v2.1 angewandt |
-| 3 Räume erweitern | offen – beginnt jetzt |
+| 3 Räume erweitern | **AP1 fertig** (8 Ordner, 604 → 838 Aussagen, je Ordner Commit); **PB1 als Nächstes** (pausiert auf Wunsch des Projektinhabers), dann PB2, WISO |
 | 4 Karten und Erklärungen | wird je Ordner zusammen mit Schritt 3 gebaut (die Tests verlangen zu jeder Aussage Karte und Erklärung) |
 | 5 App | teilweise vorgezogen (Marke „Buch“, Lernprompt D10, Wichtigkeit D7); Build und Browser-Check offen |
 | 6 Unabhängige Prüfung | Auftrag `umbau/auftraege/V2-pruefung.md` liegt vor |
@@ -106,3 +106,30 @@ Erwartung Schritt 3 mit Obergrenze (je Ordner min(Obergrenze RK3, eindeutige Pfl
 - AP1-3-4-1-K2 nennt die OEM-Lizenz „an das Gerät gebunden“; in Deutschland ist der Weiterverkauf auch ohne Gerät zulässig.
 - PB1-3-1-3-K1 spricht vom „zentralen Repository“ (Git ist verteilt; zentral ist nur der gemeinsame Server-Stand).
 
+
+## Schritt 3 – Fortschritt (Stand: AP1 fertig, PB1 pausiert)
+
+Ablauf je Ordner: Bau-Subagent schreibt einen Patch (Auftrag lokal `scratchpad/v2/auftrag-bau.md`; offene Kernpunkte je
+Ordner aus den lokalen Listen), Einbau mit `node tools/umbau/v2-einbauen.mjs <patch>`, danach `lernplan-pruefen`,
+`raum-pruefen`, `export-raum` (Export neu, E4), `umzug-erzeugen`, alle Ordner aller Räume (T7/T8), `buch-pruefen --anlegen`
+(T10), `buch-wortlaut` (K5), `npm test`; Commit und Push je Ordner. Karten und Erklärungen (Schritt 4) entstehen im selben
+Patch, weil die Tests zu jeder Aussage Karte und Erklärung verlangen. Bisherige Kür-Einträge, deren Inhalt jetzt Pflicht ist,
+werden gestrichen oder gekürzt (`tools/umbau/v2-kuer-zu-pflicht.mjs`, Protokoll in `meta.v2`).
+
+| Ordner | neue Aussagen | neue Stichpunkte | D6 | Kür | Bemerkung |
+|---|---|---|---|---|---|
+| AP1-5 | 19 | 1 (Cloud Computing) | 4 | 15 | |
+| AP1-8 | 39 | 2 (Variablen/Ausdrücke, Datenstrukturen) | 1 | 19 | Kür „Weitere Datenstrukturen“ jetzt Pflicht |
+| AP1-2 | 22 | 0 | 2 | 27 | Corporate Identity/Design nach RK6 in AP1-2-4-1 (der Bau-Subagent wollte es zurück nach AP1-8-4-3; Entscheidung des Projektinhabers gilt) |
+| AP1-1 | 19 | 0 | 8 | 29 | RK5-Hinweise (ITIL, KI-VO) |
+| AP1-4 | 46 | 3 (Wie ein Computer arbeitet; Leistung von CPU und RAM; Zeichen und Zahlen binär kodieren) | 7 | 33 | Block AP1-4-1 mit 8 Stichpunkten |
+| AP1-7 | 35 | 0 | 3 | 24 | RK5: Art. 32 DSGVO statt § 64 BDSG, NIS-2/BSIG, DDG/TDDDG |
+| AP1-3 | 28 | 0 | 5 | 31 | |
+| AP1-6 | 26 | 2 (Geräteauswahl, Testbefehle) | 4 | 17 | |
+| **AP1** | **234** | **8** | **34** | **195** | 604 → 838 Aussagen; Raum-Prüfung, T10 für AP1, K5 grün |
+
+K5-Treffer in AP1 (6 Wörter) sind Gesetzeswortlaut (Art. 5/32 DSGVO, § 38 BDSG – amtliche Werke) oder feste Fachbegriffe
+(„Round Trip Time“, „Drei-Phasen-Modell nach Lewin“); echte Übernahmen (AP1-2-2-4-K6, AP1-1-5-1 Kür) umformuliert.
+
+**Fortsetzung:** `offen/PB1-*.json` aus den lokalen Kernpunkt-Listen erzeugen und je PB1-Ordner (Reihenfolge PB1-6, -5, -8,
+-9, -10, -1, -3, -7, -2, -4, -11, -12) bauen; dann PB2-1…6, WISO-1…5. Danach Schritt 5 (Build, Browser-Check), 6, 7.
