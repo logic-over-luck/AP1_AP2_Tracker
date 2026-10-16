@@ -98,6 +98,38 @@
                 "katalog:AP1.03.01.3.2",
                 "katalog:AP1.03.01.3.3"
               ]
+            },
+            {
+              "id": "AP1-5-1-1-K8",
+              "text": "Du kannst erklären, was nach der weiten Definition alles zur Software gehört: nicht nur die Programme, sondern auch festgelegte Abläufe, die Dokumentation und die Daten, die für den Betrieb eines Rechnersystems nötig sind.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.1.1-S469"
+              ]
+            },
+            {
+              "id": "AP1-5-1-1-K9",
+              "text": "Du kannst Unterstützungssoftware von System- und Anwendungssoftware unterscheiden: Sie hilft beim Entwickeln von Software (z. B. Compiler, Editor, Debugger) oder erbringt Leistungen, die an keine bestimmte Anwendung gebunden sind.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.1.1-S469"
+              ]
+            },
+            {
+              "id": "AP1-5-1-1-K10",
+              "text": "Du kannst erklären, was Firmware ist: Software, die fest in einem Gerät gespeichert ist (z. B. UEFI/BIOS auf dem Mainboard oder die Steuerung von Drucker, Router oder SSD), die Hardware direkt steuert und schon vor dem Betriebssystem bereitsteht.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.2.2-S136"
+              ]
+            },
+            {
+              "id": "AP1-5-1-1-K11",
+              "text": "Du kannst den Vorteil eines integrierten ERP-Systems erklären: Alle Bereiche wie Einkauf, Verkauf, Lager, Buchhaltung und Personal arbeiten auf einer gemeinsamen Datenbasis, deshalb werden Daten nur einmal erfasst, Belege durchgängig weitergeführt und Auswertungen über alle Bereiche möglich.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.13-S192"
+              ]
             }
           ],
           "grenzen": [
@@ -117,6 +149,27 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Ein ERP-System gliedert sich in Bereiche wie Personal (HRM), Kunden und Verkauf (CRM), Produktion (MRP/PPS), Lieferkette und Lager (SCM) sowie Finanzen (FRM); ergänzend gibt es eigene Systeme für Lager und Transport (WMS), Lieferanten (SRM), Geschäftsprozesse (BPM) und Dokumente (DMS).",
+              "quellen": [
+                "buch:GS-2.4.13"
+              ],
+              "grund": "RK2: ERP-Module und weitere Unternehmenssysteme sind Unterthema (SCM und CRM stehen schon in AP1-5-1-1-K4), WMS/SRM/BPM/DMS ohne Katalog-Baustein."
+            },
+            {
+              "text": "Business Intelligence wertet Unternehmensdaten automatisch aus – gestützt auf ein Data Warehouse, das Daten aus vielen Systemen zusammenführt, und auf Data Mining, das darin Muster sucht; daneben gibt es integrierte Systeme für Produktionsplanung (PPS), Beschaffung, Lieferanten (SRM), Dokumente (DMS) und Geschäftsprozesse (BPM).",
+              "quellen": [
+                "buch:GS-1.3.5"
+              ],
+              "grund": "D8: weitere integrierte Unternehmenssysteme ohne Katalog-Baustein."
+            },
+            {
+              "text": "Beim E-Procurement wird elektronisch beschafft – über Shops der Lieferanten, eigene Beschaffungsplattformen oder Marktplätze –, und die Bestelldaten gelangen über Austauschformate wie EDI oder XML ohne Abtippen ins ERP-System.",
+              "quellen": [
+                "buch:GS-2.9.1"
+              ],
+              "grund": "RK2: E-Procurement ist Unterthema, nicht im Baustein genannt."
             }
           ],
           "hinweis": "Leistungsmerkmale aus einem englischen Text (2022F-A4-a) stehen im Ordner Kunde, Markt und Unternehmen, digitale Rechnungen (2025H-A2-a) im Ordner Wirtschaftlichkeit und Verträge."
@@ -180,7 +233,16 @@
             }
           ],
           "grenzen": [],
-          "hinweis": "Die Rechnung Eigenentwicklung gegen Lizenzkauf (2022F-A4-c) und Gründe gegen eine Fremdvergabe (2024H-A2-a) stehen im Ordner Wirtschaftlichkeit und Verträge (AP1-3-2-4)."
+          "hinweis": "Die Rechnung Eigenentwicklung gegen Lizenzkauf (2022F-A4-c) und Gründe gegen eine Fremdvergabe (2024H-A2-a) stehen im Ordner Wirtschaftlichkeit und Verträge (AP1-3-2-4).",
+          "kuer": [
+            {
+              "text": "Sicherheit gehört in den ganzen Lebensweg von Standardsoftware: Sicherheitsanforderungen schon in den Anforderungskatalog aufnehmen, die Lieferung auf Vollständigkeit und Unversehrtheit prüfen, nur aus geprüfter Quelle installieren, Lizenzen verwalten und die Software am Ende vollständig entfernen.",
+              "quellen": [
+                "buch:GS-4.4.1"
+              ],
+              "grund": "RK2: Sicherheit im Software-Lebenszyklus gehört nicht zu den Beurteilungskriterien des Bausteins (Anpassbarkeit, Wartbarkeit, Schnittstellen)."
+            }
+          ]
         },
         {
           "id": "AP1-5-1-3",
@@ -254,6 +316,23 @@
               "herkunft": [
                 "katalog:AP1.03.01.6"
               ]
+            },
+            {
+              "id": "AP1-5-1-3-K7",
+              "text": "Du kannst den Aufbau einer Virtual Desktop Infrastructure (VDI) erklären: Jeder Desktop läuft als virtuelle Maschine auf einem Server, ein Connection Broker verbindet den Benutzer über Client-Software oder Browser mit seiner VM, und weil die Sitzung auf dem Server läuft, bleibt sie bei einem Abbruch der Verbindung erhalten.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.7.3-S237",
+                "buch:GS-2.7.3-S239"
+              ]
+            },
+            {
+              "id": "AP1-5-1-3-K8",
+              "text": "Du kannst Vor- und Nachteile virtueller Desktops erläutern: zentrale Verwaltung, günstige Endgeräte, Zugriff von beliebigen (auch privaten) Geräten und weniger Angriffsfläche am Arbeitsplatz gegenüber der Abhängigkeit von einer stabilen Verbindung mit genug Bandbreite in beide Richtungen, eingeschränkten Freiheiten der Nutzer und der Bindung an einen Anbieter.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.7.3-S238"
+              ]
             }
           ],
           "grenzen": [
@@ -274,9 +353,90 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Bei der Virtualisierung teilt ein Hypervisor die Hardware eines Rechners auf mehrere virtuelle Maschinen mit eigenem Gastbetriebssystem auf, denen Prozessor, Arbeitsspeicher und Speicherplatz einzeln zugewiesen werden; stürzt eine virtuelle Maschine ab, laufen die anderen weiter.",
+              "quellen": [
+                "buch:GS-2.4.1"
+              ],
+              "grund": "RK2: kein Baustein mit dem Wortlaut Virtualisierung; Hypervisor steht schon in der Kür des Stichpunkts."
+            },
+            {
+              "text": "Container nutzen den Kern des Wirtssystems statt eines eigenen Betriebssystems und sind deshalb leichter und schneller als virtuelle Maschinen, aber schwächer abgeschottet. Risiken wie fehlerhafte fertige Images, Ausbruch auf den Wirt, im Image gespeicherte Zugangsdaten oder Datenverlust beim Löschen begegnet man mit einem Dienst je Container, Images aus geprüfter Quelle, begrenzten Ressourcen und dauerhaft gespeicherten Daten außerhalb des Containers.",
+              "quellen": [
+                "buch:GS-4.4.1"
+              ],
+              "grund": "D8: Container ohne Katalog-Baustein; Unterthema von Virtualisierung."
             }
           ],
           "hinweis": "Das kundengerechte Beschreiben von Cloud-Leistungen (2022F-A1-b) steht im Ordner Kunde, Markt und Unternehmen (AP1-2-2-4)."
+        },
+        {
+          "id": "AP1-5-1-5",
+          "titel": "Cloud Computing: Merkmale, Cloud-Speicher und Schutz der Daten",
+          "ziel": "Die Merkmale von Cloud Computing erklären, die Arbeitsweise eines synchronisierten Cloud-Speichers erklären und den Schutz von Daten in der Cloud beurteilen.",
+          "gebiete": [
+            "G.AP1.02"
+          ],
+          "bausteine": [
+            {
+              "id": "AP1.03.01.4",
+              "anteil": "Merkmale von Cloud Computing, Cloud-Speicher und Schutz der Daten in der Cloud"
+            }
+          ],
+          "teilaufgaben": [],
+          "koennen": [
+            {
+              "id": "AP1-5-1-5-K1",
+              "text": "Du kannst die Merkmale von Cloud Computing erklären: Rechenleistung, Speicher oder Software kommen über das Internet als Dienst, den der Kunde selbst bucht (Self-Service), der nach Bedarf wächst oder schrumpft, nach Verbrauch abgerechnet wird und aus einer gemeinsamen Plattform vieler Kunden mit getrennten Daten (mandantenfähig) bereitgestellt wird.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.4.13-S196"
+              ]
+            },
+            {
+              "id": "AP1-5-1-5-K2",
+              "text": "Du kannst erklären, wie ein eingebundener Cloud-Speicher arbeitet: Er erscheint wie ein Ordner im Dateisystem, hält eine lokale Kopie, gleicht Änderungen im Hintergrund mit allen verbundenen Geräten ab und bewahrt frühere und gelöschte Versionen eine Zeit lang auf – anders als beim bloßen Hoch- und Herunterladen einzelner Dateien.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-3.5.2-S361"
+              ]
+            },
+            {
+              "id": "AP1-5-1-5-K3",
+              "text": "Du kannst beurteilen, wie Daten in einem Cloud-Speicher geschützt werden: Serverstandort und dort geltendes Recht beachten, verschlüsselt übertragen und speichern und abwägen, dass eine Verschlüsselung schon auf dem eigenen Gerät am sichersten ist, die gemeinsame Arbeit im Team aber erschwert.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-3.5.2-S362"
+              ]
+            }
+          ],
+          "grenzen": [],
+          "kuer": [
+            {
+              "text": "Hosting-Formen: Beim Cloud-Hosting mietet man Rechenleistung und Speicher als Dienst, beim Managed Hosting betreut der Anbieter auch die Server, beim Housing (Colocation) stehen eigene Server in einem fremden Rechenzentrum, das Strom, Kühlung und Anbindung stellt, und beim Webhosting bekommt man Speicherplatz für eine Website.",
+              "quellen": [
+                "buch:GS-1.3.1"
+              ],
+              "grund": "RK2: Hosting-Formen sind weder SaaS noch DaaS; On-Premises gegen Cloud vertieft PB1-12-2-3."
+            },
+            {
+              "text": "Edge- bzw. Fog-Computing verarbeitet große Datenmengen, etwa von Sensoren, schon nahe am Entstehungsort vor und schickt nur das Nötige in die Cloud – das spart Übertragung und Energie und verkürzt die Reaktionszeit.",
+              "quellen": [
+                "buch:GS-2.3.2",
+                "buch:GS-2.4.13"
+              ],
+              "grund": "D8: Edge/Fog Computing ohne Katalog-Baustein (GS-2.4.13#12 ist derselbe Inhalt)."
+            },
+            {
+              "text": "Eine eigene (private) Cloud läuft auf einem Server im eigenen Netz oder bei einem Hoster; damit sie von außen erreichbar ist, braucht es eine Portfreigabe am Router und bei wechselnder öffentlicher IP-Adresse einen DynDNS-Dienst.",
+              "quellen": [
+                "buch:GS-3.5.2"
+              ],
+              "grund": "RK2: Einrichtungsdetail; Cloud-Arten stehen in der Kür von AP1-5-1-3."
+            }
+          ],
+          "hinweis": "Das Lehrbuch stellt die DSGVO als nur in Deutschland geltend dar; richtig ist: Sie gilt in der ganzen EU und auch für Anbieter außerhalb, die Personen in der EU Dienste anbieten."
         },
         {
           "id": "AP1-5-1-4",
@@ -311,7 +471,8 @@
               "stufe": 1,
               "herkunft": [
                 "beleg:2025F-A4-a",
-                "beleg:2025H-A2-bb"
+                "beleg:2025H-A2-bb",
+                "buch:FS2-3.1.1-S218"
               ]
             },
             {
@@ -344,7 +505,8 @@
               "text": "Du kannst begründen, ob eine KI-Software für einen Einsatzfall ausgewählt werden sollte: Nutzen, Kosten, Datenschutz, Verlässlichkeit.",
               "stufe": 4,
               "herkunft": [
-                "katalog:AP1.04.03.8"
+                "katalog:AP1.04.03.8",
+                "buch:FS2-3.1.2-S220"
               ]
             },
             {
@@ -353,6 +515,33 @@
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.01.3"
+              ]
+            },
+            {
+              "id": "AP1-5-1-4-K7",
+              "text": "Du kannst künstliche Intelligenz, maschinelles Lernen und Deep Learning als ineinander enthaltene Begriffe unterscheiden: KI ist der Oberbegriff für Verfahren, die Aufgaben lösen, für die sonst menschliches Denken nötig ist; maschinelles Lernen ist der Teil der KI, der sein Wissen aus Daten gewinnt; Deep Learning ist maschinelles Lernen mit vielschichtigen neuronalen Netzen.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-3.1.1-S217"
+              ]
+            },
+            {
+              "id": "AP1-5-1-4-K8",
+              "text": "Du kannst regelbasierte KI-Systeme von lernenden Verfahren unterscheiden: Ein Expertensystem zieht Schlüsse aus Regeln, die Fachleute formuliert haben, und seine Entscheidungen sind über diese Regeln nachvollziehbar; ein neuronales Netz lernt Muster aus vielen Beispielen, passt dabei seine Gewichte an und löst so auch Probleme ohne feste Regeln, seine Entscheidungen sind aber meist nicht nachvollziehbar.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:FS2-3.3.1-S236",
+                "buch:FS2-3.3.2-S239",
+                "buch:FS2-3.4.1-S242"
+              ]
+            },
+            {
+              "id": "AP1-5-1-4-K9",
+              "text": "Du kannst ein KI-Vorhaben auf seine Risiken hin beurteilen: schwer planbar mangels Erfahrungswerten und wegen unsicherer Datenlage, ungeklärte Verantwortung für Fehlentscheidungen, diskriminierende Entscheidungskriterien, Datenschutz und Urheberrecht an Trainingsdaten sowie Missbrauch – jeweils mit der Maßnahme, die man vorab dagegen festlegt.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:FS2-3.1.2-S220",
+                "buch:FS2-3.1.3-S221"
               ]
             }
           ],
@@ -364,6 +553,34 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Maschinelles Lernen übernimmt wiederkehrende Grundaufgaben: Muster erkennen, Objekte klassifizieren, Daten verknüpfen, Inhalte erzeugen, Werte vorhersagen und Aktionen planen – etwa die Wahrscheinlichkeit schätzen, dass eine Rechnung fehlerhaft ist.",
+              "quellen": [
+                "buch:FS2-3.1.1"
+              ],
+              "grund": "RK2: Aufgabenarten des maschinellen Lernens sind Unterthema von KI-Software."
+            },
+            {
+              "text": "Das Ergebnis des Trainings heißt Modell; ein Projekt mit maschinellem Lernen läuft vom Ziel über Beschaffen und Aufbereiten der Daten und das Trainieren des Modells bis zum Einsatz, in dem Modell und Datenqualität weiter überwacht werden.",
+              "quellen": [
+                "buch:FS2-3.1.2"
+              ],
+              "grund": "RK2/D8: Modellbegriff ist Unterthema, Projektzyklus ohne Katalog-Baustein."
+            },
+            {
+              "text": "Ein Entscheidungsbaum führt von der Wurzel über einzelne Prüfungen zu genau einem Ergebnis; er zeigt dieselben Regeln wie eine Entscheidungstabelle und macht eine Entscheidung nachvollziehbar.",
+              "quellen": [
+                "buch:FS2-3.3.1"
+              ],
+              "grund": "D8: kein Katalog-Baustein."
+            },
+            {
+              "text": "Ein künstliches neuronales Netz besteht aus Eingangs-, versteckten und Ausgangsschichten, deren Neuronen gewichtete Eingänge aufsummieren und abhängig von einem Schwellenwert weitergeben; je nach Aufgabe gibt es Feed-Forward-, Faltungs- (Bild, Audio) und rückgekoppelte Netze (Folgen wie Text). Gelernt wird überwacht (Beispiele mit richtiger Lösung), unüberwacht (das Netz sucht selbst Gruppen) oder bestärkend (Belohnung und Strafe), in den Schritten Netzart wählen, anlegen, trainieren, anwenden und bewerten.",
+              "quellen": [
+                "buch:FS2-3.4.1"
+              ],
+              "grund": "RK2: Aufbau, Netzarten, Arbeitsschritte und Lernverfahren sind Unterthemen (zum Teil ohne Katalog-Baustein); Lernverfahren stehen schon in der Kür."
             }
           ],
           "hinweis": "KI-Unterstützung in Arbeitsabläufen (AP1.01.03.5) steht im Ordner Projektmanagement und Qualität (AP1-1-3-3), die Kosten eines KI-Chatbots (2025F-A4-c) im Ordner Wirtschaftlichkeit und Verträge."
@@ -415,7 +632,8 @@
               "text": "Du kannst erklären, wie Dateien in Ordnern und Laufwerken organisiert werden.",
               "stufe": 2,
               "herkunft": [
-                "katalog:AP1.04.03.2"
+                "katalog:AP1.04.03.2",
+                "buch:GS-5.2.6-S501"
               ]
             },
             {
@@ -440,6 +658,14 @@
               "stufe": 2,
               "herkunft": [
                 "beleg:2023F-A3-be"
+              ]
+            },
+            {
+              "id": "AP1-5-2-1-K7",
+              "text": "Du kannst beurteilen, ob für einen Einsatz eine geschlossene Plattform (Hardware und Betriebssystem aus einer Hand: gut abgestimmt, stabil, weniger Schadsoftware, aber teurer, kleinere Auswahl und starke Bindung an den Hersteller) oder eine offene Plattform (große Auswahl an Geräten, Software und Preisen, aber mehr Aufwand für Abstimmung und Sicherheit) besser passt.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-2.1.4-S125"
               ]
             }
           ],
@@ -518,7 +744,8 @@
               "text": "Du kannst die Schritte einer Betriebssysteminstallation in eine sinnvolle Reihenfolge bringen: Bootreihenfolge einstellen, partitionieren, formatieren, installieren, Treiber und Updates einspielen.",
               "stufe": 2,
               "herkunft": [
-                "katalog:AP1.04.05.2"
+                "katalog:AP1.04.05.2",
+                "buch:FS-4.6.3-S408"
               ]
             },
             {
@@ -536,6 +763,14 @@
               "stufe": 2,
               "herkunft": [
                 "katalog:AP1.04.01.3"
+              ]
+            },
+            {
+              "id": "AP1-5-2-2-K9",
+              "text": "Du kannst die Schritte einer Softwareinstallation beim Kunden beschreiben: Systemvoraussetzungen prüfen, installieren, Grundeinstellungen vornehmen, vorhandene Daten übernehmen, testen und das Ergebnis in einem Testprotokoll festhalten.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-2.10.5-S276"
               ]
             }
           ],
@@ -650,6 +885,22 @@
               "herkunft": [
                 "katalog:AP1.04.05.4"
               ]
+            },
+            {
+              "id": "AP1-5-2-4-K5",
+              "text": "Du kannst die zwei Arten des Customizings unterscheiden: Bei der Konfiguration werden passende Module der Standardsoftware ausgewählt und eingerichtet, bei der Parametrisierung werden über Parameter vorhandene Funktionen ein- oder ausgeschaltet; in beiden Fällen bleibt der Quellcode unverändert.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-5.1.1-S471"
+              ]
+            },
+            {
+              "id": "AP1-5-2-4-K6",
+              "text": "Du kannst für einen Anpassungsbedarf beurteilen, welche Stufe reicht: Customizing, wenn Einstellungen genügen; Erweiterungsprogrammierung, wenn eigene Programmteile über definierte Schnittstellen angebunden werden müssen; Neuentwicklung als Individualsoftware nur, wenn beides nicht ausreicht – denn vorhandene Software anzupassen ist meist günstiger und schneller als neu zu entwickeln.",
+              "stufe": 4,
+              "herkunft": [
+                "buch:GS-5.1.1-S470"
+              ]
             }
           ],
           "grenzen": [],
@@ -738,6 +989,30 @@
                 "beleg:2026F-A3-ba",
                 "katalog:AP1.03.02"
               ]
+            },
+            {
+              "id": "AP1-5-2-5-K8",
+              "text": "Du kannst erklären, dass Client und Server Rollen sind und keine Gerätearten: Server ist jeder Rechner, der im Netz einen Dienst anbietet, deshalb wird schon ein Arbeitsplatz-PC mit einer Datei- oder Druckerfreigabe zum File- oder Printserver.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-3.2.4-S293"
+              ]
+            },
+            {
+              "id": "AP1-5-2-5-K9",
+              "text": "Du kannst Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und dauerhaft ohne Ausfall zu laufen, zum Beispiel mit doppelten Netzteilen, Fehlerkorrektur im Arbeitsspeicher, vielen im Betrieb tauschbaren Festplatten und starker Kühlung.",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-3.2.4-S294"
+              ]
+            },
+            {
+              "id": "AP1-5-2-5-K10",
+              "text": "Du kannst typischen Servern ihren Dienst zuordnen: Fileserver (Dateiablage), Printserver (Drucken), Mailserver (E-Mail), DNS-Server (Namensauflösung), Webserver (Webseiten), Anwendungsserver (z. B. Warenwirtschaft), NAS (Speicher im Netz) und Terminalserver (Arbeitssitzungen für Thin Clients).",
+              "stufe": 2,
+              "herkunft": [
+                "buch:GS-3.2.4-S294"
+              ]
             }
           ],
           "grenzen": [
@@ -758,6 +1033,20 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Überschriften, Absätze, Listen, Tabellen, Links, Bilder mit Alternativtext, Formulare), aus CSS für das Aussehen – am besten in einer externen Datei, die viele Seiten teilen – und aus JavaScript, einer eigenständigen, im Browser laufenden Sprache, die auf Ereignisse wie Klicks reagiert und Eingaben sofort prüfen kann. Diese Prüfung ersetzt die auf dem Server nicht, weil sich der Browser umgehen lässt, und weil Browser HTML und CSS unterschiedlich umsetzen, testet man eine Seite in mehreren Browsern.",
+              "quellen": [
+                "buch:FS2-1.4.4"
+              ],
+              "grund": "D8: Webgrundlagen ohne Katalog-Baustein; stehen schon als Kür am Stichpunkt."
+            },
+            {
+              "text": "Mit einem Content-Management-System pflegen Redakteure die Inhalte einer Website ohne Programmierkenntnisse; Vorlagen (Templates) sorgen für ein einheitliches Aussehen, das sich an das Endgerät anpasst (responsives Design).",
+              "quellen": [
+                "buch:GS-2.4.13"
+              ],
+              "grund": "D8: CMS ohne Katalog-Baustein; steht schon in der Kür des Stichpunkts."
             }
           ]
         }
@@ -1054,8 +1343,8 @@
   },
   "meta": {
     "schicht": "3+4",
-    "regelwerk_version": "1.5",
-    "stand": "2026-10-14",
+    "regelwerk_version": "2.1",
+    "stand": "2026-10-16",
     "hinweis": "Ordner nach dem Muster von AP1-6/AP1-1 (UMBAU.md Schritt 4). AP1.04.01.3 und AP1.04.05.6 sind mit AP1-6 geteilt, AP1.03.03.1 mit AP1-4 und AP1-6.",
     "kerntest": {
       "stand": "2026-10-13",
@@ -1066,7 +1355,20 @@
       "podcast:themen-ap1": "IT-Berufe-Podcast (Stefan Macke): Seite „Mögliche Themen von Teil 1 der gestreckten Abschlussprüfung (GAP) in den IT-Berufen“ (abgerufen 13.10.2026), Abschnitte Software, Betriebssysteme, Virtualisierung, Internet",
       "podcast:pruefungsthemen": "IT-Berufe-Podcast: Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte je AP1-Termin Herbst 2021 bis Frühjahr 2026 (abgerufen 13.10.2026)",
       "lernzettel:fi-de-2025": "Community-Lernzettel fachinformatiker.de, Obsidian, 03/2025 (aktueller Katalog), Abschnitte 3.1–3.10, 4.2–4.4, 4.6",
-      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte UEFI/BIOS, Cloud Computing, Server-Virtualisierung, Betriebssysteme, Anwendungssysteme, Fernwartung"
+      "lernzettel:fi-de-2024": "Community-Lernzettel fachinformatiker.de, Word, 02/2024 (alter Katalog), Abschnitte UEFI/BIOS, Cloud Computing, Server-Virtualisierung, Betriebssysteme, Anwendungssysteme, Fernwartung",
+      "buch:GS-2.4.13": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.13 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-1.3.5": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-2.9.1": "Lehrbuch Westermann „IT-Berufe“ GS 2.9.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-4.4.1": "Lehrbuch Westermann „IT-Berufe“ GS 4.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-2.4.1": "Lehrbuch Westermann „IT-Berufe“ GS 2.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-1.3.1": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-2.3.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-3.5.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.5.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:FS2-3.1.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.1.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:FS2-3.1.2": "Lehrbuch Westermann „IT-Berufe“ FS2 3.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:FS2-3.3.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:FS2-3.4.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:FS2-1.4.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -1405,6 +1707,172 @@
           "wo": [
             "AP1-6"
           ]
+        },
+        {
+          "thema": "Ein ERP-System gliedert sich in Bereiche wie Personal (HRM), Kunden und Verkauf (CRM), Produktion (MRP/PPS), Lieferkette",
+          "quellen": [
+            "buch:GS-2.4.13"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-1"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Business Intelligence wertet Unternehmensdaten automatisch aus – gestützt auf ein Data Warehouse, das Daten aus vielen S",
+          "quellen": [
+            "buch:GS-1.3.5"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-1"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Beim E-Procurement wird elektronisch beschafft – über Shops der Lieferanten, eigene Beschaffungsplattformen oder Marktpl",
+          "quellen": [
+            "buch:GS-2.9.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-1"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Sicherheit gehört in den ganzen Lebensweg von Standardsoftware: Sicherheitsanforderungen schon in den Anforderungskatalo",
+          "quellen": [
+            "buch:GS-4.4.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-2"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Bei der Virtualisierung teilt ein Hypervisor die Hardware eines Rechners auf mehrere virtuelle Maschinen mit eigenem Gas",
+          "quellen": [
+            "buch:GS-2.4.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-3"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Container nutzen den Kern des Wirtssystems statt eines eigenen Betriebssystems und sind deshalb leichter und schneller a",
+          "quellen": [
+            "buch:GS-4.4.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-3"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Hosting-Formen: Beim Cloud-Hosting mietet man Rechenleistung und Speicher als Dienst, beim Managed Hosting betreut der A",
+          "quellen": [
+            "buch:GS-1.3.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-5"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Edge- bzw. Fog-Computing verarbeitet große Datenmengen, etwa von Sensoren, schon nahe am Entstehungsort vor und schickt ",
+          "quellen": [
+            "buch:GS-2.3.2",
+            "buch:GS-2.4.13"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-5"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Eine eigene (private) Cloud läuft auf einem Server im eigenen Netz oder bei einem Hoster; damit sie von außen erreichbar",
+          "quellen": [
+            "buch:GS-3.5.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-5"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Maschinelles Lernen übernimmt wiederkehrende Grundaufgaben: Muster erkennen, Objekte klassifizieren, Daten verknüpfen, I",
+          "quellen": [
+            "buch:FS2-3.1.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-4"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Das Ergebnis des Trainings heißt Modell; ein Projekt mit maschinellem Lernen läuft vom Ziel über Beschaffen und Aufberei",
+          "quellen": [
+            "buch:FS2-3.1.2"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-4"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Ein Entscheidungsbaum führt von der Wurzel über einzelne Prüfungen zu genau einem Ergebnis; er zeigt dieselben Regeln wi",
+          "quellen": [
+            "buch:FS2-3.3.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-4"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Ein künstliches neuronales Netz besteht aus Eingangs-, versteckten und Ausgangsschichten, deren Neuronen gewichtete Eing",
+          "quellen": [
+            "buch:FS2-3.4.1"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-1-4"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Übersch",
+          "quellen": [
+            "buch:FS2-1.4.4"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-2-5"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
+        },
+        {
+          "thema": "Mit einem Content-Management-System pflegen Redakteure die Inhalte einer Website ohne Programmierkenntnisse; Vorlagen (T",
+          "quellen": [
+            "buch:GS-2.4.13"
+          ],
+          "ring": "Kür",
+          "wo": [
+            "AP1-5-2-5"
+          ],
+          "notiz": "Regelwerk v2.0, D8"
         }
       ]
     },
@@ -1580,6 +2048,69 @@
           "grund": "Branchensoftware nennen steckt in erklären"
         }
       ]
-    }
+    },
+    "v2": [
+      {
+        "stand": "2026-10-16",
+        "regelwerk": "2.1",
+        "neue_aussagen": [
+          "AP1-5-1-1-K8",
+          "AP1-5-1-1-K9",
+          "AP1-5-1-1-K10",
+          "AP1-5-1-1-K11",
+          "AP1-5-1-3-K7",
+          "AP1-5-1-3-K8",
+          "AP1-5-1-5-K1",
+          "AP1-5-1-5-K2",
+          "AP1-5-1-5-K3",
+          "AP1-5-1-4-K7",
+          "AP1-5-1-4-K8",
+          "AP1-5-1-4-K9",
+          "AP1-5-2-1-K7",
+          "AP1-5-2-2-K9",
+          "AP1-5-2-4-K5",
+          "AP1-5-2-4-K6",
+          "AP1-5-2-5-K8",
+          "AP1-5-2-5-K9",
+          "AP1-5-2-5-K10"
+        ],
+        "neue_stichpunkte": [
+          {
+            "id": "AP1-5-1-5",
+            "nach": "AP1-5-1-3",
+            "begruendung": "D5: AP1-5-1-3 hätte sonst 11 Aussagen (6 bestehende + 5 neue); die Cloud-Grundlagen sind eine eigene Lerneinheit, die virtuellen Desktops bleiben in AP1-5-1-3."
+          }
+        ],
+        "d6": [
+          "AP1-5-2-2-K6",
+          "AP1-5-1-4-K1",
+          "AP1-5-1-4-K5",
+          "AP1-5-2-1-K3"
+        ],
+        "kuer": [
+          "AP1-5-1-1",
+          "AP1-5-1-1",
+          "AP1-5-1-1",
+          "AP1-5-1-2",
+          "AP1-5-1-3",
+          "AP1-5-1-3",
+          "AP1-5-1-5",
+          "AP1-5-1-5",
+          "AP1-5-1-5",
+          "AP1-5-1-4",
+          "AP1-5-1-4",
+          "AP1-5-1-4",
+          "AP1-5-1-4",
+          "AP1-5-2-5",
+          "AP1-5-2-5"
+        ],
+        "grenzen_gestrichen": [],
+        "filter": [],
+        "umgehaengt": [],
+        "hinweise": [
+          "AP1-5-1-5"
+        ]
+      }
+    ]
   }
 }

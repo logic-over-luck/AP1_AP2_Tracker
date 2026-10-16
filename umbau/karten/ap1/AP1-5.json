@@ -1,6 +1,6 @@
 {
   "ordner": "AP1-5",
-  "stand": "2026-10-14",
+  "stand": "2026-10-16",
   "auftrag": "umbau/auftraege/AP1-karten.md",
   "grundlage": "umbau/lernplan/ap1/AP1-5.json",
   "karten": [
@@ -815,6 +815,272 @@
       "k": "AP1-5-2-5-K7",
       "vorne": "Eine Spedition will An- und Ablieferungen am Tor nachweisbar festhalten. Welches IT-System passt, und welchen Nutzen hat es?",
       "hinten": "Eine Videoerfassung mit Aufzeichnung: Sie belegt, wann was geliefert wurde und in welchem Zustand, und hilft bei Streit über Schäden oder Mengen."
+    },
+    {
+      "id": "AP1-5-1-1-K8-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K8",
+      "vorne": "Gehören zur Software nur die Programme?",
+      "hinten": "Nein. Nach der weiten Definition gehören auch festgelegte Abläufe, Dokumentation und Daten dazu, die für den Betrieb des Rechnersystems nötig sind."
+    },
+    {
+      "id": "AP1-5-1-1-K9-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K9",
+      "vorne": "Zu welcher Softwaregruppe gehören Compiler und Editor – und warum?",
+      "hinten": "Unterstützungssoftware: Sie hilft beim Entwickeln bzw. erbringt anwendungsneutrale Leistungen. Sie betreibt nicht den Rechner (Systemsoftware) und erledigt keine Fachaufgabe des Benutzers (Anwendungssoftware)."
+    },
+    {
+      "id": "AP1-5-1-1-K9-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K9",
+      "vorne": "Ordne zu: Druckertreiber, Debugger, Lohnbuchhaltung.",
+      "hinten": "- Druckertreiber: Systemsoftware\n- Debugger: Unterstützungssoftware\n- Lohnbuchhaltung: Anwendungssoftware"
+    },
+    {
+      "id": "AP1-5-1-1-K10-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K10",
+      "vorne": "Was ist Firmware? Nenne zwei Beispiele.",
+      "hinten": "Fest im Gerät gespeicherte Software, die die Hardware direkt steuert – z. B. UEFI/BIOS des Mainboards, Steuerung von Drucker, Router oder SSD."
+    },
+    {
+      "id": "AP1-5-1-1-K10-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K10",
+      "vorne": "Wodurch unterscheidet sich Firmware von Betriebssystem und Anwendungssoftware?",
+      "hinten": "Sie ist fest im Gerät gespeichert, steuert die Hardware direkt und arbeitet schon vor bzw. unabhängig vom Betriebssystem; geändert wird sie nur per Firmware-Update."
+    },
+    {
+      "id": "AP1-5-1-1-K11-1",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K11",
+      "vorne": "Warum gibt es in einem integrierten ERP-System kaum Doppelspeicherung?",
+      "hinten": "Alle Bereiche arbeiten auf einer gemeinsamen Datenbasis: Jede Information wird einmal erfasst und von allen Modulen genutzt."
+    },
+    {
+      "id": "AP1-5-1-1-K11-2",
+      "sp": "AP1-5-1-1",
+      "k": "AP1-5-1-1-K11",
+      "vorne": "Nenne zwei weitere Vorteile der gemeinsamen Datenbasis eines ERP-Systems.",
+      "hinten": "- durchgängige Belege vom Angebot bis zur Rechnung ohne Neuerfassung\n- Auswertungen über alle Unternehmensbereiche\n- Zugriff von jedem berechtigten Arbeitsplatz"
+    },
+    {
+      "id": "AP1-5-1-3-K7-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K7",
+      "vorne": "Welche Aufgabe hat der Connection Broker in einer VDI?",
+      "hinten": "Er nimmt die Anmeldung des Benutzers entgegen und verbindet dessen Client mit der passenden virtuellen Maschine auf dem Server."
+    },
+    {
+      "id": "AP1-5-1-3-K7-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K7",
+      "vorne": "Was passiert bei einem virtuellen Desktop, wenn die Netzverbindung kurz abbricht?",
+      "hinten": "Der Benutzer kann nicht weiterarbeiten, die Sitzung läuft aber auf dem Server weiter; nach dem Wiederverbinden ist alles wie vorher."
+    },
+    {
+      "id": "AP1-5-1-3-K7-3",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K7",
+      "vorne": "Persistenter oder nicht persistenter virtueller Desktop – was ist der Unterschied?",
+      "hinten": "- persistent: jeder Benutzer behält seine eigene VM mit Einstellungen und Daten\n- nicht persistent: die VM wird nach der Sitzung verworfen und aus einer Vorlage neu erzeugt"
+    },
+    {
+      "id": "AP1-5-1-3-K8-1",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K8",
+      "vorne": "Nenne zwei Vorteile virtueller Desktops mit Begründung.",
+      "hinten": "- zentrale Verwaltung: Updates nur einmal im Rechenzentrum\n- günstige Endgeräte: ein Thin Client reicht\n- weniger Angriffsfläche: keine Daten auf dem Endgerät"
+    },
+    {
+      "id": "AP1-5-1-3-K8-2",
+      "sp": "AP1-5-1-3",
+      "k": "AP1-5-1-3-K8",
+      "vorne": "Warum braucht ein virtueller Desktop auch im Upload ausreichend Bandbreite?",
+      "hinten": "Neben dem Bild zum Nutzer gehen Tastatur-, Maus-, Ton- und Kameradaten zum Server – bei Videokonferenzen im virtuellen Desktop ist das viel."
+    },
+    {
+      "id": "AP1-5-1-5-K1-1",
+      "sp": "AP1-5-1-5",
+      "k": "AP1-5-1-5-K1",
+      "vorne": "Nenne vier Merkmale von Cloud Computing.",
+      "hinten": "- Bereitstellung über das Internet\n- Selbstbedienung (Self-Service)\n- skalierbar nach Bedarf\n- Abrechnung nach Verbrauch\n- mandantenfähig"
+    },
+    {
+      "id": "AP1-5-1-5-K1-2",
+      "sp": "AP1-5-1-5",
+      "k": "AP1-5-1-5-K1",
+      "vorne": "Was bedeutet „mandantenfähig“ bei einem Cloud-Dienst?",
+      "hinten": "Eine Plattform bedient viele Kunden gleichzeitig, deren Daten und Einstellungen streng voneinander getrennt sind."
+    },
+    {
+      "id": "AP1-5-1-5-K2-1",
+      "sp": "AP1-5-1-5",
+      "k": "AP1-5-1-5-K2",
+      "vorne": "Du änderst am Laptop eine Datei in einem synchronisierten Cloud-Ordner. Was passiert?",
+      "hinten": "Das Sync-Programm lädt die Änderung im Hintergrund in die Cloud, und von dort wird sie auf alle anderen verbundenen Geräte übertragen; der alte Stand bleibt als Version erhalten."
+    },
+    {
+      "id": "AP1-5-1-5-K2-2",
+      "sp": "AP1-5-1-5",
+      "k": "AP1-5-1-5-K2",
+      "vorne": "Warum ersetzt ein synchronisierter Cloud-Speicher kein Backup?",
+      "hinten": "Löschen oder Verschlüsseln durch Schadsoftware wird sofort auf alle Geräte synchronisiert; nur Versionierung oder eine getrennte Sicherung holen den alten Stand zurück."
+    },
+    {
+      "id": "AP1-5-1-5-K3-1",
+      "sp": "AP1-5-1-5",
+      "k": "AP1-5-1-5-K3",
+      "vorne": "Warum ist der Serverstandort bei einem Cloud-Speicher wichtig?",
+      "hinten": "Für die Daten gilt das Recht des Standortlandes. Bei personenbezogenen Daten ist ein Standort in der EU einfacher, weil dort überall die DSGVO gilt."
+    },
+    {
+      "id": "AP1-5-1-5-K3-2",
+      "sp": "AP1-5-1-5",
+      "k": "AP1-5-1-5-K3",
+      "vorne": "Nenne Vor- und Nachteil, Daten schon auf dem eigenen Gerät zu verschlüsseln, bevor sie in die Cloud gehen.",
+      "hinten": "- Vorteil: Der Anbieter (und wer bei ihm eindringt) sieht nur unlesbare Daten\n- Nachteil: Teamarbeit wird schwierig – jeder braucht den Schlüssel, gemeinsames Bearbeiten im Browser geht oft nicht"
+    },
+    {
+      "id": "AP1-5-1-4-K7-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K7",
+      "vorne": "Wie hängen KI, maschinelles Lernen und Deep Learning zusammen?",
+      "hinten": "Sie sind ineinander enthalten: Deep Learning (vielschichtige neuronale Netze) ⊂ maschinelles Lernen (lernt aus Daten) ⊂ KI (Oberbegriff)."
+    },
+    {
+      "id": "AP1-5-1-4-K7-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K7",
+      "vorne": "Ist jede KI maschinelles Lernen? Begründe.",
+      "hinten": "Nein. Auch regelbasierte Systeme wie Expertensysteme zählen zur KI, lernen aber nicht aus Daten, sondern arbeiten mit vorgegebenen Regeln."
+    },
+    {
+      "id": "AP1-5-1-4-K8-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K8",
+      "vorne": "Worin unterscheidet sich ein Expertensystem von einem neuronalen Netz?",
+      "hinten": "- Expertensystem: arbeitet mit von Fachleuten formulierten Regeln, Entscheidungen nachvollziehbar\n- neuronales Netz: lernt Muster aus vielen Beispielen, löst auch Aufgaben ohne feste Regeln, Entscheidungen kaum nachvollziehbar"
+    },
+    {
+      "id": "AP1-5-1-4-K8-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K8",
+      "vorne": "Wann setzt man eher ein lernendes Verfahren statt eines regelbasierten Systems ein?",
+      "hinten": "Wenn sich das Problem nicht mit festen Regeln beschreiben lässt, aber viele Beispieldaten vorliegen – z. B. Bild- oder Spracherkennung."
+    },
+    {
+      "id": "AP1-5-1-4-K9-1",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K9",
+      "vorne": "Warum ist ein KI-Projekt schwerer kalkulierbar als ein herkömmliches Softwareprojekt?",
+      "hinten": "Es gibt wenig Erfahrungswerte, und erst beim Training zeigt sich, ob die vorhandenen Daten für ein brauchbares Ergebnis reichen; dazu kommen rechtliche Risiken."
+    },
+    {
+      "id": "AP1-5-1-4-K9-2",
+      "sp": "AP1-5-1-4",
+      "k": "AP1-5-1-4-K9",
+      "vorne": "Nenne zwei rechtliche oder ethische Risiken eines KI-Vorhabens mit je einer Gegenmaßnahme.",
+      "hinten": "- Haftung für Fehlentscheidungen → Verantwortliche benennen, Ergebnisse von Menschen prüfen\n- Diskriminierung → Kriterien festlegen, sensible Merkmale ausschließen\n- Datenschutz/Urheberrecht an Trainingsdaten → eigene oder anonymisierte Daten, Rechte klären\n- Missbrauch → Zweckbindung, Schutz vor Angriffen, Überwachung"
+    },
+    {
+      "id": "AP1-5-2-1-K7-1",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K7",
+      "vorne": "Nenne je zwei Vor- und Nachteile einer geschlossenen Plattform.",
+      "hinten": "- Vorteile: gut abgestimmt und stabil, weniger Schadsoftware\n- Nachteile: teurer, kleinere Auswahl an Software und Zubehör, Herstellerbindung"
+    },
+    {
+      "id": "AP1-5-2-1-K7-2",
+      "sp": "AP1-5-2-1",
+      "k": "AP1-5-2-1-K7",
+      "vorne": "Ein Betrieb braucht 40 günstige, leicht erweiterbare Arbeitsplätze für eine eigene Branchensoftware. Geschlossene oder offene Plattform?",
+      "hinten": "Offene Plattform: große Auswahl an Geräten in jeder Preisklasse, Erweiterungen von vielen Herstellern, Eigenentwicklungen leichter – der höhere Sicherheitsaufwand muss eingeplant werden."
+    },
+    {
+      "id": "AP1-5-2-2-K9-1",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K9",
+      "vorne": "Bringe in eine sinnvolle Reihenfolge: testen, Daten übernehmen, Systemvoraussetzungen prüfen, Testprotokoll erstellen, installieren, Grundeinstellungen vornehmen.",
+      "hinten": "1. Systemvoraussetzungen prüfen\n2. installieren\n3. Grundeinstellungen vornehmen\n4. Daten übernehmen\n5. testen\n6. Testprotokoll erstellen"
+    },
+    {
+      "id": "AP1-5-2-2-K9-2",
+      "sp": "AP1-5-2-2",
+      "k": "AP1-5-2-2-K9",
+      "vorne": "Warum prüft man vor einer Softwareinstallation die Systemvoraussetzungen?",
+      "hinten": "Fehlen Speicher, die passende Betriebssystemversion oder nötige Komponenten, bricht die Installation ab oder das Programm läuft später fehlerhaft."
+    },
+    {
+      "id": "AP1-5-2-4-K5-1",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K5",
+      "vorne": "Worin unterscheiden sich Konfiguration und Parametrisierung beim Customizing?",
+      "hinten": "- Konfiguration: passende Module auswählen und einrichten\n- Parametrisierung: über Parameter vorhandene Funktionen ein- oder ausschalten und einstellen"
+    },
+    {
+      "id": "AP1-5-2-4-K5-2",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K5",
+      "vorne": "Was haben Konfiguration und Parametrisierung gemeinsam?",
+      "hinten": "Beide sind Customizing: Die Standardsoftware wird angepasst, ohne den Quellcode zu ändern – Hersteller-Updates bleiben möglich."
+    },
+    {
+      "id": "AP1-5-2-4-K6-1",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K6",
+      "vorne": "In welcher Reihenfolge prüfst du, wie Standardsoftware an neue Anforderungen angepasst wird?",
+      "hinten": "1. Customizing (Konfiguration, Parametrisierung)\n2. Erweiterungsprogrammierung über Schnittstellen\n3. Neuentwicklung als Individualsoftware"
+    },
+    {
+      "id": "AP1-5-2-4-K6-2",
+      "sp": "AP1-5-2-4",
+      "k": "AP1-5-2-4-K6",
+      "vorne": "Was ist Erweiterungsprogrammierung?",
+      "hinten": "Eigene Programmteile werden über definierte Schnittstellen an eine Standardsoftware angebunden, wenn Customizing nicht reicht; der Kern der Software bleibt unverändert."
+    },
+    {
+      "id": "AP1-5-2-5-K8-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K8",
+      "vorne": "Ist „Server“ eine Geräteart? Begründe.",
+      "hinten": "Nein, eine Rolle: Server ist jeder Rechner, der im Netz einen Dienst anbietet – auch ein Arbeitsplatz-PC mit einer Freigabe."
+    },
+    {
+      "id": "AP1-5-2-5-K8-2",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K8",
+      "vorne": "Eine Kollegin gibt ihren Drucker im Netz frei. Welche Rolle hat ihr PC jetzt?",
+      "hinten": "Er ist für die anderen ein Printserver – und bleibt für andere Dienste (z. B. E-Mail) gleichzeitig Client."
+    },
+    {
+      "id": "AP1-5-2-5-K9-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K9",
+      "vorne": "Nenne zwei Merkmale, die Serverhardware ausfallsicherer machen als einen Arbeitsplatz-PC.",
+      "hinten": "- zwei (redundante) Netzteile\n- Arbeitsspeicher mit Fehlerkorrektur (ECC)\n- im Betrieb tauschbare Festplatten im Verbund\n- starke Kühlung für Dauerbetrieb"
+    },
+    {
+      "id": "AP1-5-2-5-K9-2",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K9",
+      "vorne": "Warum lohnt sich teurere Serverhardware für einen zentralen Dateiserver?",
+      "hinten": "Viele Benutzer greifen gleichzeitig zu, und ein Ausfall legt alle lahm – Leistung und Ausfallsicherheit sind wichtiger als ein niedriger Preis."
+    },
+    {
+      "id": "AP1-5-2-5-K10-1",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K10",
+      "vorne": "Welcher Server stellt Thin Clients ihre Arbeitsumgebung bereit?",
+      "hinten": "Der Terminalserver: Die Programme laufen auf ihm, der Thin Client zeigt nur die Sitzung an und überträgt Eingaben."
+    },
+    {
+      "id": "AP1-5-2-5-K10-2",
+      "sp": "AP1-5-2-5",
+      "k": "AP1-5-2-5-K10",
+      "vorne": "Ordne den Servertyp zu: Namensauflösung, Postfächer, zentrale Warenwirtschaft, Speicherplatz als eigenes Gerät im Netz.",
+      "hinten": "- Namensauflösung: DNS-Server\n- Postfächer: Mailserver\n- Warenwirtschaft: Anwendungsserver\n- Speicher als eigenes Gerät: NAS"
     }
   ],
   "nicht_abgefragt": [],
@@ -1404,6 +1670,196 @@
       "id": "AP1-5-2-5-K7-1",
       "entscheidung": "neu",
       "grund": "Aussage hatte keine Karte"
+    },
+    {
+      "id": "AP1-5-1-1-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S469)"
+    },
+    {
+      "id": "AP1-5-1-1-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S469)"
+    },
+    {
+      "id": "AP1-5-1-1-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S469)"
+    },
+    {
+      "id": "AP1-5-1-1-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S136)"
+    },
+    {
+      "id": "AP1-5-1-1-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.2.2-S136)"
+    },
+    {
+      "id": "AP1-5-1-1-K11-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.13-S192)"
+    },
+    {
+      "id": "AP1-5-1-1-K11-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.13-S192)"
+    },
+    {
+      "id": "AP1-5-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.3-S237, buch:GS-2.7.3-S239)"
+    },
+    {
+      "id": "AP1-5-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.3-S237, buch:GS-2.7.3-S239)"
+    },
+    {
+      "id": "AP1-5-1-3-K7-3",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.3-S237, buch:GS-2.7.3-S239)"
+    },
+    {
+      "id": "AP1-5-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.3-S238)"
+    },
+    {
+      "id": "AP1-5-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.7.3-S238)"
+    },
+    {
+      "id": "AP1-5-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.13-S196)"
+    },
+    {
+      "id": "AP1-5-1-5-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.4.13-S196)"
+    },
+    {
+      "id": "AP1-5-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.2-S361)"
+    },
+    {
+      "id": "AP1-5-1-5-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.2-S361)"
+    },
+    {
+      "id": "AP1-5-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.2-S362)"
+    },
+    {
+      "id": "AP1-5-1-5-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.5.2-S362)"
+    },
+    {
+      "id": "AP1-5-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.1.1-S217)"
+    },
+    {
+      "id": "AP1-5-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.1.1-S217)"
+    },
+    {
+      "id": "AP1-5-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.3.1-S236, buch:FS2-3.3.2-S239, buch:FS2-3.4.1-S242)"
+    },
+    {
+      "id": "AP1-5-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.3.1-S236, buch:FS2-3.3.2-S239, buch:FS2-3.4.1-S242)"
+    },
+    {
+      "id": "AP1-5-1-4-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.1.2-S220, buch:FS2-3.1.3-S221)"
+    },
+    {
+      "id": "AP1-5-1-4-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.1.2-S220, buch:FS2-3.1.3-S221)"
+    },
+    {
+      "id": "AP1-5-2-1-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S125)"
+    },
+    {
+      "id": "AP1-5-2-1-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.1.4-S125)"
+    },
+    {
+      "id": "AP1-5-2-2-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.10.5-S276)"
+    },
+    {
+      "id": "AP1-5-2-2-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-2.10.5-S276)"
+    },
+    {
+      "id": "AP1-5-2-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S471)"
+    },
+    {
+      "id": "AP1-5-2-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S471)"
+    },
+    {
+      "id": "AP1-5-2-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S470)"
+    },
+    {
+      "id": "AP1-5-2-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.1.1-S470)"
+    },
+    {
+      "id": "AP1-5-2-5-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.4-S293)"
+    },
+    {
+      "id": "AP1-5-2-5-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.4-S293)"
+    },
+    {
+      "id": "AP1-5-2-5-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.4-S294)"
+    },
+    {
+      "id": "AP1-5-2-5-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.4-S294)"
+    },
+    {
+      "id": "AP1-5-2-5-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.4-S294)"
+    },
+    {
+      "id": "AP1-5-2-5-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-3.2.4-S294)"
     }
   ]
 }

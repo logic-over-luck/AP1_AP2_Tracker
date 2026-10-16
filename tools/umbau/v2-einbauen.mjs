@@ -188,11 +188,12 @@ for (const ku of patch.kuer ?? []) {
   if (!sp) { F(`Kür: Stichpunkt ${ku.sp} gibt es nicht`); continue; }
   const q = ku.quelle;
   if (!q?.startsWith('buch:') || !BUCH.test(q.slice(5))) { F(`Kür: Quelle ${q} ungültig`); continue; }
-  const kap = q.slice(5).replace(/-S\d+$/, '');
-  lp.meta.hinweisquellen[`buch:${kap}`] ??= `Lehrbuch Westermann „IT-Berufe“ ${kap.replace('-', ' ')} (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür`;
+  // Quellen: genannte Quelle und die Kapitel aller zugeordneten Kernpunkte (eine Kür kann mehrere Kapitel bündeln)
+  const kapitel = [...new Set([q.slice(5).replace(/-S\d+$/, ''), ...(ku.kernpunkte ?? []).map((r) => r.split('#')[0])])];
+  for (const kap of kapitel) lp.meta.hinweisquellen[`buch:${kap}`] ??= `Lehrbuch Westermann „IT-Berufe“ ${kap.replace('-', ' ')} (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür`;
   sp.kuer ??= [];
-  sp.kuer.push({ text: ku.text, quellen: [`buch:${kap}`], grund: ku.grund ?? 'D8: Thema aus dem Lehrbuch ohne Katalog-Baustein; vom Katalog nicht ausgeschlossen.' });
-  lp.meta.hinweisabgleich.themen.push({ thema: ku.text.slice(0, 120), quellen: [`buch:${kap}`], ring: 'Kür', wo: [sp.id], notiz: 'Regelwerk v2.0, D8' });
+  sp.kuer.push({ text: ku.text, quellen: kapitel.map((k) => `buch:${k}`), grund: ku.grund ?? 'D8: Thema aus dem Lehrbuch ohne Katalog-Baustein; vom Katalog nicht ausgeschlossen.' });
+  lp.meta.hinweisabgleich.themen.push({ thema: ku.text.slice(0, 120), quellen: kapitel.map((k) => `buch:${k}`), ring: 'Kür', wo: [sp.id], notiz: 'Regelwerk v2.x, D8/RK1' });
   for (const ref of ku.kernpunkte ?? []) { const x = kernpunkt(ref); if (x) setzeStatus(x.kp, 'kuer', sp.id); }
   protokoll.kuer.push(sp.id);
 }

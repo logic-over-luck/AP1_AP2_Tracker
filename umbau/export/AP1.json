@@ -2,16 +2,16 @@
  "meta": {
   "raum": "AP1",
   "erzeugt_mit": "node tools/umbau/export-raum.mjs AP1",
-  "regelwerk_version": "1.6",
+  "regelwerk_version": "2.1",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
-  "stichpunkte": 116,
-  "koennen": 604,
+  "stichpunkte": 117,
+  "koennen": 623,
   "quellen": {
    "AP1-1.json": "d9d5fb298b89d653",
    "AP1-2.json": "3b381f8db1d17c38",
    "AP1-3.json": "74b8870f7c09aee2",
    "AP1-4.json": "b03767853490718a",
-   "AP1-5.json": "28800570b51e3632",
+   "AP1-5.json": "67032fce52c521e4",
    "AP1-6.json": "e4aa59945ffda262",
    "AP1-7.json": "daf2350c3c01fa03",
    "AP1-8.json": "b8f571efbb008765"
@@ -2571,6 +2571,26 @@
      "id": "AP1-5-1-1-K7",
      "stufe": 4,
      "kurz": "beurteilen, welche Software für eine Aufgabe passt, zum Beispiel Standard- oder Branchensoftware für ein Geschäftsfeld oder ein Konverter, um vorhandene Daten in einem anderen Format nutzbar zu machen"
+    },
+    {
+     "id": "AP1-5-1-1-K8",
+     "stufe": 2,
+     "kurz": "erklären, was nach der weiten Definition alles zur Software gehört: nicht nur die Programme, sondern auch festgelegte Abläufe, die Dokumentation und die Daten, die für den Betrieb eines Rechnersystems nötig sind"
+    },
+    {
+     "id": "AP1-5-1-1-K9",
+     "stufe": 2,
+     "kurz": "Unterstützungssoftware von System- und Anwendungssoftware unterscheiden: Sie hilft beim Entwickeln von Software (z. B. Compiler, Editor, Debugger) oder erbringt Leistungen, die an keine bestimmte Anwendung gebunden sind"
+    },
+    {
+     "id": "AP1-5-1-1-K10",
+     "stufe": 2,
+     "kurz": "erklären, was Firmware ist: Software, die fest in einem Gerät gespeichert ist (z. B. UEFI/BIOS auf dem Mainboard oder die Steuerung von Drucker, Router oder SSD), die Hardware direkt steuert und schon vor dem Betriebssystem bereitsteht"
+    },
+    {
+     "id": "AP1-5-1-1-K11",
+     "stufe": 2,
+     "kurz": "den Vorteil eines integrierten ERP-Systems erklären: Alle Bereiche wie Einkauf, Verkauf, Lager, Buchhaltung und Personal arbeiten auf einer gemeinsamen Datenbasis, deshalb werden Daten nur einmal erfasst, Belege durchgängig weitergeführt und Auswertungen über alle Bereiche möglich"
     }
    ]
   },
@@ -2653,6 +2673,45 @@
      "id": "AP1-5-1-3-K6",
      "stufe": 4,
      "kurz": "beurteilen, ob virtuelle Desktops für einen Betrieb sinnvoll sind, zum Beispiel bei wechselnden Arbeitsplätzen oder im Homeoffice"
+    },
+    {
+     "id": "AP1-5-1-3-K7",
+     "stufe": 2,
+     "kurz": "den Aufbau einer Virtual Desktop Infrastructure (VDI) erklären: Jeder Desktop läuft als virtuelle Maschine auf einem Server, ein Connection Broker verbindet den Benutzer über Client-Software oder Browser mit seiner VM, und weil die Sitzung auf dem Server läuft, bleibt sie bei einem Abbruch der Verbindung erhalten"
+    },
+    {
+     "id": "AP1-5-1-3-K8",
+     "stufe": 2,
+     "kurz": "Vor- und Nachteile virtueller Desktops erläutern: zentrale Verwaltung, günstige Endgeräte, Zugriff von beliebigen (auch privaten) Geräten und weniger Angriffsfläche am Arbeitsplatz gegenüber der Abhängigkeit von einer stabilen Verbindung mit genug Bandbreite in beide Richtungen, eingeschränkten Freiheiten der Nutzer und der Bindung an einen Anbieter"
+    }
+   ]
+  },
+  {
+   "id": "AP1-5-1-5",
+   "ordner": "AP1-5",
+   "block": "AP1-5-1",
+   "titel": "Cloud Computing: Merkmale, Cloud-Speicher und Schutz der Daten",
+   "gebiete": [
+    "G.AP1.02"
+   ],
+   "bausteine": [
+    "AP1.03.01.4"
+   ],
+   "koennen": [
+    {
+     "id": "AP1-5-1-5-K1",
+     "stufe": 2,
+     "kurz": "die Merkmale von Cloud Computing erklären: Rechenleistung, Speicher oder Software kommen über das Internet als Dienst, den der Kunde selbst bucht (Self-Service), der nach Bedarf wächst oder schrumpft, nach Verbrauch abgerechnet wird und aus einer gemeinsamen Plattform vieler Kunden mit getrennten Daten (mandantenfähig) bereitgestellt wird"
+    },
+    {
+     "id": "AP1-5-1-5-K2",
+     "stufe": 2,
+     "kurz": "erklären, wie ein eingebundener Cloud-Speicher arbeitet: Er erscheint wie ein Ordner im Dateisystem, hält eine lokale Kopie, gleicht Änderungen im Hintergrund mit allen verbundenen Geräten ab und bewahrt frühere und gelöschte Versionen eine Zeit lang auf – anders als beim bloßen Hoch- und Herunterladen einzelner Dateien"
+    },
+    {
+     "id": "AP1-5-1-5-K3",
+     "stufe": 4,
+     "kurz": "beurteilen, wie Daten in einem Cloud-Speicher geschützt werden: Serverstandort und dort geltendes Recht beachten, verschlüsselt übertragen und speichern und abwägen, dass eine Verschlüsselung schon auf dem eigenen Gerät am sichersten ist, die gemeinsame Arbeit im Team aber erschwert"
     }
    ]
   },
@@ -2700,6 +2759,21 @@
      "id": "AP1-5-1-4-K6",
      "stufe": 2,
      "kurz": "beschreiben, was beim Einrichten von KI-Software am Arbeitsplatz zu beachten ist: Zugang und Lizenz je Nutzer, Datenschutzeinstellungen, keine vertraulichen Daten eingeben, Schulung"
+    },
+    {
+     "id": "AP1-5-1-4-K7",
+     "stufe": 2,
+     "kurz": "künstliche Intelligenz, maschinelles Lernen und Deep Learning als ineinander enthaltene Begriffe unterscheiden: KI ist der Oberbegriff für Verfahren, die Aufgaben lösen, für die sonst menschliches Denken nötig ist; maschinelles Lernen ist der Teil der KI, der sein Wissen aus Daten gewinnt; Deep Learning ist maschinelles Lernen mit vielschichtigen neuronalen Netzen"
+    },
+    {
+     "id": "AP1-5-1-4-K8",
+     "stufe": 2,
+     "kurz": "regelbasierte KI-Systeme von lernenden Verfahren unterscheiden: Ein Expertensystem zieht Schlüsse aus Regeln, die Fachleute formuliert haben, und seine Entscheidungen sind über diese Regeln nachvollziehbar; ein neuronales Netz lernt Muster aus vielen Beispielen, passt dabei seine Gewichte an und löst so auch Probleme ohne feste Regeln, seine Entscheidungen sind aber meist nicht nachvollziehbar"
+    },
+    {
+     "id": "AP1-5-1-4-K9",
+     "stufe": 4,
+     "kurz": "ein KI-Vorhaben auf seine Risiken hin beurteilen: schwer planbar mangels Erfahrungswerten und wegen unsicherer Datenlage, ungeklärte Verantwortung für Fehlentscheidungen, diskriminierende Entscheidungskriterien, Datenschutz und Urheberrecht an Trainingsdaten sowie Missbrauch – jeweils mit der Maßnahme, die man vorab dagegen festlegt"
     }
    ]
   },
@@ -2745,6 +2819,11 @@
      "id": "AP1-5-2-1-K6",
      "stufe": 2,
      "kurz": "beschreiben, wozu Gruppenrichtlinien eingesetzt werden: Einstellungen zentral für Rechner und Benutzer vorgeben, die Anwender nicht ändern können, zum Beispiel Passwortregeln"
+    },
+    {
+     "id": "AP1-5-2-1-K7",
+     "stufe": 4,
+     "kurz": "beurteilen, ob für einen Einsatz eine geschlossene Plattform (Hardware und Betriebssystem aus einer Hand: gut abgestimmt, stabil, weniger Schadsoftware, aber teurer, kleinere Auswahl und starke Bindung an den Hersteller) oder eine offene Plattform (große Auswahl an Geräten, Software und Preisen, aber mehr Aufwand für Abstimmung und Sicherheit) besser passt"
     }
    ]
   },
@@ -2796,6 +2875,11 @@
      "id": "AP1-5-2-2-K8",
      "stufe": 2,
      "kurz": "die Partitionstabellen MBR und GPT unterscheiden: MBR erlaubt höchstens vier primäre Partitionen und Datenträger bis 2 TiB, GPT bis zu 128 Partitionen und sehr große Datenträger und wird mit UEFI genutzt"
+    },
+    {
+     "id": "AP1-5-2-2-K9",
+     "stufe": 2,
+     "kurz": "die Schritte einer Softwareinstallation beim Kunden beschreiben: Systemvoraussetzungen prüfen, installieren, Grundeinstellungen vornehmen, vorhandene Daten übernehmen, testen und das Ergebnis in einem Testprotokoll festhalten"
     }
    ]
   },
@@ -2870,6 +2954,16 @@
      "id": "AP1-5-2-4-K4",
      "stufe": 1,
      "kurz": "Wege nennen, installierte Software an einen Arbeitsplatz anzupassen: Einstellungen in der Oberfläche (zum Beispiel Sprache, Standardspeicherorte, Vorlagen, Benutzerprofile), Konfigurationsdateien, Erweiterungen"
+    },
+    {
+     "id": "AP1-5-2-4-K5",
+     "stufe": 2,
+     "kurz": "die zwei Arten des Customizings unterscheiden: Bei der Konfiguration werden passende Module der Standardsoftware ausgewählt und eingerichtet, bei der Parametrisierung werden über Parameter vorhandene Funktionen ein- oder ausgeschaltet; in beiden Fällen bleibt der Quellcode unverändert"
+    },
+    {
+     "id": "AP1-5-2-4-K6",
+     "stufe": 4,
+     "kurz": "für einen Anpassungsbedarf beurteilen, welche Stufe reicht: Customizing, wenn Einstellungen genügen; Erweiterungsprogrammierung, wenn eigene Programmteile über definierte Schnittstellen angebunden werden müssen; Neuentwicklung als Individualsoftware nur, wenn beides nicht ausreicht – denn vorhandene Software anzupassen ist meist günstiger und schneller als neu zu entwickeln"
     }
    ]
   },
@@ -2917,6 +3011,21 @@
      "id": "AP1-5-2-5-K7",
      "stufe": 2,
      "kurz": "einem Einsatzbereich ein passendes IT-System zuordnen und seinen Nutzen erläutern, zum Beispiel eine Videoerfassung für An- und Ablieferungen"
+    },
+    {
+     "id": "AP1-5-2-5-K8",
+     "stufe": 2,
+     "kurz": "erklären, dass Client und Server Rollen sind und keine Gerätearten: Server ist jeder Rechner, der im Netz einen Dienst anbietet, deshalb wird schon ein Arbeitsplatz-PC mit einer Datei- oder Druckerfreigabe zum File- oder Printserver"
+    },
+    {
+     "id": "AP1-5-2-5-K9",
+     "stufe": 2,
+     "kurz": "Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und dauerhaft ohne Ausfall zu laufen, zum Beispiel mit doppelten Netzteilen, Fehlerkorrektur im Arbeitsspeicher, vielen im Betrieb tauschbaren Festplatten und starker Kühlung"
+    },
+    {
+     "id": "AP1-5-2-5-K10",
+     "stufe": 2,
+     "kurz": "typischen Servern ihren Dienst zuordnen: Fileserver (Dateiablage), Printserver (Drucken), Mailserver (E-Mail), DNS-Server (Namensauflösung), Webserver (Webseiten), Anwendungsserver (z. B. Warenwirtschaft), NAS (Speicher im Netz) und Terminalserver (Arbeitssitzungen für Thin Clients)"
     }
    ]
   },

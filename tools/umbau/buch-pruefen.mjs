@@ -78,6 +78,8 @@ for (const [id, e] of Object.entries(kapitel)) {
 
 // ---------- T10b: Herkunft buch: und Kür-Quellen ----------
 const kapitelVon = (wert) => wert.replace(/-S\d+$/, '');
+// Tests mit Beispiel-Zuordnung (BUCH_OHNE_PLAN=1) prüfen T10b nicht gegen die echten Lernpläne
+if (process.env.BUCH_OHNE_PLAN) { buchHerkunft.length = 0; kuerQuellen.length = 0; }
 for (const { k, sp: s, wert } of buchHerkunft) {
   const kap = kapitelVon(wert);
   const e = kapitel[kap];

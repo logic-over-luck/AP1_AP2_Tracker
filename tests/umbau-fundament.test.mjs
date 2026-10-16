@@ -406,7 +406,7 @@ function buchMit(veraendern) {
   const kd = join(dir, 'kern', 'GS');
   mkdirSync(kd, { recursive: true });
   writeFileSync(join(kd, '3.4.5.json'), JSON.stringify(kern));
-  return spawnSync(process.execPath, ['tools/umbau/buch-pruefen.mjs'], { encoding: 'utf8', env: { ...process.env, BUCH_DATEI: join(dir, 'buch.json'), BUCH_KERN: join(dir, 'kern') } });
+  return spawnSync(process.execPath, ['tools/umbau/buch-pruefen.mjs'], { encoding: 'utf8', env: { ...process.env, BUCH_DATEI: join(dir, 'buch.json'), BUCH_KERN: join(dir, 'kern'), BUCH_OHNE_PLAN: '1' } });
 }
 test('T10: stimmige Beispiel-Zuordnung besteht', () => {
   const r = buchMit(() => {});
