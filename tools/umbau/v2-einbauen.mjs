@@ -67,6 +67,7 @@ const F = (s) => fehler.push(s);
 const vergeben = new Set();
 const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
 for (const s of alt.stichpunkte) { vergeben.add(s.id); for (const k of s.koennen) vergeben.add(k.id); }
+for (const t of alt.struktur ?? []) for (const o of t.ordner ?? []) for (const b of o.bloecke ?? []) vergeben.add(b.id);
 if (existsSync('umbau/umzug.json')) {
   const u = JSON.parse(readFileSync('umbau/umzug.json', 'utf8'));
   for (const t of ['koennen', 'stichpunkte', 'bloecke']) for (const [a, n] of Object.entries(u[t] ?? {})) { vergeben.add(a); if (typeof n === 'string') vergeben.add(n); }
@@ -74,7 +75,7 @@ if (existsSync('umbau/umzug.json')) {
 for (const r of readdirSync('umbau/lernplan')) for (const f of readdirSync(`umbau/lernplan/${r}`).filter((x) => x.endsWith('.json'))) {
   const l = f === `${ORDNER}.json` ? lp : JSON.parse(readFileSync(`umbau/lernplan/${r}/${f}`, 'utf8'));
   for (const a of l.alt_neu?.koennen ?? []) { vergeben.add(a.alt); if (a.neu) vergeben.add(a.neu); }
-  for (const tb of l.themenbloecke) for (const s of tb.stichpunkte) { vergeben.add(s.id); for (const k of s.koennen) vergeben.add(k.id); }
+  for (const tb of l.themenbloecke) { vergeben.add(tb.id); for (const s of tb.stichpunkte) { vergeben.add(s.id); for (const k of s.koennen) vergeben.add(k.id); } }
 }
 for (const c of karten.karten) vergeben.add(c.k);
 const naechste = (prefix, trenner) => {
@@ -111,10 +112,21 @@ const setzeStatus = (kp, art, wert) => { for (const x of ['aussage', 'neu', 'fil
 
 const protokoll = { stand: HEUTE, regelwerk: regeln.version, neue_aussagen: [], neue_stichpunkte: [], d6: [], kuer: [], grenzen_gestrichen: [], filter: [], umgehaengt: [] };
 
+// ---------- neue Themenblöcke (F4 seit v2.1: 3–8 Stichpunkte, sonst teilen; P55) ----------
+const refTb = new Map();
+for (const nb of patch.neue_bloecke ?? []) {
+  const id = naechste(ORDNER, '-');
+  const pos = lp.themenbloecke.findIndex((t) => t.id === nb.nach);
+  lp.themenbloecke.splice(pos >= 0 ? pos + 1 : lp.themenbloecke.length, 0, { id, titel: nb.titel, satz: nb.satz ?? '', stichpunkte: [] });
+  refTb.set(nb.ref, id);
+  protokoll.neue_bloecke ??= [];
+  protokoll.neue_bloecke.push({ id, nach: nb.nach ?? null, begruendung: nb.begruendung ?? '' });
+}
+
 // ---------- neue Stichpunkte ----------
 const refSp = new Map();
 for (const ns of patch.neue_stichpunkte ?? []) {
-  const tb = lp.themenbloecke.find((t) => t.id === ns.block);
+  const tb = lp.themenbloecke.find((t) => t.id === (refTb.get(ns.block) ?? ns.block));
   if (!tb) { F(`neuer Stichpunkt ${ns.ref}: Block ${ns.block} gibt es nicht`); continue; }
   if (!ns.bausteine?.length) F(`neuer Stichpunkt ${ns.ref}: ohne Katalog-Baustein (D8)`);
   const id = naechste(tb.id, '-');
@@ -200,6 +212,15 @@ for (const g of patch.grenzen_gestrichen ?? []) {
       if (!t.wo.length) { t.ring = 'Kern'; t.wo = neueHier.length ? neueHier : sp.koennen.map((k) => k.id).slice(-1); t.notiz = `${t.notiz ? t.notiz + '; ' : ''}Regelwerk v2.0 (D3): Grenze gestrichen, jetzt Kern`; }
     }
   }
+}
+
+// ---------- Hinweise am Stichpunkt (RK5: Buch weicht ab, aktueller Stand) ----------
+for (const h of patch.hinweise ?? []) {
+  const sp = spVon(spId(h.sp));
+  if (!sp) { F(`Hinweis: Stichpunkt ${h.sp} gibt es nicht`); continue; }
+  sp.hinweis = sp.hinweis ? `${sp.hinweis} ${h.text}` : h.text;
+  protokoll.hinweise ??= [];
+  protokoll.hinweise.push(sp.id);
 }
 
 // ---------- Kernpunkte: Filter und Umhängen ----------
