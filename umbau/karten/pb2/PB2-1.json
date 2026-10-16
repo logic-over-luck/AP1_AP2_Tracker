@@ -1,0 +1,669 @@
+{
+ "ordner": "PB2-1",
+ "stand": "2026-10-16",
+ "auftrag": "umbau/auftraege/AP1-karten.md (für PB2 sinngemäß)",
+ "grundlage": "umbau/lernplan/pb2/PB2-1.json",
+ "karten": [
+  {
+   "id": "AP2-3-2-1-K1-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K1",
+   "vorne": "Welche Anforderungen gelten an die Form von Pseudocode?",
+   "hinten": "- für Dritte ohne Kenntnis der Programmiersprache lesbar\n- muss nicht kompilierbar sein, Syntaxfehler werden toleriert\n- Kontrollstrukturen erkennbar, z. B. durch Einrücken\n- Orientierung an einer bekannten Sprache erlaubt"
+  },
+  {
+   "id": "AP2-3-2-1-K1-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K1",
+   "vorne": "Welche Angaben gehören in den Kopf einer Funktion in Pseudocode?",
+   "hinten": "Name der Funktion, Parameter (mit Datentyp) und Datentyp des Rückgabewerts, z. B. `funktion durchschnitt(werte: Liste): Kommazahl`. Die Schreibweise ist frei."
+  },
+  {
+   "id": "AP2-3-2-1-K4-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K1",
+   "vorne": "Was leisten die Listenmethoden `add(x)`, `size()` und `get(i)`?",
+   "hinten": "- `add(x)`: hängt x hinten an die Liste an\n- `size()`: liefert die Anzahl der Elemente\n- `get(i)`: liefert das Element an Index i"
+  },
+  {
+   "id": "PB2-1-1-1-K1-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K1",
+   "vorne": "Welche Klassen, Methoden und Datenstrukturen darfst du in einer Pseudocode-Lösung verwenden?",
+   "hinten": "- die in der Aufgabe vorgegebenen Klassen, Getter und Methoden, z. B. `getDay()` oder `getTimeTable(id)`\n- vorgegebene Datenstrukturen mit ihren Methoden, z. B. Listen mit `add`, `size`, `get`\n- keine erfundenen Hilfsfunktionen wie `sortiere()` oder `enthaelt()` – einen solchen Schritt schreibst du selbst als Schleife aus"
+  },
+  {
+   "id": "PB2-1-1-1-K1-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K1",
+   "vorne": "Die Signatur `istFrei(tischNr: Ganzzahl, datum: Datum): Wahrheitswert` ist vorgegeben. Was folgt daraus für deine Lösung?",
+   "hinten": "- Name, Parameter und Rückgabetyp unverändert übernehmen\n- mit den übergebenen Parametern arbeiten, sie nicht neu einlesen\n- auf jedem Weg durch die Funktion `true` oder `false` zurückgeben, nichts anderes"
+  },
+  {
+   "id": "AP2-3-2-1-K2-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K2",
+   "vorne": "Eine Liste hat `size()` Elemente, der Index beginnt bei 0. Wie lautet der Kopf einer Zählschleife über alle Elemente, und was passiert mit `to liste.size()`?",
+   "hinten": "`for i = 0 to liste.size() - 1`. Mit `to liste.size()` ruft der letzte Durchlauf `get(size())` auf und greift hinter das Ende der Liste: Laufzeitfehler."
+  },
+  {
+   "id": "AP2-3-2-2-K6-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K2",
+   "vorne": "Wie vergleicht man jedes Element eines Arrays mit seinem Nachfolger, ohne den Index zu überschreiten?",
+   "hinten": "Schleife von i = 0 bis Länge − 2 und `a[i]` mit `a[i+1]` vergleichen (oder i = 1 bis Länge − 1 und `a[i-1]` mit `a[i]`)."
+  },
+  {
+   "id": "PB2-1-1-1-K2-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K2",
+   "vorne": "Du durchsuchst eine Liste und willst nach dem ersten Treffer aufhören, ohne `return` oder `break` zu verwenden. Wie formulierst du die Schleife?",
+   "hinten": "Als `while`-Schleife mit Merker:\n- vorher `gefunden = false` und `i = 0`\n- `while i < liste.size() and not gefunden do`\n- im Rumpf bei Treffer `gefunden = true`, am Ende jedes Durchlaufs `i = i + 1`"
+  },
+  {
+   "id": "PB2-1-1-1-K3-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K3",
+   "vorne": "Wie sprichst du in einem zweidimensionalen Array `plan` den Wert mit Zeilenindex 3 und Spaltenindex 5 an, und wie durchläufst du alle Werte?",
+   "hinten": "`plan[3][5]` – erst die Zeile, dann die Spalte, beide ab 0. Alle Werte: zwei geschachtelte Schleifen, außen über die Zeilen, innen über die Spalten, Zugriff `plan[z][s]`."
+  },
+  {
+   "id": "PB2-1-1-1-K3-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K3",
+   "vorne": "In `plan` stehen in Spalte 0 der Monat, in Spalte 1 der Tag und ab Spalte 2 die Zeitslots 0, 1, 2, … In welcher Spalte steht Zeitslot j, und welcher Zeitslot steht in Spalte 7?",
+   "hinten": "Zeitslot j steht in Spalte `2 + j`. In Spalte 7 steht Zeitslot 5 (7 − 2)."
+  },
+  {
+   "id": "PB2-1-1-1-K3-3",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K3",
+   "vorne": "Wie findest du in diesem Plan die Zeile für Monat m und Tag t und wertest ihre Zeitslots aus?",
+   "hinten": "- alle Zeilen durchlaufen und `plan[z][0] == m and plan[z][1] == t` prüfen\n- in der gefundenen Zeile die Spalten ab 2 durchlaufen (`plan[z][2 + j]`)\n- gibt es keine passende Zeile, den festgelegten Wert zurückgeben"
+  },
+  {
+   "id": "AP2-3-2-1-K5-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K5",
+   "vorne": "Welchen Sonderfall prüfst du, bevor du den Durchschnitt über eine Liste berechnest, und wie behandelst du ihn?",
+   "hinten": "Ob die Liste leer bzw. die Anzahl 0 ist, sonst droht eine Division durch null. Dann einen festgelegten Wert zurückgeben (z. B. 0) oder eine Ausnahme auslösen."
+  },
+  {
+   "id": "AP2-3-2-1-K5-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K5",
+   "vorne": "Warum muss man vor der Suche nach dem größten Element einer Liste prüfen, ob sie leer ist?",
+   "hinten": "Weil der Startwert meist das erste Element ist; bei einer leeren Liste gibt es keins. Dann z. B. null zurückgeben oder eine Ausnahme auslösen."
+  },
+  {
+   "id": "PB2-1-1-1-K5-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K5",
+   "vorne": "Der Parameter `slot` hat den Sonderwert −1 für „beliebiger Zeitslot“. Wie berücksichtigst du das im Algorithmus?",
+   "hinten": "Vorab unterscheiden:\n- `slot == -1`: alle Zeitslots durchlaufen und prüfen\n- sonst: nur den angegebenen Slot prüfen\nDen Sonderwert nie als Index verwenden – `plan[z][2 + slot]` wäre bei −1 die Tag-Spalte."
+  },
+  {
+   "id": "PB2-1-1-1-K5-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K5",
+   "vorne": "Eine Funktion soll `true` liefern, wenn ein Eintrag der Liste passt, sonst `false`. Wo steht `return false`, und warum dort?",
+   "hinten": "Nach der Schleife. Stünde es im `else`-Zweig in der Schleife, endete die Suche schon beim ersten Eintrag, der nicht passt. In der Schleife steht nur bei einem Treffer `return true`."
+  },
+  {
+   "id": "PB2-1-1-1-K6-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K6",
+   "vorne": "`getMaxPersonen()` liefert eine Ganzzahl. Warum schreibst du für die Hälfte `getMaxPersonen() / 2.0` statt `getMaxPersonen() / 2`?",
+   "hinten": "`/ 2` teilt zwei Ganzzahlen ganzzahlig, der Rest fällt weg: bei 5 Personen ergibt sich 2 statt 2,5. Mit `2.0` wird als Kommazahl gerechnet."
+  },
+  {
+   "id": "PB2-1-1-1-K6-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K6",
+   "vorne": "Eine Station gilt als ausgelastet, wenn mehr als 80 % der Betten belegt sind; `belegt` und `anzahlBetten` sind Ganzzahlen. Wie formulierst du die Bedingung ohne Kommazahlen?",
+   "hinten": "`belegt * 100 > 80 * anzahlBetten`. Die naheliegende Form `belegt / anzahlBetten > 0.8` scheitert, weil die Ganzzahldivision z. B. 17 / 20 zu 0 abschneidet."
+  },
+  {
+   "id": "PB2-1-1-1-K6-3",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K6",
+   "vorne": "Warum speicherst du einen Durchschnitt nicht in einer Ganzzahl-Variablen?",
+   "hinten": "Die Nachkommastellen gingen verloren (aus 2,75 würde 2). Die Variable als Kommazahl anlegen – und die Summe ebenfalls als Kommazahl führen, damit nicht schon die Division ganzzahlig rechnet."
+  },
+  {
+   "id": "AP2-2-1-3-K5-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K7",
+   "vorne": "Wie bildest du die Zählschleife `for i = 0 to n - 1` im Aktivitätsdiagramm ab?",
+   "hinten": "- Aktion `i = 0` (Initialisierung)\n- Zusammenführung, danach Entscheidung mit `[i <= n - 1]` und `[sonst]` (Prüfung)\n- bei `[i <= n - 1]`: die Aktionen des Rumpfs, dann Aktion `i = i + 1` (Schrittweite) und Rücksprung zur Zusammenführung\n- `[sonst]` verlässt die Schleife"
+  },
+  {
+   "id": "AP2-2-1-3-K5-2",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K7",
+   "vorne": "Wie unterscheiden sich kopf- und fußgesteuerte Schleife im Aktivitätsdiagramm?",
+   "hinten": "- kopfgesteuert: Die Entscheidung steht vor den Aktionen des Schleifenrumpfs\n- fußgesteuert: Die Entscheidung steht nach dem Rumpf, der deshalb mindestens einmal durchlaufen wird"
+  },
+  {
+   "id": "AP2-2-1-3-K5-3",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K7",
+   "vorne": "An einer Entscheidung im Aktivitätsdiagramm stehen die Bedingungen `[x <= 0]` und `[x >= 0]`. Was ist falsch, und wie lautet es richtig?",
+   "hinten": "Die Bedingungen überschneiden sich: bei x = 0 träfen beide zu. Die Ausgänge einer Entscheidung müssen vollständig und überschneidungsfrei sein, z. B. `[x < 0]` und `[x >= 0]` oder `[x <= 0]` und `[else]`."
+  },
+  {
+   "id": "PB2-1-1-1-K7-1",
+   "sp": "PB2-1-1-1",
+   "k": "PB2-1-1-1-K7",
+   "vorne": "Zwei geschachtelte Zählschleifen (i außen, j innen) sollen als Aktivitätsdiagramm dargestellt werden. Wo steht die Aktion `j = 0`, und wohin führt der Ausgang `[sonst]` der inneren Entscheidung?",
+   "hinten": "`j = 0` steht im Rumpf der äußeren Schleife direkt vor der inneren Entscheidung – so beginnt j bei jedem äußeren Durchlauf neu. Der Ausgang `[sonst]` der inneren Schleife führt zum Rest des äußeren Rumpfs, also zu `i = i + 1` und zurück zur äußeren Entscheidung."
+  },
+  {
+   "id": "AP2-3-2-2-K1-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K1",
+   "vorne": "Wie ist das Muster „Elemente nach einer Bedingung filtern“ aufgebaut?",
+   "hinten": "- leere Ergebnisliste anlegen\n- jedes Element der Liste durchlaufen\n- Bedingung prüfen (mehrere mit UND/ODER verknüpft)\n- erfüllt: mit `add` in die Ergebnisliste\n- nach der Schleife die Ergebnisliste zurückgeben"
+  },
+  {
+   "id": "AP2-3-2-2-K1-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K1",
+   "vorne": "Wo steht beim Filtern einer Liste die Anweisung `return ergebnis`, und warum dort?",
+   "hinten": "Nach der Schleife. Stünde sie in der Schleife, endete die Funktion schon im ersten Durchlauf."
+  },
+  {
+   "id": "AP2-3-2-2-K2-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K2",
+   "vorne": "Wie berechnet man den Durchschnitt über die Elemente einer Liste?",
+   "hinten": "Summe und Zähler vor der Schleife mit 0 belegen; in der Schleife den Wert addieren und den Zähler erhöhen; danach Summe ÷ Zähler, aber nur wenn der Zähler > 0 ist."
+  },
+  {
+   "id": "AP2-3-2-2-K2-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K2",
+   "vorne": "Wie berücksichtigt man beim Zählen oder Summieren nur die Elemente eines Zeitraums?",
+   "hinten": "In der Schleife prüfen, ob das Datum im Zeitraum liegt (`datum >= von UND datum <= bis`); nur dann addieren bzw. zählen."
+  },
+  {
+   "id": "AP2-3-2-2-K2-3",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K2",
+   "vorne": "Warum werden Summe und Zähler vor der Schleife und nicht in ihr auf 0 gesetzt?",
+   "hinten": "In der Schleife würden sie bei jedem Durchlauf wieder auf 0 zurückgesetzt; am Ende enthielten sie nur den Beitrag des letzten Elements."
+  },
+  {
+   "id": "PB2-1-1-2-K2-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K2",
+   "vorne": "Die Listen `kurs` und `indexwert` enthalten je Handelstag einen Wert, in derselben Reihenfolge. Wie zählst du die Tage, an denen der Kurs über dem Index lag?",
+   "hinten": "- vor der Schleife `anzahl = 0`\n- `for i = 0 to kurs.size() - 1`\n- `if kurs.get(i) > indexwert.get(i) then anzahl = anzahl + 1`\n- nach der Schleife `anzahl` zurückgeben"
+  },
+  {
+   "id": "AP2-3-2-2-K3-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K3",
+   "vorne": "Wie bestimmt man das Element mit dem größten Wert in einer Liste?",
+   "hinten": "- erstes Element als bisher größtes merken\n- die übrigen Elemente durchlaufen\n- ist der Wert größer als der des gemerkten: dieses Element merken\n- nach der Schleife das gemerkte Element zurückgeben"
+  },
+  {
+   "id": "AP2-3-2-2-K3-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K3",
+   "vorne": "Warum startet man die Suche nach dem kleinsten Wert besser mit dem ersten Element als mit dem Wert 0?",
+   "hinten": "Sind alle Werte größer als 0, bliebe 0 fälschlich das Minimum. Das erste Element ist immer ein gültiger Startwert."
+  },
+  {
+   "id": "AP2-3-2-2-K3-3",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K3",
+   "vorne": "Was merkt man sich, wenn nicht der größte Wert, sondern das Objekt mit dem größten Wert zurückgegeben werden soll?",
+   "hinten": "Das Objekt selbst (oder seinen Index), nicht nur den Wert. Verglichen wird über den Getter des Kriteriums, z. B. `p.getPreis() > max.getPreis()`."
+  },
+  {
+   "id": "PB2-1-1-2-K3-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K3",
+   "vorne": "Wie findest du in einer Liste den Messwert mit der kleinsten Abweichung von einem Zielwert `ziel`?",
+   "hinten": "Wie bei der Minimumsuche, verglichen wird aber der Abstand `abs(wert - ziel)`:\n- Start: `besterAbstand = Double.MAX_VALUE`\n- je Element den Abstand berechnen\n- ist er kleiner als `besterAbstand`: Abstand und Index merken\n- nach der Schleife den gemerkten Index bzw. das Element zurückgeben"
+  },
+  {
+   "id": "PB2-1-1-2-K3-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K3",
+   "vorne": "Eine Route soll immer die nächstgelegene noch offene Position anfahren, bis alle besucht sind. Wie ist der Algorithmus aufgebaut?",
+   "hinten": "- äußere Schleife, solange noch Positionen offen sind\n- darin Minimumsuche: die offene Position mit der kleinsten Entfernung zur aktuellen\n- diese an die Route anhängen und aus der Liste der offenen entfernen\n- sie wird zur neuen aktuellen Position"
+  },
+  {
+   "id": "AP2-3-2-2-K4-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K4",
+   "vorne": "Wie gleicht man zwei Listen ab, z. B. welche Elemente von A auch in B vorkommen?",
+   "hinten": "Äußere Schleife über A, darin eine innere Schleife über B. In der inneren Schleife vergleichen und bei einem Treffer das Element merken oder in die Ergebnisliste übernehmen."
+  },
+  {
+   "id": "AP2-3-2-2-K4-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K4",
+   "vorne": "Wozu dient beim Abgleich zweier Listen eine Merkervariable (Flag)?",
+   "hinten": "Sie wird vor der inneren Schleife auf falsch gesetzt und bei einem Treffer auf wahr. Nach der inneren Schleife zeigt sie, ob das Element in der anderen Liste vorkommt."
+  },
+  {
+   "id": "PB2-1-1-2-K4-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K4",
+   "vorne": "Je Tisch und Tag ist nur eine Reservierung erlaubt. Mit welcher Bedingung erkennst du, dass eine vorhandene Reservierung `r` mit der neuen Reservierung `neu` kollidiert?",
+   "hinten": "`r.getTischNr() == neu.getTischNr() and r.getDatum() == neu.getDatum()` – beide Teile mit UND verknüpft, geprüft in einer Schleife über alle vorhandenen Reservierungen."
+  },
+  {
+   "id": "PB2-1-1-2-K4-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K4",
+   "vorne": "Ein Patient wird am 3. aufgenommen und am 5. entlassen; der Aufnahmetag zählt als Belegung, der Entlassungstag nicht. An welchen Tagen ist sein Bett belegt, und wie lautet die Prüfung für einen Tag `tag`?",
+   "hinten": "Am 3. und 4., also 2 Tage. Prüfung: `datumVon <= tag and tag < datumBis`."
+  },
+  {
+   "id": "AP2-3-2-2-K5-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K5",
+   "vorne": "Die Haltestellen einer Linie sind von 1 bis 15 nummeriert. Wie berechnest du die Zahl der Einstiege je Haltestelle?",
+   "hinten": "- Ergebnisarray mit 15 Stellen anlegen, alle mit 0\n- für jeden Einstieg den Index `haltestelle - 1` berechnen\n- dort hochzählen: `zaehler[haltestelle - 1] = zaehler[haltestelle - 1] + 1`"
+  },
+  {
+   "id": "AP2-3-2-2-K6-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K5",
+   "vorne": "Wie zählt man Ergebnisse in einem zweiten Array an der passenden Stelle hoch?",
+   "hinten": "Ein Zählarray anlegen, alle Stellen mit 0. Aus dem Ergebnis den Index bestimmen und dort um 1 erhöhen: `zaehler[index] = zaehler[index] + 1`."
+  },
+  {
+   "id": "PB2-1-1-2-K5-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K5",
+   "vorne": "Ein Museum hat von 9 bis 19 Uhr geöffnet, Besuche werden je volle Stunde gezählt. Wie viele Stellen hat das Zählarray, und welcher Index gehört zu einem Besuch um 14 Uhr?",
+   "hinten": "10 Stellen (Stunden 9 bis 18). Index = `stunde - 9`, für 14 Uhr also 5."
+  },
+  {
+   "id": "PB2-1-1-2-K5-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K5",
+   "vorne": "Besuche sollen je Tag des Monats und je Öffnungsstunde (10 Stunden ab 9 Uhr) gezählt werden. Wie legst du das Array an, und wie zählst du einen Besuch?",
+   "hinten": "`zaehler = new Integer[tageImMonat][10]`, alle Stellen mit 0 belegen. Je Besuch: `zaehler[tag - 1][stunde - 9] = zaehler[tag - 1][stunde - 9] + 1`."
+  },
+  {
+   "id": "PB2-1-1-2-K7-1",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K7",
+   "vorne": "Wie wertest du eine nach Kundennummer sortierte Liste mit dem Gruppenwechsel aus, um die Summe je Kunde auszugeben?",
+   "hinten": "- Kundennummer des ersten Eintrags merken, `summe = 0`\n- je Eintrag: ist die Nummer anders als die gemerkte, die Summe der alten Gruppe ausgeben, `summe = 0` setzen, neue Nummer merken\n- dann den Betrag des Eintrags zur Summe addieren\n- nach der Schleife die letzte Gruppe ausgeben"
+  },
+  {
+   "id": "PB2-1-1-2-K7-2",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K7",
+   "vorne": "Warum muss beim Gruppenwechsel nach der Schleife noch einmal ausgegeben werden?",
+   "hinten": "Die Ausgabe einer Gruppe löst erst der Wechsel zum nächsten Schlüssel aus. Nach der letzten Gruppe kommt kein Wechsel mehr – ohne die Ausgabe nach der Schleife fehlte sie."
+  },
+  {
+   "id": "PB2-1-1-2-K7-3",
+   "sp": "PB2-1-1-2",
+   "k": "PB2-1-1-2-K7",
+   "vorne": "Ein Array `stand` enthält die Zählerstände am Ende jedes Monats. Wie berechnest du den Verbrauch je Monat, und wie weit läuft die Schleife?",
+   "hinten": "Verbrauch = `stand[m + 1] - stand[m]`. Die Schleife läuft von `m = 0` bis Länge − 2, sonst greift `m + 1` hinter das Ende; es gibt einen Verbrauchswert weniger als Stände."
+  },
+  {
+   "id": "AP2-3-3-1-K6-1",
+   "sp": "PB2-1-1-3",
+   "k": "PB2-1-1-3-K1",
+   "vorne": "Eine Klasse hat das Attribut `fahrplanService`. Wie ruft eine neue Methode der Klasse dessen Methode `getAbfahrten(haltestelle)` auf?",
+   "hinten": "Über das Attribut: `abfahrten = this.fahrplanService.getAbfahrten(haltestelle)`. Das Ergebnis wird in einer Variablen gespeichert und dann weiterverarbeitet."
+  },
+  {
+   "id": "PB2-1-1-3-K1-1",
+   "sp": "PB2-1-1-3",
+   "k": "PB2-1-1-3-K1",
+   "vorne": "Wie rufst du die statische Methode `now()` der Klasse `DateTime` auf, und warum brauchst du dafür kein Objekt?",
+   "hinten": "Über den Klassennamen: `jetzt = DateTime.now()`. Statische Methoden gehören zur Klasse selbst, nicht zu einem einzelnen Objekt."
+  },
+  {
+   "id": "PB2-1-1-3-K1-2",
+   "sp": "PB2-1-1-3",
+   "k": "PB2-1-1-3-K1",
+   "vorne": "Laut Aufgabe liefert `a.compare(b)` −1, wenn das Datum von a vor dem von b liegt, 0 bei Gleichheit und 1, wenn a danach liegt. Wie prüfst du, ob eine Abfahrt nicht vor `jetzt` liegt?",
+   "hinten": "`abfahrt.abfahrtsZeit.compare(jetzt) >= 0` – also 0 (gleichzeitig) oder 1 (später).\n- gleichwertig: `jetzt.compare(abfahrt.abfahrtsZeit) <= 0`\n- `compare` ist eine Methode des Objekts, kein statischer Aufruf"
+  },
+  {
+   "id": "PB2-1-1-3-K2-1",
+   "sp": "PB2-1-1-3",
+   "k": "PB2-1-1-3-K2",
+   "vorne": "Eine Methode soll eine HTTP-Antwort erzeugen und zurückgeben. Welche Schritte gehören hinein?",
+   "hinten": "- Objekt anlegen, z. B. `antwort = new HttpResponse()`\n- Statuscode setzen, z. B. 200\n- Kopfzeilen setzen: `Content-Type` und `Content-Length`\n- Body setzen\n- `return antwort`\nDie Methodennamen kommen aus dem vorgegebenen Klassendiagramm."
+  },
+  {
+   "id": "PB2-1-1-3-K2-2",
+   "sp": "PB2-1-1-3",
+   "k": "PB2-1-1-3-K2",
+   "vorne": "Woher kommt beim Befüllen einer HTTP-Antwort der Wert für `Content-Length`?",
+   "hinten": "Aus der Länge des Body in Bytes. Er lässt sich deshalb erst setzen, wenn der Inhalt des Body feststeht."
+  },
+  {
+   "id": "PB2-1-1-3-K3-1",
+   "sp": "PB2-1-1-3",
+   "k": "PB2-1-1-3-K3",
+   "vorne": "Eine private Hilfsmethode soll aus einer nach Zeit sortierten Liste höchstens `max` Einträge ab einem Zeitpunkt übernehmen. Wie groß legst du das Ergebnisarray an, und wann endet die Schleife?",
+   "hinten": "- Ergebnisarray mit `max` Stellen, dazu ein Zähler `anzahl = 0`\n- Schleife `while i < liste.size() and anzahl < max do`\n- passt ein Eintrag (Zeit nicht vor dem Zeitpunkt): an Stelle `anzahl` speichern, `anzahl = anzahl + 1`\n- sie endet, wenn die Liste durchlaufen oder die Höchstzahl erreicht ist"
+  }
+ ],
+ "nicht_abgefragt": [],
+ "unsicher": [
+  {
+   "id": "PB2-1-1-3-K2-2",
+   "was": "Content-Length zählt Bytes, nicht Zeichen; bei Umlauten (UTF-8) weicht die Zeichenzahl ab. Die Karte nennt Bytes, die Kurzfassung erwähnt den Unterschied."
+  }
+ ],
+ "protokoll": [
+  {
+   "id": "AP2-3-2-1-K1-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-1-K1-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-1-K1-3",
+   "entscheidung": "entfernt",
+   "grund": "E2 – Grundlage steht in AP1 und wird importiert (AP1-8-2-1-K6: Funktion mit Rückgabewert)"
+  },
+  {
+   "id": "AP2-3-2-1-K4-1",
+   "entscheidung": "bleibt",
+   "grund": "passt zur Aussage (Listen mit add, size, get), Tiefe stimmt"
+  },
+  {
+   "id": "PB2-1-1-1-K1-1",
+   "entscheidung": "neu",
+   "grund": "Aussage verlangt ausdrücklich: nur Vorgegebenes, keine eigenen Hilfsfunktionen"
+  },
+  {
+   "id": "PB2-1-1-1-K1-2",
+   "entscheidung": "neu",
+   "grund": "kleiner Fall zur vorgegebenen Signatur (Stufe 3)"
+  },
+  {
+   "id": "AP2-3-2-1-K2-1",
+   "entscheidung": "entfernt",
+   "grund": "E2 – Grundlage steht in AP1 und wird importiert (AP1-8-2-1-K5: Schleifenarten unterscheiden)"
+  },
+  {
+   "id": "AP2-3-2-1-K2-2",
+   "entscheidung": "bearbeitet",
+   "grund": "Kern (Zählschleife über eine Liste) passt; „wann Zählschleife“ ist AP1-Stoff, deshalb auf die Schleifengrenze zugespitzt"
+  },
+  {
+   "id": "AP2-3-2-1-K2-3",
+   "entscheidung": "entfernt",
+   "grund": "E2 – Grundlage steht in AP1 und wird importiert (AP1-8-2-1-K5: fußgesteuerte Schleife)"
+  },
+  {
+   "id": "AP2-3-2-1-K2-4",
+   "entscheidung": "entfernt",
+   "grund": "E2 – Grundlage steht in AP1 und wird importiert (AP1-8-2-2-K4: Struktur durch Einrücken); Lesbarkeit fragt AP2-3-2-1-K1-1 ab"
+  },
+  {
+   "id": "AP2-3-2-1-K4-2",
+   "entscheidung": "entfernt",
+   "grund": "doppelt – gültige Indizes 0 bis n − 1 fragt die bearbeitete Karte AP2-3-2-1-K2-2 im Zusammenhang ab; Grundlage AP1-8-2-1-K2"
+  },
+  {
+   "id": "AP2-3-2-2-K6-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich, Tiefe stimmt; innerhalb des Ordners an die Aussage zu Schleifengrenzen (Nachbarelement i + 1) gehängt"
+  },
+  {
+   "id": "PB2-1-1-1-K2-1",
+   "entscheidung": "neu",
+   "grund": "Aussage verlangt vorzeitiges Beenden mit Merker oder Zähler; keine alte Karte dazu"
+  },
+  {
+   "id": "PB2-1-1-1-K3-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-1-1-1-K3-2",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte; Nutzdaten ab einer bestimmten Spalte"
+  },
+  {
+   "id": "PB2-1-1-1-K3-3",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte; Zeile über Schlüsselwert suchen"
+  },
+  {
+   "id": "AP2-3-2-1-K5-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-1-K5-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "PB2-1-1-1-K5-1",
+   "entscheidung": "neu",
+   "grund": "Sonderwert als Parameter fehlte"
+  },
+  {
+   "id": "PB2-1-1-1-K5-2",
+   "entscheidung": "neu",
+   "grund": "Sonderfall „kein passender Eintrag“ fehlte"
+  },
+  {
+   "id": "PB2-1-1-1-K6-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne Karte (die alte Karte zur Ganzzahldivision hing an der gestrichenen Aussage AP2-3-2-1-K3)"
+  },
+  {
+   "id": "PB2-1-1-1-K6-2",
+   "entscheidung": "neu",
+   "grund": "Prozentschwelle mit ganzen Zahlen"
+  },
+  {
+   "id": "PB2-1-1-1-K6-3",
+   "entscheidung": "neu",
+   "grund": "Kommazahl nicht in Integer speichern"
+  },
+  {
+   "id": "AP2-2-1-3-K5-1",
+   "entscheidung": "bearbeitet",
+   "grund": "der Rücksprung allein ist AP1-8-3-3-K3; neu ist die Zählschleife mit Initialisierung, Prüfung und Schrittweite als eigene Teile"
+  },
+  {
+   "id": "AP2-2-1-3-K5-2",
+   "entscheidung": "bleibt",
+   "grund": "passt zum Übertragen zwischen Pseudocode und Diagramm (while / do-while), Tiefe stimmt"
+  },
+  {
+   "id": "AP2-2-1-3-K5-3",
+   "entscheidung": "bearbeitet",
+   "grund": "if-else als Raute ist AP1-8-3-3-K1; zugespitzt auf das Neue der Aussage: Bedingungen ohne Lücke und Überschneidung"
+  },
+  {
+   "id": "PB2-1-1-1-K7-1",
+   "entscheidung": "neu",
+   "grund": "geschachtelte Schleifen fehlten"
+  },
+  {
+   "id": "AP2-3-2-2-K1-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K1-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K2-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K2-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K2-3",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "PB2-1-1-2-K2-1",
+   "entscheidung": "neu",
+   "grund": "kleiner Fall zum Zählen mit Bedingung (Beispiel der Aussage)"
+  },
+  {
+   "id": "AP2-3-2-2-K3-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K3-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K3-3",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "PB2-1-1-2-K3-1",
+   "entscheidung": "neu",
+   "grund": "kleinste Abweichung und Startwert MAX_VALUE fehlten"
+  },
+  {
+   "id": "PB2-1-1-2-K3-2",
+   "entscheidung": "neu",
+   "grund": "Extremwert wiederholt bis alle verbraucht (Beleg 2025W) fehlte"
+  },
+  {
+   "id": "AP2-3-2-2-K4-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-2-K4-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "PB2-1-1-2-K4-1",
+   "entscheidung": "neu",
+   "grund": "Beispiel der Aussage (gleicher Tisch, gleiches Datum)"
+  },
+  {
+   "id": "PB2-1-1-2-K4-2",
+   "entscheidung": "neu",
+   "grund": "Zeitraum Tag für Tag mit genauen Grenzen fehlte"
+  },
+  {
+   "id": "AP2-3-2-2-K5-1",
+   "entscheidung": "entfernt",
+   "grund": "passt zu keiner Aussage mehr: eindeutige Schlüssel sammeln ist im neuen Lernplan durch das Zählen im Ergebnisarray ersetzt (K5)"
+  },
+  {
+   "id": "AP2-3-2-2-K5-2",
+   "entscheidung": "bearbeitet",
+   "grund": "Kern (Wert je Gruppe) passt; neue Aussage verlangt das Ergebnisarray mit Index aus dem Fachwert statt zweier verschachtelter Schleifen"
+  },
+  {
+   "id": "AP2-3-2-2-K6-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "PB2-1-1-2-K5-1",
+   "entscheidung": "neu",
+   "grund": "Index aus dem Fachwert berechnen"
+  },
+  {
+   "id": "PB2-1-1-2-K5-2",
+   "entscheidung": "neu",
+   "grund": "zweidimensionales Ergebnisarray"
+  },
+  {
+   "id": "PB2-1-1-2-K7-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-1-1-2-K7-2",
+   "entscheidung": "neu",
+   "grund": "letzte Gruppe nicht vergessen"
+  },
+  {
+   "id": "PB2-1-1-2-K7-3",
+   "entscheidung": "neu",
+   "grund": "aufeinanderfolgende Elemente verrechnen"
+  },
+  {
+   "id": "AP2-3-3-1-K6-1",
+   "entscheidung": "bearbeitet",
+   "grund": "Kern (Methodenaufruf in einer neuen Methode) passt; neue Aussage verlangt den Aufruf über ein Attribut, das auf ein anderes Objekt zeigt"
+  },
+  {
+   "id": "PB2-1-1-3-K1-1",
+   "entscheidung": "neu",
+   "grund": "statische Methoden fehlten"
+  },
+  {
+   "id": "PB2-1-1-3-K1-2",
+   "entscheidung": "neu",
+   "grund": "vorgegebene Vergleichsmethode deuten"
+  },
+  {
+   "id": "PB2-1-1-3-K2-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-1-1-3-K2-2",
+   "entscheidung": "neu",
+   "grund": "Befüllen nach Vorgabe; Aufbau der Antwort selbst steht in PB1-7-1-4"
+  },
+  {
+   "id": "PB2-1-1-3-K3-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  }
+ ],
+ "alt_gestrichen": [
+  {
+   "id": "AP2-3-2-1-K3-1",
+   "alt_aussage": "AP2-3-2-1-K3",
+   "grund": "Aussage im Lernplan gestrichen (E2: Datentypen und Operatoren stehen in AP1-8-2-1); die Vorschau lässt die Karte weg. Nicht im protokoll, weil der Test entfernte Karten nur dem Ordner ihrer Aussage zuordnet und gestrichene Aussagen keinen Ordner haben."
+  },
+  {
+   "id": "AP2-3-2-1-K3-2",
+   "alt_aussage": "AP2-3-2-1-K3",
+   "grund": "Aussage im Lernplan gestrichen (E2: Datentypen und Operatoren stehen in AP1-8-2-1); die Vorschau lässt die Karte weg. Nicht im protokoll, weil der Test entfernte Karten nur dem Ordner ihrer Aussage zuordnet und gestrichene Aussagen keinen Ordner haben."
+  },
+  {
+   "id": "AP2-3-2-1-K3-3",
+   "alt_aussage": "AP2-3-2-1-K3",
+   "grund": "Aussage im Lernplan gestrichen (E2: Datentypen und Operatoren stehen in AP1-8-2-1); die Vorschau lässt die Karte weg. Nicht im protokoll, weil der Test entfernte Karten nur dem Ordner ihrer Aussage zuordnet und gestrichene Aussagen keinen Ordner haben."
+  },
+  {
+   "id": "AP2-3-2-1-K3-4",
+   "alt_aussage": "AP2-3-2-1-K3",
+   "grund": "Aussage im Lernplan gestrichen (E2: Datentypen und Operatoren stehen in AP1-8-2-1); die Vorschau lässt die Karte weg. Nicht im protokoll, weil der Test entfernte Karten nur dem Ordner ihrer Aussage zuordnet und gestrichene Aussagen keinen Ordner haben."
+  }
+ ]
+}
