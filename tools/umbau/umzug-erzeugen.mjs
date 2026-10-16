@@ -9,7 +9,9 @@
 //    „PB2“ → offen, bis PB2 gebaut ist).
 //  - Stichpunkt: alter Stichpunkt → der neue Stichpunkt, der die meisten seiner Können-Aussagen bekommen hat
 //    (bei Gleichstand der erste in Lernplan-Reihenfolge). Sind alle gestrichen → null, alle „PB2“ → offen.
-//  - Themenblock: genauso über die Stichpunkte.
+//    Ausnahme (ID-Erhalt P15/P48): Gibt es die alte ID im neuen Lernplan noch, zeigt sie auf sich selbst – sonst
+//    leitete die App Ereignisse des weiterbestehenden Stichpunkts auf einen anderen um.
+//  - Themenblock: genauso über die Stichpunkte (mit derselben Ausnahme).
 //  - Karten: Karten-IDs sind „<Können-ID>-n“. Eine Karte mit unveränderter ID behält ihren Stand. Karten
 //    verschobener oder neuer Aussagen sind neue Karten und starten neu (Inhalt hat sich geändert).
 //  - Die App (Schritt 7) wendet die Tabelle beim Laden an und lässt das Ereignisprotokoll selbst unverändert,
@@ -22,10 +24,14 @@ const RAEUME = ['ap1', 'pb1', 'pb2', 'wiso'].filter((r) => existsSync(`umbau/ler
 
 const koennen = {};
 const reihenfolge = []; // neue Stichpunkt-IDs in Lernplan-Reihenfolge
+const neueBloecke = new Set();
 for (const r of RAEUME) {
   for (const f of readdirSync(`umbau/lernplan/${r}`).filter((x) => x.endsWith('.json')).sort((a, b) => a.localeCompare(b, 'de', { numeric: true }))) {
     const lp = JSON.parse(readFileSync(`umbau/lernplan/${r}/${f}`, 'utf8'));
-    for (const tb of lp.themenbloecke) for (const sp of tb.stichpunkte) reihenfolge.push(sp.id);
+    for (const tb of lp.themenbloecke) {
+      neueBloecke.add(tb.id);
+      for (const sp of tb.stichpunkte) reihenfolge.push(sp.id);
+    }
     for (const e of lp.alt_neu?.koennen ?? []) {
       if (koennen[e.alt] && koennen[e.alt].status !== 'PB2') continue; // erste endgültige Einordnung gilt
       koennen[e.alt] = {
@@ -41,9 +47,10 @@ const spVon = (id) => id.replace(/-K\d+$/, '');
 const blockVon = (sp) => sp.replace(/-\d+$/, '');
 const rang = new Map(reihenfolge.map((id, i) => [id, i]));
 
-function mehrheit(gruppen) {
+function mehrheit(gruppen, bestehend) {
   const aus = {};
   for (const [alt, ziele] of Object.entries(gruppen)) {
+    if (bestehend.has(alt)) { aus[alt] = alt; continue; }
     const echt = ziele.filter((z) => typeof z === 'string');
     if (!echt.length) { aus[alt] = ziele.includes('offen') ? 'offen' : null; continue; }
     const zahl = new Map();
@@ -57,10 +64,10 @@ const proSp = {};
 for (const [alt, e] of Object.entries(koennen)) {
   (proSp[spVon(alt)] ??= []).push(e.neu ? spVon(e.neu) : e.status === 'PB2' ? 'offen' : null);
 }
-const stichpunkte = mehrheit(proSp);
+const stichpunkte = mehrheit(proSp, new Set(reihenfolge));
 const proBlock = {};
 for (const [alt, neu] of Object.entries(stichpunkte)) (proBlock[blockVon(alt)] ??= []).push(typeof neu === 'string' && neu !== 'offen' ? blockVon(neu) : neu);
-const bloecke = mehrheit(proBlock);
+const bloecke = mehrheit(proBlock, neueBloecke);
 
 // Vollständigkeit: jede alte Können-Aussage der gebauten Räume steht in der Tabelle
 const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));

@@ -303,3 +303,61 @@ test('P6: Umzugstabelle ist vollständig und aktuell', () => {
   const r = spawnSync(process.execPath, ['tools/umbau/umzug-erzeugen.mjs', '--pruefen'], { encoding: 'utf8' });
   assert.equal(r.status, 0, r.stdout);
 });
+
+test('P6/P48: eine alte ID, die im neuen Lernplan weiterbesteht, zeigt im Umzug auf sich selbst', () => {
+  const u = JSON.parse(readFileSync('umbau/umzug.json', 'utf8'));
+  const sp = new Set();
+  const bl = new Set();
+  for (const r of ['ap1', 'pb1', 'pb2', 'wiso']) {
+    if (!existsSync(`umbau/lernplan/${r}`)) continue;
+    for (const f of readdirSync(`umbau/lernplan/${r}`).filter((x) => x.endsWith('.json'))) {
+      for (const t of JSON.parse(readFileSync(`umbau/lernplan/${r}/${f}`, 'utf8')).themenbloecke) {
+        bl.add(t.id);
+        for (const s of t.stichpunkte) sp.add(s.id);
+      }
+    }
+  }
+  const falsch = [
+    ...Object.entries(u.stichpunkte).filter(([a, n]) => sp.has(a) && a !== n),
+    ...Object.entries(u.bloecke).filter(([a, n]) => bl.has(a) && a !== n),
+  ];
+  assert.deepEqual(falsch, []);
+});
+
+// ---------- Raum WISO (Schritt 6) ----------
+const wisoDa = vorhanden && existsSync('umbau/fundament/pruefungen-wiso.json') && existsSync('umbau/lernplan/wiso');
+test('Zuordnung WISO besteht T2 und die goldene Regel (Z3b: Stufe aus dem Aufgabentyp, P46)', { skip: !wisoDa && 'Quellen fehlen' }, () => {
+  const r = spawnSync(process.execPath, ['tools/umbau/zuordnung-pruefen.mjs', 'wiso'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});
+test('Raum WISO: alle Ordner und die Raum-Prüfung (T1, T2b, T8, ALT, Deckung P47) bestehen', { skip: !wisoDa && 'Quellen fehlen' }, () => {
+  for (const f of readdirSync('umbau/lernplan/wiso').filter((x) => x.endsWith('.json'))) {
+    const r = spawnSync(process.execPath, ['tools/umbau/lernplan-pruefen.mjs', f.replace('.json', '')], { encoding: 'utf8', env: { ...process.env, LERNPLAN_DATEI: `umbau/lernplan/wiso/${f}` } });
+    assert.equal(r.status, 0, `${f}: ${r.stdout}`);
+  }
+  const r = spawnSync(process.execPath, ['tools/umbau/raum-pruefen.mjs', 'WISO'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stdout);
+});
+test('Regelwerk: Z3b gilt nur für WISO und kennt alle Aufgabentypen der Abschriften', () => {
+  const z = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8')).pruefungsoperatoren.z3b;
+  assert.deepEqual(z.raeume, ['WISO']);
+  assert.equal(z.stufe_nach_aufgabentyp.eintrag, 1);
+  assert.equal(z.stufe_nach_aufgabentyp.rechnen, 3);
+  for (const t of ['einfachauswahl', 'mehrfachauswahl', 'zuordnung', 'reihenfolge']) assert.equal(z.stufe_nach_aufgabentyp[t], 2);
+});
+test('Deckung P47: jeder gedeckte Baustein ist ein WISO-Baustein und zeigt auf Stichpunkte im Export', () => {
+  const d = JSON.parse(readFileSync('umbau/regeln/wiso-deckung.json', 'utf8'));
+  const exp = new Set();
+  for (const r of ['AP1', 'PB1', 'PB2']) {
+    const e = JSON.parse(readFileSync(`umbau/export/${r}.json`, 'utf8'));
+    JSON.stringify(e).replace(/"((?:AP1|PB1|PB2)-\d+-\d+-\d+)"/g, (_, id) => exp.add(id));
+  }
+  const eintraege = Object.entries(d.bausteine);
+  assert.ok(eintraege.length > 0);
+  for (const [id, e] of eintraege) {
+    assert.match(id, /^WISO\./);
+    const sp = e.stichpunkte ?? [];
+    assert.ok(sp.length && e.grund, `${id} ohne Stichpunkte oder Grund`);
+    for (const s of sp) assert.ok(exp.has(s), `${id}: ${s} nicht im Export`);
+  }
+});
