@@ -2306,3 +2306,150 @@ body {
   color: var(--text-2);
   font-size: var(--t-s);
 }
+
+/* „Das musst du können“ einklappbar (P29) */
+.np .np__kopf {
+  flex-wrap: wrap;
+  row-gap: var(--s-1);
+}
+.np .np__details {
+  white-space: nowrap;
+}
+.np__klapp-titel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  white-space: nowrap;
+}
+.np__klapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  text-align: left;
+  flex-wrap: wrap;
+}
+.np__klapp:hover {
+  color: var(--text);
+}
+.np__klapp-pfeil {
+  transition: transform var(--dauer) var(--kurve);
+}
+.np__klapp[aria-expanded='true'] .np__klapp-pfeil {
+  transform: rotate(90deg);
+}
+.np__zahl {
+  margin-left: var(--s-1);
+  font-family: var(--schrift);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  color: var(--text-3);
+}
+.np__zahl-warn {
+  color: var(--warn);
+}
+
+/* „Baut auf“: Stichpunkte früherer Räume (E2) */
+.np-bautauf__satz {
+  margin: 0 0 var(--s-2);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.np-bautauf__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.np-bautauf__link {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-2);
+  margin: 0 calc(-1 * var(--s-2));
+  border-radius: var(--r-1);
+  color: var(--text-2);
+  font-size: var(--t-s);
+  transition: background var(--dauer) var(--kurve);
+}
+.np-bautauf__link:hover {
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.np-bautauf__status {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 4px;
+  border: 1.5px solid var(--linie-3);
+  color: var(--akzent-text);
+}
+.np-bautauf__link--an .np-bautauf__status {
+  background: var(--akzent);
+  border-color: var(--akzent);
+}
+.np-bautauf__titel {
+  flex: 1;
+  min-width: 0;
+}
+.np-bautauf__raum {
+  flex: none;
+  font-family: var(--mono);
+}
+.np-bautauf__pfeil {
+  flex: none;
+  color: var(--text-3);
+}
+.np-bautauf__link:hover .np-bautauf__pfeil {
+  color: var(--akzent);
+}
+
+/* „neu gegenüber …“ an einer Aussage (P36) */
+.np-marke--neu {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  white-space: normal;
+  text-align: left;
+  color: var(--akzent);
+  border-color: var(--akzent-linie);
+  font: inherit;
+  font-size: var(--t-xs);
+  cursor: pointer;
+  vertical-align: 1px;
+}
+* + .np-marke--neu {
+  margin-left: var(--s-1);
+}
+.np-marke--neu:hover,
+.np-marke--neu[aria-expanded='true'] {
+  background: var(--akzent-weich);
+}
+.np-neu {
+  margin: var(--s-2) 0 var(--s-1);
+  padding: var(--s-2) var(--s-3);
+  border-left: 2px solid var(--akzent);
+  background: var(--akzent-weich);
+  border-radius: var(--r-1);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.np-neu p {
+  margin: 0;
+}
+.np-neu p + p {
+  margin-top: var(--s-1);
+}
+.np-neu a {
+  color: var(--akzent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

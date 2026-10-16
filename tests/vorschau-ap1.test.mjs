@@ -328,3 +328,62 @@ test('P6: alter AP2-Lernstand wandert beim Ableiten in PB1, PB2-Karten behalten 
   assert.equal(index.raumVon(altSp), 'PB1');
   assert.equal(index.raumVon(pb2Karte.id), 'PB2');
 });
+
+// ---------- Schritt 7: Importe anzeigen (E2/P36) und abgenommene Räume (P45) ----------
+describe('Schritt 7: baut_auf, neu und Abnahme', () => {
+  const alle = vorschauAlle(alt, wurzel);
+  const raeumeMitPlan = ['AP1', 'PB1', 'PB2'].filter((R) => ladeLernplanAp1(wurzel, RAEUME_VORSCHAU[R]).length);
+  const frueher = { PB1: ['AP1'], PB2: ['AP1', 'PB1'] };
+
+  for (const R of raeumeMitPlan) {
+    const plaeneR = ladeLernplanAp1(wurzel, RAEUME_VORSCHAU[R]);
+    const spPlan = plaeneR.flatMap((p) => p.themenbloecke.flatMap((t) => t.stichpunkte));
+
+    test(`${R}: baut_auf kommt vollständig an und zeigt auf Stichpunkte früherer Räume`, () => {
+      for (const s of spPlan) {
+        const app = alle.sp[s.id];
+        assert.deepEqual(app.neu.bautAuf, s.baut_auf ?? [], `${s.id}: baut_auf nicht durchgereicht`);
+        for (const id of app.neu.bautAuf) {
+          const ziel = alle.sp[id];
+          assert.ok(ziel, `${s.id}: baut_auf ${id} gibt es in der App nicht`);
+          assert.ok((frueher[R] ?? []).includes(ziel.raum), `${s.id}: baut_auf ${id} liegt in ${ziel.raum}, keinem früheren Raum`);
+        }
+      }
+    });
+
+    test(`${R}: Feld neu der Können-Aussagen kommt an, gegenueber zeigt auf vorhandene Stichpunkte`, () => {
+      for (const s of spPlan) {
+        const app = new Map(alle.sp[s.id].neu.koennen.map((k) => [k.id, k]));
+        for (const k of s.koennen) {
+          const a = app.get(k.id);
+          if (!k.neu) {
+            assert.equal(a.neu, null, `${k.id}: neu ohne Vorlage`);
+            continue;
+          }
+          assert.deepEqual(a.neu.gegenueber, k.neu.gegenueber);
+          assert.equal(a.neu.was, k.neu.was);
+          assert.ok(a.neu.was.trim(), `${k.id}: neu.was leer`);
+          for (const id of a.neu.gegenueber) assert.ok(alle.sp[id], `${k.id}: gegenueber ${id} gibt es nicht`);
+        }
+      }
+    });
+
+    test(`${R}: abgenommen, also kein Hinweis „noch nicht endgültig“`, () => {
+      assert.equal(RAEUME_VORSCHAU[R].abgenommen, true);
+      assert.equal(alle.vorschauRaeume[R].abgenommen, true);
+    });
+  }
+
+  test('PB1 und PB2 haben Importe und neu-Aussagen (sonst wäre die Anzeige leer)', { skip: raeumeMitPlan.length < 3 && 'PB1/PB2 fehlen' }, () => {
+    for (const R of ['PB1', 'PB2']) {
+      const sps = Object.values(alle.sp).filter((s) => s.raum === R);
+      assert.ok(sps.some((s) => s.neu.bautAuf.length), `${R}: kein baut_auf`);
+      assert.ok(sps.some((s) => s.neu.koennen.some((k) => k.neu)), `${R}: keine Aussage mit neu`);
+    }
+  });
+
+  test('WiSo bleibt beim alten Inhalt, ohne Hinweis', () => {
+    assert.equal(alle.vorschauRaeume.WISO, undefined);
+    assert.deepEqual(alle.raeume.find((r) => r.id === 'WISO'), alt.raeume.find((r) => r.id === 'WISO'));
+  });
+});

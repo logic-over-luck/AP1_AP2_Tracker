@@ -5,6 +5,7 @@ import { useState } from 'preact/hooks';
 import { inhalt } from '../../daten/inhalt.js';
 import { erfasse } from '../../lernstand/store.js';
 import { kartenZustand } from '../../lernstand/ableiten.js';
+import { useEinstellung } from '../../lernstand/einstellungen.js';
 import { PHASEN_ABSTAND } from '../../lernstand/regeln.js';
 import { datumMitWochentag, relativ, tagVon } from '../../lernstand/zeit.js';
 import { geheZu, link } from '../../router.js';
@@ -286,7 +287,7 @@ function SpDetail({ sp, stand, raum }) {
       {notizOffen && <Notiz sp={sp} text={stand.notizen.get(sp.id) ?? ''} />}
 
       {sp.neu ? (
-        <NeuerRahmen sp={sp} />
+        <NeuerRahmen sp={sp} stand={stand} />
       ) : (
         <>
       <button class="alles-knopf" aria-expanded={alles} onClick={() => setAlles(!alles)}>
@@ -346,7 +347,7 @@ function SpDetail({ sp, stand, raum }) {
   );
 }
 
-// Neuer Lernplan (Vorschau): Können-Aussagen, Grenzen und Kür sind immer sichtbar,
+// Neuer Lernplan: „Baut auf“, Können-Aussagen (einklappbar, P29), Grenzen und Kür;
 // Stufe, Herkunft und Begründungen klein zum Aufklappen.
 const STUFE_NAME = { 1: 'Wiedergeben', 2: 'Verstehen', 3: 'Anwenden', 4: 'Beurteilen' };
 
@@ -358,7 +359,7 @@ function herkunftText(h) {
 function KoennenMarken({ k }) {
   return (
     <>
-      {k.status === 'neu' && (k.karten ? <span class="np-marke">neu</span> : <span class="np-marke np-marke--warn" data-tip="Neue Können-Aussage – Lernkarten folgen später">neu · noch keine Karten</span>)}
+      {k.status === 'neu' && (k.karten ? <span class="np-marke" data-tip="Diese Aussage kam beim Umbau des Lernplans neu dazu">neu im Plan</span> : <span class="np-marke np-marke--warn" data-tip="Neue Können-Aussage – Lernkarten folgen später">neu im Plan · noch keine Karten</span>)}
       {k.status === 'verschoben' && <span class="np-marke" data-tip={`Karten von ${k.von} hierher umgehängt`}>umgehängt</span>}
       {k.status === 'angepasst' && <span class="np-marke" data-tip="Aussage neu gefasst – die Karten stammen noch von der alten Fassung">angepasst</span>}
       {k.vorgegeben && <span class="np-marke" data-tip="Wird in der Prüfung als Material vorgegeben">vorgegeben: {k.vorgegeben}</span>}
@@ -366,44 +367,151 @@ function KoennenMarken({ k }) {
   );
 }
 
-function NeuerRahmen({ sp }) {
+// E2: Sprung zu einem Stichpunkt eines früheren Raums (wie Gegenstücke und Befehlspalette)
+function spLink(z) {
+  return link(z.raum, 'lernen', null, { sp: z.id });
+}
+
+// „Baut auf“: Stichpunkte früherer Räume, die hier vorausgesetzt werden, mit Häkchen aus dem Lernstand
+function BautAuf({ ids, stand }) {
+  const ziele = ids.map((id) => inhalt.sp.get(id)).filter(Boolean);
+  if (!ziele.length) return null;
+  return (
+    <div class="voll__abschnitt np-bautauf">
+      <div class="ueberschrift-klein">
+        <Icon name="layers" groesse={12} /> Baut auf
+      </div>
+      <p class="np-bautauf__satz">Das kennst du schon – hier kommt nur das Neue dazu.</p>
+      <ul class="np-bautauf__liste">
+        {ziele.map((z) => {
+          const an = stand.spErledigt.has(z.id);
+          return (
+            <li key={z.id}>
+              <a class={`np-bautauf__link ${an ? 'np-bautauf__link--an' : ''}`} href={spLink(z)}>
+                <span class="np-bautauf__status" data-tip={an ? 'Im Lernstand abgehakt' : 'Noch offen'} aria-label={an ? 'abgehakt' : 'offen'}>
+                  {an ? <Icon name="check" groesse={11} strich={3} /> : null}
+                </span>
+                <span class="np-bautauf__titel">{z.titel}</span>
+                <span class="np-marke np-bautauf__raum">{inhalt.raeume.get(z.raum)?.name ?? z.raum}</span>
+                <Icon name="arrow-right" groesse={13} class="np-bautauf__pfeil" />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+// „neu gegenüber …“ an einer Aussage zu importierten Bausteinen (P36); antippen zeigt, was neu ist
+function NeuMarke({ neu, offen, onUmschalten }) {
+  return (
+    <button
+      type="button"
+      class="np-marke np-marke--neu"
+      aria-expanded={offen}
+      data-tip={!offen && neu.was ? neu.was : undefined}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onUmschalten();
+      }}
+    >
+      <Icon name="plus" groesse={10} strich={2.6} /> neu gegenüber {neu.gegenueber.join(', ')}
+    </button>
+  );
+}
+
+function NeuText({ neu }) {
+  const ziele = neu.gegenueber.map((id) => inhalt.sp.get(id)).filter(Boolean);
+  return (
+    <div class="np-neu">
+      {neu.was && <p>{neu.was}</p>}
+      {ziele.length > 0 && (
+        <p class="np-neu__grundlage">
+          Grundlage:{' '}
+          {ziele.map((z, i) => (
+            <span key={z.id}>
+              {i > 0 && ', '}
+              <a href={spLink(z)}>{z.titel}</a> <span class="gedaempft">({inhalt.raeume.get(z.raum)?.name ?? z.raum})</span>
+            </span>
+          ))}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function KoennenZeile({ k, text, details }) {
+  const [neuOffen, setNeuOffen] = useState(false);
+  const marken = (
+    <>
+      <KoennenMarken k={k} />
+      {k.neu && <NeuMarke neu={k.neu} offen={neuOffen} onUmschalten={() => setNeuOffen(!neuOffen)} />}
+    </>
+  );
+  return (
+    <li>
+      {k.erklaerung ? (
+        <details class="np-erkl">
+          <summary>
+            {text} {marken}
+          </summary>
+          <Rich class="np-erkl__text" text={k.erklaerung} />
+        </details>
+      ) : (
+        <>
+          {text} {marken}
+        </>
+      )}
+      {neuOffen && <NeuText neu={k.neu} />}
+      {details && (
+        <div class="np__meta">
+          <span class="mono">{k.id}</span> · Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')}
+          {k.status === 'verschoben' && ` · vorher ${k.von}`}
+          {k.grund && <div>Änderung: {k.grund}</div>}
+        </div>
+      )}
+    </li>
+  );
+}
+
+function NeuerRahmen({ sp, stand }) {
   const [details, setDetails] = useState(false);
+  const [offen, setOffen] = useEinstellung('lernen.koennenOffen', true);
   const texte = new Map(sp.koennen);
   const { koennen, grenzen, kuer } = sp.neu;
+  const ohneKarten = koennen.filter((k) => k.status === 'neu' && !k.karten).length;
   return (
     <div class="voll np">
+      {sp.neu.bautAuf?.length > 0 && <BautAuf ids={sp.neu.bautAuf} stand={stand} />}
       <div class="voll__abschnitt">
         <div class="ueberschrift-klein np__kopf">
-          <span>Das musst du können</span>
-          <button class="np__details" aria-expanded={details} onClick={() => setDetails(!details)}>
-            <Icon name={details ? 'eye-off' : 'eye'} groesse={12} /> {details ? 'Stufe und Herkunft ausblenden' : 'Stufe und Herkunft'}
+          <button class="np__klapp" aria-expanded={offen} onClick={() => setOffen(!offen)}>
+            <span class="np__klapp-titel">
+              <Icon name="chevron-right" groesse={12} class="np__klapp-pfeil" />
+              Das musst du können
+            </span>
+            {!offen && (
+              <span class="np__zahl">
+                {koennen.length} {koennen.length === 1 ? 'Aussage' : 'Aussagen'}
+                {ohneKarten > 0 && <span class="np__zahl-warn"> · {ohneKarten} neu ohne Karten</span>}
+              </span>
+            )}
           </button>
+          {offen && (
+            <button class="np__details" aria-expanded={details} onClick={() => setDetails(!details)}>
+              <Icon name={details ? 'eye-off' : 'eye'} groesse={12} /> {details ? 'Stufe und Herkunft ausblenden' : 'Stufe und Herkunft'}
+            </button>
+          )}
         </div>
-        <ol class="koennen">
-          {koennen.map((k) => (
-            <li key={k.id}>
-              {k.erklaerung ? (
-                <details class="np-erkl">
-                  <summary>
-                    {texte.get(k.id)} <KoennenMarken k={k} />
-                  </summary>
-                  <Rich class="np-erkl__text" text={k.erklaerung} />
-                </details>
-              ) : (
-                <>
-                  {texte.get(k.id)} <KoennenMarken k={k} />
-                </>
-              )}
-              {details && (
-                <div class="np__meta">
-                  <span class="mono">{k.id}</span> · Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')}
-                  {k.status === 'verschoben' && ` · vorher ${k.von}`}
-                  {k.grund && <div>Änderung: {k.grund}</div>}
-                </div>
-              )}
-            </li>
-          ))}
-        </ol>
+        <Aufklapp offen={offen}>
+          <ol class="koennen">
+            {koennen.map((k) => (
+              <KoennenZeile key={k.id} k={k} text={texte.get(k.id)} details={details} />
+            ))}
+          </ol>
+        </Aufklapp>
       </div>
       {grenzen.length > 0 && (
         <div class="voll__abschnitt">

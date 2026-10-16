@@ -3,9 +3,10 @@
 Diese Datei ist das Gedächtnis des Projekts. Eine neue Sitzung liest sie und macht beim
 nächsten offenen Punkt weiter.
 
-> **Umbau der Lerninhalte läuft (Branch `umbau`).** Wer an Lernplan, Stichpunkten, Rahmen oder
-> Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)** und hält sich an die Regeln dort.
-> Die Inhaltsdatei und `inhalte/` werden bis dahin nicht mehr inhaltlich nachgebessert.
+> **Umbau der Lerninhalte (Branch `umbau`):** **AP1, PB1 und PB2** zeigen den neuen Lernplan und sind abgenommen
+> (Stand 16.10.2026, UMBAU.md P45 und Schritt 7). **WiSo** (noch alter Inhalt) und der Raum **PROJEKT** (Schritt 8)
+> folgen. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
+> und hält sich an die Regeln dort. Die Inhaltsdatei und `inhalte/` werden nicht mehr inhaltlich nachgebessert.
 
 ---
 
@@ -66,7 +67,7 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: alle Teile fertig, Abschluss-Durchgang erledigt)*
+*(zuletzt aktualisiert: 16.10.2026, Umbau Schritt 7 – neuer Lernplan für AP1, PB1, PB2 in der App)*
 
 ### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
 - Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 3,1 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
@@ -106,7 +107,15 @@ nächsten offenen Punkt weiter.
   Jeder Bereich von einem Bearbeiter erstellt und von einem zweiten unabhängig geprüft; alle Bilder angesehen
   (`tools/modell-galerie.mjs`); Struktur-Tests in `tests/modellieren.test.mjs`
 
+- Neuer Lernplan in der App (Umbau Schritt 7, 16.10.2026): Räume AP1 | PB1 | PB2 | WiSo; AP1, PB1 und PB2 aus
+  `umbau/lernplan/` (Umwandlung im Build, `tools/vorschau-ap1.mjs`), abgenommen, daher ohne Hinweis (Feld `abgenommen`
+  in `RAEUME_VORSCHAU`). Im Stichpunkt-Detail: „Baut auf“ mit den Stichpunkten früherer Räume (Titel, Raum, Häkchen,
+  Sprung dorthin), Marke „neu gegenüber <ID>“ an Aussagen zu importierten Inhalten (antippen zeigt, was neu ist),
+  „Das musst du können“ einklappbar mit Anzahl (gemerkt je Gerät: `lernen.koennenOffen`). Tests in
+  `tests/vorschau-ap1.test.mjs`; auf Desktop und Handy (390 px) geprüft
+
 ### Offen / bewusst nicht umgesetzt
+- WiSo zeigt noch den alten Inhalt; der Raum PROJEKT folgt mit Umbau-Schritt 8.
 - Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
 - Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
 

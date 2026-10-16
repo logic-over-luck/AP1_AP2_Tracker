@@ -22,6 +22,8 @@
 // – Kurzfassung und Erklärungen (Schicht 5): Liegt für einen Ordner umbau/kurz/ap1/AP1-<n>.json vor, bekommt jeder
 //   Stichpunkt einen Teaser (neu.kurz, unter dem Ziel) und jede Können-Aussage ihre Erklärung (neu.koennen[].erklaerung,
 //   in der App aufklappbar an der Aussage). Text mit einfacher Auszeichnung wie bei Lernkarten.
+// – Importe (E2/P36): baut_auf eines Stichpunkts als neu.bautAuf (Sprung in den früheren Raum), das Feld neu einer
+//   Können-Aussage ({ gegenueber, was }) an der Aussage. Abgenommene Räume (abgenommen) zeigen keinen Hinweis mehr.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -31,11 +33,12 @@ import { BELEG_GEWICHT, stufeFuer } from './daten.mjs';
 // App-Raum, an dessen Stelle er tritt (sonst appRaum selbst); altPrefix: Präfix der alten Stichpunkte und Karten;
 // ersteAktuelle: erster Termin mit aktuellem Katalog (UMBAU.md 6). Aus dem alten Raum AP2 (Fachprüfungen) werden
 // die Räume PB1 und PB2 (je neuer Lernplan; solange PB2 nicht gebaut ist: Platzhalter mit den alten Stichpunkten,
-// pb2Platzhalter).
+// pb2Platzhalter). abgenommen: Der Projektinhaber hat den Lernplan abgenommen (UMBAU.md P45); dann zeigt die App
+// keinen Hinweis „noch nicht endgültig“ mehr.
 export const RAEUME_VORSCHAU = {
-  AP1: { teil: 'AP1', dir: 'ap1', appRaum: 'AP1', altPrefix: 'AP1', ersteAktuelle: '2025F', titel: null },
-  PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'PB1', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes' },
-  PB2: { teil: 'PB2', dir: 'pb2', appRaum: 'PB2', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Entwicklung und Umsetzung von Algorithmen' },
+  AP1: { teil: 'AP1', dir: 'ap1', appRaum: 'AP1', altPrefix: 'AP1', ersteAktuelle: '2025F', titel: null, abgenommen: true },
+  PB1: { teil: 'PB1', dir: 'pb1', appRaum: 'PB1', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Planen eines Softwareproduktes', abgenommen: true },
+  PB2: { teil: 'PB2', dir: 'pb2', appRaum: 'PB2', ersetzt: 'AP2', altPrefix: 'AP2', ersteAktuelle: '2025S', titel: 'Entwicklung und Umsetzung von Algorithmen', abgenommen: true },
 };
 const AP1 = RAEUME_VORSCHAU.AP1;
 const dateiMuster = (cfg) => new RegExp(`^${cfg.teil}-\\d+\\.json$`);
@@ -328,6 +331,8 @@ export function vorschauRaum(daten, wurzel, cfg) {
             von: status === 'verschoben' ? v.alt : null,
             grund: v && status !== 'übernommen' ? v.grund : null,
             karten: n,
+            // E2/P36: Aussage zu importierten Bausteinen – was gegenüber den genannten früheren Stichpunkten neu ist
+            neu: k.neu ? { gegenueber: k.neu.gegenueber ?? [], was: k.neu.was ?? '' } : null,
           };
         });
         kuer += (s.kuer ?? []).length;
@@ -353,6 +358,8 @@ export function vorschauRaum(daten, wurzel, cfg) {
             hinweis: s.hinweis ?? null,
             kurz: kurzTexte.teaser.get(s.id) ?? null,
             istNeu: !alt,
+            // E2: Stichpunkte früherer Räume (AP1, PB1), auf denen dieser aufbaut
+            bautAuf: s.baut_auf ?? [],
             koennen,
             grenzen: (s.grenzen ?? []).map((g) => ({ text: g.text, begruendung: g.begruendung ?? null, katalog: g.katalog ?? [] })),
             kuer: (s.kuer ?? []).map((k) => ({ text: k.text, grund: k.grund ?? null })),
@@ -368,6 +375,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
 
   const v = {
     raum: cfg.teil,
+    abgenommen: !!cfg.abgenommen,
     regelwerk: plaene[0]?.meta?.regelwerk_version ?? null,
     stand: plaene.map((p) => p.meta?.stand).filter(Boolean).sort().at(-1) ?? null,
     ordner: plaene.length,

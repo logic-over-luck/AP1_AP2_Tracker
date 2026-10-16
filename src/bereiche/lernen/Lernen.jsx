@@ -117,7 +117,11 @@ export function Lernen({ raum, params }) {
         </div>
       </header>
 
-      {inhalt.daten.vorschauRaeume?.[raum] ? <VorschauHinweis v={inhalt.daten.vorschauRaeume[raum]} /> : inhalt.daten.vorschau?.raum === raum && <VorschauHinweis v={inhalt.daten.vorschau} />}
+      {(() => {
+        // Hinweis nur für Räume, deren neuer Lernplan noch nicht abgenommen ist (UMBAU.md P45)
+        const v = inhalt.daten.vorschauRaeume?.[raum] ?? (inhalt.daten.vorschau?.raum === raum ? inhalt.daten.vorschau : null);
+        return v && !v.abgenommen ? <VorschauHinweis v={v} /> : null;
+      })()}
 
       <div class="lernen__leiste">
         <Reiter
@@ -209,7 +213,7 @@ function OrdnerGruppe({ nummer, gruppe, stand, zustaende, offen, autoOffen, umsc
   );
 }
 
-// Vorschau des neuen Lernplans (tools/vorschau-ap1.mjs): was hier anders ist als später in der fertigen App
+// Neuer Lernplan, noch nicht abgenommen (tools/vorschau-ap1.mjs, RAEUME_VORSCHAU.abgenommen): was hier noch anders ist
 function VorschauHinweis({ v }) {
   if (v.alt)
     return (
@@ -227,8 +231,8 @@ function VorschauHinweis({ v }) {
     <div class="vorschau-hinweis">
       <Icon name="triangle-alert" groesse={16} />
       <div>
-        <strong>Vorschau: neuer Lernplan {v.raum}</strong>
-        {v.regelwerk ? ` (Regelwerk v${v.regelwerk})` : ''} – zur Abnahme, noch nicht endgültig.
+        <strong>Neuer Lernplan {v.raum}</strong>
+        {v.regelwerk ? ` (Regelwerk v${v.regelwerk})` : ''} – noch nicht abgenommen, kann sich noch ändern.
         <div class="gedaempft">
           {v.stichpunkte} Stichpunkte, davon {v.neueStichpunkte} neu · {v.koennen} Können-Aussagen, davon {v.neueOhneKarten} neu und noch ohne Karten · {v.kuer} Kür-Einträge (freiwillig, zählen nicht zum
           Fortschritt) · Karten: {v.karten.umgehaengt} umgehängt, {v.karten.gestrichen} weggefallen. Kurzfassungen: {v.kurz ?? 0} von {v.stichpunkte} neu.
