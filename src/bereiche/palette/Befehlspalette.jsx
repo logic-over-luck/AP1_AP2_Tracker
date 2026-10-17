@@ -14,6 +14,7 @@ function eintraegeFuer(raum) {
   liste.push({ art: 'Bereich', icon: 'refresh-cw', titel: 'Fällige Lernkarten lernen', ziel: link(raum, 'karten', 'sitzung', { quelle: 'faellig' }) });
   liste.push({ art: 'Bereich', icon: 'shuffle', titel: 'Zufallsmix', ziel: link(raum, 'karten', 'sitzung', { quelle: 'mix' }) });
   liste.push({ art: 'Bereich', icon: 'book-open', titel: 'Glossar', ziel: link(raum, 'glossar') });
+  liste.push({ art: 'Bereich', icon: 'chart-no-axes-column', titel: 'Wichtigkeit', ziel: link(raum, 'wichtigkeit') });
   liste.push({ art: 'Bereich', icon: 'circle-question-mark', titel: 'Hilfe', ziel: link(raum, 'hilfe') });
   for (const anderer of inhalt.raeume.values())
     if (anderer.id !== raum) liste.push({ art: 'Lernraum', icon: 'arrow-left-right', titel: `Zu ${anderer.name} wechseln`, ziel: link(anderer.id) });

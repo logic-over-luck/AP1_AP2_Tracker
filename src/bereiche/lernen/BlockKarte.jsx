@@ -9,7 +9,8 @@ import { useEinstellung } from '../../lernstand/einstellungen.js';
 import { PHASEN_ABSTAND } from '../../lernstand/regeln.js';
 import { datumMitWochentag, relativ, tagVon } from '../../lernstand/zeit.js';
 import { geheZu, link } from '../../router.js';
-import { Icon, Knopf, SymbolKnopf, Haken, PrioMarke, Marke, Aufklapp, Ring, Rich, Treffer } from '../../ui/bausteine.jsx';
+import { Icon, Knopf, SymbolKnopf, Haken, StufenZeichen, StufenMarke, StufenReihe, Marke, Aufklapp, Ring, Rich, Treffer } from '../../ui/bausteine.jsx';
+import { wichtigkeitText, terminName } from '../../daten/wichtigkeit.js';
 import { melde, bestaetige } from '../../ui/dialog.jsx';
 import { uebungenFuer, uebungenFuerBlock } from '../trainer/verzeichnis.js';
 import { lernpromptBlock, lernpromptStichpunkt, blockAuswahl, kopiere } from './lernprompt.js';
@@ -73,7 +74,7 @@ export function BlockKarte({ block, zustand: z, stand, offen, onUmschalten, ausw
                 <Treffer text={block.titel} suche={suche} />
               </button>
             </h3>
-            <PrioMarke prio={block.prio} pruefungen={block.pruefungen} punkte={block.punkte} />
+            <StufenReihe w={block.wichtig} />
             {z.faellig && (
               <Marke ton="warn" icon="refresh-cw">
                 Wiederholung fällig
@@ -146,6 +147,9 @@ function SpZeile({ sp, an, gewaehlt, onWahl, suche, treffer, stand }) {
     <li class={`sp ${gewaehlt ? 'sp--gewaehlt' : ''} ${an ? 'sp--erledigt' : ''} ${treffer && suche ? 'sp--treffer' : ''}`}>
       <Haken an={an} onWechsel={(neu) => erfasse({ e: 'sp', id: sp.id, an: neu })} label={`${sp.titel} abhaken`} />
       <button class="sp__knopf" aria-pressed={gewaehlt} onClick={onWahl}>
+        <span class="sp__stufe" data-tip={wichtigkeitText(sp.wichtig)}>
+          <StufenZeichen nr={sp.wichtig.stufe} />
+        </span>
         <span class="sp__titel">
           <Treffer text={sp.titel} suche={suche} />
         </span>
@@ -231,6 +235,7 @@ function SpDetail({ sp, stand, raum }) {
         </div>
       </div>
       <h4 class="sp-detail__titel">{sp.titel}</h4>
+      <Wichtigkeit sp={sp} raum={raum} />
       {sp.neu ? (
         <div class="kurz">
           <p class="kurz__ziel">{sp.neu.ziel}</p>
@@ -341,6 +346,28 @@ function SpDetail({ sp, stand, raum }) {
             </a>
           ))}
         </div>
+      )}
+    </div>
+  );
+}
+
+// Wichtigkeit des Stichpunkts: Stufe, wie oft geprüft, plausibler Bereich; dazu das Fundament (wer darauf aufbaut)
+function Wichtigkeit({ sp, raum }) {
+  const w = sp.wichtig;
+  const fundament = sp.grundlageFuer.map((id) => inhalt.sp.get(id)).filter(Boolean);
+  return (
+    <div class="sp-wichtig">
+      <a class="sp-wichtig__marke" href={link(raum, 'wichtigkeit')} aria-label="Was die Stufen bedeuten">
+        <StufenMarke w={w} />
+      </a>
+      <span class="sp-wichtig__text">
+        {w.x ? `in ${w.x} von ${w.n} Prüfungen, zuletzt ${terminName(w.zuletzt)}` : w.n ? `in keiner der ${w.n} ausgewerteten Prüfungen` : 'keine ausgewerteten Prüfungen'}
+        {w.n ? <span class="gedaempft"> · wahrscheinlich {w.von === w.bis ? w.von : `${w.von} bis ${w.bis}`} von {w.n}</span> : null}
+      </span>
+      {fundament.length > 0 && (
+        <Marke ton="neutral" icon="layers" tip={`Darauf bauen auf: ${fundament.map((f) => f.titel).join(' · ')}`}>
+          Grundlage für {fundament.length}
+        </Marke>
       )}
     </div>
   );

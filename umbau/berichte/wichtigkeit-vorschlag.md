@@ -1,6 +1,6 @@
 # Vorschlag: Wichtigkeit neu – 5 Stufen je Stichpunkt (Fassung 2)
 
-Stand: 17.10.2026 · Status: **Vorschlag, nicht umgesetzt** · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
+Stand: 17.10.2026 · Status: **umgesetzt (UMBAU.md P72)**, Prüfung der Zuordnung mit den neuen Abschriften offen · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
 (`umbau/zuordnung/<raum>/*.json`). Endgültige Grenzen erst nach der Prüfung mit den neuen Abschriften.
 
 Fassung 2 arbeitet die Zweitmeinung ein (`wichtigkeit-zweitmeinung.md`). Die Änderungen gegenüber Fassung 1 stehen in Abschnitt 6.
@@ -205,3 +205,14 @@ Punkte zählen nicht (P28). Die Tiefe bleibt getrennt, solange sie die Aufnahmer
 | Fundament: Anzahl der Abhängigen | Prüfungswert der Abhängigen, λ = 0,5 offen als Setzung | ein Top-Thema als Abhängiger zählt mehr als drei seltene |
 | Rückwärtstest mit AUC | rollierend, Log-Loss/Brier, Bootstrap über Prüfungen, Signale vorher festgelegt | AUC-Unterschiede waren Rauschen |
 | AP1-Schwäche = Katalogwechsel | AP1 streut auch mit neuen Prüfungen (AUC 0,55–0,59) | nachgerechnet |
+
+## 7. Umsetzung (17.10.2026)
+
+Der Projektinhaber hat die Entscheidung an Claude übertragen. Umgesetzt wie Fassung 2, mit diesen Festlegungen:
+
+- Rechnung in `src/daten/wichtigkeit.js` (App, Prüfskript und Tests nutzen dieselbe Datei), Seite `src/bereiche/wichtigkeit/Wichtigkeit.jsx`.
+- Prüfskript `npm run umbau:wichtigkeit` schreibt `wichtigkeit-bericht.md`. Es rechnet Stufen unabhängig aus den Lernplänen nach und bricht bei Abweichungen ab. Außerdem prüft es die Zuordnung und führt Wackeltest, rollierenden Rückwärtstest (AUC, Brier, Log-Loss, Treffer) und Abdeckungskurve aus.
+- Abdeckungskurve: „Grundlagen zuerst“ (λ = 0,5) kostet höchstens 2 % (PB1), in AP1 gewinnt es 1 %. Die Grenze von 5 % ist eingehalten, λ bleibt deshalb bei 0,5.
+- Treffer-Probe: Von den Stichpunkten, die nach den früheren Prüfungen „sehr oft geprüft“ waren, kamen in der nächsten Prüfung wieder dran: AP1 15 %, PB1 26 %, PB2 62 %, WiSo 54 % (Gewicht alt 0,6).
+  Die Stufen beschreiben also die Vergangenheit. Die Seite „Wichtigkeit“ sagt das offen, für AP1 ausdrücklich.
+- Das Lernfeld-Ersatzgewicht (D7) bleibt im Datenfeld `gewicht` (Probeprüfung), beeinflusst aber keine Stufe mehr.

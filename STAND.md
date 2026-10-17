@@ -67,7 +67,14 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: 17.10.2026, Regelwerk v2.2 – Lehrbuch als Tiefe, Branch `regelwerk-v2`)*
+*(zuletzt aktualisiert: 17.10.2026, Wichtigkeit je Stichpunkt – UMBAU.md P72)*
+
+- **Wichtigkeit je Stichpunkt (17.10.2026, UMBAU.md P72):** statt einer Marke je Block jetzt 5 Stufen je Stichpunkt
+  (Sehr oft / Oft / Manchmal / Selten / Bisher nicht geprüft), Zeichen mit Füllgrad, „in x von N Prüfungen“ mit plausiblem Bereich,
+  Block zeigt die Zeichen seiner Stichpunkte, Themenbereich den Anteil an den Prüfungsaufgaben, „Grundlage für X“ für die Reihenfolge;
+  neue Seite „Nachschlagen → Wichtigkeit“. Rechnung `src/daten/wichtigkeit.js`, Tests `tests/wichtigkeit.test.mjs`,
+  Prüfskript `npm run umbau:wichtigkeit` → `umbau/berichte/wichtigkeit-bericht.md`. **Nächster Schritt:** Zuordnung der
+  Teilaufgaben mit den neuen Abschriften (lokal unter `quellen/`) blind prüfen, dann den Prüfbericht neu erzeugen.
 
 - **Regelwerk v2.2 (Branch `regelwerk-v2`, 16.10.2026):** Lehrbuch Westermann „IT-Berufe“ (GS/FS/FS2) als Quelle der Tiefe;
   alle vier Räume erweitert und per Prüfer-Filter (17.10.2026) gestrafft: AP1 814, PB1 443, PB2 116, WISO 382 Aussagen
@@ -92,6 +99,8 @@ nächsten offenen Punkt weiter.
   Tests: `tests/lernprompt.test.mjs`
 - Lernkarten: Übersicht, Sitzungen (fällig, neu, Mix, gemerkt, schwierig, Stichpunkt, Block, Ordner), Tastatur
 - Glossar, Hilfe, Rangleiter, Feiern (Rang, Block, Serie)
+- Wichtigkeit (P72): Stufe je Stichpunkt, Zusammenfassung je Block und Themenbereich, Seite „Wichtigkeit“ mit Legende und Stichpunkten je Stufe;
+  „Heute im Fokus“ und neue Lernkarten nach dem wichtigsten offenen Stichpunkt (mit Fundament); im Browser auf Desktop und Handy (390 px) durchgeklickt
 - Trainer: Zahlen & IT-Rechnen, Subnetze, Kaufmännisches Rechnen, Netzplan & Projektplanung (mit Tests für Erzeuger und Prüfer)
 - Subnetz-Trainer neu aufgestellt (Abschnitt 6): drei Räume, Lernweg mit 23 Lektionen als Kapitel-Liste, jede Lektion gleich
   aufgebaut (Erklärung in Schritten, Prüfungsdefinition, Ausprobieren, Stolperfallen, Check), 10 Übungen nach Themen;

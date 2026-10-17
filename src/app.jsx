@@ -13,6 +13,7 @@ import { Lernen } from './bereiche/lernen/Lernen.jsx';
 import { Karten } from './bereiche/karten/Karten.jsx';
 import { Glossar } from './bereiche/glossar/Glossar.jsx';
 import { Hilfe } from './bereiche/hilfe/Hilfe.jsx';
+import { Wichtigkeit } from './bereiche/wichtigkeit/Wichtigkeit.jsx';
 import { TrainerBereich } from './bereiche/trainer/index.jsx';
 import { PruefungBereich } from './bereiche/pruefung/Pruefung.jsx';
 import { SicherungsKnopf } from './bereiche/sicherung/Sicherung.jsx';
@@ -21,7 +22,7 @@ import { Befehlspalette } from './bereiche/palette/Befehlspalette.jsx';
 import { Intro, spieleIntro } from './bereiche/intro/Intro.jsx';
 import { TimerPille } from './bereiche/start/FokusTimer.jsx';
 
-const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', pruefung: 'Probeprüfung', trainer: 'Üben', glossar: 'Glossar', hilfe: 'Hilfe' };
+const BEREICH_NAMEN = { start: 'Lernplan', lernen: 'Lernplan', karten: 'Lernkarten', pruefung: 'Probeprüfung', trainer: 'Üben', glossar: 'Glossar', wichtigkeit: 'Wichtigkeit', hilfe: 'Hilfe' };
 
 export function App() {
   const route = useRoute();
@@ -74,6 +75,9 @@ export function App() {
       break;
     case 'glossar':
       bereich = <Glossar raum={raum} params={route.params} />;
+      break;
+    case 'wichtigkeit':
+      bereich = <Wichtigkeit raum={raum} />;
       break;
     case 'hilfe':
       bereich = <Hilfe raum={raum} />;
@@ -181,6 +185,7 @@ function Leiste({ raum, route, stand }) {
       <nav class="nav-gruppe" aria-label="Nachschlagen">
         <div class="nav-gruppe__titel ueberschrift-klein">Nachschlagen</div>
         {navPunkt({ bereich: "glossar", icon: "book-open", text: "Glossar" })}
+        {navPunkt({ bereich: "wichtigkeit", icon: "chart-no-axes-column", text: "Wichtigkeit" })}
         {navPunkt({ bereich: "hilfe", icon: "circle-question-mark", text: "Hilfe" })}
       </nav>
 

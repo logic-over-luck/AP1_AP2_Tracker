@@ -400,6 +400,17 @@ mark.treffer {
   font-size: var(--t-s);
   color: var(--text-3);
 }
+.ordner__wichtig {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: var(--s-3);
+  color: var(--text-3);
+  text-decoration: none;
+}
+.ordner__wichtig:hover {
+  color: var(--text-2);
+}
 .ordner__fortschritt {
   display: flex;
   align-items: center;
@@ -591,6 +602,22 @@ mark.treffer {
 .sp--erledigt .sp__titel {
   color: var(--text-3);
 }
+.sp__stufe {
+  display: inline-flex;
+  align-items: center;
+  height: 1.5em;
+  font-size: var(--t-m);
+  flex: none;
+}
+/* Tooltip am kleinen Zeichen links ausrichten, sonst ragt er aus der Spalte */
+.sp__stufe[data-tip]::after {
+  left: -8px;
+  transform: translate(0, 4px);
+}
+.sp__stufe[data-tip]:hover::after,
+.sp__stufe[data-tip]:focus-visible::after {
+  transform: translate(0, 0);
+}
 .sp__info {
   display: flex;
   align-items: center;
@@ -685,6 +712,99 @@ mark.treffer {
   font-size: var(--t-l);
   font-weight: 650;
   line-height: 1.35;
+}
+.sp-wichtig {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.sp-wichtig__marke {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+/* ---------- Wichtigkeit (Nachschlagen) ---------- */
+.wichtigkeit__stufen {
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-2);
+  margin-bottom: var(--s-6);
+}
+.wichtigkeit__stufe + .wichtigkeit__stufe {
+  border-top: 1px solid var(--linie);
+}
+.wichtigkeit__kopf {
+  display: grid;
+  grid-template-columns: 20px minmax(150px, 190px) 92px 1fr auto 16px;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  padding: var(--s-3);
+  text-align: left;
+  border-radius: var(--r-2);
+}
+.wichtigkeit__kopf:hover {
+  background: var(--flaeche-2);
+}
+.wichtigkeit__name {
+  font-weight: 600;
+}
+.wichtigkeit__grenze {
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.wichtigkeit__text {
+  font-size: var(--t-m);
+  color: var(--text-2);
+}
+.wichtigkeit__zahl {
+  font-weight: 600;
+  color: var(--text-2);
+}
+.wichtigkeit__pfeil {
+  color: var(--text-4);
+  transition: transform var(--dauer) var(--kurve);
+}
+.wichtigkeit__kopf[aria-expanded='true'] .wichtigkeit__pfeil {
+  transform: rotate(180deg);
+}
+.wichtigkeit__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--s-3) var(--s-3) calc(20px + var(--s-6));
+  display: grid;
+  gap: 2px;
+}
+.wichtigkeit__sp {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 6px var(--s-2);
+  border-radius: var(--r-1);
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--t-m);
+}
+.wichtigkeit__sp:hover {
+  background: var(--flaeche-2);
+}
+.wichtigkeit__sp--erledigt .wichtigkeit__sp-titel {
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+.wichtigkeit__sp-titel {
+  flex: 1;
+  min-width: 0;
+}
+.wichtigkeit__sp-zahl {
+  font-size: var(--t-s);
+  white-space: nowrap;
+}
+.wichtigkeit__leer {
+  padding: 0 var(--s-3) var(--s-3) calc(20px + var(--s-6));
 }
 .kurz__ziel {
   color: var(--text);
@@ -1865,6 +1985,23 @@ mark.treffer {
   }
 }
 @media (max-width: 560px) {
+  .wichtigkeit__kopf {
+    grid-template-columns: 20px 1fr auto 16px;
+    row-gap: 2px;
+  }
+  .wichtigkeit__grenze {
+    display: none;
+  }
+  .wichtigkeit__text {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    font-size: var(--t-s);
+  }
+  .ordner__wichtig {
+    display: flex;
+    margin-left: 0;
+    margin-top: 2px;
+  }
   .cockpit__raster {
     grid-template-columns: minmax(0, 1fr);
   }

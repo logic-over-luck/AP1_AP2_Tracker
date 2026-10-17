@@ -2,7 +2,8 @@
 // Verhalten übereinstimmen.
 
 import { PHASEN_ABSTAND, KARTEN_ABSTAND, KARTE_SICHER_AB, XP, RAENGE } from '../../lernstand/regeln.js';
-import { Icon, Kbd, Knopf } from '../../ui/bausteine.jsx';
+import { Icon, Kbd, Knopf, StufenZeichen } from '../../ui/bausteine.jsx';
+import { link } from '../../router.js';
 import { inhalt } from '../../daten/inhalt.js';
 
 function Abschnitt({ icon, titel, children }) {
@@ -19,7 +20,7 @@ function Abschnitt({ icon, titel, children }) {
   );
 }
 
-export function Hilfe() {
+export function Hilfe({ raum }) {
   const karten = inhalt.karten.size;
   return (
     <div class="hilfe">
@@ -50,25 +51,13 @@ export function Hilfe() {
 
         <Abschnitt icon="trending-up" titel="Wichtigkeit">
           <p>
-            Die Marke an jedem Block zeigt, wie wichtig das Thema für die Prüfung ist. Berechnet wird das aus den ausgewerteten IHK-Prüfungen: in wie vielen
-            Prüfungen das Thema vorkam, wie aktuell (aktueller Katalog zählt voll, ältere Prüfungen und bloße Themen-Stichworte weniger) und – wo bekannt –
-            wie viele Punkte die Aufgabe brachte. Fahr mit der Maus über die Marke, dann siehst du die Zahlen.
+            Jeder Stichpunkt hat ein Zeichen: wie oft er in den ausgewerteten IHK-Prüfungen vorkam, von <StufenZeichen nr={1} /> sehr oft geprüft bis <StufenZeichen nr={5} /> bisher nicht
+            geprüft. Fahr mit der Maus darüber, dann siehst du die Zahlen. Blöcke zeigen die Zeichen ihrer Stichpunkte, Themenbereiche ihren Anteil an den Prüfungsaufgaben.
           </p>
-          <ul>
-            <li>
-              <span class="marke marke--top">Top-Thema</span> kam in vielen Prüfungen vor oder brachte viele Punkte – zuerst lernen.
-            </li>
-            <li>
-              <span class="marke marke--hoch">Häufig</span> kam mehrfach vor.
-            </li>
-            <li>
-              <span class="marke marke--mittel">Gelegentlich</span> kam ein- bis zweimal vor oder nur in älteren Prüfungen.
-            </li>
-            <li>
-              <span class="marke marke--normal">Selten</span> war in den ausgewerteten Prüfungen bisher kaum oder nicht dran. Es steht aber im
-              Prüfungskatalog und kann jederzeit kommen.
-            </li>
-          </ul>
+          <p>
+            Alle Stufen, die Stichpunkte je Stufe und den Rechenweg findest du unter{' '}
+            <a href={link(raum, 'wichtigkeit')}>Nachschlagen → Wichtigkeit</a>.
+          </p>
         </Abschnitt>
 
         <Abschnitt icon="refresh-cw" titel="Wiederholungs-Phasen">
@@ -84,7 +73,7 @@ export function Hilfe() {
           <ol>
             <li>fällige Wiederholungen (am längsten überfällig zuerst)</li>
             <li>angefangene Blöcke (die fast fertigen zuerst)</li>
-            <li>offene Blöcke nach Wichtigkeit: Top-Themen zuerst, dann häufig, gelegentlich, selten geprüft</li>
+            <li>offene Blöcke nach ihrem wichtigsten offenen Stichpunkt: oft geprüft zuerst; Grundlagen, auf denen oft geprüfte Themen aufbauen, rücken nach vorn</li>
             <li>wenn alles erledigt ist: fällige Lernkarten</li>
           </ol>
           <p>„Hier lohnt sich Wiederholen" zeigt Blöcke, deren Karten du zuletzt nicht wusstest oder deren Trainer-Aufgaben danebengingen.</p>

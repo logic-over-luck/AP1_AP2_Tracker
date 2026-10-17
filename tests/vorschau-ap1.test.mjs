@@ -500,10 +500,8 @@ describe('Regelwerk v2.0 in der Vorschau', async () => {
       }
     }
     assert.ok(ohne > 0);
+    // Wichtigkeit (src/daten/wichtigkeit.js): Das Lernfeld-Gewicht hebt die Stufe nicht – ohne Beleg „bisher nicht geprüft“
     const index = baueIndex(alle);
-    for (const b of index.bloecke.values()) {
-      const sps = b.sp.map((id) => index.sp.get(id));
-      if (sps.every((s) => s.gewichtLernfeld)) assert.ok(b.gewicht >= Math.min(...sps.map((s) => s.gewicht)), b.id);
-    }
+    for (const s of new Set(index.sp.values())) if (s.neu && !s.pruef.length) assert.equal(s.wichtig.stufe, 5, s.id);
   });
 });

@@ -18,6 +18,7 @@ Dein Lernstand wird im Browser gespeichert. Mach ab und zu eine **Sicherung** (K
 ## Was drin ist
 
 - Lernplan mit allen Themen aus der Inhaltsdatei, Kurzfassungen, Wiederholungs-Phasen, Lernprompts
+- Wichtigkeit je Stichpunkt: wie oft er in den ausgewerteten IHK-Prüfungen vorkam (5 Stufen, Legende unter „Nachschlagen → Wichtigkeit“)
 - ≈ 2.600 Lernkarten mit Wiederholungsplanung, Glossar mit ≈ 1.100 Begriffen
 - Trainer: Zahlen & IT-Rechnen (7 Themen mit Erklärung, Werkzeug und Aufgaben, gemischtes Training), Subnetze (Lernweg mit 23 Lektionen, Übungen, Visualizer), Kaufmännisches Rechnen, Netzplan, Pseudocode, SQL-Labor (AP2), Modellieren (UML, ER, Normalisierung, EPK/BPMN, Masken)
 

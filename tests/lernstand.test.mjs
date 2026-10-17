@@ -4,7 +4,8 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ladeDaten, wichtigkeit } from '../tools/daten.mjs';
-import { baueIndex, PRIO_RANG } from '../src/daten/index.js';
+import { baueIndex } from '../src/daten/index.js';
+import { blockWert, blockVergleich } from '../src/daten/wichtigkeit.js';
 import { ableiten, blockZustand, kartenZustand, serieBerechnen } from '../src/lernstand/ableiten.js';
 import { tagPlus, tageZwischen, tagVon, datumAusTag } from '../src/lernstand/zeit.js';
 import { naechsteStufe, rangFuer, RAENGE, KARTEN_ABSTAND } from '../src/lernstand/regeln.js';
@@ -190,8 +191,8 @@ test('Heute im Fokus: fällige Wiederholung vor angefangenem Block vor offenem T
   assert.equal(f.weitere[0].block.id, angefangen.id);
   f = heuteImFokus(ableiten([], index, heute), index, 'AP1');
   assert.equal(f.haupt.art, 'neu');
-  // Ohne Lernstand: das wichtigste offene Thema des Raums (höchste Stufe, dann höchster Wert)
-  const wichtigste = [...index.raeume.get('AP1').bloeckeListe].sort((a, b) => PRIO_RANG[b.prio] - PRIO_RANG[a.prio] || b.gewicht - a.gewicht)[0];
+  // Ohne Lernstand: der Block mit dem wichtigsten Stichpunkt (Reihenfolge-Wert), dann der mit der größeren Summe
+  const wichtigste = [...index.raeume.get('AP1').bloeckeListe].sort((a, b) => blockVergleich(blockWert(a, index), blockWert(b, index)))[0];
   assert.equal(f.haupt.block.id, wichtigste.id);
 });
 

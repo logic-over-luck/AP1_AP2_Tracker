@@ -6,7 +6,8 @@ import { useLernstand } from '../../lernstand/store.js';
 import { blockZustand } from '../../lernstand/ableiten.js';
 import { useEinstellung } from '../../lernstand/einstellungen.js';
 import { link } from '../../router.js';
-import { Reiter, Suchfeld, Knopf, Leer, Icon } from '../../ui/bausteine.jsx';
+import { Reiter, Suchfeld, Knopf, Leer, Icon, StufenBalken } from '../../ui/bausteine.jsx';
+import { OFT_BIS } from '../../daten/wichtigkeit.js';
 import { BlockKarte } from './BlockKarte.jsx';
 import { Uebersicht } from '../start/Start.jsx';
 
@@ -31,7 +32,9 @@ function suchTreffer(block, suche) {
 export function Lernen({ raum, params }) {
   const stand = useLernstand();
   const r = inhalt.raeume.get(raum);
-  const [filter, setFilter] = useEinstellung(`filter.${raum}`, 'alle');
+  const [filterGespeichert, setFilter] = useEinstellung(`filter.${raum}`, 'alle');
+  // Früherer Filter „Häufig geprüft“ (hoch) heißt jetzt „Oft geprüft“
+  const filter = filterGespeichert === 'hoch' ? 'oft' : filterGespeichert;
   const [suche, setSuche] = useState('');
   const [offen, setOffen] = useState(() => new Set(params.block ? [params.block] : []));
   const [auswahl, setAuswahl] = useState(() => (params.sp ? { [params.block ?? inhalt.sp.get(params.sp)?.block]: params.sp } : {}));
@@ -60,14 +63,14 @@ export function Lernen({ raum, params }) {
   const zaehler = {
     alle: r.bloeckeListe.length,
     offen: r.bloeckeListe.filter((b) => !zustaende.get(b.id).fertig).length,
-    hoch: r.bloeckeListe.filter((b) => b.prio === 'top' || b.prio === 'hoch').length,
+    oft: r.bloeckeListe.filter((b) => b.wichtig.beste <= OFT_BIS).length,
     faellig: r.bloeckeListe.filter((b) => zustaende.get(b.id).faellig).length,
   };
 
   const passtFilter = (b) => {
     const z = zustaende.get(b.id);
     if (filter === 'offen') return !z.fertig;
-    if (filter === 'hoch') return b.prio === 'top' || b.prio === 'hoch';
+    if (filter === 'oft') return b.wichtig.beste <= OFT_BIS;
     if (filter === 'faellig') return z.faellig;
     return true;
   };
@@ -131,7 +134,7 @@ export function Lernen({ raum, params }) {
           eintraege={[
             { id: 'alle', text: 'Alle', zahl: zaehler.alle },
             { id: 'offen', text: 'Noch offen', zahl: zaehler.offen },
-            { id: 'hoch', text: 'Häufig geprüft', zahl: zaehler.hoch },
+            { id: 'oft', text: 'Oft geprüft', zahl: zaehler.oft },
             { id: 'faellig', text: 'Fällig', zahl: zaehler.faellig, icon: zaehler.faellig ? 'refresh-cw' : undefined },
           ]}
         />
@@ -178,6 +181,14 @@ function OrdnerGruppe({ nummer, gruppe, stand, zustaende, offen, autoOffen, umsc
           </h2>
           <div class="ordner__text">
             {o.bloecke.length} Blöcke · {erledigt} von {o.spIds.length} Stichpunkten erledigt
+            <a
+              class="ordner__wichtig"
+              href={link(raum, 'wichtigkeit')}
+              data-tip={`${Math.round(o.wichtig.anteil * 100)} % der ${o.wichtig.aufgaben} zugeordneten Prüfungsaufgaben des Raums betreffen diesen Themenbereich`}
+            >
+              <StufenBalken anzahl={o.wichtig.anzahl} />
+              {Math.round(o.wichtig.anteil * 100)} % der Prüfungsaufgaben
+            </a>
           </div>
         </div>
         <div class="ordner__fortschritt">

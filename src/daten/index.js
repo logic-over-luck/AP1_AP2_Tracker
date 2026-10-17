@@ -1,6 +1,8 @@
 // Baut Nachschlagetabellen über die Inhaltsdaten. Rein, ohne Browser-Abhängigkeit,
 // damit die Tests sie mit Node laden können.
 
+import { wichtigkeitRaum, stufenVerteilung } from './wichtigkeit.js';
+
 export const RAEUME = ['AP1', 'PB1', 'PB2', 'AP2', 'WISO']; // AP2 nur im alten Stand (LERNSTUDIO_AP1=alt)
 
 // Lernstand-Umzug (P6): alte IDs (Stichpunkte, Blöcke) zeigen auf ihre neuen. Kommt aus umbau/umzug.json über die
@@ -48,18 +50,6 @@ class SpMap extends Map {
     return super.has(id) || (!!this.alias?.has(id) && super.has(this.alias.get(id)));
   }
 }
-// Wichtigkeit (siehe tools/daten.mjs): wie oft und wie aktuell ein Thema geprüft wurde, dazu Punkte.
-export const PRIO_RANG = { top: 4, hoch: 3, mittel: 2, normal: 1 };
-export const PRIO_NAME = { top: 'Top-Thema', hoch: 'Häufig geprüft', mittel: 'Gelegentlich geprüft', normal: 'Selten geprüft' };
-// Blockstufe relativ zum wichtigsten Block des Raums: WiSo hat weniger ausgewertete Prüfungen als
-// AP1/AP2, ein Thema, das in allen dran war, ist dort trotzdem ein Top-Thema.
-const BLOCK_ANTEIL = [
-  ['top', 0.8],
-  ['hoch', 0.5],
-  ['mittel', 0.2],
-  ['normal', -Infinity],
-];
-
 export function baueIndex(daten) {
   const raeume = new Map();
   const ordner = new Map();
@@ -80,23 +70,11 @@ export function baueIndex(daten) {
       ordner.set(o.id, ord);
       for (const b of o.bloecke) {
         const spListe = b.sp.map((id) => sp.get(id)).filter(Boolean);
-                // Wie oft war der Block als Ganzes dran? Jede Prüfung zählt einmal (stärkster Beleg), dazu Punkte.
-        const jePruefung = new Map();
-        for (const s of spListe) for (const [p, g] of s.pruef ?? []) jePruefung.set(p, Math.max(jePruefung.get(p) ?? 0, g));
-        const punkte = Math.max(0, ...spListe.map((s) => s.punkte ?? 0)) || null;
-        let wert = [...jePruefung.values()].reduce((a, g) => a + g, 0) + (punkte >= 15 ? 1 : punkte >= 10 ? 0.5 : 0);
-        // Regelwerk v2.0 (D7): Block ganz ohne Prüfungsbeleg – Ersatzgewicht aus dem Lernfeld seiner Stichpunkte
-        if (!jePruefung.size && !punkte) wert = Math.max(0, ...spListe.filter((s) => s.gewichtLernfeld).map((s) => s.gewicht));
-        const pruefungen = jePruefung.size;
         const block = {
           ...b,
           raum: r.id,
           ordner: o.id,
-          prio: 'normal', // wird unten relativ zum Raum gesetzt
-          pruefungen,
-          punkte,
-          // feiner Gleichstandsbrecher: Anteil gut belegter Stichpunkte im Block
-          gewicht: wert + spListe.reduce((a, s) => a + s.gewicht, 0) / Math.max(1, spListe.length) / 100,
+          wichtig: null, // unten, wenn die Wichtigkeit der Stichpunkte feststeht
           arten: [...new Set(spListe.map((s) => s.art))],
         };
         bloecke.set(b.id, block);
@@ -105,12 +83,37 @@ export function baueIndex(daten) {
         raum.spAnzahl += b.sp.length;
       }
     }
-    const hoechster = Math.max(0, ...raum.bloeckeListe.map((b) => b.gewicht));
+    // Wichtigkeit je Stichpunkt (src/daten/wichtigkeit.js), zusammengefasst je Block und Themenbereich
+    const raumSp = raum.bloeckeListe.flatMap((b) => b.sp.map((id) => sp.get(id)).filter(Boolean));
+    const w = wichtigkeitRaum(raumSp);
+    raum.wichtig = w.raum;
+    for (const s of raumSp) s.wichtig = w.je.get(s.id);
+    // Teilaufgaben des Raums: wie viele Stichpunkte teilen sich eine Teilaufgabe (für den Anteil je Themenbereich, je 1/m)
+    const teiler = new Map();
+    for (const s of raumSp) for (const t of s.ta ?? []) teiler.set(t, (teiler.get(t) ?? 0) + 1);
+    const aufgabenAnteil = (liste) =>
+      teiler.size
+        ? liste.reduce((a, s) => a + (s.ta ?? []).reduce((x, t) => x + 1 / teiler.get(t), 0), 0) / teiler.size
+        : liste.reduce((a, s) => a + s.wichtig.quote, 0) / Math.max(1e-9, raumSp.reduce((a, s) => a + s.wichtig.quote, 0));
     for (const b of raum.bloeckeListe) {
-      const anteil = hoechster ? b.gewicht / hoechster : 0;
-      b.prio = b.gewicht > 0 ? BLOCK_ANTEIL.find(([, g]) => anteil >= g)[0] : 'normal';
+      const liste = b.sp.map((id) => sp.get(id)).filter(Boolean);
+      const termine = new Set(liste.flatMap((s) => s.wichtig.termine));
+      b.wichtig = { ...stufenVerteilung(liste), x: termine.size, n: w.raum.n };
+    }
+    for (const o of r.ordner) {
+      const ord = ordner.get(o.id);
+      const liste = ord.spIds.map((id) => sp.get(id)).filter(Boolean);
+      ord.wichtig = { ...stufenVerteilung(liste), anteil: aufgabenAnteil(liste), aufgaben: teiler.size };
     }
   }
+
+  // Fundament: welche Stichpunkte (auch in späteren Räumen) auf einem Stichpunkt aufbauen (Feld „Baut auf“, E2)
+  for (const s of new Set(sp.values())) s.grundlageFuer = [];
+  for (const s of new Set(sp.values()))
+    for (const id of s.neu?.bautAuf ?? []) {
+      const ziel = sp.get(id);
+      if (ziel && ziel !== s && !ziel.grundlageFuer.includes(s.id)) ziel.grundlageFuer.push(s.id);
+    }
 
   const push = (map, key, wert) => {
     let liste = map.get(key);

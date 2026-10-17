@@ -12,7 +12,7 @@ import { kartenZustand } from '../../lernstand/ableiten.js';
 import { heuteImFokus, staerkenUndSchwaechen, tempo } from '../../lernstand/empfehlung.js';
 import { datumLang, tagPlus } from '../../lernstand/zeit.js';
 import { link, geheZu } from '../../router.js';
-import { Icon, Knopf, Balken, Zahl, PrioMarke, Marke, Ring } from '../../ui/bausteine.jsx';
+import { Icon, Knopf, Balken, Zahl, StufenReihe, Marke, Ring } from '../../ui/bausteine.jsx';
 import { Dialog } from '../../ui/dialog.jsx';
 import { FokusTimer } from './FokusTimer.jsx';
 import { Woche } from './Aktivitaet.jsx';
@@ -103,7 +103,7 @@ function Fokus({ i, raum, fokus, sus }) {
             <Marke ton={h.art === 'wiederholung' ? 'warn' : 'akzent'} icon={h.art === 'wiederholung' ? 'refresh-cw' : h.art === 'weiter' ? 'step-forward' : 'rocket'}>
               {h.etikett}
             </Marke>
-            <PrioMarke prio={h.block.prio} pruefungen={h.block.pruefungen} punkte={h.block.punkte} />
+            <StufenReihe w={h.block.wichtig} />
           </span>
         )}
       </div>

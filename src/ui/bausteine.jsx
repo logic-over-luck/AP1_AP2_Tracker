@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import icons from 'virtual:icons';
+import { STUFEN, stufe as stufeInfo, wichtigkeitText } from '../daten/wichtigkeit.js';
 
 export function Icon({ name, groesse = 16, strich = 1.75, class: klasse, ...rest }) {
   const knoten = icons[name];
@@ -79,23 +80,40 @@ export function Haken({ an, teil, onWechsel, label, gross, disabled, class: klas
   );
 }
 
-const PRIO_TEXT = { top: 'Top-Thema', hoch: 'Häufig', mittel: 'Gelegentlich', normal: 'Selten' };
-const PRIO_ICON = { top: 'flame' };
-
-// Wichtigkeit eines Themas: wie oft es in den ausgewerteten Prüfungen vorkam (und mit wie vielen Punkten)
-export function wichtigkeitText({ prio, pruefungen, punkte }) {
-  if (!pruefungen) return 'Bisher in keiner ausgewerteten Prüfung dran – steht aber im Prüfungskatalog';
-  const teile = [`Kam in ${pruefungen} ${pruefungen === 1 ? 'ausgewerteten Prüfung' : 'ausgewerteten Prüfungen'} vor`];
-  if (punkte) teile.push(`bis zu ${punkte} Punkte in einer Aufgabe`);
-  if (prio === 'top') teile.push('eines der wichtigsten Themen');
-  return teile.join(' · ');
+// Wichtigkeit (src/daten/wichtigkeit.js): Kreis mit Füllgrad je Stufe, eine Farbe – Stufe 1 voll, Stufe 5 leer
+export function StufenZeichen({ nr, groesse = 10 }) {
+  return <span class={`stufe stufe--${nr}`} style={{ '--stufe-groesse': `${groesse}px` }} aria-hidden="true" />;
 }
 
-export function PrioMarke({ prio, pruefungen, punkte }) {
+// Marke eines Stichpunkts: Zeichen und Kurzname, im Tooltip die Zahlen
+export function StufenMarke({ w }) {
   return (
-    <span class={`marke marke--${prio}`} data-tip={wichtigkeitText({ prio, pruefungen, punkte })}>
-      {PRIO_ICON[prio] && <Icon name={PRIO_ICON[prio]} groesse={11} strich={2.2} />}
-      {PRIO_TEXT[prio]}
+    <span class={`marke marke--stufe marke--stufe-${w.stufe}`} data-tip={wichtigkeitText(w)}>
+      <StufenZeichen nr={w.stufe} groesse={9} />
+      {stufeInfo(w.stufe).name}
+    </span>
+  );
+}
+
+// Block oder Themenbereich: ein Zeichen je Stichpunkt (bis „max“), sonst ein gestapelter Balken
+export function StufenReihe({ w, max = 6, tipZusatz }) {
+  const gesamt = w.anzahl.reduce((a, b) => a + b, 0);
+  const verteilung = STUFEN.filter((s) => w.anzahl[s.nr]).map((s) => `${w.anzahl[s.nr]}× ${s.kurz}`).join(' · ');
+  const tip = [verteilung, w.n ? `aus diesem Block in ${w.x} von ${w.n} Prüfungen etwas dran` : null, tipZusatz].filter(Boolean).join(' – ');
+  return (
+    <span class="stufen-reihe" data-tip={tip} aria-label={`Wichtigkeit der Stichpunkte: ${verteilung}`} role="img">
+      {gesamt <= max ? STUFEN.flatMap((s) => Array.from({ length: w.anzahl[s.nr] }, (_, i) => <StufenZeichen key={`${s.nr}-${i}`} nr={s.nr} />)) : <StufenBalken anzahl={w.anzahl} />}
+    </span>
+  );
+}
+
+export function StufenBalken({ anzahl, breite }) {
+  const gesamt = anzahl.reduce((a, b) => a + b, 0) || 1;
+  return (
+    <span class="stufen-balken" style={breite ? { width: breite } : null} aria-hidden="true">
+      {STUFEN.filter((s) => anzahl[s.nr]).map((s) => (
+        <span key={s.nr} class={`stufen-balken__teil stufen-balken__teil--${s.nr}`} style={{ flexGrow: anzahl[s.nr], flexBasis: `${(100 * anzahl[s.nr]) / gesamt}%` }} />
+      ))}
     </span>
   );
 }

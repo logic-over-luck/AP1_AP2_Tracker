@@ -2,26 +2,40 @@
 //
 // 1. Fällige Wiederholungen – am längsten überfällig zuerst.
 // 2. Angefangene Blöcke – die weiter fortgeschrittenen zuerst, damit etwas fertig wird.
-// 3. Offene Blöcke – wichtigste zuerst (Stufe, dann Wert aus Häufigkeit und Punkten), dann Reihenfolge.
+// 3. Offene Blöcke – nach dem wichtigsten offenen Stichpunkt (Reihenfolge-Wert: wie oft geprüft plus, was darauf
+//    aufbaut; src/daten/wichtigkeit.js), dann Reihenfolge im Lernplan.
 // 4. Alles abgehakt – fällige Lernkarten.
 // Jede Empfehlung trägt einen Grund, der in der Oberfläche steht.
 
 import { blockZustand, kartenZustand } from './ableiten.js';
-import { PRIO_RANG, PRIO_NAME } from '../daten/index.js';
+import { blockWert, blockVergleich, reihenfolgeWert, stufe, terminName } from '../daten/wichtigkeit.js';
 import { relativ, tageZwischen, tagPlus } from './zeit.js';
 import { KARTE_SICHER_AB } from './regeln.js';
 
+// Grund für einen offenen Block: sein wichtigster offener Stichpunkt, mit Zahlen
+function grundNeu(block, index, offen) {
+  const s = block.sp
+    .filter(offen)
+    .map((id) => index.sp.get(id))
+    .filter(Boolean)
+    .sort((a, b) => reihenfolgeWert(b, index, offen) - reihenfolgeWert(a, index, offen))[0];
+  if (!s) return 'Noch nicht begonnen – als Nächstes in deinem Lernplan.';
+  const w = s.wichtig;
+  const teile = [`„${s.titel}“: ${stufe(w.stufe).name.toLowerCase()}`];
+  if (w.x) teile[0] += ` (in ${w.x} von ${w.n} Prüfungen, zuletzt ${terminName(w.zuletzt)})`;
+  const fundament = (s.grundlageFuer ?? []).filter(offen).length;
+  if (fundament) teile.push(`Grundlage für ${fundament} weitere${fundament === 1 ? 'n' : ''} Stichpunkt${fundament === 1 ? '' : 'e'}`);
+  return `${teile.join('. ')}.`;
+}
+
 export function heuteImFokus(stand, index, raumId) {
   const raum = index.raeume.get(raumId);
-  const liste = raum.bloeckeListe.map((b) => ({ block: b, z: blockZustand(stand, b) }));
+  const offen = (id) => !stand.spErledigt.has(id);
+  const liste = raum.bloeckeListe.map((b) => ({ block: b, z: blockZustand(stand, b), wert: blockWert(b, index, offen) }));
 
-  const faellig = liste.filter((x) => x.z.faellig).sort((a, b) => b.z.tageUeberfaellig - a.z.tageUeberfaellig || PRIO_RANG[b.block.prio] - PRIO_RANG[a.block.prio]);
-  const angefangen = liste
-    .filter((x) => x.z.angefangen)
-    .sort((a, b) => b.z.anteil - a.z.anteil || PRIO_RANG[b.block.prio] - PRIO_RANG[a.block.prio] || b.block.gewicht - a.block.gewicht);
-  const offen = liste
-    .filter((x) => x.z.erledigt === 0)
-    .sort((a, b) => PRIO_RANG[b.block.prio] - PRIO_RANG[a.block.prio] || b.block.gewicht - a.block.gewicht);
+  const faellig = liste.filter((x) => x.z.faellig).sort((a, b) => b.z.tageUeberfaellig - a.z.tageUeberfaellig || blockVergleich(a.wert, b.wert));
+  const angefangen = liste.filter((x) => x.z.angefangen).sort((a, b) => b.z.anteil - a.z.anteil || blockVergleich(a.wert, b.wert));
+  const neu = liste.filter((x) => x.z.erledigt === 0).sort((a, b) => blockVergleich(a.wert, b.wert));
 
   const vorschlaege = [];
   for (const x of faellig) {
@@ -43,21 +57,8 @@ export function heuteImFokus(stand, index, raumId) {
       grund: `${x.z.erledigt} von ${x.z.gesamt} Stichpunkten sind schon erledigt – mach den Block fertig.`,
     });
   }
-  for (const x of offen) {
-    vorschlaege.push({
-      art: 'neu',
-      block: x.block,
-      zustand: x.z,
-      etikett: 'Neues Thema',
-      grund:
-        x.block.prio === 'top'
-          ? `Top-Thema: kam in ${x.block.pruefungen} ausgewerteten Prüfungen vor${x.block.punkte ? `, bis zu ${x.block.punkte} Punkte in einer Aufgabe` : ''}.`
-          : x.block.prio === 'hoch'
-            ? `Häufig geprüft: kam in ${x.block.pruefungen} ausgewerteten Prüfungen vor.`
-            : x.block.prio === 'mittel'
-              ? 'Gelegentlich geprüft und noch nicht begonnen.'
-              : 'Noch nicht begonnen – als Nächstes in deinem Lernplan.',
-    });
+  for (const x of neu) {
+    vorschlaege.push({ art: 'neu', block: x.block, zustand: x.z, etikett: 'Neues Thema', grund: grundNeu(x.block, index, offen) });
   }
   const karten = kartenZustand(stand, index.kartenJeRaum.get(raumId) ?? []);
   return {
@@ -131,4 +132,3 @@ export function tempo(stand, index, raumId) {
   return { termin, tage, offen, dieseWoche, jeWoche: tage > 0 ? Math.ceil(offen / wochen) : offen };
 }
 
-export { PRIO_NAME };

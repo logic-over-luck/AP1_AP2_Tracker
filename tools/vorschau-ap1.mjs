@@ -395,6 +395,8 @@ export function vorschauRaum(daten, wurzel, cfg) {
           prio: w.stufe,
           gewicht: w.wert,
           pruef: w.pruefungen,
+          // Teilaufgaben-IDs (nur IDs, keine Texte): Anteil eines Themenbereichs an den Prüfungsaufgaben (src/daten/wichtigkeit.js)
+          ta: s.teilaufgaben ?? [],
           // D7: Gewicht aus dem Lernfeld statt aus Prüfungen (nur ohne jeden Beleg)
           gewichtLernfeld: wErsatz ? wErsatz.lernfelder : null,
           punkte: null,
