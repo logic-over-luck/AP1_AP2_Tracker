@@ -1,7 +1,9 @@
-# Vorschlag: Wichtigkeit neu – 5 Stufen je Stichpunkt
+# Vorschlag: Wichtigkeit neu – 5 Stufen je Stichpunkt (Fassung 2)
 
 Stand: 17.10.2026 · Status: **Vorschlag, nicht umgesetzt** · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
 (`umbau/zuordnung/<raum>/*.json`). Endgültige Grenzen erst nach der Prüfung mit den neuen Abschriften.
+
+Fassung 2 arbeitet die Zweitmeinung ein (`wichtigkeit-zweitmeinung.md`). Die Änderungen gegenüber Fassung 1 stehen in Abschnitt 6.
 
 ---
 
@@ -21,123 +23,185 @@ Folge: Die Block-Marke ist ein Durchschnitt und verdeckt genau die Ausreißer.
 
 ---
 
-## 2. Was die Daten hergeben – drei Tests
+## 2. Was die Daten hergeben
 
 ### 2.1 Rückwärtstest: Welche Signale sagen die nächste Prüfung vorher?
 
 Wichtigkeit nur aus den **älteren** Prüfungen berechnet, dann geprüft, ob sie die **neuesten** vorhergesagt hätte
-(AP1: 2025F–2026H, sonst 2025S und 2025W). Wert = Wahrscheinlichkeit, dass ein später geprüfter Stichpunkt vor einem nicht
+(AP1: 2025F–2026H, sonst 2025S und 2025W). Wert = AUC: Wahrscheinlichkeit, dass ein später geprüfter Stichpunkt vor einem nicht
 geprüften liegt (0,50 = Zufall, 1,00 = perfekt).
 
 | Variante | AP1 | PB1 | PB2 | WiSo |
 |---|---|---|---|---|
-| Nur Prüfungen | 0,57 | 0,76 | **0,78** | 0,69 |
-| Prüfungen, geglättet mit dem Themenbereich | **0,58** | **0,78** | 0,77 | **0,72** |
+| Nur Prüfungen | 0,57 | 0,76 | 0,78 | 0,69 |
+| Prüfungen, gemischt mit Themenbereich (k = 4) | 0,58 | 0,78 | 0,77 | 0,72 |
 | Nur Themenbereich | 0,55 | 0,74 | 0,67 | 0,67 |
-| Nur Fundament (wird von anderen vorausgesetzt) | 0,54 | 0,68 | 0,55 | 0,51 |
-| Nur Lehrplan (Lernfeld-Stunden) | 0,46 | 0,59 | 0,50 | 0,41 |
-| Mischung 50 % Prüfungen / 25 % Fundament / 25 % Lehrplan | 0,56 | 0,77 | 0,77 | 0,65 |
+| Nur Fundament | 0,54 | 0,68 | 0,55 | 0,51 |
+| Nur Lernfeld-Stunden | 0,46 | 0,59 | 0,50 | 0,41 |
+| Mischung 50/25/25 | 0,56 | 0,77 | 0,77 | 0,65 |
 
-Ergebnisse:
-- **Prüfungen sind das beste Signal.** Glätten hilft leicht (+0,01 bis +0,03).
-- **Lernfeld-Stunden haben keine Vorhersagekraft.** Sie fliegen raus, außer als letzter Gleichstandsbrecher.
-- **Fundament sagt die Prüfung kaum vorher.** Beigemischt macht es die Stufe schlechter. Es ist trotzdem nützlich, aber für eine andere Frage (Abschnitt 3.4).
-- **AP1: Alte Prüfungen sagen die neuen kaum vorher (0,57).** Wahrscheinliche Ursache ist der neue Katalog ab 2025. Rangfolgen in AP1 sind deshalb unsicher.
+**Wie genau das ist:** Der Standardfehler einer einzelnen AUC liegt hier bei etwa ±0,055, das 95-%-Intervall also bei etwa ±0,11.
+Belastbar ist deshalb nur das Grobe:
+- In PB1, PB2 und WiSo sagen Prüfungen die nächste Prüfung klar besser vorher als Zufall und als die Lernfeld-Stunden.
+- Unterschiede von 0,01–0,03, etwa ob Mischen mit dem Themenbereich hilft, sind Rauschen.
+- In AP1 ist kein Signal sicher besser als Zufall.
 
-Einschränkung: Getestet wurde mit nur 2–4 Testprüfungen je Raum. Das reicht, um schlechte Signale zu erkennen, aber nicht zum Feinabstimmen.
+**AP1 auch mit neuen Prüfungen schwer vorhersagbar:** Jeweils eine der 4 neuen Prüfungen weggelassen und aus **allen** übrigen vorhergesagt,
+also alte und neue zusammen. Ergebnis: AUC 0,55, wenn alte Prüfungen nicht zählen, und 0,59 bei Gewicht 0,6 oder 1. Die schwache Vorhersage
+in AP1 kommt also nicht nur vom Testaufbau. Die AP1-Prüfungen streuen wirklich breit.
 
-### 2.2 Wackeltest: Wie viele Stufen tragen die Daten?
+### 2.2 Wackeltest: Wie stabil sind 5 Stufen?
 
-Jeweils eine Prüfung weglassen und neu rechnen. Gezählt wird der Anteil der Stichpunkte, die dabei die Stufe wechseln.
+Jeweils eine Prüfung weglassen und neu rechnen (Grenzen 40 / 25 / 12 %).
 
-| Raum | 3 Stufen | 4 Stufen | **5 Stufen** | 6 Stufen | 8 Stufen |
-|---|---|---|---|---|---|
-| AP1 | 37 % | 59 % | **73 %** | 77 % | 77 % |
-| PB1 | 37 % | 53 % | **61 %** | 62 % | 62 % |
-| PB2 | 41 % | 45 % | **55 %** | 59 % | 59 % |
-| WiSo | 31 % | 40 % | **51 %** | 63 % | 63 % |
+| Raum | Wechsel je Lauf (Mittel) | Stichpunkte, die in weniger als 80 % der Läufe ihre Stufe halten | um mehr als 1 Stufe gesprungen (irgendein Lauf) |
+|---|---|---|---|
+| AP1 | 17 % | 25 % | 10 % |
+| PB1 | 13 % | 36 % | 8 % |
+| PB2 | 12 % | 27 % | 5 % |
+| WiSo | 24 % | 41 % | 3 % |
 
-Bei 5 Stufen springen aber nur **3–10 %** um **mehr als eine** Stufe. Die meisten Wechsel gehen in die Nachbarstufe.
-Deshalb ist 5 vertretbar, wenn unsichere Stichpunkte als „unsicher“ markiert werden. 8 Stufen bringen gegenüber 5 nichts mehr.
+Fassung 1 hatte „wechselt in irgendeinem Lauf“ gezählt (51–73 %). Das war zu streng. Die meisten Wechsel gehen in die Nachbarstufe.
 
-### 2.3 Fundament – was das Andocken zeigt
+### 2.3 Unsicherheit je Stichpunkt: Beta-Regel getestet und verworfen
+
+Getestet wurde der Vorschlag der Zweitmeinung: Für jeden Stichpunkt eine Beta-Verteilung über die wahre Quote bilden und ihn
+als „Datenlage dünn“ markieren, wenn die Wahrscheinlichkeit, dass er wirklich in seiner Stufe liegt, unter 50 % liegt.
+
+| Raum | markiert (Jeffreys-Prior) | markiert (Gleichverteilung) |
+|---|---|---|
+| AP1 | 59 % | 72 % |
+| PB1 | 53 % | 53 % |
+| PB2 | 41 % | 41 % |
+| WiSo | 40 % | 40 % |
+
+Markiert werden **alle** Stichpunkte der mittleren Stufen („Oft“, „Manchmal“), aber keiner in der obersten oder untersten.
+Der Grund: Mit 8–11 Prüfungen ist die Unsicherheit eines einzelnen Stichpunkts breiter als eine ganze mittlere Stufe (13–15 Prozentpunkte).
+Die Markierung sagt also nichts über den Stichpunkt, sondern nur etwas über die Breite der Stufe.
+**Ergebnis: keine Markierung je Stichpunkt.** Stattdessen zeigt jeder Stichpunkt seinen plausiblen Bereich (Abschnitt 3.3), und die Legende sagt offen,
+dass „Oft“ und „Manchmal“ nicht scharf trennbar sind.
+
+### 2.4 Fundament – was das Andocken zeigt
 
 - 101 von 292 Stichpunkten werden von mindestens einem anderen vorausgesetzt (Feld `baut_auf`).
-- **16 Stichpunkte wurden nie geprüft, sind aber Grundlage für andere.** Beispiele: „Relationales Modell“ (PB1-6-1-2, Grundlage für 4) und „Bausteine eines Programms“ (AP1-8-2-1, Grundlage für 2).
-- Das Feld wurde für etwas anderes angelegt (E2: Was baut ein späterer Raum auf einem früheren auf?). Abhängigkeiten **innerhalb** eines Raums sind kaum erfasst, WiSo hat keine.
+- 16 Stichpunkte wurden nie geprüft, sind aber Grundlage für andere. Beispiele: „Relationales Modell“ (PB1-6-1-2, für 4) und „Bausteine eines Programms“ (AP1-8-2-1, für 2).
+- Das Feld wurde für etwas anderes angelegt (E2). Abhängigkeiten **innerhalb** eines Raums sind kaum erfasst, WiSo hat keine.
 
 ---
 
 ## 3. Vorschlag
 
-### 3.1 Fünf Stufen je Stichpunkt
+### 3.1 Fünf Stufen je Stichpunkt, ohne Glättung
 
-Maß: **Anteil der Prüfungen des Raums**, in denen der Stichpunkt vorkam. Jede Prüfung zählt höchstens einmal. Nach aktuellem Katalog zählt sie 1, nach altem Katalog 0,6 (Abschnitt 3.5).
-Der Anteil wird mit dem Themenbereich geglättet (Abschnitt 3.2).
+Maß: gewichtete Trefferquote = Summe der Gewichte der Prüfungen, in denen der Stichpunkt vorkam, geteilt durch die Summe der Gewichte aller Prüfungen des Raums.
+Jede Prüfung zählt pro Stichpunkt höchstens einmal. Gewicht vorläufig: aktueller Katalog 1, alter Katalog 0,6 (geprüft wird das in 3.6).
 
-| # | Name | Grenze (vorläufig) | heißt | AP1 | PB1 | PB2 | WiSo |
+| # | Name | Grenze (vorläufig) | Zeichen | AP1 | PB1 | PB2 | WiSo |
 |---|---|---|---|---|---|---|---|
-| 1 | **Sehr oft geprüft** | ab 40 % | in mehr als jeder 3. Prüfung | 8 | 9 | 12 | 26 |
-| 2 | **Oft geprüft** | ab 25 % | etwa jede 4. Prüfung | 29 | 13 | 2 | 14 |
-| 3 | **Manchmal geprüft** | ab 12 % | etwa jede 8. Prüfung | 44 | 10 | 2 | 8 |
-| 4 | **Selten geprüft** | über 0 % | ein-, zweimal, meist alter Katalog | 16 | 17 | 5 | 6 |
-| 5 | **Nie geprüft** | kein Beleg | steht nur im Katalog, kann trotzdem kommen | 27 | 27 | 1 | 16 |
+| 1 | **Sehr oft geprüft** | ab 40 % | ● | 8 | 9 | 12 | 26 |
+| 2 | **Oft geprüft** | ab 25 % | ◕ | 29 | 13 | 2 | 14 |
+| 3 | **Manchmal geprüft** | ab 12 % | ◑ | 44 | 10 | 2 | 8 |
+| 4 | **Selten geprüft** | über 0 % | ◔ | 16 | 17 | 5 | 6 |
+| 5 | **Bisher nicht geprüft** | kein Beleg | ○ | 27 | 27 | 1 | 16 |
 
-Farben: Rot → Orange → Gelb → Grau. „Nie geprüft“ wird als leerer Kreis gezeigt.
-Feste Grenzen statt fester Anteile je Stufe. Das ist ehrlicher, weil eine Stufe auch leer bleiben darf.
-WiSo hat viele Stichpunkte in Stufe 1, weil jede WiSo-Prüfung 30 Fragen zu fast allen Themen stellt. Das ist kein Fehler der Grenzen.
+- **Keine Glättung.** Ihr Nutzen ist nicht belegt (2.1). Sie zieht alle Stichpunkte eines Raums gleich stark zum Themenbereich, weil alle dieselbe Prüfungszahl haben.
+  Außerdem widerspricht sie Stufe 5, denn geglättet ist nichts mehr 0. Ohne Glättung ist jede Stufe direkt aus „in x von N Prüfungen“ nachvollziehbar.
+- **Eine Farbe mit Füllgrad** statt Rot bis Grau. Rot ist in der App schon für Fehler belegt (`--fehler`), und Füllgrad funktioniert auch bei Farbschwäche.
+- **„Bisher nicht geprüft“** statt „Nie geprüft“. Es beschreibt die Vergangenheit und verspricht nichts.
+- Feste Grenzen, eine Stufe darf leer bleiben. Dass WiSo viele Stichpunkte in Stufe 1 hat, liegt am Prüfungsformat mit 30 Fragen und ist kein Fehler.
 
-### 3.2 Glätten
+### 3.2 Hauptzahl: natürliche Häufigkeit
 
-> geglättete Quote = (eigene Treffer + k × Quote des Themenbereichs) / (Prüfungen + k), Vorschlag k = 4
+Angezeigt wird „**in 4 von 11 Prüfungen**, zuletzt 2026F“, keine Prozentzahl. Die gewichtete Quote (z. B. 39 %) steht nur in den Details und auf der Seite „Wichtigkeit“.
 
-Ein Stichpunkt mit wenigen Belegen wird zum Durchschnitt seines Themenbereichs gezogen, denn der Themenbereich hat mehr Daten.
-Das Glätten wirkt nur innerhalb der Prüfungsdaten, es mischt kein fremdes Signal hinein. Den Wert für k legt der Rückwärtstest fest (k = 2 und k = 4 schnitten gleich ab).
+### 3.3 Unsicherheit: plausibler Bereich statt Markierung
 
-### 3.3 Zusatzzeichen (keine Stufe)
-
-- **„unsicher“**: Der Stichpunkt wechselt im Wackeltest die Stufe.
-- **„Grundlage für X Stichpunkte“**: Fundament aus `baut_auf` und den Gegenstücken.
-- Beim Drüberfahren immer die genauen Zahlen: „Oft geprüft · in 3 von 11 Prüfungen, zuletzt 2026F“.
+Im Tooltip und in den Details steht zum Beispiel für „Peripheriegeräte und Anschlüsse“: „Wahrscheinlich in **2 bis 7 von 11** Prüfungen“.
+Das ist das 80-%-Intervall der Beta-Verteilung (Jeffreys-Prior, Beta(3,2 + 0,5; 5,0 + 0,5) ergibt 20,5 % bis 61,0 %), umgerechnet auf die Prüfungszahl des Raums
+und auf ganze Prüfungen gerundet. Das Prüfskript rechnet es vor, die App zeigt es nur an.
+Der breite Bereich ist gewollt. Er zeigt ehrlich, wie wenig 11 Prüfungen festlegen.
+Die Legende sagt offen: Mit 8–11 Prüfungen lassen sich die mittleren Stufen nicht scharf trennen. Die Stufe ist Orientierung, keine Vorhersage. Das gilt besonders für AP1.
 
 ### 3.4 Wo es auftaucht
 
 | Ebene | Anzeige |
 |---|---|
-| Stichpunkt | farbiger Punkt vor dem Titel; in den Details die volle Marke mit Namen und Zahlen |
-| Block | ein Punkt je Stichpunkt, sortiert (`● ● ◐ ○ ○`), statt einer Durchschnittsmarke |
-| Themenbereich | „19 % des Prüfungsgewichts“ plus ein schmaler Balken in den Stufenfarben |
-| „Heute im Fokus“ und neue Lernkarten | zuerst der Block mit dem wichtigsten **offenen** Stichpunkt; bei Gleichstand Grundlagen zuerst (Fundament), dann mehr offener Prüfungswert |
-| Menü „Nachschlagen“ → **„Wichtigkeit“** | Legende: 5 Stufen mit Farbe, Grenze und Erklärung; Anzahl Stichpunkte je Stufe im Raum (aufklappbar, mit Sprung in den Lernplan); Datenbasis (Prüfungen, davon aktueller Katalog, Gewichtung); wie Block und Themenbereich zusammengefasst werden |
+| Stichpunkt | Zeichen ●◕◑◔○ vor dem Titel; in den Details die Marke mit Namen, „in x von N Prüfungen, zuletzt …“ und dem plausiblen Bereich |
+| Block | bis 6 Stichpunkte ein Zeichen je Stichpunkt, sortiert; darüber ein schmaler gestapelter Balken. Im Tooltip zusätzlich: „In 7 von 11 Prüfungen kam etwas aus diesem Block dran.“ Das ist nur eine Zusatzzahl, weil große Blöcke damit automatisch hoch liegen |
+| Themenbereich | „x % der Prüfungsaufgaben“: Anteil der Teilaufgaben des Raums. Bei Mehrfachzuordnung zählt eine Teilaufgabe je Stichpunkt 1/m. Dazu der Balken in den Stufen-Zeichen |
+| „Heute im Fokus“ und neue Lernkarten | nach dem Reihenfolge-Wert (3.5) |
+| Menü „Nachschlagen“ → **„Wichtigkeit“** | Legende: die 5 Stufen mit Zeichen, Grenze und Erklärung; Anzahl der Stichpunkte je Stufe im Raum (aufklappbar, mit Sprung in den Lernplan); Datenbasis (Prüfungen, davon aktueller Katalog, Gewichtung); Hinweis zur Unsicherheit; wie Block und Themenbereich zusammengefasst werden |
 
 Der Abschnitt „Wichtigkeit“ in der Hilfe wird gekürzt und verweist auf die neue Seite.
 
-### 3.5 Geprüft rechnen
+### 3.5 Fundament und Lernreihenfolge
 
-1. **Geprüfte Datenbasis:** Jede Teilaufgabe aus den neuen Abschriften wird blind neu einem Stichpunkt zugeordnet und mit der alten Zuordnung verglichen. Strittige Fälle entscheidet ein dritter Durchgang mit Begründung, sie stehen im Bericht.
-   Der Podcast dient nur als Gegenprobe. Nur bei einer fehlenden Abschrift (Rest von 2025H, P14) zählt er mit halbem Gewicht.
-2. **Gewicht alter Prüfungen:** Die pauschalen 0,6 sind gesetzt, nicht begründet. Prüfen lässt sich das so: Jede alte Teilaufgabe wird gegen den aktuellen Katalog abgeglichen. Unverändert ergibt 1,0, geändert 0,5, gestrichen 0.
-   Diese Regel kommt nur hinein, wenn sie im Rückwärtstest besser abschneidet als die 0,6. Für AP1 liegt die Änderungsliste vor (Podcast #190). Für PB1, PB2 und WiSo fehlt der alte Katalog, dort bleibt es bei 0,6 mit dem Vermerk „ungeprüft“.
-3. **Regel für neue Signale:** Ein Signal geht nur in die Stufe ein, wenn es im Rückwärtstest besser abschneidet als „nur Prüfungen“.
-4. **Prüfskript** `npm run umbau:wichtigkeit`: rechnet alles aus den Zuordnungsdateien neu und führt Rückwärtstest und Wackeltest aus. Es bricht ab bei einer Teilaufgabe ohne Zuordnung oder Begründung und bei einer Stufe, die von der Neuberechnung abweicht.
-5. **Tests mit Hand-Beispielen.** Beispiel: „Peripheriegeräte und Anschlüsse“ (AP1) kam in 2022F und 2024F (je 0,6) sowie in 2025F und 2026F (je 1) vor. Das sind 3,2 von 8,2, also 39 %, und damit „Oft geprüft“.
-6. **Bericht als Tabelle:** jeder Stichpunkt mit Stufe, Anteil, Prüfungsliste, „unsicher“ und Fundament, damit jede Stufe nachrechenbar ist.
+Das Fundament geht **nicht** in die Stufe ein, sondern nur in die Reihenfolge. Gezählt wird der Prüfungswert dessen, was auf dem Stichpunkt aufbaut,
+nicht nur die Anzahl:
 
-Punkte zählen nicht (P28). Die Tiefe (Stufe 1–4 der Können-Aussagen) bleibt getrennt, weil sie misst, *wie gut*, nicht *wie wichtig*.
+```
+Reihenfolge-Wert(s) = q_s + λ · Σ q_t   über alle offenen Stichpunkte t, die auf s aufbauen
+q = gewichtete Trefferquote (3.1), λ = 0,5
+```
+
+- Zeichen am Stichpunkt: „Grundlage für X Stichpunkte“.
+- **λ = 0,5 ist eine Setzung.** Aus Prüfungsdaten lässt sich λ nicht schätzen, und so steht es auch im Bericht.
+- **Geprüft wird mit einer Abdeckungskurve:** Stichpunkte nach Empfehlung ordnen und daneben eine zurückgehaltene Prüfung legen. Welcher Anteil ihrer Teilaufgaben ist nach 10, 20, 30 … gelernten Stichpunkten abgedeckt?
+  Verglichen werden vier Reihenfolgen: Zufall, Katalog, nur q, und q mit Fundament. „Grundlagen zuerst“ bleibt, wenn es höchstens 5 % Abdeckung kostet. Diese Grenze setzt der Projektinhaber.
+- Nicht übernommen aus der Zweitmeinung: Vergessenskurve und Beherrschung je Können-Aussage. Das sind zu viele Stellschrauben, die sich nicht prüfen lassen, und die App misst Beherrschung je Aussage heute höchstens indirekt über die Lernkarten.
+
+### 3.6 Geprüft rechnen
+
+1. **Geprüfte Datenbasis:** Jede Teilaufgabe aus den neuen Abschriften wird blind neu einem Stichpunkt zugeordnet und mit der alten Zuordnung verglichen. Strittige Fälle entscheidet ein dritter Durchgang mit Begründung.
+   **Gezielt:** Für alle Stichpunkte in „Bisher nicht geprüft“ wird nachgesehen, ob es wirklich keine passende Teilaufgabe gibt, denn eine einzige übersehene Zuordnung verschiebt die Stufe.
+   Der Podcast dient nur als Gegenprobe, und bei der fehlenden Abschrift (Rest von 2025H, P14) zählt er mit halbem Gewicht.
+2. **Liste der Signale vorher festlegen** (vor dem Testen ins Repo schreiben):
+   - Gewicht alter Prüfungen w ∈ {0; 0,2; …; 1}. AP1 bekommt ein eigenes w, PB1, PB2 und WiSo bekommen ein gemeinsames.
+   - Katalogänderung AP1 (neu, geändert, unverändert), für ein mögliches Zeichen „neu im Katalog“
+   - Pause/Rotation: War der Stichpunkt in der letzten Prüfung dran?
+   - höchste Tiefe der Können-Aussagen (3–4)
+3. **Rückwärtstest neu:** rollierend, also Prüfung t aus allen Prüfungen vor t vorhersagen, ab der 4. Prüfung. Gemessen wird mit **Log-Loss und Brier-Score**, die AUC nur zusätzlich.
+   Vergleich zweier Varianten auf denselben Testprüfungen, Bootstrap **über Prüfungen**.
+   Dazu eine Probe auf Treffsicherheit: Von den Stichpunkten mit Quote ab 40 %, wie viele kamen in der zurückgehaltenen Prüfung wirklich dran?
+4. **Aufnahmeregel:** Ein Signal kommt nur hinein, wenn es den Log-Loss in mindestens 3 von 4 Räumen senkt **und** das Bootstrap-Intervall der Verbesserung 0 nicht enthält.
+   Bei 4 neuen AP1-Prüfungen ist „nicht entscheidbar“ ein erwartbares Ergebnis. Dann bleibt der Startwert.
+5. **Prüfskript** `npm run umbau:wichtigkeit`: rechnet Stufen, Bereiche, Teilaufgaben-Anteile und Reihenfolge-Werte aus den Zuordnungsdateien neu und führt die Tests 3 und 4 aus.
+   Es bricht ab bei einer Teilaufgabe ohne Zuordnung oder Begründung und bei Abweichungen zur App.
+6. **Tests mit Hand-Beispielen,** gerechnet wie in der App: „Peripheriegeräte und Anschlüsse“ (AP1) kam in 2022F und 2024F (je 0,6) sowie in 2025F und 2026F (je 1) vor. Das sind 3,2 von 8,2, also 39 %, damit „Oft geprüft“. Anzeige: „in 4 von 11 Prüfungen, zuletzt 2026F“.
+7. **Bericht als Tabelle:** jeder Stichpunkt mit Stufe, Quote, Prüfungsliste, plausiblem Bereich und Fundament.
+   Dazu bekannte Grenzen: Wie breit ein Stichpunkt geschnitten ist, beeinflusst die Trefferzahl. Einige Stichpunkte sind nach dem Lesen der Prüfungen entstanden, was teilweise zirkulär ist.
+
+Punkte zählen nicht (P28). Die Tiefe bleibt getrennt, solange sie die Aufnahmeregel nicht besteht. Der Aufgabentyp entscheidet über die Übungsform
+(Lernkarte oder Übungsaufgabe), nicht über die Stufe.
 
 ---
 
 ## 4. Ablauf
 
-1. Vorschlag abstimmen (Namen, Grenzen, Anzeige). Ideen einer zweiten KI einholen (Prompt: `wichtigkeit-prompt-extern.md`).
-2. Zuordnung mit den neuen Abschriften prüfen (Abschnitt 3.5, Punkt 1) und den Katalog-Abgleich für AP1 machen (Punkt 2).
-3. Prüfskript, Tests und Bericht schreiben. Rückwärtstest und Wackeltest auf den geprüften Daten wiederholen und die Grenzen festlegen.
-4. App umbauen: Stufen, Punkte, Prozent, Menü „Wichtigkeit“.
-5. UMBAU.md (neuer Parkplatz-Eintrag, ersetzt P28 teilweise) und STAND.md nachführen.
+1. Fassung 2 abstimmen. Den Prompt (`wichtigkeit-prompt-extern.md`) in ein Modell eines **anderen Anbieters** geben, für eine unabhängige Meinung.
+2. Zuordnung mit den neuen Abschriften prüfen (3.6, Punkt 1) und den Katalog-Abgleich für AP1 machen.
+3. Liste der Signale ins Repo schreiben, dann Prüfskript, Tests und Bericht. Rückwärtstest, Wackeltest und Abdeckungskurve auf den geprüften Daten rechnen und die Grenzen festlegen.
+4. App umbauen: Stufen, Zeichen, Bereich, Block, Themenbereich, Menü „Wichtigkeit“.
+5. UMBAU.md (neuer Parkplatz-Eintrag, ersetzt P28 und D7 teilweise) und STAND.md nachführen.
 
-## 5. Offene Fragen
+## 5. Entscheidungen beim Projektinhaber
 
-- Sind die Grenzen 40 / 25 / 12 richtig? Erst nach Schritt 3 festlegen.
-- Soll AP1 nur die 4 Prüfungen nach aktuellem Katalog stärker gewichten, weil die alten kaum vorhersagen?
-- Soll das Fundament später um Abhängigkeiten innerhalb eines Raums ergänzt werden? Das wäre neue inhaltliche Arbeit.
-- Verträgt sich das mit P54 („zu prüfungsnah“)? Die Stufe misst bewusst nur Prüfungsnähe. „Nie geprüft“ heißt nicht „unwichtig fürs Fach“.
+- Grenzen 40 / 25 / 12 bestätigen. Endgültig erst nach Schritt 3.
+- Wie viel Abdeckung darf „Grundlagen zuerst“ kosten? Vorschlag: höchstens 5 %.
+- Soll jede 4. Empfehlung bewusst aus dem Fachkern kommen (bisher nicht geprüft, aber Grundlage oder Tiefe 3–4)? Das ist eine Designfrage zu P54, keine Statistik.
+- Sollen Abhängigkeiten innerhalb eines Raums später ergänzt werden? Das wäre neue inhaltliche Arbeit.
+
+## 6. Änderungen gegenüber Fassung 1
+
+| Fassung 1 | Fassung 2 | Grund |
+|---|---|---|
+| Glättung mit dem Themenbereich (k = 4) | gestrichen | Nutzen nicht belegt, zieht alle gleich stark, widerspricht Stufe 5 |
+| Zeichen „unsicher“ aus dem Wackeltest | plausibler Bereich je Stichpunkt und Hinweis in der Legende | Wackeltest zu streng gezählt; die Beta-Regel getestet, sie markiert alle mittleren Stufen |
+| Wackeltest 51–73 % | 12–24 % je Lauf | Zählweise korrigiert |
+| „Nie geprüft“ | „Bisher nicht geprüft“ | verspricht nichts |
+| Rot bis Grau | eine Farbe mit Füllgrad ●◕◑◔○ | Rot ist für Fehler belegt; Farbschwäche |
+| Prozent als Hauptzahl | „in x von N Prüfungen“ | Prozente wirken genauer, als sie sind |
+| Themenbereich: Summe der Stichpunkt-Quoten | Anteil der Teilaufgaben (1/m) | klar definiert, keine Doppelzählung |
+| Fundament: Anzahl der Abhängigen | Prüfungswert der Abhängigen, λ = 0,5 offen als Setzung | ein Top-Thema als Abhängiger zählt mehr als drei seltene |
+| Rückwärtstest mit AUC | rollierend, Log-Loss/Brier, Bootstrap über Prüfungen, Signale vorher festgelegt | AUC-Unterschiede waren Rauschen |
+| AP1-Schwäche = Katalogwechsel | AP1 streut auch mit neuen Prüfungen (AUC 0,55–0,59) | nachgerechnet |

@@ -2,6 +2,9 @@
 
 Alles unterhalb der Linie in eine andere KI kopieren. Der Prompt ist in sich vollständig, die KI braucht keinen Zugriff aufs Repo.
 
+**Wichtig:** Für eine unabhängige Meinung den Prompt in ein Modell eines **anderen Anbieters** geben. Die erste Zweitmeinung
+(`wichtigkeit-zweitmeinung.md`) stammt wahrscheinlich aus derselben Modellfamilie wie der Vorschlag. Stand des Prompts: Fassung 2 des Vorschlags.
+
 ---
 
 Du bist Experte für Lerndesign, Prüfungsvorbereitung und für Statistik bei kleinen Datenmengen. Ich brauche eine kritische
@@ -49,25 +52,30 @@ Gemessen als AUC: 0,5 = Zufall, 1,0 = perfekt.
 | Nur Lernfeld-Stunden | 0,46 | 0,59 | 0,50 | 0,41 |
 | Mischung 50/25/25 (Prüfungen/Fundament/Lernfeld) | 0,56 | 0,77 | 0,77 | 0,65 |
 
-**Wackeltest:** jeweils eine Prüfung weglassen. Anteil der Stichpunkte, die dabei die Stufe wechseln:
+Wichtig zur Genauigkeit: Der Standardfehler einer einzelnen AUC liegt hier bei etwa ±0,055. Unterschiede von 0,01–0,03 sind also Rauschen.
+In AP1 sagt auch das Weglassen je einer der 4 neuen Prüfungen und Vorhersagen aus allen übrigen nur AUC 0,55–0,59 voraus.
 
-| Raum | 3 Stufen | 4 | 5 | 6 | 8 |
-|---|---|---|---|---|---|
-| AP1 | 37 % | 59 % | 73 % | 77 % | 77 % |
-| PB1 | 37 % | 53 % | 61 % | 62 % | 62 % |
-| PB2 | 41 % | 45 % | 55 % | 59 % | 59 % |
-| WiSo | 31 % | 40 % | 51 % | 63 % | 63 % |
+**Wackeltest** (5 Stufen, Grenzen 40 / 25 / 12 %, jeweils eine Prüfung weglassen):
 
-Bei 5 Stufen springen nur 3–10 % um mehr als eine Stufe.
+| Raum | Wechsel je Lauf (Mittel) | Stichpunkte mit Stabilität unter 80 % | Sprung über mehr als 1 Stufe |
+|---|---|---|---|
+| AP1 | 17 % | 25 % | 10 % |
+| PB1 | 13 % | 36 % | 8 % |
+| PB2 | 12 % | 27 % | 5 % |
+| WiSo | 24 % | 41 % | 3 % |
 
-## Aktueller Vorschlag
+**Verworfen nach Test:**
+- Glätten zum Themenbereich: zieht alle Stichpunkte gleich stark, weil alle dieselbe Prüfungszahl haben. Der Nutzen liegt im Rauschen.
+- Markierung „unsicher“ über eine Beta-Verteilung (P(wahre Quote in der gezeigten Stufe) < 50 %): Sie markiert 40–72 % der Stichpunkte, und zwar alle in den mittleren Stufen. Die Unsicherheit ist breiter als eine Stufe.
 
-- **5 Stufen je Stichpunkt**, nur aus Prüfungen (geglättet): Sehr oft geprüft (ab 40 %), Oft (ab 25 %), Manchmal (ab 12 %), Selten (über 0 %), Nie geprüft.
-- Zeichen **„unsicher“**, wenn der Stichpunkt im Wackeltest die Stufe wechselt.
-- Zeichen **„Grundlage für X Stichpunkte“** (Fundament). Es zählt nicht für die Stufe, nur für die Lernreihenfolge.
-- **Block:** ein farbiger Punkt je Stichpunkt. **Themenbereich:** „x % des Prüfungsgewichts“ plus Balken.
-- **Empfehlung „Heute im Fokus“:** Block mit dem wichtigsten offenen Stichpunkt zuerst; bei Gleichstand Grundlagen zuerst.
-- **Regel:** Ein Signal geht nur in die Stufe ein, wenn es im Rückwärtstest besser abschneidet als „nur Prüfungen“.
+## Aktueller Vorschlag (Fassung 2)
+
+- **5 Stufen je Stichpunkt**, nur aus Prüfungen, ohne Glättung. Gewichtete Trefferquote: aktueller Katalog 1, alter 0,6.
+  Sehr oft geprüft (ab 40 %), Oft (ab 25 %), Manchmal (ab 12 %), Selten (über 0 %), Bisher nicht geprüft. Zeichen ●◕◑◔○, eine Farbe mit Füllgrad.
+- **Hauptzahl** „in 4 von 11 Prüfungen, zuletzt 2026F“. Dazu ein **plausibler Bereich** „wahrscheinlich 2 bis 7 von 11“ (80-%-Intervall, Jeffreys-Prior).
+- **Block:** ein Zeichen je Stichpunkt (bis 6), sonst ein Balken. **Themenbereich:** Anteil der Teilaufgaben (bei Mehrfachzuordnung 1/m).
+- **Lernreihenfolge:** Reihenfolge-Wert = q_s + λ · Σ q_t über offene Stichpunkte t, die auf s aufbauen; λ = 0,5 als Setzung. Geprüft mit einer Abdeckungskurve gegen zurückgehaltene Prüfungen.
+- **Prüfplan:** Signale vorher festlegen (Gewicht alter Prüfungen, Katalogänderung AP1, Pause/Rotation, Tiefe). Rollierender Rückwärtstest mit Log-Loss/Brier, Bootstrap über Prüfungen. Aufnahme nur, wenn der Log-Loss in 3 von 4 Räumen sinkt und das Intervall die 0 nicht enthält.
 
 ## Rahmenbedingungen
 
@@ -79,10 +87,10 @@ Bei 5 Stufen springen nur 3–10 % um mehr als eine Stufe.
 
 ## Was ich von dir möchte
 
-1. **Kritik:** Wo ist der Vorschlag schwach oder statistisch falsch? Ist AUC bei 2–4 Testprüfungen überhaupt aussagekräftig? Sind die Gewichte 1 / 0,6 vertretbar?
-2. **Mit wenig Daten umgehen:** Welche Verfahren eignen sich für 8–11 Prüfungen? Zum Beispiel Bayes-Glättung, hierarchische Modelle, Konfidenzintervalle, Bootstrap. Wie wähle ich die Glättungsstärke ohne Überanpassung?
-3. **Neue Signale:** Was außer Prüfungshäufigkeit könnte Wichtigkeit messen und trotzdem prüfbar bleiben? Denk an Aufgabentyp, Tiefe, Katalogänderungen, Abhängigkeiten, Kombinationen mit anderen Themen, Fehleranfälligkeit beim Lernen.
-4. **Darstellung:** Bessere Namen für die 5 Stufen? Wie zeige ich Unsicherheit, ohne zu verwirren? Wie fasse ich Block und Themenbereich zusammen?
+1. **Kritik:** Wo ist Fassung 2 schwach oder statistisch falsch? Ist es richtig, die Glättung zu streichen? Ist der plausible Bereich die richtige Art, Unsicherheit zu zeigen?
+2. **Mit wenig Daten umgehen:** Gibt es bei 8–11 Prüfungen ein besseres Vorgehen als 5 feste Stufen, zum Beispiel Stufen nach Trefferzahl statt nach Prozent? Wie wähle ich die Grenzen, ohne mich an die Daten anzupassen?
+3. **Neue Signale:** Was außer Prüfungshäufigkeit könnte Wichtigkeit messen und trotzdem prüfbar bleiben?
+4. **Darstellung:** Bessere Namen? Wie zeige ich Block und Themenbereich am verständlichsten?
 5. **Lernreihenfolge:** Wie verbinde ich Prüfungswahrscheinlichkeit, Fundament und meinen Lernstand zu einer guten Empfehlung „Was lerne ich als Nächstes?“
 
 Antworte gegliedert nach diesen 5 Punkten. Mach je Punkt konkrete, umsetzbare Vorschläge mit Formel oder Regel, und sag dazu, wie man sie mit den vorhandenen Daten prüfen könnte.
