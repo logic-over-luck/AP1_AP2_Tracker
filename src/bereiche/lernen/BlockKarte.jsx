@@ -361,15 +361,6 @@ function herkunftText(h) {
   return art === 'katalog' ? `Katalog ${wert}` : art === 'beleg' ? `Prüfung ${wert}` : art === 'regel' ? `Puffer-Regel ${wert}` : art === 'buch' ? `Lehrbuch ${buchText(wert)}` : h;
 }
 
-// An der Zeile steht nur, was beim Lernen hilft; Herkunft (Katalog, Prüfung, Lehrbuch) und Umbau-Stand
-// stehen beim Aufklappen in der Meta-Zeile.
-function KoennenMarken({ k }) {
-  return k.vorgegeben ? (
-    <span class="np-marke" data-tip="Wird in der Prüfung als Material vorgegeben">
-      vorgegeben: {k.vorgegeben}
-    </span>
-  ) : null;
-}
 
 // E2: Sprung zu einem Stichpunkt eines früheren Raums (wie Gegenstücke und Befehlspalette)
 function spLink(z) {
@@ -452,13 +443,14 @@ function Zeile({ kurz, offen, onUmschalten, marken, children }) {
 function KoennenZeile({ k, text, offen, onUmschalten }) {
   return (
     <>
-      <Zeile kurz={k.kurz ?? text} offen={offen} onUmschalten={onUmschalten} marken={k.vorgegeben ? <KoennenMarken k={k} /> : null}>
+      <Zeile kurz={k.kurz ?? text} offen={offen} onUmschalten={onUmschalten}>
         <p class="np-zeile__satz">{text}</p>
         {k.neu && <NeuText neu={k.neu} />}
         {k.erklaerung && <Rich class="np-erkl__text" text={k.erklaerung} />}
         <div class="np__meta">
           Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')} · <span class="mono">{k.id}</span>
           {k.status === 'verschoben' && ` · vorher ${k.von}`}
+          {k.vorgegeben && <div>In der Prüfung vorgegeben: {k.vorgegeben}</div>}
           {k.grund && <div>Änderung: {k.grund}</div>}
         </div>
       </Zeile>
