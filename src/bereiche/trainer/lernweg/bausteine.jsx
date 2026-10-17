@@ -2,13 +2,14 @@
 // Konsole sowie Verweise auf Grundlagen in anderen Trainern. Klassen-Präfix lw- (styles/lernweg.css).
 
 import { createContext } from 'preact';
-import { useContext, useRef, useState } from 'preact/hooks';
+import { useContext, useMemo, useRef, useState } from 'preact/hooks';
 import { Icon, Knopf } from '../../../ui/bausteine.jsx';
 import { link } from '../../../router.js';
+import { alleEreignisse, useLernstand } from '../../../lernstand/store.js';
 import { trainerById } from '../verzeichnis.js';
-import { kursVon } from './kurse.js';
+import { themenStand } from '../zahlen/stand.js';
+import { zielVon } from './kurse.js';
 import { useVerstanden } from './fortschritt.js';
-import { leseVerweis } from './lernweg.js';
 
 // Lernraum der offenen Seite (für Links in andere Trainer)
 export const LernwegKontext = createContext({ raum: 'AP1' });
@@ -196,14 +197,15 @@ export function Konsole({ titel, zeilen }) {
 
 // ---------- Verweise auf Grundlagen in anderen Trainern ----------
 
+// Ziel: Lektion eines Lernwegs (Haken, wenn dort verstanden) oder Thema des Zahlen-Trainers (Haken, wenn dort sicher)
 function useGrundlage(verweis) {
   const { raum } = useContext(LernwegKontext);
-  const v = leseVerweis(verweis);
-  const kurs = kursVon(v.trainer, raum);
-  const l = kurs?.lektion(v.lektion);
-  const ok = useVerstanden(kurs ?? { schluessel: '' }, v.lektion);
-  if (!l) return null;
-  return { l, ok, trainer: trainerById(v.trainer), href: link(raum, 'trainer', v.trainer, { modus: 'verstehen', lektion: v.lektion }) };
+  const ziel = zielVon(verweis, raum);
+  const verstanden = useVerstanden({ schluessel: ziel?.schluessel ?? '' }, ziel?.lektion);
+  const lernstand = useLernstand();
+  const sicher = useMemo(() => (ziel?.thema ? (themenStand(alleEreignisse()).get(ziel.thema)?.sicher ?? false) : false), [lernstand, ziel?.thema]);
+  if (!ziel) return null;
+  return { begriff: ziel.begriff, ok: ziel.lektion ? verstanden : sicher, trainer: trainerById(ziel.trainer), href: link(raum, 'trainer', ziel.trainer, ziel.params) };
 }
 
 // Chip im Lektionskopf („Baut auf“): Lektion eines anderen Trainers, mit Haken, wenn dort verstanden
@@ -213,7 +215,7 @@ export function GrundlageChip({ verweis }) {
   return (
     <a class={`lw-baut__chip lw-baut__chip--extern ${g.ok ? 'lw-baut__chip--ok' : ''}`} href={g.href} title={`Lektion im Trainer „${g.trainer.name}“`}>
       <Icon name={g.ok ? 'circle-check' : 'external-link'} groesse={12} strich={2.2} />
-      {g.trainer.kurz}: {g.l.begriff}
+      {g.trainer.kurz}: {g.begriff}
     </a>
   );
 }
@@ -226,9 +228,9 @@ export function Grundlage({ verweis, children }) {
     <p class="lw-grundlage">
       <Icon name="book-open" groesse={14} />
       <span>
-        {children ?? `${g.l.begriff} unklar?`}{' '}
+        {children ?? `${g.begriff} unklar?`}{' '}
         <a class="lw-link" href={g.href}>
-          {g.trainer.kurz}-Trainer: {g.l.begriff}
+          {g.trainer.kurz}-Trainer: {g.begriff}
           {g.ok && ' ✓'}
         </a>
       </span>

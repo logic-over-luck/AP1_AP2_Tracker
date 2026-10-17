@@ -1,67 +1,39 @@
-// Zahlen-Trainer: zwei Räume – Verstehen (Lernweg: Zahlensysteme, Datenmengen, Bits, Strom) und Üben (Aufgaben
-// nach Themen). Rahmen, Lernweg und Üben-Raum kommen aus lernweg/; hier stehen Inhalt und Spickzettel.
+// Zahlen-Trainer: eine Übersicht der Themen, je Thema eine Seite mit Erklärung, Spickzettel, Werkzeug und Aufgaben,
+// dazu ein gemischtes Training über alle Themen. Welche Themen es im Lernraum gibt, sagt das Verzeichnis (modi);
+// das offene Thema steht in ?modus= – so führen die Sprünge aus dem Lernplan direkt hinein.
+//
+// Aufbau: themen.js (Inhalt je Thema) · aufgaben/ (Erzeuger) · stand.js (Stand je Thema aus dem Lernstand)
+//         Uebersicht.jsx · Thema.jsx (mit Training.jsx, Werkzeug.jsx) · Mischtraining.jsx · styles/zahlen.css (zt-)
 
-import { useCallback } from 'preact/hooks';
-import { Uebung } from '../rahmen/Uebung.jsx';
-import { RaumTrainer, VERSTEHEN, UEBEN } from '../lernweg/RaumTrainer.jsx';
-import { Verstehen } from '../lernweg/Verstehen.jsx';
-import { Ueben } from '../lernweg/Ueben.jsx';
-import { LERNWEG } from './verstehen/lernweg.js';
-import { CHECKS } from './verstehen/checks.js';
-import { INHALT } from './verstehen/inhalt/index.js';
-import { ERZEUGER, artenFuer } from './aufgaben.js';
-
-const RAEUME = [VERSTEHEN, UEBEN];
-
-const SPICKZETTEL = {
-  zahlensysteme:
-    '- Dezimal → andere Basis: fortlaufend durch die Basis teilen, Reste von unten nach oben lesen\n- Andere Basis → dezimal: Ziffer · Basis^Stelle aufsummieren (Stelle von rechts ab 0)\n- Binär ↔ Hex: 4 Bit = 1 Hex-Ziffer (A=10 … F=15)\n- Zweierpotenzen: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1.024',
-  praefixe:
-    '- Dezimalpräfixe: 1 kB = 1.000 Byte, 1 MB = 1.000² Byte, 1 GB = 1.000³ Byte\n- Binärpräfixe: 1 KiB = 1.024 Byte, 1 MiB = 1.024² Byte, 1 GiB = 1.024³ Byte\n- Datenmengen nach Katalog mit Binärpräfix, physikalische Größen mit Dezimalpräfix\n- 8 Bit = 1 Byte',
-  datenmenge:
-    '- Speicher (Bit) = Anzahl Werte · Bit je Wert\n- Bild: Breite · Höhe · Farbtiefe (Bit), dann ÷ 8 → Byte\n- Byte → KiB → MiB → GiB → TiB: jeweils ÷ 1.024\n- 1 Megapixel = 1.000.000 Bildpunkte\n- n Bit → 2^n mögliche Werte',
-  uebertragung:
-    '- Dauer = Datenmenge ÷ Übertragungsrate\n- Datenmenge in Bit umrechnen: Byte · 8, Binärpräfix beachten (1 MiB = 1.048.576 Byte)\n- Raten mit Dezimalpräfix: 1 Mbit/s = 1.000.000 bit/s',
-  energie: '- P = U · I (W = V · A)\n- Energie W = P · t, 1 kWh = 1.000 Wh\n- Kosten = kWh · Preis je kWh\n- Wirkungsgrad η = P_ab ÷ P_auf → P_auf = P_ab ÷ η',
-  rechte: '- r = 4, w = 2, x = 1, je Gruppe addieren\n- drei Gruppen: Besitzer, Gruppe, andere\n- Beispiel: 754 = rwx r-x r--',
-  paritaet: '- Gerade Parität: Einsen insgesamt (mit Paritätsbit) gerade\n- Ungerade Parität: Einsen insgesamt ungerade\n- Erkennt einen einzelnen Bitfehler, berichtigt ihn nicht',
-};
+import { useMemo } from 'preact/hooks';
+import { inhalt } from '../../../daten/inhalt.js';
+import { alleEreignisse, useLernstand } from '../../../lernstand/store.js';
+import { THEMEN } from './themen.js';
+import { themenStand } from './stand.js';
+import { Uebersicht } from './Uebersicht.jsx';
+import { Thema } from './Thema.jsx';
+import { Mischtraining, GEMISCHT } from './Mischtraining.jsx';
 
 export function ZahlenTrainer({ raum, trainer, modi, params }) {
-  return (
-    <RaumTrainer
-      raum={raum}
-      trainer={trainer}
-      modi={modi}
-      params={params}
-      raeume={RAEUME}
-      kuerzel="zl"
-      untertitel="Zahlensysteme, Datenmengen, Bits und Strom: verstehen und üben."
-    >
-      {(aktiv, { uebungen, oeffne, waehleUebung }) => (
-        <>
-          {aktiv.bereich === 'verstehen' && (
-            <Verstehen
-              raum={raum}
-              lernweg={LERNWEG}
-              checks={CHECKS}
-              inhalt={INHALT}
-              lektionId={params.lektion}
-              onLektion={(id) => oeffne('verstehen', { lektion: id ?? undefined })}
-            />
-          )}
-          {aktiv.bereich === 'ueben' && (
-            <Ueben raum={raum} lernweg={LERNWEG} uebungen={uebungen} aktiv={aktiv} onWahl={waehleUebung}>
-              <ZahlenUebung key={aktiv.id} raum={raum} modus={aktiv} />
-            </Ueben>
-          )}
-        </>
-      )}
-    </RaumTrainer>
-  );
+  const themen = useMemo(() => themenImRaum(modi, raum), [modi, raum]);
+  const stand = useThemenStand();
+  const aktiv = themen.find((t) => t.id === params.modus);
+  if (params.modus === GEMISCHT && themen.length > 1) return <Mischtraining raum={raum} trainer={trainer} themen={themen} />;
+  if (aktiv) return <Thema key={aktiv.id} raum={raum} trainer={trainer} thema={aktiv} stand={stand.get(aktiv.id)} />;
+  return <Uebersicht raum={raum} trainer={trainer} themen={themen} stand={stand} />;
 }
 
-function ZahlenUebung({ raum, modus }) {
-  const erzeuge = useCallback((rng) => ERZEUGER[modus.id](rng, raum), [modus.id, raum]);
-  return <Uebung erzeuge={erzeuge} trainerId="zahlen" modusId={modus.id} spIds={modus.sp} spickzettel={SPICKZETTEL[modus.id]} arten={artenFuer(modus.id, raum)} />;
+// Themen, die es im Lernraum gibt – mit dem Stichpunkt, dem die Aufgaben dort zugerechnet werden
+function themenImRaum(modi, raum) {
+  return modi
+    .map((m) => {
+      const thema = THEMEN.find((t) => t.id === m.id);
+      return thema && { ...thema, spIds: m.sp, sp: m.sp.find((id) => inhalt.raumVon(id) === raum) ?? m.sp[0] };
+    })
+    .filter(Boolean);
+}
+
+function useThemenStand() {
+  const lernstand = useLernstand();
+  return useMemo(() => themenStand(alleEreignisse()), [lernstand]);
 }

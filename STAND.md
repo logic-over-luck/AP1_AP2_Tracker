@@ -96,9 +96,9 @@ nächsten offenen Punkt weiter.
 - Subnetz-Trainer neu aufgestellt (Abschnitt 6): drei Räume, Lernweg mit 23 Lektionen als Kapitel-Liste, jede Lektion gleich
   aufgebaut (Erklärung in Schritten, Prüfungsdefinition, Ausprobieren, Stolperfallen, Check), 10 Übungen nach Themen;
   Tests für `braucht`, Kompetenz-Abdeckung, Checks und Übungen; im Browser auf Desktop und Handy (390 px) durchgeklickt
-- Zahlen-Trainer mit Räumen Verstehen und Üben (Abschnitt 7): Lernweg mit 13 Lektionen (Zahlensysteme, Datenmengen,
-  Bits in der Praxis, Strom; Paritätsbit nur AP2), gleicher Rahmen wie beim Subnetz-Trainer (`trainer/lernweg/`);
-  der Subnetz-Lernweg verweist für Binär, Zweierpotenzen und Hex dorthin. Tests in `tests/lernweg.test.mjs`
+- Zahlen-Trainer neu gebaut (Abschnitt 7): sieben Themen, je Thema eine Seite mit Erklärung, Formeln, Werkzeug und
+  Aufgaben nebeneinander, dazu ein gemischtes Training; der Subnetz-Lernweg verweist für Binär, Zweierpotenzen und Hex
+  dorthin. Tests in `tests/zahlen.test.mjs`
 - Pseudocode-Trainer: eigener Interpreter (`src/bereiche/trainer/code/pseudo.js`), Grundlagen, Visualizer, Schreibtischtest, Puzzle, Fehlersuche, Suchen & Sortieren
 - SQL-Labor (nur AP2): sql.js läuft aus dem eingebetteten WebAssembly (`sql/laden.js`, kein fetch), 32 Abfragen,
   7 Änderungs-, 5 Struktur- und 6 Rechte-Aufgaben, freies Labor mit Beispielen; Prüfung über das Ergebnis,
@@ -162,8 +162,8 @@ nächsten offenen Punkt weiter.
   Lesart stimmt; genauere Ergebnisse als verlangt sind richtig; Eurobeträge haben 1 Cent Toleranz (Zwischenrundung).
 - **Netzplan-Knoten:** FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ, Start bei 0. Bei mehreren kritischen
   Wegen gilt jeder einzelne, mehrere oder die Menge aller kritischen Vorgänge als richtig.
-- **Aufgabenarten wählen:** Im Zahlen-Trainer (Raum Üben) lassen sich einzelne Arten an- und abwählen (z. B. nur Dez → Hex);
-  die Auswahl merkt sich der Browser. Andere Trainer haben das noch nicht.
+- **Aufgabenarten wählen:** Im Zahlen-Trainer lassen sich auf jeder Themenseite einzelne Arten an- und abwählen (z. B. nur
+  Dez → Hex); die Auswahl merkt sich der Browser je Thema. Andere Trainer haben das noch nicht.
 - **SQL-Labor (prüfungsnah):** Aufbau nach echten AP2-Prüfungen (Winter 2025/26, Sommer 2026 – nur das Format
   übernommen, keine Prüfungsinhalte im Repository). Das Schema steht kompakt direkt über dem Lösungsfeld: je Tabelle
   eine Karte mit Spalten, Typ und Schlüsselsymbol (anders als in der Prüfung, dort sind Schlüssel nicht markiert);
@@ -190,9 +190,8 @@ nächsten offenen Punkt weiter.
   Verstehen-Raum (Tabs → Schritte → Lektionen) wurde nicht weiter umgebaut, sondern ersetzt; Plan, Gliederung, Tabelle
   Kompetenz → Lektion und Dateistruktur in Abschnitt 6.
 - **Zahlensysteme gehören in den Zahlen-Trainer** (auf Wunsch, Oktober 2026): Binär- und Hexadezimalzahlen werden nicht im
-  Subnetz-Lernweg erklärt, sondern im Lernweg des Zahlen-Trainers. Der Subnetz-Lernweg zeigt Binärzahlen nur dort, wo er sie
-  braucht, und verweist mit einem Klick auf die Grundlage. Der Zahlen-Trainer hat dafür dieselben Räume bekommen; der
-  gemeinsame Rahmen steht in `trainer/lernweg/` (Abschnitt 7).
+  Subnetz-Lernweg erklärt, sondern im Zahlen-Trainer (Thema Zahlensysteme). Der Subnetz-Lernweg zeigt Binärzahlen nur dort,
+  wo er sie braucht, und verweist mit einem Klick auf die Grundlage (`lernweg/kurse.js`, Abschnitt 7).
 - **Subnetz-Visualizer:** eigener Raum „Visualisieren“, zum Nachschlagen (`subnetz/Visualizer.jsx`, Rechnung `zerlege` und
   `subnetzeImOktett` in `ip.js`, getestet). Kompakt auf einer Seite: Leiste (IP, Präfix-Regler, Beispiel), Rechenweg als vier
   Karten (Grenze, Maske, Blockgröße, Block der Adresse), 32 Bits von IP/Maske/Netz/Broadcast mit markierter Grenze (IP-Bits
@@ -430,10 +429,10 @@ Stolperstelle), dann wie bei IPv4 Netz- und Geräteteil, zum Schluss die Adresse
 
 ### 6.3 Eine Lektion
 
-Alle Lektionen haben denselben Aufbau (`trainer/lernweg/Lektion.jsx`, gilt auch für den Zahlen-Trainer):
+Alle Lektionen haben denselben Aufbau (`trainer/lernweg/Lektion.jsx`):
 
 1. **Kopf:** Block, Nummer, Begriff, Leitfrage; darunter „Baut auf“ mit den `braucht`-Lektionen (anklickbar, mit
-   Status) und gestrichelt den Grundlagen aus anderen Trainern (z. B. „Zahlen: Binärzahl“, Haken, wenn dort verstanden). Fehlt davon etwas, steht ein Hinweis mit Link darunter. Vor/zurück blättern und „Lernweg“ oben.
+   Status) und gestrichelt den Grundlagen aus anderen Trainern (z. B. „Zahlen: Binärzahl“ – Haken, wenn das Thema im Zahlen-Trainer sicher ist). Fehlt davon etwas, steht ein Hinweis mit Link darunter. Vor/zurück blättern und „Lernweg“ oben.
 2. **① Verstehen:** die Erklärung als **Schritte** (Baustein `Schritte`): 4–7 Schritte, jeder mit Titel, Text und Bild
    (Bitband, Zahlenstrahl mit Lupe, Netzskizze, Konsole …); „Weiter“ deckt den nächsten Schritt auf, „alle zeigen“ alles.
    Mitten in den Schritten **Zwischenfragen** (Baustein `Raten`): erst selbst überlegen, falsche Antworten bekommen
@@ -507,7 +506,7 @@ Die bestehenden Übungen bleiben und sind nach den Blöcken sortiert; Lücken si
 ### 6.7 Dateistruktur
 
 ```
-src/bereiche/trainer/lernweg/          Rahmen für Trainer mit Räumen (Subnetz, Zahlen) – siehe 7.3
+src/bereiche/trainer/lernweg/          Rahmen für Trainer mit Räumen (Subnetz); kurse.js löst Verweise auf Lektionen und Zahlen-Themen auf
 src/bereiche/trainer/subnetz/
   Subnetz.jsx              Räume Verstehen / Üben / Visualisieren, Spickzettel (nutzt lernweg/RaumTrainer)
   ip.js                    Rechnung IPv4/IPv6 + Helfer (Stellenwerte, Maskenwert, Eingaben lesen, MAC, IPv6-Art)
@@ -538,7 +537,7 @@ Entfernt: das alte `subnetz/Verstehen.jsx`, das alte `subnetz/lernweg.js`, `subn
 | Blockanfang/-ende raten mit typischen Fehlern | `lernweg.js` | `verstehen/rechnen.js` (Zwischenfragen in Netzadresse, Broadcast, Entscheidendes Oktett) |
 | „Für dich / für den Computer“ mit Faktenboxen | `Verstehen.jsx` → `Aufbau` | Lektion 1 (Bausteine `ZweiSichten`, `Fakten`) |
 | 32-Bit-Band mit Netz/Host-Farben und Grenze | `Bitband` | Baustein `Bitband` |
-| Bit-Tafel mit Stellenwerten, „Passt es noch?“ Schritt für Schritt | `Bits` | Bausteine `BitTafel` und `Umrechner`, jetzt im Zahlen-Trainer (`zahlen/verstehen/bausteine.jsx`) |
+| Bit-Tafel mit Stellenwerten, „Passt es noch?“ Schritt für Schritt | `Bits` | entfallen – Zahlensysteme übt der Zahlen-Trainer (Abschnitt 7, Werkzeug „Umrechner“) |
 | Präfix → Subnetzmaske für alle vier Oktette, die neun Maskenwerte | `Maske` | Bausteine `MaskenRechnung`, `MaskenWerte` (Lektion „Subnetzmaske“) |
 | Zahlenstrahl 0–255 in Blöcken mit Lupe und Trichter | `Strahl` | Baustein `Zahlenstrahl` (Block Subnetting, private Adressen), auch mit zwei Markierungen. Bis 4 Blöcke stehen die Bereiche im Block und darunter „Block mit der …“, ohne Lupe. Ab 8 Blöcken vergrößert die Lupe den Block mit der Zahl und seine Nachbarn („rund N-mal so groß“); ein Fenster auf der Leiste und ein gestrichelter Trichter zeigen den Ausschnitt. Dichte Schilder zeigen voneinander weg, Schilder am Rand ragen nicht hinaus |
 | Lupe auf die Blockgrenze, Blockgröße = Stellenwert des letzten Netzbits | `Grenze`, `Bloecke` | Baustein `Grenzlupe`, Schritt in der Lektion „Blockgröße“ |
@@ -565,97 +564,65 @@ gemeinsame Beispiel-Adresse oben – jede Lektion hat jetzt ihr eigenes, festes 
 - IPv6-Subnetting und Netz aufteilen (VLSM) sind für AP1 nicht belegt und deshalb nicht im Lernweg (Aufteilen bleibt als
   Zusatz-Übung).
 
-## 7. Zahlen-Trainer mit Lernweg und gemeinsamer Lernweg-Rahmen
+## 7. Zahlen-Trainer
 
-*Stand: umgesetzt (Oktober 2026), getestet (`tests/lernweg.test.mjs`), alle Lektionen im Browser auf Desktop und Handy geprüft.*
+*Stand: neu gebaut (Oktober 2026), getestet (`tests/zahlen.test.mjs`), im Browser auf Desktop und Handy geprüft.*
 
-Anlass: Binär- und Hexadezimalzahlen sind kein Netzwerkthema und wurden im Subnetz-Lernweg zu ausführlich erklärt.
-Sie stehen jetzt im Zahlen-Trainer, der dafür dieselben Räume wie der Subnetz-Trainer bekommen hat.
+Der frühere Zahlen-Trainer (Lernweg mit 13 Lektionen und getrennter Üben-Raum) wurde vollständig ersetzt, nicht umgebaut.
+Leitgedanke: so wenige Klicks wie möglich zwischen „Thema wählen“ und „rechnen“ – und alles, was man beim Rechnen braucht
+(Formeln, ein Werkzeug zum Ausprobieren, der Lösungsweg), steht neben der Aufgabe statt in einem anderen Raum.
 
-### 7.1 Räume
+### 7.1 Aufbau
 
-| Raum | Inhalt |
+| Seite | Inhalt |
 |---|---|
-| **Verstehen** | Lernweg: 4 Blöcke, 13 Lektionen (AP1: 12 – das Paritätsbit gibt es nur in AP2) |
-| **Üben** | die bisherigen 7 Übungen, nach denselben Blöcken sortiert (Aufgabenarten weiter wählbar) |
+| **Übersicht** | eine Kachel je Thema mit Stand („zuletzt 8 von 10 richtig · 23 gelöst“, Marke „sicher“) und die Kachel „Gemischtes Training“ |
+| **Themenseite** | Kopf, **Erklärung** zum Aufklappen (Worum es geht, So rechnest du, Beispiel, Stolperfallen, „Das übst du hier“ im Wortlaut der Inhaltsdatei); links die **Aufgaben** mit wählbaren Aufgabenarten, rechts **Formeln und Regeln** und ein **Werkzeug**; unten „Gehört zu“ |
+| **Gemischtes Training** | 10 Aufgaben quer durch alle Themen des Raums (jedes mindestens einmal), Fortschrittsbalken, am Ende eine Bilanz je Thema mit Sprung „Üben“ |
 
-Der Trainer gehört zu AP1 und AP2. In AP2 zeigt der Lernweg alle Lektionen (AP2 setzt AP1 voraus); Übungen, die es in
-AP2 nicht gibt, werden in der Lektion nicht verlinkt.
+Die Erklärung ist offen, bis die erste Aufgabe des Themas gelöst ist; danach entscheidet der Lernende (Einstellung
+`zahlen.erklaerung.<thema>`). Die gewählten Aufgabenarten merkt sich der Browser je Thema (`zahlen.arten.<thema>`).
+Auf schmalen Fenstern stehen Formeln und Werkzeug unter den Aufgaben.
 
-### 7.2 Gliederung
+### 7.2 Themen
 
-**Zahlensysteme** (Lektion 1–5)
+| Thema (Modus) | Aufgabenarten | Werkzeug | Kompetenzen |
+|---|---|---|---|
+| `zahlensysteme` Zahlensysteme | Dez → Bin, Bin → Dez, Dez → Hex, Hex → Dez, Bin → Hex, Hex → Bin, Oktal, Zweierpotenzen | Umrechner (eine Zahl in allen vier Basen, mit Rechenweg) | AP1-4-2-1 K1, K2, K8, K9 |
+| `praefixe` Bit, Byte und Präfixe | Bit ↔ Byte, GB → GiB, GiB → GB, GHz/Mbit/s & Co. | Einheiten-Umrechner | AP1-4-2-1 K3, K4, K5, K7; AP2-6-6-3 K2 |
+| `speicher` Speicherbedarf | Bild, Farbtiefe, Audio, Messwerte, Hochrechnen (mit „volle TiB“), Komprimierung, Mehrbedarf in %, Reicht der Speicher? | Bild-Rechner | AP1-4-2-2 K1, K2, K5–K9, K11; AP2-6-6-3 K1, K3, K5 |
+| `uebertragung` Übertragungsdauer | Dauer in Sekunden, Minuten und Sekunden, Nötige Rate, Übertragene Menge | Download-Rechner | AP1-4-2-2 K3, K4; AP2-6-6-3 K4, K5 |
+| `strom` Leistung und Stromkosten | P = U · I, Netzteil, Wirkungsgrad, Energie & Kosten, Stromkosten im Jahr (auch Last/Leerlauf), Mehrfachsteckdose, USB-Anschluss, Gesamtwirkungsgrad | Stromkosten-Rechner | AP1-4-2-3 K1–K8 |
+| `rechte` Dateirechte (chmod) | Oktal → rwx, rwx → Oktal, Rechte deuten, Rechte festlegen | chmod-Deuter | AP1-5-2-3 K3, K5 |
+| `paritaet` Paritätsbit (nur AP2/PB1) | Paritätsbit bilden, Fehler erkennen (0, 1 oder 2 gekippte Bits) | Paritäts-Prüfer | AP2-5-5-3 K1–K3 |
 
-| Nr | id | Begriff | Leitfrage | braucht | Grundlage |
-|---|---|---|---|---|---|
-| 1 | `stellenwert` | Stellenwertsystem | Warum ist die 3 in 300 mehr wert als in 30? | – | – |
-| 2 | `binaer` | Binärzahl | Wie liest man eine Zahl aus Nullen und Einsen? | 1 | – |
-| 3 | `dezimal-binaer` | Dezimal in binär umrechnen | Wie wird aus 200 eine Binärzahl? | 2 | – |
-| 4 | `zweierpotenzen` | Zweierpotenzen | Wie viele Werte passen in n Bit? | 2 | – |
-| 5 | `hex` | Hexadezimalzahl | Wie schreibt man 4 Bit mit einem Zeichen? | 3, 4 | – |
+Welche Themen ein Lernraum zeigt, entscheidet wie bei allen Trainern das Verzeichnis (`verzeichnis.js`: Modus = Thema,
+Stichpunkte je Modus). Reines Wissen (ASCII/Binärdatei, analog/digital, Befehle außer chmod) bleibt dem Lernplan
+überlassen; ein Test prüft, dass alle übrigen Kompetenzen der Stichpunkte einem Thema zugeordnet sind.
 
-**Datenmengen** (Lektion 6–9)
+### 7.3 Aufgaben und Wertung
 
-| Nr | id | Begriff | Leitfrage | braucht | Grundlage |
-|---|---|---|---|---|---|
-| 6 | `bit-byte` | Bit und Byte | Wie viel ist ein Byte? | 4 | – |
-| 7 | `praefixe` | Dezimal- und Binärpräfixe | Sind 1 kB 1.000 oder 1.024 Byte? | 4, 6 | – |
-| 8 | `speicherbedarf` | Speicherbedarf | Wie viel Speicher braucht ein Bild? | 4, 7 | – |
-| 9 | `uebertragung` | Übertragungsdauer | Wie lange dauert ein Download? | 6, 7 | – |
+- Eine Aufgabe zählt genau einmal: beim ersten Prüfen (richtig/falsch) oder sobald der Lösungsweg vor dem Prüfen
+  aufgedeckt wird (falsch). Nachbessern und erneut prüfen bleibt möglich. Ereignis: `{ e: 'aufgabe', tr: 'zahlen', m: <Thema>, sp, ok }`.
+- Der Stand je Thema (`zahlen/stand.js`) kommt aus diesen Ereignissen: Fenster der letzten 10, „sicher“ ab 5 Aufgaben mit
+  80 % richtig. Aufgaben des früheren Trainers (Modi `datenmenge`, `energie`) zählen für `speicher` und `strom` weiter.
+- Felder prüft der gemeinsame Prüfer der Rechentrainer (`rahmen/pruefen.js`): Komma und Punkt, Einheiten, Rundung wie in der
+  Aufgabe verlangt. Auswahlfelder mit bis zu vier Möglichkeiten sind Segmentknöpfe (ein Klick); Enter prüft, nach einer
+  richtigen Antwort führt Enter zur nächsten Aufgabe.
+- Verweise aus dem Subnetz-Lernweg (`zahlen:binaer`, `zahlen:hex`, `zahlen:zweierpotenzen`) löst `lernweg/kurse.js`
+  (`zielVon`) auf das Thema auf; der Haken erscheint, wenn das Thema „sicher“ ist.
 
-**Bits in der Praxis** (Lektion 10–11)
-
-| Nr | id | Begriff | Leitfrage | braucht | Grundlage |
-|---|---|---|---|---|---|
-| 10 | `dateirechte` | Dateirechte mit chmod | Was bedeutet chmod 754? | 2 | – |
-| 11 | `paritaet` | Paritätsbit | Wie merkt der Empfänger, dass ein Bit gekippt ist? | 2 | – (nur AP2) |
-
-**Leistung und Stromkosten** (Lektion 12–13)
-
-| Nr | id | Begriff | Leitfrage | braucht | Grundlage |
-|---|---|---|---|---|---|
-| 12 | `leistung` | Elektrische Leistung | Wie groß muss das Netzteil sein? | – | – |
-| 13 | `energie` | Energie und Stromkosten | Was kostet ein Server im Jahr? | 12 | – |
-
-Jede Lektion: Erklärung in 5–7 Schritten mit Zwischenfragen, „So sagst du es in der Prüfung“, ein eigenes Werkzeug
-(Basis-Rechner für jede Basis, Bit-Schalter mit Zielzahl, Restwert- und Stellenwertverfahren zum Mitklicken,
-Bit-Regler 1–32, Dreifach-Umrechner dezimal/binär/hex, Präfix-Umrechner mit Rechenweg, Bild-Rechner, Download-Rechner
-mit Vergleich verschiedener Leitungen, chmod-Baukasten, Paritäts-Strecke mit Störung, Netzteil-Planer,
-Stromkosten-Rechner), Stolperfallen, Merksatz und 3 Check-Fragen.
-
-Kompetenzen: alle von AP1-4-2-1, AP1-4-2-2, AP1-4-2-3, AP2-5-5-3 und AP2-6-6-3 sowie AP1-5-2-3-K3/K5 (chmod); die
-übrigen Kommandozeilen-Kompetenzen von AP1-5-2-3 (dir, ls, cp, alias …) gehören nicht in einen Zahlen-Trainer. Ein Test
-prüft die Abdeckung.
-
-### 7.3 Gemeinsamer Rahmen `trainer/lernweg/`
+### 7.4 Dateien
 
 ```
-lernweg.js        baueLernweg({ trainer, schluessel, bloecke, lektionen }, raum) → Lektionen nummeriert, je Raum gefiltert,
-                  Status, als Nächstes, Lücken (rein, getestet)
-kurse.js          alle Lernwege nach Trainer – für Verweise zwischen Trainern (Feld grundlagen: 'zahlen:binaer')
-fortschritt.js    verstandene Lektionen je Trainer (Ansichts-Einstellung '<trainer>.lernweg'), zurücksetzbar
-pruefen.js        Check-Antworten prüfen; Typen zahl, dezimal (Komma, Toleranz), text, binaer, hex; Trainer können
-                  eigene Typen mitgeben (Subnetz: ipv4, ipv6kurz, ipv6voll, iid)
-RaumTrainer.jsx   Kopf, Raum-Umschalter, „Gehört zu“; merkt sich die letzte Übung je Trainer
-Verstehen.jsx     Lernweg oder Lektion
-Lernweg.jsx       Kapitel-Liste mit Statuspunkten, Merkzettel je Block
-Lektion.jsx       Rahmen einer Lektion (Kopf mit „Baut auf“ und Grundlagen, ① bis ④, Fuß mit „Weiter“ und Übung)
-Check.jsx         Kurz-Check
-Ueben.jsx         Übungen nach Blöcken, „Dazu im Lernweg“
-bausteine.jsx     Schritte, Raten, Absatz, Fakten, Formel, Hinweis, Werkbank, Beispiele, Ergebnis, Konsole,
-                  Grundlage (Verweis-Hinweis) und GrundlageChip
-src/styles/lernweg.css   Stile des Rahmens (Präfix lw-)
+src/bereiche/trainer/zahlen/
+  Zahlen.jsx           Einstieg: Übersicht / Thema / gemischtes Training (?modus=), Themen je Raum, Stand je Thema
+  themen.js            je Thema Name, Kompetenzen, Spickzettel, Erklärung, Werkzeug (rein); VERWEISE für andere Trainer
+  aufgaben/index.js    erzeugeAufgabe(thema, rng, { sp, arten }), ARTEN, baueRunde (rein)
+  aufgaben/<thema>.js  Erzeuger je Thema: ARTEN und erzeuge(rng, art)
+  rechnen.js           Rechen- und Formathilfen: Einheiten, Basen, chmod, Parität (rein)
+  stand.js             Stand je Thema aus dem Lernstand (rein)
+  Uebersicht.jsx · Thema.jsx · Training.jsx · Werkzeug.jsx · Mischtraining.jsx · bausteine.jsx
+src/styles/zahlen.css  Stile (Präfix zt-)
+tests/zahlen.test.mjs  Themen, Erzeuger (alle Arten, 400 Startwerte), Werkzeuge, Rechenhilfen, Stand
 ```
-
-Zahlen-Trainer: `zahlen/Zahlen.jsx` (Räume, Spickzettel), `zahlen/verstehen/` (`lernweg.js`, `checks.js`,
-`bausteine.jsx` mit Stellen, BitTafel, Umrechner, Restwert, HexTafel, Nibbles, Treppe, Rechenweg; `inhalt/` je Block),
-Stile in `src/styles/zahlen.css` (Präfix zl-). Die Aufgabenerzeuger in `zahlen/aufgaben.js` sind unverändert.
-
-Ein neuer Trainer mit Lernweg braucht: Lernweg-Beschreibung, Checks, Inhalte, einen Modus `verstehen` mit
-`bereich: 'verstehen'` und Übungen mit `bereich: 'ueben'` und `thema` (= Block-ID) in `verzeichnis.js`, Eintrag in
-`lernweg/kurse.js`.
-
-### 7.4 Offen
-
-- Der Fortschritt beider Lernwege ist eine Ansichts-Einstellung und nicht in der Sicherung enthalten (wie 6.10).
-- Andere Rechen-Trainer (Kaufmännisch, Netzplan) könnten denselben Rahmen bekommen, wenn sie einen Lernweg brauchen.
