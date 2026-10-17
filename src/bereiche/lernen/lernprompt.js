@@ -30,7 +30,7 @@ function spAbschnitt(sp, stand, ueberschrift) {
   if (ueberschrift) zeilen.push(`### ${ueberschrift}`);
   zeilen.push(`Art: ${sp.art}`);
   if (sp.neu) {
-    // neuer Lernplan (Vorschau): Ziel statt Rahmentext, Grenzen und Kür stehen unten
+    // neuer Lernplan (Vorschau): Ziel statt Rahmentext, die Kür steht unten
     zeilen.push('', 'Ziel:', sp.neu.ziel);
   } else zeilen.push('', 'Rahmen (wie tief das Thema geht):', sp.rahmen);
   if (sp.unklar) {
@@ -43,11 +43,6 @@ function spAbschnitt(sp, stand, ueberschrift) {
   }
   zeilen.push('', 'Das muss ich können:');
   sp.koennen.forEach(([, text], i) => zeilen.push(`${i + 1}. ${text}`));
-  if (sp.neu?.grenzen.length) {
-    // Regelwerk v2.0 (D10): Grenzen trennen nur Prüfungsteile, sie begrenzen nicht das Verstehen
-    zeilen.push('', 'Für die Prüfung nicht nötig (gehört in einen anderen Prüfungsteil):');
-    for (const g of sp.neu.grenzen) zeilen.push(`- ${g.text}`);
-  }
   if (sp.neu?.kuer.length) {
     zeilen.push('', 'Freiwillig, wenn Zeit ist (Kür):');
     for (const k of sp.neu.kuer) zeilen.push(`- ${k.text}`);

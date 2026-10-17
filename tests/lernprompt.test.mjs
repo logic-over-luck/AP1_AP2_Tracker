@@ -73,13 +73,13 @@ test('Stichpunkt-Prompt mit unklarer Tiefe und eigener Notiz', () => {
   assert.ok(wdh.includes('schon abgehakt') && wdh.includes('So möchte ich wiederholen'));
 });
 
-test('Regelwerk v2.0 (D10): erst Prinzip und Warum, Prüfungsfragen erst nach der Erklärung, Grenzen und Kür ohne Bremse', () => {
+test('Regelwerk v2.0 (D10): erst Prinzip und Warum, Prüfungsfragen erst nach der Erklärung, Kür ohne Bremse, keine Grenzen', () => {
   const neu = baueIndex(vorschauAlle(ladeDaten(wurzel), wurzel));
   const sp = [...neu.sp.values()].find((s) => s.neu?.grenzen.length && s.neu?.kuer.length);
   const text = lernpromptStichpunkt(sp, neu);
   assert.ok(text.includes('Erkläre zuerst das Prinzip und das Warum, dann die Einzelheiten; Zusammenhänge zu Nachbarthemen und eigene Beispiele sind erwünscht.'));
   assert.ok(text.includes('Erst wenn du den ganzen Stichpunkt erklärt hast: Prüfe jede'));
-  assert.ok(text.includes('Für die Prüfung nicht nötig (gehört in einen anderen Prüfungsteil):'));
+  assert.ok(!text.includes('Für die Prüfung nicht nötig')); // Grenzen werden nicht mehr ausgegeben (Projektinhaber, 17.10.2026)
   assert.ok(text.includes('Freiwillig, wenn Zeit ist (Kür):'));
   for (const alt of ['nicht tiefer als nötig', 'nicht vertiefen', 'nicht abfragen']) assert.ok(!text.includes(alt), alt);
 });

@@ -347,7 +347,7 @@ function SpDetail({ sp, stand, raum }) {
   );
 }
 
-// Neuer Lernplan: „Baut auf“, Können-Aussagen (einklappbar, P29), Grenzen und Kür;
+// Neuer Lernplan: „Baut auf“, Können-Aussagen (einklappbar, P29) und Kür;
 // Stufe, Herkunft und Begründungen klein zum Aufklappen.
 const STUFE_NAME = { 1: 'Wiedergeben', 2: 'Verstehen', 3: 'Anwenden', 4: 'Beurteilen' };
 
@@ -518,7 +518,7 @@ function NeuerRahmen({ sp, stand }) {
   const [kuerOffen, setKuerOffen] = useState(false);
   const umschalten = (schluessel) => () => setAuf(auf === schluessel ? null : schluessel);
   const texte = new Map(sp.koennen);
-  const { koennen, grenzen, kuer } = sp.neu;
+  const { koennen, kuer } = sp.neu;
   const ohneKarten = koennen.filter((k) => k.status === 'neu' && !k.karten).length;
   return (
     <div class="voll np">
@@ -546,20 +546,6 @@ function NeuerRahmen({ sp, stand }) {
           </ol>
         </Aufklapp>
       </div>
-      {grenzen.length > 0 && (
-        <div class="voll__abschnitt">
-          <div class="ueberschrift-klein">
-            <Icon name="minus" groesse={12} /> Gehört nicht dazu
-          </div>
-          <ul class="np__liste">
-            {grenzen.map((g, i) => (
-              <li key={i} data-tip={g.begruendung ?? undefined}>
-                {g.text}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
       {kuer.length > 0 && (
         <div class="voll__abschnitt np__kuer">
           <div class="ueberschrift-klein np__kopf">

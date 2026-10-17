@@ -21,7 +21,7 @@ function suchTreffer(block, suche) {
   const sp = new Set();
   for (const id of block.sp) {
     const x = inhalt.sp.get(id);
-    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1]), x.neu?.ziel, x.neu?.kurz, ...(x.neu?.grenzen ?? []).map((g) => g.text), ...(x.neu?.kuer ?? []).map((k) => k.text)];
+    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1]), x.neu?.ziel, x.neu?.kurz, ...(x.neu?.kuer ?? []).map((k) => k.text)];
     if (texte.some((t) => normal(t).includes(s))) sp.add(id);
   }
   const passt = sp.size > 0 || normal(block.titel).includes(s) || normal(block.satz).includes(s);
