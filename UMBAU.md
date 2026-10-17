@@ -305,6 +305,9 @@ Jede abgeleitete Können-Aussage nennt die Regel, aus der sie kommt.
   Lernzettel von fachinformatiker.de zählen zusammen als eine. Stufe der Puffer-Aussage: die Stufe der Katalogstelle.
   Lehrbücher sind optional (nur die betroffene Stelle, nie ganze Bücher, nie eigene Themen, nie Tiefe). **Seit v2.0 (D1)
   aufgehoben:** Das Lehrbuch ist Quelle der Tiefe (4.0).
+- **P-INHABER** (seit 17.10.2026) Der Projektinhaber nimmt ein Thema ausdrücklich als Pflicht auf, auch über den
+  Katalog hinaus. Die Aussage hängt am fachlich nächsten Baustein, der Stichpunkt-Hinweis sagt, dass sie über den
+  Katalog hinausgeht. Bisher: O-Notation, Quicksort und Mergesort (PB2-2-1-1-K8, K9).
 
 ### 4.4 Grenzen
 

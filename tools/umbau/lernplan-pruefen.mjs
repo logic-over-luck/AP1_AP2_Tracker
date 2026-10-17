@@ -85,7 +85,7 @@ const alleIds = new Set([
 ]);
 const raumBausteine = R.gueltig; // eigene, aus früheren Räumen importierbare, Anhänge (tools/umbau/raum.mjs)
 const gebieteRaum = R.gebiete;
-const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-BEISPIELLISTE']);
+const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-BEISPIELLISTE', 'P-INHABER']);
 // v2.0 (D4, D5): Buch-Herkunft und Größe eines Stichpunkts aus dem Regelwerk
 const BUCH = new RegExp(regeln.buch?.herkunft?.regex ?? '^$');
 const [F3_MIN, F3_MAX] = [regeln.buch?.form?.f3_min ?? 3, regeln.buch?.form?.f3_max ?? 7];

@@ -16,8 +16,8 @@
    "stichpunkte": [
     {
      "id": "PB2-2-1-1",
-     "titel": "Such- und Sortierverfahren: lineare und binäre Suche, Bubble, Selection und Insertion Sort",
-     "ziel": "Die beiden Suchverfahren erklären und vergleichen, einen elementaren Sortieralgorithmus in Pseudocode schreiben, auch für Objekte nach einem Attribut, und die drei Sortierverfahren am Vorgehen unterscheiden.",
+     "titel": "Such- und Sortierverfahren: lineare und binäre Suche, Bubble, Selection und Insertion Sort, Quicksort, Mergesort und O-Notation",
+     "ziel": "Die beiden Suchverfahren erklären und vergleichen, einen elementaren Sortieralgorithmus in Pseudocode schreiben, auch für Objekte nach einem Attribut, und die drei Sortierverfahren am Vorgehen unterscheiden. Dazu die Laufzeit mit der O-Notation einordnen und Quicksort und Mergesort im Prinzip erklären.",
      "gebiete": [
       "G.PB2.01",
       "G.PB2.02"
@@ -104,12 +104,32 @@
        "herkunft": [
         "buch:FS2-2.3.3-S168"
        ]
+      },
+      {
+       "id": "PB2-2-1-1-K8",
+       "text": "Du kannst die O-Notation erklären und die bekannten Verfahren einordnen: Sie gibt an, wie der Aufwand mit der Datenmenge n wächst, ohne konstante Faktoren und meist für den Worst Case – O(1) gleichbleibend (Zugriff über den Index), O(log n) logarithmisch (binäre Suche), O(n) linear (lineare Suche), O(n log n) (Mergesort, Quicksort im Mittel), O(n²) quadratisch (Bubble, Selection und Insertion Sort).",
+       "kurz": "O-Notation und Laufzeitklassen",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.18",
+        "regel:P-INHABER"
+       ]
+      },
+      {
+       "id": "PB2-2-1-1-K9",
+       "text": "Du kannst Quicksort und Mergesort als Verfahren nach dem Prinzip „Teile und herrsche“ beschreiben: Quicksort wählt ein Pivotelement, ordnet kleinere Elemente links und größere rechts davon an und sortiert beide Teile rekursiv; Mergesort halbiert die Folge bis auf einzelne Elemente und fügt die sortierten Teile schrittweise zusammen. Beide brauchen im Mittel O(n log n) statt O(n²) Schritte, Quicksort fällt bei ungünstiger Pivotwahl auf O(n²), Mergesort braucht zusätzlichen Speicher.",
+       "kurz": "Quicksort und Mergesort: Teile und herrsche",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.04.18.3",
+        "regel:P-INHABER"
+       ]
       }
      ],
      "baut_auf": [
       "PB1-5-1-5"
      ],
-     "hinweis": "Der Katalog verlangt die Such- und Sortierverfahren nur zu „kennen“; das Prinzip erklären gehört dazu (P38, P-NÄCHSTE-STUFE), selbst geschrieben wird in den Prüfungen nur das Sortieren. Eine Liste von Objekten durchsuchen und true oder false zurückgeben kannst du aus PB1-5-1-5. Die Minimumsuche (2025W-PB2-A1-b, Muster in PB2-1-1-2) durchläuft die Liste wie die lineare Suche, sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Sortieren mit übergebener Vergleichsfunktion: PB2-2-1-4.",
+     "hinweis": "Der Katalog verlangt die Such- und Sortierverfahren nur zu „kennen“; das Prinzip erklären gehört dazu (P38, P-NÄCHSTE-STUFE), selbst geschrieben wird in den Prüfungen nur das Sortieren. Eine Liste von Objekten durchsuchen und true oder false zurückgeben kannst du aus PB1-5-1-5. Die Minimumsuche (2025W-PB2-A1-b, Muster in PB2-1-1-2) durchläuft die Liste wie die lineare Suche, sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Sortieren mit übergebener Vergleichsfunktion: PB2-2-1-4. O-Notation, Quicksort und Mergesort (K8, K9) gehen über den Katalog hinaus, der nur elementare Verfahren nennt; aufgenommen auf Wunsch des Projektinhabers. Verlangt eine Aufgabe einen „Sortieralgorithmus eigener Wahl“, darfst du Quicksort nennen, in Pseudocode ist Bubble Sort aber kürzer und sicherer.",
      "kuer": [
       {
        "text": "In echten Programmen sortiert man fast immer mit der fertigen, gut optimierten Sortierfunktion der Sprache oder Bibliothek und gibt die Richtung (absteigend) oder ein eigenes Kriterium als Parameter bzw. Vergleichsfunktion mit. Eigene Sortierverfahren schreibt man vor allem, um das Prinzip zu verstehen – und in der Prüfung, die einen selbst geschriebenen Algorithmus verlangt.",

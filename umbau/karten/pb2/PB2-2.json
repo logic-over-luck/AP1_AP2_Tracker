@@ -243,6 +243,62 @@
    "hinten": "Er wird zu Beginn jedes Durchlaufs auf false gesetzt und bei jedem Tausch auf true. Bleibt er false, ist das Array sortiert und das Verfahren endet vorzeitig – bei sortierten Daten schon nach dem ersten Durchlauf."
   },
   {
+   "id": "PB2-2-1-1-K8-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K8",
+   "vorne": "Was gibt die O-Notation an?",
+   "hinten": "Wie stark der Aufwand eines Algorithmus wächst, wenn die Datenmenge n größer wird – gezählt in Schritten, ohne konstante Faktoren, meist für den Worst Case."
+  },
+  {
+   "id": "PB2-2-1-1-K8-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K8",
+   "vorne": "Welche Laufzeitklasse in O-Notation haben lineare Suche, binäre Suche, Bubble Sort und der Zugriff auf `a[i]`?",
+   "hinten": "- lineare Suche: O(n)\n- binäre Suche: O(log n)\n- Bubble Sort: O(n²)\n- Zugriff auf `a[i]`: O(1)"
+  },
+  {
+   "id": "PB2-2-1-1-K8-3",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K8",
+   "vorne": "Die Datenmenge verdoppelt sich. Wie ändert sich die Laufzeit eines Verfahrens mit O(n) und eines mit O(n²)?",
+   "hinten": "- O(n): Sie verdoppelt sich.\n- O(n²): Sie vervierfacht sich, weil (2n)² = 4n²."
+  },
+  {
+   "id": "PB2-2-1-1-K8-4",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K8",
+   "vorne": "Ein Algorithmus hat zwei verschachtelte Schleifen, die jeweils über alle n Elemente laufen. Welche Laufzeit in O-Notation hat er?",
+   "hinten": "O(n²): Für jedes der n Elemente der äußeren Schleife läuft die innere n-mal, also n · n Schritte."
+  },
+  {
+   "id": "PB2-2-1-1-K9-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K9",
+   "vorne": "Wie arbeitet Quicksort?",
+   "hinten": "- ein Pivotelement wählen\n- aufteilen: kleinere Elemente links, größere rechts vom Pivot – das Pivot steht dann endgültig richtig\n- beide Teile auf dieselbe Weise rekursiv sortieren"
+  },
+  {
+   "id": "PB2-2-1-1-K9-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K9",
+   "vorne": "Wie arbeitet Mergesort?",
+   "hinten": "- die Folge halbieren, bis nur einzelne Elemente übrig sind\n- je zwei sortierte Teile zusammenfügen, indem man immer das kleinere der beiden vordersten Elemente übernimmt"
+  },
+  {
+   "id": "PB2-2-1-1-K9-3",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K9",
+   "vorne": "Was bedeutet das Prinzip „Teile und herrsche“ bei Quicksort und Mergesort?",
+   "hinten": "Das Problem wird in kleinere Teilprobleme zerlegt, diese werden rekursiv auf dieselbe Weise gelöst, und die Ergebnisse ergeben zusammen die Lösung."
+  },
+  {
+   "id": "PB2-2-1-1-K9-4",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K9",
+   "vorne": "Warum sind Quicksort und Mergesort bei großen Datenmengen schneller als Bubble Sort, und welchen Nachteil hat jeweils eines davon?",
+   "hinten": "Sie brauchen im Mittel O(n log n) statt O(n²) Schritte – bei 1.000 Elementen etwa 10.000 statt 1.000.000.\n- Quicksort: bei ungünstigem Pivot (z. B. schon sortierte Daten) O(n²)\n- Mergesort: braucht ein zusätzliches Array der Größe n"
+  },
+  {
    "id": "PB2-2-1-3-K5-1",
    "sp": "PB2-2-1-3",
    "k": "PB2-2-1-3-K5",
@@ -463,6 +519,46 @@
    "id": "PB2-2-1-3-K6-2",
    "entscheidung": "neu",
    "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S166)"
+  },
+  {
+   "id": "PB2-2-1-1-K8-1",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K8-2",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K8-3",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K8-4",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K9-1",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K9-2",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K9-3",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
+  },
+  {
+   "id": "PB2-2-1-1-K9-4",
+   "entscheidung": "neu",
+   "grund": "Projektinhaber 17.10.2026: über den Katalog hinaus als Pflicht aufgenommen (P-INHABER)"
   }
  ]
 }
