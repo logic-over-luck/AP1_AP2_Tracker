@@ -2210,7 +2210,6 @@ body {
   font-size: var(--t-s);
   margin-top: var(--s-1);
 }
-.sp__neu,
 .np-marke {
   display: inline-block;
   font-size: var(--t-xs);
@@ -2221,10 +2220,6 @@ body {
   color: var(--text-3);
   white-space: nowrap;
   vertical-align: 1px;
-}
-.sp__neu {
-  color: var(--akzent);
-  border-color: var(--akzent);
 }
 .np-marke + .np-marke {
   margin-left: var(--s-1);
@@ -2349,9 +2344,6 @@ body {
   font-weight: 500;
   color: var(--text-3);
 }
-.np__zahl-warn {
-  color: var(--warn);
-}
 
 /* „Baut auf“: Stichpunkte früherer Räume (E2) */
 .np-bautauf__satz {
@@ -2412,27 +2404,6 @@ body {
   color: var(--akzent);
 }
 
-/* „neu gegenüber …“ an einer Aussage (P36) */
-.np-marke--neu {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  white-space: normal;
-  text-align: left;
-  color: var(--akzent);
-  border-color: var(--akzent-linie);
-  font: inherit;
-  font-size: var(--t-xs);
-  cursor: pointer;
-  vertical-align: 1px;
-}
-* + .np-marke--neu {
-  margin-left: var(--s-1);
-}
-.np-marke--neu:hover,
-.np-marke--neu[aria-expanded='true'] {
-  background: var(--akzent-weich);
-}
 .np-neu {
   margin: var(--s-2) 0 var(--s-1);
   padding: var(--s-2) var(--s-3);

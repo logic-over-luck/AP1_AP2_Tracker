@@ -150,7 +150,6 @@ function SpZeile({ sp, an, gewaehlt, onWahl, suche, treffer, stand }) {
           <Treffer text={sp.titel} suche={suche} />
         </span>
         <span class="sp__info">
-          {sp.neu?.istNeu && <span class="sp__neu" data-tip="Neuer Stichpunkt im Lernplan">neu</span>}
           {notiz && <Icon name="notebook-pen" groesse={13} />}
           {sp.art !== 'Wissen' && (
             <span class="sp__art" data-tip={sp.art}>
@@ -362,26 +361,14 @@ function herkunftText(h) {
   return art === 'katalog' ? `Katalog ${wert}` : art === 'beleg' ? `Prüfung ${wert}` : art === 'regel' ? `Puffer-Regel ${wert}` : art === 'buch' ? `Lehrbuch ${buchText(wert)}` : h;
 }
 
-// Kleine graue Marke „Buch“ an Aussagen mit Buch-Herkunft (Regelwerk v2.0, D4)
-function BuchMarke({ k }) {
-  const buch = (k.herkunft ?? []).filter((h) => h.startsWith('buch:')).map((h) => buchText(h.slice(5)));
-  if (!buch.length) return null;
-  return (
-    <span class="np-marke" data-tip={`Aus dem Lehrbuch, Kapitel ${buch.join('; ')}`}>
-      Buch
-    </span>
-  );
-}
-
+// An der Zeile steht nur, was beim Lernen hilft; Herkunft (Katalog, Prüfung, Lehrbuch) und Umbau-Stand
+// stehen beim Aufklappen in der Meta-Zeile.
 function KoennenMarken({ k }) {
-  return (
-    <>
-      {k.status === 'neu' && (k.karten ? <span class="np-marke" data-tip="Diese Aussage kam beim Umbau des Lernplans neu dazu">neu im Plan</span> : <span class="np-marke np-marke--warn" data-tip="Neue Können-Aussage – Lernkarten folgen später">neu im Plan · noch keine Karten</span>)}
-      {k.status === 'verschoben' && <span class="np-marke" data-tip={`Karten von ${k.von} hierher umgehängt`}>umgehängt</span>}
-      {k.status === 'angepasst' && <span class="np-marke" data-tip="Aussage neu gefasst – die Karten stammen noch von der alten Fassung">angepasst</span>}
-      {k.vorgegeben && <span class="np-marke" data-tip="Wird in der Prüfung als Material vorgegeben">vorgegeben: {k.vorgegeben}</span>}
-    </>
-  );
+  return k.vorgegeben ? (
+    <span class="np-marke" data-tip="Wird in der Prüfung als Material vorgegeben">
+      vorgegeben: {k.vorgegeben}
+    </span>
+  ) : null;
 }
 
 // E2: Sprung zu einem Stichpunkt eines früheren Raums (wie Gegenstücke und Befehlspalette)
@@ -420,25 +407,7 @@ function BautAuf({ ids, stand }) {
   );
 }
 
-// „neu gegenüber …“ an einer Aussage zu importierten Bausteinen (P36); antippen zeigt, was neu ist
-function NeuMarke({ neu, offen, onUmschalten }) {
-  return (
-    <button
-      type="button"
-      class="np-marke np-marke--neu"
-      aria-expanded={offen}
-      data-tip={!offen && neu.was ? neu.was : undefined}
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        onUmschalten();
-      }}
-    >
-      <Icon name="plus" groesse={10} strich={2.6} /> neu gegenüber {neu.gegenueber.join(', ')}
-    </button>
-  );
-}
-
+// „neu gegenüber …“ an einer Aussage zu importierten Bausteinen (P36): steht aufgeklappt unter dem Satz
 function NeuText({ neu }) {
   const ziele = neu.gegenueber.map((id) => inhalt.sp.get(id)).filter(Boolean);
   return (
@@ -481,18 +450,11 @@ function Zeile({ kurz, offen, onUmschalten, marken, children }) {
 }
 
 function KoennenZeile({ k, text, offen, onUmschalten }) {
-  const [neuOffen, setNeuOffen] = useState(false);
-  const marken = (
-    <>
-      <KoennenMarken k={k} />
-      <BuchMarke k={k} />
-      {k.neu && <NeuMarke neu={k.neu} offen={neuOffen} onUmschalten={() => setNeuOffen(!neuOffen)} />}
-    </>
-  );
   return (
     <>
-      <Zeile kurz={k.kurz ?? text} offen={offen} onUmschalten={onUmschalten} marken={marken}>
+      <Zeile kurz={k.kurz ?? text} offen={offen} onUmschalten={onUmschalten} marken={k.vorgegeben ? <KoennenMarken k={k} /> : null}>
         <p class="np-zeile__satz">{text}</p>
+        {k.neu && <NeuText neu={k.neu} />}
         {k.erklaerung && <Rich class="np-erkl__text" text={k.erklaerung} />}
         <div class="np__meta">
           Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')} · <span class="mono">{k.id}</span>
@@ -500,7 +462,6 @@ function KoennenZeile({ k, text, offen, onUmschalten }) {
           {k.grund && <div>Änderung: {k.grund}</div>}
         </div>
       </Zeile>
-      {neuOffen && <NeuText neu={k.neu} />}
     </>
   );
 }
@@ -519,7 +480,6 @@ function NeuerRahmen({ sp, stand }) {
   const umschalten = (schluessel) => () => setAuf(auf === schluessel ? null : schluessel);
   const texte = new Map(sp.koennen);
   const { koennen, kuer } = sp.neu;
-  const ohneKarten = koennen.filter((k) => k.status === 'neu' && !k.karten).length;
   return (
     <div class="voll np">
       {sp.neu.bautAuf?.length > 0 && <BautAuf ids={sp.neu.bautAuf} stand={stand} />}
@@ -533,7 +493,6 @@ function NeuerRahmen({ sp, stand }) {
             {!offen && (
               <span class="np__zahl">
                 {koennen.length} {koennen.length === 1 ? 'Aussage' : 'Aussagen'}
-                {ohneKarten > 0 && <span class="np__zahl-warn"> · {ohneKarten} neu ohne Karten</span>}
               </span>
             )}
           </button>
