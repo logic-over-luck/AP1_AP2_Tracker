@@ -8,7 +8,13 @@ const PFAD_AUS_RAUM = { AP1: 'ap1', PB1: 'pb1', PB2: 'pb2', AP2: 'ap2', WISO: 'w
 
 export function leseRoute(hash = location.hash) {
   const [pfad, abfrage = ''] = hash.replace(/^#\/?/, '').split('?');
-  const teile = pfad.split('/').filter(Boolean).map(decodeURIComponent);
+  const teile = pfad.split('/').filter(Boolean).map((t) => {
+    try {
+      return decodeURIComponent(t);
+    } catch {
+      return t;
+    }
+  });
   const raum = RAUM_AUS_PFAD[teile[0]] ?? null;
   const params = Object.fromEntries(new URLSearchParams(abfrage));
   return { raum, bereich: teile[1] ?? 'start', unter: teile[2] ?? null, params };

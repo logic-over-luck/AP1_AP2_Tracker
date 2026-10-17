@@ -193,19 +193,38 @@ function Durchgang({ raum, zustand, pruefung, setZustand }) {
   const [z, setZ] = useState(zustand);
   // Eingaben sofort im Zustand, gespeichert mit kurzer Verzögerung (nicht bei jedem Tastendruck)
   const merker = useRef(null);
+  const ausstehend = useRef(null);
   const aendere = (neu, sofort = false) => {
     setZ(neu);
     clearTimeout(merker.current);
+    ausstehend.current = sofort ? null : neu;
     if (sofort) setZustand(neu);
-    else merker.current = setTimeout(() => setZustand(neu), 400);
+    else
+      merker.current = setTimeout(() => {
+        ausstehend.current = null;
+        setZustand(neu);
+      }, 400);
   };
-  useEffect(() => () => clearTimeout(merker.current), []);
+  // Beim Verlassen die letzte, noch nicht gespeicherte Eingabe nicht verlieren
+  useEffect(
+    () => () => {
+      clearTimeout(merker.current);
+      if (ausstehend.current) setZustand(ausstehend.current);
+    },
+    [],
+  );
 
+  // Durchgang beenden: eine noch ausstehende Eingabe darf ihn danach nicht wieder anlegen
+  const beenden = () => {
+    clearTimeout(merker.current);
+    ausstehend.current = null;
+    setZustand(null);
+  };
   const abbrechen = () => {
-    if (confirm('Probeprüfung abbrechen? Deine Antworten gehen verloren.')) setZustand(null);
+    if (confirm('Probeprüfung abbrechen? Deine Antworten gehen verloren.')) beenden();
   };
 
-  if (z.phase === 'fertig') return <Ergebnis raum={raum} z={z} pruefung={pruefung} schliessen={() => setZustand(null)} />;
+  if (z.phase === 'fertig') return <Ergebnis raum={raum} z={z} pruefung={pruefung} schliessen={beenden} />;
   if (z.phase === 'bewerten') return <KiBewertung z={z} pruefung={pruefung} aendere={aendere} abbrechen={abbrechen} />;
   return <Schreiben teil={teil} z={z} pruefung={pruefung} aendere={aendere} abbrechen={abbrechen} />;
 }

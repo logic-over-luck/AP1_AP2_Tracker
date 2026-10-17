@@ -4,12 +4,16 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import { createPortal } from 'preact/compat';
 import { Icon, SymbolKnopf, Knopf } from './bausteine.jsx';
 
+// Offene Dialoge, der letzte liegt oben: Nur er reagiert auf Esc und Tab
+const offeneDialoge = [];
+
 export function Dialog({ offen, titel, icon, onSchliessen, children, aktionen, breit }) {
   const ref = useRef(null);
   useEffect(() => {
     if (!offen) return;
     const vorher = document.activeElement;
     const taste = (e) => {
+      if (offeneDialoge[offeneDialoge.length - 1] !== taste) return;
       if (e.key === 'Escape') {
         e.stopPropagation();
         onSchliessen?.();
@@ -28,10 +32,12 @@ export function Dialog({ offen, titel, icon, onSchliessen, children, aktionen, b
         }
       }
     };
+    offeneDialoge.push(taste);
     document.addEventListener('keydown', taste, true);
     setTimeout(() => ref.current?.querySelector('[autofocus], .knopf--primaer, input, button')?.focus(), 30);
     return () => {
       document.removeEventListener('keydown', taste, true);
+      offeneDialoge.splice(offeneDialoge.indexOf(taste), 1);
       vorher?.focus?.();
     };
   }, [offen]);

@@ -6,6 +6,7 @@ import { useLernstand, erfasse, aktuellerStand } from '../../lernstand/store.js'
 import { kartenZustand } from '../../lernstand/ableiten.js';
 import { KARTEN_ABSTAND, KARTE_SICHER_AB, naechsteStufe, NOTE } from '../../lernstand/regeln.js';
 import { PRIO_RANG } from '../../daten/index.js';
+import { tageZwischen } from '../../lernstand/zeit.js';
 import { geheZu, link } from '../../router.js';
 import { Icon, Knopf, SymbolKnopf, Balken, Leer, Rich, Kbd, PrioMarke, Zahl } from '../../ui/bausteine.jsx';
 
@@ -299,6 +300,8 @@ function Sitzung({ raum, quelle }) {
   const gemerkt = stand.gemerkt.has(id);
   const stufe = ks?.stufe ?? 0;
   const vorschau = [0, 1, 2].map((n) => KARTEN_ABSTAND[naechsteStufe(stufe, n)]);
+  // Noch nicht fällig: „Gewusst“ lässt Stufe und Termin stehen (siehe ableiten)
+  if (ks?.faellig && stand.heute < ks.faellig) vorschau[NOTE.GEWUSST] = tageZwischen(stand.heute, ks.faellig);
   const tageText = (t) => (t === 0 ? 'gleich' : t === 1 ? '1 Tag' : `${t} Tage`);
 
   return (

@@ -8,7 +8,8 @@ import { baueIndex, PRIO_RANG } from '../src/daten/index.js';
 import { ableiten, blockZustand, kartenZustand, serieBerechnen } from '../src/lernstand/ableiten.js';
 import { tagPlus, tageZwischen, tagVon, datumAusTag } from '../src/lernstand/zeit.js';
 import { naechsteStufe, rangFuer, RAENGE, KARTEN_ABSTAND } from '../src/lernstand/regeln.js';
-import { migriere, sicherungErstellen, sicherungLesen, zusammenfuehren, laden, speichern, FORMAT, SicherungsFehler } from '../src/lernstand/speicher.js';
+import { migriere, sicherungErstellen, sicherungLesen, zusammenfuehren, laden, speichern, defekteStaende, FORMAT, SicherungsFehler } from '../src/lernstand/speicher.js';
+import { leseRoute } from '../src/router.js';
 import { heuteImFokus, tempo } from '../src/lernstand/empfehlung.js';
 import { TRAINER, trainerIn, uebungenFuer, modiIn } from '../src/bereiche/trainer/verzeichnis.js';
 
@@ -123,6 +124,42 @@ test('Lernkarten: Stufen und Fälligkeit', () => {
   assert.equal(s.karten.size, 0);
 });
 
+test('Lernkarten: vorzeitig „Gewusst“ steigt nicht auf, erst nach Ablauf des Abstands', () => {
+  const id = [...index.karten.keys()][0];
+  // Sechsmal am selben Tag gewusst: bleibt auf Stufe 2 (3 Tage), nicht „sicher“
+  const gleicherTag = Array.from({ length: 6 }, (_, i) => ({ t: T0 + i * 60000, e: 'karte', id, n: 2 }));
+  let s = ableiten(gleicherTag, index, heute);
+  assert.equal(s.karten.get(id).stufe, 2);
+  assert.equal(s.karten.get(id).faellig, tagPlus(heute, 3));
+  assert.equal(s.karten.get(id).n, 6);
+  // Nach drei Tagen fällig: jetzt eine Stufe höher
+  s = ableiten([...gleicherTag, { t: T0 + 3 * TAG, e: 'karte', id, n: 2 }], index, heute);
+  assert.equal(s.karten.get(id).stufe, 3);
+  // Vorzeitig nicht gewusst oder unsicher zählt dagegen sofort
+  s = ableiten([...gleicherTag, { t: T0 + TAG, e: 'karte', id, n: 0 }], index, heute);
+  assert.equal(s.karten.get(id).stufe, 0);
+  s = ableiten([...gleicherTag, { t: T0 + TAG, e: 'karte', id, n: 1 }], index, heute);
+  assert.equal(s.karten.get(id).stufe, 1);
+});
+
+test('Ein kaputtes Ereignis wird übersprungen, statt die Auswertung abzubrechen', () => {
+  const id = [...index.karten.keys()][0];
+  const sp = [...index.sp.keys()][0];
+  const s = ableiten(
+    [
+      { t: T0, e: 'pruefung', teil: 'AP1', max: 10, p: 5, sp: { [sp]: 1 } },
+      { t: T0 + 1, e: 'pruefung', teil: 'AP1', max: 10, p: 5, sp: null },
+      { t: T0 + 2, e: 'karte', id, n: 2 },
+    ],
+    index,
+    heute,
+  );
+  assert.equal(s.pruefungen.length, 2);
+  assert.equal(s.karten.get(id).stufe, 2);
+  const kaputt = { ...index, umzug: { umziehen: () => { throw new Error('kaputt'); } } };
+  assert.doesNotThrow(() => ableiten([{ t: T0, e: 'karte', id, n: 2 }], kaputt, heute));
+});
+
 test('Lernserie zählt bis gestern weiter, bricht bei Lücke ab', () => {
   const tage = new Map([
     [tagPlus(heute, -1), { xp: 5, n: 1 }],
@@ -191,6 +228,16 @@ test('Speicher: beschädigter Stand wird beiseitegelegt statt überschrieben', (
   assert.equal(r.ereignisse.length, 0);
   assert.ok(r.fehler);
   assert.ok([...daten.keys()].some((k) => k.includes('defekt')));
+  // und lässt sich zum Retten wieder abrufen
+  const mitListe = { ...speicher, get length() { return daten.size; }, key: (i) => [...daten.keys()][i] };
+  const defekt = defekteStaende(mitListe);
+  assert.equal(defekt.length, 1);
+  assert.equal(defekt[0].text, '{kaputt');
+});
+
+test('Router: kaputte Prozent-Kodierung im Link verhindert den Start nicht', () => {
+  assert.deepEqual(leseRoute('#/ap1/trainer/%E0'), { raum: 'AP1', bereich: 'trainer', unter: '%E0', params: {} });
+  assert.equal(leseRoute('#/pb2/trainer/sql%20labor').unter, 'sql labor');
 });
 
 test('Trainer-Zuordnung: jeder Stichpunkt außer „Wissen" wird geübt; SQL nur in AP2', () => {

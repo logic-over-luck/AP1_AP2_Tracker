@@ -49,6 +49,11 @@ export function App() {
     const { ladeFehler } = fehlerZustand();
     if (ladeFehler) melde(`Der gespeicherte Lernstand war beschädigt und wurde beiseitegelegt: ${ladeFehler}`, { fehler: true, dauer: 10000 });
   }, []);
+  // Speichern fehlgeschlagen (z. B. Speicher voll): einmal melden, bis es wieder klappt
+  const { speicherFehler } = fehlerZustand();
+  useEffect(() => {
+    if (speicherFehler) melde(speicherFehler, { fehler: true, dauer: 15000 });
+  }, [speicherFehler]);
 
   let titel = BEREICH_NAMEN[route.bereich] ?? '';
   if (route.bereich === 'trainer' && route.unter) titel = trainerById(route.unter)?.name ?? titel;
@@ -62,7 +67,7 @@ export function App() {
       bereich = <Karten raum={raum} unter={route.unter} params={route.params} />;
       break;
     case 'pruefung':
-      bereich = <PruefungBereich raum={raum} />;
+      bereich = <PruefungBereich key={raum} raum={raum} />;
       break;
     case 'trainer':
       bereich = <TrainerBereich raum={raum} trainerId={route.unter} params={route.params} />;

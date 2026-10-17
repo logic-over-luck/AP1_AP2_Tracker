@@ -94,7 +94,7 @@ export function Hilfe() {
           <p>Nach dem Aufdecken bewertest du selbst. Davon hängt ab, wann die Karte wiederkommt:</p>
           <ul>
             <li>
-              <strong>Gewusst</strong> – eine Stufe höher (eine neue Karte springt gleich auf 3 Tage). Abstände je Stufe: {KARTEN_ABSTAND.slice(1).join(', ')} Tage.
+              <strong>Gewusst</strong> – eine Stufe höher (eine neue Karte springt gleich auf 3 Tage). Abstände je Stufe: {KARTEN_ABSTAND.slice(1).join(', ')} Tage. Ist die Karte noch gar nicht fällig (etwa im Zufallsmix), bleiben Stufe und Termin, wie sie sind – aufsteigen geht nur mit Abstand.
             </li>
             <li>
               <strong>Unsicher</strong> – eine Stufe zurück, mindestens Stufe 1 (morgen wieder).

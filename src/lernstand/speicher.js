@@ -61,6 +61,19 @@ export function laden(speicher = globalThis.localStorage) {
   }
 }
 
+// Beim Laden beiseitegelegte, beschädigte Lernstände (neueste zuerst), damit man sie herunterladen und retten kann.
+export function defekteStaende(speicher = globalThis.localStorage) {
+  const liste = [];
+  try {
+    for (let i = 0; i < speicher.length; i++) {
+      const schluessel = speicher.key(i);
+      if (!schluessel?.startsWith(`${SCHLUESSEL}.defekt.`)) continue;
+      liste.push({ schluessel, zeit: Number(schluessel.split('.').pop()), text: speicher.getItem(schluessel) });
+    }
+  } catch {}
+  return liste.sort((a, b) => b.zeit - a.zeit);
+}
+
 export function speichern(ereignisse, speicher = globalThis.localStorage) {
   speicher.setItem(SCHLUESSEL, JSON.stringify({ format: FORMAT, ereignisse }));
 }

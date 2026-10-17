@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'preact/hooks';
 import { alleEreignisse, ersetzeAlle, useLernstand } from '../../lernstand/store.js';
-import { sicherungErstellen, sicherungLesen, zusammenfuehren, SicherungsFehler } from '../../lernstand/speicher.js';
+import { sicherungErstellen, sicherungLesen, zusammenfuehren, defekteStaende, SicherungsFehler } from '../../lernstand/speicher.js';
 import { useEinstellung, alleEinstellungenLoeschen } from '../../lernstand/einstellungen.js';
 import { tagVon, tageZwischen, datumKurz } from '../../lernstand/zeit.js';
 import { Icon, Knopf } from '../../ui/bausteine.jsx';
@@ -43,6 +43,7 @@ function SicherungsDialog({ offen, onSchliessen }) {
   const datei = useRef(null);
   const [modus, setModus] = useState('ersetzen');
   const anzahl = alleEreignisse().length;
+  const defekt = offen ? defekteStaende() : [];
 
   const sichern = () => {
     const jetzt = new Date();
@@ -125,6 +126,20 @@ function SicherungsDialog({ offen, onSchliessen }) {
           </Knopf>
           <input ref={datei} type="file" accept=".json,application/json" hidden onChange={einlesen} />
         </div>
+        {defekt.length > 0 && (
+          <div class="sicherung-zeile">
+            <div class="wachsen">
+              <div class="sicherung-zeile__titel">Beiseitegelegter Lernstand</div>
+              <div class="gedaempft">
+                Beim Start am {datumKurz(tagVon(defekt[0].zeit))} war der gespeicherte Lernstand beschädigt und wurde beiseitegelegt. Lade ihn herunter und versuche, ihn oben
+                einzulesen.
+              </div>
+            </div>
+            <Knopf icon="download" onClick={() => herunterladen(`lernstudio-beiseitegelegt-${tagVon(defekt[0].zeit)}.json`, defekt[0].text)}>
+              Herunterladen
+            </Knopf>
+          </div>
+        )}
         <div class="sicherung-zeile sicherung-zeile--gefahr">
           <div class="wachsen">
             <div class="sicherung-zeile__titel">Alles zurücksetzen</div>

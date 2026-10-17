@@ -4,7 +4,7 @@
 // übersprungen, ohne etwas zu beschädigen.
 
 import { tagVon, tagPlus, tageZwischen } from './zeit.js';
-import { PHASEN_ABSTAND, KARTEN_ABSTAND, KARTE_SICHER_AB, naechsteStufe, XP, rangFuer } from './regeln.js';
+import { PHASEN_ABSTAND, KARTEN_ABSTAND, KARTE_SICHER_AB, NOTE, naechsteStufe, XP, rangFuer } from './regeln.js';
 
 export function leererStand() {
   return {
@@ -44,126 +44,140 @@ export function ableiten(ereignisse, index, heute = tagVon(Date.now())) {
   const spJeBlockErledigt = new Map();
 
   for (const roh of ereignisse) {
-    // Lernstand-Umzug (P6): alte IDs auf die neuen umschreiben; das Protokoll selbst bleibt unverändert
-    const ev = index.umzug ? index.umzug.umziehen(roh) : roh;
-    switch (ev.e) {
-      case 'sp': {
-        const sp = index.sp.get(ev.id);
-        if (!sp) break;
-        const war = stand.spErledigt.has(ev.id);
-        if (ev.an && !war) {
-          stand.spErledigt.set(ev.id, ev.t);
-          spJeBlockErledigt.set(sp.block, (spJeBlockErledigt.get(sp.block) ?? 0) + 1);
-          stand.spXp.set(ev.id, ev.t);
-          buche(stand, ev.t, XP.stichpunkt);
-          const block = index.bloecke.get(sp.block);
-          if (block && spJeBlockErledigt.get(sp.block) === block.sp.length) {
-            if (!stand.blockErledigtAm.has(sp.block)) stand.blockErledigtAm.set(sp.block, ev.t);
-            if (!stand.blockBonus.has(sp.block)) {
-              stand.blockBonus.set(sp.block, ev.t);
-              buche(stand, ev.t, XP.blockGeschafft, false);
-            }
-          }
-        } else if (!ev.an && war) {
-          // Wieder abgewählt: Punkte zurück – am Tag, an dem sie gebucht wurden. So lässt sich
-          // durch An- und Abhaken nichts sammeln.
-          stand.spErledigt.delete(ev.id);
-          spJeBlockErledigt.set(sp.block, spJeBlockErledigt.get(sp.block) - 1);
-          if (stand.spXp.has(ev.id)) {
-            buche(stand, stand.spXp.get(ev.id), -XP.stichpunkt, false);
-            stand.spXp.delete(ev.id);
-          }
-          if (stand.blockBonus.has(sp.block)) {
-            buche(stand, stand.blockBonus.get(sp.block), -XP.blockGeschafft, false);
-            stand.blockBonus.delete(sp.block);
-          }
-        }
-        break;
-      }
-      case 'wdh': {
-        const block = index.bloecke.get(ev.id);
-        if (!block || !stand.blockErledigtAm.has(ev.id)) break;
-        const p = stand.phasen.get(ev.id) ?? [null, null, null];
-        if (ev.p < 1 || ev.p > 3 || p[ev.p - 1] !== null) break;
-        if (ev.p > 1 && p[ev.p - 2] === null) break;
-        p[ev.p - 1] = ev.t;
-        stand.phasen.set(ev.id, p);
-        buche(stand, ev.t, XP.wiederholung);
-        break;
-      }
-      case 'karte': {
-        if (!index.karten.has(ev.id)) break;
-        const k = stand.karten.get(ev.id) ?? { stufe: 0, faellig: null, n: 0, richtig: 0, zuletzt: null, note: null, verlauf: '' };
-        k.stufe = naechsteStufe(k.stufe, ev.n);
-        k.faellig = tagPlus(tagVon(ev.t), KARTEN_ABSTAND[k.stufe]);
-        k.n += 1;
-        if (ev.n === 2) k.richtig += 1;
-        k.zuletzt = ev.t;
-        k.note = ev.n;
-        k.verlauf = (k.verlauf + ev.n).slice(-8);
-        stand.karten.set(ev.id, k);
-        buche(stand, ev.t, XP.karte[ev.n] ?? 1);
-        break;
-      }
-      case 'merken':
-        if (ev.an) stand.gemerkt.add(ev.id);
-        else stand.gemerkt.delete(ev.id);
-        break;
-      case 'aufgabe': {
-        if (ev.sp && index.sp.has(ev.sp)) {
-          const a = stand.aufgaben.get(ev.sp) ?? { n: 0, ok: 0, zuletzt: null, fehlerZuletzt: null };
-          a.n += 1;
-          if (ev.ok) a.ok += 1;
-          else a.fehlerZuletzt = ev.t;
-          a.zuletzt = ev.t;
-          stand.aufgaben.set(ev.sp, a);
-        }
-        const tr = stand.trainer.get(ev.tr) ?? { n: 0, ok: 0 };
-        tr.n += 1;
-        if (ev.ok) tr.ok += 1;
-        stand.trainer.set(ev.tr, tr);
-        if (ev.ok && ev.a) stand.geloest.add(`${ev.tr}:${ev.a}`);
-        buche(stand, ev.t, ev.ok ? XP.aufgabeRichtig : XP.aufgabeVersucht);
-        break;
-      }
-      case 'fokus': {
-        const min = Math.max(0, Math.min(180, Math.round(ev.min ?? 0)));
-        stand.fokusMinuten += min;
-        buche(stand, ev.t, Math.floor(min / XP.fokusJeMinuten));
-        break;
-      }
-      case 'pruefung': {
-        if (!(ev.max > 0)) break;
-        stand.pruefungen.push({ t: ev.t, teil: ev.teil, titel: ev.titel, satz: ev.satz ?? null, p: ev.p, max: ev.max, dauer: ev.dauer ?? null, sp: ev.sp ?? {} });
-        // Punkte je Stichpunkt fließen wie Trainer-Aufgaben in Stärken und Schwächen ein: ab der Hälfte gilt es als gekonnt
-        for (const [id, [erreicht, max]] of Object.entries(ev.sp ?? {})) {
-          if (!index.sp.has(id) || !(max > 0)) continue;
-          const a = stand.aufgaben.get(id) ?? { n: 0, ok: 0, zuletzt: null, fehlerZuletzt: null };
-          a.n += 1;
-          if (erreicht >= max / 2) a.ok += 1;
-          else a.fehlerZuletzt = ev.t;
-          a.zuletzt = ev.t;
-          stand.aufgaben.set(id, a);
-        }
-        buche(stand, ev.t, XP.pruefung);
-        break;
-      }
-      case 'termin':
-        if (ev.r) stand.termine[ev.r] = ev.d ?? null;
-        break;
-      case 'notiz':
-        if (ev.text) stand.notizen.set(ev.id, ev.text);
-        else stand.notizen.delete(ev.id);
-        break;
-      default:
-        break;
-    }
+    // Lernstand-Umzug (P6): alte IDs auf die neuen umschreiben; das Protokoll selbst bleibt unverändert.
+    // Ein einzelnes kaputtes Ereignis (z. B. aus einer von Hand geänderten Sicherung) wird übersprungen,
+    // statt die ganze App am Start zu hindern. Es bleibt im Protokoll, gelöscht wird nichts.
+    try {
+      verarbeite(stand, spJeBlockErledigt, index, index.umzug ? index.umzug.umziehen(roh) : roh);
+    } catch {}
   }
 
   stand.heute = heute;
   stand.rang = rangFuer(stand.xp);
   stand.serie = serieBerechnen(stand.tage, heute);
   return stand;
+}
+
+function verarbeite(stand, spJeBlockErledigt, index, ev) {
+  switch (ev.e) {
+    case 'sp': {
+      const sp = index.sp.get(ev.id);
+      if (!sp) break;
+      const war = stand.spErledigt.has(ev.id);
+      if (ev.an && !war) {
+        stand.spErledigt.set(ev.id, ev.t);
+        spJeBlockErledigt.set(sp.block, (spJeBlockErledigt.get(sp.block) ?? 0) + 1);
+        stand.spXp.set(ev.id, ev.t);
+        buche(stand, ev.t, XP.stichpunkt);
+        const block = index.bloecke.get(sp.block);
+        if (block && spJeBlockErledigt.get(sp.block) === block.sp.length) {
+          if (!stand.blockErledigtAm.has(sp.block)) stand.blockErledigtAm.set(sp.block, ev.t);
+          if (!stand.blockBonus.has(sp.block)) {
+            stand.blockBonus.set(sp.block, ev.t);
+            buche(stand, ev.t, XP.blockGeschafft, false);
+          }
+        }
+      } else if (!ev.an && war) {
+        // Wieder abgewählt: Punkte zurück – am Tag, an dem sie gebucht wurden. So lässt sich
+        // durch An- und Abhaken nichts sammeln.
+        stand.spErledigt.delete(ev.id);
+        spJeBlockErledigt.set(sp.block, spJeBlockErledigt.get(sp.block) - 1);
+        if (stand.spXp.has(ev.id)) {
+          buche(stand, stand.spXp.get(ev.id), -XP.stichpunkt, false);
+          stand.spXp.delete(ev.id);
+        }
+        if (stand.blockBonus.has(sp.block)) {
+          buche(stand, stand.blockBonus.get(sp.block), -XP.blockGeschafft, false);
+          stand.blockBonus.delete(sp.block);
+        }
+      }
+      break;
+    }
+    case 'wdh': {
+      const block = index.bloecke.get(ev.id);
+      if (!block || !stand.blockErledigtAm.has(ev.id)) break;
+      const p = stand.phasen.get(ev.id) ?? [null, null, null];
+      if (ev.p < 1 || ev.p > 3 || p[ev.p - 1] !== null) break;
+      if (ev.p > 1 && p[ev.p - 2] === null) break;
+      p[ev.p - 1] = ev.t;
+      stand.phasen.set(ev.id, p);
+      buche(stand, ev.t, XP.wiederholung);
+      break;
+    }
+    case 'karte': {
+      if (!index.karten.has(ev.id)) break;
+      const k = stand.karten.get(ev.id) ?? { stufe: 0, faellig: null, n: 0, richtig: 0, zuletzt: null, note: null, verlauf: '' };
+      // Vorzeitig gewusst (Zufallsmix, Gemerkte, gleicher Tag): kein Aufstieg, sonst ließe sich eine Karte
+      // an einem Tag auf „sicher“ hochklicken, ohne dass ein Abstand gehalten wurde.
+      const vorzeitig = k.faellig !== null && tagVon(ev.t) < k.faellig;
+      if (!(vorzeitig && ev.n === NOTE.GEWUSST)) {
+        k.stufe = naechsteStufe(k.stufe, ev.n);
+        k.faellig = tagPlus(tagVon(ev.t), KARTEN_ABSTAND[k.stufe]);
+      }
+      k.n += 1;
+      if (ev.n === 2) k.richtig += 1;
+      k.zuletzt = ev.t;
+      k.note = ev.n;
+      k.verlauf = (k.verlauf + ev.n).slice(-8);
+      stand.karten.set(ev.id, k);
+      buche(stand, ev.t, XP.karte[ev.n] ?? 1);
+      break;
+    }
+    case 'merken':
+      if (ev.an) stand.gemerkt.add(ev.id);
+      else stand.gemerkt.delete(ev.id);
+      break;
+    case 'aufgabe': {
+      if (ev.sp && index.sp.has(ev.sp)) {
+        const a = stand.aufgaben.get(ev.sp) ?? { n: 0, ok: 0, zuletzt: null, fehlerZuletzt: null };
+        a.n += 1;
+        if (ev.ok) a.ok += 1;
+        else a.fehlerZuletzt = ev.t;
+        a.zuletzt = ev.t;
+        stand.aufgaben.set(ev.sp, a);
+      }
+      const tr = stand.trainer.get(ev.tr) ?? { n: 0, ok: 0 };
+      tr.n += 1;
+      if (ev.ok) tr.ok += 1;
+      stand.trainer.set(ev.tr, tr);
+      if (ev.ok && ev.a) stand.geloest.add(`${ev.tr}:${ev.a}`);
+      buche(stand, ev.t, ev.ok ? XP.aufgabeRichtig : XP.aufgabeVersucht);
+      break;
+    }
+    case 'fokus': {
+      const min = Math.max(0, Math.min(180, Math.round(ev.min ?? 0)));
+      stand.fokusMinuten += min;
+      buche(stand, ev.t, Math.floor(min / XP.fokusJeMinuten));
+      break;
+    }
+    case 'pruefung': {
+      if (!(ev.max > 0)) break;
+      stand.pruefungen.push({ t: ev.t, teil: ev.teil, titel: ev.titel, satz: ev.satz ?? null, p: ev.p, max: ev.max, dauer: ev.dauer ?? null, sp: ev.sp ?? {} });
+      // Punkte je Stichpunkt fließen wie Trainer-Aufgaben in Stärken und Schwächen ein: ab der Hälfte gilt es als gekonnt
+      for (const [id, wert] of Object.entries(ev.sp ?? {})) {
+        if (!Array.isArray(wert)) continue;
+        const [erreicht, max] = wert;
+        if (!index.sp.has(id) || !(max > 0)) continue;
+        const a = stand.aufgaben.get(id) ?? { n: 0, ok: 0, zuletzt: null, fehlerZuletzt: null };
+        a.n += 1;
+        if (erreicht >= max / 2) a.ok += 1;
+        else a.fehlerZuletzt = ev.t;
+        a.zuletzt = ev.t;
+        stand.aufgaben.set(id, a);
+      }
+      buche(stand, ev.t, XP.pruefung);
+      break;
+    }
+    case 'termin':
+      if (ev.r) stand.termine[ev.r] = ev.d ?? null;
+      break;
+    case 'notiz':
+      if (ev.text) stand.notizen.set(ev.id, ev.text);
+      else stand.notizen.delete(ev.id);
+      break;
+    default:
+      break;
+  }
 }
 
 // Lernserie: aufeinanderfolgende Tage mit mindestens einer Lernhandlung.
