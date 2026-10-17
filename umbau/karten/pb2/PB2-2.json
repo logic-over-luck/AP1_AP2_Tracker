@@ -1,0 +1,468 @@
+{
+ "ordner": "PB2-2",
+ "stand": "2026-10-16",
+ "auftrag": "umbau/auftraege/AP1-karten.md (für PB2 sinngemäß)",
+ "grundlage": "umbau/lernplan/pb2/PB2-2.json",
+ "karten": [
+  {
+   "id": "AP2-3-2-3-K1-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K1",
+   "vorne": "Wie arbeitet die lineare Suche?",
+   "hinten": "Die Elemente werden der Reihe nach mit dem gesuchten verglichen. Bei einem Treffer wird das Element bzw. sein Index zurückgegeben, nach dem letzten Element ohne Treffer ein Kennwert wie −1 oder null."
+  },
+  {
+   "id": "AP2-3-2-3-K1-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K1",
+   "vorne": "Setzt die lineare Suche sortierte Daten voraus?",
+   "hinten": "Nein, sie funktioniert auch auf unsortierten Daten."
+  },
+  {
+   "id": "AP2-3-2-3-K2-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K2",
+   "vorne": "Wie arbeitet die binäre Suche?",
+   "hinten": "- Element in der Mitte des Suchbereichs prüfen\n- Treffer: fertig\n- Gesuchtes kleiner: links weitersuchen, größer: rechts (bei aufsteigender Sortierung)\n- wiederholen, bis gefunden oder der Bereich leer ist"
+  },
+  {
+   "id": "AP2-3-2-3-K2-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K2",
+   "vorne": "Welche Variablen führt die binäre Suche, und wie werden sie angepasst?",
+   "hinten": "Linke und rechte Grenze; `mitte = (links + rechts) / 2` ganzzahlig. Gesuchtes kleiner: `rechts = mitte - 1`, größer: `links = mitte + 1`. Schleife, solange `links <= rechts`."
+  },
+  {
+   "id": "AP2-3-2-3-K6-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K2",
+   "vorne": "Welche Voraussetzung müssen die Daten für die binäre Suche erfüllen?",
+   "hinten": "Sie müssen nach dem Suchkriterium sortiert sein."
+  },
+  {
+   "id": "PB2-2-1-1-K2-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K2",
+   "vorne": "Wie viele Vergleiche braucht die binäre Suche bei 1.000 sortierten Elementen höchstens, und wie viele die lineare Suche?",
+   "hinten": "Binär höchstens 10, weil sich 1.000 Elemente in 10 Halbierungen auf eines verkleinern lassen (2¹⁰ = 1.024). Linear bis zu 1.000. Allgemein: etwa log₂(n) gegenüber n."
+  },
+  {
+   "id": "PB2-2-1-1-K2-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K2",
+   "vorne": "Die Daten sind unsortiert, und es wird nur ein einziges Mal gesucht. Welches Suchverfahren nimmst du, und warum?",
+   "hinten": "Die lineare Suche: Die binäre setzt sortierte Daten voraus, und erst zu sortieren kostet mehr als ein einzelner Durchlauf."
+  },
+  {
+   "id": "AP2-3-2-3-K3-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K4",
+   "vorne": "Wie ist Bubble Sort in Pseudocode aufgebaut?",
+   "hinten": "Zwei verschachtelte Schleifen. Innen werden benachbarte Elemente `a[j]` und `a[j+1]` verglichen und getauscht, wenn sie in falscher Reihenfolge stehen."
+  },
+  {
+   "id": "AP2-3-2-3-K3-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K4",
+   "vorne": "Warum kann bei Bubble Sort die innere Schleife mit jedem äußeren Durchlauf um ein Element kürzer werden?",
+   "hinten": "Nach jedem Durchlauf ist das größte der noch unsortierten Elemente ans Ende gewandert und steht bereits an seiner endgültigen Stelle."
+  },
+  {
+   "id": "AP2-3-2-3-K5-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K4",
+   "vorne": "Wie tauscht man die Werte von `a[i]` und `a[j]`?",
+   "hinten": "Über eine Hilfsvariable:\n`temp = a[i]`\n`a[i] = a[j]`\n`a[j] = temp`"
+  },
+  {
+   "id": "AP2-3-2-3-K5-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K4",
+   "vorne": "Warum braucht man beim Tausch zweier Werte eine Hilfsvariable?",
+   "hinten": "Ohne sie überschreibt `a[i] = a[j]` den alten Wert von `a[i]`; danach stünde in beiden Stellen derselbe Wert."
+  },
+  {
+   "id": "PB2-2-1-1-K4-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K4",
+   "vorne": "Ein Array `produkte` soll mit Bubble Sort aufsteigend nach Preis sortiert werden. Wie lautet die Vergleichs- und Tauschstelle?",
+   "hinten": "`if produkte[j].getPreis() > produkte[j + 1].getPreis() then` die Objekte tauschen:\n`temp = produkte[j]`\n`produkte[j] = produkte[j + 1]`\n`produkte[j + 1] = temp`\nVerglichen wird über den Getter, getauscht werden die ganzen Objekte."
+  },
+  {
+   "id": "PB2-2-1-1-K4-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K4",
+   "vorne": "Schreibe Bubble Sort in Pseudocode, der ein Array `a` mit `n` Elementen aufsteigend sortiert.",
+   "hinten": "`for i = 0 to n - 2`\n`  for j = 0 to n - 2 - i`\n`    if a[j] > a[j + 1] then`\n`      temp = a[j]`\n`      a[j] = a[j + 1]`\n`      a[j + 1] = temp`\n`    end if`\n`  end for`\n`end for`"
+  },
+  {
+   "id": "AP2-3-2-3-K4-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K5",
+   "vorne": "Wie arbeitet Selection Sort?",
+   "hinten": "Im unsortierten Teil das kleinste Element suchen und mit dem ersten unsortierten Element tauschen. Der sortierte Teil wächst so von vorn um ein Element je Durchlauf."
+  },
+  {
+   "id": "AP2-3-2-3-K4-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K5",
+   "vorne": "Wie arbeitet Insertion Sort?",
+   "hinten": "Das nächste Element aus dem unsortierten Teil nehmen und im bereits sortierten Teil an der richtigen Stelle einfügen; größere Elemente rücken dafür eine Stelle nach hinten."
+  },
+  {
+   "id": "AP2-3-2-3-K4-3",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K5",
+   "vorne": "Welches Sortierverfahren vergleicht immer benachbarte Elemente und tauscht sie bei falscher Reihenfolge?",
+   "hinten": "Bubble Sort."
+  },
+  {
+   "id": "PB2-2-1-3-K1-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K1",
+   "vorne": "Was ist Rekursion, und welche zwei Bestandteile braucht eine rekursive Funktion?",
+   "hinten": "Eine Funktion ruft sich selbst mit einem kleineren Teilproblem auf.\n- Abbruchbedingung (Basisfall): wird ohne Selbstaufruf gelöst\n- Rekursionsschritt: Selbstaufruf mit einem Wert, der sich dem Basisfall nähert, z. B. `n - 1` oder `n div 2`"
+  },
+  {
+   "id": "PB2-2-1-3-K1-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K1",
+   "vorne": "Warum bricht eine rekursive Funktion, deren Abbruchbedingung nie erreicht wird, mit einem Stack Overflow ab?",
+   "hinten": "Jeder Aufruf belegt einen eigenen Rahmen auf dem Aufrufstapel (Parameter, lokale Variablen, Rücksprungadresse), der erst nach dem Ende des Aufrufs frei wird. Ohne Abbruch kommen immer neue Rahmen hinzu, bis der Stapel voll ist."
+  },
+  {
+   "id": "PB2-2-1-3-K2-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K2",
+   "vorne": "Nenne je einen Vor- und einen Nachteil einer rekursiven gegenüber einer iterativen Lösung.",
+   "hinten": "- Vorteil: oft kürzer und eleganter, nah an der Problembeschreibung\n- Nachteil: braucht mehr Speicher auf dem Aufrufstapel und ist durch die vielen Aufrufe meist langsamer"
+  },
+  {
+   "id": "PB2-2-1-3-K3-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K3",
+   "vorne": "Die rekursive Funktion `binaer(n)` ruft für `n > 0` erst `binaer(n div 2)` auf und gibt danach `n mod 2` aus. Wie setzt du sie iterativ um?",
+   "hinten": "`reste = neue Liste`\n`while n > 0 do`\n`  reste.add(n mod 2)`\n`  n = n div 2`\n`end while`\n`for i = reste.size() - 1 to 0 step -1`\n`  ausgabe(reste.get(i))`\n`end for`"
+  },
+  {
+   "id": "PB2-2-1-3-K3-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K3",
+   "vorne": "Warum sammelt die iterative Fassung der Binärumrechnung die Reste in einer Liste, statt sie sofort auszugeben?",
+   "hinten": "Die rekursive Fassung gibt die Reste erst auf dem Rückweg aus, also in umgekehrter Reihenfolge. Die Schleife erzeugt die Reste von der niedrigsten Stelle an; erst rückwärts ausgegeben ergibt sich die richtige Zahl (11 → Reste 1, 1, 0, 1 → 1011)."
+  },
+  {
+   "id": "PB2-2-1-3-K4-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K4",
+   "vorne": "Wann laufen in einer rekursiven Funktion die Anweisungen vor und wann die Anweisungen nach dem Selbstaufruf?",
+   "hinten": "- vor dem Selbstaufruf: beim Abstieg, in der Reihenfolge der Aufrufe\n- nach dem Selbstaufruf: erst auf dem Rückweg, wenn der innere Aufruf fertig ist – also in umgekehrter Reihenfolge"
+  },
+  {
+   "id": "PB2-2-1-3-K4-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K4",
+   "vorne": "`binaer(n)`: wenn `n > 0`, zuerst `ausgabe(n mod 2)`, dann `binaer(n div 2)`. Was gibt `binaer(11)` aus, und warum ist das nicht die Binärzahl von 11?",
+   "hinten": "Ausgabe 1101. Die Ausgabe steht vor dem Selbstaufruf, die Reste erscheinen also in Aufrufreihenfolge – die niedrigste Stelle zuerst. Richtig ist 1011; dafür muss die Ausgabe hinter den Selbstaufruf."
+  },
+  {
+   "id": "PB2-2-1-4-K1-1",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K1",
+   "vorne": "Was ist eine generische Klasse?",
+   "hinten": "Eine Klasse mit Typparameter, z. B. `List<T>`. Der konkrete Typ wird erst bei der Verwendung festgelegt (`List<Kunde>`), sodass derselbe Code für verschiedene Datentypen typsicher funktioniert."
+  },
+  {
+   "id": "PB2-2-1-4-K1-2",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K1",
+   "vorne": "Welchen Vorteil hat eine `List<Kunde>` gegenüber einer Liste, die beliebige Objekte aufnimmt?",
+   "hinten": "Sie ist typsicher: Der Compiler lässt nur Kunden hinein, Fehler fallen beim Übersetzen statt zur Laufzeit auf, und beim Herausholen ist keine Typumwandlung nötig."
+  },
+  {
+   "id": "PB2-2-1-4-K2-1",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K2",
+   "vorne": "Was liefert eine Vergleichsfunktion `vergleiche(a, b)` nach der üblichen Festlegung?",
+   "hinten": "- 0, wenn a und b gleich sind\n- einen positiven Wert, wenn a größer ist\n- einen negativen Wert, wenn a kleiner ist"
+  },
+  {
+   "id": "PB2-2-1-4-K2-2",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K2",
+   "vorne": "Warum ist `return (int)(a.getGehalt() - b.getGehalt())` als Vergleichsfunktion für Gehälter (Kommazahlen) falsch, und wie geht es richtig?",
+   "hinten": "Das Abschneiden macht eine Differenz wie 0,5 zu 0 – verschiedene Gehälter gälten als gleich. Richtig mit Verzweigungen:\n`if a.getGehalt() > b.getGehalt() then return 1`\n`if a.getGehalt() < b.getGehalt() then return -1`\n`return 0`"
+  },
+  {
+   "id": "AP2-3-2-3-K5-3",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K3",
+   "vorne": "Eine Vergleichsfunktion `vergleiche(x, y)` wird deiner Sortierfunktion übergeben. Wo und wie setzt du sie ein?",
+   "hinten": "An der Vergleichsstelle: statt `a[j] > a[j + 1]` steht `vergleiche(a[j], a[j + 1]) > 0`. Ist das Ergebnis positiv, gehört das erste Element nach hinten, also wird getauscht. Maßgeblich ist, wie die Aufgabe die Rückgabe festlegt."
+  },
+  {
+   "id": "PB2-2-1-4-K3-1",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K3",
+   "vorne": "Wie greifst du in einem Sortieralgorithmus auf eine generische Liste statt auf ein Array zu, und wie sieht dann der Tausch aus?",
+   "hinten": "Lesen mit `get(j)`, Schreiben mit `set(j, x)`, Länge mit `size()`. Tausch:\n`temp = liste.get(j)`\n`liste.set(j, liste.get(j + 1))`\n`liste.set(j + 1, temp)`"
+  },
+  {
+   "id": "PB2-2-1-4-K3-2",
+   "sp": "PB2-2-1-4",
+   "k": "PB2-2-1-4-K3",
+   "vorne": "Welchen Vorteil hat es, der Sortierfunktion die Vergleichsfunktion als Parameter zu übergeben?",
+   "hinten": "Dieselbe Sortierfunktion sortiert nach beliebigen Kriterien, z. B. nach Kurs oder nach Datum, auf- oder absteigend. Es wird nur eine andere Vergleichsfunktion übergeben, der Sortiercode bleibt unverändert."
+  },
+  {
+   "id": "PB2-2-1-1-K6-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K6",
+   "vorne": "Warum gibt man die Laufzeit eines Sortierverfahrens für Best, Average und Worst Case an?",
+   "hinten": "Weil die Zahl der Vergleiche und Vertauschungen vom Ausgangszustand der Daten abhängt: bereits sortiert (oft Best Case), zufällig gemischt (Average Case), umgekehrt sortiert (oft Worst Case)."
+  },
+  {
+   "id": "PB2-2-1-1-K6-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K6",
+   "vorne": "Welche Eingabe ist für Bubble Sort mit Abbruchmerker der Best Case, welche der Worst Case?",
+   "hinten": "- Best Case: bereits sortiert – ein Durchlauf ohne Tausch, dann Abbruch\n- Worst Case: umgekehrt sortiert – n − 1 Durchläufe, in jedem wird getauscht"
+  },
+  {
+   "id": "PB2-2-1-1-K7-1",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K7",
+   "vorne": "Warum darf die innere Schleife von Bubble Sort in jedem Durchlauf ein Element früher enden?",
+   "hinten": "Weil nach jedem Durchlauf das größte noch unsortierte Element ans Ende gewandert ist und dort endgültig richtig steht; es muss nicht mehr verglichen werden."
+  },
+  {
+   "id": "PB2-2-1-1-K7-2",
+   "sp": "PB2-2-1-1",
+   "k": "PB2-2-1-1-K7",
+   "vorne": "Wozu dient der Merker `getauscht` in einem Bubble Sort?",
+   "hinten": "Er wird zu Beginn jedes Durchlaufs auf false gesetzt und bei jedem Tausch auf true. Bleibt er false, ist das Array sortiert und das Verfahren endet vorzeitig – bei sortierten Daten schon nach dem ersten Durchlauf."
+  },
+  {
+   "id": "PB2-2-1-3-K5-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K5",
+   "vorne": "Mit welchen vier Fragen prüfst du, ob sich ein Problem rekursiv lösen lässt?",
+   "hinten": "- Wiederholt sich derselbe Ablauf?\n- Ändern (verkleinern) sich die Daten je Durchlauf?\n- Bleibt das Verfahren gleich?\n- Gibt es eine Abbruchbedingung (einfachster Fall)?"
+  },
+  {
+   "id": "PB2-2-1-3-K5-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K5",
+   "vorne": "Eignet sich die Berechnung der Fakultät n! für eine rekursive Lösung? Begründe.",
+   "hinten": "Ja: n! = n · (n − 1)!, also derselbe Ablauf mit kleinerem n, das Verfahren bleibt gleich, und für n ≤ 1 steht das Ergebnis 1 ohne weiteren Aufruf fest."
+  },
+  {
+   "id": "PB2-2-1-3-K6-1",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K6",
+   "vorne": "Aus welchen zwei Teilen besteht jede rekursive Funktion?",
+   "hinten": "- Abbruchfall: einfachster Wert, das Ergebnis wird direkt zurückgegeben\n- rekursiver Fall: Selbstaufruf mit kleinerem Parameter, dessen Rückgabe weiterverarbeitet wird"
+  },
+  {
+   "id": "PB2-2-1-3-K6-2",
+   "sp": "PB2-2-1-3",
+   "k": "PB2-2-1-3-K6",
+   "vorne": "Schreibe eine rekursive Funktion `dual(zahl)`, die eine nicht negative Ganzzahl als Dualzahl-Text zurückgibt.",
+   "hinten": "- `if zahl < 2 then return text(zahl) end if`\n- `return dual(zahl div 2) + text(zahl mod 2)`\nDer Rest wird nach dem Aufruf angehängt, damit das höchstwertige Bit vorn steht."
+  }
+ ],
+ "nicht_abgefragt": [],
+ "unsicher": [],
+ "protokoll": [
+  {
+   "id": "AP2-3-2-3-K1-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K1-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K2-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K2-2",
+   "entscheidung": "bleibt",
+   "grund": "passt zum Beschreiben des Prinzips (Grenzen und Mitte), Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K6-1",
+   "entscheidung": "bleibt",
+   "grund": "passt (Voraussetzung sortiert), Aussage mit dem Vergleich zusammengelegt"
+  },
+  {
+   "id": "PB2-2-1-1-K2-1",
+   "entscheidung": "neu",
+   "grund": "Vergleich des Aufwands fehlte"
+  },
+  {
+   "id": "PB2-2-1-1-K2-2",
+   "entscheidung": "neu",
+   "grund": "Vergleich lineare und binäre Suche (unterscheiden, Stufe 2)"
+  },
+  {
+   "id": "AP2-3-2-3-K3-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K3-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K5-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich; laut alt_neu gehört der Tausch über die Hilfsvariable zu PB2-2-1-1-K4, deshalb dorthin gehängt (ID bleibt)"
+  },
+  {
+   "id": "AP2-3-2-3-K5-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich; Tausch über die Hilfsvariable gehört zu PB2-2-1-1-K4, deshalb dorthin gehängt (ID bleibt)"
+  },
+  {
+   "id": "PB2-2-1-1-K4-1",
+   "entscheidung": "neu",
+   "grund": "Sortieren von Objekten nach einem Attribut fehlte"
+  },
+  {
+   "id": "PB2-2-1-1-K4-2",
+   "entscheidung": "neu",
+   "grund": "ganzer Algorithmus als Schreibkarte (Stufe 3)"
+  },
+  {
+   "id": "AP2-3-2-3-K4-1",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K4-2",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "AP2-3-2-3-K4-3",
+   "entscheidung": "bleibt",
+   "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+  },
+  {
+   "id": "PB2-2-1-3-K1-1",
+   "entscheidung": "neu",
+   "grund": "Zusatzbaustein Rekursion, keine alte Karte"
+  },
+  {
+   "id": "PB2-2-1-3-K1-2",
+   "entscheidung": "neu",
+   "grund": "Aufrufstapel und Stapelüberlauf"
+  },
+  {
+   "id": "PB2-2-1-3-K2-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-2-1-3-K3-1",
+   "entscheidung": "neu",
+   "grund": "iterative Umsetzung (Beleg 2022W-PB2-A2-c)"
+  },
+  {
+   "id": "PB2-2-1-3-K3-2",
+   "entscheidung": "neu",
+   "grund": "Rückweg der Rekursion nachbilden"
+  },
+  {
+   "id": "PB2-2-1-3-K4-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-2-1-3-K4-2",
+   "entscheidung": "neu",
+   "grund": "Beispiel der Aussage"
+  },
+  {
+   "id": "PB2-2-1-4-K1-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-2-1-4-K1-2",
+   "entscheidung": "neu",
+   "grund": "typsicher erläutern"
+  },
+  {
+   "id": "PB2-2-1-4-K2-1",
+   "entscheidung": "neu",
+   "grund": "Aussage ohne alte Karte"
+  },
+  {
+   "id": "PB2-2-1-4-K2-2",
+   "entscheidung": "neu",
+   "grund": "Fall der Aussage (Kommazahlen vergleichen)"
+  },
+  {
+   "id": "AP2-3-2-3-K5-3",
+   "entscheidung": "bearbeitet",
+   "grund": "Kern passt; Antwort um die konkrete Auswertung (> 0 → tauschen) ergänzt, wie sie die Aussage verlangt"
+  },
+  {
+   "id": "PB2-2-1-4-K3-1",
+   "entscheidung": "neu",
+   "grund": "generische Liste mit get, set, size"
+  },
+  {
+   "id": "PB2-2-1-4-K3-2",
+   "entscheidung": "neu",
+   "grund": "Nutzen des Funktionsobjekts"
+  },
+  {
+   "id": "PB2-2-1-1-K6-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S167)"
+  },
+  {
+   "id": "PB2-2-1-1-K6-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S167)"
+  },
+  {
+   "id": "PB2-2-1-1-K7-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S168)"
+  },
+  {
+   "id": "PB2-2-1-1-K7-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.3-S168)"
+  },
+  {
+   "id": "PB2-2-1-3-K5-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S165)"
+  },
+  {
+   "id": "PB2-2-1-3-K5-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S165)"
+  },
+  {
+   "id": "PB2-2-1-3-K6-1",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S166)"
+  },
+  {
+   "id": "PB2-2-1-3-K6-2",
+   "entscheidung": "neu",
+   "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.2-S166)"
+  }
+ ]
+}

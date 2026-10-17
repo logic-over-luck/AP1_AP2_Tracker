@@ -1,0 +1,493 @@
+{
+ "oberblock": {
+  "id": "PB2-3",
+  "titel": "Fehler finden, Debugging und Unit-Tests",
+  "raum": "PB2",
+  "gebiete": [
+   "G.PB2.01",
+   "G.PB2.03"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB2-3-1",
+   "titel": "Code prüfen und Fehler beheben",
+   "satz": "Fremden Code mit Testdaten von Hand durchgehen, Fehler eingrenzen und berichtigen, Debugger und print-Debugging gezielt einsetzen und Code mit selbst geschriebenen Unit-Tests absichern. Schreibtischtest und Fehlerarten kennst du aus AP1 (AP1-8-2-3, AP1-8-2-4), Ausnahmen und try/catch aus PB1-5-1-2.",
+   "stichpunkte": [
+    {
+     "id": "PB2-3-1-1",
+     "titel": "Schreibtischtest und Fehler im Algorithmus lokalisieren",
+     "ziel": "Einen gegebenen, auch längeren oder rekursiven Algorithmus mit Testdaten von Hand ausführen, aus den Abweichungen den Fehler mit Zeilennummer bestimmen und den Code berichtigen oder ergänzen.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.01.3",
+       "anteil": "Ablaufverfolgung (Schreibtischtest)"
+      },
+      {
+       "id": "AP2a.02.01.1",
+       "anteil": "Fehler finden und beheben"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB2-A1-c",
+      "2022S-PB2-A2-bb",
+      "2022W-PB2-A2-aa",
+      "2022W-PB2-A2-ab",
+      "2023S-PB2-A3-aa",
+      "2023S-PB2-A3-ab",
+      "2025W-PB2-A3-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-3-1-1-K1",
+       "text": "Du kannst über den Schreibtischtest aus AP1 hinaus eine Ablaufverfolgung für längeren Code mit einer vorgegebenen Datenverlaufstabelle durchführen und rekursive Aufrufe verfolgen: jeden Aufruf mit seinen eigenen Variablenwerten festhalten, bis zur Abbruchbedingung absteigen und die Rückkehr Aufruf für Aufruf nachvollziehen.",
+       "kurz": "Ablaufverfolgung bei längerem und rekursivem Code",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.3",
+        "beleg:2022W-PB2-A2-aa",
+        "beleg:2023S-PB2-A3-aa"
+       ],
+       "neu": {
+        "gegenueber": [
+         "AP1-8-2-3"
+        ],
+        "was": "rekursive Aufrufe und längerer Code mit vorgegebener Datenverlaufstabelle"
+       }
+      },
+      {
+       "id": "PB2-3-1-1-K2",
+       "text": "Du kannst aus den Abweichungen zwischen erwartetem und tatsächlichem Ergebnis die Ursache im Code analysieren und die fehlerhafte Zeile mit Zeilennummer bestimmen, auch wenn zwei Fehler zusammenwirken.",
+       "kurz": "Fehlerursache und fehlerhafte Zeile bestimmen",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.02.01.1",
+        "katalog:AP2a.03.01.3",
+        "beleg:2025W-PB2-A3-bb",
+        "beleg:2023S-PB2-A3-aa"
+       ]
+      },
+      {
+       "id": "PB2-3-1-1-K3",
+       "text": "Du kannst über das Korrigieren einzelner Zeilen aus AP1 hinaus mehrere Fehler in einem längeren Code zusammenhängend korrigieren und fehlende Code-Teile ergänzen, zum Beispiel Vergleichsoperatoren so anpassen, dass ein gegebener Unit-Test besteht, oder den vergessenen Verarbeitungsblock für die letzte Gruppe nach der Schleife einfügen (Gruppenwechsel: PB2-1).",
+       "kurz": "Mehrere Fehler korrigieren, fehlende Teile ergänzen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.01.1",
+        "beleg:2022S-PB2-A2-bb"
+       ],
+       "neu": {
+        "gegenueber": [
+         "AP1-8-2-2",
+         "AP1-8-2-4"
+        ],
+        "was": "mehrere zusammenhängende Korrekturen und fehlende Code-Teile ergänzen"
+       }
+      },
+      {
+       "id": "PB2-3-1-1-K4",
+       "text": "Du kannst in gegebenem Code typische inhaltliche Fehler finden, die über die Fehlerquellen aus AP1-8-2-4 hinausgehen: falscher Startwert (z. B. 0 statt des ersten Elements beim Minimum), die letzte Gruppe wird nach der Schleife nicht mehr ausgewertet, falsche Variable im Ausdruck (Monats- statt Jahreszähler), überflüssige Anweisung, die ein Flag wieder zurücksetzt, fehlende Rückgabe (return), Ausgabe vor statt nach dem rekursiven Aufruf (Ergebnis in umgekehrter Reihenfolge).",
+       "kurz": "Typische inhaltliche Fehler im Code",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.01.1",
+        "beleg:2021W-PB2-A1-c",
+        "beleg:2025W-PB2-A3-bb",
+        "beleg:2022W-PB2-A2-ab"
+       ],
+       "neu": {
+        "gegenueber": [
+         "AP1-8-2-4"
+        ],
+        "was": "PB2-typische Fehlerbilder: Startwert, letzte Gruppe, falsche Variable, überflüssige Anweisung, fehlende Rückgabe, Rekursionsreihenfolge"
+       }
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-2-2",
+      "AP1-8-2-3",
+      "AP1-8-2-4"
+     ],
+     "hinweis": "Fehlersuche in einem Struktogramm (2021W-PB2-A1-c) zählt nach Z4 für die Fehlersuche im Algorithmus. Falsche Schleifengrenze und vertauschter Vergleichsoperator stehen in AP1-8-2-4 und PB2-1-1-1; das Gruppenwechsel-Muster selbst (P37) und die Wirkung der Stellung einer Anweisung zum Selbstaufruf stehen in PB2-1 bzw. PB2-2-1-3 – hier geht es um das Finden und Beheben. 2023S-PB2-A3-ab (13 Punkte): die IHK-Lösung ergänzt nach der Schleife denselben Auswerteblock für den letzten Monat und teilt im Jahresdurchschnitt durch den Jahres- statt den Monatszähler."
+    },
+    {
+     "id": "PB2-3-1-2",
+     "titel": "Debugging und Fehlerbehandlung",
+     "ziel": "Den Debugger und print-Debugging gezielt zur Fehlersuche einsetzen, die passende Technik wählen und festlegen, wie ein Programm unbrauchbare Eingaben bereinigt.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.01.1",
+       "anteil": "Debugging, Breakpoint"
+      },
+      {
+       "id": "AP2b.03.08.2",
+       "anteil": "print-Debugging"
+      },
+      {
+       "id": "AP2b.04.17.5",
+       "anteil": "Eingaben bereinigen (über PB1-5-1-2 hinaus)"
+      }
+     ],
+     "teilaufgaben": [
+      "2025S-PB2-A2-bc"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-3-1-2-K1",
+       "text": "Du kannst den Debugger gezielt einsetzen, um einen gegebenen Fehler einzugrenzen: einen Breakpoint vor die verdächtige Stelle setzen, im Einzelschritt weitergehen (Step over führt einen Methodenaufruf als Ganzes aus, Step into springt in die Methode hinein) und die Werte der Variablen beobachten, bis einer vom erwarteten Wert abweicht.",
+       "kurz": "Debugger: Breakpoint, Step over, Step into",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.01.1"
+       ]
+      },
+      {
+       "id": "PB2-3-1-2-K4",
+       "text": "Du kannst über PB1-5-1-2 hinaus für unbrauchbare Texteingaben eine Vorgehensweise festlegen: die Eingabe zuerst bereinigen (z. B. mit trim führende und folgende Leerzeichen entfernen), eine danach leere Eingabe wie eine fehlende behandeln und eine festgelegte Ersatzregel anwenden, etwa ohne Vorgabe des Arztes die hinterlegte Standardmedikation verwenden, statt mit der unbrauchbaren Eingabe weiterzuarbeiten.",
+       "kurz": "Unbrauchbare Texteingaben: Bereinigung und Ersatzregel",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.17.5",
+        "beleg:2025S-PB2-A2-bc"
+       ],
+       "neu": {
+        "gegenueber": [
+         "PB1-5-1-2"
+        ],
+        "was": "Eingabe bereinigen (trim) und eine nur aus Leerzeichen bestehende Eingabe wie eine fehlende behandeln"
+       }
+      },
+      {
+       "id": "PB2-3-1-2-K5",
+       "text": "Du kannst für eine Fehlersuche begründet auswählen, ob du den Debugger oder print-Debugging (Zwischenwerte und Zustände gezielt ausgeben oder protokollieren) einsetzt: print-Debugging oder Logging, wenn kein Debugger zur Verfügung steht, der Fehler nur im Betrieb auftritt oder das Anhalten am Breakpoint den Ablauf verändert (z. B. Zeitabläufe); den Debugger, wenn sich der Fehler in der Entwicklungsumgebung nachstellen lässt und du Schritt für Schritt nachsehen willst.",
+       "kurz": "Debugger oder print-Debugging: Auswahl",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "katalog:AP2a.02.01.1"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-5-1-2",
+      "AP1-8-2-4"
+     ],
+     "hinweis": "Ausnahmen mit try/catch und die Reaktion einer Methode auf Fehlerfälle stehen in PB1-5-1-2; Sonderfälle im Pseudocode abfangen steht in PB2-1-1-1. Ablaufverfolgung ist der Schreibtischtest (PB2-3-1-1-K1)."
+    },
+    {
+     "id": "PB2-3-1-3",
+     "titel": "Unit-Tests schreiben und prüfen, Regressionstests",
+     "ziel": "Aufbau und Eigenschaften guter Unit-Tests beschreiben, zu einer Anforderung selbst einen Unit-Test schreiben (auch testgetrieben), einen gegebenen Unit-Test gegen den Code prüfen und Regressionstests einordnen.",
+     "gebiete": [
+      "G.PB2.03"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.08.2",
+       "anteil": "Unit-Test, TDD, Regressionstest"
+      }
+     ],
+     "teilaufgaben": [
+      "2022S-PB2-A2-aa",
+      "2022S-PB2-A2-ab",
+      "2022S-PB2-A2-ba",
+      "2024S-PB2-A3-ab",
+      "2025W-PB2-A3-aa"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-3-1-3-K2",
+       "text": "Du kannst über PB1-9-1-4 hinaus Aufbau und Eigenschaften guter Unit-Tests beschreiben: Eine Testmethode prüft eine einzelne Einheit (Methode, Klasse) mit assertEquals(erwartet, tatsächlich); gute Unit-Tests folgen F.I.R.S.T. – schnell (Fast), unabhängig voneinander (Independent), wiederholbar mit gleichem Ergebnis (Repeatable), selbstprüfend ohne manuelle Kontrolle (Self-Validating), rechtzeitig vor dem Produktivcode geschrieben (Timely).",
+       "kurz": "F.I.R.S.T.-Eigenschaften guter Unit-Tests",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "beleg:2022S-PB2-A2-aa",
+        "beleg:2022S-PB2-A2-ab",
+        "beleg:2025W-PB2-A3-aa",
+        "buch:FS2-2.4.3-S207",
+        "buch:FS2-2.4.3-S208"
+       ],
+       "neu": {
+        "gegenueber": [
+         "PB1-9-1-4"
+        ],
+        "was": "Aufbau einer Testmethode mit assertEquals und F.I.R.S.T.-Eigenschaften"
+       }
+      },
+      {
+       "id": "PB2-3-1-3-K3",
+       "text": "Du kannst einen gegebenen Unit-Test gegen den Code überprüfen: jeden assertEquals-Aufruf mit der Methode von Hand nachrechnen und je Testfall eintragen, ob er besteht (OK) oder fehlschlägt (Fehler).",
+       "kurz": "Gegebenen Unit-Test gegen Code prüfen",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "beleg:2022S-PB2-A2-ba"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K4",
+       "text": "Du kannst den Zweck von Regressionstests erläutern: Nach jeder Änderung werden die vorhandenen Tests erneut ausgeführt, damit bereits funktionierende Teile nicht unbemerkt kaputtgehen.",
+       "kurz": "Zweck von Regressionstests",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.2",
+        "beleg:2024S-PB2-A3-ab",
+        "buch:FS2-2.4.1-S202"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K5",
+       "text": "Du kannst zu einer Anforderung einen Unit-Test schreiben: Testfälle für Normalfall, Grenzen und Fehlerfälle als assertEquals(erwartet, methode(...)) aufschreiben, auch bevor der Code existiert (Test Driven Development: erst ein fehlschlagender Test, dann gerade so viel Code, dass er besteht, dann aufräumen – Red, Green, Refactor).",
+       "kurz": "Unit-Test zur Anforderung, auch testgetrieben",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.08.2"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K6",
+       "text": "Du kannst erläutern, warum testgetriebene Entwicklung eher eine Entwurfs- als eine Teststrategie ist: Die Tests entstehen vor dem Code und legen fest, was er leisten muss, sie steuern so Schritt für Schritt die Entwicklung und geben sofort Rückmeldung – anders als Tests, die erst nach der Implementierung geschrieben werden.",
+       "kurz": "TDD als Entwurfsstrategie",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.3-S637"
+       ]
+      },
+      {
+       "id": "PB2-3-1-3-K7",
+       "text": "Du kannst den Einsatz testgetriebener Entwicklung beurteilen: Vorteile sind hohe Codequalität, eine einfache Fehleranalyse dank gezielter Tests und kein überflüssiger Code; Nachteile sind, dass nur einzelne Units geprüft werden (Integrations- und Systemtest bleiben nötig), dass viele kleine Tests gepflegt werden müssen und veralten können und dass der Blick auf die Gesamtarchitektur fehlt.",
+       "kurz": "TDD: Vor- und Nachteile",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.9.3-S637"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-9-1-4"
+     ],
+     "hinweis": "Was ein Unit-Test im Rahmen der Teststufen ist, steht in PB1-9-1-4; wann ein Testfall als bestanden gilt, in PB2-4-1-2-K3. Den Code nach einem fehlgeschlagenen Unit-Test korrigieren (2022S-PB2-A2-bb) steht in PB2-3-1-1-K3. Das Lehrbuch (FS2 2.4.3) übergibt in einem JUnit-5-Beispiel die Fehlermeldung als ersten Parameter von assertEquals; das ist die Reihenfolge von JUnit 4 – richtig ist in JUnit 5 die Meldung als letzter Parameter: assertEquals(erwartet, tatsächlich, meldung).",
+     "kuer": [
+      {
+       "text": "Ein Testframework kennzeichnet Testmethoden, bietet gemeinsame Vorbereitung und Aufräumen vor bzw. nach jedem Test oder einmal für alle sowie Zeitlimits und stellt neben assertEquals weitere Zusicherungen bereit (assertTrue und assertFalse für Bedingungen, assertNotEquals, fail für einen Zweig, der nie erreicht werden darf), jeweils mit optionaler Fehlermeldung. Ein fehlgeschlagener Test ist ein Failure, wenn eine Zusicherung nicht stimmt (der Code rechnet falsch), oder ein Error, wenn eine unerwartete Ausnahme den Test schon vor der Prüfung abgebrochen hat.",
+       "kurz": "Testframework: Aufbau, Zusicherungen, Ergebnisse",
+       "quellen": [
+        "buch:FS2-2.4.3"
+       ],
+       "grund": "RK2: Werkzeugdetails eines Testframeworks (Kennzeichnung, Vorbereitung, Assert-Methoden, Failure/Error); die Prüfung nutzt assertEquals und bestanden/fehlgeschlagen (K2, K3)"
+      },
+      {
+       "text": "Refactoring heißt, Code umzubauen – Wiederholungen entfernen, Namen verbessern, lange Methoden aufteilen –, ohne sein Verhalten zu ändern. Dass das Verhalten gleich geblieben ist, zeigen die vorhandenen Tests, die danach weiter bestehen müssen; deshalb ist Refactoring im TDD-Zyklus der dritte Schritt nach Red und Green.",
+       "kurz": "Refactoring ohne Verhaltensänderung",
+       "quellen": [
+        "buch:GS-5.9.3"
+       ],
+       "grund": "RK2: Refactoring ist ein Teilschritt von TDD ohne eigenen Baustein; K5 nennt nur das Aufräumen, nicht die Verhaltensgleichheit"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-3-3-3-K2",
+    "status": "gestrichen",
+    "grund": "P36: Eingaben erkennen, die einen Fehler oder eine Ausnahme auslösen, steht in AP1-8-2-4-K3 und PB1-5-1-2; eine erwartete Ausnahme als Testergebnis steht in PB2-4-1-2-K3. PB2-3-1-2-K4 ist auf das Bereinigen von Eingaben gekürzt."
+   },
+   {
+    "alt": "AP2-5-2-3-K1",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K1",
+    "grund": "über AP1 hinaus: Rekursion, längerer Code mit Datenverlaufstabelle (Ablaufverfolgung)"
+   },
+   {
+    "alt": "AP2-5-2-3-K2",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K2",
+    "grund": "mit Zeilennummer"
+   },
+   {
+    "alt": "AP2-5-2-3-K3",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K2",
+    "grund": "in st2 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-2-3-K4",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K3",
+    "grund": "berichtigen oder ergänzen"
+   },
+   {
+    "alt": "AP2-5-2-3-K5",
+    "status": "angepasst",
+    "neu": "PB2-3-1-1-K4",
+    "grund": "mit Beispielen aus den Prüfungen"
+   },
+   {
+    "alt": "AP2-5-3-1-K1",
+    "status": "angepasst",
+    "neu": "PB2-3-1-2-K1",
+    "grund": "Debugger gezielt einsetzen (Stufe 3, Katalog AP2a.02.01)"
+   },
+   {
+    "alt": "AP2-5-3-1-K2",
+    "status": "verschoben",
+    "neu": "PB2-3-1-1-K1",
+    "grund": "Ablaufverfolgung = Schreibtischtest (raeume-ap2.json); in PB2-3-1-1-K1 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-3-1-K3",
+    "status": "verschoben",
+    "neu": "PB2-3-1-2-K5",
+    "grund": "print-Debugging: Technik begründet auswählen"
+   },
+   {
+    "alt": "AP2-5-3-1-K4",
+    "status": "verschoben",
+    "neu": "PB2-3-1-3-K5",
+    "grund": "TDD gehört zu den Unit-Tests; mit „Unit-Test schreiben“ zusammengeführt (Stufe 3)"
+   },
+   {
+    "alt": "AP2-5-3-1-K5",
+    "status": "gestrichen",
+    "grund": "E2: formale und inhaltliche Fehler unterscheiden steht in AP1-8-2-4"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
+  "hinweis": "PB2-Ordner (P33).",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Schreibtischtests und Fehlersuche (2021W-A1-c, 2022W-A2-a, 2023S-A3-a, 2025W-A3-b), Unit-Tests (2022S-A2, 2024S-A3-ab, 2025W-A3-aa) und 2025S-A2-bc gegen die Musterlösungen gelesen."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.4.3": "Lehrbuch Westermann „IT-Berufe“ FS2 2.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.9.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.9.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Fehler finden, Schreibtischtest",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-1-K1",
+      "PB2-3-1-1-K2",
+      "PB2-3-1-1-K3",
+      "PB2-3-1-1-K4"
+     ]
+    },
+    {
+     "thema": "Unit-Tests",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-3-K2",
+      "PB2-3-1-3-K3",
+      "PB2-3-1-3-K5"
+     ]
+    },
+    {
+     "thema": "Regressionstests",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-3-K4"
+     ]
+    },
+    {
+     "thema": "Fehlerbehandlung",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-3-1-2-K4"
+     ]
+    },
+    {
+     "thema": "Code Coverage, Äquivalenzklassen, Testverfahren, Black-Box-Test, White-Box-Test",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2-4"
+     ]
+    },
+    {
+     "thema": "Ein Testframework kennzeichnet Testmethoden, bietet gemeinsame Vorbereitung und Aufräumen vor bzw. nach jedem Test oder ",
+     "quellen": [
+      "buch:FS2-2.4.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-3-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Refactoring heißt, Code umzubauen – Wiederholungen entfernen, Namen verbessern, lange Methoden aufteilen –, ohne sein Ve",
+     "quellen": [
+      "buch:GS-5.9.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-3-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    }
+   ]
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-3-1-3-K6",
+     "PB2-3-1-3-K7"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB2-3-1-3-K4",
+     "PB2-3-1-3-K2"
+    ],
+    "kuer": [
+     "PB2-3-1-3",
+     "PB2-3-1-3"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB2-3-1-3"
+    ]
+   }
+  ]
+ }
+}

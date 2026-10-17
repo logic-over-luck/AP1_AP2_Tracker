@@ -1,0 +1,103 @@
+{
+  "hinweis": "Themen, die in Originalprüfungen verlangt wurden, aber im Katalog nicht wörtlich stehen (E5: katalogfremde Themen aufdecken). Jeder Zusatzbaustein nennt den nächsten Katalogbezug und wird wie ein Katalog-Baustein abdeckungspflichtig. Neue Einträge nur mit Beleg (Teilaufgaben-ID). Feld „raum“: Wohnort des Zusatzbausteins (E2).",
+  "bausteine": {
+    "ZB.ipv4-subnetting": {
+      "titel": "IPv4-Subnetting: zu Adresse und Präfix Netzadresse, Broadcastadresse, Hostbereich und Hostanzahl bestimmen",
+      "katalogbezug": "AP1.04.05.5",
+      "begruendung": "Der Katalog nennt nur „IP-Adressen“ (AP1.04.05.5) und „IP(v4/v6)-Konfiguration“ (AP1.04.01.3), nicht das Berechnen von Netz- und Broadcastadressen; Prüfungen verlangen es.",
+      "erster_beleg": "2022F-A3-fb",
+      "raum": "AP1"
+    },
+    "ZB.ipv6-subnetting": {
+      "titel": "IPv6-Präfixe aufteilen: Standortpräfix und Teilnetz-ID erkennen, Anzahl der Teilnetze bestimmen, Adressen aus einem Präfix vergeben",
+      "katalogbezug": "AP1.04.01.3",
+      "begruendung": "Der Katalog nennt „IP(v4/v6)-Konfiguration“ (AP1.04.01.3) gleichrangig für IPv4 und IPv6, aber kein Aufteilen von Präfixen; Prüfungen verlangen es.",
+      "erster_beleg": "2022H-A3-c",
+      "raum": "AP1"
+    },
+    "ZB.datendarstellung": {
+      "titel": "Datendarstellung: Bit und Byte, Binär- und Hexadezimalzahlen, Zeichencodierung (ASCII/Binärformat), Farbtiefe (z. B. 2^24 Farben)",
+      "katalogbezug": "AP1.03.03.4.1",
+      "begruendung": "Der Katalog nennt Datenmengen digitalisierter Dokumente (AP1.03.03.4.1) und die Präfixe im Anhang, aber nicht Zahlensysteme, Zeichencodierung oder Farbtiefe; Prüfungen verlangen sie (und Subnetting/IPv6 setzen Binär- und Hexadezimalzahlen voraus).",
+      "erster_beleg": "2024F-A3-c",
+      "raum": "AP1"
+    },
+    "ZB.rechnung": {
+      "titel": "Rechnung lesen und prüfen: kaufmännische Zeitpunkte (Bestellung, Lieferung, Rechnung), Rechnungsprüfung, Rabatt und Skonto, Zahlungshilfen (z. B. GiroCode)",
+      "katalogbezug": "AP1.03.04.8",
+      "begruendung": "Der Katalog nennt den Angebotsvergleich (AP1.03.04.8) und enthält im Anhang eine Musterrechnung, aber nicht das Prüfen und Bezahlen einer Rechnung; die Prüfung 2025H verlangt es.",
+      "erster_beleg": "2025H-A1-a",
+      "raum": "AP1"
+    },
+    "ZB.erechnung": {
+      "titel": "eRechnung: Ziel (automatische Verarbeitung), strukturiertes Datenformat mit Daten- und visuellem Aspekt, Prüfung gegen die Spezifikation (Schema, Validator)",
+      "katalogbezug": "AP2b.04.20.2",
+      "begruendung": "Der AP2-Katalog nennt Datenaustauschformate wie XML (AP2b.04.20.2) und Validierungen (AP2b.05.02.2), aber nicht die elektronische Rechnung; die Prüfung 2025W-PB1 verlangt Ziel und Aspekte der eRechnung.",
+      "erster_beleg": "2025W-PB1-A2-ba",
+      "raum": "PB1"
+    },
+    "ZB.change-request": {
+      "titel": "Change-Request-Management: Änderungswünsche während des Projekts erfassen, bewerten, entscheiden und umsetzen",
+      "katalogbezug": "AP2b.04.02",
+      "begruendung": "Weder AP1- noch AP2-Katalog nennen den Umgang mit Änderungsanforderungen im Projekt; die Prüfung 2024W-PB1 verlangt, den Begriff zu erläutern. Nächster Katalogbezug: Vorgehensmodelle (AP2b.04.02), die sich im Umgang mit Änderungen unterscheiden.",
+      "erster_beleg": "2024W-PB1-A1-c",
+      "raum": "PB1"
+    },
+    "ZB.prozedur-trigger": {
+      "titel": "Stored Procedure und Trigger: gespeicherte Abläufe in der Datenbank, die aufgerufen bzw. bei einem Ereignis (INSERT, UPDATE, DELETE) automatisch ausgeführt werden",
+      "katalogbezug": "AP2a.02.03.6",
+      "begruendung": "Der Katalog nennt Datenbankabfrage und Datenpflege (AP2a.02.03.6) und im SQL-Anhang keine Prozeduren oder Trigger; die Prüfung 2022S-PB2 verlangt, beide zu beschreiben.",
+      "erster_beleg": "2022S-PB2-A4-aa",
+      "raum": "PB2"
+    },
+    "ZB.rekursion": {
+      "titel": "Rekursion: Funktion ruft sich selbst auf (Abbruchbedingung), Vor- und Nachteile gegenüber Iteration, rekursiven Algorithmus iterativ umsetzen",
+      "katalogbezug": "AP2b.04.16",
+      "begruendung": "Der Katalog nennt Algorithmen erstellen (AP2b.04.16), aber nicht die Rekursion; die Prüfung 2022W-PB2 verlangt Vor- und Nachteile und eine iterative Umsetzung.",
+      "erster_beleg": "2022W-PB2-A2-b",
+      "raum": "PB2"
+    },
+    "ZB.generik-funktionsobjekte": {
+      "titel": "Generische Klassen (Typparameter wie List<T>) und Funktionsobjekte (Vergleichsfunktion als Parameter, z. B. für Sortieren)",
+      "katalogbezug": "AP2b.04.17",
+      "begruendung": "Der Katalog nennt OOP-Konzepte (AP2b.04.17) ohne Generik und ohne Funktionen als Parameter; die Prüfungen 2022W-PB2 und 2024S-PB2 verlangen beides.",
+      "erster_beleg": "2022W-PB2-A1-c",
+      "raum": "PB2"
+    },
+    "ZB.wiso-konjunktur": {
+      "titel": "Konjunktur und Preisniveau: Konjunkturphasen an Indikatoren (BIP, Arbeitslosigkeit, Preise, Nachfrage, Lager) erkennen, Maßnahmen zur Konjunkturbelebung, Real- und Nominaleinkommen",
+      "katalogbezug": "WISO.02.06.2",
+      "begruendung": "Der Katalog nennt nur „Möglichkeiten und Grenzen der Sozialen Marktwirtschaft“ (WISO.02.06.2), keine Konjunktur; WiSo-Prüfungen verlangen sie (2023S, 2025S, 2025W).",
+      "erster_beleg": "2023S-WISO-A9",
+      "raum": "WISO"
+    },
+    "ZB.wiso-oekonomisches-prinzip": {
+      "titel": "Ökonomisches Prinzip: Maximal- und Minimalprinzip an Fällen unterscheiden",
+      "katalogbezug": "WISO.02.05.2",
+      "begruendung": "Der Katalog nennt Wirtschaftlichkeit als Unternehmensziel (WISO.02.05.2), nicht das ökonomische Prinzip; 2025S verlangt es.",
+      "erster_beleg": "2025S-WISO-A3",
+      "raum": "WISO"
+    },
+    "ZB.wiso-gerichtsbarkeit": {
+      "titel": "Zuständige Gerichte im Arbeits- und Sozialleben: Arbeitsgericht für Streit aus dem Arbeitsverhältnis, Sozialgericht für Streit mit Sozialversicherungsträgern",
+      "katalogbezug": "WISO.01.05.1",
+      "begruendung": "Der Katalog nennt Arbeitnehmerrechte (WISO.01.05.1), nicht die Gerichte, bei denen man sie durchsetzt; Prüfungen fragen danach (2023S, 2024S).",
+      "erster_beleg": "2023S-WISO-A19",
+      "raum": "WISO"
+    },
+    "ZB.wiso-kaufmann": {
+      "titel": "Kaufmann und Handelsregister: Ist-Kaufmann, Abteilung A (Personengesellschaften) und B (Kapitalgesellschaften), deklaratorische und konstitutive Eintragung, Registerauszug lesen",
+      "katalogbezug": "WISO.02.02",
+      "begruendung": "Der Katalog nennt die Rechtsformen (WISO.02.02), nicht Kaufmannseigenschaft und Handelsregister; Prüfungen fragen danach (2022W, 2023W, 2024S, 2025S, 2025W).",
+      "erster_beleg": "2022W-WISO-A24",
+      "raum": "WISO"
+    },
+    "ZB.wiso-verursacherprinzip": {
+      "titel": "Verursacherprinzip im Umweltschutz: Wer einen Umweltschaden verursacht, trägt die Kosten seiner Beseitigung",
+      "katalogbezug": "WISO.04.07",
+      "begruendung": "Der Katalog nennt „Rechtsfolgen bei Nichteinhaltung“ (WISO.04.07), nicht das Verursacherprinzip; Prüfungen fragen danach (2022S, 2024S).",
+      "erster_beleg": "2022S-WISO-A27",
+      "raum": "WISO"
+    }
+  }
+}

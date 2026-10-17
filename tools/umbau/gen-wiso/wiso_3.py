@@ -1,0 +1,282 @@
+import sys; sys.path.insert(0, sys.path[0])
+from lpw import LPW, B, T, K, R, meta
+
+L = LPW("WISO-3", "Sicherheit und Gesundheitsschutz bei der Arbeit", ["G.WISO.03"])
+G3 = ["G.WISO.03"]; G13 = ["G.WISO.03", "G.WISO.01"]
+
+# ---------------------------------------------------------------- 3-1 Vorschriften und Zuständige
+L.tb("WISO-3-1", "Arbeitsschutz: Vorschriften, Zuständige und Unfallversicherung", "Welche Vorschriften den Arbeitsschutz regeln, wer im Betrieb und außerhalb dafür zuständig ist und wie die gesetzliche Unfallversicherung Beschäftigte absichert.")
+
+L.sp("WISO-3-1-1", "Arbeitsschutzvorschriften im Überblick und Unterweisung",
+     "Die Arbeitsschutzvorschriften ihrem Regelungsbereich zuordnen, wissen, wer ihre Einhaltung überwacht, und die Pflicht zur Unterweisung erklären.",
+     G3, ["WISO.03.01.1", "WISO.03.01.2", ("WISO.03.01.3", "Arbeitszeitgesetz im Arbeitsschutz"), "WISO.03.01.4", "WISO.03.01.5", "WISO.03.01.6", "WISO.03.01.9", ("WISO.03.01.10", "Jugendarbeitsschutzgesetz im Arbeitsschutz")],
+     T("2024S-A10", "2022S-A24", "2021W-A17", "2025S-A26"),
+     hinweis="Hier wohnen die Arbeitsschutzgesetze und die Gewerbeaufsicht (WISO-1-3-2 und WISO-2-5-3 verweisen hierher). "
+             "Die einzelnen Regeln des Arbeitszeit- und des Jugendarbeitsschutzgesetzes stehen in WISO-1-3-4; die Ergonomie des Arbeitsplatzes in AP1-4-3-1. "
+             "IT-Sicherheit (WISO.03.08: Schutzziele, DSGVO, BSI, Sicherheitskonzept, TOM) gehört zum selben Prüfungsgebiet; du lernst sie in AP1-7, die WiSo-Ergänzungen stehen in WISO-5-2-1. "
+             "Unfallverhütungsvorschriften bekannt machen (K5): Die IHK-Lösung zu 2022S-WISO-A24 erwartete „im Betrieb gut sichtbar aushängen“ und wertete „im Intranet bereitstellen“ als falsch. "
+             "Nach heutigem Recht (DGUV Vorschrift 1, § 12) muss der Arbeitgeber sie „an geeigneter Stelle zugänglich machen“, das geht auch elektronisch. Wird „aushängen“ angeboten, wähle in der Prüfung diese Antwort.")
+L.k(1, "Du kannst Arbeitsschutzgesetz (Grundpflichten des Arbeitgebers: Gefährdungen beurteilen, Schutzmaßnahmen treffen, Beschäftigte unterweisen), Arbeitssicherheitsgesetz (Betriebsärzte, Fachkräfte für Arbeitssicherheit, Arbeitsschutzausschuss), Arbeitszeitgesetz (Höchstarbeitszeit, Ruhepausen, Ruhezeit) und Jugendarbeitsschutzgesetz (strengere Regeln für Beschäftigte unter 18 Jahren) unterscheiden.", 2,
+    [K("WISO.03.01.1"), K("WISO.03.01.2"), K("WISO.03.01.3"), K("WISO.03.01.10")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 23: Arbeitszeit- und Jugendarbeitsschutzgesetz aus K3 aufgenommen"))
+L.k(2, "Du kannst erklären, dass ein Betrieb (in der Prüfung: ein Unternehmen) mit mehr als 20 Beschäftigten einen Arbeitsschutzausschuss bilden muss, in dem die Themen des Arbeitsschutzes beraten werden.", 2,
+    [K("WISO.03.01.2"), B("2024S-A10")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 32: § 11 ASiG spricht vom Betrieb, die Prüfung 2024S-A10 vom Unternehmen"))
+L.k(4, "Du kannst Betriebssicherheitsverordnung (sichere Arbeitsmittel und ihre Prüfung) und Arbeitsstättenverordnung (Räume, Beleuchtung, Raumklima, Fluchtwege, Bildschirmarbeitsplätze) zuordnen.", 2,
+    [K("WISO.03.01.4"), K("WISO.03.01.5")])
+L.k(5, "Du kannst erklären, wer die Unfallverhütungsvorschriften erlässt und wie sie bekannt gemacht werden: die Berufsgenossenschaften; sie sind für Betrieb und Beschäftigte verbindlich, und der Arbeitgeber muss sie an geeigneter Stelle zugänglich machen – klassisch als Aushang im Betrieb (so erwartet in der Prüfung 2022S), heute auch elektronisch, etwa im Intranet.", 2,
+    [K("WISO.03.01.6"), B("2022S-A24")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 5, D5: Rechtsstand (DGUV Vorschrift 1 § 12, zugänglich machen, auch elektronisch) und erwartete Antwort 2022S-A24 (aushängen) beide genannt"))
+L.k(6, "Du kannst die Gewerbeaufsicht (Amt für Arbeitsschutz) als staatliche Aufsichtsbehörde, die die Einhaltung der Arbeitsschutzvorschriften im Betrieb überwacht, von der Berufsgenossenschaft als Träger der Unfallversicherung unterscheiden.", 2,
+    [K("WISO.03.01.9")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 24, D6: Wohnort der Gewerbeaufsicht ist WISO-3-1-1; Aufgabe (überwacht) ergänzt"))
+L.k(7, "Du kannst die Pflicht zur Unterweisung erklären: Der Arbeitgeber bzw. die Vorgesetzten unterweisen über Unfall- und Gesundheitsgefahren bei Beginn der Beschäftigung, bei neuen Aufgaben oder Arbeitsmitteln und danach regelmäßig (mindestens jährlich, Jugendliche halbjährlich).", 2,
+    [K("WISO.03.01.1"), K("WISO.03.01.6"), B("2021W-A17"), B("2025S-A26")])
+L.k(8, "Du kannst erklären, dass Arbeitsschutzvorschriften zwingendes Recht sind, das Arbeitgeber und Beschäftigte nicht abbedingen können, dass der Betriebsrat bei Regelungen zum Gesundheitsschutz mitbestimmt und im Arbeitsschutzausschuss vertreten ist und dass ergonomisch gestaltete Arbeitsplätze eine gesetzliche Pflicht des Arbeitgebers sind (Arbeitsschutzgesetz, Arbeitsstättenverordnung), keine freiwillige Leistung.", 2,
+    [K("WISO.03.01.1"), K("WISO.03.01.5"), B("2024S-A10")])
+
+L.sp("WISO-3-1-2", "Sicherheitsbeauftragte, Fachkraft für Arbeitssicherheit, Ersthelfer und Fürsorgepflicht",
+     "Die Personen im betrieblichen Arbeitsschutz und ihre Aufgaben unterscheiden und die Fürsorgepflicht des Arbeitgebers und die Pflichten der Beschäftigten erklären.",
+     G3, ["WISO.03.04", ("WISO.03.01.2", "Fachkraft für Arbeitssicherheit"), ("WISO.03.02.5", "Fürsorgepflicht"), ("WISO.03.02.6", "Ersthelfer"), ("WISO.03.02.3", "Gefahren melden"), ("WISO.03.02.4", "Anweisungen beachten")],
+     T("2023W-A6", "2025S-A27", "2021W-A17"))
+L.k(1, "Du kannst die Aufgaben der Sicherheitsbeauftragten erklären: Sie unterstützen den Arbeitgeber dabei, Unfälle und Gesundheitsgefahren zu verhüten, und machen auf Mängel aufmerksam; Informationen und Ausbildung erhalten sie von der Berufsgenossenschaft.", 2,
+    [K("WISO.03.04"), B("2023W-A6"), B("2025S-A27")])
+L.k(2, "Du kannst die Fürsorgepflicht des Arbeitgebers erklären: Er muss Arbeitsplatz, Arbeitsmittel und Abläufe so gestalten, dass Leben und Gesundheit der Beschäftigten geschützt sind, und bleibt für die Unterweisung verantwortlich.", 2,
+    [K("WISO.03.02.5"), B("2021W-A17")])
+L.k(3, "Du kannst die Pflichten der Beschäftigten erklären: Sicherheitshinweise, Vorschriften und Anweisungen beachten und festgestellte Gefahren oder Mängel sofort melden.", 2,
+    [K("WISO.03.02.3"), K("WISO.03.02.4")])
+L.k(4, "Du kannst erklären, wer Ersthelfer ist: Beschäftigte mit einer Ausbildung in Erster Hilfe; der Arbeitgeber muss dafür sorgen, dass genügend von ihnen anwesend sind.", 2,
+    [K("WISO.03.02.6")])
+L.k(5, "Du kannst erklären, dass Sicherheitsbeauftragte ihr Amt neben ihrer eigentlichen Arbeit ausüben, keine Weisungen erteilen dürfen und die Verantwortung beim Arbeitgeber bleibt.", 2,
+    [K("WISO.03.04")])
+L.k(6, "Du kannst Sicherheitsbeauftragte von der Fachkraft für Arbeitssicherheit unterscheiden: Die Fachkraft ist dafür eigens ausgebildet und berät den Arbeitgeber fachlich.", 2,
+    [K("WISO.03.04"), K("WISO.03.01.2")])
+
+L.sp("WISO-3-1-3", "Gesetzliche Unfallversicherung: versicherte Personen und Fälle, Leistungen",
+     "Erklären, wer in der gesetzlichen Unfallversicherung versichert ist, welche Fälle sie abdeckt und welche Leistungen sie erbringt.",
+     G13, [("WISO.01.05.2.11", "gesetzliche Unfallversicherung")],
+     T("2024S-A11", "2022W-A18", "2024S-A12", "2023W-A28"),
+     hinweis="Neuer Stichpunkt: Die Unfallversicherung stand vorher doppelt in WISO-1-6-2 und WISO-3-4-2 und kam in vier Prüfungen vor. "
+             "Träger und Finanzierung aller Zweige der Sozialversicherung (Unfallversicherung: Berufsgenossenschaften, Beitrag allein vom Arbeitgeber) stehen in WISO-1-6-2; Unfallmeldung und Durchgangsarzt in WISO-3-4-2.")
+L.k(1, "Du kannst unterscheiden, welche Fälle die gesetzliche Unfallversicherung abdeckt: Arbeitsunfälle bei der versicherten Tätigkeit, Wegeunfälle auf dem direkten Weg zur Arbeit und zurück und Berufskrankheiten – nicht Unfälle in der Freizeit oder gewöhnliche Krankheiten.", 2,
+    [K("WISO.01.05.2.11"), B("2024S-A11"), B("2022W-A18")])
+L.k(2, "Du kannst erklären, wer in der gesetzlichen Unfallversicherung versichert ist: alle Beschäftigten einschließlich Auszubildender, automatisch über ihren Betrieb, der Mitglied der zuständigen Berufsgenossenschaft ist (im öffentlichen Dienst: Unfallkasse), auch Ersthelfer bei der Hilfeleistung – nicht nur leitende Angestellte und ohne eigenen Antrag.", 2,
+    [K("WISO.01.05.2.11"), B("2022W-A18"), B("2024S-A12")])
+L.k(3, "Du kannst Beispiele den Leistungen der gesetzlichen Unfallversicherung zuordnen: Heilbehandlung und Rehabilitation, Verletztengeld bei Arbeitsunfähigkeit (zahlt die Berufsgenossenschaft, wenn die sechswöchige Entgeltfortzahlung des Arbeitgebers endet), Pflegegeld bei Pflegebedürftigkeit und Rente bei einer dauerhaft um mindestens 20 Prozent geminderten Erwerbsfähigkeit.", 2,
+    [K("WISO.01.05.2.11"), B("2023W-A28")])
+
+# ---------------------------------------------------------------- 3-2 Gefährdungen
+L.tb("WISO-3-2", "Gefährdungen und gesunder Arbeitsplatz", "Welche Gefährdungen es an IT-Arbeitsplätzen gibt, wie man sie einschätzt und Schutzmaßnahmen ableitet und was für Bildschirmarbeit und psychische Belastung gilt.")
+
+L.sp("WISO-3-2-1", "Gefährdungsarten: mechanisch, elektrisch, thermisch, chemisch, ergonomisch, akustisch, psychisch",
+     "Die Gefährdungsarten unterscheiden und Sachverhalte aus der IT-Arbeit zuordnen.",
+     G3, [("WISO.03.02.1", "Gefährdungsarten"), ("WISO.03.02.2", "Gefährdungsarten")], [],
+     hinweis="Schwere Geräte heben ordnet der Katalog nicht ausdrücklich zu. Nach seiner Liste ist es am ehesten eine mechanische Gefährdung (Verletzung durch die Last) und, wegen der körperlichen Belastung, eine ergonomische; das ist eine Einordnung, keine Katalogvorgabe (die Leitlinie der Gemeinsamen Deutschen Arbeitsschutzstrategie spricht von physischer Belastung).")
+L.k(1, "Du kannst die sieben Gefährdungsarten unterscheiden: mechanisch, elektrisch, thermisch, chemisch, ergonomisch, akustisch, psychisch.", 2,
+    [K("WISO.03.02.1"), K("WISO.03.02.2")])
+L.k(3, "Du kannst einen beschriebenen Sachverhalt aus der IT-Arbeit der passenden Gefährdungsart zuordnen, zum Beispiel Stolpern über Kabel (mechanisch), Arbeiten an geöffneten Geräten (elektrisch), heiße Bauteile (thermisch), Tonerstaub oder ausgelaufene Akkus (chemisch), langes Sitzen in starrer Haltung (ergonomisch), Lärm im Serverraum (akustisch), Zeitdruck und ständige Unterbrechungen (psychisch).", 2,
+    [K("WISO.03.02.1"), K("WISO.03.02.2")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 3: die gleichbedeutende K2 (Sachverhalt zuordnen) hier aufgenommen"))
+L.k(6, "Du kannst Warnzeichen für Gefährdungen am eigenen Arbeitsplatz wahrnehmen, bevor etwas passiert: beschädigte Kabel oder Stecker, heiße oder riechende Geräte, aufgeblähte Akkus, dauerhafter Lärm, Verspannungen oder Kopfschmerzen nach langer Bildschirmarbeit, wachsender Zeitdruck.", 1,
+    [K("WISO.03.02.1"), K("WISO.03.02.2")])
+
+L.sp("WISO-3-2-2", "Bildschirmarbeit, Vorsorgeuntersuchungen und psychische Belastung",
+     "Die Vorschriften und Vorsorge für Bildschirmarbeit kennen und psychische Belastungen in der Gefährdungsbeurteilung berücksichtigen.",
+     G3, ["WISO.03.01.8", "WISO.03.03.1", "WISO.03.03.2", ("WISO.03.02.2", "psychische Belastung")], [],
+     baut_auf=["AP1-4-3-1"],
+     hinweis="Wie ein Bildschirmarbeitsplatz ergonomisch gestaltet und beurteilt wird, steht in AP1-4-3-1 (WISO.03.01.7 und WISO.03.02.7 gedeckt, P47).")
+L.k(3, "Du kannst erklären, dass der Arbeitgeber Beschäftigten an Bildschirmarbeitsplätzen eine Untersuchung der Augen anbieten muss (Angebotsvorsorge) und bei Bedarf eine Bildschirmbrille bezahlt.", 2,
+    [K("WISO.03.03.1")])
+L.k(4, "Du kannst erklären, dass die Gefährdungsbeurteilung auch psychische Belastungen erfassen muss, zum Beispiel Zeitdruck, Arbeitsmenge und häufige Störungen.", 2,
+    [K("WISO.03.03.2"), K("WISO.03.02.2")])
+L.k(5, "Du kannst geeignete von ungeeigneten Maßnahmen gegen psychische Belastung unterscheiden, zum Beispiel klare Prioritäten, störungsfreie Zeiten und realistische Termine gegenüber ständiger Erreichbarkeit.", 2,
+    [K("WISO.03.02.2")])
+L.k(6, "Du kannst die Regeln für Bildschirmarbeit einordnen: Sie stehen heute in der Arbeitsstättenverordnung (die frühere Bildschirmarbeitsverordnung gibt es nicht mehr), und Bildschirmarbeit soll regelmäßig durch andere Tätigkeiten oder kurze Pausen unterbrochen werden.", 2,
+    [K("WISO.03.01.8")])
+
+L.sp("WISO-3-2-3", "Gefährdungen einschätzen und Schutzmaßnahmen ableiten",
+     "Gefährdungen eines Arbeitsplatzes einschätzen, Schutzmaßnahmen in der richtigen Rangfolge ableiten und beurteilen, ob Beschäftigte und Arbeitgeber ihre Pflichten erfüllen.",
+     G3, ["WISO.03.02.1", "WISO.03.02.2", "WISO.03.02.3", "WISO.03.02.4", "WISO.03.02.5", "WISO.03.02.6", ("WISO.03.01.1", "Gefährdungsbeurteilung")],
+     [],
+     hinweis="Neuer Stichpunkt: Der Katalog verlangt Gefährdungen „wahrnehmen und einschätzen“ (Stufe 4); die Gefährdungsbeurteilung und die Rangfolge der Maßnahmen standen vorher in WISO-3-2-1. "
+             "Die Stufe 4 kommt allein aus dem Katalog (E6); die WiSo-Prüfungen fragten dazu bisher nur Auswahlaufgaben (Unterweisung: WISO-3-1-1-K7, Pflichten: WISO-3-1-2).")
+L.k(1, "Du kannst die Gefährdungsbeurteilung erklären: Der Arbeitgeber muss die Gefährdungen jedes Arbeitsplatzes ermitteln, bewerten, Maßnahmen festlegen, ihre Wirkung prüfen und das Ergebnis dokumentieren.", 2,
+    [K("WISO.03.01.1")])
+L.k(2, "Du kannst die Rangfolge der Schutzmaßnahmen erklären: erst die Gefahr beseitigen (Substitution), dann technisch absichern, dann organisatorisch regeln, zuletzt persönliche Schutzausrüstung (STOP).", 2,
+    [K("WISO.03.01.1"), K("WISO.03.02.1")])
+L.k(3, "Du kannst die Gefährdungen eines beschriebenen Arbeitsplatzes oder Auftrags einschätzen (welche Art, wie wahrscheinlich, wie schwer) und begründen, welche Schutzmaßnahme nach der Rangfolge zuerst zu treffen ist, zum Beispiel beim Austausch eines steckbaren Netzteils im Serverschrank.", 4,
+    [K("WISO.03.02.1"), K("WISO.03.02.2")])
+L.k(4, "Du kannst an einer Situation beurteilen, ob Beschäftigte Sicherheitshinweise und Anweisungen beachten und erkannte Gefahren melden, und begründen, was zu tun ist.", 4,
+    [K("WISO.03.02.3"), K("WISO.03.02.4")])
+L.k(5, "Du kannst beurteilen, ob der Arbeitgeber seiner Fürsorgepflicht nachkommt, zum Beispiel bei Unterweisung, genügend Ersthelfern und sicheren Arbeitsmitteln.", 4,
+    [K("WISO.03.02.5"), K("WISO.03.02.6")])
+
+# ---------------------------------------------------------------- 3-3 Sicherheitszeichen und Arbeitsmittel
+L.tb("WISO-3-3", "Sicherheitszeichen und sichere Arbeitsmittel", "Woran man Sicherheitszeichen, Flucht- und Rettungswege erkennt, was Schutzarten, Schutzklassen und Prüfzeichen bedeuten und wie man mit Gefahrenquellen umgeht.")
+
+L.sp("WISO-3-3-1", "Sicherheitszeichen, Flucht- und Rettungswege, Notausgänge und Sammelplätze",
+     "Sicherheitszeichen nach Form und Farbe einordnen und ihre Bedeutung zuordnen sowie Flucht- und Rettungswege und Sammelplatz kennen.",
+     G3, ["WISO.03.05.9", ("WISO.03.07.7", "Brandschutzzeichen"), "WISO.03.05.3", "WISO.03.05.4", "WISO.03.05.5", "WISO.03.07.6", ("WISO.03.06.4", "Sammelplatz"), "WISO.03.07.5"],
+     T("2022S-A23", "2022W-A26", "2022W-A27", "2024S-A13", "2025S-A28", "2024S-A28"))
+L.k(1, "Du kannst Sicherheitszeichen nach Form und Farbe einordnen: Verbotszeichen (rund, roter Rand mit Schrägbalken), Gebotszeichen (rund, blau), Warnzeichen (dreieckig, gelb mit schwarzem Rand), Rettungszeichen (rechteckig oder quadratisch, grün), Brandschutzzeichen (rechteckig oder quadratisch, rot); Gefahrstoff-Piktogramme sind rot umrandete Rauten.", 2,
+    [K("WISO.03.05.9"), K("WISO.03.07.7"), B("2022W-A26"), B("2025S-A28")])
+L.k(2, "Du kannst abgebildete Zeichen ihrer Bedeutung zuordnen, zum Beispiel Rettungsweg, Erste Hilfe, Sammelstelle, Feuerlöscher, Löschschlauch, Brandmelder, „Vor Öffnen Netzstecker ziehen“, Warnung vor Laserstrahl, Hochspannung oder feuergefährlichen Stoffen.", 2,
+    [K("WISO.03.05.9"), K("WISO.03.07.7"), B("2022S-A23"), B("2024S-A13"), B("2024S-A28"), B("2022W-A27")])
+L.k(3, "Du kannst erklären, dass du die Flucht- und Rettungswege und Notausgänge im Gebäude und am eigenen Arbeitsplatz kennen musst und dass sie gekennzeichnet, frei und unverschlossen sein müssen.", 2,
+    [K("WISO.03.05.3"), K("WISO.03.05.4"), K("WISO.03.05.5"), K("WISO.03.07.6")])
+L.k(4, "Du kannst erklären, wozu der Sammelplatz dient: Dort treffen sich nach einer Räumung alle, damit geprüft werden kann, ob jemand fehlt.", 2,
+    [K("WISO.03.06.4"), K("WISO.03.07.5"), B("2022W-A27")])
+L.k(5, "Du kannst einen Flucht- und Rettungsplan lesen: eigener Standort, Fluchtwege, Feuerlöscher, Erste-Hilfe-Einrichtungen, Sammelplatz.", 2,
+    [K("WISO.03.07.6"), K("WISO.03.05.5")])
+
+L.sp("WISO-3-3-2", "Elektrische Betriebsmittel: Schutzarten (IP-Code), Schutzklassen und Prüfzeichen wie das CE-Zeichen",
+     "Schutzarten, Schutzklassen und das CE-Zeichen an elektrischen Geräten erklären und einordnen.",
+     G3, ["WISO.03.05.6", "WISO.03.05.7", "WISO.03.05.8"], [])
+L.k(1, "Du kannst die Schutzart erklären: Der IP-Code gibt mit der ersten Ziffer den Schutz gegen Berührung und Fremdkörper und mit der zweiten den Schutz gegen Wasser an, zum Beispiel IP 20: fingersicher, aber ohne Wasserschutz, nur für trockene Innenräume; IP 67: staubdicht und geschützt gegen zeitweiliges Untertauchen.", 2,
+    [K("WISO.03.05.6")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 20: Beispiele aus K4 aufgenommen; die Regel „je höher, desto besser“ gilt bei der Wasserziffer nicht durchgehend und entfällt"))
+L.k(2, "Du kannst die drei Schutzklassen unterscheiden: I mit Schutzleiter, II mit Schutzisolierung, III mit Schutzkleinspannung.", 2,
+    [K("WISO.03.05.7")])
+L.k(3, "Du kannst das CE-Zeichen erklären: Der Hersteller erklärt damit selbst, dass sein Produkt die europäischen Vorschriften erfüllt; es ist kein Prüfsiegel einer unabhängigen Stelle und kein Umweltzeichen.", 2,
+    [K("WISO.03.05.8")])
+
+L.sp("WISO-3-3-3", "Verhaltensregeln und sachgerechter Umgang mit Gefahrenpotenzialen",
+     "Allgemeine und betriebliche Verhaltensregeln kennen und mit typischen Gefahrenquellen in der IT sachgerecht umgehen.",
+     G3, ["WISO.03.05.1", "WISO.03.05.2"], [])
+L.k(1, "Du kannst allgemeine Verhaltensregeln erklären: Verkehrs- und Fluchtwege freihalten, Kabel stolperfrei verlegen, Schutzeinrichtungen nicht außer Kraft setzen, defekte Geräte nicht weiter benutzen und melden.", 2,
+    [K("WISO.03.05.2")])
+L.k(2, "Du kannst erklären, was eine Betriebsanweisung ist: die schriftliche, verbindliche Regel des Arbeitgebers für eine bestimmte Tätigkeit, ein Arbeitsmittel oder einen Gefahrstoff mit Gefahren, Schutzmaßnahmen, Verhalten bei Störungen und im Notfall und Erster Hilfe.", 2,
+    [K("WISO.03.05.2")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 16: „Regeln beachten“ steht schon in WISO-3-1-2-K3; gekürzt auf das Neue, die Betriebsanweisung"))
+L.k(3, "Du kannst Regeln für den Umgang mit elektrischen Geräten erklären: vor dem Öffnen eines Geräts den Netzstecker ziehen, Netzteile selbst nie öffnen (ein steckbares Netzteil zu tauschen ist dagegen übliche IT-Arbeit), Arbeiten an der elektrischen Anlage wie Steckdosen, Verteilern und fest angeschlossenen Leitungen nur durch Elektrofachkräfte.", 2,
+    [K("WISO.03.05.1")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 9: Widerspruch zu WISO-3-2-3-K3 (Netzteiltausch) behoben; verboten ist das Öffnen des Netzteils und die Arbeit an der festen Elektroinstallation"))
+L.k(4, "Du kannst den richtigen Umgang mit weiteren IT-typischen Gefahren erklären: schwere Geräte zu zweit oder mit Hilfsmittel heben, beschädigte Akkus nicht weiterverwenden, Tonerstaub nicht einatmen.", 2,
+    [K("WISO.03.05.1")])
+
+# ---------------------------------------------------------------- 3-4 Unfall und Brand
+L.tb("WISO-3-4", "Notfall: Unfall und Brand", "Was bei einem Unfall zu tun ist, wie ein Arbeitsunfall gemeldet wird, wie Brände entstehen und verhütet werden und wie man sich im Brandfall verhält und löscht.")
+
+L.sp("WISO-3-4-1", "Verhalten bei Unfällen: Erste Hilfe, Notruf, Meldekette, Evakuierung und Dokumentation",
+     "Die ersten Schritte am Unfallort ordnen, einen Notruf absetzen, Erste-Hilfe-Maßnahmen kennen und Meldekette, Evakuierung und Dokumentation erklären.",
+     G3, ["WISO.03.06.1", "WISO.03.06.2", "WISO.03.06.3", "WISO.03.06.5"],
+     T("2021W-A21"))
+L.k(1, "Du kannst die ersten Schritte am Unfallort ordnen: Unfallstelle sichern und auf die eigene Sicherheit achten, Notruf absetzen, Erste Hilfe leisten.", 2,
+    [K("WISO.03.06.1")])
+L.k(2, "Du kannst einen Notruf über die 112 absetzen und seine Angaben erklären: Wo ist es passiert, was ist passiert, wie viele Verletzte, welche Verletzungen, auf Rückfragen warten.", 2,
+    [K("WISO.03.06.2")])
+L.k(3, "Du kannst erklären, wo im Betrieb die Ersthelfer und die betrieblichen Notfallnummern verzeichnet sind: im Aushang zur Ersten Hilfe und in der Brandschutz- bzw. Alarmordnung.", 2,
+    [K("WISO.03.06.2")])
+L.k(4, "Du kannst erklären, was eine Meldekette ist: die festgelegte Reihenfolge, in der nach einem Vorfall Personen und Stellen informiert werden.", 2,
+    [K("WISO.03.06.3")])
+L.k(5, "Du kannst erklären, dass bei einer Evakuierung alle das Gebäude geordnet über die Fluchtwege verlassen und dass jede Erste-Hilfe-Leistung im Betrieb aufgezeichnet wird (Verbandbuch).", 2,
+    [K("WISO.03.06.5")])
+L.k(6, "Du kannst richtige von falschen Erste-Hilfe-Maßnahmen unterscheiden, zum Beispiel Brandwunden keimfrei abdecken (nur kleinflächige Verbrennungen kurz mit handwarmem Wasser kühlen, nie mit Eis) statt Öl oder Salben aufzutragen oder Blasen zu öffnen, stabile Seitenlage, Druckverband, bei einem Stromunfall zuerst den Strom abschalten.", 2,
+    [K("WISO.03.06.1"), B("2021W-A21")])
+
+L.sp("WISO-3-4-2", "Arbeitsunfall melden",
+     "Erklären, wann und an wen der Arbeitgeber einen Arbeitsunfall meldet und was nach einem Unfall geschieht (Durchgangsarzt, Unfallanzeige).",
+     G3, ["WISO.03.06.6"], T("2022W-A21", "2023S-A5"),
+     hinweis="Versicherte Personen, Fälle und Leistungen der Unfallversicherung stehen in WISO-3-1-3, Träger und Beitrag in WISO-1-6-2. Verletztengeld zahlt die Berufsgenossenschaft, nicht der Betrieb (Distraktor in 2023S-WISO-A5, siehe WISO-3-1-3-K3).")
+L.k(1, "Du kannst erklären, dass der Arbeitgeber einen Arbeitsunfall dem Träger der Unfallversicherung (Berufsgenossenschaft) melden muss, nicht der Krankenkasse, der Gewerbeaufsicht oder einer privaten Versicherung.", 2,
+    [K("WISO.03.06.6"), B("2022W-A21"), B("2023S-A5")])
+L.k(3, "Du kannst erklären, was nach einem Arbeitsunfall geschieht: Verletzte gehen zum Durchgangsarzt, einem von der Berufsgenossenschaft zugelassenen Arzt, der die Behandlung übernimmt oder steuert (zum Beispiel bei Arbeitsunfähigkeit über den Unfalltag hinaus); unabhängig davon erstattet der Arbeitgeber die Unfallanzeige.", 2,
+    [K("WISO.03.06.6")],
+    alt=("angepasst", "Prüfer WISO-3 Nr. 10, 11: feste Reihenfolge ohne Katalog- oder Prüfungsgrundlage entfällt (Unfallanzeige läuft parallel); Durchgangsarzt nur noch hier (D6)"))
+L.k(6, "Du kannst erklären, wann ein Arbeitsunfall meldepflichtig ist: wenn er zu mehr als drei Kalendertagen Arbeitsunfähigkeit führt (oder tödlich ist); die Unfallanzeige ist dann innerhalb von drei Tagen zu erstatten.", 2,
+    [K("WISO.03.06.6"), B("2023S-A5")])
+
+L.sp("WISO-3-4-3", "Vorbeugender Brandschutz: Brandursachen und Brandschutzordnung",
+     "Erklären, wie Brände entstehen, Brandursachen in Büro und Serverraum vermeiden und die Brandschutzordnung einordnen.",
+     G3, ["WISO.03.07.1", "WISO.03.07.1.1", "WISO.03.07.2"], [],
+     hinweis="Früher Stichpunkt WISO-3-5-1.")
+L.k(1, "Du kannst erklären, wie ein Brand entsteht: Brennbarer Stoff, Sauerstoff und genügend Hitze (Zündtemperatur) müssen zusammenkommen, zum Beispiel bei einem Heißwasserkocher oder einer Kaffeemaschine, die nicht ausgeschaltet wurden; Löschen heißt, eines davon zu entziehen.", 2,
+    [K("WISO.03.07.1"), K("WISO.03.07.1.1")])
+L.k(2, "Du kannst typischen Brandursachen in Büro und Serverraum die passende Vorbeugung zuordnen: Wärmegeräte → nach Gebrauch ausschalten, nichts Brennbares daneben lagern; überlastete Mehrfachsteckdosen → nicht hintereinanderstecken; beschädigte Akkus, Geräte und Kabel → aus dem Betrieb nehmen; verstellte Lüftungsöffnungen → freihalten.", 2,
+    [K("WISO.03.07.1"), K("WISO.03.07.1.1")])
+L.k(3, "Du kannst erklären, was die Brandschutzordnung ist: die betrieblichen Regeln zur Verhütung von Bränden und zum Verhalten im Brandfall.", 2,
+    [K("WISO.03.07.2")])
+L.k(6, "Du kannst erklären, warum Brandschutztüren geschlossen bleiben und nicht verkeilt werden dürfen.", 2,
+    [K("WISO.03.07.2")])
+
+L.sp("WISO-3-4-4", "Verhalten im Brandfall und Brandschutzmittel: Brandmeldung, Feuerlöscher, Löschdecken, Brandklassen",
+     "Die richtige Reihenfolge im Brandfall kennen, die Bedienung eines Feuerlöschers ordnen, Löschregeln anwenden und brennende Stoffe den Brandklassen zuordnen.",
+     G3, ["WISO.03.07.3", "WISO.03.07.3.1", "WISO.03.07.3.2", "WISO.03.07.4", "WISO.03.07.4.1", "WISO.03.07.4.2", "WISO.03.07.8", "WISO.03.07.9"],
+     T("2024S-A14", "2022W-A25", "2022S-A25", "2022S-A26"),
+     hinweis="Früher Stichpunkt WISO-3-5-2.")
+L.k(1, "Du kannst die Reihenfolge im Brandfall erklären: zuerst den Brand melden (Brandmelder, 112), Menschen warnen und in Sicherheit bringen, erst dann löschen, und nur ohne dich selbst zu gefährden.", 2,
+    [K("WISO.03.07.9"), K("WISO.03.07.3"), B("2024S-A14")])
+L.k(2, "Du kannst richtiges von falschem Verhalten im Brandfall unterscheiden: keinen Aufzug benutzen, Türen und Fenster schließen (kein Fenster öffnen, das facht das Feuer an), den gekennzeichneten Fluchtwegen zum Sammelplatz folgen.", 2,
+    [K("WISO.03.07.3"), K("WISO.03.07.3.1"), K("WISO.03.07.3.2"), B("2022W-A25")])
+L.k(3, "Du kannst die Schritte zur Bedienung eines Feuerlöschers ordnen: zum Gerät gehen, aus der Halterung nehmen, Sicherung ziehen, Betätigungshebel ziehen, den Schlauch auf das Feuer richten; dazu gehört, die Standorte der Feuerlöscher zu kennen und die Bedienungsanleitung auf dem Gerät.", 2,
+    [K("WISO.03.07.4.1"), B("2022S-A26")])
+L.k(4, "Du kannst brennende Stoffe den Brandklassen zuordnen: A feste Stoffe (Papier, Holz), B flüssige oder flüssig werdende Stoffe, C Gase, D Metalle; auf jedem Feuerlöscher steht, für welche Brandklassen er geeignet ist.", 2,
+    [K("WISO.03.07.8")])
+L.k(5, "Du kannst erklären, wofür eine Löschdecke dient: Sie erstickt kleine Brände, zum Beispiel an Kleidung oder in einem Papierkorb.", 2,
+    [K("WISO.03.07.4.2")])
+L.k(6, "Du kannst erklären, warum für elektrische Geräte und Serverräume Kohlendioxid-Löscher geeignet sind: Sie leiten keinen Strom und hinterlassen keine Rückstände; das Löschmittel muss immer zum brennenden Stoff passen.", 2,
+    [K("WISO.03.07.4"), K("WISO.03.07.4.1")])
+L.k(7, "Du kannst richtige von falschen Löschregeln unterscheiden: mit dem Wind löschen, von vorn und von unten in die Glut, Tropf- und Fließbrände von oben nach unten, mehrere Löscher gleichzeitig statt nacheinander, Brandstelle danach beobachten.", 2,
+    [K("WISO.03.07.4.1"), B("2022S-A25")])
+
+# ---------------------------------------------------------------- alt → neu
+A = L.a
+A("WISO-3-2-1-K4", "verschoben", "WISO-3-2-3-K1", "Gefährdungsbeurteilung steht im neuen Stichpunkt Gefährdungen einschätzen")
+A("WISO-3-2-1-K5", "verschoben", "WISO-3-2-3-K2", "Rangfolge der Schutzmaßnahmen steht im neuen Stichpunkt Gefährdungen einschätzen")
+A("WISO-3-2-2-K1", "gestrichen", None, "E2/P47: ergonomische Anforderungen an einen Bildschirmarbeitsplatz stehen in AP1-4-3-1-K2 (WISO.03.01.7 und WISO.03.02.7 gedeckt)")
+A("WISO-3-2-2-K2", "gestrichen", None, "E2/P47: einen Arbeitsplatz ergonomisch beurteilen steht in AP1-4-3-1-K3")
+A("WISO-3-3-2-K5", "gestrichen", None, "K3/P17: weitere Prüfzeichen (GS, VDE) stehen weder im Katalog noch in einer Prüfung; für P-BEISPIELLISTE fehlen zwei Hinweisquellen")
+A("WISO-3-4-2-K2", "verschoben", "WISO-3-1-3-K1", "versicherte Fälle der Unfallversicherung gesammelt in WISO-3-1-3")
+A("WISO-3-4-2-K4", "verschoben", "WISO-3-4-2-K3", "Prüfer WISO-3 Nr. 10, D6: Durchgangsarzt nur in WISO-3-4-2 (Stationen nach dem Unfall), nicht mehr bei der Unfallversicherung")
+A("WISO-3-4-2-K5", "verschoben", "WISO-1-6-2-K6", "Prüfer WISO-3 Nr. 4, D6: Träger und Beitrag der Unfallversicherung wohnen in WISO-1-6-2 (Träger K5, Arbeitgeber zahlt allein K6)")
+A("WISO-3-1-1-K3", "verschoben", "WISO-3-1-1-K1", "Prüfer WISO-3 Nr. 23: Arbeitszeit- und Jugendarbeitsschutzgesetz in die Zuordnung der Arbeitsschutzvorschriften aufgenommen; die Regeln stehen in WISO-1-3-4")
+A("WISO-3-2-1-K2", "verschoben", "WISO-3-2-1-K3", "Prüfer WISO-3 Nr. 3: dieselbe Handlung wie K3 (Sachverhalt der Gefährdungsart zuordnen), zusammengelegt")
+A("WISO-3-3-2-K4", "verschoben", "WISO-3-3-2-K1", "Prüfer WISO-3 Nr. 20: Anwendungsbeispiel zum IP-Code, mit K1 zusammengelegt")
+_z351 = {4: (2, "Prüfer WISO-3 Nr. 19: Brandursachen und Vorbeugung zusammengelegt (WISO-3-4-3-K2)"),
+         5: (1, "Prüfer WISO-3 Nr. 2: Brandentstehung (Stoff, Sauerstoff, Zündtemperatur) mit K1 zusammengelegt (WISO-3-4-3-K1)")}
+for n in range(1, 7):
+    ziel, grund = _z351.get(n, (n, "Stichpunkt in den Block Notfall verschoben (F4: der Block Brandschutz hatte nur zwei Stichpunkte)"))
+    A(f"WISO-3-5-1-K{n}", "verschoben", f"WISO-3-4-3-K{ziel}", grund)
+for n in range(1, 7):
+    A(f"WISO-3-5-2-K{n}", "verschoben", f"WISO-3-4-4-K{n}", "Stichpunkt in den Block Notfall verschoben (F4)")
+A("WISO-3-6-1-K1", "gestrichen", None, "E2/P47: Informationssicherheit und Datenschutz unterscheiden steht in AP1-7-5-1-K5 (WISO.03.08.1 gedeckt)")
+A("WISO-3-6-1-K2", "verschoben", "WISO-5-2-1-K8", "Vertraulichkeit, Integrität, Verfügbarkeit stehen in AP1-7-1-1; neu für WiSo ist nur Authentizität (WISO.03.08.3), jetzt in WISO-5-2-1")
+A("WISO-3-6-1-K3", "gestrichen", None, "E2/P47: einem Vorfall das Schutzziel zuordnen steht in AP1-7-1-1-K2")
+A("WISO-3-6-1-K4", "gestrichen", None, "E2/P47: Ziele der DSGVO stehen in AP1-7-5-1-K1 (WISO.03.08.2 gedeckt)")
+A("WISO-3-6-1-K5", "gestrichen", None, "E2/P47: personenbezogene Daten und Grundsätze der Verarbeitung stehen in AP1-7-5-1-K2 und -K6")
+A("WISO-3-6-2-K1", "gestrichen", None, "E2/P47: Aufgaben des BSI stehen in AP1-7-2-1-K1 (WISO.03.08.4 gedeckt)")
+A("WISO-3-6-2-K2", "gestrichen", None, "E2/P47: IT-Grundschutz-Empfehlungen begründen steht in AP1-7-2-1-K3 (WISO.03.08.5 gedeckt)")
+A("WISO-3-6-2-K3", "gestrichen", None, "E2/P47: Sicherheitskonzept, Schutzbedarf und Richtlinien stehen in AP1-7-2-1, AP1-7-2-2 und AP1-7-1-3 (WISO.03.08.6 gedeckt)")
+A("WISO-3-6-2-K4", "gestrichen", None, "E2/P47: technische und organisatorische Maßnahmen stehen in AP1-7-1-2 (WISO.03.08.7 gedeckt)")
+A("WISO-3-6-2-K5", "gestrichen", None, "E2/P47, D8: eigener Beitrag zur IT-Sicherheit (Bildschirm sperren, Passwörter, Updates, Vorfälle melden) steht in AP1-7-1-3, AP1-7-1-4 und AP1-7-4-3; WISO-5-2-1-K7 entfiel nach Prüfer WISO-5 als reine AP1-Wiederholung")
+
+RS = L.rahmen_satz
+RS("WISO-3-1-1", "Du sollst wissen, was jede regelt und wer die Einhaltung überwacht; Paragrafen musst du nicht kennen.", "übernommen", "G4: Paragrafen und Normnummern sind ohne Hilfsmittel nicht sinnvoll abfragbar")
+RS("WISO-3-2-1", "Messwerte und Grenzwerte sind nicht verlangt.", "übernommen", "G4; der Katalog verlangt Gefährdungen einschätzen, nicht messen")
+RS("WISO-3-3-1", "Die Normnummern der Zeichen sind nicht gefragt.", "übernommen", "G4")
+RS("WISO-3-3-2", "Es genügt, die Angaben zu deuten; elektrotechnische Berechnungen gehören nicht dazu.", "übernommen", "G2: Perspektive WiSo (Sicherheit am Arbeitsplatz), Elektrotechnik ist nicht Gegenstand von WISO.03.05")
+RS("WISO-3-4-1", "Medizinische Einzelheiten der Ersten Hilfe wurden nicht gefragt.", "angepasst", "Belegt ist richtiges Verhalten bei einer Verbrennung (2021W-WISO-A21); die Grenze folgt aus G4, nicht aus fehlenden Belegen")
+RS("WISO-3-6-2", "Verlangt ist das Wissen eines Anwenders, nicht das Erstellen eines Sicherheitskonzepts.", "gestrichen", "IT-Sicherheit ist in AP1-7 gelernt (P47); der WiSo-Teil ist dort gedeckt")
+
+L.grenze("Paragrafen und Normnummern der Arbeitsschutzvorschriften gehören nicht dazu.", "G4: Der Katalog nennt die Vorschriften nur mit Namen (WISO.03.01); Paragrafen sind ohne Hilfsmittel nicht sinnvoll abfragbar, nötige Gesetzestexte werden abgedruckt (B4).", ["WISO.03.01"])
+# (Grenze am letzten Stichpunkt angehängt würde falsch zuordnen – deshalb unten neu gesetzt)
+
+L.gesch("WISO.03.05.6", "Schutzarten und Schutzklassen", {"Schutzarten": ["WISO-3-3-2-K1"], "Schutzklassen": ["WISO-3-3-2-K2"]})
+L.gesch("WISO.03.05.3", "Fluchtwege und Notausgänge", {"Fluchtwege": ["WISO-3-3-1-K3"], "Notausgänge": ["WISO-3-3-1-K3"]})
+L.gesch("WISO.03.07.4", "Feuerlöscher und Löschdecken", {"Feuerlöscher": ["WISO-3-4-4-K3"], "Löschdecken": ["WISO-3-4-4-K5"]})
+L.gesch("WISO.03.02.1", "mechanisch, elektrisch, thermisch, chemisch", {"Arten": ["WISO-3-2-1-K1", "WISO-3-2-1-K3", "WISO-3-2-1-K6"]})
+L.gesch("WISO.03.02.2", "ergonomisch, akustisch, psychisch", {"ergonomisch/akustisch": ["WISO-3-2-1-K3"], "psychisch": ["WISO-3-2-2-K4", "WISO-3-2-2-K5"]})
+
+# Grenze an WISO-3-1-1 statt am letzten Stichpunkt
+last = L.tbs[-1]["stichpunkte"][-1]
+g = last.pop("grenzen")
+L.tbs[0]["stichpunkte"][0]["grenzen"] = g
+
+# Kür aus der unabhängigen Prüfung (P49, Hinweisquelle pruefer:wiso-2026-10)
+L.kuer_pruefer('WISO-3-1-2', 'Sicherheitsbeauftragte ab mehr als 20 Beschäftigten', 'Sicherheitsbeauftragte sind in Unternehmen mit regelmäßig mehr als 20 Beschäftigten zu bestellen (§ 22 SGB VII; der Unfallversicherungsträger kann die Zahl nach der Gefährdung abweichend regeln) – dieselbe Schwelle wie beim Arbeitsschutzausschuss.', 'Kür-Vorschlag der unabhängigen Prüfung (P49): mögliche Verwechslung mit dem Arbeitsschutzausschuss (WISO-3-1-1-K2); keine Prüfung bietet die Schwelle an')
+L.kuer_pruefer('WISO-3-2-2', 'Ergonomie-Maße am Bildschirmarbeitsplatz', 'Übliche Maße am Bildschirmarbeitsplatz: Blickrichtung parallel zum Fenster, Sehabstand etwa 50 bis 80 Zentimeter, oberste Bildschirmzeile höchstens in Augenhöhe, Ober- und Unterarm sowie Ober- und Unterschenkel etwa im rechten Winkel.', 'Kür-Vorschlag der unabhängigen Prüfung (P49): Detailfragen zur Ergonomie; der Katalogbaustein ist durch AP1-4-3-1 gedeckt (P47), die Maße stehen weder im Katalog noch in einer Prüfung')
+L.kuer_pruefer('WISO-3-3-2', 'GS-Zeichen', 'Das GS-Zeichen („geprüfte Sicherheit“) ist freiwillig und wird von einer unabhängigen, staatlich anerkannten Prüfstelle vergeben – anders als das CE-Zeichen, das der Hersteller selbst anbringt.', 'Kür-Vorschlag der unabhängigen Prüfung (P49): weiteres Prüfzeichen zur offenen Liste „Prüfzeichen, z. B. CE-Zeichen“; nach P-BEISPIELLISTE mit nur einer Hinweisquelle Kür')
+L.kuer_pruefer('WISO-3-4-4', 'Löschmittel je Brandklasse, Brandklasse F', 'Löschmittel und Brandklassen: Wasser für A, Schaum für A und B, ABC-Pulver für A, B und C, Kohlendioxid für B, Metallbrandpulver für D; zusätzlich gibt es die Brandklasse F für Speiseöle und -fette (Fettbrandlöscher, nie mit Wasser löschen).', 'Kür-Vorschlag der unabhängigen Prüfung (P49): der Katalog nennt nur die Brandklassen A bis D (WISO-3-4-4-K4)')
+L.kuer_pruefer('WISO-3-4-4', 'Kohlendioxid in kleinen Räumen', 'Kohlendioxid verdrängt den Sauerstoff: In kleinen, geschlossenen Räumen wie einem Serverraum besteht nach dem Löschen Erstickungsgefahr – den Raum verlassen und erst nach dem Lüften wieder betreten; löst eine CO2-Löschanlage aus, sofort hinaus.', 'Kür-Vorschlag der unabhängigen Prüfung (P49): ergänzt WISO-3-4-4-K6 (CO2 für Serverräume)')
+
+L.write(meta(kerntest="Alle 32 WiSo-Teilaufgaben dieses Ordners gegen die Musterlösungen gelesen. Lücken geschlossen: Unterweisung (Zeitpunkt, Verantwortung), Unfallversicherung (versicherte Fälle, Leistungen; neuer Stichpunkt WISO-3-1-3), Meldepflicht, Erste Hilfe bei Verbrennung, Löschregeln und Bedienung des Feuerlöschers. IT-Sicherheit (WISO.03.08) ist durch AP1-7 gedeckt (P47), neu ist nur Authentizität (WISO-5-2-1). Die unabhängige Prüfung vom 16.10.2026 (umbau/berichte/WISO-3-pruefer.md, 35 Funde) ist eingearbeitet; Entscheidungen im Abschnitt „Umsetzung“ dort."))

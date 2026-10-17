@@ -1,0 +1,916 @@
+{
+ "oberblock": {
+  "id": "PB1-4",
+  "titel": "UML-Modellierung",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-4-1",
+   "titel": "UML-Diagramme in der Tiefe",
+   "satz": "Was ein System für wen leistet, wie es aufgebaut ist und wie es sich verhält: Anwendungsfall-, Klassen-, Sequenz-, Zustands- und Aktivitätsdiagramm in der Tiefe, die PB1 verlangt. Die Grundnotation kennst du aus AP1; in der Prüfung liegt die Notation im Belegsatz bei – anwenden, nicht auswendig lernen.",
+   "stichpunkte": [
+    {
+     "id": "PB1-4-1-1",
+     "titel": "UML-Überblick und Anwendungsfalldiagramm",
+     "ziel": "Die UML-Diagramme ihrem Zweck zuordnen und aus einer umfangreichen Anforderungsbeschreibung ein vollständiges Anwendungsfalldiagramm mit include, extend samt Bedingung und Generalisierung erstellen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.02.2"
+      },
+      {
+       "id": "ANH.notationen"
+      },
+      {
+       "id": "AP2b.04.09.2"
+      },
+      {
+       "id": "AP2b.03.02.6"
+      },
+      {
+       "id": "ANH.uml-anwendungsfalldiagramm"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A2-a",
+      "2024S-PB1-A3-a",
+      "2025W-PB1-A2-a",
+      "2023W-PB1-A2-b"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-4-1-1-K1",
+       "text": "Du kannst die UML-Diagramme des Katalog-Anhangs ihrem Zweck zuordnen: Anwendungsfalldiagramm (was das System für wen leistet), Klassendiagramm (Aufbau aus Klassen und Beziehungen), Sequenzdiagramm (Nachrichten zwischen Objekten in zeitlicher Folge), Zustandsdiagramm (Zustände eines Objekts und ihre Übergänge), Aktivitätsdiagramm (Ablauf); das Klassendiagramm ist ein Struktur-, die übrigen sind Verhaltensdiagramme.",
+       "kurz": "UML-Diagramme und ihr Zweck",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.02.2"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K2",
+       "text": "Du kannst aus einer umfangreichen Anforderungsbeschreibung ein vollständiges Anwendungsfalldiagramm selbst erstellen, nicht nur ein begonnenes ergänzen: alle Akteure und Anwendungsfälle finden und die Anwendungsfälle aus Sicht des Akteurs mit Gegenstand und Tätigkeit benennen (z. B. „Termin buchen“, nicht „Datenbank abfragen“); die Elemente (Systemgrenze, Assoziation, include, Generalisierung) kennst du aus AP1-8-3-1.",
+       "kurz": "Vollständiges Anwendungsfalldiagramm selbst erstellen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.02.2",
+        "katalog:AP2b.04.09.2",
+        "katalog:AP2b.03.02.6",
+        "beleg:2021W-PB1-A2-a",
+        "beleg:2024S-PB1-A3-a",
+        "beleg:2025W-PB1-A2-a"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K3",
+       "text": "Du kannst bei einer extend-Beziehung (aus AP1) die Bedingung als Notiz an die Beziehung schreiben und den Erweiterungspunkt im Basis-Anwendungsfall angeben, zum Beispiel „Ressourcen planen“ erweitert „Terminanfrage abschließen“ mit der Notiz „wenn Spezialtermin“.",
+       "kurz": "extend-Beziehung mit Bedingung und Erweiterungspunkt",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.2",
+        "beleg:2021W-PB1-A2-a",
+        "beleg:2024S-PB1-A3-a",
+        "beleg:2025W-PB1-A2-a"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K4",
+       "text": "Du kannst erläutern, wozu Software mit einer einheitlichen grafischen Sprache wie der UML modelliert wird: Ein Modell stellt den Entwurf kompakt und mit eindeutig festgelegten Symbolen dar, sodass Auftraggeber und Entwickler dasselbe darunter verstehen, Missverständnisse vor der Programmierung auffallen und die Diagramme später als Dokumentation dienen.",
+       "kurz": "Nutzen grafischer Modelle mit UML",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.5.4-S525",
+        "buch:FS-3.3.3-S189"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K5",
+       "text": "Du kannst erklären, was Struktur- und Verhaltensdiagramme der UML unterscheidet (welches Diagramm wohin gehört: K1): Strukturdiagramme zeigen statisch, woraus ein System besteht und wie seine Teile zusammenhängen, Verhaltensdiagramme zeigen dynamisch, was das System tut und was über die Zeit geschieht – Abläufe, Nachrichten und Zustandswechsel.",
+       "kurz": "Struktur- gegen Verhaltensdiagramme",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.3-S190"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K6",
+       "text": "Du kannst erläutern, wie die UML-Diagramme eines Entwurfs zusammenhängen: Aus den Anwendungsfällen ergeben sich Methoden der Klassen, ein Aktivitäts- oder Sequenzdiagramm beschreibt den Ablauf eines einzelnen Anwendungsfalls genauer, und die Übergänge im Zustandsdiagramm eines Objekts werden durch Methoden seiner Klasse ausgelöst.",
+       "kurz": "Zusammenhang der Diagramme eines Entwurfs",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.2-S117"
+       ]
+      },
+      {
+       "id": "PB1-4-1-1-K7",
+       "text": "Du kannst erklären, was ein Anwendungsfalldiagramm für die Umsetzung bedeutet: Jede Verbindung zwischen einem Akteur und einem Anwendungsfall ist eine Schnittstelle, die gebaut werden muss – eine Benutzeroberfläche für einen Menschen oder eine technische Schnittstelle zu einem externen System; wird die Software umfangreich, teilt man sie auf mehrere Anwendungsfalldiagramme auf.",
+       "kurz": "Assoziation als zu bauende Schnittstelle",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-3.3.4-S195"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-3-1",
+      "AP1-8-3-2",
+      "AP1-8-3-3"
+     ],
+     "hinweis": "2023W-PB1-A2-b (User Stories zu einem Use-Case-Diagramm) liest das Diagramm; die User Stories selbst stehen in PB1-1-1-3.",
+     "kuer": [
+      {
+       "text": "Neben den fünf Prüfungsdiagrammen kennt die UML weitere Strukturdiagramme wie Objekt-, Komponenten-, Verteilungs- und Paketdiagramm (konkrete Objekte zur Laufzeit, Softwarebausteine, Software auf Geräten, Gruppen von Klassen) und weitere Verhaltensdiagramme wie Kommunikations-, Zeitverlaufs- und Interaktionsübersichtsdiagramm. Ein Modellelement darf in mehreren Diagrammen vorkommen, und Werkzeuge tauschen ganze Modelle über das XML-Format XMI aus.",
+       "kurz": "Weitere UML-Diagramme und XMI-Austausch",
+       "quellen": [
+        "buch:FS-3.3.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (der Katalog-Anhang nennt fünf Diagramme)"
+      }
+     ]
+    },
+    {
+     "id": "PB1-4-1-2",
+     "titel": "Klassendiagramm in der Tiefe",
+     "ziel": "Klassen vollständig mit Datentypen, Konstruktoren und Methoden modellieren, mehrere Klassen mit Assoziationen und Multiplizitäten verbinden, Aggregation und Komposition begründen und abstrakte Klassen, Interfaces und statische Elemente darstellen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.09.1",
+       "anteil": "Notation und Beziehungen"
+      },
+      {
+       "id": "AP2b.03.02.3"
+      },
+      {
+       "id": "ANH.uml-klassendiagramm"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A3-b",
+      "2022S-PB1-A3-a",
+      "2024W-PB1-A3-a",
+      "2024W-PB1-A3-ba",
+      "2024W-PB1-A3-bb",
+      "2024W-PB1-A3-bc"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-4-1-2-K1",
+       "text": "Du kannst eine Klasse über die Notation aus AP1 hinaus vollständig modellieren: mit Konstruktor, Get- und Set-Methoden und sinnvollen Datentypen, zum Beispiel validatePassword(String) : Boolean.",
+       "kurz": "Klasse mit Konstruktor, Methoden und Datentypen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.1",
+        "katalog:AP2b.03.02.3",
+        "beleg:2021W-PB1-A3-b",
+        "beleg:2022S-PB1-A3-a"
+       ]
+      },
+      {
+       "id": "PB1-4-1-2-K2",
+       "text": "Du kannst aus einer Beschreibung mehrere Klassen mit ihren Assoziationen und Multiplizitäten erstellen und deren Bedeutung erläutern (z. B. 1..* mindestens eins, * beliebig viele), auch Attribute, die auf Objekte oder Listen anderer Klassen verweisen (streckenliste : List<Strecke>); eine Aggregation wird so als Liste im Ganzen umgesetzt.",
+       "kurz": "Assoziationen und Multiplizitäten zwischen Klassen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.1",
+        "katalog:AP2b.03.02.3",
+        "beleg:2024W-PB1-A3-a",
+        "beleg:2024W-PB1-A3-bb",
+        "beleg:2024W-PB1-A3-ba",
+        "beleg:2024W-PB1-A3-bc"
+       ]
+      },
+      {
+       "id": "PB1-4-1-2-K3",
+       "text": "Du kannst abstrakte Klassen und Methoden ({abstract} oder kursiv), Interfaces mit ihrer Realisierung (gestrichelte Linie mit hohlem Dreieck), Vererbung (durchgezogene Linie mit hohlem Dreieck) und statische Methoden ({static} oder unterstrichen) im Klassendiagramm darstellen.",
+       "kurz": "Abstrakte Klassen, Interfaces und statische Methoden",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.1",
+        "katalog:AP2b.03.02.3"
+       ],
+       "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-2-K4",
+       "text": "Du kannst die fachlichen Methoden einer Klasse aus den Anwendungsfällen ableiten: Aus „Termin absagen“ wird die Methode absagen() der Klasse Termin; Get- und Set-Methoden lässt man im Entwurf oft weg, damit die fachlichen Methoden im Vordergrund stehen.",
+       "kurz": "Methoden aus Anwendungsfällen ableiten",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS-3.3.5-S199"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-3-2"
+     ]
+    },
+    {
+     "id": "PB1-4-1-3",
+     "titel": "Sequenzdiagramm",
+     "ziel": "Den Nachrichtenaustausch zwischen Objekten zeitlich darstellen: Lebenslinien, Aufrufe und Antworten, Aktivierungsbalken, Selbstaufrufe und kombinierte Fragmente.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.09.5"
+      },
+      {
+       "id": "AP2b.03.02.7"
+      },
+      {
+       "id": "ANH.uml-sequenzdiagramm"
+      }
+     ],
+     "teilaufgaben": [
+      "2022S-PB1-A3-ca",
+      "2024S-PB1-A2-e"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-4-1-3-K1",
+       "text": "Du kannst synchrone und asynchrone Nachrichten, Antworten (mit dem Rückgabewert beschriftet), Selbstaufrufe mit versetztem Aktivierungsbalken sowie das Erzeugen (create) und Zerstören (X) von Objekten darstellen.",
+       "kurz": "Nachrichtenarten, Selbstaufrufe, Erzeugen und Zerstören",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.5",
+        "beleg:2022S-PB1-A3-ca"
+       ],
+       "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-3-K2",
+       "text": "Du kannst Aktivierungsbalken richtig setzen: Sie beginnen mit dem Aufruf und enden mit der Antwort; ein Aufruf innerhalb einer laufenden Methode erzeugt einen weiteren Balken.",
+       "kurz": "Aktivierungsbalken richtig setzen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.5",
+        "beleg:2022S-PB1-A3-ca"
+       ]
+      },
+      {
+       "id": "PB1-4-1-3-K3",
+       "text": "Du kannst Alternativen mit dem kombinierten Fragment alt und Bedingungen in eckigen Klammern darstellen, zum Beispiel [Daten im Cache] und [Daten nicht im Cache], sowie optionale (opt) und wiederholte (loop) Abläufe.",
+       "kurz": "Kombinierte Fragmente alt, opt und loop",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.5",
+        "beleg:2024S-PB1-A2-e"
+       ],
+       "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-3-K4",
+       "text": "Du kannst Teilnehmer mit Lebenslinien darstellen und ein (begonnenes) Sequenzdiagramm nach einer Ablaufbeschreibung erstellen oder ergänzen: Nachrichten von oben nach unten in zeitlicher Folge mit Methodenname und Parametern, auch für einen Webservice-Aufruf mit Request (z. B. GET /shareholders?city=Köln) und Response mit Statuscode.",
+       "kurz": "Sequenzdiagramm nach Ablaufbeschreibung erstellen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.5",
+        "katalog:AP2b.03.02.7",
+        "beleg:2022S-PB1-A3-ca",
+        "beleg:2024S-PB1-A2-e"
+       ]
+      },
+      {
+       "id": "PB1-4-1-3-K5",
+       "text": "Du kannst synchrone und asynchrone Nachrichten im Sequenzdiagramm unterscheiden: Bei einer synchronen Nachricht (gefüllte Pfeilspitze) wartet der Sender, bis der Empfänger fertig ist und antwortet; bei einer asynchronen (offene Pfeilspitze) arbeitet er sofort weiter, etwa nachdem er einen Druckauftrag in eine Warteschlange gestellt hat.",
+       "kurz": "Synchrone gegen asynchrone Nachricht",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.2-S122"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Ein Sequenzdiagramm lässt sich in einen Interaktionsrahmen setzen, der links oben das Kürzel sd und den Namen des Ablaufs trägt. Das kombinierte Fragment par zeigt Nachrichtenfolgen, die gleichzeitig ablaufen, etwa das parallele Abfragen zweier Lager.",
+       "kurz": "Interaktionsrahmen und Fragment par",
+       "quellen": [
+        "buch:FS2-2.1.2"
+       ],
+       "grund": "RK1: Interaktionsrahmen und par stehen nicht im Katalog-Anhang"
+      }
+     ]
+    },
+    {
+     "id": "PB1-4-1-4",
+     "titel": "Zustandsdiagramm",
+     "ziel": "Die Zustände eines Objekts aus einer Beschreibung herauslesen und mit Übergängen aus Ereignis, Bedingung und Aktion vollständig darstellen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.09.3"
+      },
+      {
+       "id": "AP2b.03.02.8"
+      },
+      {
+       "id": "ANH.uml-zustandsdiagramm"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A4-b",
+      "2023S-PB1-A3-c",
+      "2024W-PB1-A4-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-4-1-4-K1",
+       "text": "Du kannst aus einer Beschreibung die Zustände eines Objekts herauslesen und mit Startzustand, Zuständen, Übergängen und gegebenenfalls Endzustand als Zustandsdiagramm erstellen.",
+       "kurz": "Zustandsdiagramm aus einer Beschreibung erstellen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.3",
+        "katalog:AP2b.03.02.8",
+        "beleg:2022W-PB1-A4-b",
+        "beleg:2023S-PB1-A3-c",
+        "beleg:2024W-PB1-A4-a"
+       ]
+      },
+      {
+       "id": "PB1-4-1-4-K2",
+       "text": "Du kannst Übergänge in der Form „Ereignis [Bedingung] / Aktion“ beschriften, zum Beispiel „Abfahrt [Auslastung >= 70 %]“ oder „[Veranstaltung beendet] / freigeben“.",
+       "kurz": "Übergänge: Ereignis [Bedingung] / Aktion",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.3",
+        "beleg:2022W-PB1-A4-b",
+        "beleg:2024W-PB1-A4-a"
+       ],
+       "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-4-K3",
+       "text": "Du kannst Bedingungen mit Grenzwerten so setzen, dass sich die Fälle nicht überschneiden und keiner fehlt (z. B. unter 50 %, 50 bis 80 %, über 80 %), und Übergänge in beide Richtungen sowie die Rückkehr in einen früheren Zustand darstellen.",
+       "kurz": "Lückenlose Bedingungen mit Grenzwerten",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.3",
+        "beleg:2023S-PB1-A3-c",
+        "beleg:2024W-PB1-A4-a"
+       ]
+      },
+      {
+       "id": "PB1-4-1-4-K4",
+       "text": "Du kannst Aktionen innerhalb eines Zustands mit entry, do und exit sowie zeitgesteuerte Übergänge mit after angeben.",
+       "kurz": "Zustandsaktionen entry, do, exit und after",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.3",
+        "katalog:AP2b.03.02.8"
+       ],
+       "vorgegeben": "Notation im Belegsatz bzw. Katalog-Anhang"
+      },
+      {
+       "id": "PB1-4-1-4-K5",
+       "text": "Du kannst Zustandsdiagramm und Aktivitätsdiagramm nach ihrem Zweck unterscheiden: Ein Zustandsdiagramm zeigt, welche Zustände ein einzelnes Objekt annimmt und durch welche Ereignisse es wechselt, und passt deshalb zu Objekten mit einem Statusattribut (z. B. eine Bestellung: offen, bezahlt, versandt) oder zum Verhalten einer Oberfläche; ein Aktivitätsdiagramm zeigt dagegen die Abfolge der Schritte eines Ablaufs.",
+       "kurz": "Zustands- gegen Aktivitätsdiagramm",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.1.2-S119"
+       ]
+      },
+      {
+       "id": "PB1-4-1-4-K6",
+       "text": "Du kannst im Zustandsdiagramm einen Selbstübergang darstellen, der vom Zustand zurück in denselben Zustand führt (z. B. jeder weitere Artikel im Zustand „Warenkorb gefüllt“), und eine Verzweigung (Raute), an der ein Übergang je nach Bedingung in verschiedene Zielzustände führt.",
+       "kurz": "Selbstübergang und Verzweigung",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.1.2-S120"
+       ]
+      }
+     ],
+     "hinweis": "Das Lehrbuch (FS2 2.1.2) nennt die Übergänge im Zustandsdiagramm „Transaktionen“; richtig ist Transition bzw. Zustandsübergang – „Transaktion“ ist ein Begriff aus der Datenbanktechnik."
+    },
+    {
+     "id": "PB1-4-1-5",
+     "titel": "Aktivitätsdiagramm für umfangreiche Abläufe",
+     "ziel": "Umfangreiche Geschäftsabläufe und Anwendungsfälle mit Schwimmbahnen, Verzweigungen, Rücksprüngen und Parallelität als Aktivitätsdiagramm erstellen oder erweitern.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.09.4",
+       "anteil": "Geschäftsabläufe und Anwendungsfälle"
+      },
+      {
+       "id": "AP2b.03.02.5",
+       "anteil": "Geschäftsabläufe und Anwendungsfälle"
+      },
+      {
+       "id": "ANH.uml-aktivitaetsdiagramm"
+      }
+     ],
+     "teilaufgaben": [
+      "2022W-PB1-A4-a",
+      "2023W-PB1-A2-c",
+      "2025S-PB1-A3-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-4-1-5-K1",
+       "text": "Du kannst mit den Elementen aus AP1 (Schwimmbahnen, Verzweigungen, Zusammenführungen, Rücksprünge) einen umfangreichen Geschäftsablauf oder den Ablauf eines Anwendungsfalls vollständig als Aktivitätsdiagramm erstellen, zum Beispiel „Messergebnisse speichern“ mit Prüfung der Verbindung, Zwischenspeichern und Ergebnismeldung.",
+       "kurz": "Umfangreichen Ablauf als Aktivitätsdiagramm erstellen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.4",
+        "katalog:AP2b.03.02.5",
+        "beleg:2022W-PB1-A4-a",
+        "beleg:2023W-PB1-A2-c"
+       ]
+      },
+      {
+       "id": "PB1-4-1-5-K2",
+       "text": "Du kannst parallele Zweige mit Teilung und Synchronisation darstellen und in jedem Zweig eigene Verzweigungen einsetzen, die vor der Synchronisation wieder zusammengeführt werden.",
+       "kurz": "Parallele Zweige mit Teilung und Synchronisation",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.4",
+        "beleg:2023W-PB1-A2-c",
+        "beleg:2022W-PB1-A4-a"
+       ]
+      },
+      {
+       "id": "PB1-4-1-5-K3",
+       "text": "Du kannst ein begonnenes Aktivitätsdiagramm nach Notizen zu einem Arbeitsablauf erweitern, auch mit gleichzeitig ausgeführten Tätigkeiten verschiedener Personen und einem nur unter Bedingung ausgeführten Schritt.",
+       "kurz": "Begonnenes Aktivitätsdiagramm nach Notizen erweitern",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.09.4",
+        "beleg:2025S-PB1-A3-a"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-3-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Algorithmen (Schleifen, Verzweigungen eines Programms) als Aktivitätsdiagramm darstellen gehört zu PB2.",
+       "begruendung": "P3: AP2a.02.02.1 (Kontrollstrukturen mittels Aktivitätsdiagramm oder Pseudocode) wohnt in PB2, Gebiet G.PB2.02 „Algorithmen … grafisch darstellen“.",
+       "katalog": [
+        "AP2a.02.02.1"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Aktivitätsdiagramme helfen in jeder Phase: in der Analyse für Geschäftsprozesse, im Entwurf für Programmabläufe, im Test als Vorlage für Testszenarien und als Dokumentation. Eine ganze Aktivität lässt sich als abgerundeter Rahmen mit ihrem Namen zeichnen, ihre Ein- und Ausgabeparameter als Rechtecke auf dem Rahmen.",
+       "kurz": "Einsatz in allen Phasen und Aktivitätsrahmen",
+       "quellen": [
+        "buch:FS-3.3.6",
+        "buch:FS2-2.1.2"
+       ],
+       "grund": "RK1: Überblick ohne Prinzip; Aktivitätsrahmen mit Parametern steht nicht im Katalog-Anhang"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-2-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-4-1-2-K1",
+    "grund": "Datentypen, Konstruktor, Getter/Setter laut 2021W-PB1-A3-b, 2022S-PB1-A3-a"
+   },
+   {
+    "alt": "AP2-2-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-4-1-2-K3",
+    "grund": "um statische Methoden ergänzt; Konzepte in PB1-5"
+   },
+   {
+    "alt": "AP2-2-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-4-1-2-K2",
+    "grund": "mehrere Klassen mit Assoziationen (2024W-PB1-A3-a)"
+   },
+   {
+    "alt": "AP2-2-1-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-4-1-2-K2",
+    "grund": "Multiplizitäten erläutern in der Assoziations-Aussage (2024W-PB1-A3-bb)"
+   },
+   {
+    "alt": "AP2-2-1-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-4-1-2-K2",
+    "grund": "nur das Neue (Aggregation als Liste); Aggregation/Komposition erklärt AP1-8-3-2-K6"
+   },
+   {
+    "alt": "AP2-2-1-1-K6",
+    "status": "gestrichen",
+    "grund": "E2: Sichtbarkeitszeichen in AP1-8-3-2-K3; importiert"
+   },
+   {
+    "alt": "AP2-2-1-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-4-1-1-K2",
+    "grund": "umfangreiche Beschreibung (PB1-Belege)"
+   },
+   {
+    "alt": "AP2-2-1-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-4-1-1-K2",
+    "grund": "include als Teil des vollständigen Diagramms; Grundlage AP1-8-3-1"
+   },
+   {
+    "alt": "AP2-2-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-4-1-1-K2",
+    "grund": "Grundlage in AP1-8-3-1; hier mehrere Akteure"
+   },
+   {
+    "alt": "AP2-2-1-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-4-1-1-K3",
+    "grund": "Bedingung als Notiz laut Musterlösungen"
+   },
+   {
+    "alt": "AP2-2-1-2-K5",
+    "status": "gestrichen",
+    "grund": "E2: Generalisierung zwischen Anwendungsfällen in AP1-8-3-1-K3; importiert"
+   },
+   {
+    "alt": "AP2-2-1-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-4-1-1-K2",
+    "grund": "in uc1 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-1-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-4-1-5-K1",
+    "grund": "umfangreicher Ablauf mit Rücksprüngen (2022W-PB1-A4-a)"
+   },
+   {
+    "alt": "AP2-2-1-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-4-1-5-K2",
+    "grund": "Verzweigungen in parallelen Zweigen (2023W-PB1-A2-c)"
+   },
+   {
+    "alt": "AP2-2-1-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-4-1-5-K1",
+    "grund": "in ak1 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-1-3-K4",
+    "status": "gestrichen",
+    "grund": "E2: Endknoten und Ablaufende in AP1-8-3-3-K6; importiert"
+   },
+   {
+    "alt": "AP2-2-1-3-K5",
+    "status": "PB2",
+    "grund": "Algorithmen als Aktivitätsdiagramm: AP2a.02.02.1 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-2-1-4-K1",
+    "status": "angepasst",
+    "neu": "PB1-4-1-3-K4",
+    "grund": "Lebenslinien in der Erstellen-Aussage"
+   },
+   {
+    "alt": "AP2-2-1-4-K2",
+    "status": "angepasst",
+    "neu": "PB1-4-1-3-K1",
+    "grund": "mit Selbstaufruf und asynchroner Nachricht (Katalog-Anhang)"
+   },
+   {
+    "alt": "AP2-2-1-4-K3",
+    "status": "angepasst",
+    "neu": "PB1-4-1-3-K4",
+    "grund": "in sq5 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-1-4-K4",
+    "status": "verschoben",
+    "neu": "PB1-4-1-3-K3"
+   },
+   {
+    "alt": "AP2-2-1-4-K5",
+    "status": "angepasst",
+    "neu": "PB1-4-1-3-K1",
+    "grund": "Selbstaufruf, Erzeugen und Zerstören in sq2"
+   },
+   {
+    "alt": "AP2-2-1-5-K1",
+    "status": "angepasst",
+    "neu": "PB1-4-1-4-K1",
+    "grund": "erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-2-1-5-K2",
+    "status": "verschoben",
+    "neu": "PB1-4-1-4-K2"
+   },
+   {
+    "alt": "AP2-2-1-5-K3",
+    "status": "angepasst",
+    "neu": "PB1-4-1-4-K4",
+    "grund": "mit after zusammengefasst"
+   },
+   {
+    "alt": "AP2-2-1-5-K4",
+    "status": "verschoben",
+    "neu": "PB1-4-1-4-K3"
+   },
+   {
+    "alt": "AP2-2-1-5-K5",
+    "status": "angepasst",
+    "neu": "PB1-4-1-4-K3",
+    "grund": "in zs3 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-1-5-K6",
+    "status": "angepasst",
+    "neu": "PB1-4-1-4-K4",
+    "grund": "in zs4 aufgenommen"
+   },
+   {
+    "alt": "AP2-2-3-1-K1",
+    "status": "gestrichen",
+    "grund": "E2: EPK und BPMN stehen nur im AP1-Anhang (P24), Gegenstück AP1-8-4-4-K1; der AP2-Katalog nennt sie nicht"
+   },
+   {
+    "alt": "AP2-2-3-1-K2",
+    "status": "gestrichen",
+    "grund": "E2: EPK und BPMN stehen nur im AP1-Anhang (P24), Gegenstück AP1-8-4-4-K2; der AP2-Katalog nennt sie nicht"
+   },
+   {
+    "alt": "AP2-2-3-1-K3",
+    "status": "gestrichen",
+    "grund": "E2: EPK und BPMN stehen nur im AP1-Anhang (P24), Gegenstück AP1-8-4-4-K3; der AP2-Katalog nennt sie nicht"
+   },
+   {
+    "alt": "AP2-2-3-1-K4",
+    "status": "gestrichen",
+    "grund": "E2: EPK und BPMN stehen nur im AP1-Anhang (P24), Gegenstück AP1-8-4-4-K4; der AP2-Katalog nennt sie nicht"
+   },
+   {
+    "alt": "AP2-2-3-1-K5",
+    "status": "gestrichen",
+    "grund": "E2: EPK und BPMN stehen nur im AP1-Anhang (P24), Gegenstück AP1-8-4-4-K3; der AP2-Katalog nennt sie nicht"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Nach der unabhängigen Prüfung (umbau/berichte/PB1-4-pruefer.md) überarbeitet: Notation als vorgegeben (B4), Wiederholungen aus AP1 gestrichen. Alle 18 Diagramm-Teilaufgaben dieses Ordners gegen die beschriebenen Lösungsgrafiken gelesen (2025S ohne Lösungshinweise). Notationsdetails der Lösungen (Notiz an extend, Selbstaufruf mit versetztem Balken, alt-Fragment, Bedingungen mit Grenzwerten) stehen als eigene Aussagen. Klassendiagramme mit OO-Konzepten (2022S-PB1-A3-b, 2023S-PB1-A2-bb, 2025S-PB1-A4-c) wohnen in PB1-5."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-3.3.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.1.2": "Lehrbuch Westermann „IT-Berufe“ FS2 2.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.3.6": "Lehrbuch Westermann „IT-Berufe“ FS 3.3.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Use-Case-Diagramm",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-1-K2",
+      "PB1-4-1-1-K3"
+     ]
+    },
+    {
+     "thema": "Klassendiagramm",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-2-K1",
+      "PB1-4-1-2-K2",
+      "PB1-4-1-2-K3"
+     ]
+    },
+    {
+     "thema": "Aggregation, Komposition, Assoziation",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-2-K2"
+     ]
+    },
+    {
+     "thema": "Spezialisierung, Generalisierung",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-2-K3",
+      "PB1-4-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Sequenzdiagramm",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-3-K1",
+      "PB1-4-1-3-K3",
+      "PB1-4-1-3-K4"
+     ]
+    },
+    {
+     "thema": "Zustandsdiagramm, Zustandsautomat",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-4-K1",
+      "PB1-4-1-4-K2",
+      "PB1-4-1-4-K3"
+     ]
+    },
+    {
+     "thema": "Aktivitätsdiagramm",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-5-K1",
+      "PB1-4-1-5-K2",
+      "PB1-4-1-5-K3"
+     ]
+    },
+    {
+     "thema": "Strukturdiagramm, Verhaltensdiagramm",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-4-1-1-K1"
+     ]
+    },
+    {
+     "thema": "Komponentendiagramm, Verteilungsdiagramm",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-1"
+     ]
+    },
+    {
+     "thema": "Neben den fünf Prüfungsdiagrammen kennt die UML weitere Strukturdiagramme wie Objekt-, Komponenten-, Verteilungs- und Pa",
+     "quellen": [
+      "buch:FS-3.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Sequenzdiagramm lässt sich in einen Interaktionsrahmen setzen, der links oben das Kürzel sd und den Namen des Ablauf",
+     "quellen": [
+      "buch:FS2-2.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Aktivitätsdiagramme helfen in jeder Phase: in der Analyse für Geschäftsprozesse, im Entwurf für Programmabläufe, im Test",
+     "quellen": [
+      "buch:FS-3.3.6",
+      "buch:FS2-2.1.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-4-1-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2b.04.09",
+    "paar": "Klassen- / Anwendungsfall- / Zustands- / Aktivitäts- / Sequenzdiagramm",
+    "abgedeckt": {
+     "Klassen": [
+      "PB1-4-1-2-K1",
+      "PB1-4-1-2-K2"
+     ],
+     "Anwendungsfall": [
+      "PB1-4-1-1-K2"
+     ],
+     "Zustand": [
+      "PB1-4-1-4-K1"
+     ],
+     "Aktivität": [
+      "PB1-4-1-5-K1"
+     ],
+     "Sequenz": [
+      "PB1-4-1-3-K4"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.04.09.2",
+    "paar": "include / extend",
+    "abgedeckt": {
+     "include": [
+      "PB1-4-1-1-K2"
+     ],
+     "extend": [
+      "PB1-4-1-1-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.04.09.1",
+    "paar": "Aggregation / Komposition",
+    "abgedeckt": {
+     "Aggregation": [
+      "PB1-4-1-2-K2"
+     ],
+     "Komposition": [
+      "PB1-4-1-2-K2"
+     ]
+    }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-4-1-1-K4",
+     "PB1-4-1-1-K5",
+     "PB1-4-1-1-K6",
+     "PB1-4-1-1-K7",
+     "PB1-4-1-2-K4",
+     "PB1-4-1-3-K5",
+     "PB1-4-1-4-K5",
+     "PB1-4-1-4-K6"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [],
+    "kuer": [
+     "PB1-4-1-1",
+     "PB1-4-1-3",
+     "PB1-4-1-5"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "hinweise": [
+     "PB1-4-1-4"
+    ]
+   }
+  ]
+ }
+}

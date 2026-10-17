@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "parkplatz": "P47",
+    "entschieden": "16.10.2026, Projektinhaber (Deckungstabelle)",
+    "regel": "Ein WiSo-Baustein, dessen Inhalt ein früherer Raum (AP1, PB1, PB2) schon vollständig lehrt, wird im WiSo-Lernplan nicht neu formuliert. Er gilt als abgedeckt (T1), wenn ein WiSo-Stichpunkt per baut_auf auf einen der deckenden Stichpunkte verweist; als erreichte Tiefe (T8) zählt die höchste Stufe einer Können-Aussage der deckenden Stichpunkte im Export. Steht ein gedeckter Baustein trotzdem in den bausteine eines WiSo-Stichpunkts, braucht er dort eine Aussage mit „neu“ (T7 wie bei Importen, P36).",
+    "hinweis": "Geprüft von tools/umbau/lernplan-pruefen.mjs (T7, T8) und tools/umbau/raum-pruefen.mjs (T1, T8, Gültigkeit der Tabelle). Teilweise gedeckte Bausteine (z. B. WISO.02.03.1: Stablinie ist neu) stehen nicht hier; dort schreibt der WiSo-Plan nur das Neue. Nach der unabhängigen Prüfung (16.10.2026) herausgenommen, weil nur teilweise gedeckt: WISO.03.08.2 (zweites Ziel der DSGVO), WISO.03.08.4 (BSI gegen Datenschutzaufsicht abgrenzen), WISO.02.03.3 (Vor- und Nachteile von Matrix zuordnen statt nennen); sie stehen jetzt als WiSo-Bausteine in WISO-5-2-1 bzw. WISO-2-2-5."
+  },
+  "bausteine": {
+    "WISO.03.08.1": { "stichpunkte": ["AP1-7-5-1"], "grund": "Informationssicherheit (Datensicherheit) und Datenschutz unterscheiden: AP1-7-5-1-K5." },
+    "WISO.03.08.3": { "stichpunkte": ["AP1-7-1-1", "PB1-10-1-4"], "grund": "Vertraulichkeit, Integrität, Verfügbarkeit: AP1-7-1-1; Authentizität bei Zertifikat und Signatur: PB1-10-1-4. Neu in WiSo: Authentizität als viertes Schutzziel benennen (WISO-5-2-1-K8)." },
+    "WISO.03.08.5": { "stichpunkte": ["AP1-7-2-1"], "grund": "Empfehlungen und Standards des BSI (IT-Grundschutz) beachten und begründen: AP1-7-2-1-K3, -K5, -K6." },
+    "WISO.03.08.6": { "stichpunkte": ["AP1-7-2-2", "AP1-7-1-3", "AP1-7-1-4"], "grund": "Betriebliches Sicherheitskonzept: Schutzbedarf AP1-7-2-2, Sicherheitsrichtlinien AP1-7-1-3, beachten aus Sicht der Beschäftigten (Richtlinien einhalten, Vorfälle melden, IT-Sicherheits- und Datenschutzbeauftragter) AP1-7-1-4 (ergänzt nach der unabhängigen Prüfung)." },
+    "WISO.03.08.7": { "stichpunkte": ["AP1-7-1-2"], "grund": "Technische, organisatorische und personelle Maßnahmen unterscheiden und für einen Arbeitsplatz festlegen: AP1-7-1-2." },
+    "WISO.03.01.7": { "stichpunkte": ["AP1-4-3-1"], "grund": "Arbeitsplatzergonomie: AP1-4-3-1 (Maßnahmen nennen, Arbeitsplatz beurteilen)." },
+    "WISO.03.02.7": { "stichpunkte": ["AP1-4-3-1"], "grund": "Ergonomische Arbeitsplatzgestaltung einschätzen: AP1-4-3-1-K3 (Stufe 4)." },
+    "WISO.04.01.2.1": { "stichpunkte": ["AP1-4-3-3"], "grund": "Unnötige Gerätelaufzeiten vermeiden (Standby, schaltbare Steckdosen, Energiesparmodus): AP1-4-3-3-K5." },
+    "WISO.01.12.3": { "stichpunkte": ["AP1-1-2-1"], "grund": "Arbeits- und Projektplanungstechniken (Projektstrukturplan, Gantt-Diagramm, Netzplan): AP1-1-2-1." },
+    "WISO.01.12.6": { "stichpunkte": ["AP1-2-3-2"], "grund": "Fachinformationen beschaffen, auswählen und auswerten: AP1-2-3-2. Neu in WiSo: Aussagen an einer Statistik prüfen (WISO-1-7-2-K7)." }
+  }
+}

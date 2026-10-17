@@ -1,0 +1,481 @@
+{
+  "ordner": "PB2-3",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB2 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb2/PB2-3.json",
+  "karten": [
+    {
+      "id": "AP2-5-2-3-K1-2",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K1",
+      "vorne": "Wie hältst du bei der Ablaufverfolgung einer rekursiven Methode die Werte fest?",
+      "hinten": "- je Aufruf eine eigene Zeile (oder Ebene) mit den eigenen Parameter- und Variablenwerten\n- absteigen, bis die Abbruchbedingung erreicht ist\n- dann Aufruf für Aufruf zurückgehen und je Ebene den Rückgabewert eintragen"
+    },
+    {
+      "id": "PB2-3-1-1-K1-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K1",
+      "vorne": "Verfolge den Aufruf `summe(3)`:\n`funktion summe(n)`\n`  if n == 0 then return 0`\n`  return n + summe(n - 1)`\nWelche Aufrufe entstehen, und was liefert jeder zurück?",
+      "hinten": "- summe(3) ruft summe(2) auf\n- summe(2) ruft summe(1) auf\n- summe(1) ruft summe(0) auf\n- summe(0) liefert 0 (Abbruchbedingung)\n- summe(1) liefert 1 + 0 = 1\n- summe(2) liefert 2 + 1 = 3\n- summe(3) liefert 3 + 3 = **6**"
+    },
+    {
+      "id": "PB2-3-1-1-K1-2",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K1",
+      "vorne": "Warum darfst du bei der Ablaufverfolgung einer rekursiven Methode die Variable `n` nicht einfach in einer einzigen Spalte überschreiben?",
+      "hinten": "Jeder Aufruf hat seine **eigenen** Parameter und lokalen Variablen. Nach der Rückkehr rechnet der aufrufende Aufruf mit **seinem** alten Wert weiter. Überschreibst du ihn, stimmt die Rückrechnung nicht mehr."
+    },
+    {
+      "id": "AP2-5-2-3-K2-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K2",
+      "vorne": "Woraus leitet man beim Schreibtischtest das erwartete Ergebnis ab, woraus das tatsächliche?",
+      "hinten": "- erwartet: aus der Beschreibung der Funktion (was sie leisten soll)\n- tatsächlich: aus dem Durchgehen des Codes"
+    },
+    {
+      "id": "AP2-5-2-3-K2-2",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K2",
+      "vorne": "Warum darf das erwartete Ergebnis nicht aus dem Code abgelesen werden?",
+      "hinten": "Dann würde ein Fehler im Code mit in das erwartete Ergebnis übernommen und bliebe unentdeckt."
+    },
+    {
+      "id": "AP2-5-2-3-K3-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K2",
+      "vorne": "Wie findet man nach dem Schreibtischtest die fehlerhafte Zeile?",
+      "hinten": "Die Testfälle mit Abweichung vergleichen und den Ablauf verfolgen: Die Zeile, ab der ein Wert erstmals vom Erwarteten abweicht, ist in der Regel die fehlerhafte; sie wird mit Zeilennummer benannt."
+    },
+    {
+      "id": "PB2-3-1-1-K2-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K2",
+      "vorne": "Eine Funktion soll zählen, wie viele Werte **größer** als `grenze` sind:\n`1 anzahl = 1`\n`2 for i = 0 to laenge(werte) - 1`\n`3   if werte[i] >= grenze then`\n`4     anzahl = anzahl + 1`\n`5   end if`\n`6 end for`\n`7 return anzahl`\nTestfälle (grenze 5): [1, 2] liefert 1 statt 0; [5, 8] liefert 3 statt 1. Bestimme die fehlerhaften Zeilen und begründe.",
+      "hinten": "- **Zeile 1:** [1, 2] enthält keinen passenden Wert, trotzdem 1 → der Startwert ist falsch, richtig `anzahl = 0`\n- **Zeile 3:** bei [5, 8] ist das Ergebnis um 2 zu hoch: 1 durch den Startwert, 1 weil die 5 mitgezählt wird → richtig `werte[i] > grenze`\nErst beide Fehler zusammen erklären die Abweichung."
+    },
+    {
+      "id": "PB2-3-1-1-K3-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K3",
+      "vorne": "Anforderung: ab 90 Punkten „sehr gut“, ab 50 Punkten „bestanden“, sonst „nicht bestanden“. Code:\n`if punkte > 90 then return \"sehr gut\"`\n`else if punkte > 50 then return \"bestanden\"`\n`else return \"nicht bestanden\"`\nDie Tests `assertEquals(\"sehr gut\", note(90))` und `assertEquals(\"bestanden\", note(50))` schlagen fehl. Wie korrigierst du den Code?",
+      "hinten": "Beide Vergleiche auf `>=` ändern:\n- `if punkte >= 90 then return \"sehr gut\"`\n- `else if punkte >= 50 then return \"bestanden\"`\nDann bestehen beide Tests; die Grenzwerte gehören laut Anforderung zur höheren Stufe."
+    },
+    {
+      "id": "PB2-3-1-1-K3-2",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K3",
+      "vorne": "Eine nach Kunden sortierte Liste wird mit Gruppenwechsel verarbeitet:\n`aktKunde = liste[0].kunde; summe = 0`\n`for i = 0 to laenge(liste) - 1`\n`  if liste[i].kunde != aktKunde then`\n`    ausgabe(aktKunde, summe)`\n`    aktKunde = liste[i].kunde; summe = 0`\n`  end if`\n`  summe = summe + liste[i].betrag`\n`end for`\nWelcher Teil fehlt, und wo ergänzt du ihn?",
+      "hinten": "Für den **letzten Kunden** wird nie etwas ausgegeben, weil danach kein Wechsel mehr kommt.\nErgänzung **nach** `end for`: derselbe Auswerteblock, hier `ausgabe(aktKunde, summe)`."
+    },
+    {
+      "id": "AP2-5-2-3-K5-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K4",
+      "vorne": "Nenne vier typische inhaltliche Fehler aus PB2-Aufgaben, die über falsche Schleifengrenzen hinausgehen.",
+      "hinten": "- falscher Startwert (z. B. 0 statt erstes Element beim Minimum)\n- letzte Gruppe nach der Schleife nicht ausgewertet\n- falsche Variable im Ausdruck (z. B. Monats- statt Jahreszähler)\n- fehlende Rückgabe (`return`)\nWeitere: überflüssige Anweisung setzt ein Flag zurück, Ausgabe vor statt nach dem rekursiven Aufruf."
+    },
+    {
+      "id": "AP2-5-2-3-K5-2",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K4",
+      "vorne": "Eine Funktion soll das Minimum eines Arrays liefern und beginnt mit `min = 0`; danach wird jedes Element mit `if werte[i] < min then min = werte[i]` geprüft. Welcher Fehler liegt vor und wie lautet die Berichtigung?",
+      "hinten": "Falscher Startwert: Sind alle Werte positiv, ist kein Element kleiner als 0, die Funktion liefert fälschlich 0.\nBerichtigt: `min = werte[0]` und die Schleife ab Index 1 laufen lassen."
+    },
+    {
+      "id": "PB2-3-1-1-K4-1",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K4",
+      "vorne": "`prozedur zeige(n)`\n`  if n > 0 then`\n`    ausgabe(n)`\n`    zeige(n - 1)`\n`  end if`\n`zeige(3)` soll „1 2 3“ ausgeben. Was wird ausgegeben, und wie berichtigst du den Code?",
+      "hinten": "Ausgabe „3 2 1“, weil jede Zahl **vor** dem rekursiven Aufruf ausgegeben wird.\nBerichtigung: die beiden Zeilen tauschen, also erst `zeige(n - 1)`, dann `ausgabe(n)`."
+    },
+    {
+      "id": "PB2-3-1-1-K4-2",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K4",
+      "vorne": "Eine Funktion soll prüfen, ob `gesucht` in der Liste vorkommt:\n`gefunden = false`\n`for i = 0 to laenge(liste) - 1`\n`  if liste[i] == gesucht then gefunden = true`\n`  else gefunden = false`\n`end for`\n`return gefunden`\nWelcher Fehler liegt vor?",
+      "hinten": "Der `else`-Zweig ist überflüssig: Er setzt das Flag bei jedem späteren, nicht passenden Element wieder auf `false`. Die Funktion liefert nur `true`, wenn das **letzte** Element passt.\nBerichtigung: `else gefunden = false` streichen."
+    },
+    {
+      "id": "PB2-3-1-1-K4-3",
+      "sp": "PB2-3-1-1",
+      "k": "PB2-3-1-1-K4",
+      "vorne": "Ein Programm summiert Messwerte je Monat und fürs ganze Jahr. Am Ende steht `jahresSchnitt = jahresSumme / anzahlMonat`. Welcher Fehler liegt vor?",
+      "hinten": "Falsche Variable: `anzahlMonat` zählt nur die Werte des letzten Monats. Richtig ist der Jahreszähler: `jahresSchnitt = jahresSumme / anzahlJahr`."
+    },
+    {
+      "id": "AP2-5-3-1-K1-1",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K1",
+      "vorne": "Wie grenzt du mit dem Debugger einen Fehler ein?",
+      "hinten": "- Breakpoint vor die verdächtige Stelle setzen\n- Programm im Debug-Modus starten, es hält am Breakpoint an\n- im Einzelschritt weitergehen und die Variablenwerte beobachten\n- die Zeile, nach der ein Wert erstmals vom erwarteten abweicht, enthält den Fehler"
+    },
+    {
+      "id": "AP2-5-3-1-K1-2",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K1",
+      "vorne": "Was bewirkt ein Breakpoint?",
+      "hinten": "Das Programm hält an dieser Stelle an; man kann die Werte der Variablen ansehen und schrittweise weitergehen."
+    },
+    {
+      "id": "PB2-3-1-2-K1-1",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K1",
+      "vorne": "Was ist beim Debuggen der Unterschied zwischen **Step over** und **Step into**?",
+      "hinten": "- **Step over:** führt die aktuelle Zeile aus; ein Methodenaufruf darin läuft als Ganzes durch\n- **Step into:** springt in die aufgerufene Methode hinein und hält dort an der ersten Zeile"
+    },
+    {
+      "id": "PB2-3-1-2-K1-2",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K1",
+      "vorne": "`berechnePreis()` liefert einen falschen Betrag. In Zeile 12 ruft sie `rabatt(menge)` auf; du vermutest den Fehler dort. Wie gehst du mit dem Debugger vor?",
+      "hinten": "- Breakpoint auf Zeile 12 setzen und im Debug-Modus starten\n- mit **Step into** in `rabatt` springen\n- Zeile für Zeile weitergehen und `menge` sowie den Rückgabewert beobachten\n- weicht ein Wert vom erwarteten ab, ist die Stelle gefunden; sonst liegt der Fehler hinter dem Aufruf (dann mit Step over weiter)"
+    },
+    {
+      "id": "PB2-3-1-2-K4-1",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K4",
+      "vorne": "Der Arzt soll eine Medikation eingeben; ohne Vorgabe gilt die hinterlegte Standardmedikation. Eingegeben wurde nur „   “ (Leerzeichen). Wie soll das Programm vorgehen?",
+      "hinten": "1. Eingabe bereinigen: mit `trim()` führende und folgende Leerzeichen entfernen\n2. Ist sie danach leer (oder `null`), wie eine fehlende Eingabe behandeln\n3. Ersatzregel anwenden: die Standardmedikation verwenden\nNicht mit „   “ weiterarbeiten."
+    },
+    {
+      "id": "PB2-3-1-2-K4-2",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K4",
+      "vorne": "Warum reicht die Prüfung `if (eingabe.isEmpty())` nicht aus, um fehlende Texteingaben zu erkennen?",
+      "hinten": "Eine Eingabe aus Leerzeichen ist **nicht** leer und rutscht durch. Erst `eingabe.trim().isEmpty()` erkennt sie. Außerdem muss `null` vorher abgefangen werden, sonst gibt es eine NullPointerException."
+    },
+    {
+      "id": "AP2-5-3-1-K3-1",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K5",
+      "vorne": "Was ist print-Debugging?",
+      "hinten": "Man lässt an gezielt gewählten Stellen Zwischenwerte ausgeben (z. B. mit `print`), um zu sehen, wo sich ein Wert anders entwickelt als erwartet."
+    },
+    {
+      "id": "PB2-3-1-2-K5-1",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K5",
+      "vorne": "Ein Fehler tritt nur beim Kunden im laufenden Betrieb auf, in der Entwicklungsumgebung lässt er sich nicht nachstellen. Debugger oder print-Debugging? Begründe.",
+      "hinten": "print-Debugging bzw. Logging: Zwischenwerte und Zustände werden im Betrieb protokolliert und danach ausgewertet. Ein Debugger lässt sich im Produktivbetrieb meist nicht anhängen, und am Breakpoint würde der Betrieb stehen."
+    },
+    {
+      "id": "PB2-3-1-2-K5-2",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K5",
+      "vorne": "Ein Fehler tritt nur auf, wenn eine Antwort innerhalb von 2 Sekunden eintrifft. Hältst du am Breakpoint an, verschwindet er. Welche Technik wählst du und warum?",
+      "hinten": "print-Debugging/Logging: Es hält den Ablauf nicht an. Das Anhalten am Breakpoint verändert die Zeitabläufe, deshalb tritt der Fehler dann nicht auf."
+    },
+    {
+      "id": "PB2-3-1-2-K5-3",
+      "sp": "PB2-3-1-2",
+      "k": "PB2-3-1-2-K5",
+      "vorne": "Ein falsches Rechenergebnis lässt sich in der Entwicklungsumgebung mit denselben Eingaben jedes Mal nachstellen. Debugger oder print-Debugging? Begründe.",
+      "hinten": "Debugger: Der Fehler ist nachstellbar, also kannst du Schritt für Schritt durchgehen und alle Variablen beobachten, ohne vorher Ausgaben einzubauen und später wieder zu entfernen."
+    },
+    {
+      "id": "PB2-3-1-3-K2-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K2",
+      "vorne": "Wie ist eine Testmethode in einem Unit-Test aufgebaut?",
+      "hinten": "- prüft **eine** Einheit (Methode oder Klasse)\n- ruft sie mit festen Testdaten auf\n- vergleicht mit `assertEquals(erwartet, tatsächlich)`, z. B. `assertEquals(6, summe(3))`\n- stimmen die Werte nicht, schlägt der Test fehl"
+    },
+    {
+      "id": "PB2-3-1-3-K2-2",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K2",
+      "vorne": "Wofür steht F.I.R.S.T. bei Unit-Tests?",
+      "hinten": "- **Fast:** laufen schnell\n- **Independent:** unabhängig voneinander, Reihenfolge egal\n- **Repeatable:** liefern bei jeder Wiederholung dasselbe Ergebnis\n- **Self-Validating:** prüfen sich selbst, keine manuelle Kontrolle\n- **Timely:** rechtzeitig, vor dem Produktivcode geschrieben"
+    },
+    {
+      "id": "PB2-3-1-3-K2-3",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K2",
+      "vorne": "Ein Unit-Test prüft eine Rabattmethode, die das aktuelle Tagesdatum verwendet; er besteht nur an Wochentagen. Welche Eigenschaft guter Unit-Tests ist verletzt?",
+      "hinten": "**Repeatable:** Der Test liefert nicht bei jeder Ausführung dasselbe Ergebnis. Abhilfe: das Datum als Parameter übergeben und im Test fest vorgeben."
+    },
+    {
+      "id": "PB2-3-1-3-K3-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K3",
+      "vorne": "Anforderung: ab 10 Stück 5 % Rabatt, ab 100 Stück 10 %. Code:\n`if (menge > 100) return 10;`\n`if (menge > 10) return 5;`\n`return 0;`\nTrage je Test OK oder Fehler ein: `assertEquals(0, rabatt(9))`, `assertEquals(5, rabatt(10))`, `assertEquals(5, rabatt(99))`, `assertEquals(10, rabatt(100))`",
+      "hinten": "- rabatt(9) liefert 0 → **OK**\n- rabatt(10) liefert 0 → **Fehler**\n- rabatt(99) liefert 5 → **OK**\n- rabatt(100) liefert 5 → **Fehler**\nUrsache: `>` statt `>=`."
+    },
+    {
+      "id": "PB2-3-1-3-K3-2",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K3",
+      "vorne": "Ein Unit-Test schlägt fehl. Steht damit fest, dass der Fehler im Code liegt?",
+      "hinten": "Nein. Auch der **erwartete Wert im Test** kann falsch sein. Deshalb den erwarteten Wert aus der Anforderung nachrechnen und erst dann entscheiden, ob Code oder Test berichtigt wird."
+    },
+    {
+      "id": "PB2-3-1-3-K4-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K4",
+      "vorne": "Was ist ein Regressionstest, und wozu dient er?",
+      "hinten": "Nach jeder Änderung am Code werden die **vorhandenen** Tests erneut ausgeführt. So fällt auf, wenn eine Änderung bereits funktionierende Teile unbemerkt kaputt gemacht hat."
+    },
+    {
+      "id": "PB2-3-1-3-K4-2",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K4",
+      "vorne": "Du hast einen Fehler in der Rabattberechnung behoben; der neue Test dafür besteht. Warum führst du trotzdem alle anderen Tests erneut aus?",
+      "hinten": "Die Korrektur kann an anderer Stelle Nebenwirkungen haben, z. B. in Methoden, die die Rabattberechnung nutzen. Der Regressionstest zeigt, ob alles, was vorher funktionierte, weiter funktioniert."
+    },
+    {
+      "id": "AP2-5-3-1-K4-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K5",
+      "vorne": "Beschreibe das Vorgehen bei Test Driven Development (TDD).",
+      "hinten": "1. **Red:** zuerst einen Test schreiben; er schlägt fehl, weil der Code noch fehlt\n2. **Green:** gerade so viel Code schreiben, dass der Test besteht\n3. **Refactor:** den Code aufräumen; alle Tests müssen weiter bestehen\nDann mit dem nächsten Test von vorn."
+    },
+    {
+      "id": "AP2-5-3-1-K4-2",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K5",
+      "vorne": "Wofür steht die Abkürzung TDD?",
+      "hinten": "Test Driven Development (testgetriebene Entwicklung)."
+    },
+    {
+      "id": "PB2-3-1-3-K5-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K5",
+      "vorne": "Anforderung: `gebuehr(alter)` liefert 0 für 0 bis 17 Jahre, 10 ab 18 Jahren und −1 für negative Werte. Schreibe passende Testfälle als `assertEquals`.",
+      "hinten": "- Normalfall: `assertEquals(10, gebuehr(30))`\n- Grenze: `assertEquals(0, gebuehr(17))` und `assertEquals(10, gebuehr(18))`\n- untere Grenze: `assertEquals(0, gebuehr(0))`\n- Fehlerfall: `assertEquals(-1, gebuehr(-1))`"
+    },
+    {
+      "id": "PB2-3-1-3-K6-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K6",
+      "vorne": "Warum gilt testgetriebene Entwicklung eher als Entwurfs- denn als Teststrategie?",
+      "hinten": "Die Tests entstehen vor dem Code und legen fest, was er leisten muss (Schnittstelle, erwartetes Verhalten). Sie steuern so die Entwicklung und geben nach jedem kleinen Schritt sofort Rückmeldung; die fertige Testsammlung ist eher ein Nebeneffekt."
+    },
+    {
+      "id": "PB2-3-1-3-K7-1",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K7",
+      "vorne": "Nenne zwei Vorteile testgetriebener Entwicklung.",
+      "hinten": "- hohe Codequalität, Änderungen sind durch Tests abgesichert\n- einfache Fehleranalyse: der fehlschlagende Test zeigt die betroffene Einheit\n- kein überflüssiger Code: nur, was ein Test verlangt"
+    },
+    {
+      "id": "PB2-3-1-3-K7-2",
+      "sp": "PB2-3-1-3",
+      "k": "PB2-3-1-3-K7",
+      "vorne": "Nenne zwei Nachteile testgetriebener Entwicklung.",
+      "hinten": "- nur Unit-Ebene: Integrations- und Systemtests bleiben nötig\n- viele kleine Tests müssen gepflegt werden und veralten\n- kein Blick auf die Gesamtarchitektur"
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [
+    {
+      "id": "PB2-3-1-3-K2-2",
+      "frage": "„Timely“ wird in der Literatur teils als „rechtzeitig, kurz vor dem Produktivcode“, teils als „zeitnah zum Code“ übersetzt; die Karte folgt der Aussage (vor dem Produktivcode)."
+    }
+  ],
+  "protokoll": [
+    {
+      "id": "AP2-5-2-3-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "P36: Was ein Schreibtischtest ist, steht in AP1-8-2-3; PB2-3-1-1-K1 fragt nur Rekursion und längeren Code ab"
+    },
+    {
+      "id": "AP2-5-2-3-K1-2",
+      "entscheidung": "bearbeitet",
+      "grund": "auf das Neue zugeschnitten: Werte je rekursivem Aufruf festhalten statt allgemeiner Wertetabelle (AP1)"
+    },
+    {
+      "id": "AP2-5-3-1-K2-1",
+      "entscheidung": "entfernt",
+      "grund": "P36: Definition der Ablaufverfolgung ist der Schreibtischtest aus AP1-8-2-3; das Neue fragen PB2-3-1-1-K1-1/-2 ab"
+    },
+    {
+      "id": "AP2-5-2-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; Grundlage, um Abweichungen zu analysieren"
+    },
+    {
+      "id": "AP2-5-2-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; fehlerhafte Zeile mit Zeilennummer"
+    },
+    {
+      "id": "AP2-5-2-3-K5-1",
+      "entscheidung": "bearbeitet",
+      "grund": "P36: falsche Schleifengrenze steht in AP1-8-2-4; jetzt PB2-typische Fehlerbilder"
+    },
+    {
+      "id": "AP2-5-2-3-K5-2",
+      "entscheidung": "bearbeitet",
+      "grund": "Startwert-Fehler am Prüfungsbeispiel Minimum statt am trivialen Summenfall"
+    },
+    {
+      "id": "AP2-5-2-3-K5-3",
+      "entscheidung": "entfernt",
+      "grund": "P36: Schleife beginnt zu spät = falsche Schleifengrenze, steht in AP1-8-2-4 und PB2-1-1-1"
+    },
+    {
+      "id": "AP2-5-2-3-K5-4",
+      "entscheidung": "entfernt",
+      "grund": "P36: Schleife endet zu spät = falsche Schleifengrenze, steht in AP1-8-2-4 und PB2-1-1-1"
+    },
+    {
+      "id": "AP2-5-3-1-K1-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Aussage verlangt gezielten Einsatz (Stufe 3) statt Begriffsdefinition"
+    },
+    {
+      "id": "AP2-5-3-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-3-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt; Begriff als Grundlage für die Auswahl Debugger/print-Debugging"
+    },
+    {
+      "id": "AP2-5-3-1-K4-1",
+      "entscheidung": "bearbeitet",
+      "grund": "Red, Green, Refactor aus der neuen Aussage ergänzt"
+    },
+    {
+      "id": "AP2-5-3-1-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB2-3-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage verlangt rekursive Aufrufe verfolgen (Stufe 3); bisher keine Karte"
+    },
+    {
+      "id": "PB2-3-1-1-K1-2",
+      "entscheidung": "neu",
+      "grund": "Kern der Rekursionsverfolgung: eigene Werte je Aufruf"
+    },
+    {
+      "id": "PB2-3-1-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Ursache analysieren, zwei zusammenwirkende Fehler mit Zeilennummer"
+    },
+    {
+      "id": "PB2-3-1-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage: Vergleichsoperatoren so anpassen, dass ein gegebener Unit-Test besteht"
+    },
+    {
+      "id": "PB2-3-1-1-K3-2",
+      "entscheidung": "neu",
+      "grund": "Aussage: fehlenden Verarbeitungsblock für die letzte Gruppe ergänzen"
+    },
+    {
+      "id": "PB2-3-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Fehlerbild der Aussage: Ausgabe vor statt nach dem rekursiven Aufruf"
+    },
+    {
+      "id": "PB2-3-1-1-K4-2",
+      "entscheidung": "neu",
+      "grund": "Fehlerbild der Aussage: überflüssige Anweisung setzt ein Flag zurück"
+    },
+    {
+      "id": "PB2-3-1-1-K4-3",
+      "entscheidung": "neu",
+      "grund": "Fehlerbild der Aussage: falsche Variable im Ausdruck"
+    },
+    {
+      "id": "PB2-3-1-2-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage nennt Step over/Step into ausdrücklich"
+    },
+    {
+      "id": "PB2-3-1-2-K1-2",
+      "entscheidung": "neu",
+      "grund": "Stufe 3: Debugger an einem kleinen Fall gezielt einsetzen"
+    },
+    {
+      "id": "PB2-3-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage am Prüfungsbeispiel (2025S): bereinigen, leer = fehlend, Ersatzregel"
+    },
+    {
+      "id": "PB2-3-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Kern der Aussage: erst bereinigen, dann auf leer prüfen"
+    },
+    {
+      "id": "PB2-3-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Technik für eine Situation auswählen und begründen"
+    },
+    {
+      "id": "PB2-3-1-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Fall „Anhalten verändert den Ablauf“"
+    },
+    {
+      "id": "PB2-3-1-2-K5-3",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Fall für den Debugger"
+    },
+    {
+      "id": "PB2-3-1-3-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage: Aufbau einer Testmethode mit assertEquals (über PB1-9-1-4 hinaus)"
+    },
+    {
+      "id": "PB2-3-1-3-K2-2",
+      "entscheidung": "neu",
+      "grund": "Aussage: F.I.R.S.T.-Eigenschaften"
+    },
+    {
+      "id": "PB2-3-1-3-K2-3",
+      "entscheidung": "neu",
+      "grund": "F.I.R.S.T. an einem Fall unterscheiden (Stufe 2)"
+    },
+    {
+      "id": "PB2-3-1-3-K3-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: gegebenen Unit-Test gegen den Code überprüfen"
+    },
+    {
+      "id": "PB2-3-1-3-K3-2",
+      "entscheidung": "neu",
+      "grund": "Stufe 4: Testergebnis beurteilen"
+    },
+    {
+      "id": "PB2-3-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage: Zweck von Regressionstests"
+    },
+    {
+      "id": "PB2-3-1-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regressionstest an einem Fall erläutern"
+    },
+    {
+      "id": "PB2-3-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Stufe 3: zu einer Anforderung Unit-Test schreiben (Normalfall, Grenzen, Fehlerfälle)"
+    },
+    {
+      "id": "PB2-3-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.3-S637)"
+    },
+    {
+      "id": "PB2-3-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.3-S637)"
+    },
+    {
+      "id": "PB2-3-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.3-S637)"
+    }
+  ]
+}

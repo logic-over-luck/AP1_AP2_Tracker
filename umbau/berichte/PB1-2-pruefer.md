@@ -1,0 +1,53 @@
+# Prüfbericht PB1-2 – Kunde, Recht und Präsentation (unabhängige Prüfung)
+
+**Geprüft:** 4 Stichpunkte, 22 Können-Aussagen, 3 Grenzen, 3 Kür-Einträge. 8 zugeordnete Teilaufgaben samt Lösungshinweis gelesen (2022W-A2-cb; 2023S-A3-aa, -ab, -ac, -ba, -bb; 2024S-A1-a; 2024W-A1-d). Zwei Stichpunkte (PB1-2-1-1, PB1-2-1-4) haben keine Teilaufgabe; sie wurden gegen Katalog AP2a.01.02 und AP2a.01.03 (Operator „gestalten“ bzw. „interpretieren, aufbereiten, präsentieren“, Stufe 3) und gegen Fachrecht (BGB, HGB, UWG, DSGVO) geprüft. AP1-Abgleich: AP1-2-3-2, AP1-2-3-3, AP1-3-3-1, AP1-3-3-2, AP1-3-4-1, AP1-3-4-2, AP1-5-1-1, AP1-7-5-1, AP1-8-4-3.
+
+**Kerntest gesamt:** Alle 8 Teilaufgaben sind lösbar. 2023S-A3-ac setzt voraus, dass die Funktionsdefinition im Belegsatz gelesen wird (siehe Nr. 7). Kein Prüfungsinhalt fehlt. Der Präsentationsteil wiederholt AP1 stark.
+
+| Nr | Stelle (ID) | Art | Befund | Vorschlag | Sicherheit |
+|---|---|---|---|---|---|
+| 1 | PB1-2-1-2-K2 | doppelt AP1 | „Open-Source-Bibliothek nicht ohne Einschränkung einsetzen, weil auch OSS unter Lizenz steht (z. B. Copyleft)“ ist AP1-3-4-2-K4 („Open Source nicht automatisch kostenlos, auch dort gelten Lizenzbedingungen“) plus AP1-3-4-1-K4 (GPL/Copyleft). Stufe 4 „begründen“ hat AP1 schon (AP1-3-4-2-K5). Die Lösung zu 2022W-A2-cb (2 P.) besteht aus einem einzigen Satz, den AP1 vollständig liefert. | Streichen. Den Beleg 2022W-A2-cb an den Stichpunkt hängen; baut_auf AP1-3-4-1/-2 ist gesetzt. | hoch |
+| 2 | PB1-2-1-4-K4 | doppelt AP1 | „Präsentation vorbereiten: Ziel/Zielgruppe, Einleitung–Hauptteil–Schluss, wenige Kernaussagen je Folie, passende Medien wählen“ entspricht AP1-2-3-3-K1 (Aufbau, wenig Text je Folie, Sprache der Zielgruppe) und AP1-2-3-3-K5 (Medium passend zu Zielgruppe, Stufe 4). Die Stufe 3 ändert am Inhalt nichts. | Streichen; baut_auf AP1-2-3-3 ist gesetzt. Neu wäre allenfalls das Werkzeug „Präsentationsprogramm“, das in K6 steckt. | hoch |
+| 3 | PB1-2-1-2-K3 | falsch (ungenau) | „Die Einwilligung ist die Rechtsgrundlage der Verarbeitung, beides ist Voraussetzung für die Einhaltung der DSGVO.“ Die Einwilligung ist aber nur eine von sechs Rechtsgrundlagen (Art. 6 Abs. 1 DSGVO). Für Registrierungsdaten einer App ist oft die Vertragserfüllung die Grundlage. Pflicht ist immer die Information (Art. 13), eine Einwilligung nicht. Die amtliche Lösung verkürzt hier ebenfalls. | Formulieren: „Die Datenschutzerklärung erfüllt die Informationspflicht (Transparenz); die Einwilligung ist eine mögliche Rechtsgrundlage, nötig, wenn keine andere (z. B. Vertrag) greift, und jederzeit widerrufbar“. Den Widerruf über AP1-7-5-1-K4 importieren. | mittel |
+| 4 | PB1-2-1-4-K5 | doppelt AP1 | „CI umsetzen: Logo, Farben, Schriften, Vorlagen einheitlich verwenden“ ist inhaltsgleich mit AP1-8-4-3-K3 („Corporate Identity für eine Maske: Logo, Farben und Schrift einheitlich verwenden“). | Streichen und baut_auf AP1-8-4-3 ergänzen. Oder in K3 (Visualisierungsregeln) als Halbsatz „nach CI-Vorgaben“ aufnehmen. | mittel |
+| 5 | PB1-2-1-1-K2 | doppelt AP1 / doppelt PB1 | „Vertragsabschluss gestalten: Angebot und Annahme, Leistungsbeschreibung, Termine, Preise“ ist AP1-3-3-1-K4 (Zustandekommen, Stufe 4) und AP1-3-3-1-K5 (Vertragsbestandteile). Die Prüf- und Rügepflicht steht schon in K1 desselben Stichpunkts. Für Softwareprojekte wäre eher der Werkvertrag (AP1-3-3-2) einschlägig. | Streichen. baut_auf um AP1-3-3-2 ergänzen. | mittel |
+| 6 | PB1-2-1-2-K4 / K6 | doppelt AP1 / zu fein | K4 („Was ist CRM, wozu ein CRM-System“) überschneidet sich mit AP1-5-1-1-K4 („CRM verwaltet die Kundenbeziehungen“, Stufe 2). K4 und K6 (CRM-Maßnahmen gestalten) behandeln dasselbe Thema in zwei Aussagen. | K4 in K6 aufgehen lassen: „CRM als zentrale Erfassung aller Kundenkontakte nutzen und Maßnahmen gestalten, z. B. …“. baut_auf AP1-5-1-1. | mittel |
+| 7 | PB1-2-1-3-K3 | falsch (ungenau) | „Grundpreis nur an Werktagen um 10 % senken“: Werktage sind rechtlich Montag bis Samstag; die Aufgabe 2023S-A3 verlangt Montag bis Freitag. Die Zahl, die WOCHENTAG/WEEKDAY liefert, hängt außerdem von der Definition ab: in Excel standardmäßig Sonntag = 1, im Belegsatz 2025S Montag = 0. Die Lösung `WEEKDAY(C3)<=5` stimmt nur mit der Zählweise des Belegsatzes. | „… von Montag bis Freitag …“ schreiben und ergänzen: „die Nummerierung der Wochentage aus der Funktionsbeschreibung im Belegsatz entnehmen“ (B4). | mittel |
+| 8 | PB1-2-1-1 (K1–K5) | Frage (E6) | 5 Aussagen in Stufe 2/3 nur aus Katalog, kein Beleg in 9 Prüfungen. Nach E6 darf das bleiben, ist aber für 10 % Gewicht viel. K4 (AGB erklären) ist der erste Halbsatz von K5 (AGB gestalten). | K4 in K5 integrieren. Nach Nr. 5 bleiben 3 Aussagen (BGB/HGB, UWG, AGB). | niedrig |
+| 9 | PB1-2-1-1-K1 | falsch (ungenau) | „Mängel sofort rügen“: § 377 HGB verlangt „unverzüglich“, also ohne schuldhaftes Zögern, nicht sofort. | „unverzüglich prüfen und Mängel unverzüglich anzeigen“. | niedrig |
+| 10 | PB1-2-1-1-K5 | falsch (unvollständig) | Bei der Einbeziehung von AGB fehlt das Einverständnis der anderen Partei (§ 305 Abs. 2 BGB: Hinweis, zumutbare Kenntnisnahme, Einverständnis). Gegenüber Unternehmern gelten diese Einbeziehungsregeln nicht (§ 310 Abs. 1 BGB). | „Hinweis, zumutbare Kenntnisnahme und Einverständnis“ schreiben; den Unternehmer-Sonderfall nicht aufnehmen (G4, zu detailliert). | niedrig |
+| 11 | PB1-2-1-4-K6 | zu fein | „Für eine Aufgabe das passende Werkzeug einsetzen (Tabellenkalkulation, Präsentationsprogramm, Bild-/Videobearbeitung)“ ist trivial und kaum eigenständig prüfbar. | In K1 als Halbsatz aufnehmen („… mit Tabellenkalkulation oder Präsentationsprogramm aufbereiten“). | niedrig |
+| 12 | PB1-2-1-4, Kür „Trends verfolgen“ | Kür entfernen | „Informationsquellen wie Newsfeeds, Newsletter, Fachmessen, Fachforen“ steckt größtenteils schon in AP1-2-3-2-K1 (Foren, Hersteller, Fachliteratur). Thematisch passt es nicht zu „Daten visualisieren“. | Kür-Eintrag streichen. | niedrig |
+| 13 | PB1-2-1-4, Kür „Rhetorik, Sprechtechnik“ | anderer Raum | Vortragstechnik gehört zum Präsentieren im Fachgespräch, also nach raeume-ap2 (P9) in den Raum PROJEKT, nicht in die schriftliche PB1. | Kür nach PROJEKT verschieben. | niedrig |
+| 14 | PB1-2-1-3 | K1 fehlt (Puffer, optional) | Absolute und relative Zellbezüge ($) fehlen. Sie sind die übliche nächste Stufe, sobald eine Formel nach unten kopiert wird (z. B. Bereich `Wetterdaten!$B$3:$C$17`). Für 2023S-A3 nicht zwingend, aber in IHK-Tabellenaufgaben typisch. | Optional als Puffer (P-NÄCHSTE-STUFE) in K1: „… auch mit absoluten Bezügen, wenn die Formel kopiert wird“. | niedrig |
+
+**Bilanz PB1-2:** 14 Funde (davon 2 hoch). Lücken: 1 (Nr. 14, optional als Halbsatz, keine neue Aussage). Kann weg bzw. zusammengelegt: 7 Aussagen (Nr. 1, 2, 4, 5, 6, 8, 11). Vorher 22 → nach Vorschlägen etwa 15.
+
+## Umsetzung (bauende Sitzung, 14.10.2026, Entscheidungen P35)
+
+| Nr | Umsetzung |
+|---|---|
+| 1 | teilweise: auf das Neue gekürzt (Lizenzarten aus AP1 auf den Fall anwenden); bleibt, weil nur sie die belegte Stufe 4 von AP2a.01.02.5 erreicht (T8, P35 Nr. 4) |
+| 2 | umgesetzt: gestrichen; Präsentationstechnik, Präsentationsprogramm, CI und Werkzeuge in einer Aussage (AP2a.01.03.1/.5/.6/.7 bleiben abgedeckt) |
+| 3 | umgesetzt: Einwilligung als eine von sechs Rechtsgrundlagen; Hinweis zur IHK-Lösung am Stichpunkt |
+| 4 | umgesetzt: CI in der Präsentations-Aussage |
+| 5 | umgesetzt: mit K1 zu einer Aussage „gestalten“ (Stufe 3, Katalog) zusammengelegt, Werkvertrag über `baut_auf` AP1-3-3-2 |
+| 6 | umgesetzt: CRM in einer Aussage, `baut_auf` AP1-5-1-1 |
+| 7 | umgesetzt: Montag bis Freitag, Nummerierung aus der Funktionsbeschreibung |
+| 8 | umgesetzt: AGB erklären und gestalten zusammengelegt |
+| 9 | umgesetzt: „unverzüglich“ |
+| 10 | umgesetzt: Einverständnis ergänzt |
+| 11 | umgesetzt: Werkzeugwahl in der Präsentations-Aussage |
+| 12 | umgesetzt: Kür gestrichen (Informationsquellen in AP1-2-3-2) |
+| 13 | umgesetzt: Kür gestrichen, Vortragstechnik als Grenze nach PROJEKT |
+| 14 | umgesetzt: absolute Bezüge als Halbsatz (P-NÄCHSTE-STUFE) |
+
+Ergebnis: 22 → 17 Aussagen.
+
+## Doppelungen zu AP1 (16.10.2026, P36)
+
+Abgleich jeder Aussage mit `umbau/export/AP1.json` und `umbau/lernplan/ap1/*.json` nach T7 (P36) und P35 Nr. 4 („tiefer heißt mehr Inhalt“). Importierte AP1-Bausteine stehen nur noch in `bausteine`, wenn eine Aussage mit `neu` sie betrifft; sonst genügt `baut_auf`.
+
+| Aussage | gestrichen/gekürzt/neu begründet | AP1-Gegenstück | Grund |
+|---|---|---|---|
+| PB1-2-1-2 (bausteine) | Bausteine entfernt | AP1-7-5-1, AP1-3-4-1, AP1-3-4-2, AP1-5-1-1 | AP1.06.01.3.2 und AP1.04.04.2 ohne Aussage mit `neu`; die Aussagen K2/K3 tragen eigene PB1-Bausteine (AP2a.01.02.5), Inhalt geprüft: freizügige Lizenzen (in AP1 Kür), Informationspflicht und sechs Rechtsgrundlagen sind neu. |

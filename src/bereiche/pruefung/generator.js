@@ -12,10 +12,10 @@ import { pruefeZahl } from '../trainer/rahmen/pruefen.js';
 // Aufbau der Prüfungsteile nach den ausgewerteten Prüfungen (Bauplan)
 export const TEILE = {
   AP1: { id: 'AP1', raum: 'AP1', name: 'AP1 · Einrichten eines IT-gestützten Arbeitsplatzes', kurz: 'AP1', dauer: 90, aufgaben: 4 },
-  PB1: { id: 'PB1', raum: 'AP2', name: 'AP2 · Planen eines Softwareproduktes', kurz: 'Planen', dauer: 90, aufgaben: 4, pflicht: [['modell']] },
+  PB1: { id: 'PB1', raum: 'PB1', name: 'AP2 · Planen eines Softwareproduktes', kurz: 'Planen', dauer: 90, aufgaben: 4, pflicht: [['modell']] },
   PB2: {
     id: 'PB2',
-    raum: 'AP2',
+    raum: 'PB2',
     name: 'AP2 · Entwicklung und Umsetzung von Algorithmen',
     kurz: 'Algorithmen',
     dauer: 90,
@@ -25,7 +25,7 @@ export const TEILE = {
   WISO: { id: 'WISO', raum: 'WISO', name: 'Wirtschafts- und Sozialkunde', kurz: 'WiSo', dauer: 60, fragen: 30 },
 };
 
-export const TEILE_IN_RAUM = { AP1: ['AP1'], AP2: ['PB1', 'PB2'], WISO: ['WISO'] };
+export const TEILE_IN_RAUM = { AP1: ['AP1'], PB1: ['PB1'], PB2: ['PB2'], AP2: ['PB1', 'PB2'], WISO: ['WISO'] };
 
 // IHK-Notenschlüssel (Prozent der erreichbaren Punkte)
 const NOTEN = [

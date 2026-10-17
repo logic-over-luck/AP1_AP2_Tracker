@@ -4,6 +4,7 @@
 // physikalische Größen und Übertragungsraten mit Dezimalpräfixen (kbit/s, Mbit/s, Gbit/s).
 
 import { zahlText as z, runde } from '../rahmen/pruefen.js';
+import { istAp2 } from '../rahmen/raum.js';
 
 const SP = { zahlen: 'AP1-4-2-1', menge: 'AP1-4-2-2', mengeAP2: 'AP2-6-6-3', energie: 'AP1-4-2-3', rechte: 'AP1-5-2-3', paritaet: 'AP2-5-5-3' };
 
@@ -204,8 +205,8 @@ export function praefixe(r) {
 // ---------- Speicherbedarf ----------
 
 export function datenmenge(r, raum = 'AP1') {
-  const sp = raum === 'AP2' ? SP.mengeAP2 : SP.menge;
-  const arten = raum === 'AP2' ? ['bild', 'sammlung', 'sammlung', 'messwerte'] : ['bild', 'bild', 'farben', 'messwerte', 'mehrbedarf', 'sammlung'];
+  const sp = istAp2(raum) ? SP.mengeAP2 : SP.menge;
+  const arten = istAp2(raum) ? ['bild', 'sammlung', 'sammlung', 'messwerte'] : ['bild', 'bild', 'farben', 'messwerte', 'mehrbedarf', 'sammlung'];
   const art = r.art(arten);
   if (art === 'farben') {
     const bit = r.wahl([1, 4, 8, 16, 24]);
@@ -301,7 +302,7 @@ export function datenmenge(r, raum = 'AP1') {
 // ---------- Übertragung ----------
 
 export function uebertragung(r, raum = 'AP1') {
-  const sp = raum === 'AP2' ? SP.mengeAP2 : SP.menge;
+  const sp = istAp2(raum) ? SP.mengeAP2 : SP.menge;
   const art = r.art(['dauer', 'dauer', 'dauerMinuten', 'rate']);
   const stufe = r.wahl([2, 3, 3]);
   const menge = stufe === 2 ? r.wahl([300, 500, 700, 800]) : r.wahl([1, 2, 4, 5, 8, 10, 25]);

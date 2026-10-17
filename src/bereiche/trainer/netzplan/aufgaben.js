@@ -1,6 +1,7 @@
 // Aufgabenerzeuger Netzplan & Projektplanung. Rein, getestet in tests/netzplan.test.mjs.
 
 import { erzeuge, berechne, liesWeg } from './plan.js';
+import { istAp2 } from '../rahmen/raum.js';
 
 const WERTE = ['faz', 'fez', 'saz', 'sez', 'gp', 'fp'];
 const WERT_NAME = { faz: 'FAZ', fez: 'FEZ', saz: 'SAZ', sez: 'SEZ', gp: 'GP', fp: 'FP' };
@@ -45,7 +46,7 @@ function rechenweg(plan) {
 
 // Teilweise ausgefüllten Netzplan vervollständigen
 export function berechnen(r, raum = 'AP1') {
-  const roh = erzeuge(r, raum === 'AP2' ? { min: 7, max: 10, thema: 'sw' } : { min: 6, max: 9, thema: 'it' });
+  const roh = erzeuge(r, istAp2(raum) ? { min: 7, max: 10, thema: 'sw' } : { min: 6, max: 9, thema: 'it' });
   const plan = berechne(roh.vorgaenge);
   // Welche Knoten sind vorgegeben? Etwa ein Drittel bis die Hälfte, nie alle auf dem kritischen Weg.
   const gegeben = new Set(r.mische(plan.vorgaenge.map((v) => v.id)).slice(0, Math.floor(plan.vorgaenge.length * r.wahl([0.3, 0.4, 0.5]))));
@@ -58,7 +59,7 @@ export function berechnen(r, raum = 'AP1') {
   felder.push(wegFeld(plan));
   return {
     titel: 'Netzplan vervollständigen',
-    sp: raum === 'AP2' ? 'AP2-1-1-4' : 'AP1-1-2-2',
+    sp: istAp2(raum) ? 'AP2-1-1-4' : 'AP1-1-2-2',
     text: 'Vervollständige den Netzplan: Trage für die leeren Knoten FAZ, FEZ, SAZ, SEZ, Gesamtpuffer (GP) und freien Puffer (FP) ein. Gib danach die Projektdauer (in Tagen) und den kritischen Weg an.',
     plan,
     gegeben: [...gegeben],
@@ -107,12 +108,12 @@ function vorgaengerFeld(v) {
 }
 
 export function aufbauen(r, raum = 'AP1') {
-  const roh = erzeuge(r, raum === 'AP2' ? { min: 7, max: 9, thema: 'sw' } : { min: 6, max: 8, thema: 'it' });
+  const roh = erzeuge(r, istAp2(raum) ? { min: 7, max: 9, thema: 'sw' } : { min: 6, max: 8, thema: 'it' });
   const plan = berechne(roh.vorgaenge);
   const saetze = beschreibung(plan, r);
   return {
     titel: 'Netzplan aus einer Beschreibung',
-    sp: raum === 'AP2' ? 'AP2-1-1-4' : 'AP1-1-2-2',
+    sp: istAp2(raum) ? 'AP2-1-1-4' : 'AP1-1-2-2',
     text: `Lies die Beschreibung und bestimme zu jedem Vorgang die direkten Vorgänger. Berechne dann die Projektdauer und gib den kritischen Weg an. (Skizziere den Netzplan dafür am besten auf Papier.)\n${saetze.map((s) => `- ${s}`).join('\n')}`,
     felder: [...plan.vorgaenge.filter((v) => v.vorgaenger.length).map(vorgaengerFeld), { id: 'dauer', label: 'Projektdauer', erwartet: plan.dauer, einheit: 'Tage' }, wegFeld(plan)],
     plan,

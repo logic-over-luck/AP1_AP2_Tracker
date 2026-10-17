@@ -2187,3 +2187,343 @@ body {
     text-align: center;
   }
 }
+
+/* Vorschau neuer Lernplan (tools/vorschau-ap1.mjs) */
+.vorschau-hinweis {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  border: 1px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 8%, transparent);
+  font-size: var(--t-m);
+  color: var(--text);
+  margin-bottom: var(--s-4);
+}
+.vorschau-hinweis > svg {
+  color: var(--warn);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.vorschau-hinweis .gedaempft {
+  font-size: var(--t-s);
+  margin-top: var(--s-1);
+}
+.sp__neu,
+.np-marke {
+  display: inline-block;
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  padding: 0 var(--s-1);
+  border-radius: var(--r-1, 4px);
+  border: 1px solid var(--linie);
+  color: var(--text-3);
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+.sp__neu {
+  color: var(--akzent);
+  border-color: var(--akzent);
+}
+.np-marke + .np-marke {
+  margin-left: var(--s-1);
+}
+.np-marke--warn {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.np-hinweis {
+  display: flex;
+  gap: var(--s-2);
+  align-items: flex-start;
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.np-hinweis svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.np__kopf {
+  justify-content: space-between;
+}
+.np__details {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-size: var(--t-xs);
+  color: var(--akzent);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.np__meta {
+  font-size: var(--t-xs);
+  color: var(--text-3);
+  margin-top: 2px;
+}
+.np__liste {
+  margin: 0;
+  padding-left: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.np__kuer {
+  border-top: 1px dashed var(--linie);
+  padding-top: var(--s-3);
+  color: var(--text-3);
+}
+
+/* Erklärung je Können-Aussage (Langfassung), aufklappbar */
+.np-erkl summary {
+  cursor: pointer;
+  list-style: none;
+}
+.np-erkl summary::-webkit-details-marker {
+  display: none;
+}
+.np-erkl summary::after {
+  content: 'Erklärung';
+  display: inline-block;
+  margin-left: var(--s-2);
+  font-size: var(--t-xs);
+  color: var(--akzent);
+  white-space: nowrap;
+}
+.np-erkl[open] summary::after {
+  content: 'Erklärung ausblenden';
+}
+.np-erkl summary:hover {
+  color: var(--text);
+}
+.np-erkl__text {
+  margin: var(--s-2) 0 var(--s-1);
+  padding: var(--s-2) var(--s-3);
+  border-left: 2px solid var(--akzent-linie);
+  background: var(--flaeche-2);
+  border-radius: var(--r-1);
+  color: var(--text-2);
+  font-size: var(--t-s);
+}
+
+/* „Das musst du können“ einklappbar (P29) */
+.np .np__kopf {
+  flex-wrap: wrap;
+  row-gap: var(--s-1);
+}
+.np .np__details {
+  white-space: nowrap;
+}
+.np__klapp-titel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  white-space: nowrap;
+}
+.np__klapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  text-align: left;
+  flex-wrap: wrap;
+}
+.np__klapp:hover {
+  color: var(--text);
+}
+.np__klapp-pfeil {
+  transition: transform var(--dauer) var(--kurve);
+}
+.np__klapp[aria-expanded='true'] .np__klapp-pfeil {
+  transform: rotate(90deg);
+}
+.np__zahl {
+  margin-left: var(--s-1);
+  font-family: var(--schrift);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  color: var(--text-3);
+}
+.np__zahl-warn {
+  color: var(--warn);
+}
+
+/* „Baut auf“: Stichpunkte früherer Räume (E2) */
+.np-bautauf__satz {
+  margin: 0 0 var(--s-2);
+  font-size: var(--t-s);
+  color: var(--text-3);
+}
+.np-bautauf__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.np-bautauf__link {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-2);
+  margin: 0 calc(-1 * var(--s-2));
+  border-radius: var(--r-1);
+  color: var(--text-2);
+  font-size: var(--t-s);
+  transition: background var(--dauer) var(--kurve);
+}
+.np-bautauf__link:hover {
+  background: var(--akzent-weich);
+  color: var(--text);
+}
+.np-bautauf__status {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 4px;
+  border: 1.5px solid var(--linie-3);
+  color: var(--akzent-text);
+}
+.np-bautauf__link--an .np-bautauf__status {
+  background: var(--akzent);
+  border-color: var(--akzent);
+}
+.np-bautauf__titel {
+  flex: 1;
+  min-width: 0;
+}
+.np-bautauf__raum {
+  flex: none;
+  font-family: var(--mono);
+}
+.np-bautauf__pfeil {
+  flex: none;
+  color: var(--text-3);
+}
+.np-bautauf__link:hover .np-bautauf__pfeil {
+  color: var(--akzent);
+}
+
+/* „neu gegenüber …“ an einer Aussage (P36) */
+.np-marke--neu {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  white-space: normal;
+  text-align: left;
+  color: var(--akzent);
+  border-color: var(--akzent-linie);
+  font: inherit;
+  font-size: var(--t-xs);
+  cursor: pointer;
+  vertical-align: 1px;
+}
+* + .np-marke--neu {
+  margin-left: var(--s-1);
+}
+.np-marke--neu:hover,
+.np-marke--neu[aria-expanded='true'] {
+  background: var(--akzent-weich);
+}
+.np-neu {
+  margin: var(--s-2) 0 var(--s-1);
+  padding: var(--s-2) var(--s-3);
+  border-left: 2px solid var(--akzent);
+  background: var(--akzent-weich);
+  border-radius: var(--r-1);
+  font-size: var(--t-s);
+  color: var(--text-2);
+}
+.np-neu p {
+  margin: 0;
+}
+.np-neu p + p {
+  margin-top: var(--s-1);
+}
+.np-neu a {
+  color: var(--akzent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* v2.2: eine Zeile je Können-Aussage (Stichwort), antippen klappt Satz, Erklärung, Stufe und Herkunft auf */
+.np-zeilen {
+  gap: var(--s-1);
+}
+.koennen.np-zeilen {
+  padding-left: calc(var(--s-5) + 0.5em);
+}
+.np-zeilen--kuer {
+  margin: 0;
+  padding-left: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.np-zeile__kopf {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  min-width: 0;
+}
+.np-zeile__knopf {
+  flex: 0 1 auto;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.np-zeile__kurz {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.np-zeile__knopf:hover .np-zeile__kurz,
+.np-zeile--offen .np-zeile__kurz {
+  color: var(--akzent);
+}
+.np-zeile__marken {
+  flex: 1 1000 0;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.np-zeile__auf {
+  margin: var(--s-1) 0 var(--s-2);
+}
+.np-zeile__marken-auf {
+  display: none;
+  margin-top: var(--s-1);
+}
+@media (max-width: 640px) {
+  .np-zeile__marken-auf {
+    display: block;
+  }
+}
+.np-zeile__satz {
+  margin: 0;
+  color: var(--text-2);
+}
+.np-zeile__auf .np-erkl__text {
+  margin-top: var(--s-2);
+}
+.np__kuer-satz {
+  margin: var(--s-2) 0;
+  font-size: var(--t-s);
+}

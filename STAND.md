@@ -3,6 +3,11 @@
 Diese Datei ist das Gedächtnis des Projekts. Eine neue Sitzung liest sie und macht beim
 nächsten offenen Punkt weiter.
 
+> **Umbau der Lerninhalte (Branch `umbau`):** **AP1, PB1, PB2 und WiSo** zeigen den neuen Lernplan und sind abgenommen
+> (Stand 16.10.2026, UMBAU.md P45, P52 und Schritt 7). Alle vier Räume sind eingefroren (Exporte in `umbau/export/`).
+> Der Raum **PROJEKT** (Schritt 8) ist **bewusst zurückgestellt** (UMBAU.md P53): Er wird später gebaut, näher an der Projektphase. Wer an Lernplan, Stichpunkten, Rahmen oder Können-Aussagen arbeitet, liest zuerst **[UMBAU.md](UMBAU.md)**
+> und hält sich an die Regeln dort. Die Inhaltsdatei und `inhalte/` werden nicht mehr inhaltlich nachgebessert.
+
 ---
 
 ## 1. Plan
@@ -62,7 +67,12 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: alle Teile fertig, Abschluss-Durchgang erledigt)*
+*(zuletzt aktualisiert: 17.10.2026, Regelwerk v2.2 – Lehrbuch als Tiefe, Branch `regelwerk-v2`)*
+
+- **Regelwerk v2.2 (Branch `regelwerk-v2`, 16.10.2026):** Lehrbuch Westermann „IT-Berufe“ (GS/FS/FS2) als Quelle der Tiefe;
+  alle vier Räume erweitert und per Prüfer-Filter (17.10.2026) gestrafft: AP1 814, PB1 443, PB2 114, WISO 382 Aussagen
+  (1.753, davon 520 mit Buch-Herkunft), 551 Kür-Einträge, 3.832 Karten; jede Aussage mit Stichwort `kurz` (einzeilige Anzeige, Aufklappen zeigt Satz, Erklärung, Stufe, Herkunft).
+  Unabhängig geprüft (173 Funde, umgesetzt). Bericht `umbau/berichte/V2-bericht.md`, Parkplatz P57–P70 entschieden (UMBAU.md).
 
 ### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
 - Bauschritt `tools/build.mjs` → eine Datei `Lernstudio.html` (≈ 3,1 MB) mit Inhalt, Schriften, Symbolen, SQL-Engine
@@ -102,7 +112,22 @@ nächsten offenen Punkt weiter.
   Jeder Bereich von einem Bearbeiter erstellt und von einem zweiten unabhängig geprüft; alle Bilder angesehen
   (`tools/modell-galerie.mjs`); Struktur-Tests in `tests/modellieren.test.mjs`
 
+- Neuer Lernplan in der App (Umbau Schritt 7, 16.10.2026): Räume AP1 | PB1 | PB2 | WiSo; AP1, PB1 und PB2 aus
+  `umbau/lernplan/` (Umwandlung im Build, `tools/vorschau-ap1.mjs`), abgenommen, daher ohne Hinweis (Feld `abgenommen`
+  in `RAEUME_VORSCHAU`). Im Stichpunkt-Detail: „Baut auf“ mit den Stichpunkten früherer Räume (Titel, Raum, Häkchen,
+  Sprung dorthin), Marke „neu gegenüber <ID>“ an Aussagen zu importierten Inhalten (antippen zeigt, was neu ist),
+  „Das musst du können“ einklappbar mit Anzahl (gemerkt je Gerät: `lernen.koennenOffen`). Tests in
+  `tests/vorschau-ap1.test.mjs`; auf Desktop und Handy (390 px) geprüft
+- Neuer Lernplan WiSo (Umbau Schritt 6, 16.10.2026): Raum WiSo aus `umbau/lernplan/wiso/` (5 Ordner, 70 Stichpunkte,
+  325 Können-Aussagen), Kurzfassungen und 685 Karten aus `umbau/kurz/wiso/` und `umbau/karten/wiso/`; alte WiSo-IDs
+  bleiben (P48), entfallene Stichpunkte ziehen über `umbau/umzug.json` um. 14 Kür-Einträge aus der unabhängigen Prüfung
+  (P49, z. B. Steuerklasse VI, eGbR, GS-Zeichen, Brandklasse F). **Abgenommen** (P52): kein gelber Hinweis mehr, Export
+  `umbau/export/WISO.json` eingefroren, Generatoren `tools/umbau/gen-wiso/` stillgelegt. Build und Browser-Check
+  (`#/wiso`, Kür am Stichpunkt, Desktop und Handy 390 px) ohne Fehler
+
 ### Offen / bewusst nicht umgesetzt
+- Der Raum PROJEKT (Umbau-Schritt 8) ist bewusst zurückgestellt (UMBAU.md P53), weil die Projektarbeit noch weit weg ist. WiSo-Kür kommt aus der unabhängigen Prüfung; Community-Lernzettel
+  zu WiSo gibt es nicht, der Hinweis-Abgleich (R3) ist damit abgeschlossen (UMBAU.md P49).
 - Bilder von Anschlüssen und Netzwerksymbolen (AP1-4-1-4, AP1-6-1-3): Die Karten beschreiben sie in Worten.
 - Die Diagramm-Zeichenaufgaben bewertest du selbst mit der Prüfliste – eine automatische Bewertung freier Zeichnungen wäre nicht ehrlich.
 
@@ -231,11 +256,20 @@ Vor der Prüfung lohnt sich ein kurzer Abgleich mit Ausbilder, Lehrkraft oder de
 - **AP2-6-1-1-K2-2** ARP: OSI-Schicht 2 (so in der Karte, mit Hinweis auf die uneinheitliche Zuordnung).
 - **AP2-6-4-2-K4-3** RAID: Kapazität wird nur als Regel genannt, nicht gerechnet.
 
-### WiSo
-- **WISO-1-5-2-K2-1** Urabstimmung: Die üblichen 75 %/25 % stehen in Satzungen, nicht im Gesetz – keine eigene Karte.
-- **WISO-3-2-1-K3-1** „Schwere Geräte heben": mechanische Gefährdung (laut Können-Aussage) oder physische Belastung?
-- **WISO-3-4-1-K1-1** Rettungskette: Reihenfolge „sichern – Notruf – Erste Hilfe" nach Können-Aussage; lebensrettende Sofortmaßnahmen teils früher.
-- **WISO-5-2-3** „Abgrenzung von Zuständigkeiten": Die Karten decken alle drei Auslegungen ab.
+### WiSo (neuer Lernplan, 16.10.2026; Details im Feld `unsicher` von `umbau/karten/wiso/WISO-<n>.json`)
+- **Rechtsstand Oktober 2026, vor der Prüfung prüfen:** Arbeitszeitgesetz (WISO-1-3-4), Steuerklassen III/V
+  (WISO-1-6-1-K2), Bürgergeld bzw. Nachfolgeregelung (WISO-1-6-2-K8), EU-Verpackungsverordnung (WISO-4-2-2-K4),
+  JAV ohne Altersgrenze für Auszubildende seit 2021 – ältere IHK-Lösungen werten das anders (WISO-1-4-3). Regel (P50): Die
+  Aussage folgt dem Rechtsstand, der `hinweis` am Stichpunkt nennt, was die IHK-Lösung erwartet hat.
+- **WISO-2-1-1-K1** Software herstellen als sekundärer Sektor: so die IHK-Lösung 2022S-A17; die amtliche Statistik zählt
+  Softwareentwicklung zu den Dienstleistungen.
+- **WISO-1-8-1-K7** Bildungsurlaub: „kein Anspruch in Bayern und Sachsen“, „meist fünf Arbeitstage“ nicht nachgeprüft.
+- **WISO-1-6-3-K3-3** Pflegeversicherung: in Sachsen nicht hälftig geteilt; die Karte geht vom Regelfall aus.
+- **WISO-3-1-3-K3-2** Verletztengeld zahlt die Berufsgenossenschaft, ausgezahlt oft über die Krankenkasse.
+- **WISO-3-4-4-K3-3** Feuerlöscher: Reihenfolge der Bedienschritte je nach Bauart verschieden.
+- **WISO-5-2-1-K10-2** BSI: hat eigene Bußgeldbefugnisse nach BSI-Gesetz; die Karte schließt nur Datenschutz-Bußgelder aus.
+- **WISO-5-2-4-K2-2** Kritik am Arbeitgeber: sachliche, wahre Kritik grundsätzlich erlaubt, Einzelfall offen.
+- **WISO-1-3-6-K6-2** Zeugnissprache: verbreitete Konvention, nicht einheitlich.
 
 ### Trainer
 - **Netzplan**: Knotenaufbau FAZ | FEZ / Nr. | Vorgang / D | GP | FP / SAZ | SEZ mit Start bei 0. Manche Unterlagen

@@ -43,7 +43,9 @@ export function ableiten(ereignisse, index, heute = tagVon(Date.now())) {
   const stand = leererStand();
   const spJeBlockErledigt = new Map();
 
-  for (const ev of ereignisse) {
+  for (const roh of ereignisse) {
+    // Lernstand-Umzug (P6): alte IDs auf die neuen umschreiben; das Protokoll selbst bleibt unverändert
+    const ev = index.umzug ? index.umzug.umziehen(roh) : roh;
     switch (ev.e) {
       case 'sp': {
         const sp = index.sp.get(ev.id);

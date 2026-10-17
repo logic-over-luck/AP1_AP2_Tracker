@@ -1,0 +1,2271 @@
+{
+ "oberblock": {
+  "id": "PB1-11",
+  "titel": "Netzwerk",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-11-1",
+   "titel": "Schichten, Komponenten, Protokolle und Dienste",
+   "satz": "Wie Daten durchs Netz kommen: Schichtenmodelle, Komponenten, Transportprotokolle und Netzwerkdienste. OSI-Modell, Switch, Router, MAC, ARP und DHCP an sich kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-11-1-1",
+     "titel": "Schichtenmodelle, Ethernet-Frame und Netzwerkkomponenten",
+     "ziel": "Das TCP/IP-Modell benennen und dem OSI-Modell zuordnen, ARP, Routing und Switching einordnen, den Ethernet-Frame erläutern und Switch, Bridge, Router und Firewall vergleichen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.01"
+      },
+      {
+       "id": "AP2b.01.01.1",
+       "anteil": "Schicht von IPv4 und IPv6; Hostbereich im Skript in PB1-3"
+      },
+      {
+       "id": "AP2b.01.01.2"
+      },
+      {
+       "id": "AP2b.01.01.5"
+      },
+      {
+       "id": "AP2b.01.01.6"
+      },
+      {
+       "id": "AP2b.01.01.3"
+      },
+      {
+       "id": "AP2b.01.01.4"
+      },
+      {
+       "id": "AP2b.02.06.6",
+       "anteil": "Ethernet"
+      },
+      {
+       "id": "AP2b.01.02"
+      },
+      {
+       "id": "AP2b.01.02.1"
+      },
+      {
+       "id": "AP2b.01.02.2"
+      },
+      {
+       "id": "AP2b.01.02.3"
+      },
+      {
+       "id": "AP2b.01.02.4"
+      }
+     ],
+     "teilaufgaben": [
+      "2024W-PB1-A2-ba",
+      "2024W-PB1-A2-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-1-1-K1",
+       "text": "Du kannst die vier Schichten des TCP/IP-Modells (Netzzugang, Internet, Transport, Anwendung) benennen, den Schichten des OSI-Modells zuordnen und dabei über AP1 hinaus auch ARP, Routing und Switching einordnen.",
+       "kurz": "TCP/IP-Modell und Zuordnung zum OSI-Modell",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01",
+        "katalog:AP2b.01.01.1",
+        "katalog:AP2b.01.01.2",
+        "katalog:AP2b.01.01.3",
+        "katalog:AP2b.01.01.4",
+        "katalog:AP2b.01.01.5",
+        "katalog:AP2b.01.01.6"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K2",
+       "text": "Du kannst die Felder eines Ethernet-Frames zuordnen: Präambel (8 Byte), Ziel- und Quell-MAC-Adresse (je 6 Byte), Typ (2 Byte), Nutzdaten (46 bis 1500 Byte), Prüfsumme (4 Byte); den Aufbau der MAC-Adresse kennst du aus AP1-6-2-4.",
+       "kurz": "Felder des Ethernet-Frames",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.06.6",
+        "beleg:2024W-PB1-A2-ba"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K3",
+       "text": "Du kannst Bridge, Switch und Router nach ihrer Weiterleitung vergleichen: Bridge und Switch lernen MAC-Adressen in einer MAC-Tabelle und leiten Frames nur in das Segment bzw. an den Anschluss des Ziels (ein Switch ist eine Bridge mit vielen Anschlüssen), ein Router entscheidet anhand seiner Routingtabelle, in welches Netz er ein Paket weiterleitet; Schicht und Adressart von Switch und Router kennst du aus AP1-6-1-3.",
+       "kurz": "Bridge, Switch und Router: Weiterleitung",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.01.3",
+        "katalog:AP2b.01.01.4",
+        "katalog:AP2b.01.02.1",
+        "katalog:AP2b.01.02.2",
+        "katalog:AP2b.01.02.3"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K4",
+       "text": "Du kannst die Aufgabe einer Firewall beschreiben und Paketfilter (Regeln nach Adressen und Ports) von zustandsorientierter Prüfung (merkt sich bestehende Verbindungen und lässt nur die zugehörigen Antworten durch) unterscheiden.",
+       "kurz": "Firewall: Paketfilter und zustandsorientierte Prüfung",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.02.4"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K5",
+       "text": "Du kannst Kapselung und Entkapselung im Schichtenmodell beschreiben: Beim Senden setzt jede Schicht ihren eigenen Kopf vor die Daten der Schicht darüber (Segment, dann Paket, dann Frame, bei dem Ethernet zusätzlich die Prüfsumme anhängt, zuletzt Bits auf dem Medium), beim Empfang entfernt jede Schicht ihren Kopf wieder und reicht den Inhalt nach oben weiter.",
+       "kurz": "Kapselung und Entkapselung der Schichten",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.4-S323"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K6",
+       "text": "Du kannst für einen Webseitenaufruf zuordnen, welche Adressen auf jeder Schicht im Datenpaket stehen und bis zu welcher Schicht die Geräte unterwegs hineinschauen: Ports (zufälliger Quellport des Browsers, Zielport 443 bzw. 80), IP-Adressen von PC und Server, als Ziel-MAC-Adresse die des Routers, wenn der Server in einem anderen Netz liegt; der Switch liest nur den Ethernet-Kopf (Schicht 2), der Router zusätzlich den IP-Kopf (Schicht 3), erst der Empfänger packt alle Schichten aus.",
+       "kurz": "Webseitenaufruf: Adressen und Geräte je Schicht",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.4-S322",
+        "buch:GS-3.4.4-S324"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K7",
+       "text": "Du kannst über Switch und Router hinaus Netzwerkkomponenten nach ihrer Schicht einordnen: Repeater und Hub (Schicht 1) reichen Signale ungeprüft an alle Anschlüsse weiter, Switch und Bridge trennen Kollisionsdomänen, ein Router begrenzt die Broadcast-Domäne, Proxy und Application Layer Gateway arbeiten auf der Anwendungsschicht.",
+       "kurz": "Netzwerkkomponenten nach Schicht: Hub bis Proxy",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.3.2-S341"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K8",
+       "text": "Du kannst die Aufgaben der Felder eines Ethernet-Frames beschreiben: Die Präambel synchronisiert den Empfänger, das Typfeld gibt an, welches Protokoll in den Nutzdaten steckt (z. B. IPv4, IPv6 oder ARP), die Nutzdaten sind höchstens 1500 Byte groß (MTU), sodass größere Pakete nicht in einen Frame passen, und mit der Prüfsumme bemerkt der Empfänger Übertragungsfehler und verwirft den Frame.",
+       "kurz": "Aufgaben der Frame-Felder und MTU",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.3.3-S307"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K9",
+       "text": "Du kannst die Switching-Verfahren Cut-Through, Fragment-Free und Store-and-Forward danach vergleichen, wie viel vom Frame vor dem Weiterleiten gelesen wird: Cut-Through leitet nach der Ziel-MAC-Adresse sofort weiter (geringste Verzögerung, aber auch fehlerhafte Frames), Fragment-Free wartet die ersten 64 Byte ab (filtert Reste von Kollisionen), Store-and-Forward liest den ganzen Frame und prüft die Prüfsumme (verwirft fehlerhafte Frames, braucht dafür mehr Zeit und Pufferspeicher).",
+       "kurz": "Switching-Verfahren: Cut-Through bis Store-and-Forward",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.6-S342",
+        "buch:GS-3.7.2-S371"
+       ]
+      },
+      {
+       "id": "PB1-11-1-1-K10",
+       "text": "Du kannst beschreiben, wie ein Router mit seiner Routingtabelle arbeitet und wie sie gefüllt wird: Er sucht den Eintrag für das Zielnetz und leitet das Paket über den zugehörigen Anschluss bzw. an den nächsten Router weiter, sonst über die Standardroute, und ohne passende Route verwirft er es mit einer Fehlermeldung an den Absender; bei statischem Routing sind die Einträge von Hand eingetragen (kleine, übersichtliche Netze), bei dynamischem Routing tauschen die Router sie per Routingprotokoll aus und weichen bei Ausfällen auf andere Wege aus (große Netze, Internet).",
+       "kurz": "Routingentscheidung, statisches und dynamisches Routing",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.6-S343",
+        "buch:FS-4.3.1-S331"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-1",
+      "AP1-6-2-4",
+      "AP1-6-2-2",
+      "AP1-6-1-3"
+     ],
+     "hinweis": "Netzwerk ist im AP2-Katalog gemeinsamer Inhalt aller Fachinformatiker; es gilt die Katalogtiefe (P10). Der Aufbau der MAC-Adresse (2024W-PB1-A2-bb) steht in AP1-6-2-4, das Skript über die Host-Adressen (2024W-PB1-A2-c) in PB1-3. Das Lehrbuch nennt beim Weg eines Webseitenaufrufs auf Schicht 2 die Ziel-IP-Adresse des Interfaces; richtig ist die Ziel-MAC-Adresse (die des Routers, wenn der Server in einem anderen Netz liegt). Den dritten Switchtyp nennt es „Fast-Forward oder Fragment-free“; richtig ist: Fast Forward ist ein anderer Name für Cut-Through, der Mittelweg heißt Fragment-Free. Bei TTL 0 meldet der Router laut Lehrbuch „Ziel nicht erreichbar“; richtig ist die ICMP-Meldung „Time Exceeded“. CSMA/CD stellt es als heute übliches LAN-Verfahren dar; im geswitchten Vollduplex-Ethernet gibt es keine Kollisionen mehr.",
+     "kuer": [
+      {
+       "text": "Typische Ursachen gestörter Netzverbindungen sind doppelt vergebene IP- oder MAC-Adressen, ein ausgefallener DHCP-Server, eine nicht passende Duplex-Einstellung zwischen Netzwerkkarte und Switchport (sichtbar an steigenden Fehlerzählern) und Broadcast-Stürme durch Schleifen im Netz.",
+       "kurz": "Typische Fehlerbilder im lokalen Netz",
+       "quellen": [
+        "buch:FS-1.3.3"
+       ],
+       "grund": "RK2: Fehlerbilder sind Unterthema; kein Baustein nennt Netzwerkfehler"
+      },
+      {
+       "text": "Teilen sich mehrere Stationen ein Medium, braucht es ein Zugriffsverfahren: CSMA/CD hört vor dem Senden ab, bemerkt Kollisionen und sendet nach zufälliger Wartezeit neu, CSMA/CA im WLAN vermeidet Kollisionen durch Abhören, Warten und optional eine Sendeanfrage (RTS/CTS), beim Token Passing sendet nur, wer gerade das Token hält. Im geswitchten Vollduplex-Ethernet gibt es keine Kollisionen mehr, CSMA/CD spielt dort keine Rolle.",
+       "kurz": "Zugriffsverfahren: CSMA/CD, CSMA/CA, Token Passing",
+       "quellen": [
+        "buch:GS-3.3.2",
+        "buch:FS-4.3.1"
+       ],
+       "grund": "RK2/D8: Zugriffsverfahren nennt der Katalog nicht; im geswitchten Vollduplex-Netz ohne Bedeutung"
+      },
+      {
+       "text": "Ein unmanaged Switch arbeitet fest eingestellt, ein managebarer Switch bekommt eine eigene IP-Adresse zur Verwaltung und bietet VLANs, Priorisierung (QoS), Zugriffsregeln, Rate und Duplex je Port, Statistiken und Port-Mirroring, das den Verkehr eines Ports zur Analyse oder an ein IDS spiegelt. Intern puffert ein Switch Frames je Port; läuft ein Puffer über, verwirft er Frames ohne Rückmeldung, und die Endgeräte müssen nachsenden.",
+       "kurz": "Managebarer Switch und Pufferung",
+       "quellen": [
+        "buch:GS-3.4.6",
+        "buch:FS-4.3.2",
+        "buch:GS-3.7.2"
+       ],
+       "grund": "RK2: Ausstattungsmerkmale und interner Aufbau von Switches, kein Prinzip des Katalogs"
+      },
+      {
+       "text": "Redundante Verbindungen zwischen Switches lassen ohne Schutz Frames endlos kreisen (Broadcast-Sturm); das Spanning Tree Protocol schaltet parallele Wege ab und erst bei einem Ausfall wieder zu, die schnellere Variante heißt RSTP. Ein Layer-3-Switch entscheidet zusätzlich nach IP-Adresse und routet so im LAN zwischen Subnetzen bzw. VLANs.",
+       "kurz": "Spanning Tree und Layer-3-Switch",
+       "quellen": [
+        "buch:FS-4.5.2"
+       ],
+       "grund": "RK2: Spanning Tree und Layer-3-Switch sind Unterthemen von Switching"
+      },
+      {
+       "text": "Ein SoHo-Router vereint Router, Switch, WLAN, DHCP und Firewall in einem Gerät; ein professioneller Router im 19-Zoll-Gehäuse routet nur, die übrigen Dienste laufen auf eigenen Geräten, und konfiguriert wird er meist per SSH über die Kommandozeile.",
+       "kurz": "SoHo-Router gegen professionellen Router",
+       "quellen": [
+        "buch:GS-3.7.3"
+       ],
+       "grund": "Gerätewahl ohne Katalogbezug; das Kombigerät steht in AP1-6-1-3-K7"
+      }
+     ]
+    },
+    {
+     "id": "PB1-11-1-4",
+     "titel": "Firewall: Regelwerk, Prüftiefe und Einsatzort",
+     "ziel": "Beschreiben, wie eine Firewall ihr Regelwerk abarbeitet, Firewalls nach Prüftiefe bis zur Next-Generation-Firewall mit IDS und IPS unterscheiden und Personal Firewall und zentrale Netzwerk-Firewall abgrenzen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.02",
+       "anteil": "Firewall vergleichen und beschreiben"
+      },
+      {
+       "id": "AP2b.01.02.4",
+       "anteil": "Regelwerk, Prüftiefe bis zur Next-Generation-Firewall, Einsatzort; Paketfilter und zustandsorientierte Prüfung in PB1-11-1-1"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-1-4-K1",
+       "text": "Du kannst beschreiben, wie eine Firewall ihr Regelwerk abarbeitet: Jedes Paket wird der Reihe nach mit den Regeln (Quelle, Ziel, Port, Protokoll, Richtung) verglichen, die erste passende Regel entscheidet über Durchlassen (ACCEPT), stilles Verwerfen (DROP) oder Ablehnen mit Rückmeldung (REJECT); am Ende steht eine Standardregel (Grundsatz siehe PB1-10-2-3-K10).",
+       "kurz": "Firewall-Regelwerk: Reihenfolge, ACCEPT, DROP, REJECT",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.3.2-S337",
+        "buch:FS-4.4.2-S377"
+       ]
+      },
+      {
+       "id": "PB1-11-1-4-K2",
+       "text": "Du kannst über Paketfilter und zustandsorientierte Prüfung hinaus die Next-Generation-Firewall beschreiben: Sie prüft per Deep Packet Inspection auch die Nutzdaten bis zur Anwendungsschicht (verschlüsselten Verkehr nur, wenn sie ihn aufbricht und neu verschlüsselt), erkennt Anwendungen und bringt Angriffserkennung mit; ein IDS meldet Angriffsmuster, ein IPS blockiert sie zusätzlich.",
+       "kurz": "Next-Generation-Firewall, IDS und IPS",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.3.2-S336",
+        "buch:FS-4.4.2-S376",
+        "buch:GS-3.8.3-S386",
+        "buch:GS-4.2-S438"
+       ]
+      },
+      {
+       "id": "PB1-11-1-4-K3",
+       "text": "Du kannst eine Personal Firewall auf dem einzelnen Rechner von einer zentralen Netzwerk-Firewall am Übergang ins Internet unterscheiden: Die Personal Firewall schützt nur ihr Gerät, kennt das Programm hinter jeder Verbindung und wirkt auch gegen Angriffe aus dem eigenen Netz, die zentrale Firewall kontrolliert an einer Stelle den gesamten Verkehr zwischen Firmennetz und Außenwelt für alle Geräte; im Unternehmen arbeiten beide zusammen.",
+       "kurz": "Personal Firewall gegen zentrale Netzwerk-Firewall",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.8.3-S386"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "Die P-A-P-Struktur stellt ein Application Layer Gateway zwischen einen äußeren und einen inneren Paketfilter und bildet so den Perimeterschutz als erste Verteidigungslinie. Eine UTM-Lösung bündelt Firewall, Virenschutz, Spam- und Inhaltsfilter, Angriffserkennung und oft VPN in einem Gerät mit vorgefertigten Richtlinien.",
+       "kurz": "P-A-P-Struktur und UTM-Lösung",
+       "quellen": [
+        "buch:FS-4.4.2"
+       ],
+       "grund": "RK2/D8: Firewall-Architektur und Produktkategorie UTM ohne eigenen Katalogbezug"
+      }
+     ],
+     "hinweis": "Das Lehrbuch beschreibt Deep Packet Inspection als Prüfung des IP-Headers; richtig ist: DPI prüft die Nutzdaten. Stateful Inspection ordnet es Schicht 7 zu; richtig ist: Sie arbeitet mit dem Verbindungszustand auf Schicht 3/4."
+    },
+    {
+     "id": "PB1-11-1-2",
+     "titel": "Übertragungsprotokolle: TCP, UDP, HTTP, HTTPS",
+     "ziel": "Eigenschaften von TCP und UDP erläutern, Protokolle einschließlich HTTPS zielgerichtet einsetzen und Fehler im Web einordnen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.05"
+      },
+      {
+       "id": "AP2b.01.05.1"
+      },
+      {
+       "id": "AP2b.01.05.2",
+       "anteil": "HTTP und HTTPS"
+      },
+      {
+       "id": "AP2b.01.01.6",
+       "anteil": "Eigenschaften von TCP und UDP"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A3-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-1-2-K1",
+       "text": "Du kannst die Eigenschaften von TCP (verbindungsorientiert, Bestätigung, richtige Reihenfolge, erneutes Senden verlorener Pakete) und UDP (verbindungslos, ohne Zustellgarantie, wenig Aufwand, schnell) erläutern.",
+       "kurz": "Eigenschaften von TCP und UDP",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.05.1",
+        "katalog:AP2b.01.01.6"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K2",
+       "text": "Du kannst für eine Anwendung die passenden Protokolle einsetzen und begründen, zum Beispiel TCP für Dateiübertragung und Webseiten, UDP für Sprache und Video in Echtzeit, HTTPS statt HTTP, sobald Anmeldedaten oder personenbezogene Daten übertragen werden (was das TLS-Zertifikat bewirkt, steht in PB1-10).",
+       "kurz": "Passende Protokolle für eine Anwendung",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.05.1",
+        "katalog:AP2b.01.05.2"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K3",
+       "text": "Du kannst mögliche Ursachen einer Fehlermeldung wie HTTP 404 beschreiben: Seite oder Datei gelöscht oder verschoben, URL fehlerhaft angelegt, falsch verlinkt oder falsch eingegeben; davon abgrenzen, dass Server oder Namensauflösung nicht erreichbar sind.",
+       "kurz": "Ursachen der Fehlermeldung HTTP 404",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.05.2",
+        "beleg:2021W-PB1-A3-c"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K4",
+       "text": "Du kannst über die Paketvermittlung aus AP1 hinaus die Eigenschaften von IP erläutern: unabhängig von der Übertragungstechnik darunter (Ethernet, WLAN, Glasfaser), verbindungslos und ohne Empfangsbestätigung, sodass verlorene oder vertauschte Pakete erst eine höhere Schicht wie TCP bemerkt und ausgleicht.",
+       "kurz": "Eigenschaften von IP: verbindungslos, ohne Quittung",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.3.4-S308"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K5",
+       "text": "Du kannst beschreiben, wie TCP eine Verbindung auf- und abbaut: Beim Drei-Wege-Handshake schickt der Client ein SYN, der Server antwortet mit SYN-ACK, der Client bestätigt mit ACK; beendet wird mit FIN und Bestätigung von beiden Seiten; häufen sich im Monitoring SYN-Fehler, scheitert schon der Aufbau (z. B. Dienst gestoppt, Port gesperrt, Server überlastet), FIN-Fehler zeigen Verbindungen, die nicht sauber beendet werden.",
+       "kurz": "TCP-Verbindungsaufbau und -abbau: Drei-Wege-Handshake",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.05.1",
+        "buch:FS-1.3.2-S54"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K6",
+       "text": "Du kannst die Aufgabe von Ports und Sockets erläutern: Die Portnummer (16 Bit, Transportschicht) adressiert auf einem Rechner die Anwendung bzw. den Dienst, Server-Dienste lauschen auf festen Standardports, Clients nehmen meist zufällige hohe Ports; IP-Adresse und Port zusammen bilden einen Socket, und jede Verbindung ist durch zwei Sockets eindeutig festgelegt, sodass ein Server viele Dienste und Verbindungen gleichzeitig bedient.",
+       "kurz": "Ports und Sockets",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.3.1-S329",
+        "buch:GS-3.3.4-S308"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K7",
+       "text": "Du kannst über Bestätigung und Nachsenden hinaus erläutern, wie TCP den Datenfluss regelt: Mit der Flusssteuerung meldet der Empfänger, wie viele Daten er gerade aufnehmen kann, mit der Staukontrolle drosselt der Sender sein Tempo, sobald Pakete verloren gehen; UDP verzichtet auf beides, hat dafür einen kleineren Kopf und kann Daten per Multicast an viele Empfänger zugleich schicken.",
+       "kurz": "TCP-Fluss- und Staukontrolle, UDP-Multicast",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.3.4-S308"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K8",
+       "text": "Du kannst das Anfrage-Antwort-Prinzip von HTTP erläutern: Der Client schickt eine Anfrage (Request) mit Methode, Pfad und Kopfzeilen, der Server antwortet (Response) mit Statuscode, Kopfzeilen und Inhalt; HTTP überträgt alles im Klartext, HTTPS ist dasselbe Protokoll in einer TLS-verschlüsselten Verbindung.",
+       "kurz": "HTTP-Anfrage und -Antwort, HTTPS über TLS",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.4-S324"
+       ]
+      },
+      {
+       "id": "PB1-11-1-2-K9",
+       "text": "Du kannst für ein Formular die passende HTTP-Methode einsetzen: GET hängt die Daten als Parameter an die URL (sichtbar, landet in Verlauf, Lesezeichen und Server-Logs, in der Länge begrenzt, passend zum Suchen und Filtern), POST überträgt sie im Rumpf der Anfrage (auch große Datenmengen und Dateien, passend für Daten, die gespeichert oder verarbeitet werden, etwa Anmeldung oder Bestellung).",
+       "kurz": "GET oder POST für Formulardaten",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-1.4.4-S92"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-2"
+     ],
+     "kuer": [
+      {
+       "text": "Die Latenz ist die Zeit, die ein Paket von der Quelle zum Ziel braucht, die Round Trip Time die für Hin- und Rückweg; sie entsteht durch Laufzeit (vor allem Entfernung), Übertragung, Verarbeitung und Warteschlangen, weshalb Server nahe bei den Nutzern schneller antworten.",
+       "kurz": "Latenz und ihre Ursachen",
+       "quellen": [
+        "buch:FS-1.3.2"
+       ],
+       "grund": "RK2: Latenz nennt kein Baustein des Stichpunkts; RTT und ping in AP1-6-3-4-K1"
+      },
+      {
+       "text": "Bei der IP-Telefonie baut SIP die Gespräche auf und ab, RTP überträgt die Sprache in Echtzeit über UDP; ohne Zusatz läuft beides unverschlüsselt, abgesichert wird mit SIP über TLS und SRTP.",
+       "kurz": "IP-Telefonie mit SIP und RTP",
+       "quellen": [
+        "buch:FS-4.3.2"
+       ],
+       "grund": "RK2: SIP und RTP sind Unterthema; UDP für Sprache steht in PB1-11-1-2-K2"
+      },
+      {
+       "text": "QUIC ist ein Transportprotokoll auf Basis von UDP, das Verbindungssteuerung und TLS-1.3-Verschlüsselung selbst übernimmt und die Grundlage von HTTP/3 bildet.",
+       "kurz": "QUIC als Grundlage von HTTP/3",
+       "quellen": [
+        "buch:GS-3.4.4"
+       ],
+       "grund": "RK2: QUIC und HTTP/3 nennt der Katalog nicht"
+      }
+     ],
+     "hinweis": "Das Lehrbuch ordnet Port 443 „dynamischen Webseiten“ zu; richtig ist: 443 ist der Standardport von HTTPS, unabhängig vom Seiteninhalt. POST-Daten kommen laut Lehrbuch über den Standardeingabekanal; das gilt nur für CGI-Programme, allgemein stehen sie im Rumpf der Anfrage. Bei der Latenz schreibt es, eine geringe Latenz wirke sich negativ aus; richtig ist: Eine hohe Latenz wirkt negativ. Das Lehrbuch nennt UDP einen Datenstrom; richtig ist: UDP sendet einzelne, voneinander unabhängige Datagramme, einen Bytestrom bietet TCP."
+    },
+    {
+     "id": "PB1-11-1-3",
+     "titel": "Netzwerkdienste: DNS, DHCP und Proxy",
+     "ziel": "Aufgabe und Ablauf von DNS und DHCP sowie die Aufgabe eines Proxys beschreiben; Ausfälle erkennen kennst du aus AP1.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.07"
+      },
+      {
+       "id": "AP2b.01.07.1"
+      },
+      {
+       "id": "AP2b.01.07.2"
+      },
+      {
+       "id": "AP2b.01.07.3"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-1-3-K1",
+       "text": "Du kannst die Aufgabe von DNS beschreiben: Namen in IP-Adressen auflösen, hierarchisch über Root-, Top-Level- und zuständige Nameserver, für lokale Domains über einen eigenen DNS-Server.",
+       "kurz": "Aufgabe und Hierarchie von DNS",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.1"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K2",
+       "text": "Du kannst den Ablauf einer DHCP-Vergabe beschreiben: Discover, Offer, Request, Acknowledge; die Adresse gilt für eine begrenzte Zeit (Lease) und wird vorher verlängert.",
+       "kurz": "Ablauf der DHCP-Vergabe mit Lease",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.2"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K3",
+       "text": "Du kannst die Aufgabe eines Proxys beschreiben: Er stellt Anfragen stellvertretend für die Clients und kann dabei filtern, zwischenspeichern und protokollieren.",
+       "kurz": "Aufgabe eines Proxys",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.07.3"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K4",
+       "text": "Du kannst DNS-Einträge der Typen A und AAAA unterscheiden: Ein Nameserver hält zu einem Namen Einträge verschiedener Typen, ein A-Eintrag liefert die IPv4-Adresse, ein AAAA-Eintrag die IPv6-Adresse, und ein Dual-Stack-Rechner fragt beide ab.",
+       "kurz": "DNS-Einträge A und AAAA",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.4-S327"
+       ]
+      },
+      {
+       "id": "PB1-11-1-3-K5",
+       "text": "Du kannst Forward-Proxy und Reverse Proxy unterscheiden: Ein Forward-Proxy stellt die Anfragen der internen Clients in eigenem Namen und ordnet die Antworten wieder zu, sodass nach außen nur er sichtbar ist; ein Reverse Proxy steht vor den eigenen Servern, nimmt die Anfragen aus dem Internet entgegen, verteilt sie auf mehrere Server, verbirgt diese, kann filtern und übernimmt oft die TLS-Verschlüsselung, sodass das Zertifikat zentral am Proxy liegt und die Webserver entlastet werden.",
+       "kurz": "Forward-Proxy gegen Reverse Proxy",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.3.1-S332",
+        "buch:FS-4.4.2-S375",
+        "buch:GS-3.8.3-S386"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-2-4",
+      "AP1-6-1-2",
+      "AP1-6-3-2"
+     ],
+     "kuer": [
+      {
+       "text": "Ein DNS-Filter im eigenen Netz beantwortet Anfragen nach Domains auf Sperrlisten (Werbung, Tracker, Schadsoftware) nicht und leitet die übrigen weiter. DNS over TLS bzw. over HTTPS verschlüsselt die Anfragen auf dem Weg, DNSSEC signiert die Einträge, damit ihre Echtheit prüfbar ist, verschlüsselt aber nichts.",
+       "kurz": "DNS-Filter, DoT, DoH und DNSSEC",
+       "quellen": [
+        "buch:FS-4.3.2",
+        "buch:FS-4.3.3"
+       ],
+       "grund": "RK2: Filter und Absicherung sind Unterthemen von DNS"
+      },
+      {
+       "text": "DynDNS macht einen Anschluss mit wechselnder öffentlicher IP-Adresse unter einem festen Namen erreichbar, weil der Router jede neue Adresse an den Namensdienst meldet.",
+       "kurz": "DynDNS für wechselnde öffentliche Adressen",
+       "quellen": [
+        "buch:GS-3.7.3"
+       ],
+       "grund": "RK2: DynDNS nennt der Katalog nicht; Unterthema von DNS"
+      },
+      {
+       "text": "Weitere DNS-Eintragstypen: CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domain), NS (zuständiger Nameserver), TXT (freier Text, z. B. Nachweis des Domainbesitzes oder Absicherung des Mailversands) und PTR (Rückwärtsauflösung von der Adresse zum Namen, Reverse DNS).",
+       "kurz": "Weitere DNS-Eintragstypen: CNAME bis PTR",
+       "quellen": [
+        "buch:FS-4.3.3",
+        "buch:FS-4.3.4"
+       ],
+       "grund": "RK2: Eintragstypen sind ein Unterthema von DNS; das Lehrbuch nennt sie nur in einer Tabelle, ohne sie zu erklären (V2-Prüfung PB1-b Nr. 4)"
+      }
+     ],
+     "hinweis": "Das Lehrbuch nennt DNSSEC abhörsicher; richtig ist: DNSSEC signiert die Einträge (Echtheit), verschlüsselt aber nicht. Reverse-DNS-Einträge verortet es beim Reverse Proxy; richtig ist: Es sind PTR-Einträge im DNS (Adresse zu Name). Beim Proxy beschreibt es das Austauschen von Absender- und Zieladressen; das ist NAT, ein Proxy baut auf der Anwendungsebene eine eigene Verbindung auf."
+    }
+   ]
+  },
+  {
+   "id": "PB1-11-2",
+   "titel": "Netzwerkkonzepte, Speichernetze und Standortvernetzung",
+   "satz": "Netze planen und einordnen: Ausdehnung, Topologie, Verkabelung, VLAN, Drahtlosnetze, Client-Server und Speichernetze, Verbindung von Standorten über VPN.",
+   "stichpunkte": [
+    {
+     "id": "PB1-11-2-1",
+     "titel": "Netzausdehnung, Verkabelung und Netzwerkplan",
+     "ziel": "Netzarten nach Ausdehnung und Anwendungsgebiet einordnen, strukturierte Verkabelung charakterisieren, Übertragungsraten vergleichen und Netzwerkpläne lesen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.03"
+      },
+      {
+       "id": "AP2b.01.03.1"
+      },
+      {
+       "id": "AP2b.01.03.2"
+      },
+      {
+       "id": "AP2b.01.03.5"
+      },
+      {
+       "id": "AP2b.01.03.12"
+      },
+      {
+       "id": "AP2b.02.06.2",
+       "anteil": "SAN als Netzkonzept"
+      },
+      {
+       "id": "ANH.it-netzwerk-diagramm-netzwerkplan"
+      }
+     ],
+     "teilaufgaben": [
+      "2024W-PB1-A2-a"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-11-2-1-K1",
+       "text": "Du kannst Netzarten nach ihrer Ausdehnung benennen und charakterisieren: PAN (Nahbereich einer Person), LAN (Gebäude, Gelände), MAN (Stadt), WAN (Länder), GAN (weltweit).",
+       "kurz": "Netzarten nach Ausdehnung: PAN bis GAN",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.1"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K2",
+       "text": "Du kannst Netzwerkkonzepte ihrem Anwendungsgebiet zuordnen und die Zuordnung begründen: LPWAN für das Internet der Dinge (große Reichweite, geringer Energiebedarf, kostengünstig), LAN für das Unternehmensnetz (hohe Bandbreite, geringe Latenz), SAN im Rechenzentrum (schneller, skalierbarer Speicherzugriff der Server).",
+       "kurz": "Netzwerkkonzepte nach Anwendungsgebiet: LPWAN, LAN, SAN",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.03.1",
+        "katalog:AP2b.02.06.2",
+        "beleg:2024W-PB1-A2-a"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K3",
+       "text": "Du kannst strukturierte Verkabelung charakterisieren: einheitlich und unabhängig von der späteren Nutzung geplante Verkabelung in Primärbereich (zwischen Gebäuden), Sekundärbereich (zwischen Stockwerken) und Tertiärbereich (bis zur Anschlussdose).",
+       "kurz": "Strukturierte Verkabelung in drei Bereichen",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.5"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K4",
+       "text": "Du kannst Datenübertragungsraten von Netzen einordnen und vergleichen, zum Beispiel 1 Gbit/s und mehr im LAN, Glasfaser im Primärbereich, wenige kbit/s im LPWAN.",
+       "kurz": "Übertragungsraten von Netzen im Vergleich",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.2"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K5",
+       "text": "Du kannst einen Netzwerkplan mit den Symbolen des Anhangs deuten: welche Geräte in welchem Teilnetz liegen, wie sie verbunden sind und zwischen welchen Netzen eine Firewall trennt.",
+       "kurz": "Netzwerkplan: Geräte, Teilnetze und Firewalls",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.12"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K6",
+       "text": "Du kannst erläutern, welches Übertragungsmedium in welchem Bereich der strukturierten Verkabelung üblich ist und warum: Glasfaser im Primärbereich, weil sie große Entfernungen mit hoher Datenrate überbrückt und Gebäude ohne elektrische Verbindung koppelt, Glasfaser oder Kupfer im Sekundärbereich je nach Länge und Bedarf, Kupfer (Twisted Pair) im Tertiärbereich bis zur Dose, weil die Strecken kurz sind, Kupfer günstiger ist und die Endgeräte Kupferanschlüsse haben.",
+       "kurz": "Übertragungsmedium je Verkabelungsbereich",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.2-S312"
+       ]
+      },
+      {
+       "id": "PB1-11-2-1-K7",
+       "text": "Du kannst erklären, warum die strukturierte Verkabelung die passive Verkabelung (fest verlegte Leitungen, Dosen, Patchfelder) von den aktiven Geräten in den Verteilern (Switches, Router) trennt und warum Querverbindungen zwischen den Verteilern die Ausfallsicherheit steigern: Die Leitungen bleiben viele Jahre liegen, während die Geräte unabhängig davon getauscht werden, und fällt eine Verbindung aus, läuft der Verkehr über einen anderen Weg.",
+       "kurz": "Passive Verkabelung, aktive Geräte, Querverbindungen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.2-S312"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-1-4",
+      "AP1-6-1-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Netzwerktopologien (Stern, Bus, Ring, Masche) gehören nicht dazu.",
+       "begruendung": "E7, P35: Der Katalog beschränkt „Netzwerktopologie (FI DV/FI SI)“ auf die Fachrichtungen Daten- und Prozessanalyse und Systemintegration; für Anwendungsentwicklung kein Prüfungsstoff.",
+       "katalog": [
+        "AP2b.01.03.11"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Funktechniken fürs Internet der Dinge wählt man nach Reichweite, Datenrate und Energiebedarf: Nahbereich (Bluetooth Low Energy, ZigBee, NFC) für Zentimeter bis etwa 100 m, LPWAN wie LoRaWAN oder NB-IoT für Kilometer bei wenigen kbit/s und jahrelangem Batteriebetrieb, Mobilfunk (LTE-M, 5G) für mehr Daten oder sehr kurze Latenz, etwa als Campusnetz in der Produktion. Im Schichtenmodell liegt z. B. MQTT auf der Anwendungsschicht, TCP und UDP auf der Transportschicht, IPv6 (sparsam als 6LoWPAN) auf der Vermittlungsschicht und die Funktechnik darunter.",
+       "kurz": "IoT-Funktechniken nach Reichweite und Energiebedarf",
+       "quellen": [
+        "buch:FS-2.2.1",
+        "buch:GS-3.2.3"
+       ],
+       "grund": "RK2/D8: IoT-Funktechniken und -Protokolle sind Unterthema; LPWAN gegen LAN steht in PB1-11-2-1-K2"
+      },
+      {
+       "text": "Netze wachsen mit dem Unternehmen: Das Kleinstunternehmen kommt mit SoHo-Router, NAS und Cloud-Anwendungen aus, ein KMU an einem Standort hat eigene Server und ab einer gewissen Größe eigene Administratoren und einen Serverraum, ein Großunternehmen verbindet mehrere Standorte per VPN, betreibt mehrere Firewalls mit DMZ und Server mit festen öffentlichen Adressen.",
+       "kurz": "Netze nach Unternehmensgröße",
+       "quellen": [
+        "buch:FS-4.2.1",
+        "buch:FS-4.2.2",
+        "buch:FS-4.2.3"
+       ],
+       "grund": "RK2: Beschreibung mit Stückzahlen, kein Prinzip"
+      },
+      {
+       "text": "WAN-Zugänge unterscheiden sich stark: Glasfaser bis ins Gebäude bietet die höchsten und symmetrische Raten, Kabelnetz und Mobilfunk hohe Download-, aber deutlich geringere Upload-Raten, und bei VDSL sinkt die Rate mit der Leitungslänge wegen der Dämpfung.",
+       "kurz": "WAN-Zugangsarten im Vergleich",
+       "quellen": [
+        "buch:FS-4.3.6"
+       ],
+       "grund": "RK1: Datenblattwerte; Datenübertragungsraten im Vergleich stehen in PB1-11-2-1-K4"
+      },
+      {
+       "text": "Beim Software Defined Networking ist die Steuerung (Control Plane) in einem zentralen Controller von der Weiterleitung (Data Plane) in Switches und Routern getrennt; der Controller gibt die Weiterleitungsregeln für das ganze Netz vor und lässt sich über Schnittstellen per Software steuern.",
+       "kurz": "Software Defined Networking",
+       "quellen": [
+        "buch:FS-4.4.2",
+        "buch:GS-3.8.3"
+       ],
+       "grund": "D8: SDN ohne Katalog-Baustein"
+      },
+      {
+       "text": "Das Internet ist das weltweite, öffentliche Netz, ein Intranet ein abgeschottetes Unternehmensnetz aus sicher gekoppelten LANs, dessen Dienste wie im Internet über den Browser laufen. Private Netze verantwortet der Betreiber selbst (mit privaten IP-Adressen), öffentliche Netze betreiben Provider und Carrier.",
+       "kurz": "Internet, Intranet, private und öffentliche Netze",
+       "quellen": [
+        "buch:GS-3.2.1",
+        "buch:GS-3.2.2"
+       ],
+       "grund": "Internet und Intranet nennt der Katalog nicht; private IP-Bereiche in AP1-6-2-1-K5"
+      },
+      {
+       "text": "Simplex überträgt nur in eine Richtung, Halbduplex abwechselnd, Vollduplex gleichzeitig in beide Richtungen, sodass eine 100-Mbit/s-Verbindung im Vollduplex insgesamt 200 Mbit/s schafft. Beim Multiplexing teilen sich mehrere Verbindungen ein Medium nach Zeit, Frequenz oder bei Glasfaser nach Wellenlänge.",
+       "kurz": "Duplexarten und Multiplexing",
+       "quellen": [
+        "buch:GS-3.3.1"
+       ],
+       "grund": "Vertieft die Kür zu Simplex, Halb- und Vollduplex an PB1-11-2-4; Multiplexing ohne Katalogbezug"
+      },
+      {
+       "text": "Die Kategorie (z. B. Cat 6A) gilt für einzelne Bauteile wie Kabel und Dosen, die Klasse für die fertig installierte Strecke, die nur so gut ist wie ihr schwächstes Bauteil und ihre Verlegung. Deshalb wird jede Leitung nach der Installation gemessen und mit einem Messprotokoll (Länge, Belegung, Dämpfung, Übersprechen, Ergebnis PASS oder FAIL) an den Betreiber übergeben.",
+       "kurz": "Kategorie, Klasse und Messprotokoll der Verkabelung",
+       "quellen": [
+        "buch:GS-3.4.2",
+        "buch:GS-3.5.1"
+       ],
+       "grund": "Normdetail; Kabelnormen stehen als Kür an PB1-11-2-4"
+      }
+     ],
+     "hinweis": "Das Lehrbuch nennt für 5G durchschnittlich etwa 1 Gbit/s; das ist eher ein Spitzenwert, im Alltag liegen die Raten meist bei einigen hundert Mbit/s."
+    },
+    {
+     "id": "PB1-11-2-2",
+     "titel": "VLAN, Drahtlosnetze und Zugriffskontrolle im Netz",
+     "ziel": "VLAN, PAN, WLAN, Mesh und Bluetooth charakterisieren, Risiken und Schutz in Drahtlosnetzen benennen und Kerberos neben RADIUS einordnen.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.03.3"
+      },
+      {
+       "id": "AP2b.01.03.6"
+      },
+      {
+       "id": "AP2b.01.03.7"
+      },
+      {
+       "id": "AP2b.01.03.8"
+      },
+      {
+       "id": "AP2b.01.03.9"
+      },
+      {
+       "id": "AP2b.01.03.10",
+       "anteil": "Risiken in Drahtlosnetzen; Schwachstellen der Infrastruktur in PB1-12"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-2-2-K1",
+       "text": "Du kannst ein VLAN charakterisieren: ein logisch abgetrenntes Netz auf derselben Switch-Infrastruktur, eingesetzt, um Abteilungen oder Gäste zu trennen, die Sicherheit zu erhöhen und Broadcast-Verkehr zu begrenzen.",
+       "kurz": "VLAN: logisch abgetrenntes Netz",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.6"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K2",
+       "text": "Du kannst Drahtlosnetze charakterisieren: PAN mit Bluetooth für kurze Entfernungen, WLAN im Gebäude, Mesh-WLAN mit mehreren zusammenarbeitenden Zugangspunkten für große Flächen.",
+       "kurz": "Drahtlosnetze: Bluetooth, WLAN und Mesh",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.7",
+        "katalog:AP2b.01.03.9"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K3",
+       "text": "Du kannst Risiken in Drahtlosnetzen und Maßnahmen dagegen beschreiben: Mithören, unbefugter Zugang und gefälschte Zugangspunkte; aktuelle Verschlüsselung, Anmeldung je Benutzer, getrenntes Gastnetz.",
+       "kurz": "Risiken und Schutz in Drahtlosnetzen",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.8",
+        "katalog:AP2b.01.03.10"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K4",
+       "text": "Du kannst neben RADIUS (aus AP1) Kerberos als Verfahren der Zugriffskontrolle im Netzwerk charakterisieren: einmalige Anmeldung bei einer zentralen Stelle, danach zeitlich begrenzte Tickets für die einzelnen Dienste.",
+       "kurz": "Kerberos neben RADIUS",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.03.3"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K5",
+       "text": "Du kannst über die Aufgabe eines VLANs hinaus erklären, wie ein Switch den Verkehr einem VLAN zuordnet: Ein Port gehört entweder fest zu einem VLAN (das Endgerät sendet ungetaggt), oder die Frames tragen eine Markierung mit der VLAN-ID (Tag), mit der auf der Verbindung zwischen Switches (Trunk) Frames mehrerer VLANs über eine Leitung laufen; Verkehr zwischen zwei VLANs ist nur über einen Router oder Layer-3-Switch möglich (Inter-VLAN-Routing).",
+       "kurz": "VLAN-Zuordnung: Port, Tag, Trunk, Inter-VLAN-Routing",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.5.2-S395",
+        "buch:GS-3.2.2-S288"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K6",
+       "text": "Du kannst die WLAN-Verschlüsselungen WEP, WPA, WPA2 und WPA3 charakterisieren: WEP und WPA gelten als gebrochen und scheiden aus, WPA2 mit AES ist verbreitet und mit langem Passwort noch ausreichend, WPA3 ist der aktuelle Standard und schützt mit für jede Sitzung neu ausgehandelten Schlüsseln auch mitgeschnittenen Verkehr, wenn das Passwort später bekannt wird; beide gibt es als Personal mit gemeinsamem Schlüssel (PSK) und als Enterprise mit Anmeldung je Benutzer über RADIUS, und ein Mischbetrieb WPA2/WPA3 bindet ältere Geräte an.",
+       "kurz": "WLAN-Verschlüsselung: WEP bis WPA3",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.5.2-S398",
+        "buch:GS-3.7.3-S376"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K7",
+       "text": "Du kannst die WLAN-Betriebsarten charakterisieren: Im Ad-hoc-Modus funken gleichberechtigte Geräte direkt miteinander ohne zentrale Stelle, im Infrastrukturmodus melden sich alle Geräte an einem Access Point an, der den Verkehr vermittelt, das WLAN mit dem kabelgebundenen Netz verbindet und die Anmeldung zentral regelt.",
+       "kurz": "WLAN-Betriebsarten: Ad-hoc und Infrastrukturmodus",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.3-S320"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K8",
+       "text": "Du kannst das AAA-Prinzip eines RADIUS-Servers erklären: Authentifizierung stellt fest, wer sich anmeldet (Benutzername und Kennwort oder Zertifikat), Autorisierung legt fest, worauf der Benutzer danach zugreifen darf (z. B. welches VLAN er bekommt), Accounting zeichnet die Nutzung für Protokoll und Abrechnung auf; Access Points, Switches oder VPN-Gateways fragen dafür als RADIUS-Clients zentral beim Server an, etwa bei der portbasierten Anmeldung am WLAN oder Switch.",
+       "kurz": "RADIUS: Authentifizierung, Autorisierung, Accounting",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.5.3-S364"
+       ]
+      },
+      {
+       "id": "PB1-11-2-2-K9",
+       "text": "Du kannst die Sicherheit der Anmeldung per QR-Code und per WPS charakterisieren: Ein QR-Code enthält SSID und Schlüssel im Klartext und ist nur so sicher wie der Ort, an dem er hängt; WPS koppelt ein Gerät per Tastendruck am Router oder per PIN, wobei sich die PIN durch Ausprobieren in kurzer Zeit knacken lässt, weshalb WPS meist abgeschaltet wird.",
+       "kurz": "Komfortanmeldung per QR-Code und WPS",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.7.3-S375"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-3-1",
+      "AP1-6-1-5"
+     ],
+     "hinweis": "Schwachstellen einer IT-Infrastruktur (2022W-PB1-A1-a) stehen bei Verfügbarkeit und Ausfällen in PB1-12. Das Lehrbuch nennt WPA2 veraltet; richtig ist: WPA2 mit AES und langem Passwort gilt weiter als ausreichend, WPA3 ist vorzuziehen. Risiken von WPS nennt es nicht: Die WPS-PIN ist durch Ausprobieren angreifbar, WPS wird deshalb abgeschaltet. Für WLAN nennt es höchstens 600 Mbit/s (nur 802.11n, Wi-Fi 5 bis 7 schaffen deutlich mehr), für Bluetooth Low Energy 50 bis 150 m (übliche Geräte reichen etwa 10 m), für Z-Wave das 900-MHz-Band (in Europa 868 MHz).",
+     "kuer": [
+      {
+       "text": "Für den Nahbereich gibt es sparsame Funktechniken: Bluetooth Low Energy für Sensoren und Wearables mit typisch etwa 10 m Reichweite, ZigBee und Z-Wave für die Hausautomation mit geringen Datenraten und vielen Geräten im Mesh. WLAN passt für IoT-Geräte mit Netzstrom, weil es hohe Datenraten bietet, aber viel Energie braucht.",
+       "kurz": "Nahbereichsfunk: BLE, ZigBee, Z-Wave, WLAN",
+       "quellen": [
+        "buch:FS-2.2.1",
+        "buch:GS-3.4.3"
+       ],
+       "grund": "RK2/D8: Varianten der Drahtlosnetze; Bluetooth und WLAN stehen in PB1-11-2-2-K2"
+      },
+      {
+       "text": "Der VLAN-Tag fügt dem Ethernet-Frame 4 Byte hinzu, darunter 3 Bit Priorität (z. B. Sprache vor E-Mail) und 12 Bit VLAN-ID, womit sich 4094 VLANs unterscheiden lassen.",
+       "kurz": "Aufbau des VLAN-Tags",
+       "quellen": [
+        "buch:GS-3.3.3"
+       ],
+       "grund": "RK1: Formatdetail; die Zuordnung per Tag steht als Aussage im Stichpunkt"
+      }
+     ]
+    },
+    {
+     "id": "PB1-11-2-5",
+     "titel": "Sicherheitskonzepte im Netz: DMZ, Segmentierung und Zero Trust",
+     "ziel": "Eine DMZ charakterisieren, ein Netz nach Schutzbedarf in Zonen segmentieren und das Zero-Trust-Prinzip vom Perimeterschutz unterscheiden.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.03.10",
+       "anteil": "Sicherheitskonzepte: DMZ, Segmentierung nach Schutzbedarf, Zero Trust; Risiken in Drahtlosnetzen in PB1-11-2-2"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-2-5-K1",
+       "text": "Du kannst eine DMZ charakterisieren: Server, die aus dem Internet erreichbar sein müssen (z. B. Webserver, Mailserver, Shop), stehen in einem eigenen Netzsegment zwischen äußerer und innerer Firewall, sodass ein Angreifer nach einem Einbruch in einen dieser Server noch nicht im internen Netz ist, sondern erst die zweite Firewall überwinden muss; Firewalls verschiedener Hersteller verringern das Risiko, dass beide dieselbe Lücke haben, und ein Extranet öffnet ausgewählte Dienste nur für bestimmte Partner.",
+       "kurz": "DMZ zwischen zwei Firewalls",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.2.3-S322",
+        "buch:FS-4.4.2-S375",
+        "buch:FS-4.5.2-S392",
+        "buch:GS-3.8.3-S386"
+       ]
+      },
+      {
+       "id": "PB1-11-2-5-K2",
+       "text": "Du kannst ein Segmentierungskonzept charakterisieren: Systeme werden nach ihrem Schutzbedarf auf getrennte Zonen verteilt, jede Zone wird so streng geschützt wie ihr empfindlichstes System, Verkehr zwischen den Zonen läuft nur über Firewalls ohne Umgehungswege, und je kleiner die Zonen, desto weniger erreicht ein Angreifer nach einem Einbruch; Netze verschiedener Organisationen werden physisch getrennt, weil eine Trennung per VLAN auf gemeinsamen Switches dafür nicht genügt.",
+       "kurz": "Segmentierung in Zonen nach Schutzbedarf",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.4.2-S375"
+       ]
+      },
+      {
+       "id": "PB1-11-2-5-K3",
+       "text": "Du kannst das Zero-Trust-Prinzip vom klassischen Perimeterschutz unterscheiden: Der Perimeterschutz vertraut allem innerhalb des Firmennetzes, bei Zero Trust gilt dagegen kein Zugriff allein wegen seiner Herkunft als vertrauenswürdig, sondern jeder Zugriff auf Daten, Anwendungen und Dienste wird einzeln nach Identität, Gerätezustand und Richtlinie geprüft, das Netz ist fein segmentiert, und alle Datenflüsse werden überwacht.",
+       "kurz": "Zero Trust gegen Perimeterschutz",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.4.2-S378",
+        "buch:FS-4.5.2-S392"
+       ]
+      }
+     ],
+     "grenzen": [],
+     "kuer": [
+      {
+       "text": "Zero Trust führt man schrittweise ein: schützenswerte Daten und Anwendungen einstufen, ihre Datenflüsse ermitteln, die Architektur mit Segmentierungs-Firewalls entwerfen, Zugriffsregeln je Fall festlegen und alles laufend überwachen.",
+       "kurz": "Zero Trust schrittweise einführen",
+       "quellen": [
+        "buch:FS-4.4.2"
+       ],
+       "grund": "D8: Einführungsschritte ohne Katalog-Baustein"
+      }
+     ],
+     "hinweis": "Das Lehrbuch setzt Zero Trust mit dem Auslagern von Diensten in die Cloud gleich; richtig ist: Zero Trust ist ein Zugriffsprinzip, unabhängig davon, wo die Dienste laufen."
+    },
+    {
+     "id": "PB1-11-2-3",
+     "titel": "Client-Server, Peer-to-Peer und Speicher im Netz",
+     "ziel": "Client-Server und Peer-to-Peer vergleichen und bewerten, Dateifreigabe und Datenabruf einordnen und NAS, SAN, iSCSI und Fibre Channel beschreiben.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.04"
+      },
+      {
+       "id": "AP2b.01.04.1"
+      },
+      {
+       "id": "AP2b.01.04.2",
+       "anteil": "Datenabruf"
+      },
+      {
+       "id": "AP2b.02.06"
+      },
+      {
+       "id": "AP2b.02.06.1"
+      },
+      {
+       "id": "AP2b.02.06.2",
+       "anteil": "SAN"
+      },
+      {
+       "id": "AP2b.02.06.3"
+      },
+      {
+       "id": "AP2b.02.06.4"
+      },
+      {
+       "id": "AP2b.02.06.5"
+      },
+      {
+       "id": "AP2b.02.06.6",
+       "anteil": "Fibre Channel"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-2-3-K1",
+       "text": "Du kannst Peer-to-Peer (gleichberechtigte Rechner ohne zentralen Server) und Client-Server (zentraler Dienst, der sich gemeinsam verwalten und sichern lässt) vergleichen und für einen Einsatz bewerten, welches Konzept passt.",
+       "kurz": "Peer-to-Peer gegen Client-Server",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.04",
+        "buch:GS-3.1-S282"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K2",
+       "text": "Du kannst Dateifreigaben über SMB/CIFS (vor allem Windows) und NFS (vor allem Unix und Linux) beschreiben und für einen Einsatz bewerten, welche passt.",
+       "kurz": "Dateifreigaben über SMB/CIFS und NFS",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.04.1",
+        "katalog:AP2b.02.06.4",
+        "katalog:AP2b.02.06.5"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K3",
+       "text": "Du kannst Wege des Datenabrufs vergleichen und bewerten: HTTP für Webdienste und Schnittstellen, ODBC als einheitliche Schnittstelle von Anwendungen zu verschiedenen Datenbanken.",
+       "kurz": "Datenabruf über HTTP und ODBC",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.04.2"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K4",
+       "text": "Du kannst das NAS aus AP1 (dateibasiert, stellt Dateien über das Netz bereit) vom SAN unterscheiden: eigenes Speichernetz, das Servern Speicher blockbasiert wie eine lokale Festplatte bereitstellt.",
+       "kurz": "NAS gegen SAN",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.06.1",
+        "katalog:AP2b.02.06.2"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K5",
+       "text": "Du kannst die Anbindung von Blockspeicher beschreiben: iSCSI über das normale Ethernet, Fibre Channel über ein eigenes, schnelles Speichernetz.",
+       "kurz": "Blockspeicher über iSCSI und Fibre Channel",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.02.06.3",
+        "katalog:AP2b.02.06.6"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K6",
+       "text": "Du kannst beschreiben, wie eine Anwendung über eine standardisierte Datenbankschnittstelle wie ODBC (allgemein) oder JDBC (für Java) auf eine Datenbank zugreift: Das Programm ruft nur die einheitlichen Funktionen der Schnittstelle auf, ein Treiber des jeweiligen Datenbanksystems übersetzt sie in dessen eigenes Protokoll, sodass ein Wechsel des Datenbanksystems vor allem einen anderen Treiber und andere Verbindungsdaten erfordert.",
+       "kurz": "Datenbanktreiber hinter ODBC und JDBC",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.8-S193"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K7",
+       "text": "Du kannst den Ablauf eines Datenbankzugriffs aus einem Programm beschreiben: Verbindung mit Adresse, Port, Datenbankname, Benutzer und Passwort öffnen, die SQL-Anweisung an die Datenbank schicken (Benutzereingaben als Parameter einer vorbereiteten Anweisung), das Ergebnis verarbeiten und die Verbindung in jedem Fall wieder schließen, auch nach einem Fehler (Transaktion und Commit siehe PB1-6-1-5-K4).",
+       "kurz": "Ablauf eines Datenbankzugriffs aus dem Programm",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.8-S194",
+        "buch:FS-3.7.5-S281",
+        "buch:GS-5.8.6-S623"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K8",
+       "text": "Du kannst Kriterien für die Auswahl eines NAS beschreiben: Kapazität und Zahl der Laufwerkschächte, RAID mit Tausch defekter Platten im laufenden Betrieb, Lese- und Schreibgeschwindigkeit, Netzanbindung (mehrere Ports, per Link-Aggregation gebündelt), Verschlüsselung, Snapshots im Dateisystem und ein redundantes Netzteil.",
+       "kurz": "Auswahlkriterien für ein NAS",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS-4.3.4-S355"
+       ]
+      },
+      {
+       "id": "PB1-11-2-3-K9",
+       "text": "Du kannst beurteilen, ob für einen Einsatz NAS, SAN oder DAS passt: Das NAS stellt Dateien über das vorhandene Ethernet-LAN bereit (einfach und günstig, belastet aber das LAN), das SAN gibt den Servern über ein eigenes schnelles Speichernetz Blockspeicher (hohe Leistung für viele Server, aber teuer und aufwendig), das DAS hängt direkt an einem einzigen Server (schnell und günstig, aber nur dieser Server hat Zugriff).",
+       "kurz": "NAS, SAN und DAS im Vergleich",
+       "stufe": 4,
+       "herkunft": [
+        "buch:FS-4.3.5-S357",
+        "buch:GS-2.4.7-S168"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-7-3-5"
+     ],
+     "kuer": [
+      {
+       "text": "Ändernde Anweisungen (INSERT, UPDATE, DELETE) liefern nur die Zahl betroffener Zeilen, Abfragen eine Ergebnismenge, die das Programm in einer Schleife Zeile für Zeile durchläuft und deren Spalten es über Namen oder Position ausliest; wie die Aufrufe heißen, hängt von der Bibliothek ab.",
+       "kurz": "Ergebnismenge im Programm verarbeiten",
+       "quellen": [
+        "buch:FS-3.7.5",
+        "buch:GS-5.8.6"
+       ],
+       "grund": "RK1: bibliotheksspezifische Aufrufe; der Ablauf steht als Aussage im Stichpunkt"
+      },
+      {
+       "text": "Ein Verbindungspool hält Datenbankverbindungen offen und gibt sie an die nächste Datenbankaktion weiter; das spart bei vielen kurzen Zugriffen den Auf- und Abbau, kostet aber dauerhaft Ressourcen.",
+       "kurz": "Verbindungspool für Datenbankzugriffe",
+       "quellen": [
+        "buch:FS2-2.3.8"
+       ],
+       "grund": "D8: Verbindungspool ohne Katalog-Baustein"
+      },
+      {
+       "text": "Ein Rechnernetz kann verschiedene Verbundzwecke erfüllen: Kommunikations-, Daten-, Funktions-, Ressourcen-, Last- und Leistungs- sowie Sicherheits- und Verfügbarkeitsverbund, z. B. ein gemeinsamer Netzdrucker als Ressourcenverbund.",
+       "kurz": "Verbundarten eines Rechnernetzes",
+       "quellen": [
+        "buch:GS-3.1"
+       ],
+       "grund": "D8: Verbundarten ohne Katalog-Baustein"
+      },
+      {
+       "text": "File-Storage legt Dateien in einer Verzeichnishierarchie ab, Block-Storage Datenblöcke mit eindeutiger Kennung (wie im SAN), Object-Storage ganze Objekte zusammen mit vielen Metadaten, wie es für Cloud-Speicher typisch ist.",
+       "kurz": "File-, Block- und Object-Storage",
+       "quellen": [
+        "buch:GS-5.2.6"
+       ],
+       "grund": "RK2: Object Storage ist Unterthema von Cloud-Speicher; Datei- gegen Blockzugriff steht in PB1-11-2-3-K4"
+      }
+     ],
+     "hinweis": "Die Programmbeispiele des Lehrbuchs schreiben das Passwort in den Quelltext und setzen SQL als Text zusammen; richtig ist: Zugangsdaten in eine geschützte Konfiguration, Benutzereingaben als Parameter vorbereiteter Anweisungen (PB1-10-1-2-K4)."
+    },
+    {
+     "id": "PB1-11-2-4",
+     "titel": "Standortübergreifende Kommunikation: VPN-Modelle, Tunneling, IPsec",
+     "ziel": "VPN-Modelle unterscheiden, für eine Situation auswählen und eine Standortverbindung einrichten; Tunneling und IPsec erläutern.",
+     "gebiete": [
+      "G.PB1.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.06"
+      },
+      {
+       "id": "AP2b.01.06.1"
+      },
+      {
+       "id": "AP2b.01.06.2"
+      },
+      {
+       "id": "AP2b.01.06.3"
+      },
+      {
+       "id": "AP2b.01.03.4"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-11-2-4-K1",
+       "text": "Du kannst VPN-Modelle unterscheiden: Site-to-Site (zwei Standortnetze werden verbunden), End-to-Site (ein einzelnes Gerät wählt sich ins Firmennetz ein), End-to-End (zwei Geräte direkt).",
+       "kurz": "VPN-Modelle Site-to-Site, End-to-Site, End-to-End",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.06.1"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K2",
+       "text": "Du kannst für eine Situation ein VPN-Modell und das Verfahren auswählen und die Wahl begründen, zum Beispiel Site-to-Site mit IPsec im Tunnelmodus für die Filialen, End-to-Site für Beschäftigte im Homeoffice.",
+       "kurz": "Passendes VPN-Modell für eine Situation",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.01.06.1",
+        "katalog:AP2b.01.06.2",
+        "katalog:AP2b.01.06.3",
+        "katalog:AP2b.01.06"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K3",
+       "text": "Du kannst über das Bild des Tunnels aus AP1 hinaus IPsec erläutern: verschlüsselt und authentifiziert IP-Pakete auf der Netzwerkebene; im Tunnelmodus wird das ganze ursprüngliche Paket samt Kopf geschützt, im Transportmodus nur die Nutzdaten.",
+       "kurz": "IPsec: Tunnel- und Transportmodus",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.06.2",
+        "katalog:AP2b.01.06.3",
+        "katalog:AP2b.01.03.4"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K4",
+       "text": "Du kannst eine VPN-Verbindung zwischen zwei Standorten einrichten: Gateways und ihre Adressen, zu verbindende Netze, Authentifizierung mit Pre-Shared Key oder Zertifikat, Verschlüsselungsverfahren festlegen.",
+       "kurz": "VPN-Verbindung zwischen zwei Standorten einrichten",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.06",
+        "katalog:AP2b.01.06.2",
+        "katalog:AP2b.01.06.3"
+       ]
+      },
+      {
+       "id": "PB1-11-2-4-K5",
+       "text": "Du kannst bei IPsec die Protokolle AH und ESP unterscheiden: AH (Authentication Header) sichert die Echtheit des Absenders und die Unversehrtheit des Pakets, verschlüsselt aber nicht, ESP (Encapsulating Security Payload) verschlüsselt zusätzlich die Nutzdaten und sorgt so für Vertraulichkeit; für ein VPN wird deshalb ESP eingesetzt.",
+       "kurz": "IPsec-Protokolle AH und ESP",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-3.4.4-S330"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-6-3-3"
+     ],
+     "kuer": [
+      {
+       "text": "Weitere VPN-Protokolle wie L2TP und PPTP; Kabeltypen und Normen der Verkabelung (Twisted Pair, CAT-Klassen, Lichtwellenleiter, DIN EN 50173); Simplex, Halbduplex, Vollduplex.",
+       "kurz": "Weitere VPN-Protokolle, Verkabelung und Duplex",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Nur Hinweisquelle; der Katalog nennt VPN-Modelle, Tunneling, IPsec und strukturierte Verkabelung ohne diese Einzelheiten. Vom Katalog nicht ausgeschlossen."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-6-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K1",
+    "grund": "TCP/IP-Modell neu; OSI-Schichten in AP1-6-1-1"
+   },
+   {
+    "alt": "AP2-6-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K1",
+    "grund": "Zuordnung zu den Schichten in AP1-6-1-1; neu nur ARP, Routing, Switching in sm1"
+   },
+   {
+    "alt": "AP2-6-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K2",
+    "grund": "E2: Aufbau der MAC-Adresse in AP1-6-2-4-K1; nur OUI als Halbsatz in sm3"
+   },
+   {
+    "alt": "AP2-6-1-1-K4",
+    "status": "gestrichen",
+    "grund": "E2: Aufgabe von ARP in AP1-6-2-4-K2; importiert"
+   },
+   {
+    "alt": "AP2-6-1-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K2",
+    "grund": "mit Feldlängen laut 2024W-PB1-A2-ba"
+   },
+   {
+    "alt": "AP2-6-1-1-K6",
+    "status": "gestrichen",
+    "grund": "E2: IPv4 und IPv6 an der Schreibweise unterscheiden in AP1-6-2-3; importiert"
+   },
+   {
+    "alt": "AP2-6-1-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K3",
+    "grund": "mit MAC- und Routingtabelle"
+   },
+   {
+    "alt": "AP2-6-1-2-K2",
+    "status": "gestrichen",
+    "grund": "E2: Switch und Router mit Schicht und Aufgabe in AP1-6-1-3-K1/K2; importiert"
+   },
+   {
+    "alt": "AP2-6-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K4",
+    "grund": "mit Paketfilter"
+   },
+   {
+    "alt": "AP2-6-1-2-K4",
+    "status": "gestrichen",
+    "grund": "E2: Symbole des Netzwerkplans erkennen in AP1-6-1-3-K5; Plan lesen in nk6"
+   },
+   {
+    "alt": "AP2-6-1-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K3",
+    "grund": "Bridge mit Switch und Router vergleichen"
+   },
+   {
+    "alt": "AP2-6-1-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-1-1-K4",
+    "grund": "in kp3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-1-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K1",
+    "grund": "erläutern (Katalog)"
+   },
+   {
+    "alt": "AP2-6-1-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K2",
+    "grund": "einsetzen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-1-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K2",
+    "grund": "HTTPS einsetzen in pr2; Zertifikat in PB1-10, Ports in AP1-6-1-2"
+   },
+   {
+    "alt": "AP2-6-1-3-K4",
+    "status": "verschoben",
+    "neu": "PB1-10-2-1-K3"
+   },
+   {
+    "alt": "AP2-6-1-3-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-1-2-K2",
+    "grund": "in pr2 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K1",
+    "grund": "mit PAN und Beispielen"
+   },
+   {
+    "alt": "AP2-6-2-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K2",
+    "grund": "mit LPWAN und SAN laut 2024W-PB1-A2-a"
+   },
+   {
+    "alt": "AP2-6-2-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K3",
+    "grund": "mit den drei Bereichen zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-2-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K3",
+    "grund": "in nk4 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K1",
+    "grund": "mit Gründen zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-2-1-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K1",
+    "grund": "in wl1 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K2",
+    "grund": "charakterisieren (Katalog)"
+   },
+   {
+    "alt": "AP2-6-2-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K3",
+    "grund": "mit Risiken zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-2-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K3",
+    "grund": "in wl3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K4",
+    "grund": "RADIUS und Kerberos zusammen"
+   },
+   {
+    "alt": "AP2-6-2-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-2-2-K4",
+    "grund": "in wl4 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-2-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K2",
+    "grund": "Reichweite und Energiebedarf als Begründung in nk2"
+   },
+   {
+    "alt": "AP2-6-2-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K5",
+    "grund": "lesen mit Symbolen des Anhangs"
+   },
+   {
+    "alt": "AP2-6-2-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K5",
+    "grund": "in nk6 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K5",
+    "grund": "in nk6 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-3-K4",
+    "status": "gestrichen",
+    "grund": "E7, P35: Netzwerktopologie ist im Katalog auf FI DV/FI SI beschränkt"
+   },
+   {
+    "alt": "AP2-6-2-4-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K1",
+    "grund": "vergleichen und bewerten (Katalog, Stufe 4)"
+   },
+   {
+    "alt": "AP2-6-2-4-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K1",
+    "grund": "in cs1 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-4-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K1",
+    "grund": "in cs1 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-2-4-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K2",
+    "grund": "mit NFS, bewerten"
+   },
+   {
+    "alt": "AP2-6-2-4-K5",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K3",
+    "grund": "bewerten (Katalog)"
+   },
+   {
+    "alt": "AP2-6-2-4-K6",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K3",
+    "grund": "in cs3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-3-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-1-3-K1",
+    "grund": "Hierarchie und lokale Domains"
+   },
+   {
+    "alt": "AP2-6-3-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-1-3-K2",
+    "grund": "Ablauf der Vergabe (AP1-Grenze verweist hierher)"
+   },
+   {
+    "alt": "AP2-6-3-1-K3",
+    "status": "verschoben",
+    "neu": "PB1-11-1-3-K3"
+   },
+   {
+    "alt": "AP2-6-3-1-K4",
+    "status": "gestrichen",
+    "grund": "E2: Ausfall von DNS und DHCP erkennen in AP1-6-3-2-K4 und AP1-6-2-4-K5; importiert"
+   },
+   {
+    "alt": "AP2-6-3-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K2",
+    "grund": "auswählen und begründen"
+   },
+   {
+    "alt": "AP2-6-3-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K1",
+    "grund": "Site-to-Site, End-to-Site, End-to-End"
+   },
+   {
+    "alt": "AP2-6-3-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K3",
+    "grund": "mit IPsec zusammengefasst"
+   },
+   {
+    "alt": "AP2-6-3-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-11-2-4-K3",
+    "grund": "in vp3 aufgenommen"
+   },
+   {
+    "alt": "AP2-6-6-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K4",
+    "grund": "beschreiben (Katalog)"
+   },
+   {
+    "alt": "AP2-6-6-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-11-2-1-K2",
+    "grund": "SAN dem Rechenzentrum zuordnen in nk2"
+   },
+   {
+    "alt": "AP2-6-6-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-11-2-3-K2",
+    "grund": "SMB und NFS als Dateifreigaben"
+   },
+   {
+    "alt": "AP2-6-6-1-K4",
+    "status": "verschoben",
+    "neu": "PB1-11-2-3-K5"
+   },
+   {
+    "alt": "AP2-6-6-1-K5",
+    "status": "gestrichen",
+    "grund": "Vorteile NAS gegenüber SAN: weder Katalog (beschreiben) noch Beleg; Unterschied in cs4"
+   },
+   {
+    "alt": "AP2-6-6-3-K1",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K2",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K3",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K4",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   },
+   {
+    "alt": "AP2-6-6-3-K5",
+    "status": "PB2",
+    "grund": "Datenmengen berechnen: Beleg 2023W-PB2-A3-b; Grundlagen in AP1-4-2-2 und AP1-4-2-4"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Teilaufgaben 2024W-PB1-A2 (Netzkonzepte, Ethernet-Frame, MAC, Skript), 2021W-PB1-A3-c (HTTP 404) und 2022W-PB1-A1-a (Schwachstellen) gegen die Musterlösungen gelesen. Alle übrigen Bausteine ohne Beleg mit der Katalogtiefe (meist Stufe 2); Tiefe so entschieden mit P10. Überarbeitet nach der unabhängigen Prüfung (P35)."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-1.3.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.3.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.1": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.4.6": "Lehrbuch Westermann „IT-Berufe“ GS 3.4.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.7.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.7.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.5.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.5.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.7.3": "Lehrbuch Westermann „IT-Berufe“ GS 3.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.4.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.4.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-1.3.2": "Lehrbuch Westermann „IT-Berufe“ FS 1.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.4.4": "Lehrbuch Westermann „IT-Berufe“ GS 3.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-2.2.1": "Lehrbuch Westermann „IT-Berufe“ FS 2.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.2.3": "Lehrbuch Westermann „IT-Berufe“ GS 3.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.2.1": "Lehrbuch Westermann „IT-Berufe“ FS 4.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.2.2": "Lehrbuch Westermann „IT-Berufe“ FS 4.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.2.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.6": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.8.3": "Lehrbuch Westermann „IT-Berufe“ GS 3.8.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.2.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.2.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.2.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.3.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.4.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.4.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.5.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.4.3": "Lehrbuch Westermann „IT-Berufe“ GS 3.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.3.3": "Lehrbuch Westermann „IT-Berufe“ GS 3.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.7.5": "Lehrbuch Westermann „IT-Berufe“ FS 3.7.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.8.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.8.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.3.8": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.8 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-3.1": "Lehrbuch Westermann „IT-Berufe“ GS 3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.2.6": "Lehrbuch Westermann „IT-Berufe“ GS 5.2.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-4.3.4": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "OSI, TCP/IP, Adressierung, IPv4, IPv6, MAC, ARP",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-1-K1",
+      "PB1-11-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Ethernet, MAC",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Routing, Switching, Switch, Bridge, Router, Firewall, Paketfilter, Stateful Inspection",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-1-K3",
+      "PB1-11-1-1-K4"
+     ]
+    },
+    {
+     "thema": "TCP, UDP, HTTP, HTTPS, TLS",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2"
+     ]
+    },
+    {
+     "thema": "HTTP-Statuscodes",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-2-K3"
+     ]
+    },
+    {
+     "thema": "DNS, DHCP, Proxy",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-1-3-K1",
+      "PB1-11-1-3-K2",
+      "PB1-11-1-3-K3"
+     ]
+    },
+    {
+     "thema": "LAN, MAN, WAN, GAN, IoT, SAN",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-1-K1",
+      "PB1-11-2-1-K2"
+     ]
+    },
+    {
+     "thema": "Strukturierte Verkabelung, Netzwerkplan, Datenübertragungsrate",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-1-K3",
+      "PB1-11-2-1-K4",
+      "PB1-11-2-1-K5"
+     ]
+    },
+    {
+     "thema": "Netzwerktopologie",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Außen",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Katalog: nur FI DV/FI SI (AP2b.01.03.11), Grenze in sp_nk"
+    },
+    {
+     "thema": "VLAN, PAN, WLAN, Mesh, Bluetooth, RADIUS, Kerberos",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-2-K1",
+      "PB1-11-2-2-K2",
+      "PB1-11-2-2-K4"
+     ]
+    },
+    {
+     "thema": "VPN, VPN-Modelle, Tunneling, IPsec",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-4-K1",
+      "PB1-11-2-4-K2",
+      "PB1-11-2-4-K3"
+     ]
+    },
+    {
+     "thema": "SMB, NFS, ODBC, Fibre Channel",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-11-2-3-K2",
+      "PB1-11-2-3-K3",
+      "PB1-11-2-3-K5"
+     ]
+    },
+    {
+     "thema": "L2TP, PPTP, Kabeltypen, CAT-Klassen, Simplex/Duplex, WEP/WPA",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-4"
+     ]
+    },
+    {
+     "thema": "Port-Forwarding, Portsecurity, Pre-shared Key",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-10"
+     ],
+     "notiz": "Portsecurity in PB1-10; Pre-shared Key in AP1-6-3-1 und vp4"
+    },
+    {
+     "thema": "Verfügbarkeit, Ausfallwahrscheinlichkeit, Monitoring, USV, RAID, Backup",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-12"
+     ]
+    },
+    {
+     "thema": "Cyber-physische Systeme, Sensor, Aktor",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1-3"
+     ]
+    },
+    {
+     "thema": "Typische Ursachen gestörter Netzverbindungen sind doppelt vergebene IP- oder MAC-Adressen, ein ausgefallener DHCP-Server",
+     "quellen": [
+      "buch:FS-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Teilen sich mehrere Stationen ein Medium, braucht es ein Zugriffsverfahren: CSMA/CD hört vor dem Senden ab, bemerkt Koll",
+     "quellen": [
+      "buch:GS-3.3.2",
+      "buch:FS-4.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein unmanaged Switch arbeitet fest eingestellt, ein managebarer Switch bekommt eine eigene IP-Adresse zur Verwaltung und",
+     "quellen": [
+      "buch:GS-3.4.6",
+      "buch:FS-4.3.2",
+      "buch:GS-3.7.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Redundante Verbindungen zwischen Switches lassen ohne Schutz Frames endlos kreisen (Broadcast-Sturm); das Spanning Tree ",
+     "quellen": [
+      "buch:FS-4.5.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein SoHo-Router vereint Router, Switch, WLAN, DHCP und Firewall in einem Gerät; ein professioneller Router im 19-Zoll-Ge",
+     "quellen": [
+      "buch:GS-3.7.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die P-A-P-Struktur stellt ein Application Layer Gateway zwischen einen äußeren und einen inneren Paketfilter und bildet ",
+     "quellen": [
+      "buch:FS-4.4.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Latenz ist die Zeit, die ein Paket von der Quelle zum Ziel braucht, die Round Trip Time die für Hin- und Rückweg; si",
+     "quellen": [
+      "buch:FS-1.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Bei der IP-Telefonie baut SIP die Gespräche auf und ab, RTP überträgt die Sprache in Echtzeit über UDP; ohne Zusatz läuf",
+     "quellen": [
+      "buch:FS-4.3.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "QUIC ist ein Transportprotokoll auf Basis von UDP, das Verbindungssteuerung und TLS-1.3-Verschlüsselung selbst übernimmt",
+     "quellen": [
+      "buch:GS-3.4.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein DNS-Filter im eigenen Netz beantwortet Anfragen nach Domains auf Sperrlisten (Werbung, Tracker, Schadsoftware) nicht",
+     "quellen": [
+      "buch:FS-4.3.2",
+      "buch:FS-4.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "DynDNS macht einen Anschluss mit wechselnder öffentlicher IP-Adresse unter einem festen Namen erreichbar, weil der Route",
+     "quellen": [
+      "buch:GS-3.7.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Funktechniken fürs Internet der Dinge wählt man nach Reichweite, Datenrate und Energiebedarf: Nahbereich (Bluetooth Low ",
+     "quellen": [
+      "buch:FS-2.2.1",
+      "buch:GS-3.2.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Netze wachsen mit dem Unternehmen: Das Kleinstunternehmen kommt mit SoHo-Router, NAS und Cloud-Anwendungen aus, ein KMU ",
+     "quellen": [
+      "buch:FS-4.2.1",
+      "buch:FS-4.2.2",
+      "buch:FS-4.2.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "WAN-Zugänge unterscheiden sich stark: Glasfaser bis ins Gebäude bietet die höchsten und symmetrische Raten, Kabelnetz un",
+     "quellen": [
+      "buch:FS-4.3.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Beim Software Defined Networking ist die Steuerung (Control Plane) in einem zentralen Controller von der Weiterleitung (",
+     "quellen": [
+      "buch:FS-4.4.2",
+      "buch:GS-3.8.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Das Internet ist das weltweite, öffentliche Netz, ein Intranet ein abgeschottetes Unternehmensnetz aus sicher gekoppelte",
+     "quellen": [
+      "buch:GS-3.2.1",
+      "buch:GS-3.2.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Simplex überträgt nur in eine Richtung, Halbduplex abwechselnd, Vollduplex gleichzeitig in beide Richtungen, sodass eine",
+     "quellen": [
+      "buch:GS-3.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Kategorie (z. B. Cat 6A) gilt für einzelne Bauteile wie Kabel und Dosen, die Klasse für die fertig installierte Stre",
+     "quellen": [
+      "buch:GS-3.4.2",
+      "buch:GS-3.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Für den Nahbereich gibt es sparsame Funktechniken: Bluetooth Low Energy für Sensoren und Wearables mit typisch etwa 10 m",
+     "quellen": [
+      "buch:FS-2.2.1",
+      "buch:GS-3.4.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Der VLAN-Tag fügt dem Ethernet-Frame 4 Byte hinzu, darunter 3 Bit Priorität (z. B. Sprache vor E-Mail) und 12 Bit VLAN-I",
+     "quellen": [
+      "buch:GS-3.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Zero Trust führt man schrittweise ein: schützenswerte Daten und Anwendungen einstufen, ihre Datenflüsse ermitteln, die A",
+     "quellen": [
+      "buch:FS-4.4.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-5"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ändernde Anweisungen (INSERT, UPDATE, DELETE) liefern nur die Zahl betroffener Zeilen, Abfragen eine Ergebnismenge, die ",
+     "quellen": [
+      "buch:FS-3.7.5",
+      "buch:GS-5.8.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Verbindungspool hält Datenbankverbindungen offen und gibt sie an die nächste Datenbankaktion weiter; das spart bei v",
+     "quellen": [
+      "buch:FS2-2.3.8"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein Rechnernetz kann verschiedene Verbundzwecke erfüllen: Kommunikations-, Daten-, Funktions-, Ressourcen-, Last- und Le",
+     "quellen": [
+      "buch:GS-3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "File-Storage legt Dateien in einer Verzeichnishierarchie ab, Block-Storage Datenblöcke mit eindeutiger Kennung (wie im S",
+     "quellen": [
+      "buch:GS-5.2.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-2-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Weitere DNS-Eintragstypen: CNAME (Aliasname, der auf einen anderen Namen verweist), MX (zuständiger Mailserver der Domai",
+     "quellen": [
+      "buch:FS-4.3.3",
+      "buch:FS-4.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-11-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2b.01.01",
+    "paar": "OSI / TCP/IP",
+    "abgedeckt": {
+     "OSI": [
+      "PB1-11-1-1-K1"
+     ],
+     "TCP/IP": [
+      "PB1-11-1-1-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.01.1",
+    "paar": "IPv4 / IPv6",
+    "abgedeckt": {
+     "IPv4": [
+      "PB1-11-1-1-K1"
+     ],
+     "IPv6": [
+      "PB1-11-1-1-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.01.6",
+    "paar": "TCP / UDP",
+    "abgedeckt": {
+     "TCP": [
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2"
+     ],
+     "UDP": [
+      "PB1-11-1-2-K1",
+      "PB1-11-1-2-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.05.2",
+    "paar": "HTTP / HTTPS",
+    "abgedeckt": {
+     "HTTP": [
+      "PB1-11-1-2-K2",
+      "PB1-11-1-2-K3"
+     ],
+     "HTTPS": [
+      "PB1-11-1-2-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.04",
+    "paar": "Peer-to-Peer / Client-Server",
+    "abgedeckt": {
+     "P2P": [
+      "PB1-11-2-3-K1"
+     ],
+     "Client-Server": [
+      "PB1-11-2-3-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.02.06",
+    "paar": "NAS / SAN",
+    "abgedeckt": {
+     "NAS": [
+      "PB1-11-2-3-K4"
+     ],
+     "SAN": [
+      "PB1-11-2-3-K4",
+      "PB1-11-2-1-K2"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.02.06.6",
+    "paar": "Ethernet / Fibre Channel",
+    "abgedeckt": {
+     "Ethernet": [
+      "PB1-11-1-1-K2",
+      "PB1-11-2-3-K5"
+     ],
+     "Fibre Channel": [
+      "PB1-11-2-3-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.06",
+    "paar": "auswählen / einrichten",
+    "abgedeckt": {
+     "auswählen": [
+      "PB1-11-2-4-K2"
+     ],
+     "einrichten": [
+      "PB1-11-2-4-K4"
+     ]
+    }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-11-1-1-K5",
+     "PB1-11-1-1-K6",
+     "PB1-11-1-1-K7",
+     "PB1-11-1-1-K8",
+     "PB1-11-1-1-K9",
+     "PB1-11-1-1-K10",
+     "PB1-11-1-4-K1",
+     "PB1-11-1-4-K2",
+     "PB1-11-1-4-K3",
+     "PB1-11-1-2-K4",
+     "PB1-11-1-2-K5",
+     "PB1-11-1-2-K6",
+     "PB1-11-1-2-K7",
+     "PB1-11-1-2-K8",
+     "PB1-11-1-2-K9",
+     "PB1-11-1-3-K4",
+     "PB1-11-1-3-K5",
+     "PB1-11-2-1-K6",
+     "PB1-11-2-1-K7",
+     "PB1-11-2-2-K5",
+     "PB1-11-2-2-K6",
+     "PB1-11-2-2-K7",
+     "PB1-11-2-2-K8",
+     "PB1-11-2-2-K9",
+     "PB1-11-2-5-K1",
+     "PB1-11-2-5-K2",
+     "PB1-11-2-5-K3",
+     "PB1-11-2-3-K6",
+     "PB1-11-2-3-K7",
+     "PB1-11-2-3-K8",
+     "PB1-11-2-3-K9",
+     "PB1-11-2-4-K5"
+    ],
+    "neue_stichpunkte": [
+     {
+      "id": "PB1-11-1-4",
+      "nach": "PB1-11-1-1",
+      "begruendung": "D5: PB1-11-1-1 hätte sonst 13 Aussagen"
+     },
+     {
+      "id": "PB1-11-2-5",
+      "nach": "PB1-11-2-2",
+      "begruendung": "D5: PB1-11-2-2 hätte sonst 12 Aussagen"
+     }
+    ],
+    "d6": [
+     "PB1-11-2-3-K1"
+    ],
+    "kuer": [
+     "PB1-11-1-1",
+     "PB1-11-1-1",
+     "PB1-11-1-1",
+     "PB1-11-1-1",
+     "PB1-11-1-1",
+     "PB1-11-1-4",
+     "PB1-11-1-2",
+     "PB1-11-1-2",
+     "PB1-11-1-2",
+     "PB1-11-1-3",
+     "PB1-11-1-3",
+     "PB1-11-2-1",
+     "PB1-11-2-1",
+     "PB1-11-2-1",
+     "PB1-11-2-1",
+     "PB1-11-2-1",
+     "PB1-11-2-1",
+     "PB1-11-2-1",
+     "PB1-11-2-2",
+     "PB1-11-2-2",
+     "PB1-11-2-5",
+     "PB1-11-2-3",
+     "PB1-11-2-3",
+     "PB1-11-2-3",
+     "PB1-11-2-3",
+     "PB1-11-1-3"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS-4.3.1#1",
+      "aussage": "AP1-6-2-3-K6",
+      "grund": "E2: IPv4 gegen IPv6 (32 gegen 128 Bit, Schreibweise, Vergabe) steht in AP1-6-2-3-K6, der größere Adressraum ohne NAT-Zwang in AP1-6-2-3-K5, fester Kopf und Zerlegen nur durch den Absender als Kür an AP1-6-2-3; Kopfgröße, Mindestpaketgröße und Adresszahlen sind Datenblattwerte (RK1)."
+     }
+    ],
+    "hinweise": [
+     "PB1-11-1-1",
+     "PB1-11-1-4",
+     "PB1-11-1-2",
+     "PB1-11-1-3",
+     "PB1-11-2-1",
+     "PB1-11-2-2",
+     "PB1-11-2-5",
+     "PB1-11-2-3",
+     "PB1-11-1-2"
+    ]
+   }
+  ]
+ }
+}

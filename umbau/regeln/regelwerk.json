@@ -1,0 +1,403 @@
+{
+  "version": "2.2",
+  "stand": "2026-10-16",
+  "hinweis": "Schicht 2. Maßgebliche Fassung der Tiefenregeln (UMBAU.md Abschnitt 4.1). Änderungen nur bewusst, mit neuer Version; danach tools/umbau/tiefe-berechnen.mjs laufen lassen. v2.0 (16.10.2026, D1–D10): Lehrbuch als Tiefenquelle, Abschnitt buch. v2.1 (16.10.2026, Projektinhaber nach dem Überblick zu Schritt 2): Regel K nachgeschärft (RK1–RK6), F4 3–8.",
+  "stufen": {
+    "1": {
+      "name": "Wiedergeben",
+      "bedeutung": "nennen, erkennen, ohne Erklärung"
+    },
+    "2": {
+      "name": "Verstehen",
+      "bedeutung": "erklären, unterscheiden, zuordnen, mitwirken"
+    },
+    "3": {
+      "name": "Anwenden",
+      "bedeutung": "selbst durchführen, an einem Fall"
+    },
+    "4": {
+      "name": "Beurteilen",
+      "bedeutung": "entscheiden und begründen"
+    }
+  },
+  "operatoren": {
+    "abbilden": 3,
+    "ableiten": 3,
+    "abstimmen": 3,
+    "analysieren": 4,
+    "anwenden": 3,
+    "aufbereiten": 3,
+    "auswerten": 4,
+    "auswählen": 4,
+    "automatisieren": 3,
+    "begleiten": 2,
+    "begründen": 4,
+    "beheben": 3,
+    "benennen": 1,
+    "beraten": 3,
+    "beschreiben": 2,
+    "bestimmen": 3,
+    "beurteilen": 4,
+    "bewerten": 4,
+    "charakterisieren": 2,
+    "darstellen": 3,
+    "definieren": 2,
+    "dokumentieren": 3,
+    "durchführen": 3,
+    "einordnen": 2,
+    "einrichten": 3,
+    "einschätzen": 4,
+    "einsetzen": 3,
+    "entnehmen": 1,
+    "entwickeln": 3,
+    "erfassen": 3,
+    "erkennen": 1,
+    "erläutern": 2,
+    "erstellen": 3,
+    "erweitern": 3,
+    "festlegen": 3,
+    "formulieren": 3,
+    "gestalten": 3,
+    "identifizieren": 2,
+    "implementieren": 3,
+    "interpretieren": 2,
+    "kennen": 1,
+    "konfigurieren": 3,
+    "konzeptionieren": 3,
+    "messen": 3,
+    "modellieren": 3,
+    "nachweisen": 2,
+    "nennen": 1,
+    "nutzen": 3,
+    "planen": 3,
+    "präsentieren": 3,
+    "prüfen": 4,
+    "testen": 3,
+    "umsetzen": 3,
+    "unterscheiden": 2,
+    "unterstützen": 2,
+    "vergleichen": 2,
+    "verhindern": 3,
+    "verwenden": 3,
+    "vorbereiten": 3,
+    "vornehmen": 3,
+    "wahrnehmen": 1,
+    "zuordnen": 2,
+    "zusammenführen": 3,
+    "überprüfen": 4,
+    "überwachen": 3
+  },
+  "ohne_operator": {
+    "WISO": {
+      "stufe": 2,
+      "begruendung": "WiSo-Katalog nennt nur Themen ohne Operator; Prüfung mit ca. 30 maschinell auswertbaren Aufgaben → erkennen, erklären, zuordnen. Rechenaufgaben kommen über Belege (B1) dazu."
+    },
+    "AP1.06.03": {
+      "stufe": 3,
+      "begruendung": "„Modellierung eines … Sicherheitskonzeptes“ = modellieren (Stufe 3); Spiegelstriche verlangen zusätzlich ableiten und begründen."
+    },
+    "AP2a.01.01": {
+      "stufe": null,
+      "begruendung": "Laut Katalog „nicht Bestandteil der schriftlichen Prüfung“ (G5)."
+    },
+    "AP2b.02.01": {
+      "stufe": 2,
+      "begruendung": "Kein Operator; Nachbarpunkte im selben Fragenkomplex: 02 „benennen“ (1), 03 „implementieren“ (3). Standard Stufe 2 (erklären, zuordnen)."
+    },
+    "AP2b.03.08": {
+      "stufe": 3,
+      "begruendung": "Kein Operator; Gebiet PB2 „Testszenarien auswählen und Testdaten generieren“ und AP2b.05.03 „Softwaretests erstellen, durchführen“ verlangen Anwenden."
+    }
+  },
+  "pruefungsoperatoren": {
+    "hinweis": "Operatoren aus den Aufgabenstellungen der Prüfungen (yaml-Feld operator). Stufe einer Teilaufgabe = höchste Stufe ihrer Operatoren. Steht ein Wort auch in der Katalog-Tabelle (operatoren), muss die Stufe gleich sein – außer es steht unter 'abweichungen'. Formoperatoren (Liste 'formoperatoren', seit v1.3, P25) zählen nur, wenn die Teilaufgabe keinen anderen Operator hat.",
+    "formoperatoren": [
+      "eintragen",
+      "ausfüllen",
+      "vervollständigen",
+      "ergänzen",
+      "markieren",
+      "einfügen"
+    ],
+    "stufen": {
+      "analysieren": 4,
+      "anführen": 1,
+      "angeben": 1,
+      "anpassen": 3,
+      "aufrunden": 3,
+      "ausfüllen": 3,
+      "Auskunft geben": 1,
+      "auswählen": 4,
+      "begründen": 4,
+      "begründen (Begründung hinzufügen)": 4,
+      "benennen": 1,
+      "berechnen": 3,
+      "berücksichtigen": 3,
+      "beschreiben": 2,
+      "bestimmen": 3,
+      "beurteilen": 4,
+      "bewerten": 4,
+      "bringen": 3,
+      "darstellen": 3,
+      "durchführen": 3,
+      "einfügen": 3,
+      "eintragen": 3,
+      "einzeichnen": 3,
+      "entscheiden": 4,
+      "ergänzen": 3,
+      "erklären": 2,
+      "erläutern": 2,
+      "ermitteln": 3,
+      "errechnen": 3,
+      "erstellen": 3,
+      "erweitern": 3,
+      "finden": 3,
+      "formulieren": 3,
+      "geben": 1,
+      "gegenüberstellen": 2,
+      "hinweisen": 1,
+      "identifizieren": 2,
+      "implementieren": 3,
+      "in Reihenfolge bringen": 2,
+      "interpretieren": 2,
+      "kennzeichnen": 1,
+      "konfigurieren": 3,
+      "korrigieren": 3,
+      "markieren": 2,
+      "nachweisen": 3,
+      "nennen": 1,
+      "Rechenweg angeben": 3,
+      "runden": 3,
+      "schildern": 2,
+      "schreiben": 3,
+      "skizzieren": 3,
+      "Stellung nehmen": 4,
+      "Umrechnung durchführen": 3,
+      "umwandeln": 3,
+      "unterbreiten (Vorschlag)": 3,
+      "verbinden": 2,
+      "verdeutlichen": 2,
+      "vergeben": 3,
+      "vergleichen": 2,
+      "vermerken": 1,
+      "vervollständigen": 3,
+      "vorschlagen": 3,
+      "Vorschläge machen": 3,
+      "wählen": 4,
+      "zuordnen": 2,
+      "zuordnen (ankreuzen)": 2,
+      "zuweisen": 3,
+      "anlegen": 3,
+      "anzeigen": 3,
+      "erhöhen": 3,
+      "auflisten": 3,
+      "überprüfen": 4,
+      "indizieren": 3,
+      "löschen": 3,
+      "aktualisieren": 3,
+      "ausführen": 3,
+      "überführen": 3,
+      "festlegen": 3,
+      "ändern": 3,
+      "notieren": 1,
+      "erhalten": 3,
+      "aufzeigen": 2,
+      "argumentieren": 4,
+      "herstellen": 3,
+      "ordnen": 2
+    },
+    "abweichungen": {
+      "nachweisen": "Katalog: „Grundverständnis nachweisen“ (Stufe 2); in Prüfungen: „durch eine Rechnung nachweisen“ (Stufe 3)."
+    },
+    "z3b": {
+      "regel": "Z3b (v1.8, P46, Projektinhaber 16.10.2026): In maschinell auswertbaren Aufgaben (WiSo) ist „eintragen“ nur die Antwortform (Ziffer ins Lösungskästchen). Steht nur ein Formoperator da, bestimmt der Aufgabentyp der Abschrift die Stufe statt des Formoperators. Fachliche Operatoren (zuordnen, ordnen, ermitteln, berechnen …) zählen wie immer; die Katalogstufe bleibt Untergrenze (goldene Regel). Eine Rechenaufgabe zählt als „rechnen“ (Stufe 3), auch wenn die Abschrift sie als „eintrag“ führt, sofern die Zuordnung den Typ „berechnen“ vergibt (z. B. Ende einer Kündigungsfrist, Urlaubsanspruch).",
+      "raeume": [
+        "WISO"
+      ],
+      "stufe_nach_aufgabentyp": {
+        "einfachauswahl": 2,
+        "mehrfachauswahl": 2,
+        "zuordnung": 2,
+        "reihenfolge": 2,
+        "eintrag": 1,
+        "rechnen": 3
+      }
+    }
+  },
+  "ringe": {
+    "kern": "Katalog-Baustein oder Prüfungsbeleg (inkl. Zusatzbaustein)",
+    "puffer": "Regel P-GESCHWISTER, P-NAECHSTE-STUFE, P-GRUNDLAGE, P-BEISPIELLISTE",
+    "kuer": "nur Hinweisquelle oder nur betriebliche Handlung (P26), nicht vom Katalog ausgeschlossen; freiwillig, zählt nicht zum Fortschritt",
+    "aussen": "vom Katalog ausgeschlossen (Grenze G1–G6)"
+  },
+  "buch": {
+    "hinweis": "Seit v2.0 (D1–D10, UMBAU.md 4.0): Lehrbuch = Tiefe. Kernpunkt-Listen nur lokal (quellen/lehrbuch/kern/, D9); im Repo nur Kapitelnummern, Seiten, Zählungen (umbau/zuordnung/buch.json). Prüfung T10: tools/umbau/buch-pruefen.mjs.",
+    "baende": {
+      "GS": {
+        "titel": "IT-Berufe, Grundstufe 1. Jahr, Lernfelder 1–5 (Westermann, 2. Auflage)",
+        "datei": "quellen/lehrbuch/grundstufe_LF1-5.txt",
+        "lernfelder": {
+          "1": "LF1",
+          "2": "LF2",
+          "3": "LF3",
+          "4": "LF4",
+          "5": "LF5"
+        }
+      },
+      "FS": {
+        "titel": "IT-Berufe, Fachstufe Technische IT-Berufe, Lernfelder 6–9 (Westermann, 1. Auflage)",
+        "datei": "quellen/lehrbuch/fachstufe_LF6-9.txt",
+        "lernfelder": {
+          "1": "LF6",
+          "2": "LF7",
+          "3": "LF8",
+          "4": "LF9"
+        }
+      },
+      "FS2": {
+        "titel": "IT-Berufe, Fachstufe II Fachinformatiker/-in Anwendungsentwicklung, Daten- und Prozessanalyse, Lernfelder 10–12 (Westermann, 1. Auflage)",
+        "datei": "quellen/lehrbuch/fachstufe2_LF10-12.txt",
+        "lernfelder": {
+          "1": "LF10a",
+          "2": "LF11a",
+          "3": "LF10c",
+          "4": "LF12a"
+        }
+      }
+    },
+    "herkunft": {
+      "format": "buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>]",
+      "regex": "^(GS|FS|FS2)-\\d{1,2}(\\.\\d{1,2}){1,2}(-S\\d{1,3})?$",
+      "beispiel": [
+        "buch:GS-2.4.3",
+        "buch:GS-2.4.3-S119"
+      ],
+      "seite": "gedruckte Seitenzahl (im OCR-Text: Seite n steht im n+1-ten Abschnitt zwischen Form-Feeds)"
+    },
+    "regel_k": {
+      "dazu": [
+        "Begriffe und Definitionen",
+        "Aufbau und Funktionsweise (das Prinzip)",
+        "Vor- und Nachteile, Auswahlkriterien",
+        "typische Größenordnungen, wenn das Buch sie nennt"
+      ],
+      "nicht_dazu": [
+        "Historie",
+        "Herstellernamen und Produkte",
+        "Bedienschritte und Bildschirmanleitungen",
+        "Exkurse und Infokästen",
+        "Übungsaufgaben",
+        "Inhalte, die das Buch ausdrücklich Systemintegration oder digitaler Vernetzung zuordnet"
+      ],
+      "filter_gruende": [
+        "historie",
+        "hersteller",
+        "bedienung",
+        "exkurs",
+        "uebung",
+        "fachrichtung",
+        "nicht_ae",
+        "ausgeschlossen",
+        "projekt",
+        "nicht_im_buch",
+        "k1",
+        "vorgegeben",
+        "ocr-luecke"
+      ],
+      "prueffrage": "Braucht ein Anwendungsentwickler das, um einen Katalog-Baustein zu erklären oder eine Entscheidung zu begründen? Bei Zweifel: dazu.",
+      "nicht_ae": "ganzes Kapitel ohne AE-Relevanz nach Regel K (z. B. Lernsituation, Modellunternehmen, reine Systemintegration): Datei mit filter, ohne Kernpunkte",
+      "filter_erlaeuterung": {
+        "historie": "Historie, Entwicklungsgeschichte",
+        "hersteller": "Herstellernamen, Produkte, Codenamen, Marktübersichten",
+        "bedienung": "Bedienschritte, Bildschirmanleitungen, Installationsschritte einzelner Programme",
+        "exkurs": "Exkurse und Infokästen",
+        "uebung": "Übungsaufgaben, Lernsituationen, Arbeitsaufträge",
+        "fachrichtung": "vom Buch ausdrücklich Systemintegration, digitaler Vernetzung, Daten- und Prozessanalyse oder Kaufleuten zugeordnet (RK4)",
+        "nicht_ae": "ohne AE-Relevanz nach der Prüffrage (z. B. Modellunternehmen, reine Elektrotechnik)",
+        "ausgeschlossen": "Folge von D3/G1: Thema, das der Katalog ausschließt oder gestrichen hat (z. B. B3: Struktogramm, PAP)",
+        "projekt": "gehört nur zur betrieblichen Projektarbeit (Raum PROJEKT, zurückgestellt nach P53; P55)",
+        "nicht_im_buch": "Kernpunkt steht gar nicht im Buchkapitel (eigene Ergänzung der bauenden Sitzung, von der Gegenprüfung gefunden) – kein Kernabschnitt, keine Pflicht",
+        "k1": "RK1: weder Prinzip/Funktionsweise noch Auswahlkriterium/Vor-Nachteil mit Begründung noch Katalogbegriff – entfällt (oder Kür)",
+        "vorgegeben": "RK1/B4: Datenblatt-Tabellen, Einzelwerte, Größenordnungen ohne Auswahlbezug – in der Prüfung vorgegeben, nicht auswendig",
+        "ocr-luecke": "RK5: Inhalt fehlt im OCR-Text (Grafik, Kasten) – nicht raten, im Bericht aufgelistet"
+      },
+      "schaerfung": {
+        "version": "2.1",
+        "stand": "2026-10-16",
+        "RK1": {
+          "name": "Prinzip-Test (ersetzt „bei Zweifel dazu“)",
+          "pflicht_nur_wenn": {
+            "a": "Prinzip oder Funktionsweise (warum/wie etwas arbeitet)",
+            "b": "Auswahlkriterium oder Vor-/Nachteil mit Begründung",
+            "c": "Begriff, den ein Katalog-Baustein wörtlich oder als direkten Oberbegriff nennt"
+          },
+          "sonst": "Kür oder entfällt",
+          "ausdruecklich_kuer_oder_raus": [
+            "Datenblatt-Tabellen und Einzelwerte (USB-Generationen, cd/m², Kontrast, Datum 2038, Prozent- und Stückzahlen)",
+            "sprach- oder bibliotheksspezifische Details (Python-Konventionen, put/get/replace, Listenmethoden, MongoDB-Syntax) – die Prüfung nutzt Pseudocode",
+            "Bedienwege und Werkzeugwahl"
+          ],
+          "groessenordnungen": "nur, wenn sie eine Auswahl tragen (z. B. SSD gegen HDD, Binär- gegen Dezimalpräfix), sonst „vorgegeben“ nach B4"
+        },
+        "RK2": {
+          "name": "Katalogbezug",
+          "regel": "Ein Oberbegriff trägt genau eine Ebene: Der Kernpunkt muss das Thema erklären, das der Baustein nennt, nicht ein Unterthema davon.",
+          "beispiele_kuer": [
+            "Container über „Cloud“",
+            "GPIO über „Sensoren“",
+            "magisches Dreieck über „Merkmale des Projektmanagements“"
+          ],
+          "virtualisierung": "eigener Baustein im AP2-Katalog prüfen, sonst Kür"
+        },
+        "RK3": {
+          "name": "Obergrenze je Ordner – entfallen",
+          "regel": "Entfallen (Projektinhaber, 16.10.2026, Freigabe Schritt 3): RK1 und RK2 bestimmen allein, was Pflicht wird. Erwartung etwa 460 neue Pflicht-Aussagen. F4 bleibt 3–8 Stichpunkte je Themenblock, sonst teilen.",
+          "entfallen": true
+        },
+        "RK4": {
+          "name": "Filter fachrichtung",
+          "regel": "gilt für Systemintegration, digitale Vernetzung, Daten- und Prozessanalyse und Kaufleute; weitere falsch gefilterte Prinzipien nach RK1"
+        },
+        "RK5": {
+          "name": "Buchfehler und veraltete Stände",
+          "regel": "fachliche Richtigkeit vor Buchtext; Aussage nach aktuellem Stand, am Stichpunkt ein hinweis, dass das Buch abweicht (wie P35 Nr. 7); OCR-Lücken nicht raten: filter ocr-luecke, im Bericht auflisten"
+        },
+        "RK6": {
+          "name": "Zuordnung prüfen",
+          "regel": "Passt das Kapitelthema nicht zum Ordnerthema, Zuordnung vor Schritt 3 korrigieren (z. B. Corporate Identity/Design → AP1-2, nicht AP1-8-4-3); Liste in den Bericht"
+        }
+      }
+    },
+    "form": {
+      "f3_min": 3,
+      "f3_max": 10,
+      "operator_ohne_baustein": "erklären",
+      "stufe_ohne_baustein": 2,
+      "f4_min": 3,
+      "f4_max": 8
+    },
+    "p57": "Operator einer reinen Buch-Aussage höchstens bis zur höchsten Stufe der Bausteine ihres Stichpunkts (Katalogstufe, durch Belege angehoben); höher nur mit Beleg. Verlangt erst ein späterer Raum die höhere Stufe, gehört die Aussage dorthin (Projektinhaber, 16.10.2026).",
+    "p58": "RK4 (Fachrichtung) gilt nur, wo kein gemeinsamer Katalog-Baustein das Thema verlangt (Projektinhaber, 16.10.2026).",
+    "p59": "G6 gilt weiter: Ein Zusatzbaustein reicht nur so weit wie Belege und Puffer; reine Buch-Aussagen an Zusatzbausteinen sind Kür (Projektinhaber, 16.10.2026).",
+    "p61": "Speicher- und Knotenaufbau unter einem Oberbegriff ist zweite Ebene (RK2) und Kür; RK1 c reicht allein, P-BEISPIELLISTE nur ohne Buch-Kernabschnitt (Projektinhaber, 16.10.2026).",
+    "p62": "Aus Lernsituationen wird nur Pflicht, was allgemein formuliert ist und ein Katalog-Baustein trägt; Einzelheiten des Modellunternehmens bleiben Filter uebung (Projektinhaber, 16.10.2026).",
+    "p64": "Normnummer im Satz nur, wenn sie der übliche Name der Sache ist; Vergleiche von Normfassungen sind Kür (Projektinhaber, 16.10.2026).",
+    "g3": "Stufe ist Untergrenze (D3): bestimmt die Form, nicht den Inhalt. Grenzen nur gegen Themen anderer Räume oder vom Katalog ausgeschlossene; reine Tiefen-Grenzen entfallen, wenn das Buch das Thema im Kernabschnitt behandelt.",
+    "doppelt": "D6: Doppelt mit bestehender Aussage → Buch-Aussage entfällt, die bestehende bekommt die Buch-Herkunft zusätzlich.",
+    "kuer": "D8: Buch-Themen ohne Katalogbezug → Kür mit Hinweisquelle buch:<Band>-<Kapitel> (in meta.hinweisquellen beschrieben)."
+  },
+  "kurz": {
+    "version": "2.2",
+    "stand": "2026-10-16",
+    "regel": "Jede Können-Aussage und jeder Kür-Eintrag hat neben dem vollen Satz (text) ein Feld kurz: 3–8 Wörter, Substantivstil, kein „Du kannst“, kein Satz, nennt nur das Thema. Die App zeigt im Stichpunkt-Detail nur kurz (aufklappbar zu text, Erklärung, Stufe und Herkunft); Lernprompt, Karten und Erklärung nutzen weiter text.",
+    "beispiele": [
+      "Array und Index",
+      "Sequenz als dritte Grundstruktur",
+      "ECC-Speicher: wann er sich lohnt"
+    ],
+    "max_zeichen": 60,
+    "woerter_min": 3,
+    "woerter_max": 8,
+    "pruefung": "lernplan-pruefen: kurz vorhanden, höchstens 60 Zeichen, 3–8 Wörter, beginnt nicht mit „Du“, ohne Schlusspunkt, im Stichpunkt eindeutig (Aussagen untereinander, Kür untereinander)"
+  }
+}

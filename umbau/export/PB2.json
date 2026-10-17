@@ -1,0 +1,1344 @@
+{
+ "meta": {
+  "raum": "PB2",
+  "erzeugt_mit": "node tools/umbau/export-raum.mjs PB2",
+  "regelwerk_version": "2.2",
+  "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
+  "stichpunkte": 22,
+  "koennen": 114,
+  "quellen": {
+   "PB2-1.json": "c11db1474dce9a13",
+   "PB2-2.json": "84576dcccabe58fe",
+   "PB2-3.json": "e1a2ba1277a73e21",
+   "PB2-4.json": "07ae3d9bd760984d",
+   "PB2-5.json": "29df53e0122566ed",
+   "PB2-6.json": "a1736c662615baf4"
+  }
+ },
+ "stichpunkte": [
+  {
+   "id": "PB2-1-1-1",
+   "ordner": "PB2-1",
+   "block": "PB2-1-1",
+   "titel": "Pseudocode und Aktivitätsdiagramm: Funktionen, Schleifengrenzen, Sonderfälle und Datentypen",
+   "gebiete": [
+    "G.PB2.01",
+    "G.PB2.02"
+   ],
+   "bausteine": [
+    "AP2b.03.05",
+    "AP2b.04.16",
+    "AP2b.04.16.1",
+    "AP2a.02.02.1",
+    "ANH.uml-aktivitaetsdiagramm",
+    "ANH.uml-sequenzdiagramm",
+    "ANH.uml-zustandsdiagramm"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-1-1-1-K1",
+     "stufe": 3,
+     "kurz": "eine Funktion zur vorgegebenen Signatur (Name, Parameter mit Datentyp, Rückgabetyp) so in Pseudocode schreiben, dass ein Dritter sie ohne Kenntnis deiner Programmiersprache lesen kann, und dabei nur die vorgegebenen Klassen, Methoden und Datenstrukturen verwenden: Listen mit add, size und get, Getter von Objekten und vorgegebene Methoden wie getDay() oder getTimeTable(id), aber keine eigenen Hilfsfunktionen, die es nicht gibt"
+    },
+    {
+     "id": "PB2-1-1-1-K2",
+     "stufe": 3,
+     "kurz": "über die Pseudocode-Grundlagen aus AP1 hinaus Schleifengrenzen beim Schreiben richtig setzen (Index von 0 bis Länge − 1; greifst du auf das Nachbarelement i − 1 oder i + 1 zu, beginnt die Schleife eine Stelle später oder endet eine Stelle früher) und eine Schleife mit einer zusätzlichen Bedingung (Merker oder Zähler) vorzeitig beenden, sobald das Ergebnis feststeht"
+    },
+    {
+     "id": "PB2-1-1-1-K3",
+     "stufe": 3,
+     "kurz": "zweidimensionale Arrays verarbeiten: Zeile und Spalte über zwei Indizes ansprechen, eine Zeile anhand eines Schlüsselwerts (z. B. Monat und Tag) suchen und die Spalten dieser Zeile durchlaufen, auch wenn die Nutzdaten erst ab einer bestimmten Spalte beginnen (Zeitslot j steht in Spalte 2 + j)"
+    },
+    {
+     "id": "PB2-1-1-1-K5",
+     "stufe": 3,
+     "kurz": "im Pseudocode Sonderfälle vor dem ersten Zugriff abfangen und dafür den festgelegten Rückgabewert liefern, zum Beispiel eine leere Liste vor get(0) (Rückgabe null), einen Sonderwert als Parameter (Zeitslot −1 heißt „beliebiger Slot“), keinen passenden Eintrag (Rückgabe false) oder eine Division durch null, wenn nichts gezählt wurde"
+    },
+    {
+     "id": "PB2-1-1-1-K6",
+     "stufe": 3,
+     "kurz": "bei Rechnungen im Pseudocode die Datentypen beachten: eine ungewollte Ganzzahldivision vermeiden (getMaxPersonen() / 2.0 statt / 2), eine Prozentschwelle mit ganzen Zahlen ohne Abschneiden formulieren (belegt * 100 > 80 * anzahlBetten statt belegt / anzahlBetten > 0.8) und Kommazahlen nicht in einer Integer-Variablen speichern"
+    },
+    {
+     "id": "PB2-1-1-1-K7",
+     "stufe": 3,
+     "kurz": "die Kontrollstrukturen eines Algorithmus statt in Pseudocode als Aktivitätsdiagramm abbilden und zwischen beiden Formen übertragen: eine Zählschleife mit Initialisierung, Prüfung und Schrittweite als eigene Aktionen, geschachtelte Schleifen und Verzweigungen, ohne dass Bedingungen fehlen oder sich überschneiden"
+    },
+    {
+     "id": "PB2-1-1-1-K8",
+     "stufe": 2,
+     "kurz": "erklären, wann ein Algorithmus vor dem Programmieren sprachunabhängig als Pseudocode oder Aktivitätsdiagramm modelliert wird: bei komplexen Abläufen, weil das Modell den Lösungsweg vorab plant, im Team besprechbar macht und dokumentiert, während ein einfacher Ablauf wie die Summe zweier Werte direkt programmiert wird"
+    },
+    {
+     "id": "PB2-1-1-1-K9",
+     "stufe": 3,
+     "kurz": "einen in Pseudocode oder als Aktivitätsdiagramm modellierten Algorithmus in einer Programmiersprache umsetzen und ihn nur dort anpassen, wo die Sprache abweicht – eine fehlende Von-bis-Zählschleife durch eine Solange-Schleife mit Zähler nachbilden, Datentypen, Datenstrukturen sowie Ein- und Ausgabe anpassen –, ohne den Grundablauf des Modells zu ändern"
+    }
+   ]
+  },
+  {
+   "id": "PB2-1-1-2",
+   "ordner": "PB2-1",
+   "block": "PB2-1-1",
+   "titel": "Algorithmen über Arrays und Listen: filtern, zählen, Extremwerte, abgleichen, gruppieren",
+   "gebiete": [
+    "G.PB2.01"
+   ],
+   "bausteine": [
+    "AP2b.04.16",
+    "AP2b.04.16.1",
+    "AP2b.04.18.1",
+    "AP2b.04.19"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-1-1-2-K1",
+     "stufe": 3,
+     "kurz": "eine Liste oder ein Array durchlaufen und die Elemente, die eine oder mehrere Bedingungen erfüllen, in eine Ergebnisliste übernehmen und diese zurückgeben"
+    },
+    {
+     "id": "PB2-1-1-2-K2",
+     "stufe": 3,
+     "kurz": "zählen, summieren und einen Durchschnitt berechnen, auch nur für die Elemente, die eine Bedingung erfüllen, zum Beispiel die Tage, an denen ein Kurs besser als der Index war"
+    },
+    {
+     "id": "PB2-1-1-2-K3",
+     "stufe": 3,
+     "kurz": "das kleinste oder größte Element nach einem Kriterium bestimmen: mit dem ersten Element oder dem größten bzw. kleinsten möglichen Wert (z. B. Integer.MAX_VALUE, Double.MAX_VALUE) beginnen, jedes weitere vergleichen und neben dem bisher besten Wert auch seinen Index merken; auch das Element mit der kleinsten Abweichung von einem Zielwert und wiederholt, bis alle Elemente verbraucht sind (nächstgelegene Position wählen, übernehmen und aus der Liste entfernen)"
+    },
+    {
+     "id": "PB2-1-1-2-K4",
+     "stufe": 3,
+     "kurz": "zwei Listen mit verschachtelten Schleifen abgleichen, zum Beispiel ob eine Reservierung denselben Tisch am selben Datum belegt, und über einen Datumsbereich Tag für Tag zählen (date = date + 1), wie viele Einträge einen Tag im Zeitraum von–bis enthalten; dabei setzt du die Grenzen genau (Aufnahmetag zählt, Entlassungstag nicht: datumVon <= tag < datumBis)"
+    },
+    {
+     "id": "PB2-1-1-2-K5",
+     "stufe": 3,
+     "kurz": "Häufigkeiten je Schlüssel zählen: das Ergebnisarray vorher in passender Größe anlegen (ein- oder zweidimensional, z. B. new Integer[15] oder Tage des Monats × 10 Öffnungsstunden), den Index aus dem Fachwert berechnen (Tag − 1, Stunde − 9, Haltestelle − 1) und den Zähler an dieser Stelle erhöhen"
+    },
+    {
+     "id": "PB2-1-1-2-K7",
+     "stufe": 3,
+     "kurz": "aufeinanderfolgende Elemente miteinander verrechnen (Element i mit Element i − 1, wenn beide dasselbe Datum haben; Spalte m + 1 minus Spalte m) und auf nach einem Schlüssel sortierte Daten den Gruppenwechsel anwenden: bei Wechsel des Schlüssels das Ergebnis der Gruppe ausgeben oder übernehmen, die Gruppenwerte zurücksetzen und die letzte Gruppe nach der Schleife nicht vergessen"
+    }
+   ]
+  },
+  {
+   "id": "PB2-1-1-3",
+   "ordner": "PB2-1",
+   "block": "PB2-1-1",
+   "titel": "Bestehende Funktionen und Klassen erweitern",
+   "gebiete": [
+    "G.PB2.01"
+   ],
+   "bausteine": [
+    "AP2b.04.19",
+    "AP2b.04.16.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-1-1-3-K1",
+     "stufe": 3,
+     "kurz": "in einer vorhandenen Klasse eine Methode ergänzen, die über ein Attribut ein anderes Objekt nutzt (this.fahrplanService.getAbfahrten(…)), statische Methoden wie DateTime.now() aufruft und die Rückgabewerte weiterverarbeitet, auch mit einer vorgegebenen Vergleichsmethode wie compare(), deren Rückgabe −1, 0 oder 1 du nach der Beschreibung richtig deutest"
+    },
+    {
+     "id": "PB2-1-1-3-K2",
+     "stufe": 3,
+     "kurz": "eine Methode nach Vorgabe implementieren, die ein Objekt erzeugt, befüllt und zurückgibt, zum Beispiel eine HTTP-Antwort mit Statuscode, Kopfzeilen (Content-Type, Content-Length) und Body"
+    },
+    {
+     "id": "PB2-1-1-3-K3",
+     "stufe": 3,
+     "kurz": "eine private Hilfsmethode schreiben, die aus einer sortierten Liste von Objekten nur die Einträge ab einem Zeitpunkt übernimmt, das Ergebnisarray in der Größe der Höchstzahl anlegt und aufhört, sobald diese erreicht ist"
+    }
+   ]
+  },
+  {
+   "id": "PB2-2-1-1",
+   "ordner": "PB2-2",
+   "block": "PB2-2-1",
+   "titel": "Such- und Sortierverfahren: lineare und binäre Suche, Bubble, Selection und Insertion Sort",
+   "gebiete": [
+    "G.PB2.01",
+    "G.PB2.02"
+   ],
+   "bausteine": [
+    "AP2b.04.18",
+    "AP2b.04.18.1",
+    "AP2b.04.18.2",
+    "AP2b.04.18.3",
+    "AP2b.04.16.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-2-1-1-K1",
+     "stufe": 2,
+     "kurz": "die lineare Suche beschreiben: die Elemente der Reihe nach mit dem Gesuchten vergleichen, beim ersten Treffer abbrechen und das Element oder seinen Index zurückgeben, sonst einen festgelegten Wert wie −1 oder null; sie funktioniert auch auf unsortierten Daten"
+    },
+    {
+     "id": "PB2-2-1-1-K2",
+     "stufe": 2,
+     "kurz": "die binäre Suche beschreiben und mit der linearen vergleichen: In einer sortierten Folge das mittlere Element prüfen und die Hälfte verwerfen, in der das Gesuchte nicht liegen kann, bis es gefunden oder der Bereich leer ist; sie funktioniert nur auf sortierten Daten, braucht dafür aber nur etwa log₂(n) Vergleiche (bei 1.000 Elementen höchstens 10) statt bis zu n"
+    },
+    {
+     "id": "PB2-2-1-1-K4",
+     "stufe": 3,
+     "kurz": "einen Sortieralgorithmus deiner Wahl in Pseudocode schreiben, zum Beispiel Bubble Sort mit zwei verschachtelten Schleifen und dem Tausch zweier Elemente über eine Hilfsvariable, auch für ein Array von Objekten, die nach einem Attribut (über den Getter) sortiert werden"
+    },
+    {
+     "id": "PB2-2-1-1-K5",
+     "stufe": 2,
+     "kurz": "Bubble Sort (benachbarte Elemente vergleichen und bei falscher Reihenfolge tauschen, Durchläufe wiederholen, bis nichts mehr getauscht wird), Selection Sort (jeweils das kleinste restliche Element suchen und nach vorn tauschen) und Insertion Sort (jedes Element in den bereits sortierten Teil einfügen) am Vorgehen unterscheiden"
+    },
+    {
+     "id": "PB2-2-1-1-K6",
+     "stufe": 2,
+     "kurz": "erklären, warum man bei der Laufzeit eines Sortierverfahrens Best, Average und Worst Case unterscheidet: Wie viele Vergleiche und Vertauschungen nötig sind, hängt vom Ausgangszustand der Daten ab – Bubble Sort mit Abbruchmerker braucht für bereits sortierte Daten einen einzigen Durchlauf, für umgekehrt sortierte die meisten"
+    },
+    {
+     "id": "PB2-2-1-1-K7",
+     "stufe": 2,
+     "kurz": "erklären, wie zwei Verbesserungen den Bubble Sort verkürzen: Die innere Schleife endet in jedem Durchlauf ein Element früher, weil das größte unsortierte Element schon am Ende steht, und ein Merker beendet das Verfahren nach einem Durchlauf ohne Tausch; so genügen höchstens n − 1 Durchläufe"
+    }
+   ]
+  },
+  {
+   "id": "PB2-2-1-3",
+   "ordner": "PB2-2",
+   "block": "PB2-2-1",
+   "titel": "Rekursion und Iteration",
+   "gebiete": [
+    "G.PB2.01",
+    "G.PB2.02"
+   ],
+   "bausteine": [
+    "ZB.rekursion",
+    "AP2b.04.16.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-2-1-3-K1",
+     "stufe": 2,
+     "kurz": "Rekursion erklären: Eine Funktion ruft sich selbst mit einem kleineren Teilproblem auf, bis eine Abbruchbedingung erreicht ist; jeder Aufruf belegt einen eigenen Rahmen auf dem Aufrufstapel, deshalb bricht das Programm ohne erreichbare Abbruchbedingung mit einem Stapelüberlauf (Stack Overflow) ab"
+    },
+    {
+     "id": "PB2-2-1-3-K2",
+     "stufe": 2,
+     "kurz": "je einen Vor- und Nachteil der rekursiven gegenüber einer iterativen Lösung beschreiben: oft kürzer, eleganter und näher an der Problembeschreibung, aber mehr Speicher auf dem Aufrufstapel und durch die vielen Aufrufe meist langsamer"
+    },
+    {
+     "id": "PB2-2-1-3-K3",
+     "stufe": 3,
+     "kurz": "einen rekursiven Algorithmus iterativ umsetzen: die Selbstaufrufe durch eine Schleife mit derselben Bedingung ersetzen und das, was die Rekursion auf dem Rückweg erledigt, nachbilden, indem du die Zwischenergebnisse in einer Liste sammelst und danach in umgekehrter Reihenfolge ausgibst (z. B. die Reste aus modulo 2 und div 2 bei der Umrechnung dezimal → binär)"
+    },
+    {
+     "id": "PB2-2-1-3-K4",
+     "stufe": 2,
+     "kurz": "erklären, wie die Stellung einer Anweisung vor oder nach dem Selbstaufruf die Reihenfolge bestimmt: Anweisungen davor laufen beim Abstieg in Aufrufreihenfolge, Anweisungen danach beim Rückweg in umgekehrter Reihenfolge; so gibt die Umrechnung von 11 mit der Ausgabe vor dem Aufruf 1101 statt 1011 aus"
+    },
+    {
+     "id": "PB2-2-1-3-K5",
+     "stufe": 3,
+     "kurz": "für ein Problem bestimmen, ob es sich rekursiv lösen lässt: Derselbe Ablauf wiederholt sich, jeder Durchlauf arbeitet mit veränderten, kleineren Daten, das Verfahren selbst bleibt gleich, und es gibt einen einfachsten Fall, der ohne weiteren Aufruf gelöst wird"
+    },
+    {
+     "id": "PB2-2-1-3-K6",
+     "stufe": 3,
+     "kurz": "einen einfachen rekursiven Algorithmus als Funktion mit Parameter und Rückgabewert schreiben: Im Abbruchfall gibt sie direkt einen Wert zurück, sonst ruft sie sich mit einem verkleinerten Parameter selbst auf und setzt das Ergebnis auf dem Rückweg zusammen, zum Beispiel bei der Umwandlung einer Dezimalzahl in eine Dualzahl (Aufruf mit zahl div 2, danach den Rest zahl mod 2 anhängen)"
+    }
+   ]
+  },
+  {
+   "id": "PB2-2-1-4",
+   "ordner": "PB2-2",
+   "block": "PB2-2-1",
+   "titel": "Generische Klassen und Funktionsobjekte",
+   "gebiete": [
+    "G.PB2.01"
+   ],
+   "bausteine": [
+    "ZB.generik-funktionsobjekte",
+    "AP2b.04.19",
+    "AP2b.04.16.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-2-1-4-K1",
+     "stufe": 2,
+     "kurz": "den Begriff generische Klasse erläutern: Die Klasse wird mit einem Typparameter geschrieben (z. B. List<T>) und erst bei der Verwendung für einen bestimmten Typ festgelegt, sodass derselbe Code für verschiedene Datentypen typsicher funktioniert"
+    },
+    {
+     "id": "PB2-2-1-4-K2",
+     "stufe": 3,
+     "kurz": "eine Vergleichsfunktion für zwei Objekte schreiben, die 0 bei Gleichheit, einen positiven Wert, wenn das erste größer ist, und sonst einen negativen Wert liefert; vergleicht sie Kommazahlen (z. B. ein Gehalt als Double), gibst du nicht die Differenz als Integer zurück, sondern über Verzweigungen 1, 0 oder −1, weil das Abschneiden eine Differenz wie 0,5 zu 0 macht"
+    },
+    {
+     "id": "PB2-2-1-4-K3",
+     "stufe": 3,
+     "kurz": "einen Sortieralgorithmus deiner Wahl so schreiben und benennen, dass er ein übergebenes Funktionsobjekt zum Vergleichen aufruft (ist f(a, b) > 0, wird getauscht), auch auf einer generischen Liste mit get, set und size statt auf einem Array, und damit dieselbe Sortierfunktion für verschiedene Kriterien nutzen (z. B. Kurs, Datum)"
+    }
+   ]
+  },
+  {
+   "id": "PB2-3-1-1",
+   "ordner": "PB2-3",
+   "block": "PB2-3-1",
+   "titel": "Schreibtischtest und Fehler im Algorithmus lokalisieren",
+   "gebiete": [
+    "G.PB2.01"
+   ],
+   "bausteine": [
+    "AP2a.03.01.3",
+    "AP2a.02.01.1"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-3-1-1-K1",
+     "stufe": 3,
+     "kurz": "über den Schreibtischtest aus AP1 hinaus eine Ablaufverfolgung für längeren Code mit einer vorgegebenen Datenverlaufstabelle durchführen und rekursive Aufrufe verfolgen: jeden Aufruf mit seinen eigenen Variablenwerten festhalten, bis zur Abbruchbedingung absteigen und die Rückkehr Aufruf für Aufruf nachvollziehen"
+    },
+    {
+     "id": "PB2-3-1-1-K2",
+     "stufe": 4,
+     "kurz": "aus den Abweichungen zwischen erwartetem und tatsächlichem Ergebnis die Ursache im Code analysieren und die fehlerhafte Zeile mit Zeilennummer bestimmen, auch wenn zwei Fehler zusammenwirken"
+    },
+    {
+     "id": "PB2-3-1-1-K3",
+     "stufe": 3,
+     "kurz": "über das Korrigieren einzelner Zeilen aus AP1 hinaus mehrere Fehler in einem längeren Code zusammenhängend korrigieren und fehlende Code-Teile ergänzen, zum Beispiel Vergleichsoperatoren so anpassen, dass ein gegebener Unit-Test besteht, oder den vergessenen Verarbeitungsblock für die letzte Gruppe nach der Schleife einfügen (Gruppenwechsel: PB2-1)"
+    },
+    {
+     "id": "PB2-3-1-1-K4",
+     "stufe": 3,
+     "kurz": "in gegebenem Code typische inhaltliche Fehler finden, die über die Fehlerquellen aus AP1-8-2-4 hinausgehen: falscher Startwert (z. B. 0 statt des ersten Elements beim Minimum), die letzte Gruppe wird nach der Schleife nicht mehr ausgewertet, falsche Variable im Ausdruck (Monats- statt Jahreszähler), überflüssige Anweisung, die ein Flag wieder zurücksetzt, fehlende Rückgabe (return), Ausgabe vor statt nach dem rekursiven Aufruf (Ergebnis in umgekehrter Reihenfolge)"
+    }
+   ]
+  },
+  {
+   "id": "PB2-3-1-2",
+   "ordner": "PB2-3",
+   "block": "PB2-3-1",
+   "titel": "Debugging und Fehlerbehandlung",
+   "gebiete": [
+    "G.PB2.01"
+   ],
+   "bausteine": [
+    "AP2a.02.01.1",
+    "AP2b.03.08.2",
+    "AP2b.04.17.5"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-3-1-2-K1",
+     "stufe": 3,
+     "kurz": "den Debugger gezielt einsetzen, um einen gegebenen Fehler einzugrenzen: einen Breakpoint vor die verdächtige Stelle setzen, im Einzelschritt weitergehen (Step over führt einen Methodenaufruf als Ganzes aus, Step into springt in die Methode hinein) und die Werte der Variablen beobachten, bis einer vom erwarteten Wert abweicht"
+    },
+    {
+     "id": "PB2-3-1-2-K4",
+     "stufe": 3,
+     "kurz": "über PB1-5-1-2 hinaus für unbrauchbare Texteingaben eine Vorgehensweise festlegen: die Eingabe zuerst bereinigen (z. B. mit trim führende und folgende Leerzeichen entfernen), eine danach leere Eingabe wie eine fehlende behandeln und eine festgelegte Ersatzregel anwenden, etwa ohne Vorgabe des Arztes die hinterlegte Standardmedikation verwenden, statt mit der unbrauchbaren Eingabe weiterzuarbeiten"
+    },
+    {
+     "id": "PB2-3-1-2-K5",
+     "stufe": 4,
+     "kurz": "für eine Fehlersuche begründet auswählen, ob du den Debugger oder print-Debugging (Zwischenwerte und Zustände gezielt ausgeben oder protokollieren) einsetzt: print-Debugging oder Logging, wenn kein Debugger zur Verfügung steht, der Fehler nur im Betrieb auftritt oder das Anhalten am Breakpoint den Ablauf verändert (z. B. Zeitabläufe); den Debugger, wenn sich der Fehler in der Entwicklungsumgebung nachstellen lässt und du Schritt für Schritt nachsehen willst"
+    }
+   ]
+  },
+  {
+   "id": "PB2-3-1-3",
+   "ordner": "PB2-3",
+   "block": "PB2-3-1",
+   "titel": "Unit-Tests schreiben und prüfen, Regressionstests",
+   "gebiete": [
+    "G.PB2.03"
+   ],
+   "bausteine": [
+    "AP2b.03.08.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-3-1-3-K2",
+     "stufe": 2,
+     "kurz": "über PB1-9-1-4 hinaus Aufbau und Eigenschaften guter Unit-Tests beschreiben: Eine Testmethode prüft eine einzelne Einheit (Methode, Klasse) mit assertEquals(erwartet, tatsächlich); gute Unit-Tests folgen F.I.R.S.T. – schnell (Fast), unabhängig voneinander (Independent), wiederholbar mit gleichem Ergebnis (Repeatable), selbstprüfend ohne manuelle Kontrolle (Self-Validating), rechtzeitig vor dem Produktivcode geschrieben (Timely)"
+    },
+    {
+     "id": "PB2-3-1-3-K3",
+     "stufe": 4,
+     "kurz": "einen gegebenen Unit-Test gegen den Code überprüfen: jeden assertEquals-Aufruf mit der Methode von Hand nachrechnen und je Testfall eintragen, ob er besteht (OK) oder fehlschlägt (Fehler)"
+    },
+    {
+     "id": "PB2-3-1-3-K4",
+     "stufe": 2,
+     "kurz": "den Zweck von Regressionstests erläutern: Nach jeder Änderung werden die vorhandenen Tests erneut ausgeführt, damit bereits funktionierende Teile nicht unbemerkt kaputtgehen"
+    },
+    {
+     "id": "PB2-3-1-3-K5",
+     "stufe": 3,
+     "kurz": "zu einer Anforderung einen Unit-Test schreiben: Testfälle für Normalfall, Grenzen und Fehlerfälle als assertEquals(erwartet, methode(...)) aufschreiben, auch bevor der Code existiert (Test Driven Development: erst ein fehlschlagender Test, dann gerade so viel Code, dass er besteht, dann aufräumen – Red, Green, Refactor)"
+    },
+    {
+     "id": "PB2-3-1-3-K6",
+     "stufe": 2,
+     "kurz": "erläutern, warum testgetriebene Entwicklung eher eine Entwurfs- als eine Teststrategie ist: Die Tests entstehen vor dem Code und legen fest, was er leisten muss, sie steuern so Schritt für Schritt die Entwicklung und geben sofort Rückmeldung – anders als Tests, die erst nach der Implementierung geschrieben werden"
+    },
+    {
+     "id": "PB2-3-1-3-K7",
+     "stufe": 4,
+     "kurz": "den Einsatz testgetriebener Entwicklung beurteilen: Vorteile sind hohe Codequalität, eine einfache Fehleranalyse dank gezielter Tests und kein überflüssiger Code; Nachteile sind, dass nur einzelne Units geprüft werden (Integrations- und Systemtest bleiben nötig), dass viele kleine Tests gepflegt werden müssen und veralten können und dass der Blick auf die Gesamtarchitektur fehlt"
+    }
+   ]
+  },
+  {
+   "id": "PB2-4-1-1",
+   "ordner": "PB2-4",
+   "block": "PB2-4-1",
+   "titel": "Testabdeckung: Anweisungs-, Zweig- und Pfadüberdeckung",
+   "gebiete": [
+    "G.PB2.03"
+   ],
+   "bausteine": [
+    "AP2b.03.08.2",
+    "AP2b.05.03.2.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-4-1-1-K1",
+     "stufe": 2,
+     "kurz": "Testabdeckung (Code Coverage) erläutern: der Anteil des Codes, der von den Testfällen ausgeführt wird, meist in Prozent angegeben"
+    },
+    {
+     "id": "PB2-4-1-1-K2",
+     "stufe": 2,
+     "kurz": "Anweisungs-, Zweig- und Pfadüberdeckung erläutern und wie sie aufeinander aufbauen: jede Anweisung mindestens einmal ausgeführt; jede Verzweigung in jede Richtung mindestens einmal durchlaufen; jeder mögliche Weg vom Anfang bis zum Ende durchlaufen. Volle Pfadüberdeckung schließt volle Zweigüberdeckung ein, diese volle Anweisungsüberdeckung – nicht umgekehrt. Bei Schleifen wächst die Zahl der Pfade mit jedem möglichen Durchlauf, ohne feste Obergrenze unbegrenzt; volle Pfadüberdeckung ist dann praktisch nicht erreichbar. Die englischen Begriffe (statement, branch, path coverage) sind meist vorgegeben"
+    },
+    {
+     "id": "PB2-4-1-1-K4",
+     "stufe": 3,
+     "kurz": "für einen gegebenen Code die Anweisungen nennen, die mit vorgegebenen Testdaten nicht durchlaufen werden, und die Mindestzahl an Testfällen für Anweisungs- oder Zweigüberdeckung bestimmen"
+    },
+    {
+     "id": "PB2-4-1-1-K5",
+     "stufe": 3,
+     "kurz": "für einen kurzen Code alle Pfade ermitteln, die für eine vollständige Pfadüberdeckung durchlaufen werden müssen, und je Pfad die durchlaufenen Bedingungen und Anweisungen in der Reihenfolge ihrer Abarbeitung aufschreiben (z. B. B1, A1, B2, A3, B3, A4); hintereinanderliegende, voneinander unabhängige Verzweigungen multiplizieren dabei die Zahl der Pfade"
+    },
+    {
+     "id": "PB2-4-1-1-K6",
+     "stufe": 4,
+     "kurz": "Testdaten so anpassen, dass eine verlangte Überdeckung erreicht wird, und die Änderung begründen, zum Beispiel einen Wert so wählen, dass auch die bisher nicht durchlaufene Anweisung zum Setzen des Minimums ausgeführt wird"
+    },
+    {
+     "id": "PB2-4-1-1-K7",
+     "stufe": 4,
+     "kurz": "Anweisungs- und Zweigüberdeckung nach ihrer Aussagekraft beurteilen: Die Anweisungsüberdeckung ist mit wenigen Testfällen erreicht und deckt nicht ausführbaren (toten) Code auf, findet aber wenige Fehler, weil leere Zweige wie ein fehlendes Else nie geprüft werden; die Zweigüberdeckung findet mehr Fehler und deckt unerreichbare Zweige auf, prüft aber Schleifen, zusammengesetzte Bedingungen (UND/ODER) und voneinander abhängige Bedingungen nur unzureichend"
+    }
+   ]
+  },
+  {
+   "id": "PB2-4-1-2",
+   "ordner": "PB2-4",
+   "block": "PB2-4-1",
+   "titel": "Testverfahren auswählen und Bestehenskriterien festlegen",
+   "gebiete": [
+    "G.PB2.03"
+   ],
+   "bausteine": [
+    "AP2b.05.03.2.1",
+    "AP2b.05.03.2.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-4-1-2-K1",
+     "stufe": 4,
+     "kurz": "über PB1-9-1-3 hinaus für eine konkrete Situation ein Testverfahren auswählen und die Wahl begründen: Black-Box-Test mit Äquivalenzklassen und Grenzwerten, wenn gegen die Anforderungen ohne Blick in den Code geprüft wird; White-Box-Test, wenn der Code systematisch abgedeckt werden soll; statischer Test (Review, Schreibtischtest), wenn Code ohne Ausführung geprüft werden soll oder noch nicht lauffähig ist"
+    },
+    {
+     "id": "PB2-4-1-2-K2",
+     "stufe": 4,
+     "kurz": "ein Überdeckungsmaß für eine Vorgabe des Projektleiters nennen und begründen, zum Beispiel Zweigüberdeckung, weil sie anders als die Anweisungsüberdeckung auch leere Else-Zweige prüft, aber anders als die Pfadüberdeckung noch bezahlbar bleibt"
+    },
+    {
+     "id": "PB2-4-1-2-K3",
+     "stufe": 3,
+     "kurz": "Kriterien für Testergebnisse festlegen: zu jedem Testfall vorab das erwartete Ergebnis bestimmen, es in einer Testfalltabelle (Testdaten, erwartetes Ergebnis, tatsächliches Ergebnis) dem tatsächlichen Ergebnis gegenüberstellen – auch einem von Hand per Schreibtischtest ermittelten – und den Testfall nur als bestanden werten, wenn beide genau übereinstimmen, auch bei einer erwarteten Fehlermeldung oder Ausnahme"
+    },
+    {
+     "id": "PB2-4-1-2-K4",
+     "stufe": 4,
+     "kurz": "für eine Situation beurteilen, ob manuell oder automatisiert getestet wird: Automatisierte Tests laufen schnell, zuverlässig und beliebig oft (z. B. als Regressionstests) und protokollieren sich selbst, kosten aber Aufwand beim Schreiben und bei jeder Änderung; deshalb automatisiert man wiederkehrende Routinefälle, testet manuell, wenn sich die Software noch ständig ändert, der Aufwand den Nutzen übersteigt oder das Verhalten erst erkundet werden soll, und prüft besonders kritische Bereiche zusätzlich von Hand"
+    }
+   ]
+  },
+  {
+   "id": "PB2-4-1-3",
+   "ordner": "PB2-4",
+   "block": "PB2-4-1",
+   "titel": "Testdaten auswählen und generieren: Äquivalenzklassen, Grenzwerte, Sonderfälle",
+   "gebiete": [
+    "G.PB2.03"
+   ],
+   "bausteine": [
+    "AP2b.05.03.2.3",
+    "AP2a.02.01.3",
+    "AP2a.03.02.3"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-4-1-3-K1",
+     "stufe": 3,
+     "kurz": "Äquivalenzklassen bilden: Eingaben, die die Funktion gleich behandelt, in Klassen einteilen (gültige und ungültige) und je Klasse einen Vertreter testen, zum Beispiel Testdaten aus zwei weiteren Klassen, für die −1 erwartet wird"
+    },
+    {
+     "id": "PB2-4-1-3-K2",
+     "stufe": 4,
+     "kurz": "für eine Funktion Testdaten auswählen, die den Normalfall, die Grenzwerte und ungültige Eingaben abdecken, und die Auswahl begründen: an jeder Grenze den Grenzwert selbst sowie die Werte knapp darunter und darüber, weil Fehler wie < statt <= genau dort auffallen (in 2022S-PB2-A2-ba scheitern die Testfälle 120/120 und 0/0)"
+    },
+    {
+     "id": "PB2-4-1-3-K3",
+     "stufe": 3,
+     "kurz": "aus den Sonderfällen eines Algorithmus gezielt Testdaten ableiten, die oft vergessen werden: leeres Array oder null, nur ein Element, nur positive bzw. nur negative Werte (je nach Startwert), das gesuchte Element an erster oder letzter Stelle"
+    },
+    {
+     "id": "PB2-4-1-3-K6",
+     "stufe": 3,
+     "kurz": "Testdatengeneratoren einsetzen: große Mengen passender, auch zufälliger oder grenznaher Testdaten nach festgelegten Regeln (Wertebereich, Format, Verteilung) automatisch erzeugen lassen, statt echte personenbezogene Daten zu verwenden"
+    },
+    {
+     "id": "PB2-4-1-3-K8",
+     "stufe": 2,
+     "kurz": "Testdatengeneratoren nach ihrer Grundlage unterscheiden: datenbankbasierte erzeugen Datenbestände aus dem Datenbankschema, codebasierte leiten Testdaten aus dem Quelltext ab (White-Box), schnittstellenbasierte aus den Wertebereichen der Parameter, etwa über Äquivalenzklassen und Grenzwerte (Black-Box), und spezifikationsbasierte erzeugen aus der Spezifikation Testdaten samt erwarteten Ergebnissen"
+    }
+   ]
+  },
+  {
+   "id": "PB2-5-1-1",
+   "ordner": "PB2-5",
+   "block": "PB2-5-1",
+   "titel": "SELECT: Spalten, Bedingungen, Ausdrücke und Sortieren",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.4",
+    "AP2b.04.22.5",
+    "AP2b.04.22.6",
+    "AP2b.04.22.9",
+    "AP2a.02.03.9",
+    "AP2a.02.03.7",
+    "AP2a.02.03.6",
+    "AP2b.03.03.2",
+    "ANH.sql-syntax-auszug"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-5-1-1-K1",
+     "stufe": 3,
+     "kurz": "mit SELECT … FROM die verlangten Spalten in der Reihenfolge der Ergebnistabelle ausgeben und mit AS umbenennen, auch mit DISTINCT ohne doppelte Zeilen"
+    },
+    {
+     "id": "PB2-5-1-1-K2",
+     "stufe": 3,
+     "kurz": "mit WHERE filtern und Bedingungen mit AND, OR, NOT, Klammern, IN (Werteliste) und BETWEEN verknüpfen, zum Beispiel PLZ zwischen 50800 und 51999, Menge 100 oder 200 (AW.Menge = 100 OR AW.Menge = 200), einen Datumsbereich mit >= und <= oder eine Bedingung zwischen zwei Spalten (Plan-Ankunft < Ist-Ankunft)"
+    },
+    {
+     "id": "PB2-5-1-1-K3",
+     "stufe": 3,
+     "kurz": "LIKE mit den Platzhaltern % und _ sowie IS NULL und IS NOT NULL einsetzen, zum Beispiel eine 3 an der vierten Stelle der PLZ: LIKE '___3%'"
+    },
+    {
+     "id": "PB2-5-1-1-K4",
+     "stufe": 3,
+     "kurz": "in der Ausgabe rechnen und Datumsfunktionen der SQL-Syntax einsetzen, zum Beispiel Menge * Preis, YEAR, MONTH, WEEKDAY, NOW() oder die Differenz zweier Zeitpunkte in Minuten mit DATEDIFF(minute, Plan, Ist)"
+    },
+    {
+     "id": "PB2-5-1-1-K5",
+     "stufe": 3,
+     "kurz": "mit ORDER BY auf- und absteigend nach einer oder mehreren Spalten sortieren, zum Beispiel absteigend nach Datum und Uhrzeit oder erst nach Menge absteigend, dann nach Preis aufsteigend"
+    },
+    {
+     "id": "PB2-5-1-1-K6",
+     "stufe": 3,
+     "kurz": "Textfunktionen aus der SQL-Syntax einsetzen, LEFT(Text, n) und RIGHT(Text, n) für die ersten bzw. letzten n Zeichen (z. B. LEFT(PLZ, 2) für die Leitregion), und eine Zeichenkette mit der Funktion, die die Aufgabe vorgibt, am Leerzeichen in Vorname und Nachname zerlegen"
+    },
+    {
+     "id": "PB2-5-1-1-K7",
+     "stufe": 2,
+     "kurz": "erklären, warum NULL nur mit IS NULL bzw. IS NOT NULL geprüft werden kann: NULL steht für einen fehlenden oder unbekannten Wert und ist weder 0 noch ein leerer Text; jeder Vergleich mit NULL, auch Spalte = NULL, ergibt kein Wahr, deshalb liefert WHERE Telefon = NULL nie eine Zeile"
+    }
+   ]
+  },
+  {
+   "id": "PB2-5-1-2",
+   "ordner": "PB2-5",
+   "block": "PB2-5-1",
+   "titel": "Abfragen über mehrere Tabellen: JOIN",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.8",
+    "AP2a.02.03.8"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-5-1-2-K1",
+     "stufe": 3,
+     "kurz": "zwei Tabellen mit INNER JOIN … ON über Primär- und Fremdschlüssel verbinden (oder gleichwertig über FROM mit Komma und WHERE-Bedingung)"
+    },
+    {
+     "id": "PB2-5-1-2-K2",
+     "stufe": 3,
+     "kurz": "drei und mehr Tabellen in einer Abfrage verketten, auch über eine Zwischentabelle einer m:n-Beziehung, und Tabellen mit Aliasnamen abkürzen, damit gleichnamige Spalten eindeutig sind"
+    },
+    {
+     "id": "PB2-5-1-2-K3",
+     "stufe": 3,
+     "kurz": "mit LEFT JOIN alle Datensätze der linken Tabelle ausgeben, auch wenn rechts kein passender Datensatz da ist (z. B. Mitarbeiter ohne Urlaub, Haushalte ohne Zähler), und schreibst eine Bedingung für die rechte Tabelle in ON statt in WHERE (… LEFT JOIN Fehlzeit Fz ON Ma.Ma_ID = Fz.Ma_ID AND Fz.FzA_ID = 2 AND YEAR(Fz.VonDat) = 2022), weil WHERE die Zeilen ohne Partner wieder entfernt; RIGHT JOIN ist das Spiegelbild"
+    },
+    {
+     "id": "PB2-5-1-2-K4",
+     "stufe": 3,
+     "kurz": "dieselbe Tabelle zweimal mit verschiedenen Aliasnamen einbinden, zum Beispiel die Zählerstände 2021 (S21) und 2022 (S22) je Zähler in einer Zeile gegenüberstellen und S22.ZSt_Stand - S21.ZSt_Stand berechnen; damit Zähler ohne Stand erhalten bleiben (Verbrauch NULL), verbindest du beide mit LEFT JOIN und der Jahresbedingung in ON (alternativ: zwei korrelierte Unterabfragen, PB2-5-1-4)"
+    }
+   ]
+  },
+  {
+   "id": "PB2-5-1-3",
+   "ordner": "PB2-5",
+   "block": "PB2-5-1",
+   "titel": "Aggregatfunktionen, GROUP BY und HAVING",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.7",
+    "AP2b.04.22.10",
+    "AP2a.02.03.10",
+    "ANH.sql-syntax-auszug"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-5-1-3-K1",
+     "stufe": 3,
+     "kurz": "COUNT, SUM, AVG, MIN und MAX einsetzen und COUNT(*) (alle Zeilen) von COUNT(Spalte) (nur Zeilen, in denen die Spalte nicht NULL ist) unterscheiden; nach einem LEFT JOIN zählst du mit COUNT(Spalte der rechten Tabelle), dann ergibt eine Zeile ohne Partner 0, SUM und AVG liefern dort NULL"
+    },
+    {
+     "id": "PB2-5-1-3-K2",
+     "stufe": 3,
+     "kurz": "mit GROUP BY je Gruppe ein Ergebnis ausgeben, auch gruppiert nach einem Ausdruck wie YEAR(AK_DatumZeit), und schreibst jede nicht aggregierte Spalte der Ausgabe auch ins GROUP BY; so ist die Abfrage in jedem Datenbanksystem richtig"
+    },
+    {
+     "id": "PB2-5-1-3-K3",
+     "stufe": 3,
+     "kurz": "mit HAVING Gruppen filtern und HAVING von WHERE unterscheiden: WHERE filtert Zeilen vor dem Gruppieren, HAVING filtert Gruppen danach, zum Beispiel Kunden mit mindestens drei Bestellungen"
+    },
+    {
+     "id": "PB2-5-1-3-K4",
+     "stufe": 3,
+     "kurz": "Aggregate mit JOIN verbinden und nach dem aggregierten Wert sortieren, zum Beispiel Umsatz je Kunde über mehrere Tabellen oder Verkaufsanzahl je Kategorie absteigend"
+    },
+    {
+     "id": "PB2-5-1-3-K5",
+     "stufe": 1,
+     "kurz": "die weiteren Aggregatfunktionen des SQL-Auszugs erkennen: STDDEV(Spalte) für die Standardabweichung, VARIANCE(Spalte) für die Varianz und CORR(Spalte1, Spalte2) für die Korrelation zweier Merkmale (nahe 1 oder −1 starker Zusammenhang, nahe 0 keiner); sie werden wie AVG nach der Beschreibung im Auszug eingesetzt"
+    }
+   ]
+  },
+  {
+   "id": "PB2-5-1-4",
+   "ordner": "PB2-5",
+   "block": "PB2-5-1",
+   "titel": "Unterabfragen und UNION",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.5",
+    "AP2b.04.22.9",
+    "AP2b.04.22.10",
+    "ANH.sql-syntax-auszug"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-5-1-4-K1",
+     "stufe": 3,
+     "kurz": "eine Unterabfrage in der WHERE-Bedingung mit IN oder NOT IN einsetzen, zum Beispiel Kunden ohne Bestellung: WHERE KID NOT IN (SELECT KID FROM Bestellungen), und weißt, dass NOT IN gar keine Zeile liefert, sobald die Unterabfrage einen NULL-Wert enthält; dann nimmst du NOT EXISTS (PB2-5-1-4-K6)"
+    },
+    {
+     "id": "PB2-5-1-4-K2",
+     "stufe": 3,
+     "kurz": "eine Unterabfrage einsetzen, die genau einen Wert liefert, und damit vergleichen oder rechnen, zum Beispiel das teuerste Arzneimittel: WHERE Preis = (SELECT MAX(Preis) FROM Arzneimittel)"
+    },
+    {
+     "id": "PB2-5-1-4-K3",
+     "stufe": 3,
+     "kurz": "eine Unterabfrage in FROM verwenden und ihr mit AS einen Namen geben, zum Beispiel erst die Anzahl je Patient zählen und davon den Durchschnitt bilden"
+    },
+    {
+     "id": "PB2-5-1-4-K4",
+     "stufe": 3,
+     "kurz": "die Ergebnisse zweier Abfragen vereinigen, mit UNION (doppelte Zeilen entfernt) oder UNION ALL (alle Zeilen bleiben), zum Beispiel aktuelle Tabelle und Archiv: Spaltenzahl und Datentypen müssen passen, die Spaltennamen kommen aus der ersten Abfrage, jede Teilabfrage wird für sich gruppiert und ORDER BY steht nur einmal am Ende"
+    },
+    {
+     "id": "PB2-5-1-4-K5",
+     "stufe": 3,
+     "kurz": "in der SELECT-Liste eine korrelierte Unterabfrage schreiben, die sich auf die aktuelle Zeile der äußeren Abfrage bezieht, zum Beispiel je Kunde (SELECT AVG(RP.RgPos_EinzelPreis * RP.RgPos_Mg) FROM RechnungPosition RP INNER JOIN Rechnung R ON R.Rg_IdKey = RP.RgPos_RgIdKey WHERE R.Rg_KdIdKey = Kunde.Kd_IdKey) AS Umsatz, und weißt, dass sie ohne passende Zeile NULL liefert (COUNT liefert 0)"
+    },
+    {
+     "id": "PB2-5-1-4-K6",
+     "stufe": 3,
+     "kurz": "eine korrelierte Unterabfrage in WHERE einsetzen, mit EXISTS bzw. NOT EXISTS oder mit einem Vergleich, zum Beispiel Haushalte ohne Zähler (FROM Haushalte h): WHERE NOT EXISTS (SELECT * FROM Zaehler z WHERE z.Z_HHID = h.HH_ID) oder WHERE (SELECT COUNT(*) FROM Zaehler z WHERE z.Z_HHID = h.HH_ID) = 0"
+    }
+   ]
+  },
+  {
+   "id": "PB2-5-1-5",
+   "ordner": "PB2-5",
+   "block": "PB2-5-1",
+   "titel": "Übung: Vorgegebenes Tabellenmodell lesen und den Weg der Abfrage finden",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.8",
+    "AP2a.02.03.8",
+    "AP2b.04.22.9",
+    "AP2b.04.10.2",
+    "AP2a.02.03.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-5-1-5-K1",
+     "stufe": 3,
+     "kurz": "in einem vorgegebenen relationalen Modell oder Tabellenauszug für eine Abfrage den JOIN-Pfad bestimmen: an Primär- und Fremdschlüsseln ablesen, welche Tabellen über welche Spaltenpaare verbunden werden, auch über eine Zwischentabelle, von der keine Spalte ausgegeben wird (Wirkstoff – Arzneimittelwirkstoffe – Arzneimittel – Hersteller)"
+    },
+    {
+     "id": "PB2-5-1-5-K2",
+     "stufe": 3,
+     "kurz": "die passende JOIN-Bedingung festlegen, wenn eine Tabelle mehrere Fremdschlüssel auf dieselbe Tabelle hat (MID_Soll und MID_Ist in Pflegearbeit) oder zwei Wege zum Ziel bestehen: Ist-Zeiten werden über die Plan-ID (HStZ_HStPIdKey) verbunden, nicht nur über die Haltestelle, sonst entstehen falsche Kombinationen"
+    },
+    {
+     "id": "PB2-5-1-5-K3",
+     "stufe": 3,
+     "kurz": "den Datentyp einer Spalte aus Modell oder Aufgabentext in der Bedingung berücksichtigen: eine als Zeichenkette angelegte PLZ in einfachen Anführungszeichen und mit LIKE ('___3%', '508%'), einen Wahrheitswert (Boolean) mit = TRUE bzw. = FALSE (rezeptpflichtig = FALSE), ein Datum mit YEAR(…) oder einem Bereich"
+    },
+    {
+     "id": "PB2-5-1-5-K4",
+     "stufe": 3,
+     "kurz": "aus der verlangten Ergebnistabelle und dem Modell ableiten, welche Tabellen die Abfrage braucht und ob ein INNER JOIN reicht: Zeilen mit 0 oder leerem Wert (Mitarbeiter ohne Urlaub, Kunde ohne Rechnung) zeigen Datensätze ohne Partner, dann brauchst du LEFT JOIN oder eine korrelierte Unterabfrage"
+    }
+   ]
+  },
+  {
+   "id": "PB2-6-1-1",
+   "ordner": "PB2-6",
+   "block": "PB2-6-1",
+   "titel": "Tabellenstruktur, Index und Datenbankobjekte: CREATE TABLE, ALTER TABLE, CREATE INDEX, Prozedur, Trigger",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.1",
+    "AP2b.04.22.2",
+    "AP2b.04.22.3",
+    "AP2a.02.03.7",
+    "AP2b.03.03.2",
+    "AP2a.02.03.6",
+    "ZB.prozedur-trigger",
+    "ANH.sql-syntax-auszug",
+    "ANH.praefixe"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-6-1-1-K1",
+     "stufe": 3,
+     "kurz": "mit CREATE TABLE eine Tabelle nach dem relationalen Modell anlegen: Spalten mit Datentypen aus der SQL-Syntax (z. B. INTEGER, DECIMAL(8,2), DOUBLE, CHAR(5), VARCHAR(30), DATE; BOOLEAN, wenn die Aufgabe ihn vorgibt), den Primärschlüssel mit PRIMARY KEY (Spalte) und Fremdschlüssel mit FOREIGN KEY (Spalte) REFERENCES Tabelle (Primärschlüssel)"
+    },
+    {
+     "id": "PB2-6-1-1-K2",
+     "stufe": 3,
+     "kurz": "mit ALTER TABLE … ADD COLUMN, DROP COLUMN und MODIFY COLUMN Spalten hinzufügen, entfernen oder ändern und einen Fremdschlüssel ergänzen, bei einem Umbau in der richtigen Reihenfolge (neue Spalten anlegen, Daten mit UPDATE übertragen, z. B. mit Textfunktionen aus PB2-5-1-1, alte Spalte löschen), und eine ganze Tabelle mit DROP TABLE löschen"
+    },
+    {
+     "id": "PB2-6-1-1-K3",
+     "stufe": 3,
+     "kurz": "eine Spalte einer gefüllten Tabelle nachträglich zum Pflichtfeld machen: zuerst fehlende Werte füllen (UPDATE Aerzte SET Email = 'info@fit.de' WHERE Email IS NULL), dann die Spalte ändern (ALTER TABLE Aerzte MODIFY COLUMN Email VARCHAR(100) NOT NULL; in der Form des SQL-Auszugs wird der Datentyp mit angegeben)"
+    },
+    {
+     "id": "PB2-6-1-1-K4",
+     "stufe": 2,
+     "kurz": "erklären, wozu ein Index dient (schnelleres Suchen und Sortieren in großen Tabellen) und welchen Nachteil er hat (zusätzlicher Speicher, langsameres Einfügen und Ändern)"
+    },
+    {
+     "id": "PB2-6-1-1-K5",
+     "stufe": 3,
+     "kurz": "mit CREATE INDEX einen benannten Index auf eine Spalte anlegen, zum Beispiel CREATE INDEX Idx_Datum ON Zaehlerstand (ZSt_Datum)"
+    },
+    {
+     "id": "PB2-6-1-1-K6",
+     "stufe": 2,
+     "kurz": "beschreiben, was eine Stored Procedure ist: eine in der Datenbank gespeicherte Folge von SQL-Anweisungen mit Namen und Parametern, die von Anwendungen oder dem Datenbank-Client ausdrücklich aufgerufen wird"
+    },
+    {
+     "id": "PB2-6-1-1-K7",
+     "stufe": 2,
+     "kurz": "beschreiben, was ein Trigger ist: SQL-Anweisungen, die die Datenbank automatisch ausführt, wenn in einer Tabelle ein bestimmtes Ereignis eintritt (INSERT, UPDATE oder DELETE), zum Beispiel um Änderungen zu protokollieren – im Unterschied zur Stored Procedure, die ausdrücklich aufgerufen wird"
+    },
+    {
+     "id": "PB2-6-1-1-K8",
+     "stufe": 2,
+     "kurz": "die Vorteile einer Stored Procedure erklären: Sie kann außer SQL auch Ablaufsteuerung (Bedingungen, Verzweigungen) enthalten und läuft in der Datenbank, sodass zusammengehörige Schritte ohne einzelnes Hin und Her mit der Anwendung schneller ablaufen; und weil Anwendungen nur das Recht zum Aufruf der Prozedur brauchen statt Schreibrechte auf die Tabellen, wird der Zugriff sicherer"
+    }
+   ]
+  },
+  {
+   "id": "PB2-6-1-6",
+   "ordner": "PB2-6",
+   "block": "PB2-6-1",
+   "titel": "SQL-Sprachteile, Spaltenoptionen und Indexwahl",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.1",
+    "AP2b.04.22.2",
+    "AP2b.03.03.2",
+    "AP2a.02.03.7"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-6-1-6-K1",
+     "stufe": 2,
+     "kurz": "SQL-Befehle ihren Sprachteilen zuordnen: DDL (Data Definition Language) legt Strukturen an und ändert sie (CREATE, ALTER, DROP), DML (Data Manipulation Language) liest und ändert Datensätze (SELECT, INSERT, UPDATE, DELETE), DCL (Data Control Language) vergibt und entzieht Rechte (GRANT, REVOKE), TCL (Transaction Control Language) steuert Transaktionen (COMMIT, ROLLBACK)"
+    },
+    {
+     "id": "PB2-6-1-6-K2",
+     "stufe": 3,
+     "kurz": "beim Anlegen einer Tabelle Spaltenoptionen einsetzen – NOT NULL (Pflichtfeld), UNIQUE (kein Wert doppelt), DEFAULT (Standardwert, wenn beim Einfügen nichts angegeben wird) und einen automatisch hochgezählten Primärschlüssel – und die Tabellen so nacheinander anlegen, dass jede Tabelle, auf die ein Fremdschlüssel verweist, schon existiert"
+    },
+    {
+     "id": "PB2-6-1-6-K3",
+     "stufe": 3,
+     "kurz": "bestimmen, auf welche Spalten einer großen Tabelle ein Index gelegt wird: auf Spalten, die häufig in WHERE-, JOIN- oder ORDER-BY-Teilen vorkommen, nicht auf jede Spalte und nicht zusätzlich auf den Primärschlüssel, der schon einen Index hat; vor einem Massenimport legst du den Index erst nach dem Import an (Nutzen und Kosten eines Index: PB2-6-1-1-K4)"
+    }
+   ]
+  },
+  {
+   "id": "PB2-6-1-2",
+   "ordner": "PB2-6",
+   "block": "PB2-6-1",
+   "titel": "Datenpflege: INSERT, UPDATE, DELETE und Archivieren",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.04.22.3",
+    "AP2a.02.03.6",
+    "AP2a.02.03.7",
+    "AP2b.03.03.2",
+    "AP2b.05.02.3",
+    "ANH.sql-syntax-auszug"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-6-1-2-K1",
+     "stufe": 3,
+     "kurz": "mit INSERT INTO … (Spaltenliste) VALUES … einen Datensatz einfügen und mit INSERT INTO … SELECT … Datensätze aus einer Abfrage übernehmen"
+    },
+    {
+     "id": "PB2-6-1-2-K2",
+     "stufe": 3,
+     "kurz": "mit UPDATE … SET … WHERE Werte ändern, auch berechnet aus der Spalte selbst (Preis = Preis * 1.05), und die Zeilen über Bedingungen in verknüpften Tabellen auswählen, in Standard-SQL mit Unterabfragen in WHERE: … WHERE HerstellerID = (SELECT HerstellerID FROM Hersteller WHERE Bezeichnung = 'CCC') oder je Bedingung eine IN-Unterabfrage, z. B. … WHERE RgPos_ArtIdKey IN (SELECT a.Art_IdKey FROM Artikel a INNER JOIN WeinArt w ON w.WA_IdKey = a.Art_WAIdKey WHERE w.WA_Weinart = 'Rotwein') AND RgPos_RgIdKey IN (SELECT Rg_IdKey FROM Rechnung WHERE YEAR(Rg_Datum) = 2023 AND MONTH(Rg_Datum) = 5)"
+    },
+    {
+     "id": "PB2-6-1-2-K3",
+     "stufe": 3,
+     "kurz": "mit DELETE FROM … WHERE Datensätze löschen, auch mit einer Unterabfrage, z. B. Haushalte ohne Zähler: DELETE FROM Haushalte WHERE NOT EXISTS (SELECT * FROM Zaehler WHERE Zaehler.Z_HHID = Haushalte.HH_ID) oder WHERE HH_ID NOT IN (SELECT Z_HHID FROM Zaehler), solange Z_HHID nie NULL ist, und weißt, dass ohne WHERE alle Zeilen gelöscht werden"
+    },
+    {
+     "id": "PB2-6-1-2-K5",
+     "stufe": 3,
+     "kurz": "Datensätze in eine gleich aufgebaute Archivtabelle verschieben: mit INSERT INTO Archiv (Spaltenliste) SELECT … WHERE … kopieren (z. B. WHERE YEAR(AK_DatumZeit) < YEAR(NOW())) und mit DELETE … WHERE mit derselben Bedingung löschen, beides in einer Transaktion"
+    },
+    {
+     "id": "PB2-6-1-2-K6",
+     "stufe": 4,
+     "kurz": "bei gleichzeitigen Zugriffen begründen, ob Datensätze früh und lange gesperrt werden (pessimistisch, z. B. alle freien Termine eines Monats schon beim Anzeigen blockieren) oder spät und kurz (optimistisch: erst beim Bestätigen sperren und prüfen, ob der Termin noch frei ist, bei Konflikt neu anbieten): Lange Sperren blockieren andere Nutzer unnötig, kurze Sperren brauchen eine Konfliktbehandlung"
+    },
+    {
+     "id": "PB2-6-1-2-K7",
+     "stufe": 3,
+     "kurz": "Transaktionen in SQL anwenden: mehrere zusammengehörige Änderungen mit START TRANSACTION (bzw. BEGIN) einleiten, sie mit COMMIT gemeinsam dauerhaft machen oder bei einem Fehler mit ROLLBACK alle Änderungen seit dem Beginn zurücknehmen"
+    },
+    {
+     "id": "PB2-6-1-2-K8",
+     "stufe": 2,
+     "kurz": "erklären, warum ein UPDATE fast immer eine WHERE-Bedingung braucht: Ohne sie erhält jede Zeile der Tabelle den neuen Wert; soll nur ein einzelner Wert entfernt werden, setzt man ihn mit UPDATE … SET Spalte = NULL, und die übrigen Werte der Zeile bestehen weiter"
+    }
+   ]
+  },
+  {
+   "id": "PB2-6-1-3",
+   "ordner": "PB2-6",
+   "block": "PB2-6-1",
+   "titel": "Benutzer, Rollen und Rechte: CREATE USER, GRANT, REVOKE",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2a.02.03.7",
+    "ANH.sql-syntax-auszug"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-6-1-3-K1",
+     "stufe": 3,
+     "kurz": "mit CREATE USER einen Benutzer mit Passwort anlegen (CREATE USER Name IDENTIFIED BY 'Passwort')"
+    },
+    {
+     "id": "PB2-6-1-3-K2",
+     "stufe": 3,
+     "kurz": "mit GRANT ein oder mehrere Rechte (durch Komma getrennt) gezielt vergeben, Leserecht = SELECT, Schreibrechte = INSERT, UPDATE, DELETE, auf eine Tabelle (Datenbank.Tabelle), alle Tabellen einer Datenbank (Datenbank.*) oder alles (*.*), zum Beispiel GRANT INSERT, UPDATE, DELETE ON NotaufnahmeManagement.Verschreibungen TO hhorner"
+    },
+    {
+     "id": "PB2-6-1-3-K3",
+     "stufe": 3,
+     "kurz": "mit REVOKE ein oder mehrere Rechte wieder entziehen, zum Beispiel die Schreibrechte: REVOKE INSERT, UPDATE, DELETE ON NotaufnahmeManagement.Verschreibungen FROM sklinkel"
+    },
+    {
+     "id": "PB2-6-1-3-K4",
+     "stufe": 3,
+     "kurz": "Rechte über Rollen vergeben: eine Rolle anlegen (CREATE ROLE Sachbearbeitung), ihr Rechte geben (GRANT SELECT ON Klinik.* TO Sachbearbeitung), die Rolle einem Benutzer zuweisen (GRANT Sachbearbeitung TO hhorner) und wieder entziehen (REVOKE Sachbearbeitung FROM hhorner); WITH GRANT OPTION erlaubt dem Empfänger, ein Recht weiterzugeben"
+    }
+   ]
+  },
+  {
+   "id": "PB2-6-1-5",
+   "ordner": "PB2-6",
+   "block": "PB2-6-1",
+   "titel": "Datenqualität vor einem Import prüfen",
+   "gebiete": [
+    "G.PB2.04"
+   ],
+   "bausteine": [
+    "AP2b.02.05.2",
+    "AP2b.05.02.2"
+   ],
+   "koennen": [
+    {
+     "id": "PB2-6-1-5-K1",
+     "stufe": 2,
+     "kurz": "Qualitätsmängel in einem Datenbestand beschreiben und je eine Folge des Imports nennen, zum Beispiel uneinheitliche Formate (Datum), mehrere Werte in einem Feld, fehlende oder ungültige Werte, Dubletten, unterschiedliche Schreibweisen → falsche Auswertungen, abgelehnte Datensätze, verletzte Schlüssel"
+    },
+    {
+     "id": "PB2-6-1-5-K2",
+     "stufe": 2,
+     "kurz": "Wege aufzeigen, mangelhafte Daten dennoch zu importieren: die Daten vorher von Hand verbessern oder ein Importprogramm mit allen nötigen Fehlerbehandlungen schreiben, das fehlerhafte Datensätze abweist und protokolliert; das Bereinigen und Vereinheitlichen selbst kennst du aus PB1-7-1-3"
+    },
+    {
+     "id": "PB2-6-1-5-K3",
+     "stufe": 4,
+     "kurz": "beurteilen, ob ein Datenbestand ohne Nacharbeit importiert werden kann, und für oder gegen den Import argumentieren, etwa mit Aufwand der Bereinigung gegen Nutzen der Daten"
+    },
+    {
+     "id": "PB2-6-1-5-K4",
+     "stufe": 2,
+     "kurz": "erklären, was Datenqualität bedeutet: wie gut sich Daten für den Zweck einer Anwendung eignen; aus mangelhaften Daten lassen sich keine verlässlichen Informationen gewinnen, und Fehler wie doppelte Kundenadressen oder veraltete Anschriften verursachen unmittelbar Kosten"
+    },
+    {
+     "id": "PB2-6-1-5-K5",
+     "stufe": 2,
+     "kurz": "die Qualitätskriterien Vollständigkeit (alle geforderten Felder enthalten gültige Werte), Korrektheit (die Werte stimmen mit der Wirklichkeit überein, z. B. kein Platzhalter-Geburtsdatum 01.01.1900), Aktualität (die Werte bilden den heutigen Stand ab) und Genauigkeit (die Werte liegen in der geforderten Exaktheit vor, z. B. Preise auf den Cent) je an einem Beispiel erklären"
+    },
+    {
+     "id": "PB2-6-1-5-K6",
+     "stufe": 2,
+     "kurz": "die Qualitätskriterien Eindeutigkeit (jeder Datensatz lässt sich eindeutig zuordnen, keine Dubletten), Redundanzfreiheit (keine Information mehrfach gespeichert), Konsistenz (keine Widersprüche innerhalb eines Datensatzes, z. B. Menge × Einzelpreis ≠ Gesamtbetrag, und zu anderen Datensätzen oder Quellen) und Einheitlichkeit (gleiche Werte im gleichen Format, z. B. jedes Datum nach ISO 8601) je an einem Beispiel erklären"
+    }
+   ]
+  }
+ ],
+ "erreicht": {
+  "ANH.sql-syntax-auszug": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-6-1-1",
+    "PB2-6-1-3"
+   ]
+  },
+  "ANH.uml-aktivitaetsdiagramm": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1"
+   ]
+  },
+  "AP1.04.07.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-3-1-1"
+   ]
+  },
+  "AP1.04.07.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-3-1-1"
+   ]
+  },
+  "AP2a.02.01.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-1-1-2",
+    "PB2-3-1-1",
+    "PB2-3-1-2"
+   ]
+  },
+  "AP2a.02.01.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-4-1-1"
+   ]
+  },
+  "AP2a.02.01.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-4-1-1",
+    "PB2-4-1-2",
+    "PB2-4-1-3"
+   ]
+  },
+  "AP2a.02.02.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-1-1-2"
+   ]
+  },
+  "AP2a.02.03.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2a.02.03.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5",
+    "PB2-6-1-1",
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2a.02.03.7": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-6-1-1",
+    "PB2-6-1-3"
+   ]
+  },
+  "AP2a.02.03.8": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2a.02.03.9": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5",
+    "PB2-6-1-1",
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2a.02.03.10": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2a.03.01.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-3-1-1",
+    "PB2-3-1-3",
+    "PB2-4-1-1"
+   ]
+  },
+  "AP2a.03.02.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-4-1-3"
+   ]
+  },
+  "AP2b.02.05.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-6-1-5"
+   ]
+  },
+  "AP2b.03.03.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5",
+    "PB2-6-1-1",
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2b.03.05": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-1-1-2"
+   ]
+  },
+  "AP2b.03.08.2": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-3-1-2",
+    "PB2-3-1-3",
+    "PB2-4-1-1",
+    "PB2-4-1-2"
+   ]
+  },
+  "AP2b.04.09.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1"
+   ]
+  },
+  "AP2b.04.10.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2b.04.16": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-1-1-2",
+    "PB2-2-1-1"
+   ]
+  },
+  "AP2b.04.16.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-1-1-2",
+    "PB2-1-1-3",
+    "PB2-2-1-1",
+    "PB2-2-1-3",
+    "PB2-2-1-4"
+   ]
+  },
+  "AP2b.04.17.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-3-1-2"
+   ]
+  },
+  "AP2b.04.18": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB2-2-1-1"
+   ]
+  },
+  "AP2b.04.18.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-1-1-2",
+    "PB2-2-1-1"
+   ]
+  },
+  "AP2b.04.18.2": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB2-2-1-1"
+   ]
+  },
+  "AP2b.04.18.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-2-1-1",
+    "PB2-2-1-4"
+   ]
+  },
+  "AP2b.04.19": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-1-1-2",
+    "PB2-1-1-3",
+    "PB2-2-1-4",
+    "PB2-3-1-1"
+   ]
+  },
+  "AP2b.04.21.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-1-1-3"
+   ]
+  },
+  "AP2b.04.22.1": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-6-1-1"
+   ]
+  },
+  "AP2b.04.22.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-6-1-1"
+   ]
+  },
+  "AP2b.04.22.3": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-6-1-1",
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2b.04.22.4": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2b.04.22.5": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-4",
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2b.04.22.6": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2b.04.22.7": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2b.04.22.8": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2b.04.22.9": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5",
+    "PB2-6-1-1",
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2b.04.22.10": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-5-1-5"
+   ]
+  },
+  "AP2b.05.02.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-3-1-2",
+    "PB2-6-1-5"
+   ]
+  },
+  "AP2b.05.02.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-6-1-2"
+   ]
+  },
+  "AP2b.05.03.2.1": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-4-1-2"
+   ]
+  },
+  "AP2b.05.03.2.2": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-4-1-1",
+    "PB2-4-1-2"
+   ]
+  },
+  "AP2b.05.03.2.3": {
+   "stufe": 4,
+   "stichpunkte": [
+    "PB2-4-1-1",
+    "PB2-4-1-2",
+    "PB2-4-1-3"
+   ]
+  },
+  "ZB.generik-funktionsobjekte": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-2-1-4"
+   ]
+  },
+  "ZB.prozedur-trigger": {
+   "stufe": 2,
+   "stichpunkte": [
+    "PB2-6-1-1"
+   ]
+  },
+  "ZB.rekursion": {
+   "stufe": 3,
+   "stichpunkte": [
+    "PB2-2-1-3"
+   ]
+  }
+ }
+}

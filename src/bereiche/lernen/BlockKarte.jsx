@@ -5,6 +5,7 @@ import { useState } from 'preact/hooks';
 import { inhalt } from '../../daten/inhalt.js';
 import { erfasse } from '../../lernstand/store.js';
 import { kartenZustand } from '../../lernstand/ableiten.js';
+import { useEinstellung } from '../../lernstand/einstellungen.js';
 import { PHASEN_ABSTAND } from '../../lernstand/regeln.js';
 import { datumMitWochentag, relativ, tagVon } from '../../lernstand/zeit.js';
 import { geheZu, link } from '../../router.js';
@@ -149,6 +150,7 @@ function SpZeile({ sp, an, gewaehlt, onWahl, suche, treffer, stand }) {
           <Treffer text={sp.titel} suche={suche} />
         </span>
         <span class="sp__info">
+          {sp.neu?.istNeu && <span class="sp__neu" data-tip="Neuer Stichpunkt im Lernplan">neu</span>}
           {notiz && <Icon name="notebook-pen" groesse={13} />}
           {sp.art !== 'Wissen' && (
             <span class="sp__art" data-tip={sp.art}>
@@ -226,11 +228,21 @@ function SpDetail({ sp, stand, raum }) {
     <div class="sp-detail erscheinen">
       <div class="sp-detail__kopf">
         <div class="ueberschrift-klein block__spalte-titel">
-          <Icon name={ART_ICON[sp.art]} groesse={13} /> {sp.art === 'Wissen' ? 'Kurzfassung' : `Kurzfassung · ${sp.art}`}
+          <Icon name={ART_ICON[sp.art]} groesse={13} /> {sp.neu ? (sp.art === 'Wissen' ? 'Stichpunkt' : `Stichpunkt · ${sp.art}`) : sp.art === 'Wissen' ? 'Kurzfassung' : `Kurzfassung · ${sp.art}`}
         </div>
       </div>
       <h4 class="sp-detail__titel">{sp.titel}</h4>
-      {sp.kurz ? (
+      {sp.neu ? (
+        <div class="kurz">
+          <p class="kurz__ziel">{sp.neu.ziel}</p>
+          {sp.neu.kurz && <Rich text={sp.neu.kurz} />}
+          {sp.neu.hinweis && (
+            <p class="np-hinweis">
+              <Icon name="info" groesse={13} /> {sp.neu.hinweis}
+            </p>
+          )}
+        </div>
+      ) : sp.kurz ? (
         <div class="kurz">
           <p class="kurz__ziel">{sp.kurz.ziel}</p>
           <Rich text={sp.kurz.punkte.map((p) => `- ${p}`).join('\n')} />
@@ -274,6 +286,10 @@ function SpDetail({ sp, stand, raum }) {
 
       {notizOffen && <Notiz sp={sp} text={stand.notizen.get(sp.id) ?? ''} />}
 
+      {sp.neu ? (
+        <NeuerRahmen sp={sp} stand={stand} />
+      ) : (
+        <>
       <button class="alles-knopf" aria-expanded={alles} onClick={() => setAlles(!alles)}>
         <Icon name={alles ? 'eye-off' : 'eye'} groesse={14} />
         {alles ? 'Weniger anzeigen' : 'Alles anzeigen: Rahmen und alle Können-Aussagen'}
@@ -311,6 +327,8 @@ function SpDetail({ sp, stand, raum }) {
           </div>
         </div>
       </Aufklapp>
+        </>
+      )}
 
       {gegen.length > 0 && (
         <div class="gegen">
@@ -323,6 +341,249 @@ function SpDetail({ sp, stand, raum }) {
               <Icon name="arrow-right" groesse={13} />
             </a>
           ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Neuer Lernplan: „Baut auf“, Können-Aussagen (einklappbar, P29), Grenzen und Kür;
+// Stufe, Herkunft und Begründungen klein zum Aufklappen.
+const STUFE_NAME = { 1: 'Wiedergeben', 2: 'Verstehen', 3: 'Anwenden', 4: 'Beurteilen' };
+
+// Regelwerk v2.0 (D4): buch:GS-2.4.3-S119 → „GS 2.4.3, S. 119“
+function buchText(wert) {
+  const m = wert.match(/^(GS|FS2|FS)-([\d.]+?)(?:-S(\d+))?$/);
+  return m ? `${m[1]} ${m[2]}${m[3] ? `, S. ${m[3]}` : ''}` : wert;
+}
+
+function herkunftText(h) {
+  const [art, wert] = h.split(':');
+  return art === 'katalog' ? `Katalog ${wert}` : art === 'beleg' ? `Prüfung ${wert}` : art === 'regel' ? `Puffer-Regel ${wert}` : art === 'buch' ? `Lehrbuch ${buchText(wert)}` : h;
+}
+
+// Kleine graue Marke „Buch“ an Aussagen mit Buch-Herkunft (Regelwerk v2.0, D4)
+function BuchMarke({ k }) {
+  const buch = (k.herkunft ?? []).filter((h) => h.startsWith('buch:')).map((h) => buchText(h.slice(5)));
+  if (!buch.length) return null;
+  return (
+    <span class="np-marke" data-tip={`Aus dem Lehrbuch, Kapitel ${buch.join('; ')}`}>
+      Buch
+    </span>
+  );
+}
+
+function KoennenMarken({ k }) {
+  return (
+    <>
+      {k.status === 'neu' && (k.karten ? <span class="np-marke" data-tip="Diese Aussage kam beim Umbau des Lernplans neu dazu">neu im Plan</span> : <span class="np-marke np-marke--warn" data-tip="Neue Können-Aussage – Lernkarten folgen später">neu im Plan · noch keine Karten</span>)}
+      {k.status === 'verschoben' && <span class="np-marke" data-tip={`Karten von ${k.von} hierher umgehängt`}>umgehängt</span>}
+      {k.status === 'angepasst' && <span class="np-marke" data-tip="Aussage neu gefasst – die Karten stammen noch von der alten Fassung">angepasst</span>}
+      {k.vorgegeben && <span class="np-marke" data-tip="Wird in der Prüfung als Material vorgegeben">vorgegeben: {k.vorgegeben}</span>}
+    </>
+  );
+}
+
+// E2: Sprung zu einem Stichpunkt eines früheren Raums (wie Gegenstücke und Befehlspalette)
+function spLink(z) {
+  return link(z.raum, 'lernen', null, { sp: z.id });
+}
+
+// „Baut auf“: Stichpunkte früherer Räume, die hier vorausgesetzt werden, mit Häkchen aus dem Lernstand
+function BautAuf({ ids, stand }) {
+  const ziele = ids.map((id) => inhalt.sp.get(id)).filter(Boolean);
+  if (!ziele.length) return null;
+  return (
+    <div class="voll__abschnitt np-bautauf">
+      <div class="ueberschrift-klein">
+        <Icon name="layers" groesse={12} /> Baut auf
+      </div>
+      <p class="np-bautauf__satz">Das kennst du schon – hier kommt nur das Neue dazu.</p>
+      <ul class="np-bautauf__liste">
+        {ziele.map((z) => {
+          const an = stand.spErledigt.has(z.id);
+          return (
+            <li key={z.id}>
+              <a class={`np-bautauf__link ${an ? 'np-bautauf__link--an' : ''}`} href={spLink(z)}>
+                <span class="np-bautauf__status" data-tip={an ? 'Im Lernstand abgehakt' : 'Noch offen'} aria-label={an ? 'abgehakt' : 'offen'}>
+                  {an ? <Icon name="check" groesse={11} strich={3} /> : null}
+                </span>
+                <span class="np-bautauf__titel">{z.titel}</span>
+                <span class="np-marke np-bautauf__raum">{inhalt.raeume.get(z.raum)?.name ?? z.raum}</span>
+                <Icon name="arrow-right" groesse={13} class="np-bautauf__pfeil" />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+// „neu gegenüber …“ an einer Aussage zu importierten Bausteinen (P36); antippen zeigt, was neu ist
+function NeuMarke({ neu, offen, onUmschalten }) {
+  return (
+    <button
+      type="button"
+      class="np-marke np-marke--neu"
+      aria-expanded={offen}
+      data-tip={!offen && neu.was ? neu.was : undefined}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onUmschalten();
+      }}
+    >
+      <Icon name="plus" groesse={10} strich={2.6} /> neu gegenüber {neu.gegenueber.join(', ')}
+    </button>
+  );
+}
+
+function NeuText({ neu }) {
+  const ziele = neu.gegenueber.map((id) => inhalt.sp.get(id)).filter(Boolean);
+  return (
+    <div class="np-neu">
+      {neu.was && <p>{neu.was}</p>}
+      {ziele.length > 0 && (
+        <p class="np-neu__grundlage">
+          Grundlage:{' '}
+          {ziele.map((z, i) => (
+            <span key={z.id}>
+              {i > 0 && ', '}
+              <a href={spLink(z)}>{z.titel}</a> <span class="gedaempft">({inhalt.raeume.get(z.raum)?.name ?? z.raum})</span>
+            </span>
+          ))}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// v2.2: eine Zeile je Aussage mit dem Stichwort `kurz`; antippen klappt Satz, Erklärung, Stufe und Herkunft auf
+function Zeile({ kurz, offen, onUmschalten, marken, children }) {
+  return (
+    <li class={`np-zeile ${offen ? 'np-zeile--offen' : ''}`}>
+      <div class="np-zeile__kopf">
+        <button type="button" class="np-zeile__knopf" aria-expanded={offen} onClick={onUmschalten}>
+          <span class="np-zeile__kurz">{kurz}</span>
+        </button>
+        {marken && <span class="np-zeile__marken">{marken}</span>}
+      </div>
+      {offen && (
+        <div class="np-zeile__auf">
+          {children}
+          {/* schmale Bildschirme: die Marken passen nicht immer hinter das Stichwort, hier stehen sie vollständig */}
+          {marken && <div class="np-zeile__marken-auf">{marken}</div>}
+        </div>
+      )}
+    </li>
+  );
+}
+
+function KoennenZeile({ k, text, offen, onUmschalten }) {
+  const [neuOffen, setNeuOffen] = useState(false);
+  const marken = (
+    <>
+      <KoennenMarken k={k} />
+      <BuchMarke k={k} />
+      {k.neu && <NeuMarke neu={k.neu} offen={neuOffen} onUmschalten={() => setNeuOffen(!neuOffen)} />}
+    </>
+  );
+  return (
+    <>
+      <Zeile kurz={k.kurz ?? text} offen={offen} onUmschalten={onUmschalten} marken={marken}>
+        <p class="np-zeile__satz">{text}</p>
+        {k.erklaerung && <Rich class="np-erkl__text" text={k.erklaerung} />}
+        <div class="np__meta">
+          Stufe {k.stufe} {STUFE_NAME[k.stufe]} · {k.herkunft.map(herkunftText).join(', ')} · <span class="mono">{k.id}</span>
+          {k.status === 'verschoben' && ` · vorher ${k.von}`}
+          {k.grund && <div>Änderung: {k.grund}</div>}
+        </div>
+      </Zeile>
+      {neuOffen && <NeuText neu={k.neu} />}
+    </>
+  );
+}
+
+const KUER_QUELLE = { podcast: 'IT-Berufe-Podcast', lernzettel: 'Lernzettel', gegenpruefung: 'Gegenprüfung', pruefer: 'Prüfer-Hinweis' };
+function kuerQuelle(q) {
+  if (q.startsWith('buch:')) return `Lehrbuch ${buchText(q.slice(5))}`;
+  return KUER_QUELLE[q.split(':')[0]] ?? q;
+}
+
+function NeuerRahmen({ sp, stand }) {
+  const [offen, setOffen] = useEinstellung('lernen.koennenOffen', true);
+  // nur eine Zeile zugleich offen, nicht gespeichert; Kür standardmäßig zu
+  const [auf, setAuf] = useState(null);
+  const [kuerOffen, setKuerOffen] = useState(false);
+  const umschalten = (schluessel) => () => setAuf(auf === schluessel ? null : schluessel);
+  const texte = new Map(sp.koennen);
+  const { koennen, grenzen, kuer } = sp.neu;
+  const ohneKarten = koennen.filter((k) => k.status === 'neu' && !k.karten).length;
+  return (
+    <div class="voll np">
+      {sp.neu.bautAuf?.length > 0 && <BautAuf ids={sp.neu.bautAuf} stand={stand} />}
+      <div class="voll__abschnitt">
+        <div class="ueberschrift-klein np__kopf">
+          <button class="np__klapp" aria-expanded={offen} onClick={() => setOffen(!offen)}>
+            <span class="np__klapp-titel">
+              <Icon name="chevron-right" groesse={12} class="np__klapp-pfeil" />
+              Das musst du können
+            </span>
+            {!offen && (
+              <span class="np__zahl">
+                {koennen.length} {koennen.length === 1 ? 'Aussage' : 'Aussagen'}
+                {ohneKarten > 0 && <span class="np__zahl-warn"> · {ohneKarten} neu ohne Karten</span>}
+              </span>
+            )}
+          </button>
+        </div>
+        <Aufklapp offen={offen}>
+          <ol class="koennen np-zeilen">
+            {koennen.map((k) => (
+              <KoennenZeile key={k.id} k={k} text={texte.get(k.id)} offen={auf === k.id} onUmschalten={umschalten(k.id)} />
+            ))}
+          </ol>
+        </Aufklapp>
+      </div>
+      {grenzen.length > 0 && (
+        <div class="voll__abschnitt">
+          <div class="ueberschrift-klein">
+            <Icon name="minus" groesse={12} /> Gehört nicht dazu
+          </div>
+          <ul class="np__liste">
+            {grenzen.map((g, i) => (
+              <li key={i} data-tip={g.begruendung ?? undefined}>
+                {g.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {kuer.length > 0 && (
+        <div class="voll__abschnitt np__kuer">
+          <div class="ueberschrift-klein np__kopf">
+            <button class="np__klapp" aria-expanded={kuerOffen} onClick={() => setKuerOffen(!kuerOffen)}>
+              <span class="np__klapp-titel">
+                <Icon name="chevron-right" groesse={12} class="np__klapp-pfeil" />
+                <Icon name="sparkles" groesse={12} /> Kür ({kuer.length})
+              </span>
+            </button>
+          </div>
+          <Aufklapp offen={kuerOffen}>
+            <p class="np__kuer-satz">Freiwillig, zählt nicht zum Fortschritt.</p>
+            <ul class="np-zeilen np-zeilen--kuer">
+              {kuer.map((k, i) => (
+                <Zeile key={i} kurz={k.kurz ?? k.text} offen={auf === `kuer#${i}`} onUmschalten={umschalten(`kuer#${i}`)}>
+                  <p class="np-zeile__satz">{k.text}</p>
+                  <div class="np__meta">
+                    {k.grund && <div>Warum Kür: {k.grund}</div>}
+                    {k.quellen?.length > 0 && <div>Quelle: {k.quellen.map(kuerQuelle).join(', ')}</div>}
+                  </div>
+                </Zeile>
+              ))}
+            </ul>
+          </Aufklapp>
         </div>
       )}
     </div>

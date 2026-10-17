@@ -31,10 +31,12 @@ export function App() {
   useEffect(() => setLeisteOffen(false), [location.hash]);
 
   // Ohne Raum in der Adresse: zuletzt gewählten Raum öffnen
+  // Gibt es den Raum nicht (z. B. AP2 nach dem Umbau in PB1/PB2), passenden Raum wählen
+  const gueltig = (r) => (inhalt.raeume.has(r) ? r : r === 'AP2' && inhalt.raeume.has('PB1') ? 'PB1' : 'AP1');
   useEffect(() => {
-    if (!route.raum) geheZu(einstellung('raum', 'AP1'), 'start', null, null, { ersetzen: true });
+    if (!route.raum || !inhalt.raeume.has(route.raum)) geheZu(gueltig(route.raum ?? einstellung('raum', 'AP1')), route.raum ? route.bereich : 'start', null, null, { ersetzen: true });
   }, [route.raum]);
-  const raum = route.raum ?? einstellung('raum', 'AP1');
+  const raum = gueltig(route.raum ?? einstellung('raum', 'AP1'));
   useEffect(() => {
     document.documentElement.dataset.raum = raum;
     setzeEinstellung('raum', raum);
@@ -145,7 +147,7 @@ function Leiste({ raum, route, stand }) {
         </span>
       </a>
 
-      <div class="raumwahl" role="group" aria-label="Lernraum">
+      <div class="raumwahl" role="group" aria-label="Lernraum" style={{ '--raeume': raeume.length }}>
         <span class="raumwahl__schieber" style={{ transform: `translateX(calc(${index} * (100% + 2px)))` }} />
         {raeume.map((r) => (
           <button

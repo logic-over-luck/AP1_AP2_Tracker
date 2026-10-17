@@ -1,0 +1,416 @@
+// Prüft einen Ordner des neuen Lernplans (Schicht 3+4) und schreibt einen lesbaren Bericht.
+//
+// Aufruf:  node tools/umbau/lernplan-pruefen.mjs AP1-6
+// Liest:   umbau/lernplan/ap1/<Ordner>.json und das Fundament (Bausteine, Zusatzbausteine, belegte Tiefe,
+//          Zuordnung der Prüfungen), dazu den alten Stand (Inhaltsdatei, inhalte/lernen/<Ordner>.json)
+// Schreibt: umbau/berichte/<Ordner>.md
+//
+// Prüfungen (UMBAU.md Abschnitt 5):
+//   Struktur  IDs eindeutig und richtig aufgebaut; F3 (seit v2.0, D5: 3–10 Können je Stichpunkt), F4 (seit v2.1: 3–8 Stichpunkte je Block)
+//   T3        jede Können-Aussage hat eine gültige Herkunft, passend zu Bausteinen und Teilaufgaben des Stichpunkts;
+//             seit v2.0 (D4) auch buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>] (Format laut regelwerk.json → buch.herkunft)
+//   T4        jede Grenze nennt Katalogstellen und eine Begründung
+//   T6        jeder Stichpunkt hat ein Gebiet seines Raums
+//   T2b       jede Teilaufgabe, die nur Bausteine dieses Ordners betrifft, steckt in einem Stichpunkt
+//   T8        Tiefe erreicht: je Baustein erreicht mindestens eine Können-Aussage die belegte Tiefe
+//             (bei geteilten Bausteinen mit „anteil" nur Hinweis – der Rest wird in anderen Ordnern erreicht)
+//   ALT       AP1: jede alte Können-Aussage des Ordners ist einsortiert; alte IDs bleiben erhalten, keine ID wird neu vergeben
+//             PB1 (P33): neue IDs; alt_neu sortiert alte AP2-Aussagen ein (verschoben, angepasst, gestrichen, PB2),
+//             Vollständigkeit über alle Ordner prüft raum-pruefen.mjs
+//   E2/T7     (ab PB1) Bausteine früherer Räume nur mit baut_auf auf einen Stichpunkt des Exports (E2).
+//             P36 (16.10.2026): Eine Können-Aussage, die nur importierte Bausteine betrifft, braucht `neu`
+//             ({ gegenueber: [baut_auf-ID], was }) – sonst ist sie doppelt; ohne Beleg dieses Raums muss sie zudem
+//             tiefer gehen als der frühere Raum. Ein importierter Baustein steht nur in `bausteine`, wenn eine
+//             Aussage mit `neu` ihn betrifft; sonst genügt baut_auf.
+//   R3        Hinweis-Abgleich: jedes Thema hat einen Ring, Hinweisquellen beschrieben, Verweis passt zum Ring
+//             (Ring „Ordner“: Thema wohnt in einem anderen AP1-Ordner oder einem späteren Raum)
+//   R4        Geschwister-Prüfung: jede Seite eines Katalog-Paars hat mindestens eine Können-Aussage
+
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
+import { raum } from './raum.mjs';
+
+const ORDNER = process.argv[2];
+if (!ORDNER) { console.error('Aufruf: node tools/umbau/lernplan-pruefen.mjs <Ordner-ID, z. B. AP1-6>'); process.exit(2); }
+const TEIL = ORDNER.split('-')[0];
+const RAUM = TEIL.toLowerCase();
+const R = raum(TEIL);
+const NEU_IDS = !['AP1', 'WISO'].includes(TEIL); // P33: PB1/PB2 neue IDs, Umzugstabelle statt ID-Erhalt; WISO wie AP1 (P48)
+const exporte = Object.fromEntries(R.frueher.filter((r) => existsSync(`umbau/export/${r}.json`))
+  .map((r) => [r, JSON.parse(readFileSync(`umbau/export/${r}.json`, 'utf8'))]));
+const exportSP = new Map(Object.values(exporte).flatMap((e) => e.stichpunkte.map((s) => [s.id, s])));
+// P47: WiSo-Bausteine, deren Inhalt ein früherer Raum lehrt (umbau/regeln/wiso-deckung.json), zählen wie Importe:
+// erreicht = höchste Stufe einer Können-Aussage in den deckenden Stichpunkten des Exports
+const deckung = R.deckung ?? {};
+const gedeckt = (id) => id in deckung;
+const stufeSP = (spId) => Math.max(0, ...(exportSP.get(spId)?.koennen ?? []).map((k) => k.stufe));
+const erreichtFrueher = (id) => gedeckt(id)
+  ? Math.max(0, ...deckung[id].stichpunkte.map(stufeSP))
+  : Math.max(0, ...Object.values(exporte).map((e) => e.erreicht[id]?.stufe ?? 0));
+const wieImport = (id) => R.importierbar(id) || gedeckt(id);
+
+const lp = JSON.parse(readFileSync(process.env.LERNPLAN_DATEI ?? `umbau/lernplan/${RAUM}/${ORDNER}.json`, 'utf8'));
+const b = JSON.parse(readFileSync('umbau/fundament/katalog-bausteine.json', 'utf8'));
+const zusatz = JSON.parse(readFileSync('umbau/regeln/zusatzbausteine.json', 'utf8')).bausteine;
+const belege = JSON.parse(readFileSync(`umbau/fundament/belege-${RAUM}.json`, 'utf8')).bausteine;
+const regeln = JSON.parse(readFileSync('umbau/regeln/regelwerk.json', 'utf8'));
+// P57: Stufe je Baustein über alle Räume (Katalogstufe, durch Belege angehoben)
+const bausteinStufe = {};
+for (const f of readdirSync('umbau/fundament').filter((x) => /^belege-.*\.json$/.test(x))) {
+  for (const [id, v] of Object.entries(JSON.parse(readFileSync(`umbau/fundament/${f}`, 'utf8')).bausteine)) {
+    const s = v.stufe ?? v.katalog_stufe;
+    if (s != null) bausteinStufe[id] = Math.max(s, bausteinStufe[id] ?? 0);
+  }
+}
+const index = JSON.parse(readFileSync(`umbau/fundament/pruefungen-${RAUM}.json`, 'utf8'));
+const alt = JSON.parse(readFileSync('Inhaltsdatei_AP1_AP2_tracker.json', 'utf8'));
+const altPaket = NEU_IDS
+  ? { karten: readdirSync('inhalte/lernen').filter((f) => /^AP2-\d+\.json$/.test(f)).flatMap((f) => JSON.parse(readFileSync(`inhalte/lernen/${f}`, 'utf8')).karten) }
+  : TEIL === 'WISO'
+    // alte WiSo-Pakete: WISO-1a, WISO-1b, WISO-2, WISO-3, WISO-4-5 → Karten des Ordners über die Können-ID
+    ? { karten: readdirSync('inhalte/lernen').filter((f) => /^WISO-.*\.json$/.test(f)).flatMap((f) => JSON.parse(readFileSync(`inhalte/lernen/${f}`, 'utf8')).karten).filter((c) => (c.k ?? c.sp ?? '').startsWith(`${ORDNER}-`)) }
+    : JSON.parse(readFileSync(`inhalte/lernen/${ORDNER}.json`, 'utf8'));
+
+const zuordnung = {};
+for (const d of readdirSync(`umbau/zuordnung/${RAUM}`)) {
+  Object.assign(zuordnung, JSON.parse(readFileSync(`umbau/zuordnung/${RAUM}/${d}`, 'utf8')).teilaufgaben);
+}
+const teilaufgabe = new Map(index.pruefungen.flatMap((p) => p.teilaufgaben.filter((t) => t.blatt).map((t) => [t.id, { ...t, pruefung: p.id }])));
+
+const fehler = [], hinweise = [];
+const F = (s) => fehler.push(s), H = (s) => hinweise.push(s);
+
+const alleIds = new Set([
+  ...b.fragenkomplexe.map((x) => x.id), ...b.punkte.map((x) => x.id), ...b.spiegelstriche.map((x) => x.id),
+  ...b.anhang.map((x) => x.id), ...Object.keys(zusatz), ...b.pruefungsbereiche.flatMap((p) => p.gebiete.map((g) => g.id)),
+]);
+const raumBausteine = R.gueltig; // eigene, aus früheren Räumen importierbare, Anhänge (tools/umbau/raum.mjs)
+const gebieteRaum = R.gebiete;
+const REGELN = new Set(['P-GESCHWISTER', 'P-NAECHSTE-STUFE', 'P-GRUNDLAGE', 'P-BEISPIELLISTE']);
+// v2.0 (D4, D5): Buch-Herkunft und Größe eines Stichpunkts aus dem Regelwerk
+const BUCH = new RegExp(regeln.buch?.herkunft?.regex ?? '^$');
+const [F3_MIN, F3_MAX] = [regeln.buch?.form?.f3_min ?? 3, regeln.buch?.form?.f3_max ?? 7];
+const [F4_MIN, F4_MAX] = [regeln.buch?.form?.f4_min ?? 3, regeln.buch?.form?.f4_max ?? 6]; // v2.1: 3–8 (P55)
+// v2.2: Feld kurz (Stichwort zur Aussage bzw. zum Kür-Eintrag)
+const KURZ = regeln.kurz ?? null;
+function pruefeKurz(wo, kurz, gesehen) {
+  if (!KURZ) return;
+  if (typeof kurz !== 'string' || !kurz.trim()) return F(`KURZ: ${wo} hat kein Feld kurz`);
+  const w = kurz.trim().split(/\s+/).length;
+  if (kurz.length > KURZ.max_zeichen) F(`KURZ: ${wo}: kurz hat ${kurz.length} Zeichen (höchstens ${KURZ.max_zeichen}): „${kurz}“`);
+  if (w < KURZ.woerter_min || w > KURZ.woerter_max) F(`KURZ: ${wo}: kurz hat ${w} Wörter (erlaubt ${KURZ.woerter_min}–${KURZ.woerter_max}): „${kurz}“`);
+  if (/^du\b/i.test(kurz.trim())) F(`KURZ: ${wo}: kurz beginnt mit „Du“: „${kurz}“`);
+  if (/\.$/.test(kurz.trim())) F(`KURZ: ${wo}: kurz endet mit Punkt (kein Satz): „${kurz}“`);
+  const n = kurz.trim().toLowerCase();
+  if (gesehen.has(n)) F(`KURZ: ${wo}: kurz „${kurz}“ steht im Stichpunkt schon bei ${gesehen.get(n)}`);
+  else gesehen.set(n, wo);
+}
+const opStufe = { ...regeln.operatoren, ...regeln.pruefungsoperatoren.stufen };
+// Alltagswörter, die als Prüfungsoperator nur in fester Wendung vorkommen (v1.6): nicht für die F1-Heuristik
+for (const w of ['bringen', 'finden', 'schreiben', 'einfügen']) delete opStufe[w];
+
+/** Fach-Bausteine einer Können-Aussage: aus katalog-Herkunft und aus den Bausteinen ihrer Belege (ohne Anhänge) */
+const fachIds = (k) => {
+  const ids = new Set();
+  for (const h of k.herkunft ?? []) {
+    if (h.startsWith('katalog:')) ids.add(h.slice(8));
+    if (h.startsWith('beleg:')) for (const x of zuordnung[h.slice(6)]?.bausteine ?? []) ids.add(x);
+  }
+  return [...ids].filter((x) => !x.startsWith('ANH.'));
+};
+
+// ---------- Struktur ----------
+const ob = lp.oberblock;
+if (ob.id !== ORDNER) F(`Oberblock-ID ${ob.id} passt nicht zur Datei ${ORDNER}`);
+for (const g of ob.gebiete) if (!gebieteRaum.has(g)) F(`Oberblock: Gebiet ${g} gehört nicht zum Raum ${TEIL}`);
+const spIds = [], kIds = [];
+const stichpunkte = [];
+for (const tb of lp.themenbloecke) {
+  if (!tb.id.startsWith(`${ORDNER}-`)) F(`Themenblock ${tb.id} beginnt nicht mit ${ORDNER}-`);
+  if (tb.stichpunkte.length < F4_MIN || tb.stichpunkte.length > F4_MAX) F(`F4: Themenblock ${tb.id} hat ${tb.stichpunkte.length} Stichpunkte (erlaubt ${F4_MIN}–${F4_MAX})`);
+  for (const sp of tb.stichpunkte) {
+    stichpunkte.push({ ...sp, block: tb.id });
+    spIds.push(sp.id);
+    if (!sp.id.startsWith(`${tb.id}-`)) F(`Stichpunkt ${sp.id} liegt nicht unter ${tb.id}`);
+    if (sp.koennen.length < F3_MIN || sp.koennen.length > F3_MAX) F(`F3: ${sp.id} hat ${sp.koennen.length} Können-Aussagen (erlaubt ${F3_MIN}–${F3_MAX})`);
+    if (!sp.gebiete?.length) F(`T6: ${sp.id} hat kein Gebiet`);
+    for (const g of sp.gebiete ?? []) if (!gebieteRaum.has(g)) F(`T6: ${sp.id}: Gebiet ${g} gehört nicht zum Raum ${TEIL}`);
+    const spB = new Set(sp.bausteine.map((x) => x.id));
+    for (const x of sp.bausteine) if (!raumBausteine.has(x.id)) F(`${sp.id}: Baustein ${x.id} gehört nicht zum Raum ${TEIL}`);
+    // E2: Bausteine früherer Räume nur über baut_auf auf einen Stichpunkt, der sie dort abdeckt
+    for (const ba of sp.baut_auf ?? []) if (!exportSP.has(ba)) F(`E2: ${sp.id}: baut_auf ${ba} steht in keinem Export (${R.frueher.join(', ') || '–'})`);
+    for (const x of sp.bausteine.filter((y) => wieImport(y.id))) {
+      const dort = gedeckt(x.id) ? deckung[x.id].stichpunkte : Object.values(exporte).flatMap((e) => e.erreicht[x.id]?.stichpunkte ?? []);
+      if (!(sp.baut_auf ?? []).some((ba) => dort.includes(ba))) F(`E2: ${sp.id}: importierter Baustein ${x.id} ohne baut_auf auf einen Stichpunkt, der ihn abdeckt (${dort.join(', ') || 'keiner im Export'})`);
+      // T7 (P36): Ein importierter Baustein steht nur in `bausteine`, wenn eine Aussage hier zu ihm etwas Neues bringt
+      const neuHier = sp.koennen.some((k) => k.neu?.was && fachIds(k).includes(x.id));
+      if (!neuHier) F(`T7: ${sp.id}: importierter Baustein ${x.id} ohne Aussage mit „neu“ – aus bausteine entfernen, baut_auf genügt (P36)`);
+    }
+    for (const ta of sp.teilaufgaben) {
+      if (!teilaufgabe.has(ta)) { F(`${sp.id}: Teilaufgabe ${ta} unbekannt`); continue; }
+      const z = zuordnung[ta];
+      if (z.ausserhalb) F(`${sp.id}: Teilaufgabe ${ta} ist „ausserhalb" (${z.ausserhalb})`);
+      else if (!z.bausteine.some((x) => spB.has(x))) H(`${sp.id}: Teilaufgabe ${ta} betrifft keinen Baustein des Stichpunkts (${z.bausteine.join(', ')})`);
+    }
+    const kurzK = new Map(), kurzKuer = new Map();
+    for (const k of sp.koennen) {
+      kIds.push(k.id);
+      pruefeKurz(k.id, k.kurz, kurzK);
+      if (!new RegExp(`^${sp.id}-K\\d+$`).test(k.id)) F(`${k.id}: ID passt nicht zum Stichpunkt ${sp.id}`);
+      if (!k.text.startsWith('Du kannst ')) F(`F1: ${k.id} beginnt nicht mit „Du kannst“`);
+      if (![1, 2, 3, 4].includes(k.stufe)) F(`${k.id}: ungültige Stufe ${k.stufe}`);
+      if (!k.herkunft?.length) F(`T3: ${k.id} hat keine Herkunft`);
+      for (const h of k.herkunft ?? []) {
+        const [art, wert] = [h.split(':')[0], h.slice(h.indexOf(':') + 1)];
+        if (art === 'katalog') {
+          if (!alleIds.has(wert)) F(`T3: ${k.id}: Katalog-ID ${wert} unbekannt`);
+          else if (!spB.has(wert)) F(`T3: ${k.id}: ${wert} steht nicht in den Bausteinen von ${sp.id}`);
+        } else if (art === 'beleg') {
+          if (!teilaufgabe.has(wert)) F(`T3: ${k.id}: Teilaufgabe ${wert} unbekannt`);
+          else if (!sp.teilaufgaben.includes(wert)) F(`T3: ${k.id}: Beleg ${wert} steht nicht in den Teilaufgaben von ${sp.id}`);
+        } else if (art === 'regel') {
+          if (!REGELN.has(wert)) F(`T3: ${k.id}: unbekannte Regel ${wert}`);
+        } else if (art === 'buch') {
+          if (!BUCH.test(wert)) F(`T3: ${k.id}: Buch-Herkunft „${h}“ hat nicht das Format buch:<GS|FS|FS2>-<Kapitel>[-S<Seite>] (D4)`);
+        } else F(`T3: ${k.id}: unbekannte Herkunftsart „${h}"`);
+      }
+      // T7 (E2, P36): Betrifft die Aussage nur importierte Bausteine, wiederholt sie womöglich einen früheren Raum.
+      // Sie bleibt nur, wenn sie mit `neu` sagt, was gegenüber dem importierten Stichpunkt neu ist
+      // ({ gegenueber: [<baut_auf-ID>], was: "<das Neue>" }); sonst streichen und per baut_auf importieren.
+      // Ohne Beleg aus diesem Raum muss sie außerdem tiefer gehen als der frühere Raum.
+      if (R.frueher.length) {
+        const fach = fachIds(k);
+        if (fach.length && fach.every((x) => wieImport(x))) {
+          if (!k.neu?.was || !k.neu?.gegenueber?.length) F(`T7: ${k.id} betrifft nur importierte oder gedeckte Bausteine (${fach.join(', ')}) ohne Angabe „neu“ – streichen und per baut_auf importieren oder mit neu.gegenueber/neu.was begründen (P36)`);
+          for (const g of k.neu?.gegenueber ?? []) if (!(sp.baut_auf ?? []).includes(g)) F(`T7: ${k.id}: neu.gegenueber ${g} steht nicht in baut_auf von ${sp.id}`);
+          const belegHier = (k.herkunft ?? []).some((h) => h.startsWith('beleg:'));
+          const dort = Math.min(...fach.map(erreichtFrueher));
+          if (!belegHier && k.stufe <= dort) F(`T7: ${k.id} betrifft nur importierte Bausteine (${fach.join(', ')}) und geht mit Stufe ${k.stufe} nicht über ${R.frueher.join('/')} (${dort}) hinaus – importieren statt neu schreiben`);
+        }
+      }
+      // P57 (Projektinhaber, 16.10.2026): Eine reine Buch-Aussage liegt nie über der höchsten Stufe der Bausteine
+      // ihres Stichpunkts (Katalog, durch Belege angehoben). Höher nur mit Beleg; die höhere Stufe gehört sonst
+      // in den Raum, dessen Baustein sie verlangt.
+      if (k.herkunft?.length && k.herkunft.every((h) => h.startsWith('buch:'))) {
+        const st = [...spB].map((x) => bausteinStufe[x]).filter((x) => x != null);
+        const max = st.length ? Math.max(...st) : (regeln.buch?.form?.stufe_ohne_baustein ?? 2);
+        if (k.stufe > max) F(`P57: ${k.id}: Buch-Aussage mit Stufe ${k.stufe} über der Stufe der Bausteine von ${sp.id} (${max}) – Operator nach dem Baustein (D5)`);
+      }
+      // F1-Heuristik: passt die Stufe zu einem Verb im Text?
+      const verben = Object.keys(opStufe).filter((op) => new RegExp(`(^|[^A-Za-zÄÖÜäöüß])${op}([^A-Za-zÄÖÜäöüß]|$)`).test(k.text));
+      if (verben.length && !verben.some((v) => opStufe[v] === k.stufe)) H(`F1: ${k.id}: Stufe ${k.stufe}, Verben im Text: ${verben.map((v) => `${v} (${opStufe[v]})`).join(', ')}`);
+    }
+    // Kür (K-Regeln): nur aus Hinweisquellen, nicht abdeckungspflichtig, zählt nicht zu F3
+    for (const ku of sp.kuer ?? []) {
+      if (!ku.text || !ku.grund) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Text oder Grund`);
+      pruefeKurz(`${sp.id} Kür „${(ku.text ?? '').slice(0, 40)}…“`, ku.kurz, kurzKuer);
+      if (!ku.quellen?.length) F(`KÜR: ${sp.id}: Kür-Eintrag ohne Hinweisquelle: „${(ku.text ?? '').slice(0, 50)}…"`);
+      for (const q of ku.quellen ?? []) if (!(q in (lp.meta?.hinweisquellen ?? {}))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} nicht in meta.hinweisquellen beschrieben`);
+      for (const q of (ku.quellen ?? []).filter((x) => x.startsWith('buch:'))) if (!BUCH.test(q.slice(5))) F(`KÜR: ${sp.id}: Hinweisquelle ${q} hat nicht das Format buch:<Band>-<Kapitel> (D8)`);
+    }
+    for (const g of sp.grenzen ?? []) {
+      if (!g.katalog?.length) F(`T4: ${sp.id}: Grenze ohne Katalogstelle: „${g.text.slice(0, 60)}…"`);
+      for (const id of g.katalog ?? []) if (!alleIds.has(id)) F(`T4: ${sp.id}: Grenze nennt unbekannte ID ${id}`);
+      if (!g.begruendung || g.begruendung.length < 10) F(`T4: ${sp.id}: Grenze ohne Begründung`);
+      if (/\b(kam|kommt|kamen)\b.*\bnicht\b.*\bvor\b|nicht (verlangt|vorgekommen|gefragt|geprüft|belegt)|nie (verlangt|gefragt|geprüft)|keine Aufgabe|ohne Beleg/i.test(g.begruendung)) F(`E6: ${sp.id}: Grenze stützt sich auf fehlende Prüfungsbelege`);
+    }
+  }
+}
+for (const [liste, name] of [[spIds, 'Stichpunkt'], [kIds, 'Können']]) {
+  const d = liste.filter((x, i) => liste.indexOf(x) !== i);
+  for (const x of d) F(`doppelte ${name}-ID ${x}`);
+}
+
+// ---------- T2b: Teilaufgaben des Ordners abgedeckt ----------
+const ordnerBausteine = new Set(stichpunkte.flatMap((sp) => sp.bausteine.map((x) => x.id)));
+const geteilt = new Set(stichpunkte.flatMap((sp) => sp.bausteine.filter((x) => x.anteil).map((x) => x.id)));
+const inSP = new Set(stichpunkte.flatMap((sp) => sp.teilaufgaben));
+for (const [ta, z] of Object.entries(zuordnung)) {
+  if (z.ausserhalb || !z.bausteine.length) continue;
+  // Pflicht nur, wenn die Teilaufgabe einen Baustein betrifft, den dieser Ordner ganz übernimmt;
+  // Teilaufgaben, die nur geteilte Bausteine betreffen, prüft T2b am Ende auf Raum-Ebene.
+  const ganzHier = z.bausteine.some((x) => ordnerBausteine.has(x) && !geteilt.has(x));
+  if (ganzHier && !inSP.has(ta)) F(`T2b: Teilaufgabe ${ta} (${z.bausteine.join(', ')}) steckt in keinem Stichpunkt`);
+}
+
+// ---------- T8: Tiefe erreicht ----------
+const tiefe = [];
+for (const id of ordnerBausteine) {
+  if (id.startsWith('ANH.')) continue;
+  const soll = belege[id]?.stufe ?? null;
+  let ist = 0;
+  for (const sp of stichpunkte) for (const k of sp.koennen) {
+    const trifft = k.herkunft.some((h) => h === `katalog:${id}` || (h.startsWith('beleg:') && zuordnung[h.slice(6)]?.bausteine.includes(id)));
+    if (trifft) ist = Math.max(ist, k.stufe);
+  }
+  if (wieImport(id)) ist = Math.max(ist, erreichtFrueher(id)); // E2/P47: im früheren Raum erreicht
+  tiefe.push({ id, soll, ist, geteilt: geteilt.has(id) });
+  if (soll && ist < soll) {
+    const text = `T8: ${id} braucht Stufe ${soll}, erreicht in ${ORDNER} ${ist || 'keine'}`;
+    if (geteilt.has(id)) H(`${text} – geteilter Baustein, Rest muss ein anderer Ordner erreichen`); else F(text);
+  }
+}
+
+// ---------- ALT: alte Inhalte einsortiert ----------
+const altSP = NEU_IDS ? [] : alt.stichpunkte.filter((s) => s.ordner_id === ORDNER);
+const an = lp.alt_neu?.koennen ?? [];
+const neuK = new Set(kIds);
+const kRaum = new Set();
+for (const f of readdirSync(`umbau/lernplan/${RAUM}`).filter((x) => x.endsWith('.json'))) {
+  const l = f === `${ORDNER}.json` ? lp : JSON.parse(readFileSync(`umbau/lernplan/${RAUM}/${f}`, 'utf8'));
+  for (const tb of l.themenbloecke) for (const s of tb.stichpunkte) for (const k of s.koennen) kRaum.add(k.id);
+}
+let altK;
+if (!NEU_IDS) {
+  altK = altSP.flatMap((s) => s.koennen.map((k) => k.id));
+  const STATUS = new Set(['übernommen', 'angepasst', 'verschoben', 'gestrichen']);
+  for (const id of altK) {
+    const e = an.filter((x) => x.alt === id);
+    if (e.length !== 1) { F(`ALT: ${id} ist ${e.length}-mal einsortiert (soll genau 1)`); continue; }
+    const x = e[0];
+    if (!STATUS.has(x.status)) F(`ALT: ${id}: unbekannter Status ${x.status}`);
+    if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${id}: gestrichen ohne Grund`);
+    // Verschoben darf auch in einen anderen Ordner desselben Raums (z. B. Doppelung zusammengelegt)
+    if (x.status !== 'gestrichen' && !neuK.has(x.neu) && !(x.status === 'verschoben' && kRaum.has(x.neu))) F(`ALT: ${id}: Ziel ${x.neu} gibt es im neuen Plan nicht`);
+    if ((x.status === 'übernommen' || x.status === 'angepasst') && x.neu !== id) F(`ALT: ${id}: übernommen/angepasst muss die ID behalten (Lernstand, Karten)`);
+  }
+  for (const x of an) if (!altK.includes(x.alt)) F(`ALT: ${x.alt} ist keine alte Können-Aussage dieses Ordners`);
+  const freigewordene = new Set(an.filter((x) => x.status === 'verschoben' || x.status === 'gestrichen').map((x) => x.alt));
+  for (const id of kIds) if (freigewordene.has(id)) F(`ALT: ID ${id} wird neu vergeben, obwohl sie verschoben/gestrichen wurde`);
+  // WISO (P47): ein alter Stichpunkt darf entfallen, wenn alle seine Aussagen gestrichen oder verschoben sind
+  // (z. B. weil sein Inhalt in einem früheren Raum wohnt); sonst gilt ID-Erhalt
+  const weg = (s) => TEIL === 'WISO' && s.koennen.every((k) => an.some((x) => x.alt === k.id && (x.status === 'gestrichen' || x.status === 'verschoben')));
+  for (const s of altSP) if (!spIds.includes(s.id) && !weg(s)) F(`ALT: alter Stichpunkt ${s.id} fehlt im neuen Plan (ID-Erhalt)`);
+} else {
+  // P33: alte AP2-Aussagen werden mit neuer ID verschoben/angepasst, gestrichen oder für PB2 vermerkt
+  // PB1: alle alten AP2-Aussagen; PB2: nur die in PB1 als „PB2“ vermerkten, Status ohne „PB2“
+  let altAP2 = new Set(alt.stichpunkte.filter((s) => s.teil === 'AP2').flatMap((s) => s.koennen.map((k) => k.id)));
+  if (TEIL === 'PB2') {
+    altAP2 = new Set();
+    for (const f of readdirSync('umbau/lernplan/pb1').filter((x) => x.endsWith('.json')))
+      for (const x of JSON.parse(readFileSync(`umbau/lernplan/pb1/${f}`, 'utf8')).alt_neu?.koennen ?? []) if (x.status === 'PB2') altAP2.add(x.alt);
+  }
+  const STATUS = new Set(TEIL === 'PB2' ? ['verschoben', 'angepasst', 'gestrichen'] : ['verschoben', 'angepasst', 'gestrichen', 'PB2']);
+  altK = an.map((x) => x.alt);
+  for (const x of an) {
+    if (!altAP2.has(x.alt)) F(`ALT: ${x.alt} ist keine alte AP2-Können-Aussage${TEIL === 'PB2' ? ', die PB1 für PB2 vermerkt hat' : ''}`);
+    if (!STATUS.has(x.status)) F(`ALT: ${x.alt}: unbekannter Status ${x.status} (P33: verschoben, angepasst, gestrichen, PB2)`);
+    if ((x.status === 'verschoben' || x.status === 'angepasst') && !kRaum.has(x.neu)) F(`ALT: ${x.alt}: Ziel ${x.neu} gibt es in ${TEIL} nicht`);
+    if (x.status === 'gestrichen' && !x.grund) F(`ALT: ${x.alt}: gestrichen ohne Grund`);
+  }
+  const d = altK.filter((x, i) => altK.indexOf(x) !== i);
+  for (const x of d) F(`ALT: ${x} ist in ${ORDNER} mehrfach einsortiert`);
+  for (const id of [...spIds, ...kIds]) if (id.startsWith('AP2-')) F(`P33: ${id} – alte AP2-IDs werden nicht weiterverwendet`);
+}
+
+// ---------- R3: Hinweis-Abgleich, R4: Geschwister-Prüfung (UMBAU.md 4.8) ----------
+const kMap = new Map(stichpunkte.flatMap((sp) => sp.koennen.map((k) => [k.id, k])));
+const spMap = new Map(stichpunkte.map((sp) => [sp.id, sp]));
+const RINGE = new Set(['Kern', 'Puffer', 'Kür', 'Außen', 'Ordner']);
+const abgleich = lp.meta?.hinweisabgleich?.themen ?? [];
+for (const t of abgleich) {
+  const name = `R3 „${(t.thema ?? '').slice(0, 40)}"`;
+  if (!t.thema) F('R3: Thema ohne Namen');
+  if (!RINGE.has(t.ring)) F(`${name}: unbekannter Ring ${t.ring}`);
+  if (!t.quellen?.length) F(`${name}: keine Hinweisquelle`);
+  for (const q of t.quellen ?? []) if (!(q in (lp.meta?.hinweisquellen ?? {}))) F(`${name}: Hinweisquelle ${q} nicht in meta.hinweisquellen beschrieben`);
+  if (!t.wo?.length) { F(`${name}: „wo" fehlt`); continue; }
+  for (const w of t.wo) {
+    if (t.ring === 'Kern' || t.ring === 'Puffer') { if (!kMap.has(w)) F(`${name}: Können-Aussage ${w} gibt es nicht`); }
+    else if (t.ring === 'Kür') { if (!spMap.get(w)?.kuer?.length) F(`${name}: Stichpunkt ${w} hat keinen Kür-Eintrag`); }
+    else if (t.ring === 'Außen') { if (!spMap.get(w)?.grenzen?.length) F(`${name}: Stichpunkt ${w} hat keine Grenze`); }
+    else if (t.ring === 'Ordner') { if (!/^(AP1-\d+(-\d+)*|PB1-\d+(-\d+)*|PB2-\d+(-\d+)*|WISO-\d+(-\d+)*|AP1|PB1|PB2|WISO|PROJEKT)$/.test(w) || w === ORDNER) F(`${name}: „${w}" ist kein anderer Ordner oder Raum`); }
+  }
+  if (t.ring === 'Puffer' && !t.wo.some((w) => kMap.get(w)?.herkunft.some((h) => h.startsWith('regel:')))) F(`${name}: Puffer, aber keine der Aussagen hat Herkunft regel:`);
+}
+const geschwister = lp.meta?.geschwister ?? [];
+for (const g of geschwister) {
+  if (!alleIds.has(g.katalog)) F(`R4: Katalog-ID ${g.katalog} unbekannt`);
+  if (!g.paar) F(`R4: ${g.katalog} ohne Paar`);
+  for (const [seite, ids] of Object.entries(g.abgedeckt ?? {})) {
+    if (!ids.length) F(`R4: ${g.katalog} (${g.paar}): „${seite}" ohne Können-Aussage`);
+    for (const id of ids) if (!kMap.has(id)) F(`R4: ${g.katalog} (${g.paar}): Können-Aussage ${id} gibt es nicht`);
+  }
+}
+
+// Karten-Bilanz
+const statusVon = Object.fromEntries(an.map((x) => [x.alt, x]));
+const karten = { bleiben: 0, pruefen: 0, umhaengen: 0, entfallen: 0, ohne_koennen: 0, pb2: 0 };
+for (const k of (NEU_IDS ? altPaket.karten.filter((c) => statusVon[c.k]) : altPaket.karten)) {
+  const x = statusVon[k.k];
+  if (!x) karten.ohne_koennen++;
+  else if (x.status === 'übernommen') karten.bleiben++;
+  else if (x.status === 'angepasst') karten.pruefen++;
+  else if (x.status === 'verschoben') karten.umhaengen++;
+  else if (x.status === 'PB2') karten.pb2++;
+  else karten.entfallen++;
+}
+const altSet = new Set(altK);
+const neueKoennen = kIds.filter((id) => !altSet.has(id) && !an.some((x) => x.neu === id));
+
+// ---------- Bericht ----------
+const zaehl = (s) => an.filter((x) => x.status === s).length;
+const altText = NEU_IDS
+  ? `Alte AP2-Können-Aussagen: ${an.length} einsortiert → ${zaehl('verschoben')} verschoben, ${zaehl('angepasst')} angepasst, ${zaehl('gestrichen')} gestrichen, ${zaehl('PB2')} für PB2 vermerkt; ${neueKoennen.length} neue Aussagen ohne alte Vorlage.`
+  : `Können-Aussagen: ${altK.length} alt → ${zaehl('übernommen')} übernommen, ${zaehl('angepasst')} angepasst, ${zaehl('verschoben')} verschoben, ${zaehl('gestrichen')} gestrichen; ${neueKoennen.length} neu.`;
+const zeilen = [];
+zeilen.push(`# Lernplan ${ORDNER} – ${ob.titel}`, '', `Erzeugt mit \`node tools/umbau/lernplan-pruefen.mjs ${ORDNER}\`. Nicht von Hand bearbeiten.`, '');
+zeilen.push(`**Ergebnis:** ${fehler.length ? `${fehler.length} Fehler` : 'alle Prüfungen bestanden'}, ${hinweise.length} Hinweise.`, '');
+zeilen.push('## Struktur', '');
+for (const tb of lp.themenbloecke) {
+  zeilen.push(`### ${tb.id} ${tb.titel}`, '', `_${tb.satz}_`, '');
+  for (const sp of tb.stichpunkte) {
+    const neu = !NEU_IDS && !altSP.some((s) => s.id === sp.id);
+    zeilen.push(`#### ${sp.id} ${sp.titel}${neu ? ' (neu)' : ''}`, '', sp.ziel, '');
+    zeilen.push(`Bausteine: ${sp.bausteine.map((x) => x.id + (x.anteil ? ` (${x.anteil})` : '')).join('; ')} · Gebiete: ${sp.gebiete.join(', ')}${sp.baut_auf?.length ? ` · baut auf: ${sp.baut_auf.join(', ')}` : ''}`, '');
+    zeilen.push(`Teilaufgaben: ${sp.teilaufgaben.join(', ')}`, '');
+    zeilen.push('| ID | Können | Stufe | Herkunft |', '|---|---|---|---|');
+    for (const k of sp.koennen) zeilen.push(`| ${k.id.replace(sp.id + '-', '')} | ${k.text}${k.vorgegeben ? ` _(vorgegeben: ${k.vorgegeben})_` : ''} | ${k.stufe} | ${k.herkunft.join(', ')} |`);
+    zeilen.push('');
+    if (sp.kuer?.length) {
+      zeilen.push('**Kür** (freiwillig, zählt nicht zum Fortschritt):', '');
+      for (const ku of sp.kuer) zeilen.push(`- ${ku.text} _(${ku.quellen.join(', ')})_`);
+      zeilen.push('');
+    }
+    for (const g of sp.grenzen ?? []) zeilen.push(`**Grenze:** ${g.text} — _${g.begruendung}_ (${g.katalog.join(', ')})`, '');
+    if (sp.hinweis) zeilen.push(`_Hinweis:_ ${sp.hinweis}`, '');
+  }
+}
+zeilen.push('## Tiefe je Baustein (T8)', '', '| Baustein | belegte Tiefe | erreicht | geteilt |', '|---|---|---|---|');
+for (const t of tiefe.sort((x, y) => x.id.localeCompare(y.id))) zeilen.push(`| ${t.id} | ${t.soll ?? '–'} | ${t.ist || '–'} | ${t.geteilt ? 'ja' : ''} |`);
+zeilen.push('', '## Alt → neu', '');
+zeilen.push(altText, '');
+if (!NEU_IDS) zeilen.push(`Stichpunkte: ${altSP.length} alt, ${spIds.length} neu (${spIds.filter((id) => !altSP.some((s) => s.id === id)).join(', ') || 'keine neuen'}).`, '');
+if (NEU_IDS) {
+  const n = altPaket.karten.filter((k) => statusVon[k.k]).length;
+  zeilen.push(`Alte AP2-Karten zu den einsortierten Aussagen (${n}): ${karten.pruefen + karten.umhaengen} umhängen auf die neue ID (davon ${karten.pruefen} prüfen, Aussage angepasst), ${karten.entfallen} entfallen, ${karten.pb2} warten auf PB2. Neue Aussagen ohne Karten: ${neueKoennen.length}.`, '');
+} else zeilen.push(`Karten (${altPaket.karten.length}): ${karten.bleiben} bleiben, ${karten.pruefen} prüfen (Aussage angepasst), ${karten.umhaengen} umhängen (Aussage verschoben), ${karten.entfallen} entfallen, ${karten.ohne_koennen} ohne Können-Bezug. Neue Aussagen ohne Karten: ${neueKoennen.join(', ') || 'keine'}.`, '');
+zeilen.push('| alt | Status | neu | Grund |', '|---|---|---|---|');
+for (const x of an) zeilen.push(`| ${x.alt} | ${x.status} | ${x.neu ?? '–'} | ${x.grund || ''} |`);
+zeilen.push('', '### Sätze aus alten Rahmentexten', '', '| alt | Satz | Status | Grund |', '|---|---|---|---|');
+for (const x of lp.alt_neu?.rahmen ?? []) zeilen.push(`| ${x.alt} | ${x.satz} | ${x.status} | ${x.grund} |`);
+if (abgleich.length) {
+  const ha = lp.meta.hinweisabgleich;
+  zeilen.push('', '## Hinweis-Abgleich (R3)', '', `Stand ${ha.stand}, Umfang: ${ha.umfang}. Ringe: ${[...RINGE].map((r) => `${r} ${abgleich.filter((t) => t.ring === r).length}`).join(', ')}.`, '');
+  zeilen.push('| Thema | Hinweisquellen | Ring | wo | Anmerkung |', '|---|---|---|---|---|');
+  for (const t of abgleich) zeilen.push(`| ${t.thema} | ${t.quellen.join(', ')} | ${t.ring} | ${t.wo.join(', ')} | ${t.notiz ?? ''} |`);
+}
+if (geschwister.length) {
+  zeilen.push('', '## Geschwister-Prüfung (R4)', '', '| Katalogstelle | Paar | abgedeckt durch |', '|---|---|---|');
+  for (const g of geschwister) zeilen.push(`| ${g.katalog} | ${g.paar} | ${Object.entries(g.abgedeckt).map(([s, ids]) => `${s}: ${ids.join(', ')}`).join(' · ')} |`);
+}
+if (fehler.length || hinweise.length) {
+  zeilen.push('', '## Fehler und Hinweise', '');
+  for (const f of fehler) zeilen.push(`- ✗ ${f}`);
+  for (const h of hinweise) zeilen.push(`- · ${h}`);
+}
+if (!process.env.LERNPLAN_DATEI) {
+  mkdirSync('umbau/berichte', { recursive: true });
+  writeFileSync(`umbau/berichte/${ORDNER}.md`, zeilen.join('\n') + '\n');
+}
+
+console.log(`${ORDNER}: ${lp.themenbloecke.length} Themenblöcke, ${spIds.length} Stichpunkte, ${kIds.length} Können-Aussagen, ${stichpunkte.reduce((a, sp) => a + (sp.kuer?.length ?? 0), 0)} Kür-Einträge`);
+console.log(`Alt → neu: ${zaehl('übernommen')} übernommen, ${zaehl('angepasst')} angepasst, ${zaehl('verschoben')} verschoben, ${zaehl('gestrichen')} gestrichen, ${neueKoennen.length} neu`);
+console.log(`Karten: ${JSON.stringify(karten)}`);
+for (const h of hinweise) console.log(`HINWEIS ${h}`);
+if (fehler.length) { console.log(`FEHLER (${fehler.length})`); for (const f of fehler) console.log(`  - ${f}`); process.exitCode = 1; }
+else console.log(`OK – Struktur, T2b, T3, T4, T6, T8, Alt→neu${abgleich.length ? ', R3' : ''}${geschwister.length ? ', R4' : ''} bestanden.`);

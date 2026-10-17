@@ -21,7 +21,7 @@ function suchTreffer(block, suche) {
   const sp = new Set();
   for (const id of block.sp) {
     const x = inhalt.sp.get(id);
-    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1])];
+    const texte = [x.titel, x.kurz?.ziel, ...(x.kurz?.punkte ?? []), x.rahmen, ...x.koennen.map((k) => k[1]), x.neu?.ziel, x.neu?.kurz, ...(x.neu?.grenzen ?? []).map((g) => g.text), ...(x.neu?.kuer ?? []).map((k) => k.text)];
     if (texte.some((t) => normal(t).includes(s))) sp.add(id);
   }
   const passt = sp.size > 0 || normal(block.titel).includes(s) || normal(block.satz).includes(s);
@@ -117,6 +117,12 @@ export function Lernen({ raum, params }) {
         </div>
       </header>
 
+      {(() => {
+        // Hinweis nur für Räume, deren neuer Lernplan noch nicht abgenommen ist (UMBAU.md P45)
+        const v = inhalt.daten.vorschauRaeume?.[raum] ?? (inhalt.daten.vorschau?.raum === raum ? inhalt.daten.vorschau : null);
+        return v && !v.abgenommen ? <VorschauHinweis v={v} /> : null;
+      })()}
+
       <div class="lernen__leiste">
         <Reiter
           label="Filter"
@@ -204,5 +210,34 @@ function OrdnerGruppe({ nummer, gruppe, stand, zustaende, offen, autoOffen, umsc
         ))}
       </div>
     </section>
+  );
+}
+
+// Neuer Lernplan, noch nicht abgenommen (tools/vorschau-ap1.mjs, RAEUME_VORSCHAU.abgenommen): was hier noch anders ist
+function VorschauHinweis({ v }) {
+  if (v.alt)
+    return (
+      <div class="vorschau-hinweis">
+        <Icon name="triangle-alert" groesse={16} />
+        <div>
+          <strong>PB2: noch der alte Stand</strong> – der neue Lernplan für PB2 wird als Nächstes gebaut.
+          <div class="gedaempft">
+            Hier stehen bis dahin die alten AP2-Stichpunkte mit den Aussagen, die zu PB2 gehören (Algorithmen, SQL, Testdaten, Debugging): {v.stichpunkte} Stichpunkte, {v.koennen} Aussagen, {v.karten} Karten. Dein Lernstand dazu bleibt erhalten.
+          </div>
+        </div>
+      </div>
+    );
+  return (
+    <div class="vorschau-hinweis">
+      <Icon name="triangle-alert" groesse={16} />
+      <div>
+        <strong>Neuer Lernplan {v.raum}</strong>
+        {v.regelwerk ? ` (Regelwerk v${v.regelwerk})` : ''} – noch nicht abgenommen, kann sich noch ändern.
+        <div class="gedaempft">
+          {v.stichpunkte} Stichpunkte, davon {v.neueStichpunkte} neu · {v.koennen} Können-Aussagen, davon {v.neueOhneKarten} neu und noch ohne Karten · {v.kuer} Kür-Einträge (freiwillig, zählen nicht zum
+          Fortschritt) · Karten: {v.karten.umgehaengt} umgehängt, {v.karten.gestrichen} weggefallen. Kurzfassungen: {v.kurz ?? 0} von {v.stichpunkte} neu.
+        </div>
+      </div>
+    </div>
   );
 }

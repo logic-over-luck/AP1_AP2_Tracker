@@ -1,0 +1,864 @@
+{
+  "ordner": "PB1-7",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-7.json",
+  "karten": [
+    {
+      "id": "AP2-4-4-1-K3-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K1",
+      "vorne": "Woraus besteht ein XML-Element?",
+      "hinten": "Aus öffnendem Tag, Inhalt und schließendem Tag, z. B. `<ort>Köln</ort>`; ein leeres Element kann auch `<ort/>` geschrieben werden."
+    },
+    {
+      "id": "AP2-4-4-1-K3-2",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K1",
+      "vorne": "Was ist ein XML-Attribut?",
+      "hinten": "Ein Paar aus Name und Wert im öffnenden Tag, z. B. `<kunde id='42'>`."
+    },
+    {
+      "id": "AP2-4-4-1-K3-3",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K1",
+      "vorne": "Wie stellt XML zusammengehörende Daten dar, etwa einen Kunden mit Name und Ort?",
+      "hinten": "Durch Verschachtelung: Ein Element enthält weitere Elemente, z. B. `<kunde><name>…</name><ort>…</ort></kunde>`. Alles liegt unter einem Wurzelelement."
+    },
+    {
+      "id": "PB1-7-1-1-K2-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K2",
+      "vorne": "Wofür braucht man eine DTD oder ein XML-Schema (XSD)?",
+      "hinten": "Sie legen verbindlich fest, welche Elemente und Attribute in welcher Reihenfolge und Schachtelung (und bei XSD mit welchem Datentyp) vorkommen dürfen. So sind alle Dokumente einer Art gleich aufgebaut und automatisch prüfbar."
+    },
+    {
+      "id": "AP2-4-4-1-K6-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K3",
+      "vorne": "Was ist der Unterschied zwischen einem wohlgeformten und einem gültigen XML-Dokument?",
+      "hinten": "- wohlgeformt: hält die XML-Regeln ein\n- gültig: ist wohlgeformt und entspricht zusätzlich dem Schema"
+    },
+    {
+      "id": "AP2-4-4-1-K6-2",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K3",
+      "vorne": "Welche Regeln muss ein wohlgeformtes XML-Dokument einhalten?",
+      "hinten": "- genau ein Wurzelelement\n- jedes Element wird geschlossen\n- korrekt verschachtelt, nicht überkreuzt\n- Attributwerte in Anführungszeichen\n- Groß-/Kleinschreibung von öffnendem und schließendem Tag stimmt überein"
+    },
+    {
+      "id": "AP2-4-4-1-K6-3",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K3",
+      "vorne": "Kann ein XML-Dokument gültig, aber nicht wohlgeformt sein?",
+      "hinten": "Nein. Gültig setzt wohlgeformt voraus; umgekehrt ist nicht jedes wohlgeformte Dokument gültig."
+    },
+    {
+      "id": "PB1-7-1-1-K4-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K4",
+      "vorne": "In Zeile 7 fehlt `</preis>`, in Zeile 9 steht `<ort>` vor `<name>`, obwohl die DTD die umgekehrte Reihenfolge verlangt. Wie gibst du die Fehler an?",
+      "hinten": "- Zeile 7: schließendes Tag fehlt – verletzt die Wohlgeformtheit\n- Zeile 9: Element an falscher Stelle – verletzt die Gültigkeit (DTD)"
+    },
+    {
+      "id": "AP2-4-1-2-K3-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K5",
+      "vorne": "Was prüft eine formale Validierung?",
+      "hinten": "Ob ein Wert richtig aufgebaut ist: Aufbau/Format, Datentyp und ob ein Pflichtfeld ausgefüllt ist."
+    },
+    {
+      "id": "AP2-4-1-2-K3-2",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K5",
+      "vorne": "Was prüft eine Plausibilitätsprüfung?",
+      "hinten": "Ob ein Wert inhaltlich stimmen kann, z. B. Lieferdatum nicht vor dem Bestelldatum oder Gesamtsumme passt zu den Positionen."
+    },
+    {
+      "id": "AP2-4-1-2-K3-3",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K5",
+      "vorne": "Formale Prüfung oder Plausibilitätsprüfung? a) Pflichtfeld E-Mail ist leer b) Geburtsdatum liegt in der Zukunft c) im Feld Menge steht Text",
+      "hinten": "a) formal\nb) Plausibilität (inhaltlich)\nc) formal"
+    },
+    {
+      "id": "AP2-4-1-2-K4-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K5",
+      "vorne": "Eine XML-Rechnung besteht die Prüfung gegen ihr Schema, die Gesamtsumme ist aber falsch berechnet. Warum fällt das nicht auf?",
+      "hinten": "Das Schema legt nur Aufbau und Datentypen fest. Die falsche Summe ist trotzdem eine gültige Zahl; ob sie zu den Positionen passt, prüft das Schema nicht."
+    },
+    {
+      "id": "AP2-4-1-2-K4-2",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K5",
+      "vorne": "Wie findet man inhaltliche Fehler, die eine Schemaprüfung nicht erkennt?",
+      "hinten": "Mit einer zusätzlichen Plausibilitätsprüfung, z. B. die Positionen nachrechnen und mit der angegebenen Gesamtsumme vergleichen."
+    },
+    {
+      "id": "AP2-4-4-1-K4-1",
+      "sp": "PB1-7-1-1",
+      "k": "PB1-7-1-1-K5",
+      "vorne": "Was leistet die Prüfung eines XML-Dokuments gegen ein Schema, und was nicht?",
+      "hinten": "Sie prüft den Aufbau (Elemente, Reihenfolge, Pflichtangaben) und die Datentypen. Ob die Werte inhaltlich richtig sind, z. B. ob eine Summe stimmt, prüft sie nicht."
+    },
+    {
+      "id": "AP2-4-4-1-K2-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K1",
+      "vorne": "Wie ist JSON aufgebaut?",
+      "hinten": "- Objekte in geschweiften Klammern `{ }`\n- Arrays in eckigen Klammern `[ ]`\n- ein Objekt enthält Paare aus Name und Wert: Name, Doppelpunkt, Wert; Paare durch Komma getrennt\n- Namen stehen in doppelten Anführungszeichen"
+    },
+    {
+      "id": "AP2-4-4-1-K2-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K1",
+      "vorne": "Welche Arten von Werten kennt JSON?",
+      "hinten": "Zeichenkette, Zahl, `true`/`false`, `null`, Objekt und Array."
+    },
+    {
+      "id": "AP2-4-4-1-K2-3",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K1",
+      "vorne": "Wie stellt man in JSON eine Liste von drei Kunden dar?",
+      "hinten": "Als Array mit drei Objekten: `[ {…}, {…}, {…} ]`"
+    },
+    {
+      "id": "PB1-7-1-2-K2-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K2",
+      "vorne": "Wandle die Tabellenzeilen (ip=192.168.0.5, mac=00:1A:2B:3C:4D:5E) und (ip=192.168.0.9, mac=00:1A:2B:3C:4D:6F) in ein JSON-Array um.",
+      "hinten": "`[ {\"ip\": \"192.168.0.5\", \"mac\": \"00:1A:2B:3C:4D:5E\"}, {\"ip\": \"192.168.0.9\", \"mac\": \"00:1A:2B:3C:4D:6F\"} ]`"
+    },
+    {
+      "id": "PB1-7-1-2-K3-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K3",
+      "vorne": "Wie bettest du die Verkaufsstellen eines Weinguts in dessen JSON-Dokument ein, und wann bettet man ein?",
+      "hinten": "`{\"name\": \"Weingut Klein\", \"verkaufsstellen\": [ {\"ort\": \"Mainz\"}, {\"ort\": \"Wiesbaden\"} ]}`\nEingebettet wird, worauf meist gemeinsam zugegriffen wird – statt es wie in Tabellen über Schlüssel zu verknüpfen."
+    },
+    {
+      "id": "AP2-4-4-1-K1-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K4",
+      "vorne": "Wie ist eine CSV-Datei aufgebaut?",
+      "hinten": "Jede Zeile ist ein Datensatz, die Werte sind durch ein Trennzeichen (Komma oder Semikolon) getrennt; die erste Zeile enthält oft die Spaltennamen. Es gibt keine Verschachtelung."
+    },
+    {
+      "id": "PB1-7-1-2-K4-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K4",
+      "vorne": "Ein Firmenname enthält das Trennzeichen, z. B. „Müller; Söhne“. Wie steht er in der CSV-Datei?",
+      "hinten": "In Anführungszeichen: `\"Müller; Söhne\";Mainz`"
+    },
+    {
+      "id": "AP2-4-4-1-K1-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K5",
+      "vorne": "Woran erkennt man CSV, XML und JSON am Aufbau?",
+      "hinten": "- CSV: Zeilen mit Werten, getrennt durch Komma oder Semikolon\n- XML: Elemente mit Tags in spitzen Klammern\n- JSON: geschweifte und eckige Klammern, Paare aus Name und Wert"
+    },
+    {
+      "id": "AP2-4-4-1-K5-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K5",
+      "vorne": "Welches Format passt jeweils? a) einfache Tabelle zum Öffnen in einer Tabellenkalkulation b) Daten einer Webschnittstelle c) Dokument mit strenger Struktur, das gegen ein Schema geprüft wird",
+      "hinten": "a) CSV\nb) JSON\nc) XML"
+    },
+    {
+      "id": "AP2-4-4-1-K5-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K5",
+      "vorne": "Warum eignet sich CSV schlecht für verschachtelte Daten wie Bestellungen mit Positionen?",
+      "hinten": "CSV kennt nur flache Zeilen und Spalten; Verschachtelung lässt sich nicht abbilden. Dafür eignen sich JSON oder XML."
+    },
+    {
+      "id": "AP2-4-4-3-K1-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K1",
+      "vorne": "In welchen Schritten übernimmt man Daten aus einer fremden Quelle in den eigenen Bestand?",
+      "hinten": "1. auslesen\n2. bereinigen und vereinheitlichen\n3. in die Zielstruktur umformen\n4. einspielen"
+    },
+    {
+      "id": "AP2-4-4-3-K1-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K1",
+      "vorne": "Was gehört zum Bereinigen und Vereinheitlichen von Daten?",
+      "hinten": "Formate angleichen (z. B. Datum), Schreibweisen vereinheitlichen, ungültige Werte korrigieren, Felder mit mehreren Werten aufteilen, Dubletten entfernen."
+    },
+    {
+      "id": "AP2-4-4-3-K1-3",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K1",
+      "vorne": "Was bedeutet es, Daten in die Zielstruktur umzuformen?",
+      "hinten": "Die Daten auf Tabellen, Spalten und Datentypen des Zielbestands abbilden, z. B. eine Spalte Name in Vorname und Nachname aufteilen oder Werte auf mehrere Tabellen verteilen."
+    },
+    {
+      "id": "AP2-4-4-3-K3-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K2",
+      "vorne": "Was ist ein Data Lake?",
+      "hinten": "Ein Speicher, der Daten aus vielen Quellen im Rohformat aufnimmt, strukturiert wie unstrukturiert; aufbereitet wird erst bei der Nutzung."
+    },
+    {
+      "id": "AP2-4-4-3-K5-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K2",
+      "vorne": "Was unterscheidet ein Data Warehouse von einem Data Lake?",
+      "hinten": "- Data Warehouse: Daten liegen bereits aufbereitet und strukturiert vor, bereit für Auswertungen\n- Data Lake: Daten liegen im Rohformat vor"
+    },
+    {
+      "id": "AP2-4-4-3-K4-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K3",
+      "vorne": "Was ist Open Data?",
+      "hinten": "Frei zugängliche Daten, die jeder nutzen und weiterverwenden darf, z. B. von Behörden; bereitgestellt meist über eine Schnittstelle (API) oder als Datei."
+    },
+    {
+      "id": "AP2-4-4-2-K1-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K1",
+      "vorne": "Was kennzeichnet eine REST-API?",
+      "hinten": "- Ressourcen werden über eine URL angesprochen\n- zwischen Client und Server werden nur Daten übertragen, z. B. JSON\n- jede Anfrage steht für sich (zustandslos)\n- Zugriff über die HTTP-Methoden"
+    },
+    {
+      "id": "AP2-4-4-2-K1-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K1",
+      "vorne": "Was bedeutet zustandslos bei REST?",
+      "hinten": "Jede Anfrage enthält alle nötigen Angaben; der Server speichert zwischen zwei Anfragen keinen Sitzungszustand des Clients."
+    },
+    {
+      "id": "AP2-4-4-2-K1-3",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K1",
+      "vorne": "Was ist bei REST eine Ressource?",
+      "hinten": "Ein Datenobjekt, das über eine eigene URL erreichbar ist, z. B. `/kunden/42` für den Kunden mit der Nummer 42."
+    },
+    {
+      "id": "AP2-4-4-2-K2-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K2",
+      "vorne": "Welche HTTP-Methoden gehören zu Lesen, Anlegen, Ändern und Löschen?",
+      "hinten": "- Lesen: GET\n- Anlegen: POST\n- Ändern: PUT oder PATCH\n- Löschen: DELETE"
+    },
+    {
+      "id": "AP2-4-4-2-K2-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K2",
+      "vorne": "Was ist der Unterschied zwischen PUT und PATCH?",
+      "hinten": "PUT ersetzt die Ressource vollständig, PATCH ändert nur einzelne Felder."
+    },
+    {
+      "id": "AP2-4-4-2-K2-3",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K2",
+      "vorne": "Ein Client sendet `DELETE /kunden/42`. Was soll der Server tun?",
+      "hinten": "Den Kunden mit der Nummer 42 löschen."
+    },
+    {
+      "id": "AP2-4-4-2-K3-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K3",
+      "vorne": "Aus welchen Bestandteilen besteht eine Anfrage an eine REST-API?",
+      "hinten": "- Methode, z. B. GET\n- Adresse mit Pfad und ggf. Abfrageparametern\n- Kopfzeilen (Header)\n- Datenteil (Body), z. B. JSON-Daten bei POST"
+    },
+    {
+      "id": "AP2-4-4-2-K3-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K3",
+      "vorne": "Was geben Pfad und Abfrageparameter in `https://shop.example/api/artikel?kategorie=3&seite=2` an?",
+      "hinten": "- Pfad `/api/artikel`: die Ressource, hier die Artikel\n- Abfrageparameter nach `?`, getrennt durch `&`: Kategorie 3, Seite 2"
+    },
+    {
+      "id": "AP2-4-4-2-K3-3",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K3",
+      "vorne": "Was steht in den Kopfzeilen einer Anfrage?",
+      "hinten": "Zusatzangaben zur Anfrage, z. B. das Format der Daten (`Content-Type: application/json`) oder Zugangsdaten wie ein API-Schlüssel."
+    },
+    {
+      "id": "AP2-4-4-2-K6-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K3",
+      "vorne": "Wozu dient ein API-Schlüssel?",
+      "hinten": "Er weist aus, welche Anwendung die API aufruft. So kann der Anbieter den Zugriff erlauben oder sperren und die Nutzung zählen und begrenzen. Er wird mit jeder Anfrage mitgeschickt."
+    },
+    {
+      "id": "AP2-4-4-2-K6-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K3",
+      "vorne": "Warum darf ein API-Schlüssel nicht offen im Quellcode einer Webseite stehen?",
+      "hinten": "Wer ihn kennt, kann die API im Namen des Inhabers nutzen, mit dessen Rechten und auf dessen Kosten."
+    },
+    {
+      "id": "AP2-4-4-2-K4-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K4",
+      "vorne": "Was bedeuten die Statuscode-Klassen 2xx, 4xx und 5xx?",
+      "hinten": "- 2xx: Anfrage erfolgreich\n- 4xx: Fehler beim Client\n- 5xx: Fehler beim Server"
+    },
+    {
+      "id": "AP2-4-4-2-K4-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K4",
+      "vorne": "Zu welcher Klasse gehören die Statuscodes 201, 403 und 503, und was sagt das jeweils aus?",
+      "hinten": "- 201 (Created): 2xx, Anfrage erfolgreich\n- 403 (Forbidden): 4xx, Fehler beim Client\n- 503 (Service Unavailable): 5xx, Fehler beim Server"
+    },
+    {
+      "id": "AP2-4-4-2-K4-3",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K4",
+      "vorne": "Ein Client fragt `/kunden/9999` ab, den Kunden gibt es nicht. Welcher Statuscode kommt zurück, und zu welcher Klasse gehört er?",
+      "hinten": "404 Not Found, Klasse 4xx: Der Fehler liegt bei der Anfrage des Clients."
+    },
+    {
+      "id": "AP2-4-4-2-K5-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K5",
+      "vorne": "Wie unterscheiden sich SOAP und REST?",
+      "hinten": "- SOAP: ein Protokoll; die Nachrichten sind immer in XML\n- REST: ein Architekturstil auf Grundlage von HTTP; nutzt URLs und HTTP-Methoden, Daten meist in JSON"
+    },
+    {
+      "id": "PB1-7-1-4-K6-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K6",
+      "vorne": "Was legst du fest, wenn du eine Schnittstelle zwischen zwei Anwendungen vereinbarst?",
+      "hinten": "- Austauschformat (z. B. JSON oder XML mit Schema)\n- Endpunkte mit Methoden\n- Fehler- und Statusrückmeldungen\n- Authentifizierung (API-Schlüssel, Token)"
+    },
+    {
+      "id": "PB1-7-1-5-K1-1",
+      "sp": "PB1-7-1-5",
+      "k": "PB1-7-1-5-K1",
+      "vorne": "Was ist das Hauptziel einer eRechnung?",
+      "hinten": "Die automatische Verarbeitung beim Empfänger; eine für Menschen lesbare Darstellung ist zweitrangig."
+    },
+    {
+      "id": "PB1-7-1-5-K2-1",
+      "sp": "PB1-7-1-5",
+      "k": "PB1-7-1-5-K2",
+      "vorne": "Ist eine Rechnung als reines PDF eine eRechnung? Begründe mit den Aspekten einer digitalen Rechnung.",
+      "hinten": "Nein (seit 2025): Ein PDF hat nur den visuellen Aspekt. Eine eRechnung braucht einen strukturierten Datenaspekt, der maschinell verarbeitet werden kann, z. B. XRechnung (XML) oder ZUGFeRD (PDF mit eingebettetem XML)."
+    },
+    {
+      "id": "PB1-7-1-5-K3-1",
+      "sp": "PB1-7-1-5",
+      "k": "PB1-7-1-5-K3",
+      "vorne": "Wie stellst du sicher, dass deine eRechnung-Implementierung der Spezifikation entspricht?",
+      "hinten": "- Test-Rechnungen bei einem zertifizierten Validator prüfen\n- Unit-Tests\n- zertifizierte Bibliothek nutzen\n- formale Validierung mit Schemadateien (XSD)"
+    },
+    {
+      "id": "AP2-5-2-1-K6-1",
+      "sp": "PB1-7-1-5",
+      "k": "PB1-7-1-5-K4",
+      "vorne": "Warum dürfen echte Kundendaten nicht ungeschützt als Testdaten verwendet werden?",
+      "hinten": "Es sind personenbezogene Daten, die dem Datenschutz (DSGVO) unterliegen. Testumgebungen sind oft schwächer geschützt und mehr Personen haben Zugriff. Deshalb anonymisieren oder künstliche Testdaten verwenden."
+    },
+    {
+      "id": "PB1-7-1-5-K4-1",
+      "sp": "PB1-7-1-5",
+      "k": "PB1-7-1-5-K4",
+      "vorne": "Was beachtest du, wenn du einen Online-Validator für eRechnungen nutzt?",
+      "hinten": "Keine echten Firmen- oder Kundendaten hochladen, nur Testdaten; die Ergebnisse können fehlerhaft sein, wenn das Werkzeug nicht geprüft und zertifiziert ist."
+    },
+    {
+      "id": "PB1-7-1-2-K6-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K6",
+      "vorne": "Was legt ein Datenformat fest?",
+      "hinten": "Wie die Daten in der Datei strukturiert abgelegt sind und wie ein Programm sie beim Verarbeiten interpretieren muss. Ohne Kenntnis des Formats sind die Daten für ein Programm nicht nutzbar."
+    },
+    {
+      "id": "PB1-7-1-2-K6-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K6",
+      "vorne": "Warum erleichtern offene Standardformate wie CSV oder JSON den Datenaustausch mehr als proprietäre Formate?",
+      "hinten": "Ihre Spezifikation ist öffentlich, also kann jedes Programm sie korrekt lesen und schreiben. Proprietäre Formate sind auf die Software eines Herstellers zugeschnitten, ihre Spezifikation ist oft nicht offen – andere Programme verarbeiten sie kaum oder fehlerhaft."
+    },
+    {
+      "id": "PB1-7-1-2-K7-1",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K7",
+      "vorne": "Was bedeuten Serialisieren und Parsen beim Datenaustausch mit JSON?",
+      "hinten": "- Serialisieren: die Datenstruktur des Programms (Objekt, Liste) in JSON-Text umwandeln, z. B. für eine Datei oder den Body einer HTTP-Anfrage\n- Parsen: JSON-Text einlesen und wieder in Objekte und Listen umwandeln, mit denen das Programm arbeiten kann"
+    },
+    {
+      "id": "PB1-7-1-2-K7-2",
+      "sp": "PB1-7-1-2",
+      "k": "PB1-7-1-2-K7",
+      "vorne": "Eine geparste JSON-Datei enthält ein Objekt mit dem Schlüssel `vertraege`, darin ein Array von Objekten mit dem Schlüssel `mieter`. Wie greifst du auf den Mieter des ersten Vertrags zu?",
+      "hinten": "`daten[\"vertraege\"][0][\"mieter\"]` – von außen nach innen: Schlüssel für das Objekt, Index 0 für das erste Array-Element, dann wieder ein Schlüssel."
+    },
+    {
+      "id": "PB1-7-1-3-K4-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K4",
+      "vorne": "An welchen vier Merkmalen unterscheidet man Open Data und Closed Data?",
+      "hinten": "Zugänglichkeit, maschinelle Verarbeitbarkeit, Kosten und Nutzungsrechte. Open Data: für alle, maschinenlesbar, kostenlos, frei weiterverwendbar; Closed Data ist in mindestens einem dieser Punkte eingeschränkt."
+    },
+    {
+      "id": "PB1-7-1-3-K4-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K4",
+      "vorne": "Eine Behörde stellt Messwerte frei ins Netz, aber nur als eingescannte PDF-Tabellen. Open oder Closed Data?",
+      "hinten": "Eine Zwischenform: frei zugänglich und kostenlos, aber kaum maschinell verarbeitbar. Der Übergang zwischen Open und Closed Data ist fließend."
+    },
+    {
+      "id": "PB1-7-1-3-K8-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K8",
+      "vorne": "Was ist ein Data Warehouse?",
+      "hinten": "Eine zentrale Datenbank, in die Daten aus mehreren Quellen aufbereitet und in ein festes, strukturiertes Datenmodell übernommen werden; optimiert für Berichte und Analysen großer Datenmengen (Reporting, OLAP, Data Mining)."
+    },
+    {
+      "id": "PB1-7-1-3-K8-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K8",
+      "vorne": "Ein Unternehmen will Sensordaten, Logdateien und Bilder sammeln, ohne schon zu wissen, welche Auswertungen später kommen. Data Warehouse oder Data Lake?",
+      "hinten": "Data Lake: Er nimmt große Mengen unterschiedlicher, auch unstrukturierter Daten im Rohformat auf; die Struktur wird erst bei der Auswertung festgelegt. Ein Data Warehouse bräuchte vorab ein festes Schema."
+    },
+    {
+      "id": "PB1-7-1-3-K9-1",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K9",
+      "vorne": "Ordne zu: Kundentabelle, E-Mail, Sprachnachricht – strukturiert, semistrukturiert oder unstrukturiert?",
+      "hinten": "- Kundentabelle: strukturiert (festes Format)\n- E-Mail: semistrukturiert (Kopfzeilen fest, Text frei)\n- Sprachnachricht: unstrukturiert (kein vorgegebenes Format)"
+    },
+    {
+      "id": "PB1-7-1-3-K9-2",
+      "sp": "PB1-7-1-3",
+      "k": "PB1-7-1-3-K9",
+      "vorne": "Warum sind unstrukturierte Daten schwer automatisch auszuwerten?",
+      "hinten": "Es gibt keine festen Felder, über die ein Programm gezielt auf Werte zugreifen kann; Inhalte aus Text, Bild oder Ton müssen erst mit aufwendigen Verfahren (z. B. Texterkennung, KI) herausgeholt werden."
+    },
+    {
+      "id": "PB1-7-1-4-K7-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K7",
+      "vorne": "Was unterscheidet eine interne von einer externen Schnittstelle einer Software?",
+      "hinten": "- intern: verbindet Module oder Komponenten innerhalb derselben Software\n- extern: verbindet die Software mit Benutzern, Geräten oder anderen Systemen"
+    },
+    {
+      "id": "PB1-7-1-4-K7-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K7",
+      "vorne": "Warum braucht eine Unternehmenssoftware externe Schnittstellen?",
+      "hinten": "Damit sie mit anderen, oft heterogenen Systemen Daten austauschen kann. Ohne sie entstehen Insellösungen, in denen Daten doppelt erfasst oder von Hand übertragen werden."
+    },
+    {
+      "id": "PB1-7-1-4-K8-1",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K8",
+      "vorne": "Was bedeutet es, dass PUT idempotent ist, POST aber nicht?",
+      "hinten": "Eine mehrfach gesendete PUT-Anfrage führt immer zum gleichen Ergebnis (die Ressource hat denselben Stand). Jede wiederholte POST-Anfrage legt eine weitere Ressource an."
+    },
+    {
+      "id": "PB1-7-1-4-K8-2",
+      "sp": "PB1-7-1-4",
+      "k": "PB1-7-1-4-K8",
+      "vorne": "Ein Client schickt nach einem Zeitüberlauf dieselbe Anfrage zweimal. Wo entsteht ein doppelter Datensatz – bei `POST /bestellungen` oder bei `PUT /bestellungen/17`?",
+      "hinten": "Bei `POST /bestellungen`: Jede POST-Anfrage legt eine neue Bestellung an. `PUT /bestellungen/17` ersetzt beide Male dieselbe Bestellung, der Zustand bleibt gleich."
+    },
+    {
+      "id": "PB1-7-1-6-K1-1",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K1",
+      "vorne": "Aus welchen Teilen besteht eine SOAP-Nachricht?",
+      "hinten": "XML-Dokument mit Envelope (Umschlag, Wurzel), optionalem Header (Zusatzangaben wie Sicherheit) und Body (Nutzdaten); im Fehlerfall enthält der Body ein Fault-Element."
+    },
+    {
+      "id": "PB1-7-1-6-K1-2",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K1",
+      "vorne": "Wozu dient eine WSDL-Datei bei einem SOAP-Webservice?",
+      "hinten": "Sie beschreibt die Schnittstelle des Dienstes in XML: angebotene Operationen, Parameter und Datentypen sowie die Adresse. Clients können daraus automatisch Aufrufcode erzeugen."
+    },
+    {
+      "id": "PB1-7-1-6-K2-1",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K2",
+      "vorne": "Nenne die sechs Prinzipien (Constraints) von REST.",
+      "hinten": "Client-Server, Zustandslosigkeit, Caching, einheitliche Schnittstelle, Schichtensystem (Layered System), Code on Demand (optional)."
+    },
+    {
+      "id": "PB1-7-1-6-K2-2",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K2",
+      "vorne": "Warum erleichtert die Zustandslosigkeit eines REST-Dienstes die Lastverteilung?",
+      "hinten": "Jede Anfrage enthält alle nötigen Informationen, der Server speichert keine Sitzung. Deshalb kann jede Anfrage von einem beliebigen Server im Verbund beantwortet werden."
+    },
+    {
+      "id": "PB1-7-1-6-K3-1",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K3",
+      "vorne": "Wann spricht etwas für SOAP statt REST?",
+      "hinten": "Bei hohen Anforderungen an Sicherheit und Transaktionen, wenn ein fest beschriebener Vertrag (WSDL) gewünscht ist oder wenn ein bestehendes System nur SOAP anbietet."
+    },
+    {
+      "id": "PB1-7-1-6-K3-2",
+      "sp": "PB1-7-1-6",
+      "k": "PB1-7-1-6-K3",
+      "vorne": "Eine IoT-Wetterstation soll Messwerte an einen Cloud-Dienst senden. SOAP oder REST? Begründe.",
+      "hinten": "REST: schlank, wenig Overhead, einfache HTTP-Methoden und JSON – passend für Geräte mit wenig Rechenleistung und Bandbreite. SOAP wäre mit XML-Umschlag und Zusatzstandards unnötig schwer."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-4-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-4-4-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-1-K6-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-2-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-4-3-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB1-7-1-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-1-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-2-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-2-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-5-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-7-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S171, buch:GS-5.2.6-S502)"
+    },
+    {
+      "id": "PB1-7-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S171, buch:GS-5.2.6-S502)"
+    },
+    {
+      "id": "PB1-7-1-2-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S187, buch:FS2-2.3.7-S189)"
+    },
+    {
+      "id": "PB1-7-1-2-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S187, buch:FS2-2.3.7-S189)"
+    },
+    {
+      "id": "PB1-7-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S170, buch:FS2-3.1.3-S221)"
+    },
+    {
+      "id": "PB1-7-1-3-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S170, buch:FS2-3.1.3-S221)"
+    },
+    {
+      "id": "PB1-7-1-3-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S178)"
+    },
+    {
+      "id": "PB1-7-1-3-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.3-S178)"
+    },
+    {
+      "id": "PB1-7-1-3-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.2.1-S226, buch:GS-5.2.2-S478, buch:FS-3.7.1-S263)"
+    },
+    {
+      "id": "PB1-7-1-3-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-3.2.1-S226, buch:GS-5.2.2-S478, buch:FS-3.7.1-S263)"
+    },
+    {
+      "id": "PB1-7-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.2.1-S22)"
+    },
+    {
+      "id": "PB1-7-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.2.1-S22)"
+    },
+    {
+      "id": "PB1-7-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S190)"
+    },
+    {
+      "id": "PB1-7-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.3.7-S190)"
+    },
+    {
+      "id": "PB1-7-1-6-K1-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S174)"
+    },
+    {
+      "id": "PB1-7-1-6-K1-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S174)"
+    },
+    {
+      "id": "PB1-7-1-6-K2-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    },
+    {
+      "id": "PB1-7-1-6-K2-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    },
+    {
+      "id": "PB1-7-1-6-K3-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    },
+    {
+      "id": "PB1-7-1-6-K3-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.2.2-S175)"
+    }
+  ]
+}

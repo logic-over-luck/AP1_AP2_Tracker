@@ -1,0 +1,829 @@
+{
+  "ordner": "PB1-9",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-9.json",
+  "karten": [
+    {
+      "id": "AP2-5-5-1-K5-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K1",
+      "vorne": "Nenne vier qualitätssichernde Maßnahmen für ein Softwareprojekt.",
+      "hinten": "- einheitliches Vorgehensmodell\n- festgelegte Testverfahren\n- Code-Reviews\n- Vorgaben für die Dokumentation"
+    },
+    {
+      "id": "AP2-5-5-1-K5-2",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K1",
+      "vorne": "Wie trägt ein Code-Review zur Qualitätssicherung bei?",
+      "hinten": "Andere Entwickler prüfen den Code vor der Übernahme und finden so Fehler und Abweichungen von Vorgaben, bevor der Code ausgeführt oder ausgeliefert wird."
+    },
+    {
+      "id": "PB1-9-1-1-K2-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K2",
+      "vorne": "Ein Team will Qualität nur mit automatischen Code-Reviews und Unit-Tests sichern. Nimm Stellung.",
+      "hinten": "Reicht nicht: Beide prüfen einzelne Bausteine und Regeln im Code, aber nicht die Bedienung, das Zusammenspiel der Komponenten und ob die Anforderungen erfüllt sind. Dafür sind weitere, auch manuelle Tests nötig (Integration, System, Abnahme)."
+    },
+    {
+      "id": "AP2-5-5-1-K2-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K3",
+      "vorne": "Was ist der kontinuierliche Verbesserungsprozess (KVP)?",
+      "hinten": "Die ständige Verbesserung von Produkten und Abläufen in kleinen Schritten, an der alle Mitarbeiter mitwirken."
+    },
+    {
+      "id": "AP2-5-5-1-K2-2",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K3",
+      "vorne": "Wie hängen PDCA-Zyklus und KVP zusammen?",
+      "hinten": "Der PDCA-Zyklus wird immer wieder durchlaufen; jeder Durchlauf ist ein kleiner Verbesserungsschritt im KVP."
+    },
+    {
+      "id": "AP2-5-5-1-K3-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K4",
+      "vorne": "Was ist eine Kennzahl und wozu dient sie im Qualitätsmanagement?",
+      "hinten": "Eine Zahl, die einen Sachverhalt messbar macht. Sie dient dazu, die Zielerreichung zu messen, Entwicklungen zu vergleichen und Abweichungen früh zu erkennen."
+    },
+    {
+      "id": "AP2-5-5-1-K4-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K4",
+      "vorne": "Nenne vier Beispiele für Kennzahlen im Qualitätsmanagement der IT.",
+      "hinten": "- Anzahl gefundener Fehler\n- Testabdeckung\n- Bearbeitungszeit von Störungen\n- Verfügbarkeit"
+    },
+    {
+      "id": "AP2-5-5-3-K1-1",
+      "sp": "PB1-9-1-2",
+      "k": "PB1-9-1-2-K1",
+      "vorne": "Was ist ein Paritätsbit?",
+      "hinten": "Ein zusätzliches Bit, das die Anzahl der Einsen auf eine gerade (gerade Parität) oder ungerade Zahl (ungerade Parität) ergänzt."
+    },
+    {
+      "id": "AP2-5-5-3-K1-2",
+      "sp": "PB1-9-1-2",
+      "k": "PB1-9-1-2-K1",
+      "vorne": "Die Bitfolge 1011001 soll ein Paritätsbit für gerade Parität erhalten. Welchen Wert hat es?",
+      "hinten": "0: Die Folge enthält schon 4 Einsen, also eine gerade Anzahl."
+    },
+    {
+      "id": "AP2-5-5-3-K1-3",
+      "sp": "PB1-9-1-2",
+      "k": "PB1-9-1-2-K1",
+      "vorne": "Die Bitfolge 1011001 soll ein Paritätsbit für ungerade Parität erhalten. Welchen Wert hat es?",
+      "hinten": "1: Die Folge enthält 4 Einsen; mit dem Paritätsbit werden es 5, also eine ungerade Anzahl."
+    },
+    {
+      "id": "AP2-5-5-3-K2-1",
+      "sp": "PB1-9-1-2",
+      "k": "PB1-9-1-2-K2",
+      "vorne": "Was kann ein einzelnes Paritätsbit leisten und was nicht?",
+      "hinten": "- erkennt einen einzelnen Bitfehler\n- kann ihn nicht berichtigen, weil es nicht zeigt, welches Bit falsch ist"
+    },
+    {
+      "id": "AP2-5-5-3-K2-2",
+      "sp": "PB1-9-1-2",
+      "k": "PB1-9-1-2-K2",
+      "vorne": "Warum bleibt ein Fehler in zwei Bits mit einem Paritätsbit unerkannt?",
+      "hinten": "Zwei gekippte Bits ändern die Anzahl der Einsen um eine gerade Zahl; die Parität stimmt wieder."
+    },
+    {
+      "id": "AP2-5-5-3-K3-1",
+      "sp": "PB1-9-1-2",
+      "k": "PB1-9-1-2-K3",
+      "vorne": "Was bedeutet Redundanz als Prüfverfahren?",
+      "hinten": "Zusätzliche Informationen werden mitgespeichert oder mitgesendet, die für den Inhalt nicht nötig sind, damit Fehler auffallen. Beispiel: das Paritätsbit."
+    },
+    {
+      "id": "AP2-5-1-1-K1-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K1",
+      "vorne": "Worin unterscheiden sich statische und dynamische Testverfahren?",
+      "hinten": "- statisch: Das Programm wird **nicht** ausgeführt, der Code oder das Dokument wird geprüft\n- dynamisch: Das Programm wird mit Testdaten ausgeführt"
+    },
+    {
+      "id": "AP2-5-1-1-K1-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K1",
+      "vorne": "Nenne je ein Beispiel für ein statisches und ein dynamisches Testverfahren.",
+      "hinten": "- statisch: Review (auch Schreibtischtest)\n- dynamisch: Testlauf mit Testdaten"
+    },
+    {
+      "id": "AP2-5-1-1-K1-3",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K1",
+      "vorne": "Kollegen lesen den Quellcode gemeinsam Zeile für Zeile durch und suchen nach Fehlern. Welche Art von Testverfahren ist das?",
+      "hinten": "Ein statisches Testverfahren (Review): Der Code wird geprüft, ohne ihn auszuführen."
+    },
+    {
+      "id": "AP2-5-1-1-K2-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K2",
+      "vorne": "Was ist ein Black-Box-Test?",
+      "hinten": "Ein Test gegen die Anforderungen: Der Tester prüft Eingaben und Ausgaben, ohne den Code zu kennen."
+    },
+    {
+      "id": "AP2-5-1-1-K2-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K2",
+      "vorne": "Woraus werden beim Black-Box-Test die Testfälle abgeleitet?",
+      "hinten": "Aus den Anforderungen (Spezifikation), nicht aus dem Code."
+    },
+    {
+      "id": "AP2-5-1-1-K3-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K2",
+      "vorne": "Was ist ein White-Box-Test?",
+      "hinten": "Ein Test, bei dem die Testfälle aus dem Code abgeleitet werden, damit möglichst alle Teile des Codes durchlaufen werden."
+    },
+    {
+      "id": "AP2-5-1-1-K3-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K2",
+      "vorne": "Was ist der Kernunterschied zwischen Black-Box- und White-Box-Test?",
+      "hinten": "- Black-Box: Code unbekannt, Prüfung gegen die Anforderungen\n- White-Box: Code bekannt, Testfälle aus dem Code abgeleitet"
+    },
+    {
+      "id": "AP2-5-1-1-K4-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K3",
+      "vorne": "Nenne zwei Vorteile des White-Box-Tests gegenüber dem Black-Box-Test.",
+      "hinten": "- Fehler lassen sich genauer eingrenzen (Stelle im Code)\n- hohe Abdeckung des Codes, auch selten durchlaufene Teile werden geprüft"
+    },
+    {
+      "id": "PB1-9-1-3-K4-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K4",
+      "vorne": "Zulässig ist ein Alter von 18 bis 65. Welche Werte prüfst du im Extremwertetest und warum?",
+      "hinten": "17, 18, 65 und 66 – die kleinsten und größten zulässigen Werte und knapp darüber und darunter, weil an Grenzen besonders oft Fehler stecken (z. B. < statt <=)."
+    },
+    {
+      "id": "AP2-5-1-2-K1-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Bringe Systemtest, Komponententest und Integrationstest in die richtige Reihenfolge.",
+      "hinten": "1. Komponententest\n2. Integrationstest\n3. Systemtest"
+    },
+    {
+      "id": "AP2-5-1-2-K1-2",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Was wird beim Integrationstest geprüft?",
+      "hinten": "Das Zusammenspiel mehrerer bereits getesteter Komponenten, vor allem ihre Schnittstellen."
+    },
+    {
+      "id": "AP2-5-1-2-K1-3",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Was wird beim Systemtest geprüft?",
+      "hinten": "Das vollständige System als Ganzes gegen die Anforderungen, in einer Umgebung, die dem späteren Betrieb möglichst nahekommt."
+    },
+    {
+      "id": "AP2-5-1-2-K2-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Was ist ein Unit-Test?",
+      "hinten": "Ein Test, der einen einzelnen Baustein (Komponente, Modul, z. B. eine Funktion oder Klasse) getrennt vom Rest automatisch prüft."
+    },
+    {
+      "id": "AP2-5-1-2-K2-2",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Welchen Zweck hat ein Unit-Test?",
+      "hinten": "Fehler in einem einzelnen Baustein früh und eindeutig zu finden; weil er automatisch läuft, lässt er sich nach jeder Änderung wiederholen."
+    },
+    {
+      "id": "AP2-5-1-2-K2-3",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Welche zwei anderen Bezeichnungen gibt es für den Komponententest?",
+      "hinten": "Modultest und Unit-Test."
+    },
+    {
+      "id": "AP2-5-1-2-K5-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K1",
+      "vorne": "Welche Teststufe folgt auf den Systemtest und wo findet sie statt?",
+      "hinten": "Der Abnahmetest; er ist die letzte Stufe und findet beim Kunden statt."
+    },
+    {
+      "id": "AP2-5-1-2-K4-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K2",
+      "vorne": "Was prüft ein Lasttest?",
+      "hinten": "Das Verhalten des Systems unter der erwarteten Last, z. B. bei der geplanten Zahl gleichzeitiger Benutzer."
+    },
+    {
+      "id": "AP2-5-1-2-K4-2",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K2",
+      "vorne": "Was prüft ein Performancetest?",
+      "hinten": "Die Antwortzeiten des Systems."
+    },
+    {
+      "id": "AP2-5-1-2-K4-3",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K2",
+      "vorne": "Was prüft ein Belastungstest?",
+      "hinten": "Das Verhalten des Systems an und über seiner Belastungsgrenze."
+    },
+    {
+      "id": "AP2-5-1-2-K3-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K3",
+      "vorne": "Was ist ein End-to-End-Test?",
+      "hinten": "Ein Test, der einen vollständigen Ablauf aus Sicht des Benutzers durch das ganze System prüft, von der Eingabe bis zum Ergebnis."
+    },
+    {
+      "id": "PB1-9-1-4-K4-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K4",
+      "vorne": "Warum muss ein Testkonzept alle Teststufen vorsehen?",
+      "hinten": "Jede Stufe findet andere Fehler: Unit-Tests Fehler in Bausteinen, Integrationstests Fehler an Schnittstellen, Systemtests fehlende Anforderungen und Lastprobleme im Ganzen, Abnahmetests Abweichungen von den Erwartungen des Kunden. Keine Stufe ersetzt eine andere."
+    },
+    {
+      "id": "PB1-9-1-5-K1-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K1",
+      "vorne": "Nenne Inhalte eines Testkonzepts.",
+      "hinten": "- Teststrategie: Testziele, Testmethoden\n- Teststufen und ihr Zusammenspiel\n- Testumgebung, Automatisierung\n- Umfang der Testdokumentation\n- Testplan: wer testet was wann\n- Auswertung der Ergebnisse\n- Aufwand und Kosten"
+    },
+    {
+      "id": "AP2-5-2-4-K1-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K2",
+      "vorne": "Nenne die Schritte des Testprozesses in der richtigen Reihenfolge.",
+      "hinten": "1. Tests planen\n2. Testfälle und Testdaten vorbereiten\n3. durchführen\n4. protokollieren\n5. auswerten\n6. Fehler beheben lassen und erneut testen"
+    },
+    {
+      "id": "AP2-5-2-4-K4-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K3",
+      "vorne": "Welche Inhalte gehören in ein Testprotokoll?",
+      "hinten": "- Testfall\n- Eingabedaten\n- erwartetes Ergebnis\n- tatsächliches Ergebnis\n- Bewertung (bestanden/fehlgeschlagen)\n- Tester und Datum"
+    },
+    {
+      "id": "AP2-5-2-4-K3-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K4",
+      "vorne": "Wie wertet man ein Testprotokoll aus?",
+      "hinten": "Für jeden Testfall erwartetes und tatsächliches Ergebnis vergleichen, als bestanden oder fehlgeschlagen bewerten und die fehlgeschlagenen Fälle als Fehler zur Behebung weitergeben."
+    },
+    {
+      "id": "PB1-9-1-5-K5-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K5",
+      "vorne": "Was enthält ein Abnahmeprotokoll für Software zusätzlich zu den allgemeinen Inhalten, und wohin wird es danach übernommen?",
+      "hinten": "Zusätzlich Softwareversion und Ergebnis der Abnahmetests. Danach wird es im Abschlussprotokoll mit Soll-Ist-Vergleich und Erfahrungen (Lessons Learned) zusammengeführt."
+    },
+    {
+      "id": "AP2-6-5-3-K1-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K1",
+      "vorne": "Unterscheide Benutzerhandbuch und Handbuch für Systembetreuer nach Zielgruppe und Inhalt.",
+      "hinten": "- Benutzerhandbuch: für Anwender; Bedienung und Arbeitsabläufe, ohne technische Einzelheiten\n- Systembetreuer: für Administratoren; Installation, Konfiguration, Datensicherung, Wartung, Fehlerbehebung"
+    },
+    {
+      "id": "AP2-6-5-3-K1-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K1",
+      "vorne": "Gehört die Einrichtung der Datenbankverbindung einer Anwendung ins Benutzerhandbuch oder ins Handbuch für Systembetreuer?",
+      "hinten": "Ins Handbuch für Systembetreuer: Es ist eine technische Einrichtungsaufgabe, keine Bedienung."
+    },
+    {
+      "id": "AP2-6-5-3-K2-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K2",
+      "vorne": "Was gehört in eine Programmdokumentation?",
+      "hinten": "Die Beschreibung des Programms selbst, z. B. Aufbau, Schnittstellen und Datenmodell – für alle, die es warten oder erweitern."
+    },
+    {
+      "id": "PB1-9-1-6-K2-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K2",
+      "vorne": "Was dokumentierst du je Methode, und was zusätzlich, wenn du eine Klasse einer Bibliothek erweiterst?",
+      "hinten": "Je Methode: Zweck, Parameter, Rückgabewert, Voraussetzungen. Bei der Erweiterung zusätzlich Konstruktoren, geerbte Methoden und implementierte Interfaces."
+    },
+    {
+      "id": "AP2-6-5-3-K2-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K3",
+      "vorne": "Was gehört in eine Konfigurationsdokumentation?",
+      "hinten": "Wie das System eingerichtet ist, z. B. Einstellungen, Versionen und Abhängigkeiten."
+    },
+    {
+      "id": "AP2-6-5-3-K3-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K3",
+      "vorne": "Programm- oder Konfigurationsdokumentation? a) Datenmodell der Datenbank b) eingesetzte Version der Laufzeitumgebung c) Schnittstelle zu einem Fremdsystem d) Port des Webservers",
+      "hinten": "- a) Programmdokumentation\n- b) Konfigurationsdokumentation\n- c) Programmdokumentation\n- d) Konfigurationsdokumentation"
+    },
+    {
+      "id": "AP2-6-5-3-K4-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K4",
+      "vorne": "Wozu dienen Checklisten?",
+      "hinten": "Bei wiederkehrenden Vorgängen wird kein Schritt vergessen; der Ablauf ist einheitlich, und das Abhaken weist nach, was erledigt ist."
+    },
+    {
+      "id": "PB1-9-1-1-K5-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K5",
+      "vorne": "Warum sollen Tests schon zu Projektbeginn starten und nicht erst nach der Programmierung?",
+      "hinten": "Weil die Kosten der Fehlerbehebung steigen, je später ein Fehler gefunden wird: früh wird nur ein Dokument korrigiert, spät müssen Entwurf, Code und Tests geändert werden."
+    },
+    {
+      "id": "PB1-9-1-1-K5-2",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K5",
+      "vorne": "In welcher Phase ist die Behebung eines Fehlers am teuersten – und warum?",
+      "hinten": "Im laufenden Betrieb: Neben der Änderung von Entwurf, Code und Tests kommen Ausfälle beim Kunden, Support und ein Update für alle Installationen dazu."
+    },
+    {
+      "id": "PB1-9-1-1-K6-1",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K6",
+      "vorne": "Alle 120 Testfälle einer Anwendung sind bestanden. Ist die Software damit fehlerfrei?",
+      "hinten": "Nein. Tests sind Stichproben: Sie zeigen nur, dass diese 120 Fälle funktionieren. Fehler bei nicht getesteten Eingaben oder Abläufen bleiben möglich."
+    },
+    {
+      "id": "PB1-9-1-1-K6-2",
+      "sp": "PB1-9-1-1",
+      "k": "PB1-9-1-1-K6",
+      "vorne": "Welche zwei Folgerungen zieht man daraus, dass Tests keine Fehlerfreiheit beweisen?",
+      "hinten": "- auch nichtfunktionale Anforderungen prüfen (z. B. Antwortzeit, Bedienbarkeit)\n- Tests durch weitere Prüfverfahren wie Reviews ergänzen"
+    },
+    {
+      "id": "PB1-9-1-3-K6-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K6",
+      "vorne": "Nenne je zwei Vorteile statischer und dynamischer Testverfahren.",
+      "hinten": "- **statisch:** früh möglich, Fehler direkt an der Ursache, prüft auch Konventionen und Wartbarkeit\n- **dynamisch:** findet Laufzeitfehler, prüft Zusammenspiel und Zeitverhalten"
+    },
+    {
+      "id": "PB1-9-1-3-K6-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K6",
+      "vorne": "Welche Fehler findet ein statisches Verfahren grundsätzlich nicht?",
+      "hinten": "Fehler, die erst beim Ausführen entstehen (Laufzeitfehler), z. B. ein Absturz durch fehlenden Speicher oder ein falsches Zeitverhalten."
+    },
+    {
+      "id": "PB1-9-1-3-K7-1",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K7",
+      "vorne": "Eine Methode wird intern umgebaut, die Anforderungen bleiben gleich. Welche Testfälle müssen überprüft werden – Black-Box oder White-Box?",
+      "hinten": "Die **White-Box**-Testfälle: Sie hängen am Code, die bisher erreichte Überdeckung ist nicht mehr gesichert. Black-Box-Testfälle bleiben gültig, solange die Spezifikation gleich bleibt."
+    },
+    {
+      "id": "PB1-9-1-3-K7-2",
+      "sp": "PB1-9-1-3",
+      "k": "PB1-9-1-3-K7",
+      "vorne": "Nenne je einen Nachteil von Black-Box- und White-Box-Test.",
+      "hinten": "- **Black-Box:** zeigt nicht, wo der Fehler im Code liegt\n- **White-Box:** an den Code gebunden, nach jeder Änderung anzupassen, erst mit fertigem Code vollständig"
+    },
+    {
+      "id": "PB1-9-1-4-K6-1",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K6",
+      "vorne": "Welche Frage beantworten Testverfahren, Testarten und Teststufen?",
+      "hinten": "- Testverfahren: wie getestet wird (statisch oder dynamisch)\n- Testarten: was geprüft wird (z. B. Funktion, Performance)\n- Teststufen: in welchem Entwicklungsstand getestet wird (vom Komponenten- bis zum Abnahmetest)"
+    },
+    {
+      "id": "PB1-9-1-4-K6-2",
+      "sp": "PB1-9-1-4",
+      "k": "PB1-9-1-4-K6",
+      "vorne": "Warum sollte ein Entwickler sein eigenes Programm möglichst nicht allein testen?",
+      "hinten": "Er prüft nur, was er sich selbst gedacht hat, und übersieht so eigene Denkfehler und Missverständnisse der Anforderungen; unabhängige Tester finden diese Fehler eher."
+    },
+    {
+      "id": "PB1-9-1-5-K6-1",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K6",
+      "vorne": "Woraus leitet man Testfälle ab, wenn agil mit User Stories gearbeitet wird?",
+      "hinten": "Aus den **Akzeptanzkriterien** der User Stories: Jedes Kriterium ergibt mindestens einen Testfall."
+    },
+    {
+      "id": "PB1-9-1-5-K6-2",
+      "sp": "PB1-9-1-5",
+      "k": "PB1-9-1-5-K6",
+      "vorne": "Was legt der Testplan fest, bevor Testfälle geschrieben werden?",
+      "hinten": "Umfang des Tests, benötigte Ressourcen (Personen, Umgebung, Zeit) und welche Bereiche vorrangig getestet werden."
+    },
+    {
+      "id": "PB1-9-1-6-K6-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K6",
+      "vorne": "Nenne sechs Gliederungspunkte eines Benutzerhandbuchs.",
+      "hinten": "- Inhaltsverzeichnis\n- Einleitung (Zweck, Zielgruppe)\n- Installation mit Systemvoraussetzungen\n- Bedienung mit Beispielen und Screenshots\n- Fehlerbehandlung mit Meldungen und Abhilfe\n- Support/Kontakt, FAQ, Glossar"
+    },
+    {
+      "id": "PB1-9-1-6-K6-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K6",
+      "vorne": "Was gehört in den Abschnitt „Fehlerbehandlung“ eines Benutzerhandbuchs?",
+      "hinten": "Die möglichen Fehlermeldungen mit ihrer Bedeutung und was der Benutzer jeweils tun kann (Abhilfe), notfalls der Verweis auf den Support."
+    },
+    {
+      "id": "PB1-9-1-6-K7-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K7",
+      "vorne": "Warum ist ein schwer verständliches Handbuch für den Hersteller teuer?",
+      "hinten": "Benutzer finden die Antwort nicht und wenden sich an den Support – jede vermeidbare Anfrage kostet Zeit und Geld."
+    },
+    {
+      "id": "PB1-9-1-6-K7-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K7",
+      "vorne": "Nenne vier Kriterien, an denen du ein gutes Benutzerhandbuch erkennst.",
+      "hinten": "- verständlich für die Zielgruppe (Glossar)\n- übersichtlich, keine Textwüsten\n- an den Aufgaben der Benutzer ausgerichtet\n- aktuell, widerspruchsfrei und vollständig"
+    },
+    {
+      "id": "PB1-9-1-6-K9-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K9",
+      "vorne": "Verbessere: `int t = 30; // Tage bis zur Mahnung`",
+      "hinten": "Sprechenden Namen statt Kommentar: `int tageBisMahnung = 30;` – der Kommentar wird überflüssig."
+    },
+    {
+      "id": "PB1-9-1-6-K9-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K9",
+      "vorne": "Was soll ein Kommentar im Quellcode erklären, was nicht?",
+      "hinten": "Erklären, **warum** etwas so gelöst ist (Gründe, Annahmen, Vorgaben). Nicht nacherzählen, **was** der Code tut – das sollen Namen und Struktur zeigen."
+    },
+    {
+      "id": "PB1-9-1-6-K10-1",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K10",
+      "vorne": "Wie entsteht eine generierte Schnittstellendokumentation?",
+      "hinten": "Über Klassen und Methoden stehen Dokumentationskommentare (Beschreibung, Parameter, Rückgabewert, Ausnahmen); ein Werkzeug liest sie aus dem Quellcode und erzeugt z. B. HTML-Seiten."
+    },
+    {
+      "id": "PB1-9-1-6-K10-2",
+      "sp": "PB1-9-1-6",
+      "k": "PB1-9-1-6-K10",
+      "vorne": "Welchen Vorteil hat es, die Dokumentation aus Kommentaren im Code zu generieren?",
+      "hinten": "Beschreibung und Code stehen beieinander – wer den Code ändert, passt den Kommentar gleich mit an, die Dokumentation bleibt aktuell."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-5-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K4-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-1-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-4-K1-1",
+      "entscheidung": "bearbeitet",
+      "grund": "an die Aussage angepasst; Auswahl des Testverfahrens und Erzeugen von Testdaten gehören nach PB2"
+    },
+    {
+      "id": "AP2-5-2-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-5-2-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-2-4-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Zweck des Abnahmeprotokolls steht in AP1-1-4-2"
+    },
+    {
+      "id": "AP2-5-2-4-K5-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Inhalte des Abnahmeprotokolls stehen in AP1-1-4-2"
+    },
+    {
+      "id": "AP2-5-5-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-1-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-1-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-2-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Soll-Ist-Rechnung steht in AP1-3-1-3/AP1-1-4-3 und wird importiert"
+    },
+    {
+      "id": "AP2-5-5-2-K2-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Soll-Ist-Rechnung steht in AP1-3-1-3/AP1-1-4-3 und wird importiert"
+    },
+    {
+      "id": "AP2-5-5-2-K2-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Soll-Ist-Rechnung steht in AP1-3-1-3/AP1-1-4-3 und wird importiert"
+    },
+    {
+      "id": "AP2-5-5-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-3-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-5-5-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-6-5-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-6-5-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-6-5-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-6-5-3-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt besser zu dieser Aussage, Text unverändert"
+    },
+    {
+      "id": "AP2-6-5-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-6-5-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB1-9-1-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-3-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-4-K4-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-5-K5-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-6-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-9-1-1-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S625)"
+    },
+    {
+      "id": "PB1-9-1-1-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S625)"
+    },
+    {
+      "id": "PB1-9-1-1-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626)"
+    },
+    {
+      "id": "PB1-9-1-1-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626)"
+    },
+    {
+      "id": "PB1-9-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S629)"
+    },
+    {
+      "id": "PB1-9-1-3-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S629)"
+    },
+    {
+      "id": "PB1-9-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S201, buch:FS-3.8.1-S293)"
+    },
+    {
+      "id": "PB1-9-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S201, buch:FS-3.8.1-S293)"
+    },
+    {
+      "id": "PB1-9-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626 bis S631), V2-Prüfung PB1-b Nr. 17"
+    },
+    {
+      "id": "PB1-9-1-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626 bis S631), V2-Prüfung PB1-b Nr. 17"
+    },
+    {
+      "id": "PB1-9-1-5-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.1-S100)"
+    },
+    {
+      "id": "PB1-9-1-5-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.1-S100)"
+    },
+    {
+      "id": "PB1-9-1-6-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S105, buch:FS2-4.2.4-S279, buch:GS-5.10.1-S640)"
+    },
+    {
+      "id": "PB1-9-1-6-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S105, buch:FS2-4.2.4-S279, buch:GS-5.10.1-S640)"
+    },
+    {
+      "id": "PB1-9-1-6-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S106, buch:FS2-1.6-S107, buch:GS-5.10.2-S642)"
+    },
+    {
+      "id": "PB1-9-1-6-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S106, buch:FS2-1.6-S107, buch:GS-5.10.2-S642)"
+    },
+    {
+      "id": "PB1-9-1-6-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.10.3-S644, buch:FS2-2.5-S211)"
+    },
+    {
+      "id": "PB1-9-1-6-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.10.3-S644, buch:FS2-2.5-S211)"
+    },
+    {
+      "id": "PB1-9-1-6-K10-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.5-S212)"
+    },
+    {
+      "id": "PB1-9-1-6-K10-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.5-S212)"
+    }
+  ]
+}

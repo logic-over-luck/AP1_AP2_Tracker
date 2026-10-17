@@ -1,0 +1,1468 @@
+{
+ "oberblock": {
+  "id": "PB1-9",
+  "titel": "Qualität und Test",
+  "raum": "PB1",
+  "gebiete": [
+   "G.PB1.04"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB1-9-1",
+   "titel": "Qualität sichern und Software testen",
+   "satz": "Maßnahmen zur Qualitätskontrolle planen, Prüfverfahren anwenden, Software systematisch testen und dokumentieren. QM-Grundlagen, PDCA, Soll-Ist-Vergleich, Test- und Abnahmeprotokoll kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB1-9-1-1",
+     "titel": "Qualitätssicherung, KVP und Kennzahlen",
+     "ziel": "Qualitätssichernde Maßnahmen für ein Softwareprojekt beschreiben, zu Vorschlägen begründet Stellung nehmen und die Zielerreichung mit KVP und Kennzahlen messen. PDCA und Soll-Ist-Vergleich kennst du aus AP1.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.01.2",
+       "anteil": "Qualitätslenkung durch Tests und Reviews"
+      },
+      {
+       "id": "AP2a.02.01.2",
+       "anteil": "Reviews und Tests"
+      },
+      {
+       "id": "AP2b.05.03.1",
+       "anteil": "Code-Reviews und Unit-Tests"
+      },
+      {
+       "id": "AP2b.04.07",
+       "anteil": "Werkzeuge als QS-Maßnahme"
+      },
+      {
+       "id": "AP2a.03.02.1"
+      },
+      {
+       "id": "AP2a.03.02.2"
+      }
+     ],
+     "teilaufgaben": [
+      "2023S-PB1-A1-e",
+      "2024S-PB1-A1-b",
+      "2021W-PB1-A4-cb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-1-1-K1",
+       "text": "Du kannst qualitätssichernde Maßnahmen für ein Softwareprojekt beschreiben: standardisiertes Vorgehensmodell, übliche Entwicklungswerkzeuge (IDE, CI/CD), festgelegte Testumgebungen, -verfahren und -daten, Code-Reviews, Vorgaben zur Dokumentation, qualifizierte und zertifizierte Mitarbeiter.",
+       "kurz": "Qualitätssichernde Maßnahmen im Softwareprojekt",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.01.2",
+        "beleg:2023S-PB1-A1-e",
+        "beleg:2024S-PB1-A1-b"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K2",
+       "text": "Du kannst Stellung nehmen, ob ausschließlich automatische Code-Reviews und Unit-Tests zur Qualitätssicherung reichen: Sie decken nicht alle Fälle ab (Bedienung, Zusammenspiel der Komponenten, Erfüllung der Anforderungen), deshalb sind weitere, auch manuelle Tests nötig.",
+       "kurz": "Grenzen automatischer Code-Reviews und Unit-Tests",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.03.01.2",
+        "beleg:2021W-PB1-A4-cb"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K3",
+       "text": "Du kannst den kontinuierlichen Verbesserungsprozess (KVP) erklären: ständige Verbesserung in kleinen Schritten, an der alle Beteiligten mitwirken.",
+       "kurz": "Kontinuierlicher Verbesserungsprozess (KVP)",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.02.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K4",
+       "text": "Du kannst Kennzahlen zur Messung der Zielerreichung in der Softwareentwicklung festlegen und im Soll-Ist-Vergleich (Berechnung wie in AP1) anwenden, zum Beispiel gefundene Fehler je Release, Anteil bestandener Testfälle, Bearbeitungszeit von Störungen, Verfügbarkeit.",
+       "kurz": "Kennzahlen zur Zielerreichung im Soll-Ist-Vergleich",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.1",
+        "katalog:AP2a.03.02.2"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K5",
+       "text": "Du kannst begründen, warum Tests so früh wie möglich beginnen und das ganze Projekt begleiten: Je später ein Fehler entdeckt wird, desto mehr darauf aufbauende Arbeit muss geändert werden, deshalb steigen die Kosten seiner Behebung von Phase zu Phase und sind im laufenden Betrieb am höchsten.",
+       "kurz": "Frühes Testen und steigende Fehlerkosten",
+       "stufe": 4,
+       "herkunft": [
+        "buch:GS-5.9.1-S625"
+       ]
+      },
+      {
+       "id": "PB1-9-1-1-K6",
+       "text": "Du kannst erklären, warum Tests nur Stichproben sind: Sie zeigen, dass die geprüften Testfälle bestehen, beweisen aber nicht, dass die Software fehlerfrei ist; deshalb werden neben den funktionalen auch die nichtfunktionalen Anforderungen geprüft und Tests durch weitere Prüfverfahren wie Reviews ergänzt.",
+       "kurz": "Tests als Stichprobe ohne Beweis der Fehlerfreiheit",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S626"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-5-2",
+      "AP1-1-4-3",
+      "AP1-3-1-3"
+     ],
+     "kuer": [
+      {
+       "text": "Reifegradmodelle wie CMMI bewerten, wie ausgereift die Abläufe einer Organisation sind: von Stufe 1 (Ergebnisse hängen vom Einsatz Einzelner ab, kaum feste Prozesse) über geregelte, festgelegte und mit Kennzahlen gesteuerte Prozesse bis Stufe 5 (Prozesse werden laufend verbessert); SPICE bewertet Softwareprozesse nach einem ähnlichen Stufenmodell.",
+       "kurz": "Reifegradmodelle CMMI und SPICE",
+       "quellen": [
+        "buch:FS-1.1.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (CMMI/SPICE)"
+      },
+      {
+       "text": "Im betrieblichen Vorschlagswesen reichen Beschäftigte Verbesserungsideen bei einer zentralen Stelle ein, mit Namen oder anonym, und beschreiben Problem, Betroffene, Lösung sowie geschätzte Kosten und Nutzen; gute Vorschläge werden umgesetzt und anerkannt, etwa mit einer Prämie.",
+       "kurz": "Vorschlagswesen für Verbesserungsideen",
+       "quellen": [
+        "buch:FS-2.6.3"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Vorschlagswesen)"
+      },
+      {
+       "text": "Der KVP verbessert laufend in kleinen Schritten mit allen Beschäftigten; das Innovationsmanagement zielt dagegen auf sprunghafte Neuerungen bei Technik, Produkt, Prozess, Organisation oder Geschäftsmodell, getragen von Spezialisten, Innovationsworkshops oder dem Vorschlagswesen – größerer Nutzen, aber auch mehr Risiko.",
+       "kurz": "KVP gegen Innovationsmanagement",
+       "quellen": [
+        "buch:GS-1.3.3"
+       ],
+       "grund": "D8: Abgrenzung zum Innovationsmanagement ohne Katalog-Baustein (KVP selbst steht in K3)"
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-1-2",
+     "titel": "Prüfverfahren: Parität und Redundanz",
+     "ziel": "Paritätsbits bestimmen und deuten und Redundanz als Prüfverfahren anwenden. Redundanz heißt hier gewollte Prüfinformation, nicht die unerwünschte Datenredundanz aus PB1-6.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.03.01.1"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-9-1-2-K1",
+       "text": "Du kannst ein Paritätsbit bestimmen: bei gerader Parität so ergänzen, dass die Anzahl der Einsen gerade ist, bei ungerader Parität so, dass sie ungerade ist.",
+       "kurz": "Paritätsbit bei gerader und ungerader Parität",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-2-K2",
+       "text": "Du kannst erklären, dass ein Paritätsbit einen einzelnen Bitfehler erkennt, ihn aber nicht findet oder berichtigt, und zwei gleichzeitig gekippte Bits nicht bemerkt.",
+       "kurz": "Paritätsbit: was es erkennt und was nicht",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.01.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-2-K3",
+       "text": "Du kannst Redundanz als Prüfverfahren anwenden: zusätzliche Prüfinformation mitspeichern oder mitsenden, zum Beispiel eine Prüfsumme oder Prüfziffer, die der Empfänger neu berechnet und vergleicht, etwa die Frame Check Sequence (CRC) im Ethernet-Frame.",
+       "kurz": "Redundanz als Prüfverfahren: Prüfsumme, CRC",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.01.1"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-1-3",
+     "titel": "Testverfahren: statisch und dynamisch, Black-Box und White-Box",
+     "ziel": "Statische und dynamische Testverfahren sowie Black-Box- und White-Box-Test beschreiben und einsetzen. Die begründete Auswahl des Testverfahrens gehört nach PB2.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.01.2",
+       "anteil": "Testverfahren"
+      },
+      {
+       "id": "AP2a.03.01.2",
+       "anteil": "Testverfahren"
+      },
+      {
+       "id": "AP2b.03.08.1"
+      },
+      {
+       "id": "AP2b.05.03.1",
+       "anteil": "Testverfahren"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A4-d"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-1-3-K1",
+       "text": "Du kannst statische Testverfahren (ohne Ausführung: Review, Schreibtischtest, Codeanalyse) und dynamische Testverfahren (Ausführen mit Testdaten) unterscheiden und je Beispiele nennen.",
+       "kurz": "Statische und dynamische Testverfahren",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.2",
+        "katalog:AP2b.05.03.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K2",
+       "text": "Du kannst Black-Box-Test (Funktionstest gegen die Anforderungen ohne Kenntnis des Codes, oft von Personen außerhalb der Entwicklung) und White-Box-Test (Testfälle aus dem inneren Aufbau des Codes, durch das Entwicklungsteam) beschreiben.",
+       "kurz": "Black-Box- und White-Box-Test: Unterschied",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.03.08.1",
+        "beleg:2021W-PB1-A4-d"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K3",
+       "text": "Du kannst Black-Box- und White-Box-Test mit ihren Stärken und Grenzen einsetzen: Der Black-Box-Test prüft aus Sicht der Anforderungen und findet fehlende Funktionen, zeigt aber nicht, welcher Code ungetestet bleibt; der White-Box-Test deckt den Code systematisch ab, bemerkt aber keine fehlenden Anforderungen.",
+       "kurz": "Black-Box- und White-Box-Test: Stärken und Grenzen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.08.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K4",
+       "text": "Du kannst den Extremwertetest erklären: mit den kleinsten und größten zulässigen Werten sowie knapp darüber und darunter testen, weil an Grenzen besonders oft Fehler stecken.",
+       "kurz": "Extremwertetest an den Grenzen",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.2"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K6",
+       "text": "Du kannst statische und dynamische Testverfahren nach Vor- und Nachteilen vergleichen: Statische Prüfungen sind schon vor dem Ausführen möglich, finden einen Fehler direkt an seiner Ursache und prüfen auch Konventionen und Wartbarkeit, entdecken aber keine Laufzeitfehler; dynamische Tests finden Laufzeitfehler und prüfen Zusammenspiel und Zeitverhalten, brauchen aber lauffähigen Code mit Testumgebung und zeigen nur das Fehlverhalten, dessen Ursache erst das Debugging findet.",
+       "kurz": "Statisch gegen dynamisch: Vor- und Nachteile",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S629"
+       ]
+      },
+      {
+       "id": "PB1-9-1-3-K7",
+       "text": "Du kannst Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, zeigen aber nur, dass ein Fehler auftritt, nicht wo er im Code sitzt; White-Box-Testfälle grenzen den Fehler im Code ein, sind aber erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden.",
+       "kurz": "Black- und White-Box: Zeitpunkt, Pflege, Fehlerort",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.4.1-S201",
+        "buch:FS-3.8.1-S293"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-2-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Testszenarien und Testdaten auswählen und generieren, Überdeckungsmaße (Anweisungs-, Zweig-, Pfadüberdeckung), Unit-Tests schreiben, TDD und Debugging gehören zu PB2.",
+       "begruendung": "P3: AP2a.02.01.3, AP2a.03.02.3, AP2b.03.08.2, AP2b.05.03.2.1–3 und AP2a.03.01.3 wohnen in PB2 (Gebiete G.PB2.01, G.PB2.03).",
+       "katalog": [
+        "AP2a.02.01.3",
+        "AP2a.03.02.3",
+        "AP2b.03.08.2",
+        "AP2b.05.03.2.1",
+        "AP2b.05.03.2.3",
+        "AP2a.03.01.3"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Oberflächen testet man manuell (aufwendig, geringe Abdeckung, abhängig vom Tester), per Aufnahme und Wiedergabe (ein Werkzeug zeichnet Bedienschritte auf und spielt sie, auch mit anderen Daten, erneut ab) oder modellbasiert (Testfälle aus einem Ereignis- oder Zustandsmodell, jedes Ereignis bzw. jeder Zustand mindestens einmal, hohe Abdeckung).",
+       "kurz": "Verfahren für GUI-Tests",
+       "quellen": [
+        "buch:FS2-1.5.1"
+       ],
+       "grund": "RK2: GUI-Testverfahren und Werkzeugwahl sind Unterthema der Testverfahren"
+      },
+      {
+       "text": "Inspektion, Review, Walkthrough und Audit: Die Inspektion folgt einem streng festgelegten Ablauf mit einem Gutachterteam, das Review ist weniger formal, beim Walkthrough stellt der Entwickler sein Programm vor und beantwortet spontane Fragen, beim Audit folgen die Fragen einem vorher festgelegten Prüfkatalog; Pair Programming wirkt als fortlaufendes Code-Review.",
+       "kurz": "Inspektion, Review, Walkthrough und Audit",
+       "quellen": [
+        "buch:GS-5.9.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      },
+      {
+       "text": "Black- und White-Box je nach Blickwinkel: Wer im Gesamtsystem mit Kenntnis des inneren Aufbaus gezielt eine Komponente ansteuert, testet aus Systemsicht White-Box, für die Komponente selbst ist es ein Black-Box-Test über ihre Schnittstelle.",
+       "kurz": "Black- und White-Box: Kombination und Blickwinkel",
+       "quellen": [
+        "buch:FS2-2.4.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-1-4",
+     "titel": "Teststufen: vom Unit-Test bis zur Abnahme",
+     "ziel": "Komponenten-, Integrations-, System- und Abnahmetest unterscheiden, Unit-, End-to-End-, Last- und Performancetest einordnen und die Teststufen eines Konzepts beurteilen. Die Zuordnung zu den Entwurfsstufen zeigt das V-Modell in PB1-1.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2a.02.01.4"
+      },
+      {
+       "id": "AP2b.05.03.1",
+       "anteil": "Modultest, End-to-End-Test, Belastungstest"
+      },
+      {
+       "id": "AP2a.03.01.2",
+       "anteil": "Last- und Performancetest"
+      }
+     ],
+     "teilaufgaben": [],
+     "koennen": [
+      {
+       "id": "PB1-9-1-4-K1",
+       "text": "Du kannst Komponententest (auch Modul- oder Unit-Test: ein Baustein wird getrennt vom Rest automatisch und beliebig oft wiederholbar geprüft), Integrationstest, Systemtest und Abnahmetest unterscheiden und in die richtige Reihenfolge bringen.",
+       "kurz": "Teststufen vom Komponenten- bis zum Abnahmetest",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.02.01.4",
+        "katalog:AP2b.05.03.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-4-K2",
+       "text": "Du kannst Last- bzw. Belastungstest und Performancetest erklären: Verhalten, Antwortzeiten und Ressourcenverbrauch werden bei erwarteter Last und bei Spitzenlast gemessen, um Engpässe vor dem Betrieb zu finden.",
+       "kurz": "Last- und Performancetest",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2a.03.01.2",
+        "katalog:AP2b.05.03.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-4-K3",
+       "text": "Du kannst den End-to-End-Test erklären: Ein vollständiger Ablauf wird aus Sicht des Benutzers durch das ganze System geprüft, von der Oberfläche bis zur Datenbank.",
+       "kurz": "End-to-End-Test aus Benutzersicht",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-4-K4",
+       "text": "Du kannst beurteilen, welche Teststufen ein Testkonzept für eine Anwendung vorsehen muss, und begründen, warum keine Stufe eine andere ersetzt.",
+       "kurz": "Nötige Teststufen eines Testkonzepts",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2a.02.01.4"
+       ]
+      },
+      {
+       "id": "PB1-9-1-4-K6",
+       "text": "Du kannst Testverfahren (wie getestet wird, z. B. statisch oder dynamisch), Testarten (was geprüft wird, z. B. Funktion oder Performance) und Teststufen (in welchem Entwicklungsstand getestet wird, vom Komponenten- bis zum Abnahmetest) unterscheiden; dazu gehört der Grundsatz, dass ein Testobjekt möglichst nicht von seinem Entwickler, sondern von unabhängigen Personen getestet wird, weil der Entwickler eigene Denkfehler leicht übersieht.",
+       "kurz": "Testverfahren, Testarten und Teststufen",
+       "stufe": 2,
+       "herkunft": [
+        "buch:GS-5.9.1-S626",
+        "buch:GS-5.9.1-S627",
+        "buch:GS-5.9.1-S629",
+        "buch:GS-5.9.1-S631"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Weitere Testarten wie Smoke- und Regressionstest, die Testpyramide sowie Test-Doubles (Stubs, Mocks).",
+       "kurz": "Smoke-, Regressionstest, Testpyramide und Test-Doubles",
+       "quellen": [
+        "podcast:themen-ap2"
+       ],
+       "grund": "Offene „z. B.“-Liste in AP2b.05.03.1; nur eine Hinweisquelle (Podcast), daher nach P-BEISPIELLISTE Kür. Vom Katalog nicht ausgeschlossen."
+      },
+      {
+       "text": "Die Oberfläche wird eigens getestet, weil Benutzer eine Anwendung zuerst nach Aussehen und Verständlichkeit beurteilen; geprüft werden Darstellung (einheitliche Anordnung, Texte, Meldungen, verschiedene Auflösungen, Corporate Design) und Funktion (nur gültige Eingaben, Maus, Tastatur und Touch, Navigation, Hilfe). UI-Tests sind aufwendig, weil sich die Oberfläche oft ändert und kleine Bedienmängel oft größere Umbauten verlangen.",
+       "kurz": "GUI-Test: Zweck, Prüfpunkte, Schwierigkeiten",
+       "quellen": [
+        "buch:FS2-1.5.1"
+       ],
+       "grund": "RK2: GUI-Test ist Unterthema der Teststufen (Prüf-Checklisten)"
+      },
+      {
+       "text": "Vor der Veröffentlichung durchläuft Software oft Testversionen: Alpha (frühe Version mit den Kernfunktionen, intern und mit wenigen Testern), Beta (alle Funktionen, ein Teil der Zielgruppe testet unter realen Bedingungen) und Release Candidate (letzte Testversion, aus der ohne neue Fehler die endgültige Version wird).",
+       "kurz": "Alpha, Beta und Release Candidate",
+       "quellen": [
+        "buch:GS-5.9.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein (Alpha/Beta/Release Candidate)"
+      },
+      {
+       "text": "Testarten je Qualitätsmerkmal: Funktionstest der Funktionalität, Robustheits-, Recovery- und Stresstest der Zuverlässigkeit, Usability-Test der Benutzbarkeit, Performance- und Lasttest der Effizienz, Review und statische Codeanalyse der Wartbarkeit, Portabilitätstest der Übertragbarkeit.",
+       "kurz": "Testarten je Qualitätsmerkmal",
+       "quellen": [
+        "buch:GS-5.9.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-1-5",
+     "titel": "Testkonzept, Testprozess, Test- und Abnahmeprotokoll",
+     "ziel": "Inhalte eines Testkonzepts beschreiben, den Testprozess durchlaufen, Test- und Abnahmeprotokolle erstellen und Testergebnisse analysieren.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.05.03.2"
+      },
+      {
+       "id": "AP2b.05.03.2.4"
+      },
+      {
+       "id": "AP2a.03.02.4"
+      },
+      {
+       "id": "AP2a.03.02.5",
+       "anteil": "Abnahmeprotokoll einer Software"
+      }
+     ],
+     "teilaufgaben": [
+      "2023W-PB1-A1-d",
+      "2025S-PB1-A1-c"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-1-5-K1",
+       "text": "Du kannst Inhalte eines Testkonzepts beschreiben: Teststrategie mit Testzielen und Testmethoden, Teststufen und ihr Zusammenspiel, Testumgebung und Automatisierung, Umfang der Testdokumentation, Testplan (wer testet was wann), Auswertung der Ergebnisse, Schätzung von Aufwand und Kosten.",
+       "kurz": "Inhalte eines Testkonzepts",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.2",
+        "beleg:2023W-PB1-A1-d"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K2",
+       "text": "Du kannst den Ablauf des Testprozesses beschreiben: Tests planen, Testfälle und Testdaten vorbereiten, durchführen, protokollieren, auswerten, Fehler beheben lassen und erneut testen.",
+       "kurz": "Ablauf des Testprozesses",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.05.03.2"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K3",
+       "text": "Du kannst ein Testprotokoll für eine Software erstellen (Aufbau wie in AP1-1-5-3), zusätzlich mit Eingabedaten, Softwareversion und Tester.",
+       "kurz": "Testprotokoll für eine Software",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.4",
+        "katalog:AP2b.05.03.2.4"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K4",
+       "text": "Du kannst Testprotokolle analysieren: Häufungen von Fehlern erkennen, Ursachen eingrenzen und entscheiden, ob die Software freigegeben werden kann.",
+       "kurz": "Auswertung von Testprotokollen und Freigabe",
+       "stufe": 4,
+       "herkunft": [
+        "katalog:AP2b.05.03.2.4",
+        "katalog:AP2b.05.03.2"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K5",
+       "text": "Du kannst ein Abnahmeprotokoll für eine Software erstellen (Inhalte wie in AP1-1-4-2), zusätzlich mit Softwareversion und Ergebnis der Abnahmetests, und es im Abschlussprotokoll mit Soll-Ist-Vergleich und Erfahrungen zusammenführen.",
+       "kurz": "Abnahme- und Abschlussprotokoll für Software",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.03.02.5",
+        "beleg:2025S-PB1-A1-c",
+        "buch:FS-3.8.3-S299"
+       ]
+      },
+      {
+       "id": "PB1-9-1-5-K6",
+       "text": "Du kannst beschreiben, woher die Testfälle kommen: Zuerst legt ein Testplan Umfang, Ressourcen und die vorrangig zu testenden Bereiche fest; dann werden die Testfälle aus der Anforderungsspezifikation abgeleitet, etwa aus User Stories und ihren Akzeptanzkriterien, und fehlt eine solche Vorgabe, gemeinsam mit Entwicklern und Kunde festgelegt.",
+       "kurz": "Testfälle aus Anforderungen ableiten",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-1.5.1-S100"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-1-5-3",
+      "AP1-1-4-2",
+      "AP1-1-4-3"
+     ],
+     "grenzen": [
+      {
+       "text": "Daten und Sachverhalte aus Tests multimedial aufbereiten und präsentieren gehört in den Raum PROJEKT.",
+       "begruendung": "G5/P9: AP2b.05.05 „kann Bestandteil der praktischen Prüfung sein“.",
+       "katalog": [
+        "AP2b.05.05"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Testdokumente in drei Gruppen: Testkonzept bzw. Testplanung (was, wie, wann und womit getestet wird), Testspezifikation (Testentwurf, Testfälle und Szenarien, Testablauf) und Testberichte (Testprotokoll, Abweichungsbericht, Review- und Audit-Protokolle, Testabschluss- und Abnahmebericht).",
+       "kurz": "Testdokumente: Konzept, Spezifikation, Berichte",
+       "quellen": [
+        "buch:GS-5.9.1",
+        "buch:FS2-4.2.4"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      },
+      {
+       "text": "Wer bei der Abnahme was akzeptiert: Vertraglich die Vollständigkeit und Qualität der vereinbarten Leistungen und die Einhaltung gesetzlicher Vorgaben, die Benutzer die funktionalen Anforderungen (etwa aus einem Testbetrieb) und nichtfunktionale wie verständliche Handbücher und ausreichende Performance, der künftige Betreiber die technischen Anforderungen, Daten-, Revisions- und IT-Sicherheit sowie vollständige Administrationshandbücher.",
+       "kurz": "Abnahme: vertraglich, Benutzer, Betreiber",
+       "quellen": [
+        "buch:FS-3.8.3"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      }
+     ]
+    },
+    {
+     "id": "PB1-9-1-6",
+     "titel": "Handbücher und Dokumentation",
+     "ziel": "Handbücher für Benutzer und Systembetreuer, Programm- und Konfigurationsdokumentation sowie Checklisten erstellen und erweitern.",
+     "gebiete": [
+      "G.PB1.04"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.01.13"
+      },
+      {
+       "id": "AP2b.01.13.1",
+       "anteil": "Programm- und Konfigurationsdokumentation"
+      },
+      {
+       "id": "AP2b.01.13.2"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB1-A1-bb"
+     ],
+     "koennen": [
+      {
+       "id": "PB1-9-1-6-K1",
+       "text": "Du kannst Benutzerhandbuch (Bedienung aus Sicht der Anwender) und Handbuch für Systembetreuer (Installation, Konfiguration, Betrieb, Fehlerbehebung) nach Zielgruppe und Inhalt unterscheiden.",
+       "kurz": "Benutzerhandbuch gegen Handbuch für Systembetreuer",
+       "stufe": 2,
+       "herkunft": [
+        "katalog:AP2b.01.13",
+        "buch:FS2-4.2.4-S279"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K2",
+       "text": "Du kannst eine Programmdokumentation erstellen und erweitern: Aufbau und Module, Schnittstellen, Datenmodell, je Klasse und Methode Zweck, Parameter, Rückgabewert und Voraussetzungen; bei der Erweiterung einer Bibliothek auch Konstruktoren, geerbte Methoden und implementierte Interfaces.",
+       "kurz": "Programmdokumentation: Inhalt und Erweiterung",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.13.1",
+        "beleg:2021W-PB1-A1-bb",
+        "buch:FS2-2.5-S212"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K3",
+       "text": "Du kannst eine Konfigurationsdokumentation erstellen: Einstellungen, Versionen, Abhängigkeiten und Zugänge so festhalten, dass sich die Umgebung wiederherstellen lässt.",
+       "kurz": "Konfigurationsdokumentation für die Wiederherstellung",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.13.1"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K4",
+       "text": "Du kannst für einen wiederkehrenden Vorgang eine Checkliste erstellen, zum Beispiel für die Auslieferung eines Releases oder die Einrichtung einer Testumgebung.",
+       "kurz": "Checkliste für wiederkehrende Vorgänge",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.01.13.2"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K6",
+       "text": "Du kannst die Gliederung eines Benutzerhandbuchs erstellen: Deckblatt und Inhaltsverzeichnis, Einleitung mit Zweck und Zielgruppe, Installation mit Systemvoraussetzungen, Bedienung der Funktionen und Bedienelemente mit Beispielen und Screenshots, Verhalten bei Fehlern mit Meldungen und Abhilfe, Support- und Kontaktangaben, FAQ und Glossar.",
+       "kurz": "Gliederung eines Benutzerhandbuchs",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-1.6-S105",
+        "buch:FS2-4.2.4-S279",
+        "buch:GS-5.10.1-S640"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K7",
+       "text": "Du kannst beim Erstellen und Erweitern eines Benutzerhandbuchs Qualitätskriterien anwenden: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig.",
+       "kurz": "Qualitätskriterien eines Benutzerhandbuchs",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-1.6-S106",
+        "buch:FS2-1.6-S107",
+        "buch:GS-5.10.2-S642"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K9",
+       "text": "Du kannst die Regel anwenden, im Quellcode nur zu kommentieren, was der Code selbst nicht zeigt – warum etwas so gelöst ist, nicht was die Zeile tut –, und einen überflüssigen Kommentar durch sprechende Namen und eine klare Struktur ersetzen, weil jeder Kommentar Zeit kostet und mit dem Code gepflegt werden muss.",
+       "kurz": "Kommentare: Warum statt Was",
+       "stufe": 3,
+       "herkunft": [
+        "buch:GS-5.10.3-S644",
+        "buch:FS2-2.5-S211"
+       ]
+      },
+      {
+       "id": "PB1-9-1-6-K10",
+       "text": "Du kannst beschreiben, wie eine Schnittstellendokumentation aus Dokumentationskommentaren im Quellcode erzeugt wird: Vor Klassen und Methoden steht ein besonders gekennzeichneter Kommentar mit Beschreibung und Angaben zu Parametern, Rückgabewert und Ausnahmen, aus dem ein Werkzeug zum Beispiel HTML-Seiten generiert; weil die Beschreibung direkt am Code steht, bleibt sie leichter aktuell.",
+       "kurz": "Dokumentation aus Doku-Kommentaren generieren",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.5-S212"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Wie umfangreich ein Handbuch sein muss, hängt von Software und Benutzern ab: Kleine, selbsterklärende Programme mit Hilfen in der Oberfläche brauchen höchstens eine Kurzanleitung, große Systeme mehrere Bände, etwa ein eigenes für die Administration; ein Handbuch ist ein Nachschlagewerk, keine Pflichtlektüre.",
+       "kurz": "Umfang eines Benutzerhandbuchs",
+       "quellen": [
+        "buch:FS2-1.6"
+       ],
+       "grund": "RK2: Umfang des Handbuchs, Ergänzung zu den Pflicht-Aussagen"
+      },
+      {
+       "text": "Eine Komponente lässt sich mit UML-Diagrammen (Klassen-, Anwendungsfall-, Aktivitätsdiagramm) oft verständlicher beschreiben als mit Quelltext, sofern sie bei Änderungen mitgepflegt werden; zu einer Schnittstelle gehören auch nichtfunktionale Angaben wie Antwortzeit und Durchsatz, Verschlüsselung und Authentifizierung sowie das Verhalten bei fehlerhaften Eingaben oder abgebrochener Übertragung.",
+       "kurz": "Diagramme und Qualitätsangaben in der Komponentendoku",
+       "quellen": [
+        "buch:FS2-2.5"
+       ],
+       "grund": "RK2: Ergänzungen zur Programmdokumentation (K2)"
+      },
+      {
+       "text": "Dokumentation macht Wissen auffindbar, auch wenn die ursprünglichen Entwickler später nicht mehr da sind; sie entsteht deshalb laufend während der Entwicklung und nicht erst am Ende, getrennt nach Zielgruppen.",
+       "kurz": "Dokumentation begleitet die Entwicklung",
+       "quellen": [
+        "buch:GS-5.10.1"
+       ],
+       "grund": "RK2: allgemeiner Zweck der Dokumentation"
+      },
+      {
+       "text": "Vor dem Schreiben legt man fest, welche Dokumente nötig sind (auch gesetzlich), welche Inhalte jede Zielgruppe braucht und in welcher Form sie erscheinen (Druck, PDF, Online-Hilfe); Benutzerdokumentation entsteht oft arbeitsteilig: Entwickler liefern das Fachwissen, technische Redakteure schreiben es für Benutzer verständlich auf. Gute Dokumentation ersetzt aber keine gut bedienbare Oberfläche.",
+       "kurz": "Dokumentation planen und arbeitsteilig erstellen",
+       "quellen": [
+        "buch:GS-5.10.2"
+       ],
+       "grund": "RK2/D8: Planung der Dokumentation, technische Redakteure ohne Katalog-Baustein"
+      },
+      {
+       "text": "Sinnvolle Kommentare sind Lizenzhinweise, Erklärungen schwer verständlicher Stellen, Warnungen, Schnittstellenkommentare für die API-Dokumentation und TODO-Markierungen; Kommentare, die nur den Code nacherzählen, gehören gelöscht. Am gefährlichsten sind veraltete Kommentare, weil sie in die Irre führen – falsche berichtigen oder löschen, auskommentierten Code nach der Fehlersuche entfernen (alte Stände hält die Versionsverwaltung).",
+       "kurz": "Sinnvolle und veraltete Kommentare",
+       "quellen": [
+        "buch:GS-5.10.3"
+       ],
+       "grund": "RK2: Kommentararten und Pflege, Detail zu „Kommentare: Warum statt Was“"
+      },
+      {
+       "text": "Entwicklungs- gegen Benutzerdokumentation: Zur Entwicklungsdokumentation gehören Projektdokumentation (Auftrag, Pläne, Statusberichte, Lasten- und Pflichtenheft, Abschlussbericht), Systemdokumentation (Anforderungen, Architektur und Schnittstellen, Datenmodelle, kommentierter Quellcode, Versionen) und Testdokumentation; zur Benutzerdokumentation gehören Benutzerhandbuch, Installationsanleitung sowie Schulungs- und Marketingunterlagen.",
+       "kurz": "Entwicklungs- gegen Benutzerdokumentation",
+       "quellen": [
+        "buch:FS2-4.2.4",
+        "buch:GS-5.10.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      },
+      {
+       "text": "Gedrucktes Handbuch gegen Online-Dokumentation: Papier ist ohne Gerät lesbar, verursacht aber Druckkosten, kann verloren gehen, lässt sich nicht nachträglich aktualisieren und enthält keine Videos; die Online-Dokumentation ist schnell aktualisiert, durchsuchbar, multimedial und für alle gleichzeitig verfügbar, setzt aber ein Gerät und einen Zugang voraus.",
+       "kurz": "Gedrucktes Handbuch gegen Online-Dokumentation",
+       "quellen": [
+        "buch:FS2-1.6"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-5-1-1-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K1",
+    "grund": "Schreibtischtest als statisches Verfahren (AP2b.05.03.1)"
+   },
+   {
+    "alt": "AP2-5-1-1-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K2",
+    "grund": "laut Musterlösung 2021W-PB1-A4-d"
+   },
+   {
+    "alt": "AP2-5-1-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K2",
+    "grund": "in tv2 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-1-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-1-3-K3",
+    "grund": "Vor- und Nachteile beider Verfahren"
+   },
+   {
+    "alt": "AP2-5-1-1-K5",
+    "status": "PB2",
+    "grund": "Auswahl des Testverfahrens: AP2b.05.03.2.1 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-1-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-4-K1",
+    "grund": "mit Abnahmetest"
+   },
+   {
+    "alt": "AP2-5-1-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-4-K1",
+    "grund": "Unit-Test als Halbsatz beim Komponententest"
+   },
+   {
+    "alt": "AP2-5-1-2-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-4-K3",
+    "grund": "bis zur Datenbank ergänzt"
+   },
+   {
+    "alt": "AP2-5-1-2-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-1-4-K2",
+    "grund": "Last- und Performancetest stehen wörtlich im Katalog (AP2a.03.01.2), daher Kern (P35)"
+   },
+   {
+    "alt": "AP2-5-1-2-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-1-4-K1",
+    "grund": "in ts1 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-2-1-K1",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K2",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K3",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K4",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K5",
+    "status": "PB2",
+    "grund": "Testdaten auswählen und generieren: AP2a.02.01.3, AP2b.05.03.2.3 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-2-1-K6",
+    "status": "verschoben",
+    "neu": "PB1-7-1-5-K4"
+   },
+   {
+    "alt": "AP2-5-2-2-K1",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K2",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K3",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K4",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K5",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-2-K6",
+    "status": "PB2",
+    "grund": "Testabdeckung (Überdeckungsmaße): Belege nur in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K1",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K2",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K3",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K4",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-3-K5",
+    "status": "PB2",
+    "grund": "Schreibtischtest an Code durchführen: Ablaufverfolgung AP2a.03.01.3 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-4-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-5-K2",
+    "grund": "Ablauf mit erneutem Testen"
+   },
+   {
+    "alt": "AP2-5-2-4-K2",
+    "status": "PB2",
+    "grund": "Kriterien für Testergebnisse definieren: AP2b.05.03.2.2 wohnt in PB2"
+   },
+   {
+    "alt": "AP2-5-2-4-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-5-K3",
+    "grund": "erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-5-2-4-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-1-5-K3",
+    "grund": "in tk3 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-2-4-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-1-5-K5",
+    "grund": "Abnahmeprotokoll erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-5-2-4-K6",
+    "status": "gestrichen",
+    "grund": "P9: Testergebnisse präsentieren (AP2b.05.05) wohnt im Raum PROJEKT"
+   },
+   {
+    "alt": "AP2-5-3-1-K1",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K2",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K3",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K4",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-3-1-K5",
+    "status": "PB2",
+    "grund": "Debugging, Ablaufverfolgung, TDD: AP2a.02.01.1, AP2a.03.01.3, AP2b.03.08.2 wohnen in PB2"
+   },
+   {
+    "alt": "AP2-5-5-1-K1",
+    "status": "gestrichen",
+    "grund": "E2: PDCA anwenden steht in AP1-1-5-2-K4 (gleiche Stufe)"
+   },
+   {
+    "alt": "AP2-5-5-1-K2",
+    "status": "verschoben",
+    "neu": "PB1-9-1-1-K3"
+   },
+   {
+    "alt": "AP2-5-5-1-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-1-K4",
+    "grund": "festlegen und anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-5-5-1-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-1-1-K4",
+    "grund": "Beispiele in pd3 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-5-1-K5",
+    "status": "angepasst",
+    "neu": "PB1-9-1-1-K1",
+    "grund": "Maßnahmen laut 2023S-PB1-A1-e, 2024S-PB1-A1-b"
+   },
+   {
+    "alt": "AP2-5-5-2-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-1-K4",
+    "grund": "Soll-Ist-Vergleich mit Kennzahlen; Berechnung in AP1-3-1-3"
+   },
+   {
+    "alt": "AP2-5-5-2-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-1-K4",
+    "grund": "in pd3 aufgenommen"
+   },
+   {
+    "alt": "AP2-5-5-2-K3",
+    "status": "gestrichen",
+    "grund": "E2: Abweichungen bewerten steht in AP1-1-4-3-K2 (Stufe 4); AP2a.03.02.2 verlangt erkennen und berechnen"
+   },
+   {
+    "alt": "AP2-5-5-2-K4",
+    "status": "gestrichen",
+    "grund": "E2: Ursachen von Abweichungen nennen steht in AP1-1-4-3-K5"
+   },
+   {
+    "alt": "AP2-5-5-3-K1",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K1",
+    "grund": "bestimmen (Katalog: anwenden)"
+   },
+   {
+    "alt": "AP2-5-5-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K2",
+    "grund": "um zwei gekippte Bits ergänzt"
+   },
+   {
+    "alt": "AP2-5-5-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-2-K3",
+    "grund": "anwenden (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-3-K1",
+    "status": "verschoben",
+    "neu": "PB1-9-1-6-K1"
+   },
+   {
+    "alt": "AP2-6-5-3-K2",
+    "status": "angepasst",
+    "neu": "PB1-9-1-6-K2",
+    "grund": "erstellen und erweitern (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-3-K3",
+    "status": "angepasst",
+    "neu": "PB1-9-1-6-K3",
+    "grund": "Konfigurationsdokumentation erstellen"
+   },
+   {
+    "alt": "AP2-6-5-3-K4",
+    "status": "angepasst",
+    "neu": "PB1-9-1-6-K4",
+    "grund": "erstellen (Katalog)"
+   },
+   {
+    "alt": "AP2-6-5-3-K5",
+    "status": "gestrichen",
+    "grund": "allgemeine Anforderungen an Dokumentation: weder Katalog noch PB1-Beleg; in do2–do4 enthalten"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
+  "hinweis": "PB1-Ordner nach dem Muster von AP1 (UMBAU.md Schritt 6). Neue IDs nach P33; alte AP2-Aussagen stehen in alt_neu. Inhalte aus AP1 werden mit baut_auf importiert (E2), neu geschrieben wird nur, was PB1 neu oder tiefer verlangt.",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Nach der unabhängigen Prüfung (umbau/berichte/PB1-9-pruefer.md) überarbeitet: Last- und Performancetest als Kern, Wiederholungen aus AP1 gekürzt. Teilaufgaben 2021W-PB1-A4-cb/-d, 2023S-PB1-A1-e, 2023W-PB1-A1-d, 2024S-PB1-A1-b und 2021W-PB1-A1-bb gegen die Musterlösungen gelesen. Testdaten, Überdeckung, Schreibtischtest an Code und Debugging sind nach P3 PB2 und hier nur als Grenze ausgewiesen."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb1": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Planen eines Softwareproduktes“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "podcast:themen-ap2": "IT-Berufe-Podcast: Seite „Mögliche Themen von Teil 2 der gestreckten Abschlussprüfung (GAP) für Fachinformatiker Anwendungsentwicklung“, Stand 15.06.2026, Themencluster bis einschließlich UML (der Rest der Seite war nicht abrufbar; abgerufen 14.10.2026)",
+   "buch:FS-1.1.3": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-2.6.3": "Lehrbuch Westermann „IT-Berufe“ FS 2.6.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-1.3.3": "Lehrbuch Westermann „IT-Berufe“ GS 1.3.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.5.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.5.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.9.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.9.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-1.6": "Lehrbuch Westermann „IT-Berufe“ FS2 1.6 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.5": "Lehrbuch Westermann „IT-Berufe“ FS2 2.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.10.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.10.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.10.2": "Lehrbuch Westermann „IT-Berufe“ GS 5.10.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:GS-5.10.3": "Lehrbuch Westermann „IT-Berufe“ GS 5.10.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.4.1": "Lehrbuch Westermann „IT-Berufe“ FS2 2.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-4.2.4": "Lehrbuch Westermann „IT-Berufe“ FS2 4.2.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.8.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.8.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-14",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Qualitätssicherung, Code-Reviews",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-1-K1",
+      "PB1-9-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Unit-Tests",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-4-K1",
+      "PB1-9-1-1-K2"
+     ]
+    },
+    {
+     "thema": "Black-Box-Test, White-Box-Test",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-3-K2",
+      "PB1-9-1-3-K3"
+     ]
+    },
+    {
+     "thema": "Testverfahren statisch/dynamisch, Extremwertetest, Review, Schreibtischtest",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-3-K1",
+      "PB1-9-1-3-K4"
+     ]
+    },
+    {
+     "thema": "Komponenten-, Integrations-, System-, Abnahme-, End-to-End-Test",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-4-K1",
+      "PB1-9-1-4-K3"
+     ]
+    },
+    {
+     "thema": "Lasttest, Performancetest",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-4-K2"
+     ]
+    },
+    {
+     "thema": "Smoketest, Regressionstest, Testpyramide, Test-Doubles",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-4"
+     ]
+    },
+    {
+     "thema": "Testkonzept",
+     "quellen": [
+      "podcast:themen-pb1",
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-5-K1"
+     ]
+    },
+    {
+     "thema": "Testprotokoll",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-5-K3",
+      "PB1-9-1-5-K4"
+     ]
+    },
+    {
+     "thema": "Äquivalenzklassen, Grenzwertanalyse, Testdaten, Testdatengeneratoren, Überdeckung",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2"
+     ],
+     "notiz": "P3"
+    },
+    {
+     "thema": "Dokumentation",
+     "quellen": [
+      "podcast:themen-pb1"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB1-9-1-6-K2"
+     ]
+    },
+    {
+     "thema": "Problemlösungsprozess, PDCA",
+     "quellen": [
+      "podcast:themen-ap2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "AP1-1-5-2"
+     ],
+     "notiz": "PDCA anwenden wohnt in AP1; KVP und Kennzahlen in pd2, pd3"
+    },
+    {
+     "thema": "Reifegradmodelle wie CMMI bewerten, wie ausgereift die Abläufe einer Organisation sind: von Stufe 1 (Ergebnisse hängen v",
+     "quellen": [
+      "buch:FS-1.1.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Im betrieblichen Vorschlagswesen reichen Beschäftigte Verbesserungsideen bei einer zentralen Stelle ein, mit Namen oder ",
+     "quellen": [
+      "buch:FS-2.6.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Der KVP verbessert laufend in kleinen Schritten mit allen Beschäftigten; das Innovationsmanagement zielt dagegen auf spr",
+     "quellen": [
+      "buch:GS-1.3.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Oberflächen testet man manuell (aufwendig, geringe Abdeckung, abhängig vom Tester), per Aufnahme und Wiedergabe (ein Wer",
+     "quellen": [
+      "buch:FS2-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-3"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Die Oberfläche wird eigens getestet, weil Benutzer eine Anwendung zuerst nach Aussehen und Verständlichkeit beurteilen; ",
+     "quellen": [
+      "buch:FS2-1.5.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Vor der Veröffentlichung durchläuft Software oft Testversionen: Alpha (frühe Version mit den Kernfunktionen, intern und ",
+     "quellen": [
+      "buch:GS-5.9.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-4"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Wie umfangreich ein Handbuch sein muss, hängt von Software und Benutzern ab: Kleine, selbsterklärende Programme mit Hilf",
+     "quellen": [
+      "buch:FS2-1.6"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Eine Komponente lässt sich mit UML-Diagrammen (Klassen-, Anwendungsfall-, Aktivitätsdiagramm) oft verständlicher beschre",
+     "quellen": [
+      "buch:FS2-2.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Dokumentation macht Wissen auffindbar, auch wenn die ursprünglichen Entwickler später nicht mehr da sind; sie entsteht d",
+     "quellen": [
+      "buch:GS-5.10.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Vor dem Schreiben legt man fest, welche Dokumente nötig sind (auch gesetzlich), welche Inhalte jede Zielgruppe braucht u",
+     "quellen": [
+      "buch:GS-5.10.2"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Sinnvolle Kommentare sind Lizenzhinweise, Erklärungen schwer verständlicher Stellen, Warnungen, Schnittstellenkommentare",
+     "quellen": [
+      "buch:GS-5.10.3"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB1-9-1-6"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    }
+   ]
+  },
+  "geschwister": [
+   {
+    "katalog": "AP2a.02.01.2",
+    "paar": "statisch / dynamisch",
+    "abgedeckt": {
+     "statisch": [
+      "PB1-9-1-3-K1"
+     ],
+     "dynamisch": [
+      "PB1-9-1-3-K1"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.03.08.1",
+    "paar": "Black-Box / White-Box",
+    "abgedeckt": {
+     "Black-Box": [
+      "PB1-9-1-3-K2",
+      "PB1-9-1-3-K3"
+     ],
+     "White-Box": [
+      "PB1-9-1-3-K2",
+      "PB1-9-1-3-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.03.01.1",
+    "paar": "Parität / Redundanz",
+    "abgedeckt": {
+     "Parität": [
+      "PB1-9-1-2-K1",
+      "PB1-9-1-2-K2"
+     ],
+     "Redundanz": [
+      "PB1-9-1-2-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2a.03.02",
+    "paar": "Testprotokoll / Abnahmeprotokoll",
+    "abgedeckt": {
+     "Test": [
+      "PB1-9-1-5-K3"
+     ],
+     "Abnahme": [
+      "PB1-9-1-5-K5"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.13",
+    "paar": "Benutzer / Systembetreuer",
+    "abgedeckt": {
+     "Benutzer": [
+      "PB1-9-1-6-K1"
+     ],
+     "Systembetreuer": [
+      "PB1-9-1-6-K1",
+      "PB1-9-1-6-K3"
+     ]
+    }
+   },
+   {
+    "katalog": "AP2b.01.13.1",
+    "paar": "Programm- / Konfigurationsdokumentation",
+    "abgedeckt": {
+     "Programm": [
+      "PB1-9-1-6-K2"
+     ],
+     "Konfiguration": [
+      "PB1-9-1-6-K3"
+     ]
+    }
+   }
+  ],
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB1-9-1-1-K5",
+     "PB1-9-1-1-K6",
+     "PB1-9-1-3-K6",
+     "PB1-9-1-3-K7",
+     "PB1-9-1-5-K6",
+     "PB1-9-1-6-K6",
+     "PB1-9-1-6-K7",
+     "PB1-9-1-6-K9",
+     "PB1-9-1-6-K10",
+     "PB1-9-1-4-K6"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB1-9-1-5-K5",
+     "PB1-9-1-6-K2",
+     "PB1-9-1-6-K1"
+    ],
+    "kuer": [
+     "PB1-9-1-1",
+     "PB1-9-1-1",
+     "PB1-9-1-1",
+     "PB1-9-1-3",
+     "PB1-9-1-4",
+     "PB1-9-1-4",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-6",
+     "PB1-9-1-3",
+     "PB1-9-1-3",
+     "PB1-9-1-4",
+     "PB1-9-1-5",
+     "PB1-9-1-5",
+     "PB1-9-1-6",
+     "PB1-9-1-6"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [
+     "GS-5.7.3#8"
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "PB1-9-1-3-K5",
+      "text": "Du kannst die statischen Prüfverfahren Inspektion, Review, Walkthrough und Audit sowie die werkzeuggestützte statische Codeanalyse unterscheiden: Die Inspektion folgt einem streng festgelegten Ablauf mit einem Gutachterteam, das Review ist weniger formal, beim Walkthrough stellt der Entwickler sein Programm vor und beantwortet spontane Fragen, beim Audit folgen die Fragen einem vorher festgelegten Prüfkatalog; Pair Programming wirkt als fortlaufendes Code-Review.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-9-1-3-K8",
+      "text": "Du kannst erklären, warum Black- und White-Box-Test sich nicht ausschließen, sondern meist kombiniert werden, und warum dieselbe Prüfung je nach Blickwinkel als White- oder Black-Box-Test gilt: Wer im Gesamtsystem mit Kenntnis des inneren Aufbaus gezielt eine Komponente ansteuert, testet aus Systemsicht White-Box, für die Komponente selbst ist es ein Black-Box-Test über ihre Schnittstelle.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-9-1-4-K5",
+      "text": "Du kannst Testarten dem Qualitätsmerkmal zuordnen, das sie prüfen: Funktionstest der Funktionalität, Robustheits-, Recovery- und Stresstest der Zuverlässigkeit, Usability-Test der Benutzbarkeit, Performance- und Lasttest der Effizienz, Review und statische Codeanalyse der Wartbarkeit, Portabilitätstest der Übertragbarkeit.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-9-1-5-K7",
+      "text": "Du kannst die Dokumente eines Testprozesses drei Gruppen zuordnen: Testkonzept bzw. Testplanung (was, wie, wann und womit getestet wird), Testspezifikation (Testentwurf, Testfälle und Szenarien, Testablauf) und Testberichte (Testprotokoll, Abweichungsbericht, Review- und Audit-Protokolle, Testabschluss- und Abnahmebericht).",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-9-1-5-K8",
+      "text": "Du kannst beschreiben, wer bei der Abnahme einer Software was akzeptiert: vertraglich die Vollständigkeit und Qualität der vereinbarten Leistungen und die Einhaltung gesetzlicher Vorgaben, die Benutzer die funktionalen Anforderungen (etwa aus einem Testbetrieb) und nichtfunktionale wie verständliche Handbücher und ausreichende Performance, der künftige Betreiber die technischen Anforderungen, Daten-, Revisions- und IT-Sicherheit sowie vollständige Administrationshandbücher.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-9-1-6-K5",
+      "text": "Du kannst Entwicklungsdokumentation und Benutzerdokumentation mit ihren Dokumenten unterscheiden: Zur Entwicklungsdokumentation gehören Projektdokumentation (Auftrag, Pläne, Statusberichte, Lasten- und Pflichtenheft, Abschlussbericht), Systemdokumentation (Anforderungen, Architektur und Schnittstellen, Datenmodelle, kommentierter Quellcode, Versionen) und Testdokumentation; zur Benutzerdokumentation gehören Benutzerhandbuch, Installationsanleitung sowie Schulungs- und Marketingunterlagen.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-9-1-6-K8",
+      "text": "Du kannst ein gedrucktes Benutzerhandbuch und eine Online-Dokumentation vergleichen: Papier ist ohne Gerät lesbar, verursacht aber Druckkosten, kann verloren gehen, lässt sich nicht nachträglich aktualisieren und enthält keine Videos; die Online-Dokumentation ist schnell aktualisiert, durchsuchbar, multimedial und für alle gleichzeitig verfügbar, setzt aber ein Gerät und einen Zugang voraus.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     }
+    ]
+   }
+  ]
+ }
+}

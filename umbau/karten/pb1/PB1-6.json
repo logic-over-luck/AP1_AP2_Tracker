@@ -1,0 +1,1143 @@
+{
+  "ordner": "PB1-6",
+  "stand": "2026-10-16",
+  "auftrag": "umbau/auftraege/AP1-karten.md (für PB1 sinngemäß)",
+  "grundlage": "umbau/lernplan/pb1/PB1-6.json",
+  "karten": [
+    {
+      "id": "PB1-6-1-1-K2-1",
+      "sp": "PB1-6-1-1",
+      "k": "PB1-6-1-1-K2",
+      "vorne": "Ein Arzt kann andere Ärzte vertreten, jeweils von einem Start- bis zu einem Enddatum. Wie modellierst du das im ER-Modell?",
+      "hinten": "Rekursive m:n-Beziehung „vertritt“ von Arzt zu Arzt (Rollen: Vertreter / Vertretener), mit den Beziehungsattributen Startdatum und Enddatum."
+    },
+    {
+      "id": "PB1-6-1-1-K3-1",
+      "sp": "PB1-6-1-1",
+      "k": "PB1-6-1-1-K3",
+      "vorne": "Fragen in einem Forum sollen in Erstellreihenfolge angezeigt und zurückgezogen werden können, ohne sie zu löschen. Welche Attribute ergänzt du?",
+      "hinten": "- `erstelltAm` (Zeitstempel) für die Reihenfolge\n- `istZurueckgezogen` (Boolean) statt Löschen"
+    },
+    {
+      "id": "PB1-6-1-1-K1-1",
+      "sp": "PB1-6-1-1",
+      "k": "PB1-6-1-1-K1",
+      "vorne": "In einer Praxis betreut jeder Arzt mehrere Patienten; außerdem wird jedem Termin eines Patienten ein Arzt zugewiesen. Wie modellierst du die Beziehungen des Arztes?",
+      "hinten": "Zwei getrennte Beziehungen mit eigener Bedeutung:\n- „betreut“: Arzt (1) – Patient (n)\n- „wird zugewiesen“: Arzt (1) – Termin (n)\nJe Bedeutung eine eigene Beziehung, auch wenn die Entitätstypen schon anders verbunden sind."
+    },
+    {
+      "id": "PB1-6-1-1-K1-2",
+      "sp": "PB1-6-1-1",
+      "k": "PB1-6-1-1-K1",
+      "vorne": "Wann modellierst du einen Vorgang wie einen Termin als eigenen Entitätstyp statt als Beziehung zwischen Patient und Arzt?",
+      "hinten": "Wenn der Vorgang selbst Beziehungen zu weiteren Entitätstypen hat (z. B. zur Terminart) oder einzeln angesprochen wird. Eine Beziehung verbindet nur die beteiligten Entitätstypen und trägt höchstens Attribute."
+    },
+    {
+      "id": "AP2-2-2-2-K1-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K1",
+      "vorne": "Was wird beim Überführen ins relationale Modell aus einer Entität und ihren Attributen?",
+      "hinten": "Jede Entität wird eine Tabelle, ihre Attribute werden Spalten, ihr Primärschlüssel wird Primärschlüssel der Tabelle."
+    },
+    {
+      "id": "AP2-2-2-2-K1-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K1",
+      "vorne": "In welche Tabelle kommt bei einer 1:n-Beziehung der Fremdschlüssel?",
+      "hinten": "In die Tabelle auf der n-Seite; er verweist auf den Primärschlüssel der 1-Seite. Beispiel: `AbtNr` als Fremdschlüssel in Mitarbeiter."
+    },
+    {
+      "id": "AP2-2-2-2-K1-3",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K1",
+      "vorne": "Warum kommt der Fremdschlüssel bei einer 1:n-Beziehung nicht auf die 1-Seite?",
+      "hinten": "Dann müsste eine Zelle mehrere Werte aufnehmen, z. B. alle Mitarbeiter einer Abteilung – das verletzt die 1. Normalform."
+    },
+    {
+      "id": "AP2-2-2-2-K2-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K1",
+      "vorne": "Wie wird eine m:n-Beziehung im relationalen Modell umgesetzt?",
+      "hinten": "Mit einer Zwischentabelle, die die Primärschlüssel beider Tabellen als Fremdschlüssel enthält; zusammen bilden sie meist ihren Primärschlüssel. Aus m:n werden zwei 1:n-Beziehungen."
+    },
+    {
+      "id": "AP2-2-2-2-K2-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K1",
+      "vorne": "Bestellung und Artikel stehen in einer m:n-Beziehung mit dem Attribut Menge. Wie sieht die Zwischentabelle aus?",
+      "hinten": "`Bestellposition(BestellNr, ArtikelNr, Menge)`: BestellNr und ArtikelNr sind Fremdschlüssel und zusammen Primärschlüssel; Menge kommt mit in die Zwischentabelle."
+    },
+    {
+      "id": "AP2-4-1-1-K3-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K2",
+      "vorne": "Welcher allgemeine Datentyp (nicht der SQL-Typ) passt jeweils? Lagerbestand in Stück, Artikelpreis, Lieferdatum, Produktfoto, Merkmal „ist aktiv“ (ja/nein)",
+      "hinten": "- Lagerbestand: Ganzzahl\n- Artikelpreis: Währung\n- Lieferdatum: Datum\n- Produktfoto: BLOB\n- ist aktiv: Boolescher Wert"
+    },
+    {
+      "id": "AP2-4-1-1-K3-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K2",
+      "vorne": "Was ist ein BLOB?",
+      "hinten": "Binary Large Object: ein Datentyp für große Binärdaten wie Bilder oder Dateien."
+    },
+    {
+      "id": "AP2-4-1-1-K3-3",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K2",
+      "vorne": "Wann wählt man Text fester Länge, wann Text variabler Länge?",
+      "hinten": "- feste Länge (`CHAR(n)`): Werte sind immer gleich lang, z. B. Ländercode DE\n- variable Länge (`VARCHAR(n)`): Länge schwankt, z. B. Nachname; höchstens n Zeichen"
+    },
+    {
+      "id": "AP2-4-1-1-K3-4",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K2",
+      "vorne": "Welcher Datentyp passt für einen Messwert mit Nachkommastellen wie 21,7 °C?",
+      "hinten": "Gleitkommawert (z. B. `FLOAT`): Er speichert Zahlen mit Nachkommastellen; kleine Rundungsfehler stören bei Messwerten nicht."
+    },
+    {
+      "id": "AP2-4-1-1-K3-5",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K2",
+      "vorne": "Wie lassen sich Geokoordinaten speichern?",
+      "hinten": "Als Paar aus Breitengrad und Längengrad, z. B. in zwei Zahlenspalten mit Nachkommastellen oder in einem eigenen Geodatentyp des Datenbanksystems."
+    },
+    {
+      "id": "AP2-4-1-1-K5-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K2",
+      "vorne": "Warum speichert man Geldbeträge als `DECIMAL` und nicht als Gleitkommazahl?",
+      "hinten": "Eine Gleitkommazahl speichert viele Dezimalbrüche (z. B. 0,10) nur angenähert, es entstehen Rundungsfehler. `DECIMAL` speichert Festkommazahlen exakt mit fester Zahl an Nachkommastellen."
+    },
+    {
+      "id": "AP2-2-2-2-K5-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K3",
+      "vorne": "Was bedeutet referenzielle Integrität?",
+      "hinten": "Jeder Fremdschlüsselwert muss auf einen vorhandenen Primärschlüsselwert der verknüpften Tabelle verweisen."
+    },
+    {
+      "id": "AP2-2-2-2-K5-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K3",
+      "vorne": "Welche Vorgänge weist eine Datenbank ohne Weitergabe zurück, um die referenzielle Integrität zu wahren?",
+      "hinten": "- einen Fremdschlüsselwert eintragen, zu dem es keinen Primärschlüssel gibt\n- einen Datensatz löschen oder seinen Schlüssel ändern, solange noch Fremdschlüssel auf ihn verweisen"
+    },
+    {
+      "id": "AP2-2-2-2-K6-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K3",
+      "vorne": "Was bewirkt die Löschweitergabe?",
+      "hinten": "Wird ein Datensatz gelöscht, werden alle Datensätze, die per Fremdschlüssel auf ihn verweisen, mitgelöscht (SQL: `ON DELETE CASCADE`)."
+    },
+    {
+      "id": "AP2-2-2-2-K6-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K3",
+      "vorne": "Was bewirkt die Aktualisierungsweitergabe?",
+      "hinten": "Ändert sich der Primärschlüssel eines Datensatzes, werden die Fremdschlüssel der abhängigen Datensätze automatisch angepasst (SQL: `ON UPDATE CASCADE`)."
+    },
+    {
+      "id": "AP2-2-2-2-K6-3",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K3",
+      "vorne": "Ein Kunde mit drei Bestellungen wird gelöscht; für den Fremdschlüssel in Bestellung ist Löschweitergabe eingestellt. Was geschieht mit den Bestellungen?",
+      "hinten": "Sie werden ebenfalls gelöscht."
+    },
+    {
+      "id": "AP2-2-2-3-K1-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Was ist Redundanz in einer Tabelle?",
+      "hinten": "Dieselbe Information ist mehrfach gespeichert, z. B. der Name eines Kunden in jeder seiner Bestellungen. Redundanz ist die Ursache der Anomalien."
+    },
+    {
+      "id": "AP2-2-2-3-K1-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`: Belege Redundanz mit einem konkreten Beispiel.",
+      "hinten": "Der Lesername steht in jeder Ausleihe desselben Lesers erneut: Leiht Leser 17 fünf Bücher aus, steht sein Name fünfmal in der Tabelle. Ebenso steht der Titel bei jeder Ausleihe desselben Buchs."
+    },
+    {
+      "id": "AP2-2-2-3-K2-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Was ist eine Änderungsanomalie?",
+      "hinten": "Ein Wert steht mehrfach in der Tabelle und wird beim Ändern nicht an allen Stellen geändert; danach widersprechen sich die Daten."
+    },
+    {
+      "id": "AP2-2-2-3-K3-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Was ist eine Einfügeanomalie?",
+      "hinten": "Ein Datensatz lässt sich nicht anlegen, weil Angaben zu einem anderen Sachverhalt noch fehlen, z. B. ein neuer Kunde, solange es keine Bestellung für ihn gibt."
+    },
+    {
+      "id": "AP2-2-2-3-K4-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Was ist eine Löschanomalie?",
+      "hinten": "Mit einem gelöschten Datensatz gehen Informationen verloren, die man behalten wollte, z. B. die Kundendaten zusammen mit der letzten Bestellung."
+    },
+    {
+      "id": "AP2-2-2-3-K5-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`: Beschreibe eine Änderungsanomalie.",
+      "hinten": "Heiratet Leser 17 und ändert seinen Namen, muss der Name in allen seinen Ausleihen geändert werden. Wird eine Zeile vergessen, steht er danach mit zwei verschiedenen Namen in der Tabelle."
+    },
+    {
+      "id": "AP2-2-2-3-K5-3",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`, Primärschlüssel AusleihNr: Beschreibe eine Einfügeanomalie.",
+      "hinten": "Ein neues Buch, das noch nie ausgeliehen wurde, lässt sich nicht erfassen: Ohne Ausleihe gibt es keine AusleihNr und damit keinen Datensatz. Dasselbe gilt für einen neuen Leser."
+    },
+    {
+      "id": "AP2-2-2-3-K5-4",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K1",
+      "vorne": "Tabelle `Ausleihe(AusleihNr, Datum, LeserNr, Lesername, BuchNr, Titel)`: Beschreibe eine Löschanomalie.",
+      "hinten": "Wird die einzige Ausleihe eines Buchs gelöscht, geht mit ihr auch der Titel des Buchs verloren, obwohl das Buch weiter im Bestand ist."
+    },
+    {
+      "id": "AP2-2-2-4-K1-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Wann ist eine Tabelle in der 1. Normalform?",
+      "hinten": "Wenn jede Zelle genau einen Wert enthält: keine Listen mehrerer Werte in einer Zelle, zusammengesetzte Angaben sind in eigene Spalten zerlegt."
+    },
+    {
+      "id": "AP2-2-2-4-K1-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Die Spalte Anschrift enthält „Hauptstr. 5, 50667 Köln“. Wie stellst du die 1. Normalform her?",
+      "hinten": "Die Angabe in eigene Spalten zerlegen: `Strasse`, `PLZ`, `Ort`. Die Hausnummer bekommt je nach Vorgabe eine eigene Spalte `Hausnr`."
+    },
+    {
+      "id": "AP2-2-2-4-K1-3",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Eine Zelle enthält mehrere gleichartige Werte, z. B. zwei Telefonnummern eines Kunden. Wie behebst du das?",
+      "hinten": "Jeder Wert bekommt einen eigenen Datensatz; spätestens mit der 2. Normalform in einer eigenen Tabelle, z. B. `Telefon(KundenNr, Nummer)`. Nicht in durchnummerierte Spalten wie Telefon1, Telefon2."
+    },
+    {
+      "id": "AP2-2-2-4-K2-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Wann ist eine Tabelle in der 2. Normalform?",
+      "hinten": "Wenn sie in 1. Normalform ist und jedes Nichtschlüsselattribut vom ganzen Primärschlüssel abhängt, nicht nur von einem Teil davon."
+    },
+    {
+      "id": "AP2-2-2-4-K2-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Bei welcher Art von Primärschlüssel kann die 2. Normalform überhaupt verletzt sein?",
+      "hinten": "Nur bei einem zusammengesetzten Primärschlüssel. Besteht er aus einer Spalte, ist eine Tabelle in 1. Normalform auch in 2. Normalform."
+    },
+    {
+      "id": "AP2-2-2-4-K2-3",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Wie stellst du die 2. Normalform her?",
+      "hinten": "Attribute, die nur von einem Teil des Primärschlüssels abhängen, zusammen mit diesem Schlüsselteil in eine eigene Tabelle auslagern; der Schlüsselteil bleibt in der Ausgangstabelle als Fremdschlüssel."
+    },
+    {
+      "id": "AP2-2-2-4-K3-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Wann ist eine Tabelle in der 3. Normalform?",
+      "hinten": "Wenn sie in 2. Normalform ist und kein Nichtschlüsselattribut von einem anderen Nichtschlüsselattribut abhängt (keine transitive Abhängigkeit)."
+    },
+    {
+      "id": "AP2-2-2-4-K3-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K2",
+      "vorne": "Wie stellst du die 3. Normalform her?",
+      "hinten": "Das abhängige Attribut zusammen mit dem Nichtschlüsselattribut, von dem es abhängt, in eine eigene Tabelle auslagern. Dieses wird dort Primärschlüssel und bleibt in der Ausgangstabelle als Fremdschlüssel."
+    },
+    {
+      "id": "AP2-2-2-2-K3-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K3",
+      "vorne": "Was ist ein zusammengesetzter Primärschlüssel?",
+      "hinten": "Ein Primärschlüssel aus mehreren Spalten, die nur gemeinsam jeden Datensatz eindeutig machen, z. B. `(BestellNr, ArtikelNr)` in einer Zwischentabelle."
+    },
+    {
+      "id": "AP2-2-2-2-K3-3",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K3",
+      "vorne": "Wie kennzeichnet man Primär- und Fremdschlüssel im relationalen Modell üblicherweise?",
+      "hinten": "- Primärschlüssel: unterstrichen oder mit „PK“\n- Fremdschlüssel: mit „FK“\nBei einem zusammengesetzten Primärschlüssel werden alle beteiligten Spalten gekennzeichnet."
+    },
+    {
+      "id": "AP2-2-2-2-K4-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K3",
+      "vorne": "Welche Kardinalität kommt zwischen den Tabellen eines fertigen relationalen Modells nicht vor, und warum?",
+      "hinten": "m:n – sie ist über eine Zwischentabelle in zwei 1:n-Beziehungen aufgelöst. Es bleiben 1:1 und 1:n."
+    },
+    {
+      "id": "AP2-2-2-2-K4-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K3",
+      "vorne": "Die Zwischentabelle Bestellposition verbindet Bestellung und Artikel. Welche Kardinalitäten zeichnest du ein?",
+      "hinten": "- Bestellung 1 : n Bestellposition\n- Artikel 1 : n Bestellposition\nDie n-Seite (beim Krähenfuß der Fuß) liegt jeweils bei der Zwischentabelle."
+    },
+    {
+      "id": "AP2-2-2-4-K4-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K3",
+      "vorne": "In welchen Schritten zerlegst du eine unnormalisierte Tabelle bis zur 3. Normalform?",
+      "hinten": "- 1. NF: Mehrfachwerte und zusammengesetzte Angaben auflösen, Primärschlüssel festlegen\n- 2. NF: Teilabhängigkeiten vom Schlüssel auslagern\n- 3. NF: Abhängigkeiten zwischen Nichtschlüsselattributen auslagern\n- Primär- und Fremdschlüssel jeder Tabelle festlegen"
+    },
+    {
+      "id": "AP2-2-2-4-K4-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K3",
+      "vorne": "Was darf beim Zerlegen einer Tabelle in mehrere Tabellen nicht verloren gehen?",
+      "hinten": "Keine Information: Über die Fremdschlüssel müssen sich die ursprünglichen Daten wieder vollständig zusammensetzen lassen."
+    },
+    {
+      "id": "AP2-2-2-4-K5-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K4",
+      "vorne": "`Bestellposition(BestellNr, ArtikelNr, Artikelname, Menge)` mit Primärschlüssel (BestellNr, ArtikelNr). Welche Normalform ist verletzt, und warum?",
+      "hinten": "Die 2. Normalform: Artikelname hängt nur von ArtikelNr ab, also nur von einem Teil des Primärschlüssels."
+    },
+    {
+      "id": "AP2-2-2-4-K5-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K4",
+      "vorne": "`Mitarbeiter(PersNr, Name, AbtNr, AbtName)` mit Primärschlüssel PersNr. Welche Normalform ist verletzt, und warum?",
+      "hinten": "Die 3. Normalform: AbtName hängt von AbtNr ab, also von einem Nichtschlüsselattribut. 1. und 2. Normalform sind erfüllt."
+    },
+    {
+      "id": "AP2-2-2-4-K5-3",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K4",
+      "vorne": "In einer Kundentabelle enthält die Spalte Telefon „0221 123456, 0170 987654“. Welche Normalform ist verletzt?",
+      "hinten": "Die 1. Normalform: Die Zelle enthält mehr als einen Wert."
+    },
+    {
+      "id": "AP2-4-1-1-K1-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K1",
+      "vorne": "Wodurch unterscheidet sich eine relationale Datenbank von einer NoSQL-Datenbank?",
+      "hinten": "- relational: Daten in Tabellen mit festem Schema, Tabellen über Schlüssel verbunden\n- NoSQL: kein festes Tabellenschema, die Struktur der Daten ist flexibel"
+    },
+    {
+      "id": "AP2-4-1-1-K1-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K1",
+      "vorne": "Was bedeutet „festes Schema“ bei einer relationalen Datenbank?",
+      "hinten": "Spalten und ihre Datentypen sind für jede Tabelle vorab festgelegt; jede Zeile einer Tabelle hat denselben Aufbau."
+    },
+    {
+      "id": "AP2-4-1-1-K2-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K1",
+      "vorne": "Welche vier Hauptarten von NoSQL-Datenbanken unterscheidet man?",
+      "hinten": "- dokumentenorientiert\n- Schlüssel-Wert-Speicher\n- spaltenorientiert\n- Graphdatenbank"
+    },
+    {
+      "id": "AP2-4-1-1-K2-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K1",
+      "vorne": "Welche Art von NoSQL-Datenbank speichert Daten als Knoten und Kanten (Beziehungen)?",
+      "hinten": "Die Graphdatenbank."
+    },
+    {
+      "id": "AP2-4-1-1-K2-3",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K1",
+      "vorne": "Wie speichert eine dokumentenorientierte Datenbank ihre Daten?",
+      "hinten": "Als in sich geschlossene Dokumente, z. B. im JSON-Format; die Dokumente dürfen unterschiedlich aufgebaut sein."
+    },
+    {
+      "id": "AP2-4-1-1-K2-4",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K1",
+      "vorne": "Wie speichert ein Schlüssel-Wert-Speicher seine Daten?",
+      "hinten": "Als Paare aus einem eindeutigen Schlüssel und einem Wert; zugegriffen wird über den Schlüssel."
+    },
+    {
+      "id": "PB1-6-1-4-K2-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K2",
+      "vorne": "Ordne die Begriffe zu: Tabelle, Datensatz, Spalte – in einer dokumentenorientierten Datenbank.",
+      "hinten": "- Tabelle ↔ Collection\n- Datensatz ↔ Dokument\n- Spalte ↔ Feld"
+    },
+    {
+      "id": "PB1-6-1-4-K3-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K3",
+      "vorne": "Nenne Vorteile einer Dokumentendatenbank wie MongoDB gegenüber einer relationalen Datenbank.",
+      "hinten": "- flexibles Datenmodell: neue Felder ohne Schemaänderung\n- schnellere Abfragen, weil Zusammengehöriges in einem Dokument liegt (keine Joins)\n- Datenstrukturen passen zum Programm (Objekt ≈ Dokument)"
+    },
+    {
+      "id": "AP2-4-1-1-K6-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K4",
+      "vorne": "In welchem Fall passt eine relationale Datenbank besser als eine NoSQL-Datenbank? Beispiel?",
+      "hinten": "Wenn die Daten fest strukturiert sind, in Beziehung zueinander stehen und konsistent bleiben müssen, z. B. Kunden, Bestellungen und Rechnungen."
+    },
+    {
+      "id": "AP2-4-1-1-K6-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K4",
+      "vorne": "In welchem Fall passt eine NoSQL-Datenbank besser als eine relationale? Beispiel?",
+      "hinten": "Wenn die Struktur der Daten wechselt oder sehr große Datenmengen anfallen, z. B. ein Produktkatalog mit je Produkt verschiedenen Merkmalen, Sitzungsdaten oder das Beziehungsnetz eines sozialen Netzwerks."
+    },
+    {
+      "id": "PB1-6-1-5-K1-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K1",
+      "vorne": "Wofür stehen die ACID-Eigenschaften einer Transaktion?",
+      "hinten": "- Atomarität: ganz oder gar nicht\n- Konsistenz: Regeln gelten vorher und nachher\n- Isolation: gleichzeitige Transaktionen beeinflussen sich nicht\n- Dauerhaftigkeit: bestätigte Änderungen bleiben erhalten"
+    },
+    {
+      "id": "AP2-4-1-2-K6-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K2",
+      "vorne": "Was ist eine Transaktion?",
+      "hinten": "Eine Folge von Anweisungen, die als Einheit ganz oder gar nicht ausgeführt wird."
+    },
+    {
+      "id": "AP2-4-1-2-K6-2",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K2",
+      "vorne": "Warum gehören Abbuchen und Gutschreiben einer Überweisung in eine Transaktion?",
+      "hinten": "Bricht der Vorgang nach dem Abbuchen ab, werden alle Änderungen zurückgenommen. So geht kein Geld verloren, der Datenbestand bleibt stimmig."
+    },
+    {
+      "id": "AP2-4-1-2-K1-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Was ist ein Constraint?",
+      "hinten": "Eine Regel in der Tabellendefinition, die die Datenbank bei jedem Einfügen und Ändern erzwingt; Änderungen, die sie verletzen, werden abgewiesen."
+    },
+    {
+      "id": "AP2-4-1-2-K2-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Welche fünf Constraints sichern die Integrität einer Tabelle?",
+      "hinten": "- Primärschlüssel (`PRIMARY KEY`)\n- Fremdschlüssel (`FOREIGN KEY`)\n- `NOT NULL`\n- `UNIQUE`\n- `CHECK`"
+    },
+    {
+      "id": "AP2-4-1-2-K2-2",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Was erzwingen `NOT NULL` und `UNIQUE`?",
+      "hinten": "- `NOT NULL`: Die Spalte muss einen Wert haben.\n- `UNIQUE`: Jeder Wert darf in der Spalte nur einmal vorkommen."
+    },
+    {
+      "id": "AP2-4-1-2-K2-3",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Was erzwingt ein `CHECK`-Constraint?",
+      "hinten": "Eine Bedingung, die jeder Wert der Spalte erfüllen muss, z. B. `CHECK (Menge > 0)`."
+    },
+    {
+      "id": "AP2-4-1-2-K2-4",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Was erzwingt ein Primärschlüssel?",
+      "hinten": "Jede Zeile ist eindeutig gekennzeichnet: Der Wert kommt nur einmal vor und ist nie NULL (wirkt wie `UNIQUE` und `NOT NULL` zusammen)."
+    },
+    {
+      "id": "AP2-4-1-2-K2-5",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Was erzwingt ein Fremdschlüssel?",
+      "hinten": "Referenzielle Integrität: Jeder Wert im Fremdschlüssel muss als Primärschlüssel in der Tabelle vorkommen, auf die er verweist (oder NULL sein)."
+    },
+    {
+      "id": "PB1-6-1-5-K3-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K3",
+      "vorne": "Mit welchen Maßnahmen sicherst du die Datenintegrität einer Anwendung, und wie ergänzen sie sich?",
+      "hinten": "- Constraints in der Datenbank (PK, FK, NOT NULL, UNIQUE, CHECK) – greifen immer\n- Validierung der Eingaben in der Anwendung – gute Fehlermeldungen\n- Transaktionen für zusammengehörige Änderungen\nAm besten kombiniert."
+    },
+    {
+      "id": "PB1-6-1-2-K4-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K4",
+      "vorne": "Mitarbeiter arbeiten in mehreren Projekten, je Projekt mit einer eigenen Stundenzahl. In welche Tabelle kommt das Attribut Stunden?",
+      "hinten": "In die Zwischentabelle der m:n-Beziehung, z. B. `Mitarbeit(MitarbeiterNr, ProjektNr, Stunden)`. Die Stunden gehören zur Kombination aus Mitarbeiter und Projekt, nicht zu einem von beiden allein."
+    },
+    {
+      "id": "PB1-6-1-2-K4-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K4",
+      "vorne": "Warum kann ein Beziehungsattribut einer m:n-Beziehung weder in der einen noch in der anderen Entitätstabelle stehen?",
+      "hinten": "Jeder Datensatz dort ist mit vielen Partnern verbunden; der Wert gilt aber nur für ein bestimmtes Paar. Eindeutig zugeordnet ist er nur in der Zeile der Zwischentabelle."
+    },
+    {
+      "id": "PB1-6-1-2-K5-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K5",
+      "vorne": "Wann lohnt es sich, Daten mit einer 1:1-Beziehung auf zwei Tabellen zu verteilen?",
+      "hinten": "- wenn ein Teil eigene Zugriffsrechte braucht (z. B. vertrauliche Gehaltsdaten)\n- wenn viele selten gebrauchte oder große Attribute ausgelagert werden sollen\nSonst: eine Tabelle, weil die Daten dasselbe Objekt beschreiben."
+    },
+    {
+      "id": "PB1-6-1-2-K5-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K5",
+      "vorne": "Warum sind 1:1-Beziehungen zwischen Tabellen selten?",
+      "hinten": "Daten, die genau einem Datensatz zugeordnet sind, beschreiben meist dasselbe Objekt und können als Spalten in derselben Tabelle stehen; eine zweite Tabelle bringt ohne besonderen Grund nur einen zusätzlichen Join."
+    },
+    {
+      "id": "PB1-6-1-2-K6-1",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K6",
+      "vorne": "Ein Fußballspiel hat genau eine Heim- und eine Gastmannschaft. Brauchst du für die m:n-Beziehung Spiel – Mannschaft eine Zwischentabelle?",
+      "hinten": "Nein. Weil die Zahl fest (zwei) ist und jede Mannschaft eine eigene Rolle hat, genügen in Spiel zwei Fremdschlüssel: HeimMannschaftID und GastMannschaftID."
+    },
+    {
+      "id": "PB1-6-1-2-K6-2",
+      "sp": "PB1-6-1-2",
+      "k": "PB1-6-1-2-K6",
+      "vorne": "Wann ist bei einer m:n-Beziehung die Zwischentabelle unverzichtbar?",
+      "hinten": "Wenn die Zahl der Partner je Datensatz offen ist (z. B. Teilnehmer je Kurs). Feste Spalten wie Teilnehmer1, Teilnehmer2 würden irgendwann nicht reichen und Abfragen umständlich machen."
+    },
+    {
+      "id": "PB1-6-1-3-K5-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K5",
+      "vorne": "Eine Tabelle ist in der 1. NF und hat einen einspaltigen Primärschlüssel. Kann sie die 2. NF verletzen?",
+      "hinten": "Nein. Die 2. NF verbietet Abhängigkeiten von einem Teil des Schlüssels; einen solchen Teil gibt es nur bei einem zusammengesetzten Schlüssel."
+    },
+    {
+      "id": "PB1-6-1-3-K5-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K5",
+      "vorne": "Bei welchen Tabellen musst du die 2. NF überhaupt prüfen?",
+      "hinten": "Nur bei Tabellen mit zusammengesetztem Primärschlüssel, z. B. Bestellposition(BestellNr, ArtikelNr, …): Hängt ein Attribut nur von ArtikelNr ab, ist die 2. NF verletzt."
+    },
+    {
+      "id": "PB1-6-1-3-K6-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K6",
+      "vorne": "Eine Tabelle Artikel enthält ArtikelNr, Nettopreis und Bruttopreis (19 % USt). Welche Normalform ist verletzt und warum?",
+      "hinten": "Die 3. NF: Bruttopreis hängt vom Nichtschlüsselattribut Nettopreis ab (transitiv vom Schlüssel). Lösung: Bruttopreis nicht speichern, sondern bei Bedarf berechnen."
+    },
+    {
+      "id": "PB1-6-1-3-K7-1",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K7",
+      "vorne": "Warum normalisiert man ein Datenmodell nicht immer so weit wie möglich?",
+      "hinten": "Jede Zerlegung bringt mehr Tabellen, Schlüssel und Joins: Abfragen werden langsamer und komplexer. Man entfernt nur ungewollte Redundanz; gewollte Redundanz wird begründet in Kauf genommen."
+    },
+    {
+      "id": "PB1-6-1-3-K7-2",
+      "sp": "PB1-6-1-3",
+      "k": "PB1-6-1-3-K7",
+      "vorne": "Nenne ein Beispiel für gewollte Redundanz und ihre Begründung.",
+      "hinten": "Z. B. den Gesamtbetrag einer Rechnung speichern: Er muss auch nach späteren Preisänderungen unverändert bleiben. Oder den Ort neben der PLZ, weil eine PLZ-Tabelle mehr Joins als Nutzen bringt."
+    },
+    {
+      "id": "PB1-6-1-4-K5-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K5",
+      "vorne": "Welche Skalierungsart ist typisch für relationale, welche für NoSQL-Datenbanken?",
+      "hinten": "Relational meist vertikal (ein leistungsstärkerer Server), NoSQL meist horizontal (weitere Server im Verbund, die Daten werden aufgeteilt)."
+    },
+    {
+      "id": "PB1-6-1-4-K5-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K5",
+      "vorne": "Warum lassen sich NoSQL-Datenbanken leichter horizontal skalieren als relationale?",
+      "hinten": "Ihre Datensätze (Dokumente, Schlüssel-Wert-Paare) sind ohne feste Verknüpfungen in sich abgeschlossen und lassen sich auf viele Server verteilen. Relationale Joins und sofortige Konsistenz über alle Tabellen sind über viele Rechner schwer umzusetzen."
+    },
+    {
+      "id": "PB1-6-1-4-K6-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K6",
+      "vorne": "Was bedeutet Eventual Consistency?",
+      "hinten": "Nach einer Änderung dürfen die Kopien der Daten auf verschiedenen Servern kurz voneinander abweichen; nach einer gewissen Zeit sind sie wieder überall gleich."
+    },
+    {
+      "id": "PB1-6-1-4-K6-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K6",
+      "vorne": "Worin unterscheidet sich BASE von ACID?",
+      "hinten": "ACID: sofortige Konsistenz nach jeder Transaktion. BASE: Verfügbarkeit hat Vorrang, die Daten werden erst nach einer Weile überall konsistent (Eventual Consistency)."
+    },
+    {
+      "id": "PB1-6-1-4-K7-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K7",
+      "vorne": "Nenne drei Nachteile von NoSQL-Datenbanken gegenüber relationalen.",
+      "hinten": "- keine einheitliche Abfragesprache wie SQL\n- Joins zwischen Datenbeständen kaum möglich\n- Integritätsprüfungen (z. B. Fremdschlüssel) muss die Anwendung selbst programmieren"
+    },
+    {
+      "id": "PB1-6-1-4-K7-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K7",
+      "vorne": "Wer sorgt in einer NoSQL-Datenbank meist dafür, dass ein Verweis auf einen Kunden nicht ins Leere zeigt?",
+      "hinten": "Die Anwendung: Sie muss die Prüfung selbst programmieren, weil das DBMS meist keine Fremdschlüssel-Constraints kennt."
+    },
+    {
+      "id": "PB1-6-1-4-K8-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K8",
+      "vorne": "Welche NoSQL-Art passt jeweils? a) Follower-Beziehungen eines sozialen Netzes b) Sitzungsdaten eines Webshops c) Produktkatalog mit unterschiedlichen Merkmalen d) Umsatzauswertung über Millionen Verkäufe",
+      "hinten": "a) Graph\nb) Schlüssel-Wert\nc) dokumentenorientiert\nd) spaltenorientiert"
+    },
+    {
+      "id": "PB1-6-1-4-K8-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K8",
+      "vorne": "Wofür ist eine Schlüssel-Wert-Datenbank besonders geeignet?",
+      "hinten": "Für sehr schnellen Zugriff auf Werte über einen bekannten Schlüssel, z. B. Sitzungsdaten oder als Cache – nicht für Abfragen über die Inhalte."
+    },
+    {
+      "id": "PB1-6-1-4-K9-1",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K9",
+      "vorne": "Worin unterscheiden sich das hierarchische und das Netzwerkdatenmodell?",
+      "hinten": "Hierarchisch: Baum, jeder Datensatz hat genau einen Vorgänger (m:n nur mit Redundanz). Netzwerkmodell: ein Datensatz kann mehrere Vorgänger haben, dadurch sind m:n-Beziehungen ohne Redundanz möglich."
+    },
+    {
+      "id": "PB1-6-1-4-K9-2",
+      "sp": "PB1-6-1-4",
+      "k": "PB1-6-1-4-K9",
+      "vorne": "Nenne die Datenmodelle, nach denen man Datenbanken einteilt.",
+      "hinten": "Hierarchisch, Netzwerk, relational, objektorientiert, objektrelational, NoSQL (dokumentenorientiert, Schlüssel-Wert, Graph, spaltenorientiert)."
+    },
+    {
+      "id": "PB1-6-1-5-K4-1",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K4",
+      "vorne": "Ein Programm fügt bei ausgeschaltetem Autocommit Datensätze ein und schließt dann die Verbindung ohne Commit. Was steht danach in der Datenbank?",
+      "hinten": "In der Regel nichts von den Änderungen: Die Transaktion war noch offen und wird beim Schließen ohne Commit verworfen. Mit eingeschaltetem Autocommit wäre dagegen jede Anweisung sofort gespeichert worden."
+    },
+    {
+      "id": "PB1-6-1-5-K4-2",
+      "sp": "PB1-6-1-5",
+      "k": "PB1-6-1-5-K4",
+      "vorne": "Was bewirken Commit und Rollback?",
+      "hinten": "Commit macht alle Änderungen der Transaktion dauerhaft und für andere sichtbar. Rollback verwirft alle Änderungen seit dem letzten Commit."
+    }
+  ],
+  "nicht_abgefragt": [],
+  "unsicher": [],
+  "protokoll": [
+    {
+      "id": "AP2-2-2-1-K1-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ER-Grundlagen stehen in AP1-8-4-1 und werden importiert"
+    },
+    {
+      "id": "AP2-2-2-1-K1-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ER-Grundlagen stehen in AP1-8-4-1 und werden importiert"
+    },
+    {
+      "id": "AP2-2-2-1-K1-3",
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Entitäten, Attribute und Beziehungen aus einem Text ableiten steht in AP1-8-4-1-K2; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
+    },
+    {
+      "id": "AP2-2-2-1-K2-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ER-Grundlagen stehen in AP1-8-4-1 und werden importiert"
+    },
+    {
+      "id": "AP2-2-2-1-K2-2",
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Kardinalitäten bestimmen steht in AP1-8-4-1-K4; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
+    },
+    {
+      "id": "AP2-2-2-1-K2-3",
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Kardinalitäten bestimmen steht in AP1-8-4-1-K4; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
+    },
+    {
+      "id": "AP2-2-2-1-K3-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ER-Grundlagen stehen in AP1-8-4-1 und werden importiert"
+    },
+    {
+      "id": "AP2-2-2-1-K3-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ER-Grundlagen stehen in AP1-8-4-1 und werden importiert"
+    },
+    {
+      "id": "AP2-2-2-1-K3-3",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ER-Grundlagen stehen in AP1-8-4-1 und werden importiert"
+    },
+    {
+      "id": "AP2-2-2-1-K4-1",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ein bestehendes ER-Modell erweitern steht in AP1-8-4-1"
+    },
+    {
+      "id": "AP2-2-2-1-K4-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – ein bestehendes ER-Modell erweitern steht in AP1-8-4-1"
+    },
+    {
+      "id": "AP2-2-2-1-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Attribute an der Beziehung stehen in AP1-8-4-1-K7; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
+    },
+    {
+      "id": "AP2-2-2-1-K5-2",
+      "entscheidung": "entfernt",
+      "grund": "E2/P36 – Attribute an der Beziehung stehen in AP1-8-4-1-K7; PB1-6-1-1-K1 auf die neuen Modellierungsentscheidungen gekürzt"
+    },
+    {
+      "id": "AP2-2-2-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K3-2",
+      "entscheidung": "entfernt",
+      "grund": "E2 – Fremdschlüssel als Begriff steht in AP1"
+    },
+    {
+      "id": "AP2-2-2-2-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-2-K6-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K5-1",
+      "entscheidung": "entfernt",
+      "grund": "doppelt zu den drei Karten je Anomalie"
+    },
+    {
+      "id": "AP2-2-2-3-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-3-K5-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K1-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K4-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K4-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K5-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-2-2-4-K5-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K1-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K3-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K3-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K3-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K3-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K3-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K5-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-1-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K1-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K2-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K2-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K2-3",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K2-4",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K2-5",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K6-1",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "AP2-4-1-2-K6-2",
+      "entscheidung": "bleibt",
+      "grund": "passt fachlich und zur Aussage, Tiefe stimmt"
+    },
+    {
+      "id": "PB1-6-1-1-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-1-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-4-K2-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-4-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-5-K1-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-5-K3-1",
+      "entscheidung": "neu",
+      "grund": "Aussage hatte zu wenig oder keine passende Karte"
+    },
+    {
+      "id": "PB1-6-1-1-K1-1",
+      "entscheidung": "neu",
+      "grund": "P36 – Modellierungsentscheidung aus 2021W-PB1-A2-b; die Elemente des ER-Modells fragt AP1-8-4-1"
+    },
+    {
+      "id": "PB1-6-1-1-K1-2",
+      "entscheidung": "neu",
+      "grund": "P36 – Modellierungsentscheidung aus 2021W-PB1-A2-b; die Elemente des ER-Modells fragt AP1-8-4-1"
+    },
+    {
+      "id": "PB1-6-1-2-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.4-S609)"
+    },
+    {
+      "id": "PB1-6-1-2-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.4-S609)"
+    },
+    {
+      "id": "PB1-6-1-2-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S602)"
+    },
+    {
+      "id": "PB1-6-1-2-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S602)"
+    },
+    {
+      "id": "PB1-6-1-2-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S605)"
+    },
+    {
+      "id": "PB1-6-1-2-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.3-S605)"
+    },
+    {
+      "id": "PB1-6-1-3-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S272)"
+    },
+    {
+      "id": "PB1-6-1-3-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S272)"
+    },
+    {
+      "id": "PB1-6-1-3-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S272)"
+    },
+    {
+      "id": "PB1-6-1-3-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S274)"
+    },
+    {
+      "id": "PB1-6-1-3-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.3-S274)"
+    },
+    {
+      "id": "PB1-6-1-4-K5-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S265); V2-Prüfung PB1-a Nr. 28: angepasst"
+    },
+    {
+      "id": "PB1-6-1-4-K5-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S265)"
+    },
+    {
+      "id": "PB1-6-1-4-K6-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K6-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K7-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K7-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.7.1-S266)"
+    },
+    {
+      "id": "PB1-6-1-4-K8-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S592)"
+    },
+    {
+      "id": "PB1-6-1-4-K8-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S592)"
+    },
+    {
+      "id": "PB1-6-1-4-K9-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S591)"
+    },
+    {
+      "id": "PB1-6-1-4-K9-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.1-S591)"
+    },
+    {
+      "id": "PB1-6-1-5-K4-1",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.6-S624); V2-Prüfung PB1-a Nr. 20: angepasst"
+    },
+    {
+      "id": "PB1-6-1-5-K4-2",
+      "entscheidung": "neu",
+      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.8.6-S624)"
+    }
+  ]
+}

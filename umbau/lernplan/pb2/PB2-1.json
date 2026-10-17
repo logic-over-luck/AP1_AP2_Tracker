@@ -1,0 +1,632 @@
+{
+ "oberblock": {
+  "id": "PB2-1",
+  "titel": "Programmlogik und Pseudocode",
+  "raum": "PB2",
+  "gebiete": [
+   "G.PB2.01",
+   "G.PB2.02"
+  ]
+ },
+ "themenbloecke": [
+  {
+   "id": "PB2-1-1",
+   "titel": "Algorithmen in Pseudocode",
+   "satz": "Lösungen als lesbaren Pseudocode oder als Aktivitätsdiagramm aufschreiben: Funktionen zur vorgegebenen Signatur, Schleifengrenzen, Sonderfälle und Datentypen, die Grundmuster über Arrays und Listen (filtern, zählen, Extremwerte, abgleichen, gruppieren, Gruppenwechsel) und bestehende Klassen erweitern. Variablen, Kontrollstrukturen und einfachen Pseudocode kennst du aus AP1.",
+   "stichpunkte": [
+    {
+     "id": "PB2-1-1-1",
+     "titel": "Pseudocode und Aktivitätsdiagramm: Funktionen, Schleifengrenzen, Sonderfälle und Datentypen",
+     "ziel": "Eine Funktion zur vorgegebenen Signatur so aufschreiben, dass ein Dritter sie ohne Kenntnis der Sprache lesen kann: mit richtigen Schleifengrenzen, abgefangenen Sonderfällen, passenden Datentypen und nur den Methoden und Strukturen, die die Aufgabe vorgibt; dieselben Kontrollstrukturen auch als Aktivitätsdiagramm.",
+     "gebiete": [
+      "G.PB2.01",
+      "G.PB2.02"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.03.05"
+      },
+      {
+       "id": "AP2b.04.16",
+       "anteil": "Form des Pseudocodes, Sonderfälle"
+      },
+      {
+       "id": "AP2b.04.16.1",
+       "anteil": "Form des Pseudocodes, Schleifengrenzen, Datentypen"
+      },
+      {
+       "id": "AP2a.02.02.1"
+      },
+      {
+       "id": "ANH.uml-aktivitaetsdiagramm"
+      },
+      {
+       "id": "ANH.uml-sequenzdiagramm"
+      },
+      {
+       "id": "ANH.uml-zustandsdiagramm"
+      }
+     ],
+     "teilaufgaben": [
+      "2021W-PB2-A2",
+      "2022S-PB2-A1",
+      "2023S-PB2-A2",
+      "2024W-PB2-A1",
+      "2025S-PB2-A1",
+      "2025W-PB2-A1-a",
+      "2025W-PB2-A1-b",
+      "2021W-PB2-A1-a",
+      "2023S-PB2-A1",
+      "2024S-PB2-A1-a",
+      "2023W-PB2-A1",
+      "2025S-PB2-A2-a",
+      "2025W-PB2-A2"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-1-1-1-K1",
+       "text": "Du kannst eine Funktion zur vorgegebenen Signatur (Name, Parameter mit Datentyp, Rückgabetyp) so in Pseudocode schreiben, dass ein Dritter sie ohne Kenntnis deiner Programmiersprache lesen kann, und dabei nur die vorgegebenen Klassen, Methoden und Datenstrukturen verwenden: Listen mit add, size und get, Getter von Objekten und vorgegebene Methoden wie getDay() oder getTimeTable(id), aber keine eigenen Hilfsfunktionen, die es nicht gibt.",
+       "kurz": "Pseudocode zur vorgegebenen Signatur",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.03.05",
+        "beleg:2021W-PB2-A2",
+        "beleg:2023S-PB2-A2",
+        "beleg:2025W-PB2-A1-a"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K2",
+       "text": "Du kannst über die Pseudocode-Grundlagen aus AP1 hinaus Schleifengrenzen beim Schreiben richtig setzen (Index von 0 bis Länge − 1; greifst du auf das Nachbarelement i − 1 oder i + 1 zu, beginnt die Schleife eine Stelle später oder endet eine Stelle früher) und eine Schleife mit einer zusätzlichen Bedingung (Merker oder Zähler) vorzeitig beenden, sobald das Ergebnis feststeht.",
+       "kurz": "Schleifengrenzen und vorzeitiger Schleifenabbruch",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16.1",
+        "beleg:2025W-PB2-A1-a",
+        "beleg:2024W-PB2-A1",
+        "beleg:2022S-PB2-A1"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K3",
+       "text": "Du kannst zweidimensionale Arrays verarbeiten: Zeile und Spalte über zwei Indizes ansprechen, eine Zeile anhand eines Schlüsselwerts (z. B. Monat und Tag) suchen und die Spalten dieser Zeile durchlaufen, auch wenn die Nutzdaten erst ab einer bestimmten Spalte beginnen (Zeitslot j steht in Spalte 2 + j).",
+       "kurz": "Zweidimensionale Arrays: Zeile suchen, Spalten durchlaufen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16.1",
+        "beleg:2021W-PB2-A2",
+        "beleg:2022S-PB2-A1"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K5",
+       "text": "Du kannst im Pseudocode Sonderfälle vor dem ersten Zugriff abfangen und dafür den festgelegten Rückgabewert liefern, zum Beispiel eine leere Liste vor get(0) (Rückgabe null), einen Sonderwert als Parameter (Zeitslot −1 heißt „beliebiger Slot“), keinen passenden Eintrag (Rückgabe false) oder eine Division durch null, wenn nichts gezählt wurde.",
+       "kurz": "Sonderfälle vor dem ersten Zugriff",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2025W-PB2-A1-b",
+        "beleg:2021W-PB2-A2"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K6",
+       "text": "Du kannst bei Rechnungen im Pseudocode die Datentypen beachten: eine ungewollte Ganzzahldivision vermeiden (getMaxPersonen() / 2.0 statt / 2), eine Prozentschwelle mit ganzen Zahlen ohne Abschneiden formulieren (belegt * 100 > 80 * anzahlBetten statt belegt / anzahlBetten > 0.8) und Kommazahlen nicht in einer Integer-Variablen speichern.",
+       "kurz": "Datentypen bei Rechnungen im Pseudocode",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16.1",
+        "beleg:2025W-PB2-A1-a",
+        "beleg:2025S-PB2-A1"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K7",
+       "text": "Du kannst die Kontrollstrukturen eines Algorithmus statt in Pseudocode als Aktivitätsdiagramm abbilden und zwischen beiden Formen übertragen: eine Zählschleife mit Initialisierung, Prüfung und Schrittweite als eigene Aktionen, geschachtelte Schleifen und Verzweigungen, ohne dass Bedingungen fehlen oder sich überschneiden.",
+       "kurz": "Kontrollstrukturen als Aktivitätsdiagramm",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2a.02.02.1",
+        "beleg:2021W-PB2-A1-a"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K8",
+       "text": "Du kannst erklären, wann ein Algorithmus vor dem Programmieren sprachunabhängig als Pseudocode oder Aktivitätsdiagramm modelliert wird: bei komplexen Abläufen, weil das Modell den Lösungsweg vorab plant, im Team besprechbar macht und dokumentiert, während ein einfacher Ablauf wie die Summe zweier Werte direkt programmiert wird.",
+       "kurz": "Algorithmus erst modellieren oder direkt codieren",
+       "stufe": 2,
+       "herkunft": [
+        "buch:FS2-2.3.1-S159"
+       ]
+      },
+      {
+       "id": "PB2-1-1-1-K9",
+       "text": "Du kannst einen in Pseudocode oder als Aktivitätsdiagramm modellierten Algorithmus in einer Programmiersprache umsetzen und ihn nur dort anpassen, wo die Sprache abweicht – eine fehlende Von-bis-Zählschleife durch eine Solange-Schleife mit Zähler nachbilden, Datentypen, Datenstrukturen sowie Ein- und Ausgabe anpassen –, ohne den Grundablauf des Modells zu ändern.",
+       "kurz": "Modell in eine Programmiersprache übertragen",
+       "stufe": 3,
+       "herkunft": [
+        "buch:FS2-2.3.1-S163"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "AP1-8-2-1",
+      "AP1-8-2-2",
+      "AP1-8-2-3",
+      "AP1-8-2-4",
+      "AP1-8-3-3",
+      "PB1-5-1-2",
+      "PB1-4-1-3",
+      "PB1-4-1-4",
+      "PB1-4-1-5"
+     ],
+     "hinweis": "Die Darstellung soll laut Katalog in allgemein verständlichem Programm- oder Pseudocode erfolgen; eine bestimmte Sprache wird nicht verlangt (AP2b.03.05, AP2b.04.19). Die Signatur ist in den Aufgaben meist vorgedruckt. Ganzzahldivision rechnen kannst du aus AP1-8-2-3, Laufzeitfehler wie Division durch null kennst du aus AP1-8-2-4, Fehlerreaktion festlegen aus PB1-5-1-2; hier geht es darum, den Sonderfall im eigenen Algorithmus abzufangen. Die Notation des Aktivitätsdiagramms (Schwimmbahnen, Rücksprünge) steht in AP1-8-3-3. Auch PB2 verlangt Diagramme, deren Notation in PB1 steht – gelernt wird sie dort, geübt mit diesen Aufgaben: Geschäftsprozess als Aktivitätsdiagramm (2023S-PB2-A1, 2024S-PB2-A1-a; PB1-4-1-5, parallele Zweige mit Teilung und Synchronisation werden fast immer bepunktet: PB1-4-1-5-K2), Sequenzdiagramm (2023W-PB2-A1, 2025S-PB2-A2-a; PB1-4-1-3), Zustandsdiagramm (2025W-PB2-A2; PB1-4-1-4). Das Lehrbuch (FS2 2.3.1) rechnet im Java-Beispiel (100 * anzahlBelegt) / anzahlGesamt und speichert das Ergebnis in einer double-Variablen, als entstünde so ein Prozentwert mit Nachkommastellen; richtig ist: Beide Operanden sind Ganzzahlen, es wird ganzzahlig geteilt (1 von 3 ergibt 33 statt 33,33) – nötig ist 100.0 * anzahlBelegt / anzahlGesamt.",
+     "grenzen": [
+      {
+       "text": "Struktogramm und Programmablaufplan als eigene Darstellungsformen gehören nicht dazu.",
+       "begruendung": "Z4: Der Katalog nennt Aktivitätsdiagramm oder Pseudocode (AP2a.02.02.1); das Struktogramm ist laut Katalog-Vorbemerkung gestrichen. Ältere Aufgaben mit Struktogramm zählen für Pseudocode.",
+       "katalog": [
+        "AP2a.02.02.1"
+       ]
+      }
+     ],
+     "kuer": [
+      {
+       "text": "Soll ein Wert am Ende eines Bereichs vorn weiterzählen, etwa bei der Cäsar-Verschiebung über das Alphabet, rechnet man mit Modulo: neuer Index = (Index + Verschiebung) mod Bereichsgröße. Beginnt der Bereich nicht bei 0 (druckbare Zeichen ab Code 32), zieht man den Startwert vorher ab und addiert ihn danach wieder.",
+       "kurz": "Modulo für den Rundlauf im Wertebereich",
+       "quellen": [
+        "buch:FS2-2.3.5"
+       ],
+       "grund": "RK2: Übungsbeispiel Cäsar ohne eigenes Prinzip über K1–K7 hinaus; das Verfahren selbst steht in AP1-7-3-1-K9"
+      },
+      {
+       "text": "Ein kleiner Entscheidungsbaum lässt sich direkt als verschachtelte Verzweigungen programmieren: Jeder innere Knoten ist eine Bedingung, jeder Zweig führt zur nächsten Abfrage, jedes Blatt gibt das Ergebnis zurück. Größere Bäume legt man als Knotentabelle ab und wertet sie mit einer Funktion aus, die von der Wurzel bis zu einem Blatt läuft.",
+       "kurz": "Entscheidungsbaum als verschachtelte Verzweigungen",
+       "quellen": [
+        "buch:FS2-3.3.1"
+       ],
+       "grund": "D8: kein Katalog-Baustein nennt Entscheidungsbäume"
+      }
+     ]
+    },
+    {
+     "id": "PB2-1-1-2",
+     "titel": "Algorithmen über Arrays und Listen: filtern, zählen, Extremwerte, abgleichen, gruppieren",
+     "ziel": "Wiederkehrende Grundmuster sicher anwenden: Elemente filtern, zählen und summieren, Extremwerte bestimmen, Listen und Zeiträume abgleichen, Häufigkeiten in einem Ergebnisarray zählen, Nachbarelemente vergleichen und sortierte Daten gruppenweise auswerten.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.16"
+      },
+      {
+       "id": "AP2b.04.16.1"
+      },
+      {
+       "id": "AP2b.04.18.1",
+       "anteil": "Minimumsuche als Durchlauf wie bei der linearen Suche; das Suchverfahren selbst in PB2-2-1-1"
+      },
+      {
+       "id": "AP2b.04.19",
+       "anteil": "vorhandenen Code um die Auswertung der letzten Gruppe erweitern (2023S-PB2-A3-ab); Klassen erweitern in PB2-1-1-3"
+      }
+     ],
+     "teilaufgaben": [
+      "2023S-PB2-A2",
+      "2024S-PB2-A2-b",
+      "2024W-PB2-A1",
+      "2025W-PB2-A1-a",
+      "2025W-PB2-A1-b",
+      "2023W-PB2-A2",
+      "2022S-PB2-A1",
+      "2025S-PB2-A1",
+      "2023S-PB2-A3-ab"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-1-1-2-K1",
+       "text": "Du kannst eine Liste oder ein Array durchlaufen und die Elemente, die eine oder mehrere Bedingungen erfüllen, in eine Ergebnisliste übernehmen und diese zurückgeben.",
+       "kurz": "Elemente nach Bedingungen filtern",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2025W-PB2-A1-a"
+       ]
+      },
+      {
+       "id": "PB2-1-1-2-K2",
+       "text": "Du kannst zählen, summieren und einen Durchschnitt berechnen, auch nur für die Elemente, die eine Bedingung erfüllen, zum Beispiel die Tage, an denen ein Kurs besser als der Index war.",
+       "kurz": "Zählen, Summieren und Durchschnitt",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2024S-PB2-A2-b",
+        "beleg:2023S-PB2-A2"
+       ]
+      },
+      {
+       "id": "PB2-1-1-2-K3",
+       "text": "Du kannst das kleinste oder größte Element nach einem Kriterium bestimmen: mit dem ersten Element oder dem größten bzw. kleinsten möglichen Wert (z. B. Integer.MAX_VALUE, Double.MAX_VALUE) beginnen, jedes weitere vergleichen und neben dem bisher besten Wert auch seinen Index merken; auch das Element mit der kleinsten Abweichung von einem Zielwert und wiederholt, bis alle Elemente verbraucht sind (nächstgelegene Position wählen, übernehmen und aus der Liste entfernen).",
+       "kurz": "Kleinstes oder größtes Element mit Index",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2025W-PB2-A1-b",
+        "beleg:2022S-PB2-A1",
+        "beleg:2023W-PB2-A2"
+       ]
+      },
+      {
+       "id": "PB2-1-1-2-K4",
+       "text": "Du kannst zwei Listen mit verschachtelten Schleifen abgleichen, zum Beispiel ob eine Reservierung denselben Tisch am selben Datum belegt, und über einen Datumsbereich Tag für Tag zählen (date = date + 1), wie viele Einträge einen Tag im Zeitraum von–bis enthalten; dabei setzt du die Grenzen genau (Aufnahmetag zählt, Entlassungstag nicht: datumVon <= tag < datumBis).",
+       "kurz": "Zwei Listen und Zeiträume abgleichen",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2025W-PB2-A1-a",
+        "beleg:2025S-PB2-A1"
+       ]
+      },
+      {
+       "id": "PB2-1-1-2-K5",
+       "text": "Du kannst Häufigkeiten je Schlüssel zählen: das Ergebnisarray vorher in passender Größe anlegen (ein- oder zweidimensional, z. B. new Integer[15] oder Tage des Monats × 10 Öffnungsstunden), den Index aus dem Fachwert berechnen (Tag − 1, Stunde − 9, Haltestelle − 1) und den Zähler an dieser Stelle erhöhen.",
+       "kurz": "Häufigkeiten je Schlüssel im Ergebnisarray",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2023S-PB2-A2",
+        "beleg:2024W-PB2-A1"
+       ]
+      },
+      {
+       "id": "PB2-1-1-2-K7",
+       "text": "Du kannst aufeinanderfolgende Elemente miteinander verrechnen (Element i mit Element i − 1, wenn beide dasselbe Datum haben; Spalte m + 1 minus Spalte m) und auf nach einem Schlüssel sortierte Daten den Gruppenwechsel anwenden: bei Wechsel des Schlüssels das Ergebnis der Gruppe ausgeben oder übernehmen, die Gruppenwerte zurücksetzen und die letzte Gruppe nach der Schleife nicht vergessen.",
+       "kurz": "Nachbarelemente verrechnen und Gruppenwechsel",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.16",
+        "beleg:2024W-PB2-A1",
+        "beleg:2022S-PB2-A1",
+        "beleg:2023S-PB2-A3-ab",
+        "buch:FS2-2.3.4-S173"
+       ]
+      }
+     ],
+     "hinweis": "Die Minimumsuche (2025W-PB2-A1-b) durchläuft die Liste wie die lineare Suche (PB2-2-1-1), sucht aber keinen festen Wert, sondern vergleicht mit dem bisher besten Element und läuft immer bis zum Ende. Den Fehler „letzte Gruppe fehlt“ im vorgegebenen Code zu finden (2023S-PB2-A3-aa) übst du in PB2-3; das Muster selbst steht hier.",
+     "kuer": [
+      {
+       "text": "Die Lauflängenkodierung ersetzt jede Folge gleicher Zeichen durch Anzahl und Zeichen (aus „aaabcc“ wird „3a1b2c“) – algorithmisch ein Gruppenwechsel über benachbarte Zeichen. Enthält der Text selbst Ziffern, wird das Ergebnis mehrdeutig, weil sich beim Entpacken eine Ziffer aus dem Text nicht von einer Anzahl unterscheiden lässt; abhelfen kann ein Trennzeichen oder eine feste Stellenzahl für die Anzahl.",
+       "kurz": "Lauflängenkodierung und Ziffern im Text",
+       "quellen": [
+        "buch:FS2-2.3.4"
+       ],
+       "grund": "RK2: Detail der Lauflängenkodierung; Komprimierung steht nicht im AP2-Katalog, das Zählmuster selbst trägt PB2-1-1-2-K7"
+      }
+     ]
+    },
+    {
+     "id": "PB2-1-1-3",
+     "titel": "Bestehende Funktionen und Klassen erweitern",
+     "ziel": "Vorhandene Klassen nach einem Klassendiagramm um Methoden erweitern, die Attribute, fremde Objekte und statische Methoden nutzen, und dabei die vorgegebenen Schnittstellen einhalten. Methoden aus einem Klassendiagramm umsetzen kennst du aus PB1-5.",
+     "gebiete": [
+      "G.PB2.01"
+     ],
+     "bausteine": [
+      {
+       "id": "AP2b.04.19",
+       "anteil": "Klassen erweitern; Code nach Fehlern korrigieren in PB2-3, Funktionsobjekte in PB2-2, letzte Gruppe ergänzen in PB2-1-1-2"
+      },
+      {
+       "id": "AP2b.04.16.1",
+       "anteil": "Methoden in Klassen"
+      }
+     ],
+     "teilaufgaben": [
+      "2024W-PB2-A2-a",
+      "2024W-PB2-A2-b"
+     ],
+     "koennen": [
+      {
+       "id": "PB2-1-1-3-K1",
+       "text": "Du kannst in einer vorhandenen Klasse eine Methode ergänzen, die über ein Attribut ein anderes Objekt nutzt (this.fahrplanService.getAbfahrten(…)), statische Methoden wie DateTime.now() aufruft und die Rückgabewerte weiterverarbeitet, auch mit einer vorgegebenen Vergleichsmethode wie compare(), deren Rückgabe −1, 0 oder 1 du nach der Beschreibung richtig deutest.",
+       "kurz": "Methode mit fremdem Objekt und compare()",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.19",
+        "beleg:2024W-PB2-A2-b"
+       ]
+      },
+      {
+       "id": "PB2-1-1-3-K2",
+       "text": "Du kannst eine Methode nach Vorgabe implementieren, die ein Objekt erzeugt, befüllt und zurückgibt, zum Beispiel eine HTTP-Antwort mit Statuscode, Kopfzeilen (Content-Type, Content-Length) und Body.",
+       "kurz": "Methode, die ein Objekt erzeugt und zurückgibt",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.19",
+        "beleg:2024W-PB2-A2-a"
+       ]
+      },
+      {
+       "id": "PB2-1-1-3-K3",
+       "text": "Du kannst eine private Hilfsmethode schreiben, die aus einer sortierten Liste von Objekten nur die Einträge ab einem Zeitpunkt übernimmt, das Ergebnisarray in der Größe der Höchstzahl anlegt und aufhört, sobald diese erreicht ist.",
+       "kurz": "Hilfsmethode: Einträge ab Zeitpunkt bis Höchstzahl",
+       "stufe": 3,
+       "herkunft": [
+        "katalog:AP2b.04.19",
+        "beleg:2024W-PB2-A2-b"
+       ]
+      }
+     ],
+     "baut_auf": [
+      "PB1-5-1-5",
+      "PB1-7-1-4"
+     ],
+     "hinweis": "Die Darstellung soll laut Katalog in allgemein verständlichem Programm- oder Pseudocode erfolgen; eine bestimmte Sprache wird nicht verlangt (AP2b.03.05, AP2b.04.19). Aufbau einer HTTP-Antwort und Statuscodes kennst du aus PB1-7-1-4. Die Vergleichsfunktion aus 2022W-PB2-A1-b steht bei den Funktionsobjekten in PB2-2-1-4."
+    }
+   ]
+  }
+ ],
+ "alt_neu": {
+  "koennen": [
+   {
+    "alt": "AP2-2-1-3-K5",
+    "status": "angepasst",
+    "neu": "PB2-1-1-1-K7",
+    "grund": "Kontrollstrukturen als Aktivitätsdiagramm; PB2-1-1-4 aufgelöst (P43), Notation über AP1-8-3-3"
+   },
+   {
+    "alt": "AP2-3-2-1-K1",
+    "status": "angepasst",
+    "neu": "PB2-1-1-1-K1",
+    "grund": "Signatur wie vorgegeben"
+   },
+   {
+    "alt": "AP2-3-2-1-K2",
+    "status": "angepasst",
+    "neu": "PB2-1-1-1-K2",
+    "grund": "auf das Neue gegenüber AP1 gekürzt (Schachtelung, Indexgrenzen)"
+   },
+   {
+    "alt": "AP2-3-2-1-K3",
+    "status": "gestrichen",
+    "grund": "E2: Variablen, Datentypen und Operatoren stehen in AP1-8-2-1"
+   },
+   {
+    "alt": "AP2-3-2-1-K4",
+    "status": "angepasst",
+    "neu": "PB2-1-1-1-K1",
+    "grund": "vorgegebene Klassen und Methoden; mit der Signatur-Aussage zusammengelegt (Prüfung 16.10.2026)"
+   },
+   {
+    "alt": "AP2-3-2-1-K5",
+    "status": "angepasst",
+    "neu": "PB2-1-1-1-K5",
+    "grund": "Sonderfall vor dem Zugriff abfangen, festgelegter Rückgabewert"
+   },
+   {
+    "alt": "AP2-3-2-2-K1",
+    "status": "angepasst",
+    "neu": "PB2-1-1-2-K1",
+    "grund": "Ergebnisliste zurückgeben"
+   },
+   {
+    "alt": "AP2-3-2-2-K2",
+    "status": "angepasst",
+    "neu": "PB2-1-1-2-K2",
+    "grund": "mit Beispiel aus 2024S"
+   },
+   {
+    "alt": "AP2-3-2-2-K3",
+    "status": "angepasst",
+    "neu": "PB2-1-1-2-K3",
+    "grund": "auch kleinste Abweichung (2025W)"
+   },
+   {
+    "alt": "AP2-3-2-2-K4",
+    "status": "angepasst",
+    "neu": "PB2-1-1-2-K4",
+    "grund": "Tische und Reservierungen am selben Datum, dazu Zeitraum von–bis"
+   },
+   {
+    "alt": "AP2-3-2-2-K5",
+    "status": "angepasst",
+    "neu": "PB2-1-1-2-K5",
+    "grund": "mit Häufigkeiten zusammengefasst"
+   },
+   {
+    "alt": "AP2-3-2-2-K6",
+    "status": "angepasst",
+    "neu": "PB2-1-1-2-K5",
+    "grund": "in K5 aufgenommen (Häufigkeiten je Schlüssel)"
+   },
+   {
+    "alt": "AP2-3-3-1-K6",
+    "status": "angepasst",
+    "neu": "PB2-1-1-3-K1",
+    "grund": "mit Getter anderer Objekte"
+   }
+  ],
+  "rahmen": []
+ },
+ "meta": {
+  "schicht": "3+4",
+  "regelwerk_version": "2.2",
+  "stand": "2026-10-16",
+  "hinweis": "PB2-Ordner nach dem Muster von PB1 (P33): neue IDs PB2-…, alte AP2-Aussagen, die PB1 für PB2 vermerkt hat, stehen in alt_neu. Inhalte aus AP1 und PB1 werden mit baut_auf importiert (E2).",
+  "kerntest": {
+   "stand": "2026-10-14",
+   "art": "Selbstprüfung in der bauenden Sitzung (nicht unabhängig)",
+   "ergebnis": "Alle Algorithmus-Aufgaben der PB2-Prüfungen gegen die Musterlösungen gelesen (2021W-A2, 2022S-A1, 2023S-A2, 2023W-A2, 2024S-A2-b, 2024W-A1, 2024W-A2, 2025S-A1, 2025W-A1); 2025W ohne Aufgabensatz nur über die Lösung (P34)."
+  },
+  "hinweisquellen": {
+   "podcast:themen-pb2": "IT-Berufe-Podcast (Stefan Macke): Seite „Themen der schriftlichen IHK-Prüfungen der IT-Berufe“, Schlagworte zu „Entwicklung und Umsetzung von Algorithmen“ (AP2 FIAE) je Termin Winter 2021/22 bis Winter 2025/26 (abgerufen 14.10.2026)",
+   "buch:FS2-2.3.4": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-2.3.5": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS2-3.3.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+  },
+  "hinweisabgleich": {
+   "stand": "2026-10-16",
+   "umfang": "ganzer Ordner",
+   "vorgehen": "Jedes in den Hinweisquellen genannte Thema dieses Ordners nach R1 geprüft: Kern (Katalogwortlaut oder Beleg) → Puffer (P-Regel) → Außen (Katalogstelle schließt aus) → sonst Kür. Themen anderer Ordner oder Räume stehen als Ring „Ordner“.",
+   "themen": [
+    {
+     "thema": "Pseudocode",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-1-1-1-K1",
+      "PB2-1-1-1-K2",
+      "PB2-1-1-2-K1"
+     ]
+    },
+    {
+     "thema": "Prozessanalyse, Aktivitätsdiagramm",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-1-1-1-K7"
+     ]
+    },
+    {
+     "thema": "Struktogramm",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Außen",
+     "wo": [
+      "PB2-1-1-1"
+     ],
+     "notiz": "Z4: gestrichen, Aufgaben zählen für Pseudocode"
+    },
+    {
+     "thema": "Objektorientierung, Klassendiagramm",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Kern",
+     "wo": [
+      "PB2-1-1-3-K1",
+      "PB2-1-1-3-K2"
+     ]
+    },
+    {
+     "thema": "Sortieralgorithmen, Rekursion, Generische Klassen, Funktionale Programmierung",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2-2"
+     ]
+    },
+    {
+     "thema": "Fehler finden, Schreibtischtest",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB2-3"
+     ]
+    },
+    {
+     "thema": "Sequenzdiagramm, Zustandsdiagramm, Relationales Datenmodell, ERM",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "PB1"
+     ],
+     "notiz": "wohnen in PB1 (P3); PB2-Prüfungen verlangen sie in der Tiefe von PB1"
+    },
+    {
+     "thema": "Dateigrößen berechnen",
+     "quellen": [
+      "podcast:themen-pb2"
+     ],
+     "ring": "Ordner",
+     "wo": [
+      "AP1"
+     ],
+     "notiz": "AP1-4-2-2"
+    },
+    {
+     "thema": "Die Lauflängenkodierung ersetzt jede Folge gleicher Zeichen durch Anzahl und Zeichen (aus „aaabcc“ wird „3a1b2c“) – algo",
+     "quellen": [
+      "buch:FS2-2.3.4"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-1-1-2"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Soll ein Wert am Ende eines Bereichs vorn weiterzählen, etwa bei der Cäsar-Verschiebung über das Alphabet, rechnet man m",
+     "quellen": [
+      "buch:FS2-2.3.5"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    },
+    {
+     "thema": "Ein kleiner Entscheidungsbaum lässt sich direkt als verschachtelte Verzweigungen programmieren: Jeder innere Knoten ist ",
+     "quellen": [
+      "buch:FS2-3.3.1"
+     ],
+     "ring": "Kür",
+     "wo": [
+      "PB2-1-1-1"
+     ],
+     "notiz": "Regelwerk v2.x, D8/RK1"
+    }
+   ]
+  },
+  "pruefung": {
+   "stand": "2026-10-16",
+   "bericht": "umbau/berichte/PB2-1-pruefer.md",
+   "umsetzung": "Funde der unabhängigen Prüfung vom 16.10.2026 eingebaut (Abschnitt „Umsetzung“ im Bericht): PB2-1-1-4 aufgelöst (P43), Gruppenwechsel, Index aus Fachwert, Zeitraum und Datentypen ergänzt (P37), Herkunft der Sonderfälle korrigiert. Gestrichene IDs, nie wieder zu vergeben: PB2-1-1-1-K4, PB2-1-1-2-K6, PB2-1-1-4 mit K1–K3."
+  },
+  "v2": [
+   {
+    "stand": "2026-10-16",
+    "regelwerk": "2.2",
+    "neue_aussagen": [
+     "PB2-1-1-1-K8",
+     "PB2-1-1-1-K9"
+    ],
+    "neue_stichpunkte": [],
+    "d6": [
+     "PB2-1-1-2-K7"
+    ],
+    "kuer": [
+     "PB2-1-1-2",
+     "PB2-1-1-1",
+     "PB2-1-1-1"
+    ],
+    "grenzen_gestrichen": [],
+    "filter": [],
+    "umgehaengt": [],
+    "abgedeckt": [
+     {
+      "kernpunkt": "FS2-2.3.1#2",
+      "aussage": "AP1-8-2-2-K7",
+      "grund": "E2: Algorithmus als endliche, eindeutige Schrittfolge und seine Abgrenzung zum Programm stehen in AP1-8-2-2-K7"
+     }
+    ],
+    "hinweise": [
+     "PB2-1-1-1"
+    ]
+   }
+  ]
+ }
+}

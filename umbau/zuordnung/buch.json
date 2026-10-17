@@ -1,0 +1,8192 @@
+{
+ "meta": {
+  "hinweis": "Regelwerk v2.0 (D1, D4, D9): Zuordnung Buchkapitel → Stichpunkte. Nur Kapitelnummern, Seiten (gedruckte Seitenzahl, Bereich inkl. der Seite, auf der das nächste Kapitel beginnt; Einleitung eines Oberkapitels beim ersten Unterkapitel), Stichpunkt-IDs und Zählungen – keine Buchtexte. Die Kernpunkt-Listen (eigene Stichworte) liegen nur lokal unter quellen/lehrbuch/kern/<Band>/<Kapitel>.json. Erzeugt und gepflegt mit node tools/umbau/buch-pruefen.mjs --anlegen bzw. --schreiben.",
+  "baende": {
+   "GS": "IT-Berufe Grundstufe LF1–5 (Westermann, 2. Aufl.)",
+   "FS": "IT-Berufe Fachstufe Technische IT-Berufe LF6–9 (Westermann, 1. Aufl.)",
+   "FS2": "IT-Berufe Fachstufe II Anwendungsentwicklung, Daten- und Prozessanalyse LF10–12 (Westermann, 1. Aufl.)"
+  },
+  "erwartet": {
+   "GS": 150,
+   "FS": 92,
+   "FS2": 56
+  },
+  "stand": "2026-10-17"
+ },
+ "kapitel": {
+  "GS-1.1": {
+   "seiten": [
+    10,
+    21
+   ],
+   "stichpunkte": [
+    "WISO-1-1-1",
+    "WISO-1-1-3",
+    "WISO-1-1-4",
+    "WISO-1-2-1",
+    "WISO-1-2-2",
+    "WISO-1-2-3",
+    "WISO-1-3-1",
+    "WISO-1-8-1",
+    "WISO-1-8-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 22,
+    "abgedeckt": 15,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 5
+   },
+   "aussagen": [
+    "WISO-1-1-1-K1",
+    "WISO-1-1-1-K3",
+    "WISO-1-1-3-K3",
+    "WISO-1-1-3-K5",
+    "WISO-1-1-3-K6",
+    "WISO-1-1-4-K6",
+    "WISO-1-1-4-K7",
+    "WISO-1-2-1-K1",
+    "WISO-1-2-1-K6",
+    "WISO-1-2-2-K2",
+    "WISO-1-2-3-K1",
+    "WISO-1-2-3-K2",
+    "WISO-1-2-3-K4",
+    "WISO-1-3-1-K6",
+    "WISO-1-8-1-K6",
+    "WISO-1-8-2-K5"
+   ]
+  },
+  "GS-1.2.1": {
+   "seiten": [
+    21,
+    27
+   ],
+   "stichpunkte": [
+    "WISO-1-1-1",
+    "WISO-1-1-4",
+    "WISO-1-2-1",
+    "WISO-1-3-2",
+    "WISO-1-3-4",
+    "WISO-1-3-6",
+    "WISO-1-6-1",
+    "WISO-1-6-2",
+    "WISO-1-8-1",
+    "WISO-1-8-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 25,
+    "abgedeckt": 24,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "WISO-1-1-1-K1",
+    "WISO-1-1-1-K2",
+    "WISO-1-1-1-K3",
+    "WISO-1-1-1-K4",
+    "WISO-1-1-1-K7",
+    "WISO-1-1-1-K8",
+    "WISO-1-1-4-K1",
+    "WISO-1-1-4-K2",
+    "WISO-1-1-4-K4",
+    "WISO-1-1-4-K7",
+    "WISO-1-1-4-K8",
+    "WISO-1-1-4-K9",
+    "WISO-1-2-1-K3",
+    "WISO-1-3-2-K5",
+    "WISO-1-3-4-K2",
+    "WISO-1-3-4-K3",
+    "WISO-1-3-4-K4",
+    "WISO-1-3-4-K8",
+    "WISO-1-3-4-K9",
+    "WISO-1-3-6-K7",
+    "WISO-1-6-1-K1",
+    "WISO-1-6-1-K2",
+    "WISO-1-6-2-K1",
+    "WISO-1-6-2-K6",
+    "WISO-1-6-2-K9",
+    "WISO-1-8-1-K8",
+    "WISO-1-8-3-K2"
+   ]
+  },
+  "GS-1.2.2": {
+   "seiten": [
+    27,
+    34
+   ],
+   "stichpunkte": [
+    "WISO-1-3-1",
+    "WISO-1-3-2",
+    "WISO-1-3-3",
+    "WISO-1-3-4",
+    "WISO-1-3-5",
+    "WISO-1-3-6",
+    "WISO-1-4-1",
+    "WISO-1-4-2",
+    "WISO-1-4-3",
+    "WISO-1-5-1",
+    "WISO-1-5-2",
+    "WISO-1-6-1",
+    "WISO-1-6-2",
+    "WISO-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 37,
+    "abgedeckt": 32,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "WISO-1-3-1-K1",
+    "WISO-1-3-1-K5",
+    "WISO-1-3-1-K7",
+    "WISO-1-3-2-K6",
+    "WISO-1-3-2-K7",
+    "WISO-1-3-3-K1",
+    "WISO-1-3-3-K5",
+    "WISO-1-3-3-K8",
+    "WISO-1-3-3-K9",
+    "WISO-1-3-4-K1",
+    "WISO-1-3-4-K5",
+    "WISO-1-3-5-K1",
+    "WISO-1-3-5-K10",
+    "WISO-1-3-5-K2",
+    "WISO-1-3-5-K3",
+    "WISO-1-3-5-K4",
+    "WISO-1-3-5-K5",
+    "WISO-1-3-5-K6",
+    "WISO-1-3-5-K8",
+    "WISO-1-3-5-K9",
+    "WISO-1-3-6-K8",
+    "WISO-1-3-6-K9",
+    "WISO-1-4-1-K1",
+    "WISO-1-4-1-K2",
+    "WISO-1-4-1-K3",
+    "WISO-1-4-1-K4",
+    "WISO-1-4-1-K5",
+    "WISO-1-4-2-K1",
+    "WISO-1-4-2-K4",
+    "WISO-1-4-2-K5",
+    "WISO-1-4-2-K6",
+    "WISO-1-4-3-K2",
+    "WISO-1-4-3-K3",
+    "WISO-1-4-3-K4",
+    "WISO-1-4-3-K6",
+    "WISO-1-5-1-K1",
+    "WISO-1-5-1-K2",
+    "WISO-1-5-1-K3",
+    "WISO-1-5-1-K4",
+    "WISO-1-5-1-K5",
+    "WISO-1-5-1-K6",
+    "WISO-1-5-1-K8",
+    "WISO-1-5-2-K1",
+    "WISO-1-5-2-K2",
+    "WISO-1-5-2-K3",
+    "WISO-1-5-2-K5",
+    "WISO-1-5-2-K6",
+    "WISO-1-6-1-K8",
+    "WISO-3-1-1-K9"
+   ]
+  },
+  "GS-1.2.3": {
+   "seiten": [
+    34,
+    40
+   ],
+   "stichpunkte": [
+    "WISO-1-3-5",
+    "WISO-1-3-6",
+    "WISO-1-4-2",
+    "WISO-1-6-1",
+    "WISO-1-6-2",
+    "WISO-1-8-1",
+    "WISO-1-8-2",
+    "WISO-1-8-3",
+    "WISO-1-8-4",
+    "WISO-2-1-3",
+    "WISO-2-2-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 19,
+    "abgedeckt": 13,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 5
+   },
+   "aussagen": [
+    "WISO-1-3-5-K7",
+    "WISO-1-3-6-K6",
+    "WISO-1-4-2-K7",
+    "WISO-1-6-1-K9",
+    "WISO-1-6-2-K1",
+    "WISO-1-6-2-K10",
+    "WISO-1-6-2-K4",
+    "WISO-1-6-2-K6",
+    "WISO-1-8-1-K1",
+    "WISO-1-8-1-K2",
+    "WISO-1-8-1-K3",
+    "WISO-1-8-1-K8",
+    "WISO-1-8-2-K3",
+    "WISO-1-8-2-K4",
+    "WISO-1-8-3-K1",
+    "WISO-1-8-3-K2",
+    "WISO-1-8-3-K4",
+    "WISO-1-8-4-K3",
+    "WISO-2-1-3-K1",
+    "WISO-2-1-3-K2"
+   ]
+  },
+  "GS-1.3.1": {
+   "seiten": [
+    40,
+    45
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-1-4-1",
+    "AP1-2-4-1",
+    "AP1-3-2-4",
+    "AP1-5-1-3",
+    "AP1-5-1-5",
+    "AP1-6-3-3",
+    "AP1-7-3-5",
+    "WISO-1-2-2",
+    "WISO-2-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-1-3-1-K1",
+    "AP1-1-4-1-K3",
+    "AP1-5-1-3-K1",
+    "AP1-5-1-3-K4",
+    "AP1-6-3-3-K1",
+    "AP1-7-3-5-K1",
+    "AP1-7-3-5-K2",
+    "WISO-1-2-2-K2",
+    "WISO-1-2-2-K3"
+   ]
+  },
+  "GS-1.3.2": {
+   "seiten": [
+    45,
+    51
+   ],
+   "stichpunkte": [
+    "AP1-1-1-3",
+    "AP1-2-1-2",
+    "PB1-2-1-1",
+    "PB1-2-1-2",
+    "WISO-1-5-3",
+    "WISO-1-6-2",
+    "WISO-1-8-4",
+    "WISO-2-1-1",
+    "WISO-2-1-2",
+    "WISO-2-5-1",
+    "WISO-2-5-3",
+    "WISO-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 24,
+    "abgedeckt": 20,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-1-1-3-K8",
+    "PB1-2-1-1-K2",
+    "PB1-2-1-2-K1",
+    "WISO-1-5-3-K5",
+    "WISO-1-6-2-K1",
+    "WISO-1-6-2-K12",
+    "WISO-1-6-2-K6",
+    "WISO-1-8-4-K6",
+    "WISO-1-8-4-K7",
+    "WISO-2-1-1-K1",
+    "WISO-2-1-1-K2",
+    "WISO-2-1-1-K7",
+    "WISO-2-1-2-K2",
+    "WISO-2-1-2-K3",
+    "WISO-2-1-2-K4",
+    "WISO-2-1-2-K5",
+    "WISO-2-1-2-K6",
+    "WISO-2-5-1-K1",
+    "WISO-2-5-1-K2",
+    "WISO-2-5-1-K3",
+    "WISO-2-5-1-K5",
+    "WISO-2-5-1-K6",
+    "WISO-2-5-1-K7",
+    "WISO-2-5-1-K8",
+    "WISO-2-5-3-K2",
+    "WISO-3-1-1-K6"
+   ]
+  },
+  "GS-1.3.3": {
+   "seiten": [
+    51,
+    65
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-3",
+    "AP1-1-5-1",
+    "AP1-1-5-2",
+    "AP1-2-2-1",
+    "AP1-2-4-1",
+    "AP1-2-5-1",
+    "AP1-3-1-5",
+    "AP1-7-1-2",
+    "AP1-7-3-5",
+    "PB1-5-1-2",
+    "PB1-9-1-1",
+    "PB1-9-1-2",
+    "WISO-2-4-1",
+    "WISO-2-4-2",
+    "WISO-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 34,
+    "abgedeckt": 18,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 12
+   },
+   "aussagen": [
+    "AP1-1-1-1-K3",
+    "AP1-1-1-1-K5",
+    "AP1-1-1-3-K8",
+    "AP1-1-5-1-K3",
+    "AP1-1-5-1-K5",
+    "AP1-1-5-1-K7",
+    "AP1-1-5-2-K3",
+    "AP1-2-2-1-K8",
+    "AP1-2-4-1-K1",
+    "AP1-2-4-1-K10",
+    "AP1-2-4-1-K2",
+    "AP1-2-4-1-K3",
+    "AP1-2-4-1-K8",
+    "AP1-2-4-1-K9",
+    "AP1-3-1-5-K1",
+    "AP1-7-1-2-K1",
+    "AP1-7-1-2-K2",
+    "AP1-7-1-2-K5",
+    "AP1-7-3-5-K2",
+    "PB1-5-1-2-K3",
+    "PB1-9-1-2-K3",
+    "WISO-2-4-1-K3",
+    "WISO-2-4-1-K4",
+    "WISO-2-4-2-K3",
+    "WISO-2-4-2-K4",
+    "WISO-2-4-2-K5",
+    "WISO-2-4-2-K6"
+   ]
+  },
+  "GS-1.3.4": {
+   "seiten": [
+    65,
+    80
+   ],
+   "stichpunkte": [
+    "AP1-1-5-1",
+    "AP1-2-4-2",
+    "AP1-2-4-3",
+    "PB1-2-1-1",
+    "WISO-2-2-1",
+    "WISO-2-2-2",
+    "WISO-2-2-3",
+    "WISO-2-2-4",
+    "WISO-2-2-5",
+    "WISO-2-2-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 36,
+    "abgedeckt": 21,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 14
+   },
+   "aussagen": [
+    "AP1-2-4-2-K2",
+    "AP1-2-4-2-K3",
+    "AP1-2-4-3-K4",
+    "PB1-2-1-1-K1",
+    "WISO-2-2-1-K1",
+    "WISO-2-2-1-K2",
+    "WISO-2-2-1-K3",
+    "WISO-2-2-1-K4",
+    "WISO-2-2-1-K5",
+    "WISO-2-2-1-K7",
+    "WISO-2-2-1-K8",
+    "WISO-2-2-1-K9",
+    "WISO-2-2-2-K1",
+    "WISO-2-2-2-K2",
+    "WISO-2-2-2-K3",
+    "WISO-2-2-2-K5",
+    "WISO-2-2-2-K8",
+    "WISO-2-2-2-K9",
+    "WISO-2-2-3-K1",
+    "WISO-2-2-4-K1",
+    "WISO-2-2-4-K2",
+    "WISO-2-2-4-K4",
+    "WISO-2-2-5-K1",
+    "WISO-2-2-5-K2",
+    "WISO-2-2-5-K4",
+    "WISO-2-2-5-K5",
+    "WISO-2-2-6-K1",
+    "WISO-2-2-6-K3",
+    "WISO-2-2-6-K5",
+    "WISO-2-2-6-K6"
+   ]
+  },
+  "GS-1.3.5": {
+   "seiten": [
+    80,
+    90
+   ],
+   "stichpunkte": [
+    "AP1-3-1-5",
+    "AP1-3-4-3",
+    "AP1-5-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 9
+   },
+   "aussagen": [
+    "AP1-3-1-5-K3",
+    "AP1-3-1-5-K4",
+    "AP1-3-1-5-K5",
+    "AP1-3-1-5-K6",
+    "AP1-5-1-1-K4"
+   ]
+  },
+  "GS-1.3.6": {
+   "seiten": [
+    90,
+    93
+   ],
+   "stichpunkte": [
+    "WISO-2-1-1",
+    "WISO-2-2-6",
+    "WISO-2-4-1",
+    "WISO-2-4-3",
+    "WISO-4-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "WISO-2-4-3-K1",
+    "WISO-2-4-3-K2",
+    "WISO-4-1-1-K6"
+   ]
+  },
+  "GS-1.4.1": {
+   "seiten": [
+    93,
+    95
+   ],
+   "stichpunkte": [
+    "WISO-1-6-1",
+    "WISO-2-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "WISO-2-1-1-K10"
+   ]
+  },
+  "GS-1.4.2": {
+   "seiten": [
+    95,
+    106
+   ],
+   "stichpunkte": [
+    "AP1-2-1-1",
+    "AP1-2-1-2",
+    "WISO-2-1-1",
+    "WISO-2-1-4",
+    "WISO-2-5-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 18,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 9
+   },
+   "aussagen": [
+    "AP1-2-1-1-K1",
+    "AP1-2-1-1-K2",
+    "AP1-2-1-1-K3",
+    "AP1-2-1-1-K4",
+    "AP1-2-1-1-K5",
+    "AP1-2-1-1-K6",
+    "AP1-2-1-2-K6",
+    "WISO-2-1-1-K8",
+    "WISO-2-1-1-K9",
+    "WISO-2-1-4-K1",
+    "WISO-2-1-4-K2",
+    "WISO-2-1-4-K3"
+   ]
+  },
+  "GS-1.5.1": {
+   "seiten": [
+    106,
+    110
+   ],
+   "stichpunkte": [
+    "AP1-1-1-4",
+    "WISO-1-7-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-1-1-4-K1",
+    "AP1-1-1-4-K2",
+    "WISO-1-7-2-K11"
+   ]
+  },
+  "GS-1.5.2": {
+   "seiten": [
+    110,
+    116
+   ],
+   "stichpunkte": [
+    "AP1-2-3-3",
+    "PB1-2-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-2-3-3-K1",
+    "AP1-2-3-3-K3",
+    "AP1-2-3-3-K5",
+    "PB1-2-1-4-K7"
+   ]
+  },
+  "GS-1.5.3": {
+   "seiten": [
+    116,
+    118
+   ],
+   "stichpunkte": [
+    "AP1-1-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-1-4-K4",
+    "AP1-1-1-4-K5"
+   ]
+  },
+  "GS-2.1.1": {
+   "seiten": [
+    118,
+    120
+   ],
+   "stichpunkte": [
+    "AP1-3-1-5",
+    "AP1-4-1-1",
+    "AP1-4-1-2",
+    "AP1-4-1-8"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-4-1-2-K1",
+    "AP1-4-1-8-K1"
+   ]
+  },
+  "GS-2.1.2": {
+   "seiten": [
+    120,
+    124
+   ],
+   "stichpunkte": [
+    "AP1-4-1-8"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 5,
+    "kuer": 3
+   },
+   "aussagen": []
+  },
+  "GS-2.1.3": {
+   "seiten": [
+    124,
+    124
+   ],
+   "stichpunkte": [],
+   "filter": "uebung"
+  },
+  "GS-2.1.4": {
+   "seiten": [
+    124,
+    128
+   ],
+   "stichpunkte": [
+    "AP1-3-4-1",
+    "AP1-3-4-3",
+    "AP1-4-1-2",
+    "AP1-4-1-8",
+    "AP1-5-2-1",
+    "WISO-2-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-3-4-1-K2",
+    "AP1-3-4-3-K3",
+    "AP1-3-4-3-K4",
+    "AP1-4-1-2-K12",
+    "AP1-4-1-8-K6",
+    "AP1-4-1-8-K7"
+   ]
+  },
+  "GS-2.2.1": {
+   "seiten": [
+    128,
+    133
+   ],
+   "stichpunkte": [
+    "AP1-4-3-1",
+    "PB1-3-2-3",
+    "WISO-3-1-1",
+    "WISO-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-3-1-K2",
+    "PB1-3-2-3-K1",
+    "WISO-3-1-1-K11"
+   ]
+  },
+  "GS-2.2.2": {
+   "seiten": [
+    133,
+    139
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "AP1-3-2-3",
+    "AP1-3-4-2",
+    "AP1-4-1-1",
+    "AP1-4-1-7",
+    "AP1-4-1-8",
+    "AP1-5-1-1",
+    "AP1-5-1-3",
+    "AP1-6-1-5",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 11,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-3-2-3-K8",
+    "AP1-3-4-2-K1",
+    "AP1-3-4-2-K6",
+    "AP1-4-1-1-K1",
+    "AP1-4-1-1-K8",
+    "AP1-4-1-1-K9",
+    "AP1-4-1-7-K5",
+    "AP1-4-1-8-K1",
+    "AP1-5-1-1-K10",
+    "AP1-5-1-3-K4",
+    "AP1-6-1-5-K1",
+    "PB1-11-2-1-K1"
+   ]
+  },
+  "GS-2.2.3": {
+   "seiten": [
+    139,
+    140
+   ],
+   "stichpunkte": [
+    "AP1-2-1-2",
+    "AP1-2-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-2-2-4-K3",
+    "AP1-2-2-4-K4"
+   ]
+  },
+  "GS-2.3.1": {
+   "seiten": [
+    140,
+    143
+   ],
+   "stichpunkte": [
+    "AP1-1-5-1",
+    "AP1-3-3-3",
+    "AP1-3-4-1",
+    "AP1-4-1-2",
+    "PB1-1-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-1-5-1-K3",
+    "AP1-1-5-1-K5",
+    "AP1-1-5-1-K7",
+    "AP1-1-5-1-K8",
+    "AP1-3-3-3-K10",
+    "AP1-3-3-3-K3",
+    "AP1-4-1-2-K8"
+   ]
+  },
+  "GS-2.3.2": {
+   "seiten": [
+    143,
+    146
+   ],
+   "stichpunkte": [
+    "AP1-4-3-3",
+    "AP1-5-1-3",
+    "AP1-5-1-5",
+    "AP1-7-4-3",
+    "PB1-1-2-1",
+    "WISO-4-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-3-3-K5",
+    "AP1-4-3-3-K8",
+    "AP1-4-3-3-K9",
+    "AP1-5-1-3-K4",
+    "AP1-7-4-3-K4",
+    "PB1-1-2-1-K4",
+    "WISO-4-1-1-K3"
+   ]
+  },
+  "GS-2.3.3": {
+   "seiten": [
+    146,
+    147
+   ],
+   "stichpunkte": [
+    "AP1-3-1-1",
+    "AP1-3-1-4",
+    "AP1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-3-1-1-K1",
+    "AP1-3-1-1-K4",
+    "AP1-3-1-1-K6",
+    "AP1-3-1-1-K7",
+    "AP1-3-1-4-K1",
+    "AP1-3-1-4-K4",
+    "AP1-3-2-3-K7"
+   ]
+  },
+  "GS-2.3.4": {
+   "seiten": [
+    147,
+    150
+   ],
+   "stichpunkte": [
+    "AP1-7-1-1",
+    "AP1-7-1-2",
+    "AP1-7-1-3",
+    "AP1-7-1-4",
+    "AP1-7-4-1",
+    "AP1-7-4-2",
+    "AP1-7-5-1",
+    "PB1-10-1-2",
+    "PB1-10-2-4",
+    "PB1-12-1-2",
+    "WISO-5-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 13,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-7-1-1-K1",
+    "AP1-7-1-2-K2",
+    "AP1-7-1-2-K3",
+    "AP1-7-1-3-K6",
+    "AP1-7-1-4-K2",
+    "AP1-7-1-4-K5",
+    "AP1-7-1-4-K6",
+    "AP1-7-4-1-K1",
+    "AP1-7-4-1-K7",
+    "AP1-7-4-1-K9",
+    "AP1-7-4-2-K1",
+    "AP1-7-4-2-K3",
+    "AP1-7-5-1-K5",
+    "AP1-7-5-1-K9",
+    "PB1-10-1-2-K5",
+    "PB1-10-2-4-K1",
+    "PB1-12-1-2-K3",
+    "WISO-5-2-1-K10",
+    "WISO-5-2-1-K3",
+    "WISO-5-2-1-K4"
+   ]
+  },
+  "GS-2.4.1": {
+   "seiten": [
+    150,
+    152
+   ],
+   "stichpunkte": [
+    "AP1-4-1-2",
+    "AP1-4-1-7",
+    "AP1-4-1-8",
+    "AP1-5-1-3",
+    "AP1-5-2-1",
+    "AP1-5-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-1-2-K1",
+    "AP1-4-1-7-K1",
+    "AP1-4-1-8-K4",
+    "AP1-5-2-1-K1",
+    "AP1-5-2-1-K5",
+    "AP1-5-2-2-K1",
+    "AP1-5-2-2-K8"
+   ]
+  },
+  "GS-2.4.2": {
+   "seiten": [
+    152,
+    153
+   ],
+   "stichpunkte": [
+    "AP1-4-1-2",
+    "AP1-4-1-3",
+    "AP1-4-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-4-1-2-K1",
+    "AP1-4-1-2-K6",
+    "AP1-4-1-2-K7",
+    "AP1-4-1-2-K8",
+    "AP1-4-1-2-K9",
+    "AP1-4-1-3-K4",
+    "AP1-4-1-5-K7"
+   ]
+  },
+  "GS-2.4.3": {
+   "seiten": [
+    153,
+    157
+   ],
+   "stichpunkte": [
+    "AP1-4-1-2",
+    "AP1-4-1-7",
+    "AP1-4-1-8",
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 21,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-4-1-2-K6",
+    "AP1-4-1-2-K7",
+    "AP1-4-1-7-K1",
+    "AP1-4-1-7-K2",
+    "AP1-4-1-7-K3",
+    "AP1-4-1-7-K4"
+   ]
+  },
+  "GS-2.4.4": {
+   "seiten": [
+    157,
+    160
+   ],
+   "stichpunkte": [
+    "AP1-4-1-2",
+    "AP1-4-1-3",
+    "AP1-4-1-5",
+    "AP1-4-1-7",
+    "AP1-4-1-8"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 18,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 5,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-4-1-2-K3",
+    "AP1-4-1-5-K7",
+    "AP1-4-1-7-K6",
+    "AP1-4-1-7-K7",
+    "AP1-4-1-7-K8",
+    "AP1-4-1-8-K4",
+    "AP1-4-1-8-K5"
+   ]
+  },
+  "GS-2.4.5": {
+   "seiten": [
+    160,
+    163
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "AP1-4-1-2",
+    "AP1-4-1-4",
+    "AP1-4-1-5",
+    "PB1-12-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 6,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-2-2-1-K2",
+    "AP1-4-1-2-K3",
+    "AP1-4-1-2-K9",
+    "AP1-4-1-4-K2",
+    "AP1-4-1-4-K6",
+    "AP1-4-1-4-K8",
+    "AP1-4-1-4-K9",
+    "AP1-4-1-5-K7",
+    "PB1-12-1-3-K3"
+   ]
+  },
+  "GS-2.4.6": {
+   "seiten": [
+    163,
+    165
+   ],
+   "stichpunkte": [
+    "AP1-4-1-2",
+    "AP1-4-2-3",
+    "AP1-4-3-3",
+    "PB1-12-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-4-1-2-K1",
+    "AP1-4-1-2-K10",
+    "AP1-4-1-2-K8",
+    "AP1-4-2-3-K2",
+    "AP1-4-3-3-K3",
+    "AP1-4-3-3-K5",
+    "PB1-12-1-3-K2"
+   ]
+  },
+  "GS-2.4.7": {
+   "seiten": [
+    165,
+    169
+   ],
+   "stichpunkte": [
+    "AP1-4-1-3",
+    "AP1-4-1-7",
+    "AP1-4-1-8",
+    "AP1-5-2-2",
+    "AP1-7-3-5",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-4-1-3-K1",
+    "AP1-4-1-3-K2",
+    "AP1-4-1-3-K3",
+    "AP1-4-1-7-K4",
+    "AP1-4-1-8-K4",
+    "AP1-5-2-2-K2",
+    "AP1-5-2-2-K7",
+    "AP1-7-3-5-K4",
+    "PB1-11-2-3-K4",
+    "PB1-11-2-3-K9"
+   ]
+  },
+  "GS-2.4.8": {
+   "seiten": [
+    169,
+    171
+   ],
+   "stichpunkte": [
+    "AP1-4-1-4",
+    "AP1-4-3-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-1-4-K1"
+   ]
+  },
+  "GS-2.4.9": {
+   "seiten": [
+    171,
+    178
+   ],
+   "stichpunkte": [
+    "AP1-4-1-4",
+    "AP1-4-3-1",
+    "AP1-4-3-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-1-4-K10",
+    "AP1-4-3-1-K6",
+    "AP1-4-3-3-K3",
+    "AP1-4-3-3-K6"
+   ]
+  },
+  "GS-2.4.10": {
+   "seiten": [
+    178,
+    185
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "AP1-3-1-1",
+    "AP1-3-1-2",
+    "AP1-4-1-4",
+    "AP1-4-3-3",
+    "AP1-7-1-2",
+    "WISO-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-2-2-1-K6",
+    "AP1-3-1-1-K5",
+    "AP1-3-1-2-K1",
+    "AP1-4-3-3-K1",
+    "AP1-7-1-2-K3"
+   ]
+  },
+  "GS-2.4.11": {
+   "seiten": [
+    185,
+    186
+   ],
+   "stichpunkte": [
+    "AP1-4-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 2,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-1-4-K1"
+   ]
+  },
+  "GS-2.4.12": {
+   "seiten": [
+    186,
+    189
+   ],
+   "stichpunkte": [
+    "AP1-4-1-4",
+    "AP1-4-3-1",
+    "AP1-4-3-2",
+    "AP1-7-4-3",
+    "AP1-8-4-3",
+    "PB1-8-1-2",
+    "WISO-3-1-1",
+    "WISO-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-4-1-4-K9",
+    "AP1-4-3-1-K2",
+    "AP1-4-3-2-K3",
+    "AP1-4-3-2-K5",
+    "AP1-7-4-3-K1",
+    "PB1-8-1-2-K1",
+    "WISO-3-1-1-K1",
+    "WISO-3-2-2-K3"
+   ]
+  },
+  "GS-2.4.13": {
+   "seiten": [
+    189,
+    199
+   ],
+   "stichpunkte": [
+    "AP1-3-3-2",
+    "AP1-3-4-3",
+    "AP1-4-1-6",
+    "AP1-5-1-1",
+    "AP1-5-1-2",
+    "AP1-5-1-3",
+    "AP1-5-1-5",
+    "AP1-5-2-5",
+    "AP1-8-4-2",
+    "PB1-3-2-3",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 19,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-3-3-2-K5",
+    "AP1-3-4-3-K2",
+    "AP1-3-4-3-K3",
+    "AP1-4-1-6-K1",
+    "AP1-4-1-6-K3",
+    "AP1-5-1-1-K1",
+    "AP1-5-1-1-K11",
+    "AP1-5-1-1-K5",
+    "AP1-5-1-2-K1",
+    "AP1-5-1-3-K3",
+    "AP1-5-1-3-K4",
+    "AP1-5-1-5-K1",
+    "PB1-12-2-3-K1",
+    "PB1-12-2-3-K2",
+    "PB1-12-2-3-K7",
+    "PB1-3-2-3-K1"
+   ]
+  },
+  "GS-2.4.14": {
+   "seiten": [
+    199,
+    202
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-2-2-4",
+    "AP1-3-2-4",
+    "AP1-3-3-2",
+    "AP1-4-1-1",
+    "AP1-5-2-4",
+    "PB1-12-2-3",
+    "PB1-12-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-1-3-1-K1",
+    "AP1-2-2-4-K4",
+    "AP1-3-3-2-K5",
+    "AP1-4-1-1-K9",
+    "AP1-5-2-4-K2",
+    "PB1-12-2-3-K1",
+    "PB1-12-2-5-K3"
+   ]
+  },
+  "GS-2.5.1": {
+   "seiten": [
+    202,
+    213
+   ],
+   "stichpunkte": [
+    "AP1-1-1-4",
+    "AP1-1-4-1",
+    "AP1-2-1-2",
+    "AP1-2-1-3",
+    "AP1-2-2-3",
+    "AP1-2-2-4",
+    "AP1-3-1-3",
+    "AP1-3-3-1",
+    "AP1-5-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 7
+   },
+   "aussagen": [
+    "AP1-2-2-3-K4",
+    "AP1-2-2-4-K3",
+    "AP1-2-2-4-K5",
+    "AP1-2-2-4-K6",
+    "AP1-2-2-4-K7",
+    "AP1-3-3-1-K10",
+    "AP1-3-3-1-K4",
+    "AP1-5-1-3-K5"
+   ]
+  },
+  "GS-2.5.2": {
+   "seiten": [
+    213,
+    215
+   ],
+   "stichpunkte": [
+    "AP1-2-1-3",
+    "AP1-2-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-2-1-3-K4"
+   ]
+  },
+  "GS-2.5.3": {
+   "seiten": [
+    215,
+    222
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-2",
+    "AP1-1-2-1",
+    "AP1-1-2-2",
+    "AP1-1-2-3",
+    "AP1-2-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-1-1-K2",
+    "AP1-1-2-1-K1",
+    "AP1-1-2-1-K2",
+    "AP1-1-2-1-K4",
+    "AP1-1-2-1-K5",
+    "AP1-1-2-1-K6",
+    "AP1-1-2-1-K7",
+    "AP1-1-2-2-K1",
+    "AP1-1-2-2-K2",
+    "AP1-1-2-2-K3",
+    "AP1-1-2-2-K4",
+    "AP1-1-2-2-K5",
+    "AP1-1-2-2-K8",
+    "AP1-1-2-3-K1",
+    "AP1-2-2-2-K1",
+    "AP1-2-2-2-K2",
+    "AP1-2-2-2-K4"
+   ]
+  },
+  "GS-2.6.1": {
+   "seiten": [
+    222,
+    223
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "AP1-2-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-2-2-1-K10",
+    "AP1-2-2-1-K6",
+    "AP1-2-2-2-K7"
+   ]
+  },
+  "GS-2.6.2": {
+   "seiten": [
+    223,
+    226
+   ],
+   "stichpunkte": [
+    "AP1-2-2-2",
+    "AP1-4-1-1",
+    "PB1-1-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-2-2-2-K1",
+    "AP1-2-2-2-K2",
+    "AP1-2-2-2-K3",
+    "AP1-2-2-2-K6",
+    "AP1-4-1-1-K1",
+    "PB1-1-2-3-K1",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K4",
+    "PB1-1-2-3-K8"
+   ]
+  },
+  "GS-2.6.3": {
+   "seiten": [
+    226,
+    228
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "AP1-4-3-3",
+    "WISO-4-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-2-2-1-K10",
+    "AP1-4-3-3-K9",
+    "WISO-4-2-1-K5"
+   ]
+  },
+  "GS-2.7.1": {
+   "seiten": [
+    228,
+    232
+   ],
+   "stichpunkte": [
+    "AP1-4-1-1",
+    "AP1-4-1-2",
+    "AP1-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-4-1-1-K2",
+    "AP1-4-1-1-K4",
+    "AP1-4-1-2-K11",
+    "AP1-4-1-2-K8",
+    "AP1-4-1-3-K7"
+   ]
+  },
+  "GS-2.7.2": {
+   "seiten": [
+    232,
+    236
+   ],
+   "stichpunkte": [
+    "AP1-4-1-1",
+    "AP1-4-3-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-3-1-K5"
+   ]
+  },
+  "GS-2.7.3": {
+   "seiten": [
+    236,
+    242
+   ],
+   "stichpunkte": [
+    "AP1-4-1-1",
+    "AP1-5-1-3",
+    "AP1-7-4-3",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-4-1-1-K4",
+    "AP1-5-1-3-K1",
+    "AP1-5-1-3-K2",
+    "AP1-5-1-3-K8"
+   ]
+  },
+  "GS-2.7.4": {
+   "seiten": [
+    242,
+    245
+   ],
+   "stichpunkte": [
+    "AP1-2-5-3",
+    "AP1-3-2-1",
+    "AP1-3-3-1",
+    "AP1-5-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-3-2-1-K1",
+    "AP1-3-2-1-K2",
+    "AP1-3-2-1-K7",
+    "AP1-3-2-1-K8",
+    "AP1-3-2-1-K9",
+    "AP1-3-3-1-K2",
+    "AP1-3-3-1-K9",
+    "AP1-5-1-3-K3"
+   ]
+  },
+  "GS-2.8.1": {
+   "seiten": [
+    245,
+    247
+   ],
+   "stichpunkte": [
+    "AP1-2-4-1",
+    "AP1-3-1-3",
+    "AP1-3-1-4",
+    "WISO-2-4-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-2-4-1-K10",
+    "AP1-3-1-4-K1"
+   ]
+  },
+  "GS-2.8.2": {
+   "seiten": [
+    247,
+    251
+   ],
+   "stichpunkte": [
+    "AP1-3-1-3",
+    "AP1-3-1-4",
+    "AP1-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-3-1-3-K9",
+    "AP1-3-1-4-K8",
+    "AP1-3-2-2-K4",
+    "AP1-3-2-2-K7"
+   ]
+  },
+  "GS-2.8.3": {
+   "seiten": [
+    251,
+    253
+   ],
+   "stichpunkte": [
+    "AP1-3-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-3-1-3-K6",
+    "AP1-3-1-3-K7"
+   ]
+  },
+  "GS-2.8.4": {
+   "seiten": [
+    253,
+    255
+   ],
+   "stichpunkte": [
+    "AP1-3-1-1",
+    "AP1-3-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-3-1-1-K6",
+    "AP1-3-1-1-K7",
+    "AP1-3-1-2-K6"
+   ]
+  },
+  "GS-2.9.1": {
+   "seiten": [
+    255,
+    258
+   ],
+   "stichpunkte": [
+    "AP1-3-1-4",
+    "AP1-3-2-2",
+    "AP1-5-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-3-1-4-K9",
+    "AP1-3-2-2-K4"
+   ]
+  },
+  "GS-2.9.2": {
+   "seiten": [
+    258,
+    259
+   ],
+   "stichpunkte": [
+    "AP1-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 2,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-3-2-2-K1",
+    "AP1-3-2-2-K3",
+    "AP1-3-2-2-K4",
+    "AP1-3-2-2-K8"
+   ]
+  },
+  "GS-2.9.3": {
+   "seiten": [
+    259,
+    261
+   ],
+   "stichpunkte": [
+    "AP1-3-1-1",
+    "AP1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-3-1-1-K4",
+    "AP1-3-2-3-K1",
+    "AP1-3-2-3-K2",
+    "AP1-3-2-3-K7",
+    "AP1-3-2-3-K9"
+   ]
+  },
+  "GS-2.9.4": {
+   "seiten": [
+    261,
+    265
+   ],
+   "stichpunkte": [
+    "AP1-2-2-4",
+    "AP1-3-3-1",
+    "AP1-3-3-2",
+    "PB1-2-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-2-2-4-K6",
+    "AP1-3-3-1-K10",
+    "AP1-3-3-1-K4",
+    "AP1-3-3-2-K1",
+    "AP1-3-3-2-K2",
+    "AP1-3-3-2-K6",
+    "AP1-3-3-2-K7",
+    "PB1-2-1-1-K3",
+    "PB1-2-1-1-K4",
+    "PB1-2-1-1-K5",
+    "PB1-2-1-1-K6"
+   ]
+  },
+  "GS-2.10.1": {
+   "seiten": [
+    265,
+    268
+   ],
+   "stichpunkte": [
+    "AP1-3-3-2",
+    "AP1-3-3-3",
+    "PB1-2-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-3-3-2-K1",
+    "AP1-3-3-2-K7",
+    "AP1-3-3-3-K9",
+    "PB1-2-1-1-K1"
+   ]
+  },
+  "GS-2.10.2": {
+   "seiten": [
+    268,
+    273
+   ],
+   "stichpunkte": [
+    "WISO-3-1-1",
+    "WISO-3-1-2",
+    "WISO-3-2-1",
+    "WISO-3-2-3",
+    "WISO-3-3-1",
+    "WISO-3-3-2",
+    "WISO-3-3-3",
+    "WISO-3-4-3",
+    "WISO-3-4-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 2
+   },
+   "aussagen": [
+    "WISO-3-1-1-K1",
+    "WISO-3-1-1-K10",
+    "WISO-3-1-1-K11",
+    "WISO-3-1-1-K2",
+    "WISO-3-1-1-K4",
+    "WISO-3-1-1-K5",
+    "WISO-3-1-1-K6",
+    "WISO-3-1-1-K7",
+    "WISO-3-1-2-K3",
+    "WISO-3-2-1-K1",
+    "WISO-3-2-3-K1",
+    "WISO-3-3-1-K1",
+    "WISO-3-3-3-K3",
+    "WISO-3-4-4-K1",
+    "WISO-3-4-4-K3",
+    "WISO-3-4-4-K7"
+   ]
+  },
+  "GS-2.10.3": {
+   "seiten": [
+    273,
+    275
+   ],
+   "stichpunkte": [
+    "AP1-7-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-7-2-3-K1",
+    "AP1-7-2-3-K2",
+    "AP1-7-2-3-K4",
+    "AP1-7-2-3-K5"
+   ]
+  },
+  "GS-2.10.4": {
+   "seiten": [
+    275,
+    276
+   ],
+   "stichpunkte": [
+    "WISO-4-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "WISO-4-2-2-K1",
+    "WISO-4-2-2-K3",
+    "WISO-4-2-2-K4",
+    "WISO-4-2-2-K5"
+   ]
+  },
+  "GS-2.10.5": {
+   "seiten": [
+    276,
+    277
+   ],
+   "stichpunkte": [
+    "AP1-1-4-2",
+    "AP1-1-4-3",
+    "AP1-4-1-5",
+    "AP1-5-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-1-4-2-K2",
+    "AP1-1-4-2-K3",
+    "AP1-1-4-3-K4",
+    "AP1-4-1-5-K8",
+    "AP1-5-2-2-K9"
+   ]
+  },
+  "GS-2.11": {
+   "seiten": [
+    277,
+    280
+   ],
+   "stichpunkte": [
+    "AP1-1-1-4",
+    "AP1-1-4-3",
+    "PB1-9-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-1-1-4-K4",
+    "AP1-1-1-4-K7",
+    "AP1-1-4-3-K6",
+    "PB1-9-1-1-K3"
+   ]
+  },
+  "GS-3.1": {
+   "seiten": [
+    280,
+    283
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "PB1-11-2-1",
+    "PB1-11-2-3",
+    "PB1-12-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-3-K9",
+    "PB1-11-2-1-K1",
+    "PB1-11-2-3-K1",
+    "PB1-12-1-3-K2"
+   ]
+  },
+  "GS-3.2.1": {
+   "seiten": [
+    283,
+    286
+   ],
+   "stichpunkte": [
+    "AP1-6-1-2",
+    "AP1-6-1-3",
+    "AP1-6-3-3",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-2-K5",
+    "AP1-6-1-2-K7",
+    "AP1-6-1-3-K7",
+    "AP1-6-3-3-K1"
+   ]
+  },
+  "GS-3.2.2": {
+   "seiten": [
+    286,
+    290
+   ],
+   "stichpunkte": [
+    "AP1-6-1-4",
+    "AP1-6-3-3",
+    "PB1-11-2-1",
+    "PB1-11-2-2",
+    "PB1-11-2-3",
+    "PB1-11-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-4-K7",
+    "AP1-6-3-3-K3",
+    "PB1-11-2-1-K1",
+    "PB1-11-2-1-K2",
+    "PB1-11-2-2-K1",
+    "PB1-11-2-2-K2",
+    "PB1-11-2-2-K5",
+    "PB1-11-2-3-K4",
+    "PB1-11-2-4-K1"
+   ]
+  },
+  "GS-3.2.3": {
+   "seiten": [
+    290,
+    293
+   ],
+   "stichpunkte": [
+    "AP1-4-1-1",
+    "AP1-5-2-5",
+    "AP1-7-4-3",
+    "PB1-3-2-3",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-1-1-K1",
+    "AP1-4-1-1-K10",
+    "AP1-4-1-1-K9",
+    "AP1-5-2-5-K1",
+    "AP1-7-4-3-K4",
+    "PB1-3-2-3-K1"
+   ]
+  },
+  "GS-3.2.4": {
+   "seiten": [
+    293,
+    295
+   ],
+   "stichpunkte": [
+    "AP1-5-2-5",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-2-5-K10",
+    "AP1-5-2-5-K8",
+    "PB1-11-2-3-K1"
+   ]
+  },
+  "GS-3.2.5": {
+   "seiten": [
+    295,
+    297
+   ],
+   "stichpunkte": [
+    "AP1-5-1-3",
+    "PB1-12-1-2",
+    "PB1-12-1-3",
+    "PB1-12-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-1-3-K4",
+    "PB1-12-1-2-K1",
+    "PB1-12-1-3-K2",
+    "PB1-12-2-5-K2"
+   ]
+  },
+  "GS-3.3.1": {
+   "seiten": [
+    297,
+    304
+   ],
+   "stichpunkte": [
+    "AP1-4-1-4",
+    "AP1-4-2-1",
+    "AP1-4-2-4",
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "AP1-6-2-2",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-4-2-1-K3",
+    "AP1-4-2-4-K1",
+    "AP1-4-2-4-K2",
+    "AP1-4-2-4-K7",
+    "AP1-6-1-4-K1",
+    "AP1-6-1-5-K2",
+    "PB1-11-2-1-K4"
+   ]
+  },
+  "GS-3.3.2": {
+   "seiten": [
+    304,
+    306
+   ],
+   "stichpunkte": [
+    "AP1-6-1-4",
+    "PB1-11-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-6-1-4-K1"
+   ]
+  },
+  "GS-3.3.3": {
+   "seiten": [
+    306,
+    307
+   ],
+   "stichpunkte": [
+    "AP1-6-1-1",
+    "AP1-6-1-2",
+    "AP1-6-1-5",
+    "PB1-11-1-1",
+    "PB1-11-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-1-K2",
+    "AP1-6-1-2-K5",
+    "AP1-6-1-5-K2",
+    "PB1-11-1-1-K2",
+    "PB1-11-1-1-K8"
+   ]
+  },
+  "GS-3.3.4": {
+   "seiten": [
+    307,
+    309
+   ],
+   "stichpunkte": [
+    "PB1-11-1-1",
+    "PB1-11-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-11-1-1-K1",
+    "PB1-11-1-2-K1",
+    "PB1-11-1-2-K4",
+    "PB1-11-1-2-K6",
+    "PB1-11-1-2-K7"
+   ]
+  },
+  "GS-3.4.1": {
+   "seiten": [
+    309,
+    311
+   ],
+   "stichpunkte": [],
+   "filter": "ausgeschlossen"
+  },
+  "GS-3.4.2": {
+   "seiten": [
+    311,
+    317
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-3-K6",
+    "AP1-6-1-4-K6",
+    "AP1-6-1-5-K7",
+    "AP1-6-1-5-K8",
+    "PB1-11-2-1-K3",
+    "PB1-11-2-1-K6",
+    "PB1-11-2-1-K7"
+   ]
+  },
+  "GS-3.4.3": {
+   "seiten": [
+    317,
+    321
+   ],
+   "stichpunkte": [
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "PB1-11-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-6-1-4-K1",
+    "AP1-6-1-4-K2",
+    "AP1-6-1-5-K1",
+    "AP1-6-1-5-K6",
+    "PB1-11-2-2-K7"
+   ]
+  },
+  "GS-3.4.4": {
+   "seiten": [
+    321,
+    330
+   ],
+   "stichpunkte": [
+    "AP1-6-1-1",
+    "AP1-6-1-2",
+    "AP1-6-2-4",
+    "AP1-6-3-4",
+    "AP1-7-3-1",
+    "PB1-10-1-3",
+    "PB1-11-1-1",
+    "PB1-11-1-2",
+    "PB1-11-1-3",
+    "PB1-11-2-3",
+    "PB1-11-2-4",
+    "PB1-12-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 23,
+    "abgedeckt": 21,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-1-K1",
+    "AP1-6-1-1-K2",
+    "AP1-6-1-1-K4",
+    "AP1-6-1-1-K6",
+    "AP1-6-1-2-K5",
+    "AP1-6-1-2-K6",
+    "AP1-6-2-4-K8",
+    "AP1-6-3-4-K1",
+    "AP1-7-3-1-K1",
+    "AP1-7-3-1-K2",
+    "AP1-7-3-1-K3",
+    "AP1-7-3-1-K4",
+    "PB1-10-1-3-K2",
+    "PB1-11-1-1-K1",
+    "PB1-11-1-1-K5",
+    "PB1-11-1-1-K6",
+    "PB1-11-1-2-K8",
+    "PB1-11-1-3-K1",
+    "PB1-11-1-3-K2",
+    "PB1-11-1-3-K4",
+    "PB1-11-2-3-K2",
+    "PB1-11-2-4-K3",
+    "PB1-11-2-4-K5",
+    "PB1-12-2-1-K3"
+   ]
+  },
+  "GS-3.4.5": {
+   "seiten": [
+    330,
+    339
+   ],
+   "stichpunkte": [
+    "AP1-6-1-1",
+    "AP1-6-1-2",
+    "AP1-6-2-1",
+    "AP1-6-2-2",
+    "AP1-6-2-3",
+    "AP1-6-2-4",
+    "AP1-6-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 22,
+    "abgedeckt": 15,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-6-1-1-K2",
+    "AP1-6-1-2-K4",
+    "AP1-6-2-1-K5",
+    "AP1-6-2-2-K1",
+    "AP1-6-2-2-K2",
+    "AP1-6-2-2-K5",
+    "AP1-6-2-2-K7",
+    "AP1-6-2-3-K1",
+    "AP1-6-2-3-K2",
+    "AP1-6-2-3-K3",
+    "AP1-6-2-3-K6",
+    "AP1-6-2-3-K7",
+    "AP1-6-2-4-K1",
+    "AP1-6-2-4-K7",
+    "AP1-6-2-5-K1",
+    "AP1-6-2-5-K2",
+    "AP1-6-2-5-K7"
+   ]
+  },
+  "GS-3.4.6": {
+   "seiten": [
+    339,
+    344
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "PB1-11-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-6-1-3-K3",
+    "PB1-11-1-1-K10",
+    "PB1-11-1-1-K3",
+    "PB1-11-1-1-K9"
+   ]
+  },
+  "GS-3.4.7": {
+   "seiten": [
+    344,
+    346
+   ],
+   "stichpunkte": [
+    "AP1-6-1-1",
+    "AP1-6-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 2,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-5-K9"
+   ]
+  },
+  "GS-3.5.1": {
+   "seiten": [
+    346,
+    361
+   ],
+   "stichpunkte": [
+    "AP1-4-2-4",
+    "AP1-6-1-5",
+    "AP1-6-2-1",
+    "AP1-6-2-2",
+    "AP1-6-2-4",
+    "AP1-6-3-1",
+    "AP1-6-3-2",
+    "AP1-6-3-4",
+    "PB1-11-1-3",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 19,
+    "abgedeckt": 11,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-4-2-4-K2",
+    "AP1-6-2-1-K10",
+    "AP1-6-2-1-K4",
+    "AP1-6-2-1-K6",
+    "AP1-6-2-1-K9",
+    "AP1-6-2-2-K2",
+    "AP1-6-2-4-K3",
+    "AP1-6-2-4-K4",
+    "AP1-6-3-1-K1",
+    "AP1-6-3-1-K2",
+    "AP1-6-3-2-K1",
+    "AP1-6-3-2-K3",
+    "AP1-6-3-4-K3",
+    "PB1-11-1-3-K2"
+   ]
+  },
+  "GS-3.5.2": {
+   "seiten": [
+    361,
+    363
+   ],
+   "stichpunkte": [
+    "AP1-5-1-3",
+    "AP1-5-1-5",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-1-3-K1",
+    "AP1-5-1-3-K4",
+    "AP1-5-1-5-K2",
+    "AP1-5-1-5-K3",
+    "PB1-12-2-3-K1"
+   ]
+  },
+  "GS-3.5.3": {
+   "seiten": [
+    363,
+    365
+   ],
+   "stichpunkte": [
+    "AP1-5-2-5",
+    "AP1-7-3-3",
+    "PB1-10-2-1",
+    "PB1-11-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-5-2-5-K2",
+    "AP1-5-2-5-K3",
+    "AP1-7-3-3-K2",
+    "PB1-10-2-1-K2",
+    "PB1-11-2-2-K8"
+   ]
+  },
+  "GS-3.6.1": {
+   "seiten": [
+    365,
+    368
+   ],
+   "stichpunkte": [
+    "AP1-6-2-5",
+    "AP1-6-3-2",
+    "AP1-6-3-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-3-2-K1",
+    "AP1-6-3-2-K3",
+    "AP1-6-3-2-K4",
+    "AP1-6-3-4-K1",
+    "AP1-6-3-4-K2",
+    "AP1-6-3-4-K4"
+   ]
+  },
+  "GS-3.6.2": {
+   "seiten": [
+    368,
+    369
+   ],
+   "stichpunkte": [
+    "AP1-1-4-2",
+    "AP1-6-3-2",
+    "AP1-6-3-4",
+    "PB1-11-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-1-4-2-K6",
+    "AP1-6-3-2-K1",
+    "AP1-6-3-2-K4",
+    "AP1-6-3-2-K9",
+    "AP1-6-3-4-K5",
+    "PB1-11-1-3-K1"
+   ]
+  },
+  "GS-3.6.3": {
+   "seiten": [
+    369,
+    371
+   ],
+   "stichpunkte": [
+    "PB1-12-2-1",
+    "PB1-12-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-12-2-1-K1",
+    "PB1-12-2-1-K4",
+    "PB1-12-2-1-K8",
+    "PB1-12-2-4-K3"
+   ]
+  },
+  "GS-3.7.1": {
+   "seiten": [
+    371,
+    371
+   ],
+   "stichpunkte": [
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "AP1-6-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-6-1-4-K3",
+    "AP1-6-1-5-K3",
+    "AP1-6-1-6-K3"
+   ]
+  },
+  "GS-3.7.2": {
+   "seiten": [
+    371,
+    372
+   ],
+   "stichpunkte": [
+    "AP1-6-1-6",
+    "PB1-11-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-6-K1",
+    "AP1-6-1-6-K4",
+    "PB1-11-1-1-K9"
+   ]
+  },
+  "GS-3.7.3": {
+   "seiten": [
+    372,
+    376
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "AP1-6-1-5",
+    "AP1-6-1-6",
+    "AP1-6-2-1",
+    "AP1-6-3-1",
+    "AP1-6-3-3",
+    "AP1-7-3-5",
+    "PB1-11-1-1",
+    "PB1-11-1-3",
+    "PB1-11-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-6-1-3-K7",
+    "AP1-6-1-5-K10",
+    "AP1-6-1-6-K2",
+    "AP1-6-2-1-K2",
+    "AP1-6-3-1-K7",
+    "AP1-6-3-3-K1",
+    "AP1-7-3-5-K8",
+    "PB1-11-1-3-K2",
+    "PB1-11-2-2-K3",
+    "PB1-11-2-2-K6",
+    "PB1-11-2-2-K9"
+   ]
+  },
+  "GS-3.7.4": {
+   "seiten": [
+    376,
+    377
+   ],
+   "stichpunkte": [
+    "AP1-6-1-2",
+    "AP1-7-3-1",
+    "PB1-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-6-1-2-K3",
+    "AP1-7-3-1-K8",
+    "PB1-3-2-2-K4"
+   ]
+  },
+  "GS-3.8.1": {
+   "seiten": [
+    377,
+    382
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "AP1-7-5-1",
+    "PB1-12-1-3",
+    "PB1-12-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-7-1-3-K8",
+    "AP1-7-5-1-K5",
+    "PB1-12-1-3-K3",
+    "PB1-12-1-3-K4",
+    "PB1-12-1-5-K1",
+    "PB1-12-1-5-K2",
+    "PB1-12-1-5-K3"
+   ]
+  },
+  "GS-3.8.2": {
+   "seiten": [
+    382,
+    385
+   ],
+   "stichpunkte": [
+    "AP1-7-3-5",
+    "PB1-12-1-1",
+    "PB1-12-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-7-3-5-K1",
+    "AP1-7-3-5-K10",
+    "AP1-7-3-5-K2",
+    "AP1-7-3-5-K5",
+    "AP1-7-3-5-K7",
+    "AP1-7-3-5-K9",
+    "PB1-12-1-1-K1",
+    "PB1-12-1-3-K5"
+   ]
+  },
+  "GS-3.8.3": {
+   "seiten": [
+    385,
+    387
+   ],
+   "stichpunkte": [
+    "AP1-7-4-1",
+    "PB1-11-1-1",
+    "PB1-11-1-3",
+    "PB1-11-1-4",
+    "PB1-11-2-1",
+    "PB1-11-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-7-4-1-K1",
+    "PB1-11-1-1-K4",
+    "PB1-11-1-3-K3",
+    "PB1-11-1-3-K5",
+    "PB1-11-1-4-K2",
+    "PB1-11-1-4-K3",
+    "PB1-11-2-5-K1"
+   ]
+  },
+  "GS-3.8.4": {
+   "seiten": [
+    387,
+    389
+   ],
+   "stichpunkte": [
+    "PB1-12-1-1",
+    "PB1-12-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-12-1-1-K1",
+    "PB1-12-1-1-K4",
+    "PB1-12-1-2-K2",
+    "PB1-12-1-2-K5"
+   ]
+  },
+  "GS-3.9.1": {
+   "seiten": [
+    389,
+    397
+   ],
+   "stichpunkte": [
+    "AP1-4-1-5",
+    "AP1-4-2-3",
+    "AP1-6-1-5",
+    "PB1-12-1-3",
+    "PB1-12-1-4",
+    "WISO-3-3-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 19,
+    "abgedeckt": 13,
+    "neu": 0,
+    "filter": 5,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-1-5-K6",
+    "AP1-4-2-3-K1",
+    "AP1-4-2-3-K2",
+    "AP1-4-2-3-K3",
+    "AP1-4-2-3-K4",
+    "AP1-4-2-3-K6",
+    "AP1-4-2-3-K8",
+    "PB1-12-1-3-K1",
+    "PB1-12-1-3-K8",
+    "PB1-12-1-4-K1",
+    "PB1-12-1-4-K2",
+    "PB1-12-1-4-K3",
+    "PB1-12-1-4-K4",
+    "WISO-3-3-3-K3"
+   ]
+  },
+  "GS-3.9.2": {
+   "seiten": [
+    397,
+    402
+   ],
+   "stichpunkte": [
+    "AP1-4-2-3",
+    "AP1-4-3-3",
+    "PB1-1-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-2-3-K5",
+    "AP1-4-3-3-K1",
+    "AP1-4-3-3-K10",
+    "AP1-4-3-3-K4",
+    "AP1-4-3-3-K5",
+    "AP1-4-3-3-K9",
+    "PB1-1-2-1-K9"
+   ]
+  },
+  "GS-4.1.1": {
+   "seiten": [
+    402,
+    407
+   ],
+   "stichpunkte": [
+    "AP1-7-1-4",
+    "AP1-7-2-1",
+    "WISO-5-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-7-1-4-K2",
+    "AP1-7-1-4-K3",
+    "AP1-7-1-4-K5",
+    "AP1-7-1-4-K7",
+    "AP1-7-2-1-K1",
+    "WISO-5-2-1-K10"
+   ]
+  },
+  "GS-4.1.2": {
+   "seiten": [
+    407,
+    413
+   ],
+   "stichpunkte": [
+    "AP1-1-3-3",
+    "AP1-3-4-1",
+    "AP1-7-1-1",
+    "AP1-7-1-2",
+    "AP1-7-2-1",
+    "AP1-7-5-1",
+    "PB1-2-1-1",
+    "WISO-5-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 21,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 9
+   },
+   "aussagen": [
+    "AP1-3-4-1-K1",
+    "AP1-7-1-2-K7",
+    "AP1-7-5-1-K10",
+    "AP1-7-5-1-K5",
+    "AP1-7-5-1-K8",
+    "WISO-5-2-1-K10",
+    "WISO-5-2-1-K9"
+   ]
+  },
+  "GS-4.1.3": {
+   "seiten": [
+    413,
+    424
+   ],
+   "stichpunkte": [
+    "AP1-7-1-1",
+    "AP1-7-1-2",
+    "AP1-7-1-4",
+    "AP1-7-2-1",
+    "AP1-7-2-2",
+    "AP1-7-2-3",
+    "AP1-7-3-4",
+    "AP1-7-5-1",
+    "WISO-5-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 19,
+    "abgedeckt": 13,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-7-1-1-K1",
+    "AP1-7-1-2-K7",
+    "AP1-7-1-2-K8",
+    "AP1-7-1-4-K4",
+    "AP1-7-2-1-K1",
+    "AP1-7-2-1-K7",
+    "AP1-7-2-1-K8",
+    "AP1-7-2-1-K9",
+    "AP1-7-2-2-K1",
+    "AP1-7-2-2-K6",
+    "AP1-7-2-2-K7",
+    "AP1-7-2-3-K1",
+    "AP1-7-3-4-K1",
+    "AP1-7-3-4-K2",
+    "WISO-5-2-1-K8"
+   ]
+  },
+  "GS-4.1.4": {
+   "seiten": [
+    424,
+    430
+   ],
+   "stichpunkte": [
+    "AP1-7-4-1",
+    "AP1-7-4-2",
+    "PB1-2-1-1",
+    "PB1-10-1-2",
+    "WISO-5-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 7
+   },
+   "aussagen": [
+    "AP1-7-4-1-K1",
+    "AP1-7-4-1-K10",
+    "AP1-7-4-1-K7",
+    "PB1-10-1-2-K4",
+    "PB1-10-1-2-K5",
+    "PB1-2-1-1-K2"
+   ]
+  },
+  "GS-4.1.5": {
+   "seiten": [
+    430,
+    437
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "AP1-7-3-2",
+    "AP1-7-3-3",
+    "AP1-7-4-1",
+    "AP1-7-4-2",
+    "AP1-7-4-3",
+    "AP1-7-5-2",
+    "PB1-10-1-2",
+    "PB1-10-1-3",
+    "PB1-10-1-4",
+    "PB1-10-2-1",
+    "PB1-10-2-2",
+    "PB1-10-2-3",
+    "PB1-11-2-2",
+    "WISO-5-2-1",
+    "WISO-5-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 27,
+    "abgedeckt": 20,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-7-1-3-K3",
+    "AP1-7-3-2-K4",
+    "AP1-7-3-3-K3",
+    "AP1-7-4-1-K10",
+    "AP1-7-4-1-K8",
+    "AP1-7-4-1-K9",
+    "AP1-7-4-2-K4",
+    "AP1-7-5-2-K1",
+    "AP1-7-5-2-K2",
+    "PB1-10-1-2-K4",
+    "PB1-10-1-2-K7",
+    "PB1-10-1-3-K3",
+    "PB1-10-1-3-K5",
+    "PB1-10-1-3-K6",
+    "PB1-10-2-1-K4",
+    "PB1-10-2-2-K1",
+    "PB1-10-2-3-K9",
+    "PB1-11-2-2-K3",
+    "WISO-5-2-1-K3",
+    "WISO-5-2-1-K4"
+   ]
+  },
+  "GS-4.2": {
+   "seiten": [
+    437,
+    440
+   ],
+   "stichpunkte": [
+    "AP1-7-1-2",
+    "AP1-7-2-1",
+    "AP1-7-3-3",
+    "AP1-7-5-1",
+    "PB1-10-2-3",
+    "PB1-11-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-7-1-2-K3",
+    "AP1-7-1-2-K5",
+    "AP1-7-1-2-K8",
+    "AP1-7-1-2-K9",
+    "AP1-7-2-1-K6",
+    "AP1-7-3-3-K5",
+    "AP1-7-5-1-K10",
+    "PB1-10-2-3-K2",
+    "PB1-11-1-4-K2"
+   ]
+  },
+  "GS-4.3.1": {
+   "seiten": [
+    440,
+    441
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "AP1-7-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-7-1-4-K7"
+   ]
+  },
+  "GS-4.3.2": {
+   "seiten": [
+    441,
+    445
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "AP1-7-2-1",
+    "AP1-7-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-7-2-1-K10",
+    "AP1-7-2-1-K4",
+    "AP1-7-2-2-K8"
+   ]
+  },
+  "GS-4.3.3": {
+   "seiten": [
+    445,
+    448
+   ],
+   "stichpunkte": [
+    "AP1-7-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-7-2-2-K1",
+    "AP1-7-2-2-K10",
+    "AP1-7-2-2-K2",
+    "AP1-7-2-2-K3",
+    "AP1-7-2-2-K4",
+    "AP1-7-2-2-K5",
+    "AP1-7-2-2-K6",
+    "AP1-7-2-2-K7",
+    "AP1-7-2-2-K9"
+   ]
+  },
+  "GS-4.4.1": {
+   "seiten": [
+    448,
+    456
+   ],
+   "stichpunkte": [
+    "AP1-5-1-2",
+    "AP1-5-1-3",
+    "AP1-7-1-2",
+    "AP1-7-2-1",
+    "AP1-7-2-2",
+    "AP1-7-3-2",
+    "AP1-7-3-4",
+    "AP1-7-4-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-7-2-2-K3",
+    "AP1-7-3-2-K2",
+    "AP1-7-3-4-K2",
+    "AP1-7-3-4-K3",
+    "AP1-7-3-4-K9",
+    "AP1-7-4-1-K8"
+   ]
+  },
+  "GS-4.4.2": {
+   "seiten": [
+    456,
+    461
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "AP1-7-1-4",
+    "AP1-7-2-1",
+    "AP1-7-2-2",
+    "AP1-7-3-3",
+    "AP1-7-3-4",
+    "PB1-10-1-4",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-7-1-3-K5",
+    "AP1-7-1-4-K6",
+    "AP1-7-2-2-K3",
+    "AP1-7-2-2-K5",
+    "AP1-7-3-3-K2",
+    "AP1-7-3-4-K10",
+    "AP1-7-3-4-K2",
+    "AP1-7-3-4-K6",
+    "PB1-10-1-4-K1",
+    "PB1-11-2-3-K1"
+   ]
+  },
+  "GS-4.4.3": {
+   "seiten": [
+    461,
+    468
+   ],
+   "stichpunkte": [
+    "AP1-7-2-2",
+    "AP1-7-3-4",
+    "AP1-7-4-3",
+    "PB1-10-2-3",
+    "WISO-4-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-7-2-2-K3",
+    "AP1-7-3-4-K10",
+    "AP1-7-4-3-K5",
+    "PB1-10-2-3-K2",
+    "WISO-4-2-1-K5"
+   ]
+  },
+  "GS-5.1.1": {
+   "seiten": [
+    468,
+    472
+   ],
+   "stichpunkte": [
+    "AP1-2-5-3",
+    "AP1-3-2-4",
+    "AP1-5-1-1",
+    "AP1-5-1-2",
+    "AP1-5-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-3-2-4-K5",
+    "AP1-5-1-1-K1",
+    "AP1-5-1-2-K1",
+    "AP1-5-1-2-K2",
+    "AP1-5-2-4-K2",
+    "AP1-5-2-4-K4",
+    "AP1-5-2-4-K6"
+   ]
+  },
+  "GS-5.1.2": {
+   "seiten": [
+    472,
+    474
+   ],
+   "stichpunkte": [
+    "PB1-5-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": []
+  },
+  "GS-5.2.1": {
+   "seiten": [
+    474,
+    477
+   ],
+   "stichpunkte": [
+    "AP1-4-1-8",
+    "AP1-4-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-1-8-K1",
+    "AP1-4-2-5-K1"
+   ]
+  },
+  "GS-5.2.2": {
+   "seiten": [
+    477,
+    481
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "AP1-4-2-2",
+    "AP1-7-1-1",
+    "PB1-7-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-2-2-1-K8",
+    "AP1-2-2-1-K9",
+    "AP1-4-2-2-K10",
+    "PB1-7-1-3-K9"
+   ]
+  },
+  "GS-5.2.3": {
+   "seiten": [
+    481,
+    486
+   ],
+   "stichpunkte": [
+    "AP1-4-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-2-1-K1",
+    "AP1-4-2-1-K8",
+    "AP1-4-2-1-K9"
+   ]
+  },
+  "GS-5.2.4": {
+   "seiten": [
+    486,
+    498
+   ],
+   "stichpunkte": [
+    "AP1-4-2-2",
+    "AP1-4-2-5",
+    "AP1-8-1-1",
+    "AP1-8-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 23,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 10
+   },
+   "aussagen": [
+    "AP1-4-2-2-K11",
+    "AP1-4-2-2-K2",
+    "AP1-4-2-5-K2",
+    "AP1-4-2-5-K3",
+    "AP1-8-1-1-K1",
+    "AP1-8-2-2-K7"
+   ]
+  },
+  "GS-5.2.5": {
+   "seiten": [
+    498,
+    500
+   ],
+   "stichpunkte": [
+    "AP1-4-2-1",
+    "AP1-4-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-4-2-1-K3",
+    "AP1-4-2-1-K4",
+    "AP1-4-2-1-K5",
+    "AP1-4-2-2-K1",
+    "AP1-4-2-2-K6"
+   ]
+  },
+  "GS-5.2.6": {
+   "seiten": [
+    500,
+    505
+   ],
+   "stichpunkte": [
+    "AP1-4-1-8",
+    "AP1-4-2-1",
+    "AP1-4-2-2",
+    "AP1-5-2-1",
+    "PB1-7-1-2",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-4-1-8-K4",
+    "AP1-5-2-1-K3",
+    "PB1-7-1-2-K5",
+    "PB1-7-1-2-K6"
+   ]
+  },
+  "GS-5.2.7": {
+   "seiten": [
+    505,
+    507
+   ],
+   "stichpunkte": [
+    "AP1-7-1-1",
+    "AP1-7-5-1",
+    "PB1-12-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-7-1-1-K1",
+    "AP1-7-1-1-K6",
+    "AP1-7-5-1-K5",
+    "PB1-12-1-1-K1"
+   ]
+  },
+  "GS-5.3.1": {
+   "seiten": [
+    507,
+    509
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-2",
+    "PB1-1-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-1-1-K1",
+    "AP1-1-1-1-K2",
+    "AP1-1-1-2-K6",
+    "AP1-1-1-2-K7",
+    "PB1-1-2-1-K5"
+   ]
+  },
+  "GS-5.3.2": {
+   "seiten": [
+    509,
+    511
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": []
+  },
+  "GS-5.4.1": {
+   "seiten": [
+    511,
+    514
+   ],
+   "stichpunkte": [
+    "AP1-1-1-2",
+    "PB1-1-1-2",
+    "PB1-5-1-3",
+    "PB1-9-1-4",
+    "PB1-9-1-5",
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-1-1-2-K1",
+    "AP1-1-1-2-K6",
+    "PB1-9-1-4-K1",
+    "PB1-9-1-5-K3",
+    "PB1-9-1-6-K1",
+    "PB1-9-1-6-K2"
+   ]
+  },
+  "GS-5.4.2": {
+   "seiten": [
+    514,
+    519
+   ],
+   "stichpunkte": [
+    "AP1-1-1-2",
+    "PB1-1-1-1",
+    "PB1-1-1-2",
+    "PB1-1-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-1-1-2-K1",
+    "AP1-1-1-2-K3",
+    "PB1-1-1-1-K1",
+    "PB1-1-1-1-K10",
+    "PB1-1-1-1-K2",
+    "PB1-1-1-2-K1",
+    "PB1-1-1-2-K2",
+    "PB1-1-1-2-K3",
+    "PB1-1-1-2-K4",
+    "PB1-1-1-2-K5",
+    "PB1-1-1-2-K6",
+    "PB1-1-1-3-K1",
+    "PB1-1-1-3-K2",
+    "PB1-1-1-3-K9"
+   ]
+  },
+  "GS-5.5.1": {
+   "seiten": [
+    519,
+    522
+   ],
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-1-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K6",
+    "PB1-1-2-3-K9",
+    "PB1-1-2-4-K1",
+    "PB1-1-2-4-K2"
+   ]
+  },
+  "GS-5.5.2": {
+   "seiten": [
+    522,
+    524
+   ],
+   "stichpunkte": [
+    "AP1-2-2-2",
+    "PB1-1-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-2-2-2-K1",
+    "AP1-2-2-2-K2",
+    "AP1-2-2-2-K4",
+    "PB1-1-2-3-K1",
+    "PB1-1-2-3-K2",
+    "PB1-1-2-3-K8"
+   ]
+  },
+  "GS-5.5.3": {
+   "seiten": [
+    524,
+    525
+   ],
+   "stichpunkte": [
+    "PB1-5-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-5-1-3-K1"
+   ]
+  },
+  "GS-5.5.4": {
+   "seiten": [
+    525,
+    534
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-2",
+    "AP1-8-4-1",
+    "PB1-4-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-2-1-K3",
+    "AP1-8-2-1-K5",
+    "AP1-8-2-1-K7",
+    "AP1-8-2-2-K1",
+    "AP1-8-2-2-K4",
+    "AP1-8-4-1-K1",
+    "PB1-4-1-1-K1",
+    "PB1-4-1-1-K4"
+   ]
+  },
+  "GS-5.6.1": {
+   "seiten": [
+    534,
+    535
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "AP1-8-2-1",
+    "AP1-8-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-2-1-K1",
+    "AP1-8-2-1-K2",
+    "AP1-8-2-1-K3",
+    "AP1-8-2-4-K1"
+   ]
+  },
+  "GS-5.6.2": {
+   "seiten": [
+    535,
+    538
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "AP1-8-1-2",
+    "PB1-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-1-1-K1",
+    "AP1-8-1-2-K6",
+    "PB1-3-1-1-K1",
+    "PB1-3-1-1-K4",
+    "PB1-3-1-1-K7"
+   ]
+  },
+  "GS-5.6.3": {
+   "seiten": [
+    538,
+    542
+   ],
+   "stichpunkte": [
+    "AP1-8-1-3",
+    "PB1-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-1-3-K5",
+    "AP1-8-1-3-K7",
+    "PB1-3-1-1-K1",
+    "PB1-3-1-1-K3",
+    "PB1-3-1-1-K4",
+    "PB1-3-1-1-K5",
+    "PB1-3-1-1-K6"
+   ]
+  },
+  "GS-5.6.4": {
+   "seiten": [
+    542,
+    545
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "AP1-8-1-3",
+    "PB1-3-1-1",
+    "PB1-3-1-2",
+    "PB1-3-1-3",
+    "PB1-3-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-1-1-K1",
+    "AP1-8-1-1-K10",
+    "AP1-8-1-1-K4",
+    "AP1-8-1-1-K7",
+    "AP1-8-1-3-K2",
+    "PB1-3-1-1-K3",
+    "PB1-3-1-2-K5",
+    "PB1-3-1-3-K1"
+   ]
+  },
+  "GS-5.7.1": {
+   "seiten": [
+    545,
+    547
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "AP1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-1-1-K1",
+    "AP1-8-1-1-K5",
+    "AP1-8-1-1-K7",
+    "AP1-8-1-3-K5"
+   ]
+  },
+  "GS-5.7.2": {
+   "seiten": [
+    547,
+    549
+   ],
+   "stichpunkte": [],
+   "filter": "bedienung"
+  },
+  "GS-5.7.3": {
+   "seiten": [
+    549,
+    555
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "AP1-8-1-3",
+    "AP1-8-2-1",
+    "AP1-8-2-4",
+    "AP1-8-2-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-8-1-1-K7",
+    "AP1-8-2-1-K9",
+    "AP1-8-2-4-K1",
+    "AP1-8-2-4-K6",
+    "AP1-8-2-6-K1"
+   ]
+  },
+  "GS-5.7.4": {
+   "seiten": [
+    555,
+    565
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-3",
+    "AP1-8-2-6",
+    "PB1-3-1-1",
+    "PB1-5-1-2",
+    "PB2-1-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-2-1-K7",
+    "AP1-8-2-1-K8",
+    "AP1-8-2-3-K3",
+    "AP1-8-2-6-K2",
+    "AP1-8-2-6-K3",
+    "AP1-8-2-6-K6",
+    "AP1-8-2-6-K8",
+    "AP1-8-2-6-K9",
+    "PB1-5-1-2-K1",
+    "PB1-5-1-2-K2",
+    "PB1-5-1-2-K3",
+    "PB1-5-1-2-K5",
+    "PB2-1-1-1-K6"
+   ]
+  },
+  "GS-5.7.5": {
+   "seiten": [
+    565,
+    575
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-2",
+    "AP1-8-2-3",
+    "AP1-8-2-6",
+    "PB1-5-1-3",
+    "PB2-2-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-2-1-K10",
+    "AP1-8-2-1-K3",
+    "AP1-8-2-1-K6",
+    "AP1-8-2-1-K7",
+    "AP1-8-2-2-K1",
+    "AP1-8-2-3-K4",
+    "PB1-5-1-3-K2",
+    "PB2-2-1-3-K1",
+    "PB2-2-1-3-K2"
+   ]
+  },
+  "GS-5.7.6": {
+   "seiten": [
+    575,
+    582
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-4",
+    "AP1-8-2-5",
+    "PB2-1-1-2",
+    "PB2-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-2-1-K2",
+    "AP1-8-2-1-K5",
+    "AP1-8-2-4-K3",
+    "AP1-8-2-5-K4",
+    "PB2-1-1-2-K2",
+    "PB2-4-1-3-K6"
+   ]
+  },
+  "GS-5.7.7": {
+   "seiten": [
+    582,
+    586
+   ],
+   "stichpunkte": [
+    "PB1-5-1-2",
+    "PB1-7-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 5
+   },
+   "aussagen": [
+    "PB1-5-1-2-K2",
+    "PB1-5-1-2-K3"
+   ]
+  },
+  "GS-5.8.1": {
+   "seiten": [
+    586,
+    593
+   ],
+   "stichpunkte": [
+    "AP1-8-4-5",
+    "PB1-6-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-8-4-5-K6",
+    "PB1-6-1-4-K1",
+    "PB1-6-1-4-K4",
+    "PB1-6-1-4-K8",
+    "PB1-6-1-4-K9"
+   ]
+  },
+  "GS-5.8.2": {
+   "seiten": [
+    593,
+    599
+   ],
+   "stichpunkte": [
+    "AP1-8-4-1",
+    "AP1-8-4-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-4-1-K1",
+    "AP1-8-4-1-K2",
+    "AP1-8-4-1-K3",
+    "AP1-8-4-1-K4",
+    "AP1-8-4-1-K5",
+    "AP1-8-4-1-K7",
+    "AP1-8-4-1-K8",
+    "AP1-8-4-1-K9",
+    "AP1-8-4-5-K4"
+   ]
+  },
+  "GS-5.8.3": {
+   "seiten": [
+    599,
+    608
+   ],
+   "stichpunkte": [
+    "AP1-8-4-2",
+    "AP1-8-4-5",
+    "PB1-6-1-1",
+    "PB1-6-1-2",
+    "PB1-6-1-3",
+    "PB2-6-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 13,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-4-2-K2",
+    "AP1-8-4-2-K5",
+    "AP1-8-4-2-K6",
+    "AP1-8-4-5-K2",
+    "AP1-8-4-5-K5",
+    "AP1-8-4-5-K7",
+    "AP1-8-4-5-K8",
+    "PB1-6-1-1-K2",
+    "PB1-6-1-2-K1",
+    "PB1-6-1-2-K3",
+    "PB1-6-1-2-K5",
+    "PB1-6-1-2-K6",
+    "PB1-6-1-3-K1",
+    "PB1-6-1-3-K2",
+    "PB2-6-1-2-K6"
+   ]
+  },
+  "GS-5.8.4": {
+   "seiten": [
+    608,
+    610
+   ],
+   "stichpunkte": [
+    "AP1-8-4-1",
+    "AP1-8-4-5",
+    "PB1-6-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-4-1-K5",
+    "AP1-8-4-5-K4",
+    "PB1-6-1-2-K1",
+    "PB1-6-1-2-K4"
+   ]
+  },
+  "GS-5.8.5": {
+   "seiten": [
+    610,
+    622
+   ],
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-6-1-1",
+    "PB2-6-1-2",
+    "PB2-6-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 25,
+    "abgedeckt": 21,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB2-5-1-1-K1",
+    "PB2-5-1-1-K2",
+    "PB2-5-1-1-K3",
+    "PB2-5-1-1-K4",
+    "PB2-5-1-1-K5",
+    "PB2-5-1-1-K7",
+    "PB2-5-1-2-K1",
+    "PB2-5-1-2-K2",
+    "PB2-5-1-2-K3",
+    "PB2-5-1-3-K1",
+    "PB2-5-1-3-K2",
+    "PB2-5-1-3-K3",
+    "PB2-6-1-1-K1",
+    "PB2-6-1-1-K2",
+    "PB2-6-1-1-K4",
+    "PB2-6-1-1-K5",
+    "PB2-6-1-2-K1",
+    "PB2-6-1-2-K2",
+    "PB2-6-1-2-K3",
+    "PB2-6-1-6-K1",
+    "PB2-6-1-6-K2",
+    "PB2-6-1-6-K3"
+   ]
+  },
+  "GS-5.8.6": {
+   "seiten": [
+    622,
+    625
+   ],
+   "stichpunkte": [
+    "PB1-5-1-2",
+    "PB1-6-1-4",
+    "PB1-6-1-5",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-11-2-3-K7",
+    "PB1-5-1-2-K2",
+    "PB1-6-1-5-K4"
+   ]
+  },
+  "GS-5.9.1": {
+   "seiten": [
+    625,
+    634
+   ],
+   "stichpunkte": [
+    "PB1-1-2-4",
+    "PB1-9-1-1",
+    "PB1-9-1-3",
+    "PB1-9-1-4",
+    "PB1-9-1-5",
+    "PB2-4-1-1",
+    "PB2-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": [
+    "PB1-9-1-1-K5",
+    "PB1-9-1-1-K6",
+    "PB1-9-1-3-K1",
+    "PB1-9-1-3-K2",
+    "PB1-9-1-3-K6",
+    "PB1-9-1-4-K1",
+    "PB1-9-1-5-K1",
+    "PB1-9-1-5-K2",
+    "PB1-9-1-5-K3",
+    "PB1-9-1-5-K4",
+    "PB2-4-1-1-K2",
+    "PB2-4-1-3-K1",
+    "PB2-4-1-3-K2"
+   ]
+  },
+  "GS-5.9.2": {
+   "seiten": [
+    634,
+    637
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "PB2-3-1-1",
+    "PB2-3-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-1-1-K7",
+    "PB2-3-1-1-K2",
+    "PB2-3-1-2-K1",
+    "PB2-3-1-2-K5"
+   ]
+  },
+  "GS-5.9.3": {
+   "seiten": [
+    637,
+    638
+   ],
+   "stichpunkte": [
+    "PB2-3-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB2-3-1-3-K5",
+    "PB2-3-1-3-K6",
+    "PB2-3-1-3-K7"
+   ]
+  },
+  "GS-5.10.1": {
+   "seiten": [
+    638,
+    641
+   ],
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-6-K1",
+    "PB1-9-1-6-K6"
+   ]
+  },
+  "GS-5.10.2": {
+   "seiten": [
+    641,
+    643
+   ],
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-6-K7"
+   ]
+  },
+  "GS-5.10.3": {
+   "seiten": [
+    643,
+    645
+   ],
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-6-K9"
+   ]
+  },
+  "GS-5.11": {
+   "seiten": [
+    645,
+    659
+   ],
+   "stichpunkte": [
+    "AP1-1-4-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-4-3-K6"
+   ]
+  },
+  "FS-1.1.1": {
+   "seiten": [
+    10,
+    15
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-1-4-1",
+    "AP1-1-5-1",
+    "AP1-3-3-2",
+    "AP1-3-3-3",
+    "PB1-5-1-6",
+    "PB1-9-1-1",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-1-5-1-K3",
+    "AP1-1-5-1-K5",
+    "AP1-3-3-2-K5",
+    "AP1-3-3-3-K8",
+    "PB1-12-2-3-K1",
+    "PB1-12-2-3-K4",
+    "PB1-9-1-1-K4"
+   ]
+  },
+  "FS-1.1.2": {
+   "seiten": [
+    15,
+    19
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-1-3-2",
+    "AP1-1-5-2",
+    "AP1-7-1-4",
+    "PB1-1-2-3",
+    "PB1-2-1-2",
+    "PB1-7-1-3",
+    "PB1-9-1-1",
+    "PB1-10-2-1",
+    "PB1-12-1-1",
+    "PB1-12-1-2",
+    "PB1-12-2-1",
+    "PB1-12-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-1-3-2-K2",
+    "AP1-1-3-2-K5",
+    "AP1-1-3-2-K7",
+    "AP1-1-3-2-K8",
+    "AP1-1-5-2-K3",
+    "AP1-7-1-4-K2",
+    "PB1-1-2-3-K4",
+    "PB1-10-2-1-K1",
+    "PB1-12-1-1-K3",
+    "PB1-12-1-2-K3",
+    "PB1-12-2-1-K4",
+    "PB1-12-2-2-K6",
+    "PB1-9-1-1-K3"
+   ]
+  },
+  "FS-1.1.3": {
+   "seiten": [
+    19,
+    25
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-1-5-1",
+    "PB1-9-1-1",
+    "PB1-10-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-1-5-1-K2",
+    "AP1-1-5-1-K3",
+    "PB1-9-1-1-K3"
+   ]
+  },
+  "FS-1.1.4": {
+   "seiten": [
+    25,
+    34
+   ],
+   "stichpunkte": [
+    "AP1-3-1-4",
+    "AP1-3-3-1",
+    "AP1-3-3-2",
+    "AP1-3-4-1",
+    "AP1-3-4-2",
+    "AP1-3-4-3",
+    "AP1-7-5-1",
+    "AP1-7-5-2",
+    "PB1-2-1-1",
+    "PB1-2-1-2",
+    "PB1-7-1-5",
+    "PB1-10-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 27,
+    "abgedeckt": 17,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 9
+   },
+   "aussagen": [
+    "AP1-3-1-4-K5",
+    "AP1-3-3-1-K1",
+    "AP1-3-3-1-K7",
+    "AP1-3-3-1-K8",
+    "AP1-3-3-2-K1",
+    "AP1-3-3-2-K8",
+    "AP1-3-4-1-K1",
+    "AP1-3-4-1-K2",
+    "AP1-3-4-1-K4",
+    "AP1-3-4-1-K7",
+    "AP1-3-4-1-K8",
+    "AP1-3-4-2-K6",
+    "AP1-3-4-3-K4",
+    "AP1-3-4-3-K5",
+    "AP1-7-5-1-K8",
+    "AP1-7-5-1-K9",
+    "AP1-7-5-2-K3",
+    "PB1-10-2-2-K4",
+    "PB1-2-1-1-K1",
+    "PB1-2-1-1-K2",
+    "PB1-2-1-1-K3"
+   ]
+  },
+  "FS-1.2.1": {
+   "seiten": [
+    34,
+    37
+   ],
+   "stichpunkte": [
+    "AP1-1-1-3",
+    "AP1-1-3-1",
+    "WISO-2-2-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-1-3-1-K2",
+    "AP1-1-3-1-K4",
+    "AP1-1-3-1-K7",
+    "AP1-1-3-1-K8"
+   ]
+  },
+  "FS-1.2.2": {
+   "seiten": [
+    37,
+    44
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-1-3-2",
+    "AP1-1-4-1",
+    "PB1-12-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 11,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-1-3-1-K1",
+    "AP1-1-3-1-K2",
+    "AP1-1-3-1-K7",
+    "AP1-1-3-2-K10",
+    "AP1-1-3-2-K5",
+    "AP1-1-3-2-K7",
+    "AP1-1-3-2-K8",
+    "AP1-1-3-2-K9",
+    "AP1-1-4-1-K1",
+    "PB1-12-2-2-K1",
+    "PB1-12-2-2-K5",
+    "PB1-12-2-2-K6"
+   ]
+  },
+  "FS-1.2.3": {
+   "seiten": [
+    44,
+    47
+   ],
+   "stichpunkte": [
+    "AP1-1-1-4",
+    "AP1-1-4-3",
+    "PB1-9-1-1",
+    "PB1-12-1-1",
+    "PB1-12-1-2",
+    "PB1-12-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-1-1-4-K7",
+    "PB1-12-1-1-K1",
+    "PB1-12-1-2-K2",
+    "PB1-12-1-2-K4",
+    "PB1-9-1-1-K4"
+   ]
+  },
+  "FS-1.3.1": {
+   "seiten": [
+    47,
+    51
+   ],
+   "stichpunkte": [
+    "AP1-1-3-2",
+    "AP1-1-5-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-3-2-K5"
+   ]
+  },
+  "FS-1.3.2": {
+   "seiten": [
+    51,
+    55
+   ],
+   "stichpunkte": [
+    "AP1-6-1-5",
+    "AP1-6-3-2",
+    "PB1-11-1-2",
+    "PB1-12-2-1",
+    "PB1-12-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-6-1-5-K7",
+    "AP1-6-3-2-K1",
+    "AP1-6-3-2-K4",
+    "PB1-11-1-2-K1",
+    "PB1-11-1-2-K5",
+    "PB1-12-2-1-K1",
+    "PB1-12-2-1-K2",
+    "PB1-12-2-1-K3",
+    "PB1-12-2-1-K5",
+    "PB1-12-2-4-K1",
+    "PB1-12-2-4-K2",
+    "PB1-12-2-4-K4"
+   ]
+  },
+  "FS-1.3.3": {
+   "seiten": [
+    55,
+    62
+   ],
+   "stichpunkte": [
+    "AP1-1-3-1",
+    "AP1-1-3-2",
+    "AP1-3-3-2",
+    "PB1-9-1-1",
+    "PB1-11-1-1",
+    "PB1-12-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 7
+   },
+   "aussagen": [
+    "AP1-1-3-1-K4",
+    "AP1-1-3-1-K7",
+    "AP1-1-3-2-K9",
+    "AP1-3-3-2-K5",
+    "PB1-12-2-2-K1",
+    "PB1-12-2-2-K4",
+    "PB1-9-1-1-K3"
+   ]
+  },
+  "FS-1.4.1": {
+   "seiten": [
+    62,
+    65
+   ],
+   "stichpunkte": [
+    "AP1-2-2-3",
+    "WISO-1-7-2",
+    "WISO-5-2-2",
+    "WISO-5-3-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "WISO-1-7-2-K10",
+    "WISO-1-7-2-K2",
+    "WISO-5-2-2-K3",
+    "WISO-5-3-2-K2"
+   ]
+  },
+  "FS-1.4.2": {
+   "seiten": [
+    65,
+    67
+   ],
+   "stichpunkte": [
+    "AP1-2-2-3",
+    "AP1-2-5-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-2-2-3-K2",
+    "AP1-2-2-3-K3",
+    "AP1-2-5-1-K8"
+   ]
+  },
+  "FS-1.4.3": {
+   "seiten": [
+    67,
+    69
+   ],
+   "stichpunkte": [
+    "AP1-1-3-2",
+    "AP1-2-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-3-2-K4"
+   ]
+  },
+  "FS-1.4.4": {
+   "seiten": [
+    69,
+    70
+   ],
+   "stichpunkte": [
+    "AP1-2-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-2-2-3-K4"
+   ]
+  },
+  "FS-1.5.1": {
+   "seiten": [
+    70,
+    73
+   ],
+   "stichpunkte": [
+    "PB1-12-1-2",
+    "PB1-12-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-12-2-1-K5",
+    "PB1-12-2-1-K8"
+   ]
+  },
+  "FS-1.5.2": {
+   "seiten": [
+    73,
+    78
+   ],
+   "stichpunkte": [
+    "AP1-1-4-2",
+    "AP1-2-1-3",
+    "AP1-2-2-1",
+    "AP1-2-3-3",
+    "AP1-3-4-1",
+    "AP1-7-1-1",
+    "AP1-7-5-1",
+    "WISO-5-2-2",
+    "WISO-5-3-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-4-2-K5",
+    "AP1-2-2-1-K1",
+    "AP1-2-2-1-K6",
+    "AP1-2-3-3-K2",
+    "AP1-3-4-1-K1",
+    "AP1-7-1-1-K5",
+    "AP1-7-5-1-K1",
+    "WISO-5-2-2-K3",
+    "WISO-5-3-2-K2"
+   ]
+  },
+  "FS-2.1.1": {
+   "seiten": [
+    78,
+    82
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 5
+   },
+   "aussagen": [
+    "PB1-3-2-3-K1"
+   ]
+  },
+  "FS-2.1.2": {
+   "seiten": [
+    82,
+    83
+   ],
+   "stichpunkte": [
+    "AP1-4-3-3",
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 2,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": []
+  },
+  "FS-2.1.3": {
+   "seiten": [
+    83,
+    92
+   ],
+   "stichpunkte": [
+    "AP1-7-5-3",
+    "PB1-3-2-3",
+    "PB1-10-2-2",
+    "PB1-12-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-7-5-3-K2",
+    "PB1-12-2-1-K5",
+    "PB1-3-2-3-K2"
+   ]
+  },
+  "FS-2.1.4": {
+   "seiten": [
+    92,
+    100
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "PB1-3-2-3-K1",
+    "PB1-3-2-3-K4",
+    "PB1-3-2-3-K5",
+    "PB1-3-2-3-K6",
+    "PB1-3-2-3-K8"
+   ]
+  },
+  "FS-2.2.1": {
+   "seiten": [
+    100,
+    104
+   ],
+   "stichpunkte": [
+    "AP1-4-1-6",
+    "PB1-11-2-1",
+    "PB1-11-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 8
+   },
+   "aussagen": []
+  },
+  "FS-2.2.2": {
+   "seiten": [
+    104,
+    110
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 12
+   },
+   "aussagen": []
+  },
+  "FS-2.2.3": {
+   "seiten": [
+    110,
+    112
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 6
+   },
+   "aussagen": []
+  },
+  "FS-2.3.1": {
+   "seiten": [
+    112,
+    118
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3",
+    "PB1-12-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": [
+    "PB1-12-2-1-K7",
+    "PB1-3-2-3-K7"
+   ]
+  },
+  "FS-2.3.2": {
+   "seiten": [
+    118,
+    121
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 5
+   },
+   "aussagen": [
+    "PB1-3-2-3-K1"
+   ]
+  },
+  "FS-2.4.1": {
+   "seiten": [
+    121,
+    126
+   ],
+   "stichpunkte": [
+    "AP1-1-1-3",
+    "AP1-2-2-2",
+    "PB1-1-1-1",
+    "PB1-1-2-3",
+    "PB1-3-2-3",
+    "PB1-4-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-1-3-K1",
+    "AP1-1-1-3-K3",
+    "AP1-2-2-2-K1",
+    "AP1-2-2-2-K2",
+    "PB1-1-2-3-K4",
+    "PB1-1-2-3-K6",
+    "PB1-1-2-3-K9",
+    "PB1-4-1-1-K2"
+   ]
+  },
+  "FS-2.4.2": {
+   "seiten": [
+    126,
+    132
+   ],
+   "stichpunkte": [
+    "PB1-3-1-3",
+    "PB1-3-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-3-1-3-K1",
+    "PB1-3-1-3-K4",
+    "PB1-3-2-2-K1"
+   ]
+  },
+  "FS-2.5.1": {
+   "seiten": [
+    132,
+    133
+   ],
+   "stichpunkte": [
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-8-1-3-K5",
+    "PB1-8-1-3-K8"
+   ]
+  },
+  "FS-2.5.2": {
+   "seiten": [
+    133,
+    136
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-6",
+    "PB1-3-2-3",
+    "PB2-3-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-2-6-K1",
+    "PB1-3-2-3-K10",
+    "PB1-3-2-3-K2",
+    "PB1-3-2-3-K9",
+    "PB2-3-1-2-K5"
+   ]
+  },
+  "FS-2.5.3": {
+   "seiten": [
+    136,
+    137
+   ],
+   "stichpunkte": [
+    "PB1-3-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": []
+  },
+  "FS-2.5.4": {
+   "seiten": [
+    137,
+    138
+   ],
+   "stichpunkte": [
+    "AP1-1-4-2",
+    "PB1-3-2-3",
+    "WISO-3-3-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-4-2-K6",
+    "WISO-3-3-3-K3"
+   ]
+  },
+  "FS-2.5.5": {
+   "seiten": [
+    138,
+    139
+   ],
+   "stichpunkte": [
+    "AP1-1-1-4",
+    "AP1-1-4-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-1-1-4-K4",
+    "AP1-1-4-3-K6",
+    "AP1-1-4-3-K7"
+   ]
+  },
+  "FS-2.6.1": {
+   "seiten": [
+    139,
+    141
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "AP1-7-2-2",
+    "AP1-7-4-3",
+    "PB1-10-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-7-1-3-K6",
+    "AP1-7-2-2-K2"
+   ]
+  },
+  "FS-2.6.2": {
+   "seiten": [
+    141,
+    146
+   ],
+   "stichpunkte": [
+    "PB1-12-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": []
+  },
+  "FS-2.6.3": {
+   "seiten": [
+    146,
+    150
+   ],
+   "stichpunkte": [
+    "AP1-2-3-3",
+    "PB1-9-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 2,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": []
+  },
+  "FS-3.1.1": {
+   "seiten": [
+    150,
+    152
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-1-1-1-K1",
+    "AP1-1-1-1-K2",
+    "AP1-1-1-2-K7"
+   ]
+  },
+  "FS-3.1.2": {
+   "seiten": [
+    152,
+    164
+   ],
+   "stichpunkte": [
+    "AP1-1-1-2",
+    "AP1-1-1-4",
+    "PB1-1-1-1",
+    "PB1-1-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 26,
+    "abgedeckt": 17,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-1-1-2-K3",
+    "AP1-1-1-2-K4",
+    "AP1-1-1-4-K4",
+    "PB1-1-1-1-K1",
+    "PB1-1-1-1-K2",
+    "PB1-1-1-1-K3",
+    "PB1-1-1-1-K4",
+    "PB1-1-1-1-K5",
+    "PB1-1-1-1-K6",
+    "PB1-1-1-1-K7",
+    "PB1-1-1-1-K8",
+    "PB1-1-1-3-K1",
+    "PB1-1-1-3-K2",
+    "PB1-1-1-3-K6",
+    "PB1-1-1-3-K7",
+    "PB1-1-1-3-K8"
+   ]
+  },
+  "FS-3.2.1": {
+   "seiten": [
+    164,
+    170
+   ],
+   "stichpunkte": [
+    "PB2-6-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 5
+   },
+   "aussagen": [
+    "PB2-6-1-5-K1",
+    "PB2-6-1-5-K4",
+    "PB2-6-1-5-K5",
+    "PB2-6-1-5-K6"
+   ]
+  },
+  "FS-3.2.2": {
+   "seiten": [
+    170,
+    176
+   ],
+   "stichpunkte": [
+    "AP1-6-1-2",
+    "PB1-7-1-1",
+    "PB1-7-1-2",
+    "PB1-7-1-3",
+    "PB1-7-1-6",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-6-1-2-K6",
+    "PB1-11-2-3-K2",
+    "PB1-11-2-3-K3",
+    "PB1-7-1-1-K1",
+    "PB1-7-1-2-K1",
+    "PB1-7-1-2-K4",
+    "PB1-7-1-2-K6",
+    "PB1-7-1-3-K4",
+    "PB1-7-1-6-K1",
+    "PB1-7-1-6-K2",
+    "PB1-7-1-6-K3"
+   ]
+  },
+  "FS-3.2.3": {
+   "seiten": [
+    176,
+    179
+   ],
+   "stichpunkte": [
+    "PB1-7-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-7-1-3-K2",
+    "PB1-7-1-3-K8"
+   ]
+  },
+  "FS-3.3.1": {
+   "seiten": [
+    179,
+    184
+   ],
+   "stichpunkte": [
+    "PB1-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-3-1-1-K1",
+    "PB1-3-1-1-K2",
+    "PB1-3-1-1-K7"
+   ]
+  },
+  "FS-3.3.2": {
+   "seiten": [
+    184,
+    189
+   ],
+   "stichpunkte": [
+    "AP1-8-1-2",
+    "PB1-3-1-1",
+    "PB1-5-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-1-2-K2",
+    "AP1-8-1-2-K3",
+    "AP1-8-1-2-K4",
+    "AP1-8-1-2-K5",
+    "AP1-8-1-2-K6",
+    "AP1-8-1-2-K7",
+    "PB1-5-1-1-K1",
+    "PB1-5-1-1-K2",
+    "PB1-5-1-1-K4",
+    "PB1-5-1-1-K6",
+    "PB1-5-1-1-K7",
+    "PB1-5-1-1-K8"
+   ]
+  },
+  "FS-3.3.3": {
+   "seiten": [
+    189,
+    193
+   ],
+   "stichpunkte": [
+    "PB1-4-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-4-1-1-K1",
+    "PB1-4-1-1-K4",
+    "PB1-4-1-1-K5"
+   ]
+  },
+  "FS-3.3.4": {
+   "seiten": [
+    193,
+    196
+   ],
+   "stichpunkte": [
+    "AP1-8-3-1",
+    "PB1-4-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-3-1-K1",
+    "AP1-8-3-1-K2",
+    "AP1-8-3-1-K3",
+    "AP1-8-3-1-K4",
+    "AP1-8-3-1-K5",
+    "AP1-8-3-1-K6",
+    "AP1-8-3-1-K7",
+    "PB1-4-1-1-K1",
+    "PB1-4-1-1-K3",
+    "PB1-4-1-1-K7"
+   ]
+  },
+  "FS-3.3.5": {
+   "seiten": [
+    196,
+    201
+   ],
+   "stichpunkte": [
+    "AP1-8-3-2",
+    "PB1-4-1-1",
+    "PB1-4-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-3-2-K1",
+    "AP1-8-3-2-K2",
+    "AP1-8-3-2-K3",
+    "AP1-8-3-2-K4",
+    "AP1-8-3-2-K6",
+    "PB1-4-1-1-K1",
+    "PB1-4-1-2-K1",
+    "PB1-4-1-2-K2",
+    "PB1-4-1-2-K3",
+    "PB1-4-1-2-K4"
+   ]
+  },
+  "FS-3.3.6": {
+   "seiten": [
+    201,
+    205
+   ],
+   "stichpunkte": [
+    "AP1-8-3-3",
+    "PB1-4-1-5",
+    "PB2-1-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-3-3-K1",
+    "AP1-8-3-3-K2",
+    "AP1-8-3-3-K4",
+    "AP1-8-3-3-K5",
+    "AP1-8-3-3-K6",
+    "AP1-8-3-3-K7",
+    "PB2-1-1-1-K5",
+    "PB2-1-1-1-K7"
+   ]
+  },
+  "FS-3.3.7": {
+   "seiten": [
+    205,
+    209
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "PB1-3-2-1",
+    "PB1-5-1-4",
+    "PB1-6-1-5",
+    "PB1-7-1-1",
+    "PB1-9-1-4",
+    "PB1-10-1-1",
+    "PB1-10-1-2",
+    "PB1-10-2-1",
+    "PB1-10-2-2",
+    "PB1-10-2-3",
+    "PB2-3-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 14,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-7-1-3-K4",
+    "AP1-7-1-3-K5",
+    "PB1-10-1-1-K1",
+    "PB1-10-1-1-K6",
+    "PB1-10-1-2-K4",
+    "PB1-10-2-1-K1",
+    "PB1-10-2-1-K2",
+    "PB1-10-2-2-K1",
+    "PB1-10-2-3-K8",
+    "PB1-3-2-1-K4",
+    "PB1-5-1-4-K6",
+    "PB1-6-1-5-K3",
+    "PB1-7-1-1-K5",
+    "PB1-9-1-4-K1",
+    "PB2-3-1-3-K5"
+   ]
+  },
+  "FS-3.4.1": {
+   "seiten": [
+    209,
+    212
+   ],
+   "stichpunkte": [
+    "AP1-2-4-1",
+    "AP1-4-3-2",
+    "PB1-8-1-1",
+    "PB1-8-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-4-3-2-K3",
+    "PB1-8-1-1-K1",
+    "PB1-8-1-1-K3",
+    "PB1-8-1-1-K5",
+    "PB1-8-1-2-K1"
+   ]
+  },
+  "FS-3.4.2": {
+   "seiten": [
+    212,
+    215
+   ],
+   "stichpunkte": [
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-8-1-3-K5",
+    "PB1-8-1-3-K6",
+    "PB1-8-1-3-K7"
+   ]
+  },
+  "FS-3.5.1": {
+   "seiten": [
+    215,
+    217
+   ],
+   "stichpunkte": [
+    "AP1-8-1-1",
+    "PB1-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-1-1-K4",
+    "AP1-8-1-1-K8",
+    "AP1-8-1-1-K9",
+    "PB1-3-1-1-K9"
+   ]
+  },
+  "FS-3.5.2": {
+   "seiten": [
+    217,
+    230
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-4",
+    "AP1-8-2-6",
+    "PB1-5-1-2",
+    "PB2-1-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 24,
+    "abgedeckt": 15,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-8-2-1-K1",
+    "AP1-8-2-1-K2",
+    "AP1-8-2-1-K3",
+    "AP1-8-2-1-K5",
+    "AP1-8-2-1-K6",
+    "AP1-8-2-1-K7",
+    "AP1-8-2-4-K6",
+    "AP1-8-2-6-K2",
+    "AP1-8-2-6-K3",
+    "AP1-8-2-6-K4",
+    "AP1-8-2-6-K5",
+    "AP1-8-2-6-K6",
+    "AP1-8-2-6-K7",
+    "PB1-5-1-2-K2",
+    "PB2-1-1-1-K2",
+    "PB2-1-1-1-K3"
+   ]
+  },
+  "FS-3.5.3": {
+   "seiten": [
+    230,
+    240
+   ],
+   "stichpunkte": [
+    "AP1-8-1-2",
+    "PB1-5-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-8-1-2-K2",
+    "AP1-8-1-2-K3",
+    "AP1-8-1-2-K4",
+    "AP1-8-1-2-K5",
+    "AP1-8-1-2-K8",
+    "PB1-5-1-1-K1",
+    "PB1-5-1-1-K2",
+    "PB1-5-1-1-K3",
+    "PB1-5-1-1-K4",
+    "PB1-5-1-1-K6",
+    "PB1-5-1-1-K8"
+   ]
+  },
+  "FS-3.5.4": {
+   "seiten": [
+    240,
+    249
+   ],
+   "stichpunkte": [
+    "AP1-8-3-3",
+    "PB1-3-1-2",
+    "PB1-5-1-2",
+    "PB1-5-1-6",
+    "PB1-8-1-2",
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 12,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-8-3-3-K2",
+    "PB1-3-1-2-K5",
+    "PB1-5-1-2-K4",
+    "PB1-5-1-6-K4",
+    "PB1-8-1-3-K4"
+   ]
+  },
+  "FS-3.6.1": {
+   "seiten": [
+    249,
+    258
+   ],
+   "stichpunkte": [
+    "AP1-8-1-2",
+    "PB1-3-1-1",
+    "PB1-5-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-8-1-2-K5",
+    "AP1-8-1-2-K8",
+    "PB1-3-1-1-K1",
+    "PB1-5-1-1-K2",
+    "PB1-5-1-1-K3",
+    "PB1-5-1-1-K7",
+    "PB1-5-1-1-K9"
+   ]
+  },
+  "FS-3.6.2": {
+   "seiten": [
+    258,
+    263
+   ],
+   "stichpunkte": [
+    "AP1-8-3-3",
+    "PB1-3-2-1",
+    "PB1-5-1-2",
+    "PB1-5-1-6",
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-8-3-3-K2",
+    "PB1-5-1-2-K4",
+    "PB1-5-1-6-K4",
+    "PB1-8-1-3-K4"
+   ]
+  },
+  "FS-3.7.1": {
+   "seiten": [
+    263,
+    267
+   ],
+   "stichpunkte": [
+    "PB1-6-1-4",
+    "PB1-6-1-5",
+    "PB1-7-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-6-1-4-K1",
+    "PB1-6-1-4-K4",
+    "PB1-6-1-4-K5",
+    "PB1-6-1-4-K6",
+    "PB1-6-1-4-K7",
+    "PB1-6-1-5-K1",
+    "PB1-7-1-3-K9"
+   ]
+  },
+  "FS-3.7.2": {
+   "seiten": [
+    267,
+    271
+   ],
+   "stichpunkte": [
+    "AP1-8-4-1",
+    "AP1-8-4-5",
+    "PB1-6-1-2",
+    "PB2-6-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-4-1-K1",
+    "AP1-8-4-1-K4",
+    "PB1-6-1-2-K1",
+    "PB2-6-1-1-K1"
+   ]
+  },
+  "FS-3.7.3": {
+   "seiten": [
+    271,
+    275
+   ],
+   "stichpunkte": [
+    "PB1-6-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-6-1-3-K1",
+    "PB1-6-1-3-K2",
+    "PB1-6-1-3-K3",
+    "PB1-6-1-3-K5",
+    "PB1-6-1-3-K6",
+    "PB1-6-1-3-K7"
+   ]
+  },
+  "FS-3.7.4": {
+   "seiten": [
+    275,
+    280
+   ],
+   "stichpunkte": [
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-4",
+    "PB2-6-1-1",
+    "PB2-6-1-2",
+    "PB2-6-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB2-5-1-1-K1",
+    "PB2-5-1-2-K1",
+    "PB2-5-1-2-K2",
+    "PB2-5-1-2-K3",
+    "PB2-5-1-4-K1",
+    "PB2-5-1-4-K2",
+    "PB2-5-1-4-K4",
+    "PB2-5-1-4-K5",
+    "PB2-5-1-4-K6",
+    "PB2-6-1-1-K1",
+    "PB2-6-1-1-K2",
+    "PB2-6-1-2-K1",
+    "PB2-6-1-2-K2",
+    "PB2-6-1-2-K3",
+    "PB2-6-1-3-K1",
+    "PB2-6-1-3-K2",
+    "PB2-6-1-3-K3",
+    "PB2-6-1-3-K4"
+   ]
+  },
+  "FS-3.7.5": {
+   "seiten": [
+    280,
+    284
+   ],
+   "stichpunkte": [
+    "PB1-5-1-2",
+    "PB1-11-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-11-2-3-K3",
+    "PB1-11-2-3-K7",
+    "PB1-5-1-2-K2",
+    "PB1-5-1-2-K3"
+   ]
+  },
+  "FS-3.7.6": {
+   "seiten": [
+    284,
+    287
+   ],
+   "stichpunkte": [
+    "PB1-6-1-4",
+    "PB1-7-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 4
+   },
+   "aussagen": [
+    "PB1-6-1-4-K1",
+    "PB1-6-1-4-K2",
+    "PB1-6-1-4-K4",
+    "PB1-7-1-2-K3"
+   ]
+  },
+  "FS-3.7.7": {
+   "seiten": [
+    287,
+    289
+   ],
+   "stichpunkte": [
+    "PB1-6-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-6-1-4-K2"
+   ]
+  },
+  "FS-3.7.8": {
+   "seiten": [
+    289,
+    292
+   ],
+   "stichpunkte": [
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-12-2-3-K5",
+    "PB1-12-2-3-K6"
+   ]
+  },
+  "FS-3.8.1": {
+   "seiten": [
+    292,
+    295
+   ],
+   "stichpunkte": [
+    "PB1-9-1-3",
+    "PB2-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-9-1-3-K1",
+    "PB1-9-1-3-K2",
+    "PB1-9-1-3-K4",
+    "PB1-9-1-3-K7",
+    "PB2-4-1-3-K1",
+    "PB2-4-1-3-K2"
+   ]
+  },
+  "FS-3.8.2": {
+   "seiten": [
+    295,
+    298
+   ],
+   "stichpunkte": [
+    "PB2-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB2-4-1-3-K6",
+    "PB2-4-1-3-K8"
+   ]
+  },
+  "FS-3.8.3": {
+   "seiten": [
+    298,
+    302
+   ],
+   "stichpunkte": [
+    "AP1-1-4-2",
+    "AP1-3-3-2",
+    "PB1-9-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-4-2-K2",
+    "AP1-3-3-2-K7",
+    "AP1-3-3-2-K9",
+    "PB1-9-1-5-K5"
+   ]
+  },
+  "FS-4.1.1": {
+   "seiten": [
+    302,
+    316
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-3",
+    "AP1-1-2-1",
+    "AP1-1-2-3",
+    "AP1-2-2-1",
+    "AP1-2-2-2",
+    "AP1-2-2-4",
+    "AP1-2-5-3",
+    "AP1-3-3-2",
+    "AP1-7-3-5",
+    "PB1-1-2-3",
+    "PB1-10-1-1",
+    "PB1-11-2-1",
+    "PB1-12-1-3",
+    "PB1-12-2-1",
+    "PB1-12-2-2",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 21,
+    "abgedeckt": 15,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-1-1-1-K3",
+    "AP1-1-1-3-K3",
+    "AP1-1-1-3-K5",
+    "AP1-1-2-1-K1",
+    "AP1-1-2-3-K1",
+    "AP1-2-2-1-K6",
+    "AP1-2-2-2-K1",
+    "AP1-2-2-2-K2",
+    "AP1-2-2-2-K3",
+    "AP1-2-2-2-K4",
+    "AP1-2-2-4-K1",
+    "AP1-2-5-3-K5",
+    "AP1-3-3-2-K7",
+    "AP1-7-3-5-K5",
+    "PB1-1-2-3-K1",
+    "PB1-1-2-3-K2",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K4",
+    "PB1-10-1-1-K3",
+    "PB1-11-2-1-K5",
+    "PB1-12-1-3-K6",
+    "PB1-12-2-1-K4",
+    "PB1-12-2-2-K8",
+    "PB1-12-2-3-K7"
+   ]
+  },
+  "FS-4.1.2": {
+   "seiten": [
+    316,
+    319
+   ],
+   "stichpunkte": [
+    "AP1-6-2-2",
+    "AP1-7-1-3",
+    "PB1-1-1-1",
+    "PB1-3-2-2",
+    "PB1-5-1-6",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-6-2-2-K6",
+    "AP1-7-1-3-K4",
+    "PB1-1-1-1-K10",
+    "PB1-3-2-2-K1",
+    "PB1-3-2-2-K3"
+   ]
+  },
+  "FS-4.2.1": {
+   "seiten": [
+    319,
+    321
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "AP1-7-3-5",
+    "PB1-11-1-1",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-6-1-3-K7",
+    "AP1-7-3-5-K4",
+    "PB1-11-1-1-K4"
+   ]
+  },
+  "FS-4.2.2": {
+   "seiten": [
+    321,
+    322
+   ],
+   "stichpunkte": [
+    "PB1-11-2-1",
+    "PB1-11-2-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-11-2-2-K1",
+    "PB1-11-2-2-K3"
+   ]
+  },
+  "FS-4.2.3": {
+   "seiten": [
+    322,
+    323
+   ],
+   "stichpunkte": [
+    "PB1-11-2-1",
+    "PB1-11-2-4",
+    "PB1-11-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-11-2-4-K1",
+    "PB1-11-2-5-K1"
+   ]
+  },
+  "FS-4.3.1": {
+   "seiten": [
+    323,
+    334
+   ],
+   "stichpunkte": [
+    "AP1-6-1-1",
+    "AP1-6-1-2",
+    "AP1-6-1-3",
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "AP1-6-2-2",
+    "AP1-6-2-3",
+    "AP1-6-2-4",
+    "AP1-6-2-5",
+    "PB1-5-1-4",
+    "PB1-11-1-1",
+    "PB1-11-1-2",
+    "PB1-11-1-3",
+    "PB1-11-2-2",
+    "PB1-11-2-3",
+    "PB1-12-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 25,
+    "abgedeckt": 21,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-6-1-1-K2",
+    "AP1-6-1-2-K4",
+    "AP1-6-1-3-K6",
+    "AP1-6-1-4-K1",
+    "AP1-6-1-4-K2",
+    "AP1-6-1-5-K1",
+    "AP1-6-2-2-K1",
+    "AP1-6-2-2-K2",
+    "AP1-6-2-2-K5",
+    "AP1-6-2-2-K7",
+    "AP1-6-2-3-K2",
+    "AP1-6-2-3-K3",
+    "AP1-6-2-3-K6",
+    "AP1-6-2-4-K1",
+    "AP1-6-2-5-K1",
+    "PB1-11-1-1-K1",
+    "PB1-11-1-1-K10",
+    "PB1-11-1-1-K3",
+    "PB1-11-1-2-K1",
+    "PB1-11-1-2-K2",
+    "PB1-11-1-2-K6",
+    "PB1-11-1-3-K1",
+    "PB1-11-1-3-K2",
+    "PB1-11-1-3-K5",
+    "PB1-11-2-2-K1",
+    "PB1-11-2-3-K5",
+    "PB1-12-1-3-K2",
+    "PB1-12-1-3-K7",
+    "PB1-5-1-4-K6",
+    "PB1-5-1-4-K7"
+   ]
+  },
+  "FS-4.3.2": {
+   "seiten": [
+    334,
+    345
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "AP1-6-2-1",
+    "AP1-6-3-3",
+    "PB1-10-2-3",
+    "PB1-11-1-1",
+    "PB1-11-1-2",
+    "PB1-11-1-3",
+    "PB1-11-1-4",
+    "PB1-12-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 26,
+    "abgedeckt": 15,
+    "neu": 0,
+    "filter": 6,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-6-1-3-K2",
+    "AP1-6-1-3-K4",
+    "AP1-6-1-3-K7",
+    "AP1-6-1-4-K10",
+    "AP1-6-1-5-K3",
+    "AP1-6-1-5-K5",
+    "AP1-6-1-5-K6",
+    "AP1-6-2-1-K2",
+    "AP1-6-2-1-K7",
+    "AP1-6-3-3-K1",
+    "PB1-10-2-3-K6",
+    "PB1-11-1-1-K3",
+    "PB1-11-1-1-K4",
+    "PB1-11-1-1-K7",
+    "PB1-11-1-3-K3",
+    "PB1-11-1-4-K1",
+    "PB1-11-1-4-K2",
+    "PB1-12-1-3-K2"
+   ]
+  },
+  "FS-4.3.3": {
+   "seiten": [
+    345,
+    353
+   ],
+   "stichpunkte": [
+    "AP1-5-1-3",
+    "AP1-7-3-4",
+    "PB1-11-1-3",
+    "PB1-12-1-3",
+    "PB1-12-2-3",
+    "PB1-12-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 7
+   },
+   "aussagen": [
+    "AP1-5-1-3-K4",
+    "AP1-7-3-4-K2",
+    "AP1-7-3-4-K3",
+    "PB1-11-1-3-K4",
+    "PB1-12-1-3-K5",
+    "PB1-12-2-3-K3",
+    "PB1-12-2-5-K1"
+   ]
+  },
+  "FS-4.3.4": {
+   "seiten": [
+    353,
+    356
+   ],
+   "stichpunkte": [
+    "AP1-4-1-3",
+    "AP1-4-1-7",
+    "AP1-7-3-1",
+    "AP1-7-3-3",
+    "PB1-11-1-3",
+    "PB1-11-2-3",
+    "PB1-12-1-3",
+    "PB1-12-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-4-1-3-K5",
+    "AP1-4-1-3-K6",
+    "AP1-4-1-7-K8",
+    "AP1-7-3-1-K6",
+    "AP1-7-3-3-K3",
+    "PB1-11-1-3-K4",
+    "PB1-11-2-3-K8",
+    "PB1-12-1-3-K3",
+    "PB1-12-2-5-K1"
+   ]
+  },
+  "FS-4.3.5": {
+   "seiten": [
+    356,
+    359
+   ],
+   "stichpunkte": [
+    "AP1-4-3-3",
+    "AP1-6-1-4",
+    "PB1-11-2-3",
+    "PB1-12-1-3",
+    "PB1-12-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-4-K1",
+    "AP1-6-1-4-K6",
+    "PB1-11-2-3-K9",
+    "PB1-12-1-3-K1",
+    "PB1-12-1-4-K1"
+   ]
+  },
+  "FS-4.3.6": {
+   "seiten": [
+    359,
+    362
+   ],
+   "stichpunkte": [
+    "AP1-6-1-4",
+    "PB1-11-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-4-K1",
+    "AP1-6-1-4-K6"
+   ]
+  },
+  "FS-4.4.1": {
+   "seiten": [
+    362,
+    369
+   ],
+   "stichpunkte": [
+    "AP1-1-4-3",
+    "AP1-3-1-1",
+    "AP1-3-1-2",
+    "AP1-3-1-3",
+    "AP1-3-2-1",
+    "AP1-3-2-2",
+    "AP1-3-2-3",
+    "AP1-3-2-4",
+    "AP1-3-3-1",
+    "AP1-3-4-3",
+    "WISO-1-6-1",
+    "WISO-2-4-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 21,
+    "abgedeckt": 16,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-4-3-K1",
+    "AP1-3-1-1-K2",
+    "AP1-3-1-1-K4",
+    "AP1-3-1-1-K6",
+    "AP1-3-1-2-K4",
+    "AP1-3-1-2-K6",
+    "AP1-3-1-3-K1",
+    "AP1-3-1-3-K3",
+    "AP1-3-1-3-K4",
+    "AP1-3-1-3-K7",
+    "AP1-3-2-1-K7",
+    "AP1-3-2-1-K9",
+    "AP1-3-2-2-K5",
+    "AP1-3-2-3-K2",
+    "AP1-3-2-3-K5",
+    "AP1-3-2-4-K1",
+    "AP1-3-2-4-K6",
+    "AP1-3-3-1-K1",
+    "AP1-3-3-1-K2",
+    "AP1-3-3-1-K9",
+    "WISO-1-6-1-K1",
+    "WISO-2-4-1-K2",
+    "WISO-2-4-1-K7"
+   ]
+  },
+  "FS-4.4.2": {
+   "seiten": [
+    369,
+    382
+   ],
+   "stichpunkte": [
+    "AP1-6-3-3",
+    "AP1-7-1-2",
+    "AP1-7-1-3",
+    "AP1-7-2-1",
+    "AP1-7-2-2",
+    "AP1-7-2-3",
+    "AP1-7-3-2",
+    "AP1-7-3-3",
+    "AP1-7-3-4",
+    "AP1-7-4-2",
+    "AP1-7-4-3",
+    "PB1-10-1-2",
+    "PB1-10-1-3",
+    "PB1-10-1-4",
+    "PB1-10-2-1",
+    "PB1-10-2-3",
+    "PB1-10-2-4",
+    "PB1-11-1-1",
+    "PB1-11-1-3",
+    "PB1-11-1-4",
+    "PB1-11-2-1",
+    "PB1-11-2-4",
+    "PB1-11-2-5",
+    "WISO-5-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 31,
+    "abgedeckt": 23,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-6-3-3-K1",
+    "AP1-7-1-2-K8",
+    "AP1-7-1-3-K6",
+    "AP1-7-2-1-K2",
+    "AP1-7-2-1-K4",
+    "AP1-7-2-1-K6",
+    "AP1-7-2-1-K7",
+    "AP1-7-2-2-K2",
+    "AP1-7-2-3-K1",
+    "AP1-7-2-3-K4",
+    "AP1-7-3-2-K6",
+    "AP1-7-3-3-K3",
+    "AP1-7-3-4-K2",
+    "AP1-7-3-4-K4",
+    "AP1-7-3-4-K7",
+    "AP1-7-3-4-K8",
+    "AP1-7-4-2-K2",
+    "AP1-7-4-3-K1",
+    "PB1-10-1-2-K5",
+    "PB1-10-1-3-K2",
+    "PB1-10-1-4-K1",
+    "PB1-10-2-1-K4",
+    "PB1-10-2-3-K5",
+    "PB1-10-2-3-K6",
+    "PB1-10-2-4-K1",
+    "PB1-11-1-1-K4",
+    "PB1-11-1-3-K3",
+    "PB1-11-1-3-K5",
+    "PB1-11-1-4-K1",
+    "PB1-11-1-4-K2",
+    "PB1-11-2-4-K1",
+    "PB1-11-2-5-K1",
+    "PB1-11-2-5-K2",
+    "PB1-11-2-5-K3",
+    "WISO-5-2-1-K3"
+   ]
+  },
+  "FS-4.4.3": {
+   "seiten": [
+    382,
+    385
+   ],
+   "stichpunkte": [
+    "AP1-2-4-1",
+    "AP1-4-3-3",
+    "PB1-1-2-1",
+    "WISO-4-1-2",
+    "WISO-4-2-1",
+    "WISO-4-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-2-4-1-K2",
+    "AP1-4-3-3-K4",
+    "WISO-4-2-1-K1"
+   ]
+  },
+  "FS-4.5.1": {
+   "seiten": [
+    385,
+    389
+   ],
+   "stichpunkte": [
+    "AP1-2-2-4",
+    "AP1-3-2-2",
+    "AP1-3-2-3",
+    "WISO-5-3-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-3-2-2-K1",
+    "AP1-3-2-3-K4",
+    "AP1-3-2-3-K7",
+    "WISO-5-3-2-K3",
+    "WISO-5-3-2-K4"
+   ]
+  },
+  "FS-4.5.2": {
+   "seiten": [
+    389,
+    401
+   ],
+   "stichpunkte": [
+    "AP1-5-1-3",
+    "AP1-6-1-3",
+    "AP1-6-1-4",
+    "AP1-6-1-5",
+    "AP1-6-2-1",
+    "AP1-6-2-2",
+    "AP1-6-2-3",
+    "AP1-6-3-3",
+    "PB1-10-1-3",
+    "PB1-11-1-1",
+    "PB1-11-2-1",
+    "PB1-11-2-2",
+    "PB1-11-2-4",
+    "PB1-11-2-5",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 23,
+    "abgedeckt": 15,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-5-1-3-K3",
+    "AP1-5-1-3-K4",
+    "AP1-6-1-3-K4",
+    "AP1-6-1-4-K1",
+    "AP1-6-1-5-K4",
+    "AP1-6-1-5-K5",
+    "AP1-6-2-2-K1",
+    "AP1-6-2-2-K2",
+    "AP1-6-2-3-K2",
+    "AP1-6-2-3-K3",
+    "AP1-6-3-3-K1",
+    "PB1-10-1-3-K4",
+    "PB1-11-1-1-K4",
+    "PB1-11-2-1-K3",
+    "PB1-11-2-2-K2",
+    "PB1-11-2-2-K3",
+    "PB1-11-2-2-K5",
+    "PB1-11-2-2-K6",
+    "PB1-11-2-4-K1",
+    "PB1-11-2-5-K1",
+    "PB1-11-2-5-K3"
+   ]
+  },
+  "FS-4.5.3": {
+   "seiten": [
+    401,
+    403
+   ],
+   "stichpunkte": [
+    "AP1-3-3-2",
+    "AP1-3-4-1",
+    "AP1-3-4-2",
+    "PB1-1-2-3",
+    "PB1-12-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-3-3-2-K5",
+    "AP1-3-4-1-K4",
+    "AP1-3-4-1-K8",
+    "AP1-3-4-2-K1",
+    "AP1-3-4-2-K4",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K4",
+    "PB1-12-2-1-K6"
+   ]
+  },
+  "FS-4.6.1": {
+   "seiten": [
+    403,
+    407
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3",
+    "AP1-6-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-3-K8",
+    "AP1-6-1-4-K6"
+   ]
+  },
+  "FS-4.6.2": {
+   "seiten": [
+    407,
+    408
+   ],
+   "stichpunkte": [
+    "AP1-6-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-6-1-3-K4",
+    "AP1-6-1-3-K7"
+   ]
+  },
+  "FS-4.6.3": {
+   "seiten": [
+    408,
+    414
+   ],
+   "stichpunkte": [
+    "AP1-5-2-1",
+    "AP1-5-2-2",
+    "AP1-7-3-2",
+    "AP1-7-3-4",
+    "PB1-10-2-3",
+    "PB1-12-1-1",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-2-1-K5",
+    "AP1-5-2-2-K6",
+    "AP1-7-3-2-K8",
+    "AP1-7-3-4-K1",
+    "AP1-7-3-4-K2",
+    "AP1-7-3-4-K7",
+    "PB1-10-2-3-K10",
+    "PB1-12-1-1-K2"
+   ]
+  },
+  "FS-4.7.1": {
+   "seiten": [
+    414,
+    415
+   ],
+   "stichpunkte": [
+    "AP1-6-1-1",
+    "AP1-6-1-4",
+    "AP1-6-3-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-6-1-1-K5",
+    "AP1-6-3-2-K5",
+    "AP1-6-3-2-K8"
+   ]
+  },
+  "FS-4.7.2": {
+   "seiten": [
+    415,
+    420
+   ],
+   "stichpunkte": [
+    "AP1-6-2-1",
+    "AP1-6-2-3",
+    "AP1-6-2-4",
+    "AP1-6-3-2",
+    "AP1-6-3-4",
+    "PB1-11-1-3",
+    "PB1-12-2-1",
+    "PB1-12-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 14,
+    "abgedeckt": 10,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-6-2-1-K2",
+    "AP1-6-2-3-K7",
+    "AP1-6-2-4-K3",
+    "AP1-6-2-4-K4",
+    "AP1-6-3-2-K1",
+    "AP1-6-3-2-K4",
+    "AP1-6-3-2-K7",
+    "AP1-6-3-4-K3",
+    "AP1-6-3-4-K4",
+    "PB1-11-1-3-K1",
+    "PB1-12-2-1-K1"
+   ]
+  },
+  "FS-4.8.1": {
+   "seiten": [
+    420,
+    422
+   ],
+   "stichpunkte": [
+    "AP1-5-1-3",
+    "PB1-12-1-3",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-1-3-K3",
+    "AP1-5-1-3-K4",
+    "PB1-12-1-3-K5",
+    "PB1-12-2-3-K1",
+    "PB1-12-2-3-K7"
+   ]
+  },
+  "FS-4.8.2": {
+   "seiten": [
+    422,
+    424
+   ],
+   "stichpunkte": [
+    "PB1-12-1-3",
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB1-12-2-3-K1",
+    "PB1-12-2-3-K2",
+    "PB1-12-2-3-K3"
+   ]
+  },
+  "FS-4.8.3": {
+   "seiten": [
+    424,
+    426
+   ],
+   "stichpunkte": [
+    "AP1-7-3-4",
+    "PB1-3-2-2",
+    "PB1-12-1-3",
+    "PB1-12-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-7-3-4-K7",
+    "PB1-12-1-3-K5",
+    "PB1-12-2-5-K3",
+    "PB1-12-2-5-K4",
+    "PB1-3-2-2-K1",
+    "PB1-3-2-2-K2"
+   ]
+  },
+  "FS-4.8.4": {
+   "seiten": [
+    426,
+    438
+   ],
+   "stichpunkte": [
+    "PB1-12-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 0,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": []
+  },
+  "FS2-1.1.1": {
+   "seiten": [
+    9,
+    13
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "PB1-1-1-1",
+    "PB1-1-1-3",
+    "PB1-1-2-1",
+    "PB1-1-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-2-2-1-K5",
+    "AP1-2-2-1-K7",
+    "PB1-1-1-1-K2",
+    "PB1-1-1-3-K1",
+    "PB1-1-2-1-K1",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K6"
+   ]
+  },
+  "FS2-1.1.2": {
+   "seiten": [
+    13,
+    16
+   ],
+   "stichpunkte": [
+    "AP1-3-1-5",
+    "AP1-8-4-4",
+    "PB1-1-2-3",
+    "PB1-4-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-8-4-4-K4",
+    "PB1-1-2-3-K5",
+    "PB1-1-2-3-K7",
+    "PB1-4-1-5-K1"
+   ]
+  },
+  "FS2-1.1.3": {
+   "seiten": [
+    16,
+    20
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "PB1-1-1-3",
+    "PB1-1-2-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-2-2-1-K5",
+    "PB1-1-1-3-K6",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K4"
+   ]
+  },
+  "FS2-1.2.1": {
+   "seiten": [
+    20,
+    24
+   ],
+   "stichpunkte": [
+    "PB1-5-1-3",
+    "PB1-7-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "PB1-5-1-3-K2",
+    "PB1-5-1-3-K5",
+    "PB1-7-1-4-K7"
+   ]
+  },
+  "FS2-1.2.2": {
+   "seiten": [
+    24,
+    28
+   ],
+   "stichpunkte": [
+    "AP1-5-2-5",
+    "PB1-5-1-4",
+    "PB1-5-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-5-2-5-K1",
+    "PB1-5-1-4-K6",
+    "PB1-5-1-4-K7",
+    "PB1-5-1-6-K1",
+    "PB1-5-1-6-K2",
+    "PB1-5-1-6-K3"
+   ]
+  },
+  "FS2-1.3.1": {
+   "seiten": [
+    28,
+    33
+   ],
+   "stichpunkte": [
+    "PB1-8-1-1",
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-8-1-1-K6"
+   ]
+  },
+  "FS2-1.3.2": {
+   "seiten": [
+    33,
+    37
+   ],
+   "stichpunkte": [
+    "PB1-8-1-1",
+    "PB1-8-1-3",
+    "PB1-8-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 11,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-8-1-1-K1",
+    "PB1-8-1-1-K3",
+    "PB1-8-1-1-K7",
+    "PB1-8-1-3-K3",
+    "PB1-8-1-4-K1",
+    "PB1-8-1-4-K2",
+    "PB1-8-1-4-K3"
+   ]
+  },
+  "FS2-1.3.3": {
+   "seiten": [
+    37,
+    40
+   ],
+   "stichpunkte": [
+    "PB1-8-1-1",
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-8-1-3-K6"
+   ]
+  },
+  "FS2-1.3.4": {
+   "seiten": [
+    40,
+    48
+   ],
+   "stichpunkte": [
+    "AP1-2-4-1",
+    "AP1-4-3-2",
+    "AP1-8-4-3",
+    "PB1-8-1-1",
+    "PB1-8-1-2",
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 17,
+    "abgedeckt": 6,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 9
+   },
+   "aussagen": [
+    "AP1-4-3-2-K3",
+    "AP1-8-4-3-K1",
+    "AP1-8-4-3-K3",
+    "AP1-8-4-3-K4",
+    "AP1-8-4-3-K5",
+    "PB1-8-1-2-K1",
+    "PB1-8-1-3-K3"
+   ]
+  },
+  "FS2-1.4.1": {
+   "seiten": [
+    48,
+    51
+   ],
+   "stichpunkte": [
+    "AP1-8-1-3",
+    "PB1-3-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-1-3-K2",
+    "AP1-8-1-3-K6",
+    "PB1-3-2-1-K3"
+   ]
+  },
+  "FS2-1.4.2": {
+   "seiten": [
+    51,
+    65
+   ],
+   "stichpunkte": [
+    "PB1-3-1-2",
+    "PB1-5-1-6",
+    "PB1-8-1-2",
+    "PB1-8-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-3-1-2-K6",
+    "PB1-5-1-6-K4"
+   ]
+  },
+  "FS2-1.4.3": {
+   "seiten": [
+    65,
+    81
+   ],
+   "stichpunkte": [
+    "PB1-3-1-2",
+    "PB1-3-2-1",
+    "PB1-5-1-4",
+    "PB1-8-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-3-1-2-K6",
+    "PB1-5-1-4-K6"
+   ]
+  },
+  "FS2-1.4.4": {
+   "seiten": [
+    81,
+    96
+   ],
+   "stichpunkte": [
+    "AP1-5-2-5",
+    "AP1-8-1-3",
+    "AP1-8-2-1",
+    "PB1-8-1-3",
+    "PB1-11-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 22,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 14
+   },
+   "aussagen": [
+    "AP1-5-2-5-K1",
+    "AP1-8-1-3-K4",
+    "AP1-8-2-1-K3",
+    "AP1-8-2-1-K5",
+    "PB1-11-1-2-K9"
+   ]
+  },
+  "FS2-1.5.1": {
+   "seiten": [
+    96,
+    102
+   ],
+   "stichpunkte": [
+    "PB1-9-1-3",
+    "PB1-9-1-4",
+    "PB1-9-1-5",
+    "PB2-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 8
+   },
+   "aussagen": [
+    "PB1-9-1-3-K1",
+    "PB1-9-1-3-K4",
+    "PB1-9-1-4-K1",
+    "PB1-9-1-5-K6"
+   ]
+  },
+  "FS2-1.5.2": {
+   "seiten": [
+    102,
+    105
+   ],
+   "stichpunkte": [
+    "PB1-8-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-8-1-1-K3",
+    "PB1-8-1-1-K4",
+    "PB1-8-1-1-K5",
+    "PB1-8-1-1-K8",
+    "PB1-8-1-1-K9"
+   ]
+  },
+  "FS2-1.6": {
+   "seiten": [
+    105,
+    110
+   ],
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-6-K1",
+    "PB1-9-1-6-K6",
+    "PB1-9-1-6-K7"
+   ]
+  },
+  "FS2-2.1.1": {
+   "seiten": [
+    110,
+    113
+   ],
+   "stichpunkte": [
+    "PB1-5-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-5-1-3-K2",
+    "PB1-5-1-3-K5"
+   ]
+  },
+  "FS2-2.1.2": {
+   "seiten": [
+    113,
+    126
+   ],
+   "stichpunkte": [
+    "AP1-8-3-1",
+    "AP1-8-3-2",
+    "AP1-8-3-3",
+    "PB1-4-1-1",
+    "PB1-4-1-2",
+    "PB1-4-1-3",
+    "PB1-4-1-4",
+    "PB1-4-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 13,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-8-3-1-K1",
+    "AP1-8-3-1-K2",
+    "AP1-8-3-1-K3",
+    "AP1-8-3-1-K4",
+    "AP1-8-3-1-K5",
+    "AP1-8-3-1-K6",
+    "AP1-8-3-1-K7",
+    "AP1-8-3-2-K1",
+    "AP1-8-3-2-K3",
+    "AP1-8-3-2-K4",
+    "AP1-8-3-2-K6",
+    "AP1-8-3-3-K1",
+    "AP1-8-3-3-K4",
+    "AP1-8-3-3-K5",
+    "AP1-8-3-3-K6",
+    "PB1-4-1-1-K1",
+    "PB1-4-1-1-K3",
+    "PB1-4-1-1-K6",
+    "PB1-4-1-2-K2",
+    "PB1-4-1-2-K3",
+    "PB1-4-1-3-K1",
+    "PB1-4-1-3-K2",
+    "PB1-4-1-3-K3",
+    "PB1-4-1-3-K4",
+    "PB1-4-1-3-K5",
+    "PB1-4-1-4-K1",
+    "PB1-4-1-4-K2",
+    "PB1-4-1-4-K5",
+    "PB1-4-1-4-K6"
+   ]
+  },
+  "FS2-2.1.3": {
+   "seiten": [
+    126,
+    131
+   ],
+   "stichpunkte": [
+    "PB1-5-1-4",
+    "PB1-5-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 13,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 4
+   },
+   "aussagen": [
+    "PB1-5-1-4-K1",
+    "PB1-5-1-4-K10",
+    "PB1-5-1-4-K2",
+    "PB1-5-1-4-K3",
+    "PB1-5-1-4-K4",
+    "PB1-5-1-4-K5",
+    "PB1-5-1-4-K6",
+    "PB1-5-1-4-K8",
+    "PB1-5-1-4-K9",
+    "PB1-5-1-6-K1"
+   ]
+  },
+  "FS2-2.1.4": {
+   "seiten": [
+    131,
+    136
+   ],
+   "stichpunkte": [
+    "PB1-5-1-1",
+    "PB1-5-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 16,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 13
+   },
+   "aussagen": [
+    "PB1-5-1-1-K1",
+    "PB1-5-1-3-K2"
+   ]
+  },
+  "FS2-2.2.1": {
+   "seiten": [
+    136,
+    144
+   ],
+   "stichpunkte": [
+    "AP1-8-2-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 7,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 8
+   },
+   "aussagen": [
+    "AP1-8-2-5-K1",
+    "AP1-8-2-5-K2",
+    "AP1-8-2-5-K4",
+    "AP1-8-2-5-K7",
+    "AP1-8-2-5-K8"
+   ]
+  },
+  "FS2-2.2.2": {
+   "seiten": [
+    144,
+    146
+   ],
+   "stichpunkte": [
+    "PB1-5-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-5-1-3-K6",
+    "PB1-5-1-3-K7"
+   ]
+  },
+  "FS2-2.2.3": {
+   "seiten": [
+    146,
+    152
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-4",
+    "AP1-8-2-5",
+    "PB2-1-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-8-2-1-K2",
+    "AP1-8-2-4-K1",
+    "AP1-8-2-5-K5",
+    "PB2-1-1-1-K3"
+   ]
+  },
+  "FS2-2.2.4": {
+   "seiten": [
+    152,
+    158
+   ],
+   "stichpunkte": [
+    "AP1-8-2-5",
+    "PB1-5-1-1",
+    "PB2-2-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-8-2-5-K4",
+    "AP1-8-2-5-K5",
+    "PB2-2-1-4-K1"
+   ]
+  },
+  "FS2-2.3.1": {
+   "seiten": [
+    158,
+    165
+   ],
+   "stichpunkte": [
+    "AP1-8-2-1",
+    "AP1-8-2-2",
+    "PB1-1-2-3",
+    "PB2-1-1-1",
+    "PB2-1-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-8-2-1-K3",
+    "AP1-8-2-1-K5",
+    "AP1-8-2-2-K4",
+    "AP1-8-2-2-K7",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K4",
+    "PB2-1-1-1-K6",
+    "PB2-1-1-1-K7",
+    "PB2-1-1-1-K8",
+    "PB2-1-1-1-K9",
+    "PB2-1-1-2-K2"
+   ]
+  },
+  "FS2-2.3.2": {
+   "seiten": [
+    165,
+    167
+   ],
+   "stichpunkte": [
+    "PB2-2-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB2-2-1-3-K1",
+    "PB2-2-1-3-K2",
+    "PB2-2-1-3-K5",
+    "PB2-2-1-3-K6"
+   ]
+  },
+  "FS2-2.3.3": {
+   "seiten": [
+    167,
+    171
+   ],
+   "stichpunkte": [
+    "PB2-1-1-1",
+    "PB2-2-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "PB2-1-1-1-K2",
+    "PB2-2-1-1-K4",
+    "PB2-2-1-1-K5",
+    "PB2-2-1-1-K6",
+    "PB2-2-1-1-K7"
+   ]
+  },
+  "FS2-2.3.4": {
+   "seiten": [
+    171,
+    177
+   ],
+   "stichpunkte": [
+    "AP1-4-2-2",
+    "PB1-3-2-1",
+    "PB2-1-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 6
+   },
+   "aussagen": [
+    "PB1-3-2-1-K1",
+    "PB2-1-1-2-K7"
+   ]
+  },
+  "FS2-2.3.5": {
+   "seiten": [
+    177,
+    182
+   ],
+   "stichpunkte": [
+    "AP1-7-1-1",
+    "AP1-7-3-1",
+    "PB1-10-1-3",
+    "PB2-1-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 4
+   },
+   "aussagen": [
+    "AP1-7-1-1-K1",
+    "AP1-7-1-1-K6",
+    "AP1-7-3-1-K1",
+    "AP1-7-3-1-K2",
+    "AP1-7-3-1-K4",
+    "PB1-10-1-3-K5"
+   ]
+  },
+  "FS2-2.3.6": {
+   "seiten": [
+    182,
+    187
+   ],
+   "stichpunkte": [
+    "AP1-7-3-2",
+    "PB1-10-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-7-3-2-K1",
+    "AP1-7-3-2-K9",
+    "PB1-10-1-4-K4",
+    "PB1-10-1-4-K5"
+   ]
+  },
+  "FS2-2.3.7": {
+   "seiten": [
+    187,
+    192
+   ],
+   "stichpunkte": [
+    "PB1-7-1-2",
+    "PB1-7-1-3",
+    "PB1-7-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 8,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-7-1-2-K1",
+    "PB1-7-1-2-K5",
+    "PB1-7-1-2-K7",
+    "PB1-7-1-3-K3",
+    "PB1-7-1-4-K1",
+    "PB1-7-1-4-K2",
+    "PB1-7-1-4-K3",
+    "PB1-7-1-4-K8"
+   ]
+  },
+  "FS2-2.3.8": {
+   "seiten": [
+    192,
+    200
+   ],
+   "stichpunkte": [
+    "PB1-6-1-5",
+    "PB1-11-2-3",
+    "PB2-5-1-1",
+    "PB2-5-1-2",
+    "PB2-5-1-3",
+    "PB2-5-1-4",
+    "PB2-6-1-1",
+    "PB2-6-1-2",
+    "PB2-6-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 15,
+    "abgedeckt": 11,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-11-2-3-K3",
+    "PB1-11-2-3-K6",
+    "PB1-11-2-3-K7",
+    "PB1-6-1-5-K1",
+    "PB1-6-1-5-K2",
+    "PB1-6-1-5-K4",
+    "PB2-5-1-1-K1",
+    "PB2-5-1-1-K2",
+    "PB2-5-1-1-K3",
+    "PB2-5-1-1-K5",
+    "PB2-5-1-2-K1",
+    "PB2-5-1-2-K3",
+    "PB2-5-1-3-K1",
+    "PB2-5-1-3-K2",
+    "PB2-5-1-3-K3",
+    "PB2-5-1-4-K1",
+    "PB2-5-1-4-K4",
+    "PB2-6-1-1-K1",
+    "PB2-6-1-1-K2",
+    "PB2-6-1-1-K5",
+    "PB2-6-1-1-K7",
+    "PB2-6-1-1-K8",
+    "PB2-6-1-2-K1",
+    "PB2-6-1-2-K2",
+    "PB2-6-1-2-K3",
+    "PB2-6-1-2-K6",
+    "PB2-6-1-2-K7",
+    "PB2-6-1-3-K1",
+    "PB2-6-1-3-K2",
+    "PB2-6-1-3-K3"
+   ]
+  },
+  "FS2-2.4.1": {
+   "seiten": [
+    200,
+    203
+   ],
+   "stichpunkte": [
+    "PB1-9-1-3",
+    "PB1-9-1-4",
+    "PB2-3-1-3",
+    "PB2-4-1-1",
+    "PB2-4-1-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 11,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-3-K1",
+    "PB1-9-1-3-K2",
+    "PB1-9-1-3-K7",
+    "PB1-9-1-4-K1",
+    "PB2-3-1-3-K4",
+    "PB2-4-1-2-K1",
+    "PB2-4-1-2-K4"
+   ]
+  },
+  "FS2-2.4.2": {
+   "seiten": [
+    203,
+    207
+   ],
+   "stichpunkte": [
+    "PB1-9-1-3",
+    "PB2-4-1-1",
+    "PB2-4-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 9,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-9-1-3-K2",
+    "PB1-9-1-3-K4",
+    "PB2-4-1-1-K2",
+    "PB2-4-1-1-K4",
+    "PB2-4-1-1-K5",
+    "PB2-4-1-1-K7",
+    "PB2-4-1-3-K1",
+    "PB2-4-1-3-K2"
+   ]
+  },
+  "FS2-2.4.3": {
+   "seiten": [
+    207,
+    211
+   ],
+   "stichpunkte": [
+    "PB1-9-1-4",
+    "PB2-3-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "PB1-9-1-4-K1",
+    "PB2-3-1-3-K2",
+    "PB2-3-1-3-K4",
+    "PB2-3-1-3-K5"
+   ]
+  },
+  "FS2-2.5": {
+   "seiten": [
+    211,
+    216
+   ],
+   "stichpunkte": [
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-6-K10",
+    "PB1-9-1-6-K2",
+    "PB1-9-1-6-K9"
+   ]
+  },
+  "FS2-3.1.1": {
+   "seiten": [
+    216,
+    219
+   ],
+   "stichpunkte": [
+    "AP1-5-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-1-4-K1",
+    "AP1-5-1-4-K7"
+   ]
+  },
+  "FS2-3.1.2": {
+   "seiten": [
+    219,
+    221
+   ],
+   "stichpunkte": [
+    "AP1-5-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-5-1-4-K5",
+    "AP1-5-1-4-K9"
+   ]
+  },
+  "FS2-3.1.3": {
+   "seiten": [
+    221,
+    223
+   ],
+   "stichpunkte": [
+    "AP1-5-1-4",
+    "PB1-7-1-3",
+    "WISO-5-3-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-5-1-4-K9",
+    "PB1-7-1-3-K4"
+   ]
+  },
+  "FS2-3.2.1": {
+   "seiten": [
+    223,
+    227
+   ],
+   "stichpunkte": [
+    "AP1-2-2-1",
+    "PB1-6-1-3",
+    "PB1-7-1-2",
+    "PB1-7-1-3",
+    "PB2-6-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 5,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 2
+   },
+   "aussagen": [
+    "AP1-2-2-1-K9",
+    "PB1-6-1-3-K1",
+    "PB1-7-1-2-K4",
+    "PB1-7-1-2-K5",
+    "PB1-7-1-3-K9",
+    "PB2-6-1-5-K6"
+   ]
+  },
+  "FS2-3.2.2": {
+   "seiten": [
+    227,
+    232
+   ],
+   "stichpunkte": [
+    "PB1-2-1-4",
+    "PB2-6-1-5"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-2-1-4-K1",
+    "PB1-2-1-4-K5",
+    "PB2-6-1-5-K1"
+   ]
+  },
+  "FS2-3.2.3": {
+   "seiten": [
+    232,
+    236
+   ],
+   "stichpunkte": [
+    "PB1-7-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 5,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-7-1-3-K1"
+   ]
+  },
+  "FS2-3.3.1": {
+   "seiten": [
+    236,
+    239
+   ],
+   "stichpunkte": [
+    "AP1-5-1-4",
+    "PB1-3-1-1",
+    "PB2-1-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 7,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-5-1-4-K8"
+   ]
+  },
+  "FS2-3.3.2": {
+   "seiten": [
+    239,
+    241
+   ],
+   "stichpunkte": [
+    "AP1-5-1-4",
+    "PB1-3-1-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 5,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 3,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-5-1-4-K8",
+    "PB1-3-1-1-K7"
+   ]
+  },
+  "FS2-3.3.3": {
+   "seiten": [
+    241,
+    242
+   ],
+   "stichpunkte": [],
+   "filter": "nicht_ae"
+  },
+  "FS2-3.4.1": {
+   "seiten": [
+    242,
+    249
+   ],
+   "stichpunkte": [
+    "AP1-1-3-3",
+    "AP1-5-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 9,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-3-3-K3",
+    "AP1-1-3-3-K4",
+    "AP1-5-1-4-K8"
+   ]
+  },
+  "FS2-3.4.2": {
+   "seiten": [
+    249,
+    251
+   ],
+   "stichpunkte": [
+    "AP1-1-3-3",
+    "PB1-3-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-1-3-3-K3",
+    "PB1-3-2-1-K1"
+   ]
+  },
+  "FS2-3.4.3": {
+   "seiten": [
+    251,
+    254
+   ],
+   "stichpunkte": [
+    "PB1-3-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 3,
+    "abgedeckt": 1,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 0
+   },
+   "aussagen": [
+    "PB1-3-2-1-K3"
+   ]
+  },
+  "FS2-4.1.1": {
+   "seiten": [
+    254,
+    257
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-2",
+    "AP1-1-2-1",
+    "PB1-1-2-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 3
+   },
+   "aussagen": [
+    "AP1-1-1-1-K1",
+    "AP1-1-1-1-K2",
+    "AP1-1-1-2-K6",
+    "AP1-1-1-2-K7",
+    "PB1-1-2-1-K5"
+   ]
+  },
+  "FS2-4.1.2": {
+   "seiten": [
+    257,
+    263
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-3",
+    "AP1-2-4-2"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 8,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 5
+   },
+   "aussagen": [
+    "AP1-1-1-3-K1",
+    "AP1-2-4-2-K7"
+   ]
+  },
+  "FS2-4.2.1": {
+   "seiten": [
+    263,
+    267
+   ],
+   "stichpunkte": [
+    "PB1-1-2-3",
+    "PB1-1-2-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 10,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 4
+   },
+   "aussagen": [
+    "PB1-1-2-3-K1",
+    "PB1-1-2-3-K3",
+    "PB1-1-2-3-K4",
+    "PB1-1-2-3-K5",
+    "PB1-1-2-4-K1"
+   ]
+  },
+  "FS2-4.2.2": {
+   "seiten": [
+    267,
+    275
+   ],
+   "stichpunkte": [
+    "AP1-1-1-1",
+    "AP1-1-1-3",
+    "AP1-1-2-1",
+    "AP1-3-1-2",
+    "AP1-3-1-3",
+    "PB1-1-1-1",
+    "PB1-1-2-1",
+    "WISO-2-4-1"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 20,
+    "abgedeckt": 12,
+    "neu": 0,
+    "filter": 2,
+    "kuer": 6
+   },
+   "aussagen": [
+    "AP1-1-1-3-K7",
+    "AP1-1-2-1-K5",
+    "AP1-1-2-1-K6",
+    "AP1-3-1-2-K6",
+    "AP1-3-1-3-K1",
+    "AP1-3-1-3-K3",
+    "AP1-3-1-3-K8",
+    "PB1-1-1-1-K1",
+    "PB1-1-2-1-K6",
+    "PB1-1-2-1-K7",
+    "WISO-2-4-1-K3",
+    "WISO-2-4-1-K4"
+   ]
+  },
+  "FS2-4.2.3": {
+   "seiten": [
+    275,
+    278
+   ],
+   "stichpunkte": [
+    "AP1-7-1-3",
+    "PB1-1-2-1",
+    "PB1-1-2-3",
+    "PB1-6-1-1",
+    "PB1-6-1-2",
+    "PB1-6-1-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 1,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-7-1-3-K4",
+    "PB1-1-2-1-K5",
+    "PB1-1-2-3-K2",
+    "PB1-6-1-1-K1",
+    "PB1-6-1-2-K1",
+    "PB1-6-1-3-K3"
+   ]
+  },
+  "FS2-4.2.4": {
+   "seiten": [
+    278,
+    280
+   ],
+   "stichpunkte": [
+    "PB1-9-1-3",
+    "PB1-9-1-4",
+    "PB1-9-1-5",
+    "PB1-9-1-6"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 4,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 2
+   },
+   "aussagen": [
+    "PB1-9-1-3-K1",
+    "PB1-9-1-4-K1",
+    "PB1-9-1-5-K1",
+    "PB1-9-1-6-K1",
+    "PB1-9-1-6-K2",
+    "PB1-9-1-6-K6"
+   ]
+  },
+  "FS2-4.2.5": {
+   "seiten": [
+    280,
+    283
+   ],
+   "stichpunkte": [
+    "AP1-2-3-3",
+    "PB1-2-1-4"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 6,
+    "abgedeckt": 2,
+    "neu": 0,
+    "filter": 4,
+    "kuer": 0
+   },
+   "aussagen": [
+    "AP1-2-3-3-K1",
+    "PB1-2-1-4-K3"
+   ]
+  },
+  "FS2-4.2.6": {
+   "seiten": [
+    283,
+    294
+   ],
+   "stichpunkte": [
+    "AP1-1-1-2",
+    "AP1-1-4-2",
+    "AP1-1-4-3"
+   ],
+   "kernpunkte": {
+    "kernpunkte": 4,
+    "abgedeckt": 3,
+    "neu": 0,
+    "filter": 0,
+    "kuer": 1
+   },
+   "aussagen": [
+    "AP1-1-1-2-K6",
+    "AP1-1-4-2-K3",
+    "AP1-1-4-3-K6"
+   ]
+  }
+ }
+}

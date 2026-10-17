@@ -3,8 +3,9 @@
 import { fuehreAus, formatiere } from './pseudo.js';
 import { PROGRAMME, PUZZLES, FEHLER, fehlerCode } from './programme.js';
 import { pruefeZahl, lesarten } from '../rahmen/pruefen.js';
+import { istAp2, passtRaum } from '../rahmen/raum.js';
 
-export const imRaum = (liste, raum) => liste.filter((x) => x.raum.includes(raum));
+export const imRaum = (liste, raum) => liste.filter((x) => passtRaum(x.raum, raum));
 
 // ---------- Werte vergleichen ----------
 
@@ -94,7 +95,7 @@ export function schreibtisch(r, raum = 'AP1') {
   felder.push({ id: 'aus', label: 'Ausgabe des Programms (mehrere Zeilen mit / trennen)', typ: 'eigen', breit: true, soll: ausgabeText(tab.ausgabe), pruefe: (e) => pruefeAusgabe(e, tab.ausgabe) });
   return {
     titel: p.titel,
-    sp: raum === 'AP2' ? 'AP2-5-2-3' : 'AP1-8-2-3',
+    sp: istAp2(raum) ? 'AP2-5-2-3' : 'AP1-8-2-3',
     text: `Führe einen Schreibtischtest durch. Startwerte: ${Object.entries(eingaben)
       .map(([k, v]) => `\`${k} = ${Array.isArray(v) ? `[${v.join(', ')}]` : typeof v === 'string' ? `"${v}"` : formatiere(v)}\``)
       .join(', ')}. Trage die Werte jedes Mal ein, wenn Zeile ${p.messzeile} ${p.messEreignis === 'schleifenende' ? 'einen Schleifendurchlauf abschließt' : 'ausgeführt wurde'}.`,
@@ -164,7 +165,7 @@ export function fehlersuche(r, raum = 'AP1') {
   const f = r.wahl(imRaum(FEHLER, raum));
   const falscherCode = fehlerCode(f);
   const zeilen = falscherCode.split('\n');
-  const mitTests = raum === 'AP2' || r.ja(0.5);
+  const mitTests = istAp2(raum) || r.ja(0.5);
   // Ein Aufruf genügt – und zwar einer, an dem sich der Fehler zeigt
   const alle = f.tests.map((args) => {
     const soll = fuehreAus(f.code, { aufruf: { name: f.aufruf, args } });
@@ -182,7 +183,7 @@ export function fehlersuche(r, raum = 'AP1') {
   felder.push({ id: 'zeile', label: 'Fehlerhafte Zeile', typ: 'auswahl', erwartet: String(f.zeile), optionen: zeilen.map((_, i) => ({ wert: String(i + 1), text: `Zeile ${i + 1}` })) });
   return {
     titel: 'Fehler im Code finden',
-    sp: raum === 'AP2' ? 'AP2-5-2-3' : 'AP1-8-2-4',
+    sp: istAp2(raum) ? 'AP2-5-2-3' : 'AP1-8-2-4',
     text: `${f.beschreibung} Der Code enthält **einen inhaltlichen Fehler**.${mitTests ? ' Trage für den Aufruf ein, was herauskommen sollte und was der Code tatsächlich liefert, und finde dann die fehlerhafte Zeile.' : ' Finde die fehlerhafte Zeile.'}`,
     code: falscherCode,
     tests: mitTests ? tests.map((t) => ({ aufruf: `${f.aufruf}(${t.args.map((a) => formatiere(a)).join(', ')})` })) : null,

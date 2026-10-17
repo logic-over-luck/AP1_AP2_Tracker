@@ -1,3 +1,4 @@
+import { passtRaum } from '../rahmen/raum.js';
 // Lernweg eines Trainers: Themen-Blöcke und Lektionen in fester Reihenfolge, dazu die Abfragen, die Ansicht
 // und Tests brauchen. Rein und ohne Browser-Abhängigkeit.
 //
@@ -11,7 +12,7 @@
 //     raeume: nur in diesen Lernräumen (z. B. ['AP2']); ohne Angabe überall
 
 export function baueLernweg({ trainer, schluessel, bloecke, lektionen }, raum = null) {
-  const LEKTIONEN = lektionen.filter((l) => !raum || !l.raeume || l.raeume.includes(raum)).map((l, i) => ({ ...l, nr: i + 1 }));
+  const LEKTIONEN = lektionen.filter((l) => !raum || passtRaum(l.raeume, raum)).map((l, i) => ({ ...l, nr: i + 1 }));
   const BLOECKE = bloecke.filter((b) => LEKTIONEN.some((l) => l.block === b.id));
   const nachId = new Map(LEKTIONEN.map((l) => [l.id, l]));
   const lektion = (id) => nachId.get(id) ?? null;

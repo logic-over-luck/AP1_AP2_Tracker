@@ -7,6 +7,7 @@ import { fuehreAus, formatiere, hervorheben } from './pseudo.js';
 import { ERZEUGER, imRaum } from './aufgaben.js';
 import { PROGRAMME } from './programme.js';
 import { GRUNDLAGEN } from './grundlagen.js';
+import { passtRaum } from '../rahmen/raum.js';
 
 const SPICKZETTEL = {
   schreibtisch: '- Startwerte in die erste Zeile, dann Zeile für Zeile\n- BIS ist einschließlich\n- DIV: ganzzahlig, MOD: Rest\n- Listen als 1, 2, 3 eintragen; Kommazahlen mit Komma oder Punkt',
@@ -68,7 +69,7 @@ export function CodeBlock({ code, aktiv, markiere = [], fehler, klickbar, onZeil
 // ---------- Grundlagen ----------
 
 function Grundlagen({ raum }) {
-  const karten = GRUNDLAGEN.filter((g) => g.raum.includes(raum));
+  const karten = GRUNDLAGEN.filter((g) => passtRaum(g.raum, raum));
   return (
     <div class="grundlagen">
       <div class="flaeche flaeche--gross grundlagen__kopf">
