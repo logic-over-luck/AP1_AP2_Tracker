@@ -258,8 +258,17 @@ export function pb2Platzhalter(original, d, wurzel) {
   };
 }
 
+// Geprüfte Zuordnung Stichpunkt × Prüfung für die Wichtigkeit (UMBAU.md P73, tools/umbau/wichtigkeit-zuordnung.mjs):
+// Je Raum Stichpunkt → Prüfung → Teilaufgaben. Fehlt die Datei oder der Raum darin, zählen die Teilaufgaben des Lernplans.
+export function ladeWichtigkeitZuordnung(wurzel) {
+  const datei = path.join(wurzel, 'umbau', 'zuordnung', 'wichtigkeit.json');
+  return fs.existsSync(datei) ? JSON.parse(fs.readFileSync(datei, 'utf8')) : null;
+}
+
 export function vorschauRaum(daten, wurzel, cfg) {
   const plaene = ladeLernplanAp1(wurzel, cfg);
+  const geprueft = ladeWichtigkeitZuordnung(wurzel)?.[cfg.appRaum] ?? null;
+  const belegTa = (s) => (geprueft ? Object.values(geprueft[s.id] ?? {}).flat() : (s.teilaufgaben ?? []));
   const R = cfg.appRaum;
   const altSp = daten.sp;
 
@@ -353,7 +362,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
       satz: t.satz ?? null,
       sp: t.stichpunkte.map((s, i) => {
         const alt = altSp[s.id] ?? altSp[altVon.get(s.id)];
-        const wBeleg = wichtigkeitAusTeilaufgaben(s.teilaufgaben, cfg.ersteAktuelle);
+        const wBeleg = wichtigkeitAusTeilaufgaben(belegTa(s), cfg.ersteAktuelle);
         const wErsatz = wBeleg.pruefungen.length ? null : ersatzGewicht(p.oberblock.id, lernfelder);
         const w = wErsatz ?? wBeleg;
         const koennen = s.koennen.map((k) => {
@@ -396,7 +405,7 @@ export function vorschauRaum(daten, wurzel, cfg) {
           gewicht: w.wert,
           pruef: w.pruefungen,
           // Teilaufgaben-IDs (nur IDs, keine Texte): Anteil eines Themenbereichs an den Prüfungsaufgaben (src/daten/wichtigkeit.js)
-          ta: s.teilaufgaben ?? [],
+          ta: belegTa(s),
           // D7: Gewicht aus dem Lernfeld statt aus Prüfungen (nur ohne jeden Beleg)
           gewichtLernfeld: wErsatz ? wErsatz.lernfelder : null,
           punkte: null,

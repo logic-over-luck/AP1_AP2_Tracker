@@ -1,11 +1,13 @@
 // Prüft die Wichtigkeit je Stichpunkt (src/daten/wichtigkeit.js) und schreibt den Bericht.
 //
 // Aufruf:  node tools/umbau/wichtigkeit-pruefen.mjs        (npm run umbau:wichtigkeit)
-// Liest:   umbau/lernplan/<raum>/*.json, umbau/zuordnung/<raum>/*.json, dazu die App-Daten (tools/vorschau-ap1.mjs)
+// Liest:   umbau/zuordnung/wichtigkeit.json, umbau/lernplan/<raum>/*.json, umbau/zuordnung/<raum>/*.json,
+//          dazu die App-Daten (tools/vorschau-ap1.mjs)
 // Schreibt: umbau/berichte/wichtigkeit-bericht.md
 //
-// 1. Zweitrechnung: Stufe, Trefferzahl und Prüfungszahl je Stichpunkt unabhängig von der App direkt aus den
-//    Lernplänen (Teilaufgaben → Prüfung, Gewicht aus RAEUME_VORSCHAU.ersteAktuelle). Abweichung → Abbruch.
+// 1. Zweitrechnung: Stufe, Trefferzahl und Prüfungszahl je Stichpunkt unabhängig von der App direkt aus der geprüften
+//    Zuordnung umbau/zuordnung/wichtigkeit.json (sonst aus den Lernplänen; Teilaufgaben → Prüfung, Gewicht aus
+//    RAEUME_VORSCHAU.ersteAktuelle). Abweichung → Abbruch.
 // 2. Zuordnung: Jede Teilaufgabe hat Bausteine oder eine Begründung „ausserhalb“ (sonst Abbruch); gemeldet wird,
 //    welche zugeordneten Teilaufgaben an keinem Stichpunkt hängen.
 // 3. Wackeltest: je eine Prüfung weglassen – wie viele Stichpunkte wechseln die Stufe?
@@ -35,6 +37,9 @@ const k2 = (x) => (Number.isFinite(x) ? x.toFixed(2).replace('.', ',') : '–');
 const k3 = (x) => (Number.isFinite(x) ? x.toFixed(3).replace('.', ',') : '–');
 
 // ---------- Daten je Raum direkt aus den Lernplänen ----------
+// Quelle der Belege: die geprüfte Zuordnung (umbau/zuordnung/wichtigkeit.json, P73), sonst das Feld teilaufgaben des Lernplans
+const geprueftDatei = path.join(wurzel, 'umbau', 'zuordnung', 'wichtigkeit.json');
+const geprueft = fs.existsSync(geprueftDatei) ? JSON.parse(fs.readFileSync(geprueftDatei, 'utf8')) : null;
 function raumDaten(r) {
   const cfg = RAEUME_VORSCHAU[r];
   const plaene = ladeLernplanAp1(wurzel, cfg);
@@ -42,9 +47,16 @@ function raumDaten(r) {
   for (const p of plaene)
     for (const t of p.themenbloecke)
       for (const s of t.stichpunkte) {
-        const termine = [...new Set((s.teilaufgaben ?? []).map((ta) => ta.split('-')[0]))];
-        sps.push({ id: s.id, titel: s.titel, ordner: p.oberblock.id, ta: s.teilaufgaben ?? [], termine });
+        const ta = geprueft?.[r] ? Object.values(geprueft[r][s.id] ?? {}).flat() : (s.teilaufgaben ?? []);
+        const termine = [...new Set(ta.map((x) => x.split('-')[0]))];
+        // In der geprüften Datei muss jede Teilaufgabe zu der Prüfung gehören, unter der sie steht
+        for (const [pr, tas] of Object.entries(geprueft?.[r]?.[s.id] ?? {})) for (const x of tas) if (!x.startsWith(`${pr}-`)) fehler.push(`${s.id}: ${x} steht unter ${pr}`);
+        sps.push({ id: s.id, titel: s.titel, ordner: p.oberblock.id, ta, termine });
       }
+  if (geprueft?.[r]) {
+    const ids = new Set(sps.map((s) => s.id));
+    for (const id of Object.keys(geprueft[r])) if (!ids.has(id)) fehler.push(`${r}: wichtigkeit.json nennt unbekannten Stichpunkt ${id}`);
+  }
   const gewicht = (p, wAlt = ALT) => (p >= cfg.ersteAktuelle ? 1 : wAlt);
   const termine = [...new Set(sps.flatMap((s) => s.termine))].sort(terminVergleich);
   return { r, cfg, sps, termine, gewicht };
@@ -87,6 +99,8 @@ for (const r of RAEUME) {
   const tas = new Map();
   for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) for (const [id, t] of Object.entries(JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).teilaufgaben)) tas.set(id, t);
   const anSp = new Set(daten[r].sps.flatMap((s) => s.ta));
+  for (const id of anSp) if (!tas.has(id)) fehler.push(`${r}: Beleg ${id} ist keine Teilaufgabe der Zuordnung`);
+  for (const id of anSp) if (tas.get(id) && !tas.get(id).bausteine?.length) fehler.push(`${r}: Beleg ${id} ist „ausserhalb“ (${tas.get(id).ausserhalb})`);
   const ohneBegruendung = [...tas].filter(([, t]) => !t.bausteine?.length && !t.ausserhalb).map(([id]) => id);
   for (const id of ohneBegruendung) fehler.push(`${r}: Teilaufgabe ${id} hat weder Bausteine noch eine Begründung „ausserhalb“`);
   const zugeordnet = [...tas].filter(([, t]) => t.bausteine?.length).map(([id]) => id);
@@ -239,6 +253,21 @@ z(`Grundlage: die Zuordnungen in \`umbau/zuordnung/\` und \`umbau/lernplan/\` im
 z();
 z(`**Ergebnis der Zweitrechnung:** ${fehler.length ? `${fehler.length} Abweichungen (siehe unten)` : 'App und Zweitrechnung stimmen für alle Stichpunkte überein.'}`);
 z();
+z(
+  geprueft
+    ? `**Quelle der Belege:** geprüfte Zuordnung \`umbau/zuordnung/wichtigkeit.json\` (P73, Stand ${geprueft.meta?.stand ?? '–'}): Paare, die die Zuordnung beim Bau (A) und eine blinde Zweitzuordnung (B) beide nennen, dazu die vom Schiedsrichter bestätigten.`
+    : '**Quelle der Belege:** Feld `teilaufgaben` der Lernpläne (noch keine geprüfte Zuordnung).',
+);
+z();
+if (geprueft?.meta?.zaehlung) {
+  z('| Raum | Teilaufgaben | Paare A | Paare B | einig | strittig | davon bestätigt | verworfen | gezählt |');
+  z('|---|---|---|---|---|---|---|---|---|');
+  for (const r of RAEUME) {
+    const x = geprueft.meta.zaehlung[r];
+    if (x) z(`| ${r} | ${x.teilaufgaben} | ${x.paare_A} | ${x.paare_B} | ${x.einig} | ${x.strittig} | ${x.bestaetigt} | ${x.verworfen} | ${x.ergebnis} |`);
+  }
+  z();
+}
 z('## Überblick je Raum');
 z();
 z('| Raum | Prüfungen | davon aktueller Katalog | Stichpunkte | ' + STUFEN.map((s) => s.kurz).join(' | ') + ' |');

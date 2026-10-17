@@ -5,6 +5,8 @@ Grundlage: die Zuordnungen in `umbau/zuordnung/` und `umbau/lernplan/` im aktuel
 
 **Ergebnis der Zweitrechnung:** App und Zweitrechnung stimmen für alle Stichpunkte überein.
 
+**Quelle der Belege:** Feld `teilaufgaben` der Lernpläne (noch keine geprüfte Zuordnung).
+
 ## Überblick je Raum
 
 | Raum | Prüfungen | davon aktueller Katalog | Stichpunkte | Sehr oft | Oft | Manchmal | Selten | Bisher nicht |
