@@ -80,6 +80,10 @@ export function Wichtigkeit({ raum }) {
               Die Stufe kommt aus dem Anteil dieser gewichteten Prüfungen, in denen der Stichpunkt vorkam. Angezeigt wird die einfache Zahl: „in 4 von {w.n} Prüfungen“.
             </p>
             <p>
+              Welche Aufgabe welchen Stichpunkt prüft, ist doppelt geprüft: Zwei unabhängige Zuordnungen jeder Teilaufgabe, und wo sie sich uneinig waren, hat ein
+              Schiedsspruch an der Musterlösung entschieden. Gezählt wird ein Stichpunkt nur, wenn man seinen Stoff zum Lösen wirklich braucht.
+            </p>
+            <p>
               <strong>Wahrscheinlich … bis …</strong>: Mit so wenigen Prüfungen ist jede Zahl unsicher. Der Bereich zeigt, wie oft der Stichpunkt bei {w.n} Prüfungen plausibel drankäme ({Math.round((BEREICH[1] - BEREICH[0]) * 100)}-%-Bereich).
               „Oft“ und „Manchmal“ lassen sich deshalb nicht scharf trennen – die Stufe ist Orientierung, keine Vorhersage.
             </p>
@@ -135,13 +139,13 @@ export function Wichtigkeit({ raum }) {
               musst – das steht an den Können-Aussagen.
             </p>
             <p>
-              Die Stufe beschreibt die Vergangenheit. Ein „sehr oft geprüfter“ Stichpunkt kam in der jeweils nächsten Prüfung nur in rund der Hälfte der Fälle wieder dran (WiSo, PB2),
-              in PB1 in einem Viertel.
+              Die Stufe beschreibt die Vergangenheit. Ein „sehr oft geprüfter“ Stichpunkt kam in der jeweils nächsten Prüfung in gut der Hälfte der Fälle wieder dran (WiSo, PB2),
+              in PB1 in gut einem Viertel.
             </p>
             {raum === 'AP1' && (
               <p>
                 In AP1 sagen die älteren Prüfungen die neuen nur schwach vorher (neuer Katalog ab 2025, breit gestreute Aufgaben): Von den „sehr oft geprüften“ Stichpunkten war in der
-                nächsten Prüfung nur etwa jeder fünfte bis siebte dran. Lerne dort nicht nur nach der Stufe.
+                nächsten Prüfung nur knapp jeder vierte dran. Lerne dort nicht nur nach der Stufe.
               </p>
             )}
             {jeStufe.flat()[0] && <p class="gedaempft">Beispiel: „{jeStufe.flat()[0].titel}“ – {wichtigkeitText(jeStufe.flat()[0].wichtig)}</p>}

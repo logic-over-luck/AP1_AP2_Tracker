@@ -139,3 +139,16 @@ test('Reihenfolge-Wert: eigener Anteil plus LAMBDA × offene Abhängige', () => 
   assert.ok(blockWert(b, index).bester >= reihenfolgeWert(s, index));
   assert.equal(blockWert(b, index, () => false).bester, -1);
 });
+
+test('Geprüfte Zuordnung (P73): App zählt aus umbau/zuordnung/wichtigkeit.json', async () => {
+  const fs = await import('node:fs');
+  const geprueft = JSON.parse(fs.readFileSync(path.join(wurzel, 'umbau', 'zuordnung', 'wichtigkeit.json'), 'utf8'));
+  for (const r of RAEUME)
+    for (const s of spIn(r)) assert.deepEqual(s.wichtig.termine, Object.keys(geprueft[r][s.id] ?? {}).sort((a, b) => a.localeCompare(b)), s.id);
+  // Beispiel: Zahlensysteme und Präfixe – die Umrechnung kB/KiB wird in 6 von 11 AP1-Prüfungen gebraucht
+  const z = spIn('AP1').find((x) => x.titel.startsWith('Zahlensysteme und Präfixe'));
+  assert.equal(z.wichtig.x, 6);
+  assert.equal(z.wichtig.stufe, 1);
+  // Jede Zahl ist belegt: Teilaufgaben gehören zur Prüfung, unter der sie stehen
+  for (const r of RAEUME) for (const p of Object.values(geprueft[r])) for (const [termin, tas] of Object.entries(p)) for (const ta of tas) assert.ok(ta.startsWith(`${termin}-`), ta);
+});

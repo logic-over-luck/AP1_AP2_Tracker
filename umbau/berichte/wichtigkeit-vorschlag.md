@@ -1,6 +1,6 @@
 # Vorschlag: Wichtigkeit neu – 5 Stufen je Stichpunkt (Fassung 2)
 
-Stand: 17.10.2026 · Status: **umgesetzt (UMBAU.md P72)**, Prüfung der Zuordnung mit den neuen Abschriften offen · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
+Stand: 17.10.2026 · Status: **umgesetzt (UMBAU.md P72)**, Zuordnung geprüft (P73) · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
 (`umbau/zuordnung/<raum>/*.json`). Endgültige Grenzen erst nach der Prüfung mit den neuen Abschriften.
 
 Fassung 2 arbeitet die Zweitmeinung ein (`wichtigkeit-zweitmeinung.md`). Die Änderungen gegenüber Fassung 1 stehen in Abschnitt 6.
@@ -216,3 +216,19 @@ Der Projektinhaber hat die Entscheidung an Claude übertragen. Umgesetzt wie Fas
 - Treffer-Probe: Von den Stichpunkten, die nach den früheren Prüfungen „sehr oft geprüft“ waren, kamen in der nächsten Prüfung wieder dran: AP1 15 %, PB1 26 %, PB2 62 %, WiSo 54 % (Gewicht alt 0,6).
   Die Stufen beschreiben also die Vergangenheit. Die Seite „Wichtigkeit“ sagt das offen, für AP1 ausdrücklich.
 - Das Lernfeld-Ersatzgewicht (D7) bleibt im Datenfeld `gewicht` (Probeprüfung), beeinflusst aber keine Stufe mehr.
+
+## 8. Geprüfte Zuordnung (17.10.2026, P73)
+
+Umgesetzt wie 3.6 Punkt 1, mit einer Abweichung: Die Lernpläne bleiben unverändert. Die geprüfte Zuordnung steht in einer eigenen
+Datei `umbau/zuordnung/wichtigkeit.json`, aus der App und Prüfskript zählen.
+
+| Raum | Paare einig | strittig | bestätigt | verworfen | gezählt |
+|---|---|---|---|---|---|
+| AP1 | 216 | 71 | 16 | 55 | 232 |
+| PB1 | 108 | 19 | 4 | 15 | 112 |
+| PB2 | 76 | 20 | 10 | 10 | 86 |
+| WiSo | 182 | 30 | 6 | 24 | 188 |
+
+Rückwärtstest danach (AUC, Gewicht alt 0,6): AP1 0,59 (vorher 0,57), PB1 0,72 (0,68), PB2 0,76 (0,73), WiSo 0,74 (0,74). Die Treffer-Probe
+„Sehr oft“ liegt bei AP1 23 %, PB1 27 %, PB2 64 %, WiSo 55 %. Die Unterschiede liegen im Rauschen, die Richtung ist aber überall gleich oder besser.
+Gewicht alter Prüfungen: 1 statt 0,6 senkt den Log-Loss nur in PB1 (und AP1 um 0,001), also nicht in 3 von 4 Räumen. Es bleibt bei 0,6.

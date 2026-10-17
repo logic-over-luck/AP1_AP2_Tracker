@@ -73,8 +73,11 @@ nächsten offenen Punkt weiter.
   (Sehr oft / Oft / Manchmal / Selten / Bisher nicht geprüft), Zeichen mit Füllgrad, „in x von N Prüfungen“ mit plausiblem Bereich,
   Block zeigt die Zeichen seiner Stichpunkte, Themenbereich den Anteil an den Prüfungsaufgaben, „Grundlage für X“ für die Reihenfolge;
   neue Seite „Nachschlagen → Wichtigkeit“. Rechnung `src/daten/wichtigkeit.js`, Tests `tests/wichtigkeit.test.mjs`,
-  Prüfskript `npm run umbau:wichtigkeit` → `umbau/berichte/wichtigkeit-bericht.md`. **Nächster Schritt:** Zuordnung der
-  Teilaufgaben mit den neuen Abschriften (lokal unter `quellen/`) blind prüfen, dann den Prüfbericht neu erzeugen.
+  Prüfskript `npm run umbau:wichtigkeit` → `umbau/berichte/wichtigkeit-bericht.md`.
+- **Zuordnung für die Wichtigkeit geprüft (17.10.2026, UMBAU.md P73):** alle 800 Teilaufgaben blind ein zweites Mal zugeordnet,
+  140 strittige Paare per Schiedsspruch entschieden → `umbau/zuordnung/wichtigkeit.json` (neu erzeugen mit
+  `node tools/umbau/wichtigkeit-zuordnung.mjs`). 21 Stichpunkte haben jetzt eine andere Stufe. Offen: PB2-Aufgaben zu
+  Datenmodellierung und IT-Sicherheit zählen für keinen PB2-Stichpunkt (Stoff in PB1); unabhängige Zweitmeinung eines anderen Anbieters.
 
 - **Regelwerk v2.2 (Branch `regelwerk-v2`, 16.10.2026):** Lehrbuch Westermann „IT-Berufe“ (GS/FS/FS2) als Quelle der Tiefe;
   alle vier Räume erweitert und per Prüfer-Filter (17.10.2026) gestrafft: AP1 814, PB1 443, PB2 116, WISO 382 Aussagen
