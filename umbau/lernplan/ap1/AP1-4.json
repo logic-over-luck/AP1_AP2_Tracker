@@ -232,24 +232,6 @@
               ]
             },
             {
-              "id": "AP1-4-1-8-K2",
-              "text": "Du kannst den Aufbau eines Rechners nach von Neumann erklären: Rechenwerk, Steuerwerk, ein gemeinsamer Speicher für Befehle und Daten, ein Bussystem und ein Ein-/Ausgabewerk; weil das Programm wie Daten im Speicher liegt, wird der Rechner durch Laden eines anderen Programms umprogrammiert, ohne die Hardware zu ändern.",
-              "kurz": "Rechneraufbau nach von Neumann",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.1.2-S121"
-              ]
-            },
-            {
-              "id": "AP1-4-1-8-K3",
-              "text": "Du kannst erklären, wie ein Prozessor ein Programm abarbeitet: Das Steuerwerk holt die Befehle nacheinander aus dem Speicher, entschlüsselt sie und lässt sie vom Rechenwerk (ALU) ausführen; die Speicherverwaltung (MMU) übersetzt Adressen für den Zugriff auf den Arbeitsspeicher, der Cache hält häufig gebrauchte Befehle und Daten bereit.",
-              "kurz": "Programmabarbeitung im Prozessor",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.4.3-S154"
-              ]
-            },
-            {
               "id": "AP1-4-1-8-K4",
               "text": "Du kannst erklären, warum Programme beim Start in den Arbeitsspeicher geladen und Daten auf einem Datenträger gespeichert werden: Der Prozessor arbeitet nur mit Befehlen und Daten im Arbeitsspeicher bzw. Cache, der Arbeitsspeicher ist aber flüchtig und verliert ohne Strom seinen Inhalt, während Flash-Speicher (z. B. für das UEFI), SSD und HDD ihn dauerhaft behalten.",
               "kurz": "Flüchtiger Arbeitsspeicher und dauerhafte Datenträger",
@@ -314,6 +296,22 @@
                 "buch:GS-2.4.4"
               ],
               "grund": "D8/RK1: DRAM-Technik ohne Katalogbezug; Busbreite und FSB sind veraltete Datenblattdetails"
+            },
+            {
+              "text": "Rechneraufbau nach von Neumann: Rechenwerk, Steuerwerk, ein gemeinsamer Speicher für Befehle und Daten, ein Bussystem und ein Ein-/Ausgabewerk; weil das Programm wie Daten im Speicher liegt, wird der Rechner durch Laden eines anderen Programms umprogrammiert, ohne die Hardware zu ändern.",
+              "kurz": "Rechneraufbau nach von Neumann",
+              "quellen": [
+                "buch:GS-2.1.2"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+            },
+            {
+              "text": "Programmabarbeitung im Prozessor: Das Steuerwerk holt die Befehle nacheinander aus dem Speicher, entschlüsselt sie und lässt sie vom Rechenwerk (ALU) ausführen; die Speicherverwaltung (MMU) übersetzt Adressen für den Zugriff auf den Arbeitsspeicher, der Cache hält häufig gebrauchte Befehle und Daten bereit.",
+              "kurz": "Programmabarbeitung im Prozessor",
+              "quellen": [
+                "buch:GS-2.4.3"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ],
           "hinweis": "Das Lehrbuch gibt den Adressraum von 64 Bit zu klein an; richtig sind 2^64 Byte = 16 EiB (praktische Grenzen setzen Mainboard und Betriebssystem). Es beschreibt außerdem noch den Front Side Bus, den es in aktuellen PCs nicht mehr gibt, und bezieht das Mooresche Gesetz auf die Leistung mit 18 Monaten; gemeint ist die Transistorzahl je Chip, etwa alle zwei Jahre."
@@ -1404,15 +1402,6 @@
               "herkunft": [
                 "buch:GS-5.2.4-S493"
               ]
-            },
-            {
-              "id": "AP1-4-2-2-K12",
-              "text": "Du kannst Raster- und Vektorgrafik unterscheiden: Rastergrafiken speichern für jedes Pixel einen Farbwert und werden beim Vergrößern pixelig (PNG, JPEG, gut für Fotos), Vektorgrafiken speichern Formen mit ihren Maßen, sind meist kleiner und verlustfrei skalierbar (SVG, gut für Logos und Pläne).",
-              "kurz": "Rastergrafik gegen Vektorgrafik",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-5.2.4-S492"
-              ]
             }
           ],
           "grenzen": [],
@@ -1456,6 +1445,14 @@
                 "buch:GS-5.2.5"
               ],
               "grund": "RK1: theoretischer Zusammenhang ohne Auswahlbezug"
+            },
+            {
+              "text": "Rastergrafik gegen Vektorgrafik: Rastergrafiken speichern für jedes Pixel einen Farbwert und werden beim Vergrößern pixelig (PNG, JPEG, gut für Fotos), Vektorgrafiken speichern Formen mit ihren Maßen, sind meist kleiner und verlustfrei skalierbar (SVG, gut für Logos und Pläne).",
+              "kurz": "Rastergrafik gegen Vektorgrafik",
+              "quellen": [
+                "buch:GS-5.2.4"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ],
           "hinweis": "Das Lehrbuch nennt 22,05 kHz als Abtastrate für Spiele; heute sind 44,1 oder 48 kHz üblich. WAV und AIFF stehen dort bei den verlustbehafteten Formaten, speichern aber meist unkomprimiertes Audio."
@@ -1646,15 +1643,6 @@
               ]
             },
             {
-              "id": "AP1-4-2-4-K6",
-              "text": "Du kannst Datenübertragungsrate und Signalgeschwindigkeit unterscheiden: Die Datenrate gibt an, wie viele Bit je Sekunde übertragen werden, die Signalgeschwindigkeit, wie schnell sich das Signal ausbreitet – in Kupfer wie in Glasfaser etwa zwei Drittel der Lichtgeschwindigkeit; Glasfaser ist also nicht „schneller“, sondern erlaubt höhere Datenraten.",
-              "kurz": "Datenrate gegen Signalgeschwindigkeit",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-3.3.1-S301"
-              ]
-            },
-            {
               "id": "AP1-4-2-4-K7",
               "text": "Du kannst begründen, warum der tatsächliche Durchsatz unter der angegebenen Rate einer Schnittstelle liegt: Die Angabe ist eine Bruttorate, von der Protokoll-Overhead und Leitungscodierung abgehen; vor einem Vergleich musst du außerdem bit/s und Byte/s auf eine Einheit bringen.",
               "kurz": "Durchsatz unter der Bruttorate",
@@ -1673,6 +1661,14 @@
                 "buch:GS-3.5.1"
               ],
               "grund": "RK2: Lastprofile gehören zur Netzplanung, nicht zur Übertragungsrechnung"
+            },
+            {
+              "text": "Datenrate gegen Signalgeschwindigkeit: Die Datenrate gibt an, wie viele Bit je Sekunde übertragen werden, die Signalgeschwindigkeit, wie schnell sich das Signal ausbreitet – in Kupfer wie in Glasfaser etwa zwei Drittel der Lichtgeschwindigkeit; Glasfaser ist also nicht „schneller“, sondern erlaubt höhere Datenraten.",
+              "kurz": "Datenrate gegen Signalgeschwindigkeit",
+              "quellen": [
+                "buch:GS-3.3.1"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ]
         }
@@ -1942,15 +1938,6 @@
               ]
             },
             {
-              "id": "AP1-4-3-3-K7",
-              "text": "Du kannst den Rebound-Effekt an der IT erklären: Geräte werden einzeln sparsamer, doch weil immer mehr Geräte betrieben und stärker genutzt werden – etwa Milliarden vernetzter IoT-Geräte –, wird die Einsparung teilweise oder ganz aufgezehrt.",
-              "kurz": "Rebound-Effekt in der IT",
-              "stufe": 2,
-              "herkunft": [
-                "buch:FS-2.1.2-S83"
-              ]
-            },
-            {
               "id": "AP1-4-3-3-K8",
               "text": "Du kannst Umweltzeichen für IT unterscheiden: TCO Certified prüft unabhängig soziale und ökologische Kriterien über den ganzen Lebenszyklus, das EU Ecolabel und der Blaue Engel stehen für umweltverträgliche Produkte mit geringer Gesundheitsbelastung, Energy Star bewertet nur die Energiesparfunktionen.",
               "kurz": "Umweltzeichen: was sie jeweils prüfen",
@@ -2007,6 +1994,14 @@
                 "buch:GS-3.9.2"
               ],
               "grund": "RK2: Netzwerk-Detail"
+            },
+            {
+              "text": "Rebound-Effekt in der IT: Geräte werden einzeln sparsamer, doch weil immer mehr Geräte betrieben und stärker genutzt werden – etwa Milliarden vernetzter IoT-Geräte –, wird die Einsparung teilweise oder ganz aufgezehrt.",
+              "kurz": "Rebound-Effekt in der IT",
+              "quellen": [
+                "buch:FS-2.1.2"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ]
         }
@@ -2358,7 +2353,8 @@
       "buch:FS-4.4.3": "Lehrbuch Westermann „IT-Berufe“ FS 4.4.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:FS-4.3.5": "Lehrbuch Westermann „IT-Berufe“ FS 4.3.5 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
       "buch:GS-2.3.2": "Lehrbuch Westermann „IT-Berufe“ GS 2.3.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-      "buch:GS-3.9.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.9.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+      "buch:GS-3.9.2": "Lehrbuch Westermann „IT-Berufe“ GS 3.9.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:FS-2.1.2": "Lehrbuch Westermann „IT-Berufe“ FS 2.1.2 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -3282,8 +3278,6 @@
           "AP1-4-1-2-K11",
           "AP1-4-1-2-K12",
           "AP1-4-1-8-K1",
-          "AP1-4-1-8-K2",
-          "AP1-4-1-8-K3",
           "AP1-4-1-8-K4",
           "AP1-4-1-8-K5",
           "AP1-4-1-8-K6",
@@ -3308,13 +3302,10 @@
           "AP1-4-2-5-K3",
           "AP1-4-2-2-K10",
           "AP1-4-2-2-K11",
-          "AP1-4-2-2-K12",
           "AP1-4-2-3-K8",
-          "AP1-4-2-4-K6",
           "AP1-4-2-4-K7",
           "AP1-4-3-1-K6",
           "AP1-4-3-2-K5",
-          "AP1-4-3-3-K7",
           "AP1-4-3-3-K8",
           "AP1-4-3-3-K9",
           "AP1-4-3-3-K10"
@@ -3378,6 +3369,11 @@
           "AP1-4-3-2",
           "AP1-4-3-3",
           "AP1-4-3-3",
+          "AP1-4-3-3",
+          "AP1-4-1-8",
+          "AP1-4-1-8",
+          "AP1-4-2-2",
+          "AP1-4-2-4",
           "AP1-4-3-3"
         ],
         "grenzen_gestrichen": [],
@@ -3421,6 +3417,33 @@
             "vorher": "Harvard-Architektur (getrennte Speicher für Befehle und Daten); Datenrate von DDR-Speicher; Grafikspeicher (VRAM).",
             "nachher": "Harvard-Architektur (getrennte Speicher für Befehle und Daten).",
             "grund": "VRAM jetzt Pflicht (AP1-4-1-2-K11); DDR-Datenrate in der Kür von AP1-4-1-7 zusammengeführt (V2-Prüfung AP1-a Nr. 26)"
+          }
+        ],
+        "pflicht_gestrichen": [
+          {
+            "id": "AP1-4-1-8-K2",
+            "text": "Du kannst den Aufbau eines Rechners nach von Neumann erklären: Rechenwerk, Steuerwerk, ein gemeinsamer Speicher für Befehle und Daten, ein Bussystem und ein Ein-/Ausgabewerk; weil das Programm wie Daten im Speicher liegt, wird der Rechner durch Laden eines anderen Programms umprogrammiert, ohne die Hardware zu ändern.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-4-1-8-K3",
+            "text": "Du kannst erklären, wie ein Prozessor ein Programm abarbeitet: Das Steuerwerk holt die Befehle nacheinander aus dem Speicher, entschlüsselt sie und lässt sie vom Rechenwerk (ALU) ausführen; die Speicherverwaltung (MMU) übersetzt Adressen für den Zugriff auf den Arbeitsspeicher, der Cache hält häufig gebrauchte Befehle und Daten bereit.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-4-2-2-K12",
+            "text": "Du kannst Raster- und Vektorgrafik unterscheiden: Rastergrafiken speichern für jedes Pixel einen Farbwert und werden beim Vergrößern pixelig (PNG, JPEG, gut für Fotos), Vektorgrafiken speichern Formen mit ihren Maßen, sind meist kleiner und verlustfrei skalierbar (SVG, gut für Logos und Pläne).",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-4-2-4-K6",
+            "text": "Du kannst Datenübertragungsrate und Signalgeschwindigkeit unterscheiden: Die Datenrate gibt an, wie viele Bit je Sekunde übertragen werden, die Signalgeschwindigkeit, wie schnell sich das Signal ausbreitet – in Kupfer wie in Glasfaser etwa zwei Drittel der Lichtgeschwindigkeit; Glasfaser ist also nicht „schneller“, sondern erlaubt höhere Datenraten.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-4-3-3-K7",
+            "text": "Du kannst den Rebound-Effekt an der IT erklären: Geräte werden einzeln sparsamer, doch weil immer mehr Geräte betrieben und stärker genutzt werden – etwa Milliarden vernetzter IoT-Geräte –, wird die Einsparung teilweise oder ganz aufgezehrt.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
           }
         ]
       }

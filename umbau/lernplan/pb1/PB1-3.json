@@ -138,15 +138,6 @@
        ]
       },
       {
-       "id": "PB1-3-1-1-K8",
-       "text": "Du kannst imperative und deklarative Programmierung nach Vor- und Nachteilen vergleichen: Imperativer Code ist Schritt für Schritt nachvollziehbar, wird aber lang; deklarativer Code ist kurz und überlässt die Ausführung dem System, ist dafür abstrakter und ungewohnter; die meisten heutigen Sprachen mischen beide Stile, was Code spart, ihn aber schwerer lesbar machen kann.",
-       "kurz": "Vor- und Nachteile imperativ und deklarativ",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.3.1-S182"
-       ]
-      },
-      {
        "id": "PB1-3-1-1-K9",
        "text": "Du kannst begründen, wann eine Sprache, die in Zwischencode (Bytecode) übersetzt und in einer virtuellen Maschine ausgeführt wird (z. B. Java, C#; virtuelle Maschine: AP1-8-1-1), für ein Projekt passt: Das Programm läuft ohne Neuübersetzung auf jedem Betriebssystem mit passender virtueller Maschine, und solche Sprachen bringen meist eine große Standardbibliothek und freie Entwicklungswerkzeuge mit; dafür laufen sie meist langsamer und brauchen mehr Speicher als direkt in Maschinencode übersetzte Sprachen wie C.",
        "kurz": "Sprachen mit virtueller Maschine wählen",
@@ -218,6 +209,14 @@
         "buch:FS2-3.3.1"
        ],
        "grund": "D8: kein Katalog-Baustein"
+      },
+      {
+       "text": "Vor- und Nachteile imperativ und deklarativ: Imperativer Code ist Schritt für Schritt nachvollziehbar, wird aber lang; deklarativer Code ist kurz und überlässt die Ausführung dem System, ist dafür abstrakter und ungewohnter; die meisten heutigen Sprachen mischen beide Stile, was Code spart, ihn aber schwerer lesbar machen kann.",
+       "kurz": "Vor- und Nachteile imperativ und deklarativ",
+       "quellen": [
+        "buch:FS-3.3.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ],
      "hinweis": "Das Lehrbuch nennt Java und C# „rein“ objektorientiert; richtig ist „konsequent“ objektorientiert, denn beide kennen auch einfache Datentypen wie int, die keine Objekte sind."
@@ -1647,7 +1646,6 @@
     "regelwerk": "2.2",
     "neue_aussagen": [
      "PB1-3-1-1-K7",
-     "PB1-3-1-1-K8",
      "PB1-3-1-1-K9",
      "PB1-3-1-2-K5",
      "PB1-3-1-2-K6",
@@ -1692,7 +1690,8 @@
      "PB1-3-2-3",
      "PB1-3-2-3",
      "PB1-3-2-3",
-     "PB1-3-2-3"
+     "PB1-3-2-3",
+     "PB1-3-1-1"
     ],
     "grenzen_gestrichen": [],
     "filter": [
@@ -1711,6 +1710,13 @@
       "sp": "PB1-3-2-2",
       "text": "DevOps bringt Entwicklung, Qualitätssicherung und Betrieb in ein Team mit gemeinsamer Verantwortung über den ganzen Lebenszyklus und stark automatisierten Abläufen, um häufiger, schneller und mit weniger Fehlern auszuliefern; der Preis ist ein Umdenken in Organisation und Zusammenarbeit.",
       "grund": "jetzt Pflicht: PB1-1-1-1-K10 (Ordner PB1-1), V2-Prüfung PB1-a Nr. 30"
+     }
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "PB1-3-1-1-K8",
+      "text": "Du kannst imperative und deklarative Programmierung nach Vor- und Nachteilen vergleichen: Imperativer Code ist Schritt für Schritt nachvollziehbar, wird aber lang; deklarativer Code ist kurz und überlässt die Ausführung dem System, ist dafür abstrakter und ungewohnter; die meisten heutigen Sprachen mischen beide Stile, was Code spart, ihn aber schwerer lesbar machen kann.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
      }
     ]
    }

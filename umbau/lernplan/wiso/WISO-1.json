@@ -1597,15 +1597,16 @@
         "beleg:2023W-WISO-A7"
        ],
        "vorgegeben": "§§ 7 und 9 BetrVG (Auszug) im Aufgabentext"
-      },
+      }
+     ],
+     "kuer": [
       {
-       "id": "WISO-1-4-1-K7",
-       "text": "Du kannst betriebliche Mitbestimmung und Unternehmensmitbestimmung unterscheiden: Im Betrieb vertritt der Betriebsrat nach dem Betriebsverfassungsgesetz die Beschäftigten (im öffentlichen Dienst der Personalrat nach den Personalvertretungsgesetzen); in großen Kapitalgesellschaften sitzen zusätzlich Arbeitnehmervertreter im Aufsichtsrat und entscheiden über die Unternehmensführung mit.",
+       "text": "Betriebliche und Unternehmensmitbestimmung: Im Betrieb vertritt der Betriebsrat nach dem Betriebsverfassungsgesetz die Beschäftigten (im öffentlichen Dienst der Personalrat nach den Personalvertretungsgesetzen); in großen Kapitalgesellschaften sitzen zusätzlich Arbeitnehmervertreter im Aufsichtsrat und entscheiden über die Unternehmensführung mit.",
        "kurz": "Betriebliche und Unternehmensmitbestimmung",
-       "stufe": 2,
-       "herkunft": [
-        "buch:GS-1.2.2-S31"
-       ]
+       "quellen": [
+        "buch:GS-1.2.2"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -2353,15 +2354,6 @@
        ]
       },
       {
-       "id": "WISO-1-6-2-K11",
-       "text": "Du kannst den Rechtsweg bei Streit mit einem Sozialversicherungsträger erklären: Nach einem erfolglosen Widerspruch beim Träger klagt man beim Sozialgericht, die weiteren Instanzen sind Landessozialgericht und Bundessozialgericht; für Versicherte ist das Verfahren grundsätzlich gerichtskostenfrei.",
-       "kurz": "Instanzen der Sozialgerichtsbarkeit",
-       "stufe": 2,
-       "herkunft": [
-        "buch:GS-1.2.3-S36"
-       ]
-      },
-      {
        "id": "WISO-1-6-2-K12",
        "text": "Du kannst erklären, wovon der Beitrag zur gesetzlichen Unfallversicherung abhängt, den der Arbeitgeber allein trägt: von der Lohnsumme des Betriebs, von der Gefahrklasse seines Gewerbezweigs und – über Zuschläge oder Nachlässe – vom Unfallgeschehen im Betrieb.",
        "kurz": "Bemessung des Unfallversicherungsbeitrags",
@@ -2396,6 +2388,14 @@
         "buch:GS-1.2.3"
        ],
        "grund": "RK2/D8: betriebliche und private Vorsorge gehen über die Sozialversicherung hinaus; private Versicherungen ohne Katalog-Baustein."
+      },
+      {
+       "text": "Instanzen der Sozialgerichtsbarkeit: Nach einem erfolglosen Widerspruch beim Träger klagt man beim Sozialgericht, die weiteren Instanzen sind Landessozialgericht und Bundessozialgericht; für Versicherte ist das Verfahren grundsätzlich gerichtskostenfrei.",
+       "kurz": "Instanzen der Sozialgerichtsbarkeit",
+       "quellen": [
+        "buch:GS-1.2.3"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -4308,12 +4308,10 @@
      "WISO-1-3-1-K7",
      "WISO-1-6-1-K8",
      "WISO-1-6-1-K9",
-     "WISO-1-4-1-K7",
      "WISO-1-5-1-K8",
      "WISO-1-5-2-K6",
      "WISO-1-4-3-K6",
      "WISO-1-6-2-K10",
-     "WISO-1-6-2-K11",
      "WISO-1-6-2-K12",
      "WISO-1-8-1-K8",
      "WISO-1-4-2-K7",
@@ -4337,7 +4335,9 @@
      "WISO-1-6-2",
      "WISO-1-6-2",
      "WISO-1-3-6",
-     "WISO-1-6-1"
+     "WISO-1-6-1",
+     "WISO-1-4-1",
+     "WISO-1-6-2"
     ],
     "grenzen_gestrichen": [],
     "filter": [],
@@ -4354,6 +4354,18 @@
      "WISO-1-6-1",
      "WISO-1-8-1",
      "WISO-1-3-5"
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "WISO-1-4-1-K7",
+      "text": "Du kannst betriebliche Mitbestimmung und Unternehmensmitbestimmung unterscheiden: Im Betrieb vertritt der Betriebsrat nach dem Betriebsverfassungsgesetz die Beschäftigten (im öffentlichen Dienst der Personalrat nach den Personalvertretungsgesetzen); in großen Kapitalgesellschaften sitzen zusätzlich Arbeitnehmervertreter im Aufsichtsrat und entscheiden über die Unternehmensführung mit.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "WISO-1-6-2-K11",
+      "text": "Du kannst den Rechtsweg bei Streit mit einem Sozialversicherungsträger erklären: Nach einem erfolglosen Widerspruch beim Träger klagt man beim Sozialgericht, die weiteren Instanzen sind Landessozialgericht und Bundessozialgericht; für Versicherte ist das Verfahren grundsätzlich gerichtskostenfrei.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     }
     ]
    }
   ]

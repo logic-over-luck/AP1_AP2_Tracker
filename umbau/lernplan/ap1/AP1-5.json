@@ -106,24 +106,6 @@
               ]
             },
             {
-              "id": "AP1-5-1-1-K8",
-              "text": "Du kannst erklären, was nach der weiten Definition alles zur Software gehört: nicht nur die Programme, sondern auch festgelegte Abläufe, die Dokumentation und die Daten, die für den Betrieb eines Rechnersystems nötig sind.",
-              "kurz": "Weite Definition von Software",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-5.1.1-S469"
-              ]
-            },
-            {
-              "id": "AP1-5-1-1-K9",
-              "text": "Du kannst Unterstützungssoftware von System- und Anwendungssoftware unterscheiden: Sie hilft beim Entwickeln von Software (z. B. Compiler, Editor, Debugger) oder erbringt Leistungen, die an keine bestimmte Anwendung gebunden sind.",
-              "kurz": "Unterstützungssoftware: Compiler, Editor, Debugger",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-5.1.1-S469"
-              ]
-            },
-            {
               "id": "AP1-5-1-1-K10",
               "text": "Du kannst erklären, was Firmware ist: Software, die fest in einem Gerät gespeichert ist (z. B. UEFI/BIOS auf dem Mainboard oder die Steuerung von Drucker, Router oder SSD), die Hardware direkt steuert und schon vor dem Betriebssystem bereitsteht.",
               "kurz": "Firmware: fest im Gerät gespeichert",
@@ -184,6 +166,22 @@
                 "buch:GS-2.9.1"
               ],
               "grund": "RK2: E-Procurement ist Unterthema, nicht im Baustein genannt."
+            },
+            {
+              "text": "Weite Definition von Software: Nicht nur die Programme, sondern auch festgelegte Abläufe, die Dokumentation und die Daten, die für den Betrieb eines Rechnersystems nötig sind.",
+              "kurz": "Weite Definition von Software",
+              "quellen": [
+                "buch:GS-5.1.1"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+            },
+            {
+              "text": "Unterstützungssoftware: Sie hilft beim Entwickeln von Software (z. B. Compiler, Editor, Debugger) oder erbringt Leistungen, die an keine bestimmte Anwendung gebunden sind.",
+              "kurz": "Unterstützungssoftware: Compiler, Editor, Debugger",
+              "quellen": [
+                "buch:GS-5.1.1"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ],
           "hinweis": "Leistungsmerkmale aus einem englischen Text (2022F-A4-a) stehen im Ordner Kunde, Markt und Unternehmen, digitale Rechnungen (2025H-A2-a) im Ordner Wirtschaftlichkeit und Verträge."
@@ -343,16 +341,6 @@
               ]
             },
             {
-              "id": "AP1-5-1-3-K7",
-              "text": "Du kannst den Aufbau einer Virtual Desktop Infrastructure (VDI) erklären: Jeder Desktop läuft als virtuelle Maschine auf einem Server, ein Connection Broker verbindet den Benutzer über Client-Software oder Browser mit seiner VM, und weil die Sitzung auf dem Server läuft, bleibt sie bei einem Abbruch der Verbindung erhalten.",
-              "kurz": "Aufbau einer Virtual Desktop Infrastructure",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.7.3-S237",
-                "buch:GS-2.7.3-S239"
-              ]
-            },
-            {
               "id": "AP1-5-1-3-K8",
               "text": "Du kannst Vor- und Nachteile virtueller Desktops erläutern: zentrale Verwaltung, günstige Endgeräte, Zugriff von beliebigen (auch privaten) Geräten und weniger Angriffsfläche am Arbeitsplatz gegenüber der Abhängigkeit von einer stabilen Verbindung mit genug Bandbreite in beide Richtungen, eingeschränkten Freiheiten der Nutzer und der Bindung an einen Anbieter.",
               "kurz": "Vor- und Nachteile virtueller Desktops",
@@ -397,6 +385,14 @@
                 "buch:GS-4.4.1"
               ],
               "grund": "D8: Container ohne Katalog-Baustein; Unterthema von Virtualisierung."
+            },
+            {
+              "text": "Aufbau einer Virtual Desktop Infrastructure: Jeder Desktop läuft als virtuelle Maschine auf einem Server, ein Connection Broker verbindet den Benutzer über Client-Software oder Browser mit seiner VM, und weil die Sitzung auf dem Server läuft, bleibt sie bei einem Abbruch der Verbindung erhalten.",
+              "kurz": "Aufbau einer Virtual Desktop Infrastructure",
+              "quellen": [
+                "buch:GS-2.7.3"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ],
           "hinweis": "Das kundengerechte Beschreiben von Cloud-Leistungen (2022F-A1-b) steht im Ordner Kunde, Markt und Unternehmen (AP1-2-2-4)."
@@ -960,15 +956,6 @@
               ]
             },
             {
-              "id": "AP1-5-2-4-K5",
-              "text": "Du kannst die zwei Arten des Customizings unterscheiden: Bei der Konfiguration werden passende Module der Standardsoftware ausgewählt und eingerichtet, bei der Parametrisierung werden über Parameter vorhandene Funktionen ein- oder ausgeschaltet; in beiden Fällen bleibt der Quellcode unverändert.",
-              "kurz": "Konfiguration gegen Parametrisierung",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-5.1.1-S471"
-              ]
-            },
-            {
               "id": "AP1-5-2-4-K6",
               "text": "Du kannst für einen Anpassungsbedarf beurteilen, welche Stufe reicht: Customizing, wenn Einstellungen genügen; Erweiterungsprogrammierung, wenn eigene Programmteile über definierte Schnittstellen angebunden werden müssen; Neuentwicklung als Individualsoftware nur, wenn beides nicht ausreicht – denn vorhandene Software anzupassen ist meist günstiger und schneller als neu zu entwickeln.",
               "kurz": "Customizing, Erweiterung oder Neuentwicklung",
@@ -987,6 +974,14 @@
                 "lernzettel:fi-de-2025"
               ],
               "grund": "Steht im Lernzettel; Installation und Updates gehören nicht zur Anpassung (AP1.04.05.4), Paketmanager stehen weder im Katalog noch in einem Beleg (P16)."
+            },
+            {
+              "text": "Konfiguration gegen Parametrisierung: Bei der Konfiguration werden passende Module der Standardsoftware ausgewählt und eingerichtet, bei der Parametrisierung werden über Parameter vorhandene Funktionen ein- oder ausgeschaltet; in beiden Fällen bleibt der Quellcode unverändert.",
+              "kurz": "Konfiguration gegen Parametrisierung",
+              "quellen": [
+                "buch:GS-5.1.1"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ]
         },
@@ -1082,15 +1077,6 @@
               ]
             },
             {
-              "id": "AP1-5-2-5-K9",
-              "text": "Du kannst Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und rund um die Uhr zuverlässig zu laufen, und steckt meist in einem 19-Zoll-Gehäuse im Serverschrank.",
-              "kurz": "Serverhardware gegen Arbeitsplatzrechner",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-3.2.4-S294"
-              ]
-            },
-            {
               "id": "AP1-5-2-5-K10",
               "text": "Du kannst typischen Servern ihren Dienst zuordnen: Fileserver (Dateiablage), Printserver (Drucken), Mailserver (E-Mail), DNS-Server (Namensauflösung), Webserver (Webseiten), Anwendungsserver (z. B. Warenwirtschaft), NAS (Speicher im Netz) und Terminalserver (Arbeitssitzungen für Thin Clients).",
               "kurz": "Typische Server und ihr Dienst",
@@ -1127,6 +1113,14 @@
                 "buch:GS-2.4.13"
               ],
               "grund": "D8: CMS ohne Katalog-Baustein; steht schon in der Kür des Stichpunkts."
+            },
+            {
+              "text": "Serverhardware gegen Arbeitsplatzrechner: Serverhardware ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und rund um die Uhr zuverlässig zu laufen, und steckt meist in einem 19-Zoll-Gehäuse im Serverschrank.",
+              "kurz": "Serverhardware gegen Arbeitsplatzrechner",
+              "quellen": [
+                "buch:GS-3.2.4"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ]
         }
@@ -1449,7 +1443,10 @@
       "buch:FS2-3.3.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.3.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
       "buch:FS2-3.4.1": "Lehrbuch Westermann „IT-Berufe“ FS2 3.4.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
       "buch:FS2-1.4.4": "Lehrbuch Westermann „IT-Berufe“ FS2 1.4.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
-      "buch:GS-2.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 2.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür"
+      "buch:GS-2.1.4": "Lehrbuch Westermann „IT-Berufe“ GS 2.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8: Buch-Themen ohne Katalogbezug als Kür",
+      "buch:GS-5.1.1": "Lehrbuch Westermann „IT-Berufe“ GS 5.1.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-2.7.3": "Lehrbuch Westermann „IT-Berufe“ GS 2.7.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+      "buch:GS-3.2.4": "Lehrbuch Westermann „IT-Berufe“ GS 3.2.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
     },
     "hinweisabgleich": {
       "stand": "2026-10-13",
@@ -2146,11 +2143,8 @@
         "stand": "2026-10-16",
         "regelwerk": "2.1",
         "neue_aussagen": [
-          "AP1-5-1-1-K8",
-          "AP1-5-1-1-K9",
           "AP1-5-1-1-K10",
           "AP1-5-1-1-K11",
-          "AP1-5-1-3-K7",
           "AP1-5-1-3-K8",
           "AP1-5-1-5-K1",
           "AP1-5-1-5-K2",
@@ -2159,10 +2153,8 @@
           "AP1-5-1-4-K8",
           "AP1-5-1-4-K9",
           "AP1-5-2-2-K9",
-          "AP1-5-2-4-K5",
           "AP1-5-2-4-K6",
           "AP1-5-2-5-K8",
-          "AP1-5-2-5-K9",
           "AP1-5-2-5-K10"
         ],
         "neue_stichpunkte": [
@@ -2192,7 +2184,12 @@
           "AP1-5-1-4",
           "AP1-5-1-4",
           "AP1-5-2-5",
-          "AP1-5-2-1"
+          "AP1-5-2-1",
+          "AP1-5-1-1",
+          "AP1-5-1-1",
+          "AP1-5-1-3",
+          "AP1-5-2-4",
+          "AP1-5-2-5"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
@@ -2235,6 +2232,33 @@
             "sp": "AP1-5-2-5",
             "text": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Überschriften, Absätze, Listen, Tabellen, Links, Bilder mit Alternativtext, Formulare), aus CSS für das Aussehen – am besten in einer externen Datei, die viele Seiten teilen – und aus JavaScript, einer eigenständigen, im Browser laufenden Sprache, die auf Ereignisse wie Klicks reagiert und Eingaben sofort prüfen kann. Diese Prüfung ersetzt die auf dem Server nicht, weil sich der Browser umgehen lässt, und weil Browser HTML und CSS unterschiedlich umsetzen, testet man eine Seite in mehreren Browsern.",
             "grund": "verschoben nach AP1-8-1-3 (D8: nächstpassender Stichpunkt, V2-Prüfung AP1-b Nr. 27)"
+          }
+        ],
+        "pflicht_gestrichen": [
+          {
+            "id": "AP1-5-1-1-K8",
+            "text": "Du kannst erklären, was nach der weiten Definition alles zur Software gehört: nicht nur die Programme, sondern auch festgelegte Abläufe, die Dokumentation und die Daten, die für den Betrieb eines Rechnersystems nötig sind.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-5-1-1-K9",
+            "text": "Du kannst Unterstützungssoftware von System- und Anwendungssoftware unterscheiden: Sie hilft beim Entwickeln von Software (z. B. Compiler, Editor, Debugger) oder erbringt Leistungen, die an keine bestimmte Anwendung gebunden sind.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-5-1-3-K7",
+            "text": "Du kannst den Aufbau einer Virtual Desktop Infrastructure (VDI) erklären: Jeder Desktop läuft als virtuelle Maschine auf einem Server, ein Connection Broker verbindet den Benutzer über Client-Software oder Browser mit seiner VM, und weil die Sitzung auf dem Server läuft, bleibt sie bei einem Abbruch der Verbindung erhalten.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-5-2-4-K5",
+            "text": "Du kannst die zwei Arten des Customizings unterscheiden: Bei der Konfiguration werden passende Module der Standardsoftware ausgewählt und eingerichtet, bei der Parametrisierung werden über Parameter vorhandene Funktionen ein- oder ausgeschaltet; in beiden Fällen bleibt der Quellcode unverändert.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-5-2-5-K9",
+            "text": "Du kannst Serverhardware von einem Arbeitsplatzrechner unterscheiden: Sie ist darauf ausgelegt, viele gleichzeitige Zugriffe schnell zu bedienen und rund um die Uhr zuverlässig zu laufen, und steckt meist in einem 19-Zoll-Gehäuse im Serverschrank.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
           }
         ]
       }

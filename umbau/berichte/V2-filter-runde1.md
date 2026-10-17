@@ -2,7 +2,9 @@
 
 Stand 17.10.2026. Auftrag: `AUFTRAG.md` (Prüfer-Filter Runde 1) mit den Dateien aus `tracker-filter-v2.zip`.
 Ergebnis je Kandidat: [V2-filter-runde1.csv](V2-filter-runde1.csv) (Format `ID;F1;F2;F3;sicher;Vorschlag;Grund`).
-Noch **nicht** in die Inhalte übernommen.
+Übernommen am 17.10.2026 nach Nachprüfung gegen alle 37 Altprüfungen und Abnahme durch den Projektinhaber:
+52 der 57 Vorschläge sind Kür; Pflicht blieben AP1-8-4-1-K9, AP1-2-4-1-K9, PB1-1-1-1-K10, PB1-4-1-1-K7 und
+PB1-7-1-6-K1 (Einzelheiten [V2-bericht.md](V2-bericht.md)).
 
 ## Zahlen
 

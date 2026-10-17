@@ -355,27 +355,6 @@
       "hinten": "- auch nichtfunktionale Anforderungen prüfen (z. B. Antwortzeit, Bedienbarkeit)\n- Tests durch weitere Prüfverfahren wie Reviews ergänzen"
     },
     {
-      "id": "PB1-9-1-3-K5-1",
-      "sp": "PB1-9-1-3",
-      "k": "PB1-9-1-3-K5",
-      "vorne": "Worin unterscheiden sich Walkthrough und Audit?",
-      "hinten": "Bei beiden stellt der Entwickler sein Programm vor.\n- **Walkthrough:** Gutachter fragen spontan, kaum Struktur\n- **Audit:** Prüfer arbeiten eine feste Fragenliste ab"
-    },
-    {
-      "id": "PB1-9-1-3-K5-2",
-      "sp": "PB1-9-1-3",
-      "k": "PB1-9-1-3-K5",
-      "vorne": "Ordne nach Formalität (streng → locker): Review, Inspektion, Walkthrough.",
-      "hinten": "Inspektion (fester Ablauf, Gutachterteam) → Review (weniger formal) → Walkthrough (Vorstellung mit spontanen Fragen)."
-    },
-    {
-      "id": "PB1-9-1-3-K5-3",
-      "sp": "PB1-9-1-3",
-      "k": "PB1-9-1-3-K5",
-      "vorne": "Warum gilt Pair Programming als Form des Code-Reviews?",
-      "hinten": "Während einer programmiert, prüft der zweite den Code laufend mit – der Code wird also ständig von einer zweiten Person begutachtet."
-    },
-    {
       "id": "PB1-9-1-3-K6-1",
       "sp": "PB1-9-1-3",
       "k": "PB1-9-1-3-K6",
@@ -402,34 +381,6 @@
       "k": "PB1-9-1-3-K7",
       "vorne": "Nenne je einen Nachteil von Black-Box- und White-Box-Test.",
       "hinten": "- **Black-Box:** zeigt nicht, wo der Fehler im Code liegt\n- **White-Box:** an den Code gebunden, nach jeder Änderung anzupassen, erst mit fertigem Code vollständig"
-    },
-    {
-      "id": "PB1-9-1-3-K8-1",
-      "sp": "PB1-9-1-3",
-      "k": "PB1-9-1-3-K8",
-      "vorne": "Warum kann derselbe Test einmal als White-Box- und einmal als Black-Box-Test gelten?",
-      "hinten": "Es kommt auf den Blickwinkel an: Für das ganze System gesehen nutzt der Test Wissen über den inneren Aufbau (White-Box); für die angesprochene Komponente prüft er nur deren Schnittstelle (Black-Box)."
-    },
-    {
-      "id": "PB1-9-1-3-K8-2",
-      "sp": "PB1-9-1-3",
-      "k": "PB1-9-1-3-K8",
-      "vorne": "Warum setzt man Black- und White-Box-Test meist gemeinsam ein?",
-      "hinten": "Black-Box findet fehlende Funktionen gegenüber den Anforderungen, White-Box findet ungetesteten Code und lokalisiert Fehler – erst zusammen ergibt sich eine gute Abdeckung."
-    },
-    {
-      "id": "PB1-9-1-4-K5-1",
-      "sp": "PB1-9-1-4",
-      "k": "PB1-9-1-4-K5",
-      "vorne": "Welches Qualitätsmerkmal prüfen Robustheits-, Recovery- und Stresstest?",
-      "hinten": "Die **Zuverlässigkeit**: Verhalten bei Fehleingaben, Wiederanlauf nach Absturz, Verhalten über der Belastungsgrenze."
-    },
-    {
-      "id": "PB1-9-1-4-K5-2",
-      "sp": "PB1-9-1-4",
-      "k": "PB1-9-1-4-K5",
-      "vorne": "Mit welcher Testart prüfst du die Wartbarkeit, mit welcher die Übertragbarkeit?",
-      "hinten": "- **Wartbarkeit:** Review bzw. statische Codeanalyse\n- **Übertragbarkeit:** Portabilitätstest"
     },
     {
       "id": "PB1-9-1-4-K6-1",
@@ -460,48 +411,6 @@
       "hinten": "Umfang des Tests, benötigte Ressourcen (Personen, Umgebung, Zeit) und welche Bereiche vorrangig getestet werden."
     },
     {
-      "id": "PB1-9-1-5-K7-1",
-      "sp": "PB1-9-1-5",
-      "k": "PB1-9-1-5-K7",
-      "vorne": "Nenne die drei Gruppen von Testdokumenten mit je einem Beispiel.",
-      "hinten": "- **Testkonzept/Testplanung:** z. B. Testplan\n- **Testspezifikation:** z. B. Testfälle\n- **Testberichte:** z. B. Testprotokoll, Abweichungsbericht, Testabschlussbericht"
-    },
-    {
-      "id": "PB1-9-1-5-K7-2",
-      "sp": "PB1-9-1-5",
-      "k": "PB1-9-1-5-K7",
-      "vorne": "Zu welcher Gruppe gehört ein Abweichungsbericht, und was hält er fest?",
-      "hinten": "Zu den **Testberichten**: Er beschreibt eine beim Test gefundene Abweichung vom erwarteten Ergebnis, damit sie behoben und nachgetestet werden kann."
-    },
-    {
-      "id": "PB1-9-1-5-K8-1",
-      "sp": "PB1-9-1-5",
-      "k": "PB1-9-1-5-K8",
-      "vorne": "Welche drei Seiten akzeptieren bei der Abnahme einer Software – mit je einem Prüfpunkt?",
-      "hinten": "- **vertraglich:** Vollständigkeit der vereinbarten Leistungen\n- **Benutzer:** funktionale Anforderungen erfüllt (z. B. im Testbetrieb)\n- **Betreiber:** IT-Sicherheit, Administrationshandbücher"
-    },
-    {
-      "id": "PB1-9-1-5-K8-2",
-      "sp": "PB1-9-1-5",
-      "k": "PB1-9-1-5-K8",
-      "vorne": "Was prüft der künftige Betreiber bei der Abnahme einer Software?",
-      "hinten": "Technische Anforderungen, Daten- und Revisionssicherheit, IT-Sicherheit und die Vollständigkeit der Administrationshandbücher."
-    },
-    {
-      "id": "PB1-9-1-6-K5-1",
-      "sp": "PB1-9-1-6",
-      "k": "PB1-9-1-6-K5",
-      "vorne": "Ordne zu – Entwicklungs- oder Benutzerdokumentation: Pflichtenheft, Installationsanleitung, Datenmodell, Schulungsunterlagen.",
-      "hinten": "- **Entwicklung:** Pflichtenheft (Projektdoku), Datenmodell (Systemdoku)\n- **Benutzer:** Installationsanleitung, Schulungsunterlagen"
-    },
-    {
-      "id": "PB1-9-1-6-K5-2",
-      "sp": "PB1-9-1-6",
-      "k": "PB1-9-1-6-K5",
-      "vorne": "Aus welchen drei Teilen besteht die Entwicklungsdokumentation?",
-      "hinten": "Projektdokumentation, Systemdokumentation und Testdokumentation."
-    },
-    {
       "id": "PB1-9-1-6-K6-1",
       "sp": "PB1-9-1-6",
       "k": "PB1-9-1-6-K6",
@@ -528,20 +437,6 @@
       "k": "PB1-9-1-6-K7",
       "vorne": "Nenne vier Kriterien, an denen du ein gutes Benutzerhandbuch erkennst.",
       "hinten": "- verständlich für die Zielgruppe (Glossar)\n- übersichtlich, keine Textwüsten\n- an den Aufgaben der Benutzer ausgerichtet\n- aktuell, widerspruchsfrei und vollständig"
-    },
-    {
-      "id": "PB1-9-1-6-K8-1",
-      "sp": "PB1-9-1-6",
-      "k": "PB1-9-1-6-K8",
-      "vorne": "Nenne je zwei Vorteile eines gedruckten Handbuchs und einer Online-Dokumentation.",
-      "hinten": "- **gedruckt:** ohne Gerät lesbar, auch bei Netz- oder Systemausfall nutzbar\n- **online:** schnell aktualisierbar, durchsuchbar (auch multimedial, für viele gleichzeitig)"
-    },
-    {
-      "id": "PB1-9-1-6-K8-2",
-      "sp": "PB1-9-1-6",
-      "k": "PB1-9-1-6-K8",
-      "vorne": "Eine Software bekommt jeden Monat ein Update. Gedrucktes Handbuch oder Online-Dokumentation? Begründe.",
-      "hinten": "Online-Dokumentation: Sie lässt sich mit jedem Update sofort anpassen; ein gedrucktes Handbuch wäre nach kurzer Zeit veraltet."
     },
     {
       "id": "PB1-9-1-6-K9-1",
@@ -851,21 +746,6 @@
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S626)"
     },
     {
-      "id": "PB1-9-1-3-K5-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S628)"
-    },
-    {
-      "id": "PB1-9-1-3-K5-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S628)"
-    },
-    {
-      "id": "PB1-9-1-3-K5-3",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S628)"
-    },
-    {
       "id": "PB1-9-1-3-K6-1",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S629)"
@@ -884,26 +764,6 @@
       "id": "PB1-9-1-3-K7-2",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S201, buch:FS-3.8.1-S293)"
-    },
-    {
-      "id": "PB1-9-1-3-K8-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S202)"
-    },
-    {
-      "id": "PB1-9-1-3-K8-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-2.4.1-S202)"
-    },
-    {
-      "id": "PB1-9-1-4-K5-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S630)"
-    },
-    {
-      "id": "PB1-9-1-4-K5-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S630)"
     },
     {
       "id": "PB1-9-1-4-K6-1",
@@ -926,36 +786,6 @@
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.5.1-S100)"
     },
     {
-      "id": "PB1-9-1-5-K7-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S632, buch:FS2-4.2.4-S279)"
-    },
-    {
-      "id": "PB1-9-1-5-K7-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:GS-5.9.1-S632, buch:FS2-4.2.4-S279)"
-    },
-    {
-      "id": "PB1-9-1-5-K8-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.3-S298)"
-    },
-    {
-      "id": "PB1-9-1-5-K8-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS-3.8.3-S298)"
-    },
-    {
-      "id": "PB1-9-1-6-K5-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.4-S278, buch:GS-5.10.1-S639)"
-    },
-    {
-      "id": "PB1-9-1-6-K5-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-4.2.4-S278, buch:GS-5.10.1-S639)"
-    },
-    {
       "id": "PB1-9-1-6-K6-1",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S105, buch:FS2-4.2.4-S279, buch:GS-5.10.1-S640)"
@@ -974,16 +804,6 @@
       "id": "PB1-9-1-6-K7-2",
       "entscheidung": "neu",
       "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S106, buch:FS2-1.6-S107, buch:GS-5.10.2-S642)"
-    },
-    {
-      "id": "PB1-9-1-6-K8-1",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S107)"
-    },
-    {
-      "id": "PB1-9-1-6-K8-2",
-      "entscheidung": "neu",
-      "grund": "Regelwerk v2.0: neue Buch-Aussage (buch:FS2-1.6-S107)"
     },
     {
       "id": "PB1-9-1-6-K9-1",

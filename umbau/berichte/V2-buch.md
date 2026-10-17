@@ -6,9 +6,9 @@ Erzeugt mit `node tools/umbau/buch-pruefen.mjs`. Nicht von Hand bearbeiten.
 
 | Band | Kapitel | davon Filter (ganz) | Kernpunkte | abgedeckt | neu | Filter | Kür |
 |---|---|---|---|---|---|---|---|
-| GS | 150 | 3 | 1473 | 958 | 0 | 174 | 341 |
-| FS | 92 | 0 | 912 | 505 | 0 | 139 | 268 |
-| FS2 | 56 | 1 | 488 | 252 | 0 | 80 | 156 |
+| GS | 150 | 3 | 1473 | 926 | 0 | 174 | 373 |
+| FS | 92 | 0 | 912 | 486 | 0 | 139 | 287 |
+| FS2 | 56 | 1 | 488 | 243 | 0 | 80 | 165 |
 
-Buch-Herkunft in Können-Aussagen: 758; Kür-Quellen aus dem Buch: 495.
+Buch-Herkunft in Können-Aussagen: 697; Kür-Quellen aus dem Buch: 553.
 

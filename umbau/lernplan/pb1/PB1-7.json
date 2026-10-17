@@ -291,34 +291,6 @@
        ]
       },
       {
-       "id": "PB1-7-1-3-K5",
-       "text": "Du kannst Argumente für und gegen die Veröffentlichung von Daten als Open Data erläutern: dafür, dass mehr Menschen die Daten nutzen und daraus neue Anwendungen entstehen und dass mit öffentlichem Geld erhobene Daten der Allgemeinheit zustehen; dagegen Einnahmeverlust für den Urheber, Zweifel an Qualität und Pflege, Wettbewerbsverzerrung, leichterer Missbrauch, Datenschutzbedenken und ungeklärte Haftung bei fehlerhaften Daten.",
-       "kurz": "Open Data: Argumente dafür und dagegen",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.2.2-S171"
-       ]
-      },
-      {
-       "id": "PB1-7-1-3-K6",
-       "text": "Du kannst Formen der Heterogenität von Datenquellen an Beispielen unterscheiden: technisch (andere Zugriffsschnittstelle, etwa SQL gegenüber einer Web-API), syntaktisch (anderes Format desselben Werts, etwa 20.03.2026 gegenüber 2026-03-20), im Datenmodell (relational gegenüber dokumentenorientiert), strukturell (gleiches Modell, andere Aufteilung, etwa die Adresse in eigener Tabelle) und semantisch (andere Bedeutung oder Benennung, etwa „Ort“ gegenüber „Location“).",
-       "kurz": "Formen heterogener Datenquellen",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.2.3-S177"
-       ]
-      },
-      {
-       "id": "PB1-7-1-3-K7",
-       "text": "Du kannst materialisierte und virtuelle Informationsintegration unterscheiden: Beide überführen Daten heterogener Quellen in eine einheitliche Struktur und beseitigen dabei Doppeltes, das sich vorher zum Gegenprüfen nutzen lässt; bei der materialisierten werden die Daten vorab in eine zentrale Datenbasis kopiert (z. B. Data Warehouse) – schnelle Abfragen und meist bessere Qualität, aber nicht immer aktuell und aufwendig, wenn Quellen hinzukommen –, bei der virtuellen bleiben sie in den Quellen und werden erst bei jeder Anfrage zusammengeführt – stets aktuell und flexibel, aber langsamer und meist von geringerer Qualität.",
-       "kurz": "Materialisierte und virtuelle Integration",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.2.3-S177",
-        "buch:FS-3.2.3-S178"
-       ]
-      },
-      {
        "id": "PB1-7-1-3-K8",
        "text": "Du kannst Data Warehouse und Data Lake unterscheiden: Ein Data Warehouse ist eine zentrale Datenbank, in die Daten mehrerer Quellen vor dem Laden aufbereitet und in ein festes, strukturiertes Modell übernommen werden, optimiert für Berichte und Analysen; ein Data Lake nimmt sehr große Mengen auch unstrukturierter Daten aus vielfältigen Quellen im Rohformat auf, und ihre Struktur wird erst bei der Auswertung festgelegt.",
        "kurz": "Data Warehouse und Data Lake im Vergleich",
@@ -357,6 +329,30 @@
         "buch:FS2-3.2.1"
        ],
        "grund": "RK2: Einteilung der Datenquellen ist Unterthema; das Zusammenführen trägt PB1-7-1-3-K1"
+      },
+      {
+       "text": "Open Data veröffentlichen, Pro und Contra: Dafür spricht, dass mehr Menschen die Daten nutzen und daraus neue Anwendungen entstehen und dass mit öffentlichem Geld erhobene Daten der Allgemeinheit zustehen; dagegen sprechen Einnahmeverlust für den Urheber, Zweifel an Qualität und Pflege, Wettbewerbsverzerrung, leichterer Missbrauch, Datenschutzbedenken und ungeklärte Haftung bei fehlerhaften Daten.",
+       "kurz": "Open Data: Argumente dafür und dagegen",
+       "quellen": [
+        "buch:FS-3.2.2"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      },
+      {
+       "text": "Formen heterogener Datenquellen: Technisch (andere Zugriffsschnittstelle, etwa SQL gegenüber einer Web-API), syntaktisch (anderes Format desselben Werts, etwa 20.03.2026 gegenüber 2026-03-20), im Datenmodell (relational gegenüber dokumentenorientiert), strukturell (gleiches Modell, andere Aufteilung, etwa die Adresse in eigener Tabelle) und semantisch (andere Bedeutung oder Benennung, etwa „Ort“ gegenüber „Location“).",
+       "kurz": "Formen heterogener Datenquellen",
+       "quellen": [
+        "buch:FS-3.2.3"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      },
+      {
+       "text": "Materialisierte und virtuelle Integration: Beide überführen Daten heterogener Quellen in eine einheitliche Struktur und beseitigen dabei Doppeltes, das sich vorher zum Gegenprüfen nutzen lässt; bei der materialisierten werden die Daten vorab in eine zentrale Datenbasis kopiert (z. B. Data Warehouse) – schnelle Abfragen und meist bessere Qualität, aber nicht immer aktuell und aufwendig, wenn Quellen hinzukommen –, bei der virtuellen bleiben sie in den Quellen und werden erst bei jeder Anfrage zusammengeführt – stets aktuell und flexibel, aber langsamer und meist von geringerer Qualität.",
+       "kurz": "Materialisierte und virtuelle Integration",
+       "quellen": [
+        "buch:FS-3.2.3"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -766,7 +762,8 @@
    "buch:FS2-2.3.7": "Lehrbuch Westermann „IT-Berufe“ FS2 2.3.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
    "buch:GS-5.7.7": "Lehrbuch Westermann „IT-Berufe“ GS 5.7.7 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
    "buch:FS2-1.2.1": "Lehrbuch Westermann „IT-Berufe“ FS2 1.2.1 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
-   "buch:FS-1.1.4": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
+   "buch:FS-1.1.4": "Lehrbuch Westermann „IT-Berufe“ FS 1.1.4 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür",
+   "buch:FS-3.2.3": "Lehrbuch Westermann „IT-Berufe“ FS 3.2.3 (nur lokal unter quellen/lehrbuch/, E10/D9); Regelwerk v2.0, D8/RK1: Buch-Themen ohne Pflicht als Kür"
   },
   "hinweisabgleich": {
    "stand": "2026-10-14",
@@ -860,9 +857,9 @@
      ],
      "ring": "Kern",
      "wo": [
-      "PB1-7-1-3-K7",
       "PB1-7-1-3-K8"
-     ]
+     ],
+     "notiz": "PB1-7-1-3-K7 ist Kür (Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft))"
     },
     {
      "thema": "Data Lake, OpenData, API-Schnittstellen",
@@ -1054,9 +1051,6 @@
      "PB1-7-1-2-K6",
      "PB1-7-1-2-K7",
      "PB1-7-1-3-K4",
-     "PB1-7-1-3-K5",
-     "PB1-7-1-3-K6",
-     "PB1-7-1-3-K7",
      "PB1-7-1-3-K8",
      "PB1-7-1-3-K9",
      "PB1-7-1-4-K7",
@@ -1085,7 +1079,10 @@
      "PB1-7-1-2",
      "PB1-7-1-4",
      "PB1-7-1-4",
-     "PB1-7-1-5"
+     "PB1-7-1-5",
+     "PB1-7-1-3",
+     "PB1-7-1-3",
+     "PB1-7-1-3"
     ],
     "grenzen_gestrichen": [],
     "filter": [],
@@ -1102,6 +1099,23 @@
     "hinweise": [
      "PB1-7-1-6",
      "PB1-7-1-5"
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "PB1-7-1-3-K5",
+      "text": "Du kannst Argumente für und gegen die Veröffentlichung von Daten als Open Data erläutern: dafür, dass mehr Menschen die Daten nutzen und daraus neue Anwendungen entstehen und dass mit öffentlichem Geld erhobene Daten der Allgemeinheit zustehen; dagegen Einnahmeverlust für den Urheber, Zweifel an Qualität und Pflege, Wettbewerbsverzerrung, leichterer Missbrauch, Datenschutzbedenken und ungeklärte Haftung bei fehlerhaften Daten.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-7-1-3-K6",
+      "text": "Du kannst Formen der Heterogenität von Datenquellen an Beispielen unterscheiden: technisch (andere Zugriffsschnittstelle, etwa SQL gegenüber einer Web-API), syntaktisch (anderes Format desselben Werts, etwa 20.03.2026 gegenüber 2026-03-20), im Datenmodell (relational gegenüber dokumentenorientiert), strukturell (gleiches Modell, andere Aufteilung, etwa die Adresse in eigener Tabelle) und semantisch (andere Bedeutung oder Benennung, etwa „Ort“ gegenüber „Location“).",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-7-1-3-K7",
+      "text": "Du kannst materialisierte und virtuelle Informationsintegration unterscheiden: Beide überführen Daten heterogener Quellen in eine einheitliche Struktur und beseitigen dabei Doppeltes, das sich vorher zum Gegenprüfen nutzen lässt; bei der materialisierten werden die Daten vorab in eine zentrale Datenbasis kopiert (z. B. Data Warehouse) – schnelle Abfragen und meist bessere Qualität, aber nicht immer aktuell und aufwendig, wenn Quellen hinzukommen –, bei der virtuellen bleiben sie in den Quellen und werden erst bei jeder Anfrage zusammengeführt – stets aktuell und flexibel, aber langsamer und meist von geringerer Qualität.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     }
     ]
    }
   ]

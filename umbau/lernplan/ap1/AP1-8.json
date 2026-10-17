@@ -1688,15 +1688,6 @@
               "herkunft": [
                 "buch:GS-5.8.3-S600"
               ]
-            },
-            {
-              "id": "AP1-8-4-5-K9",
-              "text": "Du kannst erklären, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
-              "kurz": "Sorgfältiger Datenbankentwurf auch bei Kleinprojekten",
-              "stufe": 2,
-              "herkunft": [
-                "buch:FS-3.7.2-S268"
-              ]
             }
           ],
           "grenzen": [
@@ -1718,6 +1709,14 @@
                 "buch:FS-3.7.2"
               ],
               "grund": "RK2: Ergebnisse des logischen und physischen Entwurfs führen in Normalisierung und SQL (AP2)"
+            },
+            {
+              "text": "Sorgfältiger Datenbankentwurf auch bei Kleinprojekten: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
+              "kurz": "Sorgfältiger Datenbankentwurf auch bei Kleinprojekten",
+              "quellen": [
+                "buch:FS-3.7.2"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ]
         },
@@ -1779,15 +1778,6 @@
               "herkunft": [
                 "buch:FS2-1.3.4-S42"
               ]
-            },
-            {
-              "id": "AP1-8-4-3-K6",
-              "text": "Du kannst Anforderungen der Barrierefreiheit wie ausreichenden Kontrast oder die Bedienung per Tastatur den vier Grundprinzipien barrierefreier Oberflächen zuordnen: wahrnehmbar, bedienbar, verständlich und robust.",
-              "kurz": "Vier Grundprinzipien der Barrierefreiheit",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-2.4.12-S188"
-              ]
             }
           ],
           "grenzen": [
@@ -1809,6 +1799,14 @@
                 "lernzettel:fi-de-2024"
               ],
               "grund": "Weder im Katalog noch in einer Prüfung, keine Puffer-Regel; vom Katalog nicht ausgeschlossen."
+            },
+            {
+              "text": "Vier Grundprinzipien der Barrierefreiheit: Wahrnehmbar, bedienbar, verständlich und robust.",
+              "kurz": "Vier Grundprinzipien der Barrierefreiheit",
+              "quellen": [
+                "buch:GS-2.4.12"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ]
         },
@@ -2972,11 +2970,11 @@
           "quellen": [
             "buch:GS-2.4.12"
           ],
-          "ring": "Kern",
+          "ring": "Kür",
           "wo": [
-            "AP1-8-4-3-K6"
+            "AP1-8-4-3"
           ],
-          "notiz": "Regelwerk v2.x, D8/RK1; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 28): bisher Kür, jetzt Pflicht (AP1-8-4-3-K6)"
+          "notiz": "Regelwerk v2.x, D8/RK1; Regelwerk v2.2, Schritt 6 (V2-Prüfung AP1-b Nr. 28): bisher Kür, jetzt Pflicht (AP1-8-4-3-K6); AP1-8-4-3-K6 ist Kür (Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft))"
         },
         {
           "thema": "Webseiten bestehen aus HTML, das den Inhalt als verschachtelte Elemente gliedert (Grundgerüst mit head und body, Übersch",
@@ -3283,10 +3281,8 @@
           "AP1-8-4-5-K6",
           "AP1-8-4-5-K7",
           "AP1-8-4-5-K8",
-          "AP1-8-4-5-K9",
           "AP1-8-4-3-K5",
-          "AP1-8-2-6-K10",
-          "AP1-8-4-3-K6"
+          "AP1-8-2-6-K10"
         ],
         "neue_stichpunkte": [
           {
@@ -3324,7 +3320,9 @@
           "AP1-8-4-5",
           "AP1-8-1-3",
           "AP1-8-2-5",
-          "AP1-8-2-5"
+          "AP1-8-2-5",
+          "AP1-8-4-5",
+          "AP1-8-4-3"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
@@ -3407,6 +3405,16 @@
             "id": "AP1-8-2-5-K6",
             "text": "Du kannst den Aufbau einer einfach verketteten Liste erklären: Jeder Knoten enthält einen Wert und einen Verweis auf den nächsten Knoten, ein Kopfverweis zeigt auf den ersten und der letzte verweist auf nichts; Einfügen geht schnell durch Umhängen von Verweisen, der Zugriff auf eine bestimmte Position erfordert aber das Durchlaufen ab dem Anfang.",
             "grund": "P61 (Projektinhaber, 16.10.2026): Speicheraufbau ist die zweite Ebene unter dem Baustein AP1.04.06.3 (RK2)"
+          },
+          {
+            "id": "AP1-8-4-5-K9",
+            "text": "Du kannst erklären, warum der Entwurf einer Datenbank auch bei kleinen Projekten sorgfältig sein muss: Strukturänderungen an einer Datenbank im Betrieb sind aufwendig, weil Daten und Anwendungen mit angepasst werden müssen, und schnellere Hardware überdeckt Schwächen des Entwurfs nur eine Zeit lang.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-8-4-3-K6",
+            "text": "Du kannst Anforderungen der Barrierefreiheit wie ausreichenden Kontrast oder die Bedienung per Tastatur den vier Grundprinzipien barrierefreier Oberflächen zuordnen: wahrnehmbar, bedienbar, verständlich und robust.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
           }
         ]
       }

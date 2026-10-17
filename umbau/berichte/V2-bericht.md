@@ -204,6 +204,24 @@ P64: PB1-1-2-4-K4), AP1-7-2-1-K10 beschreibt jetzt das Sicherheitskonzept (P66),
 (P69), Rechtsstand-Hinweise in drei Erklärungen (P66, P67). Neue Prüfung P57 in `lernplan-pruefen.mjs`, Werkzeug
 `tools/umbau/v2-pflicht-zu-kuer.mjs`.
 
+Prüfer-Filter (Projektinhaber, 17.10.2026): Alle 512 reinen Buch-Aussagen wurden je Stichpunkt gegen Katalogzeilen,
+Operatoren, Altprüfungen und Pflicht-Aussagen bewertet (drei Ja/Nein-Fragen: Katalogdeckung, Prüfungsaufgabe, Grundlage;
+Kür nur bei dreimal Nein und sicher), danach gegen die Texte aller 37 Altprüfungen nachgeprüft und vom Projektinhaber
+einzeln abgenommen. 52 Aussagen wurden Kür (Grund je Aussage in `meta.v2[].pflicht_gestrichen`); bewusst Pflicht blieben
+AP1-8-4-1-K9 und AP1-2-4-1-K9 (Begriffe in Altprüfungen bzw. Pflicht-Aussagen), PB1-1-1-1-K10 und PB1-4-1-1-K7
+(Entscheidung Projektinhaber) sowie PB1-7-1-6-K1 (F3: sonst nur zwei Aussagen am Stichpunkt). Dazu vier Karten entfernt,
+die nur die Antwort einer anderen Karte derselben Aussage rückwärts abfragten (Protokoll „entfernt“). Stand danach:
+
+| Raum | Aussagen | mit Buch-Herkunft | Kür |
+|---|---|---|---|
+| AP1 | 814 | 236 | 285 |
+| PB1 | 443 | 199 | 189 |
+| PB2 | 114 | 24 | 22 |
+| WISO | 382 | 61 | 55 |
+| **gesamt** | **1.753** | **520** | **551** |
+
+Karten: 3.832 (vorher 3.932).
+
 ## Zwischenschritt v2.2: Stichwort `kurz` (16.10.2026, fertig)
 
 Vorgabe des Projektinhabers vor PB1: Jede Können-Aussage und jeder Kür-Eintrag bekommt ein Stichwort `kurz`

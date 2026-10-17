@@ -5,20 +5,20 @@
   "regelwerk_version": "2.2",
   "hinweis": "Eingefrorener Raum (E3). Spätere Räume importieren Stichpunkte mit baut_auf und ergänzen nur, was neu oder tiefer ist (E2). „erreicht“ = höchste Stufe einer Können-Aussage je Baustein in diesem Raum.",
   "stichpunkte": 76,
-  "koennen": 464,
+  "koennen": 443,
   "quellen": {
-   "PB1-1.json": "6aa05650e7001805",
-   "PB1-10.json": "57e49bd59117b283",
+   "PB1-1.json": "ed30223df5149c37",
+   "PB1-10.json": "f044d416cd94f87f",
    "PB1-11.json": "a6d66c904aa28d8e",
-   "PB1-12.json": "6200d0f4eed7e199",
-   "PB1-2.json": "46f2556e480b72a7",
-   "PB1-3.json": "2e191c1a11925e1a",
+   "PB1-12.json": "39048f57f27500f3",
+   "PB1-2.json": "9213f15601fab997",
+   "PB1-3.json": "6929fb0d0082b886",
    "PB1-4.json": "14a58175665d141e",
-   "PB1-5.json": "a4700b8d39058e0f",
+   "PB1-5.json": "b4aff5f61fa6af32",
    "PB1-6.json": "f87b21fdae4eb869",
-   "PB1-7.json": "04ce4db0893334ed",
-   "PB1-8.json": "4bab0d65fe4674b4",
-   "PB1-9.json": "11519187da35eb8e"
+   "PB1-7.json": "2bcc8beddb811150",
+   "PB1-8.json": "adaabee76a237775",
+   "PB1-9.json": "e776c617d8ae9939"
   }
  },
  "stichpunkte": [
@@ -75,11 +75,6 @@
      "id": "PB1-1-1-1-K8",
      "stufe": 2,
      "kurz": "Kanban und Scrum unterscheiden: Kanban kommt mit wenigen Regeln aus, ohne feste Rollen und ohne vorgeschriebene Iterationen, arbeitet in einem fortlaufenden Fluss und passt auch für Daueraufgaben wie Support oder Wartung; Scrum schreibt Rollen, Sprints mit festen Ereignissen und ein geordnetes Product Backlog vor. Gemeinsam ist beiden die Transparenz und das Ziehen der Aufgaben aus einer Liste"
-    },
-    {
-     "id": "PB1-1-1-1-K9",
-     "stufe": 2,
-     "kurz": "Extreme Programming beschreiben: sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen"
     },
     {
      "id": "PB1-1-1-1-K10",
@@ -247,11 +242,6 @@
      "id": "PB1-1-2-1-K7",
      "stufe": 2,
      "kurz": "erklären, warum Hardware und Entwicklungssoftware in der Kalkulation eines Softwareprojekts meist nur anteilig angesetzt werden – Rechner und Lizenzen dienen auch anderen Projekten und werden über ihre Nutzungsdauer verteilt – und wann sie voll zählen: bei Spezialhardware, die eigens für dieses Projekt beschafft wird"
-    },
-    {
-     "id": "PB1-1-2-1-K8",
-     "stufe": 2,
-     "kurz": "Projektrisiken den Arten personell, zeitlich-finanziell, technologisch und organisatorisch zuordnen, zum Beispiel Ausfall des einzigen Datenbankexperten (personell), zu knapp geplanter Termin oder knappes Budget (zeitlich-finanziell), noch unerprobtes Framework (technologisch) und unklare Zuständigkeiten oder Missverständnisse mit dem Auftraggeber (organisatorisch)"
     },
     {
      "id": "PB1-1-2-1-K9",
@@ -435,11 +425,6 @@
      "kurz": "Ziele von IT-Sicherheitskriterien definieren: Richtschnur für Entwickler (Sicherheit von Beginn an), objektive Bewertung von Systemen (z. B. nach IT-Grundschutz), Unterstützung der Anwender bei der Auswahl eines geeigneten Sicherheitsprodukts"
     },
     {
-     "id": "PB1-10-1-1-K5",
-     "stufe": 4,
-     "kurz": "das Schadenspotenzial eines Sicherheitsvorfalls bei einem cyber-physischen System einschätzen: Über Imageschaden, wirtschaftlichen Schaden und Datenverlust hinaus können manipulierte oder ausgefallene Steuerungen Menschen gefährden, Anlagen zerstören und Versorgungsinfrastruktur lahmlegen; deshalb werden dort Betriebssicherheit (Safety) und Informationssicherheit (Security) gemeinsam geplant"
-    },
-    {
      "id": "PB1-10-1-1-K6",
      "stufe": 2,
      "kurz": "Entwurfsprinzipien sicherer Software erklären: Schutz in mehreren Schichten, sodass jede Schicht eigene Maßnahmen hat (Zugriffskontrolle, Authentifizierung, Prüfung der Ein- und Ausgaben, Fehlerbehandlung, Protokollierung, Verschlüsselung) und keine einzelne Schwachstelle alles öffnet; sicherer Ausfall, bei dem auch ein Fehler Vertraulichkeit und Integrität nicht preisgibt und die Software mit sicheren Voreinstellungen ausgeliefert wird; benutzerfreundliche Sicherheit, weil Nutzer lästige Schutzmaßnahmen sonst umgehen"
@@ -486,11 +471,6 @@
      "id": "PB1-10-1-2-K5",
      "stufe": 2,
      "kurz": "DoS und DDoS unterscheiden: Beim Denial of Service überlastet ein Angreifer Rechenzeit, Speicher oder Bandbreite eines Dienstes, bis berechtigte Nutzer ihn nicht mehr erreichen; beim Distributed Denial of Service kommt die Last gleichzeitig von vielen Geräten eines Botnetzes, also von Rechnern und IoT-Geräten, die mit Schadsoftware befallen sind und zentral ferngesteuert werden"
-    },
-    {
-     "id": "PB1-10-1-2-K6",
-     "stufe": 2,
-     "kurz": "den Begriff Angriffsvektor erklären: der Weg samt Technik, über den ein Angreifer in ein System gelangt, zum Beispiel ein verseuchter E-Mail-Anhang, eine präparierte Webseite, ein offener Netzwerkdienst, ein USB-Stick, manipulierte Hardware, eine verwundbare Bibliothek oder ein getäuschter Mitarbeiter"
     },
     {
      "id": "PB1-10-1-2-K7",
@@ -1600,11 +1580,6 @@
      "kurz": "Service-Level-Management erklären: Serviceziele werden mit dem Kunden in SLAs vereinbart, ihre Einhaltung wird laufend über Kennzahlen gemessen, etwa aus dem Ticketsystem (Anteil fristgerecht gelöster Tickets, Zahl der SLA-Verletzungen, erreichte Verfügbarkeit, MTTR), und in regelmäßigen Berichten mit dem Kunden ausgewertet, um Abweichungen abzustellen"
     },
     {
-     "id": "PB1-12-2-2-K7",
-     "stufe": 2,
-     "kurz": "beschreiben, wie eine abgebende Support-Stufe nach einer Eskalation verantwortlich bleibt: Sie verfolgt den Fall bis zur Rückmeldung, prüft die Lösung und informiert die Beteiligten; den Abschluss beim Nutzer kennst du aus AP1-1-3-1-K8"
-    },
-    {
      "id": "PB1-12-2-2-K8",
      "stufe": 3,
      "kurz": "bei einem Leistungsengpass bestimmen, ob vertikal oder horizontal skaliert wird (Begriffe aus PB1-6-1-4-K5): vertikal einfach, aber durch die Hardware begrenzt und meist mit Ausfallzeit; horizontal im laufenden Betrieb und nahezu unbegrenzt, wenn die Anwendung mehrere Instanzen verträgt"
@@ -1781,11 +1756,6 @@
      "id": "PB1-2-1-2-K5",
      "stufe": 3,
      "kurz": "ein CRM-System (alle Kontakte, Anfragen und Käufe eines Kunden an einer Stelle) nutzen und für eine Kundenbeziehung Maßnahmen gestalten, zum Beispiel Kundenhistorie auswerten, passende Angebote zum richtigen Zeitpunkt, Rückmeldungen erfassen und Beschwerden nachverfolgen"
-    },
-    {
-     "id": "PB1-2-1-2-K6",
-     "stufe": 2,
-     "kurz": "Governance erklären: das Regel- und Steuerungssystem, mit dem die Unternehmensleitung Zuständigkeiten, Abläufe und Kontrollen vorgibt, um Risiken zu begrenzen; Compliance (K1) ist das tatsächliche Einhalten dieser Regeln und der Gesetze"
     }
    ]
   },
@@ -1932,11 +1902,6 @@
      "id": "PB1-3-1-1-K7",
      "stufe": 2,
      "kurz": "imperative und deklarative Programmierung unterscheiden: Imperativ legt das Programm Schritt für Schritt fest, wie das Ergebnis entsteht (dazu gehören strukturiert, prozedural und objektorientiert, z. B. C, Java); deklarativ beschreibt es nur, was gelten oder herauskommen soll, und den Lösungsweg bestimmt das System (dazu gehören funktional und logisch, z. B. Haskell, Prolog, ebenso SQL)"
-    },
-    {
-     "id": "PB1-3-1-1-K8",
-     "stufe": 2,
-     "kurz": "imperative und deklarative Programmierung nach Vor- und Nachteilen vergleichen: Imperativer Code ist Schritt für Schritt nachvollziehbar, wird aber lang; deklarativer Code ist kurz und überlässt die Ausführung dem System, ist dafür abstrakter und ungewohnter; die meisten heutigen Sprachen mischen beide Stile, was Code spart, ihn aber schwerer lesbar machen kann"
     },
     {
      "id": "PB1-3-1-1-K9",
@@ -2438,11 +2403,6 @@
      "id": "PB1-5-1-1-K9",
      "stufe": 3,
      "kurz": "den Konstruktor einer Unterklasse erstellen, der zuerst den Konstruktor der Oberklasse aufruft (z. B. mit super), damit die geerbten Attribute belegt werden, und danach die eigenen Attribute setzt"
-    },
-    {
-     "id": "PB1-5-1-1-K10",
-     "stufe": 2,
-     "kurz": "das Prinzip „Komposition vor Vererbung“ erklären: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet"
     }
    ]
   },
@@ -2514,11 +2474,6 @@
      "id": "PB1-5-1-3-K3",
      "stufe": 2,
      "kurz": "objektorientierte Analyse (was: Klassen, Attribute und Beziehungen aus der Fachsprache, vgl. AP1-8-3-2) und objektorientierten Entwurf (wie: Methoden, Datentypen, Datenstrukturen) unterscheiden"
-    },
-    {
-     "id": "PB1-5-1-3-K4",
-     "stufe": 2,
-     "kurz": "das Prinzip der Modulgeschlossenheit erklären: Ein Modul erfüllt eine abgegrenzte Aufgabe und wird nur über seine Schnittstelle benutzt; solange die Schnittstelle gleich bleibt, lässt sich sein Inneres überarbeiten oder das ganze Modul austauschen, ohne dass der übrige Code davon berührt wird"
     },
     {
      "id": "PB1-5-1-3-K5",
@@ -3033,21 +2988,6 @@
      "kurz": "Open Data und Closed Data an vier Merkmalen unterscheiden – Zugang (für alle oder nur für Berechtigte), maschinelle Verarbeitbarkeit, Kosten und Nutzungsrechte –, auch bei Zwischenformen wie frei zugänglichen Daten, die nur auf Papier vorliegen, oder offenen Daten mit Pflicht zur Namensnennung; deshalb ist vor der Nutzung fremder Daten immer die Lizenz zu klären"
     },
     {
-     "id": "PB1-7-1-3-K5",
-     "stufe": 2,
-     "kurz": "Argumente für und gegen die Veröffentlichung von Daten als Open Data erläutern: dafür, dass mehr Menschen die Daten nutzen und daraus neue Anwendungen entstehen und dass mit öffentlichem Geld erhobene Daten der Allgemeinheit zustehen; dagegen Einnahmeverlust für den Urheber, Zweifel an Qualität und Pflege, Wettbewerbsverzerrung, leichterer Missbrauch, Datenschutzbedenken und ungeklärte Haftung bei fehlerhaften Daten"
-    },
-    {
-     "id": "PB1-7-1-3-K6",
-     "stufe": 2,
-     "kurz": "Formen der Heterogenität von Datenquellen an Beispielen unterscheiden: technisch (andere Zugriffsschnittstelle, etwa SQL gegenüber einer Web-API), syntaktisch (anderes Format desselben Werts, etwa 20.03.2026 gegenüber 2026-03-20), im Datenmodell (relational gegenüber dokumentenorientiert), strukturell (gleiches Modell, andere Aufteilung, etwa die Adresse in eigener Tabelle) und semantisch (andere Bedeutung oder Benennung, etwa „Ort“ gegenüber „Location“)"
-    },
-    {
-     "id": "PB1-7-1-3-K7",
-     "stufe": 2,
-     "kurz": "materialisierte und virtuelle Informationsintegration unterscheiden: Beide überführen Daten heterogener Quellen in eine einheitliche Struktur und beseitigen dabei Doppeltes, das sich vorher zum Gegenprüfen nutzen lässt; bei der materialisierten werden die Daten vorab in eine zentrale Datenbasis kopiert (z. B. Data Warehouse) – schnelle Abfragen und meist bessere Qualität, aber nicht immer aktuell und aufwendig, wenn Quellen hinzukommen –, bei der virtuellen bleiben sie in den Quellen und werden erst bei jeder Anfrage zusammengeführt – stets aktuell und flexibel, aber langsamer und meist von geringerer Qualität"
-    },
-    {
      "id": "PB1-7-1-3-K8",
      "stufe": 2,
      "kurz": "Data Warehouse und Data Lake unterscheiden: Ein Data Warehouse ist eine zentrale Datenbank, in die Daten mehrerer Quellen vor dem Laden aufbereitet und in ein festes, strukturiertes Modell übernommen werden, optimiert für Berichte und Analysen; ein Data Lake nimmt sehr große Mengen auch unstrukturierter Daten aus vielfältigen Quellen im Rohformat auf, und ihre Struktur wird erst bei der Auswertung festgelegt"
@@ -3270,11 +3210,6 @@
      "id": "PB1-8-1-4-K3",
      "stufe": 2,
      "kurz": "die Grundsätze Robustheit gegen Benutzungsfehler, Erlernbarkeit und Benutzerbindung an einem Beispiel erläutern: Robust ist ein Dialog, der Fehleingaben durch die Gestaltung verhindert (Auswahlliste statt Freitext), erkannte Fehler selbst korrigiert oder verständlich zur Behebung führt; erlernbar, wenn er auf unbekannte Funktionen hinweist, gefahrloses Ausprobieren erlaubt und selten genutzte Funktionen ohne neue Einarbeitung wiedererkennen lässt; Benutzerbindung entsteht durch eine ansprechende, vertrauenswürdige Bedienung, die zur Nutzung motiviert und Rückmeldungen der Nutzer aufnimmt"
-    },
-    {
-     "id": "PB1-8-1-4-K4",
-     "stufe": 4,
-     "kurz": "begründen, warum eine Oberfläche den Nutzer nicht viele Angaben gleichzeitig im Kopf behalten lässt: Das Kurzzeitgedächtnis fasst nur etwa fünf bis sieben Einheiten; was für den nächsten Schritt gebraucht wird, bleibt deshalb sichtbar"
     }
    ]
   },
@@ -3305,11 +3240,6 @@
      "id": "PB1-8-1-2-K3",
      "stufe": 3,
      "kurz": "eine Bildschirmmaske über die Grundregeln aus AP1 (Tastaturbedienung, skalierbare Schrift) hinaus barrierefrei entwerfen: Alternativtexte für Bilder, Beschriftungen für alle Eingabefelder, verständliche Fehlermeldungen"
-    },
-    {
-     "id": "PB1-8-1-2-K4",
-     "stufe": 2,
-     "kurz": "erklären, wie Hilfstechniken wie Screenreader, Bildschirmlupe oder Spracherkennung eine Anwendung bedienen: Die GUI-Bibliothek stellt eine Zugänglichkeitsschnittstelle bereit, über die sie Art, Beschriftung und Zustand jedes Bedienelements auslesen und es auslösen können; deshalb brauchen Elemente aussagekräftige Namen, und selbst gezeichnete Elemente ohne diese Angaben bleiben für sie unsichtbar"
     }
    ]
   },
@@ -3486,11 +3416,6 @@
      "kurz": "den Extremwertetest erklären: mit den kleinsten und größten zulässigen Werten sowie knapp darüber und darunter testen, weil an Grenzen besonders oft Fehler stecken"
     },
     {
-     "id": "PB1-9-1-3-K5",
-     "stufe": 2,
-     "kurz": "die statischen Prüfverfahren Inspektion, Review, Walkthrough und Audit sowie die werkzeuggestützte statische Codeanalyse unterscheiden: Die Inspektion folgt einem streng festgelegten Ablauf mit einem Gutachterteam, das Review ist weniger formal, beim Walkthrough stellt der Entwickler sein Programm vor und beantwortet spontane Fragen, beim Audit folgen die Fragen einem vorher festgelegten Prüfkatalog; Pair Programming wirkt als fortlaufendes Code-Review"
-    },
-    {
      "id": "PB1-9-1-3-K6",
      "stufe": 2,
      "kurz": "statische und dynamische Testverfahren nach Vor- und Nachteilen vergleichen: Statische Prüfungen sind schon vor dem Ausführen möglich, finden einen Fehler direkt an seiner Ursache und prüfen auch Konventionen und Wartbarkeit, entdecken aber keine Laufzeitfehler; dynamische Tests finden Laufzeitfehler und prüfen Zusammenspiel und Zeitverhalten, brauchen aber lauffähigen Code mit Testumgebung und zeigen nur das Fehlverhalten, dessen Ursache erst das Debugging findet"
@@ -3499,11 +3424,6 @@
      "id": "PB1-9-1-3-K7",
      "stufe": 2,
      "kurz": "Black- und White-Box-Test nach Entstehungszeitpunkt, Pflegeaufwand und Fehlersuche vergleichen: Black-Box-Testfälle lassen sich schon aus der Spezifikation entwerfen und bleiben gültig, solange sich die Anforderungen nicht ändern, zeigen aber nur, dass ein Fehler auftritt, nicht wo er im Code sitzt; White-Box-Testfälle grenzen den Fehler im Code ein, sind aber erst mit fertigem Code vollständig und müssen nach jeder Codeänderung angepasst werden"
-    },
-    {
-     "id": "PB1-9-1-3-K8",
-     "stufe": 2,
-     "kurz": "erklären, warum Black- und White-Box-Test sich nicht ausschließen, sondern meist kombiniert werden, und warum dieselbe Prüfung je nach Blickwinkel als White- oder Black-Box-Test gilt: Wer im Gesamtsystem mit Kenntnis des inneren Aufbaus gezielt eine Komponente ansteuert, testet aus Systemsicht White-Box, für die Komponente selbst ist es ein Black-Box-Test über ihre Schnittstelle"
     }
    ]
   },
@@ -3540,11 +3460,6 @@
      "id": "PB1-9-1-4-K4",
      "stufe": 4,
      "kurz": "beurteilen, welche Teststufen ein Testkonzept für eine Anwendung vorsehen muss, und begründen, warum keine Stufe eine andere ersetzt"
-    },
-    {
-     "id": "PB1-9-1-4-K5",
-     "stufe": 2,
-     "kurz": "Testarten dem Qualitätsmerkmal zuordnen, das sie prüfen: Funktionstest der Funktionalität, Robustheits-, Recovery- und Stresstest der Zuverlässigkeit, Usability-Test der Benutzbarkeit, Performance- und Lasttest der Effizienz, Review und statische Codeanalyse der Wartbarkeit, Portabilitätstest der Übertragbarkeit"
     },
     {
      "id": "PB1-9-1-4-K6",
@@ -3597,16 +3512,6 @@
      "id": "PB1-9-1-5-K6",
      "stufe": 2,
      "kurz": "beschreiben, woher die Testfälle kommen: Zuerst legt ein Testplan Umfang, Ressourcen und die vorrangig zu testenden Bereiche fest; dann werden die Testfälle aus der Anforderungsspezifikation abgeleitet, etwa aus User Stories und ihren Akzeptanzkriterien, und fehlt eine solche Vorgabe, gemeinsam mit Entwicklern und Kunde festgelegt"
-    },
-    {
-     "id": "PB1-9-1-5-K7",
-     "stufe": 2,
-     "kurz": "die Dokumente eines Testprozesses drei Gruppen zuordnen: Testkonzept bzw. Testplanung (was, wie, wann und womit getestet wird), Testspezifikation (Testentwurf, Testfälle und Szenarien, Testablauf) und Testberichte (Testprotokoll, Abweichungsbericht, Review- und Audit-Protokolle, Testabschluss- und Abnahmebericht)"
-    },
-    {
-     "id": "PB1-9-1-5-K8",
-     "stufe": 2,
-     "kurz": "beschreiben, wer bei der Abnahme einer Software was akzeptiert: vertraglich die Vollständigkeit und Qualität der vereinbarten Leistungen und die Einhaltung gesetzlicher Vorgaben, die Benutzer die funktionalen Anforderungen (etwa aus einem Testbetrieb) und nichtfunktionale wie verständliche Handbücher und ausreichende Performance, der künftige Betreiber die technischen Anforderungen, Daten-, Revisions- und IT-Sicherheit sowie vollständige Administrationshandbücher"
     }
    ]
   },
@@ -3645,11 +3550,6 @@
      "kurz": "für einen wiederkehrenden Vorgang eine Checkliste erstellen, zum Beispiel für die Auslieferung eines Releases oder die Einrichtung einer Testumgebung"
     },
     {
-     "id": "PB1-9-1-6-K5",
-     "stufe": 2,
-     "kurz": "Entwicklungsdokumentation und Benutzerdokumentation mit ihren Dokumenten unterscheiden: Zur Entwicklungsdokumentation gehören Projektdokumentation (Auftrag, Pläne, Statusberichte, Lasten- und Pflichtenheft, Abschlussbericht), Systemdokumentation (Anforderungen, Architektur und Schnittstellen, Datenmodelle, kommentierter Quellcode, Versionen) und Testdokumentation; zur Benutzerdokumentation gehören Benutzerhandbuch, Installationsanleitung sowie Schulungs- und Marketingunterlagen"
-    },
-    {
      "id": "PB1-9-1-6-K6",
      "stufe": 3,
      "kurz": "die Gliederung eines Benutzerhandbuchs erstellen: Deckblatt und Inhaltsverzeichnis, Einleitung mit Zweck und Zielgruppe, Installation mit Systemvoraussetzungen, Bedienung der Funktionen und Bedienelemente mit Beispielen und Screenshots, Verhalten bei Fehlern mit Meldungen und Abhilfe, Support- und Kontaktangaben, FAQ und Glossar"
@@ -3658,11 +3558,6 @@
      "id": "PB1-9-1-6-K7",
      "stufe": 3,
      "kurz": "beim Erstellen und Erweitern eines Benutzerhandbuchs Qualitätskriterien anwenden: verständlich für die Zielgruppe (Fachbegriffe im Glossar), knapp und übersichtlich statt Textwüsten, an den Aufgaben der Benutzer ausgerichtet (wozu eine Funktion dient, nicht nur wie sie bedient wird), mit kommentierten Screenshots, vom Einfachen zum Komplexen aufgebaut sowie aktuell, widerspruchsfrei und vollständig"
-    },
-    {
-     "id": "PB1-9-1-6-K8",
-     "stufe": 2,
-     "kurz": "ein gedrucktes Benutzerhandbuch und eine Online-Dokumentation vergleichen: Papier ist ohne Gerät lesbar, verursacht aber Druckkosten, kann verloren gehen, lässt sich nicht nachträglich aktualisieren und enthält keine Videos; die Online-Dokumentation ist schnell aktualisiert, durchsuchbar, multimedial und für alle gleichzeitig verfügbar, setzt aber ein Gerät und einen Zugang voraus"
     },
     {
      "id": "PB1-9-1-6-K9",

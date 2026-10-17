@@ -456,24 +456,6 @@
               ]
             },
             {
-              "id": "AP1-6-1-4-K8",
-              "text": "Du kannst erklären, warum ein Twisted-Pair-Kabel aus verdrillten Adernpaaren besteht und oft geschirmt ist: Durch das Verdrillen heben sich Störungen, die beide Adern eines Paares gleich treffen, und die Abstrahlung des Paares weitgehend auf; ein Schirm aus Folie oder Geflecht hält zusätzlich Störfelder ab.",
-              "kurz": "Verdrillte Adernpaare und Schirmung",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-3.4.3-S318"
-              ]
-            },
-            {
-              "id": "AP1-6-1-4-K9",
-              "text": "Du kannst das Prinzip des Lichtwellenleiters erklären: Das Licht läuft in einem Kern, der von einem Mantel mit geringerer Brechzahl umgeben ist, und wird an dieser Grenze vollständig zurückgeworfen (Totalreflexion); so wird es mit sehr geringer Dämpfung über große Entfernungen geführt und von elektrischen Störungen nicht beeinflusst.",
-              "kurz": "Prinzip des Lichtwellenleiters: Totalreflexion",
-              "stufe": 2,
-              "herkunft": [
-                "buch:GS-3.4.3-S318"
-              ]
-            },
-            {
               "id": "AP1-6-1-4-K10",
               "text": "Du kannst beurteilen, ob PowerLAN einen Arbeitsplatz ausreichend anbindet: Es nutzt die vorhandene Stromleitung und spart neue Kabel, erreicht aber je nach Leitungslänge, Zahl der Verteiler und Störungen im Stromnetz meist deutlich weniger Datenrate als ein Netzwerkkabel.",
               "kurz": "PowerLAN als Anbindung eines Arbeitsplatzes",
@@ -536,6 +518,22 @@
                 "buch:FS-4.7.1"
               ],
               "grund": "D8: Belegungsnormen T568A/B und Crosskabel nennt kein Katalog-Baustein."
+            },
+            {
+              "text": "Verdrillte Adernpaare und Schirmung: Durch das Verdrillen heben sich Störungen, die beide Adern eines Paares gleich treffen, und die Abstrahlung des Paares weitgehend auf; ein Schirm aus Folie oder Geflecht hält zusätzlich Störfelder ab.",
+              "kurz": "Verdrillte Adernpaare und Schirmung",
+              "quellen": [
+                "buch:GS-3.4.3"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+            },
+            {
+              "text": "Lichtwellenleiter und Totalreflexion: Das Licht läuft in einem Kern, der von einem Mantel mit geringerer Brechzahl umgeben ist, und wird an dieser Grenze vollständig zurückgeworfen (Totalreflexion); so wird es mit sehr geringer Dämpfung über große Entfernungen geführt und von elektrischen Störungen nicht beeinflusst.",
+              "kurz": "Prinzip des Lichtwellenleiters: Totalreflexion",
+              "quellen": [
+                "buch:GS-3.4.3"
+              ],
+              "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
             }
           ],
           "hinweis": "Das Lehrbuch nennt in der Tabelle der Ethernet-Standards Cat 6A für 2,5GBASE-T und Cat 7 für 10GBASE-T; richtig ist: Nach Norm genügen Cat 5e für 2,5GBASE-T, Cat 6 für 5GBASE-T und Cat 6A für 10GBASE-T. Das Lehrbuch beschreibt FTTH wie FTTB (Glasfaser bis ins Gebäude, danach Kupfer); richtig ist: Bei FTTH reicht die Glasfaser bis in die Wohnung bzw. Büroeinheit."
@@ -3423,8 +3421,6 @@
           "AP1-6-1-3-K8",
           "AP1-6-1-3-K9",
           "AP1-6-1-4-K7",
-          "AP1-6-1-4-K8",
-          "AP1-6-1-4-K9",
           "AP1-6-1-5-K7",
           "AP1-6-1-5-K8",
           "AP1-6-1-5-K9",
@@ -3482,7 +3478,9 @@
           "AP1-6-2-5",
           "AP1-6-3-2",
           "AP1-6-2-1",
-          "AP1-6-3-4"
+          "AP1-6-3-4",
+          "AP1-6-1-4",
+          "AP1-6-1-4"
         ],
         "grenzen_gestrichen": [],
         "filter": [],
@@ -3554,6 +3552,18 @@
               "AP2b.01.04.1"
             ],
             "grund": "D3/G3: „Aufbau der Protokolle (Header)“ war reine Tiefenbegründung und widersprach AP1-6-1-2-K7 (Paketkopf) und AP1-6-3-4-K2 (TTL im IP-Kopf); V2-Prüfung AP1-b Nr. 8"
+          }
+        ],
+        "pflicht_gestrichen": [
+          {
+            "id": "AP1-6-1-4-K8",
+            "text": "Du kannst erklären, warum ein Twisted-Pair-Kabel aus verdrillten Adernpaaren besteht und oft geschirmt ist: Durch das Verdrillen heben sich Störungen, die beide Adern eines Paares gleich treffen, und die Abstrahlung des Paares weitgehend auf; ein Schirm aus Folie oder Geflecht hält zusätzlich Störfelder ab.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+          },
+          {
+            "id": "AP1-6-1-4-K9",
+            "text": "Du kannst das Prinzip des Lichtwellenleiters erklären: Das Licht läuft in einem Kern, der von einem Mantel mit geringerer Brechzahl umgeben ist, und wird an dieser Grenze vollständig zurückgeworfen (Totalreflexion); so wird es mit sehr geringer Dämpfung über große Entfernungen geführt und von elektrischen Störungen nicht beeinflusst.",
+            "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
           }
         ]
       }

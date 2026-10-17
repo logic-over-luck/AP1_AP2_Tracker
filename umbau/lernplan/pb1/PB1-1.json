@@ -114,15 +114,6 @@
        ]
       },
       {
-       "id": "PB1-1-1-1-K9",
-       "text": "Du kannst Extreme Programming beschreiben: sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen.",
-       "kurz": "Extreme Programming und seine Praktiken",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.1.2-S162"
-       ]
-      },
-      {
        "id": "PB1-1-1-1-K10",
        "text": "Du kannst den DevOps-Ansatz erklären: Entwicklung und Betrieb arbeiten als ein Team mit gemeinsamer Verantwortung und stark automatisierten Abläufen (CI/CD, PB1-3-2-2), um häufiger, schneller und mit weniger Fehlern auszuliefern; der Preis ist ein Umdenken in Organisation und Zusammenarbeit, das nicht zu jeder bestehenden Unternehmensstruktur passt.",
        "kurz": "DevOps: Entwicklung und Betrieb als ein Team",
@@ -177,6 +168,14 @@
         "buch:FS-3.1.2"
        ],
        "grund": "RK2: Einzelheiten zu XP eine Ebene unter AP2b.04.02.2; XP-Rollen ohne Katalogbezug"
+      },
+      {
+       "text": "Extreme Programming und seine Praktiken: Sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen.",
+       "kurz": "Extreme Programming und seine Praktiken",
+       "quellen": [
+        "buch:FS-3.1.2"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -550,15 +549,6 @@
        ]
       },
       {
-       "id": "PB1-1-2-1-K8",
-       "text": "Du kannst Projektrisiken den Arten personell, zeitlich-finanziell, technologisch und organisatorisch zuordnen, zum Beispiel Ausfall des einzigen Datenbankexperten (personell), zu knapp geplanter Termin oder knappes Budget (zeitlich-finanziell), noch unerprobtes Framework (technologisch) und unklare Zuständigkeiten oder Missverständnisse mit dem Auftraggeber (organisatorisch).",
-       "kurz": "Risikoarten im Softwareprojekt",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS2-4.2.2-S272"
-       ]
-      },
-      {
        "id": "PB1-1-2-1-K9",
        "text": "Du kannst erklären, warum ineffizient programmierte Software mehr Energie verbraucht als sparsam programmierte: Der Strombedarf eines Rechners steigt mit der beanspruchten Rechenleistung, und ineffizienter Code hält Prozessor, Speicher und Netz länger als nötig beschäftigt.",
        "kurz": "Energiebedarf durch Software",
@@ -596,6 +586,14 @@
         "buch:FS-4.4.3"
        ],
        "grund": "RK2: Unterthema; den Software-Anteil trägt die neue Pflicht-Aussage zum Energiebedarf (GS-3.9.2#10)"
+      },
+      {
+       "text": "Arten von Projektrisiken: personell, zeitlich-finanziell, technologisch und organisatorisch, zum Beispiel Ausfall des einzigen Datenbankexperten (personell), zu knapp geplanter Termin oder knappes Budget (zeitlich-finanziell), noch unerprobtes Framework (technologisch) und unklare Zuständigkeiten oder Missverständnisse mit dem Auftraggeber (organisatorisch).",
+       "kurz": "Risikoarten im Softwareprojekt",
+       "quellen": [
+        "buch:FS2-4.2.2"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -1661,7 +1659,6 @@
      "PB1-1-1-1-K6",
      "PB1-1-1-1-K7",
      "PB1-1-1-1-K8",
-     "PB1-1-1-1-K9",
      "PB1-1-1-1-K10",
      "PB1-1-1-2-K4",
      "PB1-1-1-2-K5",
@@ -1671,7 +1668,6 @@
      "PB1-1-1-3-K8",
      "PB1-1-1-3-K9",
      "PB1-1-2-1-K7",
-     "PB1-1-2-1-K8",
      "PB1-1-2-1-K9",
      "PB1-1-2-3-K6",
      "PB1-1-2-3-K7",
@@ -1701,7 +1697,9 @@
      "PB1-1-2-4",
      "PB1-1-2-4",
      "PB1-1-2-4",
-     "PB1-1-2-4"
+     "PB1-1-2-4",
+     "PB1-1-1-1",
+     "PB1-1-2-1"
     ],
     "grenzen_gestrichen": [],
     "filter": [],
@@ -1730,6 +1728,16 @@
       "id": "PB1-1-2-4-K4",
       "text": "Du kannst erklären, wie sich die ISO/IEC 25010 von der älteren ISO/IEC 9126 unterscheidet: Kompatibilität (Zusammenarbeit und Datenaustausch mit anderen Systemen) und Sicherheit sind eigene Hauptmerkmale geworden, Funktionalität heißt funktionale Eignung und Effizienz Leistungseffizienz; so kommt die Norm auf acht statt sechs Hauptmerkmale.",
       "grund": "P64 (Projektinhaber, 16.10.2026): Vergleich zweier Normfassungen ist Normgeschichte, kein Prüfungsstoff (G4); der Katalog nennt die Merkmale nach 9126"
+     },
+     {
+      "id": "PB1-1-1-1-K9",
+      "text": "Du kannst Extreme Programming beschreiben: sehr kurze Iterationen ohne vollständigen Anforderungskatalog zu Beginn, ständiger Wechsel von Entwurf, Umsetzung und Test und verbindliche Praktiken wie testgetriebene Entwicklung, Pair Programming und einfaches Design; es eignet sich für kleine, eng zusammenarbeitende Teams bei sich schnell ändernden Anforderungen.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-1-2-1-K8",
+      "text": "Du kannst Projektrisiken den Arten personell, zeitlich-finanziell, technologisch und organisatorisch zuordnen, zum Beispiel Ausfall des einzigen Datenbankexperten (personell), zu knapp geplanter Termin oder knappes Budget (zeitlich-finanziell), noch unerprobtes Framework (technologisch) und unklare Zuständigkeiten oder Missverständnisse mit dem Auftraggeber (organisatorisch).",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
      }
     ]
    }

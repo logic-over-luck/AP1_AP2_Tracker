@@ -544,25 +544,6 @@
         "buch:FS-3.2.1-S167",
         "buch:FS2-3.2.1-S225"
        ]
-      },
-      {
-       "id": "PB2-6-1-5-K7",
-       "text": "Du kannst den Ablauf zur Verbesserung der Datenqualität beschreiben: Die Analyse (Data Profiling) findet Fehler, Lücken und Widersprüche, die Bereinigung (Data Cleaning) beseitigt sie, etwa durch Zusammenführen von Dubletten oder Ergänzen fehlender Werte, und ein regelmäßig wiederholtes Monitoring verhindert, dass die Qualität durch Datenalterung wieder sinkt; große Bestände werden dabei automatisiert geprüft.",
-       "kurz": "Data Profiling, Data Cleaning und Monitoring",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.2.1-S168"
-       ]
-      },
-      {
-       "id": "PB2-6-1-5-K8",
-       "text": "Du kannst erklären, warum die Kriterien für die Datenqualität mit dem Auftraggeber ausgewählt und gewichtet werden: Welche zählen, hängt vom Zweck der Anwendung ab; man beginnt mit wenigen wichtigen, ergänzt später weitere und prüft die Daten gezielt an ihnen, statt ihre Qualität nach Gefühl zu beurteilen.",
-       "kurz": "Qualitätskriterien auswählen und gewichten",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS-3.2.1-S166",
-        "buch:FS-3.2.1-S168"
-       ]
       }
      ],
      "baut_auf": [
@@ -594,6 +575,22 @@
         "buch:FS-3.2.1"
        ],
        "grund": "Ring Kür: Rechenbeispiel ohne eigenen Katalogbezug; Auswahl und Gewichtung der Kriterien stehen in PB2-6-1-5-K8"
+      },
+      {
+       "text": "Data Profiling, Data Cleaning und Monitoring: Die Analyse (Data Profiling) findet Fehler, Lücken und Widersprüche, die Bereinigung (Data Cleaning) beseitigt sie, etwa durch Zusammenführen von Dubletten oder Ergänzen fehlender Werte, und ein regelmäßig wiederholtes Monitoring verhindert, dass die Qualität durch Datenalterung wieder sinkt; große Bestände werden dabei automatisiert geprüft.",
+       "kurz": "Data Profiling, Data Cleaning und Monitoring",
+       "quellen": [
+        "buch:FS-3.2.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+      },
+      {
+       "text": "Qualitätskriterien auswählen und gewichten: Welche zählen, hängt vom Zweck der Anwendung ab; man beginnt mit wenigen wichtigen, ergänzt später weitere und prüft die Daten gezielt an ihnen, statt ihre Qualität nach Gefühl zu beurteilen.",
+       "kurz": "Qualitätskriterien auswählen und gewichten",
+       "quellen": [
+        "buch:FS-3.2.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     }
@@ -939,9 +936,7 @@
      "PB2-6-1-2-K8",
      "PB2-6-1-5-K4",
      "PB2-6-1-5-K5",
-     "PB2-6-1-5-K6",
-     "PB2-6-1-5-K7",
-     "PB2-6-1-5-K8"
+     "PB2-6-1-5-K6"
     ],
     "neue_stichpunkte": [
      {
@@ -956,6 +951,8 @@
      "PB2-6-1-3",
      "PB2-6-1-5",
      "PB2-6-1-5",
+     "PB2-6-1-5",
+     "PB2-6-1-5",
      "PB2-6-1-5"
     ],
     "grenzen_gestrichen": [],
@@ -964,6 +961,18 @@
     "hinweise": [
      "PB2-6-1-2",
      "PB2-6-1-6"
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "PB2-6-1-5-K7",
+      "text": "Du kannst den Ablauf zur Verbesserung der Datenqualität beschreiben: Die Analyse (Data Profiling) findet Fehler, Lücken und Widersprüche, die Bereinigung (Data Cleaning) beseitigt sie, etwa durch Zusammenführen von Dubletten oder Ergänzen fehlender Werte, und ein regelmäßig wiederholtes Monitoring verhindert, dass die Qualität durch Datenalterung wieder sinkt; große Bestände werden dabei automatisiert geprüft.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB2-6-1-5-K8",
+      "text": "Du kannst erklären, warum die Kriterien für die Datenqualität mit dem Auftraggeber ausgewählt und gewichtet werden: Welche zählen, hängt vom Zweck der Anwendung ab; man beginnt mit wenigen wichtigen, ergänzt später weitere und prüft die Daten gezielt an ihnen, statt ihre Qualität nach Gefühl zu beurteilen.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     }
     ]
    }
   ]

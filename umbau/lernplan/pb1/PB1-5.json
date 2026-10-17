@@ -130,15 +130,6 @@
        "herkunft": [
         "buch:FS-3.6.1-S254"
        ]
-      },
-      {
-       "id": "PB1-5-1-1-K10",
-       "text": "Du kannst das Prinzip „Komposition vor Vererbung“ erklären: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet.",
-       "kurz": "Komposition vor Vererbung",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS2-2.1.4-S133"
-       ]
       }
      ],
      "baut_auf": [
@@ -180,6 +171,14 @@
         "buch:FS2-2.2.4"
        ],
        "grund": "RK2: Aufbau einer Collection-Bibliothek ist bibliotheksspezifisch"
+      },
+      {
+       "text": "Komposition vor Vererbung: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet.",
+       "kurz": "Komposition vor Vererbung",
+       "quellen": [
+        "buch:FS2-2.1.4"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -305,15 +304,6 @@
        ]
       },
       {
-       "id": "PB1-5-1-3-K4",
-       "text": "Du kannst das Prinzip der Modulgeschlossenheit erklären: Ein Modul erfüllt eine abgegrenzte Aufgabe und wird nur über seine Schnittstelle benutzt; solange die Schnittstelle gleich bleibt, lässt sich sein Inneres überarbeiten oder das ganze Modul austauschen, ohne dass der übrige Code davon berührt wird.",
-       "kurz": "Modulgeschlossenheit und Austauschbarkeit",
-       "stufe": 2,
-       "herkunft": [
-        "buch:FS2-2.1.1-S112"
-       ]
-      },
-      {
        "id": "PB1-5-1-3-K5",
        "text": "Du kannst hohe Bindung (Kohäsion: Daten und Operationen im Modul gehören eng zusammen) und geringe Kopplung (wenig Abhängigkeit von anderen Modulen) beim Zerlegen eines Programms in Module anwenden – mit dem Grund dahinter: Jede Abhängigkeit ist eine Schnittstelle, die beachtet werden muss und Fehler verursachen kann, und bei geringer Kopplung bleibt eine Änderung im Modul.",
        "kurz": "Hohe Bindung, geringe Kopplung",
@@ -390,6 +380,14 @@
         "buch:FS2-2.1.4"
        ],
        "grund": "D8: KISS, DRY und YAGNI ohne Katalog-Baustein; Demeter und Tell, don’t ask sind Unterthema der Kopplung (RK2)"
+      },
+      {
+       "text": "Modulgeschlossenheit und Austauschbarkeit: Ein Modul erfüllt eine abgegrenzte Aufgabe und wird nur über seine Schnittstelle benutzt; solange die Schnittstelle gleich bleibt, lässt sich sein Inneres überarbeiten oder das ganze Modul austauschen, ohne dass der übrige Code davon berührt wird.",
+       "kurz": "Modulgeschlossenheit und Austauschbarkeit",
+       "quellen": [
+        "buch:FS2-2.1.1"
+       ],
+       "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
       }
      ]
     },
@@ -1414,10 +1412,8 @@
      "PB1-5-1-1-K7",
      "PB1-5-1-1-K8",
      "PB1-5-1-1-K9",
-     "PB1-5-1-1-K10",
      "PB1-5-1-2-K4",
      "PB1-5-1-2-K5",
-     "PB1-5-1-3-K4",
      "PB1-5-1-3-K5",
      "PB1-5-1-3-K6",
      "PB1-5-1-3-K7",
@@ -1456,13 +1452,27 @@
      "PB1-5-1-6",
      "PB1-5-1-6",
      "PB1-5-1-6",
-     "PB1-5-1-6"
+     "PB1-5-1-6",
+     "PB1-5-1-1",
+     "PB1-5-1-3"
     ],
     "grenzen_gestrichen": [],
     "filter": [],
     "umgehaengt": [],
     "hinweise": [
      "PB1-5-1-1"
+    ],
+    "pflicht_gestrichen": [
+     {
+      "id": "PB1-5-1-1-K10",
+      "text": "Du kannst das Prinzip „Komposition vor Vererbung“ erklären: Statt von einer Klasse zu erben, hält eine Klasse ein Objekt dieser Klasse und ruft dessen Methoden auf; das koppelt die Klassen loser und das enthaltene Objekt lässt sich austauschen, deshalb klärt man vor jeder Vererbung, ob eine Komposition dasselbe leistet.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     },
+     {
+      "id": "PB1-5-1-3-K4",
+      "text": "Du kannst das Prinzip der Modulgeschlossenheit erklären: Ein Modul erfüllt eine abgegrenzte Aufgabe und wird nur über seine Schnittstelle benutzt; solange die Schnittstelle gleich bleibt, lässt sich sein Inneres überarbeiten oder das ganze Modul austauschen, ohne dass der übrige Code davon berührt wird.",
+      "grund": "Prüfer-Filter 10/2026: von keiner Katalogzeile des Stichpunkts gedeckt, für keine Prüfungsaufgabe und keine Pflicht-Aussage nötig (gegen Altprüfungen 2021–2026 geprüft)"
+     }
     ]
    }
   ]

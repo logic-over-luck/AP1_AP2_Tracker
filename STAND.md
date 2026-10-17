@@ -67,11 +67,11 @@ nächsten offenen Punkt weiter.
 
 ## 2. Stand
 
-*(zuletzt aktualisiert: 16.10.2026, Regelwerk v2.2 – Lehrbuch als Tiefe, Branch `regelwerk-v2`)*
+*(zuletzt aktualisiert: 17.10.2026, Regelwerk v2.2 – Lehrbuch als Tiefe, Branch `regelwerk-v2`)*
 
 - **Regelwerk v2.2 (Branch `regelwerk-v2`, 16.10.2026):** Lehrbuch Westermann „IT-Berufe“ (GS/FS/FS2) als Quelle der Tiefe;
-  alle vier Räume erweitert: AP1 840, PB1 464, PB2 117, WISO 384 Aussagen (1.805, davon 572 mit Buch-Herkunft), 499 Kür-
-  Einträge; jede Aussage mit Stichwort `kurz` (einzeilige Anzeige, Aufklappen zeigt Satz, Erklärung, Stufe, Herkunft).
+  alle vier Räume erweitert und per Prüfer-Filter (17.10.2026) gestrafft: AP1 814, PB1 443, PB2 114, WISO 382 Aussagen
+  (1.753, davon 520 mit Buch-Herkunft), 551 Kür-Einträge, 3.832 Karten; jede Aussage mit Stichwort `kurz` (einzeilige Anzeige, Aufklappen zeigt Satz, Erklärung, Stufe, Herkunft).
   Unabhängig geprüft (173 Funde, umgesetzt). Bericht `umbau/berichte/V2-bericht.md`, Parkplatz P57–P70 entschieden (UMBAU.md).
 
 ### Fertig und geprüft (Tests + im Browser als file:// durchgeklickt)
