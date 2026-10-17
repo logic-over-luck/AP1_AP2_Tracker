@@ -1,6 +1,6 @@
 # Vorschlag: Wichtigkeit neu – 5 Stufen je Stichpunkt (Fassung 2)
 
-Stand: 17.10.2026 · Status: **umgesetzt (UMBAU.md P72)**, Zuordnung geprüft (P73) · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
+Stand: 17.10.2026 · Status: **umgesetzt (UMBAU.md P72)**, Zuordnung geprüft (P73), Podcast-Gegenprobe und Signaltest (P74) · Zahlen aus den **alten, noch nicht neu geprüften** Zuordnungen
 (`umbau/zuordnung/<raum>/*.json`). Endgültige Grenzen erst nach der Prüfung mit den neuen Abschriften.
 
 Fassung 2 arbeitet die Zweitmeinung ein (`wichtigkeit-zweitmeinung.md`). Die Änderungen gegenüber Fassung 1 stehen in Abschnitt 6.
@@ -232,3 +232,15 @@ Datei `umbau/zuordnung/wichtigkeit.json`, aus der App und Prüfskript zählen.
 Rückwärtstest danach (AUC, Gewicht alt 0,6): AP1 0,59 (vorher 0,57), PB1 0,72 (0,68), PB2 0,76 (0,73), WiSo 0,74 (0,74). Die Treffer-Probe
 „Sehr oft“ liegt bei AP1 23 %, PB1 27 %, PB2 64 %, WiSo 55 %. Die Unterschiede liegen im Rauschen, die Richtung ist aber überall gleich oder besser.
 Gewicht alter Prüfungen: 1 statt 0,6 senkt den Log-Loss nur in PB1 (und AP1 um 0,001), also nicht in 3 von 4 Räumen. Es bleibt bei 0,6.
+
+## 9. Podcast-Gegenprobe, anderer Prüfungsteil, Signaltest (17.10.2026, P74)
+
+- **Gegenprobe:** Jedes Themen-Stichwort des IT-Berufe-Podcasts (AP1 230, PB1 153, PB2 103) wurde gegen die geprüfte Zuordnung derselben
+  Prüfung gelegt. Keine Ergänzung nötig. Alle nicht gedeckten Stichworte sind erklärt: alter Katalog, anderer Prüfungsteil, Podcast ungenau
+  oder Teil ohne Abschrift.
+- **Ohne Abschrift:** AP2 Sommer 2026 (PB1, PB2) und der Rest von AP1 2025H zählen über eindeutige Stichworte mit halbem Gewicht (3.6 Punkt 1).
+- **Anderer Prüfungsteil:** Wird Stoff eines anderen Raums in einer Prüfung abgefragt, erscheint das als Hinweis am Stichpunkt und ändert
+  die Stufe nicht. Entscheidung gegen „AP2 als ein Pool“: PB1 und PB2 sind getrennte Prüfungsbereiche, und die Stufe bleibt einfach nachrechenbar.
+- **Signaltest** (3.6 Punkte 2–4, feste Werte): Gewicht alt 1 oder 0,3, Pause −20 %, Alterung −20 %/Jahr. Keines besteht die Aufnahmeregel,
+  die Rechnung bleibt. Pause ist der einzige Kandidat zum Beobachten (3 von 4 Räumen leicht besser, Intervall enthält 0).
+- **Treffer-Probe „Sehr oft“** danach: AP1 25 %, PB1 28 %, PB2 59 %, WiSo 56 %.

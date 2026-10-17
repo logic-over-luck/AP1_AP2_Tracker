@@ -84,11 +84,13 @@ test('Hand-Beispiel AP1: Peripheriegeräte und Anschlüsse', () => {
 });
 
 test('Raum: Prüfungen und Gewichte wie in den Zuordnungen', () => {
-  const erwartet = { AP1: [11, 4], PB1: [9, 2], PB2: [9, 2], WISO: [8, 2] };
+  // PB1/PB2: Sommer 2026 hat keine Abschrift und zählt nur über die Podcast-Themenliste (halbes Gewicht, P74)
+  const erwartet = { AP1: [11, 4, []], PB1: [10, 2, ['2026S']], PB2: [10, 2, ['2026S']], WISO: [8, 2, []] };
   for (const r of RAEUME) {
     const w = index.raeume.get(r).wichtig;
-    assert.deepEqual([w.n, w.aktuell], erwartet[r], r);
-    assert.equal(Math.round(w.summe * 10) / 10, Math.round((w.aktuell + 0.6 * (w.n - w.aktuell)) * 10) / 10, r);
+    assert.deepEqual([w.n, w.aktuell, w.nurStichwort], erwartet[r], r);
+    const alt = w.n - w.aktuell - w.nurStichwort.length;
+    assert.equal(Math.round(w.summe * 10) / 10, Math.round((w.aktuell + 0.6 * alt + 0.5 * w.nurStichwort.length) * 10) / 10, r);
   }
 });
 
@@ -151,4 +153,17 @@ test('Geprüfte Zuordnung (P73): App zählt aus umbau/zuordnung/wichtigkeit.json
   assert.equal(z.wichtig.stufe, 1);
   // Jede Zahl ist belegt: Teilaufgaben gehören zur Prüfung, unter der sie stehen
   for (const r of RAEUME) for (const p of Object.values(geprueft[r])) for (const [termin, tas] of Object.entries(p)) for (const ta of tas) assert.ok(ta.startsWith(`${termin}-`), ta);
+});
+
+test('Podcast-Gegenprobe (P74): Stichworte zählen halb, anderer Prüfungsteil nur als Hinweis', () => {
+  // Relationales Modell wohnt in PB1, wurde aber in PB2-Prüfungen abgefragt: Hinweis, keine Stufe
+  const rm = spIn('PB1').find((x) => x.id === 'PB1-6-1-2');
+  const q = rm.wichtig.quer.find((x) => x.raum === 'PB2');
+  assert.ok(q && q.x >= 6 && q.n === 10, JSON.stringify(rm.wichtig.quer));
+  assert.ok(!rm.wichtig.termine.some((t) => q.termine.includes(t) && !rm.pruef.some(([p]) => p === t)));
+  // 2026S zählt in PB2 mit Gewicht 0,5 (aktueller Katalog × Stichwort)
+  const sel = spIn('PB2').find((x) => x.id === 'PB2-5-1-1');
+  assert.deepEqual(sel.pruef.find(([p]) => p === '2026S'), ['2026S', 0.5]);
+  assert.ok(sel.wichtig.nurStichwort >= 1);
+  assert.match(wichtigkeitText(sel.wichtig), /davon nur laut Themenliste/);
 });

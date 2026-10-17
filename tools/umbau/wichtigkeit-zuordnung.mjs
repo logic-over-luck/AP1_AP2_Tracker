@@ -63,7 +63,8 @@ for (const r of RAEUME) {
   const blind = lies(path.join(ordner, `blind-${r}.json`));
   // Teilaufgaben, die laut Zuordnung begründet außerhalb liegen (z. B. B3: aus dem Katalog gestrichen), zählen nie
   const zaehlbar = (ta) => !!zuordnung.get(ta)?.bausteine?.length;
-  const b = new Map(Object.entries(blind).filter(([ta]) => zaehlbar(ta)).map(([ta, x]) => [ta, [...(x.haupt ?? []), ...(x.rand ?? [])]]));
+  // Hat B eine Teilaufgabe „ausserhalb“ gesetzt, ist ein Rand-Stichpunkt daneben nur Orientierung, keine Zustimmung
+  const b = new Map(Object.entries(blind).filter(([ta]) => zaehlbar(ta)).map(([ta, x]) => [ta, x.ausserhalb ? [...(x.haupt ?? [])] : [...(x.haupt ?? []), ...(x.rand ?? [])]]));
   for (const ta of zuordnung.keys()) if (!blind[ta]) fehler.push(`${r}: Teilaufgabe ${ta} fehlt in blind-${r}.json`);
   for (const [ta, list] of b) {
     if (!zuordnung.has(ta)) fehler.push(`${r}: blind-${r}.json nennt unbekannte Teilaufgabe ${ta}`);

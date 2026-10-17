@@ -155,7 +155,7 @@ export function Wichtigkeit({ raum }) {
             {raum === 'AP1' && (
               <p>
                 In AP1 sagen die älteren Prüfungen die neuen nur schwach vorher (neuer Katalog ab 2025, breit gestreute Aufgaben): Von den „sehr oft geprüften“ Stichpunkten war in der
-                nächsten Prüfung nur knapp jeder vierte dran. Lerne dort nicht nur nach der Stufe.
+                nächsten Prüfung nur etwa jeder vierte dran. Lerne dort nicht nur nach der Stufe.
               </p>
             )}
             {jeStufe.flat()[0] && <p class="gedaempft">Beispiel: „{jeStufe.flat()[0].titel}“ – {wichtigkeitText(jeStufe.flat()[0].wichtig)}</p>}

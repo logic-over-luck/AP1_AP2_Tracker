@@ -9,28 +9,28 @@ Grundlage: die Zuordnungen in `umbau/zuordnung/` und `umbau/lernplan/` im aktuel
 
 | Raum | Teilaufgaben | Paare A | Paare B | einig | strittig | davon bestätigt | verworfen | gezählt |
 |---|---|---|---|---|---|---|---|---|
-| AP1 | 301 | 232 | 271 | 216 | 71 | 16 | 55 | 232 |
-| PB1 | 152 | 110 | 125 | 108 | 19 | 4 | 15 | 112 |
+| AP1 | 301 | 232 | 270 | 215 | 72 | 17 | 55 | 232 |
+| PB1 | 152 | 110 | 124 | 107 | 20 | 4 | 16 | 111 |
 | PB2 | 107 | 84 | 88 | 76 | 20 | 10 | 10 | 86 |
-| WISO | 240 | 183 | 211 | 182 | 30 | 6 | 24 | 188 |
+| WISO | 240 | 183 | 209 | 180 | 32 | 6 | 26 | 186 |
 
 ## Überblick je Raum
 
 | Raum | Prüfungen | davon aktueller Katalog | Stichpunkte | Sehr oft | Oft | Manchmal | Selten | Bisher nicht |
 |---|---|---|---|---|---|---|---|---|
 | AP1 | 11 | 4 | 124 | 7 | 27 | 45 | 19 | 26 |
-| PB1 | 9 | 2 | 76 | 10 | 12 | 9 | 16 | 29 |
-| PB2 | 9 | 2 | 22 | 11 | 3 | 3 | 4 | 1 |
-| WISO | 8 | 2 | 70 | 27 | 14 | 8 | 5 | 16 |
+| PB1 | 10 | 3 | 76 | 11 | 9 | 13 | 15 | 28 |
+| PB2 | 10 | 3 | 22 | 11 | 1 | 5 | 4 | 1 |
+| WISO | 8 | 2 | 70 | 26 | 14 | 9 | 5 | 16 |
 
 ## Zuordnung
 
 | Raum | Teilaufgaben | zugeordnet | begründet außerhalb | zugeordnet, aber an keinem Stichpunkt | an Stichpunkten, aber nicht in der Zuordnung |
 |---|---|---|---|---|---|
 | AP1 | 301 | 288 | 13 | 0 | 0 |
-| PB1 | 152 | 152 | 0 | 0 | 0 |
+| PB1 | 152 | 152 | 0 | 1 (2022S-PB1-A2-a) | 0 |
 | PB2 | 107 | 107 | 0 | 10 (2021W-PB2-A3, 2022S-PB2-A3, 2022W-PB2-A3-a, 2022W-PB2-A3-b, 2023W-PB2-A3-b, 2024S-PB2-A1-ba, 2024S-PB2-A1-bb, 2024S-PB2-A1-ca, …) | 0 |
-| WISO | 240 | 240 | 0 | 0 | 0 |
+| WISO | 240 | 240 | 0 | 2 (2021W-WISO-A23, 2024S-WISO-A22) | 0 |
 
 Teilaufgaben „an keinem Stichpunkt“ gehören zu Bausteinen, deren Stichpunkt in einem anderen Raum wohnt (importierte Bausteine) oder die nur Grenzen/Kür belegen. Sie zählen hier nicht für die Wichtigkeit.
 
@@ -38,10 +38,10 @@ Teilaufgaben „an keinem Stichpunkt“ gehören zu Bausteinen, deren Stichpunkt
 
 | Raum | Wechsel je Lauf (Mittel) | Stichpunkte, die in weniger als 80 % der Läufe ihre Stufe halten | Sprung über mehr als 1 Stufe |
 |---|---|---|---|
-| AP1 | 14 % | 16 % | 11 % |
-| PB1 | 14 % | 36 % | 5 % |
-| PB2 | 12 % | 32 % | 14 % |
-| WISO | 22 % | 40 % | 3 % |
+| AP1 | 14 % | 15 % | 11 % |
+| PB1 | 14 % | 21 % | 1 % |
+| PB2 | 19 % | 23 % | 5 % |
+| WISO | 23 % | 41 % | 3 % |
 
 ## Rückwärtstest (rollierend: Prüfung t aus allen Prüfungen davor, ab der 4.)
 
@@ -49,18 +49,18 @@ AUC: 0,50 = Zufall, 1,00 = perfekt; Standardfehler je Prüfung etwa ±0,05. Brie
 
 | Raum | Gewicht alt | Läufe | AUC | AUC nur Prüfungen nach aktuellem Katalog | Brier | Log-Loss | Treffer „Sehr oft“ |
 |---|---|---|---|---|---|---|---|
-| AP1 | 0,00 | 3 | 0,57 | 0,57 | 0,186 | 0,562 | 31 % (68) |
-| AP1 | 0,60 | 8 | 0,59 | 0,61 | 0,154 | 0,483 | 23 % (75) |
-| AP1 | 1,00 | 8 | 0,59 | 0,61 | 0,153 | 0,484 | 23 % (92) |
-| PB1 | 0,00 | 1 | 0,57 | 0,57 | 0,155 | 0,490 | 20 % (10) |
-| PB1 | 0,60 | 6 | 0,72 | 0,80 | 0,131 | 0,420 | 27 % (73) |
-| PB1 | 1,00 | 6 | 0,72 | 0,80 | 0,128 | 0,407 | 29 % (86) |
-| PB2 | 0,00 | 1 | 0,63 | 0,63 | 0,244 | 0,687 | 60 % (10) |
-| PB2 | 0,60 | 6 | 0,76 | 0,78 | 0,200 | 0,596 | 64 % (59) |
-| PB2 | 1,00 | 6 | 0,76 | 0,79 | 0,202 | 0,613 | 66 % (61) |
+| AP1 | 0,00 | 3 | 0,57 | 0,57 | 0,186 | 0,562 | 33 % (69) |
+| AP1 | 0,60 | 8 | 0,59 | 0,62 | 0,154 | 0,485 | 25 % (77) |
+| AP1 | 1,00 | 8 | 0,59 | 0,62 | 0,154 | 0,486 | 23 % (92) |
+| PB1 | 0,00 | 2 | 0,64 | 0,64 | 0,129 | 0,426 | 27 % (26) |
+| PB1 | 0,60 | 7 | 0,71 | 0,78 | 0,128 | 0,412 | 28 % (80) |
+| PB1 | 1,00 | 7 | 0,71 | 0,78 | 0,126 | 0,402 | 28 % (95) |
+| PB2 | 0,00 | 2 | 0,72 | 0,72 | 0,237 | 0,674 | 38 % (24) |
+| PB2 | 0,60 | 7 | 0,78 | 0,83 | 0,197 | 0,589 | 59 % (70) |
+| PB2 | 1,00 | 7 | 0,79 | 0,84 | 0,199 | 0,602 | 60 % (72) |
 | WISO | 0,00 | 1 | 0,72 | 0,72 | 0,191 | 0,570 | 65 % (26) |
-| WISO | 0,60 | 5 | 0,74 | 0,72 | 0,188 | 0,552 | 55 % (113) |
-| WISO | 1,00 | 5 | 0,74 | 0,71 | 0,190 | 0,555 | 51 % (139) |
+| WISO | 0,60 | 5 | 0,75 | 0,72 | 0,185 | 0,546 | 56 % (110) |
+| WISO | 1,00 | 5 | 0,74 | 0,72 | 0,187 | 0,547 | 51 % (135) |
 
 Gewicht alt 0 lässt sich erst bewerten, wenn vor der Testprüfung schon eine Prüfung nach aktuellem Katalog liegt – deshalb weniger Läufe; die Zeilen sind nicht direkt vergleichbar.
 Treffer „Sehr oft“ ist die ehrliche Probe auf die Namen: Die Stufen beschreiben, was bisher geprüft wurde. Wie oft ein „sehr oft geprüfter“ Stichpunkt in der nächsten Prüfung wirklich dran ist, steht hier – in AP1 deutlich seltener als der Name vermuten lässt.
@@ -73,10 +73,10 @@ Verbesserung des Log-Loss gegenüber „nur Prüfungen, Gewicht alt 0,6“ (posi
 
 | Signal | AP1 | PB1 | PB2 | WISO | besser in | 95-%-Intervall gepoolt | aufgenommen |
 |---|---|---|---|---|---|---|---|
-| Gewicht alter Prüfungen 1 statt 0,6 | -0,0005 | +0,0131 | -0,0173 | -0,0027 | 1 von 4 | -0,0066 bis +0,0034 | nein |
-| Gewicht alter Prüfungen 0,3 statt 0,6 | -0,0148 | -0,0326 | +0,0063 | -0,0082 | 1 von 4 | -0,0200 bis -0,0056 | nein |
-| Pause: in der letzten Prüfung dran → 20 % Abschlag | +0,0083 | +0,0138 | +0,0089 | -0,0096 | 3 von 4 | -0,0019 bis +0,0140 | nein |
-| Alterung: 20 % weniger Gewicht je Jahr Abstand | -0,0072 | -0,0139 | +0,0022 | -0,0005 | 1 von 4 | -0,0107 bis -0,0006 | nein |
+| Gewicht alter Prüfungen 1 statt 0,6 | -0,0008 | +0,0101 | -0,0128 | -0,0013 | 1 von 4 | -0,0064 bis +0,0042 | nein |
+| Gewicht alter Prüfungen 0,3 statt 0,6 | -0,0144 | -0,0271 | +0,0018 | -0,0100 | 1 von 4 | -0,0202 bis -0,0053 | nein |
+| Pause: in der letzten Prüfung dran → 20 % Abschlag | +0,0076 | +0,0114 | +0,0211 | -0,0102 | 3 von 4 | -0,0007 bis +0,0189 | nein |
+| Alterung: 20 % weniger Gewicht je Jahr Abstand | -0,0068 | -0,0119 | +0,0006 | -0,0022 | 1 von 4 | -0,0104 bis -0,0007 | nein |
 
 Nicht getestet: Tiefe der Aussagen (teils aus denselben Prüfungen abgeleitet, der Test wäre zirkulär) und Katalogänderung AP1 (der alte Katalog liegt nicht vor).
 
@@ -84,10 +84,10 @@ Nicht getestet: Tiefe der Aussagen (teils aus denselben Prüfungen abgeleitet, d
 
 | Raum | Prüfungen | nach Quote | mit Fundament (λ = 0,50) | Katalog-Reihenfolge | Zufall | Kosten „Grundlagen zuerst“ |
 |---|---|---|---|---|---|---|
-| AP1 | 4 | 0,550 | 0,557 | 0,452 | 0,503 | -1 % |
-| PB1 | 2 | 0,734 | 0,712 | 0,655 | 0,508 | 3 % |
-| PB2 | 2 | 0,647 | 0,647 | 0,525 | 0,527 | 0 % |
-| WISO | 2 | 0,686 | 0,686 | 0,659 | 0,511 | 0 % |
+| AP1 | 4 | 0,552 | 0,558 | 0,452 | 0,503 | -1 % |
+| PB1 | 2 | 0,743 | 0,719 | 0,655 | 0,508 | 3 % |
+| PB2 | 2 | 0,645 | 0,645 | 0,525 | 0,527 | 0 % |
+| WISO | 2 | 0,688 | 0,688 | 0,659 | 0,511 | 0 % |
 
 Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Quote“ verliert (negativ: sie gewinnt). Grenze laut Vorschlag: höchstens 5 %.
 
@@ -100,10 +100,10 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | AP1-2-3-1 | Englische Fachtexte verstehen | Sehr oft | 7 von 11 | 71 % | 5–10 | 2021H, 2022F, 2023H, 2025F, 2025H, 2026F, 2026H | 2 |
 | AP1-4-2-1 | Zahlensysteme und Präfixe: binär, hexadezimal, kB und KiB | Sehr oft | 6 von 11 | 59 % | 4–9 | 2022F, 2022H, 2024F, 2025H, 2026F, 2026H | 1 |
 | AP1-6-3-2 | Netzwerkbefehle und systematische Fehlersuche | Sehr oft | 6 von 11 | 54 % | 4–8 | 2022F, 2022H, 2024F, 2024H, 2026F, 2026H | 1 |
+| AP1-8-4-1 | Einfache ER-Modelle | Sehr oft | 6 von 11 | 52 % | 3–8 | 2022H, 2023H, 2024H, 2025H, 2026F, 2026H | 1 |
+| AP1-8-2-3 | Schreibtischtest | Sehr oft | 5 von 11 | 50 % | 3–8 | 2024H, 2025F, 2025H, 2026F, 2026H | 3 |
 | AP1-3-1-2 | Kosten über die Nutzungsdauer berechnen | Sehr oft | 5 von 11 | 46 % | 3–7 | 2021H, 2024F, 2024H, 2025F, 2025H |  |
-| AP1-8-4-1 | Einfache ER-Modelle | Sehr oft | 5 von 11 | 46 % | 3–7 | 2022H, 2023H, 2024H, 2026F, 2026H | 1 |
 | AP1-6-2-2 | IPv4-Subnetting: Netzadresse, Broadcastadresse und Hostbereich | Sehr oft | 4 von 11 | 44 % | 3–7 | 2022F, 2025F, 2025H, 2026F | 1 |
-| AP1-8-2-3 | Schreibtischtest | Sehr oft | 4 von 11 | 44 % | 3–7 | 2024H, 2025F, 2026F, 2026H | 3 |
 | AP1-4-1-4 | Peripheriegeräte und Anschlüsse | Oft | 4 von 11 | 39 % | 2–7 | 2022F, 2024F, 2025F, 2026F |  |
 | AP1-4-2-2 | Datenmengen und Speicherbedarf berechnen | Oft | 4 von 11 | 39 % | 2–7 | 2022H, 2024F, 2025H, 2026F | 1 |
 | AP1-4-2-3 | Leistung, Energie, Wirkungsgrad und Stromkosten berechnen | Oft | 4 von 11 | 39 % | 2–7 | 2021H, 2024F, 2025H, 2026F |  |
@@ -139,6 +139,7 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | AP1-3-3-1 | Kauf-, Miet- und Leasingvertrag; Vertragsbestandteile | Manchmal | 3 von 11 | 22 % | 1–5 | 2023F, 2024F, 2024H | 1 |
 | AP1-6-2-4 | MAC-Adresse, ARP und DHCP | Manchmal | 3 von 11 | 22 % | 1–5 | 2022F, 2024F, 2024H | 2 |
 | AP1-7-2-1 | IT-Grundschutz-Kompendium und Bausteine | Manchmal | 3 von 11 | 22 % | 1–5 | 2021H, 2023F, 2024H | 2 |
+| AP1-8-2-2 | Pseudocode: Kontrollstrukturen abbilden | Manchmal | 3 von 11 | 21 % | 1–5 | 2022F, 2022H, 2025H | 3 |
 | AP1-1-1-1 | Projektmerkmale und SMART-Ziele | Manchmal | 2 von 11 | 20 % | 1–5 | 2021H, 2026H |  |
 | AP1-1-1-2 | Vorgehen im Projekt: Projektphasen, Wasserfallmodell und Scrum | Manchmal | 2 von 11 | 20 % | 1–5 | 2022H, 2026H | 4 |
 | AP1-1-2-3 | Meilensteine, Termintreue und Reaktion auf Terminprobleme | Manchmal | 2 von 11 | 20 % | 1–5 | 2021H, 2026H | 1 |
@@ -161,7 +162,6 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | AP1-4-3-3 | Energieeffizienz, Gütesiegel und ökologische Aspekte | Manchmal | 2 von 11 | 15 % | 1–4 | 2021H, 2024H | 3 |
 | AP1-5-1-1 | Softwarearten: Anwendungs-, Standard-, Branchen- und Systemsoftware | Manchmal | 2 von 11 | 15 % | 1–4 | 2023F, 2024F | 1 |
 | AP1-5-1-3 | Cloudlösungen, virtuelle Desktops und Kommunikationssysteme | Manchmal | 2 von 11 | 15 % | 1–4 | 2022F, 2024F | 1 |
-| AP1-8-2-2 | Pseudocode: Kontrollstrukturen abbilden | Manchmal | 2 von 11 | 15 % | 1–4 | 2022F, 2022H | 3 |
 | AP1-1-5-3 | Testprotokoll für einen eingerichteten Arbeitsplatz | Manchmal | 1 von 11 | 12 % | 0–4 | 2026H | 1 |
 | AP1-2-5-2 | Rollen und Widerstände im Veränderungsprozess | Manchmal | 1 von 11 | 12 % | 0–4 | 2025H | 1 |
 | AP1-2-5-3 | Umstellung einführen: Sofortumstellung oder Parallelbetrieb | Manchmal | 1 von 11 | 12 % | 0–4 | 2026F |  |
@@ -222,113 +222,113 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | AP1-8-4-3 | Bildschirmmasken entwerfen: Softwareergonomie, Corporate Identity, Barrierefreiheit | Bisher nicht | 0 von 11 | 0 % | 0–2 | – | 3 |
 | AP1-8-4-4 | Prozessdarstellungen lesen: EPK und BPMN | Bisher nicht | 0 von 11 | 0 % | 0–2 | – |  |
 
-### PB1 (9 Prüfungen: Winter 2021 bis Winter 2025)
+### PB1 (10 Prüfungen: Winter 2021 bis Sommer 2026)
 
 | Stichpunkt | Titel | Stufe | Prüfungen | Quote | plausibel | Termine | Grundlage für |
 |---|---|---|---|---|---|---|---|
-| PB1-1-2-1 | Machbarkeit, Risiken, Änderungen und Kosten | Sehr oft | 6 von 9 | 71 % | 4–8 | 2022S, 2023S, 2023W, 2024W, 2025S, 2025W | 1 |
-| PB1-1-2-2 | Stakeholder und Akzeptanz im Softwareprojekt | Sehr oft | 6 von 9 | 65 % | 4–8 | 2022S, 2023S, 2023W, 2024S, 2024W, 2025S |  |
-| PB1-8-1-3 | Oberflächen gestalten: Elemente, Darstellungsformen, Mock-ups und Prototypen | Sehr oft | 5 von 9 | 61 % | 3–7 | 2022W, 2023W, 2024S, 2025S, 2025W |  |
-| PB1-1-1-1 | Klassisch oder agil: Kategorien von Vorgehensmodellen vergleichen | Sehr oft | 4 von 9 | 45 % | 2–6 | 2022S, 2022W, 2024W, 2025W | 1 |
-| PB1-1-2-3 | Anforderungen ableiten, Lasten- und Pflichtenheft | Sehr oft | 4 von 9 | 45 % | 2–6 | 2022S, 2022W, 2023S, 2025S |  |
-| PB1-4-1-1 | UML-Überblick und Anwendungsfalldiagramm | Sehr oft | 4 von 9 | 45 % | 2–6 | 2021W, 2023W, 2024S, 2025W |  |
-| PB1-5-1-4 | Entwurfsmuster: Observer, Factory, Singleton, MVC und Schichten | Sehr oft | 4 von 9 | 45 % | 2–6 | 2022S, 2022W, 2024W, 2025S |  |
-| PB1-6-1-1 | ER-Modell aus Anforderungen erstellen und erweitern | Sehr oft | 4 von 9 | 45 % | 2–6 | 2021W, 2023W, 2024S, 2025S | 1 |
-| PB1-10-1-3 | Verschlüsselungsverfahren in Anwendungen wählen | Sehr oft | 4 von 9 | 45 % | 2–6 | 2021W, 2022W, 2023S, 2025W |  |
-| PB1-10-1-4 | Integrität, Authentizität, Zertifikate und Passwortspeicherung | Sehr oft | 4 von 9 | 45 % | 2–6 | 2022S, 2022W, 2023S, 2025S | 1 |
-| PB1-4-1-2 | Klassendiagramm in der Tiefe | Oft | 4 von 9 | 39 % | 2–6 | 2021W, 2022S, 2023S, 2024W | 1 |
-| PB1-4-1-5 | Aktivitätsdiagramm für umfangreiche Abläufe | Oft | 3 von 9 | 35 % | 1–5 | 2022W, 2023W, 2025S | 1 |
-| PB1-5-1-1 | Kapselung, Vererbung, Interfaces und Polymorphie | Oft | 3 von 9 | 35 % | 1–5 | 2022S, 2023S, 2025S |  |
-| PB1-1-1-3 | Scrum: Elemente, Rollen und User Stories | Oft | 3 von 9 | 29 % | 1–5 | 2022W, 2023W, 2024W | 1 |
-| PB1-2-1-2 | Compliance, Regelkonformität und Kundenbindung (CRM) | Oft | 3 von 9 | 29 % | 1–5 | 2022W, 2024S, 2024W | 1 |
-| PB1-4-1-4 | Zustandsdiagramm | Oft | 3 von 9 | 29 % | 1–5 | 2022W, 2023S, 2024W | 1 |
-| PB1-5-1-5 | Objektorientierte Methoden in Pseudocode umsetzen | Oft | 3 von 9 | 29 % | 1–5 | 2022S, 2023S, 2024S | 2 |
-| PB1-6-1-4 | Relationale und NoSQL-Datenbanken | Oft | 3 von 9 | 29 % | 1–5 | 2022S, 2022W, 2023W |  |
-| PB1-9-1-1 | Qualitätssicherung, KVP und Kennzahlen | Oft | 3 von 9 | 29 % | 1–5 | 2021W, 2023S, 2024S |  |
-| PB1-6-1-3 | Redundanz, Anomalien und Normalisierung bis zur 3. Normalform | Oft | 2 von 9 | 26 % | 1–5 | 2023S, 2025W | 2 |
-| PB1-7-1-1 | XML: wohlgeformt, gültig, DTD und Schema | Oft | 2 von 9 | 26 % | 1–5 | 2022W, 2025W | 1 |
-| PB1-9-1-5 | Testkonzept, Testprozess, Test- und Abnahmeprotokoll | Oft | 2 von 9 | 26 % | 1–5 | 2023W, 2025S | 1 |
-| PB1-1-2-4 | Qualitätsmerkmale von Software (ISO/IEC 9126 / 25010) | Manchmal | 2 von 9 | 19 % | 1–4 | 2021W, 2023S |  |
-| PB1-3-2-1 | Bibliotheken, Frameworks und Open Source einsetzen | Manchmal | 2 von 9 | 19 % | 1–4 | 2021W, 2022W |  |
-| PB1-3-2-2 | Abläufe automatisieren: Skripte und CI/CD | Manchmal | 2 von 9 | 19 % | 1–4 | 2022W, 2024W |  |
-| PB1-4-1-3 | Sequenzdiagramm | Manchmal | 2 von 9 | 19 % | 1–4 | 2022S, 2024S | 1 |
-| PB1-7-1-2 | JSON und CSV | Manchmal | 2 von 9 | 19 % | 1–4 | 2023W, 2024W |  |
-| PB1-8-1-1 | Softwareergonomie, Usability und User Experience | Manchmal | 2 von 9 | 19 % | 1–4 | 2021W, 2024S |  |
-| PB1-8-1-2 | Barrierefreiheit und inklusives Design | Manchmal | 2 von 9 | 19 % | 1–4 | 2021W, 2022W |  |
-| PB1-10-2-1 | Authentifizierung, Autorisierung und Identity & Access Management | Manchmal | 2 von 9 | 19 % | 1–4 | 2022S, 2022W | 1 |
-| PB1-7-1-5 | eRechnung: strukturierte Daten prüfen und validieren | Manchmal | 1 von 9 | 16 % | 0–4 | 2025W |  |
-| PB1-1-1-2 | Wasserfall-, V- und Spiralmodell | Selten | 1 von 9 | 10 % | 0–3 | 2024W |  |
-| PB1-2-1-3 | Tabellenkalkulation: Formeln, Verweise und Grenzen | Selten | 1 von 9 | 10 % | 0–3 | 2023S |  |
-| PB1-3-1-1 | Programmiersprachen: Konzepte, Einsatz und Auswahl | Selten | 1 von 9 | 10 % | 0–3 | 2021W |  |
-| PB1-3-1-2 | Entwicklungswerkzeuge aufgabenbezogen auswählen und anwenden | Selten | 1 von 9 | 10 % | 0–3 | 2021W |  |
-| PB1-3-1-3 | Versionsverwaltung im Entwicklungsteam | Selten | 1 von 9 | 10 % | 0–3 | 2021W |  |
-| PB1-6-1-5 | Transaktionen und Datenintegrität | Selten | 1 von 9 | 10 % | 0–3 | 2023W | 2 |
-| PB1-7-1-4 | REST, SOAP und Schnittstellen festlegen | Selten | 1 von 9 | 10 % | 0–3 | 2024S | 1 |
-| PB1-9-1-3 | Testverfahren: statisch und dynamisch, Black-Box und White-Box | Selten | 1 von 9 | 10 % | 0–3 | 2021W | 3 |
-| PB1-9-1-6 | Handbücher und Dokumentation | Selten | 1 von 9 | 10 % | 0–3 | 2021W |  |
-| PB1-10-1-1 | Schäden einschätzen und Sicherheitsanforderungen festlegen | Selten | 1 von 9 | 10 % | 0–3 | 2024S |  |
-| PB1-11-1-1 | Schichtenmodelle, Ethernet-Frame und Netzwerkkomponenten | Selten | 1 von 9 | 10 % | 0–3 | 2024W |  |
-| PB1-11-1-2 | Übertragungsprotokolle: TCP, UDP, HTTP, HTTPS | Selten | 1 von 9 | 10 % | 0–3 | 2021W |  |
-| PB1-11-2-1 | Netzausdehnung, Verkabelung und Netzwerkplan | Selten | 1 von 9 | 10 % | 0–3 | 2024W |  |
-| PB1-12-1-1 | Verfügbarkeit von Anwendungsdiensten beurteilen | Selten | 1 von 9 | 10 % | 0–3 | 2022W |  |
-| PB1-12-1-2 | Ausfallrisiken, MTBF/AFR und Notfallkonzept | Selten | 1 von 9 | 10 % | 0–3 | 2022W |  |
-| PB1-12-2-2 | Störungen bearbeiten: Incident Management, SLA, SOP, Eskalation | Selten | 1 von 9 | 10 % | 0–3 | 2022S |  |
-| PB1-2-1-1 | Rechtlicher Rahmen: BGB, HGB, UWG und AGB | Bisher nicht | 0 von 9 | 0 % | 0–2 | – | 1 |
-| PB1-2-1-4 | Daten interpretieren, visualisieren und präsentieren | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-3-2-3 | Cyber-physische Systeme: Sensoren, Aktoren, Abfragerhythmus | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-5-1-2 | Allgemeine Fehlerbehandlung in Programmen | Bisher nicht | 0 von 9 | 0 % | 0–2 | – | 2 |
-| PB1-5-1-3 | Strukturierte und objektorientierte Analyse und Design | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-5-1-6 | Architekturmuster: Schichten, MVC und ereignisgesteuerte Oberflächen | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-6-1-2 | Relationales Modell: Tabellen, Schlüssel, Datentypen, Integrität | Bisher nicht | 0 von 9 | 0 % | 0–2 | – | 4 |
-| PB1-7-1-3 | Daten heterogener Quellen zusammenführen: Data Lake, Open Data | Bisher nicht | 0 von 9 | 0 % | 0–2 | – | 1 |
-| PB1-7-1-6 | REST und SOAP: Prinzipien, Nachrichtenaufbau und Auswahl | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-8-1-4 | Grundsätze der Dialoggestaltung an Beispielen | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-9-1-2 | Prüfverfahren: Parität und Redundanz | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-9-1-4 | Teststufen: vom Unit-Test bis zur Abnahme | Bisher nicht | 0 von 9 | 0 % | 0–2 | – | 1 |
-| PB1-10-1-2 | Bedrohungsszenarien und präventive Maßnahmen | Bisher nicht | 0 von 9 | 0 % | 0–2 | – | 1 |
-| PB1-10-2-2 | Datenschutz beim Entwurf von Anwendungen und Archivierung | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-10-2-3 | TOM prüfen und softwaretechnisch absichern | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-10-2-4 | Sicherheitsprüfung und Beratung | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-11-1-3 | Netzwerkdienste: DNS, DHCP und Proxy | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-11-1-4 | Firewall: Regelwerk, Prüftiefe und Einsatzort | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-11-2-2 | VLAN, Drahtlosnetze und Zugriffskontrolle im Netz | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-11-2-3 | Client-Server, Peer-to-Peer und Speicher im Netz | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-11-2-4 | Standortübergreifende Kommunikation: VPN-Modelle, Tunneling, IPsec | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-11-2-5 | Sicherheitskonzepte im Netz: DMZ, Segmentierung und Zero Trust | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-1-3 | Betrieb sicherstellen: USV, Redundanz, RAID und Backup | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-1-4 | Stromversorgung absichern: USV-Klassen, Leistung und Überbrückungszeit | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-1-5 | RAID vertieft: RAID 6, Hot-Spare, Hardware- oder Software-RAID | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-2-1 | Monitoring: Messdaten, Schwellwerte, SNMP, S.M.A.R.T., Systemlast | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-2-3 | Service- und Liefermodelle: On-Premises, Cloud, IaaS, PaaS, SaaS | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-2-4 | Messdaten sammeln und auswerten: Baseline, Logs und Alarmierung | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
-| PB1-12-2-5 | Hosting, Colocation und Managed Services auswählen | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
+| PB1-1-2-1 | Machbarkeit, Risiken, Änderungen und Kosten | Sehr oft | 6 von 10 | 64 % | 4–8 | 2023S, 2023W, 2024W, 2025S, 2025W, 2026S | 1 |
+| PB1-8-1-3 | Oberflächen gestalten: Elemente, Darstellungsformen, Mock-ups und Prototypen | Sehr oft | 6 von 10 | 64 % | 4–8 | 2022W, 2023W, 2024S, 2025S, 2025W, 2026S |  |
+| PB1-1-2-2 | Stakeholder und Akzeptanz im Softwareprojekt | Sehr oft | 6 von 10 | 60 % | 4–8 | 2022S, 2023S, 2023W, 2024S, 2024W, 2025S |  |
+| PB1-10-1-3 | Verschlüsselungsverfahren in Anwendungen wählen | Sehr oft | 5 von 10 | 49 % | 3–7 | 2021W, 2022W, 2023S, 2025W, 2026S |  |
+| PB1-10-1-4 | Integrität, Authentizität, Zertifikate und Passwortspeicherung | Sehr oft | 5 von 10 | 49 % | 3–7 | 2022S, 2022W, 2023S, 2025S, 2026S | 1 |
+| PB1-1-1-1 | Klassisch oder agil: Kategorien von Vorgehensmodellen vergleichen | Sehr oft | 4 von 10 | 42 % | 2–7 | 2022S, 2022W, 2024W, 2025W | 1 |
+| PB1-1-2-3 | Anforderungen ableiten, Lasten- und Pflichtenheft | Sehr oft | 4 von 10 | 42 % | 2–7 | 2022S, 2022W, 2023S, 2025S |  |
+| PB1-4-1-1 | UML-Überblick und Anwendungsfalldiagramm | Sehr oft | 4 von 10 | 42 % | 2–7 | 2021W, 2023W, 2024S, 2025W |  |
+| PB1-5-1-4 | Entwurfsmuster: Observer, Factory, Singleton, MVC und Schichten | Sehr oft | 4 von 10 | 42 % | 2–7 | 2022S, 2022W, 2024W, 2025S |  |
+| PB1-6-1-1 | ER-Modell aus Anforderungen erstellen und erweitern | Sehr oft | 4 von 10 | 42 % | 2–7 | 2021W, 2023W, 2024S, 2025S | 1 |
+| PB1-4-1-5 | Aktivitätsdiagramm für umfangreiche Abläufe | Sehr oft | 4 von 10 | 40 % | 2–6 | 2022W, 2023W, 2025S, 2026S | 1 |
+| PB1-4-1-2 | Klassendiagramm in der Tiefe | Oft | 4 von 10 | 36 % | 2–6 | 2021W, 2022S, 2023S, 2024W | 1 |
+| PB1-5-1-1 | Kapselung, Vererbung, Interfaces und Polymorphie | Oft | 3 von 10 | 33 % | 1–6 | 2022S, 2023S, 2025S |  |
+| PB1-1-1-3 | Scrum: Elemente, Rollen und User Stories | Oft | 3 von 10 | 27 % | 1–5 | 2022W, 2023W, 2024W | 1 |
+| PB1-2-1-2 | Compliance, Regelkonformität und Kundenbindung (CRM) | Oft | 3 von 10 | 27 % | 1–5 | 2022W, 2024S, 2024W | 1 |
+| PB1-4-1-4 | Zustandsdiagramm | Oft | 3 von 10 | 27 % | 1–5 | 2022W, 2023S, 2024W | 1 |
+| PB1-5-1-5 | Objektorientierte Methoden in Pseudocode umsetzen | Oft | 3 von 10 | 27 % | 1–5 | 2022S, 2023S, 2024S | 2 |
+| PB1-6-1-4 | Relationale und NoSQL-Datenbanken | Oft | 3 von 10 | 27 % | 1–5 | 2022S, 2022W, 2023W |  |
+| PB1-9-1-1 | Qualitätssicherung, KVP und Kennzahlen | Oft | 3 von 10 | 27 % | 1–5 | 2021W, 2023S, 2024S |  |
+| PB1-8-1-2 | Barrierefreiheit und inklusives Design | Oft | 3 von 10 | 25 % | 1–5 | 2021W, 2022W, 2026S |  |
+| PB1-6-1-3 | Redundanz, Anomalien und Normalisierung bis zur 3. Normalform | Manchmal | 2 von 10 | 24 % | 1–5 | 2023S, 2025W | 2 |
+| PB1-7-1-1 | XML: wohlgeformt, gültig, DTD und Schema | Manchmal | 2 von 10 | 24 % | 1–5 | 2022W, 2025W | 1 |
+| PB1-9-1-5 | Testkonzept, Testprozess, Test- und Abnahmeprotokoll | Manchmal | 2 von 10 | 24 % | 1–5 | 2023W, 2025S | 1 |
+| PB1-1-2-4 | Qualitätsmerkmale von Software (ISO/IEC 9126 / 25010) | Manchmal | 2 von 10 | 18 % | 1–4 | 2021W, 2023S |  |
+| PB1-3-2-1 | Bibliotheken, Frameworks und Open Source einsetzen | Manchmal | 2 von 10 | 18 % | 1–4 | 2021W, 2022W |  |
+| PB1-3-2-2 | Abläufe automatisieren: Skripte und CI/CD | Manchmal | 2 von 10 | 18 % | 1–4 | 2022W, 2024W |  |
+| PB1-4-1-3 | Sequenzdiagramm | Manchmal | 2 von 10 | 18 % | 1–4 | 2022S, 2024S | 1 |
+| PB1-7-1-2 | JSON und CSV | Manchmal | 2 von 10 | 18 % | 1–4 | 2023W, 2024W |  |
+| PB1-8-1-1 | Softwareergonomie, Usability und User Experience | Manchmal | 2 von 10 | 18 % | 1–4 | 2021W, 2024S |  |
+| PB1-10-2-1 | Authentifizierung, Autorisierung und Identity & Access Management | Manchmal | 2 von 10 | 18 % | 1–4 | 2022S, 2022W | 1 |
+| PB1-7-1-4 | REST, SOAP und Schnittstellen festlegen | Manchmal | 2 von 10 | 16 % | 1–4 | 2024S, 2026S | 1 |
+| PB1-10-1-1 | Schäden einschätzen und Sicherheitsanforderungen festlegen | Manchmal | 2 von 10 | 16 % | 1–4 | 2024S, 2026S |  |
+| PB1-7-1-5 | eRechnung: strukturierte Daten prüfen und validieren | Manchmal | 1 von 10 | 15 % | 0–4 | 2025W |  |
+| PB1-1-1-2 | Wasserfall-, V- und Spiralmodell | Selten | 1 von 10 | 9 % | 0–3 | 2024W |  |
+| PB1-2-1-3 | Tabellenkalkulation: Formeln, Verweise und Grenzen | Selten | 1 von 10 | 9 % | 0–3 | 2023S |  |
+| PB1-3-1-1 | Programmiersprachen: Konzepte, Einsatz und Auswahl | Selten | 1 von 10 | 9 % | 0–3 | 2021W |  |
+| PB1-3-1-2 | Entwicklungswerkzeuge aufgabenbezogen auswählen und anwenden | Selten | 1 von 10 | 9 % | 0–3 | 2021W |  |
+| PB1-3-1-3 | Versionsverwaltung im Entwicklungsteam | Selten | 1 von 10 | 9 % | 0–3 | 2021W |  |
+| PB1-6-1-5 | Transaktionen und Datenintegrität | Selten | 1 von 10 | 9 % | 0–3 | 2023W | 2 |
+| PB1-9-1-3 | Testverfahren: statisch und dynamisch, Black-Box und White-Box | Selten | 1 von 10 | 9 % | 0–3 | 2021W | 3 |
+| PB1-9-1-6 | Handbücher und Dokumentation | Selten | 1 von 10 | 9 % | 0–3 | 2021W |  |
+| PB1-11-1-1 | Schichtenmodelle, Ethernet-Frame und Netzwerkkomponenten | Selten | 1 von 10 | 9 % | 0–3 | 2024W |  |
+| PB1-11-1-2 | Übertragungsprotokolle: TCP, UDP, HTTP, HTTPS | Selten | 1 von 10 | 9 % | 0–3 | 2021W |  |
+| PB1-11-2-1 | Netzausdehnung, Verkabelung und Netzwerkplan | Selten | 1 von 10 | 9 % | 0–3 | 2024W |  |
+| PB1-12-1-1 | Verfügbarkeit von Anwendungsdiensten beurteilen | Selten | 1 von 10 | 9 % | 0–3 | 2022W |  |
+| PB1-12-1-2 | Ausfallrisiken, MTBF/AFR und Notfallkonzept | Selten | 1 von 10 | 9 % | 0–3 | 2022W |  |
+| PB1-12-2-2 | Störungen bearbeiten: Incident Management, SLA, SOP, Eskalation | Selten | 1 von 10 | 9 % | 0–3 | 2022S |  |
+| PB1-3-2-3 | Cyber-physische Systeme: Sensoren, Aktoren, Abfragerhythmus | Selten | 1 von 10 | 7 % | 0–3 | 2026S |  |
+| PB1-2-1-1 | Rechtlicher Rahmen: BGB, HGB, UWG und AGB | Bisher nicht | 0 von 10 | 0 % | 0–2 | – | 1 |
+| PB1-2-1-4 | Daten interpretieren, visualisieren und präsentieren | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-5-1-2 | Allgemeine Fehlerbehandlung in Programmen | Bisher nicht | 0 von 10 | 0 % | 0–2 | – | 2 |
+| PB1-5-1-3 | Strukturierte und objektorientierte Analyse und Design | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-5-1-6 | Architekturmuster: Schichten, MVC und ereignisgesteuerte Oberflächen | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-6-1-2 | Relationales Modell: Tabellen, Schlüssel, Datentypen, Integrität | Bisher nicht | 0 von 10 | 0 % | 0–2 | – | 4 |
+| PB1-7-1-3 | Daten heterogener Quellen zusammenführen: Data Lake, Open Data | Bisher nicht | 0 von 10 | 0 % | 0–2 | – | 1 |
+| PB1-7-1-6 | REST und SOAP: Prinzipien, Nachrichtenaufbau und Auswahl | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-8-1-4 | Grundsätze der Dialoggestaltung an Beispielen | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-9-1-2 | Prüfverfahren: Parität und Redundanz | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-9-1-4 | Teststufen: vom Unit-Test bis zur Abnahme | Bisher nicht | 0 von 10 | 0 % | 0–2 | – | 1 |
+| PB1-10-1-2 | Bedrohungsszenarien und präventive Maßnahmen | Bisher nicht | 0 von 10 | 0 % | 0–2 | – | 1 |
+| PB1-10-2-2 | Datenschutz beim Entwurf von Anwendungen und Archivierung | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-10-2-3 | TOM prüfen und softwaretechnisch absichern | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-10-2-4 | Sicherheitsprüfung und Beratung | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-11-1-3 | Netzwerkdienste: DNS, DHCP und Proxy | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-11-1-4 | Firewall: Regelwerk, Prüftiefe und Einsatzort | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-11-2-2 | VLAN, Drahtlosnetze und Zugriffskontrolle im Netz | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-11-2-3 | Client-Server, Peer-to-Peer und Speicher im Netz | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-11-2-4 | Standortübergreifende Kommunikation: VPN-Modelle, Tunneling, IPsec | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-11-2-5 | Sicherheitskonzepte im Netz: DMZ, Segmentierung und Zero Trust | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-1-3 | Betrieb sicherstellen: USV, Redundanz, RAID und Backup | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-1-4 | Stromversorgung absichern: USV-Klassen, Leistung und Überbrückungszeit | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-1-5 | RAID vertieft: RAID 6, Hot-Spare, Hardware- oder Software-RAID | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-2-1 | Monitoring: Messdaten, Schwellwerte, SNMP, S.M.A.R.T., Systemlast | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-2-3 | Service- und Liefermodelle: On-Premises, Cloud, IaaS, PaaS, SaaS | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-2-4 | Messdaten sammeln und auswerten: Baseline, Logs und Alarmierung | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
+| PB1-12-2-5 | Hosting, Colocation und Managed Services auswählen | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
 
-### PB2 (9 Prüfungen: Winter 2021 bis Winter 2025)
+### PB2 (10 Prüfungen: Winter 2021 bis Sommer 2026)
 
 | Stichpunkt | Titel | Stufe | Prüfungen | Quote | plausibel | Termine | Grundlage für |
 |---|---|---|---|---|---|---|---|
-| PB2-1-1-1 | Pseudocode und Aktivitätsdiagramm: Funktionen, Schleifengrenzen, Sonderfälle und Datentypen | Sehr oft | 9 von 9 | 100 % | 7–9 | 2021W, 2022S, 2022W, 2023S, 2023W, 2024S, 2024W, 2025S, 2025W |  |
-| PB2-5-1-2 | Abfragen über mehrere Tabellen: JOIN | Sehr oft | 8 von 9 | 90 % | 6–9 | 2021W, 2022S, 2022W, 2023S, 2024S, 2024W, 2025S, 2025W |  |
-| PB2-5-1-3 | Aggregatfunktionen, GROUP BY und HAVING | Sehr oft | 8 von 9 | 90 % | 6–9 | 2021W, 2022S, 2022W, 2023S, 2023W, 2024S, 2025S, 2025W |  |
-| PB2-5-1-1 | SELECT: Spalten, Bedingungen, Ausdrücke und Sortieren | Sehr oft | 8 von 9 | 84 % | 5–9 | 2021W, 2022S, 2022W, 2023S, 2023W, 2024S, 2024W, 2025W |  |
-| PB2-1-1-2 | Algorithmen über Arrays und Listen: filtern, zählen, Extremwerte, abgleichen, gruppieren | Sehr oft | 7 von 9 | 81 % | 5–8 | 2022S, 2023S, 2023W, 2024S, 2024W, 2025S, 2025W |  |
-| PB2-6-1-2 | Datenpflege: INSERT, UPDATE, DELETE und Archivieren | Sehr oft | 7 von 9 | 81 % | 5–8 | 2021W, 2022S, 2022W, 2023W, 2024S, 2025S, 2025W |  |
-| PB2-6-1-1 | Tabellenstruktur, Index und Datenbankobjekte: CREATE TABLE, ALTER TABLE, CREATE INDEX, Prozedur, Trigger | Sehr oft | 5 von 9 | 61 % | 3–7 | 2021W, 2022S, 2022W, 2025S, 2025W |  |
-| PB2-3-1-1 | Schreibtischtest und Fehler im Algorithmus lokalisieren | Sehr oft | 5 von 9 | 55 % | 3–7 | 2021W, 2022S, 2022W, 2023S, 2025W |  |
-| PB2-5-1-5 | Übung: Vorgegebenes Tabellenmodell lesen und den Weg der Abfrage finden | Sehr oft | 5 von 9 | 48 % | 2–6 | 2021W, 2022W, 2023S, 2023W, 2024W |  |
-| PB2-4-1-1 | Testabdeckung: Anweisungs-, Zweig- und Pfadüberdeckung | Sehr oft | 4 von 9 | 45 % | 2–6 | 2022W, 2023S, 2024S, 2025W |  |
-| PB2-5-1-4 | Unterabfragen und UNION | Sehr oft | 4 von 9 | 45 % | 2–6 | 2022S, 2023W, 2024S, 2025S |  |
-| PB2-3-1-3 | Unit-Tests schreiben und prüfen, Regressionstests | Oft | 3 von 9 | 35 % | 1–5 | 2022S, 2024S, 2025W |  |
-| PB2-4-1-2 | Testverfahren auswählen und Bestehenskriterien festlegen | Oft | 2 von 9 | 26 % | 1–5 | 2024S, 2025S |  |
-| PB2-6-1-3 | Benutzer, Rollen und Rechte: CREATE USER, GRANT, REVOKE | Oft | 2 von 9 | 26 % | 1–5 | 2023S, 2025S |  |
-| PB2-2-1-1 | Such- und Sortierverfahren: lineare und binäre Suche, Bubble, Selection und Insertion Sort, Quicksort, Mergesort und O-Notation | Manchmal | 2 von 9 | 19 % | 1–4 | 2022W, 2024S |  |
-| PB2-2-1-4 | Generische Klassen und Funktionsobjekte | Manchmal | 2 von 9 | 19 % | 1–4 | 2022W, 2024S |  |
-| PB2-3-1-2 | Debugging und Fehlerbehandlung | Manchmal | 1 von 9 | 16 % | 0–4 | 2025S |  |
-| PB2-1-1-3 | Bestehende Funktionen und Klassen erweitern | Selten | 1 von 9 | 10 % | 0–3 | 2024W |  |
-| PB2-2-1-3 | Rekursion und Iteration | Selten | 1 von 9 | 10 % | 0–3 | 2022W |  |
-| PB2-4-1-3 | Testdaten auswählen und generieren: Äquivalenzklassen, Grenzwerte, Sonderfälle | Selten | 1 von 9 | 10 % | 0–3 | 2022S |  |
-| PB2-6-1-5 | Datenqualität vor einem Import prüfen | Selten | 1 von 9 | 10 % | 0–3 | 2024W |  |
-| PB2-6-1-6 | SQL-Sprachteile, Spaltenoptionen und Indexwahl | Bisher nicht | 0 von 9 | 0 % | 0–2 | – |  |
+| PB2-1-1-1 | Pseudocode und Aktivitätsdiagramm: Funktionen, Schleifengrenzen, Sonderfälle und Datentypen | Sehr oft | 10 von 10 | 100 % | 8–10 | 2021W, 2022S, 2022W, 2023S, 2023W, 2024S, 2024W, 2025S, 2025W, 2026S |  |
+| PB2-5-1-1 | SELECT: Spalten, Bedingungen, Ausdrücke und Sortieren | Sehr oft | 9 von 10 | 85 % | 6–10 | 2021W, 2022S, 2022W, 2023S, 2023W, 2024S, 2024W, 2025W, 2026S |  |
+| PB2-5-1-2 | Abfragen über mehrere Tabellen: JOIN | Sehr oft | 8 von 10 | 84 % | 6–9 | 2021W, 2022S, 2022W, 2023S, 2024S, 2024W, 2025S, 2025W |  |
+| PB2-5-1-3 | Aggregatfunktionen, GROUP BY und HAVING | Sehr oft | 8 von 10 | 84 % | 6–9 | 2021W, 2022S, 2022W, 2023S, 2023W, 2024S, 2025S, 2025W |  |
+| PB2-6-1-2 | Datenpflege: INSERT, UPDATE, DELETE und Archivieren | Sehr oft | 8 von 10 | 82 % | 6–9 | 2021W, 2022S, 2022W, 2023W, 2024S, 2025S, 2025W, 2026S |  |
+| PB2-1-1-2 | Algorithmen über Arrays und Listen: filtern, zählen, Extremwerte, abgleichen, gruppieren | Sehr oft | 7 von 10 | 75 % | 5–9 | 2022S, 2023S, 2023W, 2024S, 2024W, 2025S, 2025W |  |
+| PB2-6-1-1 | Tabellenstruktur, Index und Datenbankobjekte: CREATE TABLE, ALTER TABLE, CREATE INDEX, Prozedur, Trigger | Sehr oft | 5 von 10 | 57 % | 3–8 | 2021W, 2022S, 2022W, 2025S, 2025W |  |
+| PB2-3-1-1 | Schreibtischtest und Fehler im Algorithmus lokalisieren | Sehr oft | 5 von 10 | 51 % | 3–7 | 2021W, 2022S, 2022W, 2023S, 2025W |  |
+| PB2-5-1-5 | Übung: Vorgegebenes Tabellenmodell lesen und den Weg der Abfrage finden | Sehr oft | 5 von 10 | 45 % | 2–7 | 2021W, 2022W, 2023S, 2023W, 2024W |  |
+| PB2-4-1-1 | Testabdeckung: Anweisungs-, Zweig- und Pfadüberdeckung | Sehr oft | 4 von 10 | 42 % | 2–7 | 2022W, 2023S, 2024S, 2025W |  |
+| PB2-5-1-4 | Unterabfragen und UNION | Sehr oft | 4 von 10 | 42 % | 2–7 | 2022S, 2023W, 2024S, 2025S |  |
+| PB2-3-1-3 | Unit-Tests schreiben und prüfen, Regressionstests | Oft | 3 von 10 | 33 % | 1–6 | 2022S, 2024S, 2025W |  |
+| PB2-4-1-2 | Testverfahren auswählen und Bestehenskriterien festlegen | Manchmal | 2 von 10 | 24 % | 1–5 | 2024S, 2025S |  |
+| PB2-6-1-3 | Benutzer, Rollen und Rechte: CREATE USER, GRANT, REVOKE | Manchmal | 2 von 10 | 24 % | 1–5 | 2023S, 2025S |  |
+| PB2-2-1-1 | Such- und Sortierverfahren: lineare und binäre Suche, Bubble, Selection und Insertion Sort, Quicksort, Mergesort und O-Notation | Manchmal | 2 von 10 | 18 % | 1–4 | 2022W, 2024S |  |
+| PB2-2-1-4 | Generische Klassen und Funktionsobjekte | Manchmal | 2 von 10 | 18 % | 1–4 | 2022W, 2024S |  |
+| PB2-3-1-2 | Debugging und Fehlerbehandlung | Manchmal | 1 von 10 | 15 % | 0–4 | 2025S |  |
+| PB2-1-1-3 | Bestehende Funktionen und Klassen erweitern | Selten | 1 von 10 | 9 % | 0–3 | 2024W |  |
+| PB2-2-1-3 | Rekursion und Iteration | Selten | 1 von 10 | 9 % | 0–3 | 2022W |  |
+| PB2-4-1-3 | Testdaten auswählen und generieren: Äquivalenzklassen, Grenzwerte, Sonderfälle | Selten | 1 von 10 | 9 % | 0–3 | 2022S |  |
+| PB2-6-1-5 | Datenqualität vor einem Import prüfen | Selten | 1 von 10 | 9 % | 0–3 | 2024W |  |
+| PB2-6-1-6 | SQL-Sprachteile, Spaltenoptionen und Indexwahl | Bisher nicht | 0 von 10 | 0 % | 0–2 | – |  |
 
 ### WISO (8 Prüfungen: Winter 2021 bis Winter 2025)
 
@@ -355,7 +355,6 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | WISO-2-4-1 | Produktivität, Wirtschaftlichkeit und Rentabilität berechnen | Sehr oft | 5 von 8 | 54 % | 2–6 | 2022S, 2022W, 2023S, 2023W, 2024S |  |
 | WISO-1-4-2 | Zusammenarbeit von Arbeitgeber und Betriebsrat: Betriebsvereinbarung, Betriebsversammlung, Einigungsstelle | Sehr oft | 4 von 8 | 50 % | 2–6 | 2021W, 2023S, 2024S, 2025S |  |
 | WISO-2-1-1 | Der Betrieb: Branche, Wirtschaftssektoren, erwerbswirtschaftliche Betriebe, Produktpalette und Märkte | Sehr oft | 4 von 8 | 50 % | 2–6 | 2022S, 2023S, 2024S, 2025S |  |
-| WISO-2-5-1 | Wirtschaftliche Verflechtungen: Konzern, Kartell, Fusion | Sehr oft | 4 von 8 | 50 % | 2–6 | 2022S, 2023W, 2024S, 2025W |  |
 | WISO-3-3-1 | Sicherheitszeichen, Flucht- und Rettungswege, Notausgänge und Sammelplätze | Sehr oft | 4 von 8 | 50 % | 2–6 | 2022S, 2022W, 2024S, 2025S |  |
 | WISO-4-1-2 | Nachhaltigkeit: Einkauf und Lieferantenauswahl, Auswirkungen auf Umwelt, Pflanzen, Tiere und Lebensräume | Sehr oft | 4 von 8 | 50 % | 2–6 | 2021W, 2023W, 2024S, 2025S |  |
 | WISO-2-1-4 | Konjunktur: Phasen, Merkmale und Maßnahmen | Sehr oft | 3 von 8 | 46 % | 2–6 | 2023S, 2025S, 2025W |  |
@@ -363,11 +362,11 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | WISO-1-8-4 | Existenzgründung: Möglichkeiten und Grenzen | Sehr oft | 4 von 8 | 43 % | 2–5 | 2022W, 2023S, 2023W, 2024S |  |
 | WISO-1-6-3 | Sozialversicherungsbeiträge berechnen | Oft | 3 von 8 | 39 % | 1–5 | 2023S, 2023W, 2025W |  |
 | WISO-1-8-1 | Lebensbegleitendes Lernen, Fortbildung und Umschulung, staatliche Förderung | Oft | 3 von 8 | 39 % | 1–5 | 2022W, 2023S, 2025W |  |
+| WISO-2-5-1 | Wirtschaftliche Verflechtungen: Konzern, Kartell, Fusion | Oft | 3 von 8 | 39 % | 1–5 | 2022S, 2023W, 2025W |  |
 | WISO-3-1-2 | Sicherheitsbeauftragte, Fachkraft für Arbeitssicherheit, Ersthelfer und Fürsorgepflicht | Oft | 3 von 8 | 39 % | 1–5 | 2021W, 2023W, 2025S |  |
 | WISO-4-2-3 | Immissionsschutz, Verursacherprinzip und Rechtsfolgen | Oft | 3 von 8 | 39 % | 1–5 | 2022S, 2024S, 2025W |  |
 | WISO-1-1-1 | Ausbildungsvertrag: Abschluss, Vertragspartner, Mindestinhalte, nichtige Vereinbarungen | Oft | 2 von 8 | 36 % | 1–5 | 2025S, 2025W |  |
 | WISO-2-4-2 | Zielbeziehungen: Zielkonflikt, Zielharmonie, Zielneutralität | Oft | 2 von 8 | 36 % | 1–5 | 2025S, 2025W |  |
-| WISO-1-3-1 | Individual- und Kollektivarbeitsrecht; Rechte und Pflichten im Arbeitsverhältnis | Oft | 3 von 8 | 32 % | 1–5 | 2021W, 2022S, 2022W |  |
 | WISO-1-6-1 | Entgeltabrechnung: Lohn- und Gehaltsformen, Brutto und Netto, Lohn- und Kirchensteuer, vermögenswirksame Leistungen | Oft | 3 von 8 | 32 % | 1–5 | 2021W, 2023S, 2023W |  |
 | WISO-3-1-3 | Gesetzliche Unfallversicherung: versicherte Personen und Fälle, Leistungen | Oft | 3 von 8 | 32 % | 1–5 | 2022W, 2023W, 2024S |  |
 | WISO-3-4-4 | Verhalten im Brandfall und Brandschutzmittel: Brandmeldung, Feuerlöscher, Löschdecken, Brandklassen | Oft | 3 von 8 | 32 % | 1–5 | 2022S, 2022W, 2024S |  |
@@ -375,6 +374,7 @@ Kosten = wie viel Fläche die Reihenfolge mit Fundament gegenüber „nur nach Q
 | WISO-1-2-2 | Ausbildungsordnung, Ausbildungsrahmenplan, Rahmenlehrplan und betrieblicher Ausbildungsplan | Oft | 2 von 8 | 29 % | 1–4 | 2021W, 2025S |  |
 | WISO-2-1-2 | Betriebliche und gesamtwirtschaftliche Arbeitsteilung, Globalisierung | Oft | 2 von 8 | 29 % | 1–4 | 2022S, 2025W |  |
 | WISO-4-1-1 | Umweltrisiken von IT-Prozessen; Speicher- und Printmedien und Betriebsstoffe sparsam einsetzen | Oft | 2 von 8 | 29 % | 1–4 | 2021W, 2025S |  |
+| WISO-1-3-1 | Individual- und Kollektivarbeitsrecht; Rechte und Pflichten im Arbeitsverhältnis | Manchmal | 2 von 8 | 21 % | 1–4 | 2022S, 2022W |  |
 | WISO-1-5-3 | Gewerkschaften, Arbeitgeberverbände, Kammern und Wirtschaftsverbände | Manchmal | 2 von 8 | 21 % | 1–4 | 2022W, 2023S |  |
 | WISO-1-8-3 | Lernen und Arbeiten in Europa: Europass, Mobilitätsprogramme, Auslandsaufenthalte, Europäische Sozialcharta | Manchmal | 2 von 8 | 21 % | 1–4 | 2021W, 2022S |  |
 | WISO-3-4-2 | Arbeitsunfall melden | Manchmal | 2 von 8 | 21 % | 1–4 | 2022W, 2023S |  |

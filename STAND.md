@@ -76,8 +76,12 @@ nächsten offenen Punkt weiter.
   Prüfskript `npm run umbau:wichtigkeit` → `umbau/berichte/wichtigkeit-bericht.md`.
 - **Zuordnung für die Wichtigkeit geprüft (17.10.2026, UMBAU.md P73):** alle 800 Teilaufgaben blind ein zweites Mal zugeordnet,
   140 strittige Paare per Schiedsspruch entschieden → `umbau/zuordnung/wichtigkeit.json` (neu erzeugen mit
-  `node tools/umbau/wichtigkeit-zuordnung.mjs`). 21 Stichpunkte haben jetzt eine andere Stufe. Offen: PB2-Aufgaben zu
-  Datenmodellierung und IT-Sicherheit zählen für keinen PB2-Stichpunkt (Stoff in PB1); unabhängige Zweitmeinung eines anderen Anbieters.
+  `node tools/umbau/wichtigkeit-zuordnung.mjs`). 21 Stichpunkte haben jetzt eine andere Stufe.
+- **Podcast-Gegenprobe und Signaltest (17.10.2026, UMBAU.md P74):** Themenliste des IT-Berufe-Podcasts bestätigt die Zuordnung
+  (keine Ergänzung nötig); AP2 Sommer 2026 (ohne Abschrift) zählt über Stichworte mit halbem Gewicht; Stoff aus dem anderen
+  Prüfungsteil als Hinweis „auch in x von N …“ (z. B. Relationales Modell in 7 von 10 PB2-Prüfungen); vorher festgelegte Signale
+  (Gewicht alt, Pause, Alterung) bestehen die Aufnahmeregel nicht. Offen nur: unabhängige Zweitmeinung eines anderen Anbieters
+  (`umbau/berichte/wichtigkeit-prompt-extern.md`); bei neuen Prüfungen Abschrift unter `quellen/` ablegen, blind zuordnen, Werkzeug und Prüfskript laufen lassen.
 
 - **Regelwerk v2.2 (Branch `regelwerk-v2`, 16.10.2026):** Lehrbuch Westermann „IT-Berufe“ (GS/FS/FS2) als Quelle der Tiefe;
   alle vier Räume erweitert und per Prüfer-Filter (17.10.2026) gestrafft: AP1 814, PB1 443, PB2 116, WISO 382 Aussagen
