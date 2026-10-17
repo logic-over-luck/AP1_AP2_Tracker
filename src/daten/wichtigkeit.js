@@ -78,6 +78,8 @@ export function wichtigkeitRaum(spListe) {
     const termine = [...eigene.keys()].sort(terminVergleich);
     je.set(s.id, {
       x: eigene.size,
+      // Prüfungen, die nur über die Themenliste des Podcasts belegt sind (Gewicht unter 0,6; UMBAU.md P74)
+      nurStichwort: [...eigene.values()].filter((g) => g < 0.6).length,
       n,
       quote,
       stufe: stufeFuer(quote, eigene.size > 0),
@@ -87,7 +89,14 @@ export function wichtigkeitRaum(spListe) {
     });
   }
   return {
-    raum: { n, aktuell: [...pruefungen.values()].filter((g) => g >= 1).length, summe, termine: [...pruefungen.keys()].sort(terminVergleich) },
+    raum: {
+      n,
+      aktuell: [...pruefungen.values()].filter((g) => g >= 1).length,
+      // Prüfungen ohne Abschrift, nur aus der Themenliste des Podcasts
+      nurStichwort: [...pruefungen.entries()].filter(([, g]) => g < 0.6).map(([p]) => p).sort(terminVergleich),
+      summe,
+      termine: [...pruefungen.keys()].sort(terminVergleich),
+    },
     je,
   };
 }
@@ -102,8 +111,9 @@ export function stufenVerteilung(spListe) {
 // Text für Tooltip und Details: „Oft geprüft · in 4 von 11 Prüfungen, zuletzt Frühjahr 2026 · wahrscheinlich 2 bis 7 von 11“
 export function wichtigkeitText(w, { kurz = false } = {}) {
   const teile = [stufe(w.stufe).name];
-  if (w.x) teile.push(`in ${w.x} von ${w.n} Prüfungen, zuletzt ${terminName(w.zuletzt)}`);
+  if (w.x) teile.push(`in ${w.x} von ${w.n} Prüfungen${w.nurStichwort ? ` (${w.nurStichwort} davon nur laut Themenliste)` : ''}, zuletzt ${terminName(w.zuletzt)}`);
   else if (w.n) teile.push(`in keiner der ${w.n} ausgewerteten Prüfungen`);
+  for (const q of w.quer ?? []) teile.push(`auch in ${q.x} von ${q.n} ${q.name}-Prüfungen`);
   if (!kurz && w.n) teile.push(w.von === w.bis ? `wahrscheinlich ${w.von} von ${w.n}` : `wahrscheinlich ${w.von} bis ${w.bis} von ${w.n}`);
   return teile.join(' · ');
 }

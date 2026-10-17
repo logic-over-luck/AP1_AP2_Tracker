@@ -17,7 +17,6 @@ export function Wichtigkeit({ raum }) {
   const sps = r.bloeckeListe.flatMap((b) => b.sp.map((id) => inhalt.sp.get(id)).filter(Boolean));
   const jeStufe = STUFEN.map((s) => sps.filter((x) => x.wichtig.stufe === s.nr).sort((a, b) => b.wichtig.quote - a.wichtig.quote || a.titel.localeCompare(b.titel, 'de')));
   const [offen, setOffen] = useState(null);
-  const altGewicht = w.n > w.aktuell ? (w.summe - w.aktuell) / (w.n - w.aktuell) : null;
 
   return (
     <div class="wichtigkeit">
@@ -74,14 +73,25 @@ export function Wichtigkeit({ raum }) {
           <div class="hilfe-abschnitt__text">
             <p>
               Grundlage sind <strong>{w.n} ausgewertete Prüfungen</strong> ({w.termine.length ? `${terminName(w.termine[0])} bis ${terminName(w.termine.at(-1))}` : '–'}), davon {w.aktuell} nach dem
-              aktuellen Prüfungskatalog. Jede Prüfung zählt je Stichpunkt höchstens einmal{altGewicht !== null ? <>, nach aktuellem Katalog voll, nach altem Katalog mit {String(Math.round(altGewicht * 10) / 10).replace('.', ',')}</> : null}.
+              aktuellen Prüfungskatalog. Jede Prüfung zählt je Stichpunkt höchstens einmal, nach aktuellem Katalog voll, nach altem Katalog mit 0,6.
+              {w.nurStichwort.length > 0 && (
+                <>
+                  {' '}
+                  Von {w.nurStichwort.map(terminName).join(', ')} gibt es keine Abschrift; dort zählen die Themen-Stichworte des IT-Berufe-Podcasts mit halbem Gewicht.
+                </>
+              )}
             </p>
             <p>
               Die Stufe kommt aus dem Anteil dieser gewichteten Prüfungen, in denen der Stichpunkt vorkam. Angezeigt wird die einfache Zahl: „in 4 von {w.n} Prüfungen“.
             </p>
             <p>
               Welche Aufgabe welchen Stichpunkt prüft, ist doppelt geprüft: Zwei unabhängige Zuordnungen jeder Teilaufgabe, und wo sie sich uneinig waren, hat ein
-              Schiedsspruch an der Musterlösung entschieden. Gezählt wird ein Stichpunkt nur, wenn man seinen Stoff zum Lösen wirklich braucht.
+              Schiedsspruch an der Musterlösung entschieden. Gezählt wird ein Stichpunkt nur, wenn man seinen Stoff zum Lösen wirklich braucht. Als Gegenprobe
+              dienten die Themenlisten des IT-Berufe-Podcasts.
+            </p>
+            <p>
+              <strong>„auch in 4 von 10 PB2“</strong>: Der Stoff wohnt in diesem Prüfungsteil, wurde aber auch in Prüfungen des anderen Teils abgefragt. Das steht als
+              Hinweis dabei und ändert die Stufe nicht.
             </p>
             <p>
               <strong>Wahrscheinlich … bis …</strong>: Mit so wenigen Prüfungen ist jede Zahl unsicher. Der Bereich zeigt, wie oft der Stichpunkt bei {w.n} Prüfungen plausibel drankäme ({Math.round((BEREICH[1] - BEREICH[0]) * 100)}-%-Bereich).

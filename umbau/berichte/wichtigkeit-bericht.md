@@ -67,6 +67,19 @@ Treffer „Sehr oft“ ist die ehrliche Probe auf die Namen: Die Stufen beschrei
 
 Gilt nach der Aufnahmeregel (Vorschlag 3.6): Ein anderes Gewicht für alte Prüfungen kommt nur, wenn es den Log-Loss in mindestens 3 von 4 Räumen senkt und das Bootstrap-Intervall die 0 nicht enthält. Diese Tabelle ist die Vorstufe dazu.
 
+## Vorher festgelegte Signale (Aufnahmeregel)
+
+Verbesserung des Log-Loss gegenüber „nur Prüfungen, Gewicht alt 0,6“ (positiv = besser), je Raum gemittelt über die rollierenden Läufe, dazu gepoolt mit 95-%-Bootstrap-Intervall. Aufgenommen wird ein Signal nur, wenn es in mindestens 3 von 4 Räumen besser ist und das Intervall die 0 nicht enthält.
+
+| Signal | AP1 | PB1 | PB2 | WISO | besser in | 95-%-Intervall gepoolt | aufgenommen |
+|---|---|---|---|---|---|---|---|
+| Gewicht alter Prüfungen 1 statt 0,6 | -0,0005 | +0,0131 | -0,0173 | -0,0027 | 1 von 4 | -0,0066 bis +0,0034 | nein |
+| Gewicht alter Prüfungen 0,3 statt 0,6 | -0,0148 | -0,0326 | +0,0063 | -0,0082 | 1 von 4 | -0,0200 bis -0,0056 | nein |
+| Pause: in der letzten Prüfung dran → 20 % Abschlag | +0,0083 | +0,0138 | +0,0089 | -0,0096 | 3 von 4 | -0,0019 bis +0,0140 | nein |
+| Alterung: 20 % weniger Gewicht je Jahr Abstand | -0,0072 | -0,0139 | +0,0022 | -0,0005 | 1 von 4 | -0,0107 bis -0,0006 | nein |
+
+Nicht getestet: Tiefe der Aussagen (teils aus denselben Prüfungen abgeleitet, der Test wäre zirkulär) und Katalogänderung AP1 (der alte Katalog liegt nicht vor).
+
 ## Abdeckungskurve (Fläche: mittlerer abgedeckter Anteil einer Prüfung nach aktuellem Katalog, wenn man die Stichpunkte der Reihe nach lernt)
 
 | Raum | Prüfungen | nach Quote | mit Fundament (λ = 0,50) | Katalog-Reihenfolge | Zufall | Kosten „Grundlagen zuerst“ |

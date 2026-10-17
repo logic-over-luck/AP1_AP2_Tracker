@@ -109,11 +109,15 @@ export function ladeTypenAp1(wurzel, cfg = AP1) {
   return typ;
 }
 
+// Beleg aus der Themenliste des IT-Berufe-Podcasts (UMBAU.md P74): nur wo keine Abschrift existiert, ID <Termin>-…-podcast-<Stichwort>
+export const istStichwortBeleg = (t) => t.includes('-podcast-');
+
 function wichtigkeitAusTeilaufgaben(teilaufgaben, ersteAktuelle) {
   const jePruefung = new Map();
   for (const t of teilaufgaben ?? []) {
     const p = t.split('-')[0];
-    const g = p >= ersteAktuelle ? BELEG_GEWICHT.original.aktuell : BELEG_GEWICHT.original.alt;
+    const quelle = istStichwortBeleg(t) ? BELEG_GEWICHT.podcast_stichwort : BELEG_GEWICHT.original;
+    const g = p >= ersteAktuelle ? quelle.aktuell : quelle.alt;
     jePruefung.set(p, Math.max(jePruefung.get(p) ?? 0, g));
   }
   const wert = [...jePruefung.values()].reduce((a, b) => a + b, 0);
@@ -267,7 +271,10 @@ export function ladeWichtigkeitZuordnung(wurzel) {
 
 export function vorschauRaum(daten, wurzel, cfg) {
   const plaene = ladeLernplanAp1(wurzel, cfg);
-  const geprueft = ladeWichtigkeitZuordnung(wurzel)?.[cfg.appRaum] ?? null;
+  const zuordnungW = ladeWichtigkeitZuordnung(wurzel);
+  const geprueft = zuordnungW?.[cfg.appRaum] ?? null;
+  // Belege aus dem anderen Prüfungsteil (P74): nur Anzeige, keine Stufe
+  const quer = zuordnungW?.quer?.[cfg.appRaum] ?? {};
   const belegTa = (s) => (geprueft ? Object.values(geprueft[s.id] ?? {}).flat() : (s.teilaufgaben ?? []));
   const R = cfg.appRaum;
   const altSp = daten.sp;
@@ -405,7 +412,9 @@ export function vorschauRaum(daten, wurzel, cfg) {
           gewicht: w.wert,
           pruef: w.pruefungen,
           // Teilaufgaben-IDs (nur IDs, keine Texte): Anteil eines Themenbereichs an den Prüfungsaufgaben (src/daten/wichtigkeit.js)
-          ta: belegTa(s),
+          ta: belegTa(s).filter((t) => !istStichwortBeleg(t)),
+          // P74: in Prüfungen eines anderen Prüfungsteils geprüft – { PB2: { '2021W': [Teilaufgaben] } }
+          quer: quer[s.id] ?? null,
           // D7: Gewicht aus dem Lernfeld statt aus Prüfungen (nur ohne jeden Beleg)
           gewichtLernfeld: wErsatz ? wErsatz.lernfelder : null,
           punkte: null,

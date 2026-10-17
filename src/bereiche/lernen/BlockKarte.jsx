@@ -361,9 +361,18 @@ function Wichtigkeit({ sp, raum }) {
         <StufenMarke w={w} />
       </a>
       <span class="sp-wichtig__text">
-        {w.x ? `in ${w.x} von ${w.n} Prüfungen, zuletzt ${terminName(w.zuletzt)}` : w.n ? `in keiner der ${w.n} ausgewerteten Prüfungen` : 'keine ausgewerteten Prüfungen'}
+        {w.x
+          ? `in ${w.x} von ${w.n} Prüfungen${w.nurStichwort ? ` (${w.nurStichwort} davon nur laut Themenliste)` : ''}, zuletzt ${terminName(w.zuletzt)}`
+          : w.n
+            ? `in keiner der ${w.n} ausgewerteten Prüfungen`
+            : 'keine ausgewerteten Prüfungen'}
         {w.n ? <span class="gedaempft"> · wahrscheinlich {w.von === w.bis ? w.von : `${w.von} bis ${w.bis}`} von {w.n}</span> : null}
       </span>
+      {(w.quer ?? []).map((q) => (
+        <Marke key={q.raum} ton="neutral" icon="arrow-left-right" tip={`Der Stoff kam auch in Prüfungen von ${q.name} vor: ${q.termine.map(terminName).join(', ')}. Das zählt nicht zur Stufe hier.`}>
+          auch in {q.x} von {q.n} {q.name}
+        </Marke>
+      ))}
       {fundament.length > 0 && (
         <Marke ton="neutral" icon="layers" tip={`Darauf bauen auf: ${fundament.map((f) => f.titel).join(' · ')}`}>
           Grundlage für {fundament.length}

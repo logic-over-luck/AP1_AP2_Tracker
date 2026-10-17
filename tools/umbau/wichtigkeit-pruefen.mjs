@@ -49,17 +49,23 @@ function raumDaten(r) {
       for (const s of t.stichpunkte) {
         const ta = geprueft?.[r] ? Object.values(geprueft[r][s.id] ?? {}).flat() : (s.teilaufgaben ?? []);
         const termine = [...new Set(ta.map((x) => x.split('-')[0]))];
+        // Prüfungen, die für diesen Stichpunkt nur über ein Podcast-Stichwort belegt sind (P74): halbes Gewicht
+        const nurStichwort = new Set(termine.filter((p) => ta.filter((x) => x.startsWith(`${p}-`)).every((x) => x.includes('-podcast-'))));
         // In der geprüften Datei muss jede Teilaufgabe zu der Prüfung gehören, unter der sie steht
         for (const [pr, tas] of Object.entries(geprueft?.[r]?.[s.id] ?? {})) for (const x of tas) if (!x.startsWith(`${pr}-`)) fehler.push(`${s.id}: ${x} steht unter ${pr}`);
-        sps.push({ id: s.id, titel: s.titel, ordner: p.oberblock.id, ta, termine });
+        sps.push({ id: s.id, titel: s.titel, ordner: p.oberblock.id, ta: ta.filter((x) => !x.includes('-podcast-')), stichworte: ta.filter((x) => x.includes('-podcast-')), termine, nurStichwort });
       }
   if (geprueft?.[r]) {
     const ids = new Set(sps.map((s) => s.id));
     for (const id of Object.keys(geprueft[r])) if (!ids.has(id)) fehler.push(`${r}: wichtigkeit.json nennt unbekannten Stichpunkt ${id}`);
   }
-  const gewicht = (p, wAlt = ALT) => (p >= cfg.ersteAktuelle ? 1 : wAlt);
+  const basis = (p, wAlt = ALT) => (p >= cfg.ersteAktuelle ? 1 : wAlt);
   const termine = [...new Set(sps.flatMap((s) => s.termine))].sort(terminVergleich);
-  return { r, cfg, sps, termine, gewicht };
+  // Prüfungen ohne jede Abschrift-Teilaufgabe (nur Podcast-Stichworte) zählen im Raum halb
+  const raumNurStichwort = new Set(termine.filter((p) => sps.every((s) => !s.termine.includes(p) || s.nurStichwort.has(p))));
+  const gewicht = (p, wAlt = ALT) => basis(p, wAlt) * (raumNurStichwort.has(p) ? 0.5 : 1);
+  const gewichtSp = (s, p, wAlt = ALT) => basis(p, wAlt) * (s.nurStichwort.has(p) ? 0.5 : 1);
+  return { r, cfg, sps, termine, gewicht, gewichtSp, raumNurStichwort };
 }
 const daten = Object.fromEntries(RAEUME.map((r) => [r, raumDaten(r)]));
 
@@ -68,7 +74,7 @@ function quoten(d, auswahl, wAlt = ALT) {
   const summe = auswahl.reduce((a, p) => a + d.gewicht(p, wAlt), 0);
   const m = new Map();
   for (const s of d.sps) {
-    const t = s.termine.filter((p) => auswahl.includes(p)).reduce((a, p) => a + d.gewicht(p, wAlt), 0);
+    const t = s.termine.filter((p) => auswahl.includes(p)).reduce((a, p) => a + d.gewichtSp(s, p, wAlt), 0);
     m.set(s.id, { treffer: t, summe, quote: summe ? t / summe : 0, belegt: s.termine.some((p) => auswahl.includes(p)) });
   }
   return m;
@@ -100,6 +106,7 @@ for (const r of RAEUME) {
   for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) for (const [id, t] of Object.entries(JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).teilaufgaben)) tas.set(id, t);
   const anSp = new Set(daten[r].sps.flatMap((s) => s.ta));
   for (const id of anSp) if (!tas.has(id)) fehler.push(`${r}: Beleg ${id} ist keine Teilaufgabe der Zuordnung`);
+  for (const id of daten[r].sps.flatMap((s) => s.stichworte)) if (!/^\d{4}[FHSW]-(?:[A-Z0-9]+-)?podcast-[a-z0-9-]+$/.test(id)) fehler.push(`${r}: Stichwort-Beleg ${id} hat nicht die Form <Termin>-…-podcast-<wort>`);
   for (const id of anSp) if (tas.get(id) && !tas.get(id).bausteine?.length) fehler.push(`${r}: Beleg ${id} ist „ausserhalb“ (${tas.get(id).ausserhalb})`);
   const ohneBegruendung = [...tas].filter(([, t]) => !t.bausteine?.length && !t.ausserhalb).map(([id]) => id);
   for (const id of ohneBegruendung) fehler.push(`${r}: Teilaufgabe ${id} hat weder Bausteine noch eine Begründung „ausserhalb“`);
@@ -200,6 +207,55 @@ for (const r of RAEUME) {
       hoch,
     };
   }
+}
+
+// ---------- 4b. Vorher festgelegte Signale (Vorschlag 3.6, Aufnahmeregel) ----------
+// Feste Werte, nichts wird an die Daten angepasst. Gemessen am Log-Loss der rollierenden Vorhersage; Verbesserung je
+// Raum und gepoolt mit 95-%-Bootstrap-Intervall über die Testprüfungen (je Raum mit Zurücklegen gezogen).
+// Nicht testbar und deshalb nicht dabei: Tiefe der Aussagen (teils aus denselben Prüfungen abgeleitet – zirkulär),
+// Katalogänderung AP1 (alter Katalog liegt nicht vor).
+const jahr = (p) => Number(String(p).slice(0, 4)) + (/[HW]$/.test(p) ? 0.5 : 0);
+const SIGNALE = [
+  { id: 'alt-1', name: 'Gewicht alter Prüfungen 1 statt 0,6', p: (d, s, vorher) => vorhersage(d, s, vorher, { wAlt: 1 }) },
+  { id: 'alt-0.3', name: 'Gewicht alter Prüfungen 0,3 statt 0,6', p: (d, s, vorher) => vorhersage(d, s, vorher, { wAlt: 0.3 }) },
+  { id: 'rotation', name: 'Pause: in der letzten Prüfung dran → 20 % Abschlag', p: (d, s, vorher) => vorhersage(d, s, vorher) * (s.termine.includes(vorher.at(-1)) ? 0.8 : 1) },
+  { id: 'alterung', name: 'Alterung: 20 % weniger Gewicht je Jahr Abstand', p: (d, s, vorher, t) => vorhersage(d, s, vorher, { alter: (p) => 0.8 ** (jahr(t) - jahr(p)) }) },
+];
+function vorhersage(d, s, vorher, { wAlt = ALT, alter = () => 1 } = {}) {
+  const summe = vorher.reduce((a, p) => a + d.gewicht(p, wAlt) * alter(p), 0);
+  const t = s.termine.filter((p) => vorher.includes(p)).reduce((a, p) => a + d.gewichtSp(s, p, wAlt) * alter(p), 0);
+  return (t + 0.5) / (summe + 1);
+}
+const logloss = (p, dran) => -Math.log(dran ? p : 1 - p);
+const signale = {};
+let saatB = 11;
+const zufallB = () => ((saatB = (saatB * 16807) % 2147483647) / 2147483647);
+for (const sig of SIGNALE) {
+  const je = {};
+  for (const r of RAEUME) {
+    const d = daten[r];
+    const delta = [];
+    for (let i = 3; i < d.termine.length; i++) {
+      const vorher = d.termine.slice(0, i);
+      const t = d.termine[i];
+      if (!vorher.some((p) => d.gewicht(p) > 0)) continue;
+      const basisLL = mittel(d.sps.map((s) => logloss(vorhersage(d, s, vorher), s.termine.includes(t))));
+      const sigLL = mittel(d.sps.map((s) => logloss(Math.min(0.999, Math.max(0.001, sig.p(d, s, vorher, t))), s.termine.includes(t))));
+      delta.push(basisLL - sigLL);
+    }
+    je[r] = delta;
+  }
+  const mittelJe = Object.fromEntries(Object.entries(je).map(([r, x]) => [r, mittel(x)]));
+  const boot = [];
+  for (let b = 0; b < 2000; b++) {
+    const werte = [];
+    for (const x of Object.values(je)) for (let i = 0; i < x.length; i++) werte.push(x[Math.floor(zufallB() * x.length)]);
+    boot.push(mittel(werte));
+  }
+  boot.sort((a, b) => a - b);
+  const besser = Object.values(mittelJe).filter((x) => x > 0).length;
+  const intervall = [boot[Math.floor(0.025 * boot.length)], boot[Math.floor(0.975 * boot.length)]];
+  signale[sig.id] = { name: sig.name, mittelJe, besser, intervall, aufgenommen: besser >= 3 && intervall[0] > 0 };
 }
 
 // ---------- 5. Abdeckungskurve ----------
@@ -312,6 +368,17 @@ z('Treffer „Sehr oft“ ist die ehrliche Probe auf die Namen: Die Stufen besch
 z();
 z('Gilt nach der Aufnahmeregel (Vorschlag 3.6): Ein anderes Gewicht für alte Prüfungen kommt nur, wenn es den Log-Loss in mindestens 3 von 4 Räumen senkt und das Bootstrap-Intervall die 0 nicht enthält. Diese Tabelle ist die Vorstufe dazu.');
 z();
+z('## Vorher festgelegte Signale (Aufnahmeregel)');
+z();
+z('Verbesserung des Log-Loss gegenüber „nur Prüfungen, Gewicht alt 0,6“ (positiv = besser), je Raum gemittelt über die rollierenden Läufe, dazu gepoolt mit 95-%-Bootstrap-Intervall. Aufgenommen wird ein Signal nur, wenn es in mindestens 3 von 4 Räumen besser ist und das Intervall die 0 nicht enthält.');
+z();
+z('| Signal | AP1 | PB1 | PB2 | WISO | besser in | 95-%-Intervall gepoolt | aufgenommen |');
+z('|---|---|---|---|---|---|---|---|');
+const k4 = (x) => (Number.isFinite(x) ? (x >= 0 ? '+' : '') + x.toFixed(4).replace('.', ',') : '–');
+for (const x of Object.values(signale)) z(`| ${x.name} | ${RAEUME.map((r) => k4(x.mittelJe[r])).join(' | ')} | ${x.besser} von 4 | ${k4(x.intervall[0])} bis ${k4(x.intervall[1])} | ${x.aufgenommen ? '**ja**' : 'nein'} |`);
+z();
+z('Nicht getestet: Tiefe der Aussagen (teils aus denselben Prüfungen abgeleitet, der Test wäre zirkulär) und Katalogänderung AP1 (der alte Katalog liegt nicht vor).');
+z();
 z(`## Abdeckungskurve (Fläche: mittlerer abgedeckter Anteil einer Prüfung nach aktuellem Katalog, wenn man die Stichpunkte der Reihe nach lernt)`);
 z();
 z(`| Raum | Prüfungen | nach Quote | mit Fundament (λ = ${k2(LAMBDA)}) | Katalog-Reihenfolge | Zufall | Kosten „Grundlagen zuerst“ |`);
@@ -357,6 +424,7 @@ for (const r of RAEUME) {
     `  ${r.padEnd(5)} Prüfungen ${String(daten[r].termine.length).padStart(2)} · Wackel ${pz(wackel[r].jeLauf)} je Lauf · Rückwärts AUC ${k2(x.auc)} (${x.laeufe.length} Läufe) · Abdeckung Kosten Fundament ${Number.isFinite(abdeckung[r].kosten) ? pz(abdeckung[r].kosten) : '–'} · Zuordnung ohne Stichpunkt ${zuordnung[r].ohneSp.length}`,
   );
 }
+for (const x of Object.values(signale)) console.log(`  Signal ${x.name}: besser in ${x.besser} von 4, Intervall ${k4(x.intervall[0])} bis ${k4(x.intervall[1])} → ${x.aufgenommen ? 'aufgenommen' : 'nicht aufgenommen'}`);
 console.log(`Bericht: ${path.relative(wurzel, ziel)}`);
 const beispiel = [...index.sp.values()].find((s) => s.raum === 'AP1' && s.titel.startsWith('Peripheriegeräte'));
 if (beispiel) console.log(`Beispiel: ${beispiel.titel} – ${wichtigkeitText(beispiel.wichtig)}`);

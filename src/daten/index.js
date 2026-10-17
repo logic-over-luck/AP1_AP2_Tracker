@@ -1,7 +1,7 @@
 // Baut Nachschlagetabellen über die Inhaltsdaten. Rein, ohne Browser-Abhängigkeit,
 // damit die Tests sie mit Node laden können.
 
-import { wichtigkeitRaum, stufenVerteilung } from './wichtigkeit.js';
+import { wichtigkeitRaum, stufenVerteilung, terminVergleich } from './wichtigkeit.js';
 
 export const RAEUME = ['AP1', 'PB1', 'PB2', 'AP2', 'WISO']; // AP2 nur im alten Stand (LERNSTUDIO_AP1=alt)
 
@@ -106,6 +106,13 @@ export function baueIndex(daten) {
       ord.wichtig = { ...stufenVerteilung(liste), anteil: aufgabenAnteil(liste), aufgaben: teiler.size };
     }
   }
+
+  // Belege aus einem anderen Prüfungsteil (UMBAU.md P74): nur Anzeige – „auch in 4 von 10 PB2-Prüfungen“
+  for (const s of new Set(sp.values()))
+    if (s.wichtig)
+      s.wichtig.quer = Object.entries(s.quer ?? {})
+        .filter(([r]) => raeume.has(r))
+        .map(([r, termine]) => ({ raum: r, name: raeume.get(r).name, x: Object.keys(termine).length, n: raeume.get(r).wichtig?.n ?? 0, termine: Object.keys(termine).sort(terminVergleich) }));
 
   // Fundament: welche Stichpunkte (auch in späteren Räumen) auf einem Stichpunkt aufbauen (Feld „Baut auf“, E2)
   for (const s of new Set(sp.values())) s.grundlageFuer = [];
